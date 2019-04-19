@@ -11,9 +11,9 @@ To support symbolic links, **\*-Item** and a few related cmdlets have been exten
 
 The following shows some use cases of the new capabilities:
 
-## NEW-ITEM
+## New-Item
 
-### SYMBOLIC LINK FILES
+### Symbolic link files
 
 ```powershell
 # Create a new symbolic link file named MySymLinkFile.txt in C:\Temp which links to $pshome\profile.ps1
@@ -27,7 +27,7 @@ New-Item -ItemType SymbolicLink -Path C:\Temp\MySymLinkFile.txt -Value $pshome\p
 New-Item -ItemType SymbolicLink -Name C:\Temp\MySymLinkFile.txt -Value $pshome\profile.ps1
 ```
 
-### SYMBOLIC LINK DIRECTORIES
+### Symbolic link directories
 
 ```powershell
 # Create a new symbolic link directory named MySymLinkDir in C:\Temp which links to the $pshome folder
@@ -42,21 +42,21 @@ New-Item -ItemType SymbolicLink -Path C:\Temp\MySymLinkDir -Value $pshome
 New-Item -ItemType SymbolicLink -Name C:\Temp\MySymLinkDir -Value $pshome
 ```
 
-### HARD LINKS
+### Hard links
 
 ```powershell
 New-Item -ItemType HardLink -Path C:\Temp -Name MyHardLinkFile.txt -Value $pshome\profile.ps1
 # Same combinations of Path and Name allowed as described above
 ```
 
-### DIRECTORY JUNCTIONS
+### Directory junctions
 
 ```powershell
 New-Item -ItemType Junction -Path C:\Temp\MyJunctionDir -Value $pshome
 # Same combinations of Path and Name allowed as described above
 ```
 
-## GET-CHILDITEM
+## Get-ChildItem
 
 ```powershell
 # Append link type column to Mode property and display with Get-ChildItem
@@ -107,7 +107,7 @@ SpecialBuild: False
 Language:
 ```
 
-## REMOVE-ITEM
+## Remove-Item
 
 ```powershell
 # Works like any other item type

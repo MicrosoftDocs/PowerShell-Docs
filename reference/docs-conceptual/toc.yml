@@ -158,6 +158,8 @@
   items:
     - name: What's new in PowerShell Core 6.x
       items:
+        - name: What's new in PowerShell Core 6.2
+          href: whats-new/what-s-new-in-powershell-core-62.md
         - name: What's new in PowerShell Core 6.1
           href: whats-new/what-s-new-in-powershell-core-61.md
         - name: What's new in PowerShell Core 6.0

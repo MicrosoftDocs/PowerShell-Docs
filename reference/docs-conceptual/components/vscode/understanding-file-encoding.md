@@ -130,7 +130,7 @@ do not, leading to artifacts in text manipulated with those applications.
 
 VSCode's default encoding is UTF-8 without BOM.
 
-To set [VSCode's encoding][], go to the VSCode settings (<kbd>Ctrl<kbd>+</kbd>,</kbd>) and set the
+To set [VSCode's encoding][], go to the VSCode settings (<kbd>Ctrl</kbd>+<kbd>,</kbd>) and set the
 `"files.encoding"` setting:
 
 ```json
