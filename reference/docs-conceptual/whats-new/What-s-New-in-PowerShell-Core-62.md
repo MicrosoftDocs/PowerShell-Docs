@@ -1,4 +1,3 @@
-- Improve error message on non-Windows when importing clixml with securestring (#7997)
 ---
 title: What's New in PowerShell Core 6.2
 description: New features and changes released in PowerShell Core 6.2
