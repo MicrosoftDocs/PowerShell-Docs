@@ -75,7 +75,7 @@ Format-Hex -Path .\File.t7f
 
 ```Output
            Path: C:\Test\File.t7f
-           
+
            00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
 
 00000000   25 50 44 46 2D 31 2E 35 0D 0A 25 B5 B5 B5 B5 0D  %PDF-1.5..%????.
@@ -112,7 +112,7 @@ The acceptable values for this parameter are as follows:
 Beginning with PowerShell 6.2, the **Encoding** parameter also allows numeric IDs of registered code
 pages (like `-Encoding 1251`) or string names of registered code pages (like
 `-Encoding "windows-1251"`). For more information, see the .NET documentation for
-[Encoding.CodePage](https://docs.microsoft.com/en-us/dotnet/api/system.text.encoding.codepage?view=netcore-2.2).
+[Encoding.CodePage](/dotnet/api/system.text.encoding.codepage?view=netcore-2.2).
 
 ```yaml
 Type: Encoding

@@ -517,7 +517,7 @@ the bytes to a file unless you use **AsByteStream** parameter.
 Beginning with PowerShell 6.2, the **Encoding** parameter also allows numeric IDs of registered code
 pages (like `-Encoding 1251`) or string names of registered code pages (like
 `-Encoding "windows-1251"`). For more information, see the .NET documentation for
-[Encoding.CodePage](https://docs.microsoft.com/en-us/dotnet/api/system.text.encoding.codepage?view=netcore-2.2).
+[Encoding.CodePage](/dotnet/api/system.text.encoding.codepage?view=netcore-2.2).
 
 ```yaml
 Type: Encoding

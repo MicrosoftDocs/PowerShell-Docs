@@ -18,7 +18,7 @@ file.
 
 ### Delimiter (Default)
 
-``` 
+```
 Export-Csv [[-Path] <string>] [[-Delimiter] <char>] -InputObject <psobject> [-LiteralPath <string>]
 [-Force] [-NoClobber] [-Encoding <Encoding>] [-Append] [-IncludeTypeInformation]
 [-NoTypeInformation] [-WhatIf] [-Confirm] [<CommonParameters>]
@@ -26,7 +26,7 @@ Export-Csv [[-Path] <string>] [[-Delimiter] <char>] -InputObject <psobject> [-Li
 
 ### UseCulture
 
-``` 
+```
 Export-Csv [[-Path] <string>] -InputObject <psobject> [-LiteralPath <string>] [-Force] [-NoClobber]
 [-Encoding <Encoding>] [-Append] [-UseCulture] [-IncludeTypeInformation] [-NoTypeInformation]
 [-WhatIf] [-Confirm] [<CommonParameters>]
@@ -310,7 +310,7 @@ $AdditionalContent | Export-Csv -Path .\ParmFile.csv -NoTypeInformation -Append
 ```
 
 ```Output
-Export-Csv : Cannot append CSV content to the following file: ParmFile.csv. 
+Export-Csv : Cannot append CSV content to the following file: ParmFile.csv.
 The appended object does not have a property that corresponds to the following column:
 Version. To continue with mismatched properties, add the -Force parameter, and then retry
  the command.
@@ -410,7 +410,7 @@ The acceptable values for this parameter are as follows:
 Beginning with PowerShell 6.2, the **Encoding** parameter also allows numeric IDs of registered code
 pages (like `-Encoding 1251`) or string names of registered code pages (like
 `-Encoding "windows-1251"`). For more information, see the .NET documentation for
-[Encoding.CodePage](https://docs.microsoft.com/en-us/dotnet/api/system.text.encoding.codepage?view=netcore-2.2).
+[Encoding.CodePage](/dotnet/api/system.text.encoding.codepage?view=netcore-2.2).
 
 ```yaml
 Type: Encoding
@@ -633,7 +633,7 @@ the methods of the object.
 The CSV strings are output as follows:
 
 - If **IncludeTypeInformation** is used, the first string contains the **#TYPE** information header
-  followed by the object type's fully qualified name. 
+  followed by the object type's fully qualified name.
   For example, **#TYPE System.Diagnostics.Process**.
 - If **IncludeTypeInformation** is not used the first string includes the column headers. The
   headers contain the first object's property names as a comma-separated list.
