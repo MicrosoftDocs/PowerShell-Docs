@@ -41,7 +41,6 @@ This example uses `Get-PSRepository` to get all registered repositories, and use
 Get-PSRepository | Unregister-PSRepository
 ```
 
-This command uses Get-PSRepository to get all registered repositories, and uses the pipeline operator to pass them to **Unregister-PSRepository** to unregister them.
 Note that PSGallery is a built-in repository and cannot be unregistered.
 
 ## PARAMETERS
