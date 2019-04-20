@@ -56,7 +56,7 @@ Start-Service -Name "eventlog"
 
 ### Example 2: Display information without starting a service
 
-This example show what would occur if you started the services that have a display name that
+This example shows what would occur if you started the services that have a display name that
 includes "remote".
 
 ```powershell
@@ -64,7 +64,7 @@ Start-Service -DisplayName *remote* -WhatIf
 ```
 
 The **DisplayName** parameter identifies the services by their display name instead of their service
-name. The **WhatIf** parameter cause the cmdlet to display what would happen when you run the
+name. The **WhatIf** parameter causes the cmdlet to display what would happen when you run the
 command but does not make changes.
 
 ### Example 3: Start a service and record the action in a text file
@@ -132,7 +132,7 @@ Accept wildcard characters: False
 ### -Exclude
 
 Specifies services that this cmdlet omits. The value of this parameter qualifies the **Name**
-parameter. Enter a name element or pattern, such as "s*". Wildcard characters are permitted.
+parameter. Enter a name element or pattern, such as `s*`. Wildcard characters are permitted.
 
 ```yaml
 Type: String[]
@@ -270,18 +270,18 @@ service, if you specify **PassThru**. Otherwise, this cmdlet does not generate a
 
 ## NOTES
 
-* You can also refer to `Start-Service` by its built-in alias, **sasv**. For more information, see
+* You can also refer to `Start-Service` by its built-in alias, `sasv`. For more information, see
   [about_Aliases](../Microsoft.PowerShell.Core/About/about_Aliases.md).
 * `Start-Service` can control services only if the current user has permission to do this. If a
   command does not work correctly, you might not have the required permissions.
 * To find the service names and display names of the services on your system, type `Get-Service`.
   The service names appear in the **Name** column, and the display names appear in the
   **DisplayName** column.
-* You can start only the services that have a start type of Manual or Automatic. You cannot start
-  the services that have a start type of Disabled. If a `Start-Service` command fails with the
-  message `Cannot start service \<service-name\> on computer`, use `Get-CimInstance` to find the
-  start type of the service and, if you have to, use the `Set-Service` cmdlet to change the start
-  type of the service.
+* You can start only the services that have a start type of Manual, Automatic, or Automatic (Delayed
+  Start). You cannot start the services that have a start type of Disabled. If a `Start-Service`
+  command fails with the message `Cannot start service \<service-name\> on computer`, use
+  `Get-CimInstance` to find the start type of the service and, if you have to, use the `Set-Service`
+  cmdlet to change the start type of the service.
 * Some services, such as Performance Logs and Alerts (SysmonLog) stop automatically if they have no
   work to do. When PowerShell starts a service that stops itself almost immediately, it displays the
   following message: `Service \<display-name\> start failed.`
