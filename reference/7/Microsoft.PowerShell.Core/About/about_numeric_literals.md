@@ -48,10 +48,10 @@ For an integer literal with no type suffix:
 
 For an integer literal with a type suffix:
 
-- If the type suffix is `u` and the value can be represented by type `[int]`
-  then its type is `[int]`.
-- If the type suffix is `u` and the value can be represented by type `[long]`
-  then its type is `[long]`.
+- If the type suffix is `u` and the value can be represented by type `[uint]`
+  then its type is `[uint]`.
+- If the type suffix is `u` and the value can be represented by type `[ulong]`
+  then its type is `[ulong]`.
 - If its value can be represented by type specified then that is its type.
 - Otherwise, that literal is malformed.
 
@@ -90,7 +90,7 @@ exponent-part's digits in a `[double]` or `[decimal]` real literal is greater
 than the maximum supported, that literal is malformed.
 
 > [!NOTE]
-> The syntax permits a double real literal to have a long-type suffix.
+> The syntax permits a real literal to have a long-type suffix.
 > PowerShell treats this case as an integer literal whose value is represented
 > by type `[long]`. This feature has been retained for backwards compatibility
 > with earlier versions of PowerShell. However, programmers are discouraged
@@ -102,11 +102,17 @@ than the maximum supported, that literal is malformed.
 ## Numeric multipliers
 
 For convenience, integer and real literals can contain a numeric multiplier,
-which indicates one of a set of commonly used powers of 10. The numeric
+which indicates one of a set of commonly used powers of 2. The numeric
 multiplier can be written in any combination of upper or lowercase letters.
 
-The multiplier suffixes can be used in combination with the `u`, `ul`, and `l`
-type suffixes.
+The multiplier suffixes can be used in combination with any type suffixes,
+but must be present after the type suffix. For example, the literal
+`100gbL` is malformed, but the literal `100Lgb` is valid.
+
+If a multiplier creates a value that exceeds the possible values for the
+numeric type that the suffix specifies, the literal is malformed. For
+example, the literal `1usgb` is malformed, because the value `1gb` is larger
+than what is permitted for the `[ushort]` type specified by the `us` suffix.
 
 ### Multiplier examples
 
@@ -162,34 +168,35 @@ PowerShell supports the following type accelerators:
 The following table contains several examples of numeric literals and lists
 their type and value:
 
-|   Number    |  Type   |    Value     |
-| ----------: | ------- | -----------: |
-|         100 | Int32   |          100 |
-|        100u | UInt32  |          100 |
-|        100D | Decimal |          100 |
-|        100l | Int64   |          100 |
-|       100uL | UInt64  |          100 |
-|       100us | UInt16  |          100 |
-|       100uy | Byte    |          100 |
-|        100y | SByte   |          100 |
-|         1e2 | Double  |          100 |
-|        1.e2 | Double  |          100 |
-|       0x1e2 | Int32   |          482 |
-|      0x1e2L | Int64   |          482 |
-|      0x1e2D | Int32   |         7725 |
-|        482D | Decimal |          482 |
-|       482gb | Int64   | 517543559168 |
-|    0x1e2lgb | Int64   | 517543559168 |
-|   0b1011011 | Int32   |           91 |
-|  0xFFFFFFFF | Int32   |           -1 |
-| -0xFFFFFFFF | Int32   |            1 |
-| 0xFFFFFFFFu | UInt32  |   4294967295 |
+|   Number     |  Type      |    Value     |
+| -----------: | ---------- | -----------: |
+|         100  | Int32      |          100 |
+|        100u  | UInt32     |          100 |
+|        100D  | Decimal    |          100 |
+|        100l  | Int64      |          100 |
+|       100uL  | UInt64     |          100 |
+|       100us  | UInt16     |          100 |
+|       100uy  | Byte       |          100 |
+|        100y  | SByte      |          100 |
+|         1e2  | Double     |          100 |
+|        1.e2  | Double     |          100 |
+|       0x1e2  | Int32      |          482 |
+|      0x1e2L  | Int64      |          482 |
+|      0x1e2D  | Int32      |         7725 |
+|        482D  | Decimal    |          482 |
+|       482gb  | Int64      | 517543559168 |
+|       482ngb | BigInteger | 517543559168 |
+|    0x1e2lgb  | Int64      | 517543559168 |
+|   0b1011011  | Int32      |           91 |
+|  0xFFFFFFFF  | Int32      |           -1 |
+| -0xFFFFFFFF  | Int32      |            1 |
+| 0xFFFFFFFFu  | UInt32     |   4294967295 |
 
 ### Working with binary or hexadecimal numbers
 
-Overly large binary or hexadecimal literals return as `[bigint]` rather than
-failing the parse. Sign bits are still respected above even `[decimal]` ranges,
-however:
+Overly large binary or hexadecimal literals can return as `[bigint]` rather
+than failing the parse, if and only if the `n` suffix is specified. Sign
+bits are still respected above even `[decimal]` ranges, however:
 
 - If a binary string is some multiple of 8 bits long, the highest bit is
   treated as the sign bit.
@@ -201,7 +208,8 @@ example, `0xFFFFFFFF` returns `-1`, but `0xFFFFFFFFu` returns the
 `[uint]::MaxValue` of 4294967295.
 
 Prefixing the literal with a `0` will bypass this and be treated as unsigned.
-For example: `0b011111111`.
+For example: `0b011111111`. This can be necessary when working with literals
+in the `[bigint]` range, as the `u` and `n` suffixes cannot be combined.
 
 You can also negate binary and hex literals using the `-` prefix. This can
 result in a positive number since sign bits are permitted.
@@ -216,8 +224,23 @@ Sign bits are accepted for BigInteger-suffixed numerals:
 
 ### Commands that look like numeric literals
 
-Any command that looks like a numeric literal must be executed using the the
-call operator (`&`), otherwise it is interpreted as a number.
+Any command that looks like a valid numeric literal must be executed using the
+call operator (`&`), otherwise it is interpreted as a number. Malformed
+literals with valid syntax like `1usgb` will result in the following error:
+
+```
+PS> 1usgb
+At line:1 char:6
++ 1usgb
++      ~
+The numeric constant 1usgb is not valid.
++ CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
++ FullyQualifiedErrorId : BadNumericConstant
+```
+
+However, malformed literals with invalid syntax like `1gbus` will be interpreted
+as a standard bare string, and can be interpreted as a valid command name in
+contexts where commands may be called.
 
 ### Access properties and methods of numeric objects
 
