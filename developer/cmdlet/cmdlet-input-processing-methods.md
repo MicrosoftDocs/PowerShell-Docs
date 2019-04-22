@@ -22,7 +22,7 @@ For a more detailed example of how to use these methods, see [SelectStr Tutorial
 
 Cmdlets should override the [System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) method to add any preprocessing operations that are valid for all the records that will be processed later by the cmdlet.
 When PowerShell processes a command pipeline, PowerShell calls this method once for each instance of the cmdlet in the pipeline.
-For more information about how PowerShell invokes the command pipeline, see [Cmdlet Processing Lifecycle](https://msdn.microsoft.com/en-us/3202f55c-314d-4ac3-ad78-4c7ca72253c5).
+For more information about how PowerShell invokes the command pipeline, see [Cmdlet Processing Lifecycle](/previous-versions/ms714429(v=vs.85)).
 
 The following code shows an implementation of the BeginProcessing method.
 
@@ -38,7 +38,7 @@ protected override void BeginProcessing()
 
 Cmdlets can override the [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) method to process the input that is sent to the cmdlet.
 When PowerShell processes a command pipeline, PowerShell calls this method for each input record that is processed by the cmdlet.
-For more information about how PowerShell invokes the command pipeline, see [Cmdlet Processing Lifecycle](https://msdn.microsoft.com/en-us/3202f55c-314d-4ac3-ad78-4c7ca72253c5).
+For more information about how PowerShell invokes the command pipeline, see [Cmdlet Processing Lifecycle](/previous-versions/ms714429(v=vs.85)).
 
 The following code shows an implementation of the ProcessRecord method.
 
@@ -58,7 +58,7 @@ For example, your cmdlet might have to clean up object variables after it is fin
 When PowerShell processes a command pipeline, PowerShell calls this method once for each instance of the cmdlet in the pipeline.
 However, it is important to remember that the PowerShell runtime will not call the EndProcessing method if the cmdlet is canceled midway through its input processing or if a terminating error occurs in any part of the cmdlet.
 For this reason, a cmdlet that requires object cleanup should implement the complete [System.IDisposable](/dotnet/api/System.IDisposable) pattern, including a finalizer, so that the runtime can call both the EndProcessing and [System.IDisposable.Dispose](/dotnet/api/System.IDisposable.Dispose) methods at the end of processing.
-For more information about how PowerShell invokes the command pipeline, see [Cmdlet Processing Lifecycle](https://msdn.microsoft.com/en-us/3202f55c-314d-4ac3-ad78-4c7ca72253c5).
+For more information about how PowerShell invokes the command pipeline, see [Cmdlet Processing Lifecycle](/previous-versions/ms714429(v=vs.85)).
 
 The following code shows an implementation of the EndProcessing method.
 
