@@ -56,8 +56,10 @@ names are displayed. For empty locations the command does not return any output 
 PowerShell prompt.
 
 By default `Get-ChildItem` lists the mode (attributes), last write time, file size (length), and the
-name of the item. The valid values for mode are `d` (directory), `a` (archive), `r` (read-only), `h`
-(hidden), and `s` (system).
+name of the item. The letters in the **Mode** property can be interperted as follows: `l` (link),
+`d` (directory), `a` (archive), `r` (read-only), `h` (hidden), and `s` (system). For more
+information about the mode flags, see
+[about_Filesystem_Provider](../microsoft.powershell.core/about/about_filesystem_provider.md#attributes-flagsexpression).
 
 ```
 PS> Get-ChildItem -Path C:\Test
@@ -511,7 +513,7 @@ Required: False
 Position: 1
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -Force
