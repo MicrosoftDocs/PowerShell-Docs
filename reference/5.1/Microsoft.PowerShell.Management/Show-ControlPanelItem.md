@@ -64,7 +64,7 @@ The name of the Windows Firewall control panel item has changed over the version
 example uses a wildcard pattern to find the control panel item.
 
 ```powershell
-Get-ControlPanelItem -Name "*Firewall" | `Show-ControlPanelItem`
+Get-ControlPanelItem -Name "*Firewall" | Show-ControlPanelItem
 ```
 
 `Get-ControlPanelItem` gets the control panel item and the `Show-ControlPanelItem` cmdlet opens
