@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821635
-external help file:  Microsoft.PowerShell.Commands.Management.dll-Help.xml
-title:  Show-ControlPanelItem
+external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Management
+ms.date: 04/22/2019
+online version: http://go.microsoft.com/fwlink/?LinkId=821635
+schema: 2.0.0
+title: Show-ControlPanelItem
 ---
 # Show-ControlPanelItem
 
@@ -34,56 +35,62 @@ Show-ControlPanelItem [[-InputObject] <ControlPanelItem[]>] [<CommonParameters>]
 
 ## DESCRIPTION
 
-The **Show-ControlPanelItem** cmdlet opens control panel items on the local computer.
-You can use it to open control panel items by name, category, or description, even on systems that do not have a user interface.
-You can pipe control panel items from the Get-ControlPanelItem cmdlet to **Show-ControlPanelItem**.
+The `Show-ControlPanelItem` cmdlet opens control panel items on the local computer. You can use it
+to open control panel items by name, category, or description, even on systems that do not have a
+user interface. You can pipe control panel items from the `Get-ControlPanelItem` cmdlet to
+`Show-ControlPanelItem`.
 
-**Show-ControlPanelItem** searches only control panel items that can be opened on the system.
-On computers that do not have **Control Panel** or **File Explorer**, **Show-ControlPanelItem** searches only control panel items that can open without these components.
+`Show-ControlPanelItem` searches only control panel items that can be opened on the system. On
+computers that do not have **Control Panel** or **File Explorer**, `Show-ControlPanelItem` searches
+only control panel items that can open without these components.
 
-This cmdlet was introduced in Windows PowerShell 3.0.
-It works only on Windows 8 and Windows Server 2012.
-Because this cmdlet requires a user interface, it does not work on Server Core installations of Windows Server.
+This cmdlet was introduced in Windows PowerShell 3.0 and works on Windows 8, Windows Server 2012,
+and higher versions.
 
 ## EXAMPLES
 
 ### Example 1: Show a control panel item
 
-```
-PS C:\> Show-ControlPanelItem -Name "AutoPlay"
-```
+This example launches the **AutoPlay** control panel item.
 
-This command shows the AutoPlay item.
+```powershell
+Show-ControlPanelItem -Name "AutoPlay"
+```
 
 ### Example 2: Pipe a control panel item to this cmdlet
 
-```
-PS C:\> Get-ControlPanelItem -Name "Windows Firewall" | Show-ControlPanelItem
+This example opens the **Windows Defender Firewall** control panel item on the local computer.
+The name of the Windows Firewall control panel item has changed over the versions of Windows. This
+example uses a wildcard pattern to find the control panel item.
+
+```powershell
+Get-ControlPanelItem -Name "*Firewall" | `Show-ControlPanelItem`
 ```
 
-This command opens the Windows Firewall control panel item on the local computer.
-It uses the Get-ControlPanelItem cmdlet to get the control panel item and the **Show-ControlPanelItem** cmdlet to open it.
+`Get-ControlPanelItem` gets the control panel item and the `Show-ControlPanelItem` cmdlet opens
+it.
 
 ### Example 3: Use a file name to open a control panel item
 
+This example opens the **Programs and Features** control panel item by using its application name.
+
+```powershell
+appwiz.cpl
 ```
-PS C:\> appwiz
-```
 
-This command opens the Programs and Features control panel item by using its application name.
-The .cpl file name extension is not required in the command.
+This method is an alternative to using a `Show-ControlPanelItem` command.
 
-This method is an alternative to using a **Show-ControlPanelItem** command.
-
-In Windows PowerShell 3.0, you can omit the .cpl file name extension for control panel item files because it is included in the value of the PathExt environment variable.
+> [!NOTE]
+> In PowerShell, you can omit the .cpl file extension for control panel files because it's included
+> in the value of the `$env:PathExt` environment variable.
 
 ## PARAMETERS
 
 ### -CanonicalName
 
-Specifies control panel items by using the specified canonical names or name patterns.
-Wildcard characters are permitted.
-If you enter multiple names, this cmdlet opens control panel items that match any of the names, as if the items in the name list were separated by an **OR** operator.
+Specifies control panel items by using the specified canonical names or name patterns. Wildcard
+characters are permitted. If you enter multiple names, this cmdlet opens control panel items that
+match any of the names, as if the items in the name list were separated by an **OR** operator.
 
 ```yaml
 Type: String[]
@@ -94,13 +101,14 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -InputObject
 
-Specifies control panel items to open by submitting control panel item objects.
-Enter a variable that contains control panel item objects, or type a command or expression that gets control panel item objects, such as **Get-ControlPanelItem**.
+Specifies control panel items to open by submitting control panel item objects. Enter a variable
+that contains control panel item objects, or type a command or expression that gets control panel
+item objects, such as `Get-ControlPanelItem`.
 
 ```yaml
 Type: ControlPanelItem[]
@@ -116,9 +124,9 @@ Accept wildcard characters: False
 
 ### -Name
 
-Specifies names of control panel items.
-Wildcard characters are permitted.
-If you enter multiple names, this cmdlet opens control panel items that match any of the names, as if the items in the name list were separated by an **OR** operator.
+Specifies names of control panel items. Wildcard characters are permitted. If you enter multiple
+names, this cmdlet opens control panel items that match any of the names, as if the items in the
+name list were separated by an **OR** operator.
 
 ```yaml
 Type: String[]
@@ -129,12 +137,14 @@ Required: True
 Position: 0
 Default value: None
 Accept pipeline input: True (ByPropertyName, ByValue)
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### CommonParameters
 
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+-InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
+-WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
