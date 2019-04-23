@@ -91,6 +91,24 @@ $PSReadLineOptions = @{
 Set-PSReadLineOption @PSReadLineOptions
 ```
 
+### Example 4: Set multiple color options
+
+This example shows how to set more than one color value in a single command.
+
+```powershell
+Set-PSReadLineOption -colors @{
+  Command            = 'DarkYellow'
+  Number             = 'DarkGray'
+  Member             = 'DarkGray'
+  Operator           = 'DarkGray'
+  Type               = 'DarkGray'
+  Variable           = 'DarkGreen'
+  Parameter          = 'DarkGreen'
+  ContinuationPrompt = 'DarkGray'
+  Default            = 'DarkGray'
+}
+```
+
 ## PARAMETERS
 
 ### -AddToHistoryHandler

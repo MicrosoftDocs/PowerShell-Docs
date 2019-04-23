@@ -54,8 +54,10 @@ names are displayed. For empty locations the command does not return any output 
 PowerShell prompt.
 
 By default `Get-ChildItem` lists the mode (attributes), last write time, file size (length), and the
-name of the item. The valid values for mode are `l` (link), `d` (directory), `a` (archive), `r` (read-only), `h`
-(hidden), and `s` (system).
+name of the item. The letters in the **Mode** property can be interperted as follows: `l` (link),
+`d` (directory), `a` (archive), `r` (read-only), `h` (hidden), and `s` (system). For more
+information about the mode flags, see
+[about_Filesystem_Provider](../microsoft.powershell.core/about/about_filesystem_provider.md#attributes-flagsexpression).
 
 ```
 PS> Get-ChildItem -Path C:\Test
@@ -64,11 +66,11 @@ PS> Get-ChildItem -Path C:\Test
 
 Mode                LastWriteTime         Length Name
 ----                -------------         ------ ----
-d----         2/15/2019     08:29                Logs
--a---         2/13/2019     08:55             26 anotherfile.txt
--a---         2/12/2019     15:40         118014 Command.txt
--a---          2/1/2019     08:43            183 CreateTestFile.ps1
--ar--         2/12/2019     14:31             27 ReadOnlyFile.txt
+d-----        2/15/2019     08:29                Logs
+-a----        2/13/2019     08:55             26 anotherfile.txt
+-a----        2/12/2019     15:40         118014 Command.txt
+-a----         2/1/2019     08:43            183 CreateTestFile.ps1
+-ar---        2/12/2019     14:31             27 ReadOnlyFile.txt
 ```
 
 The `Get-ChildItem` cmdlet uses the **Path** parameter to specify the directory **C:\Test**.
@@ -103,33 +105,33 @@ PS> Get-ChildItem -Path C:\Test\*.txt -Recurse -Force
 
 Mode                LastWriteTime         Length Name
 ----                -------------         ------ ----
--a---         2/12/2019     16:16             20 Afile4.txt
--a-h-         2/12/2019     15:52             22 hiddenfile.txt
--a---         2/13/2019     13:26             20 LogFile4.txt
+-a----        2/12/2019     16:16             20 Afile4.txt
+-a-h--        2/12/2019     15:52             22 hiddenfile.txt
+-a----        2/13/2019     13:26             20 LogFile4.txt
 
     Directory: C:\Test\Logs\Backup
 
 Mode                LastWriteTime         Length Name
 ----                -------------         ------ ----
--a---         2/12/2019     16:16             20 ATextFile.txt
--a---         2/12/2019     15:50             20 LogFile3.txt
+-a----        2/12/2019     16:16             20 ATextFile.txt
+-a----        2/12/2019     15:50             20 LogFile3.txt
 
     Directory: C:\Test\Logs
 
 Mode                LastWriteTime         Length Name
 ----                -------------         ------ ----
--a---         2/12/2019     16:16             20 Afile.txt
--a-h-         2/12/2019     15:52             22 hiddenfile.txt
--a---         2/13/2019     13:26             20 LogFile1.txt
+-a----        2/12/2019     16:16             20 Afile.txt
+-a-h--        2/12/2019     15:52             22 hiddenfile.txt
+-a----        2/13/2019     13:26             20 LogFile1.txt
 
     Directory: C:\Test
 
 Mode                LastWriteTime         Length Name
 ----                -------------         ------ ----
--a---         2/13/2019     08:55             26 anotherfile.txt
--a---         2/12/2019     15:40         118014 Command.txt
--a-h-         2/12/2019     15:52             22 hiddenfile.txt
--ar--         2/12/2019     14:31             27 ReadOnlyFile.txt
+-a----        2/13/2019     08:55             26 anotherfile.txt
+-a----        2/12/2019     15:40         118014 Command.txt
+-a-h--        2/12/2019     15:52             22 hiddenfile.txt
+-ar---        2/12/2019     14:31             27 ReadOnlyFile.txt
 ```
 
 The `Get-ChildItem` cmdlet uses the **Path** parameter to specify `C:\Test\*.txt`. **Path** uses the
@@ -150,9 +152,9 @@ PS> Get-ChildItem -Path C:\Test\* -Include *.txt
 
 Mode                LastWriteTime         Length Name
 ----                -------------         ------ ----
--a---         2/13/2019     08:55             26 anotherfile.txt
--a---         2/12/2019     15:40         118014 Command.txt
--ar--         2/12/2019     14:31             27 ReadOnlyFile.txt
+-a----        2/13/2019     08:55             26 anotherfile.txt
+-a----        2/12/2019     15:40         118014 Command.txt
+-ar---        2/12/2019     14:31             27 ReadOnlyFile.txt
 ```
 
 The `Get-ChildItem` cmdlet uses the **Path** parameter to specify the directory **C:\Test**. The
@@ -182,12 +184,12 @@ PS> Get-ChildItem -Path C:\Test\Logs
 
 Mode                LastWriteTime         Length Name
 ----                -------------         ------ ----
-d----         2/15/2019     13:21                Adirectory
-d----         2/15/2019     08:28                AnEmptyDirectory
-d----         2/15/2019     13:21                Backup
--a---         2/12/2019     16:16             20 Afile.txt
--a---         2/13/2019     13:26             20 LogFile1.txt
--a---         2/12/2019     16:24             23 systemlog1.log
+d-----        2/15/2019     13:21                Adirectory
+d-----        2/15/2019     08:28                AnEmptyDirectory
+d-----        2/15/2019     13:21                Backup
+-a----        2/12/2019     16:16             20 Afile.txt
+-a----        2/13/2019     13:26             20 LogFile1.txt
+-a----        2/12/2019     16:24             23 systemlog1.log
 
 
 PS>  Get-ChildItem -Path C:\Test\Logs -Exclude A*
@@ -196,9 +198,9 @@ PS>  Get-ChildItem -Path C:\Test\Logs -Exclude A*
 
 Mode                LastWriteTime         Length Name
 ----                -------------         ------ ----
-d----         2/15/2019     13:21                Backup
--a---         2/13/2019     13:26             20 LogFile1.txt
--a---         2/12/2019     16:24             23 systemlog1.log
+d-----        2/15/2019     13:21                Backup
+-a----        2/13/2019     13:26             20 LogFile1.txt
+-a----        2/12/2019     16:24             23 systemlog1.log
 
 
 PS> Get-ChildItem -Path C:\Test\Logs\* -Exclude A*
@@ -207,15 +209,15 @@ PS> Get-ChildItem -Path C:\Test\Logs\* -Exclude A*
 
 Mode                LastWriteTime         Length Name
 ----                -------------         ------ ----
--a---         2/12/2019     15:50             20 LogFile3.txt
--a---         2/12/2019     16:24             23 systemlog1.log
+-a----        2/12/2019     15:50             20 LogFile3.txt
+-a----        2/12/2019     16:24             23 systemlog1.log
 
     Directory: C:\Test\Logs
 
 Mode                LastWriteTime         Length Name
 ----                -------------         ------ ----
--a---         2/13/2019     13:26             20 LogFile1.txt
--a---         2/12/2019     16:24             23 systemlog1.log
+-a----        2/13/2019     13:26             20 LogFile1.txt
+-a----        2/12/2019     16:24             23 systemlog1.log
 
 
 PS> Get-ChildItem -Path C:\Test\Logs\* -Exclude A* -Recurse
@@ -224,28 +226,28 @@ PS> Get-ChildItem -Path C:\Test\Logs\* -Exclude A* -Recurse
 
 Mode                LastWriteTime         Length Name
 ----                -------------         ------ ----
--a---         2/13/2019     13:26             20 LogFile4.txt
--a---         2/12/2019     16:24             23 systemlog1.log
+-a----        2/13/2019     13:26             20 LogFile4.txt
+-a----        2/12/2019     16:24             23 systemlog1.log
 
     Directory: C:\Test\Logs
 
 Mode                LastWriteTime         Length Name
 ----                -------------         ------ ----
-d----         2/15/2019     13:21                Backup
+d-----        2/15/2019     13:21                Backup
 
     Directory: C:\Test\Logs\Backup
 
 Mode                LastWriteTime         Length Name
 ----                -------------         ------ ----
--a---         2/12/2019     15:50             20 LogFile3.txt
--a---         2/12/2019     16:24             23 systemlog1.log
+-a----        2/12/2019     15:50             20 LogFile3.txt
+-a----        2/12/2019     16:24             23 systemlog1.log
 
     Directory: C:\Test\Logs
 
 Mode                LastWriteTime         Length Name
 ----                -------------         ------ ----
--a---         2/13/2019     13:26             20 LogFile1.txt
--a---         2/12/2019     16:24             23 systemlog1.log
+-a----        2/13/2019     13:26             20 LogFile1.txt
+-a----        2/12/2019     16:24             23 systemlog1.log
 ```
 
 The example's output shows the contents of the directory **C:\Test\Logs**. The output is a reference
@@ -323,22 +325,22 @@ Get-ChildItem -Path C:\Parent -Depth 2
 
 Mode                LastWriteTime         Length Name
 ----                -------------         ------ ----
-d----         2/14/2019     10:24                SubDir_Level1
--a---         2/13/2019     08:55             26 file.txt
+d-----        2/14/2019     10:24                SubDir_Level1
+-a----        2/13/2019     08:55             26 file.txt
 
     Directory: C:\Parent\SubDir_Level1
 
 Mode                LastWriteTime         Length Name
 ----                -------------         ------ ----
-d----         2/14/2019     10:24                SubDir_Level2
--a---         2/13/2019     08:55             26 file.txt
+d-----        2/14/2019     10:24                SubDir_Level2
+-a----        2/13/2019     08:55             26 file.txt
 
     Directory: C:\Parent\SubDir_Level1\SubDir_Level2
 
 Mode                LastWriteTime         Length Name
 ----                -------------         ------ ----
-d----         2/14/2019     10:22                SubDir_Level3
--a---         2/13/2019     08:55             26 file.txt
+d-----        2/14/2019     10:22                SubDir_Level3
+-a----        2/13/2019     08:55             26 file.txt
 ```
 
 The `Get-ChildItem` cmdlet uses the **Path** parameter to specify **C:\Parent**. The **Depth**

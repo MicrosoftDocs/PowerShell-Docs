@@ -431,11 +431,12 @@ Begin: The input is
 End:   The input is 1 2 4
 ```
 
-When the `Begin` statement runs, the function does not have the input from
-the pipeline. The `End` statement runs after the function has the values.
+When the `Begin` statement runs, the function does not have the input from the
+pipeline. The `End` statement runs after the function has the values.
 
-If the function has a `Process` keyword, the function reads the data in
-`$input`. The following example has a `Process` statement list:
+If the function has a `Process` keyword, each object in `$input` is removed
+from `$input` and assigned to `$_`. The following example has a `Process`
+statement list:
 
 ```powershell
 function Get-PipelineInput
