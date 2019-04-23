@@ -1,11 +1,12 @@
 ---
-ms.date: 1/8/2019
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821815
-external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-title:  Import-Csv
+external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Utility
+ms.date: 04/23/2019
+online version: http://go.microsoft.com/fwlink/?LinkId=821815
+schema: 2.0.0
+title: Import-Csv
 ---
 # Import-Csv
 
@@ -45,6 +46,9 @@ that they do not deal with files.
 
 If a header row entry in a CSV file contains an empty or null value, PowerShell inserts a default
 header row name and displays a warning message.
+
+`Import-Csv` uses the byte-order-mark (BOM) to detect the encoding format of the file. If the
+file has no BOM, it assumes the encoding is UTF8.
 
 ## EXAMPLES
 
@@ -317,19 +321,15 @@ Accept wildcard characters: False
 
 ### -Encoding
 
-Specifies the encoding for the exported CSV file. The default value is **ASCII**.
+Specifies the type of encoding for the target file. The default value is **Default**.
 
 The acceptable values for this parameter are as follows:
 
 - **ASCII** Uses ASCII (7-bit) character set.
 - **BigEndianUnicode** Uses UTF-16 with the big-endian byte order.
-- **BigEndianUTF32** Uses UTF-32 with the big-endian byte order.
-- **Byte** Encodes a set of characters into a sequence of bytes.
-- **Default** Uses the encoding that corresponds to the system's active code page.
+- **Default** Uses the encoding that corresponds to the system's active code page (usually ANSI).
 - **OEM** Uses the encoding that corresponds to the system's current OEM code page.
-- **String** Same as **Unicode**.
 - **Unicode** Uses UTF-16 with the little-endian byte order.
-- **Unknown** Same as **Unicode**.
 - **UTF7** Uses UTF-7.
 - **UTF8** Uses UTF-8.
 - **UTF32** Uses UTF-32 with the little-endian byte order.
@@ -342,7 +342,7 @@ Accepted values: ASCII, BigEndianUnicode, BigEndianUTF32, Byte, Default, OEM, St
 
 Required: False
 Position: Named
-Default value: ASCII
+Default value: Default
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

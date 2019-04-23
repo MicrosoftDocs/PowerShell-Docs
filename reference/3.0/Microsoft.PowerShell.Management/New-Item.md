@@ -1,5 +1,5 @@
 ---
-ms.date:  10/18/2018
+ms.date:  04/23/2019
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -10,7 +10,6 @@ title:  New-Item
 # New-Item
 
 ## SYNOPSIS
-
 Creates a new item.
 
 ## SYNTAX
@@ -79,6 +78,10 @@ For more information, see [about_Automatic_Variables](../Microsoft.PowerShell.Co
 ```powershell
 New-Item -Path $profile -ItemType "file" -Force
 ```
+
+> [!NOTE]
+> When you create a file using this method, the resulting file is encoded as UTF-8 without a
+> byte-order-mark (BOM).
 
 ### Example 4: Create a directory in a different directory
 
@@ -155,6 +158,9 @@ If your location is in a `FileSystem` drive, the following values are allowed:
 - Directory
 - Junction
 - HardLink
+
+When you create a file using this method, the resulting file is encoded as UTF-8 without a
+byte-order-mark (BOM).
 
 In a `Certificate` drive, these are the values you can specify:
 
