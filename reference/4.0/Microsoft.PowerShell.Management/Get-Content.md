@@ -1,5 +1,5 @@
 ---
-md.date: 4/1/2019
+md.date: 04/23/2019
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -487,7 +487,7 @@ Accept wildcard characters: False
 
 ### -Encoding
 
-Specifies the type of encoding for the target file. The default value is **ASCII**.
+Specifies the type of encoding for the target file. The default value is **Default**.
 
 The acceptable values for this parameter are as follows:
 
@@ -495,7 +495,7 @@ The acceptable values for this parameter are as follows:
 - **BigEndianUnicode** Uses UTF-16 with the big-endian byte order.
 - **BigEndianUTF32** Uses UTF-32 with the big-endian byte order.
 - **Byte** Encodes a set of characters into a sequence of bytes.
-- **Default** Uses the encoding that corresponds to the system's active code page.
+- **Default** Uses the encoding that corresponds to the system's active code page (usually ANSI).
 - **OEM** Uses the encoding that corresponds to the system's current OEM code page.
 - **String** Same as **Unicode**.
 - **Unicode** Uses UTF-16 with the little-endian byte order.
@@ -505,7 +505,7 @@ The acceptable values for this parameter are as follows:
 - **UTF32** Uses UTF-32 with the little-endian byte order.
 
 Encoding is a dynamic parameter that the **FileSystem** provider adds to the `Get-Content` cmdlet.
-This parameter is available only in file system drives.
+This parameter works only in file system drives.
 
 When reading from and writing to binary files, use a value of **Byte** for the **Encoding** dynamic
 parameter and a value of 0 for the **ReadCount** parameter. A **ReadCount** value of 0 reads the
@@ -521,7 +521,7 @@ Accepted values: ASCII, BigEndianUnicode, BigEndianUTF32, Byte, Default, OEM, St
 
 Required: False
 Position: Named
-Default value: ASCII
+Default value: Default
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
