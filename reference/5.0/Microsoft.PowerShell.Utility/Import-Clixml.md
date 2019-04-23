@@ -11,7 +11,7 @@ title: Import-Clixml
 # Import-Clixml
 
 ## SYNOPSIS
-Imports a CLIXML file and creates corresponding objects in Windows PowerShell.
+Imports a CLIXML file and creates corresponding objects in PowerShell.
 
 ## SYNTAX
 
@@ -31,9 +31,9 @@ Import-Clixml -LiteralPath <String[]> [-IncludeTotalCount] [-Skip <UInt64>] [-Fi
 ## DESCRIPTION
 
 The `Import-Clixml` cmdlet imports a CLIXML file with data that represents Microsoft .NET Framework
-objects and creates the objects in Windows PowerShell. A valuable use of `Import-Clixml` is to
-import credentials and secure strings that have been exported as secure XML by running the
-`Export-Clixml` cmdlet.
+objects and creates the objects in PowerShell. A valuable use of `Import-Clixml` is to import
+credentials and secure strings that have been exported as secure XML by running the `Export-Clixml`
+cmdlet.
 
 `Import-Clixml` uses the byte-order-mark (BOM) to detect the encoding format of the file. If the
 file has no BOM, it assumes the encoding is UTF8.
@@ -119,8 +119,8 @@ Accept wildcard characters: False
 
 Specifies the XML files. Unlike **Path**, the value of the **LiteralPath** parameter is used exactly
 as it is typed. No characters are interpreted as wildcards. If the path includes escape characters,
-enclose it in single quotation marks. Single quotation marks tell Windows PowerShell not to
-interpret any characters as escape sequences.
+enclose it in single quotation marks. Single quotation marks tell PowerShell not to interpret any
+characters as escape sequences.
 
 ```yaml
 Type: String[]

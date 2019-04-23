@@ -238,9 +238,9 @@ Aliases: Name
 
 Required: False
 Position: 2
-Default value: None
+Default value: All commands in the session.
 Accept pipeline input: False
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -CommandType
@@ -270,7 +270,7 @@ Accepted values: Alias, All, Application, Cmdlet, Configuration, ExternalScript,
 
 Required: False
 Position: Named
-Default value: None
+Default value: All commands in the session.
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -294,7 +294,7 @@ The acceptable values for this parameter are as follows:
 Type: String
 Parameter Sets: (All)
 Aliases:
-Accepted values: ASCII, BigEndianUnicode, BigEndianUTF32, Byte, Default, OEM, String, Unicode, Unknown, UTF7, UTF8, UTF32
+Accepted values: ASCII, BigEndianUnicode, Default, OEM, Unicode, UTF7, UTF8, UTF32
 
 Required: False
 Position: Named
@@ -390,7 +390,7 @@ Aliases: PSSnapin
 
 Required: False
 Position: Named
-Default value: None
+Default value: All commands in the session.
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -398,7 +398,7 @@ Accept wildcard characters: False
 ### -OutputModule
 
 Specifies an optional path and name for the module created by `Export-PSSession`. The default path
-is `$home`\Documents\WindowsPowerShell\Modules. This parameter is required.
+is `$home\Documents\WindowsPowerShell\Modules`. This parameter is required.
 
 If the module subdirectory or any of the files that `Export-PSSession` creates already exist, the
 command fails. To overwrite existing files, use the **Force** parameter.
@@ -410,7 +410,7 @@ Aliases: PSPath, ModuleName
 
 Required: True
 Position: 1
-Default value: None
+Default value: $home\Documents\WindowsPowerShell\Modules
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

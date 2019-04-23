@@ -106,11 +106,11 @@ The acceptable values for this parameter are as follows:
 Type: String
 Parameter Sets: ByInputObject
 Aliases:
-Accepted values: ASCII, BigEndianUnicode, BigEndianUTF32, Byte, Default, OEM, String, Unicode, Unknown, UTF7, UTF8, UTF32
+Accepted values: ASCII, BigEndianUnicode, Unicode, UTF7, UTF8, UTF32
 
 Required: False
 Position: Named
-Default value: ASCII
+Default value: Default
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

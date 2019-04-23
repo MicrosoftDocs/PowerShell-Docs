@@ -273,7 +273,7 @@ The acceptable values for this parameter are as follows:
 Type: String
 Parameter Sets: (All)
 Aliases:
-Accepted values: ASCII, BigEndianUnicode, BigEndianUTF32, Byte, Default, OEM, String, Unicode, Unknown, UTF7, UTF8, UTF32
+Accepted values: ASCII, BigEndianUnicode, Default, OEM, Unicode, UTF7, UTF8, UTF32
 
 Required: False
 Position: Named
@@ -349,7 +349,7 @@ Accept wildcard characters: False
 ### -OutputModule
 
 Specifies an optional path and name for the module created by `Export-PSSession`. The default path
-is `$home`\Documents\WindowsPowerShell\Modules. This parameter is required.
+is `$home\Documents\WindowsPowerShell\Modules`. This parameter is required.
 
 If the module subdirectory or any of the files that `Export-PSSession` creates already exist, the
 command fails. To overwrite existing files, use the **Force** parameter.
