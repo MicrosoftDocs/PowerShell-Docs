@@ -260,7 +260,7 @@ Aliases:
 
 Required: False
 Position: 2
-Default value: None
+Default value: 1
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -310,12 +310,12 @@ Accept wildcard characters: False
 
 Specifies the mode of access that triggers variable breakpoints. The default is **Write**.
 
-This parameter is valid only when the **Variable** parameter is used in the command. The mode applies
-to all breakpoints set in the command. The acceptable values for this parameter are:
+This parameter is valid only when the **Variable** parameter is used in the command. The mode
+applies to all breakpoints set in the command. The acceptable values for this parameter are:
 
 - **Write** - Stops execution immediately before a new value is written to the variable.
-- **Read** - Stops execution when the variable is read, that is, when its value is accessed, either to
-  be assigned, displayed, or used. In read mode, execution does not stop when the value of the
+- **Read** - Stops execution when the variable is read, that is, when its value is accessed, either
+  to be assigned, displayed, or used. In read mode, execution does not stop when the value of the
   variable changes.
 - **ReadWrite** - Stops execution when the variable is read or written.
 
