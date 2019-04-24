@@ -3,12 +3,11 @@ external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 2/6/2019
+ms.date: 04/23/2019
 online version: http://go.microsoft.com/fwlink/?LinkId=821839
 schema: 2.0.0
 title: Out-File
 ---
-
 # Out-File
 
 ## SYNOPSIS
@@ -136,7 +135,9 @@ file's content in the PowerShell console.
 
 ### -Append
 
-Adds the output to the end of an existing file.
+Adds the output to the end of an existing file. If no **Encoding** is specified, the cmdlet uses the
+default encoding. That encoding may not match the encoding of the target file. This is the same
+behavior as the redirection operator (`>>`).
 
 ```yaml
 Type: SwitchParameter
@@ -152,15 +153,13 @@ Accept wildcard characters: False
 
 ### -Encoding
 
-Specifies the type of encoding for the target file. The default value is **ASCII**.
+Specifies the type of encoding for the target file. The default value is **Unicode**.
 
 The acceptable values for this parameter are as follows:
 
 - **ASCII** Uses ASCII (7-bit) character set.
 - **BigEndianUnicode** Uses UTF-16 with the big-endian byte order.
-- **BigEndianUTF32** Uses UTF-32 with the big-endian byte order.
-- **Byte** Encodes a set of characters into a sequence of bytes.
-- **Default** Uses the encoding that corresponds to the system's active code page.
+- **Default** Uses the encoding that corresponds to the system's active code page (usually ANSI).
 - **OEM** Uses the encoding that corresponds to the system's current OEM code page.
 - **String** Same as **Unicode**.
 - **Unicode** Uses UTF-16 with the little-endian byte order.
@@ -173,11 +172,11 @@ The acceptable values for this parameter are as follows:
 Type: String
 Parameter Sets: (All)
 Aliases:
-Accepted values: ASCII, BigEndianUnicode, BigEndianUTF32, Byte, Default, OEM, String, Unicode, Unknown, UTF7, UTF8, UTF32
+Accepted values: ASCII, BigEndianUnicode, Default, OEM, String, Unicode, Unknown, UTF7, UTF8, UTF32
 
 Required: False
 Position: 1
-Default value: ASCII
+Default value: Unicode
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

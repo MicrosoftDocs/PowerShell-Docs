@@ -1,11 +1,12 @@
 ---
-ms.date:  2/4/2019
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821773
-external help file:  Microsoft.PowerShell.Utility-help.xml
-title:  Format-Hex
+external help file: Microsoft.PowerShell.Utility-help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Utility
+ms.date: 04/23/2019
+online version: http://go.microsoft.com/fwlink/?LinkId=821773
+schema: 2.0.0
+title: Format-Hex
 ---
 # Format-Hex
 
@@ -74,7 +75,7 @@ Format-Hex -Path .\File.t7f
 
 ```Output
            Path: C:\Test\File.t7f
-           
+
            00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
 
 00000000   25 50 44 46 2D 31 2E 35 0D 0A 25 B5 B5 B5 B5 0D  %PDF-1.5..%????.
@@ -90,19 +91,13 @@ extension **.t7f** is uncommon, but the hexadecimal output **%PDF** shows that i
 
 ### -Encoding
 
-Specifies the type of encoding for the target file. The default value is **ASCII**.
+Specifies the type of encoding for the target file. The default value is **Default**.
 
 The acceptable values for this parameter are as follows:
 
 - **ASCII** Uses ASCII (7-bit) character set.
 - **BigEndianUnicode** Uses UTF-16 with the big-endian byte order.
-- **BigEndianUTF32** Uses UTF-32 with the big-endian byte order.
-- **Byte** Encodes a set of characters into a sequence of bytes.
-- **Default** Uses the encoding that corresponds to the system's active code page.
-- **OEM** Uses the encoding that corresponds to the system's current OEM code page.
-- **String** Same as **Unicode**.
 - **Unicode** Uses UTF-16 with the little-endian byte order.
-- **Unknown** Same as **Unicode**.
 - **UTF7** Uses UTF-7.
 - **UTF8** Uses UTF-8.
 - **UTF32** Uses UTF-32 with the little-endian byte order.
@@ -111,11 +106,11 @@ The acceptable values for this parameter are as follows:
 Type: String
 Parameter Sets: ByInputObject
 Aliases:
-Accepted values: ASCII, BigEndianUnicode, BigEndianUTF32, Byte, Default, OEM, String, Unicode, Unknown, UTF7, UTF8, UTF32
+Accepted values: ASCII, BigEndianUnicode, Unicode, UTF7, UTF8, UTF32
 
 Required: False
 Position: Named
-Default value: ASCII
+Default value: Default
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

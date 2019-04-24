@@ -1,11 +1,12 @@
 ---
-ms.date:  1/22/2019
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821767
-external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-title:  Export-Clixml
+external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Utility
+ms.date: 04/23/2019
+online version: http://go.microsoft.com/fwlink/?LinkId=821767
+schema: 2.0.0
+title: Export-Clixml
 ---
 # Export-Clixml
 
@@ -130,26 +131,22 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: 2
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -Encoding
 
-Specifies the type of encoding for the target file. The default value is **ASCII**.
+Specifies the type of encoding for the target file. The default value is **Unicode**.
 
 The acceptable values for this parameter are as follows:
 
 - **ASCII** Uses ASCII (7-bit) character set.
 - **BigEndianUnicode** Uses UTF-16 with the big-endian byte order.
-- **BigEndianUTF32** Uses UTF-32 with the big-endian byte order.
-- **Byte** Encodes a set of characters into a sequence of bytes.
-- **Default** Uses the encoding that corresponds to the system's active code page.
+- **Default** Uses the encoding that corresponds to the system's active code page (usually ANSI).
 - **OEM** Uses the encoding that corresponds to the system's current OEM code page.
-- **String** Same as **Unicode**.
 - **Unicode** Uses UTF-16 with the little-endian byte order.
-- **Unknown** Same as **Unicode**.
 - **UTF7** Uses UTF-7.
 - **UTF8** Uses UTF-8.
 - **UTF32** Uses UTF-32 with the little-endian byte order.
@@ -158,16 +155,18 @@ The acceptable values for this parameter are as follows:
 Type: String
 Parameter Sets: (All)
 Aliases:
-Accepted values: ASCII, BigEndianUnicode, BigEndianUTF32, Byte, Default, OEM, String, Unicode, Unknown, UTF7, UTF8, UTF32
+Accepted values: ASCII, BigEndianUnicode, Default, OEM, Unicode, UTF7, UTF8, UTF32
 
 Required: False
 Position: Named
-Default value: ASCII
+Default value: Unicode
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -Force
+
+Forces the command to run without asking for user confirmation.
 
 Causes the cmdlet to clear the read-only attribute of the output file if necessary. The cmdlet will
 attempt to reset the read-only attribute when the command completes.
@@ -206,8 +205,8 @@ Accept wildcard characters: False
 Specifies the path to the file where the XML representation of the object will be stored. Unlike
 **Path**, the value of the **LiteralPath** parameter is used exactly as it is typed. No characters
 are interpreted as wildcards. If the path includes escape characters, enclose it in single
-quotation marks. Single quotation marks tell Windows PowerShell not to interpret any characters as
-escape sequences.
+quotation marks. Single quotation marks tell PowerShell not to interpret any characters as escape
+sequences.
 
 ```yaml
 Type: String

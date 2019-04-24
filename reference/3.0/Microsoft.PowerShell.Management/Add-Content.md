@@ -1,5 +1,5 @@
 ---
-ms.date:  1/28/2019
+ms.date:  04/23/2019
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -7,7 +7,6 @@ online version:  http://go.microsoft.com/fwlink/?LinkID=113278
 external help file:  Microsoft.PowerShell.Commands.Management.dll-Help.xml
 title:  Add-Content
 ---
-
 # Add-Content
 
 ## SYNOPSIS
@@ -157,10 +156,7 @@ set to `False`.
 
 ### -Encoding
 
-Specifies the type of encoding for the target file. The default value is **ASCII**.
-
-Encoding is a dynamic parameter that the FileSystem provider adds to the `Add-Content` cmdlet. This
-parameter works only in file system drives.
+Specifies the type of encoding for the target file. The default value is **Default**.
 
 The acceptable values for this parameter are as follows:
 
@@ -168,7 +164,7 @@ The acceptable values for this parameter are as follows:
 - **BigEndianUnicode** Uses UTF-16 with the big-endian byte order.
 - **BigEndianUTF32** Uses UTF-32 with the big-endian byte order.
 - **Byte** Encodes a set of characters into a sequence of bytes.
-- **Default** Uses the encoding that corresponds to the system's active code page.
+- **Default** Uses the encoding that corresponds to the system's active code page (usually ANSI).
 - **OEM** Uses the encoding that corresponds to the system's current OEM code page.
 - **String** Same as **Unicode**.
 - **Unicode** Uses UTF-16 with the little-endian byte order.
@@ -176,6 +172,9 @@ The acceptable values for this parameter are as follows:
 - **UTF7** Uses UTF-7.
 - **UTF8** Uses UTF-8.
 - **UTF32** Uses UTF-32 with the little-endian byte order.
+
+Encoding is a dynamic parameter that the FileSystem provider adds to the `Add-Content` cmdlet. This
+parameter works only in file system drives.
 
 ```yaml
 Type: FileSystemCmdletProviderEncoding
@@ -185,7 +184,7 @@ Accepted values: ASCII, BigEndianUnicode, BigEndianUTF32, Byte, Default, OEM, St
 
 Required: False
 Position: Named
-Default value: ASCII
+Default value: Default
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
