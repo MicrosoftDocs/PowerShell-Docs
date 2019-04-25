@@ -6,18 +6,12 @@ trigger:
     - staging
   paths:
     include:
-    - reference/**/*
-    - build.ps1
-    - ci.yml
-    - ci-steps.yml
-    - .openpublishing.build.ps1
-    - .openpublishing.publish.config.json
-    - .openpublishing.redirection.json
-    - tests/**/*
-    - '**/docfx.json'
-    - '**/TOC.yml'
-    - '**/toc.yml'
-    - '**/*.md'
+      - '*'
+    exclude:
+      - .github/*
+      - .vscode/*
+      - contributing/*
+      - tools/terms/*
 
 pr:
   branches:
@@ -26,18 +20,12 @@ pr:
     - live
   paths:
     include:
-    - reference/**/*
-    - build.ps1
-    - ci.yml
-    - ci-steps.yml
-    - .openpublishing.build.ps1
-    - .openpublishing.publish.config.json
-    - .openpublishing.redirection.json
-    - tests/**/*
-    - '**/docfx.json'
-    - '**/TOC.yml'
-    - '**/toc.yml'
-    - '**/*.md'
+      - '*'
+    exclude:
+      - .github/*
+      - .vscode/*
+      - contributing/*
+      - tools/terms/*
 
 resources:
 - repo: self
