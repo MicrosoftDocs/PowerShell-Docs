@@ -3,7 +3,7 @@ external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 03/01/2019
+ms.date: 04/25/2019
 online version: http://go.microsoft.com/fwlink/?LinkId=821773
 schema: 2.0.0
 title: Format-Hex
@@ -40,8 +40,11 @@ offset of a character from the output, add the number at the leftmost of the row
 the top of the column for that character.
 
 The `Format-Hex` cmdlet can help you determine the file type of a corrupted file or a file that
-might not have a file name extension. You can run this cmdlet, and then read the hexadecimal output
+might not have a filename extension. You can run this cmdlet, and then read the hexadecimal output
 to get file information.
+
+When using `Format-Hex` on a file, the cmdlet ignores newline characters and returns the entire
+contents of a file in one string with the newline characters preserved.
 
 ## EXAMPLES
 
@@ -64,7 +67,8 @@ output from `Format-Hex` shows the values of each character in the string.
 
 ### Example 2: Find a file type from hexadecimal output
 
-This example uses the hexadecimal output to determine the file type.
+This example uses the hexadecimal output to determine the file type. The cmdlet displays the file's
+full path and the hexadecimal values.
 
 To test the following command, make a copy of an existing PDF file on your local computer and rename
 the copied file to **File.t7f**.
@@ -83,15 +87,16 @@ Format-Hex -Path .\File.t7f
 00000020   65 2F 43 61 74 61 6C 6F 67 2F 50 61 67 65 73 20  e/Catalog/Pages
 ```
 
-The `Format-Hex` cmdlet uses the **Path** parameter to specify a file name in the current directory,
-**File.t7f**. This command displays the file's full path and the hexadecimal values. The file's
-extension **.t7f** is uncommon, but the hexadecimal output **%PDF** shows that it is a PDF file.
+The `Format-Hex` cmdlet uses the **Path** parameter to specify a filename in the current directory,
+**File.t7f**. The file extension **.t7f** is uncommon, but the hexadecimal output **%PDF** shows
+that it is a PDF file.
 
 ## PARAMETERS
 
 ### -Encoding
 
-Specifies the type of encoding for the target file. The default value is **UTF8NoBOM**.
+Specifies the encoding of the output. This only applies to `[string]` input. The parameter has no
+effect on numeric types. The default value is **UTF8NoBOM**. 
 
 The acceptable values for this parameter are as follows:
 
@@ -125,8 +130,17 @@ Accept wildcard characters: False
 
 ### -InputObject
 
-Specifies the objects to be formatted. Enter a variable that contains the objects or type a command
-or expression that gets the objects.
+Used for pipeline input. Pipeline input supports only certain scalar types and `[system.io.fileinfo]`
+instances for piping from `Get-ChildItem`.
+
+The supported scalar types are:
+
+- `[string]`, `[char]`
+- `[byte]`, `[sbyte]`
+- `[int16]`, `[uint16]`, `[short]`, `[ushort]`
+- `[int]`, `[uint]`, `[int32]`, `[uint32]`,
+- `[long]`, `[ulong]`, `[int64]`, `[uint64]`
+- `[single]`, `[float]`, `[double]`
 
 ```yaml
 Type: PSObject
@@ -181,12 +195,7 @@ Accept wildcard characters: True
 
 ### -Raw
 
-Ignores newline characters and returns the entire contents of a file in one string with the newlines
-preserved. By default, newline characters in a file are used as delimiters to separate the input
-into an array of strings. This parameter was introduced in PowerShell 3.0.
-
-**Raw** is a dynamic parameter that the **FileSystem** provider adds and works only in file system
-drives.
+This parameter no longer does anything. It is retained for script compatibility.
 
 ```yaml
 Type: SwitchParameter
@@ -254,6 +263,14 @@ by `Format-Hex`. If you specify the **Path** or **LiteralPath** parameter, the o
 the path of the file that contains each byte.
 
 ## NOTES
+
+The right-most column of output tries to render the bytes as characters:
+
+Generally, each byte is interpreted as a Unicode code point, which means that:
+
+- Printable ASCII characters are always rendered correctly
+- Multi-byte UTF-8 characters never render correctly
+- UTF-16 characters render correctly only if their high-order byte happens be `NUL`.
 
 ## RELATED LINKS
 
