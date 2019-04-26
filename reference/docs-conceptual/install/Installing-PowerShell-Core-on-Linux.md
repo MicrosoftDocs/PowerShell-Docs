@@ -567,8 +567,8 @@ sudo snap remove powershell-preview
 
 ```sh
 # Download & Install prerequisites
-wget http://ftp.us.debian.org/debian/pool/main/i/icu/libicu57_57.1-9_amd64.deb
-dpkg -i libicu57_57.1-9_amd64.deb
+wget http://ftp.us.debian.org/debian/pool/main/i/icu/libicu57_57.1-6+deb9u2_amd64.deb
+dpkg -i libicu57_57.1-6+deb9u2_amd64.deb
 apt-get update && apt-get install -y curl gnupg apt-transport-https
 
 # Add Microsoft public repository key to APT
