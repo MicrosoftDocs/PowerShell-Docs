@@ -8,7 +8,6 @@ online version: http://go.microsoft.com/fwlink/?LinkId=821669
 schema: 2.0.0
 title: Save-Module
 ---
-
 # Save-Module
 
 ## SYNOPSIS
@@ -17,6 +16,7 @@ Saves a module locally without installing it.
 ## SYNTAX
 
 ### NameAndPathParameterSet (Default)
+
 ```
 Save-Module [-Name] <String[]> [-MinimumVersion <String>] [-MaximumVersion <String>]
  [-RequiredVersion <String>] [-Repository <String[]>] -Path <String> [-Proxy <Uri>]
@@ -25,6 +25,7 @@ Save-Module [-Name] <String[]> [-MinimumVersion <String>] [-MaximumVersion <Stri
 ```
 
 ### NameAndLiteralPathParameterSet
+
 ```
 Save-Module [-Name] <String[]> [-MinimumVersion <String>] [-MaximumVersion <String>]
  [-RequiredVersion <String>] [-Repository <String[]>] -LiteralPath <String> [-Proxy <Uri>]
@@ -33,24 +34,28 @@ Save-Module [-Name] <String[]> [-MinimumVersion <String>] [-MaximumVersion <Stri
 ```
 
 ### InputOjectAndLiteralPathParameterSet
+
 ```
 Save-Module [-InputObject] <PSObject[]> -LiteralPath <String> [-Proxy <Uri>] [-ProxyCredential <PSCredential>]
  [-Credential <PSCredential>] [-Force] [-AcceptLicense] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### InputOjectAndPathParameterSet
+
 ```
 Save-Module [-InputObject] <PSObject[]> -Path <String> [-Proxy <Uri>] [-ProxyCredential <PSCredential>]
  [-Credential <PSCredential>] [-Force] [-AcceptLicense] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+
 The **Save-Module** cmdlet saves a module locally from the specified repository for inspection.
 The module is not installed.
 
 ## EXAMPLES
 
 ### Example 1: Find modules and save them locally
+
 ```
 PS C:\> Find-Module -Name "AzureAutomationDebug" -Repository "PSGallery"
 Version    Name                                Type       Repository           Description
@@ -101,6 +106,7 @@ The final command displays the contents of the C:\MyLocalModules folder.
 ## PARAMETERS
 
 ### -AcceptLicense
+
 Automatically accept the license agreement if the package requires it.
 
 
@@ -117,6 +123,7 @@ Accept wildcard characters: False
 ```
 
 ### -AllowPrerelease
+
 Allows you to save a module marked as a prerelease.
 
 ```yaml
@@ -146,6 +153,7 @@ Accept wildcard characters: False
 ```
 
 ### -Force
+
 Forces the command to run without asking for user confirmation.
 
 ```yaml
@@ -161,6 +169,7 @@ Accept wildcard characters: False
 ```
 
 ### -InputObject
+
 Specifies a package by using the module's SoftwareID object, which is shown in the results of the Find-Module cmdlet.
 
 ```yaml
@@ -176,6 +185,7 @@ Accept wildcard characters: False
 ```
 
 ### -LiteralPath
+
 Specifies a path to one or more locations.
 Unlike the *Path* parameter, the value of the *LiteralPath* parameter is used exactly as entered.
 No characters are interpreted as wildcards.
@@ -195,6 +205,7 @@ Accept wildcard characters: False
 ```
 
 ### -MaximumVersion
+
 Specifies the maximum, or newest, version of the module to save.
 The *MaximumVersion* and *RequiredVersion* parameters are mutually exclusive; you cannot use both parameters in the same command.
 
@@ -211,6 +222,7 @@ Accept wildcard characters: False
 ```
 
 ### -MinimumVersion
+
 Specifies the minimum version of a single module to save.
 You cannot add this parameter if you are attempting to install multiple modules.
 The *MinimumVersion* and *RequiredVersion* parameters are mutually exclusive; you cannot use both parameters in the same command.
@@ -228,6 +240,7 @@ Accept wildcard characters: False
 ```
 
 ### -Name
+
 Specifies an array of names of modules to save.
 
 ```yaml
@@ -243,6 +256,7 @@ Accept wildcard characters: False
 ```
 
 ### -Path
+
 Specifies the path to the module that you want to publish.
 This parameter accepts either the path to the folder that contains the module, or the module manifest (.psd1) file.
 The parameter accepts piped values from Get-Module.
@@ -288,6 +302,7 @@ Accept wildcard characters: False
 ```
 
 ### -Repository
+
 Specifies the friendly name of a repository that has been registered by running Register-PSRepository.
 
 ```yaml
@@ -303,6 +318,7 @@ Accept wildcard characters: False
 ```
 
 ### -RequiredVersion
+
 Specifies the exact version number of the module to save.
 
 ```yaml
@@ -318,6 +334,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
+
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
@@ -333,6 +350,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
+
 Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
@@ -349,6 +367,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS

@@ -8,7 +8,6 @@ online version: http://go.microsoft.com/fwlink/?LinkID=517132
 schema: 2.0.0
 title: Find-Package
 ---
-
 # Find-Package
 
 ## SYNOPSIS

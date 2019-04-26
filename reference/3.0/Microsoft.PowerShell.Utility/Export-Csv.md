@@ -388,7 +388,7 @@ Accept wildcard characters: False
 
 ### -Encoding
 
-Specifies the type of encoding for the target file. The default value is **Default**.
+Specifies the type of encoding for the target file. The default value is **ASCII**.
 
 The acceptable values for this parameter are as follows:
 
@@ -409,7 +409,7 @@ Accepted values: ASCII, BigEndianUnicode, Default, OEM, Unicode, UTF7, UTF8, UTF
 
 Required: False
 Position: Named
-Default value: Default
+Default value: ASCII
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

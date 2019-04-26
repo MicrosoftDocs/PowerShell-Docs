@@ -8,7 +8,6 @@ online version: http://go.microsoft.com/fwlink/?LinkId=822306
 schema: 2.0.0
 title: Import-PackageProvider
 ---
-
 # Import-PackageProvider
 
 ## SYNOPSIS
@@ -22,6 +21,7 @@ Import-PackageProvider [-Name] <String[]> [-RequiredVersion <String>] [-MinimumV
 ```
 
 ## DESCRIPTION
+
 The **Import-PackageProvider** cmdlet adds one or more package providers to the current session.
 The provider that you import must be installed on the local computer.
 
@@ -34,6 +34,7 @@ For more information on how to build a provider with provider.manifest injected,
 ## EXAMPLES
 
 ### Example 1: Import a package provider from the local computer
+
 ```
 PS C:\> Import-PackageProvider -Name "Nuget"
 ```
@@ -41,6 +42,7 @@ PS C:\> Import-PackageProvider -Name "Nuget"
 This command imports the Nuget provider after it has been installed on the local computer.
 
 ### Example 2: Import a specific version of a package provider
+
 ```
 PS C:\> Find-PackageProvider -Name "Nuget" -AllVersions
 Install-PackageProvider -Name "Nuget" -RequiredVersion "2.8.5.201" -Force
@@ -53,6 +55,7 @@ This command finds, installs, and imports a specific version of the Nuget packag
 ## PARAMETERS
 
 ### -Force
+
 Forces the command to run without asking for user confirmation.
 Re-imports a package provider.
 
@@ -69,6 +72,7 @@ Accept wildcard characters: False
 ```
 
 ### -ForceBootstrap
+
 Indicates that this cmdlet forces Package Management to automatically install the package provider.
 
 ```yaml
@@ -84,6 +88,7 @@ Accept wildcard characters: False
 ```
 
 ### -MaximumVersion
+
 Specifies the maximum allowed version of the package provider that you want to import.
 If you do not add this parameter, **Import-PackageProvider** imports the highest available version of the provider.
 
@@ -100,6 +105,7 @@ Accept wildcard characters: False
 ```
 
 ### -MinimumVersion
+
 Specifies the minimum allowed version of the package provider that you want to import.
 If you do not add this parameter, **Import-PackageProvider** imports the highest available version of the package that also satisfies any maximum version that is specified using the *MaximumVersion* parameter.
 
@@ -116,6 +122,7 @@ Accept wildcard characters: False
 ```
 
 ### -Name
+
 Specifies one or more package provider names.
 Wildcards are not permitted.
 
@@ -132,6 +139,7 @@ Accept wildcard characters: False
 ```
 
 ### -RequiredVersion
+
 Specifies the exact version of the package provider that you want to import.
 If you do not add this parameter, **Import-PackageProvider** imports the highest available version of the provider that also satisfies any maximum version specified using the *MaximumVersion* parameter.
 
@@ -148,11 +156,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### Microsoft.PackageManagement.Implementation.PackageProvider
+
 You can pipe a **PackageProvider** object returned by **Get-PackageProvider** into **Import-PackageProvider**.
 
 ## OUTPUTS

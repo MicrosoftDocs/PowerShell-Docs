@@ -8,22 +8,22 @@ online version: http://go.microsoft.com/fwlink/?LinkID=517142
 schema: 2.0.0
 title: Uninstall-Package
 ---
-
 # Uninstall-Package
 
 ## SYNOPSIS
-
 Uninstalls one or more software packages.
 
 ## SYNTAX
 
 ### PackageByInputObject
+
 ```
 Uninstall-Package [-InputObject] <SoftwareIdentity[]> [-AllVersions] [-Force] [-ForceBootstrap] [-WhatIf]
  [-Confirm] [<CommonParameters>]
 ```
 
 ### PackageBySearch
+
 ```
 Uninstall-Package [-Name] <String[]> [-RequiredVersion <String>] [-MinimumVersion <String>]
  [-MaximumVersion <String>] [-AllVersions] [-Force] [-ForceBootstrap] [-WhatIf] [-Confirm]
@@ -31,18 +31,21 @@ Uninstall-Package [-Name] <String[]> [-RequiredVersion <String>] [-MinimumVersio
 ```
 
 ### NuGet:PackageByInputObject
+
 ```
 Uninstall-Package [-AllVersions] [-Force] [-ForceBootstrap] [-WhatIf] [-Confirm] [-Destination <String>]
  [-ExcludeVersion] [-Scope <String>] [-SkipDependencies] [<CommonParameters>]
 ```
 
 ### NuGet:PackageBySearch
+
 ```
 Uninstall-Package [-AllVersions] [-Force] [-ForceBootstrap] [-WhatIf] [-Confirm] [-Destination <String>]
  [-ExcludeVersion] [-Scope <String>] [-SkipDependencies] [<CommonParameters>]
 ```
 
 ### PowerShellGet:PackageByInputObject
+
 ```
 Uninstall-Package [-AllVersions] [-Force] [-ForceBootstrap] [-WhatIf] [-Confirm] [-Scope <String>]
  [-PackageManagementProvider <String>] [-Type <String>] [-AllowClobber] [-SkipPublisherCheck] [-InstallUpdate]
@@ -50,6 +53,7 @@ Uninstall-Package [-AllVersions] [-Force] [-ForceBootstrap] [-WhatIf] [-Confirm]
 ```
 
 ### PowerShellGet:PackageBySearch
+
 ```
 Uninstall-Package [-AllVersions] [-Force] [-ForceBootstrap] [-WhatIf] [-Confirm] [-Scope <String>]
  [-PackageManagementProvider <String>] [-Type <String>] [-AllowClobber] [-SkipPublisherCheck] [-InstallUpdate]
@@ -96,6 +100,7 @@ Accept wildcard characters: False
 ```
 
 ### -AllowPrereleaseVersions
+
 Allows packages marked as Prerelease to be uninstalled. 
 
 ```yaml
@@ -143,6 +148,7 @@ Accept wildcard characters: False
 ```
 
 ### -ExcludeVersion
+
 Switch to exclude the version number in the folder path.
 
 ```yaml
@@ -359,6 +365,7 @@ Accept wildcard characters: False
 ```
 
 ### -SkipDependencies
+
 Switch which specifies to skip searching for dependencies.
 
 ```yaml
@@ -443,6 +450,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
