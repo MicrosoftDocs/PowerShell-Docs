@@ -210,7 +210,7 @@ $Asset | Get-Member
 
 ```Output
    TypeName: Asset
-   
+
 Name        MemberType   Definition
 ----        ----------   ----------
 Equals      Method       bool Equals(System.Object obj)
@@ -427,40 +427,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -TypeName
-
-Specifies a name for the type.
-
-When the type is a class in the **System** namespace or a type that has a type accelerator, you can
-enter the short name of the type. Otherwise, the full type name is required.
-This parameter is effective only when the **InputObject** is a **PSObject**.
-
-This parameter was introduced in Windows PowerShell 3.0.
-
-```yaml
-Type: String
-Parameter Sets: TypeNameSet
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-```yaml
-Type: String
-Parameter Sets: NotePropertyMultiMemberSet, NotePropertySingleMemberSet, MemberSet
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Value
 
 Specifies the initial value of the added member.
@@ -474,6 +440,28 @@ Aliases:
 
 Required: False
 Position: 2
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -TypeName
+
+Specifies a name for the type.
+
+When the type is a class in the **System** namespace or a type that has a type accelerator, you can
+enter the short name of the type. Otherwise, the full type name is required.
+This parameter is effective only when the **InputObject** is a **PSObject**.
+
+This parameter was introduced in Windows PowerShell 3.0.
+
+```yaml
+Type: String
+Parameter Sets: TypeNameSet, NotePropertyMultiMemberSet, NotePropertySingleMemberSet, MemberSet
+Aliases:
+
+Required: True (TypeNameSet), False (NotePropertyMultiMemberSet, NotePropertySingleMemberSet, MemberSet)
+Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
