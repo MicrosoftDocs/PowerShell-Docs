@@ -8,7 +8,6 @@ online version: http://go.microsoft.com/fwlink/?LinkId=822336
 schema: 2.0.0
 title: Test-ScriptFileInfo
 ---
-
 # Test-ScriptFileInfo
 
 ## SYNOPSIS
@@ -17,22 +16,26 @@ Validates a comment block for a script.
 ## SYNTAX
 
 ### PathParameterSet (Default)
+
 ```
 Test-ScriptFileInfo [-Path] <String> [<CommonParameters>]
 ```
 
 ### LiteralPathParameterSet
+
 ```
 Test-ScriptFileInfo -LiteralPath <String> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+
 The **Test-ScriptFileInfo** cmdlet validates the comment block at the beginning of a script that will be published with the Publish-Script cmdlet.
 If the comment block has an error, this cmdlet returns information about where the error is located or how to correct it.
 
 ## EXAMPLES
 
 ### Example 1: Test a script file
+
 ```
 PS C:\> Test-ScriptFileInfo -Path "C:\temp\temp_scripts\New-ScriptFile.ps1"
 Version    Name                      Author               Description
@@ -44,6 +47,7 @@ This command tests the New-ScriptFile.ps1 script file and displays the results.
 The script file includes valid metadata.
 
 ### Example 2: Test a script file that has values for all metadata properties
+
 ```
 PS C:\> Test-ScriptFileInfo -Path "D:\code\Test-Runbook.ps1" | Format-List *
 Name                       : Test-Runbook
@@ -72,6 +76,7 @@ ExportedWorkflows          : My-Workflow
 This command tests the script file Test-Runbook.ps1 and uses the pipeline operator to pass the results to the Format-List cmdlet to format the results.
 
 ### Example 3: Test a script file that has no metadata
+
 ```
 PS C:\> Test-ScriptFileInfo -Path "D:\code\Hello-World.ps1"
 Test-ScriptFileInfo : Script 'D:\code\Hello-World.ps1' is missing required metadata properties. Verify that the script file has Version, Description
@@ -89,6 +94,7 @@ This command tests the script file Hello-World.ps1, which has no metadata associ
 ## PARAMETERS
 
 ### -LiteralPath
+
 Specifies a path to one or more locations.
 Unlike the *Path* parameter, the value of the *LiteralPath* parameter is used exactly as it is entered.
 No characters are interpreted as wildcards.
@@ -108,6 +114,7 @@ Accept wildcard characters: False
 ```
 
 ### -Path
+
 Specifies a path to one or more locations.
 Wildcards are permitted.
 The default location is the current directory (.).
@@ -125,6 +132,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS

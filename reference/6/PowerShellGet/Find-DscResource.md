@@ -131,6 +131,7 @@ term.
 ## PARAMETERS
 
 ### -AllowPrerelease
+
 Includes in the results resources marked as a prerelease.
 
 

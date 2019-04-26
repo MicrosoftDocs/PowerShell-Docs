@@ -8,7 +8,6 @@ online version: http://go.microsoft.com/fwlink/?LinkId=822331
 schema: 2.0.0
 title: Publish-Script
 ---
-
 # Publish-Script
 
 ## SYNOPSIS
@@ -17,23 +16,27 @@ Publishes a script.
 ## SYNTAX
 
 ### PathParameterSet (Default)
+
 ```
 Publish-Script -Path <String> [-NuGetApiKey <String>] [-Repository <String>] [-Credential <PSCredential>]
  [-Force] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### LiteralPathParameterSet
+
 ```
 Publish-Script -LiteralPath <String> [-NuGetApiKey <String>] [-Repository <String>]
  [-Credential <PSCredential>] [-Force] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+
 The **Publish-Script** cmdlet publishes the specified script to the online gallery.
 
 ## EXAMPLES
 
 ### Example 1: Create a script file, add content to it, and publish it
+
 ```
 PS C:\> New-ScriptFileInfo -Path "D:\ScriptSharingDemo\Demo-Script.ps1" -Version 1.0 -Author "pattif@microsoft.com" -Description "my test script file description goes here"
 PS C:\> Get-Content -Path "D:\ScriptSharingDemo\Demo-Script.ps1"
@@ -135,6 +138,7 @@ Accept wildcard characters: False
 ```
 
 ### -LiteralPath
+
 Specifies a path to one or more locations.
 Unlike the *Path* parameter, the value of the *LiteralPath* parameter is used exactly as entered.
 No characters are interpreted as wildcards.
@@ -154,6 +158,7 @@ Accept wildcard characters: False
 ```
 
 ### -NuGetApiKey
+
 Specifies the API key that you want to use to publish a script to the online gallery.
 The API key is part of your profile in the online gallery, and can be found on your user account page in the gallery.
 The API key is NuGet-specific functionality.
@@ -171,6 +176,7 @@ Accept wildcard characters: False
 ```
 
 ### -Path
+
 Specifies a path to one or more locations.
 Wildcards are permitted.
 The default location is the current directory (.).
@@ -188,6 +194,7 @@ Accept wildcard characters: True
 ```
 
 ### -Repository
+
 Specifies the friendly name of a repository that has been registered by running Register-PSRepository.
 
 ```yaml
@@ -203,6 +210,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
+
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
@@ -218,6 +226,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
+
 Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
@@ -234,6 +243,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS

@@ -110,6 +110,7 @@ The second command gets the installed modules.
 ## PARAMETERS
 
 ### -AllowPrerelease
+
 Includes resources marked as prerelease.
 
 ```yaml

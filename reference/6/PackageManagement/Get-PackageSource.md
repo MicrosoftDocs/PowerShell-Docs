@@ -8,7 +8,6 @@ online version: http://go.microsoft.com/fwlink/?LinkID=517137
 schema: 2.0.0
 title: Get-PackageSource
 ---
-
 # Get-PackageSource
 
 ## SYNOPSIS
