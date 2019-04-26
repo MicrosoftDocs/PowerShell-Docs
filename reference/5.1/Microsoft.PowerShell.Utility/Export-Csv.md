@@ -388,7 +388,7 @@ Accept wildcard characters: False
 
 ### -Encoding
 
-Specifies the type of encoding for the target file. The default value is **Default**.
+Specifies the type of encoding for the target file. The default value is **ASCII**.
 
 The acceptable values for this parameter are as follows:
 
