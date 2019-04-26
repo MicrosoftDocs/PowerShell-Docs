@@ -68,7 +68,7 @@ This example shows how to use script blocks as the value of the **Property** par
 This command displays the integers from 1 to 20, grouped by odds and even.
 
 ```powershell
-1..20 | Group-Object -Property @{label="Odd",Expression{$_ % 2}}
+1..20 | Group-Object -Property {$_ % 2}
 ```
 
 ```Output
@@ -87,15 +87,15 @@ column represents the **EventType** values that define a group, and the **Group*
 the objects in each group.
 
 ```powershell
-Get-EventLog -LogName "system" -Newest 1000 | Group-Object -Property EntryType
+Get-WinEvent -LogName System -MaxEvents 1000 | Group-Object -Property LevelDisplayName
 ```
 
 ```Output
-Count Name                      Group
------ ----                      -----
-44    Information               {System.Diagnostics.EventLogEntry,
-5     Error                     {System.Diagnostics.EventLogEntry,
-1     Warning                   {System.Diagnostics.EventLogEntry}
+Count Name          Group
+----- ----          -----
+  153 Error         {System.Diagnostics.Eventing.Reader.EventLogRecord, System.Diagnostics.…
+  722 Information   {System.Diagnostics.Eventing.Reader.EventLogRecord, System.Diagnostics.…
+  125 Warning       {System.Diagnostics.Eventing.Reader.EventLogRecord, System.Diagnostics.…
 ```
 
 ### Example 4: Group processes by priority class
