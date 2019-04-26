@@ -8,7 +8,6 @@ online version: http://go.microsoft.com/fwlink/?LinkId=822338
 schema: 2.0.0
 title: Uninstall-Script
 ---
-
 # Uninstall-Script
 
 ## SYNOPSIS
@@ -17,22 +16,26 @@ Uninstalls a script file.
 ## SYNTAX
 
 ### NameParameterSet (Default)
+
 ```
 Uninstall-Script [-Name] <String[]> [-MinimumVersion <String>] [-RequiredVersion <String>]
  [-MaximumVersion <String>] [-Force] [-AllowPrerelease] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### InputObject
+
 ```
 Uninstall-Script [-InputObject] <PSObject[]> [-Force] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+
 The **Uninstall-Script** cmdlet uninstalls the specified script files from the online gallery.
 
 ## EXAMPLES
 
 ### Example 1: Uninstall a script file
+
 ```
 PS C:\> Uninstall-Script -Name "MyScript" -RequiredVersion 2.5
 ```
@@ -42,6 +45,7 @@ This command uninstalls version 2.5 of the script file named MyScript.
 ## PARAMETERS
 
 ### -AllowPrerelease
+
 Allows you to uninstall a script marked as a prerelease.
 
 ```yaml
@@ -57,6 +61,7 @@ Accept wildcard characters: False
 ```
 
 ### -Force
+
 Forces the command to run without asking for user confirmation.
 
 ```yaml
@@ -72,6 +77,7 @@ Accept wildcard characters: False
 ```
 
 ### -InputObject
+
 Specifies a package by using the script's SoftwareID object, which is shown in the results of the Find-Module cmdlet.
 
 ```yaml
@@ -87,6 +93,7 @@ Accept wildcard characters: False
 ```
 
 ### -MaximumVersion
+
 Specifies the maximum, or newest, version of the script to uninstall.
 The *MaximumVersion* and *RequiredVersion* parameters are mutually exclusive; you cannot use both parameters in the same command.
 
@@ -103,6 +110,7 @@ Accept wildcard characters: False
 ```
 
 ### -MinimumVersion
+
 Specifies the minimum version of the script to uninstall.
 The *MinimumVersion* and *RequiredVersion* parameters are mutually exclusive; you cannot use both parameters in the same command.
 
@@ -119,6 +127,7 @@ Accept wildcard characters: False
 ```
 
 ### -Name
+
 Specifies an array of names of scripts to uninstall.
 
 ```yaml
@@ -134,6 +143,7 @@ Accept wildcard characters: False
 ```
 
 ### -RequiredVersion
+
 Specifies the exact version number of the script to uninstall.
 
 ```yaml
@@ -149,6 +159,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
+
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
@@ -164,6 +175,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
+
 Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
@@ -180,6 +192,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS

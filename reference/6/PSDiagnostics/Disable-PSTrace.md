@@ -5,7 +5,6 @@ online version:
 schema: 2.0.0
 ms.date:  11/27/2018
 ---
-
 # Disable-PSTrace
 
 ## SYNOPSIS
