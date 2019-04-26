@@ -104,6 +104,16 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## RELATED LINKS
 
+[Format-Custom](../Microsoft.PowerShell.Utility/Format-Custom.md)
+
+[Format-List](../Microsoft.PowerShell.Utility/Format-List.md)
+
+[Format-Table](../Microsoft.PowerShell.Utility/Format-Table.md)
+
+[Format-Wide](../Microsoft.PowerShell.Utility/Format-Wide.md)
+
+[about_Format.ps1xml](About/about_Format.ps1xml.md)
+
 [Out-Default: Secrets Revealed](https://get-powershellblog.blogspot.com/2017/04/out-default-secrets-revealed.html)
 
 [How PowerShell Formatting and Outputting REALLY works](https://devblogs.microsoft.com/powershell/how-powershell-formatting-and-outputting-really-works/)
