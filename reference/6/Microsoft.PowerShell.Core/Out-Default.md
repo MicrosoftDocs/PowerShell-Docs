@@ -43,7 +43,7 @@ definition) and `Out-Host` transforms the formatting records into calls on the H
 While this cmdlet is not intended to be run directly by the end user, it can be.
 
 ```powershell
-PS C:\Git\PS-Docs\PowerShell-Docs\reference> Get-Process | Select-Object -First 5 | Out-Default
+Get-Process | Select-Object -First 5 | Out-Default
 ```
 
 ```Output
