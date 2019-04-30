@@ -8,7 +8,6 @@ online version: http://go.microsoft.com/fwlink/?LinkID=517141
 schema: 2.0.0
 title: Set-PackageSource
 ---
-
 # Set-PackageSource
 
 ## SYNOPSIS

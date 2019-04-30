@@ -8,7 +8,6 @@ online version: http://go.microsoft.com/fwlink/?LinkId=821663
 schema: 2.0.0
 title: Install-Module
 ---
-
 # Install-Module
 
 ## SYNOPSIS

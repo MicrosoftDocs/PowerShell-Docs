@@ -8,7 +8,6 @@ online version: http://go.microsoft.com/fwlink/?LinkId=821662
 schema: 2.0.0
 title: Get-PSRepository
 ---
-
 # Get-PSRepository
 
 ## SYNOPSIS
@@ -21,11 +20,13 @@ Get-PSRepository [[-Name] <String[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+
 The **Get-PSRepository** cmdlet gets PowerShell module repositories that are registered for the current user.
 
 ## EXAMPLES
 
 ### Example 1: Get all module repositories
+
 ```
 PS C:\> Get-PSRepository
 Name                                     SourceLocation                                     OneGetProvider       InstallationPolicy
@@ -37,6 +38,7 @@ myNuGetSource                            https://myget.c...                     
 This command gets all module repositories registered for the current user.
 
 ### Example 2: Get module repositories by name
+
 ```
 PS C:\> Get-PSRepository -Name "*NuGet*"
 ```
@@ -44,6 +46,7 @@ PS C:\> Get-PSRepository -Name "*NuGet*"
 This command gets all module repositories that include NuGet in their names.
 
 ### Example 3: Get a module repository and format the output
+
 ```
 PS C:\> Get-PSRepository -Name "Local01" | Format-List * -Force
 Name                      : local01
@@ -63,6 +66,7 @@ This command gets the repository named Local01 and uses the pipeline operator to
 ## PARAMETERS
 
 ### -Name
+
 Specifies the names of the repositories to get.
 
 ```yaml
@@ -78,6 +82,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
