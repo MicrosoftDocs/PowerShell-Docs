@@ -3,7 +3,7 @@ external help file: Microsoft.PowerShell.Commands.Utility.dll-help.xml
 keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Utility
-md.date: 4/26/2019
+ms.date: 4/26/2019
 online version: http://go.microsoft.com/fwlink/?LinkId=821748
 schema: 2.0.0
 title: Add-Member
