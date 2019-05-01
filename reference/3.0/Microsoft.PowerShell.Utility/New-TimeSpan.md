@@ -1,5 +1,5 @@
 ﻿---
-ms.date:  06/09/2017
+ms.date: 5/1/2019
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -10,7 +10,6 @@ title:  New-TimeSpan
 # New-TimeSpan
 
 ## SYNOPSIS
-
 Creates a TimeSpan object.
 
 ## SYNTAX
@@ -29,45 +28,75 @@ New-TimeSpan [-Days <Int32>] [-Hours <Int32>] [-Minutes <Int32>] [-Seconds <Int3
 
 ## DESCRIPTION
 
-The New-TimeSpan cmdlet creates a TimeSpan object that represents a time interval You can use a TimeSpan object to add or subtract time from DateTime objects.
+The `New-TimeSpan` cmdlet creates a **TimeSpan** object that represents a time interval.
+You can use a **TimeSpan** object to add or subtract time from **DateTime** objects.
 
-Without parameters, a "New-Timespan" command returns a timespan object that represents a time interval of zero.
+Without parameters, a `New-TimeSpan` command returns a **TimeSpan** object that represents a time
+interval of zero.
 
 ## EXAMPLES
 
-### Example 1
+### Example 1: Create a TimeSpan object for a specified duration
+
+This command creates a **TimeSpan** object with a duration of 1 hour and 25 minutes and stores it in
+a variable named `$TimeSpan`. It displays a representation of the **TimeSpan** object.
 
 ```powershell
-$timespan = New-TimeSpan -Hours 1 -Minutes 25
+$TimeSpan = New-TimeSpan -Hours 1 -Minutes 25
+$TimeSpan
 ```
 
-This command creates a TimeSpan object with a duration of 1 hour and 25 minutes and stores it in a variable named $timespan.
-It displays a representation of the TimeSpan object.
+```Output
+Days              : 0
+Hours             : 1
+Minutes           : 25
+Seconds           : 0
+Milliseconds      : 0
+Ticks             : 51000000000
+TotalDays         : 0.0590277777777778
+TotalHours        : 1.41666666666667
+TotalMinutes      : 85
+TotalSeconds      : 5100
+TotalMilliseconds : 5100000
+```
 
-### Example 2
+### Example 2: Create a TimeSpan object for a time interval
+
+This example creates a new **TimeSpan** object that represents the interval between the time that
+the command is run and January 1, 2010.
+
+This command does not require the **Start** parameter, because the default value of the **Start**
+parameter is the current date and time.
 
 ```powershell
 New-TimeSpan -End (Get-Date -Year 2010 -Month 1 -Day 1)
 ```
 
-This example creates a new TimeSpan object that represents the interval between the time that the command is run and January 1, 2010.
-
-This command does not require the Start parameter, because the default value of the Start parameter is the current date and time.
-
-### Example 3
+### Example 3: Get the date 90 days from the current date
 
 ```powershell
 $90days = New-TimeSpan -Days 90
-(get-date) + $90days
+(Get-Date) + $90days
 ```
 
 These commands return the date that is 90 days after the current date.
 
-### Example 4
+### Example 4: Discover the TimeSpan since a file was updated
 
+This command tells you how long it has been since the [about_remote](../Microsoft.PowerShell.Core/About/about_Remote.md)
+help file was last updated.
+You can use this command format on any file, or any other object that has a **LastWriteTime**
+property.
+
+This command works because the **Start** parameter of `New-TimeSpan` has an alias of
+**LastWriteTime**. When you pipe an object that has a **LastWriteTime** property to `New-TimeSpan`,
+PowerShell uses the value of the **LastWriteTime** property as the value of the **Start** parameter.
+
+```powershell
+Get-ChildItem $PSHOME\en-us\about_remote.help.txt | New-TimeSpan
 ```
-PS> Get-ChildItem $pshome\en-us\about_remote.help.txt | new-timespan
 
+```Output
 Days              : 321
 Hours             : 21
 Minutes           : 59
@@ -79,24 +108,14 @@ TotalHours        : 7725.98953132578
 TotalMinutes      : 463559.371879547
 TotalSeconds      : 27813562.3127728
 TotalMilliseconds : 27813562312.7728
-
-# Equivalent to:
-
-PS> new-timespan -start (Get-ChildItem $pshome\en-us\about_remote.help.txt).lastwritetime
 ```
-
-This command tells you how long it has been since the about_remote.help.txt file was last updated.
-You can use this command format on any file, and on any other object that has a LastWriteTime property.
-
-This command works because the Start parameter of New-TimeSpan has an alias of LastWriteTime.
-When you pipe an object that has a LastWriteTime property to New-TimeSpan, Windows PowerShell uses the value of the LastWriteTime property as the value of the Start parameter.
 
 ## PARAMETERS
 
 ### -Days
 
-Indicates the days in the time span.
-The default is 0.
+Specifies the days in the time span.
+The default value is 0.
 
 ```yaml
 Type: Int32
@@ -112,8 +131,8 @@ Accept wildcard characters: False
 
 ### -End
 
-Indicates the end of a time span.
-The default is the current date and time.
+Specifies the end of a time span.
+The default value is the current date and time.
 
 ```yaml
 Type: DateTime
@@ -129,8 +148,8 @@ Accept wildcard characters: False
 
 ### -Hours
 
-Indicates the hours in the time span.
-The default is zero.
+Specifies the hours in the time span.
+The default value is zero.
 
 ```yaml
 Type: Int32
@@ -146,8 +165,8 @@ Accept wildcard characters: False
 
 ### -Minutes
 
-Indicates the minutes in the time span.
-The default is 0.
+Specifies the minutes in the time span.
+The default value is 0.
 
 ```yaml
 Type: Int32
@@ -163,8 +182,8 @@ Accept wildcard characters: False
 
 ### -Seconds
 
-Indicates the length of the time span in seconds.
-The default is 0.
+Specifies the length of the time span in seconds.
+The default value is 0.
 
 ```yaml
 Type: Int32
@@ -180,12 +199,13 @@ Accept wildcard characters: False
 
 ### -Start
 
-Indicates the start of a time span.
-Enter a string that represents the date and time, such as "3/15/09" or a DateTime object, such as one from a Get-Date command.
-The default is the current date and time.
+Specifies the start of a time span.
+Enter a string that represents the date and time, such as "3/15/09" or a **DateTime** object, such
+as one from a `Get-Date` command. The default value is the current date and time.
 
-You can use Start or its alias, LastWriteTime.
-The LastWriteTime alias lets you pipe objects that have a LastWriteTime property, such as files in the file system (System.Io.FileIO), to the Start parameter of New-TimeSpan.
+You can use **Start** or its alias, **LastWriteTime**.
+The **LastWriteTime** alias lets you pipe objects that have a **LastWriteTime** property,
+such as files in the file system `[System.Io.FileIO]`, to the **Start** parameter of `New-TimeSpan`.
 
 ```yaml
 Type: DateTime
@@ -201,19 +221,21 @@ Accept wildcard characters: False
 
 ### CommonParameters
 
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+-InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
+-WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
 
 ## INPUTS
 
 ### System.DateTime
 
-You can pipe a DateTime object that represents that start time to New-TimeSpan.
+You can pipe a **DateTime** object that represents that start time to `New-TimeSpan`.
 
 ## OUTPUTS
 
 ### System.TimeSpan
 
-New-TimeSpan returns an object that represents the time span.
+`New-TimeSpan` returns an object that represents the time span.
 
 ## NOTES
 
