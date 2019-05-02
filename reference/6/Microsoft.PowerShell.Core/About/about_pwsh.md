@@ -103,7 +103,7 @@ the contents of the script block back out to you.
 A string passed to **Command** will still be executed as PowerShell, so the
 script block curly braces are often not required in the first place when
 running from **cmd.exe**. To execute an inline script block defined inside a
-string, the [call operator](about_operators.md#call-operator-) `&` can be used:
+string, the [call operator](about_operators.md#special-operators) `&` can be used:
 
 ```
 pwsh -Command "& {Get-WinEvent -LogName security}"

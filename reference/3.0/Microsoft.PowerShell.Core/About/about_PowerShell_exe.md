@@ -43,18 +43,18 @@ PowerShell[.exe] -Help | -? | /?
 
 ### Parameters
 
-#### -PSConsoleFile <FilePath>
+#### -PSConsoleFile \<FilePath\>
 
 Loads the specified PowerShell console file. Enter the path and name of
 the console file. To create a console file, use the Export-Console cmdlet in
 PowerShell.
 
-#### -Version <PowerShell Version>
+#### -Version \<PowerShell Version\>
 
 Starts the specified version of PowerShell. Valid values are 2.0 and
 3.0. The version that you specify must be installed on the system. If Windows
 PowerShell 3.0 is installed on the computer, "3.0" is the default version.
-Otherwise, "2.0" is the default version. For more information, see [Installing PowerShell](../../setup/installing-windows-powershell.md).
+Otherwise, "2.0" is the default version. For more information, see [Installing PowerShell](/powershell/scripting/install/installing-windows-powershell.md).
 
 #### -NoLogo
 
@@ -95,24 +95,24 @@ Describes the format of data sent to PowerShell. Valid values are
 Determines how output from PowerShell is formatted. Valid values are
 "Text" (text strings) or "XML" (serialized CLIXML format).
 
-#### -WindowStyle <Window style>
+#### -WindowStyle \<Window style\>
 
 Sets the window style for the session. Valid values are Normal, Minimized,
 Maximized and Hidden.
 
-#### -EncodedCommand <Base64EncodedCommand>
+#### -EncodedCommand \<Base64EncodedCommand\>
 
 Accepts a base-64-encoded string version of a command. Use this parameter to
 submit commands to PowerShell that require complex quotation marks or curly
 braces. The string must be formatted using UTF-16 character encoding.
 
-#### -ConfigurationName <string>
+#### -ConfigurationName \<string\>
 
 Specifies a configuration endpoint in which PowerShell is run. This can be any
 endpoint registered on the local machine including the default PowerShell
 remoting endpoints or a custom endpoint having specific user role capabilities.
 
-#### -File - | <filePath> <args>
+#### -File - | \<filePath\> \<args\>
 
 If the value of **File** is "-", the command text is read from standard input.
 Running `powershell -File -` without redirected standard input starts a regular
@@ -152,7 +152,7 @@ parameter. To provide a **Boolean** value for a switch parameter in the value
 of the File parameter, enclose the parameter name and value in curly braces,
 such as the following: `-File .\Get-Script.ps1 {-All:$False}`.
 
-#### -ExecutionPolicy <ExecutionPolicy>
+#### -ExecutionPolicy \<ExecutionPolicy\>
 
 Sets the default execution policy for the current session and saves it in the
 `$env:PSExecutionPolicyPreference` environment variable. This parameter does
@@ -215,7 +215,7 @@ the contents of the script block back out to you.
 A string passed to **Command** will still be executed as PowerShell, so the
 script block curly braces are often not required in the first place when
 running from **cmd.exe**. To execute an inline script block defined inside a
-string, the [call operator](/powershell/module/microsoft.powershell.core/about/about_operators#call-operator-)
+string, the [call operator](about_operators.md#special-operators)
 `&` can be used:
 
 ```console
