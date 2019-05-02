@@ -325,5 +325,3 @@ You can elect to send the trace data to a user-mode or kernel-mode debugger, to 
 [Measure-Command](Measure-Command.md)
 
 [Set-TraceSource](Set-TraceSource.md)
-
-[Show-Command](https://msdn.microsoft.com/en-us/powershell/reference/5.1/Microsoft.PowerShell.Utility/Show-Command)
