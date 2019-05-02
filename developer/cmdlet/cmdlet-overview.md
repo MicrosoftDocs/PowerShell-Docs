@@ -32,19 +32,53 @@ You can load the assembly that contains the class directly by using the [Import-
 
 The following terms are used frequently in the Windows PowerShell cmdlet documentation:
 
-- **Cmdlet attribute**: A .NET Framework attribute that is used to declare a cmdlet class as a cmdlet. Although Windows PowerShell uses several other attributes that are optional, the Cmdlet attribute is required. For more information about this attribute, see [Cmdlet Attribute Declaration](./cmdlet-attribute-declaration.md).
+### Cmdlet attribute
 
-- **Cmdlet parameter**: The public properties that define the parameters that are available to the user or to the application that is running the cmdlet. Cmdlets can have required, named, positional, and *switch* parameters. Switch parameters allow you to define parameters that are evaluated only if the parameters are specified in the call. For more information about the different types of parameters, see [Cmdlet Parameters](./cmdlet-parameters.md).
+A .NET Framework attribute that is used to declare a cmdlet class as a cmdlet.
+Although PowerShell uses several other attributes that are optional, the Cmdlet attribute is required.
+For more information about this attribute, see [Cmdlet Attribute Declaration](cmdlet-attribute-declaration.md).
 
-- **Parameter set**: A group of parameters that can be used in the same command to perform a specific action. A cmdlet can have multiple parameter sets, but each parameter set must have at least one parameter that is unique. Good cmdlet design strongly suggests that the unique parameter also be a required parameter. For more information about parameter sets, see [Cmdlet Parameter Sets](./cmdlet-parameter-sets.md).
+### Cmdlet parameter
 
-- **Dynamic parameter**: A parameter that is added to the cmdlet at runtime. Typically, the dynamic parameters are added to the cmdlet when another parameter is set to a specific value. For more information about dynamic parameters, see [Cmdlet Dynamic Parameters](./cmdlet-dynamic-parameters.md).
+The public properties that define the parameters that are available to the user or to the application that is running the cmdlet.
+Cmdlets can have required, named, positional, and *switch* parameters.
+Switch parameters allow you to define parameters that are evaluated only if the parameters are specified in the call.
+For more information about the different types of parameters, see [Cmdlet Parameters](cmdlet-parameters.md).
 
-- **Input processing method**: A method that a cmdlet can use to process the records it receives as input. The input processing methods include the [System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) method, the [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) method, the [System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) method, and the [System.Management.Automation.Cmdlet.StopProcessing](/dotnet/api/System.Management.Automation.Cmdlet.StopProcessing) method. When you implement a cmdlet, you must override at least one of the [System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing), [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord), and [System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) methods. Typically, the [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) method is the method that you override because it is called for every record that the cmdlet processes. In contrast, the [System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) method and the [System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) method are called one time to perform pre-processing or post-processing of the records. For more information about these methods, see [Input Processing Methods](./cmdlet-input-processing-methods.md).
+### Parameter set
 
-- **ShouldProcess feature**: Windows PowerShell allows you to create cmdlets that prompt the user for feedback before the cmdlet makes a change to the system. To use this feature, the cmdlet must declare that it supports the ShouldProcess feature when you declare the Cmdlet attribute, and the cmdlet must call the [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) and [System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) methods from within an input processing method. For more information about how to support the ShouldProcess functionality, see [Requesting Confirmation](./requesting-confirmation-from-cmdlets.md).
+A group of parameters that can be used in the same command to perform a specific action.
+A cmdlet can have multiple parameter sets, but each parameter set must have at least one parameter that is unique.
+Good cmdlet design strongly suggests that the unique parameter also be a required parameter.
+For more information about parameter sets, see [Cmdlet Parameter Sets](cmdlet-parameter-sets.md).
 
-- **Transaction**: A logical group of commands that are treated as a single task. The task automatically fails if any command in the group fails, and the user has the choice to accept or reject the actions performed within the transaction. To participate in a transaction, the cmdlet must declare that it supports transactions when the Cmdlet attribute is declared. Support for transactions was introduced in Windows PowerShell 2.0. For more information about transactions, see [Windows PowerShell Transactions](http://msdn.microsoft.com/en-us/74d7bac7-bc53-49f1-a47a-272e8da84710).
+### Dynamic parameter
+
+A parameter that is added to the cmdlet at runtime.
+Typically, the dynamic parameters are added to the cmdlet when another parameter is set to a specific value.
+For more information about dynamic parameters, see [Cmdlet Dynamic Parameters](cmdlet-dynamic-parameters.md).
+
+### Input processing method
+
+A method that a cmdlet can use to process the records it receives as input.
+The input processing methods include the [System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) method, the [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) method, the [System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) method, and the [System.Management.Automation.Cmdlet.StopProcessing](/dotnet/api/System.Management.Automation.Cmdlet.StopProcessing) method. When you implement a cmdlet, you must override at least one of the [System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing), [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord), and [System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) methods.
+Typically, the [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) method is the method that you override because it is called for every record that the cmdlet processes.
+In contrast, the [System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) method and the [System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) method are called one time to perform pre-processing or post-processing of the records.
+For more information about these methods, see [Input Processing Methods](cmdlet-input-processing-methods.md).
+
+### ShouldProcess feature
+
+PowerShell allows you to create cmdlets that prompt the user for feedback before the cmdlet makes a change to the system.
+To use this feature, the cmdlet must declare that it supports the ShouldProcess feature when you declare the Cmdlet attribute, and the cmdlet must call the [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) and [System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) methods from within an input processing method.
+For more information about how to support the ShouldProcess functionality, see [Requesting Confirmation](requesting-confirmation-from-cmdlets.md).
+
+### Transaction
+
+A logical group of commands that are treated as a single task.
+The task automatically fails if any command in the group fails, and the user has the choice to accept or reject the actions performed within the transaction.
+To participate in a transaction, the cmdlet must declare that it supports transactions when the Cmdlet attribute is declared.
+Support for transactions was introduced in Windows PowerShell 2.0.
+For more information about transactions, see [How to Support Transactions](how-to-support-transactions.md).
 
 ## How Cmdlets Differ from Commands
 
