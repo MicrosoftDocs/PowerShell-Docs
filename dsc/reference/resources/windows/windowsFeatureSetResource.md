@@ -33,7 +33,7 @@ WindowsFeatureSet [string] #ResourceName
 
 |  Property  |  Description   |
 |---|---|
-| Name| The names of the roles or features that you want to ensure are added or removed. This is the same as the **Name** property of the [Get-WindowsFeature](https://technet.microsoft.com/en-us/library/jj205469.aspx) cmdlet, and not the display name of the roles or features.|
+| Name| The names of the roles or features that you want to ensure are added or removed. This is the same as the **Name** property of the [Get-WindowsFeature](https://technet.microsoft.com/library/jj205469.aspx) cmdlet, and not the display name of the roles or features.|
 | Credential| The credentials to use to add or remove the roles or features.|
 | Ensure| Indicates whether the roles or features are added. To ensure that the roles or features are added, set this property to "Present" To ensure that the roles or features are removed, set the property to "Absent".|
 | IncludeAllSubFeature| Set this property to **$true** to include all required subfeatures with of the features you specify with the **Name** property.|

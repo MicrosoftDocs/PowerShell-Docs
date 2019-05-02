@@ -160,6 +160,6 @@ For more information about IPv6 addresses, see [How IPv6 Works](https://technet.
 
 ## See Also
 
-- [Authorization Rules and Security Features of Windows PowerShell Web Access](https://technet.microsoft.com/en-us/library/dn282394(v=ws.11).aspx)
-- [Use the Web-based Windows PowerShell Console](https://technet.microsoft.com/en-us/library/hh831417(v=ws.11).aspx)
+- [Authorization Rules and Security Features of Windows PowerShell Web Access](https://technet.microsoft.com/library/dn282394(v=ws.11).aspx)
+- [Use the Web-based Windows PowerShell Console](https://technet.microsoft.com/library/hh831417(v=ws.11).aspx)
 - [about_Remote_Requirements](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_remote_requirements)

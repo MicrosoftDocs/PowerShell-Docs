@@ -26,7 +26,7 @@ Specify which computers this cmdlet applies to by using Common Information Model
 If there is no configuration job running, this cmdlet returns a warning message.
 
 This cmdlet is available only as part of the [November 2014 update rollup for Windows RT 8.1, Windows 8.1, and Windows Server 2012 R2](https://support.microsoft.com/kb/3000850) from the Microsoft Support library.
-Before you use this cmdlet, review the information in What's New in Windows PowerShellhttp://technet.microsoft.com/library/hh857339.aspx (http://technet.microsoft.com/library/hh857339.aspx) in the TechNet library.
+Before you use this cmdlet, review the information in What's New in Windows PowerShellhttps://technet.microsoft.com/library/hh857339.aspx (https://technet.microsoft.com/library/hh857339.aspx) in the TechNet library.
 
 ## EXAMPLES
 

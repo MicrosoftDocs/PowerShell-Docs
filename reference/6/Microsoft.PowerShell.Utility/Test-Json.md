@@ -139,7 +139,7 @@ The `Test-Json` cmdlet is implemented by using the [NJsonSchema Class](https://g
 
 ## RELATED LINKS
 
-[An Introduction to JavaScript Object Notation (JSON) in JavaScript and .NET](https://msdn.microsoft.com/en-us/library/bb299886.aspx)
+[An Introduction to JavaScript Object Notation (JSON) in JavaScript and .NET](https://msdn.microsoft.com/library/bb299886.aspx)
 
 [Additional JSON Schema Details](https://json-schema.org/)
 

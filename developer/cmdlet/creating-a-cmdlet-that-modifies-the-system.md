@@ -294,11 +294,11 @@ For the complete C# sample code, see [StopProcessSample01 Sample](./stopprocesss
 
 ## Defining Object Types and Formatting
 
-Windows PowerShell passes information between cmdlets using .Net objects. Consequently, a cmdlet may need to define its own type, or the cmdlet may need to extend an existing type provided by another cmdlet. For more information about defining new types or extending existing types, see [Extending Object Types and Formatting](https://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351).
+Windows PowerShell passes information between cmdlets using .Net objects. Consequently, a cmdlet may need to define its own type, or the cmdlet may need to extend an existing type provided by another cmdlet. For more information about defining new types or extending existing types, see [Extending Object Types and Formatting](https://msdn.microsoft.com/da976d91-a3d6-44e8-affa-466b1e2bd351).
 
 ## Building the Cmdlet
 
-After implementing a cmdlet, it must be registered with Windows PowerShell through a Windows PowerShell snap-in. For more information about registering cmdlets, see [How to Register Cmdlets, Providers, and Host Applications](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c).
+After implementing a cmdlet, it must be registered with Windows PowerShell through a Windows PowerShell snap-in. For more information about registering cmdlets, see [How to Register Cmdlets, Providers, and Host Applications](https://msdn.microsoft.com/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c).
 
 ## Testing the Cmdlet
 
@@ -370,9 +370,9 @@ The following output appears.
 
 [Adding Parameters that Process Command-Line Input](./adding-parameters-that-process-command-line-input.md)
 
-[Extending Object Types and Formatting](https://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)
+[Extending Object Types and Formatting](https://msdn.microsoft.com/da976d91-a3d6-44e8-affa-466b1e2bd351)
 
-[How to Register Cmdlets, Providers, and Host Applications](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
+[How to Register Cmdlets, Providers, and Host Applications](https://msdn.microsoft.com/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
 
 [Windows PowerShell SDK](../windows-powershell-reference.md)
 

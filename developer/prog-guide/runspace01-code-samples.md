@@ -11,7 +11,7 @@ caps.latest.revision: 6
 ---
 # Runspace01 Code Samples
 
-Here are the code samples for the runspace described in [Creating a Console Application That Runs a Specified Command](http://msdn.microsoft.com/en-us/793a6570-a072-4799-840b-172f28ce620e). The command that is invoked in the runspace is the `Get-Process` cmdlet.
+Here are the code samples for the runspace described in [Creating a Console Application That Runs a Specified Command](https://msdn.microsoft.com/793a6570-a072-4799-840b-172f28ce620e). The command that is invoked in the runspace is the `Get-Process` cmdlet.
 
 For complete sample code, see the following topics.
 

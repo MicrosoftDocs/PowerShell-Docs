@@ -22,7 +22,7 @@ You find the workflow in the same way you would any other Windows PowerShell com
 
 ## Implementing Parallel and Sequence
 
-[Windows Workflow Foundation](https://msdn.microsoft.com/en-us/library/ms735967.aspx) supports execution of activities in parallel. To implement this capability in a Windows PowerShell script, use the `parallel` keyword in front of a script block. You can also use the `foreach -parallel` construction to iterate through a collection of objects in parallel. To execute a group of activities in sequential order within a parallel block, enclose that group of activities in a script block and precede the block with the sequence keyword.
+[Windows Workflow Foundation](https://msdn.microsoft.com/library/ms735967.aspx) supports execution of activities in parallel. To implement this capability in a Windows PowerShell script, use the `parallel` keyword in front of a script block. You can also use the `foreach -parallel` construction to iterate through a collection of objects in parallel. To execute a group of activities in sequential order within a parallel block, enclose that group of activities in a script block and precede the block with the sequence keyword.
 
 ## Joining Computers to a Domain
 

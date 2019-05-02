@@ -21,7 +21,7 @@ Windows PowerShell .
 
 ## Windows PowerShell Documents on MSDN
 
-- [Installing the Windows PowerShell SDK](https://msdn.microsoft.com/en-us/library/ff458115.aspx)
+- [Installing the Windows PowerShell SDK](https://msdn.microsoft.com/library/ff458115.aspx)
 Provides information about how to install the Windows PowerShell SDK.
 
 - [Writing a Windows PowerShell Module](./module/writing-a-windows-powershell-module.md)

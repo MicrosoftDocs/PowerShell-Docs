@@ -21,7 +21,7 @@ For more information, see the following topics:
 
 ## Azure Automation DSC
 
-The [Azure Automation service](https://azure.microsoft.com/en-us/services/automation/) allows you to
+The [Azure Automation service](https://azure.microsoft.com/services/automation/) allows you to
 manage DSC configurations, resources, and managed nodes from within Azure. For more information,
 see the following topics:
 

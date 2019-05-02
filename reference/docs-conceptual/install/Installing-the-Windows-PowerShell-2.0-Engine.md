@@ -72,5 +72,5 @@ The Windows Management Framework 3.0 package that installs Windows PowerShell 3.
 ## See Also
 - [Windows PowerShell System Requirements](Windows-PowerShell-System-Requirements.md)
 - [Installing Windows PowerShell](Installing-Windows-PowerShell.md)
-- [Starting Windows PowerShell](https://technet.microsoft.com/en-us/library/8ec8c2d7-8e7c-4722-a3d2-498fe5739a8e)
+- [Starting Windows PowerShell](https://technet.microsoft.com/library/8ec8c2d7-8e7c-4722-a3d2-498fe5739a8e)
 - [Starting the Windows PowerShell 2.0 Engine](../getting-started/Starting-the-Windows-PowerShell-2.0-Engine.md)

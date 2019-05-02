@@ -43,7 +43,7 @@ Both push and pull modes
 - [Remove-DscConfigurationDocument](/powershell/module/PSDesiredStateConfiguration/Remove-DscConfigurationDocument)
 - [Get-DscConfigurationStatus](/powershell/module/PSDesiredStateConfiguration/Get-DscConfigurationStatus)
 - [Invoke-DscResource](/powershell/module/PSDesiredStateConfiguration/Invoke-DscResource)
-- [Find-DscResource](https://technet.microsoft.com/en-us/library/mt517874.aspx)
+- [Find-DscResource](https://technet.microsoft.com/library/mt517874.aspx)
 - [Get-DscResource](/powershell/module/PSDesiredStateConfiguration/Get-DscResource)
 - [New-DscChecksum](/powershell/module/PSDesiredStateConfiguration/New-DSCCheckSum)
 

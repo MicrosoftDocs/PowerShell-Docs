@@ -14,7 +14,7 @@ caps.latest.revision: 12
 Providers define their basic functionality by changing how the provider cmdlets (provided by Windows PowerShell) perform their actions. For example, providers can use the default functionality of the `Get-Item` cmdlet, or they can change how that cmdlet operates when retrieving items from the data store. The provider functionality described in this topic includes functionality defined by overwriting methods from specific provider base classes and interfaces.
 
 > [!NOTE]
-> For provider features that are pre-defined by Windows PowerShell, see [Provider capabilities](http://msdn.microsoft.com/en-us/864e4807-554a-4016-80ea-bf643a090fc6).
+> For provider features that are pre-defined by Windows PowerShell, see [Provider capabilities](https://msdn.microsoft.com/864e4807-554a-4016-80ea-bf643a090fc6).
 
 ## Drive-Enabled Providers
 

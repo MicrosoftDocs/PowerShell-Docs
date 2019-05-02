@@ -148,4 +148,4 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## RELATED LINKS
 
-[Security Descriptor Definition Language](https://msdn.microsoft.com/en-us/library/windows/desktop/aa379567(v=vs.85).aspx)
+[Security Descriptor Definition Language](https://msdn.microsoft.com/library/windows/desktop/aa379567(v=vs.85).aspx)

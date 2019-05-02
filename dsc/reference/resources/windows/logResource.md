@@ -34,7 +34,7 @@ Log [string] #ResourceName
 The following example shows how to include a message in the Microsoft-Windows-Desired State Configuration/Analytic event log.
 
 > [!NOTE]
-> If you run [Test-DscConfiguration](https://technet.microsoft.com/en-us/library/dn407382.aspx) with this resource configured, it will always return **$false**.
+> If you run [Test-DscConfiguration](https://technet.microsoft.com/library/dn407382.aspx) with this resource configured, it will always return **$false**.
 
 ```powershell
 Configuration logResourceTest

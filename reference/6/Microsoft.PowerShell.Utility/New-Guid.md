@@ -56,4 +56,4 @@ This cmdlet returns a GUID.
 
 ## RELATED LINKS
 
-[Windows PowerShell Utility Module](https://msdn.microsoft.com/en-us/powershell/reference/5.1/Microsoft.PowerShell.Utility/Microsoft.PowerShell.Utility)
+[Windows PowerShell Utility Module](https://msdn.microsoft.com/powershell/reference/5.1/Microsoft.PowerShell.Utility/Microsoft.PowerShell.Utility)

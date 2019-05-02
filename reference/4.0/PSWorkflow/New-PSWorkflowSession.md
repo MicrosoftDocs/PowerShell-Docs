@@ -29,7 +29,7 @@ It uses the Microsoft.PowerShell.Workflow session configuration, which includes 
 You can use "New-PSWorkflowSession" or its alias, nwsn.
 
 You can also add workflow common parameters to this command.
-For more information about workflow common parameters, see about_WorkflowCommonParametershttp://technet.microsoft.com/library/jj129719(v=wps.630).aspx.
+For more information about workflow common parameters, see about_WorkflowCommonParametershttps://technet.microsoft.com/library/jj129719(v=wps.630).aspx.
 
 This cmdlet is introduced in Windows PowerShell 3.0.
 

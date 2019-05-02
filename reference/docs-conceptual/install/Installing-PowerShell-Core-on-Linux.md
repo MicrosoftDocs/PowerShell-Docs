@@ -206,7 +206,7 @@ sudo apt-get remove powershell
 
 > [!NOTE]
 > As 18.10 is an [interim release](https://www.ubuntu.com/about/release-cycle),
-> it is only [community supported](https://docs.microsoft.com/en-us/powershell/scripting/powershell-support-lifecycle?view=powershell-6).
+> it is only [community supported](https://docs.microsoft.com/powershell/scripting/powershell-support-lifecycle?view=powershell-6).
 
 Installing on 18.10 is supported via `snapd`. See [Snap Package][snap] for full instructions;
 

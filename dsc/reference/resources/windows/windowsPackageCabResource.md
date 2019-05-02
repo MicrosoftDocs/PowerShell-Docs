@@ -12,7 +12,7 @@ The **WindowsPackageCab** resource in Windows PowerShell Desired State Configura
 Windows cabinet (.cab) packages on a target node.
 
 The target node must have the DISM PowerShell module installed. For information, see
-[Use DISM in Windows PowerShell](https://msdn.microsoft.com/en-us/windows/hardware/commercialize/manufacture/desktop/use-dism-in-windows-powershell-s14).
+[Use DISM in Windows PowerShell](https://msdn.microsoft.com/windows/hardware/commercialize/manufacture/desktop/use-dism-in-windows-powershell-s14).
 
 
 ## Syntax

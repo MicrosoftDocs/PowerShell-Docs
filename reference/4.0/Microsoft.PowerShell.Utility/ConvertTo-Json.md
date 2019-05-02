@@ -211,7 +211,7 @@ You can pipe any object to **ConvertTo-Json**.
 
 ## RELATED LINKS
 
-[An Introduction to JavaScript Object Notation (JSON) in JavaScript and .NET](http://msdn.microsoft.com/library/bb299886.aspx)
+[An Introduction to JavaScript Object Notation (JSON) in JavaScript and .NET](https://msdn.microsoft.com/library/bb299886.aspx)
 
 [ConvertFrom-Json](ConvertFrom-Json.md)
 

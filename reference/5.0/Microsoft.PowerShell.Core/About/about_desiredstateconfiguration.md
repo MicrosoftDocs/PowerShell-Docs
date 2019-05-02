@@ -34,7 +34,7 @@ in the TechNet Library.
 
 Starting in PowerShell 5.0, you can develop DSC resources by using classes.
 For more information, see [about_Classes](about_Classes.md), and
-[Writing a custom DSC resource with PowerShell classes](http://technet.microsoft.com/library/dn948461.aspx)
+[Writing a custom DSC resource with PowerShell classes](https://technet.microsoft.com/library/dn948461.aspx)
 on Microsoft TechNet.
 
 ## USING DSC

@@ -147,7 +147,7 @@ Otherwise, this cmdlet does not generate any output.
 
 - For more information about snap-ins, see [about_PSSnapins](About/about_PSSnapins.md) and [How to Create a Windows PowerShell Snap-in](/powershell/developer/windows-powershell) in the MSDN library.
 - Add-PSSnapin adds the snap-in only to the current session. To add the snap-in to all Windows PowerShell sessions, add it to your Windows PowerShell profile. For more information, see [about_Profiles](./About/about_profiles.md).
-- You can add any snap-in that has been registered by using the Microsoft .NET Framework install utility. For more information, see [How to Register Cmdlets, Providers, and Host Applications](https://msdn.microsoft.com/en-us/library/ms714644(VS.85).aspx) in the MSDN library.
+- You can add any snap-in that has been registered by using the Microsoft .NET Framework install utility. For more information, see [How to Register Cmdlets, Providers, and Host Applications](https://msdn.microsoft.com/library/ms714644(VS.85).aspx) in the MSDN library.
 - To get a list of snap-ins that are registered on your computer, type get-pssnapin -registered.
 - Before adding a snap-in, Add-PSSnapin checks the version of the snap-in to verify that it is compatible with the current version of Windows PowerShell. If the snap-in fails the version check, Windows PowerShell reports an error.
 

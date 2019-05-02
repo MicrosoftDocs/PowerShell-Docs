@@ -76,7 +76,7 @@ This sample demonstrates the following.
 
 ## Example
 
-This sample shows how to register for events raised by [System.IO.FileSystemWatcher](https://msdn.microsoft.com/en-us/library/system.io.filesystemwatcher\(v=vs.110\).aspx).
+This sample shows how to register for events raised by [System.IO.FileSystemWatcher](https://msdn.microsoft.com/library/system.io.filesystemwatcher\(v=vs.110\).aspx).
 
 ```csharp
 namespace Sample

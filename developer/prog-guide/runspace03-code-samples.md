@@ -11,7 +11,7 @@ caps.latest.revision: 6
 ---
 # RunSpace03 Code Samples
 
-Here are the code samples for the runspace described in [Creating a Console Application That Runs a Specified Script](http://msdn.microsoft.com/en-us/a93e6006-36db-4bcc-b9da-c5bebf4ffd68).
+Here are the code samples for the runspace described in [Creating a Console Application That Runs a Specified Script](https://msdn.microsoft.com/a93e6006-36db-4bcc-b9da-c5bebf4ffd68).
 
 > [!NOTE]
 > You can download the C# source file (runspace03.cs) and the VB.NET source file (runspace03.vb) for this sample using the Microsoft Windows Software Development Kit for Windows Vista and Microsoft .NET Framework 3.0 Runtime Components. For download instructions, see [How to Install Windows PowerShell and Download the Windows PowerShell SDK](/powershell/developer/installing-the-windows-powershell-sdk).

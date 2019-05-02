@@ -16,7 +16,7 @@ This section includes sample code that shows how to create runspaces that can be
 ## In This Section
 
 > [!NOTE]
-> For more information about running commands on a remote computer, see [Windows PowerShell Remoting](https://msdn.microsoft.com/en-us/library/ee706563(v=vs.85).aspx).
+> For more information about running commands on a remote computer, see [Windows PowerShell Remoting](https://msdn.microsoft.com/library/ee706563(v=vs.85).aspx).
 
  [RemoteRunspace01 Sample](./remoterunspace01-sample.md)
  This sample shows how to create a remote runspace that is used to establish a remote connection.

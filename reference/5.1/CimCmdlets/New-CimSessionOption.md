@@ -87,7 +87,7 @@ A variable that contains a CultureInfo object.
 
                         
 A command that gets a CultureInfo object, such as Get-Culture.
-For more information about Get-Culture, see http://technet.microsoft.com/library/hh849930.aspx.
+For more information about Get-Culture, see https://technet.microsoft.com/library/hh849930.aspx.
 
 ```yaml
 Type: CultureInfo
@@ -286,8 +286,8 @@ Certificates are used in client certificate-based authentication.
 They can only be mapped to local user accounts and they do not work with domain accounts.
 
 To get a certificate thumbprint, use the Get-Item or Get-ChildItem cmdlets in the PowerShell Cert: drive.
-For more information about the Get-ChildItem cmdlet for the PowerShell Cert: drive, see http://technet.microsoft.com/library/hh847761.aspx.
-For more information about Get-Item, see http://technet.microsoft.com/library/hh849788.aspx
+For more information about the Get-ChildItem cmdlet for the PowerShell Cert: drive, see https://technet.microsoft.com/library/hh847761.aspx.
+For more information about Get-Item, see https://technet.microsoft.com/library/hh849788.aspx
 
 ```yaml
 Type: String
@@ -402,7 +402,7 @@ Specify the value for this parameter using one of the following formats:
 - Enter a culture name in \<languagecode2\>-\<country/regioncode2\> format such as "EN-US".
 - A variable that contains a CultureInfo object.
 - A command that gets a CultureInfo object, such as Get-Culture.
-  For more information about Get-Culture, see http://technet.microsoft.com/library/hh849930.aspx.
+  For more information about Get-Culture, see https://technet.microsoft.com/library/hh849930.aspx.
 
 ```yaml
 Type: CultureInfo

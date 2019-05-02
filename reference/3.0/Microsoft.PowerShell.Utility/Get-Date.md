@@ -315,7 +315,7 @@ Accept wildcard characters: False
 
 Displays the date and time in the Microsoft .NET Framework format indicated by the format specifier.
 Enter a format specifier.
-For a list of available format specifiers, see [DateTimeFormatInfo Class](https://msdn.microsoft.com/en-us/library/system.globalization.datetimeformatinfo(VS.85).aspx) in the MSDN (Microsoft Developer Network) library.
+For a list of available format specifiers, see [DateTimeFormatInfo Class](https://msdn.microsoft.com/library/system.globalization.datetimeformatinfo(VS.85).aspx) in the MSDN (Microsoft Developer Network) library.
 
 When you use the `-Format` parameter, Windows PowerShell gets only the properties of the **DateTime** object that it needs to display the date in the format that you specify.
 As a result, some of the properties and methods of **DateTime** objects might not be available.

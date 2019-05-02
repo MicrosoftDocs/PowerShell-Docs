@@ -81,7 +81,7 @@ Before the Windows PowerShell item provider can manipulate the items in the stor
 
 ## Checking for Path Validity
 
-When looking for an item of data, the Windows PowerShell runtime furnishes a Windows PowerShell path to the provider, as defined in the "PSPath Concepts" section of [How Windows PowerShell Works](http://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58). An Windows PowerShell item provider must verify the syntactic and semantic validity of any path passed to it by implementing the [System.Management.Automation.Provider.Itemcmdletprovider.Isvalidpath*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.IsValidPath) method. This method returns `true` if the path is valid, and `false` otherwise. Be aware that the implementation of this method should not verify the existence of the item at the path, but only that the path is syntactically and semantically correct.
+When looking for an item of data, the Windows PowerShell runtime furnishes a Windows PowerShell path to the provider, as defined in the "PSPath Concepts" section of [How Windows PowerShell Works](https://msdn.microsoft.com/ced30e23-10af-4700-8933-49873bd84d58). An Windows PowerShell item provider must verify the syntactic and semantic validity of any path passed to it by implementing the [System.Management.Automation.Provider.Itemcmdletprovider.Isvalidpath*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.IsValidPath) method. This method returns `true` if the path is valid, and `false` otherwise. Be aware that the implementation of this method should not verify the existence of the item at the path, but only that the path is syntactically and semantically correct.
 
 Here is the implementation of the [System.Management.Automation.Provider.Itemcmdletprovider.Isvalidpath*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.IsValidPath) method for this provider. Note that this implementation calls a NormalizePath helper method to convert all separators in the path to a uniform one.
 
@@ -257,11 +257,11 @@ For complete sample code, see [AccessDbProviderSample03 Code Sample](./accessdbp
 
 ## Defining Object Types and Formatting
 
-When writing a provider, it may be necessary to add members to existing objects or define new objects. When finished, create a Types file that Windows PowerShell can use to identify the members of the object and a Format file that defines how the object is displayed. For more information about , see [Extending Object Types and Formatting](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351).
+When writing a provider, it may be necessary to add members to existing objects or define new objects. When finished, create a Types file that Windows PowerShell can use to identify the members of the object and a Format file that defines how the object is displayed. For more information about , see [Extending Object Types and Formatting](https://msdn.microsoft.com/da976d91-a3d6-44e8-affa-466b1e2bd351).
 
 ## Building the Windows PowerShell provider
 
-See [How to Register Cmdlets, Providers, and Host Applications](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c).
+See [How to Register Cmdlets, Providers, and Host Applications](https://msdn.microsoft.com/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c).
 
 ## Testing the Windows PowerShell provider
 
@@ -277,12 +277,12 @@ When this Windows PowerShell item provider is registered with Windows PowerShell
 
 [Designing Your Windows PowerShell provider](./designing-your-windows-powershell-provider.md)
 
-[Extending Object Types and Formatting](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)
+[Extending Object Types and Formatting](https://msdn.microsoft.com/da976d91-a3d6-44e8-affa-466b1e2bd351)
 
-[How Windows PowerShell Works](http://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58)
+[How Windows PowerShell Works](https://msdn.microsoft.com/ced30e23-10af-4700-8933-49873bd84d58)
 
 [Creating a Container Windows PowerShell provider](./creating-a-windows-powershell-container-provider.md)
 
 [Creating a Drive Windows PowerShell provider](./creating-a-windows-powershell-drive-provider.md)
 
-[How to Register Cmdlets, Providers, and Host Applications](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
+[How to Register Cmdlets, Providers, and Host Applications](https://msdn.microsoft.com/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)

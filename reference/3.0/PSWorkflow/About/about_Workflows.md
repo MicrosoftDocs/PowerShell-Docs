@@ -24,7 +24,7 @@ PowerShell 3.0.
 
 For detailed information about Windows PowerShell
 Workflow, see ["Introducing Windows PowerShell Workflow"](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj134242(v=ws.11))
-and ["Writing a Windows PowerShell Workflow"](https://msdn.microsoft.com/en-us/library/hh852738(v=vs.85).aspx)
+and ["Writing a Windows PowerShell Workflow"](https://msdn.microsoft.com/library/hh852738(v=vs.85).aspx)
 
 ## ABOUT WORKFLOWS
 
@@ -278,4 +278,4 @@ Invoke-Command -Session $ws {Test-Workflow -PSComputerName Server01, Server02 -P
 
 ["Getting Started with Windows PowerShell Workflow"](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj134242(v=ws.11))
 
-["Writing a Windows PowerShell Workflow"](https://msdn.microsoft.com/en-us/library/hh852738(v=vs.85).aspx)
+["Writing a Windows PowerShell Workflow"](https://msdn.microsoft.com/library/hh852738(v=vs.85).aspx)

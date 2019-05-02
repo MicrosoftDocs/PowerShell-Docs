@@ -148,7 +148,7 @@ Set-DscLocalConfigurationManager -Path .\RegistrationMetaConfig -Verbose
 
 ## Using PsDscRunAsCredential with DSC composite resources
 
-We have added support for using [*PsDscRunAsCredential*](https://msdn.microsoft.com/cs-cz/powershell/dsc/runasuser) with DSC [Composite](https://msdn.microsoft.com/powershell/dsc/authoringresourcecomposite) resources.
+We have added support for using [*PsDscRunAsCredential*](https://msdn.microsoft.com/powershell/dsc/runasuser) with DSC [Composite](https://msdn.microsoft.com/powershell/dsc/authoringresourcecomposite) resources.
 
 You can now specify a value for PsDscRunAsCredential when using composite resources inside configurations.
 When specified, all resources run inside a composite resource as a RunAs user.

@@ -78,6 +78,6 @@ For more information about other components of a list view, see [Creating a List
 
 [SelectionSetName Element for EntrySelectedBy for ListEntry (Format)](./selectionsetname-element-for-entryselectedby-for-listcontrol-format.md)
 
-[TypeName Element for EntrySelectedBy for ListEntry (Format)](http://msdn.microsoft.com/en-us/fcd4daa6-f3fd-43f7-a468-03c582d34533)
+[TypeName Element for EntrySelectedBy for ListEntry (Format)](https://msdn.microsoft.com/fcd4daa6-f3fd-43f7-a468-03c582d34533)
 
 [Writing a PowerShell Formatting File](./writing-a-powershell-formatting-file.md)

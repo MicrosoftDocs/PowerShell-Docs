@@ -47,7 +47,7 @@ For on-premise solutions, DSC has a [pull server](../pull-server/pullServer.md)
 that can be used to centralize management of machines and report on their status.
 For cloud solutions, DSC is usable wherever Windows is usable.
 There are also specific offerings from Azure built on Desired State Configuration,
-such as [Azure Automation](https://azure.microsoft.com/en-us/documentation/services/automation/), which centralizes reporting of DSC.
+such as [Azure Automation](https://azure.microsoft.com/documentation/services/automation/), which centralizes reporting of DSC.
 
 ## DSC and Compatibility
 

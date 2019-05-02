@@ -104,7 +104,7 @@ This cmdlet uses an array of strings for the `Name` parameter. If possible, your
 
 #### Things to Remember About Parameter Definitions
 
-- Predefined Windows PowerShell parameter names and data types should be reused as much as possible to ensure that your cmdlet is compatible with Windows PowerShell cmdlets. For example, if all cmdlets use the predefined `Id` parameter name to identify a resource, user will easily understand the meaning of the parameter, regardless of what cmdlet they are using. Basically, parameter names follow the same rules as those used for variable names in the common language runtime (CLR). For more information about parameter naming, see [Cmdlet Parameter Names](https://msdn.microsoft.com/en-us/c4500737-0a05-4d01-911b-394424c65bfb).
+- Predefined Windows PowerShell parameter names and data types should be reused as much as possible to ensure that your cmdlet is compatible with Windows PowerShell cmdlets. For example, if all cmdlets use the predefined `Id` parameter name to identify a resource, user will easily understand the meaning of the parameter, regardless of what cmdlet they are using. Basically, parameter names follow the same rules as those used for variable names in the common language runtime (CLR). For more information about parameter naming, see [Cmdlet Parameter Names](https://msdn.microsoft.com/c4500737-0a05-4d01-911b-394424c65bfb).
 
 - Windows PowerShell reserves a few parameter names to provide a consistent user experience. Do not use these parameter names: `WhatIf`, `Confirm`, `Verbose`, `Debug`, `Warn`, `ErrorAction`, `ErrorVariable`, `OutVariable`, and `OutBuffer`. Additionally, the following aliases for these parameter names are reserved: `vb`, `db`, `ea`, `ev`, `ov`, and `ob`.
 
@@ -194,11 +194,11 @@ For the complete C# sample code, see [GetProcessSample02 Sample](./getprocesssam
 
 ## Defining Object Types and Formatting
 
-Windows PowerShell passes information between cmdlets by using .NET Framework objects. Consequently, a cmdlet might need to define its own type, or a cmdlet might need to extend an existing type provided by another cmdlet. For more information about defining new types or extending existing types, see [Extending Object Types and Formatting](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351).
+Windows PowerShell passes information between cmdlets by using .NET Framework objects. Consequently, a cmdlet might need to define its own type, or a cmdlet might need to extend an existing type provided by another cmdlet. For more information about defining new types or extending existing types, see [Extending Object Types and Formatting](https://msdn.microsoft.com/da976d91-a3d6-44e8-affa-466b1e2bd351).
 
 ## Building the Cmdlet
 
-After you implement a cmdlet, you must register it with Windows PowerShell by using a Windows PowerShell snap-in. For more information about registering cmdlets, see [How to Register Cmdlets, Providers, and Host Applications](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c).
+After you implement a cmdlet, you must register it with Windows PowerShell by using a Windows PowerShell snap-in. For more information about registering cmdlets, see [How to Register Cmdlets, Providers, and Host Applications](https://msdn.microsoft.com/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c).
 
 ## Testing the Cmdlet
 
@@ -242,9 +242,9 @@ The following output appears.
 
 [Creating Your First Cmdlet](./creating-a-cmdlet-without-parameters.md)
 
-[Extending Object Types and Formatting](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)
+[Extending Object Types and Formatting](https://msdn.microsoft.com/da976d91-a3d6-44e8-affa-466b1e2bd351)
 
-[How to Register Cmdlets, Providers, and Host Applications](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
+[How to Register Cmdlets, Providers, and Host Applications](https://msdn.microsoft.com/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
 
 [Windows PowerShell Reference](../windows-powershell-reference.md)
 

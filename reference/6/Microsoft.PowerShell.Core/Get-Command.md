@@ -383,7 +383,7 @@ Accept wildcard characters: False
 
 Specifies modules with names that are specified in the form of **ModuleSpecification** objects,
 described in the **Remarks** section of
-[ModuleSpecification Constructor (Hashtable)](https://docs.microsoft.com/en-us/dotnet/api/microsoft.powershell.commands.modulespecification.-ctor?redirectedfrom=MSDN&view=powershellsdk-1.1.0#Microsoft_PowerShell_Commands_ModuleSpecification__ctor_System_Collections_Hashtable_).
+[ModuleSpecification Constructor (Hashtable)](https://docs.microsoft.com/dotnet/api/microsoft.powershell.commands.modulespecification.-ctor?redirectedfrom=MSDN&view=powershellsdk-1.1.0#Microsoft_PowerShell_Commands_ModuleSpecification__ctor_System_Collections_Hashtable_).
 For example, the **FullyQualifiedModule** parameter accepts a module name that is specified in one
 of the following formats:
 

@@ -177,7 +177,7 @@ For more information, see [Set-Service [m2]](https://technet.microsoft.com/libra
 
 ## See Also
 
-- [Get-Service [m2]](https://technet.microsoft.com/en-us/library/0a09cb22-0a1c-4a79-9851-4e53075f9cf6)
+- [Get-Service [m2]](https://technet.microsoft.com/library/0a09cb22-0a1c-4a79-9851-4e53075f9cf6)
 - [Set-Service [m2]](https://technet.microsoft.com/library/b71e29ed-372b-4e32-a4b7-5eb6216e56c3)
-- [Restart-Service [m2]](https://technet.microsoft.com/en-us/library/45acf50d-2277-4523-baf7-ce7ced977d0f)
-- [Suspend-Service [m2]](https://technet.microsoft.com/en-us/library/c8492b87-0e21-4faf-8054-3c83c2ec2826)
+- [Restart-Service [m2]](https://technet.microsoft.com/library/45acf50d-2277-4523-baf7-ce7ced977d0f)
+- [Suspend-Service [m2]](https://technet.microsoft.com/library/c8492b87-0e21-4faf-8054-3c83c2ec2826)

@@ -429,7 +429,7 @@ Displays the online version of a help topic in the default Internet browser.
 This parameter is valid only for cmdlet, function, workflow and script help topics.
 You cannot use the **Online** parameter in **Get-Help** commands in a remote session.
 
-For information about supporting this feature in help topics that you write, see [about_Comment_Based_Help](About/about_Comment_Based_Help.md), and [Supporting Online Help](/powershell/developer/module/supporting-online-help), and [How to Write Cmdlet Help](https://msdn.microsoft.com/en-us/library/aa965353(VS.85).aspx) in the Microsoft Docs.
+For information about supporting this feature in help topics that you write, see [about_Comment_Based_Help](About/about_Comment_Based_Help.md), and [Supporting Online Help](/powershell/developer/module/supporting-online-help), and [How to Write Cmdlet Help](https://msdn.microsoft.com/library/aa965353(VS.85).aspx) in the Microsoft Docs.
 
 ```yaml
 Type: SwitchParameter

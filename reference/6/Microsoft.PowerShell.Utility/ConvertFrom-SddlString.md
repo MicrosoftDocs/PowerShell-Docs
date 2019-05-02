@@ -140,4 +140,4 @@ You can pipe a SDDL string to `ConvertFrom-SddlString`.
 
 ## RELATED LINKS
 
-[Security Descriptor Definition Language](https://msdn.microsoft.com/en-us/library/windows/desktop/aa379567(v=vs.85).aspx)
+[Security Descriptor Definition Language](https://msdn.microsoft.com/library/windows/desktop/aa379567(v=vs.85).aspx)

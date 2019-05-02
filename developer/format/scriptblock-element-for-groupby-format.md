@@ -51,7 +51,7 @@ Specify the script that is evaluated.
 
 Windows PowerShell starts a new group whenever the value of this script changes.
 
-When this element is specified, you cannot specify the [PropertyName](http://msdn.microsoft.com/en-us/396dede0-039a-4a87-a5ef-3ecabb729676) element to start a new group.
+When this element is specified, you cannot specify the [PropertyName](https://msdn.microsoft.com/396dede0-039a-4a87-a5ef-3ecabb729676) element to start a new group.
 
 ## See Also
 
