@@ -37,7 +37,7 @@ Cmdlet and provider developers can use modules to test and distribute their comp
 
 [How to Write a PowerShell Binary Module](./how-to-write-a-powershell-binary-module.md)
 
-[How to Write a PowerShell Module Manifest](http://msdn.microsoft.com/en-us/abe4c24b-e64e-4a61-81d5-18c4fceba0b6)
+[How to Write a PowerShell Module Manifest](how-to-write-a-powershell-module-manifest.md)
 
 [Modifying the PSModulePath Installation Path](./modifying-the-psmodulepath-installation-path.md)
 
