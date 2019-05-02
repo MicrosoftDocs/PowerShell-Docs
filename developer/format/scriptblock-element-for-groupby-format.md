@@ -49,14 +49,14 @@ Specify the script that is evaluated.
 
 ## Remarks
 
-Windows PowerShell starts a new group whenever the value of this script changes.
+PowerShell starts a new group whenever the value of this script changes.
 
-When this element is specified, you cannot specify the [PropertyName](http://msdn.microsoft.com/en-us/396dede0-039a-4a87-a5ef-3ecabb729676) element to start a new group.
+When this element is specified, you cannot specify the [PropertyName](propertyname-element-for-groupby-format.md) element to start a new group.
 
 ## See Also
 
-[PropertyName Element for GroupBy (Format)](./propertyname-element-for-groupby-format.md)
+[PropertyName Element for GroupBy (Format)](propertyname-element-for-groupby-format.md)
 
-[GroupBy Element for View (Format)](./groupby-element-for-view-format.md)
+[GroupBy Element for View (Format)](groupby-element-for-view-format.md)
 
-[Writing a PowerShell Formatting File](./writing-a-powershell-formatting-file.md)
+[Writing a PowerShell Formatting File](writing-a-powershell-formatting-file.md)
