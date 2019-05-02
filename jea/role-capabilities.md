@@ -179,6 +179,8 @@ Any constrained cmdlet in a JEA session will exhibit the same behavior when invo
 If you are writing a lot of custom functions, it may be easier to put them in a [PowerShell Script Module](https://msdn.microsoft.com/library/dd878340(v=vs.85).aspx).
 You can then make those functions visible in the JEA session using the VisibleFunctions field like you would with built-in and third party modules.
 
+For tab completion to work properly in JEA sessions you must include the built-in function `tabexpansion2` in the **VisibleFunctions** list.
+
 ## Place role capabilities in a module
 
 In order for PowerShell to find a role capability file, it must be stored in a "RoleCapabilities" folder in a PowerShell module.
