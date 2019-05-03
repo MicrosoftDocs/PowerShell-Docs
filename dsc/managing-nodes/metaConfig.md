@@ -126,6 +126,11 @@ A **ConfigurationRepositoryWeb** defines the following properties.
 |ConfigurationNames|String[]|An array of names of configurations to be pulled by the target node. These are used only if the node is registered with the pull service by using a **RegistrationKey**. For more information, see [Setting up a pull client with configuration names](../pull-server/pullClientConfigNames.md).|
 |RegistrationKey|string|A GUID that registers the node with the pull service. For more information, see [Setting up a pull client with configuration names](../pull-server/pullClientConfigNames.md).|
 |ServerURL|string|The URL of the configuration service.|
+|ProxyURL*|string|The URL of the http proxy to use when communicating with the configuration service.|
+|ProxyCredential*|pscredential|Credential to use for the http proxy.|
+
+>!NOTE
+>\* Supported in Windows versions 1809 and later.
 
 An example script to simplify configuring the ConfigurationRepositoryWeb value for on-premises nodes
 is available - see [Generating DSC metaconfigurations](https://docs.microsoft.com/azure/automation/automation-dsc-onboarding#generating-dsc-metaconfigurations)
@@ -150,6 +155,11 @@ A **ResourceRepositoryWeb** defines the following properties.
 |CertificateID|string|The thumbprint of a certificate used to authenticate to the server.|
 |RegistrationKey|string|A GUID that identifies the node to the pull service.|
 |ServerURL|string|The URL of the configuration server.|
+|ProxyURL*|string|The URL of the http proxy to use when communicating with the configuration service.|
+|ProxyCredential*|pscredential|Credential to use for the http proxy.|
+
+>!NOTE
+>\* Supported in Windows versions 1809 and later.
 
 An example script to simplify configuring the ResourceRepositoryWeb value for on-premises nodes
 is available - see [Generating DSC metaconfigurations](https://docs.microsoft.com/azure/automation/automation-dsc-onboarding#generating-dsc-metaconfigurations)
@@ -175,6 +185,11 @@ The report server role is not compatible with SMB based pull service.
 |CertificateID|string|The thumbprint of a certificate used to authenticate to the server.|
 |RegistrationKey|string|A GUID that identifies the node to the pull service.|
 |ServerURL|string|The URL of the configuration server.|
+|ProxyURL*|string|The URL of the http proxy to use when communicating with the configuration service.|
+|ProxyCredential*|pscredential|Credential to use for the http proxy.|
+
+>!NOTE
+>\* Supported in Windows versions 1809 and later.
 
 An example script to simplify configuring the ReportServerWeb value for on-premises nodes
 is available - see [Generating DSC metaconfigurations](https://docs.microsoft.com/azure/automation/automation-dsc-onboarding#generating-dsc-metaconfigurations)
