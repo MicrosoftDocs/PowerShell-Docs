@@ -99,7 +99,7 @@ the following table lists the dates when various release will no longer be suppo
 |---------|-------------------------------|
 | 6.0     | February 13, 2019             |
 | 6.1     | September 28, 2019            |
-| 6.2     | 6 months after 6.3 releases   |
+| 6.2     | 6 months after 7 releases     |
 
 ## Platforms, which are out of support
 
