@@ -35,7 +35,7 @@ The `Remove-Service` cmdlet removes a Windows service in the registry and in the
 
 ### Example 1: Remove a service
 
-This removes removes a service named TestService.
+This removes a service named TestService.
 
 ```powershell
 Remove-Service -Name "TestService"
@@ -72,7 +72,7 @@ Accept wildcard characters: False
 
 ### -Name
 
-Specifies the service names of the services to stop. Wildcard characters are permitted.
+Specifies the service names of the services to remove. Wildcard characters are permitted.
 
 ```yaml
 Type: String
