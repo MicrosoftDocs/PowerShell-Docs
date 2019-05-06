@@ -14,6 +14,7 @@ After the package is installed, run `pwsh` from a terminal.
 
 [Homebrew][brew] is the preferred package manager for macOS.
 If the `brew` command is not found, you need to install Homebrew following [their instructions][brew].
+Otherwise you may install PowerShell via [Direct Download](#installation-via-direct-download) or from [Binary Archives](#binary-archives).
 
 ## Installation of latest stable release via Homebrew on macOS 10.12 or higher
 
