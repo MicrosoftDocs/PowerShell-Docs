@@ -138,8 +138,7 @@ This cmdlet does not return any output.
 
 ## NOTES
 
-To run this cmdlet on Windows Vista and later versions of the Windows operating system, start
-PowerShell by using the Run as administrator option.
+To run this cmdlet, start PowerShell by using the **Run as administrator** option.
 
 ## RELATED LINKS
 
