@@ -68,7 +68,7 @@
   items:
     - name: Console
       items:
-        - name: PowerShell.exe command line help
+        - name: PowerShell command line options
           href: components/console/powershell.exe-command-line-help.md
         - name: Using tab expansion
           href: components/console/using-tab-expansion.md
