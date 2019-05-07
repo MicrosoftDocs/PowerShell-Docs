@@ -3,7 +3,7 @@ external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Management
-md.date: 3/11/2019
+ms.date: 3/11/2019
 online version: http://go.microsoft.com/fwlink/?LinkId=821625
 schema: 2.0.0
 title: Restart-Computer

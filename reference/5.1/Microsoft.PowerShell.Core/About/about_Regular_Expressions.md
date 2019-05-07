@@ -63,6 +63,9 @@ while `[^character group]` only matches characters NOT in the group.
 "big" -match "b[iou]g"
 ```
 
+If your list of characters to match includes the hyphen character (-), it must be at the beginning
+or end of the list to distinguish it from a character range expression.
+
 #### Character ranges
 
 A pattern can also be a range of characters. This can be alphabetic

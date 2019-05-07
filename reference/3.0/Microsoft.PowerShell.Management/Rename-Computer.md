@@ -1,5 +1,5 @@
 ---
-ms.date:  06/09/2017
+ms.date: 5/1/2019
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -7,10 +7,11 @@ online version:  http://go.microsoft.com/fwlink/?LinkID=135253
 external help file:  Microsoft.PowerShell.Commands.Management.dll-Help.xml
 title:  Rename-Computer
 ---
-
 # Rename-Computer
+
 ## SYNOPSIS
 Renames a computer.
+
 ## SYNTAX
 
 ```
@@ -20,54 +21,49 @@ Rename-Computer [-ComputerName <String>] [-PassThru] [-DomainCredential <PSCrede
 ```
 
 ## DESCRIPTION
-The **Rename-Computer** cmdlet renames the local computer or a remote computer.
+
+The `Rename-Computer` cmdlet renames the local computer or a remote computer.
 It renames one computer in each command.
 
-This cmdlet is introduced in Windows PowerShell 3.0.
+This cmdlet was introduced in Windows PowerShell 3.0.
+
 ## EXAMPLES
 
-### Example 1
-```
-PS C:\> Rename-Computer -NewName Server044 -DomainCredential Domain01\Admin01 -Restart
+### Example 1: Rename the local computer
+
+This command renames the local computer to `Server044` and then restarts it to make the change
+effective.
+
+```powershell
+Rename-Computer -NewName "Server044" -DomainCredential Domain01\Admin01 -Restart
 ```
 
-This command renames the local computer to Server044 and then restarts it to make the change effective.
-### Example 2
-```
-PS C:\> Rename-Computer -ComputerName Srv01 -NewName Server001 -LocalCredential Srv01\Admin01 -DomainCredential Domain01\Admin01 -Force -PassThru -Restart
-```
+### Example 2: Rename a remote computer
 
-This command renames the Srv01 computer to Server001 and then restarts it to make the change effective.
-It uses the **LocalCredential** parameter to supply the credentials of a user who has permission to connect to the local computer and the **DomainCredential** parameter to supply the credentials of a user who has permission to rename computers in the domain.
-It uses the **Force** parameter to suppress the confirmation prompt and the **PassThru** parameter to return the results of the command.
-### Example 3
-```
-PS C:\> $a = Import-Csv ServerNames.csv -Header OldName, NewName
-PS C:\> Foreach ( $Server in $a ) {Rename-Computer -ComputerName $Server.OldName -NewName $Server.NewName -DomainCredential Domain01\Admin01 -Force -Restart}
+This command renames the `Srv01` computer to `Server001`. The computer is not restarted.
+
+The **DomainCredential** parameter specifies the credentials of a user who has permission to rename
+computers in the domain.
+
+The **Force** parameter suppresses the confirmation prompt.
+
+```powershell
+Rename-Computer -ComputerName "Srv01" -NewName "Server001" -DomainCredential Domain01\Admin01 -Force
 ```
 
-This command renames multiple computers in the domain.
-It uses a CSV file to specify the values for the current and new names of each computer.
-The CSV file contains a series of name pairs in "OldName, NewName" format with one name pair on each line of the file.
-
-The first command uses the **Import-Csv** cmdlet to import the ServerNames.csv file into the $a variable.
-It uses the **Header** parameter to specify the column header names of each of the two columns.
-This creates a collection of custom objects in $a, each of which has an **OldName** and **NewName** property.
-
-The second command runs the **Rename-Computer** cmdlet on each object in the $a variable.
-It specifies the old name (the value of the **OldName** property) for the value of the **ComputerName** parameter and the new name (the value of the **NewName** property) for the value of the **NewName** parameter.
-The command specifies domain credentials and uses the **Force** and **Restart** parameters to suppress all user prompts and restart each computer after it is renamed.
 ## PARAMETERS
 
 ### -ComputerName
+
 Renames the specified remote computer.
 The default is the local computer.
 
-Type the NetBIOS name, an Internet Protocol (IP) address, or a fully qualified domain name of a remote computer.
-To specify the local computer, type the computer name, a dot (.), or "localhost".
+Type the NetBIOS name, an IP address, or a fully qualified domain name of a remote computer.
+To specify the local computer, type the computer name, a dot (`.`), or `localhost`.
 
-This parameter does not rely on Windows PowerShell remoting.
-You can use the **ComputerName** parameter of **Rename-Computer** even if your computer is not configured to run remote commands.
+This parameter does not rely on PowerShell remoting.
+You can use the **ComputerName** parameter of `Rename-Computer` even if your computer is not
+configured to run remote commands.
 
 ```yaml
 Type: String
@@ -76,19 +72,23 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: Local computer
+Default value: Local Computer
 Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
 ### -DomainCredential
+
 Specifies a user account that has permission to connect to the domain.
 Explicit credentials are required to rename a computer that is joined to a domain.
 
-Type a user name, such as "User01" or "Domain01\User01", or enter a **PSCredential** object, such as one generated by the Get-Credential cmdlet.
-If you type a user name, you will be prompted for a password.
+Type a user name, such as `User01` or `Domain01\User01`, or enter a **PSCredential** object, such
+as one generated by the `Get-Credential` cmdlet.
 
-To specify a user account that has permission to connect to the computer that is specified by the **ComputerName** parameter, use the **LocalCredential** parameter.
+If you type a user name, this cmdlet prompts you for a password.
+
+To specify a user account that has permission to connect to the computer that is specified by the
+**ComputerName** parameter, use the **LocalCredential** parameter.
 
 ```yaml
 Type: PSCredential
@@ -103,8 +103,8 @@ Accept wildcard characters: False
 ```
 
 ### -Force
-Suppresses the user confirmation prompt.
-Without this parameter, **Rename-Computer** prompts you to confirm the action.
+
+Forces the command to run without asking for user confirmation.
 
 ```yaml
 Type: SwitchParameter
@@ -119,13 +119,17 @@ Accept wildcard characters: False
 ```
 
 ### -LocalCredential
-Specifies a user account that has permission to connect to the computer specified by the **ComputerName** parameter.
-The default is the current user.
 
-Type a user name, such as "User01" or "Domain01\User01", or enter a **PSCredential** object, such as one generated by the Get-Credential cmdlet.
-If you type a user name, you will be prompted for a password
+Specifies a user account that has permission to connect to the computer specified by the
+**ComputerName** parameter. The default is the current user.
 
-To specify a user account that has permission to connect to the domain, use the **DomainCredential** parameter.
+Type a user name, such as `User01` or `Domain01\User01`, or enter a **PSCredential** object, such as
+one generated by the `Get-Credential` cmdlet.
+
+If you type a user name, this cmdlet prompts you for a password.
+
+To specify a user account that has permission to connect to the domain, use the **DomainCredential**
+parameter.
 
 ```yaml
 Type: PSCredential
@@ -134,15 +138,19 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: Current user
+Default value: Current User
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -NewName
+
 Specifies a new name for the computer.
 This parameter is required.
-The name cannot include control characters, leading or trailing spaces, or any of the following characters: / \\\\ \[ \].
+
+Standard names may contain letters (`a-z`), (`A-Z`), numbers (`0-9`), and hyphens (`-`), but no
+spaces or periods (`.`). The name may not consist entirely of digits, and may not be longer than
+63 characters
 
 ```yaml
 Type: String
@@ -157,6 +165,7 @@ Accept wildcard characters: False
 ```
 
 ### -PassThru
+
 Returns the results of the command.
 Otherwise, this cmdlet does not generate any output.
 
@@ -173,6 +182,7 @@ Accept wildcard characters: False
 ```
 
 ### -Restart
+
 Restarts the computer that was renamed.
 A restart is often required to make the change effective.
 
@@ -189,6 +199,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
+
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
@@ -204,6 +215,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
+
 Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
@@ -220,17 +232,26 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+-InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
+-WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
+
 ## INPUTS
 
-### None.
+### None
+
 This cmdlet does not have parameters that take input by value.
-However, you can pipe the values of the **ComputerName** and **NewName** properties of objects to this cmdlet.
+However, you can pipe the values of the **ComputerName** and **NewName** properties of objects to
+this cmdlet.
+
 ## OUTPUTS
 
 ### Microsoft.PowerShell.Commands.ComputerChangeInfo
-When you use the **PassThru** parameter, **Rename-Computer** returns a **ComputerChangeInfo** object.
+
+This cmdlet returns a **ComputerChangeInfo** object, if you specify the **PassThru** parameter.
 Otherwise, it does not return any output.
+
 ## NOTES
 
 ## RELATED LINKS
