@@ -473,9 +473,6 @@ Accept wildcard characters: False
 
 ### -UFormat
 
-Displays the date and time in UNIX format.
-For a list of the format specifiers, see the Notes section.
-
 Displays the date and time in UNIX format. For a list of the format specifiers, see the Notes
 section.
 
