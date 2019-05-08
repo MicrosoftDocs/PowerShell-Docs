@@ -47,8 +47,6 @@ which is 30 days after the release to maintain support.
 If any fixes are found to be required,
 the fixes will be released in our next cumulative update.
 
-![PowerShell Core branch lifecycle][lifecycle-chart]
-
 The Modern Lifecycle Policy also requires that Microsoft give customers 12 months
 notice before discontinuing support for a product (that is, PowerShell Core).
 
