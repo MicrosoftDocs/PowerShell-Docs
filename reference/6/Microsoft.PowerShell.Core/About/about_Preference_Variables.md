@@ -43,7 +43,7 @@ Variable                      = Default Value
 - \$MaximumHistoryCount          = 4096
 - \$MaximumVariableCount         = 4096
 - \$OFS                          = (Space character (" "))
-- \$OutputEncoding               = ASCIIEncoding object
+- \$OutputEncoding               = UTF8Encoding object
 - \$ProgressPreference           = Continue
 - \$PSDefaultParameterValues     = (None - empty hash table)
 - \$PSEmailServer                = (None)
@@ -922,7 +922,7 @@ Valid values: Objects derived from an Encoding class, such as ASCIIEncoding,
 SBCSCodePageEncoding, UTF7Encoding, UTF8Encoding, UTF32Encoding, and
 UnicodeEncoding.
 
-Default: ASCIIEncoding object (System.Text.ASCIIEncoding)
+Default: UTF8Encoding object (System.Text.UTF8Encoding)
 
 ##### EXAMPLES
 
