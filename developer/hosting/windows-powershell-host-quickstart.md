@@ -73,9 +73,9 @@ You can also add a dictionary of parameter names and values by calling the [Syst
 
 ```csharp
 IDictionary parameters = new Dictionary<String, String>();
-parameters.Add("Name", "PowerShell");
+parameters.Add("Path", @"c:\Windows");
+parameters.Add("Filter", "*.exe");
 
-parameters.Add("Id", "12768");
 PowerShell.Create().AddCommand("Get-Process")
    .AddParameters(parameters)
       .Invoke()
