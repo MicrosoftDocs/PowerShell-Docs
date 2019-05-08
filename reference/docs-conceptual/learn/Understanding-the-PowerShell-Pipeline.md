@@ -69,9 +69,11 @@ Paging also reduces CPU utilization because processing transfers to the `Out-Hos
 has a complete page ready to display. The cmdlets that precede it in the pipeline pause execution
 until the next page of output is available.
 
-You can see the difference Windows Task Manager to monitor CPU and memory used by PowerShell. Run
-the following command: `Get-ChildItem C:\Windows -Recurse`. Compare the CPU and memory usage to
-this command: `Get-ChildItem C:\Windows -Recurse | Out-Host -Paging`.
+You can see how piping impacts CPU and memory usage in the Windows Task Manager by comparing the
+following commands:
+
+- `Get-ChildItem C:\Windows -Recurse`
+- `Get-ChildItem C:\Windows -Recurse | Out-Host -Paging`
 
 > [!NOTE]
 > The **Paging** parameter is not supported by all PowerShell hosts. For example, when you try to
