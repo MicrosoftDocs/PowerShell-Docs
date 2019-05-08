@@ -62,10 +62,10 @@ PowerShell.Create().AddCommand("Get-Process")
 
 You can add additional parameters by calling the AddParameter method repeatedly.
 
-```csharp
-PowerShell.Create().AddCommand("Get-Process")
-                   .AddParameter("Name", "PowerShell")
-                   .AddParameter("Id", "12768")
+```csharp                   
+PowerShell.Create().AddCommand("Get-ChildItem")
+                   .AddParameter("Path", @"c:\Windows")
+                   .AddParameter("Filter", "*.exe")
                    .Invoke();
 ```
 
