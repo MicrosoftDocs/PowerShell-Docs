@@ -207,14 +207,16 @@ For example, you can pipe a value to a **Name** parameter only when the value
 has a property called **Name**.
 
 > [!NOTE]
-> A parameter that accepts pipeline input (`by Value`) will enable use of
-> **delay-bind** script blocks on all other parameters defined to accept
-> pipeline input. The **delay-bind** script block is run automatically
-> during ParameterBinding. The result is bound to the parameter. Delay
-> binding does **not** work for parameters defined as type `System.Object`,
-> the script block is passed through **without** being invoked.
+> A typed parameter that accepts pipeline input (`by Value`) or
+> (`by PropertyName`) enables use of **delay-bind** script blocks on the parameter.
 >
-> You can read about **delay-bind** script blocks in [about_Script_Blocks](about_Script_Blocks.md).
+> The **delay-bind** script block is run automatically during
+> **ParameterBinding**. The result is bound to the parameter. Delay binding
+> does **not** work for parameters defined as type `ScriptBlock` or
+> `System.Object`, the script block is passed through
+> **without** being invoked.
+>
+> You can read about **delay-bind** script blocks here [about_Script_Blocks.md](about_Script_Blocks.md)
 
 #### Accepts Wildcard Characters
 
