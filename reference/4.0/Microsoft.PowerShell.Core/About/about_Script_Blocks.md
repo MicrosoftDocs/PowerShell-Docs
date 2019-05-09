@@ -8,7 +8,6 @@ title:  about_Script_Blocks
 # About Script Blocks
 
 ## Short description
-
 Defines what a script block is and explains how to use script blocks in
 the PowerShell programming language.
 
@@ -138,9 +137,10 @@ For more information about the call operator, see [about_Operators](about_Operat
 
 ## Using delay-bind script blocks with parameters
 
-A **delay-bind** script block allows access to the pipeline input object using
-the pipeline variable `$_`. You can pass **delay-bind** script blocks to
-any parameters that accept pipeline input (`by Value`) or (`by PropertyName`).
+A typed parameter that accepts pipeline input (`by Value`) or
+(`by PropertyName`) enables use of **delay-bind** script blocks on the parameter.
+Within the **delay-bind** script block, you can reference the piped in object
+using the pipeline variable `$_`.
 
 ```powershell
 # Renames config.log to old_config.log
