@@ -15,7 +15,7 @@ To enable PowerShell remoting over WSMan, the following prerequisites need to be
   Windows versions prior to Windows 10. It is available via direct download or Windows Update. Fully
   patched (including optional packages), supported systems will already have this installed.
 - Install the Windows Management Framework (WMF) 4.0 or newer on Windows 7 and Windows Server 2008
-  R2.
+  R2. For more information about WMF, see [WMF Overview](/powershell/wmf/overview).
 
 ## <a id="msi" />Installing the MSI package
 

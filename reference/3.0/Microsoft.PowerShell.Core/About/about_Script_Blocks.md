@@ -138,20 +138,44 @@ For more information about the call operator, see [about_Operators](about_Operat
 
 ## Using delay-bind script blocks with parameters
 
-A **delay-bind** script block allows you to pipe input to a given parameter,
-then use script blocks for other parameters using the pipeline variable `$_` to
-reference the same object.
+A typed parameter that accepts pipeline input (`by Value`) or
+(`by PropertyName`) enables use of **delay-bind** script blocks on the parameter.
+Within the **delay-bind** script block, you can reference the piped in object
+using the pipeline variable `$_`.
 
 ```powershell
 # Renames config.log to old_config.log
 dir config.log | Rename-Item -NewName {"old_" + $_.Name}
 ```
 
-The additional parameters must accept pipeline input
-(`by Value`) or (`by PropertyName`).
-
 In more complex cmdlets, delay-bind script blocks allow the reuse of one piped
 in object to populate other parameters.
+
+Notes on **delay-bind** script blocks as parameters:
+
+- You must explicitly specify any parameter names you use with **delay-bind**
+  script blocks.
+- The parameter must not be untyped, and the parameter's type cannot be
+  `[scriptblock]` or `[object]`.
+- You receive an error if you use a **delay-bind** script block without
+  providing pipeline input.
+
+  ```powershell
+  Rename-Item -NewName {$_.Name + ".old"}
+  ```
+
+  ```Output
+  Rename-Item : Cannot evaluate parameter 'NewName' because its argument is
+  specified as a script block and there is no input. A script block cannot
+  be evaluated without input.
+  At line:1 char:23
+  +  Rename-Item -NewName {$_.Name + ".old"}
+  +                       ~~~~~~~~~~~~~~~~~~
+      + CategoryInfo          : MetadataError: (:) [Rename-Item],
+        ParameterBindingException
+      + FullyQualifiedErrorId : ScriptBlockArgumentNoInput,
+        Microsoft.PowerShell.Commands.RenameItemCommand
+  ```
 
 ## See Also
 
