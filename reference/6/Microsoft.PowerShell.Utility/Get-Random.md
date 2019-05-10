@@ -152,6 +152,21 @@ Because **SetSeed** produces non-random behavior, it is typically used only to r
 such as when debugging or analyzing a script.
 
 ```powershell
+# Commands with the default seed are pseudorandom
+Get-Random -Maximum 100 -SetSeed 23
+Get-Random -Maximum 100
+Get-Random -Maximum 100
+Get-Random -Maximum 100
+```
+
+```Output
+74
+56
+84
+46
+```
+
+```powershell
 # Commands with the same seed are not random
 Get-Random -Maximum 100 -SetSeed 23
 Get-Random -Maximum 100 -SetSeed 23
@@ -162,6 +177,21 @@ Get-Random -Maximum 100 -SetSeed 23
 74
 74
 74
+```
+
+```powershell
+# SetSeed results in a repeatable series
+Get-Random -Maximum 100 -SetSeed 23
+Get-Random -Maximum 100
+Get-Random -Maximum 100
+Get-Random -Maximum 100
+```
+
+```Output
+74
+56
+84
+46
 ```
 
 ### Example 10: Get random files
