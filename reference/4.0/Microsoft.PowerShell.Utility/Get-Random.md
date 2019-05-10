@@ -33,7 +33,7 @@ The `Get-Random` cmdlet gets a randomly selected number. If you submit a collect
 `Get-Random`, it gets one or more randomly selected objects from the collection.
 
 Without parameters or input, a `Get-Random` command returns a randomly selected 32-bit unsigned
-integer between 0 (zero) and **Int32.MaxValue** (`0x7FFFFFFF`, `2,147`,`483`,`647`).
+integer between 0 (zero) and **Int32.MaxValue** (`0x7FFFFFFF`, `2,147,483,647`).
 
 You can use the parameters of `Get-Random` to specify a seed number, minimum and maximum values, and
 the number of objects returned from a submitted collection.
