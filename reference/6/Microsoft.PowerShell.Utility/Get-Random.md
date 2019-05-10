@@ -33,7 +33,7 @@ The `Get-Random` cmdlet gets a randomly selected number. If you submit a collect
 `Get-Random`, it gets one or more randomly selected objects from the collection.
 
 Without parameters or input, a `Get-Random` command returns a randomly selected 32-bit unsigned
-integer between 0 (zero) and Int32.MaxValue (0x7FFFFFFF, 2,147,483,647).
+integer between 0 (zero) and **Int32.MaxValue** (`0x7FFFFFFF`, `2,147`,`483`,`647`).
 
 You can use the parameters of `Get-Random` to specify a seed number, minimum and maximum values, and
 the number of objects returned from a submitted collection.
@@ -44,22 +44,31 @@ the number of objects returned from a submitted collection.
 
 This command gets a random integer between 0 (zero) and Int32.MaxValue.
 
+```powershell
+Get-Random
 ```
-PS> Get-Random
+
+```Output
 3951433
 ```
 
 ### Example 2: Get a random integer between 0 and 99
 
+```powershell
+Get-Random -Maximum 100
 ```
-PS> Get-Random -Maximum 100
+
+```Output
 47
 ```
 
 ### Example 3: Get a random integer between -100 and 99
 
+```powershell
+Get-Random -Minimum -100 -Maximum 100
 ```
-PS> Get-Random -Minimum -100 -Maximum 100
+
+```Output
 56
 ```
 
@@ -67,8 +76,11 @@ PS> Get-Random -Minimum -100 -Maximum 100
 
 This command gets a random floating-point number greater than or equal to 10.7 and less than 20.92.
 
+```powershell
+Get-Random -Minimum 10.7 -Maximum 20.93
 ```
-PS> Get-Random -Minimum 10.7 -Maximum 20.93
+
+```Output
 18.08467273887
 ```
 
@@ -76,8 +88,11 @@ PS> Get-Random -Minimum 10.7 -Maximum 20.93
 
 This command gets a randomly selected number from the specified array.
 
+```powershell
+1, 2, 3, 5, 8, 13 | Get-Random
 ```
-PS> Get-Random -InputObject 1, 2, 3, 5, 8, 13
+
+```Output
 8
 ```
 
@@ -85,8 +100,11 @@ PS> Get-Random -InputObject 1, 2, 3, 5, 8, 13
 
 This command gets three randomly selected numbers in random order from an array.
 
+```powershell
+1, 2, 3, 5, 8, 13 | Get-Random -Count 3
 ```
-PS> Get-Random -InputObject 1, 2, 3, 5, 8, 13 -Count 3
+
+```Output
 3
 1
 13
@@ -96,8 +114,16 @@ PS> Get-Random -InputObject 1, 2, 3, 5, 8, 13 -Count 3
 
 This command returns the entire collection in random order.
 
+The value of the **Count** parameter is the **MaxValue** static property of integers.
+
+To return an entire collection in random order, enter any number that is greater than or equal to
+the number of objects in the collection.
+
+```powershell
+1, 2, 3, 5, 8, 13 | Get-Random -Count ([int]::MaxValue)
 ```
-PS> Get-Random -InputObject 1, 2, 3, 5, 8, 13 -Count ([int]::MaxValue)
+
+```Output
 2
 3
 5
@@ -106,130 +132,86 @@ PS> Get-Random -InputObject 1, 2, 3, 5, 8, 13 -Count ([int]::MaxValue)
 13
 ```
 
-The value of the **Count** parameter is the **MaxValue** static property of integers.
-
-To return an entire collection in random order, enter any number that is greater than or equal to
-the number of objects in the collection.
-
 ### Example 8: Get a random non-numeric value
 
 This command returns a random value from a non-numeric collection.
 
+```powershell
+"red", "yellow", "blue" | Get-Random
 ```
-PS> Get-Random -InputObject "red", "yellow", "blue"
+
+```Output
 yellow
 ```
 
-### Example 9: Get a random process
-
-This command gets a randomly selected process from the collection of processes on the computer.
-
-```
-PS> Get-Process | Get-Random
-Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
--------  ------    -----      ----- -----   ------     -- -----------
-144           4     2080        488    36     0.48   3164 wmiprvse
-```
-
-### Example 10: Run commands on remote computers in random order
-
-This command runs a command on a series of remote computers in random order.
-
-```powershell
-Get-Content Servers.txt | Get-Random -Count (Get-Content Servers.txt).Count |
-  foreach { Invoke-Command -ComputerName $_ -Command 'Get-Process PowerShell' }
-```
-
-### Example 11: Use the SetSeed parameter
+### Example 9: Use the SetSeed parameter
 
 This example shows the effect of using the **SetSeed** parameter.
-
-```
-PS> Get-Random -Maximum 100 -SetSeed 23
-
-# Commands with the default seed are pseudorandom
-
-PS> Get-Random -Maximum 100
-59
-PS> Get-Random -Maximum 100
-65
-PS> Get-Random -Maximum 100
-21
-
-# Commands with the same seed are not random
-
-PS> Get-Random -Maximum 100 -SetSeed 23
-74
-PS> Get-Random -Maximum 100 -SetSeed 23
-74
-PS> Get-Random -Maximum 100 -SetSeed 23
-74
-
-# SetSeed results in a repeatable series
-
-PS> Get-Random -Maximum 100 -SetSeed 23
-74
-PS> Get-Random -Maximum 100
-56
-PS> Get-Random -Maximum 100
-84
-PS> Get-Random -Maximum 100
-46
-PS> Get-Random -Maximum 100 -SetSeed 23
-74
-PS> Get-Random -Maximum 100
-56
-PS> Get-Random -Maximum 100
-84
-PS> Get-Random -Maximum 100
-46
-```
 
 Because **SetSeed** produces non-random behavior, it is typically used only to reproduce results,
 such as when debugging or analyzing a script.
 
-### Example 12: Get random files
+```powershell
+# Commands with the default seed are pseudorandom
+Get-Random -Maximum 100 -SetSeed 23
+Get-Random -Maximum 100
+Get-Random -Maximum 100
+Get-Random -Maximum 100
+```
 
-These commands get a randomly selected sample of 50 files from the C: drive of the local computer.
+```Output
+59
+65
+21
+```
 
 ```powershell
-$Files = dir -Path C:\* -Recurse
+# Commands with the same seed are not random
+Get-Random -Maximum 100 -SetSeed 23
+Get-Random -Maximum 100 -SetSeed 23
+Get-Random -Maximum 100 -SetSeed 23
+```
+
+```Output
+74
+74
+74
+```
+
+```powershell
+# SetSeed results in a repeatable series
+Get-Random -Maximum 100 -SetSeed 23
+Get-Random -Maximum 100
+Get-Random -Maximum 100
+Get-Random -Maximum 100
+```
+
+```Output
+74
+56
+84
+46
+```
+
+### Example 10: Get random files
+
+These commands get a randomly selected sample of 50 files from the `C:` drive of the local computer.
+
+```powershell
+$Files = Get-ChildItem -Path C:\* -Recurse
 $Sample = $Files | Get-Random -Count 50
 ```
 
-### Example 13: Get a random integer less than 10001
+### Example 11: Roll fair dice
 
-This command gets a random integer less than 10001.
-
-```
-PS> Get-Random 10001
-7600
-```
-
-Because the **Maximum** parameter has position 0, you can omit the parameter name when the value is
-the first or only unnamed parameter in the command.
-
-### Example 14: Get random 64-bit numbers
-
-These commands attempt to get randomly generated 64-bit numbers.
-
-```
-PS> Get-Random -Minimum ([Int64]::MinValue)
-3738173363251507200
-PS> Get-Random -Minimum ([Int32]::MaxValue)
-Minimum (2147483647) cannot be greater than or equal to Maximum (2147483647).
-    + CategoryInfo          : InvalidArgument: (:) [Get-Random], ArgumentException
-    + FullyQualifiedErrorId : MinGreaterThanOrEqualMax,Microsoft.PowerShell.Commands.GetRandomCommand
-```
-
-The first command succeeds, but the second command fails. When the value of **Minimum** is a 32-bit
-integer, the default value of **Maximum** is Int32.MaxValues. The command fails because the value of
-**Maximum** must be greater than the value of **Minimum**.
-
-### Example 15: Roll fair dice
+This example rolls a fair die 1200 times and counts the outcomes. The first command, `For-EachObject`
+repeats the call to `Get-Random` from the piped in numbers (1-6). The results are grouped by their
+value with `Group-Object` and formatted as a table with `Select-Object`.
 
 ```powershell
-1..1200 | ForEach-Object { 1..6 | Get-Random } | Group-Object | Select-Object Name,Count
+1..1200 | ForEach-Object {
+    1..6 | Get-Random
+} | Group-Object | Select-Object Name,Count
 ```
 
 ```Output
@@ -243,18 +225,33 @@ Name Count
 6      188
 ```
 
-This command rolls a fair die 1200 times and counts the outcomes.
+### Example 12: Use the Count parameter
+
+You can now use the **Count** parameter without piping objects to `Get-Random`. The following
+example gets three random numbers less than 10.
+
+```powershell
+Get-Random -Maximum 10 -Count 3
+```
+
+```Output
+8
+8
+3
+```
 
 ## PARAMETERS
 
 ### -Count
 
-Specifies how many objects are returned. The default is 1. If the value of **Count** exceeds the
-number of objects in the collection, `Get-Random` returns all of the objects in random order.
+Specifies the number of random objects or numbers to return. The default is 1.
+
+When used with `InputObject`, if the value of **Count** exceeds the number of objects in the
+collection, `Get-Random` returns all of the objects in random order.
 
 ```yaml
 Type: Int32
-Parameter Sets: RandomListItemParameterSet
+Parameter Sets:
 Aliases:
 
 Required: False
@@ -267,8 +264,9 @@ Accept wildcard characters: False
 ### -InputObject
 
 Specifies a collection of objects. `Get-Random` gets randomly selected objects in random order from
-the collection. Enter the objects, a variable that contains the objects, or a command or expression
-that gets the objects. You can also pipe a collection of objects to `Get-Random`.
+the collection up to the number specified by **Count**. Enter the objects, a variable that contains
+the objects, or a command or expression that gets the objects. You can also pipe a collection of
+objects to `Get-Random`.
 
 ```yaml
 Type: Object[]
@@ -288,16 +286,15 @@ Specifies a maximum value for the random number. `Get-Random` returns a value th
 maximum (not equal). Enter an integer, a double-precision floating-point number, or an object that
 can be converted to an integer or double, such as a numeric string ("100").
 
-The value of **Maximum** must be greater than (not equal to) the value of *Minimum*.
+The value of **Maximum** must be greater than (not equal to) the value of **Minimum**. If the value
+of **Maximum** or **Minimum** is a floating-point number, `Get-Random` returns a randomly selected
+floating-point number.
 
-If the value of **Maximum** or **Minimum** is a floating-point number, `Get-Random` returns a
-randomly selected floating-point number. If the value of **Minimum** is a double (a floating-point
-number), the default value of **Maximum** is Double.MaxValue. Otherwise, the default value is
-Int32.MaxValue.
+On a 64-bit computer, if the value of **Minimum** is a 32-bit integer, the default value of
+**Maximum** is **Int32.MaxValue**.
 
-On a 64-bit computer, if the value of *Minimum* is a 32-bit integer, the default value of *Maximum* is Int32.MaxValue.
-If the value of *Minimum* is a double (a floating-point number), the default value of *Maximum* is Double.MaxValue.
-Otherwise, the default value is Int64.MaxValue.
+If the value of **Minimum** is a double (a floating-point number), the default value of **Maximum**
+is **Double.MaxValue**. Otherwise, the default value is **Int32.MaxValue**.
 
 ```yaml
 Type: Object
@@ -381,6 +378,6 @@ submitted collection.
 starts.
 
 Beginning in Windows PowerShell 3.0, `Get-Random` supports 64-bit integers. In Windows PowerShell
-2.0, all values are cast to System.Int32.
+2.0, all values are cast to **System.Int32**.
 
 ## RELATED LINKS
