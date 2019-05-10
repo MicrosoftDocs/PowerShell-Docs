@@ -216,7 +216,7 @@ Indicates that the cmdlet counts the number of characters in the input objects.
 
 > [!NOTE]
 > The **Word**, **Char** and **Line** switches count *inside* each input object, as well as *across*
-> input objects. See [Example 7](#Example-7-Measure-Strings).
+> input objects. See [Example 7](#example-7-neasure-strings).
 
 ```yaml
 Type: SwitchParameter
@@ -276,7 +276,7 @@ Indicates that the cmdlet counts the number of lines in the input objects.
 
 > [!NOTE]
 > The **Word**, **Char** and **Line** switches count *inside* each input object, as well as *across*
-> input objects. See [Example 7](#Example-7-Measure-Strings).
+> input objects. See [Example 7](#example-7-neasure-strings).
 
 ```yaml
 Type: SwitchParameter
@@ -361,7 +361,7 @@ Indicates that the cmdlet counts the number of words in the input objects.
 
 > [!NOTE]
 > The **Word**, **Char** and **Line** switches count *inside* each input object, as well as *across*
-> input objects. See [Example 7](#Example-7-Measure-Strings).
+> input objects. See [Example 7](#example-7-neasure-strings).
 
 ```yaml
 Type: SwitchParameter
@@ -379,8 +379,7 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md)
-(http://go.microsoft.com/fwlink/?LinkID=113216).
+-WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
