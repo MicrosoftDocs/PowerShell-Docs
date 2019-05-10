@@ -150,7 +150,7 @@ Property          : PSIsContainer
 ### Example 7: Measure strings
 
 The following example measures the number of lines, first a single string, then across several
-strings. The newline character ``n` separates strings into multiple lines.
+strings. The newline character <code>`n</code> separates strings into multiple lines.
 
 ```powershell
 # The newline character `n separates the string into separate lines, as shown in the output.
@@ -330,7 +330,7 @@ Indicates that the cmdlet counts the number of characters in the input objects.
 
 > [!NOTE]
 > The **Word**, **Char** and **Line** switches count *inside* each input object, as well as *across*
-> input objects. See [Example 8](#example-7-measure-strings).
+> input objects. See [Example 7](#Example-7-Measure-Strings).
 
 ```yaml
 Type: SwitchParameter
@@ -346,7 +346,7 @@ Accept wildcard characters: False
 
 ### -IgnoreWhiteSpace
 
-Indicates that the cmdlet ignores white space in word counts and character counts.
+Indicates that the cmdlet ignores white space in character counts.
 By default, white space is not ignored.
 
 ```yaml
@@ -390,7 +390,7 @@ Indicates that the cmdlet counts the number of lines in the input objects.
 
 > [!NOTE]
 > The **Word**, **Char** and **Line** switches count *inside* each input object, as well as *across*
-> input objects. See [Example 8](#example-7-measure-strings).
+> input objects. See [Example 7](#Example-7-Measure-Strings).
 
 ```yaml
 Type: SwitchParameter
@@ -507,7 +507,7 @@ Indicates that the cmdlet counts the number of words in the input objects.
 
 > [!NOTE]
 > The **Word**, **Char** and **Line** switches count *inside* each input object, as well as *across*
-> input objects. See [Example 8](#example-7-measure-strings).
+> input objects. See [Example 7](#Example-7-Measure-Strings).
 
 ```yaml
 Type: SwitchParameter
