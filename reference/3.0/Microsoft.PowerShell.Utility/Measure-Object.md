@@ -216,7 +216,7 @@ Indicates that the cmdlet counts the number of characters in the input objects.
 
 > [!NOTE]
 > The **Word**, **Char** and **Line** switches count *inside* each input object, as well as *across*
-> input objects. See [Example 7](#example-7-neasure-strings).
+> input objects. See [Example 7](#example-7-measure-strings).
 
 ```yaml
 Type: SwitchParameter
@@ -276,7 +276,7 @@ Indicates that the cmdlet counts the number of lines in the input objects.
 
 > [!NOTE]
 > The **Word**, **Char** and **Line** switches count *inside* each input object, as well as *across*
-> input objects. See [Example 7](#example-7-neasure-strings).
+> input objects. See [Example 7](#example-7-measure-strings).
 
 ```yaml
 Type: SwitchParameter
@@ -361,7 +361,7 @@ Indicates that the cmdlet counts the number of words in the input objects.
 
 > [!NOTE]
 > The **Word**, **Char** and **Line** switches count *inside* each input object, as well as *across*
-> input objects. See [Example 7](#example-7-neasure-strings).
+> input objects. See [Example 7](#example-7-measure-strings).
 
 ```yaml
 Type: SwitchParameter
