@@ -419,6 +419,7 @@ Accept wildcard characters: False
 ### -ScriptBlock
 Specifies the commands to run in the background job.
 Enclose the commands in braces ( { } ) to create a script block.
+Use the $Input automatic variable to access the value of the *InputObject* parameter.
 This parameter is required.
 
 ```yaml
