@@ -373,7 +373,7 @@ This sample Select-Str cmdlet uses the [System.Management.Automation.Providerint
 
 ## Code Sample
 
-The following code shows the implementation of this version of this Select-Str cmdlet. Note that this code includes the cmdlet class, private methods used by the cmdlet, and the Windows PowerShell snap-in code used to register the cmdlet. For more information about registering the cmdlet, see [Building the Cmdlet](#Building-the-Cmdlet).
+The following code shows the implementation of this version of this Select-Str cmdlet. Note that this code includes the cmdlet class, private methods used by the cmdlet, and the Windows PowerShell snap-in code used to register the cmdlet. For more information about registering the cmdlet, see [Building the Cmdlet](#building-the-cmdlet).
 
 ```csharp
 //

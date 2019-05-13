@@ -179,7 +179,7 @@ This item provider does not implement this method. However, the following code i
 
 ## Implementing Helper Methods and Classes
 
-This item provider implements several helper methods and classes that are used by the public override methods defined by Windows PowerShell. The code for these helper methods and classes are shown in the [Code Sample](#Code-Sample) section.
+This item provider implements several helper methods and classes that are used by the public override methods defined by Windows PowerShell. The code for these helper methods and classes are shown in the [Code Sample](#code-sample) section.
 
 ### NormalizePath Method
 
