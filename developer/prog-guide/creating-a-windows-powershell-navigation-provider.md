@@ -28,34 +28,6 @@ The provider described here enables the user handle an Access database as a driv
 > [!CAUTION]
 > Be aware that this design assumes a database that has a field with the name ID, and that the type of the field is LongInteger.
 
-The following list includes sections in this topic. If you are unfamiliar with writing a Windows PowerShell navigation provider, read this information in the order that it appears. However, if you are familiar with writing a Windows PowerShell navigation provider, please go directly to the information that you need.
-
-- [Defining a PS Navigation Provider Class](#Define-the-Windows-PowerShell-provider)
-
-- [Defining Base Functionality](#Defining-Base-Functionality)
-
-- [Creating a PS Path](#Creating-a-Windows-PowerShell-Path)
-
-- [Retrieving the Parent Path](#Retrieving-the-Parent-Path)
-
-- [Retrieving the Child Path Name](#Retrieve-the-Child-Path-Name)
-
-- [Determining if an Item is a Container](#Determining-if-an-Item-is-a-Container)
-
-- [Moving an Item](#Moving-an-Item)
-
-- [Attaching Dynamic Parameters to the `Move-Item` Cmdlet](#Attaching-Dynamic-Parameters-to-the-Move-Item-Cmdlet)
-
-- [Normalizing a Relative Path](#Normalizing-a-Relative-Path)
-
-- [Code Sample](#Code-Sample)
-
-- [Defining Object Types and Formatting](#Defining-Object-Types-and-Formatting)
-
-- [Building the Windows PowerShell Provider](#Building-the-Windows-PowerShell-provider)
-
-- [Testing the Windows PowerShell Provider](#Testing-the-Windows-PowerShell-provider)
-
 ## Define the Windows PowerShell provider
 
 A Windows PowerShell navigation provider must create a .NET class that derives from the [System.Management.Automation.Provider.Navigationcmdletprovider](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider) base class. Here is the class definition for the navigation provider described in this section.

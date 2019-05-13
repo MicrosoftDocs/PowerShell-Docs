@@ -11,16 +11,6 @@ caps.latest.revision: 5
 ---
 # How to Add Syntax to a Cmdlet Help Topic
 
-- [Parameter Attributes](#Parameter-Attributes)
-
-- [Parameter Value Attributes](#Parameter-Value-Attributes)
-
-- [Gathering Syntax Information](#Gathering-Syntax-Information)
-
-- [Coding the Syntax Diagram XML](#Coding-the-Syntax-Diagram-XML)
-
-## Things to Know About the Syntax Diagram in Cmdlet Help
-
 Before you start to code the XML for the syntax diagram in the cmdlet Help file, read this section to get a clear picture of the kind of data you need to provide, such as the parameter attributes, and how that data is displayed in the syntax diagram..
 
 ### Parameter Attributes

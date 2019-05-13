@@ -30,44 +30,6 @@ The Windows PowerShell container provider described here defines the database as
 > [!CAUTION]
 > Be aware that this design assumes a database that has a field with the name ID, and that the type of the field is LongInteger.
 
-Here is a list of the sections in this topic. If you are unfamiliar with writing a Windows PowerShell container provider, please read this information in the order that it appears. However, if you are familiar with writing a Windows PowerShell container provider, please go directly to the information that you need.
-
-- [Defining a Windows PowerShell Container Provider Class](#Defining-a-Windows-PowerShell-Container-Provider-Class)
-
-- [Defining Base Functionality](#defining-base-functionality)
-
-- [Retrieving Child Items](#Retrieving-Child-Items)
-
-- [Attaching Dynamic Parameters to the `Get-ChildItem` Cmdlet](#Attaching-Dynamic-Parameters-to-the-Get-ChildItem-Cmdlet)
-
-- [Retrieving Child Item Names](#Retrieving-Child-Item-Names)
-
-- [Attaching Dynamic Parameters to the `Get-ChildItem` Cmdlet (Name)](#Attaching-Dynamic-Parameters-to-the-Get-ChildItem-Cmdlet-(Name))
-
-- [Renaming Items](#Renaming-Items)
-
-- [Attaching Dynamic Parameters to the  `Rename-Item` Cmdlet](#Attaching-Dynamic-Parameters-to-the-Rename-Item-Cmdlet)
-
-- [Creating New Items](#Creating-New-Items)
-
-- [Attaching Dynamic Parameters to the `New-Item` Cmdlet](#Attaching-Dynamic-Parameters-to-the-New-Item-Cmdlet)
-
-- [Removing a Items](#Removing-Items)
-
-- [Attaching Dynamic Parameters to the `Remove-Item` Cmdlet](#Attaching-Dynamic-Parameters-to-the-Remove-Item-Cmdlet)
-
-- [Querying for Child Items](#Querying-for-Child-Items)
-
-- [Coping Items](#Copying-Items)
-
-- [Attaching Dynamic Parameters to the  `Copy-Item` Cmdlet](#Attaching-Dynamic-Parameters-to-the-Copy-Item-Cmdlet)
-
-- [Code Sample](#Code-Sample)
-
-- [Building the Windows PowerShell Provider](#Building-the-Windows-PowerShell-Provider)
-
-- [Testing the Windows PowerShell Provider](#Testing-the-Windows-PowerShell-Provider)
-
 ## Defining a Windows PowerShell Container Provider Class
 
 A Windows PowerShell container provider must define a .NET class that derives from the [System.Management.Automation.Provider.Containercmdletprovider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider) base class. Here is the class definition for the Windows PowerShell container provider described in this section.

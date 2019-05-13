@@ -21,22 +21,6 @@ As mentioned previously, the basic provider described here implements methods fo
 > [!NOTE]
 > You can find a sample of this provider in the AccessDBSampleProvider01.cs file provided by Windows PowerShell.
 
-The sections in this topic include the following:
-
-- [Defining the Windows PowerShell Provider Class](#Defining-the-Windows-PowerShell-Provider-Class)
-
-- [Defining Provider-Specific State Information](#Defining-Provider-Specific-State-Information)
-
-- [Initializing the Provider](#Initializing-the-Provider)
-
-- [Start Dynamic Parameters](#Start-Dynamic-Parameters)
-
-- [Uninitializing the Provider](#Uninitializing-the-Provider)
-
-- [Code Sample](#Code-Sample)
-
-- [Testing the Windows PowerShell Provider](#Testing-the-Windows-PowerShell-Provider)
-
 ## Defining the Windows PowerShell Provider Class
 
 The first step in creating a Windows PowerShell provider is to define its .NET class. This basic provider defines a class called `AccessDBProvider` that derives from the [System.Management.Automation.Provider.Cmdletprovider](/dotnet/api/System.Management.Automation.Provider.CmdletProvider) base class.

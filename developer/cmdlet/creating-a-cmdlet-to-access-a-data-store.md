@@ -17,24 +17,6 @@ The Select-Str cmdlet described here can locate and select strings in a file or 
 
 The cmdlet is designed to use any Windows PowerShell provider that derives from [System.Management.Automation.Provider.Icontentcmdletprovider](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider). For example, the cmdlet can specify the FileSystem provider or the Variable provider that is provided by Windows PowerShell. For more information aboutWindows PowerShell providers, see [Designing Your Windows PowerShell provider](../prog-guide/designing-your-windows-powershell-provider.md).
 
-Topics in this section include the following:
-
-- [Defining the Cmdlet Class](#Defining-the-Cmdlet-Class)
-
-- [Defining Parameters for Data Access](#Declaring-the-Path-Parameter)
-
-- [Overriding Input Processing Methods](#Overriding-Input-Processing-Methods)
-
-- [Accessing Content](#Accessing-Content)
-
-- [Code Sample](#Code-Sample)
-
-- [Defining Object Types and Formatting](#Declaring-Search-Support-Parameters)
-
-- [Building the Cmdlet](#Building-the-Cmdlet)
-
-- [Testing the Cmdlet](#Testing-the-Cmdlet)
-
 ## Defining the Cmdlet Class
 
 The first step in cmdlet creation is always naming the cmdlet and declaring the .NET class that implements the cmdlet. This cmdlet detects certain strings, so the verb name chosen here is "Select", defined by the [System.Management.Automation.Verbscommon](/dotnet/api/System.Management.Automation.VerbsCommon) class. The noun name "Str" is used because the cmdlet acts upon strings. In the declaration below, note that the cmdlet verb and noun name are reflected in the name of the cmdlet class. For more information about approved cmdlet verbs, see [Cmdlet Verb Names](./approved-verbs-for-windows-powershell-commands.md).
