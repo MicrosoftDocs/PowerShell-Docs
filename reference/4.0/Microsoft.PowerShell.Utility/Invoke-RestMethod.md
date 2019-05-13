@@ -34,8 +34,9 @@ For JavaScript Object Notation (JSON) or XML, Windows PowerShell converts (or de
 This cmdlet is introduced in Windows PowerShell 3.0.
 
 > [!NOTE]
-> Unless `-UseBasicParsing` is specified,
-> script code in the web page may be run when the page is being parsed.
+> By default,
+> script code in the web page may be run when the page is being parsed to populate the `ParsedHtml` property.
+> Use the `-UseBasicParsing` switch to suppress this.
 
 ## Examples
 
