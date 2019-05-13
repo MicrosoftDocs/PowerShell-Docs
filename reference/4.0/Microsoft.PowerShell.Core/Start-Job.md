@@ -167,6 +167,17 @@ This command starts a job that collects a large amount of data and saves it in a
 The command uses the InitializationScript parameter to run a script block that imports a required module.
 It also uses the RunAs32 parameter to run the job in a 32-bit process even if the computer has a 64-bit operating system.
 
+### Example 7: Pass input to a background job
+
+```
+PS C:\> Start-Job -ScriptBlock {Write-Output $Input} -InputObject 'Hello, world!'
+```
+
+This command starts a job that simply accesses and outputs its input.
+The command uses the *InputObject* parameter to pass input to the job.
+Input to a job is accessed via the $Input automatic variable.
+The $_ automatic variable (alias $PSItem) is not populated.
+
 ## PARAMETERS
 
 ### -ArgumentList
@@ -409,6 +420,7 @@ Accept wildcard characters: False
 ### -ScriptBlock
 Specifies the commands to run in the background job.
 Enclose the commands in braces ( { } ) to create a script block.
+Use the $Input automatic variable to access the value of the *InputObject* parameter.
 This parameter is required.
 
 ```yaml

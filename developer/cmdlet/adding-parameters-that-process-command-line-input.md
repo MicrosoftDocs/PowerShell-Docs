@@ -20,24 +20,6 @@ caps.latest.revision: 9
 
 One source of input for a cmdlet is the command line. This topic describes how to add a parameter to the **Get-Proc** cmdlet (which is described in [Creating Your First Cmdlet](./creating-a-cmdlet-without-parameters.md)) so that the cmdlet can process input from the local computer based on explicit objects passed to the cmdlet. The **Get-Proc** cmdlet described here retrieves processes based on their names, and then displays information about the processes at a command prompt.
 
-The following sections are in this topic:
-
-- [Defining the Cmdlet Class](#Defining-the-Cmdlet-Class)
-
-- [Declaring Parameters](#Declaring-Parameters)
-
-- [Supporting Parameter Validation](#Supporting-Parameter-Validation)
-
-- [Overriding an Input Processing Method](#Overriding-an-Input-Processing-Method)
-
-- [Code Sample](#Code-Sample)
-
-- [Defining Object Types and Formatting](#Defining-Object-Types-and-Formatting)
-
-- [Building the Cmdlet](#Building-the-Cmdlet)
-
-- [Testing the Cmdlet](#Testing-the-Cmdlet)
-
 ## Defining the Cmdlet Class
 
 The first step in cmdlet creation is cmdlet naming and the declaration of the .NET Framework class that implements the cmdlet. This cmdlet retrieves process information, so the verb name chosen here is "Get." (Almost any sort of cmdlet that is capable of retrieving information can process command-line input.) For more information about approved cmdlet verbs, see [Cmdlet Verb Names](./approved-verbs-for-windows-powershell-commands.md).
