@@ -19,26 +19,6 @@ This topic describes how to create a Windows PowerShell drive provider that prov
 
 The Windows PowerShell drive provider described here provides access to a Microsoft Access database. For this provider, the Windows PowerShell drive represents the database (it is possible to add any number of drives to a drive provider), the top-level containers of the drive represent the tables in the database, and the items of the containers represent the rows in the tables.
 
-Here is a list of the sections in this topic. If you are unfamiliar with writing a Windows PowerShell drive provider, read these sections in the order that they appear. However, if you are familiar with writing a drive provider, please go directly to the information that you need.
-
-- [Defining the Windows PowerShell Provider Class](#Defining-the-Windows-PowerShell-Provider-Class)
-
-- [Defining Base Functionality](#Defining-Base-Functionality)
-
-- [Creating Drive State Information](#Creating-Drive-State-Information)
-
-- [Creating a Drive](#Creating-a-Drive)
-
-- [Attaching Dynamic Parameters to NewDrive](#Attaching-Dynamic-Parameters-to-NewDrive)
-
-- [Removing a Drive](#Removing-a-Drive)
-
-- [Initializing Default Drives](#Initializing-Default-Drives)
-
-- [Code Sample](#Code-Sample)
-
-- [Testing the Windows PowerShell Drive Provider](#Testing-the-Windows-PowerShell-Drive-Provider)
-
 ## Defining the Windows PowerShell Provider Class
 
 Your drive provider must define a .NET class that derives from the [System.Management.Automation.Provider.Drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider) base class. Here is the class definition for this drive provider:

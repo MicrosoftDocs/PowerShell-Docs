@@ -13,26 +13,6 @@ caps.latest.revision: 8
 ---
 # Adding Parameter Sets to a Cmdlet
 
-This section describes how to add parameter sets to the Stop-Proc cmdlet (described in [Creating a Cmdlet that Modifies the System](./creating-a-cmdlet-that-modifies-the-system.md)). Similar to the other Stop-Proc cmdlets described in this Programmer's Guide, this cmdlet attempts to stop processes that are retrieved using the Get-Proc cmdlet (described in [Creating Your First Cmdlet](./creating-a-cmdlet-without-parameters.md)).
-
-Topics in this section include the following:
-
-- [Things to Know About Parameter Sets](#Adding-Parameter-Sets-to-a-Cmdlet)
-
-- [Declaring the Cmdlet Class](#Declaring-the-Cmdlet-Class)
-
-- [Declaring the Parameters of the Cmdlet](#Declaring-the-Parameters-of-the-Cmdlet)
-
-- [Overriding an Input Processing Method](#Overriding-an-Input-Processing-Method)
-
-- [Code Sample](#Declaring-the-Parameters-of-the-Cmdlet)
-
-- [Defining Object Types and Formatting](#Defining-Object-Types-and-Formatting)
-
-- [Building the Cmdlet](#Building-the-Cmdlet)
-
-- [Testing the Cmdlet](#Testing-the-Cmdlet)
-
 ## Things to Know About Parameter Sets
 
 Windows PowerShell defines a parameter set as a group of parameters that operate together. By grouping the parameters of a cmdlet, you can create a single cmdlet that can change its functionality based on what group of parameters the user specifies.

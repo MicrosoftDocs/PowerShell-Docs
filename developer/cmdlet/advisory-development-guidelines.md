@@ -15,32 +15,6 @@ This section describes guidelines that you should consider to ensure good develo
 
 ## Design Guidelines
 
-- [Support an InputObject Parameter (AD01)](./advisory-development-guidelines.md#AD01)
-
-- [Support the Force Parameter (AD02)](./advisory-development-guidelines.md#AD02)
-
-- [Handle Credentials Through Windows PowerShell (AD03)](./advisory-development-guidelines.md#AD03)
-
-- [Support Encoding Parameters (AD04)](./advisory-development-guidelines.md#AD04)
-
-- [Test Cmdlets Should Return a Boolean (AD05)](./advisory-development-guidelines.md#AD05)
-
-## Code Guidelines
-
-- [Follow Cmdlet Class Naming Conventions (AC01)](./advisory-development-guidelines.md#AC01)
-
-- [If No Pipeline Input Override the BeginProcessing Method (AC02)](./advisory-development-guidelines.md#AC02)
-
-- [To Handle Stop Requests Override the StopProcessing Method (AC03)](./advisory-development-guidelines.md#AC03)
-
-- [Implement the IDisposable Interface (AC04)](./advisory-development-guidelines.md#AC04)
-
-- [Use Serialization-friendly Parameter Types (AC05)](./advisory-development-guidelines.md#AC05)
-
-- [Use SecureString for Sensitive Data (AC06)](./advisory-development-guidelines.md#AC06)
-
-## Design Guidelines
-
 The following guidelines should be considered when designing cmdlets. When you find a Design guideline that applies to your situation, be sure to look at the Code guidelines for similar guidelines.
 
 ### Support an InputObject Parameter (AD01)

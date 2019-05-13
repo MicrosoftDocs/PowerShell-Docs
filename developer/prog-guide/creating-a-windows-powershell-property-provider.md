@@ -26,26 +26,6 @@ This topic describes how to create a provider that enables the user to manipulat
 > [!CAUTION]
 > The methods of your property provider should write any objects using the [System.Management.Automation.Provider.Cmdletprovider.Writepropertyobject*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WritePropertyObject) method.
 
-The following list contains the sections in this topic. If you are unfamiliar with writing a Windows PowerShell property provider, read this information in the order that it appears. However, if you are familiar with writing a Windows PowerShell property provider, please go directly to the information that you need.
-
-- [Defining the Windows PowerShell Provider](#Defining-the-Windows-PowerShell-provider)
-
-- [Defining Base Functionality](#Defining-Base-Functionality)
-
-- [Retrieving Properties](#Retrieving-Properties)
-
-- [Attaching Dynamic Parameters to the `Get-ItemProperty` Cmdlet](#Attaching-Dynamic-Parameters-to-the-Get-ItemProperty-Cmdlet)
-
-- [Setting Properties](#Setting-Properties)
-
-- [Attaching Dynamic Parameters to the `Set-ItemProperty` Cmdlet](#Attaching-Dynamic-Parameters-for-the-Set-ItemProperty-Cmdlet)
-
-- [Clearing a Property](#Clearing-Properties)
-
-- [Attaching Dynamic Parameters to the `Clear-ItemProperty` Cmdlet](#Attaching-Dynamic-Parameters-to-the-Clear-ItemProperty-Cmdlet)
-
-- [Building the Windows PowerShell Provider](#Building-the-Windows-PowerShell-provider)
-
 ## Defining the Windows PowerShell provider
 
 A property provider must create a .NET class that supports the [System.Management.Automation.Provider.Ipropertycmdletprovider](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider) interface. Here is the default class declaration from the TemplateProvider.cs file provided by Windows PowerShell.
