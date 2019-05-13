@@ -34,6 +34,10 @@ For JavaScript Object Notation (JSON) or XML, Windows PowerShell converts (or de
 
 This cmdlet is introduced in Windows PowerShell 3.0.
 
+> [!NOTE]
+> Unless `-UseBasicParsing` is specified,
+> script code in the web page may be run when the page is being parsed.
+
 ## Examples
 
 ### Example 1: Get the PowerShell RSS feed
@@ -104,11 +108,11 @@ Invoke-RestMethod -Method Post -Uri $url -Credential $Cred -Body $body -OutFile 
 ### Example 3: Pass multiple headers
 
 ```powershell
-$headers = @{ 
+$headers = @{
     'userId' = 'UserIDValue'
     'token' = 'TokenValue'
 }
-Invoke-RestMethod -Uri $uri -Method Post -Headers $headers -Body $body 
+Invoke-RestMethod -Uri $uri -Method Post -Headers $headers -Body $body
 ```
 APIs often require passed headers for authentication, validation etc.
 

@@ -31,6 +31,10 @@ It parses the response and returns collections of forms, links, images, and othe
 
 This cmdlet was introduced in Windows PowerShell 3.0.
 
+> [!NOTE]
+> Unless `-UseBasicParsing` is specified,
+> script code in the web page may be run when the page is being parsed.
+
 ## EXAMPLES
 
 ### Example 1

@@ -26,10 +26,15 @@ Invoke-WebRequest [-UseBasicParsing] [-Uri] <Uri> [-WebSession <WebRequestSessio
 ```
 
 ## DESCRIPTION
+
 The **Invoke-WebRequest** cmdlet sends HTTP, HTTPS, FTP, and FILE requests to a web page or web service.
 It parses the response and returns collections of forms, links, images, and other significant HTML elements.
 
 This cmdlet was introduced in Windows PowerShell 3.0.
+
+> [!NOTE]
+> Unless `-UseBasicParsing` is specified,
+> script code in the web page may be run when the page is being parsed.
 
 ## EXAMPLES
 
