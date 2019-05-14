@@ -135,7 +135,7 @@ must be enclosed in single quotation marks, because it includes brackets that ca
 ### -Credential
 
 > [!NOTE]
-> This parameter is not supported by any providers installed with Windows PowerShell.
+> This parameter is not supported by any providers installed with PowerShell.
 > To impersonate another user, or elevate your credentials when running this cmdlet,
 > use [Invoke-Command](../Microsoft.PowerShell.Core/Invoke-Command.md)
 
