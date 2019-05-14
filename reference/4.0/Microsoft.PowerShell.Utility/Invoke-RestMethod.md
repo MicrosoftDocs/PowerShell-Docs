@@ -33,6 +33,11 @@ For JavaScript Object Notation (JSON) or XML, Windows PowerShell converts (or de
 
 This cmdlet is introduced in Windows PowerShell 3.0.
 
+> [!NOTE]
+> By default,
+> script code in the web page may be run when the page is being parsed to populate the `ParsedHtml` property.
+> Use the `-UseBasicParsing` switch to suppress this.
+
 ## Examples
 
 ### Example 1: Get the PowerShell RSS feed
