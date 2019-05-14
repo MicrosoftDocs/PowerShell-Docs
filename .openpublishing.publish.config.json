@@ -1,9 +1,9 @@
 {
     "build_entry_point": "docs",
     "docsets_to_publish": [{
-            "docset_name": "developer-docs",
+            "docset_name": "e2eprod-developer-docs",
             "build_source_folder": "developer",
-            "build_output_subfolder": "developer-docs",
+            "build_output_subfolder": "e2eprod-developer-docs",
             "locale": "en-us",
             "monikers": [],
             "moniker_ranges": [],
@@ -17,7 +17,7 @@
             "template_folder": "_themes"
         },
         {
-            "docset_name": "PowerShell_PowerShell-docs_dsc",
+            "docset_name": "e2eprod-PowerShell_PowerShell-docs_dsc",
             "build_source_folder": "dsc",
             "build_output_subfolder": "dsc",
             "locale": "en-us",
@@ -32,7 +32,7 @@
             "version": 0
         },
         {
-            "docset_name": "PowerShell_PowerShell-docs_gallery",
+            "docset_name": "e2eprod-PowerShell_PowerShell-docs_gallery",
             "build_source_folder": "gallery",
             "build_output_subfolder": "gallery",
             "locale": "en-us",
@@ -47,7 +47,7 @@
             "version": 0
         },
         {
-            "docset_name": "PowerShell_PowerShell-docs_jea",
+            "docset_name": "e2eprod-PowerShell_PowerShell-docs_jea",
             "build_source_folder": "jea",
             "build_output_subfolder": "jea",
             "locale": "en-us",
@@ -62,7 +62,7 @@
             "version": 0
         },
         {
-            "docset_name": "PowerShell_PowerShell-docs_reference",
+            "docset_name": "e2eprod-PowerShell_PowerShell-docs_reference",
             "build_source_folder": "reference",
             "build_output_subfolder": "reference",
             "locale": "en-us",
@@ -89,7 +89,7 @@
             ]
         },
         {
-            "docset_name": "PowerShell_PowerShell-docs_wmf",
+            "docset_name": "e2eprod-PowerShell_PowerShell-docs_wmf",
             "build_source_folder": "wmf",
             "build_output_subfolder": "wmf",
             "locale": "en-us",
