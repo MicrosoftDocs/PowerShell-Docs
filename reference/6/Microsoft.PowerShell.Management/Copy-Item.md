@@ -90,7 +90,7 @@ Copy-Item "\\Server01\Share\Get-Widget.ps1" -Destination "\\Server12\ScriptArchi
 ### Example 5: Copy a file to a remote computer
 
 The first command creates a session to the remote computer named "Server01" with the credential of
-`Contoso\PattiFu`" and stores the results in the variable named `$Session`.
+"Contoso\PattiFu" and stores the results in the variable named `$Session`.
 
 The second command uses the `Copy-Item` cmdlet to copy `test.log` from the `D:\Folder001` folder to
 the `C:\Folder001_Copy` folder on the remote computer using the session information stored in the
