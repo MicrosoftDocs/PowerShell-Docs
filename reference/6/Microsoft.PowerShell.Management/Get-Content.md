@@ -91,13 +91,6 @@ This command gets a specific number of lines from a file and then displays only 
 that content. The **TotalCount** parameter gets the first 25 lines of content. This example uses the
 `LineNumbers.txt` file that was created in Example 1.
 
-The `Get-Content` command is wrapped in parentheses so that the command completes before going to
-the next step.
-
-The `Get-Content` cmdlet returns an array of lines, this allows you to add the index notation after
-the parenthesis to retrieve a specific line number. In this case, the `[-1]` index specifies the
-last index in the returned array of 25 retrieved lines.
-
 ```powershell
 (Get-Content -Path .\LineNumbers.txt -TotalCount 25)[-1]
 ```
@@ -106,16 +99,15 @@ last index in the returned array of 25 retrieved lines.
 This is Line 25
 ```
 
+The `Get-Content` command is wrapped in parentheses so that the command completes before going to
+the next step. `Get-Content`returns an array of lines, this allows you to add the index notation after
+the parenthesis to retrieve a specific line number. In this case, the `[-1]` index specifies the
+last index in the returned array of 25 retrieved lines.
+
 ### Example 4: Get the last line of a text file
 
 This command gets the first line and last line of content from a file. This example uses the
 `LineNumbers.txt` file that was created in Example 1.
-
-This example uses the `Get-Item` cmdlet to demonstrate that you can pipe files into the
-`Get-Content` parameter.
-
-The **Tail** parameter gets the last line of the file. This method is faster than retrieving all of
-the lines and using the `[-1]` index notation.
 
 ```powershell
 Get-Item -Path .\LineNumbers.txt Get-Content -Tail 1
@@ -125,17 +117,15 @@ Get-Item -Path .\LineNumbers.txt Get-Content -Tail 1
 This is Line 100
 ```
 
+This example uses the `Get-Item` cmdlet to demonstrate that you can pipe files into the
+`Get-Content` parameter. The **Tail** parameter gets the last line of the file. This method is
+faster than retrieving all of the lines and using the `[-1]` index notation.
+
 ### Example 5: Get the content of an alternate data stream
 
 This example describes how to use the **Stream** parameter to get the content of an alternate data
 stream for files stored on a Windows NTFS volume. In this example, the `Set-Content` cmdlet is used
 to create sample content in a file named `Stream.txt`.
-
-The **Stream** parameter is a dynamic parameter of the
-[FileSystem provider](../microsoft.powershell.core/about/about_filesystem_provider.md#stream-systemstring).
-By default `Get-Content` only retrieves data from the primary, or `$DATA` stream.
-
-**Streams** can be used to store hidden data such as attributes, security settings, or other data.
 
 ```powershell
 Set-Content -Path .\Stream.txt -Value 'This is the content of the Stream.txt file'
@@ -201,6 +191,11 @@ Get-Content -Path .\Stream.txt -Stream NewStream
 ```Output
 Added a stream named NewStream to Stream.txt
 ```
+
+The **Stream** parameter is a dynamic parameter of the
+[FileSystem provider](../microsoft.powershell.core/about/about_filesystem_provider.md#stream-systemstring).
+By default `Get-Content` only retrieves data from the primary, or `$DATA` stream. **Streams** can be
+used to store hidden data such as attributes, security settings, or other data.
 
 ### Example 6: Get raw content
 
@@ -332,15 +327,9 @@ Accept wildcard characters: False
 
 ### -Filter
 
-Specifies a filter to qualify the **Path** parameter. When you specify a filter, the **Path**
-parameter requires a trailing asterisk (`*`) to indicate the contents of the path.
-
-The [FileSystem](../Microsoft.PowerShell.Core/About/about_FileSystem_Provider.md) provider is the
-only installed PowerShell provider that supports the use of filters.
-
-You can find the syntax for the **FileSystem** filter language in
-[about_Wildcards](../Microsoft.PowerShell.Core/About/about_Wildcards.md).
-
+Specifies a filter to qualify the **Path** parameter. The [FileSystem](../Microsoft.PowerShell.Core/About/about_FileSystem_Provider.md)
+provider is the only installed PowerShell provider that supports the use of filters. You can find
+the syntax for the **FileSystem** filter language in [about_Wildcards](../Microsoft.PowerShell.Core/About/about_Wildcards.md).
 Filters are more efficient than other parameters, because the provider applies them when the cmdlet
 gets the objects rather than having PowerShell filter the objects after they are retrieved.
 
@@ -358,15 +347,11 @@ Accept wildcard characters: True
 
 ### -Include
 
-Specifies, as a string array, an item or items that this cmdlet includes in the operation.
-The value of this parameter qualifies the **Path** parameter.
-Enter a path element or pattern, such as `"*.txt"`.
-
-Wildcard characters are permitted.
-
-The **Include** parameter is effective only when the command includes the contents of an item, such
-as `C:\Windows\*`, where the wildcard character specifies the contents of the `C:\Windows`
-directory.
+Specifies, as a string array, an item or items that this cmdlet includes in the operation. The value
+of this parameter qualifies the **Path** parameter. Enter a path element or pattern, such as
+`"*.txt"`. Wildcard characters are permitted. The **Include** parameter is effective only when the
+command includes the contents of an item, such as `C:\Windows\*`, where the wildcard character
+specifies the contents of the `C:\Windows` directory.
 
 ```yaml
 Type: String[]

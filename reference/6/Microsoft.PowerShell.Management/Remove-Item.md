@@ -39,9 +39,8 @@ files, folders, registry keys, variables, aliases, and functions.
 ### Example 1: Delete files that have any file name extension
 
 This command deletes all of the files that have names that include a dot (`.`) from the `C:\Test`
-folder.
-Because the command specifies a dot, the command does not delete folders or files that have no file
-name extension.
+folder. Because the command specifies a dot, the command does not delete folders or files that have
+no file name extension.
 
 ```powershell
 Remove-Item C:\Test\*.*
@@ -51,23 +50,25 @@ Remove-Item C:\Test\*.*
 
 This command deletes from the current folder all files that have a `.doc` file name extension and a
 name that does not include 1.
-It uses the wildcard character ('*') to specify the contents of the current folder.
-It uses the **Include** and **Exclude** parameters to specify the files to delete.
 
 ```powershell
 Remove-Item * -Include *.doc -Exclude *1*
 ```
 
+It uses the wildcard character ('*') to specify the contents of the current folder. It uses the
+**Include** and **Exclude** parameters to specify the files to delete.
+
 ### Example 3: Delete hidden, read-only files
 
 This command deletes a file that is both *hidden* and *read-only*.
-It uses the **Path** parameter to specify the file.
-It uses the **Force** parameter to delete it.
-Without **Force**, you cannot delete *read-only* or *hidden* files.
 
 ```powershell
 Remove-Item -Path C:\Test\hidden-RO-file.txt -Force
 ```
+
+It uses the **Path** parameter to specify the file. It uses the **Force**
+parameter to delete it. Without **Force**, you cannot delete *read-only* or
+*hidden* files.
 
 ### Example 4: Delete files in subfolders recursively
 
@@ -77,17 +78,15 @@ Because the **Recurse** parameter in `Remove-Item` has a known issue, the comman
 uses `Get-ChildItem` to get the desired files, and then uses the pipeline operator to pass them to
 `Remove-Item`.
 
-In the `Get-ChildItem` command, **Path** has a value of '*', which represents the contents of the
-current folder.
-It uses **Include** to specify the CSV file type, and it uses **Recurse** to make the retrieval
-recursive.
-
-If you try to specify the file type the path, such as `-Path *.csv`, the cmdlet interprets the
-subject of the search to be a file that has no child items, and **Recurse** fails.
-
 ```powershell
 Get-ChildItem * -Include *.csv -Recurse | Remove-Item
 ```
+
+In the `Get-ChildItem` command, **Path** has a value of (`*`), which represents the contents of the
+current folder. It uses **Include** to specify the CSV file type, and it uses **Recurse** to make
+the retrieval recursive. If you try to specify the file type the path, such as `-Path *.csv`, the
+cmdlet interprets the subject of the search to be a file that has no child items, and **Recurse**
+fails.
 
 ### Example 5: Delete subkeys recursively
 
@@ -242,15 +241,11 @@ Accept wildcard characters: False
 
 ### -Exclude
 
-Specifies, as a string array, an item or items that this cmdlet excludes in the operation.
-The value of this parameter qualifies the **Path** parameter.
-
-Enter a path element or pattern, such as `*.txt`.
-Wildcard characters are permitted.
-
-The **Exclude** parameter is effective only when the command includes the contents of an item,
-such as `C:\Windows\*`, where the wildcard character specifies the contents of the `C:\Windows`
-directory.
+Specifies, as a string array, an item or items that this cmdlet excludes in the operation. The value
+of this parameter qualifies the **Path** parameter. Enter a path element or pattern, such as
+`*.txt`. Wildcard characters are permitted. The **Exclude** parameter is effective only when the
+command includes the contents of an item, such as `C:\Windows\*`, where the wildcard character
+specifies the contents of the `C:\Windows` directory.
 
 ```yaml
 Type: String[]
@@ -261,21 +256,16 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -Filter
 
-Specifies a filter to qualify the **Path** parameter.
-
-The [FileSystem](../Microsoft.PowerShell.Core/About/about_FileSystem_Provider.md) provider is the
-only installed PowerShell provider that
-supports the use of filters. You can find the syntax for the **FileSystem** filter language in
-[about_Wildcards](../Microsoft.PowerShell.Core/About/about_Wildcards.md).
-
+Specifies a filter to qualify the **Path** parameter. The [FileSystem](../Microsoft.PowerShell.Core/About/about_FileSystem_Provider.md)
+provider is the only installed PowerShell provider that supports the use of filters. You can find
+the syntax for the **FileSystem** filter language in [about_Wildcards](../Microsoft.PowerShell.Core/About/about_Wildcards.md).
 Filters are more efficient than other parameters, because the provider applies them when the cmdlet
 gets the objects rather than having PowerShell filter the objects after they are retrieved.
-
 
 ```yaml
 Type: String
@@ -311,15 +301,11 @@ Accept wildcard characters: False
 
 ### -Include
 
-Specifies, as a string array, an item or items that this cmdlet includes in the operation.
-The value of this parameter qualifies the **Path** parameter.
-Enter a path element or pattern, such as `"*.txt"`.
-
-Wildcard characters are permitted.
-
-The **Include** parameter is effective only when the command includes the contents of an item, such
-as `C:\Windows\*`, where the wildcard character specifies the contents of the `C:\Windows`
-directory.
+Specifies, as a string array, an item or items that this cmdlet includes in the operation. The value
+of this parameter qualifies the **Path** parameter. Enter a path element or pattern, such as
+`"*.txt"`. Wildcard characters are permitted. The **Include** parameter is effective only when the
+command includes the contents of an item, such as `C:\Windows\*`, where the wildcard character
+specifies the contents of the `C:\Windows` directory.
 
 ```yaml
 Type: String[]
@@ -330,7 +316,7 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -LiteralPath

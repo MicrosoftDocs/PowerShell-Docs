@@ -40,11 +40,6 @@ This cmdlet is similar to `Clear-Content`, but it works on aliases and variables
 ### Example 1: Clear the value of a variable
 
 This command clears the value of the variable named `TestVar1`.
-The variable remains and is valid, but its value is set to `$null`.
-The variable name is prefixed with `Variable:` to indicate the PowerShell Variable provider.
-
-The alternate commands show that, to get the same result, you can switch to the PowerShell
-`Variable:` drive and then run the `Clear-Item` command.
 
 ```powershell
 Clear-Item Variable:TestVar1
@@ -55,20 +50,26 @@ Set-Location Variable:
 PS Variable:\> Clear-Item TestVar1
 ```
 
+The variable remains and is valid, but its value is set to `$null`. The variable name is prefixed
+with `Variable:` to indicate the PowerShell **Variable** provider. The alternate commands show that,
+to get the same result, you can switch to the PowerShell `Variable:` drive and then run the
+`Clear-Item` command.
+
 ### Example 2: Clear all registry entries
 
 This command clears all registry entries in the "MyKey" subkey, but only after prompting you to
 confirm your intent.
-It does not delete the "MyKey" subkey or affect any other registry keys or entries.
+
+```powershell
+Clear-Item HKLM:\Software\MyCompany\MyKey -Confirm
+```
+
+This command does not delete the "MyKey" subkey or affect any other registry keys or entries.
 You can use the **Include** and **Exclude** parameters to identify particular registry keys, but you
 cannot use them to identify registry entries.
 
 - To delete particular registry entries, use the `Remove-ItemProperty` cmdlet.
 - To delete the value of a registry entry, use the `Clear-ItemPropertycmdlet`.
-
-```powershell
-Clear-Item HKLM:\Software\MyCompany\MyKey -Confirm
-```
 
 ## PARAMETERS
 
@@ -93,16 +94,11 @@ Accept wildcard characters: False
 
 ### -Exclude
 
-Specifies, as a string array, an item or items that this cmdlet excludes in the operation.
-The value of this parameter qualifies the **Path** parameter.
-
-Enter a path element or pattern, such as `*.txt`.
-Wildcard characters are permitted.
-
-The **Exclude** parameter is effective only when the command includes the contents of an item,
-such as `C:\Windows\*`, where the wildcard character specifies the contents of the `C:\Windows`
-directory.
-
+Specifies, as a string array, an item or items that this cmdlet excludes in the operation. The value
+of this parameter qualifies the **Path** parameter. Enter a path element or pattern, such as
+`*.txt`. Wildcard characters are permitted. The **Exclude** parameter is effective only when the
+command includes the contents of an item, such as `C:\Windows\*`, where the wildcard character
+specifies the contents of the `C:\Windows` directory.
 
 ```yaml
 Type: String[]
@@ -118,9 +114,11 @@ Accept wildcard characters: True
 
 ### -Filter
 
-The `Clear-Item` cmdlet does not support the **Filter** parameter with any installed PowerShell
-provider. In third party providers, the **Filter** parameter could be implemented to qualify the
-**Path** parameter using provider specific language.
+Specifies a filter to qualify the **Path** parameter. The [FileSystem](../Microsoft.PowerShell.Core/About/about_FileSystem_Provider.md)
+provider is the only installed PowerShell provider that supports the use of filters. You can find
+the syntax for the **FileSystem** filter language in [about_Wildcards](../Microsoft.PowerShell.Core/About/about_Wildcards.md).
+Filters are more efficient than other parameters, because the provider applies them when the cmdlet
+gets the objects rather than having PowerShell filter the objects after they are retrieved.
 
 ```yaml
 Type: String
@@ -156,15 +154,11 @@ Accept wildcard characters: False
 
 ### -Include
 
-Specifies, as a string array, an item or items that this cmdlet includes in the operation.
-The value of this parameter qualifies the **Path** parameter.
-Enter a path element or pattern, such as `"*.txt"`.
-
-Wildcard characters are permitted.
-
-The **Include** parameter is effective only when the command includes the contents of an item, such
-as `C:\Windows\*`, where the wildcard character specifies the contents of the `C:\Windows`
-directory.
+Specifies, as a string array, an item or items that this cmdlet includes in the operation. The value
+of this parameter qualifies the **Path** parameter. Enter a path element or pattern, such as
+`"*.txt"`. Wildcard characters are permitted. The **Include** parameter is effective only when the
+command includes the contents of an item, such as `C:\Windows\*`, where the wildcard character
+specifies the contents of the `C:\Windows` directory.
 
 ```yaml
 Type: String[]

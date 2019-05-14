@@ -39,12 +39,8 @@ You can use this cmdlet to delete the data from a registry value.
 
 ### Example 1: Clear the value of registry key
 
-This command clear the data in the "Options" registry value in the "MyApp" subkey of
-"HKEY_LOCAL_MACHINE\Software\MyCompany".
-
-Because the command is being issued from a file system drive (`C:`), it uses the fully qualified
-path to the `HKLM:` drive and the "Software\MyCompany\MyApp" subkey.
-It uses the **Name** parameter to specify the "Options" value.
+This command clears the data in the "Options" registry value in the "MyApp" subkey of
+`HKEY_LOCAL_MACHINE\Software\MyCompany`.
 
 ```powershell
 Clear-ItemProperty -Path "HKLM:\Software\MyCompany\MyApp" -Name "Options"
@@ -73,15 +69,11 @@ Accept wildcard characters: False
 
 ### -Exclude
 
-Specifies, as a string array, an item or items that this cmdlet excludes in the operation.
-The value of this parameter qualifies the **Path** parameter.
-
-Enter a path element or pattern, such as `*.txt`.
-Wildcard characters are permitted.
-
-The **Exclude** parameter is effective only when the command includes the contents of an item,
-such as `C:\Windows\*`, where the wildcard character specifies the contents of the `C:\Windows`
-directory.
+Specifies, as a string array, an item or items that this cmdlet excludes in the operation. The value
+of this parameter qualifies the **Path** parameter. Enter a path element or pattern, such as
+`*.txt`. Wildcard characters are permitted. The **Exclude** parameter is effective only when the
+command includes the contents of an item, such as `C:\Windows\*`, where the wildcard character
+specifies the contents of the `C:\Windows` directory.
 
 ```yaml
 Type: String[]
@@ -97,10 +89,11 @@ Accept wildcard characters: True
 
 ### -Filter
 
-The `Clear-ItemProperty` cmdlet does not support the **Filter** parameter with any installed
-PowerShell
-provider. In third party providers, the **Filter** parameter could be implemented to qualify the
-**Path** parameter using provider specific language.
+Specifies a filter to qualify the **Path** parameter. The [FileSystem](../Microsoft.PowerShell.Core/About/about_FileSystem_Provider.md)
+provider is the only installed PowerShell provider that supports the use of filters. You can find
+the syntax for the **FileSystem** filter language in [about_Wildcards](../Microsoft.PowerShell.Core/About/about_Wildcards.md).
+Filters are more efficient than other parameters, because the provider applies them when the cmdlet
+gets the objects rather than having PowerShell filter the objects after they are retrieved.
 
 ```yaml
 Type: String
@@ -134,15 +127,11 @@ Accept wildcard characters: False
 
 ### -Include
 
-Specifies, as a string array, an item or items that this cmdlet includes in the operation.
-The value of this parameter qualifies the **Path** parameter.
-Enter a path element or pattern, such as `"*.txt"`.
-
-Wildcard characters are permitted.
-
-The **Include** parameter is effective only when the command includes the contents of an item, such
-as `C:\Windows\*`, where the wildcard character specifies the contents of the `C:\Windows`
-directory.
+Specifies, as a string array, an item or items that this cmdlet includes in the operation. The value
+of this parameter qualifies the **Path** parameter. Enter a path element or pattern, such as
+`"*.txt"`. Wildcard characters are permitted. The **Include** parameter is effective only when the
+command includes the contents of an item, such as `C:\Windows\*`, where the wildcard character
+specifies the contents of the `C:\Windows` directory.
 
 ```yaml
 Type: String[]
@@ -153,7 +142,7 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -LiteralPath

@@ -39,7 +39,7 @@ items with values.
 
 ### Example 1: Delete all content from a directory
 
-This command deletes all of the content from the "init.txt" files in all subdirectories of the
+This command deletes all of the content from the `init.txt` files in all subdirectories of the
 SmpUsers directory. The files are not deleted, but they are empty.
 
 ```powershell
@@ -48,12 +48,12 @@ Clear-Content "..\SmpUsers\*\init.txt"
 
 ### Example 2: Delete content of all files with a wildcard
 
-This command deletes the contents of all files in the current directory with the ".log" file name
+This command deletes the contents of all files in the current directory with the `.log` file name
 extension, including files with the read-only attribute.
-The asterisk (*) in the path represents all items in the current directory.
+The asterisk (`*`) in the path represents all items in the current directory.
 The **Force** parameter makes the command effective on read-only files.
-Using a filter to restrict the command to files with the .log file name extension instead of
-specifying *.log in the path makes the operation faster.
+Using a filter to restrict the command to files with the `.log` file name extension instead of
+specifying `*.log` in the path makes the operation faster.
 
 ```powershell
 Clear-Content -Path "*" -Filter "*.log" -Force
@@ -85,19 +85,17 @@ Get-Content C:\Test\Copy-Script.ps1 -Stream Zone.Identifier
 
 ```
 
-The `Get-Content` cmdlet gets the content of the **Zone.Identifier** stream in
-the `Copy-Script.ps1` file, which was downloaded from the Internet.
+The `Get-Content` cmdlet gets the content of the **Zone.Identifier** stream in the `Copy-Script.ps1`
+file, which was downloaded from the Internet. The **ZoneId** shows that the script will be blocked
+by **ExecutionPolicy**. The `Clear-Content` cmdlet to clear the content of the **Zone.Identifier**
+stream. The last command uses `Get-Content` to show that the **Zone.Identifier** stream has been
+cleared.
 
-The **ZoneId** shows that the script will be blocked by **ExecutionPolicy**.
-
-The `Clear-Content` cmdlet to clear the content of the **Zone.Identifier** stream.
-
-The last command uses `Get-Content` to show that the **Zone.Identifier** stream has been cleared.
-
-You can use a method like this one to clear the content of an alternate data stream. However, it is
-not the recommended way to eliminate security checks that block files that are downloaded from the
-Internet. If you want to verify that a downloaded file is safe, use the [Unblock-File](../Microsoft.PowerShell.Utility/Unblock-File.md)
-cmdlet.
+> [!NOTE]
+> You can use a method like this one to clear the content of an alternate data stream. However, it is
+> not the recommended way to eliminate security checks that block files that are downloaded from the
+> Internet. If you want to verify that a downloaded file is safe, use the [Unblock-File](../Microsoft.PowerShell.Utility/Unblock-File.md)
+> cmdlet.
 
 For more about execution policies, see [about_Execution_Policies](../Microsoft.PowerShell.Core/About/about_Execution_Policies.md).
 
@@ -158,15 +156,11 @@ Accept wildcard characters: False
 
 ### -Exclude
 
-Specifies, as a string array, an item or items that this cmdlet excludes in the operation.
-The value of this parameter qualifies the **Path** parameter.
-
-Enter a path element or pattern, such as `*.txt`.
-Wildcard characters are permitted.
-
-The **Exclude** parameter is effective only when the command includes the contents of an item,
-such as `C:\Windows\*`, where the wildcard character specifies the contents of the `C:\Windows`
-directory.
+Specifies, as a string array, an item or items that this cmdlet excludes in the operation. The value
+of this parameter qualifies the **Path** parameter. Enter a path element or pattern, such as
+`*.txt`. Wildcard characters are permitted. The **Exclude** parameter is effective only when the
+command includes the contents of an item, such as `C:\Windows\*`, where the wildcard character
+specifies the contents of the `C:\Windows` directory.
 
 ```yaml
 Type: String[]
@@ -177,20 +171,14 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -Filter
 
-Specifies a filter to qualify the **Path** parameter. When you specify a filter, the **Path**
-parameter requires a trailing asterisk (`*`) to indicate the contents of the path.
-
-The [FileSystem](../Microsoft.PowerShell.Core/About/about_FileSystem_Provider.md) provider is the
-only installed PowerShell provider that supports the use of filters.
-
-You can find the syntax for the **FileSystem** filter language in
-[about_Wildcards](../Microsoft.PowerShell.Core/About/about_Wildcards.md).
-
+Specifies a filter to qualify the **Path** parameter. The [FileSystem](../Microsoft.PowerShell.Core/About/about_FileSystem_Provider.md)
+provider is the only installed PowerShell provider that supports the use of filters. You can find
+the syntax for the **FileSystem** filter language in [about_Wildcards](../Microsoft.PowerShell.Core/About/about_Wildcards.md).
 Filters are more efficient than other parameters, because the provider applies them when the cmdlet
 gets the objects rather than having PowerShell filter the objects after they are retrieved.
 
@@ -224,15 +212,11 @@ Accept wildcard characters: False
 
 ### -Include
 
-Specifies, as a string array, an item or items that this cmdlet includes in the operation.
-The value of this parameter qualifies the **Path** parameter.
-Enter a path element or pattern, such as `"*.txt"`.
-
-Wildcard characters are permitted.
-
-The **Include** parameter is effective only when the command includes the contents of an item, such
-as `C:\Windows\*`, where the wildcard character specifies the contents of the `C:\Windows`
-directory.
+Specifies, as a string array, an item or items that this cmdlet includes in the operation. The value
+of this parameter qualifies the **Path** parameter. Enter a path element or pattern, such as
+`"*.txt"`. Wildcard characters are permitted. The **Include** parameter is effective only when the
+command includes the contents of an item, such as `C:\Windows\*`, where the wildcard character
+specifies the contents of the `C:\Windows` directory.
 
 ```yaml
 Type: String[]

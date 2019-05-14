@@ -40,49 +40,46 @@ You can use it to delete registry values and the data that they store.
 ### Example 1: Delete a registry value
 
 This command deletes the "SmpProperty" registry value, and its data, from the "SmpApplication"
-subkey of the "HKEY_LOCAL_MACHINE\Software" registry key.
-
-Because the command is issued from a file system drive (`PS C:\>`), it includes the fully qualified
-path of the "SmpApplication" subkey, including the drive, `HKLM:`, and the "Software" key.
-
-It uses the **Name** parameter to identify the registry value that is being deleted.
+subkey of the `HKEY_LOCAL_MACHINE\Software` registry key.
 
 ```powershell
 Remove-ItemProperty -Path "HKLM:\Software\SmpApplication" -Name "SmpProperty"
 ```
+
+Because the command is issued from a file system drive (`PS C:\>`), it includes the fully qualified
+path of the "SmpApplication" subkey, including the drive, `HKLM:`, and the "Software" key.
 
 ### Example 2: Delete a registry value from the HKCU location
 
 These commands delete the "Options" registry value, and its data, from the "MyApp" subkey of
 "HKEY_CURRENT_USER\Software\MyCompany".
 
-The first command uses the `Set-Location` cmdlet to change the current location to the
-**HKEY_CURRENT_USER** drive (`HKCU:`) and the "Software\MyCompany\MyApp" subkey.
-
-The second command uses `Remove-ItemProperty` to remove the "Options" registry value, and its data,
-from the "MyApp" subkey.
-Because **Path** is required, the command uses a dot ('.') to indicate the current location.
-It uses **Name** to specify which registry value to delete.
-It uses the **Confirm** parameter to request a user prompt before deleting the value.
-
 ```
 PS C:\> Set-Location HKCU:\Software\MyCompany\MyApp
 PS HKCU:\Software\MyCompany\MyApp> Remove-ItemProperty -Path . -Name "Options" -Confirm
 ```
 
+The first command uses the `Set-Location` cmdlet to change the current location to the
+**HKEY_CURRENT_USER** drive (`HKCU:`) and the `Software\MyCompany\MyApp` subkey.
+
+The second command uses `Remove-ItemProperty` to remove the "Options" registry value, and its data,
+from the "MyApp" subkey. Because **Path** is required, the command uses a dot (`.`) to indicate the
+current location. The **Confirm** parameter requests a user prompt before deleting the value.
+
+
 ### Example 3: Remove a registry value by using the pipeline
 
 This command deletes the "NoOfEmployees" registry value, and its data, from the
-"HKLM\Software\MyCompany" registry key.
+`HKLM\Software\MyCompany` registry key.
+
+```powershell
+Get-Item -Path HKLM:\Software\MyCompany | Remove-ItemProperty -Name NoOfEmployees
+```
 
 The command uses the `Get-Item` cmdlet to get an item that represents the registry key.
 It uses a pipeline operator (`|`) to send the object to `Remove-ItemProperty`.
 Then, it uses the **Name** parameter of `Remove-ItemProperty` to specify the name of the registry
 value.
-
-```powershell
-Get-Item -Path HKLM:\Software\MyCompany | Remove-ItemProperty -Name NoOfEmployees
-```
 
 ## PARAMETERS
 
@@ -107,15 +104,11 @@ Accept wildcard characters: False
 
 ### -Exclude
 
-Specifies, as a string array, an item or items that this cmdlet excludes in the operation.
-The value of this parameter qualifies the **Path** parameter.
-
-Enter a path element or pattern, such as `*.txt`.
-Wildcard characters are permitted.
-
-The **Exclude** parameter is effective only when the command includes the contents of an item,
-such as `C:\Windows\*`, where the wildcard character specifies the contents of the `C:\Windows`
-directory.
+Specifies, as a string array, an item or items that this cmdlet excludes in the operation. The value
+of this parameter qualifies the **Path** parameter. Enter a path element or pattern, such as
+`*.txt`. Wildcard characters are permitted. The **Exclude** parameter is effective only when the
+command includes the contents of an item, such as `C:\Windows\*`, where the wildcard character
+specifies the contents of the `C:\Windows` directory.
 
 ```yaml
 Type: String[]
@@ -131,10 +124,9 @@ Accept wildcard characters: True
 
 ### -Filter
 
-Specifies a filter in the format or language of the provider.
-The value of this parameter qualifies the **Path** parameter.
-
-The syntax of the filter, including the use of wildcard characters, depends on the provider.
+Specifies a filter to qualify the **Path** parameter. The [FileSystem](../Microsoft.PowerShell.Core/About/about_FileSystem_Provider.md)
+provider is the only installed PowerShell provider that supports the use of filters. You can find
+the syntax for the **FileSystem** filter language in [about_Wildcards](../Microsoft.PowerShell.Core/About/about_Wildcards.md).
 Filters are more efficient than other parameters, because the provider applies them when the cmdlet
 gets the objects rather than having PowerShell filter the objects after they are retrieved.
 
@@ -170,15 +162,11 @@ Accept wildcard characters: False
 
 ### -Include
 
-Specifies, as a string array, an item or items that this cmdlet includes in the operation.
-The value of this parameter qualifies the **Path** parameter.
-Enter a path element or pattern, such as `"*.txt"`.
-
-Wildcard characters are permitted.
-
-The **Include** parameter is effective only when the command includes the contents of an item, such
-as `C:\Windows\*`, where the wildcard character specifies the contents of the `C:\Windows`
-directory.
+Specifies, as a string array, an item or items that this cmdlet includes in the operation. The value
+of this parameter qualifies the **Path** parameter. Enter a path element or pattern, such as
+`"*.txt"`. Wildcard characters are permitted. The **Include** parameter is effective only when the
+command includes the contents of an item, such as `C:\Windows\*`, where the wildcard character
+specifies the contents of the `C:\Windows` directory.
 
 ```yaml
 Type: String[]
@@ -189,7 +177,7 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -LiteralPath

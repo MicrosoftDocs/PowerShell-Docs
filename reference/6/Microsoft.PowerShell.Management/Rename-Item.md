@@ -82,28 +82,18 @@ This example shows how to use the **Replace** operator to rename multiple files,
 This command renames all of the ".txt" files in the current directory to ".log".
 
 ```powershell
-Get-ChildItem *.txt | Rename-Item -NewName { $_.name -Replace '\.txt$','.log' }
+Get-ChildItem *.txt | Rename-Item -NewName { $_.Name.Replace('.txt','.log') }
 ```
 
-The command uses the `Get-ChildItem` cmdlet to get all of the files in the current folder that have
-a .txt file name extension.
-Then, it uses the pipeline operator (`|`) to send those files to `Rename-Item`.
-
-The value of **NewName** is a script block that runs before the value is submitted to the
+This command uses the `Get-ChildItem` cmdlet to get all of the files in the current folder that have
+a `.txt` file name extension. Then, it uses the pipeline operator (`|`) to send those files to
+`Rename-Item`.The value of **NewName** is a script block that runs before the value is submitted to the
 **NewName** parameter.
 
 In the script block, the `$_` automatic variable represents each file object as it comes to the
 command through the pipeline.
-The command uses the dot format ('.') to get the **Name** property of each file object.
-The **Replace** operator replaces the ".txt" file name extension of each file with ".log".
-
-Because the **Replace** operator works with regular expressions, the dot in front of "txt" is
-interpreted to match any character.
-To make sure that it matches only a dot ('.'), it is escaped with a backslash character (\\).
-The backslash character is not required in ".log" because it is a string, not a regular expression.
-
-To make sure that ".txt" is an extension, i.e. last part of the string representing the name, a
-dollar sign (`$`) is added after "\\.txt".
+The script block calls the **Replace** method of the the **Name** property of each file object to
+replace the `.txt` file name extension of each file with `.log`.
 
 ## PARAMETERS
 

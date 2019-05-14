@@ -40,8 +40,8 @@ When you move an item, it is added to the new location and deleted from its orig
 
 ### Example 1: Move a file to another directory and rename it
 
-This command moves the "Test.txt" file from the `C:` drive to the "E:\Temp" directory and renames it
-from "test.txt" to "tst.txt".
+This command moves the `Test.txt` file from the `C:` drive to the `E:\Temp` directory and renames it
+from `test.txt` to `tst.txt`.
 
 ```powershell
 Move-Item -Path C:\test.txt -Destination E:\Temp\tst.txt
@@ -49,7 +49,7 @@ Move-Item -Path C:\test.txt -Destination E:\Temp\tst.txt
 
 ### Example 2: Move a directory and its contents to another directory
 
-This command moves the "C:\Temp" directory and its contents to the "C:\Logs" directory.
+This command moves the `C:\Temp` directory and its contents to the `C:\Logs` directory.
 The "Temp" directory, and all of its subdirectories and files, then appear in the "Logs" directory.
 
 ```powershell
@@ -58,8 +58,8 @@ Move-Item -Path C:\Temp -Destination C:\Logs
 
 ### Example 3: Move all files of a specified extension from the current directory to another directory
 
-This command moves all of the text files ("*.txt") in the current directory (represented by a dot
-('.')) to the "C:\Logs" directory.
+This command moves all of the text files (`*.txt`) in the current directory (represented by a dot
+(`.`)) to the `C:\Logs` directory.
 
 ```powershell
 Move-Item -Path .\*.txt -Destination C:\Logs
@@ -104,8 +104,8 @@ To move hidden files, use the **Force** parameter with `Get-ChildItem`.
 ### Example 5: Move registry keys and values to another key
 
 This command moves the registry keys and values within the "MyCompany" registry key in
-"HKLM\Software" to the "MyNewCompany" key.
-The wildcard character ('*') indicates that the contents of the "MyCompany" key should be moved, not
+`HKLM\Software` to the "MyNewCompany" key.
+The wildcard character (`*`) indicates that the contents of the "MyCompany" key should be moved, not
 the key itself.
 In this command, the optional **Path** and **Destination** parameter names are omitted.
 
@@ -173,15 +173,11 @@ Accept wildcard characters: False
 
 ### -Exclude
 
-Specifies, as a string array, an item or items that this cmdlet excludes in the operation.
-The value of this parameter qualifies the **Path** parameter.
-
-Enter a path element or pattern, such as `*.txt`.
-Wildcard characters are permitted.
-
-The **Exclude** parameter is effective only when the command includes the contents of an item,
-such as `C:\Windows\*`, where the wildcard character specifies the contents of the `C:\Windows`
-directory.
+Specifies, as a string array, an item or items that this cmdlet excludes in the operation. The value
+of this parameter qualifies the **Path** parameter. Enter a path element or pattern, such as
+`*.txt`. Wildcard characters are permitted. The **Exclude** parameter is effective only when the
+command includes the contents of an item, such as `C:\Windows\*`, where the wildcard character
+specifies the contents of the `C:\Windows` directory.
 
 ```yaml
 Type: String[]
@@ -197,16 +193,11 @@ Accept wildcard characters: True
 
 ### -Filter
 
-Specifies a filter to qualify the **Path** parameter.
-
-The [FileSystem](../Microsoft.PowerShell.Core/About/about_FileSystem_Provider.md) provider is the
-only installed PowerShell provider that
-supports the use of filters. You can find the syntax for the **FileSystem** filter language in
-[about_Wildcards](../Microsoft.PowerShell.Core/About/about_Wildcards.md).
-
+Specifies a filter to qualify the **Path** parameter. The [FileSystem](../Microsoft.PowerShell.Core/About/about_FileSystem_Provider.md)
+provider is the only installed PowerShell provider that supports the use of filters. You can find
+the syntax for the **FileSystem** filter language in [about_Wildcards](../Microsoft.PowerShell.Core/About/about_Wildcards.md).
 Filters are more efficient than other parameters, because the provider applies them when the cmdlet
 gets the objects rather than having PowerShell filter the objects after they are retrieved.
-
 
 ```yaml
 Type: String
@@ -240,15 +231,11 @@ Accept wildcard characters: False
 
 ### -Include
 
-Specifies, as a string array, an item or items that this cmdlet includes in the operation.
-The value of this parameter qualifies the **Path** parameter.
-Enter a path element or pattern, such as `"*.txt"`.
-
-Wildcard characters are permitted.
-
-The **Include** parameter is effective only when the command includes the contents of an item, such
-as `C:\Windows\*`, where the wildcard character specifies the contents of the `C:\Windows`
-directory.
+Specifies, as a string array, an item or items that this cmdlet includes in the operation. The value
+of this parameter qualifies the **Path** parameter. Enter a path element or pattern, such as
+`"*.txt"`. Wildcard characters are permitted. The **Include** parameter is effective only when the
+command includes the contents of an item, such as `C:\Windows\*`, where the wildcard character
+specifies the contents of the `C:\Windows` directory.
 
 ```yaml
 Type: String[]
@@ -259,7 +246,7 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -LiteralPath

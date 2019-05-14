@@ -190,12 +190,11 @@ extension **.txt**.
 When the **Include** parameter is used, the **Path** parameter needs a trailing asterisk (`*`)
 wildcard to specify the directory's contents. For example, `-Path C:\Test\*`.
 
-If the **Recurse** parameter is added to the command, the trailing asterisk (`*`) in the **Path**
-parameter is optional. The **Recurse** parameter gets items from the **Path** directory and its
-subdirectories. For example, `-Path C:\Test\ -Recurse -Include *.txt`
-
-If a trailing asterisk (`*`) is not included in the **Path** parameter, the command does not return
-any output and returns to the PowerShell prompt. For example, `-Path C:\Test\`.
+- If the **Recurse** parameter is added to the command, the trailing asterisk (`*`) in the **Path**
+  parameter is optional. The **Recurse** parameter gets items from the **Path** directory and its
+  subdirectories. For example, `-Path C:\Test\ -Recurse -Include *.txt`
+- If a trailing asterisk (`*`) is not included in the **Path** parameter, the command does not return
+  any output and returns to the PowerShell prompt. For example, `-Path C:\Test\`.
 
 ### Example 5: Get child items using the Exclude parameter
 
@@ -240,16 +239,14 @@ begin with **A** or **a** are excluded from the output.
 When the **Exclude** parameter is used, a trailing asterisk (`*`) in the **Path** parameter is
 optional. For example, `-Path C:\Test\Logs` or `-Path C:\Test\Logs\*`.
 
-If a trailing asterisk (`*`) is not included in the **Path** parameter, the contents of the **Path**
-parameter are displayed. The exceptions are file names or subdirectory names that match the
-**Exclude** parameter's value.
-
-If a trailing asterisk (`*`) is included in the **Path** parameter, the command **recurses** into the
-**Path** parameter's subdirectories. The exceptions are file names or subdirectory names that match
-the **Exclude** parameter's value.
-
-If the **Recurse** parameter is added to the command, the recursion output is the same whether or
-not the **Path** parameter includes a trailing asterisk (`*`).
+- If a trailing asterisk (`*`) is not included in the **Path** parameter, the contents of the **Path**
+  parameter are displayed. The exceptions are file names or subdirectory names that match the
+  **Exclude** parameter's value.
+- If a trailing asterisk (`*`) is included in the **Path** parameter, the command **recurses** into the
+  **Path** parameter's subdirectories. The exceptions are file names or subdirectory names that match
+  the **Exclude** parameter's value.
+- If the **Recurse** parameter is added to the command, the recursion output is the same whether or
+  not the **Path** parameter includes a trailing asterisk (`*`).
 
 ### Example 6: Get the registry keys from a registry hive
 
@@ -298,10 +295,6 @@ This command displays the items in a directory and its subdirectories. The **Dep
 determines the number of subdirectory levels to include in the recursion. Empty directories are
 excluded from the output.
 
-The `Get-ChildItem` cmdlet uses the **Path** parameter to specify **C:\Parent**. The **Depth**
-parameter specifies two levels of recursion. `Get-ChildItem` displays the contents of the directory
-specified by the **Path** parameter and the two levels of subdirectories.
-
 ```powershell
 Get-ChildItem -Path C:\Parent -Depth 2
 ```
@@ -328,6 +321,10 @@ Mode                LastWriteTime         Length Name
 d-----        2/14/2019     10:22                SubDir_Level3
 -a----        2/13/2019     08:55             26 file.txt
 ```
+
+The `Get-ChildItem` cmdlet uses the **Path** parameter to specify **C:\Parent**. The **Depth**
+parameter specifies two levels of recursion. `Get-ChildItem` displays the contents of the directory
+specified by the **Path** parameter and the two levels of subdirectories.
 
 ### Example 9: Getting hard link information
 
@@ -486,12 +483,9 @@ Accept wildcard characters: False
 
 ### -Filter
 
-Specifies a filter to qualify the **Path** parameter.
-
-The [FileSystem](../Microsoft.PowerShell.Core/About/about_FileSystem_Provider.md) provider is the only installed PowerShell provider that
-supports the use of filters. You can find the syntax for the **FileSystem** filter language in
-[about_Wildcards](../Microsoft.PowerShell.Core/About/about_Wildcards.md).
-
+Specifies a filter to qualify the **Path** parameter. The [FileSystem](../Microsoft.PowerShell.Core/About/about_FileSystem_Provider.md)
+provider is the only installed PowerShell provider that supports the use of filters. You can find
+the syntax for the **FileSystem** filter language in [about_Wildcards](../Microsoft.PowerShell.Core/About/about_Wildcards.md).
 Filters are more efficient than other parameters, because the provider applies them when the cmdlet
 gets the objects rather than having PowerShell filter the objects after they are retrieved.
 
@@ -501,10 +495,10 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 1
+Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -FollowSymlink
@@ -566,12 +560,9 @@ Accept wildcard characters: False
 
 Specifies, as a string array, an item or items that this cmdlet includes in the operation. The value
 of this parameter qualifies the **Path** parameter. Enter a path element or pattern, such as
-`*.txt`. Wildcard characters are accepted.
-
-**Include** needs the **Path** parameter to use a trailing asterisk (`*`) to specify the directory's
-contents, such as: `-Path C:\Test\Logs\*` If there is no trailing asterisk (`*`), add the
-**Recurse** parameter to the command. Otherwise the `Get-ChildItem` command fails. More details are
-included in Example 4 and the Notes section.
+`"*.txt"`. Wildcard characters are permitted. The **Include** parameter is effective only when the
+command includes the contents of an item, such as `C:\Windows\*`, where the wildcard character
+specifies the contents of the `C:\Windows` directory.
 
 ```yaml
 Type: String[]

@@ -91,13 +91,13 @@ Get-Item C:\
 This command gets the items in the C: drive.
 The wildcard character (`*`) represents all the items in the container, not just the container.
 
-In PowerShell, use a single asterisk (`*`) to get contents, instead of the traditional `*.*`.
-The format is interpreted literally, so `*.*` would not retrieve directories or file names without a
-dot.
-
 ```powershell
 Get-Item C:\*
 ```
+
+In PowerShell, use a single asterisk (`*`) to get contents, instead of the traditional `*.*`.
+The format is interpreted literally, so `*.*` would not retrieve directories or file names without a
+dot.
 
 ### Example 5: Get a property in the specified directory
 
@@ -122,10 +122,8 @@ Get-Item HKLM:\Software\Microsoft\Powershell\1\Shellids\Microsoft.Powershell\
 ### Example 7: Get items in a directory that have an exclusion
 
 This command gets items in the Windows directory with names that include a dot (`.`), but do not
-begin with `w*`.
-
-This command works only when the path includes a wildcard character (`*`) to specify the contents
-of the item.
+begin with `w*`.This command works only when the path includes a wildcard character (`*`) to specify
+the contents of the item.
 
 ```powershell
 Get-Item C:\Windows\*.* -Exclude "w*"
@@ -183,15 +181,11 @@ Accept wildcard characters: False
 
 ### -Exclude
 
-Specifies, as a string array, an item or items that this cmdlet excludes in the operation.
-The value of this parameter qualifies the **Path** parameter.
-
-Enter a path element or pattern, such as `*.txt`.
-Wildcard characters are permitted.
-
-The **Exclude** parameter is effective only when the command includes the contents of an item,
-such as `C:\Windows\*`, where the wildcard character specifies the contents of the `C:\Windows`
-directory.
+Specifies, as a string array, an item or items that this cmdlet excludes in the operation. The value
+of this parameter qualifies the **Path** parameter. Enter a path element or pattern, such as
+`*.txt`. Wildcard characters are permitted. The **Exclude** parameter is effective only when the
+command includes the contents of an item, such as `C:\Windows\*`, where the wildcard character
+specifies the contents of the `C:\Windows` directory.
 
 ```yaml
 Type: String[]
@@ -207,15 +201,9 @@ Accept wildcard characters: True
 
 ### -Filter
 
-Specifies a filter to qualify the **Path** parameter. When you specify a filter, the **Path**
-parameter requires a trailing asterisk (`*`) to indicate the contents of the path.
-
-The [FileSystem](../Microsoft.PowerShell.Core/About/about_FileSystem_Provider.md) provider is the
-only installed PowerShell provider that supports the use of filters.
-
-You can find the syntax for the **FileSystem** filter language in
-[about_Wildcards](../Microsoft.PowerShell.Core/About/about_Wildcards.md).
-
+Specifies a filter to qualify the **Path** parameter. The [FileSystem](../Microsoft.PowerShell.Core/About/about_FileSystem_Provider.md)
+provider is the only installed PowerShell provider that supports the use of filters. You can find
+the syntax for the **FileSystem** filter language in [about_Wildcards](../Microsoft.PowerShell.Core/About/about_Wildcards.md).
 Filters are more efficient than other parameters, because the provider applies them when the cmdlet
 gets the objects rather than having PowerShell filter the objects after they are retrieved.
 
@@ -252,15 +240,11 @@ Accept wildcard characters: False
 
 ### -Include
 
-Specifies, as a string array, an item or items that this cmdlet includes in the operation.
-The value of this parameter qualifies the **Path** parameter.
-Enter a path element or pattern, such as `"*.txt"`.
-
-Wildcard characters are permitted.
-
-The **Include** parameter is effective only when the command includes the contents of an item, such
-as `C:\Windows\*`, where the wildcard character specifies the contents of the `C:\Windows`
-directory.
+Specifies, as a string array, an item or items that this cmdlet includes in the operation. The value
+of this parameter qualifies the **Path** parameter. Enter a path element or pattern, such as
+`"*.txt"`. Wildcard characters are permitted. The **Include** parameter is effective only when the
+command includes the contents of an item, such as `C:\Windows\*`, where the wildcard character
+specifies the contents of the `C:\Windows` directory.
 
 ```yaml
 Type: String[]

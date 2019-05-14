@@ -46,27 +46,18 @@ If you need to create files or directories for the following examples, see [New-
 This example appends a value to text files in the current directory but excludes files based on
 their file name.
 
-The **Path** parameter to specifies all `.txt` files in the current directory, but the **Exclude**
-parameter ignores file names that match the specified pattern.
-
-The **Value** parameter specifies the text string that is written to the files.
-
 ```powershell
 Add-Content -Path .\*.txt -Exclude help* -Value 'End of file'
 ```
+
+The **Path** parameter to specifies all `.txt` files in the current directory, but the **Exclude**
+parameter ignores file names that match the specified pattern. The **Value** parameter specifies the
+text string that is written to the files.
 
 ### Example 2: Add a date to the end of the specified files
 
 This example appends the date to files in the current directory and displays the date in the
 PowerShell console.
-
-The `Add-Content` creates two new files in the current directory. The **Value** parameter contains
-the output of the `Get-Date`
-
-The **PassThru** parameter outputs the added contents to the pipeline. Because there is no other
-cmdlets to receive the output, it is displayed in the PowerShell console.
-
-The `Get-Content` cmdlet displays the updated file, `DateTimeFile1.log`.
 
 ```powershell
 Add-Content -Path .\DateTimeFile1.log, .\DateTimeFile2.log -Value (Get-Date) -PassThru
@@ -78,6 +69,11 @@ Tuesday, May 14, 2019 8:24:27 AM
 Tuesday, May 14, 2019 8:24:27 AM
 5/14/2019 8:24:27 AM
 ```
+
+The `Add-Content` creates two new files in the current directory. The **Value** parameter contains
+the output of the `Get-Date` The **PassThru** parameter outputs the added contents to the pipeline.
+Because there is no other cmdlets to receive the output, it is displayed in the PowerShell console.
+The `Get-Content` cmdlet displays the updated file, `DateTimeFile1.log`.
 
 ### Example 3: Add the contents of a specified file to another file
 
@@ -100,15 +96,14 @@ Get-Content -Path .\CopyToFile.txt
 
 This example gets the content from a file and pipes it to the `Add-Content` cmdlet.
 
-The `Get-Content` cmdlet gets the contents of `CopyFromFile.txt`. The results are piped to the
-`Add-Content` cmdlet, which updates the `CopyToFile.txt`.
-
-The last `Get-Content` cmdlet displays `CopyToFile.txt`.
-
 ```powershell
 Get-Content -Path .\CopyFromFile.txt | Add-Content -Path .\CopyToFile.txt
 Get-Content -Path .\CopyToFile.txt
 ```
+
+The `Get-Content` cmdlet gets the contents of `CopyFromFile.txt`. The results are piped to the
+`Add-Content` cmdlet, which updates the `CopyToFile.txt`.
+The last `Get-Content` cmdlet displays `CopyToFile.txt`.
 
 ### Example 5: Create a new file and copy content
 
@@ -122,9 +117,8 @@ Get-Content -Path .\NewFile.txt
 - The `Add-Content` cmdlet uses the **Path** and **Value** parameters to create a new file in the
   current directory.
 - The `Get-Content` cmdlet gets the contents of an existing file, `CopyFromFile.txt`
-  and passes it to the **Value** parameter.
-  - The parentheses around the `Get-Content` cmdlet ensure that the command finishes before the
-    `Add-Content` command begins.
+  and passes it to the **Value** parameter. The parentheses around the `Get-Content` cmdlet ensure
+  that the command finishes before the `Add-Content` command begins.
 - The `Get-Content` cmdlet displays the contents of the new file, `NewFile.txt`.
 
 ### Example 6: Add content to a read-only file
@@ -252,15 +246,11 @@ Accept wildcard characters: False
 
 ### -Exclude
 
-Specifies, as a string array, an item or items that this cmdlet excludes in the operation.
-The value of this parameter qualifies the **Path** parameter.
-
-Enter a path element or pattern, such as `*.txt`.
-Wildcard characters are permitted.
-
-The **Exclude** parameter is effective only when the command includes the contents of an item,
-such as `C:\Windows\*`, where the wildcard character specifies the contents of the `C:\Windows`
-directory.
+Specifies, as a string array, an item or items that this cmdlet excludes in the operation. The value
+of this parameter qualifies the **Path** parameter. Enter a path element or pattern, such as
+`*.txt`. Wildcard characters are permitted. The **Exclude** parameter is effective only when the
+command includes the contents of an item, such as `C:\Windows\*`, where the wildcard character
+specifies the contents of the `C:\Windows` directory.
 
 ```yaml
 Type: String[]
@@ -271,20 +261,14 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -Filter
 
-Specifies a filter to qualify the **Path** parameter. When you specify a filter, the **Path**
-parameter requires a trailing asterisk (`*`) to indicate the contents of the path.
-
-The [FileSystem](../Microsoft.PowerShell.Core/About/about_FileSystem_Provider.md) provider is the
-only installed PowerShell provider that supports the use of filters.
-
-You can find the syntax for the **FileSystem** filter language in
-[about_Wildcards](../Microsoft.PowerShell.Core/About/about_Wildcards.md).
-
+Specifies a filter to qualify the **Path** parameter. The [FileSystem](../Microsoft.PowerShell.Core/About/about_FileSystem_Provider.md)
+provider is the only installed PowerShell provider that supports the use of filters. You can find
+the syntax for the **FileSystem** filter language in [about_Wildcards](../Microsoft.PowerShell.Core/About/about_Wildcards.md).
 Filters are more efficient than other parameters, because the provider applies them when the cmdlet
 gets the objects rather than having PowerShell filter the objects after they are retrieved.
 
@@ -297,7 +281,7 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -Force
@@ -320,15 +304,11 @@ Accept wildcard characters: False
 
 ### -Include
 
-Specifies, as a string array, an item or items that this cmdlet includes in the operation.
-The value of this parameter qualifies the **Path** parameter.
-Enter a path element or pattern, such as `"*.txt"`.
-
-Wildcard characters are permitted.
-
-The **Include** parameter is effective only when the command includes the contents of an item, such
-as `C:\Windows\*`, where the wildcard character specifies the contents of the `C:\Windows`
-directory.
+Specifies, as a string array, an item or items that this cmdlet includes in the operation. The value
+of this parameter qualifies the **Path** parameter. Enter a path element or pattern, such as
+`"*.txt"`. Wildcard characters are permitted. The **Include** parameter is effective only when the
+command includes the contents of an item, such as `C:\Windows\*`, where the wildcard character
+specifies the contents of the `C:\Windows` directory.
 
 ```yaml
 Type: String[]
@@ -339,7 +319,7 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -LiteralPath
