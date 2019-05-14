@@ -1,5 +1,5 @@
 ---
-ms.date:  08/23/2018
+ms.date: 5/14/2019
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -188,13 +188,13 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+-WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
 
 ## INPUTS
 
 ### System.String
 
-You can pipe a string that contains a path to this cmdlet.
+You can pipe a string that contains a path to this cmdlet
 
 ## OUTPUTS
 

@@ -1,5 +1,5 @@
 ---
-ms.date:  10/18/2018
+ms.date: 5/14/2019
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -50,7 +50,8 @@ Set-ItemProperty -LiteralPath <String[]> -InputObject <PSObject> [-PassThru] [-F
 
 The `Set-ItemProperty` cmdlet changes the value of the property of the specified item.
 You can use the cmdlet to establish or change the properties of items.
-For example, you can use `Set-ItemProperty` to set the value of the **IsReadOnly** property of a file object to `$True`.
+For example, you can use `Set-ItemProperty` to set the value of the **IsReadOnly** property of a
+file object to `$True`.
 
 You also use `Set-ItemProperty` to create and change registry values and data.
 For example, you can add a new registry entry to a key and establish or change its value.
@@ -60,10 +61,12 @@ For example, you can add a new registry entry to a key and establish or change i
 ### Example 1: Set a property of a file
 
 This command sets the value of the **IsReadOnly** property of the "final.doc" file to "true".
-It uses **Path** to specify the file, **Name** to specify the name of the property, and the **Value** parameter to specify the new value.
+It uses **Path** to specify the file, **Name** to specify the name of the property, and the
+**Value** parameter to specify the new value.
 
 The file is a **System.IO.FileInfo** object and **IsReadOnly** is just one of its properties.
-To see all of the properties, type `Get-Item C:\GroupFiles\final.doc | Get-Member -MemberType Property`.
+To see all of the properties, type `Get-Item C:\GroupFiles\final.doc | Get-Member -MemberType
+Property`.
 
 The `$true` automatic variable represents a value of "TRUE".
 For more information, see [about_Automatic_Variables](../Microsoft.PowerShell.Core/About/about_Automatic_Variables.md).
@@ -74,24 +77,12 @@ Set-ItemProperty -Path C:\GroupFiles\final.doc -Name IsReadOnly -Value $true
 
 ### Example 2: Create a registry entry and value
 
-This example shows how to use `Set-ItemProperty` to create a new registry entry and to assign a value to the entry.
-It creates the "NoOfEmployees" entry in the "ContosoCompany" key in "HKLM\Software" key and sets its value to 823.
+This example shows how to use `Set-ItemProperty` to create a new registry entry and to assign a
+value to the entry. It creates the "NoOfEmployees" entry in the "ContosoCompany" key in
+`HKLM\Software` key and sets its value to 823.
 
-Because registry entries are considered to be properties of the registry keys, which are items, you use `Set-ItemProperty` to create registry entries, and to establish and change their values.
-
-The first command creates the registry entry.
-It uses **Path** to specify the path of the `HKLM:` drive and the "Software\MyCompany" key.
-The command uses **Name** to specify the entry name and **Value** to specify a value.
-
-The second command uses the `Get-ItemProperty` cmdlet to see the new registry entry.
-If you use the `Get-Item` or `Get-ChildItem` cmdlets, the entries do not appear because they are properties of a key, not items or child items.
-
-The third command changes the value of the **NoOfEmployees** entry to 824.
-
-You can also use the `New-ItemProperty` cmdlet to create the registry entry and its value and then use `Set-ItemProperty` to change the value.
-
-For more information about the `HKLM:` drive, type `Get-Help Get-PSDrive`.
-For more information about how to use PowerShell to manage the registry, type `Get-Help Registry`.
+Because registry entries are considered to be properties of the registry keys, which are items, you
+use `Set-ItemProperty` to create registry entries, and to establish and change their values.
 
 ```powershell
 Set-ItemProperty -Path "HKLM:\Software\ContosoCompany" -Name "NoOfEmployees" -Value 823
@@ -124,15 +115,33 @@ NoOfLocations : 2
 NoOfEmployees : 824
 ```
 
+The first command creates the registry entry.
+It uses **Path** to specify the path of the `HKLM:` drive and the "Software\MyCompany" key.
+The command uses **Name** to specify the entry name and **Value** to specify a value.
+
+The second command uses the `Get-ItemProperty` cmdlet to see the new registry entry.
+If you use the `Get-Item` or `Get-ChildItem` cmdlets, the entries do not appear because they are
+properties of a key, not items or child items.
+
+The third command changes the value of the **NoOfEmployees** entry to 824.
+
+You can also use the `New-ItemProperty` cmdlet to create the registry entry and its value and then
+use `Set-ItemProperty` to change the value.
+
+For more information about the `HKLM:` drive, type `Get-Help Get-PSDrive`.
+For more information about how to use PowerShell to manage the registry, type `Get-Help Registry`.
+
 ### Example 3: Modify an item by using the pipeline
 
 These commands show how to use a pipeline operator (`|`) to send an item to `Set-ItemProperty`.
 
-The first part of the command uses `Get-ChildItem` to get an object that represents the "Weekly.txt" file.
-The command uses a pipeline operator to send the file object to `Set-ItemProperty`.
-The `Set-ItemProperty` command uses the **Name** and **Value** parameters to specify the property and its new value.
+The first part of the command uses `Get-ChildItem` to get an object that represents the "Weekly.txt"
+file. The command uses a pipeline operator to send the file object to `Set-ItemProperty`.
+The `Set-ItemProperty` command uses the **Name** and **Value** parameters to specify the property
+and its new value.
 
-This command is equivalent to using the **InputObject** parameter to specify the object that `Get-ChildItem` gets.
+This command is equivalent to using the **InputObject** parameter to specify the object that
+`Get-ChildItem` gets.
 
 ```powershell
 Get-ChildItem weekly.txt | Set-ItemProperty -Name IsReadOnly -Value $True
@@ -142,14 +151,10 @@ Get-ChildItem weekly.txt | Set-ItemProperty -Name IsReadOnly -Value $True
 
 ### -Credential
 
-Specifies a user account that has permission to perform this action.
-The default is the current user.
-
-Type a user name, such as "User01" or "Domain01\User01", or enter a **PSCredential** object, such as one generated by the `Get-Credential` cmdlet.
-If you type a user name, you are prompted for a password.
-
-> [!WARNING]
+> [!NOTE]
 > This parameter is not supported by any providers installed with Windows PowerShell.
+> To impersonate another user, or elevate your credentials when running this cmdlet,
+> use [Invoke-Command](../Microsoft.PowerShell.Core/Invoke-Command.md)
 
 ```yaml
 Type: PSCredential
@@ -165,10 +170,15 @@ Accept wildcard characters: False
 
 ### -Exclude
 
-Specifies those items upon which the cmdlet does not act, and includes all others.
+Specifies, as a string array, an item or items that this cmdlet excludes in the operation.
 The value of this parameter qualifies the **Path** parameter.
-Enter a path element or pattern, such as "*.txt".
+
+Enter a path element or pattern, such as `*.txt`.
 Wildcard characters are permitted.
+
+The **Exclude** parameter is effective only when the command includes the contents of an item,
+such as `C:\Windows\*`, where the wildcard character specifies the contents of the `C:\Windows`
+directory.
 
 ```yaml
 Type: String[]
@@ -188,7 +198,8 @@ Specifies a filter in the format or language of the provider.
 The value of this parameter qualifies the **Path** parameter.
 
 The syntax of the filter, including the use of wildcard characters, depends on the provider.
-Filters are more efficient than other parameters, because the provider applies them when the cmdlet gets the objects rather than having PowerShell filter the objects after they are retrieved.
+Filters are more efficient than other parameters, because the provider applies them when the cmdlet
+gets the objects rather than having PowerShell filter the objects after they are retrieved.
 
 ```yaml
 Type: String
@@ -222,10 +233,15 @@ Accept wildcard characters: False
 
 ### -Include
 
-Specifies only those items upon which the cmdlet acts, which excludes all others.
+Specifies, as a string array, an item or items that this cmdlet includes in the operation.
 The value of this parameter qualifies the **Path** parameter.
-Enter a path element or pattern, such as "*.txt".
+Enter a path element or pattern, such as `"*.txt"`.
+
 Wildcard characters are permitted.
+
+The **Include** parameter is effective only when the command includes the contents of an item, such
+as `C:\Windows\*`, where the wildcard character specifies the contents of the `C:\Windows`
+directory.
 
 ```yaml
 Type: String[]
@@ -258,11 +274,12 @@ Accept wildcard characters: False
 
 ### -LiteralPath
 
-Specifies a path of the item property.
-Unlike the **Path** parameter, the value of **LiteralPath** is used exactly as it is typed.
-No characters are interpreted as wildcards.
-If the path includes escape characters, enclose it in single quotation marks.
-Single quotation marks tell PowerShell not to interpret any characters as escape sequences.
+Specifies a path to one or more locations. The value of **LiteralPath** is used exactly as it is
+typed. No characters are interpreted as wildcards. If the path includes escape characters, enclose
+it in single quotation marks. Single quotation marks tell PowerShell not to interpret any characters
+as escape sequences.
+
+For more information, see [about_Quoting_Rules](../Microsoft.Powershell.Core/About/about_Quoting_Rules.md).
 
 ```yaml
 Type: String[]
@@ -376,7 +393,10 @@ Accept wildcard characters: False
 
 ### CommonParameters
 
-This cmdlet supports the common parameters: `-Debug`, `-ErrorAction`, `-ErrorVariable`, `-InformationAction`, `-InformationVariable`, `-OutVariable`, `-OutBuffer`, `-PipelineVariable`, `-Verbose`, `-WarningAction`, and `-WarningVariable`. For more information, see [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
+This cmdlet supports the common parameters: `-Debug`, `-ErrorAction`, `-ErrorVariable`,
+`-InformationAction`, `-InformationVariable`, `-OutVariable`, `-OutBuffer`, `-PipelineVariable`,
+`-Verbose`, `-WarningAction`, and `-WarningVariable`. For more information, see
+[about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
 
 ## INPUTS
 
@@ -388,12 +408,14 @@ You can pipe objects to this cmdlet.
 
 ### None, System.Management.Automation.PSCustomObject
 
-This cmdlet generates a **PSCustomObject** object that represents the item that was changed and its new property value, if you specify the *PassThru* parameter.
+This cmdlet generates a **PSCustomObject** object that represents the item that was changed and its
+new property value, if you specify the *PassThru* parameter.
 Otherwise, this cmdlet does not generate any output.
 
 ## NOTES
 
-`Set-ItemProperty` is designed to work with the data exposed by any provider. To list the providers available in your session, type `Get-PSProvider`. For more information, see [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).
+`Set-ItemProperty` is designed to work with the data exposed by any provider. To list the providers
+available in your session, type `Get-PSProvider`. For more information, see [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).
 
 ## RELATED LINKS
 
