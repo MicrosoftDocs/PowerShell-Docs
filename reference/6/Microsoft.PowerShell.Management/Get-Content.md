@@ -445,8 +445,8 @@ cmdlet. This parameter works only in file system drives.
 
 > [!NOTE]
 > Currently, when the value of the **Delimiter** parameter is an empty string, `Get-Content` does
-> not return anything. This is a known issue To force `Get-Content` to return the entire file as a
-> single, undelimited string. Enter a value that does not exist in the file.
+> not return anything. This is a known issue. To force `Get-Content` to return the entire file as
+> a single, undelimited string. Enter a value that does not exist in the file.
 
 ```yaml
 Type: String
