@@ -4,11 +4,9 @@ Module Name: CimCmdlets
 online version:
 schema: 2.0.0
 ---
-
 # Set-CimInstance
 
 ## SYNOPSIS
-
 Modifies a CIM instance on a CIM server by calling the ModifyInstance method of the CIM class.
 
 ## SYNTAX
@@ -36,6 +34,7 @@ Set-CimInstance -CimSession <CimSession[]> [-Namespace <String>] [-OperationTime
 ```
 
 ### CimInstanceSessionSet
+
 ```
 Set-CimInstance -CimSession <CimSession[]> [-ResourceUri <Uri>] [-OperationTimeoutSec <UInt32>]
  [-InputObject] <CimInstance> [-Property <IDictionary>] [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
@@ -276,28 +275,16 @@ Specifies the properties of the CIM instance as a hash table (using name-value p
 properties specified using this parameter are changed. Other properties of the CIM instance are not
 changed.
 
+
 ```yaml
-Type: IDictionary
+Accept pipeline input: True (ByPropertyName)
+Position: Named
+Accept wildcard characters: False
 Parameter Sets: CimInstanceComputerSet, CimInstanceSessionSet
-Aliases: Arguments
-
-Required: False
-Position: Named
+Required: True (QuerySessionSet, QueryComputerSet), False(CimInstanceComputerSet, CimInstanceSessionSet)
 Default value: None
-Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
-```
-
-```yaml
+Aliases: Arguments
 Type: IDictionary
-Parameter Sets: QuerySessionSet, QueryComputerSet
-Aliases: Arguments
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
 ```
 
 ### -Query
