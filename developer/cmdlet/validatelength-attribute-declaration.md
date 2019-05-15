@@ -33,7 +33,7 @@ Required. Specifies the maximum number of characters allowed.
 
 ## Remarks
 
-- For more information about how to declare this attribute, see [How to Declare Input Validation Rules](https://docs.microsoft.com/en-us/powershell/developer/cmdlet/how-to-validate-parameter-input).
+- For more information about how to declare this attribute, see [How to Declare Input Validation Rules](./how-to-validate-parameter-input.md).
 
 - When this attribute is not used, the corresponding parameter argument can be of any length.
 
