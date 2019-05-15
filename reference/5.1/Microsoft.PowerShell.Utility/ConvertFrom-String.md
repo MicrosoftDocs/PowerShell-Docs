@@ -42,7 +42,7 @@ It does not perform quote matching or delimiter escaping as the `Import-Csv` cmd
 
 The cmdlet's alternate parameter set, **TemplateParsing**, generates elements from the groups that
 are captured by a regular expression. For more information on regular expressions, see
-[about_Regular_Expressions](about_Regular_Expressions.md).
+[about_Regular_Expressions](../Microsoft.PowerShell.Core/About/about_Regular_Expressions.md).
 
 This cmdlet supports two modes: basic delimited parsing, and automatically-generated,
 example-driven parsing.
@@ -54,7 +54,7 @@ You can customize the delimiter by piping the `ConvertFrom-String` results into 
 `Format-*` cmdlets, or you can use the **Delimiter** parameter.
 
 The cmdlet also supports automatically-generated, example-driven parsing based on the
-[FlashExtract, research work by Microsoft Research](http://research.microsoft.com/en-us/um/people/sumitg/flashextract.html).
+[FlashExtract, research work by Microsoft Research](https://www.microsoft.com/en-us/research/publication/flashextract-framework-data-extraction-examples/?from=http%3A%2F%2Fresearch.microsoft.com%2Fen-us%2Fum%2Fpeople%2Fsumitg%2Fflashextract.html).
 
 ## EXAMPLES
 
@@ -404,7 +404,7 @@ This cmdlet supports the common parameters: `-Debug`, `-ErrorAction`, `-ErrorVar
 
 ## RELATED LINKS
 
-[ConvertFrom-String: Example-based text parsing](http://blogs.msdn.com/b/powershell/archive/2014/10/31/convertfrom-string-example-based-text-parsing.aspx)
+[ConvertFrom-String: Example-based text parsing](https://devblogs.microsoft.com/powershell/convertfrom-string-example-based-text-parsing/)
 
 [ConvertFrom-StringData](ConvertFrom-StringData.md)
 
