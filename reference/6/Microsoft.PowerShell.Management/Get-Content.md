@@ -232,7 +232,10 @@ Get-Content -Path C:\Temp\* -Filter *.log
 
 ### -Path
 
-Specifies the path to an item where `Get-Content` gets the content. Wildcards are permitted.
+Specifies the path to an item where `Get-Content` gets the content.
+Wildcard characters are permitted.
+The paths must be paths to items, not to containers.
+For example, you must specify a path to one or more files, not a path to a directory.
 
 ```yaml
 Type: String[]
@@ -411,7 +414,7 @@ Accept wildcard characters: False
 > [!NOTE]
 > This parameter is not supported by any providers installed with PowerShell.
 > To impersonate another user, or elevate your credentials when running this cmdlet,
-> use [Invoke-Command](../Microsoft.PowerShell.Core/Invoke-Command.md)
+> use [Invoke-Command](../Microsoft.PowerShell.Core/Invoke-Command.md).
 
 ```yaml
 Type: PSCredential
@@ -438,12 +441,12 @@ as the delimiter. The delimiter is preserved (not discarded) and becomes the las
 section.
 
 **Delimiter** is a dynamic parameter that the **FileSystem** provider adds to the `Get-Content`
-cmdlet This parameter works only in file system drives.
+cmdlet. This parameter works only in file system drives.
 
 > [!NOTE]
 > Currently, when the value of the **Delimiter** parameter is an empty string, `Get-Content` does
 > not return anything. This is a known issue To force `Get-Content` to return the entire file as a
-> single, undelimited string, enter a value that does not exist in the file.
+> single, undelimited string. Enter a value that does not exist in the file.
 
 ```yaml
 Type: String

@@ -105,6 +105,42 @@ Because **Path** takes multiple strings, you can use it to create multiple items
 New-Item -ItemType "file" -Path "c:\ps-test\test.txt", "c:\ps-test\Logs\test.log"
 ```
 
+### Example 6: Use wildcards to create files in multiple directories
+
+The `New-Item` cmdlet supports wildcards in the **Path** parameter. The following command creates
+a `temp.txt` file in all of the directories specified by the wildcards in the **Path** parameter.
+
+```powershell
+Get-ChildItem -Path C:\Temp\
+```
+
+```Output
+    Directory:  C:\Temp
+
+Mode                LastWriteTime     Length Name
+----                -------------     ------ ----
+d-----        5/15/2019   6:45 AM        1   One
+d-----        5/15/2019   6:45 AM        1   Two
+d-----        5/15/2019   6:45 AM        1   Three
+```
+
+```powershell
+New-Item -Path * -Name temp.txt -ItemType File | Select-Object FullName
+```
+
+```Output
+FullName
+--------
+C:\Temp\One\temp.txt
+C:\Temp\Three\temp.txt
+C:\Temp\Two\temp.txt
+```
+
+The `Get-ChildItem` cmdlet shows three directories under the `C:\Temp` directory. Using wildcards
+the `New-Item` cmdlet creates a `temp.txt` file in all of the directories under the current
+directory. The `New-Item` cmdlet outputs the items you created, which is piped to `Select-Object`
+to verify the paths of the newly created files.
+
 ## PARAMETERS
 
 ### -Credential
@@ -206,8 +242,8 @@ Accept wildcard characters: False
 
 ### -Path
 
-Specifies the path of the location of the new item. Wildcard characters are permitted.
-
+Specifies the path of the location of the new item.
+Wildcard characters are permitted.
 You can specify the name of the new item in **Name**, or include it in **Path**.
 
 ```yaml
@@ -215,19 +251,7 @@ Type: String[]
 Parameter Sets: pathSet
 Aliases:
 
-Required: True
-Position: 0
-Default value: None
-Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
-```
-
-```yaml
-Type: String[]
-Parameter Sets: nameSet
-Aliases:
-
-Required: False
+Required: True (pathSet), False (nameSet)
 Position: 0
 Default value: None
 Accept pipeline input: True (ByPropertyName)
@@ -287,7 +311,7 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: `-Debug`, `-ErrorAction`, `-ErrorVariable`,
 `-InformationAction`, `-InformationVariable`, `-OutVariable`, `-OutBuffer`, `-PipelineVariable`,
-`-Verbose`, `-WarningAction`, and `-WarningVariable`. For more information, see 
+`-Verbose`, `-WarningAction`, and `-WarningVariable`. For more information, see
 [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
 
 ## INPUTS

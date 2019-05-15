@@ -165,7 +165,7 @@ Accept wildcard characters: True
 > [!NOTE]
 > This parameter is not supported by any providers installed with PowerShell.
 > To impersonate another user, or elevate your credentials when running this cmdlet,
-> use [Invoke-Command](../Microsoft.PowerShell.Core/Invoke-Command.md)
+> use [Invoke-Command](../Microsoft.PowerShell.Core/Invoke-Command.md).
 
 ```yaml
 Type: PSCredential
@@ -283,7 +283,7 @@ Accept wildcard characters: False
 
 Specifies the path to an item.
 This cmdlet gets the item at the specified location.
-Wildcards are permitted.
+Wildcard characters are permitted.
 This parameter is required, but the parameter name **Path** is optional.
 
 Use a dot (`.`) to specify the current location.
@@ -298,7 +298,7 @@ Required: True
 Position: 0
 Default value: None
 Accept pipeline input: True (ByPropertyName, ByValue)
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### CommonParameters

@@ -137,7 +137,7 @@ must be enclosed in single quotation marks, because it includes brackets that ca
 > [!NOTE]
 > This parameter is not supported by any providers installed with PowerShell.
 > To impersonate another user, or elevate your credentials when running this cmdlet,
-> use [Invoke-Command](../Microsoft.PowerShell.Core/Invoke-Command.md)
+> use [Invoke-Command](../Microsoft.PowerShell.Core/Invoke-Command.md).
 
 ```yaml
 Type: PSCredential
@@ -157,7 +157,7 @@ Specifies the path to the location where the items are being moved.
 The default is the current directory.
 Wildcards are permitted, but the result must specify a single location.
 
-To rename the item being moved, specify a new name in the value of the *Destination* parameter.
+To rename the item being moved, specify a new name in the value of the **Destination** parameter.
 
 ```yaml
 Type: String
@@ -168,7 +168,7 @@ Required: False
 Position: 1
 Default value: None
 Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -Exclude
@@ -291,7 +291,7 @@ Accept wildcard characters: False
 
 Specifies the path to the current location of the items.
 The default is the current directory.
-Wildcards are permitted.
+Wildcard characters are permitted.
 
 ```yaml
 Type: String[]
@@ -302,7 +302,7 @@ Required: True
 Position: 0
 Default value: None
 Accept pipeline input: True (ByPropertyName, ByValue)
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -Confirm

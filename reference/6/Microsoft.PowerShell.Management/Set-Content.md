@@ -107,10 +107,9 @@ The word Warning was replaced.
 ```
 
 ```powershell
-(Get-Content -Path .\Notice.txt) | ForEach-Object {$_ -Replace 'Warning', 'Caution'} | Set-Content -Path .\Notice.txt
-```
-
-```powershell
+Get-Content -Path .\Notice.txt |
+    ForEach-Object {$_ -Replace 'Warning', 'Caution'} |
+        Set-Content -Path .\Notice.txt
 Get-Content -Path .\Notice.txt
 ```
 
@@ -172,7 +171,7 @@ Accept wildcard characters: False
 > [!NOTE]
 > This parameter is not supported by any providers installed with PowerShell.
 > To impersonate another user, or elevate your credentials when running this cmdlet,
-> use [Invoke-Command](../Microsoft.PowerShell.Core/Invoke-Command.md)
+> use [Invoke-Command](../Microsoft.PowerShell.Core/Invoke-Command.md).
 
 ```yaml
 Type: PSCredential
@@ -357,7 +356,8 @@ Accept wildcard characters: False
 
 ### -Path
 
-Specifies the path of the item that receives the content. Wildcard characters are permitted.
+Specifies the path of the item that receives the content.
+Wildcard characters are permitted.
 
 ```yaml
 Type: String[]
@@ -368,7 +368,7 @@ Required: True
 Position: 0
 Default value: None
 Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -Stream

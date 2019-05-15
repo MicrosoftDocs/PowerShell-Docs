@@ -75,20 +75,20 @@ ZoneId=3
 
 ```powershell
 Clear-Content C:\Test\Copy-Script.ps1 -Stream Zone.Identifier
-```
-
-```powershell
-Get-Content C:\Test\Copy-Script.ps1 -Stream Zone.Identifier
+Get-Item C:\Test\Copy-Script.ps1 -Stream * | Select-Object Stream,Length,Filename
 ```
 
 ```Output
-
+Stream          Length FileName
+------          ------ --------
+:$DATA             125 C:\Test\Copy-Script.ps1
+Zone.Identifier     0 C:\Test\Copy-Script.ps1
 ```
 
 The `Get-Content` cmdlet gets the content of the **Zone.Identifier** stream in the `Copy-Script.ps1`
 file, which was downloaded from the Internet. The **ZoneId** shows that the script will be blocked
-by **ExecutionPolicy**. The `Clear-Content` cmdlet to clear the content of the **Zone.Identifier**
-stream. The last command uses `Get-Content` to show that the **Zone.Identifier** stream has been
+by **ExecutionPolicy**. The `Clear-Content` cmdlet clears the content of the **Zone.Identifier**
+stream. The last command uses `Get-Item` to show that the **Zone.Identifier** stream has been
 cleared.
 
 > [!NOTE]
@@ -140,7 +140,7 @@ Accept wildcard characters: False
 > [!NOTE]
 > This parameter is not supported by any providers installed with PowerShell.
 > To impersonate another user, or elevate your credentials when running this cmdlet,
-> use [Invoke-Command](../Microsoft.PowerShell.Core/Invoke-Command.md)
+> use [Invoke-Command](../Microsoft.PowerShell.Core/Invoke-Command.md).
 
 ```yaml
 Type: PSCredential
@@ -254,10 +254,9 @@ Accept wildcard characters: False
 ### -Path
 
 Specifies the paths to the items from which content is deleted.
-Wildcards are permitted.
 The paths must be paths to items, not to containers.
 For example, you must specify a path to one or more files, not a path to a directory.
-Wildcards are permitted.
+Wildcard characters are permitted.
 This parameter is required, but the parameter name **Path** is optional.
 
 ```yaml
@@ -269,7 +268,7 @@ Required: True
 Position: 0
 Default value: None
 Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -Confirm

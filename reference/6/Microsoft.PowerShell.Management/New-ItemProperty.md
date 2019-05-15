@@ -125,7 +125,7 @@ a
 > [!NOTE]
 > This parameter is not supported by any providers installed with PowerShell.
 > To impersonate another user, or elevate your credentials when running this cmdlet,
-> use [Invoke-Command](../Microsoft.PowerShell.Core/Invoke-Command.md)
+> use [Invoke-Command](../Microsoft.PowerShell.Core/Invoke-Command.md).
 
 ```yaml
 Type: PSCredential
@@ -258,6 +258,7 @@ Accept wildcard characters: False
 ### -Path
 
 Specifies the path of the item.
+Wildcard characters are permitted.
 This parameter identifies the item to which this cmdlet adds the new property.
 
 ```yaml
@@ -269,7 +270,7 @@ Required: True
 Position: 0
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -PropertyType

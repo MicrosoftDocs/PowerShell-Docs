@@ -155,6 +155,7 @@ Accept wildcard characters: False
 Specifies the PowerShell path to resolve.
 This parameter is required.
 You can also pipe a path string to `Resolve-Path`.
+Wildcard characters are permitted.
 
 ```yaml
 Type: String[]
@@ -165,7 +166,7 @@ Required: True
 Position: 0
 Default value: None
 Accept pipeline input: True (ByPropertyName, ByValue)
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -Relative

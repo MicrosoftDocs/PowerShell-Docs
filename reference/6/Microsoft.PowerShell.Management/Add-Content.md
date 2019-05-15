@@ -193,7 +193,7 @@ Accept wildcard characters: False
 > [!NOTE]
 > This parameter is not supported by any providers installed with PowerShell.
 > To impersonate another user, or elevate your credentials when running this cmdlet,
-> use [Invoke-Command](../Microsoft.PowerShell.Core/Invoke-Command.md)
+> use [Invoke-Command](../Microsoft.PowerShell.Core/Invoke-Command.md).
 
 ```yaml
 Type: PSCredential
@@ -381,8 +381,11 @@ Accept wildcard characters: False
 
 ### -Path
 
-Specifies the path to the items that receive the additional content. Wildcards are permitted. If
-you specify multiple paths, use commas to separate the paths.
+Specifies the path to the items that receive the additional content.
+Wildcard characters are permitted.
+The paths must be paths to items, not to containers.
+For example, you must specify a path to one or more files, not a path to a directory.
+If you specify multiple paths, use commas to separate the paths.
 
 ```yaml
 Type: String[]
@@ -393,7 +396,7 @@ Required: True
 Position: 0
 Default value: None
 Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -Stream

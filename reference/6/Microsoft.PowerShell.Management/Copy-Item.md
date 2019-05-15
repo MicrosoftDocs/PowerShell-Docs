@@ -218,7 +218,7 @@ Accept wildcard characters: False
 > [!NOTE]
 > This parameter is not supported by any providers installed with PowerShell.
 > To impersonate another user, or elevate your credentials when running this cmdlet,
-> use [Invoke-Command](../Microsoft.PowerShell.Core/Invoke-Command.md)
+> use [Invoke-Command](../Microsoft.PowerShell.Core/Invoke-Command.md).
 
 ```yaml
 Type: PSCredential
@@ -235,7 +235,9 @@ Accept wildcard characters: False
 ### -Destination
 
 Specifies the path to the new location.
-To rename a copied item, include the new name in the value.
+The default is the current directory.
+
+To rename the item being copied, specify a new name in the value of the **Destination** parameter.
 
 ```yaml
 Type: String
@@ -385,6 +387,7 @@ Accept wildcard characters: False
 ### -Path
 
 Specifies, as a string array, the path to the items to copy.
+Wildcard characters are permitted.
 
 ```yaml
 Type: String[]
@@ -395,7 +398,7 @@ Required: True
 Position: 0
 Default value: None
 Accept pipeline input: True (ByPropertyName, ByValue)
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -Recurse
@@ -417,7 +420,7 @@ Accept wildcard characters: False
 ### -ToSession
 
 Specifies the **PSSession** object to which a remote file is being copied.
-When you use this parameter, the *Path* and *LiteralPath* parameters refer to the local path on the
+When you use this parameter, the **Path** and **LiteralPath** parameters refer to the local path on the
 remote machine.
 
 ```yaml
