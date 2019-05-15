@@ -1,5 +1,5 @@
 ---
-ms.date:  10/18/2018
+ms.date: 5/14/2019
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -53,7 +53,8 @@ New-Item -Path . -Name "testfile1.txt" -ItemType "file" -Value "This is a text s
 ### Example 2: Create a directory
 
 This command creates a directory named "Logfiles" in the `C:` drive.
-The **ItemType** parameter specifies that the new item is a directory, not a file or other file system object.
+The **ItemType** parameter specifies that the new item is a directory, not a file or other file
+system object.
 
 ```powershell
 New-Item -Path "c:\" -Name "logfiles" -ItemType "directory"
@@ -64,14 +65,17 @@ New-Item -Path "c:\" -Name "logfiles" -ItemType "directory"
 This command creates a PowerShell profile in the path that is specified by the `$profile` variable.
 
 You can use profiles to customize PowerShell.
-`$profile` is an automatic (built-in) variable that stores the path and file name of the "CurrentUser/CurrentHost" profile.
+`$profile` is an automatic (built-in) variable that stores the path and file name of the
+"CurrentUser/CurrentHost" profile.
 By default, the profile does not exist, even though PowerShell stores a path and file name for it.
 
 In this command, the `$profile` variable represents the path of the file.
 **ItemType** parameter specifies that the command creates a file.
-The **Force** parameter lets you create a file in the profile path, even when the directories in the path do not exist.
+The **Force** parameter lets you create a file in the profile path, even when the directories in the
+path do not exist.
 
-After you use this command to create a profile, you can enter aliases, functions, and scripts in the profile to customize your shell.
+After you use this command to create a profile, you can enter aliases, functions, and scripts in the
+profile to customize your shell.
 
 For more information, see [about_Automatic_Variables](../Microsoft.PowerShell.Core/About/about_Automatic_Variables.md)
 and [about_Profiles](../Microsoft.PowerShell.Core/About/about_Profiles.md).
@@ -100,6 +104,42 @@ Because **Path** takes multiple strings, you can use it to create multiple items
 ```powershell
 New-Item -ItemType "file" -Path "c:\ps-test\test.txt", "c:\ps-test\Logs\test.log"
 ```
+
+### Example 6: Use wildcards to create files in multiple directories
+
+The `New-Item` cmdlet supports wildcards in the **Path** parameter. The following command creates
+a `temp.txt` file in all of the directories specified by the wildcards in the **Path** parameter.
+
+```powershell
+Get-ChildItem -Path C:\Temp\
+```
+
+```Output
+    Directory:  C:\Temp
+
+Mode                LastWriteTime     Length Name
+----                -------------     ------ ----
+d-----        5/15/2019   6:45 AM        1   One
+d-----        5/15/2019   6:45 AM        1   Two
+d-----        5/15/2019   6:45 AM        1   Three
+```
+
+```powershell
+New-Item -Path * -Name temp.txt -ItemType File | Select-Object FullName
+```
+
+```Output
+FullName
+--------
+C:\Temp\One\temp.txt
+C:\Temp\Three\temp.txt
+C:\Temp\Two\temp.txt
+```
+
+The `Get-ChildItem` cmdlet shows three directories under the `C:\Temp` directory. Using wildcards
+the `New-Item` cmdlet creates a `temp.txt` file in all of the directories under the current
+directory. The `New-Item` cmdlet outputs the items you created, which is piped to `Select-Object`
+to verify the paths of the newly created files.
 
 ## PARAMETERS
 
@@ -202,8 +242,8 @@ Accept wildcard characters: False
 
 ### -Path
 
-Specifies the path of the location of the new item. Wildcard characters are permitted.
-
+Specifies the path of the location of the new item.
+Wildcard characters are permitted.
 You can specify the name of the new item in **Name**, or include it in **Path**.
 
 ```yaml
@@ -211,19 +251,7 @@ Type: String[]
 Parameter Sets: pathSet
 Aliases:
 
-Required: True
-Position: 0
-Default value: None
-Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
-```
-
-```yaml
-Type: String[]
-Parameter Sets: nameSet
-Aliases:
-
-Required: False
+Required: True (pathSet), False (nameSet)
 Position: 0
 Default value: None
 Accept pipeline input: True (ByPropertyName)
@@ -283,7 +311,8 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: `-Debug`, `-ErrorAction`, `-ErrorVariable`,
 `-InformationAction`, `-InformationVariable`, `-OutVariable`, `-OutBuffer`, `-PipelineVariable`,
-`-Verbose`, `-WarningAction`, and `-WarningVariable`. For more information, see [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
+`-Verbose`, `-WarningAction`, and `-WarningVariable`. For more information, see
+[about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
 
 ## INPUTS
 
