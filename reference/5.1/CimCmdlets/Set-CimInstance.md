@@ -275,12 +275,11 @@ Specifies the properties of the CIM instance as a hash table (using name-value p
 properties specified using this parameter are changed. Other properties of the CIM instance are not
 changed.
 
-
 ```yaml
 Accept pipeline input: True (ByPropertyName)
 Position: Named
 Accept wildcard characters: False
-Parameter Sets: CimInstanceComputerSet, CimInstanceSessionSet
+Parameter Sets: CimInstanceComputerSet, CimInstanceSessionSet, QuerySessionSet, QueryComputerSet
 Required: True (QuerySessionSet, QueryComputerSet), False (CimInstanceComputerSet, CimInstanceSessionSet)
 Default value: None
 Aliases: Arguments

@@ -549,12 +549,11 @@ object, such as one returned by the Get-Credential cmdlet.
 
 When you type a user name, this cmdlet prompts you for a password.
 
-
 ```yaml
 Accept pipeline input: True (ByPropertyName)
 Position: Named
 Accept wildcard characters: False
-Parameter Sets: ComputerName, Uri
+Parameter Sets: ComputerName, Uri, VMName, VMId
 Required: True (VMName, VMId), False (ComputerName, Uri)
 Default value: None
 Aliases: 

@@ -542,7 +542,6 @@ The instance ID is a GUID that uniquely identifies a PSSession on a local or rem
 
 The instance ID is stored in the **InstanceID** property of the PSSession.
 
-
 ```yaml
 Accept pipeline input: False
 Position: Named
@@ -587,7 +586,6 @@ Accept wildcard characters: False
 ### -Name
 
 Specifies the friendly name of the disconnected session.
-
 
 ```yaml
 Accept pipeline input: False

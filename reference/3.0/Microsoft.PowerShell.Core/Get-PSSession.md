@@ -363,12 +363,11 @@ The **InstanceID** is unique, even when you have multiple sessions running in Wi
 
 The instance ID of a session is stored in the **InstanceID** property of the session.
 
-
 ```yaml
 Accept pipeline input: False
 Position: Named
 Accept wildcard characters: False
-Parameter Sets: ComputerInstanceId, ConnectionUriInstanceId
+Parameter Sets: ComputerInstanceId, ConnectionUriInstanceId, InstanceId
 Required: True (ComputerInstanceId, ConnectionUriInstanceId), False (InstanceId)
 Default value: All sessions
 Aliases: 
@@ -381,7 +380,6 @@ Gets only the sessions with the specified friendly names.
 Wildcards are permitted.
 
 The friendly name of a session is stored in the **Name** property of the session.
-
 
 ```yaml
 Accept pipeline input: True (ByPropertyName)

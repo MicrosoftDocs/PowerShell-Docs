@@ -330,12 +330,11 @@ Accept wildcard characters: False
 Specifies the name of a WMI class.
 When this parameter is used, the cmdlet retrieves instances of the WMI class.
 
-
 ```yaml
 Accept pipeline input: False
 Position: 1
 Accept wildcard characters: False
-Parameter Sets: query
+Parameter Sets: query, list
 Required: True (query), False (list)
 Default value: None
 Aliases: ClassName

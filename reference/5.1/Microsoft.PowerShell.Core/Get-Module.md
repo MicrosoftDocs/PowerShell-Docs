@@ -500,7 +500,6 @@ Without this parameter, `Get-Module` gets only the modules that are both listed 
 **ListAvailable** does not return information about modules that are not found in the
 **PSModulePath** environment variable, even if those modules are loaded in the current session.
 
-
 ```yaml
 Accept pipeline input: False
 Position: Named

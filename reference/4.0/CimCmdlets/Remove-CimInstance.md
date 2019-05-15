@@ -119,7 +119,6 @@ Component Object Model (COM).
 If multiple operations are being performed on the same computer, connecting using a CIM session
 gives better performance.
 
-
 ```yaml
 Accept pipeline input: False
 Position: Named

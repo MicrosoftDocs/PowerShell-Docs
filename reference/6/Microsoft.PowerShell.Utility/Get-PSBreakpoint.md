@@ -184,7 +184,6 @@ Specifies an array of scripts that contain the breakpoints.
 Enter the path (optional) and names of one or more script files.
 If you omit the path, the default location is the current directory.
 
-
 ```yaml
 Accept pipeline input: True (ByValue)
 Position: Named

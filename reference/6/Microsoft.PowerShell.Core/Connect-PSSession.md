@@ -485,12 +485,11 @@ Accept wildcard characters: False
 
 Specifies the friendly names of the disconnected sessions.
 
-
 ```yaml
 Accept pipeline input: False
 Position: Named
 Accept wildcard characters: False
-Parameter Sets: Name
+Parameter Sets: Name, ComputerName, ConnectionUri
 Required: True (Name), False (ComputerName, ConnectionUri)
 Default value: None
 Aliases: 

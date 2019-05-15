@@ -411,12 +411,11 @@ Type a user name, such as `User01`, `Domain01\User01`, or `User@Domain.com`, or 
 
 When you type a user name, this cmdlet prompts you for a password.
 
-
 ```yaml
 Accept pipeline input: True (ByPropertyName)
 Position: Named
 Accept wildcard characters: False
-Parameter Sets: ComputerName, Uri
+Parameter Sets: ComputerName, Uri, VMId, VMName
 Required: True (VMId, VMName), False (ComputerName, Uri)
 Default value: None
 Aliases: 

@@ -67,12 +67,11 @@ PS C:\> Register-ArgumentCompleter -CommandName Get-Command -ParameterName Verb 
 Specifies the name of the command as an array.
 If the command line uses  an alias, this value is the actual command, not the alias.
 
-
 ```yaml
 Accept pipeline input: False
 Position: Named
 Accept wildcard characters: False
-Parameter Sets: PowerShellSet
+Parameter Sets: PowerShellSet, NativeSet
 Required: True (NativeSet), False (PowerShellSet)
 Default value: None
 Aliases: 
