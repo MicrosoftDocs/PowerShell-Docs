@@ -82,7 +82,7 @@ Get-Item C:\Test\Copy-Script.ps1 -Stream * | Select-Object Stream,Length,Filenam
 Stream          Length FileName
 ------          ------ --------
 :$DATA             125 C:\Test\Copy-Script.ps1
-Zone.Identifier     0 C:\Test\Copy-Script.ps1
+Zone.Identifier      0 C:\Test\Copy-Script.ps1
 ```
 
 The `Get-Content` cmdlet gets the content of the **Zone.Identifier** stream in the `Copy-Script.ps1`
