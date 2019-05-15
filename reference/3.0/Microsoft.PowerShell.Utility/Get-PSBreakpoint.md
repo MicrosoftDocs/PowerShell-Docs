@@ -1,5 +1,5 @@
-﻿---
-ms.date:  06/09/2017
+---
+ms.date: 5/15/2019
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -10,7 +10,6 @@ title:  Get-PSBreakpoint
 # Get-PSBreakpoint
 
 ## SYNOPSIS
-
 Gets the breakpoints that are set in the current session.
 
 ## SYNTAX
@@ -50,9 +49,10 @@ Get-PSBreakpoint [-Id] <Int32[]> [<CommonParameters>]
 The Get-PSBreakPoint cmdlet gets the breakpoints that are set in the current session.
 You can use the cmdlet parameters to get particular breakpoints.
 
-A breakpoint is a point in a command or script where execution stops temporarily so that you can examine the instructions.
-Get-PSBreakpoint is one of several cmdlets designed for debugging Windows PowerShell scripts and commands.
-For more information about the Windows PowerShell debugger, see about_Debuggers.
+A breakpoint is a point in a command or script where execution stops temporarily so that you can
+examine the instructions.
+Get-PSBreakpoint is one of several cmdlets designed for debugging Windows PowerShell scripts and
+commands. For more information about the Windows PowerShell debugger, see about_Debuggers.
 
 ## EXAMPLES
 
@@ -101,11 +101,11 @@ Description
 
 These commands show how to get a breakpoint by piping a breakpoint ID to Get-PSBreakpoint.
 
-The first command uses the Set-PSBreakpoint cmdlet to create a breakpoint on the Increment function in the Sample.ps1 script.
-It saves the breakpoint object in the $b variable.
+The first command uses the Set-PSBreakpoint cmdlet to create a breakpoint on the Increment function
+in the Sample.ps1 script. It saves the breakpoint object in the $b variable.
 
-The second command uses the dot operator (.) to get the Id property of the breakpoint object in the $b variable.
-It uses a pipeline operator (|) to send the ID to the Get-PSBreakpoint cmdlet.
+The second command uses the dot operator (.) to get the Id property of the breakpoint object in the
+$b variable. It uses a pipeline operator (|) to send the ID to the Get-PSBreakpoint cmdlet.
 
 As a result, Get-PSBreakpoint gets the breakpoint with the specified ID.
 
@@ -121,7 +121,8 @@ Description
 
 This command gets all of the breakpoints in the Sample.ps1 and SupportScript.ps1 files.
 
-This command does not get other breakpointS that might be set in other scripts or on functions in the session.
+This command does not get other breakpointS that might be set in other scripts or on functions in
+the session.
 
 ### Example 5
 
@@ -133,7 +134,8 @@ Description
 
 -----------
 
-This command gets all Command breakpoints that are set on Read-Host or Write-Host commands in the Sample.ps1 file.
+This command gets all Command breakpoints that are set on Read-Host or Write-Host commands in the
+Sample.ps1 file.
 
 ### Example 6
 
@@ -215,27 +217,14 @@ Enter the  path (optional) and names of one or more script files.
 If you omit the path, the default location is the current directory.
 
 ```yaml
-Type: String[]
-Parameter Sets: Script
-Aliases:
-
-Required: False
-Position: 1
-Default value: None
 Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-```yaml
-Type: String[]
-Parameter Sets: Type, Command, Variable
-Aliases:
-
-Required: False
 Position: 1
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
+Parameter Sets: Script, Type, Command, Variable
+Required: False
+Default value: None
+Aliases: 
+Type: String[]
 ```
 
 ### -Type
@@ -276,7 +265,10 @@ Accept wildcard characters: False
 
 ### CommonParameters
 
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+-InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
+-WarningAction, and -WarningVariable. For more information, see about_CommonParameters
+(http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
