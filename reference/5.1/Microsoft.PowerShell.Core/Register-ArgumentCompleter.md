@@ -74,7 +74,7 @@ Accept wildcard characters: False
 Parameter Sets: NativeSet, PowerShellSet
 Required: True (NativeSet), False (PowerShellSet)
 Default value: None
-Aliases: 
+Aliases:
 Type: String[]
 ```
 
@@ -149,7 +149,5 @@ You cannot pipe objects to this cmdlet.
 This cmdlet returns no output.
 
 ## NOTES
-
-## RELATED LINKS
 
 ## RELATED LINKS
