@@ -561,7 +561,7 @@ Accept pipeline input: False
 Position: Named
 Accept wildcard characters: False
 Parameter Sets: ComputerInstanceId, ConnectionUriInstanceId, ContainerIdInstanceId, VMIdInstanceId, VMNameInstanceId
-Required: True (ComputerInstanceId, ConnectionUriInstanceId, ContainerIdInstanceId, VMIdInstanceId, VMNameInstanceId), False(InstanceId)
+Required: True (ComputerInstanceId, ConnectionUriInstanceId, ContainerIdInstanceId, VMIdInstanceId, VMNameInstanceId), False (InstanceId)
 Default value: None
 Aliases: 
 Type: Guid[]

@@ -505,7 +505,7 @@ Accept pipeline input: False
 Position: Named
 Accept wildcard characters: False
 Parameter Sets: CimSession, PsSession
-Required: True (Available), False(CimSession, PsSession)
+Required: True (Available), False (CimSession, PsSession)
 Default value: None
 Aliases: 
 Type: SwitchParameter

@@ -485,7 +485,7 @@ Accept pipeline input: False
 Position: Named
 Accept wildcard characters: False
 Parameter Sets: ComputerInstanceId, ConnectionUriInstanceId
-Required: True (ComputerInstanceId, ConnectionUriInstanceId), False(InstanceId)
+Required: True (ComputerInstanceId, ConnectionUriInstanceId), False (InstanceId)
 Default value: All sessions
 Aliases: 
 Type: Guid[]

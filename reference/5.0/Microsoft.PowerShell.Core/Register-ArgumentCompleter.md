@@ -73,7 +73,7 @@ Accept pipeline input: False
 Position: Named
 Accept wildcard characters: False
 Parameter Sets: PowerShellSet
-Required: True (NativeSet), False(PowerShellSet)
+Required: True (NativeSet), False (PowerShellSet)
 Default value: None
 Aliases: 
 Type: String[]

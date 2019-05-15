@@ -417,7 +417,7 @@ Accept pipeline input: True (ByPropertyName)
 Position: Named
 Accept wildcard characters: False
 Parameter Sets: ComputerName, Uri
-Required: True (VMId, VMName), False(ComputerName, Uri)
+Required: True (VMId, VMName), False (ComputerName, Uri)
 Default value: None
 Aliases: 
 Type: PSCredential

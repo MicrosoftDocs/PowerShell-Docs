@@ -336,7 +336,7 @@ Accept pipeline input: False
 Position: 1
 Accept wildcard characters: False
 Parameter Sets: query
-Required: True (query), False(list)
+Required: True (query), False (list)
 Default value: None
 Aliases: ClassName
 Type: String

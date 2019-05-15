@@ -870,7 +870,7 @@ Accept pipeline input: True (ByPropertyName)
 Position: Named
 Accept wildcard characters: False
 Parameter Sets: ComputerName, FilePathComputerName, Uri, FilePathUri
-Required: True (VMId, VMName, FilePathVMId, FilePathVMName), False(ComputerName, FilePathComputerName, Uri, FilePathUri)
+Required: True (VMId, VMName, FilePathVMId, FilePathVMName), False (ComputerName, FilePathComputerName, Uri, FilePathUri)
 Default value: None
 Aliases: 
 Type: PSCredential

@@ -276,7 +276,7 @@ Accept pipeline input: True (ByPropertyName)
 Position: Named
 Accept wildcard characters: False
 Parameter Sets: CimInstanceComputerSet, CimInstanceSessionSet
-Required: True (QuerySessionSet, QueryComputerSet), False(CimInstanceComputerSet, CimInstanceSessionSet)
+Required: True (QuerySessionSet, QueryComputerSet), False (CimInstanceComputerSet, CimInstanceSessionSet)
 Default value: None
 Aliases: Arguments
 Type: IDictionary

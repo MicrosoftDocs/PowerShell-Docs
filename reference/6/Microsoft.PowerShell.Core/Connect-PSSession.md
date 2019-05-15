@@ -491,7 +491,7 @@ Accept pipeline input: False
 Position: Named
 Accept wildcard characters: False
 Parameter Sets: Name
-Required: True (Name), False(ComputerName, ConnectionUri)
+Required: True (Name), False (ComputerName, ConnectionUri)
 Default value: None
 Aliases: 
 Type: String[]
