@@ -34,5 +34,5 @@ Some example improvements (your results may vary depending on your hardware):
 Another visible change is how PowerShell caches the exported commands and other information for
 modules that are installed on a system. Previously, this cache was stored in the directory
 `$env:LOCALAPPDATA\Microsoft\Windows\PowerShell\CommandAnalysis`. In WMF 5.1, the cache is a single
-file `$env:LOCALAPPDATA\Microsoft\Windows\PowerShell\ModuleAnalysisCache`. See [Module Analysis Cache](scenarios-features.md#module-analysis-cache)
+file `$env:LOCALAPPDATA\Microsoft\Windows\PowerShell\ModuleAnalysisCache`. See [Module Analysis Cache](release-notes.md#module-analysis-cache)
 for more details.

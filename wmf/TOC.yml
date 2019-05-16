@@ -1,13 +1,5 @@
 - name: Windows Management Framework (WMF)
   href: overview.md
-- name: Known Issues
-  items:
-    - name: Known Issues in WMF 5.0
-      href: known-issues/known-issues-50.md
-    - name: Known Issues in WMF 5.1
-      href: known-issues/known-issues-51.md
-    - name: Known Issues and Limitations in DSC
-      href: known-issues/known-issues-dsc.md
 - name: Installation
   items:
     - name: Install and configure WMF 5.1
@@ -42,3 +34,11 @@
       href: whats-new/sil-overview.md
     - name: Product Compatibility Status
       href: whats-new/productincompat.md
+- name: Known Issues
+  items:
+    - name: Known Issues in WMF 5.0
+      href: known-issues/known-issues-50.md
+    - name: Known Issues in WMF 5.1
+      href: known-issues/known-issues-51.md
+    - name: Known Issues and Limitations in DSC
+      href: known-issues/known-issues-dsc.md
