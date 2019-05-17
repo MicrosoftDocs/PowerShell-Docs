@@ -7,6 +7,7 @@
     - name: Uninstall WMF 5.0
       href: setup/uninstall.md
 - name: What's New
+  expanded: true
   items:
     - name: WMF 5.x Release Notes
       href: whats-new/release-notes.md
