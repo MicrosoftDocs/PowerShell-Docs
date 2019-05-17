@@ -30,6 +30,11 @@ It parses the response and returns collections of forms, links, images, and othe
 
 This cmdlet was introduced in Windows PowerShell 3.0.
 
+> [!NOTE]
+> By default,
+> script code in the web page may be run when the page is being parsed to populate the `ParsedHtml` property.
+> Use the `-UseBasicParsing` switch to suppress this.
+
 ## EXAMPLES
 
 ### Example 1

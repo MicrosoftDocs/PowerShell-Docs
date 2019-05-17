@@ -1,10 +1,9 @@
 ---
-ms.date:  06/25/2017
+ms.date: 5/9/2019
 schema:  2.0.0
 keywords:  powershell,cmdlet
 title:  about_Continue
 ---
-
 # About Continue
 
 ## SHORT DESCRIPTION
@@ -23,25 +22,46 @@ statement in a script. For information about labels, see
 [about_Break](about_Break.md).
 
 In the following example, program flow returns to the top of the While loop
-if the $ctr variable is equal to 5. As a result, all the numbers between 1
+if the `$ctr` variable is equal to 5. As a result, all the numbers between 1
 and 10 are displayed except for 5:
 
 ```powershell
 while ($ctr -lt 10)
 {
     $ctr += 1
-    if ($ctr -eq 5) {Continue}
+    if ($ctr -eq 5)
+    {
+        Continue
+    }
+
     Write-Host -Object $ctr
 }
 ```
 
-Note that in a `For` loop, execution continues at the first line in the
-loop. If the arguments of the `For` statement test a value that is modified
-by the `For` statement, an infinite loop may result.
+When using a `For` loop, execution continues at the `<Repeat>` statement,
+followed by the `<Condition>` test. In the example below, an infinite loop
+will not occur because the decrement of `$i` occurs after the `Continue`
+keyword.
+
+```powershell
+#   <Init>  <Condition> <Repeat>
+for ($i = 0; $i -lt 10; $i++)
+{
+    Write-Host -Object $i
+    if ($i -eq 5)
+    {
+        continue
+        # Will not result in an infinite loop.
+        $i--;
+    }
+}
+```
 
 ## SEE ALSO
 
 [about_Break](about_Break.md)
+
+[about_For](about_For.md)
 
 [about_Comparison_Operators](about_Comparison_Operators.md)
 

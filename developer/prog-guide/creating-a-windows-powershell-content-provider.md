@@ -23,36 +23,6 @@ This topic describes how to create a Windows PowerShell provider that enables th
 >
 > For more information about other Windows PowerShell provider implementations, see [Designing Your Windows PowerShell Provider](./designing-your-windows-powershell-provider.md).
 
-The following list contains the sections in this topic. If you are unfamiliar with writing a Windows PowerShell content provider, read these sections in the order that they appear. However, if you are familiar with writing a Windows PowerShell content provider, go directly to the information that you need.
-
-- [Defining the Windows PowerShell Content Provider Class](#Define-the-Windows-PowerShell-Content-Provider-Class)
-
-- [Defining Base Functionality](#Define-Functionality-of-Base-Class)
-
-- [Implementing a Content Reader](#Implementing-a-Content-Reader)
-
-- [Implementing a Content Writer](#Implementing-a-Content-Writer)
-
-- [Retrieving the Content Reader](#Retrieving-the-Content-Reader)
-
-- [Attaching Dynamic Parameters to the `Get-Content` Cmdlet](#Attaching-Dynamic-Parameters-to-the-Get-Content-Cmdlet)
-
-- [Retrieving the Content Writer](#Retrieving-the-Content-Writer)
-
-- [Attaching Dynamic Parameters to the Add_Content and `Set-Content` Cmdlets](#Attaching-Dynamic-Parameters-to-the-Add-Content-and-Set-Content-Cmdlets)
-
-- [Clearing Content](#Clearing-Content)
-
-- [Attaching Dynamic Parameters to the  `Clear-Content` Cmdlet](#Attaching-Dynamic-Parameters-to-the-Clear-Content-Cmdlet)
-
-- [Code Sample](#Code-Sample)
-
-- [Defining Object Types and Formatting](#defining-object-types-and-formatting)
-
-- [Building the Windows PowerShell provider](#Building-the-Windows-PowerShell-Provider)
-
-- [Testing the Windows PowerShell provider](#Testing-the-Windows-PowerShell-Provider)
-
 ## Define the Windows PowerShell Content Provider Class
 
 A Windows PowerShell content provider must create a .NET class that supports the [System.Management.Automation.Provider.Icontentcmdletprovider](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider) interface. Here is the class definition for the item provider described in this section.

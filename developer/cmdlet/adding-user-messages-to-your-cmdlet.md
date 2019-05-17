@@ -46,32 +46,6 @@ Cmdlets can write several kinds of messages that can be displayed to the user by
 
 There are no limits to the number of messages that your cmdlet can write or the type of messages that your cmdlet writes. Each message is written by making a specific call from within the input processing method of your cmdlet.
 
-## The StopProc Cmdlet
-
-Topics in this section include the following:
-
-- [Defining the Cmdlet](#Defining-the-Cmdlet)
-
-- [Defining Parameters for System Modification](#Defining-Parameters-for-System-Modification)
-
-- [Overriding an Input Processing Method](#Overriding-an-Input-Processing-Method)
-
-- [Writing a Verbose Message](#Writing-a-Verbose-Message)
-
-- [Writing a Debug Message](#Writing-a-Debug-Message)
-
-- [Writing a Warning Message](#Writing-a-Warning-Message)
-
-- [Writing a Progress Message](#Writing-a-Progress-Message)
-
-- [Code Sample](#Code-Sample)
-
-- [Define Object Types and Formatting](#Define-Object-Types-and-Formatting)
-
-- [Building the Cmdlet](#Building-the-Cmdlet)
-
-- [Testing the Cmdlet](#Testing-the-Cmdlet)
-
 ## Defining the Cmdlet
 
 The first step in cmdlet creation is always naming the cmdlet and declaring the .NET class that implements the cmdlet. Any sort of cmdlet can write user notifications from its input processing methods; so, in general, you can name this cmdlet using any verb that indicates what system modifications the cmdlet performs. For more information about approved cmdlet verbs, see [Cmdlet Verb Names](./approved-verbs-for-windows-powershell-commands.md).

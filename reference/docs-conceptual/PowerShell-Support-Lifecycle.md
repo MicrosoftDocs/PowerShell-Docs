@@ -47,8 +47,6 @@ which is 30 days after the release to maintain support.
 If any fixes are found to be required,
 the fixes will be released in our next cumulative update.
 
-![PowerShell Core branch lifecycle][lifecycle-chart]
-
 The Modern Lifecycle Policy also requires that Microsoft give customers 12 months
 notice before discontinuing support for a product (that is, PowerShell Core).
 
@@ -99,7 +97,7 @@ the following table lists the dates when various release will no longer be suppo
 |---------|-------------------------------|
 | 6.0     | February 13, 2019             |
 | 6.1     | September 28, 2019            |
-| 6.2     | 6 months after 6.3 releases   |
+| 6.2     | 6 months after 7 releases     |
 
 ## Platforms, which are out of support
 

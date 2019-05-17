@@ -37,28 +37,6 @@ The act of "changing the system" refers to any cmdlet that potentially changes t
 
 This topic describes a Stop-Proc cmdlet that attempts to stop processes that are retrieved using the Get-Proc cmdlet (described in [Creating Your First Cmdlet](./creating-a-cmdlet-without-parameters.md)).
 
-Topics in this section include the following:
-
-- [Defining the Cmdlet](#Defining-the-Cmdlet)
-
-- [Defining Parameters for System Modification](#Defining-Parameters-for-System-Modification)
-
-- [Overriding an Input Processing Method](#Overriding-an-Input-Processing-Method)
-
-- [Calling the ShouldProcess Method](#Calling-the-ShouldProcess-Method)
-
-- [Calling the ShouldContinue Method](#Calling-the-ShouldContinue-Method)
-
-- [Stopping Input Processing](#Stopping-Input-Processing)
-
-- [Code Sample](#Code-Sample)
-
-- [Defining Object Types and Formatting](#Defining-Object-Types-and-Formatting)
-
-- [Building the Cmdlet](#Building-the-Cmdlet)
-
-- [Testing the Cmdlet](#Testing-the-Cmdlet)
-
 ## Defining the Cmdlet
 
 The first step in cmdlet creation is always naming the cmdlet and declaring the .NET class that implements the cmdlet. Because you are writing a cmdlet to change the system, it should be named accordingly. This cmdlet stops system processes, so the verb name chosen here is "Stop", defined by the [System.Management.Automation.Verbslifecycle](/dotnet/api/System.Management.Automation.VerbsLifeCycle) class, with the noun "Proc" to indicate that the cmdlet stops processes. For more information about approved cmdlet verbs, see [Cmdlet Verb Names](./approved-verbs-for-windows-powershell-commands.md).

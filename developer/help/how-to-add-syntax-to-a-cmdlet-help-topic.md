@@ -11,16 +11,6 @@ caps.latest.revision: 5
 ---
 # How to Add Syntax to a Cmdlet Help Topic
 
-- [Parameter Attributes](#Parameter-Attributes)
-
-- [Parameter Value Attributes](#Parameter-Value-Attributes)
-
-- [Gathering Syntax Information](#Gathering-Syntax-Information)
-
-- [Coding the Syntax Diagram XML](#Coding-the-Syntax-Diagram-XML)
-
-## Things to Know About the Syntax Diagram in Cmdlet Help
-
 Before you start to code the XML for the syntax diagram in the cmdlet Help file, read this section to get a clear picture of the kind of data you need to provide, such as the parameter attributes, and how that data is displayed in the syntax diagram..
 
 ### Parameter Attributes
@@ -160,7 +150,7 @@ Typically, parameter values that are placeholders are required and parameter val
 
 ## Coding the Syntax Diagram XML
 
-The syntax node of the XML begins immediately after the description node, which ends with the \</maml:description> tag. For information about gathering the data used in the syntax diagram, see [Gathering Syntax Information](#Gathering-Syntax-Information).
+The syntax node of the XML begins immediately after the description node, which ends with the \</maml:description> tag. For information about gathering the data used in the syntax diagram, see [Gathering Syntax Information](#gathering-syntax-information).
 
 ### Adding a Syntax Node
 
@@ -204,7 +194,7 @@ The following example includes a syntax node that has syntax item nodes for two 
 
 Each parameter added to the syntax item node is specified within a pair of \<command:parameter> tags. You need a pair of \<command:parameter> tags for each parameter included in the parameter set, with the exception of the common parameters that are provided by Windows PowerShell?.
 
-The attributes of the opening \<command:parameter> tag determine how the parameter appears in the syntax diagram. For information on parameter attributes, see [Parameter Attributes](#Parameter-Attributes).
+The attributes of the opening \<command:parameter> tag determine how the parameter appears in the syntax diagram. For information on parameter attributes, see [Parameter Attributes](#parameter-attributes).
 
 > [!NOTE]
 > The \<command:parameter> tag supports a child element \<maml:description> whose content is never displayed. The parameter descriptions are specified in the parameter node of the XML. To avoid inconsistencies between the information in the syntax item bodes and the parameter node, omit the (\<maml:description> or leave it empty.

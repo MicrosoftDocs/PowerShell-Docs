@@ -222,8 +222,9 @@ parameters in the same command.
 The value of the **Property** parameter can be a new calculated property. To create a calculated
 property, use a hash table. Valid keys are:
 
+- Name (or Label) \<string\>
 - Expression \<string\> or \<script block\>
-- Depth \<int32\>
+- FormatString \<string\>
 
 ```yaml
 Type: Object[]

@@ -25,44 +25,6 @@ This topic describes how to create a Windows PowerShell provider that can manipu
 
 The Windows PowerShell item provider described in this topic gets items of data from an Access database. In this case, an "item" is either a table in the Access database or a row in a table.
 
-The following list contains the sections in this topic. If you are unfamiliar with writing a Windows PowerShell item provider, read these sections in the order that they appear. However, if you are familiar with writing a Windows PowerShell item provider, go directly to the information that you need:
-
-- [Defining the Windows PowerShell Item Provider Class](#Defining-the-Windows-PowerShell-Item-Provider-Class)
-
-- [Defining Base Functionality](#Defining-Base-Functionality)
-
-- [Checking for Path Validity](#Checking-for-Path-Validity)
-
-- [Determining if an Item Exists](#Determining-if-an-Item-Exists)
-
-- [Attaching Dynamic Parameters to the `Test-Path` Cmdlet](#Attaching-Dynamic-Parameters-to-the-Test-Path-Cmdlet)
-
-- [Retrieving an Item](#Retrieving-an-Item)
-
-- [Attaching Dynamic Parameters to the `Get-Item` Cmdlet](#Attaching-Dynamic-Parameters-to-the-Get-Item-Cmdlet)
-
-- [Setting an Item](#Setting-an-Item)
-
-- [Attaching Dynamic Parameters to the `Set-Item` Cmdlet](#Retrieving-Dynamic-Parameters-for-SetItem)
-
-- [Clearing an Item](#Clearing-an-Item)
-
-- [Attaching Dynamic Parameters to the Clear-Item Cmdlet](#Retrieve-Dynamic-Parameters-for-ClearItem)
-
-- [Performing a Default Action for an Item](#Performing-a-Default-Action-for-an-Item)
-
-- [Retrieving Dynamic Parameters for InvokeDefaultAction](#Retrieve-Dynamic-Parameters-for-InvokeDefaultAction)
-
-- [Implementing Helper Methods and Classes](#Implementing-Helper-Methods-and-Classes)
-
-- [Code Sample](#Code-Sample)
-
-- [Defining Object Types and Formatting](#Defining-Object-Types-and-Formatting)
-
-- [Building the Windows PowerShell Provider](#Building-the-Windows-PowerShell-provider)
-
-- [Testing the Windows PowerShell Provider](#Testing-the-Windows-PowerShell-provider)
-
 ## Defining the Windows PowerShell Item Provider Class
 
 A Windows PowerShell item provider must define a .NET class that derives from the [System.Management.Automation.Provider.Itemcmdletprovider](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider) base class. The following is the class definition for the item provider described in this section.
@@ -217,7 +179,7 @@ This item provider does not implement this method. However, the following code i
 
 ## Implementing Helper Methods and Classes
 
-This item provider implements several helper methods and classes that are used by the public override methods defined by Windows PowerShell. The code for these helper methods and classes are shown in the [Code Sample](#Code-Sample) section.
+This item provider implements several helper methods and classes that are used by the public override methods defined by Windows PowerShell. The code for these helper methods and classes are shown in the [Code Sample](#code-sample) section.
 
 ### NormalizePath Method
 
