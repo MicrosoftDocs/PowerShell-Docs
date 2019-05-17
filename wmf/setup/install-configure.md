@@ -78,7 +78,7 @@ following:
   PSModulePath, which can cause other applications to fail. Before installing WMF 5.1, you must
   either un-install WMF 3.0, or save the PSModulePath and then restore it manually after WMF 5.1
   installation is complete.
-- WMF 5.1 requires at least [.NET Framework 4.5.2](https://www.microsoft.com/en-ca/download/details.aspx?id=42642).
+- WMF 5.1 requires at least [.NET Framework 4.5.2](https://www.microsoft.com/download/details.aspx?id=42642).
   You can install Microsoft .NET Framework 4.5.2 by following the instructions at the download
   location.
 

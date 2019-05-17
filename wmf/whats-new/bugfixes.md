@@ -10,7 +10,7 @@ title:  Bug Fixes in WMF 5.1
 
 The following notable bugs are fixed in WMF 5.1:
 
-### Module auto-discovery fully honors `$env:PSModulePath`
+### Module auto-discovery fully honors PSModulePath
 
 Module auto-discovery (loading modules automatically without an explicit Import-Module when calling
 a command) was introduced in WMF 3. When introduced, PowerShell checked for commands in
@@ -20,7 +20,7 @@ WMF 5.1 changes this behavior to honor `$env:PSModulePath` completely. This allo
 user-authored module that defines commands provided by PowerShell (e.g. `Get-ChildItem`) to be
 auto-loaded and correctly overriding the built-in command.
 
-### File redirection no longer hard-codes `-Encoding Unicode`
+### File redirection no longer hard-codes -Encoding Unicode
 
 In all previous versions of PowerShell, it was impossible to control the file encoding used by the
 file redirection operator.
@@ -32,7 +32,7 @@ Starting with WMF 5.1, you can now change the file encoding of redirection by se
 $PSDefaultParameterValues["Out-File:Encoding"] = "Ascii"
 ```
 
-### Fixed a regression in accessing members of `System.Reflection.TypeInfo`
+### Fixed a regression in accessing members of System.Reflection.TypeInfo
 
 A regression introduced in WMF 5.0 broke accessing members of `System.Reflection.RuntimeType`, for
 example, `[int].ImplementedInterfaces`. This bug has been fixed in WMF 5.1.
@@ -77,7 +77,7 @@ $x = Get-COMDictionary
 In the above example, WMF 5.0 incorrectly wrote the **Scripting.Dictionary** to the pipeline instead
 of enumerating the key/value pairs.
 
-### `[ordered]` was not allowed inside classes
+### [ordered] was not allowed inside classes
 
 WMF 5.0 introduced classes with validation of type literals used in classes. `[ordered]` looks like
 a type literal but is not a true .NET type. WMF 5.0 incorrectly reported an error on `[ordered]`

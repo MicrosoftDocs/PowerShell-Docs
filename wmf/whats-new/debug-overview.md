@@ -13,7 +13,7 @@ PowerShell 5.0 includes several improvements that enhance the debugging experien
 The PowerShell console and PowerShell ISE now allow you to break into the debugger for running
 scripts. This works in both local and remote sessions.
 
-In the console, press <kbd>Ctrl<kbd>+</kbd>Break</kbd>.
+In the console, press <kbd>Ctrl</kbd>+<kbd>Break</kbd>.
 
 In ISE, press <kbd>Ctrl</kbd>+<kbd>B</kbd>, or use the **Debug -> Break All** menu command.
 

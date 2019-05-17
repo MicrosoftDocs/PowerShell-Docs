@@ -120,4 +120,3 @@ This update enables better behavior for Pester on Nano Server.
 
 You can review the changes in Pest by inspecting the [ChangeLog](https://github.com/pester/Pester/blob/master/CHANGELOG.md)
 in the GitHub repository.
-

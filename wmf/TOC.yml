@@ -20,6 +20,8 @@
       href: whats-new/console-improvements.md
     - name: Improvements in PowerShell Script Debugging
       href: whats-new/debug-overview.md
+    - name: Script Tracing and Logging
+      href: whats-new/script-logging.md
     - name: DSC Improvements in WMF 5.1
       href: whats-new/DSC-improvements.md
     - name: PowerShell Engine Improvements in WMF 5.1

@@ -15,11 +15,10 @@ For more information, see the [Microsoft.Powershell.Archive](/powershell/module/
 
 ## Catalog Cmdlets
 
-Two new cmdlets have been added in the [Microsoft.PowerShell.Security](/powershell/module/microsoft.powershell.security)
-module.
+Two new cmdlets have been added in the Microsoft.PowerShell.Security module.
 
-- New-FileCatalog
-- Test-FileCatalog
+- [New-FileCatalog](/powershell/module/microsoft.powershell.security/New-FileCatalog)
+- [Test-FileCatalog](/powershell/module/microsoft.powershell.security/Test-FileCatalog)
 
 These generate and validate Windows catalog files.
 
