@@ -85,7 +85,7 @@ functioning properly. If you still have issues getting started, let us know on [
 
 #### Choosing a version of PowerShell to use with the extension
 
-With PowerShell Core installing side-by-side with Windows PowerShell, is it now possible to a
+With PowerShell Core installing side-by-side with Windows PowerShell, is it now possible to use a
 particular version of PowerShell with the PowerShell extension. Use the following these steps to
 choose the version:
 
