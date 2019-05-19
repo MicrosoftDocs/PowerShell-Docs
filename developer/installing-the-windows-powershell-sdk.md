@@ -2,6 +2,7 @@
 title: Installing the Windows PowerShell SDK
 ms.date: 09/13/2016
 ms.topic: "article"
+ms.assetid: c3636b45-61aa-4720-85f0-58312c4fc8f9
 ---
 # Installing the Windows PowerShell SDK
 
