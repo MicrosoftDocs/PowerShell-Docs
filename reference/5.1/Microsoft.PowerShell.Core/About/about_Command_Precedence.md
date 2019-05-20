@@ -48,6 +48,8 @@ following rules.
   .\FindDocs.ps1
   ```
 
+For additional details, see [Command Path Precedence](about_Command_Path_Precedence.md)
+
 - If you do not specify a path, PowerShell uses the following precedence order
   when it runs commands:
 
