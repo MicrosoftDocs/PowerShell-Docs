@@ -100,7 +100,7 @@ For more information about how PowerShell uses wildcards, see [about_Wildcards](
 
 > [!NOTE]
 > To limit the search to a relative path, you must prefix the script name with
-> the relative folder name. This limits the search for commands to files in
+> the `.\`. This limits the search for commands to files in
 > that folder. Without this prefix, other PowerShell syntax may conflict and
 > there are few guarantees that the file will be found.
 
