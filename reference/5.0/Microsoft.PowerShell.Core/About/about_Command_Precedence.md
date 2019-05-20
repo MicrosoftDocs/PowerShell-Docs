@@ -17,7 +17,7 @@ within a session can be hidden or replaced by commands with the same
 name. This article shows you how to run hidden commands and how to avoid
 command-name conflicts.
 
-## Command path precedence
+## Command precedence
 
 When a PowerShell session includes more than one command that has the
 same name, PowerShell determines which command to run by using the
@@ -39,7 +39,7 @@ following rules.
   path to the script file.
 
   To run a script that is in the current directory, specify the full path, or
-  type a dot `.` to represent the current directory.
+  type a dot `.\` to represent the current directory.
 
   For example, to run the FindDocs.ps1 file in the current directory, type:
 
@@ -58,7 +58,7 @@ match.
 For example, consider a directory with the following files:
 
 ```
-PS C:\temp\test> Get-ChildItem
+Get-ChildItem C:\temp\test
 
 
     Directory: C:\temp\test
@@ -87,7 +87,7 @@ C:\temp\test\a.ps1
 Now lets delete the `a.ps1` file and attempt to run it again.
 
 ```powershell
-Remove-Item a.ps1
+Remove-Item C:\temp\test\a.ps1
 C:\temp\test\[a1].ps1
 ```
 
@@ -100,7 +100,11 @@ match is the only file match for that wildcard pattern.
 
 For more information about how PowerShell uses wildcards, see [about_Wildcards](about_Wildcards.md).
 
-## Command precedence
+> [!NOTE]
+> To limit the search to a relative path, you must prefix the script name with
+> the relative folder name. This limits the search for commands to files in
+> that folder. Without this prefix, other PowerShell syntax may conflict and
+> there are few guarantees that the file will be found.
 
 If you do not specify a path, PowerShell uses the following precedence order
 when it runs commands:
