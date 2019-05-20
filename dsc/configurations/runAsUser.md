@@ -21,7 +21,8 @@ be hard-coded as the value of the property in the configuration, or you can set 
 which will prompt the user for a credential when the configuration is compiled (for information
 about compiling configurations, see [Configurations](configurations.md).
 
-> [!NOTE] In PowerShell 5.0, using the **PsDscRunAsCredential** property in configurations calling
+> [!NOTE]
+> In PowerShell 5.0, using the **PsDscRunAsCredential** property in configurations calling
 > composite resources was not supported. In PowerShell 5.1, the **PsDscRunAsCredential** property is
 > supported in configurations calling composite resources. The **PsDscRunAsCredential** property is
 > not available in PowerShell 4.0.
@@ -65,6 +66,7 @@ $configData = @{
 ChangeCmdBackGroundColor -ConfigurationData $configData
 ```
 
-> [!NOTE] This example assumes that you have a valid certificate at `C:\publicKeys\targetNode.cer`,
+> [!NOTE]
+> This example assumes that you have a valid certificate at `C:\publicKeys\targetNode.cer`,
 > and that the thumbprint of that certificate is the value shown. For information about encrypting
 > credentials in DSC configuration MOF files, see [Securing the MOF file](../pull-server/secureMOF.md).
