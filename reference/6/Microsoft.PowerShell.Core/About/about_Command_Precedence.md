@@ -17,7 +17,7 @@ within a session can be hidden or replaced by commands with the same
 name. This article shows you how to run hidden commands and how to avoid
 command-name conflicts.
 
-## Command precedence
+## Command path precedence
 
 When a PowerShell session includes more than one command that has the
 same name, PowerShell determines which command to run by using the
@@ -47,8 +47,63 @@ following rules.
   .\FindDocs.ps1
   ```
 
-- If you do not specify a path, PowerShell uses the following precedence order
-  when it runs commands:
+### Using wildcards in execution
+
+You may use wildcards in command execution. Using wildcard characters is
+also known as *globbing*.
+
+PowerShell will execute a file that has a wildcard match, before a literal
+match.
+
+For example, consider a directory with the following files:
+
+```
+PS C:\temp\test> Get-ChildItem
+
+
+    Directory: C:\temp\test
+
+
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+-a----        5/20/2019   2:29 PM             28 a.ps1
+-a----        5/20/2019   2:29 PM             28 [a1].ps1
+```
+
+Both script files have the same content: `$MyInvocation.MyCommand.Path`.
+This command displays the name of the script that is invoked.
+
+When you run `[a1].ps1`, the file `a.ps1` is executed even though the file
+`[a1].ps1` is a literal match.
+
+```powershell
+C:\temp\test\[a1].ps1
+```
+
+```Output
+C:\temp\test\a.ps1
+```
+
+Now lets delete the `a.ps1` file and attempt to run it again.
+
+```powershell
+Remove-Item a.ps1
+C:\temp\test\[a1].ps1
+```
+
+```Output
+C:\temp\test\[a1].ps1
+```
+
+You can see from the output that `[a1].ps1` runs this time because the literal
+match is the only file match for that wildcard pattern.
+
+For more information about how PowerShell uses wildcards, see [about_Wildcards](about_Wildcards.md).
+
+## Command precedence
+
+If you do not specify a path, PowerShell uses the following precedence order
+when it runs commands:
 
   1. Alias
   2. Function
