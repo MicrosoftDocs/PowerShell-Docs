@@ -1,5 +1,5 @@
 ---
-ms.date:  08/28/2018
+ms.date:  05/20/2019
 schema:  2.0.0
 keywords:  powershell,cmdlet
 title:  about_Command_Precedence
@@ -19,41 +19,39 @@ command-name conflicts.
 
 ## Command precedence
 
-When a PowerShell session includes more than one command that has the
-same name, PowerShell determines which command to run by using the
-following rules.
+When a PowerShell session includes more than one command that has the same
+name, PowerShell determines which command to run by using the following rules.
 
-- If you specify the path to a command, PowerShell runs the command at the
-  location specified by the path.
+If you specify the path to a command, PowerShell runs the command at the
+location specified by the path.
 
-  For example, the following command runs the FindDocs.ps1 script in the
-  "C:\\TechDocs" directory:
+For example, the following command runs the FindDocs.ps1 script in the
+"C:\\TechDocs" directory:
 
-  ```
-  C:\TechDocs\FindDocs.ps1
-  ```
+```
+C:\TechDocs\FindDocs.ps1
+```
 
-  As a security feature, PowerShell does not run executable (native) commands,
-  including PowerShell scripts, unless the command is located in a path that is
-  listed in the Path environment variable `$env:path` or unless you specify the
-  path to the script file.
+As a security feature, PowerShell does not run executable (native) commands,
+including PowerShell scripts, unless the command is located in a path that is
+listed in the Path environment variable `$env:path` or unless you specify the
+path to the script file.
 
-  To run a script that is in the current directory, specify the full path, or
-  type a dot `.\` to represent the current directory.
+To run a script that is in the current directory, specify the full path, or
+type a dot `.\` to represent the current directory.
 
-  For example, to run the FindDocs.ps1 file in the current directory, type:
+For example, to run the FindDocs.ps1 file in the current directory, type:
 
-  ```
-  .\FindDocs.ps1
-  ```
+```
+.\FindDocs.ps1
+```
 
 ### Using wildcards in execution
 
 You may use wildcards in command execution. Using wildcard characters is
 also known as *globbing*.
 
-PowerShell will execute a file that has a wildcard match, before a literal
-match.
+PowerShell executes a file that has a wildcard match, before a literal match.
 
 For example, consider a directory with the following files:
 
@@ -84,7 +82,7 @@ C:\temp\test\[a1].ps1
 C:\temp\test\a.ps1
 ```
 
-Now lets delete the `a.ps1` file and attempt to run it again.
+Now let's delete the `a.ps1` file and attempt to run it again.
 
 ```powershell
 Remove-Item C:\temp\test\a.ps1
@@ -114,18 +112,18 @@ when it runs commands:
   3. Cmdlet
   4. Native Windows commands
 
-  Therefore, if you type "help", PowerShell first looks for an alias named
-  `help`, then a function named `Help`, and finally a cmdlet named `Help`. It
-  runs the first `help` item that it finds.
+Therefore, if you type "help", PowerShell first looks for an alias named
+`help`, then a function named `Help`, and finally a cmdlet named `Help`. It
+runs the first `help` item that it finds.
 
-  For example, if your session contains a cmdlet and a function, both named
-  `Get-Map`, when you type `Get-Map`, PowerShell runs the function.
+For example, if your session contains a cmdlet and a function, both named
+`Get-Map`, when you type `Get-Map`, PowerShell runs the function.
 
-  When the session contains items of the same type that have the same name,
-  PowerShell runs the newer item.
+When the session contains items of the same type that have the same name,
+PowerShell runs the newer item.
 
-  For example, if you import another `Get-Date` cmdlet from a module, when you
-  type `Get-Date`, PowerShell runs the imported version over the native one.
+For example, if you import another `Get-Date` cmdlet from a module, when you
+type `Get-Date`, PowerShell runs the imported version over the native one.
 
 ## Hidden and replaced items
 
