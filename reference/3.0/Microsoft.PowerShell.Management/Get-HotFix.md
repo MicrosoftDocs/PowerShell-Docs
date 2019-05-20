@@ -1,5 +1,5 @@
 ---
-ms.date:  06/09/2017
+ms.date:  5/20/2019
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -9,66 +9,104 @@ title:  Get-HotFix
 ---
 
 # Get-HotFix
+
 ## SYNOPSIS
-Gets the hotfixes that have been applied to the local and remote computers.
+Gets the hotfixes that are installed on local or remote computers.
+
 ## SYNTAX
 
 ### Default (Default)
+
 ```
-Get-HotFix [[-Id] <String[]>] [-ComputerName <String[]>] [-Credential <PSCredential>] [<CommonParameters>]
+Get-HotFix [[-Id] <String[]>] [-ComputerName <String[]>] [-Credential <PSCredential>]
+[<CommonParameters>]
 ```
 
 ### Description
+
 ```
 Get-HotFix [-Description <String[]>] [-ComputerName <String[]>] [-Credential <PSCredential>]
- [<CommonParameters>]
+[<CommonParameters>]
 ```
 
 ## DESCRIPTION
-The Get-Hotfix cmdlet gets hotfixes (also called updates) that have been installed on either the local computer (or on specified remote computers) by Windows Update, Microsoft Update, or Windows Server Update Services; the cmdlet also gets hotfixes or updates that have been installed manually by users.
+
+The `Get-Hotfix` cmdlet gets hotfixes, or updates, that are installed on the local computer or
+specified remote computers. The updates can be installed by Windows Update, Microsoft Update,
+Windows Server Update Services, or manually installed.
+
 ## EXAMPLES
 
-### Example 1
-```
-PS C:\> get-hotfix
+### Example 1: Get all hotfixes on the local computer
+
+The `Get-Hotfix` cmdlet gets all hotfixes installed on the local computer.
+
+```powershell
+Get-HotFix
 ```
 
-This command gets all hotfixes on the local computer.
-### Example 2
-```
-PS C:\> get-hotfix -description Security* -computername Server01, Server02 -cred Server01\admin01
-```
-
-This command gets all hotfixes on the Server01 and Server02 computers that have a description that begins with "Security".
-### Example 3
-```
-PS C:\> $a = get-content servers.txt
-PS C:\> $a | foreach { if (!(get-hotfix -id KB957095 -computername $_)) { add-content $_ -path Missing-kb953631.txt }}
+```output
+Source         Description      HotFixID      InstalledBy          InstalledOn
+------         -----------      --------      -----------          -----------
+Server01       Update           KB4495590     NT AUTHORITY\SYSTEM  5/16/2019 00:00:00
+Server01       Security Update  KB4470788     NT AUTHORITY\SYSTEM  1/22/2019 00:00:00
+Server01       Update           KB4480056     NT AUTHORITY\SYSTEM  1/24/2019 00:00:00
 ```
 
-The commands in this example create a text file listing the names of computers that are missing a security update.
+### Example 2: Get hotfixes from multiple computers filtered by a string
 
-The commands use the Get-Hotfix cmdlet to get the KB957095 security update on all of the computers whose names are listed in the Servers.txt file.
+The `Get-Hotfix` command uses parameters to get hotfixes installed on remote computers. The results
+are filtered by a specified description string.
 
-If a computer does not have the update, the Add-Content cmdlet writes the computer name in the Missing-KB953631.txt file.
-### Example 4
 ```
-PS C:\> (get-hotfix | sort installedon)[-1]
+PS> Get-HotFix -Description Security* -ComputerName Server01, Server02 -Credential Domain01\admin01
 ```
 
-This command gets the most recent hotfix on the computer.
+`Get-Hotfix` filters the output with the **Description** parameter and the string **Security** that
+includes the asterisk (`*`) wildcard. The **ComputerName** parameter includes a comma-separated
+string of remote computer names. The **Credential** parameter specifies a user account that has
+permission to access the remote computers and run commands.
 
-It gets the hotfixes, sorts them by the value of the InstalledOn property, and then it uses array notation to select the last item in the array.
+### Example 3: Verify if an update is installed and write computer names to a file
+
+The commands in this example verify whether a particular update installed. If the update isn't
+installed, the computer name is written to a text file.
+
+```
+PS> $A = Get-Content -Path ./Servers.txt
+PS> $A | ForEach-Object { if (!(Get-HotFix -Id KB957095 -ComputerName $_))
+         { Add-Content $_ -Path ./Missing-KB957095.txt }}
+```
+
+The `$A` variable contains computer names that were obtained by `Get-Content` from a text file. The
+objects in `$A` are sent down the pipeline to `ForEach-Object`. An `if` statement uses the
+`Get-Hotfix` cmdlet with the **Id** parameter and a specific Id number for each computer name. If a
+computer doesn't have the specified hotfix Id installed, the `Add-Content` cmdlet writes the
+computer name to a file.
+
+### Example 4: Get the most recent hotfix on the local computer
+
+This example gets the most recent hotfix installed on a computer.
+
+```powershell
+(Get-HotFix | Sort-Object -Property InstalledOn)[-1]
+```
+
+`Get-Hotfix` sends the objects down the pipeline to the `Sort-Object` cmdlet. `Sort-Object` sorts
+objects by ascending order and uses the **Property** parameter to evaluate each **InstalledOn**
+date. The array notation `[-1]` selects the most recent installed hotfix.
+
 ## PARAMETERS
 
 ### -ComputerName
-Specifies a remote computer.
-The default is the local computer.
 
-Type the NetBIOS name, an Internet Protocol (IP) address, or a fully qualified domain name of a remote computer.
+Specifies a remote computer. Type the NetBIOS name, an Internet Protocol (IP) address, or a fully
+qualified domain name (FQDN) of a remote computer.
 
-This parameter does not rely on Windows PowerShell remoting.
-You can use the ComputerName parameter of Get-Hotfix even if your computer is not configured to run remote commands.
+When the **ComputerName** parameter isn't specified, `Get-Hotfix` runs on the local computer.
+
+The **ComputerName** parameter doesn't rely on Windows PowerShell remoting. If your computer isn't
+configured to run remote commands, use the **ComputerName** parameter.
 
 ```yaml
 Type: String[]
@@ -77,17 +115,18 @@ Aliases: CN, __Server, IPAddress
 
 Required: False
 Position: Named
-Default value: Local computer
+Default value: None
 Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
 ### -Credential
-Specifies a user account that has permission to perform this action.
-The default is the current user.
 
-Type a user name, such as "User01" or "Domain01\User01", or enter a PSCredential object, such as one generated by the Get-Credential cmdlet.
-If you type a user name, you will be prompted for a password.
+Specifies a user account that has permission to access the computer and run commands. Type a user
+name, such as **User01**, **Domain01\User01**, or enter a **PSCredential** object, generated by the
+`Get-Credential` cmdlet. If you type a user name, you're prompted for a password.
+
+When the **Credential** parameter isn't specified, `Get-Hotfix` uses the current user.
 
 ```yaml
 Type: PSCredential
@@ -96,15 +135,14 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: Current user
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -Description
-Gets only hotfixes with the specified descriptions.
-Wildcards are permitted.
-The default is all hotfixes on the computer.
+
+`Get-HotFix` uses the **Description** parameter to specify hotfix types. Wildcards are permitted.
 
 ```yaml
 Type: String[]
@@ -113,14 +151,14 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: All hotfixes
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: True
 ```
 
 ### -Id
-Gets only hotfixes with the specified hotfix IDs.
-The default is all hotfixes on the computer.
+
+Filters the `Get-HotFix` results for specific hotfix Ids. Wildcards aren't accepted.
 
 ```yaml
 Type: String[]
@@ -128,14 +166,17 @@ Parameter Sets: Default
 Aliases: HFID
 
 Required: False
-Position: 1
-Default value: All hotfixes
+Position: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+-InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
+-WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -146,13 +187,28 @@ You can pipe one or more computer names to Get-HotFix.
 ## OUTPUTS
 
 ### System.Management.ManagementObject#root\CIMV2\Win32_QuickFixEngineering
-Get-Hotfix returns objects that represent the hotfixes on the computer.
+
+`Get-HotFix` returns objects that represent the hotfixes on the computer.
 
 ## NOTES
-* This cmdlet uses the Win32_QuickFixEngineering WMI class, which represents small system-wide updates of the operating system. Starting with Windows Vista, this class returns only the updates supplied by Microsoft Windows Installer (MSI), Windows Update, Microsoft Update, or Windows Server Update Services. It does not include updates that are supplied by Component Based Servicing (CBS), or other non-hotfix programs or apps. For more information, see [Win32_QuickFixEngineering class](https://go.microsoft.com/fwlink/?LinkID=145071) in the MSDN library.
 
-  The output of this cmdlet might be different on different operating systems.
+The **Win32_QuickFixEngineering** [WMI class](/windows/desktop/WmiSdk/retrieving-a-class) represents
+a small system-wide update, commonly referred to as a quick-fix engineering (QFE) update, applied to
+the current operating system. This class returns only the updates supplied by Component Based
+Servicing (CBS). These updates are not listed in the registry. Updates supplied by Microsoft Windows
+Installer (MSI) or the [Windows Update](https://update.microsoft.com) site are not returned by
+**Win32_QuickFixEngineering**. For more information, see [Win32_QuickFixEngineering class](/windows/desktop/CIMWin32Prov/win32-quickfixengineering).
+
+The `Get-HotFix` output might vary on different operating systems.
 
 ## RELATED LINKS
 
+[about_Arrays](../Microsoft.PowerShell.Core/About/about_Arrays.md)
+
+[Add-Content](Add-Content.md)
+
 [Get-ComputerRestorePoint](Get-ComputerRestorePoint.md)
+
+[Get-Credential](../Microsoft.PowerShell.Security/Get-Credential.md)
+
+[Win32_QuickFixEngineering class](/windows/desktop/CIMWin32Prov/win32-quickfixengineering)
