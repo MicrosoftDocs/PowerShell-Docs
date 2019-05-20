@@ -4,7 +4,6 @@ packages/
 obj/
 _site/
 Tools/NuGet/
-_site/
 maml/
 updatablehelp/
 
@@ -17,3 +16,4 @@ packages.config
 _themes/
 dependentPackages/
 .optemp/
+.DS_Store
