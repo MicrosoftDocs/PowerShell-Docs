@@ -37,9 +37,9 @@ Beginning in Windows PowerShell 3.0, `Remove-PSDrive` also disconnects mapped ne
 
 `Remove-PSDrive` cannot delete Windows physical or logical drives.
 
-Beginning in Windows PowerShell 3.0, when an external drive is connected to the computer, Windows PowerShell automatically adds a PSDrive to the file system that represents the new drive.
+Beginning in Windows PowerShell 3.0, when an external drive is connected to the computer, PowerShell automatically adds a PSDrive to the file system that represents the new drive.
 You do not need to restart PowerShell.
-Similarly, when an external drive is disconnected from the computer, Windows PowerShell automatically deletes the PSDrive that represents the removed drive.
+Similarly, when an external drive is disconnected from the computer, PowerShell automatically deletes the PSDrive that represents the removed drive.
 
 ## EXAMPLES
 

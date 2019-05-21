@@ -668,7 +668,7 @@ Accept wildcard characters: False
 
 ### -Session
 
-Specifies a Windows PowerShell session (**PSSession**) to use for the interactive session.
+Specifies a PowerShell session (**PSSession**) to use for the interactive session.
 This parameter takes a session object.
 You can also use the *Name*, *InstanceID*, or *ID* parameters to specify a **PSSession**.
 
@@ -805,7 +805,7 @@ Accept wildcard characters: False
 Indicates that this cmdlet uses the Secure Sockets Layer (SSL) protocol to establish a connection to
 the remote computer. By default, SSL is not used.
 
-WS-Management encrypts all Windows PowerShell content transmitted over the network.
+WS-Management encrypts all PowerShell content transmitted over the network.
 The *UseSSL* parameter is an additional protection that sends the data across an HTTPS connection
 instead of an HTTP connection.
 
@@ -879,11 +879,10 @@ The cmdlet does not return any output.
 * To connect to a remote computer, you must be a member of the Administrators group on the remote
 computer.
 * In Windows Vista and later versions of the Windows operating system, to start an interactive
-session on the local computer, you must start Windows PowerShell with the Run as administrator
+session on the local computer, you must start PowerShell with the Run as administrator
 option.
 * When you use **Enter-PSSession**, your user profile on the remote computer is used for the
-interactive session. The commands in the remote user profile, including commands to add Windows
-PowerShell snap-ins and to change the command prompt, run before the remote prompt is displayed.
+interactive session. The commands in the remote user profile, including commands to add PowerShell snap-ins and to change the command prompt, run before the remote prompt is displayed.
 * **Enter-PSSession** uses the UI culture setting on the local computer for the interactive session.
 To find the local UI culture, use the $UICulture automatic variable.
 * **Enter-PSSession** requires the Get-Command, Out-Default, and Exit-PSSession cmdlets. If these
@@ -893,7 +892,7 @@ cmdlets are not included in the session configuration on the remote computer, th
 computer, **Enter-PSSession** sends the commands directly to the remote computer without
 interpretation.
 * If the session that you want to enter is busy processing a command, there might be a delay before
-Windows PowerShell responds to **the Enter-PSSession** command. You will be connected as soon as the
+PowerShell responds to **the Enter-PSSession** command. You will be connected as soon as the
 session is available. To cancel the **Enter-PSSession** command, press `CTRL+C`.
 * The **HostName** parameter set was included starting with PowerShell 6.0.
   It was added to provide PowerShell remoting based on Secure Shell (SSH).

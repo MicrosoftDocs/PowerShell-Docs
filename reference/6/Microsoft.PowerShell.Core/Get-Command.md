@@ -356,7 +356,7 @@ The acceptable values for this parameter are:
 
 - Alias. Gets the aliases of all PowerShell commands. For more information, see [about_Aliases](About/about_Aliases.md).
 - All. Gets all command types. This parameter value is the equivalent of `Get-Command *`.
-- Application. Gets non-Windows-PowerShell files in paths listed in the **Path** environment
+- Application. Gets non-PowerShell files in paths listed in the **Path** environment
   variable ($env:path), including .txt, .exe, and .dll files. For more information about the
   **Path** environment variable, see about_Environment_Variables.
 - Cmdlet. Gets all cmdlets.

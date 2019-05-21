@@ -115,7 +115,7 @@ current session.
 
 `Get-Module` looks for available modules in the path specified by the **$env:PSModulePath**
 environment variable.
-For more information about **PSModulePath**, see [about_Modules](About/about_Modules.md) and 
+For more information about **PSModulePath**, see [about_Modules](About/about_Modules.md) and
 [about_Environment_Variables](About/about_Environment_Variables.md).
 
 ### Example 3: Get all exported files
@@ -439,7 +439,7 @@ Accept wildcard characters: False
 ### -CimSession
 
 Specifies a CIM session on the remote computer.
-Enter a variable that contains the CIM session or a command that gets the CIM session, such as a 
+Enter a variable that contains the CIM session or a command that gets the CIM session, such as a
 [Get-CimSession](https://docs.microsoft.com/powershell/module/cimcmdlets/get-cimsession) command.
 
 `Get-Module` uses the CIM session connection to get modules from the remote computer.
@@ -508,7 +508,7 @@ Accept wildcard characters: False
 Parameter Sets: Available, PsSession, CimSession
 Required: True (Available), False (PsSession, CimSession)
 Default value: None
-Aliases: 
+Aliases:
 Type: SwitchParameter
 ```
 
