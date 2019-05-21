@@ -9,6 +9,7 @@ online version:  http://go.microsoft.com/fwlink/?LinkId=821468
 # FileSystem provider
 
 ## Provider name
+
 FileSystem
 
 ## Drives
@@ -56,8 +57,8 @@ in this article.
 
 ## Types exposed by this provider
 
-Files are instances of the [System.IO.FileInfo](/dotnet/api/system.io.fileinfo) class.  Directories are
-instances of the [System.IO.DirectoryInfo](/dotnet/api/system.io.directoryinfo) class.
+Files are instances of the [System.IO.FileInfo](/dotnet/api/system.io.fileinfo) class.  Directories
+are instances of the [System.IO.DirectoryInfo](/dotnet/api/system.io.directoryinfo) class.
 
 ## Navigating the FileSystem drives
 
@@ -71,14 +72,15 @@ Set-Location C:
 ```
 
 You can also work with the **FileSystem** provider from any other PowerShell
-drive. To reference a file or directory from another location, use the drive name (`C:`, `D:`, ...) in the path.
+drive. To reference a file or directory from another location, use the drive name (`C:`, `D:`, ...)
+in the path.
 
 > [!NOTE]
 > PowerShell uses aliases to allow you a familiar way to work with provider
 > paths. Commands such as `dir` and `ls` are now aliases for
 > [Get-ChildItem](../../Microsoft.PowerShell.Management/Get-ChildItem.md),
-> `cd` is an alias for [Set-Location](../../Microsoft.PowerShell.Management/Set-Location.md). and `pwd` is
-> an alias for [Get-Location](../../Microsoft.PowerShell.Management/Get-Location.md).
+> `cd` is an alias for [Set-Location](../../Microsoft.PowerShell.Management/Set-Location.md). and
+> `pwd` is > an alias for [Get-Location](../../Microsoft.PowerShell.Management/Get-Location.md).
 
 ## Getting files and directories
 
@@ -521,7 +523,8 @@ parameter. To exclude files, use the `-Directory` parameter and omit the
 
 ### Hidden \<System.Management.Automation.SwitchParameter\>
 
-Gets only hidden files and directories (folders). By default, [Get-ChildItem](../../Microsoft.PowerShell.Management/Get-ChildItem.md) gets only non-hidden items.
+Gets only hidden files and directories (folders). By default, [Get-ChildItem](../../Microsoft.PowerShell.Management/Get-ChildItem.md) gets only non-hidden
+items.
 
 The `-Hidden` parameter was introduced in Windows PowerShell 3.0.
 

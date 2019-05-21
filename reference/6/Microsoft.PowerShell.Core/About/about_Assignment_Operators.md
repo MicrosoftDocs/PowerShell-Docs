@@ -7,6 +7,7 @@ title:  about_Assignment_Operators
 # About Assignment Operators
 
 ## SHORT DESCRIPTION
+
 Describes how to use operators to assign values to variables.
 
 ## LONG DESCRIPTION

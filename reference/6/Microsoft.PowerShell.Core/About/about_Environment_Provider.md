@@ -9,6 +9,7 @@ online version:  https://go.microsoft.com/fwlink/?linkid=834944
 # Environment provider
 
 ## Provider name
+
 Environment
 
 ## Drives
@@ -28,11 +29,14 @@ Provides access to the Windows environment variables.
 The PowerShell **Environment** provider lets you get, add, change, clear, and delete environment
 variables and values in PowerShell.
 
-**Environment** variables are dynamically named variables that describe the environment in which your programs run. Windows and PowerShell use environment variables to store persistent information that affect system
-and process execution. Unlike PowerShell variables, environment variables are not subject to scope constraints.
+**Environment** variables are dynamically named variables that describe the environment in which
+your programs run. Windows and PowerShell use environment variables to store persistent information
+that affect system
+and process execution. Unlike PowerShell variables, environment variables are not subject to scope
+constraints.
 
-The **Environment** drive is a flat namespace containing the environment variables specific to the current user's session. The environment variables
-have no child items.
+The **Environment** drive is a flat namespace containing the environment variables specific to the
+current user's session. The environment variables have no child items.
 
 The **Environment** provider supports the following cmdlets, which are covered
 in this article.
@@ -71,7 +75,8 @@ Set-Location C:
 ```
 
 You can also work with the **Environment** provider from any other PowerShell
-drive. To reference an environment variable from another location, use the drive name `Env:` in the path.
+drive. To reference an environment variable from another location, use the drive name `Env:` in the
+path.
 
 The **Environment** provider also exposes environment variables using a variable
 prefix of `$env:`.  The following command views the contents of the
@@ -91,8 +96,8 @@ session for as long as it is active.
 > PowerShell uses aliases to allow you a familiar way to work with provider
 > paths. Commands such as `dir` and `ls` are now aliases for
 > [Get-ChildItem](../../Microsoft.PowerShell.Management/Get-ChildItem.md),
-> `cd` is an alias for [Set-Location](../../Microsoft.PowerShell.Management/Set-Location.md). and `pwd` is
-> an alias for [Get-Location](../../Microsoft.PowerShell.Management/Get-Location.md).
+> `cd` is an alias for [Set-Location](../../Microsoft.PowerShell.Management/Set-Location.md). and
+> `pwd` is > an alias for [Get-Location](../../Microsoft.PowerShell.Management/Get-Location.md).
 
 ## Getting environment variables
 

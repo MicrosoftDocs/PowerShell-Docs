@@ -8,6 +8,7 @@ title:  about_Line_Editing
 # About Line Editing
 
 ## SHORT DESCRIPTION
+
 Describes how to edit commands at the PowerShell command prompt.
 
 ## LONG DESCRIPTION

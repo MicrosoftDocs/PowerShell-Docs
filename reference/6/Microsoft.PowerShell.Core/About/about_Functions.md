@@ -8,6 +8,7 @@ title:  about_Functions
 # About Functions
 
 ## Short description
+
 Describes how to create and use functions in PowerShell.
 
 ## Long description

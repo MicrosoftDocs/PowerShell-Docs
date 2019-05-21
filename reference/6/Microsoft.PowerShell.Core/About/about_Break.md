@@ -8,6 +8,7 @@ title:  about_Break
 # About Break
 
 ## SHORT DESCRIPTION
+
 Describes a statement you can use to immediately exit Foreach, For, While,
 Do, or Switch statements.
 

@@ -8,6 +8,7 @@ title:  about_Arrays
 # About Arrays
 
 ## Short Description
+
 Describes arrays, which are data structures designed to store
 collections of items.
 

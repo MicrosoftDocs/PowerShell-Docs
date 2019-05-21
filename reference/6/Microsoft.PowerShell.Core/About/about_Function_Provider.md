@@ -9,6 +9,7 @@ online version:  http://go.microsoft.com/fwlink/?LinkId=834961
 # Function provider
 
 ## Provider name
+
 Function
 
 ## Drives
@@ -80,8 +81,8 @@ drive. To reference an function from another location, use the drive name
 > PowerShell uses aliases to allow you a familiar way to work with provider
 > paths. Commands such as `dir` and `ls` are now aliases for
 > [Get-ChildItem](../../Microsoft.PowerShell.Management/Get-ChildItem.md),
-> `cd` is an alias for [Set-Location](../../Microsoft.PowerShell.Management/Set-Location.md). and `pwd` is
-> an alias for [Get-Location](../../Microsoft.PowerShell.Management/Get-Location.md).
+> `cd` is an alias for [Set-Location](../../Microsoft.PowerShell.Management/Set-Location.md). and
+> `pwd` is > an alias for [Get-Location](../../Microsoft.PowerShell.Management/Get-Location.md).
 
 ## Getting functions
 

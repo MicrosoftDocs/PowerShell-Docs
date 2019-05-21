@@ -9,6 +9,7 @@ online version:  http://go.microsoft.com/fwlink/?LinkId=834943
 # Alias provider
 
 ## Provider name
+
 Alias
 
 ## Drives
@@ -45,8 +46,9 @@ in this article.
 - [Remove-Item](../../Microsoft.PowerShell.Management/Remove-Item.md)
 - [Clear-Item](../../Microsoft.PowerShell.Management/Clear-Item.md)
 
-PowerShell includes a set of cmdlets that are designed to view and to change aliases. When you use **Alias** cmdlets, you do not need to specify the `Alias:` drive in the name. This article does not cover working with
-**Alias** cmdlets.
+PowerShell includes a set of cmdlets that are designed to view and to change aliases. When you use
+**Alias** cmdlets, you do not need to specify the `Alias:` drive in the name. This article does not
+cover working with **Alias** cmdlets.
 
 - [Export-Alias](../../Microsoft.PowerShell.Utility/Export-Alias.md)
 - [Get-Alias](../../Microsoft.PowerShell.Utility/Get-Alias.md)
@@ -83,8 +85,8 @@ path.
 > PowerShell uses aliases to allow you a familiar way to work with provider
 > paths. Commands such as `dir` and `ls` are now aliases for
 > [Get-ChildItem](../../Microsoft.PowerShell.Management/Get-ChildItem.md),
-> `cd` is an alias for [Set-Location](../../Microsoft.PowerShell.Management/Set-Location.md). and `pwd` is
-> an alias for [Get-Location](../../Microsoft.PowerShell.Management/Get-Location.md).
+> `cd` is an alias for [Set-Location](../../Microsoft.PowerShell.Management/Set-Location.md). and
+> `pwd` is > an alias for [Get-Location](../../Microsoft.PowerShell.Management/Get-Location.md).
 
 ### Displaying the Contents of the Alias: drive
 
@@ -273,8 +275,8 @@ Determines the value of the **Options** property of an alias.
 
 - `None`: No options. This value is the default.
 - `Constant`:The alias cannot be deleted and its properties cannot be changed.
-  `Constant` is available only when you create an alias. You cannot change the option of an existing alias to `Constant`.
-- `Private`:The alias is visible only in the current scope, not in the child
+  `Constant` is available only when you create an alias. You cannot change the option of an existing
+alias to `Constant`. - `Private`:The alias is visible only in the current scope, not in the child
    scopes.
 - `ReadOnly`:The properties of the alias cannot be changed except by using the
   `-Force` parameter. You can use `Remove-Item` to delete the alias.

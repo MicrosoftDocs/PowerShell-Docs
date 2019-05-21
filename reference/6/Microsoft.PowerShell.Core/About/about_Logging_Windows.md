@@ -8,6 +8,7 @@ title:  about_Logging-Windows
 # About Logging
 
 ## Short Description
+
 PowerShell logs internal operations from the engine, providers, and cmdlets.
 
 ## Long Description
@@ -56,7 +57,8 @@ To unregister the PowerShell provider, run the following command from an elevate
 $PSHOME\RegisterManifest.ps1 -Unregister
 ```
 
-After updating PowerShell, run `$PSHOME\RegisterManifest.ps1` to register the updated event provider.
+After updating PowerShell, run `$PSHOME\RegisterManifest.ps1` to register the updated event
+provider.
 
 ## Enabling Script Block Logging
 

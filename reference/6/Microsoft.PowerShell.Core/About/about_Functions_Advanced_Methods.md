@@ -8,6 +8,7 @@ title:  about_Functions_Advanced_Methods
 # About Functions Advanced Methods
 
 ## Short description
+
 Describes how functions that specify the `CmdletBinding` attribute can use the
 methods and properties that are available to compiled cmdlets.
 
@@ -25,7 +26,8 @@ the following methods:
 
 All the methods and properties of the `PSCmdlet` class are available to
 advanced functions. For more information about these methods and properties,
-see [`System.Management.Automation.PSCmdlet`](https://go.microsoft.com/fwlink/?LinkId=142139) in the MSDN library.
+see [`System.Management.Automation.PSCmdlet`](https://go.microsoft.com/fwlink/?LinkId=142139) in the
+MSDN library.
 
 ### Input Processing Methods
 

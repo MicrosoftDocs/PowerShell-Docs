@@ -8,6 +8,7 @@ title:  about_CimSession
 # About CimSession
 
 ## SHORT DESCRIPTION
+
 Describes a CimSession object and the difference between CIM sessions and
 PowerShell sessions.
 
@@ -18,8 +19,8 @@ represents a connection to a local computer or a remote computer. You can
 use CIM sessions as an alternative to PowerShell sessions
 (PSSessions). Both approaches have advantages.
 
-You can use the [New-CimSession](../../CimCmdlets/New-CimSession.md) cmdlet to create a CIM session that contains
-information about a connection, such as computer name, the protocol used
+You can use the [New-CimSession](../../CimCmdlets/New-CimSession.md) cmdlet to create a CIM session
+that contains information about a connection, such as computer name, the protocol used
 for the connection, session ID, and instance ID.
 
 After you create a CimSession object that specifies information required to

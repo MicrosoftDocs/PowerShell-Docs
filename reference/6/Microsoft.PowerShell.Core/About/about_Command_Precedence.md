@@ -7,6 +7,7 @@ title:  about_Command_Precedence
 # About Command Precedence
 
 ## Short description
+
 Describes how PowerShell determines which command to run.
 
 ## Long description
@@ -245,7 +246,8 @@ it with a call to [Get-ChildItem](../../Microsoft.PowerShell.Management/Get-Chil
 (the alias is "dir"), `Get-Command` or
 [Get-Module](../../Microsoft.PowerShell.Core/Get-Module.md).
 
-The call operator executes strings and script blocks in a child scope. For more information, see [about_Operators](about_Operators.md).
+The call operator executes strings and script blocks in a child scope. For more information, see 
+[about_Operators](about_Operators.md).
 
 For example, if you have a function named `Map` that is hidden by an alias
 named `Map`, use the following command to run the function.

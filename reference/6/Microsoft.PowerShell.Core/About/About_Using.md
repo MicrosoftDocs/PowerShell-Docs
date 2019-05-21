@@ -8,6 +8,7 @@ title:  about_Using
 # About Using
 
 ## SHORT DESCRIPTION
+
 Allows to indicate which namespaces are used in the session.
 
 ## LONG DESCRIPTION
