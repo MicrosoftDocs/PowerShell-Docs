@@ -7,7 +7,6 @@ title:  about_Comment_Based_Help
 # About Comment Based Help
 
 ## SHORT DESCRIPTION
-
 Describes how to write comment-based help topics for functions and scripts.
 
 ## LONG DESCRIPTION

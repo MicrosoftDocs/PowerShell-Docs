@@ -21,7 +21,6 @@ FileSystem
 **Filter**, **ShouldProcess**
 
 ## Short description
-
 Provides access to files and directories.
 
 ## Detailed description

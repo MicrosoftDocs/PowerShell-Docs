@@ -8,7 +8,6 @@ title:  about_Automatic_Variables
 # About Automatic Variables
 
 ## Short description
-
 Describes variables that store state information for PowerShell. These
 variables are created and maintained by PowerShell.
 

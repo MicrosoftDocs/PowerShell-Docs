@@ -8,7 +8,6 @@ title:  about_Core_Commands
 # About Core Commands
 
 ## SHORT DESCRIPTION
-
 Lists the cmdlets that are designed for use with PowerShell providers.
 
 ## LONG DESCRIPTION

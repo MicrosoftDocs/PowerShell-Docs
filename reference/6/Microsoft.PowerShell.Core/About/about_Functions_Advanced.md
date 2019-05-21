@@ -8,7 +8,6 @@ title:  about_Functions_Advanced
 # About Functions Advanced
 
 ## SHORT DESCRIPTION
-
 Introduces advanced functions that act similar to cmdlets.
 
 ## LONG DESCRIPTION

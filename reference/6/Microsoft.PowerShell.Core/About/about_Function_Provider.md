@@ -21,7 +21,6 @@ Function
 **ShouldProcess**
 
 ## Short description
-
 Provides access to the functions defined in PowerShell.
 
 ## Detailed description

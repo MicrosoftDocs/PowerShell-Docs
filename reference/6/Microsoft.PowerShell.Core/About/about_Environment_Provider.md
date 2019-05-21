@@ -21,7 +21,6 @@ Environment
 **ShouldProcess**
 
 ## Short description
-
 Provides access to the Windows environment variables.
 
 ## Detailed description

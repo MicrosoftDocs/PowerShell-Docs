@@ -8,7 +8,6 @@ title:  about_Logging_Non-Windows
 # About Logging
 
 ## Short Description
-
 PowerShell logs internal operations from the engine, providers, and
 cmdlets.
 

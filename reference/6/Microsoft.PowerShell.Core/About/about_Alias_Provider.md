@@ -21,7 +21,6 @@ Alias
 **ShouldProcess**
 
 ## Short description
-
 Provides access to the PowerShell aliases and the values that they represent.
 
 ## Detailed description

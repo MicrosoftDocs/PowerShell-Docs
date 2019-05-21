@@ -9,7 +9,6 @@ description:  Describes how you can use classes to create your own custom types.
 # About Classes
 
 ## SHORT DESCRIPTION
-
 Describes how you can use classes to create your own custom types.
 
 ## LONG DESCRIPTION

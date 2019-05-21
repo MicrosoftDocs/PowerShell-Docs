@@ -8,7 +8,6 @@ title:  about_CimSession
 # About CimSession
 
 ## SHORT DESCRIPTION
-
 Describes a CimSession object and the difference between CIM sessions and
 PowerShell sessions.
 
