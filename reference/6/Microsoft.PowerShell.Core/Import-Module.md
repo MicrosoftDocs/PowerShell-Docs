@@ -813,17 +813,17 @@ Accept wildcard characters: False
 
 ### -PSSession
 
-Specifies a Windows PowerShell user-managed session (**PSSession**) from which this cmdlet import modules into the current session.
+Specifies a PowerShell user-managed session (**PSSession**) from which this cmdlet import modules into the current session.
 Enter a variable that contains a **PSSession** or a command that gets a **PSSession**, such as a Get-PSSession command.
 
 When you import a module from a different session into the current session, you can use the cmdlets from the module in the current session, just as you would use cmdlets from a local module.
-Commands that use the remote cmdlets actually run in the remote session, but the remoting details are managed in the background by Windows PowerShell.
+Commands that use the remote cmdlets actually run in the remote session, but the remoting details are managed in the background by PowerShell.
 
-This parameter uses the Implicit Remoting feature of Windows PowerShell.
+This parameter uses the Implicit Remoting feature of PowerShell.
 It is equivalent to using the Import-PSSession cmdlet to import particular modules from a session.
 
-**Import-Module** cannot import Windows PowerShell Core modules from another session.
-The Windows PowerShell Core modules have names that begin with Microsoft.PowerShell.
+**Import-Module** cannot import PowerShell Core modules from another session.
+The PowerShell Core modules have names that begin with Microsoft.PowerShell.
 
 This parameter was introduced in Windows PowerShell 3.0.
 

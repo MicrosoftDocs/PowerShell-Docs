@@ -266,7 +266,7 @@ SYNOPSIS
     ...
 ```
 
-This example shows how to get help that explains how to use the Get-Item cmdlet in the **DataCollection** node of the Windows PowerShellSQL Server provider.
+This example shows how to get help that explains how to use the Get-Item cmdlet in the **DataCollection** node of the PowerShellSQL Server provider.
 The example shows two ways of getting the provider-specific help for **Get-Item**.
 
 You can also get provider-specific help for cmdlets online in the section that describes the provider.

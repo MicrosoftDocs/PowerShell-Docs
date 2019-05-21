@@ -145,8 +145,7 @@ Register-PSSessionConfiguration -Name NoLanguage
 -Path .\NoLanguage.pssc
 ```
 
-When a new NoLanguage session starts, users will only have access to Windows
-PowerShell commands.
+When a new NoLanguage session starts, users will only have access to PowerShell commands.
 
 To add a session configuration file to an existing session configuration, use
 the Set-PSSessionConfiguration cmdlet and the Path parameter. This affects any
@@ -178,8 +177,7 @@ $s = New-PSSession -ComputerName Srv01
 ```
 
 Because the NoLanguage constraints were added to the LockedDown session
-configuration, users in LockedDown sessions will only be able to run Windows
-PowerShell commands and cmdlets. For example, the following two commands use
+configuration, users in LockedDown sessions will only be able to run PowerShell commands and cmdlets. For example, the following two commands use
 the Invoke-Command cmdlet to run commands in the session referenced in the $s
 variable. The first command, which runs the Get-UICulture cmdlet and does not
 use any variables, succeeds. The second command, which gets the value of the
@@ -204,8 +202,7 @@ RunAsVirtualAccountGroups can be modified by editing the session configuration
 file used by the session configuration. To do this, begin by locating the
 active copy of the session configuration file.
 
-When you use a session configuration file in a session configuration, Windows
-PowerShell creates an active copy of the session configuration file and stores
+When you use a session configuration file in a session configuration, PowerShell creates an active copy of the session configuration file and stores
 it in the \$pshome\\SessionConfig directory on the local computer.
 
 The location of the active copy of a session configuration file is stored in

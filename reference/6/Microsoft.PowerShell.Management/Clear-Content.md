@@ -116,7 +116,7 @@ Type a user name, such as "User01" or "Domain01\User01", or enter a **PSCredenti
 If you type a user name, you will be prompted for a password.
 
 > [!WARNING]
-> This parameter is not supported by any providers installed with Windows PowerShell.
+> This parameter is not supported by any providers installed with PowerShell.
 
 ```yaml
 Type: PSCredential

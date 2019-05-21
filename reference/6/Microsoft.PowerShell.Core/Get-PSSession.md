@@ -560,7 +560,7 @@ Accept wildcard characters: False
 Parameter Sets: ComputerInstanceId, ConnectionUriInstanceId, VMNameInstanceId, ContainerIdInstanceId, VMIdInstanceId, InstanceId
 Required: True (ComputerInstanceId, ConnectionUriInstanceId, VMNameInstanceId, ContainerIdInstanceId, VMIdInstanceId), False (InstanceId)
 Default value: None
-Aliases: 
+Aliases:
 Type: Guid[]
 ```
 
@@ -579,7 +579,7 @@ Accept wildcard characters: False
 Parameter Sets: Name, ComputerName, ConnectionUri, ContainerId, VMId, VMName
 Required: False
 Default value: None
-Aliases: 
+Aliases:
 Type: String[]
 ```
 
@@ -783,34 +783,34 @@ You cannot pipe input to this cmdlet.
 
 ## NOTES
 
-* This cmdlet gets user-managed sessions **PSSession** objects" such as those that are created by
-using the New-PSSession, **Enter-PSSession**, and Invoke-Command cmdlets. It does not get the
-system-managed session that is created when you start PowerShell.
-* Starting in Windows PowerShell 3.0, **PSSession** objects are stored on the computer that is at
-the server-side or receiving end of a connection. To get the sessions that are stored on the local
-computer or a remote computer, PowerShell establishes a temporary session to the specified computer
-and runs query commands in the session.
-* To get sessions that connect to a remote computer, use the *ComputerName* or *ConnectionUri*
-parameters to specify the remote computer. To filter the sessions that **Get-PSSession** gets, use
-the *Name*, *ID*, *InstanceID*, and *State* parameters. Use the remaining parameters to configure
-the temporary session that **Get-PSSession** uses.
-* When you use the *ComputerName* or *ConnectionUri* parameters, **Get-PSSession** gets only
-sessions from computers running Windows PowerShell 3.0 and later versions of PowerShell.
-* The value of the **State** property of a **PSSession** is relative to the current session.
-Therefore, a value of **Disconnected** means that the **PSSession** is not connected to the current
-session. However, it does not mean that the **PSSession** is disconnected from all sessions. It
-might be connected to a different session. To determine whether you can connect or reconnect to the
-**PSSession** from the current session, use the **Availability** property.
+- This cmdlet gets user-managed sessions **PSSession** objects" such as those that are created by
+  using the New-PSSession, **Enter-PSSession**, and Invoke-Command cmdlets. It does not get the
+  system-managed session that is created when you start PowerShell.
+- Starting in Windows PowerShell 3.0, **PSSession** objects are stored on the computer that is at
+  the server-side or receiving end of a connection. To get the sessions that are stored on the local
+  computer or a remote computer, PowerShell establishes a temporary session to the specified computer
+  and runs query commands in the session.
+- To get sessions that connect to a remote computer, use the *ComputerName* or *ConnectionUri*
+  parameters to specify the remote computer. To filter the sessions that **Get-PSSession** gets, use
+  the *Name*, *ID*, *InstanceID*, and *State* parameters. Use the remaining parameters to configure
+  the temporary session that **Get-PSSession** uses.
+- When you use the *ComputerName* or *ConnectionUri* parameters, **Get-PSSession** gets only
+  sessions from computers running Windows PowerShell 3.0 and later versions of PowerShell.
+- The value of the **State** property of a **PSSession** is relative to the current session.
+  Therefore, a value of **Disconnected** means that the **PSSession** is not connected to the current
+  session. However, it does not mean that the **PSSession** is disconnected from all sessions. It
+  might be connected to a different session. To determine whether you can connect or reconnect to the
+  **PSSession** from the current session, use the **Availability** property.
 
-  An **Availability** value of **None** indicates that you can connect to the session.
+An **Availability** value of **None** indicates that you can connect to the session.
 A value of **Busy** indicates that you cannot connect to the **PSSession** because it is connected
 to another session.
 
-  For more information about the values of the **State** property of sessions, see 
-[RunspaceState Enumeration](https://msdn.microsoft.com/library/system.management.automation.runspaces.runspacestate) in the MSDN library.
+For more information about the values of the **State** property of sessions, see
+[RunspaceState Enumeration](https://msdn.microsoft.com/library/system.management.automation.runspaces.runspacestate).
 
-  For more information about the values of the **Availability** property of sessions, see 
-[RunspaceAvailability Enumeration](https://msdn.microsoft.com/library/system.management.automation.runspaces.runspaceavailability) in the MSDN library.
+For more information about the values of the **Availability** property of sessions, see
+[RunspaceAvailability Enumeration](https://msdn.microsoft.com/library/system.management.automation.runspaces.runspaceavailability).
 
 ## RELATED LINKS
 

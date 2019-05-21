@@ -32,7 +32,7 @@ Clears the display in the host program.
 Reconnects to disconnected sessions.
 
 ### [Debug-Job](Debug-Job.md)
-Debugs a running background, remote, or Windows PowerShell Workflow job.
+Debugs a running background, remote, or PowerShell Workflow job.
 
 ### [Disable-PSRemoting](Disable-PSRemoting.md)
 Prevents remote users from running commands on the local computer.

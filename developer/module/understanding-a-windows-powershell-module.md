@@ -49,7 +49,7 @@ A *manifest module* is a module that uses a manifest file to describe all of its
 
 ### Dynamic Modules
 
-A *dynamic module* is a module is not loaded from, or saved to, a file. Instead, they are created dynamically by a script, using the [New-Module](/powershell/module/Microsoft.PowerShell.Core/New-Module) cmdlet. This type of module enables a script to create a module on demand that does not need to be loaded or saved to persistent storage. By its nature, a dynamic module is intended to be short-lived, and therefore cannot be accessed by the `Get-Module` cmdlet. Similarly, they usually do not need module manifests, nor do they likely need permanent folders to store their related assemblies.
+A *dynamic module* is a module that is not loaded from, or saved to, a file. Instead, they are created dynamically by a script, using the [New-Module](/powershell/module/Microsoft.PowerShell.Core/New-Module) cmdlet. This type of module enables a script to create a module on demand that does not need to be loaded or saved to persistent storage. By its nature, a dynamic module is intended to be short-lived, and therefore cannot be accessed by the `Get-Module` cmdlet. Similarly, they usually do not need module manifests, nor do they likely need permanent folders to store their related assemblies.
 
 ## Module Manifests
 

@@ -37,7 +37,7 @@ The **Save-Help** cmdlet downloads the newest help files for PowerShell modules 
 This feature lets you update the help files on computers that do not have access to the Internet, and makes it easier to update the help files on multiple computers.
 
 In Windows PowerShell 3.0, **Save-Help** worked only for modules that are installed on the local computer.
-Although it was possible to import a module from a remote computer, or obtain a reference to a **PSModuleInfo** object from a remote computer by using Windows PowerShell remoting, the **HelpInfoUri** property was not preserved, and **Save-Help** would not work for remote module Help.
+Although it was possible to import a module from a remote computer, or obtain a reference to a **PSModuleInfo** object from a remote computer by using PowerShell remoting, the **HelpInfoUri** property was not preserved, and **Save-Help** would not work for remote module Help.
 
 In Windows PowerShell 4.0, the **HelpInfoUri** property is preserved over PowerShell remoting, which enables **Save-Help** to work for modules that are installed on remote computers.
 It is also possible to save a **PSModuleInfo** object to disk or removable media by running Export-Clixml on a computer that does not have Internet access, import the object on a computer that does have Internet access, and then run **Save-Help** on the **PSModuleInfo** object.

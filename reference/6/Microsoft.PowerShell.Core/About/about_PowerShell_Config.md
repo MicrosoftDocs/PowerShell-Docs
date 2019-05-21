@@ -15,7 +15,7 @@ Configuration files for PowerShell Core, replacing Registry configuration.
 The `powershell.config.json` file contains configuration settings for
 PowerShell Core. PowerShell loads this configuration at startup. The settings
 can also be modified at runtime. Previously, these settings were stored in the
-Windows Registry for Windows PowerShell, but are now contained in a file to
+Windows Registry for PowerShell, but are now contained in a file to
 enable configuration on macOS and Linux.
 
 > [!WARNING]
