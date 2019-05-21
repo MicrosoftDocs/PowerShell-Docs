@@ -199,9 +199,9 @@ Param
 
 ### Notes
 
-In Windows PowerShell 3.0, the Windows PowerShell Core packages appear as
+In Windows PowerShell 3.0, the PowerShell Core packages appear as
 modules in sessions started by using the InitialSessionState.CreateDefault2
-method, such as sessions started in the Windows PowerShell console. Otherwise,
+method, such as sessions started in the PowerShell console. Otherwise,
 they appear as snap-ins. The exception is Microsoft.PowerShell.Core, which is
 always a snap-in.
 

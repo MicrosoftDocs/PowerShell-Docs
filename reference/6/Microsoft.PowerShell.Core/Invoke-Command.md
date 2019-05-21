@@ -314,7 +314,7 @@ The computer names are presented in a comma-separated list.
 The list of computers includes the localhost value, which represents the local computer.
 
 The command uses the *ConfigurationName* parameter to specify an alternate session configuration for
-Windows PowerShell and the *ScriptBlock* parameter to specify the command.
+PowerShell and the *ScriptBlock* parameter to specify the command.
 
 In this example, the command in the script block gets the events in the Windows PowerShell event log
 on each remote computer.
@@ -730,7 +730,7 @@ remotely.
 However, with *AsJob*, the job is created on the local computer, even though the job runs on a
 remote computer, and the results of the remote job are automatically returned to the local computer.
 
-For more information about PowerShell background jobs, see [about_Jobs](About/about_Jobs.md) and 
+For more information about PowerShell background jobs, see [about_Jobs](About/about_Jobs.md) and
 [about_Remote_Jobs](About/about_Remote_Jobs.md).
 
 ```yaml
@@ -942,7 +942,7 @@ Accept wildcard characters: False
 Parameter Sets: ComputerName, FilePathComputerName, Uri, FilePathUri, VMId, VMName, FilePathVMId, FilePathVMName
 Required: True (VMId, VMName, FilePathVMId, FilePathVMName), False (ComputerName, FilePathComputerName, Uri, FilePathUri)
 Default value: None
-Aliases: 
+Aliases:
 Type: PSCredential
 ```
 
@@ -1444,7 +1444,7 @@ Accept wildcard characters: False
 Indicates that this cmdlet uses the Secure Sockets Layer (SSL) protocol to establish a connection to
 the remote computer. By default, SSL is not used.
 
-WS-Management encrypts all Windows PowerShell content transmitted over the network.
+WS-Management encrypts all PowerShell content transmitted over the network.
 The *UseSSL* parameter is an additional protection that sends the data across an HTTPS, instead of
 HTTP.
 
@@ -1561,10 +1561,10 @@ To determine whether you can connect or reconnect to the session, use the **Avai
 A value of Busy indicates that you cannot connect to the PSSession because it is connected to
 another session.
 
-  For more information about the values of the **State** property of sessions, see 
+  For more information about the values of the **State** property of sessions, see
 [RunspaceState Enumeration](https://msdn.microsoft.com/library/system.management.automation.runspaces.runspacestate) in the MSDN library.
 
-  For more information about the values of the **Availability** property of sessions, see 
+  For more information about the values of the **Availability** property of sessions, see
 [RunspaceAvailability Enumeration](https://msdn.microsoft.com/library/system.management.automation.runspaces.runspaceavailability) in the MSDN library.
 
 * The HostName and SSHConnection parameter sets were included starting with PowerShell 6.0.
@@ -1575,7 +1575,7 @@ remoting will work over these platforms where PowerShell and SSH are installed a
 WinRM specific features and limitations do not apply.
   For example WinRM based quotas, session options, custom endpoint configuration, and
 disconnect/reconnect features are currently not supported.
-  For more information about how to set up PowerShell SSH remoting, see 
+  For more information about how to set up PowerShell SSH remoting, see
 [PowerShell Remoting Over SSH](/powershell/scripting/core-powershell/ssh-remoting-in-powershell-core).
 
 ## RELATED LINKS

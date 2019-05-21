@@ -36,7 +36,7 @@ This feature makes it practical to use `Restart-Computer` in scripts and functio
 You can also use the WSMan protocol to restart the computer, in case DCOM calls are blocked, such as
 by an enterprise firewall.
 
-This cmdlet requires Windows PowerShell remoting only when you use the **AsJob** parameter in a
+This cmdlet requires PowerShell remoting only when you use the **AsJob** parameter in a
 command.
 
 ## EXAMPLES
@@ -205,8 +205,8 @@ This parameter is valid only with the **Wait** parameter.
 
 The acceptable values for this parameter are:
 
-- Default: Waits for Windows PowerShell to restart.
-- PowerShell: Can run commands in a Windows PowerShell remote session on the computer.
+- Default: Waits for PowerShell to restart.
+- PowerShell: Can run commands in a PowerShell remote session on the computer.
 - WMI: Receives a reply to a Win32_ComputerSystem query for the computer.
 - WinRM: Can establish a remote session to the computer by using WS-Management.
 
@@ -265,7 +265,7 @@ Accept wildcard characters: False
 
 ### -Wait
 
-Indicates that this cmdlet suppresses the Windows PowerShell prompt and blocks the pipeline until
+Indicates that this cmdlet suppresses the PowerShell prompt and blocks the pipeline until
 all of the computers have restarted.
 You can use this parameter in a script to restart computers and then continue to process when the
 restart is finished.

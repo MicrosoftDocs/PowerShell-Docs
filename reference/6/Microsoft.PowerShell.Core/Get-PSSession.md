@@ -560,7 +560,7 @@ Accept wildcard characters: False
 Parameter Sets: ComputerInstanceId, ConnectionUriInstanceId, VMNameInstanceId, ContainerIdInstanceId, VMIdInstanceId, InstanceId
 Required: True (ComputerInstanceId, ConnectionUriInstanceId, VMNameInstanceId, ContainerIdInstanceId, VMIdInstanceId), False (InstanceId)
 Default value: None
-Aliases: 
+Aliases:
 Type: Guid[]
 ```
 
@@ -579,7 +579,7 @@ Accept wildcard characters: False
 Parameter Sets: Name, ComputerName, ConnectionUri, ContainerId, VMId, VMName
 Required: False
 Default value: None
-Aliases: 
+Aliases:
 Type: String[]
 ```
 
@@ -806,10 +806,10 @@ might be connected to a different session. To determine whether you can connect 
 A value of **Busy** indicates that you cannot connect to the **PSSession** because it is connected
 to another session.
 
-  For more information about the values of the **State** property of sessions, see 
+  For more information about the values of the **State** property of sessions, see
 [RunspaceState Enumeration](https://msdn.microsoft.com/library/system.management.automation.runspaces.runspacestate) in the MSDN library.
 
-  For more information about the values of the **Availability** property of sessions, see 
+  For more information about the values of the **Availability** property of sessions, see
 [RunspaceAvailability Enumeration](https://msdn.microsoft.com/library/system.management.automation.runspaces.runspaceavailability) in the MSDN library.
 
 ## RELATED LINKS

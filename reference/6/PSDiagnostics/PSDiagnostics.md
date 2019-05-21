@@ -13,7 +13,7 @@ Module Name: PSDiagnostics
 
 ## Description
 
-The Windows PowerShell Diagnostics Module contains a set of cmdlets that enables the use of ETW
+The PowerShell Diagnostics Module contains a set of cmdlets that enables the use of ETW
 tracing in PowerShell on Windows.
 
 ## PSDiagnostics Cmdlets

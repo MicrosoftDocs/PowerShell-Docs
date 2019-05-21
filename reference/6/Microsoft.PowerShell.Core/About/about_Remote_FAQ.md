@@ -8,8 +8,7 @@ title:  about_Remote_FAQ
 # About Remote FAQ
 
 ## SHORT DESCRIPTION
-Contains questions and answers about running remote commands in Windows
-PowerShell.
+Contains questions and answers about running remote commands in PowerShell.
 
 ## LONG DESCRIPTION
 
@@ -24,8 +23,7 @@ configured for remoting. For more information, see
 
 ### MUST BOTH COMPUTERS HAVE POWERSHELL INSTALLED?
 
-Yes. To work remotely, the local and remote computers must have Windows
-PowerShell, the Microsoft .NET Framework, and the Web Services for Management
+Yes. To work remotely, the local and remote computers must have PowerShell, the Microsoft .NET Framework, and the Web Services for Management
 (WS-Management) protocol. Any files and other resources that are needed to
 execute a particular command must be on the remote computer.
 
@@ -189,8 +187,7 @@ the connection to run only the current command, and then it closes the
 connection. This is a very efficient method for running a single command or
 several unrelated commands, even on many remote computers.
 
-When you use the New-PSSession cmdlet to create a PSSession, Windows
-PowerShell establishes a persistent connection for the PSSession. Then, you
+When you use the New-PSSession cmdlet to create a PSSession, PowerShell establishes a persistent connection for the PSSession. Then, you
 can run multiple commands in the PSSession, including commands that share
 data.
 
@@ -343,8 +340,7 @@ For example, if you run the IpConfig program on a remote computer, the command
 prompt does not return until IpConfig is completed.
 
 If you use remote commands to start a program that has a user interface, the
-program process starts, but the user interface does not appear. The Windows
-PowerShell command is not completed, and the command prompt does not return
+program process starts, but the user interface does not appear. The PowerShell command is not completed, and the command prompt does not return
 until you stop the program process or until you press CTRL\+C, which
 interrupts the command and stops the process.
 
@@ -406,8 +402,7 @@ administrator's computer) runs PowerShell commands on numerous remote
 computers. This is known as the "fan-out" scenario.
 
 However, in some enterprises, the configuration is many-to-one, where many
-client computers connect to a single remote computer that is running Windows
-PowerShell, such as a file server or a kiosk. This is known as the "fan-in"
+client computers connect to a single remote computer that is running PowerShell, such as a file server or a kiosk. This is known as the "fan-in"
 configuration.
 
 PowerShell remoting supports both fan-out and fan-in configurations.
@@ -422,10 +417,8 @@ port, an alternate session configuration, and other features to customize the
 remote connection.
 
 To support the "fan-in" configuration, PowerShell uses Internet
-Information Services (IIS) to host WS-Management, to load the Windows
-PowerShell plug-in, and to start PowerShell. In this scenario, instead
-of starting each PowerShell session in a separate process, all Windows
-PowerShell sessions run in the same host process.
+Information Services (IIS) to host WS-Management, to load the PowerShell plug-in, and to start PowerShell. In this scenario, instead
+of starting each PowerShell session in a separate process, all PowerShell sessions run in the same host process.
 
 IIS hosting and fan-in remote management is not supported in Windows XP or in
 Windows Server 2003.

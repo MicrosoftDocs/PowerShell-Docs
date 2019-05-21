@@ -624,7 +624,7 @@ Skips the check of the `CompatiblePSEditions` field.
 By default, Get-Module will omit modules in the `%windir%\System32\WindowsPowerShell\v1.0\Modules`
 directory that do not specify `Core` in the `CompatiblePSEditions` field.
 When this switch is set, modules without `Core` will be included, so that modules under the
-Windows PowerShell module path that are incompatible with PowerShell Core will be returned.
+PowerShell module path that are incompatible with PowerShell Core will be returned.
 
 On macOS and Linux, this parameter does nothing.
 

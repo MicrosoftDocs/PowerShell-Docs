@@ -33,7 +33,7 @@ over Group Policy settings in the Computer Configuration path.
 
 The policies are as follows:
 
-- Turn on Script Execution: Sets the Windows PowerShell execution policy.
+- Turn on Script Execution: Sets the PowerShell execution policy.
 - Turn on Module Logging: Sets the **LogPipelineExecutionDetails** property of
   modules.
 - Set the default source path for `Update-Help`: Sets the source for

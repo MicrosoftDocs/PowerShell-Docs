@@ -106,7 +106,7 @@ For example: `http://server01:8080/WSMAN`
 
 Internet Information Services (IIS), which hosts the session, forwards requests with this endpoint to the specified application.
 This default setting of WSMAN is appropriate for most uses.
-This parameter is designed to be used if many computers establish remote connections to one computer that is running Windows PowerShell.
+This parameter is designed to be used if many computers establish remote connections to one computer that is running PowerShell.
 In this case, IIS hosts Web Services for Management (WS-Management) for efficiency.
 
 ```yaml
@@ -171,7 +171,7 @@ Enter the certificate thumbprint of the certificate.
 Certificates are used in client certificate-based authentication.
 They can be mapped only to local user accounts; they do not work with domain accounts.
 
-To get a certificate thumbprint, use the Get-Item or Get-ChildItem command in the Windows PowerShell Cert: drive.
+To get a certificate thumbprint, use the Get-Item or Get-ChildItem command in the PowerShell Cert: drive.
 
 ```yaml
 Type: String
@@ -251,7 +251,7 @@ Accept wildcard characters: False
 Specifies that the Secure Sockets Layer (SSL) protocol is used to establish a connection to the remote computer.
 By default, SSL is not used.
 
-WS-Management encrypts all the Windows PowerShell content that is transmitted over the network.
+WS-Management encrypts all the PowerShell content that is transmitted over the network.
 The *UseSSL* parameter lets you specify the additional protection of HTTPS instead of HTTP.
 If SSL is not available on the port that is used for the connection, and you specify this parameter, the command fails.
 
