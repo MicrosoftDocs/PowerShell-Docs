@@ -295,8 +295,22 @@ RESOURCEMAP
 UEFI
 ```
 
-`Get-ChildItem` uses the **Path** parameter to specify the registry hive **HKLM:\HARDWARE**. The
-hive's path and top level of registry keys are displayed in the PowerShell console.
+```powershell
+Get-ChildItem -Path HLKM:\HARDWARE -Exclude D*
+```
+
+```Output
+   Hive: HKEY_LOCAL_MACHINE\HARDWARE
+
+Name                           Property
+----                           --------
+ACPI
+RESOURCEMAP
+```
+
+The first command shows the contents of the `HKLM:\HARDWARE` registry key. The **Exclude** parameter
+tells `Get-ChildItem` not to return any subkeys that start with `D*`. Currently, the **Exclude**
+parameter only works on subkeys, not item properties.
 
 ### Example 7: Get all certificates with code-signing authority
 
