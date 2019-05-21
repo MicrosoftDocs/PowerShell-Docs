@@ -8,7 +8,6 @@ title:  about_Operators
 # About Operators
 
 ## Short description
-
 Describes the operators that are supported by PowerShell.
 
 ## Long description

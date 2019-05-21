@@ -21,7 +21,6 @@ Registry
 **ShouldProcess**, **UseTransactions**
 
 ## Short description
-
 Provides access to the registry keys, entries, and values in PowerShell.
 
 ## Detailed description

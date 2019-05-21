@@ -8,7 +8,6 @@ title:  about_Remote_Variables
 # About Remote Variables
 
 ## SHORT DESCRIPTION
-
 Explains how to use local and remote variables in remote commands.
 
 ## LONG DESCRIPTION

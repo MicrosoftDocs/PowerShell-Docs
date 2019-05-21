@@ -8,7 +8,6 @@ title:  about_PSSession_Details
 # About PSSession Details
 
 ## Short Description
-
 Provides detailed information about PowerShell sessions and the
 role they play in remote commands.
 

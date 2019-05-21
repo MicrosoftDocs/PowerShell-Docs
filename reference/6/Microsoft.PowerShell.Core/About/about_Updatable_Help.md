@@ -8,7 +8,6 @@ title:  about_Updatable_Help
 # About Updatable Help
 
 ## SHORT DESCRIPTION
-
 Describes the updatable help system in PowerShell.
 
 ## LONG DESCRIPTION

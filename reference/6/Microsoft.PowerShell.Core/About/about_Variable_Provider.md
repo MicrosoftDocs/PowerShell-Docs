@@ -21,7 +21,6 @@ Variable
 **ShouldProcess**
 
 ## Short description
-
 Provides access to the PowerShell variables and to their values.
 
 ## Detailed description

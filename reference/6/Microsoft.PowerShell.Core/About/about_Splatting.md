@@ -8,7 +8,6 @@ title:  about_Splatting
 # About Splatting
 
 ## SHORT DESCRIPTION
-
 Describes how to use splatting to pass parameters to commands in Windows
 PowerShell.
 

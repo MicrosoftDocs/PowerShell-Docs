@@ -8,7 +8,6 @@ title:  about_Signing
 # About Signing
 
 ## SHORT DESCRIPTION
-
 Explains how to sign scripts so that they comply with the PowerShell execution
 policies.
 

@@ -21,7 +21,6 @@ Certificate
 **ShouldProcess**
 
 ## Short description
-
 Provides access to X.509 certificate stores and certificates in PowerShell.
 
 ## Detailed description

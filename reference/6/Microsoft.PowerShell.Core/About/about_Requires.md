@@ -8,7 +8,6 @@ title:  about_Requires
 # About Requires
 
 ## Short description
-
 Prevents a script from running without the required elements.
 
 ## Long description

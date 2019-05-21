@@ -17,7 +17,6 @@ WSMan
 `WSMan:`
 
 ## Short description
-
 Provides access to Web Services for Management (WS-Management) configuration
 information.
 

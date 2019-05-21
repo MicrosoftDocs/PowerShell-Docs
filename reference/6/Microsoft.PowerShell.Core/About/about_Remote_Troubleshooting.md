@@ -8,7 +8,6 @@ title:  about_Remote_Troubleshooting
 # About Remote Troubleshooting
 
 ## SHORT DESCRIPTION
-
 Describes how to troubleshoot remote operations in PowerShell.
 
 ## LONG DESCRIPTION

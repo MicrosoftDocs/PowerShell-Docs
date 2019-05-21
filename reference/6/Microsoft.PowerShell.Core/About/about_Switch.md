@@ -8,7 +8,6 @@ title:  about_Switch
 # About Switch
 
 ## SHORT DESCRIPTION
-
 Explains how to use a switch to handle multiple If statements.
 
 ## LONG DESCRIPTION

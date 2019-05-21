@@ -8,7 +8,6 @@ title:  about_Script_Blocks
 # About Script Blocks
 
 ## Short description
-
 Defines what a script block is and explains how to use script blocks in
 the PowerShell programming language.
 

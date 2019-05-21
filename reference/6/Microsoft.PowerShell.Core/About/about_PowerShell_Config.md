@@ -8,7 +8,6 @@ title:  about_PowerShell_Config
 # About PowerShell Config
 
 ## SHORT DESCRIPTION
-
 Configuration files for PowerShell Core, replacing Registry configuration.
 
 ## LONG DESCRIPTION

@@ -8,7 +8,6 @@ title:  about_Types.ps1xml
 # About Types.ps1xml
 
 ## SHORT DESCRIPTION
-
 Explains how to use Types.ps1xml files to extend the types of objects
 that are used in PowerShell.
 
