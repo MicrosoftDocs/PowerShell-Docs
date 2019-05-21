@@ -146,7 +146,7 @@ Script     1.0.0      WindowsCompatibility                Core      {Initialize-
 
 For modules that come as part of Windows (or are installed as part of a role or feature),
 PowerShell 6.1 and above treat the `CompatiblePSEditions` field differently. Such modules are found
-in the PowerShell system modules directory
+in the Windows PowerShell system modules directory
 (`%windir%\System\WindowsPowerShell\v1.0\Modules`).
 
 For modules loaded from or found in this directory, PowerShell 6.1 and above uses the

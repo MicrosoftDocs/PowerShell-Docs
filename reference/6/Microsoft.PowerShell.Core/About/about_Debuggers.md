@@ -253,7 +253,7 @@ files.
 ## Debugging Workflows
 
 The Windows PowerShell 4.0 debugger can be used to debug PowerShell
-workflows, either in the PowerShell console, or in PowerShell
+workflows, either in the PowerShell console, or in Windows PowerShell
 ISE. There are some limitations with using the PowerShell debugger to
 debug workflows.
 

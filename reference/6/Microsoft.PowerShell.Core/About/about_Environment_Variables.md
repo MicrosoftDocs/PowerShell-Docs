@@ -188,7 +188,8 @@ interpreted as a unit.
 
 ### Saving Changes to Environment Variables
 
-To create or change the value of an environment variable in every PowerShell session, add the change to your PowerShell profile.
+To create or change the value of an environment variable in every PowerShell
+session, add the change to your PowerShell profile.
 
 For example, to add the C:\\Temp directory to the Path environment variable in
 every PowerShell session, add the following command to your PowerShell profile.

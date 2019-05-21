@@ -38,13 +38,15 @@ function PSConsoleHostReadLine
 
 ### REMARKS
 
-By default, PowerShell reads input from the console in what is known as
-"Cooked Mode" -- in which the Windows console subsystem handles all the
-keypresses, F7 menus, and other input. When you press Enter or Tab, PowerShell gets the text that you have typed up to that point. There is no way
-for it to know that you pressed Ctrl-R, Ctrl-A, Ctrl-E, or any other keys
-before pressing Enter or Tab. In Windows PowerShell 3.0, the
-PSConsoleHostReadLine function solves this issue. When you define a function
-named PSConsoleHostReadline in the PowerShell console host, PowerShell calls that function instead of the "Cooked Mode" input mechanism.
+By default, PowerShell reads input from the console in what is known as "Cooked
+Mode" -- in which the Windows console subsystem handles all the keypresses, F7
+menus, and other input. When you press Enter or Tab, PowerShell gets the text
+that you have typed up to that point. There is no way for it to know that you
+pressed Ctrl-R, Ctrl-A, Ctrl-E, or any other keys before pressing Enter or Tab.
+In Windows PowerShell 3.0, the PSConsoleHostReadLine function solves this
+issue. When you define a function named PSConsoleHostReadline in the PowerShell
+console host, PowerShell calls that function instead of the "Cooked Mode" input
+mechanism.
 
 ### SEE ALSO
 

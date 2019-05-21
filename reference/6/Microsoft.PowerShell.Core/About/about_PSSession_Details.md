@@ -61,14 +61,15 @@ However, you can also create sessions (called "PowerShell sessions"
 or "PSSessions") that you control and manage.
 
 PSSessions are critical to remote commands. If you use the **ComputerName**
-parameter of the `Invoke-Command` or `Enter-PSSession` cmdlets, PowerShell establishes a temporary session to run the command and then
-closes the session as soon as the command or the interactive session
-is complete.
+parameter of the `Invoke-Command` or `Enter-PSSession` cmdlets, PowerShell
+establishes a temporary session to run the command and then closes the session
+as soon as the command or the interactive session is complete.
 
-However, if you use the `New-PSSession` cmdlet to create a PSSession, PowerShell establishes a persistent session on the remote computer in which
-you can run multiple commands or interactive sessions. The PSSessions that
-you create remain open and available for use until you delete them or until
-you close the session in which they were created.
+However, if you use the `New-PSSession` cmdlet to create a PSSession,
+PowerShell establishes a persistent session on the remote computer in which you
+can run multiple commands or interactive sessions. The PSSessions that you
+create remain open and available for use until you delete them or until you
+close the session in which they were created.
 
 When you create a PSSession on a remote computer, the system creates a
 PowerShell process on the remote computer and establishes a connection
@@ -207,8 +208,8 @@ cmdlet with its **AsJob** parameter, or use the `Invoke-Command` cmdlet to run a
 you can use the **ComputerName** or **Session** parameters.
 
 When using `Invoke-Command` to run a `Start-Job` command, you must run the
-command in a PSSession. If you use the **ComputerName** parameter, PowerShell ends the connection when the job object returns, and the job is
-interrupted.
+command in a PSSession. If you use the **ComputerName** parameter, PowerShell
+ends the connection when the job object returns, and the job is interrupted.
 
 For more information, see [about_Jobs](about_Jobs.md).
 
