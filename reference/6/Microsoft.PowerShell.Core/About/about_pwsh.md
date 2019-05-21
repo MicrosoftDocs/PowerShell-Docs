@@ -7,6 +7,7 @@ title:  about_pwsh
 # About pwsh
 
 ## SHORT DESCRIPTION
+
 Explains how to use the **pwsh** command-line tool. Displays the syntax and
 describes the command-line switches.
 

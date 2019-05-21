@@ -7,6 +7,7 @@ title:  about_PowerShell_Editions
 # About PowerShell Editions
 
 ## Short Description
+
 Different editions of PowerShell run on different underlying runtimes.
 
 ## Long Description
@@ -240,7 +241,10 @@ to catch possible behavioral differences between editions. For this you must sti
 
 [Pester]: https://github.com/pester/Pester/wiki/Pester
 [PSScriptAnalyzer]: https://github.com/PowerShell/PSScriptAnalyzer
-[`PSUseCompatibleCommands`]: https://github.com/PowerShell/PSScriptAnalyzer/blob/master/RuleDocumentation/UseCompatibleCommands.md
-[`PSUseCompatibleTypes`]: https://github.com/PowerShell/PSScriptAnalyzer/blob/master/RuleDocumentation/UseCompatibleTypes.md
+[`PSUseCompatibleCommands`]:
+https://github.com/PowerShell/PSScriptAnalyzer/blob/master/RuleDocumentation/UseCompatibleCommands.md
+[`PSUseCompatibleTypes`]:
+https://github.com/PowerShell/PSScriptAnalyzer/blob/master/RuleDocumentation/UseCompatibleTypes.md
 [.NET Standard]: https://docs.microsoft.com/en-us/dotnet/standard/net-standard
-[PowerShell Standard]: https://devblogs.microsoft.com/powershell/powershell-standard-library-build-single-module-that-works-across-windows-powershell-and-powershell-core/
+[PowerShell Standard]:
+https://devblogs.microsoft.com/powershell/powershell-standard-library-build-single-module-that-works-across-windows-powershell-and-powershell-core/

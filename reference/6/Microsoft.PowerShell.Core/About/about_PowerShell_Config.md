@@ -8,6 +8,7 @@ title:  about_PowerShell_Config
 # About PowerShell Config
 
 ## SHORT DESCRIPTION
+
 Configuration files for PowerShell Core, replacing Registry configuration.
 
 ## LONG DESCRIPTION
@@ -401,4 +402,5 @@ This configuration sets a number of options that only work in macOS or Linux:
 
 [About Automatic Variables](./about_Automatic_Variables.md)
 
-[RFC0029]: https://github.com/PowerShell/PowerShell-RFC/blob/master/5-Final/RFC0029-Support-Experimental-Features.md
+[RFC0029]:
+https://github.com/PowerShell/PowerShell-RFC/blob/master/5-Final/RFC0029-Support-Experimental-Features.md

@@ -8,6 +8,7 @@ title:  about_Preference_Variables
 # About Preference Variables
 
 ## SHORT DESCRIPTION
+
 Variables that customize the behavior of PowerShell
 
 ## LONG DESCRIPTION

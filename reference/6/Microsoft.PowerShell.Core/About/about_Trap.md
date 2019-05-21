@@ -8,6 +8,7 @@ title:  about_Trap
 # About Trap
 
 ## SHORT DESCRIPTION
+
 Describes a keyword that handles a terminating error.
 
 ## LONG DESCRIPTION
