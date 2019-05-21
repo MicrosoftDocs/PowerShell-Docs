@@ -136,7 +136,8 @@ PS> 7, 8, 9 -gt 8
 9
 ```
 
-> [!NOTE] > This should not to be confused with `>`, the greater-than operator
+> [!NOTE]
+> This should not to be confused with `>`, the greater-than operator
 > in many other programming languages. In PowerShell, `>` is used for
 > redirection. For more information, see
 > [About_redirection](about_Redirection.md#potential-confusion-with-comparison-operators).

@@ -1520,63 +1520,61 @@ parameter.
 
 ## NOTES
 
-* On Windows Vista, and later versions of the Windows operating system, to use the *ComputerName*
-parameter of **Invoke-Command** to run a command on the local computer, you must open PowerShell by
-using the Run as administrator option.
-* When you run commands on multiple computers, PowerShell connects to the computers in the order in
-which they appear in the list. However, the command output is displayed in the order that it is
-received from the remote computers, which might be different.
-* Errors that result from the command that **Invoke-Command** runs are included in the command
-results. Errors that would be terminating errors in a local command are treated as non-terminating
-errors in a remote command. This strategy makes sure that terminating errors on one computer do not
-close the command on all computers on which it is run. This practice is used even when a remote
-command is run on a single computer.
-* If the remote computer is not in a domain that the local computer trusts, the computer might not
-be able to authenticate the credentials of the user. To add the remote computer to the list of
-trusted hosts in WS-Management, use the following command in the WSMAN provider, where
-\<Remote-Computer-Name\> is the name of the remote computer:
+- On Windows Vista, and later versions of the Windows operating system, to use the *ComputerName*
+  parameter of **Invoke-Command** to run a command on the local computer, you must open PowerShell by
+  using the Run as administrator option.
+- When you run commands on multiple computers, PowerShell connects to the computers in the order in
+  which they appear in the list. However, the command output is displayed in the order that it is
+  received from the remote computers, which might be different.
+- Errors that result from the command that **Invoke-Command** runs are included in the command
+  results. Errors that would be terminating errors in a local command are treated as non-terminating
+  errors in a remote command. This strategy makes sure that terminating errors on one computer do not
+  close the command on all computers on which it is run. This practice is used even when a remote
+  command is run on a single computer.
+- If the remote computer is not in a domain that the local computer trusts, the computer might not
+  be able to authenticate the credentials of the user. To add the remote computer to the list of
+  trusted hosts in WS-Management, use the following command in the WSMAN provider, where
+  \<Remote-Computer-Name\> is the name of the remote computer:
 
   `Set-Item -Path WSMan:\Localhost\Client\TrustedHosts -Value \<Remote-Computer-Name\>`
-
-* In Windows PowerShell 2.0, you cannot use the Select-Object cmdlet to select the
-**PSComputerName** property of the object that **Invoke-Command** returns. Instead, to display the
-value of the **PSComputerName** property, use the dot method to get the **PSComputerName** property
-value ($result.PSComputerName), use a **Format** cmdlet, such as the Format-Table cmdlet, to display
-the value of the **PSComputerName** property, or use a Select-Object command where the value of the
-property parameter is a calculated property that has a label other than PSComputerName.
+- In Windows PowerShell 2.0, you cannot use the Select-Object cmdlet to select the
+  **PSComputerName** property of the object that **Invoke-Command** returns. Instead, to display the
+  value of the **PSComputerName** property, use the dot method to get the **PSComputerName** property
+  value ($result.PSComputerName), use a **Format** cmdlet, such as the Format-Table cmdlet, to display
+  the value of the **PSComputerName** property, or use a Select-Object command where the value of the
+  property parameter is a calculated property that has a label other than PSComputerName.
 
   This limitation does not apply to Windows PowerShell 3.0 or later versions of Windows PowerShell
-or PowerShell Core.
-
-* When you disconnect a **PSSession**, such as by using *InDisconnectedSession*, the session state
-is Disconnected and the availability is None.
+  or PowerShell Core.
+- When you disconnect a **PSSession**, such as by using *InDisconnectedSession*, the session state
+  is Disconnected and the availability is None.
 
   The value of the **State** property is relative to the current session.
-Therefore, a value of Disconnected means that the *PSSession* is not connected to the current
-session. However, it does not mean that the **PSSession** is disconnected from all sessions.
-It might be connected to a different session.
-To determine whether you can connect or reconnect to the session, use the **Availability** property.
+  Therefore, a value of Disconnected means that the *PSSession* is not connected to the current
+  session. However, it does not mean that the **PSSession** is disconnected from all sessions.
+  It might be connected to a different session.
+  To determine whether you can connect or reconnect to the session, use the **Availability** property.
 
   An **Availability** value of None indicates that you can connect to the session.
-A value of Busy indicates that you cannot connect to the PSSession because it is connected to
-another session.
+  A value of Busy indicates that you cannot connect to the PSSession because it is connected to
+  another session.
 
   For more information about the values of the **State** property of sessions, see
-[RunspaceState Enumeration](https://msdn.microsoft.com/library/system.management.automation.runspaces.runspacestate) in the MSDN library.
+  [RunspaceState Enumeration](https://msdn.microsoft.com/library/system.management.automation.runspaces.runspacestate).
 
   For more information about the values of the **Availability** property of sessions, see
-[RunspaceAvailability Enumeration](https://msdn.microsoft.com/library/system.management.automation.runspaces.runspaceavailability) in the MSDN library.
+  [RunspaceAvailability Enumeration](https://msdn.microsoft.com/library/system.management.automation.runspaces.runspaceavailability).
 
-* The HostName and SSHConnection parameter sets were included starting with PowerShell 6.0.
+- The HostName and SSHConnection parameter sets were included starting with PowerShell 6.0.
   They were added to provide PowerShell remoting based on Secure Shell (SSH).
   Both SSH and PowerShell are supported on multiple platforms (Windows, Linux, macOS) and PowerShell
-remoting will work over these platforms where PowerShell and SSH are installed and configured.
+  remoting will work over these platforms where PowerShell and SSH are installed and configured.
   This is separate from the previous Windows only remoting that is based on WinRM and much of the
-WinRM specific features and limitations do not apply.
+  WinRM specific features and limitations do not apply.
   For example WinRM based quotas, session options, custom endpoint configuration, and
-disconnect/reconnect features are currently not supported.
+  disconnect/reconnect features are currently not supported.
   For more information about how to set up PowerShell SSH remoting, see
-[PowerShell Remoting Over SSH](/powershell/scripting/core-powershell/ssh-remoting-in-powershell-core).
+  [PowerShell Remoting Over SSH](/powershell/scripting/core-powershell/ssh-remoting-in-powershell-core).
 
 ## RELATED LINKS
 
