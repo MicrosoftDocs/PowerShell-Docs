@@ -3,15 +3,16 @@ external help file: Microsoft.PowerShell.PackageManagement.dll-Help.xml
 keywords: powershell,cmdlet
 locale: en-us
 Module Name: PackageManagement
-ms.date: 06/09/2017
+ms.date: 5/22/2019
 online version: http://go.microsoft.com/fwlink/?LinkID=517135
 schema: 2.0.0
 title: Get-Package
 ---
+
 # Get-Package
 
 ## SYNOPSIS
-Returns a list of all software packages that have been installed by using Package Management.
+Returns a list of all software packages that were installed with **PackageManagement**.
 
 ## SYNTAX
 
@@ -19,73 +20,112 @@ Returns a list of all software packages that have been installed by using Packag
 
 ```
 Get-Package [[-Name] <String[]>] [-RequiredVersion <String>] [-MinimumVersion <String>]
- [-MaximumVersion <String>] [-AllVersions] [-Force] [-ForceBootstrap] [-ProviderName <String[]>]
- [-Destination <String>] [-ExcludeVersion] [-Scope <String>] [-SkipDependencies] [<CommonParameters>]
+[-MaximumVersion <String>] [-AllVersions] [-Force] [-ForceBootstrap] [-ProviderName <String[]>]
+[-Destination <String>] [-ExcludeVersion] [-Scope <String>] [-SkipDependencies] [<CommonParameters>]
 ```
 
 ### PowerShellGet
 
 ```
 Get-Package [[-Name] <String[]>] [-RequiredVersion <String>] [-MinimumVersion <String>]
- [-MaximumVersion <String>] [-AllVersions] [-Force] [-ForceBootstrap] [-ProviderName <String[]>]
- [-Scope <String>] [-PackageManagementProvider <String>] [-Type <String>] [-AllowClobber] [-SkipPublisherCheck]
- [-InstallUpdate] [-NoPathUpdate] [-AllowPrereleaseVersions] [<CommonParameters>]
+[-MaximumVersion <String>] [-AllVersions] [-Force] [-ForceBootstrap] [-ProviderName <String[]>]
+[-Scope <String>] [-PackageManagementProvider <String>] [-Type <String>] [-AllowClobber]
+[-SkipPublisherCheck] [-InstallUpdate] [-NoPathUpdate] [-AllowPrereleaseVersions]
+[<CommonParameters>]
 ```
 
 ## DESCRIPTION
 
-The **Get-Package** cmdlet returns a list of all software packages on the local computer that have been installed by using Package Management.
-You can run **Get-Package** on remote computers by running it as part of an Invoke-Command or Enter-PSSession command or script.
+The `Get-Package` cmdlet returns a list of all software packages on the local computer that were
+installed with **PackageManagement**. You can run `Get-Package` on remote computers by running it as
+part of an `Invoke-Command` or `Enter-PSSession` command or script.
 
 ## EXAMPLES
 
 ### Example 1: Get all installed packages
 
-```
-PS C:\> Get-Package
+The `Get-Package` cmdlet gets all packages that are installed on the local computer.
+
+```powershell
+Get-Package
 ```
 
-This command gets all packages that are installed on the local computer.
+```Output
+Name           Version      Source                                     ProviderName
+----           -------      ------                                     ------------
+posh-git       0.7.3        https://www.powershellgallery.com/api/v2   PowerShellGet
+```
 
 ### Example 2: Get packages that are installed on a remote computer
 
+This command gets a list of packages that were installed by **PackageManagement** on a remote
+computer. This command prompts you to provide the specified user's password.
+
 ```
-PS C:\> Invoke-Command -ComputerName "server01" -Credential "CONTOSO\TestUser" -ScriptBlock {Get-Package}
+PS> Invoke-Command -ComputerName Server01 -Credential CONTOSO\TestUser -ScriptBlock {Get-Package}
 ```
 
-This command gets a list of packages that were installed on a remote computer, server01, by using Package Management.
-When you run this command, you are prompted to provide credentials for the user CONTOSO\TestUser.
+`Invoke-Command` uses the **ComputerName** parameter to specify a remote computer, **Server01**. The
+**Credential** parameter specifies a domain and user name with permissions to run commands on the
+computer. The **ScriptBlock** parameter runs the `Get-Package` cmdlet on the remote computer.
 
 ### Example 3: Get packages for a specified provider
 
-```
-PS C:\> Get-Package -Provider "ARP"
+This command gets software packages installed on the local computer from a specific provider.
+
+```powershell
+Get-Package -ProviderName PowerShellGet -AllVersions
 ```
 
-This command gets Add or Remove Programs software packages from the local computer.
+```Output
+Name                  Version      Source                                     ProviderName
+----                  -------      ------                                     ------------
+PackageManagement     1.2.2        https://www.powershellgallery.com/api/v2   PowerShellGet
+PackageManagement     1.3.1        https://www.powershellgallery.com/api/v2   PowerShellGet
+posh-git              0.7.3        https://www.powershellgallery.com/api/v2   PowerShellGet
+PowerShellGet         2.0.1        https://www.powershellgallery.com/api/v2   PowerShellGet
+```
+
+`Get-Package` uses the **ProviderName** parameter to specify a specific provider, **PowerShellGet**.
+The **All-Versions** parameter displays each version that is installed.
 
 ### Example 4: Get an exact version of a specific package
 
-```
-PS C:\> Get-Package -Name "DSCAccelerator" -RequiredVersion "2.1.2"
+This command gets a specific version of an installed package. More than one version of a package can
+be installed.
+
+```powershell
+Get-Package -Name PackageManagement -ProviderName PowerShellGet -RequiredVersion 1.3.1
 ```
 
-This command gets version 2.1.2 of a package named DSCAccelerator.
-Although only part of the package name has been specified, **Get-Package** should be able to find the DSCAccelerator package if there are no other packages with a name matching that pattern.
+```Output
+Name                  Version      Source                                     ProviderName
+----                  -------      ------                                     ------------
+PackageManagement     1.3.1        https://www.powershellgallery.com/api/v2   PowerShellGet
+```
+
+`Get-Package` uses **Name** parameter to specify the package name, **PackageManagement**. The
+**ProviderName** parameter specifies the provider, **PowerShellGet**. The **Required-Version**
+parameter specifies an installed version.
 
 ### Example 5: Uninstall a package
 
-```
-PS C:\> Get-Package -Name "DSCAccelerator" -RequiredVersion "2.1" | Uninstall-Package
+This example gets package information and then uninstalls the package.
+
+```powershell
+Get-Package -Name posh-git -RequiredVersion 0.7.3 | Uninstall-Package
 ```
 
-This command pipes the results of a **Get-Package** command to the Uninstall-Package cmdlet.
-In this example, you are uninstalling only version 2.1 of the DSCAccelerator package.
-You are prompted to confirm that you want to uninstall the package.
+`Get-Package` uses the **Name** parameter to specify the package name, **posh-git**. The
+**RequiredVersion** parameter is a specific version of the package. The object is sent down the
+pipeline to the `Uninstall-Package` cmdlet. `Uninstall-Package` removes the package.
 
 ## PARAMETERS
 
 ### -AllowClobber
+
+Overrides warning messages about conflicts with existing commands. Overwrites existing commands that
+have the same name as commands being installed by a module.
 
 ```yaml
 Type: SwitchParameter
@@ -101,8 +141,7 @@ Accept wildcard characters: False
 
 ### -AllowPrereleaseVersions
 
-Includes in the results packages marked as a prerelease.
-
+Includes packages marked as a prerelease in the results.
 
 ```yaml
 Type: SwitchParameter
@@ -118,8 +157,8 @@ Accept wildcard characters: False
 
 ### -AllVersions
 
-Indicates that **Get-Package** returns all available versions of the package.
-By default, **Get-Package** only returns the newest available version.
+Indicates that `Get-Package` returns all available versions of the package. By default,
+`Get-Package` only returns the newest available version.
 
 ```yaml
 Type: SwitchParameter
@@ -135,7 +174,7 @@ Accept wildcard characters: False
 
 ### -Destination
 
-Specifies a string of the path searched.
+Specifies the path to a directory that contains extracted package files.
 
 ```yaml
 Type: String
@@ -183,7 +222,8 @@ Accept wildcard characters: False
 
 ### -ForceBootstrap
 
-Indicates that this cmdlet forces Package Management to automatically install the package provider.
+Indicates that `Get-Package` forces **PackageManagement** to automatically install the package
+provider.
 
 ```yaml
 Type: SwitchParameter
@@ -215,8 +255,7 @@ Accept wildcard characters: False
 
 ### -MaximumVersion
 
-Specifies the maximum allowed version of the package that you want to find.
-If you do not add this parameter, **Get-Package** finds the highest available version of the package.
+Specifies the maximum package version that you want to find.
 
 ```yaml
 Type: String
@@ -232,8 +271,8 @@ Accept wildcard characters: False
 
 ### -MinimumVersion
 
-Specifies the minimum allowed version of the package that you want to find.
-If you do not add this parameter, **Find-Package** finds the highest available version of the package that also satisfies any maximum specified version specified by the *MaximumVersion* parameter.
+Specifies the minimum package version that you want to find. If a higher version is available, that
+version is returned.
 
 ```yaml
 Type: String
@@ -249,8 +288,8 @@ Accept wildcard characters: False
 
 ### -Name
 
-Specifies one or more package names, or package names with wildcard characters.
-Separate multiple package names with commas.
+Specifies one or more package names, or package names with wildcard characters. Separate multiple
+package names with commas.
 
 ```yaml
 Type: String[]
@@ -266,6 +305,9 @@ Accept wildcard characters: False
 
 ### -NoPathUpdate
 
+**NoPathUpdate** only applies to the `Install-Script` cmdlet. **NoPathUpdate** is a dynamic
+parameter added by the provider and isn't supported by `Get-Package`.
+
 ```yaml
 Type: SwitchParameter
 Parameter Sets: PowerShellGet
@@ -280,7 +322,7 @@ Accept wildcard characters: False
 
 ### -PackageManagementProvider
 
-Specifies the name of the Package Management provider.
+Specifies the name of a package management provider.
 
 ```yaml
 Type: String
@@ -296,8 +338,8 @@ Accept wildcard characters: False
 
 ### -ProviderName
 
-Specifies one or more package provider names.
-Separate multiple package provider names with commas.
+Specifies one or more package provider names. Separate multiple package provider names with commas.
+Use `Get-PackageProvider` to get a list of available package providers.
 
 ```yaml
 Type: String[]
@@ -315,7 +357,6 @@ Accept wildcard characters: False
 ### -RequiredVersion
 
 Specifies the exact version of the package to find.
-If you do not add this parameter, **Find-Package** finds the highest available version of the provider that also satisfies any maximum version specified by the **MaximumVersion** parameter.
 
 ```yaml
 Type: String
@@ -348,7 +389,7 @@ Accept wildcard characters: False
 
 ### -SkipDependencies
 
-Switch which specifies to skip finding any dependencies a package has.
+Switch that specifies to skip finding any package dependencies.
 
 ```yaml
 Type: SwitchParameter
@@ -363,6 +404,10 @@ Accept wildcard characters: False
 ```
 
 ### -SkipPublisherCheck
+
+Allows you to get a package version that is newer than your installed version. For example, an
+installed package that is digitally signed by a trusted publisher but a new version isn't digitally
+signed.
 
 ```yaml
 Type: SwitchParameter
@@ -395,7 +440,9 @@ Accept wildcard characters: False
 
 ### CommonParameters
 
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+-InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
+-WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -405,13 +452,28 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## NOTES
 
+Including a package provider in a command can make dynamic parameters available to a cmdlet. Dynamic
+parameters are specific to a package provider. The `Get-Help` cmdlet lists a cmdlet's parameter sets
+and includes the provider's parameter set. For example, `Get-Package` has the **PowerShellGet**
+parameter set that includes `-NoPathUpdate`, `AllowClobber`, and `SkipPublisherCheck`.
+
 ## RELATED LINKS
 
 [about_PackageManagement](../Microsoft.PowerShell.Core/About/about_PackageManagement.md)
 
+[Enter-PSSession](../Microsoft.PowerShell.Core/Enter-PSSession.md)
+
 [Find-Package](Find-Package.md)
 
+[Get-Help](../Microsoft.PowerShell.Core/Get-Help.md)
+
+[Get-PackageProvider](Get-PackageProvider.md)
+
+[Get-PackageSource](Get-PackageSource.md)
+
 [Install-Package](Install-Package.md)
+
+[Invoke-Command](../Microsoft.PowerShell.Core/Invoke-Command.md)
 
 [Save-Package](Save-Package.md)
 
