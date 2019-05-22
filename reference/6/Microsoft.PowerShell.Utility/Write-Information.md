@@ -25,7 +25,7 @@ Write-Information [-MessageData] <Object> [[-Tags] <String[]>] [<CommonParameter
 
 The `Write-Information` cmdlet specifies how PowerShell handles information stream data for a command.
 
-Windows PowerShell 5.0 introduces a new, structured information stream (number 6 in Windows PowerShell streams) that you can use to transmit structured data between a script and its callers (or hosting environment).
+Windows PowerShell 5.0 introduces a new, structured information stream (number 6 in PowerShell streams) that you can use to transmit structured data between a script and its callers (or hosting environment).
 `Write-Information` lets you add an informational message to the stream, and specify how PowerShell handles information stream data for a command. Information streams also work for `PowerShell.Streams`, jobs, scheduled jobs, and workflows.
 
 > [!NOTE]

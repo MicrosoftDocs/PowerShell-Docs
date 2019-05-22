@@ -674,8 +674,7 @@ $a.GetType().FullName
 System.String
 ```
 
-If the first value that is assigned to the variable is a string, Windows
-PowerShell treats all operations as string operations and casts new values
+If the first value that is assigned to the variable is a string, PowerShell treats all operations as string operations and casts new values
 to strings. This occurs in the following example:
 
 ```powershell

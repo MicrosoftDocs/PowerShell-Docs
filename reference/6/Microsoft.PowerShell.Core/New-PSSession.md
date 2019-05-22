@@ -296,7 +296,7 @@ identify and authenticate the user on the remote computer.
 ### Example 14: Create multiple sessions using SSH
 
 ```
-PS C:\> $sshConnections = @{ HostName="WinServer1"; UserName="domain\userA"; KeyFilePath="c:\users\UserA\id_rsa" }, @{ HostName="UserB@LinuxServer5"; KeyFilePath="c:\UserB\<path>\id_rsa }
+PS C:\> $sshConnections = @{ HostName="WinServer1"; UserName="domain\userA"; KeyFilePath="c:\users\UserA\id_rsa" }, @{ HostName="UserB@LinuxServer5"; KeyFilePath="c:\UserB\<path>\id_rsa" }
 PS C:\> New-PSSession -SSHConnection $sshConnections
 ```
 
@@ -882,7 +882,7 @@ Accept wildcard characters: False
 Indicates that this cmdlet uses the SSL protocol to establish a connection to the remote computer.
 By default, SSL is not used.
 
-WS-Management encrypts all Windows PowerShell content transmitted over the network.
+WS-Management encrypts all PowerShell content transmitted over the network.
 The *UseSSL* parameter offers an additional protection that sends the data across an HTTPS
 connection instead of an HTTP connection.
 

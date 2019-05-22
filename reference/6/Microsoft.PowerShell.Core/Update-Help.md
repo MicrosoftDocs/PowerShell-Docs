@@ -573,7 +573,7 @@ specified language, it continues silently without displaying an error message. T
 progress details, use the **Verbose** parameter.
 
 The `Update-Help` cmdlet was introduced in Windows PowerShell 3.0. It doesn't work in earlier
-versions of Windows PowerShell. On computers that have both Windows PowerShell 2.0 and Windows
+versions of PowerShell. On computers that have both Windows PowerShell 2.0 and Windows
 PowerShell 3.0, use the `Update-Help` cmdlet in a Windows PowerShell 3.0 session to download and
 update help files. The help files are available to both Windows PowerShell 2.0 and Windows
 PowerShell 3.0.

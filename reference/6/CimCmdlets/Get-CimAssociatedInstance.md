@@ -196,7 +196,7 @@ Specifies the namespace for the CIM operation.
 The default namespace is root/cimv2.
 
 > [!NOTE]
-> You can use tab completion to browse the list of namespaces, because Windows PowerShell gets a
+> You can use tab completion to browse the list of namespaces, because PowerShell gets a
 > list of namespaces from the local WMI server to provide the list of namespaces.
 
 ```yaml

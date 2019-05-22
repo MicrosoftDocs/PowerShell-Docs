@@ -47,7 +47,7 @@ Disconnect-PSSession [-IdleTimeoutSec <Int32>] [-OutputBufferingMode <OutputBuff
 
 ## DESCRIPTION
 
-The `Disconnect-PSSession` cmdlet disconnects a Windows PowerShell session ("PSSession"), such as
+The `Disconnect-PSSession` cmdlet disconnects a PowerShell session ("PSSession"), such as
 one started by using the `New-PSSession` cmdlet, from the current session. As a result, the PSSession
 is in a disconnected state. You can connect to the disconnected PSSession from the current session
 or from another session on the local computer or a different computer.
@@ -161,8 +161,7 @@ affect the ITTask sessions on the other computers.
 The third command uses the `Get-PSSession` cmdlet to get the ITTask sessions. The output shows that
 the ITTask sessions on the Srv2 and Srv30 computers were not affected by the command to disconnect.
 
-The manager logs on to his home computer, connects to his corporate network, starts Windows
-PowerShell, and uses the `Get-PSSession` cmdlet to get the ITTask session on the Srv1 computer. He
+The manager logs on to his home computer, connects to his corporate network, starts PowerShell, and uses the `Get-PSSession` cmdlet to get the ITTask session on the Srv1 computer. He
 uses the credentials of the technician to access the session.
 
 Next, the manager uses the `Connect-PSSession` cmdlet to connect to the ITTask session on the Srv1

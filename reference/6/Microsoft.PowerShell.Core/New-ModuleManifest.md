@@ -497,7 +497,7 @@ Accept wildcard characters: False
 
 Specifies the formatting files (.ps1xml) that run when the module is imported.
 
-When you import a module, Windows PowerShell runs the `Update-FormatData` cmdlet with the specified
+When you import a module, PowerShell runs the `Update-FormatData` cmdlet with the specified
 files. Because formatting files are not scoped, they affect all session states in the session.
 
 ```yaml
@@ -542,7 +542,7 @@ with the same name.
 If you omit this parameter, `New-ModuleManifest` creates a **GUID** key in the manifest and
 generates a GUID for the value.
 
-To create a new GUID in Windows PowerShell, type "\[guid\]::NewGuid()".
+To create a new GUID in PowerShell, type "\[guid\]::NewGuid()".
 
 ```yaml
 Type: Guid
@@ -774,7 +774,7 @@ Accept wildcard characters: False
 
 ### -PowerShellVersion
 
-Specifies the minimum version of Windows PowerShell that works with this module.
+Specifies the minimum version of PowerShell that works with this module.
 For example, you can enter 3.0, 4.0, or 5.0 as the value of this parameter.
 
 ```yaml
@@ -881,7 +881,7 @@ Accept wildcard characters: False
 ### -RequiredModules
 
 Specifies modules that must be in the global session state. If the required modules are not in the
-global session state, Windows PowerShell imports them. If the required modules are not available,
+global session state, PowerShell imports them. If the required modules are not available,
 the `Import-Module` command fails.
 
 Enter each module name as a string or as a hash table with **ModuleName** and **ModuleVersion**
@@ -942,7 +942,7 @@ Accept wildcard characters: False
 
 Specifies the type files (.ps1xml) that run when the module is imported.
 
-When you import the module, Windows PowerShell runs the `Update-TypeData` cmdlet with the specified
+When you import the module, PowerShell runs the `Update-TypeData` cmdlet with the specified
 files. Because type files are not scoped, they affect all session states in the session.
 
 ```yaml

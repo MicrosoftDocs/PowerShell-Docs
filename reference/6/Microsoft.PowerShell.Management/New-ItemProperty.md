@@ -83,7 +83,7 @@ registry entry ("NoOfLocations"), and its value (3), to the "MyCompany" key.
 Get-Item -Path "HKLM:\Software\MyCompany" | New-ItemProperty -Name NoOfLocations -Value 3
 ```
 
-This command works because the parameter-binding feature of Windows PowerShell associates the path
+This command works because the parameter-binding feature of PowerShell associates the path
 of the `RegistryKey` object that `Get-Item` returns with the **LiteralPath** parameter of
 `New-ItemProperty`.
 For more information, see [about_Pipelines](../Microsoft.PowerShell.Core/About/about_pipelines.md).
