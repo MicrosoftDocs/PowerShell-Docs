@@ -145,7 +145,7 @@ the `New-Item` cmdlet only when you are in the `Alias:` drive. The dot (`.`)
 indicates the current directory, which is the alias drive.
 
 ```
-Alias:\> New-Item -Path . -Name serv -Value Get-Service -Options "AllScope"
+PS Alias:\> New-Item -Path . -Name serv -Value Get-Service -Options "AllScope"
 ```
 
 ### Create an alias with an absolute path
