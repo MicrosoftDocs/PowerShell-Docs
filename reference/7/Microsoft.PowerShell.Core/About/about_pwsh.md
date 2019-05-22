@@ -24,6 +24,7 @@ pwsh[.exe]
 [-EncodedCommand <Base64EncodedCommand>]
 [-ExecutionPolicy <ExecutionPolicy>]
 [-InputFormat {Text | XML}]
+[-LoadProfile]
 [-NoExit]
 [-NoLogo]
 [-NonInteractive]
@@ -98,6 +99,11 @@ as the following: -File .\\Get-Script.ps1 {-All:$False}.
 
 Describes the format of data sent to PowerShell. Valid values are "Text" (text
 strings) or "XML" (serialized CLIXML format).
+
+#### -LoadProfile
+
+Load the PowerShell profiles.  This is the default behavior even if this switch
+is not specified.
 
 #### -NoExit
 
