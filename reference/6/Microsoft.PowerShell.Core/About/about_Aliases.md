@@ -146,8 +146,10 @@ Get-Alias returns only one type of object, an AliasInfo object
 include a hyphen, such as "cd" are displayed in the following format:
 
 ```powershell
-PS C:\> Get-Alias ac
+Get-Alias ac
+```
 
+```Output
 CommandType     Name                    Version    Source
 -----------     ----                    -------    ------
 Alias           ac -> Add-Content

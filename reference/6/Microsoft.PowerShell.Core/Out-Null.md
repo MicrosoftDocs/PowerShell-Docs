@@ -28,8 +28,8 @@ preventing the output to be displayed at the screen.
 
 ### Example 1: Delete output
 
-```
-PS C:\> Get-ChildItem | Out-Null
+```powershell
+Get-ChildItem | Out-Null
 ```
 
 This command gets items in the current location/directory, but its output is not passed through

@@ -48,8 +48,11 @@ This cmdlet was introduced in Windows PowerShell 3.0.
 
 ### Example 1: Generate a default transport option
 
+```powershell
+New-PSTransportOption
 ```
-PS C:\> New-PSTransportOption
+
+```Output
 ProcessIdleTimeoutSec           :
 MaxIdleTimeoutSec               :
 MaxSessions                     :
@@ -67,15 +70,15 @@ The output shows that the cmdlet generates a transport option object that has nu
 
 ### Example 2: Get session configuration options
 
+This example shows how to use a transport options object to set session configuration options.
+
+```powershell
+$t = New-PSTransportOption -MaxSessions 40
+Register-PSSessionConfiguration -Name ITTasks -TransportOption $t
+Get-PSSessionConfiguration -Name ITTasks | Format-List -Property *
 ```
-The first command uses the **New-PSTransportOption** cmdlet to create a transport options object, which it saves in the $t variable. The command uses the *MaxSessions* parameter to increase the maximum number of sessions to 40.
-PS C:\> $t = New-PSTransportOption -MaxSessions 40
 
-The second command uses the **Register-PSSessionConfiguration** cmdlet create the ITTasks session configuration. The command uses the *TransportOption* parameter to specify the transport options object in the $t variable.
-PS C:\> Register-PSSessionConfiguration -Name ITTasks -TransportOption $t
-
-The third command uses the Get-PSSessionConfiguration cmdlet to get the ITTasks session configurations and the Format-List cmdlet to display all of the properties of the session configuration object in a list. The output shows that the value of the **MaxShells** property of the session configuration is 40.
-PS C:\> Get-PSSessionConfiguration -Name ITTasks | Format-List -Property *
+```Output
 Architecture                  : 64
 Filename                      : %windir%\system32\pwrshplugin.dll
 ResourceUri                   : http://schemas.microsoft.com/powershell/ITTasks
@@ -106,22 +109,31 @@ MaxShellsPerUser              : 25
 Permission                    :
 ```
 
-This example shows how to use a transport options object to set session configuration options.
+The first command uses the **New-PSTransportOption** cmdlet to create a transport options object,
+which it saves in the $t variable. The command uses the *MaxSessions* parameter to increase the
+maximum number of sessions to 40.
+
+The second command uses the **Register-PSSessionConfiguration** cmdlet create the ITTasks session
+configuration. The command uses the *TransportOption* parameter to specify the transport options
+object in the $t variable.
+
+The third command uses the Get-PSSessionConfiguration cmdlet to get the ITTasks session
+configurations and the Format-List cmdlet to display all of the properties of the session
+configuration object in a list. The output shows that the value of the **MaxShells** property of the
+session configuration is 40.
 
 ### Example 3: Setting a transport option
 
+This command shows the effect of setting a transport option in a session configuration on the sessions that use the session configuration.
+
+```powershell
+$t = New-PSTransportOption -IdleTimeoutSec 3600
+Set-PSSessionConfiguration -Name ITTasks -TransportOption $t
+$s = New-PSSession -Name MyITTasks -ConfigurationName ITTasks
+$s | Format-List -Property *
 ```
-The first command uses the **New-PSTransportOption** cmdlet to create a transport option object. The command uses the *IdleTimeoutSec* parameter to set the **IdleTimeoutSec** property value of the object to one hour (3600 seconds). The command saves the transport objects object in the $t variable.
-PS C:\> $t = New-PSTransportOption -IdleTimeoutSec 3600
 
-The second command uses the Set-PSSessionConfiguration cmdlet to change the transport options of the ITTasks session configuration. The command uses the *TransportOption* parameter to specify the transport options object in the $t variable.
-PS C:\> Set-PSSessionConfiguration -Name ITTasks -TransportOption $t
-
-The third command uses the New-PSSession cmdlet to create the MyITTasks session on the local computer. The command uses the **ConfigurationName** property to specify the ITTasks session configuration. The command saves the session in the $s variable.Notice that the command does not use the *SessionOption* parameter of **New-PSSession** to set a custom idle time-out for the session. If it did, the idle time-out value set in the session option would take precedence over the idle time-out set in the session configuration.
-PS C:\> $s = New-PSSession -Name MyITTasks -ConfigurationName ITTasks
-
-The fourth command uses the Format-List cmdlet to display all properties of the session in the $s variable in a list. The output shows that the session has an idle time-out of one hour (360,000 milliseconds).
-PS C:\> $s | Format-List -Property *
+```Output
 State                  : Opened
 IdleTimeout            : 3600000
 OutputBufferingMode    : Block
@@ -135,7 +147,25 @@ ApplicationPrivateData : {PSVersionTable}
 Runspace               : System.Management.Automation.RemoteRunspace
 ```
 
-This command shows the effect of setting a transport option in a session configuration on the sessions that use the session configuration.
+The first command uses the **New-PSTransportOption** cmdlet to create a transport option object. The
+command uses the *IdleTimeoutSec* parameter to set the **IdleTimeoutSec** property value of the
+object to one hour (3600 seconds). The command saves the transport objects object in the $t
+variable.
+
+The second command uses the Set-PSSessionConfiguration cmdlet to change the transport options of the
+ITTasks session configuration. The command uses the *TransportOption* parameter to specify the
+transport options object in the $t variable.
+
+The third command uses the New-PSSession cmdlet to create the MyITTasks session on the local
+computer. The command uses the **ConfigurationName** property to specify the ITTasks session
+configuration. The command saves the session in the $s variable.Notice that the command does not use
+the *SessionOption* parameter of **New-PSSession** to set a custom idle time-out for the session. If
+it did, the idle time-out value set in the session option would take precedence over the idle
+time-out set in the session configuration.
+
+The fourth command uses the Format-List cmdlet to display all properties of the session in the $s
+variable in a list. The output shows that the session has an idle time-out of one hour (360,000
+milliseconds).
 
 ## PARAMETERS
 
