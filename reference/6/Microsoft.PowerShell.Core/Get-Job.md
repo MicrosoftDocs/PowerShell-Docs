@@ -213,7 +213,7 @@ object to **Receive-Job**.
 This example demonstrates that the **Get-Job** cmdlet can get all of the jobs that were started in
 the current session, even if they were started by using different methods.
 
-```
+```powershell
 Start-Job -ScriptBlock {Get-EventLog System}
 Invoke-Command -ComputerName S1 -ScriptBlock {Get-EventLog System} -AsJob
 Invoke-Command -ComputerName S2 -ScriptBlock {Start-Job -ScriptBlock {Get-EventLog System}}
@@ -281,6 +281,7 @@ Reason :
 
 ```powershell
 Get-Job | Format-List -Property *
+```
 
 ```Output
 HasMoreData   : False
