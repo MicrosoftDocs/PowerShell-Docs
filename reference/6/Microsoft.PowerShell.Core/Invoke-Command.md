@@ -195,8 +195,8 @@ For more information about how to set up PowerShell SSH remoting, see [PowerShel
 
 ### Example 1: Run a script on a server
 
-```
-PS C:\> Invoke-Command -FilePath c:\scripts\test.ps1 -ComputerName Server01
+```powershell
+Invoke-Command -FilePath c:\scripts\test.ps1 -ComputerName Server01
 ```
 
 This command runs the Test.ps1 script on the Server01 computer.
@@ -206,8 +206,8 @@ The script runs on the remote computer and the results are returned to the local
 
 ### Example 2: Run a command on a remote server
 
-```
-PS C:\> Invoke-Command -ComputerName server01 -Credential domain01\user01 -ScriptBlock {Get-Culture}
+```powershell
+Invoke-Command -ComputerName server01 -Credential domain01\user01 -ScriptBlock {Get-Culture}
 ```
 
 This command runs a Get-Culture command on the Server01 remote computer.
@@ -223,9 +223,9 @@ It then runs the command on the Server01 computer and returns the result.
 
 ### Example 3: Run a command in a persistent connection
 
-```
-PS C:\> $s = New-PSSession -ComputerName Server02 -Credential Domain01\User01
-PS C:\> Invoke-Command -Session $s -ScriptBlock {Get-Culture}
+```powershell
+$s = New-PSSession -ComputerName Server02 -Credential Domain01\User01
+Invoke-Command -Session $s -ScriptBlock {Get-Culture}
 ```
 
 This example runs the same **Get-Culture** command in a session, which is a persistent connection,
@@ -242,13 +242,15 @@ In response, PowerShell runs the command in the session on the Server02 computer
 
 ### Example 4: Use a session to run a series of commands that share data
 
+```powershell
+Invoke-Command -ComputerName Server02 -ScriptBlock {$p = Get-Process PowerShell}
+Invoke-Command -ComputerName Server02 -ScriptBlock {$p.VirtualMemorySize}
+$s = New-PSSession -ComputerName Server02
+Invoke-Command -Session $s -ScriptBlock {$p = Get-Process PowerShell}
+Invoke-Command -Session $s -ScriptBlock {$p.VirtualMemorySize}
 ```
-PS C:\> Invoke-Command -ComputerName Server02 -ScriptBlock {$p = Get-Process PowerShell}
-PS C:\> Invoke-Command -ComputerName Server02 -ScriptBlock {$p.VirtualMemorySize}
-PS C:\>
-PS C:\> $s = New-PSSession -ComputerName Server02
-PS C:\> Invoke-Command -Session $s -ScriptBlock {$p = Get-Process PowerShell}
-PS C:\> Invoke-Command -Session $s -ScriptBlock {$p.VirtualMemorySize}
+
+```Output
 17930240
 ```
 
@@ -282,9 +284,9 @@ remains active in the $s session for later use.
 
 ### Example 5: Enter a command stored in a local variable
 
-```
-PS C:\> $command = { Get-EventLog -log "Windows PowerShell" | where {$_.Message -like "*certificate*"} }
-PS C:\> Invoke-Command -ComputerName S1, S2 -ScriptBlock $command
+```powershell
+$command = { Get-EventLog -log "Windows PowerShell" | where {$_.Message -like "*certificate*"} }
+Invoke-Command -ComputerName S1, S2 -ScriptBlock $command
 ```
 
 This example shows how to enter a command that is stored in a local variable.
@@ -302,8 +304,8 @@ computers.
 
 ### Example 6: Run a single command on several computers
 
-```
-PS C:\> Invoke-Command -ComputerName Server01, Server02, TST-0143, localhost -ConfigurationName MySession.PowerShell -ScriptBlock {Get-EventLog "Windows PowerShell"}
+```powershell
+Invoke-Command -ComputerName Server01, Server02, TST-0143, localhost -ConfigurationName MySession.PowerShell -ScriptBlock {Get-EventLog "Windows PowerShell"}
 ```
 
 This example demonstrates how to use **Invoke-Command** to run a single command on multiple
@@ -321,8 +323,8 @@ on each remote computer.
 
 ### Example 7: Get the version of the host program on multiple computers
 
-```
-PS C:\> $version = Invoke-Command -ComputerName (Get-Content Machines.txt) -ScriptBlock {(Get-Host).Version}
+```powershell
+$version = Invoke-Command -ComputerName (Get-Content Machines.txt) -ScriptBlock {(Get-Host).Version}
 ```
 
 This command gets the version of the PowerShell host program running on 200 remote computers.
@@ -342,18 +344,23 @@ $version variable. The output includes the name of the computer from which the d
 
 ### Example 8: Run a background job on several remote computers
 
+```powershell
+$s = New-PSSession -ComputerName Server01, Server02
+Invoke-Command -Session $s -ScriptBlock {Get-EventLog system} -AsJob
 ```
-PS C:\> $s = New-PSSession -ComputerName Server01, Server02
-PS C:\> Invoke-Command -Session $s -ScriptBlock {Get-EventLog system} -AsJob
 
+```Output
 Id   Name    State      HasMoreData   Location           Command
 ---  ----    -----      -----         -----------        ---------------
 1    Job1    Running    True          Server01,Server02  Get-EventLog system
+```
 
-PS C:\> $j = Get-Job
+```powershell
+$j = Get-Job
+$j | Format-List -Property *
+```
 
-PS C:\> $j | Format-List -Property *
-
+```Output
 HasMoreData   : True
 StatusMessage :
 Location      : Server01,Server02
@@ -371,8 +378,10 @@ Verbose       : {}
 Debug         : {}
 Warning       : {}
 StateChanged  :
+```
 
-PS C:\> $results = $j | Receive-Job
+```powershell
+$results = $j | Receive-Job
 ```
 
 These commands run a background job on two remote computers.
@@ -399,9 +408,9 @@ variable.
 
 ### Example 9: Include local variables in a command run on a remote computer
 
-```
-PS C:\> $MWFO_Log = "Microsoft-Windows-Forwarding/Operational"
-PS C:\> Invoke-Command -ComputerName Server01 -ScriptBlock {Get-EventLog -LogName $Using:MWFO_Log -Newest 10}
+```powershell
+$MWFO_Log = "Microsoft-Windows-Forwarding/Operational"
+Invoke-Command -ComputerName Server01 -ScriptBlock {Get-EventLog -LogName $Using:MWFO_Log -Newest 10}
 ```
 
 This example shows how to include the values of local variables in a command run on a remote
@@ -422,16 +431,22 @@ modifier to indicate that it was created in the local session, not in the remote
 
 ### Example 10: Hide the computer name
 
+```powershell
+Invoke-Command -ComputerName S1, S2 -ScriptBlock {Get-Process PowerShell}
 ```
-PS C:\> Invoke-Command -ComputerName S1, S2 -ScriptBlock {Get-Process PowerShell}
 
+```Output
 PSComputerName    Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id   ProcessName
 --------------    -------  ------    -----      ----- -----   ------     --   -----------
 S1                575      15        45100      40988   200     4.68     1392 PowerShell
 S2                777      14        35100      30988   150     3.68     67   PowerShell
+```
 
-PS C:\> Invoke-Command -ComputerName S1, S2 -ScriptBlock {Get-Process PowerShell} -HideComputerName
+```powershell
+Invoke-Command -ComputerName S1, S2 -ScriptBlock {Get-Process PowerShell} -HideComputerName
+```
 
+```Output
 Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id   ProcessName
 -------  ------    -----      ----- -----   ------     --   -----------
 575      15        45100      40988   200     4.68     1392 PowerShell
@@ -454,8 +469,8 @@ affected objects.
 
 ### Example 11: Run a script on all the computers listed in a text file
 
-```
-PS C:\> Invoke-Command -ComputerName (Get-Content Servers.txt) -FilePath C:\Scripts\Sample.ps1 -ArgumentList Process, Service
+```powershell
+Invoke-Command -ComputerName (Get-Content Servers.txt) -FilePath C:\Scripts\Sample.ps1 -ArgumentList Process, Service
 ```
 
 This example uses the **Invoke-Command** cmdlet to run the Sample.ps1 script on all of the computers
@@ -471,9 +486,9 @@ script.
 
 ### Example 12: Run a command on a remote computer by using a URI
 
-```
-PS C:\> $LiveCred = Get-Credential
-PS C:\> Invoke-Command -ConfigurationName Microsoft.Exchange -ConnectionUri https://ps.exchangelabs.com/PowerShell -Credential $LiveCred -Authentication Basic -ScriptBlock {Set-Mailbox Dan -DisplayName "Dan Park"}
+```powershell
+$LiveCred = Get-Credential
+Invoke-Command -ConfigurationName Microsoft.Exchange -ConnectionUri https://ps.exchangelabs.com/PowerShell -Credential $LiveCred -Authentication Basic -ScriptBlock {Set-Mailbox Dan -DisplayName "Dan Park"}
 ```
 
 This example shows how to run a command on a remote computer that is identified by a URI.
@@ -494,10 +509,10 @@ The *ScriptBlock* parameter specifies a script block that contains the command.
 
 ### Example 13: Manage URI redirection in a remote command
 
-```
-PS C:\> $max = New-PSSessionOption -MaximumRedirection 1
+```powershell
+$max = New-PSSessionOption -MaximumRedirection 1
 
-PS C:\> Invoke-Command -ConnectionUri https://ps.exchangelabs.com/PowerShell -ScriptBlock {Get-Mailbox dan} -AllowRedirection -SessionOption $max
+Invoke-Command -ConnectionUri https://ps.exchangelabs.com/PowerShell -ScriptBlock {Get-Mailbox dan} -AllowRedirection -SessionOption $max
 ```
 
 This command shows how to use the *AllowRedirection* and *SessionOption* parameters to manage URI
@@ -520,9 +535,9 @@ the redirection count value of 1 is exceeded, and *Invoke-Command* returns a non
 
 ### Example 14: Use a session option
 
-```
-PS C:\> $so = New-PSSessionOption -SkipCACheck -SkipCNCheck -SkipRevocationCheck
-PS C:\> Invoke-Command -ComputerName server01 -UseSSL -ScriptBlock { Get-HotFix } -SessionOption $so -Credential server01\user01
+```powershell
+$so = New-PSSessionOption -SkipCACheck -SkipCNCheck -SkipRevocationCheck
+Invoke-Command -ComputerName server01 -UseSSL -ScriptBlock { Get-HotFix } -SessionOption $so -Credential server01\user01
 ```
 
 This example shows how to create and use a *SessionOption* parameter.
@@ -538,12 +553,12 @@ The value of the *SessionOption* parameter is the **SessionOption** object in th
 
 ### Example 15: Access a network share in a remote session
 
-```
-PS C:\> Enable-WSManCredSSP -Delegate Server02
-PS C:\> Connect-WSMan Server02
-PS C:\> Set-Item WSMan:\Server02*\Service\Auth\CredSSP -Value $True
-PS C:\> $s = New-PSSession Server02
-PS C:\> Invoke-Command -Session $s -ScriptBlock {Get-Item \\Net03\Scripts\LogFiles.ps1} -Authentication CredSSP -Credential Domain01\Admin01
+```powershell
+Enable-WSManCredSSP -Delegate Server02
+Connect-WSMan Server02
+Set-Item WSMan:\Server02*\Service\Auth\CredSSP -Value $True
+$s = New-PSSession Server02
+Invoke-Command -Session $s -ScriptBlock {Get-Item \\Net03\Scripts\LogFiles.ps1} -Authentication CredSSP -Credential Domain01\Admin01
 ```
 
 This example shows how to access a network share from a remote session.
@@ -575,8 +590,8 @@ of **CredSSP**.
 
 ### Example 16: Start scripts on many remote computers
 
-```
-PS C:\> Invoke-Command -ComputerName (Get-Content Servers.txt) -InDisconnectedSession -FilePath \\Scripts\Public\ConfigInventory.ps1 -SessionOption @{OutputBufferingMode="Drop";IdleTimeout=43200000}
+```powershell
+Invoke-Command -ComputerName (Get-Content Servers.txt) -InDisconnectedSession -FilePath \\Scripts\Public\ConfigInventory.ps1 -SessionOption @{OutputBufferingMode="Drop";IdleTimeout=43200000}
 ```
 
 This command runs a script on more than a hundred computers.
@@ -598,8 +613,8 @@ Receive-PSSession cmdlet.
 
 ### Example 17: Run a command on a remote computer using SSH
 
-```
-PS C:\> Invoke-Command -HostName UserA@LinuxServer01 -ScriptBlock { Get-MailBox * }
+```powershell
+Invoke-Command -HostName UserA@LinuxServer01 -ScriptBlock { Get-MailBox * }
 ```
 
 This example shows how to run a command on a remote computer using Secure Shell (SSH). If SSH is
@@ -608,8 +623,8 @@ Otherwise you will have to use SSH key based user authentication.
 
 ### Example 18: Run a command on a remote computer using SSH and specify a user authentication key
 
-```
-PS C:\> Invoke-Command -HostName UserA@LinuxServer01 -ScriptBlock { Get-MailBox * } -KeyFilePath c:\<path>\userAKey_rsa
+```powershell
+Invoke-Command -HostName UserA@LinuxServer01 -ScriptBlock { Get-MailBox * } -KeyFilePath c:\<path>\userAKey_rsa
 ```
 
 This example shows how to run a command on a remote computer using SSH and specifying a key file for
@@ -618,9 +633,9 @@ remote computer is configured to allow basic password authentication.
 
 ### Example 19: Run a script file on multiple remote computers using SSH as a job
 
-```
-PS C:\> $sshConnections = @{ HostName="WinServer1"; UserName="domain\userA"; KeyFilePath="c:\users\UserA\id_rsa" }, @{ HostName="UserB@LinuxServer5"; KeyFilePath="c:\UserB\<path>\id_rsa }
-PS C:\> $results = Invoke-Command -FilePath c:\Scripts\CollectEvents.ps1 -SSHConnection $sshConnections
+```powershell
+$sshConnections = @{ HostName="WinServer1"; UserName="domain\userA"; KeyFilePath="c:\users\UserA\id_rsa" }, @{ HostName="UserB@LinuxServer5"; KeyFilePath="c:\UserB\<path>\id_rsa }
+$results = Invoke-Command -FilePath c:\Scripts\CollectEvents.ps1 -SSHConnection $sshConnections
 ```
 
 This example shows how to run a script file on multiple remote computers using SSH and the

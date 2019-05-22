@@ -112,8 +112,8 @@ For more information about how to set up PowerShell SSH remoting, see [PowerShel
 
 ### Example 1: Create a session on the local computer
 
-```
-PS C:\> $s = New-PSSession
+```powershell
+$s = New-PSSession
 ```
 
 This command creates a new **PSSession** on the local computer and saves the **PSSession** in the $s
@@ -123,8 +123,8 @@ You can now use this **PSSession** to run commands on the local computer.
 
 ### Example 2: Create a session on a remote computer
 
-```
-PS C:\> $Server01 = New-PSSession -ComputerName Server01
+```powershell
+$Server01 = New-PSSession -ComputerName Server01
 ```
 
 This command creates a new **PSSession** on the Server01 computer and saves it in the $Server01
@@ -135,8 +135,8 @@ This will help you manage the **PSSession** objects in subsequent commands.
 
 ### Example 3: Create sessions on multiple computers
 
-```
-PS C:\> $s1, $s2, $s3 = New-PSSession -ComputerName Server01,Server02,Server03
+```powershell
+$s1, $s2, $s3 = New-PSSession -ComputerName Server01,Server02,Server03
 ```
 
 This command creates three **PSSession** objects, one on each of the computers specified by the
@@ -154,8 +154,8 @@ If there are more variables than objects, the remaining variables are empty (nul
 
 ### Example 4: Create a session with a specified port
 
-```
-PS C:\> New-PSSession -ComputerName Server01 -Port 8081 -UseSSL -ConfigurationName E12
+```powershell
+New-PSSession -ComputerName Server01 -Port 8081 -UseSSL -ConfigurationName E12
 ```
 
 This command creates a new **PSSession** on the Server01 computer that connects to server port 8081
@@ -167,8 +167,8 @@ port 8081. For more information, see the description of the *Port* parameter.
 
 ### Example 5: Create a session based on an existing session
 
-```
-PS C:\> New-PSSession -Session $s -Credential Domain01\User01
+```powershell
+New-PSSession -Session $s -Credential Domain01\User01
 ```
 
 This command creates a **PSSession** with the same properties as an existing **PSSession**.
@@ -180,8 +180,8 @@ the $s variable. It uses the credentials of the Domain1\Admin01 user to complete
 
 ### Example 6: Create a session with a global scope in a different domain
 
-```
-PS C:\> $global:s = New-PSSession -ComputerName Server1.Domain44.Corpnet.Fabrikam.com -Credential Domain01\Admin01
+```powershell
+$global:s = New-PSSession -ComputerName Server1.Domain44.Corpnet.Fabrikam.com -Credential Domain01\Admin01
 ```
 
 This example shows how to create a **PSSession** with a global scope on a computer in a different
@@ -200,8 +200,8 @@ is specified together with the credentials of the user.
 
 ### Example 7: Create sessions for many computers
 
-```
-PS C:\> $rs = Get-Content C:\Test\Servers.txt | New-PSSession -ThrottleLimit 50
+```powershell
+$rs = Get-Content C:\Test\Servers.txt | New-PSSession -ThrottleLimit 50
 ```
 
 This command creates a **PSSession** on each of the 200 computers listed in the Servers.txt file and
@@ -213,8 +213,8 @@ text file, or other text-convertible format.
 
 ### Example 8: Create a session by using a URI
 
-```
-PS C:\> $s = New-PSSession -URI http://Server01:91/NewSession -Credential Domain01\User01
+```powershell
+$s = New-PSSession -URI http://Server01:91/NewSession -Credential Domain01\User01
 ```
 
 This command creates a **PSSession** on the Server01 computer and stores it in the $s variable.
@@ -225,9 +225,9 @@ session on the remote computer.
 
 ### Example 9: Run a background job in a set of sessions
 
-```
-PS C:\> $s = New-PSSession -ComputerName (Get-Content Servers.txt) -Credential Domain01\Admin01 -ThrottleLimit 16
-PS C:\> Invoke-Command -Session $s -ScriptBlock {Get-Process PowerShell} -AsJob
+```powershell
+$s = New-PSSession -ComputerName (Get-Content Servers.txt) -Credential Domain01\Admin01 -ThrottleLimit 16
+Invoke-Command -Session $s -ScriptBlock {Get-Process PowerShell} -AsJob
 ```
 
 These commands create a set of **PSSession** objects and then run a background job in each of the
@@ -245,13 +245,13 @@ to 16 concurrent connections. The command saves the **PSSession** objects in the
 The second command uses the *AsJob* parameter of the Invoke-Command cmdlet to start a background job
 that runs a `Get-Process PowerShell` command in each of the **PSSession** objects in $s.
 
-For more information about PowerShell background jobs, see [about_Jobs](About/about_Jobs.md) and 
+For more information about PowerShell background jobs, see [about_Jobs](About/about_Jobs.md) and
 [about_Remote_Jobs](About/about_Remote_Jobs.md).
 
 ### Example 10: Create a session for a computer by using its URI
 
-```
-PS C:\> New-PSSession -ConnectionURI https://management.exchangelabs.com/Management
+```powershell
+New-PSSession -ConnectionURI https://management.exchangelabs.com/Management
 ```
 
 This command creates a **PSSession** objects that connects to a computer that is specified by a URI
@@ -259,9 +259,9 @@ instead of a computer name.
 
 ### Example 11: Create a session option
 
-```
-PS C:\> $so = New-PSSessionOption -SkipCACheck
-PS C:\> New-PSSession -ConnectionUri https://management.exchangelabs.com/Management -SessionOption $so -Credential Server01\Admin01
+```powershell
+$so = New-PSSessionOption -SkipCACheck
+New-PSSession -ConnectionUri https://management.exchangelabs.com/Management -SessionOption $so -Credential Server01\Admin01
 ```
 
 This example shows how to create a session option object and use the *SessionOption* parameter.
@@ -275,8 +275,8 @@ The value of the SessionOption parameter is the **SessionOption** object in the 
 
 ### Example 12: Create a session using SSH
 
-```
-PS C:\> New-PSSession -HostName UserA@LinuxServer01
+```powershell
+New-PSSession -HostName UserA@LinuxServer01
 ```
 
 This example shows how to create a new **PSSession** using Secure Shell (SSH). If SSH is configured
@@ -285,8 +285,8 @@ will have to use SSH key based user authentication.
 
 ### Example 13: Create a session using SSH and specify the port and user authentication key
 
-```
-PS C:\> New-PSSession -HostName UserA@LinuxServer01:22 -KeyFilePath c:\<path>\userAKey_rsa
+```powershell
+New-PSSession -HostName UserA@LinuxServer01:22 -KeyFilePath c:\<path>\userAKey_rsa
 ```
 
 This example shows how to create a **PSSession** using Secure Shell (SSH). It uses the *Port*
@@ -295,9 +295,9 @@ identify and authenticate the user on the remote computer.
 
 ### Example 14: Create multiple sessions using SSH
 
-```
-PS C:\> $sshConnections = @{ HostName="WinServer1"; UserName="domain\userA"; KeyFilePath="c:\users\UserA\id_rsa" }, @{ HostName="UserB@LinuxServer5"; KeyFilePath="c:\UserB\<path>\id_rsa" }
-PS C:\> New-PSSession -SSHConnection $sshConnections
+```powershell
+$sshConnections = @{ HostName="WinServer1"; UserName="domain\userA"; KeyFilePath="c:\users\UserA\id_rsa" }, @{ HostName="UserB@LinuxServer5"; KeyFilePath="c:\UserB\<path>\id_rsa" }
+New-PSSession -SSHConnection $sshConnections
 ```
 
 This example shows how to create multiple sessions using Secure Shell (SSH) and the
@@ -556,7 +556,7 @@ Accept wildcard characters: False
 Parameter Sets: ComputerName, Uri, VMName, VMId
 Required: True (VMName, VMId), False (ComputerName, Uri)
 Default value: None
-Aliases: 
+Aliases:
 Type: PSCredential
 ```
 
@@ -1111,7 +1111,7 @@ You can pipe a string, URI, or session object to this cmdlet.
 ## NOTES
 
 * This cmdlet uses the PowerShell remoting infrastructure. To use this cmdlet, the local computer
-and any remote computers must be configured for PowerShell remoting. For more information, see 
+and any remote computers must be configured for PowerShell remoting. For more information, see
 [about_Remote_Requirements](About/about_Remote_Requirements.md).
 * To create a **PSSession** on the local computer, start PowerShell with the Run as administrator
 option.
@@ -1125,7 +1125,7 @@ remoting will work over these platforms where PowerShell and SSH are installed a
 WinRM specific features and limitations do not apply.
   For example WinRM based quotas, session options, custom endpoint configuration, and
 disconnect/reconnect features are currently not supported.
-  For more information about how to set up PowerShell SSH remoting, see 
+  For more information about how to set up PowerShell SSH remoting, see
 [PowerShell Remoting Over SSH](/powershell/scripting/core-powershell/ssh-remoting-in-powershell-core).
 
 ## RELATED LINKS
