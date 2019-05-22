@@ -99,7 +99,7 @@ You can use this WMI and CIM strategy to manage the remote computer.
 ### Example 1: Get modules imported into the current session
 
 ```powershell
-PS> Get-Module
+Get-Module
 ```
 
 This command gets modules that have been imported into the current session.
@@ -107,7 +107,7 @@ This command gets modules that have been imported into the current session.
 ### Example 2: Get installed modules and available modules
 
 ```powershell
-PS> Get-Module -ListAvailable
+Get-Module -ListAvailable
 ```
 
 This command gets the modules that are installed on the computer and can be imported into the
@@ -121,7 +121,7 @@ For more information about **PSModulePath**, see [about_Modules](About/about_Mod
 ### Example 3: Get all exported files
 
 ```powershell
-PS> Get-Module -ListAvailable -All
+Get-Module -ListAvailable -All
 ```
 
 This command gets all of the exported files for all available modules.
@@ -129,8 +129,8 @@ This command gets all of the exported files for all available modules.
 ### Example 4: Get a module by its fully qualified name
 
 ```powershell
-PS> $FullyQualifedName = @{ModuleName="Microsoft.PowerShell.Management";ModuleVersion="3.1.0.0"}
-PS> Get-Module -FullyQualifiedName | Format-Table -Property Name,Version
+$FullyQualifedName = @{ModuleName="Microsoft.PowerShell.Management";ModuleVersion="3.1.0.0"}
+Get-Module -FullyQualifiedName | Format-Table -Property Name,Version
 ```
 
 ```Output
@@ -147,7 +147,7 @@ with **Name** and **Version** as the column headings.
 ### Example 5: Get properties of a module
 
 ```powershell
-PS> Get-Module | Get-Member -MemberType Property | Format-Table Name
+Get-Module | Get-Member -MemberType Property | Format-Table Name
 ```
 
 ```Output
@@ -205,7 +205,7 @@ in Windows PowerShell 3.0.
 ### Example 6: Group all modules by name
 
 ```powershell
-PS> Get-Module -ListAvailable -All | Format-Table -Property Name, Moduletype, Path -Groupby Name
+Get-Module -ListAvailable -All | Format-Table -Property Name, Moduletype, Path -Groupby Name
 ```
 
 ```Output
@@ -254,10 +254,10 @@ contents.
 
 ```powershell
 # First command
-PS> $m = Get-Module -list -Name BitsTransfer
+$m = Get-Module -list -Name BitsTransfer
 
 # Second command
-PS> Get-Content $m.Path
+Get-Content $m.Path
 ```
 
 ```Output
@@ -286,7 +286,7 @@ Path property of the object. The output shows the contents of the module manifes
 ### Example 8: List files in module directory
 
 ```powershell
-PS> dir (Get-Module -ListAvailable FileTransfer).ModuleBase
+dir (Get-Module -ListAvailable FileTransfer).ModuleBase
 ```
 
 ```Output
@@ -306,9 +306,9 @@ Some modules might have help files or ReadMe files that describe the module.
 ### Example 9: Get modules installed on a computer
 
 ```powershell
-PS> $s = New-PSSession -ComputerName Server01
+$s = New-PSSession -ComputerName Server01
 
-PS> Get-Module -PSSession $s -ListAvailable
+Get-Module -PSSession $s -ListAvailable
 ```
 
 These commands get the modules that are installed on the Server01 computer.
@@ -334,22 +334,22 @@ In this example, because the administrator of the computer has installed the Mod
 provider, the CIM commands can use the default values, which are designed for the provider.
 
 ```powershell
-# First command
-PS> $cs = New-CimSession -ComputerName RSDGF03
+$cs = New-CimSession -ComputerName RSDGF03
+Get-Module -CimSession $cs -Name Storage | Import-Module
+Get-Command Get-Disk
+```
 
-# Second command
-PS> Get-Module -CimSession $cs -Name Storage | Import-Module
-
-# Third command
-PS> Get-Command Get-Disk
-
+```Output
 CommandType     Name                  ModuleName
 -----------     ----                  ----------
 Function        Get-Disk              Storage
+```
 
-# Fourth command
-PS> Get-Disk
+```powershell
+Get-Disk
+```
 
+```Output
 Number Friendly Name              OperationalStatus          Total Size Partition Style
 ------ -------------              -----------------          ---------- ---------------
 0      Virtual HD ATA Device      Online                          40 GB MBR

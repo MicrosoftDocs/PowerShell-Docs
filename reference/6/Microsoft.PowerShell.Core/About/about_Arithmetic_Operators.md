@@ -454,7 +454,10 @@ For example, the binary complement of 0 is -1, the maximum unsigned integer
 (0xffffffff), and the binary complement of -1 is 0.
 
 ```powershell
-PS C:\> -bNot 10
+-bNot 10
+```
+
+```Output
 -11
 ```
 

@@ -122,9 +122,9 @@ credentials are needed that have permissions to access the file share and instal
 file share is used, it's possible to update computers that are behind firewalls or aren't connected
 to the internet.
 
-```
-PS> Save-Help -DestinationPath \\Server01\Share\PSHelp -Credential Domain01\Admin01
-PS> Invoke-Command -ComputerName (Get-Content Servers.txt) -ScriptBlock {
+```powershell
+Save-Help -DestinationPath \\Server01\Share\PSHelp -Credential Domain01\Admin01
+Invoke-Command -ComputerName (Get-Content Servers.txt) -ScriptBlock {
      Update-Help -SourcePath \\Server01\Share\PSHelp -Credential Domain01\Admin01
 }
 ```
@@ -192,7 +192,7 @@ information file (*helpinfo.xml) to find the latest version number.
 
 The script uses the **PSCustomObject** class and a hash table to create a custom output object.
 
-```
+```powershell
 # Get-UpdateHelpVersion.ps1
 Param(
     [parameter(Mandatory=$False)]

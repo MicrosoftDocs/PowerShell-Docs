@@ -108,8 +108,8 @@ This cmdlet was introduced in Windows PowerShell 3.0.
 
 ### Example 1: Connect to a PSSession
 
-```
-PS C:\> Receive-PSSession -ComputerName Server01 -Name ITTask
+```powershell
+Receive-PSSession -ComputerName Server01 -Name ITTask
 ```
 
 This command uses the **Receive-PSSession** cmdlet to connect to the ITTask session on the Server01
@@ -119,8 +119,8 @@ Because the command does not use the *OutTarget* parameter, the results appear a
 
 ### Example 2: Get results of all commands on disconnected sessions
 
-```
-PS C:\> Get-PSSession -ComputerName Server01, Server02 | Receive-PSSession
+```powershell
+Get-PSSession -ComputerName Server01, Server02 | Receive-PSSession
 ```
 
 This command gets the results of all commands running in all disconnected sessions on the Server01
@@ -131,8 +131,11 @@ connect to the session and does not return any output or errors.
 
 ### Example 3: Get the results of a script running in a session
 
+```powershell
+Receive-PSSession -ComputerName Server01 -Name ITTask -OutTarget Job -JobName ITTaskJob01 -Credential Domain01\Admin01
 ```
-PS C:\> Receive-PSSession -ComputerName Server01 -Name ITTask -OutTarget Job -JobName ITTaskJob01 -Credential Domain01\Admin01
+
+```Output
 Id     Name            State         HasMoreData     Location
 --     ----            -----         -----------     --------
 16     ITTaskJob01     Running       True            Server01
