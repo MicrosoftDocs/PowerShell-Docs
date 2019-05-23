@@ -11,7 +11,7 @@ title: Get-InstalledModule
 # Get-InstalledModule
 
 ## SYNOPSIS
-Gets installed modules on a computer.
+Gets a list of modules on the computer that were installed by PowerShellGet.
 
 ## SYNTAX
 
@@ -22,7 +22,9 @@ Get-InstalledModule [[-Name] <String[]>] [-MinimumVersion <String>] [-RequiredVe
 
 ## DESCRIPTION
 
-The `Get-InstalledModule` cmdlet gets PowerShell modules that are installed on a computer.
+The `Get-InstalledModule` cmdlet gets PowerShell modules that are installed on a computer using
+PowerShellGet. To see all modules installed on the system, use the `Get-Module -ListAvailable`
+command.
 
 ## EXAMPLES
 
@@ -33,11 +35,11 @@ Get-InstalledModule
 ```
 
 ```Output
-Version    Name                                Type       Repository           Description
--------    ----                                ----       ----------           -----------
-2.0.0      PSGTEST-UploadMultipleVersionOfP... Module     GalleryINT           Module for DAC functionality
-1.3.5      AzureAutomationDebug                Module     PSGallery            Module for debugging Azure Automation runbooks, emulating AA native cmdlets
-1.0.1      AzureRM.Automation                  Module     PSGallery            Microsoft Azure PowerShell - Automation service cmdlets for Azure Resource Manager
+Version    Name                                Type       Repository     Description
+-------    ----                                ----       ----------     -----------
+2.0.0      PSGTEST-UploadMultipleVersionOfP... Module     GalleryINT     Module for DAC functionality
+1.3.5      AzureAutomationDebug                Module     PSGallery      Module for debugging Azure Automation runbooks, emulating AA native cmdlets
+1.0.1      AzureRM.Automation                  Module     PSGallery      Microsoft Azure PowerShell - Automation service cmdlets for Azure Resource Manager
 ```
 
 This command gets all installed modules.
@@ -49,9 +51,9 @@ Get-InstalledModule -Name "AzureRM.Automation" -MinimumVersion 1.0 -MaximumVersi
 ```
 
 ```Output
-Version    Name                                Type       Repository           Description
--------    ----                                ----       ----------           -----------
-1.0.1      AzureRM.Automation                  Module     PSGallery            Microsoft Azure PowerShell - Automation service cmdlets for Azure Resource Manager
+Version    Name                                Type       Repository     Description
+-------    ----                                ----       ----------     -----------
+1.0.1      AzureRM.Automation                  Module     PSGallery      Microsoft Azure PowerShell - Automation service cmdlets for Azure Resource Manager
 ```
 
 This command gets versions of the AzureRM.Automation module from version 1.0 through version 2.0.
@@ -169,6 +171,8 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ## OUTPUTS
+
+### Microsoft.PowerShell.Commands.PSRepositoryItemInfo
 
 ## NOTES
 
