@@ -73,9 +73,9 @@ The following command is functionally equivalent to the command above.
 $job = Get-Process &
 ```
 
-The `&` is called the ampersand background operator.
-For more information on the ampersand background operator,
-see [ampersand background operator](about_Operators.md#ampersand-background-operator-).
+The `&` is called the background job operator.
+For more information on the background job operator,
+see [background job operator](about_Operators.md#background-job-operator-).
 
 You can also use the `Get-Job` cmdlet to get objects that represent the jobs
 started in the current session. `Get-Job` returns the same job object that

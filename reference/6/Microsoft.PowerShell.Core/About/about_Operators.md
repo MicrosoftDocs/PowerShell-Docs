@@ -192,14 +192,13 @@ Hello World!
 
 For more about script blocks, see [about_Script_Blocks](about_Script_Blocks.md).
 
-#### Ampersand background operator `&`
+#### Background job operator `&`
 
-Runs the pipeline before it in a PowerShell job. The ampersand background
-operator acts similarly to the UNIX "ampersand operator" which famously runs
-the command before it as a background process. The ampersand background
-operator is built on top of PowerShell jobs so it shares a lot of functionality
-with `Start-Job`. The following command contains basic usage of the ampersand
-background operator.
+Runs the pipeline before it in a PowerShell job. The background job operator
+acts similarly to the UNIX control operator ampersand (`&`), which runs
+the command before it asynchronously in sub shell as a job. The background job
+operator is functionally equivalent to `Start-Job`. The following example
+demonstrates basic usage of the background job operator.
 
 ```powershell
 Get-Process -Name pwsh &
@@ -212,16 +211,9 @@ This is functionally equivalent to the following usage of
 Start-Job -ScriptBlock {Get-Process -Name pwsh}
 ```
 
-Since it's functionally equivalent to using
-`Start-Job`,
-the ampersand background operator returns a
-`Job`
-object just like
-`Start-Job` does.
-This means that you are able to use
-`Receive-Job` and `Remove-Job`
-just as you would if you had used
-`Start-Job` to start the job.
+Just like `Start-Job`, the background job operator returns a `Job` object.
+This object can be used with `Receive-Job` and `Remove-Job`, just as if you
+had used `Start-Job` to start the job.
 
 ```powershell
 $job = Get-Process -Name pwsh &
