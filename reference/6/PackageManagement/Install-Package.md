@@ -830,7 +830,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-`Install-Package` accepts input from the pipeline.
+### `Install-Package` accepts input from the pipeline.
 
 ## OUTPUTS
 
