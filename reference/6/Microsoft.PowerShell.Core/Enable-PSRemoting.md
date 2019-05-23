@@ -77,7 +77,7 @@ This command configures the computer to receive remote commands.
 The **Force** parameter suppresses the user prompts.
 
 ```powershell
-PS C:\> Enable-PSRemoting -Force
+Enable-PSRemoting -Force
 ```
 
 ### Example 3: Allow remote access on clients
@@ -86,8 +86,8 @@ This example shows how to allow remote access from public networks on client ver
 Windows operating system.
 
 ```powershell
-PS C:\> Enable-PSRemoting -SkipNetworkProfileCheck -Force
-PS C:\> Set-NetFirewallRule -Name "WINRM-HTTP-In-TCP" -RemoteAddress Any
+Enable-PSRemoting -SkipNetworkProfileCheck -Force
+Set-NetFirewallRule -Name "WINRM-HTTP-In-TCP" -RemoteAddress Any
 ```
 
 Before using these commands, analyze the security setting and verify that the computer network will

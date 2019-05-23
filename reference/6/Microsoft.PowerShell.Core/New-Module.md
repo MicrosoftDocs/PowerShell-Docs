@@ -51,9 +51,11 @@ This action adds the dynamic module to the **Get-Module** list, but it does not 
 
 ### Example 1: Create a dynamic module
 
+```powershell
+New-Module -ScriptBlock {function Hello {"Hello!"}}
 ```
-PS C:\> New-Module -ScriptBlock {function Hello {"Hello!"}}
 
+```Output
 Name              : __DynamicModule_2ceb1d0a-990f-45e4-9fe4-89f0f6ead0e5
 Path              : 2ceb1d0a-990f-45e4-9fe4-89f0f6ead0e5
 Description       :
@@ -75,9 +77,11 @@ The command returns a module object that represents the new dynamic module.
 
 ### Example 2: Working with dynamic modules and Get-Module and Get-Command
 
+```powershell
+new-module -scriptblock {function Hello {"Hello!"}}
 ```
-PS C:\> new-module -scriptblock {function Hello {"Hello!"}}
 
+```Output
 Name              : __DynamicModule_2ceb1d0a-990f-45e4-9fe4-89f0f6ead0e5
 Path              : 2ceb1d0a-990f-45e4-9fe4-89f0f6ead0e5
 Description       :
@@ -92,10 +96,15 @@ ExportedCmdlets   : {}
 ExportedFunctions : {[Hello, Hello]}
 ExportedVariables : {}
 NestedModules     : {}
-PS C:\> Get-Module
-PS C:\>
-PS C:\> Get-Command Hello
+```
 
+```powershell
+Get-Module
+
+Get-Command Hello
+```
+
+```Output
 CommandType     Name   Definition
 -----------     ----   ----------
 Function        Hello  "Hello!"
@@ -106,14 +115,20 @@ The members that they export are returned by the **Get-Command** cmdlet.
 
 ### Example 3: Export a variable into the current session
 
+```powershell
+New-Module -ScriptBlock {$SayHelloHelp="Type 'SayHello', a space, and a name."; function SayHello ($name) { "Hello, $name" }; Export-ModuleMember -function SayHello -Variable SayHelloHelp}
+$SayHelloHelp
 ```
-PS C:\> New-Module -ScriptBlock {$SayHelloHelp="Type 'SayHello', a space, and a name."; function SayHello ($name) { "Hello, $name" }; Export-ModuleMember -function SayHello -Variable SayHelloHelp}
 
-PS C:\> $SayHelloHelp
-
+```Output
 Type 'SayHello', a space, and a name.
+```
 
-PS C:\> SayHello Jeffrey
+```powershell
+SayHello Jeffrey
+```
+
+```Output
 Hello, Jeffrey
 ```
 
@@ -124,10 +139,12 @@ The output shows that both the variable and the function were exported into the 
 
 ### Example 4: Make a dynamic module available to Get-Module
 
+```powershell
+New-Module -ScriptBlock {function Hello {"Hello!"}} -name GreetingModule | Import-Module
+Get-Module
 ```
-PS C:\> New-Module -ScriptBlock {function Hello {"Hello!"}} -name GreetingModule | Import-Module
-PS C:\> Get-Module
 
+```Output
 Name              : GreetingModule
 Path              : d54dfdac-4531-4db2-9dec-0b4b9c57a1e5
 Description       :
@@ -142,9 +159,13 @@ ExportedCmdlets   : {}
 ExportedFunctions : {[Hello, Hello]}
 ExportedVariables : {}
 NestedModules     : {}
+```
 
-PS C:\> Get-Command hello
+```powershell
+Get-Command hello
+```
 
+```Output
 CommandType     Name                                                               Definition
 -----------     ----                                                               ----------
 Function        Hello                                                              "Hello!"
@@ -163,10 +184,13 @@ The third command uses the **Get-Command** cmdlet to get the Hello function that
 
 ### Example 5: Generate a custom object that has exported functions
 
+```powershell
+$m = New-Module -ScriptBlock {function Hello ($name) {"Hello, $name"}; function Goodbye ($name) {"Goodbye, $name"}} -AsCustomObject
+$m
+$m | Get-Member
 ```
-PS C:\> $m = New-Module -ScriptBlock {function Hello ($name) {"Hello, $name"}; function Goodbye ($name) {"Goodbye, $name"}} -AsCustomObject
-PS C:\> $m
-PS C:\> $m | Get-Member
+
+```Output
 TypeName: System.Management.Automation.PSCustomObject
 
 Name        MemberType   Definition
@@ -177,11 +201,21 @@ GetType     Method       type GetType()
 ToString    Method       string ToString()
 Goodbye     ScriptMethod System.Object Goodbye();
 Hello       ScriptMethod System.Object Hello();
+```
 
-PS C:\ps-test> $m.goodbye("Jane")
+```powershell
+$m.goodbye("Jane")
+```
+
+```Output
 Goodbye, Jane
+```
 
-PS C:\ps-test> $m.hello("Manoj")
+```powershell
+$m.hello("Manoj")
+```
+
+```Output
 Hello, Manoj
 ```
 
@@ -201,8 +235,11 @@ The fourth and fifth commands use the script method format to call the Hello and
 
 ### Example 6: Get the results of the script block
 
+```powershell
+New-Module -ScriptBlock {function SayHello {"Hello, World!"}; SayHello} -ReturnResult
 ```
-PS C:\> New-Module -ScriptBlock {function SayHello {"Hello, World!"}; SayHello} -ReturnResult
+
+```Output
 Hello, World!
 ```
 

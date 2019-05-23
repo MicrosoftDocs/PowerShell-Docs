@@ -183,8 +183,8 @@ This command displays a list of all help topics available on your system.
 
 ### Example 8: Display a list of conceptual topics
 
-```
-PS C:\> Get-Help about_*
+```powershell
+Get-Help about_*
 ```
 
 This command displays a list of the conceptual topics included in PowerShell help.
@@ -196,8 +196,8 @@ For information about downloading and installing help files in Windows PowerShel
 
 ### Example 9: Search for a word in cmdlet help
 
-```
-PS C:\> Get-Help Add-Member -Full | Out-String -Stream | Select-String -Pattern Clixml
+```powershell
+Get-Help Add-Member -Full | Out-String -Stream | Select-String -Pattern Clixml
 ```
 
 This example shows how to search for a word in particular cmdlet help topic.
@@ -207,8 +207,8 @@ Because the **Get-Help** cmdlet generates a **MamlCommandHelpInfo** object, not 
 
 ### Example 10: Display a list of topics that include a word
 
-```
-PS C:\> Get-Help remoting
+```powershell
+Get-Help remoting
 ```
 
 This command displays a list of topics that include the word remoting.
@@ -219,7 +219,7 @@ When you enter a word that does not appear in any topic title, **Get-Help** disp
 
 ```
 The first command uses the *Path* parameter of **Get-Help** to specify the provider path. This command can be entered at any path location.
-PS C:\> Get-Help Get-Item -Path SQLSERVER:\DataCollection
+PS> Get-Help Get-Item -Path SQLSERVER:\DataCollection
 
 NAME
 
@@ -235,7 +235,7 @@ SYNOPSIS
     ...
 
 The second command uses the Set-Location cmdlet (alias = "cd") to navigate to the provider path. From that location, even without the *Path* parameter, the **Get-Help** command gets the provider-specific help for the **Get-Item** cmdlet.
-PS C:\> cd SQLSERVER:\DataCollection
+PS> cd SQLSERVER:\DataCollection
 SQLSERVER:\DataCollection> Get-Help Get-Item
 
 NAME
@@ -253,7 +253,7 @@ SYNOPSIS
 
 
 The third command shows that a **Get-Help** command in a file system path, and without the *Path* parameter, gets the standard help for the **Get-Item** cmdlet.
-PS C:\> Get-Item
+PS> Get-Item
 
 NAME
 
@@ -274,8 +274,8 @@ For example, for provider-specific online help for the **New-Item** cmdlet in ea
 
 ### Example 12: Display help for a script
 
-```
-PS C:\> Get-Help C:\PS-Test\MyScript.ps1
+```powershell
+Get-Help C:\PS-Test\MyScript.ps1
 ```
 
 This command gets help for the MyScript.ps1 script.

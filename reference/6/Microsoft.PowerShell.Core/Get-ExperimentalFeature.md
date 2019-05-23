@@ -31,7 +31,7 @@ considered complete and any changes can become a breaking change.
 Gets the list of currently registered experimental features and their current state.
 
 ```powershell
-PS C:\> Get-ExperimentalFeature
+Get-ExperimentalFeature
 ```
 
 ```Output

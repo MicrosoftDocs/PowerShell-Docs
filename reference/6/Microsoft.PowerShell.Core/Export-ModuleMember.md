@@ -37,16 +37,16 @@ Even if the command confirms the default values, it demonstrates the intention o
 
 ### Example 1: Export functions and aliases in a script module
 
-```
-PS C:\> Export-ModuleMember -Function * -Alias *
+```powershell
+Export-ModuleMember -Function * -Alias *
 ```
 
 This command exports all the functions and aliases defined in the script module.
 
 ### Example 2: Export specific aliases and functions
 
-```
-PS C:\> Export-ModuleMember -Function Get-Test, New-Test, Start-Test -Alias gtt, ntt, stt
+```powershell
+Export-ModuleMember -Function Get-Test, New-Test, Start-Test -Alias gtt, ntt, stt
 ```
 
 This command exports three aliases and three functions defined in the script module.
@@ -55,8 +55,8 @@ You can use this command format to specify the names of module members.
 
 ### Example 3: Export no members
 
-```
-PS C:\> Export-ModuleMember
+```powershell
+Export-ModuleMember
 ```
 
 This command specifies that no members defined in the script module are exported.
@@ -66,8 +66,8 @@ Users can read and copy module members or use the call operator (&) to invoke mo
 
 ### Example 4: Export a specific variable
 
-```
-PS C:\> Export-ModuleMember -Variable increment
+```powershell
+Export-ModuleMember -Variable increment
 ```
 
 This command exports only the $increment variable from the script module.
@@ -77,8 +77,8 @@ If you want to export a variable, in addition to exporting the functions in a mo
 
 ### Example 5: Multiple export commands
 
-```
-PS C:\> # From TestModule.psm1
+```powershell
+# From TestModule.psm1
 Function New-Test
 {
     Write-Output 'I am New-Test function'
@@ -106,8 +106,8 @@ With the **Export-ModuleMember** commands, only the **New-Test** and **Start-Tes
 
 ### Example 6: Export members in a dynamic module
 
-```
-PS C:\> New-Module -Script {function SayHello {"Hello!"}; Set-Alias Hi SayHello; Export-ModuleMember -Alias Hi -Function SayHello}
+```powershell
+New-Module -Script {function SayHello {"Hello!"}; Set-Alias Hi SayHello; Export-ModuleMember -Alias Hi -Function SayHello}
 ```
 
 This command shows how to use Export-ModuleMember in a dynamic module that is created by using the **New-Module** cmdlet.
@@ -116,9 +116,8 @@ In this example, **Export-ModuleMember** is used to export both the Hi alias and
 
 ### Example 7: Declare and export a function in a single command
 
-```
-PS C:\> # From TestModule.psm1
-
+```powershell
+# From TestModule.psm1
 function Export
 {
   param (
