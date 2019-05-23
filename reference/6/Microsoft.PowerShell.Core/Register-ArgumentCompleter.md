@@ -76,15 +76,15 @@ cmdlet and only returns running services.
 ```powershell
 $s = {
     param($commandName, $parameterName, $wordToComplete, $commandAst, $fakeBoundParameters)
-    $services = Get-Service | Where-Object {$_.Status -eq "Running" }
-    $services | Where-Object { $_.Name -like "$wordToComplete*" } | ForEach-Object {
-        New-Object -Type System.Management.Automation.CompletionResult -ArgumentList $_,
-            $_,
+    $services = Get-Service | Where-Object {$_.Status -eq "Running" -and $_.Name -like "$wordToComplete*"}
+    $services | ForEach-Object {
+        New-Object -Type System.Management.Automation.CompletionResult -ArgumentList $_.Name,
+            $_.Name,
             "ParameterValue",
-            $_
+            $_.Name
     }
 }
-Register-ArgumentCompleter -CommandName dotnet -Native -ScriptBlock $s
+Register-ArgumentCompleter -CommandName Stop-Service -ParameterName Name -ScriptBlock $s
 ```
 
 The first command creates a script block which takes the required parameters which are passed
@@ -95,7 +95,7 @@ Within the script block, the first command retrieves all running services using 
 cmdlet. The services are piped to the `ForEach-Object` cmdlet. The `ForEach-Object` cmdlet creates
 a new
 [`[System.Management.Automation.CompletionResult]`](/dotnet/api/system.management.automation.completionresult) object
-and populates it with the values of the current service (represented by the pipeline variable `$_`).
+and populates it with the name of the current service (represented by the pipeline variable `$_.Name`).
 
 The **CompletionResult** object allows you to provide additional details to each returned value:
 
@@ -193,7 +193,7 @@ Accept wildcard characters: False
 ### -ScriptBlock
 
 Specifies the commands to run to perform tab completion. The script block you provide should return
-the values complete the input. The script block must unroll the values using the pipeline
+the values to complete the input. The script block must unroll the values using the pipeline
 (`ForEach-Object`, `Where-Object`, etc.), or another suitable method. Returning an array of values
 causes PowerShell to treat the entire array as **one** tab completion value.
 
@@ -214,9 +214,9 @@ of the parameters are not important because PowerShell passes in the values *pos
   containing the `$PSBoundParameters` for the cmdlet, before the user pressed
   `<TAB>`. For more information, see [about_Automatic_Variables](./About/about_Automatic_Variables.md).
 
-When you specify the **Native** parameter, the script block should take the following parameters in
-the specified order. The names of the parameters are not important because PowerShell
-passes in the values *positionally*.
+When you specify the **Native** parameter, selecting the `NativeSet` parameter set for this command,
+the script block should take the following parameters in the specified order. The names of the
+parameters are not important because PowerShell passes in the values *positionally*.
 
 - `$commandName` (Position 0) - This parameter is set to the name of the
   command for which the script block is providing tab completion.
