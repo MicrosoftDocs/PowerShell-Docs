@@ -94,7 +94,7 @@ description.
 Within the script block, the first command retrieves all running services using the `Where-Object`
 cmdlet. The services are piped to the `ForEach-Object` cmdlet. The `ForEach-Object` cmdlet creates
 a new
-[`[System.Management.Automation.CompletionResult]`](/dotnet/api/system.management.automation.completionresult) object
+[System.Management.Automation.CompletionResult](/dotnet/api/system.management.automation.completionresult) object
 and populates it with the name of the current service (represented by the pipeline variable `$_.Name`).
 
 The **CompletionResult** object allows you to provide additional details to each returned value:
@@ -134,7 +134,7 @@ description.
 
 Within the script block, the `dotnet complete` command is used to perform the tab completion.
 The results are piped to the `ForEach-Object` cmdlet which use the **new** static method of the
-[`[System.Management.Automation.CompletionResult]`](/dotnet/api/system.management.automation.completionresult) class
+[System.Management.Automation.CompletionResult](/dotnet/api/system.management.automation.completionresult) class
 to create a new **CompletionResult** object for each value.
 
 ## PARAMETERS
@@ -193,11 +193,11 @@ Accept wildcard characters: False
 ### -ScriptBlock
 
 Specifies the commands to run to perform tab completion. The script block you provide should return
-the values to complete the input. The script block must unroll the values using the pipeline
+the values that complete the input. The script block must unroll the values using the pipeline
 (`ForEach-Object`, `Where-Object`, etc.), or another suitable method. Returning an array of values
 causes PowerShell to treat the entire array as **one** tab completion value.
 
-The script block should also accept the following parameters in the order specified below. The names
+The script block must accept the following parameters in the order specified below. The names
 of the parameters are not important because PowerShell passes in the values *positionally*.
 
 - `$commandName` (Position 0) - This parameter is set to the name of the
@@ -215,7 +215,7 @@ of the parameters are not important because PowerShell passes in the values *pos
   `<TAB>`. For more information, see [about_Automatic_Variables](./About/about_Automatic_Variables.md).
 
 When you specify the **Native** parameter, selecting the `NativeSet` parameter set for this command,
-the script block should take the following parameters in the specified order. The names of the
+the script block must take the following parameters in the specified order. The names of the
 parameters are not important because PowerShell passes in the values *positionally*.
 
 - `$commandName` (Position 0) - This parameter is set to the name of the
