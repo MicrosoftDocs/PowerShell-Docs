@@ -3,7 +3,7 @@ external help file: PSModule-help.xml
 keywords: powershell,cmdlet
 locale: en-us
 Module Name: PowerShellGet
-ms.date: 06/09/2017
+ms.date: 05/23/2019
 online version: http://go.microsoft.com/fwlink/?LinkId=821660
 schema: 2.0.0
 title: Get-InstalledModule
