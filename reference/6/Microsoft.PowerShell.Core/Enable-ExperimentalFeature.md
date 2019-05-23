@@ -33,7 +33,7 @@ file is updated for the user to enable that feature once PowerShell is restarted
 Upon success nothing is output to the pipeline and only a warning message is displayed.
 
 ```powershell
-PS C:\> Enable-ExperimentalFeature PSImplicitRemotingBatching
+Enable-ExperimentalFeature PSImplicitRemotingBatching
 ```
 
 ```Output

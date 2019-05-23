@@ -77,25 +77,19 @@ If you have saved the *PSSession* in a variable, the session object remains in t
 
 ### Example 1: Remove sessions by using IDs
 
-```
-PS C:\> Remove-PSSession -Id 1, 2
+```powershell
+Remove-PSSession -Id 1, 2
 ```
 
 This command removes the **PSSessions** that have IDs 1 and 2.
 
 ### Example 2: Remove all the sessions in the current session
 
-```
-PS C:\> Get-PSSession | Remove-PSSession
-
-- or -
-
-PS C:\> Remove-PSSession -Session (Get-PSSession)
-
-- or -
-
-PS C:\> $s = Get-PSSession
-PS C:\> Remove-PSSession -Session $s
+```powershell
+Get-PSSession | Remove-PSSession
+Remove-PSSession -Session (Get-PSSession)
+$s = Get-PSSession
+Remove-PSSession -Session $s
 ```
 
 These commands remove all of the **PSSessions** in the current session.
@@ -103,17 +97,17 @@ Although the three command formats look different, they have the same effect.
 
 ### Example 3: Close sessions by using names
 
-```
-PS C:\> $r = Get-PSSession -ComputerName Serv*
-PS C:\> $r | Remove-PSSession
+```powershell
+$r = Get-PSSession -ComputerName Serv*
+$r | Remove-PSSession
 ```
 
 These commands close the **PSSessions** that are connected to computers that have names that begin with Serv.
 
 ### Example 4: Close sessions connected to a port
 
-```
-PS C:\> Get-PSSession | where {$_.port -eq 90} | Remove-PSSession
+```powershell
+Get-PSSession | where {$_.port -eq 90} | Remove-PSSession
 ```
 
 This command closes the **PSSessions** that are connected to port 90.
@@ -121,8 +115,11 @@ You can use this command format to identify **PSSessions** by properties other t
 
 ### Example 5: Close a session based on instance ID
 
+```powershell
+Get-PSSession | Format-Table ComputerName, InstanceID  -AutoSize
 ```
-PS C:\> Get-PSSession | Format-Table ComputerName, InstanceID  -AutoSize
+
+```Output
 ComputerName InstanceId
 ------------ ----------------
 Server01     875d231b-2788-4f36-9f67-2e50d63bb82a
@@ -144,8 +141,8 @@ The second command uses the **Remove-PSSession** cmdlet to remove the *PSSession
 
 ### Example 6: Create a function that deletes all sessions in the current session
 
-```
-PS C:\> Function EndPSS { Get-PSSession | Remove-PSSession }
+```powershell
+Function EndPSS { Get-PSSession | Remove-PSSession }
 ```
 
 This function deletes all of the **PSSessions** in the current session.

@@ -225,7 +225,7 @@ remote computer.
 This example is useful for setting the value of the `$PSSessionConfigurationName` preference
 variable, which takes a resource URI.
 
-```
+```powershell
 (Get-PSSessionConfiguration -Name CustomShell).resourceURI
 ```
 

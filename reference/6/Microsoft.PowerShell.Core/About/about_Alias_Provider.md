@@ -95,7 +95,7 @@ This command gets the list of all the aliases when the current location is the
 of the current location.
 
 ```powershell
-PS Alias:\> Get-Item -Path *
+Get-Item -Path *
 ```
 
 In the `Alias:` drive, a dot `.`, which represents the current location, and a
@@ -144,11 +144,8 @@ option on the alias. The `-Options` parameter is available in
 the `New-Item` cmdlet only when you are in the `Alias:` drive. The dot (`.`)
 indicates the current directory, which is the alias drive.
 
-```powershell
-PS Alias:\> New-Item -Path . `
-                     -Name serv `
-                     -Value Get-Service `
-                     -Options "AllScope"
+```
+PS Alias:\> New-Item -Path . -Name serv -Value Get-Service -Options "AllScope"
 ```
 
 ### Create an alias with an absolute path

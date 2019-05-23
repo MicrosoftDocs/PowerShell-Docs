@@ -112,8 +112,8 @@ cmdlet, or type `exit`.
 ### Example 1: Start an interactive session
 
 ```
-PS C:\> Enter-PSSession
-[localhost]: PS C:\>
+PS> Enter-PSSession
+[localhost]: PS>
 ```
 
 This command starts an interactive session on the local computer.
@@ -127,7 +127,7 @@ session as text.
 ```
 The first command uses the **Enter-PSSession** cmdlet to start an interactive session with Server01, a remote computer. When the session starts, the command prompt changes to include the computer name.
 PS C:\> Enter-PSSession -ComputerName Server01
-[Server01]: PS C:\>
+[Server01]: PS>
 
 The second command gets the PowerShell process and redirects the output to the Process.txt file. The command is submitted to the remote computer, and the file is saved on the remote computer.
 [Server01]: PS C:\> Get-Process PowerShell > C:\ps-test\Process.txt
@@ -148,9 +148,9 @@ This command shows how to work in an interactive session with a remote computer.
 ### Example 3: Use the Session parameter
 
 ```
-PS C:\> $s = New-PSSession -ComputerName Server01
-PS C:\> Enter-PSSession -Session $s
-[Server01]: PS C:\>
+PS> $s = New-PSSession -ComputerName Server01
+PS> Enter-PSSession -Session $s
+[Server01]: PS>
 ```
 
 These commands use the *Session* parameter of **Enter-PSSession** to run the interactive session in
@@ -159,8 +159,8 @@ an existing PowerShell session (**PSSession**).
 ### Example 4: Start an interactive session and specify the Port and Credential parameters
 
 ```
-PS C:\> Enter-PSSession -ComputerName Server01 -Port 90 -Credential Domain01\User01
-[Server01]: PS C:\>
+PS> Enter-PSSession -ComputerName Server01 -Port 90 -Credential Domain01\User01
+[Server01]: PS>
 ```
 
 This command starts an interactive session with the Server01 computer.
@@ -170,9 +170,9 @@ account of a user who has permission to connect to the remote computer.
 ### Example 5: Stop an interactive session
 
 ```
-PS C:\> Enter-PSSession -ComputerName Server01
-[Server01]: PS C:\> Exit-PSSession
-PS C:\>
+PS> Enter-PSSession -ComputerName Server01
+[Server01]: PS> Exit-PSSession
+PS>
 ```
 
 This example shows how to start and stop an interactive session.
@@ -186,17 +186,17 @@ You can also use the **Exit** keyword to end the interactive session.
 ### Example 6: Start an interactive session using SSH
 
 ```
-PS C:\> Enter-PSSession -HostName UserA@LinuxServer01
+PS> Enter-PSSession -HostName UserA@LinuxServer01
 ```
 
 This example shows how to start an interactive session using Secure Shell (SSH). If SSH is
-configured on the remote computer to prompt for passwords then you will get a password prompt. 
+configured on the remote computer to prompt for passwords then you will get a password prompt.
 Otherwise you will have to use SSH key based user authentication.
 
 ### Example 7: Start an interactive session using SSH and specify the Port and user authentication key
 
 ```
-PS C:\> Enter-PSSession -HostName UserA@LinuxServer02:22 -KeyFilePath c:\<path>\userAKey_rsa
+PS> Enter-PSSession -HostName UserA@LinuxServer02:22 -KeyFilePath c:\<path>\userAKey_rsa
 ```
 
 This example shows how to start an interactive session using SSH. It uses the *Port* parameter to
@@ -454,7 +454,7 @@ Accept wildcard characters: False
 Parameter Sets: ComputerName, Uri, VMId, VMName
 Required: True (VMId, VMName), False (ComputerName, Uri)
 Default value: None
-Aliases: 
+Aliases:
 Type: PSCredential
 ```
 
@@ -902,7 +902,7 @@ remoting will work over these platforms where PowerShell and SSH are installed a
 WinRM specific features and limitations do not apply.
   For example WinRM based quotas, session options, custom endpoint configuration, and
 disconnect/reconnect features are currently not supported.
-  For more information about how to set up PowerShell SSH remoting, see 
+  For more information about how to set up PowerShell SSH remoting, see
 [PowerShell Remoting Over SSH](/powershell/scripting/core-powershell/ssh-remoting-in-powershell-core).
 
 ## RELATED LINKS
