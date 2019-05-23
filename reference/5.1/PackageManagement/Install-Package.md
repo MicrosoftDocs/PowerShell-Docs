@@ -3,7 +3,7 @@ external help file: Microsoft.PowerShell.PackageManagement.dll-Help.xml
 keywords: powershell,cmdlet
 locale: en-us
 Module Name: PackageManagement
-ms.date: 06/09/2017
+ms.date: 5/23/2019
 online version: http://go.microsoft.com/fwlink/?LinkID=517138
 schema: 2.0.0
 title: Install-Package
@@ -17,114 +17,148 @@ Installs one or more software packages.
 ## SYNTAX
 
 ### PackageBySearch (Default)
+
 ```
 Install-Package [-Name] <String[]> [-RequiredVersion <String>] [-MinimumVersion <String>]
- [-MaximumVersion <String>] [-Source <String[]>] [-Credential <PSCredential>] [-Proxy <Uri>]
- [-ProxyCredential <PSCredential>] [-AllVersions] [-Force] [-ForceBootstrap] [-WhatIf] [-Confirm]
- [-ProviderName <String[]>] [<CommonParameters>]
+[-MaximumVersion <String>] [-Source <String[]>] [-Credential <PSCredential>] [-Proxy <Uri>]
+[-ProxyCredential <PSCredential>] [-AllVersions] [-Force] [-ForceBootstrap] [-WhatIf] [-Confirm]
+[-ProviderName <String[]>] [<CommonParameters>]
 ```
 
 ### PackageByInputObject
+
 ```
 Install-Package [-InputObject] <SoftwareIdentity[]> [-Credential <PSCredential>] [-Proxy <Uri>]
- [-ProxyCredential <PSCredential>] [-AllVersions] [-Force] [-ForceBootstrap] [-WhatIf] [-Confirm]
- [<CommonParameters>]
-```
-
-### Programs:PackageBySearch
-```
-Install-Package [-Credential <PSCredential>] [-Proxy <Uri>] [-ProxyCredential <PSCredential>] [-AllVersions]
- [-Force] [-ForceBootstrap] [-WhatIf] [-Confirm] [-IncludeWindowsInstaller] [-IncludeSystemComponent]
- [<CommonParameters>]
-```
-
-### Programs:PackageByInputObject
-```
-Install-Package [-Credential <PSCredential>] [-Proxy <Uri>] [-ProxyCredential <PSCredential>] [-AllVersions]
- [-Force] [-ForceBootstrap] [-WhatIf] [-Confirm] [-IncludeWindowsInstaller] [-IncludeSystemComponent]
- [<CommonParameters>]
-```
-
-### msi:PackageBySearch
-```
-Install-Package [-Credential <PSCredential>] [-Proxy <Uri>] [-ProxyCredential <PSCredential>] [-AllVersions]
- [-Force] [-ForceBootstrap] [-WhatIf] [-Confirm] [-AdditionalArguments <String[]>] [<CommonParameters>]
-```
-
-### msi:PackageByInputObject
-```
-Install-Package [-Credential <PSCredential>] [-Proxy <Uri>] [-ProxyCredential <PSCredential>] [-AllVersions]
- [-Force] [-ForceBootstrap] [-WhatIf] [-Confirm] [-AdditionalArguments <String[]>] [<CommonParameters>]
+[-ProxyCredential <PSCredential>] [-AllVersions] [-Force] [-ForceBootstrap] [-WhatIf] [-Confirm]
+[<CommonParameters>]
 ```
 
 ### NuGet:PackageBySearch
+
 ```
-Install-Package [-Credential <PSCredential>] [-Proxy <Uri>] [-ProxyCredential <PSCredential>] [-AllVersions]
- [-Force] [-ForceBootstrap] [-WhatIf] [-Confirm] [-ConfigFile <String>] [-SkipValidate] [-Headers <String[]>]
- [-FilterOnTag <String[]>] [-Contains <String>] [-AllowPrereleaseVersions] [-Destination <String>]
- [-ExcludeVersion] [-Scope <String>] [-SkipDependencies] [<CommonParameters>]
+Install-Package [-Credential <PSCredential>] [-Proxy <Uri>] [-ProxyCredential <PSCredential>]
+[-AllVersions] [-Force] [-ForceBootstrap] [-WhatIf] [-Confirm] [-ConfigFile <String>]
+[-SkipValidate] [-Headers <String[]>] [-FilterOnTag <String[]>] [-Contains <String>]
+[-AllowPrereleaseVersions] [-Destination <String>] [-ExcludeVersion] [-Scope <String>]
+[-SkipDependencies] [<CommonParameters>]
 ```
 
 ### NuGet:PackageByInputObject
+
 ```
-Install-Package [-Credential <PSCredential>] [-Proxy <Uri>] [-ProxyCredential <PSCredential>] [-AllVersions]
- [-Force] [-ForceBootstrap] [-WhatIf] [-Confirm] [-ConfigFile <String>] [-SkipValidate] [-Headers <String[]>]
- [-FilterOnTag <String[]>] [-Contains <String>] [-AllowPrereleaseVersions] [-Destination <String>]
- [-ExcludeVersion] [-Scope <String>] [-SkipDependencies] [<CommonParameters>]
+Install-Package [-Credential <PSCredential>] [-Proxy <Uri>] [-ProxyCredential <PSCredential>]
+[-AllVersions] [-Force] [-ForceBootstrap] [-WhatIf] [-Confirm] [-ConfigFile <String>]
+[-SkipValidate] [-Headers <String[]>] [-FilterOnTag <String[]>] [-Contains <String>]
+[-AllowPrereleaseVersions] [-Destination <String>] [-ExcludeVersion] [-Scope <String>]
+[-SkipDependencies] [<CommonParameters>]
 ```
 
 ### PowerShellGet:PackageBySearch
+
 ```
-Install-Package [-Credential <PSCredential>] [-Proxy <Uri>] [-ProxyCredential <PSCredential>] [-AllVersions]
- [-Force] [-ForceBootstrap] [-WhatIf] [-Confirm] [-AllowPrereleaseVersions] [-Scope <String>]
- [-PackageManagementProvider <String>] [-PublishLocation <String>] [-ScriptSourceLocation <String>]
- [-ScriptPublishLocation <String>] [-Type <String>] [-Filter <String>] [-Tag <String[]>] [-Includes <String[]>]
- [-DscResource <String[]>] [-RoleCapability <String[]>] [-Command <String[]>] [-AcceptLicense] [-AllowClobber]
- [-SkipPublisherCheck] [-InstallUpdate] [-NoPathUpdate] [<CommonParameters>]
+Install-Package [-Credential <PSCredential>] [-Proxy <Uri>] [-ProxyCredential <PSCredential>]
+[-AllVersions] [-Force] [-ForceBootstrap] [-WhatIf] [-Confirm] [-AllowPrereleaseVersions]
+[-Scope <String>] [-PackageManagementProvider <String>] [-PublishLocation <String>]
+[-ScriptSourceLocation <String>] [-ScriptPublishLocation <String>] [-Type <String>]
+[-Filter <String>] [-Tag <String[]>] [-Includes <String[]>] [-DscResource <String[]>]
+[-RoleCapability <String[]>] [-Command <String[]>] [-AcceptLicense] [-AllowClobber]
+[-SkipPublisherCheck] [-InstallUpdate] [-NoPathUpdate] [<CommonParameters>]
 ```
 
 ### PowerShellGet:PackageByInputObject
+
 ```
-Install-Package [-Credential <PSCredential>] [-Proxy <Uri>] [-ProxyCredential <PSCredential>] [-AllVersions]
- [-Force] [-ForceBootstrap] [-WhatIf] [-Confirm] [-AllowPrereleaseVersions] [-Scope <String>]
- [-PackageManagementProvider <String>] [-PublishLocation <String>] [-ScriptSourceLocation <String>]
- [-ScriptPublishLocation <String>] [-Type <String>] [-Filter <String>] [-Tag <String[]>] [-Includes <String[]>]
- [-DscResource <String[]>] [-RoleCapability <String[]>] [-Command <String[]>] [-AcceptLicense] [-AllowClobber]
- [-SkipPublisherCheck] [-InstallUpdate] [-NoPathUpdate] [<CommonParameters>]
+Install-Package [-Credential <PSCredential>] [-Proxy <Uri>] [-ProxyCredential <PSCredential>]
+[-AllVersions] [-Force] [-ForceBootstrap] [-WhatIf] [-Confirm] [-AllowPrereleaseVersions]
+[-Scope <String>] [-PackageManagementProvider <String>] [-PublishLocation <String>]
+[-ScriptSourceLocation <String>] [-ScriptPublishLocation <String>] [-Type <String>]
+[-Filter <String>] [-Tag <String[]>] [-Includes <String[]>] [-DscResource <String[]>]
+[-RoleCapability <String[]>] [-Command <String[]>] [-AcceptLicense] [-AllowClobber]
+[-SkipPublisherCheck] [-InstallUpdate] [-NoPathUpdate] [<CommonParameters>]
+```
+
+### Programs:PackageBySearch
+
+```
+Install-Package [-Credential <PSCredential>] [-Proxy <Uri>] [-ProxyCredential <PSCredential>]
+[-AllVersions] [-Force] [-ForceBootstrap] [-WhatIf] [-Confirm] [-IncludeWindowsInstaller]
+[-IncludeSystemComponent] [<CommonParameters>]
+```
+
+### Programs:PackageByInputObject
+
+```
+Install-Package [-Credential <PSCredential>] [-Proxy <Uri>] [-ProxyCredential <PSCredential>]
+[-AllVersions] [-Force] [-ForceBootstrap] [-WhatIf] [-Confirm] [-IncludeWindowsInstaller]
+[-IncludeSystemComponent] [<CommonParameters>]
+```
+
+### msi:PackageBySearch
+
+```
+Install-Package [-Credential <PSCredential>] [-Proxy <Uri>] [-ProxyCredential <PSCredential>]
+[-AllVersions] [-Force] [-ForceBootstrap] [-WhatIf] [-Confirm] [-AdditionalArguments <String[]>]
+[<CommonParameters>]
+```
+
+### msi:PackageByInputObject
+
+```
+Install-Package [-Credential <PSCredential>] [-Proxy <Uri>] [-ProxyCredential <PSCredential>]
+[-AllVersions] [-Force] [-ForceBootstrap] [-WhatIf] [-Confirm] [-AdditionalArguments <String[]>]
+[<CommonParameters>]
 ```
 
 ## DESCRIPTION
-The **Install-Package** cmdlet installs one or more software packages on the local computer.
+
+The `Install-Package` cmdlet installs one or more software packages on the local computer. If you
+have multiple software sources, use `Get-PackageProvider` and `Get-PackageSource` to display details
+about your providers.
 
 ## EXAMPLES
 
 ### Example 1: Install a package by package name
+
+The `Install-Package` cmdlet installs a software package and its dependencies.
+
 ```
-PS C:\> Install-Package -Name "DSCAccelerator" -Credential "CONTOSO\TestUser"
+PS> Install-Package -Name NuGet.Core -Source MyNuGet -Credential Contoso\TestUser
 ```
 
-This command installs a package named DSCAccelerator.
-When you run this command, you are prompted to provide a password for the account that has rights to install the package.
+`Install-Package` uses parameters to specify the packages **Name** and **Source**. The
+**Credential** parameter uses a domain user account with permissions to install packages. The
+command prompts you for the user account password.
 
-### Example 2: Install a package that you find with Find-Package
+### Example 2: Use Find-Package to install a package
+
+In this example, the object returned by `Find-Package` is sent down the pipeline and installed by
+`Install-Package`.
+
 ```
-PS C:\> Find-Package "zoomit" | Install-Package
+PS> Find-Package -Name NuGet.Core -Source MyNuGet | Install-Package
 ```
 
-This command installs a package named zoomit by piping the package from a **Find-Package** command.
+`Find-Package` uses the **Name** and **Source** parameters to locate a package. The object is sent
+down the pipeline and `Install-Package` installs the package on the local computer.
 
 ### Example 3: Install packages by specifying a range of versions
+
+`Install-Package` uses the **MinimumVersion** and **MaximumVersion** parameters to specify a range
+of software versions.
+
 ```
-PS C:\> Install-Package -Name "DSCAccel" -MinimumVersion 2.1.2 -MaximumVersion 2.2
+PS> Install-Package -Name NuGet.Core -Source MyNuGet -MinimumVersion 2.8.0 -MaximumVersion 2.9.0
 ```
 
-This command installs any package that has a name matching the partial name DSCAccel.
-The command installs the newest version of the package, within a range of versions that is specified by adding the *MinimumVersion* and *MaximumVersion* parameters.
+`Install-Package` uses the **Name** and **Source** parameters to find a package. The
+**MinimumVersion** and **MaximumVersion** parameters specify a range of software versions. The
+highest version in the range is installed.
 
 ## PARAMETERS
 
 ### -AcceptLicense
-Automatically accept the license agreement during installation if the package requires it.
+
+ **AcceptLicense** automatically accepts the license agreement during installation.
 
 ```yaml
 Type: SwitchParameter
@@ -139,6 +173,7 @@ Accept wildcard characters: False
 ```
 
 ### -AdditionalArguments
+
 Specifies one or more additional arguments for installation.
 
 ```yaml
@@ -155,6 +190,9 @@ Accept wildcard characters: False
 
 ### -AllowClobber
 
+Overrides warning messages about conflicts with existing commands. Overwrites existing commands that
+have the same name as commands being installed.
+
 ```yaml
 Type: SwitchParameter
 Parameter Sets: PowerShellGet:PackageBySearch, PowerShellGet:PackageByInputObject
@@ -168,7 +206,8 @@ Accept wildcard characters: False
 ```
 
 ### -AllowPrereleaseVersions
-Installs packages marked as Prerelease. 
+
+Allows the installation of packages marked as prerelease.
 
 ```yaml
 Type: SwitchParameter
@@ -183,8 +222,9 @@ Accept wildcard characters: False
 ```
 
 ### -AllVersions
-Indicates that this cmdlet installs all available versions of the package.
-By default, **Install -Package** only installs the newest available version.
+
+`Install-Package` installs all available versions of the package. By default, only the newest
+version is installed.
 
 ```yaml
 Type: SwitchParameter
@@ -199,7 +239,8 @@ Accept wildcard characters: False
 ```
 
 ### -Command
-Specifies one or more commands for which **Find-Package** searches.
+
+Specifies one or more commands that `Install-Package` searches.
 
 ```yaml
 Type: String[]
@@ -214,7 +255,8 @@ Accept wildcard characters: False
 ```
 
 ### -ConfigFile
-Specfies a configuration file.
+
+Specifies a path that contains a configuration file.
 
 ```yaml
 Type: String
@@ -229,7 +271,9 @@ Accept wildcard characters: False
 ```
 
 ### -Contains
-Indicates that this cmdlet gets objects if any item in the property value of the object is an exact match for the specified value.
+
+`Install-Package` gets objects if the **Contains** parameter specifies a value that matches any of
+the object's property values.
 
 ```yaml
 Type: String
@@ -244,7 +288,12 @@ Accept wildcard characters: False
 ```
 
 ### -Credential
-Specifies a user account that has rights to install a package for a specified package provider or source.
+
+Specifies a user account that has permission to access the computer and run commands. Type a user
+name, such as **User01**, **Domain01\User01**, or enter a **PSCredential** object, generated by the
+`Get-Credential` cmdlet. If you type a user name, you're prompted for a password.
+
+When the **Credential** parameter isn't specified, `Install-Package` uses the current user.
 
 ```yaml
 Type: PSCredential
@@ -259,7 +308,8 @@ Accept wildcard characters: False
 ```
 
 ### -Destination
-Specifies a path to the input object.
+
+Specifies a path to an input object.
 
 ```yaml
 Type: String
@@ -274,7 +324,9 @@ Accept wildcard characters: False
 ```
 
 ### -DscResource
-Specifies one or more Desired State Configuration (DSC) resources for which **Find-Package** searches.
+
+Specifies one or more Desired State Configuration (DSC) resources that are searched by
+`Install-Package`. Use the `Find-DscResource` cmdlet to find DSC resources.
 
 ```yaml
 Type: String[]
@@ -289,6 +341,7 @@ Accept wildcard characters: False
 ```
 
 ### -ExcludeVersion
+
 Switch to exclude the version number in the folder path.
 
 ```yaml
@@ -304,6 +357,7 @@ Accept wildcard characters: False
 ```
 
 ### -Filter
+
 Specifies terms to search for within the **Name** and **Description** properties.
 
 ```yaml
@@ -319,7 +373,8 @@ Accept wildcard characters: False
 ```
 
 ### -FilterOnTag
-Specifies the tag to filter the results on. Excludes results not contianing the specified tag.
+
+Specifies a tag that filters results and excludes results that don't contain the specified tag.
 
 ```yaml
 Type: String[]
@@ -334,7 +389,9 @@ Accept wildcard characters: False
 ```
 
 ### -Force
-Indicates that this cmdlet overrides restrictions that prevent the command from succeeding, as long as the changes do not compromise security.
+
+Forces the command to run without asking for user confirmation. Overrides restrictions that prevent
+`Install-Package` from succeeding, with the exception of security.
 
 ```yaml
 Type: SwitchParameter
@@ -349,7 +406,9 @@ Accept wildcard characters: False
 ```
 
 ### -ForceBootstrap
-Forces PackageManagement to automatically install the package provider for the specified package.
+
+Forces **PackageManagement** to automatically install the package provider for the specified
+package.
 
 ```yaml
 Type: SwitchParameter
@@ -364,7 +423,8 @@ Accept wildcard characters: False
 ```
 
 ### -Headers
-Specifies the headers for the package.
+
+Specifies the package headers.
 
 ```yaml
 Type: String[]
@@ -379,12 +439,14 @@ Accept wildcard characters: False
 ```
 
 ### -Includes
-Specifies whether **Find-Package** should find all packages with DSC resources, cmdlets, functions, or workflows.
-The acceptable values for this parameter are:
+
+Specifies whether `Install-Package` should find all package types. The acceptable values for this
+parameter are as follows:
 
 - Cmdlet
 - DscResource
 - Function
+- RoleCapability
 - Workflow
 
 ```yaml
@@ -401,6 +463,7 @@ Accept wildcard characters: False
 ```
 
 ### -IncludeSystemComponent
+
 Indicates that this cmdlet includes system components in the results.
 
 ```yaml
@@ -416,6 +479,7 @@ Accept wildcard characters: False
 ```
 
 ### -IncludeWindowsInstaller
+
 Indicates that this cmdlet includes the Windows installer in the results.
 
 ```yaml
@@ -431,7 +495,9 @@ Accept wildcard characters: False
 ```
 
 ### -InputObject
-Specifies a package by using the package's SoftwareIdentity type, which is shown in the results of the Find-Package cmdlet.
+
+Accepts pipeline input. Specifies a package by using the package's **SoftwareIdentity** type.
+`Find-Package` outputs a **SoftwareIdentity** object.
 
 ```yaml
 Type: SoftwareIdentity[]
@@ -446,7 +512,8 @@ Accept wildcard characters: False
 ```
 
 ### -InstallUpdate
-Indicates that this cmdlet installs updates.
+
+Indicates that `Install-Package` installs updates.
 
 ```yaml
 Type: SwitchParameter
@@ -461,8 +528,9 @@ Accept wildcard characters: False
 ```
 
 ### -MaximumVersion
-Specifies the maximum allowed version of the package that you want to find.
-If you do not specify this parameter, **Install-Package** installs the finds the highest-numbered available version of the package.
+
+Specifies the maximum allowed package version that you want to install. If you don't specify this
+parameter, `Install-Package` installs the package's newest version.
 
 ```yaml
 Type: String
@@ -477,8 +545,10 @@ Accept wildcard characters: False
 ```
 
 ### -MinimumVersion
-Specifies the minimum allowed version of the package that you want to find.
-If you do not add this parameter, **Install-Package** finds the highest available version of the package that also satisfies any maximum specified version specified by the *MaximumVersion* parameter.
+
+Specifies the minimum allowed package version that you want to install. If you don't add this
+parameter, `Install-Package` installs the package's newest version that satisfies any version
+specified by the **MaximumVersion** parameter.
 
 ```yaml
 Type: String
@@ -493,8 +563,8 @@ Accept wildcard characters: False
 ```
 
 ### -Name
-Specifies one or more package names.
-Multiple names must be separated by commas.
+
+Specifies one or more package names. Multiple package names must be separated by commas.
 
 ```yaml
 Type: String[]
@@ -510,6 +580,9 @@ Accept wildcard characters: False
 
 ### -NoPathUpdate
 
+**NoPathUpdate** only applies to the `Install-Script` cmdlet. **NoPathUpdate** is a dynamic
+parameter added by the provider and isn't supported by `Install-Package`.
+
 ```yaml
 Type: SwitchParameter
 Parameter Sets: PowerShellGet:PackageBySearch, PowerShellGet:PackageByInputObject
@@ -523,7 +596,8 @@ Accept wildcard characters: False
 ```
 
 ### -PackageManagementProvider
-Specifies the name of the Package Management provider.
+
+Specifies the name of the **PackageManagement** provider.
 
 ```yaml
 Type: String
@@ -538,8 +612,9 @@ Accept wildcard characters: False
 ```
 
 ### -ProviderName
-Specifies one or more package provider names to which to scope your package search.
-You can get package provider names by running the Get-PackageProvider cmdlet.
+
+Specifies one or more package provider names to which to scope your package search. You can get
+package provider names by running the `Get-PackageProvider` cmdlet.
 
 ```yaml
 Type: String[]
@@ -555,7 +630,8 @@ Accept wildcard characters: False
 ```
 
 ### -Proxy
-Specifies a proxy server for the request, rather than connecting directly to the Internet resource.
+
+Specifies a proxy server for the request, rather than connecting directly to an internet resource.
 
 ```yaml
 Type: Uri
@@ -570,7 +646,9 @@ Accept wildcard characters: False
 ```
 
 ### -ProxyCredential
-Specifies a user account that has permission to use the proxy server that is specified by the **Proxy** parameter.
+
+Specifies a user account that has permission to use the proxy server specified by the **Proxy**
+parameter.
 
 ```yaml
 Type: PSCredential
@@ -585,7 +663,8 @@ Accept wildcard characters: False
 ```
 
 ### -PublishLocation
-Specifies a location for publishing the package.
+
+Specifies the path to a package's published location.
 
 ```yaml
 Type: String
@@ -600,8 +679,10 @@ Accept wildcard characters: False
 ```
 
 ### -RequiredVersion
-Specifies the exact allowed version of the package that you want to install.
-If you do not add this parameter, **Install-Package** installs the newest available version of the package that also satisfies any maximum version specified by the *MaximumVersion* parameter.
+
+Specifies the exact allowed version of the package that you want to install. If you don't add this
+parameter, `Install-Package` installs the package's newest version that satisfies any version
+specified by the **MaximumVersion** parameter.
 
 ```yaml
 Type: String
@@ -616,6 +697,7 @@ Accept wildcard characters: False
 ```
 
 ### -RoleCapability
+
 Specifies an array of role capabilities.
 
 ```yaml
@@ -631,8 +713,9 @@ Accept wildcard characters: False
 ```
 
 ### -Scope
-Specifies the scope to which to install the package.
-The acceptable values for this parameter are:
+
+Specifies the scope for which to install the package. The acceptable values for this parameter are
+as follows:
 
 - CurrentUser
 - AllUsers
@@ -651,7 +734,8 @@ Accept wildcard characters: False
 ```
 
 ### -ScriptPublishLocation
-Specifies the script publish location.
+
+Specifies the path to a script's published location.
 
 ```yaml
 Type: String
@@ -666,6 +750,7 @@ Accept wildcard characters: False
 ```
 
 ### -ScriptSourceLocation
+
 Specifies the script source location.
 
 ```yaml
@@ -681,7 +766,8 @@ Accept wildcard characters: False
 ```
 
 ### -SkipDependencies
-Switch which specifies to skip installing any dependencies.
+
+Skips the installation of software dependencies.
 
 ```yaml
 Type: SwitchParameter
@@ -697,6 +783,10 @@ Accept wildcard characters: False
 
 ### -SkipPublisherCheck
 
+Allows you to get a package version that is newer than your installed version. For example, an
+installed package that is digitally signed by a trusted publisher but a new version isn't digitally
+signed.
+
 ```yaml
 Type: SwitchParameter
 Parameter Sets: PowerShellGet:PackageBySearch, PowerShellGet:PackageByInputObject
@@ -710,6 +800,7 @@ Accept wildcard characters: False
 ```
 
 ### -SkipValidate
+
 Switch that skips validating the credentials of a package.
 
 ```yaml
@@ -725,9 +816,9 @@ Accept wildcard characters: False
 ```
 
 ### -Source
-Specifies one or more package sources.
-Multiple package source names must be separated by commas.
-You can get package source names by running the Get-PackageSource cmdlet.
+
+Specifies one or more package sources. Multiple package source names must be separated by commas.
+You can get package source names by running the `Get-PackageSource` cmdlet.
 
 ```yaml
 Type: String[]
@@ -742,6 +833,7 @@ Accept wildcard characters: False
 ```
 
 ### -Tag
+
 Specifies one or more strings to search for in the package metadata.
 
 ```yaml
@@ -757,8 +849,9 @@ Accept wildcard characters: False
 ```
 
 ### -Type
-Specifies whether to search for packages with a module, a script, or both.
-The acceptable values for this parameter are:
+
+Specifies whether to search for packages with a module, a script, or both. The acceptable values for
+this parameter are as follows:
 
 - Module
 - Script
@@ -778,6 +871,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
+
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
@@ -793,8 +887,8 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Shows what would happen if the cmdlet runs.
-The cmdlet is not run.
+
+Shows what would happen if `Install-Package` cmdlet is run. The cmdlet is not run.
 
 ```yaml
 Type: SwitchParameter
@@ -809,9 +903,14 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+-InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
+-WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
+
+`Install-Package` accepts input from the pipeline.
 
 ## OUTPUTS
 
@@ -819,11 +918,24 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## NOTES
 
+Including a package provider in a command can make dynamic parameters available to a cmdlet. Dynamic
+parameters are specific to a package provider. The `Get-Help` cmdlet lists a cmdlet's parameter sets
+and includes the provider's parameter set. For example, `Install-Package` has the **PowerShellGet**
+parameter set that includes `-NoPathUpdate`, `AllowClobber`, and `SkipPublisherCheck`.
+
 ## RELATED LINKS
 
 [about_PackageManagement](../Microsoft.PowerShell.Core/About/about_PackageManagement.md)
 
+[Find-DscResource](../PowershellGet/Find-DscResource)
+
+[Get-Help](../Microsoft.PowerShell.Core/Get-Help.md)
+
 [Get-Package](Get-Package.md)
+
+[Get-PackageProvider](Get-PackageProvider.md)
+
+[Get-PackageSource](Get-PackageSource.md)
 
 [Find-Package](Find-Package.md)
 
