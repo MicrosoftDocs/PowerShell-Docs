@@ -472,8 +472,8 @@ The `ValidateRangeKind` enum allows for the following values:
 
 - `Positive` A number greater than zero
 - `Negative` A number less than zero
-- `NotPositive` A number less than or equal to zero
-- `NotNegative` A number greater than or equal to zero
+- `NonPositive` A number less than or equal to zero
+- `NonNegative` A number greater than or equal to zero
 
 In the following example, the value of the
 `Attempts` parameter must be between zero and ten.
