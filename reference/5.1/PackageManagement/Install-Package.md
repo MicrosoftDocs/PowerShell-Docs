@@ -20,8 +20,8 @@ Installs one or more software packages.
 
 ```
 Install-Package [-Name] <String[]> [-RequiredVersion <String>] [-MinimumVersion <String>]
-[-MaximumVersion <String>] [-Source <String[]>] [-Credential <PSCredential>] [-Proxy <Uri>]
-[-ProxyCredential <PSCredential>] [-AllVersions] [-Force] [-ForceBootstrap] [-WhatIf] [-Confirm]
+[-MaximumVersion <String>] [-Source <String[]>] [-Credential <PSCredential>] [-Proxy <Uri>] 
+[-ProxyCredential <PSCredential>] [-AllVersions] [-Force] [-ForceBootstrap] [-WhatIf] [-Confirm] 
 [-ProviderName <String[]>] [<CommonParameters>]
 ```
 
@@ -31,50 +31,6 @@ Install-Package [-Name] <String[]> [-RequiredVersion <String>] [-MinimumVersion 
 Install-Package [-InputObject] <SoftwareIdentity[]> [-Credential <PSCredential>] [-Proxy <Uri>]
 [-ProxyCredential <PSCredential>] [-AllVersions] [-Force] [-ForceBootstrap] [-WhatIf] [-Confirm]
 [<CommonParameters>]
-```
-
-### NuGet:PackageBySearch
-
-```
-Install-Package [-Credential <PSCredential>] [-Proxy <Uri>] [-ProxyCredential <PSCredential>]
-[-AllVersions] [-Force] [-ForceBootstrap] [-WhatIf] [-Confirm] [-ConfigFile <String>]
-[-SkipValidate] [-Headers <String[]>] [-FilterOnTag <String[]>] [-Contains <String>]
-[-AllowPrereleaseVersions] [-Destination <String>] [-ExcludeVersion] [-Scope <String>]
-[-SkipDependencies] [<CommonParameters>]
-```
-
-### NuGet:PackageByInputObject
-
-```
-Install-Package [-Credential <PSCredential>] [-Proxy <Uri>] [-ProxyCredential <PSCredential>]
-[-AllVersions] [-Force] [-ForceBootstrap] [-WhatIf] [-Confirm] [-ConfigFile <String>]
-[-SkipValidate] [-Headers <String[]>] [-FilterOnTag <String[]>] [-Contains <String>]
-[-AllowPrereleaseVersions] [-Destination <String>] [-ExcludeVersion] [-Scope <String>]
-[-SkipDependencies] [<CommonParameters>]
-```
-
-### PowerShellGet:PackageBySearch
-
-```
-Install-Package [-Credential <PSCredential>] [-Proxy <Uri>] [-ProxyCredential <PSCredential>]
-[-AllVersions] [-Force] [-ForceBootstrap] [-WhatIf] [-Confirm] [-AllowPrereleaseVersions]
-[-Scope <String>] [-PackageManagementProvider <String>] [-PublishLocation <String>]
-[-ScriptSourceLocation <String>] [-ScriptPublishLocation <String>] [-Type <String>]
-[-Filter <String>] [-Tag <String[]>] [-Includes <String[]>] [-DscResource <String[]>]
-[-RoleCapability <String[]>] [-Command <String[]>] [-AcceptLicense] [-AllowClobber]
-[-SkipPublisherCheck] [-InstallUpdate] [-NoPathUpdate] [<CommonParameters>]
-```
-
-### PowerShellGet:PackageByInputObject
-
-```
-Install-Package [-Credential <PSCredential>] [-Proxy <Uri>] [-ProxyCredential <PSCredential>]
-[-AllVersions] [-Force] [-ForceBootstrap] [-WhatIf] [-Confirm] [-AllowPrereleaseVersions]
-[-Scope <String>] [-PackageManagementProvider <String>] [-PublishLocation <String>]
-[-ScriptSourceLocation <String>] [-ScriptPublishLocation <String>] [-Type <String>]
-[-Filter <String>] [-Tag <String[]>] [-Includes <String[]>] [-DscResource <String[]>]
-[-RoleCapability <String[]>] [-Command <String[]>] [-AcceptLicense] [-AllowClobber]
-[-SkipPublisherCheck] [-InstallUpdate] [-NoPathUpdate] [<CommonParameters>]
 ```
 
 ### Programs:PackageBySearch
@@ -107,6 +63,48 @@ Install-Package [-Credential <PSCredential>] [-Proxy <Uri>] [-ProxyCredential <P
 Install-Package [-Credential <PSCredential>] [-Proxy <Uri>] [-ProxyCredential <PSCredential>]
 [-AllVersions] [-Force] [-ForceBootstrap] [-WhatIf] [-Confirm] [-AdditionalArguments <String[]>]
 [<CommonParameters>]
+```
+
+### NuGet:PackageBySearch
+
+```
+Install-Package [-Credential <PSCredential>] [-Proxy <Uri>] [-ProxyCredential <PSCredential>]
+[-AllVersions] [-Force] [-ForceBootstrap] [-WhatIf] [-Confirm] [-ConfigFile <String>]
+[-SkipValidate] [-Headers <String[]>] [-FilterOnTag <String[]>] [-Contains <String>]
+[-AllowPrereleaseVersions] [-Destination <String>] [-ExcludeVersion] [-Scope <String>]
+[-SkipDependencies] [<CommonParameters>]
+```
+
+### NuGet:PackageByInputObject
+
+```
+Install-Package [-Credential <PSCredential>] [-Proxy <Uri>] [-ProxyCredential <PSCredential>]
+[-AllVersions] [-Force] [-ForceBootstrap] [-WhatIf] [-Confirm] [-ConfigFile <String>]
+[-SkipValidate] [-Headers <String[]>] [-FilterOnTag <String[]>] [-Contains <String>]
+[-AllowPrereleaseVersions] [-Destination <String>] [-ExcludeVersion] [-Scope <String>]
+[-SkipDependencies] [<CommonParameters>]
+```
+
+### PowerShellGet:PackageBySearch
+
+```
+Install-Package [-Credential <PSCredential>] [-Proxy <Uri>] [-ProxyCredential <PSCredential>]
+[-AllVersions] [-Force] [-ForceBootstrap] [-WhatIf] [-Confirm] [-AllowPrereleaseVersions] [-Scope <String>]
+[-PackageManagementProvider <String>] [-PublishLocation <String>] [-ScriptSourceLocation <String>]
+[-ScriptPublishLocation <String>] [-Type <String>] [-Filter <String>] [-Tag <String[]>] [-Includes <String[]>]
+[-DscResource <String[]>] [-RoleCapability <String[]>] [-Command <String[]>] [-AcceptLicense]
+[-AllowClobber] [-SkipPublisherCheck] [-InstallUpdate] [-NoPathUpdate] [<CommonParameters>]
+```
+
+### PowerShellGet:PackageByInputObject
+
+```
+Install-Package [-Credential <PSCredential>] [-Proxy <Uri>] [-ProxyCredential <PSCredential>]
+[-AllVersions] [-Force] [-ForceBootstrap] [-WhatIf] [-Confirm] [-AllowPrereleaseVersions] [-Scope <String>]
+[-PackageManagementProvider <String>] [-PublishLocation <String>] [-ScriptSourceLocation <String>]
+[-ScriptPublishLocation <String>] [-Type <String>] [-Filter <String>] [-Tag <String[]>] [-Includes <String[]>]
+[-DscResource <String[]>] [-RoleCapability <String[]>] [-Command <String[]>] [-AcceptLicense]
+[-AllowClobber] [-SkipPublisherCheck] [-InstallUpdate] [-NoPathUpdate] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
