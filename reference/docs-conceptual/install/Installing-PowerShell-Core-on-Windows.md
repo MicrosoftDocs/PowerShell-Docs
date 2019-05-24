@@ -60,7 +60,7 @@ For a full list of command line options for Msiexec.exe, see [Command line optio
 
 PowerShell binary ZIP archives are provided to enable advanced deployment scenarios. Be noted that
 when using the ZIP archive, you won't get the prerequisites check as in the MSI package. For
-remoting over WSMan to work properly,, ensure that you have met the [prerequisites](#prerequisites).
+remoting over WSMan to work properly, ensure that you have met the [prerequisites](#prerequisites).
 
 ## Deploying on Windows IoT
 
