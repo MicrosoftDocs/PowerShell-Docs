@@ -226,7 +226,7 @@ Accept wildcard characters: False
 ### -InputObject
 
 Accepts pipeline input that specifies the package's **SoftwareIdentity** object from the
-`Get-Package` dmdlet. **InputObject** accepts the **SoftwareIdentity** object as a `Get-Package`
+`Get-Package` cmdlet. **InputObject** accepts the **SoftwareIdentity** object as a `Get-Package`
 value or a variable that contains the object.
 
 ```yaml
