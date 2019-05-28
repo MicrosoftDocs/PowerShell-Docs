@@ -540,7 +540,7 @@ Accept wildcard characters: False
 
 The sorted objects are delivered in the order they were received when the sort criteria are equal.
 
-This parameter was adding in PowerShell v6.2.0.
+This parameter was added in PowerShell v6.2.0.
 
 ```yaml
 Type: SwitchParameter
