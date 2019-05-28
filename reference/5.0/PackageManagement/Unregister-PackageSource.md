@@ -317,4 +317,4 @@ and includes the provider's parameter set.
 
 [Register-PackageSource](Register-PackageSource.md)
 
-[Set-PackageSource](Set-PackageSource.md
+[Set-PackageSource](Set-PackageSource.md)
