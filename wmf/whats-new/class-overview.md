@@ -301,7 +301,8 @@ hashtable new(int capacity)
 hashtable new(int capacity, float loadFactor)
 ```
 
-`Get-Member -Static` lists constructors, so you can view overloads like any other method. The performance of this syntax is also considerably faster than `New-Object`.
+`Get-Member -Static` lists constructors, so you can view overloads like any other method. The
+performance of this syntax is also considerably faster than `New-Object`.
 
 ## Methods
 
@@ -341,9 +342,9 @@ work as expected.
 A new keyword, `Hidden`, has been added. `Hidden` can be applied to properties and methods
 (including constructors).
 
-Hidden members are public, but do not appear in the output of `Get-Member` unless the -Force
-parameter is added. Hidden members are not included when tab completing or using Intellisense unless the completion
-occurs in the class defining the hidden member.
+Hidden members are public, but do not appear in the output of `Get-Member` unless the `-Force`
+parameter is added. Hidden members are not included when tab completing or using Intellisense unless
+the completion occurs in the class defining the hidden member.
 
 A new attribute, **System.Management.Automation.HiddenAttribute** has been added so that C\# code
 can have the same semantics within PowerShell.
@@ -351,7 +352,7 @@ can have the same semantics within PowerShell.
 ## Return types
 
 Return type is a contract. The return value is converted to the expected type. If no return type is
-specified, the return type is **void**. There is no streaming of objects. Bbjects cannot be written
+specified, the return type is **void**. There is no streaming of objects. Objects cannot be written
 to the pipeline either intentionally or by accident.
 
 ## Attributes
