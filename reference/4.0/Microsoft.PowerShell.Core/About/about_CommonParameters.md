@@ -108,6 +108,11 @@ executing the command.
 `-ErrorAction:Suspend` isn't supported on PowerShell Core as it is only
 available for workflows.
 
+> [!NOTE]
+> The **ErrorAction** parameter overrides, but does not replace the value of
+> the `$ErrorAction` preference variable when the parameter is used in a
+> command to run a script or function.
+
 #### ErrorVariable
 
 The alias for **ErrorVariable** is **ev**.
@@ -284,9 +289,9 @@ executing the command.
 command.
 
 > [!NOTE]
-> The `-WarningAction` parameter does not override the value of the
-> `$WarningAction` preference variable when the parameter is used in a command
-> to run a script or function.
+> The **WarningAction** parameter overrides, but does not replace the value of
+> the `$WarningAction` preference variable when the parameter is used in a
+> command to run a script or function.
 
 #### WarningVariable
 
