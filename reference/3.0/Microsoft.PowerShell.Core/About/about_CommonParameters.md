@@ -49,7 +49,7 @@ The risk mitigation parameters are:
 - **WhatIf** (wi)
 - **Confirm** (cf)
 
-For more information about preference variables, type: [`help about_Preference_Variables`](./about_Preference_Variables)
+For more information, see [about_Preference_Variables](./about_Preference_Variables.md).
 
 ### COMMON PARAMETER DESCRIPTIONS
 
