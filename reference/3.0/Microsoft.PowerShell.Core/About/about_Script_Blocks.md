@@ -28,6 +28,11 @@ the following syntax:
 A script block returns the output of all the commands in the script block,
 either as a single object or as an array.
 
+You can also specify a return value using the `return` keyword. The `return`
+keyword does not affect or suppress other output returned from your script
+block. You can also use the `return` keyword to exit your script block. For
+more information, see [about_Return](about_Return.md).
+
 Like functions, a script block can include parameters. Use the Param
 keyword to assign named parameters, as shown in the following syntax:
 
