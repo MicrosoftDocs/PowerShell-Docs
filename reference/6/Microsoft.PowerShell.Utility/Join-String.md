@@ -43,7 +43,7 @@ Join-String [[-Property] <PSPropertyExpression>] [[-Separator] <String>] [-Outpu
 
 ## DESCRIPTION
 
-The `Join-String` cmdlet joins (compines) text from pipeline objects into a single string.
+The `Join-String` cmdlet joins (combines) text from pipeline objects into a single string.
 
 If no parameters are specified, the pipeline objects are converted to a string and joined with the
 default separatator $OFS.
