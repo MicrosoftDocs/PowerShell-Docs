@@ -253,9 +253,10 @@ cmdlet to the `Get-Member` cmdlet, PowerShell sends each process object, one
 at a time, to `Get-Member`. `Get-Member` displays the .NET class (type) of the
 process objects, and their properties and methods.
 
-Any type that implements the `IEnumerable` interface will have its members
-sent through the pipeline one at a time. The exception is `[hashtables]`,
-which require a call to the `GetEnumerator()` method.
+PowerShell automatically enumerates any type that implements the `IEnumerable`
+interface and sends the members through the pipeline one at a time. The
+exception is `[hashtable]`, which requires a call to the `GetEnumerator()`
+method.
 
 In the example below, an array and a hashtable are piped to the `Measure-Object`
 cmdlet, which counts the number of objects received from the pipeline. The array

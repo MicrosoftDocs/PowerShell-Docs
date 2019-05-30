@@ -24,7 +24,7 @@ In PowerShell, the results of each statement are returned as output, even
 without a statement that contains the Return keyword. Languages like C or C\#
 return only the value or values that are specified by the `return` keyword.
 
-### SYNTAX
+### Syntax
 
 The syntax for the `return` keyword is as follows:
 
@@ -147,6 +147,7 @@ To force a script block or function to return collection as a single
 object to the pipeline, use one of the following two methods:
 
 - Unary array expression
+
   Utilizing a unary expression you can send your return value down the pipeline
   as a single object as illustrated by the following example.
 
@@ -169,9 +170,11 @@ object to the pipeline, use one of the following two methods:
   ```
 
 - `Write-Output` with **NoEnumerate** parameter.
-  You can also use the `Write-Output` cmdlet with the **NoEnumerate** parameter.
-  The example below uses the `Measure-Object` cmdlet to count the objects sent
-  to the pipeline from the sample function by the `return` keyword.
+
+  You can also use the `Write-Output` cmdlet with the **NoEnumerate**
+  parameter. The example below uses the `Measure-Object` cmdlet to count the
+  objects sent to the pipeline from the sample function by the `return`
+  keyword.
 
   ```powershell
   function Test-Return

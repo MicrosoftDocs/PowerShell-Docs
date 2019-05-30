@@ -31,9 +31,8 @@ from the command line or from the pipeline.
 Functions can return values that can be displayed, assigned to variables, or
 passed to other functions or cmdlets. You can also specify a return value using
 the `return` keyword. The `return` keyword does not affect or suppress other
-output returned from your function. You can also use the `return` keyword to
-exit your function. For more information, see
-[about_Return](about_Return.md).
+output returned from your function. However, the `return` keyword exits the
+function at that line. For more information, see [about_Return](about_Return.md).
 
 The function's statement list can contain different types of statement lists
 with the keywords `Begin`, `Process`, and `End`. These statement lists
