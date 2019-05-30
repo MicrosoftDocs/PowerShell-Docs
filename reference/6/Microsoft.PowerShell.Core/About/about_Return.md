@@ -8,6 +8,7 @@ title:  about_Return
 # About Return
 
 ## Short description
+
 Exits the current scope, which can be a function, script, or script block.
 
 ## Long description
@@ -109,13 +110,16 @@ $a = calculation 14
 ```
 
 The "Please wait. Working on calculation..." string is not displayed. Instead,
-it is assigned to the `$a` variable.
+it is assigned to the `$a` variable, as in the following example:
 
-```output
-C:\PS> $a
+```
+PS> $a
 Please wait. Working on calculation...
 87
 ```
+
+Both the informational string and the result of the calculation are returned
+by the function and assigned to the `$a` variable.
 
 If you would like to display a message within your function, beginning in
 PowerShell 5.0, you can use the `Information` stream. The code below corrects
@@ -139,6 +143,87 @@ Please wait. Working on calculation...
 C:\PS> $a
 87
 ```
+
+### Return values and the Pipeline
+
+When you return a collection from your script block or function, PowerShell
+automatically unrolls the members and passes them one at a time through the
+pipeline. This is due to PowerShell's one-at-a-time processing. For more
+information, see [about_pipelines](about_pipelines.md).
+
+This concept is illustrated by the following sample function that returns an
+array of numbers. The output from the function is piped to the `Measure-Object`
+cmdlet which counts the number of objects in the pipeline.
+
+```powershell
+function Test-Return
+{
+    $array = 1,2,3
+    return $array
+}
+Test-Return | Measure-Object
+```
+
+```Output
+Count    : 3
+Average  :
+Sum      :
+Maximum  :
+Minimum  :
+Property :
+```
+
+To force a script block or function to return collection as a single
+object to the pipeline, use one of the following two methods:
+
+- Unary array expression
+
+  Utilizing a unary expression you can send your return value down the pipeline
+  as a single object as illustrated by the following example.
+
+  ```powershell
+  function Test-Return
+  {
+      $array = 1,2,3
+      return (, $array)
+  }
+  Test-Return | Measure-Object
+  ```
+
+  ```Output
+  Count    : 1
+  Average  :
+  Sum      :
+  Maximum  :
+  Minimum  :
+  Property :
+  ```
+
+- `Write-Output` with **NoEnumerate** parameter.
+
+  You can also use the `Write-Output` cmdlet with the **NoEnumerate**
+  parameter. The example below uses the `Measure-Object` cmdlet to count the
+  objects sent to the pipeline from the sample function by the `return`
+  keyword.
+
+  ```powershell
+  function Test-Return
+  {
+      $array = 1, 2, 3
+      return Write-Output -NoEnumerate $array
+  }
+
+  Test-Return | Measure-Object
+  ```
+
+  ```Output
+  Count    : 1
+  Average  :
+  Sum      :
+  Maximum  :
+  Minimum  :
+  Property :
+  ```
 
 ## See also
 
