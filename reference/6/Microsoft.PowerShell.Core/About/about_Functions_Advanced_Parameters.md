@@ -304,6 +304,42 @@ Param(
 )
 ```
 
+> [!NOTE]
+> There is a known issue for using collections with
+> **ValueFromRemainingArguments** where the passed in collection is treated
+> as a single element.
+>
+> The following example demonstrates this issue. The `$Remaining` parameter
+> should contain "one" at index 0 and "two" at index 1. Instead, both elements
+> are combined into a single entity.
+>
+> ```powershell
+> function Test-Remainder
+> {
+>      param(
+>          [string]
+>          [Parameter(Position=0)]
+>          $Value,
+>
+>          [string[]]
+>          [Parameter(Position=1, ValueFromRemainingArguments)]
+>          $Remaining)
+>      "Found $($Remaining.Count) elements"
+>      for ($i = 0; $i -lt $Remaining.Count; $i++)
+>      {
+>         "${i}: $($Remaining[$i])"
+>      }
+> }
+> Test-Remainder first one,two
+> ```
+>
+> ```Output
+> Found 1 elements
+> 0: one two
+> ```
+>
+> This is resolved in PowerShell 6.2
+
 ### HelpMessage Argument
 
 The `HelpMessage` argument specifies a string that contains a brief
