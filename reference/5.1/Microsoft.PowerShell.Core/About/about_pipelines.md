@@ -5,7 +5,6 @@ locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_pipelines
 ---
-
 # About Pipelines
 
 ## Short Description
@@ -42,6 +41,7 @@ Here is a simple example. The following command gets the Notepad process and
 then stops it.
 
 For example,
+
 ```powershell
 Get-Process notepad | Stop-Process
 ```
@@ -49,7 +49,7 @@ Get-Process notepad | Stop-Process
 The first command uses the `Get-Process` cmdlet to get an object representing
 the Notepad process. It uses a pipeline operator (`|`) to send the process
 object to the `Stop-Process` cmdlet, which stops the Notepad process. Notice
-that the `Stop-Process` command does not have a Name or ID parameter to
+that the `Stop-Process` command does not have a **Name** or **ID** parameter to
 specify the process, because the specified process is submitted through the
 pipeline.
 
@@ -120,8 +120,8 @@ tmp3.txt                   114000
 ## Using Pipelines
 
 The PowerShell cmdlets were designed to be used in pipelines. For example, you
-can usually pipe the results of a Get cmdlet to an action cmdlet (such as a
-Set, Start, Stop, or Rename cmdlet) for the same noun.
+can usually pipe the results of a **Get** cmdlet to an action cmdlet (such as a
+**Set**, **Start**, **Stop**, or **Rename** cmdlet) for the same noun.
 
 For example, you can pipe any service from the `Get-Service` cmdlet to the
 `Start-Service` or `Stop-Service` cmdlets (although disabled services cannot
@@ -130,19 +130,21 @@ be restarted in this way).
 This command pipeline starts the WMI service on the computer:
 
 For example,
+
 ```powershell
 Get-Service wmi | Start-Service
 ```
 
 The cmdlets that get and set objects of the PowerShell providers, such as the
-Item and ItemProperty cmdlets, are also designed to be used in pipelines.
+**Item** and **ItemProperty** cmdlets, are also designed to be used in pipelines.
 
 For example, you can pipe the results of a `Get-Item` or `Get-ChildItem`
 command in the PowerShell registry provider to the `New-ItemProperty` cmdlet.
-This command adds a new registry entry, NoOfEmployees, with a value of 8124,
-to the MyCompany registry key.
+This command adds a new registry entry, **NoOfEmployees**, with a value of 8124,
+to the **MyCompany** registry key.
 
 For example,
+
 ```powershell
 Get-Item -Path HKLM:\Software\MyCompany |
   New-ItemProperty -Name NoOfEmployees -Value 8124
@@ -166,7 +168,7 @@ Also, you can pipe any objects to the formatting cmdlets, such as
 `Format-List` and `Format-Table`, the Export cmdlets, such as `Export-Clixml`
 and `Export-CSV`, and the Out cmdlets, such as `Out-Printer`.
 
-For example, you can pipe the Winlogon process to the `Format-List` cmdlet to
+For example, you can pipe the "Winlogon" process to the `Format-List` cmdlet to
 display all of the properties of the process in a list.
 
 For example,
@@ -188,7 +190,7 @@ To do so, the PowerShell "parameter binding" component, which associates input
 objects with cmdlet parameters, tries to find a parameter that meets the
 following criteria:
 
-- The parameter must accept input from a pipeline (not all do)
+- The parameter must accept input from a pipeline (not all do).
 - The parameter must accept the type of object being sent or a type that the
   object can be converted to.
 - The parameter must not already be used in the command.
@@ -222,7 +224,7 @@ Get-Service | Format-Table -Property name, dependentservices
 ```
 
 is much like saving the service objects in a variable and using the
-InputObject parameter of `Format-Table` to submit the service object.
+**InputObject** parameter of `Format-Table` to submit the service object.
 
 For example,
 
@@ -251,8 +253,44 @@ cmdlet to the `Get-Member` cmdlet, PowerShell sends each process object, one
 at a time, to `Get-Member`. `Get-Member` displays the .NET class (type) of the
 process objects, and their properties and methods.
 
-NOTE: `Get-Member` eliminates duplicates, so if the objects are all of the
-same type, it displays only one object type.
+Any type that implements the `IEnumerable` interface will have its members
+sent through the pipeline one at a time. The exception is `[hashtables]`,
+which require a call to the `GetEnumerator()` method.
+
+In the example below, an array and a hashtable are piped to the `Measure-Object`
+cmdlet, which counts the number of objects received from the pipeline. The array
+has multiple members, and the hashtable has multiple key-value pairs. Only the
+array is enumerated one at a time.
+
+```powershell
+@(1,2,3) | Measure-Object
+```
+
+```Output
+Count    : 3
+Average  :
+Sum      :
+Maximum  :
+Minimum  :
+Property :
+```
+
+```powershell
+@{"One"=1;"Two"=2} | Measure-Object
+```
+
+```Output
+Count    : 1
+Average  :
+Sum      :
+Maximum  :
+Minimum  :
+Property :
+```
+
+> [!NOTE]
+> `Get-Member` eliminates duplicates, so if the objects are all of the
+> same type, it displays only one object type.
 
 In this case, `Get-Member` displays the properties and methods of each process
 object, that is, a System.Diagnostics.Process object.
@@ -274,10 +312,10 @@ NPM       AliasProperty  NPM = NonpagedSystemMemorySize
 ...
 ```
 
-However, if you use the InputObject parameter of `Get-Member`, then
-`Get-Member` receives an array of System.Diagnostics.Process objects as a
+However, if you use the **InputObject** parameter of `Get-Member`, then
+`Get-Member` receives an array of **System.Diagnostics.Process** objects as a
 single unit, and it displays the properties of an array of objects. (Note the
-array symbol ([]) after the System.Object type name.)
+array symbol (`[]`) after the **System.Object** type name.)
 
 For example,
 
@@ -297,8 +335,8 @@ Clone              Method        System.Object Clone()
 ```
 
 This result might not be what you intended, but after you understand it, you
-can use it. For example, an array of process objects has a Count property that
-you can use to count the number of processes on the computer.
+can use it. For example, an array of process objects has a **Count** property
+that you can use to count the number of processes on the computer.
 
 For example,
 
@@ -370,7 +408,7 @@ This means that you can send objects (PsObjects) through the pipeline to the
 
 Cmdlets parameters can accept pipeline input in one of two different ways:
 
-- ByValue: Parameters that accept input "by value" can accept piped objects
+- **ByValue**: Parameters that accept input "by value" can accept piped objects
   that have the same .NET type as their parameter value or objects that can be
   converted to that type.
 
@@ -378,7 +416,7 @@ Cmdlets parameters can accept pipeline input in one of two different ways:
   value. It can accept string objects or objects that can be converted to
   strings.
 
-- ByPropertyName: Parameters that accept input "by property name" can accept
+- **ByPropertyName**: Parameters that accept input "by property name" can accept
   piped objects only when a property of the object has the same name as the
   parameter.
 
@@ -426,7 +464,7 @@ To investigate, use the `Trace-Command` cmdlet to trace the Parameter Binding
 component of PowerShell. The following command traces the Parameter Binding
 component while the command is processing. It uses the `-PSHost` parameter to
 display the results at the console and the `-filepath` command to send them to
-the debug.txt file for later reference.
+the `debug.txt` file for later reference.
 
 For example,
 
@@ -484,7 +522,7 @@ Get-Help Move-ItemProperty -Parameter Destination
 ```
 
 The results show that **Destination** takes pipeline input only "by property
-name". That is, the piped object must have a property named Destination.
+name". That is, the piped object must have a property named **Destination**.
 
 ```
 -Destination <String>
@@ -507,8 +545,8 @@ For example,
 Get-Item -Path HKLM:\software\mycompany\sales | Get-Member
 ```
 
-The output shows that the item is a Microsoft.Win32.RegistryKey that does not
-have a Destination property. That explains why the command failed.
+The output shows that the item is a **Microsoft.Win32.RegistryKey** that does
+not have a **Destination** property. That explains why the command failed.
 
 To fix the command, we must specify the destination in the `Move-ItemProperty`
 cmdlet. We can use a `Get-ItemProperty` command to get the path, but the name
@@ -519,17 +557,19 @@ For example,
 
 ```powershell
 Get-Item -Path HKLM:\software\mycompany\design |
-Move-ItemProperty -Dest HKLM:\software\mycompany\sales -Name product
+Move-ItemProperty -Destination HKLM:\software\mycompany\sales -Name product
 ```
 
 To verify that the command worked, use a `Get-ItemProperty` command:
 
 For example,
+
 ```powershell
-Get-Itemproperty HKLM:\software\mycompany\sales
+Get-ItemProperty HKLM:\software\mycompany\sales
 ```
 
-The results show that the Product registry entry was moved to the Sales key.
+The results show that the **Product** registry entry was moved to the **Sales**
+key.
 
 ```Output
 PSPath       : Microsoft.PowerShell.Core\Registry::HKEY_LOCAL_MACHINE\softwa
