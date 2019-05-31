@@ -115,6 +115,34 @@ The `Invoke-WebRequest` cmdlet gets the web page content.
 Then the **Links** property of the returned **HtmlWebResponseObject** is used to display the
 **Href** property of each link.
 
+### Example 4: Catch non success messages from Invoke-WebRequest
+
+When `Invoke-WebRequest` encounters a non-success HTTP message (404, 500, etc.), it returns no
+output and throws a terminating error. To catch the error and view the **StatusCode** you can
+enclose execution in a `try/catch` block. The following example shows how to accomplish this.
+
+```powershell
+try
+{
+    $response = Invoke-WebRequest -Uri "www.microsoft.com/unkownhost" -ErrorAction Stop
+    # This will only execute if the Invoke-WebRequest is successful.
+    $StatusCode = $Response.StatusCode
+}
+catch
+{
+    $StatusCode = $_.Exception.Response.StatusCode.value__
+}
+$StatusCode
+```
+
+```Output
+404
+```
+
+The first command calls `Invoke-WebRequest` with an **ErrorAction** of **Stop**, which forces
+`Invoke-WebRequest` to throw a terminating error on any failed requests. The terminating error is
+caught by the `catch` block which retrieves the **StatusCode** from the **Exception** object.
+
 ## PARAMETERS
 
 ### -Body
