@@ -248,7 +248,7 @@ Add            Method                int IList.Add(System.Object value)
 
 The first command uses the **AsByteStream** parameter to get the stream of bytes from the file.
 The **Raw** parameter ensures that the bytes are returned as a `[System.Byte[]]`. If the **Raw**
-parameter was absent, the return value would be a stream of bytes, which would be interpreted by
+parameter was absent, the return value is a stream of bytes, which is interpreted by
 PowerShell as `[System.Object[]]`.
 
 ## PARAMETERS
