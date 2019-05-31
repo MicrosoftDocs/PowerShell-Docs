@@ -292,8 +292,7 @@ You can pipe any object to `ConvertTo-Json`.
 
 ## NOTES
 
-* The `ConvertTo-Json` cmdlet is implemented by using the
-  [JavaScriptSerializer class](https://msdn.microsoft.com/library/system.web.script.serialization.javascriptserializer).
+The `ConvertTo-Json` cmdlet is implemented using [Newtonsoft Json.NET](https://www.newtonsoft.com/json).
 
 ## RELATED LINKS
 
