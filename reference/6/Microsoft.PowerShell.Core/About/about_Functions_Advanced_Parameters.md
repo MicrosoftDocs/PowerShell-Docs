@@ -291,18 +291,38 @@ The `ValueFromRemainingArguments` argument indicates that the parameter
 accepts all of the parameters values in the command that are not assigned to
 other parameters of the function.
 
-The following example declares a `ComputerName` parameter that is **Mandatory**
-and accepts all the remaining parameter values that were submitted to the
-function.
+The following example declares a `$Value` parameter that is **Mandatory**
+and a `$Remaining` parameter which accepts all the remaining parameter values
+that are submitted to the function.
 
 ```powershell
-Param(
-    [Parameter(Mandatory=$true,
-    ValueFromRemainingArguments=$true)]
-    [String[]]
-    $ComputerName
-)
+function Test-Remainder
+{
+     param(
+         [string]
+         [Parameter(Mandatory = $true, Position=0)]
+         $Value,
+         [string[]]
+         [Parameter(Position=1, ValueFromRemainingArguments)]
+         $Remaining)
+     "Found $($Remaining.Count) elements"
+     for ($i = 0; $i -lt $Remaining.Count; $i++)
+     {
+        "${i}: $($Remaining[$i])"
+     }
+}
+Test-Remainder first one,two
 ```
+
+```Output
+Found 2 elements
+0: one
+1: two
+```
+
+> [!NOTE]
+> Prior to PowerShell 6.2, the **ValueFromRemainingArguments** collection
+> was joined as single entity under index 0.
 
 ### HelpMessage Argument
 
