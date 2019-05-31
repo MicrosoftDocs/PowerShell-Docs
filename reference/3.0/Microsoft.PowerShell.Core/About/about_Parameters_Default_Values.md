@@ -5,7 +5,6 @@ locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_Parameters_Default_Values
 ---
-
 # About Parameters Default Values
 
 ## Short description
@@ -104,9 +103,9 @@ overwrites the existing hash table.
 
 For examples about how to change **Key/Value** pairs without overwriting
 existing hash table values, see
-[How to add values to \$PSDefaultParameterValues](#how-to-add-values-to-$psdefaultparametervalues)
+[How to add values to \$PSDefaultParameterValues](#how-to-add-values-to-psdefaultparametervalues)
 or
-[How to change values in \$PSDefaultParameterValues](#how-to-change-values-in-$psdefaultparametervalues).
+[How to change values in \$PSDefaultParameterValues](#how-to-change-values-in-psdefaultparametervalues).
 
 To save `$PSDefaultParameterValues` for future sessions, add a
 `$PSDefaultParameterValues` command to your PowerShell profile. For more
@@ -402,9 +401,9 @@ Send-MailMessage:SmtpServer    ServerXYZ
 
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216)
 
-[about_Functions_Advanced](../Microsoft.PowerShell.Core/About/about_Functions_Advanced.md)
+[about_Functions_Advanced](about_Functions_Advanced.md)
 
-[about_Functions_CmdletBindingAttribute](../Microsoft.PowerShell.Core/About/about_Functions_CmdletBindingAttribute.md)
+[about_Functions_CmdletBindingAttribute](about_Functions_CmdletBindingAttribute.md)
 
 [about_Hash_Tables](about_Hash_Tables.md)
 
