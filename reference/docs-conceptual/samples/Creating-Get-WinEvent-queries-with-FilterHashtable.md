@@ -1,5 +1,5 @@
 ---
-ms.date: 3/18/2019
+ms.date: 03/18/2019
 title: Creating Get-WinEvent queries with FilterHashtable
 ---
 
