@@ -228,6 +228,29 @@ The following command gets the content of all `*.log` files in the `C:\Temp` dir
 Get-Content -Path C:\Temp\* -Filter *.log
 ```
 
+### Example 8: Get file contents as a byte array
+
+This example demonstrates how to get the contents of a file as a `[byte[]]` as a single object.
+
+```powershell
+$byteArray = Get-Content -Path C:\temp\test.txt -AsByteStream -Raw
+Get-Member -InputObject $bytearray
+```
+
+```Output
+   TypeName: System.Byte[]
+
+Name           MemberType            Definition
+----           ----------            ----------
+Count          AliasProperty         Count = Length
+Add            Method                int IList.Add(System.Object value)
+```
+
+The first command uses the **AsByteStream** parameter to get the stream of bytes from the file.
+The **Raw** parameter ensures that the bytes are returned as a `[System.Byte[]]`. If the **Raw**
+parameter was absent, the return value would be a stream of bytes, which would be interpreted by
+PowerShell as `[System.Object[]]`.
+
 ## PARAMETERS
 
 ### -Path
