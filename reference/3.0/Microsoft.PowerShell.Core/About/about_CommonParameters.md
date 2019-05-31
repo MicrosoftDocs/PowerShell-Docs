@@ -161,9 +161,30 @@ are sent through the pipeline. If you omit this parameter, objects are sent as
 they're generated.
 
 This resource management parameter is designed for advanced users. When you use
-this parameter, PowerShell doesn't call the next cmdlet in the pipeline until
-the number of objects generated equals `OutBuffer + 1`. Thereafter, it sends all
-objects as they're generated.
+this parameter, PowerShell sends data to the next cmdlet in batches of
+`OutBuffer + 1`.
+
+The following example alternates displays between to `ForEach-Object` process
+blocks that use the `Write-Host` cmdlet. The display alternates in batches of
+2 or `OutBuffer + 1`.
+
+```powershell
+1..4 | ForEach-Object {
+        Write-Host "$($_): First"; $_
+      } -OutBuffer 1 | ForEach-Object {
+                        Write-Host "$($_): Second" }
+```
+
+```Output
+1: First
+2: First
+1: Second
+2: Second
+3: First
+4: First
+3: Second
+4: Second
+```
 
 #### OutVariable
 
