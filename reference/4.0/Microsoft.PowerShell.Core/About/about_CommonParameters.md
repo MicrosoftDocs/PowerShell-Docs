@@ -166,27 +166,25 @@ this parameter, PowerShell sends data to the next cmdlet in batches of
 `OutBuffer + 1`.
 
 The following example alternates displays between to `ForEach-Object` process
-blocks that use the `Write-Host` cmdlet. The display alternates on every other
-input, or `0 + 1`.
+blocks that use the `Write-Host` cmdlet. The display alternates in batches of
+2 or `OutBuffer + 1`.
 
 ```powershell
-1..5 | ForEach-Object {
+1..4 | ForEach-Object {
         Write-Host "$($_): First"; $_
-      } -OutBuffer 0 | ForEach-Object {
+      } -OutBuffer 1 | ForEach-Object {
                         Write-Host "$($_): Second" }
 ```
 
 ```Output
 1: First
-1: Second
 2: First
+1: Second
 2: Second
 3: First
-3: Second
 4: First
+3: Second
 4: Second
-5: First
-5: Second
 ```
 
 #### OutVariable
