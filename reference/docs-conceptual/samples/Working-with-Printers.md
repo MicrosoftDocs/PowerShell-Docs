@@ -13,7 +13,7 @@ You can use Windows PowerShell to manage printers by using WMI and the WScript.N
 The simplest way to list the printers installed on a computer is to use the WMI **Win32_Printer** class:
 
 ```powershell
-Get-WmiObject -Class Win32_Printer -ComputerName
+Get-WmiObject -Class Win32_Printer
 ```
 
 You can also list the printers by using the **WScript.Network** COM object that is typically used in WSH scripts:
