@@ -45,19 +45,22 @@ This command uses the `Invoke-WebRequest` cmdlet to send a web request to the Bi
 ```powershell
 $R = Invoke-WebRequest -URI http://www.bing.com?q=how+many+feet+in+a+mile
 $R.AllElements | Where-Object {
-    $_.innerhtml -like "*=*" } | Sort-Object {
-                                    $_.InnerHtml.Length } | Select-Object InnerText -First 5
+    $_.name -like "* Value" -and $_.tagName -eq "INPUT"
+} | Select-Object Name, Value
 ```
 
 ```Output
-innerText---------1 =5280 feet1 mile
+name       value
+----       -----
+From Value 1
+To Value   5280
 ```
 
 The first command issues the request and saves the response in the `$R` variable.
 
-The second command gets the **InnerHtml** property when it includes an equal sign, sorts the inner
-HTML by length and selects the 5 shortest values.
-Sorting by the shortest HTML value often helps you find the most specific element that matches that text.
+The second command filters the objects in the **AllElements** property where the **name** property
+is like "* Value" and the **tagName** is "INPUT". The filtered results are piped to `Select-Object`
+to select the **name** and **value** properties.
 
 ### Example 2: Use a stateful web service
 
