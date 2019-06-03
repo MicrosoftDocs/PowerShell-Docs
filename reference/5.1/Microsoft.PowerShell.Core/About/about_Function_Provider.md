@@ -100,6 +100,20 @@ same effect when used with `Get-ChildItem`.
 Get-ChildItem -Path Function:
 ```
 
+You can retrieve a function's definition by accessing the **Definition**
+property, as shown below.
+
+```powershell
+(Get-Item -Path function:more).Definition
+```
+
+You can also retrieve a function's definition using its provider path prefixed
+by the dollar sign (`$`).
+
+```powershell
+$function:more
+```
+
 ### Getting selected functions
 
 This command gets the `man` function from the `Function:` drive. It uses the
