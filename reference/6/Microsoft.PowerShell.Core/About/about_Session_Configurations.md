@@ -15,8 +15,7 @@ the computer remotely and the commands they can run.
 
 A session configuration, also known as an "endpoint" is a group of settings on
 the local computer that define the environment for the PowerShell
-sessions that are created when remote or local users connect to Windows
-PowerShell on the local computer.
+sessions that are created when remote or local users connect to PowerShell on the local computer.
 
 Administrators of the computer can use session configurations to protect the
 computer and to define custom environments for users who connect to the

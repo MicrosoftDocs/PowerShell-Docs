@@ -128,9 +128,11 @@ parameters for the **MaintenanceShell** configuration. `Get-ChildItem` (alias `d
 items in the **InitializationParameters** node for the **MaintenanceShell** plug-in. For more
 information about the WSMan provider, type `Get-Help wsman`.
 
+```powershell
+Set-PSSessionConfiguration -Name "MaintenanceShell" -StartupScript "C:\ps-test\Maintenance.ps1"
 ```
-PS> Set-PSSessionConfiguration -Name "MaintenanceShell" -StartupScript "C:\ps-test\Maintenance.ps1"
 
+```Output
 WSManConfig: Microsoft.WSMan.Management\WSMan::localhost\Plugin\MaintenanceShell\InitializationParameters
 
 ParamName            ParamValue
@@ -142,8 +144,13 @@ WinRM service need to be restarted to make the changes effective. Do you want to
 the command "restart-service winrm"?
 [Y] Yes  [N] No  [S] Suspend  [?] Help (default is "Y"): y
 
-PS> Get-PSSessionConfiguration MaintenanceShell | Format-List -Property *
+```
 
+```powershell
+Get-PSSessionConfiguration MaintenanceShell | Format-List -Property *
+```
+
+```Output
 xmlns            : http://schemas.microsoft.com/wbem/wsman/1/config/PluginConfiguration
 Name             : MaintenanceShell
 Filename         : %windir%\system32\pwrshplugin.dll
@@ -157,9 +164,13 @@ SupportsOptions  : true
 ExactMatch       : true
 Capability       : {Shell}
 Permission       :
+```
 
-PS> dir WSMan:\localhost\Plugin\MaintenanceShell\InitializationParameters
+```powershell
+dir WSMan:\localhost\Plugin\MaintenanceShell\InitializationParameters
+```
 
+```Output
 ParamName     ParamValue
 ---------     ----------
 PSVersion     2.0

@@ -528,7 +528,7 @@ such as `Install-Module`.
 
 ## NOTES
 
-This cmdlet runs on PowerShell 5.0 or later releases of Windows PowerShell, on Windows 7, or Windows
+This cmdlet runs on PowerShell 5.0 or later releases of PowerShell, on Windows 7, or Windows
 2008 R2 and later releases of Windows.
 
 ## RELATED LINKS

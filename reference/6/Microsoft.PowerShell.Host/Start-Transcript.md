@@ -143,7 +143,7 @@ Accept wildcard characters: False
 Specifies a location to the transcript file. Unlike the **Path** parameter, the value of the
 **LiteralPath** parameter is used exactly as it is typed. No characters are interpreted as
 wildcards. If the path includes escape characters, enclose it in single quotation marks. Single
-quotation marks inform Windows PowerShell not to interpret any characters as escape sequences.
+quotation marks inform PowerShell not to interpret any characters as escape sequences.
 
 ```yaml
 Type: String

@@ -8,8 +8,7 @@ title:  about_Environment_Variables
 # About Environment Variables
 
 ## SHORT DESCRIPTION
-Describes how to access Windows environment variables in Windows
-PowerShell.
+Describes how to access Windows environment variables in PowerShell.
 
 ## LONG DESCRIPTION
 
@@ -189,12 +188,11 @@ interpreted as a unit.
 
 ### Saving Changes to Environment Variables
 
-To create or change the value of an environment variable in every Windows
-PowerShell session, add the change to your PowerShell profile.
+To create or change the value of an environment variable in every PowerShell
+session, add the change to your PowerShell profile.
 
 For example, to add the C:\\Temp directory to the Path environment variable in
-every PowerShell session, add the following command to your Windows
-PowerShell profile.
+every PowerShell session, add the following command to your PowerShell profile.
 
 ```powershell
 $Env:Path += ";C:\Temp"

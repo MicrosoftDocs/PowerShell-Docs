@@ -47,10 +47,10 @@ If the InputObject parameter is not specified, the cmdlet works in one of the fo
 ## EXAMPLES
 
 ### Example 1: Get all the associated instances of a specific instance
-```
-PS C:\>$disk = Get-CimInstance -ClassName Win32_LogicalDisk -KeyOnly
+```powershell
+$disk = Get-CimInstance -ClassName Win32_LogicalDisk -KeyOnly
 
-PS C:\>Get-CimAssociatedInstance -InputObject $disk[1]
+Get-CimAssociatedInstance -InputObject $disk[1]
 ```
 
 This set of commands retrieves the instances of the class named Win32_LogicalDisk and stores the
@@ -59,10 +59,10 @@ instance in the variable is then used as the input object for the Get-CimAssocia
 to get all the associated CIM instances of the specified CIM instance.
 
 ### Example 2: Get all the associated instances of a specific type
-```
-PS C:\>$disk = Get-CimInstance -ClassName Win32_LogicalDisk -KeyOnly
+```powershell
+$disk = Get-CimInstance -ClassName Win32_LogicalDisk -KeyOnly
 
-PS C:\>Get-CimAssociatedInstance -InputObject $disk[1] -ResultClass Win32_DiskPartition
+Get-CimAssociatedInstance -InputObject $disk[1] -ResultClass Win32_DiskPartition
 ```
 
 This set of commands retrieves all of the instances of the class named Win32_LogicalDisk and stores
@@ -71,19 +71,22 @@ input object for the Get-CimAssociatedInstance cmdlet to get all the associated 
 associated through the specified association class Win32_DiskPartition.
 
 ### Example 3: Get all the associated instances through qualifier of a specific class
+```powershell
+$s = Get-CimInstance -Query "Select * from Win32_Service where name like 'Winmgmt'"
+Get-CimClass -ClassName *Service* -Qualifier "Association"
+$c.CimClasName
 ```
-PS C:\>$s = Get-CimInstance -Query "Select * from Win32_Service where name like 'Winmgmt'"
 
-PS C:\>Get-CimClass -ClassName *Service* -Qualifier "Association"
-
-PS C:\>$c.CimClasName
+```Output
 Win32_LoadOrderGroupServiceDependencies
 Win32_DependentService
 Win32_SystemServices
 Win32_LoadOrderGroupServiceMembers
 Win32_ServiceSpecificationService
+```
 
-PS C:\>Get-CimAssociatedInstance -InputObject $s -Association Win32_DependentService
+```powershell
+Get-CimAssociatedInstance -InputObject $s -Association Win32_DependentService
 ```
 
 This set of commands retrieves the services that depend on Windows Management Instrumentation (WMI)
@@ -196,7 +199,7 @@ Specifies the namespace for the CIM operation.
 The default namespace is root/cimv2.
 
 > [!NOTE]
-> You can use tab completion to browse the list of namespaces, because Windows PowerShell gets a
+> You can use tab completion to browse the list of namespaces, because PowerShell gets a
 > list of namespaces from the local WMI server to provide the list of namespaces.
 
 ```yaml

@@ -218,7 +218,7 @@ Accept wildcard characters: False
 ```
 
 ### -PSHost
-ndicates that this cmdlet sends the trace output to the Windows PowerShell host.
+ndicates that this cmdlet sends the trace output to the PowerShell host.
 This parameter also selects the PSHost trace listener.
 
 ```yaml

@@ -17,16 +17,16 @@ of these differences.
 
 ### Porting a PSSnapIn
 
-PowerShell SnapIns (PSSnapIn) aren't supported in PowerShell Core. However, it's trivial to convert
-a PSSnapIn to a PowerShell module. Typically, the PSSnapIn registration code is in a single source
-file of a class that derives from [PSSnapIn][]. Remove this source file from the build; it's no
-longer needed.
+PowerShell [SnapIns](/powershell/developer/cmdlet/modules-and-snap-ins) aren't supported in
+PowerShell Core. However, it's trivial to convert a PSSnapIn to a PowerShell module. Typically, the
+PSSnapIn registration code is in a single source file of a class that derives from [PSSnapIn][].
+Remove this source file from the build; it's no longer needed.
 
 Use [New-ModuleManifest][] to create a new module manifest that replaces the need for the PSSnapIn
-registration code. Some of the values from the PSSnapIn (such as Description) can be reused within
-the module manifest.
+registration code. Some of the values from the **PSSnapIn** (such as **Description**) can be reused
+within the module manifest.
 
-The `RootModule` property in the module manifest should be set to the name of the assembly (dll)
+The **RootModule** property in the module manifest should be set to the name of the assembly (dll)
 implementing the cmdlets.
 
 ### The .NET Portability Analyzer (aka APIPort)

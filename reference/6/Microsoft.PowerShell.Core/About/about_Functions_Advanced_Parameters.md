@@ -1,5 +1,5 @@
 ---
-ms.date:  11/28/2017
+ms.date: 5/20/2019
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -8,6 +8,7 @@ title:  about_Functions_Advanced_Parameters
 # About Functions Advanced Parameters
 
 ## Short description
+
 Explains how to add parameters to advanced functions.
 
 ## Long description
@@ -41,8 +42,8 @@ has the following characteristics:
 
 ```powershell
 Param(
-    [Parameter(Mandatory = $true,
-    ValueFromPipeline = $true)]
+    [Parameter(Mandatory=$true,
+    ValueFromPipeline=$true)]
     [String[]]
     $ComputerName
 )
@@ -79,7 +80,7 @@ must follow "`Parameter`" with no intervening space.
 
 ```powershell
 Param(
-    [Parameter(Argument = value)]
+    [Parameter(Argument=value)]
     $ParameterName
 )
 ```
@@ -89,8 +90,8 @@ syntax to declare two arguments of the `Parameter` attribute.
 
 ```powershell
 Param(
-    [Parameter(Argument1 = value1,
-    Argument2 = value2)]
+    [Parameter(Argument1=value1,
+    Argument2=value2)]
 )
 ```
 
@@ -115,7 +116,7 @@ The following example declares the `ComputerName` parameter. It uses the
 
 ```powershell
 Param(
-    [Parameter(Mandatory = $true)]
+    [Parameter(Mandatory=$true)]
     [String[]]
     $ComputerName
 )
@@ -157,7 +158,7 @@ value in the command.
 
 ```powershell
 Param(
-    [Parameter(Position = 0)]
+    [Parameter(Position=0)]
     [String[]]
     $ComputerName
 )
@@ -184,17 +185,17 @@ parameter set, a `UserName` parameter in the "User" parameter set, and a
 
 ```powershell
 Param(
-    [Parameter(Mandatory = $true,
-    ParameterSetName = "Computer")]
+    [Parameter(Mandatory=$true,
+    ParameterSetName="Computer")]
     [String[]]
     $ComputerName,
 
-    [Parameter(Mandatory = $true,
-    ParameterSetName = "User")]
+    [Parameter(Mandatory=$true,
+    ParameterSetName="User")]
     [String[]]
     $UserName,
 
-    [Parameter(Mandatory = $false)]
+    [Parameter(Mandatory=$false)]
     [Switch]
     $Summary
 )
@@ -211,18 +212,18 @@ parameter set and **Optional** in the other.
 
 ```powershell
 Param(
-    [Parameter(Mandatory = $true,
-    ParameterSetName = "Computer")]
+    [Parameter(Mandatory=$true,
+    ParameterSetName="Computer")]
     [String[]]
     $ComputerName,
 
-    [Parameter(Mandatory = $true,
-    ParameterSetName = "User")]
+    [Parameter(Mandatory=$true,
+    ParameterSetName="User")]
     [String[]]
     $UserName,
 
-    [Parameter(Mandatory = $false, ParameterSetName = "Computer")]
-    [Parameter(Mandatory = $true, ParameterSetName = "User")]
+    [Parameter(Mandatory=$false, ParameterSetName="Computer")]
+    [Parameter(Mandatory=$true, ParameterSetName="User")]
     [Switch]
     $Summary
 )
@@ -242,8 +243,8 @@ and accepts an object that is passed to the function from the pipeline.
 
 ```powershell
 Param(
-    [Parameter(Mandatory = $true,
-    ValueFromPipeline = $true)]
+    [Parameter(Mandatory=$true,
+    ValueFromPipeline=$true)]
     [String[]]
     $ComputerName
 )
@@ -265,8 +266,8 @@ passed to the function through the pipeline.
 
 ```powershell
 Param(
-    [Parameter(Mandatory = $true,
-    ValueFromPipelineByPropertyName = $true)]
+    [Parameter(Mandatory=$true,
+    ValueFromPipelineByPropertyName=$true)]
     [String[]]
     $ComputerName
 )
@@ -290,18 +291,38 @@ The `ValueFromRemainingArguments` argument indicates that the parameter
 accepts all of the parameters values in the command that are not assigned to
 other parameters of the function.
 
-The following example declares a `ComputerName` parameter that is **Mandatory**
-and accepts all the remaining parameter values that were submitted to the
-function.
+The following example declares a `$Value` parameter that is **Mandatory**
+and a `$Remaining` parameter which accepts all the remaining parameter values
+that are submitted to the function.
 
 ```powershell
-Param(
-    [Parameter(Mandatory = $true,
-    ValueFromRemainingArguments = $true)]
-    [String[]]
-    $ComputerName
-)
+function Test-Remainder
+{
+     param(
+         [string]
+         [Parameter(Mandatory = $true, Position=0)]
+         $Value,
+         [string[]]
+         [Parameter(Position=1, ValueFromRemainingArguments)]
+         $Remaining)
+     "Found $($Remaining.Count) elements"
+     for ($i = 0; $i -lt $Remaining.Count; $i++)
+     {
+        "${i}: $($Remaining[$i])"
+     }
+}
+Test-Remainder first one,two
 ```
+
+```Output
+Found 2 elements
+0: one
+1: two
+```
+
+> [!NOTE]
+> Prior to PowerShell 6.2, the **ValueFromRemainingArguments** collection
+> was joined as single entity under index 0.
 
 ### HelpMessage Argument
 
@@ -315,8 +336,8 @@ help message that explains the expected parameter value.
 
 ```powershell
 Param(
-    [Parameter(Mandatory = $true,
-    HelpMessage = "Enter one or more computer names separated by commas.")]
+    [Parameter(mandatory=$true,
+    HelpMessage="Enter one or more computer names separated by commas.")]
     [String[]]
     $ComputerName
 )
@@ -332,8 +353,8 @@ The following example shows a parameter declaration that adds the "CN" and
 
 ```powershell
 Param(
-    [Parameter(Mandatory = $true)]
-    [Alias("CN", "MachineName")]
+    [Parameter(Mandatory=$true)]
+    [Alias("CN","MachineName")]
     [String[]]
     $ComputerName
 )
@@ -355,7 +376,7 @@ a Null value.
 
 ```powershell
 Param(
-    [Parameter(Mandatory = $true)]
+    [Parameter(Mandatory=$true)]
     [AllowNull()]
     [String]
     $ComputerName
@@ -370,7 +391,7 @@ parameter that can have an empty string value.
 
 ```powershell
 Param(
-    [Parameter(Mandatory = $true)]
+    [Parameter(Mandatory=$true)]
     [AllowEmptyString()]
     [String]
     $ComputerName
@@ -385,7 +406,7 @@ parameter that can have a empty collection value.
 
 ```powershell
 Param(
-    [Parameter(Mandatory = $true)]
+    [Parameter(Mandatory=$true)]
     [AllowEmptyCollection()]
     [String[]]
     $ComputerName
@@ -404,7 +425,7 @@ takes one to five parameter values.
 
 ```powershell
 Param(
-    [Parameter(Mandatory = $true)]
+    [Parameter(Mandatory=$true)]
     [ValidateCount(1,5)]
     [String[]]
     $ComputerName
@@ -422,7 +443,7 @@ In the following example, each computer name must have one to ten characters.
 
 ```powershell
 Param(
-    [Parameter(Mandatory = $true)]
+    [Parameter(Mandatory=$true)]
     [ValidateLength(1,10)]
     [String[]]
     $ComputerName
@@ -447,7 +468,7 @@ each digit must be a number zero to nine.
 
 ```powershell
 Param(
-    [Parameter(Mandatory = $true)]
+    [Parameter(Mandatory=$true)]
     [ValidatePattern("[0-9][0-9][0-9][0-9]")]
     [String[]]
     $ComputerName
@@ -471,15 +492,15 @@ The `ValidateRangeKind` enum allows for the following values:
 
 - `Positive` A number greater than zero
 - `Negative` A number less than zero
-- `NotPositive` A number less than or equal to zero
-- `NotNegative` A number greater than or equal to zero
+- `NonPositive` A number less than or equal to zero
+- `NonNegative` A number greater than or equal to zero
 
 In the following example, the value of the
 `Attempts` parameter must be between zero and ten.
 
 ```powershell
 Param(
-    [Parameter(Mandatory = $true)]
+    [Parameter(Mandatory=$true)]
     [ValidateRange(0,10)]
     [Int]
     $Attempts
@@ -516,7 +537,7 @@ greater than or equal to the current date.
 
 ```powershell
 Param(
-    [Parameter(Mandatory = $true)]
+    [Parameter(Mandatory=$true)]
     [ValidateScript({$_ -ge (Get-Date)})]
     [DateTime]
     $EventDate
@@ -539,7 +560,7 @@ not match a value in the set. In the following example, the value of the
 
 ```powershell
 Param(
-    [Parameter(Mandatory = $true)]
+    [Parameter(Mandatory=$true)]
     [ValidateSet("Low", "Average", "High")]
     [String[]]
     $Detail
@@ -613,7 +634,7 @@ In the following example, the value of the `ID` parameter cannot be `$null`.
 
 ```powershell
 Param(
-    [Parameter(Mandatory = $true)]
+    [Parameter(Mandatory=$true)]
     [ValidateNotNull()]
     $ID
 )
@@ -628,7 +649,7 @@ an empty string `""`, or an empty array `@()`.
 
 ```powershell
 Param(
-    [Parameter(Mandatory = $true)]
+    [Parameter(Mandatory=$true)]
     [ValidateNotNullOrEmpty()]
     [String[]]
     $UserName
@@ -770,7 +791,7 @@ Param([Switch]<ParameterName>)
 
 ```powershell
 Param(
-    [Parameter(Mandatory = $false)]
+    [Parameter(Mandatory=$false)]
     [Switch]
     $<ParameterName>
 )
@@ -792,6 +813,94 @@ When creating switch parameters, choose the parameter name carefully. Be sure
 that the parameter name communicates the effect of the parameter to the user,
 and avoid ambiguous terms, such as Filter or Maximum, that might imply that a
 value is required.
+
+## ArgumentCompleter attribute
+
+The **ArgumentCompleter** attribute allows you to add tab completion values
+to a specific parameter. Like DynamicParameters, the available values are
+calculated at runtime when the user presses `<TAB>` after the parameter name.
+
+To add an **ArgumentCompleter** attribute, you need to define a script block
+that will determine the values. The script block must take the following
+parameters in the order specified below. The parameter's names
+do not matter as the values are provided *positionally*.
+
+The syntax is as follows:
+
+```powershell
+Param(
+    [Parameter(Mandatory)]
+    [ArgumentCompleter({
+        param ($commandName, $wordToComplete, $commandAst, $fakeBoundParameter)
+        # Perform calculation of tab completed values here.
+    })]
+)
+```
+
+### The ArgumentCompleter script block
+
+The script block parameters are set to the following values:
+
+- `$commandName` (Position 0) - This parameter is set to the name of the
+  command for which the script block is providing tab completion.
+- `$parameterName` (Position 1) - This parameter is set to the parameter
+  whose value requires tab completion.
+- `$wordToComplete` (Position 2) - This parameter is set to value the user has
+  provided before they pressed `<TAB>`. Your script block should use this value
+  to determine tab completion values.
+- `$commandAst` (Position 3) - This parameter is set to the Abstract Syntax
+  Tree (AST) for the current input line. For more information, see
+  [Ast Class](/dotnet/api/system.management.automation.language.ast).
+- `$fakeBoundParameter` (Position 4) - This parameter is set to a hashtable
+  containing the `$PSBoundParameters` for the cmdlet, before the user pressed
+  `<TAB>`. For more information, see [about_Automatic_Variables](about_Automatic_Variables.md).
+
+The **ArgumentCompleter** script block must unroll the values using the
+pipeline (`ForEach-Object`, `Where-Object`, etc.), or another suitable method.
+Returning an array of values causes PowerShell to treat the entire array as
+**one** tab completion value.
+
+The following example adds tab completion to the `$Value` parameter.  If no
+`$Type` is specified, fruits and vegetables are returned. If a `$Type` is
+specified, only values for the type are specified. In addition the `-like`
+operator ensures that if the user types
+`Test-ArgumentCompleter -Type Fruits -Value A<TAB>`, only **Apple** is
+returned.
+
+```powershell
+function Test-ArgumentCompleter {
+[CmdletBinding()]
+ param (
+        [Parameter(Mandatory)]
+        [ValidateSet('Fruits', 'Vegetables')]
+        $Type,
+        [Parameter(Mandatory)]
+        [ArgumentCompleter( {
+            param ( $commandName,
+                    $parameterName,
+                    $wordToComplete,
+                    $commandAst,
+                    $fakeBoundParameters )
+
+            $possibleValues = @{
+                Fruits = @('Apple', 'Orange', 'Banana')
+                Vegetables = @('Tomato', 'Squash', 'Corn')
+            }
+            if ($fakeBoundParameters.ContainsKey('Type'))
+            {
+                $possibleValues[$fakeBoundParameters.Type] | Where-Object {
+                    $_ -like "$wordToComplete*"
+                }
+            }
+            else
+            {
+                $possibleValues.Values | ForEach-Object {$_}
+            }
+        } )]
+        $Value
+      )
+}
+```
 
 ## See also
 

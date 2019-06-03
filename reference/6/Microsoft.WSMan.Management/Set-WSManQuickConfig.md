@@ -21,7 +21,7 @@ Set-WSManQuickConfig [-UseSSL] [-Force] [-SkipNetworkProfileCheck] [<CommonParam
 
 ## DESCRIPTION
 
-The **Set-WSManQuickConfig** cmdlet configures the computer to receive Windows PowerShell remote commands that are sent by using the Web Services for Management (WS-Management) technology.
+The **Set-WSManQuickConfig** cmdlet configures the computer to receive PowerShell remote commands that are sent by using the Web Services for Management (WS-Management) technology.
 
 This cmdlet performs the following actions:
 
@@ -32,7 +32,7 @@ If the WinRM service is not running, the service is started.
 By default, the transport is HTTP.
 - Enables a firewall exception for WinRM traffic .
 
-To run this cmdlet, start Windows PowerShell by using the Run as administrator option.
+To run this cmdlet, start PowerShell by using the Run as administrator option.
 
 ## EXAMPLES
 
@@ -101,7 +101,7 @@ Accept wildcard characters: False
 Specifies that the Secure Sockets Layer (SSL) protocol is used to establish a connection to the remote computer.
 By default, SSL is not used.
 
-WS-Management encrypts all the Windows PowerShell content that is transmitted over the network.
+WS-Management encrypts all the PowerShell content that is transmitted over the network.
 The *UseSSL* parameter lets you specify the additional protection of HTTPS instead of HTTP.
 If SSL is not available on the port that is used for the connection, and you specify this parameter, the command fails.
 

@@ -123,6 +123,16 @@ session. You can use this command from any PowerShell drive.
 Get-ChildItem -Path Variable:
 ```
 
+### Get a variable using its provider path
+
+This command retrieves a variables value using its provider path prefixed by the
+dollar sign (`$`). This has the same effect as prefixing the variables name with
+the dollar sign (`$`).
+
+```powershell
+$variable:home
+```
+
 ### Get variables using wildcards
 
 This command gets the variables with names that begin with "max". You can use

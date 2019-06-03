@@ -113,8 +113,8 @@ You can use this WMI and CIM strategy to manage the remote computer.
 
 ### Example 1: Import the members of a module into the current session
 
-```
-PS C:\> Import-Module -Name BitsTransfer
+```powershell
+Import-Module -Name BitsTransfer
 ```
 
 This command imports the members of the **BitsTransfer** module into the current session.
@@ -126,17 +126,17 @@ To request output, use the *PassThru* or *AsCustomObject* parameter, or the *Ver
 
 ### Example 2: Import all modules specified by the module path
 
-```
-PS C:\> Get-Module -ListAvailable | Import-Module
+```powershell
+Get-Module -ListAvailable | Import-Module
 ```
 
 This command imports all available modules in the path specified by the PSModulePath environment variable ($env:PSModulePath) into the current session.
 
 ### Example 3: Import the members of several modules into the current session
 
-```
-PS C:\> $m = Get-Module -ListAvailable BitsTransfer, ServerManager
-PS C:\> Import-Module -ModuleInfo $m
+```powershell
+$m = Get-Module -ListAvailable BitsTransfer, ServerManager
+Import-Module -ModuleInfo $m
 ```
 
 These commands import the members of the **BitsTransfer** and **ServerManager** modules into the current session.
@@ -151,8 +151,11 @@ These commands are equivalent to using a pipeline operator (|) to send the outpu
 
 ### Example 4: Import all modules specified by a path
 
+```powershell
+Import-Module -Name c:\ps-test\modules\test -Verbose
 ```
-PS C:\> Import-Module -Name c:\ps-test\modules\test -Verbose
+
+```Output
 VERBOSE: Loading module from path 'C:\ps-test\modules\Test\Test.psm1'.
 VERBOSE: Exporting function 'my-parm'.
 VERBOSE: Exporting function 'Get-Parameter'.
@@ -167,10 +170,12 @@ Without the *Verbose*, *PassThru*, or *AsCustomObject* parameter, **Import-Modul
 
 ### Example 5: Restrict module members imported into a session
 
+```powershell
+Import-Module BitsTransfer -Cmdlet Add-BitsFile, Get-BitsTransfer
+(Get-Module BitsTransfer).ExportedCmdlets
 ```
-PS C:\> Import-Module BitsTransfer -Cmdlet Add-BitsFile, Get-BitsTransfer
-PS C:\> (Get-Module BitsTransfer).ExportedCmdlets
 
+```Output
 Key                   Value
 ---                   -----
 Add-BitsFile          Add-BitsFile
@@ -181,9 +186,13 @@ Resume-BitsTransfer   Resume-BitsTransfer
 Set-BitsTransfer      Set-BitsTransfer
 Start-BitsTransfer    Start-BitsTransfer
 Suspend-BitsTransfer  Suspend-BitsTransfer
+```
 
-PS C:\> Get-Command -Module BitsTransfer
+```powershell
+Get-Command -Module BitsTransfer
+```
 
+```Output
 CommandType Name             Version Source
 ----------- ----             ------- ------
 Cmdlet      Add-BitsFile     2.0.0.0 BitsTransfer
@@ -204,15 +213,21 @@ The results confirm that only the **Add-BitsFile** and **Get-BitsTransfer** cmdl
 
 ### Example 6: Import the members of a module and add a prefix
 
+```powershell
+Import-Module BitsTransfer -Prefix PS -PassThru
 ```
-PS C:\> Import-Module BitsTransfer -Prefix PS -PassThru
 
+```Output
 ModuleType Name                                ExportedCommands
 ---------- ----                                ----------------
 Manifest   bitstransfer                        {Add-BitsFile, Complete-...
+```
 
-PS C:\> Get-Command -Module BitsTransfer
+```powershell
+Get-Command -Module BitsTransfer
+```
 
+```Output
 CommandType     Name                                               ModuleName
 -----------     ----                                               ----------
 Cmdlet          Add-BitsFile                                       bitstransfer
@@ -247,20 +262,25 @@ It does not change the module.
 
 ### Example 7: Get and use a custom object
 
+```powershell
+Get-Module -List | Format-Table -Property Name, ModuleType -AutoSize
 ```
-PS C:\> Get-Module -List | Format-Table -Property Name, ModuleType -AutoSize
 
+```Output
 Name          ModuleType
 ----          ----------
 Show-Calendar     Script
 BitsTransfer    Manifest
 PSDiagnostics   Manifest
 TestCmdlets       Script
+```
 
-PS C:\> $a = Import-Module -Name Show-Calendar -AsCustomObject -Passthru
+```powershell
+$a = Import-Module -Name Show-Calendar -AsCustomObject -Passthru
+$a | Get-Member
+```
 
-PS C:\> $a | Get-Member
-
+```Output
     TypeName: System.Management.Automation.PSCustomObject
 Name          MemberType   Definition
 ----          ----------   ----------
@@ -269,8 +289,10 @@ GetHashCode   Method       int GetHashCode()
 GetType       Method       type GetType()
 ToString      Method       string ToString()
 Show-Calendar ScriptMethod System.Object Show-Calendar();
+```
 
-PS C:\> $a."Show-Calendar"()
+```powershell
+$a."Show-Calendar"()
 ```
 
 These commands demonstrate how to get and use the custom object that **Import-Module** returns.
@@ -299,9 +321,9 @@ The method name must be enclosed in quotation marks, because it includes a hyphe
 
 ### Example 8: Re-import a module into the same session
 
-```
-PS C:\> Import-Module BitsTransfer
-PS C:\> Import-Module BitsTransfer -Force -Prefix PS
+```powershell
+Import-Module BitsTransfer
+Import-Module BitsTransfer -Force -Prefix PS
 ```
 
 This example shows how to use the *Force* parameter of **Import-Module** when you are re-importing a module into the same session.
@@ -314,23 +336,39 @@ Without this parameter, the session would include two copies of each **BitsTrans
 
 ### Example 9: Run commands that have been hidden by imported commands
 
+```powershell
+Get-Date
 ```
-PS C:\> Get-Date
+
+```Output
 Thursday, March 15, 2012 6:47:04 PM
+```
 
-PS C:\> Import-Module TestModule
+```powershell
+Import-Module TestModule
+Get-Date
+```
 
-PS C:\> Get-Date
+```Output
 12075
+```
 
-PS C:\> Get-Command Get-Date -All | Format-Table -Property CommandType, Name, ModuleName -AutoSize
+```powershell
+Get-Command Get-Date -All | Format-Table -Property CommandType, Name, ModuleName -AutoSize
+```
 
+```Output
 CommandType     Name         ModuleName
 -----------     ----         ----------
 Function        Get-Date     TestModule
 Cmdlet          Get-Date     Microsoft.PowerShell.Utility
+```
 
-PS C:\> Microsoft.PowerShell.Utility\Get-Date
+```powershell
+Microsoft.PowerShell.Utility\Get-Date
+```
+
+```Output
 Saturday, September 12, 2009 6:33:23 PM
 ```
 
@@ -354,8 +392,8 @@ For more information about command precedence in PowerShell, see [about_Command_
 
 ### Example 10: Import a minimum version of a module
 
-```
-PS C:\> Import-Module -Name PSWorkflow -MinimumVersion 3.0.0.0
+```powershell
+Import-Module -Name PSWorkflow -MinimumVersion 3.0.0.0
 ```
 
 This command imports the **PSWorkflow** module.
@@ -813,17 +851,17 @@ Accept wildcard characters: False
 
 ### -PSSession
 
-Specifies a Windows PowerShell user-managed session (**PSSession**) from which this cmdlet import modules into the current session.
+Specifies a PowerShell user-managed session (**PSSession**) from which this cmdlet import modules into the current session.
 Enter a variable that contains a **PSSession** or a command that gets a **PSSession**, such as a Get-PSSession command.
 
 When you import a module from a different session into the current session, you can use the cmdlets from the module in the current session, just as you would use cmdlets from a local module.
-Commands that use the remote cmdlets actually run in the remote session, but the remoting details are managed in the background by Windows PowerShell.
+Commands that use the remote cmdlets actually run in the remote session, but the remoting details are managed in the background by PowerShell.
 
-This parameter uses the Implicit Remoting feature of Windows PowerShell.
+This parameter uses the Implicit Remoting feature of PowerShell.
 It is equivalent to using the Import-PSSession cmdlet to import particular modules from a session.
 
-**Import-Module** cannot import Windows PowerShell Core modules from another session.
-The Windows PowerShell Core modules have names that begin with Microsoft.PowerShell.
+**Import-Module** cannot import PowerShell Core modules from another session.
+The PowerShell Core modules have names that begin with Microsoft.PowerShell.
 
 This parameter was introduced in Windows PowerShell 3.0.
 

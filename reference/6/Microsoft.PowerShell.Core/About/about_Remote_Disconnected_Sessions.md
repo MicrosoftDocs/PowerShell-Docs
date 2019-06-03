@@ -19,7 +19,7 @@ continue to run while the session is disconnected.
 
 The Disconnected Sessions feature is available only when the computer at the
 remote end of a connection is running Windows PowerShell 3.0 or a later
-version of Windows PowerShell and using the WSMan transport.
+version of PowerShell and using the WSMan transport.
 
 The Disconnected Sessions feature allows you to close the session in which a
 PSSession was created, and even close PowerShell, and shut down the

@@ -108,8 +108,8 @@ This cmdlet was introduced in Windows PowerShell 3.0.
 
 ### Example 1: Connect to a PSSession
 
-```
-PS C:\> Receive-PSSession -ComputerName Server01 -Name ITTask
+```powershell
+Receive-PSSession -ComputerName Server01 -Name ITTask
 ```
 
 This command uses the **Receive-PSSession** cmdlet to connect to the ITTask session on the Server01
@@ -119,8 +119,8 @@ Because the command does not use the *OutTarget* parameter, the results appear a
 
 ### Example 2: Get results of all commands on disconnected sessions
 
-```
-PS C:\> Get-PSSession -ComputerName Server01, Server02 | Receive-PSSession
+```powershell
+Get-PSSession -ComputerName Server01, Server02 | Receive-PSSession
 ```
 
 This command gets the results of all commands running in all disconnected sessions on the Server01
@@ -131,8 +131,11 @@ connect to the session and does not return any output or errors.
 
 ### Example 3: Get the results of a script running in a session
 
+```powershell
+Receive-PSSession -ComputerName Server01 -Name ITTask -OutTarget Job -JobName ITTaskJob01 -Credential Domain01\Admin01
 ```
-PS C:\> Receive-PSSession -ComputerName Server01 -Name ITTask -OutTarget Job -JobName ITTaskJob01 -Credential Domain01\Admin01
+
+```Output
 Id     Name            State         HasMoreData     Location
 --     ----            -----         -----------     --------
 16     ITTaskJob01     Running       True            Server01
@@ -472,7 +475,7 @@ If you do not specify a connection URI, you can use the *UseSSL*, *ComputerName*
 Valid values for the Transport segment of the URI are HTTP and HTTPS.
 If you specify a connection URI with a Transport segment, but do not specify a port, the session is
 created with standards ports: 80 for HTTP and 443 for HTTPS.
-To use the default ports for Windows PowerShell remoting, specify port 5985 for HTTP or 5986 for
+To use the default ports for PowerShell remoting, specify port 5985 for HTTP or 5986 for
 HTTPS.
 
 If the destination computer redirects the connection to a different URI, PowerShell prevents the
@@ -858,7 +861,7 @@ job object. Otherwise, it returns objects that represent that command results.
 - When a session that contains a running job is disconnected and then reconnected, the original job
   object is reused only if the job is disconnected and reconnected to the same session, and the
   command to reconnect does not specify a new job name. If the session is reconnected to a different
-  client session or a new job name is specified, Windows PowerShell creates a new job object for the
+  client session or a new job name is specified, PowerShell creates a new job object for the
   new session.
 - When you disconnect a **PSSession**, the session state is Disconnected and the availability is
   None.

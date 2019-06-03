@@ -61,8 +61,8 @@ parameter.
 
 ### Example 1: Remove the CIM instance
 
-```
-PS C:\>Remove-CimInstance -Query 'Select * from Win32_Environment where name LIKE "testvar%"'
+```powershell
+Remove-CimInstance -Query 'Select * from Win32_Environment where name LIKE "testvar%"'
 ```
 
 This command removes the CIM instances that start with the character string testvar from the class
@@ -70,16 +70,16 @@ named Win32_Environment using the Query parameter.
 
 ### Example 2: Remove the CIM instance using CIM instance object
 
-```
-PS C:\>calc.exe
+```powershell
+calc.exe
 
 
 
-PS C:\>$var = Get-CimInstance -Query 'Select * from Win32_Process where name LIKE "calc%"'
+$var = Get-CimInstance -Query 'Select * from Win32_Process where name LIKE "calc%"'
 
 
 
-PS C:\>Remove-CimInstance -InputObject $var
+Remove-CimInstance -InputObject $var
 ```
 
 This set of commands retrieves the CIM instance objects filtered by the Query parameter and stores

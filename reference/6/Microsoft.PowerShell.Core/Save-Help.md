@@ -37,7 +37,7 @@ The **Save-Help** cmdlet downloads the newest help files for PowerShell modules 
 This feature lets you update the help files on computers that do not have access to the Internet, and makes it easier to update the help files on multiple computers.
 
 In Windows PowerShell 3.0, **Save-Help** worked only for modules that are installed on the local computer.
-Although it was possible to import a module from a remote computer, or obtain a reference to a **PSModuleInfo** object from a remote computer by using Windows PowerShell remoting, the **HelpInfoUri** property was not preserved, and **Save-Help** would not work for remote module Help.
+Although it was possible to import a module from a remote computer, or obtain a reference to a **PSModuleInfo** object from a remote computer by using PowerShell remoting, the **HelpInfoUri** property was not preserved, and **Save-Help** would not work for remote module Help.
 
 In Windows PowerShell 4.0, the **HelpInfoUri** property is preserved over PowerShell remoting, which enables **Save-Help** to work for modules that are installed on remote computers.
 It is also possible to save a **PSModuleInfo** object to disk or removable media by running Export-Clixml on a computer that does not have Internet access, import the object on a computer that does have Internet access, and then run **Save-Help** on the **PSModuleInfo** object.
@@ -68,53 +68,53 @@ This cmdlet was introduced in Windows PowerShell 3.0.
 
 ### Example 1: Save the help for the DhcpServer module
 
-```
-PS C:\> # Option 1: Run Invoke-Command to get the PSModuleInfo object for the remote DHCP Server module, save the PSModuleInfo object in the variable $m, and then run Save-Help.
+```powershell
+# Option 1: Run Invoke-Command to get the PSModuleInfo object for the remote DHCP Server module, save the PSModuleInfo object in the variable $m, and then run Save-Help.
 
-PS C:\> $m = Invoke-Command -ComputerName RemoteServer -ScriptBlock { Get-Module -Name DhcpServer -ListAvailable }
-PS C:\> Save-Help -Module $m -DestinationPath "C:\SavedHelp"
+$m = Invoke-Command -ComputerName RemoteServer -ScriptBlock { Get-Module -Name DhcpServer -ListAvailable }
+Save-Help -Module $m -DestinationPath "C:\SavedHelp"
 
 
 # Option 2: Open a PSSession--targeted at the remote computer that is running the DhcpServer module--to get the PSModuleInfo object for the remote module, and then run Save-Help.
 
-PS C:\> $s = New-PSSession -ComputerName "RemoteServer"
-PS C:\> $m = Get-Module -PSSession $s -Name "DhcpServer" -ListAvailable
-PS C:\> Save-Help -Module $m -DestinationPath "C:\SavedHelp"
+$s = New-PSSession -ComputerName "RemoteServer"
+$m = Get-Module -PSSession $s -Name "DhcpServer" -ListAvailable
+Save-Help -Module $m -DestinationPath "C:\SavedHelp"
 
 
 # Option 3: Open a CIM session--targeted at the remote computer that is running the DhcpServer module--to get the PSModuleInfo object for the remote module, and then run Save-Help.
 
-PS C:\> $c = New-CimSession -ComputerName "RemoteServer"
-PS C:\> $m = Get-Module -CimSession $c -Name "DhcpServer" -ListAvailable
-PS C:\> Save-Help -Module $m -DestinationPath "C:\SavedHelp"
+$c = New-CimSession -ComputerName "RemoteServer"
+$m = Get-Module -CimSession $c -Name "DhcpServer" -ListAvailable
+Save-Help -Module $m -DestinationPath "C:\SavedHelp"
 ```
 
 This example shows three different ways to use **Save-Help** to save the help for the **DhcpServer** module from an Internet-connected client computer, without installing the **DhcpServer** module or the DHCP Server role on the local computer.
 
 ### Example 2: Install help for the DhcpServer module
 
-```
-PS C:\> # First, run Export-CliXml to export the PSModuleInfo object to a shared folder or to removable media.
+```powershell
+# First, run Export-CliXml to export the PSModuleInfo object to a shared folder or to removable media.
 
-PS C:\> $m = Get-Module -Name "DhcpServer" -ListAvailable
-PS C:\> Export-CliXml -Path "E:\UsbFlashDrive\DhcpModule.xml" -InputObject $m
+$m = Get-Module -Name "DhcpServer" -ListAvailable
+Export-CliXml -Path "E:\UsbFlashDrive\DhcpModule.xml" -InputObject $m
 
 # Next, transport the removable media to a computer that has Internet access, and then import the PSModuleInfo object with Import-CliXml. Run Save-Help to save the Help for the imported DhcpServer module PSModuleInfo object.
 
-PS C:\> $deserialized_m = Import-CliXml "E:\UsbFlashDrive\DhcpModule.xml"
-PS C:\> Save-Help -Module $deserialized_m -DestinationPath "E:\UsbFlashDrive\SavedHelp"
+$deserialized_m = Import-CliXml "E:\UsbFlashDrive\DhcpModule.xml"
+Save-Help -Module $deserialized_m -DestinationPath "E:\UsbFlashDrive\SavedHelp"
 
 # Finally, transport the removable media back to the computer that does not have network access, and then install the help by running Update-Help.
 
-PS C:\> Update-Help -Module DhcpServer -SourcePath "E:\UsbFlashDrive\SavedHelp"
+Update-Help -Module DhcpServer -SourcePath "E:\UsbFlashDrive\SavedHelp"
 ```
 
 This example shows how to install help that you saved in Example 1 for the **DhcpServer** module on a computer that does not have Internet access.
 
 ### Example 3: Save help for all modules
 
-```
-PS C:\> Save-Help -DestinationPath "\\Server01\FileShare01"
+```powershell
+Save-Help -DestinationPath "\\Server01\FileShare01"
 ```
 
 This command downloads the newest help files for all modules in the UI culture set for Windows on the local computer.
@@ -122,8 +122,8 @@ It saves the help files in the \\\\Server01\Fileshare01 folder.
 
 ### Example 4: Save help for a module on the computer
 
-```
-PS C:\> Save-Help -Module ServerManager -DestinationPath "\\Server01\FileShare01" -Credential Domain01/Admin01
+```powershell
+Save-Help -Module ServerManager -DestinationPath "\\Server01\FileShare01" -Credential Domain01/Admin01
 ```
 
 This command downloads the newest help files for the **ServerManager** module, and then saves them in the \\\\Server01\Fileshare01 folder.
@@ -134,8 +134,8 @@ The command uses the *Credential* parameter to supply the credentials of a user 
 
 ### Example 5: Save help for a module on a different computer
 
-```
-PS C:\> Invoke-Command -ComputerName Server02 {Get-Module -Name CustomSQL -ListAvailable} | Save-Help -DestinationPath \\Server01\FileShare01 -Credential Domain01\Admin01
+```powershell
+Invoke-Command -ComputerName Server02 {Get-Module -Name CustomSQL -ListAvailable} | Save-Help -DestinationPath \\Server01\FileShare01 -Credential Domain01\Admin01
 ```
 
 These commands download the newest help files for the **CustomSQL** module and save them in the \\\\Server01\Fileshare01 folder.
@@ -146,8 +146,8 @@ When a module is not installed on the computer, **Save-Help** needs the module o
 
 ### Example 6: Save help for a module in multiple languages
 
-```
-PS C:\> Save-Help -Module Microsoft.PowerShell* -UICulture de-DE, en-US, fr-FR, ja-JP -DestinationPath "D:\Help"
+```powershell
+Save-Help -Module Microsoft.PowerShell* -UICulture de-DE, en-US, fr-FR, ja-JP -DestinationPath "D:\Help"
 ```
 
 This command saves help for the PowerShell Core modules in four different UI cultures.
@@ -157,8 +157,8 @@ The language packs for these locales do not have to be installed on the computer
 
 ### Example 7: Save help more than one time each day
 
-```
-PS C:\> Save-Help -Force -DestinationPath "\\Server3\AdminShare\Help"
+```powershell
+Save-Help -Force -DestinationPath "\\Server3\AdminShare\Help"
 ```
 
 This command saves help for all modules that are installed on the computer.

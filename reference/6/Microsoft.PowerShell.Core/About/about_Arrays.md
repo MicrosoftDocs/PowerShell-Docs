@@ -87,14 +87,20 @@ You can use the array operator to create an array of zero or one object. For
 example:
 
 ```powershell
-PS> $a = @("Hello World")
-PS> $a.Count
+$a = @("Hello World")
+$a.Count
+```
+
+```Output
 1
 ```
 
 ```powershell
-PS> $b = @()
-PS> $b.Count
+$b = @()
+$b.Count
+```
+
+```Output
 0
 ```
 
@@ -704,7 +710,7 @@ Get-Member -InputObject $a
 
 You can also get the members of an array by typing a comma (,) before the
 value that is piped to the Get-Member cmdlet. The comma makes the array the
-second item in an array of arrays. Windows PowerShell pipes the arrays one at
+second item in an array of arrays. PowerShell pipes the arrays one at
 a time and Get-Member returns the members of the array. Like the next two
 examples.
 

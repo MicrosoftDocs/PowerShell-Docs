@@ -269,7 +269,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## NOTES
 
-* This cmdlet runs on Windows PowerShell 3.0 or later releases of Windows PowerShell, on Windows 7 or Windows 2008 R2 and later releases of Windows.
+* This cmdlet runs on Windows PowerShell 3.0 or later releases of PowerShell, on Windows 7 or Windows 2008 R2 and later releases of Windows.
 
   If the module that you specify with the **Name** parameter was not installed by using Install-Module, an error occurs.
 You can only run **Update-Module** on modules that you installed from the online gallery by running Install-Module.

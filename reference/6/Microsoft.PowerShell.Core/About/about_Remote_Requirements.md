@@ -24,8 +24,7 @@ using Microsoft .NET Framework methods to retrieve the objects. They do not
 use the PowerShell remoting infrastructure. The requirements in this
 document do not apply to these cmdlets.
 
-To find the cmdlets that have a ComputerName parameter but do not use Windows
-PowerShell remoting, read the description of the ComputerName parameter of the
+To find the cmdlets that have a ComputerName parameter but do not use PowerShell remoting, read the description of the ComputerName parameter of the
 cmdlets.
 
 ## SYSTEM REQUIREMENTS

@@ -1,5 +1,5 @@
 ---
-ms.date:  03/22/2019
+ms.date: 5/28/2019
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -28,31 +28,31 @@ Several common parameters override system defaults or preferences that you set
 by using the PowerShell preference variables. Unlike the preference variables,
 the common parameters affect only the commands in which they're used.
 
-In addition to the common parameters, many cmdlets offer the WhatIf and Confirm
-risk mitigation parameters. Cmdlets that involve risk to the system or to user
-data usually offer these parameters.
+In addition to the common parameters, many cmdlets offer the **WhatIf** and
+**Confirm** risk mitigation parameters. Cmdlets that involve risk to the system
+or to user data usually offer these parameters.
 
 The following list displays the common parameters. Their aliases are listed in
 parentheses.
 
-- Debug (db)
-- ErrorAction (ea)
-- ErrorVariable (ev)
-- InformationAction (infa)
-- InformationVariable (iv)
-- OutVariable (ov)
-- OutBuffer (ob)
-- PipelineVariable (pv)
-- Verbose (vb)
-- WarningAction (wa)
-- WarningVariable (wv)
+- **Debug** (db)
+- **ErrorAction** (ea)
+- **ErrorVariable** (ev)
+- **InformationAction** (infa)
+- **InformationVariable** (iv)
+- **OutVariable** (ov)
+- **OutBuffer** (ob)
+- **PipelineVariable** (pv)
+- **Verbose** (vb)
+- **WarningAction** (wa)
+- **WarningVariable** (wv)
 
 The risk mitigation parameters are:
 
-- WhatIf (wi)
-- Confirm (cf)
+- **WhatIf** (wi)
+- **Confirm** (cf)
 
-For more information about preference variables, type: help [about_Preference_Variables](./about_Preference_Variables)
+For more information, see [about_Preference_Variables](./about_Preference_Variables.md).
 
 ### COMMON PARAMETER DESCRIPTIONS
 
@@ -62,7 +62,7 @@ The alias for **Debug** is **db**.
 
 Displays programmer-level detail about the operation done by the command. This
 parameter works only when the command generates a debugging message. For
-example, this parameter works when a command contains the **Write-Debug**
+example, this parameter works when a command contains the `Write-Debug`
 cmdlet.
 
 The **Debug** parameter overrides the value of the `$DebugPreference` variable
@@ -70,7 +70,7 @@ for the current command, setting the value of `$DebugPreference` to
 **Continue**. Because the default value of the `$DebugPreference` variable is
 **SilentlyContinue**, debugging messages aren't displayed by default.
 
-`-Debug:$true` has the same effect as **-Debug**. Use `-Debug:$false` to
+`-Debug:$true` has the same effect as `-Debug`. Use `-Debug:$false` to
 suppress the display of debugging messages when `$DebugPreference` isn't
 **SilentlyContinue**, which is the default.
 
@@ -110,6 +110,11 @@ executing the command.
 `-ErrorAction:Suspend` isn't supported on PowerShell Core as it is only
 available for workflows.
 
+> [!NOTE]
+> The **ErrorAction** parameter overrides, but does not replace the value of
+> the `$ErrorAction` preference variable when the parameter is used in a
+> command to run a script or function.
+
 #### ErrorVariable
 
 The alias for **ErrorVariable** is **ev**.
@@ -119,12 +124,12 @@ variable and in the `$Error` automatic variable. For more information, type
 the following command:
 
 ```powershell
-get-help about_Automatic_Variables
+Get-Help about_Automatic_Variables
 ```
 
 By default, new error messages overwrite error messages that are already stored
 in the variable. To append the error message to the variable content, type a
-plus sign (+) before the variable name.
+plus sign (`+`) before the variable name.
 
 For example, the following command creates the `$a` variable and then stores any
 errors in it:
@@ -133,13 +138,13 @@ errors in it:
 Get-Process -Id 6 -ErrorVariable a
 ```
 
-The following command adds any error messages to the $a variable:
+The following command adds any error messages to the `$a` variable:
 
 ```powershell
 Get-Process -Id 2 -ErrorVariable +a
 ```
 
-The following command displays the contents of $a:
+The following command displays the contents of `$a`:
 
 ```powershell
 $a
@@ -182,6 +187,11 @@ available for workflows.
 `-InformationAction:SilentlyContinue` no effect as the informational message
 aren't (Default) displayed, and the script continues without interruption.
 
+> [!NOTE]
+> The **InformationAction** parameter overrides, but does not replace the
+> value of the `$InformationAction` preference variable when the parameter
+> is used in a command to run a script or function.
+
 #### InformationVariable
 
 The alias for **InformationVariable** is **iv**.
@@ -204,19 +214,40 @@ are sent through the pipeline. If you omit this parameter, objects are sent as
 they're generated.
 
 This resource management parameter is designed for advanced users. When you use
-this parameter, PowerShell doesn't call the next cmdlet in the pipeline until
-the number of objects generated equals OutBuffer + 1. Thereafter, it sends all
-objects as they're generated.
+this parameter, PowerShell sends data to the next cmdlet in batches of
+`OutBuffer + 1`.
+
+The following example alternates displays between to `ForEach-Object` process
+blocks that use the `Write-Host` cmdlet. The display alternates in batches of
+2 or `OutBuffer + 1`.
+
+```powershell
+1..4 | ForEach-Object {
+        Write-Host "$($_): First"; $_
+      } -OutBuffer 1 | ForEach-Object {
+                        Write-Host "$($_): Second" }
+```
+
+```Output
+1: First
+2: First
+1: Second
+2: Second
+3: First
+4: First
+3: Second
+4: Second
+```
 
 #### OutVariable
 
 The alias for **OutVariable** is **ov**.
 
-Stores output objects from the command in the specified variable and displays it
-at the command line.
+Stores output objects from the command in the specified variable in addition
+to sending the output along the pipeline.
 
 To add the output to the variable, instead of replacing any output that might
-already be stored there, type a plus sign (+) before the variable name.
+already be stored there, type a plus sign (`+`) before the variable name.
 
 For example, the following command creates the `$out` variable and stores the
 process object in it:
@@ -236,6 +267,10 @@ The following command displays the contents of the `$out` variable:
 ```powershell
 $out
 ```
+
+> [!NOTE]
+> The variable created by the **OutVariable** parameter is a
+> `[System.Collections.ArrayList]`.
 
 #### PipelineVariable
 
@@ -327,9 +362,9 @@ executing the command.
 command.
 
 > [!NOTE]
-> The `-WarningAction` parameter does not override the value of the
-> `$WarningAction` preference variable when the parameter is used in a command
-> to run a script or function.
+> The **WarningAction** parameter overrides, but does not replace the value of
+> the `$WarningAction` preference variable when the parameter is used in a
+> command to run a script or function.
 
 #### WarningVariable
 
@@ -341,7 +376,7 @@ All generated warnings are saved in the variable even if the warnings aren't
 displayed to the user.
 
 To append the warnings to the variable content, instead of replacing any
-warnings that might already be stored there, type a plus sign (+) before the
+warnings that might already be stored there, type a plus sign (`+`) before the
 variable name.
 
 For example, the following command creates the `$a` variable and then stores any
@@ -369,7 +404,7 @@ to refer to specific warnings stored in the variable.
 
 > [!NOTE]
 > The **WarningVariable** parameter does not capture warnings from nested
-calls in functions or scripts.
+> calls in functions or scripts.
 
 ### Risk Management Parameter Descriptions
 
@@ -398,7 +433,7 @@ For example, the following command uses the `-WhatIf` parameter in a
 `Remove-Item` command:
 
 ```powershell
-PS> Remove-Item Date.csv -WhatIf
+Remove-Item Date.csv -WhatIf
 ```
 
 Instead of removing the item, PowerShell lists the operations it would
@@ -435,13 +470,9 @@ For example, the following command uses the **Confirm** parameter with a
 operations it would do and the items that would be affected, and asks for
 approval.
 
-```powershell
-PS C:\ps-test> Remove-Item tmp*.txt -Confirm
 ```
+PS C:\ps-test> Remove-Item tmp*.txt -Confirm
 
-This command produces the following output:
-
-```output
 Confirm
 Are you sure you want to perform this action?
 Performing operation "Remove File" on Target " C:\ps-test\tmp1.txt
@@ -462,23 +493,21 @@ The Confirm response options are as follows:
 |Suspend (S):   |Pause the command and create a temporary session.          |
 |Help (?)       |Display help for these options.                            |
 
-The **Suspend** option places the command on hold and creates a temporary nested
-session in which you can work until you're ready to choose a Confirm option. The
-command prompt for the nested session has two extra carets (>>) to indicate that
-it's a child operation of the original parent command. You can run commands and
-scripts in the nested session. To end the nested session and return to the
-Confirm options for the original command, type "exit".
+The **Suspend** option places the command on hold and creates a temporary
+nested session in which you can work until you're ready to choose a **Confirm**
+option. The command prompt for the nested session has two extra carets (>>) to
+indicate that it's a child operation of the original parent command. You can
+run commands and scripts in the nested session. To end the nested session and
+return to the Confirm options for the original command, type "exit".
 
 In the following example, the **Suspend** option (S) is used to halt a command
 temporarily while the user checks the help for a command parameter. After
 obtaining the needed information, the user types "exit" to end the nested prompt
 and then selects the Yes (y) response to the Confirm query.
 
-```powershell
-PS C:\ps-test> New-Item -ItemType File -Name Test.txt -Confirm
 ```
+PS C:\ps-test> New-Item -ItemType File -Name Test.txt -Confirm
 
-```output
 Confirm
 Are you sure you want to perform this action?
 

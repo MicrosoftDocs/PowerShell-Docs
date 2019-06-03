@@ -112,8 +112,8 @@ cmdlet, or type `exit`.
 ### Example 1: Start an interactive session
 
 ```
-PS C:\> Enter-PSSession
-[localhost]: PS C:\>
+PS> Enter-PSSession
+[localhost]: PS>
 ```
 
 This command starts an interactive session on the local computer.
@@ -127,7 +127,7 @@ session as text.
 ```
 The first command uses the **Enter-PSSession** cmdlet to start an interactive session with Server01, a remote computer. When the session starts, the command prompt changes to include the computer name.
 PS C:\> Enter-PSSession -ComputerName Server01
-[Server01]: PS C:\>
+[Server01]: PS>
 
 The second command gets the PowerShell process and redirects the output to the Process.txt file. The command is submitted to the remote computer, and the file is saved on the remote computer.
 [Server01]: PS C:\> Get-Process PowerShell > C:\ps-test\Process.txt
@@ -148,9 +148,9 @@ This command shows how to work in an interactive session with a remote computer.
 ### Example 3: Use the Session parameter
 
 ```
-PS C:\> $s = New-PSSession -ComputerName Server01
-PS C:\> Enter-PSSession -Session $s
-[Server01]: PS C:\>
+PS> $s = New-PSSession -ComputerName Server01
+PS> Enter-PSSession -Session $s
+[Server01]: PS>
 ```
 
 These commands use the *Session* parameter of **Enter-PSSession** to run the interactive session in
@@ -159,8 +159,8 @@ an existing PowerShell session (**PSSession**).
 ### Example 4: Start an interactive session and specify the Port and Credential parameters
 
 ```
-PS C:\> Enter-PSSession -ComputerName Server01 -Port 90 -Credential Domain01\User01
-[Server01]: PS C:\>
+PS> Enter-PSSession -ComputerName Server01 -Port 90 -Credential Domain01\User01
+[Server01]: PS>
 ```
 
 This command starts an interactive session with the Server01 computer.
@@ -170,9 +170,9 @@ account of a user who has permission to connect to the remote computer.
 ### Example 5: Stop an interactive session
 
 ```
-PS C:\> Enter-PSSession -ComputerName Server01
-[Server01]: PS C:\> Exit-PSSession
-PS C:\>
+PS> Enter-PSSession -ComputerName Server01
+[Server01]: PS> Exit-PSSession
+PS>
 ```
 
 This example shows how to start and stop an interactive session.
@@ -186,17 +186,17 @@ You can also use the **Exit** keyword to end the interactive session.
 ### Example 6: Start an interactive session using SSH
 
 ```
-PS C:\> Enter-PSSession -HostName UserA@LinuxServer01
+PS> Enter-PSSession -HostName UserA@LinuxServer01
 ```
 
 This example shows how to start an interactive session using Secure Shell (SSH). If SSH is
-configured on the remote computer to prompt for passwords then you will get a password prompt. 
+configured on the remote computer to prompt for passwords then you will get a password prompt.
 Otherwise you will have to use SSH key based user authentication.
 
 ### Example 7: Start an interactive session using SSH and specify the Port and user authentication key
 
 ```
-PS C:\> Enter-PSSession -HostName UserA@LinuxServer02:22 -KeyFilePath c:\<path>\userAKey_rsa
+PS> Enter-PSSession -HostName UserA@LinuxServer02:22 -KeyFilePath c:\<path>\userAKey_rsa
 ```
 
 This example shows how to start an interactive session using SSH. It uses the *Port* parameter to
@@ -454,7 +454,7 @@ Accept wildcard characters: False
 Parameter Sets: ComputerName, Uri, VMId, VMName
 Required: True (VMId, VMName), False (ComputerName, Uri)
 Default value: None
-Aliases: 
+Aliases:
 Type: PSCredential
 ```
 
@@ -668,7 +668,7 @@ Accept wildcard characters: False
 
 ### -Session
 
-Specifies a Windows PowerShell session (**PSSession**) to use for the interactive session.
+Specifies a PowerShell session (**PSSession**) to use for the interactive session.
 This parameter takes a session object.
 You can also use the *Name*, *InstanceID*, or *ID* parameters to specify a **PSSession**.
 
@@ -805,7 +805,7 @@ Accept wildcard characters: False
 Indicates that this cmdlet uses the Secure Sockets Layer (SSL) protocol to establish a connection to
 the remote computer. By default, SSL is not used.
 
-WS-Management encrypts all Windows PowerShell content transmitted over the network.
+WS-Management encrypts all PowerShell content transmitted over the network.
 The *UseSSL* parameter is an additional protection that sends the data across an HTTPS connection
 instead of an HTTP connection.
 
@@ -879,11 +879,10 @@ The cmdlet does not return any output.
 * To connect to a remote computer, you must be a member of the Administrators group on the remote
 computer.
 * In Windows Vista and later versions of the Windows operating system, to start an interactive
-session on the local computer, you must start Windows PowerShell with the Run as administrator
+session on the local computer, you must start PowerShell with the Run as administrator
 option.
 * When you use **Enter-PSSession**, your user profile on the remote computer is used for the
-interactive session. The commands in the remote user profile, including commands to add Windows
-PowerShell snap-ins and to change the command prompt, run before the remote prompt is displayed.
+interactive session. The commands in the remote user profile, including commands to add PowerShell snap-ins and to change the command prompt, run before the remote prompt is displayed.
 * **Enter-PSSession** uses the UI culture setting on the local computer for the interactive session.
 To find the local UI culture, use the $UICulture automatic variable.
 * **Enter-PSSession** requires the Get-Command, Out-Default, and Exit-PSSession cmdlets. If these
@@ -893,7 +892,7 @@ cmdlets are not included in the session configuration on the remote computer, th
 computer, **Enter-PSSession** sends the commands directly to the remote computer without
 interpretation.
 * If the session that you want to enter is busy processing a command, there might be a delay before
-Windows PowerShell responds to **the Enter-PSSession** command. You will be connected as soon as the
+PowerShell responds to **the Enter-PSSession** command. You will be connected as soon as the
 session is available. To cancel the **Enter-PSSession** command, press `CTRL+C`.
 * The **HostName** parameter set was included starting with PowerShell 6.0.
   It was added to provide PowerShell remoting based on Secure Shell (SSH).
@@ -903,7 +902,7 @@ remoting will work over these platforms where PowerShell and SSH are installed a
 WinRM specific features and limitations do not apply.
   For example WinRM based quotas, session options, custom endpoint configuration, and
 disconnect/reconnect features are currently not supported.
-  For more information about how to set up PowerShell SSH remoting, see 
+  For more information about how to set up PowerShell SSH remoting, see
 [PowerShell Remoting Over SSH](/powershell/scripting/core-powershell/ssh-remoting-in-powershell-core).
 
 ## RELATED LINKS
