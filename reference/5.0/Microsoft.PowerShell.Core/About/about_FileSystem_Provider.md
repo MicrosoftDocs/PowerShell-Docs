@@ -172,6 +172,14 @@ them as input to the
 Get-Content -Path Test.txt | ConvertTo-Html
 ```
 
+You can also retrieve the content of a file by prefixing its provider path with
+the dollar sign (`$`). The path must be enclosed in curly braces due to variable
+naming restrictions. For more information, see [about_Variables](about_Variables.md).
+
+```powershell
+${C:\Windows\System32\Drivers\etc\hosts}
+```
+
 ### Add content to a file
 
 This command appends the "test content" string to the `Test.txt` file:

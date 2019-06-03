@@ -82,7 +82,30 @@ This cmdlet was introduced in PowerShell 3.0.
 
 ## EXAMPLES
 
-### Example 1: Use a stateful web service
+### Example 1: Send a web request
+
+This command uses the `Invoke-WebRequest` cmdlet to send a web request to the Bing.com site.
+
+```powershell
+$R = Invoke-WebRequest -URI http://www.bing.com?q=how+many+feet+in+a+mile
+$R.InputFields | Where-Object {
+    $_.name -like "* Value*"
+} | Select-Object Name, Value
+```
+
+```Output
+name       value
+----       -----
+From Value 1
+To Value   5280
+```
+
+The first command issues the request and saves the response in the `$R` variable.
+
+The second command gets any **InputField** where the **name** property is like "* Value". The
+filtered results are piped to `Select-Object` to select the **name** and **value** properties.
+
+### Example 2: Use a stateful web service
 
 ```powershell
 $Body = @{
@@ -108,7 +131,7 @@ The second call to `Invoke-WebRequest` fetches the user's profile which requires
 
 The call to `$ProfileResponse` by itself shows the `BasicHtmlWebResponseObject` in the variable.
 
-### Example 2: Get links from a web page
+### Example 3: Get links from a web page
 
 ```powershell
 (Invoke-WebRequest -Uri "https://aka.ms/pscore6-docs").Links.Href
@@ -118,7 +141,7 @@ This command gets the links in a web page.
 It uses the `Invoke-WebRequest` cmdlet to get the web page content.
 Then it users the **Links** property of the `BasicHtmlWebResponseObject` that `Invoke-WebRequest` returns, and the Href property of each link.
 
-### Example 3: Writes the response content to a file using the encoding defined in the requested page.
+### Example 4: Writes the response content to a file using the encoding defined in the requested page.
 
 ```powershell
 $Response = Invoke-WebRequest -Uri "https://aka.ms/pscore6-docs"
@@ -141,7 +164,7 @@ The final few commands write the **Content** property to the file then disposes 
 
 Note that the **Encoding** property will be null if the web request does not return text content.
 
-### Example 4: Submit a multipart/form-data file
+### Example 5: Submit a multipart/form-data file
 
 ```powershell
 $FilePath = 'c:\document.txt'
@@ -164,7 +187,7 @@ $Response = Invoke-WebRequest -Body $MultipartContent -Method 'POST' -Uri 'https
 
 This example uses the `Invoke-WebRequest` cmdlet upload a file as a `multipart/form-data` submission. The file `c:\document.txt` will be submitted as the form field `document` with the `Content-Type` of `text/plain`.
 
-### Example 5: Simplified Multipart/Form-Data Submission
+### Example 6: Simplified Multipart/Form-Data Submission
 
 ```powershell
 $Uri = 'https://api.contoso.com/v2/profile'
@@ -198,6 +221,34 @@ The result is that the image data for `jdoe.png` will be submitted.
 By supplying a list to the `hobbies` key,
 the `hobbies` field will be present in the submissions
 once for each list item.
+
+### Example 7: Catch non success messages from Invoke-WebRequest
+
+When `Invoke-WebRequest` encounters a non-success HTTP message (404, 500, etc.), it returns no
+output and throws a terminating error. To catch the error and view the **StatusCode** you can
+enclose execution in a `try/catch` block. The following example shows how to accomplish this.
+
+```powershell
+try
+{
+    $response = Invoke-WebRequest -Uri "www.microsoft.com/unkownhost" -ErrorAction Stop
+    # This will only execute if the Invoke-WebRequest is successful.
+    $StatusCode = $Response.StatusCode
+}
+catch
+{
+    $StatusCode = $_.Exception.Response.StatusCode.value__
+}
+$StatusCode
+```
+
+```Output
+404
+```
+
+The first command calls `Invoke-WebRequest` with an **ErrorAction** of **Stop**, which forces
+`Invoke-WebRequest` to throw a terminating error on any failed requests. The terminating error is
+caught by the `catch` block which retrieves the **StatusCode** from the **Exception** object.
 
 ## PARAMETERS
 

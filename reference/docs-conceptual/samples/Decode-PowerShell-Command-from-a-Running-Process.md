@@ -33,7 +33,7 @@ powershell.exe -Command {
 ## View the process
 
 The body of the command which PowerShell is executing is stored in the **CommandLine** property
-of the [Win32_Process][] class. If the command is an [encoded command][], the **CommandLine**
+of the [Win32_Process][] class. If the command is an encoded command, the **CommandLine**
 property contains the string "EncodedCommand". Using this information, the encoded command can
 be de-obfuscated via the following process.
 
@@ -114,4 +114,3 @@ DecodedCommand :
 [Task Scheduler]: /windows/desktop/TaskSchd/task-scheduler-start-page
 [SQL Server Agent]: /sql/ssms/agent/sql-server-agent
 [Win32_Process]: /windows/desktop/CIMWin32Prov/win32-process
-[encoded command]: /powershell/scripting/core-powershell/console/powershell.exe-command-line-help#-encodedcommand-

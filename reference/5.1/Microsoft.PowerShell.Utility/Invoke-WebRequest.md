@@ -45,19 +45,22 @@ This command uses the `Invoke-WebRequest` cmdlet to send a web request to the Bi
 ```powershell
 $R = Invoke-WebRequest -URI http://www.bing.com?q=how+many+feet+in+a+mile
 $R.AllElements | Where-Object {
-    $_.innerhtml -like "*=*" } | Sort-Object {
-                                    $_.InnerHtml.Length } | Select-Object InnerText -First 5
+    $_.name -like "* Value" -and $_.tagName -eq "INPUT"
+} | Select-Object Name, Value
 ```
 
 ```Output
-innerText---------1 =5280 feet1 mile
+name       value
+----       -----
+From Value 1
+To Value   5280
 ```
 
 The first command issues the request and saves the response in the `$R` variable.
 
-The second command gets the **InnerHtml** property when it includes an equal sign, sorts the inner
-HTML by length and selects the 5 shortest values.
-Sorting by the shortest HTML value often helps you find the most specific element that matches that text.
+The second command filters the objects in the **AllElements** property where the **name** property
+is like "* Value" and the **tagName** is "INPUT". The filtered results are piped to `Select-Object`
+to select the **name** and **value** properties.
 
 ### Example 2: Use a stateful web service
 
@@ -114,6 +117,34 @@ This command gets the links in a web page.
 The `Invoke-WebRequest` cmdlet gets the web page content.
 Then the **Links** property of the returned **HtmlWebResponseObject** is used to display the
 **Href** property of each link.
+
+### Example 4: Catch non success messages from Invoke-WebRequest
+
+When `Invoke-WebRequest` encounters a non-success HTTP message (404, 500, etc.), it returns no
+output and throws a terminating error. To catch the error and view the **StatusCode** you can
+enclose execution in a `try/catch` block. The following example shows how to accomplish this.
+
+```powershell
+try
+{
+    $response = Invoke-WebRequest -Uri "www.microsoft.com/unkownhost" -ErrorAction Stop
+    # This will only execute if the Invoke-WebRequest is successful.
+    $StatusCode = $Response.StatusCode
+}
+catch
+{
+    $StatusCode = $_.Exception.Response.StatusCode.value__
+}
+$StatusCode
+```
+
+```Output
+404
+```
+
+The first command calls `Invoke-WebRequest` with an **ErrorAction** of **Stop**, which forces
+`Invoke-WebRequest` to throw a terminating error on any failed requests. The terminating error is
+caught by the `catch` block which retrieves the **StatusCode** from the **Exception** object.
 
 ## PARAMETERS
 
