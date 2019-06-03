@@ -1,11 +1,10 @@
 ---
-ms.date:  11/30/2017
+ms.date:  06/03/2019
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_Object_Creation
 ---
-
 # About Object Creation
 
 ## SHORT DESCRIPTION
@@ -19,33 +18,37 @@ commands and scripts.
 
 There are many ways to create objects, this list is not definitive:
 
-- [New-Object](New-Object.md): Creates an instance of a .NET Framework object or
-  COM object.
-- [Import-Csv](Import-CSV)/[ConvertFrom-CSV](ConvertFrom-CSV): Creates custom
-  objects (**PSCustomObject**) from the items defined as comma separated values.
-- [ConvertFrom-Json](ConvertFrom-Json.md): Creates custom objects
-  defined in JavaScript Object Notation (JSON).
-- [ConvertFrom-String](ConvertFrom-String.md): Built on top of [FlashExtract](/research/publication/flashextract-framework-data-extraction-examples),
+- [New-Object](../../Microsoft.PowerShell.Utility/New-Object.md): Creates an
+  instance of a .NET Framework object or COM object.
+- [Import-Csv](../../Microsoft.PowerShell.Utility/Import-CSV)/
+  [../../Microsoft.PowerShell.Utility/ConvertFrom-CSV](ConvertFrom-CSV):
+  Creates custom objects (**PSCustomObject**) from the items defined as comma
+  separated values.
+- [ConvertFrom-Json](../../Microsoft.PowerShell.Utility/ConvertFrom-Json.md):
+  Creates custom objects defined in JavaScript Object Notation (JSON).
+- [ConvertFrom-String](../../Microsoft.PowerShell.Utility/ConvertFrom-String.md):
+  Built on top of [FlashExtract](/research/publication/flashextract-framework-data-extraction-examples),
   `ConvertFrom-String` creates custom objects from structured string data.
   This topic will demonstrate and discuss each of these methods.
-- [ConvertFrom-StringData](ConvertFrom-StringData.md): Creates custom objects
-  defined as key value pairs.
-- [Add-Type](Add-Type.md): Allows you to define a class in your PowerShell
-  session that you can instantiate with `New-Object`.
-- [New-Module](New-Module.md): The **AsCustomObject** parameter creates a
+- [ConvertFrom-StringData](../../Microsoft.PowerShell.Utility/ConvertFrom-StringData.md):
+  Creates custom objects defined as key value pairs.
+- [Add-Type](../../Microsoft.PowerShell.Utility/Add-Type.md): Allows you to
+  define a class in your PowerShell session that you can instantiate with
+  `New-Object`.
+- [New-Module](../New-Module.md): The **AsCustomObject** parameter creates a
   custom object you define using script block.
-- [Add-Member](Add-Member.md): Adds properties to existing objects. You can
-  use `Add-Member` to create a custom object out of a simple type, like
-  `[System.Int32]`.
-- [Select-Object](Select-Object.md): Selects properties on an object. You can
-  use `Select-Object` to create custom and calculated properties on an already
-  instantiated object.
+- [Add-Member](../../Microsoft.PowerShell.Utility/Add-Member.md): Adds
+  properties to existing objects. You can use `Add-Member` to create a custom
+  object out of a simple type, like `[System.Int32]`.
+- [Select-Object](../../Microsoft.PowerShell.Utility/Select-Object.md): Selects
+  properties on an object. You can use `Select-Object` to create custom and
+  calculated properties on an already instantiated object.
 
 The following additional methods are covered in this article:
 
 - Static `new` operator: Beginning in PowerShell 5.0, you can create objects by
   calling a type's constructor using a static `new` operator.
-- [System.Activator](/en-us/dotnet/api/system.activator) class: Creates objects
+- [System.Activator](/dotnet/api/system.activator) class: Creates objects
   given the assembly name and type name.
 - Hash tables: Beginning in PowerShell 3.0, you can create objects
   from hash tables of property names and property values.
@@ -58,31 +61,35 @@ following sample script.
 ```powershell
 function Get-Constructors ([type]$type)
 {
-    foreach ($constr in $type.getconstructors())
+    foreach ($constr in $type.GetConstructors())
     {
-        Write-Host -nonewline $($constr.declaringtype.name) "("
-
-        foreach ($parameter in $constr.getparameters())
+        $params = ''
+        foreach ($parameter in $constr.GetParameters())
         {
-            Write-Host -nonewline $("{0} {1}, " -f `
-            $parameter.parametertype.fullname,$parameter.name)
+            if ($params -eq '') {
+                $params =  "{0} {1}" -f $parameter.parametertype.fullname,
+                    $parameter.name
+            } else {
+              $params +=  ", {0} {1}" -f $parameter.parametertype.fullname,
+                  $parameter.name
+            }
         }
-        ")"
+        Write-Host $($constr.DeclaringType.Name) "($params)"
     }
 }
 Get-Constructors "System.String"
 ```
 
 ```Output
-String (System.Char* value, )
-String (System.Char* value, System.Int32 startIndex, System.Int32 length, )
-String (System.Char[] value, System.Int32 startIndex, System.Int32 length, )
-String (System.Char[] value, )
-String (System.Char c, System.Int32 count, )
-String (System.SByte* value, )
-String (System.SByte* value, System.Int32 startIndex, System.Int32 length, )
-String (System.SByte* value, System.Int32 startIndex, System.Int32 length,
-        System.Text.Encoding enc, )
+String (System.Char[] value)
+String (System.Char[] value, System.Int32 startIndex, System.Int32 length)
+String (System.Char* value)
+String (System.Char* value, System.Int32 startIndex, System.Int32 length)
+String (System.SByte* value)
+String (System.SByte* value, System.Int32 startIndex, System.Int32 length)
+String (System.SByte* value, System.Int32 startIndex, System.Int32 length, System.Text.Encoding enc)
+String (System.Char c, System.Int32 count)
+String (System.ReadOnlySpan`1[[System.Char, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]] value)
 ```
 
 ### Static new() method
@@ -179,13 +186,12 @@ settable.
 
 ### CREATE CUSTOM OBJECTS FROM HASH TABLES
 
-Custom objects are very useful and they are very easy to create by using the
-hash table method. To create a custom object, use the PSCustomObject class, a
-class designed specifically for this purpose.
+Custom objects are very useful and are easy to create using the hash table
+method. The PSCustomObject class is designed specifically for this purpose.
 
-Custom objects are an excellent way to return customized output from a
-function or script; far more useful than returning formatted output that
-cannot be reformatted or piped to other commands.
+Custom objects are an excellent way to return customized output from a function
+or script. This is more useful than returning formatted output that cannot be
+reformatted or piped to other commands.
 
 The commands in the `Test-Object function` set some variable values and then
 use those values to create a custom object. You can see this object in use in
@@ -287,8 +293,9 @@ Register-ScheduledJob Name Test -FilePath .\Get-Inventory.ps1 -Trigger @{
 
 ### Generic Objects
 
-You can also create generic objects in PowerShell. Generics are classes, structures, interfaces, and
-methods that have placeholders (type parameters) for one or more of the types that they store or use.
+You can also create generic objects in PowerShell. Generics are classes,
+structures, interfaces, and methods that have placeholders (type parameters)
+for one or more of the types that they store or use.
 
 The following example creates a **Dictionary** object.
 
@@ -315,9 +322,3 @@ For more information on Generics, see [Generics in .NET](/dotnet/standard/generi
 [about_Properties](about_Properties.md)
 
 [about_Pipelines](about_Pipelines.md)
-
-[Get-Member](../../Microsoft.PowerShell.Utility/Get-Member.md)
-
-[Import-Csv](../../Microsoft.PowerShell.Utility/Import-Csv.md)
-
-[New-Object](../../Microsoft.PowerShell.Utility/New-Object.md)
