@@ -115,7 +115,7 @@ Version    Name                                Type       Repository           D
 
 This command finds all versions of Required-Script02.
 
-### Example 7: Find a script and its dependent modules and scripts
+### Example 7: Find a script and its dependencies
 ```
 PS C:\> Find-Script -Name "Script-WithDependencies1" -IncludeDependencies -Repository "LocalRepo1"
 Version    Name                                Type       Repository           Description
@@ -126,7 +126,7 @@ Version    Name                                Type       Repository           D
 2.5        Required-Script2                    Script     LocalRepo1           Description for the Required-Script2 script
 ```
 
-This command finds a script and it dependencies.
+This command finds a script and its dependencies.
 
 ### Example 8: Find scripts with the specified tag
 ```

@@ -143,7 +143,7 @@ The second command gets the installed script `Required-Script3` and displays inf
 The third command gets `Required-Script3` and uses the pipeline operator to pass it to the
 `Format-List` cmdlet to format the output.
 
-### Example 3: Install a script with its dependent scripts and modules
+### Example 3: Install a script and its dependencies
 
 ```
 PS C:\> Find-Script -Repository "Local1" -Name "Script-WithDependencies2" -IncludeDependencies
