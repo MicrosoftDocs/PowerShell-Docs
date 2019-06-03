@@ -21,7 +21,7 @@ There are many ways to create objects, this list is not definitive:
 - [New-Object](../../Microsoft.PowerShell.Utility/New-Object.md): Creates an
   instance of a .NET Framework object or COM object.
 - [Import-Csv](../../Microsoft.PowerShell.Utility/Import-CSV.md)/
-  [ConvertFrom-CSV](ConvertFrom-CSV.md):
+  [ConvertFrom-CSV](../../Microsoft.PowerShell.Utility/ConvertFrom-CSV.md):
   Creates custom objects (**PSCustomObject**) from the items defined as comma
   separated values.
 - [ConvertFrom-Json](../../Microsoft.PowerShell.Utility/ConvertFrom-Json.md):
