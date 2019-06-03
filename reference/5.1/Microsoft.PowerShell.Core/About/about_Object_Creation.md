@@ -20,14 +20,14 @@ There are many ways to create objects, this list is not definitive:
 
 - [New-Object](../../Microsoft.PowerShell.Utility/New-Object.md): Creates an
   instance of a .NET Framework object or COM object.
-- [Import-Csv](../../Microsoft.PowerShell.Utility/Import-CSV)/
-  [../../Microsoft.PowerShell.Utility/ConvertFrom-CSV](ConvertFrom-CSV):
+- [Import-Csv](../../Microsoft.PowerShell.Utility/Import-CSV.md)/
+  [ConvertFrom-CSV](../../Microsoft.PowerShell.Utility/ConvertFrom-Csv.md):
   Creates custom objects (**PSCustomObject**) from the items defined as comma
   separated values.
 - [ConvertFrom-Json](../../Microsoft.PowerShell.Utility/ConvertFrom-Json.md):
   Creates custom objects defined in JavaScript Object Notation (JSON).
 - [ConvertFrom-String](../../Microsoft.PowerShell.Utility/ConvertFrom-String.md):
-  Built on top of [FlashExtract](/research/publication/flashextract-framework-data-extraction-examples),
+  Built on top of [FlashExtract](https://www.microsoft.com/en-us/research/publication/flashextract-framework-data-extraction-examples),
   `ConvertFrom-String` creates custom objects from structured string data.
   This topic will demonstrate and discuss each of these methods.
 - [ConvertFrom-StringData](../../Microsoft.PowerShell.Utility/ConvertFrom-StringData.md):

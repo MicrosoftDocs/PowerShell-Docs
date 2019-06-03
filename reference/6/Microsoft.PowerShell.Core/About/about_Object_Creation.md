@@ -20,8 +20,8 @@ There are many ways to create objects, this list is not definitive:
 
 - [New-Object](../../Microsoft.PowerShell.Utility/New-Object.md): Creates an
   instance of a .NET Framework object or COM object.
-- [Import-Csv](../../Microsoft.PowerShell.Utility/Import-CSV)/
-  [../../Microsoft.PowerShell.Utility/ConvertFrom-CSV](ConvertFrom-CSV):
+- [Import-Csv](../../Microsoft.PowerShell.Utility/Import-CSV.md)/
+  [ConvertFrom-CSV](ConvertFrom-CSV.md):
   Creates custom objects (**PSCustomObject**) from the items defined as comma
   separated values.
 - [ConvertFrom-Json](../../Microsoft.PowerShell.Utility/ConvertFrom-Json.md):
@@ -256,25 +256,35 @@ For example, the following command creates a session option object.
 The requirements of the hash table feature, especially the null constructor
 requirement, eliminate many existing classes. However, most PowerShell option
 classes are designed to work with this feature, as well as other very useful
-classes, such as the **ScheduledJobTrigger** class.
+classes, such as the **ProcessStartInfo** class.
 
 ```powershell
-[Microsoft.PowerShell.ScheduledJob.ScheduledJobTrigger]@{
-  Frequency="Daily"
-  At="15:00"
+[System.Diagnostics.ProcessStartInfo]@{
+  CreateNoWindow="$true"
+  Verb="run as"
 }
 ```
 
 ```Output
-Id   Frequency   Time                   DaysOfWeek  Enabled
---   ---------   ----                   ----------  -------
-0    Daily       6/6/2012 3:00:00 PM                True
+Arguments               :
+ArgumentList            : {}
+CreateNoWindow          : True
+EnvironmentVariables    : {OneDriveConsumer, PROCESSOR_ARCHITECTURE,
+                           CommonProgramFiles(x86), APPDATA…}
+Environment             : {[OneDriveConsumer, C:\Users\robreed\OneDrive],
+                           [PROCESSOR_ARCHITECTURE, AMD64],
+                           [CommonProgramFiles(x86),
+                           C:\Program Files (x86)\Common Files],
+                           [APPDATA, C:\Users\robreed\AppData\Roaming]…}
+RedirectStandardInput   : False
+RedirectStandardOutput  : False
+RedirectStandardError   : False
+...
 ```
 
 You can also use the hash table feature when setting parameter values. For
-example, the value of the **SessionOption** parameter of the `New-PSSession`
-cmdlet and the value of the **JobTrigger** parameter of `Register-ScheduledJob`
-can be a hash table.
+example, the value of the **SessionOption** parameter of the `New-PSSession`.
+cmdlet can be a hash table.
 
 ```powershell
 New-PSSession -ComputerName Server01 -SessionOption @{
