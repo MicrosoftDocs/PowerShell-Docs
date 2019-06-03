@@ -18,9 +18,10 @@ Import-DscResource [-Name <ResourceName(s)>] [-ModuleName <ModuleName>]
 |---------|---------|
 |`-Name`|The DSC resource name(s) that you must import. If the module name is specified, the command searches for these DSC resources within this module; otherwise the command searches the DSC resources in all DSC resource paths. Wildcards are supported.|
 |`-ModuleName`|The module name, or module specification.  If you specify resources to import from a module, the command will try to import only those resources. If you specify the module only, the command imports all the DSC resources in the module.|
+|`-ModuleVersion`|Beginning in PowerShell 5.0, you can specify which version of a module a configuration should use. For more information, see [Import a specific version of an installed resource](sxsresource.md).|
 
 ```powershell
-Import-DscResource -ModuleName xActiveDirectory;
+Import-DscResource -ModuleName xActiveDirectory
 ```
 
 ## Example: Use Import-DSCResource within a configuration
@@ -30,7 +31,7 @@ Configuration MSDSCConfiguration
 {
     # Search for and imports Service, File, and Registry from the module PSDesiredStateConfiguration.
     Import-DSCResource -ModuleName PSDesiredStateConfiguration -Name Service, File, Registry
-    
+
     # Search for and import Resource1 from the module that defines it.
     # If only –Name parameter is used then resources can belong to different PowerShell modules as well.
     # TimeZone resource is from the ComputerManagementDSC module which is not installed by default.
@@ -42,7 +43,8 @@ Configuration MSDSCConfiguration
     # Search for and import all DSC resources inside the module PSDesiredStateConfiguration.
     # When specifying the modulename parameter, it is a requirement to list each on a new line.
     Import-DSCResource -ModuleName PSDesiredStateConfiguration
-    Import-DSCResource -ModuleName ComputerManagementDsc
+    # In PowerShell 5.0 and later, you can specify a ModuleVersion parameter
+    Import-DSCResource -ModuleName ComputerManagementDsc -ModuleVersion 6.0.0.0
 ...
 ```
 
@@ -141,6 +143,10 @@ Copy the contents of your desired module version to the top level of the module 
 ### Resource location
 
 When authoring and compiling Configurations, your resources can be stored in any directory specified by your [PSModulePath](/powershell/developer/module/modifying-the-psmodulepath-installation-path). In PowerShell 4.0, the LCM requires all DSC resource modules to be stored under "Program Files\WindowsPowerShell\Modules" or `$pshome\Modules`. Beginning in PowerShell 5.0, this requirement was removed, and resource modules can be stored in any directory specified by `PSModulePath`.
+
+### ModuleVersion added
+
+Beginning in PowerShell 5.0, the `-ModuleVersion` parameter allows you to specify which version of a module to use within your configuration.
 
 ## See also
 
