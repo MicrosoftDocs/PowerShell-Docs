@@ -342,6 +342,17 @@ PSCulture                      en-US
 For more information about the Variable: drive and the PowerShell Variable
 provider, type "get-help variable".
 
+### Variable syntax with provider paths
+
+By prefixing a provider path with the dollar sign `$`, you can access the
+content of any provider which implements the **IContentCmdletProvider**
+interface. The following built in providers support this notation:
+
+- [about_Environment_Provider](about_Environment_Provider.md)
+- [about_Variable_Provider](about_Variable_Provider.md)
+- [about_Function_Provider](about_Function_Provider.md)
+- [about_Alias_Provider](about_Alias_Provider.md)
+
 ### THE VARIABLE CMDLETS
 
 PowerShell includes a set of cmdlets that are designed to manage variables.
