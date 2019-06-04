@@ -94,7 +94,9 @@ cmdlets to list the desired properties.
 ```powershell
 Get-CimInstance -Class Win32_Product  -Filter "Name='Microsoft .NET Core Runtime - 2.1.2 (x64)'" |
   Format-List -Property Name,InstallDate,InstallLocation,PackageCache,Vendor,Version,IdentifyingNumber
-...
+```
+
+```Output
 Name              : Microsoft .NET Core Runtime - 2.1.2 (x64)
 InstallDate       : 20180816
 InstallLocation   :
