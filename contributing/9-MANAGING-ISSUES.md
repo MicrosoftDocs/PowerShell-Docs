@@ -18,8 +18,8 @@
 
 |Prefix  | Description                                                         |
 |------- | --------------------------------------------------------------------|
-|Area    | Used to indicate what part of PowerShell the issue is discussing. Useful for feature owners to find issues for their feature.|
-|Pri     | Used to indicate the priority of the issue. The priority is subjective value assigned by the triage team based on a best guess at the priority and severity of the issue. This is an attempt to provide a filter for choosing what issues to work first.|
+|Area    | Used to indicate what part of PowerShell or the docs that the issue is discussing.<br>Useful for feature owners to find issues for their feature.|
+|Pri     | Used to indicate the priority of the issue. Value range 0-4.        |
 |Issue   | Used to classify the type of feedback for issue                     |
 |Review  | Used for issue that require further review by the team              |
 |Status  | Used to indicate the status of the work item                        |
