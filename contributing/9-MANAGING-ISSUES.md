@@ -66,16 +66,17 @@ Support requests
     > https://docs.microsoft.com/powershell/#pivot=main&panel=community
 
 Code of conduct violations
+
 - Enter a comment indicating the issue is spam, close the issue, and then lock it to remove it
   from the article comments.
 - Each occurrence of this should be discussed in the weekly triage so we can decide on the need
   for further action (e. g. report to GitHub or CELA).
 
-| DocSet    | Product Feedback URL                                           |
-| --------- | -------------------------------------------------------------- |
-| developer | <https://github.com/PowerShell/PowerShell/issues/new/choose>   |
-| dsc       | <https://windowsserver.uservoice.com/forums/301869-powershell> |
-| gallery   | <https://github.com/powershell/powershellgallery/issues/new>   |
-| jea       | <https://github.com/powershell/jea/issues/new>                 |
-| reference | <https://github.com/PowerShell/PowerShell/issues/new/choose>   |
-| wmf       | <https://windowsserver.uservoice.com/forums/301869-powershell> |
+| DocSet    | Product Feedback URL                                         |
+| --------- | ------------------------------------------------------------ |
+| developer | https://github.com/PowerShell/PowerShell/issues/new/choose   |
+| dsc       | https://windowsserver.uservoice.com/forums/301869-powershell |
+| gallery   | https://github.com/powershell/powershellgallery/issues/new   |
+| jea       | https://github.com/powershell/jea/issues/new                 |
+| reference | https://github.com/PowerShell/PowerShell/issues/new/choose   |
+| wmf       | https://windowsserver.uservoice.com/forums/301869-powershell |
