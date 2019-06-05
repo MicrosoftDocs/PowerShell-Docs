@@ -25,10 +25,10 @@ The ValidateLength attribute specifies the minimum and maximum number of charact
 
 #### Parameters
 
-`MinLength` ([System.Integer](/dotnet/api/System.Integer))
+`MinLength` ([System.Integer](/dotnet/api/System.Int32))
 Required. Specifies the minimum number of characters allowed.
 
-`MaxLength` ([System.Integer](/dotnet/api/System.Integer))
+`MaxLength` ([System.Integer](/dotnet/api/System.Int32))
 Required. Specifies the maximum number of characters allowed.
 
 ## Remarks

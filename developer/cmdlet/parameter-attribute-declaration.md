@@ -32,7 +32,7 @@ Optional named parameter. `True` indicates the cmdlet parameter is required. If 
 `ParameterSetName` ([System.String](/dotnet/api/System.String))
 Optional named parameter. Specifies the parameter set that this cmdlet parameter belongs to. If no parameter set is specified, the parameter belongs to all parameter sets.
 
-`Position` ([System.Integer](/dotnet/api/System.Integer))
+`Position` ([System.Integer](/dotnet/api/System.Int32))
 Optional named parameter. Specifies the position of the parameter within a Windows PowerShell command.
 
 `ValueFromPipeline` ([System.Boolean](/dotnet/api/System.Boolean))

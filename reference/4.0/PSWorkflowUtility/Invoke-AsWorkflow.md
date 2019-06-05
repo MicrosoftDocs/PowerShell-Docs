@@ -3,7 +3,7 @@ ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/p/?linkid=287544
+online version:  https://go.microsoft.com/fwlink/p/?linkid=287544
 external help file:  PSWorkflowUtility-help.xml
 title:  Invoke-AsWorkflow
 ---
@@ -32,7 +32,7 @@ The `Invoke-AsWorkflow` workflow runs any command or expression as an inline scr
 These workflows use the standard workflow semantics, have all workflow common parameters, and have all benefits of workflows, including the ability to stop, resume, and recover.
 
 Workflows are designed for long-running commands that collect critical data, but can be used to run any command.
-For more information, see about_Workflows.
+For more information, see [about_Workflows](../PSWorkflow/About/about_Workflows.md).
 
 You can also add workflow common parameters to this command.
 For more information about workflow common parameters, see [about_WorkflowCommonParameters](../PSWorkflow/About/about_WorkflowCommonParameters.md)

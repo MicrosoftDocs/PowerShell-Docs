@@ -35,7 +35,7 @@ For more information, see:
 ## Cryptographic Message Syntax (CMS) cmdlets
 
 The Cryptographic Message Syntax cmdlets support encryption and decryption of content using the IETF
-standard format for cryptographically protecting messages as documented by [RFC5652](https://tools.ietf.org/html/rfc5652).
+standard format for cryptographically protecting messages as documented by [RFC5652](https://tools.ietf.org/html/rfc5652.html).
 
 The CMS encryption standard implements public key cryptography, where the key used to encrypt
 content (the *public key*) and the key used to decrypt content (the *private key*) are separate.
@@ -45,9 +45,9 @@ public key can only be decrypted using the private key. For more information, se
 
 For more information see:
 
-- [Get-CmsMessage](/powershell/module/Microsoft.PowerShell.Security/Get-CmsMessage.md)
-- [Protect-CmsMessage](/powershell/module/Microsoft.PowerShell.Security/Protect-CmsMessage.md)
-- [Unprotect-CmsMessage](/powershell/module/Microsoft.PowerShell.Security/rotect-CmsMessage.md)
+- [Get-CmsMessage](/powershell/module/Microsoft.PowerShell.Security/Get-CmsMessage)
+- [Protect-CmsMessage](/powershell/module/Microsoft.PowerShell.Security/Protect-CmsMessage)
+- [Unprotect-CmsMessage](/powershell/module/Microsoft.PowerShell.Security/UnProtect-CmsMessage)
 
 Certificates require a unique key usage identifier (EKU), such as 'Code Signing' or 'Encrypted
 Mail', to identify them as data encryption certificates in PowerShell. To view document encryption
@@ -156,6 +156,7 @@ line after the output. For example:
 "a single " | Add-Content -Path Example.txt -NoNewline
 "sentence." | Add-Content -Path Example.txt -NoNewline
 Get-Content .\Example.txt
+```
 
 ```Output
 This is a single sentence.

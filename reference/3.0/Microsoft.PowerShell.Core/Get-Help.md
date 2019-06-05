@@ -3,7 +3,7 @@ ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkID=113316
+online version:  https://go.microsoft.com/fwlink/?LinkID=113316
 external help file:  System.Management.Automation.dll-Help.xml
 title:  Get-Help
 ---
@@ -79,7 +79,7 @@ To download or update the help files for a module in Windows PowerShell 3.0, use
 
 You can also view the help topics for PowerShell online in the Microsoft Docs.
 To get the online version of a help topic, use the **Online** parameter, such as: `Get-Help Get-Process -Online`.
-To read all of the help topics, see [PowerShell Documentation](/powershell/overview) in the Microsoft Docs.
+To read all of the help topics, see [PowerShell Documentation](/powershell/) in the Microsoft Docs.
 
 If you type "Get-Help" followed by the exact name of a help topic, or by a word unique to a help topic, `Get-Help` displays the topic contents.
 If you enter a word or word pattern that appears in several help topic titles, `Get-Help` displays a list of the matching titles.
@@ -429,7 +429,7 @@ Displays the online version of a help topic in the default Internet browser.
 This parameter is valid only for cmdlet, function, workflow and script help topics.
 You cannot use the **Online** parameter in **Get-Help** commands in a remote session.
 
-For information about supporting this feature in help topics that you write, see [about_Comment_Based_Help](About/about_Comment_Based_Help.md), and [Supporting Online Help](/powershell/developer/module/supporting-online-help), and [How to Write Cmdlet Help](https://msdn.microsoft.com/en-us/library/aa965353(VS.85).aspx) in the Microsoft Docs.
+For information about supporting this feature in help topics that you write, see [about_Comment_Based_Help](About/about_Comment_Based_Help.md), and [Supporting Online Help](/powershell/developer/module/supporting-online-help), and [How to Write Cmdlet Help](/previous-versions//aa965353(v=vs.85)) in the Microsoft Docs.
 
 ```yaml
 Type: SwitchParameter
@@ -473,7 +473,7 @@ To use this parameter, install the help file for the module that includes the pr
 
 To see the custom cmdlet help for a provider path, go to the provider path location and enter a **Get-Help** command or, from any path location, use the **Path** parameter of Get-Help to specify the provider path.
 You can also find custom cmdlet help online in the provider help section of the help topics.
-For example, you can find help for the **New-Item** cmdlet in the Wsman:\*\ClientCertificate path (http://go.microsoft.com/fwlink/?LinkID=158676).
+For example, you can find help for the **New-Item** cmdlet in the Wsman:\*\ClientCertificate [path](../Microsoft.PowerShell.Security/About/about_Certificate_Provider.md).
 
 For more information about Windows PowerShell providers, see [about_Providers](About/about_Providers.md).
 

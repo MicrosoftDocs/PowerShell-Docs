@@ -19,10 +19,10 @@ and that a current build of your code is available at all times.
 
 To use this example, you should be familiar with the following:
 
-- CI-CD concepts. A good reference can be found at [The Release Pipeline Model](http://aka.ms/thereleasepipelinemodelpdf).
+- CI-CD concepts. A good reference can be found at [The Release Pipeline Model](https://download.microsoft.com/download/C/4/A/C4A14099-FEA4-4CB3-8A8F-A0C2BE5A1219/The Release Pipeline Model.pdf).
 - [Git](https://git-scm.com/) source control
 - The [Pester](https://github.com/pester/Pester) testing framework
-- [Team Foundation Server](https://www.visualstudio.com/tfs/)
+- [Team Foundation Server](https://visualstudio.microsoft.com/tfs/)
 
 ## What you will need
 
@@ -41,7 +41,7 @@ The client computer must be a Windows computer with the following installed:
 ### TFSSrv1
 
 The computer that hosts the TFS server where you will define your build and release.
-This computer must have [Team Foundation Server 2017](https://www.visualstudio.com/tfs/) installed.
+This computer must have [Team Foundation Server 2017](https://visualstudio.microsoft.com/tfs/) installed.
 
 ### BuildAgent
 
@@ -157,7 +157,7 @@ Node $AllNodes.Where{$_.Role -eq 'DNSServer'}.NodeName
 This finds any nodes that were defined as having a role of `DNSServer` in the [configuration data](../configurations/configData.md),
 which is created by the `DevEnv.ps1` script.
 
-You can read more about the `Where` method in [about_arrays](/powershell/reference/3.0/Microsoft.PowerShell.Core/About/about_Arrays.md)
+You can read more about the `Where` method in [about_arrays](/powershell/module/microsoft.powershell.core/about/about_arrays)
 
 Using configuration data to define nodes is important when doing CI because node information will likely change between environments,
 and using configuration data allows you to easily make changes to node information without changing the configuration code.
@@ -336,7 +336,7 @@ The integration test script uses a mixture of [Pester](https://github.com/pester
 Now that we've uploaded our code to TFS and looked at what it does, let's define our build.
 
 Here, we'll cover only the build steps that you'll add to the build. For instructions on how to create a build definition in TFS,
-see [Create and queue a build definition](/azure/devops/pipelines/get-started-designer).
+see [Create and queue a build definition](/azure/devops/pipelines/create-first-pipeline).
 
 Create a new build definition (select the **Empty** template) named "InfraDNS".
 Add the following steps to you build definition:
@@ -406,7 +406,7 @@ Let's create a release definition so that the project is deployed to the develop
 
 To do this, add a new release definition associated with the `InfraDNS` build definition you created previously.
 Be sure to select **Continuous deployment** so that a new release will be triggered any time a new build is completed.
-([What are release pipelines?](/azure/devops/pipelines/release/what-is-release-management))
+([What are release pipelines?](/azure/devops/pipelines/release/index?view=azure-devops))
 and configure it as follows:
 
 Add the following steps to the release definition:
