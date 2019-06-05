@@ -11,7 +11,7 @@ title: ConvertTo-Csv
 # ConvertTo-Csv
 
 ## SYNOPSIS
-Converts objects into a series of comma-separated value (CSV) strings.
+Converts objects into a series of character-separated value (CSV) strings.
 
 ## SYNTAX
 
