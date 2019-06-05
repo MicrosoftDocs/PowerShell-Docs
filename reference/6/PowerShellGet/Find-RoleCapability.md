@@ -340,7 +340,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### **PSGetRoleCapabilityInfo**
+### PSGetRoleCapabilityInfo
 
 The `Find-RoleCapability` cmdlet returns a **PSGetRoleCapabilityInfo** object.
 
