@@ -62,6 +62,9 @@ This command finds the unique members of the set of integers.
 
 ```powershell
 1,1,1,1,12,23,4,5,4643,5,3,3,3,3,3,3,3 | Sort-Object | Get-Unique
+```
+
+```Output
 1
 3
 4
