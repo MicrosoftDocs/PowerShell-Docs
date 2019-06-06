@@ -410,7 +410,7 @@ SnagIt32.exe                              4748
 WmiPrvSE.exe                              5056
 ```
 
-# USING THE LIKE OPERATOR
+## USING THE LIKE OPERATOR
 
 The Like operator lets you use wildcard characters to filter the results of a
 WQL query.
@@ -730,7 +730,7 @@ $q = "Select * from Win32_UserAccount where Caption = 'Fabrikam\\TimO'"
 Get-CimInstance -Query $q
 ```
 
-# SEE ALSO
+## SEE ALSO
 
 [about_Special_Characters](about_Special_Characters.md)
 
