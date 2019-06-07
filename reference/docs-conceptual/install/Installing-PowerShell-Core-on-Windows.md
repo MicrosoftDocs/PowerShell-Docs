@@ -20,7 +20,7 @@ To enable PowerShell remoting over WSMan, the following prerequisites need to be
 ## <a id="msi" />Installing the MSI package
 
 To install PowerShell on a Windows client or Windows Server (works on Windows 7 SP1, Server 2008 R2,
-and later), download the MSI package from our GitHub [releases][] page. Scroll down to the
+and later), download the MSI package from our GitHub [releases][releases] page. Scroll down to the
 **Assets** section of the Release you want to install. The Assets section may be collapsed, so you
 may need to click to expand it.
 
@@ -170,6 +170,7 @@ information, see:
 - [WSMan Remoting in PowerShell Core][wsman-remoting]
 
 <!-- [download-center]: TODO -->
+
 [releases]: https://github.com/PowerShell/PowerShell/releases
 [ssh-remoting]: ../learn/remoting/SSH-Remoting-in-PowerShell-Core.md
 [wsman-remoting]: ../learn/remoting/WSMan-Remoting-in-PowerShell-Core.md
