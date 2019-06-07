@@ -30,21 +30,20 @@ New-Item [[-Path] <String[]>] -Name <String> [-ItemType <String>] [-Value <Objec
 
 ## DESCRIPTION
 
-The `New-Item` cmdlet creates a new item and sets its value.
-The types of items that can be created depend on the location of the item.
-For example, in the file system, `New-Item` creates files and folders.
-In the registry, `New-Item` creates registry keys and entries.
+The `New-Item` cmdlet creates a new item and sets its value. The types of items that can be created
+depend on the location of the item. For example, in the file system, `New-Item` creates files and
+folders. In the registry, `New-Item` creates registry keys and entries.
 
-`New-Item` can also set the value of the items that it creates.
-For example, when it creates a new file, `New-Item` can add initial content to the file.
+`New-Item` can also set the value of the items that it creates. For example, when it creates a new
+file, `New-Item` can add initial content to the file.
 
 ## EXAMPLES
 
 ### Example 1: Create a file in the current directory
 
-This command creates a text file that is named "testfile1.txt" in the current directory.
-The dot ('.') in the value of the **Path** parameter indicates the current directory.
-The quoted text that follows the **Value** parameter is added to the file as content.
+This command creates a text file that is named "testfile1.txt" in the current directory. The dot
+('.') in the value of the **Path** parameter indicates the current directory. The quoted text that
+follows the **Value** parameter is added to the file as content.
 
 ```powershell
 New-Item -Path . -Name "testfile1.txt" -ItemType "file" -Value "This is a text string."
@@ -52,9 +51,8 @@ New-Item -Path . -Name "testfile1.txt" -ItemType "file" -Value "This is a text s
 
 ### Example 2: Create a directory
 
-This command creates a directory named "Logfiles" in the `C:` drive.
-The **ItemType** parameter specifies that the new item is a directory, not a file or other file
-system object.
+This command creates a directory named "Logfiles" in the `C:` drive. The **ItemType** parameter
+specifies that the new item is a directory, not a file or other file system object.
 
 ```powershell
 New-Item -Path "c:\" -Name "logfiles" -ItemType "directory"
@@ -64,18 +62,16 @@ New-Item -Path "c:\" -Name "logfiles" -ItemType "directory"
 
 This command creates a PowerShell profile in the path that is specified by the `$profile` variable.
 
-You can use profiles to customize PowerShell.
-`$profile` is an automatic (built-in) variable that stores the path and file name of the
-"CurrentUser/CurrentHost" profile.
-By default, the profile does not exist, even though PowerShell stores a path and file name for it.
+You can use profiles to customize PowerShell. `$profile` is an automatic (built-in) variable that
+stores the path and file name of the "CurrentUser/CurrentHost" profile. By default, the profile does
+not exist, even though PowerShell stores a path and file name for it.
 
-In this command, the `$profile` variable represents the path of the file.
-**ItemType** parameter specifies that the command creates a file.
-The **Force** parameter lets you create a file in the profile path, even when the directories in the
-path do not exist.
+In this command, the `$profile` variable represents the path of the file. **ItemType** parameter
+specifies that the command creates a file. The **Force** parameter lets you create a file in the
+profile path, even when the directories in the path do not exist.
 
-After you use this command to create a profile, you can enter aliases, functions, and scripts in the
-profile to customize your shell.
+After you create a profile, you can enter aliases, functions, and scripts in the profile to
+customize your shell.
 
 For more information, see [about_Automatic_Variables](../Microsoft.PowerShell.Core/About/about_Automatic_Variables.md)
 and [about_Profiles](../Microsoft.PowerShell.Core/About/about_Profiles.md).
@@ -86,7 +82,7 @@ New-Item -Path $profile -ItemType "file" -Force
 
 ### Example 4: Create a directory in a different directory
 
-This command creates a new Scripts directory in the "C:\PS-Test" directory.
+This example creates a new Scripts directory in the "C:\PS-Test" directory.
 
 The name of the new directory item, "Scripts", is included in the value of **Path** parameter,
 instead of being specified in the value of **Name**. As indicated by the syntax, either command form
@@ -98,8 +94,8 @@ New-Item -ItemType "directory" -Path "c:\ps-test\scripts"
 
 ### Example 5: Create multiple files
 
-This command creates files in two different directories.
-Because **Path** takes multiple strings, you can use it to create multiple items.
+This example creates files in two different directories. Because **Path** takes multiple strings,
+you can use it to create multiple items.
 
 ```powershell
 New-Item -ItemType "file" -Path "c:\ps-test\test.txt", "c:\ps-test\Logs\test.log"
@@ -107,8 +103,8 @@ New-Item -ItemType "file" -Path "c:\ps-test\test.txt", "c:\ps-test\Logs\test.log
 
 ### Example 6: Use wildcards to create files in multiple directories
 
-The `New-Item` cmdlet supports wildcards in the **Path** parameter. The following command creates
-a `temp.txt` file in all of the directories specified by the wildcards in the **Path** parameter.
+The `New-Item` cmdlet supports wildcards in the **Path** parameter. The following command creates a
+`temp.txt` file in all of the directories specified by the wildcards in the **Path** parameter.
 
 ```powershell
 Get-ChildItem -Path C:\Temp\
@@ -141,16 +137,31 @@ the `New-Item` cmdlet creates a `temp.txt` file in all of the directories under 
 directory. The `New-Item` cmdlet outputs the items you created, which is piped to `Select-Object`
 to verify the paths of the newly created files.
 
+### Example 7: Create a symbolic link to a file or folder
+
+This example creates a symbolic link to the Notice.txt file in the current folder.
+
+```powershell
+$link = New-Item -ItemType SymbolicLink -Path .\link -Target .\Notice.txt
+$link | Select-Object LinkType, Target
+```
+
+```Output
+LinkType     Target
+--------     ------
+SymbolicLink {.\Notice.txt}
+```
+
+In this example, **Target** is an alias for the **Value** parameter. The target of the symbolic link
+can be a relative path. Prior to PowerShell v6.2, the target must be a fully-qualified path.
+
 ## PARAMETERS
 
 ### -Credential
 
-Specifies a user account that has permission to perform this action.
-The default is the current user.
-
-Type a user name, such as "User01" or "Domain01\User01", or enter a **PSCredential** object, such as
-one generated by the `Get-Credential` cmdlet. If you type a user name, you are prompted for a
-password.
+> [!NOTE]
+> This parameter is not supported by any providers installed with PowerShell. To impersonate another
+> user or elevate your credentials when running this cmdlet, use `Invoke-Command`.
 
 ```yaml
 Type: PSCredential
