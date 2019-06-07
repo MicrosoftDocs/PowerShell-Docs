@@ -55,6 +55,15 @@ Misplaced product feedback
 - Optional: Copy the issue to the appropriate product feedback location, add a link to the copied
   item, and close the issue. DO NOT copy issues to UserVoice.
 
+  | DocSet    | Product Feedback URL                                         |
+  | --------- | ------------------------------------------------------------ |
+  | developer | https://github.com/PowerShell/PowerShell/issues/new/choose   |
+  | dsc       | https://windowsserver.uservoice.com/forums/301869-powershell |
+  | gallery   | https://github.com/powershell/powershellgallery/issues/new   |
+  | jea       | https://github.com/powershell/jea/issues/new                 |
+  | reference | https://github.com/PowerShell/PowerShell/issues/new/choose   |
+  | wmf       | https://windowsserver.uservoice.com/forums/301869-powershell |
+
 Support requests
 
 - If the support question is simple, answer it politely and close the issue.
@@ -71,12 +80,3 @@ Code of conduct violations
   from the article comments.
 - Each occurrence of this should be discussed in the weekly triage so we can decide on the need
   for further action (e. g. report to GitHub or CELA).
-
-| DocSet    | Product Feedback URL                                         |
-| --------- | ------------------------------------------------------------ |
-| developer | https://github.com/PowerShell/PowerShell/issues/new/choose   |
-| dsc       | https://windowsserver.uservoice.com/forums/301869-powershell |
-| gallery   | https://github.com/powershell/powershellgallery/issues/new   |
-| jea       | https://github.com/powershell/jea/issues/new                 |
-| reference | https://github.com/PowerShell/PowerShell/issues/new/choose   |
-| wmf       | https://windowsserver.uservoice.com/forums/301869-powershell |
