@@ -17,23 +17,29 @@ Explains how to create and manage scheduled jobs.
 This document shows how to perform basic tasks of creating and managing
 scheduled jobs. For information about more advanced tasks, see [about_Scheduled_Jobs_Advanced](about_Scheduled_Jobs_Advanced.md).
 
+For more information about the cmdlets contained in the **PSScheduledJob**
+module, see [PSScheduledJob](../PSScheduledJob.md).
+
 ## How to create a scheduled job
 
 To create a scheduled job, use the `Register-ScheduledJob` cmdlet. The cmdlet
 requires a name and the commands or script that the job runs. You can either
-run the job immediately by adding the RunNow parameter, or create a job trigger
-and set job options when you create the job or at a later time.
+run the job immediately by adding the **RunNow** parameter, or create a job
+trigger and set job options when you create the job, or edit an existing job.
 
 To create a job that runs a script, use the **FilePath** parameter to specify
 the path to the script file. To create a job that runs commands, use the
 **ScriptBlock** parameter.
 
-The following command creates the ProcessJob, which runs a `Get-Process`
-command. This scheduled job has the default job options and no job trigger.
+The `Register-ScheduledJob` cmdlet creates the **ProcessJob**, which runs a
+`Get-Process` command. This scheduled job has the default job options and no
+job trigger.
 
+```powershell
+Register-ScheduledJob -Name ProcessJob -ScriptBlock { Get-Process }
 ```
-PS C:> Register-ScheduledJob -Name ProcessJob -ScriptBlock { Get-Process }
 
+```Output
 Id         Name            Triggers        Command       Enabled
 --         ----            --------        -------       -------
 8          ProcessJob      {}              Get-Process   True
@@ -49,8 +55,8 @@ To create a job trigger, use the `New-JobTrigger` cmdlet. The following command
 creates a job trigger that starts a job every Monday and Thursday at 5:00 AM.
 The command saves the job trigger in the `$T` variable.
 
-```
-PS C:> $T = New-JobTrigger -Weekly -DaysOfWeek "Monday", "Thursday" -At "5:00 AM"
+```powershell
+$T = New-JobTrigger -Weekly -DaysOfWeek "Monday", "Thursday" -At "5:00 AM"
 ```
 
 Job triggers are optional. You can start a scheduled job at any time by adding
@@ -63,44 +69,54 @@ When you add a job trigger to a scheduled job, the job trigger is added to the
 scheduled job XML file for the scheduled job and becomes part of the scheduled
 job.
 
-You can add a job trigger to a scheduled job when you create the scheduled job
-or at a later time and you can change the job trigger of a scheduled job at any
-time.
+You can add a job trigger to a scheduled job when you create the scheduled job,
+or edit an existing job. You can change the job trigger of a scheduled job at
+any time.
 
 PowerShell uses some of the same job triggers that Task Scheduler uses. For
-detailed information about job triggers, see the help topic for the
-`New-JobTrigger` cmdlet.
+detailed information about job triggers, see the help topic for the [New-JobTrigger](../New-JobTrigger.md)
+cmdlet.
 
-The following command uses the `Register-ScheduledJob` cmdlet to create the
-process job. It uses the **Trigger** parameter to specify the job trigger in
-the `$T` variable.
+The following example uses splatting to create `$JobParms` which are parameter
+values that are passed to the `Register-ScheduledJob` cmdlet. For more
+information, see [about_Splatting.md](../../Microsoft.PowerShell.Core/About/about_Splatting.md).
+The `Register-ScheduledJob` uses `@JobParms` to create a scheduled job. It uses
+the **Trigger** parameter to specify the job trigger in the `$T` variable.
 
-```
-PS C:> Register-ScheduledJob -Name ProcessJob -ScriptBlock {Get-Command} -Trigger $T
+```powershell
+$JobParms = @{
+  Name = "ProcessJob"
+  ScriptBlock = {Get-Command}
+  Trigger = $T
+}
+
+Register-ScheduledJob @JobParms
 ```
 
 You can also add a job trigger to an existing scheduled job at any time. The
-following command adds the job trigger in the `$T` variable to the ProcessJob
-scheduled job.
+`Add-JobTrigger` cmdlet adds the job trigger in the `$T` variable to the
+**ProcessJob** scheduled job.
 
-```
-PS C:> Add-JobTrigger -Name ProcessJob -Trigger $T
+```powershell
+Add-JobTrigger -Name ProcessJob -Trigger $T
 ```
 
-As a result of this command, the job trigger starts the ProcessJob
-automatically every Monday and Thursday at 5:00 AM.
+As a result, the job trigger starts the **ProcessJob** automatically every
+Monday and Thursday at 5:00 AM.
 
 ## How to get a job trigger
 
 To get the job trigger of a scheduled job, use the `Get-JobTrigger` cmdlet. Use
 the **Name**, **ID**, and **InputObject** parameters to specify the scheduled
-job (not the job trigger).
+job, not the job trigger.
 
-The following command gets the job trigger of the ProcessJob.
+`Get-JobTrigger` gets the job trigger of the **ProcessJob**.
 
+```powershell
+Get-JobTrigger -Name ProcessJob
 ```
-PS C:> Get-JobTrigger -Name ProcessJob
 
+```Output
 Id   Frequency       Time                   DaysOfWeek              Enabled
 --   ---------       ----                   ----------              -------
 1    Weekly          11/7/2011 5:00:00 AM   {Monday, Thursday}      True
@@ -119,26 +135,29 @@ information about the job options, see the help topic for [New-ScheduledJobOptio
 Job options are stored in the scheduled job XML file. You can set job options
 when you create a scheduled job or change them at any time.
 
-The following command creates a scheduled job option in which the **WakeToRun**
-scheduled job option is set to True. The **WakeToRun** option runs the
-scheduled job even if the computer is in the Sleep or Hibernate state at the
-scheduled start time. The command saves the job options in the `$O` variable.
+The `New-ScheduledJobOption` cmdlet creates a scheduled job option in which the
+**WakeToRun** scheduled job option is set to True. The **WakeToRun** option
+runs the scheduled job even if the computer is in the Sleep or Hibernate state
+at the scheduled start time. The command saves the job options in the `$O`
+variable.
 
-```
-PS C:> $O = New-ScheduledJobOption -WakeToRun
+```powershell
+$O = New-ScheduledJobOption -WakeToRun
 ```
 
 ## How to get job options
 
 To get the job options of a scheduled job, use the `Get-ScheduledJobOption`
 cmdlet. Use the **Name**, **ID**, and **InputObject** parameters to specify the
-scheduled job (not the job options).
+scheduled job, not the job options.
 
-The following command gets the job options of the ProcessJob.
+`Get-ScheduledJobOption` gets the job options of the **ProcessJob**.
 
+```powershell
+Get-ScheduledJobOption -Name ProcessJob
 ```
-PS C:> Get-ScheduledJobOption -Name ProcessJob
 
+```Output
 StartIfOnBatteries     : False
 StopIfGoingOnBatteries : True
 WakeToRun              : False
@@ -158,33 +177,40 @@ JobDefinition          : Microsoft.PowerShell.ScheduledJob.ScheduledJobDefinitio
 ## How to change job options
 
 You can change the job options of a scheduled job when you create a scheduled
-job or at any time thereafter.
+job or edit an existing job.
 
-The following command uses the `Add-JobTrigger` cmdlet to create the process
-job. It uses the **ScheduledJobOption** parameter to specify the job options in
-the $O variable.
+The splatted `$JobParms` are passed to the `Add-JobTrigger` cmdlet to create
+the process job. It uses the **ScheduledJobOption** parameter to specify the
+job options in the `$O` variable.
 
-```
-PS C:> Add-JobTrigger -Name ProcessJob -ScriptBlock {Get-Process} -ScheduledJobOption $O
+```powershell
+$JobParms = @{
+  Name = "ProcessJob"
+  ScriptBlock = {Get-Process}
+  ScheduledJobOption = $O
+}
+
+Add-JobTrigger @JobParms
 ```
 
 You can also change the job options to an existing scheduled job at any time.
 The following command uses the `Set-ScheduledJobOption` cmdlet to change the
-value of the **WakeToRun** option of the ProcessJob scheduledJob to True.
+value of the **WakeToRun** option of the **ProcessJob** scheduledJob to
+**True**.
 
-Like all of the Set cmdlets in the **PSScheduledJob** module,
-`Set-ScheduledJobOption` cmdlet does not have **Name** or **ID** parameters.
-You can use the **InputObject** parameter to specify the scheduled job options
-or pipe a scheduled job from `Get-ScheduledJobOption` cmdlet to
+The `Set` cmdlets in the **PSScheduledJob** module, such as the
+`Set-ScheduledJobOption` cmdlet, don't have **Name** or **ID** parameters. You
+can use the **InputObject** parameter to specify the scheduled job options or
+pipe a scheduled job from `Get-ScheduledJobOption` cmdlet to
 `Set-ScheduledJobOption`.
 
-The following command uses the `Get-ScheduledJob` cmdlet to get the ProcessJob.
-It uses the `Get-ScheduledJobOption` cmdlet to get the job options in the
-ProcessJob and the `Set-ScheduledJobOption` cmdlet to change the **WakeToRun**
-job option in the ProcessJob to True.
+This example uses the `Get-ScheduledJob` cmdlet to get the ProcessJob. It uses
+the `Get-ScheduledJobOption` cmdlet to get the job options in the
+**ProcessJob** and the `Set-ScheduledJobOption` cmdlet to change the
+**WakeToRun** job option in the ProcessJob to True.
 
-```
-PS C:> Get-ScheduledJob -Name ProcessJob | Get-ScheduledJobOption |
+```powershell
+Get-ScheduledJob -Name ProcessJob | Get-ScheduledJobOption |
  Set-ScheduledJobOption -WakeToRun
 ```
 
@@ -200,21 +226,22 @@ such as `Get-Job`, `Stop-Job` and `Receive-Job` to manage the job instances.
 > module, type `Import-Module PSScheduledJob` or use any scheduled job cmdlet,
 > such as `Get-ScheduledJob`.
 
-To get all instances of PowerShell scheduled jobs (and all active standard
-jobs), use the `Get-Job` cmdlet. The following command imports the
-**PSScheduledJob** module and then gets all jobs on the local computer.
+To get all instances of PowerShell scheduled jobs, and all active standard
+jobs, use the `Get-Job` cmdlet. The `Import-Module` cmdlet imports the
+**PSScheduledJob** module and `Get-Job` gets the jobs on the local computer.
 
+```powershell
+Import-Module PSScheduledJob
+Get-Job
 ```
-PS C:> Import-Module PSScheduledJob
-PS C:> Get-Job
+
+`Get-Job` gets instances of **ProcessJob** on the local computer.
+
+```powershell
+Get-Job -Name ProcessJob
 ```
 
-The following command gets all instances of the ProcessJob on
-the local computer.
-
-```
-PS C:> Get-Job -Name ProcessJob
-
+```Output
 Id     Name        PSJobTypeName  State    HasMoreData   Location   Command
 --     ----        ------------   -----    -----------   --------   -------
 45     ProcessJob  PSScheduledJob Completed       True   localhost   Get-Process
@@ -229,12 +256,15 @@ Id     Name        PSJobTypeName  State    HasMoreData   Location   Command
 The default display does not show the start time, which typically distinguishes
 instances of the same scheduled job.
 
-The following command uses the `Format-Table` cmdlet to display the **Name**,
-**ID**, and **BeginTime** properties of the scheduled job.
+The `Get-Job` cmdlet sends objects down the pipeline. The `Format-Table` cmdlet
+displays the **Name**, **ID**, and **BeginTime** properties of the scheduled
+job.
 
+```powershell
+Get-Job ProcessJob | Format-Table -Property Name, ID, BeginTime
 ```
-PS C:> Get-Job ProcessJob | Format-Table -Property Name, ID, BeginTime
 
+```Output
 Name       Id BeginTime
 ----       -- ---------
 ProcessJob 43 11/2/2011 3:00:02 AM
@@ -258,12 +288,12 @@ cmdlet.
 > module, type `Import-Module PSScheduledJob` or use any scheduled job cmdlet,
 > such as `Get-ScheduledJob`.
 
-The following command gets the results of the newest instance of the ProcessJob
-scheduled job (ID = 51)
+This examples gets the results of the newest instance of the
+**ProcessJob** scheduled job (ID = 51).
 
-```
-PS C:> Import-Module PSScheduledJob
-PS C:> Receive-Job -ID 51 -Keep
+```powershell
+Import-Module PSScheduledJob
+Receive-Job -ID 51 -Keep
 ```
 
 The results of scheduled jobs are saved on disk, so the **Keep** parameter of
@@ -280,38 +310,8 @@ window.
 
 [about_Scheduled_Jobs](about_Scheduled_Jobs.md)
 
-[Task Scheduler](/windows/desktop/TaskSchd/task-scheduler-start-page)
+[about_Splatting.md](../../Microsoft.PowerShell.Core/About/about_Splatting.md)
 
-## Related links
+[PSScheduledJob](../PSScheduledJob.md) module cmdlets
 
-[Add-JobTrigger](../Add-JobTrigger.md)
-
-[Disable-JobTrigger](../Disable-JobTrigger.md)
-
-[Disable-ScheduledJob](../Disable-ScheduledJob.md)
-
-[Enable-JobTrigger](../Enable-JobTrigger.md)
-
-[Enable-ScheduledJob](../Enable-ScheduledJob.md)
-
-[Get-JobTrigger](../Get-JobTrigger.md)
-
-[Get-ScheduledJob](../Get-ScheduledJob.md)
-
-[Get-ScheduledJobOption](../Get-ScheduledJobOption.md)
-
-[New-JobTrigger](../New-JobTrigger.md)
-
-[New-ScheduledJobOption](../New-ScheduledJobOption.md)
-
-[Register-ScheduledJob](../Register-ScheduledJob.md)
-
-[Remove-JobTrigger](../Remove-JobTrigger.md)
-
-[Set-JobTrigger](../Set-JobTrigger.md)
-
-[Set-ScheduledJob](../Set-ScheduledJob.md)
-
-[Set-ScheduledJobOption](../Set-ScheduledJobOption.md)
-
-[Unregister-ScheduledJob](../Unregister-ScheduledJob.md)
+[Task Scheduler](/windows/desktop/TaskSchd/task-scheduler-reference)

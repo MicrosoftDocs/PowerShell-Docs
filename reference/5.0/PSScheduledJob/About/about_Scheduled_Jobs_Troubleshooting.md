@@ -14,19 +14,15 @@ Explains how to resolve problems with scheduled jobs
 
 ## Long description
 
-This section describes some of the problems that you might encounter when using
-the scheduled job features of PowerShell and it suggests solutions to these
-problems.
+This document describes some of the problems that you might experience when
+using the scheduled job features of PowerShell and it suggests solutions to
+these problems.
 
 Before using PowerShell scheduled jobs, see [about_Scheduled_Jobs](about_Scheduled_Jobs.md)
 and the related scheduled jobs about topics.
 
-This topic contains the following sections:
-
-- Can't find job results
-- Scheduled job doesn't run
-- Can't get scheduled job or scheduled job is corrupted
-- Job cmdlets can't consistently find scheduled jobs
+For more information about the cmdlets contained in the **PSScheduledJob**
+module, see [PSScheduledJob](../PSScheduledJob.md).
 
 ## Can't find job results
 
@@ -44,10 +40,12 @@ cmdlets.
 
 To get a list of all instances of a scheduled job, use the `Get-Job` cmdlet.
 
+```powershell
+Import-Module PSScheduledJob
+Get-Job ProcessJob
 ```
-PS C:> Import-Module PSScheduledJob
-PS C:> Get-Job ProcessJob
 
+```Output
 Id     Name         PSJobTypeName   State         HasMoreData     Location
 --     ----         -------------   -----         -----------     --------
 43     ProcessJob   PSScheduledJob  Completed     False           localhost
@@ -60,12 +58,15 @@ Id     Name         PSJobTypeName   State         HasMoreData     Location
 50     ProcessJob   PSScheduledJob  Completed     False           localhost
 ```
 
-The following command uses the `Format-Table` cmdlet to display the **Name**,
-**ID**, and **PSBeginTime** properties of a scheduled job instance in a table.
+The `Get-Job` cmdlet sends **ProcessJob** objects down the pipeline. The
+`Format-Table` cmdlet displays the **Name**, **ID**, and **PSBeginTime**
+properties of a scheduled job instance in a table.
 
+```powershell
+Get-Job ProcessJob | Format-Table -Property Name, ID, PSBeginTime -Auto
 ```
-PS C:> Get-Job ProcessJob | Format-Table -Property Name, ID, PSBeginTime -Auto
 
+```Output
 Name       Id PSBeginTime
 ----       -- ---------
 ProcessJob 43 11/2/2011 3:00:02 AM
@@ -82,8 +83,8 @@ To get the results of an instance of a scheduled job, use the `Receive-Job`
 cmdlet. The following command gets the results of the newest instance of the
 ProcessJob (ID = 50).
 
-```
-PS C:> Receive-Job -ID 50
+```powershell
+Receive-Job -ID 50
 ```
 
 ### Basic method for finding job results on disk
@@ -101,19 +102,23 @@ scheduled job in the following path:
 `$home\AppData\Local\Microsoft\Windows\PowerShell\ScheduledJob
 <ScheduledJobName>\Output`
 
-Typically:
+For example:
+
 `C:\Users<UserName>\AppData\Local\Microsoft\Windows\PowerShell\ScheduledJob
 <ScheduledJobName>\Output`
 
-For example, the following command gets the on-disk execution history of the
-ProcessJob scheduled job.
+For example, the `Get-ChildItem` cmdlet gets the on-disk execution history of
+the **ProcessJob** scheduled job.
 
+```powershell
+$Path = '$home\AppData\Local\Microsoft\Windows\PowerShell'
+$Path += '\ScheduledJobs\ProcessJob\Output'
+Get-ChildItem $Path
 ```
-PS C:> dir $home\AppData\Local\Microsoft\Windows\PowerShell
-\ScheduledJobs\ProcessJob\Output
 
+```Output
 Directory: C:\Users\User01\AppData\Local\Microsoft\Windows\PowerShell
-\ScheduledJobs\ProcessJob\Output
+               \ScheduledJobs\ProcessJob\Output
 
 Mode                LastWriteTime     Length Name
 ----                -------------     ------ ----
@@ -127,69 +132,84 @@ d----         11/7/2011   3:00 AM            20111107-030002-376
 ```
 
 Each timestamp-named directory represents a job instance. The results of each
-job instance are saved in a Results.xml file in the timestamp-named directory.
+job instance are saved in a **Results.xml** file in the timestamp-named
+directory.
 
-For example, the following command gets the Results.xml files for every saved
-instance of the ProcessJob scheduled job.
+For example, the following command gets the **Results.xml** files for every
+saved instance of the **ProcessJob** scheduled job. If the **Results.xml** file
+is missing, PowerShell cannot return or display the job results.
 
+```powershell
+$Path = '$home\AppData\Local\Microsoft\Windows\PowerShell'
+$Path += '\ScheduledJobs\ProcessJob\Output\*\Results.xml'
+Get-ChildItem $Path
 ```
-PS C:> dir $home\AppData\Local\Microsoft\Windows\PowerShell\ScheduledJobs
-\ProcessJob\Output\*\Results.xml
 
+```Output
 Directory: C:\Users\User01\Appdata\Local\Microsoft\Windows\PowerShell
-\ScheduledJobs\ProcessJob\Output
+               \ScheduledJobs\ProcessJob\Output
 ```
 
-If the Results.xml file is missing, PowerShell cannot return or display the job
-results.
-
-The Job cmdlet might not be able to get scheduled job instances or their
+The job cmdlet might not be able to get scheduled job instances or their
 results because the **PSScheduledJob** module is not imported into the session.
 
 > [!NOTE]
-> Before using a Job cmdlet on scheduled job instances, verify that the
-> **PSScheduledJob** module is included in the session. Without the module, the
-> Job cmdlets cannot get scheduled job instances or their results.
+> Before using a job cmdlet on scheduled job instances, verify that the
+> **PSScheduledJob** module is included in the session. Without the
+> **PSScheduledJob** module, the job cmdlets cannot get scheduled job instances
+> or their results.
 
-To import the **PSScheduledJob** module, type:
+To import the **PSScheduledJob** module:
 
-```
-PS C:> Import-Module PSScheduledJob
+```powershell
+Import-Module PSScheduledJob
 ```
 
 ### Receive-Job cmdlet might already have returned the results
 
 If `Receive-Job` does not return job instance results, it might be because a
 `Receive-Job` command has been run for that job instance in the current session
-without the Keep parameter.
+without the **Keep** parameter.
 
 When you use `Receive-Job` without the **Keep** parameter, `Receive-Job`
-returns the job results and sets the **HasMoreData** property of the job
-instance to False to indicate that it returned all of the results for the job
-instance and has no more results to return. This setting is appropriate for
-standard background jobs, but not for instances of scheduled jobs, which are
-saved to disk.
+returns the job results and sets the job instance's **HasMoreData** property to
+**False**. The **False** value means that `Receive-Job` returned the job's
+results and the instance has no more results to return. This setting is
+appropriate for standard background jobs, but not for instances of scheduled
+jobs, which are saved to disk.
 
-To get the job instance results again, start a new PowerShell session (type
-`PowerShell` without quotation marks), import the **PSScheduledJob** module,
-and try the `Receive-Job` command again.
+To get the job instance results again, start a new PowerShell session by typing
+`PowerShell`. Import the **PSScheduledJob** module, and try the `Receive-Job`
+command again.
 
+```powershell
+Receive-Job -ID 50
 ```
-PS C:> Receive-Job -ID 50
-PS C:>                     #No results
-PS C:> PowerShell
 
+```Output
+#No results
+```
+
+```powershell
+PowerShell.exe
+```
+
+```Output
 Windows PowerShell
 Copyright (C) 2012 Microsoft Corporation. All rights reserved.
+```
 
-PS C:> Import-Module PSScheduledJob
-PS C:> Receive-Job -ID 50
+```powershell
+Import-Module PSScheduledJob
+Receive-Job -ID 50
+```
 
-Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
--------  ------    -----      ----- -----   ------     -- -----------
-1213      33    12348      21676    88    25.71   1608 CcmExec
-29       4     1168       2920    43     0.02    748 conhost
-46       6     2208       4612    45     0.03   1640 conhost
+```Output
+Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id  ProcessName
+-------  ------    -----      ----- -----   ------     --  -----------
+1213         33    12348      21676    88    25.71   1608  CcmExec
+29            4     1168       2920    43     0.02    748  conhost
+46            6     2208       4612    45     0.03   1640  conhost
 ```
 
 ### Using Keep parameter to get results more than one time in a session
@@ -197,23 +217,29 @@ Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
 To get the result of a job instance more than one time in a session, use the
 **Keep** parameter of the `Receive-Job` cmdlet.
 
+```powershell
+Import-Module PSScheduledJob
+Receive-Job -ID 50 -Keep
 ```
-PS C:> Import-Module PSScheduledJob
-PS C:> Receive-Job -ID 50 -Keep
 
-Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
--------  ------    -----      ----- -----   ------     -- -----------
-1213      33    12348      21676    88    25.71   1608 CcmExec
-29       4     1168       2920    43     0.02    748 conhost
-46       6     2208       4612    45     0.03   1640 conhost
+```Output
+Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id  ProcessName
+-------  ------    -----      ----- -----   ------     --  -----------
+1213         33    12348      21676    88    25.71   1608  CcmExec
+29            4     1168       2920    43     0.02    748  conhost
+46            6     2208       4612    45     0.03   1640  conhost
+```
 
-PS C:> Receive-Job -ID 50 -Keep
+```powershell
+Receive-Job -ID 50 -Keep
+```
 
-Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
--------  ------    -----      ----- -----   ------     -- -----------
-1213      33    12348      21676    88    25.71   1608 CcmExec
-29       4     1168       2920    43     0.02    748 conhost
-46       6     2208       4612    45     0.03   1640 conhost
+```Output
+Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id  ProcessName
+-------  ------    -----      ----- -----   ------     --  -----------
+1213         33    12348      21676    88    25.71   1608  CcmExec
+29            4     1168       2920    43     0.02    748  conhost
+46            6     2208       4612    45     0.03   1640  conhost
 ```
 
 ### The scheduled job might be corrupted
@@ -225,30 +251,29 @@ scheduled job.
 To determine if a scheduled job still exists, use the `Get-ScheduledJob`
 cmdlet.
 
-```
-PS C:> Get-ScheduledJob
+```powershell
+Get-ScheduledJob
 ```
 
 ### The number of results might have exceeded the ExecutionHistoryLength
 
 The **ExecutionHistoryLength** property of a scheduled job determines how many
 job instances, and their results, are saved to disk. The default value is 32.
-When the number of instances of a scheduled job exceeds this value, Windows
-PowerShell deletes the oldest job instance to make room for each new job
-instance.
+When the number of instances of a scheduled job exceeds this value, PowerShell
+deletes the oldest job instance to make room for each new job instance.
 
 To get the value of the **ExecutionHistoryLength** property of a scheduled job,
 use the following command format:
 
-```
-PS C:> (Get-ScheduledJob <JobName>).ExecutionHistoryLength
+```powershell
+(Get-ScheduledJob <JobName>).ExecutionHistoryLength
 ```
 
 For example, the following command gets the value of the
-**ExecutionHistoryLength** property of the ProcessJob scheduled job.
+**ExecutionHistoryLength** property of the **ProcessJob** scheduled job.
 
-```
-PS C:> (Get-ScheduledJob ProcessJob).ExecutionHistoryLength
+```powershell
+(Get-ScheduledJob ProcessJob).ExecutionHistoryLength
 ```
 
 To set or change the value of the **ExecutionHistoryLength** property, use the
@@ -258,8 +283,8 @@ To set or change the value of the **ExecutionHistoryLength** property, use the
 The following command increases the value of the **ExecutionHistoryLength**
 property to 50.
 
-```
-PS C:> Get-ScheduledJob ProcessJob | Set-ScheduledJob -MaxResultCount 50
+```powershell
+Get-ScheduledJob ProcessJob | Set-ScheduledJob -MaxResultCount 50
 ```
 
 ### The job instance results might have been deleted
@@ -272,11 +297,11 @@ saved in a different location.
 To delete the execution history of a scheduled job, use the
 **ClearExecutionHistory** parameter of the scheduled job.
 
-The following command deletes the execution history of the ProcessJob scheduled
-job.
+The following command deletes the execution history of the **ProcessJob**
+scheduled job.
 
-```
-PS C:> Get-ScheduledJob ProcessJob | Set-ScheduledJob -ClearExecutionHistory
+```powershell
+Get-ScheduledJob ProcessJob | Set-ScheduledJob -ClearExecutionHistory
 ```
 
 Also, the `Remove-Job` cmdlet deletes job results. When you use `Remove-Job` to
@@ -294,9 +319,9 @@ get the job results, but the results are available only until you receive them,
 unless you use the Keep parameter of the `Receive-Job` cmdlet.
 
 Also, background jobs and their results are session-specific; they exist only
-in the session in which they are created. If you delete the job (`Remove-Job`),
-close the session or close PowerShell, the job instance and its results are
-deleted.
+in the session in which they are created. If you delete the job with
+`Remove-Job`, close the session or close PowerShell, the job instance and its
+results are deleted.
 
 ## Scheduled job doesn't run
 
@@ -304,33 +329,46 @@ Scheduled jobs don't run automatically if the job triggers or the scheduled job
 are disabled.
 
 Use the `Get-ScheduledJob` cmdlet to get the scheduled job. Verify that the
-value of the **Enabled** property of the scheduled job is True ($true).
+value of the **Enabled** property of the scheduled job is **True**.
 
+```powershell
+Get-ScheduledJob ProcessJob
 ```
-PS C:> Get-ScheduledJob ProcessJob
 
+```Output
 Id         Name            Triggers        Command         Enabled
 --         ----            --------        -------         -------
 4          ProcessJob      {1, 2}          Get-Process     True
+```
 
-PS C:> (Get-ScheduledJob ProcessJob).Enabled
+```powershell
+(Get-ScheduledJob ProcessJob).Enabled
+```
+
+```Output
 True
 ```
 
 Use the `Get-JobTrigger` cmdlet to get the job triggers of the scheduled job.
-Verify that the value of the **Enabled** property of the job trigger is True
-($true)
+Verify that the value of the **Enabled** property of the job trigger is
+**True**.
 
+```powershell
+Get-ScheduledJob ProcessJob | Get-JobTrigger
 ```
-PS C:> Get-ScheduledJob ProcessJob | Get-JobTrigger
 
-Id         Frequency       Time                   DaysOfWeek              Enabled
---         ---------       ----                   ----------              -------
-1          Weekly          11/7/2011 5:00:00 AM   {Monday, Thursday}      True
-2          Daily           11/7/2011 3:00:00 PM                           True
+```Output
+Id      Frequency    Time                   DaysOfWeek            Enabled
+--      ---------    ----                   ----------            -------
+1       Weekly       11/7/2011 5:00:00 AM   {Monday, Thursday}    True
+2       Daily        11/7/2011 3:00:00 PM                         True
+```
 
-PS C:> Get-ScheduledJob ProcessJob | Get-JobTrigger | Format-Table ID, Enabled -Auto
+```powershell
+Get-ScheduledJob ProcessJob|Get-JobTrigger|Format-Table ID, Enabled -Auto
+```
 
+```Output
 Id Enabled
 -- -------
 1    True
@@ -351,15 +389,17 @@ remotely.
 
 Examine the options of the scheduled job and make sure that they are satisfied.
 For example, a scheduled job that requires that the computer be idle or
-requires a network connection, or has a long IdleDuration or a brief
-IdleTimeout might never run.
+requires a network connection, or has a long **IdleDuration** or a brief
+**IdleTimeout** might never run.
 
 Use the `Get-ScheduledJobOption` cmdlet to examine the job options and their
 values.
 
+```powershell
+Get-ScheduledJob -Name ProcessJob
 ```
-PS C:> Get-ScheduledJob -Name ProcessJob
 
+```Output
 StartIfOnBatteries     : False
 StopIfGoingOnBatteries : True
 WakeToRun              : True
@@ -376,7 +416,7 @@ MultipleInstancePolicy : IgnoreNew
 JobDefinition          : Microsoft.PowerShell.ScheduledJob.ScheduledJobDefinition
 ```
 
-For descriptions of the scheduled job options, see the help topic for the [New-ScheduledJobOption](../New-ScheduledJobOption.md).
+For descriptions of the scheduled job options, see [New-ScheduledJobOption](../New-ScheduledJobOption.md).
 
 ### The scheduled job instance might have failed
 
@@ -389,21 +429,21 @@ Use the following methods to detect and correct job failures:
 Check the Task Scheduler event log for errors. To check the log, use Event
 Viewer or a PowerShell command such as the following:
 
-```
-PS C:> Get-WinEvent -LogName Microsoft-Windows-TaskScheduler/Operational | 
+```powershell
+Get-WinEvent -LogName Microsoft-Windows-TaskScheduler/Operational | 
  Where {$_.Message -like "fail"}
 ```
 
 Check the job record in Task Scheduler. PowerShell scheduled jobs are stored in
 the following Task Scheduled folder:
 
-Task Scheduler Library\Microsoft\Windows\PowerShell\ScheduledJobs
+`Task Scheduler Library\Microsoft\Windows\PowerShell\ScheduledJobs`
 
 ### The scheduled job might not run because of insufficient permission
 
 Scheduled jobs run with the permissions of the user who created the job or the
-permissions of the user who is specified by the Credential parameter in the
-Register-ScheduledJob or `Set-ScheduledJob` command.
+permissions of the user who is specified by the **Credential** parameter in the
+`Register-ScheduledJob` or `Set-ScheduledJob` command.
 
 If that user does not have permission to run the commands or scripts, the job
 fails.
@@ -422,24 +462,28 @@ message each time you run the `Get-ScheduledJob` cmdlet.
 
 To remove a corrupted scheduled job, use either one of the following methods:
 
-Delete the <ScheduledJobName> directory for the scheduled job. Do not delete
-the ScheduledJob directory.
+Delete the `<ScheduledJobName>` directory for the scheduled job. Don't delete
+the **ScheduledJob** directory.
 
-The directory is located at `$env:UserProfile\AppData\Local\Microsoft\Windows\PowerShell
+The directory's location:
+
+`$env:UserProfile\AppData\Local\Microsoft\Windows\PowerShell
 \ScheduledJobs<ScheduledJobName>`
 
-Typically:
+For example:
+
 `C:\Users<UserName>\AppData\Local\Microsoft\Windows\PowerShell\
 ScheduledJobs<ScheduledJobName>.`
 
 Use Task Scheduler to delete the scheduled job. PowerShell scheduled tasks
 appear in the following Task Scheduler path:
 
-Task Scheduler Library\Microsoft\Windows\PowerShell\ScheduledJobs<ScheduledJobName>
+`Task Scheduler Library\Microsoft\Windows\PowerShell
+\ScheduledJobs<ScheduledJobName>`
 
 ## Job cmdlets can't consistently find scheduled jobs
 
-When the **PSScheduledJob** module is not in the current session, the job
+When the **PSScheduledJob** module isn't in the current session, the job
 cmdlets cannot get scheduled jobs, start them, or get their results.
 
 To import the **PSScheduledJob** module, type `Import-Module PSScheduledJob` or
@@ -447,12 +491,14 @@ run or get any cmdlet in the module, such as the `Get-ScheduledJob` cmdlet.
 Beginning in PowerShell 3.0, modules are imported automatically when you get or
 use any cmdlet in the module.
 
-When the **PSScheduledJob** module is not in the current session, the following
+When the **PSScheduledJob** module isn't in the current session, the following
 command sequence is possible.
 
+```powershell
+Get-Job ProcessJob
 ```
-PS C:> Get-Job ProcessJob
 
+```Output
 Get-Job : The command cannot find the job because the job name
 ProcessJob was not found.
 Verify the value of the Name parameter, and then try the command again.
@@ -460,16 +506,24 @@ Verify the value of the Name parameter, and then try the command again.
 PSArgumentException
 + FullyQualifiedErrorId : JobWithSpecifiedNameNotFound,Microsoft.PowerShell.
 Commands.GetJobCommand
+```
 
-PS C:> Get-Job
-PS C:> Get-ScheduledJob ProcessJob
+```powershell
+Get-Job
+Get-ScheduledJob ProcessJob
+```
 
+```Output
 Id         Name            Triggers        Command      Enabled
 --         ----            --------        -------      -------
 4          ProcessJob      {1}             Get-Process  True
+```
 
-PS C:> Get-Job ProcessJob
+```powershell
+Get-Job ProcessJob
+```
 
+```Output
 Id     Name         PSJobTypeName   State       HasMoreData     Location
 --     ----         -------------   -----       -----------     --------
 43     ProcessJob   PSScheduledJob  Completed   True            localhost
@@ -493,38 +547,6 @@ imports the **PSScheduledJob** module, and then runs the command.
 
 [about_Scheduled_Jobs](about_Scheduled_Jobs.md)
 
-[Task Scheduler](/windows/desktop/TaskSchd/task-scheduler-start-page)
+[PSScheduledJob](../PSScheduledJob.md) module cmdlets
 
-## Related links
-
-[Add-JobTrigger](../Add-JobTrigger.md)
-
-[Disable-JobTrigger](../Disable-JobTrigger.md)
-
-[Disable-ScheduledJob](../Disable-ScheduledJob.md)
-
-[Enable-JobTrigger](../Enable-JobTrigger.md)
-
-[Enable-ScheduledJob](../Enable-ScheduledJob.md)
-
-[Get-JobTrigger](../Get-JobTrigger.md)
-
-[Get-ScheduledJob](../Get-ScheduledJob.md)
-
-[Get-ScheduledJobOption](../Get-ScheduledJobOption.md)
-
-[New-JobTrigger](../New-JobTrigger.md)
-
-[New-ScheduledJobOption](../New-ScheduledJobOption.md)
-
-[Register-ScheduledJob](../Register-ScheduledJob.md)
-
-[Remove-JobTrigger](../Remove-JobTrigger.md)
-
-[Set-JobTrigger](../Set-JobTrigger.md)
-
-[Set-ScheduledJob](../Set-ScheduledJob.md)
-
-[Set-ScheduledJobOption](../Set-ScheduledJobOption.md)
-
-[Unregister-ScheduledJob](../Unregister-ScheduledJob.md)
+[Task Scheduler](/windows/desktop/TaskSchd/task-scheduler-reference)
