@@ -64,6 +64,16 @@ This command finds the unique members of the set of integers.
 1,1,1,1,12,23,4,5,4643,5,3,3,3,3,3,3,3 | Sort-Object | Get-Unique
 ```
 
+```Output
+1
+3
+4
+5
+12
+23
+4643
+```
+
 The first command takes an array of integers typed at the command line, pipes them to the
 `Sort-Object` cmdlet to be sorted, and then pipes them to `Get-Unique`, which eliminates duplicate
 entries.
