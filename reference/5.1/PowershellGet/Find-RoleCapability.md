@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: PowerShellGet
 ms.date: 6/5/2019
-online version: http://go.microsoft.com/fwlink/?LinkId=822321
+online version: https://go.microsoft.com/fwlink/?linkid=822321
 schema: 2.0.0
 title: Find-RoleCapability
 ---

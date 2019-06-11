@@ -3,7 +3,7 @@ ms.date: 5/15/2019
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkID=210604
+online version: https://go.microsoft.com/fwlink/?linkid=210604
 external help file:  System.Management.Automation.dll-Help.xml
 title:  Connect-PSSession
 ---

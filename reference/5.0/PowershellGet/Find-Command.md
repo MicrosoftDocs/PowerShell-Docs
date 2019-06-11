@@ -3,7 +3,7 @@ ms.date: 6/3/2019
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=822318
+online version: https://go.microsoft.com/fwlink/?linkid=822318
 external help file:  PSModule-help.xml
 title:  Find-Command
 ---

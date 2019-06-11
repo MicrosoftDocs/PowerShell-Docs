@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Utility
 ms.date: 5/15/2019
-online version: http://go.microsoft.com/fwlink/?LinkId=821797
+online version: https://go.microsoft.com/fwlink/?linkid=821797
 schema: 2.0.0
 title: Get-PSBreakpoint
 ---
