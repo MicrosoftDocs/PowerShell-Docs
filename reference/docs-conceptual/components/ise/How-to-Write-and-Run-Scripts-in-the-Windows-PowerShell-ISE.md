@@ -2,7 +2,6 @@
 ms.date:  08/14/2018
 keywords:  powershell,cmdlet
 title:  How to Write and Run Scripts in the Windows PowerShell ISE
-ms.assetid:  62f916d9-b3a1-484a-bdfb-41f57112c22b
 ---
 # How to Write and Run Scripts in the Windows PowerShell ISE
 

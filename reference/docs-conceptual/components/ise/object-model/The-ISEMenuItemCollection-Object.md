@@ -2,7 +2,6 @@
 ms.date:  06/05/2017
 keywords:  powershell,cmdlet
 title:  The ISEMenuItemCollection Object
-ms.assetid:  0c0f5484-3320-408e-8534-5bd1c8e48512
 ---
 # The ISEMenuItemCollection Object
 
