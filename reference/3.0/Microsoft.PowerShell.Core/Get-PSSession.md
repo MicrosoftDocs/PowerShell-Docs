@@ -3,7 +3,7 @@ ms.date: 5/15/2019
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkID=135219
+online version: https://go.microsoft.com/fwlink/?linkid=135219
 external help file:  System.Management.Automation.dll-Help.xml
 title:  Get-PSSession
 ---

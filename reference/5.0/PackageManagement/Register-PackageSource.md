@@ -3,7 +3,7 @@ ms.date:  4/1/2019
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkID=517139
+online version: https://go.microsoft.com/fwlink/?linkid=517139
 external help file:  Microsoft.PowerShell.PackageManagement.dll-Help.xml
 title:  Register-PackageSource
 ---

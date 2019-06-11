@@ -3,7 +3,7 @@ ms.date:  10/02/2018
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821475
+online version: https://go.microsoft.com/fwlink/?linkid=821475
 external help file:  System.Management.Automation.dll-Help.xml
 title:  Enable-PSRemoting
 ---

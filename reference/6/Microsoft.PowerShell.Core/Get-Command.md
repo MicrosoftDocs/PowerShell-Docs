@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Core
 ms.date: 12/14/2018
-online version: http://go.microsoft.com/fwlink/?LinkId=821482
+online version: https://go.microsoft.com/fwlink/?linkid=821482
 schema: 2.0.0
 title: Get-Command
 ---

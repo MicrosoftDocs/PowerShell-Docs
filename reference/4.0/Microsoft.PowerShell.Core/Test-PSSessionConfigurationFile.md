@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Core
 ms.date: 03/28/2019
-online version: http://go.microsoft.com/fwlink/p/?linkid=289619
+online version: https://go.microsoft.com/fwlink/?linkid=289619
 schema: 2.0.0
 title: Test-PSSessionConfigurationFile
 ---

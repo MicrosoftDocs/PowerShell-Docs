@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Management
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
-online version: http://go.microsoft.com/fwlink/?LinkId=821612
+online version: https://go.microsoft.com/fwlink/?linkid=821612
 schema: 2.0.0
 title: Push-Location
 ---

@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Utility
 ms.date: 11/17/2017
-online version: http://go.microsoft.com/fwlink/?LinkId=821826
+online version: https://go.microsoft.com/fwlink/?linkid=821826
 schema: 2.0.0
 title: Invoke-WebRequest
 ---

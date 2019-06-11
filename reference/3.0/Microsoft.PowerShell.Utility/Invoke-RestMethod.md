@@ -1,9 +1,9 @@
-﻿---
+---
 ms.date:  12/13/2018
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkID=217034
+online version: https://go.microsoft.com/fwlink/?linkid=217034
 external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 title:  Invoke-RestMethod
 ---

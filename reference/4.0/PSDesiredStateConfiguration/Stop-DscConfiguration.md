@@ -3,7 +3,7 @@ ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkID=311940
+online version: https://go.microsoft.com/fwlink/?linkid=311940
 external help file:  Stop-DscConfiguration.cdxml-help.xml
 title:  Stop-DscConfiguration
 ---

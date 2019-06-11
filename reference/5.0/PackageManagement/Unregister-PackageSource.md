@@ -3,7 +3,7 @@ ms.date: 5/24/2019
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkID=517143
+online version: https://go.microsoft.com/fwlink/?linkid=517143
 external help file:  Microsoft.PowerShell.PackageManagement.dll-Help.xml
 title:  Unregister-PackageSource
 ---

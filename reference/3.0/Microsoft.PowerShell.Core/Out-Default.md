@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Core
 ms.date: 04/26/2019
-online version: http://go.microsoft.com/fwlink/?LinkId=113362
+online version: https://go.microsoft.com/fwlink/?linkid=113362
 schema: 2.0.0
 title: Out-Default
 ---
