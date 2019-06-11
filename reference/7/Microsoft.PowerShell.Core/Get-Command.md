@@ -8,6 +8,7 @@ online version: http://go.microsoft.com/fwlink/?LinkId=821482
 schema: 2.0.0
 title: Get-Command
 ---
+
 # Get-Command
 
 ## SYNOPSIS
@@ -16,22 +17,19 @@ Gets all commands.
 ## SYNTAX
 
 ### CmdletSet (Default)
-
 ```
 Get-Command [-Verb <String[]>] [-Noun <String[]>] [-Module <String[]>]
- [-FullyQualifiedModule <ModuleSpecification[]>] [-TotalCount <Int32>] [-Syntax]
- [-ShowCommandInfo] [[-ArgumentList] <Object[]>] [-All] [-ListImported]
- [-ParameterName <String[]>] [-ParameterType <PSTypeName[]>] [<CommonParameters>]
+ [-FullyQualifiedModule <ModuleSpecification[]>] [-TotalCount <Int32>] [-Syntax] [-ShowCommandInfo]
+ [[-ArgumentList] <Object[]>] [-All] [-ListImported] [-ParameterName <String[]>]
+ [-ParameterType <PSTypeName[]>] [<CommonParameters>]
 ```
 
 ### AllCommandSet
-
 ```
-Get-Command [[-Name] <string[]>] [[-ArgumentList] <Object[]>] [-Module <string[]>]
-[-FullyQualifiedModule <ModuleSpecification[]>] [-CommandType <CommandTypes>]
-[-TotalCount <int>] [-Syntax] [-ShowCommandInfo] [-All] [-ListImported]
-[-ParameterName <string[]>] [-ParameterType <PSTypeName[]>]
-[-UseFuzzyMatching] [<CommonParameters>]
+Get-Command [[-Name] <String[]>] [-Module <String[]>] [-FullyQualifiedModule <ModuleSpecification[]>]
+ [-CommandType <CommandTypes>] [-TotalCount <Int32>] [-Syntax] [-ShowCommandInfo] [[-ArgumentList] <Object[]>]
+ [-All] [-ListImported] [-ParameterName <String[]>] [-ParameterType <PSTypeName[]>] [-UseFuzzyMatching]
+ [-UseAbbreviationExpansion] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -440,7 +438,7 @@ object, such as the objects that the `Get-Module` and `Import-PSSession` cmdlets
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases:
+Aliases: PSSnapin
 
 Required: False
 Position: Named
@@ -593,24 +591,6 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -UseFuzzyMatching
-
-Indicates using a fuzzy matching algorithm when finding commands. The order of the output is from
-closest match to least likely match. Wildcards should not be used with fuzzy matching as it will
-attempt to match commands that may contain those wildcard characters.
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Verb
 
 Specifies an array of command verbs. This cmdlet gets commands, which include cmdlets, functions,
@@ -629,11 +609,45 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### CommonParameters
+### -UseAbbreviationExpansion
 
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
--InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](About/about_CommonParameters.md).
+Indicates using matching of the characters in the command to find with uppercase characters
+in a command. For example, `i-psdf` would match `Import-PowerShellDataFile` as each of
+the characters to find matches an uppercase character in the result. When using this
+type of match, any wildcards will result in no matches.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: AllCommandSet
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -UseFuzzyMatching
+
+Indicates using a fuzzy matching algorithm when finding commands. The order of the output is from
+closest match to least likely match. Wildcards should not be used with fuzzy matching as it will
+attempt to match commands that may contain those wildcard characters.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: AllCommandSet
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### CommonParameters
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 

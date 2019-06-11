@@ -32,6 +32,12 @@ The **FileSystem** drives are a hierarchical namespace containing the
 directories and files on your computer. A **FileSystem** drive can be a logical
 or phsyical drive, directory, or mapped network share.
 
+A drive called `TEMP:` will be mapped to the user's temporary directory path.
+
+>[!NOTE]
+> Contents in the TEMP: drive are not automatically removed by PowerShell and
+> is up to the user or operating system to manage.
+
 The **FileSystem** provider supports the following cmdlets, which are covered
 in this article.
 
