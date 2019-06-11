@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Utility
 ms.date: 04/23/2019
-online version: http://go.microsoft.com/fwlink/p/?linkid=293982
+online version: https://go.microsoft.com/fwlink/?linkid=293982
 schema: 2.0.0
 title: Import-Clixml
 ---

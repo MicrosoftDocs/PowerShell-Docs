@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: PSReadLine
 ms.date:  12/07/2018
-online version: http://go.microsoft.com/fwlink/?LinkID=821449
+online version: https://go.microsoft.com/fwlink/?linkid=821449
 schema: 2.0.0
 title: Get-PSReadLineKeyHandler
 ---

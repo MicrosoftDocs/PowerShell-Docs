@@ -3,7 +3,7 @@ ms.date: 5/15/2019
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkID=113325
+online version: https://go.microsoft.com/fwlink/?linkid=113325
 external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 title:  Get-PSBreakpoint
 ---

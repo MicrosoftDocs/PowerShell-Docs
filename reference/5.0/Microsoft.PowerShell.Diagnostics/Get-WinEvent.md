@@ -1,11 +1,11 @@
 ---
-ms.date:  3/18/2019
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821529
+ms.date: 3/18/2019
+schema: 2.0.0
+locale: en-us
+keywords: powershell,cmdlet
+online version: https://go.microsoft.com/fwlink/?LinkId=821529
 external help file:  Microsoft.PowerShell.Commands.Diagnostics.dll-Help.xml
-title:  Get-WinEvent
+title: Get-WinEvent
 ---
 
 # Get-WinEvent

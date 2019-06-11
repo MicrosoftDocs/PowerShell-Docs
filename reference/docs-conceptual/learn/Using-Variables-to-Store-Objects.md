@@ -2,7 +2,6 @@
 ms.date:  08/27/2018
 keywords:  powershell,cmdlet
 title:  Using Variables to Store Objects
-ms.assetid:  b1688d73-c173-491e-9ba6-6d0c1cc852de
 ---
 
 # Using variables to store objects

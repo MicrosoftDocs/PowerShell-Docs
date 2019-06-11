@@ -3,7 +3,7 @@ ms.date: 5/20/2019
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821507
+online version: https://go.microsoft.com/fwlink/?linkid=821507
 external help file:  System.Management.Automation.dll-Help.xml
 title:  Register-ArgumentCompleter
 ---

@@ -2,7 +2,6 @@
 ms.date:  06/05/2017
 keywords:  powershell,cmdlet
 title:  Creating .NET and COM Objects New Object
-ms.assetid:  2057b113-efeb-465e-8b44-da2f20dbf603
 ---
 # Creating .NET and COM Objects (New-Object)
 

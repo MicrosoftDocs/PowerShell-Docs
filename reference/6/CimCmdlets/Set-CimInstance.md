@@ -5,6 +5,7 @@ locale: en-us
 Module Name: CimCmdlets
 ms.date: 5/15/2019
 schema: 2.0.0
+title: Set-CimInstance
 ---
 # Set-CimInstance
 

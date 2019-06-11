@@ -3,7 +3,7 @@ ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=627544
+online version: https://go.microsoft.com/fwlink/?linkid=627544
 external help file:  Microsoft.Windows.DSC.CoreConfProviders.dll-Help.xml
 title:  Invoke-DscResource
 ---

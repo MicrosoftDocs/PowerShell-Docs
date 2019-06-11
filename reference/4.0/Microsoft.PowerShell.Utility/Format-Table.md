@@ -3,7 +3,7 @@ ms.date:  12/19/2018
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/p/?linkid=293962
+online version: https://go.microsoft.com/fwlink/?linkid=293962
 external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 title:  Format-Table
 ---

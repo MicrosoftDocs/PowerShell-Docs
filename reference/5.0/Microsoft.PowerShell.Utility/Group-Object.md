@@ -3,7 +3,7 @@ ms.date: 4/26/2019
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821810
+online version: https://go.microsoft.com/fwlink/?linkid=821810
 external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 title:  Group-Object
 ---
@@ -93,9 +93,9 @@ Get-WinEvent -LogName System -MaxEvents 1000 | Group-Object -Property LevelDispl
 ```Output
 Count Name          Group
 ----- ----          -----
-  153 Error         {System.Diagnostics.Eventing.Reader.EventLogRecord, System.Diagnostics.…
-  722 Information   {System.Diagnostics.Eventing.Reader.EventLogRecord, System.Diagnostics.…
-  125 Warning       {System.Diagnostics.Eventing.Reader.EventLogRecord, System.Diagnostics.…
+  153 Error         {System.Diagnostics.Eventing.Reader.EventLogRecord, System.Diagnostics.ï¿½
+  722 Information   {System.Diagnostics.Eventing.Reader.EventLogRecord, System.Diagnostics.ï¿½
+  125 Warning       {System.Diagnostics.Eventing.Reader.EventLogRecord, System.Diagnostics.ï¿½
 ```
 
 ### Example 4: Group processes by priority class

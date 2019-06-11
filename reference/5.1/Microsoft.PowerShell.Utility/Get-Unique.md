@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Utility
 ms.date: 03/12/2019
-online version: http://go.microsoft.com/fwlink/?LinkId=821807
+online version: https://go.microsoft.com/fwlink/?linkid=821807
 schema: 2.0.0
 title: Get-Unique
 ---
@@ -62,6 +62,16 @@ This command finds the unique members of the set of integers.
 
 ```powershell
 1,1,1,1,12,23,4,5,4643,5,3,3,3,3,3,3,3 | Sort-Object | Get-Unique
+```
+
+```Output
+1
+3
+4
+5
+12
+23
+4643
 ```
 
 The first command takes an array of integers typed at the command line, pipes them to the

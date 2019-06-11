@@ -2,7 +2,6 @@
 ms.date:  06/05/2017
 keywords:  powershell,cmdlet
 title:  Installing the Windows PowerShell 2.0 Engine
-ms.assetid:  82928f2b-f96a-4ae6-a0d0-6e7b181da308
 ---
 
 # Installing the Windows PowerShell 2.0 Engine
