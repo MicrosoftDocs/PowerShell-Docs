@@ -3,7 +3,8 @@ external help file: PSDiagnostics-help.xml
 Module Name: PSDiagnostics
 online version:
 schema: 2.0.0
-ms.date:  11/27/2018
+ms.date: 11/27/2018
+title: Set-LogProperties
 ---
 
 # Set-LogProperties

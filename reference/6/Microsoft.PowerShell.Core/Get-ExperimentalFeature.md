@@ -4,8 +4,8 @@ Module Name: Microsoft.PowerShell.Core
 online version: https://go.microsoft.com/fwlink/?linkid=2007351
 schema: 2.0.0
 ms.date: 03/01/2019
+title: Get-ExperimentalFeature
 ---
-
 # Get-ExperimentalFeature
 
 ## SYNOPSIS

@@ -3,7 +3,8 @@ external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Module Name: Microsoft.PowerShell.Utility
 online version:
 schema: 2.0.0
-ms.date:  02/01/2019
+ms.date: 02/01/2019
+title: Join-String
 ---
 
 # Join-String
