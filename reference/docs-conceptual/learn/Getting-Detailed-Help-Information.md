@@ -2,7 +2,6 @@
 ms.date:  08/27/2018
 keywords:  powershell,cmdlet
 title:  Getting Detailed Help Information
-ms.assetid:  6fb4daf7-8607-4a3e-b692-f77631adc1b9
 ---
 
 # Getting detailed help information

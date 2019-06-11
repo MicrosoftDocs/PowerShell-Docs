@@ -2,7 +2,6 @@
 ms.date:  06/05/2017
 keywords:  powershell,cmdlet
 title:  Using Tab Expansion
-ms.assetid:  c8730471-bf6a-43b8-ab1d-f9ef5a74f04e
 ---
 # Using Tab Expansion
 

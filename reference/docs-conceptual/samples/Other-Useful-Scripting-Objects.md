@@ -2,7 +2,6 @@
 ms.date:  06/05/2017
 keywords:  powershell,cmdlet
 title:  Other Useful Scripting Objects
-ms.assetid:  4d781196-720b-4ccc-90d2-c570e5e719f5
 ---
 # Other Useful Scripting Objects
 

@@ -2,7 +2,6 @@
 ms.date:  06/05/2017
 keywords:  powershell,cmdlet
 title:  Viewing Object Structure Get Member
-ms.assetid:  a1819ed2-2ef3-453a-b2b0-f3589c550481
 ---
 # Viewing Object Structure (Get-Member)
 

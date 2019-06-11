@@ -2,7 +2,6 @@
 ms.date:  06/05/2017
 keywords:  powershell,cmdlet
 title:  Multiple selection List Boxes
-ms.assetid:  f74cd5d9-da57-4802-b614-0b194a7bc8f8
 ---
 # Multiple-selection List Boxes
 

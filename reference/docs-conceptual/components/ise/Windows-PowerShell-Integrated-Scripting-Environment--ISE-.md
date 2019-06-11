@@ -2,7 +2,6 @@
 ms.date:  06/05/2017
 keywords:  powershell,cmdlet
 title:  Windows PowerShell Integrated Scripting Environment ISE
-ms.assetid:  f156b92d-0203-46d2-89c7-b4989d32e3d2
 ---
 
 # Windows PowerShell Integrated Scripting Environment (ISE)

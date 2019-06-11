@@ -2,7 +2,6 @@
 ms.date:  08/27/2018
 keywords:  powershell,cmdlet
 title:  Sample scripts for system administration
-ms.assetid:  db6334ec-ace6-436d-ab88-77aefc817511
 ---
 # Sample scripts for system administration
 

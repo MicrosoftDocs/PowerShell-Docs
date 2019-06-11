@@ -2,7 +2,6 @@
 ms.date:  08/27/2018
 keywords:  powershell,cmdlet
 title:  Getting information about commands
-ms.assetid:  56f8e5b4-d97c-4e59-abbe-bf13e464eb0d
 ---
 
 # Getting information about commands
