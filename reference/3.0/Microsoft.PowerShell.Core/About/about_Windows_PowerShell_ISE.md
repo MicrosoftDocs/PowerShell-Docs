@@ -206,7 +206,7 @@ WPF Hardware acceleration" graphics rendering settings on your system. For
 more information, see [Graphics Rendering Registry Settings](http://go.microsoft.com/fwlink/?LinkId=144711)
 in the MSDN library.
 
-# SEE ALSO
+## SEE ALSO
 
 [about_Debuggers](about_Debuggers.md)
 
