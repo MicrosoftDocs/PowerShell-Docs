@@ -5,6 +5,7 @@ locale: en-us
 Module Name: Microsoft.PowerShell.Core
 online version:  http://go.microsoft.com/fwlink/?LinkID=217036
 schema: 2.0.0
+ms.date: 03/26/2019
 title: New-PSSessionConfigurationFile
 ---
 # New-PSSessionConfigurationFile
