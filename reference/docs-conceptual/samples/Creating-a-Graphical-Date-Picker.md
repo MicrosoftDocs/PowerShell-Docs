@@ -2,7 +2,6 @@
 ms.date:  06/05/2017
 keywords:  powershell,cmdlet
 title:  Creating a Graphical Date Picker
-ms.assetid:  c1cb722c-41e9-4baa-be83-59b4653222e9
 ---
 # Creating a Graphical Date Picker
 

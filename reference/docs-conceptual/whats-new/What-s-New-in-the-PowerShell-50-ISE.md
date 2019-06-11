@@ -2,7 +2,6 @@
 ms.date:  06/05/2017
 keywords:  powershell,cmdlet
 title:  What s New in the PowerShell 50 ISE
-ms.assetid:  38648d47-7c27-4b37-a40e-ad29948519c2
 ---
 
 # What&#39;s New in the Windows PowerShell ISE

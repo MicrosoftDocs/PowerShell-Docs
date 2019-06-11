@@ -2,7 +2,6 @@
 ms.date:  06/05/2017
 keywords:  powershell,cmdlet
 title:  How to Use the Console Pane in the Windows PowerShell ISE
-ms.assetid:  44d67705-87c7-4a69-a53e-6471fdebb757
 ---
 # How to Use the Console Pane in the Windows PowerShell ISE
 

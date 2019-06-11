@@ -2,7 +2,6 @@
 ms.date:  08/14/2018
 keywords:  powershell,cmdlet
 title:  Running Remote Commands
-ms.assetid:  d6938b56-7dc8-44ba-b4d4-cd7b169fd74d
 ---
 # Running Remote Commands
 

@@ -2,7 +2,6 @@
 ms.date:  06/05/2017
 keywords:  powershell,cmdlet
 title:  Managing Windows PowerShell Drives
-ms.assetid:  bd809e38-8de9-437a-a250-f30a667d11b4
 ---
 # Managing Windows PowerShell Drives
 

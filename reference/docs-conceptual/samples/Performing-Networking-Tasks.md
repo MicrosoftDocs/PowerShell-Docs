@@ -2,7 +2,6 @@
 ms.date:  06/05/2017
 keywords:  powershell,cmdlet
 title:  Performing Networking Tasks
-ms.assetid:  a43cc55f-70c1-45c8-9467-eaad0d57e3b5
 ---
 # Performing Networking Tasks
 

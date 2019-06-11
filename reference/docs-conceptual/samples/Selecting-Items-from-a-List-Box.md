@@ -2,7 +2,6 @@
 ms.date:  06/05/2017
 keywords:  powershell,cmdlet
 title:  Selecting Items from a List Box
-ms.assetid:  327c7cc5-21d0-4ace-b151-aa1491d1d3c2
 ---
 # Selecting Items from a List Box
 
