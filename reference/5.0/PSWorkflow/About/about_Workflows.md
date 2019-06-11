@@ -273,7 +273,7 @@ of the workflow common parameters, see [about_WorkflowCommonParameters](about_Wo
 
 [New-PSSession](../../Microsoft.PowerShell.Core/New-PSSession.md)
 
-[PSWorkflow](PSWorkflow.md) cmdlets
+[PSWorkflow](../PSWorkflow.md) cmdlets
 
 [Workflows Guide](../../../docs-conceptual/components/workflows-guide.md)
 
