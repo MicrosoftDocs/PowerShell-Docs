@@ -3,7 +3,7 @@ ms.date:  04/23/2019
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/p/?linkid=289796
+online version: https://go.microsoft.com/fwlink/?linkid=289796
 external help file:  Microsoft.PowerShell.Commands.Management.dll-Help.xml
 title:  Add-Content
 ---

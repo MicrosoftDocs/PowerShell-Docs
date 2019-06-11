@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: PackageManagement
 ms.date: 4/1/2019
-online version: http://go.microsoft.com/fwlink/?LinkID=517139
+online version: https://go.microsoft.com/fwlink/?linkid=517139
 schema: 2.0.0
 title: Register-PackageSource
 ---

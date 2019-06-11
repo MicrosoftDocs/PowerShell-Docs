@@ -3,7 +3,7 @@ ms.date:  03/25/2019
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/p/?linkid=289601
+online version: https://go.microsoft.com/fwlink/?linkid=289601
 external help file:  System.Management.Automation.dll-Help.xml
 title:  Out-Host
 ---

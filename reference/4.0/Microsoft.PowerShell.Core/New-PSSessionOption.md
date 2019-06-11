@@ -3,7 +3,7 @@ ms.date:  02/07/2019
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/p/?linkid=289598
+online version: https://go.microsoft.com/fwlink/?linkid=289598
 external help file:  System.Management.Automation.dll-Help.xml
 title:  New-PSSessionOption
 ---

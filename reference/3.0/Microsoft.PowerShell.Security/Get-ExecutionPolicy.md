@@ -1,9 +1,9 @@
-﻿---
+---
 ms.date: 3/22/2019
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkID=113315
+online version: https://go.microsoft.com/fwlink/?linkid=113315
 external help file:  Microsoft.PowerShell.Security.dll-Help.xml
 title:  Get-ExecutionPolicy
 ---

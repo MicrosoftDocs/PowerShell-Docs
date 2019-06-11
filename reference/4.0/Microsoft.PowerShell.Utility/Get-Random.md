@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Utility
 ms.date: 02/26/2019
-online version:  http://go.microsoft.com/fwlink/?linkid=293974
+online version: https://go.microsoft.com/fwlink/?linkid=293974
 schema: 2.0.0
 title: Get-Random
 ---

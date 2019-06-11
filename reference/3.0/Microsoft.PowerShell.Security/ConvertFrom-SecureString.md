@@ -3,7 +3,7 @@ ms.date: 04/27/2019
 schema: 2.0.0
 locale: en-us
 keywords: powershell,cmdlet
-online version: http://go.microsoft.com/fwlink/?LinkID=113287
+online version: https://go.microsoft.com/fwlink/?linkid=113287
 external help file: Microsoft.PowerShell.Security.dll-Help.xml
 title: ConvertFrom-SecureString
 ---

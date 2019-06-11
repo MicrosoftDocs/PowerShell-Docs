@@ -3,7 +3,7 @@ ms.date: 4/26/2019
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/p/?linkid=293942
+online version: https://go.microsoft.com/fwlink/?linkid=293942
 external help file:  PSITPro4_Utility.xml
 title:  Add-Member
 ---

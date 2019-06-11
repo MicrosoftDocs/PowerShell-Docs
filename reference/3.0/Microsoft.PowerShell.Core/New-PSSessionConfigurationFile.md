@@ -3,7 +3,7 @@ external help file: System.Management.Automation.dll-Help.xml
 keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Core
-online version:  http://go.microsoft.com/fwlink/?LinkID=217036
+online version: https://go.microsoft.com/fwlink/?linkid=217036
 schema: 2.0.0
 ms.date: 03/26/2019
 title: New-PSSessionConfigurationFile
