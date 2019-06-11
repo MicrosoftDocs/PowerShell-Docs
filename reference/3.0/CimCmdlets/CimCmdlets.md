@@ -1,12 +1,13 @@
 ---
-ms.date:  02/20/2019
-schema:  2.0.0
-Module Name: CimCmdlets
-keywords:  powershell,cmdlet
-Help Version:  3.0
+ms.date: 02/20/2019
+schema: 2.0.0
+locale: en-US
+keywords: powershell,cmdlet
+Help Version: 3.0
 Module Guid: fb6cc51d-c096-4b38-b78d-0fed6277096a
 Download Help Link: https://go.microsoft.com/fwlink/?LinkId=227015
-Locale: en-US
+Module Name: CimCmdlets
+title: CimCmdlets Module
 ---
 # CimCmdlets Module
 

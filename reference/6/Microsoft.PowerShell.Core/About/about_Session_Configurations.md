@@ -1,9 +1,9 @@
 ---
-ms.date:  12/091/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-title:  about_Session_Configurations
+ms.date: 12/09/2017
+schema: 2.0.0
+locale: en-us
+keywords: powershell,cmdlet
+title: about_Session_Configurations
 ---
 # About Session Configurations
 
@@ -14,8 +14,8 @@ the computer remotely and the commands they can run.
 ## LONG DESCRIPTION
 
 A session configuration, also known as an "endpoint" is a group of settings on
-the local computer that define the environment for the PowerShell
-sessions that are created when remote or local users connect to PowerShell on the local computer.
+the local computer that define the environment for the PowerShell sessions that
+are created when remote or local users connect to PowerShell on the local computer.
 
 Administrators of the computer can use session configurations to protect the
 computer and to define custom environments for users who connect to the

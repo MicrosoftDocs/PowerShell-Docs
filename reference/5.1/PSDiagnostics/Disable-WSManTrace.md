@@ -5,8 +5,8 @@ locale: en-us
 Module Name: PSDiagnostics
 ms.date: 11/29/2018
 schema: 2.0.0
+title: Disable-WSManTrace
 ---
-
 # Disable-WSManTrace
 
 ## SYNOPSIS
