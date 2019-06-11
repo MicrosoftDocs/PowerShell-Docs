@@ -5,6 +5,7 @@ locale: en-us
 Module Name: CimCmdlets
 ms.date: 06/09/2017
 schema: 2.0.0
+title: Get-CimClass
 ---
 
 # Get-CimClass
@@ -117,7 +118,7 @@ Accept wildcard characters: False
 ```
 
 ### -ClassName
-Specifies the name of the CIM class for which to perform the operation. 
+Specifies the name of the CIM class for which to perform the operation.
 NOTE: You can use tab completion to browse the list of classes, because PowerShell gets a list of classes from the local WMI server to provide a list of class names.
 
 ```yaml
@@ -174,7 +175,7 @@ Accept wildcard characters: False
 ### -Namespace
 Specifies the namespace for CIM operation.
 
-The default namespace is root/cimv2. 
+The default namespace is root/cimv2.
 NOTE: You can use tab completion to browse the list of namespaces, because PowerShell gets a list of namespaces from the local WMI server to provide the list of namespaces.
 
 ```yaml

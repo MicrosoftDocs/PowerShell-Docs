@@ -5,12 +5,12 @@ locale: en-us
 Module Name: CimCmdlets
 ms.date: 06/09/2017
 schema: 2.0.0
+title: Remove-CimSession
 ---
 
 # Remove-CimSession
 
 ## SYNOPSIS
-
 Removes one or more CIM sessions.
 
 ## SYNTAX
