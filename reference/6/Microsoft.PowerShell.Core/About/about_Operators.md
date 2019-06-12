@@ -192,32 +192,32 @@ Hello World!
 
 For more about script blocks, see [about_Script_Blocks](about_Script_Blocks.md).
 
-#### Background job operator `&`
+#### Background operator `&`
 
-Runs the pipeline before it in a PowerShell job. The background job operator
-acts similarly to the UNIX control operator ampersand (`&`), which runs
-the command before it asynchronously in sub shell as a job. The background job
-operator is functionally equivalent to `Start-Job`. The following example
+Runs the pipeline before it in the background, in a PowerShell job. This
+operator acts similarly to the UNIX control operator ampersand (`&`), which
+runs the command before itasynchronously in sub shell as a job.
+
+This operator is functionally equivalent to `Start-Job`. The following example
 demonstrates basic usage of the background job operator.
 
 ```powershell
 Get-Process -Name pwsh &
 ```
 
-This is functionally equivalent to the following usage of
-`Start-Job`.
+That command is functionally equivalent to the following usage of `Start-Job`:
 
 ```powershell
 Start-Job -ScriptBlock {Get-Process -Name pwsh}
 ```
 
-Just like `Start-Job`, the background job operator returns a `Job` object.
+Just like `Start-Job`, the `&` background operator returns a `Job` object.
 This object can be used with `Receive-Job` and `Remove-Job`, just as if you
 had used `Start-Job` to start the job.
 
 ```powershell
 $job = Get-Process -Name pwsh &
-Receive-Job $job
+Receive-Job $job -Wait
 ```
 
 ```Output
@@ -234,6 +234,35 @@ Receive-Job $job
 $job = Get-Process -Name pwsh &
 Remove-Job $job
 ```
+
+The `&` background operator is also a statement terminator, just like the UNIX
+control operator ampersand (`&`). This allows you to invoke additional commands
+after the `&` background operator. The following example demonstrates the
+invocation of additional commands after the `&` background operator.
+
+```powershell
+$job = Get-Process -Name pwsh & Receive-Job $job -Wait
+```
+
+```Output
+
+ NPM(K)    PM(M)      WS(M)     CPU(s)      Id  SI ProcessName
+ ------    -----      -----     ------      --  -- -----------
+      0     0.00     221.16      25.90    6988 988 pwsh
+      0     0.00     140.12      29.87   14845 845 pwsh
+      0     0.00      85.51       0.91   19639 988 pwsh
+
+```
+
+This is equivalent to the following script:
+
+```powershell
+$job = Start-Job -ScriptBlock {Get-Process -Name pwsh}
+Receive-Job $job -Wait
+```
+
+If you want to run multiple commands, each in their own background process
+but all on one line, simply place `&` between and after each of the commands.
 
 For more information on PowerShell jobs, see [about_Jobs](about_Jobs.md).
 
