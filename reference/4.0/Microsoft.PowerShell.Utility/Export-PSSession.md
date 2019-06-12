@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Utility
 ms.date: 04/23/2019
-online version: http://go.microsoft.com/fwlink/p/?linkid=293959
+online version: https://go.microsoft.com/fwlink/?linkid=293959
 schema: 2.0.0
 title: Export-PSSession
 ---

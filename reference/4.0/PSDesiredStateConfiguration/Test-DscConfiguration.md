@@ -3,7 +3,7 @@ ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkID=294365
+online version: https://go.microsoft.com/fwlink/?linkid=294365
 external help file:  Test-DSCConfiguration.cdxml-help.xml
 title:  Test-DscConfiguration
 ---

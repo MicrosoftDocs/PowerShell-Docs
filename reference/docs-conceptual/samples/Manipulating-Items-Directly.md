@@ -2,7 +2,6 @@
 ms.date:  06/05/2017
 keywords:  powershell,cmdlet
 title:  Manipulating Items Directly
-ms.assetid:  8cbd4867-917d-41ea-9ff0-b8e765509735
 ---
 # Manipulating Items Directly
 

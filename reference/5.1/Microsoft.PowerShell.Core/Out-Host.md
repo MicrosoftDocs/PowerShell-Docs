@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Core
 ms.date: 03/25/2019
-online version: http://go.microsoft.com/fwlink/?LinkId=821503
+online version: https://go.microsoft.com/fwlink/?linkid=821503
 schema: 2.0.0
 title: Out-Host
 ---

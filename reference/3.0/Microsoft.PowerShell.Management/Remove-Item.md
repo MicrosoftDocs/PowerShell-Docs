@@ -3,7 +3,7 @@ ms.date:  10/18/2018
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkID=113373
+online version: https://go.microsoft.com/fwlink/?linkid=113373
 external help file:  Microsoft.PowerShell.Commands.Management.dll-Help.xml
 title:  Remove-Item
 ---

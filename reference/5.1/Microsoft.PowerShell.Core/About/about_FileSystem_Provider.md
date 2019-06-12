@@ -4,7 +4,7 @@ schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
 title:  FileSystem Provider
-online version:  http://go.microsoft.com/fwlink/?LinkId=821468
+online version: https://go.microsoft.com/fwlink/?linkid=821468
 ---
 # FileSystem provider
 

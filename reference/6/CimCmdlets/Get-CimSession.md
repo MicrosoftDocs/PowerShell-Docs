@@ -5,12 +5,12 @@ locale: en-us
 Module Name: CimCmdlets
 ms.date: 06/09/2017
 schema: 2.0.0
+title: Get-CimSession
 ---
 
 # Get-CimSession
 
 ## SYNOPSIS
-
 Gets the CIM session objects from the current session.
 
 ## SYNTAX

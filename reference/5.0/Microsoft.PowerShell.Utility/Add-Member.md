@@ -3,7 +3,7 @@ ms.date: 4/26/2019
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821748
+online version: https://go.microsoft.com/fwlink/?linkid=821748
 external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 title:  Add-Member
 ---

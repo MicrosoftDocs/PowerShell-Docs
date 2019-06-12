@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: PowerShellGet
 ms.date: 3/7/2019
-online version: http://go.microsoft.com/fwlink/?LinkId=821663
+online version: https://go.microsoft.com/fwlink/?linkid=821663
 schema: 2.0.0
 title: Install-Module
 ---

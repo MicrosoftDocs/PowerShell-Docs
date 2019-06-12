@@ -1,11 +1,10 @@
 ---
-external help file: Microsoft.PowerShell.Commands.Diagnostics.dll-Help.xml
-keywords: powershell,cmdlet
-locale: en-us
-Module Name: Microsoft.PowerShell.Diagnostics
 ms.date: 3/18/2019
-online version: http://go.microsoft.com/fwlink/?LinkId=821529
 schema: 2.0.0
+locale: en-us
+keywords: powershell,cmdlet
+online version: https://go.microsoft.com/fwlink/?LinkID=138336
+external help file:  Microsoft.PowerShell.Commands.Diagnostics.dll-Help.xml
 title: Get-WinEvent
 ---
 

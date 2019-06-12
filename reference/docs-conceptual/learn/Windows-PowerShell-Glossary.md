@@ -2,7 +2,6 @@
 ms.date:  06/05/2017
 keywords:  powershell,cmdlet
 title:  Windows PowerShell Glossary
-ms.assetid:  b0f88cbe-cb83-4912-a301-184534cb35c7
 ---
 
 # Windows PowerShell Glossary

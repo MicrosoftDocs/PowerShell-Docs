@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Utility
 ms.date: 04/04/2019
-online version: http://go.microsoft.com/fwlink/?LinkId=294027
+online version: https://go.microsoft.com/fwlink/?linkid=294027
 schema: 2.0.0
 title: Write-Debug
 ---

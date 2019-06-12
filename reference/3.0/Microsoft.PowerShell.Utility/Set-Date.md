@@ -3,7 +3,7 @@ ms.date: 4/30/2019
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkID=113393
+online version: https://go.microsoft.com/fwlink/?linkid=113393
 external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 title:  Set-Date
 ---

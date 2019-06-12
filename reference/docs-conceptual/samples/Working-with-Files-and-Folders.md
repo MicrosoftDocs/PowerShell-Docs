@@ -2,7 +2,6 @@
 ms.date:  06/05/2017
 keywords:  powershell,cmdlet
 title:  Working with Files and Folders
-ms.assetid:  c0ceb96b-e708-45f3-803b-d1f61a48f4c1
 ---
 # Working with Files and Folders
 

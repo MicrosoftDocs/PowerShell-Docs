@@ -2,7 +2,6 @@
 ms.date:  06/05/2017
 keywords:  powershell,cmdlet
 title:  Starting the Windows PowerShell 2.0 Engine
-ms.assetid:  edafc2fa-7576-49c2-bbba-9336f4bcfc28
 ---
 
 # Starting the Windows PowerShell 2.0 Engine

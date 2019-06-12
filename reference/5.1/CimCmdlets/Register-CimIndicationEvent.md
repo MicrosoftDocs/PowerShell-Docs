@@ -3,9 +3,9 @@ external help file: Microsoft.Management.Infrastructure.CimCmdlets.dll-Help.xml
 keywords: powershell,cmdlet
 locale: en-us
 Module Name: CimCmdlets
-online version:
 ms.date: 02/20/2019
 schema: 2.0.0
+title: Register-CimIndicationEvent
 ---
 # Register-CimIndicationEvent
 

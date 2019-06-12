@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Utility
 ms.date: 2/6/2019
-online version: http://go.microsoft.com/fwlink/?LinkId=821839
+online version: https://go.microsoft.com/fwlink/?linkid=821839
 schema: 2.0.0
 title: Out-File
 ---

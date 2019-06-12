@@ -2,7 +2,6 @@
 ms.date:  06/05/2017
 keywords:  powershell,cmdlet
 title:  The PowerShellTabCollection Object
-ms.assetid:  81f4bf4a-83bf-415e-8378-1703792fbb58
 ---
 # The PowerShellTabCollection Object
 

@@ -2,7 +2,6 @@
 ms.date:  06/05/2017
 keywords:  powershell,cmdlet
 title:  Using Static Classes and Methods
-ms.assetid:  418ad766-afa6-4b8c-9a44-471889af7fd9
 ---
 # Using Static Classes and Methods
 
