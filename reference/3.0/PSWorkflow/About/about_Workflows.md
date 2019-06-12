@@ -5,277 +5,276 @@ locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_Workflows
 ---
+
 # About Workflows
 
-## SHORT DESCRIPTION
+## Short description
 
-Provides a brief introduction to the Windows
-PowerShell Workflow feature.
+Provides a brief introduction to the PowerShell Workflow feature.
 
-## LONG DESCRIPTION
+## Long description
 
-Windows PowerShell Workflow brings the benefits of
-Windows Workflow Foundation to Windows PowerShell
-by enabling you to write and run workflows in Windows
-PowerShell.
+PowerShell Workflow brings the benefits of the [Windows Workflow Foundation](/dotnet/framework/windows-workflow-foundation)
+to PowerShell and enables you to write and run workflows.
 
-Windows PowerShell Workflow is introduced in Windows
-PowerShell 3.0.
+PowerShell Workflow was introduced in PowerShell 3.0 and the module is
+available up to PowerShell 5.1. For more information about PowerShell Workflow,
+see the [Workflows Guide](../../../docs-conceptual/components/workflows-guide.md)
+and
+[Writing a Windows PowerShell Workflow](/powershell/developer/workflow/writing-a-windows-powershell-workflow).
 
-For detailed information about Windows PowerShell
-Workflow, see ["Introducing Windows PowerShell Workflow"](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj134242(v=ws.11))
-and ["Writing a Windows PowerShell Workflow"](https://msdn.microsoft.com/en-us/library/hh852738(v=vs.85).aspx)
+## About workflows
 
-## ABOUT WORKFLOWS
+Workflows are commands that consist of an ordered sequence of related
+activities. Typically, they run for an extended period of time, gathering data
+from and making changes to hundreds of computers, often in heterogeneous
+environments.
 
-Workflows are commands that consist of an ordered sequence of
-related activities. Typically, they run for an extended period
-of time, gathering data from and making changes to hundreds of
-computers, often in heterogeneous environments.
+Workflows can be written in XAML, the language used in Windows Workflow
+Foundation, or in the PowerShell language. Workflows are typically packaged in
+modules and include help topics. For more information, see [XAML Overview (WPF)](/dotnet/framework/wpf/advanced/xaml-overview-wpf).
 
-Workflows can be written in XAML, the language used in Windows
-Workflow Foundation, or in the Windows PowerShell language.
-Workflows are typically packaged in modules and include help
-topics.
+Workflows are critical in an IT environment because they can survive reboots
+and recover automatically from common failures. You can disconnect and
+reconnect from sessions and computers running workflows without interrupting
+workflow processing, and suspend and resume workflows transparently without
+data loss. Each activity in a workflow can be logged and audited for reference.
+Workflows can run as jobs and can be scheduled by using the Scheduled Jobs
+feature of PowerShell.
 
-Workflows are critical in an IT environment because they can
-survive reboots and recover automatically from common failures.
-You can disconnect and reconnect from sessions and computers
-running workflows without interrupting workflow processing,
-and suspend and resume workflows transparently without data
-loss. Each activity in a workflow can be logged and audited
-for reference. Workflow can run as jobs and can be scheduled
-by using the Scheduled Jobs feature of Windows PowerShell.
+The state and data in a workflow is saved or persisted at the beginning and end
+of the workflow and at points that you specify. Workflow persistence points
+work like database snapshots or program checkpoints to protect the workflow
+from the effects of interruptions and failures. If the workflow is unable to
+recover from a failure, you can use the persisted data and resume from the last
+persistence point, instead of rerunning an extensive workflow from the
+beginning.
 
-The state and data in a workflow is saved or "persisted" at
-the beginning and end of the workflow and at points that you
-specify. Workflow persistence points work like database snapshots
-or program checkpoints to protect the workflow from  the effects
-of interruptions and failures. In the case of a failure from
-which the workflow cannot recover, you can use  the persisted
-data and resume from the last persistence point, instead of
-rerunning an extensive workflow from the beginning.
+## Workflow requirements and configuration
 
-## REQUIREMENTS AND CONFIGURATION
+A PowerShell Workflow configuration consists of the following elements:
 
-A Windows PowerShell Workflow configuration consists of
-the following elements.
+- A client computer, which runs the workflow.
+- A workflow session, **PSSession**, on the client computer or on a remote
+  computer.
+- Managed nodes, the target computers that are affected by the workflow
+  activities.
 
--- A client computer, which runs the workflow.
--- A workflow session (PSSession) on the client computer or
-on a remote computer.
--- Managed nodes, the target computers that are affected by
-the workflow activities.
+The workflow session isn't required, but is recommended. **PSSessions** can
+take advantage of the robust recovery and Disconnected Sessions features of
+PowerShell to recover disconnected workflow sessions. For more information, see
+[about_Remote_Disconnected_Sessions](../../Microsoft.PowerShell.Core/About/about_Remote_Disconnected_Sessions.md)
 
-## NOTE
+Because the client computer and the computer on which the workflow session runs
+can be managed nodes, you can run a workflow on a single computer that fulfills
+all roles.
 
-The workflow session is not required, but is recommended.
-PSSessions can take advantage of the robust recovery and
-Disconnected Sessions features of Windows PowerShell to
-recover disconnected workflow sessions.
+The client computer and the computer on which the workflow session runs must be
+running PowerShell 3.0. All eligible systems are supported, including the
+Server Core installation options of Windows Server operating systems.
 
-Because the client computer and the computer on  which the
-workflow session runs can be managed nodes, you can run a
-workflow on a single computer that fulfills all roles.
+To run workflows that include cmdlets, the managed nodes must have Windows
+PowerShell 2.0 or later. Managed nodes don't require PowerShell unless the
+workflow includes cmdlets. You can run workflows that include Windows
+Management Instrumentation (WMI) and Common Information Model (CIM) commands on
+computers that don't have PowerShell.
 
-The client computer and the computer on which the workflow
-session runs must be running Windows PowerShell 3.0. All
-eligible systems are supported, including the Server Core
-installation options of Windows Server operating systems.
+## How to get workflows
 
-To run workflows that include cmdlets, the managed nodes
-must have Windows PowerShell 2.0 or later. Managed nodes
-do not require Windows PowerShell unless the workflow
-include cmdlets. You can run workflows that include
-Windows Management Instrumentation (WMI) and Common Information
-Model (CIM) commands on computers that do not have Windows
-PowerShell.
-
-For more information about system requirements and configuration,
-see "Introducing Windows PowerShell Workflow" in the TechNet Library
-at http://go.microsoft.com/fwlink/?LinkID=252592.
-
-## HOW TO GET WORKFLOWS
-
-Workflows are typically packaged in modules. To import the module
-that includes a workflow, use any command in the module or use the
-Import-Module cmdlets. Modules are imported automatically on first
-use of any command in the module.
+Workflows are typically packaged in modules. To import the module that includes
+a workflow, use any command in the module or use the `Import-Module` cmdlet.
+Modules are imported automatically on first use of any command in the module.
 
 To find the workflows in modules installed on your computer, use the
-CommandType parameter of the Get-Command cmdlet.
+`Get-Command` cmdlet's **CommandType** parameter.
 
-PS C:> Get-Command -CommandType Workflow
+```powershell
+Get-Command -CommandType Workflow
+```
 
-## HOW TO RUN WORKFLOWS
+## How to run workflows
 
 To run a workflow, use the following procedure.
 
-1. On the client computer, start Windows PowerShell with the
-Run as administrator option.
+1. When the managed node is the local computer, this step isn't required.
+   Otherwise, on the client computer, start PowerShell with the **Run as
+   administrator** option.
 
-PS C:> Start-Process PowerShell -Verb RunAs
+```powershell
+Start-Process PowerShell -Verb RunAs
+```
 
-This step is not required when the managed node is
-the local computer.
+2. Enable PowerShell remoting on the computer that runs the workflow session
+   and on managed nodes affected by workflows that include cmdlets.
 
-2. Enable Windows PowerShell remoting on the computer on which
-the workflow session runs and on managed nodes affected by
-workflows that include cmdlets.
+You only need to do this step once on each participating computer.
 
-You need to do this step only once on each participating
-computer.
+This step is required only when running workflows that include cmdlets. You
+don't need to enable remoting on the client computer, unless the workflows
+session runs on the client computer, or on any managed nodes that are running
+PowerShell 3.0.
 
-This step is required only when running workflows that
-include cmdlets. You do not need to enable remoting on
-the client computer (unless the workflows session runs
-on the client computer) or on any managed nodes that are
-running Windows PowerShell 3.0.
+To enable remoting, use the `Enable-PSRemoting` cmdlet.
 
-To enable remoting, use the Enable-PSRemoting cmdlet.
-[Enable-PSremoting](../../Microsoft.PowerShell.Core/Enable-PSRemoting.md)
+```powershell
+Enable-PSRemoting -Force
+```
 
-You can also enable remoting by using the "Turn on Script
-Execution" Group Policy setting. For more information, see
+You can enable remoting by using the **Turn on Script Execution** Group Policy
+setting. For more information, see
 [about_Group_Policy_Settings](../../Microsoft.PowerShell.Core/About/about_Group_Policy_Settings.md)
-and [about_Execution_Policies](../../Microsoft.PowerShell.Core/About/about_Execution_Policies.md).
+and
+[about_Execution_Policies](../../Microsoft.PowerShell.Core/About/about_Execution_Policies.md).
 
-3. Create the workflow session. Use the New-PSWorkflowSession
-or New-PSSession cmdlets.
+3. Use the `New-PSWorkflowSession` or `New-PSSession` cmdlets to create the
+   workflow session.
 
-The New-PSWorkflowSession cmdlet starts a session that
-uses the built-in Microsoft.PowerShell.Workflow session
-configuration on the destination computer. This session
-configuration includes scripts, type and formatting files,
-and options that are designed for workflows.
+The `New-PSWorkflowSession` cmdlet starts a session that uses the built-in
+**Microsoft.PowerShell.Workflow** session configuration on the destination
+computer. This session configuration includes scripts, type and formatting
+files, and options that are designed for workflows.
 
-For more, See:
-[New-PSWorkflowSession](../New-PSWorkflowSession.md)
+Or, use the `New-PSSession` cmdlet. Use the **ConfigurationName** parameter to
+specify the **Microsoft.PowerShell.Workflow** session configuration. This
+command is the same as using the `New-PSWorkflowSession` cmdlet.
 
-Or, use the New-PSSession cmdlet. Use the ConfigurationName parameter
-to specify the Microsoft.PowerShell.Workflow session configuration.
-This command is equivalent to using the New-PSWorkflowSession cmdlet.
+An alternative is to use the `New-PSSession` cmdlet. Use the
+**ConfigurationName** parameter to specify the
+**Microsoft.PowerShell.Workflow** session configuration.
 
-If you are a member of the Administrators group on the workflow
-session computer, you can also use the New-PSWorkflowExecutionOption
-cmdlet to create custom option settings for the workflow session
-configuration and use the Set-PSSessionConfiguration cmdlet to
-change the session configuration.
+On the local computer:
+
+```powershell
+$ws = New-PSWorkflowSession
+```
+
+On a remote computer:
+
+```powershell
+$ws = New-PSWorkflowSession -ComputerName Server01 `
+-Credential Domain01\Admin01
+```
+
+If you are an Administrator on the workflow session computer, you can use the
+`New-PSWorkflowExecutionOption` cmdlet to create custom option settings for the
+workflow session configuration. And, use the `Set-PSSessionConfiguration`
+cmdlet to change the session configuration.
 
 ```powershell
 $sto = New-PSWorkflowExecutionOption -MaxConnectedSessions 150
-Invoke-Command -ComputerName Server0 {Set-PSSessionConfiguration Microsoft.PowerShell.Workflo -SessionTypeOption $Using:sto}
-$ws = New-PSWorkflowSession -ComputerName Server0 -Credential Domain01\Admin01
+Invoke-Command -ComputerName Server01 `
+{Set-PSSessionConfiguration Microsoft.PowerShell.Workflow `
+-SessionTypeOption $Using:sto}
+$ws = New-PSWorkflowSession -ComputerName Server01 `
+-Credential Domain01\Admin01
 ```
 
-4. Run the workflow in the workflow session. To specify the
-names of the managed nodes (target computers), use the
-PSComputerName workflow common parameter.
+4. Run the workflow in the workflow session. To specify the names of the
+   managed nodes, target computers, use the **PSComputerName** workflow common
+   parameter.
 
-The following commands run the Test-Workflow workflow.
+The following examples run the workflow named **Test-Workflow**.
 
-For more information about the Using scope modifier, see
-[about_Remote_Variables](../../Microsoft.PowerShell.Core/About/about_Remote_Variables.md)
+Where the managed node is the computer that hosts the workflow session:
 
 ```powershell
-# On the current host
 Invoke-Command -Session $ws {Test-Workflow}
 ```
 
+Where the managed nodes are remote computers.
+
 ```powershell
-# On a remote machine
 Invoke-Command -Session $ws{
 Test-Workflow -PSComputerName Server01, Server02 }
 ```
 
+The following example runs the **Test-Workflow** on hundreds of computers. The
+`Get-Content` cmdlet gets the computer names from a text file and saves them in
+the `$Servers` variable on the local computer.
+
+`Invoke-Command` uses the `$Using` scope modifier to define the `$Servers`
+variable in the local session. For more information about the `$Using` scope
+modifier, see
+[about_Remote_Variables](../../Microsoft.PowerShell.Core/About/about_Remote_Variables.md).
+
 ```powershell
-# Run Test-Workflow against all machines in servers.txt
 $Servers = Get-Content Servers.txt
-# Use the $Using scope modifier to retrieve the value from the current session.
 Invoke-Command -Session $ws {Test-Workflow -PSComputerName $Using:Servers }
 ```
 
-## USING WORKFLOW COMMON PARAMETERS
+## Using workflow common parameters
 
-The workflow common parameters are a set of parameters that
-Windows PowerShell adds automatically to all workflows.
-Windows PowerShell also adds the cmdlet common parameters to
-all workflows, even if the workflow do not use the CmdletBinding
+The workflow common parameters are a set of parameters that PowerShell adds
+automatically to all workflows. PowerShell adds the cmdlet common parameters to
+all workflows, even if the workflow doesn't use the **CmdletBinding**
 attribute.
 
-For example, the following very simple workflow defines no
-parameters. However, when you run the workflow, it has both
-the CommonParameters and WorkflowCommonParameters.
+For example, the following workflow defines no parameters. However, when you
+run the workflow, it has both the **CommonParameters** and
+**WorkflowCommonParameters**.
 
 ```powershell
 workflow Test-Workflow {Get-Process}
 Get-Command Test-Workflow -Syntax
 ```
 
-```output
+```powershell
 Test-Workflow [<WorkflowCommonParameters>] [<CommonParameters>]
 ```
 
-## PsComputerName
-
-The workflow common parameters include several parameters that
-are essential to running workflows. For example, the PSComputerName
-common parameter specifies the managed nodes that the workflow affects.
+The workflow common parameters include several parameters that are essential to
+running workflows. For example, the **PSComputerName** common parameter
+specifies the managed nodes that the workflow affects.
 
 ```powershell
-Invoke-Command -Session $ws {Test-Workflow -PSComputerName Server01, Server02}
+Invoke-Command -Session $ws `
+{Test-Workflow -PSComputerName Server01, Server02}
 ```
 
-## PsPersist
-
-The PSPersist workflow common parameter determines when workflow
-data is persisted. It enables you to add persistence point between
-activities to workflows that do not define persistence points.
+The **PSPersist** workflow common parameter determines when workflow data is
+persisted. It enables you to add persistence point between activities to
+workflows that don't define persistence points.
 
 ```powershell
-Invoke-Command -Session $ws {Test-Workflow -PSComputerName Server01, Server02 -PSPersist:$True}
+Invoke-Command -Session $ws `
+{Test-Workflow -PSComputerName Server01, Server02 -PSPersist:$True}
 ```
 
-## PsPort
-
-Other workflow common parameters let you specify the
-characteristics of the remote connection to the managed nodes.
-Their names and functionality are very similar to the parameters
-of remoting cmdlets, including Invoke-Command.
+Other workflow common parameters let you specify the characteristics of the
+remote connection to the managed nodes. Their names and functionality are
+similar to the parameters of remoting cmdlets, including `Invoke-Command`.
 
 ```powershell
-Invoke-Command -Session $ws `{Test-Workflow -PSComputerName Server01, Server02 -PSPort 443}
+Invoke-Command -Session $ws `
+{Test-Workflow -PSComputerName Server01, Server02 -PSPort 443}
 ```
 
-## ConfigurationName vs PSConfigurationName
-
-Take care to distinguish the remoting parameters that define the
-connection for the workflow session from the PS-prefixed workflow
-common parameters that define the connection to the managed nodes.
-
-Some workflow common parameters are unique to workflows, such
-as the PSParameterCollection parameter that lets you specify
-different workflow common parameter values for different remote
-nodes.
+Take care to distinguish the remoting parameters that define the connection for
+the workflow session from the **PS-prefixed** workflow common parameters that
+define the connection to the managed nodes.
 
 ```powershell
-$ws = New-PSSession -ComputerName Server01 -ConfigurationName Microsoft.PowerShell.Workflow
+$ws = New-PSSession -ComputerName Server01 `
+-ConfigurationName Microsoft.PowerShell.Workflow
+
+Invoke-Command -Session $ws `
+{Test-Workflow -PSComputerName Server01, Server02 `
+-PSConfigurationName Microsoft.PowerShell.Workflow}
 ```
 
-```powershell
-Invoke-Command -Session $ws {Test-Workflow -PSComputerName Server01, Server02 -PSConfigurationName Microsoft.PowerShell.Workflow}
-```
+Some workflow common parameters are unique to workflows, such as the
+**PSParameterCollection** parameter that lets you specify different workflow
+common parameter values for different remote nodes. For a list and description
+of the workflow common parameters, see [about_WorkflowCommonParameters](about_WorkflowCommonParameters.md).
 
-## SEE ALSO
+## See also
 
 [Invoke-AsWorkflow](../../PSWorkflowUtility/Invoke-AsWorkflow.md)
 
-[New-PSWorkflowExecutionOption](../New-PSWorkflowExecutionOption.md)
+[New-PSSession](../../Microsoft.PowerShell.Core/New-PSSession.md)
 
-[New-PSWorkflowSession](../New-PSWorkflowSession.md)
+[PSWorkflow](../PSWorkflow.md) cmdlets
 
-[about_WorkflowCommonParameters](about_WorkflowCommonParameters.md)
+[Workflows Guide](../../../docs-conceptual/components/workflows-guide.md)
 
-["Getting Started with Windows PowerShell Workflow"](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj134242(v=ws.11))
-
-["Writing a Windows PowerShell Workflow"](https://msdn.microsoft.com/en-us/library/hh852738(v=vs.85).aspx)
+[Writing a Windows PowerShell Workflow](/powershell/developer/workflow/writing-a-windows-powershell-workflow)
