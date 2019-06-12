@@ -11,7 +11,6 @@ title: Get-CimInstance
 # Get-CimInstance
 
 ## SYNOPSIS
-
 Gets the CIM instances of a class from a CIM server.
 
 ## SYNTAX
