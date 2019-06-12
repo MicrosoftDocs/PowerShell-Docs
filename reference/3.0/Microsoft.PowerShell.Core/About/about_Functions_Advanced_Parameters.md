@@ -465,7 +465,7 @@ The `ValidatePattern` attribute specifies a regular expression that is compared
 to the parameter or variable value. PowerShell generates an error if the value
 does not match the regular expression pattern.
 
-In the following example, the parameter value must be a four-digit number, and
+In the following example, the parameter value must contain a four-digit number, and
 each digit must be a number zero to nine.
 
 ```powershell
@@ -477,11 +477,11 @@ Param(
 )
 ```
 
-In the following example, the value of the variable $number must be a
+In the following example, the value of the variable $number must be exactly a
 four-digit number, and each digit must be a number zero to nine.
 
 ```powershell
-[Int32][ValidatePattern("[0-9][0-9][0-9][0-9]")]$number = 1111
+[Int32][ValidatePattern("^[0-9][0-9][0-9][0-9]$")]$number = 1111
 ```
 
 ### ValidateRange Validation Attribute
