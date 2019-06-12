@@ -196,7 +196,7 @@ For more about script blocks, see [about_Script_Blocks](about_Script_Blocks.md).
 
 Runs the pipeline before it in the background, in a PowerShell job. This
 operator acts similarly to the UNIX control operator ampersand (`&`), which
-runs the command before itasynchronously in sub shell as a job.
+runs the command before it asynchronously in sub shell as a job.
 
 This operator is functionally equivalent to `Start-Job`. The following example
 demonstrates basic usage of the background job operator.
