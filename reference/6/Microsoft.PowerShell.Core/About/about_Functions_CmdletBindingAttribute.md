@@ -5,11 +5,9 @@ locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_Functions_CmdletBindingAttribute
 ---
-
 # About Functions CmdletBindingAttribute
 
 ## SHORT DESCRIPTION
-
 Describes the attribute that makes a function work like a compiled cmdlet.
 
 ## LONG DESCRIPTION

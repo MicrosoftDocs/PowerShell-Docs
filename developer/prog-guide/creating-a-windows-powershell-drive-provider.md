@@ -19,26 +19,6 @@ This topic describes how to create a Windows PowerShell drive provider that prov
 
 The Windows PowerShell drive provider described here provides access to a Microsoft Access database. For this provider, the Windows PowerShell drive represents the database (it is possible to add any number of drives to a drive provider), the top-level containers of the drive represent the tables in the database, and the items of the containers represent the rows in the tables.
 
-Here is a list of the sections in this topic. If you are unfamiliar with writing a Windows PowerShell drive provider, read these sections in the order that they appear. However, if you are familiar with writing a drive provider, please go directly to the information that you need.
-
-- [Defining the Windows PowerShell Provider Class](#Defining-the-Windows-PowerShell-Provider-Class)
-
-- [Defining Base Functionality](#Defining-Base-Functionality)
-
-- [Creating Drive State Information](#Creating-Drive-State-Information)
-
-- [Creating a Drive](#Creating-a-Drive)
-
-- [Attaching Dynamic Parameters to NewDrive](#Attaching-Dynamic-Parameters-to-NewDrive)
-
-- [Removing a Drive](#Removing-a-Drive)
-
-- [Initializing Default Drives](#Initializing-Default-Drives)
-
-- [Code Sample](#Code-Sample)
-
-- [Testing the Windows PowerShell Drive Provider](#Testing-the-Windows-PowerShell-Drive-Provider)
-
 ## Defining the Windows PowerShell Provider Class
 
 Your drive provider must define a .NET class that derives from the [System.Management.Automation.Provider.Drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider) base class. Here is the class definition for this drive provider:
@@ -55,7 +35,7 @@ As described in [Design Your Windows PowerShell Provider](./designing-your-windo
 
 All Windows PowerShell providers are considered stateless, which means that your drive provider needs to create any state information that is needed by the Windows PowerShell runtime when it calls your provider.
 
-For this drive provider, state information includes the connection to the database that is kept as part of the drive information. Here is code that shows how this information is stored in the [System.Management.Automation.Psdriveinfo](/dotnet/api/System.Management.Automation.PSDriveInfo) object that describes the drive:
+For this drive provider, state information includes the connection to the database that is kept as part of the drive information. Here is code that shows how this information is stored in the [System.Management.Automation.PSDriveinfo](/dotnet/api/System.Management.Automation.PSDriveInfo) object that describes the drive:
 
 [!code-csharp[AccessDBProviderSample02.cs](../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample02/AccessDBProviderSample02.cs#L130-L151 "AccessDBProviderSample02.cs")]
 
@@ -67,15 +47,15 @@ To allow the Windows PowerShell runtime to create a drive, the drive provider mu
 
 Your override of this method should do the following:
 
-- Verify that the [System.Management.Automation.Psdriveinfo.Root*](/dotnet/api/System.Management.Automation.PSDriveInfo.Root) member exists and that a connection to the data store can be made.
+- Verify that the [System.Management.Automation.PSDriveinfo.Root*](/dotnet/api/System.Management.Automation.PSDriveInfo.Root) member exists and that a connection to the data store can be made.
 
 - Create a drive and populate the connection member, in support of the `New-PSDrive` cmdlet.
 
-- Validate the [System.Management.Automation.Psdriveinfo](/dotnet/api/System.Management.Automation.PSDriveInfo) object for the proposed drive.
+- Validate the [System.Management.Automation.PSDriveinfo](/dotnet/api/System.Management.Automation.PSDriveInfo) object for the proposed drive.
 
-- Modify the [System.Management.Automation.Psdriveinfo](/dotnet/api/System.Management.Automation.PSDriveInfo) object that describes the drive with any required performance or reliability information, or provide extra data for callers using the drive.
+- Modify the [System.Management.Automation.PSDriveinfo](/dotnet/api/System.Management.Automation.PSDriveInfo) object that describes the drive with any required performance or reliability information, or provide extra data for callers using the drive.
 
-- Handle failures using the [System.Management.Automation.Provider.Cmdletprovider.Writeerror*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteError) method and then return `null`.
+- Handle failures using the [System.Management.Automation.Provider.Cmdletprovider.WriteError](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteError) method and then return `null`.
 
   This method returns either the drive information that was passed to the method or a provider-specific version of it.
 

@@ -5,7 +5,6 @@ locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_Classes_and_DSC
 ---
-
 # About Classes and Desired State Configuration
 
 ## Short description
@@ -18,7 +17,7 @@ Configuration (DSC).
 Starting in Windows PowerShell 5.0, language was added to define classes and
 other user-defined types, by using formal syntax and semantics that are
 similar to other object-oriented programming languages. The goal is to enable
-developers and IT professionals to embrace Windows PowerShell for a wider
+developers and IT professionals to embrace PowerShell for a wider
 range of use cases, simplify development of PowerShell artifacts such as DSC
 resources, and accelerate coverage of management surfaces.
 
@@ -220,12 +219,12 @@ class FileResource
 
         [System.IO.FileInfo]
         $destFileInfo = new-object System.IO.FileInfo($this.Path)
-        
+
         if (-not $destFileInfo.Directory.Exists)
         {
             $FullName = $destFileInfo.Directory.FullName
             $Message = "Creating directory $FullName"
-            
+
             Write-Verbose -Message $Message
 
             #use CreateDirectory instead of New-Item to avoid code
@@ -362,14 +361,14 @@ class FileResource{
             throw "SourcePath '$this.SourcePath' is not found."
         }
 
-        [System.IO.FileInfo] 
+        [System.IO.FileInfo]
         $destFileInfo = new-object System.IO.FileInfo($this.Path)
-        
+
         if (-not $destFileInfo.Directory.Exists)
         {
-            $FullName = $destFileInfo.Directory.FullName 
+            $FullName = $destFileInfo.Directory.FullName
             $Message = "Creating directory $FullName"
-            
+
             Write-Verbose -Message $Message
 
             #use CreateDirectory instead of New-Item to avoid lines
@@ -454,7 +453,7 @@ following configuration references the MyDSCResource module. Save the
 configuration as a script, MyResource.ps1.
 
 For information about how to run a DSC configuration,
-see [Windows PowerShell Desired State Configuration Overview](/dsc/overview/overview.md).
+see [PowerShell Desired State Configuration Overview](/dsc/overview/overview.md).
 
 Before you run the configuration, create `C:\test.txt`. The configuration
 checks if the file exists at `c:\test\test.txt`. If the file does not exist,
@@ -669,7 +668,7 @@ enum OtherEnum { Max = [SomeEnum]::Max + 1 }
 The `hidden` keyword, introduced in Windows PowerShell 5.0, hides class
 members from default `Get-Member` results. Specify the hidden property as
 shown in the following line:
- 
+
 ```powershell
 hidden [type] $classmember = <value>
 ```
@@ -686,7 +685,7 @@ For more information, see
 ### Import-DscResource
 
 `Import-DscResource` is now a true dynamic keyword. PowerShell parses the
-specified module’s root module, searching for classes that contain the
+specified module's root module, searching for classes that contain the
 DscResource attribute.
 
 ### Properties
@@ -735,10 +734,10 @@ The following are ways of instantiating classes:
   `$a = [MyClass]::new()`
 
 - Calling a constructor with a parameter.
- 
+
   `$b = [MyClass]::new(42)`
 
-- Passing an array to a constructor with multiple parameters 
+- Passing an array to a constructor with multiple parameters
 
   `$c = [MyClass]::new(@(42,43,44), "Hello")`
 
@@ -900,7 +899,7 @@ class Element
 
 #
 # Helper functions for creating specific element types on top of the classes.
-# These are required because types aren’t visible outside of the module.
+# These are required because types aren't visible outside of the module.
 #
 function H1 {[Element] @{Tag = "H1"; Text = $args.foreach{$_} -join " "}}
 function H2 {[Element] @{Tag = "H2"; Text = $args.foreach{$_} -join " "}}
@@ -971,8 +970,6 @@ function Html ([HTML] $doc) { return $doc }
 
 ## See also
 
-[about_DesiredStateConfiguration](/powershell/module/microsoft.powershell.core/about/about_desiredstateconfiguration?view=powershell-5.1)
-
 [about_Enum](../../Microsoft.PowerShell.Core/About/about_Enum.md)
 
 [about_Hidden](../../Microsoft.PowerShell.Core/About/about_hidden.md)
@@ -981,4 +978,4 @@ function Html ([HTML] $doc) { return $doc }
 
 [about_Methods](../../Microsoft.PowerShell.Core/About/about_Methods.md)
 
-[Build Custom Windows PowerShell Desired State Configuration Resources](https://docs.microsoft.com/powershell/dsc/resources/authoringResource)
+[Build Custom PowerShell Desired State Configuration Resources](https://docs.microsoft.com/powershell/dsc/resources/authoringResource)

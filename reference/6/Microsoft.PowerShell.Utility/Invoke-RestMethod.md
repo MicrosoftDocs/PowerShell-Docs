@@ -4,11 +4,10 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Utility
 ms.date: 11/17/2017
-online version: http://go.microsoft.com/fwlink/?LinkId=821824
+online version: https://go.microsoft.com/fwlink/?linkid=821824
 schema: 2.0.0
 title: Invoke-RestMethod
 ---
-
 # Invoke-RestMethod
 
 ## SYNOPSIS

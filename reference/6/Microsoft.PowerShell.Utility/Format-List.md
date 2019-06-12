@@ -4,11 +4,10 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Utility
 ms.date: 12/19/2018
-online version: http://go.microsoft.com/fwlink/?LinkId=821774
+online version: https://go.microsoft.com/fwlink/?linkid=821774
 schema: 2.0.0
 title: Format-List
 ---
-
 # Format-List
 
 ## SYNOPSIS
@@ -223,8 +222,9 @@ parameters in the same command.
 The value of the **Property** parameter can be a new calculated property. To create a calculated
 property, use a hash table. Valid keys are:
 
+- Name (or Label) \<string\>
 - Expression \<string\> or \<script block\>
-- Depth \<int32\>
+- FormatString \<string\>
 
 ```yaml
 Type: Object[]

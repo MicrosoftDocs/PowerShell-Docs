@@ -55,11 +55,13 @@ Running the configuration, like a function, will compile one ".mof" file for eve
 In order to run the configuration, you need to *dot source* your "HelloWorld.ps1" script into the current scope.
 For more information, see [about_Scripts](/powershell/module/microsoft.powershell.core/about/about_scripts?view=powershell-6#script-scope-and-dot-sourcing).
 
+<!-- markdownlint-disable MD038 -->
 *Dot source* your "HelloWorld.ps1" script by typing in the path where you stored it, after the `. ` (dot, space). You may then, run your configuration by calling it like a Function.
+<!-- markdownlint-enable MD038 -->
 
 ```powershell
-. C:\Scripts\WebsiteTest.ps1
-HelloWolrd
+. C:\Scripts\HelloWorld.ps1
+HelloWorld
 ```
 
 This generates the following output:

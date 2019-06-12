@@ -5,11 +5,9 @@ locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_Remote_Requirements
 ---
-
 # About Remote Requirements
 
 ## SHORT DESCRIPTION
-
 Describes the system requirements and configuration requirements for running
 remote commands in PowerShell.
 
@@ -26,8 +24,7 @@ using Microsoft .NET Framework methods to retrieve the objects. They do not
 use the PowerShell remoting infrastructure. The requirements in this
 document do not apply to these cmdlets.
 
-To find the cmdlets that have a ComputerName parameter but do not use Windows
-PowerShell remoting, read the description of the ComputerName parameter of the
+To find the cmdlets that have a ComputerName parameter but do not use PowerShell remoting, read the description of the ComputerName parameter of the
 cmdlets.
 
 ## SYSTEM REQUIREMENTS
@@ -89,7 +86,7 @@ permission to connect to the computer remotely by changing the security
 descriptors on the default session configurations and by creating new session
 configurations with different security descriptors.
 
-For more informations about session configurations, see
+For more information about session configurations, see
 [about_Session_Configurations](about_Session_Configurations.md).
 
 ## WINDOWS NETWORK LOCATIONS

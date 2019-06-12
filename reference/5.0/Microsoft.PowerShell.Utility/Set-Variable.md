@@ -3,7 +3,7 @@ ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821861
+online version: https://go.microsoft.com/fwlink/?linkid=821861
 external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 title:  Set-Variable
 ---
@@ -251,6 +251,7 @@ The acceptable values for this parameter are:
 - Global
 - Local
 - Script
+- Private
 - A number relative to the current scope (0 through the number of scopes, where 0 is the current scope and 1 is its parent).
 
 Local is the default.

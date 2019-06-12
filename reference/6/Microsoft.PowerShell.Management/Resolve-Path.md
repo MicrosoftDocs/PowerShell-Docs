@@ -1,17 +1,15 @@
 ---
-ms.date:  08/23/2018
+ms.date: 5/14/2019
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821624
+online version: https://go.microsoft.com/fwlink/?linkid=821624
 external help file:  Microsoft.PowerShell.Commands.Management.dll-Help.xml
 title:  Resolve-Path
 ---
-
 # Resolve-Path
 
 ## SYNOPSIS
-
 Resolves the wildcard characters in a path, and displays the path contents.
 
 ## SYNTAX
@@ -157,6 +155,7 @@ Accept wildcard characters: False
 Specifies the PowerShell path to resolve.
 This parameter is required.
 You can also pipe a path string to `Resolve-Path`.
+Wildcard characters are permitted.
 
 ```yaml
 Type: String[]
@@ -167,7 +166,7 @@ Required: True
 Position: 0
 Default value: None
 Accept pipeline input: True (ByPropertyName, ByValue)
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -Relative
@@ -190,13 +189,13 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+-WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
 
 ## INPUTS
 
 ### System.String
 
-You can pipe a string that contains a path to this cmdlet.
+You can pipe a string that contains a path to this cmdlet
 
 ## OUTPUTS
 

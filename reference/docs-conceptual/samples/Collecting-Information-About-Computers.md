@@ -2,7 +2,6 @@
 ms.date:  06/05/2017
 keywords:  powershell,cmdlet
 title:  Collecting Information About Computers
-ms.assetid:  9e7b6a2d-34f7-4731-a92c-8b3382eb51bb
 ---
 # Collecting Information About Computers
 
@@ -16,7 +15,7 @@ We specify the **ComputerName** parameter with the dot value (**.**), which repr
 You can specify a name or IP address associated with any computer you can reach through WMI.
 To retrieve information about the local computer, you could omit the **ComputerName** parameter.
 
-### Listing Desktop Settings
+## Listing Desktop Settings
 
 We'll begin with a command that collects information about the desktops on the local computer.
 
@@ -38,7 +37,7 @@ Get-CimInstance -ClassName Win32_Desktop -ComputerName . | Select-Object -Exclud
 
 To filter out the metadata, use a pipeline operator (|) to send the results of the `Get-CimInstance` command to `Select-Object -ExcludeProperty "CIM*"`.
 
-### Listing BIOS Information
+## Listing BIOS Information
 
 The WMI **Win32_BIOS** class returns fairly compact and complete information about the system BIOS on the local computer:
 
@@ -46,7 +45,7 @@ The WMI **Win32_BIOS** class returns fairly compact and complete information abo
 Get-CimInstance -ClassName Win32_BIOS -ComputerName .
 ```
 
-### Listing Processor Information
+## Listing Processor Information
 
 You can retrieve general processor information by using WMI's **Win32_Processor** class, although you will likely want to filter the information:
 
@@ -64,7 +63,7 @@ SystemType
 X86-based PC
 ```
 
-### Listing Computer Manufacturer and Model
+## Listing Computer Manufacturer and Model
 
 Computer model information is also available from **Win32_ComputerSystem**.
 The standard displayed output will not need any filtering to provide OEM data:
@@ -82,7 +81,7 @@ MyPC Jane Doe         WORKGROUP 804765696           DA243A-ABA 6415cl NA910 Comp
 Your output from commands such as this, which return information directly from some hardware, is only as good as the data you have.
 Some information is not correctly configured by hardware manufacturers and may therefore be unavailable.
 
-### Listing Installed Hotfixes
+## Listing Installed Hotfixes
 
 You can list all installed hotfixes by using **Win32_QuickFixEngineering**:
 
@@ -137,7 +136,7 @@ HotFixId
 KB4048951
 ```
 
-### Listing Operating System Version Information
+## Listing Operating System Version Information
 
 The **Win32_OperatingSystem** class properties include version and service pack information.
 You can explicitly select only these properties to get a version information summary from **Win32_OperatingSystem**:
@@ -161,7 +160,7 @@ ServicePackMajorVersion : 0
 ServicePackMinorVersion : 0
 ```
 
-### Listing Local Users and Owner
+## Listing Local Users and Owner
 
 Local general user information — number of licensed users, current number of users, and owner name — can be found with a selection of **Win32_OperatingSystem** class' properties.
 You can explicitly select the properties to display like this:
@@ -176,7 +175,7 @@ A more succinct version using wildcards is:
 Get-CimInstance -ClassName Win32_OperatingSystem -ComputerName . | Select-Object -Property *user*
 ```
 
-### Getting Available Disk Space
+## Getting Available Disk Space
 
 To see the disk space and free space for local drives, you can use the Win32_LogicalDisk WMI class.
 You need to see only instances with a DriveType of 3 — the value WMI uses for fixed hard disks.
@@ -197,7 +196,7 @@ FreeSpace 109839607808
 Size      326846914560
 ```
 
-### Getting Logon Session Information
+## Getting Logon Session Information
 
 You can get general information about logon sessions associated with users through the **Win32_LogonSession** WMI class:
 
@@ -205,7 +204,7 @@ You can get general information about logon sessions associated with users throu
 Get-CimInstance -ClassName Win32_LogonSession -ComputerName .
 ```
 
-### Getting the User Logged on to a Computer
+## Getting the User Logged on to a Computer
 
 You can display the user logged on to a particular computer system using Win32_ComputerSystem.
 This command returns only the user logged on to the system desktop:
@@ -214,7 +213,7 @@ This command returns only the user logged on to the system desktop:
 Get-CimInstance -ClassName Win32_ComputerSystem -Property UserName -ComputerName .
 ```
 
-### Getting Local Time from a Computer
+## Getting Local Time from a Computer
 
 You can retrieve the current local time on a specific computer by using the **Win32_LocalTime** WMI class.
 
@@ -234,7 +233,7 @@ Year         : 2017
 PSComputerName : .
 ```
 
-### Displaying Service Status
+## Displaying Service Status
 
 To view the status of all services on a specific computer, you can locally use the `Get-Service` cmdlet.
 For remote systems, you can use the **Win32_Service** WMI class.

@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: PowerShellGet
 ms.date: 06/09/2017
-online version: http://go.microsoft.com/fwlink/?LinkId=822342
+online version: https://go.microsoft.com/fwlink/?linkid=822342
 schema: 2.0.0
 title: Update-Script
 ---
@@ -33,7 +33,7 @@ PS C:\> Update-Script -Name "Fabrikam-Script" -RequiredVersion 1.5
 PS C:\> Get-InstalledScript -Name "Fabrikam-Script"
 Version    Name                                Type       Repository           Description
 -------    ----                                ----       ----------           -----------
-1.5        Fabrikam-Script                     Script     local1               Description for the Fabrkiam-Script script
+1.5        Fabrikam-Script                     Script     local1               Description for the Fabrikam-Script script
 ```
 
 The first command updates the script Fabrikam-Script to version 1.5.
@@ -43,7 +43,8 @@ The second command gets Fabrikam-Script and displays the results.
 ## PARAMETERS
 
 ### -AcceptLicense
-{{Fill AcceptLicense Description}}
+Automatically accept the license agreement during installation if the package requires it.
+
 
 ```yaml
 Type: SwitchParameter

@@ -11,7 +11,7 @@ When you write [Configurations](configurations.md), you add [Resource blocks](..
 The `DependsOn` key can be used in any Resource block. It is defined with the same key/value mechanism as other Resource keys. The `DependsOn` key expects an array of strings with the following syntax.
 
 ```
-DependsOn = '[<Resource Type>]<Resoure Name>', '[<Resource Type>]<Resource Name'
+DependsOn = '[<Resource Type>]<Resource Name>', '[<Resource Type>]<Resource Name'
 ```
 
 The following example configures a firewall rule after enabling and configuring the public profile.

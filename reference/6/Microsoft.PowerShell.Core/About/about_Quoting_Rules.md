@@ -5,11 +5,9 @@ locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_Quoting_Rules
 ---
-
 # About Quoting Rules
 
 ## SHORT DESCRIPTION
-
 Describes rules for using single and double quotation marks in PowerShell.
 
 ## LONG DESCRIPTION
@@ -170,9 +168,9 @@ Because the contents of single-quoted strings are interpreted literally, you
 cannot use the backtick character to force a literal character interpretation
 in a single-quoted string.
 
-For example, the following command generates an error because Windows
-PowerShell does not recognize the escape character. Instead, it interprets the
-second quotation mark as the end of the string.
+For example, the following command generates an error because PowerShell does
+not recognize the escape character. Instead, it interprets the second quotation
+mark as the end of the string.
 
 ```output
 PS C:\> 'Use a quotation mark (`') to begin a string.'

@@ -4,11 +4,10 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Core
 ms.date: 06/09/2017
-online version: http://go.microsoft.com/fwlink/?LinkId=821521
+online version: https://go.microsoft.com/fwlink/?linkid=821521
 schema: 2.0.0
 title: Test-ModuleManifest
 ---
-
 # Test-ModuleManifest
 
 ## SYNOPSIS
@@ -21,6 +20,7 @@ Test-ModuleManifest [-Path] <String> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+
 The **Test-ModuleManifest** cmdlet verifies that the files that are listed in the module manifest (.psd1) file are actually in the specified paths.
 
 This cmdlet is designed to help module authors test their manifest files.
@@ -33,15 +33,20 @@ If any files are not in the locations specified in the manifest, the cmdlet also
 ## EXAMPLES
 
 ### Example 1: Test a manifest
-```
-PS C:\> test-ModuleManifest -Path "$pshome\Modules\TestModule.psd1"
+
+```powershell
+test-ModuleManifest -Path "$pshome\Modules\TestModule.psd1"
 ```
 
 This command tests the TestModule.psd1 module manifest.
 
 ### Example 2: Test a manifest by using the pipeline
+
+```powershell
+"$pshome\Modules\TestModule.psd1" | test-modulemanifest
 ```
-PS C:\> "$pshome\Modules\TestModule.psd1" | test-modulemanifest
+
+```Output
 Test-ModuleManifest : The specified type data file 'C:\Windows\System32\Wi
 ndowsPowerShell\v1.0\Modules\TestModule\TestTypes.ps1xml' could not be processed because the file was not found. Please correct the path and try again.
 At line:1 char:34
@@ -69,8 +74,12 @@ This command uses a pipeline operator (|) to send a path string to **Test-Module
 The command output shows that the test failed, because the TestTypes.ps1xml file, which was listed in the manifest, was not found.
 
 ### Example 3: Write a function to test a module manifest
+
+```powershell
+function Test-ManifestBool ($path)
 ```
-PS C:\> function Test-ManifestBool ($path)
+
+```Output
 {$a = dir $path | Test-ModuleManifest -ErrorAction SilentlyContinue $?}
 ```
 
@@ -93,6 +102,7 @@ You can use this function in conditional statements, such as those that might pr
 ## PARAMETERS
 
 ### -Path
+
 Specifies a path and file name for the manifest file.
 Enter an optional path and name of the module manifest file that has the .psd1 file name extension.
 The default location is the current directory.
@@ -113,16 +123,19 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### System.String
+
 You can pipe the path to a module manifest to this cmdlet.
 
 ## OUTPUTS
 
 ### System.Management.Automation.PSModuleInfo
+
 This cmdlet returns a **PSModuleInfo** object that represents the module.
 It returns this object even if the manifest has errors.
 

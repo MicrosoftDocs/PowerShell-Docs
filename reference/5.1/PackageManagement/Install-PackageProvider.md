@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: PackageManagement
 ms.date: 06/09/2017
-online version: http://go.microsoft.com/fwlink/?LinkId=822308
+online version: https://go.microsoft.com/fwlink/?linkid=822308
 schema: 2.0.0
 title: Install-PackageProvider
 ---
@@ -34,7 +34,7 @@ Install-PackageProvider [-Scope <String>] [-InputObject] <SoftwareIdentity[]> [-
 ## DESCRIPTION
 The **Install-PackageProvider** cmdlet installs matching Package Management providers that are available in package sources registered with **PowerShellGet**.
 By default, this includes modules available in the Windows PowerShell Gallery with the **PackageManagement**.
-The ** PowerShellGet** Package Management provider is used for finding providers in these repositories.
+The **PowerShellGet** Package Management provider is used for finding providers in these repositories.
 
 This cmdlet also installs matching Package Management providers that are available using the Package Management bootstrapping application.
 

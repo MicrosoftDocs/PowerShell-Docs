@@ -18,7 +18,6 @@ This topic describes how to create a provider that enables the user to manipulat
 
 > [!NOTE]
 > Windows PowerShell provides a template file that you can use to develop a Windows PowerShell provider. The TemplateProvider.cs file is available on the Microsoft Windows Software Development Kit for Windows Vista and .NET Framework 3.0 Runtime Components. For download instructions, see [How to Install Windows PowerShell and Download the Windows PowerShell SDK](/powershell/developer/installing-the-windows-powershell-sdk).
-> Windows PowerShell provides a template file that you can use to develop a Windows PowerShell provider. The TemplateProvider.cs file is available on the Microsoft Windows Software Development Kit for Windows Vista and .NET Framework 3.0 Runtime Components. For download instructions, see [How to Install Windows PowerShell and Download the Windows PowerShell SDK](/powershell/developer/installing-the-windows-powershell-sdk).
 >
 > The downloaded template is available in the **\<PowerShell Samples>** directory. You should make a copy of this file and use the copy for creating a new Windows PowerShell provider, removing any functionality that you do not need.
 >
@@ -26,26 +25,6 @@ This topic describes how to create a provider that enables the user to manipulat
 
 > [!CAUTION]
 > The methods of your property provider should write any objects using the [System.Management.Automation.Provider.Cmdletprovider.Writepropertyobject*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WritePropertyObject) method.
-
-The following list contains the sections in this topic. If you are unfamiliar with writing a Windows PowerShell property provider, read this information in the order that it appears. However, if you are familiar with writing a Windows PowerShell property provider, please go directly to the information that you need.
-
-- [Defining the Windows PowerShell Provider](#Defining-the-Windows-PowerShell-provider)
-
-- [Defining Base Functionality](#Defining-Base-Functionality)
-
-- [Retrieving Properties](#Retrieving-Properties)
-
-- [Attaching Dynamic Parameters to the `Get-ItemProperty` Cmdlet](#Attaching-Dynamic-Parameters-to-the-Get-ItemProperty-Cmdlet)
-
-- [Setting Properties](#Setting-Properties)
-
-- [Attaching Dynamic Parameters to the `Set-ItemProperty` Cmdlet](#Attaching-Dynamic-Parameters-for-the-Set-ItemProperty-Cmdlet)
-
-- [Clearing a Property](#Clearing-Properties)
-
-- [Attaching Dynamic Parameters to the `Clear-ItemProperty` Cmdlet](#Attaching-Dynamic-Parameters-to-the-Clear-ItemProperty-Cmdlet)
-
-- [Building the Windows PowerShell Provider](#Building-the-Windows-PowerShell-provider)
 
 ## Defining the Windows PowerShell provider
 
@@ -61,7 +40,7 @@ The [System.Management.Automation.Provider.Ipropertycmdletprovider](/dotnet/api/
 
 To retrieve properties, the provider must implement the [System.Management.Automation.Provider.Ipropertycmdletprovider.Getproperty*](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.GetProperty) method to support calls from the `Get-ItemProperty` cmdlet. This method retrieves the properties of the item located at the specified provider-internal path (fully-qualified).
 
-The `providerSpecificPickList` parameter indicates which properties to retrieve. If this parameter is `null` or empty, the method should retrieve all properties. In addition, [System.Management.Automation.Provider.Ipropertycmdletprovider.Getproperty*](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.GetProperty) writes an instance of a [System.Management.Automation.Psobject](/dotnet/api/System.Management.Automation.PSObject) object that represents a property bag of the retrieved properties. The method should return nothing.
+The `providerSpecificPickList` parameter indicates which properties to retrieve. If this parameter is `null` or empty, the method should retrieve all properties. In addition, [System.Management.Automation.Provider.Ipropertycmdletprovider.Getproperty*](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.GetProperty) writes an instance of a [System.Management.Automation.PSObject](/dotnet/api/System.Management.Automation.PSObject) object that represents a property bag of the retrieved properties. The method should return nothing.
 
 It is recommended that the implementation of [System.Management.Automation.Provider.Ipropertycmdletprovider.Getproperty*](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.GetProperty) supports the wildcard expansion of property names for each element in the pick list. To do this, use the [System.Management.Automation.Wildcardpattern](/dotnet/api/System.Management.Automation.WildcardPattern) class to perform the wildcard pattern matching.
 
@@ -87,7 +66,7 @@ Here is the default implementation of [System.Management.Automation.Provider.Ipr
 
 ## Setting Properties
 
-To set properties, the Windows PowerShell property provider must implement the [System.Management.Automation.Provider.Ipropertycmdletprovider.Setproperty*](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.SetProperty) method to support calls from the `Set-ItemProperty` cmdlet. This method sets one or more properties of the item at the specified path, and overwrites the supplied properties as required. [System.Management.Automation.Provider.Ipropertycmdletprovider.Setproperty*](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.SetProperty) also writes an instance of a [System.Management.Automation.Psobject](/dotnet/api/System.Management.Automation.PSObject) object that represents a property bag of the updated properties.
+To set properties, the Windows PowerShell property provider must implement the [System.Management.Automation.Provider.Ipropertycmdletprovider.Setproperty*](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.SetProperty) method to support calls from the `Set-ItemProperty` cmdlet. This method sets one or more properties of the item at the specified path, and overwrites the supplied properties as required. [System.Management.Automation.Provider.Ipropertycmdletprovider.Setproperty*](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.SetProperty) also writes an instance of a [System.Management.Automation.PSObject](/dotnet/api/System.Management.Automation.PSObject) object that represents a property bag of the updated properties.
 
 Here is the default implementation of [System.Management.Automation.Provider.Ipropertycmdletprovider.Setproperty*](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.SetProperty) from the TemplateProvider.cs file provided by Windows PowerShell.
 
@@ -101,9 +80,9 @@ The following conditions may apply to an implementation of [System.Management.Au
 
 - By default, overrides of this method should not retrieve a reader for objects that are hidden from the user unless the [System.Management.Automation.Provider.Cmdletprovider.Force*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) property is set to `true`. An error should be written if the path represents an item that is hidden from the user and [System.Management.Automation.Provider.Cmdletprovider.Force*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) is set to `false`.
 
-- Your implementation of the [System.Management.Automation.Provider.Ipropertycmdletprovider.Setproperty*](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.SetProperty) method should call [System.Management.Automation.Provider.Cmdletprovider.Shouldprocess*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) and verify its return value before making any changes to the data store. This method is used to confirm execution of an operation when a change is made to system state, for example, renaming files. [System.Management.Automation.Provider.Cmdletprovider.Shouldprocess*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) sends the name of the resource to be changed to the user, with the Windows PowerShell runtime and handling any command-line settings or preference variables in determining what should be displayed.
+- Your implementation of the [System.Management.Automation.Provider.Ipropertycmdletprovider.Setproperty*](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.SetProperty) method should call [System.Management.Automation.Provider.Cmdletprovider.ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) and verify its return value before making any changes to the data store. This method is used to confirm execution of an operation when a change is made to system state, for example, renaming files. [System.Management.Automation.Provider.Cmdletprovider.ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) sends the name of the resource to be changed to the user, with the Windows PowerShell runtime and handling any command-line settings or preference variables in determining what should be displayed.
 
-  After the call to [System.Management.Automation.Provider.Cmdletprovider.Shouldprocess*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) returns `true`, if potentially dangerous system modifications can be made, the [System.Management.Automation.Provider.Ipropertycmdletprovider.Setproperty*](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.SetProperty) method should call the [System.Management.Automation.Provider.Cmdletprovider.Shouldcontinue*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue) method. This method sends a confirmation message to the user to allow additional feedback to indicate that the operation should be continued.
+  After the call to [System.Management.Automation.Provider.Cmdletprovider.ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) returns `true`, if potentially dangerous system modifications can be made, the [System.Management.Automation.Provider.Ipropertycmdletprovider.Setproperty*](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.SetProperty) method should call the [System.Management.Automation.Provider.Cmdletprovider.ShouldContinue](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue) method. This method sends a confirmation message to the user to allow additional feedback to indicate that the operation should be continued.
 
 ## Attaching Dynamic Parameters for the Set-ItemProperty Cmdlet
 
@@ -129,9 +108,9 @@ The following conditions may apply to your implementation of [System.Management.
 
 - By default, overrides of this method should not retrieve a reader for objects that are hidden from the user unless the [System.Management.Automation.Provider.Cmdletprovider.Force*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) property is set to `true`. An error should be written if the path represents an item that is hidden from the user and [System.Management.Automation.Provider.Cmdletprovider.Force*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) is set to `false`.
 
-- Your implementation of the [System.Management.Automation.Provider.Ipropertycmdletprovider.Clearproperty*](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.ClearProperty) method should call [System.Management.Automation.Provider.Cmdletprovider.Shouldprocess*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) and verify its return value before making any changes to the data store. This method is used to confirm execution of an operation before a change is made to system state, such as clearing content. [System.Management.Automation.Provider.Cmdletprovider.Shouldprocess*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) sends the name of the resource to be changed to the user, with the Windows PowerShell runtime taking into account any command line settings or preference variables in determining what should be displayed.
+- Your implementation of the [System.Management.Automation.Provider.Ipropertycmdletprovider.Clearproperty*](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.ClearProperty) method should call [System.Management.Automation.Provider.Cmdletprovider.ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) and verify its return value before making any changes to the data store. This method is used to confirm execution of an operation before a change is made to system state, such as clearing content. [System.Management.Automation.Provider.Cmdletprovider.ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) sends the name of the resource to be changed to the user, with the Windows PowerShell runtime taking into account any command line settings or preference variables in determining what should be displayed.
 
-  After the call to [System.Management.Automation.Provider.Cmdletprovider.Shouldprocess*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) returns `true`, if potentially dangerous system modifications can be made, the [System.Management.Automation.Provider.Ipropertycmdletprovider.Clearproperty*](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.ClearProperty) method should call the [System.Management.Automation.Provider.Cmdletprovider.Shouldcontinue*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue) method. This method sends a confirmation message to the user to allow additional feedback to indicate that the potentially dangerous operation should be continued.
+  After the call to [System.Management.Automation.Provider.Cmdletprovider.ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) returns `true`, if potentially dangerous system modifications can be made, the [System.Management.Automation.Provider.Ipropertycmdletprovider.Clearproperty*](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.ClearProperty) method should call the [System.Management.Automation.Provider.Cmdletprovider.ShouldContinue](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue) method. This method sends a confirmation message to the user to allow additional feedback to indicate that the potentially dangerous operation should be continued.
 
 ## Attaching Dynamic Parameters to the Clear-ItemProperty Cmdlet
 
@@ -144,7 +123,6 @@ Here is the default implementation of [System.Management.Automation.Provider.Ipr
 ## Building the Windows PowerShell provider
 
 See [How to Register Cmdlets, Providers, and Host Applications](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c).
-See [How to Register Cmdlets, Providers, and Host Applications](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c).
 
 ## See Also
 
@@ -153,9 +131,5 @@ See [How to Register Cmdlets, Providers, and Host Applications](http://msdn.micr
 [Design Your Windows PowerShell provider](./designing-your-windows-powershell-provider.md)
 
 [Extending Object Types and Formatting](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)
-
-[Extending Object Types and Formatting](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)
-
-[How to Register Cmdlets, Providers, and Host Applications](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
 
 [How to Register Cmdlets, Providers, and Host Applications](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)

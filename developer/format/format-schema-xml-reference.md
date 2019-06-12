@@ -105,7 +105,7 @@ Defines what data is displayed by the custom control view and how it is displaye
 [DefaultSettings Element (Format)](./defaultsettings-element-format.md)
 Defines common settings that apply to all the views of the formatting file. Common settings include displaying errors, wrapping text in tables, defining how collections are expanded, and more.
 
-[DisplayError Element (Frmat)](./displayerror-element-format.md)
+[DisplayError Element (Format)](./displayerror-element-format.md)
 Specifies that the string #ERR is displayed when an error occurs displaying a piece of data.
 
 [EntrySelectedBy Element for CustomEntry for Controls for Configuration (Format)](./entryselectedby-element-for-customentry-for-controls-for-configuration-format.md)
@@ -336,7 +336,7 @@ Specifies the .NET property that triggers the condition. When this property is p
 [PropertyName Element for SelectionCondition for GroupBy (Format)](./propertyname-element-for-selectioncondition-for-groupby-format.md)
 Specifies the .NET property that triggers the condition. When this property is present or when it evaluates to `true`, the condition is met, and the definition is used. This element is used when defining how a new group of objects is displayed.
 
-[PropertyName Element for SelectionCondition for EmtrySelectedBy for ListEntry (Format)](./propertyname-element-for-selectioncondition-for-entryselectedby-for-listcontrol-format.md)
+[PropertyName Element for SelectionCondition for EntrySelectedBy for ListEntry (Format)](./propertyname-element-for-selectioncondition-for-entryselectedby-for-listcontrol-format.md)
 Specifies the .NET property that triggers the condition. When this property is present or when it evaluates to `true`, the condition is met, and the list entry is used.
 
 [PropertyName Element for SelectionCondition for EntrySelectedBy for TableRowEntry (Format)](./propertyname-element-for-selectioncondition-for-entryselectedby-for-tablerowentry-format.md)
@@ -528,7 +528,7 @@ Defines the headers for the columns of a table.
 [TableRowEntries Element (Format)](./tablerowentries-element-for-tablecontrol-format.md)
 Defines the rows of the table.
 
-[TableRowEntry Element (Format)](./tablerowentry-element-for-tablerowentroes-for-tablecontrol-format.md)
+[TableRowEntry Element (Format)](./tablerowentry-element-for-tablerowentries-for-tablecontrol-format.md)
 Defines the data that is displayed in a row of the table.
 
 [Text Element for CustomItem for Controls for Configuration (Format)](./text-element-for-customitem-for-controls-for-configuration-format.md)
@@ -624,7 +624,7 @@ Defines the property or script whose value is displayed.
 [Width Element (Format)](./width-element-for-tablecolumnheader-for-tablecontrol-format.md)
 Defines the width (in characters) of a column.
 
-[Wrap Element (Format)](./wrap-element-for-tablerowentry-for-tablecontrl-format.md)
+[Wrap Element (Format)](./wrap-element-for-tablerowentry-for-tablecontrol-format.md)
 Specifies that text that exceeds the column width is displayed on the next line.
 
 [WrapTables Element (Format)](./wraptables-element-format.md)

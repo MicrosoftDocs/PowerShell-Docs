@@ -4,11 +4,10 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Utility
 ms.date: 06/09/2017
-online version: http://go.microsoft.com/fwlink/?LinkId=821813
+online version: https://go.microsoft.com/fwlink/?linkid=821813
 schema: 2.0.0
 title: Import-Clixml
 ---
-
 # Import-Clixml
 
 ## SYNOPSIS
@@ -17,17 +16,20 @@ Imports a CLIXML file and creates corresponding objects in PowerShell.
 ## SYNTAX
 
 ### ByPath (Default)
+
 ```
 Import-Clixml [-Path] <String[]> [-IncludeTotalCount] [-Skip <UInt64>] [-First <UInt64>] [<CommonParameters>]
 ```
 
 ### ByLiteralPath
+
 ```
 Import-Clixml -LiteralPath <String[]> [-IncludeTotalCount] [-Skip <UInt64>] [-First <UInt64>]
  [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+
 The **Import-CliXml** cmdlet imports a CLIXML file with data that represents Microsoft .NET Framework objects and creates the objects in PowerShell.
 
 A valuable use of **Import-CliXml** is to import credentials and secure strings that have been exported as secure XML by running the Export-Clixml cmdlet.
@@ -54,7 +56,7 @@ $Credxmlpath = Join-Path (Split-Path $Profile) TestScript.ps1.credential
 $Credential = Import-CliXml $Credxmlpath
 ```
 
-The **Export-CliXml** cmdlet encrypts credential objects by using the Windows Data Protection APIhttp://msdn.microsoft.com/library/windows/apps/xaml/hh464970.aspx.
+The **Export-CliXml** cmdlet encrypts credential objects by using the [Windows Data Protection API](http://msdn.microsoft.com/library/windows/apps/xaml/hh464970.aspx).
 This ensures that only your user account can decrypt the contents of the credential object.
 
 In this example, given a credential that you've stored in the $Credential variable by running the Get-Credential cmdlet, you can run the **Export-CliXml** cmdlet to save the credential to disk.
@@ -71,6 +73,7 @@ This eliminates the risk of exposing plain-text passwords in your script.
 ## PARAMETERS
 
 ### -First
+
 Gets only the specified number of objects.
 Enter the number of objects to get.
 
@@ -87,6 +90,7 @@ Accept wildcard characters: False
 ```
 
 ### -IncludeTotalCount
+
 Reports the total number of objects in the data set (an integer) followed by the selected objects.
 If the cmdlet cannot determine the total count, it displays "Unknown total count." The integer has an Accuracy property that indicates the reliability of the total count value.
 The value of Accuracy ranges from 0.0 to 1.0 where 0.0 means that the cmdlet could not count the objects, 1.0 means that the count is exact, and a value between 0.0 and 1.0 indicates an increasingly reliable estimate.
@@ -104,6 +108,7 @@ Accept wildcard characters: False
 ```
 
 ### -LiteralPath
+
 Specifies the XML files.
 Unlike *Path*, the value of the *LiteralPath* parameter is used exactly as it is typed.
 No characters are interpreted as wildcards.
@@ -123,6 +128,7 @@ Accept wildcard characters: False
 ```
 
 ### -Path
+
 Specifies the XML files.
 
 ```yaml
@@ -138,6 +144,7 @@ Accept wildcard characters: False
 ```
 
 ### -Skip
+
 Ignores the specified number of objects and then gets the remaining objects.
 Enter the number of objects to skip.
 
@@ -154,16 +161,19 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### System.String
+
 You can pipe a string that contains a path to **Import-Clixml**.
 
 ## OUTPUTS
 
 ### PSObject
+
 **Import-Clixml** returns objects that have been deserialized from the stored XML files.
 
 ## NOTES

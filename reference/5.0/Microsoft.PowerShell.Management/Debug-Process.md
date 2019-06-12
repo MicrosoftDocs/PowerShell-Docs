@@ -3,7 +3,7 @@ ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821577
+online version: https://go.microsoft.com/fwlink/?linkid=821577
 external help file:  Microsoft.PowerShell.Commands.Management.dll-Help.xml
 title:  Debug-Process
 ---
@@ -182,7 +182,7 @@ Accept wildcard characters: False
 
 Specifies the names of the processes to be debugged.
 If there is more than one process with the same name, this cmdlet attaches a debugger to all processes with that name.
-The *Name * parameter is optional.
+The *Name* parameter is optional.
 
 ```yaml
 Type: String[]

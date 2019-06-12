@@ -9,13 +9,13 @@ Module Guid: 5714753b-2afd-4492-a5fd-01d9e2cff8b5
 title: PSReadLine
 Module Name: PSReadLine
 ---
-
 # PSReadLine Module
 
 ## Description
 
 The PSReadLine module contains cmdlets that let you customize the command-line editing environment
-in PowerShell. These articles documents PSReadLine v1.2. This version ships in PowerShell v5.1 and below.
+in PowerShell. These articles documents PSReadLine v1.2. This version ships in PowerShell v5.1 and
+below.
 
 ## PSReadLine Cmdlets
 

@@ -17,23 +17,28 @@ The `Get-Help` cmdlet automatically generates several elements of a comment-base
 
 The `Get-Help` cmdlet automatically generates the following elements of a help topic. You cannot edit these elements directly, but in many cases you can change the results by changing the source of the element.
 
-**Name**
+### Name
+
 The Name section of a function Help topic is taken from the function name in the function definition. The Name of a script Help topic is taken from the script file name. To change the name or its capitalization, change the function definition or the script file name.
 
-**Syntax**
+### Syntax
+
 The Syntax section of the Help topic is generated from the parameter list in the Param statement of the function or script. To add detail to the Help topic syntax, such as the .NET Framework type of a parameter, add the detail to the parameter list. If you do not specify a parameter type, the "Object" type is inserted as the default value.
 
-**Parameter List**
+### Parameter List
+
 The Parameters section of the Help topic is generated from the parameter list in the function or script and from the descriptions that you add by using the `.Parameters` keyword or comments in the parameter list.
 
 Parameters appear in the Parameters section in the same order that they appear in the parameter list. The spelling and capitalization of parameter names is also taken from the parameter list; it is not affected by the parameter name specified by the `.Parameter` keyword.
 
-**Common Parameters**
-The common parameters are added to the syntax and parameter list of the Help topic, even if they have no effect. For more information about the common parameters, see [about_CommonParameters](/powershell/module/microsoft.powershell.core/about/about_commonparameters).
+### Common Parameters
+
 The common parameters are added to the syntax and parameter list of the Help topic, even if they have no effect. For more information about the common parameters, see [about_CommonParameters](/powershell/module/microsoft.powershell.core/about/about_commonparameters).
 
-**Parameter Attribute Table**
+### Parameter Attribute Table
+
 `Get-Help` generates the table of parameter attributes that appears when you use the Full or Parameter parameter of `Get-Help`. The value of the Required, Position, and Default value attributes is taken from the function or script syntax.
 
-**Remarks**
+### Remarks
+
 The Remarks section of the Help topic is automatically generated from the function or script name. You cannot change or affect its content.

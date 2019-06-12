@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: PSScheduledJob
 ms.date: 06/09/2017
-online version: http://go.microsoft.com/fwlink/?LinkId=821702
+online version: https://go.microsoft.com/fwlink/?linkid=821702
 schema: 2.0.0
 title: Register-ScheduledJob
 ---
@@ -295,6 +295,9 @@ Accept wildcard characters: False
 ```
 
 ### -RunEvery
+
+Used to specify how often to run the job. For example, use this option to run a job every 15
+minutes.
 
 ```yaml
 Type: TimeSpan

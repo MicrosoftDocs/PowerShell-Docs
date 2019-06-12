@@ -4,15 +4,14 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Utility
 ms.date: 1/7/2019
-online version: http://go.microsoft.com/fwlink/?LinkId=821757
+online version: https://go.microsoft.com/fwlink/?linkid=821757
 schema: 2.0.0
 title: ConvertTo-Csv
 ---
-
 # ConvertTo-Csv
 
 ## SYNOPSIS
-Converts objects into a series of comma-separated value (CSV) strings.
+Converts objects into a series of character-separated value (CSV) strings.
 
 ## SYNTAX
 

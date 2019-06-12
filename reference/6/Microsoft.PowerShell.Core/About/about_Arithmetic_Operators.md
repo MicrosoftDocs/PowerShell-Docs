@@ -5,11 +5,9 @@ locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_Arithmetic_Operators
 ---
-
 # About Arithmetic Operators
 
 ## SHORT DESCRIPTION
-
 Describes the operators that perform arithmetic in PowerShell.
 
 ## LONG DESCRIPTION
@@ -67,7 +65,7 @@ PowerShell processes arithmetic operators in the following order:
 |----------|---------------|---------------------------------------|
 |1         | `()`          |Parentheses                            |
 |2         | `-`           |For a negative number or unary operator|
-|3         | `*`, `/`, `%` |For muliplication and division         |
+|3         | `*`, `/`, `%` |For multiplication and division         |
 |4         | `+`, `-`      |For addition and subtraction           |
 
 PowerShell processes the expressions from left to right according to the
@@ -456,7 +454,10 @@ For example, the binary complement of 0 is -1, the maximum unsigned integer
 (0xffffffff), and the binary complement of -1 is 0.
 
 ```powershell
-PS C:\> -bNot 10
+-bNot 10
+```
+
+```Output
 -11
 ```
 

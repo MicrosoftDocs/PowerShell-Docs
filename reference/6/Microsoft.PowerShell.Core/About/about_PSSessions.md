@@ -5,11 +5,9 @@ locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_PSSessions
 ---
-
 # About PSSessions
 
 ## Short Description
-
 Describes PowerShell sessions (PSSessions) and explains how to
 establish a persistent connection to a remote computer.
 
@@ -67,9 +65,9 @@ PSSession. The PSSession remains available until you delete it or it times
 out.
 
 Typically, you create a PSSession to run a series of related commands on a
-remote computer. When you create a PSSession on a remote computer, Windows
-PowerShell establishes a persistent connection to the remote computer to
-support the session.
+remote computer. When you create a PSSession on a remote computer, PowerShell
+establishes a persistent connection to the remote computer to support the
+session.
 
 If you use the **ComputerName** parameter of the `Invoke-Command` or
 `Enter-PSSession` cmdlet to run a remote command or to start an interactive

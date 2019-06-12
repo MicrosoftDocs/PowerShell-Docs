@@ -3,7 +3,7 @@ ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821668
+online version: https://go.microsoft.com/fwlink/?linkid=821668
 external help file:  PSGet-help.xml
 title:  Register-PSRepository
 ---
@@ -47,7 +47,7 @@ myNuGetSource                            https://myget.c...                     
 
 The first command registers https://www.myget.org/F/powershellgetdemo/ as a repository for the current user.
 After myNuGetSource is registered, you can explicitly reference it when searching for, installing, and publishing modules.
-Because the *PackageManamentProvider* parameter isn't specified, the repository is not explicitly associated with a OneGet packkage provider, so PowerShellGet polls available package providers and associates it with the NuGet provider.
+Because the *PackageManagementProvider* parameter isn't specified, the repository is not explicitly associated with a OneGet package provider, so PowerShellGet polls available package providers and associates it with the NuGet provider.
 
 The second command gets registered repositories and displays the results.
 

@@ -5,11 +5,9 @@ locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_Remote_Troubleshooting
 ---
-
 # About Remote Troubleshooting
 
 ## SHORT DESCRIPTION
-
 Describes how to troubleshoot remote operations in PowerShell.
 
 ## LONG DESCRIPTION
@@ -543,11 +541,11 @@ that the WS-Management service is running on the remote host and
 configured to listen for requests on the correct port and HTTP URL.
 ```
 
-Windows PowerShell remoting uses port 80 for HTTP transport by default. The
+PowerShell remoting uses port 80 for HTTP transport by default. The
 default port is used whenever the user does not specify the ConnectionURI
 or Port parameters in a remote command.
 
-To change the default port that Windows PowerShell uses, use `Set-Item` cmdlet
+To change the default port that PowerShell uses, use `Set-Item` cmdlet
 in the WSMan: drive to change the Port value in the  listener leaf node.
 
 For example, the following command changes the default port to 8080.
@@ -662,8 +660,7 @@ contains unsigned script files and formatting files.
 
 To import the modules that are created by these cmdlets, either by using
 `Import-PSSession` or `Import-Module`, the execution policy in the current
-session cannot be Restricted or AllSigned. (For information about Windows
-PowerShell execution policies, see about_Execution_Policies.
+session cannot be Restricted or AllSigned. (For information about PowerShell execution policies, see about_Execution_Policies.
 
 To import the modules without changing the execution policy for the local
 computer that is set in the registry, use the Scope parameter of
@@ -767,8 +764,7 @@ The following timeouts are available in the basic configuration.
 - You can also protect the remote computer by setting timeout values
   programmatically in the session configuration for the session.
 
-When a timeout value does not permit a operation to complete, Windows
-PowerShell terminates the operation and generates an error.
+When a timeout value does not permit a operation to complete, PowerShell terminates the operation and generates an error.
 
 To resolve the error, change the command to complete within the timeout
 interval or determine the source of the timeout limit and increase the
@@ -824,7 +820,7 @@ the command again.
 1. Start PowerShell with the "Run as administrator" option.
 2. Run the following command:
 
-   `Start-Service WinRM`
+   `Start-Service WinRM`
 
 3. Re-run the command that generated the error.
 

@@ -5,6 +5,7 @@ locale: en-us
 Module Name: CimCmdlets
 ms.date: 06/09/2017
 schema: 2.0.0
+title: Invoke-CimMethod
 ---
 
 # Invoke-CimMethod
@@ -117,17 +118,17 @@ If the InputObject parameter is specified, the cmdlet works in one of the follow
 ### Example 1: Invoke a method
 
 ```powershell
-PS C:\>Invoke-CimMethod -Query ꞌselect * from Win32_Process where name like "notepad%"ꞌ -MethodName "Terminate"
+Invoke-CimMethod -Query 'select * from Win32_Process where name like "notepad%"' -MethodName "Terminate"
 ```
 
 This command invokes the method named Terminate on the CIM class named Win32_Process. The CIM class
-is retrieved by the query "Select * from Win32_Process where name like ꞌnotepad%ꞌ".
+is retrieved by the query "Select * from Win32_Process where name like 'notepad%'".
 
 ### Example 2: Invoke a method using CIM instance object
 
 ```powershell
-PS C:\>$x = Get-CimInstance -Query ꞌSelect * from Win32_Process where name like "notepad%"ꞌ
-PS C:\>Invoke-CimMethod -InputObject $x -MethodName GetOwner
+$x = Get-CimInstance -Query 'Select * from Win32_Process where name like "notepad%"'
+Invoke-CimMethod -InputObject $x -MethodName GetOwner
 ```
 
 This set of commands retrieves the CIM instance object and stores it in a variable named $x using
@@ -137,7 +138,7 @@ Invoke-CimMethod cmdlet, and the GetOwner method is invoked for the CimInstance.
 ### Example 3: Invoke a static method
 
 ```powershell
-PS C:\>Invoke-CimMethod -ClassName Win32_Process -MethodName "Create" -Arguments @{ Path = "notepad.exe" }
+Invoke-CimMethod -ClassName Win32_Process -MethodName "Create" -Arguments @{ Path = "notepad.exe" }
 ```
 
 This command invokes the static method Create on the class named Win32_Process, with the arguments specified by the Arguments parameter.
@@ -145,7 +146,7 @@ This command invokes the static method Create on the class named Win32_Process, 
 ### Example 4: Invoke a method using arguments
 
 ```powershell
-PS C:\>Invoke-CimMethod -ClassName Win32_Process -MethodName "Create" -Arguments @{ CommandLine = ꞌnotepad.exeꞌ; CurrentDirectory = "C:\windows\system32" }
+Invoke-CimMethod -ClassName Win32_Process -MethodName "Create" -Arguments @{ CommandLine = 'notepad.exe'; CurrentDirectory = "C:\windows\system32" }
 ```
 
 This command invokes the method named Create by using the Arguments parameter.
@@ -153,8 +154,8 @@ This command invokes the method named Create by using the Arguments parameter.
 ### Example 5: Client-side validation
 
 ```powershell
-PS C:\>$c = Get-CimClass -ClassName Win32_Process
-PS C:\>Invoke-CimMethod -CimClass $c -MethodName "xyz" -Arguments @{ CommandLine = ꞌnotepad.exeꞌ }
+$c = Get-CimClass -ClassName Win32_Process
+Invoke-CimMethod -CimClass $c -MethodName "xyz" -Arguments @{ CommandLine = 'notepad.exe' }
 ```
 
 This set of commands performs client-side validation for the method named xyz by passing a CimClass

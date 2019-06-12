@@ -4,26 +4,26 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Core
 ms.date: 06/09/2017
-online version: http://go.microsoft.com/fwlink/?LinkId=821481
+online version: https://go.microsoft.com/fwlink/?linkid=821481
 schema: 2.0.0
 title: ForEach-Object
 ---
-
 # ForEach-Object
 
 ## SYNOPSIS
-
 Performs an operation against each item in a collection of input objects.
 
 ## SYNTAX
 
 ### ScriptBlockSet (Default)
+
 ```
 ForEach-Object [-InputObject <PSObject>] [-Begin <ScriptBlock>] [-Process] <ScriptBlock[]> [-End <ScriptBlock>]
  [-RemainingScripts <ScriptBlock[]>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### PropertyAndMethodSet
+
 ```
 ForEach-Object [-InputObject <PSObject>] [-MemberName] <String> [-ArgumentList <Object[]>] [-WhatIf] [-Confirm]
  [<CommonParameters>]
@@ -350,6 +350,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS

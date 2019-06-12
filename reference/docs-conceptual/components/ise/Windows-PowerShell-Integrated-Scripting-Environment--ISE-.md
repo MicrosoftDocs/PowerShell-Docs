@@ -2,7 +2,6 @@
 ms.date:  06/05/2017
 keywords:  powershell,cmdlet
 title:  Windows PowerShell Integrated Scripting Environment ISE
-ms.assetid:  f156b92d-0203-46d2-89c7-b4989d32e3d2
 ---
 
 # Windows PowerShell Integrated Scripting Environment (ISE)
@@ -46,7 +45,7 @@ you use most often.
 
 **Merged Console pane**. In previous versions of the ISE there were separate Command and Output
 panes. They are now combined into a single pane that more directly mimics what you see in the
-Windows Powershell Console.
+Windows PowerShell Console.
 
 **Command-line switches**. Several new command-line switches give you more control over the way the
 ISE works. -NoProfile starts the ISE without running a profile script. -Help opens up a help window

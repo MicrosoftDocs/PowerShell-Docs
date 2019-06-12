@@ -38,18 +38,19 @@ You'll see the following behavior:
 
 1. You submit a PR.
 1. In the GitHub comment that indicates the status of your PR, you'll see the status of "checks"
-   enabled on the repo. Note that in this example, there are two checks enabled, "Commit
-   Validation" and "OpenPublishing.Build":
+   enabled on the repo. Note that in this example, there are two checks enabled, "Commit Validation"
+   and "OpenPublishing.Build":
 
    ![some checks failed](images/7-pull-requests/validation-failed.png)
 
    Build can pass even if commit validation fails.
 
 1. Click **Details** for more information.
-1. On the Details page, you'll see all the validation checks that failed, with information about
-   how to fix the issues.
+1. On the Details page, you'll see all the validation checks that failed, with information about how
+   to fix the issues.
 1. When validation succeeds, you will see a comment similar to the following:
 
    ![build validation](images/7-pull-requests/build-validation.png)
 
-If you are an external (non-Microsoft) contributor you may not have access to the detailed build reports or preview links.
+If you are an external (non-Microsoft) contributor you do not have access to the detailed build
+reports or preview links.

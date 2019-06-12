@@ -2,7 +2,6 @@
 ms.date:  08/27/2018
 keywords:  powershell,cmdlet
 title:  Getting Detailed Help Information
-ms.assetid:  6fb4daf7-8607-4a3e-b692-f77631adc1b9
 ---
 
 # Getting detailed help information
@@ -79,7 +78,7 @@ Get-Help Get-ChildItem -Parameter *
 ```
 
 To display only the examples in a Help article, use the **Examples** parameter of the `Get-Help`.
-For example, to display only the examples in the Help article for the `Get-ChildItem `cmdlet, type:
+For example, to display only the examples in the Help article for the `Get-ChildItem` cmdlet, type:
 
 ```powershell
 Get-Help Get-ChildItem -Examples

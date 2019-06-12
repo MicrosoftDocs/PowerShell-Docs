@@ -3,6 +3,7 @@ ms.date:  08/23/2017
 keywords:  powershell,cmdlet
 title:  install and use windows powershell web access
 ---
+
 # Install and Use Windows PowerShell Web Access
 
 Updated: November 5, 2013 (Edited: August 23, 2017)
@@ -139,7 +140,7 @@ configuration, use Windows PowerShell cmdlets, as described in this section.
    > same server as the Windows PowerShell Web Access gateway, add the `-IncludeManagementTools`
    > parameter to the installation command (as provided in this step). If you are managing the
    > Windows PowerShell Web Access website from a remote computer, install the IIS Manager snap-in
-   > by installing [Remote Server Administration Toolsfor Windows 8.1](https://www.microsoft.com/en-us/download/details.aspx?id=39296)
+   > by installing [Remote Server Administration Tools for Windows 8.1](https://www.microsoft.com/en-us/download/details.aspx?id=39296)
    > or [Remote Server Administration Tools for Windows 8](https://www.microsoft.com/en-us/download/details.aspx?id=28972)
    > on the computer from which you want to manage the gateway.
 
@@ -261,7 +262,7 @@ the Secure Sockets Layer (SSL) certificate.
 7. In the **Add Site Binding** dialog box, in the **Type** field, select **https**.
 
 8. In the **SSL certificate** field, select your signed certificate from the drop-down menu.
-   Click **OK**. See [To configure an SSL certificate in IIS Manager](#to-configure-an-ssl-certificate-in-iis-Manager)
+   Click **OK**. See [To configure an SSL certificate in IIS Manager](#to-configure-an-ssl-certificate-in-iis-manager)
    in this topic for more information about how to obtain a certificate.
 
    The Windows PowerShell Web Access web application is now configured to use your signed SSL
@@ -414,7 +415,7 @@ gateway as a root website.
   default location, `$env:windir/Web/PowerShellWebAccess/wwwroot`. Click **OK**.
 
 9. Follow the steps in the procedure
-   [To configure an SSL certificate in IIS manager](#to-configure-an-ssl-certificate-in-iis-Manager)
+   [To configure an SSL certificate in IIS Manager](#to-configure-an-ssl-certificate-in-iis-manager)
    in this topic.
 
 10. ![](images/SecurityNote.jpeg) Optional security step:
@@ -499,7 +500,7 @@ gateway as a root website.
 1. For a more secure production environment, we strongly recommend providing a valid certificate
    that has been signed by a CA. You must provide an SSL certificate, because users can only
    connect to Windows PowerShell Web Access through an HTTPS website. See
-   [To configure an SSL certificate in IIS manager](#to-configure-an-ssl-certificate-in-iis-Manager)
+   [To configure an SSL certificate in IIS Manager](#to-configure-an-ssl-certificate-in-iis-manager)
    in this topic for more information about how to obtain a certificate.
 
 1. Click **OK** to close the **Add Website** dialog box.

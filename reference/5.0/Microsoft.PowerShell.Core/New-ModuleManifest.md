@@ -1,13 +1,13 @@
 ---
-ms.date:  01/22/2019
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821496
-external help file:  System.Management.Automation.dll-Help.xml
-title:  New-ModuleManifest
+external help file: System.Management.Automation.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Core
+ms.date: 04/23/2019
+online version: https://go.microsoft.com/fwlink/?linkid=821496
+schema: 2.0.0
+title: New-ModuleManifest
 ---
-
 # New-ModuleManifest
 
 ## SYNOPSIS
@@ -32,7 +32,8 @@ New-ModuleManifest [-Path] <string> [-NestedModules <Object[]>] [-Guid <guid>] [
 ## DESCRIPTION
 
 The `New-ModuleManifest` cmdlet creates a new module manifest (.psd1) file, populates its values,
-and saves the manifest file in the specified path.
+and saves the manifest file in the specified path. The resulting file is encoded as Unicode
+(UTF-16LE).
 
 Module authors can use this cmdlet to create a manifest for their module. A module manifest is a
 .psd1 file that contains a hash table. The keys and values in the hash table describe the contents
@@ -242,7 +243,7 @@ Author                      : Microsoft Corporation
 AccessMode                  : ReadWrite
 ClrVersion                  : 4.0
 CompanyName                 : Microsoft Corporation
-Copyright                   : © Microsoft Corporation. All rights reserved.
+Copyright                   : Microsoft Corporation. All rights reserved.
 DotNetFrameworkVersion      :
 ExportedFunctions           : {}
 ExportedCmdlets             : {[Get-WinEvent, Get-WinEvent], [Get-Counter, Get-Counter], [Import-Counter,
@@ -756,8 +757,8 @@ Accept wildcard characters: False
 
 ### -PowerShellVersion
 
-Specifies the minimum version of Windows PowerShell that will work with this module. For example,
-you can enter 1.0, 2.0, or 3.0 as the value of this parameter.
+Specifies the minimum version of Windows PowerShell that works with this module.
+For example, you can enter 1.0, 2.0, or 3.0 as the value of this parameter.
 
 ```yaml
 Type: Version

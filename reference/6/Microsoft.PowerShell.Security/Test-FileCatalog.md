@@ -4,15 +4,13 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Security
 ms.date: 11/02/2018
-online version: http://go.microsoft.com/fwlink/?LinkId=822570
+online version: https://go.microsoft.com/fwlink/?linkid=822570
 schema: 2.0.0
 title: Test-FileCatalog
 ---
-
 # Test-FileCatalog
 
 ## SYNOPSIS
-
 `Test-FileCatalog` validates whether the hashes contained in a catalog file
 (.cat) matches the hashes of the actual files in order to validate their
 authenticity.
@@ -153,6 +151,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
+
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml

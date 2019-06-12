@@ -4,6 +4,7 @@
             { "files": ["**/**.md"], "exclude": ["**/obj/**"] }
         ],
         "globalMetadata": {
+            "toc_preview": true,
             "ROBOTS": "INDEX, FOLLOW",
             "ms.prod": "powershell",
             "ms.technology": "powershell",

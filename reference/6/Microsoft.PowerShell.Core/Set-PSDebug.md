@@ -4,11 +4,10 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Core
 ms.date: 06/09/2017
-online version: http://go.microsoft.com/fwlink/?LinkId=821515
+online version: https://go.microsoft.com/fwlink/?linkid=821515
 schema: 2.0.0
 title: Set-PSDebug
 ---
-
 # Set-PSDebug
 
 ## SYNOPSIS
@@ -17,16 +16,19 @@ Turns script debugging features on and off, sets the trace level, and toggles st
 ## SYNTAX
 
 ### on
+
 ```
 Set-PSDebug [-Trace <Int32>] [-Step] [-Strict] [<CommonParameters>]
 ```
 
 ### off
+
 ```
 Set-PSDebug [-Off] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+
 The **Set-PSDebug** cmdlet turns script debugging features on and off, sets the trace level, and toggles strict mode.
 
 When the *Trace* parameter has a value of 1, each line of script is traced as it runs.
@@ -36,9 +38,12 @@ If the *Step* parameter is specified, you are prompted before each line of the s
 ## EXAMPLES
 
 ### Example 1: Set the trace level to 2
-```
-PS C:\> Set-PSDebug -Trace 2; foreach ($i in 1..3) {$i}
 
+```powershell
+Set-PSDebug -Trace 2; foreach ($i in 1..3) {$i}
+```
+
+```Output
 DEBUG:    1+ Set-PsDebug -Trace 2; foreach ($i in 1..3) {$i}
 DEBUG:    1+ Set-PsDebug -Trace 2; foreach ($i in 1..3) {$i}
 1
@@ -51,9 +56,12 @@ DEBUG:    1+ Set-PsDebug -Trace 2; foreach ($i in 1..3) {$i}
 This command sets the trace level to 2, and then runs a script that displays the numbers 1, 2, and 3.
 
 ### Example 2: Turn on stepping
-```
-PS C:\> Set-PSDebug -Step; foreach ($i in 1..3) {$i}
 
+```powershell
+Set-PSDebug -Step; foreach ($i in 1..3) {$i}
+```
+
+```Output
 DEBUG:    1+ Set-PsDebug -Step; foreach ($i in 1..3) {$i}
 Continue with this operation?
 1+ Set-PsDebug -Step; foreach ($i in 1..3) {$i}
@@ -68,8 +76,12 @@ DEBUG:    1+ Set-PsDebug -Step; foreach ($i in 1..3) {$i}
 This command turns on stepping, and then runs a script that displays the numbers 1, 2, and 3.
 
 ### Example 3: Turn off debug features
+
+```powershell
+Set-PSDebug -Off; foreach ($i in 1..3) {$i}
 ```
-PS C:\> Set-PSDebug -Off; foreach ($i in 1..3) {$i}
+
+```Output
 1
 2
 3
@@ -78,8 +90,12 @@ PS C:\> Set-PSDebug -Off; foreach ($i in 1..3) {$i}
 This command turns off all debugging features, and then runs a script that displays the numbers 1, 2, and 3.
 
 ### Example 4: Use strict mode
+
+```powershell
+set-psdebug -Strict; $NewVar
 ```
-PS C:\> set-psdebug -Strict; $NewVar
+
+```Output
 The variable $NewVar cannot be retrieved because it has not been set yet.
 At line:1 char:28
 + Set-PsDebug -strict;$NewVar <<<<
@@ -90,6 +106,7 @@ This command puts PowerShell in strict mode, and then attempts to access a varia
 ## PARAMETERS
 
 ### -Off
+
 Indicates that this cmdlet turns off all script debugging features.
 
 A `Set-StrictMode -Off` command disables the verification set by a `Set-PSDebug -Strict` command.
@@ -108,6 +125,7 @@ Accept wildcard characters: False
 ```
 
 ### -Step
+
 Indicates that this cmdlet turns on script stepping.
 Before each line runs, PowerShell prompts you to stop, continue, or enter a new interpreter level to inspect the state of the script.
 
@@ -126,6 +144,7 @@ Accept wildcard characters: False
 ```
 
 ### -Strict
+
 Indicates that PowerShell returns an exception if a variable is referenced before a value is assigned to the variable.
 
 A `Set-StrictMode -Off` command disables the verification set by a `Set-PSDebug -Strict` command.
@@ -144,6 +163,7 @@ Accept wildcard characters: False
 ```
 
 ### -Trace
+
 Specifies the trace level.
 The acceptable values for this parameter are:
 
@@ -164,16 +184,19 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### None
+
 You cannot pipe input to this cmdlet.
 
 ## OUTPUTS
 
 ### None
+
 This cmdlet does not return any output.
 
 ## NOTES

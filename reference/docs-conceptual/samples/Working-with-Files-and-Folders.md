@@ -2,13 +2,12 @@
 ms.date:  06/05/2017
 keywords:  powershell,cmdlet
 title:  Working with Files and Folders
-ms.assetid:  c0ceb96b-e708-45f3-803b-d1f61a48f4c1
 ---
 # Working with Files and Folders
 
 Navigating through Windows PowerShell drives and manipulating the items on them is similar to manipulating files and folders on Windows physical disk drives. This section discusses how to deal with specific file and folder manipulation tasks using PowerShell.
 
-### Listing All the Files and Folders Within a Folder
+## Listing All the Files and Folders Within a Folder
 
 You can get all items directly within a folder by using **Get-ChildItem**. Add the optional **Force** parameter to display hidden or system items. For example, this command displays the direct contents of Windows PowerShell Drive C (which is the same as the Windows physical drive C):
 
@@ -30,7 +29,7 @@ The following command finds all executables within the Program Files folder that
 Get-ChildItem -Path $env:ProgramFiles -Recurse -Include *.exe | Where-Object -FilterScript {($_.LastWriteTime -gt '2005-10-01') -and ($_.Length -ge 1mb) -and ($_.Length -le 10mb)}
 ```
 
-### Copying Files and Folders
+## Copying Files and Folders
 
 Copying is done with **Copy-Item**. The following command backs up C:\\boot.ini to C:\\boot.bak:
 
@@ -64,7 +63,7 @@ You can still use other tools to perform file system copies. XCOPY, ROBOCOPY, an
 (New-Object -ComObject Scripting.FileSystemObject).CopyFile('C:\boot.ini', 'C:\boot.bak')
 ```
 
-### Creating Files and Folders
+## Creating Files and Folders
 
 Creating new items works the same on all Windows PowerShell providers. If a Windows PowerShell provider has more than one type of item—for example, the FileSystem Windows PowerShell provider distinguishes between directories and files—you need to specify the item type.
 
@@ -80,7 +79,7 @@ This command creates a new empty file C:\\temp\\New Folder\\file.txt
 New-Item -Path 'C:\temp\New Folder\file.txt' -ItemType File
 ```
 
-### Removing All Files and Folders Within a Folder
+## Removing All Files and Folders Within a Folder
 
 You can remove contained items using **Remove-Item**, but you will be prompted to confirm the removal if the item contains anything else. For example, if you attempt to delete the folder C:\\temp\\DeleteMe that contains other items, Windows PowerShell prompts you for confirmation before deleting the folder:
 
@@ -101,7 +100,7 @@ If you do not want to be prompted for each contained item, specify the **Recurse
 Remove-Item -Path C:\temp\DeleteMe -Recurse
 ```
 
-### Mapping a Local Folder as a Windows Accessible Drive
+## Mapping a Local Folder as a Windows Accessible Drive
 
 You can also map a local folder, using the **subst** command. The following command creates a local drive P: rooted in the local Program Files directory:
 
@@ -111,7 +110,7 @@ subst p: $env:programfiles
 
 Just as with network drives, drives mapped within Windows PowerShell using **subst** are immediately visible to the Windows PowerShell shell.
 
-### Reading a Text File into an Array
+## Reading a Text File into an Array
 
 One of the more common storage formats for text data is in a file with separate lines treated as distinct data elements. The **Get-Content** cmdlet can be used to read an entire file in one step, as shown here:
 

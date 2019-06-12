@@ -5,11 +5,9 @@ locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_Debuggers
 ---
-
 # About Debuggers
 
 ## SHORT DESCRIPTION
-
 Describes the PowerShell debugger.
 
 ## LONG DESCRIPTION
@@ -254,16 +252,16 @@ files.
 
 ## Debugging Workflows
 
-The Windows PowerShell 4.0 debugger can be used to debug Windows PowerShell
-workflows, either in the Windows PowerShell console, or in Windows PowerShell
-ISE. There are some limitations with using the Windows PowerShell debugger to
+The PowerShell 4.0 debugger can be used to debug PowerShell
+workflows, either in the PowerShell console, or in Windows PowerShell
+ISE. There are some limitations with using the PowerShell debugger to
 debug workflows.
 
 - You can view workflow variables while you are in the debugger, but setting
   workflow variables from within the debugger is not supported.
 - Tab completion when stopped in the workflow debugger is not available.
 - Workflow debugging works only with synchronous running of workflows from a
-  Windows PowerShell script. You cannot debug workflows if they are running as a
+  PowerShell script. You cannot debug workflows if they are running as a
   job (with the **-AsJob** parameter).
 - Other nested debugging scenarios--such as a workflow calling another
   workflow, or a workflow calling a script--are not implemented.
@@ -816,8 +814,7 @@ DBG> k
 0: prompt: $args=[]
 ```
 
-This example demonstrates just a few of the many ways to use the Windows
-PowerShell debugger.
+This example demonstrates just a few of the many ways to use the PowerShell debugger.
 
 For more information about the debugger cmdlets, type the following command:
 
@@ -837,8 +834,8 @@ In addition to the PowerShell debugger, PowerShell includes
 several other features that you can use to debug scripts and functions.
 
 - Windows PowerShell Integrated Scripting Environment (ISE) includes an
-  interactive graphical debugger. For more information, start PowerShell ISE
-  and press F1.
+  interactive graphical debugger. For more information, start Windows
+  PowerShell ISE and press F1.
 
 - The Set-PSDebug cmdlet offers very basic script debugging features,
   including stepping and tracing.

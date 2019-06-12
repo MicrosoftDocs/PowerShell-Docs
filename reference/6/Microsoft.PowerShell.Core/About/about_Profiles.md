@@ -4,11 +4,9 @@ schema:  2.0.0
 keywords:  powershell,cmdlet
 title:  about_Profiles
 ---
-
 # About Profiles
 
 ## SHORT DESCRIPTION
-
 Describes how to create and use a PowerShell profile.
 
 ## LONG DESCRIPTION
@@ -40,13 +38,13 @@ For example, the PowerShell console supports the following basic
 profile files. The profiles are listed in precedence order. The first
 profile has the highest precedence.
 
-|Description               | Path                                        |
-|--------------------------|---------------------------------------------|
-|Current user, Current Host|$Home\\[My]Documents\\PowerShell             |
-|                          |  \\Microsoft.PowerShell_profile.ps1         |
-|Current User, All Hosts   |$Home\\[My]Documents\\PowerShell\Profile.ps1 |
-|All Users, Current Host   |$PsHome\Microsoft.PowerShell_profile.ps1     |
-|All Users, All Hosts      |$PsHome\Profile.ps1                          |
+|Description               | Path                                         |
+|--------------------------|----------------------------------------------|
+|All Users, All Hosts      |$PsHome\Profile.ps1                           |
+|All Users, Current Host   |$PsHome\Microsoft.PowerShell_profile.ps1      |
+|Current User, All Hosts   |$Home\\[My ]Documents\\PowerShell\Profile.ps1 |
+|Current user, Current Host|$Home\\[My ]Documents\\PowerShell             |
+|                          |  \\Microsoft.PowerShell_profile.ps1          |
 
 The profile paths include the following variables:
 
@@ -54,16 +52,6 @@ The profile paths include the following variables:
 PowerShell
 
 - The `$Home` variable, which stores the current user's home directory
-
-In addition, other programs that host PowerShell can support their own
-profiles. For example, PowerShell Integrated Scripting Environment (ISE)
-supports the following host-specific profiles.
-
-|Description               | Path                                      |
-|--------------------------|-------------------------------------------|
-|Current user, Current Host|$Home\\[My]Documents\\WindowsPowerShell    |
-|                          |  \\Microsoft.PowerShellISE_profile.ps1    |
-|All users, Current Host   |$PsHome\Microsoft.PowerShellISE_profile.ps1|
 
 In PowerShell Help, the "CurrentUser, Current Host" profile is the profile
 most often referred to as "your PowerShell profile".
@@ -212,18 +200,6 @@ Current Host" profile. For example, add the following command:
 ```powershell
 function Pro {notepad $profile.CurrentUserAllHosts}
 ```
-
-### Add a function that opens PowerShell Help in a compiled HTML
-  Help file (.chm)
-
-```powershell
-function Get-CHM {
-  Invoke-Item -Path "$env:windir\help\mui\0409\WindowsPowerShellHelp.chm"
-}
-```
-
-This function opens the English version of the .chm file. However, you can
-replace the language code (0409) to open other versions of the .chm file.
 
 ### Add a function that lists the aliases for any cmdlet
 

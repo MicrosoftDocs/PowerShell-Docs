@@ -44,7 +44,7 @@ None.
 |-------------|-----------------|
 |[Label Element For TableColumnHeader for TableControl (Format)](./label-element-for-tablecolumnheader-for-tablecontrol-format.md)|Optional element.<br /><br /> Defines the label that is displayed at the top of the column. If no label is specified, the name of the property whose value is displayed in the rows is used.|
 |[Width Element for TableColumnHeader for TableControl (Format)](./width-element-for-tablecolumnheader-for-tablecontrol-format.md)|Required element.<br /><br /> Specifies the width (in characters) of the column.|
-|[Alignment Element for TableColumbnHeader for TableControl (Format)](./alignment-element-for-tablecolumnheader-for-tablecontrol-format.md)|Optional element.<br /><br /> Specifies how the label of the column is displayed. If no alignment is specified, the label is aligned on the left.|
+|[Alignment Element for TableColumnHeader for TableControl (Format)](./alignment-element-for-tablecolumnheader-for-tablecontrol-format.md)|Optional element.<br /><br /> Specifies how the label of the column is displayed. If no alignment is specified, the label is aligned on the left.|
 
 ### Parent Elements
 
@@ -81,7 +81,7 @@ The following example shows two `TableColumnHeader` elements. The first element 
 
 ## See Also
 
-[Alignment Element for TableColumnHeader for TableContrl (Format)](./alignment-element-for-tablecolumnheader-for-tablecontrol-format.md)
+[Alignment Element for TableColumnHeader for TableControl (Format)](./alignment-element-for-tablecolumnheader-for-tablecontrol-format.md)
 
 [Creating a Table View](./creating-a-table-view.md)
 

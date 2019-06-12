@@ -2,7 +2,6 @@
 ms.date:  06/05/2017
 keywords:  powershell,cmdlet
 title:  The ISEOptions Object
-ms.assetid:  75e2a76f-f3d1-490b-ad5d-e3829946aabb
 ---
 # The ISEOptions Object
 

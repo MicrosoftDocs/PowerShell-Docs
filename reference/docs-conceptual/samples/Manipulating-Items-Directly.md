@@ -2,7 +2,6 @@
 ms.date:  06/05/2017
 keywords:  powershell,cmdlet
 title:  Manipulating Items Directly
-ms.assetid:  8cbd4867-917d-41ea-9ff0-b8e765509735
 ---
 # Manipulating Items Directly
 
@@ -26,7 +25,7 @@ Cmdlet          Rename-Item                     Rename-Item [-Path] <String>...
 Cmdlet          Set-Item                        Set-Item [-Path] <String[]> ...
 ```
 
-### Creating New Items (New-Item)
+## Creating New Items (New-Item)
 
 To create a new item in the file system, use the **New-Item** cmdlet. Include the **Path** parameter with path to the item, and the **ItemType** parameter with a value of "file" or "directory".
 
@@ -69,7 +68,7 @@ SKC  VC Name                           Property
 
 When typing a registry path, be sure to include the colon (**:**) in the Windows PowerShell drive names, HKLM: and HKCU:. Without the colon, Windows PowerShell does not recognize the drive name in the path.
 
-### Why Registry Values are not Items
+## Why Registry Values are not Items
 
 When you use the **Get-ChildItem** cmdlet to find the items in a registry key, you will never see actual registry entries or their values.
 
@@ -89,7 +88,7 @@ SKC  VC Name                           Property
 
 Although it would be convenient to treat registry entries as items, you cannot specify a path to a registry entry in a way that ensures that it is unique. The path notation does not distinguish between the registry subkey named **Run** and the **(Default)** registry entry in the **Run** subkey. Furthermore, because registry entry names can contain the backslash character (**\\**), if registry entries were items, then you could not use the path notation to distinguish a registry entry named **Windows\\CurrentVersion\\Run** from the subkey that is located in that path.
 
-### Renaming Existing Items (Rename-Item)
+## Renaming Existing Items (Rename-Item)
 
 To change the name of a file or folder, use the **Rename-Item** cmdlet. The following command changes the name of the **file1.txt** file to **fileOne.txt**.
 
@@ -106,7 +105,7 @@ At line:1 char:12
 + Rename-Item  <<<< -Path C:\temp\New.Directory\fileOne c:\temp\fileOne.txt
 ```
 
-### Moving Items (Move-Item)
+## Moving Items (Move-Item)
 
 To move a file or folder, use the **Move-Item** cmdlet.
 
@@ -122,7 +121,7 @@ Mode                LastWriteTime     Length Name
 d----        2006-05-18  12:14 PM            New.Directory
 ```
 
-### Copying Items (Copy-Item)
+## Copying Items (Copy-Item)
 
 If you are familiar with the copy operations in other shells, you might find the behavior of the **Copy-Item** cmdlet in Windows PowerShell to be unusual. When you copy an item from one location to another, Copy-Item does not copy its contents by default.
 
@@ -161,7 +160,7 @@ Mode                LastWriteTime     Length Name
 -a---        2006-05-18  11:44 AM          0 file1
 ```
 
-### Deleting Items (Remove-Item)
+## Deleting Items (Remove-Item)
 
 To delete files and folders, use the **Remove-Item** cmdlet. Windows PowerShell cmdlets, such as **Remove-Item**, that can make significant, irreversible changes will often prompt for confirmation when you enter its commands. For example, if you try to remove the **New.Directory** folder, you will be prompted to confirm the command, because the folder contains files:
 
@@ -182,7 +181,7 @@ Because **Yes** is the default response, to delete the folder and its files, pre
 Remove-Item C:\temp\New.Directory -Recurse
 ```
 
-### Executing Items (Invoke-Item)
+## Executing Items (Invoke-Item)
 
 Windows PowerShell uses the **Invoke-Item** cmdlet to perform a default action for a file or folder. This default action is determined by the default application handler in the registry; the effect is the same as if you double-click the item in File Explorer.
 

@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: PowerShellGet
 ms.date: 06/09/2017
-online version: http://go.microsoft.com/fwlink/?LinkId=822341
+online version: https://go.microsoft.com/fwlink/?linkid=822341
 schema: 2.0.0
 title: Update-ModuleManifest
 ---
@@ -519,7 +519,7 @@ Accept wildcard characters: False
 ```
 
 ### -Prerelease
-{{Fill Prerelease Description}}
+Indicates the module is prerelease.
 
 ```yaml
 Type: String
@@ -639,7 +639,7 @@ Accept wildcard characters: False
 ```
 
 ### -RequireLicenseAcceptance
-{{Fill RequireLicenseAcceptance Description}}
+Specifies that a license acceptance is required for the module.
 
 ```yaml
 Type: SwitchParameter

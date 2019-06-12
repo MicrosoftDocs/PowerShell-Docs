@@ -5,11 +5,9 @@ locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_Aliases
 ---
-
 # About Aliases
 
 ## SHORT DESCRIPTION
-
 Describes how to use alternate names for cmdlets and commands in
 PowerShell.
 
@@ -148,8 +146,10 @@ Get-Alias returns only one type of object, an AliasInfo object
 include a hyphen, such as "cd" are displayed in the following format:
 
 ```powershell
-PS C:\> Get-Alias ac
+Get-Alias ac
+```
 
+```Output
 CommandType     Name                    Version    Source
 -----------     ----                    -------    ------
 Alias           ac -> Add-Content

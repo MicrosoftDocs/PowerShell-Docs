@@ -1,8 +1,11 @@
 ---
 external help file: Microsoft.Management.Infrastructure.CimCmdlets.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
 Module Name: CimCmdlets
-online version:
+ms.date: 06/09/2017
 schema: 2.0.0
+title: New-CimSession
 ---
 # New-CimSession
 
@@ -20,7 +23,7 @@ New-CimSession [-Authentication <PasswordAuthenticationMechanism>] [[-Credential
  [-Port <UInt32>] [-SessionOption <CimSessionOptions>] [<CommonParameters>]
 ```
 
-### CertificatePrameterSet
+### CertificateParameterSet
 
 ```
 New-CimSession [-CertificateThumbprint <String>] [[-ComputerName] <String[]>] [-Name <String>]
@@ -152,7 +155,7 @@ For more information about using the PowerShell Certificate provider, type `Get-
 
 ```yaml
 Type: String
-Parameter Sets: CertificatePrameterSet
+Parameter Sets: CertificateParameterSet
 Aliases:
 
 Required: False

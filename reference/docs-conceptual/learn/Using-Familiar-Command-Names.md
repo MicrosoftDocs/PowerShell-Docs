@@ -2,7 +2,6 @@
 ms.date:  08/27/2018
 keywords:  powershell,cmdlet
 title:  Using Familiar Command Names
-ms.assetid:  021e2424-c64e-4fa5-aa98-aa6405758d5d
 ---
 
 # Using familiar command names
@@ -75,7 +74,7 @@ These aliases are understandable when you know the shorthand names.
 
 | Cmdlet name    | Alias |
 |----------------|-------|
-| `Get-Item `    | gi    |
+| `Get-Item`     | gi    |
 | `Set-Item`     | si    |
 | `Get-Location` | gl    |
 | `Set-Location` | sl    |

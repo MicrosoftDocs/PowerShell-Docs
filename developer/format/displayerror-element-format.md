@@ -15,7 +15,7 @@ Specifies that the string #ERR is displayed when an error occurs displaying a pi
 
 Configuration Element (Format)
 DefaultSettings Element (Format)
-DisplayError Element (Frmat)
+DisplayError Element (Format)
 
 ## Syntax
 

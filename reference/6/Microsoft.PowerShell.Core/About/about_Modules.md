@@ -8,7 +8,6 @@ title:  about_Modules
 # About Modules
 
 ## Short Description
-
 Explains how to install, import, and use PowerShell modules.
 
 ## Long Description
@@ -251,8 +250,8 @@ For more information about adding modules to your session, see
 
 ## How to Import a Module into Every Session
 
-The `Import-Module` command imports modules into your current Windows
-PowerShell session. This command affects only the current session.
+The `Import-Module` command imports modules into your current PowerShell
+session. This command affects only the current session.
 
 To import a module into every PowerShell session that you
 start, add the `Import-Module` command to your PowerShell

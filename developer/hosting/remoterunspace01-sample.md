@@ -29,7 +29,7 @@ This sample shows how to create a remote runspace that is used to establish a re
 
 ## Example
 
- This sample defines a remote connection and then uses that connection information to establish a remote connection.
+This sample defines a remote connection and then uses that connection information to establish a remote connection.
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Runspaces
@@ -39,7 +39,7 @@ namespace Microsoft.Samples.PowerShell.Runspaces
   using System.Management.Automation.Runspaces;   // Windows PowerShell namespace.
 
   /// <summary>
-  /// This class contains the Main enrty point for the application.
+  /// This class contains the Main entry point for the application.
   /// </summary>
   internal class RemoteRunspace01
   {
@@ -50,12 +50,12 @@ namespace Microsoft.Samples.PowerShell.Runspaces
     /// <param name="args">This parameter is not used.</param>
     public static void Main(string[] args)
     {
-      // Create a WSManConnactionInfo object using the default constructor
+      // Create a WSManConnectionInfo object using the default constructor
       // to connect to the "localHost". The WSManConnectionInfo object can
       // also specify connections to remote computers.
       WSManConnectionInfo connectionInfo = new WSManConnectionInfo();
 
-      // Set the OpertationTimeout property. The OperationTimeout is used to tell
+      // Set the OperationTimeout property. The OperationTimeout is used to tell
       // Windows PowerShell how long to wait (in milliseconds) before timing out
       // for any operation. This includes sending input data to the remote computer,
       // receiving output data from the remote computer, and more. The user can
@@ -91,5 +91,3 @@ namespace Microsoft.Samples.PowerShell.Runspaces
   }
 }
 ```
-
-## See Also

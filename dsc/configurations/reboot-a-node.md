@@ -1,5 +1,5 @@
 ---
-ms.date:  1/17/2019
+ms.date:  01/17/2019
 keywords:  dsc,powershell,configuration,setup
 title:  Reboot a Node
 ---
@@ -57,7 +57,7 @@ xPendingReboot [String] #ResourceName
 | SkipWindowsUpdate | Skip reboots triggered by Windows Update.|
 | SkipPendingFileRename | Skip pending file rename reboots. |
 | SkipCcmClientSDK | Skip reboots triggered by the ConfigMgr client. |
-| SkipComputerRename | Skip reboots triggerd by Computer renames. |
+| SkipComputerRename | Skip reboots triggered by Computer renames. |
 | PSDSCRunAsCredential | Supported in v5. Executes the resource as the specified user. |
 | DependsOn | Indicates that the configuration of another resource must run before this resource is configured. For example, if the ID of the resource configuration script block that you want to run first is **ResourceName** and its type is **ResourceType**, the syntax for using this property is `DependsOn = "[ResourceType]ResourceName"`. For more information, see [Using DependsOn](resource-depends-on.md)|
 

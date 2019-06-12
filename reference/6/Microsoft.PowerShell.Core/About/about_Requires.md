@@ -8,7 +8,6 @@ title:  about_Requires
 # About Requires
 
 ## Short description
-
 Prevents a script from running without the required elements.
 
 ## Long description
@@ -100,7 +99,7 @@ following keys. The value can be a combination of strings and hash tables.
   - `RequiredVersion` - __[Required]__ Specifies an exact, required version of the module.
 
 > [!NOTE]
-> `RequiredVersion` was added in Windows Powershell 5.0.
+> `RequiredVersion` was added in Windows PowerShell 5.0.
 
 For example:
 
@@ -200,9 +199,9 @@ Param
 
 ### Notes
 
-In Windows PowerShell 3.0, the Windows PowerShell Core packages appear as
+In Windows PowerShell 3.0, the PowerShell Core packages appear as
 modules in sessions started by using the InitialSessionState.CreateDefault2
-method, such as sessions started in the Windows PowerShell console. Otherwise,
+method, such as sessions started in the PowerShell console. Otherwise,
 they appear as snap-ins. The exception is Microsoft.PowerShell.Core, which is
 always a snap-in.
 

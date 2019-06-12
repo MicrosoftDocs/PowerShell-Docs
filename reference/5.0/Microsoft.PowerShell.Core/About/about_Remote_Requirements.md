@@ -87,7 +87,7 @@ permission to connect to the computer remotely by changing the security
 descriptors on the default session configurations and by creating new session
 configurations with different security descriptors.
 
-For more informations about session configurations, see
+For more information about session configurations, see
 [about_Session_Configurations](about_Session_Configurations.md).
 
 ## WINDOWS NETWORK LOCATIONS

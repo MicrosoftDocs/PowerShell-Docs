@@ -52,7 +52,7 @@ title:  Installing PowerShellGet
   Exit
   ```
 
-- Ensure that PowerShellGet and PackageManagment modules are not loaded in any other processes.
+- Ensure that PowerShellGet and PackageManagement modules are not loaded in any other processes.
 - Delete contents of `$env:ProgramFiles\WindowsPowerShell\Modules\PowerShellGet\` and  `$env:ProgramFiles\WindowsPowerShell\Modules\PackageManagement\` folders.
 - Re-open the PS Console with elevated permissions then run the following commands.
 

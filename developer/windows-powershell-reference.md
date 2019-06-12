@@ -48,14 +48,14 @@ This namespace is the root namespace for Windows PowerShell. It contains the cla
 [System.Management.Automation.Provider](/dotnet/api/System.Management.Automation.Provider)
 This namespace contains the classes, enumerations, and interfaces required to implement a Windows PowerShell provider. In particular, the [System.Management.Automation.Provider.Cmdletprovider](/dotnet/api/System.Management.Automation.Provider.CmdletProvider) class is the base class from which all Windows PowerShell provider classes must be derived.
 
-[Microsoft.Powershell.Commands](/dotnet/api/Microsoft.PowerShell.Commands)
+[Microsoft.PowerShell.Commands](/dotnet/api/Microsoft.PowerShell.Commands)
 This namespace contains the classes for the cmdlets and providers implemented by Windows PowerShell. Similarly, it is recommended that you create a *YourName*.Commands namespace for those cmdlets that you implement.
 
 [System.Management.Automation.Host](/dotnet/api/System.Management.Automation.Host)
 This namespace contains the classes, enumerations, and interfaces that the cmdlet uses to define the interaction between the user and Windows PowerShell.
 
 [System.Management.Automation.Internal](/dotnet/api/System.Management.Automation.Internal)
-This namespace contains the base classes used by other namespace classes. For example, the [System.Management.Automation.Internal.Cmdletmetadataattribute](/dotnet/api/System.Management.Automation.Internal.CmdletMetadataAttribute) class is the base class for the [System.Management.Automation.Cmdletattribute](/dotnet/api/System.Management.Automation.CmdletAttribute) class.
+This namespace contains the base classes used by other namespace classes. For example, the [System.Management.Automation.Internal.Cmdletmetadataattribute](/dotnet/api/System.Management.Automation.Internal.CmdletMetadataAttribute) class is the base class for the [System.Management.Automation.CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute) class.
 
 [System.Management.Automation.Runspaces](/dotnet/api/System.Management.Automation.Runspaces)
 This namespace contains the classes, enumerations, and interfaces used to create a Windows PowerShell runspace. In this context, the Windows PowerShell runspace is the context in which one or more Windows PowerShell pipelines invoke cmdlets. That is, cmdlets work within the context of a Windows PowerShell runspace. For more information aboutWindows PowerShell runspaces, see [Windows PowerShell Runspaces](http://msdn.microsoft.com/en-us/a1582cfe-f06d-4aff-adc6-71f49a860ce9).

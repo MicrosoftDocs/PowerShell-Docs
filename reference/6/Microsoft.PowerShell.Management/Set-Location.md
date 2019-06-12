@@ -3,15 +3,13 @@ ms.date:  11/02/2018
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821632
+online version: https://go.microsoft.com/fwlink/?linkid=821632
 external help file:  Microsoft.PowerShell.Commands.Management.dll-Help.xml
 title:  Set-Location
 ---
-
 # Set-Location
 
 ## SYNOPSIS
-
 Sets the current working location to a specified location.
 
 ## SYNTAX

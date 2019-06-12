@@ -5,11 +5,9 @@ locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_Signing
 ---
-
 # About Signing
 
 ## SHORT DESCRIPTION
-
 Explains how to sign scripts so that they comply with the PowerShell execution
 policies.
 
@@ -52,7 +50,7 @@ For more information, see the help topic for the `Set-ExecutionPolicy` cmdlet.
 
 ## RUNNING UNSIGNED SCRIPTS (REMOTESIGNED EXECUTION POLICY)
 
-If your PowerShell execution policy is **RemoteSigned**, Windows PowerShell
+If your PowerShell execution policy is **RemoteSigned**, PowerShell
 will not run unsigned scripts that are downloaded from the Internet, including
 unsigned scripts you receive through e-mail and instant messaging programs.
 

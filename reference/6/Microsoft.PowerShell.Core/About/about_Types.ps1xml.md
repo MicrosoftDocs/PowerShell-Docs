@@ -5,11 +5,9 @@ locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_Types.ps1xml
 ---
-
 # About Types.ps1xml
 
 ## SHORT DESCRIPTION
-
 Explains how to use Types.ps1xml files to extend the types of objects
 that are used in PowerShell.
 
@@ -46,12 +44,11 @@ Sunday, January 29, 2012 9:43:57 AM
 
 You won't find the `DateTime` property in the description of the
 [`System.DateTime` structure](https://msdn.microsoft.com/library/system.datetime.aspx),
-because PowerShell adds the property and it is visible only in Windows
-PowerShell.
+because PowerShell adds the property and it is visible only in PowerShell.
 
-To add the `DateTime` property to all PowerShell sessions, Windows
-PowerShell defines the `DateTime` property in the Types.ps1xml file in the
-PowerShell installation directory (`$PSHOME`).
+To add the `DateTime` property to all PowerShell sessions, PowerShell defines
+the `DateTime` property in the Types.ps1xml file in the PowerShell installation
+directory (`$PSHOME`).
 
 ## Adding Extended Type Data to PowerShell.
 
@@ -88,18 +85,17 @@ For more information about these cmdlets, see the help topic for each cmdlet.
 The Types.ps1xml files in the `$PSHOME` directory are added automatically to
 every session.
 
-The Types.ps1xml file in the PowerShell installation directory
-(`$PSHOME`) is an XML-based text file that lets you add properties and
-methods to the objects that are used in PowerShell. Windows
-PowerShell has built-in Types.ps1xml files that add several elements
-to the .NET Framework types, but you can create additional Types.ps1xml
-files to further extend the types.
+The Types.ps1xml file in the PowerShell installation directory (`$PSHOME`) is
+an XML-based text file that lets you add properties and methods to the objects
+that are used in PowerShell. PowerShell has built-in Types.ps1xml files that
+add several elements to the .NET Framework types, but you can create additional
+Types.ps1xml files to further extend the types.
 
 For example, by default, array objects (`System.Array`) have a `Length`
-property that lists the number of objects in the array. However, because
-the name "Length" does not clearly describe the property, Windows
-PowerShell adds an alias property named "Count" that displays the same
-value. The following XML adds the Count property to the `System.Array` type.
+property that lists the number of objects in the array. However, because the
+name "Length" does not clearly describe the property, PowerShell adds an alias
+property named "Count" that displays the same value. The following XML adds the
+Count property to the `System.Array` type.
 
 ```xml
 <Type>
@@ -157,12 +153,11 @@ script blocks. Therefore, to add a property or method to a .NET Framework
 type, create your own Types.ps1xml files, and then add them to your
 PowerShell session.
 
-To create a new file, start by copying an existing Types.ps1xml file. The
-new file can have any name, but it must have a .ps1xml file name
-extension. You can place the new file in any directory that is accessible
-to PowerShell, but it is useful to place the files in the Windows
-PowerShell installation directory (`$PSHOME`) or in a subdirectory of the
-installation directory.
+To create a new file, start by copying an existing Types.ps1xml file. The new
+file can have any name, but it must have a .ps1xml file name extension. You can
+place the new file in any directory that is accessible to PowerShell, but it is
+useful to place the files in the PowerShell installation directory (`$PSHOME`)
+or in a subdirectory of the installation directory.
 
 When you have saved the new file, use the `Update-TypeData` cmdlet to add
 the new file to your PowerShell session. If you want your types
@@ -564,8 +559,7 @@ the `Update-TypeData` cmdlet. If you want the types in your file to take
 precedence over types in the built-in Types.ps1xml file, add the
 PrependData parameter of `Update-TypeData`. `Update-TypeData` affects only
 the current session. To make the change to all future sessions, export
-the session, or add the `Update-TypeData` command to your Windows
-PowerShell profile.
+the session, or add the `Update-TypeData` command to your PowerShell profile.
 
 Exceptions that occur in properties, or from adding properties to an
 `Update-TypeData` command, do not report errors to `StdErr`. This is to

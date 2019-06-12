@@ -4,11 +4,10 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Management
 ms.date: 06/09/2017
-online version: http://go.microsoft.com/fwlink/?LinkId=821593
+online version: https://go.microsoft.com/fwlink/?linkid=821593
 schema: 2.0.0
 title: Get-Service
 ---
-
 # Get-Service
 
 ## SYNOPSIS
@@ -17,18 +16,21 @@ Gets the services on the computer.
 ## SYNTAX
 
 ### Default (Default)
+
 ```
 Get-Service [[-Name] <String[]>] [-DependentServices] [-RequiredServices] [-Include <String[]>]
  [-Exclude <String[]>] [<CommonParameters>]
 ```
 
 ### DisplayName
+
 ```
 Get-Service [-DependentServices] [-RequiredServices] -DisplayName <String[]> [-Include <String[]>]
  [-Exclude <String[]>] [<CommonParameters>]
 ```
 
 ### InputObject
+
 ```
 Get-Service [-DependentServices] [-RequiredServices] [-Include <String[]>] [-Exclude <String[]>]
  [-InputObject <ServiceController[]>] [<CommonParameters>]
@@ -299,6 +301,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS

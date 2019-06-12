@@ -39,7 +39,7 @@ None.
 
 |Element|Description|
 |-------------|-----------------|
-|[TableRowEntry Element for TableRowEntries for TableControl (Format)](./tablerowentry-element-for-tablerowentroes-for-tablecontrol-format.md)|Required element.<br /><br /> Defines the data that is displayed in a row of the table.|
+|[TableRowEntry Element for TableRowEntries for TableControl (Format)](./tablerowentry-element-for-tablerowentries-for-tablecontrol-format.md)|Required element.<br /><br /> Defines the data that is displayed in a row of the table.|
 
 ### Parent Elements
 
@@ -82,6 +82,6 @@ The following example shows a `TableRowEntries` element that defines a row that 
 
 [TableControl Element (Format)](./tablecontrol-element-format.md)
 
-[TableRowEntry Element (Format)](./tablerowentry-element-for-tablerowentroes-for-tablecontrol-format.md)
+[TableRowEntry Element (Format)](./tablerowentry-element-for-tablerowentries-for-tablecontrol-format.md)
 
 [Writing a PowerShell Formatting File](./writing-a-powershell-formatting-file.md)

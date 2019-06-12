@@ -5,11 +5,9 @@ locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_Remote_Disconnected_Sessions
 ---
-
 # About Remote Disconnected Sessions
 
 ## Short Description
-
 Explains how to disconnect from and reconnect to a PSSession
 
 ## Long Description
@@ -21,7 +19,7 @@ continue to run while the session is disconnected.
 
 The Disconnected Sessions feature is available only when the computer at the
 remote end of a connection is running Windows PowerShell 3.0 or a later
-version of Windows PowerShell and using the WSMan transport.
+version of PowerShell and using the WSMan transport.
 
 The Disconnected Sessions feature allows you to close the session in which a
 PSSession was created, and even close PowerShell, and shut down the
@@ -95,7 +93,7 @@ Beginning in Windows PowerShell 3.0, the `Get-PSSession` cmdlet gets
 PSSessions on the local computer and remote computers. It can also get
 PSSessions that were created in the current session.
 
-To get PSsessions on the local computer or remote computers, use the
+To get PSSessions on the local computer or remote computers, use the
 **ComputerName** or **ConnectionUri** parameters. Without parameters,
 `Get-PSSession` gets PSSession that were created in the local session,
 regardless of where they terminate.

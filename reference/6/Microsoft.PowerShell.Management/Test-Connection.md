@@ -3,11 +3,10 @@ ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821646
+online version: https://go.microsoft.com/fwlink/?linkid=821646
 external help file:  Microsoft.PowerShell.Commands.Management.dll-Help.xml
 title:  Test-Connection
 ---
-
 # Test-Connection
 
 ## SYNOPSIS
@@ -162,9 +161,73 @@ The value is `$True` if any of the four pings succeed. If none of the pings succ
 
 If the `Test-Connection` command returns a value of `$True`, the command uses the `New-PSSession` cmdlet to create the **PSSession**.
 
+### Example 7: Use the Traceroute parameter
+
+Beginning in PowerShell 6.0, the **Traceroute** parameter maps a route between the local computer
+and the remote destination you specify to **TargetName**.
+
+```powershell
+Test-Connection -TargetName www.microsoft.com -Traceroute | ForEach-Object {
+  $_ | Format-Table Source, DestinationAddress, DestinationHost
+  $_.Replies | ForEach-Object {
+      $_ | Format-Table Hop, ReplyRouterAddress
+      $_.PingReplies | Format-Table
+  }
+}
+```
+
+```Output
+Tracing route to www.microsoft.com [96.6.27.90] over a maximum of 128 hops:
+  1   0 ms   0 ms   0 ms   192.168.0.3 [192.168.0.3]
+  2   0 ms   0 ms   0 ms   192.168.1.1 [192.168.1.1]
+  3   3 ms   29 ms   4 ms   96.6.27.90 [96.6.27.90]
+Trace complete.
+
+Source      DestinationAddress DestinationHost   Replies
+------      ------------------ ---------------   -------
+SERVER01    96.6.27.90         www.microsoft.com {, , }
+
+Hop ReplyRouterAddress
+--- ------------------
+  1 192.168.0.3
+
+    Status Address      RoundtripTime Options Buffer
+    ------ -------      ------------- ------- ------
+TtlExpired 192.168.86.1             0         {}
+TtlExpired 192.168.86.1             0         {}
+TtlExpired 192.168.86.1             0         {}
+
+Hop ReplyRouterAddress
+--- ------------------
+  2 192.168.1.1
+
+    Status Address     RoundtripTime Options Buffer
+    ------ -------     ------------- ------- ------
+TtlExpired 192.168.1.1             0         {}
+TtlExpired 192.168.1.1             0         {}
+TtlExpired 192.168.1.1             0         {}
+
+Hop ReplyRouterAddress
+--- ------------------
+  3 96.6.27.90
+
+ Status Address    RoundtripTime Options                                   Buffer
+ ------ -------    ------------- -------                                   ------
+Success 96.6.27.90             3 System.Net.NetworkInformation.PingOptions {97, 98, 99, 100…}
+Success 96.6.27.90             2 System.Net.NetworkInformation.PingOptions {97, 98, 99, 100…}
+Success 96.6.27.90             4 System.Net.NetworkInformation.PingOptions {97, 98, 99, 100…}
+```
+
+The first command calls the `Test-Connection` cmdlet with the **Traceroute** parameter. The results,
+which are `[Microsoft.PowerShell.Commands.TestConnectionCommand+TraceRouteResult]` objects are piped
+to the `ForEach-Object` cmdlet, which creates a structured output of the contained
+`[Microsoft.PowerShell.Commands.TestConnectionCommand+TraceRouteReply]` objects and subsequent
+`[System.Net.NetworkInformation.PingReply]` objects.
+
 ## PARAMETERS
 
 ### -BufferSize
+
 Specifies the size, in bytes, of the buffer sent with this command.
 The default value is 32.
 
@@ -181,6 +244,7 @@ Accept wildcard characters: False
 ```
 
 ### -Continues
+
 Causes the cmdlet to send ping requests continuously. This parameter cannot be used with the
 **Count** parameter.
 
@@ -197,6 +261,7 @@ Accept wildcard characters: False
 ```
 
 ### -Count
+
 Specifies the number of echo requests to send.
 The default value is 4.
 
@@ -213,6 +278,7 @@ Accept wildcard characters: False
 ```
 
 ### -Delay
+
 Specifies the interval between pings, in seconds.
 
 ```yaml
@@ -228,6 +294,7 @@ Accept wildcard characters: False
 ```
 
 ### -DontFragment
+
 This parameter sets the "Don't Fragment" flag in the IP header. You can use this parameter with the
 **BufferSize** parameter to test the Path MTU size. For more information about Path MTU, see the
 [Path MTU Discovery](https://wikipedia.org/wiki/Path_MTU_Discovery) article in wikipedia.
@@ -245,6 +312,7 @@ Accept wildcard characters: False
 ```
 
 ### -IPv4
+
 Forces the cmdlet to use the IPv4 protocol for the test.
 
 ```yaml
@@ -260,6 +328,7 @@ Accept wildcard characters: False
 ```
 
 ### -IPv6
+
 Forces the cmdlet to use the IPv6 protocol for the test.
 
 ```yaml
@@ -275,6 +344,7 @@ Accept wildcard characters: False
 ```
 
 ### -MaxHops
+
 Sets the maximum number of hops that an ICMP request message can be sent. The default value is
 controlled by the operating system. The default value for Windows 10 is 128 hops.
 
@@ -291,6 +361,7 @@ Accept wildcard characters: False
 ```
 
 ### -MTUSizeDetect
+
 This parameter is used to discover the Path MTU size. The cmdlet returns a **PingReply#MTUSize**
 object that contains the Path MTU size to the target. For more information about Path MTU, see the
 [Path MTU Discovery](https://wikipedia.org/wiki/Path_MTU_Discovery) article in wikipedia.
@@ -308,6 +379,7 @@ Accept wildcard characters: False
 ```
 
 ### -Ping
+
 Causes the cmdlet to do a ping test. This is the default action.
 
 ```yaml
@@ -323,6 +395,7 @@ Accept wildcard characters: False
 ```
 
 ### -Quiet
+
 Indicates that this cmdlet suppresses errors.
 If any ping succeeds, this cmdlet returns `$True`.
 If all pings fail, this cmdlet returns `$False`.
@@ -340,6 +413,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResolveDestination
+
 Causes the cmdlet to attempt to resolve the DNS name of the target.
 
 ```yaml
@@ -355,6 +429,7 @@ Accept wildcard characters: False
 ```
 
 ### -Source
+
 The **Source** is not currently implemented.
 
 ```yaml
@@ -370,6 +445,7 @@ Accept wildcard characters: False
 ```
 
 ### -TargetName
+
 Specifies the computers to test. Type the computer names or type IP addresses in IPv4 or IPv6
 format. Wildcard characters are not permitted. This parameter is required.
 
@@ -386,6 +462,7 @@ Accept wildcard characters: False
 ```
 
 ### -TCPPort
+
 Specifies the TCP port number on the target to be used in the TCP connection test. The cmdlet will
 attempt to make a TCP connection to the specified port on the target.
 
@@ -402,6 +479,7 @@ Accept wildcard characters: False
 ```
 
 ### -TimeoutSeconds
+
 Sets the timeout value for the test. The test fails if a response is not received before the
 timeout expires.
 
@@ -418,6 +496,7 @@ Accept wildcard characters: False
 ```
 
 ### -Traceroute
+
 Causes the cmdlet to do a traceroute test. When this parameter is used, the cmdlet returns a
 `TestConnectionCommand+TraceRouteResult` object.
 
@@ -443,6 +522,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### None
+
 You cannot pipe input to this cmdlet.
 
 ## OUTPUTS

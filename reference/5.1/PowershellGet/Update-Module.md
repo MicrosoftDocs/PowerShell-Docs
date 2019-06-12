@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: PowerShellGet
 ms.date: 06/09/2017
-online version: http://go.microsoft.com/fwlink/?LinkId=821676
+online version: https://go.microsoft.com/fwlink/?linkid=821676
 schema: 2.0.0
 title: Update-Module
 ---
@@ -76,7 +76,7 @@ This example installs (or reinstalls) the newest version of ContosoModule from t
 ## PARAMETERS
 
 ### -AcceptLicense
-{{Fill AcceptLicense Description}}
+Automatically accept the license agreement during installation if the package requires it.
 
 ```yaml
 Type: SwitchParameter

@@ -4,11 +4,10 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Utility
 ms.date: 06/09/2017
-online version: http://go.microsoft.com/fwlink/?LinkId=821805
+online version: https://go.microsoft.com/fwlink/?linkid=821805
 schema: 2.0.0
 title: Get-TypeData
 ---
-
 # Get-TypeData
 
 ## SYNOPSIS
@@ -21,6 +20,7 @@ Get-TypeData [[-TypeName] <String[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+
 The **Get-TypeData** cmdlet gets the extended type data in the current session.
 This includes type data that was added to the session by Types.ps1xml file and dynamic type data that was added by using the parameter of the Update-TypeData cmdlet.
 
@@ -38,6 +38,7 @@ This cmdlet was introduced in Windows PowerShell 3.0.
 ## EXAMPLES
 
 ### Example 1: Get all extended type data
+
 ```
 PS C:\> Get-TypeData
 ```
@@ -45,6 +46,7 @@ PS C:\> Get-TypeData
 This command gets all extended type data in the current session.
 
 ### Example 2: Get types by name
+
 ```
 PS C:\> "*Eventing*" | Get-TypeData
 TypeName                                                              Members
@@ -57,6 +59,7 @@ System.Diagnostics.Eventing.Reader.EventLogConfiguration              {}System.D
 This command gets all types in the current session that have names that contain Eventing.
 
 ### Example 3: Get the script block that creates a property value
+
 ```
 PS C:\> (Get-TypeData *EventLogEntry*).Members.EventID
 GetScriptBlock                     SetScriptBlock                                               IsHidden Name
@@ -68,6 +71,7 @@ $this.get_EventID() -band 0xFFFF                                                
 This command gets the script block that creates the value of the EventID property of **EventLogEntry** objects.
 
 ### Example 4: Get the script block that defines a property for a specified object
+
 ```
 PS C:\> (Get-TypeData -TypeName System.DateTime).Members["DateTime"].GetScriptBlock
 if ((& { Set-StrictMode -Version 1; $this.DisplayHint }) -ieq  "Date")
@@ -97,6 +101,7 @@ The command gets the **DateTime** key in Members and its GetScriptBlock property
 The output shows the script block that creates the value of the DateTime property of every **System.DateTime** object in PowerShell.
 
 ### Example 5: Find the file that adds extended data types to the session
+
 ```
 PS C:\> dir $pshome\*types.ps1xml -Recurse | Select-String "EventLogEntry"
 C:\WINDOWS\System32\WindowsPowerShell\v1.0\DotNetTypes.format.ps1xml:180:
@@ -118,6 +123,7 @@ The command sends the Types.ps1xml files to the Select-String cmdlet, which does
 ## PARAMETERS
 
 ### -TypeName
+
 Specifies type data as an array only for the types with the specified names.
 By default, **Get-TypeData** gets all types in the session.
 
@@ -139,11 +145,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### System.String
+
 You can pipe type names to **Get-TypeData**.
 
 ## OUTPUTS
@@ -151,6 +159,7 @@ You can pipe type names to **Get-TypeData**.
 ### System.Management.Automation.Runspaces.TypeData
 
 ## NOTES
+
 * **Get-TypeData** gets only the extended type data in the current session. It does not get extended type data that is on the computer, but has not been added to the current session, such as extended types that are defined in modules that have not been imported into the current session.
 
 ## RELATED LINKS

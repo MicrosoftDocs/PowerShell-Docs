@@ -4,15 +4,13 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Utility
 ms.date: 06/09/2017
-online version: http://go.microsoft.com/fwlink/?LinkId=821749
+online version: https://go.microsoft.com/fwlink/?linkid=821749
 schema: 2.0.0
 title: Add-Type
 ---
-
 # Add-Type
 
 ## SYNOPSIS
-
 Adds a Microsoft .NET Core type (a class) to a PowerShell session.
 
 ## SYNTAX
@@ -34,6 +32,7 @@ Add-Type [-Name] <String> [-MemberDefinition] <String[]> [-Namespace <String>] [
 ```
 
 ### FromPath
+
 ```
 Add-Type [-Path] <String[]> [-ReferencedAssemblies <String[]>] [-OutputAssembly <String>]
  [-OutputType <OutputAssemblyType>] [-PassThru] [-IgnoreWarnings] [-CompilerOptions <String[]>]
@@ -41,6 +40,7 @@ Add-Type [-Path] <String[]> [-ReferencedAssemblies <String[]>] [-OutputAssembly 
 ```
 
 ### FromLiteralPath
+
 ```
 Add-Type -LiteralPath <String[]> [-ReferencedAssemblies <String[]>] [-OutputAssembly <String>]
  [-OutputType <OutputAssemblyType>] [-PassThru] [-IgnoreWarnings] [-CompilerOptions <String[]>]

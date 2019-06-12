@@ -31,7 +31,7 @@ Packages that follow these guidelines are far more likely to be downloaded and a
 - Be responsive to feedback
 - Provide modules rather than scripts
 - Provide links to a project site
-- Tag your package with the compatible PSEdition(s) and platforms 
+- Tag your package with the compatible PSEdition(s) and platforms
 - Include tests with your modules
 - Include and/or link to license terms
 - Sign your code
@@ -134,15 +134,20 @@ Adding a link is done by including ProjectURI in the PSData section of the manif
 
 When a ProjectURI is provided, the PowerShell Gallery will include a link to the Project Site on the left side of the package page.
 
-## Tag your package with the compatible PSEdition(s) and platforms 
+## Tag your package with the compatible PSEdition(s) and platforms
 
-Use the following tags to demonstrate to users which packages will work well with their enviroment:
+Use the following tags to demonstrate to users which packages will work well with their environment:
 
-- PSEdition_Desktop : Packages that are compatible with Windows PowerShell 
-- PSEdition_Core : Packages that are compatible with Powershell Core 
+- PSEdition_Desktop : Packages that are compatible with Windows PowerShell
+- PSEdition_Core : Packages that are compatible with PowerShell Core
 - Windows : Packages that are compatible with the Windows Operating System
-- Linux : Packages that are compatible with Linux Operating Systems 
+- Linux : Packages that are compatible with Linux Operating Systems
 - MacOS : Packages that are compatible with the Mac Operating System
+
+By tagging your package with the compatible platform(s) it will be included in the Gallery search
+filters on the left pane of the search results. If you host your package on GitHub, when you tag your package, you can also
+take advantage of our [PowerShell Gallery compability shields](https://img.shields.io/powershellgallery/p/:packageName.svg) 
+![compatibility shield](https://img.shields.io/powershellgallery/p/CosmosDB.svg).  
 
 ## Include tests
 
@@ -196,7 +201,7 @@ Catalog signing works with, but does not replace signing script files. PowerShel
 
 ## Follow SemVer guidelines for versioning
 
-[SemVer](http://semver.org/) is a public convention that describes how to structure and change a version to allow easy intepretation of changes.
+[SemVer](http://semver.org/) is a public convention that describes how to structure and change a version to allow easy interpretation of changes.
 The version for your package must be included in the manifest data.
 
 - The version should be structured as 3 numeric blocks separated by periods, as in 0.1.1 or 4.11.192
@@ -250,4 +255,3 @@ The most successful approach we have found for packages published to the PowerSh
 - Decide if you want to code sign your package
 - When you feel the project is ready to use in a production environment, publish a 1.0.0 version to the PowerShell Gallery
 - Continue to gather feedback and iterate on your code based on user input
-

@@ -5,11 +5,9 @@ locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_PSSession_Details
 ---
-
 # About PSSession Details
 
 ## Short Description
-
 Provides detailed information about PowerShell sessions and the
 role they play in remote commands.
 
@@ -35,9 +33,9 @@ can perform with sessions, see [about_PSSessions](about_PSSessions.md).
 
 ## About Sessions
 
-Technically, a session is an execution environment in which Windows
+Technically, a session is an execution environment in which
 PowerShell runs. Each session includes an instance of the
-System.Management.Automation engine and a host program in which Windows
+System.Management.Automation engine and a host program in which
 PowerShell runs. The host can be the familiar PowerShell console
 or another program that runs commands, such as Cmd.exe, or a program built
 to host PowerShell, such as Windows PowerShell Integrated Scripting
@@ -63,16 +61,15 @@ However, you can also create sessions (called "PowerShell sessions"
 or "PSSessions") that you control and manage.
 
 PSSessions are critical to remote commands. If you use the **ComputerName**
-parameter of the `Invoke-Command` or `Enter-PSSession` cmdlets, Windows
-PowerShell establishes a temporary session to run the command and then
-closes the session as soon as the command or the interactive session
-is complete.
+parameter of the `Invoke-Command` or `Enter-PSSession` cmdlets, PowerShell
+establishes a temporary session to run the command and then closes the session
+as soon as the command or the interactive session is complete.
 
-However, if you use the `New-PSSession` cmdlet to create a PSSession, Windows
-PowerShell establishes a persistent session on the remote computer in which
-you can run multiple commands or interactive sessions. The PSSessions that
-you create remain open and available for use until you delete them or until
-you close the session in which they were created.
+However, if you use the `New-PSSession` cmdlet to create a PSSession,
+PowerShell establishes a persistent session on the remote computer in which you
+can run multiple commands or interactive sessions. The PSSessions that you
+create remain open and available for use until you delete them or until you
+close the session in which they were created.
 
 When you create a PSSession on a remote computer, the system creates a
 PowerShell process on the remote computer and establishes a connection
@@ -211,9 +208,8 @@ cmdlet with its **AsJob** parameter, or use the `Invoke-Command` cmdlet to run a
 you can use the **ComputerName** or **Session** parameters.
 
 When using `Invoke-Command` to run a `Start-Job` command, you must run the
-command in a PSSession. If you use the **ComputerName** parameter, Windows
-PowerShell ends the connection when the job object returns, and the job is
-interrupted.
+command in a PSSession. If you use the **ComputerName** parameter, PowerShell
+ends the connection when the job object returns, and the job is interrupted.
 
 For more information, see [about_Jobs](about_Jobs.md).
 

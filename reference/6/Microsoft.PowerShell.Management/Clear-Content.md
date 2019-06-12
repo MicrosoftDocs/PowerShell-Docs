@@ -3,7 +3,7 @@ ms.date:  10/18/2018
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821567
+online version: https://go.microsoft.com/fwlink/?linkid=821567
 external help file:  Microsoft.PowerShell.Commands.Management.dll-Help.xml
 title:  Clear-Content
 ---
@@ -116,7 +116,7 @@ Type a user name, such as "User01" or "Domain01\User01", or enter a **PSCredenti
 If you type a user name, you will be prompted for a password.
 
 > [!WARNING]
-> This parameter is not supported by any providers installed with Windows PowerShell.
+> This parameter is not supported by any providers installed with PowerShell.
 
 ```yaml
 Type: PSCredential

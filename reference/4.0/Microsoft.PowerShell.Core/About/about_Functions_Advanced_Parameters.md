@@ -250,16 +250,6 @@ Param(
 )
 ```
 
-> [!NOTE]
-> A parameter that accepts pipeline input (`by Value`) will enable use of
-> **delay-bind** script blocks on all other parameters defined to accept
-> pipeline input. The **delay-bind** script block is run automatically during
-> ParameterBinding. The result is bound to the parameter. Delay binding
-> does **not** work for parameters defined as type `System.Object`, the
-> script block is passed through **without** being invoked.
->
-> You can read about **delay-bind** script blocks here [about_Script_Blocks.md](about_Script_Blocks.md)
-
 ### ValueFromPipelineByPropertyName Argument
 
 The `ValueFromPipelineByPropertyName` argument indicates that the parameter
@@ -283,24 +273,58 @@ Param(
 )
 ```
 
+> [!NOTE]
+> A typed parameter that accepts pipeline input (`by Value`) or
+> (`by PropertyName`) enables use of **delay-bind** script blocks on the parameter.
+>
+> The **delay-bind** script block is run automatically during
+> **ParameterBinding**. The result is bound to the parameter. Delay binding
+> does **not** work for parameters defined as type `ScriptBlock` or
+> `System.Object`, the script block is passed through
+> **without** being invoked.
+>
+> You can read about **delay-bind** script blocks here [about_Script_Blocks.md](about_Script_Blocks.md)
+
 ### ValueFromRemainingArguments Argument
 
 The `ValueFromRemainingArguments` argument indicates that the parameter
 accepts all of the parameters values in the command that are not assigned to
 other parameters of the function.
 
-The following example declares a `ComputerName` parameter that is **Mandatory**
-and accepts all the remaining parameter values that were submitted to the
-function.
+There is a known issue for using collections with
+**ValueFromRemainingArguments** where the passed in collection is treated
+as a single element.
+
+The following example demonstrates this issue. The `$Remaining` parameter
+should contain "one" at index 0 and "two" at index 1. Instead, both elements
+are combined into a single entity.
 
 ```powershell
-Param(
-    [parameter(Mandatory=$true,
-    ValueFromRemainingArguments=$true)]
-    [String[]]
-    $ComputerName
-)
+function Test-Remainder
+{
+     param(
+         [string]
+         [Parameter(Mandatory = $true, Position=0)]
+         $Value,
+         [string[]]
+         [Parameter(Position=1, ValueFromRemainingArguments)]
+         $Remaining)
+     "Found $($Remaining.Count) elements"
+     for ($i = 0; $i -lt $Remaining.Count; $i++)
+     {
+        "${i}: $($Remaining[$i])"
+     }
+}
+Test-Remainder first one,two
 ```
+
+```Output
+Found 1 elements
+0: one two
+```
+
+> [!NOTE]
+> This issue is resolved in PowerShell 6.2.
 
 ### HelpMessage Argument
 

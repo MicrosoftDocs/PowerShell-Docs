@@ -1,8 +1,11 @@
 ---
 external help file: Microsoft.Management.Infrastructure.CimCmdlets.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
 Module Name: CimCmdlets
-online version:
+ms.date: 06/09/2017
 schema: 2.0.0
+title: Invoke-CimMethod
 ---
 
 # Invoke-CimMethod
@@ -26,17 +29,17 @@ Invoke-CimMethod [-ClassName] <String> -CimSession <CimSession[]> [[-Arguments] 
  [<CommonParameters>]
 ```
 
-### ResourceUriComputerSet
+### ResourceUriSessionSet
 ```
-Invoke-CimMethod -ResourceUri <Uri> [-ComputerName <String[]>] [[-Arguments] <IDictionary>]
+Invoke-CimMethod -ResourceUri <Uri> -CimSession <CimSession[]> [[-Arguments] <IDictionary>]
  [-MethodName] <String> [-Namespace <String>] [-OperationTimeoutSec <UInt32>] [-WhatIf] [-Confirm]
  [<CommonParameters>]
 ```
 
-### CimInstanceSessionSet
+### ResourceUriComputerSet
 ```
-Invoke-CimMethod [-ResourceUri <Uri>] [-InputObject] <CimInstance> -CimSession <CimSession[]>
- [[-Arguments] <IDictionary>] [-MethodName] <String> [-OperationTimeoutSec <UInt32>] [-WhatIf] [-Confirm]
+Invoke-CimMethod -ResourceUri <Uri> [-ComputerName <String[]>] [[-Arguments] <IDictionary>]
+ [-MethodName] <String> [-Namespace <String>] [-OperationTimeoutSec <UInt32>] [-WhatIf] [-Confirm]
  [<CommonParameters>]
 ```
 
@@ -47,17 +50,11 @@ Invoke-CimMethod [-ResourceUri <Uri>] [-InputObject] <CimInstance> [-ComputerNam
  [<CommonParameters>]
 ```
 
-### ResourceUriSessionSet
+### CimInstanceSessionSet
 ```
-Invoke-CimMethod -ResourceUri <Uri> -CimSession <CimSession[]> [[-Arguments] <IDictionary>]
- [-MethodName] <String> [-Namespace <String>] [-OperationTimeoutSec <UInt32>] [-WhatIf] [-Confirm]
+Invoke-CimMethod [-ResourceUri <Uri>] [-InputObject] <CimInstance> -CimSession <CimSession[]>
+ [[-Arguments] <IDictionary>] [-MethodName] <String> [-OperationTimeoutSec <UInt32>] [-WhatIf] [-Confirm]
  [<CommonParameters>]
-```
-
-### CimClassComputerSet
-```
-Invoke-CimMethod [-CimClass] <CimClass> [-ComputerName <String[]>] [[-Arguments] <IDictionary>]
- [-MethodName] <String> [-OperationTimeoutSec <UInt32>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### CimClassSessionSet
@@ -66,16 +63,22 @@ Invoke-CimMethod [-CimClass] <CimClass> -CimSession <CimSession[]> [[-Arguments]
  [-MethodName] <String> [-OperationTimeoutSec <UInt32>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### QueryComputerSet
+### CimClassComputerSet
 ```
-Invoke-CimMethod -Query <String> [-QueryDialect <String>] [-ComputerName <String[]>]
- [[-Arguments] <IDictionary>] [-MethodName] <String> [-Namespace <String>] [-OperationTimeoutSec <UInt32>]
- [-WhatIf] [-Confirm] [<CommonParameters>]
+Invoke-CimMethod [-CimClass] <CimClass> [-ComputerName <String[]>] [[-Arguments] <IDictionary>]
+ [-MethodName] <String> [-OperationTimeoutSec <UInt32>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### QuerySessionSet
 ```
 Invoke-CimMethod -Query <String> [-QueryDialect <String>] -CimSession <CimSession[]>
+ [[-Arguments] <IDictionary>] [-MethodName] <String> [-Namespace <String>] [-OperationTimeoutSec <UInt32>]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### QueryComputerSet
+```
+Invoke-CimMethod -Query <String> [-QueryDialect <String>] [-ComputerName <String[]>]
  [[-Arguments] <IDictionary>] [-MethodName] <String> [-Namespace <String>] [-OperationTimeoutSec <UInt32>]
  [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
@@ -107,16 +110,16 @@ If the InputObject parameter is specified, the cmdlet works in one of the follow
 ### Example 1: Invoke a method
 
 ```powershell
-PS C:\>Invoke-CimMethod -Query ꞌselect * from Win32_Process where name like "notepad%"ꞌ -MethodName "Terminate"
+PS C:\>Invoke-CimMethod -Query 'select * from Win32_Process where name like "notepad%"' -MethodName "Terminate"
 ```
 
 This command invokes the method named Terminate on the CIM class named Win32_Process. The CIM class
-is retrieved by the query "Select * from Win32_Process where name like ꞌnotepad%ꞌ".
+is retrieved by the query "Select * from Win32_Process where name like 'notepad%'".
 
 ### Example 2: Invoke a method using CIM instance object
 
 ```powershell
-PS C:\>$x = Get-CimInstance -Query ꞌSelect * from Win32_Process where name like "notepad%"ꞌ
+PS C:\>$x = Get-CimInstance -Query 'Select * from Win32_Process where name like "notepad%"'
 PS C:\>Invoke-CimMethod -InputObject $x -MethodName GetOwner
 ```
 
@@ -135,7 +138,7 @@ This command invokes the static method Create on the class named Win32_Process, 
 ### Example 4: Invoke a method using arguments
 
 ```powershell
-PS C:\>Invoke-CimMethod -ClassName Win32_Process -MethodName "Create" -Arguments @{ CommandLine = ꞌnotepad.exeꞌ; CurrentDirectory = "C:\windows\system32" }
+PS C:\>Invoke-CimMethod -ClassName Win32_Process -MethodName "Create" -Arguments @{ CommandLine = 'notepad.exe'; CurrentDirectory = "C:\windows\system32" }
 ```
 
 This command invokes the method named Create by using the Arguments parameter.
@@ -144,7 +147,7 @@ This command invokes the method named Create by using the Arguments parameter.
 
 ```powershell
 PS C:\>$c = Get-CimClass -ClassName Win32_Process
-PS C:\>Invoke-CimMethod -CimClass $c -MethodName "xyz" -Arguments @{ CommandLine = ꞌnotepad.exeꞌ }
+PS C:\>Invoke-CimMethod -CimClass $c -MethodName "xyz" -Arguments @{ CommandLine = 'notepad.exe' }
 ```
 
 This set of commands performs client-side validation for the method named xyz by passing a CimClass
@@ -180,7 +183,7 @@ Using this parameter results in better client side schema validations.
 
 ```yaml
 Type: CimClass
-Parameter Sets: CimClassComputerSet, CimClassSessionSet
+Parameter Sets: CimClassSessionSet, CimClassComputerSet
 Aliases:
 
 Required: True
@@ -261,7 +264,7 @@ To invoke class static methods, use the Class parameter or the CimClass paramete
 
 ```yaml
 Type: CimInstance
-Parameter Sets: CimInstanceSessionSet, CimInstanceComputerSet
+Parameter Sets: CimInstanceComputerSet, CimInstanceSessionSet
 Aliases: CimInstance
 
 Required: True
@@ -300,7 +303,7 @@ of namespaces.
 
 ```yaml
 Type: String
-Parameter Sets: ClassNameComputerSet, ClassNameSessionSet, ResourceUriComputerSet, ResourceUriSessionSet, QueryComputerSet, QuerySessionSet
+Parameter Sets: ClassNameComputerSet, ClassNameSessionSet, ResourceUriSessionSet, ResourceUriComputerSet, QuerySessionSet, QueryComputerSet
 Aliases:
 
 Required: False
@@ -348,7 +351,7 @@ square brackets (\[\]): percent (%), underscore (_), or opening square bracket (
 
 ```yaml
 Type: String
-Parameter Sets: QueryComputerSet, QuerySessionSet
+Parameter Sets: QuerySessionSet, QueryComputerSet
 Aliases:
 
 Required: True
@@ -367,7 +370,7 @@ The default value is WQL.
 
 ```yaml
 Type: String
-Parameter Sets: QueryComputerSet, QuerySessionSet
+Parameter Sets: QuerySessionSet, QueryComputerSet
 Aliases:
 
 Required: False
@@ -399,7 +402,7 @@ If both the ResourceUri parameter and the Filter parameter are specified, the Fi
 
 ```yaml
 Type: Uri
-Parameter Sets: ResourceUriComputerSet, ResourceUriSessionSet, CimInstanceSessionSet, CimInstanceComputerSet
+Parameter Sets: ResourceUriSessionSet, ResourceUriComputerSet
 Aliases:
 
 Required: True
@@ -445,8 +448,7 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see about_CommonParameters
-(http://go.microsoft.com/fwlink/?LinkID=113216).
+-WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 

@@ -110,6 +110,7 @@
     "git_repository_url_open_to_public_contributors": "https://github.com/MicrosoftDocs/PowerShell-Docs",
     "git_repository_branch_open_to_public_contributors": "staging",
     "skip_source_output_uploading": false,
+    "enable_incremental_build": true,
     "need_preview_pull_request": true,
     "contribution_branch_mappings": {},
     "dependent_repositories": [{

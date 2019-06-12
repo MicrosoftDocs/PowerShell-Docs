@@ -51,7 +51,7 @@ If you expose a data store that the user will need to access, you might need to 
 
 Windows PowerShell includes the default host application powershell.exe, which is a console application that interacts with the user and hosts the Windows PowerShell runtime using a console window.
 
-Only rarely will you need to write your own host application for Windows PowerShell, although customization is supported. One case in which you might need your own application is when you have a requirement for a GUI interface that is richer than the interface provided by the default host application. You might also want a custom application when you are basing your GUI on the command line. For more information, see[How to Create a Windows PowerShell Host Application](http://msdn.microsoft.com/en-us/d31355c9-a270-4b09-8f0c-35a7392a7d07).
+Only rarely will you need to write your own host application for Windows PowerShell, although customization is supported. One case in which you might need your own application is when you have a requirement for a GUI interface that is richer than the interface provided by the default host application. You might also want a custom application when you are basing your GUI on the command line. For more information, see [How to Create a Windows PowerShell Host Application](http://msdn.microsoft.com/en-us/d31355c9-a270-4b09-8f0c-35a7392a7d07).
 
 ### Windows PowerShell Runtime
 

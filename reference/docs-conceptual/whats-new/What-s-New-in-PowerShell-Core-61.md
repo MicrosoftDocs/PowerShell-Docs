@@ -189,8 +189,12 @@ For more information about how these cmdlets work, check out
 
 ## Experimental feature flags
 
-Experimental feature flags enable users to turn on features that haven't been finalized.
-These experimental features aren't supported and may have bugs.
+We enabled support for [Experimental Features][]. This allows PowerShell developers to deliver new
+features and get feedback before the design is complete. This way we avoid making breaking changes
+as the design evolves.
+
+Use `Get-ExperimentalFeature` to get a list of available experimental features. You can enable
+or disable these features with `Enable-ExperimentalFeature` and `Disable-ExperimentalFeature`.
 
 You can learn more about this feature in [PowerShell RFC0029](https://github.com/PowerShell/PowerShell-RFC/blob/master/5-Final/RFC0029-Support-Experimental-Features.md).
 
@@ -550,3 +554,15 @@ Visual Basic was rarely used with `Add-Type`. We removed this feature to reduce 
 ### Cleaned up uses of `CommandTypes.Workflow` and `WorkflowInfoCleaned`
 
 For more information on these changes, check out [PR #6708](https://github.com/PowerShell/PowerShell/pull/6708).
+
+### Group-Object now sorts the groups
+
+As part of the performance improvement, `Group-Object` now returns a sorted listing of the groups.
+Although you should not rely on the order, you could be broken by this change if you wanted the
+first group. We decided that this performance improvement was worth the change since the impact of
+being dependent on previous behavior is low.
+
+For more information on this change, see [Issue #7409](https://github.com/PowerShell/PowerShell/issues/7409).
+
+<!-- URL references -->
+[Experimental Features]: /powershell/module/Microsoft.PowerShell.Core/About/about_Experimental_Features

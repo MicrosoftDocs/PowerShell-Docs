@@ -4,11 +4,10 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Utility
 ms.date: 06/09/2017
-online version: http://go.microsoft.com/fwlink/?LinkId=821831
+online version: https://go.microsoft.com/fwlink/?linkid=821831
 schema: 2.0.0
 title: New-Alias
 ---
-
 # New-Alias
 
 ## SYNOPSIS
@@ -22,6 +21,7 @@ New-Alias [-Name] <String> [-Value] <String> [-Description <String>] [-Option <S
 ```
 
 ## DESCRIPTION
+
 The **New-Alias** cmdlet creates a new alias in the current PowerShell session.
 Aliases created by using **New-Alias** are not saved after you exit the session or close PowerShell.
 You can use the Export-Alias cmdlet to save your alias information to a file.
@@ -30,6 +30,7 @@ You can later use **Import-Alias** to retrieve that saved alias information.
 ## EXAMPLES
 
 ### Example 1: Create an alias for a cmdlet
+
 ```
 PS C:\> New-Alias -Name "List" Get-ChildItem
 ```
@@ -37,6 +38,7 @@ PS C:\> New-Alias -Name "List" Get-ChildItem
 This command creates an alias named List to represent the Get-ChildItem cmdlet.
 
 ### Example 2: Create a read-only alias for a cmdlet
+
 ```
 PS C:\> New-Alias -Name "W" -Value Get-WmiObject -Description "quick wmi alias" -Option ReadOnly
 PS C:\> Get-Alias -Name "W" | Format-List *
@@ -49,6 +51,7 @@ The last line of the command uses Get-Alias to get the new alias and pipes it to
 ## PARAMETERS
 
 ### -Description
+
 Specifies a description of the alias.
 You can type any string.
 If the description includes spaces, enclose it in quotation marks.
@@ -66,6 +69,7 @@ Accept wildcard characters: False
 ```
 
 ### -Force
+
 Indicates that the cmdlet acts like Set-Alias if the alias named already exists.
 
 ```yaml
@@ -81,6 +85,7 @@ Accept wildcard characters: False
 ```
 
 ### -Name
+
 Specifies the new alias.
 You can use any alphanumeric characters in an alias, but the first character cannot be a number.
 
@@ -97,6 +102,7 @@ Accept wildcard characters: False
 ```
 
 ### -Option
+
 Specifies the value of the **Options** property of the alias.
 Valid values are:
 
@@ -123,6 +129,7 @@ Accept wildcard characters: False
 ```
 
 ### -PassThru
+
 Returns an object representing the item with which you are working.
 By default, this cmdlet does not generate any output.
 
@@ -139,6 +146,7 @@ Accept wildcard characters: False
 ```
 
 ### -Scope
+
 Specifies the scope of the new alias.
 The acceptable values for this parameter are:
 
@@ -163,6 +171,7 @@ Accept wildcard characters: False
 ```
 
 ### -Value
+
 Specifies the name of the cmdlet or command element that is being aliased.
 
 ```yaml
@@ -178,6 +187,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
+
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
@@ -193,6 +203,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
+
 Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
@@ -209,20 +220,24 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### None
+
 You cannot pipe input to this cmdlet.
 
 ## OUTPUTS
 
 ### None or System.Management.Automation.AliasInfo
+
 When you use the *Passthru* parameter, **New-Alias** generates a **System.Management.Automation.AliasInfo** object representing the new alias.
 Otherwise, this cmdlet does not generate any output.
 
 ## NOTES
+
 * To create a new alias, use Set-Alias or New-Alias. To change an alias, use **Set-Alias**. To delete an alias, use Remove-Item.
 
 *

@@ -1,11 +1,12 @@
 ---
-ms.date:  1/24/2019
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/p/?linkid=293959
-external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-title:  Export-PSSession
+external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Utility
+ms.date: 04/23/2019
+online version: https://go.microsoft.com/fwlink/?linkid=293959
+schema: 2.0.0
+title: Export-PSSession
 ---
 
 # Export-PSSession
@@ -255,19 +256,15 @@ Accept wildcard characters: False
 
 ### -Encoding
 
-Specifies the type of encoding for the target file. The default value is **ASCII**.
+Specifies the type of encoding for the target file. The default value is **UTF8**.
 
 The acceptable values for this parameter are as follows:
 
 - **ASCII** Uses ASCII (7-bit) character set.
 - **BigEndianUnicode** Uses UTF-16 with the big-endian byte order.
-- **BigEndianUTF32** Uses UTF-32 with the big-endian byte order.
-- **Byte** Encodes a set of characters into a sequence of bytes.
 - **Default** Uses the encoding that corresponds to the system's active code page.
 - **OEM** Uses the encoding that corresponds to the system's current OEM code page.
-- **String** Same as **Unicode**.
 - **Unicode** Uses UTF-16 with the little-endian byte order.
-- **Unknown** Same as **Unicode**.
 - **UTF7** Uses UTF-7.
 - **UTF8** Uses UTF-8.
 - **UTF32** Uses UTF-32 with the little-endian byte order.
@@ -276,11 +273,11 @@ The acceptable values for this parameter are as follows:
 Type: String
 Parameter Sets: (All)
 Aliases:
-Accepted values: ASCII, BigEndianUnicode, BigEndianUTF32, Byte, Default, OEM, String, Unicode, Unknown, UTF7, UTF8, UTF32
+Accepted values: ASCII, BigEndianUnicode, Default, OEM, Unicode, UTF7, UTF8, UTF32
 
 Required: False
 Position: Named
-Default value: ASCII
+Default value: UTF8
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -337,7 +334,6 @@ module names. Wildcards are not permitted.
 For more information, see `Import-Module` and
 [about_PSSnapins](../Microsoft.PowerShell.Core/About/about_PSSnapins.md).
 
-
 ```yaml
 Type: String[]
 Parameter Sets: (All)
@@ -353,7 +349,7 @@ Accept wildcard characters: False
 ### -OutputModule
 
 Specifies an optional path and name for the module created by `Export-PSSession`. The default path
-is `$home`\Documents\WindowsPowerShell\Modules. This parameter is required.
+is `$home\Documents\WindowsPowerShell\Modules`. This parameter is required.
 
 If the module subdirectory or any of the files that `Export-PSSession` creates already exist, the
 command fails. To overwrite existing files, use the **Force** parameter.

@@ -8,7 +8,6 @@ title:  about_scopes
 # About Scopes
 
 ## Short description
-
 Explains the concept of scope in PowerShell and shows how to set and change
 the scope of elements.
 

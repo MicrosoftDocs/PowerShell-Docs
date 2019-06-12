@@ -7,7 +7,6 @@ title:  about_Profiles
 # About Profiles
 
 ## SHORT DESCRIPTION
-
 Describes how to create and use a PowerShell profile.
 
 ## LONG DESCRIPTION
@@ -41,11 +40,12 @@ profile has the highest precedence.
 
 |Description               | Path                                     |
 |--------------------------|------------------------------------------|
+|All Users, All Hosts      |$PsHome\Profile.ps1                       |
+|All Users, Current Host   |$PsHome\Microsoft.PowerShell_profile.ps1  |
+|Current User, All Hosts   |$Home\\[My ]Documents\\WindowsPowerShell  |
+|                          |  \\Profile.ps1                           |
 |Current user, Current Host|$Home\\[My ]Documents\\WindowsPowerShell  |
 |                          |  \\Microsoft.PowerShell_profile.ps1      |
-|Current User, All Hosts   |$Home\\[My ]Documents\\Profile.ps1        |
-|All Users, Current Host   |$PsHome\Microsoft.PowerShell_profile.ps1  |
-|All Users, All Hosts      |$PsHome\Profile.ps1                       |
 
 The profile paths include the following variables:
 
@@ -60,9 +60,9 @@ supports the following host-specific profiles.
 
 |Description               | Path                                      |
 |--------------------------|-------------------------------------------|
+|All users, Current Host   |$PsHome\Microsoft.PowerShellISE_profile.ps1|
 |Current user, Current Host|$Home\\[My ]Documents\\WindowsPowerShell   |
 |                          |  \\Microsoft.PowerShellISE_profile.ps1    |
-|All users, Current Host   |$PsHome\Microsoft.PowerShellISE_profile.ps1|
 
 In PowerShell Help, the "CurrentUser, Current Host" profile is the profile
 most often referred to as "your PowerShell profile".
@@ -97,7 +97,7 @@ in each PowerShell host application that you use.
 To see the current values of the `$Profile` variable, type:
 
 ```powershell
-$profile | Get-Member -MemberType NoteProperty
+$profile | Get-Member -Type NoteProperty
 ```
 
 You can use the `$Profile` variable in many commands. For example, the
@@ -166,7 +166,7 @@ that are specific to a host application, such as a command that sets the
 background color for a host application, in a profile that is specific to that
 host application.
 
-If you are an administrator who is customizing Windows PowerShell for many
+If you are an administrator who is customizing PowerShell for many
 users, follow these guidelines:
 
 - Store the common items in the `$profile.AllUsersAllHosts` profile
@@ -211,19 +211,6 @@ Current Host" profile. For example, add the following command:
 ```powershell
 function Pro {notepad $profile.CurrentUserAllHosts}
 ```
-
-### Add a function that opens PowerShell Help in a compiled HTML
-
-  Help file (.chm)
-
-```powershell
-function Get-CHM {
-  Invoke-Item -Path "$env:windir\help\mui\0409\WindowsPowerShellHelp.chm"
-}
-```
-
-This function opens the English version of the .chm file. However, you can
-replace the language code (0409) to open other versions of the .chm file.
 
 ### Add a function that lists the aliases for any cmdlet
 

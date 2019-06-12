@@ -4,11 +4,10 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Security
 ms.date: 06/09/2017
-online version: http://go.microsoft.com/fwlink/?LinkId=821717
+online version: https://go.microsoft.com/fwlink/?linkid=821717
 schema: 2.0.0
 title: Set-Acl
 ---
-
 # Set-Acl
 
 ## SYNOPSIS
@@ -17,24 +16,28 @@ Changes the security descriptor of a specified item, such as a file or a registr
 ## SYNTAX
 
 ### ByPath (Default)
+
 ```
 Set-Acl [-Path] <String[]> [-AclObject] <Object> [-ClearCentralAccessPolicy] [-Passthru] [-Filter <String>]
  [-Include <String[]>] [-Exclude <String[]>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### ByInputObject
+
 ```
 Set-Acl [-InputObject] <PSObject> [-AclObject] <Object> [-Passthru] [-Filter <String>] [-Include <String[]>]
  [-Exclude <String[]>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### ByLiteralPath
+
 ```
 Set-Acl -LiteralPath <String[]> [-AclObject] <Object> [-ClearCentralAccessPolicy] [-Passthru]
  [-Filter <String>] [-Include <String[]>] [-Exclude <String[]>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+
 The `Set-Acl` cmdlet changes the security descriptor of a specified item, such as a file or a registry key, to match the values in a security descriptor that you supply.
 
 To use `Set-Acl`, use the **Path** or **InputObject** parameter to identify the item whose security descriptor you want to change.
@@ -45,9 +48,10 @@ It uses the value of the **AclObject** parameter as a model and changes the valu
 ## EXAMPLES
 
 ### Example 1: Copy a security descriptor from one file to another
-```
-PS C:\> $DogACL = Get-Acl -Path "C:\Dog.txt"
-PS C:\> Set-Acl -Path "C:\Cat.txt" -AclObject $DogACL
+
+```powershell
+$DogACL = Get-Acl -Path "C:\Dog.txt"
+Set-Acl -Path "C:\Cat.txt" -AclObject $DogACL
 ```
 
 These commands copy the values from the security descriptor of the Dog.txt file to the security descriptor of the Cat.txt file.
@@ -62,8 +66,9 @@ The value of the **Path** parameter is the path to the Cat.txt file.
 The value of the **AclObject** parameter is the model ACL, in this case, the ACL of Dog.txt as saved in the $DogACL variable.
 
 ### Example 2: Use the pipeline operator to pass a descriptor
-```
-PS C:\> Get-Acl -Path "C:\Dog.txt" | Set-Acl -Path "C:\Cat.txt"
+
+```powershell
+Get-Acl -Path "C:\Dog.txt" | Set-Acl -Path "C:\Cat.txt"
 ```
 
 This command is almost the same as the command in the previous example, except that it uses a pipeline operator to send the security descriptor from a Get-Aclcommand to a `Set-Acl` command.
@@ -75,9 +80,10 @@ The second command uses `Set-Acl` to apply the security descriptor of Dog.txt to
 When the command completes, the ACLs of the Dog.txt and Cat.txt files are identical.
 
 ### Example 3: Apply a security descriptor to multiple files
-```
-PS C:\> $NewAcl = Get-Acl File0.txt
-PS C:\> Get-ChildItem -Path "C:\temp" -Recurse -Include "*.txt" -Force | Set-Acl -AclObject $NewAcl
+
+```powershell
+$NewAcl = Get-Acl File0.txt
+Get-ChildItem -Path "C:\temp" -Recurse -Include "*.txt" -Force | Set-Acl -AclObject $NewAcl
 ```
 
 These commands apply the security descriptors in the File0.txt file to all text files in the C:\Temp directory and all of its subdirectories.
@@ -92,14 +98,15 @@ The **Force** parameter gets hidden files, which would otherwise be excluded.
 
 The pipeline operator (|) sends the objects representing the retrieved files to the `Set-Acl` cmdlet, which applies the security descriptor in the **AclObject** parameter to all of the files in the pipeline.
 
-In practice, it is best to use the **Whatif** parameter with all `Set-Acl` commands that can affect more than one item.
+In practice, it is best to use the **WhatIf** parameter with all `Set-Acl` commands that can affect more than one item.
 In this case, the second command in the pipeline would be "`Set-Acl -AclObject $NewAcl -WhatIf`".
 This command lists the files that would be affected by the command.
-After reviewing the result, you can run the command again without the **Whatif** parameter.
+After reviewing the result, you can run the command again without the **WhatIf** parameter.
 
 ## PARAMETERS
 
 ### -AclObject
+
 Specifies an ACL with the desired property values.
 `Set-Acl` changes the ACL of item specified by the **Path** or **InputObject** parameter to match the values in the specified security object.
 
@@ -118,10 +125,11 @@ Accept wildcard characters: False
 ```
 
 ### -ClearCentralAccessPolicy
+
 Removes the central access policy from the specified item.
 
-Beginning in Windows Server® 2012, administrators can use Active Directory and Group Policy to set central access policies for users and groups.
-For more information, see [Dynamic Access Control: Scenario Overview](https://go.microsoft.com/fwlink/?LinkId=238408).
+Beginning in Windows Server 2012, administrators can use Active Directory and Group Policy to set central access policies for users and groups.
+For more information, see [Dynamic Access Control: Scenario Overview](/windows-server/identity/solution-guides/dynamic-access-control--scenario-overview).
 
 This parameter was introduced in Windows PowerShell 3.0.
 
@@ -138,6 +146,7 @@ Accept wildcard characters: False
 ```
 
 ### -Exclude
+
 Omits the specified items.
 The value of this parameter qualifies the *Path* parameter.
 Enter a path element or pattern, such as "*.txt".
@@ -156,6 +165,7 @@ Accept wildcard characters: False
 ```
 
 ### -Filter
+
 Specifies a filter in the provider's format or language.
 The value of this parameter qualifies the *Path* parameter.
 The syntax of the filter, including the use of wildcards, depends on the provider.
@@ -174,6 +184,7 @@ Accept wildcard characters: False
 ```
 
 ### -Include
+
 Changes only the specified items.
 The value of this parameter qualifies the *Path* parameter.
 Enter a path element or pattern, such as "*.txt".
@@ -192,6 +203,7 @@ Accept wildcard characters: False
 ```
 
 ### -InputObject
+
 Changes the security descriptor of the specified object.
 Enter a variable that contains the object or a command that gets the object.
 
@@ -213,6 +225,7 @@ Accept wildcard characters: False
 ```
 
 ### -LiteralPath
+
 Changes the security descriptor of the specified item.
 Unlike **Path**, the value of the **LiteralPath** parameter is used exactly as it is typed.
 No characters are interpreted as wildcards.
@@ -234,6 +247,7 @@ Accept wildcard characters: False
 ```
 
 ### -Passthru
+
 Returns an object that represents the security descriptor that was changed.
 By default, this cmdlet does not generate any output.
 
@@ -250,6 +264,7 @@ Accept wildcard characters: False
 ```
 
 ### -Path
+
 Changes the security descriptor of the specified item.
 Enter the path to an item, such as a path to a file or registry key.
 Wildcards are permitted.
@@ -269,6 +284,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
+
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
@@ -284,6 +300,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
+
 Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
@@ -300,16 +317,19 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### System.Security.AccessControl.ObjectSecurity, System.Security.AccessControl.CommonSecurityDescriptor
+
 You can pipe an ACL object or a security descriptor to `Set-Acl`.
 
 ## OUTPUTS
 
 ### System.Security.AccessControl.FileSecurity
+
 By default, `Set-Acl` does not generate any output.
 However, if you use the **Passthru** parameter, it generates a security object.
 The type of the security object depends on the type of the item.

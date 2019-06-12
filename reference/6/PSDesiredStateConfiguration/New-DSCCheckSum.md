@@ -4,11 +4,10 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: PSDesiredStateConfiguration
 ms.date: 06/09/2017
-online version: http://go.microsoft.com/fwlink/?LinkId=821459
+online version: https://go.microsoft.com/fwlink/?linkid=821459
 schema: 2.0.0
 title: New-DscChecksum
 ---
-
 # New-DscChecksum
 
 ## SYNOPSIS
@@ -21,7 +20,8 @@ New-DscChecksum [-Path] <String[]> [[-OutPath] <String>] [-Force] [-WhatIf] [-Co
 ```
 
 ## DESCRIPTION
-The **New-DSCCheckSum** cmdlet generates checksum files for Windows PowerShell Desired State Configuration (DSC) documents and compressed DSC resources.
+
+The **New-DSCCheckSum** cmdlet generates checksum files for PowerShell Desired State Configuration (DSC) documents and compressed DSC resources.
 This cmdlet generates a checksum file for each configuration and resource to be used in pull mode.
 The DSC service uses the checksums to make sure that the correct configuration and resources exist on the target node.
 Place the checksums together with the associated DSC documents and compressed DSC resources in the DSC service store.
@@ -29,6 +29,7 @@ Place the checksums together with the associated DSC documents and compressed DS
 ## EXAMPLES
 
 ### Example 1: Create checksum files for all configurations in a specific path
+
 ```
 PS C:\> New-DscCheckSum -Path "C:\DSC\Configurations\"
 ```
@@ -37,6 +38,7 @@ This command creates checksum files for all configurations in the path C:\DSC\Co
 Any checksum files that already exist are skipped.
 
 ### Example 2: Create checksum files for all configurations in a specific path and overwrite the existing checksum files
+
 ```
 PS C:\> New-DscCheckSum -Path "C:\DSC\Configurations\" -Force
 ```
@@ -47,6 +49,7 @@ Specifying the *Force* parameter causes the command to overwrite any checksum fi
 ## PARAMETERS
 
 ### -Force
+
 Indicates that the cmdlet overwrites the specified output file if it already exists.
 
 ```yaml
@@ -62,6 +65,7 @@ Accept wildcard characters: False
 ```
 
 ### -OutPath
+
 Specifies the path and file name of the output checksum file.
 
 ```yaml
@@ -77,6 +81,7 @@ Accept wildcard characters: False
 ```
 
 ### -Path
+
 Specifies the path of the input file.
 
 ```yaml
@@ -92,6 +97,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
+
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
@@ -107,6 +113,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
+
 Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
@@ -123,6 +130,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
@@ -133,4 +141,4 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## RELATED LINKS
 
-[Windows PowerShell Desired State Configuration Overview](/powershell/dsc)
+[PowerShell Desired State Configuration Overview](/powershell/dsc)

@@ -1,5 +1,5 @@
 ---
-ms.date:  06/09/2017
+ms.date:  02/28/2019
 schema:  2.0.0
 locale:  en-US
 keywords:  powershell,cmdlet
@@ -9,10 +9,13 @@ Module Guid:  00000000-0000-0000-0000-000000000000
 title:  Microsoft.PowerShell.Core
 Module Name:  Microsoft.PowerShell.Core
 ---
-
 # Microsoft.PowerShell.Core Module
+
 ## Description
-This section contains the help topics for the cmdlets that are installed with PowerShell Microsoft.PowerShell.Core module. The Core module contains cmdlets and providers that manage the basic features of PowerShell.
+
+This section contains the help topics for the cmdlets that are installed with PowerShell
+Microsoft.PowerShell.Core module. The Core module contains cmdlets and providers that manage the
+basic features of PowerShell.
 
 ## Microsoft.PowerShell.Core Cmdlets
 
@@ -20,10 +23,10 @@ This section contains the help topics for the cmdlets that are installed with Po
 Appends entries to the session history.
 
 ### [Clear-History](Clear-History.md)
-Deletes entries from the command history.
+Deletes entries from the PowerShell command history.
 
 ### [Clear-Host](Clear-Host.md)
-Clears the output screen of the current host.
+Clears the display in the host program.
 
 ### [Connect-PSSession](Connect-PSSession.md)
 Reconnects to disconnected sessions.
@@ -31,11 +34,17 @@ Reconnects to disconnected sessions.
 ### [Debug-Job](Debug-Job.md)
 Debugs a running background, remote, or PowerShell Workflow job.
 
+### [Disable-PSRemoting](Disable-PSRemoting.md)
+Prevents remote users from running commands on the local computer.
+
 ### [Disable-PSSessionConfiguration](Disable-PSSessionConfiguration.md)
 Disables session configurations on the local computer.
 
 ### [Disconnect-PSSession](Disconnect-PSSession.md)
 Disconnects from a session.
+
+### [Enable-PSRemoting](Enable-PSRemoting.md)
+Configures the computer to receive remote commands.
 
 ### [Enable-PSSessionConfiguration](Enable-PSSessionConfiguration.md)
 Enables the session configurations on the local computer.
@@ -74,7 +83,7 @@ Gets PowerShell background jobs that are running in the current session.
 Gets the modules that have been imported or that can be imported into the current session.
 
 ### [Get-PSHostProcessInfo](Get-PSHostProcessInfo.md)
-Get information about the process that hosts the current PowerShell session.
+Gets process information about the PowerShell host.
 
 ### [Get-PSSession](Get-PSSession.md)
 Gets the PowerShell sessions on local and remote computers.
@@ -84,9 +93,6 @@ Gets the capabilities of a specific user on a constrained session configuration.
 
 ### [Get-PSSessionConfiguration](Get-PSSessionConfiguration.md)
 Gets the registered session configurations on the computer.
-
-### [Get-Verb](Get-Verb.md)
-Gets a list of approved verbs for PowerShell cmdlets.
 
 ### [Import-Module](Import-Module.md)
 Adds modules to the current session.
@@ -125,7 +131,7 @@ Sends the output to the default formatter and to the default output cmdlet.
 Sends output to the command line.
 
 ### [Out-Null](Out-Null.md)
-Deletes output instead of sending it down the pipeline.
+Hides the output instead of sending it down the pipeline or displaying it.
 
 ### [Receive-Job](Receive-Job.md)
 Gets the results of the PowerShell background jobs in the current session.

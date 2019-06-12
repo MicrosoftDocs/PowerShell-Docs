@@ -3,12 +3,11 @@ external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 06/09/2017
-online version: http://go.microsoft.com/fwlink/?LinkId=821809
+ms.date: 5/28/2019
+online version: https://go.microsoft.com/fwlink/?linkid=821809
 schema: 2.0.0
 title: Get-Variable
 ---
-
 # Get-Variable
 
 ## SYNOPSIS
@@ -22,47 +21,56 @@ Get-Variable [[-Name] <String[]>] [-ValueOnly] [-Include <String[]>] [-Exclude <
 ```
 
 ## DESCRIPTION
-The **Get-Variable** cmdlet gets the PowerShell variables in the current console.
-You can retrieve just the values of the variables by specifying the *ValueOnly* parameter, and you can filter the variables returned by name.
+
+The `Get-Variable` cmdlet gets the PowerShell variables in the current console.
+You can retrieve just the values of the variables by specifying the **ValueOnly** parameter, and you
+can filter the variables returned by name.
 
 ## EXAMPLES
 
 ### Example 1: Get variables by letter
-```
-PS C:\> Get-Variable m*
-```
 
 This command gets variables with names that begin with the letter m.
 The command also gets the value of the variables.
 
+```powershell
+Get-Variable m*
+```
+
 ### Example 2: Get variable values by letter
-```
-PS C:\> Get-Variable m* -ValueOnly
-```
 
 This command gets only the values of the variables that have names that begin with m.
 
-### Example 3: Get variables by two letters
-```
-PS C:\> Get-Variable -Include M*,P*
+```powershell
+Get-Variable m* -ValueOnly
 ```
 
-This command gets information about the variables that begin with either the letter M or the letter P.
+### Example 3: Get variables by two letters
+
+This command gets information about the variables that begin with either the letter M or the letter
+P.
+
+```powershell
+Get-Variable -Include M*,P*
+```
 
 ### Example 4: Get variables by scope
-```
-PS C:\> Get-Variable -Scope 0
-PS C:\> Compare-Object (Get-Variable -Scope 0) (Get-Variable -Scope 1)
-```
 
 The first command gets only the variables that are defined in the local scope.
 It is equivalent to `Get-Variable -Scope Local` and can be abbreviated as `gv -s 0`.
 
-The second command uses the Compare-Object cmdlet to find the variables that are defined in the parent scope (Scope 1) but are visible only in the local scope (Scope 0).
+The second command uses the `Compare-Object` cmdlet to find the variables that are defined in the
+parent scope (Scope 1) but are visible only in the local scope (Scope 0).
+
+```powershell
+Get-Variable -Scope 0
+Compare-Object (Get-Variable -Scope 0) (Get-Variable -Scope 1)
+```
 
 ## PARAMETERS
 
 ### -Exclude
+
 Specifies an array of items that this cmdlet excludes from the operation.
 Wildcards are permitted.
 
@@ -79,6 +87,7 @@ Accept wildcard characters: False
 ```
 
 ### -Include
+
 Specifies an array of items upon which the cmdlet will act, excluding all others.
 Wildcards are permitted.
 
@@ -95,9 +104,10 @@ Accept wildcard characters: False
 ```
 
 ### -Name
+
 Specifies the name of the variable.
 Wildcards are permitted.
-You can also pipe a variable name to **Get-Variable**.
+You can also pipe a variable name to `Get-Variable`.
 
 ```yaml
 Type: String[]
@@ -112,15 +122,17 @@ Accept wildcard characters: False
 ```
 
 ### -Scope
+
 Specifies the variables in the scope.The acceptable values for this parameter are:
 
-- Global
-- Local
-- Script
-- A number relative to the current scope (0 through the number of scopes, where 0 is the current scope and 1 is its parent)
+- **Global**
+- **Local**
+- **Script**
+- A number relative to the current scope (0 through the number of scopes, where 0 is the current
+scope and 1 is its parent)
 
-Local is the default.
-For more information, see about_Scopes.
+**Local** is the default.
+For more information, see [about_Scopes](../Microsoft.PowerShell.Core/About/about_Scopes.md).
 
 ```yaml
 Type: String
@@ -135,6 +147,7 @@ Accept wildcard characters: False
 ```
 
 ### -ValueOnly
+
 Indicates that this cmdlet gets only the value of the variable.
 
 ```yaml
@@ -150,23 +163,35 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+-InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
+-WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
 
 ## INPUTS
 
 ### System.String
-You can pipe a string that contains the variable name to **Get-Variable**.
+
+You can pipe a string that contains the variable name to `Get-Variable`.
 
 ## OUTPUTS
 
 ### System.Management.Automation.PSVariable
-This cmdlet returns a **System.Management.AutomationPSVariable** object for each variable that it gets.
-The object type depends on the variable.
+
+This cmdlet returns a **System.Management.AutomationPSVariable** object for each variable that it
+gets. The object type depends on the variable.
+
+### System.Object[]
+
+When you specify the **ValueOnly** parameter, if the specified variable's value is a collection,
+`Get-Variable` returns a `[System.Object[]]`. This behavior prevents normal pipeline operation from
+processing the variable's values one at a time. A workaround to force collection enumeration is to
+enclose the `Get-Variable` command in parenthesis.
 
 ## NOTES
-* This cmdlet does not manage environment variables. To manage environment variables, you can use the environment variable provider.
 
-*
+- This cmdlet does not manage environment variables. To manage environment variables, you can use
+the environment variable provider.
 
 ## RELATED LINKS
 

@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: PowerShellGet
 ms.date: 06/09/2017
-online version: http://go.microsoft.com/fwlink/?LinkId=822322
+online version: https://go.microsoft.com/fwlink/?linkid=822322
 schema: 2.0.0
 title: Find-Script
 ---
@@ -33,9 +33,9 @@ The **Find-Script** cmdlet finds a specified script in registered repositories.
 PS C:\> Find-Script
 Version    Name                                Type       Repository           Description
 -------    ----                                ----       ----------           -----------
-2.5        Fabrkiam-ClientScript               Script     LocalRepo1           Description for the Fabrkiam-ClientScript script
-2.5        Fabrkiam-Script                     Script     LocalRepo1           Description for the Fabrkiam-Script script
-2.5        Fabrkiam-ServerScript               Script     LocalRepo1           Description for the Fabrkiam-ServerScript script
+2.5        Fabrikam-ClientScript               Script     LocalRepo1           Description for the Fabrikam-ClientScript script
+2.5        Fabrikam-Script                     Script     LocalRepo1           Description for the Fabrikam-Script script
+2.5        Fabrikam-ServerScript               Script     LocalRepo1           Description for the Fabrikam-ServerScript script
 2.5        Required-Script1                    Script     LocalRepo1           Description for the Required-Script1 script
 2.5        Required-Script2                    Script     LocalRepo1           Description for the Required-Script2 script
 2.5        Required-Script3                    Script     LocalRepo1           Description for the Required-Script3 script
@@ -115,7 +115,7 @@ Version    Name                                Type       Repository           D
 
 This command finds all versions of Required-Script02.
 
-### Example 7: Find a script and its dependent modules and scripts
+### Example 7: Find a script and its dependencies
 ```
 PS C:\> Find-Script -Name "Script-WithDependencies1" -IncludeDependencies -Repository "LocalRepo1"
 Version    Name                                Type       Repository           Description
@@ -126,14 +126,14 @@ Version    Name                                Type       Repository           D
 2.5        Required-Script2                    Script     LocalRepo1           Description for the Required-Script2 script
 ```
 
-This command finds a script and it dependencies.
+This command finds a script and its dependencies.
 
 ### Example 8: Find scripts with the specified tag
 ```
 PS C:\> Find-Script -Tag "Tag1" -Repository "LocalRepo1"
 Version    Name                                Type       Repository           Description
 -------    ----                                ----       ----------           -----------
-1.0        Fabrkiam-ClientScript               Script     LocalRepo1           Description for the Fabrkiam-ClientScript script
+1.0        Fabrikam-ClientScript               Script     LocalRepo1           Description for the Fabrikam-ClientScript script
 ```
 
 This command finds scripts that have the tag Tag1 in the LocalRepo1 repository
@@ -153,8 +153,8 @@ This command finds a script that contains the specified command name.
 PS C:\> Find-Script -Includes "Workflow" -Repository "LocalRepo1"
 Version    Name                                Type       Repository           Description
 -------    ----                                ----       ----------           -----------
-2.5        Fabrkiam-ClientScript               Script     LocalRepo1           Description for the Fabrkiam-ClientScript script
-1.0        Fabrkiam-Script                     Script     LocalRepo1           Description for the Fabrkiam-Script script
+2.5        Fabrikam-ClientScript               Script     LocalRepo1           Description for the Fabrikam-ClientScript script
+1.0        Fabrikam-Script                     Script     LocalRepo1           Description for the Fabrikam-Script script
 ```
 
 This command finds workflow scripts in the LocalRepo1 repository.

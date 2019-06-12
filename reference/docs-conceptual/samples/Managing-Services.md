@@ -2,7 +2,6 @@
 ms.date:  06/05/2017
 keywords:  powershell,cmdlet
 title:  Managing Services
-ms.assetid:  7a410e4d-514b-4813-ba0c-0d8cef88df31
 ---
 # Managing Services
 

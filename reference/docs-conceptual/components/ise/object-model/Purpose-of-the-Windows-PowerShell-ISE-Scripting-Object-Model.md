@@ -2,7 +2,6 @@
 ms.date:  06/05/2017
 keywords:  powershell,cmdlet
 title:  Purpose of the Windows PowerShell ISE Scripting Object Model
-ms.assetid:  d176a131-ab0c-43ee-80c1-f824ab8e4a05
 ---
 # Purpose of the Windows PowerShell ISE Scripting Object Model
 

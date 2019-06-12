@@ -1,14 +1,15 @@
 ---
 external help file: Microsoft.Management.Infrastructure.CimCmdlets.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
 Module Name: CimCmdlets
-online version:
+ms.date: 5/15/2019
 schema: 2.0.0
+title: Set-CimInstance
 ---
-
 # Set-CimInstance
 
 ## SYNOPSIS
-
 Modifies a CIM instance on a CIM server by calling the ModifyInstance method of the CIM class.
 
 ## SYNTAX
@@ -271,27 +272,14 @@ properties specified using this parameter are changed. Other properties of the C
 changed.
 
 ```yaml
-Type: IDictionary
-Parameter Sets: CimInstanceComputerSet, CimInstanceSessionSet
-Aliases: Arguments
-
-Required: False
-Position: Named
-Default value: None
 Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
-```
-
-```yaml
-Type: IDictionary
-Parameter Sets: QuerySessionSet, QueryComputerSet
-Aliases: Arguments
-
-Required: True
 Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
+Parameter Sets: CimInstanceComputerSet, CimInstanceSessionSet, QuerySessionSet, QueryComputerSet
+Required: True (QuerySessionSet, QueryComputerSet), False (CimInstanceComputerSet, CimInstanceSessionSet)
+Default value: None
+Aliases: Arguments
+Type: IDictionary
 ```
 
 ### -Query

@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Core
 ms.date: 06/09/2017
-online version: http://go.microsoft.com/fwlink/?LinkId=821482
+online version: https://go.microsoft.com/fwlink/?linkid=821482
 schema: 2.0.0
 title: Get-Command
 ---
@@ -536,7 +536,7 @@ The type of object that is returned depends on the type of command that **Get-Co
 Represents aliases.
 
 ### System.Management.Automation.ApplicationInfo
-Represents or applications and files.
+Represents applications and files.
 
 ### System.Management.Automation.CmdletInfo
 Represents cmdlets.

@@ -3,12 +3,11 @@ external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 1/7/2019
-online version: http://go.microsoft.com/fwlink/?LinkId=821769
+ms.date: 04/23/2019
+online version: https://go.microsoft.com/fwlink/?linkid=821769
 schema: 2.0.0
 title: Export-Csv
 ---
-
 # Export-Csv
 
 ## SYNOPSIS
@@ -310,7 +309,7 @@ $AdditionalContent | Export-Csv -Path .\ParmFile.csv -NoTypeInformation -Append
 ```
 
 ```Output
-Export-Csv : Cannot append CSV content to the following file: ParmFile.csv. 
+Export-Csv : Cannot append CSV content to the following file: ParmFile.csv.
 The appended object does not have a property that corresponds to the following column:
 Version. To continue with mismatched properties, add the -Force parameter, and then retry
  the command.
@@ -389,19 +388,15 @@ Accept wildcard characters: False
 
 ### -Encoding
 
-Specifies the encoding for the exported CSV file. The default value is **ASCII**.
+Specifies the type of encoding for the target file. The default value is **ASCII**.
 
 The acceptable values for this parameter are as follows:
 
 - **ASCII** Uses ASCII (7-bit) character set.
 - **BigEndianUnicode** Uses UTF-16 with the big-endian byte order.
-- **BigEndianUTF32** Uses UTF-32 with the big-endian byte order.
-- **Byte** Encodes a set of characters into a sequence of bytes.
-- **Default** Uses the encoding that corresponds to the system's active code page.
+- **Default** Uses the encoding that corresponds to the system's active code page (usually ANSI).
 - **OEM** Uses the encoding that corresponds to the system's current OEM code page.
-- **String** Same as **Unicode**.
 - **Unicode** Uses UTF-16 with the little-endian byte order.
-- **Unknown** Same as **Unicode**.
 - **UTF7** Uses UTF-7.
 - **UTF8** Uses UTF-8.
 - **UTF32** Uses UTF-32 with the little-endian byte order.
@@ -410,7 +405,7 @@ The acceptable values for this parameter are as follows:
 Type: String
 Parameter Sets: (All)
 Aliases:
-Accepted values: ASCII, BigEndianUnicode, BigEndianUTF32, Byte, Default, OEM, String, Unicode, Unknown, UTF7, UTF8, UTF32
+Accepted values: ASCII, BigEndianUnicode, Default, OEM, Unicode, UTF7, UTF8, UTF32
 
 Required: False
 Position: Named

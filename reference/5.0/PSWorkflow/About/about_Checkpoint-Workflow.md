@@ -41,7 +41,7 @@ Consider taking checkpoints after critical steps so the workflow can be resumed 
 ### ABOUT CHECKPOINTS
 A checkpoint is a snapshot of the current state of the workflow, including the current values of variables, and any output generated up to that point, and it saves it to disk.
 
-If a workflow is interrupted, intentionally or unintentionally,  Windows PowerShell?Workflow automatically uses the data in newest checkpoint to recover and resume the workflow.
+If a workflow is interrupted, intentionally or unintentionally, Windows PowerShell Workflow automatically uses the data in newest checkpoint to recover and resume the workflow.
 
 When you run the workflow as a job, such as by using the AsJob workflow common parameter, the workflow checkpoints are retained until you delete the job, such as by using the Remove-Job cmdlet. Otherwise, workflow checkpoints are deleted when the workflow completes.
 
@@ -79,4 +79,4 @@ Workflow Test-Workflow
 
 
 ## SEE ALSO
-How to Add Checkpoints to a Workflow (http:\/\/go.microsoft.com\/fwlink\/?LinkId\=261993)
+[How to Add Checkpoints to a Workflow](http://go.microsoft.com/fwlink/?LinkId=261993)

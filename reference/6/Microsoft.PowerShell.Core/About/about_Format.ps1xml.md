@@ -8,7 +8,6 @@ title:  about_Format.ps1xml
 # About Format.ps1xml
 
 ## Short Description
-
 The `Format.ps1xml` files in PowerShell define the default display of
 objects in the PowerShell console. You can create your own
 `Format.ps1xml` files to change the display of objects or to define default
@@ -347,13 +346,14 @@ specifies how the property or the calculated results will be displayed.
 ### ListControl tag
 
 The `<ListControl>` tag typically contains a `<ListEntries>` tag. The
-`<ListEntries>` tag contains a `<ListItems>` tag. The `<ListItems>` tag
-contains `<ListItem>` tags, which contain `<PropertyName>` tags. The
-`<PropertyName>` tags specify the object property to be displayed at the
-specified location in the list. If the view selection is defined using a
-selection set, the `<ListControl>` tag can also contain an `<EntrySelectedBy>`
-tag that contains one or more `<TypeName>` tags. These `<TypeName>` tags
-specify the object type that the `<ListControl>` tag is intended to display.
+`<ListEntries>` tag contains a `<ListEntry>` tag. The `<ListEntry>` tag contains
+a `<ListItems>` tag. The `<ListItems>` tag contains `<ListItem>` tags, which
+contain `<PropertyName>` tags. The `<PropertyName>` tags specify the object
+property to be displayed at the specified location in the list. If the view
+selection is defined using a selection set, the `<ListControl>` and
+`<ListEntry>` tags can also contain an `<EntrySelectedBy>` tag that contains one
+or more `<TypeName>` tags. These `<TypeName>` tags specify the object type that
+the `<ListControl>` tag is intended to display.
 
 ### WideControl tag
 

@@ -38,7 +38,6 @@ This sample shows how to build an interactive console-based host application tha
 - Implement the [System.Management.Automation.Host.Ihostuisupportsmultiplechoiceselection](/dotnet/api/System.Management.Automation.Host.IHostUISupportsMultipleChoiceSelection) interface.
 
 - Implement the [System.Management.Automation.Host.Ihostsupportsinteractivesession](/dotnet/api/System.Management.Automation.Host.IHostSupportsInteractiveSession) interface to support interactive remoting by using the [Enter-PsSession](/powershell/module/Microsoft.PowerShell.Core/Enter-PSSession) and [Exit-PsSession](/powershell/module/Microsoft.PowerShell.Core/Exit-PSSession) cmdlets.
-- Implement the [System.Management.Automation.Host.Ihostsupportsinteractivesession](/dotnet/api/System.Management.Automation.Host.IHostSupportsInteractiveSession) interface to support interactive remoting by using the [Enter-PsSession](/powershell/module/Microsoft.PowerShell.Core/Enter-PSSession) and [Exit-PsSession](/powershell/module/Microsoft.PowerShell.Core/Exit-PSSession) cmdlets.
 
 - Use the Tokenize API to colorize the command line as it is typed.
 
@@ -71,7 +70,7 @@ namespace Microsoft.Samples.PowerShell.Host
         internal ConsoleReadLine consoleReadLine = new ConsoleReadLine();
 
     /// <summary>
-    /// Holds a reference to the runspace for this interpeter.
+    /// Holds a reference to the runspace for this interpreter.
     /// </summary>
     internal Runspace myRunSpace;
 
@@ -192,7 +191,7 @@ namespace Microsoft.Samples.PowerShell.Host
     /// A helper class that builds and executes a pipeline that writes
     /// to the default output path. Any exceptions that are thrown are
     /// just passed to the caller. Since all output goes to the default
-    /// outter, this method does not return anything.
+    /// outputter, this method does not return anything.
     /// </summary>
     /// <param name="cmd">The script to run.</param>
     /// <param name="input">Any input arguments to pass to the script.
@@ -710,7 +709,7 @@ namespace Microsoft.Samples.PowerShell.Host
     /// <param name="caption">Text that proceeds (a title) the choices.</param>
     /// <param name="message">A message that describes the choice.</param>
     /// <param name="choices">A collection of ChoiceDescription objects that
-    /// describ each choice.</param>
+    /// describe each choice.</param>
     /// <param name="defaultChoice">The index of the label in the Choices
     /// parameter collection. To indicate no default choice, set to -1.</param>
     /// <returns>The index of the Choices parameter collection element that
@@ -784,7 +783,7 @@ namespace Microsoft.Samples.PowerShell.Host
     /// <param name="caption">Text that proceeds (a title) the choices.</param>
     /// <param name="message">A message that describes the choice.</param>
     /// <param name="choices">A collection of ChoiceDescription objects that
-    /// describ each choice.</param>
+    /// describe each choice.</param>
     /// <param name="defaultChoices">The index of the label in the Choices
     /// parameter collection. To indicate no default choice, set to -1.</param>
     /// <returns>The index of the Choices parameter collection element that
@@ -970,7 +969,7 @@ namespace Microsoft.Samples.PowerShell.Host
     /// foreground and background colors.
     /// </summary>
     /// <param name="foregroundColor">The color of the characters.</param>
-    /// <param name="backgroundColor">The backgound color to use.</param>
+    /// <param name="backgroundColor">The background color to use.</param>
     /// <param name="value">The characters to be written.</param>
     public override void Write(
                                ConsoleColor foregroundColor,
@@ -990,7 +989,7 @@ namespace Microsoft.Samples.PowerShell.Host
     /// Writes a line of characters to the output display of the host
     /// with foreground and background colors and appends a newline (carriage return).
     /// </summary>
-    /// <param name="foregroundColor">The forground color of the display. </param>
+    /// <param name="foregroundColor">The foreground color of the display. </param>
     /// <param name="backgroundColor">The background color of the display. </param>
     /// <param name="value">The line to be written.</param>
     public override void WriteLine(
@@ -1120,7 +1119,7 @@ namespace Microsoft.Samples.PowerShell.Host
     /// <summary>
     /// This is a private worker function splits out the
     /// accelerator keys from the menu and builds a two
-    /// dimentional array with the first access containing the
+    /// dimensional array with the first access containing the
     /// accelerator and the second containing the label string
     /// with the & removed.
     /// </summary>
@@ -1210,7 +1209,7 @@ namespace Microsoft.Samples.PowerShell.Host
 
     /// <summary>
     /// Gets or sets the foreground color of the text to be written.
-    /// This maps to the corresponding Console.ForgroundColor property.
+    /// This maps to the corresponding Console.ForegroundColor property.
     /// </summary>
     public override ConsoleColor ForegroundColor
     {
@@ -1523,7 +1522,7 @@ namespace Microsoft.Samples.PowerShell.Host
     }
 
     /// <summary>
-    /// The End key was enetered..
+    /// The End key was entered..
     /// </summary>
     private void OnEnd()
     {
@@ -1532,7 +1531,7 @@ namespace Microsoft.Samples.PowerShell.Host
     }
 
     /// <summary>
-    /// The Home key was eneterd.
+    /// The Home key was entered.
     /// </summary>
     private void OnHome()
     {
@@ -1541,7 +1540,7 @@ namespace Microsoft.Samples.PowerShell.Host
     }
 
     /// <summary>
-    /// The Escape key was enetered.
+    /// The Escape key was entered.
     /// </summary>
     private void OnEscape()
     {
@@ -1562,12 +1561,12 @@ namespace Microsoft.Samples.PowerShell.Host
         // Move back to the start of the previous word.
         if (this.buffer.Length > 0 && this.current != 0)
         {
-          bool nonLetter = IsSeperator(this.buffer[this.current - 1]);
+          bool nonLetter = IsSeparator(this.buffer[this.current - 1]);
           while (this.current > 0 && (this.current - 1 < this.buffer.Length))
           {
             this.MoveLeft();
 
-            if (IsSeperator(this.buffer[this.current]) != nonLetter)
+            if (IsSeparator(this.buffer[this.current]) != nonLetter)
             {
               if (!nonLetter)
               {
@@ -1587,12 +1586,12 @@ namespace Microsoft.Samples.PowerShell.Host
     }
 
     /// <summary>
-    /// Determines if a character is a seperator.
+    /// Determines if a character is a separator.
     /// </summary>
     /// <param name="ch">Character to investigate.</param>
     /// <returns>A value that indicates whether the character
-    /// is a seperator.</returns>
-    private static bool IsSeperator(char ch)
+    /// is a separator.</returns>
+    private static bool IsSeparator(char ch)
     {
       return !Char.IsLetter(ch);
     }
@@ -1609,7 +1608,7 @@ namespace Microsoft.Samples.PowerShell.Host
         // Move to the next word.
         if (this.buffer.Length != 0 && this.current < this.buffer.Length)
         {
-          bool nonLetter = IsSeperator(this.buffer[this.current]);
+          bool nonLetter = IsSeparator(this.buffer[this.current]);
           while (this.current < this.buffer.Length)
           {
             this.MoveRight();
@@ -1619,7 +1618,7 @@ namespace Microsoft.Samples.PowerShell.Host
               break;
             }
 
-            if (IsSeperator(this.buffer[this.current]) != nonLetter)
+            if (IsSeparator(this.buffer[this.current]) != nonLetter)
             {
               if (nonLetter)
               {

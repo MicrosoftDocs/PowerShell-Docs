@@ -8,7 +8,6 @@ title:  about_Properties
 # About Properties
 
 ## Short description
-
 Describes how to use object properties in PowerShell.
 
 ## Long description
@@ -149,7 +148,7 @@ VersionInfo       : File:             C:\Windows\System32\WindowsPowerShell\
                     OriginalFilename: PowerShell.EXE.MUI
                     FileVersion:      10.0.16299.15 (WinBuild.160101.0800)
                     FileDescription:  Windows PowerShell
-                    Product:          Microsoft® Windows® Operating System
+                    Product:          Microsoft Windows Operating System
                     ProductVersion:   10.0.16299.15
                     Debug:            False
                     Patched:          False

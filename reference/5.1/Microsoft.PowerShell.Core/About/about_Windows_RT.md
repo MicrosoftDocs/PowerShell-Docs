@@ -10,7 +10,7 @@ title:  about_Windows_RT
 
 ## SHORT DESCRIPTION
 
-Explains limitations of  Windows PowerShell® 4.0 on Windows RT 8.1.
+Explains limitations of  Windows PowerShell 4.0 on Windows RT 8.1.
 
 ## LONG DESCRIPTION
 
@@ -37,9 +37,9 @@ devices. The following list explains the differences.
 
   While remoting is disabled, you can use Windows PowerShell remoting to run
   commands on other computers, but other computers cannot run commands on the
-  Windows RT device. Also, implicit remoting—that is, remoting that is built in
-  to a cmdlet or script, and not explicitly requested with added parameters—does
-  not work in Windows PowerShell running on Windows RT 8.1.
+  Windows RT device. Also, implicit remoting - that is, remoting that is built
+  in to a cmdlet or script, and not explicitly requested with added parameters
+  - does not work in Windows PowerShell running on Windows RT 8.1.
 
 - Domain-joined computing and Kerberos authentication are not supported on
   Windows RT 8.1. You cannot use Windows PowerShell to add or manage these

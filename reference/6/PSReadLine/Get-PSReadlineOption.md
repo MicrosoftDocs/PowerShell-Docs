@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: PSReadLine
 ms.date: 12/07/2018
-online version: http://go.microsoft.com/fwlink/?LinkId=821450
+online version: https://go.microsoft.com/fwlink/?linkid=821450
 schema: 2.0.0
 title: Get-PSReadLineOption
 ---
@@ -12,7 +12,7 @@ title: Get-PSReadLineOption
 # Get-PSReadLineOption
 
 ## SYNOPSIS
-Returns the values for the options that can be configured.
+Gets values for the options that can be configured.
 
 ## SYNTAX
 
@@ -57,7 +57,7 @@ CompletionQueryItems                   : 100
 MaximumKillRingCount                   : 10
 ShowToolTips                           : True
 ViModeIndicator                        : None
-WordDelimiters                         : ;:,.[]{}()/\|^&*-=+'"–—―
+WordDelimiters                         : ;:,.[]{}()/\|^&*-=+'"---
 CommandColor                           : "`e[93m"
 CommentColor                           : "`e[32m"
 ContinuationPromptColor                : "`e[37m"

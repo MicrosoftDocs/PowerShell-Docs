@@ -2,7 +2,6 @@
 ms.date:  06/05/2017
 keywords:  powershell,cmdlet
 title:  Managing Current Location
-ms.assetid:  a9f9e7a7-3ea8-47d3-bbb4-6e437f6d4a4a
 ---
 # Managing Current Location
 
@@ -10,7 +9,7 @@ When navigating folder systems in File Explorer, you usually have a specific wor
 
 Windows PowerShell uses the noun **Location** to refer to the working directory, and implements a family of cmdlets to examine and manipulate your location.
 
-### Getting Your Current Location (Get-Location)
+## Getting Your Current Location (Get-Location)
 
 To determine the path of your current directory location, enter the **Get-Location** command:
 
@@ -24,7 +23,7 @@ C:\Documents and Settings\PowerUser
 > [!NOTE]
 > The Get-Location cmdlet is similar to the **pwd** command in the BASH shell. The Set-Location cmdlet is similar to the **cd** command in Cmd.exe.
 
-### Setting Your Current Location (Set-Location)
+## Setting Your Current Location (Set-Location)
 
 The **Get-Location** command is used with the **Set-Location** command. The **Set-Location** command allows you to specify your current directory location.
 
@@ -90,7 +89,7 @@ chdir -Path .. -PassThru
 sl -Path HKLM:\SOFTWARE -PassThru
 ```
 
-### Saving and Recalling Recent Locations (Push-Location and Pop-Location)
+## Saving and Recalling Recent Locations (Push-Location and Pop-Location)
 
 When changing locations, it is helpful to keep track of where you have been and to be able to return to your previous location. The **Push-Location** cmdlet in Windows PowerShell creates a ordered history (a "stack") of directory paths where you have been, and you can step back through the history of directory paths by using the complementary **Pop-Location** cmdlet.
 

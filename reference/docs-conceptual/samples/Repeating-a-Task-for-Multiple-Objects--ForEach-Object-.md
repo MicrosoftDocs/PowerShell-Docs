@@ -2,7 +2,6 @@
 ms.date:  06/05/2017
 keywords:  powershell,cmdlet
 title:  Repeating a Task for Multiple Objects ForEach Object
-ms.assetid:  6697a12d-2470-4ed6-b5bb-c35e5d525eb6
 ---
 # Repeating a Task for Multiple Objects (ForEach-Object)
 

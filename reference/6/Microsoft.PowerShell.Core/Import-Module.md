@@ -3,8 +3,8 @@ external help file: System.Management.Automation.dll-Help.xml
 keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Core
-ms.date: 06/09/2017
-online version: http://go.microsoft.com/fwlink/?LinkId=821492
+ms.date: 03/28/2019
+online version: https://go.microsoft.com/fwlink/?linkid=821492
 schema: 2.0.0
 title: Import-Module
 ---
@@ -19,58 +19,60 @@ Adds modules to the current session.
 ### Name (Default)
 ```
 Import-Module [-Global] [-Prefix <String>] [-Name] <String[]> [-Function <String[]>] [-Cmdlet <String[]>]
- [-Variable <String[]>] [-Alias <String[]>] [-Force] [-PassThru] [-AsCustomObject] [-MinimumVersion <Version>]
- [-MaximumVersion <String>] [-RequiredVersion <Version>] [-ArgumentList <Object[]>] [-DisableNameChecking]
- [-NoClobber] [-Scope <String>] [<CommonParameters>]
+ [-Variable <String[]>] [-Alias <String[]>] [-Force] [-SkipEditionCheck] [-PassThru] [-AsCustomObject]
+ [-MinimumVersion <Version>] [-MaximumVersion <String>] [-RequiredVersion <Version>] [-ArgumentList <Object[]>]
+ [-DisableNameChecking] [-NoClobber] [-Scope <String>] [<CommonParameters>]
 ```
 
 ### PSSession
 ```
 Import-Module [-Global] [-Prefix <String>] [-Name] <String[]> [-Function <String[]>] [-Cmdlet <String[]>]
- [-Variable <String[]>] [-Alias <String[]>] [-Force] [-PassThru] [-AsCustomObject] [-MinimumVersion <Version>]
- [-MaximumVersion <String>] [-RequiredVersion <Version>] [-ArgumentList <Object[]>] [-DisableNameChecking]
- [-NoClobber] [-Scope <String>] -PSSession <PSSession> [<CommonParameters>]
+ [-Variable <String[]>] [-Alias <String[]>] [-Force] [-SkipEditionCheck] [-PassThru] [-AsCustomObject]
+ [-MinimumVersion <Version>] [-MaximumVersion <String>] [-RequiredVersion <Version>] [-ArgumentList <Object[]>]
+ [-DisableNameChecking] [-NoClobber] [-Scope <String>] -PSSession <PSSession> [<CommonParameters>]
 ```
 
 ### CimSession
 ```
 Import-Module [-Global] [-Prefix <String>] [-Name] <String[]> [-Function <String[]>] [-Cmdlet <String[]>]
- [-Variable <String[]>] [-Alias <String[]>] [-Force] [-PassThru] [-AsCustomObject] [-MinimumVersion <Version>]
- [-MaximumVersion <String>] [-RequiredVersion <Version>] [-ArgumentList <Object[]>] [-DisableNameChecking]
- [-NoClobber] [-Scope <String>] -CimSession <CimSession> [-CimResourceUri <Uri>] [-CimNamespace <String>]
- [<CommonParameters>]
+ [-Variable <String[]>] [-Alias <String[]>] [-Force] [-SkipEditionCheck] [-PassThru] [-AsCustomObject]
+ [-MinimumVersion <Version>] [-MaximumVersion <String>] [-RequiredVersion <Version>] [-ArgumentList <Object[]>]
+ [-DisableNameChecking] [-NoClobber] [-Scope <String>] -CimSession <CimSession> [-CimResourceUri <Uri>]
+ [-CimNamespace <String>] [<CommonParameters>]
 ```
 
 ### FullyQualifiedName
 ```
 Import-Module [-Global] [-Prefix <String>] [-FullyQualifiedName] <ModuleSpecification[]> [-Function <String[]>]
- [-Cmdlet <String[]>] [-Variable <String[]>] [-Alias <String[]>] [-Force] [-PassThru] [-AsCustomObject]
- [-ArgumentList <Object[]>] [-DisableNameChecking] [-NoClobber] [-Scope <String>] [<CommonParameters>]
+ [-Cmdlet <String[]>] [-Variable <String[]>] [-Alias <String[]>] [-Force] [-SkipEditionCheck] [-PassThru]
+ [-AsCustomObject] [-ArgumentList <Object[]>] [-DisableNameChecking] [-NoClobber] [-Scope <String>]
+ [<CommonParameters>]
 ```
 
 ### FullyQualifiedNameAndPSSession
 ```
 Import-Module [-Global] [-Prefix <String>] [-FullyQualifiedName] <ModuleSpecification[]> [-Function <String[]>]
- [-Cmdlet <String[]>] [-Variable <String[]>] [-Alias <String[]>] [-Force] [-PassThru] [-AsCustomObject]
- [-ArgumentList <Object[]>] [-DisableNameChecking] [-NoClobber] [-Scope <String>] -PSSession <PSSession>
- [<CommonParameters>]
+ [-Cmdlet <String[]>] [-Variable <String[]>] [-Alias <String[]>] [-Force] [-SkipEditionCheck] [-PassThru]
+ [-AsCustomObject] [-ArgumentList <Object[]>] [-DisableNameChecking] [-NoClobber] [-Scope <String>]
+ -PSSession <PSSession> [<CommonParameters>]
 ```
 
 ### Assembly
 ```
 Import-Module [-Global] [-Prefix <String>] [-Assembly] <Assembly[]> [-Function <String[]>] [-Cmdlet <String[]>]
- [-Variable <String[]>] [-Alias <String[]>] [-Force] [-PassThru] [-AsCustomObject] [-ArgumentList <Object[]>]
- [-DisableNameChecking] [-NoClobber] [-Scope <String>] [<CommonParameters>]
+ [-Variable <String[]>] [-Alias <String[]>] [-Force] [-SkipEditionCheck] [-PassThru] [-AsCustomObject]
+ [-ArgumentList <Object[]>] [-DisableNameChecking] [-NoClobber] [-Scope <String>] [<CommonParameters>]
 ```
 
 ### ModuleInfo
 ```
 Import-Module [-Global] [-Prefix <String>] [-Function <String[]>] [-Cmdlet <String[]>] [-Variable <String[]>]
- [-Alias <String[]>] [-Force] [-PassThru] [-AsCustomObject] [-ModuleInfo] <PSModuleInfo[]>
+ [-Alias <String[]>] [-Force] [-SkipEditionCheck] [-PassThru] [-AsCustomObject] [-ModuleInfo] <PSModuleInfo[]>
  [-ArgumentList <Object[]>] [-DisableNameChecking] [-NoClobber] [-Scope <String>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+
 The **Import-Module** cmdlet adds one or more modules to the current session.
 The modules that you import must be installed on the local computer or a remote computer.
 
@@ -110,8 +112,9 @@ You can use this WMI and CIM strategy to manage the remote computer.
 ## EXAMPLES
 
 ### Example 1: Import the members of a module into the current session
-```
-PS C:\> Import-Module -Name BitsTransfer
+
+```powershell
+Import-Module -Name BitsTransfer
 ```
 
 This command imports the members of the **BitsTransfer** module into the current session.
@@ -122,16 +125,18 @@ By default, **Import-Module** does not generate any output when it imports a mod
 To request output, use the *PassThru* or *AsCustomObject* parameter, or the *Verbose* common parameter.
 
 ### Example 2: Import all modules specified by the module path
-```
-PS C:\> Get-Module -ListAvailable | Import-Module
+
+```powershell
+Get-Module -ListAvailable | Import-Module
 ```
 
 This command imports all available modules in the path specified by the PSModulePath environment variable ($env:PSModulePath) into the current session.
 
 ### Example 3: Import the members of several modules into the current session
-```
-PS C:\> $m = Get-Module -ListAvailable BitsTransfer, ServerManager
-PS C:\> Import-Module -ModuleInfo $m
+
+```powershell
+$m = Get-Module -ListAvailable BitsTransfer, ServerManager
+Import-Module -ModuleInfo $m
 ```
 
 These commands import the members of the **BitsTransfer** and **ServerManager** modules into the current session.
@@ -145,8 +150,12 @@ The second command uses the *ModuleInfo* parameter of **Import-Module** to impor
 These commands are equivalent to using a pipeline operator (|) to send the output of a **Get-Module** command to **Import-Module**.
 
 ### Example 4: Import all modules specified by a path
+
+```powershell
+Import-Module -Name c:\ps-test\modules\test -Verbose
 ```
-PS C:\> Import-Module -Name c:\ps-test\modules\test -Verbose
+
+```Output
 VERBOSE: Loading module from path 'C:\ps-test\modules\Test\Test.psm1'.
 VERBOSE: Exporting function 'my-parm'.
 VERBOSE: Exporting function 'Get-Parameter'.
@@ -160,10 +169,13 @@ It also uses the *Verbose* common parameter to get a list of the items imported 
 Without the *Verbose*, *PassThru*, or *AsCustomObject* parameter, **Import-Module** does not generate any output when it imports a module.
 
 ### Example 5: Restrict module members imported into a session
-```
-PS C:\> Import-Module BitsTransfer -Cmdlet Add-BitsFile, Get-BitsTransfer
-PS C:\> (Get-Module BitsTransfer).ExportedCmdlets
 
+```powershell
+Import-Module BitsTransfer -Cmdlet Add-BitsFile, Get-BitsTransfer
+(Get-Module BitsTransfer).ExportedCmdlets
+```
+
+```Output
 Key                   Value
 ---                   -----
 Add-BitsFile          Add-BitsFile
@@ -174,9 +186,13 @@ Resume-BitsTransfer   Resume-BitsTransfer
 Set-BitsTransfer      Set-BitsTransfer
 Start-BitsTransfer    Start-BitsTransfer
 Suspend-BitsTransfer  Suspend-BitsTransfer
+```
 
-PS C:\> Get-Command -Module BitsTransfer
+```powershell
+Get-Command -Module BitsTransfer
+```
 
+```Output
 CommandType Name             Version Source
 ----------- ----             ------- ------
 Cmdlet      Add-BitsFile     2.0.0.0 BitsTransfer
@@ -196,15 +212,22 @@ The third command uses the *Module* parameter of the Get-Command cmdlet to get t
 The results confirm that only the **Add-BitsFile** and **Get-BitsTransfer** cmdlets were imported.
 
 ### Example 6: Import the members of a module and add a prefix
-```
-PS C:\> Import-Module BitsTransfer -Prefix PS -PassThru
 
+```powershell
+Import-Module BitsTransfer -Prefix PS -PassThru
+```
+
+```Output
 ModuleType Name                                ExportedCommands
 ---------- ----                                ----------------
 Manifest   bitstransfer                        {Add-BitsFile, Complete-...
+```
 
-PS C:\> Get-Command -Module BitsTransfer
+```powershell
+Get-Command -Module BitsTransfer
+```
 
+```Output
 CommandType     Name                                               ModuleName
 -----------     ----                                               ----------
 Cmdlet          Add-BitsFile                                       bitstransfer
@@ -238,20 +261,26 @@ The prefix that you use applies only to the members in the current session.
 It does not change the module.
 
 ### Example 7: Get and use a custom object
-```
-PS C:\> Get-Module -List | Format-Table -Property Name, ModuleType -AutoSize
 
+```powershell
+Get-Module -List | Format-Table -Property Name, ModuleType -AutoSize
+```
+
+```Output
 Name          ModuleType
 ----          ----------
 Show-Calendar     Script
 BitsTransfer    Manifest
 PSDiagnostics   Manifest
 TestCmdlets       Script
+```
 
-PS C:\> $a = Import-Module -Name Show-Calendar -AsCustomObject -Passthru
+```powershell
+$a = Import-Module -Name Show-Calendar -AsCustomObject -Passthru
+$a | Get-Member
+```
 
-PS C:\> $a | Get-Member
-
+```Output
     TypeName: System.Management.Automation.PSCustomObject
 Name          MemberType   Definition
 ----          ----------   ----------
@@ -260,8 +289,10 @@ GetHashCode   Method       int GetHashCode()
 GetType       Method       type GetType()
 ToString      Method       string ToString()
 Show-Calendar ScriptMethod System.Object Show-Calendar();
+```
 
-PS C:\> $a."Show-Calendar"()
+```powershell
+$a."Show-Calendar"()
 ```
 
 These commands demonstrate how to get and use the custom object that **Import-Module** returns.
@@ -289,9 +320,10 @@ The last command uses the **Show-Calendar** script method.
 The method name must be enclosed in quotation marks, because it includes a hyphen.
 
 ### Example 8: Re-import a module into the same session
-```
-PS C:\> Import-Module BitsTransfer
-PS C:\> Import-Module BitsTransfer -Force -Prefix PS
+
+```powershell
+Import-Module BitsTransfer
+Import-Module BitsTransfer -Force -Prefix PS
 ```
 
 This example shows how to use the *Force* parameter of **Import-Module** when you are re-importing a module into the same session.
@@ -303,23 +335,40 @@ The second command also includes the *Force* parameter, which removes the module
 Without this parameter, the session would include two copies of each **BitsTransfer** cmdlet, one with the standard name and one with the prefixed name.
 
 ### Example 9: Run commands that have been hidden by imported commands
+
+```powershell
+Get-Date
 ```
-PS C:\> Get-Date
+
+```Output
 Thursday, March 15, 2012 6:47:04 PM
+```
 
-PS C:\> Import-Module TestModule
+```powershell
+Import-Module TestModule
+Get-Date
+```
 
-PS C:\> Get-Date
+```Output
 12075
+```
 
-PS C:\> Get-Command Get-Date -All | Format-Table -Property CommandType, Name, ModuleName -AutoSize
+```powershell
+Get-Command Get-Date -All | Format-Table -Property CommandType, Name, ModuleName -AutoSize
+```
 
+```Output
 CommandType     Name         ModuleName
 -----------     ----         ----------
 Function        Get-Date     TestModule
 Cmdlet          Get-Date     Microsoft.PowerShell.Utility
+```
 
-PS C:\> Microsoft.PowerShell.Utility\Get-Date
+```powershell
+Microsoft.PowerShell.Utility\Get-Date
+```
+
+```Output
 Saturday, September 12, 2009 6:33:23 PM
 ```
 
@@ -342,8 +391,9 @@ The fifth command runs the hidden cmdlet by qualifying the command name with the
 For more information about command precedence in PowerShell, see [about_Command_Precedence](about/about_Command_Precedence.md).
 
 ### Example 10: Import a minimum version of a module
-```
-PS C:\> Import-Module -Name PSWorkflow -MinimumVersion 3.0.0.0
+
+```powershell
+Import-Module -Name PSWorkflow -MinimumVersion 3.0.0.0
 ```
 
 This command imports the **PSWorkflow** module.
@@ -352,6 +402,7 @@ It uses the *MinimumVersion* parameter of **Import-Module** to import only versi
 You can also use the *RequiredVersion* parameter to import a particular version of a module, or use the *Module* and *Version* parameters of the **#Requires** keyword to require a particular version of a module in a script.
 
 ### Example 11: Import a module from a remote computer
+
 This example shows how to use the **Import-Module** cmdlet to import a module from a remote computer.
 This command uses the Implicit Remoting feature of PowerShell.
 
@@ -434,6 +485,7 @@ Number Friendly Name              OperationalStatus          Total Size Partitio
 ## PARAMETERS
 
 ### -Alias
+
 Specifies the aliases that this cmdlet imports from the module into the current session.
 Enter a comma-separated list of aliases.
 Wildcard characters are permitted.
@@ -454,6 +506,7 @@ Accept wildcard characters: False
 ```
 
 ### -ArgumentList
+
 Specifies an array of arguments, or parameter values, that are passed to a script module during the **Import-Module** command.
 This parameter is valid only when you are importing a script module.
 
@@ -473,6 +526,7 @@ Accept wildcard characters: False
 ```
 
 ### -AsCustomObject
+
 Indicates that this cmdlet returns a custom object with members that represent the imported module members.
 This parameter is valid only for script modules.
 
@@ -492,6 +546,7 @@ Accept wildcard characters: False
 ```
 
 ### -Assembly
+
 Specifies an array of assembly objects.
 This cmdlet imports the cmdlets and providers implemented in the specified assembly objects.
 Enter a variable that contains assembly objects or a command that creates assembly objects.
@@ -514,6 +569,7 @@ Accept wildcard characters: False
 ```
 
 ### -CimNamespace
+
 Specifies the namespace of an alternate CIM provider that exposes CIM modules.
 The default value is the namespace of the Module Discovery WMI provider.
 
@@ -534,6 +590,7 @@ Accept wildcard characters: False
 ```
 
 ### -CimResourceUri
+
 Specifies an alternate location for CIM modules.
 The default value is the resource URI of the Module Discovery WMI provider on the remote computer.
 
@@ -554,6 +611,7 @@ Accept wildcard characters: False
 ```
 
 ### -CimSession
+
 Specifies a CIM session on the remote computer.
 Enter a variable that contains the CIM session or a command that gets the CIM session, such as a [Get-CimSession](../CimCmdlets/Get-CimSession.md) command.
 
@@ -577,6 +635,7 @@ Accept wildcard characters: False
 ```
 
 ### -Cmdlet
+
 Specifies an array of cmdlets that this cmdlet imports from the module into the current session.
 Wildcard characters are permitted.
 
@@ -596,6 +655,7 @@ Accept wildcard characters: False
 ```
 
 ### -DisableNameChecking
+
 Indicates that this cmdlet suppresses the message that warns you when you import a cmdlet or function whose name includes an unapproved verb or a prohibited character.
 
 By default, when a module that you import exports cmdlets or functions that have unapproved verbs in their names, PowerShell displays the following warning message:
@@ -620,6 +680,7 @@ Accept wildcard characters: False
 ```
 
 ### -Force
+
 This parameter causes a module to be loaded, or reloaded, over top of the current one
 
 ```yaml
@@ -635,6 +696,7 @@ Accept wildcard characters: False
 ```
 
 ### -FullyQualifiedName
+
 Specifies the fully qualified name of the module specification.
 
 ```yaml
@@ -650,6 +712,7 @@ Accept wildcard characters: False
 ```
 
 ### -Function
+
 Specifies an array of functions that this cmdlet imports from the module into the current session.
 Wildcard characters are permitted.
 
@@ -669,6 +732,7 @@ Accept wildcard characters: False
 ```
 
 ### -Global
+
 Indicates that this cmdlet imports modules into the global session state so they are available to all commands in the session.
 
 By default, when Import-Module cmdlet is called from the command prompt, script file, or scriptblock, all the commands are imported into the global session state.
@@ -691,24 +755,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -MaximumVersion
-Specifies a maximum version.
-This cmdlet imports only a version of the module that is less than or equal to the specified value.
-If no version qualifies, **Import-Module** generates an error.
-
-```yaml
-Type: String
-Parameter Sets: Name, PSSession, CimSession
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -MinimumVersion
+
 Specifies a minimum version.
 This cmdlet imports only a version of the module that is greater than or equal to the specified value.
 If no version qualifies, **Import-Module** generates an error.
@@ -735,6 +783,7 @@ Accept wildcard characters: False
 ```
 
 ### -ModuleInfo
+
 Specifies an array of module objects to import.
 Enter a variable that contains the module objects, or a command that gets the module objects, such as the following command: `Get-Module -ListAvailable`.
 You can also pipe module objects to **Import-Module**.
@@ -752,6 +801,7 @@ Accept wildcard characters: False
 ```
 
 ### -Name
+
 Specifies the names of the modules to import.
 Enter the name of the module or the name of a file in the module, such as a .psd1, .psm1, .dll, or ps1 file.
 File paths are optional.
@@ -777,6 +827,7 @@ Accept wildcard characters: False
 ```
 
 ### -NoClobber
+
 Indicates that this cmdlet does not import commands that have the same names as existing commands in the current session.
 By default, **Import-Module** imports all exported module commands.
 
@@ -798,7 +849,36 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -PSSession
+
+Specifies a PowerShell user-managed session (**PSSession**) from which this cmdlet import modules into the current session.
+Enter a variable that contains a **PSSession** or a command that gets a **PSSession**, such as a Get-PSSession command.
+
+When you import a module from a different session into the current session, you can use the cmdlets from the module in the current session, just as you would use cmdlets from a local module.
+Commands that use the remote cmdlets actually run in the remote session, but the remoting details are managed in the background by PowerShell.
+
+This parameter uses the Implicit Remoting feature of PowerShell.
+It is equivalent to using the Import-PSSession cmdlet to import particular modules from a session.
+
+**Import-Module** cannot import PowerShell Core modules from another session.
+The PowerShell Core modules have names that begin with Microsoft.PowerShell.
+
+This parameter was introduced in Windows PowerShell 3.0.
+
+```yaml
+Type: PSSession
+Parameter Sets: PSSession, FullyQualifiedNameAndPSSession
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -PassThru
+
 Returns an object representing the item with which you are working.
 By default, this cmdlet does not generate any output.
 
@@ -815,6 +895,7 @@ Accept wildcard characters: False
 ```
 
 ### -Prefix
+
 Specifies a prefix that this cmdlet adds to the nouns in the names of imported module members.
 
 Use this parameter to avoid name conflicts that might occur when different members in the session have the same name.
@@ -838,34 +919,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -PSSession
-Specifies a Windows PowerShell user-managed session (**PSSession**) from which this cmdlet import modules into the current session.
-Enter a variable that contains a **PSSession** or a command that gets a **PSSession**, such as a Get-PSSession command.
-
-When you import a module from a different session into the current session, you can use the cmdlets from the module in the current session, just as you would use cmdlets from a local module.
-Commands that use the remote cmdlets actually run in the remote session, but the remoting details are managed in the background by Windows PowerShell.
-
-This parameter uses the Implicit Remoting feature of Windows PowerShell.
-It is equivalent to using the Import-PSSession cmdlet to import particular modules from a session.
-
-**Import-Module** cannot import Windows PowerShell Core modules from another session.
-The Windows PowerShell Core modules have names that begin with Microsoft.PowerShell.
-
-This parameter was introduced in Windows PowerShell 3.0.
-
-```yaml
-Type: PSSession
-Parameter Sets: PSSession, FullyQualifiedNameAndPSSession
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -RequiredVersion
+
 Specifies a version of the module that this cmdlet imports.
 If the version is not installed, **Import-Module** generates an error.
 
@@ -892,6 +947,7 @@ Accept wildcard characters: False
 ```
 
 ### -Scope
+
 Specifies a scope into which this cmdlet imports the module.
 
 The acceptable values for this parameter are:
@@ -923,6 +979,7 @@ Accept wildcard characters: False
 ```
 
 ### -Variable
+
 Specifies an array of variables that this cmdlet imports from the module into the current session.
 Enter a list of variables.
 Wildcard characters are permitted.
@@ -942,23 +999,75 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -MaximumVersion
+
+Specifies a maximum version.
+This cmdlet imports only a version of the module that is less than or equal to the specified value.
+If no version qualifies, **Import-Module** generates an error.
+
+```yaml
+Type: String
+Parameter Sets: Name, PSSession, CimSession
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -SkipEditionCheck
+
+Skips the check on the `CompatiblePSEditions` field.
+
+Allows loading a module from the `%windir%\System32\WindowsPowerShell\v1.0\Modules`
+module directory into PowerShell Core when that module does not specify `Core` in the
+`CompatiblePSEditions` manifest field.
+
+When importing a module from another path, this switch does nothing,
+since the check is not performed.
+On Linux and macOS, this switch does nothing.
+
+See [about_PowerShell_Editions](About/about_PowerShell_Editions.md) for more information.
+
+> [!WARNING]
+> `Import-Module -SkipEditionCheck` is still likely to fail to import a module. Even if it does
+> succeed, invoking a command from the module may later fail when it tries to use an
+> incompatible API.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### System.String, System.Management.Automation.PSModuleInfo, System.Reflection.Assembly
+
 You can pipe a module name, module object, or assembly object to this cmdlet.
 
 ## OUTPUTS
 
 ### None, System.Management.Automation.PSModuleInfo, or System.Management.Automation.PSCustomObject
+
 This cmdlet returns a **PSModuleInfo** or **PSCustomObject**.
 By default, **Import-Module** does not generate any output.
 If you specify the *PassThru* parameter, the cmdlet generates a **System.Management.Automation.PSModuleInfo** object that represents the module.
 If you specify the *AsCustomObject* parameter, it generates a **PSCustomObject** object.
 
 ## NOTES
+
 * Before you can import a module, the module must be installed on the local computer. That is, the module directory must be copied to a directory that is accessible to your local computer. For more information, see [about_Modules](About/about_Modules.md).
 
   You can also use the *PSSession* and *CIMSession* parameters to import modules that are installed on remote computers.
@@ -998,3 +1107,5 @@ When you create a CIM session on the local computer, PowerShell uses DCOM, inste
 [New-Module](New-Module.md)
 
 [Remove-Module](Remove-Module.md)
+
+[about_PowerShell_Editions](About/about_PowerShell_Editions.md)

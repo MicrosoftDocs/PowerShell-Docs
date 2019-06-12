@@ -1,9 +1,9 @@
-﻿---
+---
 ms.date:  12/19/2018
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkID=113302
+online version: https://go.microsoft.com/fwlink/?linkid=113302
 external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 title:  Format-List
 ---
@@ -222,8 +222,9 @@ parameters in the same command.
 The value of the **Property** parameter can be a new calculated property. To create a calculated
 property, use a hash table. Valid keys are:
 
+- Name (or Label) \<string\>
 - Expression \<string\> or \<script block\>
-- Depth \<int32\>
+- FormatString \<string\>
 
 ```yaml
 Type: Object[]

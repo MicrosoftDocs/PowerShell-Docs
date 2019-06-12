@@ -1,318 +1,357 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-Help Version:  6.0
-Download Help Link:  http://Please-enter-FwLink-manually
-Module Guid:  00000000-0000-0000-0000-000000000000
-Module Name:  About
+ms.date: 02/25/2019
+schema: 2.0.0
+locale: en-us
+keywords: powershell,cmdlet
+Help Version: 6.0
+Download Help Link: http://Please-enter-FwLink-manually
+Module Guid: 00000000-0000-0000-0000-000000000000
+Module Name: About
+title: About topics
 ---
+# About topics
 
-# About Module
 ## Description
-{{Manually Enter Description Here}}
+
+About topics cover a ranges of concepts about PowerShell.
 
 ## About Topics
-### [about_Aliases](about_aliases.md)
-{{Manually Enter about_Aliases Description Here}}
 
-### [about_Arithmetic_Operators](about_arithmetic_operators.md)
-{{Manually Enter about_Arithmetic_Operators Description Here}}
+### [about_Alias_Provider](about_Alias_Provider.md)
+Describes the features of the Alias provider.
 
-### [about_Arrays](about_arrays.md)
-{{Manually Enter about_Arrays Description Here}}
+### [about_Aliases](about_Aliases.md)
+Describes how to use alternate names for cmdlets and commands in PowerShell.
 
-### [about_Assignment_Operators](about_assignment_operators.md)
-{{Manually Enter about_Assignment_Operators Description Here}}
+### [about_Arithmetic_Operators](about_Arithmetic_Operators.md)
+Describes the operators that perform arithmetic in PowerShell.
 
-### [about_Automatic_Variables](about_automatic_variables.md)
-{{Manually Enter about_Automatic_Variables Description Here}}
+### [about_Arrays](about_Arrays.md)
+Describes arrays, which are data structures designed to store collections of items.
 
-### [about_Break](about_break.md)
-{{Manually Enter about_Break Description Here}}
+### [about_Assignment_Operators](about_Assignment_Operators.md)
+Describes how to use operators to assign values to variables.
 
-### [about_Command_Precedence](about_command_precedence.md)
-{{Manually Enter about_Command_Precedence Description Here}}
+### [about_Automatic_Variables](about_Automatic_Variables.md)
+Describes variables that store state information for PowerShell. These variables are created and maintained by PowerShell.
 
-### [about_Command_Syntax](about_command_syntax.md)
-{{Manually Enter about_Command_Syntax Description Here}}
+### [about_Break](about_Break.md)
+Describes a statement you can use to immediately exit Foreach, For, While, Do, or Switch statements.
 
-### [about_Comment_Based_Help](about_comment_based_help.md)
-{{Manually Enter about_Comment_Based_Help Description Here}}
+### [about_CimSession](about_CimSession.md)
+Describes a CimSession object and the difference between CIM sessions and PowerShell sessions.
 
-### [about_CommonParameters](about_commonparameters.md)
-{{Manually Enter about_CommonParameters Description Here}}
+### [about_Classes](about_Classes.md)
+Describes how you can use classes to create your own custom types.
 
-### [about_Comparison_Operators](about_comparison_operators.md)
-{{Manually Enter about_Comparison_Operators Description Here}}
+### [about_Command_Precedence](about_Command_Precedence.md)
+Describes how PowerShell determines which command to run.
 
-### [about_Continue](about_continue.md)
-{{Manually Enter about_Continue Description Here}}
+### [about_Command_Syntax](about_Command_Syntax.md)
+Describes the syntax diagrams that are used in PowerShell.
 
-### [about_Core_Commands](about_core_commands.md)
-{{Manually Enter about_Core_Commands Description Here}}
+### [about_Comment_Based_Help](about_Comment_Based_Help.md)
+Describes how to write comment-based help topics for functions and scripts.
 
-### [about_Data_Sections](about_data_sections.md)
-{{Manually Enter about_Data_Sections Description Here}}
+### [about_CommonParameters](about_CommonParameters.md)
+Describes the parameters that can be used with any cmdlet.
 
-### [about_Debuggers](about_debuggers.md)
-{{Manually Enter about_Debuggers Description Here}}
+### [about_Comparison_Operators](about_Comparison_Operators.md)
+Describes the operators that compare values in PowerShell.
 
-### [about_Do](about_do.md)
-{{Manually Enter about_Do Description Here}}
+### [about_Continue](about_Continue.md)
+Describes how the `Continue` statement immediately returns the program flow to the top of a program loop.
 
-### [about_Environment_Variables](about_environment_variables.md)
-{{Manually Enter about_Environment_Variables Description Here}}
+### [about_Core_Commands](about_Core_Commands.md)
+Lists the cmdlets that are designed for use with PowerShell providers.
 
-### [about_Eventlogs](about_eventlogs.md)
-{{Manually Enter about_Eventlogs Description Here}}
+### [about_Data_Sections](about_Data_Sections.md)
+Explains Data sections, which isolate text strings and other read-only data from script logic.
 
-### [about_Execution_Policies](about_execution_policies.md)
-{{Manually Enter about_Execution_Policies Description Here}}
+### [about_Debuggers](about_Debuggers.md)
+Describes the PowerShell debugger.
 
-### [about_For](about_for.md)
-{{Manually Enter about_For Description Here}}
+### [about_Do](about_Do.md)
+Runs a statement list one or more times, subject to a While or Until condition.
 
-### [about_Foreach](about_foreach.md)
-{{Manually Enter about_Foreach Description Here}}
+### [about_Enum](about_Enum.md)
+The `enum` statement is used to declare an enumeration. An enumeration is a distinct type that consists of a set of named labels called the enumerator list.
 
-### [about_Format.ps1xml](about_format.ps1xml.md)
-{{Manually Enter about_Format.ps1xml Description Here}}
+### [about_Environment_Provider](about_Environment_Provider.md)
+Describes the features of the Environment provider.
 
-### [about_Functions](about_functions.md)
-{{Manually Enter about_Functions Description Here}}
+### [about_Environment_Variables](about_Environment_Variables.md)
+Describes how to access Windows environment variables in PowerShell.
 
-### [about_Functions_Advanced](about_functions_advanced.md)
-{{Manually Enter about_Functions_Advanced Description Here}}
+### [about_Execution_Policies](about_Execution_Policies.md)
+Describes the PowerShell execution policies and explains how to manage them.
 
-### [about_Functions_Advanced_Methods](about_functions_advanced_methods.md)
-{{Manually Enter about_Functions_Advanced_Methods Description Here}}
+### [about_Experimental_Features](about_Experimental_Features.md)
+Describes how to use the Experimental Features of PowerShell.
 
-### [about_Functions_Advanced_Parameters](about_functions_advanced_parameters.md)
-{{Manually Enter about_Functions_Advanced_Parameters Description Here}}
+### [about_FileSystem_Provider](about_FileSystem_Provider.md)
+Describes the features of the FileSystem provider.
 
-### [about_Functions_CmdletBindingAttribute](about_functions_cmdletbindingattribute.md)
-{{Manually Enter about_Functions_CmdletBindingAttribute Description Here}}
+### [about_For](about_For.md)
+Describes a language command you can use to run statements based on a conditional test.
 
-### [about_Functions_OutputTypeAttribute](about_functions_outputtypeattribute.md)
-{{Manually Enter about_Functions_OutputTypeAttribute Description Here}}
+### [about_Foreach](about_Foreach.md)
+Describes a language command you can use to traverse all the items in a collection of items.
 
-### [about_Group_Policy_Settings](about_group_policy_settings.md)
-{{Manually Enter about_Group_Policy_Settings Description Here}}
+### [about_Format.ps1xml](about_Format.ps1xml.md)
+The `Format.ps1xml` files in PowerShell define the default display of objects in the PowerShell console.
 
-### [about_Hash_Tables](about_hash_tables.md)
-{{Manually Enter about_Hash_Tables Description Here}}
+### [about_Function_Provider](about_Function_Provider.md)
+Describes the features of the Function provider.
 
-### [about_History](about_history.md)
-{{Manually Enter about_History Description Here}}
+### [about_Functions](about_Functions.md)
+Describes how to create and use functions in PowerShell.
 
-### [about_If](about_if.md)
-{{Manually Enter about_If Description Here}}
+### [about_Functions_Advanced](about_Functions_Advanced.md)
+Introduces advanced functions that act similar to cmdlets.
 
-### [about_Job_Details](about_job_details.md)
-{{Manually Enter about_Job_Details Description Here}}
+### [about_Functions_Advanced_Methods](about_Functions_Advanced_Methods.md)
+Describes how functions that specify the `CmdletBinding` attribute can use the methods and properties that are available to compiled cmdlets.
 
-### [about_Jobs](about_jobs.md)
-{{Manually Enter about_Jobs Description Here}}
+### [about_Functions_Advanced_Parameters](about_Functions_Advanced_Parameters.md)
+Explains how to add parameters to advanced functions.
 
-### [about_Join](about_join.md)
-{{Manually Enter about_Join Description Here}}
+### [about_Functions_CmdletBindingAttribute](about_Functions_CmdletBindingAttribute.md)
+Describes the attribute that makes a function work like a compiled cmdlet.
 
-### [about_Language_Keywords](about_language_keywords.md)
-{{Manually Enter about_Language_Keywords Description Here}}
+### [about_Functions_OutputTypeAttribute](about_Functions_OutputTypeAttribute.md)
+Describes an attribute that reports the type of object that the function returns.
 
-### [about_Language_Modes](about_language_modes.md)
-{{Manually Enter about_Language_Modes Description Here}}
+### [about_Group_Policy_Settings](about_Group_Policy_Settings.md)
+Describes the Group Policy settings for PowerShell.
 
-### [about_Line_Editing](about_line_editing.md)
-{{Manually Enter about_Line_Editing Description Here}}
+### [about_Hash_Tables](about_Hash_Tables.md)
+Describes how to create, use, and sort hash tables in PowerShell.
 
-### [about_Methods](about_methods.md)
-{{Manually Enter about_Methods Description Here}}
+### [about_hidden](about_hidden.md)
+Describes the Hidden keyword, which hides class members from default Get-Member results.
 
-### [about_Modules](about_modules.md)
-{{Manually Enter about_Modules Description Here}}
+### [about_History](about_History.md)
+Describes how to get and run commands in the command history.
 
-### [about_Object_Creation](about_object_creation.md)
-{{Manually Enter about_Object_Creation Description Here}}
+### [about_If](about_If.md)
+Describes a language command you can use to run statement lists based on the results of one or more conditional tests.
 
-### [about_Objects](about_objects.md)
-{{Manually Enter about_Objects Description Here}}
+### [about_Job_Details](about_Job_Details.md)
+Provides details about background jobs on local and remote computers.
 
-### [about_Operator_Precedence](about_operator_precedence.md)
-{{Manually Enter about_Operator_Precedence Description Here}}
+### [about_Jobs](about_Jobs.md)
+Provides information about how PowerShell background jobs run a command or expression in the background without interacting with the current session.
 
-### [about_Operators](about_operators.md)
-{{Manually Enter about_Operators Description Here}}
+### [about_Join](about_Join.md)
+Describes how the join operator (-join) combines multiple strings into a single string.
 
-### [about_PackageManagement](about_packagemanagement.md)
-{{Manually Enter about_PackageManagement Description Here}}
+### [about_Language_Keywords](about_Language_Keywords.md)
+Describes the keywords in the PowerShell scripting language.
 
-### [about_Parameters](about_parameters.md)
-{{Manually Enter about_Parameters Description Here}}
+### [about_Language_Modes](about_Language_Modes.md)
+Explains language modes and their effect on PowerShell sessions.
 
-### [about_Parameters_Default_Values](about_parameters_default_values.md)
-{{Manually Enter about_Parameters_Default_Values Description Here}}
+### [about_Line_Editing](about_Line_Editing.md)
+Describes how to edit commands at the PowerShell command prompt.
 
-### [about_Parsing](about_parsing.md)
-{{Manually Enter about_Parsing Description Here}}
+### [about_locations](about_locations.md)
+Describes how to access items from the working location in PowerShell.
 
-### [about_Path_Syntax](about_path_syntax.md)
-{{Manually Enter about_Path_Syntax Description Here}}
+### [about_Logging_Non-Windows](about_Logging_Non-Windows.md)
+PowerShell logs internal operations from the engine, providers, and cmdlets.
+
+### [about_Logging_Windows](about_Logging_Windows.md)
+PowerShell logs internal operations from the engine, providers, and cmdlets.
+
+### [about_logical_operators](about_logical_operators.md)
+Describes the operators that connect statements in PowerShell.
+
+### [about_Methods](about_Methods.md)
+Describes how to use methods to perform actions on objects in PowerShell.
+
+### [about_Modules](about_Modules.md)
+Explains how to install, import, and use PowerShell modules.
+
+### [about_Object_Creation](about_Object_Creation.md)
+Explains how to create objects in PowerShell.
+
+### [about_Objects](about_Objects.md)
+Provides essential information about objects in PowerShell.
+
+### [about_Operator_Precedence](about_Operator_Precedence.md)
+Lists the PowerShell operators in precedence order.
+
+### [about_Operators](about_Operators.md)
+Describes the operators that are supported by PowerShell.
+
+### [about_PackageManagement](about_PackageManagement.md)
+PackageManagement is an aggregator for software package managers.
+
+### [about_Parameters](about_Parameters.md)
+Describes how to work with command parameters in PowerShell.
+
+### [about_Parameters_Default_Values](about_Parameters_Default_Values.md)
+Describes how to set custom default values for the parameters of cmdlets and advanced functions.
+
+### [about_Parsing](about_Parsing.md)
+Describes how PowerShell parses commands.
+
+### [about_Path_Syntax](about_Path_Syntax.md)
+Describes the full and relative path name formats in PowerShell.
 
 ### [about_pipelines](about_pipelines.md)
-{{Manually Enter about_pipelines Description Here}}
+Combining commands into pipelines in the PowerShell.
+
+### [about_PowerShell_Config](about_PowerShell_Config.md)
+Configuration files for PowerShell Core, replacing Registry configuration.
+
+### [about_PowerShell_Editions](about_PowerShell_Editions.md)
+Different editions of PowerShell run on different underlying runtimes.
+
+### [about_Preference_Variables](about_Preference_Variables.md)
+Variables that customize the behavior of PowerShell.
+
+### [about_Profiles](about_Profiles.md)
+Describes how to create and use a PowerShell profile.
+
+### [about_Prompts](about_Prompts.md)
+Describes the Prompt function and demonstrates how to create a custom Prompt function.
+
+### [about_Properties](about_Properties.md)
+Describes how to use object properties in PowerShell.
+
+### [about_Providers](about_Providers.md)
+Describes how PowerShell providers provide access to data and components that would not otherwise be easily accessible at the command line.
+
+### [about_psconsolehostreadline](about_psconsolehostreadline.md)
+Explains how to create a customize how PowerShell reads input at the console prompt.
+
+### [about_PSSession_Details](about_PSSession_Details.md)
+Provides detailed information about PowerShell sessions and the role they play in remote commands.
+
+### [about_PSSessions](about_PSSessions.md)
+Describes PowerShell sessions (PSSessions) and explains how to establish a persistent connection to a remote computer.
 
 ### [about_pwsh](about_pwsh.md)
-{{Manually Enter about_PowerShell_exe Description Here}}
+Explains how to use the pwsh command-line tool. Displays the syntax and describes the command-line switches. pwsh starts a PowerShell session.
 
-### [about_Preference_Variables](about_preference_variables.md)
-{{Manually Enter about_Preference_Variables Description Here}}
+### [about_Quoting_Rules](about_Quoting_Rules.md)
+Describes rules for using single and double quotation marks in PowerShell.
 
-### [about_Profiles](about_profiles.md)
-{{Manually Enter about_Profiles Description Here}}
+### [about_Redirection](about_Redirection.md)
+Explains how to redirect output from PowerShell to text files.
 
-### [about_Prompts](about_prompts.md)
-{{Manually Enter about_Prompts Description Here}}
+### [about_Ref](about_Ref.md)
+Describes how to create and use a reference type variable. You can use reference type variables to permit a function to change the value of a variable that is passed to it.
 
-### [about_Properties](about_properties.md)
-{{Manually Enter about_Properties Description Here}}
+### [about_Registry_Provider](about_Registry_Provider.md)
+Describes the features of the Registry provider.
 
-### [about_Providers](about_providers.md)
-{{Manually Enter about_Providers Description Here}}
+### [about_Regular_Expressions](about_Regular_Expressions.md)
+Describes regular expressions in PowerShell.
 
-### [about_PSSession_Details](about_pssession_details.md)
-{{Manually Enter about_PSSession_Details Description Here}}
+### [about_Remote](about_Remote.md)
+Describes how to run remote commands in PowerShell.
 
-### [about_PSSessions](about_pssessions.md)
-{{Manually Enter about_PSSessions Description Here}}
+### [about_Remote_Disconnected_Sessions](about_Remote_Disconnected_Sessions.md)
+Explains how to disconnect from and reconnect to a PSSession.
 
-### [about_PSSnapins](about_pssnapins.md)
-{{Manually Enter about_PSSnapins Description Here}}
+### [about_Remote_FAQ](about_Remote_FAQ.md)
+Contains questions and answers about running remote commands in PowerShell.
 
-### [about_Quoting_Rules](about_quoting_rules.md)
-{{Manually Enter about_Quoting_Rules Description Here}}
+### [about_Remote_Jobs](about_Remote_Jobs.md)
+Describes how to run background jobs on remote computers.
 
-### [about_Redirection](about_redirection.md)
-{{Manually Enter about_Redirection Description Here}}
+### [about_Remote_Output](about_Remote_Output.md)
+Describes how to interpret and format the output of remote commands.
 
-### [about_Ref](about_ref.md)
-{{Manually Enter about_Ref Description Here}}
+### [about_Remote_Requirements](about_Remote_Requirements.md)
+Describes the system requirements and configuration requirements for running remote commands in PowerShell.
 
-### [about_Regular_Expressions](about_regular_expressions.md)
-{{Manually Enter about_Regular_Expressions Description Here}}
+### [about_Remote_Troubleshooting](about_Remote_Troubleshooting.md)
+Describes how to troubleshoot remote operations in PowerShell.
 
-### [about_Remote](about_remote.md)
-{{Manually Enter about_Remote Description Here}}
+### [about_Remote_Variables](about_Remote_Variables.md)
+Explains how to use local and remote variables in remote commands.
 
-### [about_Remote_Disconnected_Sessions](about_remote_disconnected_sessions.md)
-{{Manually Enter about_Remote_Disconnected_Sessions Description Here}}
+### [about_Requires](about_Requires.md)
+Prevents a script from running without the required elements.
 
-### [about_Remote_FAQ](about_remote_faq.md)
-{{Manually Enter about_Remote_FAQ Description Here}}
+### [about_Reserved_Words](about_Reserved_Words.md)
+Lists the reserved words that cannot be used as identifiers because they have a special meaning in PowerShell.
 
-### [about_Remote_Jobs](about_remote_jobs.md)
-{{Manually Enter about_Remote_Jobs Description Here}}
+### [about_Return](about_Return.md)
+Exits the current scope, which can be a function, script, or script block.
 
-### [about_Remote_Output](about_remote_output.md)
-{{Manually Enter about_Remote_Output Description Here}}
+### [about_Run_With_PowerShell](about_Run_With_PowerShell.md)
+Explains how to use the "Run with PowerShell" feature to run a script from a file system drive.
 
-### [about_Remote_Requirements](about_remote_requirements.md)
-{{Manually Enter about_Remote_Requirements Description Here}}
+### [about_Scopes](about_Scopes.md)
+Explains the concept of scope in PowerShell and shows how to set and change the scope of elements.
 
-### [about_Remote_Troubleshooting](about_remote_troubleshooting.md)
-{{Manually Enter about_Remote_Troubleshooting Description Here}}
+### [about_Script_Blocks](about_Script_Blocks.md)
+Defines what a script block is and explains how to use script blocks in the PowerShell programming language.
 
-### [about_Remote_Variables](about_remote_variables.md)
-{{Manually Enter about_Remote_Variables Description Here}}
+### [about_Script_Internationalization](about_Script_Internationalization.md)
+Describes the script internationalization features that make it easy for scripts to display messages and instructions to users in their user interface (UI) language.
 
-### [about_Requires](about_requires.md)
-{{Manually Enter about_Requires Description Here}}
+### [about_Scripts](about_Scripts.md)
+Describes how to run and write scripts in PowerShell.
 
-### [about_Reserved_Words](about_reserved_words.md)
-{{Manually Enter about_Reserved_Words Description Here}}
+### [about_Session_Configuration_Files](about_Session_Configuration_Files.md)
+Describes session configuration files, which are used in a session configuration (also known as an "endpoint") to define the environment of sessions that use the session configuration.
 
-### [about_Return](about_return.md)
-{{Manually Enter about_Return Description Here}}
+### [about_Session_Configurations](about_Session_Configurations.md)
+Describes session configurations, which determine the users who can connect to the computer remotely and the commands they can run.
 
-### [about_Run_With_PowerShell](about_run_with_powershell.md)
-{{Manually Enter about_Run_With_PowerShell Description Here}}
+### [about_Signing](about_Signing.md)
+Explains how to sign scripts so that they comply with the PowerShell execution policies.
 
-### [about_Scopes](about_scopes.md)
-{{Manually Enter about_Scopes Description Here}}
+### [about_simplified_syntax](about_simplified_syntax.md)
+Describes easier, more natural-language ways of scripting filters for collections of objects.
 
-### [about_Script_Blocks](about_script_blocks.md)
-{{Manually Enter about_Script_Blocks Description Here}}
+### [about_Special_Characters](about_Special_Characters.md)
+Describes the special characters that you can use to control how PowerShell interprets the next character in a command or parameter.
 
-### [about_Script_Internationalization](about_script_internationalization.md)
-{{Manually Enter about_Script_Internationalization Description Here}}
+### [about_Splatting](about_Splatting.md)
+Describes how to use splatting to pass parameters to commands in PowerShell.
 
-### [about_Scripts](about_scripts.md)
-{{Manually Enter about_Scripts Description Here}}
+### [about_Split](about_Split.md)
+Explains how to use the Split operator to split one or more strings into substrings.
 
-### [about_Session_Configuration_Files](about_session_configuration_files.md)
-{{Manually Enter about_Session_Configuration_Files Description Here}}
+### [about_Switch](about_Switch.md)
+Explains how to use a switch to handle multiple If statements.
 
-### [about_Session_Configurations](about_session_configurations.md)
-{{Manually Enter about_Session_Configurations Description Here}}
+### [about_Throw](about_Throw.md)
+Describes the Throw keyword, which generates a terminating error.
 
-### [about_Signing](about_signing.md)
-{{Manually Enter about_Signing Description Here}}
+### [about_Trap](about_Trap.md)
+Describes a keyword that handles a terminating error.
 
-### [about_Special_Characters](about_special_characters.md)
-{{Manually Enter about_Special_Characters Description Here}}
+### [about_Try_Catch_Finally](about_Try_Catch_Finally.md)
+Describes how to use the `Try`, `Catch`, and `Finally` blocks to handle terminating errors.
 
-### [about_Splatting](about_splatting.md)
-{{Manually Enter about_Splatting Description Here}}
+### [about_Type_Operators](about_Type_Operators.md)
+Describes the operators that work with Microsoft .NET Framework types.
 
-### [about_Split](about_split.md)
-{{Manually Enter about_Split Description Here}}
+### [about_Types.ps1xml](about_Types.ps1xml.md)
+Explains how to use Types.ps1xml files to extend the types of objects that are used in PowerShell.
 
-### [about_Switch](about_switch.md)
-{{Manually Enter about_Switch Description Here}}
+### [about_Updatable_Help](about_Updatable_Help.md)
+Describes the updatable help system in PowerShell.
 
-### [about_Throw](about_throw.md)
-{{Manually Enter about_Throw Description Here}}
+### [About_Using](About_Using.md)
+Allows to indicate which namespaces are used in the session.
 
-### [about_Transactions](about_transactions.md)
-{{Manually Enter about_Transactions Description Here}}
+### [about_Variable_Provider](about_Variable_Provider.md)
+Describes the features of the Variable provider.
 
-### [about_Trap](about_trap.md)
-{{Manually Enter about_Trap Description Here}}
+### [about_Variables](about_Variables.md)
+Describes how variables store values that can be used in PowerShell.
 
-### [about_Try_Catch_Finally](about_try_catch_finally.md)
-{{Manually Enter about_Try_Catch_Finally Description Here}}
+### [about_While](about_While.md)
+Describes a language statement that you can use to run a command block based on the results of a conditional test.
 
-### [about_Type_Operators](about_type_operators.md)
-{{Manually Enter about_Type_Operators Description Here}}
-
-### [about_Types.ps1xml](about_types.ps1xml.md)
-{{Manually Enter about_Types.ps1xml Description Here}}
-
-### [about_Updatable_Help](about_updatable_help.md)
-{{Manually Enter about_Updatable_Help Description Here}}
-
-### [about_Variables](about_variables.md)
-{{Manually Enter about_Variables Description Here}}
-
-### [about_While](about_while.md)
-{{Manually Enter about_While Description Here}}
-
-### [about_Wildcards](about_wildcards.md)
-{{Manually Enter about_Wildcards Description Here}}
-
-### [about_Windows_RT](about_windows_rt.md)
-{{Manually Enter about_Windows_RT Description Here}}
-
-### [about_WMI](about_wmi.md)
-{{Manually Enter about_WMI Description Here}}
-
-### [about_WMI_Cmdlets](about_wmi_cmdlets.md)
-{{Manually Enter about_WMI_Cmdlets Description Here}}
-
-### [about_WQL](about_wql.md)
-{{Manually Enter about_WQL Description Here}}
-
-### [about_WS-Management_Cmdlets](about_ws-management_cmdlets.md)
-{{Manually Enter about_WS-Management_Cmdlets Description Here}}
+### [about_Wildcards](about_Wildcards.md)
+Describes how to use wildcard characters in PowerShell.

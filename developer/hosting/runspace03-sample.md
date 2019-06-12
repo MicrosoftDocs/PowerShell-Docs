@@ -29,7 +29,7 @@ This sample demonstrates the following.
 
 - Running the script synchronously.
 
-- Using [System.Management.Automation.Psobject](/dotnet/api/System.Management.Automation.PSObject) objects to extract and display properties from the objects returned by the script.
+- Using [System.Management.Automation.PSObject](/dotnet/api/System.Management.Automation.PSObject) objects to extract and display properties from the objects returned by the script.
 
 - Retrieving and displaying error records that were generated when the script was run.
 

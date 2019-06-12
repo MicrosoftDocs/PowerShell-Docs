@@ -3,7 +3,7 @@ ms.date:  2/11/2019
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821856
+online version: https://go.microsoft.com/fwlink/?linkid=821856
 external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 title:  Send-MailMessage
 ---
@@ -18,7 +18,7 @@ Sends an email message.
 ```
 Send-MailMessage [-To] <string[]> [-Subject] <string> [[-Body] <string>] [[-SmtpServer] <string>]
 -From <string> [-Attachments <string[]>] [-Bcc <string[]>] [-BodyAsHtml] [-Encoding <Encoding>]
-[-Cc <string[]>] [-DeliveryNotificationOption <DeliveryNotificationOptions>]
+[-Cc <string[]>] [-ReplyTo <string[]>] [-DeliveryNotificationOption <DeliveryNotificationOptions>]
 [-Priority <MailPriority>] [-Credential <pscredential>] [-UseSsl] [-Port <int>] [<CommonParameters>]
 ```
 
@@ -170,6 +170,23 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -ReplyTo
+
+Specifies additional email addresses (other than the From address) to use to reply to this message.
+Enter names (optional) and the email address, such as `Name <someone@fabrikam.com>`.
+
+```yaml
+Type: String[]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Credential
 
 Specifies a user account that has permission to perform this action. The default is the current
@@ -226,23 +243,24 @@ The acceptable values for this parameter are as follows:
 
 - **ASCII**: Uses the encoding for the ASCII (7-bit) character set.
 - **BigEndianUnicode**: Encodes in UTF-16 format using the big-endian byte order.
-- **Byte**: Encodes a set of characters into a sequence of bytes.
-- **Default**: Encodes using the default value: ASCII.
 - **OEM**: Uses the default encoding for MS-DOS and console programs.
-- **String**: Uses the encoding type for a string.
 - **Unicode**: Encodes in UTF-16 format using the little-endian byte order.
 - **UTF7**: Encodes in UTF-7 format.
 - **UTF8**: Encodes in UTF-8 format.
 - **UTF8BOM**: Encodes in UTF-8 format with Byte Order Mark (BOM)
 - **UTF8NoBOM**: Encodes in UTF-8 format without Byte Order Mark (BOM)
 - **UTF32**: Encodes in UTF-32 format.
-- **Unknown**: The encoding type is unknown or invalid; the data can be treated as binary.
+
+Beginning with PowerShell 6.2, the **Encoding** parameter also allows numeric IDs of registered code
+pages (like `-Encoding 1251`) or string names of registered code pages (like
+`-Encoding "windows-1251"`). For more information, see the .NET documentation for
+[Encoding.CodePage](/dotnet/api/system.text.encoding.codepage?view=netcore-2.2).
 
 ```yaml
 Type: Encoding
 Parameter Sets: (All)
 Aliases: BE
-Accepted values: ASCII, BigEndianUnicode, Byte, Default, OEM, String, Unicode, UTF7, UTF8, UTF8BOM, UTF8NoBOM, UTF32, Unknown
+Accepted values: ASCII, BigEndianUnicode, OEM, Unicode, UTF7, UTF8, UTF8BOM, UTF8NoBOM, UTF32
 
 Required: False
 Position: Named
@@ -324,14 +342,14 @@ Accept wildcard characters: False
 
 ### -Subject
 
-Th **Subject** parameter is required. This parameter specifies the subject of the email message.
+The **Subject** parameter is not required. This parameter specifies the subject of the email message.
 
 ```yaml
 Type: String
 Parameter Sets: (All)
 Aliases: sub
 
-Required: True
+Required: False
 Position: 1
 Default value: None
 Accept pipeline input: False

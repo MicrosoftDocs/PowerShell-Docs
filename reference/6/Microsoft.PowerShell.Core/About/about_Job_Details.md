@@ -5,11 +5,9 @@ locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_Job_Details
 ---
-
 # About Job Details
 
 ## SHORT DESCRIPTION
-
 Provides details about background jobs on local and remote computers.
 
 ## DETAILED DESCRIPTION
@@ -232,7 +230,7 @@ When you import the module, you can use the new job type in your session.
 For example, the PSScheduledJob module adds scheduled jobs and the PSWorkflow
 module adds workflow jobs.
 
-Custom jobs types might differ significantly from standard Windows PowerShell
+Custom jobs types might differ significantly from standard PowerShell
 background jobs. For example, scheduled jobs are saved on disk; they do not
 exist only in a particular session. Workflow jobs can be suspended and
 resumed.

@@ -4,11 +4,10 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Management
 ms.date: 06/09/2017
-online version: http://go.microsoft.com/fwlink/?LinkId=526220
+online version: https://go.microsoft.com/fwlink/?linkid=526220
 schema: 2.0.0
 title: Set-Clipboard
 ---
-
 # Set-Clipboard
 
 ## SYNOPSIS
@@ -17,47 +16,53 @@ Sets the current Windows clipboard entry.
 ## SYNTAX
 
 ### String (Default)
+
 ```
 Set-Clipboard [-Append] [-AsHtml] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### Value
+
 ```
 Set-Clipboard [-Value] <String[]> [-Append] [-AsHtml] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### Path
+
 ```
 Set-Clipboard [-Append] -Path <String[]> [-AsHtml] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### LiteralPath
+
 ```
 Set-Clipboard [-Append] -LiteralPath <String[]> [-AsHtml] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-The **Set-Clipboard** cmdlet sets the current Windows clipboard entry.
+
+The `Set-Clipboard` cmdlet sets the current Windows clipboard entry.
 
 ## EXAMPLES
 
 ### Example 1: Copy text to the clipboard
-```
-PS C:\> Set-Clipboard -Value "This is a test string"
-```
 
-This command copies a string to the clipboard.
+```powershell
+Set-Clipboard -Value "This is a test string"
+```
 
 ### Example 2: Copy the contents of a directory to the clipboard
-```
-PS C:\> Set-Clipboard -Path "C:\Staging\"
-```
 
 This command copies the content of the specified folder to the clipboard.
+
+```powershell
+Set-Clipboard -Path "C:\Staging\"
+```
 
 ## PARAMETERS
 
 ### -Append
+
 Indicates that the cmdlet does not clear the clipboard and appends content to it.
 
 ```yaml
@@ -73,6 +78,7 @@ Accept wildcard characters: False
 ```
 
 ### -AsHtml
+
 Indicates that the cmdlet renders the content as HTML to the clipboard.
 
 ```yaml
@@ -88,11 +94,11 @@ Accept wildcard characters: False
 ```
 
 ### -LiteralPath
-Specifies the path to the item that is copied to the clipboard.
-Unlike *Path*, the value of *LiteralPath* is used exactly as it is typed.
-No characters are interpreted as wildcards.
-If the path includes escape characters, enclose it in single quotation marks.
-Single quotation marks tell Windows PowerShell not to interpret any characters as escape sequences.
+
+Specifies the path to the item that is copied to the clipboard. Unlike **Path**, the value of
+**LiteralPath** is used exactly as it is typed. No characters are interpreted as wildcards. If the
+path includes escape characters, enclose it in single quotation marks. Single quotation marks tell
+Windows PowerShell not to interpret any characters as escape sequences.
 
 ```yaml
 Type: String[]
@@ -107,8 +113,8 @@ Accept wildcard characters: False
 ```
 
 ### -Path
-Specifies the path to the item that is copied to the clipboard.
-Wildcard characters are permitted.
+
+Specifies the path to the item that is copied to the clipboard. Wildcard characters are permitted.
 
 ```yaml
 Type: String[]
@@ -119,10 +125,11 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -Value
+
 Specifies, as a string array, the content to copy to the clipboard.
 
 ```yaml
@@ -138,6 +145,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
+
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
@@ -153,8 +161,8 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Shows what would happen if the cmdlet runs.
-The cmdlet is not run.
+
+Shows what would happen if the cmdlet runs. The cmdlet is not run.
 
 ```yaml
 Type: SwitchParameter
@@ -169,7 +177,10 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+-InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
+-WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 

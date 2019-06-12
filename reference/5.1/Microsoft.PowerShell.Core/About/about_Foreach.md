@@ -1,32 +1,30 @@
 ---
-ms.date:  11/28/2017
+ms.date: 2/27/2019
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_Foreach
 ---
-
 # About ForEach
 
-## SHORT DESCRIPTION
-
+## Short description
 Describes a language command you can use to traverse all the items in a
 collection of items.
 
-## LONG DESCRIPTION
+## Long description
 
-The Foreach statement (also known as a Foreach loop) is a language construct
+The `Foreach` statement (also known as a `Foreach` loop) is a language construct
 for stepping through (iterating) a series of values in a collection of items.
 
 The simplest and most typical type of collection to traverse is an array.
-Within a Foreach loop, it is common to run one or more commands against each
+Within a `Foreach` loop, it is common to run one or more commands against each
 item in an array.
 
 ## Syntax
 
-The following shows the ForEach syntax:
+The following shows the `ForEach` syntax:
 
-```syntax
+```
 foreach ($<item> in $<collection>){<statement list>}
 ```
 
@@ -55,7 +53,7 @@ string values `"a"`, `"b"`, `"c"`, and `"d"`. The first time the `Foreach`
 statement runs, it sets the `$letter` variable equal to the first item in
 `$letterArray` (`"a"`). Then, it uses the `Write-Host` cmdlet to display the
 letter a. The next time through the loop, `$letter` is set to `"b"`, and so
-on. After the `Foreach` loop displays the letter d, Windows PowerShell exits
+on. After the `Foreach` loop displays the letter d, PowerShell exits
 the loop.
 
 The entire `Foreach` statement must appear on a single line to run it as a
@@ -159,6 +157,8 @@ variable inside of a foreach script block. The example function can find
 functions in a script even if there are unusually- or inconsistently-spaced
 function definitions that span multiple lines.
 
+For more information, see [Using Enumerators](about_Automatic_Variables.md#using-enumerators).
+
 ```powershell
 function Get-FunctionPosition {
   [CmdletBinding()]
@@ -175,19 +175,23 @@ function Get-FunctionPosition {
   process {
     try {
       $filesToProcess = if ($_ -is [System.IO.FileSystemInfo]) {
+        Write-Verbose "From pipeline"
         $_
       } else {
-        $filesToProcess = Get-Item -Path $Path
+        Write-Verbose "From parameter, $Path"
+        Get-Item -Path $Path
       }
       $parser = [System.Management.Automation.Language.Parser]
+      Write-Verbose "lets start the foreach loop on `$filesToProcess with $($filesToProcess.count) as count"
       foreach ($item in $filesToProcess) {
+        Write-Verbose "$item"
         if ($item.PSIsContainer -or
             $item.Extension -notin @('.ps1', '.psm1')) {
           continue
         }
         $tokens = $errors = $null
-        $ast = $parser::ParseFile($item.FullName, ([REF]$tokens),
-          ([REF]$errors))
+        $parser::ParseFile($item.FullName, ([REF]$tokens),
+          ([REF]$errors)) | Out-Null
         if ($errors) {
           $msg = "File '{0}' has {1} parser errors." -f $item.FullName,
             $errors.Count

@@ -3,7 +3,7 @@ ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=834941
+online version: https://go.microsoft.com/fwlink/?linkid=834941
 external help file:  System.Management.Automation.dll-help.xml
 title:  Clear-Host
 ---
@@ -97,4 +97,6 @@ As such, you cannot use common parameters, such as -Debug, in a Clear-Host comma
 
 [Out-Host](../out-host.md)
 
-[Read-Host. Write-Host]()
+[Read-Host](../../Microsoft.PowerShell.Utility/Read-Host.md)
+
+[Write-Host](../../Microsoft.PowerShell.Utility/Write-Host.md)

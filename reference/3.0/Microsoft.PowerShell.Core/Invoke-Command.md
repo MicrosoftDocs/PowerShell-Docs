@@ -3,7 +3,7 @@ ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkID=135225
+online version: https://go.microsoft.com/fwlink/?linkid=135225
 external help file:  System.Management.Automation.dll-Help.xml
 title:  Invoke-Command
 ---
@@ -197,7 +197,7 @@ The second command uses the Invoke-Command cmdlet to run the command in $command
 PS> Invoke-Command -ComputerName Server01, Server02, TST-0143, localhost -ConfigurationName MySession.PowerShell -ScriptBlock {Get-EventLog "Windows PowerShell"}
 ```
 
-This example demonstrates how to use the** Invoke-Command** cmdlet to run a single command on multiple computers.
+This example demonstrates how to use the **Invoke-Command** cmdlet to run a single command on multiple computers.
 
 The command uses the **ComputerName** parameter to specify the computers.
 The computer names are presented in a comma-separated list.
@@ -369,7 +369,7 @@ PS> Invoke-Command -ConnectionUri https://ps.exchangelabs.com/PowerShell -Script
 
 This command shows how to use the **AllowRedirection** and **SessionOption** parameters to manage URI redirection in a remote command.
 
-The first command uses the New-PSSessionOption cmdlet to create a **PSSessionOpption** object that it saves in the $Max variable.
+The first command uses the New-PSSessionOption cmdlet to create a **PSSessionOption** object that it saves in the $Max variable.
 The command uses the **MaximumRedirection** parameter to set the **MaximumConnectionRedirectionCount** property of the **PSSessionOption** object to 1.
 
 The second command uses the **Invoke-Command** cmdlet to run a **Get-Mailbox** command on a remote server running Microsoft Exchange Server.
@@ -381,13 +381,13 @@ As a result, if the remote computer specified by the **ConnectionURI** parameter
 ### Example 14
 
 ```
-PS> $so = New-PSSessionOption -SkipCACheck -SkipCNCheck –SkipRevocationCheck
+PS> $so = New-PSSessionOption -SkipCACheck -SkipCNCheck -SkipRevocationCheck
 PS> Invoke-Command -ComputerName server01 -UseSSL -ScriptBlock { Get-Hotfix } -SessionOption $so -Credential server01\user01
 ```
 
 This example shows how to create and use a SessionOption parameter.
 
-The first command uses the New-PSSessionOption cmdlet to create session options. These options cause the remote end not to verify the Certificate Authority, Cannonical Name and Revocation Lists while evaluating the incoming HTTPS connection (disabling these checks is convenient for troubleshooting, but obviously not secure).
+The first command uses the New-PSSessionOption cmdlet to create session options. These options cause the remote end not to verify the Certificate Authority, Canonical Name and Revocation Lists while evaluating the incoming HTTPS connection (disabling these checks is convenient for troubleshooting, but obviously not secure).
 It saves the resulting **SessionOption** object in the $so parameter.
 
 The second command uses the **Invoke-Command** cmdlet to run a Get-HotFix command remotely.
@@ -556,7 +556,7 @@ The default value is **Default**.
 
 CredSSP authentication is available only in Windows Vista, Windows Server 2008, and later versions of Windows.
 
-For more information about the values of this parameter, see [AuthenticationMechanism Enumeration](/dotnet/api/system.management.automation.runspaces.authenticationmechanism) in the MSDN library.
+For more information about the values of this parameter, see [AuthenticationMechanism Enumeration](/dotnet/api/system.management.automation.runspaces.authenticationmechanism).
 
 CAUTION: Credential Security Support Provider (CredSSP) authentication, in which the user's credentials are passed to a remote computer to be authenticated, is designed for commands that require authentication on more than one resource, such as accessing a remote network share.
 This mechanism increases the security risk of the remote operation.

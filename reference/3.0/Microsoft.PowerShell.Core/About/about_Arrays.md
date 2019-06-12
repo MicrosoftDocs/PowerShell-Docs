@@ -8,7 +8,6 @@ title:  about_Arrays
 # About Arrays
 
 ## Short Description
-
 Describes arrays, which are data structures designed to store
 collections of items.
 
@@ -43,7 +42,7 @@ $B = 5..8
 
 As a result, $B contains four values: 5, 6, 7, and 8.
 
-When no data type is specified, Windows PowerShell creates each array as an
+When no data type is specified, PowerShell creates each array as an
 object array (type: System.Object[]). To determine the data type of an array,
 use the GetType() method. For example, to determine the data type of the $a
 array, type:
@@ -421,8 +420,8 @@ using `.` notation from any collection.
 To get the properties and methods of an array, such as the Length property and
 the SetValue method, use the InputObject parameter of the Get-Member cmdlet.
 
-When you pipe an array to `Get-Member`, Windows PowerShell sends the items one
-at a time and Get-Member returns the type of each item in the array (ignoring
+When you pipe an array to `Get-Member`, PowerShell sends the items one
+at a time and `Get-Member` returns the type of each item in the array (ignoring
 duplicates).
 
 When you use the *-InputObject* parameter, `Get-Member` returns the members of

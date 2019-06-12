@@ -3,7 +3,7 @@ ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821756
+online version: https://go.microsoft.com/fwlink/?linkid=821756
 external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 title:  Convert-String
 ---
@@ -14,7 +14,7 @@ Formats a string to match examples.
 
 ## SYNTAX
 
-```bnf
+```
 Convert-String [-Example <System.Collections.Generic.List`1[System.Management.Automation.PSObject]>]
  -InputObject <String> [<CommonParameters>]
 ```
@@ -46,14 +46,14 @@ It puts the surname first in the output, followed by an initial.
 ### Example 2: Simplify format of a string
 
 ```powershell
-$composers = @("Johann Sebastian Bach", "Wolfgang Amadeus Mozart", "Frédéric François Chopin", "Johannes Brahms")
+$composers = @("Johann Sebastian Bach", "Wolfgang Amadeus Mozart", "Frederic Francois Chopin", "Johannes Brahms")
 $composers | Convert-String -Example "first middle last=last, first"
 ```
 
 ```output
 Bach, Johann
 Mozart, Wolfgang
-Chopin, Frédéric
+Chopin, Frederic
 Brahms, Johannes
 ```
 
@@ -67,14 +67,14 @@ All middle names removed; entry without middle name is handled correctly.
 ### Example 3: Output management when strings don't match example
 
 ```powershell
-$composers = @("Johann Sebastian Bach", "Wolfgang Amadeus Mozart", "Frédéric François Chopin", "Johannes Brahms")
+$composers = @("Johann Sebastian Bach", "Wolfgang Amadeus Mozart", "Frederic Francois Chopin", "Johannes Brahms")
 $composers | Convert-String -Example "first middle last=middle, first"
 ```
 
 ```output
 Sebastian, Johann
 Amadeus, Wolfgang
-François, Frédéric
+Francois, Frederic
 ```
 
 The first command creates an array that contains first, middle and last names.

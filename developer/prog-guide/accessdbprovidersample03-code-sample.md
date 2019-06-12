@@ -15,7 +15,6 @@ The following code shows the implementation of the Windows PowerShell provider d
 
 > [!NOTE]
 > You can download the C# source file (AccessDBSampleProvider03.cs) for this provider using the Microsoft Windows Software Development Kit for Windows Vista and .NET Framework 3.0 Runtime Components. For download instructions, see [How to Install Windows PowerShell and Download the Windows PowerShell SDK](/powershell/developer/installing-the-windows-powershell-sdk).
-> You can download the C# source file (AccessDBSampleProvider03.cs) for this provider using the Microsoft Windows Software Development Kit for Windows Vista and .NET Framework 3.0 Runtime Components. For download instructions, see [How to Install Windows PowerShell and Download the Windows PowerShell SDK](/powershell/developer/installing-the-windows-powershell-sdk).
 >
 > The downloaded source files are available in the **\<PowerShell Samples>** directory.
 >
@@ -608,7 +607,7 @@ namespace Microsoft.Samples.PowerShell.Providers
 
           try
           {
-              // Create a odbc data adpater. This can be sued to update the
+              // Create a odbc data adapter. This can be sued to update the
               // data source with the records that will be created here
               // using data sets
               string sql = "Select * from " + tableName;

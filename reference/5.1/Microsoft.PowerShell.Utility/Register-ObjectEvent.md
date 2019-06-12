@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Utility
 ms.date: 06/09/2017
-online version: http://go.microsoft.com/fwlink/?LinkId=821845
+online version: https://go.microsoft.com/fwlink/?linkid=821845
 schema: 2.0.0
 title: Register-ObjectEvent
 ---
@@ -265,7 +265,7 @@ Specifies a name that you select for the subscription.
 The name that you select must be unique in the current session.
 The default value is the GUID that Windows PowerShell assigns.
 
-The value of this parameter appears in the value of the SourceIdentifier property of the subcriber object and of all event objects associated with this subscription.
+The value of this parameter appears in the value of the SourceIdentifier property of the subscriber object and of all event objects associated with this subscription.
 
 ```yaml
 Type: String

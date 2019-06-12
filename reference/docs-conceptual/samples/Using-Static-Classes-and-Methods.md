@@ -2,9 +2,9 @@
 ms.date:  06/05/2017
 keywords:  powershell,cmdlet
 title:  Using Static Classes and Methods
-ms.assetid:  418ad766-afa6-4b8c-9a44-471889af7fd9
 ---
 # Using Static Classes and Methods
+
 Not all .NET Framework classes can be created by using **New-Object**. For example, if you try to create a **System.Environment** or a **System.Math** object with **New-Object**, you will get the following error messages:
 
 ```
@@ -23,10 +23,12 @@ At line:1 char:11
 
 These errors occur because there is no way to create a new object from these classes. These classes are reference libraries of methods and properties that do not change state. You don't need to create them, you simply use them. Classes and methods such as these are called *static classes* because they are not created, destroyed, or changed. To make this clear we will provide examples that use static classes.
 
-### Getting Environment Data with System.Environment
+## Getting Environment Data with System.Environment
+
 Usually, the first step in working with an object in Windows PowerShell is to use Get-Member to find out what members it contains. With static classes, the process is a little different because the actual class is not an object.
 
-#### Referring to the Static System.Environment Class
+### Referring to the Static System.Environment Class
+
 You can refer to a static class by surrounding the class name with square brackets. For example, you can refer to **System.Environment** by typing the name within brackets. Doing so displays some generic type information:
 
 ```
@@ -83,7 +85,7 @@ TickCount                               ExitCode
 
 We can now select properties to view from System.Environment.
 
-#### Displaying Static Properties of System.Environment
+### Displaying Static Properties of System.Environment
 
 The properties of System.Environment are also static, and must be specified in a different way than normal properties. We use **::** to indicate to Windows PowerShell that we want to work with a static method or property. To see the command that was used to launch Windows PowerShell, we check the **CommandLine** property by typing:
 
@@ -109,7 +111,7 @@ PS> [System.Environment]::HasShutdownStarted
 False
 ```
 
-### Doing Math with System.Math
+## Doing Math with System.Math
 
 The System.Math static class is useful for performing some mathematical operations. The important members of **System.Math** are mostly methods, which we can display by using **Get-Member**.
 

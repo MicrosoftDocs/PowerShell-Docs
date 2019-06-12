@@ -3,16 +3,15 @@ external help file: Microsoft.PowerShell.Utility-help.xml
 keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 2/4/2019
-online version: http://go.microsoft.com/fwlink/?LinkId=821773
+ms.date: 04/25/2019
+online version: https://go.microsoft.com/fwlink/?linkid=821773
 schema: 2.0.0
 title: Format-Hex
 ---
-
 # Format-Hex
 
 ## SYNOPSIS
-Displays a file or input such as a string, as hexadecimal.
+Displays a file or other input as hexadecimal.
 
 ## SYNTAX
 
@@ -41,8 +40,11 @@ offset of a character from the output, add the number at the leftmost of the row
 the top of the column for that character.
 
 The `Format-Hex` cmdlet can help you determine the file type of a corrupted file or a file that
-might not have a file name extension. You can run this cmdlet, and then read the hexadecimal output
+might not have a filename extension. You can run this cmdlet, and then read the hexadecimal output
 to get file information.
+
+When using `Format-Hex` on a file, the cmdlet ignores newline characters and returns the entire
+contents of a file in one string with the newline characters preserved.
 
 ## EXAMPLES
 
@@ -65,7 +67,8 @@ output from `Format-Hex` shows the values of each character in the string.
 
 ### Example 2: Find a file type from hexadecimal output
 
-This example uses the hexadecimal output to determine the file type.
+This example uses the hexadecimal output to determine the file type. The cmdlet displays the file's
+full path and the hexadecimal values.
 
 To test the following command, make a copy of an existing PDF file on your local computer and rename
 the copied file to **File.t7f**.
@@ -76,7 +79,7 @@ Format-Hex -Path .\File.t7f
 
 ```Output
            Path: C:\Test\File.t7f
-           
+
            00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
 
 00000000   25 50 44 46 2D 31 2E 35 0D 0A 25 B5 B5 B5 B5 0D  %PDF-1.5..%????.
@@ -84,36 +87,34 @@ Format-Hex -Path .\File.t7f
 00000020   65 2F 43 61 74 61 6C 6F 67 2F 50 61 67 65 73 20  e/Catalog/Pages
 ```
 
-The `Format-Hex` cmdlet uses the **Path** parameter to specify a file name in the current directory,
-**File.t7f**. This command displays the file's full path and the hexadecimal values. The file's
-extension **.t7f** is uncommon, but the hexadecimal output **%PDF** shows that it is a PDF file.
+The `Format-Hex` cmdlet uses the **Path** parameter to specify a filename in the current directory,
+**File.t7f**. The file extension **.t7f** is uncommon, but the hexadecimal output **%PDF** shows
+that it is a PDF file.
 
 ## PARAMETERS
 
 ### -Encoding
 
-Specifies the type of encoding for the target file. The default value is **ASCII**.
+Specifies the encoding of the output. This only applies to `[string]` input. The parameter has no
+effect on numeric types. The default value is **ASCII**.
 
 The acceptable values for this parameter are as follows:
 
 - **ASCII** Uses ASCII (7-bit) character set.
 - **BigEndianUnicode** Uses UTF-16 with the big-endian byte order.
-- **BigEndianUTF32** Uses UTF-32 with the big-endian byte order.
-- **Byte** Encodes a set of characters into a sequence of bytes.
-- **Default** Uses the encoding that corresponds to the system's active code page.
-- **OEM** Uses the encoding that corresponds to the system's current OEM code page.
-- **String** Same as **Unicode**.
 - **Unicode** Uses UTF-16 with the little-endian byte order.
-- **Unknown** Same as **Unicode**.
 - **UTF7** Uses UTF-7.
 - **UTF8** Uses UTF-8.
 - **UTF32** Uses UTF-32 with the little-endian byte order.
+
+Non-ASCII characters in the input are output as literal `?` characters resulting in a loss of
+information.
 
 ```yaml
 Type: String
 Parameter Sets: ByInputObject
 Aliases:
-Accepted values: ASCII, BigEndianUnicode, BigEndianUTF32, Byte, Default, OEM, String, Unicode, Unknown, UTF7, UTF8, UTF32
+Accepted values: ASCII, BigEndianUnicode, Unicode, UTF7, UTF8, UTF32
 
 Required: False
 Position: Named
@@ -124,8 +125,15 @@ Accept wildcard characters: False
 
 ### -InputObject
 
-Specifies the objects to be formatted. Enter a variable that contains the objects or type a command
-or expression that gets the objects.
+Used for pipeline input. Pipeline input supports only certain scalar types and `[system.io.fileinfo]`
+instances for piping from `Get-ChildItem`.
+
+The supported scalar types are:
+
+- `[string]`
+- `[byte]`
+- `[int]`, `[int32]`
+- `[long]`, `[int64]`
 
 ```yaml
 Type: Object
@@ -142,9 +150,10 @@ Accept wildcard characters: False
 ### -LiteralPath
 
 Specifies the complete path to a file. The value of **LiteralPath** is used exactly as it is typed.
-This parameter does not accept wildcard characters. If the **LiteralPath** parameter includes escape
-characters, enclose the path in single quotation marks. PowerShell does not interpret any characters
-in a single quoted string as escape sequences. For more information, see [about_Quoting_Rules](../Microsoft.Powershell.Core/About/about_Quoting_Rules.md).
+This parameter does not accept wildcard characters. To specify multiple paths to files, separate the
+paths with a comma. If the **LiteralPath** parameter includes escape characters, enclose the path in
+single quotation marks. PowerShell does not interpret any characters in a single quoted string as
+escape sequences. For more information, see [about_Quoting_Rules](../Microsoft.Powershell.Core/About/about_Quoting_Rules.md).
 
 ```yaml
 Type: String[]
@@ -160,8 +169,10 @@ Accept wildcard characters: False
 
 ### -Path
 
-Specifies the path to a file. Use a dot (`.`) to specify the current location. If the **Path**
-parameter includes escape characters, enclose the path in single quotation marks.
+Specifies the path to files. Use a dot (`.`) to specify the current location. The wildcard character
+(`*`) is accepted and can be used to specify all the items in a location. If the **Path** parameter
+includes escape characters, enclose the path in single quotation marks. To specify multiple paths to
+files, separate the paths with a comma.
 
 ```yaml
 Type: String[]
@@ -172,17 +183,12 @@ Required: True
 Position: 0
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -Raw
 
-Ignores newline characters and returns the entire contents of a file in one string with the newlines
-preserved. By default, newline characters in a file are used as delimiters to separate the input
-into an array of strings. This parameter was introduced in PowerShell 3.0.
-
-**Raw** is a dynamic parameter that the **FileSystem** provider adds and works only in file system
-drives.
+This parameter no longer does anything. It is retained for script compatibility.
 
 ```yaml
 Type: SwitchParameter
@@ -218,6 +224,14 @@ by `Format-Hex`. If you specify the **Path** or **LiteralPath** parameter, the o
 the path of the file that contains each byte.
 
 ## NOTES
+
+The right-most column of output tries to render the bytes as characters:
+
+Generally, each byte is interpreted as a Unicode code point, which means that:
+
+- Printable ASCII characters are always rendered correctly
+- Multi-byte UTF-8 characters never render correctly
+- UTF-16 characters render correctly only if their high-order byte happens be `NUL`.
 
 ## RELATED LINKS
 

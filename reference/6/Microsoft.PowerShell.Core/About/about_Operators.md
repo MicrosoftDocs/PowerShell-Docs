@@ -8,7 +8,6 @@ title:  about_Operators
 # About Operators
 
 ## Short description
-
 Describes the operators that are supported by PowerShell.
 
 ## Long description
@@ -150,8 +149,10 @@ At line:1 char:2
     + FullyQualifiedErrorId : CommandNotFoundException
 ```
 
-The [Invoke-Expression](../../Microsoft.PowerShell.Utility/Invoke-Expression.md) cmdlet can execute code that causes
-parsing errors when using the call operator.
+The
+[Invoke-Expression](../../Microsoft.PowerShell.Utility/Invoke-Expression.md)
+cmdlet can execute code that causes parsing errors when using the call
+operator.
 
 ```
 PS> &"1+1"
@@ -193,12 +194,12 @@ For more about script blocks, see [about_Script_Blocks](about_Script_Blocks.md).
 
 #### Ampersand background operator `&`
 
-Runs the pipeline before it in a PowerShell job.
-The ampersand background operator acts similarly to the UNIX "ampersand operator"
-which famously runs the command before it as a background process.
-The ampersand background operator is built on top of PowerShell jobs so it shares a lot of functionality with
-`Start-Job`.
-The following command contains basic usage of the ampersand background operator.
+Runs the pipeline before it in a PowerShell job. The ampersand background
+operator acts similarly to the UNIX "ampersand operator" which famously runs
+the command before it as a background process. The ampersand background
+operator is built on top of PowerShell jobs so it shares a lot of functionality
+with `Start-Job`. The following command contains basic usage of the ampersand
+background operator.
 
 ```powershell
 Get-Process -Name pwsh &

@@ -53,7 +53,7 @@ The PowerShell help documentation contains several examples of how you can confi
 
 ### Allowing PowerShell cmdlets and functions
 
-To authorize users to run PowerShell cmdlets or functions, add the cmdlet or function name to the VisbibleCmdlets or VisibleFunctions fields.
+To authorize users to run PowerShell cmdlets or functions, add the cmdlet or function name to the VisibleCmdlets or VisibleFunctions fields.
 If you aren't sure whether a command is a cmdlet or function, you can run `Get-Command <name>` and check the "CommandType" property in the output.
 
 ```powershell
@@ -96,7 +96,6 @@ Example                                                                         
 `@{ Name = 'My-Func'; Parameters = @{ Name = 'Param1'; ValidateSet = 'Value1', 'Value2' }}`  | Allows the user to run `My-Func` with the `Param1` parameter. Only "Value1" and "Value2" can be supplied to the parameter.
 `@{ Name = 'My-Func'; Parameters = @{ Name = 'Param1'; ValidatePattern = 'contoso.*' }}`     | Allows the user to run `My-Func` with the `Param1` parameter. Any value starting with "contoso" can be supplied to the parameter.
 
-
 > [!WARNING]
 > For best security practices, it is not recommended to use wildcards when defining visible cmdlets or functions.
 > Instead, you should explicitly list each trusted command to ensure no other commands that share the same naming scheme are unintentionally authorized.
@@ -121,10 +120,10 @@ Many executables allow you to both read the current state and then change it jus
 
 For example, consider the role of a file server admin who wants to check which network shares are hosted by the local machine.
 One way to check is to use `net share`.
-However, allowing net.exe is very dangerous becuase the admin could just as easily use the command to gain admin privileges with `net group Administrators unprivilegedjeauser /add`.
+However, allowing net.exe is very dangerous because the admin could just as easily use the command to gain admin privileges with `net group Administrators unprivilegedjeauser /add`.
 A better approach is to allow [Get-SmbShare](https://technet.microsoft.com/library/jj635704.aspx) which achieves the same result but has a much more limited scope.
 
-When making external commands available to users in a JEA session, always specify the complete path to the executable to ensure a similarly named (and potentially malicous) program placed elsewhere on the system does not get executed instead.
+When making external commands available to users in a JEA session, always specify the complete path to the executable to ensure a similarly named (and potentially malicious) program placed elsewhere on the system does not get executed instead.
 
 ### Allowing access to PowerShell providers
 
@@ -166,7 +165,6 @@ FunctionDefinitions = @{
 > [!IMPORTANT]
 > Don't forget to add the name of your custom functions to the **VisibleFunctions** field so they can be run by the JEA users.
 
-
 The body (script block) of custom functions runs in the default language mode for the system and is not subject to JEA's language constraints.
 This means that functions can access the file system and registry, and run commands that were not made visible in the role capability file.
 Take care to avoid allowing arbitrary code to be run when using parameters and avoid piping user input directly into cmdlets like `Invoke-Expression`.
@@ -180,6 +178,8 @@ Any constrained cmdlet in a JEA session will exhibit the same behavior when invo
 
 If you are writing a lot of custom functions, it may be easier to put them in a [PowerShell Script Module](https://msdn.microsoft.com/library/dd878340(v=vs.85).aspx).
 You can then make those functions visible in the JEA session using the VisibleFunctions field like you would with built-in and third party modules.
+
+For tab completion to work properly in JEA sessions you must include the built-in function `tabexpansion2` in the **VisibleFunctions** list.
 
 ## Place role capabilities in a module
 
@@ -206,14 +206,12 @@ See [Understanding a PowerShell Module](https://msdn.microsoft.com/library/dd878
 
 ## Updating role capabilities
 
-
 You can update a role capability file at any time by simply saving changes to the role capability file.
 Any new JEA sessions started after the role capability has been updated will reflect the revised capabilities.
 
 This is why controlling access to the role capabilities folder is so important.
 Only highly trusted administrators should be able to change role capability files.
 If an untrusted user can change role capability files, they can easily give themselves access to cmdlets which allow them to elevate their privileges.
-
 
 For administrators looking to lock down access to the role capabilities, ensure Local System has read access to the role capability files and containing modules.
 
@@ -251,16 +249,14 @@ $roleB = @{
                      @{ Name = 'Restart-Service'; Parameters = @{ Name = 'DisplayName'; ValidateSet = 'DNS Server' } }
 }
 
-# Resulting permisisons for a user who belongs to both role A and B
-# - The constraint in role B for the DisplayName parameter on Get-Service is ignored becuase of rule #4
+# Resulting permissions for a user who belongs to both role A and B
+# - The constraint in role B for the DisplayName parameter on Get-Service is ignored because of rule #4
 # - The ValidateSets for Restart-Service are merged because both roles use ValidateSet on the same parameter per rule #5
 $mergedAandB = @{
     VisibleCmdlets = 'Get-Service',
                      @{ Name = 'Restart-Service'; Parameters = @{ Name = 'DisplayName'; ValidateSet = 'DNS Client', 'DNS Server' } }
 }
 ```
-
-
 
 **VisibleExternalCommands, VisibleAliases, VisibleProviders, ScriptsToProcess**
 

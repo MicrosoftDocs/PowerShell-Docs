@@ -51,7 +51,7 @@ The [Test-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/Test-
 
 ### SetScript
 
-The `SetScript` modifies the node to enfore the desired state. It is called by DSC if the `TestScript` script block returns `$false`. The `SetScript` should have no return value.
+The `SetScript` modifies the node to enforce the desired state. It is called by DSC if the `TestScript` script block returns `$false`. The `SetScript` should have no return value.
 
 ## Examples
 
@@ -62,7 +62,7 @@ This example tests for the existence of `C:\TempFolder\TestFile.txt` on each nod
 ```powershell
 Configuration ScriptTest
 {
-    Import-DscResource –ModuleName 'PSDesiredStateConfiguration'
+    Import-DscResource -ModuleName 'PSDesiredStateConfiguration'
 
     Node localhost
     {
@@ -89,7 +89,7 @@ $version = Get-Content 'version.txt'
 
 Configuration ScriptTest
 {
-    Import-DscResource –ModuleName 'PSDesiredStateConfiguration'
+    Import-DscResource -ModuleName 'PSDesiredStateConfiguration'
 
     Node localhost
     {

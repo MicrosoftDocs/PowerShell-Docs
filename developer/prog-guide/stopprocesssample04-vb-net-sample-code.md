@@ -15,7 +15,6 @@ Here is the complete VB.NET sample code for the StopProc04 sample cmdlet. This i
 
 > [!NOTE]
 > You can download the VB.NET (stopprocesssample04.vb) source file for this Stop-Proc cmdlet using the Microsoft Windows Software Development Kit for Windows Vista and .NET Framework 3.0 Runtime Components. For download instructions, see [How to Install Windows PowerShell and Download the Windows PowerShell SDK](/powershell/developer/installing-the-windows-powershell-sdk).
-> You can download the VB.NET (stopprocesssample04.vb) source file for this Stop-Proc cmdlet using the Microsoft Windows Software Development Kit for Windows Vista and .NET Framework 3.0 Runtime Components. For download instructions, see [How to Install Windows PowerShell and Download the Windows PowerShell SDK](/powershell/developer/installing-the-windows-powershell-sdk).
 >
 > The downloaded source files are available in the **\<PowerShell Samples>** directory.
 
@@ -253,9 +252,9 @@ ContinueForEach1:
                     "Are you sure you wish to stop the process?", processName)
 
                 ' It is possible that ProcessRecord is called multiple
-                ' when objects are recieved as inputs from a pipeline.
+                ' when objects are received as inputs from a pipeline.
                 ' So, to retain YesToAll and NoToAll input that the
-                ' user may enter across mutilple calls to this
+                ' user may enter across multiple calls to this
                 ' function, they are stored as private members of the
                 ' Cmdlet.
                 If Not ShouldContinue(message, "Warning!", yesToAll, noToAll) Then

@@ -1,9 +1,9 @@
-﻿---
+---
 ms.date:  12/21/2018
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkID=135201
+online version: https://go.microsoft.com/fwlink/?linkid=135201
 external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 title:  ConvertFrom-Csv
 ---

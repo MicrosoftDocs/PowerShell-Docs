@@ -5,11 +5,9 @@ locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_Do
 ---
-
 # About Do
 
 ## SHORT DESCRIPTION
-
 Runs a statement list one or more times, subject to a While or Until
 condition.
 
@@ -45,7 +43,7 @@ The following shows the syntax of the **Do-Until** statement:
 do {<statement list>} until (<condition>)
 ```
 
-The statment list contains one or more statements that run each time the
+The statement list contains one or more statements that run each time the
 loop is entered or repeated.
 
 The condition portion of the statement resolves to true or false.

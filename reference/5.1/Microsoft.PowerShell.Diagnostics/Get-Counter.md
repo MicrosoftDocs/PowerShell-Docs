@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Diagnostics
 ms.date: 06/09/2017
-online version: http://go.microsoft.com/fwlink/?LinkId=821528
+online version: https://go.microsoft.com/fwlink/?linkid=821528
 schema: 2.0.0
 title: Get-Counter
 ---
@@ -376,7 +376,7 @@ Specifies the number of samples to get from each counter.
 The default is 1 sample.
 To get samples continuously, use the *Continuous* parameter.
 
-To collect a very large data set, consider running a **Get-Counter** cmdlet as a Windows PowerShelll background job.
+To collect a very large data set, consider running a **Get-Counter** cmdlet as a Windows PowerShell background job.
 For more information, see [about_Jobs](../Microsoft.PowerShell.Core/About/about_Jobs.md) and the Start-Job.
 
 ```yaml

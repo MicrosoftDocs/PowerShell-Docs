@@ -1,9 +1,9 @@
-﻿---
+---
 ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/p/?linkid=289578
+online version: https://go.microsoft.com/fwlink/?linkid=289578
 external help file:  System.Management.Automation.dll-Help.xml
 title:  Enter-PSSession
 ---
@@ -91,7 +91,7 @@ The first command uses the Enter-PSSession cmdlet to start an interactive sessio
 ```powershell
 Enter-PSSession -ComputerName Server01
 [Server01]: PS C:\>
-[Server01]: PS> Get-Process Powershell > C:\ps-test\Process.txt
+[Server01]: PS> Get-Process PowerShell > C:\ps-test\Process.txt
 [Server01]: PS> exit
 PS C:\>
 ```

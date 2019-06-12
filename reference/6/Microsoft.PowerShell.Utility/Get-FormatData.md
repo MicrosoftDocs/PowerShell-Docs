@@ -4,11 +4,10 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Utility
 ms.date: 06/09/2017
-online version: http://go.microsoft.com/fwlink/?LinkId=821790
+online version: https://go.microsoft.com/fwlink/?linkid=821790
 schema: 2.0.0
 title: Get-FormatData
 ---
-
 # Get-FormatData
 
 ## SYNOPSIS
@@ -21,6 +20,7 @@ Get-FormatData [[-TypeName] <String[]>] [-PowerShellVersion <Version>] [<CommonP
 ```
 
 ## DESCRIPTION
+
 The **Get-FormatData** cmdlet gets the formatting data in the current session.
 
 The formatting data in the session includes formatting data from Format.ps1xml formatting files, such as those in the $pshome directory, formatting data for modules that you import into the session, and formatting data for commands that you import into your session by using the Import-PSSession cmdlet.
@@ -33,6 +33,7 @@ For more information about formatting files in PowerShell, see about_Format.ps1x
 ## EXAMPLES
 
 ### Example 1: Get all formatting data
+
 ```
 PS C:\> Get-FormatData
 ```
@@ -40,6 +41,7 @@ PS C:\> Get-FormatData
 This command gets all the formatting data in the session.
 
 ### Example 2: Get formatting data by type name
+
 ```powershell
 PS C:\> Get-FormatData -TypeName 'System.Management.Automation.Cmd*'
 ```
@@ -47,6 +49,7 @@ PS C:\> Get-FormatData -TypeName 'System.Management.Automation.Cmd*'
 This command gets the formatting data items whose names begin with System.Management.Automation.Cmd*.
 
 ### Example 3: Examine a formatting data object
+
 ```powershell
 PS C:\> $F = Get-FormatData -TypeName 'System.Management.Automation.Cmd*'
 PS C:\> $F
@@ -88,6 +91,7 @@ Source      Undefined     0
 This example shows how to get a formatting data object and examine its properties.
 
 ### Example 4: Get formatting data and export it
+
 ```powershell
 PS C:\> $A = Get-FormatData
 PS C:\> Import-Module bitstransfer
@@ -121,6 +125,7 @@ It uses a pipeline operator (|) to send the format type object to the Export-For
 The final command shows an excerpt of the format.ps1xml file content.
 
 ### Example 5: Get formatting data based on the specified version of PowerShell
+
 ```powershell
 PS C:\> Get-FormatData -TypeName 'Microsoft.Powershell.Utility.FileHash' -PowerShellVersion 1.0
 
@@ -171,6 +176,7 @@ specified PowerShell version.
 ## PARAMETERS
 
 ### -PowerShellVersion
+
 Specify the version of PowerShell this cmdlet gets for the formatting data.
 Enter a two digit number seperated by a period.
 
@@ -187,6 +193,7 @@ Accept wildcard characters: False
 ```
 
 ### -TypeName
+
 Specifies the type names that this cmdlet gets for the formatting data.
 Enter the type names.
 Wildcards are permitted.
@@ -204,11 +211,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### None
+
 You cannot pipe input to this cmdlet.
 
 ## OUTPUTS

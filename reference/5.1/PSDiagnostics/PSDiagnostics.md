@@ -1,19 +1,19 @@
 ---
-ms.date:  11/27/2018
-schema:  2.0.0
-locale:  en-US
-keywords:  powershell,cmdlet
+ms.date: 11/27/2018
+schema: 2.0.0
+Locale: en-US
+keywords: powershell,cmdlet
 Help Version:  5.1.0.1
-Download Help Link:  https://go.microsoft.com/fwlink/?linkid=855965
-Module Guid:  c61d6278-02a3-4618-ae37-a524d40a7f44
-Module Name:  PSDiagnostics
+Download Help Link: https://go.microsoft.com/fwlink/?linkid=855965
+Module Guid: c61d6278-02a3-4618-ae37-a524d40a7f44
+Module Name: PSDiagnostics
+title: PSDiagnostics Module
 ---
-
 # PSDiagnostics Module
 
 ## Description
 
-The Windows PowerShell Diagnostics Module contains a set of cmdlets that enables the use of ETW
+The PowerShell Diagnostics Module contains a set of cmdlets that enables the use of ETW
 tracing in PowerShell on Windows.
 
 ## PSDiagnostics Cmdlets

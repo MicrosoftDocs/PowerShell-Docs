@@ -2,7 +2,6 @@
 ms.date:  06/05/2017
 keywords:  powershell,cmdlet
 title:  How to Use Profiles in Windows PowerShell ISE
-ms.assetid:  0219626a-6da5-4acc-b630-d058e8b29cc6
 ---
 # How to Use Profiles in Windows PowerShell ISE
 

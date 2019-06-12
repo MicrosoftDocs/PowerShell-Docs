@@ -101,7 +101,7 @@ When you name cmdlets, do not use any of the following special characters.
 |%|percent sign|
 |+|plus sign|
 |=|equals sign|
-|~|tilda|
+|~|tilde|
 
 ### Parameters Names that cannot be Used (RD03)
 
@@ -116,9 +116,9 @@ To make these calls the cmdlet must specify that it supports confirmation reques
 > [!NOTE]
 > If the Cmdlet attribute of the cmdlet class indicates that the cmdlet supports calls to the [System.Management.Automation.Cmdlet.ShouldProcess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) method, and the cmdlet fails to make the call to the [System.Management.Automation.Cmdlet.ShouldProcess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) method, the user could modify the system unexpectedly.
 
-Use the [System.Management.Automation.Cmdlet.ShouldProcess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) method for any system modification. A user preference and the `Whatif` parameter control the [System.Management.Automation.Cmdlet.ShouldProcess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) method. In contrast, the [System.Management.Automation.Cmdlet.ShouldContinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) call performs an additional check for potentially dangerous modifications. This method is not controlled by any user preference or the `Whatif` parameter. If your cmdlet calls the [System.Management.Automation.Cmdlet.ShouldContinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) method, it should have a `Force` parameter that bypasses the calls to these two methods and that proceeds with the operation. This is important because it allows your cmdlet to be used in non-interactive scripts and hosts.
+Use the [System.Management.Automation.Cmdlet.ShouldProcess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) method for any system modification. A user preference and the `WhatIf` parameter control the [System.Management.Automation.Cmdlet.ShouldProcess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) method. In contrast, the [System.Management.Automation.Cmdlet.ShouldContinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) call performs an additional check for potentially dangerous modifications. This method is not controlled by any user preference or the `WhatIf` parameter. If your cmdlet calls the [System.Management.Automation.Cmdlet.ShouldContinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) method, it should have a `Force` parameter that bypasses the calls to these two methods and that proceeds with the operation. This is important because it allows your cmdlet to be used in non-interactive scripts and hosts.
 
-If your cmdlets support these calls, the user can determine whether the action should actually be performed. For example, the [Stop-Process](/powershell/module/microsoft.powershell.management/stop-process) cmdlet calls the [System.Management.Automation.Cmdlet.ShouldContinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) method before it stops a set of critical processes, including the System, Winlogon, and Spoolsrv processes.
+If your cmdlets support these calls, the user can determine whether the action should actually be performed. For example, the [Stop-Process](/powershell/module/microsoft.powershell.management/stop-process) cmdlet calls the [System.Management.Automation.Cmdlet.ShouldContinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) method before it stops a set of critical processes, including the System, Winlogon, and Spoolsv processes.
 
 For more information about supporting these methods, see [Requesting Confirmation](./requesting-confirmation-from-cmdlets.md).
 
@@ -209,7 +209,7 @@ Create a Windows PowerShell module to package and deploy your cmdlets. Support f
 
 ## See Also
 
-[Strongly Encouraged Developement Guidelines](./strongly-encouraged-development-guidelines.md)
+[Strongly Encouraged Development Guidelines](./strongly-encouraged-development-guidelines.md)
 
 [Advisory Development Guidelines](./advisory-development-guidelines.md)
 

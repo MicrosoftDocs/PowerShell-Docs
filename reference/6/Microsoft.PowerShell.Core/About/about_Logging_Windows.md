@@ -5,7 +5,6 @@ locale:  en-us
 keywords:  powershell
 title:  about_Logging-Windows
 ---
-
 # About Logging
 
 ## Short Description
@@ -51,18 +50,21 @@ Registering the event provider places a lock in the binary library used to
 decode events. To update this library, the provider must be unregistered to
 release this lock.
 
-To unregister the PowerShell provider, run the following command from an elevated PowerShell prompt.
+To unregister the PowerShell provider, run the following command from an
+elevated PowerShell prompt.
 
 ```powershell
 $PSHOME\RegisterManifest.ps1 -Unregister
 ```
 
-After updating PowerShell, run `$PSHOME\RegisterManifest.ps1` to register the updated event provider.
+After updating PowerShell, run `$PSHOME\RegisterManifest.ps1` to register the
+updated event provider.
 
 ## Enabling Script Block Logging
 
 When you enable script block logging, PowerShell records the content of all
-script blocks that it processes. Once enabled, any new PowerShell session logs this information.
+script blocks that it processes. Once enabled, any new PowerShell session logs
+this information.
 
 > [!NOTE]
 > It is recommended to enable Protected Event Logging (as described below) when

@@ -40,7 +40,7 @@ This example shows how to invoke a script that is supplied to a cmdlet.
 These examples show the basic structure used to override the BeginProcessing, ProcessRecord, and EndProcessing methods.
 
 [How to Support ShouldProcess Calls](./how-to-request-confirmations.md)
-This example shows how the [System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) and [System.Management.Automation.Cmdlet.Shouldcontinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) methods should be called from within a cmdlet.
+This example shows how the [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) and [System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) methods should be called from within a cmdlet.
 
 [How to Support Transactions](./how-to-support-transactions.md)
 This example shows how to indicate that the cmdlet supports transactions and how to implement the action that is taken when the cmdlet is used within a transaction.

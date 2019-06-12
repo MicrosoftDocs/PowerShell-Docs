@@ -5,6 +5,7 @@ locale: en-us
 Module Name: CimCmdlets
 ms.date: 06/09/2017
 schema: 2.0.0
+title: New-CimInstance
 ---
 
 # New-CimInstance
@@ -62,8 +63,8 @@ By default, the New-CimInstance cmdlet creates an instance on the local computer
 ## EXAMPLES
 
 ### Example 1: Create an instance of a CIM class
-```
-PS C:\>New-CimInstance -ClassName Win32_Environment -Property @{Name="testvar";VariableValue="testvalue";UserName="domain\user"}
+```powershell
+New-CimInstance -ClassName Win32_Environment -Property @{Name="testvar";VariableValue="testvalue";UserName="domain\user"}
 ```
 
 This command creates an instance of a CIM Class named win32_environment in the root/cimv2 namespace on the computer.
@@ -73,26 +74,26 @@ No client side validation is performed if the class does not exist, the properti
 If the instance is created successfully, then the New-CimInstance cmdlet outputs the newly created instance.
 
 ### Example 2: Create an instance of a CIM class using a class schema
-```
-PS C:\>$class = Get-CimClass -ClassName Win32_Environment
+```powershell
+$class = Get-CimClass -ClassName Win32_Environment
 
 
 
-PS C:\>New-CimInstance -CimClass $class -Property @{Name="testvar";VariableValue="testvalue";UserName="Contoso\User1"}
+New-CimInstance -CimClass $class -Property @{Name="testvar";VariableValue="testvalue";UserName="Contoso\User1"}
 ```
 
 This set of commands retrieves a CIM class object and stores it in a variable named $class using the Get-CimClass cmdlet.
 The contents of the variable are then passed to the New-CimInstance cmdlet.
 
 ### Example 3: Create a dynamic instance on the client
-```
-PS C:\>$a = New-CimInstance -ClassName Win32_Process -Property @{Handle=0} -Key Handle -ClientOnly
+```powershell
+$a = New-CimInstance -ClassName Win32_Process -Property @{Handle=0} -Key Handle -ClientOnly
 
 
-PS C:\>Get-CimInstance -CimInstance $a
+Get-CimInstance -CimInstance $a
 
 
-PS C:\>Invoke-CimMethod -CimInstance $a -MethodName GetOwner
+Invoke-CimMethod -CimInstance $a -MethodName GetOwner
 ```
 
 This set of commands creates a dynamic instance of a CIM class named win32_Process on the client computer without getting the instance from the server.
@@ -102,12 +103,12 @@ The Get-CimInstance cmdlet then retrieves a particular single instance, and invo
 This dynamic instance can be used to perform operations if the instance with this key exists on the server.
 
 ### Example 4: Create an instance for a CIM class of a specific namespace
-```
-PS C:\>$class = Get-CimClass -ClassName MSFT_Something -Namespace root/somewhere
+```powershell
+$class = Get-CimClass -ClassName MSFT_Something -Namespace root/somewhere
 
 
 
-PS C:\>New-CimInstance -CimClass $class -Property @{"Prop1"=1;"Prop2"="value"} -ClientOnly
+New-CimInstance -CimClass $class -Property @{"Prop1"=1;"Prop2"="value"} -ClientOnly
 ```
 
 This set of commands gets an instance of a CIM class named MSFT_Something in the namespace root/somewhere and stores it in a variable named $class using the Get-CimClass cmdlet.

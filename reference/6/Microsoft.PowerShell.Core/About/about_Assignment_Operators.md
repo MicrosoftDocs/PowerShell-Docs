@@ -4,11 +4,9 @@ schema:  2.0.0
 keywords:  powershell,cmdlet
 title:  about_Assignment_Operators
 ---
-
 # About Assignment Operators
 
 ## SHORT DESCRIPTION
-
 Describes how to use operators to assign values to variables.
 
 ## LONG DESCRIPTION
@@ -676,8 +674,7 @@ $a.GetType().FullName
 System.String
 ```
 
-If the first value that is assigned to the variable is a string, Windows
-PowerShell treats all operations as string operations and casts new values
+If the first value that is assigned to the variable is a string, PowerShell treats all operations as string operations and casts new values
 to strings. This occurs in the following example:
 
 ```powershell

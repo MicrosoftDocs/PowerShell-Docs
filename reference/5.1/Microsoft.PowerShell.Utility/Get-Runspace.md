@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Utility
 ms.date: 06/09/2017
-online version: http://go.microsoft.com/fwlink/?LinkId=821801
+online version: https://go.microsoft.com/fwlink/?linkid=821801
 schema: 2.0.0
 title: Get-Runspace
 ---
@@ -86,7 +86,7 @@ Id Name            ComputerName    Type          State         Availability
 
 In this example, we identify an available runspace using the `Name` parameter and we store the return object to a new
 variable named `$activeRunspace`.  The second example, we call `Get-Runspace` with the `InstanceId` parameter and pass
-in the `$activeRunspace` variable but we specify the `InstanceId` property on our reuturn object.
+in the `$activeRunspace` variable but we specify the `InstanceId` property on our return object.
 
 ## PARAMETERS
 

@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Utility
 ms.date: 06/09/2017
-online version: http://go.microsoft.com/fwlink/?LinkId=821779
+online version: https://go.microsoft.com/fwlink/?linkid=821779
 schema: 2.0.0
 title: Get-Culture
 ---
@@ -140,6 +140,6 @@ You cannot pipe input to this cmdlet.
 
 ## RELATED LINKS
 
-[Set-Culture]()
+[Set-Culture](/powershell/module/internationalcmdlets/set-culture)
 
 [Get-UICulture](Get-UICulture.md)

@@ -8,7 +8,6 @@ title:  about_Redirection
 # About Redirection
 
 ## Short description
-
 Explains how to redirect output from PowerShell to text files.
 
 ## Long description
@@ -28,7 +27,7 @@ You can use the following methods to redirect output:
 
 - Use the PowerShell redirection operators.
 
-### Powershell redirection operators
+### PowerShell redirection operators
 
 The redirection operators enable you to send streams of data to a file or the
 **Success** output stream.
@@ -119,7 +118,9 @@ file called `script.log`
 ```
 
 This example suppresses all information stream data. To read more about
-**Information** stream cmdlets, see [Write-Host](../../microsoft.powershell.utility/Write-Host.md) and [Write-Information](../../microsoft.powershell.utility/Write-Information.md)
+**Information** stream cmdlets, see
+[Write-Host](../../microsoft.powershell.utility/Write-Host.md) and
+[Write-Information](../../microsoft.powershell.utility/Write-Information.md)
 
 ## Notes
 
@@ -140,16 +141,20 @@ with its `Encoding` parameter.
 
 ### Potential confusion with comparison operators
 
-The `>` operator is not to be confused with the [Greater-than](about_Comparison_Operators.md#-gt) comparison operator (often denoted as `>` in other programming languages).
+The `>` operator is not to be confused with the
+[Greater-than](about_Comparison_Operators.md#-gt) comparison operator (often
+denoted as `>` in other programming languages).
 
-Depending on the objects being compared, the output using `>` can appear to be correct (because 36 is not greater than 42).
+Depending on the objects being compared, the output using `>` can appear to be
+correct (because 36 is not greater than 42).
 
 ```powershell
 PS> if (36 > 42) { "true" } else { "false" }
 false
 ```
 
-However, a check of the local filesystem can see that a file called `42` was written, with the contents `36`.
+However, a check of the local filesystem can see that a file called `42` was
+written, with the contents `36`.
 
 ```powershell
 PS> dir
@@ -174,7 +179,8 @@ The '<' operator is reserved for future use.
 + FullyQualifiedErrorId : RedirectionNotSupported
 ```
 
-If numeric comparison is the required operation, `-lt` and `-gt` should be used. See: [`-gt` Comparison Operator](about_Comparison_Operators.md#-gt)
+If numeric comparison is the required operation, `-lt` and `-gt` should be
+used. See: [`-gt` Comparison Operator](about_Comparison_Operators.md#-gt)
 
 ## See also
 

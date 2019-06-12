@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: PowerShellGet
 ms.date: 06/09/2017
-online version: http://go.microsoft.com/fwlink/?LinkId=821669
+online version: https://go.microsoft.com/fwlink/?linkid=821669
 schema: 2.0.0
 title: Save-Module
 ---
@@ -102,7 +102,7 @@ The final command displays the contents of the C:\MyLocalModules folder.
 ## PARAMETERS
 
 ### -AcceptLicense
-{{Fill AcceptLicense Description}}
+Automatically accept the license agreement during installation if the package requires it.
 
 ```yaml
 Type: SwitchParameter
@@ -161,7 +161,7 @@ Accept wildcard characters: False
 ```
 
 ### -InputObject
-{{Fill InputObject Description}}
+Specifies a package by using the module's SoftwareID object, which is shown in the results of the Find-Module cmdlet.
 
 ```yaml
 Type: PSObject[]

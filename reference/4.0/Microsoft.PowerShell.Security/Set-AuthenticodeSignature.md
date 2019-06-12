@@ -3,7 +3,7 @@ ms.date:  02/19/2019
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/p/?linkid=293940
+online version: https://go.microsoft.com/fwlink/?linkid=293940
 external help file:  Microsoft.PowerShell.Security.dll-Help.xml
 title:  Set-AuthenticodeSignature
 ---
@@ -161,7 +161,7 @@ PowerShell 2.0, the default is SHA1. Files that are signed with a different hash
 not be recognized on other systems. Which algorithms are supported depends on the version of the
 operating system.
 
-For a list of possible values, see [HashAlgorithmName Struct ](/dotnet/api/system.security.cryptography.hashalgorithmname?view=netframework-4.7.2#properties).
+For a list of possible values, see [HashAlgorithmName Struct](/dotnet/api/system.security.cryptography.hashalgorithmname?view=netframework-4.7.2#properties).
 
 ```yaml
 Type: String

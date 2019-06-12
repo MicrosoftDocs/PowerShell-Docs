@@ -21,7 +21,7 @@ topic also provides links to more information about WS-Management. The
 Microsoft implementation of WS-Management is also known as Windows Remote
 Management (WinRM).
 
-### About WS-Management
+## About WS-Management
 
 Windows Remote Management is the Microsoft implementation of the WS-Management
 protocol, a standard SOAP-based, firewall-friendly protocol that allows
@@ -36,7 +36,7 @@ The WS-Management protocol is based on the following standard Web service
 specifications: HTTPS, SOAP over HTTP (WS-I profile), SOAP 1.2, WS-Addressing,
 WS-Transfer, WS-Enumeration, and WS-Eventing.
 
-### WS-Management and WMI
+## WS-Management and WMI
 
 WS-Management can be used to retrieve data exposed by Windows Management
 Instrumentation (WMI). You can obtain WMI data with scripts or applications
@@ -49,13 +49,13 @@ services, or processes in your enterprise through the existing set of WMI
 classes. You can also access the hardware data that is available from the
 standard WMI IPMI provider.
 
-### WS-Management Windows PowerShell Provider (WSMan)
+## WS-Management Windows PowerShell Provider (WSMan)
 
 The WSMan provider provides a hierarchical view into the available
 WS-Management configuration settings. The provider allows you to explore and
 set the various WS-Management configuration options.
 
-### WS-Management Configuration
+## WS-Management Configuration
 
 If WS-Management is not installed and configured, Windows PowerShell remoting
 is not available, the WS-Management cmdlets do not run, WS-Management scripts
@@ -63,7 +63,7 @@ do not run, and the WSMan provider cannot perform data operations. The
 WS-Management command-line tool, WinRM, and event forwarding also depend on
 the WS-Management configuration.
 
-### WS-Management Cmdlets
+## WS-Management Cmdlets
 
 WS-Management functionality is implemented in Windows PowerShell through a
 module that contains a set of cmdlets and the WSMan provider. You can use
@@ -72,7 +72,7 @@ WS-Management settings on local and remote computers.
 
 The following WS-Management cmdlets are available.
 
-### Connection Cmdlets
+## Connection Cmdlets
 
 - Connect-WSMan: Connects the local computer to the WS-Management (WinRM)
   service on a remote computer.
@@ -80,7 +80,7 @@ The following WS-Management cmdlets are available.
 - Disconnect-WSMan: Disconnects the local computer from the WS-Management
   (WinRM) service on a remote computer.
 
-### Management-Data Cmdlets
+## Management-Data Cmdlets
 
 - Get-WSManInstance: Displays management information for a resource instance
   that is specified by a resource URI.
@@ -95,7 +95,7 @@ The following WS-Management cmdlets are available.
 - Set-WSManInstance: Modifies the management information that is related to a
   resource.
 
-### Setup and Configuration Cmdlets
+## Setup and Configuration Cmdlets
 
 - Set-WSManQuickConfig: Configures the local computer for remote management.
   You can use the Set-WSManQuickConfig cmdlet to configure WS-Management to
@@ -124,42 +124,33 @@ The following WS-Management cmdlets are available.
 - Get-WSManCredSSP: Gets the CredSSP-related configuration for a client
   computer.
 
-### WS-Management-Specific Cmdlets
+## WS-Management-Specific Cmdlets
 
 - New-WSManSessionOption: Creates a WSManSessionOption object to use as input
   to one or more parameters of a WS-Management cmdlet.
 
-### Additional WS-Management Information
+## Additional WS-Management Information
 
 For more information about WS-Management, see the following topics in the
 MSDN (Microsoft Developer Network) library.
 
-"Windows Remote Management"
-http://go.microsoft.com/fwlink/?LinkId=142321
+[Windows Remote Management](http://go.microsoft.com/fwlink/?LinkId=142321)
 
-"About Windows Remote Management"
-http://go.microsoft.com/fwlink/?LinkId=142322
+[About Windows Remote Management](http://go.microsoft.com/fwlink/?LinkId=142322)
 
-"Installation and Configuration for Windows Remote Management"
-http://go.microsoft.com/fwlink/?LinkId=142323
+[Installation and Configuration for Windows Remote Management](http://go.microsoft.com/fwlink/?LinkId=142323)
 
-"Windows Remote Management Architecture"
-http://go.microsoft.com/fwlink/?LinkId=142324
+[Windows Remote Management Architecture](http://go.microsoft.com/fwlink/?LinkId=142324)
 
-"WS-Management Protocol"
-http://go.microsoft.com/fwlink/?LinkId=142325
+[WS-Management Protocol](http://go.microsoft.com/fwlink/?LinkId=142325)
 
-"Windows Remote Management and WMI"
-http://go.microsoft.com/fwlink/?LinkId=142326
+[Windows Remote Management and WMI](http://go.microsoft.com/fwlink/?LinkId=142326)
 
-"Resource URIs"
-http://go.microsoft.com/fwlink/?LinkId=142327
+[Resource URIs](http://go.microsoft.com/fwlink/?LinkId=142327)
 
-"Remote Hardware Management"
-http://go.microsoft.com/fwlink/?LinkId=142328
+[Remote Hardware Management](http://go.microsoft.com/fwlink/?LinkId=142328)
 
-"Events"
-http://go.microsoft.com/fwlink/?LinkId=142329
+[Events](http://go.microsoft.com/fwlink/?LinkId=142329)
 
 ## SEE ALSO
 
@@ -186,9 +177,3 @@ http://go.microsoft.com/fwlink/?LinkId=142329
 [Set-WSManQuickConfig](../../Microsoft.WSMan.Management/Set-WSManQuickConfig.md)
 
 [Test-WSMan](../../Microsoft.WSMan.Management/Test-WSMan.md)
-
-# KEYWORDS
-
-about_WSMAN
-
-about_WinRM

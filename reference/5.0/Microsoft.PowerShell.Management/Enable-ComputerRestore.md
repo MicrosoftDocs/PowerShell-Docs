@@ -3,7 +3,7 @@ ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821579
+online version: https://go.microsoft.com/fwlink/?linkid=821579
 external help file:  Microsoft.PowerShell.Commands.Management.dll-Help.xml
 title:  Enable-ComputerRestore
 ---
@@ -122,7 +122,7 @@ This cmdlet does not generate any output.
 
 ## NOTES
 
-* To run this cmdlet on Windows Vistaand later versions of Windows, open Windows PowerShell with the Run as administrator option.
+* To run this cmdlet on Windows Vista and later versions of Windows, open Windows PowerShell with the Run as administrator option.
 
   To find the file system drives that are eligible for system restore, in System in Control Panel, see the System Protection tab.
 To open this tab in Windows PowerShell, type `SystemPropertiesProtection`.
