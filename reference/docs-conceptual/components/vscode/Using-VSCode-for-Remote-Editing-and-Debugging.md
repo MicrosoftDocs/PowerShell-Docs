@@ -72,7 +72,7 @@ The watered down explanation of the cmdlet is:
 
 For more information, see the documentation for [Enter-PSSession](/powershell/module/microsoft.powershell.core/enter-pssession).
 
-Since we going from macOS to an Ubuntu VM in Azure, we are using SSH for remoting.
+Since we are going from macOS to an Ubuntu VM in Azure, we are using SSH for remoting.
 
 First, in the Integrated Console, run `Enter-PSSession`. You're connected to the remote session
 when `[<hostname>]` shows up to the left of your prompt.
