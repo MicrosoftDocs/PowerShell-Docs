@@ -5,7 +5,7 @@ ms.date: 08/06/2018
 ---
 # Using Visual Studio Code for remote editing and debugging
 
-For those of you that were familiar with the ISE, you may recall that you could run
+For those of you that are familiar with the ISE, you may recall that you could run
 `psedit file.ps1` from the integrated console to open files - local or remote - right in the ISE.
 
 This feature is also available in the PowerShell extension for VSCode. This guide shows you how to
@@ -93,4 +93,4 @@ Now, we can do the same steps as if we are editing a local script.
 
    ![debugging the remote file](images/Using-VSCode-for-Remote-Editing-and-Debugging/7-start-debugging.png)
 
-If you have any problems, you can open issues in the [GitHub repo](http://github.com/powershell/vscode-powershell).
+If you have any problems, you can open issues in the [GitHub repo](https://github.com/powershell/vscode-powershell).
