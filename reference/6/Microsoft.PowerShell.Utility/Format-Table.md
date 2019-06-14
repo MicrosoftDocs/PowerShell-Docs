@@ -3,7 +3,7 @@ external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 03/01/2018
+ms.date: 06/14/2019
 online version: https://go.microsoft.com/fwlink/?linkid=821775
 schema: 2.0.0
 title: Format-Table
@@ -318,11 +318,12 @@ one or more property names (separated by commas), or use a hash table to display
 property. Wildcards are permitted.
 
 If you omit this parameter, the properties that appear in the display depend on the first object's
-properties. For example, if the first object has "PropertyA" and "PropertyB" but subsequent objects 
-have "PropertyA", "PropertyB" and "PropertyC" only "PropertyA" and "PropertyB" headers will display.
+properties. For example, if the first object has **PropertyA** and **PropertyB** but subsequent
+objects have **PropertyA**, **PropertyB** and **PropertyC** only **PropertyA** and **PropertyB**
+headers will display.
 
-The parameter name "Property" is optional. You cannot use the **Property** and
-**View** parameters in the same command.
+The parameter name **Property** is optional. You cannot use the **Property** and **View** parameters
+in the same command.
 
 The value of the **Property** parameter can be a new calculated property. To create a calculated
 property, use a hash table. Valid keys are:
