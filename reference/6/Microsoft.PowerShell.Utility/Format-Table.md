@@ -317,8 +317,11 @@ Specifies the object properties that appear in the display and the order in whic
 one or more property names (separated by commas), or use a hash table to display a calculated
 property. Wildcards are permitted.
 
-If you omit this parameter, the properties that appear in the display depend on the object being
-displayed. The parameter name "Property" is optional. You cannot use the **Property** and
+If you omit this parameter, the properties that appear in the display depend on the first object's
+properties. For example, if the first object has "PropertyA" and "PropertyB" but subsequent objects 
+have "PropertyA", "PropertyB" and "PropertyC" only "PropertyA" and "PropertyB" headers will display.
+
+The parameter name "Property" is optional. You cannot use the **Property** and
 **View** parameters in the same command.
 
 The value of the **Property** parameter can be a new calculated property. To create a calculated
