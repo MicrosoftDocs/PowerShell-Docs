@@ -24,8 +24,8 @@ This section describes what cmdlets are and how they work.
 [Examples of Cmdlet Code](./examples-of-cmdlet-code.md)
 This section contains example code that you can use to start writing your own cmdlets.
 
-[Examples of Formatting Cmdlet Output](../format/examples-of-formatting-files.md)
-This section contains examples that demonstrate how to format cmdlet output.
+[Examples of Formatting Cmdlet Output](../format/writing-a-powershell-formatting-file.md)
+This section describe how to create formatting files. Formatting files define how PowerShell displays objects at the command line.
 
 [Tutorials for Writing Cmdlets](./tutorials-for-writing-cmdlets.md)
 This section contains tutorials that you can use to learn about the fundamentals behind the cmdlet code.
