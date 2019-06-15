@@ -11,18 +11,23 @@ caps.latest.revision: 5
 ---
 # Creating an InitialSessionState
 
-Windows PowerShell commands run in a runspace. To host Windows PowerShell in your application, you must create a [System.Management.Automation.Runspaces.Runspace](/dotnet/api/System.Management.Automation.Runspaces.Runspace) object. Every runspace has an [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object associated with it. The [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) specifies characteristics of the runspace, such as which commands, variables, and modules are available for that runspace.
+PowerShell commands run in a runspace.
+To host PowerShell in your application, you must create a [System.Management.Automation.Runspaces.Runspace](/dotnet/api/System.Management.Automation.Runspaces.Runspace) object.
+Every runspace has an [System.Management.Automation.Runspaces.InitialSessionState](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object associated with it.
+The InitialSessionState specifies characteristics of the runspace, such as which commands, variables, and modules are available for that runspace.
 
 ## Create a default InitialSessionState
 
- The [System.Management.Automation.Runspaces.Initialsessionstate.Createdefault*](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.CreateDefault)and [System.Management.Automation.Runspaces.Initialsessionstate.Createdefault2*](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.CreateDefault2) methods can be used to create [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) objects. [System.Management.Automation.Runspaces.Initialsessionstate.Createdefault*](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.CreateDefault) creates an InitialSessionState with all of the built-in commands loaded, while [System.Management.Automation.Runspaces.Initialsessionstate.Createdefault2*](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.CreateDefault2) loads only the commands required to host Windows PowerShell (the commands from the Microsoft.PowerShell.Core module.
+The [CreateDefault](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.CreateDefault) and [CreateDefault2](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.CreateDefault2) methods of the InitialSessionState class can be used to create an InitialSessionState object.
+The CreateDefault method creates an InitialSessionState with all of the built-in commands loaded, while the CreateDefault2 method loads only the commands required to host PowerShell (the commands from the Microsoft.PowerShell.Core module).
 
- If you want to further limit the commands available in your host application you need to create a constrained runspace. For information, see Creating a constrained runspace.
+If you want to further limit the commands available in your host application you need to create a constrained runspace.
+For information, see [Creating a constrained runspace](creating-a-constrained-runspace.md).
 
- The following code shows how to create an InitialSessionState, assign it to a runspace, add commands to the pipeline in that runspace, and invoke the commands. For more information about adding and invoking commands, see Adding and invoking commands.
+The following code shows how to create an InitialSessionState, assign it to a runspace, add commands to the pipeline in that runspace, and invoke the commands.
+For more information about adding and invoking commands, see [Adding and invoking commands](adding-and-invoking-commands.md).
 
 ```csharp
-
 namespace SampleHost
 {
   using System;
@@ -54,9 +59,9 @@ namespace SampleHost
       Runspace rs = RunspaceFactory.CreateRunspace(iss);
       rs.Open();
 
-      // Call the PowerShell.Create() method to create the PowerShell
-      // object,and then specify the runspace and commands to the pipeline.
-      // and  create the command pipeline.
+      // Call the PowerShell.Create() method to create the PowerShell object,
+      // and then specify the runspace and commands to the pipeline.
+      // and create the command pipeline.
       PowerShell ps = PowerShell.Create();
       ps.Runspace = rs;
       ps.AddCommand("Get-Variable");
@@ -67,15 +72,15 @@ namespace SampleHost
 
       // Call the PowerShell.Invoke() method to run
       // the pipeline synchronously.
-        foreach (PSObject result in ps.Invoke())
-        {
-          Console.WriteLine("{0,-20}{1}",
-                  result.Members["Name"].Value,
-                  result.Members["Value"].Value);
-        } // End foreach.
+      foreach (PSObject result in ps.Invoke())
+      {
+        Console.WriteLine("{0,-20}{1}",
+            result.Members["Name"].Value,
+            result.Members["Value"].Value);
+      } // End foreach.
 
-        // Close the runspace to free resources.
-        rs.Close();
+      // Close the runspace to free resources.
+      rs.Close();
 
     } // End Main.
   } // End SampleHost.
@@ -84,4 +89,6 @@ namespace SampleHost
 
 ## See Also
 
- [Creating a constrained runspace](./creating-a-constrained-runspace.md)
+[Creating a constrained runspace](creating-a-constrained-runspace.md)
+
+[Adding and invoking commands](adding-and-invoking-commands.md)
