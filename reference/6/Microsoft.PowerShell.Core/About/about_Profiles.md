@@ -6,10 +6,10 @@ title:  about_Profiles
 ---
 # About Profiles
 
-## SHORT DESCRIPTION
+## Short Description
 Describes how to create and use a PowerShell profile.
 
-## LONG DESCRIPTION
+## Long Description
 
 You can create a PowerShell profile to customize your environment and to add
 session-specific elements to every PowerShell session that you start.
@@ -29,7 +29,7 @@ It explains how to use the **NoProfile** parameter of the PowerShell console
 (PowerShell.exe) to start PowerShell without any profiles. And, it explains
 the effect of the PowerShell execution policy on profiles.
 
-## THE PROFILE FILES
+## The Profile Files
 
 PowerShell supports several profile files. Also, PowerShell host programs can
 support their own host-specific profiles.
@@ -52,7 +52,7 @@ PowerShell
 - The `$Home` variable, which stores the current user's home directory
 
 In addition, other programs that host PowerShell can support their own
-profiles. For example, Visual Studio Code supports the following 
+profiles. For example, Visual Studio Code supports the following
 host-specific profiles.
 
 |Description               | Path                                     |
@@ -63,7 +63,7 @@ host-specific profiles.
 In PowerShell Help, the "CurrentUser, Current Host" profile is the profile
 most often referred to as "your PowerShell profile".
 
-## THE $PROFILE VARIABLE
+## The $PROFILE variable
 
 The `$PROFILE` automatic variable stores the paths to the PowerShell profiles
 that are available in the current session.
@@ -93,24 +93,24 @@ in each PowerShell host application that you use.
 To see the current values of the `$PROFILE` variable, type:
 
 ```powershell
-$profile | Get-Member -Type NoteProperty
+$PROFILE | Get-Member -Type NoteProperty
 ```
 
 You can use the `$PROFILE` variable in many commands. For example, the
 following command opens the "Current User, Current Host" profile in Notepad:
 
 ```powershell
-notepad $profile
+notepad $PROFILE
 ```
 
 The following command determines whether an "All Users, All Hosts" profile has
 been created on the local computer:
 
 ```powershell
-Test-Path -Path $profile.AllUsersAllHosts
+Test-Path -Path $PROFILE.AllUsersAllHosts
 ```
 
-## HOW TO CREATE A PROFILE
+## How to create a profile
 
 To create a PowerShell profile, use the following command format:
 
@@ -124,8 +124,8 @@ For example, to create a profile for the current user in the current
 PowerShell host application, use the following command:
 
 ```powershell
-if (!(Test-Path -Path $profile)) {
-  New-Item -ItemType File -Path $profile -Force
+if (!(Test-Path -Path $PROFILE)) {
+  New-Item -ItemType File -Path $PROFILE -Force
 }
 ```
 
@@ -137,7 +137,7 @@ to the profile file that you want to create.
 > To create "All Users" profiles in Windows Vista and later versions of
 > Windows, start PowerShell with the **Run as administrator** option.
 
-## HOW TO EDIT A PROFILE
+## How to edit a profile
 
 You can open any PowerShell profile in a text editor, such as Notepad.
 
@@ -145,19 +145,19 @@ To open the profile of the current user in the current PowerShell host
 application in Notepad, type:
 
 ```powershell
-notepad $profile
+notepad $PROFILE
 ```
 
 To open other profiles, specify the profile name. For example, to open the
 profile for all the users of all the host applications, type:
 
 ```powershell
-notepad $profile.AllUsersAllHosts
+notepad $PROFILE.AllUsersAllHosts
 ```
 
 To apply the changes, save the profile file, and then restart PowerShell.
 
-## HOW TO CHOOSE A PROFILE
+## How to choose a profile
 
 If you use multiple host applications, put the items that you use in all the
 host applications into your `$PROFILE.CurrentUserAllHosts` profile. Put items
@@ -177,7 +177,7 @@ users, follow these guidelines:
 Be sure to check the host application documentation for any special
 implementation of PowerShell profiles.
 
-## HOW TO USE A PROFILE
+## How to use a profile
 
 Many of the items that you create in PowerShell and most commands that you run
 affect only the current session. When you end the session, the items are
@@ -195,7 +195,7 @@ Another common use for profiles is to save frequently-used functions, aliases,
 and variables. When you save the items in a profile, you can use them in any
 applicable session without recreating them.
 
-## HOW TO START A PROFILE
+## How to start a profile
 
 When you open the profile file, it is blank. However, you can fill it with the
 variables, aliases, and commands that you use frequently.
@@ -208,7 +208,7 @@ This is especially useful if you use a profile other than the "Current User,
 Current Host" profile. For example, add the following command:
 
 ```powershell
-function Pro {notepad $profile.CurrentUserAllHosts}
+function Pro {notepad $PROFILE.CurrentUserAllHosts}
 ```
 
 ### Add a function that lists the aliases for any cmdlet
@@ -247,7 +247,7 @@ $env:COMPUTERNAME + "\" + (Get-Location) + "> "
 For more information about the PowerShell prompt, see
 [about_Prompts](about_Prompts.md).
 
-## THE NOPROFILE PARAMETER
+## The NoProfile parameter
 
 To start PowerShell without profiles, use the **NoProfile** parameter of
 **PowerShell.exe**, the program that starts PowerShell.
@@ -267,7 +267,7 @@ For a complete list of the parameters of PowerShell.exe, type:
 PowerShell -?
 ```
 
-## PROFILES AND EXECUTION POLICY
+## Profiles and Execution Policy
 
 The PowerShell execution policy determines, in part, whether you can run
 scripts and load configuration files, including the profiles. The **Restricted**
@@ -281,7 +281,7 @@ value is saved in the registry. You do not have to set it when you open the
 console, and you do not have to store a `Set-ExecutionPolicy` command in your
 profile.
 
-## PROFILES AND REMOTE SESSIONS
+## Profiles and remote sessions
 
 PowerShell profiles are not run automatically in remote sessions, so the
 commands that the profiles add are not present in the remote session. In
@@ -295,7 +295,7 @@ For example, the following command runs the "Current user, Current Host"
 profile from the local computer in the session in `$s`.
 
 ```powershell
-Invoke-Command -Session $s -FilePath $profile
+Invoke-Command -Session $s -FilePath $PROFILE
 ```
 
 The following command runs the "Current user, Current Host" profile from the
@@ -313,7 +313,7 @@ Invoke-Command -Session $s -ScriptBlock {
 After running this command, the commands that the profile adds to the session
 are available in `$s`.
 
-## SEE ALSO
+## See Also
 
 [about_Automatic_Variables](about_Automatic_Variables.md)
 
