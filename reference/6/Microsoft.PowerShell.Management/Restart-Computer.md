@@ -363,10 +363,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## NOTES
 
-In Windows PowerShell 2.0, the **AsJob** parameter doesn't work reliably when you are restarting or
-stopping remote computers. In Windows PowerShell 3.0, the implementation is changed to resolve this
-problem.
-
 ## RELATED LINKS
 
 [About Windows Remote Management](/windows/desktop/WinRM/about-windows-remote-management)
