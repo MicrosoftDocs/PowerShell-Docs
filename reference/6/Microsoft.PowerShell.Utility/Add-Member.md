@@ -121,7 +121,7 @@ $A.Size
 ### Example 3: Add a StringUse note property to a string
 
 This example adds the **StringUse** note property to a string.
-Because `Add-Member` cannot add types to **String** input objects, you can speciy the **PassThru**
+Because `Add-Member` cannot add types to **String** input objects, you can specify the **PassThru**
 parameter to generate an output object. The last command in the example displays the new property.
 
 This example uses the **NotePropertyMembers** parameter. The value of the **NotePropertyMembers**
