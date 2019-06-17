@@ -363,16 +363,17 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## NOTES
 
+`Restart-Computer` uses the
+[Win32Shutdown method](/windows/desktop/CIMWin32Prov/win32shutdown-method-in-class-win32-operatingsystem)
+of the Windows Management Instrumentation (WMI) [Win32_OperatingSystem](/windows/desktop/CIMWin32Prov/win32-operatingsystem)
+class.
+
 ## RELATED LINKS
 
 [About Windows Remote Management](/windows/desktop/WinRM/about-windows-remote-management)
 
 [Get-Credential](../Microsoft.PowerShell.Security/Get-Credential.md)
 
-[Microsoft.PowerShell.Management](Microsoft.PowerShell.Management.md) cmdlets
-
-[Win32_OperatingSystem](/windows/desktop/CIMWin32Prov/win32-operatingsystem)
-
-[Win32Shutdown method](/windows/desktop/CIMWin32Prov/win32shutdown-method-in-class-win32-operatingsystem)
+[Microsoft.PowerShell.Management](Microsoft.PowerShell.Management.md)
 
 [WS-Management Protocol](/windows/desktop/WinRM/ws-management-protocol)
