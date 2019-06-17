@@ -528,13 +528,9 @@ output is generated.
 
 ## NOTES
 
-This cmdlet uses the
-[Win32Shutdown method](/windows/desktop/CIMWin32Prov/win32shutdown-method-in-class-win32-operatingsystem)
-of the Windows Management Instrumentation (WMI) [Win32_OperatingSystem](/windows/desktop/CIMWin32Prov/win32-operatingsystem)
-class.
-
-In Windows PowerShell 2.0, **AsJob** doesn't work reliably when you are restarting or stopping
-remote computers. In Windows PowerShell 3.0, the implementation is changed to resolve this problem.
+In Windows PowerShell 2.0, the **AsJob** parameter doesn't work reliably when you are restarting or
+stopping remote computers. In Windows PowerShell 3.0, the implementation is changed to resolve this
+problem.
 
 ## RELATED LINKS
 
@@ -543,5 +539,9 @@ remote computers. In Windows PowerShell 3.0, the implementation is changed to re
 [Get-Credential](../Microsoft.PowerShell.Security/Get-Credential.md)
 
 [Microsoft.PowerShell.Management](Microsoft.PowerShell.Management.md) cmdlets
+
+[Win32_OperatingSystem](/windows/desktop/CIMWin32Prov/win32-operatingsystem)
+
+[Win32Shutdown method](/windows/desktop/CIMWin32Prov/win32shutdown-method-in-class-win32-operatingsystem)
 
 [WS-Management Protocol](/windows/desktop/WinRM/ws-management-protocol)
