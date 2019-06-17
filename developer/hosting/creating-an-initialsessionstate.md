@@ -18,13 +18,13 @@ The InitialSessionState specifies characteristics of the runspace, such as which
 
 ## Create a default InitialSessionState
 
-The [CreateDefault](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.CreateDefault) and [CreateDefault2](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.CreateDefault2) methods of the InitialSessionState class can be used to create an InitialSessionState object.
-The CreateDefault method creates an InitialSessionState with all of the built-in commands loaded, while the CreateDefault2 method loads only the commands required to host PowerShell (the commands from the Microsoft.PowerShell.Core module).
+The [CreateDefault](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.CreateDefault) and [CreateDefault2](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.CreateDefault2) methods of the **InitialSessionState** class can be used to create an **InitialSessionState** object.
+The **CreateDefault** method creates an **InitialSessionState** with all of the built-in commands loaded, while the **CreateDefault2** method loads only the commands required to host PowerShell (the commands from the Microsoft.PowerShell.Core module).
 
 If you want to further limit the commands available in your host application you need to create a constrained runspace.
 For information, see [Creating a constrained runspace](creating-a-constrained-runspace.md).
 
-The following code shows how to create an InitialSessionState, assign it to a runspace, add commands to the pipeline in that runspace, and invoke the commands.
+The following code shows how to create an **InitialSessionState**, assign it to a runspace, add commands to the pipeline in that runspace, and invoke the commands.
 For more information about adding and invoking commands, see [Adding and invoking commands](adding-and-invoking-commands.md).
 
 ```csharp
