@@ -18,20 +18,18 @@ Gets all commands.
 ### CmdletSet (Default)
 
 ```
-Get-Command [-Verb <String[]>] [-Noun <String[]>] [-Module <String[]>]
- [-FullyQualifiedModule <ModuleSpecification[]>] [-TotalCount <Int32>] [-Syntax]
- [-ShowCommandInfo] [[-ArgumentList] <Object[]>] [-All] [-ListImported]
- [-ParameterName <String[]>] [-ParameterType <PSTypeName[]>] [<CommonParameters>]
+Get-Command [-Verb <String[]>] [-Noun <String[]>] [-Module <String[]>] [-FullyQualifiedModule <ModuleSpecification[]>]
+ [-TotalCount <Int32>] [-Syntax] [-ShowCommandInfo] [[-ArgumentList] <Object[]>] [-All] [-ListImported]
+ [-ParameterName <String[]>] [-ParameterType <PSTypeName[]>]
 ```
 
 ### AllCommandSet
 
 ```
-Get-Command [[-Name] <string[]>] [[-ArgumentList] <Object[]>] [-Module <string[]>]
-[-FullyQualifiedModule <ModuleSpecification[]>] [-CommandType <CommandTypes>]
-[-TotalCount <int>] [-Syntax] [-ShowCommandInfo] [-All] [-ListImported]
-[-ParameterName <string[]>] [-ParameterType <PSTypeName[]>]
-[-UseFuzzyMatching] [<CommonParameters>]
+Get-Command [[-Name] <String[]>] [-Module <String[]>] [-FullyQualifiedModule <ModuleSpecification[]>]
+ [-CommandType <CommandTypes>] [-TotalCount <Int32>] [-Syntax] [-ShowCommandInfo] [[-ArgumentList] <Object[]>]
+ [-All] [-ListImported] [-ParameterName <String[]>] [-ParameterType <PSTypeName[]>] [-UseFuzzyMatching]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -310,7 +308,7 @@ In Windows PowerShell 2.0, `Get-Command` gets all commands by default.
 
 ```yaml
 Type: SwitchParameter
-Parameter Sets: (All)
+Parameter Sets: AllCommandSet
 Aliases:
 
 Required: False
@@ -336,7 +334,7 @@ information about the provider cmdlets, see [about_Providers](About/about_Provid
 
 ```yaml
 Type: Object[]
-Parameter Sets: (All)
+Parameter Sets: AllCommandSet
 Aliases: Args
 
 Required: False
@@ -397,7 +395,7 @@ parameter. The two parameters are mutually exclusive.
 
 ```yaml
 Type: ModuleSpecification[]
-Parameter Sets: (All)
+Parameter Sets: AllCommandSet
 Aliases:
 
 Required: False
@@ -419,7 +417,7 @@ This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
 Type: SwitchParameter
-Parameter Sets: (All)
+Parameter Sets: AllCommandSet
 Aliases:
 
 Required: False
@@ -439,7 +437,7 @@ object, such as the objects that the `Get-Module` and `Import-PSSession` cmdlets
 
 ```yaml
 Type: String[]
-Parameter Sets: (All)
+Parameter Sets: AllCommandSet
 Aliases:
 
 Required: False
@@ -498,7 +496,7 @@ This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
 Type: String[]
-Parameter Sets: (All)
+Parameter Sets: AllCommandSet
 Aliases:
 
 Required: False
@@ -520,7 +518,7 @@ This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
 Type: PSTypeName[]
-Parameter Sets: (All)
+Parameter Sets: AllCommandSet
 Aliases:
 
 Required: False
@@ -545,7 +543,7 @@ In Windows PowerShell 2.0, `Get-Command` gets all commands by default.
 
 ```yaml
 Type: SwitchParameter
-Parameter Sets: (All)
+Parameter Sets: AllCommandSet
 Aliases:
 
 Required: False
@@ -566,7 +564,7 @@ Indicates that this cmdlet gets only the following specified data about the comm
 
 ```yaml
 Type: SwitchParameter
-Parameter Sets: (All)
+Parameter Sets: AllCommandSet
 Aliases:
 
 Required: False
@@ -583,7 +581,7 @@ command.
 
 ```yaml
 Type: Int32
-Parameter Sets: (All)
+Parameter Sets: AllCommandSet
 Aliases:
 
 Required: False
@@ -601,7 +599,7 @@ attempt to match commands that may contain those wildcard characters.
 
 ```yaml
 Type: SwitchParameter
-Parameter Sets: (All)
+Parameter Sets: AllCommandSet
 Aliases:
 
 Required: False
