@@ -591,6 +591,25 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
+### -UseAbbreviationExpansion
+
+Indicates using matching of the characters in the command to find with uppercase characters
+in a command. For example, `i-psdf` would match `Import-PowerShellDataFile` as each of
+the characters to find matches an uppercase character in the result. When using this
+type of match, any wildcards will result in no matches.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: AllCommandSet
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
 ### -UseFuzzyMatching
 
 Indicates using a fuzzy matching algorithm when finding commands. The order of the output is from
