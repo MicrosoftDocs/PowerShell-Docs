@@ -290,7 +290,7 @@ Name                           Value
 > the value stored.
 >
 > ```powershell
-> PS> "Good Dog" -matches "Dog"
+> PS> "Good Dog" -match "Dog"
 > True
 >
 > PS> $Matches[0]

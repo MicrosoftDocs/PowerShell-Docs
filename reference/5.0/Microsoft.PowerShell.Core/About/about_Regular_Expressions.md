@@ -8,7 +8,7 @@ title:  about_Regular_Expressions
 # About Regular Expressions
 
 ## Short description
-Describes regular expressions in Windows PowerShell.
+Describes regular expressions in PowerShell.
 
 ## Long description
 
@@ -290,7 +290,7 @@ Name                           Value
 > the value stored.
 >
 > ```powershell
-> PS> "Good Dog" -matches "Dog"
+> PS> "Good Dog" -match "Dog"
 > True
 >
 > PS> $Matches[0]

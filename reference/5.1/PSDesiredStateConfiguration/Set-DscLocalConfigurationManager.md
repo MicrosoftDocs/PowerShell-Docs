@@ -60,7 +60,7 @@ For more information, type `Get-Help New-CimSession`.
 The second command applies LCM settings for the targeted node from C:\DSC\Configurations\ to the computer identified by the **CimSession** objects stored in the $Session variable.
 In this example, the $Session variable contains a CIM session only for the computer named Server01.
 The command applies the settings.
-After the receiving the settings, LCM processes them.
+After receiving the settings, LCM processes them.
 
 ## PARAMETERS
 
