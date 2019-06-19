@@ -41,11 +41,11 @@ pwsh[.exe]
 pwsh[.exe] -h | -Help | -? | /?
 ```
 
-### Parameters
+## Parameters
 
 All parameters are case-insensitive.
 
-#### -File | -f
+### -File | -f
 
 If the value of **File** is "-", the command text is read from standard input.
 Running `pwsh -File -` without redirected standard input starts a regular
@@ -79,7 +79,7 @@ because it has no special meaning to the current **cmd.exe** shell. The
 `$env:windir` style of environment variable reference _can_ be used inside a
 **Command** parameter, since there it will be interpreted as PowerShell code.
 
-#### -Command | -c
+### -Command | -c
 
 Executes the specified commands (and any parameters) as though they were typed
 at the PowerShell command prompt, and then exits, unless the **NoExit**
@@ -144,7 +144,7 @@ hi there
 out
 ```
 
-#### -ConfigurationName | -config
+### -ConfigurationName | -config
 
 Specifies a configuration endpoint in which PowerShell is run. This can be any
 endpoint registered on the local machine including the default PowerShell
@@ -152,7 +152,7 @@ remoting endpoints or a custom endpoint having specific user role capabilities.
 
 Example: `pwsh -ConfigurationName AdminRoles`
 
-#### -CustomPipeName
+### -CustomPipeName
 
 Specifies the name to use for an additional IPC server (named pipe) used for
 debugging and other cross-process communication. This offers a predictable
@@ -168,7 +168,7 @@ pwsh -CustomPipeName mydebugpipe
 Enter-PSHostProcess -CustomPipeName mydebugpipe
 ```
 
-#### -EncodedCommand | -e | -ec
+### -EncodedCommand | -e | -ec
 
 Accepts a base64-encoded string version of a command. Use this parameter to
 submit commands to PowerShell that require complex quotation marks or curly
@@ -183,65 +183,53 @@ $encodedCommand = [Convert]::ToBase64String($bytes)
 pwsh -encodedcommand $encodedCommand
 ```
 
-#### -ExecutionPolicy | -ex | -ep
+### -ExecutionPolicy | -ex | -ep
 
 Sets the default execution policy for the current session and saves it in the
 `$env:PSExecutionPolicyPreference` environment variable. This parameter does not
 change the PowerShell execution policy that is set in the registry.
 
-#### -File | -f
-
-Default parameter if no parameters is present but any values is present in the
-command line. Runs the specified script in the local scope ("dot-sourced"), so
-that the functions and variables that the script creates are available in the
-current session. Enter the script file path and any parameters. File must be
-the last parameter in the command, because all characters typed after the
-**File** parameter name are interpreted as the script file path followed by the
-script parameters.
-
-Example: `pwsh HelloWorld.ps1`
-
-#### -InputFormat | -in | -if
+### -InputFormat | -in | -if
 
 Describes the format of data sent to PowerShell. Valid values are "Text" (text
 strings) or "XML" (serialized CLIXML format).
 
-#### -Interactive | -i
+### -Interactive | -i
 
 Present an interactive prompt to the user. Inverse for NonInteractive
 parameter.
 
-#### -LoadProfile | -l
+### -LoadProfile | -l
 
 Load the PowerShell profiles. This is the default behavior even if this is not
 specified.
 
-#### -NoExit | -noe
+### -NoExit | -noe
 
 Does not exit after running startup commands.
 
 Example: `pwsh -NoExit -Command Get-Date`
 
-#### -NoLogo | -nol
+### -NoLogo | -nol
 
 Hides the copyright banner at startup.
 
-#### -NonInteractive | -noni
+### -NonInteractive | -noni
 
 Does not present an interactive prompt to the user.
 
-#### -NoProfile | -nop
+### -NoProfile | -nop
 
 Does not load the PowerShell profile.
 
-#### -OutputFormat | -o | -of
+### -OutputFormat | -o | -of
 
 Determines how output from PowerShell is formatted. Valid values are "Text"
 (text strings) or "XML" (serialized CLIXML format).
 
 Example: `pwsh -o XML -c Get-Date`
 
-#### -SettingsFile | -settings
+### -SettingsFile | -settings
 
 Overrides the system-wide `powershell.config.json` settings file for the
 session. By default, system-wide settings are read from the
@@ -252,55 +240,25 @@ Note that these settings are not used by the endpoint specified by the
 
 Example: `pwsh -SettingsFile c:\myproject\powershell.config.json`
 
-#### -Version | -v
+### -Version | -v
 
 Displays the version of PowerShell. Additional parameters are ignored.
 
-#### -WindowStyle | -w
+### -WindowStyle | -w
 
 Sets the window style for the session. Valid values are Normal, Minimized,
 Maximized and Hidden.
 
-#### -WorkingDirectory | -wd
+### -WorkingDirectory | -wd
 
-Sets the initial working directory when starting PowerShell.  Any valid
-PowerShell file path is supported.
+Sets the initial working directory by executing `Set-Location -LiteralPath <path>`
+at startup. Any valid PowerShell file path is supported.
 
 To start PowerShell in your home directory, use: `pwsh -WorkingDirectory ~`
 
-#### -Help, -?, /?
+### -Help, -?, /?
 
 Displays help for pwsh. If you are typing a pwsh command in PowerShell,
 prepend the command parameters with a hyphen (-), not a forward slash (/). You
 can use either a hyphen or forward slash in Cmd.exe.
 
-## EXAMPLES
-
-```powershell
-pwsh -Version
-
-# Example using a script block
-pwsh -Command {Get-Command -Name Get-Item}
-
-# Example using a string
-pwsh -Command "Get-Command -Name Get-Item"
-pwsh -Command "& {Get-Command -Name Get-Command}"
-
-# Example using a command as the last parameter
-pwsh -Command Get-Command -Name Get-Item
-
-# Example starting in another working directory
-pwsh -WorkingDirectory ~/Downloads
-
-# Example specifying a custom settings file
-pwsh -SettingsFile ~/powershell.config.json
-
-# Example of specifying a configuration name
-pwsh -ConfigurationName AdminRoles
-
-# Example of specifying a custom pipe name
-# PowerShell instance 1
-pwsh -CustomPipeName mycustompipe
-# PowerShell instance 2
-Enter-PSHostProcess -CustomPipeName mycustompipe
-```
