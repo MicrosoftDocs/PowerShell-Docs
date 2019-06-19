@@ -1,26 +1,26 @@
 ---
-ms.date:  05/02/2019
+ms.date:  06/19/2019
 schema:  2.0.0
 keywords:  powershell,cmdlet
 title:  about_pwsh
 ---
 # About pwsh
 
-## SHORT DESCRIPTION
+## Short Description
 Explains how to use the **pwsh** command-line tool. Displays the syntax and
 describes the command-line switches.
 
 pwsh starts a PowerShell session.
 
-## LONG DESCRIPTION
+## Long Description
 
-## SYNTAX
+## Syntax
 
 ```
 pwsh[.exe]
    [[-File] <filePath> [args]]
-   [-Command - | { <script-block> [-args <arg-array>] }
-               | { <string> [<CommandParameters>] } ]
+   [-Command { - | <script-block> [-args <arg-array>]
+                 | <string> [<CommandParameters>] } ]
    [-ConfigurationName <string>]
    [-CustomPipeName <string>]
    [-EncodedCommand <Base64EncodedCommand>]
@@ -40,7 +40,7 @@ pwsh[.exe]
 pwsh[.exe] -h | -Help | -? | /?
 ```
 
-### PARAMETERS
+### Parameters
 
 All parameters are case-insensitive.
 
@@ -93,6 +93,10 @@ _only_ possible when running **pwsh** from another PowerShell host. The
 **ScriptBlock** type may be contained in an existing variable, returned from an
 expression, or parsed by the PowerShell host as a literal script block enclosed
 in curly braces `{}`, before being passed to **pwsh**.
+
+```powershell
+pwsh -Command {Get-WinEvent -LogName security}
+```
 
 In **cmd.exe**, there is no such thing as a script block (or **ScriptBlock**
 type), so the value passed to **Command** will _always_ be a string. You can
@@ -154,17 +158,47 @@ debugging and other cross-process communication. This offers a predictable
 mechanism for connecting to other PowerShell instances. Typically used with the
 **CustomPipeName** parameter on `Enter-PSHostProcess`.
 
+For example:
+
+```powershell
+# PowerShell instance 1
+pwsh -CustomPipeName mydebugpipe
+# PowerShell instance 2
+Enter-PSHostProcess -CustomPipeName mydebugpipe
+```
+
 #### -EncodedCommand | -e | -ec
 
-Accepts a base-64-encoded string version of a command. Use this parameter to
+Accepts a base64-encoded string version of a command. Use this parameter to
 submit commands to PowerShell that require complex quotation marks or curly
 braces. The string must be formatted using UTF-16 character encoding.
+
+For example:
+
+```powershell
+$command = 'dir "c:\program files" '
+$bytes = [System.Text.Encoding]::Unicode.GetBytes($command)
+$encodedCommand = [Convert]::ToBase64String($bytes)
+pwsh -encodedcommand $encodedCommand
+```
 
 #### -ExecutionPolicy | -ex | -ep
 
 Sets the default execution policy for the current session and saves it in the
-$env:PSExecutionPolicyPreference environment variable. This parameter does not
+`$env:PSExecutionPolicyPreference` environment variable. This parameter does not
 change the PowerShell execution policy that is set in the registry.
+
+#### -File | -f
+
+Default parameter if no parameters is present but any values is present in the
+command line. Runs the specified script in the local scope ("dot-sourced"), so
+that the functions and variables that the script creates are available in the
+current session. Enter the script file path and any parameters. File must be
+the last parameter in the command, because all characters typed after the
+**File** parameter name are interpreted as the script file path followed by the
+script parameters.
+
+Example: `pwsh HelloWorld.ps1`
 
 #### -InputFormat | -in | -if
 
