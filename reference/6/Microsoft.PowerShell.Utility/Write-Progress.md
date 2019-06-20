@@ -3,7 +3,7 @@ ms.date:  02/19/2019
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
-online version: https://go.microsoft.com/fwlink/?linkid=821879
+online version: https://go.microsoft.com/fwlink/?linkid=2096984
 external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 title:  Write-Progress
 ---

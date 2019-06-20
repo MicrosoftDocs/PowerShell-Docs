@@ -2,7 +2,7 @@
 ms.date: 03/06/2019
 external help file: System.Management.Automation.dll-Help.xml
 Module Name: Microsoft.PowerShell.Core
-online version:
+online version: https://go.microsoft.com/fwlink/?linkid=2096784
 schema: 2.0.0
 title: Disable-ExperimentalFeature
 ---

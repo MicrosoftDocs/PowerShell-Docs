@@ -4,7 +4,7 @@ schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
 title:  Function Provider
-online version: https://go.microsoft.com/fwlink/?linkid=834961
+online version: https://go.microsoft.com/fwlink/?linkid=2096783
 ---
 # Function provider
 

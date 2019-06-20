@@ -3,7 +3,7 @@ ms.date: 5/14/2019
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
-online version: https://go.microsoft.com/fwlink/?linkid=821604
+online version: https://go.microsoft.com/fwlink/?linkid=2096400
 external help file:  Microsoft.PowerShell.Commands.Management.dll-Help.xml
 title:  New-Item
 ---

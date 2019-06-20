@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: PowerShellGet
 ms.date: 6/3/2019
-online version: https://go.microsoft.com/fwlink/?linkid=822318
+online version: https://go.microsoft.com/fwlink/?linkid=2096942
 schema: 2.0.0
 title: Find-Command
 ---

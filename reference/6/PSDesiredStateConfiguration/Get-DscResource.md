@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: PSDesiredStateConfiguration
 ms.date: 06/09/2017
-online version: https://go.microsoft.com/fwlink/?linkid=821458
+online version: https://go.microsoft.com/fwlink/?linkid=2096855
 schema: 2.0.0
 title: Get-DscResource
 ---
