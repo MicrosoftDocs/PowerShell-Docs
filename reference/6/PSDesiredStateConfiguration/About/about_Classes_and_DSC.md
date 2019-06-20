@@ -453,7 +453,7 @@ following configuration references the MyDSCResource module. Save the
 configuration as a script, MyResource.ps1.
 
 For information about how to run a DSC configuration,
-see [PowerShell Desired State Configuration Overview](/dsc/overview/overview.md).
+see [PowerShell Desired State Configuration Overview](/powershell/dsc/overview/overview).
 
 Before you run the configuration, create `C:\test.txt`. The configuration
 checks if the file exists at `c:\test\test.txt`. If the file does not exist,
@@ -978,4 +978,4 @@ function Html ([HTML] $doc) { return $doc }
 
 [about_Methods](../../Microsoft.PowerShell.Core/About/about_Methods.md)
 
-[Build Custom PowerShell Desired State Configuration Resources](https://docs.microsoft.com/powershell/dsc/resources/authoringResource)
+[Build Custom PowerShell Desired State Configuration Resources](/powershell/dsc/resources/authoringResource)

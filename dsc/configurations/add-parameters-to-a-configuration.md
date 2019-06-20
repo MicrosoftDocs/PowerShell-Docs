@@ -183,7 +183,7 @@ $State="Running"
 > [!NOTE]
 > You do not need to specify a `parameter` attribute when using a `validation` attribute.
 
-You can read more about the `parameter` and validation attributes in [about_Functions_Advanced_Parameters](/powershell/module/microsoft.powershell.core/about/about_Functions_Advanced_Parameters.md).
+You can read more about the `parameter` and validation attributes in [about_Functions_Advanced_Parameters](/powershell/module/microsoft.powershell.core/about/about_Functions_Advanced_Parameters).
 
 ## Fully parameterized Configuration
 
