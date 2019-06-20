@@ -269,7 +269,7 @@ This example shows how to get help that explains how to use the Get-Item cmdlet 
 The example shows two ways of getting the provider-specific help for **Get-Item**.
 
 You can also get provider-specific help for cmdlets online in the section that describes the provider.
-For example, for provider-specific online help for the New-Item cmdlet in each WSMan provider path, see http://go.microsoft.com/fwlink/?LinkID=158676http://go.microsoft.com/fwlink/?LinkID=158676.
+For example, for provider-specific online help for the New-Item cmdlet in each WSMan provider path, see [Creating Client Certificates for WS-Man](/powershell/module/microsoft.powershell.security/about/about_certificate_provider?view=powershell-6#creating-client-certificates-for-ws-man).
 
 ### Example 12
 
