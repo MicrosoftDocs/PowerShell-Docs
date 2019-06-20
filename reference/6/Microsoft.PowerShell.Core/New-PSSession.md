@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Core
 ms.date: 5/15/2019
-online version: https://go.microsoft.com/fwlink/?linkid=821498
+online version: https://go.microsoft.com/fwlink/?linkid=2096178
 schema: 2.0.0
 title: New-PSSession
 ---

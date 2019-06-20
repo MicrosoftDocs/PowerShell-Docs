@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Security
 ms.date: 3/22/2019
-online version: https://go.microsoft.com/fwlink/?linkid=821719
+online version: https://go.microsoft.com/fwlink/?linkid=2096422
 schema: 2.0.0
 title: Set-ExecutionPolicy
 ---

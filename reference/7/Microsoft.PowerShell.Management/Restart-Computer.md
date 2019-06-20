@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Management
 ms.date: 6/17/2019
-online version: https://go.microsoft.com/fwlink/?linkid=821625
+online version: https://go.microsoft.com/fwlink/?linkid=2096107
 schema: 2.0.0
 title: Restart-Computer
 ---
