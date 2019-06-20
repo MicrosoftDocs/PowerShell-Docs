@@ -12,22 +12,26 @@ version is organized by namespace, and a distinct folder for the about topics.
 
 Over time, namespaces appeared as:
 
-- ISE, introduced in 2.0
-- Microsoft.PowerShell.Archive, introduced in 5.0
-- Microsoft.PowerShell.Core, introduced in 3.0
-- Microsoft.PowerShell.Diagnostics, introduced in 3.0
-- Microsoft.PowerShell.Host, introduced in 3.0
-- Microsoft.PowerShell.LocalAccounts, introduced in 5.0
-- Microsoft.PowerShell.Management, introduced in 3.0
-- Microsoft.PowerShell.ODataUtils, introduced in 5.0
-- Microsoft.PowerShell.Security, introduced in 3.0
-- Microsoft.PowerShell.Utility, introduced in 3.0
-- Microsoft.WSMan.Management, introduced in 3.0
-- PackageManagement, introduced in 5.0
-- PowerShellGet, introduced in 5.0
-- PSDesiredStateConfiguration, introduced in 4.0
-- PSReadline, introduced in 3.0
-- PSScheduledJob, introduced in 5.0
-- PSScriptAnalyzer, introduced in 3.0
-- PSWorkflow, introduced in 3.0
-- PSWorkflowUtility, introduced in 3.0
+Module Name / PS Version|3.0|4.0|5.0|5.1|6|7
+---|---|---|---|---|---|---
+CimCmdlets|X|X|X|X|X|X
+ISE (introduced in 2.0)|X|X|X|X||
+Microsoft.PowerShell.Archive|||X|X|X|X
+Microsoft.PowerShell.Core|X|X|X|X|X|X
+Microsoft.PowerShell.Diagnostics|X|X|X|X|X|X
+Microsoft.PowerShell.Host|X|X|X|X|X|X
+Microsoft.PowerShell.LocalAccounts||||X||
+Microsoft.PowerShell.Management|X|X|X|X|X|X
+Microsoft.PowerShell.ODataUtils|||X|X||
+Microsoft.PowerShell.Operation.Validation||||X||
+Microsoft.PowerShell.Security|X|X|X|X|X|X
+Microsoft.PowerShell.Utility|X|X|X|X|X|X
+Microsoft.WsMan.Management|X|X|X|X|X|X
+PackageManagement|||X|X|X|X
+PowershellGet|||X|X|X|X
+PSDesiredStateConfiguration||X|X|X|X|X
+PSDiagnostics|X|X|X|X|X|X
+PSReadline|||X|X|X|X
+PSScheduledJob|X|X|X|X||
+PSWorkflow|X|X|X|X||
+PSWorkflowUtility|X|X|X|X||
