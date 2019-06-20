@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Utility
 ms.date: 2/8/2019
-online version: https://go.microsoft.com/fwlink/?linkid=821853
+online version: https://go.microsoft.com/fwlink/?linkid=2096894
 schema: 2.0.0
 title: Select-String
 ---

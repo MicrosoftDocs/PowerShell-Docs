@@ -4,7 +4,7 @@ schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
 title:  WSMan Provider
-online version: https://go.microsoft.com/fwlink/?linkid=834980
+online version: https://go.microsoft.com/fwlink/?linkid=2096458
 ---
 # WSMan Provider
 

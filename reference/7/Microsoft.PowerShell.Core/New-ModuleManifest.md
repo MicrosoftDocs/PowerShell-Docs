@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Core
 ms.date: 01/22/2019
-online version: https://go.microsoft.com/fwlink/?linkid=821496
+online version: https://go.microsoft.com/fwlink/?linkid=2096487
 schema: 2.0.0
 title: New-ModuleManifest
 ---

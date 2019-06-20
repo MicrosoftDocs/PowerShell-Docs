@@ -4,7 +4,7 @@ schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
 title:  Environment Provider
-online version:  https://go.microsoft.com/fwlink/?linkid=834944
+online version: https://go.microsoft.com/fwlink/?linkid=2096475
 ---
 # Environment provider
 

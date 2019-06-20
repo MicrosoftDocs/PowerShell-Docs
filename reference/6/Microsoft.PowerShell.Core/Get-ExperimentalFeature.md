@@ -1,7 +1,7 @@
 ---
 external help file: System.Management.Automation.dll-Help.xml
 Module Name: Microsoft.PowerShell.Core
-online version: https://go.microsoft.com/fwlink/?linkid=2007351
+online version: https://go.microsoft.com/fwlink/?linkid=2096265
 schema: 2.0.0
 ms.date: 03/01/2019
 title: Get-ExperimentalFeature

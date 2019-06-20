@@ -3,7 +3,7 @@ ms.date: 02/20/2019
 schema: 2.0.0
 locale: en-us
 keywords: powershell,cmdlet
-online version: https://go.microsoft.com/fwlink/?linkid=301309
+online version: https://go.microsoft.com/fwlink/?linkid=2096774
 external help file: Microsoft.Management.Infrastructure.CimCmdlets.dll-Help.xml
 title: Import-BinaryMiLog
 ---

@@ -1,7 +1,7 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Module Name: Microsoft.PowerShell.Utility
-online version:
+online version: https://go.microsoft.com/fwlink/?linkid=2096713
 schema: 2.0.0
 ms.date: 02/01/2019
 title: Join-String

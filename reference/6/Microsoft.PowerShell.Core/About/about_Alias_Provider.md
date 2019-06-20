@@ -4,7 +4,7 @@ schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
 title:  Alias Provider
-online version: https://go.microsoft.com/fwlink/?linkid=834943
+online version: https://go.microsoft.com/fwlink/?linkid=2096218
 ---
 # Alias provider
 

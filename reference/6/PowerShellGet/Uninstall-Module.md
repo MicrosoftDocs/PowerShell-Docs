@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: PowerShellGet
 ms.date: 06/09/2017
-online version: https://go.microsoft.com/fwlink/?linkid=821673
+online version: https://go.microsoft.com/fwlink/?linkid=2097007
 schema: 2.0.0
 title: Uninstall-Module
 ---

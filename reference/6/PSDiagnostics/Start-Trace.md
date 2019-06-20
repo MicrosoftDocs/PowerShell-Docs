@@ -4,6 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: PSDiagnostics
 ms.date: 11/27/2018
+online version: https://go.microsoft.com/fwlink/?linkid=2096952
 schema: 2.0.0
 title: Start-Trace
 ---

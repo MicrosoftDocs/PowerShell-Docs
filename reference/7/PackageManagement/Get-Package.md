@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: PackageManagement
 ms.date: 5/22/2019
-online version: https://go.microsoft.com/fwlink/?linkid=517135
+online version: https://go.microsoft.com/fwlink/?linkid=2097116
 schema: 2.0.0
 title: Get-Package
 ---

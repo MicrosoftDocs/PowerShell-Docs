@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Management
 ms.date: 06/09/2017
-online version: https://go.microsoft.com/fwlink/?linkid=821643
+online version: https://go.microsoft.com/fwlink/?linkid=2096151
 schema: 2.0.0
 title: Stop-Service
 ---
