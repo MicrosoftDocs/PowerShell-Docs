@@ -4,6 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: PSDiagnostics
 ms.date: 11/29/2018
+online version: https://go.microsoft.com/fwlink/?linkid=2096953
 schema: 2.0.0
 title: Enable-WSManTrace
 ---

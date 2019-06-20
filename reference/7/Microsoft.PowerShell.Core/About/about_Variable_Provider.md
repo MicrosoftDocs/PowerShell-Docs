@@ -4,7 +4,7 @@ schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
 title:  Variable Provider
-online version: https://go.microsoft.com/fwlink/?linkid=834963
+online version: https://go.microsoft.com/fwlink/?linkid=2096988
 ---
 # Variable provider
 

@@ -1,7 +1,7 @@
 ---
 external help file: PSDiagnostics-help.xml
 Module Name: PSDiagnostics
-online version:
+online version: https://go.microsoft.com/fwlink/?linkid=2096464
 schema: 2.0.0
 ms.date: 11/27/2018
 title: Enable-PSTrace

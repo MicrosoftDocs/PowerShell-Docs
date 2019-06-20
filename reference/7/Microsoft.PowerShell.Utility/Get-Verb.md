@@ -3,7 +3,7 @@ ms.date: 09/07/2018
 schema: 2.0.0
 locale: en-us
 keywords: powershell,cmdlet
-online version:
+online version: https://go.microsoft.com/fwlink/?linkid=2097026
 external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 title: Get-Verb
 ---

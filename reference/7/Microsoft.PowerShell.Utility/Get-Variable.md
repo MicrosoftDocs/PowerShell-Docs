@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Utility
 ms.date: 5/28/2019
-online version: https://go.microsoft.com/fwlink/?linkid=821809
+online version: https://go.microsoft.com/fwlink/?linkid=2096711
 schema: 2.0.0
 title: Get-Variable
 ---
