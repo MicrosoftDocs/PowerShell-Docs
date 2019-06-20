@@ -54,7 +54,7 @@ PowerShell.
 Starts the specified version of PowerShell. Valid values are 2.0 and
 3.0. The version that you specify must be installed on the system. If Windows
 PowerShell 3.0 is installed on the computer, "3.0" is the default version.
-Otherwise, "2.0" is the default version. For more information, see [Installing PowerShell](/powershell/scripting/install/installing-windows-powershell.md).
+Otherwise, "2.0" is the default version. For more information, see [Installing PowerShell](/powershell/scripting/install/installing-windows-powershell).
 
 #### -NoLogo
 
