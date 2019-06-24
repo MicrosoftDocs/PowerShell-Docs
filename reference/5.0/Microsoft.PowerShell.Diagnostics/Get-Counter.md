@@ -35,8 +35,9 @@ instrumentation in the Windows family of operating systems. `Get-Counter` gets p
 a local computer or remote computers.
 
 You can use the `Get-Counter` parameters to specify one or more computers, list the performance
-counter sets and the counters, set the sample intervals, and specify the maximum number of samples.
-Without parameters, `Get-Counter` gets performance counter data for a set of system counters.
+counter sets and the instances they contain, set the sample intervals, and specify the maximum
+number of samples. Without parameters, `Get-Counter` gets performance counter data for a set of
+system counters.
 
 Many counter sets are protected by access control lists (ACL). To see all counter sets, open
 PowerShell with the **Run as administrator** option.
@@ -45,7 +46,7 @@ PowerShell with the **Run as administrator** option.
 
 ### Example 1: Get the counter set list
 
-`Get-Counter` gets the local computer's list of counter sets.
+This example gets the local computer's list of counter sets.
 
 ```powershell
 Get-Counter -ListSet *
@@ -68,7 +69,7 @@ The dot (`.`) in the **MachineName** column represents the local computer.
 
 ### Example 2: Specify the SampleInterval and MaxSamples
 
-`Get-Counter` gets the counter data for all processors on the local computer. Data is collected at
+This examples gets the counter data for all processors on the local computer. Data is collected at
 two-second intervals until there are three samples.
 
 ```powershell
@@ -95,8 +96,8 @@ the counter.
 
 ### Example 3: Get continuous samples of a counter
 
-`Get-Counter` gets continuous samples for a counter every second. To stop the command, press
-<kbd>CTRL</kbd>+<kbd>C</kbd>. To specify a longer interval between samples, se the
+This examples gets continuous samples for a counter every second. To stop the command, press
+<kbd>CTRL</kbd>+<kbd>C</kbd>. To specify a longer interval between samples, use the
 **SampleInterval** parameter.
 
 ```powershell
@@ -155,8 +156,8 @@ The dot (`.`) in the **MachineName** column represents the local computer.
 
 ### Example 5: Run a background job to get counter data
 
-`Start-Job` runs a `Get-Counter` command as a background job on the local computer. To view the
-performance counter output from the job, use the `Receive-Job` cmdlet.
+In this example, `Start-Job` runs a `Get-Counter` command as a background job on the local computer.
+To view the performance counter output from the job, use the `Receive-Job` cmdlet.
 
 ```powershell
 Start-Job -ScriptBlock {Get-Counter -Counter "\LogicalDisk(_Total)\% Free Space" -MaxSamples 1000}
@@ -275,7 +276,7 @@ are wildcards for any characters.
 
 ### Example 9: Use the PathsWithInstances property to get formatted path names
 
-`Get-Counter` gets the formatted path names that include the instances for the **PhysicalDisk**
+This example gets the formatted path names that include the instances for the **PhysicalDisk**
 performance counters.
 
 ```powershell
@@ -299,8 +300,8 @@ instance as a string.
 
 ### Example 10: Get a single value for each counter in a counter set
 
-A single value is returned for each performance counter in the local computer's **Memory** counter
-set.
+In this example, a single value is returned for each performance counter in the local computer's
+**Memory** counter set.
 
 ```powershell
 $MemCounters = (Get-Counter -ListSet Memory).Paths
@@ -330,8 +331,9 @@ counter paths in the `$MemCounters` variable.
 
 ### Example 11: Display an object's property values
 
-The property values in the **PerformanceCounterSample** object represent each data sample. You can
-use the properties of the **CounterSamples** object to examine, select, sort, and group the data.
+The property values in the **PerformanceCounterSample** object represent each data sample. In this
+example we use the properties of the **CounterSamples** object to examine, select, sort, and group
+the data.
 
 ```powershell
 $Counter = "\\Server01\Process(Idle)\% Processor Time"
@@ -360,34 +362,7 @@ values and stores the results in the `$Data` variable. The `$Data` variable uses
 `Format-List`. The **Property** parameter uses an asterisk (`*`) wildcard to select all the
 properties.
 
-### Example 12: Use the CounterSamples property to display counters
-
-The **CounterSamples** property can display each counter's values that are stored in a variable.
-
-```powershell
-$Counter = Get-Counter -Counter "\Processor(*)\% Processor Time"
-$Counter.CounterSamples
-```
-
-```Output
-Path                                             InstanceName         CookedValue
-----                                             ------------         -----------
-\\Computer01\processor(0)\% processor time       0               23.5115943185836
-\\Computer01\processor(1)\% processor time       1               29.7555458027808
-\\Computer01\processor(2)\% processor time       2               37.5604851580274
-\\Computer01\processor(3)\% processor time       3               35.9994972869781
-\\Computer01\processor(_total)\% processor time  _total          31.7067756464313
-```
-
-`Get-Counter` uses the **Counter** parameter to specify the counter
-`\Processor(*)\% Processor Time`. The values are stored in the `$Counter` variable.
-`$Counter.CounterSamples` displays the **CounterSamples** property values.
-
-For more verbose output, send the property values down the pipeline. For example:
-
-`$Counter.CounterSamples | Format-List -Property *`
-
-### Example 13: Performance counter array values
+### Example 12: Performance counter array values
 
 In this example, a variable stores each performance counter. The **CounterSamples** property is an
 array that can display specific counter values.
@@ -409,7 +384,7 @@ Path                                         InstanceName        CookedValue
 `\Processor(*)\% Processor Time`. The values are stored in the `$Counter` variable.
 `$Counter.CounterSamples[0]` displays the array value for the first counter value.
 
-### Example 14: Compare performance counter values
+### Example 13: Compare performance counter values
 
 This example finds the amount of processor time used by each processor on the local computer. The
 **CounterSamples** property is used to compare the counter data against a specified value.
@@ -435,7 +410,7 @@ to compare each objects value against a specified value of 20. The `$_.CookedVal
 for the current object in the pipeline. Counters with a **CookedValue** that is less than 20 are
 displayed.
 
-### Example 15: Sort performance counter data
+### Example 14: Sort performance counter data
 
 This example shows how to sort performance counter data. The example finds the processes on the
 computer that are using the most processor time during the sample.
@@ -472,8 +447,7 @@ truncation.
 ### -ComputerName
 
 Specifies one computer name or a comma-separated array of **remote** computer names. Use the NetBIOS
-name, an IP address, or the computer's fully qualified domain name. **ComputerName** accepts strings
-from variables or values from a text file.
+name, an IP address, or the computer's fully qualified domain name.
 
 To get performance counter data from the **local** computer, exclude the **ComputerName** parameter.
 For output such as a **ListSet** that contains the **MachineName** column, a dot (`.`) indicates the
@@ -630,7 +604,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Output objects
+### Microsoft.PowerShell.Commands.GetCounter.CounterSet, Microsoft.PowerShell.Commands.GetCounter.PerformanceCounterSampleSet, Microsoft.PowerShell.Commands.GetCounter.PerformanceCounterSample
 
 To view an object's properties, send the output down the pipeline to `Get-Member`. The object types
 that are output are as follows:
