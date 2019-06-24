@@ -10,6 +10,7 @@ title:  Clear-Host
 # Clear-Host
 
 ## SYNOPSIS
+
 Clears the display in the host program.
 
 ## SYNTAX
@@ -20,23 +21,21 @@ Clear-Host
 
 ## DESCRIPTION
 
-The Clear-Host function removes all text from the current display, including commands and output that might have accumulated.
+The `Clear-Host` function removes all text from the current display, including commands and output that might have accumulated.
 When complete, it displays the command prompt.
-You can use the function name or its alias, CLS.
+You can use the function name or its alias, `cls`.
 
-Clear-Host affects only the current display.
+`Clear-Host` affects only the current display.
 It does not delete saved results or remove any items from the session.
 Session-specific items, such as variables and functions, are not affected by this function.
 
-Because the behavior of the Clear-Host function is determined by the host program, Clear-Host might work differently in different host programs.
+Because the behavior of the `Clear-Host` function is determined by the host program, `Clear-Host` might work differently in different host programs.
 
 ## EXAMPLES
 
 ### Example 1
 
 ```
-cls
-
 # Before
 
 PS C:\> Get-Process
@@ -70,36 +69,30 @@ PS C:\> cls
 PS C:>
 ```
 
-Description
-
------------
-
-This command uses the CLS alias of Clear-Host to clear the current display.
-
-## PARAMETERS
+This command uses the `cls` alias of `Clear-Host` to clear the current display.
 
 ## INPUTS
 
 ### None
 
-You cannot pipe input to Clear-Host.
+You cannot pipe input to `Clear-Host`.
 
 ## OUTPUTS
 
 ### None
 
-Clear-Host does not generate any output
+`Clear-Host` does not generate any output
 
 ## NOTES
 
-Clear-Host is a simple function, not an advanced function.
-As such, you cannot use common parameters, such as -Debug, in a Clear-Host command.
+`Clear-Host` is a simple function, not an advanced function.
+As such, you cannot use common parameters, such as **Debug**, in a `Clear-Host` command.
 
 ## RELATED LINKS
 
 [Get-Host](../../Microsoft.PowerShell.Utility/Get-Host.md)
 
-[Out-Host](../out-host.md)
+[Out-Host](../Out-Host.md)
 
 [Read-Host](../../Microsoft.PowerShell.Utility/Read-Host.md)
 
