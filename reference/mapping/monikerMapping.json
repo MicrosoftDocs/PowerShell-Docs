@@ -122,7 +122,7 @@
     },
     "powershell-7": {
         "conceptualToc": "docs-conceptual/TOC.yml",
-        "packageRoot": "6",
+        "packageRoot": "7",
         "conceptualTocUrl": "/powershell/scripting/powershell-7/toc.json",
         "referenceTocUrl": "/powershell/module/psdocs/toc.json",
         "modules": {

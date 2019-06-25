@@ -37,13 +37,33 @@
             { "files": ["**/*.md"], "src": "virtual-directory-module", "dest": "module" }
         ],
         "resource": [
-            { "files": ["**/images/**", "**/*.png", "**/*.gif", "**/*.jpeg", "**/*.jpg", "**/*.svg"], "exclude": ["**/obj/**", "**/includes/**"] },
-            { "files": ["**/images/**", "**/*.png", "**/*.gif", "**/*.jpeg", "**/*.jpg", "**/*.svg"], "exclude": ["**/obj/**", "**/includes/**"], "version": "powershell-3.0" },
-            { "files": ["**/images/**", "**/*.png", "**/*.gif", "**/*.jpeg", "**/*.jpg", "**/*.svg"], "exclude": ["**/obj/**", "**/includes/**"], "version": "powershell-4.0" },
-            { "files": ["**/images/**", "**/*.png", "**/*.gif", "**/*.jpeg", "**/*.jpg", "**/*.svg"], "exclude": ["**/obj/**", "**/includes/**"], "version": "powershell-5.0" },
-            { "files": ["**/images/**", "**/*.png", "**/*.gif", "**/*.jpeg", "**/*.jpg", "**/*.svg"], "exclude": ["**/obj/**", "**/includes/**"], "version": "powershell-5.1" },
-            { "files": ["**/images/**", "**/*.png", "**/*.gif", "**/*.jpeg", "**/*.jpg", "**/*.svg"], "exclude": ["**/obj/**", "**/includes/**"], "version": "powershell-6" },
-            { "files": ["**/images/**", "**/*.png", "**/*.gif", "**/*.jpeg", "**/*.jpg", "**/*.svg"], "exclude": ["**/obj/**", "**/includes/**"], "version": "powershell-7" }
+            { "files": ["**/images/**", "**/*.png", "**/*.gif", "**/*.jpeg", "**/*.jpg", "**/*.svg"],
+              "exclude": ["**/obj/**", "**/includes/**"]
+            },
+            { "files": ["**/images/**", "**/*.png", "**/*.gif", "**/*.jpeg", "**/*.jpg", "**/*.svg"],
+              "exclude": ["**/obj/**", "**/includes/**"],
+              "version": "powershell-3.0"
+            },
+            { "files": ["**/images/**", "**/*.png", "**/*.gif", "**/*.jpeg", "**/*.jpg", "**/*.svg"],
+              "exclude": ["**/obj/**", "**/includes/**"],
+              "version": "powershell-4.0"
+            },
+            { "files": ["**/images/**", "**/*.png", "**/*.gif", "**/*.jpeg", "**/*.jpg", "**/*.svg"],
+              "exclude": ["**/obj/**", "**/includes/**"],
+              "version": "powershell-5.0"
+            },
+            { "files": ["**/images/**", "**/*.png", "**/*.gif", "**/*.jpeg", "**/*.jpg", "**/*.svg"],
+              "exclude": ["**/obj/**", "**/includes/**"],
+              "version": "powershell-5.1"
+            },
+            { "files": ["**/images/**", "**/*.png", "**/*.gif", "**/*.jpeg", "**/*.jpg", "**/*.svg"],
+              "exclude": ["**/obj/**", "**/includes/**"],
+              "version": "powershell-6"
+            },
+            { "files": ["**/images/**", "**/*.png", "**/*.gif", "**/*.jpeg", "**/*.jpg", "**/*.svg"],
+              "exclude": ["**/obj/**", "**/includes/**"],
+              "version": "powershell-7"
+            }
         ],
         "versions": {
             "powershell-3.0": { "dest": "powershell-3.0" },
