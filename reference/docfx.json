@@ -73,7 +73,7 @@
                 "4.0/**.md": "powershell-cmdlets",
                 "5.0/**.md": "powershell-cmdlets",
                 "5.1/**.md": "powershell-cmdlets",
-                "6/**.md": "powershell-cmdlets",,
+                "6/**.md": "powershell-cmdlets",
                 "7/**.md": "powershell-cmdlets",
                 "docs-conceptual/**.md": "powershell-conceptual"
             },
@@ -82,7 +82,7 @@
                 "4.0/**.md": "reference",
                 "5.0/**.md": "reference",
                 "5.1/**.md": "reference",
-                "6/**.md": "reference",,
+                "6/**.md": "reference",
                 "7/**.md": "reference",
                 "docs-conceptual/**.md": "conceptual"
             },
