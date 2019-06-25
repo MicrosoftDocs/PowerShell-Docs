@@ -3,7 +3,7 @@ external help file: Microsoft.PowerShell.Commands.Diagnostics.dll-Help.xml
 keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Diagnostics
-ms.date: 06/09/2017
+ms.date: 6/21/2019
 online version: https://go.microsoft.com/fwlink/?linkid=821528
 schema: 2.0.0
 title: Get-Counter
@@ -17,71 +17,248 @@ Gets performance counter data from local and remote computers.
 ## SYNTAX
 
 ### GetCounterSet (Default)
+
 ```
 Get-Counter [[-Counter] <String[]>] [-SampleInterval <Int32>] [-MaxSamples <Int64>] [-Continuous]
  [-ComputerName <String[]>] [<CommonParameters>]
 ```
 
 ### ListSetSet
+
 ```
 Get-Counter [-ListSet] <String[]> [-ComputerName <String[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-The **Get-Counter** cmdlet gets live, real-time performance counter data directly from the performance monitoring instrumentation in the Windows family of operating systems.
-You can use it to get performance data from the local or remote computers at the sample interval that you specify.
 
-Without parameters, this cmdlet gets counter data for a set of system counters.
+The `Get-Counter` cmdlet gets performance counter data directly from the performance monitoring
+instrumentation in the Windows family of operating systems. `Get-Counter` gets performance data from
+a local computer or remote computers.
 
-You can use the parameters of this cmdlet to specify one or more computers, to list the performance counter sets and the counters that they contain, and to set the sample size and interval.
+You can use the `Get-Counter` parameters to specify one or more computers, list the performance
+counter sets and the instances they contain, set the sample intervals, and specify the maximum
+number of samples. Without parameters, `Get-Counter` gets performance counter data for a set of
+system counters.
+
+Many counter sets are protected by access control lists (ACL). To see all counter sets, open
+PowerShell with the **Run as administrator** option.
 
 ## EXAMPLES
 
-### Example 1: Get counter sets on the local computer
-```
-PS C:\> Get-Counter -ListSet *
-```
+### Example 1: Get the counter set list
 
-This command gets all of the counter sets on the local computer.
+This example gets the local computer's list of counter sets.
 
-Because many of the counter sets are protected by access control lists (ACLs), to see all counter sets, open Windows PowerShell with the "Run as administrator" option before using the **Get-Counter** command.
-
-### Example 2: Get a counter set with a sample interval for a specified maximum sample
-```
-PS C:\> Get-Counter -Counter "\Processor(_Total)\% Processor Time" -SampleInterval 2 -MaxSamples 3
+```powershell
+Get-Counter -ListSet *
 ```
 
-This command gets the current "% Processor Time" combined values for all processors on the local computer.
-It collects data every two seconds until it has three values.
-
-### Example 3: Get an alphabetically sorted list of all counter sets
+```Output
+CounterSetName     : Processor
+MachineName        : .
+CounterSetType     : MultiInstance
+Description        : The Processor performance object consists of counters that measure aspects ...
+                     computer that performs arithmetic and logical computations, initiates ...
+                     computer can have multiple processors.  The processor object represents ...
+Paths              : {\Processor(*)\% Processor Time, \Processor(*)\% User Time, ...
+PathsWithInstances : {\Processor(0)\% Processor Time, \Processor(1)\% Processor Time, ...
+Counter            : {\Processor(*)\% Processor Time, \Processor(*)\% User Time, ...
 ```
-PS C:\> Get-Counter -ListSet * | Sort-Object CounterSetName | Format-Table CounterSetName
+
+`Get-Counter` uses the **ListSet** parameter with an asterisk (`*`) to get the list of counter sets.
+The dot (`.`) in the **MachineName** column represents the local computer.
+
+### Example 2: Specify the SampleInterval and MaxSamples
+
+This examples gets the counter data for all processors on the local computer. Data is collected at
+two-second intervals until there are three samples.
+
+```powershell
+Get-Counter -Counter "\Processor(_Total)\% Processor Time" -SampleInterval 2 -MaxSamples 3
 ```
 
-This command gets an alphabetically sorted list of the names of all of the counter sets on the local computer.
+```Output
+Timestamp                 CounterSamples
+---------                 --------------
+6/18/2019 14:39:56        \\Computer01\processor(_total)\% processor time :
+                          20.7144271584086
 
-### Example 4: Use the counter Path property to find formatted path names for performance counters
+6/18/2019 14:39:58        \\Computer01\processor(_total)\% processor time :
+                          10.4391790575511
+
+6/18/2019 14:40:01        \\Computer01\processor(_total)\% processor time :
+                          37.5968799396998
 ```
-The first command gets the path names of the performance counters in the Memory counter set on the local computer.
-PS C:\> (Get-Counter -ListSet Memory).Paths
 
-\Memory\Page Faults/sec
-\Memory\Available Bytes
-\Memory\Committed Bytes
-\Memory\Commit Limit
-\Memory\Write Copies/sec
-\Memory\Transition Faults/sec
-\Memory\Cache Faults/sec
-\Memory\Demand Zero Faults/sec
-\Memory\Pages/sec
-\Memory\Pages Input/sec
-...
+`Get-Counter` uses the **Counter** parameter to specify the counter path
+`\Processor(_Total)\% Processor Time`. The **SampleInterval** parameter sets a two-second interval
+to check the counter. **MaxSamples** determines that three is the maximum number of times to check
+the counter.
 
+### Example 3: Get continuous samples of a counter
 
-The second command gets the path names that include "cache".
-PS C:\> (Get-Counter -ListSet Memory).Paths | Where {$_ -like "*Cache*"}
+This examples gets continuous samples for a counter every second. To stop the command, press
+<kbd>CTRL</kbd>+<kbd>C</kbd>. To specify a longer interval between samples, use the
+**SampleInterval** parameter.
 
+```powershell
+Get-Counter -Counter "\Processor(_Total)\% Processor Time" -Continuous
+```
+
+```Output
+Timestamp                 CounterSamples
+---------                 --------------
+6/19/2019 15:35:03        \\Computer01\processor(_total)\% processor time :
+                          43.8522842937022
+
+6/19/2019 15:35:04        \\Computer01\processor(_total)\% processor time :
+                          29.7896844697383
+
+6/19/2019 15:35:05        \\Computer01\processor(_total)\% processor time :
+                          29.4962645638135
+
+6/19/2019 15:35:06        \\Computer01\processor(_total)\% processor time :
+                          25.5901500127408
+```
+
+`Get-Counter` uses the **Counter** parameter to specify the `\Processor\% Processor Time` counter.
+The **Continuous** parameter specifies to get samples every second until the command is stopped with
+<kbd>CTRL</kbd>+<kbd>C</kbd>.
+
+### Example 4: Alphabetical list of counter sets
+
+This example uses the pipeline to get the counter list set and then sort the list in alphabetical
+order.
+
+```powershell
+Get-Counter -ListSet * | Sort-Object -Property CounterSetName | Format-Table -AutoSize
+```
+
+```Output
+CounterSetName                        MachineName CounterSetType  Description
+--------------                        ----------- --------------  -----------
+.NET CLR Data                         .           SingleInstance  .Net CLR Data
+.NET Data Provider for SqlServer      .           SingleInstance  Counters for System.Data.SqlClient
+AppV Client Streamed Data Percentage  .           SingleInstance  Size of data streamed to disk ...
+Authorization Manager Applications    .           SingleInstance  The set of Counters for ...
+BitLocker                             .           MultiInstance   BitLocker Drive Encryption ...
+Bluetooth Device                      .           SingleInstance  Counters related to a remote ...
+Cache                                 .           SingleInstance  The Cache performance object ...
+Client Side Caching                   .           SingleInstance  Performance counters for SMB ...
+```
+
+`Get-Counter` uses the **ListSet** parameter with an asterisk (`*`) to get a complete list of
+counter sets. The **CounterSet** objects are sent down the pipeline. `Sort-Object` uses the
+**Property** parameter to specify that the objects are sorted by **CounterSetName**. The objects are
+sent down the pipeline to `Format-Table`. The **AutoSize** parameter adjusts the column widths to
+minimize truncation.
+
+The dot (`.`) in the **MachineName** column represents the local computer.
+
+### Example 5: Run a background job to get counter data
+
+In this example, `Start-Job` runs a `Get-Counter` command as a background job on the local computer.
+To view the performance counter output from the job, use the `Receive-Job` cmdlet.
+
+```powershell
+Start-Job -ScriptBlock {Get-Counter -Counter "\LogicalDisk(_Total)\% Free Space" -MaxSamples 1000}
+```
+
+```Output
+Id     Name  PSJobTypeName   State    HasMoreData  Location   Command
+--     ----  -------------   -----    -----------  --------   -------
+1      Job1  BackgroundJob   Running  True         localhost  Get-Counter -Counter
+```
+
+`Start-Job` uses the **ScriptBlock** parameter to run a `Get-Counter` command. `Get-Counter` uses
+the **Counter** parameter to specify the counter path `\LogicalDisk(_Total)\% Free Space`. The
+**MaxSamples** parameter specifies to get 1000 samples of the counter.
+
+### Example 6: Get counter data from multiple computers
+
+This example uses a variable to get performance counter data from two computers.
+
+```powershell
+$DiskReads = "\LogicalDisk(C:)\Disk Reads/sec"
+$DiskReads | Get-Counter -ComputerName Server01, Server02 -MaxSamples 10
+```
+
+```Output
+Timestamp                 CounterSamples
+---------                 --------------
+6/21/2019 10:51:04        \\Server01\logicaldisk(c:)\disk reads/sec :
+                          0
+
+                          \\Server02\logicaldisk(c:)\disk reads/sec :
+                          0.983050344269146
+```
+
+The `$DiskReads` variable stores the `\LogicalDisk(C:)\Disk Reads/sec` counter path. The
+`$DiskReads` variable is sent down the pipeline to `Get-Counter`. **Counter** is the first position
+parameter and accepts the path stored in `$DiskReads`. **ComputerName** specifies the two computers
+and **MaxSamples** specifies to get 10 samples from each computer.
+
+### Example 7: Get a counter's instance values from multiple random computers
+
+This example gets the value of a performance counter on 50 random, remote computers in the
+enterprise. The **ComputerName** parameter uses random computer names stored in a variable. To
+update the computer names in the variable, recreate the variable.
+
+An alternative for the server names in the **ComputerName** parameter is to use a text file. For
+example:
+
+`-ComputerName (Get-Random (Get-Content -Path C:\Servers.txt) -Count 50)`
+
+The counter path includes an asterisk (`*`) in the instance name to get the data for each of the
+remote computer's processors.
+
+```powershell
+$Servers = Get-Random (Get-Content -Path C:\Servers.txt) -Count 50
+$Counter = "\Processor(*)\% Processor Time"
+Get-Counter -Counter $Counter -ComputerName $Servers
+```
+
+```Output
+Timestamp                 CounterSamples
+---------                 --------------
+6/20/2019 12:20:35        \\Server01\processor(0)\% processor time :
+                          6.52610319637854
+
+                          \\Server01\processor(1)\% processor time :
+                          3.41030663625782
+
+                          \\Server01\processor(2)\% processor time :
+                          9.64189975649925
+
+                          \\Server01\processor(3)\% processor time :
+                          1.85240835619747
+
+                          \\Server01\processor(_total)\% processor time :
+                          5.35768447160776
+```
+
+The `Get-Random` cmdlet uses `Get-Content` to select 50 random computer names from the
+**Servers.txt** file. The remote computer names are stored in the `$Servers` variable. The
+`\Processor(*)\% Processor Time` counter's path is stored in the `$Counter` variable. `Get-Counter`
+uses the **Counter** parameter to specify the counters in the `$Counter` variable. The
+**ComputerName** parameter specifies the computer names in the `$Servers` variable.
+
+### Example 8: Use the Path property to get formatted path names
+
+This example uses the **Path** property of a counter set to find the formatted path names for the
+performance counters.
+
+The pipeline is used with the `Where-Object` cmdlet to find a subset of the path names. To find a
+counter sets complete list of counter paths, remove the pipeline (`|`) and `Where-Object` command.
+
+The `$_` is an automatic variable for the current object in the pipeline.
+For more information, see [about_Automatic_Variables](../Microsoft.PowerShell.Core/About/about_Automatic_Variables.md).
+
+```powershell
+(Get-Counter -ListSet Memory).Paths | Where-Object { $_ -like "*Cache*" }
+```
+
+```Output
 \Memory\Cache Faults/sec
 \Memory\Cache Bytes
 \Memory\Cache Bytes Peak
@@ -89,208 +266,196 @@ PS C:\> (Get-Counter -ListSet Memory).Paths | Where {$_ -like "*Cache*"}
 \Memory\Standby Cache Reserve Bytes
 \Memory\Standby Cache Normal Priority Bytes
 \Memory\Standby Cache Core Bytes
+\Memory\Long-Term Average Standby Cache Lifetime (s)
 ```
 
-This example uses the **Path** property of a counter set to find the correctly formatted path names for the performance counters.
-You can use a command like this one to get the correct counter path names.
+`Get-Counter` uses the **ListSet** parameter to specify the **Memory** counter set. The command is
+enclosed in parentheses so that the **Paths** property returns each path as a string. The objects
+are sent down the pipeline to `Where-Object`. `Where-Object` uses the variable `$_` to process each
+object and uses the **like** parameter to find matches for the string `*Cache*`. The asterisks (`*`)
+are wildcards for any characters.
 
-### Example 5: Get specific counter data from multiple computers
-```
-The first command saves the **Disk Reads/sec** counter path in the $DiskReads variable.
-PS C:\> $DiskReads = "\LogicalDisk(C:)\Disk Reads/sec"
+### Example 9: Use the PathsWithInstances property to get formatted path names
 
-The second command uses a pipeline operator (|) to send the counter path in the $DiskReads variable to the **Get-Counter** cmdlet. The command uses the **MaxSamples** parameter to limit the output to 10 samples.
-PS C:\> $DiskReads | Get-Counter -Computer Server01, Server02 -MaxSamples 10
-```
+This example gets the formatted path names that include the instances for the **PhysicalDisk**
+performance counters.
 
-This example gets the **Disk Reads/sec** counter data from the Server01 and Server02 computers.
-
-### Example 6: Get formatted path names for a performance counter
-```
-PS C:\> (Get-Counter -List PhysicalDisk).PathsWithInstances
+```powershell
+(Get-Counter -ListSet PhysicalDisk).PathsWithInstances
 ```
 
-This command gets the correctly formatted path names for the **PhysicalDisk** performance counters, including the instance names.
-
-### Example 7: Get the value of a specific performance counter on multiple random computers
-```
-The first command uses the Get-Content cmdlet to get the list of enterprise servers from the Servers.txt file. It uses the Get-Random cmdlet to select 50 server names randomly from the Servers.txt file contents. The results are saved in the $Servers variable.
-PS C:\> $Servers = Get-Random (Get-Content Servers.txt) -Count 50
-
-The second command saves the path to the **"% DPC Time**" counter in the $Counter variable. The counter path includes a wildcard character in the instance name to get the data on all of the processors on each of the computers.
-PS C:\> $Counter = "\Processor(*)\% DPC Time"
-
-The third command uses the **Get-Counter** cmdlet to get the counter values. It uses the **Counter** parameter to specify the counters and the **ComputerName** parameter to specify the computers saved in the $servers variable.
-PS C:\> Get-Counter -Counter $Counter -ComputerName $Servers
+```Output
+\PhysicalDisk(0 C:)\Current Disk Queue Length
+\PhysicalDisk(_Total)\Current Disk Queue Length
+\PhysicalDisk(0 C:)\% Disk Time
+\PhysicalDisk(_Total)\% Disk Time
+\PhysicalDisk(0 C:)\Avg. Disk Queue Length
+\PhysicalDisk(_Total)\Avg. Disk Queue Length
+\PhysicalDisk(0 C:)\% Disk Read Time
+\PhysicalDisk(_Total)\% Disk Read Time
 ```
 
-This example gets the value of the "**% DPC Time**" performance counter on 50 randomly select computers in the enterprise.
+`Get-Counter` uses the **ListSet** parameter to specify the **PhysicalDisk** counter set. The
+command is enclosed in parentheses so that the **PathsWithInstances** property returns each path
+instance as a string.
 
-### Example 8: Get a single value for all of the performance counters in a counter set
+### Example 10: Get a single value for each counter in a counter set
+
+In this example, a single value is returned for each performance counter in the local computer's
+**Memory** counter set.
+
+```powershell
+$MemCounters = (Get-Counter -ListSet Memory).Paths
+Get-Counter -Counter $MemCounters
 ```
-The first command uses the **Get-Counter** cmdlet to get the counter paths. It saves them in the $MemCounters variable.
-PS C:\> $MemCounters = (Get-Counter -List Memory).Paths
 
-The second command uses the **Get-Counter** cmdlet to get the counter data for each counter. It uses the **Counter** parameter to specify the counters in the $MemCounters variable.
-PS C:\> Get-Counter -Counter $MemCounters
+```Output
+Timestamp                 CounterSamples
+---------                 --------------
+6/19/2019 12:05:00        \\Computer01\memory\page faults/sec :
+                          868.772077545597
+
+                          \\Computer01\memory\available bytes :
+                          9031176192
+
+                          \\Computer01\memory\committed bytes :
+                          8242982912
+
+                          \\Computer01\memory\commit limit :
+                          19603333120
 ```
 
-This example gets a single value for all of the performance counters in the Memory counter set on the local computer.
+`Get-Counter` uses the **ListSet** parameter to specify the **Memory** counter set. The command is
+enclosed in parentheses so that the **Paths** property returns each path as a string. The paths are
+stored in the `$MemCounters` variable. `Get-Counter` uses the **Counter** parameter to specify the
+counter paths in the `$MemCounters` variable.
 
-### Example 9: Display property values in a PerformanceCounterSample
+### Example 11: Display an object's property values
+
+The property values in the **PerformanceCounterSample** object represent each data sample. In this
+example we use the properties of the **CounterSamples** object to examine, select, sort, and group
+the data.
+
+```powershell
+$Counter = "\\Server01\Process(Idle)\% Processor Time"
+$Data = Get-Counter $Counter
+$Data.CounterSamples | Format-List -Property *
 ```
-The first command saves a counter path in the $Counter variable.
-PS C:\> $Counter = "\\SERVER01\Process(Idle)\% Processor Time"
 
-The second command uses the **Get-Counter** cmdlet to get one sample of the counter values. It saves the results in the $Data variable.
-PS C:\> $Data = Get-Counter $Counter
-
-The third command uses the Format-List cmdlet to display all the properties of the **CounterSamples** property of the sample set object as a list.
-PS C:\> $Data.CounterSamples | Format-List -Property *
-
-Path             : \\SERVER01\process(idle)\% processor time
+```Output
+Path             : \\Server01\process(idle)\% processor time
 InstanceName     : idle
 CookedValue      : 198.467899571389
 RawValue         : 14329160321003
 SecondValue      : 128606459528326201
 MultipleCount    : 1
 CounterType      : Timer100Ns
-Timestamp        : 7/15/2008 6:39:12 PM
+Timestamp        : 6/19/2019 12:20:49
 Timestamp100NSec : 128606207528320000
 Status           : 0
 DefaultScale     : 0
 TimeBase         : 10000000
 ```
 
-This example shows the property values in the **PerformanceCounterSample** object that represents each data sample.
-You can use the properties of the **CounterSamples** object to examine, select, sort, and group the data.
+The counter path is stored in the `$Counter` variable. `Get-Counter` gets one sample of the counter
+values and stores the results in the `$Data` variable. The `$Data` variable uses the
+**CounterSamples** property to get the object's properties. The object is sent down the pipeline to
+`Format-List`. The **Property** parameter uses an asterisk (`*`) wildcard to select all the
+properties.
 
-### Example 10: Get performance counter data as a background job
-```
-PS C:\> Start-Job -ScriptBlock {Get-Counter -Counter "\LogicalDisk(_Total)\% Free Space" -MaxSamples 1000}
-```
+### Example 12: Performance counter array values
 
-The command runs a **Get-Counter** command as background job.
-For more information, see Start-Job.
+In this example, a variable stores each performance counter. The **CounterSamples** property is an
+array that can display specific counter values.
 
-### Example 11: Get the percentage of free disk space on multiple random computers
-```
-PS C:\> Get-Counter -ComputerName (Get-Random Servers.txt -Count 50) -Counter "\LogicalDisk(*)\% Free Space"
-```
+To display each counter sample, use `$Counter.CounterSamples`.
 
-This command uses the **Get-Counter** and Get-Random cmdlets to find the percentage of free disk space on 50 computers selected randomly from the Servers.txt file.
-
-### Example 12: Associate counter data with a the computer from which it originated
-```
-The first command uses the **Get-Counter** cmdlet to get the "LogicalDisk\% Free Space" counter value from two remote computers, S1 and S2. It saves the result in the $DiskSpace variable.
-PS C:\> $DiskSpace = Get-Counter "\LogicalDisk(_Total)\% Free Space" -ComputerName s1, s2
-
-The second command displays the results that were saved in the $DiskSpace variable. All of the data is stored in the object, but it is not easy to see it in this form.
-PS C:\> $DiskSpace
-
-Timestamp                 CounterSamples
----------                 --------------
-7/29/2009 3:04:33 PM      \\s1\\logicaldisk(_total)\% free space :
-45.6992854507028
-\\s2\\logicaldisk(_total)\% free space :
-3.73238142733405
-
-The third command displays in a table the value of the **CounterSamples** property of the **PerformanceCounterSampleSet** object that **Get-Counter** returns. (To see all of the properties and methods of the object, pipe it to the Get-Member cmdlet.)
-PS C:\> $DiskSpace.CounterSamples | Format-Table -AutoSize
-
-Path                                     InstanceName CookedValue
-----                                     ------------ -----------
-\\s1\\logicaldisk(_total)\% free space   _total       45.6992854507028
-\\s2\\logicaldisk(_total)\% free space   _total       3.73238142733405
-
-The **CounterSamples** property contains a **PerformanceCounterSample** object with its own properties and methods. The fourth command uses array notation to get the first counter sample and a pipeline operator to send the counter sample object to the Format-List cmdlet, which displays all of its properties and property value in a list. This display shows the richness of the data in each counter sample object.
-PS C:\> $DiskSpace.countersamples[0] | Format-Table -Property *
-
-Path             : \\localhost\\logicaldisk(_total)\% free space
-InstanceName     : _total
-CookedValue      : 45.6992854507028
-RawValue         : 108980
-SecondValue      : 238472
-MultipleCount    : 1
-CounterType      : RawFraction
-Timestamp        : 7/29/2009 3:04:33 PM
-Timestamp100NSec : 128933534734680000
-Status           : 0
-DefaultScale     : 0
-TimeBase         : 14318180
-
-The fifth command shows how to select data from the counter samples. It uses the Where-Object cmdlet to get only the counter samples with a **CookedValue** of less than 15.
-PS C:\> $DiskSpace.CounterSamples | Where-Object {$_.CookedValue -lt 15}
-
-Path                                InstanceName    CookedValue
-----                                ------------    -----------
-\\s2\\logicaldisk(_total)\% free... _total          3.73238142733405
+```powershell
+$Counter = Get-Counter -Counter "\Processor(*)\% Processor Time"
+$Counter.CounterSamples[0]
 ```
 
-This example shows how to associate counter data with the computer on which it originated, and how to manipulate the data.
-
-### Example 13: Sort performance counter data
-```
-The first command uses the **Get-Counter** cmdlet to get the "Process\% Processor Time" counter for all the processes on the computer. The command saves the results in the $P variable.
-PS C:\> $P = Get-Counter '\Process(*)\% Processor Time'
-
-The second command gets the **CounterSamples** property of the sample set object in $p. It uses the Sort-Object cmdlet to sort the samples in descending order based on the cooked value of the sample. Then, the command uses Format-Table cmdlet to display the data in a table and its **AutoSize** parameter to optimize the display.
-PS C:\> $p.CounterSamples | Sort-Object -Property CookedValue -Descending | Format-Table -Auto
-
-Path                                              InstanceName      CookedValue
-----                                              ------------      -----------
-\\server01\process(_total)\% processor time        _total        200.00641042078
-\\server01\process(idle)\% processor time          idle          200.00641042078
-\\server01\process(explorer#1)\% processor time    explorer                    0
-\\server01\process(dwm#1)\% processor time         dwm                         0
-\\server01\process(taskeng#1)\% processor time     taskeng                     0
-\\server01\process(taskhost#1)\% processor time    taskhost                    0
-\\server01\process(winlogon)\% processor time      winlogon                    0
-\\server01\process(csrss)\% processor time         csrss                       0
+```Output
+Path                                         InstanceName        CookedValue
+----                                         ------------        -----------
+\\Computer01\processor(0)\% processor time   0              1.33997091699662
 ```
 
-This example shows how to sort performance counter data.
-The example finds the processes on the computer that are using the most processor time during the sampling.
+`Get-Counter` uses the **Counter** parameter to specify the counter
+`\Processor(*)\% Processor Time`. The values are stored in the `$Counter` variable.
+`$Counter.CounterSamples[0]` displays the array value for the first counter value.
 
-### Example 14: Find processes on a computer with the largest working sets
-```
-The first command gets one sample of the "Process\Working Set - Private" counter for each process. The command saves the counter data in the $WS variable.
-PS C:\> $WS = Get-Counter "\Process(*)\Working Set - Private"
+### Example 13: Compare performance counter values
 
-The second command uses a pipeline operator (|) to send the data in the **CounterSamples** property of the $ws variable to the Sort-Object cmdlet, where the process data is sorted in descending order by the value of the **CookedValue** property. Another pipeline sends the sorted data to the Format-Table cmdlet, where the data is formatted as a table with **InstanceName** and **CookedValue** columns.
-PS C:\> $ws.CounterSamples | Sort-Object -Property CookedValue -Descending | Format-Table -Property InstanceName, CookedValue -AutoSize
+This example finds the amount of processor time used by each processor on the local computer. The
+**CounterSamples** property is used to compare the counter data against a specified value.
 
-InstanceName  CookedValue
-------------  -----------
-_total          162983936
-svchost          40370176
-powershell       15110144
-explorer         14135296
-svchost          10928128
-svchost           9027584
-...
+To display each counter sample, use `$Counter.CounterSamples`.
+
+```powershell
+$Counter = Get-Counter -Counter "\Processor(*)\% Processor Time"
+$Counter.CounterSamples | Where-Object { $_.CookedValue -lt "20" }
 ```
 
-This example finds the processes on the computer with the largest working sets.
-The cmdlet lists the processes in descending order based on their working set size.
-
-### Example 15: Get a series of samples of a performance counter
+```Output
+Path                                         InstanceName        CookedValue
+----                                         ------------        -----------
+\\Computer01\processor(0)\% processor time   0              12.6398025240208
+\\Computer01\processor(1)\% processor time   1              15.7598095767344
 ```
-PS C:\> Get-Counter -Counter "\Processor(_Total)\% Processor Time" -Continuous
+
+`Get-Counter` uses the **Counter** parameter to specify the counter
+`\Processor(*)\% Processor Time`. The values are stored in the `$Counter` variable. The objects
+stored in `$Counter.CounterSamples` are sent down the pipeline. `Where-Object` uses a script block
+to compare each objects value against a specified value of 20. The `$_.CookedValue` is a variable
+for the current object in the pipeline. Counters with a **CookedValue** that is less than 20 are
+displayed.
+
+### Example 14: Sort performance counter data
+
+This example shows how to sort performance counter data. The example finds the processes on the
+computer that are using the most processor time during the sample.
+
+```powershell
+$Procs = Get-Counter -Counter "\Process(*)\% Processor Time"
+$Procs.CounterSamples | Sort-Object -Property CookedValue -Descending |
+   Format-Table -Property Path, InstanceName, CookedValue -AutoSize
 ```
 
-This command gets a series of samples of the Processor\% Processor Time counter at the default one second interval.
-To stop the command, press CTRL + C.
+```Output
+Path                                                         InstanceName             CookedValue
+----                                                         ------------             -----------
+\\Computer01\process(_total)\% processor time                _total              395.464129650573
+\\Computer01\process(idle)\% processor time                  idle                389.356575524695
+\\Computer01\process(mssense)\% processor time               mssense             3.05377706293879
+\\Computer01\process(csrss#1)\% processor time               csrss               1.52688853146939
+\\Computer01\process(microsoftedgecp#10)\% processor time    microsoftedgecp     1.52688853146939
+\\Computer01\process(runtimebroker#5)\% processor time       runtimebroker                      0
+\\Computer01\process(settingsynchost)\% processor time       settingsynchost                    0
+\\Computer01\process(microsoftedgecp#16)\% processor time    microsoftedgecp                    0
+```
+
+`Get-Counter` uses the **Counter** parameter to specify the `\Process(*)\% Processor Time` counter
+for all the processes on the local computer. The result is stored in the `$Procs` variable. The
+`$Procs` variable with the **CounterSamples** property sends the **PerformanceCounterSample**
+objects down the pipeline. `Sort-Object` uses the **Property** parameter to sort the objects by
+**CookedValue** in **Descending** order. `Format-Table` uses the **Property** parameter to select
+the columns for the output. The **AutoSize** parameter adjusts the column widths to minimize
+truncation.
 
 ## PARAMETERS
 
 ### -ComputerName
-Specifies, as a string array, the names of the computers that this cmdlet gets performance counter data from.
-You can specify the NetBIOS name, an Internet Protocol (IP) address, or the fully qualified domain names (FQDN) of the computers.
-The default value is the local computer.
 
-This cmdlet does not rely on Windows PowerShell remoting.
-You can use the *ComputerName* parameter of the **Get-Counter** cmdlet even if your computer is not configured for remoting in Windows PowerShell.
+Specifies one computer name or a comma-separated array of **remote** computer names. Use the NetBIOS
+name, an IP address, or the computer's fully qualified domain name.
+
+To get performance counter data from the **local** computer, exclude the **ComputerName** parameter.
+For output such as a **ListSet** that contains the **MachineName** column, a dot (`.`) indicates the
+local computer.
+
+`Get-Counter` doesn't rely on PowerShell remoting. You can use the **ComputerName** parameter even
+if your computer isn't configured to run remote commands.
 
 ```yaml
 Type: String[]
@@ -305,9 +470,10 @@ Accept wildcard characters: False
 ```
 
 ### -Continuous
-Indicates that this cmdlet gets samples continuously until you press CTRL+C.
-By default, this cmdlet gets only one counter sample.
-You can use the *SampleInterval* parameter to set the interval for continuous sampling.
+
+When the **Continuous** is specified, `Get-Counter` gets samples until you press
+<kbd>CTRL</kbd>+<kbd>C</kbd>. Samples are obtained every second for each specified performance
+counter. Use the **SampleInterval** parameter to increase the interval between continuous samples.
 
 ```yaml
 Type: SwitchParameter
@@ -322,25 +488,27 @@ Accept wildcard characters: False
 ```
 
 ### -Counter
-Specifies, as a string array, data from the specified performance counters.
-Enter one or more counter paths.
-You can also pipe counter path strings to this cmdlet.
 
-Each counter path has the following format:
+Specifies the path to one or more counter paths. Paths are input as a comma-separated array, a
+variable, or values from a text file. You can send counter path strings down the pipeline to
+`Get-Counter`.
 
-"\[\\\\\<ComputerName\>\]\\\<CounterSet\>(\<Instance\>)\\\<CounterName\>"
+Counter paths use the following syntax:
 
-For instance:
+`\\ComputerName\CounterSet(Instance)\CounterName`
 
-"\\\\Server01\Processor(2)\% User Time"
+`\CounterSet(Instance)\CounterName`
 
-The \<ComputerName\> element is optional.
-If you omit it, this cmdlet uses the value of the *ComputerName* parameter.
+For example:
 
-To get correctly formatted counter paths, use the *ListSet* parameter to get a performance counter set.
-The **Paths** and **PathsWithInstances** properties of each performance counter set contain the individual counter paths formatted as a string.
-You can save the counter path strings in a variable or pipe the string directly to another **Get-Counter** command.
-For a demonstration, see the examples.
+`\\Server01\Processor(*)\% User Time`
+
+`\Processor(*)\% User Time`
+
+The `\\ComputerName` is optional in a performance counter path. If the counter path doesn't include
+the computer name, `Get-Counter` uses the local computer.
+
+An asterisk (`*`) in the instance is a wildcard character to get all instances of the counter.
 
 ```yaml
 Type: String[]
@@ -348,16 +516,28 @@ Parameter Sets: GetCounterSet
 Aliases:
 
 Required: False
-Position: 1
+Position: 0
 Default value: None
 Accept pipeline input: True (ByPropertyName, ByValue)
 Accept wildcard characters: True
 ```
 
 ### -ListSet
-Specifies the performance counter sets on the computers.
-Enter the names of the counter sets.
-You can also pipe counter set names to this cmdlet.
+
+Lists the performance counter sets on the computers. Use an asterisk (`*`) to specify all counter
+sets. Enter one name or a comma-separated string of counter set names. You can send counter set
+names down the pipeline.
+
+To get a counter sets formatted counter paths, use the **ListSet** parameter. The **Paths** and
+**PathsWithInstances** properties of each counter set contain the individual counter paths formatted
+as a string.
+
+You can save the counter path strings in a variable or use the pipeline to send the string to
+another `Get-Counter` command.
+
+For example to send each **Processor** counter path to `Get-Counter`:
+
+`Get-Counter -ListSet Processor | Get-Counter`
 
 ```yaml
 Type: String[]
@@ -365,19 +545,22 @@ Parameter Sets: ListSetSet
 Aliases:
 
 Required: True
-Position: 1
+Position: 0
 Default value: None
 Accept pipeline input: True (ByValue)
 Accept wildcard characters: True
 ```
 
 ### -MaxSamples
-Specifies the number of samples to get from each counter.
-The default is 1 sample.
-To get samples continuously, use the *Continuous* parameter.
 
-To collect a very large data set, consider running a **Get-Counter** cmdlet as a Windows PowerShell background job.
-For more information, see [about_Jobs](../Microsoft.PowerShell.Core/About/about_Jobs.md) and the Start-Job.
+Specifies the number of samples to get from each specified performance counter. To get a constant
+stream of samples, use the **Continuous** parameter.
+
+If the **MaxSamples** parameter isn't specified, `Get-Counter` only gets one sample for each
+specified counter.
+
+To collect a large data set, run `Get-Counter` as a PowerShell background job. For more information,
+see [about_Jobs](../Microsoft.PowerShell.Core/About/about_Jobs.md).
 
 ```yaml
 Type: Int64
@@ -392,8 +575,9 @@ Accept wildcard characters: False
 ```
 
 ### -SampleInterval
-Specifies the time between samples in seconds.
-The minimum value and the default value are 1 second.
+
+Specifies the number of seconds between samples for each specified performance counter. If the
+**SampleInterval** parameter isn't specified, `Get-Counter` uses a one-second interval.
 
 ```yaml
 Type: Int32
@@ -408,33 +592,57 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+-InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
+-WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### System.String[]
-You can pipe counter paths and counter set (ListSet) names to this cmdlet.
+
+`Get-Counter` accepts pipeline input for counter paths and counter set names.
 
 ## OUTPUTS
 
 ### Microsoft.PowerShell.Commands.GetCounter.CounterSet, Microsoft.PowerShell.Commands.GetCounter.PerformanceCounterSampleSet, Microsoft.PowerShell.Commands.GetCounter.PerformanceCounterSample
-This cmdlet returns Microsoft.PowerShell.Commands.GetCounter.CounterSet objects through the *ListSet* parameter.
-The *Counter* parameter gets **Microsoft.PowerShell.Commands.GetCounter.PerformanceCounterSampleSet** objects.
-Each counter value is a **Microsoft.PowerShell.Commands.GetCounter.PerformanceCounterSample** object.
+
+To view an object's properties, send the output down the pipeline to `Get-Member`. The object types
+that are output are as follows:
+
+**ListSet** parameter: **Microsoft.PowerShell.Commands.GetCounter.CounterSet**
+
+**Counter** parameter: **Microsoft.PowerShell.Commands.GetCounter.PerformanceCounterSampleSet**
+
+**CounterSamples** property: **Microsoft.PowerShell.Commands.GetCounter.PerformanceCounterSample**
 
 ## NOTES
-* Performance counters are often protected by access control lists (ACLs). To get all available performance counters, open Windows PowerShell with the "Run as administrator" option.
 
-  By default, **Get-Counter** gets one sample during a one-second sample interval.
-To change this behavior, use the *MaxSamples* and *Continuous* parameters.
+If no parameters are specified, `Get-Counter` gets one sample for each specified performance
+counter. Use the **MaxSamples** and **Continuous** parameters to get more samples.
 
-  The *MaxSamples* and *SampleInterval* values that you set apply to all the counters on all the computers in the command.
-To set different values for different counters, enter separate **Get-Counter** commands for each counter.
+`Get-Counter` uses a one-second interval between samples. Use the **SampleInterval** parameter to
+increase the interval.
 
-*
+The **MaxSamples** and **SampleInterval** values apply to all the counters on each computer in the
+command. To set different values for different counters, enter separate `Get-Counter` commands.
 
 ## RELATED LINKS
 
-[Export-Counter](Export-Counter.md)
+[about_Automatic_Variables](../Microsoft.PowerShell.Core/About/about_Automatic_Variables.md)
 
-[Import-Counter](Import-Counter.md)
+[about_Jobs](../Microsoft.PowerShell.Core/About/about_Jobs.md)
+
+[Format-List](../Microsoft.PowerShell.Utility/Format-List.md)
+
+[Format-Table](../Microsoft.PowerShell.Utility/Format-Table.md)
+
+[Get-Member](../Microsoft.PowerShell.Utility/Get-Member.md)
+
+[Microsoft.PowerShell.Diagnostics](Microsoft.PowerShell.Diagnostics.md)
+
+[Receive-Job](../Microsoft.PowerShell.Core/Receive-Job.md)
+
+[Start-Job](../Microsoft.PowerShell.Core/Start-Job.md)
+
+[Where-Object](..//Microsoft.PowerShell.Core/Where-Object.md)
