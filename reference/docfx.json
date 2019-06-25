@@ -51,7 +51,7 @@
             "powershell-5.0": { "dest": "powershell-5.0" },
             "powershell-5.1": { "dest": "powershell-5.1" },
             "powershell-6": { "dest": "powershell-6" },
-            "powershell-6": { "dest": "powershell-7" }
+            "powershell-7": { "dest": "powershell-7" }
         },
         "overwrite": [],
         "externalReference": [],
