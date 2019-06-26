@@ -42,7 +42,7 @@ remote variable must be defined in the same PSSession.
 
 ```powershell
 $s = New-PSSession -ComputerName S1
-Invoke-Command -ComputerName S1 -ScriptBlock {$ps = "Windows PowerShell"}
+Invoke-Command -Sessions $s -ScriptBlock {$ps = "Windows PowerShell"}
 Invoke-Command -Sessions $s -ScriptBlock {Get-WinEvent -LogName $ps}
 ```
 
