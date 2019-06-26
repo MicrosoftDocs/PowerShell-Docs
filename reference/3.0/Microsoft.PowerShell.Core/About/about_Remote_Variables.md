@@ -26,7 +26,7 @@ PowerShell assumes that the variables used in remote commands are defined in
 the session in which the command runs.
 
 In the following example, the `$ps` variable is defined in the temporary
-session in which the Get-WinEvent command runs.
+session in which the `Get-WinEvent` command runs.
 
 ```powershell
 Invoke-Command -ComputerName S1 -ScriptBlock {
