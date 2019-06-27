@@ -76,9 +76,6 @@ Tuesday, June 25, 2019
 In this example, a .NET format specifier is used to customize the output's format. The output is a
 **String** object.
 
-For more information about .NET format specifiers, see
-[Custom date and time format strings](/dotnet/standard/base-types/custom-date-and-time-format-strings?view=netframework-4.8).
-
 ```powershell
 Get-Date -Format "dddd MM/dd/yyyy HH:mm K"
 ```
@@ -100,11 +97,13 @@ The .NET format specifiers used in this example are defined as follows:
 | `HH:mm` | Time in 24-hour format -no seconds |
 | `K` | Time zone offset from Universal Time Coordinate (UTC) |
 
+For more information about .NET format specifiers, see
+[Custom date and time format strings](/dotnet/standard/base-types/custom-date-and-time-format-strings?view=netframework-4.8).
+
 ### Example 4: Get the date and time with a UFormat specifier
 
 In this example, several **UFormat** format specifiers are used to customize the output's format.
-The output is a **String** object. For a list of valid **UFormat** format specifiers, see the [Notes](#notes)
-section.
+The output is a **String** object.
 
 ```powershell
 Get-Date -UFormat "%A %m/%d/%Y %R %Z"
@@ -127,6 +126,8 @@ The **UFormat** format specifiers used in this example are defined as follows:
 | `%R` | Time in 24-hour format -no seconds |
 | `%Z` | Time zone offset from Universal Time Coordinate (UTC) |
 
+For a list of valid **UFormat** format specifiers, see the [Notes](#notes) section.
+
 ### Example 5: Get a date's day of the year
 
 In this example, a property is used to get the numeric day of the year.
@@ -135,7 +136,7 @@ The Gregorian calendar has 365 days, except for leap years that have 366 days. F
 31, 2020 is day 366.
 
 ```powershell
-(Get-Date -Year 2019 -Month 12 -Day 31).DayOfYear
+(Get-Date -Year 2020 -Month 12 -Day 31).DayOfYear
 ```
 
 ```Output
@@ -454,9 +455,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### None
+### Pipeline input
 
-`Get-Date` doesn't accept pipeline input.
+`Get-Date` accepts pipeline input. For example, `Get-ChildItem | Get-Date`.
 
 ## OUTPUTS
 
