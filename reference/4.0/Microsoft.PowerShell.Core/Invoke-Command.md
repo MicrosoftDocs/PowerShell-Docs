@@ -513,18 +513,18 @@ Accept wildcard characters: False
 
 ### -AsJob
 
-Runs the command as a background job on a remote computer.
-Use this parameter to run commands that take an extensive time to complete.
+Indicates that this cmdlet runs the command as a background job on a remote computer.
+Use this parameter to run commands that take an extensive time to finish.
 
-When you use **AsJob**, the command returns an object that represents the job, and then displays the command prompt.
-You can continue to work in the session while the job completes.
-To manage the job, use the Job cmdlets.
-To get the job results, use the Receive-Job cmdlet.
+When you use the **AsJob** parameter, the command returns an object that represents the job, and then displays the command prompt.
+You can continue to work in the session while the job finishes.
+To manage the job, use the `*-Job` cmdlets.
+To get the job results, use the `Receive-Job` cmdlet.
 
-The **AsJob** parameter is similar to using the **Invoke-Command** cmdlet to run a Start-Job command remotely.
+The **AsJob** parameter resembles using the `Invoke-Command` cmdlet to run a `Start-Job` cmdlet remotely.
 However, with **AsJob**, the job is created on the local computer, even though the job runs on a remote computer, and the results of the remote job are automatically returned to the local computer.
 
-For more information about Windows PowerShell background jobs, see [about_Jobs](About/about_Jobs.md) and [about_Remote_Jobs](About/about_Remote_Jobs.md).
+For more information about PowerShell background jobs, see [about_Jobs](About/about_Jobs.md) and [about_Remote_Jobs](About/about_Remote_Jobs.md).
 
 ```yaml
 Type: SwitchParameter
