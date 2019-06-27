@@ -15,11 +15,14 @@ Sends an email message.
 
 ## SYNTAX
 
+### All
+
 ```
 Send-MailMessage [-To] <string[]> [-Subject] <string> [[-Body] <string>] [[-SmtpServer] <string>]
--From <string> [-Attachments <string[]>] [-Bcc <string[]>] [-BodyAsHtml] [-Encoding <Encoding>]
-[-Cc <string[]>] [-DeliveryNotificationOption <DeliveryNotificationOptions>]
-[-Priority <MailPriority>] [-Credential <pscredential>] [-UseSsl] [-Port <int>] [<CommonParameters>]
+ -From <string> [-Attachments <string[]>] [-Bcc <string[]>] [-BodyAsHtml] [-Encoding <Encoding>]
+ [-Cc <string[]>] [-DeliveryNotificationOption <DeliveryNotificationOptions>]
+ [-Priority <MailPriority>] [-Credential <pscredential>] [-UseSsl] [-Port <int>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -35,14 +38,14 @@ information, see [about_Preference_Variables](../Microsoft.PowerShell.Core/About
 
 ### Example 1: Send an email from one person to another person
 
-This command sends an email message from one person to another person.
+This example sends an email message from one person to another person.
 
 The **From**, **To**, and **Subject** parameters are required by `Send-MailMessage`. This example
 uses the default `$PSEmailServer` variable for the SMTP server, so the **SmtpServer** parameter is
 not needed.
 
-```
-PS> Send-MailMessage -From 'User01 <user01@fabrikam.com>' -To 'User02 <user02@fabrikam.com>' -Subject 'Test mail'
+```powershell
+Send-MailMessage -From 'User01 <user01@fabrikam.com>' -To 'User02 <user02@fabrikam.com>' -Subject 'Test mail'
 ```
 
 The `Send-MailMessage` cmdlet uses the **From** parameter to specify the message's sender. The
@@ -51,10 +54,10 @@ The `Send-MailMessage` cmdlet uses the **From** parameter to specify the message
 
 ### Example 2: Send an attachment
 
-This command sends an email message with an attachment.
+This example sends an email message with an attachment.
 
-```
-PS> Send-MailMessage -From 'User01 <user01@fabrikam.com>' -To 'User02 <user02@fabrikam.com>', 'User03 <user03@fabrikam.com>' -Subject 'Sending the Attachment' -Body 'Forgot to send the attachment. Sending now.' -Attachments .\data.csv -Priority High -DeliveryNotificationOption OnSuccess, OnFailure -SmtpServer 'smtp.fabrikam.com'
+```powershell
+Send-MailMessage -From 'User01 <user01@fabrikam.com>' -To 'User02 <user02@fabrikam.com>', 'User03 <user03@fabrikam.com>' -Subject 'Sending the Attachment' -Body "Forgot to send the attachment. Sending now." -Attachments .\data.csv -Priority High -DeliveryNotificationOption OnSuccess, OnFailure -SmtpServer 'smtp.fabrikam.com'
 ```
 
 The `Send-MailMessage` cmdlet uses the **From** parameter to specify the message's sender. The
@@ -69,10 +72,10 @@ The **SmtpServer** parameter sets the SMTP server to **smtp.fabrikam.com**.
 
 ### Example 3: Send email to a mailing list
 
-This command sends an email message to a mailing list.
+This example sends an email message to a mailing list.
 
-```
-PS> Send-MailMessage -From 'User01 <user01@fabrikam.com>' -To 'ITGroup <itdept@fabrikam.com>' -Cc 'User02 <user02@fabrikam.com>' -Bcc 'ITMgr <itmgr@fabrikam.com>' -Subject 'Don't forget today's meeting!' -Credential domain01\admin01 -UseSsl
+```powershell
+Send-MailMessage -From 'User01 <user01@fabrikam.com>' -To 'ITGroup <itdept@fabrikam.com>' -Cc 'User02 <user02@fabrikam.com>' -Bcc 'ITMgr <itmgr@fabrikam.com>' -Subject "Don't forget today's meeting!" -Credential domain01\admin01 -UseSsl
 ```
 
 The `Send-MailMessage` cmdlet uses the **From** parameter to specify the message's sender. The
@@ -319,7 +322,7 @@ Accept wildcard characters: False
 
 ### -Subject
 
-Th **Subject** parameter is required. This parameter specifies the subject of the email message.
+The **Subject** parameter is required. This parameter specifies the subject of the email message.
 
 ```yaml
 Type: String
