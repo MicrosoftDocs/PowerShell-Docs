@@ -42,7 +42,7 @@ Running arbitrary code, such as malware, exploits, or custom scripts to bypass p
 
 ## Create a role capability file
 
-You can create a new PowerShell role capability file with the [New-PSRoleCapabilityFile](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/New-PSRoleCapabilityFile) cmdlet.
+You can create a new PowerShell role capability file with the [New-PSRoleCapabilityFile](/powershell/module/microsoft.powershell.core/new-psrolecapabilityfile?view=powershell-6) cmdlet.
 
 ```powershell
 New-PSRoleCapabilityFile -Path .\MyFirstJEARole.psrc
@@ -80,7 +80,7 @@ VisibleCmdlets = @{ Name = 'Restart-Service'; Parameters = @{ Name = 'Name'; Val
 ```
 
 > [!NOTE]
-> The [common PowerShell parameters](https://technet.microsoft.com/library/hh847884.aspx) are always allowed, even if you restrict the available parameters.
+> The [common PowerShell parameters](/powershell/module/microsoft.powershell.core/about/about_commonparameters) are always allowed, even if you restrict the available parameters.
 > You should not explicitly list them in the Parameters field.
 
 The table below describes the various ways you can customize a visible cmdlet or function.
@@ -104,7 +104,7 @@ You cannot apply both a ValidatePattern and ValidateSet to the same cmdlet or fu
 
 If you do, the ValidatePattern will override the ValidateSet.
 
-For more information about ValidatePattern, check out [this *Hey, Scripting Guy!* post](https://blogs.technet.microsoft.com/heyscriptingguy/2011/01/11/validate-powershell-parameters-before-running-the-script/) and the [PowerShell Regular Expressions](https://technet.microsoft.com/library/hh847880.aspx) reference content.
+For more information about ValidatePattern, check out [this *Hey, Scripting Guy!* post](https://devblogs.microsoft.com/scripting/validate-powershell-parameters-before-running-the-script/) and the [PowerShell Regular Expressions](/powershell/module/microsoft.powershell.core/about/about_regular_expressions) reference content.
 
 ### Allowing external commands and PowerShell scripts
 
@@ -121,7 +121,7 @@ Many executables allow you to both read the current state and then change it jus
 For example, consider the role of a file server admin who wants to check which network shares are hosted by the local machine.
 One way to check is to use `net share`.
 However, allowing net.exe is very dangerous because the admin could just as easily use the command to gain admin privileges with `net group Administrators unprivilegedjeauser /add`.
-A better approach is to allow [Get-SmbShare](https://technet.microsoft.com/library/jj635704.aspx) which achieves the same result but has a much more limited scope.
+A better approach is to allow [Get-SmbShare](/powershell/module/smbshare/get-smbshare?view=win10-ps) which achieves the same result but has a much more limited scope.
 
 When making external commands available to users in a JEA session, always specify the complete path to the executable to ensure a similarly named (and potentially malicious) program placed elsewhere on the system does not get executed instead.
 
@@ -174,9 +174,9 @@ Functions defined in role capability files are still subject to the scope of JEA
 
 Select-Object is a default, constrained cmdlet in all JEA sessions that doesn't allow you to select arbitrary properties on objects.
 To use the unconstrained Select-Object in functions, you must explicitly request the full implementation by specifying the FQMN.
-Any constrained cmdlet in a JEA session will exhibit the same behavior when invoked from a function, in line with PowerShell's [command precedence](https://msdn.microsoft.com/powershell/reference/3.0/microsoft.powershell.core/about/about_command_precedence).
+Any constrained cmdlet in a JEA session will exhibit the same behavior when invoked from a function, in line with PowerShell's [command precedence](/powershell/module/microsoft.powershell.core/about/about_command_precedence).
 
-If you are writing a lot of custom functions, it may be easier to put them in a [PowerShell Script Module](https://msdn.microsoft.com/library/dd878340(v=vs.85).aspx).
+If you are writing a lot of custom functions, it may be easier to put them in a [PowerShell Script Module](/powershell/developer/windows-powershell).
 You can then make those functions visible in the JEA session using the VisibleFunctions field like you would with built-in and third party modules.
 
 For tab completion to work properly in JEA sessions you must include the built-in function `tabexpansion2` in the **VisibleFunctions** list.
@@ -202,7 +202,7 @@ New-Item -ItemType Directory $rcFolder
 Copy-Item -Path .\MyFirstJEARole.psrc -Destination $rcFolder
 ```
 
-See [Understanding a PowerShell Module](https://msdn.microsoft.com/library/dd878324.aspx) for more information about PowerShell modules, module manifests, and the PSModulePath environment variable.
+See [Understanding a PowerShell Module](/powershell/developer/windows-powershell) for more information about PowerShell modules, module manifests, and the PSModulePath environment variable.
 
 ## Updating role capabilities
 
