@@ -64,8 +64,8 @@ and explicitly case-insensitive variants have the same precedence.
 
 |OPERATOR                 |REFERENCE|
 |-------------------------|---------|
-|`-split` (unary)         |[about_Split](about_Split.md)|
-|`-join` (unary)          |[about_Join](about_Join.md)|
+|`-split` (binary)         |[about_Split](about_Split.md)|
+|`-join` (binary)          |[about_Join](about_Join.md)|
 |`-is -isnot -as`         |[about_Type_Operators](about_Type_Operators.md)|
 |`-eq -ne -gt -gt -lt -le`|[about_Comparison_Operators](about_Comparison_Operators.md)|
 |`-like -notlike`         |[about_comparison_operators](about_comparison_operators.md)|
