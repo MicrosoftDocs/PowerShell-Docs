@@ -11,7 +11,7 @@ PowerShell is also well-supported in Visual Studio Code.
 Furthermore, the ISE is not supported with PowerShell Core,
 while Visual Studio Code is supported for PowerShell Core on all platforms (Windows, macOS, and Linux)
 
-You can use Visual Studio Code on Windows with PowerShell version 5 by using Windows 10 or by installing [Windows Management Framework 5.0 RTM](https://www.microsoft.com/en-us/download/details.aspx?id=50395) for down-level Windows OSs (e.g. Windows 8.1, etc.).
+You can use Visual Studio Code on Windows with PowerShell version 5 by using Windows 10 or by installing [Windows Management Framework 5.0 RTM](https://devblogs.microsoft.com/powershell/windows-management-framework-wmf-5-0-rtm-is-now-available-via-the-microsoft-update-catalog/) for down-level Windows OSs (e.g. Windows 8.1, etc.).
 
 Before starting it, please make sure PowerShell exists on your system.
 For modern workloads on Windows, macOS, and Linux, see:

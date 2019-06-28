@@ -470,7 +470,7 @@ Accept wildcard characters: False
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see
-[about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+[about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
 
 ## INPUTS
 
@@ -503,7 +503,7 @@ value for the **SessionThrottleLimit** property, the session configuration has a
 
 [New-PSWorkflowSession](New-PSWorkflowSession.md)
 
-[about_Workflows](About/about_Workflows.md)
+[about_Workflows](../PSWorkflow/About/about_Workflows.md)
 
 [about_WorkflowCommonParameters](About/about_WorkflowCommonParameters.md)
 

@@ -82,7 +82,7 @@ types, methods, etc. As a result, scripts that run on Windows may not run on non
 because of the differences in the frameworks. For more information about .NET Core Framework, see
 <https://dotnetfoundation.org/net-core>
 
-With the advent of [.NET Standard2.0](https://blogs.msdn.microsoft.com/dotnet/2016/09/26/introducing-net-standard/),
+With the advent of [.NET Standard2.0](https://devblogs.microsoft.com/dotnet/introducing-net-standard/),
 .NET Core 2.0 will bring back many of the traditional types and methods present in the full .NET
 Framework. This means that PowerShell Core will be able to load many traditional Windows PowerShell
 modules without modification. You can follow our .NET Standard 2.0 related work
@@ -125,7 +125,7 @@ The work for WSMan-based remoting is being done in the
 
 PowerShell Core also supports PowerShell Remoting (PSRP) over SSH on all platforms (Windows, macOS,
 and Linux). While this is not currently supported in production, you can learn more about setting
-this up [here](../core-powershell/ssh-remoting-in-powershell-core.md).
+this up [here](../learn/remoting/SSH-Remoting-in-PowerShell-Core.md).
 
 ### Just-Enough-Administration (JEA) Support
 
