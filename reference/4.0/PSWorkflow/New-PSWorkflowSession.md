@@ -62,7 +62,7 @@ Specifies the application name segment of the connection URI.
 The default value is the value of the **$PSSessionApplicationName** preference variable on the local computer.
 If this preference variable is not defined, the default value is "WSMAN".
 This value is appropriate for most uses.
-For more information, see about_Preference_Variables.
+For more information, see [about_Preference_Variables](../Microsoft.PowerShell.Core/About/about_Preference_Variables.md).
 
 The WinRM service uses the application name to select a listener to service the connection request.
 The value of this parameter should match the value of the **URLPrefix** property of a listener on the remote computer.
@@ -86,7 +86,7 @@ The default value is "Default".
 
 CredSSP authentication is available only in Windows Vista, Windows Server 2008, and later versions of Windows.
 
-For more information about the values of this parameter, see [AuthenticationMechanism Enumeration](https://msdn.microsoft.com/library/system.management.automation.runspaces.authenticationmechanism) in the MSDN library.
+For more information about the values of this parameter, see [System.Management.Automation.Runspaces.AuthenticationMechanism](/dotnet/api/system.management.automation.runspaces.authenticationmechanism) in the MSDN library.
 
 Caution: Credential Security Service Provider (CredSSP) authentication, in which the user's credentials are passed to a remote computer to be authenticated, is designed for commands that require authentication on more than one resource, such as accessing a remote network share.
 This mechanism increases the security risk of the remote operation.
@@ -112,7 +112,7 @@ Enter the certificate thumbprint of the certificate.
 Certificates are used in client certificate-based authentication.
 They can be mapped only to local user accounts; they do not work with domain accounts.
 
-To get a certificate thumbprint, use the Get-Item cmdlet or the Get-ChildItem cmdlet in the Windows PowerShell Cert: drive (http://go.microsoft.com/fwlink/?LinkID=251065).
+To get a certificate thumbprint, use the Get-Item cmdlet or the Get-ChildItem cmdlet in the Windows PowerShell Cert: [drive](https://www.microsoft.com/en-us/).
 
 ```yaml
 Type: String
@@ -138,7 +138,7 @@ You can also pipe a computer name (in quotes) to **New-PSWorkflowSession**.
 
 To use an IP address in the value of the **ComputerName** parameter, the command must include the Credential parameter.
 Also, the computer must be configured for HTTPS transport or the IP address of the remote computer must be included in the WinRM TrustedHosts list on the local computer.
-For instructions for adding a computer name to the TrustedHosts list, see "How to Add  a Computer to the Trusted Host List" in about_Remote_Troubleshooting (http://go.microsoft.com/fwlink/?LinkID=135188).
+For instructions for adding a computer name to the TrustedHosts list, see "How to Add  a Computer to the Trusted Host List" in [about_Remote_Troubleshooting](../Microsoft.PowerShell.Core/About/about_Remote_Troubleshooting.md).
 
 ```yaml
 Type: String[]
@@ -319,7 +319,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
 
 ## INPUTS
 
@@ -345,7 +345,7 @@ You can pipe a session or a computer name to **New-PSWorkflowSession**.
 
 [about_Session_Configurations](../Microsoft.PowerShell.Core/About/about_Session_Configurations.md)
 
-[about_Workflows](About/about_Workflows.md)
+[about_Workflows](../PSWorkflow/About/about_Workflows.md)
 
 [about_WorkflowCommonParameters](About/about_WorkflowCommonParameters.md)
 
