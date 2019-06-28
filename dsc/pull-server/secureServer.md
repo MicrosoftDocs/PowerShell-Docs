@@ -12,7 +12,7 @@ Applies To: Windows PowerShell 4.0, Windows PowerShell 5.0
 > however there are no plans to offer new features or capabilities. It is recommended to
 > begin transitioning managed clients to [Azure Automation DSC](/azure/automation/automation-dsc-getting-started)
 > (includes features beyond Pull Server on Windows Server) or one of the community solutions
-> listed [here](pullserver.md#community-solutions-for-pull-service).
+> listed [here](/powershell/dsc/pull-server/pullserver#community-solutions-for-pull-service).
 
 Summary: This document is intended to include process and extensibility to assist engineers who are preparing for the solution. Details should provide best practices as identified by
 customers and then validated by the product team to ensure recommendations are future facing and considered stable.
@@ -60,9 +60,9 @@ The pull server role can be deployed as either a Web Server instance or an SMB f
 for target nodes to report back confirmation of success or failure as configurations are applied. This functionality is useful in environments where there are a large number of target nodes.
 After configuring a target node (also referred to as a client) to point to the pull server the latest configuration data and any required scripts are downloaded and applied. This can happen as
 a one-time deployment or as a re-occurring job which also makes the pull server an important asset for managing change at scale. For more information, see
-[Windows PowerShell Desired State Configuration Pull Servers](/powershell/dsc/pullServer) and
+[Windows PowerShell Desired State Configuration Pull Servers](/powershell/dsc/pullServer/pullserver) and
 
-[Push and Pull Configuration Modes](/powershell/dsc/pullServer).
+[Push and Pull Configuration Modes](/powershell/dsc/pullServer/pullserver).
 
 ## Configuration planning
 
