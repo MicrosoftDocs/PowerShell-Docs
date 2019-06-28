@@ -8,7 +8,6 @@ online version: https://go.microsoft.com/fwlink/?linkid=294002
 schema: 2.0.0
 title: Register-ObjectEvent
 ---
-
 # Register-ObjectEvent
 
 ## SYNOPSIS
@@ -359,7 +358,7 @@ You cannot pipe objects to `Register-ObjectEvent`.
 
 ### None or System.Management.Automation.PSEventJob
 
-If you use the **Action** parameter, `Register-EngineEvent` returns a
+When you use the **Action** parameter, `Register-ObjectEvent` returns a
 **System.Management.Automation.PSEventJob** object. Otherwise, it does not generate any output.
 
 ## NOTES
