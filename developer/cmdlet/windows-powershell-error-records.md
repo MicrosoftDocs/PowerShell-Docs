@@ -54,9 +54,9 @@ Use the following guidelines to generate error identifiers when you create error
 
 ## Error Category
 
-When you create an error record, specify the category of the error using one of the constants defined by the [System.Management.Automation.Errorcategory](/dotnet/api/System.Management.Automation.ErrorCategory) enumeration. Windows PowerShell uses the error category to display error information when users set the `$ErrorView` variable to `"CategoryView"`.
+When you create an error record, specify the category of the error using one of the constants defined by the [System.Management.Automation.ErrorCategory](/dotnet/api/System.Management.Automation.ErrorCategory?view=pscore-6.2.0) enumeration. Windows PowerShell uses the error category to display error information when users set the `$ErrorView` variable to `"CategoryView"`.
 
-Avoid using the [System.Management.Automation.Errorcategory.Notspecified](/dotnet/api/System.Management.Automation.ErrorCategory.NotSpecified) constant. If you have any information about the error or about the operation that caused the error, choose the category that best describes the error or the operation, even if the category is not a perfect match.
+Avoid using the [System.Management.Automation.ErrorCategory](/dotnet/api/System.Management.Automation.ErrorCategory?view=pscore-6.2.0) **NotSpecified** constant. If you have any information about the error or about the operation that caused the error, choose the category that best describes the error or the operation, even if the category is not a perfect match.
 
 The information displayed by Windows PowerShell is referred to as the category-view string and is built from the properties of the [System.Management.Automation.Errorcategoryinfo](/dotnet/api/System.Management.Automation.ErrorCategoryInfo) class. (This class is accessed through the error [System.Management.Automation.ErrorRecord.CategoryInfo](/dotnet/api/System.Management.Automation.ErrorRecord.CategoryInfo) property.)
 
@@ -66,7 +66,7 @@ The information displayed by Windows PowerShell is referred to as the category-v
 
 The following list describes the information displayed:
 
-- Category: A Windows PowerShell-defined [System.Management.Automation.Errorcategory](/dotnet/api/System.Management.Automation.ErrorCategory) constant.
+- Category: A Windows PowerShell-defined [System.Management.Automation.ErrorCategory](/dotnet/api/System.Management.Automation.ErrorCategory?view=pscore-6.2.0) constant.
 
 - TargetName: By default, the name of the object the cmdlet was processing when the error occurred. Or, another cmdlet-defined string.
 
@@ -82,9 +82,9 @@ When you develop an error record for a cmdlet, the default error message for the
 
 The replacement message is provided by an [System.Management.Automation.ErrorDetails](/dotnet/api/System.Management.Automation.ErrorDetails) object. Use one of the following constructors of this object because they provide additional localization information that can be used by Windows PowerShell.
 
-- [ErrorDetails.ErrorDetails(Cmdlet, String, String, Object\[System.Management.Automation.ErrorDetails.%23Ctor%28System.Management.Automation.Cmdlet%2CSystem.String%2CSystem.String%2CSystem.Object%5B%5D%29?Displayproperty=Fullname](/dotnet/api/System.Management.Automation.ErrorDetails.%23ctor%28System.Management.Automation.Cmdlet%2CSystem.String%2CSystem.String%2CSystem.Object%5B%5D%29): Use this constructor if your template string is a resource string in the same assembly in which the cmdlet is implemented or if you want to load the template string through an override of the  [System.Management.Automation.Cmdlet.GetResourceString](/dotnet/api/System.Management.Automation.Cmdlet.GetResourceString) method.
+- [ErrorDetails(Cmdlet, String, String, Object[])](/dotnet/api/system.management.automation.errordetails.-ctor?view=pscore-6.2.0#System_Management_Automation_ErrorDetails__ctor_System_Management_Automation_Cmdlet_System_String_System_String_System_Object___): Use this constructor if your template string is a resource string in the same assembly in which the cmdlet is implemented or if you want to load the template string through an override of the  [System.Management.Automation.Cmdlet.GetResourceString](/dotnet/api/System.Management.Automation.Cmdlet.GetResourceString) method.
 
-- [ErrorDetails.ErrorDetails(Assembly, String, String, Object\[System.Management.Automation.ErrorDetails.%23Ctor%28System.Reflection.Assembly%2CSystem.String%2CSystem.String%2CSystem.Object%5B%5D%29?Displayproperty=Fullname](/dotnet/api/System.Management.Automation.ErrorDetails.%23ctor%28System.Reflection.Assembly%2CSystem.String%2CSystem.String%2CSystem.Object%5B%5D%29): Use this constructor if the template string is in another assembly and you do not load it through an override of [System.Management.Automation.Cmdlet.GetResourceString](/dotnet/api/System.Management.Automation.Cmdlet.GetResourceString).
+- [ErrorDetails(Assembly, String, String, Object[])](/dotnet/api/system.management.automation.errordetails.-ctor?view=pscore-6.2.0#System_Management_Automation_ErrorDetails__ctor_System_Reflection_Assembly_System_String_System_String_System_Object___): Use this constructor if the template string is in another assembly and you do not load it through an override of [System.Management.Automation.Cmdlet.GetResourceString](/dotnet/api/System.Management.Automation.Cmdlet.GetResourceString).
 
 The replacement message should conform to the .NET Framework design guidelines for writing exception messages with a small difference. The guidelines state that exception messages should be written for developers. These replacement messages should be written for the cmdlet user.
 
@@ -104,7 +104,7 @@ When a cmdlet uses [System.Management.Automation.Cmdlet.WriteError](/dotnet/api/
 
 [System.Management.Automation.Cmdlet.Throwterminatingerror*](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError)
 
-[System.Management.Automation.Errorcategory](/dotnet/api/System.Management.Automation.ErrorCategory)
+[System.Management.Automation.ErrorCategory](/dotnet/api/System.Management.Automation.ErrorCategory?view=pscore-6.2.0)
 
 [System.Management.Automation.Errorcategoryinfo](/dotnet/api/System.Management.Automation.ErrorCategoryInfo)
 
