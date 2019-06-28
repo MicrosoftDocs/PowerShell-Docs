@@ -1,9 +1,9 @@
 ---
 ms.date:  12/12/2018
 keywords:  dsc,powershell,configuration,setup
-title:  Configuring the Local Configuration Manager in Previous Versions of Windows PowerShell
+title:  Configuring the LCM in PowerShell 4.0
 ---
-# Configuring the Local Configuration Manager in Previous Versions of Windows PowerShell
+# Configuring the LCM in PowerShell 4.0
 
 >Applies To: Windows PowerShell 4.0
 

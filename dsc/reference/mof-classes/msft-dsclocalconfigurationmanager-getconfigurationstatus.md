@@ -1,9 +1,9 @@
 ---
 ms.date:  06/12/2017
 keywords:  dsc,powershell,configuration,setup
-title:  GetConfigurationStatus method of the MSFT_DSCLocalConfigurationManager class
+title:  GetConfigurationStatus method
 ---
-# GetConfigurationStatus method of the MSFT_DSCLocalConfigurationManager class
+# GetConfigurationStatus method
 
 Get the configuration status history.
 
