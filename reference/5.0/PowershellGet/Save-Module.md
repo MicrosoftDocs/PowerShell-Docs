@@ -1,5 +1,5 @@
 ---
-ms.date:  06/09/2017
+ms.date: 7/1/2019
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -11,11 +11,12 @@ title:  Save-Module
 # Save-Module
 
 ## SYNOPSIS
-Saves a module locally without installing it.
+Saves a module and its dependencies on the local computer but doesn't install the module.
 
 ## SYNTAX
 
 ### NameAndPathParameterSet (Default)
+
 ```
 Save-Module [-Name] <String[]> [-MinimumVersion <Version>] [-MaximumVersion <Version>]
  [-RequiredVersion <Version>] [-Repository <String[]>] -Path <String> [-Force] [-WhatIf] [-Confirm]
@@ -23,83 +24,118 @@ Save-Module [-Name] <String[]> [-MinimumVersion <Version>] [-MaximumVersion <Ver
 ```
 
 ### NameAndLiteralPathParameterSet
+
 ```
 Save-Module [-Name] <String[]> [-MinimumVersion <Version>] [-MaximumVersion <Version>]
- [-RequiredVersion <Version>] [-Repository <String[]>] -LiteralPath <String> [-Force] [-WhatIf] [-Confirm]
- [<CommonParameters>]
+ [-RequiredVersion <Version>] [-Repository <String[]>] -LiteralPath <String> [-Force] [-WhatIf]
+ [-Confirm]  [<CommonParameters>]
 ```
 
-### InputOjectAndLiteralPathParameterSet
+### InputObjectAndLiteralPathParameterSet
+
 ```
 Save-Module [-InputObject] <PSObject[]> -LiteralPath <String> [-Force] [-WhatIf] [-Confirm]
  [<CommonParameters>]
 ```
 
-### InputOjectAndPathParameterSet
+### InputObjectAndPathParameterSet
+
 ```
-Save-Module [-InputObject] <PSObject[]> -Path <String> [-Force] [-WhatIf] [-Confirm] [<CommonParameters>]
+Save-Module [-InputObject] <PSObject[]> -Path <String> [-Force] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-The **Save-Module** cmdlet saves a module locally from the specified repository for inspection.
-The module is not installed.
+
+The `Save-Module` cmdlet downloads a module and any dependencies from a registered repository.
+`Save-Module` downloads and saves the most current version of a module. The files are saved to a
+specified path on the local computer. The module isn't installed, but the contents are available for
+inspection by an administrator.
+
+`Get-PSRepository` displays the local computer's registered repositories. You can use the
+`Find-Module` cmdlet to search registered repositories.
 
 ## EXAMPLES
 
-### Example 1: Find modules and save them locally
+### Example 1: Save a module
+
+In this example, a module and its dependencies are saved to the local computer.
 
 ```powershell
-PS C:\> Find-Module -Name "AzureAutomationDebug" -Repository "PSGallery"
-Version    Name                                Type       Repository           Description
--------    ----                                ----       ----------           -----------
-1.3.5      AzureAutomationDebug                Module     PSGallery            Module for debugging Azure Automation runbooks, emulating AA native cmdlets
-
-PS C:\> Find-Module -Name "AzureAutomationDebug" -Repository "PSGallery" -IncludeDependencies
-Version    Name                                Type       Repository           Description
--------    ----                                ----       ----------           -----------
-1.3.5      AzureAutomationDebug                Module     PSGallery            Module for debugging Azure Automation runbooks, emulating AA native cmdlets
-1.0.1      AzureRM.Automation                  Module     PSGallery            Microsoft Azure PowerShell - Automation service cmdlets for Azure Resource Manager
-1.0.1      AzureRM.profile                     Module     PSGallery            Microsoft Azure PowerShell - Profile credential management cmdlets for Azure Resource Manager
-
-PS C:\> Find-Module -Name "AzureAutomationDebug" -Repository "PSGallery" | Save-Module -Path "C:\MyLocalModules\"
-
-PS C:\> dir C:\MyLocalModules\
-    Directory: C:\MyLocalModules
-
-
-Mode                LastWriteTime         Length Name
-----                -------------         ------ ----
-d-----       12/14/2015  11:20 AM                AzureAutomationDebug
-d-----       12/14/2015  11:20 AM                AzureRM.Automation
-d-----       12/14/2015  11:20 AM                AzureRM.profile
-
-PS C:\> Save-Module -LiteralPath "C:\MyLocalModules\" -Name "xPSDesiredStateConfiguration" -Repository "PSGallery" -MinimumVersion 2.0 -MaximumVersion 3.5.0
-
-PS C:\> dir C:\MyLocalModules
-   Directory: C:\MyLocalModules
-
-
-Mode                LastWriteTime         Length Name
-----                -------------         ------ ----
-d-----       12/14/2015  11:22 AM                xPSDesiredStateConfiguration
+Save-Module -Name PowerShellGet -Path C:\Test\Modules -Repository PSGallery
+Get-ChildItem -Path C:\Test\Modules
 ```
 
-The first command uses the Find-Module cmdlet to find the AzureAutomationDebug module in the PSGallery repository and displays the results.
+```Output
+    Directory: C:\Test\Modules
 
-The second command uses **Find-Module** to find the AzureAutomationDebug module and its dependencies, and displays the results.
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+d-----         7/1/2019     13:31                PackageManagement
+d-----         7/1/2019     13:31                PowerShellGet
+```
 
-The third command uses **Find-Module** to find the AzureAutomationDebug module, and then uses the pipeline operator to pass the module to the **Save-Module** cmdlet, which save the module to the specified folder.
+`Save-Module` uses the **Name** parameter to specify the module, **PowerShellGet**. The **Path**
+parameter specifies where to store the downloaded module. The **Repository** parameter specifies a
+registered repository, **PSGallery**. After the download is finished, `Get-ChildItem` displays the
+contents of **Path** where the files are stored.
 
-The fourth command displays the contents of the saved module.
+### Example 2: Save a specific version of a module
 
-The fifth command saves the specified versions of the module xPSDesiredStateConfiguration to C:\MyLocalModules.
+This example shows how to use a parameter such as **MaximumVersion**, or **RequiredVersion** to
+specify a module version.
 
-The final command displays the contents of the C:\MyLocalModules folder.
+```powershell
+Save-Module -Name PowerShellGet -Path C:\Test\Modules -Repository PSGallery -MaximumVersion 2.1.0
+Get-ChildItem -Path C:\Test\Modules\PowerShellGet\
+```
+
+```Output
+    Directory: C:\Test\Modules\PowerShellGet
+
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+d-----         7/1/2019     13:40                2.1.0
+```
+
+`Save-Module` uses the **Name** parameter to specify the module, **PowerShellGet**. The **Path**
+parameter specifies where to store the downloaded module. The **Repository** parameter specifies a
+registered repository, **PSGallery**. **MaximumVersion** specifies that version **2.1.0** is
+downloaded and saved. After the download is finished, `Get-ChildItem` displays the contents of
+**Path** where the files are stored.
+
+### Example 3: Find and save a specific version of a module
+
+In this example, a required module version is found in the repository and saved to the local
+computer.
+
+```powershell
+Find-Module -Name PowerShellGet -Repository PSGallery -RequiredVersion 1.6.5 |
+  Save-Module -Path C:\Test\Modules
+Get-ChildItem -Path C:\Test\Modules\PowerShellGet
+```
+
+```Output
+    Directory: C:\Test\Modules\PowerShellGet
+
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+d-----         7/1/2019     14:04                1.6.5
+```
+
+`Find-Module` uses the **Name** parameter to specify the module, **PowerShellGet**. The
+**Repository** parameter specifies a registered repository, **PSGallery**. **RequiredVersion**
+specifies version **1.6.5**.
+
+The object is sent down the pipeline to `Save-Module`. The **Path** parameter specifies where to
+store the downloaded module. After the download is finished, `Get-ChildItem` displays the contents
+of **Path** where the files are stored.
 
 ## PARAMETERS
 
 ### -Confirm
-Prompts you for confirmation before running the cmdlet.
+
+Prompts you for confirmation before running the `Save-Module`.
 
 ```yaml
 Type: SwitchParameter
@@ -114,7 +150,8 @@ Accept wildcard characters: False
 ```
 
 ### -Force
-Forces the command to run without asking for user confirmation.
+
+Forces `Save-Module` to run without asking for user confirmation.
 
 ```yaml
 Type: SwitchParameter
@@ -129,11 +166,13 @@ Accept wildcard characters: False
 ```
 
 ### -InputObject
-Specifies a package by using the module's SoftwareID object, which is shown in the results of the Find-Module cmdlet.
+
+Accepts a **PSRepositoryItemInfo** object. For example, output `Find-Module` to a variable and use
+that variable as the **InputObject** argument.
 
 ```yaml
 Type: PSObject[]
-Parameter Sets: InputOjectAndLiteralPathParameterSet, InputOjectAndPathParameterSet
+Parameter Sets: InputObjectAndLiteralPathParameterSet, InputObjectAndPathParameterSet
 Aliases:
 
 Required: True
@@ -144,15 +183,15 @@ Accept wildcard characters: False
 ```
 
 ### -LiteralPath
-Specifies a path to one or more locations.
-Unlike the *Path* parameter, the value of the *LiteralPath* parameter is used exactly as entered.
-No characters are interpreted as wildcards.
-If the path includes escape characters, enclose them in single quotation marks.
-Windows PowerShell does not interpret any characters that are enclosed in single quotation marks as escape sequences.
+
+Specifies a path to one or more locations. The value of the **LiteralPath** parameter is used
+exactly as entered. No characters are interpreted as wildcards. If the path includes escape
+characters, enclose them in single quotation marks. PowerShell does not interpret any characters
+enclosed in single quotation marks as escape sequences.
 
 ```yaml
 Type: String
-Parameter Sets: NameAndLiteralPathParameterSet, InputOjectAndLiteralPathParameterSet
+Parameter Sets: NameAndLiteralPathParameterSet, InputObjectAndLiteralPathParameterSet
 Aliases:
 
 Required: True
@@ -163,8 +202,10 @@ Accept wildcard characters: False
 ```
 
 ### -MaximumVersion
-Specifies the maximum, or newest, version of the module to save.
-The *MaximumVersion* and *RequiredVersion* parameters are mutually exclusive; you cannot use both parameters in the same command.
+
+Specifies the maximum, or newest, version of the module to save. The **MaximumVersion** and
+**RequiredVersion** parameters are mutually exclusive; you cannot use both parameters in the same
+command.
 
 ```yaml
 Type: Version
@@ -179,9 +220,10 @@ Accept wildcard characters: False
 ```
 
 ### -MinimumVersion
-Specifies the minimum version of a single module to save.
-You cannot add this parameter if you are attempting to install multiple modules.
-The *MinimumVersion* and *RequiredVersion* parameters are mutually exclusive; you cannot use both parameters in the same command.
+
+Specifies the minimum version of a single module to save. You cannot add this parameter if you are
+attempting to install multiple modules. The **MinimumVersion** and **RequiredVersion** parameters
+are mutually exclusive; you cannot use both parameters in the same command.
 
 ```yaml
 Type: Version
@@ -196,6 +238,7 @@ Accept wildcard characters: False
 ```
 
 ### -Name
+
 Specifies an array of names of modules to save.
 
 ```yaml
@@ -211,24 +254,26 @@ Accept wildcard characters: False
 ```
 
 ### -Path
-Specifies the path to the module that you want to publish.
-This parameter accepts either the path to the folder that contains the module, or the module manifest (.psd1) file.
-The parameter accepts piped values from Get-Module.
+
+Specifies the location on the local computer to store a saved module. Accepts wildcard characters
+when the string is wrapped in double-quotes.
 
 ```yaml
 Type: String
-Parameter Sets: NameAndPathParameterSet, InputOjectAndPathParameterSet
+Parameter Sets: NameAndPathParameterSet, InputObjectAndPathParameterSet
 Aliases:
 
 Required: True
-Position: Named
+Position: 1
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -Repository
-Specifies the friendly name of a repository that has been registered by running Register-PSRepository.
+
+Specifies the friendly name of a repository that has been registered by running
+`Register-PSRepository`. Use `Get-PSRepository` to display registered repositories.
 
 ```yaml
 Type: String[]
@@ -243,6 +288,7 @@ Accept wildcard characters: False
 ```
 
 ### -RequiredVersion
+
 Specifies the exact version number of the module to save.
 
 ```yaml
@@ -258,8 +304,8 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Shows what would happen if the cmdlet runs.
-The cmdlet is not run.
+
+Shows what would happen if the `Save-Module` runs. The cmdlet isn't run.
 
 ```yaml
 Type: SwitchParameter
@@ -274,7 +320,10 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+-InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
+-WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -284,12 +333,4 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## RELATED LINKS
 
-[Find-Module](Find-Module.md)
-
-[Import-Module](../Microsoft.PowerShell.Core/Import-Module.md)
-
-[Publish-Module](Publish-Module.md)
-
-[Uninstall-Module](Uninstall-Module.md)
-
-[Update-Module](Update-Module.md)
+[PowerShellGet](PowershellGet.md)
