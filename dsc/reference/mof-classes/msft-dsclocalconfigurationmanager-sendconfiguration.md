@@ -1,9 +1,9 @@
 ---
 ms.date:  06/12/2017
 keywords:  dsc,powershell,configuration,setup
-title:  SendConfiguration method of the MSFT_DSCLocalConfigurationManager class
+title:  SendConfiguration method
 ---
-# SendConfiguration method of the MSFT_DSCLocalConfigurationManager class
+# SendConfiguration method
 
 Sends the configuration document to the managed node and saves it as a pending change.
 

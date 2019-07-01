@@ -1,9 +1,9 @@
 ---
 ms.date:  06/12/2017
 keywords:  dsc,powershell,configuration,setup
-title:  ResourceSet method of the MSFT_DSCLocalConfigurationManager class
+title:  ResourceSet method
 ---
-# ResourceSet method of the MSFT_DSCLocalConfigurationManager class
+# ResourceSet method
 
 Directly calls the **Set** method of a DSC resource.
 

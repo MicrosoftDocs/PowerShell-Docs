@@ -226,7 +226,7 @@ passes in the values *positionally*.
   user pressed `<TAB>`.
 
 You can also provide an **ArgumentCompleter** as a parameter attribute. For more information, see
-[about_Functions_Advanced_Parameters](./About/about_Functions_Advanced_Parameters.md).
+[about_Functions_Advanced_Parameters](/powershell/module/microsoft.powershell.core/about/about_Functions_Advanced_Parameters).
 
 ```yaml
 Type: ScriptBlock
@@ -244,7 +244,7 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](./About/about_CommonParameters.md).
+-WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
 
 ## INPUTS
 

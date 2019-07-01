@@ -1,9 +1,9 @@
 ---
 ms.date:  06/12/2017
 keywords:  dsc,powershell,configuration,setup
-title:  RemoveConfiguration method of the MSFT_DSCLocalConfigurationManager class
+title:  RemoveConfiguration method
 ---
-# RemoveConfiguration method of the MSFT_DSCLocalConfigurationManager class
+# RemoveConfiguration method
 
 Removes the configuration files.
 
