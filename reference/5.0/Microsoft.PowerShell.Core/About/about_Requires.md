@@ -13,7 +13,7 @@ Prevents a script from running without the required elements.
 ## Long description
 
 The `#Requires` statement prevents a script from running unless the
-PowerShell version, modules, snap-ins, module, and snap-in version
+PowerShell version, modules (and version), or snap-ins (and version)
 prerequisites are met. If the prerequisites are not met, PowerShell
 does not run the script.
 
