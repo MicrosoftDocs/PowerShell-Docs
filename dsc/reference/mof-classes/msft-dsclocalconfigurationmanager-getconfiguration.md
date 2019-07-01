@@ -1,9 +1,9 @@
 ---
 ms.date:  06/12/2017
 keywords:  dsc,powershell,configuration,setup
-title:  GetConfiguration method of the MSFT_DSCLocalConfigurationManager class
+title:  GetConfiguration method
 ---
-# GetConfiguration method of the MSFT_DSCLocalConfigurationManager class
+# GetConfiguration method
 
 Sends the configuration document to the managed node and uses the **Get** method of the Configuration Agent to apply the configuration.
 

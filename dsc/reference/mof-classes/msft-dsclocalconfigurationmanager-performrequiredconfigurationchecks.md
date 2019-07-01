@@ -1,9 +1,9 @@
 ---
 ms.date:  06/12/2017
 keywords:  dsc,powershell,configuration,setup
-title:  PerformRequiredConfigurationChecks method of the MSFT_DSCLocalConfigurationManager class
+title:  PerformRequiredConfigurationChecks method
 ---
-# PerformRequiredConfigurationChecks method of the MSFT_DSCLocalConfigurationManager class
+# PerformRequiredConfigurationChecks method
 
 Starts a consistency check by using the Task Scheduler.
 
