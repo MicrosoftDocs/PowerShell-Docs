@@ -1,9 +1,9 @@
 ---
 ms.date:  06/12/2017
 keywords:  dsc,powershell,configuration,setup
-title:  TestConfiguration method of the MSFT_DSCLocalConfigurationManager class
+title:  TestConfiguration method
 ---
-# TestConfiguration method of the MSFT_DSCLocalConfigurationManager class
+# TestConfiguration method
 
 Sends the configuration document to the managed node and verifies the current configuration against the document.
 

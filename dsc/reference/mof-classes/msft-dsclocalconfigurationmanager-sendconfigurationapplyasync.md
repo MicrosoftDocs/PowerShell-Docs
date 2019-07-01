@@ -1,9 +1,9 @@
 ---
 ms.date:  06/12/2017
 keywords:  dsc,powershell,configuration,setup
-title:  SendConfigurationApplyAsync method of the MSFT_DSCLocalConfigurationManager class
+title:  SendConfigurationApplyAsync method
 ---
-# SendConfigurationApplyAsync method of the MSFT_DSCLocalConfigurationManager class
+# SendConfigurationApplyAsync method
 
 Sends the configuration document asynchronously to the managed node and uses the Configuration Agent to apply the configuration.
 

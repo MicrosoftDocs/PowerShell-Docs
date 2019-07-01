@@ -1,9 +1,9 @@
 ---
 ms.date:  06/12/2017
 keywords:  dsc,powershell,configuration,setup
-title:  GetConfigurationResultOutput method of the MSFT_DSCLocalConfigurationManager class
+title:  GetConfigurationResultOutput method
 ---
-# GetConfigurationResultOutput method of the MSFT_DSCLocalConfigurationManager class
+# GetConfigurationResultOutput method
 
 Gets the Configuration Agent output associated with a specific job.
 
