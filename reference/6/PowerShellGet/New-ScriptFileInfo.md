@@ -33,7 +33,7 @@ The `New-ScriptFileInfo` cmdlet creates a PowerShell script file, including meta
 script.
 
 The examples use splatting to pass parameters to the `New-ScriptFileInfo` cmdlet. For more
-information, see [about_Splatting](../Microsoft.Powershell.Core/About/about_splatting).
+information, see [about_Splatting](../Microsoft.Powershell.Core/About/about_splatting.md).
 
 ## EXAMPLES
 
@@ -572,7 +572,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## RELATED LINKS
 
-[about_Splatting](../Microsoft.Powershell.Core/About/about_splatting)
+[about_Splatting](../Microsoft.Powershell.Core/About/about_splatting.md)
 
 [Test-ScriptFileInfo](Test-ScriptFileInfo.md)
 
