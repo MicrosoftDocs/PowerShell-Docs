@@ -32,6 +32,9 @@ New-ScriptFileInfo [[-Path] <String>] [-Version <String>] [-Author <String>] -De
 The `New-ScriptFileInfo` cmdlet creates a PowerShell script file, including metadata about the
 script.
 
+The examples use splatting to pass parameters to the `New-ScriptFileInfo` cmdlet. For more
+information, see [about_Splatting](../Microsoft.Powershell.Core/About/about_splatting).
+
 ## EXAMPLES
 
 ### Example 1: Create a script file and specify its version, author, and description
@@ -39,8 +42,13 @@ script.
 In this example, a script file is created and its contents are displayed in the PowerShell console.
 
 ```powershell
-New-ScriptFileInfo -Path C:\Test\Temp-Scriptfile.ps1 -Version 1.0 -Author "pattif@contoso.com" `
- -Description "My test script file description goes here"
+$Parms = @{
+  Path = "C:\Test\Temp-Scriptfile.ps1"
+  Version = "1.0"
+  Author = "pattif@contoso.com"
+  Description = "My test script file description goes here"
+  }
+New-ScriptFileInfo @Parms
 Get-Content -Path C:\Test\Temp-Scriptfile.ps1
 ```
 
@@ -49,7 +57,7 @@ Get-Content -Path C:\Test\Temp-Scriptfile.ps1
 
 .VERSION 1.0
 
-.GUID eb246b19-17da-4392-8c89-7c280f69ad0e
+.GUID 3bb10ee7-38c1-41b9-88ea-16899164fc19
 
 .AUTHOR pattif@contoso.com
 
@@ -73,6 +81,7 @@ Get-Content -Path C:\Test\Temp-Scriptfile.ps1
 
 .RELEASENOTES
 
+.PRIVATEDATA
 
 #>
 
@@ -85,10 +94,10 @@ Get-Content -Path C:\Test\Temp-Scriptfile.ps1
 Param()
 ```
 
-The `New-ScriptFileInfo` cmdlet uses several parameters to configure the script. **Path** sets the
-location and name of the script. **Version** specifies the script's version number. **Author** is
-the email address of the person who created the script. **Description** explains the script's
-purpose. The backtick (`` ` ``) at the end of the line indicates a continuation of the command.
+The `New-ScriptFileInfo` cmdlet uses splatting to configure several parameters for the script.
+**Path** sets the location and name of the script. **Version** specifies the script's version
+number. **Author** is the email address of the person who created the script. **Description**
+explains the script's purpose.
 
 After the script is created, `Get-Content` uses the **Path** parameter to locate the script. The
 script's contents are displayed in the PowerShell console.
@@ -111,41 +120,55 @@ The `Test-ScriptFileInfo` cmdlet uses the **Path** parameter to specify the scri
 
 ### Example 3: Create a script file with all the metadata properties
 
-This example creates a script file named `New-ScriptFile.ps1` and includes all its metadata
-properties. The backticks (`` ` ``) at the end of the lines indicates a continuation of the command.
-The **Verbose** parameter specifies that verbose output is displayed as the script is created.
+This example uses splatting to create a script file named `New-ScriptFile.ps1` that includes all its
+metadata properties. The **Verbose** parameter specifies that verbose output is displayed as the
+script is created.
 
 ```powershell
-New-ScriptFileInfo -Path C:\Test\New-ScriptFile.ps1 -Verbose `
- -Version 1.0 -Author pattif -Description "My new script file test" `
- -CompanyName "Contoso Corporation" `
- -Copyright "2019 Contoso Corporation. All rights reserved." -ExternalModuleDependencies 'ff','bb' `
- -RequiredScripts 'Start-WFContosoServer', 'Stop-ContosoServerScript' `
- -ExternalScriptDependencies Stop-ContosoServerScript -Tags @('Tag1', 'Tag2', 'Tag3') `
- -ProjectUri https://contoso.com -LicenseUri "https://contoso.com/License" `
- -IconUri 'https://contoso.com/Icon' `
- -PassThru `
- -ReleaseNotes @('contoso script now supports following features',
-          'Feature 1',
-          'Feature 2',
-          'Feature 3',
-          'Feature 4',
-          'Feature 5') `
- -RequiredModules "1","2",RequiredModule1,@{ModuleName='RequiredModule2';ModuleVersion='1.0'}, `
- @{ModuleName='RequiredModule3';RequiredVersion='2.0'},ExternalModule1
+$Parms = @{
+ Path = "C:\Test\New-ScriptFile.ps1"
+ Verbose = $True
+ Version = "1.0"
+ Author = "pattif@contoso.com"
+ Description = "My new script file test"
+ CompanyName = "Contoso Corporation"
+ Copyright = "2019 Contoso Corporation. All rights reserved."
+ ExternalModuleDependencies = "ff","bb"
+ RequiredScripts = "Start-WFContosoServer", "Stop-ContosoServerScript"
+ ExternalScriptDependencies = "Stop-ContosoServerScript"
+ Tags = @("Tag1", "Tag2", "Tag3")
+ ProjectUri = "https://contoso.com"
+ LicenseUri = "https://contoso.com/License"
+ IconUri = "https://contoso.com/Icon"
+ PassThru = $True
+ ReleaseNotes = @("Contoso script now supports the following features:",
+   "Feature 1",
+   "Feature 2",
+   "Feature 3",
+   "Feature 4",
+   "Feature 5")
+ RequiredModules =
+   "1",
+   "2",
+   "RequiredModule1",
+   @{ModuleName="RequiredModule2";ModuleVersion="1.0"},
+   @{ModuleName="RequiredModule3";RequiredVersion="2.0"},
+   "ExternalModule1"
+ }
+New-ScriptFileInfo @Parms
 ```
 
 ```Output
 VERBOSE: Performing the operation "Creating the 'C:\Test\New-ScriptFile.ps1'
- PowerShell Script file" on target "C:\Test\New-ScriptFile.ps1".
+  PowerShell Script file" on target "C:\Test\New-ScriptFile.ps1".
 
 <#PSScriptInfo
 
 .VERSION 1.0
 
-.GUID 68ecd04c-4d4f-4d56-aaff-30471251b06b
+.GUID 4fabe8c7-7862-45b1-a72e-1352a433b77d
 
-.AUTHOR pattif
+.AUTHOR pattif@contoso.com
 
 .COMPANYNAME Contoso Corporation
 
@@ -166,7 +189,7 @@ VERBOSE: Performing the operation "Creating the 'C:\Test\New-ScriptFile.ps1'
 .EXTERNALSCRIPTDEPENDENCIES Stop-ContosoServerScript
 
 .RELEASENOTES
-contoso script now supports following features
+Contoso script now supports the following features:
 Feature 1
 Feature 2
 Feature 3
@@ -548,6 +571,8 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## NOTES
 
 ## RELATED LINKS
+
+[about_Splatting](../Microsoft.Powershell.Core/About/about_splatting)
 
 [Test-ScriptFileInfo](Test-ScriptFileInfo.md)
 
