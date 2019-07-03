@@ -24,7 +24,7 @@ ensure you're on the right path.
 
 1. **Identify** the commands users are using to get their jobs done. This may involve surveying IT
    staff, checking automation scripts, or analyzing PowerShell session transcripts and logs.
-2. **Update** use of command line tools to PowerShell equivalents, where possible, for the best
+2. **Update** use of command-line tools to PowerShell equivalents, where possible, for the best
    auditing and JEA customization experience. External programs can't be constrained as granularly
    as native PowerShell cmdlets and functions in JEA.
 3. **Restrict** the scope of the cmdlets to only allow specific parameters or parameter
@@ -77,18 +77,18 @@ VisibleCmdlets = 'Restart-Computer', 'Get-NetIPAddress'
 ```
 
 Sometimes the scope of a specific cmdlet or function is too broad for your users' needs. A DNS
-admin, for example, probably only needs access to restart the DNS service. In a multi-tenant
-environment, where tenants are granted access to self-service management tools, tenants should be
-limited to managing their own resources. For these cases, you can restrict which parameters are
-exposed from the cmdlet or function.
+admin, for example, probably only needs access to restart the DNS service. In multi-tenant
+environments, tenants have access to self-service management tools. Tenants should be limited to
+managing their own resources. For these cases, you can restrict which parameters are exposed from
+the cmdlet or function.
 
 ```powershell
 VisibleCmdlets = @{ Name = 'Restart-Computer'; Parameters = @{ Name = 'Name' }}
 ```
 
 In more advanced scenarios, you may also need to restrict the values a user may use with these
-parameters. Role capabilities let you define a set of allowed values or a regular expression pattern
-that determine if a given input is allowed.
+parameters. Role capabilities let you define a set of values or a regular expression pattern
+that determine what input is allowed.
 
 ```powershell
 VisibleCmdlets = @{ Name = 'Restart-Service'; Parameters = @{ Name = 'Name'; ValidateSet = 'Dns', 'Spooler' }},
@@ -142,9 +142,9 @@ authorize since you have control over the parameters allowed with PowerShell cmd
 Many executables allow you to read the current state and then change it by providing different
 parameters.
 
-For example, consider the role of a file server admin who wants to check which network shares are
-hosted on a system. One way to check is to use `net share`. However, allowing **net.exe** is
-dangerous because the user could use the command to gain admin privileges with
+For example, consider the role of a file server admin that manages network shares hosted on a
+system. One way of managing shares is to use `net share`. However, allowing **net.exe** is dangerous
+because the user could use the command to gain admin privileges with
 `net group Administrators unprivilegedjeauser /add`. A more secure option is to allow [Get-SmbShare](/powershell/module/smbshare/get-smbshare),
 which achieves the same result but has a much more limited scope.
 
@@ -244,18 +244,16 @@ New-Item -ItemType Directory $rcFolder
 Copy-Item -Path .\MyFirstJEARole.psrc -Destination $rcFolder
 ```
 
-See [Understanding a PowerShell Module](/powershell/developer/windows-powershell) for more
-information about PowerShell modules, module manifests, and the PSModulePath environment variable.
+For more information about PowerShell modules, see [Understanding a PowerShell Module](/powershell/developer/windows-powershell).
 
 ## Updating role capabilities
 
-You can update a role capability file at any time by simply saving changes to the role capability
-file. Any new JEA sessions started after the role capability has been updated will reflect the
-revised capabilities.
+You can edit a role capability file to update the settings at any time. Any new JEA sessions started
+after the role capability has been updated will reflect the revised capabilities.
 
 This is why controlling access to the role capabilities folder is so important. Only highly trusted
-administrators should be able to change role capability files. If an untrusted user can change role
-capability files, they can easily give themselves access to cmdlets which allow them to elevate
+administrators should be allowed to change role capability files. If an untrusted user can change
+role capability files, they can easily give themselves access to cmdlets that allow them to elevate
 their privileges.
 
 For administrators looking to lock down access to the role capabilities, ensure Local System has
@@ -263,9 +261,9 @@ read access to the role capability files and containing modules.
 
 ## How role capabilities are merged
 
-Users can be granted access to multiple role capabilities when they enter a JEA session depending on
-the role mappings in the [session configuration file](session-configurations.md). When this happens,
-JEA tries to give the user the *most permissive* set of commands allowed by any of the roles.
+Users are granted access to all matching role capabilities in the [session configuration file](session-configurations.md)
+when they enter a JEA session. JEA tries to give the user the *most permissive* set of commands
+allowed by any of the roles.
 
 **VisibleCmdlets and VisibleFunctions**
 
@@ -274,20 +272,20 @@ parameter values limited in JEA.
 
 The rules are as follows:
 
-1. If a cmdlet is only made visible in one role, it will be visible to the user with any applicable
+1. If a cmdlet is only made visible in one role, it is visible to the user with any applicable
    parameter constraints.
 2. If a cmdlet is made visible in more than one role, and each role has the same constraints on the
-   cmdlet, the cmdlet will be visible to the user with those constraints.
+   cmdlet, the cmdlet is visible to the user with those constraints.
 3. If a cmdlet is made visible in more than one role, and each role allows a different set of
-   parameters, the cmdlet and all of the parameters defined across every role will be visible to the
-   user. If one role doesn't have constraints on the parameters, all parameters will be allowed.
+   parameters, the cmdlet and all the parameters defined across every role are visible to the user.
+   If one role doesn't have constraints on the parameters, all parameters are allowed.
 4. If one role defines a validate set or validate pattern for a cmdlet parameter, and the other role
-   allows the parameter but does not constrain the parameter values, the validate set or pattern
-   will be ignored.
+   allows the parameter but does not constrain the parameter values, the validate set or pattern is
+   ignored.
 5. If a validate set is defined for the same cmdlet parameter in more than one role, all values from
-   all validate sets will be allowed.
+   all validate sets are allowed.
 6. If a validate pattern is defined for the same cmdlet parameter in more than one role, any values
-   that match any of the patterns will be allowed.
+   that match any of the patterns are allowed.
 7. If a validate set is defined in one or more roles, and a validate pattern is defined in another
    role for the same cmdlet parameter, the validate set is ignored and rule (6) applies to the
    remaining validate patterns.
@@ -298,35 +296,41 @@ Below is an example of how roles are merged according to these rules:
 # Role A Visible Cmdlets
 $roleA = @{
     VisibleCmdlets = 'Get-Service',
-                     @{ Name = 'Restart-Service'; Parameters = @{ Name = 'DisplayName'; ValidateSet = 'DNS Client' } }
+                     @{ Name = 'Restart-Service';
+                        Parameters = @{ Name = 'DisplayName'; ValidateSet = 'DNS Client' } }
 }
 
 # Role B Visible Cmdlets
 $roleB = @{
-    VisibleCmdlets = @{ Name = 'Get-Service'; Parameters = @{ Name = 'DisplayName'; ValidatePattern = 'DNS.*' } },
-                     @{ Name = 'Restart-Service'; Parameters = @{ Name = 'DisplayName'; ValidateSet = 'DNS Server' } }
+    VisibleCmdlets = @{ Name = 'Get-Service';
+                        Parameters = @{ Name = 'DisplayName'; ValidatePattern = 'DNS.*' } },
+                     @{ Name = 'Restart-Service';
+                        Parameters = @{ Name = 'DisplayName'; ValidateSet = 'DNS Server' } }
 }
 
 # Resulting permissions for a user who belongs to both role A and B
-# - The constraint in role B for the DisplayName parameter on Get-Service is ignored because of rule #4
-# - The ValidateSets for Restart-Service are merged because both roles use ValidateSet on the same parameter per rule #5
+# - The constraint in role B for the DisplayName parameter on Get-Service
+#   is ignored because of rule #4
+# - The ValidateSets for Restart-Service are merged because both roles use
+#   ValidateSet on the same parameter per rule #5
 $mergedAandB = @{
     VisibleCmdlets = 'Get-Service',
-                     @{ Name = 'Restart-Service'; Parameters = @{ Name = 'DisplayName'; ValidateSet = 'DNS Client', 'DNS Server' } }
+                     @{ Name = 'Restart-Service';
+                        Parameters = @{ Name = 'DisplayName'; ValidateSet = 'DNS Client', 'DNS Server' } }
 }
 ```
 
 **VisibleExternalCommands, VisibleAliases, VisibleProviders, ScriptsToProcess**
 
-All other fields in the role capability file are simply added to a cumulative set of allowable
-external commands, aliases, providers, and startup scripts. Any command, alias, provider, or script
-available in one role capability will be available to the JEA user.
+All other fields in the role capability file are added to a cumulative set of allowable external
+commands, aliases, providers, and startup scripts. Any command, alias, provider, or script available
+in one role capability is available to the JEA user.
 
 Be careful to ensure that the combined set of providers from one role capability and
-cmdlets/functions/commands from another do not allow connecting users unintentional access to system
-resources. For example, if one role allows the `Remove-Item` cmdlet and another allows the
-`FileSystem` provider, you are at risk of a JEA user deleting arbitrary files on your computer.
-Additional information about identifying users' effective permissions can be found in the [auditing JEA](audit-and-report.md)
+cmdlets/functions/commands from another don't allow users unintentional access to system resources.
+For example, if one role allows the `Remove-Item` cmdlet and another allows the `FileSystem`
+provider, you are at risk of a JEA user deleting arbitrary files on your computer. Additional
+information about identifying users' effective permissions can be found in the [auditing JEA](audit-and-report.md)
 article.
 
 ## Next steps
