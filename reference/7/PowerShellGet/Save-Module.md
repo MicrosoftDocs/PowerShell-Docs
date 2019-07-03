@@ -241,8 +241,7 @@ Accept wildcard characters: False
 ### -MaximumVersion
 
 Specifies the maximum, or newest, version of the module to save. The **MaximumVersion** and
-**RequiredVersion** parameters are mutually exclusive; you cannot use both parameters in the same
-command.
+**RequiredVersion** parameters can't be used in the same command.
 
 ```yaml
 Type: String
@@ -260,7 +259,7 @@ Accept wildcard characters: False
 
 Specifies the minimum version of a single module to save. You cannot add this parameter if you are
 attempting to install multiple modules. The **MinimumVersion** and **RequiredVersion** parameters
-are mutually exclusive; you cannot use both parameters in the same command.
+can't be used in the same command.
 
 ```yaml
 Type: String
@@ -292,8 +291,7 @@ Accept wildcard characters: False
 
 ### -Path
 
-Specifies the location on the local computer to store a saved module. Accepts wildcard characters
-when the string is wrapped in double-quotes.
+Specifies the location on the local computer to store a saved module. Accepts wildcard characters.
 
 ```yaml
 Type: String
@@ -304,12 +302,12 @@ Required: True
 Position: 1
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -Proxy
 
-Specifies a proxy server for the request, rather than connecting directly to the Internet resource.
+Specifies a proxy server for the request, rather than connecting directly to the internet resource.
 
 ```yaml
 Type: Uri
