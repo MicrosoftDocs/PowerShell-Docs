@@ -28,12 +28,14 @@ pwsh[.exe]
    [-InputFormat {Text | XML}]
    [-Interactive]
    [-LoadProfile]
+   [-MTA]
    [-NoExit]
    [-NoLogo]
    [-NonInteractive]
    [-NoProfile]
    [-OutputFormat {Text | XML}]
    [-SettingsFile <SettingsFilePath>]
+   [-STA]
    [-Version]
    [-WindowStyle <style>]
    [-WorkingDirectory <directoryPath>]
@@ -204,6 +206,11 @@ parameter.
 Load the PowerShell profiles. This is the default behavior even if this is not
 specified.
 
+### -MTA
+
+Start PowerShell using a multi-threaded apartment.  This is the default.
+This switch is only available on Windows.
+
 ### -NoExit | -noe
 
 Does not exit after running startup commands.
@@ -239,6 +246,11 @@ Note that these settings are not used by the endpoint specified by the
 `-ConfigurationName` argument.
 
 Example: `pwsh -SettingsFile c:\myproject\powershell.config.json`
+
+### -STA
+
+Start PowerShell using a single-threaded apartment.
+This switch is only available on Windows.
 
 ### -Version | -v
 
