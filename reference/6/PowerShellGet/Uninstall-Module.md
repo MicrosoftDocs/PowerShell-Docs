@@ -234,6 +234,8 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
+### PSRepositoryItemInfo
+
 `Uninstall-Module` accepts **PSRepositoryItemInfo** objects from the pipeline.
 
 ## OUTPUTS

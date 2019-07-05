@@ -214,6 +214,8 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
+### PSRepositoryItemInfo
+
 `Uninstall-Script` accepts **PSRepositoryItemInfo** objects from the pipeline.
 
 ## OUTPUTS
