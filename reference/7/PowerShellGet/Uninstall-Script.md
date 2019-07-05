@@ -3,7 +3,7 @@ external help file: PSModule-help.xml
 keywords: powershell,cmdlet
 locale: en-us
 Module Name: PowerShellGet
-ms.date: 7/3/2019
+ms.date: 07/03/2019
 online version: https://go.microsoft.com/fwlink/?linkid=2096629
 schema: 2.0.0
 title: Uninstall-Script
@@ -35,24 +35,27 @@ The `Uninstall-Script` cmdlet uninstalls a specified script from the local compu
 
 ## EXAMPLES
 
-### Example 1: Uninstall a script file
+### Example 1: Uninstall a script
 
-This example uninstalls a script from the local computer.
+This example uninstalls a script.
 
 ```powershell
-Get-InstalledScript -Name UpdateManagement-Template
 Uninstall-Script -Name UpdateManagement-Template
 ```
 
-```Output
-Version   Name                         Repository   Description
--------   ----                         ----------   -----------
-1.1       UpdateManagement-Template    LocalRepo    This is a template script for Update Management
+`Uninstall-Script` uses the **Name** parameter to specify the script to uninstall from the local
+computer.
+
+### Example 2: Use the pipeline to uninstall a script
+
+In this example, the pipeline is used to uninstall a script.
+
+```powershell
+Get-InstalledScript -Name UpdateManagement-Template | Uninstall-Script
 ```
 
-`Get-InstalledScript` uses the **Name** parameter to display the **UpdateManagement-Template**
-script installed from a local repository. `Uninstall-Script` uses the **Name** parameter to specify
-the script to uninstall.
+`Get-InstalledScript` uses the **Name** parameter to specify the script. The object is sent down the
+pipeline to `Uninstall-Script` and the script is uninstalled.
 
 ## PARAMETERS
 
@@ -210,6 +213,8 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
+
+`Uninstall-Script` accepts **PSRepositoryItemInfo** objects from the pipeline.
 
 ## OUTPUTS
 

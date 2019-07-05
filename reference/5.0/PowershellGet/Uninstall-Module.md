@@ -1,5 +1,5 @@
 ---
-ms.date: 7/2/2019
+ms.date: 07/02/2019
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -37,22 +37,25 @@ uninstall a module if it has other modules as dependencies.
 
 ### Example 1: Uninstall a module
 
-In this example, an installed module's version is displayed and the module is uninstalled.
+This example uninstalls a module.
 
 ```powershell
-Get-InstalledModule -Name SpeculationControl
 Uninstall-Module -Name SpeculationControl
 ```
 
-```Output
-Version  Name                Repository   Description
--------  ----                ----------   -----------
-1.0.14   SpeculationControl  PSGallery    This module provides the ability to query...
+`Uninstall-Module` uses the **Name** parameter to specify the module to uninstall from the local
+computer.
+
+### Example 2: Use the pipeline to uninstall a module
+
+In this example, the pipeline is used to uninstall a module.
+
+```powershell
+Get-InstalledModule -Name SpeculationControl | Uninstall-Module
 ```
 
-`Get-InstalledModule` uses the **Name** parameter to display the installed module,
-**SpeculationControl**. `Uninstall-Module` uses the **Name** parameter to specify the module to
-uninstall.
+`Get-InstalledModule` uses the **Name** parameter to specify the module. The object is sent down the
+pipeline to `Uninstall-Module` and is uninstalled.
 
 ## PARAMETERS
 
@@ -124,7 +127,7 @@ Accept wildcard characters: False
 
 ### -MinimumVersion
 
-Specifies the minimum version of the script to uninstall. The **MinimumVersion** and
+Specifies the minimum version of the module to uninstall. The **MinimumVersion** and
 **RequiredVersion** parameters can't be used in the same command.
 
 ```yaml
@@ -194,6 +197,8 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
+
+`Uninstall-Module` accepts **PSRepositoryItemInfo** objects from the pipeline.
 
 ## OUTPUTS
 
