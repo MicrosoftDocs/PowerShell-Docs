@@ -111,6 +111,6 @@ You can also enable system-wide PowerShell transcription through Group Policy.
 
 ## See also
 
-[Additional information about PowerShell Remoting and WinRM security](/powershell/scripting/learn/remoting/winrmsecurity)
+[PowerShell Remoting and WinRM security](/powershell/scripting/learn/remoting/winrmsecurity)
 
-[*PowerShell ♥ the Blue Team* blog post on security](https://devblogs.microsoft.com/powershell/powershell-the-blue-team/)
+[PowerShell ♥ the Blue Team](https://devblogs.microsoft.com/powershell/powershell-the-blue-team/)

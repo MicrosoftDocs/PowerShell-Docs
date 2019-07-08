@@ -8,7 +8,7 @@ title:  JEA Security Considerations
 
 JEA helps you improve your security posture by reducing the number of permanent administrators on
 your machines. JEA uses a PowerShell session configuration to create a new entry point for users to
-manage the system. Users who need elevated, but not unlimited, access to the machine to perform
+manage the system. Users who need elevated, but not unlimited, access to the machine to do
 administrative tasks can be granted access to the JEA endpoint. Since JEA allows these users to run
 admin commands without having full admin access, you can then remove those users from highly
 privileged security groups.
@@ -16,14 +16,14 @@ privileged security groups.
 ## Run-As account
 
 Each JEA endpoint has a designated **run-as** account. This is the account under which the
-connecting user's actions are performed. This account is configurable in the [session configuration file](session-configurations.md),
+connecting user's actions are executed. This account is configurable in the [session configuration file](session-configurations.md),
 and the account you choose has a significant bearing on the security of your endpoint.
 
-**Virtual accounts** are the recommended way of configuring the **run-as** account. Virtual accounts are
-one-time, temporary local accounts that are created for the connecting user to use during the
+**Virtual accounts** are the recommended way of configuring the **run-as** account. Virtual accounts
+are one-time, temporary local accounts that are created for the connecting user to use during the
 duration of their JEA session. As soon as their session is terminated, the virtual account is
-destroyed and cannot be used anymore. The connecting user does not know the credentials for the
-virtual account and cannot use the virtual account to access the system via other means, such as
+destroyed and can't be used anymore. The connecting user doesn't know the credentials for the
+virtual account. The virtual account can't be used to access the system via other means like
 Remote Desktop or an unconstrained PowerShell endpoint.
 
 By default, virtual accounts belong to the local administrators group on the machine. This gives
@@ -31,19 +31,19 @@ them full rights to manage anything on the system, but no rights to manage resou
 When authenticating with other machines, the user context is that of the local computer account, not
 the virtual account.
 
-Domain controllers are a special case since there is no concept of a local administrators group.
-Instead, virtual accounts belong to Domain Admins instead and can manage the directory services on
-the domain controller. The domain identity is still restricted for use on the domain controller
-where the JEA session was instantiated, and any network access appears to come from the domain
-controller computer object instead.
+Domain controllers are a special case since there isn't a local administrators group. Instead,
+virtual accounts belong to Domain Admins and can manage the directory services on the domain
+controller. The domain identity is still restricted for use on the domain controller where the JEA
+session was instantiated. Any network access appears to come from the domain controller computer
+object instead.
 
-In both cases, you can explicitly define which security groups the virtual account belongs to. This
-is a good practice when the task you are performing can be done without local or domain admin
-privileges. If you already have a security group defined for your admins, you can grant the virtual
-account membership to that group. Virtual account group membership is limited to local security
-groups on workstation and member servers. But on a domain controller they can only be members of
-domain security groups. Once the virtual account has been added to one or more security groups, it
-no longer belong to the default groups (local admin or domain admin).
+In both cases, you may explicitly define which security groups the virtual account belongs to. This
+is a good practice when the task can be done without local or domain admin privileges. If you
+already have a security group defined for your admins, grant the virtual account membership to that
+group. Virtual account group membership is limited to local security groups on workstation and
+member servers. On domain controllers, virtual accounts must be members of domain security groups.
+Once the virtual account has been added to one or more security groups, it no longer belongs to the
+default groups (local admin or domain admin).
 
 The following table summarizes the possible configuration options and resulting permissions for
 virtual accounts:
@@ -56,52 +56,50 @@ virtual accounts:
 | Member server or workstation | Local groups C and D                | Local user, member of '*COMPUTER*\C' and '*COMPUTER*\D' | Computer account     |
 
 When you look at security audit events and application event logs, you see that each JEA user
-session has a unique virtual account. This helps you track user actions in a JEA endpoint back to
-the original user who ran the command. Virtual account names follow the format
+session has a unique virtual account. This unique account helps you track user actions in a JEA
+endpoint back to the original user who ran the command. Virtual account names follow the format
 `WinRM Virtual Users\WinRM_VA_<ACCOUNTNUMBER>_<DOMAIN>_<sAMAccountName>` For example, if user
 "Alice" in domain "Contoso" restarts a service in a JEA endpoint, the username associated with any
 service control manager events would be `WinRM Virtual Users\WinRM_VA_1_contoso_alice`.
 
-**Group managed service accounts (gMSAs)** are useful when a member server needs to have access to
+**Group-managed service accounts (gMSAs)** are useful when a member server needs to have access to
 network resources in the JEA session. For example, when a JEA endpoint is used to control access to
-a REST API service hosted on a different machine. It is easy to write functions to inoke the REST
-APIs, but you need a network identity to authenticate with the API. Using a group managed service
+a REST API service hosted on a different machine. It's easy to write functions to invoke the REST
+APIs, but you need a network identity to authenticate with the API. Using a group-managed service
 account makes the "second hop" possible while maintaining control over which computers can use the
 account. The effective permissions of the gMSA are defined by the security groups (local or domain)
 to which the gMSA account belongs.
 
-When a JEA endpoint is configured to use a gMSA account, the actions of all JEA users will appear to
-come from the same group managed service account. The only way to trace actions back to a specific
-user is to identify the set of commands run in a PowerShell session transcript.
+When a JEA endpoint is configured to use a gMSA, the actions of all JEA users appear to come from
+the same gMSA. The only way to trace actions back to a specific user is to identify the set of
+commands run in a PowerShell session transcript.
 
-**Pass-thru credentials** are used when you do not specify a **run-as** account and want PowerShell
-to use the connecting user's credential to run commands on the remote server. This configuration is
-*not* recommended for JEA as it would require you to grant the connecting user direct access to
-privileged management groups. If the connecting user already has admin privileges, they can avoid
-JEA altogether and manage the system via other, unconstrained means. See the section below on how
-[JEA does not protect against admins](#jea-does-not-protect-against-admins) for more information.
+**Pass-thru credentials** are used when you don't specify a **run-as** account. PowerShell uses the
+connecting user's credential to run commands on the remote server. This requires you to grant the
+connecting user direct access to privileged management groups. This configuration is **not**
+recommended for JEA. If the connecting user already has admin privileges, they can avoid JEA and
+manage the system via other, unconstrained means. For more information, see the section below on how
+[JEA doesn't protect against admins](#jea-doesnt-protect-against-admins).
 
 **Standard run-as accounts** allow you to specify any user account under which the entire PowerShell
-session runs. This is an important distinction, because a session configuration that uses a fixed
-**run-as** account (with the `-RunAsCredential` parameter) is not JEA-aware. That means role
-definitions no longer function as expected, and every user authorized to access the endpoint will be
-assigned the same role.
+session runs. Session configurations using fixed **run-as** accounts (with the `-RunAsCredential`
+parameter) aren't JEA-aware. Role definitions no longer function as expected. Every user authorized
+to access the endpoint is assigned the same role.
 
-You should not use a **RunAsCredential** on a JEA endpoint because of the difficulty in tracing
-actions back to specific users and the lack of support for mapping users to roles.
+You shouldn't use a **RunAsCredential** on a JEA endpoint because it's difficult to trace actions
+back to specific users and lacks support for mapping users to roles.
 
 ## WinRM Endpoint ACL
 
 As with regular PowerShell remoting endpoints, each JEA endpoint has a separate access control list
 (ACL) that controls who can authenticate with the JEA endpoint. If improperly configured, trusted
 users may not be able to access the JEA endpoint and untrusted users may have access. The WinRM ACL
-does not, however, affect the mapping of users to JEA roles. That is controlled by the
-**RoleDefinitions** field in the session configuration file that was registered on the system.
+doesn't affect the mapping of users to JEA roles. Mapping is controlled by the **RoleDefinitions**
+field in the session configuration file used to register the endpoint.
 
-By default, when you register a JEA endpoint using a session configuration file and one or more role
-capabilities, the WinRM ACL is configured to allow all users mapping to one or more roles
-access to the endpoint. For example, a JEA session configured using the following commands will
-grant full access to `CONTOSO\JEA_Lev1` and `CONTOSO\JEA_Lev2`.
+By default, when a JEA endpoint has multiple role capabilities, the WinRM ACL is configured to allow
+access to all mapped users. For example, a JEA session configured using the following commands
+grants full access to `CONTOSO\JEA_Lev1` and `CONTOSO\JEA_Lev2`.
 
 ```powershell
 $roles = @{ 'CONTOSO\JEA_Lev1' = 'Lev1Role'; 'CONTOSO\JEA_Lev2' = 'Lev2Role' }
@@ -128,20 +126,18 @@ To change which users have access, run either
 prompt or `Set-PSSessionConfiguration -Name 'MyJEAEndpoint' -SecurityDescriptorSddl <SDDL string>`
 to update the permissions. Users need at least *Invoke* rights to access the JEA endpoint.
 
-If additional users are granted access to the JEA endpoint but do not fall into any of the roles
-defined in the session configuration file, they will be able to start a JEA session but only have
-access to the default cmdlets. You can audit user permissions in a JEA endpoint by running
-`Get-PSSessionCapability`. Check out the [Auditing and Reporting on JEA](audit-and-report.md)
-article for more information about auditing which commands a user has access to in a JEA endpoint.
+It's possible to create a JEA endpoint that doesn't map a defined role to every user that has
+access. These users can start a JEA session, but only have access to the default cmdlets. You can
+audit user permissions in a JEA endpoint by running `Get-PSSessionCapability`. For more information,
+see [Auditing and Reporting on JEA](audit-and-report.md).
 
 ## Least privilege roles
 
-When designing JEA roles, it is important to remember that the virtual or group managed service
-account running behind the scenes often has unrestricted access to manage the local machine. JEA
-role capabilities help restrict what that account can be used for by limiting the commands and
-applications that can be run using that privileged context. Improperly designed roles can allow
-dangerous commands to run that may allow a user to break out of the JEA boundaries or obtain access
-to sensitive information.
+When designing JEA roles, it's important to remember that the virtual and group-managed service
+accounts running behind the scenes can have unrestricted access to the local machine. JEA role
+capabilities help limit the commands and applications that can be run in that privileged context.
+Improperly designed roles can allow dangerous commands that may permit a user to break out of the
+JEA boundaries or obtain access to sensitive information.
 
 For example, consider the following role capability entry:
 
@@ -151,13 +147,13 @@ For example, consider the following role capability entry:
 }
 ```
 
-This role capability allows users to run any PowerShell cmdlet with the noun "Process" from the
-Microsoft.PowerShell.Management module. Users may need to access cmdlets like `Get-Process` to
-understand what applications are running on the system and `Stop-Process` to kill any applications
-that are not responding. However, this entry also allows `Start-Process`, which can be used to start
-up an arbitrary program with full administrator permissions. The program doesn't need to be
-installed locally on the system, so an adversary could simply start a program on a file share that
-gives the connecting user local admin privileges, runs malware, and more.'
+This role capability allows users to run any PowerShell cmdlet with the noun **Process** from the
+**Microsoft.PowerShell.Management** module. Users may need to access cmdlets like `Get-Process` to
+see what applications are running on the system and `Stop-Process` to kill applications that aren't
+responding. However, this entry also allows `Start-Process`, which can be used to start up an
+arbitrary program with full administrator permissions. The program doesn't need to be installed
+locally on the system. A connected user could start a program from a file share that gives the user
+local admin privileges, runs malware, and more.
 
 A more secure version of this same role capability would look like:
 
@@ -167,22 +163,21 @@ A more secure version of this same role capability would look like:
 }
 ```
 
-Avoid using wildcards in role capabilities, and be sure to [audit effective user permissions](audit-and-report.md#check-effective-rights-for-a-specific-user)
-regularly to understand which commands a user has access to.
+Avoid using wildcards in role capabilities. Be sure to regularly [audit effective user permissions](audit-and-report.md#check-effective-rights-for-a-specific-user)
+to understand which commands are accessible to the user.
 
-## JEA does not protect against admins
+## JEA doesn't protect against admins
 
-One of the core principles of JEA is that it allows non-admins to perform *some* admin tasks. JEA
-does not protect against those who already have administrator privileges. Users who belong "domain
-admins," "local admins," or other highly privileged groups in your environment will still be able to
-get around JEA's protections by signing into the machine via another means. They could, for example,
-sign in with RDP, use remote MMC consoles, or connect to unconstrained PowerShell endpoints. Local
-admins on the system can also modify JEA configurations to allow additional users to manage the
-system or change a role capability to extend the scope of what a user can do in their JEA session.
-It is therefore important to evaluate your JEA users' extended permissions to see if there are other
-ways they could gain privileged access to the system.
+One of the core principles of JEA is that it allows non-admins to do *some* admin tasks. JEA doesn't
+protect against users who already have administrator privileges. Users who belong "domain admins",
+"local admins", or other highly privileged groups can circumvent JEA's protections via another
+means. For example, they could sign in with RDP, use remote MMC consoles, or connect to
+unconstrained PowerShell endpoints. Also, local admins on a system can modify JEA configurations to
+allow additional users or change a role capability to extend the scope of what a user can do in
+their JEA session. It's important to evaluate your JEA users' extended permissions to see if there
+are other ways to gain privileged access to the system.
 
-A common practice is to use JEA for regular day-to-day maintenance and have a "just in time"
-privileged access management solution allow users to temporarily become local admins in emergency
-situations. This helps ensure users are not permanent admins on the system, but can get those rights
+A common practice is to use JEA for regular day-to-day maintenance and have a "just-in-time",
+privileged access management solution that allows users to temporarily become local admins in emergency
+situations. This helps ensure users aren't permanent admins on the system, but can get those rights
 if, and only when, they complete a workflow that documents their use of those permissions.

@@ -17,6 +17,7 @@ For small environments, you can deploy JEA by registering the session configurat
 cmdlet.
 
 Before you begin, ensure that the following prerequisites have been met:
+
 - One or more roles has been created and placed in the **RoleCapabilities** folder of a PowerShell
   module.
 - A session configuration file has been created and tested.
