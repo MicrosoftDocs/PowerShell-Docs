@@ -3,7 +3,7 @@ external help file: PSModule-help.xml
 keywords: powershell,cmdlet
 locale: en-us
 Module Name: PowerShellGet
-ms.date: 7/1/2019
+ms.date: 07/01/2019
 online version: https://go.microsoft.com/fwlink/?linkid=2097019
 schema: 2.0.0
 title: New-ScriptFileInfo
@@ -398,7 +398,7 @@ Accept wildcard characters: False
 
 ### -Path
 
-Specifies the path to the module manifest file to update.
+Specifies the location where the script file is saved.
 
 ```yaml
 Type: String
