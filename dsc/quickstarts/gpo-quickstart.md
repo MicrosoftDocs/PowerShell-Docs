@@ -51,8 +51,8 @@ Mode                LastWriteTime     Length Name
 
 Each managed node will also need the following two modules:
 
-- [SecurityPolicyDSC](https://www.powershellgallery.com/packages/SecurityPolicyDsc/2.8.0.0)
-- [AuditPolicyDSC](https://www.powershellgallery.com/packages/AuditPolicyDsc/1.4.0.0)
+- [SecurityPolicyDSC](https://www.powershellgallery.com/packages/SecurityPolicyDsc)
+- [AuditPolicyDSC](https://www.powershellgallery.com/packages/AuditPolicyDsc)
 
 > [!NOTE]
 > **BaselineManagement** is a solution developed by the community to make DSC more discoverable for
@@ -61,6 +61,6 @@ Each managed node will also need the following two modules:
 
 ## Next steps
 
-- To upload your configuration script into Azure Automation State Configuration, see [Getting Started](automation-dsc-getting-started.md#importing-a-configuration-into-azure-automation).
-- Add the **SecurityPolicyDSC** and **AuditPolicyDSC** modules to your [Automation Account](./shared-resources/modules.md).
+- To upload your configuration script into Azure Automation State Configuration, see [Getting Started](/automation/automation-dsc-getting-started#importing-a-configuration-into-azure-automation).
+- Add the **SecurityPolicyDSC** and **AuditPolicyDSC** modules to your [Automation Account](/azure/automation/shared-resources/modules).
 - Find DSC configurations and resources in the [PowerShell Gallery](https://www.powershellgallery.com/).
