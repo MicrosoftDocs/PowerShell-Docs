@@ -19,7 +19,10 @@
   - name: Get started with DSC on Azure Virtual Machines
     href: getting-started/azureDSCexthistory.md
 - name: Quickstarts
+  expanded: true
   items:
+  - name: Create a Configuration from Group Policy
+    href: quickstarts/gpo-quickstart.md
   - name: Create a Website with DSC
     href: quickstarts/website-quickStart.md
 - name: Configurations
