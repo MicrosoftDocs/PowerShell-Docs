@@ -106,7 +106,7 @@ Param()
 ```
 
 `$Parms` stores the parameter values for **Path**, **Version**, **Author**, **CompanyName**, and
-**Description**. `Update-ScriptFileInfo` gets the parameter values from **@Parms** and updates the
+**Description**. `Update-ScriptFileInfo` gets the parameter values from `@Parms` and updates the
 script. The **PassThru** parameter displays the script's contents in the PowerShell console.
 
 ## PARAMETERS
