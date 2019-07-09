@@ -3,7 +3,7 @@ external help file: PSModule-help.xml
 keywords: powershell,cmdlet
 locale: en-us
 Module Name: PowerShellGet
-ms.date: 6/4/2019
+ms.date: 06/04/2019
 online version: https://go.microsoft.com/fwlink/?linkid=821657
 schema: 2.0.0
 title: Find-DscResource
@@ -20,9 +20,9 @@ Finds Desired State Configuration (DSC) resources.
 
 ```
 Find-DscResource [[-Name] <String[]>] [-ModuleName <String>] [-MinimumVersion <String>]
-[-MaximumVersion <String>] [-RequiredVersion <String>] [-AllVersions] [-AllowPrerelease]
-[-Tag <String[]>] [-Filter <String>] [-Proxy <Uri>] [-ProxyCredential <PSCredential>]
-[-Repository <String[]>] [<CommonParameters>]
+ [-MaximumVersion <String>] [-RequiredVersion <String>] [-AllVersions] [-AllowPrerelease]
+ [-Tag <String[]>] [-Filter <String>] [-Proxy <Uri>] [-ProxyCredential <PSCredential>]
+ [-Repository <String[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
