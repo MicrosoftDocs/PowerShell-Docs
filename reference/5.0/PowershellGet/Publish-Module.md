@@ -19,16 +19,16 @@ Publishes a specified module from the local computer to an online gallery.
 
 ```
 Publish-Module -Name <String> [-RequiredVersion <Version>] -NuGetApiKey <String>
- [-Repository <String>]  [-FormatVersion <Version>] [-ReleaseNotes <String[]>] [-Tags <String[]>]
- [-LicenseUri <Uri>] [-IconUri <Uri>]  [-ProjectUri <Uri>] [-WhatIf] [-Confirm] [<CommonParameters>]
+ [-Repository <String>] [-FormatVersion <Version>] [-ReleaseNotes <String[]>] [-Tags <String[]>]
+ [-LicenseUri <Uri>] [-IconUri <Uri>] [-ProjectUri <Uri>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### ModulePathParameterSet
 
 ```
 Publish-Module -Path <String> -NuGetApiKey <String> [-Repository <String>]
- [-FormatVersion <Version>]  [-ReleaseNotes <String[]>] [-Tags <String[]>] [-LicenseUri <Uri>]
- [-IconUri <Uri>] [-ProjectUri <Uri>]  [-WhatIf] [-Confirm] [<CommonParameters>]
+ [-FormatVersion <Version>] [-ReleaseNotes <String[]>] [-Tags <String[]>] [-LicenseUri <Uri>]
+ [-IconUri <Uri>] [-ProjectUri <Uri>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
