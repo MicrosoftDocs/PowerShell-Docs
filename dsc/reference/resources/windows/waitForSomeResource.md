@@ -14,6 +14,10 @@ to specify dependencies on configurations on other nodes.
 This resource succeeds if the resource specified by the **ResourceName** property is in the desired state on a minimum number of nodes
 (specified by **NodeCount**) defined by the **NodeName** property.
 
+> [!NOTE]
+> **WaitForSome** resource uses Windows Remote Management to check the state of other Nodes.
+> For more information about port and security requirements for WinRM, see
+> [PowerShell Remoting Security Considerations](/powershell/scripting/learn/remoting/winrmsecurity?view=powershell-6).
 
 ## Syntax
 
