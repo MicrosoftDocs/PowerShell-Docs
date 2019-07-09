@@ -58,7 +58,7 @@ Update-ModuleManifest @Parms
 ```
 
 `$Parms` is a splat that stores the parameter values for **Path**, **Author**, **CompanyName**, and
-**Copyright**. `Update-ModuleManifest` gets the parameter values from **@Parms** and updates the
+**Copyright**. `Update-ModuleManifest` gets the parameter values from `@Parms` and updates the
 module manifest, **TestManifest.psd1**.
 
 ## PARAMETERS
