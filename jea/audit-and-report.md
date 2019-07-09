@@ -1,7 +1,7 @@
 ---
-ms.date:  06/12/2017
-keywords:  jea,powershell,security
-title:  Auditing and Reporting on JEA
+ms.date: 07/10/2019
+keywords: jea,powershell,security
+title: Auditing and Reporting on JEA
 ---
 
 # Auditing and Reporting on JEA

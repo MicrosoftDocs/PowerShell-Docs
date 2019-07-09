@@ -1,5 +1,5 @@
 ---
-ms.date:  06/12/2017
+ms.date:  07/10/2019
 keywords:  jea,powershell,security
 title:  Registering JEA Configurations
 ---
