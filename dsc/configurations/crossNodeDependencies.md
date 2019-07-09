@@ -33,7 +33,8 @@ Like the **DependsOn** keyword, you will need to format the name as "[ResourceTy
 }
 ```
 
-The **WaitForSome** resource has a similar syntax to the example above, but adds the **NodeCount** key. The **NodeCount** indicates how many Nodes the current resource should wait on.
+The **WaitForSome** resource has a similar syntax to the example above, but adds the **NodeCount**
+key. The **NodeCount** indicates how many Nodes the current resource should wait on.
 
 ```
 WaitForSome [String] #ResourceName
@@ -51,20 +52,26 @@ WaitForSome [String] #ResourceName
 
 All **WaitForXXXX** share the following syntax keys.
 
-|  Property  |  Description   |
+|Property|  Description   |
+|---------|---------------------|
 | RetryIntervalSec| The number of seconds before retrying. Minimum is 1.|
 | RetryCount| The maximum number of times to retry.|
 | ThrottleLimit| Number of machines to connect simultaneously. Default is `New-CimSession` default.|
 | DependsOn | Indicates that the configuration of another resource must run before this resource is configured. For more information, see [DependsOn](resource-depends-on.md)|
 | PsDscRunAsCredential | See [Using DSC with User Credentials](./runAsUser.md) |
 
-
 ## Using WaitForXXXX resources
 
-Each **WaitForXXXX** resource waits for the specified resources to complete on the specified Node. Other resources in the same Configuration can then *depend on* the **WaitForXXXX** resource using the **DependsOn** key.
+Each **WaitForXXXX** resource waits for the specified resources to complete on the specified Node.
+Other resources in the same Configuration can then *depend on* the **WaitForXXXX** resource using
+the **DependsOn** key.
 
-For example, in the following configuration, the target node is waiting for the **xADDomain** resource to finish on the **MyDC** node with maximum number of 30 retries, at 15-second intervals, before the target node
-can join the domain.
+For example, in the following configuration, the target node is waiting for the **xADDomain**
+resource to finish on the **MyDC** node with maximum number of 30 retries, at 15-second intervals,
+before the target node can join the domain.
+
+By default the **WaitForXXX** resources try one time and then fail. Although it is not
+required, you will typically want to specify a **RetryCount** and **RetryIntervalSec**.
 
 ```powershell
 Configuration JoinDomain
@@ -111,9 +118,14 @@ Configuration JoinDomain
 }
 ```
 
-When you compile the Configuration, two ".mof" files are generated. Apply both ".mof" files to the target Nodes using the [Start-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration) cmdlet
+When you compile the Configuration, two ".mof" files are generated. Apply both ".mof" files to the
+target Nodes using the [Start-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration)
+cmdlet
 
->**Note:** By default the WaitForXXX resources try one time and then fail. Although it is not required, you will typically want to specify a **RetryCount** and **RetryIntervalSec**.
+> [!NOTE]
+> **WaitForXXX** resources use Windows Remote Management to check the state of other Nodes.
+> For more information about port and security requirements for WinRM, see
+> [PowerShell Remoting Security Considerations](/powershell/scripting/learn/remoting/winrmsecurity?view=powershell-6).
 
 ## See Also
 
