@@ -3,7 +3,7 @@ external help file: PSModule-help.xml
 keywords: powershell,cmdlet
 locale: en-us
 Module Name: PowerShellGet
-ms.date: 06/09/2017
+ms.date: 07/09/2019
 online version: https://go.microsoft.com/fwlink/?linkid=822343
 schema: 2.0.0
 title: Update-ScriptFileInfo
@@ -17,71 +17,102 @@ Updates information for a script.
 ## SYNTAX
 
 ### PathParameterSet (Default)
+
 ```
 Update-ScriptFileInfo [-Path] <String> [-Version <String>] [-Author <String>] [-Guid <Guid>]
  [-Description <String>] [-CompanyName <String>] [-Copyright <String>] [-RequiredModules <Object[]>]
  [-ExternalModuleDependencies <String[]>] [-RequiredScripts <String[]>]
  [-ExternalScriptDependencies <String[]>] [-Tags <String[]>] [-ProjectUri <Uri>] [-LicenseUri <Uri>]
- [-IconUri <Uri>] [-ReleaseNotes <String[]>] [-PrivateData <String>] [-PassThru] [-Force] [-WhatIf] [-Confirm]
- [<CommonParameters>]
+ [-IconUri <Uri>] [-ReleaseNotes <String[]>] [-PrivateData <String>] [-PassThru] [-Force] [-WhatIf]
+ [-Confirm] [<CommonParameters>]
 ```
 
 ### LiteralPathParameterSet
+
 ```
 Update-ScriptFileInfo [-LiteralPath] <String> [-Version <String>] [-Author <String>] [-Guid <Guid>]
  [-Description <String>] [-CompanyName <String>] [-Copyright <String>] [-RequiredModules <Object[]>]
  [-ExternalModuleDependencies <String[]>] [-RequiredScripts <String[]>]
  [-ExternalScriptDependencies <String[]>] [-Tags <String[]>] [-ProjectUri <Uri>] [-LicenseUri <Uri>]
- [-IconUri <Uri>] [-ReleaseNotes <String[]>] [-PrivateData <String>] [-PassThru] [-Force] [-WhatIf] [-Confirm]
- [<CommonParameters>]
+ [-IconUri <Uri>] [-ReleaseNotes <String[]>] [-PrivateData <String>] [-PassThru] [-Force] [-WhatIf]
+ [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-The **Update-ScriptFileInfo** cmdlet updates information for a script.
+
+The `Update-ScriptFileInfo` cmdlet updates a script's property values. For example, the values for
+version, author, or description.
 
 ## EXAMPLES
 
 ### Example 1: Update the version of a script file
+
+In this example, an existing script file is updated with new property values.
+
+Splatting is used to pass parameters to the `Update-ScriptFileInfo` cmdlet. For more information,
+see [about_Splatting](../Microsoft.Powershell.Core/About/about_splatting.md).
+
+```powershell
+$Parms = @{
+  Path = "C:\Test\Temp-Scriptfile.ps1"
+  Version = "2.0"
+  Author = "bob@contoso.com"
+  CompanyName = "Contoso"
+  Description = "This is the updated description"
+  }
+Update-ScriptFileInfo @Parms -PassThru
 ```
-PS C:\> New-ScriptFileInfo -Path "\temp\temp-scriptfile.ps1" -Version 1.0 -Author "pattif@contoso.com" -Description "my test script file description goes here"
-PS C:\> Test-ScriptFileInfo -Path "\temp\temp-scriptfile.ps1"
-Version    Name                      Author               Description
--------    ----                      ------               -----------
-1.0        temp-scriptfile           manikb@microsoft.com my test script file description goes here PS C:\> Update-ScriptFileInfo -Path "\temp\temp-scriptfile.ps1" -Version 2.0 -PassThru
+
+```Output
 <#PSScriptInfo
 
 .VERSION 2.0
-.GUID eb246b19-17da-4392-8c89-7c280f69ad0e
-.AUTHOR manikb@microsoft.com
-.COMPANYNAME
+
+.GUID 4609f00c-e850-4d3f-9c69-3741e56e4133
+
+.AUTHOR bob@contoso.com
+
+.COMPANYNAME Contoso
+
 .COPYRIGHT
+
 .TAGS
+
 .LICENSEURI
+
 .PROJECTURI
+
 .ICONURI
+
 .EXTERNALMODULEDEPENDENCIES
 
 .REQUIREDSCRIPTS
+
 .EXTERNALSCRIPTDEPENDENCIES
+
 .RELEASENOTES
 
+.PRIVATEDATA
+
 #>
+
 <#
+
 .DESCRIPTION
- my test script file description goes here
+This is the updated description
+
 #>
 Param()
 ```
 
-The first command creates a script file and assigns it version 1.0.
-
-The second command uses the Test-ScriptFileInfo cmdlet to validate temp-scriptfile.ps1 and display the results.
-
-The third command uses **Update-ScriptFileInfo** to update the version number to 2.0.
+`$Parms` stores the parameter values for **Path**, **Version**, **Author**, **CompanyName**, and
+**Description**. `Update-ScriptFileInfo` gets the parameter values from **@Parms** and updates the
+script. The **PassThru** parameter displays the script's contents in the PowerShell console.
 
 ## PARAMETERS
 
 ### -Author
+
 Specifies the script author.
 
 ```yaml
@@ -97,6 +128,7 @@ Accept wildcard characters: False
 ```
 
 ### -CompanyName
+
 Specifies the company or vendor who created the script.
 
 ```yaml
@@ -112,6 +144,7 @@ Accept wildcard characters: False
 ```
 
 ### -Copyright
+
 Specifies a copyright statement for the script.
 
 ```yaml
@@ -127,6 +160,7 @@ Accept wildcard characters: False
 ```
 
 ### -Description
+
 Specifies a description for the script.
 
 ```yaml
@@ -142,6 +176,7 @@ Accept wildcard characters: False
 ```
 
 ### -ExternalModuleDependencies
+
 Specifies an array of external module dependencies.
 
 ```yaml
@@ -157,6 +192,7 @@ Accept wildcard characters: False
 ```
 
 ### -ExternalScriptDependencies
+
 Specifies an array of external script dependencies.
 
 ```yaml
@@ -172,7 +208,8 @@ Accept wildcard characters: False
 ```
 
 ### -Force
-Forces the command to run without asking for user confirmation.
+
+Forces `Update-ScriptFileInfo` to run without asking for user confirmation.
 
 ```yaml
 Type: SwitchParameter
@@ -187,6 +224,7 @@ Accept wildcard characters: False
 ```
 
 ### -Guid
+
 Specifies a unique ID for a script.
 
 ```yaml
@@ -202,8 +240,9 @@ Accept wildcard characters: False
 ```
 
 ### -IconUri
-Specifies the URL of an icon for the script.
-The specified icon is displayed on the gallery web page for the script.
+
+Specifies the URL of an icon for the script. The specified icon is displayed on the gallery web page
+for the script.
 
 ```yaml
 Type: Uri
@@ -218,6 +257,7 @@ Accept wildcard characters: False
 ```
 
 ### -LicenseUri
+
 Specifies the URL of licensing terms.
 
 ```yaml
@@ -233,11 +273,11 @@ Accept wildcard characters: False
 ```
 
 ### -LiteralPath
-Specifies a path to one or more locations.
-Unlike the *Path* parameter, the value of the *LiteralPath* parameter is used exactly as it is entered.
-No characters are interpreted as wildcards.
-If the path includes escape characters, enclose them in single quotation marks.
-Single quotation marks tell Windows PowerShell not to interpret any characters as escape sequences.
+
+Specifies a path to one or more locations. The **LiteralPath** parameter's value is used exactly as
+it's entered. No characters are interpreted as wildcards. If the path includes escape characters,
+enclose them in single quotation marks. Single quotation marks tell PowerShell not to interpret any
+characters as escape sequences.
 
 ```yaml
 Type: String
@@ -252,8 +292,9 @@ Accept wildcard characters: False
 ```
 
 ### -PassThru
-Returns an object representing the item with which you are working.
-By default, this cmdlet does not generate any output.
+
+Returns an object that represents the item with which you're working. By default,
+`Update-ScriptFileInfo` doesn't generate any output.
 
 ```yaml
 Type: SwitchParameter
@@ -268,9 +309,8 @@ Accept wildcard characters: False
 ```
 
 ### -Path
-Specifies a path to one or more locations.
-Wildcards are permitted.
-The default location is the current directory (.).
+
+Specifies the script file's location. Wildcards are permitted.
 
 ```yaml
 Type: String
@@ -281,10 +321,11 @@ Required: True
 Position: 0
 Default value: None
 Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -PrivateData
+
 Specifies the private data for the script.
 
 ```yaml
@@ -300,6 +341,7 @@ Accept wildcard characters: False
 ```
 
 ### -ProjectUri
+
 Specifies the URL of a web page about this project.
 
 ```yaml
@@ -315,7 +357,9 @@ Accept wildcard characters: False
 ```
 
 ### -ReleaseNotes
-Specifies a string array that contains release notes or comments that you want to be available to users for this version of the script.
+
+Specifies a string array that contains release notes or comments that you want available for this
+version of the script.
 
 ```yaml
 Type: String[]
@@ -330,8 +374,9 @@ Accept wildcard characters: False
 ```
 
 ### -RequiredModules
-Specifies modules that must be in the global session state.
-If the required modules are not in the global session state, Windows PowerShell imports them.
+
+Specifies modules that must be in the global session state. If the required modules aren't in the
+global session state, PowerShell imports them.
 
 ```yaml
 Type: Object[]
@@ -346,6 +391,7 @@ Accept wildcard characters: False
 ```
 
 ### -RequiredScripts
+
 Specifies an array of required scripts.
 
 ```yaml
@@ -361,6 +407,7 @@ Accept wildcard characters: False
 ```
 
 ### -Tags
+
 Specifies an array of tags.
 
 ```yaml
@@ -376,7 +423,8 @@ Accept wildcard characters: False
 ```
 
 ### -Version
-Specifies the version of the script.
+
+Specifies the script's version.
 
 ```yaml
 Type: String
@@ -391,7 +439,8 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
-Prompts you for confirmation before running the cmdlet.
+
+Prompts you for confirmation before running `Update-ScriptFileInfo`.
 
 ```yaml
 Type: SwitchParameter
@@ -406,8 +455,8 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Shows what would happen if the cmdlet runs.
-The cmdlet is not run.
+
+Shows what would happen if `Update-ScriptFileInfo` runs. The cmdlet isn't run.
 
 ```yaml
 Type: SwitchParameter
@@ -422,13 +471,19 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+-InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
+-WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ## NOTES
+
+Use the `Test-ScriptFileInfo` cmdlet to validate a script's metadata. Scripts must include values
+for version, GUID, description, and author.
 
 ## RELATED LINKS
 
