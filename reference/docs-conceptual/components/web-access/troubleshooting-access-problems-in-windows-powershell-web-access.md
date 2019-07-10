@@ -33,7 +33,7 @@ Failure could occur because of any of the following.
 
   Verify remote management is enabled on the computer to which the user is trying to connect.
 
-  For more information, see [How to Configure Your Computer for Remoting](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_remote_requirements#how-to-configure-your-computer-for-remoting).
+  For more information, see [How to Configure Your Computer for Remoting](/powershell/module/microsoft.powershell.core/about/about_remote_requirements#how-to-configure-your-computer-for-remoting).
 
 ## Internal Server Error
 

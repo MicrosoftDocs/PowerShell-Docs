@@ -1,9 +1,9 @@
 ---
 ms.date:  06/12/2017
 keywords:  dsc,powershell,configuration,setup
-title:  RollBack method of the MSFT_DSCLocalConfigurationManager class
+title:  RollBack method
 ---
-# RollBack method of the MSFT_DSCLocalConfigurationManager class
+# RollBack method
 
 Rolls back the configuration to a previous version.
 

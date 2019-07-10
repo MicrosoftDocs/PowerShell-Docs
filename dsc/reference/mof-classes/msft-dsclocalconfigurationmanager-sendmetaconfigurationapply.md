@@ -1,9 +1,9 @@
 ---
 ms.date:  06/12/2017
 keywords:  dsc,powershell,configuration,setup
-title:  SendMetaConfigurationApply method of the MSFT_DSCLocalConfigurationManager class
+title:  SendMetaConfigurationApply method
 ---
-# SendMetaConfigurationApply method of the MSFT_DSCLocalConfigurationManager class
+# SendMetaConfigurationApply method
 
 Sets the Local Configuration Manager settings that are used to control the Configuration Agent.
 

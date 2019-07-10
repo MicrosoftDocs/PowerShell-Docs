@@ -3,7 +3,7 @@ external help file: PSModule-help.xml
 keywords: powershell,cmdlet
 locale: en-us
 Module Name: PowerShellGet
-ms.date: 06/09/2017
+ms.date: 07/03/2019
 online version: https://go.microsoft.com/fwlink/?linkid=822338
 schema: 2.0.0
 title: Uninstall-Script
@@ -12,36 +12,55 @@ title: Uninstall-Script
 # Uninstall-Script
 
 ## SYNOPSIS
-Uninstalls a script file.
+Uninstalls a script.
 
 ## SYNTAX
 
 ### NameParameterSet (Default)
+
 ```
 Uninstall-Script [-Name] <String[]> [-MinimumVersion <String>] [-RequiredVersion <String>]
  [-MaximumVersion <String>] [-Force] [-AllowPrerelease] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### InputObject
+
 ```
 Uninstall-Script [-InputObject] <PSObject[]> [-Force] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-The **Uninstall-Script** cmdlet uninstalls the specified script files from the online gallery.
+
+The `Uninstall-Script` cmdlet uninstalls a specified script from the local computer.
 
 ## EXAMPLES
 
-### Example 1: Uninstall a script file
-```
-PS C:\> Uninstall-Script -Name "MyScript" -RequiredVersion 2.5
+### Example 1: Uninstall a script
+
+This example uninstalls a script.
+
+```powershell
+Uninstall-Script -Name UpdateManagement-Template
 ```
 
-This command uninstalls version 2.5 of the script file named MyScript.
+`Uninstall-Script` uses the **Name** parameter to specify the script to uninstall from the local
+computer.
+
+### Example 2: Use the pipeline to uninstall a script
+
+In this example, the pipeline is used to uninstall a script.
+
+```powershell
+Get-InstalledScript -Name UpdateManagement-Template | Uninstall-Script
+```
+
+`Get-InstalledScript` uses the **Name** parameter to specify the script. The object is sent down the
+pipeline to `Uninstall-Script` and the script is uninstalled.
 
 ## PARAMETERS
 
 ### -AllowPrerelease
+
 Allows you to uninstall a script marked as a prerelease.
 
 ```yaml
@@ -57,7 +76,8 @@ Accept wildcard characters: False
 ```
 
 ### -Force
-Forces the command to run without asking for user confirmation.
+
+Forces `Uninstall-Script` to run without asking for user confirmation.
 
 ```yaml
 Type: SwitchParameter
@@ -72,7 +92,9 @@ Accept wildcard characters: False
 ```
 
 ### -InputObject
-Specifies a package by using the module's SoftwareID object, which is shown in the results of the Find-Module cmdlet.
+
+Accepts a **PSRepositoryItemInfo** object. For example, output `Get-InstalledScript` to a variable
+and use that variable as the **InputObject** argument.
 
 ```yaml
 Type: PSObject[]
@@ -87,8 +109,9 @@ Accept wildcard characters: False
 ```
 
 ### -MaximumVersion
-Specifies the maximum, or newest, version of the script to uninstall.
-The *MaximumVersion* and *RequiredVersion* parameters are mutually exclusive; you cannot use both parameters in the same command.
+
+Specifies the maximum, or newest, version of the script to uninstall. The **MaximumVersion** and
+**RequiredVersion** parameters can't be used in the same command.
 
 ```yaml
 Type: String
@@ -103,8 +126,9 @@ Accept wildcard characters: False
 ```
 
 ### -MinimumVersion
-Specifies the minimum version of the script to uninstall.
-The *MinimumVersion* and *RequiredVersion* parameters are mutually exclusive; you cannot use both parameters in the same command.
+
+Specifies the minimum version of the script to uninstall. The **MinimumVersion** and
+**RequiredVersion** parameters can't be used in the same command.
 
 ```yaml
 Type: String
@@ -119,7 +143,8 @@ Accept wildcard characters: False
 ```
 
 ### -Name
-Specifies an array of names of scripts to uninstall.
+
+Specifies an array of script names to uninstall.
 
 ```yaml
 Type: String[]
@@ -134,6 +159,7 @@ Accept wildcard characters: False
 ```
 
 ### -RequiredVersion
+
 Specifies the exact version number of the script to uninstall.
 
 ```yaml
@@ -149,7 +175,8 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
-Prompts you for confirmation before running the cmdlet.
+
+Prompts you for confirmation before running `Uninstall-Script`.
 
 ```yaml
 Type: SwitchParameter
@@ -164,8 +191,8 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Shows what would happen if the cmdlet runs.
-The cmdlet is not run.
+
+Shows what would happen if `Uninstall-Script` runs. The cmdlet isn't run.
 
 ```yaml
 Type: SwitchParameter
@@ -180,9 +207,16 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+-InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
+-WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
+
+### PSRepositoryItemInfo
+
+`Uninstall-Script` accepts **PSRepositoryItemInfo** objects from the pipeline.
 
 ## OUTPUTS
 
