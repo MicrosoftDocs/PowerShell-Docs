@@ -170,4 +170,4 @@ that object are printed a few lines below, closely mimicking what the user would
 
 ## See also
 
-[*PowerShell ♥ the Blue Team* blog post on security](https://blogs.msdn.microsoft.com/powershell/2015/06/09/powershell-the-blue-team/)
+[*PowerShell ♥ the Blue Team* blog post on security](https://devblogs.microsoft.com/powershell/powershell-the-blue-team/)

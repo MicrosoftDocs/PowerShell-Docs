@@ -19,7 +19,7 @@ anything managed by PowerShell. With JEA, you can:
 **Why is JEA important?**
 
 Highly privileged accounts used to administer your servers pose a serious security risk. Should an
-attacker compromise one of these accounts, they could launch [lateral attacks](http://aka.ms/pth)
+attacker compromise one of these accounts, they could launch [lateral attacks](https://aka.ms/pth)
 across your organization. Each compromised account gives an attacker access to even more accounts
 and resources, and puts them one step closer to stealing company secrets, launching a
 denial-of-service attack, and more.
@@ -27,17 +27,17 @@ denial-of-service attack, and more.
 It's not always easy to remove administrative privileges, either. Consider the common scenario where
 the DNS role is installed on the same machine as your Active Directory Domain Controller. Your DNS
 administrators require local administrator privileges to fix issues with the DNS server. But to do
-so, you must make them members of the highly privileged "Domain Admins" security group. This
+so, you must make them members of the highly privileged **Domain Admins** security group. This
 approach effectively gives DNS Administrators control over your whole domain and access to all
 resources on that machine.
 
-JEA addresses this problem through the principle of *Least Privilege*. With JEA, you can configure a
-management endpoint for DNS administrators that gives them access only to the PowerShell commands
+JEA addresses this problem through the principle of **Least Privilege**. With JEA, you can configure
+a management endpoint for DNS administrators that gives them access only to the PowerShell commands
 they need to get their job done. This means you can provide the appropriate access to repair a
 poisoned DNS cache or restart the DNS server without unintentionally giving them rights to Active
 Directory, or to browse the file system, or run potentially dangerous scripts. Better yet, when the
 JEA session is configured to use temporary privileged virtual accounts, your DNS administrators can
-connect to the server using *non-admin* credentials and still run commands that typically require
+connect to the server using **non-admin** credentials and still run commands that typically require
 admin privileges. JEA enables you to remove users from widely privileged local/domain administrator
 roles and carefully control what they can do on each machine.
 

@@ -21,8 +21,8 @@ To use JEA interactively, you need:
 - The name of the JEA endpoint registered on that computer
 - Credentials that have access to the JEA endpoint on that computer
 
-Given that information, you can start a JEA session using the [New-PSSession](/powershell/microsoft.powershell.core/New-PSSession)
-or [Enter-PSSession](/powershell/microsoft.powershell.core/enter-pssession) cmdlets.
+Given that information, you can start a JEA session using the [New-PSSession](/powershell/module/microsoft.powershell.core/New-PSSession)
+or [Enter-PSSession](/powershell/module/microsoft.powershell.core/enter-pssession) cmdlets.
 
 ```powershell
 $nonAdminCred = Get-Credential
@@ -124,7 +124,7 @@ JEA can also be used in automation systems and in user applications, such as in-
 and websites. The approach is the same as that for building apps that talk to unconstrained
 PowerShell endpoints. Ensure the program is designed to work with limitation imposed by JEA.
 
-For simple, one-off tasks, you can use [Invoke-Command](/powershell/microsoft.powershell.core/invoke-command)
+For simple, one-off tasks, you can use [Invoke-Command](/powershell/module/microsoft.powershell.core/invoke-command)
 to run commands in a JEA session.
 
 ```powershell

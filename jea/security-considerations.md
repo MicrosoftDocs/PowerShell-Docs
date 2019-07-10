@@ -26,13 +26,13 @@ destroyed and can't be used anymore. The connecting user doesn't know the creden
 virtual account. The virtual account can't be used to access the system via other means like
 Remote Desktop or an unconstrained PowerShell endpoint.
 
-By default, virtual accounts belong to the local administrators group on the machine. This gives
+By default, virtual accounts belong to the local **Administrators** group on the machine. This gives
 them full rights to manage anything on the system, but no rights to manage resources on the network.
 When authenticating with other machines, the user context is that of the local computer account, not
 the virtual account.
 
-Domain controllers are a special case since there isn't a local administrators group. Instead,
-virtual accounts belong to Domain Admins and can manage the directory services on the domain
+Domain controllers are a special case since there isn't a local **Administrators** group. Instead,
+virtual accounts belong to **Domain Admins** and can manage the directory services on the domain
 controller. The domain identity is still restricted for use on the domain controller where the JEA
 session was instantiated. Any network access appears to come from the domain controller computer
 object instead.
@@ -43,7 +43,7 @@ already have a security group defined for your admins, grant the virtual account
 group. Virtual account group membership is limited to local security groups on workstation and
 member servers. On domain controllers, virtual accounts must be members of domain security groups.
 Once the virtual account has been added to one or more security groups, it no longer belongs to the
-default groups (local admin or domain admin).
+default groups (local or domain admins).
 
 The following table summarizes the possible configuration options and resulting permissions for
 virtual accounts:
@@ -59,14 +59,14 @@ When you look at security audit events and application event logs, you see that 
 session has a unique virtual account. This unique account helps you track user actions in a JEA
 endpoint back to the original user who ran the command. Virtual account names follow the format
 `WinRM Virtual Users\WinRM_VA_<ACCOUNTNUMBER>_<DOMAIN>_<sAMAccountName>` For example, if user
-"Alice" in domain "Contoso" restarts a service in a JEA endpoint, the username associated with any
-service control manager events would be `WinRM Virtual Users\WinRM_VA_1_contoso_alice`.
+**Alice** in domain **Contoso** restarts a service in a JEA endpoint, the username associated with
+any service control manager events would be `WinRM Virtual Users\WinRM_VA_1_contoso_alice`.
 
 **Group-managed service accounts (gMSAs)** are useful when a member server needs to have access to
 network resources in the JEA session. For example, when a JEA endpoint is used to control access to
 a REST API service hosted on a different machine. It's easy to write functions to invoke the REST
 APIs, but you need a network identity to authenticate with the API. Using a group-managed service
-account makes the "second hop" possible while maintaining control over which computers can use the
+account makes the second hop possible while maintaining control over which computers can use the
 account. The effective permissions of the gMSA are defined by the security groups (local or domain)
 to which the gMSA account belongs.
 
@@ -168,16 +168,17 @@ to understand which commands are accessible to the user.
 
 ## JEA doesn't protect against admins
 
-One of the core principles of JEA is that it allows non-admins to do *some* admin tasks. JEA doesn't
-protect against users who already have administrator privileges. Users who belong "domain admins",
-"local admins", or other highly privileged groups can circumvent JEA's protections via another
-means. For example, they could sign in with RDP, use remote MMC consoles, or connect to
+One of the core principles of JEA is that it allows non-admins to do some admin tasks. JEA doesn't
+protect against users who already have administrator privileges. Users who belong **Domain Admins**,
+local **Administrators**, or other highly privileged groups can circumvent JEA's protections via
+another means. For example, they could sign in with RDP, use remote MMC consoles, or connect to
 unconstrained PowerShell endpoints. Also, local admins on a system can modify JEA configurations to
 allow additional users or change a role capability to extend the scope of what a user can do in
 their JEA session. It's important to evaluate your JEA users' extended permissions to see if there
 are other ways to gain privileged access to the system.
 
-A common practice is to use JEA for regular day-to-day maintenance and have a "just-in-time",
-privileged access management solution that allows users to temporarily become local admins in emergency
-situations. This helps ensure users aren't permanent admins on the system, but can get those rights
-if, and only when, they complete a workflow that documents their use of those permissions.
+A common practice is to use JEA for regular day-to-day maintenance and have a just-in-time,
+privileged access management solution that allows users to temporarily become local admins in
+emergency situations. This helps ensure users aren't permanent admins on the system, but can get
+those rights if, and only when, they complete a workflow that documents their use of those
+permissions.

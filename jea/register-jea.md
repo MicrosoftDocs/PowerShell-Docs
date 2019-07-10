@@ -26,7 +26,7 @@ Before you begin, ensure that the following prerequisites have been met:
 
 The name of the JEA endpoint is required when users connect to the system using JEA. The
 [Get-PSSessionConfiguration](/powershell/module/microsoft.powershell.core/get-pssessionconfiguration)
-cmdlet lists the names of the endpoints on a system. Endpoints that start with 'microsoft' are
+cmdlet lists the names of the endpoints on a system. Endpoints that start with `microsoft` are
 typically shipped with Windows. The `microsoft.powershell` endpoint is the default endpoint used
 when connecting to a remote PowerShell endpoint.
 

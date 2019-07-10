@@ -172,7 +172,7 @@ For more information about PSDrives, see [Managing PowerShell drives](/powershel
 
 ### Role definitions
 
-Role definitions in a session configuration file define the mapping of *users* to *roles*. Every
+Role definitions in a session configuration file define the mapping of **users** to **roles**. Every
 user or group included in this field is granted permission to the JEA endpoint when it's registered.
 Each user or group can be included as a key in the hashtable only once, but can be assigned multiple
 roles. The name of the role capability should be the name of the role capability file, without the
@@ -191,7 +191,7 @@ each. When two roles grant access to the same cmdlets, the most permissive param
 the user.
 
 When specifying local users or groups in the role definitions field, be sure to use the computer
-name, not *localhost* or wildcards. You can check the computer name by inspecting the
+name, not **localhost** or wildcards. You can check the computer name by inspecting the
 `$env:COMPUTERNAME` variable.
 
 ```powershell
@@ -224,7 +224,7 @@ have unique filenames.
 All users and groups included in the **RoleDefinitions** field are automatically granted access to
 JEA endpoints. Conditional access rules allow you to refine this access and require users to belong
 to additional security groups that don't impact the roles to which they're assigned. This is useful
-when you want to integrate a "just-in-time" privileged access management solution, smartcard
+when you want to integrate a just-in-time privileged access management solution, smartcard
 authentication, or other multifactor authentication solution with JEA.
 
 Conditional access rules are defined in the RequiredGroups field in a session configuration file.
@@ -256,7 +256,7 @@ For a full list of supported properties in the session configuration file, run
 
 ## Testing a session configuration file
 
-You can test a session configuration using the [Test-PSSessionConfigurationFile](/powershell/microsoft.powershell.core/test-pssessionconfigurationfile)
+You can test a session configuration using the [Test-PSSessionConfigurationFile](/powershell/module/microsoft.powershell.core/test-pssessionconfigurationfile)
 cmdlet. It's recommended that you test your session configuration file if you've manually edited the
 `.pssc` file. Testing ensures the syntax is correct. If a session configuration file fails this
 test, it can't be registered on the system.

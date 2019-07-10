@@ -6,8 +6,8 @@ title:  JEA Role Capabilities
 
 # JEA Role Capabilities
 
-When creating a JEA endpoint, you need to define one or more "role capabilities" that describe
-*what* someone can do in a JEA session. A role capability is a PowerShell data file with the `.psrc`
+When creating a JEA endpoint, you need to define one or more role capabilities that describe
+what someone can do in a JEA session. A role capability is a PowerShell data file with the `.psrc`
 extension that lists all the cmdlets, functions, providers, and external programs that are made
 available to connecting users.
 
@@ -119,7 +119,7 @@ You can mix and match any of the below in the **VisibleCmdlets** field.
 
 You can't apply both a **ValidatePattern** and **ValidateSet** to the same cmdlet or function.
 
-If you do, the ValidatePattern will override the ValidateSet.
+If you do, the **ValidatePattern** overrides the **ValidateSet**.
 
 For more information about **ValidatePattern**, check out
 [this *Hey, Scripting Guy!* post](https://devblogs.microsoft.com/scripting/validate-powershell-parameters-before-running-the-script/)
@@ -210,23 +210,22 @@ By default, `Select-Object` is a constrained cmdlet in all JEA sessions that doe
 selection of arbitrary properties on objects. To use the unconstrained `Select-Object` in functions,
 you must explicitly request the full implementation using the FQMN. Any constrained cmdlet in a JEA
 session has the same constraints when invoked from a function. For more information, see
-PowerShell's [command precedence](/powershell/module/microsoft.powershell.core/about/about_command_precedence).
+[about_Command_Precedence](/powershell/module/microsoft.powershell.core/about/about_command_precedence).
 
-If you're writing several custom functions, it's simpler to put them in a [PowerShell Script Module](/powershell/developer/windows-powershell).
-You make those functions visible in the JEA session using the **VisibleFunctions** field like you
-would with built-in and third-party modules.
+If you're writing several custom functions, it's more convenient to put them in a PowerShell script
+module. You make those functions visible in the JEA session using the **VisibleFunctions** field
+like you would with built-in and third-party modules.
 
 For tab completion to work properly in JEA sessions you must include the built-in function
 `tabexpansion2` in the **VisibleFunctions** list.
 
 ## Place role capabilities in a module
 
-In order for PowerShell to find a role capability file, it must be stored in a "RoleCapabilities"
+In order for PowerShell to find a role capability file, it must be stored in a **RoleCapabilities**
 folder in a PowerShell module. The module can be stored in any folder included in the
-`$env:PSModulePath` environment variable, however you shouldn't place it in System32 (reserved for
-built-in modules) or a folder where the untrusted, connecting users could modify the files. Below is
-an example of creating a basic PowerShell script module called *ContosoJEA* in the "Program Files"
-path.
+`$env:PSModulePath` environment variable, however you shouldn't place it in System32 or a folder
+where the untrusted, connecting users could modify the files. Below is an example of creating a
+basic PowerShell script module called **ContosoJEA** in the `$env:ProgramFiles` path.
 
 ```powershell
 # Create a folder for the module
@@ -262,10 +261,10 @@ read access to the role capability files and containing modules.
 ## How role capabilities are merged
 
 Users are granted access to all matching role capabilities in the [session configuration file](session-configurations.md)
-when they enter a JEA session. JEA tries to give the user the *most permissive* set of commands
+when they enter a JEA session. JEA tries to give the user the most permissive set of commands
 allowed by any of the roles.
 
-**VisibleCmdlets and VisibleFunctions**
+### VisibleCmdlets and VisibleFunctions
 
 The most complex merge logic affects cmdlets and functions, which can have their parameters and
 parameter values limited in JEA.
@@ -320,7 +319,7 @@ $mergedAandB = @{
 }
 ```
 
-**VisibleExternalCommands, VisibleAliases, VisibleProviders, ScriptsToProcess**
+### VisibleExternalCommands, VisibleAliases, VisibleProviders, ScriptsToProcess
 
 All other fields in the role capability file are added to a cumulative set of allowable external
 commands, aliases, providers, and startup scripts. Any command, alias, provider, or script available
