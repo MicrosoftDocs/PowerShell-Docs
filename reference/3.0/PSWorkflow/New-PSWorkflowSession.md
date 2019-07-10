@@ -311,7 +311,7 @@ precedence over maximum values, quotas or limits set in the session configuratio
 information about session configurations, see [about_Session_Configurations](../Microsoft.PowerShell.Core/About/about_Session_Configurations.md).
 
 For a description of the session options, including the default values, see `New-PSSessionOption`.
-For information about the `$PSSessionOption` preference variable, see [about_Preference_Variables](../Microsoft.PowerShell.Core/About/about_Preference_Variables).
+For information about the `$PSSessionOption` preference variable, see [about_Preference_Variables](../Microsoft.PowerShell.Core/About/about_Preference_Variables.md).
 
 ```yaml
 Type: PSSessionOption
