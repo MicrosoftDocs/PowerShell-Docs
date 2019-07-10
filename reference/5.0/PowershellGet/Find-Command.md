@@ -1,5 +1,5 @@
 ---
-ms.date: 6/3/2019
+ms.date: 06/03/2019
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -19,9 +19,9 @@ Finds PowerShell commands in modules.
 
 ```
 Find-Command [[-Name] <String[]>] [-ModuleName <String>] [-MinimumVersion <Version>]
-[-MaximumVersion <Version>] [-RequiredVersion <Version>] [-AllVersions] [-Tag <String[]>]
-[-Filter <String>] [-Proxy <Uri>] [-ProxyCredential <PSCredential>] [-Repository <String[]>]
-[<CommonParameters>]
+ [-MaximumVersion <Version>] [-RequiredVersion <Version>] [-AllVersions] [-Tag <String[]>]
+ [-Filter <String>] [-Proxy <Uri>] [-ProxyCredential <PSCredential>] [-Repository <String[]>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
