@@ -131,7 +131,7 @@ Accepted values: Default, Basic, Negotiate, NegotiateWithImplicitCredential, Cre
 
 Required: False
 Position: Named
-Default value: None
+Default value: Default
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -182,8 +182,8 @@ Parameter Sets: (All)
 Aliases: Cn
 
 Required: False
-Position: 1
-Default value: None
+Position: 0
+Default value: Local computer
 Accept pipeline input: True (ByPropertyName, ByValue)
 Accept wildcard characters: False
 ```
@@ -203,7 +203,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: Current user
 Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
@@ -262,7 +262,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: Session#
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -340,7 +340,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: 100
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -393,4 +393,22 @@ A `New-PSWorkflowSession` command is equivalent to the following command:
 
 ## RELATED LINKS
 
+[Disconnect-PSSession](../Microsoft.PowerShell.Core/Disconnect-PSSession.md)
+
 [New-PSSession](../Microsoft.PowerShell.Core/New-PSSession.md)
+
+[New-PSTransportOption](../Microsoft.PowerShell.Core/New-PSTransportOption.md)
+
+[Register-PSSessionConfiguration](../Microsoft.PowerShell.Core/Register-PSSessionConfiguration.md)
+
+[about_PSSessions](../Microsoft.PowerShell.Core/About/about_PSSessions.md)
+
+[about_Session_Configurations](../Microsoft.PowerShell.Core/About/about_Session_Configurations.md)
+
+[about_Workflows](../PSWorkflow/About/about_Workflows.md)
+
+[about_WorkflowCommonParameters](About/about_WorkflowCommonParameters.md)
+
+[PSWorkflow Module](PSWorkflow.md)
+
+[PSWorkflowUtility Module](../PSWorkflowUtility/PSWorkflowUtility.md)
