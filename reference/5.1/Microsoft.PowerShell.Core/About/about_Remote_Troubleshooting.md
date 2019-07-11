@@ -3,6 +3,7 @@ ms.date:  01/18/2019
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_remote_troubleshooting
 title:  about_Remote_Troubleshooting
 ---
 # About Remote Troubleshooting
