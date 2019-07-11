@@ -614,7 +614,7 @@ sudo apt-get update
 
 # Install libunwind8 and libssl1.0
 # Regex is used to ensure that we do not install libssl1.0-dev, as it is a variant that is not required
-sudo apt-get install '^libssl1.0(.?.?.?|.*([^v]|[^e]v|[^d]ev|[^-]dev))$' libunwind8 -y
+sudo apt-get install '^libssl1.0.[0-9]$' libunwind8 -y
 
 ###################################
 # Download and extract PowerShell
