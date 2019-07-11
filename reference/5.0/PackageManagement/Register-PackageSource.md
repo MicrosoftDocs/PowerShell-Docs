@@ -1,5 +1,5 @@
 ---
-ms.date:  4/1/2019
+ms.date:  04/01/2019
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -19,16 +19,16 @@ Adds a package source for a specified package provider.
 
 ```
 Register-PackageSource [[-Name] <string>] [[-Location] <string>] [-Credential <pscredential>]
-[-Trusted] [-Force] [-ForceBootstrap] [-WhatIf] [-Confirm] [-ProviderName <string>]
-[<CommonParameters>]
+ [-Trusted] [-Force] [-ForceBootstrap] [-WhatIf] [-Confirm] [-ProviderName <string>]
+ [<CommonParameters>]
 ```
 
 ### PSModule
 
 ```
 Register-PackageSource [[-Name] <string>] [[-Location] <string>] [-Credential <pscredential>]
-[-Trusted] [-Force] [-ForceBootstrap] [-WhatIf] [-Confirm] [-PackageManagementProvider <string>]
-[-Scope <string>] [-PublishLocation <string>] [<CommonParameters>]
+ [-Trusted] [-Force] [-ForceBootstrap] [-WhatIf] [-Confirm] [-PackageManagementProvider <string>]
+ [-Scope <string>] [-PublishLocation <string>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
