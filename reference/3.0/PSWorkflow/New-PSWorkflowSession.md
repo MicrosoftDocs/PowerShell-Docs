@@ -67,7 +67,7 @@ the **Credential** parameter to run with the permissions of the domain administr
 
 The command uses the **ThrottleLimit** parameter to increase the per-command throttle limit to 150.
 This value takes precedence over the default throttle limit of 100 that is set in the
-Microsoft.PowerShell.Workflow session configuration.
+**Microsoft.PowerShell.Workflow** session configuration.
 
 ## PARAMETERS
 
@@ -351,8 +351,8 @@ Indicates that this cmdlet uses the Secure Sockets Layer (SSL) protocol to estab
 the remote computer. By default, SSL is not used.
 
 WS-Management encrypts all Windows PowerShell content transmitted over the network. The **UseSSL**
-cmdlet is an additional protection that sends the data across an HTTPS connection instead of an HTTP
-connection.
+parameter is an additional protection that sends the data across an HTTPS connection instead of an
+HTTP connection.
 
 If you specify this parameter, but SSL is not available on the port that is used for the command,
 the command fails.

@@ -364,7 +364,7 @@ Specifies the location on disk where workflow state and data are stored. Storing
 and data allows workflows to be suspended and resumed, and to recover from interruptions and network
 failures.
 
-The default value is $env:LocalAppData\Microsoft\Windows\PowerShell\WF\PS
+The default value is `$env:LocalAppData\Microsoft\Windows\PowerShell\WF\PS`.
 
 ```yaml
 Type: String
