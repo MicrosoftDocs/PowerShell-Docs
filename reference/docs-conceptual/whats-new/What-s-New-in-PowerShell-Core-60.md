@@ -304,9 +304,10 @@ For more information about PowerShell jobs, see [about_Jobs](https://msdn.micros
 
 ### CSV cmdlets
 
+- `Import-Csv` now supports the W3C Extended Log File Format (#2482) (Thanks [@iSazonov](https://github.com/iSazonov)!)
 - Add `PSTypeName` Support for `Import-Csv` and `ConvertFrom-Csv`. (#5389) (Thanks [@markekraus](https://github.com/markekraus)!)
 - Make `Import-Csv` support `CR`, `LF`, and `CRLF` as line delimiters. (#5363) (Thanks [@iSazonov](https://github.com/iSazonov)!)
-- Make `-NoTypeInformation` the default on `Export-Csv` and `ConvertTo-Csv`. (#5164) (Thanks [@markekraus](https://github.com/markekraus))
+- Make `-NoTypeInformation` the default on `Export-Csv` and `ConvertTo-Csv`. (#5164) (Thanks [@markekraus](https://github.com/markekraus)!)
 
 ### Service cmdlets
 
