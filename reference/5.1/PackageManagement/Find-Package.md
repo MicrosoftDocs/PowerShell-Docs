@@ -3,7 +3,7 @@ external help file: Microsoft.PowerShell.PackageManagement.dll-Help.xml
 keywords: powershell,cmdlet
 locale: en-us
 Module Name: PackageManagement
-ms.date: 4/3/2019
+ms.date: 04/03/2019
 online version: https://go.microsoft.com/fwlink/?linkid=517132
 schema: 2.0.0
 title: Find-Package
@@ -20,23 +20,23 @@ Finds software packages in available package sources.
 
 ```
 Find-Package [-IncludeDependencies] [-AllVersions] [-Source <String[]>] [-Credential <PSCredential>]
-[-Proxy <Uri>] [-ProxyCredential <PSCredential>] [[-Name] <String[]>] [-RequiredVersion <String>]
-[-MinimumVersion <String>] [-MaximumVersion <String>] [-Force] [-ForceBootstrap]
-[-ProviderName <String[]>] [-ConfigFile <String>] [-SkipValidate] [-Headers <String[]>]
-[-FilterOnTag <String[]>] [-Contains <String>] [-AllowPrereleaseVersions] [<CommonParameters>]
+ [-Proxy <Uri>] [-ProxyCredential <PSCredential>] [[-Name] <String[]>] [-RequiredVersion <String>]
+ [-MinimumVersion <String>] [-MaximumVersion <String>] [-Force] [-ForceBootstrap]
+ [-ProviderName <String[]>] [-ConfigFile <String>] [-SkipValidate] [-Headers <String[]>]
+ [-FilterOnTag <String[]>] [-Contains <String>] [-AllowPrereleaseVersions] [<CommonParameters>]
 ```
 
 ### PowerShellGet
 
 ```
 Find-Package [-IncludeDependencies] [-AllVersions] [-Source <String[]>] [-Credential <PSCredential>]
-[-Proxy <Uri>] [-ProxyCredential <PSCredential>] [[-Name] <String[]>] [-RequiredVersion <String>]
-[-MinimumVersion <String>] [-MaximumVersion <String>] [-Force] [-ForceBootstrap]
-[-ProviderName <String[]>] [-AllowPrereleaseVersions] [-PackageManagementProvider <String>]
-[-PublishLocation <String>] [-ScriptSourceLocation <String>] [-ScriptPublishLocation <String>]
-[-Type <String>] [-Filter <String>] [-Tag <String[]>] [-Includes <String[]>]
-[-DscResource <String[]>] [-RoleCapability <String[]>] [-Command <String[]>] [-AcceptLicense]
-[<CommonParameters>]
+ [-Proxy <Uri>] [-ProxyCredential <PSCredential>] [[-Name] <String[]>] [-RequiredVersion <String>]
+ [-MinimumVersion <String>] [-MaximumVersion <String>] [-Force] [-ForceBootstrap]
+ [-ProviderName <String[]>] [-AllowPrereleaseVersions] [-PackageManagementProvider <String>]
+ [-PublishLocation <String>] [-ScriptSourceLocation <String>] [-ScriptPublishLocation <String>]
+ [-Type <String>] [-Filter <String>] [-Tag <String[]>] [-Includes <String[]>]
+ [-DscResource <String[]>] [-RoleCapability <String[]>] [-Command <String[]>] [-AcceptLicense]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
