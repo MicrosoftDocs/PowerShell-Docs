@@ -18,22 +18,22 @@ Creates a record of all or part of a PowerShell session to a text file.
 ### ByPath (Default)
 
 ```
-Start-Transcript [[-Path] <String>] [-Append] [-Force] [-NoClobber] [-IncludeInvocationHeader] [-UseMinimalHeader] [-WhatIf]
- [-Confirm] [<CommonParameters>]
+Start-Transcript [[-Path] <String>] [-Append] [-Force] [-NoClobber] [-IncludeInvocationHeader]
+ [-UseMinimalHeader] [-WhatIf] [-Confirm]  [<CommonParameters>]
 ```
 
 ### ByLiteralPath
 
 ```
-Start-Transcript [[-LiteralPath] <String>] [-Append] [-Force] [-NoClobber] [-IncludeInvocationHeader] [-UseMinimalHeader] [-WhatIf]
- [-Confirm] [<CommonParameters>]
+Start-Transcript [[-LiteralPath] <String>] [-Append] [-Force] [-NoClobber]
+ [-IncludeInvocationHeader] [-UseMinimalHeader] [-WhatIf] [-Confirm]  [<CommonParameters>]
 ```
 
 ### ByOutputDirectory
 
 ```
-Start-Transcript [[-OutputDirectory] <String>] [-Append] [-Force] [-NoClobber] [-IncludeInvocationHeader] [-UseMinimalHeader]
- [-WhatIf] [-Confirm] [<CommonParameters>]
+Start-Transcript [[-OutputDirectory] <String>] [-Append] [-Force] [-NoClobber]
+ [-IncludeInvocationHeader] [-UseMinimalHeader] [-WhatIf] [-Confirm]  [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -42,7 +42,7 @@ The `Start-Transcript` cmdlet creates a record of all or part of a PowerShell se
 file. The transcript includes all command that the user types and all output that appears on the
 console.
 
-Starting in Windows PowerShell 5.0, `Start-Transcript` includes the host name in the generated file
+Starting in Windows PowerShell 5.0, `Start-Transcript` includes the hostname in the generated file
 name of all transcripts. This is especially useful when your enterprise's logging is centralized.
 Files that are created by the `Start-Transcript` cmdlet include random characters in names to
 prevent potential overwrites or duplication when two or more transcripts are started simultaneously.
@@ -124,7 +124,8 @@ Accept wildcard characters: False
 
 ### -UseMinimalHeader
 
-Prepend a short header to the transcript, instead of the detailed header included by default.
+Prepend a short header to the transcript, instead of the detailed header included by default. This
+parameter was added in PowerShell 6.2.
 
 ```yaml
 Type: SwitchParameter
