@@ -208,7 +208,7 @@ specified.
 
 ### -MTA
 
-Start PowerShell using a multi-threaded apartment.  This is the default.
+Start PowerShell using a multi-threaded apartment.
 This switch is only available on Windows.
 
 ### -NoExit | -noe
@@ -249,7 +249,7 @@ Example: `pwsh -SettingsFile c:\myproject\powershell.config.json`
 
 ### -STA
 
-Start PowerShell using a single-threaded apartment.
+Start PowerShell using a single-threaded apartment.  This is the default.
 This switch is only available on Windows.
 
 ### -Version | -v
