@@ -1,5 +1,5 @@
 ---
-ms.date:  6/4/2019
+ms.date:  06/04/2019
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -15,10 +15,12 @@ Finds Desired State Configuration (DSC) resources.
 
 ## SYNTAX
 
+### All
+
 ```
 Find-DscResource [[-Name] <String[]>] [-ModuleName <String>] [-MinimumVersion <Version>]
-[-RequiredVersion <Version>] [-AllVersions] [-Tag <String[]>] [-Filter <String>]
-[-Repository <String[]>] [<CommonParameters>]
+ [-RequiredVersion <Version>] [-AllVersions] [-Tag <String[]>] [-Filter <String>]
+ [-Repository <String[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION

@@ -3,7 +3,7 @@ external help file: Microsoft.PowerShell.PackageManagement.dll-Help.xml
 keywords: powershell,cmdlet
 locale: en-us
 Module Name: PackageManagement
-ms.date: 4/3/2019
+ms.date: 04/03/2019
 online version: https://go.microsoft.com/fwlink/?linkid=2096840
 schema: 2.0.0
 title: Save-Package
@@ -19,57 +19,57 @@ Saves packages to the local computer without installing them.
 
 ```
 Save-Package [-Name] <String[]> [-RequiredVersion <String>] [-MinimumVersion <String>]
-[-MaximumVersion <String>] [-Source <String[]>] [-Path <String>] [-LiteralPath <String>]
-[-Credential <PSCredential>] [-Proxy <Uri>] [-ProxyCredential <PSCredential>] [-AllVersions]
-[-Force] [-ForceBootstrap] [-WhatIf] [-Confirm] [-ProviderName <String[]>] [<CommonParameters>]
+ [-MaximumVersion <String>] [-Source <String[]>] [-Path <String>] [-LiteralPath <String>]
+ [-Credential <PSCredential>] [-Proxy <Uri>] [-ProxyCredential <PSCredential>] [-AllVersions]
+ [-Force] [-ForceBootstrap] [-WhatIf] [-Confirm] [-ProviderName <String[]>] [<CommonParameters>]
 ```
 
 ### PackageByInputObject
 
 ```
 Save-Package [-Path <String>] [-LiteralPath <String>] -InputObject <SoftwareIdentity>
-[-Credential <PSCredential>] [-Proxy <Uri>] [-ProxyCredential <PSCredential>] [-AllVersions]
-[-Force] [-ForceBootstrap] [-WhatIf] [-Confirm] [<CommonParameters>]
+ [-Credential <PSCredential>] [-Proxy <Uri>] [-ProxyCredential <PSCredential>] [-AllVersions]
+ [-Force] [-ForceBootstrap] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### NuGet:PackageByInputObject
 
 ```
 Save-Package [-Path <String>] [-LiteralPath <String>] [-Credential <PSCredential>] [-Proxy <Uri>]
-[-ProxyCredential <PSCredential>] [-AllVersions] [-Force] [-ForceBootstrap] [-WhatIf] [-Confirm]
-[-ConfigFile <String>] [-SkipValidate] [-Headers <String[]>] [-FilterOnTag <String[]>]
-[-Contains <String>] [-AllowPrereleaseVersions] [<CommonParameters>]
+ [-ProxyCredential <PSCredential>] [-AllVersions] [-Force] [-ForceBootstrap] [-WhatIf] [-Confirm]
+ [-ConfigFile <String>] [-SkipValidate] [-Headers <String[]>] [-FilterOnTag <String[]>]
+ [-Contains <String>] [-AllowPrereleaseVersions] [<CommonParameters>]
 ```
 
 ### NuGet
 
 ```
 Save-Package [-Path <String>] [-LiteralPath <String>] [-Credential <PSCredential>] [-Proxy <Uri>]
-[-ProxyCredential <PSCredential>] [-AllVersions] [-Force] [-ForceBootstrap] [-WhatIf] [-Confirm]
-[-ConfigFile <String>] [-SkipValidate] [-Headers <String[]>] [-FilterOnTag <String[]>]
-[-Contains <String>] [-AllowPrereleaseVersions] [<CommonParameters>]
+ [-ProxyCredential <PSCredential>] [-AllVersions] [-Force] [-ForceBootstrap] [-WhatIf] [-Confirm]
+ [-ConfigFile <String>] [-SkipValidate] [-Headers <String[]>] [-FilterOnTag <String[]>]
+ [-Contains <String>] [-AllowPrereleaseVersions] [<CommonParameters>]
 ```
 
 ### PowerShellGet:PackageByInputObject
 
 ```
 Save-Package [-Path <String>] [-LiteralPath <String>] [-Credential <PSCredential>] [-Proxy <Uri>]
-[-ProxyCredential <PSCredential>] [-AllVersions] [-Force] [-ForceBootstrap] [-WhatIf] [-Confirm]
-[-AllowPrereleaseVersions] [-PackageManagementProvider <String>] [-PublishLocation <String>]
-[-ScriptSourceLocation <String>] [-ScriptPublishLocation <String>] [-Type <String>]
-[-Filter <String>] [-Tag <String[]>] [-Includes <String[]>] [-DscResource <String[]>]
-[-RoleCapability <String[]>] [-Command <String[]>] [-AcceptLicense] [<CommonParameters>]
+ [-ProxyCredential <PSCredential>] [-AllVersions] [-Force] [-ForceBootstrap] [-WhatIf] [-Confirm]
+ [-AllowPrereleaseVersions] [-PackageManagementProvider <String>] [-PublishLocation <String>]
+ [-ScriptSourceLocation <String>] [-ScriptPublishLocation <String>] [-Type <String>]
+ [-Filter <String>] [-Tag <String[]>] [-Includes <String[]>] [-DscResource <String[]>]
+ [-RoleCapability <String[]>] [-Command <String[]>] [-AcceptLicense] [<CommonParameters>]
 ```
 
 ### PowerShellGet
 
 ```
 Save-Package [-Path <String>] [-LiteralPath <String>] [-Credential <PSCredential>] [-Proxy <Uri>]
-[-ProxyCredential <PSCredential>] [-AllVersions] [-Force] [-ForceBootstrap] [-WhatIf] [-Confirm]
-[-AllowPrereleaseVersions] [-PackageManagementProvider <String>] [-PublishLocation <String>]
-[-ScriptSourceLocation <String>] [-ScriptPublishLocation <String>] [-Type <String>]
-[-Filter <String>] [-Tag <String[]>] [-Includes <String[]>] [-DscResource <String[]>]
-[-RoleCapability <String[]>] [-Command <String[]>] [-AcceptLicense] [<CommonParameters>]
+ [-ProxyCredential <PSCredential>] [-AllVersions] [-Force] [-ForceBootstrap] [-WhatIf] [-Confirm]
+ [-AllowPrereleaseVersions] [-PackageManagementProvider <String>] [-PublishLocation <String>]
+ [-ScriptSourceLocation <String>] [-ScriptPublishLocation <String>] [-Type <String>]
+ [-Filter <String>] [-Tag <String[]>] [-Includes <String[]>] [-DscResource <String[]>]
+ [-RoleCapability <String[]>] [-Command <String[]>] [-AcceptLicense] [<CommonParameters>]
 ```
 
 ## DESCRIPTION

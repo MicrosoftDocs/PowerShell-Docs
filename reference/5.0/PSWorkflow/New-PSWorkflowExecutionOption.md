@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
+external help file: Microsoft.Powershell.Workflow.ServiceCore.dll-help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: PSWorkflow
+ms.date: 06/09/2017
 online version: https://go.microsoft.com/fwlink/?linkid=821721
-external help file:  Microsoft.PowerShell.Workflow.ServiceCore.dll-Help.xml
-title:  New-PSWorkflowExecutionOption
+schema: 2.0.0
+title: New-PSWorkflowExecutionOption
 ---
 # New-PSWorkflowExecutionOption
 
@@ -27,20 +28,20 @@ New-PSWorkflowExecutionOption [-PersistencePath <String>] [-MaxPersistenceStoreS
 
 ## DESCRIPTION
 
-The **New-PSWorkflowExecutionOption** cmdlet creates an object that contains advanced options for
+The `New-PSWorkflowExecutionOption` cmdlet creates an object that contains advanced options for
 workflow session configurations, that is session configurations designed to run Windows PowerShell
 Workflow workflows.
 
-You can use the **PSWorkflowExecutionOption** object that **New-PSWorkflowExecutionOption**
-generates as the value of the **SessionTypeOption** parameter of cmdlets that create or change a
-session configuration, such as the Register-PSSessionConfiguration and Set-PSSessionConfiguration
+You can use the **PSWorkflowExecutionOption** object that `New-PSWorkflowExecutionOption` generates
+as the value of the **SessionTypeOption** parameter of cmdlets that create or change a session
+configuration, such as the `Register-PSSessionConfiguration` and `Set-PSSessionConfiguration`
 cmdlets.
 
-Each parameter of the **New-PSWorkflowExecutionOption** cmdlet represents a property of the
-workflow session configuration option object that the cmdlet returns. If you omit a parameter, the
-cmdlet creates the object with a default value for the property.
+Each parameter of the `New-PSWorkflowExecutionOption` cmdlet represents a property of the workflow
+session configuration option object that the cmdlet returns. If you omit a parameter, the cmdlet
+creates the object with a default value for the property.
 
-The **New-PSWorkflowExecutionOption** cmdlet is part of the Windows PowerShell Workflow feature.
+The `New-PSWorkflowExecutionOption` cmdlet is part of the Windows PowerShell Workflow feature.
 
 You can also add workflow common parameters to this command. For more information about workflow
 common parameters, see [about_WorkflowCommonParameters](About/about_WorkflowCommonParameters.md).
@@ -55,7 +56,7 @@ This cmdlet is introduced in Windows PowerShell 3.0.
 New-PSWorkflowExecutionOption -MaxSessionsPerWorkflow 10 -MaxDisconnectedSessions 200
 ```
 
-```output
+```Output
 SessionThrottleLimit                       : 100
 PersistencePath                            : C:\Users\User01\AppData\Local\Microsoft\Windows\PowerShell\WF\PS
 MaxPersistenceStoreSizeGB                  : 10
@@ -74,7 +75,7 @@ RemoteNodeSessionIdleTimeoutSec            : 60
 WorkflowShutdownTimeoutMSec                : 500
 ```
 
-This command uses the **New-PSWorkflowExecutionOption** cmdlet to increase the
+This command uses the `New-PSWorkflowExecutionOption` cmdlet to increase the
 **MaxSessionsPerWorkflow** value to 10 and decrease the **MaxDisconnectedSessions** value to 200.
 
 The output shows the object that the cmdlet returns.
@@ -88,7 +89,7 @@ $wo = New-PSWorkflowExecutionOption -MaxSessionsPerWorkflow 10 -MaxDisconnectedS
 Register-PSSessionConfiguration -Name ITWorkflows -SessionTypeOption $wo -Force
 ```
 
-```output
+```Output
     WSManConfig: Microsoft.WSMan.Management\WSMan::localhost\Plugin
 
 Type            Keys                                Name
@@ -100,7 +101,7 @@ Container       {Name=ITWorkflows}                  ITWorkflows
 Get-PSSessionConfiguration ITWorkflows | Format-List -Property *
 ```
 
-```output
+```Output
 Architecture                  : 64
 Filename                      : %windir%\system32\pwrshplugin.dll
 ResourceUri                   : http://schemas.microsoft.com/powershell/ITWorkflows
@@ -149,8 +150,8 @@ Permission                    :
 
 The first two commands create a new session configuration object and registers it.
 
-The third command uses the Get-PSSessionConfiguration cmdlet to the get the ITWorkflows session
-configuration and the Format-List to display all properties of the session configuration in a
+The third command uses the `Get-PSSessionConfiguration` cmdlet to the get the ITWorkflows session
+configuration and the `Format-List` to display all properties of the session configuration in a
 list.The output shows that the workflow options in the session configuration. Specifically, the
 session configuration has a **MaxSessionsPerWorkflow** property with a value of 10 and a
 **MaxDisconnectedSessions** property with a value of 200.
@@ -159,11 +160,10 @@ session configuration has a **MaxSessionsPerWorkflow** property with a value of 
 
 ### -ActivityProcessIdleTimeoutSec
 
-Determines how long each activity host process is maintained after the process becomes idle.
-When the interval expires, the process closes.
+Determines how long each activity host process is maintained after the process becomes idle. When
+the interval expires, the process closes.
 
-Enter a value in seconds.
-The default value is 60.
+Enter a value in seconds. The default value is 60.
 
 ```yaml
 Type: Int32
@@ -182,9 +182,9 @@ Accept wildcard characters: False
 Specifies the activities that are permitted to run in the session.
 
 Enter namespace-qualified activity names, such as `Microsoft.Powershell.HyperV.Activities.*`.
-Wildcard characters are supported. The default value, **PSDefaultActivities**, includes the
-built-in Windows Workflow Foundation activities and the activities that represent the Windows
-PowerShell Core cmdlets.
+Wildcard characters are supported. The default value, **PSDefaultActivities**, includes the built-in
+Windows Workflow Foundation activities and the activities that represent the Windows PowerShell Core
+cmdlets.
 
 ```yaml
 Type: String[]
@@ -253,9 +253,8 @@ Accept wildcard characters: False
 
 ### -MaxDisconnectedSessions
 
-Specifies the maximum number of remote sessions that are in a disconnected state.
-This quota is applied to sessions connected to all remote nodes (target computers).
-The default value is 1000.
+Specifies the maximum number of remote sessions that are in a disconnected state. This quota is
+applied to sessions connected to all remote nodes (target computers). The default value is 1000.
 
 ```yaml
 Type: Int32
@@ -276,8 +275,8 @@ in the session. When the size is exceeded, the persistence store is expanded to 
 data, but a warning is displayed and a message is written to the workflow event log. The default
 value is 10.
 
-The persistence store contains data for all workflow jobs.
-The ability to store data allows the jobs to resume without losing state.
+The persistence store contains data for all workflow jobs. The ability to store data allows the jobs
+to resume without losing state.
 
 ```yaml
 Type: Int64
@@ -359,14 +358,16 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -PersistWithEncryption
+### -PersistencePath
 
-Encrypts the data in the persistence store.
-Consider using this feature when storing persistence data in a network share.
-The default value is False.
+Specifies the location on disk where workflow state and data are stored. Storing the workflow state
+and data allows workflows to be suspended and resumed, and to recover from interruptions and network
+failures.
+
+The default value is `$env:LocalAppData\Microsoft\Windows\PowerShell\WF\PS`.
 
 ```yaml
-Type: SwitchParameter
+Type: String
 Parameter Sets: (All)
 Aliases:
 
@@ -377,16 +378,13 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -PersistencePath
+### -PersistWithEncryption
 
-Specifies the location on disk where workflow state and data are stored. Storing the workflow state
-and data allows workflows to be suspended and resumed, and to recover from interruptions and
-network failures.
-
-The default value is $env:LocalAppData\Microsoft\Windows\PowerShell\WF\PS
+Indicates that the workflow encrypts the data in the persistence store. Consider using this feature
+when storing persistence data in a network share.
 
 ```yaml
-Type: String
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -458,8 +456,7 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see
-[about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
+-WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
 
 ## INPUTS
 
@@ -484,9 +481,9 @@ configuration file have additional properties.
 
 In particular, the properties of session configurations that include a
 **PSWorkflowExecutionOptions** object vary based on the workflow option values. For example, if the
-session configuration includes a **PSWorkflowExecutionOptions** object that sets a non-default
-value for the **SessionThrottleLimit** property, the session configuration has a
-**SessionThrottleLimit** property. Otherwise, it does not.
+session configuration includes a **PSWorkflowExecutionOptions** object that sets a non-default value
+for the **SessionThrottleLimit** property, the session configuration has a **SessionThrottleLimit**
+property. Otherwise, it does not.
 
 ## RELATED LINKS
 
