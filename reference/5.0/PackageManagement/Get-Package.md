@@ -1,5 +1,5 @@
 ---
-ms.date: 5/22/2019
+ms.date: 05/22/2019
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -19,25 +19,25 @@ Returns a list of all software packages that were installed with **PackageManage
 
 ```
 Get-Package [[-Name] <string[]>] [-RequiredVersion <string>] [-MinimumVersion <string>]
-[-MaximumVersion <string>] [-Force] [-ForceBootstrap] [-ProviderName <string[]>]
-[-IncludeWindowsInstaller] [-IncludeSystemComponent] [<CommonParameters>]
+ [-MaximumVersion <string>] [-Force] [-ForceBootstrap] [-ProviderName <string[]>]
+ [-IncludeWindowsInstaller] [-IncludeSystemComponent] [<CommonParameters>]
 ```
 
 ### msi
 
 ```
 Get-Package [[-Name] <string[]>] [-RequiredVersion <string>] [-MinimumVersion <string>]
-[-MaximumVersion <string>] [-Force] [-ForceBootstrap] [-ProviderName <string[]>]
-[-AdditionalArguments <string[]>] [<CommonParameters>]
+ [-MaximumVersion <string>] [-Force] [-ForceBootstrap] [-ProviderName <string[]>]
+ [-AdditionalArguments <string[]>] [<CommonParameters>]
 ```
 
 ### PSModule
 
 ```
 Get-Package [[-Name] <string[]>] [-RequiredVersion <string>] [-MinimumVersion <string>]
-[-MaximumVersion <string>] [-Force] [-ForceBootstrap] [-ProviderName <string[]>]
-[-PackageManagementProvider <string>] [-Location <string>] [-InstallUpdate]
-[-InstallationPolicy <string>] [-DestinationPath <string>] [<CommonParameters>]
+ [-MaximumVersion <string>] [-Force] [-ForceBootstrap] [-ProviderName <string[]>]
+ [-PackageManagementProvider <string>] [-Location <string>] [-InstallUpdate]
+ [-InstallationPolicy <string>] [-DestinationPath <string>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
