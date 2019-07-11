@@ -1,5 +1,5 @@
 ---
-ms.date: 5/24/2019
+ms.date: 05/24/2019
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -19,30 +19,30 @@ Removes a registered package source.
 
 ```
 Unregister-PackageSource [[-Source] <string>] [-Location <string>] [-Credential <pscredential>]
-[-Force] [-ForceBootstrap] [-WhatIf] [-Confirm] [-ProviderName <string>] [<CommonParameters>]
+ [-Force] [-ForceBootstrap] [-WhatIf] [-Confirm] [-ProviderName <string>] [<CommonParameters>]
 ```
 
 ### SourceByInputObject
 
 ```
 Unregister-PackageSource -InputObject <PackageSource[]> [-Credential <pscredential>] [-Force]
-[-ForceBootstrap] [-WhatIf] [-Confirm] [<CommonParameters>]
+ [-ForceBootstrap] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### PSModule:SourceByInputObject
 
 ```
 Unregister-PackageSource [-Credential <pscredential>] [-Force] [-ForceBootstrap] [-WhatIf]
-[-Confirm] [-PackageManagementProvider <string>] [-Scope <string>] [-PublishLocation <string>]
-[<CommonParameters>]
+ [-Confirm] [-PackageManagementProvider <string>] [-Scope <string>] [-PublishLocation <string>]
+ [<CommonParameters>]
 ```
 
 ### PSModule:SourceBySearch
 
 ```
 Unregister-PackageSource [-Credential <pscredential>] [-Force] [-ForceBootstrap] [-WhatIf]
-[-Confirm] [-PackageManagementProvider <string>] [-Scope <string>] [-PublishLocation <string>]
-[<CommonParameters>]
+ [-Confirm] [-PackageManagementProvider <string>] [-Scope <string>] [-PublishLocation <string>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -240,7 +240,7 @@ Accept wildcard characters: False
 
 ### -Scope
 
-Specifies the scope of the Package Source. The acceptable values for this parameter are: AllUsers and CurrentUser. 
+Specifies the scope of the Package Source. The acceptable values for this parameter are: AllUsers and CurrentUser.
 
 ```yaml
 Type: String
