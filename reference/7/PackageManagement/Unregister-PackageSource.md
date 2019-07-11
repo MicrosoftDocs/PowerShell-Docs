@@ -3,7 +3,7 @@ external help file: Microsoft.PowerShell.PackageManagement.dll-Help.xml
 keywords: powershell,cmdlet
 locale: en-us
 Module Name: PackageManagement
-ms.date: 5/24/2019
+ms.date: 05/24/2019
 online version: https://go.microsoft.com/fwlink/?linkid=2096631
 schema: 2.0.0
 title: Unregister-PackageSource
@@ -20,44 +20,44 @@ Removes a registered package source.
 
 ```
 Unregister-PackageSource [[-Source] <String>] [-Location <String>] [-Credential <PSCredential>]
-[-Force] [-ForceBootstrap] [-WhatIf] [-Confirm] [-ProviderName <String>] [<CommonParameters>]
+ [-Force] [-ForceBootstrap] [-WhatIf] [-Confirm] [-ProviderName <String>] [<CommonParameters>]
 ```
 
 ### SourceByInputObject
 
 ```
 Unregister-PackageSource -InputObject <PackageSource[]> [-Credential <PSCredential>] [-Force]
-[-ForceBootstrap] [-WhatIf] [-Confirm] [<CommonParameters>]
+ [-ForceBootstrap] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### NuGet:SourceByInputObject
 
 ```
 Unregister-PackageSource [-Credential <PSCredential>] [-Force] [-ForceBootstrap] [-WhatIf]
-[-Confirm] [-ConfigFile <String>] [-SkipValidate] [<CommonParameters>]
+ [-Confirm] [-ConfigFile <String>] [-SkipValidate] [<CommonParameters>]
 ```
 
 ### NuGet:SourceBySearch
 
 ```
 Unregister-PackageSource [-Credential <PSCredential>] [-Force] [-ForceBootstrap] [-WhatIf]
-[-Confirm] [-ConfigFile <String>] [-SkipValidate] [<CommonParameters>]
+ [-Confirm] [-ConfigFile <String>] [-SkipValidate] [<CommonParameters>]
 ```
 
 ### PowerShellGet:SourceByInputObject
 
 ```
 Unregister-PackageSource [-Credential <PSCredential>] [-Force] [-ForceBootstrap] [-WhatIf]
-[-Confirm] [-PackageManagementProvider <String>] [-PublishLocation <String>]
-[-ScriptSourceLocation <String>] [-ScriptPublishLocation <String>] [<CommonParameters>]
+ [-Confirm] [-PackageManagementProvider <String>] [-PublishLocation <String>]
+ [-ScriptSourceLocation <String>] [-ScriptPublishLocation <String>] [<CommonParameters>]
 ```
 
 ### PowerShellGet:SourceBySearch
 
 ```
 Unregister-PackageSource [-Credential <PSCredential>] [-Force] [-ForceBootstrap] [-WhatIf]
-[-Confirm] [-PackageManagementProvider <String>] [-PublishLocation <String>]
-[-ScriptSourceLocation <String>] [-ScriptPublishLocation <String>] [<CommonParameters>]
+ [-Confirm] [-PackageManagementProvider <String>] [-PublishLocation <String>]
+ [-ScriptSourceLocation <String>] [-ScriptPublishLocation <String>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
