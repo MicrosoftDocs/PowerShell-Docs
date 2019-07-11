@@ -132,11 +132,16 @@ When an API returns just `null`, Invoke-RestMethod was serializing this as the s
 instead of `$null`. This change fixes the logic in `Invoke-RestMethod` to properly serialize a
 valid single value JSON `null` literal as `$null`.
 
-### Remove `-ComputerName` from `*-Computer` cmdlets [#5277](https://github.com/PowerShell/PowerShell/issues/5277)
+### Remove `-Protocol` from `*-Computer` cmdlets [#5277](https://github.com/PowerShell/PowerShell/issues/5277)
 
 Due to issues with RPC remoting in CoreFX (particularly on non-Windows platforms) and ensuring a
-consistent remoting experience in PowerShell, the `-ComputerName` parameter was removed from the
-`\*-Computer` cmdlets. Use `Invoke-Command` instead as the way to execute cmdlets remotely.
+consistent remoting experience in PowerShell, the `-Protocol` parameter was removed from the
+`\*-Computer` cmdlets. DCOM is no longer supported for remoting. The following cmdlets only support
+WSMAN remoting:
+
+- Rename-Computer
+- Restart-Computer
+- Stop-Computer
 
 ### Remove `-ComputerName` from `*-Service` cmdlets [#5090](https://github.com/PowerShell/PowerShell/issues/5094)
 
