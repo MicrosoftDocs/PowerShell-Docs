@@ -3,6 +3,17 @@
 To publish changes to content, you submit a pull request from your fork. Every pull request has to
 be reviewed prior to being merged.
 
+## Target the correct branch
+
+All changes should be made to the `staging` branch. Changes should never be targetted at the `live`
+branch. Changes made in the `staging` branch get merged into `live` so any changes made to `live`
+are overwritten.
+
+If you are submitting a change to documentation that only applies to an unreleased version of
+PowerShell, check to see if there is a release branch for that version. All changes that apply to
+a specific, future version should be targetted at the release branch. Release branches have the
+following name pattern: `release-<verison>`. 
+
 ## Make the pull request queue work better for everyone
 
 There are two basic realities in the PR queue:
