@@ -3,7 +3,7 @@ external help file: Microsoft.PowerShell.PackageManagement.dll-Help.xml
 keywords: powershell,cmdlet
 locale: en-us
 Module Name: PackageManagement
-ms.date: 3/29/2019
+ms.date: 03/29/2019
 online version: https://go.microsoft.com/fwlink/?linkid=2096720
 schema: 2.0.0
 title: Get-PackageSource
@@ -19,15 +19,15 @@ Gets a list of package sources that are registered for a package provider.
 
 ```
 Get-PackageSource [[-Name] <String>] [-Location <String>] [-Force] [-ForceBootstrap]
-[-ProviderName <String[]>] [-ConfigFile <String>] [-SkipValidate] [<CommonParameters>]
+ [-ProviderName <String[]>] [-ConfigFile <String>] [-SkipValidate] [<CommonParameters>]
 ```
 
 ### PowerShellGet
 
 ```
 Get-PackageSource [[-Name] <String>] [-Location <String>] [-Force] [-ForceBootstrap]
-[-ProviderName <String[]>] [-PackageManagementProvider <String>] [-PublishLocation <String>]
-[-ScriptSourceLocation <String>] [-ScriptPublishLocation <String>] [<CommonParameters>]
+ [-ProviderName <String[]>] [-PackageManagementProvider <String>] [-PublishLocation <String>]
+ [-ScriptSourceLocation <String>] [-ScriptPublishLocation <String>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION

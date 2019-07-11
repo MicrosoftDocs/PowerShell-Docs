@@ -3,7 +3,7 @@ external help file: PSModule-help.xml
 keywords: powershell,cmdlet
 locale: en-us
 Module Name: PowerShellGet
-ms.date: 3/11/2019
+ms.date: 03/11/2019
 online version: https://go.microsoft.com/fwlink/?linkid=2096848
 schema: 2.0.0
 title: Find-Module
@@ -19,10 +19,10 @@ Finds modules in a repository that match specified criteria.
 
 ```
 Find-Module [[-Name] <string[]>] [-MinimumVersion <string>] [-MaximumVersion <string>]
-[-RequiredVersion <string>] [-AllVersions] [-IncludeDependencies] [-Filter <string>]
-[-Tag <string[]>] [-Includes <string[]>] [-DscResource <string[]>] [-RoleCapability <string[]>]
-[-Command <string[]>] [-Proxy <uri>] [-ProxyCredential <pscredential>] [-Repository <string[]>]
-[-Credential <pscredential>] [-AllowPrerelease] [<CommonParameters>]
+ [-RequiredVersion <string>] [-AllVersions] [-IncludeDependencies] [-Filter <string>]
+ [-Tag <string[]>] [-Includes <string[]>] [-DscResource <string[]>] [-RoleCapability <string[]>]
+ [-Command <string[]>] [-Proxy <uri>] [-ProxyCredential <pscredential>] [-Repository <string[]>]
+ [-Credential <pscredential>] [-AllowPrerelease] [<CommonParameters>]
 ```
 
 ## DESCRIPTION

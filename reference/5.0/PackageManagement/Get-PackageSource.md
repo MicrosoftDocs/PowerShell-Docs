@@ -1,5 +1,5 @@
 ---
-ms.date: 3/29/2019
+ms.date: 03/29/2019
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -19,8 +19,8 @@ Gets a list of package sources that are registered for a package provider.
 
 ```
 Get-PackageSource [[-Name] <string>] [-Location <string>] [-Force] [-ForceBootstrap]
-[-ProviderName <string[]>] [-PackageManagementProvider <string>] [-Scope <string>]
-[-PublishLocation <string>] [<CommonParameters>]
+ [-ProviderName <string[]>] [-PackageManagementProvider <string>] [-Scope <string>]
+ [-PublishLocation <string>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION

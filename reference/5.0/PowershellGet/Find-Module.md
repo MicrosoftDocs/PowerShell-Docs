@@ -1,5 +1,5 @@
 ---
-ms.date:  3/11/2019
+ms.date:  03/11/2019
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -19,9 +19,9 @@ Finds modules in a repository that match specified criteria.
 
 ```
 Find-Module [[-Name] <string[]>] [-MinimumVersion <version>] [-MaximumVersion <version>]
-[-RequiredVersion <version>] [-AllVersions] [-IncludeDependencies] [-Filter <string>]
-[-Tag <string[]>] [-Includes <string[]>] [-DscResource <string[]>] [-Command <string[]>]
-[-Repository <string[]>] [<CommonParameters>]
+ [-RequiredVersion <version>] [-AllVersions] [-IncludeDependencies] [-Filter <string>]
+ [-Tag <string[]>] [-Includes <string[]>] [-DscResource <string[]>] [-Command <string[]>]
+ [-Repository <string[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
