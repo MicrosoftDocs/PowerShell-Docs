@@ -17,13 +17,6 @@ Describes how to edit commands at the PowerShell command prompt.
 The PowerShell console has some useful keyboard shortcuts to help you edit
 commands at the PowerShell command prompt.
 
-### Add a line
-
-To add a line, press <kbd>Shift</kbd>+<kbd>Enter</kbd>.
-
-You can add multiple lines. Each additional line begins with `>>`, the
-continuation prompt. Press <kbd>Enter</kbd> to execute the command.
-
 ### Move left and right
 
 To move the cursor one character to the left, press the <kbd>Left arrow</kbd>.
