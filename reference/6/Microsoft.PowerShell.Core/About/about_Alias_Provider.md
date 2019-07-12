@@ -4,7 +4,7 @@ schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
 title:  Alias Provider
-online version:  http://go.microsoft.com/fwlink/?LinkId=834943
+online version: https://go.microsoft.com/fwlink/?linkid=2096218
 ---
 # Alias provider
 
@@ -45,8 +45,10 @@ in this article.
 - [Remove-Item](../../Microsoft.PowerShell.Management/Remove-Item.md)
 - [Clear-Item](../../Microsoft.PowerShell.Management/Clear-Item.md)
 
-PowerShell includes a set of cmdlets that are designed to view and to change aliases. When you use **Alias** cmdlets, you do not need to specify the `Alias:` drive in the name. This article does not cover working with
-**Alias** cmdlets.
+PowerShell includes a set of cmdlets that are designed to view and to change
+aliases. When you use **Alias** cmdlets, you do not need to specify the
+`Alias:` drive in the name. This article does not cover working with **Alias**
+cmdlets.
 
 - [Export-Alias](../../Microsoft.PowerShell.Utility/Export-Alias.md)
 - [Get-Alias](../../Microsoft.PowerShell.Utility/Get-Alias.md)
@@ -119,6 +121,13 @@ Get-Item -Path Alias:ls
 
 If you are in the `Alias:` drive, you can omit the drive name from the path.
 
+You can also retrieve the definition for an alias by prefixing the provider
+path with the dollar sign (`$`).
+
+```powershell
+$Alias:ls
+```
+
 ### Get all aliases for a specific cmdlet
 
 This command gets a list of the aliases that are associated with the
@@ -142,11 +151,8 @@ option on the alias. The `-Options` parameter is available in
 the `New-Item` cmdlet only when you are in the `Alias:` drive. The dot (`.`)
 indicates the current directory, which is the alias drive.
 
-```powershell
-PS Alias:\> New-Item -Path . `
-                     -Name serv `
-                     -Value Get-Service `
-                     -Options "AllScope"
+```
+PS Alias:\> New-Item -Path . -Name serv -Value Get-Service -Options "AllScope"
 ```
 
 ### Create an alias with an absolute path
@@ -271,14 +277,15 @@ provider-enabled drive.
 
 Determines the value of the **Options** property of an alias.
 
-- `None`: No options. This value is the default.
-- `Constant`:The alias cannot be deleted and its properties cannot be changed.
-  `Constant` is available only when you create an alias. You cannot change the option of an existing alias to `Constant`.
-- `Private`:The alias is visible only in the current scope, not in the child
+- **None**: No options. This value is the default.
+- **Constant**:The alias cannot be deleted and its properties cannot be changed.
+  **Constant** is available only when you create an alias. You cannot change the
+  option of an existing alias to **Constant**.
+- **Private**:The alias is visible only in the current scope, not in the child
    scopes.
-- `ReadOnly`:The properties of the alias cannot be changed except by using the
+- **ReadOnly**:The properties of the alias cannot be changed except by using the
   `-Force` parameter. You can use `Remove-Item` to delete the alias.
-- `AllScope`:The alias is copied to any new scopes that are created.
+- **AllScope**:The alias is copied to any new scopes that are created.
 
 #### Cmdlets supported
 

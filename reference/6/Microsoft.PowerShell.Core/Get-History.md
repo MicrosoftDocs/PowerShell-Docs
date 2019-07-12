@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Core
 ms.date: 06/09/2017
-online version: http://go.microsoft.com/fwlink/?LinkId=821484
+online version: https://go.microsoft.com/fwlink/?linkid=2096166
 schema: 2.0.0
 title: Get-History
 ---
@@ -36,8 +36,8 @@ For more information about the history features in PowerShell, see [about_Histor
 
 ### Example 1: Get the session history
 
-```
-PS C:\> Get-History
+```powershell
+Get-History
 ```
 
 This command gets the entries in the session history.
@@ -45,8 +45,8 @@ The default display shows each command and its ID, which indicates the order in 
 
 ### Example 2: Get entries that include a string
 
-```
-PS C:\> Get-History | Where-Object {$_.CommandLine -like "*Service*"}
+```powershell
+Get-History | Where-Object {$_.CommandLine -like "*Service*"}
 ```
 
 This command gets entries in the command history that include the string service.
@@ -55,8 +55,8 @@ The pipeline operator (|) passes the results to the Where-Object cmdlet, which s
 
 ### Example 3: Export at most seven entries
 
-```
-PS C:\> Get-History -ID 7 -Count 5 | Export-Csv History.csv
+```powershell
+Get-History -ID 7 -Count 5 | Export-Csv History.csv
 ```
 
 This command gets the five most recent history entries ending with entry 7.
@@ -66,8 +66,8 @@ This includes the status and start and end times of the command.
 
 ### Example 4: Display the most recent command
 
-```
-PS C:\> Get-History -Count 1
+```powershell
+Get-History -Count 1
 ```
 
 This command gets the last command in the command history.
@@ -78,8 +78,8 @@ This command can be abbreviated to "h -c 1" and is equivalent to pressing the up
 
 ### Example 5: Display all the properties of the entries in the history
 
-```
-PS C:\> Get-History | Format-List -Property *
+```powershell
+Get-History | Format-List -Property *
 ```
 
 This command displays all of the properties of entries in the session history.

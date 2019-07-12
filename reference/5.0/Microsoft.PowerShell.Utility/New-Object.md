@@ -3,7 +3,7 @@ ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821835
+online version: https://go.microsoft.com/fwlink/?linkid=821835
 external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 title:  New-Object
 ---
@@ -91,86 +91,49 @@ PS C:\> $Objshell = New-Object -COMObject "Shell.Application"
 
 The second command pipes the $ObjShell variable to the **Get-Member** cmdlet, which displays the properties and methods of the COM object. Among the methods is the ToggleDesktop method.
 PS C:\> $objshell | Get-Member
-   TypeName: System.__ComObject#{866738b9-6cf2-4de8-8767-f794ebe74f4e}
 
+   TypeName: System.__ComObject#{286e6f1b-7113-4355-9562-96b7e9d64c54}
 
 Name                 MemberType Definition
-
 ----                 ---------- ----------
-
 AddToRecent          Method     void AddToRecent (Variant, string)
-
 BrowseForFolder      Method     Folder BrowseForFolder (int, string, int, Variant)
-
 CanStartStopService  Method     Variant CanStartStopService (string)
-
 CascadeWindows       Method     void CascadeWindows ()
-
 ControlPanelItem     Method     void ControlPanelItem (string)
-
 EjectPC              Method     void EjectPC ()
-
 Explore              Method     void Explore (Variant)
-
 ExplorerPolicy       Method     Variant ExplorerPolicy (string)
-
 FileRun              Method     void FileRun ()
-
 FindComputer         Method     void FindComputer ()
-
 FindFiles            Method     void FindFiles ()
-
 FindPrinter          Method     void FindPrinter (string, string, string)
-
 GetSetting           Method     bool GetSetting (int)
-
 GetSystemInformation Method     Variant GetSystemInformation (string)
-
 Help                 Method     void Help ()
-
 IsRestricted         Method     int IsRestricted (string, string)
-
 IsServiceRunning     Method     Variant IsServiceRunning (string)
-
 MinimizeAll          Method     void MinimizeAll ()
-
 NameSpace            Method     Folder NameSpace (Variant)
-
 Open                 Method     void Open (Variant)
-
 RefreshMenu          Method     void RefreshMenu ()
-
+SearchCommand        Method     void SearchCommand ()
 ServiceStart         Method     Variant ServiceStart (string, Variant)
-
 ServiceStop          Method     Variant ServiceStop (string, Variant)
-
 SetTime              Method     void SetTime ()
-
 ShellExecute         Method     void ShellExecute (string, Variant, Variant, Variant, Variant)
-
 ShowBrowserBar       Method     Variant ShowBrowserBar (string, Variant)
-
 ShutdownWindows      Method     void ShutdownWindows ()
-
 Suspend              Method     void Suspend ()
-
 TileHorizontally     Method     void TileHorizontally ()
-
 TileVertically       Method     void TileVertically ()
 ToggleDesktop        Method     void ToggleDesktop ()
-
 TrayProperties       Method     void TrayProperties ()
-
 UndoMinimizeALL      Method     void UndoMinimizeALL ()
-
 Windows              Method     IDispatch Windows ()
-
 WindowsSecurity      Method     void WindowsSecurity ()
-
 WindowSwitcher       Method     void WindowSwitcher ()
-
 Application          Property   IDispatch Application () {get}
-
 Parent               Property   IDispatch Parent () {get}
 
 The third command calls the **ToggleDesktop** method of the object to minimize the open windows on your desktop.

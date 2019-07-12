@@ -59,7 +59,7 @@ For more information about other components of a wide view, see [Creating a Wide
 
 ## See Also
 
-[Creatng a Wide View](./creating-a-wide-view.md)
+[Creating a Wide View](./creating-a-wide-view.md)
 
 [Defining Conditions for When Data Is Displayed](./defining-conditions-for-displaying-data.md)
 

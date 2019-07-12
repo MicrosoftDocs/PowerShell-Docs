@@ -25,7 +25,7 @@ This sample shows how to use the [System.Management.Automation.Powershell](/dotn
 
 - Running the command synchronously.
 
-- Using [System.Management.Automation.Psobject](/dotnet/api/System.Management.Automation.PSObject) objects to extract properties from the objects returned by the command.
+- Using [System.Management.Automation.PSObject](/dotnet/api/System.Management.Automation.PSObject) objects to extract properties from the objects returned by the command.
 
 ## Example
 

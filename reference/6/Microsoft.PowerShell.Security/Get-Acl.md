@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Security
 ms.date: 06/09/2017
-online version: http://go.microsoft.com/fwlink/?LinkId=821710
+online version: https://go.microsoft.com/fwlink/?linkid=2096409
 schema: 2.0.0
 title: Get-Acl
 ---
@@ -250,7 +250,7 @@ Specifies the path to a resource.
 Unlike **Path**, the value of the **LiteralPath** parameter is used exactly as it is typed.
 No characters are interpreted as wildcards.
 If the path includes escape characters, enclose it in single quotation marks.
-Single quotation marks tell Windows PowerShell not to interpret any characters as escape sequences.
+Single quotation marks tell PowerShell not to interpret any characters as escape sequences.
 
 This parameter is introduced in Windows PowerShell 3.0.
 
@@ -309,19 +309,19 @@ the ACL type.
 
 ## NOTES
 
-By default, **Get-Acl** displays the Windows PowerShell path to the resource
+By default, **Get-Acl** displays the PowerShell path to the resource
 (\<provider\>::\<resource-path\>), the owner of the resource, and "Access", a list (array) of the
 access control entries in the discretionary access control list (DACL) for the resource. The DACL
 list is controlled by the resource owner.
 
 When you format the result as a list, ("`Get-Acl | Format-List`"), in addition to the path, owner,
-and access list, Windows PowerShell displays the following properties and property values:
+and access list, PowerShell displays the following properties and property values:
 
 - **Group**: The security group of the owner.
 - **Audit**:  A list (array) of entries in the system access control list (SACL). The SACL
   specifies the types of access attempts for which Windows generates audit records.
 - **Sddl**: The security descriptor of the resource displayed in a single text string in Security
-  Descriptor Definition Language format. Windows PowerShell uses the GetSddlForm method of security
+  Descriptor Definition Language format. PowerShell uses the GetSddlForm method of security
   descriptors to get this data.
 
 Because **Get-Acl** is supported by the file system and registry providers, you can use **Get-Acl**

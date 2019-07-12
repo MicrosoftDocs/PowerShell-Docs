@@ -11,7 +11,7 @@ scheduled job, define when it runs, and get results about the completed job afte
 ## Triggering the Job
 
 The first step in creating a scheduled job is specifying when the job should run. Do this by
-creating and configuring a T:Microsoft.PowerShell.ScheduledJob.ScheduledJobTriggerobject. The
+creating and configuring a T:Microsoft.PowerShell.ScheduledJob.ScheduledJobTrigger object. The
 following code creates a trigger that schedules a job to run a single time 20 seconds in the
 future.
 
@@ -44,7 +44,7 @@ The following code creates a parameter dictionary object and sets the Name and S
 ```csharp
 string schedJobDefName = "MySampleSchedJob";
 Dictionary<string, object> jobDefParameters = new Dictionary<string, object>();
-jobDefParameters.Add("Name", schedJobDefName);      // Unique name is requiried.
+jobDefParameters.Add("Name", schedJobDefName);      // Unique name is required.
 
 ScriptBlock scriptBlock = ScriptBlock.Create(@"1..5 | foreach {sleep 1; ""SchedJobOutput $_""}");
 jobDefParameters.Add("ScriptBlock", scriptBlock);  // A scriptblock or script FilePath
@@ -53,7 +53,7 @@ jobDefParameters.Add("ScriptBlock", scriptBlock);  // A scriptblock or script Fi
 
 ## Creating the Invocation and Job Definition Objects
 
-You then create ScheduledJobInvicationInfo and SheduledJobDefinition objects to run the job. The
+You then create ScheduledJobInvocationInfo and ScheduledJobDefinition objects to run the job. The
 following code demonstrates this.
 
 ```csharp
@@ -93,7 +93,7 @@ using Microsoft.PowerShell.ScheduledJob;        // Windows PowerShell ScheduledJ
 namespace Microsoft.Samples.PowerShell.ScheduledJob
 {
     /// <summary>
-    /// This class contains the Main enrty point for the application.
+    /// This class contains the Main entry point for the application.
     /// </summary>
     public class ScheduledJobSample
     {
@@ -141,7 +141,7 @@ namespace Microsoft.Samples.PowerShell.ScheduledJob
                 // RunAs32              - Switch (boolean type).
                 string schedJobDefName = "MySampleSchedJob";
                 Dictionary<string, object> jobDefParameters = new Dictionary<string, object>();
-                jobDefParameters.Add("Name", schedJobDefName);      // Unique name is requiried.
+                jobDefParameters.Add("Name", schedJobDefName);      // Unique name is required.
 
                 ScriptBlock scriptBlock = ScriptBlock.Create(@"1..5 | foreach {sleep 1; ""SchedJobOutput $_""}");
                 jobDefParameters.Add("ScriptBlock", scriptBlock);  // A scriptblock or script FilePath
@@ -174,7 +174,7 @@ namespace Microsoft.Samples.PowerShell.ScheduledJob
                 // Wait for Task Scheduler to run the PowerShell job.  This should happen in 20 seconds
                 // and then the job will take about 5 seconds to run.  If PowerShell job task doesn't
                 // run try increasing the trigger time in the ScheduledJobTrigger object.  You can also
-                // run this task manully from the Task Scheduler UI.
+                // run this task manually from the Task Scheduler UI.
                 for (int count = 1; count < 31; ++count)
                 {
                     Thread.Sleep(1000);
@@ -190,8 +190,8 @@ namespace Microsoft.Samples.PowerShell.ScheduledJob
                 // job store and the directory location is the current user local app
                 // data ($env:LOCALAPPDATA).
                 // This job store can be accessed through the ScheduledJobSourceAdapter class.
-                ScheduledJobSourceAdapter schedJobSourceAdpater = new ScheduledJobSourceAdapter();
-                IList<Job2> jobRuns = schedJobSourceAdpater.GetJobs();
+                ScheduledJobSourceAdapter schedJobSourceAdapter = new ScheduledJobSourceAdapter();
+                IList<Job2> jobRuns = schedJobSourceAdapter.GetJobs();
                 foreach (var jobRun in jobRuns)
                 {
                     // Check for jobs in finished state.

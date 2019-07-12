@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821864
-external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-title:  Start-Sleep
+external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Utility
+ms.date: 3/13/2019
+online version: https://go.microsoft.com/fwlink/?linkid=821864
+schema: 2.0.0
+title: Start-Sleep
 ---
 # Start-Sleep
 
@@ -16,20 +17,22 @@ Suspends the activity in a script or session for the specified period of time.
 
 ### Seconds (Default)
 
-```powershell
+```
 Start-Sleep [-Seconds] <Int32> [<CommonParameters>]
 ```
 
 ### Milliseconds
 
-```powershell
+```
 Start-Sleep -Milliseconds <Int32> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 
-The `Start-Sleep` cmdlet suspends the activity in a script or session for the specified period of time.
-You can use it for many tasks, such as waiting for an operation to complete or pausing before repeating an operation.
+The `Start-Sleep` cmdlet suspends the activity in a script or session for the specified period of
+time.
+You can use it for many tasks, such as waiting for an operation to complete or pausing before
+repeating an operation.
 
 ## EXAMPLES
 
@@ -47,7 +50,8 @@ This command makes all commands in the session sleep for 15 seconds.
 Start-Sleep -m 500
 ```
 
-This command makes all the commands in the session sleep for one-half of a second (500 milliseconds).
+This command makes all the commands in the session sleep for one-half of a second (500
+milliseconds).
 
 ## PARAMETERS
 
@@ -59,7 +63,7 @@ The parameter can be abbreviated as **m**.
 ```yaml
 Type: Int32
 Parameter Sets: Milliseconds
-Aliases:
+Aliases: ms
 
 Required: True
 Position: Named
@@ -87,7 +91,9 @@ Accept wildcard characters: False
 
 ### CommonParameters
 
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+-InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
+-WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
 
 ## INPUTS
 
@@ -103,6 +109,10 @@ This cmdlet does not return any output.
 
 ## NOTES
 
-* You can also refer to `Start-Sleep` by its built-in alias, `sleep`. For more information, see about_Aliases.
+- You can also refer to `Start-Sleep` by its built-in alias, `sleep`. For more information, see
+  [about_Aliases](../Microsoft.PowerShell.Core/About/about_Aliases.md).
+- `Ctrl+C` breaks out of `Start-Sleep`.
+  - `Ctrl+C` does not break out of `[Threading.Thread]::Sleep`. For more information, see
+    [Thread.Sleep Method](/dotnet/api/system.threading.thread.sleep).
 
 ## RELATED LINKS

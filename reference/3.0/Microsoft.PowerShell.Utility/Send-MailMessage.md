@@ -1,11 +1,12 @@
 ---
-ms.date:  2/11/2019
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkID=135256
-external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-title:  Send-MailMessage
+external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Utility
+ms.date: 04/23/2019
+online version: https://go.microsoft.com/fwlink/?linkid=135256
+schema: 2.0.0
+title: Send-MailMessage
 ---
 
 # Send-MailMessage
@@ -15,11 +16,14 @@ Sends an email message.
 
 ## SYNTAX
 
+### All
+
 ```
 Send-MailMessage [-To] <string[]> [-Subject] <string> [[-Body] <string>] [[-SmtpServer] <string>]
--From <string> [-Attachments <string[]>] [-Bcc <string[]>] [-BodyAsHtml] [-Encoding <Encoding>]
-[-Cc <string[]>] [-DeliveryNotificationOption <DeliveryNotificationOptions>]
-[-Priority <MailPriority>] [-Credential <pscredential>] [-UseSsl] [-Port <int>] [<CommonParameters>]
+ -From <string> [-Attachments <string[]>] [-Bcc <string[]>] [-BodyAsHtml] [-Encoding <Encoding>]
+ [-Cc <string[]>] [-DeliveryNotificationOption <DeliveryNotificationOptions>]
+ [-Priority <MailPriority>] [-Credential <pscredential>] [-UseSsl] [-Port <int>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -35,14 +39,14 @@ information, see [about_Preference_Variables](../Microsoft.PowerShell.Core/About
 
 ### Example 1: Send an email from one person to another person
 
-This command sends an email message from one person to another person.
+This example sends an email message from one person to another person.
 
 The **From**, **To**, and **Subject** parameters are required by `Send-MailMessage`. This example
 uses the default `$PSEmailServer` variable for the SMTP server, so the **SmtpServer** parameter is
 not needed.
 
-```
-PS> Send-MailMessage -From 'User01 <user01@fabrikam.com>' -To 'User02 <user02@fabrikam.com>' -Subject 'Test mail'
+```powershell
+Send-MailMessage -From 'User01 <user01@fabrikam.com>' -To 'User02 <user02@fabrikam.com>' -Subject 'Test mail'
 ```
 
 The `Send-MailMessage` cmdlet uses the **From** parameter to specify the message's sender. The
@@ -51,10 +55,10 @@ The `Send-MailMessage` cmdlet uses the **From** parameter to specify the message
 
 ### Example 2: Send an attachment
 
-This command sends an email message with an attachment.
+This example sends an email message with an attachment.
 
-```
-PS> Send-MailMessage -From 'User01 <user01@fabrikam.com>' -To 'User02 <user02@fabrikam.com>', 'User03 <user03@fabrikam.com>' -Subject 'Sending the Attachment' -Body 'Forgot to send the attachment. Sending now.' -Attachments .\data.csv -Priority High -DeliveryNotificationOption OnSuccess, OnFailure -SmtpServer 'smtp.fabrikam.com'
+```powershell
+Send-MailMessage -From 'User01 <user01@fabrikam.com>' -To 'User02 <user02@fabrikam.com>', 'User03 <user03@fabrikam.com>' -Subject 'Sending the Attachment' -Body "Forgot to send the attachment. Sending now." -Attachments .\data.csv -Priority High -DeliveryNotificationOption OnSuccess, OnFailure -SmtpServer 'smtp.fabrikam.com'
 ```
 
 The `Send-MailMessage` cmdlet uses the **From** parameter to specify the message's sender. The
@@ -69,10 +73,10 @@ The **SmtpServer** parameter sets the SMTP server to **smtp.fabrikam.com**.
 
 ### Example 3: Send email to a mailing list
 
-This command sends an email message to a mailing list.
+This example sends an email message to a mailing list.
 
-```
-PS> Send-MailMessage -From 'User01 <user01@fabrikam.com>' -To 'ITGroup <itdept@fabrikam.com>' -Cc 'User02 <user02@fabrikam.com>' -Bcc 'ITMgr <itmgr@fabrikam.com>' -Subject 'Don't forget today's meeting!' -Credential domain01\admin01 -UseSsl
+```powershell
+Send-MailMessage -From 'User01 <user01@fabrikam.com>' -To 'ITGroup <itdept@fabrikam.com>' -Cc 'User02 <user02@fabrikam.com>' -Bcc 'ITMgr <itmgr@fabrikam.com>' -Subject "Don't forget today's meeting!" -Credential domain01\admin01 -UseSsl
 ```
 
 The `Send-MailMessage` cmdlet uses the **From** parameter to specify the message's sender. The
@@ -148,7 +152,7 @@ Aliases: BAH
 
 Required: False
 Position: Named
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -220,19 +224,15 @@ Accept wildcard characters: False
 
 ### -Encoding
 
-Specifies the type of encoding for the target file. The default value is **ASCII**.
+Specifies the type of encoding for the target file. The default value is **Default**.
 
 The acceptable values for this parameter are as follows:
 
 - **ASCII** Uses ASCII (7-bit) character set.
 - **BigEndianUnicode** Uses UTF-16 with the big-endian byte order.
-- **BigEndianUTF32** Uses UTF-32 with the big-endian byte order.
-- **Byte** Encodes a set of characters into a sequence of bytes.
-- **Default** Uses the encoding that corresponds to the system's active code page.
+- **Default** Uses the encoding that corresponds to the system's active code page (usually ANSI).
 - **OEM** Uses the encoding that corresponds to the system's current OEM code page.
-- **String** Same as **Unicode**.
 - **Unicode** Uses UTF-16 with the little-endian byte order.
-- **Unknown** Same as **Unicode**.
 - **UTF7** Uses UTF-7.
 - **UTF8** Uses UTF-8.
 - **UTF32** Uses UTF-32 with the little-endian byte order.
@@ -241,11 +241,11 @@ The acceptable values for this parameter are as follows:
 Type: Encoding
 Parameter Sets: (All)
 Aliases: BE
-Accepted values: ASCII, BigEndianUnicode, BigEndianUTF32, Byte, Default, OEM, String, Unicode, Unknown, UTF7, UTF8, UTF32
+Accepted values: ASCII, BigEndianUnicode, Default, OEM, Unicode, UTF7, UTF8, UTF32
 
 Required: False
 Position: Named
-Default value: ASCII
+Default value: Default
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -323,7 +323,7 @@ Accept wildcard characters: False
 
 ### -Subject
 
-Th **Subject** parameter is required. This parameter specifies the subject of the email message.
+The **Subject** parameter is required. This parameter specifies the subject of the email message.
 
 ```yaml
 Type: String
@@ -367,7 +367,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

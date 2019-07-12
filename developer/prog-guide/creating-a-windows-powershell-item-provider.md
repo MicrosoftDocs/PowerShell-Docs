@@ -25,44 +25,6 @@ This topic describes how to create a Windows PowerShell provider that can manipu
 
 The Windows PowerShell item provider described in this topic gets items of data from an Access database. In this case, an "item" is either a table in the Access database or a row in a table.
 
-The following list contains the sections in this topic. If you are unfamiliar with writing a Windows PowerShell item provider, read these sections in the order that they appear. However, if you are familiar with writing a Windows PowerShell item provider, go directly to the information that you need:
-
-- [Defining the Windows PowerShell Item Provider Class](#Defining-the-Windows-PowerShell-Item-Provider-Class)
-
-- [Defining Base Functionality](#Defining-Base-Functionality)
-
-- [Checking for Path Validity](#Checking-for-Path-Validity)
-
-- [Determining if an Item Exists](#Determining-if-an-Item-Exists)
-
-- [Attaching Dynamic Parameters to the `Test-Path` Cmdlet](#Attaching-Dynamic-Parameters-to-the-Test-Path-Cmdlet)
-
-- [Retrieving an Item](#Retrieving-an-Item)
-
-- [Attaching Dynamic Parameters to the `Get-Item` Cmdlet](#Attaching-Dynamic-Parameters-to-the-Get-Item-Cmdlet)
-
-- [Setting an Item](#Setting-an-Item)
-
-- [Attaching Dynamic Parameters to the `Set-Item` Cmdlet](#Retrieving-Dynamic-Parameters-for-SetItem)
-
-- [Clearing an Item](#Clearing-an-Item)
-
-- [Attaching Dynamic Parameters to the Cler-Item Cmdlet](#Retrieve-Dynamic-Parameters-for-ClearItem)
-
-- [Performing a Default Action for an Item](#Performing-a-Default-Action-for-an-Item)
-
-- [Retrieving Dynamic Parameters for InvokeDefaultAction](#Retrieve-Dynamic-Parameters-for-InvokeDefaultAction)
-
-- [Implementing Helper Methods and Classes](#Implementing-Helper-Methods-and-Classes)
-
-- [Code Sample](#Code-Sample)
-
-- [Defining Object Types and Formatting](#Defining-Object-Types-and-Formatting)
-
-- [Building the Windows PowerShell Provider](#Building-the-Windows-PowerShell-provider)
-
-- [Testing the Windows PowerShell Provider](#Testing-the-Windows-PowerShell-provider)
-
 ## Defining the Windows PowerShell Item Provider Class
 
 A Windows PowerShell item provider must define a .NET class that derives from the [System.Management.Automation.Provider.Itemcmdletprovider](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider) base class. The following is the class definition for the item provider described in this section.
@@ -149,11 +111,11 @@ The following conditions may apply to your implementation of [System.Management.
 
 - When defining the provider class, a Windows PowerShell item provider might declare provider capabilities of ExpandWildcards, Filter, Include, or Exclude, from the [System.Management.Automation.Provider.Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities) enumeration. In these cases, the implementation of [System.Management.Automation.Provider.Itemcmdletprovider.Setitem*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItem) must ensure that the path passed to the method meets those requirements. To do this, the method should access the appropriate property, for example, the [System.Management.Automation.Provider.Cmdletprovider.Exclude*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Exclude) and [System.Management.Automation.Provider.Cmdletprovider.Include*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Include) properties.
 
-- By default, overrides of this method should not set or write objects that are hidden from the user unless the [System.Management.Automation.Provider.Cmdletprovider.Force*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) property is set to `true`. An error should be sent to the [System.Management.Automation.Provider.Cmdletprovider.Writeerror*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteError) method if the path represents a hidden item and [System.Management.Automation.Provider.Cmdletprovider.Force*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) is set to `false`.
+- By default, overrides of this method should not set or write objects that are hidden from the user unless the [System.Management.Automation.Provider.Cmdletprovider.Force*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) property is set to `true`. An error should be sent to the [System.Management.Automation.Provider.Cmdletprovider.WriteError](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteError) method if the path represents a hidden item and [System.Management.Automation.Provider.Cmdletprovider.Force*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) is set to `false`.
 
-- Your implementation of the [System.Management.Automation.Provider.Itemcmdletprovider.Setitem*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItem) method should call [System.Management.Automation.Provider.Cmdletprovider.Shouldprocess*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) and verify its return value before making any changes to the data store. This method is used to confirm execution of an operation when a change is made to the data store, for example, deleting files. The [System.Management.Automation.Provider.Cmdletprovider.Shouldprocess*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) method sends the name of the resource to be changed to the user, with the Windows PowerShell runtime taking into account any command-line settings or preference variables in determining what should be displayed.
+- Your implementation of the [System.Management.Automation.Provider.Itemcmdletprovider.Setitem*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItem) method should call [System.Management.Automation.Provider.Cmdletprovider.ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) and verify its return value before making any changes to the data store. This method is used to confirm execution of an operation when a change is made to the data store, for example, deleting files. The [System.Management.Automation.Provider.Cmdletprovider.ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) method sends the name of the resource to be changed to the user, with the Windows PowerShell runtime taking into account any command-line settings or preference variables in determining what should be displayed.
 
-  After the call to [System.Management.Automation.Provider.Cmdletprovider.Shouldprocess*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) returns `true`, the [System.Management.Automation.Provider.Itemcmdletprovider.Setitem*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItem) method should call the [System.Management.Automation.Provider.Cmdletprovider.Shouldcontinue*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue) method. This method sends a message to the user to allow feedback to verify if the operation should be continued. The call to [System.Management.Automation.Provider.Cmdletprovider.Shouldcontinue*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue) allows an additional check for potentially dangerous system modifications.
+  After the call to [System.Management.Automation.Provider.Cmdletprovider.ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) returns `true`, the [System.Management.Automation.Provider.Itemcmdletprovider.Setitem*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItem) method should call the [System.Management.Automation.Provider.Cmdletprovider.ShouldContinue](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue) method. This method sends a message to the user to allow feedback to verify if the operation should be continued. The call to [System.Management.Automation.Provider.Cmdletprovider.ShouldContinue](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue) allows an additional check for potentially dangerous system modifications.
 
 ## Retrieving Dynamic Parameters for SetItem
 
@@ -177,11 +139,11 @@ The following conditions may apply to an implementation of [System.Management.Au
 
 - When defining the provider class, a Windows PowerShell item provider might declare provider capabilities of ExpandWildcards, Filter, Include, or Exclude, from the [System.Management.Automation.Provider.Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities) enumeration. In these cases, the implementation of [System.Management.Automation.Provider.Itemcmdletprovider.Clearitem*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ClearItem) must ensure that the path passed to the method meets those requirements. To do this, the method should access the appropriate property, for example, the [System.Management.Automation.Provider.Cmdletprovider.Exclude*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Exclude) and [System.Management.Automation.Provider.Cmdletprovider.Include*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Include) properties.
 
-- By default, overrides of this method should not set or write objects that are hidden from the user unless the [System.Management.Automation.Provider.Cmdletprovider.Force*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) property is set to `true`. An error should be sent to the [System.Management.Automation.Provider.Cmdletprovider.Writeerror*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteError) method if the path represents an item that is hidden from the user and [System.Management.Automation.Provider.Cmdletprovider.Force*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) is set to `false`.
+- By default, overrides of this method should not set or write objects that are hidden from the user unless the [System.Management.Automation.Provider.Cmdletprovider.Force*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) property is set to `true`. An error should be sent to the [System.Management.Automation.Provider.Cmdletprovider.WriteError](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteError) method if the path represents an item that is hidden from the user and [System.Management.Automation.Provider.Cmdletprovider.Force*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) is set to `false`.
 
-- Your implementation of the [System.Management.Automation.Provider.Itemcmdletprovider.Setitem*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItem) method should call [System.Management.Automation.Provider.Cmdletprovider.Shouldprocess*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) and verify its return value before making any changes to the data store. This method is used to confirm execution of an operation when a change is made to the data store, for example, deleting files. The [System.Management.Automation.Provider.Cmdletprovider.Shouldprocess*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) method sends the name of the resource to be changed to the user, with the Windows PowerShell runtime and handle any command-line settings or preference variables in determining what should be displayed.
+- Your implementation of the [System.Management.Automation.Provider.Itemcmdletprovider.Setitem*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItem) method should call [System.Management.Automation.Provider.Cmdletprovider.ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) and verify its return value before making any changes to the data store. This method is used to confirm execution of an operation when a change is made to the data store, for example, deleting files. The [System.Management.Automation.Provider.Cmdletprovider.ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) method sends the name of the resource to be changed to the user, with the Windows PowerShell runtime and handle any command-line settings or preference variables in determining what should be displayed.
 
-  After the call to [System.Management.Automation.Provider.Cmdletprovider.Shouldprocess*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) returns `true`, the [System.Management.Automation.Provider.Itemcmdletprovider.Setitem*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItem) method should call the [System.Management.Automation.Provider.Cmdletprovider.Shouldcontinue*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue) method. This method sends a message to the user to allow feedback to verify if the operation should be continued. The call to [System.Management.Automation.Provider.Cmdletprovider.Shouldcontinue*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue) allows an additional check for potentially dangerous system modifications.
+  After the call to [System.Management.Automation.Provider.Cmdletprovider.ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) returns `true`, the [System.Management.Automation.Provider.Itemcmdletprovider.Setitem*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItem) method should call the [System.Management.Automation.Provider.Cmdletprovider.ShouldContinue](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue) method. This method sends a message to the user to allow feedback to verify if the operation should be continued. The call to [System.Management.Automation.Provider.Cmdletprovider.ShouldContinue](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue) allows an additional check for potentially dangerous system modifications.
 
 ## Retrieve Dynamic Parameters for ClearItem
 
@@ -205,7 +167,7 @@ The following conditions may apply to an implementation of [System.Management.Au
 
 - When defining the provider class, a Windows PowerShell item provider might declare provider capabilities of ExpandWildcards, Filter, Include, or Exclude, from the [System.Management.Automation.Provider.Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities) enumeration. In these cases, the implementation of [System.Management.Automation.Provider.Itemcmdletprovider.Invokedefaultaction*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.InvokeDefaultAction) must ensure that the path passed to the method meets those requirements. To do this, the method should access the appropriate property, for example, the [System.Management.Automation.Provider.Cmdletprovider.Exclude*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Exclude) and [System.Management.Automation.Provider.Cmdletprovider.Include*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Include) properties.
 
-- By default, overrides of this method should not set or write objects hidden from the user unless the [System.Management.Automation.Provider.Cmdletprovider.Force*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) property is set to `true`. An error should be sent to the [System.Management.Automation.Provider.Cmdletprovider.Writeerror*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteError) method if the path represents an item that is hidden from the user and [System.Management.Automation.Provider.Cmdletprovider.Force*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) is set to `false`.
+- By default, overrides of this method should not set or write objects hidden from the user unless the [System.Management.Automation.Provider.Cmdletprovider.Force*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) property is set to `true`. An error should be sent to the [System.Management.Automation.Provider.Cmdletprovider.WriteError](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteError) method if the path represents an item that is hidden from the user and [System.Management.Automation.Provider.Cmdletprovider.Force*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) is set to `false`.
 
 ## Retrieve Dynamic Parameters for InvokeDefaultAction
 
@@ -217,7 +179,7 @@ This item provider does not implement this method. However, the following code i
 
 ## Implementing Helper Methods and Classes
 
-This item provider implements several helper methods and classes that are used by the public override methods defined by Windows PowerShell. The code for these helper methods and classes are shown in the [Code Sample](#Code-Sample) section.
+This item provider implements several helper methods and classes that are used by the public override methods defined by Windows PowerShell. The code for these helper methods and classes are shown in the [Code Sample](#code-sample) section.
 
 ### NormalizePath Method
 
@@ -247,7 +209,7 @@ The sample item provider defines a DatabaseTableInfo.GetTables method that retur
 
 ### DatabaseRowInfo Class
 
-This item provider defines the DatabaseRowInfo helper class that represents a row in a table of the database. This class is similar to the [System.IO.Fileinfo](/dotnet/api/System.IO.FileInfo) class.
+This item provider defines the DatabaseRowInfo helper class that represents a row in a table of the database. This class is similar to the [System.IO.FileInfo](/dotnet/api/System.IO.FileInfo) class.
 
 The sample provider defines a DatabaseRowInfo.GetRows method to return a collection of row information objects for the specified table. This method includes a try/catch block to trap exceptions. Any errors will result in no row information.
 

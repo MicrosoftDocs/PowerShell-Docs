@@ -3,7 +3,7 @@ ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/p/?linkid=294045
+online version: https://go.microsoft.com/fwlink/?linkid=294045
 external help file:  Microsoft.WSMan.Management.dll-Help.xml
 title:  Set-WSManQuickConfig
 ---
@@ -90,7 +90,7 @@ Accept wildcard characters: False
 ```
 
 ### -UseSSL
-Specifies that the Secure Sockets Layer (SSL) protocol should be used to establish a connnection to the remote computer.
+Specifies that the Secure Sockets Layer (SSL) protocol should be used to establish a connection to the remote computer.
 By default, SSL is not used.
 
 WS-Management encrypts all Windows PowerShell content transmitted over the network.

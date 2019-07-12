@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Security
 ms.date: 06/09/2017
-online version: http://go.microsoft.com/fwlink/?LinkId=821717
+online version: https://go.microsoft.com/fwlink/?linkid=2096508
 schema: 2.0.0
 title: Set-Acl
 ---
@@ -49,9 +49,9 @@ It uses the value of the **AclObject** parameter as a model and changes the valu
 
 ### Example 1: Copy a security descriptor from one file to another
 
-```
-PS C:\> $DogACL = Get-Acl -Path "C:\Dog.txt"
-PS C:\> Set-Acl -Path "C:\Cat.txt" -AclObject $DogACL
+```powershell
+$DogACL = Get-Acl -Path "C:\Dog.txt"
+Set-Acl -Path "C:\Cat.txt" -AclObject $DogACL
 ```
 
 These commands copy the values from the security descriptor of the Dog.txt file to the security descriptor of the Cat.txt file.
@@ -67,8 +67,8 @@ The value of the **AclObject** parameter is the model ACL, in this case, the ACL
 
 ### Example 2: Use the pipeline operator to pass a descriptor
 
-```
-PS C:\> Get-Acl -Path "C:\Dog.txt" | Set-Acl -Path "C:\Cat.txt"
+```powershell
+Get-Acl -Path "C:\Dog.txt" | Set-Acl -Path "C:\Cat.txt"
 ```
 
 This command is almost the same as the command in the previous example, except that it uses a pipeline operator to send the security descriptor from a Get-Aclcommand to a `Set-Acl` command.
@@ -81,9 +81,9 @@ When the command completes, the ACLs of the Dog.txt and Cat.txt files are identi
 
 ### Example 3: Apply a security descriptor to multiple files
 
-```
-PS C:\> $NewAcl = Get-Acl File0.txt
-PS C:\> Get-ChildItem -Path "C:\temp" -Recurse -Include "*.txt" -Force | Set-Acl -AclObject $NewAcl
+```powershell
+$NewAcl = Get-Acl File0.txt
+Get-ChildItem -Path "C:\temp" -Recurse -Include "*.txt" -Force | Set-Acl -AclObject $NewAcl
 ```
 
 These commands apply the security descriptors in the File0.txt file to all text files in the C:\Temp directory and all of its subdirectories.
@@ -98,10 +98,10 @@ The **Force** parameter gets hidden files, which would otherwise be excluded.
 
 The pipeline operator (|) sends the objects representing the retrieved files to the `Set-Acl` cmdlet, which applies the security descriptor in the **AclObject** parameter to all of the files in the pipeline.
 
-In practice, it is best to use the **Whatif** parameter with all `Set-Acl` commands that can affect more than one item.
+In practice, it is best to use the **WhatIf** parameter with all `Set-Acl` commands that can affect more than one item.
 In this case, the second command in the pipeline would be "`Set-Acl -AclObject $NewAcl -WhatIf`".
 This command lists the files that would be affected by the command.
-After reviewing the result, you can run the command again without the **Whatif** parameter.
+After reviewing the result, you can run the command again without the **WhatIf** parameter.
 
 ## PARAMETERS
 
@@ -128,8 +128,8 @@ Accept wildcard characters: False
 
 Removes the central access policy from the specified item.
 
-Beginning in Windows Server® 2012, administrators can use Active Directory and Group Policy to set central access policies for users and groups.
-For more information, see [Dynamic Access Control: Scenario Overview](https://go.microsoft.com/fwlink/?LinkId=238408).
+Beginning in Windows Server 2012, administrators can use Active Directory and Group Policy to set central access policies for users and groups.
+For more information, see [Dynamic Access Control: Scenario Overview](/windows-server/identity/solution-guides/dynamic-access-control--scenario-overview).
 
 This parameter was introduced in Windows PowerShell 3.0.
 

@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: PSScheduledJob
 ms.date: 06/09/2017
-online version: http://go.microsoft.com/fwlink/?LinkId=821683
+online version: https://go.microsoft.com/fwlink/?linkid=821683
 schema: 2.0.0
 title: Enable-JobTrigger
 ---
@@ -94,7 +94,7 @@ The properties include a new JobName property that displays the name of the sche
 
 ### -InputObject
 Specifies the job trigger to enable.
-Enter a variable that contains **ScheduledJobTrigger** objects or type a command or expression that gets **ScheduledJobTriger** objects, such as a Get-JobTrigger command.
+Enter a variable that contains **ScheduledJobTrigger** objects or type a command or expression that gets **ScheduledJobTrigger** objects, such as a Get-JobTrigger command.
 You can also pipe a **ScheduledJobTrigger** object to **Enable-JobTrigger**.
 
 ```yaml

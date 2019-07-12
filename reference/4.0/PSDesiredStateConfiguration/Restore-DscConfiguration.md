@@ -3,7 +3,7 @@ ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkID=289470
+online version: https://go.microsoft.com/fwlink/?linkid=289470
 external help file:  Restore-DSCConfiguration.cdxml-help.xml
 title:  Restore-DscConfiguration
 ---
@@ -27,7 +27,7 @@ If you do not specify a target computer, the cmdlet restores the configuration o
 
 ## EXAMPLES
 
-### Example 1: Restore the configrugation for the local computer
+### Example 1: Restore the configuration for the local computer
 ```
 PS C:\> Restore-DscConfiguration
 ```
@@ -71,7 +71,7 @@ Accept wildcard characters: False
 
 ### -ThrottleLimit
 Specifies the maximum number of concurrent operations that can be established to run the cmdlet.
-If this parameter is omitted or a value of `0` is entered, then Windows PowerShell® calculates an optimum throttle limit for the cmdlet based on the number of CIM cmdlets that are running on the computer.
+If this parameter is omitted or a value of `0` is entered, then Windows PowerShell calculates an optimum throttle limit for the cmdlet based on the number of CIM cmdlets that are running on the computer.
 The throttle limit applies only to the current cmdlet, not to the session or to the computer.
 
 ```yaml

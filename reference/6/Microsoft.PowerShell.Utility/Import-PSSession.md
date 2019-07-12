@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Utility
 ms.date: 06/09/2017
-online version: http://go.microsoft.com/fwlink/?LinkId=821821
+online version: https://go.microsoft.com/fwlink/?linkid=2096438
 schema: 2.0.0
 title: Import-PSSession
 ---
@@ -357,7 +357,7 @@ The PowerShell aliases in the remote session.
 - All.
 The cmdlets and functions in the remote session.
 - Application.
-All the files other than Windows-PowerShell files in the paths that are listed in the Path environment variable ($env:path) in the remote session, including .txt, .exe, and .dll files.
+All the files other than PowerShell files in the paths that are listed in the Path environment variable ($env:path) in the remote session, including .txt, .exe, and .dll files.
 - Cmdlet.
 The cmdlets in the remote session.
 "Cmdlet" is the default.

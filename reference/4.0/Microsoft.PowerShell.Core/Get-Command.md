@@ -3,7 +3,7 @@ ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/p/?linkid=289583
+online version: https://go.microsoft.com/fwlink/?linkid=289583
 external help file:  System.Management.Automation.dll-Help.xml
 title:  Get-Command
 ---
@@ -483,7 +483,7 @@ The type of object that is returned depends on the type of command that Get-Comm
 Represents aliases.
 
 ### System.Management.Automation.ApplicationInfo
-Represents or applications and files
+Represents applications and files
 
 ### System.Management.Automation.CmdletInfo
 Represents cmdlets.

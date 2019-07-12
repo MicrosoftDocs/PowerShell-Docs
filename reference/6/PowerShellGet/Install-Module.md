@@ -3,12 +3,11 @@ external help file: PSModule-help.xml
 keywords: powershell,cmdlet
 locale: en-us
 Module Name: PowerShellGet
-ms.date: 3/7/2019
-online version: http://go.microsoft.com/fwlink/?LinkId=821663
+ms.date: 03/07/2019
+online version: https://go.microsoft.com/fwlink/?linkid=2096879
 schema: 2.0.0
 title: Install-Module
 ---
-
 # Install-Module
 
 ## SYNOPSIS
@@ -20,17 +19,17 @@ Downloads one or more modules from a repository, and installs them on the local 
 
 ```
 Install-Module [-Name] <String[]> [-MinimumVersion <String>] [-MaximumVersion <String>]
-[-RequiredVersion <String>] [-Repository <String[]>] [-Credential <PSCredential>] [-Scope <String>]
-[-Proxy <Uri>] [-ProxyCredential <PSCredential>] [-AllowClobber] [-SkipPublisherCheck] [-Force]
-[-AllowPrerelease] [-AcceptLicense] [-WhatIf] [-Confirm] [<CommonParameters>]
+ [-RequiredVersion <String>] [-Repository <String[]>] [-Credential <PSCredential>] [-Scope <String>]
+ [-Proxy <Uri>] [-ProxyCredential <PSCredential>] [-AllowClobber] [-SkipPublisherCheck] [-Force]
+ [-AllowPrerelease] [-AcceptLicense] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### InputObject
 
 ```
 Install-Module [-InputObject] <PSObject[]> [-Credential <PSCredential>] [-Scope <String>]
-[-Proxy <Uri>] [-ProxyCredential <PSCredential>] [-AllowClobber] [-SkipPublisherCheck] [-Force]
-[-AcceptLicense] [-WhatIf] [-Confirm] [<CommonParameters>]
+ [-Proxy <Uri>] [-ProxyCredential <PSCredential>] [-AllowClobber] [-SkipPublisherCheck] [-Force]
+ [-AcceptLicense] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -313,7 +312,7 @@ Accept wildcard characters: False
 Use the **Repository** parameter to specify which repository is used to download and install a
 module. Used when multiple repositories are registered. Specifies the name of a registered
 repository in the `Install-Module` command. To register a repository, use `Register-PSRepository`.
-To display registered repositories, se `Get-PSRepository`.
+To display registered repositories, use `Get-PSRepository`.
 
 ```yaml
 Type: String[]
@@ -361,13 +360,11 @@ the computer:
 
 `$home\Documents\PowerShell\Modules`
 
-When no **Scope** is defined, the default is set based on the current session:
+When no **Scope** is defined, the default is set based on the PowerShellGet version.
 
-- For an elevated PowerShell session, **Scope** defaults to **AllUsers**.
-- For non-elevated PowerShell sessions in [PowerShellGet versions 2.0.0](https://www.powershellgallery.com/packages/PowerShellGet)
-  and above, the **Scope** is **CurrentUser**.
-- For non-elevated PowerShell sessions in PowerShellGet versions 1.6.7 and earlier, **Scope** is
-  undefined, and `Install-Module` fails.
+- In PowerShellGet versions 2.0.0 and above, the default is **CurrentUser**, which does not require
+  elevation for install.
+- In PowerShellGet 1.x versions, the default is **AllUsers**, which requires elevation for install.
 
 ```yaml
 Type: String

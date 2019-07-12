@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Core
 ms.date: 06/09/2017
-online version: http://go.microsoft.com/fwlink/?LinkId=821517
+online version: https://go.microsoft.com/fwlink/?linkid=2096183
 schema: 2.0.0
 title: Set-StrictMode
 ---
@@ -45,19 +45,19 @@ Unnamed variables are not permitted.
 
 ### Example 1: Turn on strict mode as version 1.0
 
+```powershell
+Set-StrictMode -Version 1.0
+$a -gt 5
 ```
-PS C:\> Set-StrictMode -Version 1.0
-PS C:\> $a -gt 5
+
+```Output
 False
 
 The variable $a cannot be retrieved because it has not been set yet.
 
 At line:1 char:3
-
 + $a <<<<  -gt 5
-
 + CategoryInfo          : InvalidOperation: (a:Token) [], RuntimeException
-
 + FullyQualifiedErrorId : VariableIsUndefined
 ```
 
@@ -68,33 +68,56 @@ The sample output shows the effect of version 1.0 strict mode.
 
 ### Example 2: Turn on strict mode as version 2.0
 
-```
-PS C:\> # Set-StrictMode -Version 2.0
+```powershell
+# Set-StrictMode -Version 2.0
 # Strict mode is off by default.
+function add ($a, $b) {$a + $b}
+add 3 4
+```
 
-PS C:\> function add ($a, $b) {$a + $b}
-PS C:\> add 3 4
+```Output
 7
-PS C:\> add(3,4)
+```
+
+```powershell
+add(3,4)
+```
+
+```Output
 3
 4
-PS C:\> Set-StrictMode -Version 2.0
-PS C:\> add(3,4)
+```
 
+```powershell
+Set-StrictMode -Version 2.0
+add(3,4)
+```
+
+```Output
 The function or command was called like a method. Parameters should be separated by spaces, as described in 'Get-Help about_Parameter.'
 At line:1 char:4
 + add <<<< (3,4)
 + CategoryInfo          : InvalidOperation: (:) [], RuntimeException
 + FullyQualifiedErrorId : StrictModeFunctionCallWithParens
+```
 
-PS C:\> Set-StrictMode -Off
-PS C:\> $string = "This is a string."
-PS C:\> $string.Month
-PS C:\>
-PS C:\> Set-StrictMode -Version 2.0
-PS C:\> $string = "This is a string."
-PS C:\> $string.Month
+```powershell
+Set-StrictMode -Off
+$string = "This is a string."
+$string.Month
+```
 
+```Output
+PS>
+```
+
+```powershell
+Set-StrictMode -Version 2.0
+$string = "This is a string."
+$string.Month
+```
+
+```Output
 Property 'month' cannot be found on this object; make sure it exists.
 At line:1 char:9
 + $string. <<<< month

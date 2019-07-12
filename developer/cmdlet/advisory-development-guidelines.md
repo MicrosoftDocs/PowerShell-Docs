@@ -15,32 +15,6 @@ This section describes guidelines that you should consider to ensure good develo
 
 ## Design Guidelines
 
-- [Support an InputObject Parameter (AD01)](./advisory-development-guidelines.md#AD01)
-
-- [Support the Force Parameter (AD02)](./advisory-development-guidelines.md#AD02)
-
-- [Handle Credentials Through Windows PowerShell (AD03)](./advisory-development-guidelines.md#AD03)
-
-- [Support Encoding Parameters (AD04)](./advisory-development-guidelines.md#AD04)
-
-- [Test Cmdlets Should Return a Boolean (AD05)](./advisory-development-guidelines.md#AD05)
-
-## Code Guidelines
-
-- [Follow Cmdlet Class Naming Conventions (AC01)](./advisory-development-guidelines.md#AC01)
-
-- [If No Pipeline Input Override the BeginProcessing Method (AC02)](./advisory-development-guidelines.md#AC02)
-
-- [To Handle Stop Requests Override the StopProcessing Method (AC03)](./advisory-development-guidelines.md#AC03)
-
-- [Implement the IDisposable Interface (AC04)](./advisory-development-guidelines.md#AC04)
-
-- [Use Serialization-friendly Parameter Types (AC05)](./advisory-development-guidelines.md#AC05)
-
-- [Use SecureString for Sensitive Data (AC06)](./advisory-development-guidelines.md#AC06)
-
-## Design Guidelines
-
 The following guidelines should be considered when designing cmdlets. When you find a Design guideline that applies to your situation, be sure to look at the Code guidelines for similar guidelines.
 
 ### Support an InputObject Parameter (AD01)
@@ -55,7 +29,7 @@ For example, the [Remove-Item](/powershell/module/microsoft.powershell.managemen
 
 ### Handle Credentials Through Windows PowerShell (AD03)
 
-A cmdlet should define a `Credential` parameter to represent credentials. This parameter must be of type [System.Management.Automation.Pscredential](/dotnet/api/System.Management.Automation.PSCredential) and must be defined using a Credential attribute declaration. This support automatically prompts the user for the user name, for the password, or for both when a full credential is not supplied directly. For more information about the Credential attribute, see [Credential Attribute Declaration](./credential-attribute-declaration.md).
+A cmdlet should define a `Credential` parameter to represent credentials. This parameter must be of type [System.Management.Automation.PSCredential](/dotnet/api/System.Management.Automation.PSCredential) and must be defined using a Credential attribute declaration. This support automatically prompts the user for the user name, for the password, or for both when a full credential is not supplied directly. For more information about the Credential attribute, see [Credential Attribute Declaration](./credential-attribute-declaration.md).
 
 ### Support Encoding Parameters (AD04)
 
@@ -83,17 +57,17 @@ When you name the .NET Framework class that implements a cmdlet, name the class 
 
 ### If No Pipeline Input Override the BeginProcessing Method (AC02)
 
-If your cmdlet does not accept input from the pipeline, processing should be implemented in the [System.Management.Automation.Cmdlet.Beginprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) method. Use of this method allows Windows PowerShell to maintain ordering between cmdlets. The first cmdlet in the pipeline always returns its objects before the remaining cmdlets in the pipeline get a chance to start their processing.
+If your cmdlet does not accept input from the pipeline, processing should be implemented in the [System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) method. Use of this method allows Windows PowerShell to maintain ordering between cmdlets. The first cmdlet in the pipeline always returns its objects before the remaining cmdlets in the pipeline get a chance to start their processing.
 
 ### To Handle Stop Requests Override the StopProcessing Method (AC03)
 
-Override the [System.Management.Automation.Cmdlet.Stopprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.StopProcessing) method so that your cmdlet can handle stop signal. Some cmdlets take a long time to complete their operation, and they let a long time pass between calls to the Windows PowerShell runtime, such as when the cmdlet blocks the thread in long-running RPC calls. This includes cmdlets that make calls to the [System.Management.Automation.Cmdlet.Writeobject*](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) method, to the [System.Management.Automation.Cmdlet.Writeerror*](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) method, and to other feedback mechanisms that may take a long time to complete. For these cases the user might need to send a stop signal to these cmdlets.
+Override the [System.Management.Automation.Cmdlet.StopProcessing](/dotnet/api/System.Management.Automation.Cmdlet.StopProcessing) method so that your cmdlet can handle stop signal. Some cmdlets take a long time to complete their operation, and they let a long time pass between calls to the Windows PowerShell runtime, such as when the cmdlet blocks the thread in long-running RPC calls. This includes cmdlets that make calls to the [System.Management.Automation.Cmdlet.WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) method, to the [System.Management.Automation.Cmdlet.WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) method, and to other feedback mechanisms that may take a long time to complete. For these cases the user might need to send a stop signal to these cmdlets.
 
 ### Implement the IDisposable Interface (AC04)
 
-If your cmdlet has objects that are not disposed of (written to the pipeline) by the [System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) method, your cmdlet might require additional object disposal. For example, if your cmdlet opens a file handle in its [System.Management.Automation.Cmdlet.Beginprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) method and keeps the handle open for use by the [System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) method, this handle has to be closed at the end of processing.
+If your cmdlet has objects that are not disposed of (written to the pipeline) by the [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) method, your cmdlet might require additional object disposal. For example, if your cmdlet opens a file handle in its [System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) method and keeps the handle open for use by the [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) method, this handle has to be closed at the end of processing.
 
-The Windows PowerShell runtime does not always call the  [System.Management.Automation.Cmdlet.Endprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) method. For example, the [System.Management.Automation.Cmdlet.Endprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) method might not be called if the cmdlet is canceled midway through its operation or if a terminating error occurs in any part of the cmdlet. Therefore, the .NET Framework class for a cmdlet that requires object cleanup should implement the complete  [System.Idisposable](/dotnet/api/System.IDisposable) interface pattern, including the finalizer, so that the Windows PowerShell runtime can call both the [System.Management.Automation.Cmdlet.Endprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) and [System.Idisposable.Dispose*](/dotnet/api/System.IDisposable.Dispose) methods at the end of processing.
+The Windows PowerShell runtime does not always call the  [System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) method. For example, the [System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) method might not be called if the cmdlet is canceled midway through its operation or if a terminating error occurs in any part of the cmdlet. Therefore, the .NET Framework class for a cmdlet that requires object cleanup should implement the complete  [System.IDisposable](/dotnet/api/System.IDisposable) interface pattern, including the finalizer, so that the Windows PowerShell runtime can call both the [System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) and [System.IDisposable.Dispose*](/dotnet/api/System.IDisposable.Dispose) methods at the end of processing.
 
 ### Use Serialization-friendly Parameter Types (AC05)
 
@@ -111,7 +85,7 @@ Built-in rehydratable types:
 
 - PSPrimitiveDictionary
 
-- SwitchParmeter
+- SwitchParameter
 
 - PSListModifier
 

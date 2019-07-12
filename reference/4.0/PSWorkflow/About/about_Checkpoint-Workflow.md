@@ -5,14 +5,15 @@ locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_Checkpoint Workflow
 ---
-
 # About Checkpoint-Workflow
 
 ## SHORT DESCRIPTION
+
 Describes the Checkpoint-Workflow activity, which takes a checkpoint in a workflow.
 
 
 ## LONG DESCRIPTION
+
 The Checkpoint-Workflow activity takes a checkpoint, which saves state and data in the workflow. If the workflow is suspended or interrupted, it can be resumed from the most recent checkpoint, rather than having to be restarted.
 
 The Checkpoint-Workflow activity is valid only in a workflow.
@@ -39,14 +40,16 @@ Consider taking checkpoints after critical steps so the workflow can be resumed 
 
 
 ### ABOUT CHECKPOINTS
+
 A checkpoint is a snapshot of the current state of the workflow, including the current values of variables, and any output generated up to that point, and it saves it to disk.
 
-If a workflow is interrupted, intentionally or unintentionally,  Windows PowerShell® Workflow automatically uses the data in newest checkpoint to recover and resume the workflow.
+If a workflow is interrupted, intentionally or unintentionally, Windows PowerShell Workflow automatically uses the data in newest checkpoint to recover and resume the workflow.
 
 When you run the workflow as a job, such as by using the AsJob workflow common parameter, the workflow checkpoints are retained until you delete the job, such as by using the Remove-Job cmdlet. Otherwise, workflow checkpoints are deleted when the workflow completes.
 
 
 ### OTHER CHECKPOINTING TECHNIQUES
+
 In addition to the Checkpoint-Workflow activity,  Windows PowerShell Workflow supports other checkpointing techniques, including the following:
 
 -- PSPersist workflow common parameter
@@ -59,10 +62,11 @@ For more information about adding a checkpoint to a workflow, see "How to Add Ch
 
 
 ## EXAMPLES
+
 The following workflow includes a call to the Checkpoint-Workflow activity after completing a long-running function and a script that share data.
 
 
-```
+```powershell
 Workflow Test-Workflow
 {
     $a = Invoke-LongRunningFunction
@@ -79,4 +83,5 @@ Workflow Test-Workflow
 
 
 ## SEE ALSO
-How to Add Checkpoints to a Workflow (http:\/\/go.microsoft.com\/fwlink\/?LinkId\=261993)
+
+[How to Add Checkpoints to a Workflow](http://go.microsoft.com/fwlink/?LinkId=261993)

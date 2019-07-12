@@ -3,7 +3,7 @@ ms.date:  10/10/2018
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
-online version:  n/a
+online version: https://go.microsoft.com/fwlink/?linkid=2096456
 external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 title:  Test-Json
 ---
@@ -26,7 +26,7 @@ The verified string can then be used with the ConvertFrom-Json cmdlet convert a 
 
 Many web sites use JSON instead of XML to serialize data for communication between servers and web-based apps.
 
-This cmdlet was introduced in Windows Powershell 6.1
+This cmdlet was introduced in Windows PowerShell 6.1
 
 ## EXAMPLES
 
@@ -75,7 +75,7 @@ PS C:\> "{'name': 'Ashley', 'age': 25}" | Test-Json -schema $schema
 True
 ```
 
-This Command takes a string containing a JSON schema and compares it to an input string.  Since the input string conforms to the schema desribed in the -schema argument the cmdlet returns `$True`.
+This Command takes a string containing a JSON schema and compares it to an input string.  Since the input string conforms to the schema described in the -schema argument the cmdlet returns `$True`.
 
 For more information, see [JSON Schema](https://json-schema.org/)
 

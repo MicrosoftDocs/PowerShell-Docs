@@ -3,7 +3,7 @@ ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821727
+online version: https://go.microsoft.com/fwlink/?linkid=821727
 external help file:  Microsoft.WSMan.Management.dll-Help.xml
 title:  Enable-WSManCredSSP
 ---
@@ -124,7 +124,7 @@ This value allows the remote computer to act as a delegate.
 Specifies servers to which client credentials are delegated.
 Specify fully qualified domain names.
 
-If the *Role* parameter is Client, you must specify this paremter.
+If the *Role* parameter is Client, you must specify this parameter.
 
 If *Role* is Server, do not specify this parameter.
 

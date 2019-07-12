@@ -3,8 +3,8 @@ external help file: System.Management.Automation.dll-Help.xml
 keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Core
-ms.date: 06/09/2017
-online version: http://go.microsoft.com/fwlink/?LinkID=403736
+ms.date: 03/22/2019
+online version: https://go.microsoft.com/fwlink/?linkid=2096162
 schema: 2.0.0
 title: Enter-PSHostProcess
 ---
@@ -37,6 +37,12 @@ Enter-PSHostProcess [-Name] <String> [[-AppDomainName] <String>] [<CommonParamet
 
 ```
 Enter-PSHostProcess [-HostProcessInfo] <PSHostProcessInfo> [[-AppDomainName] <String>] [<CommonParameters>]
+```
+
+### PipeNameParameterSet
+
+```
+Enter-PSHostProcess -CustomPipeName <String> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -112,7 +118,7 @@ PS C:\>
 
 ```yaml
 Type: String
-Parameter Sets: (All)
+Parameter Sets: ProcessIdParameterSet, ProcessParameterSet, ProcessNameParameterSet, PSHostProcessInfoParameterSet
 Aliases:
 
 Required: False
@@ -188,9 +194,30 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
+### -CustomPipeName
+
+Gets or sets the custom named pipe name to connect to.
+This is usually used in conjunction with
+`pwsh -CustomPipeName`.
+
+```yaml
+Type: String
+Parameter Sets: PipeNameParameterSet
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### CommonParameters
 
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+-InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable,
+-Verbose, -WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 

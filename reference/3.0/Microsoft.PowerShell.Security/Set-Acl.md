@@ -1,9 +1,9 @@
-﻿---
+---
 ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkID=113389
+online version: https://go.microsoft.com/fwlink/?linkid=113389
 external help file:  Microsoft.PowerShell.Security.dll-Help.xml
 title:  Set-Acl
 ---
@@ -100,10 +100,10 @@ The **Force** parameter gets hidden files, which would otherwise be excluded.
 
 The pipeline operator (|) sends the objects representing the retrieved files to the `Set-Acl` cmdlet, which applies the security descriptor in the **AclObject** parameter to all of the files in the pipeline.
 
-In practice, it is best to use the **Whatif** parameter with all `Set-Acl` commands that can affect more than one item.
+In practice, it is best to use the **WhatIf** parameter with all `Set-Acl` commands that can affect more than one item.
 In this case, the second command in the pipeline would be "`Set-Acl -AclObject $NewAcl -WhatIf`".
 This command lists the files that would be affected by the command.
-After reviewing the result, you can run the command again without the **Whatif** parameter.
+After reviewing the result, you can run the command again without the **WhatIf** parameter.
 
 ## PARAMETERS
 
@@ -225,7 +225,7 @@ Accept wildcard characters: True
 Establishes or changes the central access policy of the item.
 Enter the CAP ID or friendly name of a central access policy on the computer.
 
-Beginning in Windows ServerÂ® 2012, administrators can use Active Directory and Group Policy to set central access policies for users and groups.
+Beginning in Windows Server 2012, administrators can use Active Directory and Group Policy to set central access policies for users and groups.
 For more information, see [Dynamic Access Control: Scenario Overview](/windows-server/identity/solution-guides/dynamic-access-control--scenario-overview).
 
 This parameter is introduced in Windows PowerShell 3.0.
@@ -246,7 +246,7 @@ Accept wildcard characters: False
 
 Removes the central access policy from the specified item.
 
-Beginning in Windows ServerÂ® 2012, administrators can use Active Directory and Group Policy to set central access policies for users and groups.
+Beginning in Windows Server 2012, administrators can use Active Directory and Group Policy to set central access policies for users and groups.
 For more information, see [Dynamic Access Control: Scenario Overview](/windows-server/identity/solution-guides/dynamic-access-control--scenario-overview).
 
 This parameter is introduced in Windows PowerShell 3.0.

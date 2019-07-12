@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Core
 ms.date: 06/09/2017
-online version: http://go.microsoft.com/fwlink/?LinkID=821478
+online version: https://go.microsoft.com/fwlink/?linkid=2096278
 schema: 2.0.0
 title: Exit-PSSession
 ---
@@ -31,9 +31,9 @@ The effect is the same as using **Exit-PSSession**.
 ### Example 1: Start and stop an interactive session
 
 ```
-PS C:\> Enter-PSSession -computername Server01
+PS> Enter-PSSession -computername Server01
 Server01\PS> Exit-PSSession
-PS C:\>
+PS>
 ```
 
 These commands start and then stop an interactive session with the Server01 remote computer.
@@ -41,10 +41,10 @@ These commands start and then stop an interactive session with the Server01 remo
 ### Example 2: Start and stop an interactive session by using a PSSession object
 
 ```
-PS C:\> $s = New-PSSession -ComputerName Server01
-PS C:\> Enter-PSSession -Session $s
+PS> $s = New-PSSession -ComputerName Server01
+PS> Enter-PSSession -Session $s
 Server01\PS> Exit-PSSession
-PS C:\> $s
+PS> $s
 Id Name            ComputerName    State    ConfigurationName
 -- ----            ------------    -----    -----------------
 1  Session1        Server01        Opened   Microsoft.PowerShell
@@ -68,9 +68,9 @@ The **State** property shows the **PSSession** is still open and available for u
 ### Example 3: Use the Exit keyword to stop a session
 
 ```
-PS C:\> Enter-PSSession -computername Server01
+PS> Enter-PSSession -computername Server01
 Server01\PS> exit
-PS C:\>
+PS>
 ```
 
 This example uses the **Exit** keyword to stop an interactive session started by using **Enter-PSSession**.

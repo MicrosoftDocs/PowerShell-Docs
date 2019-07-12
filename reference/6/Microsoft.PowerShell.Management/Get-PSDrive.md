@@ -3,8 +3,8 @@ external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Management
-ms.date: 06/09/2017
-online version: http://go.microsoft.com/fwlink/?linkid=821591
+ms.date: 5/14/2019
+online version: https://go.microsoft.com/fwlink/?linkid=2096198
 schema: 2.0.0
 title: Get-PSDrive
 ---
@@ -258,7 +258,7 @@ Accept wildcard characters: False
 
 ### CommonParameters
 
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
 
 ## INPUTS
 
@@ -283,6 +283,6 @@ This cmdlet returns objects that represent the drives in the session.
 
 [Remove-PSDrive](Remove-PSDrive.md)
 
-[Get-WmiObject](https://msdn.microsoft.com/en-us/powershell/reference/5.1/Microsoft.PowerShell.Management/Get-WmiObject)
+[Get-WmiObject](../../5.1/Microsoft.PowerShell.Management/Get-WmiObject.md)
 
 [Get-PSProvider](Get-PSProvider.md)

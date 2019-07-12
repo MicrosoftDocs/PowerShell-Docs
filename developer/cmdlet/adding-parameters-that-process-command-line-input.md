@@ -20,24 +20,6 @@ caps.latest.revision: 9
 
 One source of input for a cmdlet is the command line. This topic describes how to add a parameter to the **Get-Proc** cmdlet (which is described in [Creating Your First Cmdlet](./creating-a-cmdlet-without-parameters.md)) so that the cmdlet can process input from the local computer based on explicit objects passed to the cmdlet. The **Get-Proc** cmdlet described here retrieves processes based on their names, and then displays information about the processes at a command prompt.
 
-The following sections are in this topic:
-
-- [Defining the Cmdlet Class](#Defining-the-Cmdlet-Class)
-
-- [Declaring Parameters](#Declaring-Parameters)
-
-- [Supporting Parameter Validation](#Supporting-Parameter-Validation)
-
-- [Overriding an Input Processing Method](#Overriding-an-Input-Processing-Method)
-
-- [Code Sample](#Code-Sample)
-
-- [Defining Object Types and Formatting](#Defining-Object-Types-and-Formatting)
-
-- [Building the Cmdlet](#Building-the-Cmdlet)
-
-- [Testing the Cmdlet](#Testing-the-Cmdlet)
-
 ## Defining the Cmdlet Class
 
 The first step in cmdlet creation is cmdlet naming and the declaration of the .NET Framework class that implements the cmdlet. This cmdlet retrieves process information, so the verb name chosen here is "Get." (Almost any sort of cmdlet that is capable of retrieving information can process command-line input.) For more information about approved cmdlet verbs, see [Cmdlet Verb Names](./approved-verbs-for-windows-powershell-commands.md).
@@ -141,7 +123,7 @@ public string[] Name
 
 If your cmdlet is to handle command-line input, it must override the appropriate input processing methods. The basic input processing methods are introduced in [Creating Your First Cmdlet](./creating-a-cmdlet-without-parameters.md).
 
-The **Get-Proc** cmdlet overrides the [System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) method to handle the `Name` parameter input provided by the user or a script. This method gets the processes for each requested process name, or all for processes if no name is provided. Notice that in [System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord), the call to [System.Management.Automation.Cmdlet.Writeobject%28System.Object%2Csystem.Boolean%29](/dotnet/api/system.management.automation.cmdlet.writeobject?view=powershellsdk-1.1.0#System_Management_Automation_Cmdlet_WriteObject_System_Object_System_Boolean_) is the output mechanism for sending output objects to the pipeline. The second parameter of this call, `enumerateCollection`, is set to `true` to inform the Windows PowerShell runtime to enumerate the output array of process objects and write one process at a time to the command line.
+The **Get-Proc** cmdlet overrides the [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) method to handle the `Name` parameter input provided by the user or a script. This method gets the processes for each requested process name, or all for processes if no name is provided. Notice that in [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord), the call to [System.Management.Automation.Cmdlet.WriteObject%28System.Object%2CSystem.Boolean%29](/dotnet/api/system.management.automation.cmdlet.writeobject?view=powershellsdk-1.1.0#System_Management_Automation_Cmdlet_WriteObject_System_Object_System_Boolean_) is the output mechanism for sending output objects to the pipeline. The second parameter of this call, `enumerateCollection`, is set to `true` to inform the Windows PowerShell runtime to enumerate the output array of process objects and write one process at a time to the command line.
 
 ```csharp
 protected override void ProcessRecord()

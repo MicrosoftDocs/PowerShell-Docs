@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Utility
 ms.date: 06/09/2017
-online version: http://go.microsoft.com/fwlink/?LinkId=821831
+online version: https://go.microsoft.com/fwlink/?linkid=2096433
 schema: 2.0.0
 title: New-Alias
 ---
@@ -238,9 +238,9 @@ Otherwise, this cmdlet does not generate any output.
 
 ## NOTES
 
-* To create a new alias, use Set-Alias or New-Alias. To change an alias, use **Set-Alias**. To delete an alias, use Remove-Item.
+* To create a new alias, use **Set-Alias** or **New-Alias**. To change an alias, use **Set-Alias**. 
 
-*
+* To delete an alias, use **Remove-Item**.
 
 ## RELATED LINKS
 

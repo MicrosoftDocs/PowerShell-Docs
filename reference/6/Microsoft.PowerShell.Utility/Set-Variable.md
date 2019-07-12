@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Utility
 ms.date: 06/09/2017
-online version: http://go.microsoft.com/fwlink/?LinkId=821861
+online version: https://go.microsoft.com/fwlink/?linkid=2096547
 schema: 2.0.0
 title: Set-Variable
 ---
@@ -223,6 +223,7 @@ Specifies the scope of the variable.The acceptable values for this parameter are
 - Global
 - Local
 - Script
+- Private
 - A number relative to the current scope (0 through the number of scopes, where 0 is the current scope and 1 is its parent).
 
 Local is the default.

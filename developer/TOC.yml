@@ -813,8 +813,8 @@
         href: ./format/tableheaders-element-format.md
       - name: TableRowEntries Element for TableControl (Format)
         href: ./format/tablerowentries-element-for-tablecontrol-format.md
-      - name: TableRowEntry Element for TableRowEntroes for TableControl (Format)
-        href: ./format/tablerowentry-element-for-tablerowentroes-for-tablecontrol-format.md
+      - name: TableRowEntry Element for TableRowEntries for TableControl (Format)
+        href: ./format/tablerowentry-element-for-tablerowentries-for-tablecontrol-format.md
       - name: Text Element for CustomItem for Controls for Configuration (Format)
         href: ./format/text-element-for-customitem-for-controls-for-configuration-format.md
       - name: Text Element for CustomItem for Controls for View (Format)
@@ -877,8 +877,8 @@
         href: ./format/wideitem-element-for-widecontrol-format.md
       - name: Width Element for TableColumnHeader for TableControl (Format)
         href: ./format/width-element-for-tablecolumnheader-for-tablecontrol-format.md
-      - name: Wrap Element for TableRowEntry for TableContrl  (Format)
-        href: ./format/wrap-element-for-tablerowentry-for-tablecontrl-format.md
+      - name: Wrap Element for TableRowEntry for TableControl  (Format)
+        href: ./format/wrap-element-for-tablerowentry-for-tablecontrol-format.md
       - name: WrapTables Element (Format)
         href: ./format/wraptables-element-format.md
   - name: Writing Comment-Based Help Topics

@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: PSDesiredStateConfiguration
 ms.date: 06/09/2017
-online version: http://go.microsoft.com/fwlink/?LinkId=821456
+online version: https://go.microsoft.com/fwlink/?linkid=821456
 schema: 2.0.0
 title: Get-DscConfigurationStatus
 ---
@@ -101,7 +101,7 @@ Accept wildcard characters: False
 
 ### -ThrottleLimit
 Specifies the maximum number of concurrent operations that can be established to run the cmdlet.
-If this parameter is omitted or a value of `0` is entered, then Windows PowerShell® calculates an optimum throttle limit for the cmdlet based on the number of CIM cmdlets that are running on the computer.
+If this parameter is omitted or a value of `0` is entered, then Windows PowerShell calculates an optimum throttle limit for the cmdlet based on the number of CIM cmdlets that are running on the computer.
 The throttle limit applies only to the current cmdlet, not to the session or to the computer.
 
 ```yaml

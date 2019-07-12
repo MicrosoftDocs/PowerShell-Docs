@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Security
 ms.date: 11/02/2018
-online version: http://go.microsoft.com/fwlink/?LinkId=822569
+online version: https://go.microsoft.com/fwlink/?linkid=822569
 schema: 2.0.0
 title: New-FileCatalog
 ---
@@ -25,7 +25,7 @@ New-FileCatalog [-CatalogVersion <Int32>] [-CatalogFilePath] <String> [[-Path] <
 
 ## DESCRIPTION
 
-`New-FileCatalog` creates a [Windows catalog file](https://docs.microsoft.com/windows-hardware/drivers/install/catalog-files)
+`New-FileCatalog` creates a [Windows catalog file](/windows-hardware/drivers/install/catalog-files)
 for a set of folders and files.
 This catalog file contains hashes for all files in the provided paths.
 Users can then distribute the catalog with their files so that users can validate
@@ -155,7 +155,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
 
 ## INPUTS
 

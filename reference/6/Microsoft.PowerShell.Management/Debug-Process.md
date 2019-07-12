@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Management
 ms.date: 06/09/2017
-online version: http://go.microsoft.com/fwlink/?LinkId=821577
+online version: https://go.microsoft.com/fwlink/?linkid=2096193
 schema: 2.0.0
 title: Debug-Process
 ---
@@ -49,7 +49,7 @@ Before using this cmdlet, verify that a debugger is downloaded and correctly con
 PS C:\> Debug-Process -Name "Windows Powershell"
 ```
 
-This command attaches a debugger to the Windows PowerShell process on the computer.
+This command attaches a debugger to the PowerShell process on the computer.
 
 ### Example 2: Attach a debugger to all processes that begin with the specified string
 
@@ -81,8 +81,8 @@ This command attaches a debugger to the processes that have process IDs 1132 and
 PS C:\> Get-Process "Windows PowerShell" | Debug-Process
 ```
 
-This command attaches a debugger to the Windows PowerShell processes on the computer.
-It uses the **Get-Process** cmdlet to get the Windows PowerShell processes on the computer, and it uses a pipeline operator (|) to send the processes to the **Debug-Process** cmdlet.
+This command attaches a debugger to the PowerShell processes on the computer.
+It uses the **Get-Process** cmdlet to get the PowerShell processes on the computer, and it uses a pipeline operator (|) to send the processes to the **Debug-Process** cmdlet.
 
 To specify a particular PowerShell process, use the ID parameter of **Get-Process**.
 
@@ -92,9 +92,9 @@ To specify a particular PowerShell process, use the ID parameter of **Get-Proces
 PS C:\> $PID | Debug-Process
 ```
 
-This command attaches a debugger to the current Windows PowerShell processes on the computer.
+This command attaches a debugger to the current PowerShell processes on the computer.
 
-The command uses the $PID automatic variable, which contains the process ID of the current Windows PowerShell process.
+The command uses the $PID automatic variable, which contains the process ID of the current PowerShell process.
 Then, it uses a pipeline operator (|) to send the process ID to the **Debug-Process** cmdlet.
 
 For more information about the $PID automatic variable, see about_Automatic_Variables.
@@ -106,9 +106,9 @@ PS C:\> $P = Get-Process "Windows PowerShell"
 PS C:\> Debug-Process -InputObject $P
 ```
 
-This command attaches a debugger to the Windows PowerShell processes on the local computer.
+This command attaches a debugger to the PowerShell processes on the local computer.
 
-The first command uses the **Get-Process** cmdlet to get the Windows PowerShell processes on the computer.
+The first command uses the **Get-Process** cmdlet to get the PowerShell processes on the computer.
 It saves the resulting process object in the variable named $P.
 
 The second command uses the *InputObject* parameter of the **Debug-Process** cmdlet to submit the process object in the $P variable.

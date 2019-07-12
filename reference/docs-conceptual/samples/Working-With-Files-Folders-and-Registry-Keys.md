@@ -2,13 +2,12 @@
 ms.date:  06/05/2017
 keywords:  powershell,cmdlet
 title:  Working With Files Folders and Registry Keys
-ms.assetid:  e6cf87aa-b5f8-48d5-a75a-7cb7ecb482dc
 ---
 # Working With Files, Folders and Registry Keys
 
 Windows PowerShell uses the noun **Item** to refer to items found on a Windows PowerShell drive. When dealing with the Windows PowerShell FileSystem provider, an **Item** might be a file, a folder, or the Windows PowerShell drive. Listing and working with these items is a critical basic task in most administrative settings, so we want to discuss these tasks in detail.
 
-### Enumerating Files, Folders, and Registry Keys (Get-ChildItem)
+## Enumerating Files, Folders, and Registry Keys (Get-ChildItem)
 
 Since getting a collection of items from a particular location is such a common task, the **Get-ChildItem** cmdlet is designed specifically to return all items found within a container such as a folder.
 
@@ -36,7 +35,7 @@ Get-Command -Name Get-ChildItem -Syntax
 
 These parameters can be mixed and matched to get highly customized output.
 
-#### Listing all Contained Items (-Recurse)
+### Listing all Contained Items (-Recurse)
 
 To see both the items inside a Windows folder and any items that are contained within the subfolders, use the **Recurse** parameter of **Get-ChildItem**. The listing displays everything within the Windows folder and the items in its subfolders. For example:
 
@@ -51,7 +50,7 @@ Mode                LastWriteTime     Length Name
 ...
 ```
 
-#### Filtering Items by Name (-Name)
+### Filtering Items by Name (-Name)
 
 To display only the names of items, use the **Name** parameter of **Get-Childitem**:
 
@@ -63,7 +62,7 @@ assembly
 ...
 ```
 
-#### Forcibly Listing Hidden Items (-Force)
+### Forcibly Listing Hidden Items (-Force)
 
 Items that are normally invisible in File Explorer or Cmd.exe are not displayed in the output of a **Get-ChildItem** command. To display hidden items, use the **Force** parameter of **Get-ChildItem**. For example:
 
@@ -73,7 +72,7 @@ Get-ChildItem -Path C:\Windows -Force
 
 This parameter is named Force because you can forcibly override the normal behavior of the **Get-ChildItem** command. Force is a widely used parameter that forces an action that a cmdlet would not normally perform, although it will not perform any action that compromises the security of the system.
 
-#### Matching Item Names with Wildcards
+### Matching Item Names with Wildcards
 
 **The Get-ChildItem** command accepts wildcards in the path of the items to list.
 
@@ -116,7 +115,7 @@ To find all files whose names begin with **x** or **z**, type:
 Get-ChildItem -Path C:\Windows\[xz]*
 ```
 
-#### Excluding Items (-Exclude)
+### Excluding Items (-Exclude)
 
 You can exclude specific items by using the **Exclude** parameter of Get-ChildItem. This lets you perform complex filtering in a single statement.
 
@@ -141,7 +140,7 @@ Mode                LastWriteTime     Length Name
 -a---        2004-08-04   8:00 AM      18432 wtsapi32.dll
 ```
 
-#### Mixing Get-ChildItem Parameters
+### Mixing Get-ChildItem Parameters
 
 You can use several of the parameters of the **Get-ChildItem** cmdlet in the same command. Before you mix parameters, be sure that you understand wildcard matching. For example, the following command returns no results:
 

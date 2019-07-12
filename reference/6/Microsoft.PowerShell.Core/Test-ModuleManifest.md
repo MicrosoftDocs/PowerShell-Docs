@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Core
 ms.date: 06/09/2017
-online version: http://go.microsoft.com/fwlink/?LinkId=821521
+online version: https://go.microsoft.com/fwlink/?linkid=2096286
 schema: 2.0.0
 title: Test-ModuleManifest
 ---
@@ -34,16 +34,19 @@ If any files are not in the locations specified in the manifest, the cmdlet also
 
 ### Example 1: Test a manifest
 
-```
-PS C:\> test-ModuleManifest -Path "$pshome\Modules\TestModule.psd1"
+```powershell
+test-ModuleManifest -Path "$pshome\Modules\TestModule.psd1"
 ```
 
 This command tests the TestModule.psd1 module manifest.
 
 ### Example 2: Test a manifest by using the pipeline
 
+```powershell
+"$pshome\Modules\TestModule.psd1" | test-modulemanifest
 ```
-PS C:\> "$pshome\Modules\TestModule.psd1" | test-modulemanifest
+
+```Output
 Test-ModuleManifest : The specified type data file 'C:\Windows\System32\Wi
 ndowsPowerShell\v1.0\Modules\TestModule\TestTypes.ps1xml' could not be processed because the file was not found. Please correct the path and try again.
 At line:1 char:34
@@ -72,8 +75,11 @@ The command output shows that the test failed, because the TestTypes.ps1xml file
 
 ### Example 3: Write a function to test a module manifest
 
+```powershell
+function Test-ManifestBool ($path)
 ```
-PS C:\> function Test-ManifestBool ($path)
+
+```Output
 {$a = dir $path | Test-ModuleManifest -ErrorAction SilentlyContinue $?}
 ```
 

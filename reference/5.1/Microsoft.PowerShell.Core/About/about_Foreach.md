@@ -1,5 +1,5 @@
 ---
-md.date: 2/27/2019
+ms.date: 2/27/2019
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -175,19 +175,23 @@ function Get-FunctionPosition {
   process {
     try {
       $filesToProcess = if ($_ -is [System.IO.FileSystemInfo]) {
+        Write-Verbose "From pipeline"
         $_
       } else {
-        $filesToProcess = Get-Item -Path $Path
+        Write-Verbose "From parameter, $Path"
+        Get-Item -Path $Path
       }
       $parser = [System.Management.Automation.Language.Parser]
+      Write-Verbose "lets start the foreach loop on `$filesToProcess with $($filesToProcess.count) as count"
       foreach ($item in $filesToProcess) {
+        Write-Verbose "$item"
         if ($item.PSIsContainer -or
             $item.Extension -notin @('.ps1', '.psm1')) {
           continue
         }
         $tokens = $errors = $null
-        $ast = $parser::ParseFile($item.FullName, ([REF]$tokens),
-          ([REF]$errors))
+        $parser::ParseFile($item.FullName, ([REF]$tokens),
+          ([REF]$errors)) | Out-Null
         if ($errors) {
           $msg = "File '{0}' has {1} parser errors." -f $item.FullName,
             $errors.Count

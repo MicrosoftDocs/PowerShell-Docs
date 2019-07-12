@@ -1,10 +1,11 @@
 ---
-ms.date:  09/07/2018
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:
+ms.date: 09/07/2018
+schema: 2.0.0
+locale: en-us
+keywords: powershell,cmdlet
+online version: https://go.microsoft.com/fwlink/?linkid=2096440
 external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+title: Get-Verb
 ---
 # Get-Verb
 

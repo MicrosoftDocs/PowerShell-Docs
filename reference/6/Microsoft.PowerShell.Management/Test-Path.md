@@ -1,9 +1,9 @@
 ---
-ms.date:  10/18/2018
+ms.date:  03/22/2019
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821647
+online version: https://go.microsoft.com/fwlink/?linkid=2096870
 external help file:  Microsoft.PowerShell.Commands.Management.dll-Help.xml
 title:  Test-Path
 ---
@@ -35,6 +35,8 @@ Test-Path -LiteralPath <String[]> [-Filter <String>] [-Include <String[]>] [-Exc
 The `Test-Path` cmdlet determines whether all elements of the path exist.
 It returns `$True` if all elements exist and `$False` if any are missing.
 It can also tell whether the path syntax is valid and whether the path leads to a container or a terminal or leaf element.
+If the `Path` is whitespace, then `$False` is returned.
+If the `Path` is `$null`, array of `$null` or empty array, a non-terminating error is returned.
 
 ## EXAMPLES
 
@@ -111,7 +113,7 @@ True
 ```
 
 This command checks whether the path stored in the `$profile` variable leads to a file.
-In this case, because the PowerShell profile is a .ps1 file, the cmdlet returns `$True`.
+In this case, because the PowerShell profile is a `.ps1` file, the cmdlet returns `$True`.
 
 ### Example 5: Check paths in the Registry
 
@@ -154,11 +156,47 @@ Test-Path $pshome\PowerShell.exe -NewerThan "July 13, 2009"
 True
 ```
 
+### Example 7: Test a path with null as the value
+
+The error returned for `null`, array of `null` or empty array is a non-terminating error.
+It can be suppress by using `-ErrorAction SilentlyContinue`.
+The following example shows all cases which return the `NullPathNotPermitted` error.
+
+```powershell
+Test-Path $null
+Test-Path $null, $null
+Test-Path @()
+```
+
+```output
+Test-Path : Value cannot be null.
+Parameter name: The provided Path argument was null or an empty collection.
+At line:1 char:1
++ Test-Path @()
++ ~~~~~~~~~~~~~
++ CategoryInfo          : InvalidArgument: (System.String[]:String[]) [Test-Path], ArgumentNullException
++ FullyQualifiedErrorId : NullPathNotPermitted,Microsoft.PowerShell.Commands.TestPathCommand
+```
+
+### Example 8: Test a path with whitespace as the value
+
+When a whitespace is or empty string in provided for the the `-Path` parameter, it returns false.
+The following example show whitespace and empty string.
+
+```powershell
+Test-Path ' '
+Test-Path ''
+```
+
+```output
+False
+```
+
 ## PARAMETERS
 
 ### -Credential
 
-Specifies a user account that has permission to perform this action.
+Specifies a user account that has permission to do this action.
 The default is the current user.
 
 Type a user name, such as User01 or Domain01\User01.

@@ -3,7 +3,7 @@ ms.date:  2/11/2019
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821856
+online version: https://go.microsoft.com/fwlink/?linkid=2096888
 external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 title:  Send-MailMessage
 ---
@@ -15,11 +15,14 @@ Sends an email message.
 
 ## SYNTAX
 
+### All
+
 ```
 Send-MailMessage [-To] <string[]> [-Subject] <string> [[-Body] <string>] [[-SmtpServer] <string>]
--From <string> [-Attachments <string[]>] [-Bcc <string[]>] [-BodyAsHtml] [-Encoding <Encoding>]
-[-Cc <string[]>] [-DeliveryNotificationOption <DeliveryNotificationOptions>]
-[-Priority <MailPriority>] [-Credential <pscredential>] [-UseSsl] [-Port <int>] [<CommonParameters>]
+ -From <string> [-Attachments <string[]>] [-Bcc <string[]>] [-BodyAsHtml] [-Encoding <Encoding>]
+ [-Cc <string[]>] [-DeliveryNotificationOption <DeliveryNotificationOptions>]
+ [-Priority <MailPriority>] [-ReplyTo <string[]>] [-Credential <pscredential>] [-UseSsl]
+ [-Port <int>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -35,14 +38,14 @@ information, see [about_Preference_Variables](../Microsoft.PowerShell.Core/About
 
 ### Example 1: Send an email from one person to another person
 
-This command sends an email message from one person to another person.
+This example sends an email message from one person to another person.
 
 The **From**, **To**, and **Subject** parameters are required by `Send-MailMessage`. This example
 uses the default `$PSEmailServer` variable for the SMTP server, so the **SmtpServer** parameter is
 not needed.
 
-```
-PS> Send-MailMessage -From 'User01 <user01@fabrikam.com>' -To 'User02 <user02@fabrikam.com>' -Subject 'Test mail'
+```powershell
+Send-MailMessage -From 'User01 <user01@fabrikam.com>' -To 'User02 <user02@fabrikam.com>' -Subject 'Test mail'
 ```
 
 The `Send-MailMessage` cmdlet uses the **From** parameter to specify the message's sender. The
@@ -51,10 +54,10 @@ The `Send-MailMessage` cmdlet uses the **From** parameter to specify the message
 
 ### Example 2: Send an attachment
 
-This command sends an email message with an attachment.
+This example sends an email message with an attachment.
 
-```
-PS> Send-MailMessage -From 'User01 <user01@fabrikam.com>' -To 'User02 <user02@fabrikam.com>', 'User03 <user03@fabrikam.com>' -Subject 'Sending the Attachment' -Body 'Forgot to send the attachment. Sending now.' -Attachments .\data.csv -Priority High -DeliveryNotificationOption OnSuccess, OnFailure -SmtpServer 'smtp.fabrikam.com'
+```powershell
+Send-MailMessage -From 'User01 <user01@fabrikam.com>' -To 'User02 <user02@fabrikam.com>', 'User03 <user03@fabrikam.com>' -Subject 'Sending the Attachment' -Body "Forgot to send the attachment. Sending now." -Attachments .\data.csv -Priority High -DeliveryNotificationOption OnSuccess, OnFailure -SmtpServer 'smtp.fabrikam.com'
 ```
 
 The `Send-MailMessage` cmdlet uses the **From** parameter to specify the message's sender. The
@@ -69,10 +72,10 @@ The **SmtpServer** parameter sets the SMTP server to **smtp.fabrikam.com**.
 
 ### Example 3: Send email to a mailing list
 
-This command sends an email message to a mailing list.
+This example sends an email message to a mailing list.
 
-```
-PS> Send-MailMessage -From 'User01 <user01@fabrikam.com>' -To 'ITGroup <itdept@fabrikam.com>' -Cc 'User02 <user02@fabrikam.com>' -Bcc 'ITMgr <itmgr@fabrikam.com>' -Subject 'Don't forget today's meeting!' -Credential domain01\admin01 -UseSsl
+```powershell
+Send-MailMessage -From 'User01 <user01@fabrikam.com>' -To 'ITGroup <itdept@fabrikam.com>' -Cc 'User02 <user02@fabrikam.com>' -Bcc 'ITMgr <itmgr@fabrikam.com>' -Subject "Don't forget today's meeting!" -Credential domain01\admin01 -UseSsl
 ```
 
 The `Send-MailMessage` cmdlet uses the **From** parameter to specify the message's sender. The
@@ -170,6 +173,23 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -ReplyTo
+
+Specifies additional email addresses (other than the From address) to use to reply to this message.
+Enter names (optional) and the email address, such as `Name <someone@fabrikam.com>`.
+
+```yaml
+Type: String[]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Credential
 
 Specifies a user account that has permission to perform this action. The default is the current
@@ -226,23 +246,24 @@ The acceptable values for this parameter are as follows:
 
 - **ASCII**: Uses the encoding for the ASCII (7-bit) character set.
 - **BigEndianUnicode**: Encodes in UTF-16 format using the big-endian byte order.
-- **Byte**: Encodes a set of characters into a sequence of bytes.
-- **Default**: Encodes using the default value: ASCII.
 - **OEM**: Uses the default encoding for MS-DOS and console programs.
-- **String**: Uses the encoding type for a string.
 - **Unicode**: Encodes in UTF-16 format using the little-endian byte order.
 - **UTF7**: Encodes in UTF-7 format.
 - **UTF8**: Encodes in UTF-8 format.
 - **UTF8BOM**: Encodes in UTF-8 format with Byte Order Mark (BOM)
 - **UTF8NoBOM**: Encodes in UTF-8 format without Byte Order Mark (BOM)
 - **UTF32**: Encodes in UTF-32 format.
-- **Unknown**: The encoding type is unknown or invalid; the data can be treated as binary.
+
+Beginning with PowerShell 6.2, the **Encoding** parameter also allows numeric IDs of registered code
+pages (like `-Encoding 1251`) or string names of registered code pages (like
+`-Encoding "windows-1251"`). For more information, see the .NET documentation for
+[Encoding.CodePage](/dotnet/api/system.text.encoding.codepage?view=netcore-2.2).
 
 ```yaml
 Type: Encoding
 Parameter Sets: (All)
 Aliases: BE
-Accepted values: ASCII, BigEndianUnicode, Byte, Default, OEM, String, Unicode, UTF7, UTF8, UTF8BOM, UTF8NoBOM, UTF32, Unknown
+Accepted values: ASCII, BigEndianUnicode, OEM, Unicode, UTF7, UTF8, UTF8BOM, UTF8NoBOM, UTF32
 
 Required: False
 Position: Named
@@ -324,7 +345,7 @@ Accept wildcard characters: False
 
 ### -Subject
 
-Th **Subject** parameter is required. This parameter specifies the subject of the email message.
+The **Subject** parameter is required. This parameter specifies the subject of the email message.
 
 ```yaml
 Type: String

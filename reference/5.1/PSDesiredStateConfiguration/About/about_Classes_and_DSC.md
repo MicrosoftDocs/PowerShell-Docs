@@ -220,12 +220,12 @@ class FileResource
 
         [System.IO.FileInfo]
         $destFileInfo = new-object System.IO.FileInfo($this.Path)
-        
+
         if (-not $destFileInfo.Directory.Exists)
         {
             $FullName = $destFileInfo.Directory.FullName
             $Message = "Creating directory $FullName"
-            
+
             Write-Verbose -Message $Message
 
             #use CreateDirectory instead of New-Item to avoid code
@@ -362,14 +362,14 @@ class FileResource{
             throw "SourcePath '$this.SourcePath' is not found."
         }
 
-        [System.IO.FileInfo] 
+        [System.IO.FileInfo]
         $destFileInfo = new-object System.IO.FileInfo($this.Path)
-        
+
         if (-not $destFileInfo.Directory.Exists)
         {
-            $FullName = $destFileInfo.Directory.FullName 
+            $FullName = $destFileInfo.Directory.FullName
             $Message = "Creating directory $FullName"
-            
+
             Write-Verbose -Message $Message
 
             #use CreateDirectory instead of New-Item to avoid lines
@@ -454,7 +454,7 @@ following configuration references the MyDSCResource module. Save the
 configuration as a script, MyResource.ps1.
 
 For information about how to run a DSC configuration,
-see [Windows PowerShell Desired State Configuration Overview](/dsc/overview/overview.md).
+see [Windows PowerShell Desired State Configuration Overview](/powershell/dsc/overview/overview).
 
 Before you run the configuration, create `C:\test.txt`. The configuration
 checks if the file exists at `c:\test\test.txt`. If the file does not exist,
@@ -669,7 +669,7 @@ enum OtherEnum { Max = [SomeEnum]::Max + 1 }
 The `hidden` keyword, introduced in Windows PowerShell 5.0, hides class
 members from default `Get-Member` results. Specify the hidden property as
 shown in the following line:
- 
+
 ```powershell
 hidden [type] $classmember = <value>
 ```
@@ -686,7 +686,7 @@ For more information, see
 ### Import-DscResource
 
 `Import-DscResource` is now a true dynamic keyword. PowerShell parses the
-specified module’s root module, searching for classes that contain the
+specified module's root module, searching for classes that contain the
 DscResource attribute.
 
 ### Properties
@@ -735,10 +735,10 @@ The following are ways of instantiating classes:
   `$a = [MyClass]::new()`
 
 - Calling a constructor with a parameter.
- 
+
   `$b = [MyClass]::new(42)`
 
-- Passing an array to a constructor with multiple parameters 
+- Passing an array to a constructor with multiple parameters
 
   `$c = [MyClass]::new(@(42,43,44), "Hello")`
 
@@ -900,7 +900,7 @@ class Element
 
 #
 # Helper functions for creating specific element types on top of the classes.
-# These are required because types aren’t visible outside of the module.
+# These are required because types aren't visible outside of the module.
 #
 function H1 {[Element] @{Tag = "H1"; Text = $args.foreach{$_} -join " "}}
 function H2 {[Element] @{Tag = "H2"; Text = $args.foreach{$_} -join " "}}
@@ -981,4 +981,4 @@ function Html ([HTML] $doc) { return $doc }
 
 [about_Methods](../../Microsoft.PowerShell.Core/About/about_Methods.md)
 
-[Build Custom Windows PowerShell Desired State Configuration Resources](https://docs.microsoft.com/powershell/dsc/resources/authoringResource)
+[Build Custom Windows PowerShell Desired State Configuration Resources](/powershell/dsc/resources/authoringResource)

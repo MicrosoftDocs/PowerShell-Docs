@@ -3,11 +3,12 @@ external help file: PSModule-help.xml
 keywords: powershell,cmdlet
 locale: en-us
 Module Name: PowerShellGet
-ms.date: 06/09/2017
-online version: http://go.microsoft.com/fwlink/?LinkId=822321
+ms.date: 06/05/2019
+online version: https://go.microsoft.com/fwlink/?linkid=2096556
 schema: 2.0.0
 title: Find-RoleCapability
 ---
+
 # Find-RoleCapability
 
 ## SYNOPSIS
@@ -15,102 +16,122 @@ Finds role capabilities in modules.
 
 ## SYNTAX
 
+### All
+
 ```
-Find-RoleCapability [[-Name] <String[]>] [-ModuleName <String>] [-MinimumVersion <String>]
- [-MaximumVersion <String>] [-RequiredVersion <String>] [-AllVersions] [-AllowPrerelease] [-Tag <String[]>]
- [-Filter <String>] [-Proxy <Uri>] [-ProxyCredential <PSCredential>] [-Repository <String[]>]
- [<CommonParameters>]
+Find-RoleCapability [[-Name] <String[]>] [-ModuleName <String>] [-MinimumVersion <String>] 
+[-MaximumVersion <String>] [-RequiredVersion <String>] [-AllVersions] [-AllowPrerelease] 
+[-Tag <String[]>] [-Filter <String>] [-Proxy <Uri>] [-ProxyCredential <PSCredential>] 
+[-Repository <String[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 
-The `Find-RoleCapability` cmdlet finds PowerShell role capabilities in modules.
-`Find-RoleCapability` searches modules in registered repositories.
+The `Find-RoleCapability` cmdlet searches registered repositories to find PowerShell role
+capabilities and modules.
 
-For each role capability that this cmdlet finds, it returns a **PSGetRoleCapabilityInfo** object.
-You can pass a **PSGetRoleCapabilityInfo** object to the `Install-Module` cmdlet to install the
-module that contains the role capability.
+For each role capability found by `Find-RoleCapability`, a **PSGetRoleCapabilityInfo** object is
+returned. **PSGetRoleCapabilityInfo** objects can be sent down the pipeline to the `Install-Module`
+or `Save-Module` cmdlets.
 
-PowerShell role capabilities define which commands, applications, and so on are available to a user
-at a Just Enough Administration (JEA) endpoint.
-Role capabilities are defined by files with a .psrc extension.
+PowerShell role capabilities define which commands and applications are available to a user at a
+Just Enough Administration (JEA) endpoint. Role capabilities are defined by files with a `.psrc`
+extension.
 
 ## EXAMPLES
 
-### Example 1: Find all role capabilities
+### Example 1: Find role capabilities
+
+`Find-RoleCapability` finds role capabilities in each registered repository. To search a specific
+repository, use the **Repository** parameter.
 
 ```powershell
 Find-RoleCapability
 ```
 
-```Output
-Name                                Version    ModuleName                          Repository
-----                                -------    ----------                          ----------
-Maintenance                         1.0        Demo_Module                         PSGallery
-MyJeaRole                           0.0.3      MyJeaModule                         PSGallery
-MyRoleCap                           0.2.0.6    MyRoleCapabilityModule              PSGallery
+```output
+Name             Version    ModuleName     Repository
+----             -------    ----------     ----------
+General-Lev1     1.0        JeaExamples    PSGallery
+General-Lev2     1.0        JeaExamples    PSGallery
+IIS-Lev1         1.0        JeaExamples    PSGallery
+IIS-Lev2         1.0        JeaExamples    PSGallery
 ```
-
-This command finds all role capabilities.
 
 ### Example 2: Find role capabilities by name
 
-```powershell
-Find-RoleCapability -Name "Maintenance,MyJeaRole"
-```
-
-```Output
-Name                                Version    ModuleName                          Repository
-----                                -------    ----------                          ----------
-Maintenance                         1.0        Demo_Module                         PSGallery
-MyJeaRole                           0.0.3      MyJeaModule                         PSGallery
-```
-
-This command finds the role capabilities named Maintenance and MyJeaRole.
-
-### Example 3: Find role capabilities and save them
+`Find-RoleCapability` finds role capabilities by name. Use commas to separate an array of names.
 
 ```powershell
-Find-RoleCapability -Name "Maintenance,MyJeaRole" | Save-Module -Path "C:\MyModulesPath"
-Get-ChildItem -Path "C:\MyModulesPath"
+Find-RoleCapability -Name General-Lev1, IIS-Lev2
 ```
 
-```Output
+```output
+Name             Version    ModuleName     Repository
+----             -------    ----------     ----------
+General-Lev1     1.0        JeaExamples    PSGallery
+IIS-Lev2         1.0        JeaExamples    PSGallery
+```
+
+### Example 3: Find and save a role capability's module
+
+The `Find-RoleCapability` cmdlet finds a role capability and sends the object down the pipeline.
+`Save-Module` saves the role capability's module to a file system. `Get-ChildItem` displays the
+contents of the module's directory.
+
+```
+PS> Find-RoleCapability -Name General-Lev1 | Save-Module -Path C:\Test\Modules
+
+PS> Get-ChildItem -Path C:\Test\Modules\JeaExamples\1.0\
+
+    Directory: C:\Test\Modules\JeaExamples\1.0
+
 Mode                LastWriteTime         Length Name
 ----                -------------         ------ ----
-d-----       11/18/2015  11:46 PM                Demo_Module
-d-----       10/29/2015   6:32 PM                MyJeaModule
+d-----          6/4/2019    16:37                RoleCapabilities
+-a----          2/5/2019    18:46           1702 CreateRegisterPSSC.ps1
+-a----          2/5/2019    18:46           7656 JeaExamples.psd1
+-a----         10/1/2018    08:16            595 JeaExamples.psm1
 ```
 
-The first command finds the role capabilities named Maintenance and MyJeaRole, and uses the pipeline
-operator to pass them to `Save-Module`, which saves the modules that contain the role capabilities
-to a local folder.
+`Find-RoleCapability` uses the **Name** parameter to specify the **General-Lev1** role capability.
+The object is sent down the pipeline. `Save-Module` uses the **Path** parameter for the file system
+location to save the module. After the module is saved, `Get-ChildItem` specifies the module's
+**Path** and displays the contents of the **JeaExamples** module's directory.
 
-The second command uses `Get-ChildItem` to get the items saved with the prior command.
+### Example 4: Find and install a role capability's module
 
-### Example 4: Find role capabilities and install them
+`Find-RoleCapability` finds the module and sends the object down the pipeline. `Install-Module`
+installs the module. After the installation, use `Get-InstalledModule` to see the results.
 
-```powershell
-Find-RoleCapability -Name "Maintenance,MyJeaRole" | Install-Module
-Get-InstalledModule
+```
+PS> Find-RoleCapability -Name General-Lev1 | Install-Module -Verbose
+
+VERBOSE: Downloading 'https://www.powershellgallery.com/api/v2/package/JeaExamples/1.0.0'.
+VERBOSE: Completed downloading 'https://www.powershellgallery.com/api/v2/package/JeaExamples/1.0.0'.
+VERBOSE: Completed downloading 'JeaExamples'.
+VERBOSE: InstallPackageLocal' - name='JeaExamples', version='1.0',
+VERBOSE: Validating the 'JeaExamples' module contents
+VERBOSE: Test-ModuleManifest successfully validated the module manifest file
+VERBOSE: Module 'JeaExamples' was installed successfully to path
+
+PS> Get-InstalledModule
+
+Version    Name            Repository     Description
+-------    ----            ----------     -----------
+1.0        JeaExamples     PSGallery      Some example Jea roles for general server maintenance...
 ```
 
-```Output
-    Version    Name                                Type       Repository           Description
-    -------    ----                                ----       ----------           -----------
-    1.0        Demo_Module                         Module     PSGallery            JEA RoleCapabilities
-    0.0.3      MyJeaModule                         Module     PSGallery            MyJeaModule description
-```
-
-The first command finds the role capabilities named Maintenance and MyJeaRole, and uses the pipeline
-operator to pass them to `Install-Module`, which installs the modules.
-
-The second command gets the installed modules.
+`Find-RoleCapability` uses the **Name** parameter to specify the **General-Lev1** role capability.
+The object is sent down the pipeline. `Install-Module` uses the **Verbose** parameter to display
+status messages during the installation. After the install is finished, the `Get-InstalledModule`
+output confirms that the **JeaExamples** module was installed.
 
 ## PARAMETERS
 
 ### -AllowPrerelease
-Includes resources marked as prerelease.
+
+Includes resources marked as a prerelease in the results.
 
 ```yaml
 Type: SwitchParameter
@@ -126,7 +147,8 @@ Accept wildcard characters: False
 
 ### -AllVersions
 
-Indicates that this cmdlet gets all versions of a module.
+Indicates that this cmdlet gets all versions of a module. The **AllVersions** parameter displays
+each of a module's available versions.
 
 ```yaml
 Type: SwitchParameter
@@ -142,8 +164,8 @@ Accept wildcard characters: False
 
 ### -Filter
 
-Finds modules based on the PackageManagement provider-specific search syntax.
-For NuGet, this is the equivalent of using the search bar on the PowerShell Gallery website.
+Finds resources based on the **PackageManagement** provider's search syntax. For example, specify
+words to search for within the **ModuleName** and **Description** properties.
 
 ```yaml
 Type: String
@@ -159,6 +181,9 @@ Accept wildcard characters: False
 
 ### -MaximumVersion
 
+Specifies the maximum version of the module to include in results. The **MaximumVersion** and the
+**RequiredVersion** parameters can't be used in the same command.
+
 ```yaml
 Type: String
 Parameter Sets: (All)
@@ -173,9 +198,8 @@ Accept wildcard characters: False
 
 ### -MinimumVersion
 
-Specifies the minimum version of the module to include in results.
-The **MinimumVersion** and the **RequiredVersion** parameters are mutually exclusive; you cannot use
-both parameters in the same command.
+Specifies the minimum version of the module to include in results. The **MinimumVersion** and the
+**RequiredVersion** parameters can't be used in the same command.
 
 ```yaml
 Type: String
@@ -191,8 +215,8 @@ Accept wildcard characters: False
 
 ### -ModuleName
 
-Specifies the name of the module in which to search for role capabilities.
-The default is all modules.
+Specifies the name of the module in which to search for role capabilities. The default is all
+modules.
 
 ```yaml
 Type: String
@@ -208,7 +232,8 @@ Accept wildcard characters: False
 
 ### -Name
 
-Specifies an array of names of role capabilities to search for.
+Specifies the name of a role capability. The default is all role capabilities. Use commas to
+separate an array of resource names.
 
 ```yaml
 Type: String[]
@@ -224,6 +249,8 @@ Accept wildcard characters: False
 
 ### -Proxy
 
+Specifies a proxy server for the request, rather than a direct connection to the internet resource.
+
 ```yaml
 Type: Uri
 Parameter Sets: (All)
@@ -237,6 +264,9 @@ Accept wildcard characters: False
 ```
 
 ### -ProxyCredential
+
+Specifies a user account with permission to use the proxy server specified in the **Proxy**
+parameter.
 
 ```yaml
 Type: PSCredential
@@ -252,8 +282,8 @@ Accept wildcard characters: False
 
 ### -Repository
 
-Specifies an array of registered repositories in which to search.
-The default is all repositories.
+Specifies a repository to search for role capabilities. Use commas to separate an array of
+repository names.
 
 ```yaml
 Type: String[]
@@ -269,7 +299,8 @@ Accept wildcard characters: False
 
 ### -RequiredVersion
 
-Specifies the version of the module to include in the results.
+Specifies the module's exact version number to include in the results. The **RequiredVersion** and
+the **MinimumVersion** parameters can't be used in the same command.
 
 ```yaml
 Type: String
@@ -285,7 +316,7 @@ Accept wildcard characters: False
 
 ### -Tag
 
-Specifies an array of tags.
+Specifies tags that categorize modules in a repository. Use commas to separate an array of tags.
 
 ```yaml
 Type: String[]
@@ -303,12 +334,26 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
+-WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
+### PSGetRoleCapabilityInfo
+
+The `Find-RoleCapability` cmdlet returns a **PSGetRoleCapabilityInfo** object.
+
 ## NOTES
 
 ## RELATED LINKS
+
+[Get-ChildItem](../Microsoft.PowerShell.Management/Get-ChildItem.md)
+
+[Get-InstalledModule](Get-InstalledModule.md)
+
+[Install-Module](Install-Module.md)
+
+[New-PSRoleCapabilityFile](../Microsoft.PowerShell.Core/New-PSRoleCapabilityFile.md)
+
+[Save-Module](Save-Module.md)

@@ -1,12 +1,13 @@
 ---
-ms.date:  2/4/2019
+ms.date: 04/23/2019
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/p/?linkid=290491
+online version: https://go.microsoft.com/fwlink/?linkid=290491
 external help file:  Microsoft.PowerShell.Commands.Management.dll-Help.xml
 title:  Get-Content
 ---
+
 # Get-Content
 
 ## SYNOPSIS
@@ -41,38 +42,37 @@ and returns a collection of objects, each of which represents a line of content.
 Beginning in PowerShell 3.0, `Get-Content` can also get a specified number of lines from the
 beginning or end of an item.
 
-If you need to create files or directories for the following examples, see [New-Item](New-Item.md).
-
 ## EXAMPLES
 
 ### Example 1: Get the content of a text file
 
-This example gets the content of a file in the current directory.
-
-> [!NOTE]
-> The `LineNumbers.txt` file in this example contains 100 lines of text in the following format,
-> "This is Line X".
+This example gets the content of a file in the current directory. The `LineNumbers.txt` file
+contains 100 lines in the format, **This is Line X** and is used in several examples.
 
 ```powershell
+1..100 | ForEach-Object { Add-Content -Path .\LineNumbers.txt -Value "This is line $_." }
 Get-Content -Path .\LineNumbers.txt
 ```
 
 ```Output
 This is Line 1
 This is Line 2
-This is Line 3
-This is Line 4
 ...
+This is line 99.
+This is line 100.
 ```
 
-### Example 2: Limit the number of lines Get-Conent returns
+The array values 1-100 are sent down the pipeline to the `ForEach-Object` cmdlet. `ForEach-Object`
+uses a script block with the `Add-Content` cmdlet to create the `LineNumbers.txt` file. The variable
+`$_` represents the array values as each object is sent down the pipeline. The `Get-Content` cmdlet
+uses the **Path** parameter to specify the `LineNumbers.txt` file and displays the content in the
+PowerShell console.
+
+### Example 2: Limit the number of lines Get-Content returns
 
 This command gets the first five lines of a file. The **TotalCount** parameter is used to gets the
-first five lines of content
-
-> [!NOTE]
-> The `LineNumbers.txt` file in this example contains 100 lines of text in the following format,
-> "This is Line X".
+first five lines of content. This example uses the `LineNumbers.txt` file that was created in
+Example 1.
 
 ```powershell
 Get-Content -Path .\LineNumbers.txt -TotalCount 5
@@ -89,11 +89,8 @@ This is Line 5
 ### Example 3: Get a specific line of content from a text file
 
 This command gets a specific number of lines from a file and then displays only the last line of
-that content. The **TotalCount** parameter gets the first 25 lines of content.
-
-> [!NOTE]
-> The `LineNumbers.txt` file in this example contains 100 lines of text in the following format,
-> "This is Line X".
+that content. The **TotalCount** parameter gets the first 25 lines of content. This example uses the
+`LineNumbers.txt` file that was created in Example 1.
 
 The `Get-Content` command is wrapped in parentheses so that the command completes before going to
 the next step.
@@ -112,11 +109,8 @@ This is Line 25
 
 ### Example 4: Get the last line of a text file
 
-This command gets the first line and last line of content from a file.
-
-> [!NOTE]
-> The `LineNumbers.txt` file in this example contains 100 lines of text in the following format,
-> "This is Line X".
+This command gets the first line and last line of content from a file. This example uses the
+`LineNumbers.txt` file that was created in Example 1.
 
 This example uses the `Get-Item` cmdlet to demonstrate that you can pipe files into the
 `Get-Content` parameter.
@@ -135,14 +129,12 @@ This is Line 100
 ### Example 5: Get the content of an alternate data stream
 
 This example describes how to use the **Stream** parameter to get the content of an alternate data
-stream for files stored on a Windows NTFS volume.
+stream for files stored on a Windows NTFS volume. In this example, the `Set-Content` cmdlet is used
+to create sample content in a file named `Stream.txt`.
 
-> [!NOTE]
-> The `Set-Content` cmdlet is used to create sample content for the example in a file called
-> `Stream.txt`.
-
-The **Stream** parameter is a dynamic parameter of the [FileSystem](../microsoft.powershell.core/about/about_filesystem_provider.md#stream-systemstring)
-provider. By default `Get-Content` only retrieves data from the primary, or `$DATA` stream.
+The **Stream** parameter is a dynamic parameter of the
+[FileSystem provider](../microsoft.powershell.core/about/about_filesystem_provider.md#stream-systemstring).
+By default `Get-Content` only retrieves data from the primary, or `$DATA` stream.
 
 **Streams** can be used to store hidden data such as attributes, security settings, or other data.
 
@@ -215,11 +207,8 @@ Added a stream named NewStream to Stream.txt
 
 The commands in this example get the contents of a file as one string, instead of an array of
 strings. By default, without the **Raw** dynamic parameter, content is returned as an array of
-newline-delimited strings.
-
-> [!NOTE]
-> The `LineNumbers.txt` file in this example contains 100 lines of text in the following format,
-> "This is Line X".
+newline-delimited strings. This example uses the `LineNumbers.txt` file that was created in Example
+1.
 
 ```powershell
 $raw = Get-Content -Path .\LineNumbers.txt -Raw
@@ -232,6 +221,41 @@ Write-Host "Lines contains $($lines.Count) lines."
 Raw contains 1 lines.
 Lines contains 100 lines.
 ```
+
+### Example 7: Use Filters with Get-Content
+
+You can specify a filter to the `Get-Content` cmdlet. When using filters to qualify the **Path**
+parameter, you need to include a trailing asterisk (`*`) to indicate the contents of the
+path.
+
+The following command gets the content of all `*.log` files in the `C:\Temp` directory.
+
+```powershell
+Get-Content -Path C:\Temp\* -Filter *.log
+```
+
+### Example 8: Get file contents as a byte array
+
+This example demonstrates how to get the contents of a file as a `[byte[]]` as a single object.
+
+```powershell
+$byteArray = Get-Content -Path C:\temp\test.txt -Encoding Byte -Raw
+Get-Member -InputObject $bytearray
+```
+
+```Output
+   TypeName: System.Byte[]
+
+Name           MemberType            Definition
+----           ----------            ----------
+Count          AliasProperty         Count = Length
+Add            Method                int IList.Add(System.Object value)
+```
+
+The first command uses the **Encoding** parameter to get the stream of bytes from the file.
+The **Raw** parameter ensures that the bytes are returned as a `[System.Byte[]]`. If the **Raw**
+parameter was absent, the return value is a stream of bytes, which is interpreted by
+PowerShell as `[System.Object[]]`.
 
 ## PARAMETERS
 
@@ -294,8 +318,8 @@ Accept wildcard characters: False
 
 ### -TotalCount
 
-Specifies the number of lines from the beginning of a file or other item.
-The default is -1 (all lines).
+Specifies the number of lines from the beginning of a file or other item. The default is -1 (all
+lines).
 
 You can use the **TotalCount** parameter name or its aliases, **First** or **Head**.
 
@@ -409,9 +433,6 @@ Type a user name, such as **User01** or **Domain01\User01**, or enter a **PSCred
 such as one generated by the `Get-Credential` cmdlet. If you type a user name, you will be prompted
 for a password.
 
-> [!WARNING]
-> This parameter is not supported by any providers installed with PowerShell.
-
 ```yaml
 Type: PSCredential
 Parameter Sets: (All)
@@ -501,7 +522,7 @@ Accept wildcard characters: False
 
 ### -Encoding
 
-Specifies the type of encoding for the target file. The default value is **ASCII**.
+Specifies the type of encoding for the target file. The default value is **Default**.
 
 The acceptable values for this parameter are as follows:
 
@@ -509,7 +530,7 @@ The acceptable values for this parameter are as follows:
 - **BigEndianUnicode** Uses UTF-16 with the big-endian byte order.
 - **BigEndianUTF32** Uses UTF-32 with the big-endian byte order.
 - **Byte** Encodes a set of characters into a sequence of bytes.
-- **Default** Uses the encoding that corresponds to the system's active code page.
+- **Default** Uses the encoding that corresponds to the system's active code page (usually ANSI).
 - **OEM** Uses the encoding that corresponds to the system's current OEM code page.
 - **String** Same as **Unicode**.
 - **Unicode** Uses UTF-16 with the little-endian byte order.
@@ -535,7 +556,7 @@ Accepted values: ASCII, BigEndianUnicode, BigEndianUTF32, Byte, Default, OEM, St
 
 Required: False
 Position: Named
-Default value: ASCII
+Default value: Default
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -582,8 +603,7 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: `-Debug`, `-ErrorAction`, `-ErrorVariable`,
 `-InformationAction`, `-InformationVariable`, `-OutVariable`, `-OutBuffer`, `-PipelineVariable`,
-`-Verbose`, `-WarningAction`, and `-WarningVariable`.
-For more information, see [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
+`-Verbose`, `-WarningAction`, and `-WarningVariable`. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -601,27 +621,20 @@ specify as input.
 ## NOTES
 
 The `Get-Content` cmdlet is designed to work with the data exposed by any provider. To get the
-providers in your session, use the `Get-PSProvider` cmdlet.
-For more information, see [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).
+providers in your session, use the `Get-PSProvider` cmdlet. For more information, see [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).
 
 ## RELATED LINKS
 
-[about_Hash_Tables](../Microsoft.PowerShell.Core/About/about_Hash_Tables.md)
+[about_Automatic_Variables](../Microsoft.PowerShell.Core/About/about_Automatic_Variables.md)
 
 [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md)
-
-[about_Transactions](../Microsoft.PowerShell.Core/About/about_Transactions.md)
 
 [Add-Content](Add-Content.md)
 
 [Clear-Content](Clear-Content.md)
 
+[ForEach-Object](../Microsoft.PowerShell.Core/ForEach-Object.md)
+
 [Get-PSProvider](Get-PSProvider.md)
 
-[Invoke-Expression](../Microsoft.PowerShell.Utility/Invoke-Expression.md)
-
-[New-Item](New-Item.md)
-
 [Set-Content](Set-Content.md)
-
-[Understanding a Windows PowerShell Module](/powershell/developer/module/understanding-a-windows-powershell-module)

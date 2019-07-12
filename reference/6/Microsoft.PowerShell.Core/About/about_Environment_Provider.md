@@ -4,7 +4,7 @@ schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
 title:  Environment Provider
-online version:  https://go.microsoft.com/fwlink/?linkid=834944
+online version: https://go.microsoft.com/fwlink/?linkid=2096112
 ---
 # Environment provider
 
@@ -28,13 +28,17 @@ Provides access to the Windows environment variables.
 The PowerShell **Environment** provider lets you get, add, change, clear, and delete environment
 variables and values in PowerShell.
 
-**Environment** variables are dynamically named variables that describe the environment in which your programs run. Windows and PowerShell use environment variables to store persistent information that affect system
-and process execution. Unlike PowerShell variables, environment variables are not subject to scope constraints.
+**Environment** variables are dynamically named variables that describe the
+environment in which your programs run. Windows and PowerShell use environment
+variables to store persistent information that affect system and process
+execution. Unlike PowerShell variables, environment variables are not subject
+to scope constraints.
 
-The **Environment** drive is a flat namespace containing the environment variables specific to the current user's session. The environment variables
+The **Environment** drive is a flat namespace containing the environment
+variables specific to the current user's session. The environment variables
 have no child items.
 
-The **Envrionment** provider supports the following cmdlets, which are covered
+The **Environment** provider supports the following cmdlets, which are covered
 in this article.
 
 - [Get-Location](../../Microsoft.PowerShell.Management/Get-Location.md)

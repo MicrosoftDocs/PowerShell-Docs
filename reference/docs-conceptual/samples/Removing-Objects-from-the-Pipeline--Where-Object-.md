@@ -2,7 +2,6 @@
 ms.date:  06/05/2017
 keywords:  powershell,cmdlet
 title:  Removing Objects from the Pipeline Where Object
-ms.assetid:  01df8b22-2d22-4e2c-a18d-c004cd3cc284
 ---
 # Removing Objects from the Pipeline (Where-Object)
 
@@ -10,7 +9,7 @@ In Windows PowerShell, you often generate and pass along more objects to a pipel
 
 Windows PowerShell includes a `Where-Object` cmdlet that allows you to test each object in the pipeline and only pass it along the pipeline if it meets a particular test condition. Objects that do not pass the test are removed from the pipeline. You supply the test condition as the value of the `Where-Object` **FilterScript** parameter.
 
-### Performing Simple Tests with Where-Object
+## Performing Simple Tests with Where-Object
 
 The value of **FilterScript** is a *script block* -  one or more Windows PowerShell commands surrounded by braces {} - that evaluates to true or false. These script blocks can be very simple, but creating them requires knowing about another Windows PowerShell concept, comparison operators. A comparison operator compares the items that appear on each side of it. Comparison operators begin with a '-' character and are followed by a name. Basic comparison operators work on almost any kind of object. The more advanced comparison operators might only work on text or arrays.
 
@@ -40,7 +39,7 @@ PS> 1,2,3,4 | Where-Object -FilterScript {$_ -lt 3}
 2
 ```
 
-### Filtering Based on Object Properties
+## Filtering Based on Object Properties
 
 Since `$_` refers to the current pipeline object, we can access its properties for our tests.
 

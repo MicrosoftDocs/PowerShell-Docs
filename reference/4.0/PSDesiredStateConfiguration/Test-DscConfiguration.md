@@ -3,7 +3,7 @@ ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkID=294365
+online version: https://go.microsoft.com/fwlink/?linkid=294365
 external help file:  Test-DSCConfiguration.cdxml-help.xml
 title:  Test-DscConfiguration
 ---
@@ -24,8 +24,8 @@ The **Test-DscConfiguration** cmdlet tests whether the actual configuration on t
 Specify computers by using Common Information Model (CIM) sessions.
 If you do not specify a target computer, the cmdlet tests configuration of the local computer.
 
-If the desired and actual configurations match, the cmdlet returns a value of $True.
-Otherwise, it returns a value of $False.
+If the desired and actual configurations match, the cmdlet returns a string value of 'True'.
+Otherwise, it returns a string value of 'False'.
 
 ## EXAMPLES
 
@@ -73,7 +73,7 @@ Accept wildcard characters: False
 
 ### -ThrottleLimit
 Specifies the maximum number of concurrent operations that can be established to run the cmdlet.
-If this parameter is omitted or a value of `0` is entered, then Windows PowerShell® calculates an optimum throttle limit for the cmdlet based on the number of CIM cmdlets that are running on the computer.
+If this parameter is omitted or a value of `0` is entered, then Windows PowerShell calculates an optimum throttle limit for the cmdlet based on the number of CIM cmdlets that are running on the computer.
 The throttle limit applies only to the current cmdlet, not to the session or to the computer.
 
 ```yaml

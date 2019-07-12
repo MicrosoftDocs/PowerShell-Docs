@@ -13,7 +13,7 @@ caps.latest.revision: 15
 
 You can host Windows PowerShell in your application. The host application can define the runspace where commands are run, open sessions on a local or remote computer, and invoke the commands either synchronously or asynchronously based on the needs of the application.
 
-The following topics explain how to create an application that hosts
+The following topics explain how to create an application that hosts Windows PowerShell.
 
 ## In This Section
 
@@ -27,7 +27,7 @@ A set of topics that explain how to create runspaces to run Windows PowerShell c
 Explains how to create and run a command pipeline in your host application..
 
 [Creating remote runspaces](./creating-remote-runspaces.md)
-Expains how to connect a runspace to a remote computer.
+Explains how to connect a runspace to a remote computer.
 
 [Creating a custom user interface](./creating-a-custom-user-interface.md)
 Introduces custom user interfaces and provides links to examples.

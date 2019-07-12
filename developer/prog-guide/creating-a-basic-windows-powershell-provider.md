@@ -21,22 +21,6 @@ As mentioned previously, the basic provider described here implements methods fo
 > [!NOTE]
 > You can find a sample of this provider in the AccessDBSampleProvider01.cs file provided by Windows PowerShell.
 
-The sections in this topic include the following:
-
-- [Defining the Windows PowerShell Provider Class](#Defining-the-Windows-PowerShell-Provider-Class)
-
-- [Defining Provider-Specific State Information](#Defining-Provider-Specific-State-Information)
-
-- [Initializing the Provider](#Initializing-the-Provider)
-
-- [Start Dynamic Parameters](#Start-Dynamic-Parameters)
-
-- [Uninitializing the Provider](#Uninitializing-the-Provider)
-
-- [Code Sample](#Code-Sample)
-
-- [Testing the Windows PowerShell Provider](#Testing-the-Windows-PowerShell-Provider)
-
 ## Defining the Windows PowerShell Provider Class
 
 The first step in creating a Windows PowerShell provider is to define its .NET class. This basic provider defines a class called `AccessDBProvider` that derives from the [System.Management.Automation.Provider.Cmdletprovider](/dotnet/api/System.Management.Automation.Provider.CmdletProvider) base class.
@@ -71,7 +55,7 @@ This basic provider does not override this method. However, the following code s
 
 <!-- TODO!!!: review snippet reference  [!CODE [Msh_samplesaccessdbprov01#accessdbprov01ProviderStart](Msh_samplesaccessdbprov01#accessdbprov01ProviderStart)]  -->
 
-The provider can maintain the state of provider-specific information as described in [Defining Provider-specific Data State](#Defining-Provider-Specific-State-Information). In this case, your implementation must override the [System.Management.Automation.Provider.Cmdletprovider.Start*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Start) method to return an instance of the derived class.
+The provider can maintain the state of provider-specific information as described in [Defining Provider-specific Data State](#defining-provider-specific-state-information). In this case, your implementation must override the [System.Management.Automation.Provider.Cmdletprovider.Start*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Start) method to return an instance of the derived class.
 
 ## Start Dynamic Parameters
 

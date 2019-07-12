@@ -1,10 +1,11 @@
 ---
-ms.date:  02/20/2019
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=301310
-external help file:  Microsoft.Management.Infrastructure.CimCmdlets.dll-Help.xml
+ms.date: 02/20/2019
+schema: 2.0.0
+locale: en-us
+keywords: powershell,cmdlet
+online version: https://go.microsoft.com/fwlink/?linkid=2096211
+external help file: Microsoft.Management.Infrastructure.CimCmdlets.dll-Help.xml
+title: Export-BinaryMiLog
 ---
 
 # Export-BinaryMiLog

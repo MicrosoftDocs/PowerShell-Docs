@@ -13,14 +13,13 @@ Module Name:  PSWorkflow
 
 ## Description
 
-This section contains the help topics for the cmdlets that are installed with Windows PowerShell PSWorkflow module, which contains cmdlets that support the Windows PowerShell Workflow feature.
+This section contains the help topics for the cmdlets that are installed with Windows PowerShell
+PSWorkflow module, which contains cmdlets that support the Windows PowerShell Workflow feature.
 
 ## PSWorkflow Cmdlets
 
 ### [New-PSWorkflowExecutionOption](New-PSWorkflowExecutionOption.md)
-
 Creates an object that contains session configuration options for workflow sessions.
 
 ### [New-PSWorkflowSession](New-PSWorkflowSession.md)
-
 Creates a workflow session.

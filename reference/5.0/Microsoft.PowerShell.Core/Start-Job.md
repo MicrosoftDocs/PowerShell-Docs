@@ -3,7 +3,7 @@ ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821518
+online version: https://go.microsoft.com/fwlink/?linkid=821518
 external help file:  System.Management.Automation.dll-Help.xml
 title:  Start-Job
 ---
@@ -185,6 +185,17 @@ PS C:\> Start-Job -Name GetMappingFiles -InitializationScript {Import-Module Map
 This command starts a job that collects lots of data, and then saves it in a .tif file.
 The command uses the *InitializationScript* parameter to run a script block that imports a required module.
 It also uses the *RunAs32* parameter to run the job in a 32-bit process even if the computer has a 64-bit operating system.
+
+### Example 7: Pass input to a background job
+
+```
+PS C:\> Start-Job -ScriptBlock {Write-Output $Input} -InputObject 'Hello, world!'
+```
+
+This command starts a job that simply accesses and outputs its input.
+The command uses the *InputObject* parameter to pass input to the job.
+Input to a job is accessed via the $Input automatic variable.
+The $_ automatic variable (alias $PSItem) is not populated.
 
 ## PARAMETERS
 
@@ -438,6 +449,7 @@ Accept wildcard characters: False
 ### -ScriptBlock
 Specifies the commands to run in the background job.
 Enclose the commands in braces ( { } ) to create a script block.
+Use the $Input automatic variable to access the value of the *InputObject* parameter.
 This parameter is required.
 
 ```yaml

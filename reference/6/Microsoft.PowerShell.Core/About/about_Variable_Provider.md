@@ -4,7 +4,7 @@ schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
 title:  Variable Provider
-online version:  http://go.microsoft.com/fwlink/?LinkId=834963
+online version: https://go.microsoft.com/fwlink/?linkid=2096978
 ---
 # Variable provider
 
@@ -121,6 +121,16 @@ session. You can use this command from any PowerShell drive.
 
 ```powershell
 Get-ChildItem -Path Variable:
+```
+
+### Get a variable using its provider path
+
+This command retrieves a variables value using its provider path prefixed by the
+dollar sign (`$`). This has the same effect as prefixing the variables name with
+the dollar sign (`$`).
+
+```powershell
+$variable:home
 ```
 
 ### Get variables using wildcards

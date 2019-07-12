@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Utility
 ms.date: 12/13/2018
-online version: http://go.microsoft.com/fwlink/?LinkId=821824
+online version: https://go.microsoft.com/fwlink/?linkid=821824
 schema: 2.0.0
 title: Invoke-RestMethod
 ---
@@ -34,6 +34,11 @@ For an RSS or ATOM feed, Windows PowerShell returns the Item or Entry XML nodes.
 For JavaScript Object Notation (JSON) or XML, Windows PowerShell converts (or deserializes) the content into objects.
 
 This cmdlet is introduced in Windows PowerShell 3.0.
+
+> [!NOTE]
+> By default,
+> script code in the web page may be run when the page is being parsed to populate the `ParsedHtml` property.
+> Use the `-UseBasicParsing` switch to suppress this.
 
 ## EXAMPLES
 

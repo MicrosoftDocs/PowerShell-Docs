@@ -44,7 +44,7 @@ None.
 |[AutoSize Element for TableControl (Format)](./autosize-element-for-tablecontrol-format.md)|Optional element.<br /><br /> Specifies whether the column size and the number of columns are adjusted based on the size of the data.|
 |[HideTableHeaders Element for TableControl (Format)](./hidetableheaders-element-format.md)|Optional element.<br /><br /> Indicates whether the header of the table is not displayed.|
 |[TableHeaders Element for TableControl (Format)](./tableheaders-element-format.md)|Required element.<br /><br /> Defines the labels, the widths, and the alignment of the data for the columns of the table view.|
-|[TableRowEntries Element for TableCotrol (Format)](./tablerowentries-element-for-tablecontrol-format.md)|Optional element.<br /><br /> Provides the definitions of the table view.|
+|[TableRowEntries Element for TableControl (Format)](./tablerowentries-element-for-tablecontrol-format.md)|Optional element.<br /><br /> Provides the definitions of the table view.|
 
 ### Parent Elements
 

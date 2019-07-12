@@ -1,5 +1,6 @@
 {
     "build_entry_point": "docs",
+    "enable_incremental_build": true,
     "docsets_to_publish": [{
             "docset_name": "developer-docs",
             "build_source_folder": "developer",
@@ -106,12 +107,15 @@
     ],
     "notification_subscribers": [],
     "sync_notification_subscribers": [],
-    "branches_to_filter": [],
     "git_repository_url_open_to_public_contributors": "https://github.com/MicrosoftDocs/PowerShell-Docs",
     "git_repository_branch_open_to_public_contributors": "staging",
     "skip_source_output_uploading": false,
     "need_preview_pull_request": true,
+    "need_generate_pdf_url_template": false,
     "contribution_branch_mappings": {},
+    "branches_to_filter": [],
+    "branch_target_mapping": {},
+    "targets": {},
     "dependent_repositories": [{
             "path_to_root": "_themes",
             "url": "https://github.com/Microsoft/templates.docs.msft",
@@ -125,11 +129,6 @@
             "branch_mapping": {}
         }
     ],
-    "branch_target_mapping": {},
-    "need_generate_pdf_url_template": false,
-    "targets": {},
-    "need_generate_pdf": false,
-    "need_generate_intellisense": false,
     "dependent_packages": [{
             "path_to_root": "_dependentPackages/azurecli.plugins",
             "id": "opbuild.templates.azurecli",

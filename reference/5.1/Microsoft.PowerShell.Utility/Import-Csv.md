@@ -3,12 +3,11 @@ external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 1/8/2019
-online version: http://go.microsoft.com/fwlink/?LinkId=821815
+ms.date: 04/23/2019
+online version: https://go.microsoft.com/fwlink/?linkid=821815
 schema: 2.0.0
 title: Import-Csv
 ---
-
 # Import-Csv
 
 ## SYNOPSIS
@@ -47,6 +46,9 @@ that they do not deal with files.
 
 If a header row entry in a CSV file contains an empty or null value, PowerShell inserts a default
 header row name and displays a warning message.
+
+`Import-Csv` uses the byte-order-mark (BOM) to detect the encoding format of the file. If the
+file has no BOM, it assumes the encoding is UTF8.
 
 ## EXAMPLES
 
@@ -138,7 +140,9 @@ properties in the resulting imported object.
 
 ```powershell
 Start-Job -ScriptBlock { Get-Process } | Export-Csv -Path .\Jobs.csv -NoTypeInformation
-$Header = 'State', 'MoreData', 'StatusMessage', 'Location', 'Command', 'StateInfo', 'Finished', 'InstanceId', 'Id', 'Name', 'ChildJobs', 'BeginTime', 'EndTime', 'JobType', 'Output', 'Error', 'Progress', 'Verbose', 'Debug', 'Warning', 'Information'
+$Header = 'State', 'MoreData', 'StatusMessage', 'Location', 'Command', 'StateInfo', 'Finished',
+  'InstanceId', 'Id', 'Name', 'ChildJobs', 'BeginTime', 'EndTime', 'JobType', 'Output', 'Error',
+  'Progress', 'Verbose', 'Debug', 'Warning', 'Information'
 # Delete the default header from file
 $A = Get-Content -Path .\Jobs.csv
 $A = $A[1..($A.Count - 1)]
@@ -319,19 +323,15 @@ Accept wildcard characters: False
 
 ### -Encoding
 
-Specifies the encoding for the exported CSV file. The default value is **ASCII**.
+Specifies the type of encoding for the target file. The default value is **Default**.
 
 The acceptable values for this parameter are as follows:
 
 - **ASCII** Uses ASCII (7-bit) character set.
 - **BigEndianUnicode** Uses UTF-16 with the big-endian byte order.
-- **BigEndianUTF32** Uses UTF-32 with the big-endian byte order.
-- **Byte** Encodes a set of characters into a sequence of bytes.
-- **Default** Uses the encoding that corresponds to the system's active code page.
+- **Default** Uses the encoding that corresponds to the system's active code page (usually ANSI).
 - **OEM** Uses the encoding that corresponds to the system's current OEM code page.
-- **String** Same as **Unicode**.
 - **Unicode** Uses UTF-16 with the little-endian byte order.
-- **Unknown** Same as **Unicode**.
 - **UTF7** Uses UTF-7.
 - **UTF8** Uses UTF-8.
 - **UTF32** Uses UTF-32 with the little-endian byte order.
@@ -340,11 +340,11 @@ The acceptable values for this parameter are as follows:
 Type: Encoding
 Parameter Sets: (All)
 Aliases:
-Accepted values: ASCII, BigEndianUnicode, BigEndianUTF32, Byte, Default, OEM, String, Unicode, Unknown, UTF7, UTF8, UTF32
+Accepted values: ASCII, BigEndianUnicode, Default, OEM, Unicode, UTF7, UTF8, UTF32
 
 Required: False
 Position: Named
-Default value: ASCII
+Default value: Default
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

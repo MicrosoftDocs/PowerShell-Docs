@@ -192,7 +192,7 @@ DSC provides the following special variables that can be used in a configuration
 - **ConfigurationData** refers to the entire hash table that is passed as the parameter when compiling a configuration.
 - **MyTypeName** contains the [configuration](configurations.md) name the variable is used in. For example, in the configuration `MyDscConfiguration`, the `$MyTypeName` will have a value of `MyDscConfiguration`.
 - **Node** refers to a particular entry in the **AllNodes** collection after it is filtered by using **.Where()** or **.ForEach()**.
-  - You can read more about these methods in [about_arrays](/powershell/reference/3.0/Microsoft.PowerShell.Core/About/about_Arrays.md)
+  - You can read more about these methods in [about_arrays](/powershell/module/microsoft.powershell.core/about/about_arrays)
 
 ## Using non-node data
 

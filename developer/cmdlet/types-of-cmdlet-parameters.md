@@ -85,13 +85,13 @@ private string userName;
 
 ## Switch Parameters
 
-Windows PowerShell provides a [System.Management.Automation.Switchparameter](/dotnet/api/System.Management.Automation.SwitchParameter) type that allows you to define a parameter whose value is automatically set to `false` if the parameter is not specified when the cmdlet is called. Whenever possible, use switch parameters in place of Boolean parameters.
+Windows PowerShell provides a [System.Management.Automation.SwitchParameter](/dotnet/api/System.Management.Automation.SwitchParameter) type that allows you to define a parameter whose value is automatically set to `false` if the parameter is not specified when the cmdlet is called. Whenever possible, use switch parameters in place of Boolean parameters.
 
 Consider the following sample. By default, several Windows PowerShell cmdlets do not pass an output object down the pipeline. However, these cmdlets have a `PassThru` switch parameter that overrides the default behavior. If the `PassThru` parameter is specified when these cmdlets are called, the cmdlet returns an output object to the pipeline.
 
-If you need the parameter to have a default value of `true` when the parameter is not specified in the call, consider reversing the sense of the parameter. For sample, instead of setting the parameter attribute to a Boolean value of `true`, declare the property as the [System.Management.Automation.Switchparameter](/dotnet/api/System.Management.Automation.SwitchParameter) type, and then set the default value of the parameter to `false`.
+If you need the parameter to have a default value of `true` when the parameter is not specified in the call, consider reversing the sense of the parameter. For sample, instead of setting the parameter attribute to a Boolean value of `true`, declare the property as the [System.Management.Automation.SwitchParameter](/dotnet/api/System.Management.Automation.SwitchParameter) type, and then set the default value of the parameter to `false`.
 
-To define a switch parameter, declare the property as the [System.Management.Automation.Switchparameter](/dotnet/api/System.Management.Automation.SwitchParameter) type, as shown in the following sample.
+To define a switch parameter, declare the property as the [System.Management.Automation.SwitchParameter](/dotnet/api/System.Management.Automation.SwitchParameter) type, as shown in the following sample.
 
 ```csharp
 [Parameter(Position = 1)]

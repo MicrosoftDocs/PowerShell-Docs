@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Utility
 ms.date: 1/22/2019
-online version: http://go.microsoft.com/fwlink/?LinkId=821767
+online version: https://go.microsoft.com/fwlink/?linkid=2096977
 schema: 2.0.0
 title: Export-Clixml
 ---
@@ -130,23 +130,24 @@ The acceptable values for this parameter are as follows:
 
 - **ASCII**: Uses the encoding for the ASCII (7-bit) character set.
 - **BigEndianUnicode**: Encodes in UTF-16 format using the big-endian byte order.
-- **Byte**: Encodes a set of characters into a sequence of bytes.
-- **Default**: Encodes using the default value: ASCII.
 - **OEM**: Uses the default encoding for MS-DOS and console programs.
-- **String**: Uses the encoding type for a string.
 - **Unicode**: Encodes in UTF-16 format using the little-endian byte order.
 - **UTF7**: Encodes in UTF-7 format.
 - **UTF8**: Encodes in UTF-8 format.
 - **UTF8BOM**: Encodes in UTF-8 format with Byte Order Mark (BOM)
 - **UTF8NoBOM**: Encodes in UTF-8 format without Byte Order Mark (BOM)
 - **UTF32**: Encodes in UTF-32 format.
-- **Unknown**: The encoding type is unknown or invalid; the data can be treated as binary.
+
+Beginning with PowerShell 6.2, the **Encoding** parameter also allows numeric IDs of registered code
+pages (like `-Encoding 1251`) or string names of registered code pages (like
+`-Encoding "windows-1251"`). For more information, see the .NET documentation for
+[Encoding.CodePage](/dotnet/api/system.text.encoding.codepage?view=netcore-2.2).
 
 ```yaml
 Type: Encoding
 Parameter Sets: (All)
 Aliases:
-Accepted values: ASCII, BigEndianUnicode, Byte, Default, OEM, String, Unicode, UTF7, UTF8, UTF8BOM, UTF8NoBOM, UTF32, Unknown
+Accepted values: ASCII, BigEndianUnicode, OEM, Unicode, UTF7, UTF8, UTF8BOM, UTF8NoBOM, UTF32
 
 Required: False
 Position: Named

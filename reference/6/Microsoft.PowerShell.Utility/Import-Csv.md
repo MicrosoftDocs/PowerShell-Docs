@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Utility
 ms.date: 1/8/2019
-online version: http://go.microsoft.com/fwlink/?LinkId=821815
+online version: https://go.microsoft.com/fwlink/?linkid=2096539
 schema: 2.0.0
 title: Import-Csv
 ---
@@ -46,6 +46,8 @@ that they do not deal with files.
 
 If a header row entry in a CSV file contains an empty or null value, PowerShell inserts a default
 header row name and displays a warning message.
+
+Starting with PowerShell 6.0, `Import-Csv` now supports the W3C Extended Log File Format.
 
 ## EXAMPLES
 
@@ -318,29 +320,30 @@ Accept wildcard characters: False
 
 ### -Encoding
 
-Specifies the encoding for the exported CSV file. The default value is **UTF8NoBOM**.
+Specifies the encoding for the imported CSV file. The default value is **UTF8NoBOM**.
 
 The acceptable values for this parameter are as follows:
 
 - **ASCII**: Uses the encoding for the ASCII (7-bit) character set.
 - **BigEndianUnicode**: Encodes in UTF-16 format using the big-endian byte order.
-- **Byte**: Encodes a set of characters into a sequence of bytes.
-- **Default**: Encodes using the default value: ASCII.
 - **OEM**: Uses the default encoding for MS-DOS and console programs.
-- **String**: Uses the encoding type for a string.
 - **Unicode**: Encodes in UTF-16 format using the little-endian byte order.
 - **UTF7**: Encodes in UTF-7 format.
 - **UTF8**: Encodes in UTF-8 format.
 - **UTF8BOM**: Encodes in UTF-8 format with Byte Order Mark (BOM)
 - **UTF8NoBOM**: Encodes in UTF-8 format without Byte Order Mark (BOM)
 - **UTF32**: Encodes in UTF-32 format.
-- **Unknown**: The encoding type is unknown or invalid; the data can be treated as binary.
+
+Beginning with PowerShell 6.2, the **Encoding** parameter also allows numeric IDs of registered code
+pages (like `-Encoding 1251`) or string names of registered code pages (like
+`-Encoding "windows-1251"`). For more information, see the .NET documentation for
+[Encoding.CodePage](/dotnet/api/system.text.encoding.codepage?view=netcore-2.2).
 
 ```yaml
 Type: Encoding
 Parameter Sets: (All)
 Aliases:
-Accepted values: ASCII, BigEndianUnicode, Byte, Default, OEM, String, Unicode, UTF7, UTF8, UTF8BOM, UTF8NoBOM, UTF32, Unknown
+Accepted values: ASCII, BigEndianUnicode, OEM, Unicode, UTF7, UTF8, UTF8BOM, UTF8NoBOM, UTF32
 
 Required: False
 Position: Named
@@ -471,6 +474,11 @@ In the CSV file, each object is represented by a comma-separated list of the pro
 object. The property values are converted to strings by using the **ToString()** method of the
 object, so they are represented by the name of the property value. `Export-Csv` does not export the
 methods of the object.
+
+`Import-Csv` also supports the W3C Extended Log format. Lines starting with `#` are treated as
+comments and ignored unless the comment starts with `#Fields: ` and contains delimited list of
+column names. In that case, the cmdlet uses those column names. This is the standard format for
+Windows IIS and other web server logs. For more information, see [Extended Log File Format](https://www.w3.org/TR/WD-logfile.html).
 
 ## RELATED LINKS
 

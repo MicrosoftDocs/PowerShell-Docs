@@ -9,10 +9,10 @@ Module Guid:  1da87e53-152b-403e-98dc-74d7b4d63d59
 title:  Microsoft.PowerShell.Utility
 Module Name:  Microsoft.PowerShell.Utility
 ---
-
 # Microsoft.PowerShell.Utility Module
 
 ## Description
+
 This section contains the help topics for the cmdlets that are installed with the
 Microsoft.PowerShell.Utility module. This module contains cmdlets that manage the basic features of
 PowerShell.
@@ -20,10 +20,10 @@ PowerShell.
 ## Microsoft.PowerShell.Utility Cmdlets
 
 ### [Add-Member](Add-Member.md)
-Adds custom properties and methods to an instance of a Windows PowerShell object.
+Adds custom properties and methods to an instance of a PowerShell object.
 
 ### [Add-Type](Add-Type.md)
-Adds a Microsoft .NET Framework type (a class) to a Windows PowerShell session.
+Adds a Microsoft .NET Framework class in a PowerShell session.
 
 ### [Clear-Variable](Clear-Variable.md)
 Deletes the value of a variable.
@@ -32,22 +32,23 @@ Deletes the value of a variable.
 Compares two sets of objects.
 
 ### [ConvertFrom-Csv](ConvertFrom-Csv.md)
-Converts object properties in comma-separated value (CSV) format into CSV versions of the original objects.
+Converts object properties in comma-separated value (CSV) format into CSV versions of the original
+objects.
 
 ### [ConvertFrom-Json](ConvertFrom-Json.md)
-Converts a JSON-formatted string to a custom object.
+Converts a JSON-formatted string to a custom object or a hash table.
 
 ### [ConvertFrom-StringData](ConvertFrom-StringData.md)
 Converts a string containing one or more key and value pairs to a hash table.
 
 ### [ConvertTo-Csv](ConvertTo-Csv.md)
-Converts objects into a series of comma-separated value (CSV) variable-length strings.
+Converts objects into a series of comma-separated value (CSV) strings.
 
 ### [ConvertTo-Html](ConvertTo-Html.md)
 Converts Microsoft .NET Framework objects into HTML that can be displayed in a Web browser.
 
 ### [ConvertTo-Json](ConvertTo-Json.md)
-Converts an object to a JSON-formatted string
+Converts an object to a JSON-formatted string.
 
 ### [ConvertTo-Xml](ConvertTo-Xml.md)
 Creates an XML-based representation of an object.
@@ -65,7 +66,8 @@ Exports information about currently defined aliases to a file.
 Creates an XML-based representation of an object or objects and stores it in a file.
 
 ### [Export-Csv](Export-Csv.md)
-Converts objects into a series of comma-separated (CSV) strings and saves the strings in a CSV file.
+Converts objects into a series of comma-separated value (CSV) strings and saves the strings to a
+file.
 
 ### [Export-FormatData](Export-FormatData.md)
 Saves formatting data from the current session in a formatting file.
@@ -94,11 +96,11 @@ Gets the current culture set in the operating system.
 ### [Get-Date](Get-Date.md)
 Gets the current date and time.
 
-### [Get-EventSubscriber](Get-EventSubscriber.md)
-Gets the event subscribers in the current session.
-
 ### [Get-Event](Get-Event.md)
 Gets the events in the event queue.
+
+### [Get-EventSubscriber](Get-EventSubscriber.md)
+Gets the event subscribers in the current session.
 
 ### [Get-FileHash](Get-FileHash.md)
 Computes the hash value for a file by using a specified hash algorithm.
@@ -122,13 +124,13 @@ Displays the current call stack.
 Gets a random number, or selects objects randomly from a collection.
 
 ### [Get-TraceSource](Get-TraceSource.md)
-Gets the Windows PowerShell components that are instrumented for tracing.
+Gets PowerShell components that are instrumented for tracing.
 
 ### [Get-TypeData](Get-TypeData.md)
 Gets the extended type data in the current session.
 
 ### [Get-UICulture](Get-UICulture.md)
-Gets the current user interface (UI) culture settings in the operating system.
+Gets the current UI culture settings in the operating system.
 
 ### [Get-Unique](Get-Unique.md)
 Returns unique items from a sorted list.
@@ -143,13 +145,14 @@ Groups objects that contain the same value for specified properties.
 Imports an alias list from a file.
 
 ### [Import-Clixml](Import-Clixml.md)
-Imports a CLIXML file and creates corresponding objects within Windows PowerShell.
+Imports a CLIXML file and creates corresponding objects in PowerShell.
 
 ### [Import-Csv](Import-Csv.md)
-Creates table-like custom objects from the items in a CSV file.
+Creates table-like custom objects from the items in a comma-separated value (CSV) file.
 
 ### [Import-LocalizedData](Import-LocalizedData.md)
-Imports language-specific data into scripts and functions based on the UI culture that is selected for the operating system.
+Imports language-specific data into scripts and functions based on the UI culture that is selected
+for the operating system.
 
 ### [Import-PSSession](Import-PSSession.md)
 Imports commands from another session into the current session.
@@ -167,13 +170,17 @@ Gets content from a web page on the Internet.
 Measures the time it takes to run script blocks and cmdlets.
 
 ### [Measure-Object](Measure-Object.md)
-Calculates the numeric properties of objects, and the characters, words, and lines in string objects, such as files of text.
+Calculates the numeric properties of objects, and the characters, words, and lines in string
+objects, such as files of text.
 
 ### [New-Alias](New-Alias.md)
 Creates a new alias.
 
 ### [New-Event](New-Event.md)
 Creates a new event.
+
+### [New-Guid](New-Guid.md)
+Creates a GUID.
 
 ### [New-Object](New-Object.md)
 Creates an instance of a Microsoft .NET Framework or COM object.
@@ -200,7 +207,7 @@ Sends objects to the host as a series of strings.
 Reads a line of input from the console.
 
 ### [Register-EngineEvent](Register-EngineEvent.md)
-Subscribes to events that are generated by the Windows PowerShell engine and by the New-Event cmdlet.
+Subscribes to events that are generated by the PowerShell engine and by the `New-Event` cmdlet.
 
 ### [Register-ObjectEvent](Register-ObjectEvent.md)
 Subscribes to the events that are generated by a Microsoft .NET Framework object.
@@ -212,7 +219,7 @@ Deletes events from the event queue.
 Deletes breakpoints from the current console.
 
 ### [Remove-TypeData](Remove-TypeData.md)
-Deletes extended types from the current session
+Deletes extended types from the current session.
 
 ### [Remove-Variable](Remove-Variable.md)
 Deletes a variable and its value.
@@ -227,10 +234,10 @@ Finds text in strings and files.
 Finds text in an XML string or document.
 
 ### [Send-MailMessage](Send-MailMessage.md)
-Sends an e-mail message.
+Sends an email message.
 
 ### [Set-Alias](Set-Alias.md)
-Creates or changes an alias (alternate name) for a cmdlet or other command element in the current Windows PowerShell session.
+Creates or changes an alias for a cmdlet or other command in the current PowerShell session.
 
 ### [Set-Date](Set-Date.md)
 Changes the system time on the computer to a time that you specify.
@@ -239,7 +246,7 @@ Changes the system time on the computer to a time that you specify.
 Sets a breakpoint on a line, command, or variable.
 
 ### [Set-TraceSource](Set-TraceSource.md)
-Configures, starts, and stops a trace of Windows PowerShell components.
+Configures, starts, and stops a trace of PowerShell components.
 
 ### [Set-Variable](Set-Variable.md)
 Sets the value of a variable.
@@ -290,7 +297,7 @@ Writes customized output to a host.
 Sends the specified objects to the next command in the pipeline.
 
 ### [Write-Progress](Write-Progress.md)
-Displays a progress bar within a Windows PowerShell command window.
+Displays a progress bar within a PowerShell command window.
 
 ### [Write-Verbose](Write-Verbose.md)
 Writes text to the verbose message stream.

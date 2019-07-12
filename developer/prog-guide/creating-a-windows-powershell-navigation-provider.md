@@ -28,34 +28,6 @@ The provider described here enables the user handle an Access database as a driv
 > [!CAUTION]
 > Be aware that this design assumes a database that has a field with the name ID, and that the type of the field is LongInteger.
 
-The following list includes sections in this topic. If you are unfamiliar with writing a Windows PowerShell navigation provider, read this information in the order that it appears. However, if you are familiar with writing a Windows PowerShell navigation provider, please go directly to the information that you need.
-
-- [Defining a PS Navigation Provider Class](#Define-the-Windows-PowerShell-provider)
-
-- [Defining Base Functionality](#Defining-Base-Functionality)
-
-- [Creating a PS Path](#Creating-a-Windows-PowerShell-Path)
-
-- [Retrieving the Parent Path](#Retrieving-the-Parent-Path)
-
-- [Retrieving the Child Path Name](#Retrieve-the-Child-Path-Name)
-
-- [Determining if an Item is a Container](#Determining-if-an-Item-is-a-Container)
-
-- [Moving an Item](#Moving-an-Item)
-
-- [Attaching Dynamic Parameters to the `Move-Item` Cmdlet](#Attaching-Dynamic-Parameters-to-the-Move-Item-Cmdlet)
-
-- [Normalizing a Relative Path](#Normalizing-a-Relative-Path)
-
-- [Code Sample](#Code-Sample)
-
-- [Defining Object Types and Formatting](#Defining-Object-Types-and-Formatting)
-
-- [Building the Windows PowerShell Provider](#Building-the-Windows-PowerShell-provider)
-
-- [Testing the Windows PowerShell Provider](#Testing-the-Windows-PowerShell-provider)
-
 ## Define the Windows PowerShell provider
 
 A Windows PowerShell navigation provider must create a .NET class that derives from the [System.Management.Automation.Provider.Navigationcmdletprovider](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider) base class. Here is the class definition for the navigation provider described in this section.
@@ -148,9 +120,9 @@ Your navigation provider .NET class might declare provider capabilities of Expan
 
 By default, overrides of this method should not move objects over existing objects unless the [System.Management.Automation.Provider.Cmdletprovider.Force*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) property is set to `true`. For example, the filesystem provider will not copy c:\temp\abc.txt over an existing c:\bar.txt file unless the [System.Management.Automation.Provider.Cmdletprovider.Force*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) property is set to `true`. If the path specified in the `destination` parameter exists and is a container, the [System.Management.Automation.Provider.Cmdletprovider.Force*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) property is not required. In this case, [System.Management.Automation.Provider.Navigationcmdletprovider.Moveitem*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MoveItem) should move the item indicated by the `path` parameter to the container indicated by the `destination` parameter as a child.
 
-Your implementation of the [System.Management.Automation.Provider.Navigationcmdletprovider.Moveitem*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MoveItem) method should call [System.Management.Automation.Provider.Cmdletprovider.Shouldprocess*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) and check its return value before making any changes to the data store. This method is used to confirm execution of an operation when a change is made to system state, for example, deleting files. [System.Management.Automation.Provider.Cmdletprovider.Shouldprocess*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) sends the name of the resource to be changed to the user, with the Windows PowerShell runtime taking into account any command line settings or preference variables in determining what should be displayed to the user.
+Your implementation of the [System.Management.Automation.Provider.Navigationcmdletprovider.Moveitem*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MoveItem) method should call [System.Management.Automation.Provider.Cmdletprovider.ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) and check its return value before making any changes to the data store. This method is used to confirm execution of an operation when a change is made to system state, for example, deleting files. [System.Management.Automation.Provider.Cmdletprovider.ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) sends the name of the resource to be changed to the user, with the Windows PowerShell runtime taking into account any command line settings or preference variables in determining what should be displayed to the user.
 
-After the call to [System.Management.Automation.Provider.Cmdletprovider.Shouldprocess*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) returns `true`, the [System.Management.Automation.Provider.Navigationcmdletprovider.Moveitem*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MoveItem) method should call the [System.Management.Automation.Provider.Cmdletprovider.Shouldcontinue*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue) method. This method sends a message to the user to allow feedback to say if the operation should be continued. Your provider should call [System.Management.Automation.Provider.Cmdletprovider.Shouldcontinue*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue) as an additional check for potentially dangerous system modifications.
+After the call to [System.Management.Automation.Provider.Cmdletprovider.ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) returns `true`, the [System.Management.Automation.Provider.Navigationcmdletprovider.Moveitem*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MoveItem) method should call the [System.Management.Automation.Provider.Cmdletprovider.ShouldContinue](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue) method. This method sends a message to the user to allow feedback to say if the operation should be continued. Your provider should call [System.Management.Automation.Provider.Cmdletprovider.ShouldContinue](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue) as an additional check for potentially dangerous system modifications.
 
 ## Attaching Dynamic Parameters to the Move-Item Cmdlet
 

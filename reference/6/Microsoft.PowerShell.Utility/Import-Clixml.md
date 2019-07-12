@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Utility
 ms.date: 06/09/2017
-online version: http://go.microsoft.com/fwlink/?LinkId=821813
+online version: https://go.microsoft.com/fwlink/?linkid=2096532
 schema: 2.0.0
 title: Import-Clixml
 ---
@@ -56,7 +56,7 @@ $Credxmlpath = Join-Path (Split-Path $Profile) TestScript.ps1.credential
 $Credential = Import-CliXml $Credxmlpath
 ```
 
-The **Export-CliXml** cmdlet encrypts credential objects by using the Windows Data Protection APIhttp://msdn.microsoft.com/library/windows/apps/xaml/hh464970.aspx.
+The **Export-CliXml** cmdlet encrypts credential objects by using the [Windows Data Protection API](http://msdn.microsoft.com/library/windows/apps/xaml/hh464970.aspx).
 This ensures that only your user account can decrypt the contents of the credential object.
 
 In this example, given a credential that you've stored in the $Credential variable by running the Get-Credential cmdlet, you can run the **Export-CliXml** cmdlet to save the credential to disk.

@@ -3,8 +3,8 @@ external help file: PSModule-help.xml
 keywords: powershell,cmdlet
 locale: en-us
 Module Name: PowerShellGet
-ms.date: 3/7/2019
-online version: http://go.microsoft.com/fwlink/?LinkId=821663
+ms.date: 03/07/2019
+online version: https://go.microsoft.com/fwlink/?linkid=821663
 schema: 2.0.0
 title: Install-Module
 ---
@@ -20,17 +20,17 @@ Downloads one or more modules from a repository, and installs them on the local 
 
 ```
 Install-Module [-Name] <String[]> [-MinimumVersion <String>] [-MaximumVersion <String>]
-[-RequiredVersion <String>] [-Repository <String[]>] [-Credential <PSCredential>] [-Scope <String>]
-[-Proxy <Uri>] [-ProxyCredential <PSCredential>] [-AllowClobber] [-SkipPublisherCheck] [-Force]
-[-AllowPrerelease] [-AcceptLicense] [-WhatIf] [-Confirm] [<CommonParameters>]
+ [-RequiredVersion <String>] [-Repository <String[]>] [-Credential <PSCredential>] [-Scope <String>]
+ [-Proxy <Uri>] [-ProxyCredential <PSCredential>] [-AllowClobber] [-SkipPublisherCheck] [-Force]
+ [-AllowPrerelease] [-AcceptLicense] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### InputObject
 
 ```
 Install-Module [-InputObject] <PSObject[]> [-Credential <PSCredential>] [-Scope <String>]
-[-Proxy <Uri>] [-ProxyCredential <PSCredential>] [-AllowClobber] [-SkipPublisherCheck] [-Force]
-[-AcceptLicense] [-WhatIf] [-Confirm] [<CommonParameters>]
+ [-Proxy <Uri>] [-ProxyCredential <PSCredential>] [-AllowClobber] [-SkipPublisherCheck] [-Force]
+ [-AcceptLicense] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -313,7 +313,7 @@ Accept wildcard characters: False
 Use the **Repository** parameter to specify which repository is used to download and install a
 module. Used when multiple repositories are registered. Specifies the name of a registered
 repository in the `Install-Module` command. To register a repository, use `Register-PSRepository`.
-To display registered repositories, se `Get-PSRepository`.
+To display registered repositories, use `Get-PSRepository`.
 
 ```yaml
 Type: String[]

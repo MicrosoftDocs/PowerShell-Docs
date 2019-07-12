@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Core
 ms.date: 06/09/2017
-online version: http://go.microsoft.com/fwlink/?LinkId=821510
+online version: https://go.microsoft.com/fwlink/?linkid=2096184
 schema: 2.0.0
 title: Remove-Module
 ---
@@ -46,24 +46,27 @@ It affects only the current PowerShell session.
 
 ### Example 1: Remove a module
 
-```
-PS C:\> Remove-Module -Name "BitsTransfer"
+```powershell
+Remove-Module -Name "BitsTransfer"
 ```
 
 This command removes the BitsTransfer module from the current session.
 
 ### Example 2: Remove all modules
 
-```
-PS C:\> Get-Module | Remove-Module
+```powershell
+Get-Module | Remove-Module
 ```
 
 This command removes all modules from the current session.
 
 ### Example 3: Remove modules by using the pipeline
 
+```powershell
+"FileTransfer", "PSDiagnostics" | Remove-Module -Verbose
 ```
-PS C:\> "FileTransfer", "PSDiagnostics" | Remove-Module -Verbose
+
+```Output
 VERBOSE: Performing operation "Remove-Module" on Target "filetransfer (Path: 'C:\Windows\system32\WindowsPowerShell\v1.0\Modules\filetransfer\filetransfer.psd1')".
 VERBOSE: Performing operation "Remove-Module" on Target "Microsoft.BackgroundIntelligentTransfer.Management (Path: 'C:\Windows\assembly\GAC_MSIL\Microsoft.BackgroundIntelligentTransfer.Management\1.0.0.0__31bf3856ad364e35\Microsoft.BackgroundIntelligentTransfe
 r.Management.dll')".
@@ -92,9 +95,9 @@ The PSDiagnostics module includes a module script file (.psm1) that exports func
 
 ### Example 4: Remove a module by using ModuleInfo
 
-```
-PS C:\> $a = Get-Module BitsTransfer
-PS C:\> Remove-Module -ModuleInfo $a
+```powershell
+$a = Get-Module BitsTransfer
+Remove-Module -ModuleInfo $a
 ```
 
 This command uses the *ModuleInfo* parameter to remove the BitsTransfer module.

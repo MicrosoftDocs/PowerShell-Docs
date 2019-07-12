@@ -3,7 +3,7 @@ ms.date:  02/19/2019
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
-online version: http://go.microsoft.com/fwlink/?LinkId=821879
+online version: https://go.microsoft.com/fwlink/?linkid=2096984
 external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 title:  Write-Progress
 ---
@@ -22,7 +22,7 @@ Write-Progress [-Activity] <String> [[-Status] <String>] [[-Id] <Int32>] [-Perce
 
 ## DESCRIPTION
 
-The `Write-Progress` cmdlet displays a progress bar in a Windows PowerShell command window that
+The `Write-Progress` cmdlet displays a progress bar in a PowerShell command window that
 depicts the status of a running command or script.
 You can select the indicators that the bar reflects and the text that appears above and below the
 progress bar.
@@ -290,7 +290,7 @@ You cannot pipe input to this cmdlet.
 
 If the progress bar does not appear, check the value of the `$ProgressPreference` variable. If the
 value is set to SilentlyContinue, the progress bar is not displayed. For more information about
-Windows PowerShell preferences, see [about_Preference_Variables](../Microsoft.PowerShell.Core/About/about_Preference_Variables.md).
+PowerShell preferences, see [about_Preference_Variables](../Microsoft.PowerShell.Core/About/about_Preference_Variables.md).
 
 The parameters of the cmdlet correspond to the properties of the
 **System.Management.Automation.ProgressRecord** class. For more information, see

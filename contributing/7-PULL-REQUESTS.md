@@ -3,6 +3,17 @@
 To publish changes to content, you submit a pull request from your fork. Every pull request has to
 be reviewed prior to being merged.
 
+## Target the correct branch
+
+All changes should be made to the `staging` branch. Changes should never be targetted at the `live`
+branch. Changes made in the `staging` branch get merged into `live` so any changes made to `live`
+are overwritten.
+
+If you are submitting a change to documentation that only applies to an unreleased version of
+PowerShell, check to see if there is a release branch for that version. All changes that apply to
+a specific, future version should be targetted at the release branch. Release branches have the
+following name pattern: `release-<verison>`. 
+
 ## Make the pull request queue work better for everyone
 
 There are two basic realities in the PR queue:
@@ -38,18 +49,19 @@ You'll see the following behavior:
 
 1. You submit a PR.
 1. In the GitHub comment that indicates the status of your PR, you'll see the status of "checks"
-   enabled on the repo. Note that in this example, there are two checks enabled, "Commit
-   Validation" and "OpenPublishing.Build":
+   enabled on the repo. Note that in this example, there are two checks enabled, "Commit Validation"
+   and "OpenPublishing.Build":
 
    ![some checks failed](images/7-pull-requests/validation-failed.png)
 
    Build can pass even if commit validation fails.
 
 1. Click **Details** for more information.
-1. On the Details page, you'll see all the validation checks that failed, with information about
-   how to fix the issues.
+1. On the Details page, you'll see all the validation checks that failed, with information about how
+   to fix the issues.
 1. When validation succeeds, you will see a comment similar to the following:
 
    ![build validation](images/7-pull-requests/build-validation.png)
 
-If you are an external (non-Microsoft) contributor you may not have access to the detailed build reports or preview links.
+If you are an external (non-Microsoft) contributor you do not have access to the detailed build
+reports or preview links.

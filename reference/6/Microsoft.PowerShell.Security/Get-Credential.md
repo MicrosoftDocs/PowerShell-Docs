@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Security
 ms.date: 02/25/2019
-online version: http://go.microsoft.com/fwlink/?LinkId=821713
+online version: https://go.microsoft.com/fwlink/?linkid=2096411
 schema: 2.0.0
 title: Get-Credential
 ---
@@ -37,7 +37,7 @@ message on the dialog box that prompts the user for their name and password.
 
 The **Get-Credential** cmdlet prompts the user for a password or a user name and password. By
 default, an authentication dialog box appears to prompt the user. However, in some host programs,
-such as the Windows PowerShell console, you can prompt the user at the command line by changing a
+such as the PowerShell console, you can prompt the user at the command line by changing a
 registry entry. For more information about this registry entry, see the notes and examples.
 
 ## EXAMPLES
@@ -55,7 +55,7 @@ enter the requested information, the cmdlet creates a **PSCredential** object re
 credentials of the user and saves it in the $c variable.
 
 You can use the object as input to cmdlets that request user authentication, such as those with a
-**Credential** parameter. However, some providers that are installed with Windows PowerShell do not
+**Credential** parameter. However, some providers that are installed with PowerShell do not
 support the **Credential** parameter.
 
 ### Example 2
@@ -124,12 +124,12 @@ This example shows how to modify the registry so that the user is prompted at th
 instead of by using a dialog box.
 
 The command creates the **ConsolePrompting** registry entry and sets its value to True. To run this
-command, start Windows PowerShell with the "Run as administrator" option.
+command, start PowerShell with the "Run as administrator" option.
 
 To use a dialog box for prompting, set the value of the ConsolePrompting to false ($false) or use
 the Remove-ItemProperty cmdlet to delete it.
 
-The ConsolePrompting registry entry works in some host programs, such as the Windows PowerShell
+The ConsolePrompting registry entry works in some host programs, such as the PowerShell
 console. It might not work in all host programs.
 
 ### Example 7
@@ -302,15 +302,14 @@ at the command line, add the **ConsolePrompting** registry entry
 **ConsolePrompting** registry entry does not exist or if its value is False, the authentication
 prompt appears in a dialog box. For instructions, see the examples.
 
-The **ConsolePrompting** registry entry works in the Windows PowerShell console, but it does not
+The **ConsolePrompting** registry entry works in the PowerShell console, but it does not
 work in all host programs.
 
 For example, it has no effect in the Windows PowerShell Integrated Scripting Environment (ISE). For
 information about the effect of the **ConsolePrompting** registry entry, see the help topics for
 the host program.
 
-The **Credential** parameter is not supported by all providers that are installed with Windows
-PowerShell. Beginning in Windows PowerShell 3.0, it is supported on selected cmdlet, such as the
+The **Credential** parameter is not supported by all providers that are installed with PowerShell. Beginning in Windows PowerShell 3.0, it is supported on selected cmdlet, such as the
 Get-WmiObject and New-PSDrive cmdlets.
 
 ## RELATED LINKS

@@ -3,7 +3,7 @@ ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821646
+online version: https://go.microsoft.com/fwlink/?linkid=2096986
 external help file:  Microsoft.PowerShell.Commands.Management.dll-Help.xml
 title:  Test-Connection
 ---
@@ -160,6 +160,69 @@ The value is `$True` if any of the four pings succeed. If none of the pings succ
 `$False`.
 
 If the `Test-Connection` command returns a value of `$True`, the command uses the `New-PSSession` cmdlet to create the **PSSession**.
+
+### Example 7: Use the Traceroute parameter
+
+Beginning in PowerShell 6.0, the **Traceroute** parameter maps a route between the local computer
+and the remote destination you specify to **TargetName**.
+
+```powershell
+Test-Connection -TargetName www.microsoft.com -Traceroute | ForEach-Object {
+  $_ | Format-Table Source, DestinationAddress, DestinationHost
+  $_.Replies | ForEach-Object {
+      $_ | Format-Table Hop, ReplyRouterAddress
+      $_.PingReplies | Format-Table
+  }
+}
+```
+
+```Output
+Tracing route to www.microsoft.com [96.6.27.90] over a maximum of 128 hops:
+  1   0 ms   0 ms   0 ms   192.168.0.3 [192.168.0.3]
+  2   0 ms   0 ms   0 ms   192.168.1.1 [192.168.1.1]
+  3   3 ms   29 ms   4 ms   96.6.27.90 [96.6.27.90]
+Trace complete.
+
+Source      DestinationAddress DestinationHost   Replies
+------      ------------------ ---------------   -------
+SERVER01    96.6.27.90         www.microsoft.com {, , }
+
+Hop ReplyRouterAddress
+--- ------------------
+  1 192.168.0.3
+
+    Status Address      RoundtripTime Options Buffer
+    ------ -------      ------------- ------- ------
+TtlExpired 192.168.86.1             0         {}
+TtlExpired 192.168.86.1             0         {}
+TtlExpired 192.168.86.1             0         {}
+
+Hop ReplyRouterAddress
+--- ------------------
+  2 192.168.1.1
+
+    Status Address     RoundtripTime Options Buffer
+    ------ -------     ------------- ------- ------
+TtlExpired 192.168.1.1             0         {}
+TtlExpired 192.168.1.1             0         {}
+TtlExpired 192.168.1.1             0         {}
+
+Hop ReplyRouterAddress
+--- ------------------
+  3 96.6.27.90
+
+ Status Address    RoundtripTime Options                                   Buffer
+ ------ -------    ------------- -------                                   ------
+Success 96.6.27.90             3 System.Net.NetworkInformation.PingOptions {97, 98, 99, 100…}
+Success 96.6.27.90             2 System.Net.NetworkInformation.PingOptions {97, 98, 99, 100…}
+Success 96.6.27.90             4 System.Net.NetworkInformation.PingOptions {97, 98, 99, 100…}
+```
+
+The first command calls the `Test-Connection` cmdlet with the **Traceroute** parameter. The results,
+which are `[Microsoft.PowerShell.Commands.TestConnectionCommand+TraceRouteResult]` objects are piped
+to the `ForEach-Object` cmdlet, which creates a structured output of the contained
+`[Microsoft.PowerShell.Commands.TestConnectionCommand+TraceRouteReply]` objects and subsequent
+`[System.Net.NetworkInformation.PingReply]` objects.
 
 ## PARAMETERS
 

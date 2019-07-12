@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Security
 ms.date: 06/09/2017
-online version: http://go.microsoft.com/fwlink/?LinkId=821709
+online version: https://go.microsoft.com/fwlink/?linkid=2096413
 schema: 2.0.0
 title: ConvertTo-SecureString
 ---
@@ -45,6 +45,10 @@ The secure string can be converted back to an encrypted, standard string using t
 This enables it to be stored in a file for later use.
 
 If the standard string being converted was encrypted with **ConvertFrom-SecureString** using a specified key, that same key must be provided as the value of the *Key* or *SecureKey* parameter of the **ConvertTo-SecureString** cmdlet.
+
+> [!NOTE]
+> Note that per [DotNet](/dotnet/api/system.security.securestring?view=netcore-2.1#remarks), the
+> contents of a SecureString are not encrypted on non-Windows systems.
 
 ## EXAMPLES
 

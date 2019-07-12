@@ -4,7 +4,7 @@ schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
 title:  Function Provider
-online version:  http://go.microsoft.com/fwlink/?LinkId=834961
+online version: https://go.microsoft.com/fwlink/?linkid=2096230
 ---
 # Function provider
 
@@ -97,6 +97,20 @@ same effect when used with `Get-ChildItem`.
 
 ```powershell
 Get-ChildItem -Path Function:
+```
+
+You can retrieve a function's definition by accessing the **Definition**
+property, as shown below.
+
+```powershell
+(Get-Item -Path function:more).Definition
+```
+
+You can also retrieve a function's definition using its provider path prefixed
+by the dollar sign (`$`).
+
+```powershell
+$function:more
 ```
 
 ### Getting selected functions

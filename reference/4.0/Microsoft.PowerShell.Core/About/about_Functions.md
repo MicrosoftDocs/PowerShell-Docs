@@ -1,5 +1,5 @@
 ---
-md.date: 2/27/2019
+ms.date: 2/27/2019
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -29,7 +29,10 @@ positional, switch, or dynamic parameters. Function parameters can be read
 from the command line or from the pipeline.
 
 Functions can return values that can be displayed, assigned to variables, or
-passed to other functions or cmdlets.
+passed to other functions or cmdlets. You can also specify a return value using
+the `return` keyword. The `return` keyword does not affect or suppress other
+output returned from your function. However, the `return` keyword exits the
+function at that line. For more information, see [about_Return](about_Return.md).
 
 The function's statement list can contain different types of statement lists
 with the keywords `Begin`, `Process`, and `End`. These statement lists
@@ -431,11 +434,12 @@ Begin: The input is
 End:   The input is 1 2 4
 ```
 
-When the `Begin` statement runs, the function does not have the input from
-the pipeline. The `End` statement runs after the function has the values.
+When the `Begin` statement runs, the function does not have the input from the
+pipeline. The `End` statement runs after the function has the values.
 
-If the function has a `Process` keyword, the function reads the data in
-`$input`. The following example has a `Process` statement list:
+If the function has a `Process` keyword, each object in `$input` is removed
+from `$input` and assigned to `$_`. The following example has a `Process`
+statement list:
 
 ```powershell
 function Get-PipelineInput

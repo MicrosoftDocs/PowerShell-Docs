@@ -20,7 +20,7 @@ The common workflow parameters are grouped into several categories as follows.
 |Name|Type|Description|Can be specified by end user at execution time?|Can be specified by workflow author at authoring time?|Can be specified by workflow author at instantiation?|
 |----------|----------|-----------------|-----------------------------------------------------|------------------------------------------------------------|-----------------------------------------------------------|
 |PSComputerName|String[]|A list of computer names for which to launch jobs.|Yes|Yes|Yes|
-|PSCredential|[System.Management.Automation.Pscredential](/dotnet/api/System.Management.Automation.PSCredential)|The authentication credential to use to login to the computers specified by the PSComputerName parameter. This parameter is valid only if PSComputerName is specified.|Yes|Yes|Yes|
+|PSCredential|[System.Management.Automation.PSCredential](/dotnet/api/System.Management.Automation.PSCredential)|The authentication credential to use to login to the computers specified by the PSComputerName parameter. This parameter is valid only if PSComputerName is specified.|Yes|Yes|Yes|
 |PSPort|UInt32|The port to be used to run the workflow.|Yes|Yes|Yes|
 |PSUseSSL|Boolean|Use Secure Sockets Layer (SSL) protocol to establish a secure connection to the remote computer to run the workflow.|Yes|Yes|Yes|
 |PSConfigurationName|String|The session configuration used to run the workflow.|Yes|Yes|Yes|

@@ -43,7 +43,7 @@ Both push and pull modes
 - [Remove-DscConfigurationDocument](/powershell/module/PSDesiredStateConfiguration/Remove-DscConfigurationDocument)
 - [Get-DscConfigurationStatus](/powershell/module/PSDesiredStateConfiguration/Get-DscConfigurationStatus)
 - [Invoke-DscResource](/powershell/module/PSDesiredStateConfiguration/Invoke-DscResource)
-- [Find-DscResource](https://technet.microsoft.com/en-us/library/mt517874.aspx)
+- [Find-DscResource](/powershell/module/powershellget/find-dscresource?view=powershell-6)
 - [Get-DscResource](/powershell/module/PSDesiredStateConfiguration/Get-DscResource)
 - [New-DscChecksum](/powershell/module/PSDesiredStateConfiguration/New-DSCCheckSum)
 
@@ -55,7 +55,7 @@ Both push and pull modes
 
 - Running a resource under user context (see [Running DSC with user credentials (RunAs)](../configurations/runAsUser.md))
 
-- Class-based resources (see [Writing a custom DSC resource with PowerShell classes](../resources/authoringResourceClass.md))
+- Class-based resources (see [Writing a custom DSC resource with PowerShell classes](/previous-versions//dn948461(v=technet.10)))
 
 - Debugging of DSC resources (see [Debugging DSC resources](../troubleshooting/debugResource.md))
 

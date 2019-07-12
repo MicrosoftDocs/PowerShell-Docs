@@ -3,7 +3,7 @@ ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkID=135210
+online version: https://go.microsoft.com/fwlink/?linkid=135210
 external help file:  System.Management.Automation.dll-Help.xml
 title:  Enter-PSSession
 ---
@@ -86,7 +86,7 @@ The commands that you enter run in the new session, and the results are returned
 ```
 PS> Enter-PSSession -ComputerName Server01
 [Server01]: PS>
-[Server01]: PS> Get-Process Powershell > C:\ps-test\Process.txt
+[Server01]: PS> Get-Process PowerShell > C:\ps-test\Process.txt
 [Server01]: PS> exit
 PS>
 PS> dir C:\ps-test\process.txt

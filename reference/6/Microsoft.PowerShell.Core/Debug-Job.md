@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Core
 ms.date: 06/09/2017
-online version: http://go.microsoft.com/fwlink/?LinkId=512991
+online version: https://go.microsoft.com/fwlink/?linkid=2096163
 schema: 2.0.0
 title: Debug-Job
 ---
@@ -12,7 +12,7 @@ title: Debug-Job
 # Debug-Job
 
 ## SYNOPSIS
-Debugs a running background, remote, or Windows PowerShell Workflow job.
+Debugs a running background, remote, or PowerShell Workflow job.
 
 ## SYNTAX
 
@@ -38,7 +38,7 @@ Debug-Job [-InstanceId] <Guid> [-WhatIf] [-Confirm] [<CommonParameters>]
 
 ## DESCRIPTION
 The **Debug-Job** cmdlet lets you debug scripts that are running within jobs.
-The cmdlet is designed to debug Windows PowerShell Workflow jobs, background jobs, and jobs running in remote sessions.
+The cmdlet is designed to debug PowerShell Workflow jobs, background jobs, and jobs running in remote sessions.
 **Debug-Job** accepts a running job object, name, ID, or instance ID as input, and starts a debugging session on the script it is running.
 The debugger **quit** command stops the job and running script.
 Starting in Windows PowerShell 5.0, the **exit** command detaches the debugger, and allows the job to continue to run.

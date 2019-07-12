@@ -56,7 +56,7 @@ Server include:
 
 ## DSC pull service in Windows Server
 
-It is possible to configuring a pull service
+It is possible to configure a pull service
 to run on Windows Server.
 Be advised that the pull service solution included in Windows Server
 includes only capabilities of storing configurations/modules for download

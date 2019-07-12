@@ -8,7 +8,7 @@ title:  about_Regular_Expressions
 # About Regular Expressions
 
 ## Short description
-Describes regular expressions in Windows PowerShell.
+Describes regular expressions in PowerShell.
 
 ## Long description
 
@@ -62,6 +62,9 @@ while `[^character group]` only matches characters NOT in the group.
 # This expression returns true if the pattern matches big, bog, or bug.
 "big" -match "b[iou]g"
 ```
+
+If your list of characters to match includes the hyphen character (-), it must be at the beginning
+or end of the list to distinguish it from a character range expression.
 
 #### Character ranges
 
@@ -287,7 +290,7 @@ Name                           Value
 > the value stored.
 >
 > ```powershell
-> PS> "Good Dog" -matches "Dog"
+> PS> "Good Dog" -match "Dog"
 > True
 >
 > PS> $Matches[0]

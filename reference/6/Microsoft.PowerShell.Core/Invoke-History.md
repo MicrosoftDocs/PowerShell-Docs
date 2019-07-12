@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Core
 ms.date: 06/09/2017
-online version: http://go.microsoft.com/fwlink/?LinkId=821494
+online version: https://go.microsoft.com/fwlink/?linkid=2096284
 schema: 2.0.0
 title: Invoke-History
 ---
@@ -29,8 +29,8 @@ To find the identification number of a command, use the **Get-History** cmdlet.
 
 ### Example 1: Run the most recent command in the history
 
-```
-PS C:\> Invoke-History
+```powershell
+Invoke-History
 ```
 
 This command runs the last, or most recent, command in the session history.
@@ -38,8 +38,8 @@ You can abbreviate this command as `r`, the alias for **Invoke-History**.
 
 ### Example 2: Run the command that has a specified ID
 
-```
-PS C:\> Invoke-History -Id 132
+```powershell
+Invoke-History -Id 132
 ```
 
 This command runs the command in the session history with ID 132.
@@ -47,8 +47,8 @@ Because the name of the *Id* parameter is optional, you can abbreviate this comm
 
 ### Example 3: Run the most recent command by using the command text
 
-```
-PS C:\> Invoke-History -ID get-pr
+```powershell
+Invoke-History -ID get-pr
 ```
 
 This command runs the most recent **Get-Process** command in the session history.
@@ -56,8 +56,8 @@ When you type characters for the *Id* parameter, **Invoke-History** runs the fir
 
 ### Example 4: Run a sequence of commands from the history
 
-```
-PS C:\> 16..24 | ForEach {Invoke-History -Id $_ }
+```powershell
+16..24 | ForEach {Invoke-History -Id $_ }
 ```
 
 This command runs commands 16 through 24.
@@ -65,8 +65,8 @@ Because you can list only one ID value, the command uses the ForEach-Object cmdl
 
 ### Example 5
 
-```
-PS C:\> Get-History -Id 255 -Count 7 | ForEach {Invoke-History -Id $_.Id}
+```powershell
+Get-History -Id 255 -Count 7 | ForEach {Invoke-History -Id $_.Id}
 ```
 
 This command runs the 7 commands in the history that end with command 255 (typically 249 through 255).

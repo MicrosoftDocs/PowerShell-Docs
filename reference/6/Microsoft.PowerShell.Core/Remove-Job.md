@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Core
 ms.date: 06/09/2017
-online version: http://go.microsoft.com/fwlink/?LinkId=821509
+online version: https://go.microsoft.com/fwlink/?linkid=2096279
 schema: 2.0.0
 title: Remove-Job
 ---
@@ -79,9 +79,9 @@ If you do not delete a background job, the job remains in the global job cache u
 
 ### Example 1: Delete a job by using its name
 
-```
-PS C:\> $batch = Get-Job -Name "BatchJob"
-PS C:\> $batch | Remove-Job
+```powershell
+$batch = Get-Job -Name "BatchJob"
+$batch | Remove-Job
 ```
 
 This example deletes a background job named BatchJob from the current session.
@@ -93,24 +93,24 @@ This command is equivalent to using the *Job* parameter of **Remove-Job**, for e
 
 ### Example 2: Delete all jobs in a session
 
-```
-PS C:\> Get-Job | Remove-Job
+```powershell
+Get-Job | Remove-Job
 ```
 
 This command deletes all of the jobs in the current session.
 
 ### Example 3: Delete NotStarted jobs
 
-```
-PS C:\> Remove-Job -State NotStarted
+```powershell
+Remove-Job -State NotStarted
 ```
 
 This command deletes all jobs from the current session that have not yet been started.
 
 ### Example 4: Delete jobs by using a friendly name
 
-```
-PS C:\> Remove-Job -Name *batch -Force
+```powershell
+Remove-Job -Name *batch -Force
 ```
 
 This command deletes all jobs that have friendly names that end with batch from the current session.
@@ -120,9 +120,9 @@ The command uses the *Name* parameter of **Remove-Job** to specify a job name pa
 
 ### Example 5: Delete a job that was created by Invoke-Command
 
-```
-PS C:\> $j = Invoke-Command -ComputerName Server01 -ScriptBlock {Get-Process} -AsJob
-PS C:\> $j | Remove-Job
+```powershell
+$j = Invoke-Command -ComputerName Server01 -ScriptBlock {Get-Process} -AsJob
+$j | Remove-Job
 ```
 
 This example shows how to use the **Remove-Job** cmdlet to remove a job that was started on a remote computer by using the *AsJob* parameter of the Invoke-Command cmdlet.
@@ -140,29 +140,33 @@ A remote command is not required to remove a job that was started by using the *
 
 ### Example 6: Delete a job that was created by Invoke-Command and Start-Job
 
-```
-The first command uses the New-PSSession cmdlet to create a **PSSession**, which is a persistent connection, to the Server01 computer. A persistent connection is required when you run **Start-Job** remotely. The command stores the **PSSession** in the $s variable.
-PS C:\> $s = New-PSSession -ComputerName Server01
-
-The second command uses the **Invoke-Command** cmdlet to run a **Start-Job** command in the **PSSession** in $s. The job runs a **Get-Process** command. It uses the *Name* parameter of **Start-Job** to specify a friendly name for the job.
-PS C:\> Invoke-Command -Session $s -ScriptBlock {Start-Job -ScriptBlock {Get-Process} -Name MyJob}
-
-The third command uses the **Invoke-Command** cmdlet to run a **Remove-Job** command in the **PSSession** in $s. The command uses the *Name* parameter to identify the job to delete.
-PS C:\> Invoke-Command -Session $s -ScriptBlock {Remove-Job -Name MyJob}
+```powershell
+$s = New-PSSession -ComputerName Server01
+Invoke-Command -Session $s -ScriptBlock {Start-Job -ScriptBlock {Get-Process} -Name MyJob}
+Invoke-Command -Session $s -ScriptBlock {Remove-Job -Name MyJob}
 ```
 
-This example shows how to remove a job that was started by using Invoke-Command to run a **Start-Job** command.
-In this case, the job object is created on the remote computer and you use remote commands to manage the job.
+The first command uses the New-PSSession cmdlet to create a **PSSession**, which is a persistent
+connection, to the Server01 computer. A persistent connection is required when you run **Start-Job**
+remotely. The command stores the **PSSession** in the $s variable.
+
+The second command uses the **Invoke-Command** cmdlet to run a **Start-Job** command in the
+**PSSession** in $s. The job runs a **Get-Process** command. It uses the *Name* parameter of
+**Start-Job** to specify a friendly name for the job.
+
+The third command uses the **Invoke-Command** cmdlet to run a **Remove-Job** command in the
+**PSSession** in $s. The command uses the *Name* parameter to identify the job to delete.
 
 ### Example 7: Delete a job by using its instance ID
 
+This example shows how to remove a job based on its instance ID.
+
+```powershell
+$j = Start-Job -ScriptBlock {Get-Process Powershell}
+$j | Format-List -Property *
 ```
-The first command uses **Start-Job** to start a background job. The command saves the resulting job object in the $j variable.
-PS C:\> $j = Start-Job -ScriptBlock {Get-Process Powershell}
 
-The second command uses a pipeline operator (|) to send the job object in $j to the Format-List cmdlet. The **Format-List** command uses the *Property* parameter with a value of * (all) to display all of the properties of the job object in a list.The job object display shows the values of the **ID** and **InstanceID** properties, together with the other properties of the object.
-PS C:\> $j | Format-List -Property *
-
+```Output
 HasMoreData   : False
 StatusMessage :
 Location      : localhost
@@ -180,12 +184,16 @@ Verbose       : {}
 Debug         : {}
 Warning       : {}
 StateChanged  :
-
-The third command uses a **Remove-Job** command to remove the job from the current session. To generate the command, you can copy and paste the *InstanceID* value from the object display.To copy a value in the PowerShell console, use the mouse to select the value, and then press Enter to copy it. To paste a value, right-click.
-PS C:\> Remove-Job -InstanceID dce2ee73-f8c9-483e-bdd7-a549d8687eed
 ```
 
-This example shows how to remove a job based on its instance ID.
+```powershell
+Remove-Job -InstanceID dce2ee73-f8c9-483e-bdd7-a549d8687eed
+```
+
+The first command uses **Start-Job** to start a background job. The command saves the resulting job object in the $j variable.
+The second command uses a pipeline operator (|) to send the job object in $j to the Format-List cmdlet. The **Format-List** command uses the *Property* parameter with a value of * (all) to display all of the properties of the job object in a list.The job object display shows the values of the **ID** and **InstanceID** properties, together with the other properties of the object.
+
+The third command uses a **Remove-Job** command to remove the job from the current session. To generate the command, you can copy and paste the *InstanceID* value from the object display.To copy a value in the PowerShell console, use the mouse to select the value, and then press Enter to copy it. To paste a value, right-click.
 
 ## PARAMETERS
 

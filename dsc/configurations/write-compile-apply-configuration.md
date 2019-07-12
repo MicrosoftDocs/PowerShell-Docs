@@ -60,8 +60,8 @@ For more information, see [about_Scripts](/powershell/module/microsoft.powershel
 <!-- markdownlint-enable MD038 -->
 
 ```powershell
-. C:\Scripts\WebsiteTest.ps1
-HelloWolrd
+. C:\Scripts\HelloWorld.ps1
+HelloWorld
 ```
 
 This generates the following output:

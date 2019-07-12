@@ -15,28 +15,6 @@ This section describes how to add aliases, wildcard expansion, and Help messages
 
 This Stop-Proc cmdlet attempts to stop processes that are retrieved using the Get-Proc cmdlet (described in [Creating Your First Cmdlet](./creating-a-cmdlet-without-parameters.md)).
 
-Topics in this section include the following:
-
-- [Defining the Cmdlet](#Defining-the-Cmdlet)
-
-- [Defining Parameters for System Modification](#Defining-Parameters-for-System-Modification)
-
-- [Defining a Parameter Alias](#Defining-a-Parameter-Alias)
-
-- [Creating Help for Parameters](#Creating-Help-for-Parameters)
-
-- [Overriding an Input Processing Method](#Overriding-an-Input-Processing-Method)
-
-- [Supporting Wildcard Expansion](#Supporting-Wildcard-Expansion)
-
-- [Code Sample](#Defining-a-Parameter-Alias)
-
-- [Defining Object Types and Formatting](#Define-Object-Types-and-Formatting)
-
-- [Building the Cmdlet](#Building-the-Cmdlet)
-
-- [Testing the Cmdlet](#Testing-the-Cmdlet)
-
 ## Defining the Cmdlet
 
 The first step in cmdlet creation is always naming the cmdlet and declaring the .NET class that implements the cmdlet. Because you are writing a cmdlet to change the system, it should be named accordingly. Because this cmdlet stops system processes, it uses the verb "Stop", defined by the [System.Management.Automation.Verbslifecycle](/dotnet/api/System.Management.Automation.VerbsLifeCycle) class, with the noun "Proc" to indicate process. For more information about approved cmdlet verbs, see [Cmdlet Verb Names](./approved-verbs-for-windows-powershell-commands.md).
@@ -104,7 +82,7 @@ The following code from this Stop-Proc cmdlet defines the `HelpMessage` attribut
 
 ## Overriding an Input Processing Method
 
-Your cmdlet must override an input processing method, most often this will be [System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord). When modifying the system, the cmdlet should call the [System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) and [System.Management.Automation.Cmdlet.Shouldcontinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) methods to allow the user to provide feedback before a change is made. For more information about these methods, see [Creating a Cmdlet that Modifies the System](./creating-a-cmdlet-that-modifies-the-system.md).
+Your cmdlet must override an input processing method, most often this will be [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord). When modifying the system, the cmdlet should call the [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) and [System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) methods to allow the user to provide feedback before a change is made. For more information about these methods, see [Creating a Cmdlet that Modifies the System](./creating-a-cmdlet-that-modifies-the-system.md).
 
 ## Supporting Wildcard Expansion
 
@@ -150,11 +128,11 @@ For the complete C# sample code, see [StopProcessSample03 Sample](./stopprocesss
 
 ## Define Object Types and Formatting
 
-Windows PowerShell passes information between cmdlets using .Net objects. Consequently, a cmdlet may need to define its own type, or the cmdlet may need to extend an existing type provided by another cmdlet. For more information about defining new types or extending existing types, see [Extending Object Types and Formatting](https://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351).
+Windows PowerShell passes information between cmdlets using .Net objects. Consequently, a cmdlet may need to define its own type, or the cmdlet may need to extend an existing type provided by another cmdlet. For more information about defining new types or extending existing types, see [Extending Object Types and Formatting](/previous-versions//ms714665(v=vs.85)).
 
 ## Building the Cmdlet
 
-After implementing a cmdlet, it must be registered with Windows PowerShell through a Windows PowerShell snap-in. For more information about registering cmdlets, see [How to Register Cmdlets, Providers, and Host Applications](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c).
+After implementing a cmdlet, it must be registered with Windows PowerShell through a Windows PowerShell snap-in. For more information about registering cmdlets, see [How to Register Cmdlets, Providers, and Host Applications](/previous-versions//ms714644(v=vs.85)).
 
 ## Testing the Cmdlet
 
@@ -229,11 +207,11 @@ The following output appears.
 
 [Create a Cmdlet that Modifies the System](./creating-a-cmdlet-that-modifies-the-system.md)
 
-[How to Create a Windows PowerShell Cmdlet](https://msdn.microsoft.com/en-us/0d721742-c849-4d0d-964f-78ddd9cd258c)
+[How to Create a Windows PowerShell Cmdlet](/powershell/developer/cmdlet/writing-a-windows-powershell-cmdlet)
 
-[Extending Object Types and Formatting](https://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)
+[Extending Object Types and Formatting](/previous-versions//ms714665(v=vs.85))
 
-[How to Register Cmdlets, Providers, and Host Applications](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
+[How to Register Cmdlets, Providers, and Host Applications](/previous-versions//ms714644(v=vs.85))
 
 [Supporting Wildcards in Cmdlet Parameters](./supporting-wildcard-characters-in-cmdlet-parameters.md)
 

@@ -3,35 +3,34 @@ external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 2/4/2019
-online version: http://go.microsoft.com/fwlink/?LinkId=821773
+ms.date: 04/25/2019
+online version: https://go.microsoft.com/fwlink/?linkid=2096522
 schema: 2.0.0
 title: Format-Hex
 ---
 # Format-Hex
 
 ## SYNOPSIS
-Displays a file or input such as a string, as hexadecimal.
+Displays a file or other input as hexadecimal.
 
 ## SYNTAX
 
 ### Path (Default)
 
 ```
-Format-Hex [-Path] <string[]> [-WhatIf] [-Confirm] [<CommonParameters>]
+Format-Hex [-Path] <string[]> [-Count <long>] [-Offset <long>] [<CommonParameters>]
 ```
 
 ### LiteralPath
 
 ```
-Format-Hex -LiteralPath <string[]> [-WhatIf] [-Confirm] [<CommonParameters>]
+Format-Hex -LiteralPath <string[]> [-Count <long>] [-Offset <long>] [<CommonParameters>]
 ```
 
 ### ByInputObject
 
 ```
-Format-Hex -InputObject <psobject> [-Encoding <Encoding>] [-Raw] [-WhatIf] [-Confirm]
-[<CommonParameters>]
+Format-Hex -InputObject <psobject> [-Encoding <Encoding>] [-Count <long>] [-Offset <long>] [-Raw] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -41,8 +40,11 @@ offset of a character from the output, add the number at the leftmost of the row
 the top of the column for that character.
 
 The `Format-Hex` cmdlet can help you determine the file type of a corrupted file or a file that
-might not have a file name extension. You can run this cmdlet, and then read the hexadecimal output
+might not have a filename extension. You can run this cmdlet, and then read the hexadecimal output
 to get file information.
+
+When using `Format-Hex` on a file, the cmdlet ignores newline characters and returns the entire
+contents of a file in one string with the newline characters preserved.
 
 ## EXAMPLES
 
@@ -65,7 +67,8 @@ output from `Format-Hex` shows the values of each character in the string.
 
 ### Example 2: Find a file type from hexadecimal output
 
-This example uses the hexadecimal output to determine the file type.
+This example uses the hexadecimal output to determine the file type. The cmdlet displays the file's
+full path and the hexadecimal values.
 
 To test the following command, make a copy of an existing PDF file on your local computer and rename
 the copied file to **File.t7f**.
@@ -76,7 +79,7 @@ Format-Hex -Path .\File.t7f
 
 ```Output
            Path: C:\Test\File.t7f
-           
+
            00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
 
 00000000   25 50 44 46 2D 31 2E 35 0D 0A 25 B5 B5 B5 B5 0D  %PDF-1.5..%????.
@@ -84,37 +87,39 @@ Format-Hex -Path .\File.t7f
 00000020   65 2F 43 61 74 61 6C 6F 67 2F 50 61 67 65 73 20  e/Catalog/Pages
 ```
 
-The `Format-Hex` cmdlet uses the **Path** parameter to specify a file name in the current directory,
-**File.t7f**. This command displays the file's full path and the hexadecimal values. The file's
-extension **.t7f** is uncommon, but the hexadecimal output **%PDF** shows that it is a PDF file.
+The `Format-Hex` cmdlet uses the **Path** parameter to specify a filename in the current directory,
+**File.t7f**. The file extension **.t7f** is uncommon, but the hexadecimal output **%PDF** shows
+that it is a PDF file.
 
 ## PARAMETERS
 
 ### -Encoding
 
-Specifies the type of encoding for the target file. The default value is **UTF8NoBOM**.
+Specifies the encoding of the output. This only applies to `[string]` input. The parameter has no
+effect on numeric types. The default value is **UTF8NoBOM**. 
 
 The acceptable values for this parameter are as follows:
 
 - **ASCII**: Uses the encoding for the ASCII (7-bit) character set.
 - **BigEndianUnicode**: Encodes in UTF-16 format using the big-endian byte order.
-- **Byte**: Encodes a set of characters into a sequence of bytes.
-- **Default**: Encodes using the default value: ASCII.
 - **OEM**: Uses the default encoding for MS-DOS and console programs.
-- **String**: Uses the encoding type for a string.
 - **Unicode**: Encodes in UTF-16 format using the little-endian byte order.
 - **UTF7**: Encodes in UTF-7 format.
 - **UTF8**: Encodes in UTF-8 format.
 - **UTF8BOM**: Encodes in UTF-8 format with Byte Order Mark (BOM)
 - **UTF8NoBOM**: Encodes in UTF-8 format without Byte Order Mark (BOM)
 - **UTF32**: Encodes in UTF-32 format.
-- **Unknown**: The encoding type is unknown or invalid; the data can be treated as binary.
+
+Beginning with PowerShell 6.2, the **Encoding** parameter also allows numeric IDs of registered code
+pages (like `-Encoding 1251`) or string names of registered code pages (like
+`-Encoding "windows-1251"`). For more information, see the .NET documentation for
+[Encoding.CodePage](/dotnet/api/system.text.encoding.codepage?view=netcore-2.2).
 
 ```yaml
 Type: Encoding
 Parameter Sets: ByInputObject
 Aliases:
-Accepted values: ASCII, BigEndianUnicode, Byte, Default, OEM, String, Unicode, UTF7, UTF8, UTF8BOM, UTF8NoBOM, UTF32, Unknown
+Accepted values: ASCII, BigEndianUnicode, OEM, Unicode, UTF7, UTF8, UTF8BOM, UTF8NoBOM, UTF32
 
 Required: False
 Position: Named
@@ -125,8 +130,17 @@ Accept wildcard characters: False
 
 ### -InputObject
 
-Specifies the objects to be formatted. Enter a variable that contains the objects or type a command
-or expression that gets the objects.
+Used for pipeline input. Pipeline input supports only certain scalar types and `[system.io.fileinfo]`
+instances for piping from `Get-ChildItem`.
+
+The supported scalar types are:
+
+- `[string]`, `[char]`
+- `[byte]`, `[sbyte]`
+- `[int16]`, `[uint16]`, `[short]`, `[ushort]`
+- `[int]`, `[uint]`, `[int32]`, `[uint32]`,
+- `[long]`, `[ulong]`, `[int64]`, `[uint64]`
+- `[single]`, `[float]`, `[double]`
 
 ```yaml
 Type: PSObject
@@ -181,12 +195,7 @@ Accept wildcard characters: True
 
 ### -Raw
 
-Ignores newline characters and returns the entire contents of a file in one string with the newlines
-preserved. By default, newline characters in a file are used as delimiters to separate the input
-into an array of strings. This parameter was introduced in PowerShell 3.0.
-
-**Raw** is a dynamic parameter that the **FileSystem** provider adds and works only in file system
-drives.
+This parameter no longer does anything. It is retained for script compatibility.
 
 ```yaml
 Type: SwitchParameter
@@ -200,34 +209,34 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Confirm
+### -Offset
 
-Prompts you for confirmation before running the cmdlet.
+This represents the number of bytes to skip from being part of the hex output.
 
 ```yaml
-Type: SwitchParameter
+Type: Int64
 Parameter Sets: (All)
-Aliases: cf
+Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: 0
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -WhatIf
+### -Count
 
-Shows what would happen if the cmdlet runs. The cmdlet is not run.
+This represents the number of bytes to include in the hex output.
 
 ```yaml
-Type: SwitchParameter
+Type: Int64
 Parameter Sets: (All)
-Aliases: wi
+Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: Int64.MaxValue
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -254,6 +263,14 @@ by `Format-Hex`. If you specify the **Path** or **LiteralPath** parameter, the o
 the path of the file that contains each byte.
 
 ## NOTES
+
+The right-most column of output tries to render the bytes as characters:
+
+Generally, each byte is interpreted as a Unicode code point, which means that:
+
+- Printable ASCII characters are always rendered correctly
+- Multi-byte UTF-8 characters never render correctly
+- UTF-16 characters render correctly only if their high-order byte happens be `NUL`.
 
 ## RELATED LINKS
 

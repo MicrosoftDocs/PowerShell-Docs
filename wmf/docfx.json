@@ -4,7 +4,8 @@
             { "files": ["**/**.yml", "**/**.md"], "exclude": ["**/obj/**", "README.md"] }
         ],
         "globalMetadata": {
-            "breadcrumb_path": "/powershell/wmf/bread/toc.yml",
+            "toc_preview": true,
+            "breadcrumb_path": "bread/toc.yml",
             "uhfHeaderId": "MSDocsHeader-Powershell",
             "ROBOTS": "INDEX, FOLLOW",
             "ms.tgt_pltfr": "windows",
@@ -17,8 +18,8 @@
             "ms.technology": { "**/**.md": "powershell-wmf" },
             "ms.topic": { "**/**.md": "reference" },
             "manager": { "**/**.md": "carmonm" },
-            "author": { "**/**.md": "HemantMahawar" },
-            "ms.author": { "**/**.md": "hemantm" }
+            "author": { "**/**.md": "joeyaiello" },
+            "ms.author": { "**/**.md": "jaiello" }
         },
         "resource": [
             { "files": ["**/images/**"], "exclude": ["**/obj/**"] }

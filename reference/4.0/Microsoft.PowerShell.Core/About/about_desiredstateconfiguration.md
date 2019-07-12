@@ -27,7 +27,7 @@ maintain and manage existing configurations.
 DSC is introduced in PowerShell 4.0.
 
 For detailed information about DSC, see
-[PowerShell Desired State Configuration Overview](http://go.microsoft.com/fwlink/?LinkId=311940)
+[PowerShell Desired State Configuration Overview](/powershell/dsc/overview/overview)
 in the TechNet Library.
 
 ## USING DSC
@@ -64,8 +64,8 @@ Node $MachineName
     # "WebDirectory" is the name you want to use to refer to this instance
     File WebDirectory
     {
-        Ensure = "Present"  # You can also set Ensure to "Absent“
-        Type = "Directory“ # Default is “File”
+        Ensure = "Present"  # You can also set Ensure to "Absent"
+        Type = "Directory" # Default is "File"
         Recurse = $true
         SourcePath = $WebsiteFilePath
         DestinationPath = "C:\inetpub\wwwroot"
@@ -83,7 +83,7 @@ would invoke a PowerShell function, passing in any expected parameters you may
 have defined (two in the example above). For example, in this case:
 
 ```powershell
-MyWebConfig -MachineName "TestMachine" –WebsiteFilePath `
+MyWebConfig -MachineName "TestMachine" -WebsiteFilePath `
   "\\filesrv\WebFiles" -OutputPath "C:\Windows\system32\temp"
 # OutputPath is optional
 ```
@@ -95,7 +95,7 @@ configuration, and enact those configurations. Note that you do not need to
 create a separate MOF file for class-based DSC resources.
 
 ```powershell
-Start-DscConfiguration –Verbose -Wait -Path "C:\Windows\system32\temp"
+Start-DscConfiguration -Verbose -Wait -Path "C:\Windows\system32\temp"
 ```
 
 ## USING DSC TO MAINTAIN CONFIGURATION STATE
@@ -158,8 +158,8 @@ to browse and learn about available DSC resources.
 
 ## SEE ALSO
 
-[PowerShell Desired State Configuration Overview](/powershell/dsc/overview)
+[PowerShell Desired State Configuration Overview](/powershell/dsc/overview/overview)
 
-[Built-In PowerShell Desired State Configuration Resources](/powershell/dsc/builtinresource)
+[Built-In PowerShell Desired State Configuration Resources](/powershell/dsc/resources/resources)
 
-[Build Custom PowerShell Desired State Configuration Resources](/powershell/dsc/authoringResource)
+[Build Custom PowerShell Desired State Configuration Resources](/powershell/dsc/resources/authoringResource)

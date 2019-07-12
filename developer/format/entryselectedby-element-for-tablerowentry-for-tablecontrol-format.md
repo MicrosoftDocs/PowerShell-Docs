@@ -51,7 +51,7 @@ None.
 
 |Element|Description|
 |-------------|-----------------|
-|[TableRowEntry Element for TableControl (Format)](./tablerowentry-element-for-tablerowentroes-for-tablecontrol-format.md)|Defines the data that is displayed in a row of the table.|
+|[TableRowEntry Element for TableControl (Format)](./tablerowentry-element-for-tablerowentries-for-tablecontrol-format.md)|Defines the data that is displayed in a row of the table.|
 
 ## Remarks
 
@@ -89,7 +89,7 @@ The following example shows a `TableRowEntry` element that is used to display th
 
 [SelectionSetName Element for EntrySelectedBy for TableControl (Format)](./selectionsetname-element-for-entryselectedby-for-tablecontrol-format.md)
 
-[TableRowEntry Element for TableControl (Format)](./tablerowentry-element-for-tablerowentroes-for-tablecontrol-format.md)
+[TableRowEntry Element for TableControl (Format)](./tablerowentry-element-for-tablerowentries-for-tablecontrol-format.md)
 
 [TypeName Element for EntrySelectedBy for TableControl (Format)](./typename-element-for-entryselectedby-for-tablecontrol-format.md)
 

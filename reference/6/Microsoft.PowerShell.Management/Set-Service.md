@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Management
 ms.date: 11/30/2018
-online version: http://go.microsoft.com/fwlink/?LinkId=821633
+online version: https://go.microsoft.com/fwlink/?linkid=2096819
 schema: 2.0.0
 title: Set-Service
 ---

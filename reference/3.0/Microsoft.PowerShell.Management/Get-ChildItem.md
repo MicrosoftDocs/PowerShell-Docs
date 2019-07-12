@@ -3,7 +3,7 @@ ms.date:  2/19/2019
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkID=113308
+online version: https://go.microsoft.com/fwlink/?linkid=113308
 external help file:  Microsoft.PowerShell.Commands.Management.dll-Help.xml
 title:  Get-ChildItem
 ---
@@ -54,8 +54,10 @@ names are displayed. For empty locations the command does not return any output 
 PowerShell prompt.
 
 By default `Get-ChildItem` lists the mode (attributes), last write time, file size (length), and the
-name of the item. The valid values for mode are `d` (directory), `a` (archive), `r` (read-only), `h`
-(hidden), and `s` (system).
+name of the item. The letters in the **Mode** property can be interperted as follows: `l` (link),
+`d` (directory), `a` (archive), `r` (read-only), `h` (hidden), and `s` (system). For more
+information about the mode flags, see
+[about_Filesystem_Provider](../microsoft.powershell.core/about/about_filesystem_provider.md#attributes-flagsexpression).
 
 ```
 PS> Get-ChildItem -Path C:\Test
@@ -293,8 +295,22 @@ RESOURCEMAP
 UEFI
 ```
 
-`Get-ChildItem` uses the **Path** parameter to specify the registry hive **HKLM:\HARDWARE**. The
-hive's path and top level of registry keys are displayed in the PowerShell console.
+```powershell
+Get-ChildItem -Path HLKM:\HARDWARE -Exclude D*
+```
+
+```Output
+   Hive: HKEY_LOCAL_MACHINE\HARDWARE
+
+Name                           Property
+----                           --------
+ACPI
+RESOURCEMAP
+```
+
+The first command shows the contents of the `HKLM:\HARDWARE` registry key. The **Exclude** parameter
+tells `Get-ChildItem` not to return any subkeys that start with `D*`. Currently, the **Exclude**
+parameter only works on subkeys, not item properties.
 
 ### Example 7: Get all certificates with code-signing authority
 

@@ -5,11 +5,13 @@ title:  What's New in Windows PowerShell 5.0
 ---
 
 # What's New in Windows PowerShell 5.0
+
 Windows PowerShell 5.0 includes significant new features that extend its use, improve its usability, and allow you to control and manage Windows-based environments more easily and comprehensively.
 
 Windows PowerShell 5.0 is backward-compatible. Cmdlets, providers, modules, snap-ins, scripts, functions, and profiles that were designed for Windows PowerShell 4.0, Windows PowerShell 3.0, and Windows PowerShell 2.0 generally work in Windows PowerShell 5.0 without changes.
 
 ## Installing Windows PowerShell
+
 Windows PowerShell 5.0 is installed by default on Windows Server  2016 Technical Preview and Windows 10.
 
 To install Windows PowerShell 5.0 on Windows Server 2012 R2, Windows 8.1 Enterprise, or Windows 8.1 Pro, download and install [Windows Management Framework 5.0](https://aka.ms/wmf5download). Be sure to read the download details, and meet all system requirements, before you install Windows Management Framework 5.0.
@@ -22,6 +24,7 @@ To install Windows PowerShell 5.0 on Windows Server 2012 R2, Windows 8.1 Enterpr
 - [New features in Windows PowerShell 3.0](#new-features-in-windows-powershell-30)
 
 ## Windows PowerShell 4.0 updates in November 2014 update rollup (KB 3000850)
+
 Many updates and improvements to Windows PowerShell Desired State Configuration (DSC) in Windows PowerShell 4.0 are available in the [November 2014 update rollup for Windows RT 8.1, Windows 8.1, and Windows Server 2012 R2](https://support.microsoft.com/kb/3000850/) (KB 3000850). You can determine if KB 3000850 is installed on your system by running `Get-Hotfix -Id KB3000850` in Windows PowerShell.
 
 - Updates to existing cmdlets in the [PSDesiredStateConfiguration](https://technet.microsoft.com/library/dn391651(v=wps.640).aspx) module
@@ -135,8 +138,8 @@ Many updates and improvements to Windows PowerShell Desired State Configuration 
 - The FullyQualifiedName parameter has been added to Import-Module and Remove-Module cmdlets, to support storing multiple versions of a single module.
 - Save-Help, Update-Help, Import-PSSession, Export-PSSession, and Get-Command have a new parameter, FullyQualifiedModule, of type ModuleSpecification. Add this parameter to specify a module by its fully qualified name.
 - The value of **$PSVersionTable.PSVersion** has been updated to 5.0.
-- WMF 5.0 (PowerShell 5.0) includes the **Pester** module.  Pester is a unit testing framework for PowerShell. It provides a few simple-to-use keywords that let you create tests for your scripts. 
- 
+- WMF 5.0 (PowerShell 5.0) includes the **Pester** module.  Pester is a unit testing framework for PowerShell. It provides a few simple-to-use keywords that let you create tests for your scripts.
+
 ### New features in Windows PowerShell Desired State Configuration
 
 - Windows PowerShell language enhancements let you define Windows PowerShell Desired State Configuration (DSC) resources by using classes. Import-DscResource is now a true dynamic keyword; Windows PowerShell parses the specified module's root module, searching for classes that contain the DscResource attribute. You can now use classes to define DSC resources, in which neither a MOF file nor a DSCResource subfolder in the module folder is required. A Windows PowerShell module file can contain multiple DSC resource classes.
@@ -202,7 +205,7 @@ Windows PowerShell 4.0 is installed by default on Windows 8.1 and Windows Server
 
 Windows PowerShell 4.0 includes the following new features.
 
-### New features in Windows PowerShell
+### <a name="new-features-in-windows-powershell-1" />New features in Windows PowerShell
 
 - **Windows PowerShell Desired State Configuration** (DSC) is a new management system in Windows PowerShell 4.0 that enables the deployment and management of configuration data for software services and the environment in which these services run. For more information about DSC, see [Get Started with Windows PowerShell Desired State Configuration](https://technet.microsoft.com/library/c134aa32-b085-4656-9a89-955d8ff768d0).
 - **Save-Help** now lets you save help for modules that are installed on remote computers. You can use Save-Help to download module Help from an Internet-connected client (on which not all of the modules for which you want help are necessarily installed), and then copy the saved Help to a remote shared folder or a remote computer that does not have Internet access.
@@ -477,7 +480,9 @@ New cmdlets were added to the Windows PowerShell Core installation, including cm
 |New-CimSessionOption|Update-Help|
 |New-IseSnippet||
 
-### Improvements to Existing Core Cmdlets and ProvidersWindows PowerShell 3.0 includes new features for existing cmdlets including the simplified syntax, and new parameters for the following cmdlets: Computer cmdlets, CSV cmdlets, Get-ChildItem, Get-Command, Get-Content, Get-History, Measure-Object, Security cmdlets, Select-Object, Select-String, Split-Path, Start-Process, Tee-Object, Test-Connection, Add-Member, and WMI cmdlets.
+### Improvements to Existing Core Cmdlets and Providers
+
+Windows PowerShell 3.0 includes new features for existing cmdlets including the simplified syntax, and new parameters for the following cmdlets: Computer cmdlets, CSV cmdlets, Get-ChildItem, Get-Command, Get-Content, Get-History, Measure-Object, Security cmdlets, Select-Object, Select-String, Split-Path, Start-Process, Tee-Object, Test-Connection, Add-Member, and WMI cmdlets.
 
 The Windows PowerShell providers were also improved significantly, including Certificate provider support for managing Secure Socket Layer (SSL) certificates for web hosting, support for credential, persistent network drives, and alternate data streams in file system drives.
 

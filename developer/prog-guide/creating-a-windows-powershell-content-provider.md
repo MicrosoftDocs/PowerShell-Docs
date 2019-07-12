@@ -23,36 +23,6 @@ This topic describes how to create a Windows PowerShell provider that enables th
 >
 > For more information about other Windows PowerShell provider implementations, see [Designing Your Windows PowerShell Provider](./designing-your-windows-powershell-provider.md).
 
-The following list contains the sections in this topic. If you are unfamiliar with writing a Windows PowerShell content provider, read these sections in the order that they appear. However, if you are familiar with writing a Windows PowerShell content provider, go directly to the information that you need.
-
-- [Defining the Windows PowerShell Content Provider Class](#Define-the-Windows-PowerShell-Content-Provider-Class)
-
-- [Defining Base Functionality](#Define-Functionality-of-Base-Class)
-
-- [Implementing a Content Reader](#Implementing-a-Content-Reader)
-
-- [Implementing a Content Writer](#Implementing-a-Content-Writer)
-
-- [Retrieving the Content Reader](#Retrieving-the-Content-Reader)
-
-- [Attaching Dynamic Parameters to the `Get-Content` Cmdlet](#Attaching-Dynamic-Parameters-to-the-Get-Content-Cmdlet)
-
-- [Retrieving the Content Writer](#Retrieving-the-Content-Writer)
-
-- [Attaching Dynamic Parameters to the Add_Content and `Set-Content` Cmdlets](#Attaching-Dynamic-Parameters-to-the-Add-Content-and-Set-Content-Cmdlets)
-
-- [Clearing Content](#Clearing-Content)
-
-- [Attaching Dynamic Parameters to the  `Clear-Content` Cmdlet](#Attaching-Dynamic-Parameters-to-the-Clear-Content-Cmdlet)
-
-- [Code Sample](#Code-Sample)
-
-- [Defining Object Types and Formatting](#defining-object-types-and-formatting)
-
-- [Building the Windows PowerShell provider](#Building-the-Windows-PowerShell-Provider)
-
-- [Testing the Windows PowerShell provider](#Testing-the-Windows-PowerShell-Provider)
-
 ## Define the Windows PowerShell Content Provider Class
 
 A Windows PowerShell content provider must create a .NET class that supports the [System.Management.Automation.Provider.Icontentcmdletprovider](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider) interface. Here is the class definition for the item provider described in this section.
@@ -200,9 +170,9 @@ The following conditions may apply to an implementation of [System.Management.Au
 
 - By default, overrides of this method should not clear the contents of objects that are hidden from the user unless the [System.Management.Automation.Provider.Cmdletprovider.Force*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) property is set to `true`. An error should be written if the path represents an item that is hidden from the user and [System.Management.Automation.Provider.Cmdletprovider.Force*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) is set to `false`.
 
-- Your implementation of the [System.Management.Automation.Provider.Icontentcmdletprovider.Clearcontent*](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.ClearContent) method should call [System.Management.Automation.Provider.Cmdletprovider.Shouldprocess*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) and verify its return value before making any changes to the data store. This method is used to confirm execution of an operation when a change is made to the data store, such as clearing content. The [System.Management.Automation.Provider.Cmdletprovider.Shouldprocess*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) method sends the name of the resource to be changed to the user, with the Windows PowerShell runtime handling any command-line settings or preference variables in determining what should be displayed.
+- Your implementation of the [System.Management.Automation.Provider.Icontentcmdletprovider.Clearcontent*](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.ClearContent) method should call [System.Management.Automation.Provider.Cmdletprovider.ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) and verify its return value before making any changes to the data store. This method is used to confirm execution of an operation when a change is made to the data store, such as clearing content. The [System.Management.Automation.Provider.Cmdletprovider.ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) method sends the name of the resource to be changed to the user, with the Windows PowerShell runtime handling any command-line settings or preference variables in determining what should be displayed.
 
-  After the call to [System.Management.Automation.Provider.Cmdletprovider.Shouldprocess*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) returns `true`, the [System.Management.Automation.Provider.Icontentcmdletprovider.Clearcontent*](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.ClearContent) method should call the [System.Management.Automation.Provider.Cmdletprovider.Shouldcontinue*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue) method. This method sends a message to the user to allow feedback to verify if the operation should be continued. The call to [System.Management.Automation.Provider.Cmdletprovider.Shouldcontinue*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue) allows an additional check for potentially dangerous system modifications.
+  After the call to [System.Management.Automation.Provider.Cmdletprovider.ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) returns `true`, the [System.Management.Automation.Provider.Icontentcmdletprovider.Clearcontent*](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.ClearContent) method should call the [System.Management.Automation.Provider.Cmdletprovider.ShouldContinue](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue) method. This method sends a message to the user to allow feedback to verify if the operation should be continued. The call to [System.Management.Automation.Provider.Cmdletprovider.ShouldContinue](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue) allows an additional check for potentially dangerous system modifications.
 
 ## Attaching Dynamic Parameters to the Clear-Content Cmdlet
 

@@ -1,5 +1,5 @@
 ---
-md.date: 3/4/2019
+ms.date: 3/4/2019
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -217,7 +217,7 @@ following example, the `$i` variable is incremented by 2 in the
 **Repeat** portion of the `For` statement.
 
 ```powershell
-for ($i = 0; $i -ile 20; $i += 2)
+for ($i = 0; $i -le 20; $i += 2)
 {
     Write-Host $i
 }

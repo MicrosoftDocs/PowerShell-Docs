@@ -4,11 +4,10 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: PackageManagement
 ms.date: 06/09/2017
-online version: http://go.microsoft.com/fwlink/?LinkId=822308
+online version: https://go.microsoft.com/fwlink/?linkid=2096842
 schema: 2.0.0
 title: Install-PackageProvider
 ---
-
 # Install-PackageProvider
 
 ## SYNOPSIS
@@ -17,6 +16,7 @@ Installs one or more Package Management package providers.
 ## SYNTAX
 
 ### PackageBySearch (Default)
+
 ```
 Install-PackageProvider [-Name] <String[]> [-RequiredVersion <String>] [-MinimumVersion <String>]
  [-MaximumVersion <String>] [-Credential <PSCredential>] [-Scope <String>] [-Source <String[]>] [-Proxy <Uri>]
@@ -25,6 +25,7 @@ Install-PackageProvider [-Name] <String[]> [-RequiredVersion <String>] [-Minimum
 ```
 
 ### PackageByInputObject
+
 ```
 Install-PackageProvider [-Scope <String>] [-InputObject] <SoftwareIdentity[]> [-Proxy <Uri>]
  [-ProxyCredential <PSCredential>] [-AllVersions] [-Force] [-ForceBootstrap] [-WhatIf] [-Confirm]
@@ -32,6 +33,7 @@ Install-PackageProvider [-Scope <String>] [-InputObject] <SoftwareIdentity[]> [-
 ```
 
 ## DESCRIPTION
+
 The **Install-PackageProvider** cmdlet installs matching Package Management providers that are available in package sources registered with **PowerShellGet**.
 By default, this includes modules available in the PowerShell Gallery with the **PackageManagement**.
 The **PowerShellGet** Package Management provider is used for finding providers in these repositories.
@@ -63,6 +65,7 @@ Then use `Import-PackageProvider -Name NuGet -RequiredVersion 2.8.5.201` to impo
 ## EXAMPLES
 
 ### Example 1: Install a package provider from the PowerShell Gallery
+
 ```
 PS C:\> Install-PackageProvider -Name "Gistprovider" -Verbose
 ```
@@ -70,6 +73,7 @@ PS C:\> Install-PackageProvider -Name "Gistprovider" -Verbose
 This command installs the Gistprovider from the PowerShell Gallery.
 
 ### Example 2: Install a specified version of a package provider
+
 ```
 PS C:\> Find-PackageProvider -Name "Nuget" -AllVersions
 PS C:\> Install-PackageProvider -Name "Nuget" -RequiredVersion "2.8.5.216" -Force
@@ -81,6 +85,7 @@ The first command finds all versions of the package provider named Nuget.
 The second command installs a specified version of the Nuget package provider.
 
 ### Example 3: Find a provider and install it
+
 ```
 PS C:\> Find-PackageProvider -Name "Gistprovider" | Install-PackageProvider -Verbose
 ```
@@ -88,6 +93,7 @@ PS C:\> Find-PackageProvider -Name "Gistprovider" | Install-PackageProvider -Ver
 This command uses **Find-PackageProvider** and the pipeline to search for the Gist provider and install it.
 
 ### Example 4: Install a provider to the current user's module folder
+
 ```
 PS C:\> Install-PackageProvider -Name Gistprovider -Verbose -Scope CurrentUser
 ```
@@ -97,6 +103,7 @@ This command installs a package provider to $env:LOCALAPPDATA\PackageManagement\
 ## PARAMETERS
 
 ### -AllVersions
+
 Indicates that this cmdlet installs all available versions of the package provider.
 By default, **Install-PackageProvider** only returns the highest available version.
 
@@ -113,6 +120,7 @@ Accept wildcard characters: False
 ```
 
 ### -Credential
+
 Specifies a user account that has permission to install package providers.
 
 ```yaml
@@ -128,6 +136,7 @@ Accept wildcard characters: False
 ```
 
 ### -Force
+
 Indicates that this cmdlet forces all actions with this cmdlet that can be forced.
 Currently, this means the *Force* parameter acts the same as the *ForceBootstrap* parameter.
 
@@ -144,6 +153,7 @@ Accept wildcard characters: False
 ```
 
 ### -ForceBootstrap
+
 Indicates that this cmdlet automatically installs the package provider.
 
 ```yaml
@@ -159,6 +169,7 @@ Accept wildcard characters: False
 ```
 
 ### -InputObject
+
 Specifies a **SoftwareIdentity** object.
 Use the **Find-PackageProvider** cmdlet to obtain a **SoftwareIdentity** object to pipe into **Install-PackageProvider**.
 
@@ -175,6 +186,7 @@ Accept wildcard characters: False
 ```
 
 ### -MaximumVersion
+
 Specifies the maximum allowed version of the package provider that you want to install.
 If you do not add this parameter, **Install-PackageProvider** installs the highest available version of the provider.
 
@@ -191,6 +203,7 @@ Accept wildcard characters: False
 ```
 
 ### -MinimumVersion
+
 Specifies the minimum allowed version of the package provider that you want to install.
 If you do not add this parameter, **Install-PackageProvider** installs the highest available version of the package that also satisfies any requirement specified by the *MaximumVersion* parameter.
 
@@ -207,6 +220,7 @@ Accept wildcard characters: False
 ```
 
 ### -Name
+
 Specifies one or more package provider module names.
 Separate multiple package names with commas.
 Wildcard characters are not supported.
@@ -252,6 +266,7 @@ Accept wildcard characters: False
 ```
 
 ### -RequiredVersion
+
 Specifies the exact allowed version of the package provider that you want to install.
 If you do not add this parameter, **Install-PackageProvider** installs the highest available version of the provider that also satisfies any maximum version specified by the *MaximumVersion* parameter.
 
@@ -268,6 +283,7 @@ Accept wildcard characters: False
 ```
 
 ### -Scope
+
 Specifies the installation scope of the provider.
 The acceptable values for this parameter are:**AllUsers** and **CurrentUser**.
 
@@ -291,6 +307,7 @@ Accept wildcard characters: False
 ```
 
 ### -Source
+
 Specifies one or more package sources.
 Use the Get-PackageSource cmdlet to get a list of available package sources.
 
@@ -307,6 +324,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
+
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
@@ -322,6 +340,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
+
 Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
@@ -338,11 +357,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### Microsoft.PackageManagement.Packaging.SoftwareIdentity
+
 You can pipe a **SoftwareIdentity** object to this cmdlet.
 Use Find-PackageProvider to get a **SoftwareIdentity** object that can be piped into **Install-PackageProvider**.
 

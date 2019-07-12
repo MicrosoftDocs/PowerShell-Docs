@@ -607,7 +607,7 @@ namespace Microsoft.Samples.PowerShell.Providers
 
           try
           {
-              // Create a odbc data adpater. This can be sued to update the
+              // Create a odbc data adapter. This can be sued to update the
               // data source with the records that will be created here
               // using data sets
               string sql = "Select * from " + tableName;

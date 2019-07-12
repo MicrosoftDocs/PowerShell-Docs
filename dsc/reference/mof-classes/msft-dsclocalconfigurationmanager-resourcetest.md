@@ -1,9 +1,9 @@
 ---
 ms.date:  06/12/2017
 keywords:  dsc,powershell,configuration,setup
-title:  ResourceTest method of the MSFT_DSCLocalConfigurationManager class
+title:  ResourceTest method
 ---
-# ResourceTest method of the MSFT_DSCLocalConfigurationManager class
+# ResourceTest method
 
 Directly calls the **Test** method of a DSC resource.
 

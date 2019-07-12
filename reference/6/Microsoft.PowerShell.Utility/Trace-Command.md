@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Utility
 ms.date: 06/09/2017
-online version: http://go.microsoft.com/fwlink/?LinkId=821866
+online version: https://go.microsoft.com/fwlink/?linkid=2096972
 schema: 2.0.0
 title: Trace-Command
 ---
@@ -325,5 +325,3 @@ You can elect to send the trace data to a user-mode or kernel-mode debugger, to 
 [Measure-Command](Measure-Command.md)
 
 [Set-TraceSource](Set-TraceSource.md)
-
-[Show-Command](https://msdn.microsoft.com/en-us/powershell/reference/5.1/Microsoft.PowerShell.Utility/Show-Command)

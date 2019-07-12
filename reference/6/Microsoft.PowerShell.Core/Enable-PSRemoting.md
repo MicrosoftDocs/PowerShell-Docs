@@ -3,7 +3,7 @@ ms.date:  10/02/2018
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821475
+online version: https://go.microsoft.com/fwlink/?linkid=2096264
 external help file:  System.Management.Automation.dll-Help.xml
 title:  Enable-PSRemoting
 ---
@@ -77,7 +77,7 @@ This command configures the computer to receive remote commands.
 The **Force** parameter suppresses the user prompts.
 
 ```powershell
-PS C:\> Enable-PSRemoting -Force
+Enable-PSRemoting -Force
 ```
 
 ### Example 3: Allow remote access on clients
@@ -86,8 +86,8 @@ This example shows how to allow remote access from public networks on client ver
 Windows operating system.
 
 ```powershell
-PS C:\> Enable-PSRemoting -SkipNetworkProfileCheck -Force
-PS C:\> Set-NetFirewallRule -Name "WINRM-HTTP-In-TCP" -RemoteAddress Any
+Enable-PSRemoting -SkipNetworkProfileCheck -Force
+Set-NetFirewallRule -Name "WINRM-HTTP-In-TCP" -RemoteAddress Any
 ```
 
 Before using these commands, analyze the security setting and verify that the computer network will

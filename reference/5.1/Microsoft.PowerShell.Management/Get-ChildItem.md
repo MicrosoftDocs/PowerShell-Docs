@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Management
 ms.date: 2/19/2019
-online version: http://go.microsoft.com/fwlink/?LinkId=821580
+online version: https://go.microsoft.com/fwlink/?linkid=821580
 schema: 2.0.0
 title: Get-ChildItem
 ---
@@ -56,8 +56,10 @@ names are displayed. For empty locations the command does not return any output 
 PowerShell prompt.
 
 By default `Get-ChildItem` lists the mode (attributes), last write time, file size (length), and the
-name of the item. The valid values for mode are `d` (directory), `a` (archive), `r` (read-only), `h`
-(hidden), and `s` (system).
+name of the item. The letters in the **Mode** property can be interperted as follows: `l` (link),
+`d` (directory), `a` (archive), `r` (read-only), `h` (hidden), and `s` (system). For more
+information about the mode flags, see
+[about_Filesystem_Provider](../microsoft.powershell.core/about/about_filesystem_provider.md#attributes-flagsexpression).
 
 ```
 PS> Get-ChildItem -Path C:\Test
@@ -295,8 +297,22 @@ RESOURCEMAP
 UEFI
 ```
 
-`Get-ChildItem` uses the **Path** parameter to specify the registry hive **HKLM:\HARDWARE**. The
-hive's path and top level of registry keys are displayed in the PowerShell console.
+```powershell
+Get-ChildItem -Path HLKM:\HARDWARE -Exclude D*
+```
+
+```Output
+   Hive: HKEY_LOCAL_MACHINE\HARDWARE
+
+Name                           Property
+----                           --------
+ACPI
+RESOURCEMAP
+```
+
+The first command shows the contents of the `HKLM:\HARDWARE` registry key. The **Exclude** parameter
+tells `Get-ChildItem` not to return any subkeys that start with `D*`. Currently, the **Exclude**
+parameter only works on subkeys, not item properties.
 
 ### Example 7: Get all certificates with code-signing authority
 
@@ -412,7 +428,7 @@ Accept wildcard characters: False
 
 ### -Depth
 
-This parameter was added in Powershell 5.0 and enables you to control the depth of recursion. By
+This parameter was added in PowerShell 5.0 and enables you to control the depth of recursion. By
 default, `Get-ChildItem` displays the contents of the parent directory. The **Depth** parameter
 determines the number of subdirectory levels that are included in the recursion and displays the
 contents.
@@ -511,7 +527,7 @@ Required: False
 Position: 1
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -Force

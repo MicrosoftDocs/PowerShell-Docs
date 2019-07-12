@@ -1,5 +1,5 @@
 ---
-md.date: 2/27/2019
+ms.date: 2/27/2019
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -42,7 +42,7 @@ on selected objects in a pipeline.
 
 Contains an array of values for undeclared parameters that are passed to a
 function, script, or script block. When you create a function, you can declare
-the parameters by using the `pararm` keyword or by adding a comma-separated list
+the parameters by using the `param` keyword or by adding a comma-separated list
 of parameters in parentheses after the function name.
 
 In an event action, the `$Args` variable contains objects that represent the
@@ -141,16 +141,17 @@ blocks (which are unnamed functions).
 - In a function without a `Begin`, `Process`, or `End` block, the `$input`
   variable enumerates the collection of all input to the function.
 
-- In the `Process` block of a function, the `$input` variable contains the
+- In the `Begin` block, the `$input` variable contains no data.
+
+- In the `Process` block, the `$input` variable contains the
   object that is currently in the pipeline.
 
 - In the `End` block, the `$input` variable enumerates the collection of all
   input to the function.
+
   > [!NOTE]
   > You cannot use the `$input` variable inside both the Process block and the
   > End block in the same function or script block.
-
-- The `$input` variable will contain no data inside of the `Begin` block.
 
 Enumerators contain properties and methods you can use to retrieve loop values
 and change the current loop iteration. For more information, see
@@ -268,7 +269,7 @@ can use it in scripts like the following one, which would not work if `$null`
 were ignored.
 
 ```powershell
-$calendar = @($null, $null, “Meeting”, $null, $null, “Team Lunch”, $null)
+$calendar = @($null, $null, "Meeting", $null, $null, "Team Lunch", $null)
 $days = "Sunday","Monday","Tuesday","Wednesday","Thursday",
         "Friday","Saturday"
 $currentDay = 0
@@ -720,7 +721,7 @@ The following loop only executes twice. In the second iteration, the collection
 is moved to the 3rd element before the iteration is complete. After the second
 iteration, there are now no more values to iterate, and the loop terminates.
 
-The **MoveNext** propety does not affect the variable chosen to iterate through
+The **MoveNext** property does not affect the variable chosen to iterate through
 the collection (`$Num`).
 
 ```powershell

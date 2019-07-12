@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Utility
 ms.date: 06/09/2017
-online version: http://go.microsoft.com/fwlink/?LinkId=821770
+online version: https://go.microsoft.com/fwlink/?linkid=2096922
 schema: 2.0.0
 title: Export-FormatData
 ---
@@ -157,7 +157,7 @@ Specifies a location for the output file.
 Unlike the *Path* parameter, the value of *LiteralPath* is used exactly as it is typed.
 No characters are interpreted as wildcards.
 If the path includes escape characters, enclose it in single quotation marks.
-Single quotation marks tell Windows PowerShell not to interpret any characters as escape sequences.
+Single quotation marks tell PowerShell not to interpret any characters as escape sequences.
 
 ```yaml
 Type: String

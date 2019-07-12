@@ -3,7 +3,7 @@ ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/p/?linkid=290621
+online version: https://go.microsoft.com/fwlink/?linkid=290621
 external help file:  Microsoft.PowerShell.ScheduledJob.dll-Help.xml
 title:  Disable-JobTrigger
 ---
@@ -84,7 +84,7 @@ A pipeline operator sends the daily job triggers to the **Disable-JobTrigger** c
 
 ### -InputObject
 Specifies the job trigger to be disabled.
-Enter a variable that contains  **ScheduledJobTrigger** objects or type a command or expression that gets **ScheduledJobTriger** objects, such as a Get-JobTrigger command.
+Enter a variable that contains  **ScheduledJobTrigger** objects or type a command or expression that gets **ScheduledJobTrigger** objects, such as a Get-JobTrigger command.
 You can also pipe a **ScheduledJobTrigger** object to **Disable-JobTrigger**.
 
 ```yaml

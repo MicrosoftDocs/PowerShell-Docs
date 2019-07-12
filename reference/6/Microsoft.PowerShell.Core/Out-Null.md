@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Core
 ms.date: 06/09/2017
-online version: http://go.microsoft.com/fwlink/?LinkId=821504
+online version: https://go.microsoft.com/fwlink/?linkid=2096287
 schema: 2.0.0
 title: Out-Null
 ---
@@ -28,8 +28,8 @@ preventing the output to be displayed at the screen.
 
 ### Example 1: Delete output
 
-```
-PS C:\> Get-ChildItem | Out-Null
+```powershell
+Get-ChildItem | Out-Null
 ```
 
 This command gets items in the current location/directory, but its output is not passed through

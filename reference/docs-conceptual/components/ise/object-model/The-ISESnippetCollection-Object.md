@@ -2,7 +2,6 @@
 ms.date:  06/05/2017
 keywords:  powershell,cmdlet
 title:  The ISESnippetCollection Object
-ms.assetid:  ae974955-4282-4cbc-8c42-0fff1904ef32
 ---
 # The ISESnippetCollection Object
 

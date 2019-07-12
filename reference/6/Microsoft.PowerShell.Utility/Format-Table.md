@@ -3,8 +3,8 @@ external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 12/19/2018
-online version: http://go.microsoft.com/fwlink/?LinkId=821775
+ms.date: 06/14/2019
+online version: https://go.microsoft.com/fwlink/?linkid=2096524
 schema: 2.0.0
 title: Format-Table
 ---
@@ -16,9 +16,9 @@ Formats the output as a table.
 ## SYNTAX
 
 ```
-Format-Table [[-Property] <Object[]>] [-AutoSize] [-HideTableHeaders] [-Wrap] [-GroupBy <Object>]
-[-View <string>] [-ShowError] [-DisplayError] [-Force] [-Expand <string>] [-InputObject <psobject>]
-[<CommonParameters>]
+Format-Table [-AutoSize] [-RepeatHeader] [-HideTableHeaders] [-Wrap] [[-Property] <Object[]>]
+ [-GroupBy <Object>] [-View <String>] [-ShowError] [-DisplayError] [-Force] [-Expand <String>]
+ [-InputObject <PSObject>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -104,7 +104,8 @@ of the properties, type `Get-Service | Get-Member -MemberType Properties`.
 This command shows how to use a calculated property in a table.
 
 ```powershell
-Get-Process Notepad | Format-Table ProcessName, @{Label="TotalRunningTime"; Expression={(Get-Date) - $_.StartTime}}
+Get-Process Notepad | Format-Table ProcessName,
+   @{Label="TotalRunningTime"; Expression={(Get-Date) - $_.StartTime}}
 ```
 
 The command displays a table with the process name and total running time of all Notepad processes
@@ -116,10 +117,11 @@ The pipeline operator (|) sends the results to `Format-Table`, which displays a 
 columns: ProcessName, a standard property of processes, and TotalRunningTime, a calculated
 property.
 
-The TotalRunningTime property is specified by a hash table with two keys, Label and Expression. The
-name of the property is assigned to the Label key. The calculation is assigned to the Expression
-key. The expression gets the StartTime property of each process object and subtracts it from the
-result of a `Get-Date` command, which gets the current date and time.
+The **TotalRunningTime** property is specified by a hash table with two keys, **Label** and
+**Expression**. The name of the property is assigned to the **Label** key. The calculation is
+assigned to the **Expression** key. The expression gets the **StartTime** property of each process
+object and subtracts it from the result of a `Get-Date` command, which gets the current date and
+time.
 
 ### Example 6: Format Notepad processes
 
@@ -315,9 +317,13 @@ Specifies the object properties that appear in the display and the order in whic
 one or more property names (separated by commas), or use a hash table to display a calculated
 property. Wildcards are permitted.
 
-If you omit this parameter, the properties that appear in the display depend on the object being
-displayed. The parameter name "Property" is optional. You cannot use the **Property** and
-**View** parameters in the same command.
+If you omit this parameter, the properties that appear in the display depend on the first object's
+properties. For example, if the first object has **PropertyA** and **PropertyB** but subsequent
+objects have **PropertyA**, **PropertyB** and **PropertyC** only **PropertyA** and **PropertyB**
+headers will display.
+
+The parameter name **Property** is optional. You cannot use the **Property** and **View** parameters
+in the same command.
 
 The value of the **Property** parameter can be a new calculated property. To create a calculated
 property, use a hash table. Valid keys are:
@@ -379,6 +385,23 @@ Accept wildcard characters: False
 
 Displays text that exceeds the column width on the next line. By default, text that exceeds the
 column width is truncated.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -RepeatHeader
+
+Repeats displaying the header of a table after every screen full. This is most useful when the
+output is piped to a pager such as `less` or `more` or paging and using a screen reader.
 
 ```yaml
 Type: SwitchParameter

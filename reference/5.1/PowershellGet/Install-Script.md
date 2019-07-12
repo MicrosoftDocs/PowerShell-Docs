@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: PowerShellGet
 ms.date: 06/09/2017
-online version: http://go.microsoft.com/fwlink/?LinkId=822327
+online version: https://go.microsoft.com/fwlink/?linkid=822327
 schema: 2.0.0
 title: Install-Script
 ---
@@ -144,7 +144,7 @@ The second command gets the installed script `Required-Script3` and displays inf
 The third command gets `Required-Script3` and uses the pipeline operator to pass it to the
 `Format-List` cmdlet to format the output.
 
-### Example 3: Install a script with its dependent scripts and modules
+### Example 3: Install a script and its dependencies
 
 ```
 PS C:\> Find-Script -Repository "Local1" -Name "Script-WithDependencies2" -IncludeDependencies

@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Management
 ms.date: 06/09/2017
-online version: http://go.microsoft.com/fwlink/?LinkId=821618
+online version: https://go.microsoft.com/fwlink/?linkid=2096405
 schema: 2.0.0
 title: Remove-PSDrive
 ---
@@ -37,9 +37,9 @@ Beginning in Windows PowerShell 3.0, `Remove-PSDrive` also disconnects mapped ne
 
 `Remove-PSDrive` cannot delete Windows physical or logical drives.
 
-Beginning in Windows PowerShell 3.0, when an external drive is connected to the computer, Windows PowerShell automatically adds a PSDrive to the file system that represents the new drive.
+Beginning in Windows PowerShell 3.0, when an external drive is connected to the computer, PowerShell automatically adds a PSDrive to the file system that represents the new drive.
 You do not need to restart PowerShell.
-Similarly, when an external drive is disconnected from the computer, Windows PowerShell automatically deletes the PSDrive that represents the removed drive.
+Similarly, when an external drive is disconnected from the computer, PowerShell automatically deletes the PSDrive that represents the removed drive.
 
 ## EXAMPLES
 

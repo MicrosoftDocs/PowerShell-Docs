@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Utility
 ms.date: 06/09/2017
-online version: http://go.microsoft.com/fwlink/?LinkId=821855
+online version: https://go.microsoft.com/fwlink/?linkid=2096546
 schema: 2.0.0
 title: Select-Xml
 ---
@@ -205,7 +205,7 @@ Specifies the paths and file names of the XML files to search.
 Unlike *Path*, the value of the *LiteralPath* parameter is used exactly as it is typed.
 No characters are interpreted as wildcards.
 If the path includes escape characters, enclose it in single quotation marks.
-Single quotation marks tell Windows PowerShell not to interpret any characters as escape sequences.
+Single quotation marks tell PowerShell not to interpret any characters as escape sequences.
 
 ```yaml
 Type: String[]

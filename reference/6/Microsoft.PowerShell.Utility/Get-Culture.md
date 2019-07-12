@@ -3,11 +3,12 @@ external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 06/09/2017
-online version: http://go.microsoft.com/fwlink/?LinkId=821779
+ms.date: 03/28/2019
+online version: https://go.microsoft.com/fwlink/?linkid=2096837
 schema: 2.0.0
 title: Get-Culture
 ---
+
 # Get-Culture
 
 ## SYNOPSIS
@@ -15,16 +16,30 @@ Gets the current culture set in the operating system.
 
 ## SYNTAX
 
+### CurrentCulture (Default)
+
 ```
-Get-Culture [<CommonParameters>]
+Get-Culture [-NoUserOverrides] [<CommonParameters>]
+```
+
+### Name
+
+```
+Get-Culture [-Name <String[]>] [-NoUserOverrides] [<CommonParameters>]
+```
+
+### ListAvailable
+
+```
+Get-Culture [-ListAvailable] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 
-The **Get-Culture** cmdlet gets information about the current culture settings.
+The `Get-Culture` cmdlet gets information about the current culture settings.
 This includes information about the current language settings on the system, such as the keyboard layout, and the display format of items such as numbers, currency, and dates.
 
-You can also use the Get-UICulture cmdlet, which gets the current user interface culture on the system, and the [Set-Culture](https://go.microsoft.com/fwlink/?LinkID=242258) cmdlet in the International module.
+You can also use the `Get-UICulture` cmdlet, which gets the current user interface culture on the system, and the [Set-Culture](/powershell/module/international/set-culture?view=win10-ps) cmdlet in the International module.
 The user-interface (UI) culture determines which text strings are used for user interface elements, such as menus and messages.
 
 ## EXAMPLES
@@ -106,25 +121,87 @@ The first command uses the **Get-Culture** cmdlet to get the current culture set
 It stores the resulting culture object in the $C variable.
 
 The second command displays all of the properties of the culture object.
-It uses a pipeline operator (|) to send the culture object in $C to the Format-List cmdlet.
-It uses the *Property* parameter to display all (*) properties of the object.
+It uses a pipeline operator (|) to send the culture object in `$C` to the `Format-List` cmdlet.
+It uses the **Property** parameter to display all (\*) properties of the object.
 This command can be abbreviated as `$c | fl *`.
 
 The remaining commands explore the properties of the culture object by using dot notation to display the values of the object properties.
 You can use this notation to display the value of any property of the object.
 
-The third command uses dot notation to display the value of the Calendar property of the culture object.
+The third command uses dot notation to display the value of the **Calendar** property of the culture object.
 
-The fourth command uses dot notation to display the value of the DataTimeFormat property of the culture object.
+The fourth command uses dot notation to display the value of the **DataTimeFormat** property of the culture object.
 
 Many object properties have properties.
-The fifth command uses dot notation to display the value of the FirstDayOfWeek property of the DateTimeFormat property.
+The fifth command uses dot notation to display the value of the **FirstDayOfWeek** property of the **DateTimeFormat** property.
+
+### Example 3: Get a specific culture
+
+Get the CultureInfo object for English in the United States.
+
+```powershell
+Get-Culture -Name en-US
+```
+
+```output
+LCID             Name             DisplayName
+----             ----             -----------
+1033             en-US            English (United States)
+```
 
 ## PARAMETERS
 
+### -ListAvailable
+
+Retrieves all cultures supported by the current operating system.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: ListAvailable
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Name
+
+Retrieve a specific culture based on the name.
+
+```yaml
+Type: String[]
+Parameter Sets: Name
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### -NoUserOverrides
+
+Ignore user changes for current culture.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: CurrentCulture, Name
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### CommonParameters
 
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -136,11 +213,11 @@ You cannot pipe input to this cmdlet.
 
 ### System.Globalization.CultureInfo
 
-**Get-Culture** returns an object that represents the current culture.
+`Get-Culture` returns an object that represents the current culture.
 
 ## NOTES
 
-You can also use the $PsCulture and $PsUICulture variables. The $PsCulture variable stores the name of the current culture and the $PsUICulture variable stores the name of the current UI culture.
+You can also use the `$PsCulture` and `$PsUICulture` variables. The `$PsCulture` variable stores the name of the current culture and the `$PsUICulture` variable stores the name of the current UI culture.
 
 ## RELATED LINKS
 

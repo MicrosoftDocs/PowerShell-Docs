@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Management
 ms.date: 01/22/2019
-online version: http://go.microsoft.com/fwlink/?LinkId=821612
+online version: https://go.microsoft.com/fwlink/?linkid=2096505
 schema: 2.0.0
 title: Push-Location
 ---
@@ -97,7 +97,7 @@ For more information about location stacks, see the [Notes](#notes).
 Specifies the path to the new location. Unlike the **Path** parameter, the value of the
 **LiteralPath** parameter is used exactly as it is typed. No characters are interpreted as
 wildcards. If the path includes escape characters, enclose it in single quotation marks. Single
-quotation marks tell Windows PowerShell not to interpret any characters as escape sequences.
+quotation marks tell PowerShell not to interpret any characters as escape sequences.
 
 ```yaml
 Type: String
@@ -200,7 +200,7 @@ You add items to a stack in the order that you use them, and then retrieve them 
 reverse order. PowerShell lets you store provider locations in location stacks.
 
 PowerShell creates an unnamed default location stack and you can create multiple named location
-stacks. If you do not specify a stack name, Windows PowerShell uses the current location stack. By
+stacks. If you do not specify a stack name, PowerShell uses the current location stack. By
 default, the unnamed default location is the current location stack, but you can use the
 `Set-Location` cmdlet to change the current location stack.
 

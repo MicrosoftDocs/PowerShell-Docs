@@ -2,7 +2,6 @@
 ms.date:  06/05/2017
 keywords:  powershell,cmdlet
 title:  Redirecting Data with Out Cmdlets
-ms.assetid:  2a4acd33-041d-43a5-a3e9-9608a4c52b0c
 ---
 # Redirecting Data with Out-* Cmdlets
 
@@ -62,7 +61,7 @@ This applies to all of the **Out** cmdlets. An **Out** cmdlet should always appe
 > [!NOTE]
 > All the **Out** cmdlets render output as text, using the formatting in effect for the console window, including line length limits.
 
-#### Paging Console Output (Out-Host)
+## Paging Console Output (Out-Host)
 
 By default, Windows PowerShell sends data to the host window, which is exactly what the Out-Host cmdlet does. The primary use for the Out-Host cmdlet is paging data as we discussed earlier. For example, the following command uses Out-Host to page the output of the Get-Command cmdlet:
 
@@ -87,7 +86,7 @@ default=multi(0)disk(0)rdisk(0)partition(1)\WINDOWS
 ...
 ```
 
-#### Discarding Output (Out-Null)
+## Discarding Output (Out-Null)
 
 The **Out-Null** cmdlet is designed to immediately discard any input it receives. This is useful for discarding unnecessary data that you get as a side-effect of running a command. When type the following command, you do not get anything back from the command:
 
@@ -105,7 +104,7 @@ At line:1 char:12
 + Get-Command  <<<< Is-NotACommand | Out-Null
 ```
 
-#### Printing Data (Out-Printer)
+## Printing Data (Out-Printer)
 
 You can print data by using the **Out-Printer** cmdlet. The **Out-Printer** cmdlet will use your default printer if you do not provide a printer name. You can use any Windows-based printer by specifying its display name. There is no need for any kind of printer port mapping or even a real physical printer. For example, if you have the Microsoft Office document imaging tools installed, you can send the data to an image file by typing:
 
@@ -113,7 +112,7 @@ You can print data by using the **Out-Printer** cmdlet. The **Out-Printer** cmdl
 Get-Command Get-Command | Out-Printer -Name 'Microsoft Office Document Image Writer'
 ```
 
-#### Saving Data (Out-File)
+## Saving Data (Out-File)
 
 You can send output to a file instead of the console window by using the **Out-File** cmdlet. The following command line sends a list of processes to the file **C:\\temp\\processlist.txt**:
 

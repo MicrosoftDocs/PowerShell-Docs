@@ -2,7 +2,6 @@
 ms.date:  08/27/2018
 keywords:  powershell,cmdlet
 title:  Using Variables to Store Objects
-ms.assetid:  b1688d73-c173-491e-9ba6-6d0c1cc852de
 ---
 
 # Using variables to store objects
@@ -111,4 +110,4 @@ system. The following example creates a new environment variable:
 $env:LIB_PATH='/usr/local/lib'
 ```
 
-Though not required, is it common for environment variable names to use all uppercase letters.
+Though not required, it's common for environment variable names to use all uppercase letters.

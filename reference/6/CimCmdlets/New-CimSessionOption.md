@@ -5,6 +5,7 @@ locale: en-us
 Module Name: CimCmdlets
 ms.date: 06/09/2017
 schema: 2.0.0
+title: New-CimSessionOption
 ---
 
 # New-CimSessionOption
@@ -45,12 +46,12 @@ Depending on which parameters you use, the cmdlet returns either an instance of 
 ## EXAMPLES
 
 ### Example 1: Create a CIM session options object for DCOM
-```
-PS C:\>$so = New-CimSessionOption -Protocol DCOM
+```powershell
+$so = New-CimSessionOption -Protocol DCOM
 
 
 
-PS C:\>New-CimSession -ComputerName Server01 -SessionOption $so
+New-CimSession -ComputerName Server01 -SessionOption $so
 ```
 
 This set of commands creates a CIM session options object for the DCOM protocol and stores it in a variable named $so.
@@ -58,16 +59,16 @@ The contents of the variable are then passed to the New-CimSession cmdlet.
 New-CimSession then creates a new CIM session with the remote server named Server01, using the options defined in the variable.
 
 ### Example 2: Create a CIM session options object for WsMan
-```
-PS C:\>New-CimSessionOption -ProxyAuthentication Kerberos -ProxyCredential $cred -SkipCACheck -SkipCNCheck -UseSsl
+```powershell
+New-CimSessionOption -ProxyAuthentication Kerberos -ProxyCredential $cred -SkipCACheck -SkipCNCheck -UseSsl
 ```
 
 This command creates a CIM session options object for the WsMan protocol.
 The object contains configuration for the authentication mode of Kerberos specified by the ProxyAuthentication parameter, the credentials specified by the ProxyCredential parameter, and specifies that the command is to skip the CA check, skip the CN check, and use SSL.
 
 ### Example 3: Create a CIM session options object with the culture specified
-```
-PS C:\>New-CimSessionOption -Culture Fr-Fr -Protocol Wsman
+```powershell
+New-CimSessionOption -Culture Fr-Fr -Protocol Wsman
 ```
 
 This command specifies the culture that is used for the CIM session.
@@ -441,7 +442,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
 
 ## INPUTS
 

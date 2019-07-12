@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: PSReadLine
 ms.date: 12/07/2018
-online version: http://go.microsoft.com/fwlink/?LinkId=821453
+online version: https://go.microsoft.com/fwlink/?linkid=821453
 schema: 2.0.0
 title: Set-PSReadLineOption
 ---
@@ -655,7 +655,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: ;:,.[]{}()/\|^&*-=+'"–—―
+Default value: ;:,.[]{}()/\|^&*-=+'"
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

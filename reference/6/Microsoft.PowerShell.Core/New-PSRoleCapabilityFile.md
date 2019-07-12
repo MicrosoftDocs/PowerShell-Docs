@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Core
 ms.date: 06/09/2017
-online version: http://go.microsoft.com/fwlink/?LinkId=821497
+online version: https://go.microsoft.com/fwlink/?linkid=2096157
 schema: 2.0.0
 title: New-PSRoleCapabilityFile
 ---
@@ -45,8 +45,8 @@ This cmdlet was introduced in Windows PowerShell 5.0.
 
 ### Example 1: Create a blank role capability file
 
-```
-PS C:\> New-PSRoleCapabilityFile -Path ".\ExampleFile.psrc"
+```powershell
+New-PSRoleCapabilityFile -Path ".\ExampleFile.psrc"
 ```
 
 This command creates a new role capability file that uses the default (blank) values.
@@ -54,8 +54,8 @@ The file can later be edited in a text editor to change these configuration sett
 
 ### Example 2: Create a role capability file that enables users to restart any service and restart any VDI computer
 
-```
-PS C:\> New-PSRoleCapabilityFile -Path ".\Maintenance.psrc" -Author "User01" -CompanyName "Fabrikam Corporation" -Description "This role capability enables users to restart any service and restart any VDI computer." -ModulesToImport "Microsoft.PowerShell.Core" -VisibleCmdlets "Restart-Service", @{ Name = "Restart-Computer"; Parameters = @{ Name = "ComputerName"; ValidatePattern = "VDI\d+" }}
+```powershell
+New-PSRoleCapabilityFile -Path ".\Maintenance.psrc" -Author "User01" -CompanyName "Fabrikam Corporation" -Description "This role capability enables users to restart any service and restart any VDI computer." -ModulesToImport "Microsoft.PowerShell.Core" -VisibleCmdlets "Restart-Service", @{ Name = "Restart-Computer"; Parameters = @{ Name = "ComputerName"; ValidatePattern = "VDI\d+" }}
 ```
 
 This command creates a sample role capability file that enables users to restart any service and to restart any computer that has a host name starting with the string value VDI followed by a number, for example, VDI01, VDI02.

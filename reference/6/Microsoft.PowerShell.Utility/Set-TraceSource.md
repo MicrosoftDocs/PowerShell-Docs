@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Utility
 ms.date: 06/09/2017
-online version: http://go.microsoft.com/fwlink/?LinkId=821860
+online version: https://go.microsoft.com/fwlink/?linkid=2096981
 schema: 2.0.0
 title: Set-TraceSource
 ---
@@ -218,7 +218,7 @@ Accept wildcard characters: False
 ```
 
 ### -PSHost
-ndicates that this cmdlet sends the trace output to the Windows PowerShell host.
+ndicates that this cmdlet sends the trace output to the PowerShell host.
 This parameter also selects the PSHost trace listener.
 
 ```yaml

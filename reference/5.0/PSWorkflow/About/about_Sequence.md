@@ -8,110 +8,115 @@ title:  about_Sequence
 
 # About Sequence
 
-# SHORT DESCRIPTION
+## Short description
 
-Describes the Sequence keyword, which runs selected
-activities sequentially.
+Describes the `Sequence` keyword that runs selected activities sequentially.
 
-# LONG DESCRIPTION
+## Long description
 
-The Sequence keyword runs selected workflow activities
-sequentially, that is, they run in the order in which
-they appear and do not run concurrently. The Sequence
-keyword is valid only in a Windows PowerShell Workflow.
+The `Sequence` keyword runs selected workflow activities sequentially. Workflow
+activities run in the order that they appear and do not run concurrently. The
+`Sequence` keyword is only valid in a PowerShell Workflow.
 
-The Sequence keyword is typically used in a Parallel
-script block to run selected commands sequentially.
+The `Sequence` keyword is used in a `Parallel` script block to run selected
+commands sequentially.
 
-Because workflow activities run sequentially by default,
-the Sequence keyword effective only in a Parallel
-script block. However, it valid outside of a Parallel
-script block, even if it has no effect.
+Because workflow activities run sequentially by default, the `Sequence` keyword
+is only effective in a `Parallel` script block. If the `Sequence` keyword isn't
+included in a `Parallel` script block, it's valid but ineffective.
 
-The Sequence script block lets you run more commands
-in parallel by allowing you to run dependent commands
-sequentially.
+The `Sequence` script block lets you run more commands in parallel by allowing
+you to run dependent commands sequentially.
 
-# SYNTAX
+## Syntax
 
+### Workflow using Sequence
 
+```
 workflow <Verb-Noun>
 {
-Sequence
-{
-[<Activity>]
-[<Activity>]
-# ...
-
+    Sequence
+    {
+        [<Activity>]
+        [<Activity>]
+        # ...
+    }
 }
-}
+```
 
+### Workflow using Parallel and Sequence
+
+```
 workflow <Verb-Noun>
 {
-Parallel
-{
-[<Activity>]
-Sequence
-{
-[<Activity>]
-[<Activity>]
-# ...
-
+    Parallel
+    {
+        [<Activity>]
+        Sequence
+        {
+            [<Activity>]
+            [<Activity>]
+            # ...
+        }
+    }
 }
-}
-}
+```
 
-# DETAILED DESCRIPTION
+## Detailed description
 
+The commands in a `Parallel` script block can run concurrently. The order in
+which they run is not determined. This feature improves the performance of a
+script workflow.
 
-The commands in a Parallel script block can run concurrently.
-The order in which they run is not determined. This feature
-improves the performance of a script workflow.
+You can use a `Sequence` script block to run selected activities sequentially,
+even though the activities appear in a `Parallel` script block.
 
-You can use a Sequence script block to run selected activities
-sequentially, even though the activities appear in a Parallel
-script block.
+The activities in a `Sequence` script block run consecutively in the order that
+they are listed. An activity in a `Sequence` script block starts only after the
+previous activity completes.
 
-The activities in a Sequence script block run one at a time
-in the order in which they are listed. An activity in a Sequence
-script block starts only after the previous activity completes.
+However, when the `Sequence` script block appears in a `Parallel` script block,
+the order in which the `Sequence` script block runs isn't determined. It might
+run before, after, or concurrent with other activities in the `Parallel` script
+block.
 
-However, when the Sequence script block appears in a Parallel
-script block, the order in which the Sequence script block runs
-is not determined. It might run before, after, or concurrent with
-other activities in the Parallel script block.
+For example, the following workflow includes a `Parallel` script block that
+runs activities that get processes and services on the computer. The `Parallel`
+script block contains a `Sequence` script block that gets information from a
+file and uses the information as input to a script.
 
-For example, the following workflow includes a Parallel script
-block that runs activities that get processes and services on
-the computer. The Parallel script block contains a Sequence
-script block that gets information from a file and uses the
-information as input to a script.
+The `Get-Process`, `Get-Service`, and hotfix-related commands are independent
+of each other. The commands can run concurrently or in any order. But, the
+command that gets the hotfix information must run before the command that uses
+it.
 
-The Get-Process, Get-Service and hotfix-related commands
-are independent of each other and can run concurrently or
-in any order, but the command that gets the hotfix information
-must run before the command that uses it.
-
+```powershell
 workflow Test-Workflow
 {
-Parallel
-{
-Get-Process
-Get-Service
+    Parallel
+    {
+    Get-Process
+    Get-Service
 
-Sequence
-{
-$Hotfix = Get-Content D:\HotFixes\Required.txt
-Foreach ($h in $Hotfix} {D:\Scripts\Verify-Hotfix -Hotfix $h}
+    Sequence
+    {
+        $Hotfix = Get-Content 'D:\HotFixes\Required.txt'
+        Foreach ($h in $Hotfix) {'D:\Scripts\Verify-Hotfix' -Hotfix $h}
+        }
+    }
 }
-}
-}
+```
 
-# SEE ALSO
+## See also
 
-"Writing a Script Workflow" (http://go.microsoft.com/fwlink/?LinkID=262872)
-about_ForEach
-about_ForEach-Parallel
-about_Language_Keywords
-about_Parallel
-about_Workflows
+[about_ForEach](../../Microsoft.PowerShell.Core/About/about_Foreach.md)
+
+[about_ForEach-Parallel](about_ForEach-Parallel.md)
+
+[about_Language_Keywords](../../Microsoft.PowerShell.Core/About/about_Language_Keywords.md)
+
+[about_Parallel](about_Parallel.md)
+
+[about_Workflows](about_Workflows.md)
+
+[Creating a Workflow by Using a Windows PowerShell Script](/powershell/developer/workflow/creating-a-workflow-by-using-a-windows-powershell-script)

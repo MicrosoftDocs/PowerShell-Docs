@@ -139,10 +139,15 @@ When a ProjectURI is provided, the PowerShell Gallery will include a link to the
 Use the following tags to demonstrate to users which packages will work well with their environment:
 
 - PSEdition_Desktop : Packages that are compatible with Windows PowerShell
-- PSEdition_Core : Packages that are compatible with Powershell Core
+- PSEdition_Core : Packages that are compatible with PowerShell Core
 - Windows : Packages that are compatible with the Windows Operating System
 - Linux : Packages that are compatible with Linux Operating Systems
 - MacOS : Packages that are compatible with the Mac Operating System
+
+By tagging your package with the compatible platform(s) it will be included in the Gallery search
+filters on the left pane of the search results. If you host your package on GitHub, when you tag your package, you can also
+take advantage of our [PowerShell Gallery compability shields](https://img.shields.io/powershellgallery/p/:packageName.svg) 
+![compatibility shield](https://img.shields.io/powershellgallery/p/CosmosDB.svg).  
 
 ## Include tests
 

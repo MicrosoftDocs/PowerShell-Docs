@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Utility
 ms.date: 06/09/2017
-online version: http://go.microsoft.com/fwlink/?LinkId=821761
+online version: https://go.microsoft.com/fwlink/?linkid=2096515
 schema: 2.0.0
 title: Debug-Runspace
 ---
@@ -209,7 +209,7 @@ You can pipe the results of a **Get-Runspace** command to **Debug-Runspace.**
 
   - If it is coming from **Debug-Runspace**; that is, it has a **Debug-Runspace** GUID ID.
 
-  - If it is coming from a Windows PowerShell workflow, and its workflow job ID is the same as the current active debugger workflow job ID.
+  - If it is coming from a PowerShell workflow, and its workflow job ID is the same as the current active debugger workflow job ID.
 
 ## RELATED LINKS
 

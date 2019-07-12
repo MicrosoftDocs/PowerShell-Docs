@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Management
 ms.date: 06/09/2017
-online version: http://go.microsoft.com/fwlink/?LinkId=821629
+online version: https://go.microsoft.com/fwlink/?linkid=821629
 schema: 2.0.0
 title: Restart-Service
 ---
@@ -75,7 +75,7 @@ In practice, you would use the *WhatIf* parameter to determine the effect of the
 
 ### -DisplayName
 Specifies the display names of services to restarted.
-Wildcard carachters are permitted.
+Wildcard characters are permitted.
 
 ```yaml
 Type: String[]

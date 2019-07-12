@@ -3,8 +3,8 @@ external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 06/09/2017
-online version: http://go.microsoft.com/fwlink/?LinkId=821878
+ms.date: 03/28/2019
+online version: https://go.microsoft.com/fwlink/?linkid=2096886
 schema: 2.0.0
 title: Write-Output
 ---
@@ -87,6 +87,12 @@ Accept wildcard characters: False
 By default, the **Write-Output** cmdlet always enumerates its output.
 The *NoEnumerate* parameter suppresses the default behavior, and prevents **Write-Output** from enumerating output.
 The *NoEnumerate* parameter has no effect on collections that were created by wrapping commands in parentheses, because the parentheses force enumeration.
+
+> [!NOTE]
+> This switch only works correctly with PowerShell Core 6.2 and newer. On older
+> versions of PowerShell Core, the collection is still enumerated even with
+> use of this switch.  The behavior in PowerShell Core 6.2 is consistent with
+> Windows PowerShell.
 
 ```yaml
 Type: SwitchParameter

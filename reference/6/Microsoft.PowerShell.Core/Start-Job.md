@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Core
 ms.date: 06/09/2017
-online version: http://go.microsoft.com/fwlink/?LinkId=821518
+online version: https://go.microsoft.com/fwlink/?linkid=2096181
 schema: 2.0.0
 title: Start-Job
 ---
@@ -45,12 +45,6 @@ Start-Job [-Name <String>] [-Credential <PSCredential>] -LiteralPath <String>
  [-PSVersion <Version>] [-InputObject <PSObject>] [-ArgumentList <Object[]>] [<CommonParameters>]
 ```
 
-### SSHHost
-
-```
-Start-Job [-HostName] <String[]> [<CommonParameters>]
-```
-
 ## DESCRIPTION
 
 The **Start-Job** cmdlet starts a PowerShell background job on the local computer.
@@ -63,18 +57,34 @@ The job object contains useful information about the job, but it does not contai
 When the job finishes, use the Receive-Job cmdlet to get the results of the job.
 For more information about background jobs, see about_Jobs.
 
-To run a background job on a remote computer, use the *AsJob* parameter that is available on many cmdlets, or use the Invoke-Command cmdlet to run a **Start-Job** command on the remote computer.
+To run a background job on a remote computer, use the *AsJob* parameter that is available on many cmdlets,
+or use the Invoke-Command cmdlet to run a **Start-Job** command on the remote computer.
 For more information, see about_Remote_Jobs.
 
 Starting in Windows PowerShell 3.0, **Start-Job** can start instances of custom job types, such as scheduled jobs.
 For information about how to use **Start-Job** to start jobs with custom types, see the help topics for the job type feature.
 
+> [!NOTE]
+> Creating an out-of-process background job with **Start-Job** is not supported
+> in the scenario where PowerShell is being hosted in other applications,
+> such as the PowerShell Azure Functions.
+>
+> This is by design because **Start-Job** depends on the `pwsh` executable to be available under `$PSHOME`
+> to start an out-of-process background job,
+> but when an application is hosting PowerShell,
+> it's directly using the PowerShell NuGet SDK packages and won't have `pwsh` shipped along.
+>
+> The substitute in that scenario is **Start-ThreadJob** from the module **ThreadJob**.
+
 ## EXAMPLES
 
 ### Example 1: Start a background job
 
+```powershell
+Start-Job -ScriptBlock {Get-Process}
 ```
-PS C:\> Start-Job -ScriptBlock {Get-Process}
+
+```Output
 Id    Name  State    HasMoreData  Location   Command
 ---   ----  -----    -----------  --------   -------
 1     Job1  Running  True         localhost  get-process
@@ -86,8 +96,8 @@ The command prompt returns immediately so that you can work in the session while
 
 ### Example 2: Start a job by using Invoke-Command
 
-```
-PS C:\> $jobWRM = Invoke-Command -ComputerName (Get-Content servers.txt) -ScriptBlock {Get-Service winrm} -JobName "WinRM" -ThrottleLimit 16 -AsJob
+```powershell
+$jobWRM = Invoke-Command -ComputerName (Get-Content servers.txt) -ScriptBlock {Get-Service winrm} -JobName "WinRM" -ThrottleLimit 16 -AsJob
 ```
 
 This command uses the **Invoke-Command** cmdlet and its *AsJob* parameter to start a background job that runs a command on many computers.
@@ -100,10 +110,12 @@ The command uses the *ScriptBlock* parameter to specify the command and the *Job
 
 ### Example 3: Get events from the System log on the local computer
 
+```powershell
+$j = Start-Job -ScriptBlock {Get-EventLog -Log system} -Credential domain01\user01
+$j | Format-List -Property *
 ```
-PS C:\> $j = Start-Job -ScriptBlock {Get-EventLog -Log system} -Credential domain01\user01
-PS C:\> $j | Format-List -Property *
 
+```Output
 HasMoreData   : True
 StatusMessage :
 Location      : localhost
@@ -121,12 +133,22 @@ Verbose       : {}
 Debug         : {}
 Warning       : {}
 StateChanged  :
+```
 
-PS C:\> $j.JobStateInfo.state
+```powershell
+$j.JobStateInfo.state
+```
+
+```Output
 Completed
-PS C:\> $results = Receive-Job -Job $j
-PS C:\> $results
+```
 
+```powershell
+$results = Receive-Job -Job $j
+$results
+```
+
+```Output
 Index Time          Type        Source                EventID Message
 ----- ----          ----        ------                ------- -------
 84366 Feb 18 19:20  Information Service Control M...     7036 The description...
@@ -157,16 +179,16 @@ The final command displays the contents of the $results variable.
 
 ### Example 4: Run a script as a background job
 
-```
-PS C:\> Start-Job -FilePath "c:\scripts\sample.ps1"
+```powershell
+Start-Job -FilePath "c:\scripts\sample.ps1"
 ```
 
 This command runs the Sample.ps1 script as a background job.
 
 ### Example 5: Get a process by name by using a background job
 
-```
-PS C:\> Start-Job -Name "WinRm" -ScriptBlock {Get-Process winrm}
+```powershell
+Start-Job -Name "WinRm" -ScriptBlock {Get-Process winrm}
 ```
 
 This command runs a background job that gets the **WinRM** process on the local computer.
@@ -175,13 +197,24 @@ It uses the *Name* parameter to specify a friendly name for the new job.
 
 ### Example 6: Collect and save data by using a background job
 
-```
-PS C:\> Start-Job -Name GetMappingFiles -InitializationScript {Import-Module MapFunctions} -ScriptBlock {Get-Map -Name * | Set-Content D:\Maps.tif} -RunAs32
+```powershell
+Start-Job -Name GetMappingFiles -InitializationScript {Import-Module MapFunctions} -ScriptBlock {Get-Map -Name * | Set-Content D:\Maps.tif} -RunAs32
 ```
 
 This command starts a job that collects lots of data, and then saves it in a .tif file.
 The command uses the *InitializationScript* parameter to run a script block that imports a required module.
 It also uses the *RunAs32* parameter to run the job in a 32-bit process even if the computer has a 64-bit operating system.
+
+### Example 7: Pass input to a background job
+
+```powershell
+Start-Job -ScriptBlock {Write-Output $Input} -InputObject 'Hello, world!'
+```
+
+This command starts a job that simply accesses and outputs its input.
+The command uses the *InputObject* parameter to pass input to the job.
+Input to a job is accessed via the $Input automatic variable.
+The $_ automatic variable (alias $PSItem) is not populated.
 
 ## PARAMETERS
 
@@ -325,22 +358,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -HostName
-
-The DNS name of the target SSH host of the job.
-
-```yaml
-Type: String[]
-Parameter Sets: SSHHost
-Aliases:
-
-Required: True
-Position: 0
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -InitializationScript
 
 Specifies commands that run before the job starts.
@@ -464,6 +481,7 @@ Accept wildcard characters: False
 
 Specifies the commands to run in the background job.
 Enclose the commands in braces ( { } ) to create a script block.
+Use the $Input automatic variable to access the value of the *InputObject* parameter.
 This parameter is required.
 
 ```yaml

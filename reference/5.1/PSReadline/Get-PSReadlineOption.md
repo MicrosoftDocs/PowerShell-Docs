@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: PSReadLine
 ms.date: 12/07/2018
-online version: http://go.microsoft.com/fwlink/?LinkId=821450
+online version: https://go.microsoft.com/fwlink/?linkid=821450
 schema: 2.0.0
 title: Get-PSReadLineOption
 ---
@@ -51,7 +51,7 @@ HistorySearchCursorMovesToEnd          : False
 ShowToolTips                           : False
 DingTone                               : 1221
 CompletionQueryItems                   : 100
-WordDelimiters                         : ;:,.[]{}()/\|^&*-=+'"–—―
+WordDelimiters                         : ;:,.[]{}()/\|^&*-=+'"
 DingDuration                           : 50
 BellStyle                              : Audible
 HistorySearchCaseSensitive             : False

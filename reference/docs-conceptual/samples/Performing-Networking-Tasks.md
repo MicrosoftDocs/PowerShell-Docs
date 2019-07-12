@@ -2,13 +2,12 @@
 ms.date:  06/05/2017
 keywords:  powershell,cmdlet
 title:  Performing Networking Tasks
-ms.assetid:  a43cc55f-70c1-45c8-9467-eaad0d57e3b5
 ---
 # Performing Networking Tasks
 
 Because TCP/IP is the most commonly used network protocol, most low-level network protocol administration tasks involve TCP/IP. In this section, we use Windows PowerShell and WMI to do these tasks.
 
-### Listing IP Addresses for a Computer
+## Listing IP Addresses for a Computer
 
 To get all IP addresses in use on the local computer, use the following command:
 
@@ -42,7 +41,7 @@ IPAddress Property   System.String[] IPAddress {get;}
 
 The IPAddress property for each network adapter is actually an array. The braces in the definition indicate that **IPAddress** is not a **System.String** value, but an array of **System.String** values.
 
-### Listing IP Configuration Data
+## Listing IP Configuration Data
 
 To display detailed IP configuration data for each network adapter, use the following command:
 
@@ -60,7 +59,7 @@ Get-WmiObject -Class Win32_NetworkAdapterConfiguration -Filter IPEnabled=$true -
 
 This command returns detailed information about DHCP, DNS, routing, and other minor IP configuration properties.
 
-### Pinging Computers
+## Pinging Computers
 
 You can perform a simple ping against a computer using by **Win32_PingStatus**. The following command performs the ping, but returns lengthy output:
 
@@ -100,7 +99,7 @@ Note that this technique for generating a range of addresses can be used elsewhe
 $ips = 1..254 | ForEach-Object -Process {'192.168.1.' + $_}
 ```
 
-### Retrieving Network Adapter Properties
+## Retrieving Network Adapter Properties
 
 Earlier in this user's guide, we mentioned that you could retrieve general configuration properties by using **Win32_NetworkAdapterConfiguration**. Although not strictly TCP/IP information, network adapter information such as MAC addresses and adapter types can be useful for understanding what is going on with a computer. To get a summary of this information, use the following command:
 
@@ -108,7 +107,7 @@ Earlier in this user's guide, we mentioned that you could retrieve general confi
 Get-WmiObject -Class Win32_NetworkAdapter -ComputerName .
 ```
 
-### Assigning the DNS Domain for a Network Adapter
+## Assigning the DNS Domain for a Network Adapter
 
 To assign the DNS domain for automatic name resolution, use the **Win32_NetworkAdapterConfiguration SetDNSDomain** method. Because you assign the DNS domain for each network adapter configuration independently, you need to use a **ForEach-Object** statement to assign the domain to each adapter:
 
@@ -124,11 +123,11 @@ You can filter the command by using the **Where-Object** cmdlet, instead of usin
 Get-WmiObject -Class Win32_NetworkAdapterConfiguration -ComputerName . | Where-Object -FilterScript {$_.IPEnabled} | ForEach-Object -Process {$_.SetDNSDomain('fabrikam.com')}
 ```
 
-### Performing DHCP Configuration Tasks
+## Performing DHCP Configuration Tasks
 
 Modifying DHCP details involves working with a set of network adapters, just as the DNS configuration does. There are several distinct actions you can perform by using WMI, and we will step through a few of the common ones.
 
-#### Determining DHCP-Enabled Adapters
+### Determining DHCP-Enabled Adapters
 
 To find the DHCP-enabled adapters on a computer, use the following command:
 
@@ -142,7 +141,7 @@ To exclude adapters with IP configuration problems, you can retrieve only IP-ena
 Get-WmiObject -Class Win32_NetworkAdapterConfiguration -Filter "IPEnabled=$true and DHCPEnabled=$true" -ComputerName .
 ```
 
-#### Retrieving DHCP Properties
+### Retrieving DHCP Properties
 
 Because DHCP-related properties for an adapter generally begin with "DHCP," you can use the Property parameter of Format-Table to display only those properties:
 
@@ -150,7 +149,7 @@ Because DHCP-related properties for an adapter generally begin with "DHCP," you 
 Get-WmiObject -Class Win32_NetworkAdapterConfiguration -Filter "DHCPEnabled=$true" -ComputerName . | Format-Table -Property DHCP*
 ```
 
-#### Enabling DHCP on Each Adapter
+### Enabling DHCP on Each Adapter
 
 To enable DHCP on all adapters, use the following command:
 
@@ -160,7 +159,7 @@ Get-WmiObject -Class Win32_NetworkAdapterConfiguration -Filter IPEnabled=$true -
 
 You can use the **Filter** statement "IPEnabled=$true and DHCPEnabled=$false" to avoid enabling DHCP where it is already enabled, but omitting this step will not cause errors.
 
-#### Releasing and Renewing DHCP Leases on Specific Adapters
+### Releasing and Renewing DHCP Leases on Specific Adapters
 
 The **Win32_NetworkAdapterConfiguration** class has **ReleaseDHCPLease** and **RenewDHCPLease** methods. Both are used in the same way. In general, use these methods if you only need to release or renew addresses for an adapter on a specific subnet. The easiest way to filter adapters on a subnet is to choose only the adapter configurations that use the gateway for that subnet. For example, the following command releases all DHCP leases on adapters on the local computer that are obtaining DHCP leases from 192.168.1.254:
 
@@ -177,7 +176,7 @@ Get-WmiObject -Class Win32_NetworkAdapterConfiguration -Filter "IPEnabled=$true 
 > [!NOTE]
 > When using these methods on a remote computer, be aware that you can lose access to the remote system if you are connected to it through the adapter with the released or renewed lease.
 
-#### Releasing and Renewing DHCP Leases on All Adapters
+### Releasing and Renewing DHCP Leases on All Adapters
 
 You can perform global DHCP address releases or renewals on all adapters by using the **Win32_NetworkAdapterConfiguration** methods, **ReleaseDHCPLeaseAll** and **RenewDHCPLeaseAll**. However, the command must apply to the WMI class, rather than a particular adapter, because releasing and renewing leases globally is performed on the class, not on a specific adapter.
 
@@ -199,7 +198,7 @@ You can use the same command format to invoke the **RenewDHCPLeaseAll** method:
 ( Get-WmiObject -List | Where-Object -FilterScript {$_.Name -eq 'Win32_NetworkAdapterConfiguration'} ).RenewDHCPLeaseAll()
 ```
 
-### Creating a Network Share
+## Creating a Network Share
 
 To create a network share, use the **Win32_Share Create** method:
 
@@ -213,7 +212,7 @@ You can also create the share by using **net share** in Windows PowerShell:
 net share tempshare=c:\temp /users:25 /remark:"test share of the temp folder"
 ```
 
-### Removing a Network Share
+## Removing a Network Share
 
 You can remove a network share with **Win32_Share**, but the process is slightly different from creating a share, because you need to retrieve the specific share to be removed, rather than the **Win32_Share** class. The following statement deletes the share "TempShare":
 
@@ -229,7 +228,7 @@ PS> net share tempshare /delete
 tempshare was deleted successfully.
 ```
 
-### Connecting a Windows Accessible Network Drive
+## Connecting a Windows Accessible Network Drive
 
 The **New-PSDrive** cmdlets creates a Windows PowerShell drive, but drives created this way are available only to Windows PowerShell. To create a new networked drive, you can use the **WScript.Network** COM object. The following command maps the share \\\\FPS01\\users to local drive B:
 

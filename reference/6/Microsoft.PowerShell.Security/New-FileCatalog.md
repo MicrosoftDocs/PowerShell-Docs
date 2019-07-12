@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Security
 ms.date: 11/02/2018
-online version: http://go.microsoft.com/fwlink/?LinkId=822569
+online version: https://go.microsoft.com/fwlink/?linkid=2096410
 schema: 2.0.0
 title: New-FileCatalog
 ---
