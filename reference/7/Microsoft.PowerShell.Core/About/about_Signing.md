@@ -298,4 +298,4 @@ stamp server ensures that users can use your script for many years to come.
 
 [Set-AuthenticodeSignature](../../Microsoft.PowerShell.Security/Set-AuthenticodeSignature.md)
 
-[Introduction to Code Signing](https://go.microsoft.com/fwlink/?LinkId=106296)
+online version: https://go.microsoft.com/fwlink/?linkid=2097100

@@ -865,4 +865,4 @@ Default (Current): End
 
 - [about_Hash_Tables](about_Hash_Tables.md)
 - [about_Preference_Variables](about_Preference_Variables.md)
-- [about_Variables](about_Variables.md)
+online version: https://go.microsoft.com/fwlink/?linkid=2096688

@@ -244,4 +244,4 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 [Remove-CimSession](remove-cimsession.md)
 
-[about_CimSession](../Microsoft.PowerShell.Core/About/about_CimSession.md)
+online version: https://go.microsoft.com/fwlink/?linkid=2096469

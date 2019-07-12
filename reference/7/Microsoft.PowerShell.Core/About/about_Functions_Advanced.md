@@ -84,4 +84,4 @@ Advanced functions differ from compiled cmdlets in the following ways:
 
 [about_Functions_CmdletBindingAttribute](about_Functions_CmdletBindingAttribute.md)
 
-[about_Functions_OutputTypeAttribute](about_Functions_OutputTypeAttribute.md)
+online version: https://go.microsoft.com/fwlink/?linkid=2096775

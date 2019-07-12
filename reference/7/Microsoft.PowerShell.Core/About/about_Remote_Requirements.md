@@ -285,4 +285,4 @@ $session = New-PSSession -Computer <hostname> -Credential $cred `
 
 [Enter-PSSession](../Enter-PSSession.md)
 
-[New-PSSession](../New-PSSession.md)
+online version: https://go.microsoft.com/fwlink/?linkid=2096682

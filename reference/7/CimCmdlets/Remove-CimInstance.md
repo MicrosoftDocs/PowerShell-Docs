@@ -332,4 +332,4 @@ This cmdlet produces no outputs.
 
 [Get-CimInstance](get-ciminstance.md)
 
-[Set-CimInstance](Set-CimInstance.md)
+online version: https://go.microsoft.com/fwlink/?linkid=2096765

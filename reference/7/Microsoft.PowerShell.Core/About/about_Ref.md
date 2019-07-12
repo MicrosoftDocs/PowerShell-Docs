@@ -156,4 +156,4 @@ Only the reference type's variable was changed.
 
 [about_Script_Blocks](about_Script_Blocks.md)
 
-[about_Scopes](about_scopes.md)
+online version: https://go.microsoft.com/fwlink/?linkid=2096660

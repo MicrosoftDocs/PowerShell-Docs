@@ -245,4 +245,4 @@ Today is Friday (in German)
 - [about_Hash_Tables](about_Hash_Tables.md)
 - [about_Quoting_Rules](about_Quoting_Rules.md)
 - [ConvertFrom-StringData](../../Microsoft.PowerShell.Utility/ConvertFrom-StringData.md)
-- [Import-LocalizedData](../../Microsoft.PowerShell.Utility/Import-LocalizedData.md)
+online version: https://go.microsoft.com/fwlink/?linkid=2096777

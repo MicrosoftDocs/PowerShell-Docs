@@ -316,4 +316,4 @@ This cmdlet returns an object.
 
 [Get-CimClass](get-cimclass.md)
 
-[Get-CimInstance](get-ciminstance.md)
+online version: https://go.microsoft.com/fwlink/?linkid=2096734

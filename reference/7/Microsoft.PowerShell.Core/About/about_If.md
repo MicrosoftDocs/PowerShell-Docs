@@ -99,4 +99,4 @@ else {
 
 [about_Comparison_Operators](about_Comparison_Operators.md)
 
-[about_Switch](about_Switch.md)
+online version: https://go.microsoft.com/fwlink/?linkid=2096748

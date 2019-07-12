@@ -329,4 +329,4 @@ are available in `$s`.
 
 [about_Scopes](about_Scopes.md)
 
-[Set-ExecutionPolicy](../../Microsoft.PowerShell.Security/Set-ExecutionPolicy.md)
+online version: https://go.microsoft.com/fwlink/?linkid=2096656

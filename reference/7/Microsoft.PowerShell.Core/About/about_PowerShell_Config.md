@@ -401,4 +401,4 @@ This configuration sets a number of options that only work in macOS or Linux:
 
 [About Automatic Variables](./about_Automatic_Variables.md)
 
-[RFC0029]: https://github.com/PowerShell/PowerShell-RFC/blob/master/5-Final/RFC0029-Support-Experimental-Features.md
+online version: https://go.microsoft.com/fwlink/?linkid=2096749

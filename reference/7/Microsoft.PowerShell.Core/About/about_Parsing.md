@@ -106,4 +106,4 @@ X:\VMS /grant Dom\HVAdmin:(CI)(OI)F
 
 ## SEE ALSO
 
-[about_Command_Syntax](about_Command_Syntax.md)
+online version: https://go.microsoft.com/fwlink/?linkid=2096736

@@ -47,4 +47,4 @@ This function is not intended to be used from the command line.
 
 ## RELATED LINKS
 
-[about_PSReadLine](./About/about_PSReadLine.md)
+online version: https://go.microsoft.com/fwlink/?linkid=2096730

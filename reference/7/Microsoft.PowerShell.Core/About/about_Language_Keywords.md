@@ -604,4 +604,4 @@ do {<statement list>} while (<condition>)
 ## SEE ALSO
 
 - [about_Special_Characters](about_Special_Characters.md)
-- [about_Wildcards](about_Wildcards.md)
+online version: https://go.microsoft.com/fwlink/?linkid=2096744

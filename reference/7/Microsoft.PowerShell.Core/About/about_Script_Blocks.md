@@ -188,4 +188,4 @@ Notes on **delay-bind** script blocks as parameters:
 
 [about_Functions_Advanced](about_Functions_Advanced.md)
 
-[about_Operators](about_Operators.md)
+online version: https://go.microsoft.com/fwlink/?linkid=2096779

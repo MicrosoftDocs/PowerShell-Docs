@@ -469,4 +469,4 @@ LastName, FirstName
 
 [about_Comparison_Operators](about_Comparison_Operators.md)
 
-[about_Join](about_Join.md)
+online version: https://go.microsoft.com/fwlink/?linkid=2096964

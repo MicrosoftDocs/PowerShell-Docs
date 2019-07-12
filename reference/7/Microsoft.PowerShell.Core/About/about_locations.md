@@ -125,4 +125,4 @@ location).
 
 [about_Providers](about_Providers.md)
 
-[about_Path_Syntax](about_Path_Syntax.md)
+online version: https://go.microsoft.com/fwlink/?linkid=2096657

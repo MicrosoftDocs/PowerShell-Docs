@@ -651,4 +651,4 @@ True
 - [about_Wildcards](about_Wildcards.md)
 - [Compare-Object](../../Microsoft.PowerShell.Utility/Compare-Object.md)
 - [Foreach-Object](../ForEach-Object.md)
-- [Where-Object](../Where-Object.md)
+online version: https://go.microsoft.com/fwlink/?linkid=2096689

@@ -292,4 +292,4 @@ profiles. For more information about profiles, see about_Profiles.
 
 [about_Debuggers](about_Debuggers.md)
 
-[about_Automatic_Variables](about_Automatic_Variables.md)
+online version: https://go.microsoft.com/fwlink/?linkid=2096671

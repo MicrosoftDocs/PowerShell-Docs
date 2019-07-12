@@ -625,4 +625,4 @@ methods:
 
 [about_Script_Blocks](about_Script_Blocks.md)
 
-[about_Function_provider](about_Function_provider.md)
+online version: https://go.microsoft.com/fwlink/?linkid=2096683

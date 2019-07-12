@@ -665,4 +665,4 @@ PSSession.
 
 [Receive-PSSession](../Receive-PSSession.md)
 
-[Invoke-Command](../Invoke-Command.md)
+online version: https://go.microsoft.com/fwlink/?linkid=2096664

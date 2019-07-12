@@ -366,4 +366,4 @@ This cmdlet returns an object that contains the CIM instance information.
 
 [Remove-CimInstance](remove-ciminstance.md)
 
-[Set-CimInstance](Set-CimInstance.md)
+online version: https://go.microsoft.com/fwlink/?linkid=2096659

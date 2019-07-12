@@ -50,4 +50,4 @@ mechanism.
 
 ### SEE ALSO
 
-[about_Prompts](about_Prompts.md)
+online version: https://go.microsoft.com/fwlink/?linkid=2096756

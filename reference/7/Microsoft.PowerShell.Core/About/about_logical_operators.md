@@ -72,4 +72,4 @@ the same way that you would use the If statement.
 
 [about_Comparison_operators](about_Comparison_Operators.md)
 
-[about_If](about_If.md)
+online version: https://go.microsoft.com/fwlink/?linkid=2096651

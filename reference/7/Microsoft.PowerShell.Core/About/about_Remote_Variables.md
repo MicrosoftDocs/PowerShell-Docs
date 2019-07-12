@@ -118,4 +118,4 @@ Invoke-Command -ComputerName S1 -ScriptBlock {
 
 [Enter-PSSession](../Enter-PSSession.md)
 
-[New-PSSession](../New-PSSession.md)
+online version: https://go.microsoft.com/fwlink/?linkid=2096750

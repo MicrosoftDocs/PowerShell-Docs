@@ -371,4 +371,4 @@ function Get-FunctionPosition {
 
 - [about_Foreach](about_Foreach.md)
 - [Where-Object](../../Microsoft.PowerShell.Core/Where-Object.md)
-- [Foreach-Object](../../Microsoft.PowerShell.Core/ForEach-Object.md)
+online version: https://go.microsoft.com/fwlink/?linkid=2097104

@@ -278,4 +278,4 @@ another, it might be because the session is restricted.
 
 [New-PSSession](../New-PSSession.md)
 
-[Remove-PSSession](../Remove-PSSession.md)
+online version: https://go.microsoft.com/fwlink/?linkid=2096759

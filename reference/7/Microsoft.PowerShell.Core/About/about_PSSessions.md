@@ -282,4 +282,4 @@ For more information about PSSessions, see [about_PSSession_Details](about_PSSes
 
 [New-PSSession](../New-PSSession.md)
 
-[Remove-PSSession](../Remove-PSSession.md)
+online version: https://go.microsoft.com/fwlink/?linkid=2096645

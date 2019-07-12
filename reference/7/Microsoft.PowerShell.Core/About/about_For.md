@@ -233,4 +233,4 @@ for ($i = 0; $i -lt 10; $i++) { Write-Host $i }
 
 [about_Comparison_Operators](about_Comparison_Operators.md)
 
-[about_Foreach](about_Foreach.md)
+online version: https://go.microsoft.com/fwlink/?linkid=2096687

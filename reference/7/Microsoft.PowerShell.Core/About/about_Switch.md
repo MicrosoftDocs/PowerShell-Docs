@@ -326,4 +326,4 @@ switch (1,4,-1,3,"Hello",2,1)
 
 [about_If](about_If.md)
 
-[about_Script_Blocks](about_Script_Blocks.md)
+online version: https://go.microsoft.com/fwlink/?linkid=2097006

@@ -398,4 +398,4 @@ working with an empty session.
 
 [Get-PSSessionCapability](../Get-PSSessionCapability.md)
 
-[New-PSRoleCapabilityFile](../New-PSRoleCapabilityFile.md)
+online version: https://go.microsoft.com/fwlink/?linkid=2096998

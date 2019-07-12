@@ -431,4 +431,4 @@ For more information, see [Substitutions in Regular Expressions](/dotnet/standar
 
 [about_Comparison_Operators](about_Comparison_Operators.md)
 
-[about_Operators](about_Operators.md)
+online version: https://go.microsoft.com/fwlink/?linkid=2096675

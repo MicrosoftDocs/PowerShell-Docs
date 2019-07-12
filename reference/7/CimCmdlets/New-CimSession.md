@@ -354,4 +354,4 @@ This cmdlet accepts no inputs.
 
 [New-CimSessionOption](New-CimSessionOption.md)
 
-[about_CimSession](../Microsoft.PowerShell.Core/About/about_CimSession.md)
+online version: https://go.microsoft.com/fwlink/?linkid=2096563

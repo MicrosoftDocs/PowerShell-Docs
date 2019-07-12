@@ -355,4 +355,4 @@ Get-Help * -Category Provider
 
 [about_Locations](about_Locations.md)
 
-[about_Path_Syntax](about_Path_Syntax.md)
+online version: https://go.microsoft.com/fwlink/?linkid=2096751

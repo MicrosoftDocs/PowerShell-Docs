@@ -241,4 +241,4 @@ information about common parameters, see [about_CommonParameters](about_CommonPa
 
 [about_Pipelines](about_Pipelines.md)
 
-[about_Wildcards](about_Wildcards.md)
+online version: https://go.microsoft.com/fwlink/?linkid=2096763

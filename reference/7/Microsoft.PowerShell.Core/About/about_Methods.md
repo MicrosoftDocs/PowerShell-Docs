@@ -235,4 +235,4 @@ You can read more about these methods in [about_arrays](about_arrays.md)
 
 [about_Properties](about_Properties.md)
 
-[Get-Member](../../Microsoft.PowerShell.Utility/Get-Member.md)
+online version: https://go.microsoft.com/fwlink/?linkid=2096753

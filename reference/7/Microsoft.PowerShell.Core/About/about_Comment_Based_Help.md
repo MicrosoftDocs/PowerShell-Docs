@@ -853,4 +853,4 @@ Displays information about PowerShell cmdlets and concepts.
 
 [about_Scripts](about_Scripts.md)
 
-[How to Write Cmdlet Help](https://go.microsoft.com/fwlink/?LinkID=123415)
+online version: https://go.microsoft.com/fwlink/?linkid=2096773

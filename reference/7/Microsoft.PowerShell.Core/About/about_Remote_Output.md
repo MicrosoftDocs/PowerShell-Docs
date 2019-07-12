@@ -213,4 +213,4 @@ computers are interspersed.
 
 [Invoke-Command](../Invoke-Command.md)
 
-[Select-Object](../../Microsoft.PowerShell.Utility/Select-Object.md)
+online version: https://go.microsoft.com/fwlink/?linkid=2096668

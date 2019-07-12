@@ -412,4 +412,4 @@ signature. For more information, see [about_Signing](about_Signing.md).
 
 [Get-TraceSource](../../Microsoft.PowerShell.Utility/Get-TraceSource.md)
 
-[Format Schema XML Reference](/powershell/developer/format/format-schema-xml-reference)
+online version: https://go.microsoft.com/fwlink/?linkid=2096685

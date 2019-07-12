@@ -327,4 +327,4 @@ For more information on Generics, see [Generics in .NET](/dotnet/standard/generi
 
 [about_Properties](about_Properties.md)
 
-[about_Pipelines](about_Pipelines.md)
+online version: https://go.microsoft.com/fwlink/?linkid=2096747

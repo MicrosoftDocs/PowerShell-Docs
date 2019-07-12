@@ -840,4 +840,4 @@ instructions.
 
 [about_Remote_Requirements](about_Remote_Requirements.md)
 
-[about_Remote_Variables](about_Remote_Variables.md)
+online version: https://go.microsoft.com/fwlink/?linkid=2096666

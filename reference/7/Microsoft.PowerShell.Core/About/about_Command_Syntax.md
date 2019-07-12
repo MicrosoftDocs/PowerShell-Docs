@@ -312,4 +312,4 @@ optional.
 
 - [about_Parameters](about_Parameters.md)
 - [Get-Command](../../Microsoft.PowerShell.Core/Get-Command.md)
-- [Get-Help](../../Microsoft.PowerShell.Core/Get-Help.md)
+online version: https://go.microsoft.com/fwlink/?linkid=2096472

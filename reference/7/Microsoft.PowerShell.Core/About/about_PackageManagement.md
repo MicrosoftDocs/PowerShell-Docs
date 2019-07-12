@@ -122,4 +122,4 @@ PackageManagement project on GitHub at https://oneget.org.
 
 [Save-Package](../../PackageManagement/Save-Package.md)
 
-[Uninstall-Package](../../PackageManagement/Uninstall-Package.md)
+online version: https://go.microsoft.com/fwlink/?linkid=2096672

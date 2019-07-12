@@ -80,4 +80,4 @@ key. To scroll through a list of values, press the <kbd>Tab</kbd> key again.
 
 [about_Path_Syntax](about_Path_Syntax.md)
 
-[about_PSReadline](../../PSReadline/About/about_PSReadline.md)
+online version: https://go.microsoft.com/fwlink/?linkid=2096742

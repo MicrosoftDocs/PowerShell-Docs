@@ -187,4 +187,4 @@ are reading and maintaining your scripts.
 
 [about_Split](about_Split.md)
 
-[about_Type_Operators](about_Type_Operators.md)
+online version: https://go.microsoft.com/fwlink/?linkid=2096681

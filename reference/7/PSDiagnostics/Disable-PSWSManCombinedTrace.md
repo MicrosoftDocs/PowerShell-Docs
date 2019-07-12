@@ -59,4 +59,4 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 [Stop-Trace](stop-trace.md)
 
-[Enable-PSWSManCombinedTrace](Enable-PSWSManCombinedTrace.md)
+online version: https://go.microsoft.com/fwlink/?linkid=2096725

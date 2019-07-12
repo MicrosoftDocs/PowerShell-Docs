@@ -319,4 +319,4 @@ more information, see ConvertFrom-StringData.
 
 [about_Special_Characters](about_Special_Characters.md)
 
-[ConvertFrom-StringData](../../Microsoft.PowerShell.Utility/ConvertFrom-StringData.md)
+online version: https://go.microsoft.com/fwlink/?linkid=2096674

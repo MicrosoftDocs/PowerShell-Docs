@@ -190,4 +190,4 @@ about_Functions_CmdletBinding_Attribute
 
 [about_Functions_Advanced_Parameters](about_Functions_Advanced_Parameters.md)
 
-[about_Functions_OutputTypeAttribute](about_Functions_OutputTypeAttribute.md)
+online version: https://go.microsoft.com/fwlink/?linkid=2096776

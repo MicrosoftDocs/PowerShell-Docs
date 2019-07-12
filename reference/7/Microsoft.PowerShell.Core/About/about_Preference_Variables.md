@@ -1500,4 +1500,4 @@ At line:1 char:12
 - [about_Profiles](about_Profiles.md)
 - [about_Remote](about_Remote.md)
 - [about_Scopes](about_Scopes.md)
-- [about_Variables](about_Variables.md)
+online version: https://go.microsoft.com/fwlink/?linkid=2096761

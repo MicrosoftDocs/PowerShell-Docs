@@ -259,4 +259,4 @@ This cmdlet returns a CIM class object.
 
 ## RELATED LINKS
 
-[New-CimSession](New-CimSession.md)
+online version: https://go.microsoft.com/fwlink/?linkid=2096467

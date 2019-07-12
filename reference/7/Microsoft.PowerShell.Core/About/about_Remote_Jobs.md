@@ -364,4 +364,4 @@ invoke-command -session $s -command {
 
 [Enter-PSSession](../Enter-PSSession.md)
 
-[Exit-PSSession](../Exit-PSSession.md)
+online version: https://go.microsoft.com/fwlink/?linkid=2096766

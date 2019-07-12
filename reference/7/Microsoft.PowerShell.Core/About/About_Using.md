@@ -73,4 +73,4 @@ $deck.Shuffle()
 [Card[]]$hand1 = $deck.Deal(5)
 [Card[]]$hand2 = $deck.Deal(5)
 [Card[]]$hand3 = $deck.Deal(5)
-```
+online version: https://go.microsoft.com/fwlink/?linkid=2096896

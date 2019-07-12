@@ -1407,4 +1407,4 @@ Feel free to submit a pull request or submit feedback on the github page.
 ## SEE ALSO
 
 PSReadLine is heavily influenced by the GNU
-[readline](https://tiswww.case.edu/php/chet/readline/rltop.html) library.
+online version: https://go.microsoft.com/fwlink/?linkid=2096733

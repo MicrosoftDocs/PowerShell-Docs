@@ -246,4 +246,4 @@ about_Remoting
 
 [Invoke-Command](../Invoke-Command.md)
 
-[New-PSSession](../New-PSSession.md)
+online version: https://go.microsoft.com/fwlink/?linkid=2096647

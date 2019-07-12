@@ -458,4 +458,4 @@ $(Get-WmiObject win32_Directory)
 
 [about_Join](about_Join.md)
 
-[about_Redirection](about_Redirection.md)
+online version: https://go.microsoft.com/fwlink/?linkid=2096665

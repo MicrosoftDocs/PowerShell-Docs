@@ -197,4 +197,4 @@ results when the most specific condition is met.
 
 [about_Try_Catch_Finally](about_Try_Catch_Finally.md)
 
-[about_While](about_While.md)
+online version: https://go.microsoft.com/fwlink/?linkid=2096470

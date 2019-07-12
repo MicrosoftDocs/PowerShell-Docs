@@ -418,4 +418,4 @@ When the Passthru parameter is specified, this cmdlet returns a modified CIM ins
 
 [New-CimInstance](New-CimInstance.md)
 
-[Remove-CimInstance](remove-ciminstance.md)
+online version: https://go.microsoft.com/fwlink/?linkid=2096686

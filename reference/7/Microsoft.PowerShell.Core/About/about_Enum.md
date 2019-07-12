@@ -198,4 +198,4 @@ True
 
 PS > ($file2 -band [FileAttributes]::Archive) -eq [FileAttributes]::Archive
 False
-```
+online version: https://go.microsoft.com/fwlink/?linkid=2096782

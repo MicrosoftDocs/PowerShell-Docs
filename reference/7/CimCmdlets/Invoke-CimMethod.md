@@ -484,4 +484,4 @@ This cmdlet returns an object.
 
 [Get-CimSession](Get-CimSession.md)
 
-[New-CimSession](New-CimSession.md)
+online version: https://go.microsoft.com/fwlink/?linkid=2096561

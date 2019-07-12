@@ -234,4 +234,4 @@ within a `Catch` block.
 
 [about_Throw](about_Throw.md)
 
-[about_Trap](about_Trap.md)
+online version: https://go.microsoft.com/fwlink/?linkid=2097010

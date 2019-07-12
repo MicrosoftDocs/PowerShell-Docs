@@ -163,4 +163,4 @@ Get-WinEvent Microsoft-Windows-PowerShell/Operational |
 
 ## See Also
 
-[PowerShell the Blue Team](https://blogs.msdn.microsoft.com/powershell/2015/06/09/powershell-the-blue-team/)
+online version: https://go.microsoft.com/fwlink/?linkid=2096476

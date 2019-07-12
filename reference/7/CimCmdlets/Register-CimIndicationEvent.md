@@ -394,4 +394,4 @@ This cmdlet outputs an **EventSubscription** object.
 
 [Get-CimSession](Get-CimSession.md)
 
-[New-CimSession](New-CimSession.md)
+online version: https://go.microsoft.com/fwlink/?linkid=2096471

@@ -596,4 +596,4 @@ digital signature. For more information, see
 
 [Remove-TypeData](../../Microsoft.PowerShell.Utility/Remove-TypeData.md)
 
-[Update-TypeData](../../Microsoft.PowerShell.Utility/Update-TypeData.md)
+online version: https://go.microsoft.com/fwlink/?linkid=2096885

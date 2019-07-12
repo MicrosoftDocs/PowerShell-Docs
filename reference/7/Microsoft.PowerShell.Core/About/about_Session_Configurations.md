@@ -354,4 +354,4 @@ about_SessionConfigurations
 
 [Test-PSSessionConfigurationFile](../Test-PSSessionConfigurationFile.md)
 
-[Unregister-PSSessionConfiguration](../Unregister-PSSessionConfiguration.md)
+online version: https://go.microsoft.com/fwlink/?linkid=2096967

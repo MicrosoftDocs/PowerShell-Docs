@@ -257,4 +257,4 @@ NoLanguage session, PowerShell returns the ScriptsNotAllowed error message.
 ## SEE ALSO
 
 - [about_Session_Configuration_Files](about_Session_Configuration_Files.md)
-- [about_Session_Configurations](about_Session_Configurations.md)
+online version: https://go.microsoft.com/fwlink/?linkid=2096641

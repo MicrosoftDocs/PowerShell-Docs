@@ -59,4 +59,4 @@ WMI Provider. All WMI providers use CimSession objects.
 
 [New-CimSession](../../CimCmdlets/New-CimSession.md)
 
-[about_PSSessions](about_PSSessions.md)
+online version: https://go.microsoft.com/fwlink/?linkid=2096679

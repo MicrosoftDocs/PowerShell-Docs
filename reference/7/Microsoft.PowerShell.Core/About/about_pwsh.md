@@ -261,4 +261,4 @@ To start PowerShell in your home directory, use: `pwsh -WorkingDirectory ~`
 Displays help for pwsh. If you are typing a pwsh command in PowerShell,
 prepend the command parameters with a hyphen (-), not a forward slash (/). You
 can use either a hyphen or forward slash in Cmd.exe.
-
+online version: https://go.microsoft.com/fwlink/?linkid=2096673

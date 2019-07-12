@@ -315,4 +315,4 @@ For more information, see `Import-Module` and `Import-PSSession` below.
 - [Function-Provider](../../Microsoft.PowerShell.Core/About/about_Function_Provider.md)
 - [Get-Command](../../Microsoft.PowerShell.Core/Get-Command.md)
 - [Import-Module](../../Microsoft.PowerShell.Core/Import-Module.md)
-- [Import-PSSession](../../Microsoft.PowerShell.Utility/Import-PSSession.md)
+online version: https://go.microsoft.com/fwlink/?linkid=2096770

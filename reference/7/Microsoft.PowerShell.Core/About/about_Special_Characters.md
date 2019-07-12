@@ -206,4 +206,4 @@ For more information about the stop-parsing symbol, see [about_Parsing](about_Pa
 
 ## SEE ALSO
 
-- [about_Quoting_Rules](about_Quoting_Rules.md)
+online version: https://go.microsoft.com/fwlink/?linkid=2096869

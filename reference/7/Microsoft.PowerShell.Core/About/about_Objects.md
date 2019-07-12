@@ -73,4 +73,4 @@ The second command passes only the file objects to the third command
 
 [about_Pipelines](about_Pipelines.md)
 
-[Get-Member](../../Microsoft.PowerShell.Utility/Get-Member.md)
+online version: https://go.microsoft.com/fwlink/?linkid=2096663

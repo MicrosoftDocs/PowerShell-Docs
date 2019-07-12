@@ -837,4 +837,4 @@ class MyComparableBar : bar, system.IComparable
 
 - [about_Enum](about_Enum.md)
 - [about_Language_Keywords](about_language_keywords.md)
-- [about_Methods](about_methods.md)
+online version: https://go.microsoft.com/fwlink/?linkid=2096573

@@ -192,4 +192,4 @@ used. See: [`-gt` Comparison Operator](about_Comparison_Operators.md#-gt)
 
 [about_Command_Syntax](about_Command_Syntax.md)
 
-[about_Path_Syntax](about_Path_Syntax.md)
+online version: https://go.microsoft.com/fwlink/?linkid=2096755

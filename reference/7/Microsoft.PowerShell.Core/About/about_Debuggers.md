@@ -859,4 +859,4 @@ several other features that you can use to debug scripts and functions.
 - [Remove-PsBreakpoint](../../Microsoft.PowerShell.Utility/Remove-PsBreakpoint.md)
 - [Set-PsBreakpoint](../../Microsoft.PowerShell.Utility/Set-PsBreakpoint.md)
 - [Write-Debug](../../Microsoft.PowerShell.Utility/Write-Debug.md)
-- [Write-Verbose](../../Microsoft.PowerShell.Utility/Write-Verbose.md)
+online version: https://go.microsoft.com/fwlink/?linkid=2096778
