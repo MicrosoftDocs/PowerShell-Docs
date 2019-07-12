@@ -70,7 +70,7 @@ The output shows the default values of all keys in the manifest.
 New-ModuleManifest -Path C:\ps-test\Test-Module\Test-Module.psd1 -PassThru
 ```
 
-```Output
+```powershell
 #
 # Module manifest for module 'Test-Module'
 #
@@ -201,7 +201,7 @@ PrivateData = @{
 # Default prefix for commands exported from this module. Override the default prefix using Import-Module -Prefix.
 # DefaultCommandPrefix = ''
 
-
+}
 ```
 
 ### Example 2 - Create a new manifest with some prepopulated settings
