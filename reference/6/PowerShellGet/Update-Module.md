@@ -30,13 +30,14 @@ Update-Module [[-Name] <String[]>] [-RequiredVersion <String>] [-MaximumVersion 
 The `Update-Module` cmdlet installs a module's newest version from an online gallery. You're
 prompted to confirm the update before it's installed. Updates are installed only for modules that
 were installed on the local computer with `Install-Module`. `Update-Module` searches
-`$env:PSModulePath` and updates a module's first occurrence.
+`$env:PSModulePath` for installed modules.
 
-`Update-Module` updates all installed modules. To specify a module to update, use the **Name**
-parameter. You can update to a module's specific version by using the **RequiredVersion** parameter.
+`Update-Module` with no parameters specified updates all installed modules. To specify a module to
+update, use the **Name** parameter. You can update to a module's specific version by using the
+**RequiredVersion** parameter.
 
-If an installed module is the newest version, the module isn't updated. If the module isn't found in
-`$env:PSModulePath`, an error is displayed.
+If an installed module is already the newest version, the module isn't updated. If the module isn't
+found in `$env:PSModulePath`, an error is displayed.
 
 To display the installed modules, use `Get-InstalledModule`.
 
