@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Management
 ms.date: 11/30/2018
-online version: https://go.microsoft.com/fwlink/?linkid=2096214
+online version: https://go.microsoft.com/fwlink/?linkid=2097148
 schema: 2.0.0
 title: Set-Service
 ---
@@ -19,7 +19,7 @@ Starts, stops, and suspends a service, and changes its properties.
 
 ```
 Set-Service [-Name] <String> [-DisplayName <String>] [-Credential <PSCredential>] [-Description <String>]
- [-StartupType <ServiceStartupType>] [-Status <String>] [-PassThru] [-WhatIf] [-Confirm]
+ [-StartupType <ServiceStartupType>] [-Status <String>] [-SecurityDescriptorSddl <String>] [-PassThru] [-WhatIf] [-Confirm]
  [<CommonParameters>]
 ```
 
@@ -27,7 +27,7 @@ Set-Service [-Name] <String> [-DisplayName <String>] [-Credential <PSCredential>
 
 ```
 Set-Service [-InputObject] <ServiceController> [-DisplayName <String>] [-Credential <PSCredential>]
- [-Description <String>] [-StartupType <ServiceStartupType>] [-Status <String>] [-PassThru] [-WhatIf]
+ [-Description <String>] [-StartupType <ServiceStartupType>] [-SecurityDescriptorSddl <String>] [-Status <String>] [-PassThru] [-WhatIf]
  [-Confirm] [<CommonParameters>]
 ```
 
@@ -158,6 +158,19 @@ The first command uses `Get-Credential` to get the new credentials.
 The command stores the credentials in the `$credential` variable.
 
 The second command changes the credentials of the Schedule service.
+
+### Example 9: Change the SecurityDescriptor of a service
+
+```powershell
+$SDDLToSet = "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;SU)"
+Set-Service -Name "BITS" -SecurityDescriptorSddl $SDDLToSet
+```
+
+These commands changes SecurityDescriptor of the BITS service.
+
+The command stores the SecurityDescriptor in the `$SDDLToSet` variable.
+
+The second command changes the SecurityDescriptor of the BITS service.
 
 ## PARAMETERS
 
@@ -306,6 +319,22 @@ Type: String
 Parameter Sets: (All)
 Aliases:
 Accepted values: Running, Stopped, Paused
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -SecurityDescriptorSddl
+
+Specifies the SecurityDescriptor for the service in Sddl format.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
 
 Required: False
 Position: Named

@@ -501,10 +501,10 @@ Accept wildcard characters: False
 ### -Filter
 
 Specifies a filter to qualify the **Path** parameter. The [FileSystem](../Microsoft.PowerShell.Core/About/about_FileSystem_Provider.md)
-provider is the only installed PowerShell provider that supports the use of filters. You can find
-the syntax for the **FileSystem** filter language in [about_Wildcards](../Microsoft.PowerShell.Core/About/about_Wildcards.md).
-Filters are more efficient than other parameters, because the provider applies them when the cmdlet
-gets the objects rather than having PowerShell filter the objects after they are retrieved.
+provider is the only installed PowerShell provider that supports the use of filters. Filters are
+more efficient than other parameters, because the provider applies them when the cmdlet gets the
+objects rather than having PowerShell filter the objects after they are retrieved. The filter string
+is passed to the .NET API to enumerate files. That API only supports `*` and `?` wildcards.
 
 ```yaml
 Type: String
