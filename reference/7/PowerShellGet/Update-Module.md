@@ -3,7 +3,7 @@ external help file: PSModule-help.xml
 keywords: powershell,cmdlet
 locale: en-us
 Module Name: PowerShellGet
-ms.date: 07/05/2019
+ms.date: 07/16/2019
 online version: https://go.microsoft.com/fwlink/?linkid=2096729
 schema: 2.0.0
 title: Update-Module
@@ -262,15 +262,16 @@ Accept wildcard characters: False
 ### -Scope
 
 Specifies the installation scope of the module. The acceptable values for this parameter are
-**AllUsers** and **CurrentUser**.
+**AllUsers** and **CurrentUser**. If **Scope** isn't specified, the update is installed in the
+**CurrentUser** scope.
 
-The **AllUsers** scope installs modules in a location that is accessible to all users of the
-computer:
+The **AllUsers** scope requires elevated permissions and installs modules in a location that is
+accessible to all users of the computer:
 
 `$env:ProgramFiles\PowerShell\Modules`
 
-The **CurrentUser** installs modules in a location that is accessible only to the current user of
-the computer:
+The **CurrentUser** doesn't require elevated permissions and installs modules in a location that is
+accessible only to the current user of the computer:
 
 `$home\Documents\PowerShell\Modules`
 
@@ -330,6 +331,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## OUTPUTS
 
 ## NOTES
+
+For PowerShell version 6.0 and above, the default installation scope is always **CurrentUser**.
+Module updates for **CurrentUser**, `$home\Documents\PowerShell\Modules`, don't need elevated
+permissions. Module updates for **AllUsers**, `$env:ProgramFiles\PowerShell\Modules`, need elevated
+permissions.
 
 `Update-Module` runs on PowerShell 3.0 or later releases of PowerShell, on Windows 7 or Windows 2008
 R2 and later releases of Windows.

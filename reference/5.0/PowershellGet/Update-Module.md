@@ -1,5 +1,5 @@
 ---
-ms.date: 07/05/2019
+ms.date: 07/16/2019
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -219,6 +219,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## OUTPUTS
 
 ## NOTES
+
+For PowerShell 5.1 or below, the default scope in an elevated session is **AllUsers**, and in a
+non-elevated session, **CurrentUser**. Module updates for **AllUsers**,
+`$env:ProgramFiles\PowerShell\Modules`, need elevated permissions. Module updates for
+**CurrentUser**, `$home\Documents\PowerShell\Modules`, don't need elevated permissions.
 
 `Update-Module` runs on PowerShell 3.0 or later releases of PowerShell, on Windows 7 or Windows 2008
 R2 and later releases of Windows.

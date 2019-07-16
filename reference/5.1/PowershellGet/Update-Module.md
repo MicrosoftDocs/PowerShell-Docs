@@ -3,7 +3,7 @@ external help file: PSModule-help.xml
 keywords: powershell,cmdlet
 locale: en-us
 Module Name: PowerShellGet
-ms.date: 07/05/2019
+ms.date: 07/16/2019
 online version: https://go.microsoft.com/fwlink/?linkid=821676
 schema: 2.0.0
 title: Update-Module
@@ -302,6 +302,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## OUTPUTS
 
 ## NOTES
+
+For PowerShell 5.1 or below, the default scope in an elevated session is **AllUsers**, and in a
+non-elevated session, **CurrentUser**. Module updates for **AllUsers**,
+`$env:ProgramFiles\PowerShell\Modules`, need elevated permissions. Module updates for
+**CurrentUser**, `$home\Documents\PowerShell\Modules`, don't need elevated permissions.
 
 `Update-Module` runs on PowerShell 3.0 or later releases of PowerShell, on Windows 7 or Windows 2008
 R2 and later releases of Windows.
