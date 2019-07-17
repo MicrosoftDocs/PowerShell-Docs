@@ -46,6 +46,15 @@ Configuration HelloWorld {
 > In more advanced scenarios where multiple modules need to be imported so you can work with many DSC Resources
 > in the same configuration, make sure to put each module in a seperate line using `Import-DscResource`.
 > This is easier to maintain in source control and required when working with DSC in Azure State Configuration.
+>
+> ```powershell
+>  Configuration HelloWorld {
+>
+>   # Import the module that contains the File resource.
+>   Import-DscResource -ModuleName PsDesiredStateConfiguration
+>   Import-DscResource -ModuleName xWebAdministration
+>
+> ```
 
 Save the file as "HelloWorld.ps1".
 
