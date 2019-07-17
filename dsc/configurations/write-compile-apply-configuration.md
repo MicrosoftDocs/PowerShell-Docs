@@ -42,6 +42,11 @@ Configuration HelloWorld {
 }
 ```
 
+> !Important
+> In more advanced scenarios where multiple modules need to be imported so you can work with many DSC Resources
+> in the same configuration, make sure to put each module in a seperate line using `Import-DscResource`.
+> This is easier to maintain in source control and required when working with DSC in Azure State Configuration.
+
 Save the file as "HelloWorld.ps1".
 
 Defining a Configuration is like defining a Function. The **Node** block specifies the target node to be configured, in this case `localhost`.
