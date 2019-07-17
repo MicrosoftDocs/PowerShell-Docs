@@ -38,6 +38,20 @@ Before you use this cmdlet, review the information in What's New in Windows Powe
 
 ### Example 1: Update a configuration
 ```
+PS C:\> Update-DscConfiguration -Wait -Verbose
+```
+
+After running this command,
+the server will connect to the registered pull service,
+download the latest assigned configuration,
+and then apply it.
+The -Wait and -Verbose parameters are optional.
+When working interactively,
+these parameters combined enable real-time feedback
+about progress and success or failure when applying the configuration.
+
+### Example 2: Update a configuration by connecting over a CIM session
+```
 PS C:\> $Session = New-CimSession -ComputerName "Server01" -Credential ACCOUNTS\PattiFuller
 PS C:\> Update-DscConfiguration -CimSession $Session -Wait
 ```
