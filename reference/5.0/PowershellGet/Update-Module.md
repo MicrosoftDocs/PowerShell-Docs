@@ -1,5 +1,5 @@
 ---
-ms.date: 07/05/2019
+ms.date: 07/16/2019
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -28,13 +28,14 @@ Update-Module [[-Name] <String[]>] [-RequiredVersion <Version>] [-MaximumVersion
 The `Update-Module` cmdlet installs a module's newest version from an online gallery. You're
 prompted to confirm the update before it's installed. Updates are installed only for modules that
 were installed on the local computer with `Install-Module`. `Update-Module` searches
-`$env:PSModulePath` and updates a module's first occurrence.
+`$env:PSModulePath` for installed modules.
 
-`Update-Module` updates all installed modules. To specify a module to update, use the **Name**
-parameter. You can update to a module's specific version by using the **RequiredVersion** parameter.
+`Update-Module` with no parameters specified updates all installed modules. To specify a module to
+update, use the **Name** parameter. You can update to a module's specific version by using the
+**RequiredVersion** parameter.
 
-If an installed module is the newest version, the module isn't updated. If the module isn't found in
-`$env:PSModulePath`, an error is displayed.
+If an installed module is already the newest version, the module isn't updated. If the module isn't
+found in `$env:PSModulePath`, an error is displayed.
 
 To display the installed modules, use `Get-InstalledModule`.
 
@@ -219,6 +220,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## OUTPUTS
 
 ## NOTES
+
+For PowerShell 5.1 or below, the default scope in an elevated session is **AllUsers**, and in a
+non-elevated session, **CurrentUser**. Module updates for **AllUsers**,
+`$env:ProgramFiles\PowerShell\Modules`, need elevated permissions. Module updates for
+**CurrentUser**, `$home\Documents\PowerShell\Modules`, don't need elevated permissions.
 
 `Update-Module` runs on PowerShell 3.0 or later releases of PowerShell, on Windows 7 or Windows 2008
 R2 and later releases of Windows.
