@@ -34,10 +34,10 @@ Set-Service [-ComputerName <String[]>] [-DisplayName <String>] [-Description <St
 
 ## DESCRIPTION
 
-The `Set-Service` cmdlet changes the properties of a service such as the status, description,
-display name, and start mode. `Set-Service` can start, stop, suspend, or pause a service. To
-identify a service, enter its service name or submit a service object. Or, send a service name or
-service object down the pipeline to `Set-Service`.
+The `Set-Service` cmdlet changes the properties of a service such as the **Status**,
+**Description**, **DisplayName**, and **StartupType**. `Set-Service` can start, stop, suspend, or
+pause a service. To identify a service, enter its service name or submit a service object. Or, send
+a service name or service object down the pipeline to `Set-Service`.
 
 ## EXAMPLES
 
