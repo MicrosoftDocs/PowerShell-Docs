@@ -8,12 +8,15 @@ online version: https://go.microsoft.com/fwlink/?linkid=289595
 schema: 2.0.0
 title: New-ModuleManifest
 ---
+
 # New-ModuleManifest
 
 ## SYNOPSIS
 Creates a new module manifest.
 
 ## SYNTAX
+
+### All
 
 ```
 New-ModuleManifest [-Path] <string> [-NestedModules <Object[]>] [-Guid <guid>] [-Author <string>]
@@ -178,11 +181,11 @@ table format to specify the name, a **GUID**, and a version of the **PSScheduled
 
 ```powershell
 $moduleSettings = @{
-  RequiredModules = (BitsTransfer, @{
+  RequiredModules = ("BitsTransfer", @{
     ModuleName="PSScheduledJob"
     ModuleVersion="1.0.0.0";
     GUID="50cdb55f-5ab7-489f-9e94-4ec21ff51e59"
-  }
+  })
   Path = 'C:\ps-test\ManifestTest.psd1'
 }
 New-ModuleManifest @moduleSettings
