@@ -70,7 +70,7 @@ The output shows the default values of all keys in the manifest.
 New-ModuleManifest -Path C:\ps-test\Test-Module\Test-Module.psd1 -PassThru
 ```
 
-```powershell
+```Output
 #
 # Module manifest for module 'Test-Module'
 #
@@ -220,11 +220,11 @@ table format to specify the name, a **GUID**, and a version of the **PSScheduled
 
 ```powershell
 $moduleSettings = @{
-  RequiredModules = (BitsTransfer, @{
+  RequiredModules = ("BitsTransfer", @{
     ModuleName="PSScheduledJob"
     ModuleVersion="1.0.0.0";
     GUID="50cdb55f-5ab7-489f-9e94-4ec21ff51e59"
-  }
+  })
   Path = 'C:\ps-test\ManifestTest.psd1'
 }
 New-ModuleManifest @moduleSettings

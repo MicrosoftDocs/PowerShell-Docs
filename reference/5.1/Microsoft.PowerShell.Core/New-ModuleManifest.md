@@ -8,12 +8,15 @@ online version: https://go.microsoft.com/fwlink/?linkid=821496
 schema: 2.0.0
 title: New-ModuleManifest
 ---
+
 # New-ModuleManifest
 
 ## SYNOPSIS
 Creates a new module manifest.
 
 ## SYNTAX
+
+### All
 
 ```
 New-ModuleManifest [-Path] <string> [-NestedModules <Object[]>] [-Guid <guid>] [-Author <string>]
@@ -83,6 +86,9 @@ New-ModuleManifest -Path C:\ps-test\Test-Module\Test-Module.psd1 -PassThru
 # Version number of this module.
 ModuleVersion = '1.0'
 
+# Supported PSEditions
+# CompatiblePSEditions = @()
+
 # ID used to uniquely identify this module
 GUID = '47179120-0bcb-4f14-8d80-f4560107f85c'
 
@@ -107,10 +113,10 @@ Copyright = '(c) 2019 ContosoAdmin. All rights reserved.'
 # Minimum version of the Windows PowerShell host required by this module
 # PowerShellHostVersion = ''
 
-# Minimum version of the .NET Framework required by this module
+# Minimum version of Microsoft .NET Framework required by this module. This prerequisite is valid for the PowerShell Desktop edition only.
 # DotNetFrameworkVersion = ''
 
-# Minimum version of the common language runtime (CLR) required by this module
+# Minimum version of the common language runtime (CLR) required by this module. This prerequisite is valid for the PowerShell Desktop edition only.
 # CLRVersion = ''
 
 # Processor architecture (None, X86, Amd64) required by this module
@@ -134,26 +140,50 @@ Copyright = '(c) 2019 ContosoAdmin. All rights reserved.'
 # Modules to import as nested modules of the module specified in RootModule/ModuleToProcess
 # NestedModules = @()
 
-# Functions to export from this module
-FunctionsToExport = '*'
+# Functions to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no functions to export.
+FunctionsToExport = @()
 
-# Cmdlets to export from this module
-CmdletsToExport = '*'
+# Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.
+CmdletsToExport = @()
 
 # Variables to export from this module
 VariablesToExport = '*'
 
-# Aliases to export from this module
-AliasesToExport = '*'
+# Aliases to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no aliases to export.
+AliasesToExport = @()
 
-# List of all modules packaged with this module.
+# DSC resources to export from this module
+# DscResourcesToExport = @()
+
+# List of all modules packaged with this module
 # ModuleList = @()
 
 # List of all files packaged with this module
 # FileList = @()
 
-# Private data to pass to the module specified in RootModule/ModuleToProcess
-# PrivateData = ''
+# Private data to pass to the module specified in RootModule/ModuleToProcess. This may also contain a PSData hashtable with additional module metadata used by PowerShell.
+PrivateData = @{
+
+    PSData = @{
+
+        # Tags applied to this module. These help with module discovery in online galleries.
+        # Tags = @()
+
+        # A URL to the license for this module.
+        # LicenseUri = ''
+
+        # A URL to the main website for this project.
+        # ProjectUri = ''
+
+        # A URL to an icon representing this module.
+        # IconUri = ''
+
+        # ReleaseNotes of this module
+        # ReleaseNotes = ''
+
+    } # End of PSData hashtable
+
+} # End of PrivateData hashtable
 
 # HelpInfo URI of this module
 # HelpInfoURI = ''
@@ -180,11 +210,11 @@ table format to specify the name, a **GUID**, and a version of the **PSScheduled
 
 ```powershell
 $moduleSettings = @{
-  RequiredModules = (BitsTransfer, @{
+  RequiredModules = ("BitsTransfer", @{
     ModuleName="PSScheduledJob"
     ModuleVersion="1.0.0.0";
     GUID="50cdb55f-5ab7-489f-9e94-4ec21ff51e59"
-  }
+  })
   Path = 'C:\ps-test\ManifestTest.psd1'
 }
 New-ModuleManifest @moduleSettings
