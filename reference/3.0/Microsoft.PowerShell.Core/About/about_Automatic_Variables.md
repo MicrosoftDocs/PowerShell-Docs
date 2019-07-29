@@ -547,7 +547,7 @@ The **Current** property continues to return the same property until
 
 ### Examples
 
-#### Example 1: Using the Input variable
+#### Example 1: Using the $input variable
 
 In the following example, accessing the `$input` variable clears the variable
 until the next time the process block executes. Using the **Reset** method
@@ -624,7 +624,7 @@ Iteration: 1
     Input: two
 ```
 
-### Example 2: Using $input outside the Process block
+### Example 2: Using $input outside the process block
 
 Outside of the process block the `$input` variable represents all the values
 piped into the function.
@@ -834,7 +834,7 @@ Default (Current): Start
 Default (Current): End
 ```
 
-## SEE ALSO
+## See also
 
 - [about_Hash_Tables](about_Hash_Tables.md)
 - [about_Preference_Variables](about_Preference_Variables.md)
