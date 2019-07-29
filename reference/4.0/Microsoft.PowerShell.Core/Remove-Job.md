@@ -1,5 +1,5 @@
 ---
-ms.date:  06/09/2017
+ms.date:  07/26/2019
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -11,167 +11,208 @@ title:  Remove-Job
 # Remove-Job
 
 ## SYNOPSIS
-Deletes a Windows PowerShell background job.
+Deletes a PowerShell background job.
 
 ## SYNTAX
 
 ### SessionIdParameterSet (Default)
+
 ```
-Remove-Job [-Force] [-Id] <Int32[]> [-WhatIf] [-Confirm] [<CommonParameters>]
+Remove-Job [-Id] <Int32[]> [-Force] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### JobParameterSet
+
 ```
 Remove-Job [-Job] <Job[]> [-Force] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### InstanceIdParameterSet
-```
-Remove-Job [-Force] [-InstanceId] <Guid[]> [-WhatIf] [-Confirm] [<CommonParameters>]
-```
 
-### FilterParameterSet
 ```
-Remove-Job [-Force] [-Filter] <Hashtable> [-WhatIf] [-Confirm] [<CommonParameters>]
+Remove-Job [-InstanceId] <Guid[]> [-Force] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### NameParameterSet
+
 ```
-Remove-Job [-Force] [-Name] <String[]> [-WhatIf] [-Confirm] [<CommonParameters>]
+Remove-Job [-Name] <String[]> [-Force] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### FilterParameterSet
+
+```
+Remove-Job [-Filter] <Hashtable> [-Force] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### StateParameterSet
+
 ```
 Remove-Job [-State] <JobState> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### CommandParameterSet
+
 ```
 Remove-Job [-Command <String[]>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-The **Remove-Job** cmdlet deletes Windows PowerShell background jobs that were started by using the Start-Job or the **AsJob** parameter of any cmdlet.
 
-You can use this cmdlet to delete all jobs or delete selected jobs based on their name, ID, instance ID, command, or state, or by passing a job object to **Remove-Job**.
-Without parameters or parameter values, **Remove-Job** has no effect.
+The `Remove-Job` cmdlet deletes PowerShell background jobs that were started by the `Start-Job`
+cmdlet or by cmdlets such as `Invoke-Command` that support the **AsJob** parameter.
 
-Beginning in Windows PowerShell 3.0, you can use the **Remove-Job** cmdlet to delete custom job types, such as scheduled jobs and workflow jobs.
-If you use **Remove-Job** to delete a scheduled job, it deletes the scheduled job and deletes all instances of the scheduled job on disk, including the results of all triggered job instances.
+You can use `Remove-Job` to delete all jobs or delete selected jobs. The jobs are identified by
+their **Name**, **ID**, **Instance ID**, **Command**, or **State**. Or, a job object can be sent
+down the pipeline to `Remove-Job`. Without parameters or parameter values, `Remove-Job` has no
+effect.
 
-Before deleting a running job, use the **Stop-Job** cmdlet to stop the job.
-If you try to delete a running job, the command fails.
-You can use the **Force** parameter of **Remove-Job** to delete a running job.
+Since PowerShell 3.0, `Remove-Job` can delete custom job types, such as scheduled jobs and workflow
+jobs. For example, `Remove-Job` deletes the scheduled job, all instances of the scheduled job on
+disk, and the results of all triggered job instances.
 
-If you do not delete a background job, the job remains in the global job cache until you close the session in which the job was created.
+If you try to delete a running job, `Remove-Job` fails. Use the `Stop-Job` cmdlet to stop a running
+job. Or, use `Remove-Job` with the **Force** parameter to delete a running job.
+
+Jobs remain in the global job cache until you delete the background job or close the PowerShell
+session.
 
 ## EXAMPLES
 
-### Example 1
-```
-PS C:\> $batch = Get-Job -Name BatchJob
-PS C:\> $batch | Remove-Job
-```
+### Example 1: Delete a job by using its name
 
-These commands delete a background job named BatchJob from the current session.
-The first command uses the Get-Job cmdlet to get an object representing the job, and then it saves the job in the $batch variable.
-The second command uses a pipeline operator (|) to send the job to the Remove-Job cmdlet.
+This example uses a variable and the pipeline to delete a job by name.
 
-This command is equivalent to using the **Job** parameter of **Remove-Job**, for example, "remove-job -job $batch".
-
-### Example 2
-```
-PS C:\> Get-job | Remove-Job
+```powershell
+$batch = Get-Job -Name BatchJob
+$batch | Remove-Job
 ```
 
-This command deletes all of the jobs in the current session.
+`Get-Job` uses the **Name** parameter to specify the job, **BatchJob**. The job object is stored in
+the `$batch` variable. The object in `$batch` is sent down the pipeline to `Remove-Job`.
 
-### Example 3
-```
-PS C:\> Remove-Job -State NotStarted
-```
+An alternative is to use the **Job** parameter, such as `Remove-Job -Job $batch`.
 
-This command deletes all jobs from the current session that have not yet been started.
+### Example 2: Delete all jobs in a session
 
-### Example 4
-```
-PS C:\> Remove-Job -Name *batch -Force
-```
+In this example, all the jobs in the current PowerShell session are deleted.
 
-This command deletes all jobs with friendly names that end with "batch" from the current session, including jobs that are running.
-
-It uses the **Name** parameter of **Remove-Job** to specify a job name pattern, and it uses the **Force** parameter to ensure that all jobs are removed, even those that might be in progress.
-
-### Example 5
-```
-PS C:\> $j = Invoke-Command -ComputerName Server01 -ScriptBlock {Get-Process} -AsJob
-PS C:\> $j | Remove-Job
+```powershell
+Get-job | Remove-Job
 ```
 
-This example shows how to use the **Remove-Job** cmdlet to remove a job that was started on a remote computer by using the **AsJob** parameter of the Invoke-Command cmdlet.
+`Get-Job` gets all the jobs in the current PowerShell session. The job objects are sent down the
+pipeline to `Remove-Job`.
 
-The first command uses the **Invoke-Command** cmdlet to run a job on the Server01 computer.
-It uses the **AsJob** parameter to run the command as a background job, and it saves the resulting job object in the $j variable.
+### Example 3: Delete NotStarted jobs
 
-Because the command used the **AsJob** parameter, the job object is created on the local computer, even though the job runs on a remote computer.
-As a result, you use local commands to manage the job.
+This example deletes all jobs from the current PowerShell session that haven't started.
 
-The second command uses the **Remove-Job** cmdlet to remove the job.
-It uses a pipeline operator (|) to send the job in $j to **Remove-Job**.
-Note that this is a local command.
-A remote command is not required to remove a job that was started by using the **AsJob** parameter.
-
-### Example 6
-```
-The first command uses the New-PSSession cmdlet to create a PSSession (a persistent connection) to the Server01 computer. A persistent connection is required when running a Start-Job command remotely. The command saves the PSSession in the $s variable.
-PS C:\> $s = New-PSSession -ComputerName Server01
-
-The second command uses the **Invoke-Command** cmdlet to run a **Start-Job** command in the PSSession in $s. The job runs a **Get-Process** command. It uses the **Name** parameter of **Start-Job** to specify a friendly name for the job.
-PS C:\> Invoke-Command -Session $s -ScriptBlock {Start-Job -ScriptBlock {Get-Process} -Name MyJob}
-
-The third command uses the **Invoke-Command** cmdlet to run a **Remove-Job** command in the PSSession in $s. The command uses the **Name** parameter of Remove-Job to identify the job to be deleted.
-PS C:\> Invoke-Command -Session $s -ScriptBlock {Remove-Job -Name MyJob}
+```powershell
+Remove-Job -State NotStarted
 ```
 
-This example shows how to remove a job that was started by using Invoke-Command to run a Start-Job command.
-In this case, the job object is created on the remote computer and you use remote commands to manage the job.
+`Remove-Job` uses the **State** parameter to specify the job status.
 
-### Example 7
+### Example 4: Delete jobs by using a friendly name
+
+This example deletes all jobs from the current session with friendly names that end with *batch**,
+including jobs that are running.
+
+```powershell
+Remove-Job -Name *batch -Force
 ```
-The first command uses the Start-Job cmdlet to start a background job. The command saves the resulting job object in the $j variable.
-PS C:\> $j = Start-Job -ScriptBlock {Get-Process Powershell}
 
-The second command uses a pipeline operator (|) to send the job object in $j to the Format-List cmdlet. The **Format-List** command uses the **Property** parameter with a value of * (all) to display all of the properties of the job object in a list.The job object display shows the values of the **ID** and **InstanceID** properties, along with the other properties of the object.
-PS C:\> $j | Format-List -Property *
+`Remove-Job` uses the **Name** parameter to specify a job name pattern. The pattern includes the
+asterisk (`*`) wildcard to find all job names that end with **batch**. The **Force** parameter
+deletes jobs that running.
 
-HasMoreData   : False
+### Example 5: Delete a job that was created by Invoke-Command
+
+This example removes a job that was started on a remote computer using `Invoke-Command` with the
+**AsJob** parameter.
+
+Because the example uses the **AsJob** parameter, the job object is created on the local computer.
+But, the job runs on a remote computer. As a result, you use local commands to manage the job.
+
+```powershell
+$job = Invoke-Command -ComputerName Server01 -ScriptBlock {Get-Process} -AsJob
+$job | Remove-Job
+```
+
+`Invoke-Command` runs a job on the **Server01** computer. The **AsJob** parameter runs the
+**ScriptBlock** as a background job. The job object is stored in the `$job` variable. The `$job`
+variable object is sent down the pipeline to `Remove-Job`.
+
+### Example 6: Delete a job that was created by Invoke-Command and Start-Job
+
+This example shows how to remove a job on a remote computer that was started by using
+`Invoke-Command` to run `Start-Job`. The job object is created on the remote computer and remote
+commands are used to manage the job. A persistent connection is required when running a remote
+`Start-Job` command.
+
+```powershell
+$S = New-PSSession -ComputerName Server01
+Invoke-Command -Session $S -ScriptBlock {Start-Job -ScriptBlock {Get-Process} -Name MyJob}
+Invoke-Command -Session $S -ScriptBlock {Remove-Job -Name MyJob}
+```
+
+`New-PSSession` creates a **PSSession**, a persistent connection, to the **Server01** computer. The
+connection is saved in the `$S` variable.
+
+`Invoke-Command` connects to the session saved in `$S`. The **ScriptBlock** uses `Start-Job` to
+start a remote job. The job runs a `Get-Process` command and uses the **Name** parameter to specify
+a friendly job name, **MyJob**.
+
+`Invoke-Command` uses the `$S` session and runs `Remove-Job`. The **Name** parameter specifies that
+the job named **MyJob** is deleted.
+
+### Example 7: Delete a job by using its InstanceId
+
+This example removes a job based on its **InstanceId**.
+
+```powershell
+$job = Start-Job -ScriptBlock {Get-Process PowerShell}
+$job | Format-List -Property *
+Remove-Job -InstanceId ad02b942-8007-4407-87f3-d23e71955872
+```
+
+```Output
+State         : Completed
+HasMoreData   : True
 StatusMessage :
 Location      : localhost
-Command       : get-process powershell
-JobStateInfo  : Failed
+Command       : Get-Process PowerShell
+JobStateInfo  : Completed
 Finished      : System.Threading.ManualResetEvent
-InstanceId    : dce2ee73-f8c9-483e-bdd7-a549d8687eed
-Id            : 1
-Name          : Job1
-ChildJobs     : {Job2}
+InstanceId    : ad02b942-8007-4407-87f3-d23e71955872
+Id            : 3
+Name          : Job3
+ChildJobs     : {Job4}
+PSBeginTime   : 7/26/2019 11:36:56
+PSEndTime     : 7/26/2019 11:36:57
+PSJobTypeName : BackgroundJob
 Output        : {}
 Error         : {}
 Progress      : {}
 Verbose       : {}
 Debug         : {}
 Warning       : {}
-StateChanged  :
-
-The third command uses a **Remove-Job** command to remove the job from the current session. To generate the command, you can copy and paste the **InstanceID** value from the object display.To copy a value in the Windows PowerShell console, use the mouse to select the value, and then press Enter to copy it. To paste a value, right-click.
-PS C:\> Remove-Job -InstanceID dce2ee73-f8c9-483e-bdd7-a549d8687eed
+Information   : {}
 ```
 
-This example shows how to remove a job based on its instance ID.
+`Start-Job` starts a background job and the job object is saved in the `$job` variable.
+
+The object in `$job` is sent down the pipeline to `Format-List`. The **Property** parameter uses an
+asterisk (`*`) to specify that all the object's properties are displayed in a list.
+
+`Remove-Job` uses the **InstanceId** parameter to specify the job to delete.
 
 ## PARAMETERS
 
 ### -Command
-Deletes jobs that include the specified words in the command.
+
+Deletes jobs that include the specified words in the command. You can enter a comma-separated array.
 
 ```yaml
 Type: String[]
@@ -186,7 +227,8 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
-Prompts you for confirmation before running the cmdlet.
+
+Prompts you for confirmation before `Remove-Job` is run.
 
 ```yaml
 Type: SwitchParameter
@@ -201,14 +243,14 @@ Accept wildcard characters: False
 ```
 
 ### -Filter
-Deletes jobs that satisfy all of the conditions established in the associated hash table.
-Enter a hash table where the keys are job properties and the values are job property values.
 
-This parameter works only on custom job types, such as workflow jobs and scheduled jobs.
-It does not work on standard background jobs, such as those created by using the Start-Job cmdlet.
-For information about support for this parameter, see the help topic for the job type.
+Deletes jobs that satisfy all the conditions established in the associated hash table. Enter a hash
+table where the keys are job properties and the values are job property values.
 
-This parameter is introduced in Windows PowerShell 3.0.
+This parameter works only on custom job types, such as workflow jobs and scheduled jobs. It doesn't
+work on standard background jobs, such as those created by using the `Start-Job`.
+
+This parameter is introduced in PowerShell 3.0.
 
 ```yaml
 Type: Hashtable
@@ -223,12 +265,13 @@ Accept wildcard characters: False
 ```
 
 ### -Force
-Deletes the job even if the status is "Running".
-Without the **Force** parameter, **Remove-Job** does not delete running jobs.
+
+Deletes a job even if the job's state is **Running**. If the **Force** parameter isn't specified,
+`Remove-Job` doesn't delete running jobs.
 
 ```yaml
 Type: SwitchParameter
-Parameter Sets: SessionIdParameterSet, JobParameterSet, InstanceIdParameterSet, FilterParameterSet, NameParameterSet
+Parameter Sets: SessionIdParameterSet, JobParameterSet, NameParameterSet, InstanceIdParameterSet, FilterParameterSet
 Aliases: F
 
 Required: False
@@ -239,12 +282,11 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Deletes background jobs with the specified IDs.
 
-The ID is an integer that uniquely identifies the job within the current session.
-It is easier to remember and type than the instance ID, but it is unique only within the current session.
-You can type one or more IDs (separated by commas).
-To find the ID of a job, type "Get-Job" without parameters.
+Deletes background jobs with the specified **Id**. You can enter a comma-separated array. The job's
+**Id** is a unique integer that identifies a job within the current session.
+
+To find a job's **Id**, use `Get-Job` without parameters.
 
 ```yaml
 Type: Int32[]
@@ -259,10 +301,11 @@ Accept wildcard characters: False
 ```
 
 ### -InstanceId
-Deletes jobs with the specified instance IDs.
 
-An instance ID is a GUID that uniquely identifies the job on the computer.
-To find the instance ID of a job, use Get-Job or display the job object.
+Deletes jobs with the specified **InstanceId**. You can enter a comma-separated array. An
+**InstanceId** is a unique GUID that identifies a job.
+
+To find a job's **InstanceId**, use `Get-Job`.
 
 ```yaml
 Type: Guid[]
@@ -277,9 +320,11 @@ Accept wildcard characters: False
 ```
 
 ### -Job
-Specifies the jobs to be deleted.
-Enter a variable that contains the jobs or a command that gets the jobs.
-You can also use a pipeline operator to submit jobs to the **Remove-Job** cmdlet.
+
+Specifies the jobs to be deleted. Enter a variable that contains the jobs or a command that gets the
+jobs. You can enter a comma-separated array.
+
+You can send job objects down the pipeline to `Remove-Job`.
 
 ```yaml
 Type: Job[]
@@ -294,10 +339,12 @@ Accept wildcard characters: False
 ```
 
 ### -Name
-Deletes only the jobs with the specified friendly names.
-Wildcards are permitted.
 
-Because the friendly name is not guaranteed to be unique, even within the session, use the **WhatIf** and **Confirm** parameters when deleting jobs by name.
+Only deletes jobs with the specified friendly name. Wildcards are permitted. You can enter a
+comma-separated array.
+
+Friendly names for jobs aren't guaranteed to be unique, even within a PowerShell session. Use the
+**WhatIf** and **Confirm** parameters when you delete files by name.
 
 ```yaml
 Type: String[]
@@ -312,15 +359,29 @@ Accept wildcard characters: False
 ```
 
 ### -State
-Deletes only jobs with the specified status.
-Valid values are Valid values are NotStarted, Running, Completed, Failed, Stopped, Blocked, Disconnected, Suspending, Stopping, and Suspended.
-To delete jobs with a state of Running, use the **Force** parameter.
+
+Only deletes jobs with the specified state. To delete jobs with a state of **Running**, use the
+**Force** parameter.
+
+Accepted values:
+
+- AtBreakpoint
+- Blocked
+- Completed
+- Disconnected
+- Failed
+- NotStarted
+- Running
+- Stopped
+- Stopping
+- Suspended
+- Suspending
 
 ```yaml
 Type: JobState
 Parameter Sets: StateParameterSet
 Aliases:
-Accepted values: NotStarted, Running, Completed, Failed, Stopped, Blocked, Suspended, Disconnected, Suspending, Stopping
+Accepted values: AtBreakpoint, Blocked, Completed, Disconnected, Failed, NotStarted, Running, Stopped, Stopping, Suspended, Suspending
 
 Required: True
 Position: 0
@@ -330,8 +391,8 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Shows what would happen if the cmdlet runs.
-The cmdlet is not run.
+
+Shows what would happen if `Remove-Job` runs. The cmdlet isn't run.
 
 ```yaml
 Type: SwitchParameter
@@ -346,21 +407,37 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+-InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
+-WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### System.Management.Automation.Job
-You can pipe a job object to Remove-Job.
+
+You can send a job object down the pipeline to `Remove-Job`.
 
 ## OUTPUTS
 
 ### None
-This cmdlet does not generate any output.
+
+`Remove-Job` doesn't generate any output.
 
 ## NOTES
 
+A PowerShell job creates a new process. When the job completes, the process exits. When `Remove-Job`
+is run, the job's state is removed.
+
+If a job stops before completion and its process hasn't exited, the process is forcibly terminated.
+
 ## RELATED LINKS
+
+[about_Jobs](./About/about_Jobs.md)
+
+[about_Job_Details](./About/about_Job_Details.md)
+
+[about_Remote_Jobs](./About/about_Remote_Jobs.md)
 
 [Get-Job](Get-Job.md)
 
@@ -377,9 +454,3 @@ This cmdlet does not generate any output.
 [Suspend-Job](Suspend-Job.md)
 
 [Wait-Job](Wait-Job.md)
-
-[about_Job_Details](About/about_Job_Details.md)
-
-[about_Remote_Jobs](About/about_Remote_Jobs.md)
-
-[about_Jobs](About/about_Jobs.md)
