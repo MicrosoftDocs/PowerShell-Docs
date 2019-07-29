@@ -573,9 +573,9 @@ the enumerator.
 The **Current** property continues to return the same property until
 **MoveNext** is called.
 
-### Examples
+## Examples
 
-#### Example 1: Using the $input variable
+### Example 1: Using the $input variable
 
 In the following example, accessing the `$input` variable clears the variable
 until the next time the process block executes. Using the **Reset** method
