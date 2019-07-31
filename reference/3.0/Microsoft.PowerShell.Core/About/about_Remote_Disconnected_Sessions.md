@@ -169,7 +169,7 @@ Notice that the value of the **State** property is **Disconnected** and the
 **Availability** is **None**.
 
 ```powershell
-PS> Get-PSSession -ComputerName Server01 | Disconnect-PSSession
+Get-PSSession -ComputerName Server01 | Disconnect-PSSession
 ```
 
 ```Output
