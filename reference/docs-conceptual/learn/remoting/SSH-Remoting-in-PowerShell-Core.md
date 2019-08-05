@@ -8,13 +8,16 @@ ms.date: 08/14/2018
 
 ## Overview
 
-PowerShell remoting normally uses WinRM for connection negotiation and data transport. SSH is now available for Linux and Windows platforms and allows true multiplatform PowerShell remoting.
+PowerShell remoting normally uses WinRM for connection negotiation and data transport. SSH is now
+available for Linux and Windows platforms and allows true multiplatform PowerShell remoting.
 
-WinRM provides a robust hosting model for PowerShell remote sessions. SSH-based remoting doesn't currently support remote endpoint configuration and JEA (Just Enough Administration).
+WinRM provides a robust hosting model for PowerShell remote sessions. SSH-based remoting doesn't
+currently support remote endpoint configuration and JEA (Just Enough Administration).
 
-SSH remoting lets you do basic PowerShell session remoting between Windows and Linux machines. SSH Remoting creates a PowerShell host process on the target machine as an SSH subsystem.
-Eventually we'll implement a general hosting model, similar to WinRM, to support endpoint
-configuration and JEA.
+SSH remoting lets you do basic PowerShell session remoting between Windows and Linux machines. SSH
+Remoting creates a PowerShell host process on the target machine as an SSH subsystem. Eventually
+we'll implement a general hosting model, similar to WinRM, to support endpoint configuration and
+JEA.
 
 The `New-PSSession`, `Enter-PSSession`, and `Invoke-Command` cmdlets now have a new parameter set to
 support this new remoting connection.
@@ -31,7 +34,7 @@ a password. You can also, use SSH key authentication using a private key file wi
 ## General setup information
 
 SSH must be installed on all machines. Install both the SSH client (`ssh.exe`) and server
-(`sshd.exe`) so that you can remote to and from the machines. OpenSSH for Windows is now availabe
+(`sshd.exe`) so that you can remote to and from the machines. OpenSSH for Windows is now available
 in Windows 10 build 1809 and Windows Server 2019. For more information, see
 [OpenSSH for Windows](/windows-server/administration/openssh/openssh_overview). For Linux, install
 SSH (including sshd server) appropriate to your platform. You also need to install PowerShell Core
@@ -99,9 +102,9 @@ password or key-based authentication.
 5. Add the path where OpenSSH is installed to your Path environment variable. For example,
    `C:\Program Files\OpenSSH\`. This entry allows for the ssh.exe to be found.
 
-## Set up on Linux (Ubuntu 14.04) Machine
+## Set up on Linux (Ubuntu 16.04) Machine
 
-1. Install the latest [PowerShell Core for Linux](../../install/installing-powershell-core-on-linux.md#ubuntu-1404) build from GitHub
+1. Install the latest [PowerShell Core for Linux](../../install/installing-powershell-core-on-linux.md#ubuntu-1604) build from GitHub
 2. Install [Ubuntu SSH](https://help.ubuntu.com/lts/serverguide/openssh-server.html) as needed
 
    ```bash
@@ -180,12 +183,14 @@ password or key-based authentication.
 
 ## Authentication
 
-PowerShell remoting over SSH relies on the authentication exchange between the SSH client and SSH service and does not implement any authentication schemes itself.
-This means that any configured authentication schemes including multi-factor authentication is handled by SSH and independent of PowerShell.
-For example, you can configure the SSH service to require public key authentication as well as a one-time password for added security.
-Configuration of multi-factor authentication is outside the scope of this documentation.
-Refer to documentation for SSH on how to correctly configure multi-factor authentication and validate it works outside of PowerShell
-before attempting to use it with PowerShell remoting.
+PowerShell remoting over SSH relies on the authentication exchange between the SSH client and SSH
+service and does not implement any authentication schemes itself. This means that any configured
+authentication schemes including multi-factor authentication is handled by SSH and independent of
+PowerShell. For example, you can configure the SSH service to require public key authentication as
+well as a one-time password for added security. Configuration of multi-factor authentication is
+outside the scope of this documentation. Refer to documentation for SSH on how to correctly
+configure multi-factor authentication and validate it works outside of PowerShell before attempting
+to use it with PowerShell remoting.
 
 ## PowerShell Remoting Example
 
@@ -225,7 +230,7 @@ Enter-PSSession $session
 
 ```output
 [UbuntuVM1]: PS /home/TestUser> uname -a
-Linux TestUser-UbuntuVM1 4.2.0-42-generic 49~14.04.1-Ubuntu SMP Wed Jun 29 20:22:11 UTC 2016 x86_64 x86_64 x86_64 GNU/Linux
+Linux TestUser-UbuntuVM1 4.2.0-42-generic 49~16.04.1-Ubuntu SMP Wed Jun 29 20:22:11 UTC 2016 x86_64 x86_64 x86_64 GNU/Linux
 
 [UbuntuVM1]: PS /home/TestUser> Exit-PSSession
 ```
@@ -326,7 +331,7 @@ The sudo command doesn't work in remote session to Linux machine.
 
 [PowerShell Core for Windows](../../install/installing-powershell-core-on-windows.md#msi)
 
-[PowerShell Core for Linux](../../install/installing-powershell-core-on-linux.md#ubuntu-1404)
+[PowerShell Core for Linux](../../install/installing-powershell-core-on-linux.md#ubuntu-1604)
 
 [PowerShell Core for MacOS](../../install/installing-powershell-core-on-macos.md)
 

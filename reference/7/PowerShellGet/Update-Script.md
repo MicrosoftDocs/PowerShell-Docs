@@ -3,11 +3,12 @@ external help file: PSModule-help.xml
 keywords: powershell,cmdlet
 locale: en-us
 Module Name: PowerShellGet
-ms.date: 06/09/2017
+ms.date: 07/09/2019
 online version: https://go.microsoft.com/fwlink/?linkid=2096727
 schema: 2.0.0
 title: Update-Script
 ---
+
 # Update-Script
 
 ## SYNOPSIS
@@ -15,31 +16,39 @@ Updates a script.
 
 ## SYNTAX
 
+### All
+
 ```
-Update-Script [[-Name] <String[]>] [-RequiredVersion <String>] [-MaximumVersion <String>] [-Proxy <Uri>]
- [-ProxyCredential <PSCredential>] [-Credential <PSCredential>] [-Force] [-AllowPrerelease] [-AcceptLicense]
- [-WhatIf] [-Confirm] [<CommonParameters>]
+Update-Script [[-Name] <String[]>] [-RequiredVersion <String>] [-MaximumVersion <String>]
+ [-Proxy <Uri>] [-ProxyCredential <PSCredential>] [-Credential <PSCredential>] [-Force]
+ [-AllowPrerelease] [-AcceptLicense] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 
-The **Update-Script** cmdlet updates the specified script from the repository from which it was previously installed.
+The `Update-Script` cmdlet updates a script that is installed on the local computer. The updated
+script is downloaded from the same repository as the installed version.
 
 ## EXAMPLES
 
 ### Example 1: Update the specified script
 
-```
-PS C:\> Update-Script -Name "Fabrikam-Script" -RequiredVersion 1.5
-PS C:\> Get-InstalledScript -Name "Fabrikam-Script"
-Version    Name                                Type       Repository           Description
--------    ----                                ----       ----------           -----------
-1.5        Fabrikam-Script                     Script     local1               Description for the Fabrikam-Script script
+This example updates an installed script and displays the updated version.
+
+```powershell
+Update-Script -Name UpdateManagement-Template -RequiredVersion 1.1
+Get-InstalledScript -Name UpdateManagement-Template
 ```
 
-The first command updates the script Fabrikam-Script to version 1.5.
+```Output
+Version   Name                       Repository   Description
+-------   ----                       ----------   -----------
+1.1       UpdateManagement-Template  PSGallery    This is a template script for Update Management...
+```
 
-The second command gets Fabrikam-Script and displays the results.
+`Update-Script` uses the **Name** parameter to specify the script to update. The **RequiredVersion**
+parameter specifies the script version. `Get-InstalledScript` displays the updated version of the
+script.
 
 ## PARAMETERS
 
@@ -77,6 +86,8 @@ Accept wildcard characters: False
 
 ### -Credential
 
+Specifies a user account that has permission to update a script.
+
 ```yaml
 Type: PSCredential
 Parameter Sets: (All)
@@ -91,7 +102,7 @@ Accept wildcard characters: False
 
 ### -Force
 
-Forces the command to run without asking for user confirmation.
+Forces `Update-Script` to run without asking for user confirmation.
 
 ```yaml
 Type: SwitchParameter
@@ -107,8 +118,8 @@ Accept wildcard characters: False
 
 ### -MaximumVersion
 
-Specifies the maximum, or newest, version of the script to update.
-The *MaximumVersion* and *RequiredVersion* parameters are mutually exclusive; you cannot use both parameters in the same command.
+Specifies the maximum, or newest, version of the script to update. The **MaximumVersion** and
+**RequiredVersion** parameters can't be used in the same command.
 
 ```yaml
 Type: String
@@ -124,7 +135,7 @@ Accept wildcard characters: False
 
 ### -Name
 
-Specifies an array of names of scripts to update.
+Specifies one script name or an array of script names to update.
 
 ```yaml
 Type: String[]
@@ -140,6 +151,8 @@ Accept wildcard characters: False
 
 ### -Proxy
 
+Specifies a proxy server for the request rather than connecting directly to an internet resource.
+
 ```yaml
 Type: Uri
 Parameter Sets: (All)
@@ -153,6 +166,9 @@ Accept wildcard characters: False
 ```
 
 ### -ProxyCredential
+
+Specifies a user account that has permission to use the proxy server specified by the **Proxy**
+parameter.
 
 ```yaml
 Type: PSCredential
@@ -168,8 +184,8 @@ Accept wildcard characters: False
 
 ### -RequiredVersion
 
-Specifies the exact version number of the script to update.
-The *MinimumVersion* and *RequiredVersion* parameters are mutually exclusive; you cannot use both parameters in the same command.
+Specifies the exact version number of the script to update. The **MinimumVersion** and
+**RequiredVersion** parameters can't be used in the same command.
 
 ```yaml
 Type: String
@@ -185,7 +201,7 @@ Accept wildcard characters: False
 
 ### -Confirm
 
-Prompts you for confirmation before running the cmdlet.
+Prompts you for confirmation before running `Update-Script`.
 
 ```yaml
 Type: SwitchParameter
@@ -201,8 +217,7 @@ Accept wildcard characters: False
 
 ### -WhatIf
 
-Shows what would happen if the cmdlet runs.
-The cmdlet is not run.
+Shows what would happen if `Update-Script` runs. The cmdlet isn't run.
 
 ```yaml
 Type: SwitchParameter
@@ -218,7 +233,9 @@ Accept wildcard characters: False
 
 ### CommonParameters
 
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+-InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
+-WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 

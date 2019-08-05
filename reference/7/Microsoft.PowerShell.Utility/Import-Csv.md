@@ -47,6 +47,8 @@ that they do not deal with files.
 If a header row entry in a CSV file contains an empty or null value, PowerShell inserts a default
 header row name and displays a warning message.
 
+Starting with PowerShell 6.0, `Import-Csv` now supports the W3C Extended Log File Format.
+
 ## EXAMPLES
 
 ### Example 1: Import process objects
@@ -472,6 +474,11 @@ In the CSV file, each object is represented by a comma-separated list of the pro
 object. The property values are converted to strings by using the **ToString()** method of the
 object, so they are represented by the name of the property value. `Export-Csv` does not export the
 methods of the object.
+
+`Import-Csv` also supports the W3C Extended Log format. Lines starting with `#` are treated as
+comments and ignored unless the comment starts with `#Fields: ` and contains delimited list of
+column names. In that case, the cmdlet uses those column names. This is the standard format for
+Windows IIS and other web server logs. For more information, see [Extended Log File Format](https://www.w3.org/TR/WD-logfile.html).
 
 ## RELATED LINKS
 

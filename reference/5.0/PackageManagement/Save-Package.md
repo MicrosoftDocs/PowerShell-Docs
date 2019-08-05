@@ -1,5 +1,5 @@
 ---
-ms.date:  4/3/2019
+ms.date:  04/03/2019
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -19,34 +19,34 @@ Saves packages to the local computer without installing them.
 
 ```
 Save-Package [[-Name] <string[]>] [-RequiredVersion <string>] [-MinimumVersion <string>]
-[-MaximumVersion <string>] [-Source <string[]>] [-Path <string>] [-LiteralPath <string>]
-[-Credential <pscredential>] [-Force] [-ForceBootstrap] [-WhatIf] [-Confirm]
-[-ProviderName <string[]>] [<CommonParameters>]
+ [-MaximumVersion <string>] [-Source <string[]>] [-Path <string>] [-LiteralPath <string>]
+ [-Credential <pscredential>] [-Force] [-ForceBootstrap] [-WhatIf] [-Confirm]
+ [-ProviderName <string[]>] [<CommonParameters>]
 ```
 
 ### PackageByInputObject
 
 ```
 Save-Package -InputObject <SoftwareIdentity> [-Path <string>] [-LiteralPath <string>]
-[-Credential <pscredential>] [-Force] [-ForceBootstrap] [-WhatIf] [-Confirm] [<CommonParameters>]
+ [-Credential <pscredential>] [-Force] [-ForceBootstrap] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### PSModule:PackageByInputObject
 
 ```
 Save-Package [-Path <string>] [-LiteralPath <string>] [-Credential <pscredential>] [-Force]
-[-ForceBootstrap] [-WhatIf] [-Confirm] [-PackageManagementProvider <string>] [-Scope <string>]
-[-PublishLocation <string>] [-AllVersions] [-Filter <string>] [-Tag <string[]>]
-[-Includes <string[]>] [-DscResource <string[]>] [-Command <string[]>] [<CommonParameters>]
+ [-ForceBootstrap] [-WhatIf] [-Confirm] [-PackageManagementProvider <string>] [-Scope <string>]
+ [-PublishLocation <string>] [-AllVersions] [-Filter <string>] [-Tag <string[]>]
+ [-Includes <string[]>] [-DscResource <string[]>] [-Command <string[]>] [<CommonParameters>]
 ```
 
 ### PSModule
 
 ```
 Save-Package [-Path <string>] [-LiteralPath <string>] [-Credential <pscredential>] [-Force]
-[-ForceBootstrap] [-WhatIf] [-Confirm] [-PackageManagementProvider <string>] [-Scope <string>]
-[-PublishLocation <string>] [-AllVersions] [-Filter <string>] [-Tag <string[]>]
-[-Includes <string[]>] [-DscResource <string[]>] [-Command <string[]>] [<CommonParameters>]
+ [-ForceBootstrap] [-WhatIf] [-Confirm] [-PackageManagementProvider <string>] [-Scope <string>]
+ [-PublishLocation <string>] [-AllVersions] [-Filter <string>] [-Tag <string[]>]
+ [-Includes <string[]>] [-DscResource <string[]>] [-Command <string[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION

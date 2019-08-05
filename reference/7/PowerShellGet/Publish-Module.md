@@ -3,7 +3,7 @@ external help file: PSModule-help.xml
 keywords: powershell,cmdlet
 locale: en-us
 Module Name: PowerShellGet
-ms.date: 06/09/2017
+ms.date: 06/28/2019
 online version: https://go.microsoft.com/fwlink/?linkid=2096634
 schema: 2.0.0
 title: Publish-Module

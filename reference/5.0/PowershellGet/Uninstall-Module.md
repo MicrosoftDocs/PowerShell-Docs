@@ -1,5 +1,5 @@
 ---
-ms.date:  06/09/2017
+ms.date: 07/02/2019
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -16,33 +16,52 @@ Uninstalls a module.
 ## SYNTAX
 
 ### NameParameterSet (Default)
+
 ```
 Uninstall-Module [-Name] <String[]> [-MinimumVersion <Version>] [-RequiredVersion <Version>]
  [-MaximumVersion <Version>] [-Force] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### InputObject
+
 ```
 Uninstall-Module [-InputObject] <PSObject[]> [-Force] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-The **Uninstall-Module** cmdlet uninstalls the specified module from the local computer.
-You cannot uninstall a module if it has other modules as dependencies.
+
+The `Uninstall-Module` cmdlet uninstalls a specified module from the local computer. You can't
+uninstall a module if it has other modules as dependencies.
 
 ## EXAMPLES
 
-### Example 1: Get a module and uninstall it
-```
-PS C:\> Get-InstalledModule -Name "xPSDesiredStateConfiguration" -RequiredVersion 3.6.0.0 | Uninstall-Module
+### Example 1: Uninstall a module
+
+This example uninstalls a module.
+
+```powershell
+Uninstall-Module -Name SpeculationControl
 ```
 
-This command gets version 3.6.0.0 of the module named xPSDesiredStateConfiguration, and then uses the pipeline operator to pass it to the **Uninstall-Module** cmdlet, which uninstalls it.
+`Uninstall-Module` uses the **Name** parameter to specify the module to uninstall from the local
+computer.
+
+### Example 2: Use the pipeline to uninstall a module
+
+In this example, the pipeline is used to uninstall a module.
+
+```powershell
+Get-InstalledModule -Name SpeculationControl | Uninstall-Module
+```
+
+`Get-InstalledModule` uses the **Name** parameter to specify the module. The object is sent down the
+pipeline to `Uninstall-Module` and is uninstalled.
 
 ## PARAMETERS
 
 ### -Confirm
-Prompts you for confirmation before running the cmdlet.
+
+Prompts you for confirmation before running the `Uninstall-Module`.
 
 ```yaml
 Type: SwitchParameter
@@ -57,7 +76,8 @@ Accept wildcard characters: False
 ```
 
 ### -Force
-Forces the command to run without asking for user confirmation.
+
+Forces `Uninstall-Module` to run without asking for user confirmation.
 
 ```yaml
 Type: SwitchParameter
@@ -72,7 +92,9 @@ Accept wildcard characters: False
 ```
 
 ### -InputObject
-Specifies a package by using the module's SoftwareID object, which is shown in the results of the Find-Module cmdlet.
+
+Accepts a **PSRepositoryItemInfo** object. For example, output `Get-InstalledModule` to a variable
+and use that variable as the **InputObject** argument.
 
 ```yaml
 Type: PSObject[]
@@ -87,8 +109,9 @@ Accept wildcard characters: False
 ```
 
 ### -MaximumVersion
-Specifies the maximum, or newest, version of the module to uninstall.
-The *MaximumVersion* and *RequiredVersion* parameters are mutually exclusive; you cannot use both parameters in the same command.
+
+Specifies the maximum, or newest, version of the module to uninstall. The **MaximumVersion** and
+**RequiredVersion** parameters can't be used in the same command.
 
 ```yaml
 Type: Version
@@ -103,8 +126,9 @@ Accept wildcard characters: False
 ```
 
 ### -MinimumVersion
-Specifies the minimum version of the script to uninstall.
-The *MinimumVersion* and *RequiredVersion* parameters are mutually exclusive; you cannot use both parameters in the same command.
+
+Specifies the minimum version of the module to uninstall. The **MinimumVersion** and
+**RequiredVersion** parameters can't be used in the same command.
 
 ```yaml
 Type: Version
@@ -119,7 +143,8 @@ Accept wildcard characters: False
 ```
 
 ### -Name
-Specifies an array of names of modules to uninstall.
+
+Specifies an array of module names to uninstall.
 
 ```yaml
 Type: String[]
@@ -134,6 +159,7 @@ Accept wildcard characters: False
 ```
 
 ### -RequiredVersion
+
 Specifies the exact version number of the module to uninstall.
 
 ```yaml
@@ -149,8 +175,8 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Shows what would happen if the cmdlet runs.
-The cmdlet is not run.
+
+Shows what would happen if `Uninstall-Module` runs. The cmdlet isn't run.
 
 ```yaml
 Type: SwitchParameter
@@ -165,9 +191,16 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+-InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
+-WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
+
+### PSRepositoryItemInfo
+
+`Uninstall-Module` accepts **PSRepositoryItemInfo** objects from the pipeline.
 
 ## OUTPUTS
 
