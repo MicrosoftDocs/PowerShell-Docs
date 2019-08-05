@@ -1,209 +1,200 @@
 ---
-ms.date:  06/09/2017
+ms.date:  08/05/2019
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_Special_Characters
 ---
+
 # About Special Characters
 
-## SHORT DESCRIPTION
-Describes the special characters that you can use to control how Windows
-PowerShell interprets the next character in a command or parameter.
+## Short description
 
-## LONG DESCRIPTION
+Describes the special characters that you can use to control how PowerShell
+interprets the next character in a command or parameter.
 
-PowerShell supports a set of special character sequences that are used
-to represent characters that are not part of the standard character set.
+## Long description
 
-The special characters in PowerShell begin with the backtick
-character, also known as the grave accent (ASCII 96).
+PowerShell supports a set of special character sequences that are used to
+represent characters that aren't part of the standard character set.
 
-The following special characters are recognized by PowerShell:
+PowerShell's special characters are only interpreted when they're enclosed in
+double-quoted (`"`) strings. Special characters begin with the backtick
+character, known as the grave accent (ASCII 96), and are case-sensitive.
 
-```
+PowerShell recognizes these special characters:
+
 | Character | Description             |
 | --------- | ----------------------- |
-| `0        | Null                    |
-| `a        | Alert                   |
-| `b        | Backspace               |
-| `e        | Escape                  |
-| `f        | Form feed               |
-| `n        | New line                |
-| `r        | Carriage return         |
-| `t        | Horizontal tab          |
-| `u{x}     | Unicode escape sequence |
-| `v        | Vertical tab            |
-| --%       | Stop parsing            |
+| `` `0 ``  | Null                    |
+| `` `a ``  | Alert                   |
+| `` `b ``  | Backspace               |
+| `` `e ``  | Escape                  |
+| `` `f ``  | Form feed               |
+| `` `n ``  | New line                |
+| `` `r ``  | Carriage return         |
+| `` `t ``  | Horizontal tab          |
+| `` `u{x} ``  | Unicode escape sequence |
+| `` `v ``  | Vertical tab            |
+| `--%`     | Stop parsing            |
+
+## Null (`0)
+
+The null (`` `0 ``) character appears as an empty space in PowerShell output.
+This functionality allows you to use PowerShell to read and process text files
+that use null characters, such as string termination or record termination
+indicators. The null special character isn't equivalent to the `$null`
+variable, which stores a **null** value.
+
+## Alert (`a)
+
+The alert (`` `a ``) character sends a beep signal to the computer's speaker.
+You can use this character to warn a user about an impending action. The
+following example sends two beep signals to the local computer's speaker.
+
+```powershell
+for ($i = 0; $i -le 1; $i++){"`a"}
 ```
 
-These characters are case-sensitive. The escape character is only interpreted
-when used within double quoted (") strings.
+## Backspace (`b)
 
-## NULL (`0)
+The backspace (`` `b ``) character moves the cursor back one character, but it
+doesn't delete any characters.
 
-PowerShell recognizes a null special character (`0) and represents it
-with a character code of 0. It appears as an empty space in the Windows
-PowerShell output. This allows you to use PowerShell to read and
-process text files that use null characters, such as string termination or
-record termination indicators. The null special character is not equivalent to
-the $null variable, which stores a value of NULL.
-
-## ALERT (`a)
-
-The alert (`a) character sends a beep signal to the computer's speaker. You
-can use this to warn a user about an impending action. The following command
-sends two beep signals to the local computer's speaker:
-
-for ($i = 0; $i -le 1; $i++){"`a"}
-
-## BACKSPACE (`b)
-
-The backspace character (`b) moves the cursor back one character, but it does
-not delete any characters. The following command writes the word "backup",
-moves the cursor back twice, and then writes the word "out" (preceded by a
-space and starting at the new position):
+The example writes the word **backup** and then moves the cursor back twice.
+Then, at the new position, writes a space followed by the word **out**.
 
 ```powershell
 "backup`b`b out"
 ```
 
-The output from this command is as follows:
-
-```output
+```Output
 back out
 ```
 
-## ESCAPE (`e)
+## Escape (`e)
 
-The escape character is most commonly used to specify a virtual terminal
-sequence (ANSI escape sequence) that modifies the color of text and other text
-attributes such as bolding and underlining. These sequences can also be used
-for cursor positioning and scrolling. The PowerShell host must support virtual
-terminal sequences. This can be checked on PowerShell v5 and higher with the
-boolean property $Host.UI.SupportsVirtualTerminal.
+The escape (`` `e ``) character is most commonly used to specify a virtual
+terminal sequence (ANSI escape sequence) that modifies the color of text and
+other text attributes such as bolding and underlining. These sequences can also
+be used for cursor positioning and scrolling. The PowerShell host must support
+virtual terminal sequences. This can be checked on PowerShell v5 and higher
+with the boolean property `$Host.UI.SupportsVirtualTerminal`.
 
-For more information about ANSI escape sequences, see
-http://en.wikipedia.org/wiki/ANSI_escape_code
+For more information about ANSI escape sequences, see [ANSI_escape_code](https://en.wikipedia.org/wiki/ANSI_escape_code).
 
-The following command outputs Green text.
+The following example outputs text with a green foreground color.
 
 ```powershell
 $fgColor = 32 # green
 "`e[${fgColor}mGreen text`e[0m"
 ```
 
-The output from this command is the following text with a Green foreground
-color:
-
-```output
+```Output
 Green text
 ```
 
-## FORM FEED (`f)
+## Form feed (`f)
 
-The form feed character (`f) is a print instruction that ejects the current
-page and continues printing on the next page. This character affects printed
-documents only; it does not affect screen output.
+The form feed (`` `f ``) character is a print instruction that ejects the
+current page and continues printing on the next page. The form feed character
+only affects printed documents. It doesn't affect screen output.
 
-## NEW LINE (`n)
+## New line (`n)
 
-The new line character (`n) inserts a line break immediately after the
+The new line (`` `n ``) character inserts a line break immediately after the
 character.
 
-The following example shows how to use the new line character in a Write-Host
-command:
+This example shows how to use the new line character to create line breaks in a
+`Write-Host` command.
 
 ```powershell
-"There are two line breaks`n`nhere."
+"There are two line breaks to create a blank line`n`nbetween the words."
 ```
 
-The output from this command is as follows:
+```Output
+There are two line breaks to create a blank line
 
-```output
-There are two line breaks
-
-here.
+between the words.
 ```
 
-## CARRIAGE RETURN (`r)
+## Carriage return (`r)
 
-The carriage return character ``(`r)`` eliminates the entire line prior to the
-`r character, as though the prior text were on a different line.
+The carriage return (`` `r ``) character eliminates the entire line before the
+character's insertion point. The carriage returns functions as though the prior
+text were on a different line.
 
-For example:
+In this example, the text before the carriage return is removed from the
+output.
 
 ```powershell
 Write-Host "Let's not move`rDelete everything before this point."
 ```
 
-The output from this command is:
-
-```output
+```Output
 Delete everything before this point.
 ```
 
-## HORIZONTAL TAB (`t)
+## Horizontal tab (`t)
 
-The horizontal tab character (`t) advances to the next tab stop and continues
-writing at that point. By default, the PowerShell console has a tab
+The horizontal tab (`` `t ``) character advances to the next tab stop and
+continues writing at that point. By default, the PowerShell console has a tab
 stop at every eighth space.
 
-For example, the following command inserts two tabs between each column.
+This example inserts two tabs between each column.
 
 ```powershell
 "Column1`t`tColumn2`t`tColumn3"
 ```
 
-The output from this command is:
-
-```output
+```Output
 Column1         Column2         Column3
 ```
 
-## UNICODE CHARACTER (`u{x})
+## Unicode character (`u{x})
 
-The Unicode escape sequence allows you to specify any Unicode character by the
-hexadecimal representation of its code point. This includes Unicode characters
-above the Basic Multilingual Plane (> 0xFFFF) which includes emoji characters
-e.g. `` `u{1F44D}``. The Unicode escape sequence requires at least one hex
-digit and supports up to six hex digits. The maximum hex value for the
-sequence is 10FFFF.
+The Unicode escape sequence (`` `u{x} ``) allows you to specify any Unicode
+character by the hexadecimal representation of its code point. This includes
+Unicode characters above the Basic Multilingual Plane (> `0xFFFF`) which
+includes emoji characters such as the **thumbs up** (`` `u{1F44D} ``)
+character. The Unicode escape sequence requires at least one hexidecimal digit
+and supports up to six hexidecimal digits. The maximum hexidecimal value for
+the sequence is `10FFFF`.
 
-The following command outputs the character '&#x2195;':
+This example outputs the **up down arrow** (&#x2195;) symbol.
 
 ```powershell
 "`u{2195}"
 ```
 
-## VERTICAL TAB (`v)
+## Vertical tab (`v)
 
-The horizontal tab character (`t) advances to the next vertical tab stop and
-writes all subsequent output beginning at that point. This character affects
-printed documents only. It does not affect screen output.
+The horizontal tab (`` `v ``) character advances to the next vertical tab stop
+and writes all subsequent output beginning at that point. The vertical tab
+character only affects printed documents. It doesn't affect screen output.
 
-## STOP PARSING  (--%)
+## Stop parsing  (--%)
 
-The stop-parsing symbol (--%) prevents PowerShell from interpreting
-arguments in program calls as PowerShell commands and expressions.
+The stop-parsing (`--%`) symbol prevents PowerShell from interpreting arguments
+in program calls as PowerShell commands and expressions.
 
 Place the stop-parsing symbol after the program name and before program
 arguments that might cause errors.
 
-For example, the following Icacls command uses the stop-parsing symbol.
+In this example, the `Icacls` command uses the stop-parsing symbol.
 
 ```powershell
 icacls X:\VMS --% /grant Dom\HVAdmin:(CI)(OI)F
 ```
 
-PowerShell sends the following command to Icacls.
+PowerShell sends the following command to `Icacls`.
 
-```output
+```Output
 X:\VMS /grant Dom\HVAdmin:(CI)(OI)F
 ```
 
 For more information about the stop-parsing symbol, see [about_Parsing](about_Parsing.md).
 
-## SEE ALSO
+## See also
 
-- [about_Quoting_Rules](about_Quoting_Rules.md)
+[about_Quoting_Rules](about_Quoting_Rules.md)
