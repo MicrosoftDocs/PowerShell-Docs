@@ -7,7 +7,6 @@ online version: https://go.microsoft.com/fwlink/?linkid=2096264
 external help file:  System.Management.Automation.dll-Help.xml
 title:  Enable-PSRemoting
 ---
-
 # Enable-PSRemoting
 
 ## SYNOPSIS
@@ -87,7 +86,7 @@ Windows operating system.
 
 ```powershell
 Enable-PSRemoting -SkipNetworkProfileCheck -Force
-Set-NetFirewallRule -Name "WINRM-HTTP-In-TCP" -RemoteAddress Any
+Set-NetFirewallRule -Name 'WINRM-HTTP-In-TCP-PUBLIC' -RemoteAddress Any
 ```
 
 Before using these commands, analyze the security setting and verify that the computer network will
@@ -104,6 +103,10 @@ system, which allow remote access from public networks in the same local subnet 
 The second command eliminates the subnet restriction. The command uses the `Set-NetFirewallRule`
 cmdlet in the **NetSecurity** module to add a firewall rule that allows remote access from public
 networks from any remote location. This includes locations in different subnets.
+
+> [!NOTE]
+> The name of the firewall rule varies over versions of Windows. Use the `Get-NetFirewallRule`
+> cmdlet to list the names of the rules on your system.
 
 ## PARAMETERS
 
@@ -188,8 +191,7 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see
-[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+-WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -255,3 +257,9 @@ configurations that were reserved for local use.
 [Set-PSSessionConfiguration](Set-PSSessionConfiguration.md)
 
 [Disable-PSRemoting](Disable-PSRemoting.md)
+
+[WSMan Provider](../Microsoft.WsMan.Management/About/about_WSMan_Provider.md)
+
+[about_Remote](About/about_Remote.md)
+
+[about_Session_Configurations](About/about_Session_Configurations.md)
