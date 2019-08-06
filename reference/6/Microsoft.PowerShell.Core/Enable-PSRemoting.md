@@ -105,8 +105,8 @@ cmdlet in the **NetSecurity** module to add a firewall rule that allows remote a
 networks from any remote location. This includes locations in different subnets.
 
 > [!NOTE]
-> The name of the firewall rule varies over versions of Windows. Use the `Get-NetFirewallRule`
-> cmdlet to list the names of the rules on your system.
+> The name of the firewall rule can be different depending on the version of Windows. Use the
+> `Get-NetFirewallRule` cmdlet to list the names of the rules on your system.
 
 ## PARAMETERS
 
