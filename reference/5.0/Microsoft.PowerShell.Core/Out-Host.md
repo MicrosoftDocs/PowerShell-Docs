@@ -1,5 +1,5 @@
 ---
-ms.date:  03/25/2019
+ms.date:  08/07/2019
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -7,12 +7,15 @@ online version: https://go.microsoft.com/fwlink/?linkid=821503
 external help file:  System.Management.Automation.dll-Help.xml
 title:  Out-Host
 ---
+
 # Out-Host
 
 ## SYNOPSIS
 Sends output to the command line.
 
 ## SYNTAX
+
+### All
 
 ```
 Out-Host [-Paging] [-InputObject <PSObject>] [<CommonParameters>]
@@ -21,33 +24,49 @@ Out-Host [-Paging] [-InputObject <PSObject>] [<CommonParameters>]
 ## DESCRIPTION
 
 The `Out-Host` cmdlet sends output to the PowerShell host for display. The host displays the output
-at the command line. Because `Out-Host` is the default, you do not have to specify it unless you
-want to use its parameters to change the display.
+at the command line. Because `Out-Host` is the default, you don't have to specify it unless you want
+to use its parameters.
+
+`Out-Host` is automatically appended to every command that is executed. It passes the output of the
+pipeline to the host executing the command. `Out-Host` ignores ANSI escape sequences. The escape
+sequences are handled by the host. `Out-Host` passes ANSI escape sequences to the host without
+trying to interpret or change them.
 
 ## EXAMPLES
 
-### Example 1: Display system processes one page at a time
+### Example 1: Display output one page at a time
+
+This example displays the system processes one page at a time.
 
 ```powershell
 Get-Process | Out-Host -Paging
 ```
 
-This command displays the processes on the system one page at a time. It uses the `Get-Process`
-cmdlet to get the processes on the system. The pipeline operator sends the results to `Out-Host`
-cmdlet, which displays them at the console. The **Paging** parameter displays one page of data at a
-time.
-
-### Example 2: Display session history
-
-```powershell
-$a = Get-History
-Out-Host -InputObject $a
+```Output
+NPM(K)    PM(M)      WS(M)     CPU(s)      Id  SI ProcessName
+ ------    -----      -----     ------      --  -- -----------
+     30    24.12      36.95      15.86   21004  14 ApplicationFrameHost
+     55    24.33      60.48      10.80   12904  14 BCompare
+<SPACE> next page; <CR> next line; Q quit
+      9     4.71       8.94       0.00   16864  14 explorer
+<SPACE> next page; <CR> next line; Q quit
 ```
 
-The first command uses the `Get-History` cmdlet to get the session history, and then it stores the
-history in the `$a` variable.
+`Get-Process` gets the system processes and sends the objects down the pipeline. `Out-Host` uses the
+**Paging** parameter to display one page of data at a time.
 
-The second command uses `Out-Host` to display the content of the `$a` variable, and it uses the **InputObject** parameter to specify the variable to `Out-Host`.
+### Example 2: Use a variable as input
+
+This example uses objects stored in a variable as the input for `Out-Host`.
+
+```powershell
+$io = Get-History
+Out-Host -InputObject $io
+```
+
+`Get-History` gets the PowerShell session's history, and stores the objects in the `$io` variable.
+`Out-Host` uses the **InputObject** parameter to specify the `$io` variable and displays the
+history.
 
 ## PARAMETERS
 
@@ -70,13 +89,17 @@ Accept wildcard characters: False
 
 ### -Paging
 
-Indicates that this cmdlet displays one page of output at a time, and waits for user input before it
-displays the remaining pages, much like the traditional **more** command. By default, all of the
-output is displayed on a single page. The page size is determined by the characteristics of the
-host.
+Indicates that `Out-Host` displays one page of output at a time, and waits for user input before the
+remaining pages are displayed. By default, all the output is displayed on a single page. The page
+size is determined by the characteristics of the host.
+
+Press the <kbd>Space</kbd> bar to display the next page of output or the <kbd>Enter</kbd> key to
+view the next line of output. Press <kbd>Q</kbd> to quit.
+
+**Paging** is similar to the **more** command.
 
 > [!NOTE]
-> The **Paging** parameter is not supported by the PowerShell ISE host.
+> The **Paging** parameter isn't supported by the PowerShell ISE host.
 
 ```yaml
 Type: SwitchParameter
@@ -94,41 +117,40 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+-WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### System.Management.Automation.PSObject
 
-You can pipe any object to this cmdlet.
+You can send objects down the pipeline to `Out-Host`.
 
 ## OUTPUTS
 
 ### None
 
-This cmdlet does not generate any output. However, the host might display the objects that
-`Out-Host` sends to it.
+`Out-Host` doesn't generate any output. It sends objects to the host for display.
 
 ## NOTES
 
-The **Paging** parameter is not supported by all PowerShell hosts. For example, when you try to
-use the **Paging** parameter in the PowerShell ISE, you see the following error: `out-lineoutput : The method or operation is not implemented.`
+The **Paging** parameter isn't supported by all PowerShell hosts. For example, if you use the
+**Paging** parameter in the PowerShell ISE, the following error is displayed:
+`out-lineoutput : The method or operation is not implemented.`
 
-The cmdlets that contain the **Out** verb (the `Out-*` cmdlets) do not format objects. They just
-render objects and send them to the specified display destination. If you send an unformatted object
-to an `Out-*` cmdlet, the cmdlet sends it to a formatting cmdlet before rendering it.
+The cmdlets that contain the **Out** verb, `Out-`, don't format objects. They render objects and
+send them to the specified display destination. If you send an unformatted object to an `Out-`
+cmdlet, the cmdlet sends it to a formatting cmdlet before rendering it.
 
-The `Out-*` cmdlets do not have parameters for names or file paths. To send data to an `Out-*`
-cmdlet, use a pipeline operator (|) to send the output of a PowerShell command to the cmdlet. You
-can also store data in a variable and use the **InputObject** parameter to pass the data to the
-cmdlet.
+The `Out-` cmdlets don't have parameters for names or file paths. To send data to an `Out-` cmdlet,
+use the pipeline to send a PowerShell command's output to the cmdlet. Or, you can store data in a
+variable and use the **InputObject** parameter to pass the data to the cmdlet.
 
-`Out-Host` sends data, but it does not emit any output objects. If you pipe the output of `Out-Host`
-to the `Get-Member` cmdlet, `Get-Member` reports that no objects have been specified.
+`Out-Host` sends data, but it doesn't produce any output objects. If you pipeline the output of
+`Out-Host` to the `Get-Member` cmdlet, `Get-Member` reports that no objects have been specified.
 
 ## RELATED LINKS
 
-[Clear-Host](Functions/Clear-Host.md)
+[Clear-Host](./Functions/Clear-Host.md)
 
 [Out-Default](Out-Default.md)
 
