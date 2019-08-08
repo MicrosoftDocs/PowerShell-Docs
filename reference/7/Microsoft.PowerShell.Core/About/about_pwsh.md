@@ -207,6 +207,10 @@ On Linux and macOS, starts PowerShell as a login shell,
 using /bin/sh to execute login profiles such as /etc/profile and ~/.profile.
 On Windows, this switch does nothing.
 
+> [!IMPORTANT]
+> This parameter must come first to start PowerShell as a login shell.
+> Passing this parameter in another position will be ignored.
+
 ### -MTA
 
 Start PowerShell using a multi-threaded apartment.
