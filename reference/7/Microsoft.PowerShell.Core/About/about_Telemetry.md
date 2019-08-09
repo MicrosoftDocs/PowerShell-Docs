@@ -1,6 +1,11 @@
-# TOPIC
-
-    about_Telemetry
+---
+ms.date:  08/09/2019
+schema:  2.0.0
+locale:  en-us
+keywords:  powershell
+title:  about_Telemetry
+---
+# About Telemetry
 
 ## SHORT DESCRIPTION
 
