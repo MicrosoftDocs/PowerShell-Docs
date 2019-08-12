@@ -58,7 +58,8 @@ Mode                LastWriteTime         Length Name
 -a----        6/28/2018   2:28 PM            345 README.md
 ```
 
->[!NOTE] This example is only supported on Windows
+> [!NOTE]
+> This example is only supported on Windows.
 
 ## PARAMETERS
 
