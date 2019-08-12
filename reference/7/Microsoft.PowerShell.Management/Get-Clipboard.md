@@ -73,7 +73,8 @@ on Windows are:
 - Image
 - Audio
 
->[!NOTE] On Linux and macOS, only the 'Text' format is supported.
+> [!NOTE]
+> On Linux and macOS, only the 'Text' format is supported.
 
 ```yaml
 Type: ClipboardFormat
@@ -115,7 +116,8 @@ on Windows are:
 - Html
 - CommaSeparatedValue
 
->[!NOTE] On Linux and macOS, only the 'UnicodeText' format type is supported.
+> [!NOTE]
+> On Linux and macOS, only the 'UnicodeText' format type is supported.
 
 ```yaml
 Type: TextDataFormat
