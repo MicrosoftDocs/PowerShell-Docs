@@ -463,8 +463,8 @@ Accept wildcard characters: False
 
 ### -RunAs32
 
-In 32-bit PowerShell, **RunAs32** forces the job to run in a 32-bit process, even on a 64-bit
-operating system.
+Indicates that `Start-Job` runs the job in a 32-bit process. **RunAs32** forces the job to run in a
+32-bit process, even on a 64-bit operating system.
 
 On 64-bit versions of Windows 7 and Windows Server 2008 R2, when the `Start-Job` command includes
 the **RunAs32** parameter, you can't use the **Credential** parameter to specify the credentials of
