@@ -84,7 +84,8 @@ Accept wildcard characters: False
 
 Indicates that the cmdlet renders the content as HTML to the clipboard.
 
->[!NOTE] This switch is only supported on Windows.
+> [!NOTE]
+> This switch is only supported on Windows.
 
 ```yaml
 Type: SwitchParameter
@@ -105,7 +106,8 @@ Specifies the path to the item that is copied to the clipboard. Unlike **Path**,
 path includes escape characters, enclose it in single quotation marks. Single quotation marks tell
 Windows PowerShell not to interpret any characters as escape sequences.
 
->[!NOTE] This switch is only supported on Windows.
+> [!NOTE]
+> This switch is only supported on Windows.
 
 ```yaml
 Type: String[]
@@ -123,7 +125,8 @@ Accept wildcard characters: False
 
 Specifies the path to the item that is copied to the clipboard. Wildcard characters are permitted.
 
->[!NOTE] This switch is only supported on Windows.
+> [!NOTE]
+> This switch is only supported on Windows.
 
 ```yaml
 Type: String[]
