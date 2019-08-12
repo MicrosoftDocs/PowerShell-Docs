@@ -59,7 +59,8 @@ This command copies the content of the specified folder to the clipboard.
 Set-Clipboard -Path "C:\Staging\"
 ```
 
->[!NOTE] Types other than text are only supported on Windows.
+> [!NOTE]
+> Types other than text are only supported on Windows.
 
 ## PARAMETERS
 
