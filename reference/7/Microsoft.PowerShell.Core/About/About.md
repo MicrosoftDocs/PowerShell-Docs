@@ -323,6 +323,9 @@ Explains how to use the Split operator to split one or more strings into substri
 ### [about_Switch](about_Switch.md)
 Explains how to use a switch to handle multiple If statements.
 
+### [about_Telemetry](about_Telemetry.md)
+Describes the telemetry collected in PowerShell.
+
 ### [about_Throw](about_Throw.md)
 Describes the Throw keyword, which generates a terminating error.
 
