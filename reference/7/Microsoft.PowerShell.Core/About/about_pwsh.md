@@ -27,7 +27,7 @@ pwsh[.exe]
    [-ExecutionPolicy <ExecutionPolicy>]
    [-InputFormat {Text | XML}]
    [-Interactive]
-   [-LoadProfile]
+   [-Login]
    [-MTA]
    [-NoExit]
    [-NoLogo]
@@ -201,10 +201,15 @@ strings) or "XML" (serialized CLIXML format).
 Present an interactive prompt to the user. Inverse for NonInteractive
 parameter.
 
-### -LoadProfile | -l
+### -Login | -l
 
-Load the PowerShell profiles. This is the default behavior even if this is not
-specified.
+On Linux and macOS, starts PowerShell as a login shell,
+using /bin/sh to execute login profiles such as /etc/profile and ~/.profile.
+On Windows, this switch does nothing.
+
+> [!IMPORTANT]
+> This parameter must come first to start PowerShell as a login shell.
+> Passing this parameter in another position will be ignored.
 
 ### -MTA
 
