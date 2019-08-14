@@ -1,6 +1,6 @@
 ---
 ms.date:  06/12/2017
-contributor:  JKeithB
+contributor:  JKeithB, SydneyhSmith
 keywords:  gallery,powershell,cmdlet,psgallery
 description:  Guidelines for Publishers
 title:  PowerShell Gallery Publishing Guidelines and Best Practices
@@ -83,6 +83,22 @@ Examples for modules published to the PowerShell Gallery should be in an Example
 
 A good pattern for examples can be found in the [PSDscResource module](https://www.powershellgallery.com/packages/PSDscResources) under the Examples\RegistryResource folder.
 There are four sample use cases with a brief description at the top of each file that documents what is being demonstrated.
+
+## Manage Dependencies
+
+It is important to specify modules that your module is dependent on in the Module Manifest.
+This allows the end user to not have to worry about installing the proper versions of modules that yours take a dependency on.
+To specify dependent modules you should use the required module field in the module manifest.
+This will load any listed modules into the global environment prior to importing your module unless they have already been loaded. (For example, some modules may already be loaded by a different module.).
+It is also possible to specify a specific version to load using the RequiredVersion field rather than the ModuleVersion field. When using ModuleVersion it will load the newest version available with a minimum of the version specified.
+When not using the RequiredVersion field to specify a specific version it is important to monitor version updates to the required module.
+It is especially important to be aware of any breaking changes that could effect the user experience with your module.
+
+```powershell
+Example: RequiredModules = @(@{ModuleName="myDependentModule"; ModuleVersion="2.0"; Guid="cfc45206-1e49-459d-a8ad-5b571ef94857"})
+
+Example: RequiredModules = @(@{ModuleName="myDependentModule"; RequiredVersion="1.5"; Guid="cfc45206-1e49-459d-a8ad-5b571ef94857"})
+```
 
 ## Respond to feedback
 
