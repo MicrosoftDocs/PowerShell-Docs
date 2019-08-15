@@ -482,6 +482,9 @@ If the existing module does not match the values specified by the **MinimumVersi
 version of the existing installed module is lower than the **MinimumVersion** value or not equal to
 the **RequiredVersion** value.
 
+A module installation will also install any dependent modules specified as required by the module publisher.
+The publisher will specify the required modules and their versions in the module manifest.
+
 ## RELATED LINKS
 
 [Find-Module](Find-Module.md)
