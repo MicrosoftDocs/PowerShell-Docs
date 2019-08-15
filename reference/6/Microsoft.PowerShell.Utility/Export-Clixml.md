@@ -32,9 +32,10 @@ Export-Clixml -LiteralPath <String> -InputObject <PSObject> [-Depth <Int32>] [-F
 
 ## DESCRIPTION
 
-The `Export-Clixml` cmdlet creates an XML-based representation of an object or objects and stores it
-in a file. You can then use the `Import-Clixml` cmdlet to recreate the saved object based on the
-contents of that file.
+The `Export-Clixml` cmdlet creates a Common Language Infrastructure (CLI) XML-based representation
+of an object or objects and stores it in a file. You can then use the `Import-Clixml` cmdlet to
+recreate the saved object based on the contents of that file.
+For more information about CLI, see [Language independence](/dotnet/standard/language-independence).
 
 This cmdlet is similar to `ConvertTo-Xml`, except that `Export-Clixml` stores the resulting XML in a
 file. `ConvertTo-XML` returns the XML, so you can continue to process it in PowerShell.
@@ -75,34 +76,31 @@ the object in the `$fileacl` variable.
 
 ### Example 3: Encrypt an exported credential object
 
-This example shows how to use a credential stored in a variable and save it to disk. The credential
-can then be imported into scripts.
+In this example, given a credential that you've stored in the `$Credential` variable by running the
+`Get-Credential` cmdlet, you can run the `Export-Clixml` cmdlet to save the credential to disk.
 
 > [!IMPORTANT]
-> The encrypted credentials only work on Windows. On non-Windows operating systems such as macOS and
-> Linux, encrypted credentials are exported in plain text.
+> `Export-Clixml` only exports encrypted credentials on Windows. On non-Windows operating systems
+> such as macOS and Linux, credentials are exported in plain text.
 
 ```powershell
-$credxmlpath = Join-Path (Split-Path $profile) TestScript.ps1.credential
-$credential | Export-Clixml $credxmlpath
-$credxmlpath = Join-Path (Split-Path $profile) TestScript.ps1.credential
-$credential = Import-Clixml $credxmlpath
+$Credxmlpath = Join-Path (Split-Path $Profile) TestScript.ps1.credential
+$Credential | Export-Clixml $Credxmlpath
+$Credxmlpath = Join-Path (Split-Path $Profile) TestScript.ps1.credential
+$Credential = Import-Clixml $Credxmlpath
 ```
 
-The `Export-Clixml` cmdlet encrypts credential objects by using the
-[Windows Data Protection API](https://msdn.microsoft.com/library/windows/apps/xaml/hh464970.aspx).
+The `Export-Clixml` cmdlet encrypts credential objects by using the Windows [Data Protection API](/previous-versions/windows/apps/hh464970(v=win.10)).
 The encryption ensures that only your user account on only that computer can decrypt the contents of
-the credential object. The exported `CliXml` file can't be used on a different computer or by a
+the credential object. The exported `CLIXML` file can't be used on a different computer or by a
 different user.
 
-In this example, given a credential that you've stored in the `$credential` variable by running the
-`Get-Credential` cmdlet, you can run the `Export-Clixml` cmdlet to save the credential to disk. In
-the example, the file in which the credential is stored is represented by
+In the example, the file in which the credential is stored is represented by
 `TestScript.ps1.credential`. Replace **TestScript** with the name of the script with which you're
 loading the credential.
 
-In the second command, pipe the credential object to `Export-Clixml`, and save it to the path,
-`$credxmlpath`, that you specified in the first command.
+You send the credential object down the pipeline to `Export-Clixml`, and save it to the path,
+`$Credxmlpath`, that you specified in the first command.
 
 To import the credential automatically into your script, run the final two commands. Run
 `Import-Clixml` to import the secured credential object into your script. This import eliminates the
@@ -294,7 +292,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### System.Management.Automation.PSObject
 
-You can pipe any object to `Export-Clixml`.
+You can pipeline any object to `Export-Clixml`.
 
 ## OUTPUTS
 
@@ -314,10 +312,10 @@ You can pipe any object to `Export-Clixml`.
 
 [Import-Clixml](Import-Clixml.md)
 
+[Join-Path](../Microsoft.PowerShell.Management/Join-Path.md)
+
 [Securely Store Credentials on Disk](https://powershellcookbook.com/recipe/PukO/securely-store-credentials-on-disk)
 
 [Use PowerShell to Pass Credentials to Legacy Systems](https://devblogs.microsoft.com/scripting/use-powershell-to-pass-credentials-to-legacy-systems/)
-
-[Windows Data Protection API](https://msdn.microsoft.com/library/windows/apps/xaml/hh464970.aspx)
 
 [Windows.Security.Cryptography.DataProtection](/uwp/api/windows.security.cryptography.dataprotection)
