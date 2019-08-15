@@ -1,5 +1,5 @@
 ---
-ms.date: 2/27/2019
+ms.date: 08/12/2019
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -338,7 +338,7 @@ You can use it in a command to open the profile in **notepad.exe**:
 notepad.exe $PROFILE
 ```
 
-### $PSBoundParameterValues
+### $PSBoundParameters
 
 Contains a dictionary of the parameters that are passed to a script or
 function and their current values. This variable has a value only in a
@@ -346,18 +346,35 @@ scope where parameters are declared, such as a script or function. You can
 use it to display or change the current values of parameters or to pass
 parameter values to another script or function.
 
-For example:
+In this example, the **Test2** function passes the `$PSBoundParameters` to the
+**Test1** function. The `$PSBoundParameters` are displayed in the format of
+**Key** and **Value**.
 
 ```powershell
-function Test {
+function Test1 {
    param($a, $b)
 
    # Display the parameters in dictionary format.
    $PSBoundParameters
-
-   # Call the Test1 function with $a and $b.
-   test1 @PSBoundParameters
 }
+
+function Test2 {
+   param($a, $b)
+
+   # Run the Test1 function with $a and $b.
+   Test1 @PSBoundParameters
+}
+```
+
+```powershell
+Test2 -a Power -b Shell
+```
+
+```Output
+Key   Value
+---   -----
+a     Power
+b     Shell
 ```
 
 ### $PSCmdlet
@@ -864,6 +881,10 @@ Default (Current): End
 
 ## See also
 
-- [about_Hash_Tables](about_Hash_Tables.md)
-- [about_Preference_Variables](about_Preference_Variables.md)
-- [about_Variables](about_Variables.md)
+[about_Hash_Tables](about_Hash_Tables.md)
+
+[about_Preference_Variables](about_Preference_Variables.md)
+
+[about_Splatting](about_Splatting.md)
+
+[about_Variables](about_Variables.md)
