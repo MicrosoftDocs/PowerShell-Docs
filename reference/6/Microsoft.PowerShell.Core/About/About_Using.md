@@ -1,5 +1,5 @@
 ---
-ms.date:  12/01/2017
+ms.date:  08/15/2019
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -12,34 +12,40 @@ Allows to indicate which namespaces are used in the session.
 
 ## LONG DESCRIPTION
 
-The `using` statement allows to indicate which namespaces are used in the
-session. Making easier to mention classes and members, as it requires less
-typing to mention them; also, classes from modules can be referenced too.
+The `using` statement allows you to specify which namespaces are used in the
+session. Adding namespaces simplifies usage of .NET classes and member and
+allows you to import classes from modules.
 
 The `using` statement needs to be the first statement in the script.
 
-Syntax #1, to reference .Net Framework namespaces:
+### Syntax
+
+To reference .NET Framework namespaces:
 
 ```
-using namespace <.Net-framework-namespace>
+using namespace <.NET-framework-namespace>
 ```
 
-Syntax #2, to reference PowerShell modules:
+To reference PowerShell modules:
 
 ```
 using module <module-name>
 ```
 
-**Note**: The `using` statement, for modules, is intended to surface the
-classes in the module. If the module isn't loaded, the `using` fails.
+> [!NOTE]
+> `Import-Module` and the `#requires` statement only import the module
+> functions, aliases, and variables, as defined by the module. Classes are not
+> imported. The `using module` statement imports the classes defined in the
+> module. If the module isn't loaded in the current session, the `using`
+> statement fails.
 
-## Examples
+### Examples
 
 The following script gets the cryptographic hash for the "Hello World" string.
 
 Note how the `using namespace System.Text` and `using namespace System.IO`
-simplify the references to `[UnicodeEncoding]` in *System.Text*; and, to
-`[Stream]` and to `[MemoryStream]` in *System.IO*.
+simplify the references to `[UnicodeEncoding]` in `System.Text` and `[Stream]`
+and to `[MemoryStream]` in `System.IO`.
 
 ```powershell
 using namespace System.Text
@@ -62,8 +68,8 @@ automatically.
 
 The following classes are defined in the module:
 
-- *Deck*
-- *Card*
+- **Deck**
+- **Card**
 
 ```powershell
 using module CardGames
