@@ -347,7 +347,7 @@ parameter to return the object. The command saves the resulting custom object in
 
 The third command uses a pipeline operator to send the $a variable to the `Get-Member` cmdlet, which
 gets the properties and methods of the **PSCustomObject** in `$a`. The output shows a
-**Show-Calendar** script method.
+**Show-Calendar()** script method.
 
 The last command uses the **Show-Calendar** script method. The method name must be enclosed in
 quotation marks, because it includes a hyphen.
@@ -535,6 +535,8 @@ the remote computer and returns them to the local session.
 ```powershell
 $cs = New-CimSession -ComputerName RSDGF03
 Import-Module -CimSession $cs -Name Storage
+# Importing a CIM module, converts the CDXML files for each command into PowerShell scripts.
+# These appear as functions in the local session.
 Get-Command Get-Disk
 ```
 
@@ -545,6 +547,7 @@ Function        Get-Disk              Storage
 ```
 
 ```powershell
+# Use implicit remoting to query disks on the remote computer from which the module was imported.
 Get-Disk
 ```
 
@@ -840,6 +843,23 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -MaximumVersion
+
+Specifies a maximum version. This cmdlet imports only a version of the module that is less than or
+equal to the specified value. If no version qualifies, `Import-Module` generates an error.
+
+```yaml
+Type: String
+Parameter Sets: Name, PSSession, CimSession
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -MinimumVersion
 
 Specifies a minimum version. This cmdlet imports only a version of the module that is greater than
@@ -934,37 +954,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -PSSession
-
-Specifies a PowerShell user-managed session (**PSSession**) from which this cmdlet import modules
-into the current session. Enter a variable that contains a **PSSession** or a command that gets a
-**PSSession**, such as a `Get-PSSession` command.
-
-When you import a module from a different session into the current session, you can use the cmdlets
-from the module in the current session, just as you would use cmdlets from a local module. Commands
-that use the remote cmdlets actually run in the remote session, but the remoting details are managed
-in the background by PowerShell.
-
-This parameter uses the Implicit Remoting feature of PowerShell. It is equivalent to using the
-`Import-PSSession` cmdlet to import particular modules from a session.
-
-`Import-Module` cannot import PowerShell Core modules from another session. The PowerShell Core
-modules have names that begin with Microsoft.PowerShell.
-
-This parameter was introduced in Windows PowerShell 3.0.
-
-```yaml
-Type: PSSession
-Parameter Sets: PSSession, FullyQualifiedNameAndPSSession
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -PassThru
 
 Returns an object representing the item with which you are working. By default, this cmdlet does not
@@ -1003,6 +992,37 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -PSSession
+
+Specifies a PowerShell user-managed session (**PSSession**) from which this cmdlet import modules
+into the current session. Enter a variable that contains a **PSSession** or a command that gets a
+**PSSession**, such as a `Get-PSSession` command.
+
+When you import a module from a different session into the current session, you can use the cmdlets
+from the module in the current session, just as you would use cmdlets from a local module. Commands
+that use the remote cmdlets actually run in the remote session, but the remoting details are managed
+in the background by PowerShell.
+
+This parameter uses the Implicit Remoting feature of PowerShell. It is equivalent to using the
+`Import-PSSession` cmdlet to import particular modules from a session.
+
+`Import-Module` cannot import PowerShell Core modules from another session. The PowerShell Core
+modules have names that begin with Microsoft.PowerShell.
+
+This parameter was introduced in Windows PowerShell 3.0.
+
+```yaml
+Type: PSSession
+Parameter Sets: PSSession, FullyQualifiedNameAndPSSession
+Aliases:
+
+Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -1086,23 +1106,6 @@ This parameter lets you select from among the exported variables.
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -MaximumVersion
-
-Specifies a maximum version. This cmdlet imports only a version of the module that is less than or
-equal to the specified value. If no version qualifies, `Import-Module` generates an error.
-
-```yaml
-Type: String
-Parameter Sets: Name, PSSession, CimSession
 Aliases:
 
 Required: False
