@@ -229,7 +229,7 @@ Devices   : {$null, $null, Microsoft|Surface Pro 4|5072641000, $null...}
 
 ## Output in class methods
 
-Methods should have a return type defined. If a method does not return output,
+Methods should have a return type defined. If a method doesn't return output,
 then the output type should be `[void]`.
 
 In class methods, no objects get sent to the pipeline except those mentioned in
@@ -340,7 +340,7 @@ Microsoft Surface Pro 4 5072641000
 In this example, the **Device** class is defined with properties, a default
 constructor, and a constructor to initialize the instance.
 
-The default constructor sets the **brand** to *Undefined*, and leaves **model**
+The default constructor sets the **brand** to **Undefined**, and leaves **model**
 and **vendor-sku** with null values.
 
 ```powershell
@@ -389,7 +389,7 @@ class definition.
 ### Example using hidden attributes
 
 When a **Rack** object is created, the number of slots for devices is a fixed
-value that should not be changed at any time. This value is known at creation
+value that shouldn't be changed at any time. This value is known at creation
 time.
 
 Using the hidden attribute allows the developer to keep the number of slots
@@ -711,7 +711,7 @@ Model               : Fbk5040
 
 ## Calling base class constructors
 
-To invoke a base class constructor from a subclass, add the "base" keyword.
+To invoke a base class constructor from a subclass, add the `base` keyword.
 
 ```powershell
 class Person {
@@ -792,7 +792,7 @@ class ChildClass1 : BaseClass
 ## Interfaces
 
 The syntax for declaring interfaces is similar to C#. You can declare
-interfaces after base types or immediately after a colon (:) when there is no
+interfaces after base types or immediately after a colon (`:`) when there is no
 base type specified. Separate all type names with commas.
 
 ```powershell

@@ -88,9 +88,9 @@ Import-Module [-Global] [-Prefix <String>] [-Function <String[]>] [-Cmdlet <Stri
 The `Import-Module` cmdlet adds one or more modules to the current session. The modules that you
 import must be installed on the local computer or a remote computer.
 
-Starting in Windows PowerShell 3.0, installed modules are automatically imported to the session when
-you use any commands or providers in the module. However, you can still use the `Import-Module`
-command to import a module and you can enable and disable automatic module importing by using the
+Starting in PowerShell 3.0, installed modules are automatically imported to the session when you use
+any commands or providers in the module. However, you can still use the `Import-Module` command to
+import a module and you can enable and disable automatic module importing by using the
 `$PSModuleAutoloadingPreference` preference variable. For more information about modules, see
 [about_Modules](About/about_Modules.md). For more information about the
 `$PSModuleAutoloadingPreference` variable, see [about_Preference_Variables](About/about_Preference_Variables.md).
@@ -125,9 +125,9 @@ parameter of `Get-Module` to get the PowerShell modules in the **PSSession**. Wh
 modules, and then use the imported commands in the current session, the commands run implicitly in
 the **PSSession** on the remote computer. You can use this strategy to manage the remote computer.
 
-You can use a similar strategy to manage computers that do not have PowerShell remoting enabled,
+You can use a similar strategy to manage computers that don't have PowerShell remoting enabled,
 including computers that are not running the Windows operating system, and Windows computers that
-have PowerShell, but do not have PowerShell remoting enabled.
+have PowerShell, but don't have PowerShell remoting enabled.
 
 Start by creating a CIM session on the remote computer, which is a connection to Windows Management
 Instrumentation (WMI) on the remote computer. Then use the **CIMSession** parameter of
@@ -160,7 +160,7 @@ Get-Module -ListAvailable | Import-Module
 
 ### Example 3: Import the members of several modules into the current session
 
-This example imports the members of the **BitsTransfer** and **Dism** modules into the
+This example imports the members of the **PSDiagnostics** and **Dism** modules into the
 current session.
 
 ```powershell
@@ -175,8 +175,8 @@ modules that are not yet imported into the session.
 The **ModuleInfo** parameter of `Import-Module` is used to import the modules into the current
 session.
 
-These commands are equivalent to using a pipeline operator (|) to send the output of a `Get-Module`
-command to `Import-Module`.
+These commands are equivalent to using a pipeline operator (`|`) to send the output of a
+`Get-Module` command to `Import-Module`.
 
 ### Example 4: Import all modules specified by a path
 
@@ -282,7 +282,7 @@ Function        Start-xTrace                           6.1.0.0    PSDiagnostics
 Function        Stop-xTrace                            6.1.0.0    PSDiagnostics
 ```
 
-It uses the **Prefix** parameter of `Import-Module` adds the "x" prefix to all members that are
+It uses the **Prefix** parameter of `Import-Module` adds the **x** prefix to all members that are
 imported from the module and the **PassThru** parameter to return a module object that represents
 the imported module.
 
@@ -338,16 +338,16 @@ $a."Show-Calendar"()
 ```
 
 The first command uses the `Get-Module` cmdlet to get the available modules. The command uses a
-pipeline operator to pass the module objects to the Format-Table cmdlet, which lists the **Name**
+pipeline operator to pass the module objects to the `Format-Table` cmdlet, which lists the **Name**
 and **ModuleType** of each module in a table.
 
 The second command uses the `Import-Module` cmdlet to import the **Show-Calendar** script module.
 The command uses the **AsCustomObject** parameter to request a custom object and the **PassThru**
 parameter to return the object. The command saves the resulting custom object in the `$a` variable.
 
-The third command uses a pipeline operator to send the $a variable to the `Get-Member` cmdlet, which
-gets the properties and methods of the **PSCustomObject** in `$a`. The output shows a
-**Show-Calendar** script method.
+The third command uses a pipeline operator to send the `$a` variable to the `Get-Member` cmdlet,
+which gets the properties and methods of the **PSCustomObject** in `$a`. The output shows a
+**Show-Calendar()** script method.
 
 The last command uses the **Show-Calendar** script method. The method name must be enclosed in
 quotation marks, because it includes a hyphen.
@@ -501,9 +501,9 @@ variable.
 The third command uses the **PSSession** parameter of the `Import-Module` cmdlet to import the
 **NetSecurity** module from the session in the `$s` variable into the current session.
 
-The fourth command uses the `Get-Command` cmdlet to get commands that begin with "Get" and include
-"Firewall" from the NetSecurity module.The output gets the commands and confirms that the module and
-its cmdlets were imported into the current session.
+The fourth command uses the `Get-Command` cmdlet to get commands that begin with **Get** and include
+**Firewall** from the **NetSecurity** module.The output gets the commands and confirms that the
+module and its cmdlets were imported into the current session.
 
 The fifth command uses the `Get-NetFirewallRule` cmdlet to get Windows Remote Management firewall
 rules on the Server01 computer. This command is equivalent to using the `Invoke-Command` cmdlet to
@@ -615,7 +615,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -698,7 +698,7 @@ current session. When you use the commands from the imported module in the curre
 commands actually run on the remote computer.
 
 You can use this parameter to import modules from computers and devices that are not running the
-Windows operating system, and Windows computers that have PowerShell, but do not have PowerShell
+Windows operating system, and Windows computers that have PowerShell, but don't have PowerShell
 remoting enabled.
 
 This parameter was introduced in Windows PowerShell 3.0.
@@ -758,7 +758,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -774,7 +774,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -838,7 +838,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -949,7 +949,7 @@ Aliases: NoOverwrite
 
 Required: False
 Position: Named
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -966,7 +966,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -1043,7 +1043,7 @@ a script.
 This parameter was introduced in Windows PowerShell 3.0.
 
 Scripts that use **RequiredVersion** to import modules that are included with existing releases of
-the Windows operating system do not automatically run in future releases of the Windows operating
+the Windows operating system don't automatically run in future releases of the Windows operating
 system. This is because PowerShell module version numbers in future releases of the Windows
 operating system are higher than module version numbers in existing releases of the Windows
 operating system.
@@ -1074,8 +1074,8 @@ scriptblock, all the commands are imported into the global session state. You ca
 parameter with the value of **Local** to import module content into the script or scriptblock scope.
 
 When invoked from another module, `Import-Module` cmdlet imports the commands in a module, including
-commands from nested modules, into the caller's session state. Specifying **-Scope Global** or
-**-Global** indicates that this cmdlet imports modules into the global session state so they are
+commands from nested modules, into the caller's session state. Specifying `-Scope Global` or
+`-Global` indicates that this cmdlet imports modules into the global session state so they are
 available to all commands in the session.
 
 The **Global** parameter is equivalent to the **Scope** parameter with a value of Global.
@@ -1140,7 +1140,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -1148,7 +1148,7 @@ Accept wildcard characters: False
 ### CommonParameters
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+-WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -1183,7 +1183,7 @@ generate any output. If you specify the **PassThru** parameter, the cmdlet gener
 * To update the formatting data for commands that have been imported from a module, use the
   `Update-FormatData` cmdlet. `Update-FormatData` also updates the formatting data for commands in
   the session that were imported from modules. If the formatting file for a module changes, you can
-  run an `Update-FormatData` command to update the formatting data for imported commands. You do not
+  run an `Update-FormatData` command to update the formatting data for imported commands. You don't
   need to import the module again.
 
 * Starting in Windows PowerShell 3.0, the core commands that are installed with PowerShell are
@@ -1225,7 +1225,7 @@ generate any output. If you specify the **PassThru** parameter, the cmdlet gener
   alternate CIM provider that has the same basic features.
 
   You can use the CIM session feature on computers that are not running a Windows operating system
-  and on Windows computers that have PowerShell, but do not have PowerShell remoting enabled.
+  and on Windows computers that have PowerShell, but don't have PowerShell remoting enabled.
 
   You can also use the CIM parameters to get CIM modules from computers that have PowerShell
   remoting enabled, including the local computer. When you create a CIM session on the local
