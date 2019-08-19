@@ -15,11 +15,15 @@ Describes a keyword that handles a terminating error.
 A terminating error stops a statement from running. If PowerShell does not
 handle a terminating error in some way, PowerShell also stops running the
 function or script in the current pipeline. In other languages, such as C\#,
-terminating errors are referred to as exceptions.
+terminating errors are known as exceptions.
 
 The `Trap` keyword specifies a list of statements to run when a terminating
 error occurs. Trap statements handle the terminating errors and allow
 execution of the script or function to continue instead of stopping.
+
+Trap statements can also be more complex. The statement list of the trap can
+include multiple conditions or function calls. A trap can write logs, test
+conditions, or even run another program.
 
 ### Syntax
 
@@ -92,11 +96,20 @@ name, or if a path was included verify that the path is correct, and then try
 again.
 ```
 
-Trap statements can also be more complex. The statement list of the `Trap` can
-include multiple conditions or function calls. A trap can log, test, or even
-run another program.
+> [!IMPORTANT]
+> Trap statements may be defined anywhere within a given scope, but always
+> apply to all statements in that scope. At runtime, traps in a block are
+> defined before any other statements are executed. In JavaScript, this is
+> known as [hoisting](https://wikipedia.org/wiki/JavaScript_syntax#hoisting).
+> This means that traps apply to all statements in that block even if execution
+> has not advanced past the point at which they are defined. For example,
+> defining a trap at the end of a script and throwing an error in the first
+> statement still triggers that trap.
 
-### Trapping specified terminating errors
+### Trapping specific errors
+
+A script or command can have multiple Trap statements. Traps can be defined to
+handle specific errors.
 
 The following example is a Trap statement that traps the specific error
 **CommandNotFoundException**:
@@ -255,15 +268,17 @@ examples, the terminating error occurs within the function. In this example,
 however, the Trap statement is outside the function. PowerShell does not go
 back into the function after the Trap statement runs.
 
-> [!IMPORTANT]
-> Trap statements may be defined anywhere within a given scope, but always
-> apply to all statements in that scope. At runtime, traps in a block are
-> defined before any other statements are executed. In JavaScript, this is
-> known as [hoisting](https://wikipedia.org/wiki/JavaScript_syntax#hoisting).
-> This means that they apply to all statements in that block even if execution
-> has not advanced past the point at which they are defined. For example,
-> defining a trap at the end of a script and throwing an error in the first
-> statement still triggers that trap.
+> [!CAUTION]
+> When multiple traps are defined for the same error condition, the first trap
+> defined lexically (highest in the scope) is used.
+
+In the following example, only the trap with "whoops 1" is run.
+
+```powershell
+Remove-Item -ErrorAction Stop ThisFileDoesNotExist
+trap { "whoops 1"; continue }
+trap { "whoops 2"; continue }
+```
 
 ### Using the `break` and `continue` keywords
 
