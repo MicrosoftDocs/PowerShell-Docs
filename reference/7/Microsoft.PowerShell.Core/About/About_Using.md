@@ -42,8 +42,8 @@ using module <module-name>
 The following script gets the cryptographic hash for the "Hello World" string.
 
 Note how the `using namespace System.Text` and `using namespace System.IO`
-simplify the references to `[UnicodeEncoding]` in *System.Text* and `[Stream]`
-and to `[MemoryStream]` in *System.IO*.
+simplify the references to `[UnicodeEncoding]` in `System.Text` and `[Stream]`
+and to `[MemoryStream]` in `System.IO`.
 
 ```powershell
 using namespace System.Text
