@@ -492,16 +492,6 @@ following items:
 
 Contains a path object that represents the full path of the current directory.
 
-### ReportErrorShow variables
-
-The **ReportErrorShow** variables are defined in PowerShell, but they aren't
-implemented. `Get-Variable` gets them, but they don't contain valid data.
-
-- `$ReportErrorShowExceptionClass`
-- `$ReportErrorShowInnerException`
-- `$ReportErrorShowSource`
-- `$ReportErrorShowStackTrace`
-
 ### $Sender
 
 Contains the object that generated this event. This variable is populated
