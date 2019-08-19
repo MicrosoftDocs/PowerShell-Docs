@@ -92,7 +92,7 @@ name, or if a path was included verify that the path is correct, and then try
 again.
 ```
 
-Trap statements can also be more complex. A script block of the `Trap` can
+Trap statements can also be more complex. The statement list of the `Trap` can
 include multiple conditions or function calls. A trap can log, test, or even
 run another program.
 
@@ -107,9 +107,9 @@ trap [System.Management.Automation.CommandNotFoundException]
 ```
 
 When a function or script encounters a string that does not match a known
-command, this Trap statement displays the "Command error trapped" string.
-After running any statements in the `Trap` script block, PowerShell writes the
-error object to the error stream and then continues the script.
+command, this Trap statement displays the "Command error trapped" string. After
+running the `Trap` statement list, PowerShell writes the error object to the
+error stream and then continues the script.
 
 PowerShell uses the Microsoft .NET Framework exception types. The following
 example specifies the **System.Exception** error type:
