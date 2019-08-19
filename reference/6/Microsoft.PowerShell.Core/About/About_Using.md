@@ -12,19 +12,21 @@ Allows to indicate which namespaces are used in the session.
 
 ## LONG DESCRIPTION
 
-The `using` statement allows to indicate which namespaces are used in the
-session. Making easier to mention classes and members, as it requires less
-typing to mention them; also, classes from modules can be referenced too.
+The `using` statement allows you to specify which namespaces are used in the
+session. Adding namespaces simplifies usage of .NET classes and member and
+allows you to import classes from modules.
 
 The `using` statement needs to be the first statement in the script.
 
-Syntax #1, to reference .Net Framework namespaces:
+### Syntax
+
+To reference .NET Framework namespaces:
 
 ```
-using namespace <.Net-framework-namespace>
+using namespace <.NET-framework-namespace>
 ```
 
-Syntax #2, to reference PowerShell modules:
+To reference PowerShell modules:
 
 ```
 using module <module-name>
@@ -37,7 +39,7 @@ using module <module-name>
 > module. If the module isn't loaded in the current session, the `using`
 > statement fails.
 
-## Examples
+### Examples
 
 The following script gets the cryptographic hash for the "Hello World" string.
 
