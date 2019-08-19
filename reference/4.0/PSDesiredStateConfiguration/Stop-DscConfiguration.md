@@ -1,5 +1,5 @@
 ---
-ms.date:  06/09/2017
+ms.date: 08/19/2019
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -11,43 +11,76 @@ title:  Stop-DscConfiguration
 # Stop-DscConfiguration
 
 ## SYNOPSIS
-Stops a configuration job that is currently running.
+Stops a configuration job that is running.
 
 ## SYNTAX
 
+### All
+
 ```
-Stop-DscConfiguration [-Force] [-CimSession <CimSession[]>] [-ThrottleLimit <Int32>] [-AsJob] [-WhatIf]
- [-Confirm] [<CommonParameters>]
+Stop-DscConfiguration [-Force] [-CimSession <CimSession[]>] [-ThrottleLimit <Int32>] [-AsJob]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-The `Stop-DscConfiguration` cmdlet stops a configuration job that is currently running.
-Specify which computers this cmdlet applies to by using Common Information Model (CIM) sessions.
-If there is no configuration job running, this cmdlet returns a warning message.
 
-This cmdlet is available only as part of the [November 2014 update rollup for Windows RT 8.1, Windows 8.1, and Windows Server 2012 R2](https://support.microsoft.com/kb/3000850) from the Microsoft Support library.
-Before you use this cmdlet, review the information in What's New in Windows PowerShellhttp://technet.microsoft.com/library/hh857339.aspx (http://technet.microsoft.com/library/hh857339.aspx) in the TechNet library.
+The `Stop-DscConfiguration` cmdlet stops a configuration job that is running. Specify which
+computers this cmdlet applies to by using Common Information Model (CIM) sessions. If there's no
+configuration job running, this cmdlet returns a warning message.
+
+`Stop-DscConfiguration` is only available as part of the
+[November 2014 update rollup for Windows RT 8.1, Windows 8.1, and Windows Server 2012 R2](https://support.microsoft.com/kb/3000850)
+from the Microsoft Support library. Before you use this cmdlet, review the information in
+[What's New in Windows PowerShell 5.0](../../docs-conceptual/whats-new/What-s-New-in-Windows-PowerShell-50.md)
 
 ## EXAMPLES
 
 ### Example 1: Stop a configuration job
-```
-PS C:\> $Session = New-CimSession -ComputerName "Server01" -Credential ACCOUNTS\PattiFuller
-PS C:\> Stop-DscConfiguration -CimSession $Session
+
+In this example, a CIM session is created using the `New-CimSession` cmdlet. The **CimSession**
+object is used to stop a running configuration job.
+
+```powershell
+$Session = New-CimSession -ComputerName Server01 -Credential ACCOUNTS\User01
+Stop-DscConfiguration -CimSession $Session
 ```
 
-The first command creates a CIM session by using the **New-CimSession** cmdlet, and then stores the **CimSession** object in the **$Session** variable.
-The command prompts you for a password.
-For more information, type `Get-Help New-CimSession`.
+`New-CimSession` uses the **ComputerName** parameter to specify the Server01 computer. The
+**Credential** parameter specifies the user account. The **CimSession** object is stored in the
+`$Session` variable. When the command is run, you're prompted for the user account's password.
 
-The second command stops a currently running configuration job on the computer identified by the **CimSession** object stored in **$Session**.
+`Stop-DscConfiguration` uses the **CimSession** parameter and the object stored in `$Session` to
+stop the configuration job.
 
 ## PARAMETERS
 
+### -AsJob
+
+Indicates that this cmdlet runs the command as a background job. For more information about
+PowerShell background jobs, see [about_Jobs](../Microsoft.PowerShell.Core/About/about_Jobs.md) and
+[about_Remote_Jobs](../Microsoft.PowerShell.Core/About/about_Remote_Jobs.md).
+
+To use the **AsJob** parameter, the local and remote computers must be configured for remoting. On
+Windows Vista and later versions of the Windows operating system, you must open PowerShell with the
+**Run as administrator** option. For more information, see
+[about_Remote_Requirements](../Microsoft.PowerShell.Core/About/about_Remote_Requirements.md).
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -CimSession
-Runs the cmdlet in a remote session or on a remote computer.
-Enter a computer name or a session object, such as the output of a [New-CimSession](https://docs.microsoft.com/powershell/module/cimcmdlets/new-cimsession) or [Get-CimSession](https://docs.microsoft.com/powershell/module/cimcmdlets/get-cimsession) cmdlet.
-The default is the current session on the local computer.
+
+Runs the cmdlet in a remote session or on a remote computer. Enter a computer name or a session
+object, such as the output from `New-CimSession` or `Get-CimSession`.
 
 ```yaml
 Type: CimSession[]
@@ -61,7 +94,28 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -Confirm
+
+`Stop-DscConfiguration` doesn't support the **Confirm** parameter. If the **Confirm** parameter is
+used, an error is displayed.
+
+For PowerShell cmdlets that support **Confirm**, using the parameter prompts you for verification
+before a command is run.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Force
+
 Forces the command to run without asking for user confirmation.
 
 ```yaml
@@ -71,15 +125,18 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -ThrottleLimit
+
 Specifies the maximum number of concurrent operations that can be established to run the cmdlet.
-If this parameter is omitted or a value of `0` is entered, then Windows PowerShell calculates an optimum throttle limit for the cmdlet based on the number of CIM cmdlets that are running on the computer.
-The throttle limit applies only to the current cmdlet, not to the session or to the computer.
+
+If this parameter is omitted or a value of `0` is entered, PowerShell calculates an optimum throttle
+limit based on the number of CIM cmdlets that are running on the computer. The throttle limit
+applies only to the current cmdlet, not to the session or to the computer.
 
 ```yaml
 Type: Int32
@@ -93,38 +150,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -AsJob
-Indicates that this cmdlet runs the command as a background job.
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Confirm
-Prompts you for confirmation before running the cmdlet.
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: (All)
-Aliases: cf
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -WhatIf
-Shows what would happen if the cmdlet runs. The cmdlet is not run.
+
+Shows what would happen if the cmdlet runs. The cmdlet isn't run.
 
 ```yaml
 Type: SwitchParameter
@@ -133,13 +161,16 @@ Aliases: wi
 
 Required: False
 Position: Named
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+-InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
+-WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -153,9 +184,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## RELATED LINKS
 
-[Windows PowerShell Desired State Configuration Overview](http://go.microsoft.com/fwlink/?LinkID=311940)
+[Get-CimSession](../CimCmdlets/Get-CimSession.md)
 
 [Get-DscConfiguration](Get-DscConfiguration.md)
+
+[New-CimSession](../CimCmdlets/New-CimSession.md)
 
 [Restore-DscConfiguration](Restore-DscConfiguration.md)
 
@@ -164,3 +197,5 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 [Test-DscConfiguration](Test-DscConfiguration.md)
 
 [Update-DscConfiguration](Update-DscConfiguration.md)
+
+[Windows PowerShell Desired State Configuration Overview](/powershell/dsc/overview/overview)
