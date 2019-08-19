@@ -7,10 +7,10 @@ title:  about_Trap
 ---
 # About Trap
 
-## SHORT DESCRIPTION
+## Short description
 Describes a keyword that handles a terminating error.
 
-## LONG DESCRIPTION
+## Long description
 
 A terminating error stops a statement from running. If PowerShell does not
 handle a terminating error in some way, PowerShell also stops running the
@@ -18,38 +18,40 @@ function or script in the current pipeline. In other languages, such as C\#,
 terminating errors are referred to as exceptions.
 
 The `Trap` keyword specifies a list of statements to run when a terminating
-error occurs. `Trap` statements handle the terminating errors and allow
+error occurs. Trap statements handle the terminating errors and allow
 execution of the script or function to continue instead of stopping.
 
-### SYNTAX
+### Syntax
 
-The `Trap` statement has the following syntax:
+The Trap statement has the following syntax:
 
 ```powershell
 trap [[<error type>]] {<statement list>}
 ```
 
-The `Trap` statement includes a script block that is a list of statements to
-run when a terminating error occurs. The `Trap` keyword can optionally specify
-an error type. An error type requires brackets.
+The Trap statement includes a list of statements to run when a terminating
+error occurs. A Trap statement consists of the `trap` keyword, optionally
+followed by a type expression, and the statement block containing the list of
+statements to run when an error is trapped. The type expression refines the
+types of errors the trap catches.
 
-A script or command can have multiple `Trap` statements. `Trap` statements can
+A script or command can have multiple Trap statements. Trap statements can
 appear anywhere in the script or command.
 
-### TRAPPING ALL TERMINATING ERRORS
+### Trapping all terminating errors
 
 When a terminating error occurs that is not handled in another way in a script
-or command, PowerShell checks for a `Trap` statement that handles the error. If
-a `Trap` statement is present, PowerShell continues running the script or
-command in the `Trap` statement.
+or command, PowerShell checks for a Trap statement that handles the error. If
+a Trap statement is present, PowerShell continues running the script or
+command in the Trap statement.
 
-The following example is a very simple `Trap` statement:
+The following example is a very simple Trap statement:
 
 ```powershell
 trap {"Error found."}
 ```
 
-This `Trap` statement traps any terminating error.
+This Trap statement traps any terminating error.
 
 In the following example, the function includes a nonsense string that causes
 a runtime error.
@@ -69,7 +71,7 @@ Running this function returns the following:
 Error found.
 ```
 
-The following example includes a `Trap` statement that displays the error by using
+The following example includes a Trap statement that displays the error by using
 the `$_` automatic variable:
 
 ```powershell
@@ -90,14 +92,14 @@ name, or if a path was included verify that the path is correct, and then try
 again.
 ```
 
-`Trap` statements can also be more complex. A script block of the `Trap` can
+Trap statements can also be more complex. A script block of the `Trap` can
 include multiple conditions or function calls. A trap can log, test, or even
 run another program.
 
-### TRAPPING SPECIFIED TERMINATING ERRORS
+### Trapping specified terminating errors
 
-The following example is a `Trap` statement that traps the
-**CommandNotFoundException** error type:
+The following example is a Trap statement that traps the specific error
+**CommandNotFoundException**:
 
 ```powershell
 trap [System.Management.Automation.CommandNotFoundException]
@@ -105,7 +107,7 @@ trap [System.Management.Automation.CommandNotFoundException]
 ```
 
 When a function or script encounters a string that does not match a known
-command, this `Trap` statement displays the "Command error trapped" string.
+command, this Trap statement displays the "Command error trapped" string.
 After running any statements in the `Trap` script block, PowerShell writes the
 error object to the error stream and then continues the script.
 
@@ -120,13 +122,13 @@ The **CommandNotFoundException** error type inherits from the
 **System.Exception** type. This statement traps an error that is created by an
 unknown command. It also traps other error types.
 
-You can have more than one `Trap` statement in a script. Each error type can be
-trapped by only one `Trap` statement. If an error occurs, and more than one
-`Trap` statement is available, PowerShell uses the `Trap` statement with the
-most specific error type that matches the error.
+You can have more than one Trap statement in a script. Each error type can be
+trapped by only one Trap statement. When a terminating error occurs, PowerShell
+searches for the trap with the most specific match, starting in the current
+scope of execution.
 
 The following script example contains an error. The script includes a general
-`Trap` statement that traps any terminating error and a specific `Trap`
+Trap statement that traps any terminating error and a specific `Trap`
 statement that specifies the **CommandNotFoundException** type.
 
 ```powershell
@@ -153,9 +155,9 @@ At C:\temp\test\traptest.ps1:5 char:1
 
 Because PowerShell does not recognize "nonsenseString" as a cmdlet or other
 item, it returns a **CommandNotFoundException** error. This terminating error is
-trapped by the specific `Trap` statement.
+trapped by the specific Trap statement.
 
-The following script example contains the same `Trap` statements with a
+The following script example contains the same Trap statements with a
 different error:
 
 ```powershell
@@ -179,20 +181,20 @@ At C:\temp\test\traptest.ps1:5 char:1
 ```
 
 The attempt to divide by zero does not create a **CommandNotFoundException**
-error. Instead, that error is trapped by the other `Trap` statement, which
+error. Instead, that error is trapped by the other Trap statement, which
 traps any terminating error.
 
-### TRAPPING ERRORS AND SCOPE
+### Trapping errors and scope
 
-If a terminating error occurs in the same scope as the `Trap` statement,
-PowerShell runs script block of the `Trap` statement then continues at the
-statement after the error. If the `Trap` statement is in a different scope from
-the error, execution continues at the next statement that is in the same scope
-as the `Trap` statement.
+If a terminating error occurs in the same scope as the Trap statement,
+PowerShell runs the list of statements defined by the trap. Execution continues
+at the statement after the error. If the Trap statement is in a different scope
+from the error, execution continues at the next statement that is in the same
+scope as the Trap statement.
 
-For instance, if an error occurs in a function, and the `Trap` statement is in
-the function, the script continues at the next statement. For example, the
-following script contains an error and a Trap statement:
+For example, if an error occurs in a function, and the Trap statement is in the
+function, the script continues at the next statement. The following script
+contains an error and a trap statement:
 
 ```powershell
 function function1 {
@@ -218,12 +220,12 @@ At C:\PS>TestScript1.ps1:3 char:19
 function1 was completed
 ```
 
-The `Trap` statement in the function traps the error. After displaying the
+The Trap statement in the function traps the error. After displaying the
 message, PowerShell resumes running the function. Note that `Function1` was
 completed.
 
 Compare this with the following example, which has the same error and `Trap`
-statement. In this example, the Trap statement occurs outside the function:
+statement. In this example, the trap statement occurs outside the function:
 
 ```powershell
 function function2 {
@@ -232,12 +234,11 @@ function function2 {
     }
 
 trap { "An error: " }
-    . . .
+
 function2
 ```
 
-Later in the script, running the `Function2` function produces the following
-result:
+Running the `Function2` function produces the following result:
 
 ```powershell
 An error:
@@ -249,20 +250,30 @@ At C:\PS>TestScript2.ps1:4 char:19
 +     NonsenseString <<<<
 ```
 
-In this example, the "function2 was completed" command was not run. Although
-both terminating errors occur within a function, if the `Trap` statement is
-outside the function, PowerShell does not go back into the function after the
-`Trap` statement runs.
+In this example, the "function2 was completed" command was not run. In both
+examples, the terminating error occurs within the function. In this example,
+however, the Trap statement is outside the function. PowerShell does not go
+back into the function after the Trap statement runs.
 
-### USING THE BREAK AND CONTINUE KEYWORDS
+> [!IMPORTANT]
+> Trap statements may be defined anywhere within a given scope, but always
+> apply to all statements in that scope. At runtime, traps in a block are
+> defined before any other statements are executed. In JavaScript, this is
+> known as [hoisting](https://wikipedia.org/wiki/JavaScript_syntax#hoisting).
+> This means that they apply to all statements in that block even if execution
+> has not advanced past the point at which they are defined. For example,
+> defining a trap at the end of a script and throwing an error in the first
+> statement still triggers that trap.
 
-You can use the `Break` and `Continue` keywords in a `Trap` statement to
+### Using the `break` and `continue` keywords
+
+You can use the `Break` and `Continue` keywords in a Trap statement to
 determine whether a script or command continues to run after a terminating
 error.
 
-If you include a `Break` statement in a `Trap` statement list, PowerShell
+If you include a `Break` statement in a Trap statement list, PowerShell
 stops the function or script. The following sample function uses the `Break`
-keyword in a `Trap` statement:
+keyword in a Trap statement:
 
 ```powershell
 function break_example {
@@ -283,10 +294,10 @@ Attempted to divide by zero.
 At line:4 char:7
 ```
 
-Because the `Trap` statement included the `Break` keyword, the function does
+Because the Trap statement included the `Break` keyword, the function does
 not continue to run, and the "Function completed" line is not run.
 
-If you include a `Continue` statement in a `Trap` statement, PowerShell resumes
+If you include a `Continue` statement in a Trap statement, PowerShell resumes
 after the statement that caused the error, just as it would without `Break` or
 `Continue`. With the `Continue` keyword, however, PowerShell does not write an
 error to the error stream.
@@ -315,23 +326,14 @@ Function completed.
 The function resumes after the error is trapped, and the "Function completed"
 statement runs. No error is written to the error stream.
 
-> [!IMPORTANT]
-> `Trap` statements can appear anywhere within the scope your code. When
-> PowerShell parses the code, the `Trap` definitions within a scope are
-> collected and *hoisted* to the top of that scope. This means that traps can
-> be defined in any order and at any time within a function or script. All
-> defined traps are available at runtime even if execution has not advanced to
-> the point where the traps was defined in the source file. When a terminating
-> error occurs, PowerShell searches for the trap with the most specific match,
-> starting in the current scope of execution.
->
-> `Trap` statements are useful for post-mortem error analysis but are not good
-> at error handling. For robust error handling, use `try/catch` blocks. Traps
-> are defined using `Catch` statements, but those traps only apply to the code
-> inside the associated `Try` statement. For more information, see
-> [about_Try_Catch_Finally](about_Try_Catch_Finally.md).
+## Notes
 
-## SEE ALSO
+Trap statements are useful for post-mortem error analysis. For more robust
+error handling, use `try`/`catch` blocks where traps are defined using `Catch`
+statements. The `Catch` statements only apply to the code inside the associated
+`Try` statement. For more information, see [about_Try_Catch_Finally](about_Try_Catch_Finally.md).
+
+## See also
 
 [about_Break](about_Break.md)
 
