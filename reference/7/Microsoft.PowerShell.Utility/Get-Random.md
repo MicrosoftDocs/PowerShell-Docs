@@ -228,23 +228,17 @@ Name Count
 
 ### Example 12: Use the Count parameter
 
-You can now use the **Count** parameter without piping objects to `Get-Random`. The following
-example gets three random files from an object containing files.
+You can now use the **Count** parameter without piping objects to `Get-Random`.
+The following example gets three random numbers less than 10.
 
 ```powershell
-$files = dir C:\Windows\System32
-Get-Random -Count 3 -InputObject $files
-
+Get-Random -Count 3 -Maximum 10
 ```
 
 ```Output
-    Directory: C:\Windows\System32
-
-Mode                LastWriteTime         Length Name
-----                -------------         ------ ----
--a---l         9/15/2018 12:28 AM          11264 spmpm.dll
--a---l         3/12/2019  4:52 PM         489984 ResourceMapper.dll
--a----         7/16/2016  7:28 AM          70656 UpgradeSubscription.exe
+9
+0
+8
 ```
 
 ## PARAMETERS
