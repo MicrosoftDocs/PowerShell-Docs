@@ -33,8 +33,8 @@ use this kind of authentication.
 `Enable-WSManCredSSP` can enable CredSSP on a **Client** or a **Server**. To enable CredSSP on a
 client, specify **Client** in the **Role** parameter. Clients delegate explicit credentials to a
 server when server authentication is achieved. To enable CredSSP on a server, specify **Server** in
-the **Role** parameter. A server acts as a delegate for clients. For more information, see the [Role](#-role)
-parameter.
+the **Role** parameter. A server acts as a delegate for clients. For more details, see **Role** in
+the Parameters section.
 
 > [!CAUTION]
 > CredSSP authentication delegates the user credentials from the local computer to a remote
