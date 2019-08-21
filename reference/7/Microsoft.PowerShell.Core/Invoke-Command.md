@@ -213,9 +213,8 @@ parameter is used to run the command in the security context of Domain01\User01,
 permission to run commands. The **ScriptBlock** parameter specifies the command to be run on the
 remote computer.
 
-In response, PowerShell displays a dialog box that requests the password and an authentication
-method for the User01 account. It then runs the command on the Server01 computer and returns the
-result.
+In response, PowerShell requests the password and an authentication method for the User01 account.
+It then runs the command on the Server01 computer and returns the result.
 
 ### Example 3: Run a command in a persistent connection
 
@@ -464,8 +463,7 @@ Invoke-Command @parameters
 ```
 
 The first line uses the `Get-Credential` cmdlet to store Windows Live ID credentials in the
-`$LiveCred` variable. A credentials dialog box prompts the user to enter Windows Live ID
-credentials.
+`$LiveCred` variable. PowerShell prompts the user to enter Windows Live ID credentials.
 
 The `$parameters` variable is a hash table containing the parameters to be passed to the
 `Invoke-Command` cmdlet. The parameter values are passed to `Invoke-Command` cmdlet using PowerShell
