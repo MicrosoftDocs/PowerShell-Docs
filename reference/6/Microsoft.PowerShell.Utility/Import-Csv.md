@@ -15,18 +15,32 @@ Creates table-like custom objects from the items in a comma-separated value (CSV
 
 ## SYNTAX
 
-### Delimiter (Default)
+### DelimiterPath (Default)
 
 ```
-Import-Csv [[-Path] <string[]>] [[-Delimiter] <char>] [-LiteralPath <string[]>] [-Header <string[]>]
-[-Encoding <Encoding>] [<CommonParameters>]
+Import-Csv [[-Delimiter] <Char>] [-Path] <String[]> [-Header <String[]>] [-Encoding <Encoding>]
+ [<CommonParameters>]
 ```
 
-### UseCulture
+### DelimiterLiteralPath
 
 ```
-Import-Csv [[-Path] <string[]>] -UseCulture [-LiteralPath <string[]>] [-Header <string[]>]
-[-Encoding <Encoding>] [<CommonParameters>]
+Import-Csv [[-Delimiter] <Char>] -LiteralPath <String[]> [-Header <String[]>] [-Encoding <Encoding>]
+ [<CommonParameters>]
+```
+
+### CulturePath
+
+```
+Import-Csv [-Path] <String[]> -UseCulture [-Header <String[]>] [-Encoding <Encoding>]
+ [<CommonParameters>]
+```
+
+### CultureLiteralPath
+
+```
+Import-Csv -LiteralPath <String[]> -UseCulture [-Header <String[]>] [-Encoding <Encoding>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -308,7 +322,7 @@ create the objects from the CSV strings and will return the CSV strings.
 
 ```yaml
 Type: Char
-Parameter Sets: Delimiter
+Parameter Sets: DelimiterPath, DelimiterLiteralPath
 Aliases:
 
 Required: False
@@ -388,10 +402,10 @@ PowerShell not to interpret any characters as escape sequences.
 
 ```yaml
 Type: String[]
-Parameter Sets: (All)
-Aliases: PSPath
+Parameter Sets: DelimiterLiteralPath, CultureLiteralPath
+Aliases: PSPath, LP
 
-Required: False
+Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByPropertyName)
@@ -405,13 +419,13 @@ You can also pipe a path to `Import-Csv`.
 
 ```yaml
 Type: String[]
-Parameter Sets: (All)
+Parameter Sets: DelimiterPath, CulturePath
 Aliases:
 
-Required: False
+Required: True
 Position: 0
 Default value: None
-Accept pipeline input: True (ByValue)
+Accept pipeline input: True (ByPropertyName, ByValue)
 Accept wildcard characters: False
 ```
 
@@ -422,7 +436,7 @@ for a culture, use the following command: `(Get-Culture).TextInfo.ListSeparator`
 
 ```yaml
 Type: SwitchParameter
-Parameter Sets: UseCulture
+Parameter Sets: CulturePath, CultureLiteralPath
 Aliases:
 
 Required: True
