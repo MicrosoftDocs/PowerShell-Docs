@@ -8,6 +8,7 @@ online version: https://go.microsoft.com/fwlink/?linkid=2096832
 schema: 2.0.0
 title: ConvertTo-Csv
 ---
+
 # ConvertTo-Csv
 
 ## SYNOPSIS
@@ -15,18 +16,25 @@ Converts objects into a series of character-separated value (CSV) strings.
 
 ## SYNTAX
 
-### Delimiter (Default)
+### DelimiterPath (Default)
 
 ```
-ConvertTo-Csv [-InputObject] <psobject> [[-Delimiter] <char>] [-IncludeTypeInformation]
-[-NoTypeInformation] [<CommonParameters>]
+ConvertTo-Csv [-InputObject] <PSObject> [-IncludeTypeInformation] [-NoTypeInformation]
+ [-QuoteFields <String[]>] [-UseQuotes <QuoteKind>] [<CommonParameters>]
+```
+
+### Delimiter
+
+```
+ConvertTo-Csv [-InputObject] <PSObject> [[-Delimiter] <Char>] [-IncludeTypeInformation]
+ [-NoTypeInformation] [-QuoteFields <String[]>] [-UseQuotes <QuoteKind>] [<CommonParameters>]
 ```
 
 ### UseCulture
 
 ```
-ConvertTo-Csv [-InputObject] <psobject> [-UseCulture] [-IncludeTypeInformation]
-[-NoTypeInformation] [<CommonParameters>]
+ConvertTo-Csv [-InputObject] <PSObject> [-UseCulture] [-IncludeTypeInformation] [-NoTypeInformation]
+ [-QuoteFields <String[]>] [-UseQuotes <QuoteKind>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -92,6 +100,7 @@ Get-WinEvent -LogName 'PowerShellCore/Operational' | ConvertTo-Csv -UseCulture -
 ```
 
 ```Output
+,
 "Message","Id","Version","Qualifiers","Level","Task","Opcode","Keywords","RecordId", ...
 "Error Message = System error""4100","1",,"3","106","19","0","31716","PowerShellCore", ...
 ```
@@ -103,6 +112,32 @@ down the pipeline to the `ConvertTo-Csv` cmdlet. The `ConvertTo-Csv` cmdlet conv
 objects to a series of CSV strings. The **UseCulture** parameter uses the current culture's default
 list separator as the delimiter. The **NoTypeInformation** parameter removes the **#TYPE**
 information header from the CSV output and is not required in PowerShell 6.
+
+### Example 4: Convert to CSV with quotes around two columns
+
+This example converts a **DateTime** object to a CSV string.
+
+```powershell
+Get-Date | ConvertTo-Csv -QuoteFields "DateTime","Date"
+```
+
+```Output
+DisplayHint,"DateTime","Date",Day,DayOfWeek,DayOfYear,Hour,Kind,Millisecond,Minute,Month,Second,Ticks,TimeOfDay,Year
+DateTime,"Thursday, August 22, 2019 11:27:34 AM","8/22/2019 12:00:00 AM",22,Thursday,234,11,Local,569,27,8,34,637020700545699784,11:27:34.5699784,2019
+```
+
+### Example 4: Convert to CSV with quotes only when needed
+
+This example converts a **DateTime** object to a CSV string.
+
+```powershell
+Get-Date | ConvertTo-Csv -UseQuotes AsNeeded
+```
+
+```Output
+DisplayHint,DateTime,Date,Day,DayOfWeek,DayOfYear,Hour,Kind,Millisecond,Minute,Month,Second,Ticks,TimeOfDay,Year
+DateTime,"Thursday, August 22, 2019 11:31:00 AM",8/22/2019 12:00:00 AM,22,Thursday,234,11,Local,713,31,8,0,637020702607132640,11:31:00.7132640,2019
+```
 
 ## PARAMETERS
 
@@ -191,6 +226,43 @@ Aliases:
 Required: False
 Position: Named
 Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -QuoteFields
+
+Specifies the names of the columns that should be quoted. When this parameter is used only the
+specified columns are quoted.
+
+```yaml
+Type: String[]
+Parameter Sets: (All)
+Aliases: QF
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -UseQuotes
+
+Specifies when quotes are used in the CSV files. Possible values are:
+
+- Never - don't quote anything
+- Always - quote everything (default behavior)
+- AsNeeded - only quote fields that contain a delimiter character
+
+```yaml
+Type: QuoteKind
+Parameter Sets: (All)
+Aliases: UQ
+
+Required: False
+Position: Named
+Default value: Always
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
