@@ -8,6 +8,7 @@ online version: https://go.microsoft.com/fwlink/?linkid=2096608
 schema: 2.0.0
 title: Export-Csv
 ---
+
 # Export-Csv
 
 ## SYNOPSIS
@@ -19,17 +20,18 @@ file.
 ### Delimiter (Default)
 
 ```
-Export-Csv [[-Path] <string>] [[-Delimiter] <char>] -InputObject <psobject> [-LiteralPath <string>]
-[-Force] [-NoClobber] [-Encoding <Encoding>] [-Append] [-IncludeTypeInformation]
-[-NoTypeInformation] [-WhatIf] [-Confirm] [<CommonParameters>]
+Export-Csv -InputObject <PSObject> [[-Path] <String>] [-LiteralPath <String>] [-Force] [-NoClobber]
+ [-Encoding <Encoding>] [-Append] [[-Delimiter] <Char>] [-IncludeTypeInformation]
+ [-NoTypeInformation] [-QuoteFields <String[]>] [-UseQuotes <QuoteKind>] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
 ```
 
 ### UseCulture
 
 ```
-Export-Csv [[-Path] <string>] -InputObject <psobject> [-LiteralPath <string>] [-Force] [-NoClobber]
-[-Encoding <Encoding>] [-Append] [-UseCulture] [-IncludeTypeInformation] [-NoTypeInformation]
-[-WhatIf] [-Confirm] [<CommonParameters>]
+Export-Csv -InputObject <PSObject> [[-Path] <String>] [-LiteralPath <String>] [-Force] [-NoClobber]
+ [-Encoding <Encoding>] [-Append] [-UseCulture] [-IncludeTypeInformation] [-NoTypeInformation]
+ [-QuoteFields <String[]>] [-UseQuotes <QuoteKind>] [-WhatIf] [-Confirm]  [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -349,6 +351,34 @@ The `Export-Csv` cmdlet **Force** parameter is used to force the export to write
 **Edition** property is discarded. The `Import-Csv` cmdlet uses the **Path** parameter to display
 the file located in the current directory.
 
+### Example 10: Export to CSV with quotes around two columns
+
+This example converts a **DateTime** object to a CSV string.
+
+```powershell
+Get-Date | Export-Csv  -QuoteFields "DateTime","Date" -Path .\FTDateTime.csv
+Get-Content -Path .\FTDateTime.csv
+```
+
+```Output
+DisplayHint,"DateTime","Date",Day,DayOfWeek,DayOfYear,Hour,Kind,Millisecond,Minute,Month,Second,Ticks,TimeOfDay,Year
+DateTime,"Thursday, August 22, 2019 11:27:34 AM","8/22/2019 12:00:00 AM",22,Thursday,234,11,Local,569,27,8,34,637020700545699784,11:27:34.5699784,2019
+```
+
+### Example 11: Export to CSV with quotes only when needed
+
+This example converts a **DateTime** object to a CSV string.
+
+```powershell
+Get-Date | Export-Csv  -UseQuotes AsNeeded -Path .\FTDateTime.csv
+Get-Content -Path .\FTDateTime.csv
+```
+
+```Output
+DisplayHint,DateTime,Date,Day,DayOfWeek,DayOfYear,Hour,Kind,Millisecond,Minute,Month,Second,Ticks,TimeOfDay,Year
+DateTime,"Thursday, August 22, 2019 11:31:00 AM",8/22/2019 12:00:00 AM,22,Thursday,234,11,Local,713,31,8,0,637020702607132640,11:31:00.7132640,2019
+```
+
 ## PARAMETERS
 
 ### -Append
@@ -487,7 +517,7 @@ PowerShell not to interpret any characters as escape sequences.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: PSPath
+Aliases: PSPath, LP
 
 Required: False
 Position: Named
@@ -592,6 +622,43 @@ Aliases: wi
 Required: False
 Position: Named
 Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -QuoteFields
+
+Specifies the names of the columns that should be quoted. When this parameter is used, only the
+specified columns are quoted.
+
+```yaml
+Type: String[]
+Parameter Sets: (All)
+Aliases: QF
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -UseQuotes
+
+Specifies when quotes are used in the CSV files. Possible values are:
+
+- Never - don't quote anything
+- Always - quote everything (default behavior)
+- AsNeeded - only quote fields that contain a delimiter character
+
+```yaml
+Type: QuoteKind
+Parameter Sets: (All)
+Aliases: UQ
+
+Required: False
+Position: Named
+Default value: Always
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
