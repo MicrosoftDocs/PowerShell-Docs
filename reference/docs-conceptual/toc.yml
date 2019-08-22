@@ -52,7 +52,7 @@
       href: learn/writing-portable-modules.md
     - name: PowerShell remoting
       items:
-        - name: JEA
+        - name: Just Enough Administration (JEA)
           items:
             - name: Overview
               href: learn/remoting/jea/overview.md
