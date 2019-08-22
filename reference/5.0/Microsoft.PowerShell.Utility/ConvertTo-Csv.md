@@ -90,6 +90,7 @@ Get-WinEvent -LogName 'Windows PowerShell' | ConvertTo-Csv -UseCulture -NoTypeIn
 ```
 
 ```Output
+,
 "Message","Id","Version","Qualifiers","Level","Task","Opcode","Keywords","RecordId", ...
 "Error Message = System error","403",,"0","4","4",,"36028797018963968","46891","PowerShell", ...
 ```

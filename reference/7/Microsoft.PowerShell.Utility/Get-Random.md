@@ -3,7 +3,7 @@ external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 02/26/2019
+ms.date: 08/20/2019
 online version: https://go.microsoft.com/fwlink/?linkid=2097016
 schema: 2.0.0
 title: Get-Random
@@ -42,7 +42,7 @@ the number of objects returned from a submitted collection.
 
 ### Example 1: Get a random integer
 
-This command gets a random integer between 0 (zero) and Int32.MaxValue.
+This command gets a random integer between 0 (zero) and **Int32.MaxValue**.
 
 ```powershell
 Get-Random
@@ -228,17 +228,17 @@ Name Count
 
 ### Example 12: Use the Count parameter
 
-You can now use the **Count** parameter without piping objects to `Get-Random`. The following
-example gets three random numbers less than 10.
+You can now use the **Count** parameter without piping objects to `Get-Random`.
+The following example gets three random numbers less than 10.
 
 ```powershell
-Get-Random -Maximum 10 -Count 3
+Get-Random -Count 3 -Maximum 10
 ```
 
 ```Output
+9
+0
 8
-8
-3
 ```
 
 ## PARAMETERS
@@ -252,7 +252,7 @@ collection, `Get-Random` returns all of the objects in random order.
 
 ```yaml
 Type: Int32
-Parameter Sets:
+Parameter Sets: RandomListItemParameterSet
 Aliases:
 
 Required: False
@@ -335,12 +335,13 @@ Accept wildcard characters: False
 
 Specifies a seed value for the random number generator. This seed value is used for the current
 command and for all subsequent `Get-Random` commands in the current session until you use
-**SetSeed** again or close the session. You cannot reset the seed to its default, clock-based value.
+**SetSeed** again or close the session. You cannot reset the seed to its default value.
 
-The **SetSeed** parameter is not required. By default, `Get-Random` uses the system clock to
-generate a seed value. Because **SetSeed** results in non-random behavior, it is typically used only
-when trying to reproduce behavior, such as when debugging or analyzing a script that includes
-`Get-Random` commands.
+The **SetSeed** parameter is not required. By default, `Get-Random` uses the
+[RandomNumberGenerator()](/dotnet/api/system.security.cryptography.randomnumbergenerator)
+method to generate a seed value. Because **SetSeed** results in non-random behavior, it is typically
+used only when trying to reproduce behavior, such as when debugging or analyzing a script that
+includes `Get-Random` commands.
 
 ```yaml
 Type: Int32
@@ -358,7 +359,7 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+-WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 

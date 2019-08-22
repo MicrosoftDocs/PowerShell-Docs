@@ -6,9 +6,10 @@ ms.date: 07/19/2019
 
 # Installing PowerShell Core on Linux
 
-Supports [Ubuntu 16.04][u16], [Ubuntu 18.04][u1804], [Ubuntu 18.10][u1810], [Debian 9][deb9],
- [CentOS 7][cos], [Red Hat Enterprise Linux (RHEL) 7][rhel7], [openSUSE 42.3][opensuse],
- [openSUSE Leap 15][opensuse], [Fedora 27][fedora], [Fedora 28][fedora], and [Arch Linux][arch].
+Supports [Ubuntu 16.04][u16], [Ubuntu 18.04][u1804], [Ubuntu 18.10][u1810], [Ubuntu 19.04][u1904],
+ [Debian 9][deb9], [CentOS 7][cos], [Red Hat Enterprise Linux (RHEL) 7][rhel7],
+ [openSUSE 42.3][opensuse], [openSUSE Leap 15][opensuse], [Fedora 27][fedora], [Fedora 28][fedora],
+ and [Arch Linux][arch].
 
 For Linux distributions that aren't officially supported, you can try to install PowerShell using
 the [PowerShell Snap Package][snap]. You can also try deploying PowerShell binaries directly using
@@ -21,6 +22,7 @@ All packages are available on our GitHub [releases][] page. After the package is
 [u16]: #ubuntu-1604
 [u1804]: #ubuntu-1804
 [u1810]: #ubuntu-1810
+[u1904]: #ubuntu-1904
 [deb9]: #debian-9
 [cos]: #centos-7
 [rhel7]: #red-hat-enterprise-linux-rhel-7
@@ -151,17 +153,23 @@ sudo apt-get remove powershell
 
 ## Ubuntu 18.10
 
-> [!NOTE]
-> As 18.10 is an [interim release](https://www.ubuntu.com/about/release-cycle),
-> it is only [community supported](https://docs.microsoft.com/en-us/powershell/scripting/powershell-support-lifecycle?view=powershell-6).
+Installation is supported via `snapd`. For instructions, see [Snap Package][snap].
 
-Installing on 18.10 is supported via `snapd`. See [Snap Package][snap] for full instructions;
+> [!NOTE]
+> Ubuntu 18.10 is an [interim release](https://www.ubuntu.com/about/release-cycle) that's [community supported](../powershell-support-lifecycle.md).
+
+## Ubuntu 19.04
+
+Installation is supported via `snapd`. For instructions, see [Snap Package][snap].
+
+> [!NOTE]
+> Ubuntu 19.04 is an [interim release](https://www.ubuntu.com/about/release-cycle) that's [community supported](../powershell-support-lifecycle.md).
 
 ## Debian 8
 
 ### Installation via Package Repository - Debian 8
 
-PowerShell Core, for Linux, is published to package repositories for easy installation and updates.
+PowerShell Core for Linux is published to package repositories for easy installation and updates.
 
 The preferred method is as follows:
 
@@ -246,7 +254,8 @@ sudo apt-get remove powershell
 
 ### Installation via Package Repository (preferred) - CentOS 7
 
-PowerShell Core for Linux is published to official Microsoft repositories for easy installation and updates.
+PowerShell Core for Linux is published to official Microsoft repositories for easy installation and
+updates.
 
 ```sh
 # Register the Microsoft RedHat repository
@@ -291,7 +300,8 @@ sudo yum remove powershell
 
 ### Installation via Package Repository (preferred) - Red Hat Enterprise Linux (RHEL) 7
 
-PowerShell Core for Linux is published to official Microsoft repositories for easy installation and updates.
+PowerShell Core for Linux is published to official Microsoft repositories for easy installation and
+updates.
 
 ```sh
 # Register the Microsoft RedHat repository
@@ -395,7 +405,8 @@ rm -rf /usr/bin/pwsh /opt/microsoft/powershell
 
 ### Installation via Package Repository (preferred) - Fedora 27, Fedora 28
 
-PowerShell Core for Linux is published to official Microsoft repositories for easy installation and updates.
+PowerShell Core for Linux is published to official Microsoft repositories for easy installation and
+updates.
 
 ```sh
 # Register the Microsoft signature key
@@ -472,7 +483,8 @@ to make sure you have `snapd` installed.
 
 ### Installation via Snap
 
-PowerShell Core for Linux is published to the [Snap store](https://snapcraft.io/store) for easy installation and updates.
+PowerShell Core for Linux is published to the [Snap store](https://snapcraft.io/store) for easy
+installation and updates.
 
 The preferred method is as follows:
 

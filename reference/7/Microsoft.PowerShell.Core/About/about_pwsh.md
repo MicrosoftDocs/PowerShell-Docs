@@ -27,13 +27,15 @@ pwsh[.exe]
    [-ExecutionPolicy <ExecutionPolicy>]
    [-InputFormat {Text | XML}]
    [-Interactive]
-   [-LoadProfile]
+   [-Login]
+   [-MTA]
    [-NoExit]
    [-NoLogo]
    [-NonInteractive]
    [-NoProfile]
    [-OutputFormat {Text | XML}]
    [-SettingsFile <SettingsFilePath>]
+   [-STA]
    [-Version]
    [-WindowStyle <style>]
    [-WorkingDirectory <directoryPath>]
@@ -199,10 +201,20 @@ strings) or "XML" (serialized CLIXML format).
 Present an interactive prompt to the user. Inverse for NonInteractive
 parameter.
 
-### -LoadProfile | -l
+### -Login | -l
 
-Load the PowerShell profiles. This is the default behavior even if this is not
-specified.
+On Linux and macOS, starts PowerShell as a login shell,
+using /bin/sh to execute login profiles such as /etc/profile and ~/.profile.
+On Windows, this switch does nothing.
+
+> [!IMPORTANT]
+> This parameter must come first to start PowerShell as a login shell.
+> Passing this parameter in another position will be ignored.
+
+### -MTA
+
+Start PowerShell using a multi-threaded apartment.
+This switch is only available on Windows.
 
 ### -NoExit | -noe
 
@@ -239,6 +251,11 @@ Note that these settings are not used by the endpoint specified by the
 `-ConfigurationName` argument.
 
 Example: `pwsh -SettingsFile c:\myproject\powershell.config.json`
+
+### -STA
+
+Start PowerShell using a single-threaded apartment.  This is the default.
+This switch is only available on Windows.
 
 ### -Version | -v
 

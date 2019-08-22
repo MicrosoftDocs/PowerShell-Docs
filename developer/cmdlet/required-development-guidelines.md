@@ -85,7 +85,7 @@ When you name cmdlets, do not use any of the following special characters.
 |&|ampersand|
 |-|hyphen **Note:**  The hyphen can be used to separate the verb from the noun, but it cannot be used within the noun or within the verb.|
 |/|slash mark|
-|\|backslash|
+|\\|backslash|
 |$|dollar sign|
 |^|caret|
 |;|semicolon|
