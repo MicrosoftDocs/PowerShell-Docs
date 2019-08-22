@@ -92,6 +92,7 @@ Get-WinEvent -LogName 'PowerShellCore/Operational' | ConvertTo-Csv -UseCulture -
 ```
 
 ```Output
+,
 "Message","Id","Version","Qualifiers","Level","Task","Opcode","Keywords","RecordId", ...
 "Error Message = System error""4100","1",,"3","106","19","0","31716","PowerShellCore", ...
 ```

@@ -16,13 +16,6 @@ Converts objects into a series of character-separated value (CSV) strings.
 
 ## SYNTAX
 
-### DelimiterPath (Default)
-
-```
-ConvertTo-Csv [-InputObject] <PSObject> [-IncludeTypeInformation] [-NoTypeInformation]
- [-QuoteFields <String[]>] [-UseQuotes <QuoteKind>] [<CommonParameters>]
-```
-
 ### Delimiter
 
 ```
