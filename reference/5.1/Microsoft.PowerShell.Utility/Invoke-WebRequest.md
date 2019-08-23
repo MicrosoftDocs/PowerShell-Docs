@@ -43,8 +43,8 @@ This cmdlet was introduced in Windows PowerShell 3.0.
 This command uses the `Invoke-WebRequest` cmdlet to send a web request to the Bing.com site.
 
 ```powershell
-$R = Invoke-WebRequest -URI http://www.bing.com?q=how+many+feet+in+a+mile
-$R.AllElements | Where-Object {
+$response = Invoke-WebRequest -URI http://www.bing.com/search?q=how+many+feet+in+a+mile
+$response.AllElements | Where-Object {
     $_.name -like "* Value" -and $_.tagName -eq "INPUT"
 } | Select-Object Name, Value
 ```
@@ -200,7 +200,7 @@ Accept wildcard characters: False
 ### -CertificateThumbprint
 
 Specifies the digital public key certificate (X509) of a user account that has permission to send
-the request. Enter the certificate thumbprint of the certificate.Certificates are used in client
+the request. Enter the certificate thumbprint of the certificate. Certificates are used in client
 certificate-based authentication. They can be mapped only to local user accounts; they do not work
 with domain accounts.
 
