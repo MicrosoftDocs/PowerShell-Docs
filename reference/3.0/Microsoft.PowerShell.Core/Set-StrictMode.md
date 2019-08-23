@@ -216,7 +216,7 @@ Accept wildcard characters: False
 ### -Version
 
 Specifies the conditions that cause an error in strict mode. This parameter accepts any valid
-PowerShell version number.
+PowerShell version number. Any number higher than 3 is treated as **Latest**.
 
 The effective values for this parameter are:
 
