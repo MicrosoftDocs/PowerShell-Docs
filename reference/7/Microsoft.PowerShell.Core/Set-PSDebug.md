@@ -3,7 +3,7 @@ external help file: System.Management.Automation.dll-Help.xml
 keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Core
-ms.date: 08/20/2019
+ms.date: 08/22/2019
 online version: https://go.microsoft.com/fwlink/?linkid=2096959
 schema: 2.0.0
 title: Set-PSDebug
@@ -155,10 +155,8 @@ Accept wildcard characters: False
 ### -Strict
 
 Specifies that variables must be assigned a value before being referenced in a script. If a variable
-is referenced before a value is assigned, PowerShell returns an exception error.
-
-A `Set-StrictMode -Off` command disables the verification set by a `Set-PSDebug -Strict` command.
-For more information, see [Set-StrictMode](Set-StrictMode.md).
+is referenced before a value is assigned, PowerShell returns an exception error. This is equivalent
+to `Set-StrictMode -Version 1`. For more information, see [Set-StrictMode](Set-StrictMode.md).
 
 ```yaml
 Type: SwitchParameter
