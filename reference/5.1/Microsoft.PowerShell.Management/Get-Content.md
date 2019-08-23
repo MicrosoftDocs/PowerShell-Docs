@@ -19,18 +19,18 @@ Gets the content of the item at the specified location.
 
 ```
 Get-Content [-ReadCount <Int64>] [-TotalCount <Int64>] [-Tail <Int32>] [-Path] <String[]>
-[-Filter <String>] [-Include <String[]>] [-Exclude <String[]>] [-Force] [-Credential <PSCredential>]
-[-UseTransaction] [-Delimiter <String>] [-Wait] [-Raw]
-[-Encoding <FileSystemCmdletProviderEncoding>] [-Stream <String>] [<CommonParameters>]
+ [-Filter <String>] [-Include <String[]>] [-Exclude <String[]>] [-Force] [-Credential <PSCredential>]
+ [-UseTransaction] [-Delimiter <String>] [-Wait] [-Raw]
+ [-Encoding <FileSystemCmdletProviderEncoding>] [-Stream <String>] [<CommonParameters>]
 ```
 
 ### LiteralPath
 
 ```
 Get-Content [-ReadCount <Int64>] [-TotalCount <Int64>] [-Tail <Int32>] -LiteralPath <String[]>
-[-Filter <String>] [-Include <String[]>] [-Exclude <String[]>] [-Force] [-Credential <PSCredential>]
-[-UseTransaction] [-Delimiter <String>] [-Wait] [-Raw]
-[-Encoding <FileSystemCmdletProviderEncoding>] [-Stream <String>] [<CommonParameters>]
+ [-Filter <String>] [-Include <String[]>] [-Exclude <String[]>] [-Force] [-Credential <PSCredential>]
+ [-UseTransaction] [-Delimiter <String>] [-Wait] [-Raw]
+ [-Encoding <FileSystemCmdletProviderEncoding>] [-Stream <String>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -119,7 +119,7 @@ The **Tail** parameter gets the last line of the file. This method is faster tha
 the lines and using the `[-1]` index notation.
 
 ```powershell
-Get-Item -Path .\LineNumbers.txt Get-Content -Tail 1
+Get-Item -Path .\LineNumbers.txt | Get-Content -Tail 1
 ```
 
 ```Output
