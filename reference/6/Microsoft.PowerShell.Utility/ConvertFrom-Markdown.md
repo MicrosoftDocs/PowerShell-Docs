@@ -38,10 +38,12 @@ ConvertFrom-Markdown -InputObject <PSObject> [-AsVT100EncodedString] [<CommonPar
 
 This cmdlet converts the specified content into a **MarkdownInfo**. When a file path is specified
 for the **Path** parameter, the contents on the file are converted. The output object has three
-properties **Html**,**Tokens**,**VT100EncodedString**. The **Token** property has the abstract
-syntax tree (AST) of the the converted object. The **Html** property has the HTML conversion of the
-specified input. When the **AsVT100EncodedString** parameter is specified, the
-**VT100EncodedString** has the converted string with ANSI (VT100) escape sequences.
+properties:
+
+- The **Token** property has the abstract syntax tree (AST) of the the converted object
+- The **Html** property has the HTML conversion of the specified input
+- The **VT100EncodedString** property has the converted string with ANSI (VT100) escape sequences if
+  the **AsVT100EncodedString** parameter was specified
 
 ## EXAMPLES
 
