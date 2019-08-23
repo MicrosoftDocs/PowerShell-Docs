@@ -3,11 +3,12 @@ external help file: System.Management.Automation.dll-Help.xml
 keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Core
-ms.date: 06/09/2017
+ms.date: 08/23/2019
 online version: https://go.microsoft.com/fwlink/?linkid=2096483
 schema: 2.0.0
 title: Get-Help
 ---
+
 # Get-Help
 
 ## SYNOPSIS
@@ -18,81 +19,94 @@ Displays information about PowerShell commands and concepts.
 ### AllUsersView (Default)
 
 ```
-Get-Help [[-Name] <String>] [-Path <String>] [-Category <String[]>] [-Component <String[]>]
- [-Functionality <String[]>] [-Role <String[]>] [-Full] [<CommonParameters>]
+Get-Help [[-Name] <String>] [-Path <String>] [-Category <String[]>] [-Full] [-Component <String[]>]
+ [-Functionality <String[]>] [-Role <String[]>] [<CommonParameters>]
 ```
 
 ### DetailedView
 
 ```
-Get-Help [[-Name] <String>] [-Path <String>] [-Category <String[]>] [-Component <String[]>]
- [-Functionality <String[]>] [-Role <String[]>] [-Detailed] [<CommonParameters>]
+Get-Help [[-Name] <String>] -Detailed [-Path <String>] [-Category <String[]>]
+ [-Component <String[]>] [-Functionality <String[]>] [-Role <String[]>] [<CommonParameters>]
 ```
 
 ### Examples
 
 ```
-Get-Help [[-Name] <String>] [-Path <String>] [-Category <String[]>] [-Component <String[]>]
- [-Functionality <String[]>] [-Role <String[]>] [-Examples] [<CommonParameters>]
+Get-Help [[-Name] <String>] -Examples [-Path <String>] [-Category <String[]>]
+ [-Component <String[]>] [-Functionality <String[]>] [-Role <String[]>] [<CommonParameters>]
 ```
 
 ### Parameters
 
 ```
-Get-Help [[-Name] <String>] [-Path <String>] [-Category <String[]>] [-Component <String[]>]
- [-Functionality <String[]>] [-Role <String[]>] -Parameter <String> [<CommonParameters>]
+Get-Help [[-Name] <String>] -Parameter <String[]> [-Path <String>] [-Category <String[]>]
+ [-Component <String[]>] [-Functionality <String[]>] [-Role <String[]>] [<CommonParameters>]
 ```
 
 ### Online
 
 ```
-Get-Help [[-Name] <String>] [-Path <String>] [-Category <String[]>] [-Component <String[]>]
- [-Functionality <String[]>] [-Role <String[]>] [-Online] [<CommonParameters>]
+Get-Help [[-Name] <String>] -Online [-Path <String>] [-Category <String[]>] [-Component <String[]>]
+ [-Functionality <String[]>] [-Role <String[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 
-The `Get-Help` cmdlet displays information about PowerShell concepts and commands, including cmdlets, functions, CIM commands, workflows, providers, aliases and scripts.
+The `Get-Help` cmdlet displays information about PowerShell concepts and commands, including
+cmdlets, functions, Common Information Model (CIM) commands, workflows, providers, aliases, and
+scripts.
 
-To get help for a PowerShell command, type `Get-Help` followed by the command name, such as: `Get-Help Get-Process`.
+To get help for a PowerShell cmdlet, type `Get-Help` followed by the cmdlet name, such as:
+`Get-Help Get-Process`.
 
-Conceptual help topics in PowerShell begin with "about_", such as "about_Comparison_Operators".
-To see all "about_" topics, type `Get-Help about_*`.
-To see a particular topic, type `Get-Help about_<topic-name>`, such as `Get-Help about_Comparison_Operators`.
+Conceptual help articles in PowerShell begin with **about_**, such as
+**about_Comparison_Operators**. To see all **about_** articles, type `Get-Help about_*`. To see a
+particular article, type `Get-Help about_<article-name>`, such as
+`Get-Help about_Comparison_Operators`.
 
-To get help for a PowerShell provider, type `Get-Help` followed by the provider name.
-For example, to get help for the Certificate provider, type `Get-Help Certificate`.
+To get help for a PowerShell provider, type `Get-Help` followed by the provider name. For example,
+to get help for the Certificate provider, type `Get-Help Certificate`.
 
-In addition to `Get-Help`, you can also type `help` or `man`, which displays one screen of text at a time, or `<cmdlet-name> -?`, which is identical to `Get-Help` but works only for commands.
+You can also type `help` or `man`, which displays one screen of text at a time. Or,
+`<cmdlet-name> -?`, that is identical to `Get-Help`, but only works for cmdlets.
 
-`Get-Help` gets the help content that it displays from help files on your computer.
-Without the help files, `Get-Help` displays only basic information about commands.
-Some PowerShell modules come with help files.
-However, starting in Windows PowerShell 3.0, the modules that come with the Windows operating system do not include help files.
-To download or update the help files for a module in Windows PowerShell 3.0, use the `Update-Help` cmdlet.
+`Get-Help` gets the help content that it displays from help files on your computer. Without the help
+files, `Get-Help` displays only basic information about cmdlets. Some PowerShell modules include
+help files. Beginning in PowerShell 3.0, the modules that come with the Windows operating system
+don't include help files. To download or update the help files for a module in PowerShell 3.0, use
+the `Update-Help` cmdlet.
 
-You can also view the help topics for PowerShell online in the Microsoft Docs.
-To get the online version of a help topic, use the **Online** parameter, such as: `Get-Help Get-Process -Online`.
-To read all of the help topics, see [PowerShell Documentation](https://go.microsoft.com/fwlink/?LinkID=107116) in the Microsoft Docs.
+You can also view the PowerShell help documents online in the Microsoft Docs. To get the online
+version of a help file, use the **Online** parameter, such as: `Get-Help Get-Process -Online`. To
+read all the PowerShell documentation, see the Microsoft Docs [PowerShell Documentation](/powershell).
 
-If you type `Get-Help` followed by the exact name of a help topic, or by a word unique to a help topic, `Get-Help` displays the topic contents.
-If you enter a word or word pattern that appears in several help topic titles, `Get-Help` displays a list of the matching titles.
-If you enter a word that does not appear in any help topic titles, `Get-Help` displays a list of topics that include that word in their contents.
+If you type `Get-Help` followed by the exact name of a help article, or by a word unique to a help
+article, `Get-Help` displays the article's content. If you enter a word or word pattern that appears
+in several help article titles, `Get-Help` displays a list of the matching titles. If you enter a
+word that doesn't appear in any help article titles, `Get-Help` displays a list of articles that
+include that word in their contents.
 
-`Get-Help` can get help topics for all supported languages and locales.
-`Get-Help` first looks for help files in the locale set for Windows, then in the parent locale, such as "pt" for "pt-BR", and then in a fallback locale.
-Beginning in Windows PowerShell 3.0, if `Get-Help` does not find help in the fallback locale, it looks for help topics in English, "en-US", before it returns an error message or displaying auto-generated help.
+`Get-Help` can get help articles for all supported languages and locales. `Get-Help` first looks for
+help files in the locale set for Windows, then in the parent locale, such as **pt** for **pt-BR**,
+and then in a fallback locale. Beginning in PowerShell 3.0, if `Get-Help` doesn't find help in the
+fallback locale, it looks for help articles in English, **en-US**, before it returns an error
+message or displaying autogenerated help.
 
-For information about the symbols that `Get-Help` displays in the command syntax diagram, see [about_Command_Syntax](About/about_Command_Syntax.md).
-For information about parameter attributes, such as **Required** and **Position**, see [about_Parameters](About/about_Parameters.md).
+For information about the symbols that `Get-Help` displays in the command syntax diagram, see [about_Command_Syntax](./About/about_Command_Syntax.md).
+For information about parameter attributes, such as **Required** and **Position**, see [about_Parameters](./About/about_Parameters.md).
 
-**TROUBLESHOOTING NOTE**: In Windows PowerShell 3.0 and Windows PowerShell 4.0, **Get-Help** cannot find About topics in modules unless the module is imported into the current session.
-This is a known issue.
-To get About topics in a module, import the module, either by using the Import-Module cmdlet or by running a cmdlet in the module.
+>[!NOTE]
+> In PowerShell 3.0 and PowerShell 4.0, `Get-Help` can't find **About** articles in modules unless
+> the module is imported into the current session. This is a known issue. To get **About** articles
+> in a module, import the module, either by using the `Import-Module` cmdlet or by running a cmdlet
+> that's included in the module.
 
 ## EXAMPLES
 
-### Example 1: Display basic information about a command
+### Example 1: Display basic help information about a cmdlet
+
+These examples display basic help information about the `Format-Table` cmdlet.
 
 ```powershell
 Get-Help Format-Table
@@ -100,14 +114,14 @@ Get-Help -Name Format-Table
 Format-Table -?
 ```
 
-These commands display basic information about the `Format-Table` cmdlet.
+`Get-Help <cmdlet-name>` is the simplest and default syntax of `Get-Help` cmdlet. You can omit the
+**Name** parameter.
 
-`Get-Help <name>` is the simplest and default syntax of `Get-Help` cmdlet.
-You can omit the parameter name (**Name**).
-
-`<command-name> -?` works only for commands.
+The syntax `<cmdlet-name> -?` works only for cmdlets.
 
 ### Example 2: Display basic information one page at a time
+
+These examples display basic help information about the `Format-Table` cmdlet one page at a time.
 
 ```powershell
 help Format-Table
@@ -115,178 +129,195 @@ man Format-Table
 Get-Help Format-Table | Out-Host -Paging
 ```
 
-These commands display basic information about the `Format-Table` cmdlet one page at a time.
+`help` is a function that runs `Get-Help` cmdlet internally and displays the result one page at a
+time.
 
-The `help` is a function that runs `Get-Help` cmdlet internally and displays the result one page at a time.
+`man` is an alias for the `help` function.
 
-The `man` is an alias for the `help` function.
-
-The `Out-Host -Paging` receives the outputs of `Get-Help Format-Table` from pipeline and displays them one page at a time. For more information, see [Out-Host](./Out-Host.md).
+`Get-Help Format-Table` sends the object down the pipeline. `Out-Host -Paging` receives the output
+from the pipeline and displays it one page at a time. For more information, see [Out-Host](Out-Host.md).
 
 ### Example 3: Display more information for a cmdlet
+
+These examples display more detailed help information about the `Format-Table` cmdlet.
 
 ```powershell
 Get-Help Format-Table -Detailed
 Get-Help Format-Table -Full
 ```
 
-These commands display more information about the `Format-Table` cmdlet than usual.
+The **Detailed** parameter displays the help article's detailed view that includes parameter
+descriptions and examples.
 
-The **Detailed** parameter displays the detailed view of the help topic, which includes parameter descriptions and examples.
+The **Full** parameter displays the help article's full view that includes parameter descriptions,
+examples, input and output object types, and additional notes.
 
-The **Full** parameter displays the full view of the help topic, which includes parameter descriptions, examples, input and output object types, and additional notes.
-
-The **Detailed** and **Full** parameters are effective only for the commands whose help files are installed on the computer.
-They are not effective for the conceptual ("about_") help topics.
+The **Detailed** and **Full** parameters are effective only for the commands that have help files
+installed on the computer. The parameters aren't effective for the conceptual (**about_**) help
+articles.
 
 ### Example 4: Display selected parts of a cmdlet by using parameters
 
+These examples display selected portions of the `Format-Table` cmdlet help.
+
 ```powershell
 Get-Help Format-Table -Examples
-Get-Help Format-Table -Parameter GroupBy
 Get-Help Format-Table -Parameter *
+Get-Help Format-Table -Parameter GroupBy
 ```
 
-These commands display selected parts of the `Format-Table` cmdlet help.
+The **Examples** parameter displays the help file's **NAME** and **SYNOPSIS** sections, and all the
+Examples. You can't specify an Example number because the **Examples** parameter is a switch
+parameter.
 
-The **Examples** parameter displays only the NAME, SYNOPSIS, and all Examples.
-You can not specify an Example number because the **Examples** parameter is a switch parameter.
+The **Parameter** parameter displays only the descriptions of the specified parameters. If you
+specify only the asterisk (`*`) wildcard character, it displays the descriptions of all parameters.
+When **Parameter** specifies a parameter name such as **GroupBy**, information about that parameter
+is shown.
 
-The **Parameter** parameter displays only the descriptions of the specified parameters.
-If you specify only the wildcard character (`*`), it displays the descriptions of all parameters.
-
-These parameters are not effective for the conceptual ("about_") help topics.
+These parameters aren't effective for the conceptual (**about_**) help articles.
 
 ### Example 5: Display online version of help
+
+This example displays the online version of the help article for the `Format-Table` cmdlet in your
+default web browser.
 
 ```powershell
 Get-Help Format-Table -Online
 ```
 
-This command displays the online version of the help topic for the `Format-Table` cmdlet in your default web browser.
-
 ### Example 6: Display help about the help system
+
+The `Get-Help` cmdlet without parameters displays information about the PowerShell help system.
 
 ```powershell
 Get-Help
 ```
 
-The `Get-Help` cmdlet without parameters displays information about the PowerShell help system.
+### Example 7: Display available help articles
 
-### Example 7: Display available help topics
+This example displays a list of all help articles available on your computer.
 
 ```powershell
 Get-Help *
 ```
 
-This command displays a list of all help topics available on your system.
+### Example 8: Display a list of conceptual articles
 
-### Example 8: Display a list of conceptual topics
+This example displays a list of the conceptual articles included in PowerShell help. All these
+articles begin with the characters **about_**. To display a particular help file, type
+`Get-Help \<about_article-name\>`, for example, `Get-Help about_Signing`.
+
+Only the conceptual articles that have help files installed on your computer are displayed. For
+information about downloading and installing help files in PowerShell 3.0, see [Update-Help](Update-Help.md).
 
 ```powershell
 Get-Help about_*
 ```
 
-This command displays a list of the conceptual topics included in PowerShell help.
-All of these topics begin with the characters about_.
-To display a particular help file, type get-help \<topic-name\>, for example, `Get-Help about_Signing`.
-
-This command displays the conceptual topics only when the help files for those topics are installed on the computer.
-For information about downloading and installing help files in Windows PowerShell 3.0, see Update-Help.
-
 ### Example 9: Search for a word in cmdlet help
+
+This example shows how to search for a word in a cmdlet help article.
 
 ```powershell
 Get-Help Add-Member -Full | Out-String -Stream | Select-String -Pattern Clixml
 ```
 
-This example shows how to search for a word in particular cmdlet help topic.
-This command searches for the word Clixml in the full version of the help topic for the Add-Member cmdlet.
+```Output
+the Export-Clixml cmdlet to save the instance of the object, including the additional members...
+can use the Import-Clixml cmdlet to re-create the instance of the object from the information...
+Export-Clixml
+Import-Clixml
+```
 
-Because the **Get-Help** cmdlet generates a **MamlCommandHelpInfo** object, not a string, you have to use a cmdlet that transforms the help topic content into a string, such as Out-String or Out-File.
+`Get-Help` uses the **Full** parameter to get help information for `Add-Member`. The
+**MamlCommandHelpInfo** object is sent down the pipeline. `Out-String` uses the **Stream** parameter
+to convert the object into a string. `Select-String` uses the **Pattern** parameter to search the
+string for **Clixml**.
 
-### Example 10: Display a list of topics that include a word
+### Example 10: Display a list of articles that include a word
+
+This example displays a list of articles that include the word **remoting**.
+
+When you enter a word that doesn't appear in any article title, `Get-Help` displays a list of
+articles that include that word.
 
 ```powershell
-Get-Help remoting
+Get-Help -Name remoting
 ```
 
-This command displays a list of topics that include the word remoting.
-
-When you enter a word that does not appear in any topic title, **Get-Help** displays a list of topics that include that word.
-
-### Example 11: Display provider specific help
-
+```Output
+Name                              Category  Module                    Synopsis
+----                              --------  ------                    --------
+Install-PowerShellRemoting.ps1    External                            Install-PowerShellRemoting.ps1
+Disable-PSRemoting                Cmdlet    Microsoft.PowerShell.Core Prevents remote users...
+Enable-PSRemoting                 Cmdlet    Microsoft.PowerShell.Core Configures the computer...
 ```
-The first command uses the *Path* parameter of **Get-Help** to specify the provider path. This command can be entered at any path location.
-PS> Get-Help Get-Item -Path SQLSERVER:\DataCollection
 
+### Example 11: Display provider-specific help
+
+This example shows two ways of getting the provider-specific help for `Get-Item`. These commands get
+help that explains how to use the `Get-Item` cmdlet in the PowerShell SQL Server provider's
+**DataCollection** node.
+
+The first example uses the `Get-Help` **Path** parameter to specify the SQL Server provider's path.
+Because the provider's path is specified, you can run the command from any path location.
+
+The second example uses `Set-Location` to navigate to the SQL Server provider's path. From that
+location, the **Path** parameter isn't needed for `Get-Help` to get the provider-specific help.
+
+```powershell
+Get-Help Get-Item -Path SQLSERVER:\DataCollection
+```
+
+```Output
 NAME
 
     Get-Item
-
 
 SYNOPSIS
 
     Gets a collection of Server objects for the local computer and any computers
 
     to which you have made a SQL Server PowerShell connection.
-
     ...
+```
 
-The second command uses the Set-Location cmdlet (alias = "cd") to navigate to the provider path. From that location, even without the *Path* parameter, the **Get-Help** command gets the provider-specific help for the **Get-Item** cmdlet.
-PS> cd SQLSERVER:\DataCollection
+```powershell
+Set-Location SQLSERVER:\DataCollection
 SQLSERVER:\DataCollection> Get-Help Get-Item
+```
 
+```Output
 NAME
 
     Get-Item
-
 
 SYNOPSIS
 
     Gets a collection of Server objects for the local computer and any computers
 
     to which you have made a SQL Server PowerShell connection.
-
-    ...
-
-
-The third command shows that a **Get-Help** command in a file system path, and without the *Path* parameter, gets the standard help for the **Get-Item** cmdlet.
-PS> Get-Item
-
-NAME
-
-    Get-Item
-
-
-SYNOPSIS
-
-    Gets the item at the specified location.
     ...
 ```
-
-This example shows how to get help that explains how to use the Get-Item cmdlet in the **DataCollection** node of the PowerShellSQL Server provider.
-The example shows two ways of getting the provider-specific help for **Get-Item**.
-
-You can also get provider-specific help for cmdlets online in the section that describes the provider.
-For example, for provider-specific online help for the **New-Item** cmdlet in each WSMan provider path, see New-Item for ClientCertificatehttp://go.microsoft.com/fwlink/?LinkID=158676 in the TechNet library.
 
 ### Example 12: Display help for a script
 
-```powershell
-Get-Help C:\PS-Test\MyScript.ps1
-```
+This example gets help for the `MyScript.ps1 script`. For information about how to write help for
+your functions and scripts, see [about_Comment_Based_Help](./About/about_Comment_Based_Help.md).
 
-This command gets help for the MyScript.ps1 script.
-For information about how to write help for your functions and scripts, see [about_Comment_Based_Help](About/about_Comment_Based_Help.md).
+```powershell
+Get-Help -Name C:\PS-Test\MyScript.ps1
+```
 
 ## PARAMETERS
 
 ### -Category
 
-Displays help only for items in the specified category and their aliases.
-The acceptable values for this parameter are:
+Displays help only for items in the specified category and their aliases. Conceptual articles are in
+the **HelpFile** category.
+
+The acceptable values for this parameter are as follows:
 
 - Alias
 - Cmdlet
@@ -306,8 +337,6 @@ The acceptable values for this parameter are:
 - Class
 - Configuration
 
-Conceptual topics are in the HelpFile category.
-
 ```yaml
 Type: String[]
 Parameter Sets: (All)
@@ -323,10 +352,9 @@ Accept wildcard characters: False
 
 ### -Component
 
-Displays commands with the specified component value, such as "Exchange." Enter a component name.
-Wildcard characters are permitted.
-
-This parameter has no effect on displays of conceptual ("About_") help.
+Displays commands with the specified component value, such as **Exchange**. Enter a component name.
+Wildcard characters are permitted. This parameter has no effect on displays of conceptual
+(**About_**) help.
 
 ```yaml
 Type: String[]
@@ -337,15 +365,14 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -Detailed
 
-Adds parameter descriptions and examples to the basic help display.
-
-This parameter is effective only when help files are for the command are installed on the computer.
-It has no effect on displays of conceptual ("About_") help.
+Adds parameter descriptions and examples to the basic help display. This parameter is effective only
+when the help files are installed on the computer. It has no effect on displays of conceptual
+(**About_**) help.
 
 ```yaml
 Type: SwitchParameter
@@ -354,18 +381,18 @@ Aliases:
 
 Required: True
 Position: Named
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -Examples
 
-Displays only the name, synopsis, and examples.
-To display only the examples, type `(Get-Help \<cmdlet-name\>).Examples`.
+Displays only the name, synopsis, and examples. To display only the examples, type
+`(Get-Help \<cmdlet-name\>).Examples`.
 
-This parameter is effective only when help files are for the command are installed on the computer.
-It has no effect on displays of conceptual ("About_") help.
+This parameter is effective only when the help files are installed on the computer. It has no effect
+on displays of conceptual (**About_**) help.
 
 ```yaml
 Type: SwitchParameter
@@ -374,18 +401,18 @@ Aliases:
 
 Required: True
 Position: Named
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -Full
 
-Displays the whole help topic for a cmdlet.
-This includes parameter descriptions and attributes, examples, input and output object types, and additional notes.
+Displays the entire help article for a cmdlet. **Full** includes parameter descriptions and
+attributes, examples, input and output object types, and additional notes.
 
-This parameter is effective only when help files are for the command are installed on the computer.
-It has no effect on displays of conceptual ("About_") help.
+This parameter is effective only when the help files are installed on the computer. It has no effect
+on displays of conceptual (**About_**) help.
 
 ```yaml
 Type: SwitchParameter
@@ -394,18 +421,15 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -Functionality
 
-Displays help for items with the specified functionality.
-Enter the functionality.
-Wildcard characters are permitted.
-
-This parameter has no effect on displays of conceptual ("About_") help.
+Displays help for items with the specified functionality. Enter the functionality. Wildcard
+characters are permitted. This parameter has no effect on displays of conceptual (**About_**) help.
 
 ```yaml
 Type: String[]
@@ -416,22 +440,29 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -Name
 
-Gets help about the specified command or concept.
-Enter the name of a cmdlet, function, provider, script, or workflow, such as `Get-Member`, a conceptual topic name, such as `about_Objects`, or an alias, such as `ls`.
-Wildcard characters are permitted in cmdlet and provider names, but you cannot use wildcard characters to find the names of function help and script help topics.
+Gets help about the specified command or concept. Enter the name of a cmdlet, function, provider,
+script, or workflow, such as `Get-Member`, a conceptual article name, such as `about_Objects`, or an
+alias, such as `ls`. Wildcard characters are permitted in cmdlet and provider names, but you can't
+use wildcard characters to find the names of function help and script help articles.
 
-To get help for a script that is not located in a path that is listed in the Path environment variable, type the path and file name of the script.
+To get help for a script that isn't located in a path that's listed in the `$env:Path` environment
+variable, type the script's path and file name.
 
-If you enter the exact name of a help topic, **Get-Help** displays the topic contents.
-If you enter a word or word pattern that appears in several help topic titles, **Get-Help** displays a list of the matching titles.
-If you enter a word that does not match any help topic titles, **Get-Help** displays a list of topics that include that word in their contents.
+If you enter the exact name of a help article, `Get-Help` displays the article contents.
 
-The names of conceptual topics, such as `about_Objects`, must be entered in English, even in non-English versions of PowerShell.
+If you enter a word or word pattern that appears in several help article titles, `Get-Help` displays
+a list of the matching titles.
+
+If you enter a word that doesn't match any help article titles, `Get-Help` displays a list of
+articles that include that word in their contents.
+
+The names of conceptual articles, such as `about_Objects`, must be entered in English, even in
+non-English versions of PowerShell.
 
 ```yaml
 Type: String
@@ -442,16 +473,18 @@ Required: False
 Position: 0
 Default value: None
 Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -Online
 
-Displays the online version of a help topic in the default Internet browser.
-This parameter is valid only for cmdlet, function, workflow and script help topics.
-You cannot use the *Online* parameter in **Get-Help** commands in a remote session.
+Displays the online version of a help article in the default browser. This parameter is valid only
+for cmdlet, function, workflow, and script help articles. You can't use the **Online** parameter
+with `Get-Help` in a remote session.
 
-For information about supporting this feature in help topics that you write, see [about_Comment_Based_Help](About/about_Comment_Based_Help.md), and [Supporting Online Help](/powershell/developer/module/supporting-online-help), and [How to Write Cmdlet Help](https://go.microsoft.com/fwlink/?LinkID=123415) in the Microsoft Docs.
+For information about supporting this feature in help articles that you write, see [about_Comment_Based_Help](./About/about_Comment_Based_Help.md),
+and [Supporting Online Help](/powershell/developer/module/supporting-online-help), and
+[Writing Help for PowerShell Cmdlets](/powershell/developer/help/writing-help-for-windows-powershell-cmdlets).
 
 ```yaml
 Type: SwitchParameter
@@ -460,17 +493,15 @@ Aliases:
 
 Required: True
 Position: Named
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -Parameter
 
-Displays only the detailed descriptions of the specified parameters.
-Wildcards are permitted.
-
-This parameter has no effect on displays of conceptual ("About_") help.
+Displays only the detailed descriptions of the specified parameters. Wildcards are permitted. This
+parameter has no effect on displays of conceptual (**About_**) help.
 
 ```yaml
 Type: String
@@ -481,28 +512,26 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -Path
 
-Gets help that explains how the cmdlet works in the specified provider path.
-Enter a PowerShell provider path.
+Gets help that explains how the cmdlet works in the specified provider path. Enter a PowerShell
+provider path.
 
-This parameter gets a customized version of a cmdlet help topic that explains
-how the cmdlet works in the specified PowerShell provider path. This parameter
-is effective only for help about a provider cmdlet and only when the provider
-includes a custom version of the provider cmdlet help topic in its help file.
-To use this parameter, install the help file for the module that includes the
-provider.
+This parameter gets a customized version of a cmdlet help article that explains how the cmdlet works
+in the specified PowerShell provider path. This parameter is effective only for help about a
+provider cmdlet and only when the provider includes a custom version of the provider cmdlet help
+article in its help file. To use this parameter, install the help file for the module that includes
+the provider.
 
-To see the custom cmdlet help for a provider path, go to the provider path
-location and enter a **Get-Help** command or, from any path location, use the
-*Path* parameter of **Get-Help** to specify the provider path. You can also
-find custom cmdlet help online in the provider help section of the help
-topics.
+To see the custom cmdlet help for a provider path, go to the provider path location and enter a
+`Get-Help` command or, from any path location, use the **Path** parameter of `Get-Help` to specify
+the provider path. You can also find custom cmdlet help online in the provider help section of the
+help articles.
 
-For more information about PowerShell providers, see [about_Providers](About/about_Providers.md).
+For more information about PowerShell providers, see [about_Providers](./About/about_Providers.md).
 
 ```yaml
 Type: String
@@ -518,13 +547,12 @@ Accept wildcard characters: False
 
 ### -Role
 
-Displays help customized for the specified user role.
-Enter a role.
-Wildcard characters are permitted.
+Displays help customized for the specified user role. Enter a role. Wildcard characters are
+permitted.
 
-Enter the role that the user plays in an organization.
-Some cmdlets display different text in their help files based on the value of this parameter.
-This parameter has no effect on help for the core cmdlets.
+Enter the role that the user plays in an organization. Some cmdlets display different text in their
+help files based on the value of this parameter. This parameter has no effect on help for the core
+cmdlets.
 
 ```yaml
 Type: String[]
@@ -535,63 +563,90 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### CommonParameters
 
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+-InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
+-WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### None
 
-You cannot pipe objects to this cmdlet.
+You can't send objects down the pipeline to `Get-Help`.
 
 ## OUTPUTS
 
 ### ExtendedCmdletHelpInfo
 
-If you run **Get-Help** on a command that does not have a help file, **Get-Help** returns an ExtendedCmdletHelpInfo object that represents autogenerated help.
+If you run `Get-Help` on a command that doesn't have a help file, `Get-Help` returns an
+**ExtendedCmdletHelpInfo** object that represents autogenerated help.
 
 ### System.String
 
-If you get a conceptual help topic, **Get-Help** returns it as a string.
+If you get a conceptual help article, `Get-Help` returns it as a string.
 
 ### MamlCommandHelpInfo
 
-If you get a command that has a help file, **Get-Help** returns a **MamlCommandHelpInfo** object.
+If you get a command that has a help file, `Get-Help` returns a **MamlCommandHelpInfo** object.
 
 ## NOTES
 
-* Windows PowerShell 3.0 does not include help files. To download and install the help files that **Get-Help** reads, use the **Update-Help** cmdlet. You can use the **Update-Help** cmdlet to download and install help files for the core commands that come with PowerShell and for any modules that you install. You can also use it to update the help files so that the help on your computer is never outdated.
+PowerShell 3.0 doesn't include help files. To download and install the help files that `Get-Help`
+reads, use the `Update-Help` cmdlet. You can use the `Update-Help` cmdlet to download and install
+help files for the core commands that come with PowerShell and for any modules that you install. You
+can also use it to update the help files so that the help on your computer is never outdated.
 
-  You can also read the help topics about the commands that come with PowerShell online starting at [Getting Started with Windows PowerShell](/powershell/scripting/getting-started/getting-started-with-windows-powershell).
+You can also read the help articles about the commands that come with PowerShell online starting at
+[Getting Started with Windows PowerShell](/powershell/scripting/getting-started/getting-started-with-windows-powershell).
 
-* **Get-Help** displays help in the locale set for the Windows operating system or in the fallback language for that locale. If you do not have help files for the primary or fallback locale, **Get-Help** behaves as if there are no help files on the computer. To get help for a different locale, use Region and Language in Control Panel to change the settings.
-* The full view of help includes a table of information about the parameters. The table includes the following fields:
+`Get-Help` displays help in the locale set for the Windows operating system or in the fallback
+language for that locale. If you don't have help files for the primary or fallback locale,
+`Get-Help` behaves as if there are no help files on the computer. To get help for a different
+locale, use **Region** and **Language** in Control Panel to change the settings. On Windows 10,
+**Settings**, **Time & Language**.
 
-  - Required. Indicates whether the parameter is required (true) or optional (false).
+The full view of help includes a table of information about the parameters. The table includes the
+following fields:
 
-  - Position. Indicates whether the parameter is named or positional (numbered). Positional parameters must appear in a specified place in the command.
+- **Required**. Indicates whether the parameter is required (true) or optional (false).
 
-  - "Named" indicates that the parameter name is required, but that the parameter can appear anywhere in the command.
+- **Position**. Indicates whether the parameter is named or positional (numeric). Positional
+  parameters must appear in a specified place in the command.
 
-  - \<Number\> indicates that the parameter name is optional, but when the name is omitted, the parameter must be in the place specified by the number.
+- **Named** indicates that the parameter name is required, but that the parameter can appear
+  anywhere in the command.
 
-    For example, "2" indicates that when the parameter name is omitted, the parameter must be the second (2) or only unnamed parameter in the command. When the parameter name is used, the parameter can appear anywhere in the command.
+- **Numeric** indicates that the parameter name is optional, but when the name is omitted, the
+  parameter must be in the place specified by the number. For example, `2` indicates that when the
+  parameter name is omitted, the parameter must be the second or only unnamed parameter in the
+  command. When the parameter name is used, the parameter can appear anywhere in the command.
 
-  - Default value. The parameter value that PowerShell uses if you do not include the parameter in the command.
+- **Default value**. The parameter value or default behavior that PowerShell uses if you don't
+  include the parameter in the command.
 
-  - Accepts pipeline input. Indicates whether you can (true) or cannot (false) send objects to the parameter through a pipeline.
-"By Property Name" means that the pipelined object must have a property that has the same name as the parameter name.
+- Accepts pipeline input. Indicates whether you can (true) or can't (false) send objects to the
+  parameter through a pipeline. **By Property Name** means that the pipelined object must have a
+  property that has the same name as the parameter name.
 
-  - Accepts wildcard characters. Indicates whether the value of a parameter can include wildcard characters, such as * and ?.
+- **Accepts wildcard characters**. Indicates whether the value of a parameter can include wildcard
+  characters, such as an asterisk (`*`) or question mark (`?`).
 
 ## RELATED LINKS
 
-[Updatable Help Status Table (https://go.microsoft.com/fwlink/?LinkID=270007)](https://go.microsoft.com/fwlink/?LinkID=270007)
-
 [about_Command_Syntax](About/about_Command_Syntax.md)
 
+[about_Comment_Based_Help](./About/about_Comment_Based_Help.md)
+
 [Get-Command](Get-Command.md)
+
+[Supporting Updatable Help](/powershell/developer/module/supporting-updatable-help)
+
+[Update-Help](Update-Help.md)
+
+[Writing Comment-Based Help Topics](/powershell/developer/help/writing-comment-based-help-topics)
+
+[Writing Help for PowerShell Cmdlets](/powershell/developer/help/writing-help-for-windows-powershell-cmdlets)
