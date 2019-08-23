@@ -51,13 +51,20 @@ When `Set-StrictMode` is off, PowerShell has the following behaviors:
 ### Example 1: Turn on strict mode as version 1.0
 
 ```powershell
-Set-StrictMode -Version 1.0
+# Strict mode is off by default.
 $a -gt 5
 ```
 
 ```Output
 False
+```
 
+```powershell
+Set-StrictMode -Version 1.0
+$a -gt 5
+```
+
+```Output
 The variable $a cannot be retrieved because it has not been set yet.
 
 At line:1 char:3
@@ -66,15 +73,11 @@ At line:1 char:3
 + FullyQualifiedErrorId : VariableIsUndefined
 ```
 
-This command turns strict mode on and sets it to version 1.0. As a result, attempts to reference
-variables that are not initialized fail.
-
-The sample output shows the effect of version 1.0 strict mode.
+With strict mode set to version 1.0, attempts to reference variables that are not initialized fail.
 
 ### Example 2: Turn on strict mode as version 2.0
 
 ```powershell
-# Set-StrictMode -Version 2.0
 # Strict mode is off by default.
 function add ($a, $b) {
     '$a = ' + $a
