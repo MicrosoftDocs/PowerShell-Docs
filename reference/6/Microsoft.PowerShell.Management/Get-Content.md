@@ -18,18 +18,18 @@ Gets the content of the item at the specified location.
 
 ```
 Get-Content [-ReadCount <Int64>] [-TotalCount <Int64>] [-Tail <Int32>] [-Path] <String[]>
-[-Filter <String>] [-Include <String[]>] [-Exclude <String[]>] [-Force] [-Credential <PSCredential>]
-[-Delimiter <String>] [-Wait] [-Raw] [-Encoding <Encoding>] [-AsByteStream] [-Stream <String>]
-[<CommonParameters>]
+ [-Filter <String>] [-Include <String[]>] [-Exclude <String[]>] [-Force] [-Credential <PSCredential>]
+ [-Delimiter <String>] [-Wait] [-Raw] [-Encoding <Encoding>] [-AsByteStream] [-Stream <String>]
+ [<CommonParameters>]
 ```
 
 ### LiteralPath
 
 ```
 Get-Content [-ReadCount <Int64>] [-TotalCount <Int64>] [-Tail <Int32>] -LiteralPath <String[]>
-[-Filter <String>] [-Include <String[]>] [-Exclude <String[]>] [-Force] [-Credential <PSCredential>]
-[-Delimiter <String>] [-Wait] [-Raw] [-Encoding <Encoding>] [-AsByteStream] [-Stream <String>]
-[<CommonParameters>]
+ [-Filter <String>] [-Include <String[]>] [-Exclude <String[]>] [-Force] [-Credential <PSCredential>]
+ [-Delimiter <String>] [-Wait] [-Raw] [-Encoding <Encoding>] [-AsByteStream] [-Stream <String>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -110,7 +110,7 @@ This command gets the first line and last line of content from a file. This exam
 `LineNumbers.txt` file that was created in Example 1.
 
 ```powershell
-Get-Item -Path .\LineNumbers.txt Get-Content -Tail 1
+Get-Item -Path .\LineNumbers.txt | Get-Content -Tail 1
 ```
 
 ```Output
@@ -255,10 +255,9 @@ PowerShell as `[System.Object[]]`.
 
 ### -Path
 
-Specifies the path to an item where `Get-Content` gets the content.
-Wildcard characters are permitted.
-The paths must be paths to items, not to containers.
-For example, you must specify a path to one or more files, not a path to a directory.
+Specifies the path to an item where `Get-Content` gets the content. Wildcard characters are
+permitted. The paths must be paths to items, not to containers. For example, you must specify a path
+to one or more files, not a path to a directory.
 
 ```yaml
 Type: String[]
