@@ -3,7 +3,7 @@ external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 04/23/2019
+ms.date: 08/26/2019
 online version: https://go.microsoft.com/fwlink/?linkid=294008
 schema: 2.0.0
 title: Select-String
@@ -40,6 +40,8 @@ Select-String [-Pattern] <string[]> -LiteralPath <string[]> [-SimpleMatch] [-Cas
 ```
 
 ## DESCRIPTION
+
+The **sls** alias for the `Select-String`.
 
 The `Select-String` cmdlet searches for text and text patterns in input strings and files. You can
 use `Select-String` similar to **grep** in UNIX or **findstr.exe** in Windows.
@@ -318,7 +320,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -334,7 +336,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -477,7 +479,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: All matches
+Default value: False (All matches)
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -493,7 +495,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: Match
+Default value: False (Match)
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -549,7 +551,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: Returns matches
+Default value: False (Returns matches)
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -567,7 +569,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: Regular expression match
+Default value: False (Regular expression match)
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -615,6 +617,11 @@ the **Quiet** parameter, the output is a Boolean value indicating whether the pa
 `Select-String` is similar to **grep** in UNIX or **findstr.exe** in Windows.
 
 The **sls** alias for the `Select-String` cmdlet was introduced in PowerShell 3.0.
+
+> [!NOTE]
+> According to [Approved Verbs for PowerShell Commands](/powershell/developer/cmdlet/approved-verbs-for-windows-powershell-commands),
+> the official alias prefix for `Select-*` cmdlets is `sc`, not `sl`. Therefore, the proper alias
+> for `Select-String` should be `scs`, not `sls`. This is an exception to this rule.
 
 To use `Select-String`, type the text that you want to find as the value of the **Pattern**
 parameter. To specify the text to be searched, use the following criteria:
