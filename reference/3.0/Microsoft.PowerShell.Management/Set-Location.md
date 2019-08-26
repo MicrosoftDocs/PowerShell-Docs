@@ -115,9 +115,8 @@ Accept wildcard characters: False
 
 ### -PassThru
 
-Returns a **System.Management.Automation.PathInfo** object that represents the
-location.
-By default, this cmdlet does not generate any output.
+Returns a **PathInfo** object that represents the location. By default, this cmdlet does not
+generate any output.
 
 ```yaml
 Type: SwitchParameter
@@ -133,8 +132,9 @@ Accept wildcard characters: False
 
 ### -Path
 
-Specify the path of a new working location. If no path is provided, `Set-Location` will default to
-the current user's home directory.
+Specify the path of a new working location. If no path is provided, `Set-Location` defaults to the
+current user's home directory. When wildcards are used, the cmdlet chooses the first path that
+matches the wildcard pattern.
 
 ```yaml
 Type: String
@@ -145,7 +145,7 @@ Required: False
 Position: 0
 Default value: None
 Accept pipeline input: True (ByPropertyName, ByValue)
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -StackName
@@ -252,5 +252,3 @@ representing the new stack context.
 [Pop-Location](Pop-Location.md)
 
 [Push-Location](Push-Location.md)
-
-[about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md)
