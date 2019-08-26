@@ -12,8 +12,8 @@ title: Show-Markdown
 # Show-Markdown
 
 ## SYNOPSIS
-Shows a markdown file or string in the console in a friendly way using VT100 escape sequences
-or in a browser using HTML.
+Shows a Markdown file or string in the console in a friendly way using VT100 escape sequences or in
+a browser using HTML.
 
 ## SYNTAX
 
@@ -37,53 +37,54 @@ Show-Markdown -LiteralPath <String[]> [-UseBrowser] [<CommonParameters>]
 
 ## DESCRIPTION
 
-The `Show-Markdown` cmdlet is used to render markdown in a human readable format either in a terminal
-or in a browser.
+The `Show-Markdown` cmdlet is used to render Markdown in a human readable format either in a
+terminal or in a browser.
 
-`Show-Markdown` can return a string that includes the VT100 escape sequences which the
-terminal renders (if it supports VT100 escape sequences). This is primarily used for viewing
-markdown files in a terminal. You can also get this string via the `ConvertFrom-Markdown` by
-specifying the `-AsVT100EncodedString` parameter.
+`Show-Markdown` can return a string that includes the VT100 escape sequences which the terminal
+renders (if it supports VT100 escape sequences). This is primarily used for viewing Markdown files
+in a terminal. You can also get this string via the `ConvertFrom-Markdown` by specifying the
+**AsVT100EncodedString** parameter.
 
-`Show-Markdown` also has the ability to open a browser and show you a rendered version of the markdown.
-It renders the markdown by turning it into HTML and opening the HTML file in your default browser.
+`Show-Markdown` also has the ability to open a browser and show you a rendered version of the
+Markdown. It renders the Markdown by turning it into HTML and opening the HTML file in your default
+browser.
 
-You can change how `Show-Markdown` renders markdown in a terminal by using `Set-MarkdownOption`.
+You can change how `Show-Markdown` renders Markdown in a terminal by using `Set-MarkdownOption`.
 
 ## EXAMPLES
 
 ### Example 1: Simple example specifying a path
 
 ```powershell
-PS > Show-Markdown -Path ./README.md
+Show-Markdown -Path ./README.md
 ```
 
 ### Example 2: Simple example specifying a string
 
 ```powershell
-PS > "
+@"
 # Show-Markdown
 
 ## Markdown
 
-You can now interact with markdown via PowerShell!
+You can now interact with Markdown via PowerShell!
 
 *stars*
 __underlines__
-" | Show-Markdown
+"@ | Show-Markdown
 ```
 
-### Example 2: Opening markdown in a browser
+### Example 2: Opening Markdown in a browser
 
 ```powershell
-PS > Show-Markdown -Path ./README.md -UseBrowser
+Show-Markdown -Path ./README.md -UseBrowser
 ```
 
 ## PARAMETERS
 
 ### -InputObject
 
-A markdown string that will be shown in the terminal. If you do not pass in a supported format,
+A Markdown string that will be shown in the terminal. If you do not pass in a supported format,
 `Show-Markdown` will emit an error.
 
 ```yaml
@@ -100,12 +101,10 @@ Accept wildcard characters: False
 
 ### -LiteralPath
 
-Specifies the path to a markdown file. Unlike the Path parameter,
-the value of LiteralPath is used exactly as it is typed.
-No characters are interpreted as wildcards.
-If the path includes escape characters,
-enclose it in single quotation marks.
-Single quotation marks tell PowerShell not to interpret any characters as escape sequences.
+Specifies the path to a Markdown file. Unlike the Path parameter, the value of LiteralPath is used
+exactly as it is typed. No characters are interpreted as wildcards. If the path includes escape
+characters, enclose it in single quotation marks. Single quotation marks tell PowerShell not to
+interpret any characters as escape sequences.
 
 ```yaml
 Type: String[]
@@ -121,7 +120,7 @@ Accept wildcard characters: False
 
 ### -Path
 
-Specifies the path to a markdown file that will be rendered.
+Specifies the path to a Markdown file to be rendered.
 
 ```yaml
 Type: String[]
@@ -137,7 +136,7 @@ Accept wildcard characters: False
 
 ### -UseBrowser
 
-Compiles the markdown input as HTML and opens it in your default browser.
+Compiles the Markdown input as HTML and opens it in your default browser.
 
 ```yaml
 Type: SwitchParameter
@@ -146,7 +145,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -155,7 +154,7 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+-WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -171,4 +170,4 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## RELATED LINKS
 
-[https://go.microsoft.com/fwlink/?linkid=2006266](https://go.microsoft.com/fwlink/?linkid=2006266)
+[ConvertFrom-Markdown](ConvertFrom-Markdown.md)
