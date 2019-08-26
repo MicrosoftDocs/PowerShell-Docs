@@ -3,7 +3,7 @@ external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 2/8/2019
+ms.date: 08/26/2019
 online version: https://go.microsoft.com/fwlink/?linkid=2097119
 schema: 2.0.0
 title: Select-String
@@ -19,28 +19,54 @@ Finds text in strings and files.
 ### File (Default)
 
 ```
-Select-String [-Pattern] <string[]> [-Path] <string[]> [-SimpleMatch] [-CaseSensitive] [-Quiet]
-[-List] [-Include <string[]>] [-Exclude <string[]>] [-NotMatch] [-AllMatches] [-Encoding <Encoding>]
-[-Context <int[]>] [<CommonParameters>]
+Select-String [-Pattern] <String[]> [-Path] <String[]> [-SimpleMatch] [-CaseSensitive] [-Quiet]
+ [-List] [-Include <String[]>] [-Exclude <String[]>] [-NotMatch] [-AllMatches]
+ [-Encoding <Encoding>] [-Context <Int32[]>]  [<CommonParameters>]
+```
+
+### ObjectRaw
+
+```
+Select-String -InputObject <PSObject> [-Pattern] <String[]> -Raw [-SimpleMatch] [-CaseSensitive]
+ [-List] [-Include <String[]>] [-Exclude <String[]>] [-NotMatch] [-AllMatches]
+ [-Encoding <Encoding>] [-Context <Int32[]>]  [<CommonParameters>]
 ```
 
 ### Object
 
 ```
-Select-String [-Pattern] <string[]> -InputObject <psobject> [-SimpleMatch] [-CaseSensitive] [-Quiet]
-[-List] [-Include <string[]>] [-Exclude <string[]>] [-NotMatch] [-AllMatches] [-Encoding <Encoding>]
-[-Context <int[]>] [<CommonParameters>]
+Select-String -InputObject <PSObject> [-Pattern] <String[]> [-SimpleMatch] [-CaseSensitive] [-Quiet]
+ [-List] [-Include <String[]>] [-Exclude <String[]>] [-NotMatch] [-AllMatches]
+ [-Encoding <Encoding>] [-Context <Int32[]>]  [<CommonParameters>]
+```
+
+### FileRaw
+
+```
+Select-String [-Pattern] <String[]> [-Path] <String[]> -Raw [-SimpleMatch] [-CaseSensitive] [-List]
+ [-Include <String[]>] [-Exclude <String[]>] [-NotMatch] [-AllMatches] [-Encoding <Encoding>]
+ [-Context <Int32[]>]  [<CommonParameters>]
+```
+
+### LiteralFileRaw
+
+```
+Select-String [-Pattern] <String[]> -LiteralPath <String[]> -Raw [-SimpleMatch] [-CaseSensitive]
+ [-List] [-Include <String[]>] [-Exclude <String[]>] [-NotMatch] [-AllMatches]
+ [-Encoding <Encoding>] [-Context <Int32[]>]  [<CommonParameters>]
 ```
 
 ### LiteralFile
 
 ```
-Select-String [-Pattern] <string[]> -LiteralPath <string[]> [-SimpleMatch] [-CaseSensitive] [-Quiet]
-[-List] [-Include <string[]>] [-Exclude <string[]>] [-NotMatch] [-AllMatches] [-Encoding <Encoding>]
-[-Context <int[]>] [<CommonParameters>]
+Select-String [-Pattern] <String[]> -LiteralPath <String[]> [-SimpleMatch] [-CaseSensitive] [-Quiet]
+ [-List] [-Include <String[]>] [-Exclude <String[]>] [-NotMatch] [-AllMatches]
+ [-Encoding <Encoding>] [-Context <Int32[]>]  [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+
+The **sls** alias for the `Select-String`.
 
 The `Select-String` cmdlet searches for text and text patterns in input strings and files. You can
 use `Select-String` similar to **grep** in UNIX or **findstr.exe** in Windows.
@@ -54,10 +80,12 @@ match is found.
 `Select-String` uses regular expression matching, but it can also perform a match that searches the
 input for the text that you specify.
 
-`Select-String` can display all of the text matches or stop after the first match in each input
-file. `Select-String` can be used to display all text that does not match the specified pattern. You
-can also specify that `Select-String` should expect a particular character encoding, such as when
-you are searching files of Unicode text.
+`Select-String` can display all the text matches or stop after the first match in each input
+file. `Select-String` can be used to display all text that does not match the specified pattern.
+
+You can also specify that `Select-String` should expect a particular character encoding, such as
+when you are searching files of Unicode text. `Select-String` uses the byte-order-mark (BOM) to
+detect the encoding format of the file. If the file has no BOM, it assumes the encoding is UTF8.
 
 ## EXAMPLES
 
@@ -318,7 +346,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -334,7 +362,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -461,7 +489,7 @@ finds the search text in any string.
 
 ```yaml
 Type: PSObject
-Parameter Sets: Object
+Parameter Sets: ObjectRaw, Object
 Aliases:
 
 Required: True
@@ -483,7 +511,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -497,8 +525,8 @@ interpret any characters as escape sequences. For more information, see [about_Q
 
 ```yaml
 Type: String[]
-Parameter Sets: LiteralFile
-Aliases: PSPath
+Parameter Sets: LiteralFileRaw, LiteralFile
+Aliases: PSPath, LP
 
 Required: True
 Position: Named
@@ -518,7 +546,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -533,7 +561,7 @@ directory, the command fails.
 
 ```yaml
 Type: String[]
-Parameter Sets: File
+Parameter Sets: File, FileRaw
 Aliases:
 
 Required: True
@@ -569,12 +597,12 @@ object. The value is True if the pattern is found; otherwise the value is False.
 
 ```yaml
 Type: SwitchParameter
-Parameter Sets: (All)
+Parameter Sets: File, Object, LiteralFile
 Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -592,7 +620,25 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Raw
+
+Causes the cmdlet to output only the matching strings, rather than **MatchInfo** objects. This is
+the results in behavior that is the most similar to the Unix **grep** or Windows **findstr.exe**
+commands.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: ObjectRaw, FileRaw, LiteralFileRaw
+Aliases:
+
+Required: True
+Position: Named
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -611,16 +657,22 @@ You can pipe any object that has a **ToString** method to `Select-String`.
 
 ## OUTPUTS
 
-### Microsoft.PowerShell.Commands.MatchInfo or System.Boolean
+### Microsoft.PowerShell.Commands.MatchInfo, System.Boolean, System.String
 
 By default, the output is a set of **MatchInfo** objects with one for each match found. If you use
-the **Quiet** parameter, the output is a Boolean value indicating whether the pattern was found.
+the **Quiet** parameter, the output is a **Boolean** value indicating whether the pattern was found.
+If you use the **Raw** parameter, the output is a set of **String** objects that match the pattern.
 
 ## NOTES
 
 `Select-String` is similar to **grep** in UNIX or **findstr.exe** in Windows.
 
 The **sls** alias for the `Select-String` cmdlet was introduced in PowerShell 3.0.
+
+> [!NOTE]
+> According to [Approved Verbs for PowerShell Commands](/powershell/developer/cmdlet/approved-verbs-for-windows-powershell-commands),
+> the official alias prefix for `Select-*` cmdlets is `sc`, not `sl`. Therefore, the proper alias
+> for `Select-String` should be `scs`, not `sls`. This is an exception to this rule.
 
 To use `Select-String`, type the text that you want to find as the value of the **Pattern**
 parameter. To specify the text to be searched, use the following criteria:
