@@ -110,8 +110,8 @@ The `$Source` variable stores the source code for the class. The type has a stat
 The `Add-Type` cmdlet adds the class to the session. Because it's using inline source code, the
 command uses the **TypeDefinition** parameter to specify the code in the `$Source` variable.
 
-The `Add` static method of the **BasicTest** class uses the double-colon characters (::) to specify
-a static member of the class. The integers are added and the sum is displayed.
+The `Add` static method of the **BasicTest** class uses the double-colon characters (`::`) to
+specify a static member of the class. The integers are added and the sum is displayed.
 
 The `New-Object` cmdlet instantiates an instance of the **BasicTest** class. It saves the new object
 in the `$BasicTestObject` variable.
@@ -272,18 +272,30 @@ Hello, World
 defined in the file. The `SayHello` function is called as a static method of the **VBFromFile**
 class.
 
-### Example 6: Add a method from inline JScript
+### Example 6: Add a class with JScript.NET
 
-This example uses the `Add-Type` cmdlet to add a method from inline **JScript** code to the
-PowerShell session.
+This example uses JScript.NET to create a new class, **FRectangle**, in your PowerShell session.
 
 ```powershell
-Add-Type -MemberDefinition $JsMethod -Name "PrintInfo" -Language JScript
+Add-Type @'
+ class FRectangle {
+   var Length : double;
+   var Height : double;
+   function Perimeter() : double {
+       return (Length + Height) * 2; }
+   function Area() : double {
+       return Length * Height;  } }
+'@ -Language JScript
+
+$rect = [FRectangle]::new()
+$rect
 ```
 
-`Add-Type` uses the **MemberDefinition** parameter to submit source code stored in the `$JsMethod`
-variable. The **Name** parameter specifies a name for the class that `Add-Type` creates for the
-method. The **Language** parameter specifies the **JScript** language.
+```Output
+Length Height
+------ ------
+     0      0
+```
 
 ### Example 7: Add an F# compiler
 
@@ -375,7 +387,7 @@ revision.
 
 This parameter allows you to direct the compiler to generate an executable file, embed resources, or
 set command-line options, such as the `/unsafe` option. This parameter implements the
-**CompilerParameters** class (**System.CodeDom.Compiler.CompilerParameters**).
+**CompilerParameters** class, **System.CodeDom.Compiler.CompilerParameters**.
 
 You can't use the **CompilerParameters** and **ReferencedAssemblies** parameters in the same
 command.

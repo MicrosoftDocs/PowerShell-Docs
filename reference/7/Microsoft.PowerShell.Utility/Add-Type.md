@@ -108,8 +108,8 @@ The `$Source` variable stores the source code for the class. The type has a stat
 The `Add-Type` cmdlet adds the class to the session. Because it's using inline source code, the
 command uses the **TypeDefinition** parameter to specify the code in the `$Source` variable.
 
-The `Add` static method of the **BasicTest** class uses the double-colon characters (::) to specify
-a static member of the class. The integers are added and the sum is displayed.
+The `Add` static method of the **BasicTest** class uses the double-colon characters (`::`) to
+specify a static member of the class. The integers are added and the sum is displayed.
 
 The `New-Object` cmdlet instantiates an instance of the **BasicTest** class. It saves the new object
 in the `$BasicTestObject` variable.
