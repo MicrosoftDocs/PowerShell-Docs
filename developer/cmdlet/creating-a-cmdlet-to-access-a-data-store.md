@@ -1,13 +1,11 @@
 ---
-title: "Creating a Cmdlet to Access a Data Store | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: ea15e00e-20dc-4209-9e97-9ffd763e5d97
-caps.latest.revision: 8
+title: Creating a Cmdlet to Access a Data Store
+ms.custom:
+ms.date: 09/13/2016
+ms.reviewer:
+ms.suite:
+ms.tgt_pltfrm:
+ms.topic: article
 ---
 # Creating a Cmdlet to Access a Data Store
 
@@ -373,7 +371,7 @@ This sample Select-Str cmdlet uses the [System.Management.Automation.Providerint
 
 ## Code Sample
 
-The following code shows the implementation of this version of this Select-Str cmdlet. Note that this code includes the cmdlet class, private methods used by the cmdlet, and the Windows PowerShell snap-in code used to register the cmdlet. For more information about registering the cmdlet, see [Building the Cmdlet](#Defining-the-Cmdlet-Class).
+The following code shows the implementation of this version of this Select-Str cmdlet. Note that this code includes the cmdlet class, private methods used by the cmdlet, and the Windows PowerShell snap-in code used to register the cmdlet. For more information about registering the cmdlet, see [Building the Cmdlet](#defining-the-cmdlet-class).
 
 ```csharp
 //
