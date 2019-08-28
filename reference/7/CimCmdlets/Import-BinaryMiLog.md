@@ -38,7 +38,7 @@ Import-BinaryMiLog -Path "Processes.bmil"
 ### -Path
 
 Specifies the path of the file in which to store the binary representation of the object. The
-**Path** parameter supports wild cards and relative paths. This cmdlet generates an error if the
+**Path** parameter supports wildcards and relative paths. This cmdlet generates an error if the
 path resolves to more than one file.
 
 ```yaml
