@@ -617,7 +617,7 @@ Accept wildcard characters: False
 ### -Name
 
 Gets only the names of the items in the location. The output is a string object that can be sent
-down the pipeline to other commands.
+down the pipeline to other commands. Wildcards are permitted.
 
 ```yaml
 Type: SwitchParameter
@@ -628,7 +628,7 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -Path

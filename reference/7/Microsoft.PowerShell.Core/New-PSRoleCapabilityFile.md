@@ -351,17 +351,10 @@ Accept wildcard characters: False
 Specifies variables to add to sessions that use the role capability file.
 Enter a hash table with the following keys:
 
-- Name.
-Name of the variable.
-This key is required.
-- Value.
-Variable value.
-This key is required.
-- Options.
-Variable options.
-This key is optional.
-The default value is None.
-The acceptable values for this parameter are: are None, ReadOnly, Constant, Private, or AllScope.
+- Name. Name of the variable. This key is required.
+- Value. Variable value. This key is required.
+- Options. Variable options. This key is optional. The default value is None. The acceptable values
+  for this parameter are: are None, ReadOnly, Constant, Private, or AllScope.
 
 For example: `@{Name="WarningPreference";Value="SilentlyContinue";Options="AllScope"}`
 
@@ -396,7 +389,7 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -VisibleCmdlets
@@ -419,7 +412,7 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -VisibleExternalCommands
@@ -440,7 +433,7 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -VisibleFunctions
@@ -462,7 +455,7 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -VisibleProviders
@@ -484,12 +477,12 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### CommonParameters
 
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
