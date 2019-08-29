@@ -129,8 +129,8 @@ This command gets all of the exported files for all available modules.
 ### Example 4: Get a module by its fully qualified name
 
 ```powershell
-$FullyQualifedName = @{ModuleName="Microsoft.PowerShell.Management";ModuleVersion="3.1.0.0"}
-Get-Module -FullyQualifiedName | Format-Table -Property Name,Version
+$FullyQualifedName = @{ModuleName="Microsoft.PowerShell.Management";ModuleVersion="3.1.0.0"} |
+  Get-Module -FullyQualifiedName | Format-Table -Property Name,Version
 ```
 
 ```Output
@@ -387,7 +387,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -531,7 +531,7 @@ Required: False
 Position: 0
 Default value: None
 Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -PSSession
@@ -646,8 +646,7 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see about_CommonParameters
-(http://go.microsoft.com/fwlink/?LinkID=113216).
+-WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -715,9 +714,13 @@ the session.
 
 [New-CimSession](../CimCmdlets/New-CimSession.md)
 
+[about_Modules](About/about_Modules.md)
+
 [Get-PSSession](Get-PSSession.md)
 
 [Import-Module](Import-Module.md)
+
+[Import-PSSession](../Microsoft.PowerShell.Utility/Import-PSSession.md)
 
 [New-PSSession](New-PSSession.md)
 

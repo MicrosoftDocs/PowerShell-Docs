@@ -3,7 +3,7 @@ external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 1/24/2019
+ms.date: 04/23/2019
 online version: https://go.microsoft.com/fwlink/?linkid=2096604
 schema: 2.0.0
 title: Export-PSSession
@@ -239,7 +239,7 @@ Aliases: Name
 
 Required: False
 Position: 2
-Default value: None
+Default value: All commands in the session.
 Accept pipeline input: False
 Accept wildcard characters: True
 ```
@@ -271,7 +271,7 @@ Accepted values: Alias, All, Application, Cmdlet, Configuration, ExternalScript,
 
 Required: False
 Position: Named
-Default value: None
+Default value: All commands in the session.
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -397,7 +397,7 @@ Aliases: PSSnapin
 
 Required: False
 Position: Named
-Default value: None
+Default value: All commands in the session.
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -405,7 +405,7 @@ Accept wildcard characters: False
 ### -OutputModule
 
 Specifies an optional path and name for the module created by `Export-PSSession`. The default path
-is `$home`\Documents\WindowsPowerShell\Modules. This parameter is required.
+is `$home\Documents\WindowsPowerShell\Modules`. This parameter is required.
 
 If the module subdirectory or any of the files that `Export-PSSession` creates already exist, the
 command fails. To overwrite existing files, use the **Force** parameter.
@@ -417,7 +417,7 @@ Aliases: PSPath, ModuleName
 
 Required: True
 Position: 1
-Default value: None
+Default value: $home\Documents\WindowsPowerShell\Modules
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

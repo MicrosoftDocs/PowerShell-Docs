@@ -371,7 +371,6 @@ This cmdlet returns objects that are determined by the input.
 - Starting in Windows PowerShell 4.0, `Where` and `ForEach` methods were added for use with collections.
   - You can read more about these new methods here [about_arrays](./About/about_Arrays.md)
 
-
 ## RELATED LINKS
 
 [Compare-Object](../Microsoft.PowerShell.Utility/Compare-Object.md)

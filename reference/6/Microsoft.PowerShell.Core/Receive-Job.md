@@ -314,7 +314,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -335,9 +335,9 @@ Aliases: Cn
 
 Required: False
 Position: 1
-Default value: None
+Default value: All computers available
 Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -Force
@@ -363,7 +363,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -405,7 +405,7 @@ Aliases:
 
 Required: True
 Position: 0
-Default value: None
+Default value: All instances
 Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
@@ -419,7 +419,7 @@ You can also pipe a job object to `Receive-Job`.
 
 ```yaml
 Type: Job[]
-Parameter Sets: Location, ComputerName, Session
+Parameter Sets: Location, Session, ComputerName
 Aliases:
 
 Required: True
@@ -444,7 +444,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -461,7 +461,7 @@ Aliases:
 
 Required: False
 Position: 1
-Default value: None
+Default value: All locations
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -482,7 +482,7 @@ Required: True
 Position: 0
 Default value: None
 Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -NoRecurse
@@ -497,7 +497,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -517,7 +517,7 @@ Aliases:
 
 Required: False
 Position: 1
-Default value: None
+Default value: All sessions
 Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
@@ -568,7 +568,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -589,7 +589,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

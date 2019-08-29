@@ -53,7 +53,6 @@ Get-CimSession does not get CIM sessions that were created in other PowerShell s
 
 ```powershell
 New-CimSession -ComputerName Server01,Server02
-
 Get-CimSession
 ```
 
@@ -71,7 +70,7 @@ ComputerName : Server02
 Protocol     : WSMAN
 ```
 
-This command first creates CIM sessions by using [`New-CimSession`](New-CimSession.md), and then gets the CIM sessions by using `Get-CimSession`.
+This command first creates CIM sessions by using [New-CimSession](New-CimSession.md), and then gets the CIM sessions by using `Get-CimSession`.
 
 ### Example 2: Get the CIM sessions to a specific computer
 
@@ -220,11 +219,12 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
+For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 

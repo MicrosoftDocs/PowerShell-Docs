@@ -27,6 +27,7 @@ Unblock-File -LiteralPath <String[]> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+
 The **Unblock-File** cmdlet lets you open files that were downloaded from the Internet.
 It unblocks PowerShell script files that were downloaded from the Internet so you can run them, even when the PowerShell execution policy is **RemoteSigned**.
 By default, these files are blocked to protect the computer from untrusted files.
@@ -70,8 +71,8 @@ The second command shows what happens when you run a blocked script in a PowerSh
 PS C:\> C:\ps-test\Start-ActivityTracker.ps1
 c:\ps-test\Start-ActivityTracker.ps1 : File c:\ps-test\Start-ActivityTracker.ps1 cannot
 be loaded. The file c:\ps-test\Start-ActivityTracker.ps1 is not digitally signed. The script
-will not execute on the system. For more information, see about_Execution_Policies at
-../Microsoft.PowerShell.Core/about/about_Execution_Policies.md.
+will not execute on the system. For more information, see about_Execution_Policies.
+
 At line:1 char:1
 + c:\ps-test\Start-ActivityTracker.ps1
 + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

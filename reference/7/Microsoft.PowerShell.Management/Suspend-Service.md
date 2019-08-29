@@ -246,7 +246,7 @@ Otherwise, this cmdlet does not generate any output.
 ## NOTES
 
 * **Suspend-Service** can control services only when the current user has permission to do this. If a command does not work correctly, you might not have the required permissions.
-* **Suspend-Service** can suspend only services that support being suspended and resumed. To determine whether a particular service can be suspended, use the Get-Service cmdlet together with the **CanPauseAndContinue** property. For example, `Get-Service wmi | Format-List Name, CanPauseAndContinue`. To find all services on the computer that can be suspended, type `Get-Service | Where-Object {$_.CanPauseAndContinue -eq "True"}`.
+* **Suspend-Service** can suspend only services that support being suspended and resumed. To determine whether a particular service can be suspended, use the Get-Service cmdlet together with the **CanPauseAndContinue** property. For example, `Get-Service wmi | Format-List Name, CanPauseAndContinue`. To find all services on the computer that can be suspended, type `Get-Service | Where-Object {$_.CanPauseAndContinue -eq $true}`.
 * To find the service names and display names of the services on your system, type **Get-Service**. The service names appear in the **Name** column, and the display names appear in the **DisplayName** column.
 
 ## RELATED LINKS

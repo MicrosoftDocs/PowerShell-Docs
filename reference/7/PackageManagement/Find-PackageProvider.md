@@ -194,6 +194,8 @@ Accept wildcard characters: True
 
 ### -Proxy
 
+Specifies a proxy server for the request, rather than connecting directly to the Internet resource.
+
 ```yaml
 Type: Uri
 Parameter Sets: (All)
@@ -207,6 +209,8 @@ Accept wildcard characters: False
 ```
 
 ### -ProxyCredential
+
+Specifies a user account that has permission to use the proxy server that is specified by the **Proxy** parameter.
 
 ```yaml
 Type: PSCredential

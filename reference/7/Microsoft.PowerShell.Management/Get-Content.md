@@ -571,7 +571,7 @@ Accept wildcard characters: False
 ### -Stream
 
 Gets the contents of the specified alternate NTFS file stream from the file. Enter the stream name.
-Wildcards are supported.
+Wildcards are not supported.
 
 **Stream** is a dynamic parameter that the **FileSystem** provider adds to the `Get-Content` cmdlet.
 This parameter works only in file system drives on Windows systems. This parameter was introduced in

@@ -52,8 +52,8 @@ $Parms = @{
   Author = "TestUser1"
   CompanyName = "Contoso Corporation"
   Copyright = "(c) 2019 Contoso Corporation. All rights reserved."
-}  
-  
+}
+
 Update-ModuleManifest @Parms
 ```
 
@@ -79,7 +79,7 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -Author
@@ -131,7 +131,7 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -CompanyName
@@ -316,7 +316,7 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -Guid

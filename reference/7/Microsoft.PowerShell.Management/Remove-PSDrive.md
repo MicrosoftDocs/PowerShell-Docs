@@ -208,3 +208,5 @@ This cmdlet does not return any output.
 [Get-PSDrive](Get-PSDrive.md)
 
 [New-PSDrive](New-PSDrive.md)
+
+[about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md)

@@ -40,7 +40,7 @@ You can specify a process by process name or process ID (PID), or pass a process
 **Stop-Process** works only on processes running on the local computer.
 
 On Windows Vista and later versions of the Windows operating system, to stop a process that is not owned by the current user, you must start PowerShell by using the Run as administrator option.
-Also, you are not be prompted for confirmation unless you specify the *Confirm* parameter.
+Also, you are not prompted for confirmation unless you specify the *Confirm* parameter.
 
 ## EXAMPLES
 
@@ -274,7 +274,8 @@ Otherwise, this cmdlet does not generate any output.
 
 * You can also refer to **Stop-Process** by its built-in aliases, **kill** and **spps**. For more information, see about_Aliases.
 
-* You can also use the properties and methods of the Windows Management Instrumentation (WMI) **Win32_Process** object in PowerShell. For more information, see **Get-WmiObject** and the WMI SDK.
+  You can also use the properties and methods of the Windows Management Instrumentation (WMI) **Win32_Process** object in Windows PowerShell.
+For more information, see **Get-WmiObject** and the WMI SDK.
 
 * When stopping processes, realize that stopping a process can stop process and services that depend on the process.
 In an extreme case, stopping a process can stop Windows.
