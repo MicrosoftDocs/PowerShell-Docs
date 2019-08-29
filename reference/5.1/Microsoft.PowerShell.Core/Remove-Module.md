@@ -219,7 +219,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 You can pipe module names and module objects to **Remove-Module**.
 
 ## OUTPUTS
-`
+
 ### None
 
 This cmdlet does not generate any output.
