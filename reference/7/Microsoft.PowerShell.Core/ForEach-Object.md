@@ -278,7 +278,7 @@ Required: True
 Position: 0
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -Process
@@ -370,7 +370,6 @@ This cmdlet returns objects that are determined by the input.
 - The `ForEach-Object` cmdlet works much like the **Foreach** statement, except that you cannot pipe input to a **Foreach** statement. For more information about the **Foreach** statement, see [about_Foreach](./About/about_Foreach.md) in the Microsoft TechNet library.
 - Starting in Windows PowerShell 4.0, `Where` and `ForEach` methods were added for use with collections.
   - You can read more about these new methods here [about_arrays](./About/about_Arrays.md)
-  
 
 ## RELATED LINKS
 

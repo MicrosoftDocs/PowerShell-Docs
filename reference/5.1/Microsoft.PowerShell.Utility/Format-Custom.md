@@ -8,7 +8,6 @@ online version: https://go.microsoft.com/fwlink/?linkid=821772
 schema: 2.0.0
 title: Format-Custom
 ---
-
 # Format-Custom
 
 ## SYNOPSIS
@@ -223,7 +222,7 @@ Required: False
 Position: 0
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -ShowError

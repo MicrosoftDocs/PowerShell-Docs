@@ -110,7 +110,7 @@ Required: False
 Position: 1
 Default value: All groups
 Accept pipeline input: True (ByPropertyName, ByValue)
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -Group

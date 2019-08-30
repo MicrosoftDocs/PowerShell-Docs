@@ -17,22 +17,26 @@ Configures, starts, and stops a trace of PowerShell components.
 ## SYNTAX
 
 ### optionsSet (Default)
+
 ```
 Set-TraceSource [-Name] <String[]> [[-Option] <PSTraceSourceOptions>] [-ListenerOption <TraceOptions>]
  [-FilePath <String>] [-Force] [-Debugger] [-PSHost] [-PassThru] [<CommonParameters>]
 ```
 
 ### removeAllListenersSet
+
 ```
 Set-TraceSource [-Name] <String[]> [-RemoveListener <String[]>] [<CommonParameters>]
 ```
 
 ### removeFileListenersSet
+
 ```
 Set-TraceSource [-Name] <String[]> [-RemoveFileListener <String[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+
 The **Set-TraceSource** cmdlet configures, starts, and stops a trace of a PowerShell component.
 You can use it to specify which components will be traced and where the tracing output is sent.
 
@@ -150,7 +154,7 @@ Required: True
 Position: 0
 Default value: None
 Accept pipeline input: True (ByPropertyName, ByValue)
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -Option

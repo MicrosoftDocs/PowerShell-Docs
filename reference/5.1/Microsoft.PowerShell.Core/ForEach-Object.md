@@ -8,22 +8,22 @@ online version: https://go.microsoft.com/fwlink/?linkid=821481
 schema: 2.0.0
 title: ForEach-Object
 ---
-
 # ForEach-Object
 
 ## SYNOPSIS
-
 Performs an operation against each item in a collection of input objects.
 
 ## SYNTAX
 
 ### ScriptBlockSet (Default)
+
 ```
 ForEach-Object [-InputObject <PSObject>] [-Begin <ScriptBlock>] [-Process] <ScriptBlock[]> [-End <ScriptBlock>]
  [-RemainingScripts <ScriptBlock[]>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### PropertyAndMethodSet
+
 ```
 ForEach-Object [-InputObject <PSObject>] [-MemberName] <String> [-ArgumentList <Object[]>] [-WhatIf] [-Confirm]
  [<CommonParameters>]
@@ -40,7 +40,7 @@ Starting in Windows PowerShell 3.0, there are two different ways to construct a 
   You can use a script block to specify the operation.
   Within the script block, use the `$_` variable to represent the current object.
   The script block is the value of the *Process* parameter.
-  The script block can contain any Windows PowerShell script.
+  The script block can contain any PowerShell script.
 
   For example, the following command gets the value of the **ProcessName** property of each process on the computer.
 
@@ -81,7 +81,7 @@ This command takes an array of three integers and divides each one of them by 10
 Get-ChildItem $pshome | ForEach-Object -Process {if (!$_.PSIsContainer) {$_.Name; $_.Length / 1024; " " }}
 ```
 
-This command gets the files and directories in the Windows PowerShell installation directory `$pshome` and passes them to the `ForEach-Object` cmdlet.
+This command gets the files and directories in the PowerShell installation directory `$pshome` and passes them to the `ForEach-Object` cmdlet.
 If the object is not a directory, the script block gets the name of the file, divides the value of its **Length** property by 1024, and adds a space (" ") to separate it from the next entry.
 The cmdlet uses the **PSISContainer** property to determine whether an object is a directory.
 
@@ -134,7 +134,7 @@ Hello
 
 This example shows the effect of piping the `$Null` automatic variable to the `ForEach-Object` cmdlet.
 
-Because Windows PowerShell treats null as an explicit placeholder, the `ForEach-Object` cmdlet generates a value for `$Null`, just as it does for other objects that you pipe to it.
+Because PowerShell treats null as an explicit placeholder, the `ForEach-Object` cmdlet generates a value for `$Null`, just as it does for other objects that you pipe to it.
 
 For more information about the `$Null` automatic variable, see about_Automatic_Variables.
 
@@ -145,7 +145,7 @@ Get-Module -ListAvailable | ForEach-Object -MemberName Path
 Get-Module -ListAvailable | Foreach Path
 ```
 
-These commands gets the value of the **Path** property of all installed Windows PowerShell modules.
+These commands gets the value of the **Path** property of all installed PowerShell modules.
 They use the *MemberName* parameter to specify the **Path** property of modules.
 
 The second command is equivalent to the first.
@@ -278,7 +278,7 @@ Required: True
 Position: 0
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -Process
@@ -350,6 +350,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
@@ -369,7 +370,6 @@ This cmdlet returns objects that are determined by the input.
 - The `ForEach-Object` cmdlet works much like the **Foreach** statement, except that you cannot pipe input to a **Foreach** statement. For more information about the **Foreach** statement, see [about_Foreach](./About/about_Foreach.md) in the Microsoft TechNet library.
 - Starting in Windows PowerShell 4.0, `Where` and `ForEach` methods were added for use with collections.
   - You can read more about these new methods here [about_arrays](./About/about_Arrays.md)
-  
 
 ## RELATED LINKS
 
