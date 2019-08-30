@@ -4,7 +4,7 @@ schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
 Help Version:  4.0.6.2
-Download Help Link:  http://go.microsoft.com/fwlink/?linkid=285758
+Download Help Link:  https://go.microsoft.com/fwlink/?linkid=285758
 Module Guid:  1da87e53-152b-403e-98dc-74d7b4d63d59
 title:  Microsoft.PowerShell.Utility
 Module Name:  Microsoft.PowerShell.Utility

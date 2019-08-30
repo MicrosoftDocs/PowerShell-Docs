@@ -85,7 +85,7 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+-WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -106,3 +106,4 @@ This is the type return when using the **Since** parameter.
 On Windows, the value returned will be the same as the **LastBootUpTime** property of the **Win32_OperatingSystem** class in WMI.
 
 ## RELATED LINKS
+

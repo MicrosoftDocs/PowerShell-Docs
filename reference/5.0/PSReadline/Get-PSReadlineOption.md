@@ -96,7 +96,7 @@ This command returns the list of available PSReadLine options and their current 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see
-[about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -119,3 +119,4 @@ You cannot pipe objects to this cmdlet.
 [Set-PSReadLineOption](Set-PSReadLineOption.md)
 
 [Set-PSReadLineKeyHandler](Set-PSReadLineKeyHandler.md)
+

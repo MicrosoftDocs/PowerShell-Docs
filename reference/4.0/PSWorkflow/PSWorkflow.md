@@ -4,7 +4,7 @@ schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
 Help Version:  4.0.4.2
-Download Help Link:  http://go.microsoft.com/fwlink/?linkid=285563
+Download Help Link:  https://go.microsoft.com/fwlink/?linkid=285563
 Module Guid:  3b6cc51d-c096-4b38-b78d-0fed6277096a
 title:  PSWorkflow
 Module Name:  PSWorkflow

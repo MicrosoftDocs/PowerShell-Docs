@@ -5,7 +5,7 @@ locale: en-US
 keywords: powershell,cmdlet
 Help Version: 4.0
 Module Guid: fb6cc51d-c096-4b38-b78d-0fed6277096a
-Download Help Link: http://go.microsoft.com/fwlink/?linkid=285542
+Download Help Link: https://go.microsoft.com/fwlink/?linkid=285542
 Module Name: CimCmdlets
 title: CimCmdlets Module
 ---

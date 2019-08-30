@@ -93,7 +93,7 @@ This command declares a non-terminating error and specifies an error category.
 ### Example 4: Write an error using an Exception object
 
 ```powershell
-$E = [System.Exception]@{Source="Get-ParameterNames.ps1";HelpLink="http://go.microsoft.com/fwlink/?LinkID=113425"}
+$E = [System.Exception]@{Source="Get-ParameterNames.ps1";HelpLink="https://go.microsoft.com/fwlink/?LinkID=113425"}
 Write-Error -Exception $E -Message "Files not found. The $Files location does not contain any XML files."
 ```
 
@@ -363,3 +363,4 @@ You can pipe a string that contains an error message to `Write-Error`.
 [Write-Verbose](Write-Verbose.md)
 
 [Write-Warning](Write-Warning.md)
+

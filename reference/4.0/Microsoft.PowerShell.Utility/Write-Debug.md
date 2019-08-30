@@ -93,7 +93,7 @@ change only affects the scope of the function. The value is not affected outside
 > When the value of `$DebugPreference` is **Inquire**, PowerShell halts execution to ask if
 > execution should continue.
 
-For more information about the **Debug** common parameter, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+For more information about the **Debug** common parameter, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## PARAMETERS
 
@@ -117,7 +117,7 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+-WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -146,3 +146,5 @@ You can pipe a string that contains a debug message to `Write-Debug`.
 [Write-Verbose](Write-Verbose.md)
 
 [Write-Warning](Write-Warning.md)
+
+

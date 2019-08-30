@@ -36,7 +36,7 @@ Before using the **Unblock-File** cmdlet, review the file and its source and ver
 
 Internally, the **Unblock-File** cmdlet removes the Zone.Identifier alternate data stream, which has a value of "3" to indicate that it was downloaded from the Internet.
 
-For more information about Windows PowerShell execution policies, see about_Execution_Policies (http://go.microsoft.com/fwlink/?LinkID=135170).
+For more information about Windows PowerShell execution policies, see about_Execution_Policies (https://go.microsoft.com/fwlink/?LinkID=135170).
 
 This cmdlet was introduced in Windows PowerShell 3.0.
 
@@ -75,7 +75,7 @@ PS C:\> C:\ps-test\Start-ActivityTracker.ps1
 c:\ps-test\Start-ActivityTracker.ps1 : File c:\ps-test\Start-ActivityTracker.ps1 cannot
 be loaded. The file c:\ps-test\Start-ActivityTracker.ps1 is not digitally signed. The script
 will not execute on the system. For more information, see about_Execution_Policies at
-http://go.microsoft.com/fwlink/?LinkID=135170.
+https://go.microsoft.com/fwlink/?LinkID=135170.
 At line:1 char:1
 + c:\ps-test\Start-ActivityTracker.ps1
 + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -162,7 +162,7 @@ Accept wildcard characters: False
 
 ### CommonParameters
 
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -191,3 +191,7 @@ This cmdlet does not generate any output.
 [Out-File](Out-File.md)
 
 [FileSystem Provider](../Microsoft.PowerShell.Core/Providers/FileSystem-Provider.md)
+
+
+
+

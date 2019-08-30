@@ -1,10 +1,10 @@
-﻿---
+---
 ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
 Help Version:  3.1.0.2
-Download Help Link:  http://go.microsoft.com/fwlink/?linkid=210602
+Download Help Link:  https://go.microsoft.com/fwlink/?linkid=210602
 Module Guid:  a94c8c7e-9810-47c0-b8af-65089c13a35a
 title:  Microsoft.PowerShell.Security
 Module Name:  Microsoft.PowerShell.Security
@@ -51,3 +51,4 @@ Adds an Authenticode signature to a PowerShell script or other file.
 
 ### [Set-ExecutionPolicy](Set-ExecutionPolicy.md)
 Changes the user preference for the PowerShell execution policy.
+

@@ -92,7 +92,7 @@ The **ComputerName**  parameter gets sessions that were created in the current s
 to the specified computer.
 
 For more information about Windows PowerShell sessions, see about_PSSessions
-(http://go.microsoft.com/fwlink/?LinkID=135181).
+(https://go.microsoft.com/fwlink/?LinkID=135181).
 
 ## EXAMPLES
 
@@ -655,7 +655,7 @@ Accept wildcard characters: False
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see about_CommonParameters
-(http://go.microsoft.com/fwlink/?LinkID=113216).
+(https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -719,3 +719,5 @@ another session.
 [about_PSSessions](About/about_PSSessions.md)
 
 [about_Remote](About/about_Remote.md)
+
+
