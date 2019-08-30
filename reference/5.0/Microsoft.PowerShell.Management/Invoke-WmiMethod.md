@@ -72,7 +72,7 @@ The **Invoke-WmiMethod** cmdlet calls the methods of Windows Management Instrume
 
 New Common Information Model (CIM) cmdlets, introduced in Windows PowerShell 3.0, perform the same tasks as the WMI cmdlets.
 The CIM cmdlets comply with WS-Management (WSMan) standards and with the CIM standard, which enables the cmdlets to use the same techniques to manage Windows computers and those running other operating systems.
-Instead of using **Invoke-WmiMethod**, consider using Invoke-CimMethodhttp://go.microsoft.com/fwlink/?LinkId=227965.
+Instead of using **Invoke-WmiMethod**, consider using Invoke-CimMethodhttps://go.microsoft.com/fwlink/?LinkId=227965.
 
 ## EXAMPLES
 
@@ -518,7 +518,7 @@ Accept wildcard characters: False
 
 ### CommonParameters
 
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -549,3 +549,6 @@ This cmdlet does not generate any output.
 [Remove-WmiObject](Remove-WmiObject.md)
 
 [Set-WmiInstance](Set-WmiInstance.md)
+
+
+

@@ -304,7 +304,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -328,7 +328,7 @@ You can pipe a module object from the Get-Module cmdlet to the **Module** parame
 
 ## RELATED LINKS
 
-[Updatable Help Status Table (http://go.microsoft.com/fwlink/?LinkID=270007)](http://go.microsoft.com/fwlink/?LinkID=270007)
+[Updatable Help Status Table (https://go.microsoft.com/fwlink/?LinkID=270007)](https://go.microsoft.com/fwlink/?LinkID=270007)
 
 [Get-Culture](../Microsoft.PowerShell.Utility/Get-Culture.md)
 
@@ -339,3 +339,6 @@ You can pipe a module object from the Get-Module cmdlet to the **Module** parame
 [Get-UICulture](../Microsoft.PowerShell.Utility/Get-UICulture.md)
 
 [Update-Help](Update-Help.md)
+
+
+

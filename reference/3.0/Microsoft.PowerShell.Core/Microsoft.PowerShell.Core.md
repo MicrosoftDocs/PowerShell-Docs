@@ -1,10 +1,10 @@
-﻿---
+---
 ms.date:  02/28/2019
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
 Help Version:  3.3.0.2
-Download Help Link:  http://go.microsoft.com/fwlink/?linkid=210598
+Download Help Link:  https://go.microsoft.com/fwlink/?linkid=210598
 Module Guid:  00000000-0000-0000-0000-000000000000
 title:  Microsoft.PowerShell.Core
 Module Name:  Microsoft.PowerShell.Core
@@ -186,3 +186,4 @@ Suppresses the command prompt until one or all of the PowerShell background jobs
 
 ### [Where-Object](Where-Object.md)
 Selects objects from a collection based on their property values.
+

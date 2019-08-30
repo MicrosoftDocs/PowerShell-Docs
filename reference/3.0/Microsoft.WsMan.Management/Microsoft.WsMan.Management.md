@@ -1,10 +1,10 @@
-﻿---
+---
 ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
 Help Version:  3.2.0.2
-Download Help Link:  http://go.microsoft.com/fwlink/?linkid=210597
+Download Help Link:  https://go.microsoft.com/fwlink/?linkid=210597
 Module Guid:  766204A6-330E-4263-A7AB-46C87AFC366C
 title:  Microsoft.WsMan.Management
 Module Name:  Microsoft.WsMan.Management
@@ -57,3 +57,4 @@ Configures the local computer for remote management.
 
 ### [Test-WSMan](Test-WSMan.md)
 Tests whether the WinRM service is running on a local or remote computer.
+

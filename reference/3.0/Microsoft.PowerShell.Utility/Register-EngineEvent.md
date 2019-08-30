@@ -82,7 +82,7 @@ The commands in the **Action** run when an event is raised, instead of sending t
 Enclose the commands in braces ( { } ) to create a script block.
 
 The value of the **Action** parameter can include the $Event, $EventSubscriber, $Sender, $EventArgs, and $Args automatic variables, which provide information about the event to the Action script block.
-For more information, see about_Automatic_Variables (http://go.microsoft.com/fwlink/?LinkID=113212).
+For more information, see about_Automatic_Variables (https://go.microsoft.com/fwlink/?LinkID=113212).
 
 When you specify an action, **Register-EngineEvent** returns an event job object that represents that action.
 You can use the Job cmdlets to manage the event job.
@@ -192,7 +192,7 @@ Accept wildcard characters: False
 
 ### CommonParameters
 
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -233,3 +233,6 @@ Otherwise, it does not generate any output.
 [Wait-Event](Wait-Event.md)
 
 [Wait-Job](../Microsoft.PowerShell.Core/Wait-Job.md)
+
+
+

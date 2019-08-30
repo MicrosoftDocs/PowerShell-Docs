@@ -4,7 +4,7 @@ schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
 Help Version:  5.0.2.2
-Download Help Link:  http://go.microsoft.com/fwlink/?linkid=390816
+Download Help Link:  https://go.microsoft.com/fwlink/?linkid=390816
 Module Guid:  50cdb55f-5ab7-489f-9e94-4ec21ff51e59
 title:  PSScheduledJob
 Module Name:  PSScheduledJob

@@ -85,7 +85,7 @@ The resulting job object is stored in the $j variable.
 The third command stops the job.
 It uses the **Invoke-Command** cmdlet to run a **Stop-Job** command in the **PSSession** on Server01.
 Because the job objects are stored in $j, which is a variable on the local computer, the command uses the Using scope modifier to identify $j as a local variable.
-For more information about the Using scope modifier, see about_Remote_Variables (http://go.microsoft.com/fwlink/?LinkID=252653).
+For more information about the Using scope modifier, see about_Remote_Variables (https://go.microsoft.com/fwlink/?LinkID=252653).
 
 When the command finishes, the job is stopped and the **PSSession** in $s is available for use.
 
@@ -350,7 +350,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -392,3 +392,6 @@ Otherwise, this cmdlet does not generate any output.
 [about_Jobs](About/about_Jobs.md)
 
 [about_Scopes](About/about_scopes.md)
+
+
+

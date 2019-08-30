@@ -103,7 +103,7 @@ The command uses the **Xml** parameter to specify the XML content in the $Types 
 The first command creates a hash table that represents the XML namespace that is used for the help files and saves it in the $Namespace variable.
 PS C:\> $Namespace = @{command="http://schemas.microsoft.com/maml/dev/command/2004/10"; maml="http://schemas.microsoft.com/maml/2004/10"; dev="http://schemas.microsoft.com/maml/dev/2004/10"}
 
-The second command saves the path to the help files in the $Path variable.If there are no help files in this path on your computer, use the Update-Help cmdlet to download the help files. For more information about Updatable Help, see about_Updatable_Help ( http://go.microsoft.com/fwlink/?LinkId=235801).
+The second command saves the path to the help files in the $Path variable.If there are no help files in this path on your computer, use the Update-Help cmdlet to download the help files. For more information about Updatable Help, see about_Updatable_Help ( https://go.microsoft.com/fwlink/?LinkId=235801).
 PS C:\> $Path = "$pshome\en-us\*dll-Help.xml"
 
 The third command uses the **Select-Xml** cmdlet to search the XML for cmdlet names by finding Command:Name element anywhere in the files. It saves the results in the $xml variable.**Select-Xml** returns a **SelectXmlInfo** object that has a **Node** property, which is a **System.Xml.XmlElement** object. The **Node** property has an **InnerXML** property, which contains the actual XML that is retrieved.
@@ -287,7 +287,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -304,3 +304,6 @@ You can pipe a path or XML node to Select-Xml.
 ## RELATED LINKS
 
 [ConvertTo-Xml](ConvertTo-Xml.md)
+
+
+

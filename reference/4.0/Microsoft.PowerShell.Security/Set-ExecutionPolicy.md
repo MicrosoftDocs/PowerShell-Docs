@@ -208,7 +208,7 @@ PS> .\Start-ActivityTracker.ps1
 .\Start-ActivityTracker.ps1 : File .\Start-ActivityTracker.ps1 cannot be loaded.
 The file .\Start-ActivityTracker.ps1 is not digitally signed.
 The script will not execute on the system.
-For more information, see about_Execution_Policies at http://go.microsoft.com/fwlink/?LinkID=135170.
+For more information, see about_Execution_Policies at https://go.microsoft.com/fwlink/?LinkID=135170.
 At line:1 char:1
 + .\Start-ActivityTracker.ps1
 + ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -416,3 +416,4 @@ conflict.
 [Set-AuthenticodeSignature](Set-AuthenticodeSignature.md)
 
 [Unblock-File](../Microsoft.PowerShell.Utility/Unblock-File.md)
+

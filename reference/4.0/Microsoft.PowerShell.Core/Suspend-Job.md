@@ -48,7 +48,7 @@ Suspend-Job [-Force] [-Wait] [-Filter] <Hashtable> [-WhatIf] [-Confirm] [<Common
 ## DESCRIPTION
 The **Suspend-Job** cmdlet suspends (temporarily interrupts or pauses) workflow jobs.
 This cmdlet allows users who are running workflows to suspend the workflow.
-It complements the Suspend-Workflowhttp://go.microsoft.com/fwlink/?LinkId=267141 activity, which is a command in the workflow that suspends the workflow.
+It complements the Suspend-Workflowhttps://go.microsoft.com/fwlink/?LinkId=267141 activity, which is a command in the workflow that suspends the workflow.
 
 The **Suspend-Job** cmdlet works only on workflow jobs.
 It does not work on standard background jobs, such as those that are started by using the Start-Job cmdlet.
@@ -332,7 +332,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -371,3 +371,6 @@ However, if **Suspend-Job** gets a job of an unsupported type, it throws a termi
 [Suspend-Job](Suspend-Job.md)
 
 [Wait-Job](Wait-Job.md)
+
+
+
