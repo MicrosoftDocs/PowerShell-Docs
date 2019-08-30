@@ -4,7 +4,7 @@ schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
 Help Version:  3.1.0.2
-Download Help Link:  http://go.microsoft.com/fwlink/?linkid=210596
+Download Help Link:  https://go.microsoft.com/fwlink/?linkid=210596
 Module Guid:  ca046f10-ca64-4740-8ff9-2565dba61a4f
 title:  Microsoft.PowerShell.Diagnostics
 Module Name:  Microsoft.PowerShell.Diagnostics

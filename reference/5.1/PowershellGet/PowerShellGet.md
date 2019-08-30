@@ -4,7 +4,7 @@ schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
 Help Version:  5.1.1.0
-Download Help Link:  http://go.microsoft.com/fwlink/?LinkId=393271
+Download Help Link:  https://go.microsoft.com/fwlink/?LinkId=393271
 Module Guid:  1d73a601-4a6c-43c5-ba3f-619b18bbb404
 title:  PowerShellGet
 Module Name:  PowerShellGet
@@ -93,3 +93,4 @@ Updates a script.
 
 ### [Update-ScriptFileInfo](Update-ScriptFileInfo.md)
 Updates information for a script.
+

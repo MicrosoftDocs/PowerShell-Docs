@@ -279,7 +279,7 @@ The acceptable values for this parameter are:
 - Script
 - a number relative to the current scope (0 through the number of scopes, where 0 is the current scope and 1 is its parent).
 "Local" is the default.
-For more information, see about_Scopes (http://go.microsoft.com/fwlink/?LinkID=113260).
+For more information, see about_Scopes (https://go.microsoft.com/fwlink/?LinkID=113260).
 
 ```yaml
 Type: String
@@ -313,7 +313,7 @@ Accept wildcard characters: False
 
 ### CommonParameters
 
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -341,3 +341,6 @@ This cmdlet returns objects that represent the drives in the session.
 [Get-WmiObject](Get-WmiObject.md)
 
 [Get-PSProvider](Get-PSProvider.md)
+
+
+

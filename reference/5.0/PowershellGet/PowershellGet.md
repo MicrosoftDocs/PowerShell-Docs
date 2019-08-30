@@ -4,7 +4,7 @@ schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
 Help Version:  5.0.11.3
-Download Help Link:  http://go.microsoft.com/fwlink/?LinkID=393271
+Download Help Link:  https://go.microsoft.com/fwlink/?LinkID=393271
 Module Guid:  1d73a601-4a6c-43c5-ba3f-619b18bbb404
 title:  PowershellGet
 Module Name:  PowershellGet
@@ -51,3 +51,4 @@ Unregisters a repository.
 ### [Update-Module](Update-Module.md)
 Downloads and installs the newest version of specified modules from an online gallery to the local
 computer.
+

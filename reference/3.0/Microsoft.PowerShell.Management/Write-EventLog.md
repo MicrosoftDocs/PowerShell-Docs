@@ -83,7 +83,7 @@ Specifies the entry type of the event.
 Valid values are Error, Warning, Information, SuccessAudit, and FailureAudit.
 The default value is Information.
 
-For a description of the values, see [EventLogEntryType Enumeration](http://go.microsoft.com/fwlink/?LinkId=143599) in the MSDN library.
+For a description of the values, see [EventLogEntryType Enumeration](https://go.microsoft.com/fwlink/?LinkId=143599) in the MSDN library.
 
 ```yaml
 Type: EventLogEntryType
@@ -178,7 +178,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 ## INPUTS
 
 ### None
@@ -208,3 +208,6 @@ Write-EventLog returns objects that represents the events in the logs.
 [Show-EventLog](Show-EventLog.md)
 
 [Write-EventLog](Write-EventLog.md)
+
+
+

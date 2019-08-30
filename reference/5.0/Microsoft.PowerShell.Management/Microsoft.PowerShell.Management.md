@@ -4,7 +4,7 @@ schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
 Help Version:  5.0.8.3
-Download Help Link:  http://go.microsoft.com/fwlink/?linkid=390785
+Download Help Link:  https://go.microsoft.com/fwlink/?linkid=390785
 Module Guid:  eefcb906-b326-4e99-9f54-8b4bb6ef3c6d
 title:  Microsoft.PowerShell.Management
 Module Name:  Microsoft.PowerShell.Management
@@ -276,4 +276,5 @@ Waits for the processes to be stopped before accepting more input.
 
 ### [Write-EventLog](Write-EventLog.md)
 Writes an event to an event log.
+
 
