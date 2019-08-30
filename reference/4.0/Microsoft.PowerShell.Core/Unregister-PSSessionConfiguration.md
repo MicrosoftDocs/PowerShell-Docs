@@ -8,7 +8,6 @@ online version: https://go.microsoft.com/fwlink/?linkid=289620
 schema: 2.0.0
 title: Unregister-PSSessionConfiguration
 ---
-
 # Unregister-PSSessionConfiguration
 
 ## SYNOPSIS
@@ -146,7 +145,7 @@ Required: True
 Position: 0
 Default value: None
 Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -NoServiceRestart

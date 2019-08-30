@@ -83,7 +83,8 @@ The first command exports the aliases in the session to the Alias.ps1 file.
 It uses the **As** parameter with a value of Script to generate a file that contains a Set-Alias command for each alias.
 
 The second command adds the aliases in the Alias.ps1 file to the CurrentUser-CurrentHost profile.
-(The path to the profile is saved in the $Profile variable.) The command uses the `Get-Content` cmdlet to get the aliases from the Alias.ps1 file and the `Add-Content` cmdlet to add them to the profile.
+The path to the profile is saved in the `$Profile` variable.
+The command uses the `Get-Content` cmdlet to get the aliases from the Alias.ps1 file and the `Add-Content` cmdlet to add them to the profile.
 For more information, see about_Profiles.
 
 The third and fourth commands add the aliases in the Alias.ps1 file to a remote session on the Server01 computer.

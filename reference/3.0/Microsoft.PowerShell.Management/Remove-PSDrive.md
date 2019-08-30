@@ -1,16 +1,16 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
+external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Management
+ms.date: 06/09/2017
 online version: https://go.microsoft.com/fwlink/?linkid=113376
-external help file:  Microsoft.PowerShell.Commands.Management.dll-Help.xml
-title:  Remove-PSDrive
+schema: 2.0.0
+title: Remove-PSDrive
 ---
 # Remove-PSDrive
 
 ## SYNOPSIS
-
 Deletes temporary PowerShell drives and disconnects mapped network drives.
 
 ## SYNTAX
@@ -37,9 +37,9 @@ Beginning in Windows PowerShell 3.0, `Remove-PSDrive` also disconnects mapped ne
 
 `Remove-PSDrive` cannot delete Windows physical or logical drives.
 
-Beginning in Windows PowerShell 3.0, when an external drive is connected to the computer, Windows PowerShell automatically adds a PSDrive to the file system that represents the new drive.
+Beginning in Windows PowerShell 3.0, when an external drive is connected to the computer, PowerShell automatically adds a PSDrive to the file system that represents the new drive.
 You do not need to restart PowerShell.
-Similarly, when an external drive is disconnected from the computer, Windows PowerShell automatically deletes the PSDrive that represents the removed drive.
+Similarly, when an external drive is disconnected from the computer, PowerShell automatically deletes the PSDrive that represents the removed drive.
 
 ## EXAMPLES
 
@@ -112,7 +112,7 @@ Required: True
 Position: 1
 Default value: None
 Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -PSProvider
@@ -150,6 +150,24 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
+### -UseTransaction
+
+Includes the command in the active transaction.
+This parameter is valid only when a transaction is in progress.
+For more information, see about_Transactions.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: usetx
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Confirm
 
 Prompts you for confirmation before running the cmdlet.
@@ -175,24 +193,6 @@ The cmdlet is not run.
 Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
-
-Required: False
-Position: Named
-Default value: False
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -UseTransaction
-
-Includes the command in the active transaction.
-This parameter is valid only when a transaction is in progress.
-For more information, see about_Transactions.
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: (All)
-Aliases: usetx
 
 Required: False
 Position: Named

@@ -7,11 +7,9 @@ online version: https://go.microsoft.com/fwlink/?linkid=834942
 external help file:  System.Management.Automation.dll-help.xml
 title:  Get-Verb
 ---
-
 # Get-Verb
 
 ## SYNOPSIS
-
 Gets approved PowerShell verbs.
 
 ## SYNTAX

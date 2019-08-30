@@ -203,6 +203,7 @@ Accept wildcard characters: False
 
 Specifies the path of the location of the new item.
 Wildcard characters are permitted.
+
 You can specify the name of the new item in **Name**, or include it in **Path**.
 
 ```yaml

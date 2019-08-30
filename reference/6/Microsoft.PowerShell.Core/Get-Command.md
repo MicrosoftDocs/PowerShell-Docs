@@ -444,7 +444,7 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -Name
@@ -676,4 +676,14 @@ Represents functions and filters.
 
 ## RELATED LINKS
 
+[Export-PSSession](../Microsoft.PowerShell.Utility/Export-PSSession.md)
+
 [Get-Help](Get-Help.md)
+
+[Get-Member](../Microsoft.PowerShell.Utility/Get-Member.md)
+
+[Get-PSDrive](../Microsoft.PowerShell.Management/Get-PSDrive.md)
+
+[Import-PSSession](../Microsoft.PowerShell.Utility/Import-PSSession.md)
+
+[about_Command_Precedence](About/about_Command_Precedence.md)

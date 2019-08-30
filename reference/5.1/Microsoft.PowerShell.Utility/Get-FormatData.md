@@ -34,16 +34,16 @@ For more information about formatting files in PowerShell, see about_Format.ps1x
 
 ### Example 1: Get all formatting data
 
-```
-PS C:\> Get-FormatData
-```
-
 This command gets all the formatting data in the session.
+
+```powershell
+Get-FormatData
+```
 
 ### Example 2: Get formatting data by type name
 
 ```powershell
-PS C:\> Get-FormatData -TypeName 'System.Management.Automation.Cmd*'
+Get-FormatData -TypeName 'System.Management.Automation.Cmd*'
 ```
 
 This command gets the formatting data items whose names begin with System.Management.Automation.Cmd*.
@@ -51,8 +51,8 @@ This command gets the formatting data items whose names begin with System.Manage
 ### Example 3: Examine a formatting data object
 
 ```powershell
-PS C:\> $F = Get-FormatData -TypeName 'System.Management.Automation.Cmd*'
-PS C:\> $F
+$F = Get-FormatData -TypeName 'System.Management.Automation.Cmd*'
+$F
 ```
 
 ```Output
@@ -62,7 +62,7 @@ HelpInfoShort   {help , TableControl}
 ```
 
 ```powershell
-PS C:\> $F.FormatViewDefinition[0].control
+$F.FormatViewDefinition[0].control
 ```
 
 ```Output
@@ -76,7 +76,7 @@ OutOfBand        : False
 ```
 
 ```powershell
-PS C:\> $F.FormatViewDefinition[0].control.Headers
+$F.FormatViewDefinition[0].control.Headers
 ```
 
 ```Output
@@ -93,20 +93,21 @@ This example shows how to get a formatting data object and examine its propertie
 ### Example 4: Get formatting data and export it
 
 ```powershell
-PS C:\> $A = Get-FormatData
-PS C:\> Import-Module bitstransfer
-PS C:\> $B = Get-FormatData
-PS C:\> Compare-Object $A $B
+$A = Get-FormatData
+Import-Module bitstransfer
+$B = Get-FormatData
+Compare-Object $A $B
 ```
 
 ```Output
 InputObject                                                SideIndicator
 -----------                                                -------------
-Microsoft.BackgroundIntelligentTransfer.Management.BitsJob => PS C:\> Get-FormatData *bits* | Export-FormatData -FilePath c:\test\bits.format.ps1xml
+Microsoft.BackgroundIntelligentTransfer.Management.BitsJob => 
 ```
 
 ```powershell
-PS C:\> Get-Content c:\test\bits.format.ps1xml
+Get-FormatData *bits* | Export-FormatData -FilePath c:\test\bits.format.ps1xml
+Get-Content c:\test\bits.format.ps1xml
 ```
 
 ```Output
@@ -127,48 +128,41 @@ The final command shows an excerpt of the format.ps1xml file content.
 ### Example 5: Get formatting data based on the specified version of PowerShell
 
 ```powershell
-PS C:\> Get-FormatData -TypeName 'Microsoft.Powershell.Utility.FileHash' -PowerShellVersion 1.0
+Get-FormatData -TypeName 'Microsoft.Powershell.Utility.FileHash' -PowerShellVersion 1.0
 
 TypeNames                               FormatViewDefinition
 ---------                               --------------------
 {Microsoft.Powershell.Utility.FileHash} {Microsoft.Powershell.Utility.FileHash}
 
-PS C:\> Get-FormatData -TypeName 'Microsoft.Powershell.Utility.FileHash' -PowerShellVersion 2.0
+Get-FormatData -TypeName 'Microsoft.Powershell.Utility.FileHash' -PowerShellVersion 2.0
 
 TypeNames                               FormatViewDefinition
 ---------                               --------------------
 {Microsoft.Powershell.Utility.FileHash} {Microsoft.Powershell.Utility.FileHash}
 
-PS C:\> Get-FormatData -TypeName 'Microsoft.Powershell.Utility.FileHash' -PowerShellVersion 3.0
+Get-FormatData -TypeName 'Microsoft.Powershell.Utility.FileHash' -PowerShellVersion 3.0
 
 TypeNames                               FormatViewDefinition
 ---------                               --------------------
 {Microsoft.Powershell.Utility.FileHash} {Microsoft.Powershell.Utility.FileHash}
 
-PS C:\> Get-FormatData -TypeName 'Microsoft.Powershell.Utility.FileHash' -PowerShellVersion 4.0
+Get-FormatData -TypeName 'Microsoft.Powershell.Utility.FileHash' -PowerShellVersion 4.0
 
 TypeNames                               FormatViewDefinition
 ---------                               --------------------
 {Microsoft.Powershell.Utility.FileHash} {Microsoft.Powershell.Utility.FileHash}
 
-PS C:\> Get-FormatData -TypeName 'Microsoft.Powershell.Utility.FileHash' -PowerShellVersion 5.0
+Get-FormatData -TypeName 'Microsoft.Powershell.Utility.FileHash' -PowerShellVersion 5.0
 
 TypeNames                               FormatViewDefinition
 ---------                               --------------------
 {Microsoft.Powershell.Utility.FileHash} {Microsoft.Powershell.Utility.FileHash}
 
-PS C:\> Get-FormatData -TypeName 'Microsoft.Powershell.Utility.FileHash' -PowerShellVersion 5.1
+Get-FormatData -TypeName 'Microsoft.Powershell.Utility.FileHash' -PowerShellVersion 5.1
 
 TypeNames                               FormatViewDefinition
 ---------                               --------------------
 {Microsoft.Powershell.Utility.FileHash} {Microsoft.Powershell.Utility.FileHash}
-
-PS C:\> Get-FormatData -TypeName 'Microsoft.Powershell.Utility.FileHash' -PowerShellVersion 6.0
-
-TypeNames                               FormatViewDefinition
----------                               --------------------
-{Microsoft.Powershell.Utility.FileHash} {Microsoft.Powershell.Utility.FileHash}
-```
 
 This example shows how to use **Get-FormatData** to get format data for a specified TypeName and a
 specified PowerShell version.
@@ -231,5 +225,4 @@ You cannot pipe input to this cmdlet.
 [Export-FormatData](Export-FormatData.md)
 
 [Update-FormatData](Update-FormatData.md)
-
 

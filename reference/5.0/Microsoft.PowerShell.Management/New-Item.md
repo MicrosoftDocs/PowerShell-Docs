@@ -107,22 +107,6 @@ New-Item -ItemType "file" -Path "c:\ps-test\test.txt", "c:\ps-test\Logs\test.log
 
 ## PARAMETERS
 
-### -Confirm
-
-Prompts you for confirmation before running the cmdlet.
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: (All)
-Aliases: cf
-
-Required: False
-Position: Named
-Default value: False
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Credential
 
 > [!NOTE]
@@ -227,7 +211,7 @@ Type: String[]
 Parameter Sets: pathSet, nameSet
 Aliases:
 
-Required: True
+Required: True (pathSet), False (nameSet)
 Position: 0
 Default value: None
 Accept pipeline input: True (ByPropertyName)
@@ -253,8 +237,7 @@ Accept wildcard characters: False
 
 ### -Value
 
-Specifies the value of the new item.
-You can also pipe a value to `New-Item`.
+Specifies the value of the new item. You can also pipe a value to `New-Item`.
 
 ```yaml
 Type: Object
@@ -265,6 +248,22 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: True (ByPropertyName, ByValue)
+Accept wildcard characters: False
+```
+
+### -Confirm
+
+Prompts you for confirmation before running the cmdlet.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 

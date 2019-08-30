@@ -16,21 +16,25 @@ Computes the hash value for a file by using a specified hash algorithm.
 ## SYNTAX
 
 ### Path (Default)
+
 ```
 Get-FileHash [-Path] <String[]> [-Algorithm <String>] [<CommonParameters>]
 ```
 
 ### LiteralPath
+
 ```
 Get-FileHash -LiteralPath <String[]> [-Algorithm <String>] [<CommonParameters>]
 ```
 
 ### Stream
+
 ```
 Get-FileHash -InputStream <Stream> [-Algorithm <String>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+
 The **Get-FileHash** cmdlet computes the hash value for a file by using a specified hash algorithm.
 A hash value is a unique value that corresponds to the content of the file.
 Rather than identifying the contents of a file by its file name, extension, or other designation, a hash assigns a unique value to the contents of a file.

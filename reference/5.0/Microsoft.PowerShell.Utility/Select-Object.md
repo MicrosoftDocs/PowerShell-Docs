@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
+external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Utility
+ms.date: 4/26/2019
 online version: https://go.microsoft.com/fwlink/?linkid=821852
-external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-title:  Select-Object
+schema: 2.0.0
+title: Select-Object
 ---
 # Select-Object
 
@@ -17,24 +18,22 @@ Selects objects or object properties.
 ### DefaultParameter (Default)
 
 ```
-Select-Object [[-Property] <Object[]>] [-InputObject <PSObject>]
- [-ExcludeProperty <String[]>] [-ExpandProperty <String>] [-Unique]
- [-Last <Int32>] [-First <Int32>] [-Skip <Int32>] [-Wait] [<CommonParameters>]
+Select-Object [-InputObject <PSObject>] [[-Property] <Object[]>] [-ExcludeProperty <String[]>]
+ [-ExpandProperty <String>] [-Unique] [-Last <Int32>] [-First <Int32>] [-Skip <Int32>] [-Wait]
+ [<CommonParameters>]
 ```
 
 ### SkipLastParameter
 
 ```
-Select-Object [[-Property] <Object[]>] [-InputObject <PSObject>]
- [-ExcludeProperty <String[]>] [-ExpandProperty <String>] [-Unique]
- [-SkipLast <Int32>] [<CommonParameters>]
+Select-Object [-InputObject <PSObject>] [[-Property] <Object[]>] [-ExcludeProperty <String[]>]
+ [-ExpandProperty <String>] [-Unique] [-SkipLast <Int32>] [<CommonParameters>]
 ```
 
 ### IndexParameter
 
 ```
-Select-Object [-InputObject <PSObject>] [-Unique] [-Wait] [-Index <Int32[]>]
- [<CommonParameters>]
+Select-Object [-InputObject <PSObject>] [-Unique] [-Wait] [-Index <Int32[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -343,7 +342,7 @@ Accept wildcard characters: True
 ### -ExpandProperty
 
 Specifies a property to select, and indicates that an attempt should be made to expand that
-property. Wildcards are permitted in the property name.
+property.
 
 - If the specified property is an array, each value of the array is included in the output.
 - If the specified property is an object, the objects properties are expanded for every
@@ -366,7 +365,7 @@ property as a **NoteProperty** to every outputted object.
 
 ```yaml
 Type: String
-Parameter Sets: DefaultParameter
+Parameter Sets: DefaultParameter, SkipLastParameter
 Aliases:
 
 Required: False
@@ -545,7 +544,7 @@ This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
 Type: SwitchParameter
-Parameter Sets: (All)
+Parameter Sets: DefaultParameter, IndexParameter
 Aliases:
 
 Required: False

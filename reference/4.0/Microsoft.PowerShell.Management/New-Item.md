@@ -214,13 +214,29 @@ Required: True
 Position: 0
 Default value: None
 Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: True
+```
+
+### -UseTransaction
+
+Includes the command in the active transaction. This parameter is valid only when a transaction is
+in progress. For more information, see [about_Transactions](../Microsoft.PowerShell.Core/About/about_Transactions.md).
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: usetx
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -Value
 
-Specifies the value of the new item.
-You can also pipe a value to `New-Item`.
+Specifies the value of the new item. You can also pipe a value to `New-Item`.
 
 ```yaml
 Type: Object
@@ -259,23 +275,6 @@ The cmdlet is not run.
 Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
-
-Required: False
-Position: Named
-Default value: False
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -UseTransaction
-
-Includes the command in the active transaction. This parameter is valid only when a transaction is
-in progress. For more information, see [about_Transactions](../Microsoft.PowerShell.Core/About/about_Transactions.md).
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: (All)
-Aliases: usetx
 
 Required: False
 Position: Named

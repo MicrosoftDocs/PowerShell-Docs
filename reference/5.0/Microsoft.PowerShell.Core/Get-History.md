@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
+external help file: System.Management.Automation.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Core
+ms.date: 06/09/2017
 online version: https://go.microsoft.com/fwlink/?linkid=821484
-external help file:  System.Management.Automation.dll-Help.xml
-title:  Get-History
+schema: 2.0.0
+title: Get-History
 ---
 
 # Get-History
@@ -23,7 +24,7 @@ Get-History [[-Id] <Int64[]>] [[-Count] <Int32>] [<CommonParameters>]
 The **Get-History** cmdlet gets the session history, that is, the list of commands entered during the current session.
 
 Windows PowerShell automatically maintains a history of each session.
-The number of entries in the session history is determined by the value of the $MaximumHistoryCount preference variable.
+The number of entries in the session history is determined by the value of the `$MaximumHistoryCount` preference variable.
 Beginning in Windows PowerShell 3.0, the default value is 4096.
 
 You can save the session history in XML or CSV format.
@@ -145,5 +146,4 @@ This cmdlet returns a history object for each history item that it gets.
 [Invoke-History](Invoke-History.md)
 
 [about_History](About/about_History.md)
-
 

@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
+external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Utility
+ms.date: 06/09/2017
 online version: https://go.microsoft.com/fwlink/?linkid=821790
-external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-title:  Get-FormatData
+schema: 2.0.0
+title: Get-FormatData
 ---
 # Get-FormatData
 
@@ -27,22 +28,22 @@ The formatting data in the session includes formatting data from Format.ps1xml f
 You can use this cmdlet to examine the formatting data.
 Then, you can use the Export-FormatData cmdlet to serialize the objects, convert them to XML, and save them in Format.ps1xml files.
 
-For more information about formatting files in Windows PowerShell, see about_Format.ps1xml.
+For more information about formatting files in PowerShell, see about_Format.ps1xml.
 
 ## EXAMPLES
 
 ### Example 1: Get all formatting data
 
-```
-PS C:\> Get-FormatData
-```
-
 This command gets all the formatting data in the session.
+
+```powershell
+Get-FormatData
+```
 
 ### Example 2: Get formatting data by type name
 
 ```
-PS C:\> Get-FormatData -TypeName "Microsoft.Wsman*"
+Get-FormatData -TypeName "Microsoft.Wsman*"
 ```
 
 This command gets the formatting data items whose names begin with Microsoft.Wsman.
@@ -50,8 +51,8 @@ This command gets the formatting data items whose names begin with Microsoft.Wsm
 ### Example 3: Examine a formatting data object
 
 ```
-PS C:\> $F = Get-FormatData -TypeName helpinfoshort
-PS C:\> $F
+$F = Get-FormatData -TypeName helpinfoshort
+$F
 TypeName        FormatViewDefinition
 --------        --------------------
 HelpInfoShort   {help , TableControl} PS C:\> $F.FormatViewDefinition[0].control
@@ -69,15 +70,25 @@ This example shows how to get a formatting data object and examine its propertie
 
 ### Example 4: Get formatting data and export it
 
+```powershell
+$A = Get-FormatData
+Import-Module bitstransfer
+$B = Get-FormatData
+Compare-Object $A $B
 ```
-PS C:\> $A = Get-FormatData
-PS C:\> Import-Module bitstransfer
-PS C:\> $B = Get-FormatData
-PS C:\> Compare-Object $A $B
+
+```Output
 InputObject                                                SideIndicator
 -----------                                                -------------
-Microsoft.BackgroundIntelligentTransfer.Management.BitsJob => PS C:\> Get-FormatData *bits* | Export-FormatData -FilePath "c:\test\bits.format.ps1xml"
-PS C:\> Get-Content "c:\test\bits.format.ps1xml"
+Microsoft.BackgroundIntelligentTransfer.Management.BitsJob => 
+```
+
+```powershell
+Get-FormatData *bits* | Export-FormatData -FilePath c:\test\bits.format.ps1xml
+Get-Content c:\test\bits.format.ps1xml
+```
+
+```Output
 <?xml version="1.0" encoding="utf-8"?><Configuration><ViewDefinitions>
 <View><Name>Microsoft.BackgroundIntelligentTransfer.Management.BitsJob</Name>
 ...
@@ -109,7 +120,7 @@ Required: False
 Position: 0
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### CommonParameters
@@ -133,5 +144,4 @@ You cannot pipe input to this cmdlet.
 [Export-FormatData](Export-FormatData.md)
 
 [Update-FormatData](Update-FormatData.md)
-
 
