@@ -543,7 +543,7 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -Filter
@@ -684,7 +684,7 @@ Required: True
 Position: 0
 Default value: None
 Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -Newest
@@ -770,8 +770,6 @@ Local job started by using **Start-Job**.
   - **RemoteJob**.
 Job started in a **PSSession** by using the *AsJob* parameter of the Invoke-Command cmdlet.
 
-  - **PSWorkflowJob**.
-Job started by using the *AsJob* common parameter of workflows.
 
 ## RELATED LINKS
 

@@ -203,7 +203,6 @@ Accept wildcard characters: False
 
 Specifies the path of the location of the new item.
 Wildcard characters are permitted.
-
 You can specify the name of the new item in **Name**, or include it in **Path**.
 
 ```yaml
@@ -211,7 +210,7 @@ Type: String[]
 Parameter Sets: pathSet, nameSet
 Aliases:
 
-Required: True
+Required: True (pathSet), False (nameSet)
 Position: 0
 Default value: None
 Accept pipeline input: True (ByPropertyName)
@@ -237,8 +236,7 @@ Accept wildcard characters: False
 
 ### -Value
 
-Specifies the value of the new item.
-You can also pipe a value to `New-Item`.
+Specifies the value of the new item. You can also pipe a value to `New-Item`.
 
 ```yaml
 Type: Object

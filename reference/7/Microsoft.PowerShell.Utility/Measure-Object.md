@@ -450,7 +450,7 @@ Required: False
 Position: 0
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -StandardDeviation
@@ -546,6 +546,8 @@ Otherwise, it returns a **GenericMeasureInfo** object.
 
 [Compare-Object](Compare-Object.md)
 
+[ForEach-Object](../Microsoft.PowerShell.Core/ForEach-Object.md)
+
 [Group-Object](Group-Object.md)
 
 [New-Object](New-Object.md)
@@ -555,3 +557,5 @@ Otherwise, it returns a **GenericMeasureInfo** object.
 [Sort-Object](Sort-Object.md)
 
 [Tee-Object](Tee-Object.md)
+
+[Where-Object](../Microsoft.PowerShell.Core/Where-Object.md)

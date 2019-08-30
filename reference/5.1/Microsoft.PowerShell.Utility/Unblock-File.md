@@ -27,15 +27,16 @@ Unblock-File -LiteralPath <String[]> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+
 The **Unblock-File** cmdlet lets you open files that were downloaded from the Internet.
-It unblocks Windows PowerShell script files that were downloaded from the Internet so you can run them, even when the Windows PowerShell execution policy is **RemoteSigned**.
+It unblocks PowerShell script files that were downloaded from the Internet so you can run them, even when the PowerShell execution policy is **RemoteSigned**.
 By default, these files are blocked to protect the computer from untrusted files.
 
 Before using the **Unblock-File** cmdlet, review the file and its source and verify that it is safe to open.
 
 Internally, the **Unblock-File** cmdlet removes the Zone.Identifier alternate data stream, which has a value of "3" to indicate that it was downloaded from the Internet.
 
-For more information about Windows PowerShell execution policies, see about_Execution_Policies (http://go.microsoft.com/fwlink/?LinkID=135170).
+For more information about PowerShell execution policies, see [about_Execution_Policies](../Microsoft.PowerShell.Core/about/about_Execution_Policies.md).
 
 This cmdlet was introduced in Windows PowerShell 3.0.
 
@@ -66,12 +67,12 @@ Stream                   Length
 ------                   ------
 Zone.Identifier              26
 
-The second command shows what happens when you run a blocked script in a Windows PowerShell session in which the execution policy is **RemoteSigned**. The RemoteSigned policy prevents you from running scripts that are downloaded from the Internet unless they are digitally signed.
+The second command shows what happens when you run a blocked script in a PowerShell session in which the execution policy is **RemoteSigned**. The RemoteSigned policy prevents you from running scripts that are downloaded from the Internet unless they are digitally signed.
 PS C:\> C:\ps-test\Start-ActivityTracker.ps1
 c:\ps-test\Start-ActivityTracker.ps1 : File c:\ps-test\Start-ActivityTracker.ps1 cannot
 be loaded. The file c:\ps-test\Start-ActivityTracker.ps1 is not digitally signed. The script
-will not execute on the system. For more information, see about_Execution_Policies at
-http://go.microsoft.com/fwlink/?LinkID=135170.
+will not execute on the system. For more information, see about_Execution_Policies.
+
 At line:1 char:1
 + c:\ps-test\Start-ActivityTracker.ps1
 + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -82,7 +83,7 @@ The third command uses the **Unblock-File** cmdlet to unblock the script so it c
 PS C:\> Get-Item C:\ps-test\Start-ActivityTracker.ps1 | Unblock-File
 ```
 
-This command shows how to find and unblock Windows PowerShell scripts.
+This command shows how to find and unblock PowerShell scripts.
 
 ## PARAMETERS
 
@@ -91,7 +92,7 @@ Specifies the files to unblock.
 Unlike *Path*, the value of the *LiteralPath* parameter is used exactly as it is typed.
 No characters are interpreted as wildcards.
 If the path includes escape characters, enclose it in single quotation marks.
-Single quotation marks tell Windows PowerShell not to interpret any characters as escape sequences.
+Single quotation marks tell PowerShell not to interpret any characters as escape sequences.
 
 ```yaml
 Type: String[]
@@ -118,7 +119,7 @@ Required: True
 Position: 0
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -Confirm
@@ -153,7 +154,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 

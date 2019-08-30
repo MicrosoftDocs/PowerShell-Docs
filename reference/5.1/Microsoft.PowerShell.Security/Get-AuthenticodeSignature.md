@@ -7,11 +7,9 @@ online version: https://go.microsoft.com/fwlink/?linkid=821711
 external help file:  Microsoft.PowerShell.Security.dll-Help.xml
 title:  Get-AuthenticodeSignature
 ---
-
 # Get-AuthenticodeSignature
 
 ## SYNOPSIS
-
 Gets information about the digital signature for a file.
 
 ## SYNTAX
@@ -66,7 +64,7 @@ Get-ChildItem $PSHOME\*.* | ForEach-object {Get-AuthenticodeSignature $_} | Wher
 ```
 
 This command lists all of the files in the `$PSHOME` directory that have a valid digital signature.
-The `$PSHOME` automatic variable contains the path to the Windows PowerShell installation directory.
+The `$PSHOME` automatic variable contains the path to the PowerShell installation directory.
 
 The command uses the **Get-ChildItem** cmdlet to get the files in the `$PSHOME` directory.
 It uses a pattern of *.* to exclude directories (although it also excludes files without a dot in the filename).
@@ -118,7 +116,7 @@ Required: True
 Position: 0
 Default value: None
 Accept pipeline input: True (ByPropertyName, ByValue)
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -LiteralPath
@@ -127,7 +125,7 @@ Specifies the path to the file being examined.
 Unlike *FilePath*, the value of the *LiteralPath* parameter is used exactly as it is typed.
 No characters are interpreted as wildcards.
 If the path includes an escape character, enclose it in single quotation marks.
-Single quotation marks tell Windows PowerShell not to interpret any characters as escape characters.
+Single quotation marks tell PowerShell not to interpret any characters as escape characters.
 
 ```yaml
 Type: String[]
@@ -176,7 +174,7 @@ You can pipe a string that contains a file path to **Get-AuthenticodeSignature**
 
 ## NOTES
 
-* For information about digital signatures in Windows PowerShell, see [about_Signing](../Microsoft.PowerShell.Core/About/about_Signing.md).
+For information about digital signatures in PowerShell, see [about_Signing](../Microsoft.PowerShell.Core/About/about_Signing.md).
 
 ## RELATED LINKS
 

@@ -20,7 +20,7 @@ Gets all commands.
 ```
 Get-Command [-Verb <String[]>] [-Noun <String[]>] [-Module <String[]>] [-FullyQualifiedModule <ModuleSpecification[]>]
  [-TotalCount <Int32>] [-Syntax] [-ShowCommandInfo] [[-ArgumentList] <Object[]>] [-All] [-ListImported]
- [-ParameterName <String[]>] [-ParameterType <PSTypeName[]>]
+ [-ParameterName <String[]>] [-ParameterType <PSTypeName[]>] [<CommonParameters>]
 ```
 
 ### AllCommandSet
@@ -381,7 +381,7 @@ Accept wildcard characters: False
 
 Specifies modules with names that are specified in the form of **ModuleSpecification** objects,
 described in the **Remarks** section of
-[ModuleSpecification Constructor (Hashtable)](https://docs.microsoft.com/en-us/dotnet/api/microsoft.powershell.commands.modulespecification.-ctor?redirectedfrom=MSDN&view=powershellsdk-1.1.0#Microsoft_PowerShell_Commands_ModuleSpecification__ctor_System_Collections_Hashtable_).
+[ModuleSpecification Constructor (Hashtable)](/dotnet/api/microsoft.powershell.commands.modulespecification.-ctor?view=powershellsdk-1.1.0#Microsoft_PowerShell_Commands_ModuleSpecification__ctor_System_Collections_Hashtable_).
 For example, the **FullyQualifiedModule** parameter accepts a module name that is specified in one
 of the following formats:
 
@@ -409,8 +409,8 @@ Accept wildcard characters: False
 
 Indicates that this cmdlet gets only commands in the current session.
 
-Starting in Windows PowerShell 3.0, by default, `Get-Command` gets all installed commands,
-including, but not limited to, the commands in the current session. In Windows PowerShell 2.0, it
+Starting in PowerShell 3.0, by default, `Get-Command` gets all installed commands,
+including, but not limited to, the commands in the current session. In PowerShell 2.0, it
 gets only commands in the current session.
 
 This parameter was introduced in Windows PowerShell 3.0.
@@ -464,7 +464,7 @@ Required: False
 Position: 0
 Default value: None
 Accept pipeline input: True (ByPropertyName, ByValue)
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -Noun
@@ -482,7 +482,7 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -ParameterName
@@ -503,7 +503,7 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -ParameterType
@@ -525,7 +525,7 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -ShowCommandInfo
@@ -624,7 +624,7 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### CommonParameters
