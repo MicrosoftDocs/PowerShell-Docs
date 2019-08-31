@@ -102,7 +102,7 @@ Compare-Object $A $B
 ```Output
 InputObject                                                SideIndicator
 -----------                                                -------------
-Microsoft.BackgroundIntelligentTransfer.Management.BitsJob => 
+Microsoft.BackgroundIntelligentTransfer.Management.BitsJob =>
 ```
 
 ```powershell
@@ -116,12 +116,15 @@ Get-Content c:\test\bits.format.ps1xml
 ...
 ```
 
-This example shows how to use **Get-FormatData** and **Export-FormatData** to export the formatting data that is added by a module.
+This example shows how to use **Get-FormatData** and **Export-FormatData** to export the formatting
+data that is added by a module.
 
-The first four commands use the **Get-FormatData**, Import-Module, and Compare-Object cmdlets to identify the format type that the BitsTransfer module adds to the session.
+The first four commands use the **Get-FormatData**, Import-Module, and Compare-Object cmdlets to
+identify the format type that the BitsTransfer module adds to the session.
 
-The fifth command uses the **Get-FormatData** cmdlet to get the format type that the BitsTransfer module adds.
-It uses a pipeline operator (|) to send the format type object to the Export-FormatData cmdlet, which converts it back to XML and saves it in the specified format.ps1xml file.
+The fifth command uses the **Get-FormatData** cmdlet to get the format type that the BitsTransfer
+module adds. It uses a pipeline operator (|) to send the format type object to the Export-FormatData
+cmdlet, which converts it back to XML and saves it in the specified format.ps1xml file.
 
 The final command shows an excerpt of the format.ps1xml file content.
 
@@ -166,13 +169,14 @@ TypeNames                               FormatViewDefinition
 
 This example shows how to use **Get-FormatData** to get format data for a specified TypeName and a
 specified PowerShell version.
+```
 
 ## PARAMETERS
 
 ### -PowerShellVersion
 
 Specify the version of PowerShell this cmdlet gets for the formatting data.
-Enter a two digit number seperated by a period.
+Enter a two digit number separated by a period.
 
 ```yaml
 Type: Version
