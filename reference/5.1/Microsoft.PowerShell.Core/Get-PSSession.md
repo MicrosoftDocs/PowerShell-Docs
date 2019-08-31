@@ -134,7 +134,7 @@ The *ComputerName* parameter gets sessions that were created in the current sess
 the specified computer.
 
 For more information about Windows PowerShell sessions, see about_PSSessions
-(http://go.microsoft.com/fwlink/?LinkID=135181).
+(https://go.microsoft.com/fwlink/?LinkID=135181).
 
 ## EXAMPLES
 
@@ -772,7 +772,7 @@ Accept wildcard characters: False
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see about_CommonParameters
-(http://go.microsoft.com/fwlink/?LinkID=113216).
+(https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -832,3 +832,5 @@ to another session.
 [New-PSSession](New-PSSession.md)
 
 [Remove-PSSession](Remove-PSSession.md)
+
+

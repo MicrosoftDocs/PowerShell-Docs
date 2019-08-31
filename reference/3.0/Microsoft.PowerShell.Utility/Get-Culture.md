@@ -133,7 +133,7 @@ The fifth command uses dot notation to display the value of the FirstDayOfWeek p
 
 ### CommonParameters
 
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -157,3 +157,5 @@ Get-Culture returns an object that represents the current culture.
 [Set-Culture](/powershell/module/internationalcmdlets/set-culture)
 
 [Get-UICulture](Get-UICulture.md)
+
+

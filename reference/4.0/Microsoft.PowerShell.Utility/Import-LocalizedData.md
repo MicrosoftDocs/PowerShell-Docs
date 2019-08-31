@@ -32,7 +32,7 @@ You can use the parameters of **Import-LocalizedData** to specify an alternate U
 
 The **Import-LocalizedData** cmdlet supports the script internationalization initiative that was introduced in Windows PowerShell 2.0.
 This initiative aims to better serve users worldwide by making it easy for scripts to display user messages in the UI language of the current user.
-For more information about this and about the format of the .psd1 files, see about_Script_Internationalization (http://go.microsoft.com/fwlink/?LinkID=113262).
+For more information about this and about the format of the .psd1 files, see about_Script_Internationalization (https://go.microsoft.com/fwlink/?LinkID=113262).
 
 ## EXAMPLES
 
@@ -277,7 +277,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -310,8 +310,12 @@ To suppress the message and fail gracefully, use the **ErrorAction** common para
   If **Import-LocalizedData** finds the subdirectory and the .psd1 file, it imports the hash table of user messages into the value of the **BindingVariable** parameter in the command.
 Then, when you display a message from the hash table in the variable, the localized message is displayed.
 
-  For more information, see about_Script_Internationalization (http://go.microsoft.com/fwlink/?LinkID=113262).
+  For more information, see about_Script_Internationalization (https://go.microsoft.com/fwlink/?LinkID=113262).
 
 ## RELATED LINKS
 
 [about_Script_Internationalization](../Microsoft.PowerShell.Core/About/about_Script_Internationalization.md)
+
+
+
+

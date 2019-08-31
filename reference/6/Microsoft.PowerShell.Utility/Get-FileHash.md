@@ -53,7 +53,7 @@ By default, the **Get-FileHash** cmdlet uses the SHA256 algorithm, although any 
 
 ### Example 1: Compute the hash value for a PowerShell.exe file
 
-```
+```powershell
 PS C:\> Get-FileHash $pshome\powershell.exe | Format-List
 Algorithm : SHA256
 Hash      : 6A785ADC0263238DAB3EB37F4C185C8FBA7FEB5D425D034CA9864F1BE1C1B473
@@ -66,7 +66,7 @@ The output is piped to the Format-List cmdlet to format the output as a list.
 
 ### Example 2: Compute the hash value for an ISO file
 
-```
+```powershell
 PS C:\> Get-FileHash C:\Users\Andris\Downloads\Contoso8_1_ENT.iso -Algorithm SHA384 | Format-List
 
 Algorithm : SHA384
@@ -202,12 +202,12 @@ Required: True
 Position: 0
 Default value: None
 Accept pipeline input: True (ByPropertyName, ByValue)
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### CommonParameters
 
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -226,3 +226,5 @@ You can pipe a string to the **Get-FileHash** cmdlet that contains a path to one
 ## RELATED LINKS
 
 [Format-List](Format-List.md)
+
+

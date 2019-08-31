@@ -335,7 +335,7 @@ Aliases: Cn
 
 Required: False
 Position: 1
-Default value: All jobs
+Default value: All computers available
 Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: True
 ```
@@ -405,7 +405,7 @@ Aliases:
 
 Required: True
 Position: 0
-Default value: All jobs
+Default value: All instances
 Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
@@ -461,7 +461,7 @@ Aliases:
 
 Required: False
 Position: 1
-Default value: All jobs
+Default value: All locations
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -517,7 +517,7 @@ Aliases:
 
 Required: False
 Position: 1
-Default value: All jobs
+Default value: All sessions
 Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```

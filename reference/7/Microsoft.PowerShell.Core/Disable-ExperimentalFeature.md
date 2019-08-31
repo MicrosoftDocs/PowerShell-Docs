@@ -114,7 +114,7 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+-WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -137,3 +137,4 @@ Changes to state of an experimental feature only take effect on restart of Power
 [Enable-ExperimentalFeature](Enable-ExperimentalFeature.md)
 
 [Get-ExperimentalFeature](Get-ExperimentalFeature.md)
+

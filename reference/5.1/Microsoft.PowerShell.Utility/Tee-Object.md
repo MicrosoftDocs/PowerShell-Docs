@@ -110,7 +110,7 @@ Required: True
 Position: 0
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -InputObject
@@ -138,7 +138,7 @@ Specifies a file that this cmdlet saves the object to.
 Unlike *FilePath*, the value of the *LiteralPath* parameter is used exactly as it is typed.
 No characters are interpreted as wildcards.
 If the path includes escape characters, enclose it in single quotation marks.
-Single quotation marks tell Windows PowerShell not to interpret any characters as escape sequences.
+Single quotation marks tell PowerShell not to interpret any characters as escape sequences.
 
 ```yaml
 Type: String
@@ -169,7 +169,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -198,3 +198,5 @@ You can pipe objects to **Tee-Object**.
 [Select-Object](Select-Object.md)
 
 [Sort-Object](Sort-Object.md)
+
+

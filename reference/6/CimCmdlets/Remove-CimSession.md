@@ -52,7 +52,7 @@ The `Remove-CimSession` cmdlet removes one or more CIM session objects from the 
 Get-CimSession | Remove-CimSession
 ```
 
-This command retrieves all the available CIM sessions on the local computer using the [`Get-CimSession`](Get-CimSession.md) cmdlet, and then removes them using the `Remove-CimSession`.
+This command retrieves all the available CIM sessions on the local computer using the [Get-CimSession](Get-CimSession.md) cmdlet, and then removes them using the `Remove-CimSession`.
 
 ### Example 2: Remove a specific CIM session
 
@@ -167,7 +167,7 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -Confirm
@@ -203,7 +203,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -226,3 +226,5 @@ This cmdlet returns an object that contains CIM session information.
 [New-CimSession](New-CimSession.md)
 
 [about_CimSession](../Microsoft.PowerShell.Core/About/about_CimSession.md)
+
+

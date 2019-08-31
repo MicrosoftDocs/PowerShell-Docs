@@ -189,10 +189,12 @@ Required: False
 Position: 0
 Default value: None
 Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -Proxy
+
+Specifies a proxy server for the request, rather than connecting directly to the Internet resource.
 
 ```yaml
 Type: Uri
@@ -207,6 +209,8 @@ Accept wildcard characters: False
 ```
 
 ### -ProxyCredential
+
+Specifies a user account that has permission to use the proxy server that is specified by the **Proxy** parameter.
 
 ```yaml
 Type: PSCredential
@@ -256,7 +260,7 @@ Accept wildcard characters: False
 
 ### CommonParameters
 
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -280,3 +284,5 @@ A **SoftwareIdentity** object can be piped into **Install-PackageProvider** to i
 [Register-PackageSource](Register-PackageSource.md)
 
 [Install-PackageProvider](Install-PackageProvider.md)
+
+

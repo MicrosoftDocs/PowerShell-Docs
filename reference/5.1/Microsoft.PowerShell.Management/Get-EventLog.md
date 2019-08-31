@@ -476,7 +476,7 @@ Accept wildcard characters: False
 ### -LogName
 
 Specifies the name of one event log. To find the log names use `Get-EventLog -List`. Wildcard
-characters are not permitted. This parameter is required.
+characters are permitted. This parameter is required.
 
 ```yaml
 Type: String
@@ -487,7 +487,7 @@ Required: True
 Position: 0
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -Message

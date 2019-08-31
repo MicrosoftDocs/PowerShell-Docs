@@ -141,8 +141,8 @@ Select-String -Path "$PSHOME\en-US\*.txt" -Pattern '\?'
 ```
 
 ```Output
-C:\Program Files\PowerShell\6\en-US\default.help.txt:27:    beginning at http://go.microsoft.com/fwlink/?LinkID=108518.
-C:\Program Files\PowerShell\6\en-US\default.help.txt:50:    or go to: http://go.microsoft.com/fwlink/?LinkID=210614
+C:\Program Files\PowerShell\6\en-US\default.help.txt:27:    beginning at https://go.microsoft.com/fwlink/?LinkID=108518.
+C:\Program Files\PowerShell\6\en-US\default.help.txt:50:    or go to: https://go.microsoft.com/fwlink/?LinkID=210614
 ```
 
 The `Select-String` cmdlet uses two parameters, **Path** and **Pattern**. The **Path** parameter
@@ -726,3 +726,5 @@ To find the properties of a **MatchInfo** object, type the following command:
 [Get-WinEvent](../Microsoft.PowerShell.Diagnostics/Get-WinEvent.md)
 
 [Out-File](Out-File.md)
+
+
