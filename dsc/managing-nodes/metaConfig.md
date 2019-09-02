@@ -129,8 +129,8 @@ A **ConfigurationRepositoryWeb** defines the following properties.
 |ProxyURL*|string|The URL of the http proxy to use when communicating with the configuration service.|
 |ProxyCredential*|pscredential|Credential to use for the http proxy.|
 
->!NOTE
->\* Supported in Windows versions 1809 and later.
+> [!NOTE]
+> * Supported in Windows versions 1809 and later.
 
 An example script to simplify configuring the ConfigurationRepositoryWeb value for on-premises nodes
 is available - see [Generating DSC metaconfigurations](https://docs.microsoft.com/azure/automation/automation-dsc-onboarding#generating-dsc-metaconfigurations)
@@ -158,8 +158,8 @@ A **ResourceRepositoryWeb** defines the following properties.
 |ProxyURL*|string|The URL of the http proxy to use when communicating with the configuration service.|
 |ProxyCredential*|pscredential|Credential to use for the http proxy.|
 
->!NOTE
->\* Supported in Windows versions 1809 and later.
+> [!NOTE]
+> * Supported in Windows versions 1809 and later.
 
 An example script to simplify configuring the ResourceRepositoryWeb value for on-premises nodes
 is available - see [Generating DSC metaconfigurations](https://docs.microsoft.com/azure/automation/automation-dsc-onboarding#generating-dsc-metaconfigurations)
@@ -188,8 +188,8 @@ The report server role is not compatible with SMB based pull service.
 |ProxyURL*|string|The URL of the http proxy to use when communicating with the configuration service.|
 |ProxyCredential*|pscredential|Credential to use for the http proxy.|
 
->!NOTE
->\* Supported in Windows versions 1809 and later.
+> [!NOTE]
+> * Supported in Windows versions 1809 and later.
 
 An example script to simplify configuring the ReportServerWeb value for on-premises nodes
 is available - see [Generating DSC metaconfigurations](https://docs.microsoft.com/azure/automation/automation-dsc-onboarding#generating-dsc-metaconfigurations)
