@@ -132,11 +132,11 @@ Installing and using multiple versions of resources side by side was not support
 
 In the image below, two versions of the **xPSDesiredStateConfiguration** module are installed.
 
-![Multiple Resource Versions Fixed](../media/multiple-resource-versions-broken.md)
+![Multiple Resource Versions Fixed](../media/multiple-resource-versions-broken.png)
 
 Copy the contents of your desired module version to the top level of the module directory.
 
-![Multiple Resource Versions Fixed](../media/multiple-resource-versions-fixed.md)
+![Multiple Resource Versions Fixed](../media/multiple-resource-versions-fixed.png)
 
 ### Resource location
 
