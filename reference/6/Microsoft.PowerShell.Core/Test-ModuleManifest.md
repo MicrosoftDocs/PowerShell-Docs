@@ -66,7 +66,8 @@ AccessMode        : ReadWrite
 ExportedAliases   : {}
 ExportedCmdlets   : {}
 ExportedFunctions : {}
-ExportedVariables : {}NestedModules     : {}
+ExportedVariables : {}
+NestedModules     : {}
 ```
 
 This command uses a pipeline operator (|) to send a path string to **Test-ModuleManifest**.
@@ -80,7 +81,7 @@ function Test-ManifestBool ($path)
 ```
 
 ```Output
-{$a = dir $path | Test-ModuleManifest -ErrorAction SilentlyContinue $?}
+{$a = dir $path | Test-ModuleManifest -ErrorAction SilentlyContinue; $?}
 ```
 
 This function is like **Test-ModuleManifest**, but it returns a Boolean value.
@@ -155,4 +156,5 @@ It returns this object even if the manifest has errors.
 
 [Remove-Module](Remove-Module.md)
 
+[about_Modules](About/about_Modules.md)
 

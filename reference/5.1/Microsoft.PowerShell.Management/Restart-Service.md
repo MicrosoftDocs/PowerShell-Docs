@@ -114,7 +114,7 @@ Accept wildcard characters: True
 
 ### -Force
 
-Restarts a service that has dependent services.
+Forces the command to run without asking for user confirmation.
 
 ```yaml
 Type: SwitchParameter

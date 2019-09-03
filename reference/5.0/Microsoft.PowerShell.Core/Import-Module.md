@@ -402,7 +402,7 @@ Microsoft.PowerShell.Utility\Get-Date
 ```
 
 ```Output
-Thursday, August 15, 2019 2:28:31 PM
+Thursday, August 15, 2019 2:26:12 PM
 ```
 
 The first Get-Date` cmdlet returns a **DateTime** object with the current date. After importing the
@@ -726,7 +726,7 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -DisableNameChecking
@@ -806,7 +806,7 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -Global
@@ -921,7 +921,7 @@ Required: True
 Position: 0
 Default value: None
 Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -NoClobber
@@ -1084,7 +1084,7 @@ Accepted values: Local, Global
 
 Required: False
 Position: Named
-Default value: None
+Default value: Current scope
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -1106,7 +1106,7 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### CommonParameters

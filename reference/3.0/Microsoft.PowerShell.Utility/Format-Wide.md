@@ -1,16 +1,16 @@
 ---
-ms.date:  12/19/2018
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
+external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Utility
+ms.date: 12/19/2018
 online version: https://go.microsoft.com/fwlink/?linkid=113304
-external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-title:  Format-Wide
+schema: 2.0.0
+title: Format-Wide
 ---
 # Format-Wide
 
 ## SYNOPSIS
-
 Formats objects as a wide table that displays only one property of each object.
 
 ## SYNTAX
@@ -239,7 +239,7 @@ Required: False
 Position: 0
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -ShowError

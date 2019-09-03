@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
+external help file: System.Management.Automation.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Core
+ms.date: 06/09/2017
 online version: https://go.microsoft.com/fwlink/?linkid=289603
-external help file:  System.Management.Automation.dll-Help.xml
-title:  Receive-Job
+schema: 2.0.0
+title: Receive-Job
 ---
 # Receive-Job
 
@@ -334,9 +335,9 @@ Aliases: Cn
 
 Required: False
 Position: 1
-Default value: All jobs
+Default value: All computers available
 Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -Force
@@ -366,6 +367,7 @@ Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
+
 
 ### -Id
 
@@ -404,7 +406,7 @@ Aliases:
 
 Required: True
 Position: 0
-Default value: All jobs
+Default value: All instances
 Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
@@ -418,7 +420,7 @@ You can also pipe a job object to `Receive-Job`.
 
 ```yaml
 Type: Job[]
-Parameter Sets: Location, ComputerName, Session
+Parameter Sets: Location, Session, ComputerName
 Aliases:
 
 Required: True
@@ -460,7 +462,7 @@ Aliases:
 
 Required: False
 Position: 1
-Default value: All jobs
+Default value: All locations
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -481,7 +483,7 @@ Required: True
 Position: 0
 Default value: None
 Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -NoRecurse
@@ -516,7 +518,7 @@ Aliases:
 
 Required: False
 Position: 1
-Default value: All jobs
+Default value: All sessions
 Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
@@ -630,3 +632,13 @@ This cmdlet returns the results of the commands in the job.
 [Suspend-Job](Suspend-Job.md)
 
 [Wait-Job](Wait-Job.md)
+
+[about_Jobs](About/about_Jobs.md)
+
+[about_Job_Details](About/about_Job_Details.md)
+
+[about_Remote_Jobs](About/about_Remote_Jobs.md)
+
+[about_Remote_Variables](About/about_Remote_Variables.md)
+
+[about_Scopes](About/about_scopes.md)

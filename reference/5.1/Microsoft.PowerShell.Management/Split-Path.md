@@ -113,6 +113,7 @@ This command determines whether the path is relative or absolute.
 In this case, because the path is relative to the current folder, which is represented by a dot (.), it returns $False.
 
 ### Example 5: Change location to a specified path
+
 ```
 PS C:\> Set-Location (Split-Path -Path $profile)
 PS C:\Documents and Settings\User01\My Documents\WindowsPowerShell>
@@ -300,6 +301,7 @@ Accept wildcard characters: False
 ```
 
 ### -UseTransaction
+
 Includes the command in the active transaction.
 This parameter is valid only when a transaction is in progress.
 For more information, see about_Transactions.
@@ -349,8 +351,6 @@ These include the FileSystem, Registry, and Certificate providers.
   **Split-Path** is designed to work with the data exposed by any provider.
 To list the providers available in your session, type `Get-PSProvider`.
 For more information, see about_Providers.
-
-*
 
 ## RELATED LINKS
 

@@ -367,9 +367,10 @@ This cmdlet returns objects that are determined by the input.
 
 ## NOTES
 
-- The `ForEach-Object` cmdlet works much like the **Foreach** statement, except that you cannot pipe input to a **Foreach** statement. For more information about the **Foreach** statement, see [about_Foreach](./About/about_Foreach.md) in the Microsoft TechNet library.
-- Starting in Windows PowerShell 4.0, `Where` and `ForEach` methods were added for use with collections.
-  - You can read more about these new methods here [about_arrays](./About/about_Arrays.md)
+- The `ForEach-Object` cmdlet works much like the **Foreach** statement, except that you cannot pipe
+  input to a **Foreach** statement. For more information about the **Foreach** statement, see [about_Foreach](./About/about_Foreach.md).
+- Starting in PowerShell 4.0, `Where` and `ForEach` methods were added for use with collections.
+- You can read more about these new methods here [about_arrays](./About/about_Arrays.md)
 
 ## RELATED LINKS
 
@@ -388,5 +389,3 @@ This cmdlet returns objects that are determined by the input.
 [Sort-Object](../Microsoft.PowerShell.Utility/Sort-Object.md)
 
 [Tee-Object](../Microsoft.PowerShell.Utility/Tee-Object.md)
-
-

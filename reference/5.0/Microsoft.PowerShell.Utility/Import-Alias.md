@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
+external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Utility
+ms.date: 06/09/2017
 online version: https://go.microsoft.com/fwlink/?linkid=821812
-external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-title:  Import-Alias
+schema: 2.0.0
+title: Import-Alias
 ---
 # Import-Alias
 
@@ -16,13 +17,13 @@ Imports an alias list from a file.
 
 ### ByPath (Default)
 
-```powershell
+```
 Import-Alias [-Path] <String> [-Scope <String>] [-PassThru] [-Force] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### ByLiteralPath
 
-```powershell
+```
 Import-Alias -LiteralPath <String> [-Scope <String>] [-PassThru] [-Force] [-WhatIf] [-Confirm]
  [<CommonParameters>]
 ```
@@ -45,22 +46,6 @@ Import-Alias test.txt
 This command imports alias information from a file named test.txt.
 
 ## PARAMETERS
-
-### -Confirm
-
-Prompts you for confirmation before running the cmdlet.
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: (All)
-Aliases: cf
-
-Required: False
-Position: Named
-Default value: False
-Accept pipeline input: False
-Accept wildcard characters: False
-```
 
 ### -Force
 
@@ -89,7 +74,7 @@ Specifies the path to a file that includes exported alias information.
 Unlike the **Path** parameter, the value of the **LiteralPath** parameter is used exactly as it is typed.
 No characters are interpreted as wildcards.
 If the path includes escape characters, enclose it in single quotation marks.
-Single quotation marks tell Windows PowerShell not to interpret any characters as escape sequences.
+Single quotation marks tell PowerShell not to interpret any characters as escape sequences.
 
 ```yaml
 Type: String
@@ -134,7 +119,7 @@ Required: True
 Position: 0
 Default value: None
 Accept pipeline input: True (ByPropertyName, ByValue)
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -Scope
@@ -158,6 +143,22 @@ Aliases:
 Required: False
 Position: Named
 Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Confirm
+
+Prompts you for confirmation before running the cmdlet.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -207,5 +208,3 @@ Otherwise, this cmdlet does not generate any output.
 [New-Alias](New-Alias.md)
 
 [Set-Alias](Set-Alias.md)
-
-

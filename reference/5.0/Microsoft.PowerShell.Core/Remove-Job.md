@@ -1,11 +1,12 @@
 ---
-ms.date:  07/26/2019
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
+external help file: System.Management.Automation.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Core
+ms.date: 07/26/2019
 online version: https://go.microsoft.com/fwlink/?linkid=821509
-external help file:  System.Management.Automation.dll-Help.xml
-title:  Remove-Job
+schema: 2.0.0
+title: Remove-Job
 ---
 
 # Remove-Job
@@ -276,7 +277,7 @@ Aliases: F
 
 Required: False
 Position: Named
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -355,7 +356,7 @@ Required: True
 Position: 0
 Default value: None
 Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -State

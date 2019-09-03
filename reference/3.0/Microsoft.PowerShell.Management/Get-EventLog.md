@@ -1,11 +1,12 @@
 ---
+external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Management
 ms.date: 3/26/2019
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
 online version: https://go.microsoft.com/fwlink/?linkid=113314
-external help file:  Microsoft.PowerShell.Commands.Management.dll-Help.xml
-title:  Get-EventLog
+schema: 2.0.0
+title: Get-EventLog
 ---
 
 # Get-EventLog
@@ -21,14 +22,14 @@ computers.
 ```
 Get-EventLog [-LogName] <string> [[-InstanceId] <long[]>] [-ComputerName <string[]>] [-Newest <int>]
 [-After <datetime>] [-Before <datetime>] [-UserName <string[]>] [-Index <int[]>]
-[-EntryType <string[]>] [-Source <string[]>] [-Message <string>] [-AsBaseObject]
+[-EntryType <String[]>] [-Source <String[]>] [-Message <String>] [-AsBaseObject]
 [<CommonParameters>]
 ```
 
 ### List
 
 ```
-Get-EventLog [-ComputerName <string[]>] [-List] [-AsString] [<CommonParameters>]
+Get-EventLog [-ComputerName <String[]>] [-List] [-AsString] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -378,9 +379,8 @@ Accept wildcard characters: False
 This parameter specifies a remote computer's NetBIOS name, Internet Protocol (IP) address, or a
 fully qualified domain name (FQDN).
 
-If the **ComputerName** parameter isn't specified, `Get-EventLog` uses the default, which is the
-local computer. If you need to specify the local computer, the parameter accepts a dot (`.`), the
-loopback IP **127.0.0.1**, or **localhost**.
+If the **ComputerName** parameter isn't specified, `Get-EventLog` defaults to the local
+computer. The parameter also accepts a dot (`.`) to specify the local computer.
 
 The **ComputerName** parameter doesn't rely on Windows PowerShell remoting. You can use
 `Get-EventLog` with the **ComputerName** parameter even if your computer is not configured to run
@@ -476,7 +476,7 @@ Accept wildcard characters: False
 ### -LogName
 
 Specifies the name of one event log. To find the log names use `Get-EventLog -List`. Wildcard
-characters are not permitted. This parameter is required.
+characters are permitted. This parameter is required.
 
 ```yaml
 Type: String
@@ -487,7 +487,7 @@ Required: True
 Position: 0
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -Message
