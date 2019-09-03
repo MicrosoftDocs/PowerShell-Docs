@@ -206,7 +206,7 @@ Configuration TestConfig
         $ComputerName="localhost",
     )
 
-    # It is best practice to implicitly import any required resources or modules.
+    # It is best practice to explicitly import any required resources or modules.
     Import-DSCResource -Module PSDesiredStateConfiguration
 
     Node localhost
