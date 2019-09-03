@@ -10,7 +10,6 @@ title:  New-PSSession
 # New-PSSession
 
 ## SYNOPSIS
-
 Creates a persistent connection to a local or remote computer.
 
 ## SYNTAX
@@ -574,8 +573,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](./About/about_CommonParameters.md).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -592,8 +590,6 @@ You can pipe a computer name (string), ConnectionURI (URI), or session (PSSessio
 - This cmdlet uses the Windows PowerShell remoting infrastructure. To use this cmdlet, the local computer and any remote computers must be configured for Windows PowerShell remoting. For more information, see [about_Remote_Requirements](About/about_Remote_Requirements.md).
 - To create a PSSession on the local computer, start Windows PowerShell with the "Run as administrator" option.
 - When you are finished with the PSSession, use the Remove-PSSession cmdlet to delete the PSSession and release its resources.
-
-- 
 
 ## RELATED LINKS
 

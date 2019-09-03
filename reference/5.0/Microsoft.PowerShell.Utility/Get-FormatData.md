@@ -42,23 +42,44 @@ Get-FormatData
 
 ### Example 2: Get formatting data by type name
 
-```
-Get-FormatData -TypeName "Microsoft.Wsman*"
+```powershell
+Get-FormatData -TypeName 'System.Management.Automation.Cmd*'
 ```
 
-This command gets the formatting data items whose names begin with Microsoft.Wsman.
+This command gets the formatting data items whose names begin with System.Management.Automation.Cmd*.
 
 ### Example 3: Examine a formatting data object
 
-```
-$F = Get-FormatData -TypeName helpinfoshort
+```powershell
+$F = Get-FormatData -TypeName 'System.Management.Automation.Cmd*'
 $F
+```
+
+```Output
 TypeName        FormatViewDefinition
 --------        --------------------
-HelpInfoShort   {help , TableControl} PS C:\> $F.FormatViewDefinition[0].control
-Headers                                                                    Rows
--------                                                                    ----
-{System.Management.Automation.TableControlColumnHeader, System.Manageme... {System.Management.Automation.TableControlRow} PS C:\> $F.FormatViewDefinition[0].control.headers
+HelpInfoShort   {help , TableControl}
+```
+
+```powershell
+$F.FormatViewDefinition[0].control
+```
+
+```Output
+Headers          : {System.Management.Automation.TableControlColumnHeader, System.Management.Automation.TableControlColumnHeader, System.Management.Automation.TableControlColumnHeader,
+                   System.Management.Automation.TableControlColumnHeader}
+Rows             : {System.Management.Automation.TableControlRow}
+AutoSize         : False
+HideTableHeaders : False
+GroupBy          :
+OutOfBand        : False
+```
+
+```powershell
+$F.FormatViewDefinition[0].control.Headers
+```
+
+```Output
 Label         Alignment      Width
 -----         ---------      -----
 Name          Left           33
@@ -94,12 +115,15 @@ Get-Content c:\test\bits.format.ps1xml
 ...
 ```
 
-This example shows how to use **Get-FormatData** and **Export-FormatData** to export the formatting data that is added by a module.
+This example shows how to use **Get-FormatData** and **Export-FormatData** to export the formatting
+data that is added by a module.
 
-The first four commands use the **Get-FormatData**, Import-Module, and Compare-Object cmdlets to identify the format type that the BitsTransfer module adds to the session.
+The first four commands use the **Get-FormatData**, Import-Module, and Compare-Object cmdlets to
+identify the format type that the BitsTransfer module adds to the session.
 
-The fifth command uses the **Get-FormatData** cmdlet to get the format type that the BitsTransfer module adds.
-It uses a pipeline operator (|) to send the format type object to the Export-FormatData cmdlet, which converts it back to XML and saves it in the specified format.ps1xml file.
+The fifth command uses the **Get-FormatData** cmdlet to get the format type that the BitsTransfer
+module adds. It uses a pipeline operator (|) to send the format type object to the Export-FormatData
+cmdlet, which converts it back to XML and saves it in the specified format.ps1xml file.
 
 The final command shows an excerpt of the format.ps1xml file content.
 

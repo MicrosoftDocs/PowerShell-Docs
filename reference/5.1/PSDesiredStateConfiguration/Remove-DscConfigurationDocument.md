@@ -47,6 +47,17 @@ The second command removes the current configuration document for the computer s
 ### -AsJob
 Indicates that this cmdlet runs the command as a background job.
 
+If you specify the *AsJob* parameter, the command returns an object that represents the job, and then displays the command prompt.
+You can continue to work in the session until the job finishes.
+The job is created on the local computer and the results from remote computers are automatically returned to the local computer.
+To manage the job, use the Job cmdlets.
+To get the job results, use the Receive-Job cmdlet.
+
+To use this parameter, the local and remote computers must be configured for remoting, and on Windows Vista and later versions of the Windows operating system, you must open Windows PowerShell with the Run as administrator option.
+For more information, see [about_Remote_Requirements](../Microsoft.PowerShell.Core/About/about_Remote_Requirements.md).
+
+For more information about Windows PowerShell background jobs, see [about_Jobs](../Microsoft.PowerShell.Core/About/about_Jobs.md) and [about_Remote_Jobs](../Microsoft.PowerShell.Core/About/about_Remote_Jobs.md).
+
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
@@ -76,6 +87,7 @@ Accept wildcard characters: False
 ```
 
 ### -Force
+Indicates that this cmdlet stops the running configuration job before it removes the configuration document.
 Forces the command to run without asking for user confirmation.
 
 ```yaml
@@ -117,6 +129,8 @@ Accept wildcard characters: False
 
 ### -ThrottleLimit
 Specifies the maximum number of concurrent operations that can be established to run the cmdlet.
+If this parameter is omitted or a value of `0` is entered, then Windows PowerShell calculates an optimum throttle limit for the cmdlet based on the number of CIM cmdlets that are running on the computer.
+The throttle limit applies only to the current cmdlet, not to the session or to the computer.
 
 ```yaml
 Type: Int32
@@ -181,6 +195,3 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 [Get-DscConfiguration](Get-DscConfiguration.md)
 
 [Get-DscConfigurationStatus](Get-DscConfigurationStatus.md)
-
-
-

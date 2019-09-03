@@ -8,7 +8,6 @@ online version: https://go.microsoft.com/fwlink/?linkid=821484
 schema: 2.0.0
 title: Get-History
 ---
-
 # Get-History
 
 ## SYNOPSIS
@@ -21,9 +20,10 @@ Get-History [[-Id] <Int64[]>] [[-Count] <Int32>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+
 The **Get-History** cmdlet gets the session history, that is, the list of commands entered during the current session.
 
-Windows PowerShell automatically maintains a history of each session.
+PowerShell automatically maintains a history of each session.
 The number of entries in the session history is determined by the value of the $MaximumHistoryCount preference variable.
 Beginning in Windows PowerShell 3.0, the default value is 4096.
 
@@ -35,16 +35,18 @@ For more information about the history features in PowerShell, see [about_Histor
 ## EXAMPLES
 
 ### Example 1: Get the session history
-```
-PS C:\> Get-History
+
+```powershell
+Get-History
 ```
 
 This command gets the entries in the session history.
 The default display shows each command and its ID, which indicates the order in which they ran.
 
 ### Example 2: Get entries that include a string
-```
-PS C:\> Get-History | Where-Object {$_.CommandLine -like "*Service*"}
+
+```powershell
+Get-History | Where-Object {$_.CommandLine -like "*Service*"}
 ```
 
 This command gets entries in the command history that include the string service.
@@ -52,8 +54,9 @@ The first command gets all entries in the session history.
 The pipeline operator (|) passes the results to the Where-Object cmdlet, which selects only the commands that include service.
 
 ### Example 3: Export at most seven entries
-```
-PS C:\> Get-History -ID 7 -Count 5 | Export-Csv History.csv
+
+```powershell
+Get-History -ID 7 -Count 5 | Export-Csv History.csv
 ```
 
 This command gets the five most recent history entries ending with entry 7.
@@ -62,8 +65,9 @@ The file includes the data that is displayed when you format the history as a li
 This includes the status and start and end times of the command.
 
 ### Example 4: Display the most recent command
-```
-PS C:\> Get-History -Count 1
+
+```powershell
+Get-History -Count 1
 ```
 
 This command gets the last command in the command history.
@@ -73,8 +77,9 @@ By default, **Get-History** gets the most recent commands.
 This command can be abbreviated to "h -c 1" and is equivalent to pressing the up-arrow key.
 
 ### Example 5: Display all the properties of the entries in the history
-```
-PS C:\> Get-History | Format-List -Property *
+
+```powershell
+Get-History | Format-List -Property *
 ```
 
 This command displays all of the properties of entries in the session history.
@@ -84,6 +89,7 @@ This includes the ID, status, and start and end times of the command.
 ## PARAMETERS
 
 ### -Count
+
 Specifies the number of the most recent history entries that this cmdlet gets.
 By, default, **Get-History** gets all entries in the session history.
 If you use both the *Count* and *Id* parameters in a command, the display ends with the command that is specified by the *Id* parameter.
@@ -103,6 +109,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
+
 Specifies an array of the IDs of entries in the session history.
 **Get-History** gets only specified entries.
 If you use both the *Id* and *Count* parameters in a command, **Get-History** gets the most recent entries ending with the entry specified by the *Id* parameter.

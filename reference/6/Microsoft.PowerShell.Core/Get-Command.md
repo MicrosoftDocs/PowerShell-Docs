@@ -298,9 +298,9 @@ Indicates that this cmdlet gets all commands, including commands of the same typ
 name. By default, `Get-Command` gets only the commands that run when you type the command name.
 
 For more information about the method that PowerShell uses to select the command to run when
-multiple commands have the same name, see [about_Command_Precedence](About/about_Command_Precedence.md)
-in the TechNet library. For information about module-qualified command names and running commands
-that do not run by default because of a name conflict, see [about_Modules](About/about_Modules.md).
+multiple commands have the same name, see [about_Command_Precedence](About/about_Command_Precedence.md).
+For information about module-qualified command names and running commands that do not run by default
+because of a name conflict, see [about_Modules](About/about_Modules.md).
 
 This parameter was introduced in Windows PowerShell 3.0.
 

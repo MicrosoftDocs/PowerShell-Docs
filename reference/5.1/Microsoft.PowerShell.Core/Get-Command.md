@@ -294,7 +294,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: False
 Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
@@ -630,6 +630,7 @@ Represents cmdlets.
 Represents functions and filters.
 
 ### System.Management.Automation.WorkflowInfo
+
 Represents workflows.
 
 ## NOTES

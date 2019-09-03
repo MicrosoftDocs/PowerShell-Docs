@@ -61,7 +61,7 @@ It does not delete the "MyKey" subkey or affect any other registry keys or entri
 You can use the **Include** and **Exclude** parameters to identify particular registry keys, but you cannot use them to identify registry entries.
 
 - To delete particular registry entries, use the `Remove-ItemProperty` cmdlet.
-- To delete the value of a registry entry, use the `Clear-ItemProperty cmdlet`.
+- To delete the value of a registry entry, use the `Clear-ItemProperty` cmdlet.
 
 ```powershell
 Clear-Item HKLM:\Software\MyCompany\MyKey -Confirm
@@ -303,3 +303,5 @@ This cmdlet does not generate any output.
 [Rename-Item](Rename-Item.md)
 
 [Set-Item](Set-Item.md)
+
+[about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md)
