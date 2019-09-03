@@ -10,7 +10,6 @@ title:  Rename-ItemProperty
 # Rename-ItemProperty
 
 ## SYNOPSIS
-
 Renames a property of an item.
 
 ## SYNTAX
@@ -88,7 +87,7 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -Filter
@@ -108,7 +107,7 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -Force
@@ -230,7 +229,7 @@ Required: True
 Position: 0
 Default value: None
 Accept pipeline input: True (ByPropertyName, ByValue)
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -UseTransaction
@@ -252,6 +251,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
+
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
@@ -321,3 +321,5 @@ Otherwise, this cmdlet does not generate any output.
 [Rename-Item](Rename-Item.md)
 
 [Set-ItemProperty](Set-ItemProperty.md)
+
+[about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md)

@@ -10,7 +10,6 @@ title:  Set-ItemProperty
 # Set-ItemProperty
 
 ## SYNOPSIS
-
 Creates or changes the value of a property of an item.
 
 ## SYNTAX
@@ -31,20 +30,20 @@ Set-ItemProperty [-Path] <String[]> -InputObject <PSObject> [-PassThru] [-Force]
  [-UseTransaction] [<CommonParameters>]
 ```
 
-### propertyPSObjectLiteralPathSet
-
-```
-Set-ItemProperty -LiteralPath <String[]> -InputObject <PSObject> [-PassThru] [-Force] [-Filter <String>]
- [-Include <String[]>] [-Exclude <String[]>] [-Credential <PSCredential>] [-WhatIf] [-Confirm]
- [-UseTransaction] [<CommonParameters>]
-```
-
 ### propertyValueLiteralPathSet
 
 ```
 Set-ItemProperty -LiteralPath <String[]> [-Name] <String> [-Value] <Object> [-PassThru] [-Force]
  [-Filter <String>] [-Include <String[]>] [-Exclude <String[]>] [-Credential <PSCredential>] [-WhatIf]
  [-Confirm] [-UseTransaction] [<CommonParameters>]
+```
+
+### propertyPSObjectLiteralPathSet
+
+```
+Set-ItemProperty -LiteralPath <String[]> -InputObject <PSObject> [-PassThru] [-Force] [-Filter <String>]
+ [-Include <String[]>] [-Exclude <String[]>] [-Credential <PSCredential>] [-WhatIf] [-Confirm]
+ [-UseTransaction] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -267,7 +266,7 @@ Single quotation marks tell PowerShell not to interpret any characters as escape
 
 ```yaml
 Type: String[]
-Parameter Sets: propertyPSObjectLiteralPathSet, propertyValueLiteralPathSet
+Parameter Sets: propertyValueLiteralPathSet, propertyPSObjectLiteralPathSet
 Aliases: PSPath
 
 Required: True
@@ -287,7 +286,7 @@ Parameter Sets: propertyValuePathSet, propertyValueLiteralPathSet
 Aliases: PSProperty
 
 Required: True
-Position: 2
+Position: 1
 Default value: None
 Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
@@ -305,7 +304,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -320,9 +319,27 @@ Parameter Sets: propertyValuePathSet, propertyPSObjectPathSet
 Aliases:
 
 Required: True
-Position: 1
+Position: 0
 Default value: None
 Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -UseTransaction
+
+Includes the command in the active transaction.
+This parameter is valid only when a transaction is in progress.
+For more information, see [about_Transactions](../Microsoft.PowerShell.Core/About/about_Transactions.md).
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: usetx
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -336,7 +353,7 @@ Parameter Sets: propertyValuePathSet, propertyValueLiteralPathSet
 Aliases:
 
 Required: True
-Position: 3
+Position: 2
 Default value: None
 Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
@@ -367,24 +384,6 @@ The cmdlet is not run.
 Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
-
-Required: False
-Position: Named
-Default value: False
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -UseTransaction
-
-Includes the command in the active transaction.
-This parameter is valid only when a transaction is in progress.
-For more information, see [about_Transactions](../Microsoft.PowerShell.Core/About/about_Transactions.md).
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: (All)
-Aliases: usetx
 
 Required: False
 Position: Named

@@ -93,10 +93,8 @@ Accept wildcard characters: False
 
 ### -ComputerName
 
-Specifies an array of names of computers.
-Removes the sessions that connect to the specified computers.
-
-You can specify a fully qualified domain name (FQDN) or a NetBIOS name.
+Specifies the name of the computer to get CIM sessions connected to.
+Wildcard characters are permitted.
 
 ```yaml
 Type: String[]
@@ -107,7 +105,7 @@ Required: True
 Position: 0
 Default value: None
 Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -Id
@@ -203,7 +201,8 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
+For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -226,5 +225,4 @@ This cmdlet returns an object that contains CIM session information.
 [New-CimSession](New-CimSession.md)
 
 [about_CimSession](../Microsoft.PowerShell.Core/About/about_CimSession.md)
-
 

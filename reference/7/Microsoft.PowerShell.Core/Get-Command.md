@@ -298,9 +298,9 @@ Indicates that this cmdlet gets all commands, including commands of the same typ
 name. By default, `Get-Command` gets only the commands that run when you type the command name.
 
 For more information about the method that PowerShell uses to select the command to run when
-multiple commands have the same name, see [about_Command_Precedence](About/about_Command_Precedence.md)
-in the TechNet library. For information about module-qualified command names and running commands
-that do not run by default because of a name conflict, see [about_Modules](About/about_Modules.md).
+multiple commands have the same name, see [about_Command_Precedence](About/about_Command_Precedence.md).
+For information about module-qualified command names and running commands that do not run by default
+because of a name conflict, see [about_Modules](About/about_Modules.md).
 
 This parameter was introduced in Windows PowerShell 3.0.
 
@@ -381,7 +381,7 @@ Accept wildcard characters: False
 
 Specifies modules with names that are specified in the form of **ModuleSpecification** objects,
 described in the **Remarks** section of
-[ModuleSpecification Constructor (Hashtable)](https://docs.microsoft.com/en-us/dotnet/api/microsoft.powershell.commands.modulespecification.-ctor?redirectedfrom=MSDN&view=powershellsdk-1.1.0#Microsoft_PowerShell_Commands_ModuleSpecification__ctor_System_Collections_Hashtable_).
+[ModuleSpecification Constructor (Hashtable)](/dotnet/api/microsoft.powershell.commands.modulespecification.-ctor?view=powershellsdk-1.1.0#Microsoft_PowerShell_Commands_ModuleSpecification__ctor_System_Collections_Hashtable_).
 For example, the **FullyQualifiedModule** parameter accepts a module name that is specified in one
 of the following formats:
 
@@ -409,8 +409,8 @@ Accept wildcard characters: False
 
 Indicates that this cmdlet gets only commands in the current session.
 
-Starting in Windows PowerShell 3.0, by default, `Get-Command` gets all installed commands,
-including, but not limited to, the commands in the current session. In Windows PowerShell 2.0, it
+Starting in PowerShell 3.0, by default, `Get-Command` gets all installed commands,
+including, but not limited to, the commands in the current session. In PowerShell 2.0, it
 gets only commands in the current session.
 
 This parameter was introduced in Windows PowerShell 3.0.
@@ -444,7 +444,7 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -Name
@@ -695,4 +695,14 @@ Represents functions and filters.
 
 ## RELATED LINKS
 
+[Export-PSSession](../Microsoft.PowerShell.Utility/Export-PSSession.md)
+
 [Get-Help](Get-Help.md)
+
+[Get-Member](../Microsoft.PowerShell.Utility/Get-Member.md)
+
+[Get-PSDrive](../Microsoft.PowerShell.Management/Get-PSDrive.md)
+
+[Import-PSSession](../Microsoft.PowerShell.Utility/Import-PSSession.md)
+
+[about_Command_Precedence](About/about_Command_Precedence.md)

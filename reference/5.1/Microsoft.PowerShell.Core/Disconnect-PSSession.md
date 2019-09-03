@@ -161,7 +161,8 @@ affect the ITTask sessions on the other computers.
 The third command uses the `Get-PSSession` cmdlet to get the ITTask sessions. The output shows that
 the ITTask sessions on the Srv2 and Srv30 computers were not affected by the command to disconnect.
 
-The manager logs on to his home computer, connects to his corporate network, starts PowerShell, and uses the `Get-PSSession` cmdlet to get the ITTask session on the Srv1 computer. He
+The manager logs on to his home computer, connects to his corporate network, starts Windows
+PowerShell, and uses the `Get-PSSession` cmdlet to get the ITTask session on the Srv1 computer. He
 uses the credentials of the technician to access the session.
 
 Next, the manager uses the `Connect-PSSession` cmdlet to connect to the ITTask session on the Srv1

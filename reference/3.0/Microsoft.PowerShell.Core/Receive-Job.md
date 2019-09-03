@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
+external help file: System.Management.Automation.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Core
+ms.date: 06/09/2017
 online version: https://go.microsoft.com/fwlink/?linkid=113372
-external help file:  System.Management.Automation.dll-Help.xml
-title:  Receive-Job
+schema: 2.0.0
+title: Receive-Job
 ---
 # Receive-Job
 
@@ -293,6 +294,31 @@ Cannot find drive. A drive with the name 'Z' does not exist.
 
 ## PARAMETERS
 
+### -AutoRemoveJob
+
+Indicates that this cmdlet deletes the job after it returns the job results.
+If the job has more results, the job is still deleted, but `Receive-Job` displays a message.
+
+This parameter works only on custom job types.
+It is designed for instances of job types that save the job or the type outside of the session, such
+as instances of scheduled jobs.
+
+This parameter cannot be used without the **Wait** parameter.
+
+This parameter was introduced in Windows PowerShell 3.0.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -ComputerName
 
 Specifies an array of names of computers.
@@ -308,11 +334,40 @@ Parameter Sets: ComputerName
 Aliases: Cn
 
 Required: False
-Position: 2
-Default value: All jobs
+Position: 1
+Default value: All computers available
 Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: True
 ```
+
+### -Force
+
+Indicates that this cmdlet continues waiting if jobs are in the **Suspended** or **Disconnected**
+state. By default, the **Wait** parameter of `Receive-Job` returns, or terminates the wait, when
+jobs are in one of the following states:
+
+- Completed
+- Failed
+- Stopped
+- Suspended
+- Disconnected.
+
+The **Force** parameter is valid only when the **Wait** parameter is also used in the command.
+
+This parameter was introduced in Windows PowerShell 3.0.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 
 ### -Id
 
@@ -330,7 +385,7 @@ Parameter Sets: SessionIdParameterSet
 Aliases:
 
 Required: True
-Position: 1
+Position: 0
 Default value: None
 Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
@@ -350,8 +405,8 @@ Parameter Sets: InstanceIdParameterSet
 Aliases:
 
 Required: True
-Position: 1
-Default value: All jobs
+Position: 0
+Default value: All instances
 Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
@@ -365,11 +420,11 @@ You can also pipe a job object to `Receive-Job`.
 
 ```yaml
 Type: Job[]
-Parameter Sets: Location, ComputerName, Session
+Parameter Sets: Location, Session, ComputerName
 Aliases:
 
 Required: True
-Position: 1
+Position: 0
 Default value: None
 Accept pipeline input: True (ByPropertyName, ByValue)
 Accept wildcard characters: False
@@ -406,8 +461,8 @@ Parameter Sets: Location
 Aliases:
 
 Required: False
-Position: 2
-Default value: All jobs
+Position: 1
+Default value: All locations
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -425,7 +480,7 @@ Parameter Sets: NameParameterSet
 Aliases:
 
 Required: True
-Position: 1
+Position: 0
 Default value: None
 Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: True
@@ -462,8 +517,8 @@ Parameter Sets: Session
 Aliases:
 
 Required: False
-Position: 2
-Default value: All jobs
+Position: 1
+Default value: All sessions
 Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
@@ -498,30 +553,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -AutoRemoveJob
-
-Deletes the job after returning the job results.
-If the job has more results, the job is still deleted, but **Receive-Job** displays a message.
-
-This parameter works only on custom job types.
-It is designed for instances of job types that save the job or the type outside of the session, such as instances of scheduled jobs.
-
-This parameter cannot be used without the **Wait** parameter.
-
-This parameter is introduced in Windows PowerShell 3.0.
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: False
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -WriteEvents
 
 Indicates that this cmdlet reports changes in the job state while it waits for the job to finish.
@@ -550,26 +581,7 @@ Indicates that this cmdlet returns the job object followed by the results.
 This parameter is valid only when the **Wait** parameter is used in the command and the **Keep**
 parameter is omitted.
 
-```yaml
-Type: SwitchParameter
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: False
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Force
-
-Continues waiting if jobs are in the **Suspended** or **Disconnected** state.
-By default, the **Wait** parameter of **Receive-Job** returns (terminates the wait) when jobs are in one of the following states: Completed, Failed, Stopped, Suspended, or Disconnected.
-
-The **Force** parameter is valid only when the **Wait** parameter is also used in the command.
-
-This parameter is introduced in Windows PowerShell 3.0.
+This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
 Type: SwitchParameter
@@ -599,7 +611,7 @@ You can pipe job objects to this cmdlet.
 
 ### PSObject
 
-**Receive-Job** returns the results of the commands in the job.
+This cmdlet returns the results of the commands in the job.
 
 ## NOTES
 

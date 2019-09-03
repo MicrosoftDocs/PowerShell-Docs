@@ -145,10 +145,8 @@ This command gets the CIM session that has an ID of 2.
 
 ### -ComputerName
 
-Specifies an array of names of computers.
-Gets the CIM sessions that connect to the specified computers.
-
-You can specify a fully qualified domain name (FQDN) or a NetBIOS name.
+Specifies the name of the computer to get CIM sessions connected to.
+Wildcard characters are permitted.
 
 ```yaml
 Type: String[]
@@ -159,7 +157,7 @@ Required: False
 Position: 0
 Default value: None
 Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -Id

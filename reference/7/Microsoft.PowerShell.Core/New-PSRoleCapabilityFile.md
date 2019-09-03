@@ -251,7 +251,7 @@ Accept wildcard characters: False
 
 Specifies a unique identifier for the role capability file.
 If you omit this parameter, **New-PSRoleCapabilityFile** generates a GUID for the file.
-To create a new GUID in PowerShell, type `\[guid\]::NewGuid()`.
+To create a new GUID in PowerShell, type `[guid]::NewGuid()`.
 
 ```yaml
 Type: Guid

@@ -46,11 +46,9 @@ Depending on which parameters you use, the cmdlet returns either an instance of 
 ## EXAMPLES
 
 ### Example 1: Create a CIM session options object for DCOM
+
 ```powershell
 $so = New-CimSessionOption -Protocol DCOM
-
-
-
 New-CimSession -ComputerName Server01 -SessionOption $so
 ```
 
@@ -59,6 +57,7 @@ The contents of the variable are then passed to the New-CimSession cmdlet.
 New-CimSession then creates a new CIM session with the remote server named Server01, using the options defined in the variable.
 
 ### Example 2: Create a CIM session options object for WsMan
+
 ```powershell
 New-CimSessionOption -ProxyAuthentication Kerberos -ProxyCredential $cred -SkipCACheck -SkipCNCheck -UseSsl
 ```
@@ -67,6 +66,7 @@ This command creates a CIM session options object for the WsMan protocol.
 The object contains configuration for the authentication mode of Kerberos specified by the ProxyAuthentication parameter, the credentials specified by the ProxyCredential parameter, and specifies that the command is to skip the CA check, skip the CN check, and use SSL.
 
 ### Example 3: Create a CIM session options object with the culture specified
+
 ```powershell
 New-CimSessionOption -Culture Fr-Fr -Protocol Wsman
 ```
@@ -81,16 +81,11 @@ However, the default culture can be overridden using the Culture parameter.
 Specifies the user interface culture to use for the CIM session.
 Specify the value for this parameter using one of the following formats:
 
-Enter a culture name in \<languagecode2\>-\<country/regioncode2\> format such as "EN-US".
-
-
+Enter a culture name in `<languagecode2>-<country/regioncode2>` format such as "EN-US".
 
 A variable that contains a CultureInfo object.
 
-
-
-A command that gets a CultureInfo object, such as Get-Culture.
-For more information about Get-Culture, see http://technet.microsoft.com/library/hh849930.aspx.
+A command that gets a **CultureInfo** object, such as [Get-Culture](../Microsoft.PowerShell.Utility/Get-Culture.md)
 
 ```yaml
 Type: CultureInfo
@@ -288,9 +283,7 @@ Enter the certificate thumbprint of the certificate.
 Certificates are used in client certificate-based authentication.
 They can only be mapped to local user accounts and they do not work with domain accounts.
 
-To get a certificate thumbprint, use the Get-Item or Get-ChildItem cmdlets in the PowerShell Cert: drive.
-For more information about the Get-ChildItem cmdlet for the PowerShell Cert: drive, see http://technet.microsoft.com/library/hh847761.aspx.
-For more information about Get-Item, see http://technet.microsoft.com/library/hh849788.aspx
+To get a certificate thumbprint, use the `Get-Item` or `Get-ChildItem` cmdlets in the PowerShell Cert: drive.
 
 ```yaml
 Type: String
@@ -402,10 +395,10 @@ Accept wildcard characters: False
 Specifies the user interface culture to use for the CIM session.
 Specify the value for this parameter using one of the following formats:
 
-- Enter a culture name in \<languagecode2\>-\<country/regioncode2\> format such as "EN-US".
+- Enter a culture name in `<languagecode2>-<country/regioncode2>` format such as "EN-US".
 - A variable that contains a CultureInfo object.
-- A command that gets a CultureInfo object, such as Get-Culture.
-  For more information about Get-Culture, see http://technet.microsoft.com/library/hh849930.aspx.
+- A command that gets a CultureInfo object, such as `Get-Culture`.
+
 
 ```yaml
 Type: CultureInfo

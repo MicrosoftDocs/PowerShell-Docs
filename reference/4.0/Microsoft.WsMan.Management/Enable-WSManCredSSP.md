@@ -1,11 +1,12 @@
 ---
+external help file: Microsoft.WSMan.Management.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.WSMan.Management
 ms.date: 08/20/2019
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
 online version: https://go.microsoft.com/fwlink/?linkid=294037
-external help file:  Microsoft.WSMan.Management.dll-Help.xml
-title:  Enable-WSManCredSSP
+schema: 2.0.0
+title: Enable-WSManCredSSP
 ---
 
 # Enable-WSManCredSSP

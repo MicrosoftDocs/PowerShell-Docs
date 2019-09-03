@@ -649,4 +649,11 @@ Job started by using the *AsJob* common parameter of workflows.
 
 [Wait-Job](Wait-Job.md)
 
+[about_Jobs](About/about_Jobs.md)
+
+[about_Job_Details](About/about_Job_Details.md)
+
+[about_Remote_Jobs](About/about_Remote_Jobs.md)
+
+[about_Scheduled_Jobs](../PSScheduledJob/About/about_Scheduled_Jobs.md)
 

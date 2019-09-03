@@ -1,16 +1,16 @@
 ---
+external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Utility
 ms.date: 5/28/2019
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
 online version: https://go.microsoft.com/fwlink/?linkid=113336
-external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-title:  Get-Variable
+schema: 2.0.0
+title: Get-Variable
 ---
 # Get-Variable
 
 ## SYNOPSIS
-
 Gets the variables in the current console.
 
 ## SYNTAX
@@ -115,7 +115,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 1
+Position: 0
 Default value: None
 Accept pipeline input: True (ByPropertyName, ByValue)
 Accept wildcard characters: True
