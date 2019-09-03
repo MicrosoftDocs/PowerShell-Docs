@@ -34,9 +34,7 @@ it is not overridden or changed.
 
 ## PowerShell Scopes
 
-Scopes in PowerShell have both names and numbers. The named scopes specify an
-absolute scope. The numbers are relative and reflect the relationship between
-scopes.
+PowerShell supports the following scopes:
 
 - Global: The scope that is in effect when PowerShell starts. Variables and
   functions that are present when PowerShell starts have been created in the
@@ -51,15 +49,9 @@ scopes.
   commands in the script run in the script scope. To the commands in a script,
   the script scope is the local scope.
 
-- Private: Items in private scope cannot be seen outside of the current scope.
-  You can use private scope to create a private version of an item with the same
-  name in another scope.
-
-- Numbered Scopes: You can refer to scopes by name or by a number that describes
-  the relative position of one scope to another. Scope 0 represents the current,
-  or local, scope. Scope 1 indicates the immediate parent scope. Scope 2
-  indicates the parent of the parent scope, and so on. Numbered scopes are
-  useful if you have created many recursive scopes.
+Items declared as **private** cannot be seen outside of the current scope in
+which they were defined. **Private** is not a scope but an option that changes
+the visibility of an item outside of the the scope where the item is defined.
 
 ## Parent and Child Scopes
 
@@ -265,7 +257,7 @@ You can read more about the call operator in [about_operators](about_operators.m
 Any aliases, functions, or variables that the Sample.ps1 script creates are
 not available in the current scope.
 
-### Restricting Without Scope
+## Restricting Without Scope
 
 A few PowerShell concepts are similar to scope or interact with scope. These
 concepts may be confused with scope or the behavior of scope.
@@ -273,7 +265,7 @@ concepts may be confused with scope or the behavior of scope.
 Sessions, modules, and nested prompts are self-contained environments, but
 they are not child scopes of the global scope in the session.
 
-#### Sessions
+### Sessions
 
 A session is an environment in which PowerShell runs. When you create a session
 on a remote computer, PowerShell establishes a persistent connection to the
@@ -286,7 +278,7 @@ session starts with its own global scope. This scope is independent of the
 global scope of the session. You can create child scopes in the session. For
 example, you can run a script to create a child scope in a session.
 
-#### Modules
+### Modules
 
 You can use a PowerShell module to share and deliver PowerShell tools. A module
 is a unit that can contain cmdlets, scripts, functions, variables, aliases, and
@@ -300,7 +292,7 @@ does not change the scope. And, the module does not have its own scope,
 although the scripts in the module, like all PowerShell scripts, do have their
 own scope.
 
-#### Nested Prompts
+### Nested Prompts
 
 Similarly, nested prompts do not have their own scope. When you enter a nested
 prompt, the nested prompt is a subset of the environment. But, you remain
@@ -309,7 +301,7 @@ within the local scope.
 Scripts do have their own scope. If you are debugging a script, and you reach a
 breakpoint in the script, you enter the script scope.
 
-#### Private Option
+### Private Option
 
 Aliases and variables have an Option property that can take a value of Private.
 Items that have the Private option can be viewed and changed in the scope in
@@ -325,7 +317,7 @@ You can use the Option parameter of the `New-Variable`, `Set-Variable`,
 `New-Alias`, and `Set-Alias` cmdlets to set the value of the Option property to
 Private.
 
-#### Visibility
+### Visibility
 
 The Visibility property of a variable or alias determines whether you can see
 the item outside the container, in which it was created. A container could be a
