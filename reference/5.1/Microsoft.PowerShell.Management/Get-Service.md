@@ -161,10 +161,12 @@ To list running services first, use the *Descending* parameter of the Sort-Objec
 
 ### Example 9: Get services on multiple computers
 
+```powershell
+Get-Service -Name "WinRM" -ComputerName "localhost", "Server01", "Server02" |
+ Format-Table -Property MachineName, Status, Name, DisplayName -auto
 ```
-Get-Service -Name "WinRM" -ComputerName "localhost", "Server01", "Server02" | Format-Table -Property MachineName, Status, Name, DisplayName -auto
 
-
+```Output
 MachineName    Status  Name  DisplayName
 ------------   ------  ----  -----------
 localhost      Running WinRM Windows Remote Management (WS-Management)
@@ -200,6 +202,7 @@ This example shows that you can pipe a service name string (enclosed in quotatio
 ## PARAMETERS
 
 ### -ComputerName
+
 Gets the services running on the specified computers.
 The default is the local computer.
 

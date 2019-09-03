@@ -8,7 +8,6 @@ online version: https://go.microsoft.com/fwlink/?linkid=821473
 schema: 2.0.0
 title: Disable-PSSessionConfiguration
 ---
-
 # Disable-PSSessionConfiguration
 
 ## SYNOPSIS
@@ -149,7 +148,7 @@ Required: False
 Position: 0
 Default value: None
 Accept pipeline input: True (ByPropertyName, ByValue)
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -NoServiceRestart

@@ -1,11 +1,12 @@
 ---
+external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Utility
 ms.date: 08/26/2019
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
 online version: https://go.microsoft.com/fwlink/?linkid=135195
-external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-title:  Add-Type
+schema: 2.0.0
+title: Add-Type
 ---
 
 # Add-Type
@@ -18,8 +19,8 @@ Adds a Microsoft .NET Framework class to a PowerShell session.
 ### FromSource (Default)
 
 ```
-Add-Type [-TypeDefinition] <String> [-Language <Language>] [-ReferencedAssemblies <String[]>]
- [-CodeDomProvider <CodeDomProvider>] [-CompilerParameters <CompilerParameters>]
+Add-Type [-CodeDomProvider <CodeDomProvider>] [-CompilerParameters <CompilerParameters>]
+ [-TypeDefinition] <String> [-Language <Language>] [-ReferencedAssemblies <String[]>]
  [-OutputAssembly <String>] [-OutputType <OutputAssemblyType>] [-PassThru] [-IgnoreWarnings]
  [<CommonParameters>]
 ```
@@ -27,29 +28,26 @@ Add-Type [-TypeDefinition] <String> [-Language <Language>] [-ReferencedAssemblie
 ### FromMember
 
 ```
-Add-Type [-Name] <String> [-MemberDefinition] <String[]> [-Namespace <String>]
- [-UsingNamespace <String[]>] [-Language <Language>] [-ReferencedAssemblies <String[]>]
- [-CodeDomProvider <CodeDomProvider>] [-CompilerParameters <CompilerParameters>]
- [-OutputAssembly <String>] [-OutputType <OutputAssemblyType>] [-PassThru] [-IgnoreWarnings]
- [<CommonParameters>]
+Add-Type [-CodeDomProvider <CodeDomProvider>] [-CompilerParameters <CompilerParameters>]
+ [-Name] <String> [-MemberDefinition] <String[]> [-Namespace <String>] [-UsingNamespace <String[]>]
+ [-Language <Language>] [-ReferencedAssemblies <String[]>] [-OutputAssembly <String>]
+ [-OutputType <OutputAssemblyType>] [-PassThru] [-IgnoreWarnings] [<CommonParameters>]
 ```
 
 ### FromPath
 
 ```
-Add-Type [-Path] <String[]> [-ReferencedAssemblies <String[]>]
- [-CompilerParameters <CompilerParameters>] [-OutputAssembly <String>]
- [-OutputType <OutputAssemblyType>] [-PassThru] [-IgnoreWarnings]
- [<CommonParameters>]
+Add-Type [-CompilerParameters <CompilerParameters>] [-Path] <String[]>
+ [-ReferencedAssemblies <String[]>] [-OutputAssembly <String>] [-OutputType <OutputAssemblyType>]
+ [-PassThru] [-IgnoreWarnings] [<CommonParameters>]
 ```
 
 ### FromLiteralPath
 
 ```
-Add-Type -LiteralPath <String[]> [-ReferencedAssemblies <String[]>]
- [-CompilerParameters <CompilerParameters>] [-OutputAssembly <String>]
- [-OutputType <OutputAssemblyType>] [-PassThru] [-IgnoreWarnings]
- [<CommonParameters>]
+Add-Type [-CompilerParameters <CompilerParameters>] -LiteralPath <String[]>
+ [-ReferencedAssemblies <String[]>] [-OutputAssembly <String>] [-OutputType <OutputAssemblyType>]
+ [-PassThru] [-IgnoreWarnings] [<CommonParameters>]
 ```
 
 ### FromAssemblyName

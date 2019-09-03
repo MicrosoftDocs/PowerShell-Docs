@@ -1,11 +1,12 @@
 ---
-ms.date:  03/11/2019
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
+external help file: PSModule-help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: PowerShellGet
+ms.date: 03/11/2019
 online version: https://go.microsoft.com/fwlink/?linkid=821658
-external help file:  PSGet-help.xml
-title:  Find-Module
+schema: 2.0.0
+title: Find-Module
 ---
 
 # Find-Module

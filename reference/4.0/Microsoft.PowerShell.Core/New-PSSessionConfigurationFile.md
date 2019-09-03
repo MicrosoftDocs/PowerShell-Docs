@@ -169,6 +169,7 @@ This example shows a `New-PSSessionConfigurationFile` command that uses all the 
 It is included to show the correct input format for each parameter.
 
 The resulting SampleFile.pssc is displayed in the output.
+
 ```powershell
 $configSettings = @{
     Path = '.\SampleFile.pssc'
@@ -830,7 +831,7 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### CommonParameters

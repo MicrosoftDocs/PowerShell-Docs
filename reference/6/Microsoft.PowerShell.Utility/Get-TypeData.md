@@ -164,8 +164,9 @@ You can pipe type names to **Get-TypeData**.
 
 ## RELATED LINKS
 
+[about_Types.ps1xml](../Microsoft.PowerShell.Core/About/about_Types.ps1xml.md)
+
 [Remove-TypeData](Remove-TypeData.md)
 
 [Update-TypeData](Update-TypeData.md)
-
 

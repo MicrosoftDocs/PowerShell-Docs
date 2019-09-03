@@ -48,22 +48,6 @@ Rename-ItemProperty -Path HKLM:\Software\SmpApplication -Name config -NewName ol
 
 ## PARAMETERS
 
-### -Confirm
-
-Prompts you for confirmation before running the cmdlet.
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: (All)
-Aliases: cf
-
-Required: False
-Position: Named
-Default value: False
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Credential
 
 Specifies a user account that has permission to perform this action.
@@ -103,7 +87,7 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -Filter
@@ -123,7 +107,7 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -Force
@@ -235,6 +219,7 @@ Accept wildcard characters: False
 ### -Path
 
 Specifies the path of the item to rename.
+Wildcard characters are permitted.
 
 ```yaml
 Type: String
@@ -245,7 +230,7 @@ Required: True
 Position: 0
 Default value: None
 Accept pipeline input: True (ByPropertyName, ByValue)
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -UseTransaction
@@ -258,6 +243,22 @@ For more information, see [about_Transactions](../Microsoft.PowerShell.Core/Abou
 Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: usetx
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Confirm
+
+Prompts you for confirmation before running the cmdlet.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
 
 Required: False
 Position: Named
@@ -321,3 +322,5 @@ Otherwise, this cmdlet does not generate any output.
 [Rename-Item](Rename-Item.md)
 
 [Set-ItemProperty](Set-ItemProperty.md)
+
+[about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md)

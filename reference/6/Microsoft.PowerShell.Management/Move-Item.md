@@ -166,7 +166,7 @@ Aliases:
 
 Required: False
 Position: 1
-Default value: None
+Default value: Current directory
 Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: True
 ```
@@ -282,7 +282,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -300,7 +300,7 @@ Aliases:
 
 Required: True
 Position: 0
-Default value: None
+Default value: Current directory
 Accept pipeline input: True (ByPropertyName, ByValue)
 Accept wildcard characters: True
 ```
@@ -385,7 +385,5 @@ Otherwise, this cmdlet does not generate any output.
 [Rename-Item](Rename-Item.md)
 
 [Set-Item](Set-Item.md)
-
-[Get-PSProvider](Get-PSProvider.md)
 
 [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md)

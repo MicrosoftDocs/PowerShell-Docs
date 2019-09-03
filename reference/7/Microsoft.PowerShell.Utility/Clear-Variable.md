@@ -24,7 +24,7 @@ Clear-Variable [-Name] <String[]> [-Include <String[]>] [-Exclude <String[]>] [-
 
 The **Clear-Variable** cmdlet deletes the data stored in a variable, but it does not delete the variable.
 As a result, the value of the variable is NULL (empty).
-If the variable has a specified data or object type, Clear-Variable preserves the type of the object stored in the variable.
+If the variable has a specified data or object type, this cmdlet preserves the type of the object stored in the variable.
 
 ## EXAMPLES
 
@@ -54,7 +54,7 @@ The third command, which gets the value of $A, shows that the value 3 is unaffec
 ### Example 3: Delete the value of the specified variable
 
 ```
-PS C:\> Clear-variable -Name "Processes"
+PS C:\> Clear-Variable -Name "Processes"
 ```
 
 This command deletes the value of the variable named Processes.
@@ -251,5 +251,4 @@ For more information, see about_Aliases.
 [Remove-Variable](Remove-Variable.md)
 
 [Set-Variable](Set-Variable.md)
-
 

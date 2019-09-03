@@ -114,7 +114,7 @@ Accept wildcard characters: True
 
 ### -Force
 
-Restarts a service that has dependent services.
+Forces the command to run without asking for user confirmation.
 
 ```yaml
 Type: SwitchParameter
@@ -269,5 +269,4 @@ Otherwise, this cmdlet does not generate any output.
 [Suspend-Service](Suspend-Service.md)
 
 [Remove-Service](Remove-Service.md)
-
 

@@ -279,9 +279,9 @@ Indicates that this cmdlet gets all commands, including commands of the same typ
 name. By default, `Get-Command` gets only the commands that run when you type the command name.
 
 For more information about the method that PowerShell uses to select the command to run when
-multiple commands have the same name, see [about_Command_Precedence](About/about_Command_Precedence.md)
-in the TechNet library. For information about module-qualified command names and running commands
-that do not run by default because of a name conflict, see [about_Modules](About/about_Modules.md).
+multiple commands have the same name, see [about_Command_Precedence](About/about_Command_Precedence.md).
+For information about module-qualified command names and running commands that do not run by default
+because of a name conflict, see [about_Modules](About/about_Modules.md).
 
 This parameter was introduced in Windows PowerShell 3.0.
 
@@ -294,7 +294,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: False
 Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
@@ -344,6 +344,7 @@ The acceptable values for this parameter are:
 - Filter and Function. Gets all PowerShell advanced and simple functions and filters.
 - Script. Gets all script blocks. To get PowerShell scripts (.ps1 files), use the ExternalScript
   value.
+- Workflow. Gets all workflows. For more information about workflows, see Introducing Windows PowerShell Workflow.
 
 ```yaml
 Type: CommandTypes
@@ -428,7 +429,7 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -Name
@@ -629,6 +630,7 @@ Represents cmdlets.
 Represents functions and filters.
 
 ### System.Management.Automation.WorkflowInfo
+
 Represents workflows.
 
 ## NOTES
@@ -645,4 +647,14 @@ Represents workflows.
 
 ## RELATED LINKS
 
+[Export-PSSession](../Microsoft.PowerShell.Utility/Export-PSSession.md)
+
 [Get-Help](Get-Help.md)
+
+[Get-Member](../Microsoft.PowerShell.Utility/Get-Member.md)
+
+[Get-PSDrive](../Microsoft.PowerShell.Management/Get-PSDrive.md)
+
+[Import-PSSession](../Microsoft.PowerShell.Utility/Import-PSSession.md)
+
+[about_Command_Precedence](About/about_Command_Precedence.md)

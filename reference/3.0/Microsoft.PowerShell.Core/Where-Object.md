@@ -1,16 +1,16 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
+external help file: System.Management.Automation.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Core
+ms.date: 06/09/2017
 online version: https://go.microsoft.com/fwlink/?linkid=113423
-external help file:  System.Management.Automation.dll-Help.xml
-title:  Where-Object
+schema: 2.0.0
+title: Where-Object
 ---
 # Where-Object
 
 ## SYNOPSIS
-
 Selects objects from a collection based on their property values.
 
 ## SYNTAX
@@ -223,7 +223,7 @@ Starting in Windows PowerShell 3.0, there are two different ways to construct a 
 
   `Get-Process | Where-Object {$_.PriorityClass -eq "Normal"}`
 
-  All Windows PowerShell comparison operators are valid in the script block format.
+  All PowerShell comparison operators are valid in the script block format.
   For more information about comparison operators, see [about_Comparison_Operators](./About/about_Comparison_Operators.md).
 
 - **Comparison statement**.
@@ -239,9 +239,9 @@ Starting in Windows PowerShell 3.0, there are two different ways to construct a 
 
   Starting in Windows PowerShell 3.0, **Where-Object** adds comparison operators as parameters in a **Where-Object** command.
   Unless specified, all operators are case-insensitive.
-  Prior to Windows PowerShell 3.0, the comparison operators in the Windows PowerShell language could be used only in script blocks.
+  Prior to Windows PowerShell 3.0, the comparison operators in the PowerShell language could be used only in script blocks.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Get stopped services
 
@@ -312,7 +312,8 @@ Get-Command | where {$_.OutputType}
 ```powershell
 # Use Where-Object to get objects that are containers.
 # This gets objects that have the **PSIsContainer** property with a value of $True and excludes all others.
-Get-ChildItem | where PSIsContainer -eq $False
+Get-ChildItem | where PSIsContainer
+Get-ChildItem | where {$_.PSIsContainer}
 ```
 
 ```powershell
@@ -333,14 +334,14 @@ This example shows how to create a `Where-Object` command with multiple conditio
 
 This command gets non-core modules that support the Updatable Help feature.
 The command uses the *ListAvailable* parameter of the `Get-Module` cmdlet to get all modules on the computer.
-A pipeline operator (|) sends the modules to the `Where-Object` cmdlet, which gets modules whose names do not begin with Microsoft or PS, and have a value for the **HelpInfoURI** property, which tells Windows PowerShell where to find updated help files for the module.
+A pipeline operator (|) sends the modules to the `Where-Object` cmdlet, which gets modules whose names do not begin with Microsoft or PS, and have a value for the **HelpInfoURI** property, which tells PowerShell where to find updated help files for the module.
 The comparison statements are connected by the **And** logical operator.
 
 The example uses the script block command format.
 Logical operators, such as **And** and **Or**, are valid only in script blocks.
 You cannot use them in the comparison statement format of a `Where-Object` command.
 
-- For more information about Windows PowerShell logical operators, see [about_Logical_Operators](./About/about_logical_operators.md).
+- For more information about PowerShell logical operators, see [about_Logical_Operators](./About/about_logical_operators.md).
 - For more information about the Updatable Help feature, see [about_Updatable_Help](./About/about_Updatable_Help.md).
 
 ## PARAMETERS
@@ -744,7 +745,7 @@ Required: False
 Position: 2
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -CContains
