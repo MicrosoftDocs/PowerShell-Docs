@@ -1,29 +1,29 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
+external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Utility
+ms.date: 06/09/2017
 online version: https://go.microsoft.com/fwlink/?linkid=113339
-external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-title:  Import-Alias
+schema: 2.0.0
+title: Import-Alias
 ---
 # Import-Alias
 
 ## SYNOPSIS
-
 Imports an alias list from a file.
 
 ## SYNTAX
 
 ### ByPath (Default)
 
-```powershell
+```
 Import-Alias [-Path] <String> [-Scope <String>] [-PassThru] [-Force] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### ByLiteralPath
 
-```powershell
+```
 Import-Alias -LiteralPath <String> [-Scope <String>] [-PassThru] [-Force] [-WhatIf] [-Confirm]
  [<CommonParameters>]
 ```
@@ -37,7 +37,7 @@ To overwrite an existing alias, after assuring that the contents of the alias fi
 
 ## EXAMPLES
 
-### Example 1
+### Example 1: Import aliases from a file
 
 ```powershell
 Import-Alias test.txt
@@ -63,14 +63,34 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: False
+Default value: None
 Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -LiteralPath
+
+Specifies the path to a file that includes exported alias information.
+Unlike the **Path** parameter, the value of the **LiteralPath** parameter is used exactly as it is typed.
+No characters are interpreted as wildcards.
+If the path includes escape characters, enclose it in single quotation marks.
+Single quotation marks tell PowerShell not to interpret any characters as escape sequences.
+
+```yaml
+Type: String
+Parameter Sets: ByLiteralPath
+Aliases: PSPath
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName, ByValue)
 Accept wildcard characters: False
 ```
 
 ### -PassThru
 
-Returns an object that represents the alias.
+Returns an object representing the item with which you are working.
 By default, this cmdlet does not generate any output.
 
 ```yaml
@@ -80,7 +100,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: No output
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -96,7 +116,7 @@ Parameter Sets: ByPath
 Aliases:
 
 Required: True
-Position: 1
+Position: 0
 Default value: None
 Accept pipeline input: True (ByPropertyName, ByValue)
 Accept wildcard characters: True
@@ -105,8 +125,14 @@ Accept wildcard characters: True
 ### -Scope
 
 Specifies the scope into which the aliases are imported.
-Valid values are "Global", "Local", or "Script", or a number relative to the current scope (0 through the number of scopes, where 0 is the current scope and 1 is its parent).
-"Local" is the default.
+The acceptable values for this parameter are:
+
+- Global
+- Local
+- Script
+- A number relative to the current scope (0 through the number of scopes, where 0 is the current scope and 1 is its parent)
+
+The default is Local.
 For more information, see about_Scopes.
 
 ```yaml
@@ -116,28 +142,8 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: Local
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -LiteralPath
-
-Specifies the path to a file that includes exported alias information.
-Unlike **Path**, the value of the **LiteralPath** parameter is used exactly as it is typed.
-No characters are interpreted as wildcards.
-If the path includes escape characters, enclose it in single quotation marks.
-Single quotation marks tell Windows PowerShell not to interpret any characters as escape sequences.
-
-```yaml
-Type: String
-Parameter Sets: ByLiteralPath
-Aliases: PSPath
-
-Required: True
-Position: Named
 Default value: None
-Accept pipeline input: True (ByPropertyName, ByValue)
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -176,7 +182,7 @@ Accept wildcard characters: False
 
 ### CommonParameters
 
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 

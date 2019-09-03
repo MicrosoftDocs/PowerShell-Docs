@@ -3,7 +3,7 @@ ms.date: 3/18/2019
 schema: 2.0.0
 locale: en-us
 keywords: powershell,cmdlet
-online version: https://go.microsoft.com/fwlink/?LinkID=138336
+online version: https://go.microsoft.com/fwlink/?LinkId=821529
 external help file:  Microsoft.PowerShell.Commands.Diagnostics.dll-Help.xml
 title: Get-WinEvent
 ---
@@ -603,7 +603,7 @@ Hash table queries have the following rules:
   used to construct a valid **System.Security.Principal.NTAccount object**.
 - The **Data** value takes event data in an unnamed field. For example, events in classic event
   logs.
-- The asterisk (`*`) key represents a named event data field.
+- `<named-data>` key represents a named event data field.
 
 When `Get-WinEvent` cannot interpret a **key/value** pair, it interprets the key as a case-sensitive
 name for the event data in the event.
@@ -620,7 +620,7 @@ The valid `Get-WinEvent` **key/value** pairs are as follows:
 - **EndTime**=`<DateTime>`
 - **UserID**=`<SID>`
 - **Data**=`<String[]>`
-- (**Asterisk**) `*`=`<String[]>`
+- `<named-data>`=`<String[]>`
 
 ```yaml
 Type: Hashtable[]

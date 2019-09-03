@@ -1,13 +1,13 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
+external help file: System.Management.Automation.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Core
+ms.date: 06/09/2017
 online version: https://go.microsoft.com/fwlink/?linkid=289618
-external help file:  System.Management.Automation.dll-Help.xml
-title:  Test-ModuleManifest
+schema: 2.0.0
+title: Test-ModuleManifest
 ---
-
 # Test-ModuleManifest
 
 ## SYNOPSIS
@@ -20,27 +20,33 @@ Test-ModuleManifest [-Path] <String> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-The Test-ModuleManifest cmdlet verifies that the files that are listed in the module manifest (.psd1) file actually exist in the specified paths.
+
+The **Test-ModuleManifest** cmdlet verifies that the files that are listed in the module manifest (.psd1) file are actually in the specified paths.
 
 This cmdlet is designed to help module authors test their manifest files.
-Module users can also use this cmdlet in scripts and commands to detect errors before running scripts that depend on the module.
+Module users can also use this cmdlet in scripts and commands to detect errors before they run scripts that depend on the module.
 
-The Test-ModuleManifest cmdlet returns an object that represents the module (the same type of object that Get-Module returns).
+**Test-ModuleManifest** returns an object that represents the module.
+This is the same type of object that Get-Module returns.
 If any files are not in the locations specified in the manifest, the cmdlet also generates an error for each missing file.
 
 ## EXAMPLES
 
-### Example 1
-```
-PS C:\> test-ModuleManifest -path $pshome\Modules\TestModule.psd1
+### Example 1: Test a manifest
+
+```powershell
+test-ModuleManifest -Path "$pshome\Modules\TestModule.psd1"
 ```
 
 This command tests the TestModule.psd1 module manifest.
 
-### Example 2
-```
-PS C:\> "$pshome\Modules\TestModule.psd1" | test-modulemanifest
+### Example 2: Test a manifest by using the pipeline
 
+```powershell
+"$pshome\Modules\TestModule.psd1" | test-modulemanifest
+```
+
+```Output
 Test-ModuleManifest : The specified type data file 'C:\Windows\System32\Wi
 ndowsPowerShell\v1.0\Modules\TestModule\TestTypes.ps1xml' could not be processed because the file was not found. Please correct the path and try again.
 At line:1 char:34
@@ -64,39 +70,46 @@ ExportedVariables : {}
 NestedModules     : {}
 ```
 
-This command uses a pipeline operator (|) to send a path string to Test-ModuleManifest.
+This command uses a pipeline operator (|) to send a path string to **Test-ModuleManifest**.
 
 The command output shows that the test failed, because the TestTypes.ps1xml file, which was listed in the manifest, was not found.
 
-### Example 3
+### Example 3: Write a function to test a module manifest
+
+```powershell
+function Test-ManifestBool ($path)
 ```
-PS C:\> function Test-ManifestBool ($path)
-{$a = dir $path | test-modulemanifest -erroraction SilentlyContinue; $?}
+
+```Output
+{$a = dir $path | Test-ModuleManifest -ErrorAction SilentlyContinue; $?}
 ```
 
-This function is like Test-ModuleManifest, but it returns a Boolean value;  it returns "True" if the manifest passed the test and "False" otherwise.
+This function is like **Test-ModuleManifest**, but it returns a Boolean value.
+The function returns $True if the manifest passed the test and $False otherwise.
 
-The function uses the Get-ChildItem cmdlet (alias = dir) to get the module manifest specified by the $path variable.
-It uses a pipeline operator (|) to pass the file object to the Test-ModuleManifest cmdlet.
+The function uses the Get-ChildItem cmdlet, alias = dir, to get the module manifest specified by the $path variable.
+The command uses a pipeline operator (|) to pass the file object to **Test-ModuleManifest**.
 
-The Test-ModuleManifest command uses the ErrorAction common parameter with a value of SilentlyContinue to suppress the display of any errors that the command generates.
-It also saves the PSModuleInfo object that Test-ModuleManifest returns in the $a variable, so the object is not displayed.
+**Test-ModuleManifest** uses the *ErrorAction* common parameter with a value of SilentlyContinue to suppress the display of any errors that the command generates.
+It also saves the **PSModuleInfo** object that **Test-ModuleManifest** returns in the $a variable.
+Therefore, the object is not displayed.
 
-Then, in a separate command (the semi-colon \[;\] is the command separator), it displays the value of the $?
-automatic variable, which returns "True" if the previous command generated no error and "False" otherwise.
+Then, in a separate command, the function displays the value of the $?
+automatic variable.
+If the previous command generates no error, the command displays $True, and $False otherwise.
 
-You can use this function in conditional statements, such as those that might precede an Import-Module command or a command that uses the module.
+You can use this function in conditional statements, such as those that might precede an **Import-Module** command or a command that uses the module.
 
 ## PARAMETERS
 
 ### -Path
-Specifies the path to the module manifest file.
-Enter a path (optional) and the name of the module manifest file with the .psd1 file name extension.
+
+Specifies a path and file name for the manifest file.
+Enter an optional path and name of the module manifest file that has the .psd1 file name extension.
 The default location is the current directory.
-Wildcards are supported, but must resolve to a single module manifest file.
+Wildcard characters are supported, but must resolve to a single module manifest file.
 This parameter is required.
-The parameter name ("Path") is optional.
-You can also pipe a path to Test-ModuleManifest.
+You can also pipe a path to **Test-ModuleManifest**.
 
 ```yaml
 Type: String
@@ -107,21 +120,24 @@ Required: True
 Position: 0
 Default value: None
 Accept pipeline input: True (ByPropertyName, ByValue)
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### System.String
-You can pipe the path to a module manifest to Test-ModuleManifest.
+
+You can pipe the path to a module manifest to this cmdlet.
 
 ## OUTPUTS
 
 ### System.Management.Automation.PSModuleInfo
-Test-ModuleManifest returns a PSModuleInfo object that represents the module.
+
+This cmdlet returns a **PSModuleInfo** object that represents the module.
 It returns this object even if the manifest has errors.
 
 ## NOTES
@@ -141,3 +157,4 @@ It returns this object even if the manifest has errors.
 [Remove-Module](Remove-Module.md)
 
 [about_Modules](About/about_Modules.md)
+

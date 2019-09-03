@@ -1,11 +1,12 @@
 ---
-ms.date:  6/21/2019
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
+external help file: Microsoft.PowerShell.Commands.Diagnostics.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Diagnostics
+ms.date: 6/21/2019
 online version: https://go.microsoft.com/fwlink/?linkid=289625
-external help file:  Microsoft.PowerShell.Commands.Diagnostics.dll-Help.xml
-title:  Get-Counter
+schema: 2.0.0
+title: Get-Counter
 ---
 
 # Get-Counter

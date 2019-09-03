@@ -130,7 +130,7 @@ This command gets all of the exported files for all available modules.
 
 ```powershell
 $FullyQualifedName = @{ModuleName="Microsoft.PowerShell.Management";ModuleVersion="3.1.0.0"}
-Get-Module -FullyQualifiedName | Format-Table -Property Name,Version
+  Get-Module -FullyQualifiedName $FullyQualifedName | Format-Table -Property Name,Version
 ```
 
 ```Output
@@ -197,7 +197,7 @@ This command gets the properties of the **PSModuleInfo** object that `Get-Module
 There is one object for each module file.
 
 You can use the properties to format and filter the module objects.
-For more information about the properties, see [PSModuleInfo Properties](https://go.microsoft.com/fwlink/?LinkId=143624) in the MSDN library.
+For more information about the properties, see [PSModuleInfo Properties](/dotnet/api/system.management.automation.psmoduleinfo).
 
 The output includes the new properties, such as **Author** and **CompanyName**, that were introduced
 in Windows PowerShell 3.0.
@@ -387,7 +387,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -531,7 +531,7 @@ Required: False
 Position: 0
 Default value: None
 Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -PSSession
@@ -581,7 +581,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -646,8 +646,7 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see about_CommonParameters
-(http://go.microsoft.com/fwlink/?LinkID=113216).
+-WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -678,12 +677,12 @@ remote sessions, such as those started by the `New-PSSession` cmdlet, are older-
 include core snap-ins.
 
   For information about the **CreateDefault2** method that creates newer-style sessions with core
-modules, see [CreateDefault2 Method](https://msdn.microsoft.com/library/system.management.automation.runspaces.initialsessionstate.createdefault2) in the MSDN library.
+modules, see [CreateDefault2 Method](/dotnet/api/system.management.automation.runspaces.initialsessionstate.createdefault2) in the MSDN library.
 
-- `Get-Module` gets only modules in locations that are stored in the value of the **PSModulePath**
+- `Get-Module` only gets modules in locations that are stored in the value of the **PSModulePath**
 environment variable ($env:PSModulePath). You can use the **Path** parameter of the `Import-Module`
 cmdlet to import modules in other locations, but you cannot use the `Get-Module` cmdlet to get them.
-- Also, starting in Windows PowerShell 3.0, new properties have been added to the object that
+- Also, starting in PowerShell 3.0, new properties have been added to the object that
 `Get-Module` returns that make it easier to learn about modules even before they are imported. All
 properties are populated before importing. These include the **ExportedCommands**,
 **ExportedCmdlets** and **ExportedFunctions** properties that list the commands that the module
@@ -715,12 +714,17 @@ the session.
 
 [New-CimSession](../CimCmdlets/New-CimSession.md)
 
+[about_Modules](About/about_Modules.md)
+
 [Get-PSSession](Get-PSSession.md)
 
 [Import-Module](Import-Module.md)
+
+[Import-PSSession](../Microsoft.PowerShell.Utility/Import-PSSession.md)
 
 [New-PSSession](New-PSSession.md)
 
 [Remove-Module](Remove-Module.md)
 
 [about_PowerShell_Editions](About/about_PowerShell_Editions.md)
+

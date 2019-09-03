@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
+external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Utility
+ms.date: 06/09/2017
 online version: https://go.microsoft.com/fwlink/?linkid=821861
-external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-title:  Set-Variable
+schema: 2.0.0
+title: Set-Variable
 ---
 # Set-Variable
 
@@ -55,25 +56,33 @@ Otherwise, the variable contains the words "Get-Process".
 ### Example 3: Understand public vs. private variables
 
 ```
-PS C:\> # Set-Variable -Name "counter" -Visibility Private
 PS C:\> New-Variable -Name "counter" -Visibility Public -Value 26
 PS C:\> $Counter
-26 PS C:\> Get-Variable c*
-Name Value
----- -----
-Culture en-US
-ConsoleFileName
-ConfirmPreference High
-CommandLineParameters {}
-Counter 26 PS C:\> Set-Variable -Name "counter" -Visibility Private
+26
 PS C:\> Get-Variable c*
-Name Value
----- -----
-Culture en-US
+
+Name                  Value
+----                  -----
+Culture               en-US
 ConsoleFileName
-ConfirmPreference High
-CommandLineParameters {} PS C:\> $counter
-"Cannot access the variable '$counter' because it is a private variable" PS C:\> .\use-counter.ps1
+ConfirmPreference     High
+CommandLineParameters {}
+Counter               26 
+
+PS C:\> Set-Variable -Name "counter" -Visibility Private
+PS C:\> Get-Variable c*
+
+Name                  Value
+----                  -----
+Culture               en-US
+ConsoleFileName
+ConfirmPreference     High
+CommandLineParameters {}
+
+ PS C:\> $counter
+"Cannot access the variable '$counter' because it is a private variable"
+
+PS C:\> .\use-counter.ps1
 #Commands completed successfully.
 ```
 
@@ -83,22 +92,6 @@ This variable can be read and changed by scripts with the required permissions, 
 The sample output shows the difference in the behavior of public and private variables.
 
 ## PARAMETERS
-
-### -Confirm
-
-Prompts you for confirmation before running the cmdlet.
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: (All)
-Aliases: cf
-
-Required: False
-Position: Named
-Default value: False
-Accept pipeline input: False
-Accept wildcard characters: False
-```
 
 ### -Description
 
@@ -132,12 +125,12 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -Force
 
-Forces the command to run without asking for user confirmation.
+Allows you to create a variable with the same name as an existing read-only variable, or to change the value of a read-only variable.
 
 By default, you can overwrite a variable, unless the variable has an option value of ReadOnly or Constant.
 For more information, see the *Option* parameter.
@@ -149,7 +142,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -157,7 +150,6 @@ Accept wildcard characters: False
 ### -Include
 
 Specifies an array of items that this cmdlet includes in the operation.
-The cmdlet changes only the specified items.
 The value of this parameter qualifies the *Name* parameter.
 Enter a name or name pattern, such as `c*`.
 Wildcards are permitted.
@@ -171,7 +163,7 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -Name
@@ -194,22 +186,13 @@ Accept wildcard characters: False
 
 Specifies the value of the **Options** property of the variable.
 
-The acceptable values for this parameter are:
+Valid values are:
 
-- None.
-Sets no options.
-("None" is the default.)
-- ReadOnly.
-Can be deleted.
-Cannot be changed, except by using the Force parameter.
-- Constant.
-Cannot be deleted or changed.
-Constant is valid only when you are creating a variable.
-You cannot change the options of an existing variable to Constant.
-- Private.
-The variable is available only in the current scope.
-- AllScope.
-The variable is copied to any new scopes that are created.
+- None: Sets no options. ("None" is the default.)
+- ReadOnly: Can be deleted. Cannot be changed, except by using the Force parameter.
+- Constant: Cannot be deleted or changed. "Constant" is valid only when you are creating a variable. You cannot change the options of an existing variable to "Constant".
+- Private: The variable is available only in the current scope.
+- AllScope: The variable is copied to any new scopes that are created.
 
 To see the **Options** property of all variables in the session, type `Get-Variable | Format-Table -Property name, options -Autosize`.
 
@@ -227,8 +210,7 @@ Accept wildcard characters: False
 ```
 
 ### -PassThru
-
-Returns an object representing the item with which you are working.
+Returns an object representing the new variable.
 By default, this cmdlet does not generate any output.
 
 ```yaml
@@ -238,15 +220,14 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -Scope
 
-Specifies the scope of the variable.
-The acceptable values for this parameter are:
+Specifies the scope of the variable.The acceptable values for this parameter are:
 
 - Global
 - Local
@@ -265,7 +246,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: Local
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -288,15 +269,13 @@ Accept wildcard characters: False
 
 ### -Visibility
 
-Specifies whether the variable is visible outside of the session in which it was created.
-This parameter is designed for use in scripts and commands that will be delivered to other users.
-The acceptable values for this parameter are:
+Determines whether the variable is visible outside of the session in which it was created.
+This parameter is designed for  use in scripts and commands that will be delivered to other users.
 
-- Public.
-The variable is visible.
-(Public is the default.)
-- Private.
-The variable is not visible.
+Valid values are:
+
+- Public:  The variable is visible. ("Public" is the default.)
+- Private: The variable is not visible.
 
 When a variable is private, it does not appear in lists of variables, such as those returned by Get-Variable, or in displays of the Variable: drive.
 Commands to read or change the value of a private variable return an error.
@@ -310,7 +289,22 @@ Accepted values: Public, Private
 
 Required: False
 Position: Named
-Default value: None
+Default value: Public
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Confirm
+Prompts you for confirmation before running the cmdlet.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -334,7 +328,7 @@ Accept wildcard characters: False
 
 ### CommonParameters
 
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -360,3 +354,4 @@ Otherwise, this cmdlet does not generate any output.
 [New-Variable](New-Variable.md)
 
 [Remove-Variable](Remove-Variable.md)
+

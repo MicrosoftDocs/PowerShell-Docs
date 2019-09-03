@@ -8,7 +8,6 @@ online version: https://go.microsoft.com/fwlink/?linkid=510069
 schema: 2.0.0
 title: Export-ODataEndpointProxy
 ---
-
 # Export-ODataEndpointProxy
 
 ## SYNOPSIS
@@ -39,6 +38,7 @@ Every cmdlet in a generated module must include a *ConnectionURI* parameter in o
 ## EXAMPLES
 
 ### Example 1: Generate a module to manage a retail web service endpoint
+
 ```
 PS C:\> Export-ODataEndpointProxy -Uri 'http://services.odata.org/v3/(S(snyobsk1hhutkb2yulwldgf1))/odata/odata.svc' -MetadataUri 'http://services.odata.org/v3/(S(snyobsk1hhutkb2yulwldgf1))/odata/odata.svc/$metadata' -AllowUnsecureConnection -OutputModule 'C:\Users\user\GeneratedScript.psm1' -ResourceNameMapping @{Products = 'Merchandise'}
 ```
@@ -53,6 +53,7 @@ To allow connections to non-SSL sites, HTTP, as opposed to HTTPS, add the *Allow
 ## PARAMETERS
 
 ### -AllowClobber
+
 Indicates that this cmdlet replaces an existing module.
 
 ```yaml
@@ -68,6 +69,7 @@ Accept wildcard characters: False
 ```
 
 ### -AllowUnsecureConnection
+
 Indicates that this module can connect to URIs that are not SSL-secured.
 The module can manage HTTP sites in addition to HTTPS sites.
 
@@ -84,6 +86,7 @@ Accept wildcard characters: False
 ```
 
 ### -CmdletAdapter
+
 Specifies the cmdlet adapter.
 The acceptable values for this parameter are: ODataAdapter and NetworkControllerAdapter.
 
@@ -101,6 +104,7 @@ Accept wildcard characters: False
 ```
 
 ### -CreateRequestMethod
+
 Specifies the request method.
 The acceptable values for this parameter are: PUT, POST, and PATCH.
 
@@ -118,6 +122,7 @@ Accept wildcard characters: False
 ```
 
 ### -Credential
+
 Specifies a user account that has access to the OData endpoint.
 The default value is the current user.
 If a remote computer runs Windows Vista or a later release of the Windows operating system, the cmdlet prompts you for credentials.
@@ -135,6 +140,7 @@ Accept wildcard characters: False
 ```
 
 ### -CustomData
+
 Specifies a hash table of custom data.
 
 ```yaml
@@ -150,6 +156,7 @@ Accept wildcard characters: False
 ```
 
 ### -Force
+
 Indicates that this cmdlet overwrites an existing generated module of the same name in an existing `Modules` folder.
 
 ```yaml
@@ -165,6 +172,7 @@ Accept wildcard characters: False
 ```
 
 ### -Headers
+
 Specifies the headers of the web request.
 Enter a hash table or dictionary.
 
@@ -181,6 +189,7 @@ Accept wildcard characters: False
 ```
 
 ### -MetadataUri
+
 Specifies the URI of the metadata of the endpoint.
 
 ```yaml
@@ -196,6 +205,7 @@ Accept wildcard characters: False
 ```
 
 ### -OutputModule
+
 Specifies the path and module name to which this cmdlet saves the generated module of proxy commands.
 
 This cmdlet copies a binary module, module manifest, and formatting file, if applicable, to the specified folder.
@@ -215,6 +225,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceNameMapping
+
 Specifies a hashtable that contains mappings that let you customize the generated cmdlets.
 In this hashtable, the resource collection name is the key.
 The desired cmdlet noun is the value.
@@ -238,6 +249,7 @@ Accept wildcard characters: False
 ```
 
 ### -UpdateRequestMethod
+
 Specifies the update request method.
 The acceptable values for this parameter are: PUT, POST, and PATCH.
 
@@ -255,6 +267,7 @@ Accept wildcard characters: False
 ```
 
 ### -Uri
+
 Specifies the URI of the endpoint.
 
 ```yaml
@@ -270,6 +283,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
+
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
@@ -285,6 +299,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
+
 Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
@@ -301,7 +316,10 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+-InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
+-WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -314,3 +332,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 [OData Library](http://technet.microsoft.com/windowsserver/hh525392(v=vs.85).aspx)
 
 [What is the OData Protocol?](http://www.odata.org/)
+
+[Invoke-RestMethod](../Microsoft.PowerShell.Utility/Invoke-RestMethod.md)
+
+

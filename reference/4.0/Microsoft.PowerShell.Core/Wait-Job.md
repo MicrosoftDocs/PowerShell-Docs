@@ -52,7 +52,7 @@ You can wait until any background job is complete, or until all background jobs 
 When the commands in the job are complete, **Wait-Job** displays the command prompt and returns a job object so that you can pipe it to another command.
 
 You can use **Wait-Job** cmdlet to wait for background jobs, such as those that were started by using the Start-Job cmdlet or the **AsJob** parameter of the Invoke-Command cmdlet.
-For more information about Windows PowerShell background jobs, see about_Jobs.
+For more information about Windows PowerShell background jobs, see [about_Jobs](./About/about_Jobs.md).
 
 Beginning in Windows PowerShell 3.0, the **Wait-Job** cmdlet also waits for custom job types, such as workflow jobs and instances of scheduled jobs.
 To enable **Wait-Job** to wait for jobs of a particular type, import the module that supports the custom job type into the session before running a **Get-Job** command, either by using the Import-Module cmdlet or by using or getting a cmdlet in the module.
@@ -114,12 +114,13 @@ The **Start-Job** command starts a background job that runs the **Get-EventLog**
 
 The command uses the **Using** scope modifier to indicate that the $c variable was defined on the local computer.
 The **Using** scope modifier is introduced in Windows PowerShell 3.0.
-For more information about the **Using** scope modifier, see about_Remote_Variables (http://go.microsoft.com/fwlink/?LinkID=252653).
+For more information about the **Using** scope modifier, see [about_Remote_Variables](./About/about_Remote_Variables.md).
 
 The fourth command uses the **Invoke-Command** cmdlet to run a **Wait-Job** command in the sessions.
 It uses the **Any** parameter to wait until the first job on the remote computers is complete.
 
 ### Example 4
+
 ```
 PS C:\> $s = New-PSSession Server01, Server02, Server03
 PS C:\> $jobs = Invoke-Command -Session $s -ScriptBlock {Start-Job -ScriptBlock {Get-Date}}
@@ -143,6 +144,7 @@ Wait-Job ends the wait, displays the command prompt, and returns the object that
 The $done variable contains a job object that represents the job that ran on Server02.
 
 ### Example 5
+
 ```
 PS C:\> Wait-Job -id 1,2,5 -Any
 ```
@@ -386,7 +388,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -427,3 +429,6 @@ If the wait ends because the value of the Timeout parameter is exceeded, Wait-Jo
 [about_Remote_Jobs](About/about_Remote_Jobs.md)
 
 [about_Remote_Variables](About/about_Remote_Variables.md)
+
+
+

@@ -23,7 +23,7 @@ Get-Culture [<CommonParameters>]
 The **Get-Culture** cmdlet gets information about the current culture settings.
 This includes information about the current language settings on the system, such as the keyboard layout, and the display format of items such as numbers, currency, and dates.
 
-You can also use the Get-UICulture cmdlet, which gets the current user interface culture on the system, and the [Set-Culture](http://go.microsoft.com/fwlink/?LinkID=242258) cmdlet in the International module.
+You can also use the Get-UICulture cmdlet, which gets the current user interface culture on the system, and the [Set-Culture](https://go.microsoft.com/fwlink/?LinkID=242258) cmdlet in the International module.
 The user-interface (UI) culture determines which text strings are used for user interface elements, such as menus and messages.
 
 ## EXAMPLES
@@ -123,7 +123,7 @@ The fifth command uses dot notation to display the value of the FirstDayOfWeek p
 
 ### CommonParameters
 
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -148,3 +148,6 @@ You cannot pipe input to this cmdlet.
 [Set-Culture](/powershell/module/internationalcmdlets/set-culture)
 
 [Get-UICulture](Get-UICulture.md)
+
+
+

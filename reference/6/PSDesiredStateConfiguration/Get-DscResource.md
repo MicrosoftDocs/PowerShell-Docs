@@ -11,7 +11,7 @@ title: Get-DscResource
 # Get-DscResource
 
 ## SYNOPSIS
-Gets the DSC resources present on the computer.
+Gets Desired State Configuration (DSC) resources present on the computer.
 
 ## SYNTAX
 
@@ -21,7 +21,7 @@ Get-DscResource [[-Name] <String[]>] [[-Module] <Object>] [-Syntax] [<CommonPara
 
 ## DESCRIPTION
 
-The **Get-DscResource** cmdlet retrieves the PowerShell Desired State Configuration (DSC) resources present on the computer.
+The **Get-DscResource** cmdlet retrieves the PowerShell DSC resources present on the computer.
 This cmdlet discovers only the resources installed in the PSModulePath.
 It shows the details about built-in and custom providers, which are created by the user.
 This cmdlet also shows details about composite resources, which are other configurations that are packaged as module or created at run time in the session.
@@ -115,13 +115,13 @@ Required: False
 Position: 0
 Default value: None
 Accept pipeline input: True (ByPropertyName, ByValue)
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -Syntax
 
 Indicates that the cmdlet returns the syntax view of the specified DSC resources.
-The returned syntax shows how to use the resources in aWindows PowerShell script.
+The returned syntax shows how to use the resources in a PowerShell script.
 
 ```yaml
 Type: SwitchParameter

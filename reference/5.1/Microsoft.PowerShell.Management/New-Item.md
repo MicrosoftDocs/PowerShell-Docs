@@ -211,7 +211,7 @@ Type: String[]
 Parameter Sets: pathSet, nameSet
 Aliases:
 
-Required: True
+Required: True (pathSet), False (nameSet)
 Position: 0
 Default value: None
 Accept pipeline input: True (ByPropertyName)
@@ -237,8 +237,7 @@ Accept wildcard characters: False
 
 ### -Value
 
-Specifies the value of the new item.
-You can also pipe a value to `New-Item`.
+Specifies the value of the new item. You can also pipe a value to `New-Item`.
 
 ```yaml
 Type: Object

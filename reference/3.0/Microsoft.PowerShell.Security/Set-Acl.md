@@ -1,16 +1,16 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
+external help file: Microsoft.PowerShell.Security.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Security
+ms.date: 06/09/2017
 online version: https://go.microsoft.com/fwlink/?linkid=113389
-external help file:  Microsoft.PowerShell.Security.dll-Help.xml
-title:  Set-Acl
+schema: 2.0.0
+title: Set-Acl
 ---
 # Set-Acl
 
 ## SYNOPSIS
-
 Changes the security descriptor of a specified item, such as a file or a registry key.
 
 ## SYNTAX
@@ -120,16 +120,59 @@ Parameter Sets: (All)
 Aliases:
 
 Required: True
-Position: 2
+Position: 1
 Default value: None
 Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### -CentralAccessPolicy
+
+Establishes or changes the central access policy of the item.
+Enter the CAP ID or friendly name of a central access policy on the computer.
+
+Beginning in Windows Server 2012, administrators can use Active Directory and Group Policy to set central access policies for users and groups.
+For more information, see [Dynamic Access Control: Scenario Overview](/windows-server/identity/solution-guides/dynamic-access-control--scenario-overview).
+
+This parameter was introduced in Windows PowerShell 3.0.
+
+```yaml
+Type: String
+Parameter Sets: ByPath, ByLiteralPath
+Aliases:
+
+Required: False
+Position: 2
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -ClearCentralAccessPolicy
+
+Removes the central access policy from the specified item.
+
+Beginning in Windows Server 2012, administrators can use Active Directory and Group Policy to set central access policies for users and groups.
+For more information, see [Dynamic Access Control: Scenario Overview](/windows-server/identity/solution-guides/dynamic-access-control--scenario-overview).
+
+This parameter was introduced in Windows PowerShell 3.0.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: ByPath, ByLiteralPath
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -Exclude
 
 Omits the specified items.
-The value of this parameter qualifies the **Path** parameter.
+The value of this parameter qualifies the *Path* parameter.
 Enter a path element or pattern, such as "*.txt".
 Wildcards are permitted.
 
@@ -148,9 +191,9 @@ Accept wildcard characters: True
 ### -Filter
 
 Specifies a filter in the provider's format or language.
-The value of this parameter qualifies the **Path** parameter.
+The value of this parameter qualifies the *Path* parameter.
 The syntax of the filter, including the use of wildcards, depends on the provider.
-Filters are more efficient than other parameters, because the provider applies them when retrieving the objects, rather than having Windows PowerShell filter the objects after they are retrieved.
+Filters are more efficient than other parameters, because the provider applies them when retrieving the objects, rather than having PowerShell filter the objects after they are retrieved.
 
 ```yaml
 Type: String
@@ -167,7 +210,7 @@ Accept wildcard characters: True
 ### -Include
 
 Changes only the specified items.
-The value of this parameter qualifies the **Path** parameter.
+The value of this parameter qualifies the *Path* parameter.
 Enter a path element or pattern, such as "*.txt".
 Wildcards are permitted.
 
@@ -183,6 +226,50 @@ Accept pipeline input: False
 Accept wildcard characters: True
 ```
 
+### -InputObject
+
+Changes the security descriptor of the specified object.
+Enter a variable that contains the object or a command that gets the object.
+
+You cannot pipe the object to be changed to **Set-Acl**.
+Instead, use the *InputObject* parameter explicitly in the command.
+
+This parameter was introduced in Windows PowerShell 3.0.
+
+```yaml
+Type: PSObject
+Parameter Sets: ByInputObject
+Aliases:
+
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -LiteralPath
+
+Changes the security descriptor of the specified item.
+Unlike **Path**, the value of the **LiteralPath** parameter is used exactly as it is typed.
+No characters are interpreted as wildcards.
+If the path includes escape characters, enclose it in single quotation marks.
+Single quotation marks tell PowerShell not to interpret any characters as escape sequences.
+
+This parameter was introduced in Windows PowerShell 3.0.
+
+```yaml
+Type: String[]
+Parameter Sets: ByLiteralPath
+Aliases: PSPath
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
 ### -Passthru
 
 Returns an object that represents the security descriptor that was changed.
@@ -195,7 +282,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -214,97 +301,10 @@ Parameter Sets: ByPath
 Aliases:
 
 Required: True
-Position: 1
+Position: 0
 Default value: None
 Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: True
-```
-
-### -CentralAccessPolicy
-
-Establishes or changes the central access policy of the item.
-Enter the CAP ID or friendly name of a central access policy on the computer.
-
-Beginning in Windows Server 2012, administrators can use Active Directory and Group Policy to set central access policies for users and groups.
-For more information, see [Dynamic Access Control: Scenario Overview](/windows-server/identity/solution-guides/dynamic-access-control--scenario-overview).
-
-This parameter is introduced in Windows PowerShell 3.0.
-
-```yaml
-Type: String
-Parameter Sets: ByPath, ByLiteralPath
-Aliases:
-
-Required: False
-Position: 3
-Default value: None
-Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
-```
-
-### -ClearCentralAccessPolicy
-
-Removes the central access policy from the specified item.
-
-Beginning in Windows Server 2012, administrators can use Active Directory and Group Policy to set central access policies for users and groups.
-For more information, see [Dynamic Access Control: Scenario Overview](/windows-server/identity/solution-guides/dynamic-access-control--scenario-overview).
-
-This parameter is introduced in Windows PowerShell 3.0.
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: ByPath, ByLiteralPath
-Aliases:
-
-Required: False
-Position: Named
-Default value: False
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -InputObject
-
-Changes the security descriptor of the specified object.
-Enter a variable that contains the object or a command that gets the object.
-
-You cannot pipe the object to be changed to `Set-Acl`.
-Instead, use the **InputObject** parameter explicitly in the command.
-
-This parameter is introduced in Windows PowerShell 3.0.
-
-```yaml
-Type: PSObject
-Parameter Sets: ByInputObject
-Aliases:
-
-Required: True
-Position: 1
-Default value: None
-Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
-```
-
-### -LiteralPath
-
-Changes the security descriptor of the specified item.
-Unlike **Path**, the value of the **LiteralPath** parameter is used exactly as it is typed.
-No characters are interpreted as wildcards.
-If the path includes escape characters, enclose it in single quotation marks.
-Single quotation marks tell Windows PowerShell not to interpret any characters as escape sequences.
-
-This parameter is introduced in Windows PowerShell 3.0.
-
-```yaml
-Type: String[]
-Parameter Sets: ByLiteralPath
-Aliases: PSPath
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
 ```
 
 ### -Confirm
@@ -315,23 +315,6 @@ Prompts you for confirmation before running the cmdlet.
 Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
-
-Required: False
-Position: Named
-Default value: False
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -WhatIf
-
-Shows what would happen if the cmdlet runs.
-The cmdlet is not run.
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: (All)
-Aliases: wi
 
 Required: False
 Position: Named
@@ -358,9 +341,26 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -WhatIf
+
+Shows what would happen if the cmdlet runs.
+The cmdlet is not run.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### CommonParameters
 
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -378,7 +378,7 @@ The type of the security object depends on the type of the item.
 
 ## NOTES
 
- The `Set-Acl` cmdlet is supported by the Windows PowerShell file system and registry providers. As such, you can use it to change the security descriptors of files, directories, and registry keys.
+ The `Set-Acl` cmdlet is supported by the PowerShell file system and registry providers. As such, you can use it to change the security descriptors of files, directories, and registry keys.
 
 ## RELATED LINKS
 

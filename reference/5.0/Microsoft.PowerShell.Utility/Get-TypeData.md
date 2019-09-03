@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
+external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Utility
+ms.date: 06/09/2017
 online version: https://go.microsoft.com/fwlink/?linkid=821805
-external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-title:  Get-TypeData
+schema: 2.0.0
+title: Get-TypeData
 ---
 # Get-TypeData
 
@@ -25,11 +26,11 @@ This includes type data that was added to the session by Types.ps1xml file and d
 
 You can use the extended type data that **Get-TypeData** returns to examine the type data in the session and send it to the **Update-TypeData** and **Remove-TypeData** cmdlets.
 
-Extended type data adds properties and methods to objects in Windows PowerShell.
+Extended type data adds properties and methods to objects in PowerShell.
 You can use the added properties and methods in the same ways that you would use the properties and methods that are defined in the object type.
-However, when writing scripts, be aware that the added properties and methods might not be present in every Windows PowerShell session.
+However, when writing scripts, be aware that the added properties and methods might not be present in every PowerShell session.
 
-For more information about Types.ps1xml files, see about_Types.ps1xml (http://go.microsoft.com/fwlink/?LinkID=113274).
+For more information about Types.ps1xml files, see [about_Types.ps1xml](../Microsoft.PowerShell.Core/About/about_Types.ps1xml.md).
 For more information about dynamic type data that the **Update-TypeData** cmdlet adds, see Update-TypeData.
 
 This cmdlet was introduced in Windows PowerShell 3.0.
@@ -87,7 +88,7 @@ else
 }
 ```
 
-This command gets the script block that defines the **DateTime** property of **System.DateTime** objects in Windows PowerShell.
+This command gets the script block that defines the **DateTime** property of **System.DateTime** objects in PowerShell.
 
 The command uses the **Get-TypeData** cmdlet to get the extended type data for the **System.DataTime** type.
 The command gets the Members property of the **TypeData** object.
@@ -97,7 +98,7 @@ Each key in the Members hash table is a property or method name and each value i
 
 The command gets the **DateTime** key in Members and its GetScriptBlock property value.
 
-The output shows the script block that creates the value of the DateTime property of every **System.DateTime** object in Windows PowerShell.
+The output shows the script block that creates the value of the DateTime property of every **System.DateTime** object in PowerShell.
 
 ### Example 5: Find the file that adds extended data types to the session
 
@@ -116,19 +117,19 @@ C:\WINDOWS\System32\WindowsPowerShell\v1.0\types.ps1xml:433:
 ```
 
 This command finds the Types.ps1xml file that added extended type data for the **EventLogEntry** type to the session.
-This command uses the Get-ChildItem cmdlet (alias = "dir") to perform a recursive search for Types.ps1xml files in the Windows PowerShell installation directory ($pshome) and its subdirectories.
+This command uses the Get-ChildItem cmdlet (alias = "dir") to perform a recursive search for Types.ps1xml files in the PowerShell installation directory ($pshome) and its subdirectories.
 The command sends the Types.ps1xml files to the Select-String cmdlet, which does a full-text search for the "**EventLogEntry**" type name in the files and returns the matches.
 
 ## PARAMETERS
 
 ### -TypeName
 
-Specifies type data only for the types with the specified names.
+Specifies type data as an array only for the types with the specified names.
 By default, **Get-TypeData** gets all types in the session.
 
 Enter type names or a name patterns.
 Full names, or name patterns with wildcard characters are required, even for types in the System namespace.
-Wildcards are supported and the parameter *TypeName* is optional.
+Wildcards are supported and the parameter name *TypeName* is optional.
 You can also pipe type names to **Get-TypeData**.
 
 ```yaml
@@ -140,12 +141,12 @@ Required: False
 Position: 0
 Default value: None
 Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### CommonParameters
 
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -168,3 +169,4 @@ You can pipe type names to **Get-TypeData**.
 [Remove-TypeData](Remove-TypeData.md)
 
 [Update-TypeData](Update-TypeData.md)
+

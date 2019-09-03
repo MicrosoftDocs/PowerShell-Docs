@@ -1,56 +1,63 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
+external help file: System.Management.Automation.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Core
+ms.date: 06/09/2017
 online version: https://go.microsoft.com/fwlink/?linkid=821485
-external help file:  System.Management.Automation.dll-Help.xml
-title:  Get-Job
+schema: 2.0.0
+title: Get-Job
 ---
-
 # Get-Job
 
 ## SYNOPSIS
-Gets Windows PowerShell background jobs that are running in the current session.
+Gets PowerShell background jobs that are running in the current session.
 
 ## SYNTAX
 
 ### SessionIdParameterSet (Default)
+
 ```
 Get-Job [-IncludeChildJob] [-ChildJobState <JobState>] [-HasMoreData <Boolean>] [-Before <DateTime>]
  [-After <DateTime>] [-Newest <Int32>] [[-Id] <Int32[]>] [<CommonParameters>]
 ```
 
 ### StateParameterSet
+
 ```
 Get-Job [-IncludeChildJob] [-ChildJobState <JobState>] [-HasMoreData <Boolean>] [-Before <DateTime>]
  [-After <DateTime>] [-Newest <Int32>] [-State] <JobState> [<CommonParameters>]
 ```
 
 ### CommandParameterSet
+
 ```
 Get-Job [-IncludeChildJob] [-ChildJobState <JobState>] [-HasMoreData <Boolean>] [-Before <DateTime>]
  [-After <DateTime>] [-Newest <Int32>] [-Command <String[]>] [<CommonParameters>]
 ```
 
 ### InstanceIdParameterSet
+
 ```
 Get-Job [-IncludeChildJob] [-ChildJobState <JobState>] [-HasMoreData <Boolean>] [-Before <DateTime>]
  [-After <DateTime>] [-Newest <Int32>] [-InstanceId] <Guid[]> [<CommonParameters>]
 ```
 
 ### NameParameterSet
+
 ```
 Get-Job [-IncludeChildJob] [-ChildJobState <JobState>] [-HasMoreData <Boolean>] [-Before <DateTime>]
  [-After <DateTime>] [-Newest <Int32>] [-Name] <String[]> [<CommonParameters>]
 ```
 
 ### FilterParameterSet
+
 ```
 Get-Job [-Filter] <Hashtable> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+
 The **Get-Job** cmdlet gets objects that represent the background jobs that were started in the current session.
 You can use **Get-Job** to get jobs that were started by using the Start-Job cmdlet, or by using the *AsJob* parameter of any cmdlet.
 
@@ -73,6 +80,7 @@ For information about a particular custom job type, see the documentation of the
 ## EXAMPLES
 
 ### Example 1: Get all background jobs started in the current session
+
 ```
 PS C:\> Get-Job
 ```
@@ -81,6 +89,7 @@ This command gets all background jobs started in the current session.
 It does not include jobs created in other sessions, even if the jobs run on the local computer.
 
 ### Example 2: Stop a job by using an instance ID
+
 ```
 The first command uses the **Get-Job** cmdlet to get a job. It uses the *Name* parameter to identify the job. The command stores the job object that **Get-Job** returns in the $j variable. In this example, there is only one job with the specified name.
 PS C:\> $j = Get-Job -Name Job1
@@ -163,6 +172,7 @@ Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
 This example shows how to use **Get-Job** to get a job object, and then it shows how to use the job object to represent the job in a command.
 
 ### Example 8: Get all jobs including jobs started by a different method
+
 ```
 The first command uses the **Start-Job** cmdlet to start a job on the local computer.
 PS C:\> Start-Job -ScriptBlock {Get-EventLog System}
@@ -190,6 +200,7 @@ Id    Name     PSJobTypeName  State      HasMoreData   Location   Command
 This example demonstrates that the **Get-Job** cmdlet can get all of the jobs that were started in the current session, even if they were started by using different methods.
 
 ### Example 9: Investigate a failed job
+
 ```
 The first command uses the **Start-Job** cmdlet to start a job on the local computer. The job object that **Start-Job** returns shows that the job failed. The value of the **State** property is Failed.
 PS C:\> Start-Job -ScriptBlock {Get-Process}
@@ -231,6 +242,7 @@ This command shows how to use the job object that **Get-Job** returns to investi
 It also shows how to get the child jobs of each job.
 
 ### Example 10: Get filtered results
+
 ```
 The first command uses the **Workflow** keyword to create the WFProcess workflow.
 PS C:\> Workflow WFProcess {Get-Process}
@@ -299,6 +311,7 @@ This example shows the effect of using the *IncludeChildJob* and *ChildJobState*
 ## PARAMETERS
 
 ### -After
+
 Gets completed jobs that ended after the specified date and time.
 Enter a **DateTime** object, such as one returned by the Get-Date cmdlet or a string that can be converted to a **DateTime** object, such as `Dec 1, 2012 2:00 AM` or `11/06`.
 
@@ -321,6 +334,7 @@ Accept wildcard characters: False
 ```
 
 ### -Before
+
 Gets completed jobs that ended before the specified date and time.
 Enter a **DateTime** object.
 
@@ -343,12 +357,13 @@ Accept wildcard characters: False
 ```
 
 ### -ChildJobState
+
 Gets only the child jobs that have the specified state.
 The acceptable values for this parameter are:
 
 - NotStarted
--  Running
--  Completed
+- Running
+- Completed
 - Failed
 - Stopped
 - Blocked
@@ -377,6 +392,7 @@ Accept wildcard characters: False
 ```
 
 ### -Command
+
 Specifies an array of commands as strings.
 This cmdlet gets the jobs that include the specified commands.
 The default is all jobs.
@@ -391,10 +407,11 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -Filter
+
 Specifies a hash table of conditions.
 This cmdlet gets jobs that satisfy all of the conditions.
 Enter a hash table where the keys are job properties and the values are job property values.
@@ -418,6 +435,7 @@ Accept wildcard characters: False
 ```
 
 ### -HasMoreData
+
 Indicates whether this cmdlet gets only jobs that have the specified **HasMoreData** property value.
 The **HasMoreData** property indicates whether all job results have been received in the current session.
 To get jobs that have more results, specify a value of $True.
@@ -449,6 +467,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
+
 Specifies an array of IDs of jobs that this cmdlet gets.
 
 The ID is an integer that uniquely identifies the job in the current session.
@@ -469,6 +488,7 @@ Accept wildcard characters: False
 ```
 
 ### -IncludeChildJob
+
 Indicates that this cmdlet returns child jobs, in addition to parent jobs.
 
 This parameter is especially useful for investigating workflow jobs, for which **Get-Job** returns a container parent job, and job failures, because the reason for the failure is saved in a property of the child job.
@@ -488,6 +508,7 @@ Accept wildcard characters: False
 ```
 
 ### -InstanceId
+
 Specifies an array of instance IDs of jobs that this cmdlet gets.
 The default is all jobs.
 
@@ -507,6 +528,7 @@ Accept wildcard characters: False
 ```
 
 ### -Name
+
 Specifies an array of instance friendly names of jobs that this cmdlet gets.
 Enter a job name, or use wildcard characters to enter a job name pattern.
 By default, **Get-Job** gets all jobs in the current session.
@@ -520,10 +542,11 @@ Required: True
 Position: 0
 Default value: None
 Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -Newest
+
 Specifies a number of jobs to get.
 This cmdlet gets the jobs that ended most recently.
 
@@ -545,6 +568,7 @@ Accept wildcard characters: False
 ```
 
 ### -State
+
 Specifies a job state.
 This cmdlet gets only jobs in the specified state.
 The acceptable values for this parameter are:
@@ -578,20 +602,25 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### None
+
 You cannot pipe input to this cmdlet.
 
 ## OUTPUTS
 
 ### System.Management.Automation.RemotingJob
+
 This cmdlet returns objects that represent the jobs in the session.
 
 ## NOTES
-* The **PSJobTypeName** property of jobs indicates the job type of the job. The property value is determined by the job type author. The following list shows common job types.
+
+* The **PSJobTypeName** property of jobs indicates the job type of the job. The property value is
+  determined by the job type author. The following list shows common job types.
 
   - **BackgroundJob**.
 Local job started by using **Start-Job**.
@@ -627,3 +656,4 @@ Job started by using the *AsJob* common parameter of workflows.
 [about_Remote_Jobs](About/about_Remote_Jobs.md)
 
 [about_Scheduled_Jobs](../PSScheduledJob/About/about_Scheduled_Jobs.md)
+

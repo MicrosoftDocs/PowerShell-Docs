@@ -24,7 +24,7 @@ Clear-Variable [-Name] <String[]> [-Include <String[]>] [-Exclude <String[]>] [-
 
 The **Clear-Variable** cmdlet deletes the data stored in a variable, but it does not delete the variable.
 As a result, the value of the variable is NULL (empty).
-If the variable has a specified data or object type, Clear-Variable preserves the type of the object stored in the variable.
+If the variable has a specified data or object type, this cmdlet preserves the type of the object stored in the variable.
 
 ## EXAMPLES
 
@@ -54,7 +54,7 @@ The third command, which gets the value of $A, shows that the value 3 is unaffec
 ### Example 3: Delete the value of the specified variable
 
 ```
-PS C:\> Clear-variable -Name "Processes"
+PS C:\> Clear-Variable -Name "Processes"
 ```
 
 This command deletes the value of the variable named Processes.
@@ -78,7 +78,7 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -Force
@@ -114,7 +114,7 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -Name
@@ -132,7 +132,7 @@ Required: True
 Position: 0
 Default value: None
 Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -PassThru
@@ -213,7 +213,7 @@ Accept wildcard characters: False
 
 ### CommonParameters
 
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -251,3 +251,5 @@ For more information, see about_Aliases.
 [Remove-Variable](Remove-Variable.md)
 
 [Set-Variable](Set-Variable.md)
+
+

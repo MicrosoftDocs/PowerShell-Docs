@@ -1,11 +1,12 @@
 ---
 ms.date:  01/22/2019
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Management
+external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 online version: https://go.microsoft.com/fwlink/?linkid=293892
-external help file:  Microsoft.PowerShell.Commands.Management.dll-Help.xml
-title:  Push-Location
+schema: 2.0.0
+title: Push-Location
 ---
 
 # Push-Location
@@ -194,7 +195,7 @@ Accept wildcard characters: False
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see
-[about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -259,3 +260,4 @@ providers available in your session, type `Get-PSProvider`. For more information
 [Set-Location](Set-Location.md)
 
 [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md)
+

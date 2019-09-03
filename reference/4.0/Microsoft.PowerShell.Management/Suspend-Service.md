@@ -1,13 +1,13 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
+external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Management
+ms.date: 06/09/2017
 online version: https://go.microsoft.com/fwlink/?linkid=293924
-external help file:  Microsoft.PowerShell.Commands.Management.dll-Help.xml
-title:  Suspend-Service
+schema: 2.0.0
+title: Suspend-Service
 ---
-
 # Suspend-Service
 
 ## SYNOPSIS
@@ -16,69 +16,78 @@ Suspends (pauses) one or more running services.
 ## SYNTAX
 
 ### InputObject (Default)
+
 ```
 Suspend-Service [-InputObject] <ServiceController[]> [-PassThru] [-Include <String[]>] [-Exclude <String[]>]
  [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### Default
+
 ```
 Suspend-Service [-Name] <String[]> [-PassThru] [-Include <String[]>] [-Exclude <String[]>] [-WhatIf] [-Confirm]
  [<CommonParameters>]
 ```
 
 ### DisplayName
+
 ```
 Suspend-Service [-PassThru] -DisplayName <String[]> [-Include <String[]>] [-Exclude <String[]>] [-WhatIf]
  [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-The Suspend-Service cmdlet sends a suspend message to the Windows Service Controller for each of the specified services.
-While suspended, the service is still running, but its action is halted until resumed, such as by using Resume-Service.
-You can specify the services by their service names or display names, or you can use the InputObject parameter to pass a service object representing the services that you want to suspend.
+
+The **Suspend-Service** cmdlet sends a suspend message to the Windows Service Controller for each of the specified services.
+While suspended, the service is still running, but its action is stopped until resumed, such as by usingthe Resume-Service cmdlet.
+You can specify the services by their service names or display names, or you can use the *InputObject* parameter to pass a service object that represents the services that you want to suspend.
 
 ## EXAMPLES
 
-### Example 1
+### Example 1: Suspend a service
+
 ```
-PS C:\> suspend-service -displayname "Telnet"
+PS C:\> Suspend-Service -DisplayName "Telnet"
 ```
 
 This command suspends the Telnet service (Tlntsvr) service on the local computer.
 
-### Example 2
+### Example 2: Display what would happen if you suspend services
+
 ```
-PS C:\> suspend-service -name lanman* -whatif
+PS C:\> Suspend-Service -Name lanman* -WhatIf
 ```
 
-This command tells what would happen if you suspended the services that have a service name that begins with "lanman".
-To suspend the services, rerun the command without the WhatIf parameter.
+This command tells what would happen if you suspended the services that have a service name that starts with lanman.
+To suspend the services, rerun the command without the *WhatIf* parameter.
 
-### Example 3
+### Example 3: Get and suspend a service
+
 ```
-PS C:\> get-service schedule | suspend-service
+PS C:\> Get-Service schedule | Suspend-Service
 ```
 
-This command uses the Get-Service cmdlet to get an object that represents the Task Scheduler (Schedule) service on the computer.
-The pipeline operator (|) passes the result to the Suspend-Service cmdlet, which suspends the service.
+This command uses the **Get-Service** cmdlet to get an object that represents the Task Scheduler (Schedule) service on the computer.
+The pipeline operator (|) passes the result to **Suspend-Service**, which suspends the service.
 
-### Example 4
+### Example 4: Suspend all services that can be suspended
+
 ```
-PS C:\> get-service | where-object {$_.canpauseandcontinue -eq "True"} | suspend-service -confirm
+PS C:\> Get-Service | Where-Object {$_.CanPauseAndContinue -eq "True"} | Suspend-Service -Confirm
 ```
 
 This command suspends all of the services on the computer that can be suspended.
-It uses the Get-Service cmdlet to get objects representing the services on the computer.
-The pipeline operator (|) passes the results to the Where-Object cmdlet, which selects only the services that have a value of "True" for the CanPauseAndContinue property.
-Another pipeline operator passes the results to the Suspend-Service cmdlet.
-The Confirm parameter prompts you for confirmation before suspending each of the services.
+It uses **Get-Service** to get objects that represent the services on the computer.
+The pipeline operator passes the results to the Where-Object cmdlet, which selects only the services that have a value of $True for the **CanPauseAndContinue** property.
+Another pipeline operator passes the results to **Suspend-Service**.
+The *Confirm* parameter prompts you for confirmation before suspending each of the services.
 
 ## PARAMETERS
 
 ### -DisplayName
+
 Specifies the display names of the services to be suspended.
-Wildcards are permitted.
+Wildcard characters are permitted.
 
 ```yaml
 Type: String[]
@@ -93,10 +102,11 @@ Accept wildcard characters: True
 ```
 
 ### -Exclude
-Omits the specified services.
-The value of this parameter qualifies the Name parameter.
+
+Specifies services to omit from the specified services.
+The value of this parameter qualifies the *Name* parameter.
 Enter a name element or pattern, such as "s*".
-Wildcards are permitted.
+Wildcard characters are permitted.
 
 ```yaml
 Type: String[]
@@ -111,10 +121,11 @@ Accept wildcard characters: True
 ```
 
 ### -Include
-Suspends only the specified services.
-The value of this parameter qualifies the Name parameter.
+
+Specifies services to suspend.
+The value of this parameter qualifies the *Name* parameter.
 Enter a name element or pattern, such as "s*".
-Wildcards are permitted.
+Wildcard characters are permitted.
 
 ```yaml
 Type: String[]
@@ -129,7 +140,8 @@ Accept wildcard characters: True
 ```
 
 ### -InputObject
-Specifies ServiceController objects representing the services to be suspended.
+
+Specifies **ServiceController** objects that represent the services to suspend.
 Enter a variable that contains the objects, or type a command or expression that gets the objects.
 
 ```yaml
@@ -138,18 +150,19 @@ Parameter Sets: InputObject
 Aliases:
 
 Required: True
-Position: 1
+Position: 0
 Default value: None
 Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
 ### -Name
-Specifies the service names of the services to be suspended.
-Wildcards are permitted.
+
+Specifies the service names of the services to suspend.
+Wildcard characters are permitted.
 
 The parameter name is optional.
-You can use "Name" or its alias, "ServiceName", or you can omit the parameter name.
+You can use *Name* or its alias, *ServiceName*, or you can omit the parameter name.
 
 ```yaml
 Type: String[]
@@ -157,14 +170,15 @@ Parameter Sets: Default
 Aliases: ServiceName
 
 Required: True
-Position: 1
+Position: 0
 Default value: None
 Accept pipeline input: True (ByPropertyName, ByValue)
 Accept wildcard characters: True
 ```
 
 ### -PassThru
-Returns an object representing the service.
+
+Returns an object representing the item with which you are working.
 By default, this cmdlet does not generate any output.
 
 ```yaml
@@ -174,12 +188,13 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -Confirm
+
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
@@ -195,6 +210,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
+
 Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
@@ -211,31 +227,27 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
-### System.ServiceProcess.ServiceController or System.String
-You can pipe a service object or a string that contains a service name to Suspend-Service.
+### System.ServiceProcess.ServiceController, System.String
+
+You can pipe a service object or a string that contains a service name to this cmdlet.
 
 ## OUTPUTS
 
-### None or System.ServiceProcess.ServiceController
-When you use the PassThru parameter, Suspend-Service generates a System.ServiceProcess.ServiceController object representing the service.
+### None, System.ServiceProcess.ServiceController
+
+This cmdlet generates a **System.ServiceProcess.ServiceController** object that represents the service, if you specify the *PassThru* parameter.
 Otherwise, this cmdlet does not generate any output.
 
 ## NOTES
-* Suspend-Service can control services only when the current user has permission to do so. If a command does not work correctly, you might not have the required permissions.
 
-  Also, Suspend-Service can suspend only services that support being suspended and resumed.
-To determine whether a particular service can be suspended, use the Get-Service cmdlet with the CanPauseAndContinue property.
-For example, "get-service wmi | format-list name, canpauseandcontinue".
-To find all services on the computer that can be suspended, type "get-service | where-object {$_.canpauseandcontinue -eq "True"}".
-
-  To find the service names and display names of the services on your system, type "get-service".
-The service names appear in the Name column, and the display names appear in the DisplayName column.
-
-*
+* **Suspend-Service** can control services only when the current user has permission to do this. If a command does not work correctly, you might not have the required permissions.
+* **Suspend-Service** can suspend only services that support being suspended and resumed. To determine whether a particular service can be suspended, use the Get-Service cmdlet together with the **CanPauseAndContinue** property. For example, `Get-Service wmi | Format-List Name, CanPauseAndContinue`. To find all services on the computer that can be suspended, type `Get-Service | Where-Object {$_.CanPauseAndContinue -eq $true}`.
+* To find the service names and display names of the services on your system, type **Get-Service**. The service names appear in the **Name** column, and the display names appear in the **DisplayName** column.
 
 ## RELATED LINKS
 
@@ -252,3 +264,5 @@ The service names appear in the Name column, and the display names appear in the
 [Start-Service](Start-Service.md)
 
 [Stop-Service](Stop-Service.md)
+
+

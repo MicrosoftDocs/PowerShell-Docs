@@ -199,7 +199,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -212,7 +212,7 @@ You can pipe a process ID (Int32), a process object (System.Diagnostics.Process)
 This cmdlet does not generate any output.
 
 ## NOTES
-* This cmdlet uses the AttachDebugger method of the Windows Management Instrumentation (WMI) Win32_Process class. For more information about this method, see [AttachDebugger method](http://go.microsoft.com/fwlink/?LinkId=143640) in the MSDN library.
+* This cmdlet uses the AttachDebugger method of the Windows Management Instrumentation (WMI) Win32_Process class. For more information about this method, see [AttachDebugger method](https://go.microsoft.com/fwlink/?LinkId=143640) in the MSDN library.
 
 ## RELATED LINKS
 
@@ -225,3 +225,6 @@ This cmdlet does not generate any output.
 [Stop-Process](Stop-Process.md)
 
 [Wait-Process](Wait-Process.md)
+
+
+

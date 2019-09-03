@@ -1,16 +1,16 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
+external help file: Microsoft.PowerShell.Security.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Security
+ms.date: 06/09/2017
 online version: https://go.microsoft.com/fwlink/?linkid=113305
-external help file:  Microsoft.PowerShell.Security.dll-Help.xml
-title:  Get-Acl
+schema: 2.0.0
+title: Get-Acl
 ---
 # Get-Acl
 
 ## SYNOPSIS
-
 Gets the security descriptor for a resource, such as a file or registry key.
 
 ## SYNTAX
@@ -289,7 +289,7 @@ Accept wildcard characters: False
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see about_CommonParameters
-(http://go.microsoft.com/fwlink/?LinkID=113216).
+(https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -328,3 +328,4 @@ as registry keys and entries.
 ## RELATED LINKS
 
 [Set-Acl](Set-Acl.md)
+

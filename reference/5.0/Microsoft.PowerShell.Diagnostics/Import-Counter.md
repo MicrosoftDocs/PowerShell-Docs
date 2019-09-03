@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
+external help file: Microsoft.PowerShell.Commands.Diagnostics.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Diagnostics
+ms.date: 06/09/2017
 online version: https://go.microsoft.com/fwlink/?linkid=821530
-external help file:  Microsoft.PowerShell.Commands.Diagnostics.dll-Help.xml
-title:  Import-Counter
+schema: 2.0.0
+title: Import-Counter
 ---
 # Import-Counter
 
@@ -217,7 +218,12 @@ Each counter path has the following format.
 The ComputerName value is required in the path.
 For instance:
 
-"\\\\\<ComputerName\>\\\<CounterSet\>(\<Instance\>)\\\<CounterName\>"
+- `\\<ComputerName>\<CounterSet>(<Instance>)\<CounterName>`
+
+For example:
+
+- `\\Server01\Processor(2)\% User Time`
+- `\\Server01\Processor(*)\% Processor Time`
 
 ```yaml
 Type: String[]
@@ -228,7 +234,7 @@ Required: False
 Position: Named
 Default value: All counter
 Accept pipeline input: False
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -EndTime
@@ -267,7 +273,7 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -MaxSamples
@@ -305,7 +311,7 @@ Required: True
 Position: 0
 Default value: None
 Accept pipeline input: True (ByPropertyName, ByValue)
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -StartTime
@@ -344,7 +350,7 @@ Accept wildcard characters: False
 
 ### CommonParameters
 
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -364,14 +370,8 @@ If you use the *Summary* parameter, this cmdlet returns a **Microsoft.PowerShell
 
 * This cmdlet does not have a *ComputerName* parameter. However, if the computer is configured for Windows PowerShell remoting, you can use the Invoke-Command cmdlet to run an **Import-Counter** command on a remote computer.
 
-*
-
 ## RELATED LINKS
 
 [Export-Counter](Export-Counter.md)
 
 [Get-Counter](Get-Counter.md)
-
-[Format-Table](../Microsoft.PowerShell.Utility/Format-Table.md)
-
-[Get-Date](../Microsoft.PowerShell.Utility/Get-Date.md)

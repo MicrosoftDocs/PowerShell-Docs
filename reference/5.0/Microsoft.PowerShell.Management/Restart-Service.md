@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
+external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Management
+ms.date: 06/09/2017
 online version: https://go.microsoft.com/fwlink/?linkid=821626
-external help file:  Microsoft.PowerShell.Commands.Management.dll-Help.xml
-title:  Restart-Service
+schema: 2.0.0
+title: Restart-Service
 ---
 # Restart-Service
 
@@ -17,24 +18,21 @@ Stops and then starts one or more services.
 ### InputObject (Default)
 
 ```
-Restart-Service [-InputObject] <ServiceController[]>
- [-Force] [-PassThru] [-Include <String[]>] [-Exclude <String[]>]
- [-WhatIf] [-Confirm] [<CommonParameters>]
+Restart-Service [-Force] [-InputObject] <ServiceController[]> [-PassThru] [-Include <String[]>]
+ [-Exclude <String[]>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### Default
 
 ```
-Restart-Service [-Name] <String[]>
- [-Force] [-PassThru] [-Include <String[]>] [-Exclude <String[]>]
- [-WhatIf] [-Confirm] [<CommonParameters>]
+Restart-Service [-Force] [-Name] <String[]> [-PassThru] [-Include <String[]>] [-Exclude <String[]>] [-WhatIf]
+ [-Confirm] [<CommonParameters>]
 ```
 
 ### DisplayName
 
 ```
-Restart-Service -DisplayName <String[]>
- [-Force] [-PassThru] [-Include <String[]>] [-Exclude <String[]>]
+Restart-Service [-Force] [-PassThru] -DisplayName <String[]> [-Include <String[]>] [-Exclude <String[]>]
  [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
@@ -68,7 +66,7 @@ This command restarts the services that have a display name that starts with Net
 PS C:\> Get-Service -Name "net*" | Where-Object {$_.Status -eq "Stopped"} | Restart-Service
 ```
 
-This command gets then restarts all of the stopped network services on the computer.
+This command starts all of the stopped network services on the computer.
 
 This command uses the Get-Service cmdlet to get objects that represent the services whose service name starts with net.
 The pipeline operator (|) sends the services object to the Where-Object cmdlet, which selects only the services that have a status of stopped.
@@ -77,22 +75,6 @@ Another pipeline operator sends the selected services to **Restart-Service**.
 In practice, you would use the *WhatIf* parameter to determine the effect of the command before you run it.
 
 ## PARAMETERS
-
-### -Confirm
-
-Prompts you for confirmation before running the cmdlet.
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: (All)
-Aliases: cf
-
-Required: False
-Position: Named
-Default value: False
-Accept pipeline input: False
-Accept wildcard characters: False
-```
 
 ### -DisplayName
 
@@ -108,7 +90,7 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -Exclude
@@ -127,7 +109,7 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -Force
@@ -148,7 +130,7 @@ Accept wildcard characters: False
 
 ### -Include
 
-Specifies an array of services that this cmdlet restarts.
+Specifies services that this cmdlet restarts.
 The value of this parameter qualifies the *Name* parameter.
 Enter a name element or pattern, such as s*.
 Wildcard characters are permitted.
@@ -162,12 +144,12 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -InputObject
 
-Specifies an array of **ServiceController** objects that represent the services to restart.
+Specifies **ServiceController** objects that represent the services to restart.
 Enter a variable that contains the objects, or type a command or expression that gets the objects.
 
 ```yaml
@@ -200,7 +182,7 @@ Accept wildcard characters: True
 
 ### -PassThru
 
-Returns an object representing the item with which you are working.
+Returns an object that represents the service.
 By default, this cmdlet does not generate any output.
 
 ```yaml
@@ -211,6 +193,22 @@ Aliases:
 Required: False
 Position: Named
 Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Confirm
+
+Prompts you for confirmation before running the cmdlet.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -234,7 +232,7 @@ Accept wildcard characters: False
 
 ### CommonParameters
 
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -252,7 +250,7 @@ Otherwise, this cmdlet does not generate any output.
 ## NOTES
 
 * **Restart-Service** can control services only when the current user has permission to do this. If a command does not work correctly, you might not have the required permissions.
-* To find the service names and display names of the services on your system, type `Get-Service`. The service names appear in the **Name** column, and the display names appear in the **DisplayName** column.
+* To find the service names and display names of the services on your system, type **Get-Service**". The service names appear in the **Name** column, and the display names appear in the **DisplayName** column.
 
 ## RELATED LINKS
 
@@ -269,3 +267,5 @@ Otherwise, this cmdlet does not generate any output.
 [Stop-Service](Stop-Service.md)
 
 [Suspend-Service](Suspend-Service.md)
+
+

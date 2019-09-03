@@ -1,47 +1,53 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
+external help file: System.Management.Automation.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Core
+ms.date: 06/09/2017
 online version: https://go.microsoft.com/fwlink/?linkid=821511
-external help file:  System.Management.Automation.dll-Help.xml
-title:  Remove-PSSession
+schema: 2.0.0
+title: Remove-PSSession
 ---
-
 # Remove-PSSession
 
 ## SYNOPSIS
-Closes one or more Windows PowerShell sessions (PSSessions).
+Closes one or more PowerShell sessions (PSSessions).
 
 ## SYNTAX
 
 ### Id (Default)
+
 ```
 Remove-PSSession [-Id] <Int32[]> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### Session
+
 ```
 Remove-PSSession [-Session] <PSSession[]> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### InstanceId
+
 ```
 Remove-PSSession -InstanceId <Guid[]> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### Name
+
 ```
 Remove-PSSession -Name <String[]> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### ComputerName
+
 ```
 Remove-PSSession [-ComputerName] <String[]> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-The **Remove-PSSession** cmdlet closes Windows PowerShell sessions (**PSSessions**) in the current session.
+
+The **Remove-PSSession** cmdlet closes PowerShell sessions (**PSSessions**) in the current session.
 It stops any commands that are running in the **PSSessions**, ends the **PSSession**, and releases the resources that the **PSSession** was using.
 If the **PSSession** is connected to a remote computer, this cmdlet also closes the connection between the local and remote computers.
 
@@ -52,48 +58,50 @@ If you have saved the *PSSession* in a variable, the session object remains in t
 ## EXAMPLES
 
 ### Example 1: Remove sessions by using IDs
-```
-PS C:\> Remove-PSSession -Id 1, 2
+
+```powershell
+Remove-PSSession -Id 1, 2
 ```
 
 This command removes the **PSSessions** that have IDs 1 and 2.
 
 ### Example 2: Remove all the sessions in the current session
-```
-PS C:\> Get-PSSession | Remove-PSSession
 
-- or -
-
-PS C:\> Remove-PSSession -Session (Get-PSSession)
-
-- or -
-
-PS C:\> $s = Get-PSSession
-PS C:\> Remove-PSSession -Session $s
+```powershell
+Get-PSSession | Remove-PSSession
+Remove-PSSession -Session (Get-PSSession)
+$s = Get-PSSession
+Remove-PSSession -Session $s
 ```
 
 These commands remove all of the **PSSessions** in the current session.
 Although the three command formats look different, they have the same effect.
 
 ### Example 3: Close sessions by using names
-```
-PS C:\> $r = Get-PSSession -ComputerName Serv*
-PS C:\> $r | Remove-PSSession
+
+```powershell
+$r = Get-PSSession -ComputerName Serv*
+$r | Remove-PSSession
 ```
 
 These commands close the **PSSessions** that are connected to computers that have names that begin with Serv.
 
 ### Example 4: Close sessions connected to a port
-```
-PS C:\> Get-PSSession | where {$_.port -eq 90} | Remove-PSSession
+
+```powershell
+Get-PSSession | where {$_.port -eq 90} | Remove-PSSession
 ```
 
 This command closes the **PSSessions** that are connected to port 90.
 You can use this command format to identify **PSSessions** by properties other than *ComputerName*, *Name*, *InstanceID*, and *ID*.
 
 ### Example 5: Close a session based on instance ID
+
+```powershell
+Get-PSSession | Format-Table ComputerName, InstanceID  -AutoSize
 ```
-PS C:\> Get-PSSession | Format-Table ComputerName, InstanceID  -AutoSize
+
+```Output
 ComputerName InstanceId
 ------------ ----------------
 Server01     875d231b-2788-4f36-9f67-2e50d63bb82a
@@ -114,16 +122,18 @@ From the resulting display, you can identify the **PSSession** to be closed, and
 The second command uses the **Remove-PSSession** cmdlet to remove the *PSSession* with the specified instance ID.
 
 ### Example 6: Create a function that deletes all sessions in the current session
-```
-PS C:\> Function EndPSS { Get-PSSession | Remove-PSSession }
+
+```powershell
+Function EndPSS { Get-PSSession | Remove-PSSession }
 ```
 
 This function deletes all of the **PSSessions** in the current session.
-After you add this function to your Windows PowerShell profile, to delete all sessions, type `EndPSS`.
+After you add this function to your PowerShell profile, to delete all sessions, type `EndPSS`.
 
 ## PARAMETERS
 
 ### -ComputerName
+
 Specifies an array of names of computers.
 This cmdlet closes the **PSSessions** that are connected to the specified computers.
 Wildcard characters are permitted.
@@ -140,7 +150,7 @@ Required: True
 Position: 0
 Default value: None
 Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -Confirm
@@ -159,6 +169,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
+
 Specifies an array of IDs of sessions.
 This cmdlet closes the *PSSessions* with the specified IDs.
 Type one or more IDs, separated by commas, or use the range operator (..) to specify a range of IDs.
@@ -180,6 +191,7 @@ Accept wildcard characters: False
 ```
 
 ### -InstanceId
+
 Specifies an array of instance IDs.
 This cmdlet closes the **PSSessions** that have the specified instance IDs.
 
@@ -202,6 +214,7 @@ Accept wildcard characters: False
 ```
 
 ### -Name
+
 Specifies an array of friendly names of sessions.
 This cmdlet closes the **PSSessions** that have the specified friendly names.
 Wildcard characters are permitted.
@@ -217,10 +230,11 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -Session
+
 Specifies the session objects of the **PSSessions** to close.
 Enter a variable that contains the **PSSessions** or a command that creates or gets the **PSSessions**, such as a New-PSSession or **Get-PSSession** command.
 You can also pipe one or more session objects to **Remove-PSSession**.
@@ -238,6 +252,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
+
 Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
@@ -254,19 +269,23 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### System.Management.Automation.Runspaces.PSSession
+
 You can pipe a session object to this cmdlet.
 
 ## OUTPUTS
 
 ### None
+
 This cmdlet does not return any objects.
 
 ## NOTES
+
 * The *Id* parameter is mandatory. To delete all the **PSSessions** in the current session, type `Get-PSSession | Remove-PSSession`.
 * A **PSSession** uses a persistent connection to a remote computer. Create a **PSSession** to run a series of commands that share data. For more information, type `Get-Help about_PSSessions`.
 * **PSSessions** are specific to the current session. When you end a session, the **PSSessions** that you created in that session are forcibly closed.
@@ -292,3 +311,4 @@ This cmdlet does not return any objects.
 [about_PSSessions](About/about_PSSessions.md)
 
 [about_Remote](About/about_Remote.md)
+

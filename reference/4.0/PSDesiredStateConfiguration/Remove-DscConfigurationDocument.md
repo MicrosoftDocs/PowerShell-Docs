@@ -1,17 +1,18 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
+external help file: Remove-DscConfigurationDocument.cdxml-help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: PSDesiredStateConfiguration
+ms.date: 06/09/2017
 online version: https://go.microsoft.com/fwlink/?linkid=311940
-external help file:  Remove-DscConfigurationDocument.cdxml-help.xml
-title:  Remove-DscConfigurationDocument
+schema: 2.0.0
+title: Remove-DscConfigurationDocument
 ---
 
 # Remove-DscConfigurationDocument
 
 ## SYNOPSIS
-Removes a configuration document after configuration.
+Removes a configuration document from the DSC configuration store.
 
 ## SYNTAX
 
@@ -21,12 +22,12 @@ Remove-DscConfigurationDocument -Stage <Stage> [-Force] [-CimSession <CimSession
 ```
 
 ## DESCRIPTION
-The `Remove-DscConfigurationDocument` cmdlet removes a configuration document.
-During configuration, the `Start-DscConfiguration` cmdlet copies a .mof file into to a folder on the target computer.
+
+The `Remove-DscConfigurationDocument` cmdlet removes a configuration document (.mof file) from the PowerShell Desired State Configuration (DSC) configuration store.
+During configuration, the `Start-DscConfiguration` cmdlet copies a .mof file to a folder on the target computer.
 This cmdlet removes that configuration document and does additional cleanup.
 
 This cmdlet is available only as part of the [November 2014 update rollup for Windows RT 8.1, Windows 8.1, and Windows Server 2012 R2](https://support.microsoft.com/kb/3000850) from the Microsoft Support library.
-Before you use this cmdlet, review the information in [What's New in Windows PowerShell](/powershell/scripting/whats-new/what-s-new-with-powershell) in the TechNet library.
 
 ## EXAMPLES
 
@@ -36,18 +37,43 @@ PS C:\> $Session = New-CimSession -ComputerName "Server01" -Credential ACCOUNTS\
 PS C:\> Remove-DscConfigurationDocument -Stage Current -CimSession $Session
 ```
 
-The first command creates a CIM session by using the **New-CimSession** cmdlet, and then stores the **CimSession** object in the **$Session** variable.
+The first command creates a CIM session by using the **New-CimSession** cmdlet, and then stores the **CimSession** object in the $Session variable.
 The command prompts you for a password.
 For more information, type `Get-Help New-CimSession`.
 
-The second command removes the current configuration document for the computer specified in the **CimSession** stored in **$Session**.
+The second command removes the current configuration document for the computer specified in the **CimSession** stored in $Session.
 
 ## PARAMETERS
 
+### -AsJob
+Indicates that this cmdlet runs the command as a background job.
+
+If you specify the *AsJob* parameter, the command returns an object that represents the job, and then displays the command prompt.
+You can continue to work in the session until the job finishes.
+The job is created on the local computer and the results from remote computers are automatically returned to the local computer.
+To manage the job, use the Job cmdlets.
+To get the job results, use the Receive-Job cmdlet.
+
+To use this parameter, the local and remote computers must be configured for remoting, and on Windows Vista and later versions of the Windows operating system, you must open Windows PowerShell with the Run as administrator option.
+For more information, see [about_Remote_Requirements](../Microsoft.PowerShell.Core/About/about_Remote_Requirements.md).
+
+For more information about Windows PowerShell background jobs, see [about_Jobs](../Microsoft.PowerShell.Core/About/about_Jobs.md) and [about_Remote_Jobs](../Microsoft.PowerShell.Core/About/about_Remote_Jobs.md).
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -CimSession
 Runs the cmdlet in a remote session or on a remote computer.
-Enter a computer name or a session object, such as the output of a [New-CimSession](/powershell/module/cimcmdlets/new-cimsession) or [Get-CimSession](/powershell/module/cimcmdlets/get-cimsession) cmdlet.
-The default is the current session on the local computer.
+Enter a computer name or a session object, such as the output of a **New-CimSession** or **Get-CimSession** cmdlet.
 
 ```yaml
 Type: CimSession[]
@@ -63,6 +89,7 @@ Accept wildcard characters: False
 
 ### -Force
 Indicates that this cmdlet stops the running configuration job before it removes the configuration document.
+Forces the command to run without asking for user confirmation.
 
 ```yaml
 Type: SwitchParameter
@@ -78,7 +105,7 @@ Accept wildcard characters: False
 
 ### -Stage
 Specifies which configuration document to remove.
-You can specify multiple document type or stages.
+You can specify multiple documents.
 The acceptable values for this parameter are:
 
 - Current.
@@ -118,22 +145,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -AsJob
-
-Indicates that this cmdlet runs the command as a background job.
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Confirm
 Prompts you for confirmation before running the cmdlet.
 
@@ -144,13 +155,14 @@ Aliases: cf
 
 Required: False
 Position: Named
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Shows what would happen if the cmdlet runs. The cmdlet is not run.
+Shows what would happen if the cmdlet runs.
+The cmdlet is not run.
 
 ```yaml
 Type: SwitchParameter
@@ -159,13 +171,13 @@ Aliases: wi
 
 Required: False
 Position: Named
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -182,3 +194,4 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 [Windows PowerShell Desired State Configuration Overview](/powershell/dsc/overview)
 
 [Get-DscConfiguration](Get-DscConfiguration.md)
+

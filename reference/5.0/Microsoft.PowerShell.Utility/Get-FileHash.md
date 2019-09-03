@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
+external help file: Microsoft.PowerShell.Utility-help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Utility
+ms.date: 06/09/2017
 online version: https://go.microsoft.com/fwlink/?linkid=822413
-external help file:  Microsoft.PowerShell.Utility-help.xml
-title:  Get-FileHash
+schema: 2.0.0
+title: Get-FileHash
 ---
 # Get-FileHash
 
@@ -107,7 +108,7 @@ if ($hashFromFile.Hash -eq $hashFromStream.Hash) {
 
 Algorithm : MD5
 Hash      : 593D6592BD9B7F9174711AB136F5E751
-Path      : C:\WINDOWS\system32\WindowsPowerShell\v1.0\Modules\Microsoft.Powe
+Path      : C:\WINDOWS\System32\WindowsPowerShell\v1.0\Modules\Microsoft.Powe
             rShell.Utility\Microsoft.PowerShell.Utility.psd1
 
 ### Hash from Stream ###
@@ -175,7 +176,7 @@ Specifies the path to a file.
 Unlike the *Path* parameter, the value of the *LiteralPath* parameter is used exactly as it is typed.
 No characters are interpreted as wildcard characters.
 If the path includes escape characters, enclose the path in single quotation marks.
-Single quotation marks instruct Windows PowerShell not to interpret characters as escape sequences.
+Single quotation marks instruct PowerShell not to interpret characters as escape sequences.
 
 ```yaml
 Type: String[]
@@ -203,12 +204,12 @@ Required: True
 Position: 0
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### CommonParameters
 
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -227,3 +228,5 @@ You can pipe a string to the **Get-FileHash** cmdlet that contains a path to one
 ## RELATED LINKS
 
 [Format-List](Format-List.md)
+
+

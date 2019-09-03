@@ -1,63 +1,70 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
+external help file: Microsoft.PowerShell.Commands.Diagnostics.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Diagnostics
+ms.date: 06/09/2017
 online version: https://go.microsoft.com/fwlink/?linkid=289627
-external help file:  Microsoft.PowerShell.Commands.Diagnostics.dll-Help.xml
-title:  Import-Counter
+schema: 2.0.0
+title: Import-Counter
 ---
-
 # Import-Counter
 
 ## SYNOPSIS
-Imports performance counter log files (.blg, .csv, .tsv) and creates the objects that represent each counter sample in the log.
+Imports performance counter log files and creates the objects that represent each counter sample in the log.
 
 ## SYNTAX
 
 ### GetCounterSet (Default)
+
 ```
 Import-Counter [-Path] <String[]> [-StartTime <DateTime>] [-EndTime <DateTime>] [-Counter <String[]>]
  [-MaxSamples <Int64>] [<CommonParameters>]
 ```
 
 ### ListSetSet
+
 ```
 Import-Counter [-Path] <String[]> -ListSet <String[]> [<CommonParameters>]
 ```
 
 ### SummarySet
+
 ```
 Import-Counter [-Path] <String[]> [-Summary] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-The Import-Counter cmdlet imports performance counter data from performance counter log files and creates objects for each counter sample in the file.
-The PerformanceCounterSampleSet objects that it creates are identical to the objects that Get-Counter returns when it collects performance counter data.
+
+The **Import-Counter** cmdlet imports performance counter data from performance counter log files and creates objects for each counter sample in the file.
+The **PerformanceCounterSampleSet** objects that it creates are identical to the objects that **Get-Counter** returns when it collects performance counter data.
 
 You can import data from comma-separated value (.csv), tab-separated value ( .tsv), and binary performance log (.blg) performance log files.
-If you are using .blg files, you can import multiple files (up to 32 different files) in each command.
-And, you can use the parameters of Import-Counter to filter the data that you import.
+If you are using .blg files, you can import up to 32 files in each command.
+You can use the parameters of **Import-Counter** to filter the data that you import.
 
-Along with Get-Counter and Export-Counter, this feature lets you collect, export, import, combine, filter, manipulate, and re-export performance counter data within Windows PowerShell.
+Along with the Get-Counter and Export-Counter cmdlets, this feature lets you collect, export, import, combine, filter, manipulate, and re-export performance counter data within Windows PowerShell.
 
 ## EXAMPLES
 
-### Example 1
+### Example 1: Import all counter data from a file
+
 ```powershell
 $Data = Import-Counter -Path ProcessorData.csv
 ```
 
 This command imports all counter data from the ProcessorData.csv file into the $Data variable.
 
-### Example 2
+### Example 2: Import specific counter data from a file
+
 ```
-PS C:\> $i = Import-Counter -Path ProcessorData.blg -Counter "\\SERVER01\Processor(_Total)\Interrupts/sec"
+PS C:\> $I = Import-Counter -Path "ProcessorData.blg" -Counter "\\SERVER01\Processor(_Total)\Interrupts/sec"
 ```
 
-This command imports only the **"Processor(_total)\Interrupts/sec"** counter data from the ProcessorData.blg file into the $i variable.
+This command imports only the **"Processor(_total)\Interrupts/sec"** counter data from the ProcessorData.blg file into the $I variable.
 
-### Example 3
+### Example 3: Select data from a performance counter then export it to a file
+
 ```
 The first command uses **Import-Counter** to import all of the performance counter data from the ProcessorData.blg files. The command saves the data in the $Data variable.
 PS C:\> $Data = Import-Counter .\ProcessorData.blg
@@ -86,20 +93,21 @@ PS C:\> $IntCtrs
 \\SERVER01\Processor(1)\Interrupts/sec
 \\SERVER01\Processor(0)\Interrupts/sec
 
-The fifth command uses the **Import-Counter** cmdlet to import the data. It uses the $IntCtrs variable as the value of the **Counter** parameter to import only data for the counter paths in $IntCtrs.
-PS C:\> $i = Import-Counter -Path .\ProcessorData.blg -Counter $intCtrs
+The fifth command uses the **Import-Counter** cmdlet to import the data. It uses the $IntCtrs variable as the value of the *Counter* parameter to import only data for the counter paths in $IntCtrs.
+PS C:\> $I = Import-Counter -Path .\ProcessorData.blg -Counter $intCtrs
 
 The sixth command uses the Export-Counter cmdlet to export the data to the Interrupts.csv file.
-PS C:\> $i | Export-Counter -Path .\Interrupts.csv -Format CSV
+PS C:\> $I | Export-Counter -Path .\Interrupts.csv -Format CSV
 ```
 
 This example shows how to select data from a performance counter log file (.blg) and then export the selected data to a .csv file.
-The first four commands get the counter paths from the file and save them in a variable.
+The first four commands get the counter paths from the file and save them in the variable named $Data.
 The last two commands import selected data and then export only the selected data.
 
-### Example 4
+### Example 4: Display all counter paths in a group of imported counter sets
+
 ```
-The first command uses the **ListSet** parameter of the **Import-Counter** cmdlet to get all of the counter sets that are represented in a counter data file.
+The first command uses the *ListSet* parameter of the **Import-Counter** cmdlet to get all of the counter sets that are represented in a counter data file.
 PS C:\> Import-Counter -Path ProcessorData.csv -ListSet *
 
 CounterSetName     : Processor
@@ -135,24 +143,26 @@ PS C:\> Import-Counter -Path ProcessorData.csv -ListSet * | ForEach-Object {$_.P
 
 This example shows how to display all the counter paths in a group of imported counter sets.
 
-### Example 5
+### Example 5: Import counter data from a range of time stamps
+
 ```
 The first command lists in a table the time stamps of all of the data in the ProcessorData.blg file.
-PS C:\> Import-Counter -Path .\disk.blg | Format-Table -Property Timestamp
+PS C:\> Import-Counter -Path ".\disk.blg" | Format-Table -Property Timestamp
 
-The second command saves particular time stamps in the $Start and $End variables. The strings are cast to DateTime objects.
+The second command saves particular time stamps in the $Start and $End variables. The strings are cast to **DateTime** objects.
 PS C:\> $Start = [datetime]"7/9/2008 3:47:00 PM"; $End = [datetime]"7/9/2008 3:47:59 PM"
 
-The third command uses the **Import-Counter** cmdlet to get only counter data that has a time stamp between the start and end times (inclusive). The command uses the **StartTime** and **EndTime** parameters of **Import-Counter** to specify the range.
+The third command uses the **Import-Counter** cmdlet to get only counter data that has a time stamp between the start and end times (inclusive). The command uses the *StartTime* and *EndTime* parameters of **Import-Counter** to specify the range.
 PS C:\> Import-Counter -Path Disk.blg -StartTime $start -EndTime $end
 ```
 
 This example imports only the counter data that has a time stamp between the starting an ending ranges specified in the command.
 
-### Example 6
+### Example 6: Import a specified number of the oldest samples from a performance counter log file
+
 ```
-The first command uses the **Import-Counter** cmdlet to import the first (oldest) five samples from the Disk.blg file. The command uses the **MaxSamples** parameter to limit the import to five counter samples.
-PS C:\> Import-Counter -Path Disk.blg -MaxSamples 5
+The first command uses the **Import-Counter** cmdlet to import the first (oldest) five samples from the Disk.blg file. The command uses the *MaxSamples* parameter to limit the import to five counter samples.
+PS C:\> Import-Counter -Path "Disk.blg" -MaxSamples 5
 
 The second command uses array notation and the Windows PowerShell range operator (..) to get the last five counter samples from the file. These are the five newest samples.
 PS C:\> (Import-Counter -Path Disk.blg)[-1 .. -5]
@@ -160,22 +170,22 @@ PS C:\> (Import-Counter -Path Disk.blg)[-1 .. -5]
 
 This example shows how to import the five oldest and five newest samples from a performance counter log file.
 
-### Example 7
+### Example 7: Get a summary of counter data from a file
+
 ```
-PS C:\> Import-Counter D:\Samples\memory.blg -Summary
+PS C:\> Import-Counter "D:\Samples\Memory.blg" -Summary
 
 OldestRecord            NewestRecord            SampleCount
 ------------            ------------            -----------
 7/10/2008 2:59:18 PM    7/10/2008 3:00:27 PM    1000
 ```
 
-This command uses the **Summary** parameter of the **Import-Counter** cmdlet to get a summary of the counter data in the Memory.blg file.
+This command uses the *Summary* parameter of the **Import-Counter** cmdlet to get a summary of the counter data in the Memory.blg file.
 
-PS C:\\\>
+### Example 8: Update a performance counter log file
 
-### Example 8
 ```
-The first command uses the **ListSet** parameter of **Import-Counter** to get the counters in OldData.blg, an existing counter log file. The command uses a pipeline operator (|) to send the data to a ForEach-Object command that gets only the values of the **PathsWithInstances** property of each object
+The first command uses the *ListSet* parameter of **Import-Counter** to get the counters in OldData.blg, an existing counter log file. The command uses a pipeline operator (|) to send the data to a ForEach-Object command that gets only the values of the **PathsWithInstances** property of each object
 PS C:\> $Counters = Import-Counter OldData.blg -ListSet * | ForEach-Object {$_.PathsWithInstances}
 
 The second command gets updated data for the counters in the $Counters variable. It uses the Get-Counter cmdlet to get a current sample, and then export the results to the NewData.blg file.
@@ -184,9 +194,10 @@ PS C:\> Get-Counter -Counter $Counters -MaxSamples 20 | Export-Counter C:\Logs\N
 
 This example updates a performance counter log file.
 
-### Example 9
+### Example 9: Import performance log data from multiple files and then save it
+
 ```
-PS C:\> $counters = "d:\test\pdata.blg", "d:\samples\netlog.blg" | import-counter
+PS C:\> $Counters = "D:\test\pdata.blg", "D:\samples\netlog.blg" | Import-Counter
 ```
 
 This command imports performance log data from two logs and saves the data in the $Counters variable.
@@ -197,21 +208,22 @@ Notice that each path is enclosed in quotation marks and that the paths are sepa
 ## PARAMETERS
 
 ### -Counter
-Imports data only for the specified performance counters.
-By default, Import-Counter imports all data from all counters in the input files.
+
+Specifies, as a string array, the performance counters.
+By default, **Import-Counter** imports all data from all counters in the input files.
 Enter one or more counter paths.
 Wildcards are permitted in the Instance part of the path.
 
 Each counter path has the following format.
-Notice that the ComputerName value is required in the path, even on the local computer.
+The ComputerName value is required in the path.
+For instance:
 
-"\\\\\<ComputerName\>\\\<CounterSet\>(\<Instance\>)\\\<CounterName\>"
+- `\\<ComputerName>\<CounterSet>(<Instance>)\<CounterName>`
 
 For example:
 
-"\\\\Server01\Processor(2)\% User Time"
-
-"\\\\Server01\Processor(*)\% Processor Time
+- `\\Server01\Processor(2)\% User Time`
+- `\\Server01\Processor(*)\% Processor Time`
 
 ```yaml
 Type: String[]
@@ -226,9 +238,10 @@ Accept wildcard characters: True
 ```
 
 ### -EndTime
-Imports only counter data with a timestamp less than or equal to the specified date and time.
-Enter a DateTime object, such as one created by the Get-Date cmdlet.
-By default, Import-Counter imports all counter data in the files specified by the Path parameter.
+
+Specifies an end date and time that this cmdlet imports counter data between the *StartTime* and this parameter timestamps.
+Enter a **DateTime** object, such as one created by the Get-Date cmdlet.
+By default, **Import-Counter** imports all counter data in the files specified by the *Path* parameter.
 
 ```yaml
 Type: DateTime
@@ -243,12 +256,13 @@ Accept wildcard characters: False
 ```
 
 ### -ListSet
-Gets the performance counter sets that are represented in the exported files.
+
+Specifies the performance counter sets that are represented in the exported files.
 Commands with this parameter do not import any data.
 
 Enter one or more counter set names.
 Wildcards are permitted.
-To get all counter sets in the file, type "import-counter -listset *".
+To get all counter sets in the file, type `Import-Counter -ListSet *`.
 
 ```yaml
 Type: String[]
@@ -263,8 +277,9 @@ Accept wildcard characters: True
 ```
 
 ### -MaxSamples
+
 Specifies the maximum number of samples of each counter to import.
-By default, Get-Counter imports all of the data in the files specified by the Path parameter.
+By default, **Get-Counter** imports all of the data in the files specified by the *Path* parameter.
 
 ```yaml
 Type: Int64
@@ -279,12 +294,13 @@ Accept wildcard characters: False
 ```
 
 ### -Path
+
 Specifies the file paths of the files to be imported.
 This parameter is required.
 
-Enter the path and file name of a, .csv,, .tsv, or .blg file that you exported by using the Export-Counter cmdlet.
+Enter the path and file name of a, .csv,, .tsv, or .blg file that you exported by using the **Export-Counter** cmdlet.
 You can specify only one .csv or .tsv file, but you can specify multiple .blg files (up to 32) in each command.
-You can also pipe file path strings (in quotation marks) to Import-Counter.
+You can also pipe file path strings (in quotation marks) to **Import-Counter**.
 
 ```yaml
 Type: String[]
@@ -292,16 +308,17 @@ Parameter Sets: (All)
 Aliases: PSPath
 
 Required: True
-Position: 1
+Position: 0
 Default value: None
 Accept pipeline input: True (ByPropertyName, ByValue)
 Accept wildcard characters: True
 ```
 
 ### -StartTime
-Imports only counter data with a timestamp greater than or equal to the specified date and time.
-Enter a DateTime object, such as one created by the Get-Date cmdlet.
-By default, Import-Counter imports all counter data in the files specified by the Path parameter.
+
+Specifies the start date and time in which this cmdlet gets counter data.
+Enter a **DateTime** object, such as one created by the **Get-Date** cmdlet.
+By default, **Import-Counter** imports all counter data in the files specified by the *Path* parameter.
 
 ```yaml
 Type: DateTime
@@ -316,7 +333,8 @@ Accept wildcard characters: False
 ```
 
 ### -Summary
-Gets a summary of the imported data, instead of getting individual counter data samples.
+
+Indicates that this cmdlet gets a summary of the imported data, instead of getting individual counter data samples.
 
 ```yaml
 Type: SwitchParameter
@@ -331,24 +349,26 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### System.String
-You can pipe performance counter log paths to Import-Counter.
+
+You can pipe performance counter log paths to this cmdlet.
 
 ## OUTPUTS
 
 ### Microsoft.PowerShell.Commands.GetCounter.PerformanceCounterSampleSet, Microsoft.PowerShell.Commands.GetCounter.CounterSet, Microsoft.PowerShell.Commands.GetCounter.CounterFileInfo
-By default, Import-Counter returns a Microsoft.PowerShell.Commands.GetCounter.PerformanceCounterSampleSet.
-If you use the ListSet parameter, Import-Command returns a Microsoft.PowerShell.Commands.GetCounter.CounterSet object.
-If you use the Summary parameter, Import-Command returns a Microsoft.PowerShell.Commands.GetCounter.CounterFileInfo object.
+
+This cmdlet returns a **Microsoft.PowerShell.Commands.GetCounter.PerformanceCounterSampleSet**.
+If you use the *ListSet* parameter, this cmdlet returns a **Microsoft.PowerShell.Commands.GetCounter.CounterSet** object.
+If you use the *Summary* parameter, this cmdlet returns a **Microsoft.PowerShell.Commands.GetCounter.CounterFileInfo** object.
 
 ## NOTES
-* The Import-Counter cmdlet does not have a ComputerName parameter. However, if the computer is configured for Windows PowerShell remoting, you can use the Invoke-Command cmdlet to run an Import-Counter command on a remote computer.
 
-*
+* This cmdlet does not have a *ComputerName* parameter. However, if the computer is configured for Windows PowerShell remoting, you can use the Invoke-Command cmdlet to run an **Import-Counter** command on a remote computer.
 
 ## RELATED LINKS
 

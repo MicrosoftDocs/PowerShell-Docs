@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
+external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Management
+ms.date: 06/09/2017
 online version: https://go.microsoft.com/fwlink/?linkid=821644
-external help file:  Microsoft.PowerShell.Commands.Management.dll-Help.xml
-title:  Suspend-Service
+schema: 2.0.0
+title: Suspend-Service
 ---
 # Suspend-Service
 
@@ -83,22 +84,6 @@ The *Confirm* parameter prompts you for confirmation before suspending each of t
 
 ## PARAMETERS
 
-### -Confirm
-
-Prompts you for confirmation before running the cmdlet.
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: (All)
-Aliases: cf
-
-Required: False
-Position: Named
-Default value: False
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -DisplayName
 
 Specifies the display names of the services to be suspended.
@@ -113,7 +98,7 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -Exclude
@@ -132,7 +117,7 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -Include
@@ -151,7 +136,7 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -InputObject
@@ -188,7 +173,7 @@ Required: True
 Position: 0
 Default value: None
 Accept pipeline input: True (ByPropertyName, ByValue)
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -PassThru
@@ -204,6 +189,22 @@ Aliases:
 Required: False
 Position: Named
 Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Confirm
+
+Prompts you for confirmation before running the cmdlet.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -227,7 +228,7 @@ Accept wildcard characters: False
 
 ### CommonParameters
 
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -245,7 +246,7 @@ Otherwise, this cmdlet does not generate any output.
 ## NOTES
 
 * **Suspend-Service** can control services only when the current user has permission to do this. If a command does not work correctly, you might not have the required permissions.
-* **Suspend-Service** can suspend only services that support being suspended and resumed. To determine whether a particular service can be suspended, use the Get-Service cmdlet together with the **CanPauseAndContinue** property. For example, `Get-Service wmi | Format-List Name, CanPauseAndContinue`. To find all services on the computer that can be suspended, type `Get-Service | Where-Object {$_.CanPauseAndContinue -eq "True"}`.
+* **Suspend-Service** can suspend only services that support being suspended and resumed. To determine whether a particular service can be suspended, use the Get-Service cmdlet together with the **CanPauseAndContinue** property. For example, `Get-Service wmi | Format-List Name, CanPauseAndContinue`. To find all services on the computer that can be suspended, type `Get-Service | Where-Object {$_.CanPauseAndContinue -eq $true}`.
 * To find the service names and display names of the services on your system, type **Get-Service**. The service names appear in the **Name** column, and the display names appear in the **DisplayName** column.
 
 ## RELATED LINKS
@@ -263,3 +264,5 @@ Otherwise, this cmdlet does not generate any output.
 [Start-Service](Start-Service.md)
 
 [Stop-Service](Stop-Service.md)
+
+

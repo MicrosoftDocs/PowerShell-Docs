@@ -294,8 +294,8 @@ The following statement creates a hash table of process name strings and
 process object values and saves it in the \$p variable.
 
 ```powershell
-$p = @{"PowerShell" = (get-process PowerShell);
-"Notepad" = (get-process notepad)}
+$p = @{"PowerShell" = (Get-Process PowerShell);
+"Notepad" = (Get-Process notepad)}
 ```
 
 You can display the hash table in \$p and use the key-name properties to

@@ -44,7 +44,7 @@ To cancel the subscription, use the Unregister-Event cmdlet, which deletes the e
 
 New CIM cmdlets, introduced Windows PowerShell 3.0, perform the same tasks as the WMI cmdlets.
 The CIM cmdlets comply with WS-Management (WSMan) standards and with the Common Information Model (CIM) standard, which enables the cmdlets to use the same techniques to manage Windows computers and those running other operating systems.
-Instead of using `Register-WmiEvent`, consider using the [Register-CimIndicationEvent](http://go.microsoft.com/fwlink/?LinkId=227960) cmdlet.
+Instead of using `Register-WmiEvent`, consider using the [Register-CimIndicationEvent](https://go.microsoft.com/fwlink/?LinkId=227960) cmdlet.
 
 ## EXAMPLES
 
@@ -308,7 +308,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -343,3 +343,6 @@ If you close the current session, the event queue is discarded and the event sub
 [Unregister-Event](../Microsoft.PowerShell.Utility/Unregister-Event.md)
 
 [Wait-Event](../Microsoft.PowerShell.Utility/Wait-Event.md)
+
+
+

@@ -62,7 +62,7 @@ Accept wildcard characters: False
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see
-[about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -84,3 +84,4 @@ The **PSDiagnostics** module adds the **LogDetails** class to the
 [Enable-PSTrace](Enable-PSTrace.md)
 
 [Disable-PSTrace](Disable-PSTrace.md)
+

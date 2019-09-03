@@ -1,11 +1,12 @@
 ---
+external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Utility
 ms.date: 5/10/2019
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
 online version: https://go.microsoft.com/fwlink/?linkid=293990
-external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-title:  Measure-Object
+schema: 2.0.0
+title: Measure-Object
 ---
 # Measure-Object
 
@@ -333,10 +334,10 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 1
-Default value: Count
+Position: 0
+Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -Sum
@@ -379,7 +380,7 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+-WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -413,3 +414,4 @@ Otherwise, it returns a **GenericMeasureInfo** object.
 [Tee-Object](Tee-Object.md)
 
 [Where-Object](../Microsoft.PowerShell.Core/Where-Object.md)
+

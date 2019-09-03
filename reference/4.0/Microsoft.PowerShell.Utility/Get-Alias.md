@@ -17,14 +17,14 @@ Gets the aliases for the current session.
 
 ### Default (Default)
 
-```powershell
+```
 Get-Alias [[-Name] <String[]>] [-Exclude <String[]>] [-Scope <String>]
  [<CommonParameters>]
 ```
 
 ### Definition
 
-```powershell
+```
 Get-Alias [-Exclude <String[]>] [-Scope <String>] [-Definition <String[]>]
  [<CommonParameters>]
 ```
@@ -32,7 +32,7 @@ Get-Alias [-Exclude <String[]>] [-Scope <String>] [-Definition <String[]>]
 ## DESCRIPTION
 
 The **Get-Alias** cmdlet gets the aliases in the current session.
-This includes built-in aliases, aliases that you have set or imported, and aliases that you have added to your Windows PowerShell profile.
+This includes built-in aliases, aliases that you have set or imported, and aliases that you have added to your PowerShell profile.
 
 By default, **Get-Alias** takes an alias and returns the command name.
 When you use the *Definition* parameter, **Get-Alias** takes a command name and returns its aliases.
@@ -92,7 +92,7 @@ Get-Alias | Where-Object {$_.Options -Match "ReadOnly"}
 ```
 
 This command gets all aliases in which the value of the Options property is ReadOnly.
-This command provides a quick way to find the aliases that are built into Windows PowerShell, because they have the ReadOnly option.
+This command provides a quick way to find the aliases that are built into PowerShell, because they have the ReadOnly option.
 
 Options is just one property of the AliasInfo objects that **Get-Alias** gets.
 To find all properties and methods of AliasInfo objects, type `Get-Alias | get-member`.
@@ -195,7 +195,7 @@ Accept wildcard characters: False
 
 ### CommonParameters
 
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -208,7 +208,7 @@ You can pipe alias names to **Get-Alias**.
 ### System.Management.Automation.AliasInfo
 
 **Get-Alias** returns an object that represents each alias.
-**Get-Alias** returns the same object for every alias, but Windows PowerShell uses an arrow-based format to display the names of non-hyphenated aliases.
+**Get-Alias** returns the same object for every alias, but PowerShell uses an arrow-based format to display the names of non-hyphenated aliases.
 
 ## NOTES
 
@@ -225,6 +225,7 @@ You can pipe alias names to **Get-Alias**.
 
 [Set-Alias](Set-Alias.md)
 
-[Alias Provider](../Microsoft.PowerShell.Core/Providers/Alias-Provider.md)
+[Alias Provider](../Microsoft.PowerShell.Core/About/about_Alias_Provider.md)
 
 [about_Aliases](../Microsoft.PowerShell.Core/About/about_Aliases.md)
+

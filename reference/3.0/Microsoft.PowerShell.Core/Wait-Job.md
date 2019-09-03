@@ -9,8 +9,10 @@ title:  Wait-Job
 ---
 
 # Wait-Job
+
 ## SYNOPSIS
 Suppresses the command prompt until one or all of the Windows PowerShell background jobs running in the session are complete.
+
 ## SYNTAX
 
 ### SessionIdParameterSet (Default)
@@ -55,6 +57,7 @@ For more information about Windows PowerShell background jobs, see [about_Jobs](
 Beginning in Windows PowerShell 3.0, the **Wait-Job** cmdlet also waits for custom job types, such as workflow jobs and instances of scheduled jobs.
 To enable **Wait-Job** to wait for jobs of a particular type, import the module that supports the custom job type into the session before running a **Get-Job** command, either by using the Import-Module cmdlet or by using or getting a cmdlet in the module.
 For information about a particular custom job type, see the documentation of the custom job type feature.
+
 ## EXAMPLES
 
 ### Example 1
@@ -63,6 +66,7 @@ PS C:\> Get-Job | Wait-Job
 ```
 
 This command waits for all of the background jobs running in the session to complete.
+
 ### Example 2
 ```
 PS C:\> $s = New-PSSession Server01, Server02, Server03
@@ -87,6 +91,7 @@ This command waits for the Date1 jobs on each computer to complete.
 It stores the resulting collection (array) of job objects in the $done variable.
 
 The fourth command uses the Count property of the array of job objects in the $done variable to determine how many of the jobs are complete.
+
 ### Example 3
 ```
 PS C:\> $s = New-PSSession (Get-Content Machines.txt)
@@ -113,7 +118,9 @@ For more information about the **Using** scope modifier, see [about_Remote_Varia
 
 The fourth command uses the **Invoke-Command** cmdlet to run a **Wait-Job** command in the sessions.
 It uses the **Any** parameter to wait until the first job on the remote computers is complete.
+
 ### Example 4
+
 ```
 PS C:\> $s = New-PSSession Server01, Server02, Server03
 PS C:\> $jobs = Invoke-Command -Session $s -ScriptBlock {Start-Job -ScriptBlock {Get-Date}}
@@ -135,7 +142,9 @@ In this case, after 30 seconds, only the command on the Server02 computer has co
 Wait-Job ends the wait, displays the command prompt, and returns the object that represents the job that was completed.
 
 The $done variable contains a job object that represents the job that ran on Server02.
+
 ### Example 5
+
 ```
 PS C:\> Wait-Job -id 1,2,5 -Any
 ```

@@ -8,7 +8,6 @@ online version: https://go.microsoft.com/fwlink/?linkid=289620
 schema: 2.0.0
 title: Unregister-PSSessionConfiguration
 ---
-
 # Unregister-PSSessionConfiguration
 
 ## SYNOPSIS
@@ -146,7 +145,7 @@ Required: True
 Position: 0
 Default value: None
 Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -NoServiceRestart
@@ -211,7 +210,7 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+-WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -254,3 +253,4 @@ To run this cmdlet you must start PowerShell by using the **Run as administrator
 [about_Session_Configurations](About/about_Session_Configurations.md)
 
 [about_Session_Configuration_Files](About/about_Session_Configuration_Files.md)
+

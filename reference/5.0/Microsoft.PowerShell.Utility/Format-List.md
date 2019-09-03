@@ -1,11 +1,12 @@
 ---
-ms.date:  12/19/2018
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
+external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Utility
+ms.date: 12/19/2018
 online version: https://go.microsoft.com/fwlink/?linkid=821774
-external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-title:  Format-List
+schema: 2.0.0
+title: Format-List
 ---
 # Format-List
 
@@ -234,7 +235,7 @@ Required: False
 Position: 0
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -ShowError
@@ -277,7 +278,7 @@ Accept wildcard characters: False
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable,
 -Verbose, -WarningAction, and -WarningVariable. For more information, see
-[about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -323,3 +324,4 @@ a table, use `Format-Custom`.
 [Format-Table](Format-Table.md)
 
 [Format-Wide](Format-Wide.md)
+

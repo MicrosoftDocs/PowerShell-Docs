@@ -227,7 +227,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -304,7 +304,7 @@ Required: False
 Position: 1
 Default value: None
 Accept pipeline input: True (ByPropertyName, ByValue)
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -UICulture
@@ -325,7 +325,7 @@ Aliases:
 
 Required: False
 Position: 2
-Default value: None
+Default value: Current UI culture
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -344,7 +344,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

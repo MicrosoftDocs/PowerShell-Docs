@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
+external help file: Microsoft.PowerShell.ODataUtils-help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.ODataUtils
+ms.date: 06/09/2017
 online version: https://go.microsoft.com/fwlink/?linkid=510069
-external help file:  Microsoft.PowerShell.ODataUtils-help.xml
-title:  Export-ODataEndpointProxy
+schema: 2.0.0
+title: Export-ODataEndpointProxy
 ---
 # Export-ODataEndpointProxy
 
@@ -22,7 +23,6 @@ Export-ODataEndpointProxy [-Uri] <String> [-OutputModule] <String> [[-MetadataUr
 ```
 
 ## DESCRIPTION
-
 The **Export-ODataEndpointProxy** cmdlet uses the metadata of an OData endpoint to generate a module that contains cmdlets you can use to manage that OData endpoint.
 The module is based on CDXML.
 After this cmdlet generates the module, it saves that module to the path and file name specified by the *OutputModule* parameter.
@@ -100,22 +100,6 @@ Required: False
 Position: 6
 Default value: None
 Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
-```
-
-### -Confirm
-
-Prompts you for confirmation before running the cmdlet.
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: (All)
-Aliases: cf
-
-Required: False
-Position: Named
-Default value: False
-Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -298,6 +282,22 @@ Accept pipeline input: True (ByPropertyName, ByValue)
 Accept wildcard characters: False
 ```
 
+### -Confirm
+
+Prompts you for confirmation before running the cmdlet.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -WhatIf
 
 Shows what would happen if the cmdlet runs.
@@ -317,7 +317,9 @@ Accept wildcard characters: False
 
 ### CommonParameters
 
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+-InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
+-WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -332,3 +334,5 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 [What is the OData Protocol?](http://www.odata.org/)
 
 [Invoke-RestMethod](../Microsoft.PowerShell.Utility/Invoke-RestMethod.md)
+
+

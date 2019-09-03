@@ -8,7 +8,6 @@ online version: https://go.microsoft.com/fwlink/?linkid=821855
 schema: 2.0.0
 title: Select-Xml
 ---
-
 # Select-Xml
 
 ## SYNOPSIS
@@ -17,32 +16,38 @@ Finds text in an XML string or document.
 ## SYNTAX
 
 ### Xml (Default)
+
 ```
 Select-Xml [-Xml] <XmlNode[]> [-XPath] <String> [-Namespace <Hashtable>] [<CommonParameters>]
 ```
 
 ### Path
+
 ```
 Select-Xml [-Path] <String[]> [-XPath] <String> [-Namespace <Hashtable>] [<CommonParameters>]
 ```
 
 ### LiteralPath
+
 ```
 Select-Xml -LiteralPath <String[]> [-XPath] <String> [-Namespace <Hashtable>] [<CommonParameters>]
 ```
 
 ### Content
+
 ```
 Select-Xml -Content <String[]> [-XPath] <String> [-Namespace <Hashtable>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+
 The **Select-Xml** cmdlet lets you use XPath queries to search for text in XML strings and documents.
 Enter an XPath query, and use the *Content*, *Path*, or *Xml* parameter to specify the XML to be searched.
 
 ## EXAMPLES
 
 ### Example 1: Select AliasProperty nodes
+
 ```
 PS C:\> $Path = "$Pshome\Types.ps1xml"
 PS C:\> $XPath = "/Types/Type/Members/AliasProperty"
@@ -82,6 +87,7 @@ The result shows the Name and ReferencedMemberName of each alias property in the
 For example, there is a **Count** property that is an alias of the **Length** property.
 
 ### Example 2: Input an XML document
+
 ```
 PS C:\> [xml]$Types = Get-Content $Pshome\Types.ps1xml
 PS C:\> Select-Xml -Xml $Types -XPath "//MethodName"
@@ -96,10 +102,11 @@ The second command uses the **Select-Xml** cmdlet to get the MethodName nodes in
 The command uses the *Xml* parameter to specify the XML content in the $Types variable and the *XPath* parameter to specify the path to the MethodName node.
 
 ### Example 3: Search PowerShell Help files
+
 ```
 PS C:\> $Namespace = @{command = "http://schemas.microsoft.com/maml/dev/command/2004/10"; maml = "http://schemas.microsoft.com/maml/2004/10"; dev = "http://schemas.microsoft.com/maml/dev/2004/10"}
 
-The second command saves the path to the help files in the $Path variable.If there are no help files in this path on your computer, use the Update-Help cmdlet to download the help files. For more information about Updatable Help, see about_Updatable_Help (http://go.microsoft.com/fwlink/?LinkId=235801).
+The second command saves the path to the help files in the $Path variable.If there are no help files in this path on your computer, use the Update-Help cmdlet to download the help files. For more information about Updatable Help, see about_Updatable_Help (https://go.microsoft.com/fwlink/?LinkId=235801).
 PS C:\> $Path = "$Pshome\en-us\*dll-Help.xml"
 
 The third command uses the **Select-Xml** cmdlet to search the XML for cmdlet names by finding Command:Name element anywhere in the files. It saves the results in the $Xml variable.**Select-Xml** returns a **SelectXmlInfo** object that has a Node property, which is a **System.Xml.XmlElement** object. The Node property has an InnerXML property, which contains the actual XML that is retrieved.
@@ -120,12 +127,13 @@ Checkpoint-Computer     C:\Windows\system32\WindowsPowerShell\v1.0\en-us\Microso
 ...
 ```
 
-This example shows how to use the **Select-Xml** cmdlet to search the Windows PowerShell XML-based cmdlet help files.
+This example shows how to use the **Select-Xml** cmdlet to search the PowerShell XML-based cmdlet help files.
 In this example, we'll search for the cmdlet name that serves as a title for each help file and the path to the help file.
 
 The first command creates a hash table that represents the XML namespace that is used for the help files and saves it in the $Namespace variable.
 
 ### Example 4: Different ways to input XML
+
 ```
 PS C:\> $Xml = @"
 <?xml version="1.0" encoding="utf-8"?>
@@ -166,6 +174,7 @@ The first command saves a here-string that contains XML in the $Xml variable.
 (For more information about here-strings, see about_Quoting_Rules.)
 
 ### Example 5: Use the default xmlns namespace
+
 ```
 PS C:\> $SnippetNamespace = @{snip = "http://schemas.microsoft.com/PowerShell/Snippets"}
 
@@ -185,6 +194,7 @@ You can use any name that is not reserved, but you cannot use xmlns.
 ## PARAMETERS
 
 ### -Content
+
 Specifies a string that contains the XML to search.
 You can also pipe strings to **Select-Xml**.
 
@@ -201,11 +211,12 @@ Accept wildcard characters: False
 ```
 
 ### -LiteralPath
+
 Specifies the paths and file names of the XML files to search.
 Unlike *Path*, the value of the *LiteralPath* parameter is used exactly as it is typed.
 No characters are interpreted as wildcards.
 If the path includes escape characters, enclose it in single quotation marks.
-Single quotation marks tell Windows PowerShell not to interpret any characters as escape sequences.
+Single quotation marks tell PowerShell not to interpret any characters as escape sequences.
 
 ```yaml
 Type: String[]
@@ -220,6 +231,7 @@ Accept wildcard characters: False
 ```
 
 ### -Namespace
+
 Specifies a hash table of the namespaces used in the XML.
 Use the format @{\<namespaceName\> = \<namespaceValue\>}.
 
@@ -240,6 +252,7 @@ Accept wildcard characters: False
 ```
 
 ### -Path
+
 Specifies the path and file names of the XML files to search.
 Wildcard characters are permitted.
 
@@ -252,10 +265,11 @@ Required: True
 Position: 1
 Default value: None
 Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -Xml
+
 Specifies one or more XML nodes.
 
 An XML document will be processed as a collection of XML nodes.
@@ -274,6 +288,7 @@ Accept wildcard characters: False
 ```
 
 ### -XPath
+
 Specifies an XPath search query.
 The query language is case-sensitive.
 This parameter is required.
@@ -291,11 +306,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### System.String or System.Xml.XmlNode
+
 You can pipe a path or XML node to this cmdlet.
 
 ## OUTPUTS
@@ -303,8 +320,12 @@ You can pipe a path or XML node to this cmdlet.
 ### Microsoft.PowerShell.Commands.SelectXmlInfo
 
 ## NOTES
+
 * XPath is a standard language that is designed to identify parts of an XML document. For more information about the XPath language, see [XPath Reference](https://msdn.microsoft.com/library/ms256115) and the Selection Filters section of the [Event Selection](https://msdn.microsoft.com/library/aa385231) in the MSDN library.
 
 ## RELATED LINKS
 
 [ConvertTo-Xml](ConvertTo-Xml.md)
+
+
+

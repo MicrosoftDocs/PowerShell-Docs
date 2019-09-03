@@ -259,14 +259,14 @@ You can specify the name of the new item in **Name**, or include it in **Path**.
 
 ```yaml
 Type: String[]
-Parameter Sets: pathSet
+Parameter Sets: pathSet, nameSet
 Aliases:
 
 Required: True (pathSet), False (nameSet)
 Position: 0
 Default value: None
 Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -Value

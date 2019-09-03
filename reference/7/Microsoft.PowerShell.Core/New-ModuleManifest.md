@@ -243,7 +243,7 @@ the module.
 
 ```powershell
 $moduleSettings = @{
-  HelpInfoUri = 'http://http://go.microsoft.com/fwlink/?LinkID=603'
+  HelpInfoUri = 'http://https://go.microsoft.com/fwlink/?LinkID=603'
   Path = 'C:\ps-test\ManifestTest.psd1'
 }
 New-ModuleManifest @moduleSettings
@@ -273,7 +273,7 @@ Path                        : C:\Windows\system32\WindowsPowerShell\v1.0\Modules
 Definition                  :
 Description                 :
 Guid                        : ca046f10-ca64-4740-8ff9-2565dba61a4f
-HelpInfoUri                 : http://go.microsoft.com/fwlink/?LinkID=210596
+HelpInfoUri                 : https://go.microsoft.com/fwlink/?LinkID=210596
 ModuleBase                  : C:\Windows\system32\WindowsPowerShell\v1.0\Modules\Microsoft.PowerShell.Diagnostics
 PrivateData                 :
 Version                     : 3.0.0.0
@@ -1143,7 +1143,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -1197,3 +1197,7 @@ module and the caller's session state is the module's session state.
 [Test-ModuleManifest](Test-ModuleManifest.md)
 
 [about_Modules](./About/about_Modules.md)
+
+
+
+

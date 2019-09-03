@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
+external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Management
+ms.date: 06/09/2017
 online version: https://go.microsoft.com/fwlink/?linkid=821642
-external help file:  Microsoft.PowerShell.Commands.Management.dll-Help.xml
-title:  Stop-Process
+schema: 2.0.0
+title: Stop-Process
 ---
 # Stop-Process
 
@@ -38,8 +39,8 @@ The **Stop-Process** cmdlet stops one or more running processes.
 You can specify a process by process name or process ID (PID), or pass a process object to **Stop-Process**.
 **Stop-Process** works only on processes running on the local computer.
 
-On Windows Vista and later versions of the Windows operating system, to stop a process that is not owned by the current user, you must start Windows PowerShell by using the Run as administrator option.
-Also, you are will not be prompted for confirmation unless you specify the *Confirm* parameter.
+On Windows Vista and later versions of the Windows operating system, to stop a process that is not owned by the current user, you must start PowerShell by using the Run as administrator option.
+Also, you are not prompted for confirmation unless you specify the *Confirm* parameter.
 
 ## EXAMPLES
 
@@ -70,7 +71,7 @@ Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
 
 This command stops a particular instance of the Notepad process.
 It uses the process ID, 3952, to identify the process.
-The *Confirm* parameter directs Windows PowerShell to prompt you before it stops the process.
+The *Confirm* parameter directs PowerShell to prompt you before it stops the process.
 Because the prompt includes the process namein addition to its ID, this is best practice.
 The *PassThru* parameter passes the process object to the formatter for display.
 Without this parameter, there would be no display after a **Stop-Process** command.
@@ -124,28 +125,12 @@ The first command uses **Get-Process** to get the Lsass process.
 A pipeline operator sends the process to **Stop-Process** to stop it.
 As shown in the sample output, the first command fails with an Access denied message, because this process can be stopped only by a member of the Administrator group on the computer.
 
-When Windows PowerShell is opened by using the Run as administrator option, and the command is repeated, Windows PowerShell prompts you for confirmation.
+When PowerShell is opened by using the Run as administrator option, and the command is repeated, PowerShell prompts you for confirmation.
 
 The second command specifies *Force* to suppress the prompt.
 As a result, the process is stopped without confirmation.
 
 ## PARAMETERS
-
-### -Confirm
-
-Prompts you for confirmation before running the cmdlet.
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: (All)
-Aliases: cf
-
-Required: False
-Position: Named
-Default value: False
-Accept pipeline input: False
-Accept wildcard characters: False
-```
 
 ### -Force
 
@@ -215,7 +200,7 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -PassThru
@@ -231,6 +216,22 @@ Aliases:
 Required: False
 Position: Named
 Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Confirm
+
+Prompts you for confirmation before running the cmdlet.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -254,7 +255,7 @@ Accept wildcard characters: False
 
 ### CommonParameters
 
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -276,10 +277,8 @@ Otherwise, this cmdlet does not generate any output.
   You can also use the properties and methods of the Windows Management Instrumentation (WMI) **Win32_Process** object in Windows PowerShell.
 For more information, see **Get-WmiObject** and the WMI SDK.
 
-  When stopping processes, realize that stopping a process can stop process and services that depend on the process.
+* When stopping processes, realize that stopping a process can stop process and services that depend on the process.
 In an extreme case, stopping a process can stop Windows.
-
-*
 
 ## RELATED LINKS
 
@@ -292,3 +291,5 @@ In an extreme case, stopping a process can stop Windows.
 [Stop-Process](Stop-Process.md)
 
 [Wait-Process](Wait-Process.md)
+
+

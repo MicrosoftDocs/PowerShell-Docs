@@ -1,11 +1,12 @@
 ---
-ms.date:  5/16/2019
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
+external help file: System.Management.Automation.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Core
+ms.date: 5/16/2019
 online version: https://go.microsoft.com/fwlink/?linkid=821524
-external help file:  System.Management.Automation.dll-Help.xml
-title:  Update-Help
+schema: 2.0.0
+title: Update-Help
 ---
 
 # Update-Help
@@ -18,18 +19,17 @@ Downloads and installs the newest help files on your computer.
 ### Path (Default)
 
 ```
-Update-Help [[-Module] <string[]>] [[-SourcePath] <string[]>] [[-UICulture] <cultureinfo[]>]
-[-FullyQualifiedModule <ModuleSpecification[]>] [-Recurse] [-Credential <pscredential>]
+Update-Help [[-Module] <String[]>] [-FullyQualifiedModule <ModuleSpecification[]>]
+[[-SourcePath] <String[]>] [-Recurse] [[-UICulture] <CultureInfo[]>] [-Credential <PSCredential>]
 [-UseDefaultCredentials] [-Force] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### LiteralPath
 
 ```
-Update-Help [[-Module] <string[]>] [[-UICulture] <cultureinfo[]>]
-[-FullyQualifiedModule <ModuleSpecification[]>] [-LiteralPath <string[]>] [-Recurse]
-[-Credential <pscredential>] [-UseDefaultCredentials] [-Force] [-WhatIf] [-Confirm]
-[<CommonParameters>]
+Update-Help [[-Module] <String[]>] [-FullyQualifiedModule <ModuleSpecification[]>]
+[-LiteralPath <String[]>] [-Recurse] [[-UICulture] <CultureInfo[]>] [-Credential <PSCredential>]
+[-UseDefaultCredentials] [-Force] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION

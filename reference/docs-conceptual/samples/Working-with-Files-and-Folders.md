@@ -100,15 +100,17 @@ If you do not want to be prompted for each contained item, specify the **Recurse
 Remove-Item -Path C:\temp\DeleteMe -Recurse
 ```
 
-## Mapping a Local Folder as a Windows Accessible Drive
+## Mapping a Local Folder as a drive
 
-You can also map a local folder, using the **subst** command. The following command creates a local drive P: rooted in the local Program Files directory:
+You can also map a local folder, using the **New-PSDrive** command. The following command creates a local drive P: rooted in the local Program Files directory, visible only from the PowerShell session:
 
 ```powershell
-subst p: $env:programfiles
+New-PSDrive -Name P -Root $env:ProgramFiles -PSProvider FileSystem
 ```
 
-Just as with network drives, drives mapped within Windows PowerShell using **subst** are immediately visible to the Windows PowerShell shell.
+Just as with network drives, drives mapped within Windows PowerShell are immediately visible to the Windows PowerShell shell.
+In order to create a mapped drive visible from File Explorer, the parameter **-Persist** is needed. However, only remote paths can be used with Persist.
+
 
 ## Reading a Text File into an Array
 

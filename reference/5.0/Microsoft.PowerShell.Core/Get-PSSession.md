@@ -68,8 +68,8 @@ Get-PSSession [-Id] <Int32[]> [<CommonParameters>]
 
 ## DESCRIPTION
 
-The **Get-PSSession** cmdlet gets the user-managed Windows PowerShell sessions (**PSSessions**) on
-local and remote computers.
+The **Get-PSSession** cmdlet gets the user-managed PowerShell sessions (**PSSessions**) on local and
+remote computers.
 
 Starting in Windows PowerShell 3.0, sessions are stored on the computers at the remote end of each
 connection.
@@ -90,15 +90,14 @@ created in the current session.
 The *ComputerName* parameter gets sessions that were created in the current session and connect to
 the specified computer.
 
-For more information about Windows PowerShell sessions, see about_PSSessions
-(http://go.microsoft.com/fwlink/?LinkID=135181).
+For more information about PowerShell sessions, see [about_PSSessions](about/about_PSSessions.md).
 
 ## EXAMPLES
 
 ### Example 1: Get sessions created in the current session
 
-```
-PS C:\> Get-PSSession
+```powershell
+Get-PSSession
 ```
 
 This command gets all of the **PSSessions** that were created in the current session.
@@ -107,8 +106,8 @@ they connect to this computer.
 
 ### Example 2: Get sessions connected to the local computer
 
-```
-PS C:\> Get-PSSession -ComputerName "localhost"
+```powershell
+Get-PSSession -ComputerName "localhost"
 ```
 
 This command gets the **PSSessions** that are connected to the local computer.
@@ -119,8 +118,11 @@ different sessions or on different computers.
 
 ### Example 3: Get sessions connected to a computer
 
+```powershell
+Get-PSSession -ComputerName "Server02"
 ```
-PS C:\> Get-PSSession -ComputerName "Server02"
+
+```Output
  Id Name            ComputerName    State         ConfigurationName     Availability
  -- ----            ------------    -----         -----------------     ------------
   2 Session3        Server02       Disconnected  ITTasks                       Busy
@@ -139,9 +141,9 @@ The ScheduledJobs session, which is Opened and Available, was created in the cur
 
 ### Example 4: Save results of this command
 
-```
-PS C:\> New-PSSession -ComputerName Server01, Server02, Server03
-PS C:\> $s1, $s2, $s3 = Get-PSSession
+```powershell
+New-PSSession -ComputerName Server01, Server02, Server03
+$s1, $s2, $s3 = Get-PSSession
 ```
 
 This example shows how to save the results of a **Get-PSSession** command in multiple variables.
@@ -152,17 +154,17 @@ computers.
 The second command uses a **Get-PSSession** cmdlet to get the three **PSSessions**.
 It then saves each of the **PSSessions** in a separate variable.
 
-When Windows PowerShell assigns an array of objects to an array of variables, it assigns the first
-object to the first variable, the second object to the second variable, and so on.
+When PowerShell assigns an array of objects to an array of variables, it assigns the first object to
+the first variable, the second object to the second variable, and so on.
 If there are more objects than variables, it assigns all remaining objects to the last variable in
 the array. If there are more variables than objects, the extra variables are not used.
 
 ### Example 5: Delete a session by using an instance ID
 
-```
-PS C:\> Get-PSSession | Format-Table -Property ComputerName, InstanceID
-PS C:\> $s = Get-PSSession -InstanceID a786be29-a6bb-40da-80fb-782c67f7db0f
-PS C:\> Remove-PSSession -Session $s
+```powershell
+Get-PSSession | Format-Table -Property ComputerName, InstanceID
+$s = Get-PSSession -InstanceID a786be29-a6bb-40da-80fb-782c67f7db0f
+Remove-PSSession -Session $s
 ```
 
 This example shows how to get a **PSSession** by using its instance ID, and then to delete the
@@ -179,32 +181,54 @@ The third command uses the Remove-PSSession cmdlet to delete the **PSSession** i
 
 ### Example 6: Get a session that has a particular name
 
-```
-The first command gets sessions on the Server02 and Server12 remote computers that have names that begin with BackupJob and use the ITTasks session configuration.The command uses the *Name* parameter to specify the name pattern and the *ConfigurationName* parameter to specify the session configuration. The value of the *SessionOption* parameter is a hash table that sets the value of the *OperationTimeout* to 240000 milliseconds (4 minutes). This setting gives the command more time to complete.The *ConfigurationName* and *SessionOption* parameters are used to configure the temporary sessions in which the **Get-PSSession** cmdlet runs on each computer.The output shows that the command returns the BackupJob04 session. The session is disconnected and the *Availability* is None, which indicates that it is not in use.
-PS C:\> Get-PSSession -ComputerName Server02, Server12 -Name BackupJob* -ConfigurationName ITTasks -SessionOption @{OperationTimeout=240000}
- Id Name            ComputerName    State         ConfigurationName     Availability
- -- ----            ------------    -----         -----------------     ------------
-  3 BackupJob04     Server02        Disconnected        ITTasks                  None
-
-The second command uses the **Get-PSSession** cmdlet to get to the BackupJob04 session and the Connect-PSSession cmdlet to connect to the session. The command saves the session in the $s variable.
-PS C:\> $s = Get-PSSession -ComputerName Server02 -Name BackupJob04 -ConfigurationName ITTasks | Connect-PSSession
-
-The third command gets the session in the $s variable. The output shows that the **Connect-PSSession** command was successful. The session is in the **Opened** state and is available for use.
-PS C:\> $s
-Id Name            ComputerName    State         ConfigurationName     Availability
--- ----            ------------    -----         -----------------     ------------
- 5 BackupJob04     Server02        Opened        ITTasks                  Available
-```
-
 The commands in this example find a session that has a particular name format and uses a particular
 session configuration and then connect to the session.
 You can use a command like this one to find a session in which a colleague started a task and
 connect to finish the task.
 
+```powershell
+Get-PSSession -ComputerName Server02, Server12 -Name BackupJob* -ConfigurationName ITTasks -SessionOption @{OperationTimeout=240000}
+```
+
+```Output
+ Id Name            ComputerName    State         ConfigurationName     Availability
+ -- ----            ------------    -----         -----------------     ------------
+  3 BackupJob04     Server02        Disconnected        ITTasks                  None
+```
+
+```powershell
+$s = Get-PSSession -ComputerName Server02 -Name BackupJob04 -ConfigurationName ITTasks | Connect-PSSession
+$s
+```
+
+```Output
+Id Name            ComputerName    State         ConfigurationName     Availability
+-- ----            ------------    -----         -----------------     ------------
+ 5 BackupJob04     Server02        Opened        ITTasks                  Available
+```
+
+The first command gets sessions on the Server02 and Server12 remote computers that have names that
+begin with BackupJob and use the ITTasks session configuration.The command uses the *Name* parameter
+to specify the name pattern and the *ConfigurationName* parameter to specify the session
+configuration. The value of the *SessionOption* parameter is a hash table that sets the value of the
+*OperationTimeout* to 240000 milliseconds (4 minutes). This setting gives the command more time to
+complete.The *ConfigurationName* and *SessionOption* parameters are used to configure the temporary
+sessions in which the **Get-PSSession** cmdlet runs on each computer.The output shows that the
+command returns the BackupJob04 session. The session is disconnected and the *Availability* is None,
+which indicates that it is not in use.
+
+The second command uses the **Get-PSSession** cmdlet to get to the BackupJob04 session and the
+Connect-PSSession cmdlet to connect to the session. The command saves the session in the $s
+variable.
+
+The third command gets the session in the $s variable. The output shows that the
+**Connect-PSSession** command was successful. The session is in the **Opened** state and is
+available for use.
+
 ### Example 7: Get a session by using its ID
 
-```
-PS C:\> Get-PSSession -Id 2
+```powershell
+Get-PSSession -Id 2
 ```
 
 This command gets the **PSSession** with ID 2.
@@ -216,7 +240,7 @@ is valid only for local commands.
 ### -AllowRedirection
 
 Indicates that this cmdlet allows redirection of this connection to an alternate Uniform Resource
-Identifier (URI). By default, Windows PowerShell does not redirect connections.
+Identifier (URI). By default, PowerShell does not redirect connections.
 
 This parameter configures the temporary connection that is created to run a **Get-PSSession**
 command with the *ConnectionUri* parameter.
@@ -230,7 +254,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -256,7 +280,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: All sessions
 Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
@@ -267,7 +291,7 @@ Specifies the mechanism that is used to authenticate credentials for the session
 **Get-PSSession** command runs.
 
 This parameter configures the temporary connection that is created to run a **Get-PSSession**
-command with the *ComputerName* or *ConnectionUri* parameter.
+command with the **ComputerName** or **ConnectionUri** parameter.
 
 The acceptable values for this parameter are:
 
@@ -301,7 +325,7 @@ Accepted values: Default, Basic, Negotiate, NegotiateWithImplicitCredential, Cre
 
 Required: False
 Position: Named
-Default value: None
+Default value: Default
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -313,13 +337,13 @@ the session in which the **Get-PSSession** command runs.
 Enter the certificate thumbprint of the certificate.
 
 This parameter configures the temporary connection that is created to run a **Get-PSSession**
-command with the *ComputerName* or *ConnectionUri* parameter.
+command with the **ComputerName** or **ConnectionUri** parameter.
 
 Certificates are used in client certificate-based authentication.
 They can be mapped only to local user accounts; they do not work with domain accounts.
 
-To get a certificate thumbprint, use a Get-Item or Get-ChildItem command in the Windows PowerShell
-Cert: drive.
+To get a certificate thumbprint, use a Get-Item or Get-ChildItem command in the PowerShell Cert:
+drive.
 
 This parameter was introduced in Windows PowerShell 3.0.
 
@@ -344,14 +368,14 @@ There is no default value.
 
 Beginning in Windows PowerShell 3.0, **PSSession** objects are stored on the computers at the remote
 end of each connection.
-To get the sessions on the specified computers, Windows PowerShell creates a temporary connection to
-each computer and runs a **Get-PSSession** command.
+To get the sessions on the specified computers, PowerShell creates a temporary connection to each
+computer and runs a **Get-PSSession** command.
 
 Type the NetBIOS name, an IP address, or a fully-qualified domain name of one or more computers.
 To specify the local computer, type the computer name, localhost, or a dot (.).
 
 Note: This parameter gets sessions only from computers that run Windows PowerShell 3.0 or later
-versions of Windows PowerShell. Earlier versions do not store sessions.
+versions of PowerShell. Earlier versions do not store sessions.
 
 ```yaml
 Type: String[]
@@ -372,7 +396,7 @@ This cmdlet gets only to sessions that use the specified session configuration.
 
 Enter a configuration name or the fully qualified resource URI for a session configuration.
 If you specify only the configuration name, the following schema URI is prepended:
-http://schemas.microsoft.com/powershell.
+`http://schemas.microsoft.com/powershell`.
 The configuration name of a session is stored in the **ConfigurationName** property of the session.
 
 The value of this parameter is used to select and filter sessions.
@@ -387,7 +411,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: All sessions
 Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
@@ -411,11 +435,10 @@ If you do not specify a *ConnectionUri*, you can use the *UseSSL*, *ComputerName
 Valid values for the Transport segment of the URI are HTTP and HTTPS.
 If you specify a connection URI with a Transport segment, but do not specify a port, the session is
 created with standards ports: 80 for HTTP and 443 for HTTPS.
-To use the default ports for Windows PowerShell remoting, specify port 5985 for HTTP or 5986 for
-HTTPS.
+To use the default ports for PowerShell remoting, specify port 5985 for HTTP or 5986 for HTTPS.
 
-If the destination computer redirects the connection to a different URI, Windows PowerShell prevents
-the redirection unless you use the *AllowRedirection* parameter in the command.
+If the destination computer redirects the connection to a different URI, PowerShell prevents the
+redirection unless you use the *AllowRedirection* parameter in the command.
 
 This parameter was introduced in Windows PowerShell 3.0.
 
@@ -429,7 +452,7 @@ Aliases: URI, CU
 
 Required: True
 Position: 0
-Default value: None
+Default value: Http://localhost:5985/WSMAN
 Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
@@ -456,7 +479,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: Current user
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -479,7 +502,7 @@ Aliases:
 
 Required: True
 Position: 0
-Default value: None
+Default value: All sessions
 Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
@@ -490,7 +513,7 @@ Specifies an array of instance IDs of sessions.
 This cmdlet gets only the sessions with the specified instance IDs.
 
 The instance ID is a GUID that uniquely identifies a session on a local or remote computer.
-The **InstanceID** is unique, even when you have multiple sessions running in Windows PowerShell.
+The **InstanceID** is unique, even when you have multiple sessions running in PowerShell.
 
 The instance ID of a session is stored in the **InstanceID** property of the session.
 
@@ -500,7 +523,7 @@ Position: Named
 Accept wildcard characters: False
 Parameter Sets: ComputerInstanceId, ConnectionUriInstanceId, InstanceId
 Required: True (ComputerInstanceId, ConnectionUriInstanceId), False (InstanceId)
-Default value: None
+Default value: All sessions
 Aliases: 
 Type: Guid[]
 ```
@@ -516,10 +539,10 @@ The friendly name of a session is stored in the **Name** property of the session
 ```yaml
 Accept pipeline input: True (ByPropertyName)
 Position: Named
-Accept wildcard characters: False
+Accept wildcard characters: True
 Parameter Sets: Name, ComputerName, ConnectionUri
 Required: False
-Default value: None
+Default value: All sessions
 Aliases: 
 Type: String[]
 ```
@@ -535,7 +558,7 @@ HTTPS.
 
 Before using an alternate port, you must configure the WinRM listener on the remote computer to
 listen at that port.
-To configure the listener, type the following two commands at the Windows PowerShell prompt:
+To configure the listener, type the following two commands at the PowerShell prompt:
 
 `Remove-Item -Path WSMan:\Localhost\listener\listener* -Recurse`
 
@@ -557,7 +580,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: 5985, 5986
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -578,9 +601,8 @@ $PSSessionOption preference variable and in the session configuration.
 However, they do not take precedence over maximum values, quotas or limits set in the session
 configuration.
 
-For a description of the session options, including the default values, see New-PSSessionOption.
-For information about the $PSSessionOption preference variable, see [about_Preference_Variables](About/about_Preference_Variables.md) in
-the Microsoft TechNet library.
+For a description of the session options, including the default values, see `New-PSSessionOption`.
+For information about the `$PSSessionOption` preference variable, see [about_Preference_Variables](About/about_Preference_Variables.md).
 For more information about session configurations, see [about_Session_Configurations](About/about_Session_Configurations.md).
 
 ```yaml
@@ -618,7 +640,7 @@ Accepted values: All, Opened, Disconnected, Closed, Broken
 
 Required: False
 Position: Named
-Default value: None
+Default value: All
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -639,7 +661,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: 32
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -663,7 +685,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -672,8 +694,7 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see about_CommonParameters
-(http://go.microsoft.com/fwlink/?LinkID=113216).
+-WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -687,34 +708,34 @@ You cannot pipe input to this cmdlet.
 
 ## NOTES
 
-* This cmdlet gets user-managed sessions **PSSession** objects" such as those that are created by
-using the New-PSSession, **Enter-PSSession**, and Invoke-Command cmdlets. It does not get the
-system-managed session that is created when you start Windows PowerShell.
-* Starting in Windows PowerShell 3.0, **PSSession** objects are stored on the computer that is at
-the server-side or receiving end of a connection. To get the sessions that are stored on the local
-computer or a remote computer, Windows PowerShell establishes a temporary session to the specified
-computer and runs query commands in the session.
-* To get sessions that connect to a remote computer, use the *ComputerName* or *ConnectionUri*
-parameters to specify the remote computer. To filter the sessions that **Get-PSSession** gets, use
-the *Name*, *ID*, *InstanceID*, and *State* parameters. Use the remaining parameters to configure
-the temporary session that **Get-PSSession** uses.
-* When you use the *ComputerName* or *ConnectionUri* parameters, **Get-PSSession** gets only
-sessions from computers running Windows PowerShell 3.0 and later versions of Windows PowerShell.
-* The value of the **State** property of a **PSSession** is relative to the current session.
-Therefore, a value of **Disconnected** means that the **PSSession** is not connected to the current
-session. However, it does not mean that the **PSSession** is disconnected from all sessions. It
-might be connected to a different session. To determine whether you can connect or reconnect to the
-**PSSession** from the current session, use the **Availability** property.
+- This cmdlet gets user-managed sessions **PSSession** objects" such as those that are created by
+  using the New-PSSession, **Enter-PSSession**, and Invoke-Command cmdlets. It does not get the
+  system-managed session that is created when you start PowerShell.
+- Starting in Windows PowerShell 3.0, **PSSession** objects are stored on the computer that is at
+  the server-side or receiving end of a connection. To get the sessions that are stored on the local
+  computer or a remote computer, PowerShell establishes a temporary session to the specified computer
+  and runs query commands in the session.
+- To get sessions that connect to a remote computer, use the *ComputerName* or *ConnectionUri*
+  parameters to specify the remote computer. To filter the sessions that **Get-PSSession** gets, use
+  the *Name*, *ID*, *InstanceID*, and *State* parameters. Use the remaining parameters to configure
+  the temporary session that **Get-PSSession** uses.
+- When you use the *ComputerName* or *ConnectionUri* parameters, **Get-PSSession** gets only
+  sessions from computers running Windows PowerShell 3.0 and later versions of PowerShell.
+- The value of the **State** property of a **PSSession** is relative to the current session.
+  Therefore, a value of **Disconnected** means that the **PSSession** is not connected to the current
+  session. However, it does not mean that the **PSSession** is disconnected from all sessions. It
+  might be connected to a different session. To determine whether you can connect or reconnect to the
+  **PSSession** from the current session, use the **Availability** property.
 
-  An **Availability** value of **None** indicates that you can connect to the session.
+An **Availability** value of **None** indicates that you can connect to the session.
 A value of **Busy** indicates that you cannot connect to the **PSSession** because it is connected
 to another session.
 
-  For more information about the values of the **State** property of sessions, see 
-[RunspaceState Enumeration](https://msdn.microsoft.com/library/system.management.automation.runspaces.runspacestate) in the MSDN library.
+For more information about the values of the **State** property of sessions, see
+[RunspaceState Enumeration](https://msdn.microsoft.com/library/system.management.automation.runspaces.runspacestate).
 
-  For more information about the values of the **Availability** property of sessions, see 
-[RunspaceAvailability Enumeration](https://msdn.microsoft.com/library/system.management.automation.runspaces.runspaceavailability) in the MSDN library.
+For more information about the values of the **Availability** property of sessions, see
+[RunspaceAvailability Enumeration](https://msdn.microsoft.com/library/system.management.automation.runspaces.runspaceavailability).
 
 ## RELATED LINKS
 
@@ -737,3 +758,5 @@ to another session.
 [about_PSSessions](About/about_PSSessions.md)
 
 [about_Remote](About/about_Remote.md)
+
+

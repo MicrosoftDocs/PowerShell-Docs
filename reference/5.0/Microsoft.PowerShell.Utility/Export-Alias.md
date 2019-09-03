@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
+external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Utility
+ms.date: 06/09/2017
 online version: https://go.microsoft.com/fwlink/?linkid=821766
-external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-title:  Export-Alias
+schema: 2.0.0
+title: Export-Alias
 ---
 # Export-Alias
 
@@ -16,14 +17,14 @@ Exports information about currently defined aliases to a file.
 
 ### ByPath (Default)
 
-```powershell
+```
 Export-Alias [-Path] <String> [[-Name] <String[]>] [-PassThru] [-As <ExportAliasFormat>] [-Append] [-Force]
  [-NoClobber] [-Description <String>] [-Scope <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### ByLiteralPath
 
-```powershell
+```
 Export-Alias -LiteralPath <String> [[-Name] <String[]>] [-PassThru] [-As <ExportAliasFormat>] [-Append]
  [-Force] [-NoClobber] [-Description <String>] [-Scope <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
@@ -33,7 +34,7 @@ Export-Alias -LiteralPath <String> [[-Name] <String[]>] [-PassThru] [-As <Export
 The `Export-Alias` cmdlet exports the aliases in the current session to a file.
 If the output file does not exist, the cmdlet will create it.
 
-`Export-Alias` can export the aliases in a particular scope or all scopes, it can generate the data in CSV format or as a series of Set-Alias commands that you can add to a session or to a Windows PowerShell profile.
+`Export-Alias` can export the aliases in a particular scope or all scopes, it can generate the data in CSV format or as a series of Set-Alias commands that you can add to a session or to a PowerShell profile.
 
 ## EXAMPLES
 
@@ -82,7 +83,7 @@ The first command exports the aliases in the session to the Alias.ps1 file.
 It uses the **As** parameter with a value of Script to generate a file that contains a Set-Alias command for each alias.
 
 The second command adds the aliases in the Alias.ps1 file to the CurrentUser-CurrentHost profile.
-The path to the profile is saved in the $Profile variable.
+The path to the profile is saved in the `$Profile` variable.
 The command uses the `Get-Content` cmdlet to get the aliases from the Alias.ps1 file and the `Add-Content` cmdlet to add them to the profile.
 For more information, see about_Profiles.
 
@@ -103,7 +104,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -112,13 +113,11 @@ Accept wildcard characters: False
 
 Specifies the output format.
 CSV is the default.
-The acceptable values for this parameter are:
 
-- CSV.
-Comma-separated value (CSV) format.
-- Script.
-Creates a `Set-Alias` command for each exported alias.
-If you name the output file with a .ps1 file name extension, you can run it as a script to add the aliases to any session.
+Valid values are:
+
+- CSV: Comma-separated value (CSV) format.
+- Script: Creates a Set-Alias command for each exported alias. If you name the output file with a .ps1 file name extension, you can run it as a script to add the aliases to any session.
 
 ```yaml
 Type: ExportAliasFormat
@@ -129,22 +128,6 @@ Accepted values: Csv, Script
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Confirm
-
-Prompts you for confirmation before running the cmdlet.
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: (All)
-Aliases: cf
-
-Required: False
-Position: Named
-Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -170,6 +153,8 @@ Accept wildcard characters: False
 
 Forces the command to run without asking for user confirmation.
 
+Overwrites the output file, even if the read-only attribute is set on the file.
+
 By default, `Export-Alias` overwrites files without warning, unless the read-only or hidden attribute is set or the **NoClobber** parameter is used in the command.
 The **NoClobber** parameter takes precedence over the **Force** parameter when both are used in a command.
 
@@ -193,7 +178,7 @@ Specifies the path to the output file.
 Unlike **Path**, the value of the **LiteralPath** parameter is used exactly as it is typed.
 No characters are interpreted as wildcards.
 If the path includes escape characters, enclose it in single quotation marks.
-Single quotation marks tell Windows PowerShell not to interpret any characters as escape sequences.
+Single quotation marks tell PowerShell not to interpret any characters as escape sequences.
 
 ```yaml
 Type: String
@@ -223,7 +208,7 @@ Required: False
 Position: 1
 Default value: None
 Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -NoClobber
@@ -242,7 +227,7 @@ Aliases: NoOverwrite
 
 Required: False
 Position: Named
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -278,7 +263,7 @@ Required: True
 Position: 0
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -Scope
@@ -301,7 +286,23 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: Local
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Confirm
+
+Prompts you for confirmation before running the cmdlet.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -325,7 +326,7 @@ Accept wildcard characters: False
 
 ### CommonParameters
 
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -353,3 +354,5 @@ Otherwise, this cmdlet does not generate any output.
 [New-Alias](New-Alias.md)
 
 [Set-Alias](Set-Alias.md)
+
+

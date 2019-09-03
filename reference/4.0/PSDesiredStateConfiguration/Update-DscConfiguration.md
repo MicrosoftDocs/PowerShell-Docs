@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
+external help file: Microsoft.Windows.DSC.CoreConfProviders.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: PSDesiredStateConfiguration
+ms.date: 06/09/2017
 online version: https://go.microsoft.com/fwlink/?linkid=311940
-external help file:  Microsoft.Windows.DSC.CoreConfProviders.dll-Help.xml
-title:  Update-DscConfiguration
+schema: 2.0.0
+title: Update-DscConfiguration
 ---
 
 # Update-DscConfiguration
@@ -31,7 +32,6 @@ Update-DscConfiguration -CimSession <CimSession[]> [-Wait] [-JobName <String>] [
 The `Update-DscConfiguration` cmdlet runs the existing configuration present on a computer or connects to a pull server and then applies the current configuration to the computer.
 
 This cmdlet is available only as part of the [November 2014 update rollup for Windows RT 8.1, Windows 8.1, and Windows Server 2012 R2](https://support.microsoft.com/kb/3000850) from the Microsoft Support library.
-Before you use this cmdlet, review the information in What's New in Windows PowerShellhttp://technet.microsoft.com/library/hh857339.aspx (http://technet.microsoft.com/library/hh857339.aspx) in the TechNet library.
 
 ## EXAMPLES
 
@@ -41,19 +41,19 @@ PS C:\> $Session = New-CimSession -ComputerName "Server01" -Credential ACCOUNTS\
 PS C:\> Update-DscConfiguration -CimSession $Session -Wait
 ```
 
-The first command creates a CIM session by using the **New-CimSession** cmdlet, and then stores the **CimSession** object in the **$Session** variable.
+The first command creates a CIM session by using the **New-CimSession** cmdlet, and then stores the **CimSession** object in the $Session variable.
 The command prompts you for a password.
 For more information, type `Get-Help New-CimSession`.
 
-The second command updates the computer specified in the **CimSession** stored in **$Session**.
-The command specifies the **Wait** parameter.
+The second command updates the computer specified in the **CimSession** stored in $Session.
+The command specifies the *Wait* parameter.
 The console does not accept additional commands until the current command finishes.
 
 ## PARAMETERS
 
 ### -CimSession
 Runs the cmdlet in a remote session or on a remote computer.
-Enter a computer name or a session object, such as the output of a [New-CimSession](https://docs.microsoft.com/powershell/module/cimcmdlets/new-cimsession) or [Get-CimSession](https://docs.microsoft.com/powershell/module/cimcmdlets/get-cimsession) cmdlet.
+Enter a computer name or a session object, such as the output of a [New-CimSession](/powershell/module/cimcmdlets/new-cimsession) or [Get-CimSession](https://docs.microsoft.com/powershell/module/cimcmdlets/get-cimsession) cmdlet.
 The default is the current session on the local computer.
 
 ```yaml
@@ -78,7 +78,7 @@ Parameter Sets: ComputerNameSet
 Aliases: CN, ServerName
 
 Required: False
-Position: 2
+Position: 1
 Default value: None
 Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
@@ -86,7 +86,7 @@ Accept wildcard characters: False
 
 ### -Credential
 Specifies a user name and password, as a **PSCredential** object, for the target computer.
-To obtain a **PSCredential** object, use the **Get-Credential** cmdlet.
+To obtain a **PSCredential** object, use the Get-Credential cmdlet.
 For more information, type `Get-Help Get-Credential`.
 
 ```yaml
@@ -107,7 +107,7 @@ If you specify this parameter, the cmdlet runs as a job, and it returns a **Job*
 
 By default, Windows PowerShell assigns the name JobN where N is an integer.
 
-If you specify the **Wait** parameter, do not specify this parameter.
+If you specify the *Wait* parameter, do not specify this parameter.
 
 ```yaml
 Type: String
@@ -122,9 +122,9 @@ Accept wildcard characters: False
 ```
 
 ### -Wait
-Indicates that the cmdlet blocks the console until it completes all configuration tasks.
+Indicates that the cmdlet blocks the console until it finishes all configuration tasks.
 
-If you specify this parameter, do not specify the **JobName** parameter.
+If you specify this parameter, do not specify the *JobName* parameter.
 
 ```yaml
 Type: SwitchParameter
@@ -148,13 +148,14 @@ Aliases: cf
 
 Required: False
 Position: Named
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Shows what would happen if the cmdlet runs. The cmdlet is not run.
+Shows what would happen if the cmdlet runs.
+The cmdlet is not run.
 
 ```yaml
 Type: SwitchParameter
@@ -163,13 +164,13 @@ Aliases: wi
 
 Required: False
 Position: Named
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -179,7 +180,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## RELATED LINKS
 
-[Windows PowerShell Desired State Configuration Overview](http://go.microsoft.com/fwlink/?LinkID=311940)
+[Windows PowerShell Desired State Configuration Overview](https://go.microsoft.com/fwlink/?LinkID=311940)
 
 [Get-DscConfiguration](Get-DscConfiguration.md)
 
