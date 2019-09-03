@@ -120,22 +120,30 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### Int64
+
 You can pipe a history ID to this cmdlet.
 
 ## OUTPUTS
 
 ### Microsoft.PowerShell.Commands.HistoryInfo
+
 This cmdlet returns a history object for each history item that it gets.
 
 ## NOTES
-* The session history is a list of the commands entered during the session. The session history represents the run order, the status, and the start and end times of the command. As you enter each command, PowerShell adds it to the history so that you can reuse it.
-  For more information about the command history, see [about_History](About/about_History.md).
-* Starting in Windows PowerShell 3.0, the default value of the $MaximumHistoryCount preference variable is 4096. In Windows PowerShell 2.0, the default value is 64. For more information about the $MaximumHistoryCount variable, see [about_Preference_Variables](About/about_Preference_Variables.md) in the TechNet library.
+
+* The session history is a list of the commands entered during the session. The session history
+  represents the run order, the status, and the start and end times of the command. As you enter
+  each command, PowerShell adds it to the history so that you can reuse it. For more information
+  about the command history, see [about_History](About/about_History.md).
+* Starting in Windows PowerShell 3.0, the default value of the `$MaximumHistoryCount` preference
+  variable is 4096. In Windows PowerShell 2.0, the default value is 64. For more information about
+  the `$MaximumHistoryCount` variable, see [about_Preference_Variables](About/about_Preference_Variables.md).
 
 ## RELATED LINKS
 
@@ -146,4 +154,3 @@ This cmdlet returns a history object for each history item that it gets.
 [Invoke-History](Invoke-History.md)
 
 [about_History](About/about_History.md)
-

@@ -46,12 +46,10 @@ Depending on which parameters you use, the cmdlet returns either an instance of 
 ## EXAMPLES
 
 ### Example 1: Create a CIM session options object for DCOM
-```
-PS C:\>$so = New-CimSessionOption -Protocol DCOM
 
-
-
-PS C:\>New-CimSession -ComputerName Server01 -SessionOption $so
+```powershell
+$so = New-CimSessionOption -Protocol DCOM
+New-CimSession -ComputerName Server01 -SessionOption $so
 ```
 
 This set of commands creates a CIM session options object for the DCOM protocol and stores it in a variable named $so.
@@ -59,16 +57,18 @@ The contents of the variable are then passed to the New-CimSession cmdlet.
 New-CimSession then creates a new CIM session with the remote server named Server01, using the options defined in the variable.
 
 ### Example 2: Create a CIM session options object for WsMan
-```
-PS C:\>New-CimSessionOption -ProxyAuthentication Kerberos -ProxyCredential $cred -SkipCACheck -SkipCNCheck -UseSsl
+
+```powershell
+New-CimSessionOption -ProxyAuthentication Kerberos -ProxyCredential $cred -SkipCACheck -SkipCNCheck -UseSsl
 ```
 
 This command creates a CIM session options object for the WsMan protocol.
 The object contains configuration for the authentication mode of Kerberos specified by the ProxyAuthentication parameter, the credentials specified by the ProxyCredential parameter, and specifies that the command is to skip the CA check, skip the CN check, and use SSL.
 
 ### Example 3: Create a CIM session options object with the culture specified
-```
-PS C:\>New-CimSessionOption -Culture Fr-Fr -Protocol Wsman
+
+```powershell
+New-CimSessionOption -Culture Fr-Fr -Protocol Wsman
 ```
 
 This command specifies the culture that is used for the CIM session.
@@ -81,16 +81,11 @@ However, the default culture can be overridden using the Culture parameter.
 Specifies the user interface culture to use for the CIM session.
 Specify the value for this parameter using one of the following formats:
 
-Enter a culture name in \<languagecode2\>-\<country/regioncode2\> format such as "EN-US". 
+Enter a culture name in `<languagecode2>-<country/regioncode2>` format such as "EN-US".
 
+A variable that contains a CultureInfo object.
 
-                        
-A variable that contains a CultureInfo object. 
-
-
-                        
-A command that gets a CultureInfo object, such as Get-Culture.
-For more information about Get-Culture, see http://technet.microsoft.com/library/hh849930.aspx.
+A command that gets a **CultureInfo** object, such as [Get-Culture](../Microsoft.PowerShell.Utility/Get-Culture.md)
 
 ```yaml
 Type: CultureInfo
@@ -158,13 +153,13 @@ Accept wildcard characters: False
 ### -Impersonation
 Creates a DCOM session to Windows Management Instrumentation (WMI) using impersonation.
 
-Valid values for this parameter are: 
+Valid values for this parameter are:
 
-- Default: DCOM can choose the impersonation level using its normal security negotiation algorithm. 
+- Default: DCOM can choose the impersonation level using its normal security negotiation algorithm.
 - None: The client is anonymous to the server.
-  The server process can impersonate the client, but the impersonation token does not contain any information and cannot be used. 
-- Identify: Allows objects to query the credentials of the caller. 
-- Impersonate: Allows objects to use the credentials of the caller. 
+  The server process can impersonate the client, but the impersonation token does not contain any information and cannot be used.
+- Identify: Allows objects to query the credentials of the caller.
+- Impersonate: Allows objects to use the credentials of the caller.
 - Delegate: Allows objects to permit other objects to use the credentials of the caller.
 
 If Impersonation is not specified, the New-CimSession cmdlet uses the value of 3: Impersonate
@@ -285,9 +280,7 @@ Enter the certificate thumbprint of the certificate.
 Certificates are used in client certificate-based authentication.
 They can only be mapped to local user accounts and they do not work with domain accounts.
 
-To get a certificate thumbprint, use the Get-Item or Get-ChildItem cmdlets in the PowerShell Cert: drive.
-For more information about the Get-ChildItem cmdlet for the PowerShell Cert: drive, see http://technet.microsoft.com/library/hh847761.aspx.
-For more information about Get-Item, see http://technet.microsoft.com/library/hh849788.aspx
+To get a certificate thumbprint, use the `Get-Item` or `Get-ChildItem` cmdlets in the PowerShell Cert: drive.
 
 ```yaml
 Type: String
@@ -305,7 +298,7 @@ Accept wildcard characters: False
 Specifies the credentials to use for proxy authentication.
 Enter one of the following:
 
-- A variable that contains a PSCredential object. 
+- A variable that contains a PSCredential object.
 - A command that gets a PSCredential object, such as Get-Credential
 
 If this option is not set, then you cannot specify any credentials.
@@ -398,10 +391,10 @@ Accept wildcard characters: False
 Specifies the user interface culture to use for the CIM session.
 Specify the value for this parameter using one of the following formats:
 
-- Enter a culture name in \<languagecode2\>-\<country/regioncode2\> format such as "EN-US".
+- Enter a culture name in `<languagecode2>-<country/regioncode2>` format such as "EN-US".
 - A variable that contains a CultureInfo object.
-- A command that gets a CultureInfo object, such as Get-Culture.
-  For more information about Get-Culture, see http://technet.microsoft.com/library/hh849930.aspx.
+- A command that gets a CultureInfo object, such as `Get-Culture`.
+
 
 ```yaml
 Type: CultureInfo
@@ -438,8 +431,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
 
 ## INPUTS
 
