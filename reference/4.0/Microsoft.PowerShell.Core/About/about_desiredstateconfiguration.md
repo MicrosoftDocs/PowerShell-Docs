@@ -74,7 +74,7 @@ Configuration MyWebConfig {
 
             # Ensure that the IIS block is successfully run first before
             # configuring this resource
-            Requires = "[WindowsFeature]IIS"  # Use Requires for dependencies
+            DependsOn = "[WindowsFeature]IIS"  # Use for dependencies
         }
     }
 }
