@@ -1,44 +1,49 @@
 ---
-ms.date:  06/09/2017
+ms.date:  09/03/2019
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_Variables
 ---
+
 # About Variables
 
-## SHORT DESCRIPTION
+## Short description
+
 Describes how variables store values that can be used in PowerShell.
 
-## LONG DESCRIPTION
+## Long description
 
-You can store all types of values in PowerShell variables. They are typically
-used to store the results of commands and to store elements that are used in
-commands and expressions, such as names, paths, settings, and values.
+You can store all types of values in PowerShell variables. For example, store
+the results of commands, and store elements that are used in commands and
+expressions, such as names, paths, settings, and values.
 
 A variable is a unit of memory in which values are stored. In PowerShell,
 variables are represented by text strings that begin with a dollar sign (`$`),
 such as `$a`, `$process`, or `$my_var`.
 
-Variable names are not case-sensitive. Variable names can include spaces and
-special characters, but these are difficult to use and should be avoided.
+Variable names aren't case-sensitive, and can include spaces and special
+characters. But, variable names that include special characters and spaces are
+difficult to use and should be avoided. For more information, see
+[Variable names that include special characters](#variable-names-that-include-special-characters).
 
 There are several different types of variables in PowerShell.
 
 - User-created variables: User-created variables are created and maintained by
   the user. By default, the variables that you create at the PowerShell command
-  line exist only while the PowerShell window is open, and they are lost when
-  you close the window. To save a variable, add it to your PowerShell profile.
-  You can also create variables in scripts with global, script, or local scope.
+  line exist only while the PowerShell window is open. When the PowerShell
+  windows is closed, the variables are deleted. To save a variable, add it to
+  your PowerShell profile. You can also create variables in scripts with
+  global, script, or local scope.
 
 - Automatic variables: Automatic variables store the state of PowerShell. These
   variables are created by PowerShell, and PowerShell changes their values as
-  required to maintain their accuracy. Users cannot change the value of these
-  variables. For example, the `$PSHome` variable stores the path to the
+  required to maintain their accuracy. Users can't change the value of these
+  variables. For example, the `$PSHOME` variable stores the path to the
   PowerShell installation directory.
 
-  For more information, a list, and a description of the automatic
-  variables, see [about_Automatic_Variables](about_Automatic_Variables.md).
+  For more information, a list, and a description of the automatic variables,
+  see [about_Automatic_Variables](about_Automatic_Variables.md).
 
 - Preference variables: Preference variables store user preferences for
   PowerShell. These variables are created by PowerShell and are populated with
@@ -49,28 +54,32 @@ There are several different types of variables in PowerShell.
   For more information, a list, and a description of the preference variables,
   see [about_Preference_Variables](about_Preference_Variables.md).
 
-### WORKING WITH VARIABLES
+## Working with variables
 
 To create a new variable, use an assignment statement to assign a value to the
-variable. You do not have to declare the variable before using it. The default
+variable. You don't have to declare the variable before using it. The default
 value of all variables is `$null`.
 
+To get a list of all the variables in your PowerShell session, type
+`Get-Variable`. The variable names are displayed without the preceding dollar
+(`$`) sign that is used to reference variables.
+
 For example:
 
 ```powershell
-PS> $MyVariable = 1, 2, 3
+$MyVariable = 1, 2, 3
 
-PS> $path = "C:\Windows\System32"
+$Path = "C:\Windows\System32"
 ```
 
-Variables are very useful for storing the results of commands.
+Variables are useful for storing the results of commands.
 
 For example:
 
 ```powershell
-PS> $processes = Get-Process
+$Processes = Get-Process
 
-PS> $Today = (Get-Date).date
+$Today = (Get-Date).DateTime
 ```
 
 To display the value of a variable, type the variable name, preceded by a
@@ -79,29 +88,45 @@ dollar sign (`$`).
 For example:
 
 ```powershell
-PS> $MyVariable
+$MyVariable
+```
+
+```Output
 1
 2
 3
+```
 
-PS> $Today
-Thursday, September 03, 2009 12:00:00 AM
+```powershell
+$Today
+```
+
+```Output
+Tuesday, September 3, 2019 09:46:46
 ```
 
 To change the value of a variable, assign a new value to the variable.
 
-The following examples displays the value of the `$MyVariable` variable,
-changes the value of the variable, and then displays the new value.
+The following examples display the value of the `$MyVariable` variable, changes
+the value of the variable, and then displays the new value.
 
 ```powershell
-PS> $MyVariable
+$MyVariable = 1, 2, 3
+$MyVariable
+```
+
+```Output
 1
 2
 3
+```
 
-PS> $MyVariable = "The green cat."
+```powershell
+$MyVariable = "The green cat."
+$MyVariable
+```
 
-PS> $MyVariable
+```Output
 The green cat.
 ```
 
@@ -109,194 +134,259 @@ To delete the value of a variable, use the `Clear-Variable` cmdlet or change
 the value to `$null`.
 
 ```powershell
-PS> Clear-Variable -name MyVariable
-
--or-
-
-PS> $MyVariable = $null
+Clear-Variable -Name MyVariable
 ```
-
-To delete the variable, use the `Remove-Variable` or `Remove-Item` cmdlets.
-These cmdlets are discussed later in this topic.
 
 ```powershell
-PS> Remove-Variable -name MyVariable
-
-PS> Remove-Item -path Variable:\MyVariable
+$MyVariable = $null
 ```
 
-To get a list of all the variables in your  PowerShell session, type:
+To delete the variable, use [Remove-Variable](../../Microsoft.PowerShell.Utility/Remove-Variable.md)
+or [Remove-Item](../../Microsoft.PowerShell.Management/Remove-Item.md).
 
 ```powershell
-Get-Variable
+Remove-Variable -Name MyVariable
 ```
 
-### TYPES OF VARIABLES
+```powershell
+Remove-Item -Path Variable:\MyVariable
+```
+
+## Types of variables
 
 You can store any type of object in a variable, including integers, strings,
-arrays, hash tables, and objects that represent processes, services, event
+arrays, and hash tables. And, objects that represent processes, services, event
 logs, and computers.
 
-PowerShell variables are "loosely typed," which means that they are not limited
-to a particular type of object. A single variable can even contain a collection
-(an "array") of different types of objects at the same time.
+PowerShell variables are loosely typed, which means that they aren't limited to
+a particular type of object. A single variable can even contain a collection,
+or array, of different types of objects at the same time.
 
 The data type of a variable is determined by the .NET types of the values of
-the variable.
+the variable. To view a variable's object type, use [Get-Member](../../Microsoft.PowerShell.Utility/Get-Member.md).
 
 For example:
 
 ```powershell
-PS> $a = 12                         # System.Int32
-PS> $a = "Word"                     # System.String
-PS> $a = 12, "Word"                 # array of System.Int32, System.String
-PS> $a = dir C:\Windows\System32    # FileInfo and DirectoryInfo types
+$a = 12                         # System.Int32
+$a = "Word"                     # System.String
+$a = 12, "Word"                 # array of System.Int32, System.String
+$a = Get-ChildItem C:\Windows   # FileInfo and DirectoryInfo types
 ```
 
 You can use a type attribute and cast notation to ensure that a variable can
-contain only objects of the specified type or objects that can be converted to
-that type. If you try to assign a value of another type, PowerShell tries to
-convert the value to its type. If it cannot, the assignment statement fails.
+contain only specific object types or objects that can be converted to that
+type. If you try to assign a value of another type, PowerShell tries to convert
+the value to its type. If the type can't be converted, the assignment statement
+fails.
 
 To use cast notation, enter a type name, enclosed in brackets, before the
 variable name (on the left side of the assignment statement). The following
-example creates an `$number` variable that can contain only integers, a
-`$words` variable that can contain only strings, and a `$dates` variable that
-can contain only DateTime objects.
+example creates a `$number` variable that can contain only integers, a `$words`
+variable that can contain only strings, and a `$dates` variable that can
+contain only **DateTime** objects.
 
 ```powershell
-PS> [int]$number = 8
-PS> $number = "12345" (The string is converted to an integer.)
-PS> $number = "Hello"
-Cannot convert value "Hello" to type "System.Int32". Error: "Input string
- was not in a correct format."
-At line:1 char:3
-+ $a <<<<  = "Hello"
-    + CategoryInfo          : MetadataError: (:) [], ArgumentTransformati
-onMetadataException
-    + FullyQualifiedErrorId : RuntimeException
-
-PS> [string]$words = "Hello"
-PS> $words = 2   (The integer is converted to a string.)
-PS> $words + 10  (The strings are concatenated.)
-210
-
-PS> #The string is converted to a DateTime object.
-PS> [datetime] $dates = "09/12/91"
-PS> $dates
-Thursday, September 12, 1991 12:00:00 AM
-
-PS> $dates = 10  #The integer is converted to a DateTime object.
-PS> $dates
-Monday, January 01, 0001 12:00:00 AM
+[int]$number = 8
+$number = "12345"  # The string is converted to an integer.
+$number = "Hello"
 ```
 
-### USING VARIABLES IN COMMANDS AND EXPRESSIONS
+```Output
+Cannot convert value "Hello" to type "System.Int32". Error: "Input string was
+ not in a correct format."
+At line:1 char:1
++ $number = "Hello"
++ ~~~~~~~~~~~~~~~~~
++ CategoryInfo          : MetadataError: (:) [],
+    ArgumentTransformationMetadataException
++ FullyQualifiedErrorId : RuntimeException
+```
+
+```powershell
+[string]$words = "Hello"
+$words = 2       # The integer is converted to a string.
+$words += 10     # The plus (+) sign concatenates the strings.
+$words
+```
+
+```Output
+210
+```
+
+```powershell
+[datetime] $dates = "09/12/91"  # The string is converted to a DateTime object.
+$dates
+```
+
+```Output
+Thursday, September 12, 1991 00:00:00
+```
+
+```powershell
+$dates = 10    # The integer is converted to a DateTime object.
+$dates
+```
+
+```Output
+Monday, January 1, 0001 00:00:00
+```
+
+## Using variables in commands and expressions
 
 To use a variable in a command or expression, type the variable name, preceded
-by the dollar sign (`$`).
+by the dollar (`$`) sign.
 
-If the variable name (and dollar sign) are not enclosed in quotation marks, or
-if they are enclosed in double quotation marks ("), the value of the variable
-is used in the command or expression.
+If the variable name and dollar sign aren't enclosed in quotation marks, or if
+they're enclosed in double quotation (`"`) marks, the value of the variable is
+used in the command or expression.
 
-If the variable name (and dollar sign) are enclosed in single quotation marks,
-('), the variable name is used in the expression.
-
-For example, the first command gets the value of the `$profile` variable, which
-is the path to the PowerShell user profile file in the PowerShell console. The
-second command opens the file in Notepad, and the third and fourth commands use
-the name of the variable in an expression.
-
-```powershell
-PS> $profile
-C:\Documents and Settings\User01\My Documents\WindowsPowerShell\Microso
-ft.PowerShell_profile.ps1
-
-PS> notepad $profile
-- or -
-PS> notepad "$profile"
-C:\Documents and Settings\User01\My Documents\WindowsPowerShell\Microso
-ft.PowerShell_profile.ps1
-
-PS> '$profile'
-$profile
-
-PS> 'Use the $profile variable.'
-Use the $profile variable.
-```
+If the variable name and dollar sign are enclosed in single quotation (`'`)
+marks, the variable name is used in the expression.
 
 For more information about using quotation marks in PowerShell, see [about_Quoting_Rules](about_Quoting_Rules.md).
 
-### VARIABLE NAMES THAT INCLUDE SPECIAL CHARACTERS
-
-Variable names begin with a dollar sign. They can include alphanumeric
-characters and special characters. The length of the variable name is limited
-only by available memory.
-
-Whenever possible, variable names should include only alphanumeric characters
-and the underscore character (_). Variable names that include spaces and other
-special characters, are difficult to use and should be avoided.
-
-To create or display a variable name that includes spaces or special
-characters, enclose the variable name in braces. This directs PowerShell to
-interpret the characters in the variable name literally.
-
-For example, the following command creates and then displays a variable named
-"save-items".
+This example gets the value of the `$PROFILE` variable, which is the path to
+the PowerShell user profile file in the PowerShell console.
 
 ```powershell
-PS> ${save-items} = "a", "b", "c"
-PS> ${save-items}
+$PROFILE
+```
+
+```Output
+C:\Users\User01\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1
+```
+
+In this example, two commands are shown that can open the PowerShell profile in
+**notepad.exe**. The example with double-quote (`"`) marks uses the variable's
+value.
+
+```powershell
+notepad $PROFILE
+
+notepad "$PROFILE"
+```
+
+The following examples use single-quote (`'`) marks that treat the variable as
+literal text.
+
+```powershell
+'$PROFILE'
+```
+
+```Output
+$PROFILE
+```
+
+```powershell
+'Use the $PROFILE variable.'
+```
+
+```Output
+Use the $PROFILE variable.
+```
+
+## Variable names that include special characters
+
+Variable names begin with a dollar (`$`) sign and can include alphanumeric
+characters and special characters. The variable name length is limited only by
+available memory.
+
+The best practice is that variable names include only alphanumeric characters
+and the underscore (`_`) character. Variable names that include spaces and
+other special characters, are difficult to use and should be avoided.
+
+Alphanumeric variable names can contain these characters:
+
+- Unicode characters from these categories: **Lu**, **Ll**, **Lt**, **Lm**,
+  **Lo**, or **Nd**.
+- Underscore (`_`) character.
+- Question mark (`?`) character.
+
+The following list contains the Unicode category descriptions. For more
+information, see [UnicodeCategory](/dotnet/api/system.globalization.unicodecategory).
+
+- **Lu** - UppercaseLetter
+- **Ll** - LowercaseLetter
+- **Lt** - TitlecaseLetter
+- **Lm** - ModifierLetter
+- **Lo** - OtherLetter
+- **Nd** - DecimalDigitNumber
+
+To create or display a variable name that includes spaces or special
+characters, enclose the variable name with the curly braces (`{}`) characters.
+The curly braces direct PowerShell to interpret the variable name's characters
+as literals.
+
+Special character variable names can contain these characters:
+
+- Any Unicode character, with the following exceptions:
+  - The closing curly brace (`}`) character (U+007D).
+  - The backtick (`` ` ``) character (U+0060). The backtick is used to escape
+    Unicode characters so they're treated as literals.
+
+PowerShell has reserved variables such as `$$`, `$?`, `$^`, and `$_` that
+contain alphanumeric and special characters. For more information, see [about_Automatic_Variables](about_automatic_variables.md).
+
+For example, the following command creates the variable named `save-items`. The
+curly braces (`{}`) are needed because variable name includes a hyphen (`-`)
+special character.
+
+```powershell
+${save-items} = "a", "b", "c"
+${save-items}
+```
+
+```Output
 a
 b
 c
 ```
 
 The following command gets the child items in the directory that is represented
-by the "ProgramFiles(x86)" environment variable.
+by the `ProgramFiles(x86)` environment variable.
 
 ```powershell
-PS> Get-ChildItem ${env:ProgramFiles(x86)}
+Get-ChildItem ${env:ProgramFiles(x86)}
 ```
 
 To reference a variable name that includes braces, enclose the variable name in
-braces, and use the backtick (escape) character to escape the braces. For
-example, to create a variable named "this{value}is" with a value of 1, type:
+braces, and use the backtick character to escape the braces. For example, to
+create a variable named `this{value}is` type:
 
 ```powershell
-PS> ${this`{value`}is} = 1
-PS> ${this`{value`}is}
-1
+${this`{value`}is} = "This variable name uses braces and backticks."
+${this`{value`}is}
 ```
 
-### VARIABLES AND SCOPE
+```Output
+This variable name uses braces and backticks.
+```
 
-By default, variables are available only in the scope in which they are
-created.
+## Variables and scope
+
+By default, variables are only available in the scope in which they're created.
 
 For example, a variable that you create in a function is available only within
 the function. A variable that you create in a script is available only within
-the script (unless you dot-source the script, which adds it to the current
-scope).
+the script. If you dot-source the script, the variable is added to the current
+scope. For more information, see [about_Scopes](about_Scopes.md).
 
 You can use a scope modifier to change the default scope of the variable. The
-following expression creates a variable named "Computers". The variable has a
-global scope, even when it is created in a script or function.
+following expression creates a variable named `Computers`. The variable has a
+global scope, even when it's created in a script or function.
 
 ```powershell
-$global:Computers = "Server01"
+$Global:Computers = "Server01"
 ```
 
-For more information, see [about_Scopes](about_Scopes.md).
-
-### SAVING VARIABLES
+## Saving variables
 
 Variables that you create are available only in the session in which you create
-them. They are lost when you close your session.
+them. They're lost when you close your session.
 
-To create the in every PowerShell session that you start, add the variable to
-your PowerShell profile.
+To create the variable in every PowerShell session that you start, add the
+variable to your PowerShell profile.
 
 For example, to change the value of the `$VerbosePreference` variable in every
 PowerShell session, add the following command to your PowerShell profile.
@@ -305,23 +395,24 @@ PowerShell session, add the following command to your PowerShell profile.
 $VerbosePreference = "Continue"
 ```
 
-You can add this command to your profile by opening the profile file in a text
-editor, such as Notepad. For more information about PowerShell profiles, see [about_Profiles](about_Profiles.md).
+You can add this command to your PowerShell profile by opening the `$PROFILE`
+file in a text editor, such as **notepad.exe**. For more information about
+PowerShell profiles, see [about_Profiles](about_Profiles.md).
 
-### THE VARIABLE: DRIVE
+## The Variable: drive
 
-PowerShell Variable provider creates a Variable: drive that looks and acts like
-a file system drive, but it contains the variables in your session and their
-values.
+The PowerShell Variable provider creates a `Variable:` drive that looks and
+acts like a file system drive, but it contains the variables in your session
+and their values.
 
-To change to the Variable: drive, type:
+To change to the `Variable:` drive, use the following command:
 
 ```powershell
 Set-Location Variable:
 ```
 
-To list the items (variables) in the Variable: drive, use the `Get-Item` or
-`Get-ChildItem` cmdlets. For example:
+To list the items and variables in the `Variable:` drive, use the `Get-Item` or
+`Get-ChildItem` cmdlets.
 
 ```powershell
 Get-ChildItem Variable:
@@ -333,45 +424,69 @@ the name of the drive and the name of the variable. For example, to get the
 
 ```powershell
 Get-Item Variable:\PSCulture
+```
 
+```Output
 Name                           Value
 ----                           -----
 PSCulture                      en-US
 ```
 
-For more information about the Variable: drive and the PowerShell Variable
-provider, type "get-help variable".
+To display more information about the `Variable:` drive and the PowerShell
+Variable provider, type:
 
-### Variable syntax with provider paths
+```powershell
+Get-Help Variable
+```
 
-By prefixing a provider path with the dollar sign `$`, you can access the
-content of any provider which implements the **IContentCmdletProvider**
-interface. The following built in providers support this notation:
+## Variable syntax with provider paths
+
+You can prefix a provider path with the dollar (`$`) sign, and access the
+content of any provider that implements the
+[IContentCmdletProvider](/dotnet/api/system.management.automation.provider.icontentcmdletprovider)
+interface.
+
+The following built-in PowerShell providers support this notation:
 
 - [about_Environment_Provider](about_Environment_Provider.md)
 - [about_Variable_Provider](about_Variable_Provider.md)
 - [about_Function_Provider](about_Function_Provider.md)
 - [about_Alias_Provider](about_Alias_Provider.md)
 
-### THE VARIABLE CMDLETS
+## The variable cmdlets
 
 PowerShell includes a set of cmdlets that are designed to manage variables.
 
-| Cmdlet Name     | Description                                |
-| --------------- | ------------------------------------------ |
-| Clear-Variable  | Deletes the value of a variable.           |
-| Get-Variable    | Gets the variables in the current console. |
-| New-Variable    | Creates a new variable.                    |
-| Remove-Variable | Deletes a variable and its value.          |
-| Set-Variable    | Changes the value of a variable.           |
+To list the cmdlets, type:
 
-To get help for these cmdlets, type: `Get-Help <cmdlet-name>`.
+```powershell
+Get-Command -Noun Variable
+```
 
-## SEE ALSO
+To get help for a specific cmdlet, type:
 
-- [about_Automatic_Variables](about_Automatic_Variables.md)
-- [about_Environment_Variables](about_Environment_Variables.md)
-- [about_Preference_Variables](about_Preference_Variables.md)
-- [about_Profiles](about_Profiles.md)
-- [about_Quoting_Rules](about_Quoting_Rules.md)
-- [about_Scopes](about_Scopes.md)
+```powershell
+Get-Help <cmdlet-name>
+```
+
+| Cmdlet Name       | Description                                |
+| ---------------   | ------------------------------------------ |
+| `Clear-Variable`  | Deletes the value of a variable.           |
+| `Get-Variable`    | Gets the variables in the current console. |
+| `New-Variable`    | Creates a new variable.                    |
+| `Remove-Variable` | Deletes a variable and its value.          |
+| `Set-Variable`    | Changes the value of a variable.           |
+
+## See also
+
+[about_Automatic_Variables](about_Automatic_Variables.md)
+
+[about_Environment_Variables](about_Environment_Variables.md)
+
+[about_Preference_Variables](about_Preference_Variables.md)
+
+[about_Profiles](about_Profiles.md)
+
+[about_Quoting_Rules](about_Quoting_Rules.md)
+
+[about_Scopes](about_Scopes.md)
