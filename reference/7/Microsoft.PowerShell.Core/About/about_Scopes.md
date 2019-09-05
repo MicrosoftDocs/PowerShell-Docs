@@ -32,6 +32,19 @@ If you create an item in a scope, and the item shares its name with an item in
 a different scope, the original item might be hidden under the new item, but
 it is not overridden or changed.
 
+A name can denote a variable, a function, an alias, an environment variable, or
+a drive. The same name may denote different items at different places in a
+script. For each different item that a name denotes, that name is visible only
+within the region of script text called its scope. Different items denoted by
+the same name either have different scopes, or are in different name spaces.
+
+Scopes may nest, in which case, an outer scope is referred to as a parent
+scope, and any nested scopes are child scopes of that parent. The scope of a
+name is the scope in which it is defined and all child scopes, unless it is
+made private. Within a child scope, a name defined there hides any items
+defined with the same name in parent scopes.
+
+
 ## PowerShell Scopes
 
 PowerShell supports the following scopes:
@@ -97,6 +110,18 @@ Get-Variable -Scope global
 ```
 
 ## Scope Modifiers
+
+A variable, alias, or function name can include any one of the following
+optional scope modifiers:
+
+- `global:`
+- `local:`
+- `private:`
+- `script:`
+- `using:`
+- `workflow:`
+- `<variable-namespace>`
+
 
 To specify the scope of a new variable, alias, or function, use a scope
 modifier. The valid values of a modifier are **Global**, **Local**,
