@@ -21,17 +21,17 @@ landingContent:
     linkLists:
       - linkListType: how-to-guide
         links:
-          - text: Viewing object structure - Get-Member
+          - text: Viewing object structure
             url: ./viewing-object-structure--get-member-.md
-          - text: Selecting parts of object - Select-Object
+          - text: Selecting parts of object
             url: ./selecting-parts-of-objects--select-object-.md
-          - text: Removing objects from the pipeline - Where-Object
+          - text: Filtering objects in the pipeline
             url: ./removing-objects-from-the-pipeline--where-object-.md
           - text: Sorting objects
             url: ./sorting-objects.md
-          - text: Repeating a task for multiple objects - ForEach-Object
+          - text: Repeating a task for multiple objects
             url: ./repeating-a-task-for-multiple-objects--foreach-object-.md
-          - text: Creating .NET and COM objects - New-Object
+          - text: Creating .NET and COM objects
             url: ./creating-.net-and-com-objects--new-object-.md
           - text: Using static classes and methods
             url: ./using-static-classes-and-methods.md
@@ -65,6 +65,14 @@ landingContent:
             url: ./working-with-software-installations.md
           - text: Decode a PowerShell command from a running process
             url: ./decode-powershell-command-from-a-running-process.md
+  - title: Working with output
+    linkLists:
+      - linkListType: concept
+        links:
+          - text: Redirecting data with Out-* cmdlets
+            url: ./redirecting-data-with-out---cmdlets.md
+          - text: Using format commands to change output view
+            url: ./using-format-commands-to-change-output-view.md
   - title: Managing drives & files
     linkLists:
       - linkListType: how-to-guide
@@ -79,14 +87,6 @@ landingContent:
             url: ./working-with-registry-entries.md
           - text: Working with registry keys
             url: ./working-with-registry-keys.md
-  - title: Working with output
-    linkLists:
-      - linkListType: concept
-        links:
-          - text: Redirecting data with Out-* cmdlets
-            url: ./redirecting-data-with-out---cmdlets.md
-          - text: Using format commands to change output view
-            url: ./using-format-commands-to-change-output-view.md
   - title: Creating UI elements
     linkLists:
       - linkListType: how-to-guide
@@ -99,15 +99,3 @@ landingContent:
             url: ./multiple-selection-list-boxes.md
           - text: Selecting items from a list box
             url: ./selecting-items-from-a-list-box.md
-  - title: Miscellaneous examples
-    linkLists:
-      - linkListType: concept
-        links:
-          - text: Manipulating items directly
-            url: ./manipulating-items-directly.md
-          - text: Other useful scripting objects
-            url: ./other-useful-scripting-objects.md
-          - text: Appendix 1 Compatibility aliases
-            url: ./appendix-1---compatibility-aliases.md
-          - text: Appendix 2 Creating a custom powershell shortcut
-            url: ./appendix-2---creating-a-custom-powershell-shortcut.md
