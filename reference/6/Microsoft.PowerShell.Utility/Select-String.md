@@ -475,9 +475,8 @@ Accept wildcard characters: False
 
 ### -List
 
-Use **List** to retrieve a list of input files whose contents match the regular expression. The
-first instance of text that matches the regular expression in each matching input file will be shown
-after the input file name.
+Only the first instance of matching text is returned from each input file. This is the most
+efficient way to retrieve a list files that have contents matching the regular expression.
 
 By default, `Select-String` returns a **MatchInfo** object for each match it finds.
 
