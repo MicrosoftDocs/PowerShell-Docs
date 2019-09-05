@@ -17,6 +17,26 @@ metadata:
 landingContent:
 # Cards and links should be based on top customer tasks or top subjects
 # Start card title with a verb
+  - title: Working with objects
+    linkLists:
+      - linkListType: how-to-guide
+        links:
+          - text: Viewing object structure - Get-Member
+            url: ./viewing-object-structure--get-member-.md
+          - text: Selecting parts of object - Select-Object
+            url: ./selecting-parts-of-objects--select-object-.md
+          - text: Removing objects from the pipeline - Where-Object
+            url: ./removing-objects-from-the-pipeline--where-object-.md
+          - text: Sorting objects
+            url: ./sorting-objects.md
+          - text: Repeating a task for multiple objects - ForEach-Object
+            url: ./repeating-a-task-for-multiple-objects--foreach-object-.md
+          - text: Creating .NET and COM objects - New-Object
+            url: ./creating-.net-and-com-objects--new-object-.md
+          - text: Using static classes and methods
+            url: ./using-static-classes-and-methods.md
+          - text: Getting WMI objects - Get-WmiObject
+            url: ./getting-wmi-objects--get-wmiobject-.md
   - title: Managing computers
     linkLists:
       - linkListType: how-to-guide
@@ -27,18 +47,6 @@ landingContent:
             url: ./collecting-information-about-computers.md
           - text: Creating Get-WinEvent queries with FilterHashtable
             url: ./creating-get-winEvent-queries-with-filterhashtable.md
-  - title: Creating UI elements
-    linkLists:
-      - linkListType: how-to-guide
-        links:
-          - text: Creating a custom input box
-            url: ./creating-a-custom-input-box.md
-          - text: Creating a graphical date picker
-            url: ./creating-a-graphical-date-picker.md
-          - text: Multiple selection list boxes
-            url: ./multiple-selection-list-boxes.md
-          - text: Selecting items from a list box
-            url: ./selecting-items-from-a-list-box.md
   - title: Managing processes & services
     linkLists:
       - linkListType: how-to-guide
@@ -73,35 +81,27 @@ landingContent:
             url: ./working-with-registry-keys.md
   - title: Working with output
     linkLists:
-      - linkListType: how-to-guide
+      - linkListType: concept
         links:
           - text: Redirecting data with Out-* cmdlets
             url: ./redirecting-data-with-out---cmdlets.md
           - text: Using format commands to change output view
             url: ./using-format-commands-to-change-output-view.md
-  - title: Working with objects
+  - title: Creating UI elements
     linkLists:
       - linkListType: how-to-guide
         links:
-          - text: Getting WMI objects - Get-WmiObject
-            url: ./getting-wmi-objects--get-wmiobject-.md
-          - text: Creating .NET and COM objects - New-Object
-            url: ./creating-.net-and-com-objects--new-object-.md
-          - text: Removing objects from the pipeline - Where-Object
-            url: ./removing-objects-from-the-pipeline--where-object-.md
-          - text: Selecting parts of object - Select-Object
-            url: ./selecting-parts-of-objects--select-object-.md
-          - text: Sorting objects
-            url: ./sorting-objects.md
-          - text: Repeating a task for multiple objects - ForEach-Object
-            url: ./repeating-a-task-for-multiple-objects--foreach-object-.md
-          - text: Using static classes and methods
-            url: ./using-static-classes-and-methods.md
-          - text: Viewing object structure - Get-Member
-            url: ./viewing-object-structure--get-member-.md
+          - text: Creating a custom input box
+            url: ./creating-a-custom-input-box.md
+          - text: Creating a graphical date picker
+            url: ./creating-a-graphical-date-picker.md
+          - text: Multiple selection list boxes
+            url: ./multiple-selection-list-boxes.md
+          - text: Selecting items from a list box
+            url: ./selecting-items-from-a-list-box.md
   - title: Miscellaneous examples
     linkLists:
-      - linkListType: how-to-guide
+      - linkListType: concept
         links:
           - text: Manipulating items directly
             url: ./manipulating-items-directly.md
