@@ -199,7 +199,7 @@
 - name: Sample scripts
   items:
     - name: Sample scripts for administration
-      href: samples/sample-scripts-for-administration.md
+      href: samples/sample-scripts-for-administration.yml
     - name: Changing computer state
       href: samples/changing-computer-state.md
     - name: Collecting information about computers
