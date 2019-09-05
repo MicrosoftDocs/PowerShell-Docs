@@ -499,6 +499,9 @@ Specifies the assemblies upon which the type depends. By default, `Add-Type` ref
 and `System.Management.Automation.dll`. The assemblies that you specify by using this parameter are
 referenced in addition to the default assemblies.
 
+Beginning in PowerShell 6, **ReferencedAssemblies** doesn't include the default .NET assemblies. You
+must include a specific reference to them in the value passed to this parameter.
+
 You can't use the **CompilerOptions** and **ReferencedAssemblies** parameters in the same command.
 
 ```yaml

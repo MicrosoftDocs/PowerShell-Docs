@@ -50,38 +50,40 @@ delimit the node block. Inside the node block, you can define resource blocks
 to configure specific resources. A resource block starts with the type name of
 the resource, followed by the identifier you want to specify for that block,
 followed by the curly braces that delimit the block, as shown in the following
-example. Configuration MyWebConfig { # Parameters are optional param
-($MachineName, $WebsiteFilePath)
+example.
 
 ```powershell
-# A Configuration block can have one or more Node blocks
-Node $MachineName
-{
-    # Next, specify one or more resource blocks
-    # WindowsFeature is one of the resources you can use in a Node block
-    # This example ensures the Web Server (IIS) role is installed
-    WindowsFeature IIS
+Configuration MyWebConfig {
+    # Parameters are optional
+    param ($MachineName, $WebsiteFilePath)
+    # A Configuration block can have one or more Node blocks
+    Node $MachineName
     {
-        # To ensure that the role is not installed, set Ensure to "Absent"
-        Ensure = "Present"
-        Name = "Web-Server" # Use the Name property from Get-WindowsFeature
-    }
+        # Next, specify one or more resource blocks
+        # WindowsFeature is one of the resources you can use in a Node block
+        # This example ensures the Web Server (IIS) role is installed
+        WindowsFeature IIS
+        {
+            # To ensure that the role is not installed, set Ensure to "Absent"
+            Ensure = "Present"
+            Name = "Web-Server" # Use the Name property from Get-WindowsFeature
+        }
 
-    # You can use the File resource to create files and folders
-    # "WebDirectory" is the name you want to use to refer to this instance
-    File WebDirectory
-    {
-        Ensure = "Present"  # You can also set Ensure to "Absent"
-        Type = "Directory" # Default is "File"
-        Recurse = $true
-        SourcePath = $WebsiteFilePath
-        DestinationPath = "C:\inetpub\wwwroot"
+        # You can use the File resource to create files and folders
+        # "WebDirectory" is the name you want to use to refer to this instance
+        File WebDirectory
+        {
+            Ensure = "Present"  # You can also set Ensure to "Absent"
+            Type = "Directory" # Default is "File"
+            Recurse = $true
+            SourcePath = $WebsiteFilePath
+            DestinationPath = "C:\inetpub\wwwroot"
 
-        # Ensure that the IIS block is successfully run first before
-        # configuring this resource
-        Requires = "[WindowsFeature]IIS"  # Use Requires for dependencies
+            # Ensure that the IIS block is successfully run first before
+            # configuring this resource
+            DependsOn = "[WindowsFeature]IIS"  # Use for dependencies
+        }
     }
-}
 }
 ```
 
