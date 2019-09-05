@@ -913,12 +913,12 @@
         {
             "source_path": "jea/audit-and-report.md",
             "redirect_url": "/powershell/scripting/learn/remoting/jea/audit-and-report",
-            "redirect_document_id": "TRUE"
+            "redirect_document_id": true
         },
         {
             "source_path": "jea/overview.md",
             "redirect_url": "/powershell/scripting/learn/remoting/jea/overview",
-            "redirect_document_id": "FALSE"
+            "redirect_document_id": false
         },
         {
             "source_path": "jea/prerequisites.md",
