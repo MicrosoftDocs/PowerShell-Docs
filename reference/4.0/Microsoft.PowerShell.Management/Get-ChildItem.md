@@ -274,7 +274,7 @@ UEFI
 ```
 
 ```powershell
-Get-ChildItem -Path HLKM:\HARDWARE -Exclude D*
+Get-ChildItem -Path HKLM:\HARDWARE -Exclude D*
 ```
 
 ```Output
