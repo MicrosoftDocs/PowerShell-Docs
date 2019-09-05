@@ -20,30 +20,15 @@ should not be changed.
 
 The following are the basic rules of scope:
 
-- An item you include in a scope is visible in the scope in which it was
-  created and in any child scope, unless you explicitly make it private. You can
-  place variables, aliases, functions, or PowerShell drives in one or
-  more scopes.
+- Scopes may nest. An outer scope is referred to as a parent scope. Any nested
+  scopes are child scopes of that parent.
+
+- An item is visible in the scope in which it was created and in any child
+  scopes, unless you explicitly make it private. You can place variables,
+  aliases, functions, or PowerShell drives in one or more scopes.
 
 - An item that you created within a scope can be changed only in the scope in
   which it was created, unless you explicitly specify a different scope.
-
-If you create an item in a scope, and the item shares its name with an item in
-a different scope, the original item might be hidden under the new item, but
-it is not overridden or changed.
-
-A name can denote a variable, a function, an alias, an environment variable, or
-a drive. The same name may denote different items at different places in a
-script. For each different item that a name denotes, that name is visible only
-within the region of script text called its scope. Different items denoted by
-the same name either have different scopes, or are in different name spaces.
-
-Scopes may nest, in which case, an outer scope is referred to as a parent
-scope, and any nested scopes are child scopes of that parent. The scope of a
-name is the scope in which it is defined and all child scopes, unless it is
-made private. Within a child scope, a name defined there hides any items
-defined with the same name in parent scopes.
-
 
 ## PowerShell Scopes
 
@@ -62,9 +47,9 @@ PowerShell supports the following scopes:
   commands in the script run in the script scope. To the commands in a script,
   the script scope is the local scope.
 
-Items declared as **private** cannot be seen outside of the current scope in
-which they were defined. **Private** is not a scope but an option that changes
-the visibility of an item outside of the the scope where the item is defined.
+> [!NOTE]
+> **Private** is not a scope but an option that changes the visibility of an
+> item outside of the the scope where the item is defined.
 
 ## Parent and Child Scopes
 
@@ -91,8 +76,7 @@ parent scope, but the items are not part of the child scope.
 However, a child scope is created with a set of items. Typically, it includes
 all the aliases that have the **AllScope** option. This option is discussed
 later in this article. It includes all the variables that have the **AllScope**
-option, plus some variables that can be used to customize the scope, such as
-`MaximumFunctionCount`.
+option, plus some automatic variables.
 
 To find the items in a particular scope, use the Scope parameter of
 `Get-Variable` or `Get-Alias`.
@@ -114,18 +98,36 @@ Get-Variable -Scope global
 A variable, alias, or function name can include any one of the following
 optional scope modifiers:
 
-- `global:`
-- `local:`
-- `private:`
-- `script:`
-- `using:`
-- `workflow:`
-- `<variable-namespace>`
+- `global:` - Specifies that the name exists in the **Global** scope.
+- `local:` - Specifies that the name exists in the **Local** scope. The current
+  scope is alway the **Local** scope.
+- `private:` - Specifies that the name is **Private** and only visible to the
+  current scope.
+- `script:` - Specifies that the name exists in the **Script** scope.
+  **Script** scope is the nearest ancestor script file's scope or **Global** if
+  there is no nearest ancestor script file.
+- `using:` - Used to access variables defined in another scope while running
+  scripts via cmdlets like `Start-Job` and `Invoke-Command`.
+- `workflow:` - Specifies that the name exists within a workflow. Workflows are
+  not supported in PowerShell Core.
+- `<variable-namespace>` - A modifier created by a PowerShell PSDrive provider.
+  For example:
 
+  |  Namespace  |                    Description                     |
+  | ----------- | -------------------------------------------------- |
+  | `Alias:`    | Aliases defined in the current scope               |
+  | `Env:`      | Environment variables defined in the current scope |
+  | `Function:` | Functions defined in the current scope             |
+  | `Variable:` | Variables defined in the current scope             |
+
+The default scope for scripts is the script scope. The default scope for
+functions and aliases is the local scope, even if they are defined in a
+script.
+
+### Using scope modifiers
 
 To specify the scope of a new variable, alias, or function, use a scope
-modifier. The valid values of a modifier are **Global**, **Local**,
-**Private**, and **Script**.
+modifier.
 
 The syntax for a scope modifier in a variable is:
 
@@ -139,33 +141,29 @@ The syntax for a scope modifier in a function is:
 function [<scope-modifier>:]<name> {<function-body>}
 ```
 
-The default scope for scripts is the script scope. The default scope for
-functions and aliases is the local scope, even if they are defined in a
-script.
-
 The following command, which does not use a scope modifier, creates a variable
-in the current or local scope:
+in the current or **local** scope:
 
 ```powershell
 $a = "one"
 ```
 
-To create the same variable in the global scope, use the Global scope
+To create the same variable in the **global** scope, use the scope `global:`
 modifier:
 
 ```powershell
 $global:a = "one"
 ```
 
-To create the same variable in the script scope, use the script scope
+To create the same variable in the **script** scope, use the `script:` scope
 modifier:
 
 ```powershell
 $script:a = "one"
 ```
 
-You can also use a scope modifier in functions. The following function
-definition creates a function in the global scope:
+You can also use a scope modifier with functions. The following function
+definition creates a function in the **global** scope:
 
 ```powershell
 function global:Hello {
@@ -182,7 +180,7 @@ $test
 $global:test
 ```
 
-### The Using scope modifier
+### The `Using:` scope modifier
 
 Using is a special scope modifier that identifies a local variable in a remote
 command. Without a modifier, PowerShell expects variables in remote commands
