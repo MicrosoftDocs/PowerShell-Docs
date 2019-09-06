@@ -913,37 +913,37 @@
         {
             "source_path": "jea/audit-and-report.md",
             "redirect_url": "/powershell/scripting/learn/remoting/jea/audit-and-report",
-            "redirect_document_id": "TRUE"
+            "redirect_document_id": true
         },
         {
             "source_path": "jea/overview.md",
             "redirect_url": "/powershell/scripting/learn/remoting/jea/overview",
-            "redirect_document_id": "FALSE"
+            "redirect_document_id": false
         },
         {
             "source_path": "jea/prerequisites.md",
             "redirect_url": "/powershell/scripting/learn/remoting/jea/prerequisites",
-            "redirect_document_id": "TRUE"
+            "redirect_document_id": true
         },
         {
             "source_path": "jea/register-jea.md",
             "redirect_url": "/powershell/scripting/learn/remoting/jea/register-jea",
-            "redirect_document_id": "TRUE"
+            "redirect_document_id": true
         },
         {
             "source_path": "jea/role-capabilities.md",
             "redirect_url": "/powershell/scripting/learn/remoting/jea/role-capabilities",
-            "redirect_document_id": "TRUE"
+            "redirect_document_id": true
         },
         {
             "source_path": "jea/security-considerations.md",
             "redirect_url": "/powershell/scripting/learn/remoting/jea/security-considerations",
-            "redirect_document_id": "TRUE"
+            "redirect_document_id": true
         },
         {
             "source_path": "jea/session-configurations.md",
             "redirect_url": "/powershell/scripting/learn/remoting/jea/session-configurations",
-            "redirect_document_id": "TRUE"
+            "redirect_document_id": true
         },
         {
             "source_path": "jea/using-jea.md",
