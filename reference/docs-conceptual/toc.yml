@@ -199,13 +199,67 @@
 - name: Sample scripts
   items:
     - name: Sample scripts for administration
-      href: samples/sample-scripts-for-administration.md
-    - name: Changing computer state
-      href: samples/changing-computer-state.md
-    - name: Collecting information about computers
-      href: samples/collecting-information-about-computers.md
-    - name: Creating Get-WinEvent queries with FilterHashtable
-      href: samples/creating-get-winEvent-queries-with-filterhashtable.md
+      href: samples/sample-scripts-for-administration.yml
+    - name: Working with objects
+      items:
+        - name: Viewing object structure - Get-Member
+          href: samples/viewing-object-structure--get-member-.md
+        - name: Selecting parts of object - Select-Object
+          href: samples/selecting-parts-of-objects--select-object-.md
+        - name: Removing objects from the pipeline - Where-Object
+          href: samples/removing-objects-from-the-pipeline--where-object-.md
+        - name: Sorting objects
+          href: samples/sorting-objects.md
+        - name: Repeating a task for multiple objects - ForEach-Object
+          href: samples/repeating-a-task-for-multiple-objects--foreach-object-.md
+        - name: Creating .NET and COM objects - New-Object
+          href: samples/creating-.net-and-com-objects--new-object-.md
+        - name: Using static classes and methods
+          href: samples/using-static-classes-and-methods.md
+        - name: Getting WMI objects - Get-WmiObject
+          href: samples/getting-wmi-objects--get-wmiobject-.md
+    - name: Managing computers
+      items:
+        - name: Changing computer state
+          href: samples/changing-computer-state.md
+        - name: Collecting information about computers
+          href: samples/collecting-information-about-computers.md
+        - name: Creating Get-WinEvent queries with FilterHashtable
+          href: samples/creating-get-winEvent-queries-with-filterhashtable.md
+    - name: Managing processes & services
+      items:
+        - name: Managing processes with process cmdlets
+          href: samples/managing-processes-with-process-cmdlets.md
+        - name: Managing services
+          href: samples/managing-services.md
+        - name: Managing Windows PowerShell drives
+          href: samples/managing-windows-powershell-drives.md
+        - name: Working with printers
+          href: samples/working-with-printers.md
+        - name: Performing networking tasks
+          href: samples/performing-networking-tasks.md
+        - name: Working with software installations
+          href: samples/working-with-software-installations.md
+        - name: Decode a PowerShell command from a running process
+          href: samples/decode-powershell-command-from-a-running-process.md
+    - name: Working with output
+      items:
+        - name: Redirecting data with Out-* cmdlets
+          href: samples/redirecting-data-with-out---cmdlets.md
+        - name: Using format commands to change output view
+          href: samples/using-format-commands-to-change-output-view.md
+    - name: Manage drives & files
+      items:
+        - name: Managing current location
+          href: samples/managing-current-location.md
+        - name: Working with files and folders
+          href: samples/working-with-files-and-folders.md
+        - name: Working with files folders and registry keys
+          href: samples/working-with-files-folders-and-registry-keys.md
+        - name: Working with registry entries
+          href: samples/working-with-registry-entries.md
+        - name: Working with registry keys
+          href: samples/working-with-registry-keys.md
     - name: Creating UI elements
       items:
         - name: Creating a custom input box
@@ -216,57 +270,13 @@
           href: samples/multiple-selection-list-boxes.md
         - name: Selecting items from a list box
           href: samples/selecting-items-from-a-list-box.md
-    - name: Decode a PowerShell command from a running process
-      href: samples/decode-powershell-command-from-a-running-process.md
-    - name: Managing current location
-      href: samples/managing-current-location.md
-    - name: Managing processes with process cmdlets
-      href: samples/managing-processes-with-process-cmdlets.md
-    - name: Managing services
-      href: samples/managing-services.md
-    - name: Managing Windows PowerShell drives
-      href: samples/managing-windows-powershell-drives.md
-    - name: Manipulating items directly
-      href: samples/manipulating-items-directly.md
-    - name: Performing networking tasks
-      href: samples/performing-networking-tasks.md
-    - name: Redirecting data with Out-* cmdlets
-      href: samples/redirecting-data-with-out---cmdlets.md
-    - name: Using format commands to change output view
-      href: samples/using-format-commands-to-change-output-view.md
-    - name: Working with files and folders
-      href: samples/working-with-files-and-folders.md
-    - name: Working with files folders and registry keys
-      href: samples/working-with-files-folders-and-registry-keys.md
-    - name: Working with objects
+    - name: Other examples
       items:
-        - name: Getting WMI objects - Get-WmiObject
-          href: samples/getting-wmi-objects--get-wmiobject-.md
-        - name: Creating .NET and COM objects - New-Object
-          href: samples/creating-.net-and-com-objects--new-object-.md
-        - name: Removing objects from the pipeline - Where-Object
-          href: samples/removing-objects-from-the-pipeline--where-object-.md
-        - name: Selecting parts of object - Select-Object
-          href: samples/selecting-parts-of-objects--select-object-.md
-        - name: Sorting objects
-          href: samples/sorting-objects.md
-        - name: Repeating a task for multiple objects - ForEach-Object
-          href: samples/repeating-a-task-for-multiple-objects--foreach-object-.md
-        - name: Using static classes and methods
-          href: samples/using-static-classes-and-methods.md
-        - name: Viewing object structure - Get-Member
-          href: samples/viewing-object-structure--get-member-.md
-    - name: Working with printers
-      href: samples/working-with-printers.md
-    - name: Working with registry entries
-      href: samples/working-with-registry-entries.md
-    - name: Working with registry keys
-      href: samples/working-with-registry-keys.md
-    - name: Working with software installations
-      href: samples/working-with-software-installations.md
-    - name: Other useful scripting objects
-      href: samples/other-useful-scripting-objects.md
-    - name: Appendix 1 Compatibility aliases
-      href: samples/appendix-1---compatibility-aliases.md
-    - name: Appendix 2 Creating a custom powershell shortcut
-      href: samples/appendix-2---creating-a-custom-powershell-shortcut.md
+        - name: Manipulating items directly
+          href: samples/manipulating-items-directly.md
+        - name: Other useful scripting objects
+          href: samples/other-useful-scripting-objects.md
+        - name: Appendix 1 Compatibility aliases
+          href: samples/appendix-1---compatibility-aliases.md
+        - name: Appendix 2 Creating a custom powershell shortcut
+          href: samples/appendix-2---creating-a-custom-powershell-shortcut.md
