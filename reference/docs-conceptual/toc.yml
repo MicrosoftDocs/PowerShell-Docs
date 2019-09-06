@@ -94,8 +94,6 @@
       items:
         - name: Introducing the windows PowerShell ISE
           href: components/ise/introducing-the-windows-powershell-ise.md
-        - name: Windows PowerShell Integrated Scripting Environment (ISE)
-          href: components/ise/windows-powershell-integrated-scripting-environment--ise-.md
         - name: Using the Windows PowerShell ISE
           items:
             - name: Exploring the Windows PowerShell ISE
