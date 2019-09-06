@@ -87,7 +87,7 @@ This example shows how to use the `InputObject` parameter of `Measure-Command`. 
 ```powershell
 # Perform a simple operation to demonstrate the InputObject parameter
 # Note that no output is displayed.
-10, 20, 50 | Measure-Command -Expression {for($i=0; $i - lt $_;$i++) {$i} }
+10, 20, 50 | Measure-Command -Expression {for($i=0; $i -lt $_;$i++) {$i} }
 ```
 
 ```output
@@ -189,5 +189,3 @@ You can pipe an object to `Measure-Command`.
 [Invoke-Command](../Microsoft.PowerShell.Core/Invoke-Command.md)
 
 [Trace-Command](Trace-Command.md)
-
-
