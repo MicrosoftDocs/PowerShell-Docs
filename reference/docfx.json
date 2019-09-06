@@ -77,6 +77,8 @@
         "externalReference": [],
         "globalMetadata": {
             "toc_preview": true,
+            "searchScope": [ "PowerShell" ],
+            "hideScope": true,
             "breadcrumb_path": "/powershell/scripting/bread/toc.json",
             "uhfHeaderId": "MSDocsHeader-Powershell",
             "apiPlatform": "powershell",
