@@ -48,6 +48,21 @@
             "version": 0
         },
         {
+            "docset_name": "PowerShell_PowerShell-docs_jea",
+            "build_source_folder": "jea",
+            "build_output_subfolder": "jea",
+            "locale": "en-us",
+            "open_to_public_contributors": true,
+            "type_mapping": {
+                "Conceptual": "Content",
+                "ManagedReference": "Content",
+                "RestApi": "Content"
+            },
+            "build_entry_point": "docs",
+            "template_folder": "_themes",
+            "version": 0
+        },
+        {
             "docset_name": "PowerShell_PowerShell-docs_reference",
             "build_source_folder": "reference",
             "build_output_subfolder": "reference",
