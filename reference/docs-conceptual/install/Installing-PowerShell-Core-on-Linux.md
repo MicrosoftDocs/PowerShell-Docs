@@ -176,7 +176,7 @@ The preferred method is as follows:
 ```sh
 # Install system components
 sudo apt-get update
-sudo apt-get install curl apt-transport-https
+sudo apt-get install -y curl apt-transport-https
 
 # Import the public repository GPG keys
 curl https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
@@ -208,7 +208,7 @@ The preferred method is as follows:
 ```sh
 # Install system components
 sudo apt-get update
-sudo apt-get install curl gnupg apt-transport-https
+sudo apt-get install -y curl gnupg apt-transport-https
 
 # Import the public repository GPG keys
 curl https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
