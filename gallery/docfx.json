@@ -1,7 +1,7 @@
 {
     "build": {
         "content": [
-            { "files": ["**/**.yml", "**/**.md"], "exclude": ["**/obj/**"] }
+            { "files": ["**/**.yml", "**/**.md"], "exclude": ["**/obj/**", "**/readme.md"] }
         ],
         "globalMetadata": {
             "toc_preview": true,
