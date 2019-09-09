@@ -894,8 +894,6 @@
         href: ./help/how-to-add-a-see-also-section-to-a-provider-help-topic.md
     - name: Writing Help for Windows PowerShell Scripts and Functions
       href: ./help/writing-help-for-windows-powershell-scripts-and-functions.md
-    - name: Writing Custom Cmdlet Help for Windows PowerShell Providers
-      href: ./help/writing-custom-cmdlet-help-for-windows-powershell-providers.md
     - name: Writing Comment-Based Help Topics
       href: ./help/writing-comment-based-help-topics.md
       items:
@@ -912,7 +910,6 @@
       - name: Examples of Comment-Based Help
         href: ./help/examples-of-comment-based-help.md
     - name: Writing XML-Based Help Topics for Commands
-      href: ./help/writing-xml-based-help-topics-for-commands.md
       items:
       - name: How to Create the Cmdlet Help File
         href: ./help/how-to-create-the-cmdlet-help-file.md
