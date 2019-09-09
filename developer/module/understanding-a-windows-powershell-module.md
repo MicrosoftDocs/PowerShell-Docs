@@ -23,7 +23,7 @@ A module is made up of four basic components:
 
 2. Anything else that the above code file may need, such as additional assemblies, help files, or scripts.
 
-3. A manifest file that describes the above files, as well as stores metadada such as author and versioning information..
+3. A manifest file that describes the above files, as well as stores metadata such as author and versioning information.
 
 4. A directory that contains all of the above content, and is located where PowerShell can reasonably find it.
 
