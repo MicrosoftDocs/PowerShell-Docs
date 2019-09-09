@@ -8,11 +8,9 @@ online version: https://go.microsoft.com/fwlink/?linkid=821828
 schema: 2.0.0
 title: Measure-Command
 ---
-
 # Measure-Command
 
 ## SYNOPSIS
-
 Measures the time it takes to run script blocks and cmdlets.
 
 ## SYNTAX
@@ -41,10 +39,10 @@ The first command measures the time it takes to process a recursive `Get-ChildIt
 
 The second command measures the time it takes to process a recursive `Get-ChildItem` command that uses the provider-specific `-Filter` parameter.
 
-These commands show the value of using a provider-specific filter in Windows PowerShell commands.
+These commands show the value of using a provider-specific filter in PowerShell commands.
 
 ```powershell
-Measure-Command {Get-ChildItem -Path C:\Windows\*.txt -Recurse}
+Measure-Command { Get-ChildItem -Path C:\Windows\*.txt -Recurse }
 ```
 
 ```output
@@ -89,7 +87,7 @@ This example shows how to use the `InputObject` parameter of `Measure-Command`. 
 ```powershell
 # Perform a simple operation to demonstrate the InputObject parameter
 # Note that no output is displayed.
-10, 20, 50 | Measure-Command -Expression {for($i=0; $i - lt $_;$i++) {$i} }
+10, 20, 50 | Measure-Command -Expression {for($i=0; $i -lt $_;$i++) {$i} }
 ```
 
 ```output
@@ -169,6 +167,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
@@ -190,5 +189,3 @@ You can pipe an object to `Measure-Command`.
 [Invoke-Command](../Microsoft.PowerShell.Core/Invoke-Command.md)
 
 [Trace-Command](Trace-Command.md)
-
-
