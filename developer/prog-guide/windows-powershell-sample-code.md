@@ -11,10 +11,17 @@ caps.latest.revision: 7
 ---
 # Windows PowerShell Sample Code
 
-Windows PowerShell® samples are available through the Windows SDK. This section contains the sample code that is contained in the Windows SDK samples.
+Windows PowerShell® samples are available through the Windows SDK. This section
+contains the sample code that is contained in the Windows SDK samples.
 
 > [!NOTE]
-> When the Windows SDK is installed, a **Samples** directory is created in which all the Windows PowerShell samples are made available. A typical installation directory is **C:\Program Files\Microsoft SDKs\Windows\v6.0**. Start Windows PowerShell and type **"cd Samples\SysMgmt\PowerShell"**  to locate the Windows PowerShell Samples directory. In this document, the Windows PowerShell Samples directory is referred to as **\<PowerShell Samples>**.
+> When the Windows SDK is installed, a **Samples** directory is created in
+> which all the Windows PowerShell samples are made available. A typical
+> installation directory is **C:\Program Files\Microsoft SDKs\Windows\v6.0**.
+> Start Windows PowerShell and type **"cd Samples\SysMgmt\PowerShell"** to
+> locate the Windows PowerShell Samples directory. In this document, the
+> Windows PowerShell Samples directory is referred to as **\<PowerShell
+> Samples>**.
 
 ## Sample Code Listing
 
@@ -35,7 +42,7 @@ Windows PowerShell® samples are available through the Windows SDK. This section
 |[StopProcessSample04 Code Samples](./stopprocesssample04-code-samples.md)|This is the `Stop-Process` cmdlet sample described in [Adding Parameter Sets to a Cmdlet](../cmdlet/adding-parameter-sets-to-a-cmdlet.md).|
 |[Runspace01 Code Samples](./runspace01-code-samples.md)|These are the code samples for the runspace described in [Creating a Console Application That Runs a Specified Command](/dotnet/csharp/programming-guide/inside-a-program/hello-world-your-first-program).|
 |[Runspace02 Code Samples](./runspace02-code-samples.md)|This sample uses the [System.Management.Automation.Runspaceinvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke) class to execute the `Get-Process` cmdlet synchronously.|
-|[RunSpace03 Code Samples](./runspace03-code-samples.md)|These are the code samples for the runspace described in [Creating a Console Application That Runs a Specified Script](fd).|
+|[RunSpace03 Code Samples](./runspace03-code-samples.md)|These are the code samples for the runspace described in "Creating a Console Application That Runs a Specified Script".|
 |[RunSpace04 Code Samples](./runspace04-code-samples.md)|This is a code sample for a runspace that uses the [System.Management.Automation.Runspaceinvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke) class to execute a script that generates a terminating error.|
 |[RunSpace05 Code Sample](./runspace05-code-sample.md)|This is the source code for the Runspace05 sample described in [Configuring a Runspace Using RunspaceConfiguration](https://msdn.microsoft.com/en-us/42681d19-2d05-4975-befd-afb1990e79b2).|
 |[RunSpace06 Code Sample](./runspace06-code-sample.md)|This is the source code for the Runspace06 sample described in [Configuring a Runspace Using a Windows PowerShell Snap-in](https://msdn.microsoft.com/en-us/a7289ee8-9732-49ee-91c7-d533e9538b83).|
