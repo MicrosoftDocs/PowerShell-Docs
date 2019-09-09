@@ -887,39 +887,15 @@
     - name: Writing Help for Windows PowerShell Cmdlets
       href: ./help/writing-help-for-windows-powershell-cmdlets.md
     - name: Writing Help for Windows PowerShell Providers
-      href: ./help/writing-help-for-windows-powershell-providers.md
       items:
-      - name: How to Create a Provider Help Topic
-        href: ./help/how-to-create-a-provider-help-topic.md
-      - name: How to Add the Provider Name
-        href: ./help/how-to-add-the-provider-name.md
-      - name: How to Add the Provider Drives
-        href: ./help/how-to-add-the-provider-drives.md
-      - name: How to Add the Provider Synopsis
-        href: ./help/how-to-add-the-provider-synopsis.md
-      - name: How to Add a Provider Description
-        href: ./help/how-to-add-a-provider-description.md
-      - name: How to Add Capabilities
-        href: ./help/how-to-add-capabilities.md
-      - name: How to Add Tasks to a Provider Help Topic
-        href: ./help/how-to-add-tasks-to-a-provider-help-topic.md
       - name: How to Add Dynamic Parameters to a Provider Help Topic
         href: ./help/how-to-add-dynamic-parameters-to-a-provider-help-topic.md
-      - name: How to Add Notes to a Provider Help Topic
-        href: ./help/how-to-add-notes-to-a-provider-help-topic.md
       - name: How to Add a See Also Section to a Provider Help Topic
         href: ./help/how-to-add-a-see-also-section-to-a-provider-help-topic.md
     - name: Writing Help for Windows PowerShell Scripts and Functions
       href: ./help/writing-help-for-windows-powershell-scripts-and-functions.md
-      items:
-      - name: Writing XML-Based Help Topics for Scripts and Functions
-        href: ./help/writing-xml-based-help-topics-for-scripts-and-functions.md
-    - name: Writing Help for Windows PowerShell Snap-ins
-      href: ./help/writing-help-for-windows-powershell-snap-ins.md
     - name: Writing Custom Cmdlet Help for Windows PowerShell Providers
       href: ./help/writing-custom-cmdlet-help-for-windows-powershell-providers.md
-    - name: Writing Windows PowerShell About Help
-      href: ./help/writing-windows-powershell-about-help.md
     - name: Writing Comment-Based Help Topics
       href: ./help/writing-comment-based-help-topics.md
       items:
