@@ -43,23 +43,23 @@ session, so you can find a command and use it without importing.
 Each of the following examples cause the module containing `Get-Mailbox` to be
 imported into your session.
 
-1. Run the Command
+- Run the Command
 
-   ```powershell
-   Get-Mailbox -Identity Chris
-   ```
+  ```powershell
+  Get-Mailbox -Identity Chris
+  ```
 
-2. Get the Command
+- Get the Command
 
-   ```powershell
-   Get-Command Get-Mailbox
-   ```
+  ```powershell
+  Get-Command Get-Mailbox
+  ```
 
-3. Get Help for the Command
+- Get Help for the Command
 
-   ```powershell
-   Get-Help Get-Mailbox
-   ```
+  ```powershell
+  Get-Help Get-Mailbox
+  ```
 
 `Get-Command` commands that include a wildcard character (*) are considered
 to be for discovery, not use, and do not import any modules.
@@ -123,8 +123,9 @@ Copy-Item -Path C:\ps-test\MyModule -Destination `
 
 You can install a module in any location, but installing your modules in a
 default module location makes them easier to manage. For more information about
-the default module locations, see the "Module and DSC Resource Locations, and
-PSModulePath" section.
+the default module locations, see the
+[Module and DSC Resource Locations, and PSModulePath](#module-and-dsc-resource-locations-and-psmodulepath)
+section.
 
 ## How to Find Installed Modules
 

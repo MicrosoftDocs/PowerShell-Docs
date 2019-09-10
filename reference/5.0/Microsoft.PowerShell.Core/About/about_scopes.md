@@ -47,13 +47,13 @@ PowerShell supports the following scopes:
 - Local: The current scope. The local scope can be the global scope or any
   other scope.
 
-- Script: The scope that is created while a script file runs. Only the
-  commands in the script run in the script scope. To the commands in a script,
-  the script scope is the local scope.
+- Script: The scope that is created while a script file runs. Only the commands
+  in the script run in the script scope. To the commands in a script, the
+  script scope is the local scope.
 
 > [!NOTE]
-> **Private** is not a scope but an option that changes the visibility of an
-> item outside of the the scope where the item is defined.
+> **Private** is not a scope. It is an [option](#private-option) that changes
+> the visibility of an item outside of the the scope where the item is defined.
 
 ## Parent and Child Scopes
 
@@ -353,10 +353,10 @@ breakpoint in the script, you enter the script scope.
 
 ### Private Option
 
-Aliases and variables have an Option property that can take a value of Private.
-Items that have the Private option can be viewed and changed in the scope in
-which they are created, but they cannot be viewed or changed outside that
-scope.
+Aliases and variables have an **Option** property that can take a value of
+**Private**. Items that have the **Private** option can be viewed and changed
+in the scope in which they are created, but they cannot be viewed or changed
+outside that scope.
 
 For example, if you create a variable that has a private option in the global
 scope and then run a script, `Get-Variable` commands in the script do not
