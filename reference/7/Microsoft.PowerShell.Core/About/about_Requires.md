@@ -97,6 +97,7 @@ following keys.
   cannot be used together.
   - `ModuleVersion` - Specifies a minimum acceptable version of the module.
   - `RequiredVersion` - Specifies an exact, required version of the module.
+  - `MaximumVersion` - Specifies the maximum acceptable version of the module.
 
 > [!NOTE]
 > `RequiredVersion` was added in Windows PowerShell 5.0.
@@ -113,6 +114,12 @@ Require that `AzureRM.Netcore` (**only** version `0.12.0`) is installed.
 
 ```powershell
 #Requires -Modules @{ ModuleName="AzureRM.Netcore"; RequiredVersion="0.12.0" }
+```
+
+Requires that `AzureRM.Netcore` (version `0.12.0` or lesser) is installed.
+
+```powershell
+#Requires -Modules @{ ModuleName="AzureRM.Netcore"; MaximumVersion="0.12.0" }
 ```
 
 Require that any version of `AzureRM.Netcore` and `PowerShellGet` is installed.
