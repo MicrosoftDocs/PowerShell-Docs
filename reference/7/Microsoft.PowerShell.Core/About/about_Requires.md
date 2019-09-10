@@ -101,6 +101,7 @@ following keys.
 
 > [!NOTE]
 > `RequiredVersion` was added in Windows PowerShell 5.0.
+> `MaximumVersion` was added in Windows PowerShell 5.1.
 
 For example:
 
