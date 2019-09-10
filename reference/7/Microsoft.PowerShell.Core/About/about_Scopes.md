@@ -1,5 +1,5 @@
 ---
-ms.date:  09/04/2018
+ms.date:  09/09/2019
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -29,6 +29,10 @@ The following are the basic rules of scope:
 
 - An item that you created within a scope can be changed only in the scope in
   which it was created, unless you explicitly specify a different scope.
+
+If you create an item in a scope, and the item shares its name with an item in
+a different scope, the original item might be hidden under the new item, but
+it is not overridden or changed.
 
 ## PowerShell Scopes
 
@@ -108,8 +112,8 @@ optional scope modifiers:
   there is no nearest ancestor script file.
 - `using:` - Used to access variables defined in another scope while running
   scripts via cmdlets like `Start-Job` and `Invoke-Command`.
-- `workflow:` - Specifies that the name exists within a workflow. Workflows are
-  not supported in PowerShell Core.
+- `workflow:` - Specifies that the name exists within a workflow. Note:
+  Workflows are not supported in PowerShell Core.
 - `<variable-namespace>` - A modifier created by a PowerShell PSDrive provider.
   For example:
 
@@ -241,6 +245,14 @@ New-Alias -Scope global -Name np -Value Notepad.exe
 To get the functions in a particular scope, use the `Get-Item` cmdlet when you
 are in the scope. The `Get-Item` cmdlet does not have a **Scope** parameter.
 
+> [!NOTE]
+> For the cmdlets that use the **Scope** parameter, you can also refer to
+> scopes by number. The number describes the relative position of one scope to
+> another. Scope 0 represents the current, or local, scope. Scope 1 indicates
+> the immediate parent scope. Scope 2 indicates the parent of the parent scope,
+> and so on. Numbered scopes are useful if you have created many recursive
+> scopes.
+
 ### Using Dot Source Notation with Scope
 
 Scripts and functions follow all the rules of scope. You create them in a
@@ -315,6 +327,21 @@ does not change the scope. And, the module does not have its own scope,
 although the scripts in the module, like all PowerShell scripts, do have their
 own scope.
 
+By default, modules are loaded into the top-level of the current _session
+state_ not the current _scope_. This could be a module session state or the
+global session state. If you are in the global scope, then modules are loaded
+into the global session state. Any exports are placed into the global tables.
+If you load module2 from _within_ module1, module2 is loaded into the module1's
+session state, not the global session state. Any exports from module2 are
+placed at the top of the module1's session state. If you use
+`Import-Module -Scope local`, then the exports are placed into the current
+scope object rather than at the top level. If you are _in a module_ and use
+`Import-Module -Scope global` (or `Import-Module -Global`) to load another
+module, that module and it's exports are loaded into the global session state
+instead of the module's local session state. This feature was designed for
+writing module that manipulate modules. The WindowsCompatibility module does
+this to import proxy modules into the global scope.
+
 ### Nested Prompts
 
 Similarly, nested prompts do not have their own scope. When you enter a nested
@@ -342,17 +369,18 @@ Private.
 
 ### Visibility
 
-The Visibility property of a variable or alias determines whether you can see
-the item outside the container, in which it was created. A container could be a
-module, script, or snap-in. Visibility is designed for containers in the same
-way that the Private value of the Option property is designed for scopes.
+The **Visibility** property of a variable or alias determines whether you can
+see the item outside the container, in which it was created. A container could
+be a module, script, or snap-in. Visibility is designed for containers in the
+same way that the **Private** value of the **Option** property is designed for
+scopes.
 
-The Visibility property takes the Public and Private values. Items that have
-private visibility can be viewed and changed only in the container in which
-they were created. If the container is added or imported, the items that have
-private visibility cannot be viewed or changed.
+The **Visibility** property takes the **Public** and **Private** values. Items
+that have private visibility can be viewed and changed only in the container in
+which they were created. If the container is added or imported, the items that
+have private visibility cannot be viewed or changed.
 
-Because Visibility is designed for containers, it works differently in a scope.
+Because visibility is designed for containers, it works differently in a scope.
 
 - If you create an item that has private visibility in the global scope, you
   cannot view or change the item in any scope.
