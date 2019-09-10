@@ -1,8 +1,9 @@
 {
     "build": {
-        "content": [
-            { "files": ["**/**.md","**/**.yml"], "exclude": ["**/obj/**"] }
-        ],
+        "content": [{
+            "files": ["**/**.md","**/**.yml"],
+            "exclude": ["**/obj/**"]
+        }],
         "globalMetadata": {
             "toc_preview": true,
             "ROBOTS": "INDEX, FOLLOW",
@@ -18,9 +19,10 @@
             "feedback_github_repo": "MicrosoftDocs/PowerShell-Docs",
             "feedback_product_url": "https://github.com/PowerShell/PowerShell/issues/new/choose"
         },
-        "resource": [
-            { "files": ["**/images/**", "**/*.png", "**/*.jpg"], "exclude": ["**/obj/**"] }
-        ],
+        "resource": [{
+            "files": ["**/images/**", "**/*.png", "**/*.jpg"],
+            "exclude": ["**/obj/**"]
+        }],
         "template": "op.html",
         "dest": "scripting",
         "markdownEngineName": "markdig"
