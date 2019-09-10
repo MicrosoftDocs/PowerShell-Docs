@@ -93,7 +93,7 @@ following keys.
 
 - `ModuleName` - **Required** Specifies the module name.
 - `GUID` - **Optional** Specifies the GUID of the module.
-- It is also **Required** to specify one of the two below keys. These keys
+- It is also **Required** to specify one of the three below keys. These keys
   cannot be used together.
   - `ModuleVersion` - Specifies a minimum acceptable version of the module.
   - `RequiredVersion` - Specifies an exact, required version of the module.
