@@ -33,7 +33,7 @@ particular session configuration have the language mode of the session
 configuration.
 
 All PowerShell sessions have a language mode, including PSSessions that you
-create by using the New-PSSession cmdlet, temporary sessions that use the
+create by using the `New-PSSession` cmdlet, temporary sessions that use the
 ComputerName parameter, and the default sessions that appear when you start
 PowerShell.
 
@@ -115,10 +115,10 @@ The features of ConstrainedLanguage mode are as follows:
   `Invoke-Expression -Language XAML`. Also, workflows cannot call other
   workflows, although nested workflows are permitted.
 
-- The Add-Type cmdlet can load signed assemblies, but it cannot load arbitrary
-  C# code or Win32 APIs.
+- The `Add-Type` cmdlet can load signed assemblies, but it cannot load
+  arbitrary C# code or Win32 APIs.
 
-- The New-Object cmdlet can be used only on allowed types (listed below).
+- The `New-Object` cmdlet can be used only on allowed types (listed below).
 
 - Only allowed types (listed below) can be used in PowerShell. Other types are
   not permitted.
@@ -128,8 +128,8 @@ The features of ConstrainedLanguage mode are as follows:
 - Cmdlet parameters that convert string input to types work only when the
   resulting type is an allowed type.
 
-- The ToString() method and the .NET methods of allowed types (listed below)
-  can be invoked. Other methods cannot be invoked.
+- The **ToString()** method and the .NET methods of allowed types (listed
+  below) can be invoked. Other methods cannot be invoked.
 
 - Users can get all properties of allowed types. Users can set the values of
   properties only on Core types. Only the following COM objects are permitted:
