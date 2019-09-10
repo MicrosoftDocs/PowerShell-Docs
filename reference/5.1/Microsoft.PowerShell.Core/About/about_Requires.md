@@ -97,6 +97,7 @@ following keys.
   cannot be used together.
   - `ModuleVersion` - Specifies a minimum acceptable version of the module.
   - `RequiredVersion` - Specifies an exact, required version of the module.
+  - `MaximumVersion` - Specifies the maximum acceptable version of the module.
 
 > [!NOTE]
 > `RequiredVersion` was added in Windows PowerShell 5.0.
@@ -113,6 +114,12 @@ Requires that `Hyper-V` (**only** version `1.1`) is installed.
 
 ```powershell
 #Requires -Modules @{ ModuleName="Hyper-V"; RequiredVersion="1.1" }
+```
+
+Requires that `Hyper-V` (version `1.1` or lesser) is installed.
+
+```powershell
+#Requires -Modules @{ ModuleName="Hyper-V"; MaximumVersion="1.1" }
 ```
 
 Requires that any version of `PSScheduledJob` and `PSWorkflow`, is installed.
