@@ -104,7 +104,7 @@ Maximized and Hidden.
 
 Accepts a base-64-encoded string version of a command. Use this parameter to
 submit commands to PowerShell that require complex quotation marks or curly
-braces. The string must be formatted using UTF-16 character encoding.
+braces. The string must be formatted using UTF-16LE character encoding.
 
 #### -ConfigurationName \<string\>
 

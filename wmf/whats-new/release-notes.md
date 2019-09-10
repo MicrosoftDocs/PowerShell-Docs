@@ -4,6 +4,7 @@ ms.topic: conceptual
 keywords:  wmf,powershell,setup
 title:  WMF 5.x Release Notes
 ---
+
 # Windows Management Framework (WMF) 5.x Release Notes
 
 ## WMF 5.0 Changes
@@ -38,6 +39,11 @@ Server 2008 R2, 2012, and 2012 R2, and provides several improvements over WMF 5.
 - Security enhancements including enforcement of catalog-signed modules coming from the Pull Server
   and when using PowerShellGet cmdlets
 - Responses to a number of user requests and issues
+
+> [!IMPORTANT]
+> Before you install WMF 5.1 on Windows Server 2008 or Windows 7, confirm that WMF 3.0 isn't
+> installed. For more information, see
+> [WMF 5.1 Prerequisites for Windows Server 2008 R2 SP1 and Windows 7 SP1](../setup/install-configure.md#wmf-51-prerequisites-for-windows-server-2008-r2-sp1-and-windows-7-sp1).
 
 ## PowerShell Editions
 
@@ -105,6 +111,7 @@ In WMF 5.1:
 
 - You can use
   [ModuleSpecification Constructor (Hashtable)](/dotnet/api/microsoft.powershell.commands.modulespecification.-ctor?view=powershellsdk-1.1.0#Microsoft_PowerShell_Commands_ModuleSpecification__ctor_System_Collections_Hashtable_).
+
   This hash table has the same format as `Get-Module -FullyQualifiedName`.
 
   **Example:** `using module @{ModuleName = 'PSReadLine'; RequiredVersion = '1.1'}`
