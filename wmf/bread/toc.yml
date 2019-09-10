@@ -1,7 +1,11 @@
-- name: PowerShell
-  tocHref: /powershell/
-  topicHref: /powershell/index
+- name: Docs
+  tocHref: /
+  topicHref: /
   items:
-  - name: Windows Management Framework
-    tocHref: /powershell/wmf/
-    topicHref: /powershell/wmf/index
+    - name: PowerShell
+      tocHref: /powershell/
+      topicHref: /powershell/index
+      items:
+        - name: Windows Management Framework
+          tocHref: /powershell/wmf/
+          topicHref: /powershell/wmf/index
