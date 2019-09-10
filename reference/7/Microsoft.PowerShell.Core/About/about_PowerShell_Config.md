@@ -200,7 +200,7 @@ For more information on experimental features, see [PowerShell RFC 29][RFC0029].
 
 PowerShell's logging on macOS and Linux can be configured in the PowerShell
 configuration file. For a full description of PowerShell logging for
-non-Windows systems, see [About Logging](./about_Logging.md).
+non-Windows systems, see [About Logging](./about_Logging_Non-Windows.md).
 
 ### LogIdentity
 

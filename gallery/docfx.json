@@ -1,8 +1,9 @@
 {
     "build": {
-        "content": [
-            { "files": ["**/**.yml", "**/**.md"], "exclude": ["**/obj/**"] }
-        ],
+        "content": [{
+            "files": ["**/**.yml", "**/**.md"],
+            "exclude": ["**/obj/**", "**/readme.md"]
+        }],
         "globalMetadata": {
             "toc_preview": true,
             "breadcrumb_path": "bread/toc.yml",
@@ -22,9 +23,10 @@
             "ms.author": { "**/**.md": "sysmith" },
             "author": { "**/**.md": "SydneyhSmith" }
         },
-        "resource": [
-            { "files": ["**/images/**"], "exclude": ["**/obj/**"] }
-        ],
+        "resource": [{
+             "files": ["**/images/**"], 
+             "exclude": ["**/obj/**"]
+        }],
         "template": "op.html",
         "dest": "gallery",
         "markdownEngineName": "markdig"

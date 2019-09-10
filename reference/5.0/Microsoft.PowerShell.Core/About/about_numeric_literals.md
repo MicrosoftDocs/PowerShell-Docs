@@ -94,7 +94,7 @@ than the maximum supported, that literal is malformed.
 ## Numeric multipliers
 
 For convenience, integer and real literals can contain a numeric multiplier,
-which indicates one of a set of commonly used powers of 10. The numeric
+which indicates one of a set of commonly used powers of 2. The numeric
 multiplier can be written in any combination of upper or lowercase letters.
 
 The multiplier suffixes can be used in combination with the `u`, `ul`, and `l`

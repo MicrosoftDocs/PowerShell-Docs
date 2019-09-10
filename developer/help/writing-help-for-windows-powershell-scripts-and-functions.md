@@ -64,8 +64,4 @@ However, you can post conceptual topics on the Internet list the topics and thei
 
 ## See Also
 
- [Writing XML-Based Help Topics for Scripts and Functions](./writing-xml-based-help-topics-for-scripts-and-functions.md)
-
- [Writing XML-Based Help Topics for Commands](./writing-xml-based-help-topics-for-commands.md)
-
- [Writing Comment-Based Help Topics](./writing-comment-based-help-topics.md)
+[Writing Comment-Based Help Topics](./writing-comment-based-help-topics.md)
