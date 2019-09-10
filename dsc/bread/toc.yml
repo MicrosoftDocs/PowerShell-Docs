@@ -1,7 +1,11 @@
-- name: PowerShell
-  tocHref: /powershell/
-  topicHref: /powershell
+- name: Docs
+  tocHref: /
+  topicHref: /
   items:
-  - name: Desired State Configuration
-    tocHref: /powershell/dsc/
-    topicHref: /powershell/dsc/index
+    - name: PowerShell
+      tocHref: /powershell/
+      topicHref: /powershell
+      items:
+        - name: Desired State Configuration
+          tocHref: /powershell/dsc/
+          topicHref: /powershell/dsc/index

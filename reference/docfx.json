@@ -37,30 +37,37 @@
             { "files": ["**/*.md"], "src": "virtual-directory-module", "dest": "module" }
         ],
         "resource": [
-            { "files": ["**/images/**", "**/*.png", "**/*.gif", "**/*.jpeg", "**/*.jpg", "**/*.svg"],
+            {
+              "files": ["**/images/**", "**/*.png", "**/*.gif", "**/*.jpeg", "**/*.jpg", "**/*.svg"],
               "exclude": ["**/obj/**", "**/includes/**"]
             },
-            { "files": ["**/images/**", "**/*.png", "**/*.gif", "**/*.jpeg", "**/*.jpg", "**/*.svg"],
+            {
+              "files": ["**/images/**", "**/*.png", "**/*.gif", "**/*.jpeg", "**/*.jpg", "**/*.svg"],
               "exclude": ["**/obj/**", "**/includes/**"],
               "version": "powershell-3.0"
             },
-            { "files": ["**/images/**", "**/*.png", "**/*.gif", "**/*.jpeg", "**/*.jpg", "**/*.svg"],
+            {
+              "files": ["**/images/**", "**/*.png", "**/*.gif", "**/*.jpeg", "**/*.jpg", "**/*.svg"],
               "exclude": ["**/obj/**", "**/includes/**"],
               "version": "powershell-4.0"
             },
-            { "files": ["**/images/**", "**/*.png", "**/*.gif", "**/*.jpeg", "**/*.jpg", "**/*.svg"],
+            {
+              "files": ["**/images/**", "**/*.png", "**/*.gif", "**/*.jpeg", "**/*.jpg", "**/*.svg"],
               "exclude": ["**/obj/**", "**/includes/**"],
               "version": "powershell-5.0"
             },
-            { "files": ["**/images/**", "**/*.png", "**/*.gif", "**/*.jpeg", "**/*.jpg", "**/*.svg"],
+            {
+              "files": ["**/images/**", "**/*.png", "**/*.gif", "**/*.jpeg", "**/*.jpg", "**/*.svg"],
               "exclude": ["**/obj/**", "**/includes/**"],
               "version": "powershell-5.1"
             },
-            { "files": ["**/images/**", "**/*.png", "**/*.gif", "**/*.jpeg", "**/*.jpg", "**/*.svg"],
+            {
+              "files": ["**/images/**", "**/*.png", "**/*.gif", "**/*.jpeg", "**/*.jpg", "**/*.svg"],
               "exclude": ["**/obj/**", "**/includes/**"],
               "version": "powershell-6"
             },
-            { "files": ["**/images/**", "**/*.png", "**/*.gif", "**/*.jpeg", "**/*.jpg", "**/*.svg"],
+            {
+              "files": ["**/images/**", "**/*.png", "**/*.gif", "**/*.jpeg", "**/*.jpg", "**/*.svg"],
               "exclude": ["**/obj/**", "**/includes/**"],
               "version": "powershell-7"
             }
@@ -132,6 +139,7 @@
                 "**/PSScheduledJob/**.md": "SteveL-MSFT",
                 "**/PSWorkflow/**.md": "SteveL-MSFT",
                 "**/PSWorkflowUtility/**.md": "SteveL-MSFT",
+                "docs-conceptual/learn/remoting/jea/**.md": "rpsqrd",
                 "docs-conceptual/**.md": "joeyaiello"
             },
             "ms.author": {
@@ -156,6 +164,7 @@
                 "**/PSScheduledJob/**.md": "slee",
                 "**/PSWorkflow/**.md": "slee",
                 "**/PSWorkflowUtility/**.md": "slee",
+                "docs-conceptual/learn/remoting/jea/**/**.md": "ryanpu",
                 "docs-conceptual/**.md": "jaiello"
             }
         },
