@@ -1,5 +1,5 @@
 ﻿---
-ms.date:  09/04/2018
+ms.date:  09/09/2019
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -8,7 +8,6 @@ title:  about_scopes
 # About Scopes
 
 ## Short description
-
 Explains the concept of scope in PowerShell and shows how to set and change
 the scope of elements.
 
@@ -21,10 +20,12 @@ should not be changed.
 
 The following are the basic rules of scope:
 
-- An item you include in a scope is visible in the scope in which it was
-  created and in any child scope, unless you explicitly make it private. You can
-  place variables, aliases, functions, or PowerShell drives in one or
-  more scopes.
+- Scopes may nest. An outer scope is referred to as a parent scope. Any nested
+  scopes are child scopes of that parent.
+
+- An item is visible in the scope in which it was created and in any child
+  scopes, unless you explicitly make it private. You can place variables,
+  aliases, functions, or PowerShell drives in one or more scopes.
 
 - An item that you created within a scope can be changed only in the scope in
   which it was created, unless you explicitly specify a different scope.
@@ -35,9 +36,7 @@ it is not overridden or changed.
 
 ## PowerShell Scopes
 
-Scopes in PowerShell have both names and numbers. The named scopes specify an
-absolute scope. The numbers are relative and reflect the relationship between
-scopes.
+PowerShell supports the following scopes:
 
 - Global: The scope that is in effect when PowerShell starts. Variables and
   functions that are present when PowerShell starts have been created in the
@@ -48,19 +47,13 @@ scopes.
 - Local: The current scope. The local scope can be the global scope or any
   other scope.
 
-- Script: The scope that is created while a script file runs. Only the
-  commands in the script run in the script scope. To the commands in a script,
-  the script scope is the local scope.
+- Script: The scope that is created while a script file runs. Only the commands
+  in the script run in the script scope. To the commands in a script, the
+  script scope is the local scope.
 
-- Private: Items in private scope cannot be seen outside of the current scope.
-  You can use private scope to create a private version of an item with the same
-  name in another scope.
-
-- Numbered Scopes: You can refer to scopes by name or by a number that describes
-  the relative position of one scope to another. Scope 0 represents the current,
-  or local, scope. Scope 1 indicates the immediate parent scope. Scope 2
-  indicates the parent of the parent scope, and so on. Numbered scopes are
-  useful if you have created many recursive scopes.
+> [!NOTE]
+> **Private** is not a scope. It is an [option](#private-option) that changes
+> the visibility of an item outside of the the scope where the item is defined.
 
 ## Parent and Child Scopes
 
@@ -87,8 +80,7 @@ parent scope, but the items are not part of the child scope.
 However, a child scope is created with a set of items. Typically, it includes
 all the aliases that have the **AllScope** option. This option is discussed
 later in this article. It includes all the variables that have the **AllScope**
-option, plus some variables that can be used to customize the scope, such as
-`MaximumFunctionCount`.
+option, plus some automatic variables.
 
 To find the items in a particular scope, use the Scope parameter of
 `Get-Variable` or `Get-Alias`.
@@ -107,9 +99,39 @@ Get-Variable -Scope global
 
 ## Scope Modifiers
 
+A variable, alias, or function name can include any one of the following
+optional scope modifiers:
+
+- `global:` - Specifies that the name exists in the **Global** scope.
+- `local:` - Specifies that the name exists in the **Local** scope. The current
+  scope is alway the **Local** scope.
+- `private:` - Specifies that the name is **Private** and only visible to the
+  current scope.
+- `script:` - Specifies that the name exists in the **Script** scope.
+  **Script** scope is the nearest ancestor script file's scope or **Global** if
+  there is no nearest ancestor script file.
+- `using:` - Used to access variables defined in another scope while running
+  scripts via cmdlets like `Start-Job` and `Invoke-Command`.
+- `workflow:` - Specifies that the name exists within a workflow. Note:
+  Workflows are not supported in PowerShell Core.
+- `<variable-namespace>` - A modifier created by a PowerShell PSDrive provider.
+  For example:
+
+  |  Namespace  |                    Description                     |
+  | ----------- | -------------------------------------------------- |
+  | `Alias:`    | Aliases defined in the current scope               |
+  | `Env:`      | Environment variables defined in the current scope |
+  | `Function:` | Functions defined in the current scope             |
+  | `Variable:` | Variables defined in the current scope             |
+
+The default scope for scripts is the script scope. The default scope for
+functions and aliases is the local scope, even if they are defined in a
+script.
+
+### Using scope modifiers
+
 To specify the scope of a new variable, alias, or function, use a scope
-modifier. The valid values of a modifier are **Global**, **Local**,
-**Private**, and **Script**.
+modifier.
 
 The syntax for a scope modifier in a variable is:
 
@@ -123,33 +145,29 @@ The syntax for a scope modifier in a function is:
 function [<scope-modifier>:]<name> {<function-body>}
 ```
 
-The default scope for scripts is the script scope. The default scope for
-functions and aliases is the local scope, even if they are defined in a
-script.
-
 The following command, which does not use a scope modifier, creates a variable
-in the current or local scope:
+in the current or **local** scope:
 
 ```powershell
 $a = "one"
 ```
 
-To create the same variable in the global scope, use the Global scope
+To create the same variable in the **global** scope, use the scope `global:`
 modifier:
 
 ```powershell
 $global:a = "one"
 ```
 
-To create the same variable in the script scope, use the script scope
+To create the same variable in the **script** scope, use the `script:` scope
 modifier:
 
 ```powershell
 $script:a = "one"
 ```
 
-You can also use a scope modifier in functions. The following function
-definition creates a function in the global scope:
+You can also use a scope modifier with functions. The following function
+definition creates a function in the **global** scope:
 
 ```powershell
 function global:Hello {
@@ -166,7 +184,7 @@ $test
 $global:test
 ```
 
-### The Using scope modifier
+### The `Using:` scope modifier
 
 Using is a special scope modifier that identifies a local variable in a remote
 command. Without a modifier, PowerShell expects variables in remote commands
@@ -227,6 +245,14 @@ New-Alias -Scope global -Name np -Value Notepad.exe
 To get the functions in a particular scope, use the `Get-Item` cmdlet when you
 are in the scope. The `Get-Item` cmdlet does not have a **Scope** parameter.
 
+> [!NOTE]
+> For the cmdlets that use the **Scope** parameter, you can also refer to
+> scopes by number. The number describes the relative position of one scope to
+> another. Scope 0 represents the current, or local, scope. Scope 1 indicates
+> the immediate parent scope. Scope 2 indicates the parent of the parent scope,
+> and so on. Numbered scopes are useful if you have created many recursive
+> scopes.
+
 ### Using Dot Source Notation with Scope
 
 Scripts and functions follow all the rules of scope. You create them in a
@@ -266,7 +292,7 @@ You can read more about the call operator in [about_operators](about_operators.m
 Any aliases, functions, or variables that the Sample.ps1 script creates are
 not available in the current scope.
 
-### Restricting Without Scope
+## Restricting Without Scope
 
 A few PowerShell concepts are similar to scope or interact with scope. These
 concepts may be confused with scope or the behavior of scope.
@@ -274,7 +300,7 @@ concepts may be confused with scope or the behavior of scope.
 Sessions, modules, and nested prompts are self-contained environments, but
 they are not child scopes of the global scope in the session.
 
-#### Sessions
+### Sessions
 
 A session is an environment in which PowerShell runs. When you create a session
 on a remote computer, PowerShell establishes a persistent connection to the
@@ -287,7 +313,7 @@ session starts with its own global scope. This scope is independent of the
 global scope of the session. You can create child scopes in the session. For
 example, you can run a script to create a child scope in a session.
 
-#### Modules
+### Modules
 
 You can use a PowerShell module to share and deliver PowerShell tools. A module
 is a unit that can contain cmdlets, scripts, functions, variables, aliases, and
@@ -301,7 +327,22 @@ does not change the scope. And, the module does not have its own scope,
 although the scripts in the module, like all PowerShell scripts, do have their
 own scope.
 
-#### Nested Prompts
+By default, modules are loaded into the top-level of the current _session
+state_ not the current _scope_. This could be a module session state or the
+global session state. If you are in the global scope, then modules are loaded
+into the global session state. Any exports are placed into the global tables.
+If you load module2 from _within_ module1, module2 is loaded into the module1's
+session state, not the global session state. Any exports from module2 are
+placed at the top of the module1's session state. If you use
+`Import-Module -Scope local`, then the exports are placed into the current
+scope object rather than at the top level. If you are _in a module_ and use
+`Import-Module -Scope global` (or `Import-Module -Global`) to load another
+module, that module and it's exports are loaded into the global session state
+instead of the module's local session state. This feature was designed for
+writing module that manipulate modules. The WindowsCompatibility module does
+this to import proxy modules into the global scope.
+
+### Nested Prompts
 
 Similarly, nested prompts do not have their own scope. When you enter a nested
 prompt, the nested prompt is a subset of the environment. But, you remain
@@ -310,12 +351,12 @@ within the local scope.
 Scripts do have their own scope. If you are debugging a script, and you reach a
 breakpoint in the script, you enter the script scope.
 
-#### Private Option
+### Private Option
 
-Aliases and variables have an Option property that can take a value of Private.
-Items that have the Private option can be viewed and changed in the scope in
-which they are created, but they cannot be viewed or changed outside that
-scope.
+Aliases and variables have an **Option** property that can take a value of
+**Private**. Items that have the **Private** option can be viewed and changed
+in the scope in which they are created, but they cannot be viewed or changed
+outside that scope.
 
 For example, if you create a variable that has a private option in the global
 scope and then run a script, `Get-Variable` commands in the script do not
@@ -326,19 +367,20 @@ You can use the Option parameter of the `New-Variable`, `Set-Variable`,
 `New-Alias`, and `Set-Alias` cmdlets to set the value of the Option property to
 Private.
 
-#### Visibility
+### Visibility
 
-The Visibility property of a variable or alias determines whether you can see
-the item outside the container, in which it was created. A container could be a
-module, script, or snap-in. Visibility is designed for containers in the same
-way that the Private value of the Option property is designed for scopes.
+The **Visibility** property of a variable or alias determines whether you can
+see the item outside the container, in which it was created. A container could
+be a module, script, or snap-in. Visibility is designed for containers in the
+same way that the **Private** value of the **Option** property is designed for
+scopes.
 
-The Visibility property takes the Public and Private values. Items that have
-private visibility can be viewed and changed only in the container in which
-they were created. If the container is added or imported, the items that have
-private visibility cannot be viewed or changed.
+The **Visibility** property takes the **Public** and **Private** values. Items
+that have private visibility can be viewed and changed only in the container in
+which they were created. If the container is added or imported, the items that
+have private visibility cannot be viewed or changed.
 
-Because Visibility is designed for containers, it works differently in a scope.
+Because visibility is designed for containers, it works differently in a scope.
 
 - If you create an item that has private visibility in the global scope, you
   cannot view or change the item in any scope.
