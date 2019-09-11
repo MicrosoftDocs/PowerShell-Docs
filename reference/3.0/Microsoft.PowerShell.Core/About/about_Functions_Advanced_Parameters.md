@@ -180,8 +180,7 @@ parameter set must have at least one parameter that isn't a member of any other
 parameter set.
 
 > [!NOTE]
-> The parameters for a cmdlet or function can be included in a maximum of 32
-> parameter sets.
+> For a cmdlet or function, there is a limit of 32 parameter sets.
 
 The following example declares a **ComputerName** parameter in the `Computer`
 parameter set, a **UserName** parameter in the `User` parameter set, and a
