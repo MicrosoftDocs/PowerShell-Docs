@@ -93,13 +93,15 @@ following keys.
 
 - `ModuleName` - **Required** Specifies the module name.
 - `GUID` - **Optional** Specifies the GUID of the module.
-- It is also **Required** to specify one of the two below keys. These keys
+- It is also **Required** to specify one of the three below keys. These keys
   cannot be used together.
   - `ModuleVersion` - Specifies a minimum acceptable version of the module.
   - `RequiredVersion` - Specifies an exact, required version of the module.
+  - `MaximumVersion` - Specifies the maximum acceptable version of the module.
 
 > [!NOTE]
 > `RequiredVersion` was added in Windows PowerShell 5.0.
+> `MaximumVersion` was added in Windows PowerShell 5.1.
 
 For example:
 
@@ -113,6 +115,12 @@ Requires that `Hyper-V` (**only** version `1.1`) is installed.
 
 ```powershell
 #Requires -Modules @{ ModuleName="Hyper-V"; RequiredVersion="1.1" }
+```
+
+Requires that `Hyper-V` (version `1.1` or lesser) is installed.
+
+```powershell
+#Requires -Modules @{ ModuleName="Hyper-V"; MaximumVersion="1.1" }
 ```
 
 Requires that any version of `PSScheduledJob` and `PSWorkflow`, is installed.

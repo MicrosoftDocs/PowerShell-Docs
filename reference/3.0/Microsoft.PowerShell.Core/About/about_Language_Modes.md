@@ -1,15 +1,13 @@
 ﻿---
-ms.date:  06/09/2017
+ms.date:  09/09/2019
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_Language_Modes
 ---
-
 # About Language Modes
 
 ## SHORT DESCRIPTION
-
 Explains language modes and their effect on PowerShell sessions.
 
 ## LONG DESCRIPTION
@@ -35,7 +33,7 @@ particular session configuration have the language mode of the session
 configuration.
 
 All PowerShell sessions have a language mode, including PSSessions that you
-create by using the New-PSSession cmdlet, temporary sessions that use the
+create by using the `New-PSSession` cmdlet, temporary sessions that use the
 ComputerName parameter, and the default sessions that appear when you start
 PowerShell.
 
@@ -51,47 +49,49 @@ This section describes the language modes in PowerShell sessions.
 
 #### FULL LANGUAGE (FullLanguage)
 
-The FullLanguage language mode permits all language elements in the session.
+The FullLanguage mode permits all language elements in the session.
 FullLanguage is the default language mode for default sessions on all versions
 of Windows except for Windows RT.
 
 #### RESTRICTED LANGUAGE (RestrictedLanguage)
 
-In RestrictedLanguage language mode, users may run commands (cmdlets,
-functions, CIM commands, and workflows) but are not permitted to use script
-blocks.
+In RestrictedLanguage mode, users may run commands (cmdlets, functions, CIM
+commands, and workflows) but are not permitted to use script blocks.
 
 By default, only the following variables are permitted in RestrictedLanguage
-language mode:
+mode:
 
-- \$PSCulture
-- \$PSUICulture
-- \$True
-- \$False
-- \$Null.
+- `$PSCulture`
+- `$PSUICulture`
+- `$True`
+- `$False`
+- `$Null`
 
 Only the following comparison operators are permitted:
 
-- -eq (equal)
-- -gt (greater-than)
-- -lt (less-than)
+- `-eq` (equal)
+- `-gt` (greater-than)
+- `-lt` (less-than)
 
 Assignment statements, property references, and method calls are not
 permitted.
 
 #### NO LANGUAGE (NoLanguage)
 
-In NoLanguage language mode, users may run commands, but they cannot use any
-language elements.
+NoLanguage mode can only be used through the API. NoLanguage mode means no
+script text of any form is permitted. This precludes the use of the
+**AddScript()** method which sends fragments of PowerShell script to be parsed
+and executed. You can only use **AddCommand()** and **AddParameter()** which
+don't go through the parser.
 
 #### CONSTRAINED LANGUAGE (Constrained Language)
 
-The ConstrainedLanguage language mode permits all Windows cmdlets and all
-PowerShell language elements, but it limits permitted types.
+The ConstrainedLanguage mode permits all cmdlets and all PowerShell language
+elements, but it limits permitted types.
 
-ConstrainedLanguage language mode is designed to support User Mode Code
-Integrity (UMCI) on Windows RT. It is the only supported language mode on
-Windows RT, but it is available on all supported systems.
+ConstrainedLanguage mode is designed to support User Mode Code Integrity (UMCI)
+on Windows RT. It is the only supported language mode on Windows RT, but it is
+available on all supported systems.
 
 UMCI protects ARM devices by allowing only Microsoft-signed and
 Microsoft-certified apps to be installed on Windows RT-based devices.
@@ -110,37 +110,35 @@ The features of ConstrainedLanguage mode are as follows:
   modules export run in the session.
 
 - In PowerShell Workflow, you can write and run script workflows (workflows
-  written in the PowerShell language). XAML-based workflows are not
-  supported and you cannot run XAML in a script workflow, such as by using
-  "Invoke-Expression -Language XAML". Also, workflows cannot call other
+  written in the PowerShell language). XAML-based workflows are not supported
+  and you cannot run XAML in a script workflow, such as by using
+  `Invoke-Expression -Language XAML`. Also, workflows cannot call other
   workflows, although nested workflows are permitted.
 
-- The Add-Type cmdlet can load signed assemblies, but it cannot load
+- The `Add-Type` cmdlet can load signed assemblies, but it cannot load
   arbitrary C# code or Win32 APIs.
 
-- The New-Object cmdlet can be used only on allowed types (listed below).
+- The `New-Object` cmdlet can be used only on allowed types (listed below).
 
-- Only allowed types (listed below) can be used in PowerShell. Other types
-  are not permitted.
+- Only allowed types (listed below) can be used in PowerShell. Other types are
+  not permitted.
 
-- Type conversion is permitted, but only when the result is an allowed
-  type.
+- Type conversion is permitted, but only when the result is an allowed type.
 
 - Cmdlet parameters that convert string input to types work only when the
   resulting type is an allowed type.
 
-- The ToString() method and the .NET methods of allowed types (listed
+- The **ToString()** method and the .NET methods of allowed types (listed
   below) can be invoked. Other methods cannot be invoked.
 
-- Users can get all properties of allowed types. Users can set the values
-  of properties only on Core types.
+- Users can get all properties of allowed types. Users can set the values of
+  properties only on Core types. Only the following COM objects are permitted:
 
-  - Only the following COM objects are permitted.
-  - Scripting.Dictionary
-  - Scripting.FileSystemObject
-  - VBScript.RegExp
+  - **Scripting.Dictionary**
+  - **Scripting.FileSystemObject**
+  - **VBScript.RegExp**
 
-The following types are permitted in ConstrainedLanguage language mode. Users
+The following types are permitted in ConstrainedLanguage mode. Users
 can get properties, invoke methods, and convert objects to these types.
 
 Allowed Types:
@@ -200,7 +198,7 @@ the session configuration has a LanguageMode property. You can find the
 language mode by getting the value of the LanguageMode property.
 
 ```powershell
-PS C:\> (Get-PSSessionConfiguration -Name Test).LanguageMode
+PS> (Get-PSSessionConfiguration -Name Test).LanguageMode
 FullLanguage
 ```
 
@@ -217,15 +215,15 @@ state.
 For example:
 
 ```powershell
-PS C:> $ExecutionContext.SessionState.LanguageMode
+PS> $ExecutionContext.SessionState.LanguageMode
 ConstrainedLanguage
 ```
 
-However, in sessions with RestrictedLanguage and NoLanguage language modes,
+However, in sessions with RestrictedLanguage and NoLanguage modes,
 you cannot use the dot method to get property values. Instead, the error
 message reveals the language mode.
 
-When you run the \$ExecutionContext.SessionState.LanguageMode command in a
+When you run the `$ExecutionContext.SessionState.LanguageMode` command in a
 RestrictedLanguage session, PowerShell returns the
 PropertyReferenceNotSupportedInDataSection and
 VariableReferenceNotSupportedInDataSection error messages.
@@ -236,11 +234,11 @@ VariableReferenceNotSupportedInDataSection error messages.
   referenced in restricted language mode or a Data section is being
   referenced.
 
-When you run the \$ExecutionContext.SessionState.LanguageMode command in a
+When you run the `$ExecutionContext.SessionState.LanguageMode` command in a
 NoLanguage session, PowerShell returns the ScriptsNotAllowed error message.
 
-- ScriptsNotAllowed: The syntax is not supported by this runspace. This
-  might be because it is in no-language mode.
+- ScriptsNotAllowed: The syntax is not supported by this runspace. This might
+  be because it is in no-language mode.
 
 ## KEYWORDS
 
@@ -253,4 +251,3 @@ NoLanguage session, PowerShell returns the ScriptsNotAllowed error message.
 
 - [about_Session_Configuration_Files](about_Session_Configuration_Files.md)
 - [about_Session_Configurations](about_Session_Configurations.md)
-- [about_Windows_RT](about_Windows_RT.md)
