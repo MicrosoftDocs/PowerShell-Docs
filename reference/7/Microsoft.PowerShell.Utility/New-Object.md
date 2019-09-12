@@ -3,7 +3,7 @@ external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 06/09/2017
+ms.date: 09/12/2019
 online version: https://go.microsoft.com/fwlink/?linkid=2096620
 schema: 2.0.0
 title: New-Object
@@ -29,71 +29,84 @@ New-Object [-ComObject] <String> [-Strict] [-Property <IDictionary>] [<CommonPar
 
 ## DESCRIPTION
 
-The **New-Object** cmdlet creates an instance of a .NET Framework or COM object.
+The `New-Object` cmdlet creates an instance of a .NET Framework or COM object.
 
-You can specify either the type of a .NET Framework class or a ProgID of a COM object.
-By default, you type the fully qualified name of a .NET Framework class and the cmdlet returns a reference to an instance of that class.
-To create an instance of a COM object, use the *ComObject* parameter and specify the ProgID of the object as its value.
+You can specify either the type of a .NET Framework class or a ProgID of a COM object. By default,
+you type the fully qualified name of a .NET Framework class and the cmdlet returns a reference to an
+instance of that class. To create an instance of a COM object, use the **ComObject** parameter and
+specify the ProgID of the object as its value.
 
 ## EXAMPLES
 
 ### Example 1: Create a System.Version object
 
+This example creates a **System.Version** object using the "1.2.3.4" string as the constructor.
+
+```powershell
+New-Object -TypeName System.Version -ArgumentList "1.2.3.4"
 ```
-PS C:\> New-Object -TypeName System.Version -ArgumentList "1.2.3.4"
+
+```Output
 Major  Minor  Build  Revision
-
 -----  -----  -----  --------
-
 1      2      3      4
 ```
 
-This command creates a **System.Version** object.
-It uses a 1.2.3.4 string as the constructor.
-
 ### Example 2: Create an Internet Explorer COM object
 
+This example creates two instances of the COM object that represents the Internet Explorer
+application. The first instance uses the **Property** parameter hash table to call the **Navigate2**
+method and set the **Visible** property of the object to `$True` to make the application visible.
+The second instance gets the same results with individual commands.
+
+```powershell
+$IE1 = New-Object -COMObject InternetExplorer.Application -Property @{Navigate2="www.microsoft.com"; Visible = $True}
+
+# The following command get the same results and the example above.
+$IE2 = New-Object -COMObject InternetExplorer.Application`
+$IE2.Navigate2("www.microsoft.com")`
+$IE2.Visible = $True`
 ```
-PS C:\> $IE = New-Object -COMObject InternetExplorer.Application -Property @{Navigate2="www.microsoft.com"; Visible = $True}
-```
 
-This command creates an instance of the COM object that represents the Internet Explorer application.
-The value of the *Property* parameter is a hash table that calls the **Navigate2** method and sets the **Visible** property of the object to $True to make the application visible.
-
-This command is the equivalent of the following:
-
-`$ie = New-Object -COMObject InternetExplorer.Application`
-
-`$ie.Navigate2("www.microsoft.com")`
-
-`$ie.Visible = $True`
 
 ### Example 3: Use the Strict parameter to generate a non-terminating error
 
+This example demonstrates that adding the **Strict** parameter causes the `New-Object` cmdlet to
+generate a non-terminating error when the COM object uses an interop assembly.
+
+```powershell
+$A = New-Object -COMObject Word.Application -Strict -Property @{Visible = $True}
 ```
-PS C:\> $A = New-Object -COMObject Word.Application -Strict -Property @{Visible = $True}
+
+```Output
 New-Object : The object written to the pipeline is an instance of the type
-"Microsoft.Office.Interop.Word.ApplicationClass" from the component's primary
-interop assembly. If this type exposes different members than the IDispatch
-members, scripts written to work with this object might not work if the
-primary interop assembly is not installed.
+"Microsoft.Office.Interop.Word.ApplicationClass" from the component's primary interop assembly. If
+this type exposes different members than the IDispatch members, scripts written to work with this
+object might not work if the primary interop assembly is not installed.
 
 At line:1 char:14
-+ $a=New-Object  <<<< -COM Word.Application -Strict; $a.visible=$true
++ $A = New-Object  <<<< -COM Word.Application -Strict; $a.visible=$true
 ```
-
-This command demonstrates that adding the *Strict* parameter causes the **New-Object** cmdlet to generate a non-terminating error when the COM object uses an interop assembly.
 
 ### Example 4: Create a COM object to manage Windows desktop
 
+This example shows how to create and use a COM object to manage your Windows desktop.
+
+The first command uses the **ComObject** parameter of the `New-Object` cmdlet to create a COM object
+with the **Shell.Application** ProgID. It stores the resulting object in the `$ObjShell` variable. The
+second command pipes the `$ObjShell` variable to the `Get-Member` cmdlet, which displays the
+properties and methods of the COM object. Among the methods is the **ToggleDesktop** method. The
+third command calls the **ToggleDesktop** method of the object to minimize the open windows on your
+desktop.
+
+```powershell
+$Objshell = New-Object -COMObject "Shell.Application"
+$objshell | Get-Member
+$objshell.ToggleDesktop()
 ```
-The first command uses the *ComObject* parameter of the **New-Object** cmdlet to create a COM object with the Shell.Application ProgID. It stores the resulting object in the $ObjShell variable.
-PS C:\> $Objshell = New-Object -COMObject "Shell.Application"
 
-The second command pipes the $ObjShell variable to the **Get-Member** cmdlet, which displays the properties and methods of the COM object. Among the methods is the ToggleDesktop method.
-PS C:\> $objshell | Get-Member
+```Output
    TypeName: System.__ComObject#{866738b9-6cf2-4de8-8767-f794ebe74f4e}
-
 
 Name                 MemberType Definition
 ----                 ---------- ----------
@@ -135,21 +148,71 @@ WindowsSecurity      Method     void WindowsSecurity ()
 WindowSwitcher       Method     void WindowSwitcher ()
 Application          Property   IDispatch Application () {get}
 Parent               Property   IDispatch Parent () {get}
-
-The third command calls the **ToggleDesktop** method of the object to minimize the open windows on your desktop.
-
-PS C:\> $objshell.ToggleDesktop()
 ```
 
-This example shows how to create and use a COM object to manage your Windows desktop.
+### Example 5: Pass multiple arguments to a constructor
+
+This example shows how to create an object with a constructor that takes multiple parameters. The
+parameters must be put in an array when using **ArgumentList** parameter.
+
+```powershell
+$array = @('One', 'Two', 'Three')
+$parameters = @{
+    TypeName = 'System.Collections.Generic.HashSet[string]'
+    ArgumentList = ([string[]]$array, [System.StringComparer]::OrdinalIgnoreCase)
+}
+$set = New-Object @parameters
+```
+
+PowerShell binds each member of the array to a parameter of the constructor.
+
+> [!NOTE]
+> This example uses parameter splatting for readability. For more information, see
+> [about_Splatting](../Microsoft.PowerShell.Core/About/about_Splatting.md).
+
+### Example 6: Calling a constructor that takes an array as a single parameter
+
+This example shows how to create an object with a constructor that takes a parameter that is an
+array or collection. The array parameter must be put in wrapped inside another array.
+
+```powershell
+$array = @('One', 'Two', 'Three')
+# This command throws an exception.
+$set = New-Object -TypeName 'System.Collections.Generic.HashSet[string]' -ArgumentList [string[]]$array
+# This command succeeds.
+$set = New-Object -TypeName 'System.Collections.Generic.HashSet[string]' -ArgumentList (,[string[]]$array)
+$set
+```
+
+```Output
+New-Object : Cannot convert argument "0", with value: "[string[]]One Two Three", for "HashSet`1" to
+type "System.Int32": "Cannot convert value "[string[]]One Two Three" to type "System.Int32". Error:
+"Input string was not in a correct format.""
+At line:1 char:8
++ $set = New-Object -TypeName 'System.Collections.Generic.HashSet[strin ...
++        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
++ CategoryInfo          : InvalidOperation: (:) [New-Object], MethodException
++ FullyQualifiedErrorId : ConstructorInvokedThrowException,Microsoft.PowerShell.Commands.NewObjectCommand
+
+One
+Two
+Three
+```
+
+Wrapping `$array` in another array prevents PowerShell from attempting to bind the three members of
+of `$array` to parameters of the constructor.
 
 ## PARAMETERS
 
 ### -ArgumentList
 
-Specifies a list of arguments to pass to the constructor of the .NET Framework class.
-Separate elements in the list by using commas (,).
-The alias for *ArgumentList* is *Args*.
+Specifies an array of arguments to pass to the constructor of the .NET Framework class. If the
+constructor takes a single parameter that is an array, you must wrap that parameter inside another
+array. For example:
+
+`$cert = New-Object System.Security.Cryptography.X509Certificates.X509Certificate -ArgumentList (,$bytes)`
+
+The alias for **ArgumentList** is **Args**.
 
 ```yaml
 Type: Object[]
@@ -183,11 +246,13 @@ Accept wildcard characters: False
 
 Sets property values and invokes methods of the new object.
 
-Enter a hash table in which the keys are the names of properties or methods and the values are property values or method arguments.
-**New-Object** creates the object and sets each property value and invokes each method in the order that they appear in the hash table.
+Enter a hash table in which the keys are the names of properties or methods and the values are
+property values or method arguments. `New-Object` creates the object and sets each property value
+and invokes each method in the order that they appear in the hash table.
 
-If the new object is derived from the **PSObject** class, and you specify a property that does not exist on the object, **New-Object** adds the specified property to the object as a NoteProperty.
-If the object is not a **PSObject**, the command generates a non-terminating error.
+If the new object is derived from the **PSObject** class, and you specify a property that does not
+exist on the object, `New-Object` adds the specified property to the object as a NoteProperty. If
+the object is not a **PSObject**, the command generates a non-terminating error.
 
 ```yaml
 Type: IDictionary
@@ -203,8 +268,9 @@ Accept wildcard characters: False
 
 ### -Strict
 
-Indicates that the cmdlet generates a non-terminating error when a COM object that you attempt to create uses an interop assembly.
-This feature distinguishes actual COM objects from .NET Framework objects with COM-callable wrappers.
+Indicates that the cmdlet generates a non-terminating error when a COM object that you attempt to
+create uses an interop assembly. This feature distinguishes actual COM objects from .NET Framework
+objects with COM-callable wrappers.
 
 ```yaml
 Type: SwitchParameter
@@ -220,8 +286,8 @@ Accept wildcard characters: False
 
 ### -TypeName
 
-Specifies the fully qualified name of the .NET Framework class.
-You cannot specify both the *TypeName* parameter and the *ComObject* parameter.
+Specifies the fully qualified name of the .NET Framework class. You cannot specify both the
+**TypeName** parameter and the **ComObject** parameter.
 
 ```yaml
 Type: String
@@ -237,7 +303,9 @@ Accept wildcard characters: False
 
 ### CommonParameters
 
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+-InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
+-WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -249,14 +317,19 @@ You cannot pipe input to this cmdlet.
 
 ### Object
 
-**New-Object** returns the object that is created.
+`New-Object` returns the object that is created.
 
 ## NOTES
 
-* **New-Object** provides the most commonly-used functionality of the VBScript CreateObject function. A statement like `Set objShell = CreateObject("Shell.Application")` in VBScript can be translated to `$objShell = New-Object -COMObject "Shell.Application"` in PowerShell.
-* **New-Object** expands upon the functionality available in the Windows Script Host environment by making it easy to work with .NET Framework objects from the command line and within scripts.
+- `New-Object` provides the most commonly-used functionality of the VBScript CreateObject
+  function. A statement like `Set objShell = CreateObject("Shell.Application")` in VBScript can be
+  translated to `$objShell = New-Object -COMObject "Shell.Application"` in PowerShell.
+- `New-Object` expands upon the functionality available in the Windows Script Host environment by
+  making it easy to work with .NET Framework objects from the command line and within scripts.
 
 ## RELATED LINKS
+
+[about_Object_Creation](../Microsoft.PowerShell.Core/About/about_Object_Creation.md)
 
 [Compare-Object](Compare-Object.md)
 
@@ -269,5 +342,3 @@ You cannot pipe input to this cmdlet.
 [Sort-Object](Sort-Object.md)
 
 [Tee-Object](Tee-Object.md)
-
-
