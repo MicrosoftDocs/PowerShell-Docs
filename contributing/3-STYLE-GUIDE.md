@@ -1,8 +1,6 @@
 # Style guide for PowerShell-Docs
 
 This article provides some style guidance specific to the PowerShell-Docs content.
-There is some limited guidance on specific Markdown formatting.
-Markdown specifics are covered in the [Next steps](#next-steps).
 
 For other writing style guidance, see the [Microsoft Style Guide](https://docs.microsoft.com/style-guide/welcome/).
 
@@ -11,86 +9,24 @@ For other writing style guidance, see the [Microsoft Style Guide](https://docs.m
 There are several variants of PowerShell.
 This table defines some of the different terms used to discuss PowerShell.
 
-| Terminology | Definition |
-| ----- | ----- |
-| PowerShell | This is the default. We are shipping PowerShell. The term PowerShell can be legitimately used to indicate any of the particular editions. This can be used to refer to the language, framework and default cmdlets, etc. |
-| PowerShell Core (PSCore) | PowerShell built on .NET Core Common Language Runtime (CoreCLR) for any of the platforms. |
-| Windows PowerShell | PowerShell built on .NET Common Language Runtime (CLR). Windows PowerShell ships only on Windows and requires the complete CLR. |
+- **PowerShell** - This is the default. We are shipping PowerShell. The term PowerShell can be
+  legitimately used to describe any edition of the product. This name can refer to the language,
+  framework, default cmdlets, etc.
+- **PowerShell Core** - PowerShell built on .NET Core Common Language Runtime (CoreCLR) for any of
+  the platforms.
+- **Windows PowerShell** - PowerShell built on .NET Common Language Runtime (CLR). Windows
+  PowerShell ships only on Windows and requires the complete CLR.
 
 In general, references to "Windows PowerShell" in documentation can be changed to "PowerShell".
 "Windows PowerShell" should **not** be changed when Windows-specific technology is being discussed.
 
-## Use semantic line breaks
-
-Add a single newline after each sentence or a clause boundary near the 100 character limit.
-This simplifies the command-line output of diffs and history.
-
-- You must include semantic line breaks
-- Limit lines to 100 characters
-- If a sentence is longer than 100 characters, break the line at a clause boundary
-  near the 100 character limit
-
-For a good explanation of semantic line breaks, see [Semantic Linefeeds by Rhodes Mill][semantics].
-
-This is not currently adopted across all of PowerShell-Docs, but we will be working towards it over time.
-Feel free to help out.
-
-## Formatting syntax elements
-
-- PowerShell cmdlet names are [Pascal Cased][pascal-case].
-  Verbs are separated from nouns by a hyphen.
-  Always use the full Pascal Case name for cmdlets and parameters.
-  Avoid using aliases unless you are specifically talking about an alias.
-
-- Property, parameter, and class names should be **bold**
-
-- Within a paragraph, language keywords, cmdlet names, and variable references should be wrapped in
-  backtick (\`)   characters. For example:
-
-  The following code assigns the output of `Get-ChildItem` to the `$files` variable.
-
-  ```powershell
-  $files = Get-ChildItem C:\Windows
-  ```
-
-- When writing an article (as opposed to reference content), the first instance of a cmdlet name
-  should be a link to the cmdlet documentation.
-
-  For example:
-
-  This [Write-Host](..\reference\6\Microsoft.PowerShell.Utility\Write-Host.md) cmdlet uses the
-  **Object** parameter to ...
-
-  > [!NOTE]
-  > Never use backticks or bold inside the brackets of a hyperlink. This is an exception to the previous
-  > rule.
-
-- When referring to a parameter by name, the name should be **bold**. When illustrating the use of
-  a parameter with the hyphen prefix, the parameter should be wrapped in backticks. For example:
-
-  > The parameter's name is **Name**, but it is typed as `-Name` when used on the command line as a
-  > parameter.
-
-- When referring to external commands (EXEs, scripts, etc.), the command name should be bold, all
-  lowercase (or capitalized if at the beginning of a sentence), and include the appropriate file
-  extension. For example:
-
-  > For example, on Windows systems, you can use the `net start` and `net stop` commands to start
-  > and stop a service. **Sc.exe** is another service control tool for Windows. That name does not
-  > fit into the naming pattern for the **net.exe** service commands.
-
-- When showing example usage of an external command, the example should be wrapped in backticks.
-  When there is a name collisions with an alias you must include the file extension in the command
-  example. For example:
-
-  > To start the spooler service on a remote computer named DC01, you type `sc.exe \\DC01 start spooler`.
-
-## Links
+## Hyperlinks
 
 - Avoid using bare URLs. Links should use Markdown syntax `[friendlyname](url-or-path)`
 - Links must have a friendly name, usually the title of the linked topic
 - All items in the "related links" section at the bottom should be hyperlinked.
 - Use relative links when linking to other content that is hosted on **docs.microsoft.com**.
+- Do not use backticks, bold, or other markup inside the brackets of a hyperlink.
 
 ### Understanding Docsets
 
@@ -100,7 +36,6 @@ PowerShell-Docs repo contains the following docsets:
 - developer - conceptual docs the PowerShell SDK
 - dsc - conceptual docs for DSC
 - gallery - conceptual docs for the PowerShell Gallery
-- jea - conceptual docs for Just-in-Enough Administration
 - reference - conceptual docs for using PowerShell and cmdlet reference docs
 - wmf - conceptual docs and release notes for WMF
 
@@ -169,7 +104,3 @@ This link only works on the webpage published to **docs.microsoft.com**.
 ## Next Steps
 
 See [Markdown Specifics](4-MARKDOWN-SPECIFICS.md).
-
-<!-- External URLs -->
-[pascal-case]: https://en.wikipedia.org/wiki/PascalCase
-[semantics]: http://rhodesmill.org/brandon/2012/one-sentence-per-line/
