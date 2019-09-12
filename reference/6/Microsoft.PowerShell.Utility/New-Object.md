@@ -62,7 +62,7 @@ The second instance gets the same results with individual commands.
 ```powershell
 $IE1 = New-Object -COMObject InternetExplorer.Application -Property @{Navigate2="www.microsoft.com"; Visible = $True}
 
-# The following command get the same results and the example above.
+# The following command gets the same results as the example above.
 $IE2 = New-Object -COMObject InternetExplorer.Application`
 $IE2.Navigate2("www.microsoft.com")`
 $IE2.Visible = $True`
@@ -178,16 +178,14 @@ array or collection. The array parameter must be put in wrapped inside another a
 ```powershell
 $array = @('One', 'Two', 'Three')
 # This command throws an exception.
-$set = New-Object -TypeName 'System.Collections.Generic.HashSet[string]' -ArgumentList [string[]]$array
+$set = New-Object -TypeName 'System.Collections.Generic.HashSet[string]' -ArgumentList $array
 # This command succeeds.
 $set = New-Object -TypeName 'System.Collections.Generic.HashSet[string]' -ArgumentList (,[string[]]$array)
 $set
 ```
 
 ```Output
-New-Object : Cannot convert argument "0", with value: "[string[]]One Two Three", for "HashSet`1" to
-type "System.Int32": "Cannot convert value "[string[]]One Two Three" to type "System.Int32". Error:
-"Input string was not in a correct format.""
+New-Object : Cannot find an overload for "HashSet`1" and the argument count: "3".
 At line:1 char:8
 + $set = New-Object -TypeName 'System.Collections.Generic.HashSet[strin ...
 +        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -342,5 +340,4 @@ You cannot pipe input to this cmdlet.
 [Sort-Object](Sort-Object.md)
 
 [Tee-Object](Tee-Object.md)
-
 
