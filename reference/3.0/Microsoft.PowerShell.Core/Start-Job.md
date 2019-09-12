@@ -19,14 +19,14 @@ Starts a PowerShell background job.
 
 ```
 Start-Job [-Name <String>] [-ScriptBlock] <ScriptBlock> [-Credential <PSCredential>]
- [-Authentication <AuthenticationMechanism>] [[-InitializationScript] <ScriptBlock>] [-RunAs32]
+ [-Authentication <AuthenticationMechanism>] [[-InitializationScript] <ScriptBlock>][WorkingDirectory <String>] [-RunAs32]
  [-PSVersion <Version>] [-InputObject <PSObject>] [-ArgumentList <Object[]>] [<CommonParameters>]
 ```
 
 ### DefinitionName
 
 ```
-Start-Job [-DefinitionName] <String> [[-DefinitionPath] <String>] [[-Type] <String>]
+Start-Job [-DefinitionName] <String> [[-DefinitionPath] <String>] [[-Type] <String>][WorkingDirectory <String>]
  [<CommonParameters>]
 ```
 
@@ -34,7 +34,7 @@ Start-Job [-DefinitionName] <String> [[-DefinitionPath] <String>] [[-Type] <Stri
 
 ```
 Start-Job [-Name <String>] [-Credential <PSCredential>] -LiteralPath <String>
- [-Authentication <AuthenticationMechanism>] [[-InitializationScript] <ScriptBlock>] [-RunAs32]
+ [-Authentication <AuthenticationMechanism>] [[-InitializationScript] <ScriptBlock>][WorkingDirectory <String>] [-RunAs32]
  [-PSVersion <Version>] [-InputObject <PSObject>] [-ArgumentList <Object[]>] [<CommonParameters>]
 ```
 
@@ -42,7 +42,7 @@ Start-Job [-Name <String>] [-Credential <PSCredential>] -LiteralPath <String>
 
 ```
 Start-Job [-Name <String>] [-Credential <PSCredential>] [-FilePath] <String>
- [-Authentication <AuthenticationMechanism>] [[-InitializationScript] <ScriptBlock>] [-RunAs32]
+ [-Authentication <AuthenticationMechanism>] [[-InitializationScript] <ScriptBlock>][WorkingDirectory <String>][-RunAs32]
  [-PSVersion <Version>] [-InputObject <PSObject>] [-ArgumentList <Object[]>] [<CommonParameters>]
 ```
 
@@ -198,6 +198,18 @@ Server01
 Server02
 Server03
 Server04
+```
+
+### Example 8: Set the working directory to a background job
+
+This example starts a job that has `$PSHOME` as its working directory.
+
+```powershell
+$jb = Start-Job -WorkingDirectory $PSHOME { "Hi from $PWD." }; Receive-Job -AutoRemove -Wait $jb
+```
+
+```Output
+Hi from C:\Program Files\PowerShell\6.0.0-beta.4
 ```
 
 `Start-Job` uses the **ScriptBlock** parameter to run `Get-Content` with the `$input` automatic
@@ -515,6 +527,22 @@ Aliases:
 Required: False
 Position: 2
 Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -WorkingDirectory
+
+Specifies the initial working directory(location) of the background job. If it is not specified it defaults to `$HOME`.
+
+```yaml
+Type: String
+Parameter Sets: All
+Aliases:
+
+Required: False
+Position: Named
+Default value: $HOME on Unix (macOS, Linux) and $HOME\Documents on Windows
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
