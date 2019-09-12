@@ -447,7 +447,7 @@ Accept wildcard characters: False
 ### -ToSession
 
 Specifies the **PSSession** object to which a remote file is being copied. When you use this
-parameter, the **Path** and **LiteralPath** parameters refer to the local path on the remote
+parameter, the **Destination** parameter refers to the local path on the remote
 machine.
 
 ```yaml
