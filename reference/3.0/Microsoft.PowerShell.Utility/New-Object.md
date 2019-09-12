@@ -197,8 +197,10 @@ Two
 Three
 ```
 
-Wrapping `$array` in another array prevents PowerShell from attempting to bind the three members of
-of `$array` to parameters of the constructor.
+The first attempt to create the object in this example fails. PowerShell attempted to bind the three
+members of `$array` to parameters of the constructor but the constructor does not take three
+parameter. Wrapping `$array` in another array prevents PowerShell from attempting to bind the three
+members of `$array` to parameters of the constructor.
 
 ## PARAMETERS
 
