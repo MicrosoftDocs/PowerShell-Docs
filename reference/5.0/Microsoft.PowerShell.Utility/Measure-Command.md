@@ -104,6 +104,10 @@ TotalSeconds      : 0.0122672
 TotalMilliseconds : 12.2672
 ```
 
+### Example 4: Displaying output of measured command
+
+To display output of expression in `Measure-Command` you can use a pipe to `Out-Default`.
+
 ```powershell
 # Perform the same operation as above adding Out-Default to every execution.
 # This will show that the ScriptBlock is in fact executing for every item.
