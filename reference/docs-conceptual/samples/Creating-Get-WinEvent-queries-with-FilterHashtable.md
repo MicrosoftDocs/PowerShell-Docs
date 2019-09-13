@@ -1,5 +1,5 @@
 ---
-ms.date: 03/18/2019
+ms.date: 09/13/2019
 title: Creating Get-WinEvent queries with FilterHashtable
 ---
 
@@ -18,9 +18,11 @@ When you work with large event logs, it's not efficient to send objects down the
 log data. For example, the following commands are inefficient to filter the
 **Microsoft-Windows-Defrag** logs:
 
-`Get-EventLog -LogName Application | Where-Object Source -Match defrag`
+```powershell
+Get-EventLog -LogName Application | Where-Object Source -Match defrag
 
-`Get-WinEvent -LogName Application | Where-Object { $_.ProviderName -Match 'defrag' }`
+Get-WinEvent -LogName Application | Where-Object { $_.ProviderName -Match 'defrag' }
+```
 
 The following command uses a hash table that improves the performance:
 
@@ -44,7 +46,8 @@ For more information, see the
 
 To build efficient queries, use the `Get-WinEvent` cmdlet with the **FilterHashtable** parameter.
 **FilterHashtable** accepts a hash table as a filter to get specific information from Windows event
-logs. A hash table uses **key/value** pairs. For more information about hash tables, see [about_Hash_Tables](/powershell/module/microsoft.powershell.core/about/about_hash_tables).
+logs. A hash table uses **key/value** pairs. For more information about hash tables, see
+[about_Hash_Tables](/powershell/module/microsoft.powershell.core/about/about_hash_tables).
 
 If the **key/value** pairs are on the same line, they must be separated by a semicolon. If each
 **key/value** pair is on a separate line, the semicolon isn't needed. For example, this article
@@ -60,19 +63,36 @@ documentation for the [Get-WinEvent](/powershell/module/microsoft.powershell.dia
 The following table displays the key names, data types, and whether wildcard characters are accepted
 for a data value.
 
-| Key name     | Value data type    | Accepts wildcard characters? |
-|------------- | ------------------ | ---------------------------- |
-| LogName      | `<String[]>`       | Yes |
-| ProviderName | `<String[]>`       | Yes |
-| Path         | `<String[]>`       | No  |
-| Keywords     | `<Long[]>`         | No  |
-| ID           | `<Int32[]>`        | No  |
-| Level        | `<Int32[]>`        | No  |
-| StartTime    | `<DateTime>`       | No  |
-| EndTime      | `<DateTime>`       | No  |
-| UserID       | `<SID>`            | No  |
-| Data         | `<String[]>`       | No  |
-| *            | `<String[]>`       | No  |
+|    Key name    | Value data type | Accepts wildcard characters? |
+| -------------- | --------------- | ---------------------------- |
+| LogName        | `<String[]>`    | Yes                          |
+| ProviderName   | `<String[]>`    | Yes                          |
+| Path           | `<String[]>`    | No                           |
+| Keywords       | `<Long[]>`      | No                           |
+| ID             | `<Int32[]>`     | No                           |
+| Level          | `<Int32[]>`     | No                           |
+| StartTime      | `<DateTime>`    | No                           |
+| EndTime        | `<DateTime>`    | No                           |
+| UserID         | `<SID>`         | No                           |
+| Data           | `<String[]>`    | No                           |
+| \<named-data\> | `<String[]>`    | No                           |
+
+The \<named-data\> key represents a named event data field. For example, the Perflib event 1008
+can contain the following event data:
+
+```xml
+<EventData>
+  <Data Name="Service">BITS</Data>
+  <Data Name="Library">C:\Windows\System32\bitsperf.dll</Data>
+  <Data Name="Win32Error">2</Data>
+</EventData>
+```
+
+You can query for these events using the following command:
+
+```powershell
+Get-WinEvent -FilterHashtable @{LogName='Application'; 'Service'='Bits'}
+```
 
 ## Building a query with a hash table
 
