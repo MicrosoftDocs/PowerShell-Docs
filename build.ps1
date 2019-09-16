@@ -37,6 +37,7 @@ Get-ChildItem $ReferenceDocset -Directory -Exclude $excludeList | ForEach-Object
     $job = Start-ThreadJob -Name $_.Name -ArgumentList @($SkipCabs,$pandocExePath,$PSScriptRoot,$_) -ScriptBlock {
         param($SkipCabs, $pandocExePath, $WorkingDirectory, $DocSet)
 
+        $tempDir = [System.IO.Path]::GetTempPath()
         $workingDir = Join-Path $tempDir $DocSet.Name
         $workingDir = New-Item -ItemType Directory -Path $workingDir -Force
         Set-Location $WorkingDir
