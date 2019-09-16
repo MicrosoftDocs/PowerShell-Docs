@@ -5,9 +5,9 @@
        cd C:\temp
        git clone https://github.com/MicrosoftDocs/PowerShell-Docs.git
 
-    2. Run make-updatedhelp.ps1 for the version folder you want to build
+    2. Run build-updatedhelp.ps1 for the version folder you want to build
 
-      .\make-updatedhelp.ps1 -sourceFolder C:\temp\PowerShell-Docs\reference\5.1 -Verbose
+      .\build-updatedhelp.ps1 -sourceFolder C:\temp\PowerShell-Docs\reference\5.1 -Verbose
 
     3. Run Update-Help  to install the newly built help
 
@@ -68,7 +68,7 @@ function Get-ContentWithoutHeader {
         }
     }
     if ($end -gt $start) {
-        Write-Output ($doc[$end..$($doc.count)] -join "`r`n")
+        Write-Output ($doc[$end..$($doc.count)] -join ([Environment]::Newline))
     }
     else {
         Write-Output ($doc -join "`r`n")
