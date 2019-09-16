@@ -8,17 +8,18 @@ $global:ProgressPreference = 'SilentlyContinue'
 if ($ShowProgress) { $ProgressPreference = 'Continue' }
 
 [Net.ServicePointManager]::SecurityProtocol = [Net.ServicePointManager]::SecurityProtocol -bor [Net.SecurityProtocolType]::Tls12
+$tempDir = [System.IO.Path]::GetTempPath()
 
 # Pandoc source URL
-$panDocVersion = "2.0.6"
-$pandocSourceURL = "https://github.com/jgm/pandoc/releases/download/$panDocVersion/pandoc-$panDocVersion-windows.zip"
+$panDocVersion = "2.7.3"
+$pandocSourceURL = "https://github.com/jgm/pandoc/releases/download/$panDocVersion/pandoc-$panDocVersion-windows-x86_64.zip"
 
-$pandocDestinationPath = New-Item (Join-Path ([System.IO.Path]::GetTempPath()) "PanDoc") -ItemType Directory -Force
-$pandocZipPath = Join-Path $pandocDestinationPath "pandoc-$panDocVersion-windows.zip"
+$pandocDestinationPath = New-Item (Join-Path $tempDir "pandoc") -ItemType Directory -Force
+$pandocZipPath = Join-Path $pandocDestinationPath "pandoc-$panDocVersion-windows-x86_64.zip"
 Invoke-WebRequest -Uri $pandocSourceURL -OutFile $pandocZipPath
 
-Expand-Archive -Path (Join-Path $pandocDestinationPath "pandoc-$panDocVersion-windows.zip") -DestinationPath $pandocDestinationPath -Force
-$pandocExePath = Join-Path (Join-Path $pandocDestinationPath "pandoc-$panDocVersion") "pandoc.exe"
+Expand-Archive -Path $pandocZipPath -DestinationPath $pandocDestinationPath -Force
+$pandocExePath = Join-Path (Join-Path $pandocDestinationPath "pandoc-$panDocVersion-windows-x86_64") "pandoc.exe"
 
 # Install ThreadJob if not available
 $threadJob = Get-Module ThreadJob -ListAvailable
@@ -36,7 +37,6 @@ Get-ChildItem $ReferenceDocset -Directory -Exclude $excludeList | ForEach-Object
     $job = Start-ThreadJob -Name $_.Name -ArgumentList @($SkipCabs,$pandocExePath,$PSScriptRoot,$_) -ScriptBlock {
         param($SkipCabs, $pandocExePath, $WorkingDirectory, $DocSet)
 
-        $tempDir = [System.IO.Path]::GetTempPath()
         $workingDir = Join-Path $tempDir $DocSet.Name
         $workingDir = New-Item -ItemType Directory -Path $workingDir -Force
         Set-Location $WorkingDir
@@ -112,7 +112,7 @@ Get-ChildItem $ReferenceDocset -Directory -Exclude $excludeList | ForEach-Object
 
                     $pandocArgs = @(
                         "--from=gfm",
-                        "--to=plain+multiline_tables+inline_code_attributes",
+                        "--to=plain+multiline_tables",
                         "--columns=75",
                         "--output=$aboutFileOutputFullName",
                         "--quiet"
