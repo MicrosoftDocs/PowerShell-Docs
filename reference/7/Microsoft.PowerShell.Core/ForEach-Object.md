@@ -29,6 +29,13 @@ ForEach-Object [-InputObject <PSObject>] [-MemberName] <String> [-ArgumentList <
  [<CommonParameters>]
 ```
 
+### ParallelParameterSet
+
+```
+ForEach-Object -Parallel <scriptblock> [-InputObject <PSObject>] [-ThrottleLimit <int>] [-TimeoutSeconds <int>] 
+[-AsJob] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
 ## DESCRIPTION
 
 The **ForEach-Object** cmdlet performs an operation on each item in a collection of input objects.
@@ -58,6 +65,16 @@ Starting in Windows PowerShell 3.0, there are two different ways to construct a 
   When using the script block format, in addition to using the script block that describes the operations that are performed on each input object, you can provide two additional script blocks.
   The Begin script block, which is the value of the *Begin* parameter, runs before this cmdlet processes the first input object.
   The End script block, which is the value of the *End* parameter, runs after this cmdlet processes the last input object.
+
+- **Parallel running script block**.
+  Beginning with PowerShell 7.0, a third parameter set is available that runs each script block in parallel.
+  There is a `-ThrottleLimit` parameter that limits the number of parallel scripts running at a time.
+  As before, use the `$_` variable to represent the current input object in the script block.
+  Use the `$using:` keyword to pass variable references to the running script.
+
+  For example, the following will execute script blocks in parallel for all five input objects.
+
+  `$Message = "Output:"; 1..5 | ForEach-Object -Parallel { Start-Sleep 1; "$using:Message $_" }`
 
 ## EXAMPLES
 
@@ -185,6 +202,111 @@ The output of these three commands, shown below, is identical.
 
 **Split** is just one of many useful methods of strings.
 To see all of the properties and methods of strings, pipe a string to the `Get-Member` cmdlet.
+
+### Example 8: Run slow script in parallel batches
+
+```powershell
+$Message = "Output:"
+
+1..8 | ForEach-Object -Parallel {
+    "$using:Message $_"
+    Start-Sleep 1
+} -ThrottleLimit 4
+```
+
+```output
+Output: 1
+Output: 2
+Output: 3
+Output: 4
+Output: 5
+Output: 6
+Output: 7
+Output: 8
+```
+
+This script runs a simple script block that evaluates a string and sleeps for one second.
+The *ThrottleLimit* parameter value is set to 4 so that the input is processed in batches of four.
+The `$using:` keyword is used to pass the `$Message` variable into each parallel script block.
+
+### Example 9: Retrieve log entries in parallel
+
+```powershell
+$logNames = 'Security','Application','System','Windows PowerShell','Microsoft-Windows-Store/Operational'
+
+$logEntries = $logNames | ForEach-Object -Parallel {
+    Get-WinEvent -LogName $_ -MaxEvents 10000
+} -ThrottleLimit 5
+
+$logEntries.Count
+```
+
+```output
+50000
+```
+
+This script retrieves 50,000 log entries from 5 system logs on a local Windows machine.
+The *Parallel* parameter specifies the script block that is run in parallel for each input log name.
+The *ThrottleLimit* parameter ensures that all five script blocks run at the same time.
+
+### Example 10: Run in parallel as a job
+
+```powershell
+$job = 1..10 | ForEach-Object -Parallel {
+    "Output: $_"
+    Start-Sleep 1
+} -ThrottleLimit 2 -AsJob
+
+$job | Receive-Job -Wait
+```
+
+```output
+Output: 1
+Output: 2
+Output: 3
+Output: 4
+Output: 5
+Output: 6
+Output: 7
+Output: 8
+Output: 9
+Output: 10
+```
+
+This script runs a simple script block in parallel, two at a time.
+A job object is returned that collects output data and monitors running state.
+The job object then is piped to the `Receive-Job` cmdlet with the `-Wait` switch parameter.
+And this streams output data to the console, just as if `ForEach-Object -Parallel` was run without `-AsJob`.
+
+### Example 11: Using thread safe variable references
+
+```powershell
+$threadSafeDictionary = [System.Collections.Concurrent.ConcurrentDictionary[string,object]]::new()
+Get-Process | ForEach-Object -Parallel {
+    $dict = $using:threadSafeDictionary
+    $dict.TryAdd($_.ProcessName, $_)
+}
+
+$threadSafeDictionary["pwsh"]
+```
+
+```output
+ NPM(K)    PM(M)      WS(M)     CPU(s)      Id  SI ProcessName
+ ------    -----      -----     ------      --  -- -----------
+     82    82.87     130.85      15.55    2808   2 pwsh
+```
+
+This script invokes script blocks in parallel to collect uniquely named Process objects.
+A single instance of a ConcurrentDictionary is passed to each script block to collect the objects.
+Since the ConcurrentDictionary is thread safe, it is safe to modify its state by each parallel script.
+A non thread safe object, such as System.Collections.Generic.Dictionary, would not be safe to use here.
+
+> [!NOTE]
+> This example is a very inefficient use of `-Parallel` parameter.
+> The script simply adds the input object to a concurrent dictionary object.
+> It is trivial and not worth the overhead of invoking each script in a separate thread.
+> Running `ForEach-Object` normally without the `-Parallel` switch is much more efficient and faster.
+> This example is only intended to demonstrate how to use thread safe variables.
 
 ## PARAMETERS
 
@@ -316,6 +438,89 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -Parallel
+
+Specifies the script block to be used for parallel processing of input objects.
+Enter a script block that describes the operation.
+
+This parameter was introduced in PowerShell 7.0.
+
+```yaml
+Type: ScriptBlock
+Parameter Sets: ParallelParameterSet
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ThrottleLimit
+
+Specifies the number of script blocks that will run at a time.
+Input objects will be blocked until the running script block count falls below the `-ThrottleLimit`.
+The default value is `5`.
+
+This parameter was introduced in PowerShell 7.0.
+
+```yaml
+Type: int
+Parameter Sets: ParallelParameterSet
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -TimeoutSeconds
+
+Specifies the number of seconds to wait for all input to be processed in parallel.
+After the specified timeout time, all running scripts will be stopped.
+And any remaining input objects to be processed will be ignored.
+Default value of `0` disables the timeout, and `ForEach-Object -Parallel` can run indefinitely.
+Typing `Ctrl+C` at the command line will also stop a running `ForEach-Object -Parallel` command.
+This parameter cannot be used along with the `-AsJob` parameter.
+
+This parameter was introduced in PowerShell 7.0.
+
+```yaml
+Type: int
+Parameter Sets: ParallelParameterSet
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -AsJob
+
+Causes the parallel invocation to run as a PowerShell job.
+A single job object is returned instead of output from the running script blocks.
+The job object contains child jobs for each parallel script block that runs.
+The job object can be used by all PowerShell job cmdlets, to monitor running state and retrieve data.
+
+This parameter was introduced in PowerShell 7.0.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: ParallelParameterSet
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Confirm
 
 Prompts you for confirmation before running the cmdlet.
@@ -367,10 +572,34 @@ This cmdlet returns objects that are determined by the input.
 
 ## NOTES
 
-- The `ForEach-Object` cmdlet works much like the **Foreach** statement, except that you cannot pipe
-  input to a **Foreach** statement. For more information about the **Foreach** statement, see [about_Foreach](./About/about_Foreach.md).
-- Starting in PowerShell 4.0, `Where` and `ForEach` methods were added for use with collections.
-- You can read more about these new methods here [about_arrays](./About/about_Arrays.md)
+> [!NOTE]
+> The `ForEach-Object` cmdlet works much like the **Foreach** statement, except that you cannot pipe
+> input to a **Foreach** statement. For more information about the **Foreach** statement, see [about_Foreach](./About/about_Foreach.md).
+
+> [!NOTE]
+> Starting in PowerShell 4.0, `Where` and `ForEach` methods were added for use with collections.
+> You can read more about these new methods here [about_arrays](./About/about_Arrays.md)
+
+> [!NOTE]
+> The `ForEach-Object -Parallel` parameter set uses PowerShell's internal API to run each script block.
+> This is significantly more overhead than running `ForEach-Object` normally with sequential processing.
+> Consequently it is important to use `-Parallel` where it provides the most benefit.
+> And this is where the overhead of running in parallel is small compared to work the script performs.
+> Such as for compute intensive scripts on multi-core machines.
+> Or scripts that spend time waiting for results or doing file operations.
+> Using the `-Parallel` parameter can cause scripts to run much slower than normal.
+> Especially if the running scripts are trivial (such as simple string evaluation `"Hello: $There"`).
+> Experiment with `-Parallel` to discover where it can be beneficial.
+
+> [!IMPORTANT]
+> The `ForEach-Object -Parallel` parameter set runs script blocks in parallel on separate process threads.
+> The `$using:` keyword allows passing variable references from the cmdlet invocation thread to each
+> running script block thread.
+> Since the script blocks run in different threads, the object variables passed by reference must be
+> used safely.
+> Generally it is safe to read from referenced objects that don't change.
+> But if the object state is being modified then you must used thread safe objects,
+> such as .Net System.Collection.Concurrent types (See Example 11).
 
 ## RELATED LINKS
 
