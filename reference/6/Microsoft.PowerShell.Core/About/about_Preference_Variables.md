@@ -47,7 +47,7 @@ The following table lists the preference variables and their default values.
 | `$PSModuleAutoLoadingPreference` | All |
 | `$PSSessionApplicationName`      | WSMAN |
 | `$PSSessionConfigurationName`    | `http://schemas.microsoft.com/PowerShell/microsoft.PowerShell` |
-| `$PSSessionOption`               | See [$PSSessionOption](#$pssessionoption)|
+| `$PSSessionOption`               | See [$PSSessionOption](#pssessionoption)|
 | `$VerbosePreference`             | SilentlyContinue |
 | `$WarningPreference`             | Continue |
 | `$WhatIfPreference`              | 0 |
