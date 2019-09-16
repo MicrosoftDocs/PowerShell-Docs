@@ -27,6 +27,7 @@ TableColumnItem Element for TableColumnItems for TableControl (Format)
 ```xml
 <TableColumnItem>
   <Alignment>Left, Right, or Center</Alignment>
+  <FormatString>FormatPattern</FormatString>
   <PropertyName>Nameof.NetProperty</PropertyName>
   <ScriptBlock>ScriptToEvaluate</ScriptBlock>
 </TableColumnItem>
