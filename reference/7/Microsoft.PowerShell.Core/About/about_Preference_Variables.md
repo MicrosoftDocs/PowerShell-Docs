@@ -364,146 +364,103 @@ The valid values are as follows:
   `$ErrorActionPreference` variable.
 
 The `$ErrorActionPreference` and **ErrorAction** parameter don't affect how
-PowerShell responds to terminating errors that stop cmdlet processing.
-
-For more information about the **ErrorAction** common parameter, see [about_CommonParameters](about_CommonParameters.md).
+PowerShell responds to terminating errors that stop cmdlet processing. For more
+information about the **ErrorAction** common parameter, see [about_CommonParameters](about_CommonParameters.md).
 
 #### Examples
 
-These examples show the effect of the different values of
-`$ErrorActionPreference` and the **ErrorAction** parameter to override the
-preference for a single command.
+These examples show the effect of the different values of the
+`$ErrorActionPreference` variable. The **ErrorAction** parameter is used to
+override the `$ErrorActionPreference` value.
 
-This example shows the `$ErrorActionPreference` default value, **Continue**.
-
-```powershell
-$ErrorActionPreference
-```
-
-```Output
-Continue
-```
-
-This example shows a non-terminating error.
-The message is displayed and processing continues.
-
-```powershell
-Write-Error -Message "Hello, World"
-```
-
-```Output
-Write-Error -Message "Hello, World" : Hello, World
-```
-
-In this example, the error message is displayed and execution continues.
-
-```powershell
-Write-Error -Message "Hello, World" : Hello, World
-```
-
-```Output
-Write-Error : A positional parameter cannot be found that accepts argument ':'.
-At line:1 char:1
-+ Write-Error -Message "Hello, World" : Hello, World
-```
-
-In this example, the **ErrorAction** parameter is set to a value of
-**SilentlyContinue**. The error message isn't displayed and execution
+This example shows the `$ErrorActionPreference` default value, **Continue**. A
+non-terminating error is generated. The message is displayed and processing
 continues.
 
-```powershell
-Write-Error -Message "Hello, World" -ErrorAction:SilentlyContinue
+```
+PS> $ErrorActionPreference = "Continue"
+PS> # Display the value of the preference.
+PS> $ErrorActionPreference
+Continue
+PS> # Generate a non-terminating error.
+PS> Write-Error -Message  "Hello, World"
+Write-Error -Message  "Hello, World" : Hello, World
++ CategoryInfo          : NotSpecified: (:) [Write-Error],WriteErrorException
++ FullyQualifiedErrorId : Microsoft.PowerShell.Commands.WriteErrorException
+PS> # The error message is displayed and execution continues.
+PS> # Use the ErrorAction parameter with a value of "SilentlyContinue".
+PS> Write-Error -Message  "Hello, World" -ErrorAction:SilentlyContinue
+PS> # The error message isn't displayed and execution continues.
 ```
 
 This example shows the `$ErrorActionPreference` set to **SilentlyContinue**.
 The error message is suppressed.
 
-```powershell
-$ErrorActionPreference = "SilentlyContinue"
-Write-Error -Message "Hello, World"
 ```
-
-This example uses the **ErrorAction** parameter with a value of **Continue**.
-The error message is displayed and execution continues.
-
-```powershell
-Write-Error "Hello, World" -ErrorAction:Continue
-```
-
-```Output
-Write-Error "Hello, World" -ErrorAction:Continue : Hello, World
+PS> # Display the value of the preference
+PS> $ErrorActionPreference = "SilentlyContinue"
+PS> # Generate an error message
+PS> Write-Error -Message "Hello, World"
+PS> # Error message is suppressed
+PS> # Use the ErrorAction parameter with a value of "Continue"
+PS> Write-Error -Message "Hello, World" -ErrorAction:Continue
+Write-Error -Message "Hello, World" -ErrorAction:Continue : Hello, World
 + CategoryInfo          : NotSpecified: (:) [Write-Error], WriteErrorException
 + FullyQualifiedErrorId : Microsoft.PowerShell.Commands.WriteErrorException
 ```
 
 This example shows the effect of a real error. In this case, the command gets a
-non-existent file, `nofile.txt`. The example uses the **ErrorAction** parameter
-to override the `$ErrorActionPreference` value of **SilentlyContinue**.
+non-existent file, `nofile.txt`.
 
-The error message is suppressed when the `Get-ChildItem` command is run.
-
-```powershell
-Get-ChildItem -Path C:\nofile.txt
 ```
-
-The `$ErrorActionPreference` value is changed to **Continue**. An error message
-is displayed when the `Get-ChildItem` command is run.
-
-```powershell
-$ErrorActionPreference = "Continue"
-Get-ChildItem -Path C:\nofile.txt
-```
-
-```Output
+PS> # Display the value of the preference.
+PS> $ErrorActionPreference
+SilentlyContinue
+PS> Get-ChildItem -Path C:\nofile.txt
+PS> # Error message is suppressed.
+PS> # Change the value to Continue.
+PS> $ErrorActionPreference = "Continue"
+PS> Get-ChildItem -Path C:\nofile.txt
 Get-ChildItem : Cannot find path 'C:\nofile.txt' because it does not exist.
 At line:1 char:1
 + Get-ChildItem -Path C:\nofile.txt
-```
-
-When the **ErrorAction** parameter is used with the **SilentlyContinue** value,
-the error message is suppressed.
-
-```powershell
-Get-ChildItem -Path C:\nofile.txt -ErrorAction SilentlyContinue
-```
-
-When the `$ErrorActionPreference` value is set to **Inquire**, the user is
-prompted for confirmation. By responding with `Y`, a message is displayed if
-the file doesn't exist.
-
-```powershell
-$ErrorActionPreference = "Inquire"
-Get-ChildItem -Path C:\nofile.txt
-```
-
-```Output
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
++ CategoryInfo : ObjectNotFound: (C:\nofile.txt:String) [Get-ChildItem],
+    ItemNotFoundException
++ FullyQualifiedErrorId : PathNotFound,Microsoft.PowerShell.Commands.
+    GetChildItemCommand
+PS> # Use the ErrorAction parameter
+PS> Get-ChildItem -Path C:\nofile.txt -ErrorAction SilentlyContinue
+PS> # Error message is suppressed.
+PS> # Change the value to Inquire.
+PS> $ErrorActionPreference = "Inquire"
+PS> Get-ChildItem -Path C:\nofile.txt
 Confirm
 Cannot find path 'C:\nofile.txt' because it does not exist.
 [Y] Yes  [A] Yes to All  [H] Halt Command  [?] Help (default is "Y"): Y
-
 Get-ChildItem : Cannot find path 'C:\nofile.txt' because it does not exist.
 At line:1 char:1
 + Get-ChildItem -Path C:\nofile.txt
-```
-
-This example changes the `$ErrorActionPreference` value to **Continue**. The
-**ErrorAction** parameter overrides the preference value with the value
-**Inquire**. The **Inquire** value prompts the user for confirmation. By
-responding with `H`, a message is displayed that the command was stopped.
-
-```powershell
-$ErrorActionPreference = "Continue"
-Get-ChildItem -Path C:\nofile.txt -ErrorAction Inquire
-```
-
-```Output
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
++ CategoryInfo : ObjectNotFound: (C:\nofile.txt:String) [Get-ChildItem],
+   ItemNotFoundException
++ FullyQualifiedErrorId : PathNotFound,Microsoft.PowerShell.Commands.
+   GetChildItemCommand
+PS> # Change the value to Continue.
+PS> $ErrorActionPreference = "Continue"
+PS> # Use the ErrorAction parameter to override the preference value.
+PS> Get-Childitem C:\nofile.txt -ErrorAction "Inquire"
 Confirm
 Cannot find path 'C:\nofile.txt' because it does not exist.
-[Y] Yes  [A] Yes to All  [H] Halt Command  [?] Help (default is "Y"): H
-
-Get-ChildItem : The running command stopped because the user selected the Stop option.
+[Y] Yes  [A] Yes to All  [H] Halt Command  [?] Help (default is "Y"): Y
+Get-Childitem : Cannot find path 'C:\nofile.txt' because it does not exist.
 At line:1 char:1
-+ Get-ChildItem -Path C:\nofile.txt -ErrorAction Inquire
++ Get-Childitem C:\nofile.txt -ErrorAction "Inquire"
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
++ CategoryInfo : ObjectNotFound: (C:\nofile.txt:String) [Get-ChildItem],
+   ItemNotFoundException
++ FullyQualifiedErrorId : PathNotFound,Microsoft.PowerShell.Commands.
+   GetChildItemCommand
 ```
 
 ### \$ErrorView
