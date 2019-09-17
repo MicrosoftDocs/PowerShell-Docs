@@ -21,6 +21,10 @@ param(
     [string]$sourceFolder
 )
 
+# Turning off the progress display, by default
+$savedProgressPreference = $global:ProgressPreference
+$global:ProgressPreference = 'SilentlyContinue'
+
 $tempDir = [System.IO.Path]::GetTempPath()
 
 # Pandoc source URL
@@ -139,3 +143,5 @@ Get-ChildItem $VersionFolder -Directory | ForEach-Object -Process {
         Write-Error -Message "PlatyPS failure: $ModuleName -- $Version" -Exception $_
     }
 }
+
+$global:ProgressPreference = $savedProgressPreference
