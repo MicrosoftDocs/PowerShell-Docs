@@ -834,7 +834,7 @@ The syntax is as follows:
 Param(
     [Parameter(Mandatory)]
     [ArgumentCompleter({
-        param ($commandName, $wordToComplete, $commandAst, $fakeBoundParameter)
+        param ($commandName, $parameterName, $wordToComplete, $commandAst, $fakeBoundParameter)
         # Perform calculation of tab completed values here.
     })]
 )
