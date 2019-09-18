@@ -444,8 +444,8 @@ $(Get-WmiObject win32_Directory)
 
 #### Ternary operator `? <if-true> : <if-false>`
 
-You can use the ternary operator as a replacement for `if-else` statement in simple conditional
-cases. The ternary operator was introduced in PowerShell 7.0.
+You can use the ternary operator as a replacement for the `if-else` statement in
+simple conditional cases. The ternary operator was introduced in PowerShell 7.0.
 
 For more information, see [about_If](about_If.md).
 
