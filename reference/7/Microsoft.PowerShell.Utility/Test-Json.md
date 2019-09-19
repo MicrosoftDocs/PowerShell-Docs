@@ -95,16 +95,16 @@ $schema = @'
 True
 ```
 
-For more information, see [JSON Schema](https://json-schema.org/)
+For more information, see [JSON Schema](https://json-schema.org/).
 
 ## PARAMETERS
 
 ### -Json
 
 Specifies the JSON string to test for validity. Enter a variable that contains the string, or type a
-command or expression that gets the string. You can also pipe a string to `Test-Json`
+command or expression that gets the string. You can also pipe a string to `Test-Json`.
 
-The `Json` parameter is required.
+The **Json** parameter is required.
 
 ```yaml
 Type: String
@@ -124,7 +124,7 @@ Specifies a Schema to validate the JSON input against. If passed `Test-Json` wil
 Json input conforms to the spec specified by the **Schema** parameter and return `$True` only if the
 input conforms to the provided Schema.
 
-For more information, see [JSON Schema](https://json-schema.org/)
+For more information, see [JSON Schema](https://json-schema.org/).
 
 ```yaml
 Type: String
@@ -156,7 +156,7 @@ You can pipe a JSON string to `Test-Json`.
 
 ## NOTES
 
-The `Test-Json` cmdlet is implemented by using the [NJsonSchema Class](https://github.com/RSuter/NJsonSchema)
+The `Test-Json` cmdlet is implemented by using the [NJsonSchema Class](https://github.com/RSuter/NJsonSchema).
 
 ## RELATED LINKS
 
