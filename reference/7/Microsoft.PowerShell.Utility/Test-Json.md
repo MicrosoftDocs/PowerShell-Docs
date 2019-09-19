@@ -1,5 +1,5 @@
 ---
-ms.date:  10/10/2018
+ms.date:  09/19/2019
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -20,62 +20,80 @@ Test-Json [-Json] <string> [[-Schema] <string>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-The Test-Json cmdlet tests whether a string is a valid JavaScript Object Notation (JSON) document and can optionally very that JSON document against a provided schema.
 
-The verified string can then be used with the ConvertFrom-Json cmdlet convert a JSON-formatted string to a JSON object, which is easily managed in PowerShell or sent to another program or web service that access JSON input.
+The Test-Json cmdlet tests whether a string is a valid JavaScript Object Notation (JSON) document
+and can optionally very that JSON document against a provided schema.
 
-Many web sites use JSON instead of XML to serialize data for communication between servers and web-based apps.
+The verified string can then be used with the `ConvertFrom-Json` cmdlet convert a JSON-formatted
+string to a JSON object, which is easily managed in PowerShell or sent to another program or web
+service that access JSON input.
 
-This cmdlet was introduced in Windows PowerShell 6.1
+Many web sites use JSON instead of XML to serialize data for communication between servers and
+web-based apps.
+
+This cmdlet was introduced in PowerShell 6.1
 
 ## EXAMPLES
 
 ### Example 1: Test if an object is valid JSON
+
+This example tests whether the input string is a valid JSON document.
+
+```powershell
+"{'name': 'Ashley', 'age': 25}" | Test-Json
 ```
-PS C:\> "{'name': 'Ashley', 'age': 25}" | Test-Json
+
+```Output
 True
 ```
-This command tests whether the input string is a valid JSON document, returning True since the string is valid JSON.
 
 ### Example 2: Test an object against a provided schema
+
+This example takes a string containing a JSON schema and compares it to an input string. Since the
+input string conforms to the schema described in the **Schema** parameter the cmdlet returns
+`$True`.
+
 ```powershell
-PS C:\> $schema = '{
->>   "definitions": {},
->>   "$schema": "http://json-schema.org/draft-07/schema#",
->>   "$id": "http://example.com/root.json",
->>   "type": "object",
->>   "title": "The Root Schema",
->>   "required": [
->>     "name",
->>     "age"
->>   ],
->>   "properties": {
->>     "name": {
->>       "$id": "#/properties/name",
->>       "type": "string",
->>       "title": "The Name Schema",
->>       "default": "",
->>       "examples": [
->>         "Ashley"
->>       ],
->>       "pattern": "^(.*)$"
->>     },
->>     "age": {
->>       "$id": "#/properties/age",
->>       "type": "integer",
->>       "title": "The Age Schema",
->>       "default": 0,
->>       "examples": [
->>         25
->>       ]
->>     }
->>   }
->> }'
-PS C:\> "{'name': 'Ashley', 'age': 25}" | Test-Json -schema $schema
-True
+$schema = @'
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://example.com/root.json",
+  "type": "object",
+  "title": "The Root Schema",
+  "required": [
+    "name",
+    "age"
+  ],
+  "properties": {
+    "name": {
+      "$id": "#/properties/name",
+      "type": "string",
+      "title": "The Name Schema",
+      "default": "",
+      "examples": [
+        "Ashley"
+      ],
+      "pattern": "^(.*)$"
+    },
+    "age": {
+      "$id": "#/properties/age",
+      "type": "integer",
+      "title": "The Age Schema",
+      "default": 0,
+      "examples": [
+        25
+      ]
+    }
+  }
+}
+'@
+"{'name': 'Ashley', 'age': 25}" | Test-Json -Schema $schema
 ```
 
-This Command takes a string containing a JSON schema and compares it to an input string.  Since the input string conforms to the schema described in the -schema argument the cmdlet returns `$True`.
+```Output
+True
+```
 
 For more information, see [JSON Schema](https://json-schema.org/)
 
@@ -83,7 +101,8 @@ For more information, see [JSON Schema](https://json-schema.org/)
 
 ### -Json
 
-Specifies the JSON string to test for validity. Enter a variable that contains the string, or type a command or expression that gets the string. You can also pipe a string to `Test-Json`
+Specifies the JSON string to test for validity. Enter a variable that contains the string, or type a
+command or expression that gets the string. You can also pipe a string to `Test-Json`
 
 The `Json` parameter is required.
 
@@ -101,7 +120,9 @@ Accept wildcard characters: False
 
 ### -Schema
 
-Specifies a Schema to validate the JSON input against.  If passed `Test-Json` will validate that the Json input conforms to the spec specified by the `-Schema` parameter and return `$True` only if the input conforms to the provided Schema.
+Specifies a Schema to validate the JSON input against. If passed `Test-Json` will validate that the
+Json input conforms to the spec specified by the **Schema** parameter and return `$True` only if the
+input conforms to the provided Schema.
 
 For more information, see [JSON Schema](https://json-schema.org/)
 
@@ -139,7 +160,7 @@ The `Test-Json` cmdlet is implemented by using the [NJsonSchema Class](https://g
 
 ## RELATED LINKS
 
-[An Introduction to JavaScript Object Notation (JSON) in JavaScript and .NET](https://msdn.microsoft.com/en-us/library/bb299886.aspx)
+[An Introduction to JavaScript Object Notation (JSON) in JavaScript and .NET](/previous-versions/dotnet/articles/bb299886(v=msdn.10))
 
 [Additional JSON Schema Details](https://json-schema.org/)
 
