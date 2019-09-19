@@ -197,52 +197,52 @@
 - name: Windows Management Framework (WMF)
   items:
     - name: Overview
-      href: overview.md
+      href: wmf/overview.md
     - name: Installation
       items:
         - name: Install and configure WMF 5.1
-          href: setup/install-configure.md
+          href: wmf/setup/install-configure.md
         - name: Uninstall WMF 5.0
-          href: setup/uninstall.md
+          href: wmf/setup/uninstall.md
     - name: What's New
       expanded: true
       items:
         - name: WMF 5.x Release Notes
-          href: whats-new/release-notes.md
+          href: wmf/whats-new/release-notes.md
         - name: Bug Fixes in WMF 5.1
-          href: whats-new/bugfixes.md
+          href: wmf/whats-new/bugfixes.md
         - name: New and updated cmdlets
-          href: whats-new/new-updated-cmdlets.md
+          href: wmf/whats-new/new-updated-cmdlets.md
         - name: Creating Custom Types using PowerShell Classes
-          href: whats-new/class-overview.md
+          href: wmf/whats-new/class-overview.md
         - name: Console Improvements in WMF 5.1
-          href: whats-new/console-improvements.md
+          href: wmf/whats-new/console-improvements.md
         - name: Improvements in PowerShell Script Debugging
-          href: whats-new/debug-overview.md
+          href: wmf/whats-new/debug-overview.md
         - name: Script Tracing and Logging
-          href: whats-new/script-logging.md
+          href: wmf/whats-new/script-logging.md
         - name: DSC Improvements in WMF 5.1
-          href: whats-new/DSC-improvements.md
+          href: wmf/whats-new/DSC-improvements.md
         - name: PowerShell Engine Improvements in WMF 5.1
-          href: whats-new/engine-improvements.md
+          href: wmf/whats-new/engine-improvements.md
         - name: Information Stream
-          href: whats-new/informationstream-overview.md
+          href: wmf/whats-new/informationstream-overview.md
         - name: Improvements to Just Enough Administration (JEA)
-          href: whats-new/jea-improvements.md
+          href: wmf/whats-new/jea-improvements.md
         - name: Improvements to Package Management in WMF 5.1
-          href: whats-new/package-management-improvements.md
+          href: wmf/whats-new/package-management-improvements.md
         - name: Software Inventory Logging (SIL)
-          href: whats-new/sil-overview.md
+          href: wmf/whats-new/sil-overview.md
         - name: Product Compatibility Status
-          href: whats-new/compatibility.md
+          href: wmf/whats-new/compatibility.md
     - name: Known Issues
       items:
         - name: Known Issues in WMF 5.0
-          href: known-issues/known-issues-50.md
+          href: wmf/known-issues/known-issues-50.md
         - name: Known Issues in WMF 5.1
-          href: known-issues/known-issues-51.md
+          href: wmf/known-issues/known-issues-51.md
         - name: Known Issues and Limitations in DSC
-          href: known-issues/known-issues-dsc.md
+          href: wmf/known-issues/known-issues-dsc.md
 - name: Sample scripts
   items:
     - name: Sample scripts for administration
