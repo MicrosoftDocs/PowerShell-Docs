@@ -15370,463 +15370,108 @@
             "redirect_document_id": false
         },
         {
-            "source_path": "wmf/5.0/audit_cms.md",
-            "redirect_url": "/powershell/wmf/whats-new/new-updated-cmdlets#cryptographic-message-syntax-cms-cmdlets",
-            "redirect_document_id": true
+            "source_path": "wmf/known-issues/known-issues-50.md",
+            "redirect_url": "/powershell/scripting/wmf/known-issues/known-issues-50",
+            "redirect_document_id": "true"
         },
         {
-            "source_path": "wmf/5.0/audit_overview.md",
-            "redirect_url": "/powershell/wmf/whats-new/new-updated-cmdlets#cryptographic-message-syntax-cms-cmdlets",
-            "redirect_document_id": false
+            "source_path": "wmf/known-issues/known-issues-51.md",
+            "redirect_url": "/powershell/scripting/wmf/known-issues/known-issues-51",
+            "redirect_document_id": "true"
         },
         {
-            "source_path": "wmf/5.0/audit_script.md",
-            "redirect_url": "/powershell/wmf/whats-new/script-logging",
-            "redirect_document_id": true
+            "source_path": "wmf/known-issues/known-issues-dsc.md",
+            "redirect_url": "/powershell/scripting/wmf/known-issues/known-issues-dsc",
+            "redirect_document_id": "true"
         },
         {
-            "source_path": "wmf/5.0/audit_transcript.md",
-            "redirect_url": "/powershell/wmf/whats-new/script-logging",
-            "redirect_document_id": false
+            "source_path": "wmf/setup/install-configure.md",
+            "redirect_url": "/powershell/scripting/wmf/setup/install-configure",
+            "redirect_document_id": "true"
         },
         {
-            "source_path": "wmf/5.0/class_base.md",
-            "redirect_url": "/powershell/wmf/whats-new/class-overview",
-            "redirect_document_id": true
+            "source_path": "wmf/setup/uninstall.md",
+            "redirect_url": "/powershell/scripting/wmf/setup/uninstall",
+            "redirect_document_id": "true"
         },
         {
-            "source_path": "wmf/5.0/class_baseconstructor.md",
-            "redirect_url": "/powershell/wmf/whats-new/class-overview",
-            "redirect_document_id": false
+            "source_path": "wmf/whats-new/bugfixes.md",
+            "redirect_url": "/powershell/scripting/wmf/whats-new/bugfixes",
+            "redirect_document_id": "true"
         },
         {
-            "source_path": "wmf/5.0/class_basemethod.md",
-            "redirect_url": "/powershell/wmf/whats-new/class-overview",
-            "redirect_document_id": false
+            "source_path": "wmf/whats-new/class-overview.md",
+            "redirect_url": "/powershell/scripting/wmf/whats-new/class-overview",
+            "redirect_document_id": "true"
         },
         {
-            "source_path": "wmf/5.0/class_interface.md",
-            "redirect_url": "/powershell/wmf/whats-new/class-overview",
-            "redirect_document_id": false
+            "source_path": "wmf/whats-new/compatibility.md",
+            "redirect_url": "/powershell/scripting/wmf/whats-new/compatibility",
+            "redirect_document_id": "true"
         },
         {
-            "source_path": "wmf/5.0/class_newtype.md",
-            "redirect_url": "/powershell/wmf/whats-new/class-overview",
-            "redirect_document_id": false
+            "source_path": "wmf/whats-new/console-improvements.md",
+            "redirect_url": "/powershell/scripting/wmf/whats-new/console-improvements",
+            "redirect_document_id": "true"
         },
         {
-            "source_path": "wmf/5.0/class_overview.md",
-            "redirect_url": "/powershell/wmf/whats-new/class-overview",
-            "redirect_document_id": false
+            "source_path": "wmf/whats-new/debug-overview.md",
+            "redirect_url": "/powershell/scripting/wmf/whats-new/debug-overview",
+            "redirect_document_id": "true"
         },
         {
-            "source_path": "wmf/5.0/debug_overview.md",
-            "redirect_url": "/powershell/wmf/whats-new/debug-overview",
-            "redirect_document_id": true
+            "source_path": "wmf/whats-new/DSC-improvements.md",
+            "redirect_url": "/powershell/scripting/wmf/whats-new/DSC-improvements",
+            "redirect_document_id": "true"
         },
         {
-            "source_path": "wmf/5.0/dsc_authoring.md",
-            "redirect_url": "/powershell/dsc/resources/resourceauthoringchecklist",
-            "redirect_document_id": true
+            "source_path": "wmf/whats-new/engine-improvements.md",
+            "redirect_url": "/powershell/scripting/wmf/whats-new/engine-improvements",
+            "redirect_document_id": "true"
         },
         {
-            "source_path": "wmf/5.0/dsc_classbasedresource.md",
-            "redirect_url": "/powershell/dsc/resources/authoringresourceclass",
-            "redirect_document_id": true
+            "source_path": "wmf/whats-new/informationstream-overview.md",
+            "redirect_url": "/powershell/scripting/wmf/whats-new/informationstream-overview",
+            "redirect_document_id": "true"
         },
         {
-            "source_path": "wmf/5.0/dsc_confighelp.md",
-            "redirect_url": "/powershell/dsc/configurations/configurations",
-            "redirect_document_id": true
+            "source_path": "wmf/whats-new/jea-improvements.md",
+            "redirect_url": "/powershell/scripting/wmf/whats-new/jea-improvements",
+            "redirect_document_id": "true"
         },
         {
-            "source_path": "wmf/5.0/dsc_directaccess.md",
-            "redirect_url": "/powershell/dsc/managing-nodes/directcallresource",
-            "redirect_document_id": true
+            "source_path": "wmf/whats-new/new-updated-cmdlets.md",
+            "redirect_url": "/powershell/scripting/wmf/whats-new/new-updated-cmdlets",
+            "redirect_document_id": "true"
         },
         {
-            "source_path": "wmf/5.0/dsc_encryptedmof.md",
-            "redirect_url": "/powershell/dsc/pull-server/securemof",
-            "redirect_document_id": true
+            "source_path": "wmf/whats-new/package-management-improvements.md",
+            "redirect_url": "/powershell/scripting/wmf/whats-new/package-management-improvements",
+            "redirect_document_id": "true"
         },
         {
-            "source_path": "wmf/5.0/dsc_freqnomultiple.md",
-            "redirect_url": "/powershell/dsc/reference/mof-classes/msft-dsclocalconfigurationmanager-getmetaconfiguration",
-            "redirect_document_id": false
+            "source_path": "wmf/whats-new/release-notes.md",
+            "redirect_url": "/powershell/scripting/wmf/whats-new/release-notes",
+            "redirect_document_id": "true"
         },
         {
-            "source_path": "wmf/5.0/dsc_getconfigurationstatus.md",
-            "redirect_url": "/powershell/dsc/troubleshooting/troubleshooting",
-            "redirect_document_id": true
+            "source_path": "wmf/whats-new/script-logging.md",
+            "redirect_url": "/powershell/scripting/wmf/whats-new/script-logging",
+            "redirect_document_id": "true"
         },
         {
-            "source_path": "wmf/5.0/dsc_identicalduplicate.md",
-            "redirect_url": "/powershell/wmf/whats-new/dsc-improvements",
-            "redirect_document_id": false
+            "source_path": "wmf/whats-new/sil-overview.md",
+            "redirect_url": "/powershell/scripting/wmf/whats-new/sil-overview",
+            "redirect_document_id": "true"
         },
         {
-            "source_path": "wmf/5.0/dsc_importdscresource.md",
-            "redirect_url": "/powershell/module/psdesiredstateconfiguration",
-            "redirect_document_id": true
-        },
-        {
-            "source_path": "wmf/5.0/dsc_improvements.md",
-            "redirect_url": "/powershell/wmf/whats-new/dsc-improvements",
-            "redirect_document_id": true
-        },
-        {
-            "source_path": "wmf/5.0/dsc_lcmstate.md",
-            "redirect_url": "/powershell/module/psdesiredstateconfiguration/Get-DscLocalConfigurationManager",
-            "redirect_document_id": true
-        },
-        {
-            "source_path": "wmf/5.0/dsc_metaconfiguration.md",
-            "redirect_url": "/powershell/dsc/reference/mof-classes/msft-dsclocalconfigurationmanager-getmetaconfiguration",
-            "redirect_document_id": true
-        },
-        {
-            "source_path": "wmf/5.0/dsc_newresources.md",
-            "redirect_url": "/powershell/wmf/whats-new/release-notes",
-            "redirect_document_id": true
-        },
-        {
-            "source_path": "wmf/5.0/dsc_nodeid.md",
-            "redirect_url": "/powershell/dsc/pull-server/pullClientConfigNames",
-            "redirect_document_id": true
-        },
-        {
-            "source_path": "wmf/5.0/dsc_partialconfig.md",
-            "redirect_url": "/powershell/dsc/pull-server/partialconfigs",
-            "redirect_document_id": true
-        },
-        {
-            "source_path": "wmf/5.0/dsc_partialconfig_mixedmode.md",
-            "redirect_url": "/powershell/dsc/pull-server/partialconfigs",
-            "redirect_document_id": false
-        },
-        {
-            "source_path": "wmf/5.0/dsc_publishconfig.md",
-            "redirect_url": "/powershell/module/psdesiredstateconfiguration/Publish-DscConfiguration",
-            "redirect_document_id": true
-        },
-        {
-            "source_path": "wmf/5.0/dsc_refreshmode.md",
-            "redirect_url": "/powershell/dsc/managing-nodes/metaConfig",
-            "redirect_document_id": true
-        },
-        {
-            "source_path": "wmf/5.0/dsc_removeconfigdoc.md",
-            "redirect_url": "/powershell/module/psdesiredstateconfiguration/Remove-DscConfigurationDocument",
-            "redirect_document_id": true
-        },
-        {
-            "source_path": "wmf/5.0/dsc_reporting.md",
-            "redirect_url": "/powershell/dsc/pull-server/reportServer",
-            "redirect_document_id": true
-        },
-        {
-            "source_path": "wmf/5.0/dsc_repository.md",
-            "redirect_url": "https://msdn.microsoft.com/powershell/dsc/pullclientconfigid",
-            "redirect_document_id": true
-        },
-        {
-            "source_path": "wmf/5.0/dsc_resourcedebugging.md",
-            "redirect_url": "https://msdn.microsoft.com/powershell/dsc/debugresource",
-            "redirect_document_id": true
-        },
-        {
-            "source_path": "wmf/5.0/dsc_runas.md",
-            "redirect_url": "https://msdn.microsoft.com/powershell/dsc/runasuser",
-            "redirect_document_id": true
-        },
-        {
-            "source_path": "wmf/5.0/dsc_setdsclcm.md",
-            "redirect_url": "/powershell/module/psdesiredstateconfiguration/Set-DscLocalConfigurationManager",
-            "redirect_document_id": true
-        },
-        {
-            "source_path": "wmf/5.0/dsc_statestatus.md",
-            "redirect_url": "/powershell/module/psdesiredstateconfiguration/Get-DscConfigurationStatus",
-            "redirect_document_id": true
-        },
-        {
-            "source_path": "wmf/5.0/dsc_sxsresource.md",
-            "redirect_url": "/powershell/dsc/configurations/sxsResource",
-            "redirect_document_id": true
-        },
-        {
-            "source_path": "wmf/5.0/dsc_testconfiguration.md",
-            "redirect_url": "/powershell/module/psdesiredstateconfiguration/Test-DscConfiguration",
-            "redirect_document_id": true
-        },
-        {
-            "source_path": "wmf/5.0/dsc_updateconfig.md",
-            "redirect_url": "/powershell/module/psdesiredstateconfiguration/Update-DscConfiguration",
-            "redirect_document_id": true
-        },
-        {
-            "source_path": "wmf/5.0/dsc_waitfor.md",
-            "redirect_url": "/powershell/dsc/reference/resources/windows/waitforallresource",
-            "redirect_document_id": true
-        },
-        {
-            "source_path": "wmf/5.0/dsc_wow64.md",
-            "redirect_url": "/powershell/wmf/whats-new/dsc-improvements",
-            "redirect_document_id": false
-        },
-        {
-            "source_path": "wmf/5.0/feedback.md",
-            "redirect_url": "/powershell/wmf/whats-new/new-updated-cmdlets",
-            "redirect_document_id": true
-        },
-        {
-            "source_path": "wmf/5.0/feedback_archive.md",
-            "redirect_url": "/powershell/wmf/whats-new/new-updated-cmdlets",
-            "redirect_document_id": false
-        },
-        {
-            "source_path": "wmf/5.0/feedback_clipboard.md",
-            "redirect_url": "/powershell/wmf/whats-new/new-updated-cmdlets",
-            "redirect_document_id": false
-        },
-        {
-            "source_path": "wmf/5.0/feedback_cmdlets.md",
-            "redirect_url": "/powershell/wmf/whats-new/new-updated-cmdlets",
-            "redirect_document_id": false
-        },
-        {
-            "source_path": "wmf/5.0/feedback_convertfromString.md",
-            "redirect_url": "/powershell/wmf/whats-new/new-updated-cmdlets",
-            "redirect_document_id": false
-        },
-        {
-            "source_path": "wmf/5.0/feedback_convertstring.md",
-            "redirect_url": "/powershell/wmf/whats-new/new-updated-cmdlets",
-            "redirect_document_id": false
-        },
-        {
-            "source_path": "wmf/5.0/feedback_fileinfo.md",
-            "redirect_url": "/powershell/wmf/whats-new/new-updated-cmdlets",
-            "redirect_document_id": false
-        },
-        {
-            "source_path": "wmf/5.0/feedback_formathex.md",
-            "redirect_url": "/powershell/wmf/whats-new/new-updated-cmdlets",
-            "redirect_document_id": false
-        },
-        {
-            "source_path": "wmf/5.0/feedback_getchilditem.md",
-            "redirect_url": "/powershell/wmf/whats-new/new-updated-cmdlets",
-            "redirect_document_id": false
-        },
-        {
-            "source_path": "wmf/5.0/feedback_moduleversionranges.md",
-            "redirect_url": "/powershell/wmf/whats-new/new-updated-cmdlets",
-            "redirect_document_id": false
-        },
-        {
-            "source_path": "wmf/5.0/feedback_newguid.md",
-            "redirect_url": "/powershell/wmf/whats-new/new-updated-cmdlets",
-            "redirect_document_id": false
-        },
-        {
-            "source_path": "wmf/5.0/feedback_nonewline.md",
-            "redirect_url": "/powershell/wmf/whats-new/new-updated-cmdlets",
-            "redirect_document_id": false
-        },
-        {
-            "source_path": "wmf/5.0/feedback_symbolic.md",
-            "redirect_url": "/powershell/wmf/whats-new/new-updated-cmdlets",
-            "redirect_document_id": false
-        },
-        {
-            "source_path": "wmf/5.0/feedback_tempfile.md",
-            "redirect_url": "/powershell/wmf/whats-new/new-updated-cmdlets",
-            "redirect_document_id": false
-        },
-        {
-            "source_path": "wmf/5.0/informationstream_overview.md",
-            "redirect_url": "/powershell/wmf/whats-new/informationstream_overview",
-            "redirect_document_id": true
-        },
-        {
-            "source_path": "wmf/5.0/install.md",
-            "redirect_url": "/powershell/wmf/5.0/requirements",
-            "redirect_document_id": true
-        },
-        {
-            "source_path": "wmf/5.0/jea_endpoint.md",
-            "redirect_url": "/powershell/scripting/learn/remoting/jea/overview",
-            "redirect_document_id": true
-        },
-        {
-            "source_path": "wmf/5.0/jea_overview.md",
-            "redirect_url": "/powershell/scripting/learn/remoting/jea/overview",
-            "redirect_document_id": false
-        },
-        {
-            "source_path": "wmf/5.0/jea_report.md",
-            "redirect_url": "/powershell/scripting/learn/remoting/jea/overview",
-            "redirect_document_id": false
-        },
-        {
-            "source_path": "wmf/5.0/limitation_dsc.md",
-            "redirect_url": "/powershell/wmf/known-issues/known-issues-dsc",
-            "redirect_document_id": true
-        },
-        {
-            "source_path": "wmf/5.0/limitation_overview.md",
-            "redirect_url": "/powershell/wmf/known-issues/known-issues-50",
-            "redirect_document_id": true
-        },
-        {
-            "source_path": "wmf/5.0/networkswitch_overview.md",
-            "redirect_url": "/powershell/wmf/whats-new/new-updated-cmdlets",
-            "redirect_document_id": false
-        },
-        {
-            "source_path": "wmf/5.0/odata_overview.md",
-            "redirect_url": "/powershell/wmf/whats-new/new-updated-cmdlets",
-            "redirect_document_id": false
-        },
-        {
-            "source_path": "wmf/5.0/oneget_cmdlets.md",
-            "redirect_url": "/powershell/wmf/whats-new/package-management-improvements",
-            "redirect_document_id": true
-        },
-        {
-            "source_path": "wmf/5.0/oneget_overview.md",
-            "redirect_url": "/powershell/wmf/whats-new/package-management-improvements",
-            "redirect_document_id": false
-        },
-        {
-            "source_path": "wmf/5.0/productincompat.md",
-            "redirect_url": "/powershell/wmf/whats-new/package-management-improvements",
-            "redirect_document_id": false
-        },
-        {
-            "source_path": "wmf/5.0/psget_module_overview.md",
-            "redirect_url": "/powershell/module/powershellget/",
-            "redirect_document_id": true
-        },
-        {
-            "source_path": "wmf/5.0/psget_modulecmdlets.md",
-            "redirect_url": "/powershell/module/powershellget/",
-            "redirect_document_id": false
-        },
-        {
-            "source_path": "wmf/5.0/psget_moduledependency.md",
-            "redirect_url": "/powershell/module/powershellget/",
-            "redirect_document_id": false
-        },
-        {
-            "source_path": "wmf/5.0/psget_modulesxsinstall.md",
-            "redirect_url": "/powershell/module/powershellget/",
-            "redirect_document_id": false
-        },
-        {
-            "source_path": "wmf/5.0/psget_psrepository.md",
-            "redirect_url": "/powershell/module/powershellget/",
-            "redirect_document_id": false
-        },
-        {
-            "source_path": "wmf/5.0/psget_script_overview.md",
-            "redirect_url": "/powershell/module/powershellget/",
-            "redirect_document_id": false
-        },
-        {
-            "source_path": "wmf/5.0/psget_scriptcmdlets.md",
-            "redirect_url": "/powershell/module/powershellget/",
-            "redirect_document_id": false
-        },
-        {
-            "source_path": "wmf/5.0/releasenotes.md",
-            "redirect_url": "/powershell/wmf/whats-new/release-notes",
-            "redirect_document_id": false
-        },
-        {
-            "source_path": "wmf/5.0/requirements.md",
-            "redirect_url": "/powershell/wmf/setup/install-configure",
-            "redirect_document_id": true
-        },
-        {
-            "source_path": "wmf/5.0/sil_overview.md",
-            "redirect_url": "/powershell/wmf/whats-new/sil-overview",
-            "redirect_document_id": true
-        },
-        {
-            "source_path": "wmf/5.0/uninstall.md",
-            "redirect_url": "/powershell/wmf/setup/uninstall",
-            "redirect_document_id": true
-        },
-        {
-            "source_path": "wmf/5.1/bugfixes.md",
-            "redirect_url": "/powershell/wmf/whats-new/bugfixes",
-            "redirect_document_id": true
-        },
-        {
-            "source_path": "wmf/5.1/catalog-cmdlets.md",
-            "redirect_url": "/powershell/wmf/whats-new/new-updated-cmdlets",
-            "redirect_document_id": false
-        },
-        {
-            "source_path": "wmf/5.1/community-resources.md",
-            "redirect_url": "/powershell/#pivot=main&panel=community",
-            "redirect_document_id": true
-        },
-        {
-            "source_path": "wmf/5.1/compatibility.md",
-            "redirect_url": "/powershell/wmf/whats-new/compatibility",
-            "redirect_document_id": true
-        },
-        {
-            "source_path": "wmf/5.1/DSC-improvements.md",
-            "redirect_url": "/powershell/wmf/whats-new/dsc-improvements",
-            "redirect_document_id": false
-        },
-        {
-            "source_path": "wmf/5.1/Index.md",
-            "redirect_url": "/powershell/wmf/overview",
-            "redirect_document_id": true
-        },
-        {
-            "source_path": "wmf/5.1/known-issues.md",
-            "redirect_url": "/powershell/wmf/known-issues/known-issues-51",
-            "redirect_document_id": true
-        },
-        {
-            "source_path": "wmf/5.1/known-issues-cache/NetworkingSwitchCmdletInput.md",
-            "redirect_url": "/powershell/module/networkswitchmanager/",
-            "redirect_document_id": true
-        },
-        {
-            "source_path": "wmf/5.1/known-issues-cache/template.md",
-            "redirect_url": "/powershell/wmf/known-issues/known-issues-51",
-            "redirect_document_id": false
-        },
-        {
-            "source_path": "wmf/5.1/package-management-improvements.md",
-            "redirect_url": "/powershell/wmf/whats-new/package-management-improvements",
-            "redirect_document_id": false
-        },
-        {
-            "source_path": "wmf/5.1/productincompat.md",
-            "redirect_url": "/powershell/wmf/whats-new/compatibility",
-            "redirect_document_id": false
-        },
-        {
-            "source_path": "wmf/5.1/release-notes.md",
-            "redirect_url": "/powershell/wmf/whats-new/release-notes",
-            "redirect_document_id": false
-        },
-        {
-            "source_path": "wmf/5.1/scenarios-features.md",
-            "redirect_url": "/powershell/wmf/whats-new/release-notes",
-            "redirect_document_id": false
+            "source_path": "wmf/overview.md",
+            "redirect_url": "/powershell/scripting/wmf/overview",
+            "redirect_document_id": "true"
         },
         {
             "source_path": "wmf/index.md",
-            "redirect_url": "/powershell/wmf/overview",
+            "redirect_url": "/powershell/scripting/wmf/overview",
             "redirect_document_id": false
         }
     ]
