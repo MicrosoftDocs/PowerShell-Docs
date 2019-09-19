@@ -194,6 +194,55 @@
           href: whats-new/what-s-new-in-the-powershell-50-ise.md
 - name: PowerShell Core support lifecycle
   href: powershell-support-lifecycle.md
+- name: Windows Management Framework (WMF)
+  items:
+    - name: Overview
+      href: wmf/overview.md
+    - name: Installation
+      items:
+        - name: Install and configure WMF 5.1
+          href: wmf/setup/install-configure.md
+        - name: Uninstall WMF 5.0
+          href: wmf/setup/uninstall.md
+    - name: What's New
+      expanded: true
+      items:
+        - name: WMF 5.x Release Notes
+          href: wmf/whats-new/release-notes.md
+        - name: Bug Fixes in WMF 5.1
+          href: wmf/whats-new/bugfixes.md
+        - name: New and updated cmdlets
+          href: wmf/whats-new/new-updated-cmdlets.md
+        - name: Creating Custom Types using PowerShell Classes
+          href: wmf/whats-new/class-overview.md
+        - name: Console Improvements in WMF 5.1
+          href: wmf/whats-new/console-improvements.md
+        - name: Improvements in PowerShell Script Debugging
+          href: wmf/whats-new/debug-overview.md
+        - name: Script Tracing and Logging
+          href: wmf/whats-new/script-logging.md
+        - name: DSC Improvements in WMF 5.1
+          href: wmf/whats-new/DSC-improvements.md
+        - name: PowerShell Engine Improvements in WMF 5.1
+          href: wmf/whats-new/engine-improvements.md
+        - name: Information Stream
+          href: wmf/whats-new/informationstream-overview.md
+        - name: Improvements to Just Enough Administration (JEA)
+          href: wmf/whats-new/jea-improvements.md
+        - name: Improvements to Package Management in WMF 5.1
+          href: wmf/whats-new/package-management-improvements.md
+        - name: Software Inventory Logging (SIL)
+          href: wmf/whats-new/sil-overview.md
+        - name: Product Compatibility Status
+          href: wmf/whats-new/compatibility.md
+    - name: Known Issues
+      items:
+        - name: Known Issues in WMF 5.0
+          href: wmf/known-issues/known-issues-50.md
+        - name: Known Issues in WMF 5.1
+          href: wmf/known-issues/known-issues-51.md
+        - name: Known Issues and Limitations in DSC
+          href: wmf/known-issues/known-issues-dsc.md
 - name: Sample scripts
   items:
     - name: Sample scripts for administration

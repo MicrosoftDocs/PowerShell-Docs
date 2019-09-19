@@ -81,7 +81,6 @@ else {
 To further refine this example, you can use the Elseif statement to display
 a message when the value of $a is equal to 2. As the next example shows:
 
-
 ```powershell
 if ($a -gt 2) {
     Write-Host "The value $a is greater than 2."
@@ -94,6 +93,31 @@ else {
         " was not created or initialized.")
 }
 ```
+
+### Using the ternary operator syntax
+
+PowerShell 7.0 introduced a new syntax using the ternary operator. It follows the C# ternary
+operator syntax:
+
+```Syntax
+<condition> ? <if-true> : <if-false>
+```
+
+The ternary operator behaves like the simplified `if-else` statement. The `<condition>` expression
+is evaluated and the result is converted to a boolean to determine which branch should be evaluated
+next:
+
+- The `<if-true>` expression is executed if the `<condition>` expression is true
+- The `<if-false>` expression is executed if the `<condition>` expression is false
+
+For example:
+
+```powershell
+$message = (Test-Path $path) ? "Path exists" : "Path not found"
+```
+
+In this example, the value of `$message` is "Path exists" when `Test-Path` returns `$true`. When
+`Test-Path` returns `$false`, the value of `$message` is "Path not found".
 
 ## SEE ALSO
 
