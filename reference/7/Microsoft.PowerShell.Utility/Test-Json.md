@@ -21,7 +21,7 @@ Test-Json [-Json] <string> [[-Schema] <string>] [<CommonParameters>]
 
 ## DESCRIPTION
 
-The Test-Json cmdlet tests whether a string is a valid JavaScript Object Notation (JSON) document
+The `Test-Json` cmdlet tests whether a string is a valid JavaScript Object Notation (JSON) document
 and can optionally very that JSON document against a provided schema.
 
 The verified string can then be used with the `ConvertFrom-Json` cmdlet convert a JSON-formatted
@@ -49,9 +49,7 @@ True
 
 ### Example 2: Test an object against a provided schema
 
-This example takes a string containing a JSON schema and compares it to an input string. Since the
-input string conforms to the schema described in the **Schema** parameter the cmdlet returns
-`$True`.
+This example takes a string containing a JSON schema and compares it to an input string.
 
 ```powershell
 $schema = @'
@@ -88,12 +86,20 @@ $schema = @'
   }
 }
 '@
-"{'name': 'Ashley', 'age': 25}" | Test-Json -Schema $schema
+"{'name': 'Ashley', 'age': '25'}" | Test-Json -Schema $schema
 ```
 
 ```Output
-True
+Test-Json : IntegerExpected: #/age
+At line:1 char:37
++ "{'name': 'Ashley', 'age': '25'}" | Test-Json -Schema $schema
++                                     ~~~~~~~~~~~~~~~~~~~~~~~~~
++ CategoryInfo          : InvalidData: (:) [Test-Json], Exception
++ FullyQualifiedErrorId : InvalidJsonAgainstSchema,Microsoft.PowerShell.Commands.TestJsonCommand
 ```
+
+In this example, we get an error because the schema expects an integer for **age** but the JSON
+input we tested uses a string value instead.
 
 For more information, see [JSON Schema](https://json-schema.org/).
 
