@@ -96,6 +96,7 @@ At line:1 char:37
 +                                     ~~~~~~~~~~~~~~~~~~~~~~~~~
 + CategoryInfo          : InvalidData: (:) [Test-Json], Exception
 + FullyQualifiedErrorId : InvalidJsonAgainstSchema,Microsoft.PowerShell.Commands.TestJsonCommand
+False
 ```
 
 In this example, we get an error because the schema expects an integer for **age** but the JSON
