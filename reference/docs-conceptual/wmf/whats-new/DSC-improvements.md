@@ -74,7 +74,7 @@ See the snapshots below:
 - Local configuration settings which defines a partial configuration that a node is allowed to
   receive.
 
-  ![Sample metaconfiguration](../images/MetaConfigPartialOne.png)
+  ![Sample metaconfiguration](../images/DSC-improvements/MetaConfigPartialOne.png)
 
 - Sample partial configuration definition
 
@@ -95,11 +95,11 @@ See the snapshots below:
 
 - 'ConfigurationName' embedded in the generated MOF file.
 
-  ![Sample generated mof file](../images/PartialGeneratedMof.png)
+  ![Sample generated mof file](../images/DSC-improvements/PartialGeneratedMof.png)
 
 - FileName in the pull configuration repository
 
-  ![FileName in Configuration Repository](../images/PartialInConfigRepository.png)
+  ![FileName in Configuration Repository](../images/DSC-improvements/PartialInConfigRepository.png)
 
   Azure Automation service name generated MOF files as `<ConfigurationName>.<NodeName>.mof`. So the
   configuration below compiles to PartialOne.localhost.mof.
@@ -354,11 +354,11 @@ the digital signatures.
 > server is unsigned, then processing of the configuration terminates with the error shown below and
 > all temporary files are deleted.
 
-![Sample Error Output Configuration](../images/PullUnsignedConfigFail.png)
+![Sample Error Output Configuration](../images/DSC-improvements/PullUnsignedConfigFail.png)
 
 Similarly, pulling a module whose catalog is not signed results in the following error:
 
-![Sample Error Output Module](../images/PullUnisgnedCatalog.png)
+![Sample Error Output Module](../images/DSC-improvements/PullUnisgnedCatalog.png)
 
 #### Push
 
@@ -408,12 +408,12 @@ published configuration(s). Below is a complete example of signature validation 
   Start-DscConfiguration -Path .\Test -Wait -Verbose -Force
   ```
 
-  ![ErrorUnsignedMofPushed](../images/PushUnsignedMof.png)
+  ![ErrorUnsignedMofPushed](../images/DSC-improvements/PushUnsignedMof.png)
 
 - Sign the configuration file using code-signing certificate.
 
-  ![SignMofFile](../images/SignMofFile.png)
+  ![SignMofFile](../images/DSC-improvements/SignMofFile.png)
 
 - Try pushing the signed MOF file.
 
-  ![SignMofFile](../images/PushSignedMof.png)
+  ![SignMofFile](../images/DSC-improvements/PushSignedMof.png)
