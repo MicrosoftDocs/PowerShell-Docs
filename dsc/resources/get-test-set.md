@@ -138,7 +138,7 @@ BuiltInAccount       : LocalSystem
 Credential           :
 Dependencies         : {RPCSS, http}
 Description          : This service spools print jobs and handles interaction with the printer.  If you turn off
-                       this service, you won’t be able to print or see your printers.
+                       this service, you won't be able to print or see your printers.
 DisplayName          : Print Spooler
 Ensure               :
 Name                 : Spooler

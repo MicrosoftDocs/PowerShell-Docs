@@ -11,7 +11,7 @@ DSC manages the configuration of server nodes
 by applying information stored in a MOF file,
 where the Local Configuration Manager (LCM) implements the desired end state.
 Because this file contains the details of the configuration,
-it’s important to keep it secure.
+it's important to keep it secure.
 This topic describes how to ensure the target node has
 encrypted the file.
 
@@ -41,7 +41,7 @@ To successfully encrypt the credentials used to secure a DSC configuration, make
 
 - **Some means of issuing and distributing certificates**. This topic and its examples assume you are using Active Directory Certification Authority. For more background information on Active Directory Certificate Services, see [Active Directory Certificate Services Overview](https://technet.microsoft.com/library/hh831740.aspx) and [Active Directory Certificate Services in Windows Server 2008](https://technet.microsoft.com/windowsserver/dd448615.aspx).
 - **Administrative access to the target node or nodes**.
-- **Each target node has an encryption-capable certificate saved its Personal Store**. In Windows PowerShell, the path to the store is Cert:\LocalMachine\My. The examples in this topic use the “workstation authentication” template, which you can find (along with other certificate templates) at [Default Certificate Templates](https://technet.microsoft.com/library/cc740061(v=WS.10).aspx).
+- **Each target node has an encryption-capable certificate saved its Personal Store**. In Windows PowerShell, the path to the store is Cert:\LocalMachine\My. The examples in this topic use the "workstation authentication" template, which you can find (along with other certificate templates) at [Default Certificate Templates](https://technet.microsoft.com/library/cc740061(v=WS.10).aspx).
 - If you will be running this configuration on a computer other than the target node, **export the public key of the certificate**, and then import it to the computer you will run the configuration from. Make sure that you export only the **public** key; keep the private key secure.
 
 ## Overall process
@@ -140,7 +140,7 @@ $cert | Export-Certificate -FilePath "$env:temp\DscPublicKey.cer" -Force
 
 Once exported, the ```DscPublicKey.cer``` would need to be copied to the **Authoring Node**.
 
-#### On the Authoring Node: import the cert’s public key
+#### On the Authoring Node: import the cert's public key
 
 ```powershell
 # Import to the my store
@@ -215,7 +215,7 @@ $cert | Remove-Item -Force
 Import-Certificate -FilePath "$env:temp\DscPublicKey.cer" -CertStoreLocation Cert:\LocalMachine\My
 ```
 
-#### On the Target Node: import the cert’s private key as a trusted root
+#### On the Target Node: import the cert's private key as a trusted root
 
 ```powershell
 # Import to the root store so that it is trusted
@@ -285,7 +285,7 @@ configuration CredentialEncryptionExample
 
 ## Setting up decryption
 
-Before [`Start-DscConfiguration`](https://technet.microsoft.com/library/dn521623.aspx) can work, you have to tell the Local Configuration Manager on each target node which certificate to use to decrypt the credentials, using the CertificateID resource to verify the certificate’s thumbprint. This example function will find the appropriate local certificate (you might have to customize it so it will find the exact certificate you want to use):
+Before [`Start-DscConfiguration`](https://technet.microsoft.com/library/dn521623.aspx) can work, you have to tell the Local Configuration Manager on each target node which certificate to use to decrypt the credentials, using the CertificateID resource to verify the certificate's thumbprint. This example function will find the appropriate local certificate (you might have to customize it so it will find the exact certificate you want to use):
 
 ```powershell
 # Get the certificate that works for encryption

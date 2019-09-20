@@ -118,7 +118,7 @@ When you call the configuration, it:
   If there is more than one node, a MOF file will be created for each node.
 
 > [!NOTE]
-> The MOF file contains all of the configuration information for the target node. Because of this, it’s important to keep it secure.
+> The MOF file contains all of the configuration information for the target node. Because of this, it's important to keep it secure.
 > For more information, see [Securing the MOF file](../pull-server/secureMOF.md).
 
 Compiling the first configuration above results in the following folder structure:
