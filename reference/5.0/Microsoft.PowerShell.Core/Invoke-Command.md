@@ -348,7 +348,7 @@ display. You can still use the **Format** cmdlets to display the **PsComputerNam
 of the affected objects.
 
 ```powershell
-`Invoke-Command` -ComputerName S1, S2 -ScriptBlock {Get-Process PowerShell}
+Invoke-Command -ComputerName S1, S2 -ScriptBlock {Get-Process PowerShell}
 ```
 
 ```Output
