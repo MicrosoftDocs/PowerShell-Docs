@@ -1,16 +1,16 @@
 ---
-ms.date:  06/12/2017
-keywords:  dsc,powershell,configuration,setup
-title:  DSC for Linux nxArchive Resource
+ms.date: 09/20/2019
+keywords: dsc,powershell,configuration,setup
+title: DSC for Linux nxArchive Resource
 ---
-
 # DSC for Linux nxArchive Resource
 
-The **nxArchive** resource in PowerShell Desired State Configuration (DSC) provides a mechanism to unpack archive (.tar, .zip) files at a specific path on a Linux node.
+The **nxArchive** resource in PowerShell Desired State Configuration (DSC) provides a mechanism to
+unpack archive (.tar, .zip) files at a specific path on a Linux node.
 
 ## Syntax
 
-```
+```MOF
 nxArchive <string> #ResourceName
 {
     SourcePath = <string>
@@ -24,20 +24,25 @@ nxArchive <string> #ResourceName
 
 ## Properties
 
-|  Property |  Description |
+|Property |Description |
 |---|---|
-| SourcePath| Specifies the source path of the archive file. This should be a .tar, .zip, or .tar.gz file. |
-| DestinationPath| Specifies the location where you want to ensure the archive contents are extracted.|
-| Checksum| Defines the type to use when determining whether the source archive has been updated. Values are: "ctime", "mtime", or "md5". The default value is "md5".|
-| Force| Certain file operations (such as overwriting a file or deleting a directory that is not empty) will result in an error. Using the **Force** property overrides such errors. The default value is **$false**.|
-| DependsOn | Indicates that the configuration of another resource must run before this resource is configured. For example, if the **ID** of the resource configuration script block that you want to run first is **ResourceName** and its type is **ResourceType**, the syntax for using this property is `DependsOn = "[ResourceType]ResourceName"`.|
-| Ensure| Determines whether to check if the content of the archive exists at the **Destination**. Set this property to "Present" to ensure the contents exist. Set it to "Absent" to ensure they do not exist. The default value is "Present".|
+|SourcePath |Specifies the source path of the archive file. This should be a .tar, .zip, or .tar.gz file. |
+|DestinationPath |Specifies the location where you want to ensure the archive contents are extracted. |
+|Checksum |Defines the type to use when determining whether the source archive has been updated. Values are: _ctime_, _mtime_, or _md5_. The default value is _md5_. |
+|Force |Certain file operations (such as overwriting a file or deleting a directory that is not empty) will result in an error. Using the **Force** property overrides such errors. The default value is _$false_. |
+
+## Common properties
+
+|Property |Description |
+|---|---|
+|DependsOn |Indicates that the configuration of another resource must run before this resource is configured. For example, if the ID of the resource configuration script block that you want to run first is ResourceName and its type is ResourceType, the syntax for using this property is `DependsOn = "[ResourceType]ResourceName"`. |
+|Ensure |Determines whether to check if the content of the archive exists at the **Destination**. Set this property to _Present_ to ensure the contents exist. Set it to _Absent_ to ensure they do not exist. The default value is _Present_. |
 
 ## Example
 
 The following example shows how to use the **nxArchive** resource to ensure that the contents of an archive file called `website.tar` exist and are extracted at a given destination.
 
-```
+```powershell
 Import-DSCResource -Module nx
 
 nxFile SyncArchiveFromWeb

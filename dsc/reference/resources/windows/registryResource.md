@@ -1,43 +1,54 @@
 ---
-ms.date:  06/12/2017
-keywords:  dsc,powershell,configuration,setup
-title:  DSC Registry Resource
+ms.date: 09/20/2019
+keywords: dsc,powershell,configuration,setup
+title: DSC Registry Resource
 ---
 # DSC Registry Resource
 
-_Applies To: Windows PowerShell 4.0, Windows PowerShell 5.0_
+> Applies To: Windows PowerShell 4.0, Windows PowerShell 5.x
 
 The **Registry** resource in Windows PowerShell Desired State Configuration (DSC) provides a
 mechanism to manage registry keys and values on a target node.
 
 ## Syntax
 
-```
+```MOF
 Registry [string] #ResourceName
 {
     Key = [string]
     ValueName = [string]
-    [ Ensure = [string] { Present | Absent }  ]
     [ Force =  [bool]   ]
     [ Hex = [bool] ]
-    [ DependsOn = [string[]] ]
     [ ValueData = [string[]] ]
     [ ValueType = [string] { Binary | Dword | ExpandString | MultiString | Qword | String }  ]
+    [ DependsOn = [string[]] ]
+    [ Ensure = [string] { Present | Absent }  ]
+    [ PsDscRunAsCredential = [PSCredential] ]
 }
 ```
 
 ## Properties
 
-| Property | Description |
-| --- | --- |
-| Key| Indicates the path of the registry key for which you want to ensure a specific state. This path must include the hive.|
-| ValueName| Indicates the name of the registry value. To add or remove a registry key, specify this property as an empty string without specifying ValueType or ValueData. To modify or remove the default value of a registry key, specify this property as an empty string while also specifying ValueType or ValueData.|
-| Ensure| Indicates if the key and value exist. To ensure that they do, set this property to "Present". To ensure that they do not exist, set the property to "Absent". The default value is "Present".|
-| Force| If the specified registry key is present, **Force** overwrites it with the new value. If deleting a registry key with subkeys, this needs to be **$true** |
-| Hex| Indicates if data will be expressed in hexadecimal format. If specified, the DWORD/QWORD value data is presented in hexadecimal format. Not valid for other types. The default value is **$false**.|
-| DependsOn| Indicates that the configuration of another resource must run before this resource is configured. For example, if the ID of the resource configuration script block that you want to run first is **ResourceName** and its type is **ResourceType**, the syntax for using this property is `DependsOn = "[ResourceType]ResourceName"`.|
-| ValueData| The data for the registry value.|
-| ValueType| Indicates the type of the value. The supported types are: String (REG_SZ), Binary (REG-BINARY), Dword 32-bit (REG_DWORD), Qword 64-bit (REG_QWORD), Multi-string (REG_MULTI_SZ), Expandable string (REG_EXPAND_SZ) |
+|Property |Description |
+|---|---|
+|Key |Indicates the path of the registry key for which you want to ensure a specific state. This path must include the hive. |
+|ValueName |Indicates the name of the registry value. To add or remove a registry key, specify this property as an empty string without specifying **ValueType** or **ValueData**. To modify or remove the default value of a registry key, specify this property as an empty string while also specifying **ValueType** or **ValueData**. |
+|Force |If the specified registry key is present, **Force** overwrites it with the new value. If deleting a registry key with subkeys, this needs to be _$true_. |
+|Hex |Indicates if data will be expressed in hexadecimal format. If specified, the DWORD/QWORD value data is presented in hexadecimal format. Not valid for other types. The default value is _$false_. |
+|ValueData |The data for the registry value. |
+|ValueType |Indicates the type of the value. The supported types are: _String_ (REG_SZ), _Binary_ (REG-BINARY), _Dword_ (32-bit REG_DWORD), _Qword_ (64-bit REG_QWORD), _MultiString_ (REG_MULTI_SZ), _ExpandString_ (REG_EXPAND_SZ). |
+
+## Common properties
+
+|Property |Description |
+|---|---|
+|DependsOn |Indicates that the configuration of another resource must run before this resource is configured. For example, if the ID of the resource configuration script block that you want to run first is ResourceName and its type is ResourceType, the syntax for using this property is `DependsOn = "[ResourceType]ResourceName"`. |
+|Ensure |Indicates if the key and value exist. To ensure that they do, set this property to _Present_. To ensure that they do not exist, set the property to _Absent_. The default value is _Present_. |
+|PsDscRunAsCredential |Sets the credential for running the entire resource as. |
+
+> [!NOTE]
+> The **PsDscRunAsCredential** common property was added in WMF 5.0 to allow running any DSC
+> resource in the context of other credentials. For more information, see [Use Credentials with DSC Resources](../../../configurations/runasuser.md).
 
 ## Example
 
