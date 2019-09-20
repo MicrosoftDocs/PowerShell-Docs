@@ -57,7 +57,7 @@ Configuration RegistryTest
 ```
 
 > [!NOTE]
-> Changing a registry setting in the `HKEY\CURRENT\USER` hive requires that the configuration runs
+> Changing a registry setting in the `HKEY_CURRENT_USER` hive requires that the configuration runs
 > with user credentials, rather than as the system. You can use the **PsDscRunAsCredential**
 > property to specify user credentials for the configuration. For an example, see
 > [Running DSC with user credentials](../../../configurations/runAsUser.md).
