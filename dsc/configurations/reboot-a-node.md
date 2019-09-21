@@ -13,8 +13,9 @@ title:  Reboot a Node
 
 Nodes can be rebooted from within a resource, by using the `$global:DSCMachineStatus` flag. Setting
 this flag to `1` in the `Set-TargetResource` function forces the LCM to reboot the Node directly
-after the **Set** method of the current resource. Using this flag, the **xPendingReboot** resource
-detects if a reboot is pending outside of DSC.
+after the **Set** method of the current resource. Using this flag, the **PendingReboot** resource
+in the [ComputerManagementDsc](https://github.com/PowerShell/ComputerManagementDsc) DSC Resource
+module detects if a reboot is pending outside of DSC.
 
 Your [configurations](configurations.md) may perform steps that require the Node to reboot. This
 could include things such as:
@@ -24,8 +25,8 @@ could include things such as:
 - File renames
 - Computer rename
 
-The **xPendingReboot** resource checks specific computer locations to determine if a reboot is
-pending. If the Node requires a reboot outside of DSC, the **xPendingReboot** resource sets the
+The **PendingReboot** resource checks specific computer locations to determine if a reboot is
+pending. If the Node requires a reboot outside of DSC, the **PendingReboot** resource sets the
 `$global:DSCMachineStatus` flag to `1` forcing a reboot and resolving the pending condition.
 
 > [!NOTE]
@@ -35,7 +36,7 @@ pending. If the Node requires a reboot outside of DSC, the **xPendingReboot** re
 ## Syntax
 
 ```
-xPendingReboot [String] #ResourceName
+PendingReboot [String] #ResourceName
 {
     Name = [string]
     [DependsOn = [string[]]]
@@ -63,8 +64,9 @@ xPendingReboot [String] #ResourceName
 
 ## Example
 
-The following example installs Microsoft Exchange using the [xExchange](https://github.com/PowerShell/xExchange) resource.
-Throughout the install, the **xPendingReboot** resource is used to reboot the Node.
+The following example installs Microsoft Exchange using the [xExchange](https://github.com/PowerShell/xExchange)
+resource.
+Throughout the install, the **PendingReboot** resource is used to reboot the Node.
 
 > [!NOTE]
 > This example requires the credential of an account that has rights to add an Exchange server to
@@ -93,7 +95,7 @@ Configuration Example
     )
 
     Import-DscResource -Module xExchange
-    Import-DscResource -Module xPendingReboot
+    Import-DscResource -Module ComputerManagementDsc
 
     Node $AllNodes.NodeName
     {
@@ -108,7 +110,7 @@ Configuration Example
         }
 
         # Check if a reboot is needed before installing Exchange
-        xPendingReboot BeforeExchangeInstall
+        PendingReboot BeforeExchangeInstall
         {
             Name       = 'BeforeExchangeInstall'
             DependsOn  = '[File]ExchangeBinaries'
@@ -120,11 +122,11 @@ Configuration Example
             Path       = 'C:\Binaries\E15CU6\Setup.exe'
             Arguments  = '/mode:Install /role:Mailbox /Iacceptexchangeserverlicenseterms'
             Credential = $ExchangeAdminCredential
-            DependsOn  = '[xPendingReboot]BeforeExchangeInstall'
+            DependsOn  = '[PendingReboot]BeforeExchangeInstall'
         }
 
         # See if a reboot is required after installing Exchange
-        xPendingReboot AfterExchangeInstall
+        PendingReboot AfterExchangeInstall
         {
             Name      = 'AfterExchangeInstall'
             DependsOn = '[xExchInstall]InstallExchange'
@@ -139,7 +141,8 @@ Configuration Example
 
 ## Where to Download
 
-You can download the resources used in this topic at the following locations, or by using the PowerShell gallery.
+You can download the resources used in this topic at the following locations, or by using the
+PowerShell gallery.
 
-- [xPendingReboot](https://github.com/PowerShell/xPendingReboot)
+- [ComputerManagementDsc](https://github.com/PowerShell/ComputerManagementDsc)
 - [xExchange](https://github.com/PowerShell/xExchange)
