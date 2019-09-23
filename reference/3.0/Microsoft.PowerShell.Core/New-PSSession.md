@@ -325,7 +325,8 @@ Accept wildcard characters: False
 Specifies the session configuration that is used for the new PSSession.
 
 Enter a configuration name or the fully qualified resource Uniform Resource Identifier (URI) for a session configuration.
-If you specify only the configuration name, the following schema URI is prepended:  http://schemas.microsoft.com/PowerShell.
+If you specify only the configuration name, the following schema URI is prepended:
+`http://schemas.microsoft.com/PowerShell`.
 
 The session configuration for a session is located on the remote computer.
 If the specified session configuration does not exist on the remote computer, the command fails.

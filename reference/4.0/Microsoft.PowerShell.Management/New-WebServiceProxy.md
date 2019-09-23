@@ -7,32 +7,34 @@ online version: https://go.microsoft.com/fwlink/?linkid=293890
 external help file:  Microsoft.PowerShell.Commands.Management.dll-Help.xml
 title:  New-WebServiceProxy
 ---
-
 # New-WebServiceProxy
-
 ## SYNOPSIS
 Creates a Web service proxy object that lets you use and manage the Web service in Windows PowerShell.
 
 ## SYNTAX
 
 ### NoCredentials (Default)
+
 ```
 New-WebServiceProxy [-Uri] <Uri> [[-Class] <String>] [[-Namespace] <String>] [<CommonParameters>]
 ```
 
 ### Credential
+
 ```
 New-WebServiceProxy [-Uri] <Uri> [[-Class] <String>] [[-Namespace] <String>] [-Credential <PSCredential>]
  [<CommonParameters>]
 ```
 
 ### UseDefaultCredential
+
 ```
 New-WebServiceProxy [-Uri] <Uri> [[-Class] <String>] [[-Namespace] <String>] [-UseDefaultCredential]
  [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+
 The **New-WebServiceProxy** cmdlet lets you use a Web service in Windows PowerShell.
 The cmdlet connects to a Web service and creates a Web service proxy object in Windows PowerShell.
 You can use the proxy object to manage the Web service.
@@ -176,7 +178,7 @@ Specifies the URI of the Web service.
 Enter a URI or the path and file name of a file that contains a service description.
 
 The URI must refer to an .asmx page or to a page that returns a service description.
-To return a service description of a Web service that was created by using ASP.NET, append "?WSDL" to the URL of the Web service (for example,  http://www.contoso.com/MyWebService.asmx?WSDL).
+To return a service description of a Web service that was created by using ASP.NET, append "?WSDL" to the URL of the Web service (for example,  `http://www.contoso.com/MyWebService.asmx?WSDL`).
 
 ```yaml
 Type: Uri
@@ -221,9 +223,7 @@ The namespace and class of the object are determined by the parameters of the co
 The default is generated from the input Uniform Resource Identifier (URI).
 
 ## NOTES
-* **New-WebServiceProxy** uses the System.Net.WebClient class to load the specified Web service.
-
-*
+**New-WebServiceProxy** uses the System.Net.WebClient class to load the specified Web service.
 
 ## RELATED LINKS
 

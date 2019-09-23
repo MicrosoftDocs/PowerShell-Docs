@@ -8,7 +8,6 @@ online version: https://go.microsoft.com/fwlink/?linkid=821668
 schema: 2.0.0
 title: Register-PSRepository
 ---
-
 # Register-PSRepository
 
 ## SYNOPSIS
@@ -17,6 +16,7 @@ Registers a PowerShell repository.
 ## SYNTAX
 
 ### NameParameterSet (Default)
+
 ```
 Register-PSRepository [-Name] <String> [-SourceLocation] <Uri> [-PublishLocation <Uri>]
  [-ScriptSourceLocation <Uri>] [-ScriptPublishLocation <Uri>] [-Credential <PSCredential>]
@@ -25,12 +25,14 @@ Register-PSRepository [-Name] <String> [-SourceLocation] <Uri> [-PublishLocation
 ```
 
 ### PSGalleryParameterSet
+
 ```
 Register-PSRepository [-Default] [-InstallationPolicy <String>] [-Proxy <Uri>]
  [-ProxyCredential <PSCredential>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+
 The **Register-PSRepository** cmdlet registers the default repository for PowerShell modules.
 After a repository is registered, you can reference it from the Find-Module, Install-Module, and Publish-Module cmdlets.
 The registered repository becomes the default repository in **Find-Module** and **Install-Module**.
@@ -46,6 +48,7 @@ If a OneGet provider is not specified during registration, PowerShellGet attempt
 ## EXAMPLES
 
 ### Example 1: Register a repository
+
 ```
 PS C:\> Register-PSRepository -Name "myNuGetSource" -SourceLocation "https://www.myget.org/F/powershellgetdemo/api/v2" -PublishLocation "https://www.myget.org/F/powershellgetdemo/api/v2/Packages" -InstallationPolicy Trusted
 PS C:\> Get-PSRepository
@@ -64,6 +67,7 @@ The second command gets registered repositories and displays the results.
 ## PARAMETERS
 
 ### -Credential
+
 Specifies credentials of an account that has rights to register a repository.
 
 ```yaml
@@ -93,6 +97,7 @@ Accept wildcard characters: False
 ```
 
 ### -InstallationPolicy
+
 Specifies the installation policy.
 Valid values are: Trusted, UnTrusted.
 The default value is UnTrusted.
@@ -116,6 +121,7 @@ Accept wildcard characters: False
 ```
 
 ### -Name
+
 Specifies the name of the repository to register.
 You can use this name to specify the repository in cmdlets such as Find-Module and Install-Module.
 
@@ -132,6 +138,7 @@ Accept wildcard characters: False
 ```
 
 ### -PackageManagementProvider
+
 Specifies a OneGet package provider.
 If you don't specify a value for this parameter, PowerShellGet polls available package providers and associates this repository with the first package provider that indicates it can handle the repository.
 
@@ -148,6 +155,7 @@ Accept wildcard characters: False
 ```
 
 ### -Proxy
+
 Specifies a proxy server for the request, rather than connecting directly to the Internet resource.
 
 ```yaml
@@ -163,6 +171,7 @@ Accept wildcard characters: False
 ```
 
 ### -ProxyCredential
+
 Specifies a user account that has permission to use the proxy server that is specified by the **Proxy** parameter.
 
 ```yaml
@@ -178,8 +187,9 @@ Accept wildcard characters: False
 ```
 
 ### -PublishLocation
+
 Specifies the URI of the publish location.
-For example, for NuGet-based repositories, the publish location is similar to http://someNuGetUrl.com/api/v2/Packages.
+For example, for NuGet-based repositories, the publish location is similar to `https://someNuGetUrl.com/api/v2/Packages`.
 
 ```yaml
 Type: Uri
@@ -194,6 +204,7 @@ Accept wildcard characters: False
 ```
 
 ### -ScriptPublishLocation
+
 Specifies the script publish location.
 
 ```yaml
@@ -209,6 +220,7 @@ Accept wildcard characters: False
 ```
 
 ### -ScriptSourceLocation
+
 Specifies the script source location.
 
 ```yaml
@@ -224,10 +236,11 @@ Accept wildcard characters: False
 ```
 
 ### -SourceLocation
+
 Specifies the URI for discovering and installing modules from this repository.
 A URI can be a NuGet server feed (most common situation), HTTP, HTTPS, FTP or file location.
 
-For example, for NuGet-based repositories, the source location is similar to http://someNuGetUrl.com/api/v2.
+For example, for NuGet-based repositories, the source location is similar to `https://someNuGetUrl.com/api/v2`.
 
 ```yaml
 Type: Uri
@@ -242,6 +255,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS

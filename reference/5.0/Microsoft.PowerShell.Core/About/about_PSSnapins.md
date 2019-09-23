@@ -32,8 +32,7 @@ NOTE: Windows PowerShell snap-ins (PSSnapins) are available for use in Windows
 PowerShell 3.0 and Windows PowerShell 2.0. They might be altered or
 unavailable in subsequent versions. To package Windows PowerShell cmdlets and
 providers, use modules. For information about creating modules and converting
-snap-ins to modules, see [Writing a Windows PowerShell Module](http://go.microsoft.com/fwlink/?LinkID=141556)
-in the MSDN library.
+snap-ins to modules, see [Writing a Windows PowerShell Module](/powershell/developer/module/writing-a-windows-powershell-module).
 
 ### FINDING SNAP-INS
 

@@ -207,11 +207,11 @@ You can pipe any object to **ConvertTo-Json**.
 
 ## NOTES
 
-* The **ConvertTo-Json** cmdlet is implemented by using the [JavaScriptSerializer class](https://msdn.microsoft.com/library/system.web.script.serialization.javascriptserializer).
+- The **ConvertTo-Json** cmdlet is implemented by using the [JavaScriptSerializer class](/dotnet/api/system.web.script.serialization.javascriptserializer).
 
 ## RELATED LINKS
 
-[An Introduction to JavaScript Object Notation (JSON) in JavaScript and .NET](http://msdn.microsoft.com/library/bb299886.aspx)
+[An Introduction to JavaScript Object Notation (JSON) in JavaScript and .NET](/previous-versions/dotnet/articles/bb299886(v=msdn.10))
 
 [ConvertFrom-Json](ConvertFrom-Json.md)
 

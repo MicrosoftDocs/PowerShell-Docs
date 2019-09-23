@@ -84,4 +84,4 @@ Workflow Test-Workflow
 
 ## SEE ALSO
 
-[How to Add Checkpoints to a Workflow](http://go.microsoft.com/fwlink/?LinkId=261993)
+[Writing a Windows PowerShell Workflow](/powershell/developer/workflow/writing-a-windows-powershell-workflow)
