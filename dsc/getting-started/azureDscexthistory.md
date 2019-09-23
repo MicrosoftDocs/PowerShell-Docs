@@ -158,7 +158,7 @@ This article will provide information about each version of the Azure DSC VM Ext
 - **Environment:** Azure
 - **Remarks:** This version uses DSC as included in Windows Server 2016 Technical Preview; for other Windows OSes, it installs the [Windows Management Framework 5.0 RTM](https://blogs.msdn.microsoft.com/powershell/2015/12/16/windows-management-framework-wmf-5-0-rtm-is-now-available/) (installing WMF requires a reboot).
 - **New features:**
-  - Support for WMF 5.1 Preview. When first published, this version was an optional upgrade and you had to specify Wmfversion = ‘5.1PP’ in Resource Manager templates to install WMF 5.1 preview. Wmfversion = ‘latest’ still installs the [WMF 5.0 RTM](https://blogs.msdn.microsoft.com/powershell/2015/12/16/windows-management-framework-wmf-5-0-rtm-is-now-available/). For more information on WMF 5.1 preview, see [this blog](https://blogs.msdn.microsoft.com/powershell/2016/07/16/announcing-windows-management-framework-wmf-5-1-preview/).
+  - Support for WMF 5.1 Preview. When first published, this version was an optional upgrade and you had to specify Wmfversion = '5.1PP' in Resource Manager templates to install WMF 5.1 preview. Wmfversion = 'latest' still installs the [WMF 5.0 RTM](https://blogs.msdn.microsoft.com/powershell/2015/12/16/windows-management-framework-wmf-5-0-rtm-is-now-available/). For more information on WMF 5.1 preview, see [this blog](https://blogs.msdn.microsoft.com/powershell/2016/07/16/announcing-windows-management-framework-wmf-5-1-preview/).
   - Minor other fixes and improvements were added.
 
 ### Version  2.19
@@ -180,7 +180,7 @@ This article will provide information about each version of the Azure DSC VM Ext
 - **Remarks:** This version uses DSC as included in Windows Server 2016 Technical Preview; for other Windows OSes, it installs the [Windows Management Framework 5.0 RTM](https://blogs.msdn.microsoft.com/powershell/2015/12/16/windows-management-framework-wmf-5-0-rtm-is-now-available/) (installing WMF requires a reboot).
 - **New features:**
   - Make telemetry non-blocking when an error occurs during telemetry hotfix download (known Azure DNS issue) or during install.
-  - Fix for the intermittent issue where extension stops processing configuration after a reboot. This was causing the DSC Extension to remain in ‘transitioning’ state.
+  - Fix for the intermittent issue where extension stops processing configuration after a reboot. This was causing the DSC Extension to remain in 'transitioning' state.
   - Minor other fixes and improvements were added.
 
 ### Version 2.17
@@ -203,7 +203,7 @@ This article will provide information about each version of the Azure DSC VM Ext
 - **Remarks:** This version uses DSC as included in Windows Server 2016 Technical Preview; for other Windows OSes, it installs the [Windows Management Framework 5.0 RTM](https://blogs.msdn.microsoft.com/powershell/2015/12/16/windows-management-framework-wmf-5-0-rtm-is-now-available/) (installing WMF requires a reboot).
 - **New features:**
   - Improvement in error handling and other minor bug fixes.
-  - New property in DSC Extension settings. ‘ForcePullAndApply’ in AdvancedOptions is added to enable the DSC Extension enact DSC configurations when the refresh mode is Pull (as opposed to the default Push mode). For more information, please refer to [this blog](https://blogs.msdn.microsoft.com/powershell/2016/02/26/arm-dsc-extension-settings/) to get more information on the DSC Extension settings.
+  - New property in DSC Extension settings. 'ForcePullAndApply' in AdvancedOptions is added to enable the DSC Extension enact DSC configurations when the refresh mode is Pull (as opposed to the default Push mode). For more information, please refer to [this blog](https://blogs.msdn.microsoft.com/powershell/2016/02/26/arm-dsc-extension-settings/) to get more information on the DSC Extension settings.
 
 ### Version 2.15
 
@@ -213,7 +213,7 @@ This article will provide information about each version of the Azure DSC VM Ext
 - **Environment:** Azure
 - **Remarks:** This version uses DSC as included in Windows Server 2016 Technical Preview; for other Windows OSes, it installs the [Windows Management Framework 5.0 RTM](https://blogs.msdn.microsoft.com/powershell/2015/12/16/windows-management-framework-wmf-5-0-rtm-is-now-available/) (installing WMF requires a reboot).
 - **New features:**
-  - In extension version 2.14, changes to install WMF RTM were included. While upgrading from extension version 2.13.2.0 to 2.14.0.0, you may notice that some DSC cmdlets fail or your configuration fails with an error – ‘No Instance found with given property values’. For more information, see the [DSC release notes](https://msdn.microsoft.com/en-us/powershell/wmf/limitation_dsc). The workarounds for these issues have been added in 2.15 version.
+  - In extension version 2.14, changes to install WMF RTM were included. While upgrading from extension version 2.13.2.0 to 2.14.0.0, you may notice that some DSC cmdlets fail or your configuration fails with an error – 'No Instance found with given property values'. For more information, see the [DSC release notes](https://msdn.microsoft.com/en-us/powershell/wmf/limitation_dsc). The workarounds for these issues have been added in 2.15 version.
   - Unfortunately, if you have already installed version 2.14 and are running into one of the above two issues, you will need to perform these steps manually.  In an elevated PowerShell session:
     - `Remove-Item -Path $env:SystemRoot\system32\Configuration\DSCEngineCache.mof`
     - `mofcomp $env:windir\system32\wbem\DscCoreConfProv.mof`
