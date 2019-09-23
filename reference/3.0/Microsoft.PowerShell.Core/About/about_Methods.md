@@ -95,8 +95,7 @@ supported.
 
 To find definitions of the methods of an object, go to help topic for the
 object type in MSDN and look for its methods page. For example, the following
-page describes the methods of process objects
-[System.Diagnostics.Process](http://msdn.microsoft.com/library/system.diagnostics.process_methods).
+page describes the methods of process objects [System.Diagnostics.Process](/dotnet/api/system.diagnostics.process#methods).
 
 To determine the arguments of a method, review the method definition, which is
 like the syntax diagram of a PowerShell cmdlet.

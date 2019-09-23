@@ -91,5 +91,5 @@ these parameters, you can specify the proxy URL and credentials to PackageManage
 default, system proxy settings are used. For example:
 
 ```powershell
-Find-Package -Source http://www.nuget.org/api/v2/ -Proxy http://www.myproxyserver.com -ProxyCredential (Get-Credential)
+Find-Package -Source https://www.nuget.org/api/v2/ -Proxy http://www.myproxyserver.com -ProxyCredential (Get-Credential)
 ```

@@ -194,29 +194,18 @@ incoming WMI request, and you receive the following error message:
 
     Remote server machine does not exist or is unavailable
 
-### MORE INFORMATION ABOUT WMI
-
-For more information about WMI, see the following topics in the MSDN
-(Microsoft Developer Network) library:
-
-About WMI: http://go.microsoft.com/fwlink/?LinkId=142212
-
-WMI Troubleshooting: http://go.microsoft.com/fwlink/?LinkId=142213
-
-And, see "Secrets of Windows Management Instrumentation - Troubleshooting and
-Tips" in the Microsoft TechNet Script Center:
-
-http://go.microsoft.com/fwlink/?LinkId=142214
-
-
 ## SEE ALSO
 
-Get-WmiObject
+[About WMI](/windows/win32/wmisdk/about-wmi)
 
-Invoke-WmiMethod
+[WMI Troubleshooting](/windows/win32/wmisdk/wmi-troubleshooting)
 
-Register-WmiEvent
+[Get-WmiObject](../../Microsoft.PowerShell.Management/Get-WmiObject.md)
 
-Remove-WmiObject
+[Invoke-WmiMethod](../../Microsoft.PowerShell.Management/Invoke-WmiMethod.md)
 
-Set-WmiInstance
+[Register-WmiEvent](../../Microsoft.PowerShell.Management/Register-WmiEvent.md)
+
+[Remove-WmiObject](../../Microsoft.PowerShell.Management/Remove-WmiObject.md)
+
+[Set-WmiInstance](../../Microsoft.PowerShell.Management/Set-WmiInstance.md)

@@ -497,4 +497,4 @@ For more information about here-strings, see [about_Quoting_Rules](about_Quoting
 
 [Import-LocalizedData](../../Microsoft.PowerShell.Utility/Import-LocalizedData.md)
 
-[System.Collections.Hashtable](/dotnet/api/system.collections.hashtable?view=netframework-4.7.2)
+[System.Collections.Hashtable](/dotnet/api/system.collections.hashtable)

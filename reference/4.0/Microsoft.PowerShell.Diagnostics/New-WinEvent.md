@@ -7,11 +7,9 @@ online version: https://go.microsoft.com/fwlink/?linkid=289628
 external help file:  Microsoft.PowerShell.Commands.Diagnostics.dll-Help.xml
 title:  New-WinEvent
 ---
-
 # New-WinEvent
 
 ## SYNOPSIS
-
 Creates a new Windows event for the specified event provider.
 
 ## SYNTAX
@@ -134,8 +132,6 @@ This cmdlet does to generate any output.
 
 * After the provider writes the even to an eventlog, you can use the Get-WinEvent cmdlet to get the
   event from the event log.
-* For information about Event Tracing for Windows, see "Improve Debugging And Performance Tuning
-  With ETW" in MSDN Magazine at http://msdn.microsoft.com/magazine/cc163437.aspx.
 
 ## RELATED LINKS
 

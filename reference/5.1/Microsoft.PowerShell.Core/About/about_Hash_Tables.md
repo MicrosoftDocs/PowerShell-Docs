@@ -499,4 +499,4 @@ For more information about here-strings, see [about_Quoting_Rules](about_Quoting
 
 [Import-LocalizedData](../../Microsoft.PowerShell.Utility/Import-LocalizedData.md)
 
-[System.Collections.Hashtable](http://msdn.microsoft.com/en-us/library/system.collections.hashtable\(v=vs.110\).aspx) on MSDN
+[System.Collections.Hashtable](/dotnet/api/system.collections.hashtable)

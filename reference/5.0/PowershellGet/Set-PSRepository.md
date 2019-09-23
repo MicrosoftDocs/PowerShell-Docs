@@ -105,8 +105,9 @@ Accept wildcard characters: False
 ```
 
 ### -SourceLocation
+
 Specifies the URI for discovering and installing modules from this repository.
-For example, for NuGet-based repositories, the source location is similar to http://someNuGetUrl.com/api/v2.
+For example, for NuGet-based repositories, the source location is similar to `https://someNuGetUrl.com/api/v2`.
 
 ```yaml
 Type: Uri
