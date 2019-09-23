@@ -98,7 +98,7 @@ or unintentionally, such as by a network interruption.
 If you use the **Receive-PSSession** cmdlet to connect to a session in which no commands are running
 or suspended, **Receive-PSSession** connects to the session, but returns no output or errors.
 
-For more information about the Disconnected Sessions feature, see 
+For more information about the Disconnected Sessions feature, see
 [about_Remote_Disconnected_Sessions](./About/about_Remote_Disconnected_Sessions.md).
 
 This cmdlet is introduced in Windows PowerShell 3.0.
@@ -415,7 +415,7 @@ Accept wildcard characters: False
 Parameter Sets: ComputerInstanceId, ConnectionUriInstanceId, InstanceId
 Required: True
 Default value: None
-Aliases: 
+Aliases:
 Type: Guid
 ```
 
@@ -460,7 +460,7 @@ Accept wildcard characters: False
 Parameter Sets: ComputerSessionName, ConnectionUriSessionName, SessionName
 Required: True
 Default value: None
-Aliases: 
+Aliases:
 Type: String
 ```
 
@@ -626,8 +626,8 @@ Accept wildcard characters: False
 Connects only to sessions that use the specified session configuration.
 
 Enter a configuration name or the fully qualified resource URI for a session configuration.
-If you specify only the configuration name, the following schema URI is prepended: 
-http://schemas.microsoft.com/powershell.
+If you specify only the configuration name, the following schema URI is prepended:
+`http://schemas.microsoft.com/powershell`.
 The configuration name of a session is stored in the **ConfigurationName** property of the session.
 
 The value of this parameter is used to select and filter sessions.
@@ -855,11 +855,11 @@ To determine whether you can connect or reconnect to the session, use the **Avai
 A value of **Busy** indicates that you cannot connect to the PSSession because it is connected to
 another session.
 
-  For more information about the values of the **State** property of sessions, see 
+  For more information about the values of the **State** property of sessions, see
 [RunspaceState Enumeration](/dotnet/api/system.management.automation.runspaces.runspacestate) in the
 MSDN library.
 
-  For more information about the values of the **Availability** property of sessions, see 
+  For more information about the values of the **Availability** property of sessions, see
 [RunspaceAvailability Enumeration](/dotnet/api/system.management.automation.runspaces.runspaceavailability) in the MSDN library.
 
 ## RELATED LINKS

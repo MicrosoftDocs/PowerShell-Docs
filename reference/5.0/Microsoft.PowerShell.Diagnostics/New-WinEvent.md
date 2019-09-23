@@ -132,8 +132,6 @@ This cmdlet does to generate any output.
 
 * After the provider writes the even to an eventlog, you can use the Get-WinEvent cmdlet to get the
   event from the event log.
-* For information about Event Tracing for Windows, see "Improve Debugging And Performance Tuning
-  With ETW" in MSDN Magazine at http://msdn.microsoft.com/magazine/cc163437.aspx.
 
 ## RELATED LINKS
 

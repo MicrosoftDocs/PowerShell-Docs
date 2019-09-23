@@ -11,6 +11,7 @@ title:  New-WebServiceProxy
 # New-WebServiceProxy
 ## SYNOPSIS
 Creates a Web service proxy object that lets you use and manage the Web service in Windows PowerShell.
+
 ## SYNTAX
 
 ### NoCredentials (Default)
@@ -37,6 +38,7 @@ You can use the proxy object to manage the Web service.
 
 A Web service is an XML-based program that exchanges data over a network, particularly over the Internet.
 The Microsoft .NET Framework provides Web service proxy objects that represent the Web service as a .NET Framework object.
+
 ## EXAMPLES
 
 ### Example 1
@@ -45,6 +47,7 @@ PS C:\> $zip = New-WebServiceProxy -Uri http://www.webservicex.net/uszip.asmx?WS
 ```
 
 This command uses the **New-WebServiceProxy** command to create a .NET Framework proxy of the US Zip Web service in Windows PowerShell.
+
 ### Example 2
 ```
 PS C:\> $URI = "http://www.webservicex.net/uszip.asmx?WSDL"
@@ -57,6 +60,7 @@ The first command stores the URI of the Web service in the $URI variable.
 
 The second command creates the Web service proxy.
 The command uses the **URI** parameter to specify the URI and the **Namespace** and **Class** parameters to specify the namespace and class of the object.
+
 ### Example 3
 ```
 PS C:\> $zip | get-member -type method
@@ -92,6 +96,7 @@ This command uses the Get-Member cmdlet to display the methods of the Web servic
 We will use these methods in the following example.
 
 Notice that the TypeName of the proxy object, WebServiceProxy, reflects the namespace and class names that were specified in the previous example.
+
 ### Example 4
 ```
 PS C:\> $zip.getinfobyzip(20500).table
@@ -104,6 +109,7 @@ TIME_ZONE : E
 
 This command uses the Web service proxy stored in the Zip variable.
 The command uses the GetInfoByZip method of the proxy and its Table property.
+
 ## PARAMETERS
 
 ### -Class
@@ -169,7 +175,7 @@ Specifies the URI of the Web service.
 Enter a URI or the path and file name of a file that contains a service description.
 
 The URI must refer to an .asmx page or to a page that returns a service description.
-To return a service description of a Web service that was created by using ASP.NET, append "?WSDL" to the URL of the Web service (for example,  http://www.contoso.com/MyWebService.asmx?WSDL).
+To return a service description of a Web service that was created by using ASP.NET, append "?WSDL" to the URL of the Web service (for example,  `http://www.contoso.com/MyWebService.asmx?WSDL`).
 
 ```yaml
 Type: Uri
@@ -201,19 +207,21 @@ Accept wildcard characters: False
 
 ### CommonParameters
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+
 ## INPUTS
 
 ### None
 This cmdlet does not take input from the pipeline.
+
 ## OUTPUTS
 
 ### A Web service proxy object
 The namespace and class of the object are determined by the parameters of the command.
 The default is generated from the input Uniform Resource Identifier (URI).
-## NOTES
-* **New-WebServiceProxy** uses the System.Net.WebClient class to load the specified Web service.
 
-*
+## NOTES
+**New-WebServiceProxy** uses the System.Net.WebClient class to load the specified Web service.
+
 ## RELATED LINKS
 
 [New-Service](New-Service.md)

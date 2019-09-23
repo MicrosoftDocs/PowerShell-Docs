@@ -69,12 +69,13 @@ the ScriptBlock property of the Prompt function.
 For example:
 
 ```powershell
-PS C:\> (Get-Command Prompt).ScriptBlock
+(Get-Command Prompt).ScriptBlock
+```
 
-"PS $($executionContext.SessionState.Path.CurrentLocation)$('>' * ($nestedPr
-omptLevel + 1)) "
+```Output
+"PS $($executionContext.SessionState.Path.CurrentLocation)$('>' * ($nestedPromptLevel + 1)) "
 # .Link
-# http://go.microsoft.com/fwlink/?LinkID=225750
+# https://go.microsoft.com/fwlink/?LinkID=225750
 # .ExternalHelp System.Management.Automation.dll-help.xml
 ```
 
@@ -84,7 +85,6 @@ display the script that creates the current Prompt function, type:
 ```powershell
 (Get-Item function:prompt).ScriptBlock
 ```
-
 
 ### THE DEFAULT PROMPT
 
@@ -97,7 +97,7 @@ The default PowerShell prompt is:
 PS>
 ```
 
-For example, the following command sets the Prompt function to $null, which is
+For example, the following command sets the Prompt function to `$null`, which is
 invalid. As a result, the default prompt appears.
 
 ```powershell
@@ -121,7 +121,7 @@ function prompt {
 ```
 
 The function uses the Test-Path cmdlet to determine whether the
-\$PSDebugContext automatic variable is populated. If \$PSDebugContext is
+`$PSDebugContext` automatic variable is populated. If `$PSDebugContext` is
 populated, you are in debugging mode, and "[DBG]" is added to the prompt, as
 follows:
 
@@ -129,7 +129,7 @@ follows:
 [DBG] PS C:\ps-test>
 ```
 
-If \$PSDebugContext is not populated, the function adds "PS" to the prompt.
+If `$PSDebugContext` is not populated, the function adds "PS" to the prompt.
 And, the function uses the `Get-Location` cmdlet to get the current file
 system directory location. Then, it adds a right angle bracket (>).
 
@@ -141,7 +141,7 @@ PS C:\ps-test>
 
 If you are in a nested prompt, the function adds two angle brackets (>>) to
 the prompt. (You are in a nested prompt if the value of the
-\$NestedPromptLevel automatic variable is greater than 1.)
+`$NestedPromptLevel` automatic variable is greater than 1.)
 
 For example, when you are debugging in a nested prompt, the prompt resembles
 the following prompt:
@@ -165,7 +165,7 @@ PS Hello, World> Enter-PSSession Server01
 Other PowerShell host applications and alternate shells might have their own
 custom command prompts.
 
-For more information about the \$PSDebugContext and $NestedPromptLevel
+For more information about the `$PSDebugContext` and `$NestedPromptLevel`
 automatic variables, see [about_Automatic_Variables](about_Automatic_Variables.md).
 
 ### HOW TO CUSTOMIZE THE PROMPT

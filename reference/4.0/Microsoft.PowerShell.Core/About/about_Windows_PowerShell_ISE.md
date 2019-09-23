@@ -60,7 +60,7 @@ supported versions of Windows.
 - In a Windows PowerShell console, Cmd.exe, or the Run or Search box in
   Windows, type "PowerShell_ise.exe". You can also use the command-line
   parameters, including the NoProfile switch. For more information, see
-  [PowerShell_ISE.exe Console Help](http://go.microsoft.com/fwlink/?LinkId=243055).
+  [PowerShell_ISE.exe Console Help](about_powershell_ise_exe.md).
 
 ## Running Interactive Commands
 
@@ -203,7 +203,7 @@ Windows PowerShell ISE is built on the Windows Presentation Foundation (WPF).
 If the graphical elements of Windows PowerShell ISE do not render correctly on
 your system, you might resolve the problem by adding or adjusting the "Disable
 WPF Hardware acceleration" graphics rendering settings on your system. For
-more information, see [Graphics Rendering Registry Settings](http://go.microsoft.com/fwlink/?LinkId=144711)
+more information, see [Graphics Rendering Registry Settings](/dotnet/framework/wpf/graphics-multimedia/graphics-rendering-registry-settings)
 in the MSDN library.
 
 ## SEE ALSO

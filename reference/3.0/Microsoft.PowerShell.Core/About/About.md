@@ -4,7 +4,7 @@ schema: 2.0.0
 locale: en-us
 keywords: powershell,cmdlet
 Help Version: 6.0
-Download Help Link: http://Please-enter-FwLink-manually
+Download Help Link: https://Please-enter-FwLink-manually
 Module Guid: 00000000-0000-0000-0000-000000000000
 Module Name: About
 title: About topics

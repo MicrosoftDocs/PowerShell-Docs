@@ -11,7 +11,6 @@ title: Invoke-Command
 # Invoke-Command
 
 ## SYNOPSIS
-
 Runs commands on local and remote computers.
 
 ## SYNTAX
@@ -136,6 +135,7 @@ The `Invoke-Command` cmdlet runs the `Get-Culture` command on Server02. Tne **Se
 specifies the session saved in the `$s` variable.
 
 In response, PowerShell runs the command in the session on the Server02 computer.
+
 ### Example 4: Use a session to run a series of commands that share data
 
 This example compares the effects of using **ComputerName** and **Session** parameters of

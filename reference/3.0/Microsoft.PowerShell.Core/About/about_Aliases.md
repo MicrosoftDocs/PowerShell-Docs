@@ -267,4 +267,4 @@ Get-Help Alias
 - [about_providers](about_providers.md)
 
 <!-- External links -->
-[aliasinfo]: http://go.microsoft.com/fwlink/?LinkId=143644
+[aliasinfo]: /dotnet/api/system.management.automation.aliasinfo
