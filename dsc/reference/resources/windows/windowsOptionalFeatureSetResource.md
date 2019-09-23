@@ -16,7 +16,7 @@ Use this resource when you want to configure a number of Windows optional featur
 
 ## Syntax
 
-```MOF
+```Syntax
 WindowsOptionalFeatureSet [string] #ResourceName
 {
     Name = [string[]]
@@ -37,9 +37,9 @@ WindowsOptionalFeatureSet [string] #ResourceName
 |---|---|
 |Name |Indicates the name of the features that you want to ensure are enabled or disabled. |
 |Source |Not implemented. |
-|NoWindowsUpdateCheck |Specifies whether DISM contacts Windows Update (WU) when searching for the source files to enable features. If _$true_, DISM does not contact WU. |
-|RemoveFilesOnDisable |Set to _$true_ to remove all files associated with the features when **Ensure** is set to _Absent_. |
-|LogLevel |The maximum output level shown in the logs. The accepted values are: _ErrorsOnly_, _ErrorsAndWarning_, and _ErrorsAndWarningAndInformation_. |
+|NoWindowsUpdateCheck |Specifies whether DISM contacts Windows Update (WU) when searching for the source files to enable features. If `$true`, DISM does not contact WU. |
+|RemoveFilesOnDisable |Set to `$true` to remove all files associated with the features when **Ensure** is set to **Absent**. |
+|LogLevel |The maximum output level shown in the logs. The accepted values are: **ErrorsOnly**, **ErrorsAndWarning**, and **ErrorsAndWarningAndInformation**. |
 |LogPath |The path to a log file where you want the resource provider to log the operation. |
 
 ## Common properties
@@ -47,7 +47,7 @@ WindowsOptionalFeatureSet [string] #ResourceName
 |Property |Description |
 |---|---|
 |DependsOn |Indicates that the configuration of another resource must run before this resource is configured. For example, if the ID of the resource configuration script block that you want to run first is ResourceName and its type is ResourceType, the syntax for using this property is `DependsOn = "[ResourceType]ResourceName"`. |
-|Ensure |Specifies whether the features are enabled. To ensure that the features are enabled, set this property to _Enable_. To ensure that the features are disabled, set the property to _Disable_. The default value is _Enable_. |
+|Ensure |Specifies whether the features are enabled. To ensure that the features are enabled, set this property to **Enable**. To ensure that the features are disabled, set the property to **Disable**. The default value is **Enable**. |
 |PsDscRunAsCredential |Sets the credential for running the entire resource as. |
 
 > [!NOTE]

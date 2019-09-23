@@ -10,7 +10,7 @@ mechanism to manage authorized ssh keys for a specified user.
 
 ## Syntax
 
-```MOF
+```Syntax
 nxAuthorizedKeys <string> #ResourceName
 {
     KeyComment = <string>
@@ -26,15 +26,15 @@ nxAuthorizedKeys <string> #ResourceName
 |Property |Description |
 |---|---|
 |KeyComment |A unique comment for the key. This is used to uniquely identify keys. |
-|Username |The username to manage ssh authorized keys for. If not defined, the default user is _root_. |
-|Key |The contents of the key. This is required if **Ensure** is set to _Present_.|
+|Username |The username to manage ssh authorized keys for. If not defined, the default user is **root**. |
+|Key |The contents of the key. This is required if **Ensure** is set to **Present**.|
 
 ## Common properties
 
 |Property |Description |
 |---|---|
 |DependsOn |Indicates that the configuration of another resource must run before this resource is configured. For example, if the ID of the resource configuration script block that you want to run first is ResourceName and its type is ResourceType, the syntax for using this property is `DependsOn = "[ResourceType]ResourceName"`. |
-|Ensure |Specifies whether the key is defined. Set this property to _Absent_ to ensure the key does not exist in the user's authorized keys file. Set it to _Present_ to ensure the key is defined in the user's authorized key file. |
+|Ensure |Specifies whether the key is defined. Set this property to **Absent** to ensure the key does not exist in the user's authorized keys file. Set it to **Present** to ensure the key is defined in the user's authorized key file. |
 
 ## Example
 

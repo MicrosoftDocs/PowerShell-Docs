@@ -10,7 +10,7 @@ manage local groups on a Linux node.
 
 ## Syntax
 
-```MOF
+```Syntax
 nxGroup <string> #ResourceName
 {
     GroupName = <string>
@@ -38,7 +38,7 @@ nxGroup <string> #ResourceName
 |Property |Description |
 |---|---|
 |DependsOn |Indicates that the configuration of another resource must run before this resource is configured. For example, if the ID of the resource configuration script block that you want to run first is ResourceName and its type is ResourceType, the syntax for using this property is `DependsOn = "[ResourceType]ResourceName"`. |
-|Ensure |Determines whether to check if the group exists. Set this property to _Present_ to ensure the group exists. Set it to _Absent_ to ensure the group does not exist. The default value is _Present_. |
+|Ensure |Determines whether to check if the group exists. Set this property to **Present** to ensure the group exists. Set it to **Absent** to ensure the group does not exist. The default value is **Present**. |
 
 ## Example
 

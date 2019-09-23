@@ -12,7 +12,7 @@ provides a mechanism to ensure that optional features are enabled on a target no
 
 ## Syntax
 
-```MOF
+```Syntax
 WindowsOptionalFeature [string] #ResourceName
 {
     Name = [string]
@@ -33,9 +33,9 @@ WindowsOptionalFeature [string] #ResourceName
 |---|---|
 |Name |Indicates the name of the feature that you want to ensure is enabled or disabled. |
 |Source |Not implemented. |
-|NoWindowsUpdateCheck |Specifies whether DISM contacts Windows Update (WU) when searching for the source files to enable a feature. If _$true_, DISM does not contact WU. |
-|RemoveFilesOnDisable |Set to _$true_ to remove all files associated with the feature when **Ensure** is set to _Absent_. |
-|LogLevel |The maximum output level shown in the logs. The accepted values are: _ErrorsOnly_, _ErrorsAndWarning_, and _ErrorsAndWarningAndInformation_. |
+|NoWindowsUpdateCheck |Specifies whether DISM contacts Windows Update (WU) when searching for the source files to enable a feature. If `$true`, DISM does not contact WU. |
+|RemoveFilesOnDisable |Set to `$true` to remove all files associated with the feature when **Ensure** is set to **Absent**. |
+|LogLevel |The maximum output level shown in the logs. The accepted values are: **ErrorsOnly**, **ErrorsAndWarning**, and **ErrorsAndWarningAndInformation**. |
 |LogPath |The path to a log file where you want the resource provider to log the operation. |
 
 ## Common properties

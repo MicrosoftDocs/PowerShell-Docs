@@ -12,7 +12,7 @@ mechanism to manage system environment variables.
 
 ## Syntax
 
-```MOF
+```Syntax
 Environment [string] #ResourceName
 {
     Name = [string]
@@ -29,7 +29,7 @@ Environment [string] #ResourceName
 |Property |Description |
 |---|---|
 |Name |Indicates the name of the environment variable for which you want to ensure a specific state. |
-|Path |Defines the environment variable that is being configured. Set this property to _$true_ if the variable is the **Path** variable; otherwise, set it to _$false_. The default is _$false_. If the variable being configured is the **Path** variable, the value provided through the **Value** property will be appended to the existing value. |
+|Path |Defines the environment variable that is being configured. Set this property to `$true` if the variable is the **Path** variable; otherwise, set it to `$false`. The default is `$false`. If the variable being configured is the **Path** variable, the value provided through the **Value** property will be appended to the existing value. |
 |Value |The value to assign to the environment variable. |
 
 ## Common properties
@@ -37,7 +37,7 @@ Environment [string] #ResourceName
 |Property |Description |
 |---|---|
 |DependsOn |Indicates that the configuration of another resource must run before this resource is configured. For example, if the ID of the resource configuration script block that you want to run first is ResourceName and its type is ResourceType, the syntax for using this property is `DependsOn = "[ResourceType]ResourceName"`. |
-|Ensure |Indicates if a variable exists. Set this property to _Present_ to create the environment variable if it does not exist or to ensure that its value matches what is provided through the **Value** property if the variable already exists. Set it to _Absent_ to delete the variable if it exists. |
+|Ensure |Indicates if a variable exists. Set this property to **Present** to create the environment variable if it does not exist or to ensure that its value matches what is provided through the **Value** property if the variable already exists. Set it to **Absent** to delete the variable if it exists. |
 |PsDscRunAsCredential |Sets the credential for running the entire resource as. |
 
 > [!NOTE]

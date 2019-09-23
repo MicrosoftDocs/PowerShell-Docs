@@ -17,7 +17,7 @@ requires the **PackageManagement** module, available from [http://PowerShellGall
 
 ## Syntax
 
-```MOF
+```Syntax
 PackageManagement [string] #ResourceName
 {
     Name = [string]
@@ -54,14 +54,14 @@ The following table lists options for the AdditionalParameters property.
 |Parameter |Description |
 |---|---|
 |DestinationPath |Used by providers such as the built-in Nuget Provider. Specifies a file location where you want the package to be installed. |
-|InstallationPolicy |Used by providers such as the built-in Nuget Provider. Determines whether you trust the package's source. One of: _Untrusted_ or _Trusted_. |
+|InstallationPolicy |Used by providers such as the built-in Nuget Provider. Determines whether you trust the package's source. One of: **Untrusted** or **Trusted**. |
 
 ## Common properties
 
 |Property |Description |
 |---|---|
 |DependsOn |Indicates that the configuration of another resource must run before this resource is configured. For example, if the ID of the resource configuration script block that you want to run first is ResourceName and its type is ResourceType, the syntax for using this property is `DependsOn = "[ResourceType]ResourceName"`. |
-|Ensure |Determines whether the package is to be installed or uninstalled. The default value is _Present_. |
+|Ensure |Determines whether the package is to be installed or uninstalled. The default value is **Present**. |
 |PsDscRunAsCredential |Sets the credential for running the entire resource as. |
 
 > [!NOTE]

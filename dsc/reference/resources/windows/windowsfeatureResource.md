@@ -12,7 +12,7 @@ mechanism to ensure that roles and features are added or removed on a target nod
 
 ## Syntax
 
-```MOF
+```Syntax
 WindowsFeature [string] #ResourceName
 {
     Name = [string]
@@ -32,7 +32,7 @@ WindowsFeature [string] #ResourceName
 |---|---|
 |Name |Indicates the name of the role or feature that you want to ensure is added or removed. This is the same as the **Name** property from the [Get-WindowsFeature](/powershell/module/servermanager/Get-WindowsFeature) cmdlet, and not the display name of the role or feature. |
 |Credential |Indicates the credentials to use to add or remove the role or feature. |
-|IncludeAllSubFeature |Set this property to _$true_ to ensure the state of all required subfeatures with the state of the feature you specify with the **Name** property. |
+|IncludeAllSubFeature |Set this property to `$true` to ensure the state of all required subfeatures with the state of the feature you specify with the **Name** property. |
 |LogPath |Indicates the path to a log file where you want the resource provider to log the operation. |
 |Source |Indicates the location of the source file to use for installation, if necessary. |
 
@@ -41,7 +41,7 @@ WindowsFeature [string] #ResourceName
 |Property |Description |
 |---|---|
 |DependsOn |Indicates that the configuration of another resource must run before this resource is configured. For example, if the ID of the resource configuration script block that you want to run first is ResourceName and its type is ResourceType, the syntax for using this property is `DependsOn = "[ResourceType]ResourceName"`. |
-|Ensure |Indicates if the role or feature is added. To ensure that the role or feature is added, set this property to _Present_. To ensure that the role or feature is removed, set the property to _Absent_. The default value is _Present_. |
+|Ensure |Indicates if the role or feature is added. To ensure that the role or feature is added, set this property to **Present**. To ensure that the role or feature is removed, set the property to **Absent**. The default value is **Present**. |
 |PsDscRunAsCredential |Sets the credential for running the entire resource as. |
 
 > [!NOTE]

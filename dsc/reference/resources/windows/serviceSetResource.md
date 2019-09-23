@@ -16,7 +16,7 @@ Use this resource when you want to configure a number of services to the same st
 
 ## Syntax
 
-```MOF
+```Syntax
 ServiceSet [string] #ResourceName
 {
     Name = [string[]]
@@ -35,9 +35,9 @@ ServiceSet [string] #ResourceName
 |Property |Description |
 |---|---|
 |Name |Indicates the service names. Note that sometimes this is different from the display names. You can get a list of the services and their current state with the `Get-Service` cmdlet. |
-|StartupType |Indicates the startup type for the services. The values that are allowed for this property are: _Automatic_, _Disabled_, and _Manual_. |
-|BuiltInAccount |Indicates the sign-in account to use for the services. The values that are allowed for this property are: _LocalService_, _LocalSystem_, and _NetworkService_. |
-|State |Indicates the state you want to ensure for the services: _Stopped_ or _Running_. |
+|StartupType |Indicates the startup type for the services. The values that are allowed for this property are: **Automatic**, **Disabled**, and **Manual**. |
+|BuiltInAccount |Indicates the sign-in account to use for the services. The values that are allowed for this property are: **LocalService**, **LocalSystem**, and **NetworkService**. |
+|State |Indicates the state you want to ensure for the services: **Stopped** or **Running**. |
 |Credential |Indicates credentials for the account that the service resource will run under. This property and the **BuiltinAccount** property cannot be used together. |
 
 ## Common properties
@@ -45,7 +45,7 @@ ServiceSet [string] #ResourceName
 |Property |Description |
 |---|---|
 |DependsOn |Indicates that the configuration of another resource must run before this resource is configured. For example, if the ID of the resource configuration script block that you want to run first is ResourceName and its type is ResourceType, the syntax for using this property is `DependsOn = "[ResourceType]ResourceName"`. |
-|Ensure |Indicates whether the services exist on the system. Set this property to _Absent_ to ensure that the services do not exist. Setting it to _Present_ ensures that target services exist. The default value is _Present_. |
+|Ensure |Indicates whether the services exist on the system. Set this property to **Absent** to ensure that the services do not exist. Setting it to **Present** ensures that target services exist. The default value is **Present**. |
 |PsDscRunAsCredential |Sets the credential for running the entire resource as. |
 
 > [!NOTE]

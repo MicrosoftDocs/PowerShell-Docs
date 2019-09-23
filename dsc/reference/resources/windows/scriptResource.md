@@ -14,7 +14,7 @@ corresponding DSC state operations.
 
 ## Syntax
 
-```MOF
+```Syntax
 Script [string] #ResourceName
 {
     GetScript = [string]

@@ -10,7 +10,7 @@ manage files and directories on a Linux node.
 
 ## Syntax
 
-```MOF
+```Syntax
 nxFile <string> #ResourceName
 {
     DestinationPath = <string>
@@ -34,15 +34,15 @@ nxFile <string> #ResourceName
 |Property |Description |
 |---|---|
 |DestinationPath |Specifies the location where you want to ensure the state for a file or directory. |
-|SourcePath |Specifies the path from which to copy the file or folder resource. This path may be a local path, or an `http/https/ftp` URL. Remote `http/https/ftp` URLs are only supported when the value of the **Type** property is _file_. |
-|Type |Specifies whether the resource being configured is a directory or a file. Set this property to _directory_ to indicate that the resource is a directory. Set it to _file_ to indicate that the resource is a file. The default value is _file_. |
+|SourcePath |Specifies the path from which to copy the file or folder resource. This path may be a local path, or an `http/https/ftp` URL. Remote `http/https/ftp` URLs are only supported when the value of the **Type** property is **file**. |
+|Type |Specifies whether the resource being configured is a directory or a file. Set this property to **directory** to indicate that the resource is a directory. Set it to **file** to indicate that the resource is a file. The default value is **file**. |
 |Contents |Specifies the contents of a file, such as a particular string. |
-|Checksum |Defines the type to use when determining whether two files are the same. If **Checksum** is not specified, only the file or directory name is used for comparison. Values are: _ctime_, _mtime_, or _md5_. |
-|Recurse |Indicates if subdirectories are included. Set this property to _$true_ to indicate that you want subdirectories to be included. The default is _$false_. This property is only valid when the **Type** property is set to _directory_. |
-|Force |Certain file operations (such as overwriting a file or deleting a directory that is not empty) will result in an error. Using the **Force** property overrides such errors. The default value is _$false_. |
-|Links |Specifies the desired behavior for symbolic links. Set this property to _follow_ to follow symbolic links and act on the links target. For example, copy the file instead of the link. Set this property to _manage_ to act on the link. For example, copy the link itself. Set this property to _ignore_ to ignore symbolic links. |
+|Checksum |Defines the type to use when determining whether two files are the same. If **Checksum** is not specified, only the file or directory name is used for comparison. Values are: **ctime**, **mtime**, or **md5**. |
+|Recurse |Indicates if subdirectories are included. Set this property to `$true` to indicate that you want subdirectories to be included. The default is `$false`. This property is only valid when the **Type** property is set to **directory**. |
+|Force |Certain file operations (such as overwriting a file or deleting a directory that is not empty) will result in an error. Using the **Force** property overrides such errors. The default value is `$false`. |
+|Links |Specifies the desired behavior for symbolic links. Set this property to **follow** to follow symbolic links and act on the links target. For example, copy the file instead of the link. Set this property to **manage** to act on the link. For example, copy the link itself. Set this property to **ignore** to ignore symbolic links. |
 |Group |The name of the **Group** to have permissions to the file or directory. |
-|Mode |Specifies the desired permissions for the resource, in octal or symbolic notation. For example, _777_ or _rwxrwxrwx_. If using symbolic notation, do not provide the first character which indicates directory or file. |
+|Mode |Specifies the desired permissions for the resource, in octal or symbolic notation. For example, **777** or **rwxrwxrwx**. If using symbolic notation, do not provide the first character which indicates directory or file. |
 |Owner |The name of the group to own the file or directory. |
 
 ## Common properties
@@ -50,7 +50,7 @@ nxFile <string> #ResourceName
 |Property |Description |
 |---|---|
 |DependsOn |Indicates that the configuration of another resource must run before this resource is configured. For example, if the ID of the resource configuration script block that you want to run first is ResourceName and its type is ResourceType, the syntax for using this property is `DependsOn = "[ResourceType]ResourceName"`. |
-|Ensure |Determines whether to check if the file exists. Set this property to _Present_ to ensure the file exists. Set it to _Absent_ to ensure the file does not exist. The default value is _Present_. |
+|Ensure |Determines whether to check if the file exists. Set this property to **Present** to ensure the file exists. Set it to **Absent** to ensure the file does not exist. The default value is **Present**. |
 
 ## Additional Information
 
@@ -154,7 +154,7 @@ Node $node {
         Contents=@"
 #!/bin/bash`necho "hello world"`n
 "@
-        Mode = “755”
+        Mode = "755"
         DependsOn = "[nxFile]DirectoryExample"
     }
 }

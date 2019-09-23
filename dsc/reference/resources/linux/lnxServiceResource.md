@@ -10,7 +10,7 @@ manage services on a Linux node.
 
 ## Syntax
 
-```MOF
+```Syntax
 nxService <string> #ResourceName
 {
     Name = <string>
@@ -28,7 +28,7 @@ nxService <string> #ResourceName
 |Name |The name of the service/daemon to configure. |
 |Controller |The type of service controller to use when configuring the service. |
 |Enabled |Indicates whether the service starts on boot. |
-|State |Indicates whether the service is running. Set this property to _Stopped_ to ensure that the service is not running. Set it to _Running_ to ensure that the service is running. |
+|State |Indicates whether the service is running. Set this property to **Stopped** to ensure that the service is not running. Set it to **Running** to ensure that the service is running. |
 
 ## Common properties
 

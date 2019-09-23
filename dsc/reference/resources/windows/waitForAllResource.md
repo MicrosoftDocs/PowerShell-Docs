@@ -20,7 +20,7 @@ state on all target nodes defined in the **NodeName** property.
 
 ## Syntax
 
-```MOF
+```Syntax
 WaitForAll [string] #ResourceName
 {
     ResourceName = [string]

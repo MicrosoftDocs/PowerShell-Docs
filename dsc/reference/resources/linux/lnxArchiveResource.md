@@ -10,7 +10,7 @@ unpack archive (.tar, .zip) files at a specific path on a Linux node.
 
 ## Syntax
 
-```MOF
+```Syntax
 nxArchive <string> #ResourceName
 {
     SourcePath = <string>
@@ -28,19 +28,20 @@ nxArchive <string> #ResourceName
 |---|---|
 |SourcePath |Specifies the source path of the archive file. This should be a .tar, .zip, or .tar.gz file. |
 |DestinationPath |Specifies the location where you want to ensure the archive contents are extracted. |
-|Checksum |Defines the type to use when determining whether the source archive has been updated. Values are: _ctime_, _mtime_, or _md5_. The default value is _md5_. |
-|Force |Certain file operations (such as overwriting a file or deleting a directory that is not empty) will result in an error. Using the **Force** property overrides such errors. The default value is _$false_. |
+|Checksum |Defines the type to use when determining whether the source archive has been updated. Values are: **ctime**, **mtime**, or **md5**. The default value is **md5**. |
+|Force |Certain file operations (such as overwriting a file or deleting a directory that is not empty) will result in an error. Using the **Force** property overrides such errors. The default value is `$false`. |
 
 ## Common properties
 
 |Property |Description |
 |---|---|
 |DependsOn |Indicates that the configuration of another resource must run before this resource is configured. For example, if the ID of the resource configuration script block that you want to run first is ResourceName and its type is ResourceType, the syntax for using this property is `DependsOn = "[ResourceType]ResourceName"`. |
-|Ensure |Determines whether to check if the content of the archive exists at the **Destination**. Set this property to _Present_ to ensure the contents exist. Set it to _Absent_ to ensure they do not exist. The default value is _Present_. |
+|Ensure |Determines whether to check if the content of the archive exists at the **Destination**. Set this property to **Present** to ensure the contents exist. Set it to **Absent** to ensure they do not exist. The default value is **Present**. |
 
 ## Example
 
-The following example shows how to use the **nxArchive** resource to ensure that the contents of an archive file called `website.tar` exist and are extracted at a given destination.
+The following example shows how to use the **nxArchive** resource to ensure that the contents of an
+archive file called `website.tar` exist and are extracted at a given destination.
 
 ```powershell
 Import-DSCResource -Module nx
@@ -48,16 +49,16 @@ Import-DSCResource -Module nx
 nxFile SyncArchiveFromWeb
 {
    Ensure = "Present"
-   SourcePath = “http://release.contoso.com/releases/website.tar”
+   SourcePath = "http://release.contoso.com/releases/website.tar"
    DestinationPath = "/usr/release/staging/website.tar"
    Type = "File"
-   Checksum = “mtime”
+   Checksum = "mtime"
 }
 
 nxArchive SyncWebDir
 {
-   SourcePath = “/usr/release/staging/website.tar”
-   DestinationPath = “/usr/local/apache2/htdocs/”
+   SourcePath = "/usr/release/staging/website.tar"
+   DestinationPath = "/usr/local/apache2/htdocs/"
    Force = $false
    DependsOn = "[nxFile]SyncArchiveFromWeb"
 }

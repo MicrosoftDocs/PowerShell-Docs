@@ -13,7 +13,7 @@ accessible by the target Node.
 
 ## Syntax
 
-```MOF
+```Syntax
 File [string] #ResourceName
 {
     DestinationPath = [string]
@@ -36,16 +36,16 @@ File [string] #ResourceName
 
 |Property |Description |
 |---|---|
-|DestinationPath |The location, on the target node, you want to ensure is _Present_ or _Absent_ with **Ensure**. |
+|DestinationPath |The location, on the target node, you want to ensure is **Present** or **Absent** with **Ensure**. |
 |Attributes |The desired state of the attributes for the targeted file or directory. Valid values are _Archive_, _Hidden_, _ReadOnly_, and _System_. |
-|Checksum |The checksum type to use when determining whether two files are the same. Valid values include: _SHA-1_, _SHA-256_, _SHA-512_, _createdDate_, _modifiedDate_. |
-|Contents |Only valid when used with **Type** _File_. Indicates the contents to **Ensure** are _Present_ or _Absent_ from the targeted file. |
+|Checksum |The checksum type to use when determining whether two files are the same. Valid values include: **SHA-1**, **SHA-256**, **SHA-512**, **createdDate**, **modifiedDate**. |
+|Contents |Only valid when used with **Type** **File**. Indicates the contents to **Ensure** are **Present** or **Absent** from the targeted file. |
 |Credential |The credentials that are required to access resources, such as source files. |
-|Force |Overrides access operations that would result in an error (such as overwriting a file or deleting a directory that is not empty). Default value is _$false_. |
-|Recurse |Only valid when used with **Type** _Directory_. Performs the state operation recursively to all subdirectories. Default value is _$false_. |
+|Force |Overrides access operations that would result in an error (such as overwriting a file or deleting a directory that is not empty). Default value is `$false`. |
+|Recurse |Only valid when used with **Type** **Directory**. Performs the state operation recursively to all subdirectories. Default value is `$false`. |
 |SourcePath |The path from which to copy the file or folder resource. |
-|Type |The type of resource being configured. Valid values are _Directory_ and _File_. Default value is _File_. |
-|MatchSource |Determines if the resource should monitor for new files added to the source directory after the initial copy. A value of _$true_ indicates that, after the initial copy, any new source files should be copied to the destination. If set to _$false_, the resource caches the contents of the source directory and ignores any files added after the initial copy. Default value is _$false_. |
+|Type |The type of resource being configured. Valid values are **Directory** and **File**. Default value is **File**. |
+|MatchSource |Determines if the resource should monitor for new files added to the source directory after the initial copy. A value of `$true` indicates that, after the initial copy, any new source files should be copied to the destination. If set to `$false`, the resource caches the contents of the source directory and ignores any files added after the initial copy. Default value is `$false`. |
 
 > [!WARNING]
 > If you do not specify a value for **Credential** or **PSRunAsCredential**, the resource will use
@@ -59,7 +59,7 @@ File [string] #ResourceName
 |Property |Description |
 |---|---|
 |DependsOn |Indicates that the configuration of another resource must run before this resource is configured. For example, if the ID of the resource configuration script block that you want to run first is ResourceName and its type is ResourceType, the syntax for using this property is `DependsOn = "[ResourceType]ResourceName"`. |
-|Ensure |Determines whether the file and **Contents** at the **Destination** should exist or not. Set this property to _Present_ to ensure the file exists. Set it to _Absent_ to ensure they do not exist. The default value is _Present_. |
+|Ensure |Determines whether the file and **Contents** at the **Destination** should exist or not. Set this property to **Present** to ensure the file exists. Set it to **Absent** to ensure they do not exist. The default value is **Present**. |
 |PsDscRunAsCredential |Sets the credential for running the entire resource as. |
 
 > [!NOTE]
@@ -69,14 +69,14 @@ File [string] #ResourceName
 ### Additional information
 
 - When you only specify a **DestinationPath**, the resource ensures that the path exists if
-  _Present_ or does not exist if _Absent_.
+  **Present** or does not exist if **Absent**.
 - When you specify a **SourcePath** and a **DestinationPath** with a **Type** value of
   **Directory**, the resource copies source directory to the destination path. The properties
   **Recurse**, **Force**, and **MatchSource** change the type of copy operation performed, while
   **Credential** determines which account to use to access the source directory.
-- If you specified a value of _ReadOnly_ for the **Attributes** property alongside a
-  **DestinationPath**, **Ensure** _Present_ would create the path specified, while **Contents**
-  would set the contents of the file. An **Ensure** _Absent_ setting would ignore the **Attributes**
+- If you specified a value of **ReadOnly** for the **Attributes** property alongside a
+  **DestinationPath**, **Ensure** **Present** would create the path specified, while **Contents**
+  would set the contents of the file. An **Ensure** **Absent** setting would ignore the **Attributes**
   property entirely, and remove any file at the specified path.
 
 ## Example

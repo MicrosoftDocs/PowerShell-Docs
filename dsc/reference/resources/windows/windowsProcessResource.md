@@ -12,7 +12,7 @@ mechanism to configure processes on a target node.
 
 ## Syntax
 
-```MOF
+```Syntax
 WindowsProcess [string] #ResourceName
 {
     Arguments = [string]
@@ -45,5 +45,5 @@ WindowsProcess [string] #ResourceName
 |Property |Description |
 |---|---|
 |DependsOn |Indicates that the configuration of another resource must run before this resource is configured. For example, if the ID of the resource configuration script block that you want to run first is ResourceName and its type is ResourceType, the syntax for using this property is `DependsOn = "[ResourceType]ResourceName"`. |
-|Ensure |Indicates if the process exists. Set this property to _Present_ to ensure that the process exists. Otherwise, set it to _Absent_. The default value is _Present_. |
+|Ensure |Indicates if the process exists. Set this property to **Present** to ensure that the process exists. Otherwise, set it to **Absent**. The default value is **Present**. |
 |PsDscRunAsCredential |Sets the credential for running the entire resource as. |

@@ -21,7 +21,7 @@ property.
 
 ## Syntax
 
-```MOF
+```Syntax
 WaitForSome [String] #ResourceName
 {
     NodeCount = [UInt32]

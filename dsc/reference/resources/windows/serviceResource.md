@@ -12,7 +12,7 @@ mechanism to manage services on the target node.
 
 ## Syntax
 
-```MOF
+```Syntax
 Service [string] #ResourceName
 {
     Name = [string]
@@ -34,10 +34,10 @@ Service [string] #ResourceName
 |Property |Description |
 |---|---|
 |Name |Indicates the service name. Note that sometimes this is different from the display name. You can get a list of the services and their current state with the `Get-Service` cmdlet. |
-|BuiltInAccount |Indicates the sign-in account to use for the service. The values that are allowed for this property are: _LocalService_, _LocalSystem_, and _NetworkService_. |
+|BuiltInAccount |Indicates the sign-in account to use for the service. The values that are allowed for this property are: **LocalService**, **LocalSystem**, and **NetworkService**. |
 |Credential |Indicates credentials for the account that the service will run under. This property and the **BuiltinAccount** property cannot be used together. |
-|StartupType |Indicates the startup type for the service. The values that are allowed for this property are: _Automatic_, _Disabled_, and _Manual_. |
-|State |Indicates the state you want to ensure for the service. The values are: _Running_ or _Stopped_. |
+|StartupType |Indicates the startup type for the service. The values that are allowed for this property are: **Automatic**, **Disabled**, and **Manual**. |
+|State |Indicates the state you want to ensure for the service. The values are: **Running** or **Stopped**. |
 |Description |Indicates the description of the target service. |
 |DisplayName |Indicates the display name of the target service. |
 |Path |Indicates the path to the binary file for a new service. |
@@ -47,7 +47,7 @@ Service [string] #ResourceName
 |Property |Description |
 |---|---|
 |DependsOn |Indicates that the configuration of another resource must run before this resource is configured. For example, if the ID of the resource configuration script block that you want to run first is ResourceName and its type is ResourceType, the syntax for using this property is `DependsOn = "[ResourceType]ResourceName"`. |
-|Ensure |Indicates whether the target service exists on the system. Set this property to _Absent_ to ensure that the target service does not exist. Setting it to _Present_ ensures that target service exists. The default value is _Present_. |
+|Ensure |Indicates whether the target service exists on the system. Set this property to **Absent** to ensure that the target service does not exist. Setting it to **Present** ensures that target service exists. The default value is **Present**. |
 |PsDscRunAsCredential |Sets the credential for running the entire resource as. |
 
 > [!NOTE]

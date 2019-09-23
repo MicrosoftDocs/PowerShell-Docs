@@ -19,7 +19,7 @@ module, available from the [PowerShell Gallery](https://PowerShellGallery.com).
 
 ## Syntax
 
-```MOF
+```Syntax
 PackageManagementSource [String] #ResourceName
 {
     Name = [string]
@@ -40,7 +40,7 @@ PackageManagementSource [String] #ResourceName
 |Name |Specifies the name of the package source to be registered or unregistered on your system. |
 |ProviderName |Specifies the name of the OneGet provider through which you can interop with the package source. |
 |SourceLocation |Specifies the URI of the package source. |
-|InstallationPolicy |Used by providers such as the built-in Nuget Provider. Determines whether you trust the package's source. One of: _Untrusted_ or _Trusted_. |
+|InstallationPolicy |Used by providers such as the built-in Nuget Provider. Determines whether you trust the package's source. One of: **Untrusted** or **Trusted**. |
 |SourceCredential |Provides access to the package on a remote source. |
 
 ## Common properties
@@ -48,7 +48,7 @@ PackageManagementSource [String] #ResourceName
 |Property |Description |
 |---|---|
 |DependsOn |Indicates that the configuration of another resource must run before this resource is configured. For example, if the ID of the resource configuration script block that you want to run first is ResourceName and its type is ResourceType, the syntax for using this property is `DependsOn = "[ResourceType]ResourceName"`. |
-|Ensure |Determines whether the package source is to be registered or unregistered. The default value is _Present_. |
+|Ensure |Determines whether the package source is to be registered or unregistered. The default value is **Present**. |
 |PsDscRunAsCredential |Sets the credential for running the entire resource as. |
 
 > [!NOTE]

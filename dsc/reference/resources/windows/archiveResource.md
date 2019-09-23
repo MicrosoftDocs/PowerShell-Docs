@@ -12,7 +12,7 @@ unpack archive (.zip) files at a specific path.
 
 ## Syntax
 
-```MOF
+```Syntax
 Archive [string] #ResourceName
 {
     Destination = [string]
@@ -32,8 +32,8 @@ Archive [string] #ResourceName
 |---|---|
 |Destination |Specifies the location where you want to ensure the archive contents are extracted. |
 |Path |Specifies the source path of the archive file. |
-|Checksum |Defines the type to use when determining whether two files are the same. If **Checksum** is not specified, only the file or directory name is used for comparison. Valid values include: _SHA-1_, _SHA-256_, _SHA-512_, _createdDate_, _modifiedDate_. If you specify **Checksum** without **Validate**, the configuration will fail. |
-|Force |Certain file operations (such as overwriting a file or deleting a directory that is not empty) will result in an error. Using the **Force** property overrides such errors. The default value is _False_. |
+|Checksum |Defines the type to use when determining whether two files are the same. If **Checksum** is not specified, only the file or directory name is used for comparison. Valid values include: **SHA-1**, **SHA-256**, **SHA-512**, **createdDate**, **modifiedDate**. If you specify **Checksum** without **Validate**, the configuration will fail. |
+|Force |Certain file operations (such as overwriting a file or deleting a directory that is not empty) will result in an error. Using the **Force** property overrides such errors. The default value is **False**. |
 |Validate| Uses the **Checksum** property to determine if the archive matches the signature. If you specify **Checksum** without **Validate**, the configuration will fail. If you specify **Validate** without **Checksum**, a _SHA-256_ **Checksum** is used by default. |
 
 ## Common properties
@@ -41,7 +41,7 @@ Archive [string] #ResourceName
 |Property |Description |
 |---|---|
 |DependsOn |Indicates that the configuration of another resource must run before this resource is configured. For example, if the ID of the resource configuration script block that you want to run first is ResourceName and its type is ResourceType, the syntax for using this property is `DependsOn = "[ResourceType]ResourceName"`. |
-|Ensure |Determines whether to check if the content of the archive exists at the **Destination**. Set this property to _Present_ to ensure the contents exist. Set it to _Absent_ to ensure they do not exist. The default value is _Present_. |
+|Ensure |Determines whether to check if the content of the archive exists at the **Destination**. Set this property to **Present** to ensure the contents exist. Set it to **Absent** to ensure they do not exist. The default value is **Present**. |
 |PsDscRunAsCredential |Sets the credential for running the entire resource as. |
 
 > [!NOTE]

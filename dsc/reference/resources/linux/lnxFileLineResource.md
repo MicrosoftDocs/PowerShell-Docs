@@ -10,7 +10,7 @@ manage lines within a configuration file on a Linux node.
 
 ## Syntax
 
-```MOF
+```Syntax
 nxFileLine <string> #ResourceName
 {
     FilePath = <string>

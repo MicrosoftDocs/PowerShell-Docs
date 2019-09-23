@@ -15,7 +15,7 @@ The target node must have the DISM PowerShell module installed. For information,
 
 ## Syntax
 
-```MOF
+```Syntax
 {
     Name = [string]
     SourcePath = [string]
@@ -39,7 +39,7 @@ The target node must have the DISM PowerShell module installed. For information,
 |Property |Description |
 |---|---|
 |DependsOn |Indicates that the configuration of another resource must run before this resource is configured. For example, if the ID of the resource configuration script block that you want to run first is ResourceName and its type is ResourceType, the syntax for using this property is `DependsOn = "[ResourceType]ResourceName"`. |
-|Ensure |Indicates if the package is installed. Set this property to _Absent_ to ensure the package is not installed (or uninstall the package if it is installed). Set it to _Present_ to ensure the package is installed. **Ensure** is a required property on the **WindowsPackageCab** resource. |
+|Ensure |Indicates if the package is installed. Set this property to **Absent** to ensure the package is not installed (or uninstall the package if it is installed). Set it to **Present** to ensure the package is installed. **Ensure** is a required property on the **WindowsPackageCab** resource. |
 |PsDscRunAsCredential |Sets the credential for running the entire resource as. |
 
 ## Example

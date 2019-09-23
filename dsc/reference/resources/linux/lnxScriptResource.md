@@ -10,7 +10,7 @@ run Linux scripts on a Linux node.
 
 ## Syntax
 
-```MOF
+```Syntax
 nxScript <string> #ResourceName
 {
     GetScript = <string>

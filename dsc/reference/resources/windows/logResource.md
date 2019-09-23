@@ -12,7 +12,7 @@ write messages to the Microsoft-Windows-Desired State Configuration/Analytic eve
 
 ## Syntax
 
-```MOF
+```Syntax
 Log [string] #ResourceName
 {
     Message = [string]
