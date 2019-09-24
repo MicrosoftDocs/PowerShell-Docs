@@ -203,6 +203,8 @@ sequence is `e[91m`. You can specify other escape sequences including the follow
 - Foreground, background, or both
 - Inverse, bold
 
+For more information about ANSI color codes, see [ANSI escape code](https://wikipedia.org/wiki/ANSI_escape_code#Colors_) in Wikipedia.
+
 The valid keys include:
 
 - **ContinuationPrompt**: The color of the continuation prompt.
