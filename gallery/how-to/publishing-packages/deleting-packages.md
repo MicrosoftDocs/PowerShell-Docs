@@ -14,4 +14,4 @@ However, it remains downloadable by specifying its exact version, which is what 
 
 If you run into an exceptional situation where you think one of your packages must be deleted, this can be handled manually by the PowerShell Gallery team.
 For example, if there is a copyright infringement issue, or potentially harmful content, that could be a valid reason to delete it.
-You should submit a support request through [PowerShell Gallery](http://www.PowerShellGallery.com) in that case.
+You should submit a support request through [PowerShell Gallery](https://www.PowerShellGallery.com) in that case.

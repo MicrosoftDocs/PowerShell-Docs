@@ -196,7 +196,7 @@ By tagging your package with the compatible platform(s) it will be included in t
 filters on the left pane of the search results. If you host your package on GitHub, when you tag
 your package, you can also take advantage of our
 [PowerShell Gallery compatibility shields](https://img.shields.io/powershellgallery/p/:packageName.svg)
-![compatibility shield](https://img.shields.io/powershellgallery/p/CosmosDB.svg).
+![compatibility shield](../Images/CosmosDB.svg).
 
 ## Include tests
 
