@@ -1398,6 +1398,10 @@ typical call looks like
 PSReadLine requires PowerShell 3.0, or newer, and the console host. It does
 not work in PowerShell ISE. It does work in the console of Visual Studio Code.
 
+### ConvertTo-SecureString
+
+If you use ConvertTo-SecureString the password will be stored in the following location as plain text: %userprofile%\AppData\Roaming\Microsoft\Windows\PowerShell\PSReadline\ConsoleHost_history.txt
+
 ### FEEDBACK & CONTRIBUTING TO PSReadLine
 
 [PSReadLine on GitHub](https://github.com/lzybkr/PSReadLine)
