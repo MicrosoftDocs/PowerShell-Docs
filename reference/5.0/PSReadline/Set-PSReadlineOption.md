@@ -3,7 +3,7 @@ external help file: Microsoft.PowerShell.PSReadLine.dll-Help.xml
 keywords: powershell,cmdlet
 locale: en-us
 Module Name: PSReadLine
-ms.date: 12/07/2018
+ms.date: 09/23/2019
 online version: https://go.microsoft.com/fwlink/?linkid=821453
 schema: 2.0.0
 title: Set-PSReadLineOption
@@ -12,40 +12,24 @@ title: Set-PSReadLineOption
 # Set-PSReadLineOption
 
 ## SYNOPSIS
-Customizes the behavior of command line editing in PSReadLine.
+Customizes the behavior of command line editing in **PSReadLine**.
 
 ## SYNTAX
 
 ### OptionsSet
 
 ```
-Set-PSReadLineOption
- [-EditMode <EditMode>]
- [-ContinuationPrompt <String>]
+Set-PSReadLineOption [-EditMode <EditMode>] [-ContinuationPrompt <String>]
  [-ContinuationPromptForegroundColor <ConsoleColor>]
- [-ContinuationPromptBackgroundColor <ConsoleColor>]
- [-EmphasisForegroundColor <ConsoleColor>]
- [-EmphasisBackgroundColor <ConsoleColor>]
- [-ErrorForegroundColor <ConsoleColor>]
- [-ErrorBackgroundColor <ConsoleColor>]
- [-HistoryNoDuplicates]
- [-AddToHistoryHandler <System.Func`2[System.String,System.Boolean]>]
- [-CommandValidationHandler <System.Action`1[System.Management.Automation.Language.CommandAst]>]
- [-HistorySearchCursorMovesToEnd]
- [-MaximumHistoryCount <Int32>]
- [-MaximumKillRingCount <Int32>]
- [-ResetTokenColors]
- [-ShowToolTips]
- [-ExtraPromptLineCount <Int32>]
- [-DingTone <Int32>]
- [-DingDuration <Int32>]
- [-BellStyle <BellStyle>]
- [-CompletionQueryItems <Int32>]
- [-WordDelimiters <String>]
- [-HistorySearchCaseSensitive]
- [-HistorySaveStyle <HistorySaveStyle>]
- [-HistorySavePath <String>]
- [-ViModeIndicator <ViModeStyle>] [<CommonParameters>]
+ [-ContinuationPromptBackgroundColor <ConsoleColor>] [-EmphasisForegroundColor <ConsoleColor>]
+ [-EmphasisBackgroundColor <ConsoleColor>] [-ErrorForegroundColor <ConsoleColor>]
+ [-ErrorBackgroundColor <ConsoleColor>] [-HistoryNoDuplicates]
+ [-AddToHistoryHandler <Func[string,bool]>] [-CommandValidationHandler <Action[CommandAst]>]
+ [-HistorySearchCursorMovesToEnd] [-MaximumHistoryCount <Int32>] [-MaximumKillRingCount <Int32>]
+ [-ResetTokenColors] [-ShowToolTips] [-ExtraPromptLineCount <Int32>] [-DingTone <Int32>]
+ [-DingDuration <Int32>] [-BellStyle <BellStyle>] [-CompletionQueryItems <Int32>]
+ [-WordDelimiters <String>] [-HistorySearchCaseSensitive] [-HistorySaveStyle <HistorySaveStyle>]
+ [-HistorySavePath <String>] [<CommonParameters>]
 ```
 
 ### ColorSet
@@ -57,13 +41,15 @@ Set-PSReadLineOption [-TokenKind] <TokenClassification> [[-ForegroundColor] <Con
 
 ## DESCRIPTION
 
-The **Set-PSReadLineOption** cmdlet customizes the behavior of the PSReadLine module when you are editing the command line.
+The `Set-PSReadLineOption` cmdlet customizes the behavior of the **PSReadLine** module when you're
+editing the command line. To view the **PSReadLine** settings, use `Get-PSReadLineOption`.
 
 ## EXAMPLES
 
-### Example 1: Set values for Comment type
+### Example 1: Set foreground and background colors
 
-This command sets tokens of the type Comment to be displayed in PSReadLine in green text on a gray background.
+This example sets **PSReadLine** to display the **Comment** token with green foreground text on a
+gray background.
 
 ```powershell
 Set-PSReadLineOption -TokenKind Comment -ForegroundColor Green -BackgroundColor Gray
@@ -71,8 +57,8 @@ Set-PSReadLineOption -TokenKind Comment -ForegroundColor Green -BackgroundColor 
 
 ### Example 2: Set bell style
 
-This cmdlet instructs PSReadLine to respond to errors or conditions that require user attention
-by emitting an audible beep at 1221 Hz for 60 ms.
+In this example, **PSReadLine** will respond to errors or conditions that require user attention.
+The **BellStyle** is set to emit an audible beep at 1221 Hz for 60 ms.
 
 ```powershell
 Set-PSReadLineOption -BellStyle Audible -DingTone 1221 -DingDuration 60
@@ -82,9 +68,9 @@ Set-PSReadLineOption -BellStyle Audible -DingTone 1221 -DingDuration 60
 
 ### -AddToHistoryHandler
 
-Specifies a **ScriptBlock** that controls which commands get added to PSReadLine history.
+Specifies a **ScriptBlock** that controls which commands get added to **PSReadLine** history.
 
-The **ScriptBlock** receives the command line as input. If the ScriptBlock returns `$true`, the
+The **ScriptBlock** receives the command line as input. If the **ScriptBlock** returns `$True`, the
 command line is added to the history.
 
 ```yaml
@@ -101,9 +87,9 @@ Accept wildcard characters: False
 
 ### -BackgroundColor
 
-Specifies the background color for the token kind that is specified by the **TokenKind** parameter.
+Specifies the background color for the token specified by the **TokenKind** parameter.
 
-The acceptable values for this parameter are:
+The acceptable values for this parameter are as follows:
 
 - Black
 - DarkBlue
@@ -137,13 +123,13 @@ Accept wildcard characters: False
 
 ### -BellStyle
 
-Specifies how PSReadLine responds to various error and ambiguous conditions.
+Specifies how **PSReadLine** responds to various error and ambiguous conditions.
 
-Valid values are:
+The valid values are as follows:
 
-- Audible: A short beep
-- Visual: Text flashes briefly
-- None: No feedback
+- **Audible**: A short beep.
+- **Visual**: Text flashes briefly.
+- **None**: No feedback.
 
 ```yaml
 Type: BellStyle
@@ -163,8 +149,9 @@ Accept wildcard characters: False
 Specifies a **ScriptBlock** that is called from **ValidateAndAcceptLine**. If an exception is
 thrown, validation fails and the error is reported.
 
-Before throwing an exception, the validation handler can place the cursor at the point of the error to make it easier to fix.
-A validation handler can also change the command line, such as to correct common typographical errors.
+Before throwing an exception, the validation handler can place the cursor at the point of the error
+to make it easier to fix. A validation handler can also change the command line, such as to correct
+common typographical errors.
 
 **ValidateAndAcceptLine** is used to avoid cluttering your history with commands that can't work.
 
@@ -184,7 +171,7 @@ Accept wildcard characters: False
 
 Specifies the maximum number of completion items that are shown without prompting.
 
-If the number of items to show is greater than this value, PSReadLine prompts "y/n" before
+If the number of items to show is greater than this value, **PSReadLine** prompts **yes/no** before
 displaying the completion items.
 
 ```yaml
@@ -202,7 +189,7 @@ Accept wildcard characters: False
 ### -ContinuationPrompt
 
 Specifies the string displayed at the beginning of the subsequent lines when multi-line input is
-entered. Defaults to `>>`. The empty string is valid.
+entered. The default is double greater-than signs (`>>`). An empty string is valid.
 
 ```yaml
 Type: String
@@ -220,7 +207,7 @@ Accept wildcard characters: False
 
 Specifies the background color of the continuation prompt.
 
-The acceptable values for this parameter are: the same values as for the **BackgroundColor** parameter.
+The acceptable values are the same as the **BackgroundColor** parameter.
 
 ```yaml
 Type: ConsoleColor
@@ -239,7 +226,7 @@ Accept wildcard characters: False
 
 Specifies the foreground color of the continuation prompt.
 
-The acceptable values for this parameter are: the same values as for **BackgroundColor**.
+The acceptable values are the same as the **BackgroundColor** parameter.
 
 ```yaml
 Type: ConsoleColor
@@ -291,11 +278,11 @@ Accept wildcard characters: False
 Specifies the command line editing mode. Using this parameter resets any key bindings set by
 `Set-PSReadLineKeyHandler`.
 
-Valid values are:
+The valid values are as follows:
 
-- Windows: Key bindings emulate PowerShell, cmd, and Visual Studio.
-- Emacs: Key bindings emulate Bash or Emacs.
-- Vi: Key bindings emulate Vi.
+- **Windows**: Key bindings emulate PowerShell, cmd, and Visual Studio.
+- **Emacs**: Key bindings emulate Bash or Emacs.
+- **Vi**: Key bindings emulate Vi.
 
 ```yaml
 Type: EditMode
@@ -312,9 +299,9 @@ Accept wildcard characters: False
 
 ### -EmphasisBackgroundColor
 
-Specifies the background color that is used for emphasis, such as to highlight search text.
+Specifies the background color that's used for emphasis, such as to highlight search text.
 
-The acceptable values for this parameter are: the same values as for **BackgroundColor**.
+The acceptable values are the same as the **BackgroundColor** parameter.
 
 ```yaml
 Type: ConsoleColor
@@ -331,9 +318,9 @@ Accept wildcard characters: False
 
 ### -EmphasisForegroundColor
 
-Specifies the foreground color that is used for emphasis, such as to highlight search text.
+Specifies the foreground color that's used for emphasis, such as to highlight search text.
 
-The acceptable values for this parameter are: the same values as for **BackgroundColor**.
+The acceptable values are the same as the **BackgroundColor** parameter.
 
 ```yaml
 Type: ConsoleColor
@@ -350,9 +337,9 @@ Accept wildcard characters: False
 
 ### -ErrorBackgroundColor
 
-Specifies the background color that is used for errors.
+Specifies the background color that's used for errors.
 
-The acceptable values for this parameter are: the same values as for **BackgroundColor**.
+The acceptable values are the same as the **BackgroundColor** parameter.
 
 ```yaml
 Type: ConsoleColor
@@ -369,9 +356,9 @@ Accept wildcard characters: False
 
 ### -ErrorForegroundColor
 
-Specifies the foreground color that is used for errors.
+Specifies the foreground color that's used for errors.
 
-The acceptable values for this parameter are: the same values as for **BackgroundColor**.
+The acceptable values are the same as the **BackgroundColor** parameter.
 
 ```yaml
 Type: ConsoleColor
@@ -389,7 +376,13 @@ Accept wildcard characters: False
 ### -ExtraPromptLineCount
 
 Specifies the number of extra lines.
-Specify a value for this parameter if your prompt spans more than one line, and you want extra lines to be available when PSReadLine displays the prompt after showing some output, such as when PSReadLine returns a list of completions.
+
+If your prompt spans more than one line, specify a value for this parameter. Use this option when
+you want extra lines to be available when **PSReadLine** displays the prompt after showing some
+output. For example, **PSReadLine** returns a list of completions.
+
+This option is needed less than in previous versions of **PSReadLine**, but is useful when the
+`InvokePrompt` function is used.
 
 ```yaml
 Type: Int32
@@ -405,9 +398,9 @@ Accept wildcard characters: False
 
 ### -ForegroundColor
 
-Specifies the foreground color for the token kind that is specified by the **TokenKind** parameter.
+Specifies the foreground color for the token that's specified by the **TokenKind** parameter.
 
-The acceptable values for this parameter are: the same values as for **BackgroundColor**.
+The acceptable values are the same as the **BackgroundColor** parameter.
 
 ```yaml
 Type: ConsoleColor
@@ -427,8 +420,8 @@ Accept wildcard characters: False
 This option controls the recall behavior. Duplicate commands are still added to the history file.
 When this option is set, only the most recent invocation appears when recalling commands.
 
-Repeated commands are added to history to preserve ordering during recall. However, you
-typically don't want to see the command multiple times when recalling or searching the history.
+Repeated commands are added to history to preserve ordering during recall. However, you typically
+don't want to see the command multiple times when recalling or searching the history.
 
 ```yaml
 Type: SwitchParameter
@@ -444,8 +437,12 @@ Accept wildcard characters: False
 
 ### -HistorySavePath
 
-Specifies the path to the file where history is saved.
-If you do not add this parameter, the default path is ~\AppData\Roaming\PSReadLine\$($host.Name)_history.txt.
+Specifies the path to the file where history is saved. The file name is stored in a variable
+`$($host.Name)_history.txt`, for example `ConsoleHost_history.txt`.
+
+If you don't use this parameter, the default path is as follows:
+
+`$env:APPDATA\Microsoft\Windows\PowerShell\PSReadLine\$($host.Name)_history.txt`
 
 ```yaml
 Type: String
@@ -454,21 +451,21 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: ~\AppData\Roaming\PSReadLine\$($host.Name)_history.txt
+Default value: $env:APPDATA\Microsoft\Windows\PowerShell\PSReadLine\$($host.Name)_history.txt
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -HistorySaveStyle
 
-Specifies how PSReadLine saves history.
+Specifies how **PSReadLine** saves history.
 
-Valid values are:
+Valid values are as follows:
 
-- SaveIncrementally: Save history after each command is executed and share across multiple
-  instances of PowerShell
-- SaveAtExit: Append history file when PowerShell exits
-- SaveNothing: Don't use a history file
+- **SaveIncrementally**: Save history after each command is executed and share across multiple
+  instances of PowerShell.
+- **SaveAtExit**: Append history file when PowerShell exits.
+- **SaveNothing**: Don't use a history file.
 
 ```yaml
 Type: HistorySaveStyle
@@ -503,7 +500,7 @@ Accept wildcard characters: False
 ### -HistorySearchCursorMovesToEnd
 
 Indicates that the cursor moves to the end of commands that you load from history by using a search.
-When this parameter is set to `$false`, the cursor remains at the position it was when you pressed
+When this parameter is set to `$False`, the cursor remains at the position it was when you pressed
 the up or down arrows.
 
 To turn off this option, you can run either of the following commands:
@@ -526,9 +523,9 @@ Accept wildcard characters: False
 
 ### -MaximumHistoryCount
 
-Specifies the maximum number of commands to save in PSReadLine history.
+Specifies the maximum number of commands to save in **PSReadLine** history.
 
-PSReadLine history is separate from PowerShell history.
+**PSReadLine** history is separate from PowerShell history.
 
 ```yaml
 Type: Int32
@@ -576,7 +573,10 @@ Accept wildcard characters: False
 
 ### -ShowToolTips
 
-When displaying possible completions,  tooltips are shown in the list of completions.
+When displaying possible completions, tooltips are shown in the list of completions.
+
+This option is enabled by default. This option wasn't enabled by default in prior versions of
+**PSReadLine**. To disable, set this option to `$False`.
 
 ```yaml
 Type: SwitchParameter
@@ -585,15 +585,17 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: False
+Default value: True
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -TokenKind
 
-Specifies the kind of token when you are setting token coloring options with the *ForegroundColor* and *BackgroundColor* parameters.
-The acceptable values for this parameter are:
+Specifies the token when you set token color options with the **ForegroundColor** and
+**BackgroundColor** parameters.
+
+The acceptable values for this parameter are as follows:
 
 - None
 - Comment
@@ -620,30 +622,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ViModeIndicator
-
-This option sets the visual indication for the current mode in Vi mode; either insert mode or
-command mode.
-
-Valid values are:
-
-- None - there is no indication
-- Prompt - the prompt changes color
-- Cursor - the cursor changes size
-
-```yaml
-Type: ViModeStyle
-Parameter Sets: (All)
-Aliases:
-Accepted values: None, Prompt, Cursor
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -WordDelimiters
 
 Specifies the characters that delimit words for functions like **ForwardWord** or **KillWord**.
@@ -655,7 +633,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: ;:,.[]{}()/\|^&*-=+'"
+Default value: ;:,.[]{}()/\|^&*-=+–—―
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -664,30 +642,30 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see
-[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+-WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### None
 
-You cannot pipe objects to this cmdlet.
+You can't send objects down the pipeline to `Set-PSReadLineOption`.
 
 ## OUTPUTS
 
 ### None
 
-This cmdlet does not generate output.
+`Set-PSReadLineOption` doesn't generate output.
 
 ## NOTES
 
 ## RELATED LINKS
 
-[Get-PSReadLineKeyHandler](Get-PSReadLineKeyHandler.md)
+[about_PSReadLine](./About/PSReadLine.md)
 
-[Remove-PSReadLineKeyHandler](Remove-PSReadLineKeyHandler.md)
+[Get-PSReadLineKeyHandler](Get-PSReadLineKeyHandler.md)
 
 [Get-PSReadLineOption](Get-PSReadLineOption.md)
 
-[Set-PSReadLineKeyHandler](Set-PSReadLineKeyHandler.md)
+[Remove-PSReadLineKeyHandler](Remove-PSReadLineKeyHandler.md)
 
+[Set-PSReadLineKeyHandler](Set-PSReadLineKeyHandler.md)
