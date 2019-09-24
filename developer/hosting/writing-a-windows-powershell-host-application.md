@@ -37,4 +37,4 @@ This section includes samples of complete host applications.
 
 ## See Also
 
-[Windows PowerShell](http://msdn.microsoft.com/en-us/b41a2af3-aec1-402d-8e18-c2c26be461ff)
+[Windows PowerShell](https://msdn.microsoft.com/en-us/b41a2af3-aec1-402d-8e18-c2c26be461ff)

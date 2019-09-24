@@ -32,4 +32,4 @@ If the module being deployed to Azure Automation requires license acceptance, po
 
 - [Require License Acceptance in PowerShellGet](../../concepts/module-license-acceptance.md)
 - [Require License Acceptance in PowerShell Gallery](packages-that-require-license-acceptance.md)
-- [Azure Automation website](http://azure.microsoft.com/services/automation/)
+- [Azure Automation website](https://azure.microsoft.com/services/automation/)

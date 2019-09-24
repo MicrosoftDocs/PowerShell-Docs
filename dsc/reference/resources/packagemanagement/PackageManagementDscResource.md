@@ -9,7 +9,7 @@ Applies To: Windows PowerShell 4.0, Windows PowerShell 5.0, Windows PowerShell 5
 
 The **PackageManagement** resource in Windows PowerShell Desired State Configuration (DSC) provides
 a mechanism to install or uninstall Package Management packages on a target node. This resource
-requires the **PackageManagement** module, available from [http://PowerShellGallery.com](http://PowerShellGallery.com).
+requires the **PackageManagement** module, available from [http://PowerShellGallery.com](https://PowerShellGallery.com).
 
 > [!IMPORTANT]
 > The **PackageManagement** module should be at least version 1.1.7.0 for the following property

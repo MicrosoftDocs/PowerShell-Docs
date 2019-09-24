@@ -329,7 +329,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## RELATED LINKS
 
-[OData Library](http://technet.microsoft.com/windowsserver/hh525392(v=vs.85).aspx)
+[OData Library](https://technet.microsoft.com/windowsserver/hh525392(v=vs.85).aspx)
 
 [What is the OData Protocol?](http://www.odata.org/)
 
