@@ -1,3 +1,5 @@
+- name: How to use this documentation
+  href: how-to-use-docs.md
 - name: Overview
   href: overview.md
 - name: Install
