@@ -40,14 +40,14 @@ profile has the highest precedence.
 
 |Description               | Path                                          |
 |--------------------------|-----------------------------------------------|
-|All Users, All Hosts      |$PsHome\\Profile.ps1                           |
-|All Users, Current Host   |$PsHome\\Microsoft.PowerShell_profile.ps1      |
-|Current User, All Hosts   |$Home\\[My ]Documents\\PowerShell\\Profile.ps1 |
-|Current user, Current Host|$Home\\[My ]Documents\\PowerShell\\<br>Microsoft.PowerShell_profile.ps1 |
+|All Users, All Hosts      |$PSHOME\\Profile.ps1                           |
+|All Users, Current Host   |$PSHOME\\Microsoft.PowerShell_profile.ps1      |
+|Current User, All Hosts   |$Home\\[My ]Documents\\WindowsPowerShell\\Profile.ps1 |
+|Current user, Current Host|$Home\\[My ]Documents\\WindowsPowerShell\\<br>Microsoft.PowerShell_profile.ps1 |
 
 The profile paths include the following variables:
 
-- The `$PsHome` variable, which stores the installation directory for
+- The `$PSHOME` variable, which stores the installation directory for
 PowerShell
 - The `$Home` variable, which stores the current user's home directory
 
@@ -57,7 +57,7 @@ supports the following host-specific profiles.
 
 |Description               | Path                                       |
 |--------------------------|--------------------------------------------|
-|All users, Current Host   |$PsHome\\Microsoft.PowerShellISE_profile.ps1|
+|All users, Current Host   |$PSHOME\\Microsoft.PowerShellISE_profile.ps1|
 |Current user, Current Host|$Home\\[My ]Documents\\WindowsPowerShell\\<br>Microsoft.PowerShellISE_profile.ps1 |
 
 In PowerShell Help, the "CurrentUser, Current Host" profile is the profile
@@ -227,7 +227,7 @@ function Get-CmdletAlias ($cmdletname) {
 function Color-Console {
   $Host.ui.rawui.backgroundcolor = "white"
   $Host.ui.rawui.foregroundcolor = "black"
-  $hosttime = (Get-ChildItem -Path $pshome\PowerShell.exe).CreationTime
+  $hosttime = (Get-ChildItem -Path $PSHOME\PowerShell.exe).CreationTime
   $hostversion="$($Host.Version.Major)`.$($Host.Version.Minor)"
   $Host.UI.RawUI.WindowTitle = "PowerShell $hostversion ($hosttime)"
   Clear-Host
