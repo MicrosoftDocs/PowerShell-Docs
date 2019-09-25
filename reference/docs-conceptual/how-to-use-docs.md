@@ -23,7 +23,7 @@ documentation for the version of PowerShell you are using.
 
 Use the version picker at the top of the page to select the version of PowerShell you want.
 
-![version picker](images/how-to-use-docs/picker-vall.png)
+![version picker](images/how-to-use-docs/picker-vall.gif)
 
 ## Searching for articles
 
