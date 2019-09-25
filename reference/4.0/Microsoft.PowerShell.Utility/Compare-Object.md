@@ -37,16 +37,16 @@ terminating error.
 
 Some examples use splatting to reduce the line length of the code samples. For more information, see
 [about_Splatting](../Microsoft.PowerShell.Core/About/about_Splatting.md). And, the examples use two
-text files, with each value on a separate line. `Textfile1.txt` contains the values: dog, squirrel,
-and bird. `Textfile1.txt` contains the values: cat, bird, and racoon.
+text files, with each value on a separate line. `Testfile1.txt` contains the values: dog, squirrel,
+and bird. `Testfile2.txt` contains the values: cat, bird, and racoon.
 
 ## EXAMPLES
 
 ### Example 1: Compare the content of two text files
 
 This example compares the contents of two text files. The output displays only the lines that are
-different between the files. `Textfile1.txt` is the **reference** object (`<=`) and
-`Textfile2.txt`is the **difference** object (`=>`).
+different between the files. `Testfile1.txt` is the **reference** object (`<=`) and
+`Testfile2.txt`is the **difference** object (`=>`).
 
 Lines with content that appear in both files aren't displayed.
 
@@ -68,8 +68,8 @@ squirrel    <=
 This example uses the **IncludeEqual** to compare each line of content in two text files. All the
 lines of content from both files are displayed.
 
-The **SideIndicator** specifies if the line appears in the `Textfile1.txt` **reference** object
-(`<=`), `Textfile2.txt` **difference** object (`=>`), or both files (`==`).
+The **SideIndicator** specifies if the line appears in the `Testfile1.txt` **reference** object
+(`<=`), `Testfile2.txt` **difference** object (`=>`), or both files (`==`).
 
 ```powershell
 $objects = @{
