@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: PowerShellGet
 ms.date: 06/09/2017
-online version: http://go.microsoft.com/fwlink/?LinkId=821671
+online version: https://go.microsoft.com/fwlink/?linkid=2096947
 schema: 2.0.0
 title: Set-PSRepository
 ---
@@ -39,7 +39,7 @@ This command sets the installation policy for the myInternalSource repository to
 ### Example 2: Set the source and publish locations for a repository
 
 ```
-PS C:\> Set-PSRepository -Name "myInternalSource" -SourceLocation 'http://someNuGetUrl.com/api/v2' -PublishLocation 'http://someNuGetUrl.com/api/v2/packages'
+PS C:\> Set-PSRepository -Name "myInternalSource" -SourceLocation 'https://someNuGetUrl.com/api/v2' -PublishLocation 'https://someNuGetUrl.com/api/v2/packages'
 ```
 
 This command sets the source location and publish location for myInternalSource to the specified URIs.
@@ -111,6 +111,7 @@ Accept wildcard characters: False
 ```
 
 ### -Proxy
+Specifies a proxy server for the request, rather than connecting directly to the Internet resource.
 
 ```yaml
 Type: Uri
@@ -125,6 +126,7 @@ Accept wildcard characters: False
 ```
 
 ### -ProxyCredential
+Specifies a user account that has permission to use the proxy server that is specified by the **Proxy** parameter.
 
 ```yaml
 Type: PSCredential
@@ -156,6 +158,7 @@ Accept wildcard characters: False
 ```
 
 ### -ScriptPublishLocation
+Specifies the script publish location.
 
 ```yaml
 Type: Uri
@@ -170,6 +173,7 @@ Accept wildcard characters: False
 ```
 
 ### -ScriptSourceLocation
+Specifies the script source location.
 
 ```yaml
 Type: Uri
@@ -186,7 +190,7 @@ Accept wildcard characters: False
 ### -SourceLocation
 
 Specifies the URI for discovering and installing modules from this repository.
-For example, for NuGet-based repositories, the source location is similar to http://someNuGetUrl.com/api/v2.
+For example, for NuGet-based repositories, the source location is similar to `https://someNuGetUrl.com/api/v2`.
 
 ```yaml
 Type: Uri
@@ -202,7 +206,7 @@ Accept wildcard characters: False
 
 ### CommonParameters
 
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -217,3 +221,5 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 [Register-PSRepository](Register-PSRepository.md)
 
 [Unregister-PSRepository](Unregister-PSRepository.md)
+
+

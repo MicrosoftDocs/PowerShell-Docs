@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Core
 ms.date: 06/09/2017
-online version: http://go.microsoft.com/fwlink/?LinkId=821514
+online version: https://go.microsoft.com/fwlink/?linkid=2096260
 schema: 2.0.0
 title: Save-Help
 ---
@@ -227,7 +227,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -304,7 +304,7 @@ Required: False
 Position: 1
 Default value: None
 Accept pipeline input: True (ByPropertyName, ByValue)
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -UICulture
@@ -325,7 +325,7 @@ Aliases:
 
 Required: False
 Position: 2
-Default value: None
+Default value: Current UI culture
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -344,7 +344,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

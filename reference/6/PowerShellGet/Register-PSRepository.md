@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: PowerShellGet
 ms.date: 06/09/2017
-online version: http://go.microsoft.com/fwlink/?LinkId=821668
+online version: https://go.microsoft.com/fwlink/?linkid=2096455
 schema: 2.0.0
 title: Register-PSRepository
 ---
@@ -189,7 +189,7 @@ Accept wildcard characters: False
 ### -PublishLocation
 
 Specifies the URI of the publish location.
-For example, for NuGet-based repositories, the publish location is similar to http://someNuGetUrl.com/api/v2/Packages.
+For example, for NuGet-based repositories, the publish location is similar to `https://someNuGetUrl.com/api/v2/Packages`.
 
 ```yaml
 Type: Uri
@@ -240,7 +240,7 @@ Accept wildcard characters: False
 Specifies the URI for discovering and installing modules from this repository.
 A URI can be a NuGet server feed (most common situation), HTTP, HTTPS, FTP or file location.
 
-For example, for NuGet-based repositories, the source location is similar to http://someNuGetUrl.com/api/v2.
+For example, for NuGet-based repositories, the source location is similar to `https://someNuGetUrl.com/api/v2`.
 
 ```yaml
 Type: Uri
@@ -256,7 +256,7 @@ Accept wildcard characters: False
 
 ### CommonParameters
 
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -271,3 +271,5 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 [Set-PSRepository](Set-PSRepository.md)
 
 [Unregister-PSRepository](Unregister-PSRepository.md)
+
+

@@ -3,7 +3,7 @@ ms.date: 5/14/2019
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821570
+online version: https://go.microsoft.com/fwlink/?linkid=2096289
 external help file:  Microsoft.PowerShell.Commands.Management.dll-Help.xml
 title:  Clear-ItemProperty
 ---
@@ -195,7 +195,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

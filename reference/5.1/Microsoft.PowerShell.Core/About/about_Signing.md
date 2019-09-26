@@ -52,7 +52,7 @@ For more information, see the help topic for the `Set-ExecutionPolicy` cmdlet.
 
 ## RUNNING UNSIGNED SCRIPTS (REMOTESIGNED EXECUTION POLICY)
 
-If your PowerShell execution policy is **RemoteSigned**, Windows PowerShell
+If your PowerShell execution policy is **RemoteSigned**, PowerShell
 will not run unsigned scripts that are downloaded from the Internet, including
 unsigned scripts you receive through e-mail and instant messaging programs.
 
@@ -300,4 +300,4 @@ stamp server ensures that users can use your script for many years to come.
 
 [Set-AuthenticodeSignature](../../Microsoft.PowerShell.Security/Set-AuthenticodeSignature.md)
 
-[Introduction to Code Signing](http://go.microsoft.com/fwlink/?LinkId=106296)
+[Introduction to Code Signing](/previous-versions/windows/internet-explorer/ie-developer/platform-apis/ms537361(v=vs.85))

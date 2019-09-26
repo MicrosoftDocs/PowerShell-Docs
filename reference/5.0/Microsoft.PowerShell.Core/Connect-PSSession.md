@@ -3,7 +3,7 @@ ms.date: 5/15/2019
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821471
+online version: https://go.microsoft.com/fwlink/?linkid=821471
 external help file:  System.Management.Automation.dll-Help.xml
 title:  Connect-PSSession
 ---
@@ -659,7 +659,7 @@ Accept wildcard characters: False
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see about_CommonParameters
-(http://go.microsoft.com/fwlink/?LinkID=113216).
+(https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -745,3 +745,4 @@ commands are running in the disconnected session.
 [about_Remote_Disconnected_Sessions](About/about_Remote_Disconnected_Sessions.md)
 
 [about_Session_Configurations](About/about_Session_Configurations.md)
+

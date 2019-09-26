@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Utility
 ms.date: 4/26/2019
-online version: http://go.microsoft.com/fwlink/?LinkId=821852
+online version: https://go.microsoft.com/fwlink/?linkid=821852
 schema: 2.0.0
 title: Select-Object
 ---
@@ -342,7 +342,7 @@ Accept wildcard characters: True
 ### -ExpandProperty
 
 Specifies a property to select, and indicates that an attempt should be made to expand that
-property. Wildcards are permitted in the property name.
+property.
 
 - If the specified property is an array, each value of the array is included in the output.
 - If the specified property is an object, the objects properties are expanded for every

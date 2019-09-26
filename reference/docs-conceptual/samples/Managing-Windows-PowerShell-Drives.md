@@ -2,7 +2,6 @@
 ms.date:  06/05/2017
 keywords:  powershell,cmdlet
 title:  Managing Windows PowerShell Drives
-ms.assetid:  bd809e38-8de9-437a-a250-f30a667d11b4
 ---
 # Managing Windows PowerShell Drives
 
@@ -100,8 +99,7 @@ To create a new Windows PowerShell drive, you must supply three parameters:
 For example, you can create a drive named "Office" that is mapped to the folder that contains the Microsoft Office applications on your computer, such as **C:\\Program Files\\Microsoft Office\\OFFICE11**. To create the drive, type the following command:
 
 ```
-PS> New-PSDrive -Name Office -PSProvider FileSystem -Root "C:\Program Files\Micr
-osoft Office\OFFICE11"
+PS> New-PSDrive -Name Office -PSProvider FileSystem -Root "C:\Program Files\Microsoft Office\OFFICE11"
 
 Name       Provider      Root                                   CurrentLocation
 ----       --------      ----                                   ---------------
@@ -116,17 +114,18 @@ You refer to the new Windows PowerShell drive as you do all Windows PowerShell d
 A Windows PowerShell drive can make many tasks much simpler. For example, some of the most important keys in the Windows registry have extremely long paths, making them cumbersome to access and difficult to remember. Critical configuration information resides under **HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion**. To view and change items in the CurrentVersion registry key, you can create a Windows PowerShell drive that is rooted in that key by typing:
 
 ```
-PS> New-PSDrive -Name cvkey -PSProvider Registry -Root HKLM\Software\Microsoft\W
-indows\CurrentVersion
+PS> New-PSDrive -Name cvkey -PSProvider Registry -Root HKLM\Software\Microsoft\Windows\CurrentVersion
 
 Name       Provider      Root                                   CurrentLocation
 ----       --------      ----                                   ---------------
 cvkey      Registry      HKLM\Software\Microsoft\Windows\...
 ```
 
-You can then change location to the **cvkey:** drive as you would any other drive:``
+You can then change location to the **cvkey:** drive as you would any other drive:
 
-`PS> cd cvkey:`
+```
+PS> cd cvkey:
+```
 
 or:
 

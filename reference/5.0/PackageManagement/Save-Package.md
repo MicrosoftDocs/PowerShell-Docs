@@ -1,9 +1,9 @@
 ---
-ms.date:  4/3/2019
+ms.date:  04/03/2019
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkID=517140
+online version: https://go.microsoft.com/fwlink/?linkid=517140
 external help file:  Microsoft.PowerShell.PackageManagement.dll-Help.xml
 title:  Save-Package
 ---
@@ -19,34 +19,34 @@ Saves packages to the local computer without installing them.
 
 ```
 Save-Package [[-Name] <string[]>] [-RequiredVersion <string>] [-MinimumVersion <string>]
-[-MaximumVersion <string>] [-Source <string[]>] [-Path <string>] [-LiteralPath <string>]
-[-Credential <pscredential>] [-Force] [-ForceBootstrap] [-WhatIf] [-Confirm]
-[-ProviderName <string[]>] [<CommonParameters>]
+ [-MaximumVersion <string>] [-Source <string[]>] [-Path <string>] [-LiteralPath <string>]
+ [-Credential <pscredential>] [-Force] [-ForceBootstrap] [-WhatIf] [-Confirm]
+ [-ProviderName <string[]>] [<CommonParameters>]
 ```
 
 ### PackageByInputObject
 
 ```
 Save-Package -InputObject <SoftwareIdentity> [-Path <string>] [-LiteralPath <string>]
-[-Credential <pscredential>] [-Force] [-ForceBootstrap] [-WhatIf] [-Confirm] [<CommonParameters>]
+ [-Credential <pscredential>] [-Force] [-ForceBootstrap] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### PSModule:PackageByInputObject
 
 ```
 Save-Package [-Path <string>] [-LiteralPath <string>] [-Credential <pscredential>] [-Force]
-[-ForceBootstrap] [-WhatIf] [-Confirm] [-PackageManagementProvider <string>] [-Scope <string>]
-[-PublishLocation <string>] [-AllVersions] [-Filter <string>] [-Tag <string[]>]
-[-Includes <string[]>] [-DscResource <string[]>] [-Command <string[]>] [<CommonParameters>]
+ [-ForceBootstrap] [-WhatIf] [-Confirm] [-PackageManagementProvider <string>] [-Scope <string>]
+ [-PublishLocation <string>] [-AllVersions] [-Filter <string>] [-Tag <string[]>]
+ [-Includes <string[]>] [-DscResource <string[]>] [-Command <string[]>] [<CommonParameters>]
 ```
 
 ### PSModule
 
 ```
 Save-Package [-Path <string>] [-LiteralPath <string>] [-Credential <pscredential>] [-Force]
-[-ForceBootstrap] [-WhatIf] [-Confirm] [-PackageManagementProvider <string>] [-Scope <string>]
-[-PublishLocation <string>] [-AllVersions] [-Filter <string>] [-Tag <string[]>]
-[-Includes <string[]>] [-DscResource <string[]>] [-Command <string[]>] [<CommonParameters>]
+ [-ForceBootstrap] [-WhatIf] [-Confirm] [-PackageManagementProvider <string>] [-Scope <string>]
+ [-PublishLocation <string>] [-AllVersions] [-Filter <string>] [-Tag <string[]>]
+ [-Includes <string[]>] [-DscResource <string[]>] [-Command <string[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION

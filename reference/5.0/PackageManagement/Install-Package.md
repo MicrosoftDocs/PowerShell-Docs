@@ -1,9 +1,9 @@
 ---
-ms.date:  5/23/2019
+ms.date:  05/23/2019
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkID=517138
+online version: https://go.microsoft.com/fwlink/?linkid=517138
 external help file:  Microsoft.PowerShell.PackageManagement.dll-Help.xml
 title:  Install-Package
 ---
@@ -19,63 +19,63 @@ Installs one or more software packages.
 
 ```
 Install-Package [[-Name] <string[]>] [-RequiredVersion <string>] [-MinimumVersion <string>]
-[-MaximumVersion <string>] [-Source <string[]>] [-Credential <pscredential>] [-Force]
-[-ForceBootstrap] [-WhatIf] [-Confirm] [-ProviderName <string[]>] [<CommonParameters>]
+ [-MaximumVersion <string>] [-Source <string[]>] [-Credential <pscredential>] [-Force]
+ [-ForceBootstrap] [-WhatIf] [-Confirm] [-ProviderName <string[]>] [<CommonParameters>]
 ```
 
 ### PackageByInputObject
 
 ```
 Install-Package [-InputObject] <SoftwareIdentity[]> [-Credential <pscredential>] [-Force]
-[-ForceBootstrap] [-WhatIf] [-Confirm] [<CommonParameters>]
+ [-ForceBootstrap] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### msi:PackageBySearch
 
 ```
 Install-Package [-Credential <pscredential>] [-Force] [-ForceBootstrap] [-WhatIf] [-Confirm]
-[-AdditionalArguments <string[]>] [<CommonParameters>]
+ [-AdditionalArguments <string[]>] [<CommonParameters>]
 ```
 
 ### msi:PackageByInputObject
 
 ```
 Install-Package [-Credential <pscredential>] [-Force] [-ForceBootstrap] [-WhatIf] [-Confirm]
-[-AdditionalArguments <string[]>] [<CommonParameters>]
+ [-AdditionalArguments <string[]>] [<CommonParameters>]
 ```
 
 ### Programs:PackageBySearch
 
 ```
 Install-Package [-Credential <pscredential>] [-Force] [-ForceBootstrap] [-WhatIf] [-Confirm]
-[-IncludeWindowsInstaller] [-IncludeSystemComponent] [<CommonParameters>]
+ [-IncludeWindowsInstaller] [-IncludeSystemComponent] [<CommonParameters>]
 ```
 
 ### Programs:PackageByInputObject
 
 ```
 Install-Package [-Credential <pscredential>] [-Force] [-ForceBootstrap] [-WhatIf] [-Confirm]
-[-IncludeWindowsInstaller] [-IncludeSystemComponent] [<CommonParameters>]
+ [-IncludeWindowsInstaller] [-IncludeSystemComponent] [<CommonParameters>]
 ```
 
 ### PSModule:PackageBySearch
 
 ```
 Install-Package [-Credential <pscredential>] [-Force] [-ForceBootstrap] [-WhatIf] [-Confirm]
-[-PackageManagementProvider <string>] [-Scope <string>] [-PublishLocation <string>] [-AllVersions]
-[-Filter <string>] [-Tag <string[]>] [-Includes <string[]>] [-DscResource <string[]>]
-[-Command <string[]>] [-Location <string>] [-InstallUpdate] [-InstallationPolicy <string>]
-[-DestinationPath <string>] [<CommonParameters>]
+ [-PackageManagementProvider <string>] [-Scope <string>] [-PublishLocation <string>] [-AllVersions]
+ [-Filter <string>] [-Tag <string[]>] [-Includes <string[]>] [-DscResource <string[]>]
+ [-Command <string[]>] [-Location <string>] [-InstallUpdate] [-InstallationPolicy <string>]
+ [-DestinationPath <string>] [<CommonParameters>]
 ```
 
 ### PSModule:PackageByInputObject
 
 ```
 Install-Package [-Credential <pscredential>] [-Force] [-ForceBootstrap] [-WhatIf] [-Confirm]
-[-PackageManagementProvider <string>] [-Scope <string>] [-PublishLocation <string>] [-AllVersions]
-[-Filter <string>] [-Tag <string[]>] [-Includes <string[]>] [-DscResource <string[]>]
-[-Command <string[]>] [-Location <string>] [-InstallUpdate] [-InstallationPolicy <string>]
-[-DestinationPath <string>] [<CommonParameters>]
+ [-PackageManagementProvider <string>] [-Scope <string>] [-PublishLocation <string>] [-AllVersions]
+ [-Filter <string>] [-Tag <string[]>] [-Includes <string[]>] [-DscResource <string[]>]
+ [-Command <string[]>] [-Location <string>] [-InstallUpdate] [-InstallationPolicy <string>]
+ [-DestinationPath <string>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION

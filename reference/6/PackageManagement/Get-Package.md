@@ -3,8 +3,8 @@ external help file: Microsoft.PowerShell.PackageManagement.dll-Help.xml
 keywords: powershell,cmdlet
 locale: en-us
 Module Name: PackageManagement
-ms.date: 5/22/2019
-online version: http://go.microsoft.com/fwlink/?LinkID=517135
+ms.date: 05/22/2019
+online version: https://go.microsoft.com/fwlink/?linkid=2096428
 schema: 2.0.0
 title: Get-Package
 ---
@@ -20,18 +20,19 @@ Returns a list of all software packages that were installed with **PackageManage
 
 ```
 Get-Package [[-Name] <String[]>] [-RequiredVersion <String>] [-MinimumVersion <String>]
-[-MaximumVersion <String>] [-AllVersions] [-Force] [-ForceBootstrap] [-ProviderName <String[]>]
-[-Destination <String>] [-ExcludeVersion] [-Scope <String>] [-SkipDependencies] [<CommonParameters>]
+ [-MaximumVersion <String>] [-AllVersions] [-Force] [-ForceBootstrap] [-ProviderName <String[]>]
+ [-Destination <String>] [-ExcludeVersion] [-Scope <String>] [-SkipDependencies]
+ [<CommonParameters>]
 ```
 
 ### PowerShellGet
 
 ```
 Get-Package [[-Name] <String[]>] [-RequiredVersion <String>] [-MinimumVersion <String>]
-[-MaximumVersion <String>] [-AllVersions] [-Force] [-ForceBootstrap] [-ProviderName <String[]>]
-[-Scope <String>] [-PackageManagementProvider <String>] [-Type <String>] [-AllowClobber]
-[-SkipPublisherCheck] [-InstallUpdate] [-NoPathUpdate] [-AllowPrereleaseVersions]
-[<CommonParameters>]
+ [-MaximumVersion <String>] [-AllVersions] [-Force] [-ForceBootstrap] [-ProviderName <String[]>]
+ [-Scope <String>] [-PackageManagementProvider <String>] [-Type <String>] [-AllowClobber]
+ [-SkipPublisherCheck] [-InstallUpdate] [-NoPathUpdate] [-AllowPrereleaseVersions]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -300,7 +301,7 @@ Required: False
 Position: 0
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -NoPathUpdate

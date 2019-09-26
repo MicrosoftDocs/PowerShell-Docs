@@ -1,11 +1,12 @@
 ---
-ms.date: 4/3/2019
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkID=517132
-external help file:  Microsoft.PowerShell.PackageManagement.dll-Help.xml
-title:  Find-Package
+external help file: Microsoft.PowerShell.PackageManagement.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: PackageManagement
+ms.date: 04/03/2019
+online version: https://go.microsoft.com/fwlink/?linkid=517132
+schema: 2.0.0
+title: Find-Package
 ---
 
 # Find-Package
@@ -19,11 +20,11 @@ Finds software packages in available package sources.
 
 ```
 Find-Package [[-Name] <string[]>] [-IncludeDependencies] [-AllVersions] [-Source <string[]>]
-[-Credential <pscredential>] [-RequiredVersion <string>] [-MinimumVersion <string>]
-[-MaximumVersion <string>] [-Force] [-ForceBootstrap] [-ProviderName <string[]>]
-[-PackageManagementProvider <string>] [-Scope <string>] [-PublishLocation <string>]
-[-Filter <string>] [-Tag <string[]>] [-Includes <string[]>] [-DscResource <string[]>]
-[-Command <string[]>] [<CommonParameters>]
+ [-Credential <pscredential>] [-RequiredVersion <string>] [-MinimumVersion <string>]
+ [-MaximumVersion <string>] [-Force] [-ForceBootstrap] [-ProviderName <string[]>]
+ [-PackageManagementProvider <string>] [-Scope <string>] [-PublishLocation <string>]
+ [-Filter <string>] [-Tag <string[]>] [-Includes <string[]>] [-DscResource <string[]>]
+ [-Command <string[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION

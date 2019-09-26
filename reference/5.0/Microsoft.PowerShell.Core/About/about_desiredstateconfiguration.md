@@ -27,14 +27,14 @@ maintain and manage existing configurations.
 DSC is introduced in PowerShell 4.0.
 
 For detailed information about DSC, see
-[PowerShell Desired State Configuration Overview](http://go.microsoft.com/fwlink/?LinkId=311940)
+[PowerShell Desired State Configuration Overview](/powershell/dsc/overview/overview)
 in the TechNet Library.
 
 ## DEVELOPING DSC RESOURCES WITH CLASSES
 
 Starting in PowerShell 5.0, you can develop DSC resources by using classes.
 For more information, see [about_Classes](about_Classes.md), and
-[Writing a custom DSC resource with PowerShell classes](http://technet.microsoft.com/library/dn948461.aspx)
+[Writing a custom DSC resource with PowerShell classes](/previous-versions//dn948461(v=technet.10))
 on Microsoft TechNet.
 
 ## USING DSC
@@ -50,38 +50,40 @@ delimit the node block. Inside the node block, you can define resource blocks
 to configure specific resources. A resource block starts with the type name of
 the resource, followed by the identifier you want to specify for that block,
 followed by the curly braces that delimit the block, as shown in the following
-example. Configuration MyWebConfig { # Parameters are optional param
-($MachineName, $WebsiteFilePath)
+example.
 
 ```powershell
-# A Configuration block can have one or more Node blocks
-Node $MachineName
-{
-    # Next, specify one or more resource blocks
-    # WindowsFeature is one of the resources you can use in a Node block
-    # This example ensures the Web Server (IIS) role is installed
-    WindowsFeature IIS
+Configuration MyWebConfig {
+    # Parameters are optional
+    param ($MachineName, $WebsiteFilePath)
+    # A Configuration block can have one or more Node blocks
+    Node $MachineName
     {
-        # To ensure that the role is not installed, set Ensure to "Absent"
-        Ensure = "Present"
-        Name = "Web-Server" # Use the Name property from Get-WindowsFeature
-    }
+        # Next, specify one or more resource blocks
+        # WindowsFeature is one of the resources you can use in a Node block
+        # This example ensures the Web Server (IIS) role is installed
+        WindowsFeature IIS
+        {
+            # To ensure that the role is not installed, set Ensure to "Absent"
+            Ensure = "Present"
+            Name = "Web-Server" # Use the Name property from Get-WindowsFeature
+        }
 
-    # You can use the File resource to create files and folders
-    # "WebDirectory" is the name you want to use to refer to this instance
-    File WebDirectory
-    {
-        Ensure = "Present"  # You can also set Ensure to "Absent"
-        Type = "Directory" # Default is "File"
-        Recurse = $true
-        SourcePath = $WebsiteFilePath
-        DestinationPath = "C:\inetpub\wwwroot"
+        # You can use the File resource to create files and folders
+        # "WebDirectory" is the name you want to use to refer to this instance
+        File WebDirectory
+        {
+            Ensure = "Present"  # You can also set Ensure to "Absent"
+            Type = "Directory" # Default is "File"
+            Recurse = $true
+            SourcePath = $WebsiteFilePath
+            DestinationPath = "C:\inetpub\wwwroot"
 
-        # Ensure that the IIS block is successfully run first before
-        # configuring this resource
-        Requires = "[WindowsFeature]IIS"  # Use Requires for dependencies
+            # Ensure that the IIS block is successfully run first before
+            # configuring this resource
+            DependsOn = "[WindowsFeature]IIS"  # Use for dependencies
+        }
     }
-}
 }
 ```
 
@@ -165,8 +167,8 @@ to browse and learn about available DSC resources.
 
 ## SEE ALSO
 
-[PowerShell Desired State Configuration Overview](/powershell/dsc/overview)
+[PowerShell Desired State Configuration Overview](/powershell/dsc/overview/overview)
 
-[Built-In PowerShell Desired State Configuration Resources](/powershell/dsc/builtinresource)
+[Built-In PowerShell Desired State Configuration Resources](/powershell/dsc/resources/resources)
 
-[Build Custom PowerShell Desired State Configuration Resources](/powershell/dsc/authoringResource)
+[Build Custom PowerShell Desired State Configuration Resources](/powershell/dsc/resources/authoringResource)

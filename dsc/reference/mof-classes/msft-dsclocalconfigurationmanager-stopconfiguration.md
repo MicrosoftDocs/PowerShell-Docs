@@ -1,9 +1,9 @@
 ---
 ms.date:  06/12/2017
 keywords:  dsc,powershell,configuration,setup
-title:  StopConfiguration method of the MSFT_DSCLocalConfigurationManager class
+title:  StopConfiguration method
 ---
-# StopConfiguration method of the MSFT_DSCLocalConfigurationManager class
+# StopConfiguration method
 
 Stops the configuration change that is in progress.
 

@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: PackageManagement
 ms.date: 06/09/2017
-online version: http://go.microsoft.com/fwlink/?LinkId=822299
+online version: https://go.microsoft.com/fwlink/?linkid=822299
 schema: 2.0.0
 title: Find-PackageProvider
 ---
@@ -23,9 +23,10 @@ Find-PackageProvider [[-Name] <String[]>] [-AllVersions] [-Source <String[]>] [-
 ```
 
 ## DESCRIPTION
+
 The **Find-PackageProvider** cmdlet finds matching PackageManagement providers that are available in package sources registered with PowerShellGet.
 These are package providers available for installation with the Install-PackageProvider cmdlet.
-By default, this includes modules available in the Windows PowerShell Gallery with the **PackageManagement** and **Provider** tags.
+By default, this includes modules available in the PowerShell Gallery with the **PackageManagement** and **Provider** tags.
 
 **Find-PackageProvider** also finds matching Package Management providers that are available in the Package Management Azure Blob store.
 Use the bootstrapper provider to find and install them.
@@ -33,6 +34,7 @@ Use the bootstrapper provider to find and install them.
 ## EXAMPLES
 
 ### Example 1: Find all available package providers
+
 ```
 PS C:\> Find-PackageProvider
 ```
@@ -41,6 +43,7 @@ This command gets a list of all package providers that are available on the repo
 By default, those package providers are available on the PowerShell Gallery and by using the Package Management bootstrapping application.
 
 ### Example 2: Find all versions of a provider
+
 ```
 PS C:\> Find-PackageProvider -Name "Nuget" -AllVersions
 ```
@@ -48,6 +51,7 @@ PS C:\> Find-PackageProvider -Name "Nuget" -AllVersions
 This command finds all versions of the package provider named Nuget.
 
 ### Example 3: Find a provider from a specified source
+
 ```
 PS C:\> Find-PackageProvider -Name "Gistprovider" -Source "PSGallery"
 ```
@@ -57,6 +61,7 @@ This command finds a package provider available by using a specified package sou
 ## PARAMETERS
 
 ### -AllVersions
+
 Indicates that this cmdlet returns all available versions of the package provider.
 By default, **Find-PackageProvider** only returns the newest available version.
 
@@ -73,6 +78,7 @@ Accept wildcard characters: False
 ```
 
 ### -Credential
+
 Specifies a user account that has permission to search for package providers.
 
 ```yaml
@@ -88,6 +94,7 @@ Accept wildcard characters: False
 ```
 
 ### -Force
+
 Forces the command to run without asking for user confirmation.
 Currently, this is equivalent to the *ForceBootstrap* parameter.
 
@@ -104,6 +111,7 @@ Accept wildcard characters: False
 ```
 
 ### -ForceBootstrap
+
 Indicates that this cmdlet forces Package Management to automatically install the package provider.
 
 ```yaml
@@ -119,6 +127,7 @@ Accept wildcard characters: False
 ```
 
 ### -IncludeDependencies
+
 Indicates that this cmdlet includes dependencies.
 
 ```yaml
@@ -134,6 +143,7 @@ Accept wildcard characters: False
 ```
 
 ### -MaximumVersion
+
 Specifies the maximum allowed version of the package provider that you want to find.
 If you do not add this parameter, **Find-PackageProvider** finds the highest available version of the provider.
 
@@ -150,6 +160,7 @@ Accept wildcard characters: False
 ```
 
 ### -MinimumVersion
+
 Specifies the minimum allowed version of the package provider that you want to find.
 If you do not add this parameter, **Find-PackageProvider** finds the highest available version of the package that also satisfies any maximum specified version specified by the *MaximumVersion* parameter.
 
@@ -166,6 +177,7 @@ Accept wildcard characters: False
 ```
 
 ### -Name
+
 Specifies one or more package provider module names, or provider names with wildcard characters.
 Separate multiple package names with commas.
 
@@ -178,10 +190,11 @@ Required: False
 Position: 0
 Default value: None
 Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -Proxy
+
 Specifies a proxy server for the request, rather than connecting directly to the Internet resource.
 
 ```yaml
@@ -197,6 +210,7 @@ Accept wildcard characters: False
 ```
 
 ### -ProxyCredential
+
 Specifies a user account that has permission to use the proxy server that is specified by the **Proxy** parameter.
 
 ```yaml
@@ -212,6 +226,7 @@ Accept wildcard characters: False
 ```
 
 ### -RequiredVersion
+
 Specifies the exact allowed version of the package provider that you want to find.
 If you do not add this parameter, **Find-PackageProvider** finds the highest available version of the provider that also satisfies any maximum version specified by the *MaximumVersion* parameter.
 
@@ -228,6 +243,7 @@ Accept wildcard characters: False
 ```
 
 ### -Source
+
 Specifies one or more package sources.
 You can get a list of available package sources by using the Get-PackageSource cmdlet.
 
@@ -244,13 +260,15 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ## OUTPUTS
 
 ### Microsoft.PackageManagement.Packaging.SoftwareIdentity
+
 This cmdlet returns a **SoftwareIdentity** object.
 A **SoftwareIdentity** object can be piped into **Install-PackageProvider** to install the results of **Find-PackageProvider**.
 
@@ -267,3 +285,5 @@ A **SoftwareIdentity** object can be piped into **Install-PackageProvider** to i
 [Register-PackageSource](Register-PackageSource.md)
 
 [Install-PackageProvider](Install-PackageProvider.md)
+
+

@@ -3,8 +3,8 @@ external help file: PSModule-help.xml
 keywords: powershell,cmdlet
 locale: en-us
 Module Name: PowerShellGet
-ms.date: 3/7/2019
-online version: http://go.microsoft.com/fwlink/?LinkId=821663
+ms.date: 03/07/2019
+online version: https://go.microsoft.com/fwlink/?linkid=2096879
 schema: 2.0.0
 title: Install-Module
 ---
@@ -19,17 +19,17 @@ Downloads one or more modules from a repository, and installs them on the local 
 
 ```
 Install-Module [-Name] <String[]> [-MinimumVersion <String>] [-MaximumVersion <String>]
-[-RequiredVersion <String>] [-Repository <String[]>] [-Credential <PSCredential>] [-Scope <String>]
-[-Proxy <Uri>] [-ProxyCredential <PSCredential>] [-AllowClobber] [-SkipPublisherCheck] [-Force]
-[-AllowPrerelease] [-AcceptLicense] [-WhatIf] [-Confirm] [<CommonParameters>]
+ [-RequiredVersion <String>] [-Repository <String[]>] [-Credential <PSCredential>] [-Scope <String>]
+ [-Proxy <Uri>] [-ProxyCredential <PSCredential>] [-AllowClobber] [-SkipPublisherCheck] [-Force]
+ [-AllowPrerelease] [-AcceptLicense] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### InputObject
 
 ```
 Install-Module [-InputObject] <PSObject[]> [-Credential <PSCredential>] [-Scope <String>]
-[-Proxy <Uri>] [-ProxyCredential <PSCredential>] [-AllowClobber] [-SkipPublisherCheck] [-Force]
-[-AcceptLicense] [-WhatIf] [-Confirm] [<CommonParameters>]
+ [-Proxy <Uri>] [-ProxyCredential <PSCredential>] [-AllowClobber] [-SkipPublisherCheck] [-Force]
+ [-AcceptLicense] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -481,6 +481,9 @@ If the existing module does not match the values specified by the **MinimumVersi
 **RequiredVersion** parameters, an error occurs in the `Install-Module` command. For example, if the
 version of the existing installed module is lower than the **MinimumVersion** value or not equal to
 the **RequiredVersion** value.
+
+A module installation will also install any dependent modules specified as required by the module publisher.
+The publisher will specify the required modules and their versions in the module manifest.
 
 ## RELATED LINKS
 

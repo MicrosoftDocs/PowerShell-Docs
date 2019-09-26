@@ -1,10 +1,11 @@
 ---
-ms.date:  02/20/2019
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=301309
-external help file:  Microsoft.Management.Infrastructure.CimCmdlets.dll-Help.xml
+ms.date: 02/20/2019
+schema: 2.0.0
+locale: en-us
+keywords: powershell,cmdlet
+online version: https://go.microsoft.com/fwlink/?linkid=2096208
+external help file: Microsoft.Management.Infrastructure.CimCmdlets.dll-Help.xml
+title: Import-BinaryMiLog
 ---
 
 # Import-BinaryMiLog
@@ -37,7 +38,7 @@ Import-BinaryMiLog -Path "Processes.bmil"
 ### -Path
 
 Specifies the path of the file in which to store the binary representation of the object. The
-**Path** parameter supports wild cards and relative paths. This cmdlet generates an error if the
+**Path** parameter supports wildcards and relative paths. This cmdlet generates an error if the
 path resolves to more than one file.
 
 ```yaml

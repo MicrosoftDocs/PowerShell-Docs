@@ -3,8 +3,9 @@ external help file: PSDiagnostics-help.xml
 keywords: powershell,cmdlet
 locale: en-us
 Module Name: PSDiagnostics
-ms.date:  11/27/2018
+ms.date: 11/27/2018
 schema: 2.0.0
+title: Stop-Trace
 ---
 
 # Stop-Trace
@@ -73,7 +74,7 @@ Accept wildcard characters: False
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see
-[about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -98,3 +99,4 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 [Enable-PSWSManCombinedTrace](Enable-PSWSManCombinedTrace.md)
 
 [Enable-WSManTrace](Enable-WSManTrace.md)
+

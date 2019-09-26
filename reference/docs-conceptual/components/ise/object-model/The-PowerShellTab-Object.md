@@ -2,7 +2,6 @@
 ms.date:  06/05/2017
 keywords:  powershell,cmdlet
 title:  The PowerShellTab Object
-ms.assetid:  a9b58556-951b-4f48-b3ae-b351b7564360
 ---
 # The PowerShellTab Object
 

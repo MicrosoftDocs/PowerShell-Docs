@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Security
 ms.date: 02/25/2019
-online version: http://go.microsoft.com/fwlink/?LinkId=821713
+online version: https://go.microsoft.com/fwlink/?linkid=2096411
 schema: 2.0.0
 title: Get-Credential
 ---
@@ -90,11 +90,10 @@ computer. It uses the **Credential** parameter to authenticate the user, Domain0
 ```
 PS> $c = Get-Credential -credential User01
 PS> $c.Username
-\User01
+User01
 ```
 
-This example creates a credential that includes a user name without a domain name. It demonstrates
-that Get-Credential inserts a backslash before the user name.
+This example creates a credential that includes a user name without a domain name.
 
 The first command gets a credential with the user name User01 and stores it in the $c variable.
 
@@ -277,7 +276,7 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+-WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -313,3 +312,4 @@ The **Credential** parameter is not supported by all providers that are installe
 Get-WmiObject and New-PSDrive cmdlets.
 
 ## RELATED LINKS
+

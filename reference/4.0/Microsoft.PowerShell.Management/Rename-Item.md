@@ -3,14 +3,13 @@ ms.date:  10/18/2018
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/p/?linkid=293901
+online version: https://go.microsoft.com/fwlink/?linkid=293901
 external help file:  Microsoft.PowerShell.Commands.Management.dll-Help.xml
 title:  Rename-Item
 ---
 # Rename-Item
 
 ## SYNOPSIS
-
 Renames an item in a PowerShell provider namespace.
 
 ## SYNTAX
@@ -220,6 +219,24 @@ Accept pipeline input: True (ByPropertyName, ByValue)
 Accept wildcard characters: False
 ```
 
+### -UseTransaction
+
+Includes the command in the active transaction.
+This parameter is valid only when a transaction is in progress.
+For more information, see [about_Transactions](../Microsoft.PowerShell.Core/About/about_Transactions.md).
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: usetx
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Confirm
 
 Prompts you for confirmation before running the cmdlet.
@@ -245,24 +262,6 @@ The cmdlet is not run.
 Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
-
-Required: False
-Position: Named
-Default value: False
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -UseTransaction
-
-Includes the command in the active transaction.
-This parameter is valid only when a transaction is in progress.
-For more information, see [about_Transactions](../Microsoft.PowerShell.Core/About/about_Transactions.md).
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: (All)
-Aliases: usetx
 
 Required: False
 Position: Named
@@ -297,6 +296,8 @@ Otherwise, this cmdlet does not generate any output.
 [Clear-Item](Clear-Item.md)
 
 [Copy-Item](Copy-Item.md)
+
+[Get-ChildItem](Get-ChildItem.md)
 
 [Get-Item](Get-Item.md)
 

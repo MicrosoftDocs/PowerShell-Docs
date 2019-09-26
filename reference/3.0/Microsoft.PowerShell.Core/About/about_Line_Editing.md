@@ -1,5 +1,5 @@
 ﻿---
-ms.date:  06/09/2017
+ms.date:  07/10/2019
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -8,48 +8,66 @@ title:  about_Line_Editing
 
 # About Line Editing
 
-## SHORT DESCRIPTION
+## Short description
 
-Describes how to edit commands at the Windows PowerShell command prompt.
+Describes how to edit commands at the PowerShell command prompt.
 
-## LONG DESCRIPTION
+## Long description
 
-The Windows PowerShell console has some useful features to help
-you to edit commands at the Windows PowerShell command prompt.
+The PowerShell console has some useful keyboard shortcuts to help you edit
+commands at the PowerShell command prompt.
 
-### Move Left and Right
+### Move left and right
 
-To move the cursor one character to the left, press the LEFT ARROW
-key. To move the cursor one word to the left, press CTRL+LEFT ARROW.
-To move the cursor one character to the right, press the RIGHT ARROW
-key. To move the cursor one word to the right, press CTRL+RIGHT ARROW.
+To move the cursor one character to the left, press the <kbd>Left arrow</kbd>.
 
-### Line Start and End
+To move the cursor one word to the left, press <kbd>Ctrl</kbd>+<kbd>Left
+arrow</kbd>.
 
-To move to the beginning of a line, press the HOME key. To move to the
-end of a line, press the END key.
+To move the cursor one character to the right, press the <kbd>Right
+arrow</kbd>.
 
-### Delete Characters
+To move the cursor one word to the right, press <kbd>Ctrl</kbd>+<kbd>Right
+arrow</kbd>.
 
-To delete the character in behind the cursor, press the BACKSPACE key.
-To delete the character in front of the cursor, press the DELETE key.
+### Move to a line's beginning or end
 
-### Delete the Remainder of a Line
+To move to the beginning of a line, press <kbd>Home</kbd>.
 
-To delete all the characters in the line after the cursor, press CTRL+END.
+To move to the end of a line, press <kbd>End</kbd>.
 
-### Insert/Overstrike Mode
+If lines were added, press <kbd>Home</kbd> or <kbd>End</kbd> twice to move to
+the beginning or end of the lines.
 
-To change to overstrike mode, press the INSERT key. To return to insert
-mode, press INSERT again.
+### Delete characters
 
-### Tab Completion
+To delete the character behind the cursor's position, press
+<kbd>Backspace</kbd>.
 
-To complete a command, such as the name of a cmdlet, a cmdlet
-parameter, or a path, press the TAB key. If the first suggestion that
-is displayed is not what you want, press the TAB key again.
+To delete the character at the cursor's position, press <kbd>Delete</kbd>.
 
-## SEE ALSO
+### Delete characters from a line
+
+To delete all the characters from the cursor's position to the end of a line,
+press <kbd>Ctrl</kbd>+<kbd>End</kbd>.
+
+To delete all the characters from the cursor's position to the beginning of a
+line, press <kbd>Ctrl</kbd>+<kbd>Home</kbd>.
+
+If lines were added, characters are deleted from the current line and the lines
+that were added.
+
+### Insert and overstrike mode
+
+To change to overwrite mode, press <kbd>Insert</kbd>. To return to insert mode,
+press <kbd>Insert</kbd> again.
+
+### Tab completion
+
+To complete a cmdlet name, a parameter, or a path, press the <kbd>Tab</kbd>
+key. To scroll through a list of values, press the <kbd>Tab</kbd> key again.
+
+## See also
 
 [about_Command_Syntax](about_Command_Syntax.md)
 

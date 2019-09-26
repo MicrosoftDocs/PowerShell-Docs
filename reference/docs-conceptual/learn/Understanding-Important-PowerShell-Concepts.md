@@ -2,7 +2,6 @@
 ms.date:  08/23/2018
 keywords:  powershell,cmdlet
 title:  Understanding important PowerShell concepts
-ms.assetid:  3e601e38-4520-4578-a48d-b6779f1d35ee
 ---
 
 # Understanding important PowerShell concepts

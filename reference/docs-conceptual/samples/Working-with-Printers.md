@@ -2,7 +2,6 @@
 ms.date:  06/05/2017
 keywords:  powershell,cmdlet
 title:  Working with Printers
-ms.assetid:  4f29ead3-f83b-4706-ac3e-f2154ff38dc5
 ---
 # Working with Printers
 

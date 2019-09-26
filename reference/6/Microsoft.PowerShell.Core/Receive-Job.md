@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Core
 ms.date: 06/09/2017
-online version: http://go.microsoft.com/fwlink/?LinkId=821505
+online version: https://go.microsoft.com/fwlink/?linkid=2096282
 schema: 2.0.0
 title: Receive-Job
 ---
@@ -171,7 +171,7 @@ Id   Name     State      HasMoreData   Location       Command
 ```
 
 ```powershell
-# Use the Receive-Job cmdlet to get the results of ust the Job3 child job that ran on the Server02 computer.
+# Use the Receive-Job cmdlet to get the results of just the Job3 child job that ran on the Server02 computer.
 # Use the *Keep* parameter to allow you to view the aggregated stream data more than once.
 Receive-Job -Name Job3 -Keep
 ```
@@ -314,7 +314,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -335,9 +335,9 @@ Aliases: Cn
 
 Required: False
 Position: 1
-Default value: None
+Default value: All computers available
 Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -Force
@@ -363,7 +363,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -405,7 +405,7 @@ Aliases:
 
 Required: True
 Position: 0
-Default value: None
+Default value: All instances
 Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
@@ -419,7 +419,7 @@ You can also pipe a job object to `Receive-Job`.
 
 ```yaml
 Type: Job[]
-Parameter Sets: Location, ComputerName, Session
+Parameter Sets: Location, Session, ComputerName
 Aliases:
 
 Required: True
@@ -444,7 +444,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -461,7 +461,7 @@ Aliases:
 
 Required: False
 Position: 1
-Default value: None
+Default value: All locations
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -482,7 +482,7 @@ Required: True
 Position: 0
 Default value: None
 Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -NoRecurse
@@ -497,7 +497,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -517,7 +517,7 @@ Aliases:
 
 Required: False
 Position: 1
-Default value: None
+Default value: All sessions
 Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
@@ -568,7 +568,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -589,7 +589,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

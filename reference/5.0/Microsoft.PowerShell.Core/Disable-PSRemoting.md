@@ -3,7 +3,7 @@ ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821472
+online version: https://go.microsoft.com/fwlink/?linkid=821472
 external help file:  System.Management.Automation.dll-Help.xml
 title:  Disable-PSRemoting
 ---
@@ -276,7 +276,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -333,3 +333,5 @@ Beginning in Windows PowerShell 3.0, it is a cmdlet.
 [Unregister-PSSessionConfiguration](Unregister-PSSessionConfiguration.md)
 
 [WSMan Provider](../Microsoft.WsMan.Management/Providers/WSMan-Provider.md)
+
+

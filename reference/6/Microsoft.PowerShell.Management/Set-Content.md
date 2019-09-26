@@ -3,7 +3,7 @@ ms.date: 5/14/2019
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821629
+online version: https://go.microsoft.com/fwlink/?linkid=2096912
 external help file:  Microsoft.PowerShell.Commands.Management.dll-Help.xml
 title:  Set-Content
 ---
@@ -107,7 +107,7 @@ The word Warning was replaced.
 ```
 
 ```powershell
-Get-Content -Path .\Notice.txt |
+(Get-Content -Path .\Notice.txt) |
     ForEach-Object {$_ -Replace 'Warning', 'Caution'} |
         Set-Content -Path .\Notice.txt
 Get-Content -Path .\Notice.txt

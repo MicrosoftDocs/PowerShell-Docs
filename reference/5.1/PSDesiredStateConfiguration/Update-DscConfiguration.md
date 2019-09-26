@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: PSDesiredStateConfiguration
 ms.date: 06/09/2017
-online version: http://go.microsoft.com/fwlink/?LinkId=821467
+online version: https://go.microsoft.com/fwlink/?linkid=821467
 schema: 2.0.0
 title: Update-DscConfiguration
 ---
@@ -32,11 +32,24 @@ Update-DscConfiguration [-Wait] [-JobName <String>] [-ThrottleLimit <Int32>] -Ci
 The `Update-DscConfiguration` cmdlet connects to a pull server, downloads the configuration if it differs from what is current on the node, and then applies the configuration to the computer.
 
 This cmdlet is available only as part of the [November 2014 update rollup for Windows RT 8.1, Windows 8.1, and Windows Server 2012 R2](https://support.microsoft.com/kb/3000850) from the Microsoft Support library.
-Before you use this cmdlet, review the information in What's New in Windows PowerShellhttp://technet.microsoft.com/library/hh857339.aspx (http://technet.microsoft.com/library/hh857339.aspx) in the TechNet library.
 
 ## EXAMPLES
 
 ### Example 1: Update a configuration
+```
+PS C:\> Update-DscConfiguration -Wait -Verbose
+```
+
+After running this command,
+the server will connect to the registered pull service,
+download the latest assigned configuration,
+and then apply it.
+The -Wait and -Verbose parameters are optional.
+When working interactively,
+these parameters combined enable real-time feedback
+about progress and success or failure when applying the configuration.
+
+### Example 2: Update a configuration by connecting over a CIM session
 ```
 PS C:\> $Session = New-CimSession -ComputerName "Server01" -Credential ACCOUNTS\PattiFuller
 PS C:\> Update-DscConfiguration -CimSession $Session -Wait
@@ -54,7 +67,7 @@ The console does not accept additional commands until the current command finish
 
 ### -CimSession
 Runs the cmdlet in a remote session or on a remote computer.
-Enter a computer name or a session object, such as the output of a [New-CimSession](https://docs.microsoft.com/powershell/module/cimcmdlets/new-cimsession) or [Get-CimSession](https://docs.microsoft.com/powershell/module/cimcmdlets/get-cimsession) cmdlet.
+Enter a computer name or a session object, such as the output of a [New-CimSession](/powershell/module/cimcmdlets/new-cimsession) or [Get-CimSession](https://docs.microsoft.com/powershell/module/cimcmdlets/get-cimsession) cmdlet.
 The default is the current session on the local computer.
 
 ```yaml
@@ -188,7 +201,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -198,7 +211,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## RELATED LINKS
 
-[Windows PowerShell Desired State Configuration Overview](http://go.microsoft.com/fwlink/?LinkID=311940)
+[Windows PowerShell Desired State Configuration Overview](https://go.microsoft.com/fwlink/?LinkID=311940)
 
 [Get-DscConfiguration](Get-DscConfiguration.md)
 

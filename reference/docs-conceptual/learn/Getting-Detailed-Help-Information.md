@@ -2,7 +2,6 @@
 ms.date:  08/27/2018
 keywords:  powershell,cmdlet
 title:  Getting Detailed Help Information
-ms.assetid:  6fb4daf7-8607-4a3e-b692-f77631adc1b9
 ---
 
 # Getting detailed help information
@@ -192,7 +191,7 @@ Get-Help Add-Computer
 The first line in the Related Links section of the article is shown below.
 
 ```Output
-Online version: http://go.microsoft.com/fwlink/?LinkId=821564
+Online version: https://go.microsoft.com/fwlink/?LinkId=821564
 ```
 
 For information about how to provide online support for your Help articles, see

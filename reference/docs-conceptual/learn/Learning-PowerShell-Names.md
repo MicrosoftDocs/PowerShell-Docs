@@ -2,7 +2,6 @@
 ms.date:  08/24/2018
 keywords:  powershell,cmdlet
 title:  Learning PowerShell command names
-ms.assetid:  b4d0fd22-8298-4ee6-82ae-9b6f2907c986
 ---
 
 # Learning PowerShell command names

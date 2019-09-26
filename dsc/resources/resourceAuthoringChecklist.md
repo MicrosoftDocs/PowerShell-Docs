@@ -32,7 +32,7 @@ xPSDesiredStateConfiguration
 Verify the resource schema (*.schema.mof) file. You can use the [DSC Resource Designer](https://www.powershellgallery.com/packages/xDSCResourceDesigner/1.12.0.0) to help develop and test your schema.
 Make sure that:
 
-- Property types are correct (e.g. don’t use String for properties which accept numeric values, you should use UInt32 or other numeric types instead)
+- Property types are correct (e.g. don't use String for properties which accept numeric values, you should use UInt32 or other numeric types instead)
 - Property attributes are specified correctly as: ([key], [required], [write], [read])
 - At least one parameter in the schema has to be marked as [key]
 - [read] property does not coexist together with any of: [required], [key], [write]
@@ -75,7 +75,7 @@ This can be achieved manually, by running `Import-Module <resource_module> -forc
 $error = $null
 Import-Module <resource_module> –force
 If ($error.count –ne 0) {
-    Throw “Module was not imported correctly. Errors returned: $error”
+    Throw "Module was not imported correctly. Errors returned: $error"
 }
 ```
 
@@ -103,7 +103,7 @@ By changing the state of the machine and then rerunning DSC, you can verify that
 4. Modify the configured item to be out of the desired state
 5. Verify `Test-DscConfiguration` returns false
 
-Here’s a more concrete example using Registry resource:
+Here's a more concrete example using Registry resource:
 
 1. Start with registry key not in the desired state
 2. Run `Start-DscConfiguration` with a configuration to put it in the desired state and verify it passes.
@@ -120,7 +120,7 @@ Make sure you test the **Get/Set/Test-TargetResource** functions implemented in 
 
 ## Verify End to End using **Start-DscConfiguration**
 
-Testing **Get/Set/Test-TargetResource** functions by calling them directly is important, but not all issues will be discovered this way. You should focus significant part of your testing on using `Start-DscConfiguration` or the pull server. In fact, this is how users will use the resource, so don’t underestimate the significance of this type of tests.
+Testing **Get/Set/Test-TargetResource** functions by calling them directly is important, but not all issues will be discovered this way. You should focus significant part of your testing on using `Start-DscConfiguration` or the pull server. In fact, this is how users will use the resource, so don't underestimate the significance of this type of tests.
 Possible types of issues:
 
 - Credential/Session may behave differently because the DSC agent runs as a service.  Be sure to test any features here end to end.
@@ -132,11 +132,11 @@ Resource should work on all DSC supported platforms (Windows Server 2008 R2 and 
 
 ## Verify on Windows Client (if applicable)
 
-One very common test gap is verifying the resource only on server versions of Windows. Many resources are also designed to work on Client SKUs, so if that’s true in your case, don’t forget to test it on those platforms as well.
+One very common test gap is verifying the resource only on server versions of Windows. Many resources are also designed to work on Client SKUs, so if that's true in your case, don't forget to test it on those platforms as well.
 
 ## Get-DSCResource lists the resource
 
-After deploying the module, calling `Get-DscResource` should list your resource among others as a result. If you can’t find your resource in the list, make sure that schema.mof file for that resource exists.
+After deploying the module, calling `Get-DscResource` should list your resource among others as a result. If you can't find your resource in the list, make sure that schema.mof file for that resource exists.
 
 ## Resource module contains examples
 
@@ -183,7 +183,7 @@ Creating quality examples which will help others understand how to use it. This 
   }
   ```
 
-- It’s a good practice to include (commented out) example of how to call the configuration with the actual values at the end of the example script.
+- It's a good practice to include (commented out) example of how to call the configuration with the actual values at the end of the example script.
   For example, in the configuration above it isn't necessarily obvious that the best way to specify UserAgent is:
 
   `UserAgent = [Microsoft.PowerShell.Commands.PSUserAgent]::InternetExplorer`
@@ -201,23 +201,23 @@ Creating quality examples which will help others understand how to use it. This 
   ```
 
 - For each example, write a short description which explains what it does, and the meaning of the parameters.
-- Make sure examples cover most the important scenarios for your resource and if there’s nothing missing, verify that they all execute and put machine in the desired state.
+- Make sure examples cover most the important scenarios for your resource and if there's nothing missing, verify that they all execute and put machine in the desired state.
 
 ## Error messages are easy to understand and help users solve problems
 
 Good error messages should be:
 
-- There: The biggest problem with error messages is that they often don’t exist, so make sure they are there.
+- There: The biggest problem with error messages is that they often don't exist, so make sure they are there.
 - Easy to understand: Human readable, no obscure error codes
-- Precise: Describe what’s exactly the problem
+- Precise: Describe what's exactly the problem
 - Constructive: Advice how to fix the issue
-- Polite: Don’t blame user or make them feel bad
+- Polite: Don't blame user or make them feel bad
 
 Make sure you verify errors in End to End scenarios (using `Start-DscConfiguration`), because they may differ from those returned when running resource functions directly.
 
 ## Log messages are easy to understand and informative (including –verbose, –debug and ETW logs)
 
-Ensure that logs outputted by the resource are easy to understand and provide value to the user. Resources should output all information which might be helpful to the user, but more logs is not always better. You should avoid redundancy and outputting data which does not provide additional value – don’t make someone go through hundreds of log entries in order to find what they're looking for. Of course, no logs is not an acceptable solution for this problem either.
+Ensure that logs outputted by the resource are easy to understand and provide value to the user. Resources should output all information which might be helpful to the user, but more logs is not always better. You should avoid redundancy and outputting data which does not provide additional value – don't make someone go through hundreds of log entries in order to find what they're looking for. Of course, no logs is not an acceptable solution for this problem either.
 
 When testing, you should also analyze verbose and debug logs (by running `Start-DscConfiguration` with `–Verbose` and `–Debug` switches appropriately), as well as ETW logs. To see DSC ETW logs, go to Event Viewer and open the following folder: Applications and Services- Microsoft - Windows - Desired State Configuration.  By default there will be Operational channel, but make sure you enable Analytic and Debug channels before running the configuration.
 To enable Analytic/Debug channels, you can execute script below:
@@ -274,15 +274,15 @@ If your resource takes a credential as parameter:
 
 ## Resource does not require interactive input
 
-**Get/Set/Test-TargetResource** functions should be executed automatically and must not wait for user’s input at any stage of execution (e.g. you should not use `Get-Credential` inside these functions). If you need to provide user’s input, you should pass it to the configuration as parameter during the compilation phase.
+**Get/Set/Test-TargetResource** functions should be executed automatically and must not wait for user's input at any stage of execution (e.g. you should not use `Get-Credential` inside these functions). If you need to provide user's input, you should pass it to the configuration as parameter during the compilation phase.
 
 ## Resource functionality was thoroughly tested
 
-This checklist contains items which are important to be tested and/or are often missed. There will be bunch of tests, mainly functional ones which will be specific to the resource you are testing and are not mentioned here. Don’t forget about negative test cases.
+This checklist contains items which are important to be tested and/or are often missed. There will be bunch of tests, mainly functional ones which will be specific to the resource you are testing and are not mentioned here. Don't forget about negative test cases.
 
 ## Best practice: Resource module contains Tests folder with ResourceDesignerTests.ps1 script
 
-It’s a good practice to create folder “Tests” inside resource module, create `ResourceDesignerTests.ps1` file and add tests using **Test-xDscResource** and **Test-xDscSchema** for all resources in given module.
+It's a good practice to create folder "Tests" inside resource module, create `ResourceDesignerTests.ps1` file and add tests using **Test-xDscResource** and **Test-xDscSchema** for all resources in given module.
 This way you can quickly validate schemas of all resources from the given modules and do a sanity check before publishing.
 For xRemoteFile, `ResourceTests.ps1` could look as simple as:
 
@@ -310,9 +310,9 @@ New-xDscResource -Name MSFT_xRemoteFile -Property @($DestinationPath, $Uri, $Hea
 
 ## Best practice: Resource supports -WhatIf
 
-If your resource is performing “dangerous” operations, it’s a good practice to implement `-WhatIf` functionality. After it’s done, make sure that `-WhatIf` output correctly describes operations which would happen if command was executed without `-WhatIf` switch.
-Also, verify that operations does not execute (no changes to the node’s state are made) when `–WhatIf` switch is present.
-For example, let’s assume we are testing File resource. Below is simple configuration which creates file `test.txt` with contents “test”:
+If your resource is performing "dangerous" operations, it's a good practice to implement `-WhatIf` functionality. After it's done, make sure that `-WhatIf` output correctly describes operations which would happen if command was executed without `-WhatIf` switch.
+Also, verify that operations does not execute (no changes to the node's state are made) when `–WhatIf` switch is present.
+For example, let's assume we are testing File resource. Below is simple configuration which creates file `test.txt` with contents "test":
 
 ```powershell
 configuration config

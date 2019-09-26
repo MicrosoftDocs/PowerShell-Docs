@@ -1,9 +1,9 @@
 ---
-ms.date: 5/24/2019
+ms.date: 05/24/2019
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkID=517142
+online version: https://go.microsoft.com/fwlink/?linkid=517142
 external help file:  Microsoft.PowerShell.PackageManagement.dll-Help.xml
 title:  Uninstall-Package
 ---
@@ -19,59 +19,59 @@ Uninstalls one or more software packages.
 
 ```
 Uninstall-Package [-InputObject] <SoftwareIdentity[]> [-Force] [-ForceBootstrap] [-WhatIf]
-[-Confirm] [<CommonParameters>]
+ [-Confirm] [<CommonParameters>]
 ```
 
 ### PackageBySearch
 
 ```
 Uninstall-Package [-Name] <string[]> [-RequiredVersion <string>] [-MinimumVersion <string>]
-[-MaximumVersion <string>] [-Force] [-ForceBootstrap] [-WhatIf] [-Confirm]
-[-ProviderName <string[]>] [<CommonParameters>]
+ [-MaximumVersion <string>] [-Force] [-ForceBootstrap] [-WhatIf] [-Confirm]
+ [-ProviderName <string[]>] [<CommonParameters>]
 ```
 
 ### Programs:PackageByInputObject
 
 ```
 Uninstall-Package [-Force] [-ForceBootstrap] [-WhatIf] [-Confirm] [-IncludeWindowsInstaller]
-[-IncludeSystemComponent] [<CommonParameters>]
+ [-IncludeSystemComponent] [<CommonParameters>]
 ```
 
 ### Programs:PackageBySearch
 
 ```
 Uninstall-Package [-Force] [-ForceBootstrap] [-WhatIf] [-Confirm] [-IncludeWindowsInstaller]
-[-IncludeSystemComponent] [<CommonParameters>]
+ [-IncludeSystemComponent] [<CommonParameters>]
 ```
 
 ### msi:PackageByInputObject
 
 ```
 Uninstall-Package [-Force] [-ForceBootstrap] [-WhatIf] [-Confirm] [-AdditionalArguments <string[]>]
-[<CommonParameters>]
+ [<CommonParameters>]
 ```
 
 ### msi:PackageBySearch
 
 ```
 Uninstall-Package [-Force] [-ForceBootstrap] [-WhatIf] [-Confirm] [-AdditionalArguments <string[]>]
-[<CommonParameters>]
+ [<CommonParameters>]
 ```
 
 ### PSModule:PackageByInputObject
 
 ```
 Uninstall-Package [-Force] [-ForceBootstrap] [-WhatIf] [-Confirm]
-[-PackageManagementProvider <string>] [-Location <string>] [-InstallUpdate]
-[-InstallationPolicy <string>] [-DestinationPath <string>] [<CommonParameters>]
+ [-PackageManagementProvider <string>] [-Location <string>] [-InstallUpdate]
+ [-InstallationPolicy <string>] [-DestinationPath <string>] [<CommonParameters>]
 ```
 
 ### PSModule:PackageBySearch
 
 ```
 Uninstall-Package [-Force] [-ForceBootstrap] [-WhatIf] [-Confirm]
-[-PackageManagementProvider <string>] [-Location <string>] [-InstallUpdate]
-[-InstallationPolicy <string>] [-DestinationPath <string>] [<CommonParameters>]
+ [-PackageManagementProvider <string>] [-Location <string>] [-InstallUpdate]
+ [-InstallationPolicy <string>] [-DestinationPath <string>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -276,7 +276,7 @@ Accept wildcard characters: False
 
 ### -Location
 
-Specifies a path to the input object. 
+Specifies a path to the input object.
 
 ```yaml
 Type: String

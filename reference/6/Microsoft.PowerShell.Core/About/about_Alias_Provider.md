@@ -4,7 +4,7 @@ schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
 title:  Alias Provider
-online version:  http://go.microsoft.com/fwlink/?LinkId=834943
+online version: https://go.microsoft.com/fwlink/?linkid=2096218
 ---
 # Alias provider
 
@@ -95,7 +95,7 @@ This command gets the list of all the aliases when the current location is the
 of the current location.
 
 ```powershell
-Get-Item -Path *
+PS Alias:\> Get-Item -Path *
 ```
 
 In the `Alias:` drive, a dot `.`, which represents the current location, and a
@@ -120,6 +120,13 @@ Get-Item -Path Alias:ls
 ```
 
 If you are in the `Alias:` drive, you can omit the drive name from the path.
+
+You can also retrieve the definition for an alias by prefixing the provider
+path with the dollar sign (`$`).
+
+```powershell
+$Alias:ls
+```
 
 ### Get all aliases for a specific cmdlet
 
@@ -270,15 +277,15 @@ provider-enabled drive.
 
 Determines the value of the **Options** property of an alias.
 
-- `None`: No options. This value is the default.
-- `Constant`:The alias cannot be deleted and its properties cannot be changed.
-  `Constant` is available only when you create an alias. You cannot change the
-  option of an existing alias to `Constant`.
-- `Private`:The alias is visible only in the current scope, not in the child
+- **None**: No options. This value is the default.
+- **Constant**:The alias cannot be deleted and its properties cannot be changed.
+  **Constant** is available only when you create an alias. You cannot change the
+  option of an existing alias to **Constant**.
+- **Private**:The alias is visible only in the current scope, not in the child
    scopes.
-- `ReadOnly`:The properties of the alias cannot be changed except by using the
+- **ReadOnly**:The properties of the alias cannot be changed except by using the
   `-Force` parameter. You can use `Remove-Item` to delete the alias.
-- `AllScope`:The alias is copied to any new scopes that are created.
+- **AllScope**:The alias is copied to any new scopes that are created.
 
 #### Cmdlets supported
 

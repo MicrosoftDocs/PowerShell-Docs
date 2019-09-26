@@ -3,7 +3,7 @@ ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/p/?linkid=293970
+online version: https://go.microsoft.com/fwlink/?linkid=293970
 external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 title:  Get-Host
 ---
@@ -201,7 +201,7 @@ To see all of the properties of the object in the $host.privatedata property, ty
 ## PARAMETERS
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -229,3 +229,5 @@ Get-Host returns a System.Management.Automation.Internal.Host.InternalHost objec
 [Read-Host](Read-Host.md)
 
 [Write-Host](Write-Host.md)
+
+

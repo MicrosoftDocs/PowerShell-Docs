@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Management
 ms.date: 06/09/2017
-online version: http://go.microsoft.com/fwlink/?LinkId=821618
+online version: https://go.microsoft.com/fwlink/?linkid=2096405
 schema: 2.0.0
 title: Remove-PSDrive
 ---
@@ -112,7 +112,7 @@ Required: True
 Position: 0
 Default value: None
 Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -PSProvider
@@ -208,3 +208,5 @@ This cmdlet does not return any output.
 [Get-PSDrive](Get-PSDrive.md)
 
 [New-PSDrive](New-PSDrive.md)
+
+[about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md)

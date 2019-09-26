@@ -3,8 +3,8 @@ external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 03/01/2018
-online version: http://go.microsoft.com/fwlink/?LinkId=821775
+ms.date: 06/14/2019
+online version: https://go.microsoft.com/fwlink/?linkid=2096524
 schema: 2.0.0
 title: Format-Table
 ---
@@ -317,9 +317,13 @@ Specifies the object properties that appear in the display and the order in whic
 one or more property names (separated by commas), or use a hash table to display a calculated
 property. Wildcards are permitted.
 
-If you omit this parameter, the properties that appear in the display depend on the object being
-displayed. The parameter name "Property" is optional. You cannot use the **Property** and
-**View** parameters in the same command.
+If you omit this parameter, the properties that appear in the display depend on the first object's
+properties. For example, if the first object has **PropertyA** and **PropertyB** but subsequent
+objects have **PropertyA**, **PropertyB** and **PropertyC** only **PropertyA** and **PropertyB**
+headers will display.
+
+The parameter name **Property** is optional. You cannot use the **Property** and **View** parameters
+in the same command.
 
 The value of the **Property** parameter can be a new calculated property. To create a calculated
 property, use a hash table. Valid keys are:
@@ -339,7 +343,7 @@ Required: False
 Position: 0
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -ShowError
@@ -416,7 +420,7 @@ Accept wildcard characters: False
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see
-[about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -451,3 +455,4 @@ list or a table, use the `Format-Custom` cmdlet.
 [Format-List](Format-List.md)
 
 [Format-Wide](Format-Wide.md)
+

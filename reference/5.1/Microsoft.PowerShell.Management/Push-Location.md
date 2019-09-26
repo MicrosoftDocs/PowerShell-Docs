@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Management
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
-online version: http://go.microsoft.com/fwlink/?LinkId=821612
+online version: https://go.microsoft.com/fwlink/?linkid=821612
 schema: 2.0.0
 title: Push-Location
 ---
@@ -195,7 +195,7 @@ Accept wildcard characters: False
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see
-[about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -260,3 +260,4 @@ providers available in your session, type `Get-PSProvider`. For more information
 [Set-Location](Set-Location.md)
 
 [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md)
+

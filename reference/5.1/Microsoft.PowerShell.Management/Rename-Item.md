@@ -3,14 +3,13 @@ ms.date:  10/18/2018
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821621
+online version: https://go.microsoft.com/fwlink/?linkid=821621
 external help file:  Microsoft.PowerShell.Commands.Management.dll-Help.xml
 title:  Rename-Item
 ---
 # Rename-Item
 
 ## SYNOPSIS
-
 Renames an item in a PowerShell provider namespace.
 
 ## SYNTAX

@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Utility
 ms.date: 06/09/2017
-online version: http://go.microsoft.com/fwlink/?LinkId=821871
+online version: https://go.microsoft.com/fwlink/?linkid=821871
 schema: 2.0.0
 title: Update-TypeData
 ---
@@ -100,7 +100,7 @@ The **Update-TypeData** command uses the *TypeName* parameter to specify **the S
 
 The value of the Value property is a script that calculates the current annual quarter.
 The script block uses the $this automatic variable to represent the current instance of the object and the In operator to determine whether the month value appears in each integer array.
-For more information about the In operator, see about_Comparison_Operators (http://go.microsoft.com/fwlink/?LinkID=113217).
+For more information about the In operator, see about_Comparison_Operators (https://go.microsoft.com/fwlink/?LinkID=113217).
 
 The second command gets the new Quarter property of the current date.
 
@@ -618,7 +618,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -639,3 +639,6 @@ This cmdlet does not return any output.
 [Get-TypeData](Get-TypeData.md)
 
 [Remove-TypeData](Remove-TypeData.md)
+
+
+

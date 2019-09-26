@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Management
 ms.date: 06/09/2017
-online version: http://go.microsoft.com/fwlink/?LinkId=821619
+online version: https://go.microsoft.com/fwlink/?linkid=821619
 schema: 2.0.0
 title: Remove-WmiObject
 ---
@@ -102,7 +102,7 @@ Use this parameter to run commands that take a long time to finish.
 
 New CIM cmdlets, introduced Windows PowerShell 3.0, perform the same tasks as the WMI cmdlets.
 The CIM cmdlets comply with WS-Management (WSMan) standards and with the Common Information Model (CIM) standard, which enables the cmdlets to use the same techniques to manage computers that run the Windows operating system and those running other operating systems.
-Instead of using **Remove-WmiObject**, consider using the Remove-CimInstancehttp://go.microsoft.com/fwlink/?LinkId=227964 cmdlet.
+Instead of using **Remove-WmiObject**, consider using the Remove-CimInstancehttps://go.microsoft.com/fwlink/?LinkId=227964 cmdlet.
 
 When you use the *AsJob* parameter, the command returns an object that represents the background job and then displays the command prompt.
 You can continue to work in the session while the job finishes.
@@ -389,7 +389,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -411,3 +411,6 @@ Otherwise, it does not generate any output.
 [Invoke-WmiMethod](Invoke-WmiMethod.md)
 
 [Set-WmiInstance](Set-WmiInstance.md)
+
+
+

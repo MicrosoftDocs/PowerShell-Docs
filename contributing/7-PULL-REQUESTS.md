@@ -1,16 +1,25 @@
 # Best Practices for Pull requests
 
 To publish changes to content, you submit a pull request from your fork. Every pull request has to
-be reviewed prior to being merged.
+be reviewed before it can merged.
+
+## Target the correct branch
+
+All changes should be made to the `staging` branch. Changes should never be targeted at the `live`
+branch. Changes made in the `staging` branch get merged into `live` so any changes made to `live`
+are overwritten.
+
+If you are submitting a change to documentation that only applies to an unreleased version of
+PowerShell, check to see if there is a release branch for that version. All changes that apply to
+a specific, future version should be targeted at the release branch. Release branches have the
+following name pattern: `release-<verison>`.
 
 ## Make the pull request queue work better for everyone
 
 There are two basic realities in the PR queue:
 
-- Pull requests that are small in scope and that contain very similar changes take less time to
-  review.
-- Pull requests that are large in scope or that contain mixed kinds of changes take more time to
-  review.
+- Pull requests that are small in scope and relate changes take less time to review.
+- Pull requests that are large in scope or that contain unrelated changes take more time to review.
 
 ### Avoid branches that update large numbers of files
 
@@ -48,7 +57,7 @@ You'll see the following behavior:
 1. Click **Details** for more information.
 1. On the Details page, you'll see all the validation checks that failed, with information about how
    to fix the issues.
-1. When validation succeeds, you will see a comment similar to the following:
+1. When validation succeeds, the following comment is added to the PR:
 
    ![build validation](images/7-pull-requests/build-validation.png)
 

@@ -1,9 +1,9 @@
 ---
 ms.date:  06/12/2017
 keywords:  dsc,powershell,configuration,setup
-title:  DisableDebugConfiguration method of the MSFT_DSCLocalConfigurationManager class
+title:  DisableDebugConfiguration method
 ---
-# DisableDebugConfiguration method of the MSFT_DSCLocalConfigurationManager class
+# DisableDebugConfiguration method
 
 Disables DSC resource debugging.
 

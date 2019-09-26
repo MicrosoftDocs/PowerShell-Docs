@@ -1,9 +1,9 @@
-﻿---
+---
 ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkID=113323
+online version: https://go.microsoft.com/fwlink/?linkid=113323
 external help file:  Microsoft.PowerShell.Security.dll-Help.xml
 title:  Get-PfxCertificate
 ---
@@ -99,7 +99,7 @@ Accept wildcard characters: False
 
 ### CommonParameters
 
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -124,3 +124,5 @@ Get-PfxCertificate returns an object for each certificate that it gets.
 [Set-AuthenticodeSignature](Set-AuthenticodeSignature.md)
 
 [about_Signing](../Microsoft.PowerShell.Core/About/about_Signing.md)
+
+

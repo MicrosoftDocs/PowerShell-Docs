@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Core
 ms.date: 03/26/2019
-online version: http://go.microsoft.com/fwlink/?LinkId=821499
+online version: https://go.microsoft.com/fwlink/?linkid=2096180
 schema: 2.0.0
 title: New-PSSessionConfigurationFile
 ---
@@ -772,7 +772,7 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: True
+Accept wildcard characters: False
 ```
 
 ### -SchemaVersion
@@ -836,7 +836,7 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: True
+Accept wildcard characters: False
 ```
 
 ### -TranscriptDirectory
@@ -983,7 +983,7 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -VisibleFunctions
@@ -1031,7 +1031,7 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### CommonParameters

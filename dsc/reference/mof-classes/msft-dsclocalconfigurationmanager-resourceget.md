@@ -1,9 +1,9 @@
 ---
 ms.date:  06/12/2017
 keywords:  dsc,powershell,configuration,setup
-title:  ResourceGet method of the MSFT_DSCLocalConfigurationManager class
+title:  ResourceGet method
 ---
-# ResourceGet method of the MSFT_DSCLocalConfigurationManager class
+# ResourceGet method
 
 Directly calls the **Get** method of a DSC resource.
 

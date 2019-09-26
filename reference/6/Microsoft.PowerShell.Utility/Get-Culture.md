@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Utility
 ms.date: 03/28/2019
-online version: http://go.microsoft.com/fwlink/?LinkId=821779
+online version: https://go.microsoft.com/fwlink/?linkid=2096837
 schema: 2.0.0
 title: Get-Culture
 ---
@@ -201,7 +201,7 @@ Accept wildcard characters: False
 
 ### CommonParameters
 
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -224,3 +224,4 @@ You can also use the `$PsCulture` and `$PsUICulture` variables. The `$PsCulture`
 [Set-Culture](/powershell/module/international/set-culture?view=win10-ps)
 
 [Get-UICulture](Get-UICulture.md)
+

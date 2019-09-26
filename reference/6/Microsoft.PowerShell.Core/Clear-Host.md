@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name:
 ms.date: 06/09/2017
-online version: http://go.microsoft.com/fwlink/?LinkId=834941
+online version: https://go.microsoft.com/fwlink/?linkid=2096262
 schema: 2.0.0
 title: Clear-Host
 ---
@@ -12,31 +12,32 @@ title: Clear-Host
 # Clear-Host
 
 ## SYNOPSIS
+
 Clears the display in the host program.
 
 ## SYNTAX
 
 ```
-Clear-Host [<CommonParameters>]
+Clear-Host
 ```
 
 ## DESCRIPTION
-The Clear-Host function removes all text from the current display, including commands and output that might have accumulated.
-When complete, it displays the command prompt.
-You can use the function name or its alias, CLS.
 
-Clear-Host affects only the current display.
+The `Clear-Host` function removes all text from the current display, including commands and output that might have accumulated.
+When complete, it displays the command prompt.
+You can use the function name or its alias, `cls`.
+
+`Clear-Host` affects only the current display.
 It does not delete saved results or remove any items from the session.
 Session-specific items, such as variables and functions, are not affected by this function.
 
-Because the behavior of the Clear-Host function is determined by the host program, Clear-Host might work differently in different host programs.
+Because the behavior of the `Clear-Host` function is determined by the host program, `Clear-Host` might work differently in different host programs.
 
 ## EXAMPLES
 
-### EXAMPLE 1
-```
-cls
+### Example 1
 
+```
 # Before
 
 PS C:\> Get-Process
@@ -70,37 +71,31 @@ PS C:\> cls
 PS C:>
 ```
 
-Description
-
------------
-
-This command uses the CLS alias of Clear-Host to clear the current display.
-
-## PARAMETERS
-
-### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This command uses the `cls` alias of `Clear-Host` to clear the current display.
 
 ## INPUTS
 
 ### None
-You cannot pipe input to Clear-Host.
+
+You cannot pipe input to `Clear-Host`.
 
 ## OUTPUTS
 
 ### None
-Clear-Host does not generate any output
+
+`Clear-Host` does not generate any output
 
 ## NOTES
-Clear-Host is a simple function, not an advanced function.
-As such, you cannot use common parameters, such as -Debug, in a Clear-Host command.
+
+`Clear-Host` is a simple function, not an advanced function.
+As such, you cannot use common parameters, such as **Debug**, in a `Clear-Host` command.
 
 ## RELATED LINKS
 
-[Get-Host](../microsoft.powershell.utility/get-host.md)
+[Get-Host](../Microsoft.PowerShell.Utility/Get-Host.md)
 
-[Out-Host](out-host.md)
+[Out-Host](Out-Host.md)
 
-[Read-Host](../microsoft.powershell.utility/read-host.md)
+[Read-Host](../Microsoft.PowerShell.Utility/Read-Host.md)
 
-[Write-Host](../microsoft.powershell.utility/write-host.md)
+[Write-Host](../Microsoft.PowerShell.Utility/Write-Host.md)

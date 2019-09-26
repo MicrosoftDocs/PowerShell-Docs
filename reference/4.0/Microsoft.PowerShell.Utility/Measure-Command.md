@@ -1,23 +1,22 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/p/?linkid=293989
-external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-title:  Measure-Command
+external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Utility
+ms.date: 06/09/2017
+online version: https://go.microsoft.com/fwlink/?linkid=293989
+schema: 2.0.0
+title: Measure-Command
 ---
 # Measure-Command
 
 ## Synopsis
-
 Measures the time it takes to run script blocks and cmdlets.
 
 ## Syntax
 
 ```
-Measure-Command [-Expression] <ScriptBlock> [-InputObject <PSObject>]
- [<CommonParameters>]
+Measure-Command [-InputObject <PSObject>] [-Expression] <ScriptBlock> [<CommonParameters>]
 ```
 
 ## Description
@@ -40,10 +39,10 @@ The first command measures the time it takes to process a recursive `Get-ChildIt
 
 The second command measures the time it takes to process a recursive `Get-ChildItem` command that uses the provider-specific `-Filter` parameter.
 
-These commands show the value of using a provider-specific filter in Windows PowerShell commands.
+These commands show the value of using a provider-specific filter in PowerShell commands.
 
 ```powershell
-Measure-Command {Get-ChildItem -Path C:\Windows\*.txt -Recurse}
+Measure-Command { Get-ChildItem -Path C:\Windows\*.txt -Recurse }
 ```
 
 ```output
@@ -88,7 +87,7 @@ This example shows how to use the `InputObject` parameter of `Measure-Command`. 
 ```powershell
 # Perform a simple operation to demonstrate the InputObject parameter
 # Note that no output is displayed.
-10, 20, 50 | Measure-Command -Expression {for($i=0; $i - lt $_;$i++) {$i} }
+10, 20, 50 | Measure-Command -Expression {for($i=0; $i -lt $_;$i++) {$i} }
 ```
 
 ```output
@@ -104,6 +103,10 @@ TotalMinutes      : 0.000204453333333333
 TotalSeconds      : 0.0122672
 TotalMilliseconds : 12.2672
 ```
+
+### Example 4: Displaying output of measured command
+
+To display output of expression in `Measure-Command` you can use a pipe to `Out-Default`.
 
 ```powershell
 # Perform the same operation as above adding Out-Default to every execution.
@@ -169,7 +172,7 @@ Accept wildcard characters: False
 
 ### CommonParameters
 
-This cmdlet supports the common parameters: `-Debug`, `-ErrorAction`, `-ErrorVariable`, `-InformationAction`, `-InformationVariable`, `-OutVariable`, `-OutBuffer`, `-PipelineVariable`, `-Verbose`, `-WarningAction`, and `-WarningVariable`. For more information, see [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## Inputs
 
@@ -182,6 +185,8 @@ You can pipe an object to `Measure-Command`.
 ### System.TimeSpan
 
 `Measure-Command` returns a time span object that represents the result.
+
+## NOTES
 
 ## Related Links
 

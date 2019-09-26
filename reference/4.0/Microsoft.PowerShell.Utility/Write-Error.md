@@ -3,7 +3,7 @@ ms.date: 06/09/2017
 schema: 2.0.0
 locale: en-us
 keywords: powershell,cmdlet
-online version: http://go.microsoft.com/fwlink/p/?linkid=294028
+online version: https://go.microsoft.com/fwlink/?linkid=294028
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 title: Write-Error
 ---
@@ -83,7 +83,7 @@ This command declares a non-terminating error and specifies an error category.
 ### Example 4: Write an error using an Exception object
 
 ```powershell
-$E = [System.Exception]@{Source="Get-ParameterNames.ps1";HelpLink="http://go.microsoft.com/fwlink/?LinkID=113425"}
+$E = [System.Exception]@{Source="Get-ParameterNames.ps1";HelpLink="https://go.microsoft.com/fwlink/?LinkID=113425"}
 Write-Error -Exception $E -Message "Files not found. The $Files location does not contain any XML files."
 ```
 
@@ -353,3 +353,4 @@ You can pipe a string that contains an error message to `Write-Error`.
 [Write-Verbose](Write-Verbose.md)
 
 [Write-Warning](Write-Warning.md)
+

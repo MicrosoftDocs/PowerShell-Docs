@@ -1,16 +1,17 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkID=113398
-external help file:  System.Management.Automation.dll-Help.xml
-title:  Set-PSDebug
+external help file: System.Management.Automation.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Core
+ms.date: 08/22/2019
+online version: https://go.microsoft.com/fwlink/?linkid=113398
+schema: 2.0.0
+title: Set-PSDebug
 ---
+
 # Set-PSDebug
 
 ## SYNOPSIS
-
 Turns script debugging features on and off, sets the trace level, and toggles strict mode.
 
 ## SYNTAX
@@ -29,80 +30,96 @@ Set-PSDebug [-Off] [<CommonParameters>]
 
 ## DESCRIPTION
 
-The Set-PSDebug cmdlet turns script debugging features on and off, sets the trace level, and toggles strict mode.
+The `Set-PSDebug` cmdlet turns script debugging features on and off, sets the trace level, and
+toggles strict mode. By default, the PowerShell debug features are off.
 
-When the Trace parameter is set to 1, each line of script is traced as it is executed.
-When the parameter is set to 2, variable assignments, function calls, and script calls are also traced.
-If the Step parameter is specified, you are prompted before each line of the script is executed.
+When the **Trace** parameter has a value of `1`, each line of script is traced as it runs. When the
+parameter has a value of `2`, variable assignments, function calls, and script calls are also
+traced. If the **Step** parameter is specified, you're prompted before each line of the script runs.
 
 ## EXAMPLES
 
-### Example 1
+### Example 1: Set the trace level
 
+This example sets the trace level to `2`, and then runs a script that displays the numbers 1, 2, and
+3.
+
+```powershell
+Set-PSDebug -Trace 2; foreach ($i in 1..3) {$i}
 ```
-PS> set-psdebug -trace 2; foreach ($i in 1..3) {$i}
 
-DEBUG:    1+ Set-PsDebug -trace 2; foreach ($i in 1..3) {$i}
-DEBUG:    1+ Set-PsDebug -trace 2; foreach ($i in 1..3) {$i}
+```Output
+DEBUG:    1+ Set-PSDebug -Trace 2; foreach ($i in  >>>> 1..3) {$i}
+DEBUG:     ! SET $foreach = 'IEnumerator'.
+DEBUG:    1+ Set-PSDebug -Trace 2; foreach ( >>>> $i in 1..3) {$i}
+DEBUG:     ! SET $i = '1'.
+DEBUG:    1+ Set-PSDebug -Trace 2; foreach ($i in 1..3) { >>>> $i}
 1
-DEBUG:    1+ Set-PsDebug -trace 2; foreach ($i in 1..3) {$i}
+DEBUG:    1+ Set-PSDebug -Trace 2; foreach ( >>>> $i in 1..3) {$i}
+DEBUG:     ! SET $i = '2'.
+DEBUG:    1+ Set-PSDebug -Trace 2; foreach ($i in 1..3) { >>>> $i}
 2
-DEBUG:    1+ Set-PsDebug -trace 2; foreach ($i in 1..3) {$i}
+DEBUG:    1+ Set-PSDebug -Trace 2; foreach ( >>>> $i in 1..3) {$i}
+DEBUG:     ! SET $i = '3'.
+DEBUG:    1+ Set-PSDebug -Trace 2; foreach ($i in 1..3) { >>>> $i}
 3
+DEBUG:    1+ Set-PSDebug -Trace 2; foreach ( >>>> $i in 1..3) {$i}
+DEBUG:     ! SET $foreach = ''.
 ```
 
-This command sets the trace level to 2, and then runs a script that displays the numbers 1, 2, and 3.
+### Example 2: Turn on stepping
 
-### Example 2
+This example turns on stepping, and then runs a script that displays the numbers 1, 2, and 3.
 
+```powershell
+Set-PSDebug -Step; foreach ($i in 1..3) {$i}
 ```
-PS> set-psdebug -step; foreach ($i in 1..3) {$i}
 
-DEBUG:    1+ Set-PsDebug -step; foreach ($i in 1..3) {$i}
+```Output
 Continue with this operation?
-1+ Set-PsDebug -step; foreach ($i in 1..3) {$i}
-[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help
-(default is "Y"):a
-DEBUG:    1+ Set-PsDebug -step; foreach ($i in 1..3) {$i}
+   1+ Set-PSDebug -Step; foreach ($i in  >>>> 1..3) {$i}
+[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "Y"): A
+DEBUG:    1+ Set-PSDebug -Step; foreach ($i in  >>>> 1..3) {$i}
 1
 2
 3
 ```
 
-This command turns on stepping and then
+### Example 3: Use strict mode
 
-runs a script that displays the numbers 1, 2, and 3.
+This example puts PowerShell in strict mode and attempts to access a variable that doesn't have an
+assigned value.
 
-### Example 3
-
+```powershell
+Set-PSDebug -Strict; $NewVar
 ```
-PS> set-psdebug -off; foreach ($i in 1..3) {$i}
+
+```Output
+The variable '$NewVar' cannot be retrieved because it has not been set.
+At line:1 char:22
++ Set-PSDebug -Strict; $NewVar
+```
+
+### Example 4: Turn off debug features
+
+This example turns off all debugging features, and then runs a script that displays the numbers 1,
+2, and 3.
+
+```powershell
+Set-PSDebug -Off; foreach ($i in 1..3) {$i}
+```
+
+```Output
 1
 2
 3
 ```
-
-This command turns off all debugging features, and then runs a script that displays the numbers 1, 2, and 3.
-
-### Example 4
-
-```
-PS> set-psdebug -strict; $NewVar
-The variable $NewVar cannot be retrieved because it has not been set yet.
-At line:1 char:28
-+ Set-PsDebug -strict;$NewVar <<<<
-```
-
-This command puts the interpreter in strict mode, and attempts to access a variable that has not yet been set.
 
 ## PARAMETERS
 
 ### -Off
 
 Turns off all script debugging features.
-
-Note: A "set-strictmode -off" command disables the verification set by a "set-psdebug -strict" command.
-For more information, see Set-StrictMode.
 
 ```yaml
 Type: SwitchParameter
@@ -111,17 +128,17 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -Step
 
-Turns on script stepping.
-Before each line is run, the user is prompted to stop, continue, or enter a new interpreter level to inspect the state of the script.
+Turns on script stepping. Before each line runs, PowerShell prompts you to stop, continue, or enter
+a new interpreter level to inspect the state of the script.
 
-Note: Specifying the Step parameter automatically sets a Trace level of 1.
+Specifying the **Step** parameter automatically sets a trace level of `1`.
 
 ```yaml
 Type: SwitchParameter
@@ -130,17 +147,16 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -Strict
 
-Specifies that the interpreter should throw an exception if a variable is referenced before a value is assigned to the variable.
-
-Note: A "set-strictmode -off" command disables the verification set by a "set-psdebug -strict" command.
-For more information, see Set-StrictMode.
+Specifies that variables must be assigned a value before being referenced in a script. If a variable
+is referenced before a value is assigned, PowerShell returns an exception error. This is equivalent
+to `Set-StrictMode -Version 1`. For more information, see [Set-StrictMode](Set-StrictMode.md).
 
 ```yaml
 Type: SwitchParameter
@@ -149,20 +165,20 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -Trace
 
-Specifies the trace level:
+Specifies the trace level for each line in a script. Each line is traced as it's run.
 
-0 - Turn script tracing off
+The acceptable values for this parameter are as follows:
 
-1 - Trace script lines as they are executed
-
-2 - Trace script lines, variable assignments, function calls, and scripts.
+- 0: Turn script tracing off.
+- 1: Trace script lines as they run.
+- 2: Trace script lines, variable assignments, function calls, and scripts.
 
 ```yaml
 Type: Int32
@@ -178,30 +194,32 @@ Accept wildcard characters: False
 
 ### CommonParameters
 
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](./About/about_CommonParameters.md).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+-InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
+-WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### None
 
-You cannot pipe input to this cmdlet.
+You can't pipeline input to this cmdlet.
 
 ## OUTPUTS
 
 ### None
 
-This cmdlet does not return any output.
+This cmdlet doesn't return any output.
 
 ## NOTES
 
 ## RELATED LINKS
 
+[about_Debuggers](./About/about_Debuggers.md)
+
 [Debug-Process](../Microsoft.PowerShell.Management/Debug-Process.md)
 
-[Set-PSBreakpoint](../microsoft.powershell.utility/set-psbreakpoint.md)
+[Set-PSBreakpoint](../Microsoft.PowerShell.Utility/Set-PSBreakpoint.md)
 
 [Set-StrictMode](Set-StrictMode.md)
 
-[Write-Debug](../microsoft.powershell.utility/write-debug.md)
-
-[about_Debuggers](About/about_Debuggers.md)
+[Write-Debug](../Microsoft.PowerShell.Utility/Write-Debug.md)

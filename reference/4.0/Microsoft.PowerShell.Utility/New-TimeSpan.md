@@ -3,7 +3,7 @@ ms.date: 5/1/2019
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/p/?linkid=293994
+online version: https://go.microsoft.com/fwlink/?linkid=293994
 external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 title:  New-TimeSpan
 ---

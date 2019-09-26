@@ -1,9 +1,9 @@
 ---
 ms.date:  06/12/2017
 keywords:  dsc,powershell,configuration,setup
-title:  ApplyConfiguration method of the MSFT_DSCLocalConfigurationManager class
+title:  ApplyConfiguration method
 ---
-# ApplyConfiguration method of the MSFT_DSCLocalConfigurationManager class
+# ApplyConfiguration method
 
 Uses the Configuration Agent to apply the configuration that is pending.
 

@@ -4,7 +4,9 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: CimCmdlets
 ms.date: 02/21/2019
+online version: https://go.microsoft.com/fwlink/?linkid=2096156
 schema: 2.0.0
+title: Get-CimInstance
 ---
 
 # Get-CimInstance

@@ -3,7 +3,7 @@ ms.date: 5/15/2019
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/p/?linkid=293972
+online version: https://go.microsoft.com/fwlink/?linkid=293972
 external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 title:  Get-PSBreakpoint
 ---
@@ -269,7 +269,7 @@ Accept wildcard characters: False
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see about_CommonParameters
-(http://go.microsoft.com/fwlink/?LinkID=113216).
+(https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -300,3 +300,4 @@ Get-PSBreakPoint returns objects that represent the breakpoints in the session.
 [Set-PSBreakpoint](Set-PSBreakpoint.md)
 
 [about_Debuggers](../Microsoft.PowerShell.Core/About/about_Debuggers.md)
+

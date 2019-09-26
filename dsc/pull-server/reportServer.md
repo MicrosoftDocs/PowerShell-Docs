@@ -56,7 +56,7 @@ configuration ReportClientConfig
 
         ReportServerWeb CONTOSO-ReportSrv
         {
-            ServerURL               = 'http://CONTOSO-REPORT:8080/PSDSCReportServer.svc'
+            ServerURL               = 'http://CONTOSO-REPORT:8080/PSDSCPullServer.svc'
             RegistrationKey         = 'ba39daaa-96c5-4f2f-9149-f95c46460faa'
             AllowUnsecureConnection = $true
         }

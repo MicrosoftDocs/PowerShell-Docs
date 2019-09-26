@@ -1,9 +1,9 @@
-﻿---
+---
 ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkID=135221
+online version: https://go.microsoft.com/fwlink/?linkid=135221
 external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 title:  Import-PSSession
 ---
@@ -488,7 +488,7 @@ Accept wildcard characters: False
 
 ### CommonParameters
 
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -529,3 +529,5 @@ To create a permanent module on disk, use the Export-PSSession cmdlet.
 [about_PSSessions](../Microsoft.PowerShell.Core/About/about_PSSessions.md)
 
 [about_Jobs](../Microsoft.PowerShell.Core/About/about_Jobs.md)
+
+

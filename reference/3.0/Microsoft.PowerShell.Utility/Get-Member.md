@@ -1,9 +1,9 @@
-﻿---
+---
 ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkID=113322
+online version: https://go.microsoft.com/fwlink/?linkid=113322
 external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 title:  Get-Member
 ---
@@ -424,7 +424,7 @@ Accept wildcard characters: False
 
 ### CommonParameters
 
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -463,3 +463,5 @@ For more information about the $this variable, see about_Automatic_Variables.
 [about_Methods](../Microsoft.PowerShell.Core/About/about_Methods.md)
 
 [about_Objects](../Microsoft.PowerShell.Core/About/about_Objects.md)
+
+

@@ -3,14 +3,13 @@ ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkID=135237
+online version: https://go.microsoft.com/fwlink/?linkid=135237
 external help file:  System.Management.Automation.dll-Help.xml
 title:  New-PSSession
 ---
 # New-PSSession
 
 ## SYNOPSIS
-
 Creates a persistent connection to a local or remote computer.
 
 ## SYNTAX
@@ -326,7 +325,8 @@ Accept wildcard characters: False
 Specifies the session configuration that is used for the new PSSession.
 
 Enter a configuration name or the fully qualified resource Uniform Resource Identifier (URI) for a session configuration.
-If you specify only the configuration name, the following schema URI is prepended:  http://schemas.microsoft.com/PowerShell.
+If you specify only the configuration name, the following schema URI is prepended:
+`http://schemas.microsoft.com/PowerShell`.
 
 The session configuration for a session is located on the remote computer.
 If the specified session configuration does not exist on the remote computer, the command fails.
@@ -574,8 +574,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](./About/about_CommonParameters.md).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -592,8 +591,6 @@ You can pipe a computer name (string), ConnectionURI (URI), or session (PSSessio
 - This cmdlet uses the Windows PowerShell remoting infrastructure. To use this cmdlet, the local computer and any remote computers must be configured for Windows PowerShell remoting. For more information, see [about_Remote_Requirements](About/about_Remote_Requirements.md).
 - To create a PSSession on the local computer, start Windows PowerShell with the "Run as administrator" option.
 - When you are finished with the PSSession, use the Remove-PSSession cmdlet to delete the PSSession and release its resources.
-
-- 
 
 ## RELATED LINKS
 

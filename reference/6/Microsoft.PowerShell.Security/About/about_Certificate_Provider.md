@@ -4,7 +4,7 @@ schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
 title:  Certificate Provider
-online version:  http://go.microsoft.com/fwlink/?LinkId=834968
+online version: https://go.microsoft.com/fwlink/?linkid=2096510
 ---
 # Certificate Provider
 

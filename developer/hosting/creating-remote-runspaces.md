@@ -9,23 +9,35 @@ ms.topic: "article"
 ms.assetid: 057a666f-731b-423d-9d80-7be6b1836244
 caps.latest.revision: 5
 ---
+
 # Creating remote runspaces
 
-Windows PowerShell commands that take a `ComputerName` parameter can be run on any computer that runs Windows PowerShell. To run commands that do not take a `ComputerName` parameter, you can use WS-Management to configure a runspace that connects to a specified computer, and run commands on that computer.
+PowerShell commands that take a **ComputerName** parameter can be run on any computer that runs
+PowerShell. To run commands that don't take a **ComputerName** parameter, you can use WS-Management
+to configure a runspace that connects to a specified computer, and run commands on that computer.
 
 ## Using a WSManConnection to create a remote runspace
 
- To create a runspace that connects to a remote computer, you create a [System.Management.Automation.Runspaces.Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) object. You specify the target endpoint for the connection by setting the [System.Management.Automation.Runspaces.Wsmanconnectioninfo.Connectionuri*](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo.ConnectionUri) property of the object. You then create a runspace by calling the [System.Management.Automation.Runspaces.Runspacefactory.Createrunspace*](/dotnet/api/System.Management.Automation.Runspaces.RunspaceFactory.CreateRunspace) method, specifying the [System.Management.Automation.Runspaces.Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) object as the `connectionInfo` parameter.
+ To create a runspace that connects to a remote computer, you create a
+ [System.Management.Automation.Runspaces.WSManConnectionInfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo)
+ object. You specify the target endpoint for the connection by setting the
+ [System.Management.Automation.Runspaces.WSManConnectionInfo.ConnectionUri](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo.ConnectionUri)
+ property of the object. You then create a runspace by calling the
+ [System.Management.Automation.Runspaces.RunspaceFactory.CreateRunspace](/dotnet/api/System.Management.Automation.Runspaces.RunspaceFactory.CreateRunspace)
+ method, specifying the
+ [System.Management.Automation.Runspaces.WSManConnectionInfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo)
+ object as the `connectionInfo` parameter.
 
- The following example shows how to create a runspace that connects to a remote computer. In the example, `RemoteComputerUri` is used as a placeholder for the actual URI of a remote computer.
+ The following example shows how to create a runspace that connects to a remote computer. In the
+ example, `RemoteComputerUri` is used as a placeholder for the actual URI of a remote computer.
 
 ```csharp
 namespace Samples
 {
   using System;
   using System.Collections.ObjectModel;
-  using System.Management.Automation;            // Windows PowerShell namespace.
-  using System.Management.Automation.Runspaces;  // Windows PowerShell namespace.
+  using System.Management.Automation;            // PowerShell namespace.
+  using System.Management.Automation.Runspaces;  // PowerShell namespace.
 
   /// <summary>
   /// This class contains the Main entry point for this host application.
@@ -42,10 +54,11 @@ namespace Samples
       // Create a WSManConnectionInfo object using the default constructor
       // to connect to the "localHost". The WSManConnectionInfo object can
       // also be used to specify connections to remote computers.
-      WSManConnectionInfo connectionInfo = new WSManConnectionInfo();
+      Uri RemoteComputerUri = new uri("http://Server01:5985/WSMAN");
+      WSManConnectionInfo connectionInfo = new WSManConnectionInfo(RemoteComputerUri);
 
       // Set the OperationTimeout property and OpenTimeout properties.
-      // The OperationTimeout property is used to tell Windows PowerShell
+      // The OperationTimeout property is used to tell PowerShell
       // how long to wait (in milliseconds) before timing out for an
       // operation. The OpenTimeout property is used to tell Windows
       // PowerShell how long to wait (in milliseconds) before timing out
@@ -93,4 +106,4 @@ namespace Samples
     }
   }
 }
-```
+```

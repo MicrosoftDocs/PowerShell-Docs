@@ -3,7 +3,7 @@ ms.date: 5/14/2019
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821569
+online version: https://go.microsoft.com/fwlink/?linkid=2096288
 external help file:  Microsoft.PowerShell.Commands.Management.dll-Help.xml
 title:  Clear-Item
 ---
@@ -40,6 +40,10 @@ This cmdlet is similar to `Clear-Content`, but it works on aliases and variables
 ### Example 1: Clear the value of a variable
 
 This command clears the value of the variable named `TestVar1`.
+The variable remains and is valid, but its value is set to `$null`.
+The variable name is prefixed with `Variable:` to indicate the PowerShell Variable provider.
+
+The alternate commands show that, to get the same result, you can switch to the PowerShell `Variable:` drive and then run the `Clear-Item` command.
 
 ```powershell
 Clear-Item Variable:TestVar1
@@ -50,26 +54,18 @@ Set-Location Variable:
 PS Variable:\> Clear-Item TestVar1
 ```
 
-The variable remains and is valid, but its value is set to `$null`. The variable name is prefixed
-with `Variable:` to indicate the PowerShell **Variable** provider. The alternate commands show that,
-to get the same result, you can switch to the PowerShell `Variable:` drive and then run the
-`Clear-Item` command.
-
 ### Example 2: Clear all registry entries
 
-This command clears all registry entries in the "MyKey" subkey, but only after prompting you to
-confirm your intent.
+This command clears all registry entries in the "MyKey" subkey, but only after prompting you to confirm your intent.
+It does not delete the "MyKey" subkey or affect any other registry keys or entries.
+You can use the **Include** and **Exclude** parameters to identify particular registry keys, but you cannot use them to identify registry entries.
+
+- To delete particular registry entries, use the `Remove-ItemProperty` cmdlet.
+- To delete the value of a registry entry, use the `Clear-ItemProperty cmdlet`.
 
 ```powershell
 Clear-Item HKLM:\Software\MyCompany\MyKey -Confirm
 ```
-
-This command does not delete the "MyKey" subkey or affect any other registry keys or entries.
-You can use the **Include** and **Exclude** parameters to identify particular registry keys, but you
-cannot use them to identify registry entries.
-
-- To delete particular registry entries, use the `Remove-ItemProperty` cmdlet.
-- To delete the value of a registry entry, use the `Clear-ItemPropertycmdlet`.
 
 ## PARAMETERS
 

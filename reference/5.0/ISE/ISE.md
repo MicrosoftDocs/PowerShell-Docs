@@ -4,7 +4,7 @@ schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
 Help Version:  5.0.2.2
-Download Help Link:  http://go.microsoft.com/fwlink/?linkid=390780
+Download Help Link:  https://go.microsoft.com/fwlink/?linkid=390780
 Module Guid:  bae93d8e-782c-4a23-b87f-8699bfc17ee0
 title:  ISE
 Module Name:  ISE
@@ -26,4 +26,5 @@ Imports ISE snippets into the current session
 
 ### [New-IseSnippet](New-IseSnippet.md)
 Creates a Windows PowerShell ISE code snippet.
+
 

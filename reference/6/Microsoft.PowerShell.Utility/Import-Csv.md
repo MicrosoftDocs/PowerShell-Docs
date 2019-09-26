@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Utility
 ms.date: 1/8/2019
-online version: http://go.microsoft.com/fwlink/?LinkId=821815
+online version: https://go.microsoft.com/fwlink/?linkid=2096539
 schema: 2.0.0
 title: Import-Csv
 ---
@@ -15,18 +15,32 @@ Creates table-like custom objects from the items in a comma-separated value (CSV
 
 ## SYNTAX
 
-### Delimiter (Default)
+### DelimiterPath (Default)
 
 ```
-Import-Csv [[-Path] <string[]>] [[-Delimiter] <char>] [-LiteralPath <string[]>] [-Header <string[]>]
-[-Encoding <Encoding>] [<CommonParameters>]
+Import-Csv [[-Delimiter] <Char>] [-Path] <String[]> [-Header <String[]>] [-Encoding <Encoding>]
+ [<CommonParameters>]
 ```
 
-### UseCulture
+### DelimiterLiteralPath
 
 ```
-Import-Csv [[-Path] <string[]>] -UseCulture [-LiteralPath <string[]>] [-Header <string[]>]
-[-Encoding <Encoding>] [<CommonParameters>]
+Import-Csv [[-Delimiter] <Char>] -LiteralPath <String[]> [-Header <String[]>] [-Encoding <Encoding>]
+ [<CommonParameters>]
+```
+
+### CulturePath
+
+```
+Import-Csv [-Path] <String[]> -UseCulture [-Header <String[]>] [-Encoding <Encoding>]
+ [<CommonParameters>]
+```
+
+### CultureLiteralPath
+
+```
+Import-Csv -LiteralPath <String[]> -UseCulture [-Header <String[]>] [-Encoding <Encoding>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -46,6 +60,8 @@ that they do not deal with files.
 
 If a header row entry in a CSV file contains an empty or null value, PowerShell inserts a default
 header row name and displays a warning message.
+
+Starting with PowerShell 6.0, `Import-Csv` now supports the W3C Extended Log File Format.
 
 ## EXAMPLES
 
@@ -306,7 +322,7 @@ create the objects from the CSV strings and will return the CSV strings.
 
 ```yaml
 Type: Char
-Parameter Sets: Delimiter
+Parameter Sets: DelimiterPath, DelimiterLiteralPath
 Aliases:
 
 Required: False
@@ -386,10 +402,10 @@ PowerShell not to interpret any characters as escape sequences.
 
 ```yaml
 Type: String[]
-Parameter Sets: (All)
-Aliases: PSPath
+Parameter Sets: DelimiterLiteralPath, CultureLiteralPath
+Aliases: PSPath, LP
 
-Required: False
+Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByPropertyName)
@@ -403,13 +419,13 @@ You can also pipe a path to `Import-Csv`.
 
 ```yaml
 Type: String[]
-Parameter Sets: (All)
+Parameter Sets: DelimiterPath, CulturePath
 Aliases:
 
-Required: False
+Required: True
 Position: 0
 Default value: None
-Accept pipeline input: True (ByValue)
+Accept pipeline input: True (ByPropertyName, ByValue)
 Accept wildcard characters: False
 ```
 
@@ -420,7 +436,7 @@ for a culture, use the following command: `(Get-Culture).TextInfo.ListSeparator`
 
 ```yaml
 Type: SwitchParameter
-Parameter Sets: UseCulture
+Parameter Sets: CulturePath, CultureLiteralPath
 Aliases:
 
 Required: True
@@ -472,6 +488,11 @@ In the CSV file, each object is represented by a comma-separated list of the pro
 object. The property values are converted to strings by using the **ToString()** method of the
 object, so they are represented by the name of the property value. `Export-Csv` does not export the
 methods of the object.
+
+`Import-Csv` also supports the W3C Extended Log format. Lines starting with `#` are treated as
+comments and ignored unless the comment starts with `#Fields: ` and contains delimited list of
+column names. In that case, the cmdlet uses those column names. This is the standard format for
+Windows IIS and other web server logs. For more information, see [Extended Log File Format](https://www.w3.org/TR/WD-logfile.html).
 
 ## RELATED LINKS
 

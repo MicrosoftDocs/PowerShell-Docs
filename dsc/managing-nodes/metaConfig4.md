@@ -1,9 +1,9 @@
 ---
 ms.date:  12/12/2018
 keywords:  dsc,powershell,configuration,setup
-title:  Configuring the Local Configuration Manager in Previous Versions of Windows PowerShell
+title:  Configuring the LCM in PowerShell 4.0
 ---
-# Configuring the Local Configuration Manager in Previous Versions of Windows PowerShell
+# Configuring the LCM in PowerShell 4.0
 
 >Applies To: Windows PowerShell 4.0
 
@@ -24,8 +24,8 @@ The following lists the Local Configuration Manager properties that you can set 
 - **CertificateID**: The thumbprint of a certificate used to secure credentials passed in a configuration. For more information see [Want to secure credentials in Windows PowerShell Desired State Configuration?](https://blogs.msdn.microsoft.com/powershell/2014/01/31/want-to-secure-credentials-in-windows-powershell-desired-state-configuration/).
 - **ConfigurationID**: Indicates a GUID which is used to get a particular configuration file from a pull service. The GUID ensures that the correct configuration file is accessed.
 - **ConfigurationMode**: Specifies how the Local Configuration Manager actually applies the configuration to the target nodes. It can take the following values:
-  - **ApplyOnly**: With this option, DSC applies the configuration and does nothing further unless a new configuration is detected, either by you sending a new configuration directly to the target node or if you are connecting to a pull service and DSC discovers a new configuration when it checks with the pull service. If the target node’s configuration drifts, no action is taken.
-  - **ApplyAndMonitor**: With this option (which is the default), DSC applies any new configurations, whether sent by you directly to the target node or discovered on a pull service. Thereafter, if the configuration of the target node drifts from the configuration file, DSC reports the discrepancy in logs. For more about DSC logging, see [Using Event Logs to Diagnose Errors in Desired State Configuration](http://blogs.msdn.com/b/powershell/archive/2014/01/03/using-event-logs-to-diagnose-errors-in-desired-state-configuration.aspx).
+  - **ApplyOnly**: With this option, DSC applies the configuration and does nothing further unless a new configuration is detected, either by you sending a new configuration directly to the target node or if you are connecting to a pull service and DSC discovers a new configuration when it checks with the pull service. If the target node's configuration drifts, no action is taken.
+  - **ApplyAndMonitor**: With this option (which is the default), DSC applies any new configurations, whether sent by you directly to the target node or discovered on a pull service. Thereafter, if the configuration of the target node drifts from the configuration file, DSC reports the discrepancy in logs. For more about DSC logging, see [Using Event Logs to Diagnose Errors in Desired State Configuration](https://blogs.msdn.com/b/powershell/archive/2014/01/03/using-event-logs-to-diagnose-errors-in-desired-state-configuration.aspx).
   - **ApplyAndAutoCorrect**: With this option, DSC applies any new configurations, whether sent by you directly to the target node or discovered on a pull service. Thereafter, if the configuration of the target node drifts from the configuration file, DSC reports the discrepancy in logs, and then attempts to adjust the target node configuration to bring in compliance with the configuration file.
 - **ConfigurationModeFrequencyMins**: Represents the frequency (in minutes) at which the background application of DSC attempts to implement the current configuration on the target node. The default value is 15. This value can be set in conjunction with RefreshMode. When RefreshMode is set to PULL, the target node contacts the configuration service at an interval set by RefreshFrequencyMins and downloads the current configuration. Regardless of the RefreshMode value, at the interval set by ConfigurationModeFrequencyMins, the consistency engine applies the latest configuration that was downloaded to the target node. RefreshFrequencyMins should be set to an integer multiple of ConfigurationModeFrequencyMins.
 - **Credential**: Indicates credentials (as with Get-Credential) required to access remote resources, such as to contact the configuration service.
@@ -33,7 +33,7 @@ The following lists the Local Configuration Manager properties that you can set 
 - **DownloadManagerName**: Indicates the name of the configuration and module download manager.
 - **RebootNodeIfNeeded**: Set this to `$true` to allow resources to reboot the Node using the `$global:DSCMachineStatus` flag. Otherwise, you will have to manually reboot the node for any configuration that requires it. The default value is `$false`. To use this setting when a reboot condition is enacted by something other than DSC (such as Windows Installer), combine this setting with the [xPendingReboot](https://github.com/powershell/xpendingreboot) module.
 - **RefreshFrequencyMins**: Used when you have set up a pull service. Represents the frequency (in minutes) at which the Local Configuration Manager contacts a pull service to download the current configuration. This value can be set in conjunction with ConfigurationModeFrequencyMins. When RefreshMode is set to PULL, the target node contacts the pull service at an interval set by RefreshFrequencyMins and downloads the current configuration. At the interval set by ConfigurationModeFrequencyMins, the consistency engine then applies the latest configuration that was downloaded to the target node. If RefreshFrequencyMins is not set to an integer multiple of ConfigurationModeFrequencyMins, the system will round it up. The default value is 30.
-- **RefreshMode**: Possible values are **Push** (the default) and **Pull**. In the “push” configuration, you must place a configuration file on each target node, using any client computer. In the “pull” mode, you must set up a pull service for Local Configuration Manager to contact and access the configuration files.
+- **RefreshMode**: Possible values are **Push** (the default) and **Pull**. In the "push" configuration, you must place a configuration file on each target node, using any client computer. In the "pull" mode, you must set up a pull service for Local Configuration Manager to contact and access the configuration files.
 
 > [!NOTE]
 > The LCM starts the **ConfigurationModeFrequencyMins** cycle based on:
@@ -55,7 +55,7 @@ as shown in the following example.
 ```powershell
 Configuration ExampleConfig
 {
-    Node “Server001”
+    Node "Server001"
     {
         LocalConfigurationManager
         {

@@ -3,7 +3,7 @@ ms.date: 3/22/2019
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/p/?linkid=293941
+online version: https://go.microsoft.com/fwlink/?linkid=293941
 external help file:  Microsoft.PowerShell.Security.dll-Help.xml
 title:  Set-ExecutionPolicy
 ---
@@ -208,7 +208,7 @@ PS> .\Start-ActivityTracker.ps1
 .\Start-ActivityTracker.ps1 : File .\Start-ActivityTracker.ps1 cannot be loaded.
 The file .\Start-ActivityTracker.ps1 is not digitally signed.
 The script will not execute on the system.
-For more information, see about_Execution_Policies at http://go.microsoft.com/fwlink/?LinkID=135170.
+For more information, see about_Execution_Policies at https://go.microsoft.com/fwlink/?LinkID=135170.
 At line:1 char:1
 + .\Start-ActivityTracker.ps1
 + ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -416,3 +416,4 @@ conflict.
 [Set-AuthenticodeSignature](Set-AuthenticodeSignature.md)
 
 [Unblock-File](../Microsoft.PowerShell.Utility/Unblock-File.md)
+

@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Core
 ms.date: 2/22/2019
-online version: http://go.microsoft.com/fwlink/?LinkId=821470
+online version: https://go.microsoft.com/fwlink/?linkid=821470
 schema: 2.0.0
 title: Clear-History
 ---
@@ -348,7 +348,7 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+-WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
 
 ## INPUTS
 
@@ -380,10 +380,10 @@ information, see [about_History](About/about_History.md).
 
 [Get-History](Get-History.md)
 
-[Get-PSReadLineOption](../PSReadLine/Get-PSReadLineOption)
+[Get-PSReadLineOption](/powershell/module/psreadline/get-psreadlineoption)
 
 [Invoke-History](Invoke-History.md)
 
 [PSReadLine](../PSReadLine/PSReadLine.md)
 
-[Set-PSReadLineOption](../PSReadLine/Set-PSReadLineOption)
+[Set-PSReadLineOption](/powershell/module/psreadline/set-psreadlineoption)

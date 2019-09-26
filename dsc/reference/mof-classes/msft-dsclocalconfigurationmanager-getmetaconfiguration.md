@@ -1,9 +1,9 @@
 ---
 ms.date:  06/12/2017
 keywords:  dsc,powershell,configuration,setup
-title:  GetMetaConfiguration method of the MSFT_DSCLocalConfigurationManager class
+title:  GetMetaConfiguration method
 ---
-# GetMetaConfiguration method of the MSFT_DSCLocalConfigurationManager class
+# GetMetaConfiguration method
 
 Gets the local Configuration Manager settings that are used to control the Configuration Agent.
 

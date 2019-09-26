@@ -43,7 +43,7 @@ Sunday, January 29, 2012 9:43:57 AM
 ```
 
 You won't find the `DateTime` property in the description of the
-[`System.DateTime` structure](http://msdn.microsoft.com/library/system.datetime.aspx),
+[`System.DateTime` structure](/dotnet/api/system.datetime),
 because PowerShell adds the property and it is visible only in Windows
 PowerShell.
 
@@ -553,9 +553,8 @@ property of the `GetVersionInfo` static method of
 </Type>
 ```
 
-For more information, see the [Windows PowerShell Software Development
-Kit (SDK) in the MSDN (Microsoft Developer Network)
-library](http://go.microsoft.com/fwlink/?LinkId=144538).
+For more information, see the
+[Windows PowerShell Software Development Kit (SDK)](/powershell/developer/windows-powershell).
 
 ## `Update-TypeData`
 

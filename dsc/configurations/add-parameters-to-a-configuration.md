@@ -13,7 +13,7 @@ This example starts with a basic Configuration that configures the "Spooler" ser
 ```powershell
 Configuration TestConfig
 {
-    # It is best practice to implicitly import any required resources or modules.
+    # It is best practice to explicitly import any required resources or modules.
     Import-DSCResource -Module PSDesiredStateConfiguration
 
     Node localhost
@@ -94,7 +94,7 @@ Configuration TestConfig
         $ComputerName="localhost"
     )
 
-    # It is best practice to implicitly import any required resources or modules.
+    # It is best practice to explicitly import any required resources or modules.
     Import-DSCResource -Module PSDesiredStateConfiguration
 
     Node $ComputerName
@@ -129,7 +129,7 @@ Configuration TestConfig
         $ComputerName="localhost"
     )
 
-    # It is best practice to implicitly import any required resources or modules.
+    # It is best practice to explicitly import any required resources or modules.
     Import-DSCResource -Module PSDesiredStateConfiguration
 
     Node $ComputerName
@@ -183,7 +183,7 @@ $State="Running"
 > [!NOTE]
 > You do not need to specify a `parameter` attribute when using a `validation` attribute.
 
-You can read more about the `parameter` and validation attributes in [about_Functions_Advanced_Parameters](/powershell/module/microsoft.powershell.core/about/about_Functions_Advanced_Parameters.md).
+You can read more about the `parameter` and validation attributes in [about_Functions_Advanced_Parameters](/powershell/module/microsoft.powershell.core/about/about_Functions_Advanced_Parameters).
 
 ## Fully parameterized Configuration
 
@@ -206,7 +206,7 @@ Configuration TestConfig
         $ComputerName="localhost",
     )
 
-    # It is best practice to implicitly import any required resources or modules.
+    # It is best practice to explicitly import any required resources or modules.
     Import-DSCResource -Module PSDesiredStateConfiguration
 
     Node localhost

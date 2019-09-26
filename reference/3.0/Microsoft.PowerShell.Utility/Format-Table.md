@@ -1,16 +1,16 @@
-﻿---
-ms.date:  12/19/2018
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkID=113303
-external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-title:  Format-Table
+---
+external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Utility
+ms.date: 06/14/2019
+online version: https://go.microsoft.com/fwlink/?linkid=113303
+schema: 2.0.0
+title: Format-Table
 ---
 # Format-Table
 
 ## SYNOPSIS
-
 Formats the output as a table.
 
 ## SYNTAX
@@ -104,7 +104,8 @@ of the properties, type `Get-Service | Get-Member -MemberType Properties`.
 This command shows how to use a calculated property in a table.
 
 ```powershell
-Get-Process Notepad | Format-Table ProcessName, @{Label="TotalRunningTime"; Expression={(Get-Date) - $_.StartTime}}
+Get-Process Notepad | Format-Table ProcessName,
+   @{Label="TotalRunningTime"; Expression={(Get-Date) - $_.StartTime}}
 ```
 
 The command displays a table with the process name and total running time of all Notepad processes
@@ -116,10 +117,11 @@ The pipeline operator (|) sends the results to `Format-Table`, which displays a 
 columns: ProcessName, a standard property of processes, and TotalRunningTime, a calculated
 property.
 
-The TotalRunningTime property is specified by a hash table with two keys, Label and Expression. The
-name of the property is assigned to the Label key. The calculation is assigned to the Expression
-key. The expression gets the StartTime property of each process object and subtracts it from the
-result of a `Get-Date` command, which gets the current date and time.
+The **TotalRunningTime** property is specified by a hash table with two keys, **Label** and
+**Expression**. The name of the property is assigned to the **Label** key. The calculation is
+assigned to the **Expression** key. The expression gets the **StartTime** property of each process
+object and subtracts it from the result of a `Get-Date` command, which gets the current date and
+time.
 
 ### Example 6: Format Notepad processes
 
@@ -315,9 +317,13 @@ Specifies the object properties that appear in the display and the order in whic
 one or more property names (separated by commas), or use a hash table to display a calculated
 property. Wildcards are permitted.
 
-If you omit this parameter, the properties that appear in the display depend on the object being
-displayed. The parameter name "Property" is optional. You cannot use the **Property** and
-**View** parameters in the same command.
+If you omit this parameter, the properties that appear in the display depend on the first object's
+properties. For example, if the first object has **PropertyA** and **PropertyB** but subsequent
+objects have **PropertyA**, **PropertyB** and **PropertyC** only **PropertyA** and **PropertyB**
+headers will display.
+
+The parameter name **Property** is optional. You cannot use the **Property** and **View** parameters
+in the same command.
 
 The value of the **Property** parameter can be a new calculated property. To create a calculated
 property, use a hash table. Valid keys are:
@@ -337,7 +343,7 @@ Required: False
 Position: 0
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -ShowError
@@ -397,7 +403,7 @@ Accept wildcard characters: False
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see
-[about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -430,3 +436,4 @@ list or a table, use the `Format-Custom` cmdlet.
 [Format-List](Format-List.md)
 
 [Format-Wide](Format-Wide.md)
+

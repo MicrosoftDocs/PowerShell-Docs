@@ -1,10 +1,11 @@
 ---
-ms.date:  09/07/2018
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:
+ms.date: 09/07/2018
+schema: 2.0.0
+locale: en-us
+keywords: powershell,cmdlet
+online version: https://go.microsoft.com/fwlink/?linkid=2096440
 external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+title: Get-Verb
 ---
 # Get-Verb
 
@@ -109,7 +110,7 @@ Required: False
 Position: 1
 Default value: All groups
 Accept pipeline input: True (ByPropertyName, ByValue)
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -Group
@@ -132,7 +133,7 @@ Accept wildcard characters: False
 
 ### CommonParameters
 
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -165,3 +166,5 @@ use unapproved verbs. These cmdlets are historic exceptions and their verbs are 
 ## RELATED LINKS
 
 [Import-Module](../microsoft.powershell.core/import-module.md)
+
+

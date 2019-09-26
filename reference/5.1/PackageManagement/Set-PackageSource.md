@@ -3,8 +3,8 @@ external help file: Microsoft.PowerShell.PackageManagement.dll-Help.xml
 keywords: powershell,cmdlet
 locale: en-us
 Module Name: PackageManagement
-ms.date: 4/3/2019
-online version: http://go.microsoft.com/fwlink/?LinkID=517141
+ms.date: 04/03/2019
+online version: https://go.microsoft.com/fwlink/?linkid=517141
 schema: 2.0.0
 title: Set-PackageSource
 ---
@@ -20,50 +20,50 @@ Replaces a package source for a specified package provider.
 
 ```
 Set-PackageSource [-Proxy <Uri>] [-ProxyCredential <PSCredential>] [-Credential <PSCredential>]
-[[-Name] <String>] [-Location <String>] [-NewLocation <String>] [-NewName <String>] [-Trusted]
-[-Force] [-ForceBootstrap] [-WhatIf] [-Confirm] [-ProviderName <String>] [<CommonParameters>]
+ [[-Name] <String>] [-Location <String>] [-NewLocation <String>] [-NewName <String>] [-Trusted]
+ [-Force] [-ForceBootstrap] [-WhatIf] [-Confirm] [-ProviderName <String>] [<CommonParameters>]
 ```
 
 ### SourceByInputObject
 
 ```
 Set-PackageSource [-Proxy <Uri>] [-ProxyCredential <PSCredential>] [-Credential <PSCredential>]
-[-NewLocation <String>] [-NewName <String>] [-Trusted] -InputObject <PackageSource> [-Force]
-[-ForceBootstrap] [-WhatIf] [-Confirm] [<CommonParameters>]
+ [-NewLocation <String>] [-NewName <String>] [-Trusted] -InputObject <PackageSource> [-Force]
+ [-ForceBootstrap] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### NuGet:SourceByInputObject
 
 ```
 Set-PackageSource [-Proxy <Uri>] [-ProxyCredential <PSCredential>] [-Credential <PSCredential>]
-[-NewLocation <String>] [-NewName <String>] [-Trusted] [-Force] [-ForceBootstrap] [-WhatIf]
-[-Confirm] [-ConfigFile <String>] [-SkipValidate] [<CommonParameters>]
+ [-NewLocation <String>] [-NewName <String>] [-Trusted] [-Force] [-ForceBootstrap] [-WhatIf]
+ [-Confirm] [-ConfigFile <String>] [-SkipValidate] [<CommonParameters>]
 ```
 
 ### NuGet:SourceBySearch
 
 ```
 Set-PackageSource [-Proxy <Uri>] [-ProxyCredential <PSCredential>] [-Credential <PSCredential>]
-[-NewLocation <String>] [-NewName <String>] [-Trusted] [-Force] [-ForceBootstrap] [-WhatIf]
-[-Confirm] [-ConfigFile <String>] [-SkipValidate] [<CommonParameters>]
+ [-NewLocation <String>] [-NewName <String>] [-Trusted] [-Force] [-ForceBootstrap] [-WhatIf]
+ [-Confirm] [-ConfigFile <String>] [-SkipValidate] [<CommonParameters>]
 ```
 
 ### PowerShellGet:SourceByInputObject
 
 ```
 Set-PackageSource [-Proxy <Uri>] [-ProxyCredential <PSCredential>] [-Credential <PSCredential>]
-[-NewLocation <String>] [-NewName <String>] [-Trusted] [-Force] [-ForceBootstrap] [-WhatIf]
-[-Confirm] [-PackageManagementProvider <String>] [-PublishLocation <String>]
-[-ScriptSourceLocation <String>] [-ScriptPublishLocation <String>] [<CommonParameters>]
+ [-NewLocation <String>] [-NewName <String>] [-Trusted] [-Force] [-ForceBootstrap] [-WhatIf]
+ [-Confirm] [-PackageManagementProvider <String>] [-PublishLocation <String>]
+ [-ScriptSourceLocation <String>] [-ScriptPublishLocation <String>] [<CommonParameters>]
 ```
 
 ### PowerShellGet:SourceBySearch
 
 ```
 Set-PackageSource [-Proxy <Uri>] [-ProxyCredential <PSCredential>] [-Credential <PSCredential>]
-[-NewLocation <String>] [-NewName <String>] [-Trusted] [-Force] [-ForceBootstrap] [-WhatIf]
-[-Confirm] [-PackageManagementProvider <String>] [-PublishLocation <String>]
-[-ScriptSourceLocation <String>] [-ScriptPublishLocation <String>] [<CommonParameters>]
+ [-NewLocation <String>] [-NewName <String>] [-Trusted] [-Force] [-ForceBootstrap] [-WhatIf]
+ [-Confirm] [-PackageManagementProvider <String>] [-PublishLocation <String>]
+ [-ScriptSourceLocation <String>] [-ScriptPublishLocation <String>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION

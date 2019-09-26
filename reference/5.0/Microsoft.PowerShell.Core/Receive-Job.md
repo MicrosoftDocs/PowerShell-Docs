@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821505
-external help file:  System.Management.Automation.dll-Help.xml
-title:  Receive-Job
+external help file: System.Management.Automation.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Core
+ms.date: 06/09/2017
+online version: https://go.microsoft.com/fwlink/?linkid=821505
+schema: 2.0.0
+title: Receive-Job
 ---
 # Receive-Job
 
@@ -170,7 +171,7 @@ Id   Name     State      HasMoreData   Location       Command
 ```
 
 ```powershell
-# Use the Receive-Job cmdlet to get the results of ust the Job3 child job that ran on the Server02 computer.
+# Use the Receive-Job cmdlet to get the results of just the Job3 child job that ran on the Server02 computer.
 # Use the *Keep* parameter to allow you to view the aggregated stream data more than once.
 Receive-Job -Name Job3 -Keep
 ```
@@ -334,7 +335,7 @@ Aliases: Cn
 
 Required: False
 Position: 1
-Default value: All jobs
+Default value: All computers available
 Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: True
 ```
@@ -404,7 +405,7 @@ Aliases:
 
 Required: True
 Position: 0
-Default value: All jobs
+Default value: All instances
 Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
@@ -418,7 +419,7 @@ You can also pipe a job object to `Receive-Job`.
 
 ```yaml
 Type: Job[]
-Parameter Sets: Location, ComputerName, Session
+Parameter Sets: Location, Session, ComputerName
 Aliases:
 
 Required: True
@@ -460,7 +461,7 @@ Aliases:
 
 Required: False
 Position: 1
-Default value: All jobs
+Default value: All locations
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -516,7 +517,7 @@ Aliases:
 
 Required: False
 Position: 1
-Default value: All jobs
+Default value: All sessions
 Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```

@@ -4,7 +4,7 @@ schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
 title:  FileSystem Provider
-online version:  http://go.microsoft.com/fwlink/?LinkId=821468
+online version: https://go.microsoft.com/fwlink/?linkid=821468
 ---
 # FileSystem provider
 
@@ -171,6 +171,14 @@ them as input to the
 
 ```powershell
 Get-Content -Path Test.txt | ConvertTo-Html
+```
+
+You can also retrieve the content of a file by prefixing its provider path with
+the dollar sign (`$`). The path must be enclosed in curly braces due to variable
+naming restrictions. For more information, see [about_Variables](about_Variables.md).
+
+```powershell
+${C:\Windows\System32\Drivers\etc\hosts}
 ```
 
 ### Add content to a file

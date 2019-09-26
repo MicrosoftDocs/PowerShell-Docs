@@ -1,11 +1,11 @@
 ---
-ms.date:  11/02/2018
+ms.date:  08/26/2019
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821632
+online version: https://go.microsoft.com/fwlink/?linkid=2096820
 external help file:  Microsoft.PowerShell.Commands.Management.dll-Help.xml
-title:  Set-Location
+title: Set-Location
 ---
 # Set-Location
 
@@ -34,13 +34,11 @@ Set-Location [-PassThru] [-StackName <String>] [<CommonParameters>]
 
 ## DESCRIPTION
 
-The `Set-Location` cmdlet sets the working location to a specified location.
-That location could be a directory, a subdirectory, a registry location, or
-any provider path.
+The `Set-Location` cmdlet sets the working location to a specified location. That location could be
+a directory, a subdirectory, a registry location, or any provider path.
 
-You can also use the **StackName** parameter to make a named location stack the
-current location stack.
-For more information about location stacks, see the Notes.
+You can also use the **StackName** parameter to make a named location stack the current location
+stack. For more information about location stacks, see the Notes.
 
 ## EXAMPLES
 
@@ -70,9 +68,8 @@ Env:\
 PS Env:\>
 ```
 
-This command sets the current location to the root of the Env: drive.
-It uses the **PassThru** parameter to direct PowerShell to return a **PathInfo**
-object that represents the Env: location.
+This command sets the current location to the root of the Env: drive. It uses the **PassThru**
+parameter to direct PowerShell to return a **PathInfo** object that represents the Env: location.
 
 ### Example 3: Set location to the C: drive
 
@@ -90,27 +87,24 @@ PS C:\> Set-Location -StackName "WSManPaths"
 
 This command makes the WSManPaths location stack the current location stack.
 
-The `*-Location` cmdlets use the current location stack unless a different
-location stack is specified in the command.
-For information about location stacks, see the Notes.
+The `*-Location` cmdlets use the current location stack unless a different location stack is
+specified in the command. For information about location stacks, see the Notes.
 
 ## PARAMETERS
 
 ### -LiteralPath
 
-Specifies a path of the location.
-The value of the **LiteralPath** parameter is used exactly as it is typed.
-No characters are interpreted as wildcard characters.
-If the path includes escape characters, enclose it in single quotation marks.
-Single quotation marks tell PowerShell not to interpret any characters as escape
-sequences.
+Specifies a path of the location. The value of the **LiteralPath** parameter is used exactly as it
+is typed. No characters are interpreted as wildcard characters. If the path includes escape
+characters, enclose it in single quotation marks. Single quotation marks tell PowerShell not to
+interpret any characters as escape sequences.
 
-If the path is the `-` character, then the new working location will be the
-previous working location in history (if it exists).
-This is equivalent to using `Pop-Location` as if `Push-Location` had been
-executed prior.
-Similarly, if the path is the `+` character, then the new working location will
-be the next working location in history (if it exists).
+PowerShell keeps a history of the last 20 locations you have set. If the path is the `-` character,
+then the new working location will be the previous working location in history (if it exists).
+Similarly, if the path is the `+` character, then the new working location will be the next working
+location in history (if it exists). This is similar to using `Pop-Location` and `Push-Location`
+except that the history is a list, not a stack, and there is no way to display this history list.
+
 
 ```yaml
 Type: String
@@ -126,9 +120,8 @@ Accept wildcard characters: False
 
 ### -PassThru
 
-Returns a **System.Management.Automation.PathInfo** object that represents the
-location.
-By default, this cmdlet does not generate any output.
+Returns a **PathInfo** object that represents the location. By default, this cmdlet does not
+generate any output.
 
 ```yaml
 Type: SwitchParameter
@@ -137,22 +130,22 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -Path
 
-Specify the path of a new working location.
-If no path is provided, `Set-Location` will default to the current user's home
-directory.
-If the path is the `-` character, then the new working location will be the
-previous working location in history (if it exists).
-This is equivalent to using `Pop-Location` as if `Push-Location` had been
-executed prior.
-Similarly, if the path is the `+` character, then the new working location will
-be the next working location in history (if it exists).
+Specify the path of a new working location. If no path is provided, `Set-Location` defaults to the
+current user's home directory. When wildcards are used, the cmdlet chooses the first path that
+matches the wildcard pattern.
+
+PowerShell keeps a history of the last 20 locations you have set. If the path is the `-` character,
+then the new working location will be the previous working location in history (if it exists).
+Similarly, if the path is the `+` character, then the new working location will be the next working
+location in history (if it exists). This is similar to using `Pop-Location` and `Push-Location`
+except that the history is a list, not a stack, and there is no way to display this history list.
 
 ```yaml
 Type: String
@@ -163,19 +156,17 @@ Required: False
 Position: 0
 Default value: None
 Accept pipeline input: True (ByPropertyName, ByValue)
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -StackName
 
-Specifies the location stack name that this cmdlet makes the current location
-stack.
-Enter a location stack name.
-To indicate the unnamed default location stack, type `$null` or an empty string
+Specifies the location stack name that this cmdlet makes the current location stack. Enter a
+location stack name. To indicate the unnamed default location stack, type `$null` or an empty string
 ("").
 
-The `*-Location` cmdlets act on the current stack unless you use the
-**StackName** parameter to specify a different stack.
+The `*-Location` cmdlets act on the current stack unless you use the **StackName** parameter to
+specify a different stack.
 
 ```yaml
 Type: String
@@ -191,69 +182,61 @@ Accept wildcard characters: False
 
 ### CommonParameters
 
-This cmdlet supports the common parameters: `-Debug`, `-ErrorAction`,
-`-ErrorVariable`, `-InformationAction`, `-InformationVariable`, `-OutVariable`,
-`-OutBuffer`, `-PipelineVariable`, `-Verbose`, `-WarningAction`, and
-`-WarningVariable`. For more information, see [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
+This cmdlet supports the common parameters: `-Debug`, `-ErrorAction`, `-ErrorVariable`,
+`-InformationAction`, `-InformationVariable`, `-OutVariable`, `-OutBuffer`, `-PipelineVariable`,
+`-Verbose`, `-WarningAction`, and `-WarningVariable`. For more information, see [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
 
 ## INPUTS
 
 ### System.String
 
-You can pipe a string that contains a path, but not a literal path, to this
-cmdlet.
+You can pipe a string that contains a path, but not a literal path, to this cmdlet.
 
 ## OUTPUTS
 
 ### None, System.Management.Automation.PathInfo, System.Management.Automation.PathInfoStack
 
-This cmdlet generates a **System.Management.Automation.PathInfo** object that
-represents the location, if you specify the **PassThru** parameter.
-Otherwise, this cmdlet does not generate any output.
+This cmdlet does not generate any output unless you specify the **PassThru** parameter. Using
+**PassThru** with **Path** or **LiteralPath** generates a **PathInfo** object that represents the
+new location. Using **PassThru** with **StackName** generates a **PathInfoStack** object
+representing the new stack context.
 
 ## NOTES
 
-* The `Set-Location` cmdlet is designed to work with the data exposed by any
-  provider. To list the providers available in your session, type
-  `Get-PSProvider`. For more information, see about_Providers.
+* The `Set-Location` cmdlet is designed to work with the data exposed by any provider. To list the
+  providers available in your session, type `Get-PSProvider`. For more information, see
+  [about_Providers](../Microsoft.PowerShell.Core/about/about_Providers.md).
 
-  A stack is a last-in, first-out list in which only the most recently added
-item can be accessed.
-You add items to a stack in the order that you use them, and then retrieve them
-for use in the reverse order.
-PowerShell lets you store provider locations in location stacks.
-PowerShell creates an unnamed default location stack.
-You can create multiple named location stacks.
-If you do not specify a stack name, PowerShell uses the current location stack.
-By default, the unnamed default location is the current location stack, but you
-can use the `Set-Location` cmdlet to change the current location stack.
+  A stack is a last-in, first-out list in which only the most recently added item can be accessed.
+  You add items to a stack in the order that you use them, and then retrieve them for use in the
+  reverse order. PowerShell lets you store provider locations in location stacks. PowerShell creates
+  an unnamed default location stack. You can create multiple named location stacks. If you do not
+  specify a stack name, PowerShell uses the current location stack. By default, the unnamed default
+  location is the current location stack, but you can use the `Set-Location` cmdlet to change the
+  current location stack.
 
-  To manage location stacks, use the `*-Location` cmdlets, as follows:
+* To manage location stacks, use the `*-Location` cmdlets, as follows:
 
-* To add a location to a location stack, use the `Push-Location` cmdlet.
+  * To add a location to a location stack, use the `Push-Location` cmdlet.
 
-* To get a location from a location stack, use the `Pop-Location` cmdlet.
+  * To get a location from a location stack, use the `Pop-Location` cmdlet.
 
-* To display the locations in the current location stack, use the **Stack**
-  parameter of the `Get-Location` cmdlet.
-  To display the locations in a named location stack, use the **StackName**
-  parameter of `Get-Location`.
+  * To display the locations in the current location stack, use the **Stack** parameter of the
+    `Get-Location` cmdlet. To display the locations in a named location stack, use the **StackName**
+    parameter of `Get-Location`.
 
-* To create a new location stack, use the **StackName** parameter of
-  `Push-Location`.
-  If you specify a stack that does not exist, `Push-Location` creates the stack.
+  * To create a new location stack, use the **StackName** parameter of `Push-Location`. If you
+    specify a stack that does not exist, `Push-Location` creates the stack.
 
-* To make a location stack the current location stack, use the **StackName**
-  parameter of `Set-Location`.
+  * To make a location stack the current location stack, use the **StackName** parameter of
+    `Set-Location`.
 
-  The unnamed default location stack is fully accessible only when it is the
-current location stack.
-If you make a named location stack the current location stack, you cannot no
-longer use `Push-Location` or `Pop-Location` cmdlets add or get items from the
-default stack or use `Get-Location` to display the locations in the unnamed
-stack.
-To make the unnamed stack the current stack, use the **StackName** parameter of
-`Set-Location` with a value of `$null` or an empty string ("").
+    The unnamed default location stack is fully accessible only when it is the current location
+    stack. If you make a named location stack the current location stack, you cannot no longer use
+    `Push-Location` or `Pop-Location` cmdlets add or get items from the default stack or use
+    `Get-Location` to display the locations in the unnamed stack. To make the unnamed stack the
+    current stack, use the **StackName** parameter of `Set-Location` with a value of `$null` or an
+    empty string ("").
 
 ## RELATED LINKS
 

@@ -3,8 +3,8 @@ external help file: PSModule-help.xml
 keywords: powershell,cmdlet
 locale: en-us
 Module Name: PowerShellGet
-ms.date: 06/09/2017
-online version: http://go.microsoft.com/fwlink/?LinkId=822329
+ms.date: 07/01/2019
+online version: https://go.microsoft.com/fwlink/?linkid=822329
 schema: 2.0.0
 title: New-ScriptFileInfo
 ---
@@ -16,31 +16,50 @@ Creates a script file with metadata.
 
 ## SYNTAX
 
+### All
+
 ```
 New-ScriptFileInfo [[-Path] <String>] [-Version <String>] [-Author <String>] -Description <String>
  [-Guid <Guid>] [-CompanyName <String>] [-Copyright <String>] [-RequiredModules <Object[]>]
  [-ExternalModuleDependencies <String[]>] [-RequiredScripts <String[]>]
  [-ExternalScriptDependencies <String[]>] [-Tags <String[]>] [-ProjectUri <Uri>] [-LicenseUri <Uri>]
- [-IconUri <Uri>] [-ReleaseNotes <String[]>] [-PrivateData <String>] [-PassThru] [-Force] [-WhatIf] [-Confirm]
- [<CommonParameters>]
+ [-IconUri <Uri>] [-ReleaseNotes <String[]>] [-PrivateData <String>] [-PassThru] [-Force]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-The **New-ScriptFileInfo** cmdlet creates a PowerShell script file, including metadata about the script.
+
+The `New-ScriptFileInfo` cmdlet creates a PowerShell script file, including metadata about the
+script.
+
+The examples use splatting to pass parameters to the `New-ScriptFileInfo` cmdlet. For more
+information, see [about_Splatting](../Microsoft.Powershell.Core/About/about_splatting.md).
 
 ## EXAMPLES
 
 ### Example 1: Create a script file and specify its version, author, and description
+
+In this example, a script file is created and its contents are displayed in the PowerShell console.
+
+```powershell
+$Parms = @{
+  Path = "C:\Test\Temp-Scriptfile.ps1"
+  Version = "1.0"
+  Author = "pattif@contoso.com"
+  Description = "My test script file description goes here"
+  }
+New-ScriptFileInfo @Parms
+Get-Content -Path C:\Test\Temp-Scriptfile.ps1
 ```
-PS C:\> New-ScriptFileInfo -Path "\temp\Temp-Scriptfile.ps1" -Version 1.0 -Author "pattif@contoso.com" -Description "My test script file description goes here"
-PS C:\> Get-Content -Path "\temp\Temp-Scriptfile.ps1"
+
+```Output
 <#PSScriptInfo
 
 .VERSION 1.0
 
-.GUID eb246b19-17da-4392-8c89-7c280f69ad0e
+.GUID 3bb10ee7-38c1-41b9-88ea-16899164fc19
 
-.AUTHOR pattif@microsoft.com
+.AUTHOR pattif@contoso.com
 
 .COMPANYNAME
 
@@ -62,55 +81,98 @@ PS C:\> Get-Content -Path "\temp\Temp-Scriptfile.ps1"
 
 .RELEASENOTES
 
+.PRIVATEDATA
 
 #>
 
 <#
 
 .DESCRIPTION
- my test script file description goes here
+ My test script file description goes here
 
 #>
-Param() PS C:\> Test-ScriptFileInfo -Path "\temp\Temp-Scriptfile.ps1"
-Version    Name                      Author               Description
--------    ----                      ------               -----------
-1.0        temp-scriptfile           pattif@contoso.com   my test script file description goes here
+Param()
 ```
 
-The first command creates the script file Temp-Scriptfile.ps1 and sets the Version, Author, and Description properties for it.
+The `New-ScriptFileInfo` cmdlet uses splatting to configure several parameters for the script.
+**Path** sets the location and name of the script. **Version** specifies the script's version
+number. **Author** is the email address of the person who created the script. **Description**
+explains the script's purpose.
 
-The second command uses the Get-Content cmdlet to get the contents of the script file and display them.
+After the script is created, `Get-Content` uses the **Path** parameter to locate the script. The
+script's contents are displayed in the PowerShell console.
 
-### Example 2: Create a script file with all of the metadata properties
+### Example 2: Test a script file
+
+In this example, the metadata for the script created in **Example 1** is tested.
+
+```powershell
+Test-ScriptFileInfo -Path C:\Test\Temp-Scriptfile.ps1
 ```
-PS C:\> New-ScriptFileInfo -Path "C:\temp\temp_scripts\New-ScriptFile.ps1" -Verbose
->> -Version 1.0 -Author pattif -Description "my new script file test" -CompanyName "Contoso Corporation" `
->> -Copyright "2015 Contoso Corporation. All rights reserved." -ExternalModuleDependencies 'ff','bb' `
->> -RequiredScripts 'Start-WFContosoServer', 'Stop-ContosoServerScript' `
->> -ExternalScriptDependencies Stop-ContosoServerScript -Tags @('Tag1', 'Tag2', 'Tag3') `
->> -ProjectUri https://contoso.com -LicenseUri "https://contoso.com/License" -IconUri 'https://contoso.com/Icon' `
->> -Verbose -PassThru `
->> -ReleaseNotes @('contoso script now supports following features',
->>          'Feature 1',
->>          'Feature 2',
->>          'Feature 3',
->>          'Feature 4',
->>          'Feature 5') `
->> -RequiredModules "1","2",RequiredModule1,@{ModuleName='RequiredModule2';ModuleVersion='1.0'},@{ModuleName='RequiredModule3';RequiredVersion='2.0'},ExternalModule1 `
->>
-VERBOSE: Performing the operation "Creating the 'C:\temp\temp_scripts\New-ScriptFile.ps1' PowerShell Script file" on target "C:\temp\temp_scripts\New-ScriptFile.ps1".
+
+```Output
+Version   Name                  Author               Description
+-------   ----                  ------               -----------
+1.0       Temp-Scriptfile       pattif@contoso.com   My test script file description goes here
+```
+
+The `Test-ScriptFileInfo` cmdlet uses the **Path** parameter to specify the script file's location.
+
+### Example 3: Create a script file with all the metadata properties
+
+This example uses splatting to create a script file named `New-ScriptFile.ps1` that includes all its
+metadata properties. The **Verbose** parameter specifies that verbose output is displayed as the
+script is created.
+
+```powershell
+$Parms = @{
+ Path = "C:\Test\New-ScriptFile.ps1"
+ Verbose = $True
+ Version = "1.0"
+ Author = "pattif@contoso.com"
+ Description = "My new script file test"
+ CompanyName = "Contoso Corporation"
+ Copyright = "2019 Contoso Corporation. All rights reserved."
+ ExternalModuleDependencies = "ff","bb"
+ RequiredScripts = "Start-WFContosoServer", "Stop-ContosoServerScript"
+ ExternalScriptDependencies = "Stop-ContosoServerScript"
+ Tags = @("Tag1", "Tag2", "Tag3")
+ ProjectUri = "https://contoso.com"
+ LicenseUri = "https://contoso.com/License"
+ IconUri = "https://contoso.com/Icon"
+ PassThru = $True
+ ReleaseNotes = @("Contoso script now supports the following features:",
+   "Feature 1",
+   "Feature 2",
+   "Feature 3",
+   "Feature 4",
+   "Feature 5")
+ RequiredModules =
+   "1",
+   "2",
+   "RequiredModule1",
+   @{ModuleName="RequiredModule2";ModuleVersion="1.0"},
+   @{ModuleName="RequiredModule3";RequiredVersion="2.0"},
+   "ExternalModule1"
+ }
+New-ScriptFileInfo @Parms
+```
+
+```Output
+VERBOSE: Performing the operation "Creating the 'C:\Test\New-ScriptFile.ps1'
+  PowerShell Script file" on target "C:\Test\New-ScriptFile.ps1".
 
 <#PSScriptInfo
 
 .VERSION 1.0
 
-.GUID eb246b19-17da-4392-8c89-7c280f69ad0a
+.GUID 4fabe8c7-7862-45b1-a72e-1352a433b77d
 
-.AUTHOR pattif
+.AUTHOR pattif@contoso.com
 
-.COMPANYNAME Microsoft Corporation
+.COMPANYNAME Contoso Corporation
 
-.COPYRIGHT 2015 Microsoft Corporation. All rights reserved.
+.COPYRIGHT 2019 Contoso Corporation. All rights reserved.
 
 .TAGS Tag1 Tag2 Tag3
 
@@ -127,37 +189,37 @@ VERBOSE: Performing the operation "Creating the 'C:\temp\temp_scripts\New-Script
 .EXTERNALSCRIPTDEPENDENCIES Stop-ContosoServerScript
 
 .RELEASENOTES
-contoso script now supports following features
+Contoso script now supports the following features:
 Feature 1
 Feature 2
 Feature 3
 Feature 4
 Feature 5
 
+.PRIVATEDATA
+
 #>
 
-#Requires -Modules Module1
-#Requires -Modules Module2
-#Requires -Modules RequiredModule1
-#Requires -Modules @{ModuleName = 'RequiredModule2'; ModuleVersion = '1.0'}
-#Requires -Modules @{RequiredVersion = '2.0'; ModuleName = 'RequiredModule3'}
-#Requires -Modules ExternalModule1
+#Requires -Module 1
+#Requires -Module 2
+#Requires -Module RequiredModule1
+#Requires -Module @{ModuleName = 'RequiredModule2'; ModuleVersion = '1.0'}
+#Requires -Module @{RequiredVersion = '2.0'; ModuleName = 'RequiredModule3'}
+#Requires -Module ExternalModule1
 
 <#
 
 .DESCRIPTION
- my new script file test
+ My new script file test
 
 #>
 Param()
 ```
 
-This command creates a script file New-ScriptFile.ps1 with all of its metadata properties.
-The *Verbose* parameter specifies that the command display verbose output.
-
 ## PARAMETERS
 
 ### -Author
+
 Specifies the script author.
 
 ```yaml
@@ -173,6 +235,7 @@ Accept wildcard characters: False
 ```
 
 ### -CompanyName
+
 Specifies the company or vendor who created the script.
 
 ```yaml
@@ -188,6 +251,7 @@ Accept wildcard characters: False
 ```
 
 ### -Copyright
+
 Specifies a copyright statement for the script.
 
 ```yaml
@@ -203,6 +267,7 @@ Accept wildcard characters: False
 ```
 
 ### -Description
+
 Specifies a description for the script.
 
 ```yaml
@@ -218,6 +283,7 @@ Accept wildcard characters: False
 ```
 
 ### -ExternalModuleDependencies
+
 Specifies an array of external module dependencies.
 
 ```yaml
@@ -233,6 +299,7 @@ Accept wildcard characters: False
 ```
 
 ### -ExternalScriptDependencies
+
 Specifies an array of external script dependencies.
 
 ```yaml
@@ -248,6 +315,7 @@ Accept wildcard characters: False
 ```
 
 ### -Force
+
 Forces the command to run without asking for user confirmation.
 
 ```yaml
@@ -263,6 +331,7 @@ Accept wildcard characters: False
 ```
 
 ### -Guid
+
 Specifies a unique ID for the script.
 
 ```yaml
@@ -278,8 +347,9 @@ Accept wildcard characters: False
 ```
 
 ### -IconUri
-Specifies the URL of an icon for the script.
-The specified icon is displayed on the gallery web page for the script.
+
+Specifies the URL of an icon for the script. The specified icon is displayed on the gallery web page
+for the script.
 
 ```yaml
 Type: Uri
@@ -294,6 +364,7 @@ Accept wildcard characters: False
 ```
 
 ### -LicenseUri
+
 Specifies the URL of licensing terms.
 
 ```yaml
@@ -309,8 +380,9 @@ Accept wildcard characters: False
 ```
 
 ### -PassThru
-Returns an object representing the item with which you are working.
-By default, this cmdlet does not generate any output.
+
+Returns an object that represents the item with which you're working. By default,
+`New-ScriptFileInfo` doesn't generate any output.
 
 ```yaml
 Type: SwitchParameter
@@ -325,9 +397,8 @@ Accept wildcard characters: False
 ```
 
 ### -Path
-Specifies the path to the module manifest file to update.
-Wildcards are permitted.
-The default location is the current directory (.)
+
+Specifies the location where the script file is saved.
 
 ```yaml
 Type: String
@@ -342,6 +413,7 @@ Accept wildcard characters: False
 ```
 
 ### -PrivateData
+
 Specifies private data for the script.
 
 ```yaml
@@ -357,6 +429,7 @@ Accept wildcard characters: False
 ```
 
 ### -ProjectUri
+
 Specifies the URL of a web page about this project.
 
 ```yaml
@@ -372,7 +445,9 @@ Accept wildcard characters: False
 ```
 
 ### -ReleaseNotes
-Specifies a string array that contains release notes or comments that you want to be available to users of this version of the script.
+
+Specifies a string array that contains release notes or comments that you want available to users of
+this version of the script.
 
 ```yaml
 Type: String[]
@@ -387,8 +462,9 @@ Accept wildcard characters: False
 ```
 
 ### -RequiredModules
-Specifies modules that must be in the global session state.
-If the required modules are not in the global session state, PowerShell imports them.
+
+Specifies modules that must be in the global session state. If the required modules aren't in the
+global session state, PowerShell imports them.
 
 ```yaml
 Type: Object[]
@@ -403,6 +479,7 @@ Accept wildcard characters: False
 ```
 
 ### -RequiredScripts
+
 Specifies an array of required scripts.
 
 ```yaml
@@ -418,6 +495,7 @@ Accept wildcard characters: False
 ```
 
 ### -Tags
+
 Specifies an array of tags.
 
 ```yaml
@@ -433,6 +511,7 @@ Accept wildcard characters: False
 ```
 
 ### -Version
+
 Specifies the version of the script.
 
 ```yaml
@@ -448,7 +527,8 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
-Prompts you for confirmation before running the cmdlet.
+
+Prompts you for confirmation before running the `New-ScriptFileInfo`.
 
 ```yaml
 Type: SwitchParameter
@@ -463,8 +543,8 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Shows what would happen if the cmdlet runs.
-The cmdlet is not run.
+
+Shows what would happen if `New-ScriptFileInfo` runs. The cmdlet isn't run.
 
 ```yaml
 Type: SwitchParameter
@@ -479,7 +559,10 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+-InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
+-WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -488,6 +571,8 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## NOTES
 
 ## RELATED LINKS
+
+[about_Splatting](../Microsoft.Powershell.Core/About/about_splatting.md)
 
 [Test-ScriptFileInfo](Test-ScriptFileInfo.md)
 

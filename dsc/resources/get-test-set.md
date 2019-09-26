@@ -8,7 +8,7 @@ title:  Get-Test-Set
 
 >Applies To: Windows PowerShell 4.0, Windows PowerShell 5.0
 
-![Get, Test, and Set](/media/get-test-set.png)
+![Get, Test, and Set](../media/get-test-set.png)
 
 PowerShell Desired State Configuration is constructed around a **Get**, **Test**, and **Set** process. DSC [resources](resources.md) each contains methods to complete each of these operations. In a [Configuration](../configurations/configurations.md), you define resource blocks to fill in keys that become parameters for a resource's **Get**, **Test**, and **Set** methods.
 
@@ -138,7 +138,7 @@ BuiltInAccount       : LocalSystem
 Credential           :
 Dependencies         : {RPCSS, http}
 Description          : This service spools print jobs and handles interaction with the printer.  If you turn off
-                       this service, you won’t be able to print or see your printers.
+                       this service, you won't be able to print or see your printers.
 DisplayName          : Print Spooler
 Ensure               :
 Name                 : Spooler

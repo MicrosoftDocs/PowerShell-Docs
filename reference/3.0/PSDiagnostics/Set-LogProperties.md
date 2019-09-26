@@ -3,9 +3,9 @@ external help file: PSDiagnostics-help.xml
 Module Name: PSDiagnostics
 online version:
 schema: 2.0.0
-ms.date:  11/27/2018
+ms.date: 11/27/2018
+title: Set-LogProperties
 ---
-
 # Set-LogProperties
 
 ## SYNOPSIS
@@ -83,7 +83,7 @@ Accept wildcard characters: False
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see
-[about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -108,3 +108,4 @@ You must run this cmdlet from an elevated PowerShell session.
 [Enable-PSTrace](Enable-PSTrace.md)
 
 [Disable-PSTrace](Disable-PSTrace.md)
+

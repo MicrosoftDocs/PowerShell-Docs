@@ -1,11 +1,12 @@
 {
     "build": {
-        "content": [
-            { "files": ["**/**.md", "**/**.yml"], "exclude": ["**/obj/**"] }
-        ],
+        "content": [{
+            "files": ["**/**.md", "**/**.yml"],
+            "exclude": ["**/obj/**","README.md"]
+        }],
         "globalMetadata": {
             "toc_preview": true,
-            "breadcrumb_path": "bread/toc.yml",
+            "breadcrumb_path": "",
             "uhfHeaderId": "MSDocsHeader-Powershell",
             "ROBOTS": "INDEX, FOLLOW",
             "ms.devlang": "powershell",
@@ -22,9 +23,10 @@
             "author": { "**/**.md": "rpsqrd" },
             "ms.author": { "**/**.md": "ryanpu" }
         },
-        "resource": [
-            { "files": ["**/images/**"], "exclude": ["**/obj/**"] }
-        ],
+        "resource": [{
+            "files": ["**/images/**"],
+            "exclude": ["**/obj/**"]
+        }],
         "template": "op.html",
         "dest": "jea",
         "markdownEngineName": "markdig"

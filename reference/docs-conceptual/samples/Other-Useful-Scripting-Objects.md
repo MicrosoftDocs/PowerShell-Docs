@@ -2,7 +2,6 @@
 ms.date:  06/05/2017
 keywords:  powershell,cmdlet
 title:  Other Useful Scripting Objects
-ms.assetid:  4d781196-720b-4ccc-90d2-c570e5e719f5
 ---
 # Other Useful Scripting Objects
 
@@ -69,16 +68,16 @@ $psOnlineHelp | Format-List
 
 ```output
 Key   : Add-Computer
-Value : http://go.microsoft.com/fwlink/p/?LinkID=135194
+Value : https://go.microsoft.com/fwlink/p/?LinkID=135194
 
 Key   : Add-Content
-Value : http://go.microsoft.com/fwlink/p/?LinkID=113278
+Value : https://go.microsoft.com/fwlink/p/?LinkID=113278
 ```
 
 The following script adds an entry to the list.
 
 ```powershell
-$psOnlineHelp.Add("get-myNoun", "http://www.mydomain.com/MyNoun.html")
+$psOnlineHelp.Add("get-myNoun", "https://www.mydomain.com/MyNoun.html")
 ```
 
 ## See Also

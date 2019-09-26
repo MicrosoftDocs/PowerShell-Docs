@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Utility
 ms.date: 1/7/2019
-online version: http://go.microsoft.com/fwlink/?LinkId=821769
+online version: https://go.microsoft.com/fwlink/?linkid=2096523
 schema: 2.0.0
 title: Export-Csv
 ---

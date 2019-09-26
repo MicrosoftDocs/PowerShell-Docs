@@ -1,9 +1,9 @@
 ---
-ms.date: 4/3/2019
+ms.date: 04/03/2019
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkID=517141
+online version: https://go.microsoft.com/fwlink/?linkid=517141
 external help file:  Microsoft.PowerShell.PackageManagement.dll-Help.xml
 title:  Set-PackageSource
 ---
@@ -19,31 +19,31 @@ Replaces a package source for a specified package provider.
 
 ```
 Set-PackageSource [[-Name] <string>] [-Credential <pscredential>] [-Location <string>]
-[-NewLocation <string>] [-NewName <string>] [-Trusted] [-Force] [-ForceBootstrap] [-WhatIf]
-[-Confirm] [-ProviderName <string>] [<CommonParameters>]
+ [-NewLocation <string>] [-NewName <string>] [-Trusted] [-Force] [-ForceBootstrap] [-WhatIf]
+ [-Confirm] [-ProviderName <string>] [<CommonParameters>]
 ```
 
 ### SourceByInputObject
 
 ```
 Set-PackageSource -InputObject <PackageSource> [-Credential <pscredential>] [-NewLocation <string>]
-[-NewName <string>] [-Trusted] [-Force] [-ForceBootstrap] [-WhatIf] [-Confirm] [<CommonParameters>]
+ [-NewName <string>] [-Trusted] [-Force] [-ForceBootstrap] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### PSModule:SourceByInputObject
 
 ```
 Set-PackageSource [-Credential <pscredential>] [-NewLocation <string>] [-NewName <string>]
-[-Trusted] [-Force] [-ForceBootstrap] [-WhatIf] [-Confirm] [-PackageManagementProvider <string>]
-[-Scope <string>] [-PublishLocation <string>] [<CommonParameters>]
+ [-Trusted] [-Force] [-ForceBootstrap] [-WhatIf] [-Confirm] [-PackageManagementProvider <string>]
+ [-Scope <string>] [-PublishLocation <string>] [<CommonParameters>]
 ```
 
 ### PSModule:SourceBySearch
 
 ```
 Set-PackageSource [-Credential <pscredential>] [-NewLocation <string>] [-NewName <string>]
-[-Trusted] [-Force] [-ForceBootstrap] [-WhatIf] [-Confirm] [-PackageManagementProvider <string>]
-[-Scope <string>] [-PublishLocation <string>] [<CommonParameters>]
+ [-Trusted] [-Force] [-ForceBootstrap] [-WhatIf] [-Confirm] [-PackageManagementProvider <string>]
+ [-Scope <string>] [-PublishLocation <string>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION

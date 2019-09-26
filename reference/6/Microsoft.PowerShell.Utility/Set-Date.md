@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Utility
 ms.date: 4/30/2019
-online version: http://go.microsoft.com/fwlink/?LinkId=821858
+online version: https://go.microsoft.com/fwlink/?linkid=2096873
 schema: 2.0.0
 title: Set-Date
 ---

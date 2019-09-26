@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Core
 ms.date: 06/09/2017
-online version: http://go.microsoft.com/fwlink/?LinkId=821526
+online version: https://go.microsoft.com/fwlink/?linkid=2096187
 schema: 2.0.0
 title: Where-Object
 ---
@@ -942,7 +942,7 @@ This parameter was introduced in Windows PowerShell 6.1.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: Not
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -1062,9 +1062,13 @@ Accept wildcard characters: False
 
 ### -Value
 
-Specifies a property value.
+Specifies a property value. The parameter name, **Value**, is optional. This parameter accepts
+wildcard characters when used with the following comparison parameters:
 
-The parameter name, *Value*, is optional.
+- **CLike**
+- **CNotLike**
+- **Like**
+- **NotLike**
 
 This parameter was introduced in Windows PowerShell 3.0.
 
@@ -1077,12 +1081,12 @@ Required: False
 Position: 1
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### CommonParameters
 
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 

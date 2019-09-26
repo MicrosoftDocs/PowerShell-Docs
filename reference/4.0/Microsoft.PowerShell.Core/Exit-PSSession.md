@@ -1,9 +1,9 @@
-﻿---
+---
 ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/p/?linkid=289579
+online version: https://go.microsoft.com/fwlink/?linkid=289579
 external help file:  System.Management.Automation.dll-Help.xml
 title:  Exit-PSSession
 ---
@@ -105,7 +105,7 @@ The Exit keyword has the same effect as using Exit-PSSession.
 
 ### CommonParameters
 
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -143,3 +143,5 @@ This cmdlet does not return any output.
 [about_PSSessions](About/about_PSSessions.md)
 
 [about_Remote](About/about_Remote.md)
+
+

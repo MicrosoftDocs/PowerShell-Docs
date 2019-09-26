@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Core
 ms.date: 5/15/2019
-online version: http://go.microsoft.com/fwlink/?LinkId=821498
+online version: https://go.microsoft.com/fwlink/?linkid=821498
 schema: 2.0.0
 title: New-PSSession
 ---
@@ -71,7 +71,7 @@ remote computer.
 Use a **PSSession** to run multiple commands that share data, such as a function or the value of a
 variable. To run commands in a **PSSession**, use the Invoke-Command cmdlet.
 To use the **PSSession** to interact directly with a remote computer, use the Enter-PSSession
-cmdlet. For more information, see about_PSSessions (http://go.microsoft.com/fwlink/?LinkID=135181).
+cmdlet. For more information, see about_PSSessions (https://go.microsoft.com/fwlink/?LinkID=135181).
 
 You can run commands on a remote computer without creating a **PSSession** by using the
 *ComputerName* parameters of **Enter-PSSession** or **Invoke-Command**.
@@ -379,7 +379,7 @@ Also, the computer must be configured for HTTPS transport or the IP address of t
 must be included in the WinRM TrustedHosts list on the local computer.
 For instructions for adding a computer name to the TrustedHosts list, see "How to Add a Computer to
 the Trusted Host List" in about_Remote_Troubleshooting
-(http://go.microsoft.com/fwlink/?LinkID=135188).
+(https://go.microsoft.com/fwlink/?LinkID=135188).
 
 To include the local computer in the value of the *ComputerName* parameter, start Windows PowerShell
 by using the Run as administrator option.
@@ -752,7 +752,7 @@ Accept wildcard characters: False
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see about_CommonParameters
-(http://go.microsoft.com/fwlink/?LinkID=113216).
+(https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -793,3 +793,6 @@ administrator option.
 [Receive-PSSession](Receive-PSSession.md)
 
 [Remove-PSSession](Remove-PSSession.md)
+
+
+

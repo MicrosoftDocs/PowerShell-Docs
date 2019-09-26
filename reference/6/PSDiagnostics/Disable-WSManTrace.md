@@ -4,9 +4,10 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: PSDiagnostics
 ms.date: 11/29/2018
+online version: https://go.microsoft.com/fwlink/?linkid=2096856
 schema: 2.0.0
+title: Disable-WSManTrace
 ---
-
 # Disable-WSManTrace
 
 ## SYNOPSIS
@@ -40,7 +41,7 @@ Disable-WSManTrace
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see
-[about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -59,3 +60,4 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 [Stop-Trace](stop-trace.md)
 
 [Enable-WSManTrace](Enable-WSManTrace.md)
+

@@ -4,7 +4,7 @@ schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
 title:  WSMan Provider
-online version:  http://go.microsoft.com/fwlink/?LinkId=834980
+online version: https://go.microsoft.com/fwlink/?linkid=834980
 ---
 # WSMan Provider
 
@@ -23,10 +23,10 @@ information.
 
 ## Detailed description
 
-The **WSMan** provider for Windows PowerShell lets you add, change, clear, and
+The **WSMan** provider for PowerShell lets you add, change, clear, and
 delete WS-Management configuration data on local or remote computers.
 
-The **WSMan** provider exposes a Windows PowerShell drive with a directory
+The **WSMan** provider exposes a PowerShell drive with a directory
 structure that corresponds to a logical grouping of WS-Management configuration
 settings. These groupings are known as containers.
 
@@ -273,7 +273,7 @@ New-Item -Path WSMan:\localhost\Plugin\TestPlugin\InitializationParameters `
 
 ## Dynamic parameters
 
-Dynamic parameters are cmdlet parameters that are added by a Windows PowerShell
+Dynamic parameters are cmdlet parameters that are added by a PowerShell
 provider and are available only when the cmdlet is being used in the
 provider-enabled drive.
 
@@ -389,7 +389,7 @@ certificate (X509) of a user account that has permission to perform this
 action. Certificates are used in client certificate-based authentication. They
 can be mapped only to local user accounts, and they do not work with domain
 accounts. To get a certificate thumbprint, use the `Get-Item` or `Get-ChildItem`
-cmdlets in the Windows PowerShell `Cert:` drive.
+cmdlets in the PowerShell `Cert:` drive.
 
 #### Cmdlets supported
 
@@ -470,9 +470,9 @@ resource. `Win32_LogicalDisk="C:\\"` is a specific instance of the resource.
 A Uniform Resource Identifier (URI) contains a prefix and a path to a resource.
 For example:
 
-http://schemas.microsoft.com/wbem/wsman/1/wmi/root/cimv2/Win32_LogicalDisk
+`http://schemas.microsoft.com/wbem/wsman/1/wmi/root/cimv2/Win32_LogicalDisk`
 
-http://schemas.dmtf.org/wbem/wscim/1/cim-schema/2/CIM_NumericSensor
+`http://schemas.dmtf.org/wbem/wscim/1/cim-schema/2/CIM_NumericSensor`
 
 #### Cmdlets Supported
 
@@ -485,9 +485,9 @@ of resource, such as a disk or a process, on a computer.
 
 A URI consists of a prefix and a path to a resource. For example:
 
-http://schemas.microsoft.com/wbem/wsman/1/wmi/root/cimv2/Win32_LogicalDisk
+`http://schemas.microsoft.com/wbem/wsman/1/wmi/root/cimv2/Win32_LogicalDisk`
 
-http://schemas.dmtf.org/wbem/wscim/1/cim-schema/2/CIM_NumericSensor
+`http://schemas.dmtf.org/wbem/wscim/1/cim-schema/2/CIM_NumericSensor`
 
 #### Cmdlets Supported
 
@@ -536,7 +536,7 @@ A URL prefix on which to accept HTTP or HTTPS requests. This is a string
 containing only the characters `[a-z]`, `[A-Z]`, `[9-0]`,
 underscore (`_`) and backslash (`/`). The string must not start with or end
 with a backslash (`/`). For example, if the computer name is "SampleComputer",
-the WS-Management client would specify "http://SampleMachine/URLPrefix"
+the WS-Management client would specify `http://SampleMachine/URLPrefix`
 in the destination address.
 
 #### Cmdlets Supported
@@ -580,8 +580,10 @@ Beginning in Windows PowerShell 3.0, you can get customized help topics for
 provider cmdlets that explain how those cmdlets behave in a file system drive.
 
 To get the help topics that are customized for the file system drive, run a
-[Get-Help](../../Microsoft.PowerShell.Core/Get-Help.md) command in a file system drive or use the `-Path`
-parameter of [Get-Help](../../Microsoft.PowerShell.Core/Get-Help.md) to specify a file system drive.
+[Get-Help](../../Microsoft.PowerShell.Core/Get-Help.md) command in a file
+system drive or use the `-Path` parameter of
+[Get-Help](../../Microsoft.PowerShell.Core/Get-Help.md) to specify a file
+system drive.
 
 ```powershell
 Get-Help Get-ChildItem

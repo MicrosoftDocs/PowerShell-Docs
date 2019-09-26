@@ -2,7 +2,6 @@
 ms.date:  06/05/2017
 keywords:  powershell,cmdlet
 title:  The ISEFile Object
-ms.assetid:  1c6d91f3-c556-42a2-a017-79b6b7b4b7db
 ---
 # The ISEFile Object
 

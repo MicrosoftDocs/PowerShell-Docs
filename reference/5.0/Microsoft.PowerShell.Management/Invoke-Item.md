@@ -3,7 +3,7 @@ ms.date:  10/18/2018
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?linkid=822243
+online version: https://go.microsoft.com/fwlink/?linkid=822243
 external help file:  Microsoft.PowerShell.Commands.Management.dll-Help.xml
 title:  Invoke-Item
 ---
@@ -56,22 +56,6 @@ Invoke-Item "C:\Documents and Settings\Lister\My Documents\*.xls"
 ```
 
 ## PARAMETERS
-
-### -Confirm
-
-Prompts you for confirmation before running the cmdlet.
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: (All)
-Aliases: cf
-
-Required: False
-Position: Named
-Default value: False
-Accept pipeline input: False
-Accept wildcard characters: False
-```
 
 ### -Credential
 
@@ -200,6 +184,22 @@ For more information, see about_transactions.
 Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: usetx
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Confirm
+
+Prompts you for confirmation before running the cmdlet.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
 
 Required: False
 Position: Named

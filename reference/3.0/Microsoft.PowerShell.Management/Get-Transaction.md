@@ -3,7 +3,7 @@ ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkID=135220
+online version: https://go.microsoft.com/fwlink/?linkid=135220
 external help file:  Microsoft.PowerShell.Commands.Management.dll-Help.xml
 title:  Get-Transaction
 ---
@@ -171,7 +171,7 @@ The second Complete-Transaction command commits the transaction.
 ## PARAMETERS
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 ## INPUTS
 
 ### None
@@ -195,3 +195,5 @@ Get-Transaction returns an object that represents the current transaction.
 [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md)
 
 [about_Transactions](../Microsoft.PowerShell.Core/About/about_Transactions.md)
+
+

@@ -3,7 +3,7 @@ ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkID=135266
+online version: https://go.microsoft.com/fwlink/?linkid=135266
 external help file:  Microsoft.PowerShell.Commands.Management.dll-Help.xml
 title:  Test-Connection
 ---
@@ -392,7 +392,7 @@ Accept wildcard characters: False
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see
-[about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -420,3 +420,4 @@ The **Source** parameter set was introduced in Windows PowerShell 3.0.
 [Restart-Computer](Restart-Computer.md)
 
 [Stop-Computer](Stop-Computer.md)
+

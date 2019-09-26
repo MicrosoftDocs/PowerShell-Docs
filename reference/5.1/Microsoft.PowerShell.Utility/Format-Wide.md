@@ -4,11 +4,10 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Utility
 ms.date: 12/19/2018
-online version: http://go.microsoft.com/fwlink/?LinkId=821776
+online version: https://go.microsoft.com/fwlink/?linkid=821776
 schema: 2.0.0
 title: Format-Wide
 ---
-
 # Format-Wide
 
 ## SYNOPSIS
@@ -240,7 +239,7 @@ Required: False
 Position: 0
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -ShowError
@@ -283,7 +282,7 @@ Accept wildcard characters: False
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see
-[about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -321,3 +320,4 @@ nor a table, use Format-Custom.
 [Format-List](Format-List.md)
 
 [Format-Table](Format-Table.md)
+

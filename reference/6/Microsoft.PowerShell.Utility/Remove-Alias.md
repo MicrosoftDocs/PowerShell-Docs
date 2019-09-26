@@ -3,7 +3,7 @@ ms.date:  10/17/2018
 schema: 2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
-online version: 
+online version: https://go.microsoft.com/fwlink/?linkid=2096892
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 title:  Remove-Alias
 ---
@@ -107,7 +107,7 @@ Accept wildcard characters: False
 ### CommonParameters
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -138,3 +138,5 @@ For more information, see [about_Aliases](../microsoft.powershell.core/about/abo
 [New-Alias](New-Alias.md)
 
 [Set-Alias](Set-Alias.md)
+
+

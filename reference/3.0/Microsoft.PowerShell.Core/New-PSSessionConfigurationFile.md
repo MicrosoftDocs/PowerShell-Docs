@@ -3,8 +3,9 @@ external help file: System.Management.Automation.dll-Help.xml
 keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Core
-online version:  http://go.microsoft.com/fwlink/?LinkID=217036
+online version: https://go.microsoft.com/fwlink/?linkid=217036
 schema: 2.0.0
+ms.date: 03/26/2019
 title: New-PSSessionConfigurationFile
 ---
 # New-PSSessionConfigurationFile
@@ -168,6 +169,7 @@ This example shows a `New-PSSessionConfigurationFile` command that uses all the 
 It is included to show the correct input format for each parameter.
 
 The resulting SampleFile.pssc is displayed in the output.
+
 ```powershell
 $configSettings = @{
     Path = '.\SampleFile.pssc'
@@ -829,7 +831,7 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### CommonParameters

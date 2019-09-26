@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Utility
 ms.date: 12/13/2018
-online version: http://go.microsoft.com/fwlink/?LinkId=821824
+online version: https://go.microsoft.com/fwlink/?linkid=821824
 schema: 2.0.0
 title: Invoke-RestMethod
 ---
@@ -547,7 +547,7 @@ Specifies a user agent string for the web request.
 
 The default user agent is similar to "Mozilla/5.0 (Windows NT; Windows NT 6.1; en-US) WindowsPowerShell/3.0" with slight variations for each operating system and platform.
 
-To test a website with the standard user agent string that is used by most Internet browsers, use the properties of the [PSUserAgent](http://msdn.microsoft.com/library/windows/desktop/hh484857(v=vs.85).aspx) class, such as Chrome, FireFox, Internet Explorer, Opera, and Safari.
+To test a website with the standard user agent string that is used by most Internet browsers, use the properties of the [PSUserAgent](https://msdn.microsoft.com/library/windows/desktop/hh484857(v=vs.85).aspx) class, such as Chrome, FireFox, Internet Explorer, Opera, and Safari.
 
 For example, the following command uses the user agent string for Internet
 
@@ -597,7 +597,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -621,3 +621,4 @@ If the request returns JSON strings, `Invoke-RestMethod` returns a PSObject that
 [ConvertFrom-Json](ConvertFrom-Json.md)
 
 [Invoke-WebRequest](Invoke-WebRequest.md)
+

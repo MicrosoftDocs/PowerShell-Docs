@@ -3,7 +3,7 @@ ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821816
+online version: https://go.microsoft.com/fwlink/?linkid=821816
 external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 title:  Import-LocalizedData
 ---
@@ -290,7 +290,7 @@ Accept wildcard characters: False
 
 ### CommonParameters
 
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -326,7 +326,7 @@ To suppress the message and fail gracefully, use the *ErrorAction* common parame
   If **Import-LocalizedData** finds the subdirectory and the .psd1 file, it imports the hash table of user messages into the value of the *BindingVariable* parameter in the command.
 Then, when you display a message from the hash table in the variable, the localized message is displayed.
 
-  For more information, see about_Script_Internationalization (http://go.microsoft.com/fwlink/?LinkID=113262).
+  For more information, see about_Script_Internationalization (https://go.microsoft.com/fwlink/?LinkID=113262).
 
 ## RELATED LINKS
 
@@ -335,3 +335,6 @@ Then, when you display a message from the hash table in the variable, the locali
 [Write-Host](Write-Host.md)
 
 [Import-PowerShellDataFile](Import-powershelldatafile.md)
+
+
+

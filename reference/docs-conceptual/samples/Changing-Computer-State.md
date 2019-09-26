@@ -2,11 +2,10 @@
 ms.date:  06/05/2017
 keywords:  powershell,cmdlet
 title:  Changing Computer State
-ms.assetid:  8093268b-27f8-4a49-8871-142c5cc33f01
 ---
 # Changing Computer State
 
-To reset a computer in Windows PowerShell, use either a standard command-line tool or a WMI class. Although you are using Windows PowerShell only to run the tool, learning how to change a computer's power state in Windows PowerShell illustrates some of the important details about working with external tools in Windows PowerShell.
+To reset a computer in Windows PowerShell, use either a standard command-line tool, WMI or CIM class. Although you are using Windows PowerShell only to run the tool, learning how to change a computer's power state in Windows PowerShell illustrates some of the important details about working with external tools in Windows PowerShell.
 
 ## Locking a Computer
 
@@ -32,13 +31,19 @@ You can also use the **shutdown.exe** tool with its logoff option:
 shutdown.exe -l
 ```
 
-A third option is to use WMI. The Win32_OperatingSystem class has a Win32Shutdown method. Invoking the method with the 0 flag initiates logoff:
+Another option is to use WMI. The Win32_OperatingSystem class has a Win32Shutdown method. Invoking the method with the 0 flag initiates logoff:
 
 ```powershell
 (Get-WmiObject -Class Win32_OperatingSystem -ComputerName .).Win32Shutdown(0)
 ```
 
 For more information, and to find other features of the Win32Shutdown method, see "Win32Shutdown Method of the Win32_OperatingSystem Class" in MSDN.
+
+Finally you can use CIM with the same Win32_OperatingSystem class as described above in the WMI method.
+
+```powershell
+Get-CIMInstance -Classname Win32_OperatingSystem | Invoke-CimMethod -MethodName Shutdown
+```
 
 ## Shutting Down or Restarting a Computer
 

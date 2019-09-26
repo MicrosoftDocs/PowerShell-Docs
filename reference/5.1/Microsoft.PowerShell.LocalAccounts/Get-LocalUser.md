@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.LocalAccounts
 ms.date: 06/09/2017
-online version: http://go.microsoft.com/fwlink/?LinkId=822514
+online version: https://go.microsoft.com/fwlink/?linkid=822514
 schema: 2.0.0
 title: Get-LocalUser
 ---
@@ -97,7 +97,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -132,3 +132,5 @@ This cmdlet returns local user accounts.
 [Rename-LocalUser](Rename-LocalUser.md)
 
 [Set-LocalUser](Set-LocalUser.md)
+
+

@@ -7,7 +7,7 @@ title:  Creating and publishing an item
 # Creating and publishing an item
 
 The PowerShell Gallery is the place to publish and share stable PowerShell modules, scripts,
-and DSC resources with the broader PowerShell user community.
+and Desired State Configuration (DSC) resources with the broader PowerShell user community.
 
 This article covers the mechanics and important steps for preparing a script or module, and
 publishing it to the PowerShell Gallery. We strongly encourage that you review the

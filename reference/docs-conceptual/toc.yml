@@ -1,3 +1,5 @@
+- name: How to use this documentation
+  href: how-to-use-docs.md
 - name: Overview
   href: overview.md
 - name: Install
@@ -52,6 +54,24 @@
       href: learn/writing-portable-modules.md
     - name: PowerShell remoting
       items:
+        - name: Just Enough Administration (JEA)
+          items:
+            - name: Overview
+              href: learn/remoting/jea/overview.md
+            - name: Prerequisites
+              href: learn/remoting/jea/prerequisites.md
+            - name: Role Capabilities
+              href: learn/remoting/jea/role-capabilities.md
+            - name: Session Configurations
+              href: learn/remoting/jea/session-configurations.md
+            - name: Registering JEA
+              href: learn/remoting/jea/register-jea.md
+            - name: Using JEA
+              href: learn/remoting/jea/using-jea.md
+            - name: Security Considerations
+              href: learn/remoting/jea/security-considerations.md
+            - name: Audit and Report on JEA
+              href: learn/remoting/jea/audit-and-report.md
         - name: Running remote commands
           href: learn/remoting/running-remote-commands.md
         - name: PowerShell remoting over SSH
@@ -76,8 +96,6 @@
       items:
         - name: Introducing the windows PowerShell ISE
           href: components/ise/introducing-the-windows-powershell-ise.md
-        - name: Windows PowerShell Integrated Scripting Environment (ISE)
-          href: components/ise/windows-powershell-integrated-scripting-environment--ise-.md
         - name: Using the Windows PowerShell ISE
           items:
             - name: Exploring the Windows PowerShell ISE
@@ -178,16 +196,119 @@
           href: whats-new/what-s-new-in-the-powershell-50-ise.md
 - name: PowerShell Core support lifecycle
   href: powershell-support-lifecycle.md
+- name: Windows Management Framework (WMF)
+  items:
+    - name: Overview
+      href: wmf/overview.md
+    - name: Installation
+      items:
+        - name: Install and configure WMF 5.1
+          href: wmf/setup/install-configure.md
+        - name: Uninstall WMF 5.0
+          href: wmf/setup/uninstall.md
+    - name: What's New
+      expanded: true
+      items:
+        - name: WMF 5.x Release Notes
+          href: wmf/whats-new/release-notes.md
+        - name: Bug Fixes in WMF 5.1
+          href: wmf/whats-new/bugfixes.md
+        - name: New and updated cmdlets
+          href: wmf/whats-new/new-updated-cmdlets.md
+        - name: Creating Custom Types using PowerShell Classes
+          href: wmf/whats-new/class-overview.md
+        - name: Console Improvements in WMF 5.1
+          href: wmf/whats-new/console-improvements.md
+        - name: Improvements in PowerShell Script Debugging
+          href: wmf/whats-new/debug-overview.md
+        - name: Script Tracing and Logging
+          href: wmf/whats-new/script-logging.md
+        - name: DSC Improvements in WMF 5.1
+          href: wmf/whats-new/DSC-improvements.md
+        - name: PowerShell Engine Improvements in WMF 5.1
+          href: wmf/whats-new/engine-improvements.md
+        - name: Information Stream
+          href: wmf/whats-new/informationstream-overview.md
+        - name: Improvements to Just Enough Administration (JEA)
+          href: wmf/whats-new/jea-improvements.md
+        - name: Improvements to Package Management in WMF 5.1
+          href: wmf/whats-new/package-management-improvements.md
+        - name: Software Inventory Logging (SIL)
+          href: wmf/whats-new/sil-overview.md
+        - name: Product Compatibility Status
+          href: wmf/whats-new/compatibility.md
+    - name: Known Issues
+      items:
+        - name: Known Issues in WMF 5.0
+          href: wmf/known-issues/known-issues-50.md
+        - name: Known Issues in WMF 5.1
+          href: wmf/known-issues/known-issues-51.md
+        - name: Known Issues and Limitations in DSC
+          href: wmf/known-issues/known-issues-dsc.md
 - name: Sample scripts
   items:
     - name: Sample scripts for administration
-      href: samples/sample-scripts-for-administration.md
-    - name: Changing computer state
-      href: samples/changing-computer-state.md
-    - name: Collecting information about computers
-      href: samples/collecting-information-about-computers.md
-    - name: Creating Get-WinEvent queries with FilterHashtable
-      href: samples/creating-get-winEvent-queries-with-filterhashtable.md
+      href: samples/sample-scripts-for-administration.yml
+    - name: Working with objects
+      items:
+        - name: Viewing object structure - Get-Member
+          href: samples/viewing-object-structure--get-member-.md
+        - name: Selecting parts of object - Select-Object
+          href: samples/selecting-parts-of-objects--select-object-.md
+        - name: Removing objects from the pipeline - Where-Object
+          href: samples/removing-objects-from-the-pipeline--where-object-.md
+        - name: Sorting objects
+          href: samples/sorting-objects.md
+        - name: Repeating a task for multiple objects - ForEach-Object
+          href: samples/repeating-a-task-for-multiple-objects--foreach-object-.md
+        - name: Creating .NET and COM objects - New-Object
+          href: samples/creating-.net-and-com-objects--new-object-.md
+        - name: Using static classes and methods
+          href: samples/using-static-classes-and-methods.md
+        - name: Getting WMI objects - Get-WmiObject
+          href: samples/getting-wmi-objects--get-wmiobject-.md
+    - name: Managing computers
+      items:
+        - name: Changing computer state
+          href: samples/changing-computer-state.md
+        - name: Collecting information about computers
+          href: samples/collecting-information-about-computers.md
+        - name: Creating Get-WinEvent queries with FilterHashtable
+          href: samples/creating-get-winEvent-queries-with-filterhashtable.md
+    - name: Managing processes & services
+      items:
+        - name: Managing processes with process cmdlets
+          href: samples/managing-processes-with-process-cmdlets.md
+        - name: Managing services
+          href: samples/managing-services.md
+        - name: Managing Windows PowerShell drives
+          href: samples/managing-windows-powershell-drives.md
+        - name: Working with printers
+          href: samples/working-with-printers.md
+        - name: Performing networking tasks
+          href: samples/performing-networking-tasks.md
+        - name: Working with software installations
+          href: samples/working-with-software-installations.md
+        - name: Decode a PowerShell command from a running process
+          href: samples/decode-powershell-command-from-a-running-process.md
+    - name: Working with output
+      items:
+        - name: Redirecting data with Out-* cmdlets
+          href: samples/redirecting-data-with-out---cmdlets.md
+        - name: Using format commands to change output view
+          href: samples/using-format-commands-to-change-output-view.md
+    - name: Manage drives & files
+      items:
+        - name: Managing current location
+          href: samples/managing-current-location.md
+        - name: Working with files and folders
+          href: samples/working-with-files-and-folders.md
+        - name: Working with files folders and registry keys
+          href: samples/working-with-files-folders-and-registry-keys.md
+        - name: Working with registry entries
+          href: samples/working-with-registry-entries.md
+        - name: Working with registry keys
+          href: samples/working-with-registry-keys.md
     - name: Creating UI elements
       items:
         - name: Creating a custom input box
@@ -198,57 +319,13 @@
           href: samples/multiple-selection-list-boxes.md
         - name: Selecting items from a list box
           href: samples/selecting-items-from-a-list-box.md
-    - name: Decode a PowerShell command from a running process
-      href: samples/decode-powershell-command-from-a-running-process.md
-    - name: Managing current location
-      href: samples/managing-current-location.md
-    - name: Managing processes with process cmdlets
-      href: samples/managing-processes-with-process-cmdlets.md
-    - name: Managing services
-      href: samples/managing-services.md
-    - name: Managing Windows PowerShell drives
-      href: samples/managing-windows-powershell-drives.md
-    - name: Manipulating items directly
-      href: samples/manipulating-items-directly.md
-    - name: Performing networking tasks
-      href: samples/performing-networking-tasks.md
-    - name: Redirecting data with Out-* cmdlets
-      href: samples/redirecting-data-with-out---cmdlets.md
-    - name: Using format commands to change output view
-      href: samples/using-format-commands-to-change-output-view.md
-    - name: Working with files and folders
-      href: samples/working-with-files-and-folders.md
-    - name: Working with files folders and registry keys
-      href: samples/working-with-files-folders-and-registry-keys.md
-    - name: Working with objects
+    - name: Other examples
       items:
-        - name: Getting WMI objects - Get-WmiObject
-          href: samples/getting-wmi-objects--get-wmiobject-.md
-        - name: Creating .NET and COM objects - New-Object
-          href: samples/creating-.net-and-com-objects--new-object-.md
-        - name: Removing objects from the pipeline - Where-Object
-          href: samples/removing-objects-from-the-pipeline--where-object-.md
-        - name: Selecting parts of object - Select-Object
-          href: samples/selecting-parts-of-objects--select-object-.md
-        - name: Sorting objects
-          href: samples/sorting-objects.md
-        - name: Repeating a task for multiple objects - ForEach-Object
-          href: samples/repeating-a-task-for-multiple-objects--foreach-object-.md
-        - name: Using static classes and methods
-          href: samples/using-static-classes-and-methods.md
-        - name: Viewing object structure - Get-Member
-          href: samples/viewing-object-structure--get-member-.md
-    - name: Working with printers
-      href: samples/working-with-printers.md
-    - name: Working with registry entries
-      href: samples/working-with-registry-entries.md
-    - name: Working with registry keys
-      href: samples/working-with-registry-keys.md
-    - name: Working with software installations
-      href: samples/working-with-software-installations.md
-    - name: Other useful scripting objects
-      href: samples/other-useful-scripting-objects.md
-    - name: Appendix 1 Compatibility aliases
-      href: samples/appendix-1---compatibility-aliases.md
-    - name: Appendix 2 Creating a custom powershell shortcut
-      href: samples/appendix-2---creating-a-custom-powershell-shortcut.md
+        - name: Manipulating items directly
+          href: samples/manipulating-items-directly.md
+        - name: Other useful scripting objects
+          href: samples/other-useful-scripting-objects.md
+        - name: Appendix 1 Compatibility aliases
+          href: samples/appendix-1---compatibility-aliases.md
+        - name: Appendix 2 Creating a custom powershell shortcut
+          href: samples/appendix-2---creating-a-custom-powershell-shortcut.md

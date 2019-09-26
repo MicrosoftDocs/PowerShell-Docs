@@ -3,14 +3,13 @@ ms.date:  10/18/2018
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821588
+online version: https://go.microsoft.com/fwlink/?linkid=821588
 external help file:  Microsoft.PowerShell.Commands.Management.dll-Help.xml
 title:  Get-ItemProperty
 ---
 # Get-ItemProperty
 
 ## SYNOPSIS
-
 Gets the properties of a specified item.
 
 ## SYNTAX
@@ -281,7 +280,7 @@ Includes the command in the active transaction.
 This parameter is valid only when a transaction is in progress.
 For more information, see Includes the command in the active transaction.
 This parameter is valid only when a transaction is in progress.
-For more information, see
+For more information, see [about_Transactions](../Microsoft.PowerShell.Core/About/about_Transactions.md).
 
 ```yaml
 Type: SwitchParameter

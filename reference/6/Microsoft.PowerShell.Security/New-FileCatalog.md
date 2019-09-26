@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Security
 ms.date: 11/02/2018
-online version: http://go.microsoft.com/fwlink/?LinkId=822569
+online version: https://go.microsoft.com/fwlink/?linkid=2096410
 schema: 2.0.0
 title: New-FileCatalog
 ---
@@ -155,7 +155,7 @@ Accept wildcard characters: False
 
 ### CommonParameters
 
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -174,3 +174,5 @@ The pipeline takes a string that is used as the catalog filename.
 [Test-FileCatalog](Test-FileCatalog.md)
 
 [PowerShellGet](/powershell/module/PowerShellGet)
+
+

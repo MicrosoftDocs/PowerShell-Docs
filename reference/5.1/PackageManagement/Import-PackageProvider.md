@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: PackageManagement
 ms.date: 06/09/2017
-online version: http://go.microsoft.com/fwlink/?LinkId=822306
+online version: https://go.microsoft.com/fwlink/?linkid=822306
 schema: 2.0.0
 title: Import-PackageProvider
 ---
@@ -148,7 +148,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -170,3 +170,5 @@ You can pipe a **PackageProvider** object returned by **Get-PackageProvider** in
 [Register-PackageSource](Register-PackageSource.md)
 
 [Get-PackageProvider](Get-PackageProvider.md)
+
+

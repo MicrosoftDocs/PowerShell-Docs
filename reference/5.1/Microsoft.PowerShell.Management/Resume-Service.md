@@ -4,11 +4,10 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Management
 ms.date: 06/09/2017
-online version: http://go.microsoft.com/fwlink/?LinkId=821628
+online version: https://go.microsoft.com/fwlink/?linkid=821628
 schema: 2.0.0
 title: Resume-Service
 ---
-
 # Resume-Service
 
 ## SYNOPSIS
@@ -17,24 +16,28 @@ Resumes one or more suspended (paused) services.
 ## SYNTAX
 
 ### InputObject (Default)
+
 ```
 Resume-Service [-InputObject] <ServiceController[]> [-PassThru] [-Include <String[]>] [-Exclude <String[]>]
  [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### Default
+
 ```
 Resume-Service [-Name] <String[]> [-PassThru] [-Include <String[]>] [-Exclude <String[]>] [-WhatIf] [-Confirm]
  [<CommonParameters>]
 ```
 
 ### DisplayName
+
 ```
 Resume-Service [-PassThru] -DisplayName <String[]> [-Include <String[]>] [-Exclude <String[]>] [-WhatIf]
  [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+
 The **Resume-Service** cmdlet sends a resume message to the Windows Service Controller for each of the specified services.
 If a service is suspended, it resumes.
 If it is currently running, the message is ignored.
@@ -43,6 +46,7 @@ You can specify the services by their service names or display names, or you can
 ## EXAMPLES
 
 ### Example 1: Resume a service on the local computer
+
 ```
 PS C:\> Resume-Service "sens"
 ```
@@ -52,6 +56,7 @@ The service name is represented in the command by sens.
 The command uses the *Name* parameter to specify the service name of the service, but the command omits the parameter name because the parameter name is optional.
 
 ### Example 2: Resume all suspended services
+
 ```
 PS C:\> Get-Service | Where-Object {$_.Status -eq "Paused"} | Resume-Service
 ```
@@ -66,6 +71,7 @@ In practice, you would use the *WhatIf* parameter to determine the effect of the
 ## PARAMETERS
 
 ### -DisplayName
+
 Specifies the display names of the services to be resumed.
 Wildcard characters are permitted.
 
@@ -78,10 +84,11 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -Exclude
+
 Specifies services that this cmdlet omits.
 The value of this parameter qualifies the *Name* parameter.
 Enter a name element or pattern, such as s*.
@@ -96,10 +103,11 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -Include
+
 Specifies services to resume.
 The value of this parameter qualifies *Name* parameter.
 Enter a name element or pattern, such as s*.
@@ -114,10 +122,11 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -InputObject
+
 Specifies **ServiceController** objects that represent the services to resumed.
 Enter a variable that contains the objects, or type a command or expression that gets the objects.
 
@@ -134,6 +143,7 @@ Accept wildcard characters: False
 ```
 
 ### -Name
+
 Specifies the service names of the services to be resumed.
 
 ```yaml
@@ -149,6 +159,7 @@ Accept wildcard characters: False
 ```
 
 ### -PassThru
+
 Returns an object that represents the service.
 By default, this cmdlet does not generate any output.
 
@@ -165,6 +176,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
+
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
@@ -180,6 +192,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
+
 Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
@@ -196,20 +209,24 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### System.ServiceProcess.ServiceController, System.String
+
 You can pipe a service object or a string that contains a service name to this cmdlet.
 
 ## OUTPUTS
 
 ### None, System.ServiceProcess.ServiceController
+
 This cmdlet generates a **System.ServiceProcess.ServiceController** object that represents the resumed service, if you specify the *PassThru* parameter.
 Otherwise, this cmdlet does not generate any output.
 
 ## NOTES
+
 * The status of services that have been suspended is Paused. When services are resumed, their status is Running.
 * **Resume-Service** can control services only when the current user has permission to do this. If a command does not work correctly, you might not have the required permissions.
 * To find the service names and display names of the services on your system, type `Get-Service`. The service names appear in the **Name** column, and the display names appear in the **DisplayName** column.
@@ -229,3 +246,5 @@ Otherwise, this cmdlet does not generate any output.
 [Stop-Service](Stop-Service.md)
 
 [Suspend-Service](Suspend-Service.md)
+
+

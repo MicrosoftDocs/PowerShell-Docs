@@ -46,10 +46,10 @@ For an integer literal with no type suffix:
 
 For an integer literal with a type suffix:
 
-- If the type suffix is `u` and the value can be represented by type `[int]`
-  then its type is `[int]`.
-- If the type suffix is `u` and the value can be represented by type `[long]`
-  then its type is `[long]`.
+- If the type suffix is `u` and the value can be represented by type `[uint]`
+  then its type is `[uint]`.
+- If the type suffix is `u` and the value can be represented by type `[ulong]`
+  then its type is `[ulong]`.
 - If its value can be represented by type specified then that is its type.
 - Otherwise, that literal is malformed.
 
@@ -100,7 +100,7 @@ than the maximum supported, that literal is malformed.
 ## Numeric multipliers
 
 For convenience, integer and real literals can contain a numeric multiplier,
-which indicates one of a set of commonly used powers of 10. The numeric
+which indicates one of a set of commonly used powers of 2. The numeric
 multiplier can be written in any combination of upper or lowercase letters.
 
 The multiplier suffixes can be used in combination with the `u`, `ul`, and `l`

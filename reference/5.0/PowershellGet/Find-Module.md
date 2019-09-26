@@ -1,11 +1,12 @@
 ---
-ms.date:  3/11/2019
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821658
-external help file:  PSGet-help.xml
-title:  Find-Module
+external help file: PSModule-help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: PowerShellGet
+ms.date: 03/11/2019
+online version: https://go.microsoft.com/fwlink/?linkid=821658
+schema: 2.0.0
+title: Find-Module
 ---
 
 # Find-Module
@@ -19,9 +20,9 @@ Finds modules in a repository that match specified criteria.
 
 ```
 Find-Module [[-Name] <string[]>] [-MinimumVersion <version>] [-MaximumVersion <version>]
-[-RequiredVersion <version>] [-AllVersions] [-IncludeDependencies] [-Filter <string>]
-[-Tag <string[]>] [-Includes <string[]>] [-DscResource <string[]>] [-Command <string[]>]
-[-Repository <string[]>] [<CommonParameters>]
+ [-RequiredVersion <version>] [-AllVersions] [-IncludeDependencies] [-Filter <string>]
+ [-Tag <string[]>] [-Includes <string[]>] [-DscResource <string[]>] [-Command <string[]>]
+ [-Repository <string[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION

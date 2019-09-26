@@ -75,7 +75,7 @@ This usage has the following benefits:
 
 When authoring the DSC configuration in ISE, PowerShell provides IntelliSence for resources and resource properties. Resource definitions under the `$pshome` module path are loaded automatically. When you import resources using the `Import-DSCResource` keyword, the specified resource definitions are added and Intellisense is expanded to include the imported resource's schema.
 
-![Resource Intellisense](/media/resource-intellisense.png)
+![Resource Intellisense](../media/resource-intellisense.png)
 
 > [!NOTE]
 > Beginning in PowerShell 5.0, tab completion was added to the ISE for DSC resources and their properties. For more information, see [Resources](../resources/resources.md).
@@ -101,8 +101,8 @@ Configuration SchemaValidationInCorrectEnumValue
     {
         WindowsFeature ROLE1
         {
-            Name = “Telnet-Client”
-            Ensure = “Invalid”
+            Name = "Telnet-Client"
+            Ensure = "Invalid"
         }
     }
 }
@@ -111,7 +111,7 @@ Configuration SchemaValidationInCorrectEnumValue
 Compiling this Configuration results in an error.
 
 ```output
-PSDesiredStateConfiguration\WindowsFeature: At least one of the values ‘Invalid’ is not supported or valid for property ‘Ensure’ on class ‘WindowsFeature’. Please specify only supported values: Present, Absent.
+PSDesiredStateConfiguration\WindowsFeature: At least one of the values 'Invalid' is not supported or valid for property 'Ensure' on class 'WindowsFeature'. Please specify only supported values: Present, Absent.
 ```
 
 Intellisense and schema validation allow you to catch more errors during parse and compilation time, avoiding complications at run time.
@@ -134,11 +134,11 @@ Installing and using multiple versions of resources side by side was not support
 
 In the image below, two versions of the **xPSDesiredStateConfiguration** module are installed.
 
-![Multiple Resource Versions Fixed](/media/multiple-resource-versions-broken.md)
+![Multiple Resource Versions Fixed](../media/multiple-resource-versions-broken.png)
 
 Copy the contents of your desired module version to the top level of the module directory.
 
-![Multiple Resource Versions Fixed](/media/multiple-resource-versions-fixed.md)
+![Multiple Resource Versions Fixed](../media/multiple-resource-versions-fixed.png)
 
 ### Resource location
 

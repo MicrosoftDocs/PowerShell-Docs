@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: PowerShellGet
 ms.date: 06/09/2017
-online version: http://go.microsoft.com/fwlink/?LinkId=822322
+online version: https://go.microsoft.com/fwlink/?linkid=2096881
 schema: 2.0.0
 title: Find-Script
 ---
@@ -121,7 +121,7 @@ Version    Name                                Type       Repository           D
 
 This command finds all versions of Required-Script02.
 
-### Example 7: Find a script and its dependent modules and scripts
+### Example 7: Find a script and its dependencies
 
 ```
 PS C:\> Find-Script -Name "Script-WithDependencies1" -IncludeDependencies -Repository "LocalRepo1"
@@ -133,7 +133,7 @@ Version    Name                                Type       Repository           D
 2.5        Required-Script2                    Script     LocalRepo1           Description for the Required-Script2 script
 ```
 
-This command finds a script and it dependencies.
+This command finds a script and its dependencies.
 
 ### Example 8: Find scripts with the specified tag
 
@@ -344,10 +344,12 @@ Required: False
 Position: 0
 Default value: None
 Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -Proxy
+
+Specifies a proxy server for the request, rather than connecting directly to the Internet resource.
 
 ```yaml
 Type: Uri
@@ -362,6 +364,8 @@ Accept wildcard characters: False
 ```
 
 ### -ProxyCredential
+
+Specifies a user account that has permission to use the proxy server that is specified by the **Proxy** parameter.
 
 ```yaml
 Type: PSCredential
@@ -425,7 +429,7 @@ Accept wildcard characters: False
 
 ### CommonParameters
 
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -446,3 +450,5 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 [Uninstall-Script](Uninstall-Script.md)
 
 [Update-Script](Update-Script.md)
+
+

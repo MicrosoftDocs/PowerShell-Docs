@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Core
 ms.date: 03/26/2019
-online version: http://go.microsoft.com/fwlink/?LinkId=821499
+online version: https://go.microsoft.com/fwlink/?linkid=821499
 schema: 2.0.0
 title: New-PSSessionConfigurationFile
 ---
@@ -37,7 +37,7 @@ To use the file in a session configuration, use the **Path** parameter of the
 
 The session configuration file that `New-PSSessionConfigurationFile` creates is a human-readable
 text file that contains a hash table of the session configuration properties and values. The file
-has a `.pssc` file name extension.
+has a `.pssc` filename extension.
 
 All parameters of `New-PSSessionConfigurationFile` are optional, except for the **Path** parameter.
 If you omit a parameter, the corresponding key in the session configuration file is commented-out,
@@ -382,7 +382,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: Unknown
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -772,7 +772,7 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: True
+Accept wildcard characters: False
 ```
 
 ### -SchemaVersion
@@ -806,7 +806,7 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: True
+Accept wildcard characters: False
 ```
 
 ### -SessionType
@@ -836,7 +836,7 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: True
+Accept wildcard characters: False
 ```
 
 ### -TranscriptDirectory
@@ -983,7 +983,7 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -VisibleFunctions
@@ -1031,7 +1031,7 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### CommonParameters

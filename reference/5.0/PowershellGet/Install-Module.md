@@ -1,9 +1,9 @@
 ---
-ms.date:  3/7/2019
+ms.date:  03/07/2019
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821663
+online version: https://go.microsoft.com/fwlink/?linkid=821663
 external help file:  PSGet-help.xml
 title:  Install-Module
 ---
@@ -19,15 +19,15 @@ Downloads one or more modules from a repository, and installs them on the local 
 
 ```
 Install-Module [-Name] <string[]> [-MinimumVersion <version>] [-MaximumVersion <version>]
-[-RequiredVersion <version>] [-Repository <string[]>] [-Scope <string>] [-Force] [-WhatIf]
-[-Confirm] [<CommonParameters>]
+ [-RequiredVersion <version>] [-Repository <string[]>] [-Scope <string>] [-Force] [-WhatIf]
+ [-Confirm] [<CommonParameters>]
 ```
 
 ### InputObject
 
 ```
 Install-Module [-InputObject] <psobject[]> [-Scope <string>] [-Force] [-WhatIf] [-Confirm]
-[<CommonParameters>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION

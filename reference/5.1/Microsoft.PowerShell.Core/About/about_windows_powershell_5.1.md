@@ -36,7 +36,7 @@ work in Windows PowerShell 5.1 without changes.
 Windows PowerShell 5.1 is installed by default on Windows Server 2016 and
 Windows 10. To install Windows PowerShell 5.1 on Windows Server 2012 R2,
 Windows 8.1 Enterprise, or Windows 8.1 Pro, see
-[Install and Configure WMF 5.1](/powershell/wmf/5.1/install-configure).
+[Install and Configure WMF 5.1](/powershell/wmf/setup/install-configure).
 Be sure to read the download details, and meet all system requirements, before
 you install Windows Management Framework 5.1.
 
@@ -62,13 +62,13 @@ Starting with version 5.1, PowerShell is available in different editions which d
 
 - [Determine running edition of PowerShell using $PSVersionTable](/powershell/module/microsoft.powershell.core/about/about_automatic_variables)
 - [Filter Get-Module results by CompatiblePSEditions using PSEdition parameter](/powershell/module/microsoft.powershell.core/get-module)
-- [Prevent script execution unless run on a compatible edition of PowerShell](/powershell/gallery/psget/script/scriptwithpseditionsupport)
-- [Declare a module's compatibility to specific PowerShell versions](/powershell/gallery/psget/module/modulewithpseditionsupport)
+- [Prevent script execution unless run on a compatible edition of PowerShell](/powershell/gallery/concepts/script-psedition-support)
+- [Declare a module's compatibility to specific PowerShell versions](/powershell/gallery/concepts/module-psedition-support)
 
 ### Catalog Cmdlets
 
 Two new cmdlets have been added in the
-[Microsoft.PowerShell.Security](https://technet.microsoft.com/en-us/library/hh847877.aspx)
+[Microsoft.PowerShell.Security](/previous-versions/windows/powershell-scripting/hh847877(v=wps.640))
 module; these generate and validate Windows catalog files.
 
 #### New-FileCatalog
@@ -164,7 +164,7 @@ resulted in an error.
 
 In WMF 5.1:
 
-* You can use [ModuleSpecification Constructor (Hashtable)](https://msdn.microsoft.com/library/jj136290).
+* You can use [ModuleSpecification Constructor (Hashtable)](/dotnet/api/microsoft.powershell.commands.modulespecification.-ctor).
   This hash table has the same format as `Get-Module -FullyQualifiedName`.
 
   **Example:** `using module @{ModuleName = 'PSReadLine'; RequiredVersion = '1.1'}`

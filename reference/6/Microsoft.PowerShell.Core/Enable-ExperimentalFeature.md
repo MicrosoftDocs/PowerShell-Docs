@@ -1,10 +1,11 @@
 ---
+ms.date: 03/06/2019
 external help file: System.Management.Automation.dll-Help.xml
 Module Name: Microsoft.PowerShell.Core
-online version:
+online version: https://go.microsoft.com/fwlink/?linkid=2096158
 schema: 2.0.0
+title: Enable-ExperimentalFeature
 ---
-
 # Enable-ExperimentalFeature
 
 ## SYNOPSIS
@@ -113,7 +114,7 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+-WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -136,3 +137,4 @@ Changes to state of an experimental feature only take effect on restart of Power
 [Disable-ExperimentalFeature](Disable-ExperimentalFeature.md)
 
 [Get-ExperimentalFeature](Get-ExperimentalFeature.md)
+

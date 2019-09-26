@@ -1,8 +1,11 @@
 ---
 external help file: Microsoft.Management.Infrastructure.CimCmdlets.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
 Module Name: CimCmdlets
-online version:
+ms.date: 06/09/2017
 schema: 2.0.0
+title: New-CimInstance
 ---
 
 # New-CimInstance
@@ -139,7 +142,7 @@ Accept wildcard characters: False
 ### -CimSession
 Runs the command using the specified CIM session.
 Enter a variable that contains the CIM session, or a command that creates or gets the CIM session, such as the New-CimSession or Get-CimSession cmdlets.
-For more information, see about_CimSessions.
+For more information, see [about_CimSessions](../Microsoft.PowerShell.Core/About/about_CimSession.md).
 
 ```yaml
 Type: CimSession[]
@@ -154,7 +157,7 @@ Accept wildcard characters: False
 ```
 
 ### -ClassName
-Specifies the name of the CIM class of which the operation creates an instance. 
+Specifies the name of the CIM class of which the operation creates an instance.
 NOTE: You can use tab completion to browse the list of classes, because Windows PowerShell gets a list of classes from the local WMI server to provide a list of class names.
 
 ```yaml
@@ -226,7 +229,7 @@ Accept wildcard characters: False
 ### -Namespace
 Specifies the namespace of the class for the new instance.
 
-The default namespace is root/cimv2. 
+The default namespace is root/cimv2.
 NOTE: You can use tab completion to browse the list of namespaces, because PowerShell gets a list of namespaces from the local WMI server to provide the list of namespaces.
 
 ```yaml
@@ -283,14 +286,15 @@ Specifies the resource uniform resource identifier (URI) of the resource class o
 The URI is used to identify a specific type of resource, such as disks or processes, on a computer.
 
 A URI consists of a prefix and a path to a resource.
-For example: 
+For example:
 
-http://schemas.microsoft.com/wbem/wsman/1/wmi/root/cimv2/Win32_LogicalDisk
-http://intel.com/wbem/wscim/1/amt-schema/1/AMT_GeneralSettings
+`http://schemas.microsoft.com/wbem/wsman/1/wmi/root/cimv2/Win32_LogicalDisk`
+
+`http://intel.com/wbem/wscim/1/amt-schema/1/AMT_GeneralSettings`
 
 
-                        
-By default, if you do not specify this parameter, the DMTF standard resource URI http://schemas.dmtf.org/wbem/wscim/1/cim-schema/2/ is used and the class name is appended to it.
+
+By default, if you do not specify this parameter, the DMTF standard resource URI `http://schemas.dmtf.org/wbem/wscim/1/cim-schema/2/` is used and the class name is appended to it.
 
 ResourceURI can only be used with CIM sessions created using the WSMan protocol, or when specifying the ComputerName parameter, which creates a CIM session using WSMan.
 If you specify this parameter without specifying the ComputerName parameter, or if you specify a CIM session created using DCOM protocol, you will get an error, because the DCOM protocol does not support the ResourceURI parameter.
@@ -342,7 +346,7 @@ Accept wildcard characters: False
 
 ### CommonParameters
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+For more information, see [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
 
 ## INPUTS
 

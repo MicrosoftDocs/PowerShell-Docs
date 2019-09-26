@@ -2,7 +2,6 @@
 ms.date:  06/05/2017
 keywords:  powershell,cmdlet
 title:  Creating .NET and COM Objects New Object
-ms.assetid:  2057b113-efeb-465e-8b44-da2f20dbf603
 ---
 # Creating .NET and COM Objects (New-Object)
 
@@ -221,7 +220,7 @@ $ie.Visible = $true
 You can then navigate to a specific Web address by using the Navigate method:
 
 ```powershell
-$ie.Navigate("http://www.microsoft.com/technet/scriptcenter/default.mspx")
+$ie.Navigate("https://devblogs.microsoft.com/scripting/")
 ```
 
 Using other members of the Internet Explorer object model, it is possible to retrieve text content from the Web page. The following command will display the HTML text in the body of the current Web page:

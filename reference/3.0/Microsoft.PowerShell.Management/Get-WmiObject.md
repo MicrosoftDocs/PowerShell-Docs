@@ -3,7 +3,7 @@ ms.date: 5/15/2019
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkID=113337
+online version: https://go.microsoft.com/fwlink/?linkid=113337
 external help file:  Microsoft.PowerShell.Commands.Management.dll-Help.xml
 title:  Get-WmiObject
 ---
@@ -613,7 +613,7 @@ Accept wildcard characters: False
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see about_CommonParameters
-(http://go.microsoft.com/fwlink/?LinkID=113216).
+(https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -655,3 +655,4 @@ To get all properties of a WMI object, use the Get-Member or Format-List   cmdle
 [New-WSManInstance](../Microsoft.WsMan.Management/New-WSManInstance.md)
 
 [Remove-WSManInstance](../Microsoft.WsMan.Management/Remove-WSManInstance.md)
+

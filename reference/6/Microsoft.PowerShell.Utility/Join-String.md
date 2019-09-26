@@ -1,9 +1,10 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Module Name: Microsoft.PowerShell.Utility
-online version:
+online version: https://go.microsoft.com/fwlink/?linkid=2096442
 schema: 2.0.0
-ms.date:  02/01/2019
+ms.date: 02/01/2019
+title: Join-String
 ---
 
 # Join-String
@@ -255,7 +256,7 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+-WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -268,3 +269,4 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## NOTES
 
 ## RELATED LINKS
+

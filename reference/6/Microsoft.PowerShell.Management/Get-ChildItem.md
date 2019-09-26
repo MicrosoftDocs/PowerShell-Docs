@@ -3,9 +3,9 @@ ms.date: 5/14/2019
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821580
+online version: https://go.microsoft.com/fwlink/?linkid=2096194
 external help file:  Microsoft.PowerShell.Commands.Management.dll-Help.xml
-title:  Get-ChildItem
+title: Get-ChildItem
 ---
 # Get-ChildItem
 
@@ -274,7 +274,7 @@ UEFI
 ```
 
 ```powershell
-Get-ChildItem -Path HLKM:\HARDWARE -Exclude D*
+Get-ChildItem -Path HKLM:\HARDWARE -Exclude D*
 ```
 
 ```Output
@@ -501,10 +501,10 @@ Accept wildcard characters: False
 ### -Filter
 
 Specifies a filter to qualify the **Path** parameter. The [FileSystem](../Microsoft.PowerShell.Core/About/about_FileSystem_Provider.md)
-provider is the only installed PowerShell provider that supports the use of filters. You can find
-the syntax for the **FileSystem** filter language in [about_Wildcards](../Microsoft.PowerShell.Core/About/about_Wildcards.md).
-Filters are more efficient than other parameters, because the provider applies them when the cmdlet
-gets the objects rather than having PowerShell filter the objects after they are retrieved.
+provider is the only installed PowerShell provider that supports the use of filters. Filters are
+more efficient than other parameters, because the provider applies them when the cmdlet gets the
+objects rather than having PowerShell filter the objects after they are retrieved. The filter string
+is passed to the .NET API to enumerate files. That API only supports `*` and `?` wildcards.
 
 ```yaml
 Type: String
@@ -512,7 +512,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: Named
+Position: 1
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: True
@@ -617,7 +617,7 @@ Accept wildcard characters: False
 ### -Name
 
 Gets only the names of the items in the location. The output is a string object that can be sent
-down the pipeline to other commands.
+down the pipeline to other commands. Wildcards are permitted.
 
 ```yaml
 Type: SwitchParameter
@@ -628,7 +628,7 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -Path
@@ -702,7 +702,7 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
+-WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 

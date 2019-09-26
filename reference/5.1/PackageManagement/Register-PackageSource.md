@@ -3,8 +3,8 @@ external help file: Microsoft.PowerShell.PackageManagement.dll-Help.xml
 keywords: powershell,cmdlet
 locale: en-us
 Module Name: PackageManagement
-ms.date: 4/1/2019
-online version: http://go.microsoft.com/fwlink/?LinkID=517139
+ms.date: 04/01/2019
+online version: https://go.microsoft.com/fwlink/?linkid=517139
 schema: 2.0.0
 title: Register-PackageSource
 ---
@@ -20,25 +20,25 @@ Adds a package source for a specified package provider.
 
 ```
 Register-PackageSource [-Proxy <Uri>] [-ProxyCredential <PSCredential>] [[-Name] <String>]
-[[-Location] <String>] [-Credential <PSCredential>] [-Trusted] [-Force] [-ForceBootstrap] [-WhatIf]
-[-Confirm] [-ProviderName <String>] [<CommonParameters>]
+ [[-Location] <String>] [-Credential <PSCredential>] [-Trusted] [-Force] [-ForceBootstrap]
+ [-WhatIf] [-Confirm] [-ProviderName <String>] [<CommonParameters>]
 ```
 
 ### NuGet
 
 ```
 Register-PackageSource [-Proxy <Uri>] [-ProxyCredential <PSCredential>] [[-Name] <String>]
-[[-Location] <String>] [-Credential <PSCredential>] [-Trusted] [-Force] [-ForceBootstrap] [-WhatIf]
-[-Confirm] [-ConfigFile <String>] [-SkipValidate] [<CommonParameters>]
+ [[-Location] <String>] [-Credential <PSCredential>] [-Trusted] [-Force] [-ForceBootstrap] [-WhatIf]
+ [-Confirm] [-ConfigFile <String>] [-SkipValidate] [<CommonParameters>]
 ```
 
 ### PowerShellGet
 
 ```
 Register-PackageSource [-Proxy <Uri>] [-ProxyCredential <PSCredential>] [[-Name] <String>]
-[[-Location] <String>] [-Credential <PSCredential>] [-Trusted] [-Force] [-ForceBootstrap] [-WhatIf]
-[-Confirm] [-PackageManagementProvider <String>] [-PublishLocation <String>]
-[-ScriptSourceLocation <String>] [-ScriptPublishLocation <String>] [<CommonParameters>]
+ [[-Location] <String>] [-Credential <PSCredential>] [-Trusted] [-Force] [-ForceBootstrap] [-WhatIf]
+ [-Confirm] [-PackageManagementProvider <String>] [-PublishLocation <String>]
+ [-ScriptSourceLocation <String>] [-ScriptPublishLocation <String>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION

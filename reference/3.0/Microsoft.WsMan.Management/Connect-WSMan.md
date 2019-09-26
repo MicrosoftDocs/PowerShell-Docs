@@ -1,9 +1,9 @@
-﻿---
+---
 ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=141437
+online version: https://go.microsoft.com/fwlink/?linkid=141437
 external help file:  Microsoft.WSMan.Management.dll-Help.xml
 title:  Connect-WSMan
 ---
@@ -154,7 +154,7 @@ The complete identifier for the remote endpoint is in the following format:
 
 For example:
 
-http://server01:8080/WSMAN
+`http://server01:8080/WSMAN`
 
 Internet Information Services (IIS), which hosts the session, forwards requests with this endpoint to the specified application.
 This default setting of "WSMAN" is appropriate for most uses.
@@ -253,7 +253,8 @@ The format of this string is:
 
 The following string is a properly formatted value for this parameter:
 
-http://Server01:8080/WSMAN.
+`http://Server01:8080/WSMAN`.
+
 The URI must be fully qualified .
 
 ```yaml
@@ -372,7 +373,7 @@ Accept wildcard characters: False
 
 ### CommonParameters
 
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -414,3 +415,5 @@ This cmdlet does not generate any output.
 [Set-WSManQuickConfig](Set-WSManQuickConfig.md)
 
 [Test-WSMan](Test-WSMan.md)
+
+

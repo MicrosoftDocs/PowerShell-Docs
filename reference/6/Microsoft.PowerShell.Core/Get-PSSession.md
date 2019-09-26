@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Core
 ms.date: 5/15/2019
-online version: http://go.microsoft.com/fwlink/?LinkId=821488
+online version: https://go.microsoft.com/fwlink/?linkid=2096165
 schema: 2.0.0
 title: Get-PSSession
 ---
@@ -662,9 +662,8 @@ $PSSessionOption preference variable and in the session configuration.
 However, they do not take precedence over maximum values, quotas or limits set in the session
 configuration.
 
-For a description of the session options, including the default values, see New-PSSessionOption.
-For information about the $PSSessionOption preference variable, see [about_Preference_Variables](About/about_Preference_Variables.md) in
-the Microsoft TechNet library.
+For a description of the session options, including the default values, see `New-PSSessionOption`.
+For information about the `$PSSessionOption` preference variable, see [about_Preference_Variables](About/about_Preference_Variables.md).
 For more information about session configurations, see [about_Session_Configurations](About/about_Session_Configurations.md).
 
 ```yaml

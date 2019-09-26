@@ -3,7 +3,7 @@ ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821609
+online version: https://go.microsoft.com/fwlink/?linkid=821609
 external help file:  Microsoft.PowerShell.Commands.Management.dll-Help.xml
 title:  New-WebServiceProxy
 ---
@@ -185,7 +185,7 @@ Specifies the URI of the Web service.
 Enter a URI or the path and file name of a file that contains a service description.
 
 The URI must refer to an .asmx page or to a page that returns a service description.
-To return a service description of a Web service that was created by using ASP.NET, append `?WSDL` to the URL of the Web service, for example: http://www.contoso.com/MyWebService.asmx?WSDL.
+To return a service description of a Web service that was created by using ASP.NET, append "?WSDL" to the URL of the Web service (for example,  `http://www.contoso.com/MyWebService.asmx?WSDL`).
 
 ```yaml
 Type: Uri
@@ -219,7 +219,7 @@ Accept wildcard characters: False
 
 ### CommonParameters
 
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -244,3 +244,5 @@ The default is generated from the input URI.
 ## RELATED LINKS
 
 [New-Service](New-Service.md)
+
+

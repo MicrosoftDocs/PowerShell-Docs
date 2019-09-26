@@ -1,9 +1,9 @@
 ---
 ms.date:  06/12/2017
 keywords:  dsc,powershell,configuration,setup
-title:  SendConfigurationApply method of the MSFT_DSCLocalConfigurationManager class
+title:  SendConfigurationApply method
 ---
-# SendConfigurationApply method of the MSFT_DSCLocalConfigurationManager class
+# SendConfigurationApply method
 
 Sends the configuration document to the managed node and uses the Configuration Agent to apply the configuration.
 

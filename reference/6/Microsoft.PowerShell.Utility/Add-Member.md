@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Utility
 ms.date: 4/26/2019
-online version: http://go.microsoft.com/fwlink/?LinkId=821748
+online version: https://go.microsoft.com/fwlink/?linkid=2096517
 schema: 2.0.0
 title: Add-Member
 ---
@@ -121,7 +121,7 @@ $A.Size
 ### Example 3: Add a StringUse note property to a string
 
 This example adds the **StringUse** note property to a string.
-Because `Add-Member` cannot add types to **String** input objects, you can speciy the **PassThru**
+Because `Add-Member` cannot add types to **String** input objects, you can specify the **PassThru**
 parameter to generate an output object. The last command in the example displays the new property.
 
 This example uses the **NotePropertyMembers** parameter. The value of the **NotePropertyMembers**

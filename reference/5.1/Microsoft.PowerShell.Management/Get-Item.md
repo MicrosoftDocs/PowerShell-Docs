@@ -3,14 +3,13 @@ ms.date:  10/18/2018
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821587
+online version: https://go.microsoft.com/fwlink/?linkid=821587
 external help file:  Microsoft.PowerShell.Commands.Management.dll-Help.xml
 title:  Get-Item
 ---
 # Get-Item
 
 ## SYNOPSIS
-
 Gets the item at the specified location.
 
 ## SYNTAX
@@ -271,7 +270,7 @@ Required: True
 Position: 0
 Default value: None
 Accept pipeline input: True (ByPropertyName, ByValue)
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -Stream

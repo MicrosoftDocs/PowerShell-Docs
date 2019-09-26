@@ -4,11 +4,10 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Utility
 ms.date: 12/19/2018
-online version: http://go.microsoft.com/fwlink/?LinkId=821772
+online version: https://go.microsoft.com/fwlink/?linkid=821772
 schema: 2.0.0
 title: Format-Custom
 ---
-
 # Format-Custom
 
 ## SYNOPSIS
@@ -223,7 +222,7 @@ Required: False
 Position: 0
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -ShowError
@@ -267,7 +266,7 @@ Accept wildcard characters: False
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see
-[about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -303,3 +302,4 @@ group the objects, use `Sort-Object` to sort them.
 [Format-Wide](Format-Wide.md)
 
 [Get-Process](../Microsoft.PowerShell.Management/Get-Process.md)
+

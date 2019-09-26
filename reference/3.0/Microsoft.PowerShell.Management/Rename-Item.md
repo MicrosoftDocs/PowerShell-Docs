@@ -3,14 +3,13 @@ ms.date:  10/18/2018
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkID=113382
+online version: https://go.microsoft.com/fwlink/?linkid=113382
 external help file:  Microsoft.PowerShell.Commands.Management.dll-Help.xml
 title:  Rename-Item
 ---
 # Rename-Item
 
 ## SYNOPSIS
-
 Renames an item in a PowerShell provider namespace.
 
 ## SYNTAX
@@ -199,7 +198,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -217,6 +216,24 @@ Required: True
 Position: 1
 Default value: None
 Accept pipeline input: True (ByPropertyName, ByValue)
+Accept wildcard characters: False
+```
+
+### -UseTransaction
+
+Includes the command in the active transaction.
+This parameter is valid only when a transaction is in progress.
+For more information, see [about_Transactions](../Microsoft.PowerShell.Core/About/about_Transactions.md).
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: usetx
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -253,24 +270,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -UseTransaction
-
-Includes the command in the active transaction.
-This parameter is valid only when a transaction is in progress.
-For more information, see [about_Transactions](../Microsoft.PowerShell.Core/About/about_Transactions.md).
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: (All)
-Aliases: usetx
-
-Required: False
-Position: Named
-Default value: False
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### CommonParameters
 
 This cmdlet supports the common parameters: `-Debug`, `-ErrorAction`, `-ErrorVariable`, `-InformationAction`, `-InformationVariable`, `-OutVariable`, `-OutBuffer`, `-PipelineVariable`, `-Verbose`, `-WarningAction`, and `-WarningVariable`. For more information, see [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
@@ -297,6 +296,8 @@ Otherwise, this cmdlet does not generate any output.
 [Clear-Item](Clear-Item.md)
 
 [Copy-Item](Copy-Item.md)
+
+[Get-ChildItem](Get-ChildItem.md)
 
 [Get-Item](Get-Item.md)
 

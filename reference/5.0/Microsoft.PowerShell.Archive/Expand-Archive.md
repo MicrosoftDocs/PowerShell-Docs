@@ -3,7 +3,7 @@ ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821655
+online version: https://go.microsoft.com/fwlink/?linkid=821655
 external help file:  Microsoft.PowerShell.Archive-help.xml
 title:  Expand-Archive
 ---
@@ -159,7 +159,7 @@ Accept wildcard characters: False
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see
-[about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -176,3 +176,4 @@ You can pipe a string that contains a path to an existing archive file.
 ## RELATED LINKS
 
 [Compress-Archive](Compress-Archive.md)
+
