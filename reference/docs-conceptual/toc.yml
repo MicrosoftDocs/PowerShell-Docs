@@ -172,6 +172,102 @@
           href: components/web-access/use-the-web-based-windows-powershell-console.md
     - name: Workflows Guide
       href: components/workflows-guide.md
+- name: PowerShell Gallery
+  items:
+    - name: Overview
+      href: gallery/overview.md
+    - name: Installing PowerShellGet
+      href: gallery/installing-psget.md
+    - name: Getting Started
+      href: gallery/getting-started.md
+    - name: How-To
+      items:
+        - name: Finding Packages in the Gallery
+          items:
+            - name: Searching For Packages
+              href: gallery/how-to/finding-packages/search-syntax.md
+            - name: Searching by Compatibility
+              href: gallery/how-to/finding-packages/searching-by-compatibility.md
+            - name: Filtering Search Results
+              href: gallery/how-to/finding-packages/filtering-packages.md
+        - name: Publishing to the Gallery
+          items:
+            - name: Creating and publishing Packages
+              href: gallery/how-to/publishing-packages/publishing-a-package.md
+            - name: Creating a PowerShellGallery Account
+              href: gallery/how-to/publishing-packages/creating-an-account.md
+            - name: Unlisting Packages
+              href: gallery/how-to/publishing-packages/unlisting-packages.md
+            - name: Deleting Packages
+              href: gallery/how-to/publishing-packages/deleting-packages.md
+            - name: Managing Packages owners
+              href: gallery/how-to/publishing-packages/managing-package-owners.md
+        - name: Working with Packages
+          items:
+            - name: FileList view
+              href: gallery/how-to/working-with-packages/filelist-view.md
+            - name: Deploy to Azure Automation
+              href: gallery/how-to/working-with-packages/deploy-to-azure-automation.md
+            - name: Manual Package Download
+              href: gallery/how-to/working-with-packages/manual-download.md
+            - name: Packages that Require License Acceptance
+              href: gallery/how-to/working-with-packages/packages-that-require-license-acceptance.md
+            - name: Contacting Packages owners
+              href: gallery/how-to/working-with-packages/contacting-package-owners.md
+            - name: Providing Feedback via Social Media or Comments
+              href: gallery/how-to/working-with-packages/social-media-feedback.md
+        - name: Managing Account Profile
+          items:
+            - name: PowerShell Gallery Account Settings
+              href: gallery/how-to/managing-profile/managing-account.md
+            - name: Managing API Keys
+              href: gallery/how-to/managing-profile/creating-apikeys.md
+        - name: Working with Local PowerShellGet Repositories
+          href: gallery/how-to/working-with-local-psrepositories.md
+    - name: Concepts
+      items:
+        - name: Publishing guidelines and best practices
+          href: gallery/concepts/publishing-guidelines.md
+        - name: Packages manifest and Gallery UI
+          href: gallery/concepts/package-manifest-affecting-ui.md
+        - name: Requiring Specific PSEditions
+          items:
+            - name: Writing Scripts with PSEditions Support
+              href: gallery/concepts/script-psedition-support.md
+            - name: Writing Modules with PSEdition support
+              href: gallery/concepts/module-psedition-support.md
+        - name: Requiring License Acceptance
+          items:
+            - name: Requiring License Acceptance for Scripts
+              href: gallery/concepts/script-license-acceptance.md
+            - name: Requiring License Acceptance for Modules
+              href: gallery/concepts/module-license-acceptance.md
+        - name: Defining Packages as PreRelease
+          items:
+            - name: Defining a Module as PreRelease
+              href: gallery/concepts/module-prerelease-support.md
+            - name: Defining a Script as PreRelease
+              href: gallery/concepts/script-prerelease-support.md
+        - name: PSScriptAnalyzer Rule Profile
+          href: gallery/concepts/scriptanalyzer-rule-profile.md
+    - name: Getting Support
+      items:
+        - name: Report Abuse
+          href: gallery/how-to/getting-support/report-abuse.md
+        - name: Dispute resolution
+          href: gallery/how-to/getting-support/dispute-resolution.md
+        - name: Contacting administrators
+          href: gallery/how-to/getting-support/contacting-administrators.md
+        - name: Troubleshooting
+          href: gallery/how-to/getting-support/troubleshooting-cmdlets.md
+        - name: Bootstrapping NuGet provider and NuGet.exe
+          href: gallery/how-to/getting-support/bootstrapping-nuget.md
+        - name: GDPR Compliance
+          href: gallery/how-to/getting-support/gdpr-dsr-policy.md
+    - name: Gallery FAQs
+      href: gallery/faqs.md
+    - name: PowerShellGet cmdlets
+      href: gallery/'https://docs.microsoft.com/powershell/module/powershellget/'
 - name: What's New
   items:
     - name: What's new in PowerShell Core 6.x
