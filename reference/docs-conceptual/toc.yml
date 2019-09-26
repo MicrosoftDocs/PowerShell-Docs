@@ -266,8 +266,6 @@
           href: gallery/how-to/getting-support/gdpr-dsr-policy.md
     - name: Gallery FAQs
       href: gallery/faqs.md
-    - name: PowerShellGet cmdlets
-      href: gallery/'https://docs.microsoft.com/powershell/module/powershellget/'
 - name: What's New
   items:
     - name: What's new in PowerShell Core 6.x

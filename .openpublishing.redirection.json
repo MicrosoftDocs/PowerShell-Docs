@@ -801,11 +801,6 @@
       "redirect_document_id": false
     },
     {
-      "source_path": "reference/6/Microsoft.PowerShell.Core/About/about_Logging.md",
-      "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/About/about_Logging_Non-Windows?view=powershell-6",
-      "redirect_document_id": false
-    },
-    {
       "source_path": "reference/6/Microsoft.PowerShell.Core/about/about_psreadline.md",
       "redirect_url": "/powershell/module/psreadline/about/about_psreadline?view=powershell-6",
       "redirect_document_id": false
