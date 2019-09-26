@@ -20,10 +20,9 @@ of this documentation follows the guidelines for publishing
 [High Quality DSC Resource Modules](https://github.com/PowerShell/DscResources/blob/master/HighQualityModuleGuidelines.md).
 
 For the mechanics of publishing a package to the PowerShell Gallery, see
-[Creating and Publishing a Package](/powershell/gallery/how-to/publishing-packages/publishing-a-package).
+[Creating and Publishing a Package](../how-to/publishing-packages/publishing-a-package.md).
 
-Feedback on these guidelines is welcomed.
-If you do have feedback, please open issues in our [GitHub documentation repository](https://github.com/powershell/powershell-docs/issues).
+Feedback on these guidelines is welcomed. If you do have feedback, please open issues in our [GitHub documentation repository](https://github.com/powershell/powershell-docs/issues).
 
 ## Best practices for publishing packages
 
@@ -64,7 +63,7 @@ Review the results, and ensure that:
 - All Errors are corrected or addressed in your documentation.
 - All Warnings are reviewed, and addressed where applicable.
 
-Users who acquire packages from the PowerShell Gallery are strongly encouraged to run
+Users who download packages from the PowerShell Gallery are strongly encouraged to run
 **PSScriptAnalyzer** and evaluate all Errors and Warnings. Users are very likely to contact package
 owners if they see that there's an error reported by **PSScriptAnalyzer**. If there's a compelling
 reason for your package to keep code that is flagged as an error, add that information to your
@@ -176,8 +175,10 @@ site.
 
 Adding a link is done by including ProjectURI in the PSData section of the manifest as follows:
 
-        # A URL to the main website for this project.
-        ProjectUri = 'https://github.com/powershell/powershell'
+```
+  # A URL to the main website for this project.
+  ProjectUri = 'https://github.com/powershell/powershell'
+```
 
 When a ProjectURI is provided, the PowerShell Gallery will include a link to the Project Site on the
 left side of the package page.
