@@ -26,38 +26,37 @@ For traditional Windows PowerShell workloads, see [Installing Windows PowerShell
 
 ## Editing with VSCode
 
-### [1. Installing VSCode](https://code.visualstudio.com/Docs/setup/setup-overview)
+1. [Installing VSCode](https://code.visualstudio.com/Docs/setup/setup-overview)
 
-- **Linux**: follow the installation instructions on the [Running VSCode on Linux](https://code.visualstudio.com/docs/setup/linux)
-  page
-- **macOS**: follow the installation instructions on the [Running VSCode on macOS](https://code.visualstudio.com/docs/setup/mac)
-  page
+   - **Linux**: follow the installation instructions on the [Running VSCode on Linux](https://code.visualstudio.com/docs/setup/linux)
+     page
+   - **macOS**: follow the installation instructions on the [Running VSCode on macOS](https://code.visualstudio.com/docs/setup/mac)
+     page
 
-  > [!IMPORTANT]
-  > On macOS, you must install OpenSSL for the PowerShell extension to work correctly. The easiest
-  > way to accomplish this is to install [Homebrew](https://brew.sh/) and then run
-  > `brew install openssl`. VSCode can now load the PowerShell extension successfully.
+     > [!IMPORTANT]
+     > On macOS, you must install OpenSSL for the PowerShell extension to work correctly. The
+     > easiest way to accomplish this is to install [Homebrew](https://brew.sh/) and then run
+     > `brew install openssl`. VSCode can now load the PowerShell extension successfully.
 
-- **Windows**: follow the installation instructions on the [Running VSCode on Windows](https://code.visualstudio.com/docs/setup/windows) page
+   - **Windows**: follow the installation instructions on the [Running VSCode on Windows](https://code.visualstudio.com/docs/setup/windows) page
 
-### 2. Installing PowerShell Extension
+2. Installing PowerShell Extension
 
-- Launch the VSCode app by:
-  - **Windows**: typing `code` in your PowerShell session
-  - **Linux**: typing `code` in your terminal
-  - **macOS**: typing `code` in your terminal
+   - Launch the VSCode app by:
+     - **Windows**: typing `code` in your PowerShell session
+     - **Linux**: typing `code` in your terminal
+     - **macOS**: typing `code` in your terminal
+   - Launch **Quick Open** by pressing <kbd>Ctrl</kbd>+<kbd>P</kbd> (<kbd>Cmd</kbd>+<kbd>P</kbd>
+     on Mac).
+   - In Quick Open, type `ext install powershell` and hit **Enter**.
+   - The **Extensions** view opens on the Side Bar. Select the PowerShell extension from Microsoft.
+     You should see something like below:
 
-- Launch **Quick Open** by pressing <kbd>Ctrl</kbd>+<kbd>P</kbd> (<kbd>Cmd</kbd>+<kbd>P</kbd> on
-  Mac).
-- In Quick Open, type `ext install powershell` and hit **Enter**.
-- The **Extensions** view opens on the Side Bar. Select the PowerShell extension from Microsoft. You
-  should see something like below:
+     ![VSCode](../../images/using-vscode/vscode.png)
 
-  ![VSCode](../../images/using-vscode/vscode.png)
-
-- Click the **Install** button on the PowerShell extension from Microsoft.
-- After the install, you see the **Install** button turns to **Reload**. Click on **Reload**.
-- After VSCode has reload, you are ready for editing.
+   - Click the **Install** button on the PowerShell extension from Microsoft.
+   - After the install, you see the **Install** button turns to **Reload**. Click on **Reload**.
+   - After VSCode has reload, you are ready for editing.
 
 For example, to create a new file, click **File->New**. To save it, click **File->Save** and then
 provide a file name, let's say `HelloWorld.ps1`. To close the file, click on "x" next to the file
@@ -97,9 +96,10 @@ choose the version:
 1. Click on "PowerShell: Show Session Menu".
 1. Choose the version of PowerShell you want to use from the list - for example, "PowerShell Core".
 
-> [!IMPORTANT] This feature looks at a few well-known paths on different operating systems to
-> discover install locations of PowerShell. If you installed PowerShell to a non-typical location,
-> it might not show up initially in the Session Menu. You can extend the session menu by
+> [!IMPORTANT]
+> This feature looks at a few well-known paths on different operating systems to discover
+> install locations of PowerShell. If you installed PowerShell to a non-typical location, it might
+> not show up initially in the Session Menu. You can extend the session menu by
 > [adding your own custom paths](#adding-your-own-powershell-paths-to-the-session-menu) as described
 > below.
 
