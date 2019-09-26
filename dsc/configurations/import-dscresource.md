@@ -11,7 +11,7 @@ title:  Using Import-DSCResource
 The syntax for `Import-DSCResource` is shown below.  When specifying modules by name, it is a requirement to list each on a new line.
 
 ```syntax
-Import-DscResource [-Name <ResourceName(s)>] [-ModuleName <ModuleName>]
+Import-DscResource [-Name <ResourceName(s)>] [-ModuleName <ModuleName>] [-ModuleVersion <ModuleVersion>]
 ```
 
 |Parameter  |Description  |
