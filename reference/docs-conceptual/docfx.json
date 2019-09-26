@@ -15,7 +15,7 @@
             "ms.tgt_pltfr": "windows, macos, linux",
             "author": "sdwheeler",
             "ms.author": "sewhee",
-            "titleSuffix": "Microsoft Docs",
+            "titleSuffix": "PowerShell",
             "_op_documentIdPathDepotMapping": {
               "reference/docs-conceptual/wmf/": {
                 "folder_relative_path_in_docset": "wmf/"
