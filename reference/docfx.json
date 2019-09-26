@@ -141,6 +141,7 @@
                 "**/PSWorkflow/**.md": "SteveL-MSFT",
                 "**/PSWorkflowUtility/**.md": "SteveL-MSFT",
                 "docs-conceptual/learn/remoting/jea/**.md": "rpsqrd",
+                "docs-conceptual/gallery/**/**.md": "SydneyhSmith",
                 "docs-conceptual/**.md": "joeyaiello"
             },
             "ms.author": {
@@ -166,6 +167,7 @@
                 "**/PSWorkflow/**.md": "slee",
                 "**/PSWorkflowUtility/**.md": "slee",
                 "docs-conceptual/learn/remoting/jea/**/**.md": "ryanpu",
+                "docs-conceptual/gallery/**/**.md": "sysmith",
                 "docs-conceptual/**.md": "jaiello"
             }
         },
