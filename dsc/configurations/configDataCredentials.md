@@ -153,7 +153,7 @@ The first error message has a URL with documentation.
 This link explains how to encrypt passwords
 using a [ConfigurationData](./configData.md)
 structure and a certificate.
-For more information on certificates and DSC [read this post](http://aka.ms/certs4dsc).
+For more information on certificates and DSC [read this post](https://aka.ms/certs4dsc).
 
 To force a plain text password,
 the resource requires the `PsDscAllowPlainTextPassword` keyword in the configuration data section

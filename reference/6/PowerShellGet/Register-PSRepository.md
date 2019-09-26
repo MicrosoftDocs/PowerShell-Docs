@@ -189,7 +189,7 @@ Accept wildcard characters: False
 ### -PublishLocation
 
 Specifies the URI of the publish location.
-For example, for NuGet-based repositories, the publish location is similar to http://someNuGetUrl.com/api/v2/Packages.
+For example, for NuGet-based repositories, the publish location is similar to `https://someNuGetUrl.com/api/v2/Packages`.
 
 ```yaml
 Type: Uri
@@ -240,7 +240,7 @@ Accept wildcard characters: False
 Specifies the URI for discovering and installing modules from this repository.
 A URI can be a NuGet server feed (most common situation), HTTP, HTTPS, FTP or file location.
 
-For example, for NuGet-based repositories, the source location is similar to http://someNuGetUrl.com/api/v2.
+For example, for NuGet-based repositories, the source location is similar to `https://someNuGetUrl.com/api/v2`.
 
 ```yaml
 Type: Uri

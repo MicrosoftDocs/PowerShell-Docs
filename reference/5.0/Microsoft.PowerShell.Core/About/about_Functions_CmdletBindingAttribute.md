@@ -61,9 +61,7 @@ $ConfirmPreference preference variable. (The default value of the
 argument is Medium.) Specify this argument only when the
 SupportsShouldProcess argument is also specified.
 
-For more information about confirmation requests, see "Requesting
-Confirmation" in the MSDN (Microsoft Developer Network) library at
-http://go.microsoft.com/fwlink/?LinkId=136658.
+For more information about confirmation requests, see [Requesting Confirmation](/powershell/developer/cmdlet/requesting-confirmation).
 
 ## DefaultParameterSetName
 

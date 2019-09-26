@@ -128,7 +128,7 @@ Configuration xVirtualMachine
 
 ### Saving the configuration as a composite resource
 
-To use the parameterized configuration as a DSC resource, save it in a directory structure like that of any other MOF-based resource, and name it with a **.schema.psm1** extension. For this example, we’ll name the file **xVirtualMachine.schema.psm1**. You also need to create a manifest named **xVirtualMachine.psd1** that contains the following line. Note that this is in addition to **MyDscResources.psd1**, the module manifest for all resources under the **MyDscResources** folder.
+To use the parameterized configuration as a DSC resource, save it in a directory structure like that of any other MOF-based resource, and name it with a **.schema.psm1** extension. For this example, we'll name the file **xVirtualMachine.schema.psm1**. You also need to create a manifest named **xVirtualMachine.psd1** that contains the following line. Note that this is in addition to **MyDscResources.psd1**, the module manifest for all resources under the **MyDscResources** folder.
 
 ```powershell
 RootModule = 'xVirtualMachine.schema.psm1'

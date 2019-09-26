@@ -50,8 +50,8 @@ session on the local computer.
 
 To transmit the commands and receive the output, PowerShell uses the
 WS-Management protocol. For information about the WS-Management protocol, see
-[WS-Management Protocol](https://go.microsoft.com/fwlink/?LinkId=144634) in
-the MSDN library.
+[WS-Management Protocol](/windows/win32/winrm/ws-management-protocol) in
+the Windows documentation.
 
 Beginning in Windows PowerShell 3.0, remote sessions are stored on the remote
 computer. This enables you to disconnect from the session and reconnect from a

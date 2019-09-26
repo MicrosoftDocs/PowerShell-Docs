@@ -171,7 +171,7 @@ Id   Name     State      HasMoreData   Location       Command
 ```
 
 ```powershell
-# Use the Receive-Job cmdlet to get the results of ust the Job3 child job that ran on the Server02 computer.
+# Use the Receive-Job cmdlet to get the results of just the Job3 child job that ran on the Server02 computer.
 # Use the *Keep* parameter to allow you to view the aggregated stream data more than once.
 Receive-Job -Name Job3 -Keep
 ```
@@ -367,7 +367,6 @@ Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
-
 
 ### -Id
 

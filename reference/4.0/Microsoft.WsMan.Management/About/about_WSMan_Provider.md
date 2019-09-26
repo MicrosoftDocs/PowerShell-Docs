@@ -469,9 +469,9 @@ resource. `Win32_LogicalDisk="C:\\"` is a specific instance of the resource.
 A Uniform Resource Identifier (URI) contains a prefix and a path to a resource.
 For example:
 
-http://schemas.microsoft.com/wbem/wsman/1/wmi/root/cimv2/Win32_LogicalDisk
+`http://schemas.microsoft.com/wbem/wsman/1/wmi/root/cimv2/Win32_LogicalDisk`
 
-http://schemas.dmtf.org/wbem/wscim/1/cim-schema/2/CIM_NumericSensor
+`http://schemas.dmtf.org/wbem/wscim/1/cim-schema/2/CIM_NumericSensor`
 
 #### Cmdlets Supported
 
@@ -484,9 +484,9 @@ of resource, such as a disk or a process, on a computer.
 
 A URI consists of a prefix and a path to a resource. For example:
 
-http://schemas.microsoft.com/wbem/wsman/1/wmi/root/cimv2/Win32_LogicalDisk
+`http://schemas.microsoft.com/wbem/wsman/1/wmi/root/cimv2/Win32_LogicalDisk`
 
-http://schemas.dmtf.org/wbem/wscim/1/cim-schema/2/CIM_NumericSensor
+`http://schemas.dmtf.org/wbem/wscim/1/cim-schema/2/CIM_NumericSensor`
 
 #### Cmdlets Supported
 
@@ -535,7 +535,7 @@ A URL prefix on which to accept HTTP or HTTPS requests. This is a string
 containing only the characters `[a-z]`, `[A-Z]`, `[9-0]`,
 underscore (`_`) and backslash (`/`). The string must not start with or end
 with a backslash (`/`). For example, if the computer name is "SampleComputer",
-the WS-Management client would specify "http://SampleMachine/URLPrefix"
+the WS-Management client would specify `http://SampleMachine/URLPrefix`
 in the destination address.
 
 #### Cmdlets Supported

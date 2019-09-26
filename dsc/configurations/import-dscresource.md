@@ -99,8 +99,8 @@ Configuration SchemaValidationInCorrectEnumValue
     {
         WindowsFeature ROLE1
         {
-            Name = “Telnet-Client”
-            Ensure = “Invalid”
+            Name = "Telnet-Client"
+            Ensure = "Invalid"
         }
     }
 }
@@ -109,7 +109,7 @@ Configuration SchemaValidationInCorrectEnumValue
 Compiling this Configuration results in an error.
 
 ```output
-PSDesiredStateConfiguration\WindowsFeature: At least one of the values ‘Invalid’ is not supported or valid for property ‘Ensure’ on class ‘WindowsFeature’. Please specify only supported values: Present, Absent.
+PSDesiredStateConfiguration\WindowsFeature: At least one of the values 'Invalid' is not supported or valid for property 'Ensure' on class 'WindowsFeature'. Please specify only supported values: Present, Absent.
 ```
 
 Intellisense and schema validation allow you to catch more errors during parse and compilation time, avoiding complications at run time.

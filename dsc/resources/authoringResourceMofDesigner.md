@@ -27,7 +27,7 @@ To create the properties, we use the **New-xDscResourceProperty** cmdlet. The fo
 
 ```powershell
 $UserName = New-xDscResourceProperty –Name UserName -Type String -Attribute Key
-$Ensure = New-xDscResourceProperty –Name Ensure -Type String -Attribute Write –ValidateSet “Present”, “Absent”
+$Ensure = New-xDscResourceProperty –Name Ensure -Type String -Attribute Write –ValidateSet "Present", "Absent"
 $DomainCredential = New-xDscResourceProperty –Name DomainCredential -Type PSCredential -Attribute Write
 $Password = New-xDscResourceProperty –Name Password -Type PSCredential -Attribute Write
 ```
@@ -37,7 +37,7 @@ $Password = New-xDscResourceProperty –Name Password -Type PSCredential -Attrib
 Now that the resource properties have been created, we can call the **New-xDscResource** cmdlet to create the resource. The **New-xDscResource** cmdlet takes the list of properties as parameters. It also takes the path where the module should be created, the name of the new resource, and the name of the module in which it is contained. The following PowerShell command creates the resource.
 
 ```powershell
-New-xDscResource –Name Demo_ADUser –Property $UserName, $Ensure, $DomainCredential, $Password –Path ‘C:\Program Files\WindowsPowerShell\Modules’ –ModuleName Demo_DSCModule
+New-xDscResource –Name Demo_ADUser –Property $UserName, $Ensure, $DomainCredential, $Password –Path 'C:\Program Files\WindowsPowerShell\Modules' –ModuleName Demo_DSCModule
 ```
 
 The **New-xDscResource** cmdlet creates the MOF schema, a skeleton resource script, the required directory structure for your new resource, and a manifest for the module that exposes the new resource.
@@ -162,8 +162,8 @@ If you need to add or modify the parameter list of the resource, you can call th
 For example, suppose you want to include the last log in time for the user in our resource. Rather than writing the resource again completely, you can call the **New-xDscResourceProperty** to create the new property, and then call **Update-xDscResource** and add your new property to the properties list.
 
 ```powershell
-$lastLogon = New-xDscResourceProperty –Name LastLogon –Type Hashtable –Attribute Write –Description “For mapping users to their last log on time”
-Update-xDscResource –Name ‘Demo_ADUser’ –Property $UserName, $Ensure, $DomainCredential, $Password, $lastLogon -Force
+$lastLogon = New-xDscResourceProperty –Name LastLogon –Type Hashtable –Attribute Write –Description "For mapping users to their last log on time"
+Update-xDscResource –Name 'Demo_ADUser' –Property $UserName, $Ensure, $DomainCredential, $Password, $lastLogon -Force
 ```
 
 ## Testing a resource schema

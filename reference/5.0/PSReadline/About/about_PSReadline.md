@@ -947,7 +947,15 @@ typical call looks like
 PSReadLine requires PowerShell 3.0, or newer, and the console host. It does
 not work in PowerShell ISE. It does work in the console of Visual Studio Code.
 
-### FEEDBACK & CONTRIBUTING TO PSREADLINE
+### COMMAND HISTORY
+
+PSReadLine maintains a history file containing all the commands and data you have entered from the
+command line. This may contain sensitive data including passwords. For example, if you use the
+`ConvertTo-SecureString` cmdlet the password is logged in the history file as plain text. The
+history files is a file named `$($host.Name)_history.txt`. On Windows systems the history file is
+stored at `$env:APPDATA\Microsoft\Windows\PowerShell\PSReadLine`. 
+
+### FEEDBACK & CONTRIBUTING TO PSReadLine
 
 [PSReadLine on GitHub](https://github.com/lzybkr/PSReadLine)
 

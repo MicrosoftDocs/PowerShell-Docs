@@ -7,7 +7,6 @@ online version: https://go.microsoft.com/fwlink/?linkid=293950
 external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 title:  ConvertTo-Html
 ---
-
 # ConvertTo-Html
 
 ## SYNOPSIS
@@ -16,6 +15,7 @@ Converts Microsoft .NET Framework objects into HTML that can be displayed in a W
 ## SYNTAX
 
 ### Page (Default)
+
 ```
 ConvertTo-Html [-InputObject <PSObject>] [[-Property] <Object[]>] [[-Body] <String[]>] [[-Head] <String[]>]
  [[-Title] <String>] [-As <String>] [-CssUri <Uri>] [-PostContent <String[]>] [-PreContent <String[]>]
@@ -23,12 +23,14 @@ ConvertTo-Html [-InputObject <PSObject>] [[-Property] <Object[]>] [[-Body] <Stri
 ```
 
 ### Fragment
+
 ```
 ConvertTo-Html [-InputObject <PSObject>] [[-Property] <Object[]>] [-As <String>] [-Fragment]
  [-PostContent <String[]>] [-PreContent <String[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+
 The ConvertTo-Html cmdlet converts .NET Framework objects into HTML that can be displayed in a Web browser.
 You can use this cmdlet to display the output of a command in a Web page.
 
@@ -41,17 +43,19 @@ If the remaining objects have additional properties, those property values are n
 ## EXAMPLES
 
 ### Example 1
-```
-PS C:\> convertto-html -inputobject (get-date)
+
+```powershell
+ConvertTo-Html -InputObject (Get-Date)
 ```
 
 This command creates an HTML page that displays the properties of the current date.
 It uses the InputObject parameter to submit the results of a Get-Date command to the ConvertTo-Html cmdlet.
 
 ### Example 2
-```
-PS C:\> get-alias | convertto-html | Out-File aliases.htm
-PS C:\> invoke-item aliases.htm
+
+```powershell
+Get-Alias | ConvertTo-Html | Out-File aliases.htm
+Invoke-Item aliases.htm
 ```
 
 This command creates an HTML page that lists the Windows PowerShell aliases in the current console.
@@ -61,8 +65,9 @@ It uses the pipeline operator (|) to send the aliases to the ConvertTo-Html cmdl
 The command also uses the Out-File cmdlet to send the HTML code to the aliases.htm file.
 
 ### Example 3
-```
-PS C:\> get-eventlog -logname "Windows PowerShell" | convertto-html | Out-File pslog.htm
+
+```powershell
+Get-EventLog -LogName "Windows PowerShell" | ConvertTo-Html | Out-File pslog.htm
 ```
 
 This command creates an HTML page called pslog.htm that displays the events in the Windows PowerShell event log on the local computer.
@@ -72,8 +77,9 @@ It uses the Get-EventLog cmdlet to get the events in the Windows PowerShell log 
 The command also uses the Out-File cmdlet to send the HTML code to the pslog.htm file.
 
 ### Example 4
-```
-PS C:\> get-process | convertto-html -property Name, Path, Company -title "Process Information" | Out-File proc.htm; ii proc.htm
+
+```powershell
+Get-Process | ConvertTo-Html -Property Name, Path, Company -Title "Process Information" | Out-File proc.htm; ii proc.htm
 ```
 
 These commands create and open an HTML page that lists the name, path, and company of the processes on the local computer.
@@ -88,10 +94,11 @@ The command also uses the Out-File cmdlet to send the resulting HTML to a file n
 The second command uses the Invoke-Item cmdlet (alias = ii) to open the Proc.htm in the default browser.
 The two commands are separated by a semicolon (;).
 
-### Example 5
+### Example 5: Create a web page to display service objects
+
 ```
-PS C:\> get-service | convertto-html -CssUri "test.css"
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+PS> get-service | convertto-html -CssUri "test.css"
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"  "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html>
 <head>
 <title>HTML TABLE</title>
@@ -106,8 +113,9 @@ The CssUri parameter adds an additional "\<link rel="stylesheet" type="text/css"
 The HREF attribute in the tag contains the name of the style sheet.
 
 ### Example 6
-```
-PS C:\> get-service | convertto-html -as LIST | Out-File services.htm
+
+```powershell
+Get-Service | ConvertTo-Html -As LIST | Out-File services.htm
 ```
 
 This command creates an HTML page of the service objects that the Get-Service cmdlet returns.
@@ -115,8 +123,9 @@ The command uses the As parameter to specify a list format.
 The cmdlet Out-File sends the resulting HTML to the Services.htm file.
 
 ### Example 7
+
 ```
-PS C:\> get-date | cth -fragment
+PS> get-date | cth -fragment
 <table>
 <colgroup>...</colgroup>
 <tr><th>DisplayHint</th><th>DateTime</th><th>Date</th><th>Day</th><th>DayOfWeek</th><th>DayOfYear</th><th>Hour</th>
@@ -135,8 +144,9 @@ The ConvertTo-Html command includes the Fragment parameter, which limits the out
 As a result, the other elements of an HTML page, such as the \<HEAD\> and \<BODY\> tags, are omitted.
 
 ### Example 8
-```
-PS C:\> get-eventlog -log "Windows PowerShell" | convertto-html -property id, level, task
+
+```powershell
+Get-EventLog -LogName "Windows PowerShell" | ConvertTo-Html -Property id, level, task
 ```
 
 This command uses the Get-EventLog cmdlet to get events from the "Windows PowerShell" event log.
@@ -146,9 +156,10 @@ It uses a pipeline operator (|) to send the events to the ConvertTo-Html cmdlet,
 The ConvertTo-Html command uses the Property parameter to select only the ID, Level, and Task properties of the event.
 
 ### Example 9
+
 ```
-PS C:\> get-service A* | ConvertTo-Html -title "Windows Services: Server01" -body (get-date) -pre
-"<P>Generated by Corporate IT</P>" -post "For details, contact Corporate IT." | Out-File services.htm; ii services.htm
+PS> get-service A* | ConvertTo-Html -title "Windows Services: Server01" -body (get-date) -pre
+"<P>Generated by Corporate IT</P>" -post "For details, contact Corporate IT." | Out-File services.htm; Invoke-Item services.htm
 ```
 
 This command creates and opens a Web page that displays the services on the computer that begin with "A".
@@ -163,6 +174,7 @@ A semicolon (;) ends the first command and starts a second command, which uses t
 ## PARAMETERS
 
 ### -As
+
 Determines whether the object is formatted as a table or a list.
 Valid values are TABLE and LIST.
 The default value is TABLE.
@@ -187,6 +199,7 @@ Accept wildcard characters: False
 ```
 
 ### -Body
+
 Specifies the text to add after the opening \<BODY\> tag.
 By default, there is no text in that position.
 
@@ -203,6 +216,7 @@ Accept wildcard characters: False
 ```
 
 ### -CssUri
+
 Specifies the Uniform Resource Identifier (URI) of the cascading style sheet (CSS) that is applied to the HTML file.
 The URI is included in a style sheet link in the output.
 
@@ -219,6 +233,7 @@ Accept wildcard characters: False
 ```
 
 ### -Fragment
+
 Generates only an HTML table.
 The HTML, HEAD, TITLE, and BODY tags are omitted.
 
@@ -235,6 +250,7 @@ Accept wildcard characters: False
 ```
 
 ### -Head
+
 Specifies the content of the \<HEAD\> tag.
 The default is "\<title\>HTML TABLE\</title\>".
 If you use the Head parameter, the Title parameter is ignored.
@@ -252,6 +268,7 @@ Accept wildcard characters: False
 ```
 
 ### -InputObject
+
 Specifies the objects to be represented in HTML.
 Enter a variable that contains the objects or type a command or expression that gets the objects.
 
@@ -271,6 +288,7 @@ Accept wildcard characters: False
 ```
 
 ### -PostContent
+
 Specifies text to add after the closing \</TABLE\> tag.
 By default, there is no text in that position.
 
@@ -287,6 +305,7 @@ Accept wildcard characters: False
 ```
 
 ### -PreContent
+
 Specifies text to add before the opening \<TABLE\> tag.
 By default, there is no text in that position.
 
@@ -303,6 +322,7 @@ Accept wildcard characters: False
 ```
 
 ### -Property
+
 Includes the specified properties of the objects in the HTML.
 The value of the Property parameter can be a new calculated property.
 To create a calculated property, use a hash table.
@@ -324,6 +344,7 @@ Accept wildcard characters: False
 ```
 
 ### -Title
+
 Specifies a title for the HTML file, that is, the text that appears between the \<TITLE\> tags.
 
 ```yaml
@@ -339,20 +360,24 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### System.Management.Automation.PSObject
+
 You can pipe any .NET object to ConvertTo-Html.
 
 ## OUTPUTS
 
 ### System.String
+
 ConvertTo-Html returns series of strings that comprise valid HTML.
 
 ## NOTES
-* To use this cmdlet, pipe one or more objects to the cmdlet or use the InputObject parameter to specify the object. When the input consists of multiple objects, the output of these two methods is quite different.
+
+- To use this cmdlet, pipe one or more objects to the cmdlet or use the InputObject parameter to specify the object. When the input consists of multiple objects, the output of these two methods is quite different.
 
   -  When you pipe multiple objects to a cmdlet, Windows PowerShell sends the objects to the cmdlet one at a time.
 As a result, ConvertTo-Html creates a table that displays the individual objects.
@@ -364,9 +389,7 @@ For example, if you use InputObject to submit the processes on a computer to Con
 
   To comply with the XHTML Strict DTD,the DOCTYPE tag is modified accordingly:
 
-   (\<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"\>)
-
-*
+   (\<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"       "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"\>)
 
 ## RELATED LINKS
 

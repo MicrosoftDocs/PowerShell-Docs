@@ -104,20 +104,20 @@ Configuration Name
 {
   File 1
   {
-    Ensure = “Present”
-    Path = “c:\inetpub\file1.zip”
-    Source = “http://uri/file1.zip”
+    Ensure = "Present"
+    Path = "c:\inetpub\file1.zip"
+    Source = "http://uri/file1.zip"
   }
   Service A
   {
-    Ensure = “Present”
-    Name = “ServiceA”
-    Status = “Running”
+    Ensure = "Present"
+    Name = "ServiceA"
+    Status = "Running"
   }
   SecurityBaseline Settings
   {
-    Ensure = “Present”
-    Datacenter = “NorthAmerica”
+    Ensure = "Present"
+    Datacenter = "NorthAmerica"
   }
 }
 ```

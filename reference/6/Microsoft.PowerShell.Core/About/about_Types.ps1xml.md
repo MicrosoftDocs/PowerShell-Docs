@@ -43,12 +43,13 @@ Sunday, January 29, 2012 9:43:57 AM
 ```
 
 You won't find the `DateTime` property in the description of the
-[`System.DateTime` structure](https://msdn.microsoft.com/library/system.datetime.aspx),
-because PowerShell adds the property and it is visible only in PowerShell.
+[`System.DateTime` structure](/dotnet/api/system.datetime),
+because PowerShell adds the property and it is visible only in Windows
+PowerShell.
 
-To add the `DateTime` property to all PowerShell sessions, PowerShell defines
-the `DateTime` property in the Types.ps1xml file in the PowerShell installation
-directory (`$PSHOME`).
+To add the `DateTime` property to all PowerShell sessions, Windows
+PowerShell defines the `DateTime` property in the Types.ps1xml file in the
+PowerShell installation directory (`$PSHOME`).
 
 ## Adding Extended Type Data to PowerShell.
 
@@ -550,7 +551,8 @@ property of the `GetVersionInfo` static method of
 </Type>
 ```
 
-For more information, see the [Windows PowerShell SDK](https://go.microsoft.com/fwlink/?LinkId=144538).
+For more information, see the
+[Windows PowerShell Software Development Kit (SDK)](/powershell/developer/windows-powershell).
 
 ## `Update-TypeData`
 

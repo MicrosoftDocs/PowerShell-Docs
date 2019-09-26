@@ -185,7 +185,7 @@ Specifies the URI of the Web service.
 Enter a URI or the path and file name of a file that contains a service description.
 
 The URI must refer to an .asmx page or to a page that returns a service description.
-To return a service description of a Web service that was created by using ASP.NET, append `?WSDL` to the URL of the Web service, for example: http://www.contoso.com/MyWebService.asmx?WSDL.
+To return a service description of a Web service that was created by using ASP.NET, append "?WSDL" to the URL of the Web service (for example,  `http://www.contoso.com/MyWebService.asmx?WSDL`).
 
 ```yaml
 Type: Uri

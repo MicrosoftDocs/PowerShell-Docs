@@ -428,7 +428,7 @@ The format of this string is:
 
 \<Transport\>://\<ComputerName\>:\<Port\>/\<ApplicationName\>
 
-The default value is: http://localhost:5985/WSMAN.
+The default value is: `http://localhost:5985/WSMAN`.
 
 If you do not specify a *ConnectionUri*, you can use the *UseSSL*, *ComputerName*, *Port*, and
 *ApplicationName* parameters to specify the *ConnectionURI* values.
