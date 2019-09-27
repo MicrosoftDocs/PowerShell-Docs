@@ -607,6 +607,15 @@ The contents of the kill ring are cleared.
 This is similar to Yank, but uses the system clipboard instead of the kill
 ring.
 
+ [!IMPORTANT]
+> When using the **Paste** function, the entire contents of the clipboard
+> buffer is pasted into the input buffer of PSReadLine. The input buffer is
+> then passed to the PowerShell parser. Input pasted using the console
+> application's **right-click** paste method is copied to the input buffer one
+> character at a time. The input buffer is passed to the parser when a newline
+> character is copied. Therefore, the input is parsed one line at a time. The
+> difference between paste methods results in different execution behavior.
+
 ### YankLastArg
 
 - Cmd: `<Alt+.>`
