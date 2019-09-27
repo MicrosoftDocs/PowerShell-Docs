@@ -21,7 +21,7 @@ available classes.
 Get-WmiObject [-Class] <String> [[-Property] <String[]>] [-Filter <String>] [-Amended] [-DirectRead]
  [-AsJob] [-Impersonation <ImpersonationLevel>] [-Authentication <AuthenticationLevel>]
  [-Locale <String>] [-EnableAllPrivileges] [-Authority <String>] [-Credential <PSCredential>]
- [-ThrottleLimit <Int32>] [-ComputerName <String[]>] [-Namespace <String>]  [<CommonParameters>]
+ [-ThrottleLimit <Int32>] [-ComputerName <String[]>] [-Namespace <String>] [<CommonParameters>]
 ```
 
 ### list
@@ -30,7 +30,7 @@ Get-WmiObject [-Class] <String> [[-Property] <String[]>] [-Filter <String>] [-Am
 Get-WmiObject [[-Class] <String>] [-Recurse] [-Amended] [-List] [-AsJob]
  [-Impersonation <ImpersonationLevel>] [-Authentication <AuthenticationLevel>] [-Locale <String>]
  [-EnableAllPrivileges] [-Authority <String>] [-Credential <PSCredential>] [-ThrottleLimit <Int32>]
- [-ComputerName <String[]>] [-Namespace <String>]  [<CommonParameters>]
+ [-ComputerName <String[]>] [-Namespace <String>] [<CommonParameters>]
 ```
 
 ### WQLQuery
@@ -39,7 +39,7 @@ Get-WmiObject [[-Class] <String>] [-Recurse] [-Amended] [-List] [-AsJob]
 Get-WmiObject [-Amended] [-DirectRead] -Query <String> [-AsJob]
  [-Impersonation <ImpersonationLevel>] [-Authentication <AuthenticationLevel>] [-Locale <String>]
  [-EnableAllPrivileges] [-Authority <String>] [-Credential <PSCredential>] [-ThrottleLimit <Int32>]
- [-ComputerName <String[]>] [-Namespace <String>]  [<CommonParameters>]
+ [-ComputerName <String[]>] [-Namespace <String>] [<CommonParameters>]
 ```
 
 ### class
@@ -48,7 +48,7 @@ Get-WmiObject [-Amended] [-DirectRead] -Query <String> [-AsJob]
 Get-WmiObject [-Amended] [-AsJob] [-Impersonation <ImpersonationLevel>]
  [-Authentication <AuthenticationLevel>] [-Locale <String>] [-EnableAllPrivileges]
  [-Authority <String>] [-Credential <PSCredential>] [-ThrottleLimit <Int32>]
- [-ComputerName <String[]>] [-Namespace <String>]  [<CommonParameters>]
+ [-ComputerName <String[]>] [-Namespace <String>] [<CommonParameters>]
 ```
 
 ### path
@@ -57,7 +57,7 @@ Get-WmiObject [-Amended] [-AsJob] [-Impersonation <ImpersonationLevel>]
 Get-WmiObject [-Amended] [-AsJob] [-Impersonation <ImpersonationLevel>]
  [-Authentication <AuthenticationLevel>] [-Locale <String>] [-EnableAllPrivileges]
  [-Authority <String>] [-Credential <PSCredential>] [-ThrottleLimit <Int32>]
- [-ComputerName <String[]>] [-Namespace <String>]  [<CommonParameters>]
+ [-ComputerName <String[]>] [-Namespace <String>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -91,8 +91,8 @@ Get-WmiObject -Class Win32_Process
 
 ### Example 2: Gets services on a remote computer
 
-This exammple gets the services on a remote computer. The **ComputerName** parameter to specifies
-the IP address of a remote computer. By default, the current user account must be a member of the
+This example gets the services on a remote computer. The **ComputerName** parameter specifies the IP
+address of a remote computer. By default, the current user account must be a member of the
 **Administrators** group on the remote computer.
 
 ```powershell
@@ -158,7 +158,7 @@ This is equivalent to using the `Stop-Service` cmdlet.
 
 This example gets the BIOS information from the local computer. The **Property** parameter of the
 `Format-List` cmdlet is used to display all properties of the returned object in a list. By default,
-only the subset of properties defined in the Types.ps1xml configuration file are displayed.
+only the subset of properties defined in the `Types.ps1xml` configuration file are displayed.
 
 ```powershell
 Get-WmiObject -Class Win32_Bios | Format-List -Property *
@@ -258,10 +258,11 @@ computer, and the results from remote computers are automatically returned to th
 manage the job, use the cmdlets that contain the Job cmdlets. To get the job results, use the
 `Receive-Job` cmdlet.
 
-Note: To use this parameter with remote computers, the local and remote computers must be configured
-for remoting. Additionally, you must start Windows PowerShell by using the "Run as administrator"
-option in Windows Vista and later versions of Windows. For more information, see
-about_Remote_Requirements.
+> [!NOTE]
+> To use this parameter with remote computers, the local and remote computers must be configured
+> for remoting. Additionally, you must start Windows PowerShell by using the "Run as administrator"
+> option in Windows Vista and later versions of Windows. For more information, see
+> [about_Remote_Requirements](../Microsoft.PowerShell.Core/about/about_Remote_Requirements.md).
 
 For more information about Windows PowerShell background jobs, see [about_Jobs](../Microsoft.PowerShell.Core/about/about_Jobs.md)
 and [about_Remote_Jobs](../Microsoft.PowerShell.Core/about/about_Remote_Jobs.md).
@@ -427,9 +428,10 @@ Accept wildcard characters: False
 
 Specifies a **Where** clause to use as a filter. Uses the syntax of the WMI Query Language (WQL).
 
-Important: Do not include the **Where** keyword in the value of the parameter. For example, the
-following commands return only the logical disks that have a **DeviceID** of 'c:' and services that
-have the name 'WinRM' without using the **Where** keyword.
+> [!IMPORTANT]
+> Do not include the **Where** keyword in the value of the parameter. For example, the following
+> commands return only the logical disks that have a **DeviceID** of 'c:' and services that have the
+> name 'WinRM' without using the **Where** keyword.
 
 `Get-WmiObject Win32_LogicalDisk -filter "DeviceID = 'c:' "`
 
