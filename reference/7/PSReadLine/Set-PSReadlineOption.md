@@ -26,7 +26,7 @@ Set-PSReadLineOption [-EditMode <EditMode>] [-ContinuationPrompt <String>] [-His
  [-BellStyle <BellStyle>] [-CompletionQueryItems <Int32>] [-WordDelimiters <String>]
  [-HistorySearchCaseSensitive] [-HistorySaveStyle <HistorySaveStyle>] [-HistorySavePath <String>]
  [-AnsiEscapeTimeout <Int32>] [-PromptText <String>] [-ViModeIndicator <ViModeStyle>]
- [-Colors <Hashtable>] [<CommonParameters>]
+ [-ViModeChangeHandler <ScriptBlock>] [-Colors <Hashtable>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -115,6 +115,29 @@ Set-PSReadLineOption -Colors @{
  "Command" = "#8181f7"
 }
 ```
+
+### Example 6: Use ViModeChangeHandler to display Vi mode changes
+
+This example emits a cursor change VT escape in response to a **Vi** mode change.
+
+```powershell
+function OnViModeChange {
+    if ($args[0] -eq 'Command') {
+        # Set the cursor to a blinking block.
+        Write-Host -NoNewLine "`e[1 q"
+    } else {
+        # Set the cursor to a blinking line.
+        Write-Host -NoNewLine "`e[5 q"
+    }
+}
+Set-PSReadLineOption -ViModeIndicator Script -ViModeChangeHandler $Function:OnViModeChange
+```
+
+The **OnViModeChange** function sets the cursor options for the **Vi** modes: insert and command.
+**ViModeChangeHandler** uses the `Function:` provider to reference **OnViModeChange** as a script
+block object.
+
+For more information, see [about_Providers](/powershell/module/microsoft.powershell.core/about/about_providers).
 
 ## PARAMETERS
 
@@ -570,6 +593,23 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -ViModeChangeHandler
+
+When the **ViModeIndicator** is set to `Script`, the script block provided will be invoked every
+time the mode changes. The script block is provided one argument of type `ViMode`.
+
+```yaml
+Type: ScriptBlock
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value:
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -ViModeIndicator
 
 This option sets the visual indication for the current **Vi** mode. Either insert mode or command
@@ -580,6 +620,7 @@ The valid values are as follows:
 - **None**: There's no indication.
 - **Prompt**: The prompt changes color.
 - **Cursor**: The cursor changes size.
+- **Script**: User-specified text is printed.
 
 ```yaml
 Type: ViModeStyle
