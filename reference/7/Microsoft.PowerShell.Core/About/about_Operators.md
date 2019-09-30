@@ -374,6 +374,22 @@ Get-Process | Get-Member
 Get-PSSnapin | Where-Object {$_.vendor -ne "Microsoft"}
 ```
 
+#### Pipeline chain operators `&&` and `||`
+
+Conditionally execute the right-hand side pipeline
+based on the success of the left-hand side pipeline.
+
+```powershell
+# If Get-Process successfully finds a process called notepad,
+# Stop-Process -Name notepad is called
+Get-Process notepad && Stop-Process -Name notepad
+```
+
+```powershell
+# If npm install fails, the node_modules directory is removed
+npm install || Remove-Item -Recurse ./node_modules
+```
+
 #### Property dereferences operator `.`
 
 Accesses the properties and methods of an object.
