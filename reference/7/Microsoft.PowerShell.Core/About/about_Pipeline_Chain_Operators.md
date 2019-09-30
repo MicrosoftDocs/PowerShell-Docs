@@ -14,27 +14,32 @@ Describes chaining pipelines with the `&&` and `||` operators in PowerShell.
 
 ## Long description
 
-From PowerShell 7, PowerShell implements the `&&` and `||` operators
-to conditionally chain pipelines.
-These operators are known in PowerShell as *pipeline chain operators*,
-and are similar to [AND-OR lists](https://pubs.opengroup.org/onlinepubs/009695399/utilities/xcu_chap02.html#tag_02_09_03)
-in POSIX shells like bash, zsh and sh,
-as well as [conditional processing symbols](https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-xp/bb490954(v=technet.10)#using-multiple-commands-and-conditional-processing-symbols)
-in Windows' command shell (cmd.exe).
+Beginning in PowerShell 7, PowerShell implements the `&&` and `||` operators to
+conditionally chain pipelines. These operators are known in PowerShell as
+*pipeline chain operators*, and are similar to
+[AND-OR lists](https://pubs.opengroup.org/onlinepubs/009695399/utilities/xcu_chap02.html#tag_02_09_03)
+in POSIX shells like bash, zsh and sh, as well as
+[conditional processing symbols](/previous-versions/windows/it-pro/windows-xp/bb490954(v=technet.10)#using-multiple-commands-and-conditional-processing-symbols)
+in the Windows Command Shell (cmd.exe).
 
-`&&` and `||` allow conditional execution of PowerShell commands and pipelines
-based on the success of the left-hand pipeline.
-In particular, they allow conditional execution of native executables
-based on execution success:
+The `&&` operator executes the right-hand pipeline, if the left-hand pipeline
+succeeded. Conversely, the `||` operator executes the right-hand pipeline if
+the left-hand pipeline failed.
+
+This can be use for conditional execution of software deployments. For example:
 
 ```powershell
 npm run build && npm run deploy
 ```
 
-The `&&` operator will execute the right-hand pipeline,
-if the left-hand pipeline succeeded,
-whereas the `||` operator will execute the right-hand pipeline
-if the left-hand pipeline failed.
+In this example the `npm run deploy` command only runs if the build command
+succeeds.
+
+> [!NOTE]
+> This is an experimental feature. For more information see
+> [about_Experimental_Features](about_Experimental_Features.md).
+
+### Examples
 
 #### Two successful commands
 
@@ -59,7 +64,7 @@ Write-Error 'Bad' && Write-Output 'Second' : Bad
 + FullyQualifiedErrorId : Microsoft.PowerShell.Commands.WriteErrorException
 ```
 
-#### First command succeeds, so `||` means second command not executed
+#### First command succeeds, so the second command is not executed
 
 ```powershell
 Write-Output 'First' || Write-Output 'Second'
@@ -69,7 +74,7 @@ Write-Output 'First' || Write-Output 'Second'
 First
 ```
 
-#### First command fails, so `||` means second command is executed
+#### First command fails, so the second command is executed
 
 ```powershell
 Write-Error 'Bad' || Write-Output 'Second'
@@ -83,8 +88,8 @@ Write-Error 'Bad' && Write-Output 'Second' : Bad
 Second
 ```
 
-Pipeline success is defined by the value of the `$?` variable,
-which PowerShell automatically sets after executing a pipeline based on its execution status.
+Pipeline success is defined by the value of the `$?` variable, which PowerShell
+automatically sets after executing a pipeline based on its execution status.
 This means that pipeline chain operators have the following equivalence:
 
 ```powershell
@@ -111,8 +116,8 @@ Test-Command '1'; if (-not $?) { Test-Command '2' }
 
 ### Assignment from pipeline chains
 
-Assigning a variable from a pipeline chain takes the concatenation
-of all the pipelines in the chain:
+Assigning a variable from a pipeline chain takes the concatenation of all the
+pipelines in the chain:
 
 ```powershell
 $result = Write-Output '1' && Write-Output '2'
@@ -124,8 +129,8 @@ $result
 2
 ```
 
-If a script-terminating error is thrown during assignment from a pipeline chain,
-the assignment does not succeed:
+If a script-terminating error is thrown during assignment from a pipeline
+chain, the assignment does not succeed:
 
 ```powershell
 try
@@ -146,24 +151,24 @@ Result:
 
 ### Operator syntax and precedence
 
-Unlike other operators, `&&` and `||` operate on pipelines,
-rather than on expressions (like, for example, `+` or `-and`).
+Unlike other operators, `&&` and `||` operate on pipelines, rather than on
+expressions like `+` or `-and`, for example.
 
 `&&` and `||` have a lower precedence than piping (`|`) or redirection (`>`),
-but a higher precdence than job operators (`&`), assignment (`=`) or semicolons (`;`).
-This means that pipelines within a pipeline chain can be individually redirected,
-and that entire pipeline chains can be backgrounded, assigned from
-or separated as statements.
+but a higher precedence than job operators (`&`), assignment (`=`) or
+semicolons (`;`). This means that pipelines within a pipeline chain can be
+individually redirected, and that entire pipeline chains can be backgrounded,
+assigned to variables, or separated as statements.
 
-To use lower precedence syntax within a pipeline chain,
-consider the use of parentheses `(...)` or a subexpression `$(...)`.
+To use lower precedence syntax within a pipeline chain, consider the use of
+parentheses `(...)` or a subexpression `$(...)`.
 
 ### Error interaction
 
-Pipeline chain operators, particularly the `||` operator,
-do not absorb errors.
-If a statement in a pipeline chain throws a script-terminating error,
-that will abort the pipeline chain:
+Pipeline chain operators do not absorb errors. When a statement in a pipeline
+chain throws a script-terminating error, the pipeline chain is terminated.
+
+For example:
 
 ```powershell
 $(throw 'Bad') || Write-Output '2'
@@ -178,7 +183,7 @@ At line:1 char:3
 + FullyQualifiedErrorId : Bad
 ```
 
-If the error is caught, the pipeline chain will still be cut short:
+Even when the error is caught, the pipeline chain is still terminated:
 
 ```powershell
 try
@@ -197,9 +202,8 @@ Caught: Bad
 Done
 ```
 
-If an error is non-terminating,
-or only terminates a pipeline,
-the pipeline chain will continue, respecting on `$?`:
+If an error is non-terminating, or only terminates a pipeline, the pipeline
+chain continues, respecting the value of `$?`:
 
 ```powershell
 function Test-NonTerminatingError
@@ -232,10 +236,9 @@ Second
 
 ### Chaining pipelines rather than commands
 
-Pipeline chain operators, by their name, can be used to chain pipelines,
-rather than just commands.
-This matches the behaviour of other shells,
-but can make "success" harder to reason about:
+Pipeline chain operators, by their name, can be used to chain pipelines, rather
+than just commands. This matches the behavior of other shells, but can make
+*success* harder to determine:
 
 ```powershell
 function Test-NotTwo
@@ -278,9 +281,8 @@ At line:1 char:9
 3
 ```
 
-Note that `Write-Output 'All done!'` is not executed,
-since `Test-NotTwo` is deemed to have failed
-after throwing the non-terminating error.
+Note that `Write-Output 'All done!'` is not executed, since `Test-NotTwo` is
+deemed to have failed after throwing the non-terminating error.
 
 ## See also
 
