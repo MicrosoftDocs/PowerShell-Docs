@@ -34,7 +34,9 @@ npm run build && npm run deploy
 The `&&` operator will execute the right-hand pipeline,
 if the left-hand pipeline succeeded,
 whereas the `||` operator will execute the right-hand pipeline
-if the left-hand pipeline failed:
+if the left-hand pipeline failed.
+
+#### Two successful commands
 
 ```powershell
 Write-Output 'First' && Write-Output 'Second'
@@ -44,6 +46,8 @@ Write-Output 'First' && Write-Output 'Second'
 First
 Second
 ```
+
+#### First command fails, causing second not to be executed
 
 ```powershell
 Write-Error 'Bad' && Write-Output 'Second'
@@ -55,6 +59,8 @@ Write-Error 'Bad' && Write-Output 'Second' : Bad
 + FullyQualifiedErrorId : Microsoft.PowerShell.Commands.WriteErrorException
 ```
 
+#### First command succeeds, so `||` means second command not executed
+
 ```powershell
 Write-Output 'First' || Write-Output 'Second'
 ```
@@ -62,6 +68,8 @@ Write-Output 'First' || Write-Output 'Second'
 ```Output
 First
 ```
+
+#### First command fails, so `||` means second command is executed
 
 ```powershell
 Write-Error 'Bad' || Write-Output 'Second'
