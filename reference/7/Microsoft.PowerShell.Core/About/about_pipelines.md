@@ -65,7 +65,7 @@ Get-ChildItem -Path *.txt |
 ```
 
 This pipeline consists of four commands in the specified order. The following
-illustration shows the output from each command as it is passed to the next
+illustration shows the output from each command as it's passed to the next
 command in the pipeline.
 
 ```
@@ -226,10 +226,10 @@ to associate the piped objects with a parameter of the receiving cmdlet.
 PowerShell's parameter binding component associates the input objects with
 cmdlet parameters according to the following criteria:
 
-- The parameter must accept input from a pipeline
+- The parameter must accept input from a pipeline.
 - The parameter must accept the type of object being sent or a type that can be
-  converted to the expected type
-- The parameter was not used in the command
+  converted to the expected type.
+- The parameter wasn't used in the command.
 
 For example, the `Start-Service` cmdlet has many parameters, but only two of
 them, **Name** and **InputObject** accept pipeline input. The **Name**
@@ -248,7 +248,7 @@ article.
 ### One-at-a-time processing
 
 Piping objects to a command is much like using a parameter of the command to
-submit the objects. Let look at a pipeline example. In this example, we use a
+submit the objects. Let's look at a pipeline example. In this example, we use a
 pipeline to display a table of service objects.
 
 ```powershell
@@ -416,29 +416,22 @@ The results of the trace are lengthy, but they show the values being bound to
 the `Get-Item` cmdlet and then the named values being bound to the
 `Move-ItemProperty` cmdlet.
 
-```
+```Output
 ...
-
 BIND NAMED cmd line args [`Move-ItemProperty`]
 BIND arg [HKLM:\Software\MyCompany\design] to parameter [Path]
-
 ...
-
 BIND arg [product] to parameter [Name]
-
 ...
-
 BIND POSITIONAL cmd line args [`Move-ItemProperty`]
-
 ...
 ```
 
 Finally, it shows that the attempt to bind the path to the **Destination**
 parameter of `Move-ItemProperty` failed.
 
-```
+```Output
 ...
-
 BIND PIPELINE object to parameters: [`Move-ItemProperty`]
 PIPELINE object TYPE = [Microsoft.Win32.RegistryKey]
 RESTORING pipeline parameter's original values
@@ -446,13 +439,12 @@ Parameter [Destination] PIPELINE INPUT ValueFromPipelineByPropertyName NO
 COERCION
 Parameter [Credential] PIPELINE INPUT ValueFromPipelineByPropertyName NO
 COERCION
-
 ...
 ```
 
 Use the `Get-Help` cmdlet to view the attributes of the **Destination** parameter.
 
-```
+```Output
 Get-Help Move-ItemProperty -Parameter Destination
 
 -Destination <String>
@@ -479,7 +471,7 @@ doesn't have a **Destination** property. That explains why the command failed.
 
 The **Path** parameter accepts pipeline input by name or by value.
 
-```
+```Output
 Get-Help Move-ItemProperty -Parameter Path
 
 -Path <String[]>
@@ -564,3 +556,4 @@ Get-Process | Where-Object CPU | Where-Object Path
 [about_Command_Syntax](about_command_syntax.md)
 
 [about_ForEach](about_foreach.md)
+
