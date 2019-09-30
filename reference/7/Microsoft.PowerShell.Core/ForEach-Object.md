@@ -73,6 +73,10 @@ Starting in Windows PowerShell 3.0, there are two different ways to construct a 
   represent the current input object in the script block. Use the `$using:` keyword to pass variable
   references to the running script.
 
+> [!NOTE]
+> This is an experimental feature. For more information see
+> [about_Experimental_Features](about/about_Experimental_Features.md).
+
 ## EXAMPLES
 
 ### Example 1: Divide integers in an array
@@ -601,7 +605,7 @@ This cmdlet returns objects that are determined by the input.
   block. This is significantly more overhead than running `ForEach-Object` normally with sequential
   processing. It is important to use `-Parallel` where the overhead of running in parallel is small
   compared to work the script block performs. For example:
-  
+
   - Compute intensive scripts on multi-core machines
   - Scripts that spend time waiting for results or doing file operations
 
