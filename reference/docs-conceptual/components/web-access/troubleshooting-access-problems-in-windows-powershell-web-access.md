@@ -51,7 +51,7 @@ gateway server name.
 
 #### Workaround
 
-1. [Install and run Internet Explorer 10](https://ie.microsoft.com/testdrive/info/downloads/Default.html)
+1. Install and run Internet Explorer 10
 1. Change Internet Explorer **Document Mode** setting to *IE10* standards.
    1. Press **F12** to open the Developer Tools console
    1. In Internet Explorer 10, click **Browser Mode**, and then select *Internet Explorer 10*.

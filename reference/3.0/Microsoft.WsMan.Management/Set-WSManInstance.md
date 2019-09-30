@@ -10,7 +10,6 @@ title:  Set-WSManInstance
 # Set-WSManInstance
 
 ## SYNOPSIS
-
 Modifies the management information that is related to a resource.
 
 ## SYNTAX
@@ -42,13 +41,13 @@ This cmdlet uses the WinRM connection/transport layer to modify the information.
 
 ## EXAMPLES
 
-### Example 1
+### Example 1: Disable a listener on the local computer
 
 ```powershell
 Set-WSManInstance -ResourceURI winrm/config/listener -SelectorSet @{address="*";transport="https"} -ValueSet @{Enabled="false"}
 ```
 
-```output
+```Output
 cfg                   : http://schemas.microsoft.com/wbem/wsman/1/config/listener
 xsi                   : http://www.w3.org/2001/XMLSchema-instance
 lang                  : en-US
@@ -64,21 +63,21 @@ ListeningOn           : {127.0.0.1, 172.30.168.171, ::1, 2001:4898:0:fff:0:5efe:
 
 This command disables the https listener on the local computer.
 
-Important: The ValueSet parameter is case-sensitive when matching the properties specified.
+Important: The *ValueSet* parameter is case-sensitive when matching the properties specified.
 
-For example, using the above command.
+For example, in this command,
 
-This fails:     -ValueSet @{enabled="False"}
+This fails: `-ValueSet @{enabled="False"}`
 
-This succeeds:  -ValueSet @{Enabled="False"}
+This succeeds: `-ValueSet @{Enabled="False"}`
 
-### Example 2
+### Example 2: Set the maximum envelope size on the local computer
 
 ```powershell
 Set-WSManInstance -ResourceURI winrm/config -ValueSet @{MaxEnvelopeSizekb = "200"}
 ```
 
-```output
+```Output
 cfg                 : http://schemas.microsoft.com/wbem/wsman/1/config
 lang                : en-US
 MaxEnvelopeSizekb   : 200
@@ -100,13 +99,13 @@ This fails:     -ValueSet @{MaxEnvelopeSizeKB ="200"}
 
 This succeeds:  -ValueSet @{MaxEnvelopeSizekb ="200"}
 
-### Example 3
+### Example 3: Disable a listener on a remote computer
 
 ```powershell
 Set-WSManInstance -ResourceURI winrm/config/listener -ComputerName SERVER02 -SelectorSet @{address="*";transport="https"} -ValueSet @{Enabled="false"}
 ```
 
-```output
+```Output
 cfg                   : http://schemas.microsoft.com/wbem/wsman/1/config/listener
 xsi                   : http://www.w3.org/2001/XMLSchema-instance
 lang                  : en-US
@@ -283,7 +282,7 @@ Specifies the dialect to use in the filter predicate.
 This can be any dialect that is supported by the remote service.
 The following aliases can be used for the dialect URI:
 
-- WQL:` http://schemas.microsoft.com/wbem/wsman/1/WQL`
+- WQL: `http://schemas.microsoft.com/wbem/wsman/1/WQL`
 - Selector: `http://schemas.microsoft.com/wbem/wsman/1/wsman/SelectorFilter`
 - Association: `http://schemas.dmtf.org/wbem/wsman/1/cimbinding/associationFilter`
 
@@ -305,7 +304,7 @@ Specifies the path of a file that is used to update a management resource.
 You specify the management resource by using the ResourceURI parameter and the SelectorSet parameter .
 For example, the following command uses the FilePath parameter:
 
-invoke-wsmanaction -action stopservice -resourceuri wmicimv2/Win32_Service -SelectorSet @{Name="spooler"} -FilePath:c:\input.xml -authentication default
+`Invoke-WSManAction -action StopService -resourceuri wmicimv2/Win32_Service -SelectorSet @{Name="spooler"} -FilePath:c:\input.xml -authentication default`
 
 This command calls the StopService method on the Spooler service by using input from a file.
 The file, Input.xml, contains the following content:
@@ -402,7 +401,7 @@ Parameter Sets: (All)
 Aliases: ruri
 
 Required: True
-Position: 1
+Position: 0
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -423,7 +422,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 2
+Position: 1
 Default value: None
 Accept pipeline input: True (ByPropertyName, ByValue)
 Accept wildcard characters: False

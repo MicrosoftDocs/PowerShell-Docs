@@ -36,13 +36,6 @@ Set-CimInstance -CimSession <CimSession[]> [-Namespace <String>] [-OperationTime
  [<CommonParameters>]
 ```
 
-### CimInstanceSessionSet
-
-```
-Set-CimInstance -CimSession <CimSession[]> [-ResourceUri <Uri>] [-OperationTimeoutSec <UInt32>]
- [-InputObject] <CimInstance> [-Property <IDictionary>] [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
-```
-
 ### QueryComputerSet
 
 ```
@@ -77,7 +70,7 @@ If the InputObject parameter is specified, the cmdlet works in one of the follow
 ### Example 1: Set the CIM instance
 
 ```powershell
-PS C:\>Set-CimInstance -Query 'Select * from Win32_Environment where name LIKE "testvar%"' -Property @{VariableValue="abcd"}
+Set-CimInstance -Query 'Select * from Win32_Environment where name LIKE "testvar%"' -Property @{VariableValue="abcd"}
 ```
 
 This command sets the value of the VariableValue property to abcd using the Query parameter.
@@ -86,7 +79,7 @@ You can modify instances matching a Windows Management Instrumentation Query Lan
 ### Example 2: Set the CIM instance property using pipeline
 
 ```powershell
-PS C:\>Get-CimInstance -Query 'Select * from Win32_Environment where name LIKE "testvar%"' | Set-CimInstance -Property @{VariableValue="abcd"}
+Get-CimInstance -Query 'Select * from Win32_Environment where name LIKE "testvar%"' | Set-CimInstance -Property @{VariableValue="abcd"}
 ```
 
 This command retrieves the CIM instance object filtered by the Query parameter using the
@@ -96,8 +89,8 @@ the value of VariableValue property to abcd.
 ### Example 3: Set the CIM instance property using input object
 
 ```powershell
-PS C:\>$x = Get-CimInstance -Query 'Select * from Win32_Environment where Name="testvar"'
-PS C:\>Set-CimInstance -InputObject $x -Property @{VariableValue="somevalue"} -PassThru
+$x = Get-CimInstance -Query 'Select * from Win32_Environment where Name="testvar"'
+Set-CimInstance -InputObject $x -Property @{VariableValue="somevalue"} -PassThru
 ```
 
 This set of commands retrieves the CIM instance objects filtered by the Query parameter in to a
@@ -109,9 +102,9 @@ object.
 ### Example 4: Set the CIM instance property
 
 ```powershell
-PS C:\>$x = Get-CimInstance -Query 'Select * from Win32_Environment where name="testvar"'
-PS C:\>$x.VariableValue = "Change"
-PS C:\>Set-CimInstance -CimInstance $x -PassThru
+$x = Get-CimInstance -Query 'Select * from Win32_Environment where name="testvar"'
+$x.VariableValue = "Change"
+Set-CimInstance -CimInstance $x -PassThru
 ```
 
 This set of commands retrieves the CIM instance object that is specified in the Query parameter
@@ -123,7 +116,7 @@ object.
 ### Example 5: Show the list of CIM instances to modify using WhatIf
 
 ```powershell
-PS C:\>Set-CimInstance -Query 'Select * from Win32_Environment where name LIKE "testvar%"' -Property @{VariableValue="abcd"} -WhatIf
+Set-CimInstance -Query 'Select * from Win32_Environment where name LIKE "testvar%"' -Property @{VariableValue="abcd"} -WhatIf
 ```
 
 This command uses the common parameter WhatIf to specify that the modification should not be done,
@@ -132,7 +125,7 @@ but only output what would happen if it were done.
 ### Example 6: Set the CIM instance after confirmation from the user
 
 ```powershell
-PS C:\>Set-CimInstance -Query 'Select * from Win32_Environment where name LIKE "testvar%"' -Property @{VariableValue="abcd"} -Confirm
+Set-CimInstance -Query 'Select * from Win32_Environment where name LIKE "testvar%"' -Property @{VariableValue="abcd"} -Confirm
 ```
 
 This command uses the common parameter Confirm to specify that the modification should be done only
@@ -141,8 +134,8 @@ after confirmation from the user.
 ### Example 7: Set the created CIM instance
 
 ```powershell
-PS C:\>$x = New-CimInstance -ClassName Win32_Environment -Property @{Name="testvar";UserName="domain\user"} -Keys Name,UserName -ClientOnly
-PS C:\>Set-CimInstance -CimInstance $x -Property @{VariableValue="somevalue"} -PassThru
+$x = New-CimInstance -ClassName Win32_Environment -Property @{Name="testvar";UserName="domain\user"} -Keys Name,UserName -ClientOnly
+Set-CimInstance -CimInstance $x -Property @{VariableValue="somevalue"} -PassThru
 ```
 
 This set of commands creates a CIM instance with the specified properties using the New-CimInstance
@@ -159,7 +152,7 @@ output of a New-CimSession or Get-CimSession cmdlet.
 
 ```yaml
 Type: CimSession[]
-Parameter Sets: QuerySessionSet, CimInstanceSessionSet
+Parameter Sets: CimInstanceSessionSet, QuerySessionSet
 Aliases:
 
 Required: True
@@ -205,7 +198,7 @@ Parameter Sets: CimInstanceComputerSet, CimInstanceSessionSet
 Aliases: CimInstance
 
 Required: True
-Position: 1
+Position: 0
 Default value: None
 Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
@@ -305,7 +298,7 @@ Parameter Sets: QuerySessionSet, QueryComputerSet
 Aliases:
 
 Required: True
-Position: 1
+Position: 0
 Default value: None
 Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False

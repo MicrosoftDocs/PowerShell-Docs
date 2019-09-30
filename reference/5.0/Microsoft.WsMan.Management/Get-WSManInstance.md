@@ -7,7 +7,6 @@ online version: https://go.microsoft.com/fwlink/?linkid=821729
 external help file:  Microsoft.WSMan.Management.dll-Help.xml
 title:  Get-WSManInstance
 ---
-
 # Get-WSManInstance
 
 ## SYNOPSIS
@@ -364,7 +363,7 @@ For example: `http://server01:8080/WSMAN`
 
 Internet Information Services (IIS), which hosts the session, forwards requests with this endpoint to the specified application.
 This default setting of WSMAN is appropriate for most uses.
-This parameter is designed to be used if many computers establish remote connections to one computer that is running Windows PowerShell.
+This parameter is designed to be used if many computers establish remote connections to one computer that is running PowerShell.
 In this case, IIS hosts WS-Management for efficiency.
 
 ```yaml
@@ -374,7 +373,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: Wsman
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -427,7 +426,7 @@ Accepted values: None, Default, Digest, Negotiate, Basic, Kerberos, ClientCertif
 
 Required: False
 Position: Named
-Default value: Default
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -455,7 +454,7 @@ Enter the certificate thumbprint of the certificate.
 Certificates are used in client certificate-based authentication.
 They can be mapped only to local user accounts; they do not work with domain accounts.
 
-To get a certificate thumbprint, use the Get-Item or Get-ChildItem command in the Windows PowerShell Cert: drive.
+To get a certificate thumbprint, use the Get-Item or Get-ChildItem command in the PowerShell Cert: drive.
 
 ```yaml
 Type: String
@@ -484,7 +483,7 @@ Aliases: CN
 
 Required: False
 Position: Named
-Default value: Localhost
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -537,12 +536,9 @@ Specifies the dialect to use in the filter predicate.
 This can be any dialect that is supported by the remote service.
 The following aliases can be used for the dialect URI:
 
-- WQL.
-http://schemas.microsoft.com/wbem/wsman/1/WQL
-- Selector.
-http://schemas.microsoft.com/wbem/wsman/1/wsman/SelectorFilter
-- Association.
-http://schemas.dmtf.org/wbem/wsman/1/cimbinding/associationFilter
+- WQL `http://schemas.microsoft.com/wbem/wsman/1/WQL`
+- Selector `http://schemas.microsoft.com/wbem/wsman/1/wsman/SelectorFilter`
+- Association `http://schemas.dmtf.org/wbem/wsman/1/cimbinding/associationFilter`
 
 ```yaml
 Type: Uri
@@ -551,7 +547,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: Http://schemas.microsoft.com/wbem/wsman/1/WQL
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -702,7 +698,7 @@ Accepted values: object, epr, objectandepr
 
 Required: False
 Position: Named
-Default value: Object
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

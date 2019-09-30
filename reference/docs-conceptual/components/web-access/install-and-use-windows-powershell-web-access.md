@@ -418,7 +418,7 @@ gateway as a root website.
    [To configure an SSL certificate in IIS Manager](#to-configure-an-ssl-certificate-in-iis-manager)
    in this topic.
 
-10. ![](images/SecurityNote.jpeg) Optional security step:
+10. ![Security Note](images/SecurityNote.jpeg) Optional security step:
 
     With the website selected in the tree pane, double-click **SSL Settings** in the content pane.
     Select **Require SSL**, and then in the **Actions** pane, click **Apply**. Optionally, in the

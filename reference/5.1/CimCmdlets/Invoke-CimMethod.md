@@ -110,7 +110,7 @@ If the InputObject parameter is specified, the cmdlet works in one of the follow
 ### Example 1: Invoke a method
 
 ```powershell
-PS C:\>Invoke-CimMethod -Query 'select * from Win32_Process where name like "notepad%"' -MethodName "Terminate"
+Invoke-CimMethod -Query 'select * from Win32_Process where name like "notepad%"' -MethodName "Terminate"
 ```
 
 This command invokes the method named Terminate on the CIM class named Win32_Process. The CIM class
@@ -119,8 +119,8 @@ is retrieved by the query "Select * from Win32_Process where name like 'notepad%
 ### Example 2: Invoke a method using CIM instance object
 
 ```powershell
-PS C:\>$x = Get-CimInstance -Query 'Select * from Win32_Process where name like "notepad%"'
-PS C:\>Invoke-CimMethod -InputObject $x -MethodName GetOwner
+$x = Get-CimInstance -Query 'Select * from Win32_Process where name like "notepad%"'
+Invoke-CimMethod -InputObject $x -MethodName GetOwner
 ```
 
 This set of commands retrieves the CIM instance object and stores it in a variable named $x using
@@ -130,7 +130,7 @@ Invoke-CimMethod cmdlet, and the GetOwner method is invoked for the CimInstance.
 ### Example 3: Invoke a static method
 
 ```powershell
-PS C:\>Invoke-CimMethod -ClassName Win32_Process -MethodName "Create" -Arguments @{ Path = "notepad.exe" }
+Invoke-CimMethod -ClassName Win32_Process -MethodName "Create" -Arguments @{ Path = "notepad.exe" }
 ```
 
 This command invokes the static method Create on the class named Win32_Process, with the arguments specified by the Arguments parameter.
@@ -138,7 +138,7 @@ This command invokes the static method Create on the class named Win32_Process, 
 ### Example 4: Invoke a method using arguments
 
 ```powershell
-PS C:\>Invoke-CimMethod -ClassName Win32_Process -MethodName "Create" -Arguments @{ CommandLine = 'notepad.exe'; CurrentDirectory = "C:\windows\system32" }
+Invoke-CimMethod -ClassName Win32_Process -MethodName "Create" -Arguments @{ CommandLine = 'notepad.exe'; CurrentDirectory = "C:\windows\system32" }
 ```
 
 This command invokes the method named Create by using the Arguments parameter.
@@ -146,8 +146,8 @@ This command invokes the method named Create by using the Arguments parameter.
 ### Example 5: Client-side validation
 
 ```powershell
-PS C:\>$c = Get-CimClass -ClassName Win32_Process
-PS C:\>Invoke-CimMethod -CimClass $c -MethodName "xyz" -Arguments @{ CommandLine = 'notepad.exe' }
+$c = Get-CimClass -ClassName Win32_Process
+Invoke-CimMethod -CimClass $c -MethodName "xyz" -Arguments @{ CommandLine = 'notepad.exe' }
 ```
 
 This set of commands performs client-side validation for the method named xyz by passing a CimClass
@@ -166,7 +166,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 2
+Position: 1
 Default value: None
 Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
@@ -187,7 +187,7 @@ Parameter Sets: CimClassSessionSet, CimClassComputerSet
 Aliases:
 
 Required: True
-Position: 1
+Position: 0
 Default value: None
 Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
@@ -223,7 +223,7 @@ Parameter Sets: ClassNameComputerSet, ClassNameSessionSet
 Aliases: Class
 
 Required: True
-Position: 1
+Position: 0
 Default value: None
 Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
@@ -268,7 +268,7 @@ Parameter Sets: CimInstanceComputerSet, CimInstanceSessionSet
 Aliases: CimInstance
 
 Required: True
-Position: 1
+Position: 0
 Default value: None
 Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
@@ -287,7 +287,7 @@ Parameter Sets: (All)
 Aliases: Name
 
 Required: True
-Position: 3
+Position: 2
 Default value: None
 Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
@@ -298,7 +298,7 @@ Accept wildcard characters: False
 Specifies the namespace for the CIM operation.
 
 The default namespace is root/cimv2. You can use tab completion to browse the list of namespaces,
-because Windows PowerShell gets a list of namespaces from the local WMI server to provide the list
+because PowerShell gets a list of namespaces from the local WMI server to provide the list
 of namespaces.
 
 ```yaml
@@ -388,10 +388,9 @@ The URI is used to identify a specific type of resource, such as disks or proces
 A URI consists of a prefix and a path to a resource.
 For example:
 
-```
-http://schemas.microsoft.com/wbem/wsman/1/wmi/root/cimv2/Win32_LogicalDisk
-http://intel.com/wbem/wscim/1/amt-schema/1/AMT_GeneralSettings
-```
+`http://schemas.microsoft.com/wbem/wsman/1/wmi/root/cimv2/Win32_LogicalDisk`
+
+`http://intel.com/wbem/wscim/1/amt-schema/1/AMT_GeneralSettings`
 
 By default, if you do not specify this parameter, the DMTF standard resource URI `http://schemas.dmtf.org/wbem/wscim/1/cim-schema/2/` is used and the class name is appended to it.
 
