@@ -482,6 +482,8 @@ For more information, see [about_If](about_If.md).
 
 [about_Type_Operators](about_Type_Operators.md)
 
+[about_Pipeline_Chain_Operators](about_Pipeline_Chain_Operators.md)
+
 [about_Split](about_Split.md)
 
 [about_Join](about_Join.md)
