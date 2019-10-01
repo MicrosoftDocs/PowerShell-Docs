@@ -333,4 +333,4 @@ Beginning in Windows PowerShell 3.0, it is a cmdlet.
 
 [Unregister-PSSessionConfiguration](Unregister-PSSessionConfiguration.md)
 
-
+[WSMan Provider](../Microsoft.WsMan.Management/About/about_WSMan_Provider.md)

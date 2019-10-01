@@ -639,8 +639,6 @@ command. To set different values for different counters, enter separate `Get-Cou
 
 [Get-Member](../Microsoft.PowerShell.Utility/Get-Member.md)
 
-[Microsoft.PowerShell.Diagnostics](Microsoft.PowerShell.Diagnostics.md)
-
 [Receive-Job](../Microsoft.PowerShell.Core/Receive-Job.md)
 
 [Start-Job](../Microsoft.PowerShell.Core/Start-Job.md)

@@ -205,7 +205,3 @@ However, it runs the workflow, which might generate output.
 [about_Workflows](../PSWorkflow/About/about_Workflows.md)
 
 [about_Workflow_Common_Parameters](../PSWorkflow/About/about_WorkflowCommonParameters.md)
-
-[Windows PowerShell Workflow Module](../PSWorkflow/PSWorkflow.md)
-
-[Windows PowerShell Workflow Utility Module](PSWorkflowUtility.md)

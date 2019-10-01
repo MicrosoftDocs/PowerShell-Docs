@@ -149,7 +149,7 @@ Accept wildcard characters: False
 Parameter Sets: PowerShellSet, NativeSet
 Required: True (NativeSet), False (PowerShellSet)
 Default value: None
-Aliases: 
+Aliases:
 Type: String[]
 ```
 
@@ -261,5 +261,3 @@ This cmdlet returns no output.
 ## NOTES
 
 ## RELATED LINKS
-
-[Core Cmdlets](Microsoft.PowerShell.Core.md)

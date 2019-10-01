@@ -117,4 +117,4 @@ PS C:> ISE -help
 
 [about_Windows_PowerShell_ISE](about_Windows_PowerShell_ISE.md)
 
-[Windows PowerShell Integrated Scripting Environment (ISE)](../../../docs-conceptual/components/ise/Windows-PowerShell-Integrated-Scripting-Environment--ISE-.md)
+[Windows PowerShell Integrated Scripting Environment (ISE)](/powershell/scripting/components/ise/Windows-PowerShell-Integrated-Scripting-Environment--ISE-)

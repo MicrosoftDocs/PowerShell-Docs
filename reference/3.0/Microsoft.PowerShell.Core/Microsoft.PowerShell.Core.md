@@ -94,9 +94,6 @@ Runs commands on local and remote computers.
 ### [Invoke-History](Invoke-History.md)
 Runs commands from the session history.
 
-### [Microsoft.PowerShell.Core](Microsoft.PowerShell.Core.md)
-This section contains the help topics for the cmdlets that are installed with PowerShell Microsoft.PowerShell.Core module. The Core module contains cmdlets and providers that manage the basic features of PowerShell.
-
 ### [New-Module](New-Module.md)
 Creates a new dynamic module that exists only in memory.
 

@@ -49,7 +49,7 @@ Runs the workflow as a workflow job. The workflow command immediately returns
 an object that represents a parent job. The parent job contains the child jobs
 that are running on each of the target computers. To manage the job, use the
 Job cmdlets. To get the job results, use
-[Receive-Job](../../Microsoft.PowerShell.CoreReceive-Job.md).
+[Receive-Job](../../Microsoft.PowerShell.Core/Receive-Job.md).
 
 #### -JobName \<String\>
 
@@ -154,8 +154,8 @@ Certificates are used in client certificate-based authentication. They can only
 be mapped to local user accounts; they do not work with domain accounts.
 
 To get a certificate, use the
-[Get-Item](../../Microsoft.PowerShell.Core/Get-Item.md) or [Get-ChildItem]
-(../../Microsoft.PowerShell.Core/Get-Childitem.md) cmdlets in the Windows
+[Get-Item](../../Microsoft.PowerShell.Management/Get-Item.md) or [Get-ChildItem]
+(../../Microsoft.PowerShell.Management/Get-Childitem.md) cmdlets in the Windows
 PowerShell Cert: drive.
 
 #### -PSComputerName \<String[]\>
