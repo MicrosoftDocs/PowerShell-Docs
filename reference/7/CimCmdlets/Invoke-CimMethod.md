@@ -205,7 +205,7 @@ Accept wildcard characters: False
 
 Runs the command using the specified CIM session. Enter a variable that contains the CIM session,
 or a command that creates or gets the CIM session, such as the New-CimSession or Get-CimSession
-cmdlets. For more information, see about_CimSessions.
+cmdlets. For more information, see [about_CimSessions](../Microsoft.PowerShell.Core/About/about_CimSession.md).
 
 ```yaml
 Type: CimSession[]
@@ -396,10 +396,9 @@ The URI is used to identify a specific type of resource, such as disks or proces
 A URI consists of a prefix and a path to a resource.
 For example:
 
-```
-http://schemas.microsoft.com/wbem/wsman/1/wmi/root/cimv2/Win32_LogicalDisk
-http://intel.com/wbem/wscim/1/amt-schema/1/AMT_GeneralSettings
-```
+`http://schemas.microsoft.com/wbem/wsman/1/wmi/root/cimv2/Win32_LogicalDisk`
+
+`http://intel.com/wbem/wscim/1/amt-schema/1/AMT_GeneralSettings`
 
 By default, if you do not specify this parameter, the DMTF standard resource URI `http://schemas.dmtf.org/wbem/wscim/1/cim-schema/2/` is used and the class name is appended to it.
 
@@ -456,7 +455,7 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+-WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
 
 ## INPUTS
 

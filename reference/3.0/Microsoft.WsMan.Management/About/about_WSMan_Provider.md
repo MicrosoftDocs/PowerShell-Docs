@@ -22,10 +22,10 @@ information.
 
 ## Detailed description
 
-The **WSMan** provider for Windows PowerShell lets you add, change, clear, and
+The **WSMan** provider for PowerShell lets you add, change, clear, and
 delete WS-Management configuration data on local or remote computers.
 
-The **WSMan** provider exposes a Windows PowerShell drive with a directory
+The **WSMan** provider exposes a PowerShell drive with a directory
 structure that corresponds to a logical grouping of WS-Management configuration
 settings. These groupings are known as containers.
 
@@ -272,7 +272,7 @@ New-Item -Path WSMan:\localhost\Plugin\TestPlugin\InitializationParameters `
 
 ## Dynamic parameters
 
-Dynamic parameters are cmdlet parameters that are added by a Windows PowerShell
+Dynamic parameters are cmdlet parameters that are added by a PowerShell
 provider and are available only when the cmdlet is being used in the
 provider-enabled drive.
 
@@ -388,7 +388,7 @@ certificate (X509) of a user account that has permission to perform this
 action. Certificates are used in client certificate-based authentication. They
 can be mapped only to local user accounts, and they do not work with domain
 accounts. To get a certificate thumbprint, use the `Get-Item` or `Get-ChildItem`
-cmdlets in the Windows PowerShell `Cert:` drive.
+cmdlets in the PowerShell `Cert:` drive.
 
 #### Cmdlets supported
 
@@ -579,8 +579,10 @@ Beginning in Windows PowerShell 3.0, you can get customized help topics for
 provider cmdlets that explain how those cmdlets behave in a file system drive.
 
 To get the help topics that are customized for the file system drive, run a
-[Get-Help](../../Microsoft.PowerShell.Core/Get-Help.md) command in a file system drive or use the `-Path`
-parameter of [Get-Help](../../Microsoft.PowerShell.Core/Get-Help.md) to specify a file system drive.
+[Get-Help](../../Microsoft.PowerShell.Core/Get-Help.md) command in a file
+system drive or use the `-Path` parameter of
+[Get-Help](../../Microsoft.PowerShell.Core/Get-Help.md) to specify a file
+system drive.
 
 ```powershell
 Get-Help Get-ChildItem

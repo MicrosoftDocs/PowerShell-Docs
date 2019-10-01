@@ -416,4 +416,4 @@ published configuration(s). Below is a complete example of signature validation 
 
 - Try pushing the signed MOF file.
 
-  ![SignMofFile](../images/DSC-improvements/PushSignedMof.png)
+  ![PushSignedMofFile](../images/DSC-improvements/PushSignedMof.png)

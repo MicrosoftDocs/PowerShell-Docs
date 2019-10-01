@@ -538,12 +538,9 @@ Specifies the dialect to use in the filter predicate.
 This can be any dialect that is supported by the remote service.
 The following aliases can be used for the dialect URI:
 
-- WQL.
-http://schemas.microsoft.com/wbem/wsman/1/WQL
-- Selector.
-http://schemas.microsoft.com/wbem/wsman/1/wsman/SelectorFilter
-- Association.
-http://schemas.dmtf.org/wbem/wsman/1/cimbinding/associationFilter
+- WQL `http://schemas.microsoft.com/wbem/wsman/1/WQL`
+- Selector `http://schemas.microsoft.com/wbem/wsman/1/wsman/SelectorFilter`
+- Association `http://schemas.dmtf.org/wbem/wsman/1/cimbinding/associationFilter`
 
 ```yaml
 Type: Uri

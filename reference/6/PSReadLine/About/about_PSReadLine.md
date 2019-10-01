@@ -248,6 +248,15 @@ Paste text from the system clipboard.
 - Vi insert mode: `<Ctrl+v>`
 - Vi command mode: `<Ctrl+v>`
 
+> [!IMPORTANT]
+> When using the **Paste** function, the entire contents of the clipboard
+> buffer is pasted into the input buffer of PSReadLine. The input buffer is
+> then passed to the PowerShell parser. Input pasted using the console
+> application's **right-click** paste method is copied to the input buffer one
+> character at a time. The input buffer is passed to the parser when a newline
+> character is copied. Therefore, the input is parsed one line at a time. The
+> difference between paste methods results in different execution behavior.
+
 ### PasteAfter
 
 Paste the clipboard after the cursor, moving the cursor to the end of the
