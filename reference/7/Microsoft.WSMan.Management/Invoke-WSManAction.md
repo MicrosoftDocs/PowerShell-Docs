@@ -58,6 +58,7 @@ The return value indicates whether the action was successful.
 In this case, a return value of 0 indicates success.
 A return value of 5 indicates that the service is already started.
 
+### Example 2: Invoke a method
 
 ```powershell
 Invoke-WSManAction -Action stopservice -ResourceURI wmicimv2/Win32_Service -SelectorSet @{Name="spooler"} -FilePath:input.xml -Authentication default
@@ -98,7 +99,7 @@ As a result, a new process is created to run Notepad, and the current directory 
 ### Example 4: Invoke a method on a remote computer
 
 ```powershell
-PS C:\> Invoke-WSManAction -Action "StartService" -ResourceURI wmicimv2/win32_service -SelectorSet @{name="spooler"} -ComputerName "server01" -Authentication default
+Invoke-WSManAction -Action startservice -ResourceURI wmicimv2/win32_service  -SelectorSet @{name="spooler"} -ComputerName server01 -Authentication default
 ```
 
 ```Output
