@@ -374,6 +374,4 @@ class.
 
 [Get-Credential](../Microsoft.PowerShell.Security/Get-Credential.md)
 
-[Microsoft.PowerShell.Management](Microsoft.PowerShell.Management.md)
-
 [WS-Management Protocol](/windows/desktop/WinRM/ws-management-protocol)

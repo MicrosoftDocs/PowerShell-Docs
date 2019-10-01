@@ -54,5 +54,3 @@ This cmdlet returns a GUID.
 ## NOTES
 
 ## RELATED LINKS
-
-[Windows PowerShell Utility Cmdlets](Microsoft.PowerShell.Utility.md)

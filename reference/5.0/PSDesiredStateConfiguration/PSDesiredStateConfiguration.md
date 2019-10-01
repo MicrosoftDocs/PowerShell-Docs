@@ -23,9 +23,6 @@ Stops debugging of DSC resources.
 ### [Enable-DscDebug](Enable-DscDebug.md)
 Starts debugging of all DSC resources.
 
-### [Find-DscResource](Find-DscResource.md)
-Finds DSC resources that match the specified criteria.
-
 ### [Get-DscConfiguration](Get-DscConfiguration.md)
 Gets the current configuration of the nodes.
 
