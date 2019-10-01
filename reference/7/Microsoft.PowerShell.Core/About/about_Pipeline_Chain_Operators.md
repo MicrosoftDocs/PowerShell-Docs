@@ -14,6 +14,10 @@ Describes chaining pipelines with the `&&` and `||` operators in PowerShell.
 
 ## Long description
 
+> [!NOTE]
+> This is an experimental feature. For more information see
+> [about_Experimental_Features](about_Experimental_Features.md).
+
 Beginning in PowerShell 7, PowerShell implements the `&&` and `||` operators to
 conditionally chain pipelines. These operators are known in PowerShell as
 *pipeline chain operators*, and are similar to
@@ -26,7 +30,10 @@ The `&&` operator executes the right-hand pipeline, if the left-hand pipeline
 succeeded. Conversely, the `||` operator executes the right-hand pipeline if
 the left-hand pipeline failed.
 
-This can be use for conditional execution of software deployments. For example:
+These operators use the `$?` and `$LASTEXITCODE` variable to determine if a
+pipeline failed. This allows you to use them with native command and not just
+with cmdlets or functions. This can be use for conditional execution of
+software deployments. For example:
 
 ```powershell
 npm run build && npm run deploy
@@ -34,10 +41,6 @@ npm run build && npm run deploy
 
 In this example the `npm run deploy` command only runs if the build command
 succeeds.
-
-> [!NOTE]
-> This is an experimental feature. For more information see
-> [about_Experimental_Features](about_Experimental_Features.md).
 
 ### Examples
 
