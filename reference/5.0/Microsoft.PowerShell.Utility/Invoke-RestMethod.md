@@ -14,7 +14,7 @@ Sends an HTTP or HTTPS request to a RESTful web service.
 
 ## Syntax
 
-```powershell
+```
 Invoke-RestMethod [-Method <WebRequestMethod>] [-UseBasicParsing] [-Uri] <Uri>
  [-WebSession <WebRequestSession>] [-SessionVariable <String>] [-Credential <PSCredential>]
  [-UseDefaultCredentials] [-CertificateThumbprint <String>] [-Certificate <X509Certificate>]
@@ -45,10 +45,10 @@ This cmdlet is introduced in Windows PowerShell 3.0.
 
 ```powershell
 Invoke-RestMethod -Uri https://blogs.msdn.microsoft.com/powershell/feed/ |
-Format-Table -Property Title, pubDate
+  Format-Table -Property Title, pubDate
 ```
 
-```
+```Output
 Title                                                                pubDate
 -----                                                                -------
 Join the PowerShell 10th Anniversary Celebration!                    Tue, 08 Nov 2016 23:00:04 +0000
@@ -63,7 +63,7 @@ PowerShell DSC and implicit remoting broken in KB3176934             Tue, 23 Aug
 PowerShell on Linux and Open Source!                                 Thu, 18 Aug 2016 15:32:02 +0000
 ```
 
-This command uses the `Invoke-RestMethod` cmdlet to get information from the Windows PowerShell Blog RSS feed.
+This command uses the `Invoke-RestMethod` cmdlet to get information from the PowerShell Blog RSS feed.
 The command uses the `Format-Table` cmdlet to display the values of the **Title** and **pubDate** properties of each blog in a table.
 
 ### Example 2
@@ -139,10 +139,10 @@ When the body is a form, or it is the output of another `Invoke-WebRequest` call
 For example:
 
 ```powershell
-$R = Invoke-WebRequest http://website.com/login.aspx
+$R = Invoke-WebRequest https://website.com/login.aspx
 $R.Forms[0].Name = "MyName"
 $R.Forms[0].Password = "MyPassword"
-Invoke-RestMethod http://website.com/service.aspx -Body $R.Forms[0]
+Invoke-RestMethod https://website.com/service.aspx -Body $R.Forms[0]
 ```
 
 ```yaml
@@ -232,7 +232,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: Current user
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -250,7 +250,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: KeepAlive
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -307,7 +307,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: 5
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -316,16 +316,16 @@ Accept wildcard characters: False
 
 Specifies the method used for the web request.
 The acceptable values for this parameter are:
-* Default
-* Delete
-* Get
-* Head
-* Merge
-* Options
-* Patch
-* Post
-* Put
-* Trace
+- Default
+- Delete
+- Get
+- Head
+- Merge
+- Options
+- Patch
+- Post
+- Put
+- Trace
 
 ```yaml
 Type: WebRequestMethod
@@ -335,7 +335,7 @@ Accepted values: Default, Get, Head, Post, Put, Delete, Trace, Options, Merge, P
 
 Required: False
 Position: Named
-Default value: None
+Default value: Default
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -483,7 +483,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: 0
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -492,11 +492,11 @@ Accept wildcard characters: False
 
 Specifies a value for the transfer-encoding HTTP response header.
 The acceptable values for this parameter are:
-* Chunked
-* Compress
-* Deflate
-* GZip
-* Identity
+- Chunked
+- Compress
+- Deflate
+- GZip
+- Identity
 
 ```yaml
 Type: String
@@ -569,12 +569,12 @@ Specifies a user agent string for the web request.
 
 The default user agent is similar to "Mozilla/5.0 (Windows NT; Windows NT 6.1; en-US) WindowsPowerShell/3.0" with slight variations for each operating system and platform.
 
-To test a website with the standard user agent string that is used by most Internet browsers, use the properties of the [PSUserAgent](https://msdn.microsoft.com/library/windows/desktop/hh484857(v=vs.85).aspx) class, such as Chrome, FireFox, Internet Explorer, Opera, and Safari.
+To test a website with the standard user agent string that is used by most Internet browsers, use the properties of the [PSUserAgent](/dotnet/api/microsoft.powershell.commands) class, such as Chrome, FireFox, Internet Explorer, Opera, and Safari.
 
 For example, the following command uses the user agent string for Internet
 
 ```powershell
-Invoke-WebRequest -Uri http://website.com/ -UserAgent (\[Microsoft.PowerShell.Commands.PSUserAgent\]::InternetExplorer)
+Invoke-WebRequest -Uri https://website.com/ -UserAgent ([Microsoft.PowerShell.Commands.PSUserAgent]::InternetExplorer)
 ```
 
 ```yaml

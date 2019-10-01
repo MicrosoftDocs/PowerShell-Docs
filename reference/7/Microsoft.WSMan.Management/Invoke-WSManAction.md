@@ -8,7 +8,6 @@ online version: https://go.microsoft.com/fwlink/?linkid=2096843
 schema: 2.0.0
 title: Invoke-WSManAction
 ---
-
 # Invoke-WSManAction
 
 ## SYNOPSIS
@@ -40,8 +39,12 @@ This cmdlet uses the WSMan connection/transport layer to run the action.
 ## EXAMPLES
 
 ### Example 1: Invoke a method
+
+```powershell
+Invoke-WSManAction -Action startservice -ResourceURI wmicimv2/win32_service  -SelectorSet @{name="spooler"} -Authentication default
 ```
-PS C:\> Invoke-WSManAction -Action "StartService" -ResourceURI wmicimv2/win32_service -SelectorSet @{name="spooler"} -Authentication default
+
+```Output
 xsi         : http://www.w3.org/2001/XMLSchema-instance
 p           : http://schemas.microsoft.com/wbem/wsman/1/wmi/root/cimv2/Win32_Service
 cim         : http://schemas.dmtf.org/wbem/wscim/1/common
@@ -55,9 +58,12 @@ The return value indicates whether the action was successful.
 In this case, a return value of 0 indicates success.
 A return value of 5 indicates that the service is already started.
 
-### Example 2: Invoke a method by using input from a file
+
+```powershell
+Invoke-WSManAction -Action stopservice -ResourceURI wmicimv2/Win32_Service -SelectorSet @{Name="spooler"} -FilePath:input.xml -Authentication default
 ```
-PS C:\> Invoke-WSManAction -Action "StopService" -ResourceURI wmicimv2/Win32_Service -SelectorSet @{Name="spooler"} -FilePath:input.xml -Authentication default
+
+```Output
 xsi         : http://www.w3.org/2001/XMLSchema-instance
 p           : http://schemas.microsoft.com/wbem/wsman/1/wmi/root/cimv2/Win32_Service
 cim         : http://schemas.dmtf.org/wbem/wscim/1/common
@@ -68,11 +74,15 @@ ReturnValue : 0
 This command calls the **StopService** method on the Spooler service by using input from a file.
 The file, Input.xml, contains the following content:
 
-`\<p:StopService_INPUT xmlns:p="http://schemas.microsoft.com/wbem/wsman/1/wmi/root/cimv2/Win32_Service"/\>`
+`<p:StopService_INPUT xmlns:p="http://schemas.microsoft.com/wbem/wsman/1/wmi/root/cimv2/Win32_Service" />`
 
 ### Example 3: Invoke a method with specified parameter values
+
+```powershell
+Invoke-WSManAction -Action create -ResourceURI wmicimv2/win32_process -ValueSet @{commandline="notepad.exe";currentdirectory="C:\"}
 ```
-PS C:\> Invoke-WSManAction -Action "Create" -ResourceURI wmicimv2/win32_process -ValueSet @{commandline="notepad.exe";currentdirectory="C:\"}
+
+```Output
 xsi         : http://www.w3.org/2001/XMLSchema-instance
 p           : http://schemas.microsoft.com/wbem/wsman/1/wmi/root/cimv2/Win32_Process
 cim         : http://schemas.dmtf.org/wbem/wscim/1/common
@@ -86,16 +96,16 @@ It passes the method two parameter values, Notepad.exe and C:\.
 As a result, a new process is created to run Notepad, and the current directory of the new process is set to C:\.
 
 ### Example 4: Invoke a method on a remote computer
-```
+
+```powershell
 PS C:\> Invoke-WSManAction -Action "StartService" -ResourceURI wmicimv2/win32_service -SelectorSet @{name="spooler"} -ComputerName "server01" -Authentication default
+```
+
+```Output
 xsi         : http://www.w3.org/2001/XMLSchema-instance
-
 p           : http://schemas.microsoft.com/wbem/wsman/1/wmi/root/cimv2/Win32_Service
-
 cim         : http://schemas.dmtf.org/wbem/wscim/1/common
-
 lang        : en-US
-
 ReturnValue : 0
 ```
 
@@ -276,7 +286,7 @@ For example, the following command uses the *FilePath* parameter:
 This command calls the **StopService** method on the **Spooler** service by using input from a file.
 The file, Input.xml, contains the following content:
 
-`\<p:StopService_INPUT xmlns:p="http://schemas.microsoft.com/wbem/wsman/1/wmi/root/cimv2/Win32_Service"/\>`
+`<p:StopService_INPUT xmlns:p="http://schemas.microsoft.com/wbem/wsman/1/wmi/root/cimv2/Win32_Service" />`
 
 ```yaml
 Type: String

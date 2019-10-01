@@ -331,8 +331,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 [OData Library](https://technet.microsoft.com/windowsserver/hh525392(v=vs.85).aspx)
 
-[What is the OData Protocol?](http://www.odata.org/)
+[What is the OData Protocol?](https://www.odata.org/)
 
 [Invoke-RestMethod](../Microsoft.PowerShell.Utility/Invoke-RestMethod.md)
-
-

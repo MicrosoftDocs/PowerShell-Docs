@@ -10,13 +10,11 @@ title:  Invoke-WSManAction
 # Invoke-WSManAction
 
 ## SYNOPSIS
-
 Invokes an action on the object that is specified by the Resource URI and by the selectors.
 
 ## SYNTAX
 
 ### URI (Default)
-
 ```
 Invoke-WSManAction [-Action] <String> [-ConnectionURI <Uri>] [-FilePath <String>] [-OptionSet <Hashtable>]
  [[-SelectorSet] <Hashtable>] [-SessionOption <SessionOption>] [-ValueSet <Hashtable>] [-ResourceURI] <Uri>
@@ -25,7 +23,6 @@ Invoke-WSManAction [-Action] <String> [-ConnectionURI <Uri>] [-FilePath <String>
 ```
 
 ### ComputerName
-
 ```
 Invoke-WSManAction [-Action] <String> [-ApplicationName <String>] [-ComputerName <String>] [-FilePath <String>]
  [-OptionSet <Hashtable>] [-Port <Int32>] [[-SelectorSet] <Hashtable>] [-SessionOption <SessionOption>]
@@ -34,7 +31,6 @@ Invoke-WSManAction [-Action] <String> [-ApplicationName <String>] [-ComputerName
 ```
 
 ## DESCRIPTION
-
 The Invoke-WSManAction runs an action on the object that is specified by RESOURCE_URI, where parameters are specified by key value pairs.
 
 This cmdlet uses the WSMan connection/transport layer to run the action.
@@ -47,7 +43,7 @@ This cmdlet uses the WSMan connection/transport layer to run the action.
 Invoke-WSManAction -Action startservice -ResourceURI wmicimv2/win32_service  -SelectorSet @{name="spooler"} -Authentication default
 ```
 
-```output
+```Output
 xsi         : http://www.w3.org/2001/XMLSchema-instance
 p           : http://schemas.microsoft.com/wbem/wsman/1/wmi/root/cimv2/Win32_Service
 cim         : http://schemas.dmtf.org/wbem/wscim/1/common
@@ -67,7 +63,7 @@ A return value of 5 indicates that the service is already started.
 Invoke-WSManAction -Action stopservice -ResourceURI wmicimv2/Win32_Service -SelectorSet @{Name="spooler"} -FilePath:input.xml -Authentication default
 ```
 
-```output
+```Output
 xsi         : http://www.w3.org/2001/XMLSchema-instance
 p           : http://schemas.microsoft.com/wbem/wsman/1/wmi/root/cimv2/Win32_Service
 cim         : http://schemas.dmtf.org/wbem/wscim/1/common
@@ -90,7 +86,7 @@ A return value of 5 indicates that the service is already started.
 Invoke-WSManAction -Action create -ResourceURI wmicimv2/win32_process -ValueSet @{commandline="notepad.exe";currentdirectory="C:\"}
 ```
 
-```output
+```Output
 xsi         : http://www.w3.org/2001/XMLSchema-instance
 p           : http://schemas.microsoft.com/wbem/wsman/1/wmi/root/cimv2/Win32_Process
 cim         : http://schemas.dmtf.org/wbem/wscim/1/common
@@ -109,7 +105,7 @@ As a result, a new process is created to run Notepad, and the current directory 
 Invoke-WSManAction -Action startservice -ResourceURI wmicimv2/win32_service  -SelectorSet @{name="spooler"} -ComputerName server01 -Authentication default
 ```
 
-```output
+```Output
 xsi         : http://www.w3.org/2001/XMLSchema-instance
 p           : http://schemas.microsoft.com/wbem/wsman/1/wmi/root/cimv2/Win32_Service
 cim         : http://schemas.dmtf.org/wbem/wscim/1/common
@@ -503,5 +499,4 @@ This cmdlet does not generate any output.
 [Set-WSManQuickConfig](Set-WSManQuickConfig.md)
 
 [Test-WSMan](Test-WSMan.md)
-
 
