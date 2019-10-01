@@ -362,7 +362,7 @@ Connects only to sessions that use the specified session configuration.
 
 Enter a configuration name or the fully qualified resource URI for a session configuration.
 If you specify only the configuration name, the following schema URI is prepended:
-http://schemas.microsoft.com/powershell.
+`http://schemas.microsoft.com/powershell`.
 The configuration name of a session is stored in the **ConfigurationName** property of the session.
 
 The value of this parameter is used to select and filter sessions.
@@ -508,7 +508,7 @@ Accept wildcard characters: False
 Parameter Sets: Name, ComputerName, ConnectionUri
 Required: True (Name), False (ComputerName, ConnectionUri)
 Default value: None
-Aliases: 
+Aliases:
 Type: String[]
 ```
 
@@ -693,10 +693,10 @@ session, use the **Availability** property.
 A value of Busy indicates that you cannot connect to the **PSSession** because it is connected to
 another session.
 
-  For more information about the values of the **State** property of sessions, see 
+  For more information about the values of the **State** property of sessions, see
 [RunspaceState Enumeration](https://msdn.microsoft.com/library/system.management.automation.runspaces.runspacestate) in the MSDN library.
 
-  For more information about the values of the **Availability** property of sessions, see 
+  For more information about the values of the **Availability** property of sessions, see
 [RunspaceAvailability Enumeration](https://msdn.microsoft.com/library/system.management.automation.runspaces.runspaceavailability) in the MSDN library.
 
 * You cannot change the idle time-out value of a **PSSession** when you connect to the

@@ -328,14 +328,14 @@ Specifies the session configuration that is used for the interactive session.
 
 Enter a configuration name or the fully qualified resource URI for a session configuration.
 If you specify only the configuration name, the following schema URI is prepended:
-http://schemas.microsoft.com/powershell.
+`http://schemas.microsoft.com/powershell`.
 
 The session configuration for a session is located on the remote computer.
 If the specified session configuration does not exist on the remote computer, the command fails.
 
 The default value is the value of the $PSSessionConfigurationName preference variable on the local
 computer. If this preference variable is not set, the default is Microsoft.PowerShell.
-For more information, see about_Preference_Variables.
+For more information, see [about_Preference_Variables](About/about_Preference_Variables.md).
 
 ```yaml
 Type: String

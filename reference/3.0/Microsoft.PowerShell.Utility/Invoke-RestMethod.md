@@ -1,16 +1,15 @@
 ---
-ms.date:  12/13/2018
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
+ms.date: 12/13/2018
+schema: 2.0.0
+locale: en-us
+keywords: powershell,cmdlet
 online version: https://go.microsoft.com/fwlink/?linkid=217034
-external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-title:  Invoke-RestMethod
+external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+title: Invoke-RestMethod
 ---
 # Invoke-RestMethod
 
 ## Synopsis
-
 Sends an HTTP or HTTPS request to a RESTful web service.
 
 ## Syntax
@@ -45,10 +44,10 @@ This cmdlet is introduced in Windows PowerShell 3.0.
 
 ```powershell
 Invoke-RestMethod -Uri https://blogs.msdn.microsoft.com/powershell/feed/ |
-Format-Table -Property Title, pubDate
+  Format-Table -Property Title, pubDate
 ```
 
-```
+```Output
 Title                                                                pubDate
 -----                                                                -------
 Join the PowerShell 10th Anniversary Celebration!                    Tue, 08 Nov 2016 23:00:04 +0000
@@ -63,7 +62,7 @@ PowerShell DSC and implicit remoting broken in KB3176934             Tue, 23 Aug
 PowerShell on Linux and Open Source!                                 Thu, 18 Aug 2016 15:32:02 +0000
 ```
 
-This command uses the `Invoke-RestMethod` cmdlet to get information from the Windows PowerShell Blog RSS feed.
+This command uses the `Invoke-RestMethod` cmdlet to get information from the PowerShell Blog RSS feed.
 The command uses the `Format-Table` cmdlet to display the values of the **Title** and **pubDate** properties of each blog in a table.
 
 ### Example 2
@@ -139,10 +138,10 @@ When the body is a form, or it is the output of another `Invoke-WebRequest` call
 For example:
 
 ```powershell
-$R = Invoke-WebRequest http://website.com/login.aspx
+$R = Invoke-WebRequest https://website.com/login.aspx
 $R.Forms[0].Name = "MyName"
 $R.Forms[0].Password = "MyPassword"
-Invoke-RestMethod http://website.com/service.aspx -Body $R.Forms[0]
+Invoke-RestMethod https://website.com/service.aspx -Body $R.Forms[0]
 ```
 
 ```yaml
@@ -558,7 +557,7 @@ To test a website with the standard user agent string that is used by most Inter
 For example, the following command uses the user agent string for Internet
 
 ```powershell
-Invoke-WebRequest -Uri http://website.com/ -UserAgent (\[Microsoft.PowerShell.Commands.PSUserAgent\]::InternetExplorer)
+Invoke-WebRequest -Uri https://website.com/ -UserAgent ([Microsoft.PowerShell.Commands.PSUserAgent]::InternetExplorer)
 ```
 
 ```yaml
@@ -605,7 +604,7 @@ Accept wildcard characters: False
 
 ### CommonParameters
 
-This cmdlet supports the common parameters: `-Debug`, `-ErrorAction`, `-ErrorVariable`, `-InformationAction`, `-InformationVariable`, `-OutVariable`, `-OutBuffer`, `-PipelineVariable`, `-Verbose`, `-WarningAction`, and `-WarningVariable`. For more information, see [about_CommonParameters](..\Microsoft.PowerShell.Core\About\about_CommonParameters.md).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## Inputs
 
@@ -632,3 +631,4 @@ If the request returns JSON strings, `Invoke-RestMethod` returns a PSObject that
 [ConvertFrom-Json](ConvertFrom-Json.md)
 
 [Invoke-WebRequest](Invoke-WebRequest.md)
+
