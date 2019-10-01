@@ -242,7 +242,7 @@ Get-Random -Count 3 -Maximum 10
 8
 ```
 
-### Example 13: Use the InputObject parameter with an empty string or \$null
+### Example 13: Use the InputObject parameter with an empty string or $null
 
 In this example, the **InputObject** parameter specifies an array that contains an empty string
 (`''`) and `$null`.
