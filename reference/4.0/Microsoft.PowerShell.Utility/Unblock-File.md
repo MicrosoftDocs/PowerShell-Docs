@@ -189,4 +189,4 @@ This cmdlet does not generate any output.
 
 [Out-File](Out-File.md)
 
-[FileSystem Provider](../Microsoft.PowerShell.Core/Providers/FileSystem-Provider.md)
+[FileSystem Provider](../Microsoft.PowerShell.Core/about/about_FileSystem_Provider.md)

@@ -349,4 +349,4 @@ This cmdlet does not generate any output.
 
 [Unregister-PSSessionConfiguration](Unregister-PSSessionConfiguration.md)
 
-
+[WSMan Provider](../Microsoft.WsMan.Management/About/about_WSMan_Provider.md)

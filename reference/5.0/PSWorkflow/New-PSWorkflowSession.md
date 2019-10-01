@@ -408,8 +408,3 @@ A `New-PSWorkflowSession` command is equivalent to the following command:
 [about_Workflows](../PSWorkflow/About/about_Workflows.md)
 
 [about_WorkflowCommonParameters](About/about_WorkflowCommonParameters.md)
-
-[PSWorkflow Module](PSWorkflow.md)
-
-[PSWorkflowUtility Module](../PSWorkflowUtility/PSWorkflowUtility.md)
-
