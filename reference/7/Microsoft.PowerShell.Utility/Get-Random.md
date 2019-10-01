@@ -8,6 +8,7 @@ online version: https://go.microsoft.com/fwlink/?linkid=2097016
 schema: 2.0.0
 title: Get-Random
 ---
+
 # Get-Random
 
 ## SYNOPSIS
@@ -148,7 +149,7 @@ yellow
 
 This example shows the effect of using the **SetSeed** parameter.
 
-Because **SetSeed** produces non-random behavior, it is typically used only to reproduce results,
+Because **SetSeed** produces non-random behavior, it's typically used only to reproduce results,
 such as when debugging or analyzing a script.
 
 ```powershell
@@ -241,6 +242,18 @@ Get-Random -Count 3 -Maximum 10
 8
 ```
 
+### Example 13: Use the InputObject parameter with an empty string or $null
+
+In this example, the **InputObject** parameter specifies an array that contains an empty string
+(`''`) and `$null`.
+
+```powershell
+Get-Random -InputObject @('a','',$null)
+```
+
+`Get-Random` will return either `a`, empty string, or `$null`. The empty sting displays as a blank
+line and `$null` returns to a PowerShell prompt.
+
 ## PARAMETERS
 
 ### -Count
@@ -268,6 +281,9 @@ Specifies a collection of objects. `Get-Random` gets randomly selected objects i
 the collection up to the number specified by **Count**. Enter the objects, a variable that contains
 the objects, or a command or expression that gets the objects. You can also pipe a collection of
 objects to `Get-Random`.
+
+Beginning in PowerShell 7, the **InputObject** parameter accepts arrays that can contain an empty
+string or `$null`. The array can be sent down the pipeline or as an **InputObject** parameter value.
 
 ```yaml
 Type: Object[]
@@ -335,11 +351,10 @@ Accept wildcard characters: False
 
 Specifies a seed value for the random number generator. This seed value is used for the current
 command and for all subsequent `Get-Random` commands in the current session until you use
-**SetSeed** again or close the session. You cannot reset the seed to its default value.
+**SetSeed** again or close the session. You can't reset the seed to its default value.
 
-The **SetSeed** parameter is not required. By default, `Get-Random` uses the
-[RandomNumberGenerator()](/dotnet/api/system.security.cryptography.randomnumbergenerator)
-method to generate a seed value. Because **SetSeed** results in non-random behavior, it is typically
+The **SetSeed** parameter isn't required. By default, `Get-Random` uses the [RandomNumberGenerator()](/dotnet/api/system.security.cryptography.randomnumbergenerator)
+method to generate a seed value. Because **SetSeed** results in non-random behavior, it's typically
 used only when trying to reproduce behavior, such as when debugging or analyzing a script that
 includes `Get-Random` commands.
 
@@ -381,5 +396,10 @@ starts.
 
 Beginning in Windows PowerShell 3.0, `Get-Random` supports 64-bit integers. In Windows PowerShell
 2.0, all values are cast to **System.Int32**.
+
+Beginning in PowerShell 7, the **InputObject** parameter in the **RandomListItemParameterSet**
+parameter set accepts arrays that contain an empty string or `$null`. In earlier PowerShell
+versions, only the **Maximum** parameter in the **RandomNumberParameterSet** parameter set accepted
+an empty string or `$null`.
 
 ## RELATED LINKS
