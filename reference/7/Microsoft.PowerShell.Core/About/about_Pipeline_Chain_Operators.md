@@ -30,10 +30,10 @@ The `&&` operator executes the right-hand pipeline, if the left-hand pipeline
 succeeded. Conversely, the `||` operator executes the right-hand pipeline if
 the left-hand pipeline failed.
 
-These operators use the `$?` and `$LASTEXITCODE` variable to determine if a
+These operators use the `$?` and `$LASTEXITCODE` variables to determine if a
 pipeline failed. This allows you to use them with native command and not just
-with cmdlets or functions. This can be use for conditional execution of
-software deployments. For example:
+with cmdlets or functions. For example, this could be used for conditional
+execution of a software deployment:
 
 ```powershell
 npm run build && npm run deploy
