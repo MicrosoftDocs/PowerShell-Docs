@@ -99,11 +99,21 @@ This is the default return type when no parameters are used.
 
 ### System.DateTime
 
-This is the type return when using the **Since** parameter.
+This type is returned when using the **Since** parameter.
+
+> [!NOTE]
+> If Windows fast startup is enabled, Windows does not update the value stored in
+> **LastBootUpTime**. To disable fast startup, run the following command: `Powercfg -h off`.
+>
+> For more information about Windows fast startup, see
+> [Distinguishing Fast Startup from Wake-from-Hibernation](/windows-hardware/drivers/kernel/distinguishing-fast-startup-from-wake-from-hibernation).
 
 ## NOTES
 
-On Windows, the value returned will be the same as the **LastBootUpTime** property of the **Win32_OperatingSystem** class in WMI.
+On Windows, the value returned is the same as the **LastBootUpTime** property of the
+**Win32_OperatingSystem** class in WMI.
 
 ## RELATED LINKS
+
+[Win32_OperatingSystem](/windows/win32/cimwin32prov/win32-operatingsystem#properties)
 
