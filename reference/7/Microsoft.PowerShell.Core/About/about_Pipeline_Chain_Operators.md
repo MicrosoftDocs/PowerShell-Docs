@@ -31,16 +31,13 @@ succeeded. Conversely, the `||` operator executes the right-hand pipeline if
 the left-hand pipeline failed.
 
 These operators use the `$?` and `$LASTEXITCODE` variables to determine if a
-pipeline failed. This allows you to use them with native command and not just
-with cmdlets or functions. For example, this could be used for conditional
-execution of a software deployment:
+pipeline failed. This allows you to use them with native commands and not just
+with cmdlets or functions. For example:
 
 ```powershell
-npm run build && npm run deploy
+# Create an SSH key pair - if successful copy the public key to clipboard
+ssh-keygen -t rsa -b 2048 && Get-Content -Raw ~\.ssh\id_rsa.pub | clip
 ```
-
-In this example the `npm run deploy` command only runs if the build command
-succeeds.
 
 ### Examples
 
