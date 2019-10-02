@@ -660,7 +660,7 @@ You can't send objects down the pipeline to `Set-PSReadLineOption`.
 
 ## RELATED LINKS
 
-[about_PSReadLine](./About/PSReadLine.md)
+[about_PSReadLine](./About/about_PSReadLine.md)
 
 [Get-PSReadLineKeyHandler](Get-PSReadLineKeyHandler.md)
 

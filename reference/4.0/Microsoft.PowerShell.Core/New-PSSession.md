@@ -358,7 +358,7 @@ The format of this string is as follows:
 
 The default value is as follows:
 
-http://localhost:5985/WSMAN
+`http://localhost:5985/WSMAN`
 
 If you do not specify a **ConnectionURI**, you can use the **UseSSL**, **ComputerName**, **Port**, and **ApplicationName** parameters to specify the **ConnectionURI** values.
 

@@ -7,7 +7,6 @@ online version: https://go.microsoft.com/fwlink/?linkid=293987
 external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 title:  Invoke-RestMethod
 ---
-
 # Invoke-RestMethod
 
 ## Synopsis
@@ -25,6 +24,7 @@ Invoke-RestMethod [-Method <WebRequestMethod>] [-Uri] <Uri> [-WebSession <WebReq
 ```
 
 ## Description
+
 The `Invoke-RestMethod` cmdlet sends HTTP and HTTPS requests to Representational State Transfer (REST) web services that returns richly structured data.
 
 Windows PowerShell formats the response based to the data type.
@@ -41,12 +41,13 @@ This cmdlet is introduced in Windows PowerShell 3.0.
 ## Examples
 
 ### Example 1: Get the PowerShell RSS feed
+
 ```powershell
 Invoke-RestMethod -Uri https://blogs.msdn.microsoft.com/powershell/feed/ |
-Format-Table -Property Title, pubDate
+  Format-Table -Property Title, pubDate
 ```
 
-```
+```Output
 Title                                                                pubDate
 -----                                                                -------
 Join the PowerShell 10th Anniversary Celebration!                    Tue, 08 Nov 2016 23:00:04 +0000
@@ -61,10 +62,11 @@ PowerShell DSC and implicit remoting broken in KB3176934             Tue, 23 Aug
 PowerShell on Linux and Open Source!                                 Thu, 18 Aug 2016 15:32:02 +0000
 ```
 
-This command uses the `Invoke-RestMethod` cmdlet to get information from the Windows PowerShell Blog RSS feed.
+This command uses the `Invoke-RestMethod` cmdlet to get information from the PowerShell Blog RSS feed.
 The command uses the `Format-Table` cmdlet to display the values of the **Title** and **pubDate** properties of each blog in a table.
 
 ### Example 2
+
 In the following example, a user runs `Invoke-RestMethod` to perform a POST request on an intranet website in the user's organization.
 
 ```powershell
@@ -119,6 +121,7 @@ This example demonstrates, how to pass multiple headers in from a `hash-table` t
 ## Parameters
 
 ### -Body
+
 Specifies the body of the request.
 The body is the content of the request that follows the headers.
 You can also pipe a body value to `Invoke-RestMethod`.
@@ -135,10 +138,10 @@ When the body is a form, or it is the output of another `Invoke-WebRequest` call
 For example:
 
 ```powershell
-$R = Invoke-WebRequest http://website.com/login.aspx
+$R = Invoke-WebRequest https://website.com/login.aspx
 $R.Forms[0].Name = "MyName"
 $R.Forms[0].Password = "MyPassword"
-Invoke-RestMethod http://website.com/service.aspx -Body $R.Forms[0]
+Invoke-RestMethod https://website.com/service.aspx -Body $R.Forms[0]
 ```
 
 ```yaml
@@ -154,6 +157,7 @@ Accept wildcard characters: False
 ```
 
 ### -Certificate
+
 Specifies the client certificate that is used for a secure web request.
 Enter a variable that contains a certificate or a command or expression that gets the certificate.
 
@@ -173,6 +177,7 @@ Accept wildcard characters: False
 ```
 
 ### -CertificateThumbprint
+
 Specifies the digital public key certificate (X509) of a user account that has permission to send the request.
 Enter the certificate thumbprint of the certificate.
 
@@ -194,6 +199,7 @@ Accept wildcard characters: False
 ```
 
 ### -ContentType
+
 Specifies the content type of the web request.
 
 If this parameter is omitted and the request method is POST, `Invoke-RestMethod` sets the content type to "application/x-www-form-urlencoded".
@@ -212,6 +218,7 @@ Accept wildcard characters: False
 ```
 
 ### -Credential
+
 Specifies a user account that has permission to send the request.
 The default is the current user.
 
@@ -230,6 +237,7 @@ Accept wildcard characters: False
 ```
 
 ### -DisableKeepAlive
+
 Sets the **KeepAlive** value in the HTTP header to False.
 By default, **KeepAlive** is True.
 **KeepAlive** establishes a persistent connection to the server to facilitate subsequent requests.
@@ -241,12 +249,13 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: KeepAlive
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -Headers
+
 Specifies the headers of the web request.
 Enter a hash table or dictionary.
 
@@ -266,6 +275,7 @@ Accept wildcard characters: False
 ```
 
 ### -InFile
+
 Gets the content of the web request from a file.
 
 Enter a path and file name.
@@ -284,6 +294,7 @@ Accept wildcard characters: False
 ```
 
 ### -MaximumRedirection
+
 Determines how many times Windows PowerShell redirects a connection to an alternate Uniform Resource Identifier (URI) before the connection fails.
 The default value is 5.
 A value of 0 (zero) prevents all redirection.
@@ -301,18 +312,19 @@ Accept wildcard characters: False
 ```
 
 ### -Method
+
 Specifies the method used for the web request.
 The acceptable values for this parameter are:
-* Default
-* Delete
-* Get
-* Head
-* Merge
-* Options
-* Patch
-* Post
-* Put
-* Trace
+- Default
+- Delete
+- Get
+- Head
+- Merge
+- Options
+- Patch
+- Post
+- Put
+- Trace
 
 ```yaml
 Type: WebRequestMethod
@@ -322,12 +334,13 @@ Accepted values: Default, Get, Head, Post, Put, Delete, Trace, Options, Merge, P
 
 Required: False
 Position: Named
-Default value: None
+Default value: Default
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -OutFile
+
 Saves the response body in the specified output file.
 Enter a path and file name.
 If you omit the path, the default is the current location.
@@ -348,6 +361,7 @@ Accept wildcard characters: False
 ```
 
 ### -PassThru
+
 Returns the results, in addition to writing them to a file.
 This parameter is valid only when the `-OutFile` parameter is also used in the command.
 
@@ -364,6 +378,7 @@ Accept wildcard characters: False
 ```
 
 ### -Proxy
+
 Uses a proxy server for the request, rather than connecting directly to the Internet resource.
 Enter the URI of a network proxy server.
 
@@ -380,6 +395,7 @@ Accept wildcard characters: False
 ```
 
 ### -ProxyCredential
+
 Specifies a user account that has permission to use the proxy server that is specified by the `-Proxy` parameter.
 The default is the current user.
 
@@ -401,6 +417,7 @@ Accept wildcard characters: False
 ```
 
 ### -ProxyUseDefaultCredentials
+
 Uses the credentials of the current user to access the proxy server that is specified by the `-Proxy` parameter.
 
 This parameter is valid only when the `-Proxy` parameter is also used in the command.
@@ -419,6 +436,7 @@ Accept wildcard characters: False
 ```
 
 ### -SessionVariable
+
 Creates a web request session and saves it in the value of the specified variable.
 Enter a variable name without the dollar sign (`$`) symbol.
 
@@ -449,6 +467,7 @@ Accept wildcard characters: False
 ```
 
 ### -TimeoutSec
+
 Specifies how long the request can be pending before it times out.
 Enter a value in seconds.
 The default value, 0, specifies an indefinite time-out.
@@ -469,13 +488,14 @@ Accept wildcard characters: False
 ```
 
 ### -TransferEncoding
+
 Specifies a value for the transfer-encoding HTTP response header.
 The acceptable values for this parameter are:
-* Chunked
-* Compress
-* Deflate
-* GZip
-* Identity
+- Chunked
+- Compress
+- Deflate
+- GZip
+- Identity
 
 ```yaml
 Type: String
@@ -491,6 +511,7 @@ Accept wildcard characters: False
 ```
 
 ### -Uri
+
 Specifies the Uniform Resource Identifier (URI) of the Internet resource to which the web request is sent.
 This parameter supports HTTP, HTTPS, FTP, and FILE values.
 
@@ -510,6 +531,7 @@ Accept wildcard characters: False
 ```
 
 ### -UseDefaultCredentials
+
 Uses the credentials of the current user to send the web request.
 
 ```yaml
@@ -525,16 +547,17 @@ Accept wildcard characters: False
 ```
 
 ### -UserAgent
+
 Specifies a user agent string for the web request.
 
 The default user agent is similar to "Mozilla/5.0 (Windows NT; Windows NT 6.1; en-US) WindowsPowerShell/3.0" with slight variations for each operating system and platform.
 
-To test a website with the standard user agent string that is used by most Internet browsers, use the properties of the [PSUserAgent](https://msdn.microsoft.com/library/windows/desktop/hh484857(v=vs.85).aspx) class, such as Chrome, FireFox, Internet Explorer, Opera, and Safari.
+To test a website with the standard user agent string that is used by most Internet browsers, use the properties of the [PSUserAgent](/dotnet/api/microsoft.powershell.commands) class, such as Chrome, FireFox, Internet Explorer, Opera, and Safari.
 
 For example, the following command uses the user agent string for Internet
 
 ```powershell
-Invoke-WebRequest -Uri http://website.com/ -UserAgent (\[Microsoft.PowerShell.Commands.PSUserAgent\]::InternetExplorer)
+Invoke-WebRequest -Uri https://website.com/ -UserAgent ([Microsoft.PowerShell.Commands.PSUserAgent]::InternetExplorer)
 ```
 
 ```yaml
@@ -550,6 +573,7 @@ Accept wildcard characters: False
 ```
 
 ### -WebSession
+
 Specifies a web request session.
 Enter the variable name, including the dollar sign (`$`).
 
@@ -579,19 +603,23 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: `-Debug`, `-ErrorAction`, `-ErrorVariable`, `-InformationAction`, `-InformationVariable`, `-OutVariable`, `-OutBuffer`, `-PipelineVariable`, `-Verbose`, `-WarningAction`, and `-WarningVariable`. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## Inputs
 
 ### System.Object
+
 You can pipe the body of a web request to `Invoke-RestMethod`.
 
 ## Outputs
 
 ### System.Xml.XmlDocument, Microsoft.PowerShell.Commands.HtmlWebResponseObject, System.String
+
 The output of the cmdlet depends upon the format of the content that is retrieved.
 
 ### PSObject
+
 If the request returns JSON strings, `Invoke-RestMethod` returns a PSObject that represents the strings.
 
 ## Notes

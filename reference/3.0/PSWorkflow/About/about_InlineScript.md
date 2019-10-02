@@ -159,6 +159,6 @@ Test-Workflow
 
 [PSWorkflow](../PSWorkflow.md) cmdlets
 
-[Workflows Guide](../../../docs-conceptual/components/workflows-guide.md)
+[Workflows Guide](/powershell/scripting/components/workflows-guide)
 
 [Writing a Windows PowerShell Workflow](/powershell/developer/workflow/writing-a-windows-powershell-workflow)

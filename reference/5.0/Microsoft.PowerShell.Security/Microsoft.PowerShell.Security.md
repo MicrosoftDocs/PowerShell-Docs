@@ -19,9 +19,6 @@ the basic security features of Windows.
 
 ## Microsoft.PowerShell.Security Cmdlets
 
-### [about_Certificate_Provider](About/about_Certificate_Provider.md)
-Provides access to X.509 certificate stores and certificates in PowerShell.
-
 ### [ConvertFrom-SecureString](ConvertFrom-SecureString.md)
 Converts a secure string to an encrypted standard string.
 
@@ -30,7 +27,6 @@ Converts encrypted standard strings to secure strings.
 
 ### [Get-Acl](Get-Acl.md)
 Gets the security descriptor for a resource, such as a file or registry key.
-
 
 ### [Get-AuthenticodeSignature](Get-AuthenticodeSignature.md)
 Gets information about the Authenticode signature for a file.

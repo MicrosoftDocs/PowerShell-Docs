@@ -1,6 +1,12 @@
 {
     "build": {
         "content": [
+            {
+              "files": ["index.yml", "module/index.md","digital-art.md"],
+              "exclude": ["**/obj/**", "**/includes/**", "README.md"],
+              "dest": ""
+            },
+
             { "files": ["bread/toc.yml"], "dest": "scripting" },
 
             { "files": ["toc.yml"], "src": "docs-conceptual", "version": "powershell-3.0", "dest": "scripting/powershell-3.0" },
@@ -37,6 +43,10 @@
             { "files": ["**/*.md"], "src": "virtual-directory-module", "dest": "module" }
         ],
         "resource": [
+            {
+              "files": ["**/media/**/*.png", "**/media/**/*.gif", "**/media/**/*.jpeg", "**/media/**/*.jpg", "**/media/**/*.svg"],
+              "exclude": ["**/obj/**", "**/includes/**"]
+            },
             {
               "files": ["**/images/**", "**/*.png", "**/*.gif", "**/*.jpeg", "**/*.jpg", "**/*.svg"],
               "exclude": ["**/obj/**", "**/includes/**"]

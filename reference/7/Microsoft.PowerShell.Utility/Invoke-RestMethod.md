@@ -93,11 +93,10 @@ This cmdlet is introduced in Windows PowerShell 3.0.
 
 ```powershell
 Invoke-RestMethod -Uri https://blogs.msdn.microsoft.com/powershell/feed/ |
-    Format-Table -Property Title, pubDate
-<#
+  Format-Table -Property Title, pubDate
+```
 
-Result:
-
+```Output
 Title                                                                pubDate
 -----                                                                -------
 Join the PowerShell 10th Anniversary Celebration!                    Tue, 08 Nov 2016 23:00:04 +0000
@@ -110,8 +109,6 @@ PowerShell Security at DerbyCon                                      Wed, 28 Sep
 DSC Resource Kit September Release                                   Thu, 22 Sep 2016 00:25:37 +0000
 PowerShell DSC and implicit remoting broken in KB3176934             Tue, 23 Aug 2016 15:07:50 +0000
 PowerShell on Linux and Open Source!                                 Thu, 18 Aug 2016 15:32:02 +0000
-
-#>
 ```
 
 This command uses the `Invoke-RestMethod` cmdlet to get information from the PowerShell Blog RSS feed.
@@ -1054,7 +1051,7 @@ To test a website with the standard user agent string that is used by most Inter
 
 For example, the following command uses the user agent string for Internet Explorer.
 
-`Invoke-RestMethod -Uri http://website.com/ -UserAgent ([Microsoft.PowerShell.Commands.PSUserAgent]::InternetExplorer)`
+`Invoke-RestMethod -Uri https://website.com/ -UserAgent ([Microsoft.PowerShell.Commands.PSUserAgent]::InternetExplorer)`
 
 ```yaml
 Type: String
