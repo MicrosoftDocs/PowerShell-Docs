@@ -4,7 +4,7 @@
             {
               "files": ["index.yml", "module/index.md","digital-art/*.md"],
               "exclude": ["**/obj/**", "**/includes/**", "README.md"],
-              "dest": "pscore-reference"
+              "dest": ""
             },
 
             { "files": ["bread/toc.yml"], "dest": "scripting" },
