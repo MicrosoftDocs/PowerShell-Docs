@@ -104,7 +104,7 @@ From Value 1
 To Value   5280
 ```
 
-The first command issues the request and saves the response in the `$R` variable.
+The first command issues the request and saves the response in the `$response` variable.
 
 The second command gets any **InputField** where the **name** property is like "* Value". The
 filtered results are piped to `Select-Object` to select the **name** and **value** properties.
