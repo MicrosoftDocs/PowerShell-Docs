@@ -99,7 +99,7 @@ This is the default return type when no parameters are used.
 
 ### System.DateTime
 
-This is the type return when using the **Since** parameter.
+This type is returned when using the **Since** parameter.
 
 > [!NOTE]
 > If Windows fast startup is enabled, Windows does not update the value stored in
