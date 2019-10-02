@@ -101,9 +101,16 @@ This is the default return type when no parameters are used.
 
 This is the type return when using the **Since** parameter.
 
+> [!NOTE]
+> If Windows fast startup is enabled, Windows does not update the value stored in
+> **LastBootUpTime**. To disable fast startup, run the following command: `Powercfg -h off`.
+
 ## NOTES
 
-On Windows, the value returned will be the same as the **LastBootUpTime** property of the **Win32_OperatingSystem** class in WMI.
+On Windows, the value returned is the same as the **LastBootUpTime** property of the
+**Win32_OperatingSystem** class in WMI.
 
 ## RELATED LINKS
 
+For more information about Windows fast startup, see
+[Distinguishing Fast Startup from Wake-from-Hibernation](/windows-hardware/drivers/kernel/distinguishing-fast-startup-from-wake-from-hibernation).
