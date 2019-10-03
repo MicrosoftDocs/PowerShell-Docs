@@ -160,8 +160,34 @@ semicolons (`;`). This means that pipelines within a pipeline chain can be
 individually redirected, and that entire pipeline chains can be backgrounded,
 assigned to variables, or separated as statements.
 
-To use lower precedence syntax within a pipeline chain, consider the use of
-parentheses `(...)` or a subexpression `$(...)`.
+To use lower precedence syntax within a pipeline chain,
+consider the use of parentheses `(...)` or a subexpression `$(...)`.
+Note that enclosing an expression in parentheses or a subexpression
+will set `$?` to true irrespective of the expression itself,
+causing a different outcome in the pipeline chain.
+
+Like most other operators in PowerShell, `&&` and `||` are also *left-associative*,
+meaning they group from the left. For example:
+
+```powershell
+Get-ChildItem -Path ./file.txt || Write-Error "file.txt does not exist" && Get-Content -Raw ./file.txt
+```
+
+will group as:
+
+```
+[Get-ChildItem -Path ./file.txt || Write-Error "file.txt does not exist"] && Get-Content -Raw ./file.txt
+```
+
+being equivalent to:
+
+```powershell
+Get-ChildItem -Path ./file.txt
+
+if (-not $?) { Write-Error "file.txt does not exist" }
+
+if ($?) { Get-Content -Raw ./file.txt }
+```
 
 ### Error interaction
 
