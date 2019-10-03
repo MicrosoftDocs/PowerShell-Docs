@@ -69,7 +69,7 @@ stination "d:\archive\old-project.txt"
 
 ### Example 3: Rename a registry key
 
-This example renames a registry key from "Advertising" to "Marketing". When the command is complete,
+This example renames a registry key from **Advertising** to **Marketing**. When the command is complete,
 the key is renamed, but the registry entries in the key are unchanged.
 
 ```powershell
@@ -78,7 +78,7 @@ Rename-Item -Path "HKLM:\Software\MyCompany\Advertising" -NewName "Marketing"
 
 ### Example 4: Rename multiple files
 
-This example renames all the "*.txt" files in the current directory to "*.log".
+This example renames all the `*.txt` files in the current directory to `*.log`.
 
 ```powershell
 Get-ChildItem *.txt
