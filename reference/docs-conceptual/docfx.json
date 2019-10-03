@@ -20,6 +20,9 @@
             "reference/docs-conceptual/wmf/": {
               "folder_relative_path_in_docset": "wmf/"
             },
+            "reference/docs-conceptual/dsc/": {
+              "folder_relative_path_in_docset": "dsc/"
+            },
             "reference/docs-conceptual/gallery/": {
               "folder_relative_path_in_docset": "gallery/"
             }
