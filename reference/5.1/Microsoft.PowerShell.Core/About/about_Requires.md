@@ -158,7 +158,7 @@ the version string you wish to require.
 Get-Module Hyper-V
 ```
 
-```output
+```Output
 ModuleType Version    Name     ExportedCommands
 ---------- -------    ----     ------------------
 Binary     2.0.0.0    hyper-v  {Add-VMAssignableDevice, ...}
