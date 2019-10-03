@@ -64,9 +64,9 @@ script invalidated the required state.
 
 #### -Assembly \<Assembly path> | \<.NET assembly specification>
 
-Specifies the path to a `.dll` file or a .NET assembly specification. The
+Specifies the path to the assembly DLL file or a .NET assembly name. The
 **Assembly** parameter was introduced in PowerShell 5.0. For more information
-about .NET assemblies, see [Assemblies in .NET](/dotnet/standard/assembly).
+about .NET assemblies, see [Assembly names](/dotnet/standard/assembly/names).
 
 For example:
 
