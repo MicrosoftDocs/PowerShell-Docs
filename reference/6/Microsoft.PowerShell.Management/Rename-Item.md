@@ -52,8 +52,8 @@ You can't use `Rename-Item` to both rename and move an item. Specifically, you c
 for the value of the **NewName** parameter, unless the path is identical to the path specified in
 the **Path** parameter. Otherwise, only a new name is permitted.
 
-This example attempts to rename the "project.txt" file in the current directory to "old-project.txt"
-in the "D:\Archive" directory. The result is the error shown in the output.
+This example attempts to rename the `project.txt` file in the current directory to `old-project.txt`
+in the `D:\Archive` directory. The result is the error shown in the output.
 
 ```powershell
 Rename-Item -Path "project.txt" -NewName "d:\archive\old-project.txt"
