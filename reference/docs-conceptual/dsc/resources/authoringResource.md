@@ -18,4 +18,4 @@ A DSC resource is a Windows PowerShell module. The module contains both the sche
 * [Implementing a DSC resource in C#](authoringResourceMofCS.md)
 * [Writing a custom DSC resource with PowerShell classes](authoringResourceClass.md)
 * [Composite resources: Using a DSC configuration as a resource](authoringResourceComposite.md)
-* [Using the Resource Designer tool](../authoringResourceMofDesigner.md)
+* [Using the Resource Designer tool](authoringResourceMofDesigner.md)
