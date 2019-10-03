@@ -40,7 +40,7 @@ name. To move and rename an item, use the `Move-Item` cmdlet.
 
 ### Example 1: Rename a file
 
-This command renames the file "daily_file.txt" to "monday_file.txt".
+This command renames the file `daily_file.txt` to `monday_file.txt`.
 
 ```powershell
 Rename-Item -Path "c:\logfiles\daily_file.txt" -NewName "monday_file.txt"
