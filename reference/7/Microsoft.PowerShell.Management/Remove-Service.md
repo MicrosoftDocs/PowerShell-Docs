@@ -31,6 +31,8 @@ Remove-Service [-InputObject <ServiceController>] [-WhatIf] [-Confirm] [<CommonP
 
 The `Remove-Service` cmdlet removes a Windows service in the registry and in the service database.
 
+> This cmdlet was added in PowerShell v6.
+
 ## EXAMPLES
 
 ### Example 1: Remove a service
@@ -155,4 +157,3 @@ To run this cmdlet, start PowerShell by using the **Run as administrator** optio
 [Stop-Service](Stop-Service.md)
 
 [Suspend-Service](Suspend-Service.md)
-
