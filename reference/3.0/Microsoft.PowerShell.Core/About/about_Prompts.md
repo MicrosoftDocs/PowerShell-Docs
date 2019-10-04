@@ -7,11 +7,11 @@ title:  about_Prompts
 ---
 # About Prompts
 
-## SHORT DESCRIPTION
+## Short description
 Describes the `Prompt` function and demonstrates how to create a custom
 `Prompt` function.
 
-## LONG DESCRIPTION
+## Long description
 
 The PowerShell command prompt indicates that PowerShell is ready to run a
 command:
@@ -24,7 +24,7 @@ The PowerShell prompt is determined by the built-in `Prompt` function. You can
 customize the prompt by creating your own `Prompt` function and saving it in
 your PowerShell profile.
 
-## ABOUT THE PROMPT FUNCTION
+## About the Prompt function
 
 The `Prompt` function determines the appearance of the PowerShell prompt.
 PowerShell comes with a built-in `Prompt` function, but you can override it by
@@ -41,14 +41,14 @@ string or an object that is formatted as a string. The maximum recommended
 length is 80 characters.
 
 For example, the following `Prompt` function returns a "Hello, World" string
-followed by a caret (>).
+followed by a  right angle bracket (`>`).
 
 ```powershell
 PS C:\> function prompt {"Hello, World > "}
 Hello, World >
 ```
 
-### GETTING THE `Prompt` function
+### Getting the Prompt function
 
 To get the `Prompt` function, use the `Get-Command` cmdlet or use the
 `Get-Item` cmdlet in the Function drive.
@@ -64,7 +64,7 @@ Function        prompt
 ```
 
 To get the script that sets the value of the prompt, use the dot method to get
-the ScriptBlock property of the `Prompt` function.
+the **ScriptBlock** property of the `Prompt` function.
 
 For example:
 
@@ -79,14 +79,14 @@ For example:
 # .ExternalHelp System.Management.Automation.dll-help.xml
 ```
 
-Like all functions, the `Prompt` function is stored in the Function: drive. To
-display the script that creates the current `Prompt` function, type:
+Like all functions, the `Prompt` function is stored in the `Function:` drive.
+To display the script that creates the current `Prompt` function, type:
 
 ```powershell
 (Get-Item function:prompt).ScriptBlock
 ```
 
-### THE DEFAULT PROMPT
+### The default prompt
 
 The default prompt appears only when the `Prompt` function generates an error
 or does not return an object.
@@ -108,7 +108,7 @@ PS>
 Because PowerShell comes with a built-in prompt, you usually do not see the
 default prompt.
 
-### BUILT-IN PROMPT
+### Built-in prompt
 
 PowerShell includes a built-in `Prompt` function.
 
@@ -122,16 +122,16 @@ function prompt {
 
 The function uses the `Test-Path` cmdlet to determine whether the
 `$PSDebugContext` automatic variable is populated. If `$PSDebugContext` is
-populated, you are in debugging mode, and "[DBG]" is added to the prompt, as
+populated, you are in debugging mode, and `[DBG]:` is added to the prompt, as
 follows:
 
 ```Output
-[DBG] PS C:\ps-test>
+[DBG]: PS C:\ps-test>
 ```
 
-If `$PSDebugContext` is not populated, the function adds "PS" to the prompt.
+If `$PSDebugContext` is not populated, the function adds `PS` to the prompt.
 And, the function uses the `Get-Location` cmdlet to get the current file system
-directory location. Then, it adds a right angle bracket (>).
+directory location. Then, it adds a right angle bracket (`>`).
 
 For example:
 
@@ -139,9 +139,9 @@ For example:
 PS C:\ps-test>
 ```
 
-If you are in a nested prompt, the function adds two angle brackets (>>) to the
-prompt. (You are in a nested prompt if the value of the `$NestedPromptLevel`
-automatic variable is greater than 1.)
+If you are in a nested prompt, the function adds two angle brackets (`>>`) to
+the prompt. (You are in a nested prompt if the value of the
+`$NestedPromptLevel` automatic variable is greater than 1.)
 
 For example, when you are debugging in a nested prompt, the prompt resembles
 the following prompt:
@@ -150,7 +150,7 @@ the following prompt:
 [DBG] PS C:\ps-test>>>
 ```
 
-### CHANGES TO THE PROMPT
+### Changes to the prompt
 
 The `Enter-PSSession` cmdlet prepends the name of the remote computer to the
 current `Prompt` function. When you use the `Enter-PSSession` cmdlet to start a
@@ -168,7 +168,7 @@ custom command prompts.
 For more information about the `$PSDebugContext` and `$NestedPromptLevel`
 automatic variables, see [about_Automatic_Variables](about_Automatic_Variables.md).
 
-### HOW TO CUSTOMIZE THE PROMPT
+### How to customize the prompt
 
 To customize the prompt, write a new `Prompt` function. The function is not
 protected, so you can overwrite it.
@@ -208,9 +208,9 @@ The prompt resembles the following prompt:
 
 You can also change the default `Prompt` function:
 
-For example, the following modified `Prompt` function adds "[ADMIN]:" to the
-built-in PowerShell prompt when PowerShell is opened by using the "Run as
-administrator" option:
+For example, the following modified `Prompt` function adds `[ADMIN]:` to the
+built-in PowerShell prompt when PowerShell is opened by using the
+**Run as administrator** option:
 
 ```powershell
 function prompt {
@@ -255,7 +255,7 @@ function prompt {
 The following prompt uses the `Write-Host` and `Get-Random` cmdlets to create a
 prompt that changes color randomly. Because `Write-Host` writes to the current
 host application but does not return an object, this function includes a
-`Return` statement. Without it, PowerShell uses the default prompt, "PS>".
+`Return` statement. Without it, PowerShell uses the default prompt, `PS>`.
 
 ```powershell
 function prompt {
@@ -266,13 +266,13 @@ function prompt {
 }
 ```
 
-### SAVING THE PROMPT FUNCTION
+### Saving the Prompt function
 
 Like any function, the `Prompt` function exists only in the current session. To
 save the `Prompt` function for future sessions, add it to your PowerShell
-profiles. For more information about profiles, see about_Profiles.
+profiles. For more information about profiles, see [about_Profiles](about_Profiles.md).
 
-## SEE ALSO
+## See also
 
 [Get-Location](../../Microsoft.PowerShell.Management/Get-Location.md)
 
