@@ -25,6 +25,19 @@ Use the version picker at the top of the page to select the version of PowerShel
 
 ![version picker](images/how-to-use-docs/picker-vall.gif)
 
+You can verify the version of PowerShell you are using by inspecting the `$PSversionTable.PSVersion`
+value. The following example shows the output for Windows PowerShell v5.1.
+
+```powershell
+$PSVersionTable.PSVersion
+```
+
+```Output
+Major  Minor  Build  Revision
+-----  -----  -----  --------
+5      1      18362  145
+```
+
 ## Searching for articles
 
 There are two ways to search for content in Docs. The simplest way is to use the filter box under
