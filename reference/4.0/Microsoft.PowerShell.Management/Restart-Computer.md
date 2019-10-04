@@ -526,10 +526,11 @@ output is generated.
 
 ## NOTES
 
-`Restart-Computer` uses the
-[Win32Shutdown method](/windows/desktop/CIMWin32Prov/win32shutdown-method-in-class-win32-operatingsystem)
-of the Windows Management Instrumentation (WMI) [Win32_OperatingSystem](/windows/desktop/CIMWin32Prov/win32-operatingsystem)
-class.
+- `Restart-Computer` only work on computers running Windows and requires WinRM and WMI to shutdown a
+  system, including the local system.
+- `Restart-Computer` uses the [Win32Shutdown method](/windows/desktop/CIMWin32Prov/win32shutdown-method-in-class-win32-operatingsystem)
+  of the Windows Management Instrumentation (WMI) [Win32_OperatingSystem](/windows/desktop/CIMWin32Prov/win32-operatingsystem)
+  class.
 
 In Windows PowerShell 2.0, the **AsJob** parameter doesn't work reliably when you are restarting or
 stopping remote computers. In Windows PowerShell 3.0, the implementation is changed to resolve this
