@@ -51,6 +51,9 @@ expressions, and (`-like`, `-notlike`) use wildcards `*`.
 Containment comparison operators determine whether a test value appears in a
 reference set (`-in`, `-notin`, `-contains`, `-notcontains`).
 
+Type comparison operators (`-is`, `-isnot`) determine whether an object is
+of a given type.
+
 Bitwise comparison operators (`-bAND`, `-bOR`, `-bXOR`, `-bNOT`) manipulate
 the bit patterns in values.
 
