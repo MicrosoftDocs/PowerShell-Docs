@@ -38,7 +38,7 @@ parentheses.
 - **Debug** (db)
 - **ErrorAction** (ea)
 - **ErrorVariable** (ev)
-- **InformationAction** (infa)
+- **InformationAction** (infa, ia)
 - **InformationVariable** (iv)
 - **OutVariable** (ov)
 - **OutBuffer** (ob)
