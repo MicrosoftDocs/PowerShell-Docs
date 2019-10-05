@@ -203,7 +203,7 @@ The RegexMatch options are:
   operator is specified.
 - **CultureInvariant**: Ignores cultural differences in language
   when evaluting the delimiter. Valid only with RegexMatch.
-- IgnorePatternWhitespace: Ignores unescaped whitespace and
+- **IgnorePatternWhitespace**: Ignores unescaped whitespace and
   comments marked with the number sign (#). Valid only with
   RegexMatch.
 - **Multiline**: Multiline mode forces `^` and `$` to match the beginning
