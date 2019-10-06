@@ -17,7 +17,7 @@ the Linux [`tar.gz` archive][tar], but you would need to set up the necessary de
 the OS in separate steps.
 
 All packages are available on our GitHub [releases][] page. After the package is installed, run
-`pwsh` from a terminal.
+`pwsh` from a terminal. Run `pwsh-preview` if you installed a [Preview release][#installing-preview-releases].
 
 [u16]: #ubuntu-1604
 [u1804]: #ubuntu-1804
