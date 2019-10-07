@@ -1,9 +1,10 @@
 ---
-ms.date:  08/09/2019
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell
-title:  about_Telemetry
+keywords: powershell
+locale: en-us
+ms.date: 08/09/2019
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_telemetry?view=powershell-7
+schema: 2.0.0
+title: about_Telemetry
 ---
 # About Telemetry
 

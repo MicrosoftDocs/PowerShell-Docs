@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Utility
 ms.date: 06/27/2019
-online version: https://go.microsoft.com/fwlink/?linkid=2096448
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/register-objectevent?view=powershell-6
 schema: 2.0.0
 title: Register-ObjectEvent
 ---

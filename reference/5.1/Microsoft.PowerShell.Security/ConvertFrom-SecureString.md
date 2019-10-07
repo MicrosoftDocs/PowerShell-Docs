@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Security
 ms.date: 04/27/2019
-online version: https://go.microsoft.com/fwlink/?linkid=821708
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.security/convertfrom-securestring?view=powershell-5.1
 schema: 2.0.0
 title: ConvertFrom-SecureString
 ---

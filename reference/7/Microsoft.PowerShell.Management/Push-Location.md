@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Management
 ms.date: 01/22/2019
-online version: https://go.microsoft.com/fwlink/?linkid=2097105
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/push-location?view=powershell-7
 schema: 2.0.0
 title: Push-Location
 ---

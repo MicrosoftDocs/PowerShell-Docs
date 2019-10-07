@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Core
 ms.date: 08/09/2019
-online version: https://go.microsoft.com/fwlink/?linkid=821518
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/start-job?view=powershell-5.1
 schema: 2.0.0
 title: Start-Job
 ---

@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Operation.Validation
 ms.date: 06/09/2017
-online version: https://go.microsoft.com/fwlink/?linkid=834966
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.operation.validation/invoke-operationvalidation?view=powershell-5.1
 schema: 2.0.0
 title: Invoke-OperationValidation
 ---

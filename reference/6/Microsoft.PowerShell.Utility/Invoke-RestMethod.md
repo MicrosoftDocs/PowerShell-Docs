@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Utility
 ms.date: 11/17/2017
-online version: https://go.microsoft.com/fwlink/?linkid=2096435
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/invoke-restmethod?view=powershell-6
 schema: 2.0.0
 title: Invoke-RestMethod
 ---

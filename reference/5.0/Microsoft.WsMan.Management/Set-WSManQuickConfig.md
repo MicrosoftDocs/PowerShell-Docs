@@ -1,11 +1,11 @@
 ---
+external help file: Microsoft.WSMan.Management.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
 ms.date: 10/02/2019
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version: https://go.microsoft.com/fwlink/?linkid=821737
-external help file:  Microsoft.WSMan.Management.dll-Help.xml
-title:  Set-WSManQuickConfig
+online version: https://docs.microsoft.com/powershell/module/microsoft.wsman.management/set-wsmanquickconfig?view=powershell-5.0
+schema: 2.0.0
+title: Set-WSManQuickConfig
 ---
 
 # Set-WSManQuickConfig

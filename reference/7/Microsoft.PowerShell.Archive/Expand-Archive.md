@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Archive
 ms.date: 06/09/2017
-online version: https://go.microsoft.com/fwlink/?linkid=2096769
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.archive/expand-archive?view=powershell-7
 schema: 2.0.0
 title: Expand-Archive
 ---

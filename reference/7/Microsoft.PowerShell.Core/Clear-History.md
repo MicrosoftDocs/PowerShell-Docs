@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Core
 ms.date: 2/22/2019
-online version: https://go.microsoft.com/fwlink/?linkid=2096691
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/clear-history?view=powershell-7
 schema: 2.0.0
 title: Clear-History
 ---

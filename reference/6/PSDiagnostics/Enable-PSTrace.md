@@ -1,9 +1,9 @@
 ---
 external help file: PSDiagnostics-help.xml
 Module Name: PSDiagnostics
-online version: https://go.microsoft.com/fwlink/?linkid=2096464
-schema: 2.0.0
 ms.date: 11/27/2018
+online version: https://docs.microsoft.com/powershell/module/psdiagnostics/enable-pstrace?view=powershell-6
+schema: 2.0.0
 title: Enable-PSTrace
 ---
 # Enable-PSTrace

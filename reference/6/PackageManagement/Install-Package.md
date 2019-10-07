@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: PackageManagement
 ms.date: 05/23/2019
-online version: https://go.microsoft.com/fwlink/?linkid=2096432
+online version: https://docs.microsoft.com/powershell/module/packagemanagement/install-package?view=powershell-6
 schema: 2.0.0
 title: Install-Package
 ---
