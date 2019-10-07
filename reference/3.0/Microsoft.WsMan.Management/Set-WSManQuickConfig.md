@@ -3,7 +3,7 @@ external help file: Microsoft.WSMan.Management.dll-Help.xml
 keywords: powershell,cmdlet
 locale: en-us
 ms.date: 10/02/2019
-online version: https://docs.microsoft.com/powershell/module/microsoft.wsman.management/set-wsmanquickconfig?view=powershell-3.0
+online version: https://docs.microsoft.com/powershell/module/microsoft.wsman.management/set-wsmanquickconfig?view=powershell-3.0&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-WSManQuickConfig
 ---

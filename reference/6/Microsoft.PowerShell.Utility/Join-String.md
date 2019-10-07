@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Module Name: Microsoft.PowerShell.Utility
 ms.date: 02/01/2019
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/join-string?view=powershell-6
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/join-string?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Join-String
 ---
