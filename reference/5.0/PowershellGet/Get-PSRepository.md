@@ -3,7 +3,7 @@ external help file: PSGet-help.xml
 keywords: powershell,cmdlet
 locale: en-us
 ms.date: 06/09/2017
-online version: https://docs.microsoft.com/powershell/module/powershellget/get-psrepository?view=powershell-5.0
+online version: https://docs.microsoft.com/powershell/module/powershellget/get-psrepository?view=powershell-5.0&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-PSRepository
 ---

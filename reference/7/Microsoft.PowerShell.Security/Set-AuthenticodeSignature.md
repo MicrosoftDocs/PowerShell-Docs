@@ -3,7 +3,7 @@ external help file: Microsoft.PowerShell.Security.dll-Help.xml
 keywords: powershell,cmdlet
 locale: en-us
 ms.date: 02/19/2019
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.security/set-authenticodesignature?view=powershell-7
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.security/set-authenticodesignature?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-AuthenticodeSignature
 ---

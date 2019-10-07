@@ -1,7 +1,7 @@
 ---
 keywords: powershell,cmdlet
 ms.date: 05/20/2019
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_command_precedence?view=powershell-7
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_command_precedence?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Command_Precedence
 ---

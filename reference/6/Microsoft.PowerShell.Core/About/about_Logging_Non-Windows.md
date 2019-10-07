@@ -2,7 +2,7 @@
 keywords: powershell
 locale: en-us
 ms.date: 12/14/2018
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_logging_non-windows?view=powershell-6
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_logging_non-windows?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Logging_Non-Windows
 ---

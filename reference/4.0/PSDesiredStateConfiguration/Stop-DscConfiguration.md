@@ -3,7 +3,7 @@ external help file: Stop-DscConfiguration.cdxml-help.xml
 keywords: powershell,cmdlet
 locale: en-us
 ms.date: 08/19/2019
-online version: https://docs.microsoft.com/powershell/module/psdesiredstateconfiguration/stop-dscconfiguration?view=powershell-4.0
+online version: https://docs.microsoft.com/powershell/module/psdesiredstateconfiguration/stop-dscconfiguration?view=powershell-4.0&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Stop-DscConfiguration
 ---

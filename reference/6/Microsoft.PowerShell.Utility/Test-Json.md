@@ -3,7 +3,7 @@ external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
 locale: en-us
 ms.date: 09/19/2019
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/test-json?view=powershell-6
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/test-json?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Test-Json
 ---

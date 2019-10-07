@@ -3,7 +3,7 @@ external help file: Microsoft.Management.Infrastructure.CimCmdlets.dll-Help.xml
 keywords: powershell,cmdlet
 locale: en-us
 ms.date: 02/20/2019
-online version: https://docs.microsoft.com/powershell/module/cimcmdlets/export-binarymilog?view=powershell-6
+online version: https://docs.microsoft.com/powershell/module/cimcmdlets/export-binarymilog?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Export-BinaryMiLog
 ---

@@ -3,7 +3,7 @@ external help file: PSITPro4_Utility.xml
 keywords: powershell,cmdlet
 locale: en-us
 ms.date: 4/26/2019
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/add-member?view=powershell-4.0
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/add-member?view=powershell-4.0&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Add-Member
 ---
