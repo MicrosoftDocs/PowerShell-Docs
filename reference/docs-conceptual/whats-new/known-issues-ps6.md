@@ -111,7 +111,7 @@ have a BOM).
 There is no job-control support in PowerShell on Linux/macOS.
 The `fg` and `bg` commands are not available.
 
-For the time being, you can use [PowerShell jobs](/powershell/module/microsoft.powershell.core/about/about_jobs)
+For the time being, you can use [PowerShell jobs](/reference/6/Microsoft.PowerShell.Core/About/about_Jobs.md)
 which do work across all platforms.
 
 ### Remoting Support
