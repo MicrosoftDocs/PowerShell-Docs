@@ -1,9 +1,10 @@
 ---
-ms.date:  12/14/2018
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell
-title:  about_Logging_Non-Windows
+keywords: powershell
+locale: en-us
+ms.date: 12/14/2018
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_logging_non-windows?view=powershell-7
+schema: 2.0.0
+title: about_Logging_Non-Windows
 ---
 
 # About Logging Non-Windows

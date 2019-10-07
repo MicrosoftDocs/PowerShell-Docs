@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: PackageManagement
 ms.date: 03/29/2019
-online version: https://go.microsoft.com/fwlink/?linkid=2096720
+online version: https://docs.microsoft.com/powershell/module/packagemanagement/get-packagesource?view=powershell-7
 schema: 2.0.0
 title: Get-PackageSource
 ---

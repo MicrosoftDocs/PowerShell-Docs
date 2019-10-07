@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Utility
 ms.date: 2/28/2019
-online version: https://go.microsoft.com/fwlink/?linkid=821857
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/set-alias?view=powershell-5.1
 schema: 2.0.0
 title: Set-Alias
 ---

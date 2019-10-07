@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: PowerShellGet
 ms.date: 10/03/2019
-online version: https://go.microsoft.com/fwlink/?linkid=821666
+online version: https://docs.microsoft.com/powershell/module/powershellget/publish-module?view=powershell-6
 schema: 2.0.0
 title: Publish-Module
 ---

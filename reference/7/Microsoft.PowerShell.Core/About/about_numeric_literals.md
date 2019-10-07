@@ -1,9 +1,10 @@
 ---
-ms.date:  04/12/2019
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-title:  About numeric literals
+keywords: powershell,cmdlet
+locale: en-us
+ms.date: 04/12/2019
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_numeric_literals?view=powershell-7
+schema: 2.0.0
+title: About numeric literals
 ---
 # About numeric literals
 

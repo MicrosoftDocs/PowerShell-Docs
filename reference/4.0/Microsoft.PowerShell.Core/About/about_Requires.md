@@ -1,9 +1,10 @@
 ---
-ms.date:  07/01/2019
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-title:  about_Requires
+keywords: powershell,cmdlet
+locale: en-us
+ms.date: 07/01/2019
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_requires?view=powershell-4.0
+schema: 2.0.0
+title: about_Requires
 ---
 
 # About Requires

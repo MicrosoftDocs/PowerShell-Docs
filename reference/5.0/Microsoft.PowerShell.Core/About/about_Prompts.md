@@ -1,9 +1,10 @@
 ---
-ms.date:  10/04/2019
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-title:  about_Prompts
+keywords: powershell,cmdlet
+locale: en-us
+ms.date: 10/04/2019
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_prompts?view=powershell-5.0
+schema: 2.0.0
+title: about_Prompts
 ---
 # About Prompts
 

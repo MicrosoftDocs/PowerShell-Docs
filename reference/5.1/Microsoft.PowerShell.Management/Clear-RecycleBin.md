@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Management
 ms.date: 6/24/2019
-online version: https://go.microsoft.com/fwlink/?linkid=821571
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/clear-recyclebin?view=powershell-5.1
 schema: 2.0.0
 title: Clear-RecycleBin
 ---

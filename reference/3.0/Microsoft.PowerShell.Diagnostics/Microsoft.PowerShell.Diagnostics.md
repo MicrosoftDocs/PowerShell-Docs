@@ -1,13 +1,13 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-Help Version:  3.1.0.2
-Download Help Link:  https://go.microsoft.com/fwlink/?linkid=210596
-Module Guid:  ca046f10-ca64-4740-8ff9-2565dba61a4f
-title:  Microsoft.PowerShell.Diagnostics
-Module Name:  Microsoft.PowerShell.Diagnostics
+Download Help Link: https://go.microsoft.com/fwlink/?linkid=210596
+Help Version: 3.1.0.2
+keywords: powershell,cmdlet
+locale: en-us
+Module Guid: ca046f10-ca64-4740-8ff9-2565dba61a4f
+Module Name: Microsoft.PowerShell.Diagnostics
+ms.date: 06/09/2017
+schema: 2.0.0
+title: Microsoft.PowerShell.Diagnostics
 ---
 # Microsoft.PowerShell.Diagnostics Module
 

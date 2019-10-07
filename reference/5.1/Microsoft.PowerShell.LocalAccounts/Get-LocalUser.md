@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.LocalAccounts
 ms.date: 06/09/2017
-online version: https://go.microsoft.com/fwlink/?linkid=822514
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.localaccounts/get-localuser?view=powershell-5.1
 schema: 2.0.0
 title: Get-LocalUser
 ---
