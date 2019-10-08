@@ -152,7 +152,8 @@ You cannot pipe input to this cmdlet.
 
 ## NOTES
 
-- The new custom event, the event subscription, and the event queue exist only in the current session. If you close the current session, the event queue is discarded and the event subscription is canceled.
+The new custom event, the event subscription, and the event queue exist only in the current session. If you close the current session, the event queue is discarded and the event subscription is canceled.
+
 ## RELATED LINKS
 
 [Get-Event](Get-Event.md)
@@ -168,5 +169,3 @@ You cannot pipe input to this cmdlet.
 [Unregister-Event](Unregister-Event.md)
 
 [Wait-Event](Wait-Event.md)
-
-
