@@ -388,7 +388,7 @@ This example shows how to include the values of local variables in a command run
 computer. The command uses the `Using` scope modifier to identify a local variable in a remote
 command. By default, all variables are assumed to be defined in the remote session. The `Using`
 scope modifier was introduced in PowerShell 3.0. For more information about the `Using` scope
-modifier, see [about_Remote_Variables](./About/about_Remote_Variables.md) and [about_Scopes](./about/about_scopes).
+modifier, see [about_Remote_Variables](./About/about_Remote_Variables.md) and [about_Scopes](./about/about_scopes.md).
 
 ```powershell
 $Log = "PowerShellCore/Operational"
@@ -820,7 +820,7 @@ To use an IP address in the value of **ComputerName**, the command must include 
 parameter. The computer must be configured for the HTTPS transport or the IP address of the remote
 computer must be included in the local computer's WinRM **TrustedHosts** list. For instructions to
 add a computer name to the **TrustedHosts** list, see [How to Add a Computer to the Trusted Host
-List](./about/about_remote_troubleshooting#how-to-add-a-computer-to-the-trusted-hosts-list).
+List](./about/about_remote_troubleshooting.md#how-to-add-a-computer-to-the-trusted-hosts-list).
 
 On Windows Vista and later versions of the Windows operating system, to include the local computer
 in the value of **ComputerName**, you must open PowerShell by using the **Run as administrator**
@@ -1065,7 +1065,7 @@ provides sufficient time for you to connect before deleting the session.
 
 You can set the output buffering mode and idle time-out in the **SessionOption** parameter or in the
 `$PSSessionOption` preference variable. For more information about session options, see
-`New-PSSessionOption` and [about_Preference_Variables](./about/about_preference_variables).
+`New-PSSessionOption` and [about_Preference_Variables](./about/about_preference_variables.md).
 
 For more information about the Disconnected Sessions feature, see [about_Remote_Disconnected_Sessions](about/about_Remote_Disconnected_Sessions.md).
 
