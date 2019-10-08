@@ -1,9 +1,10 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-title:  about_Scheduled_Jobs_Troubleshooting
+keywords: powershell,cmdlet
+locale: en-us
+ms.date: 06/09/2017
+online version: https://docs.microsoft.com/powershell/module/psscheduledjob/about/about_scheduled_jobs_troubleshooting?view=powershell-4.0&WT.mc_id=ps-gethelp
+schema: 2.0.0
+title: about_Scheduled_Jobs_Troubleshooting
 ---
 
 # About Scheduled Jobs Troubleshooting

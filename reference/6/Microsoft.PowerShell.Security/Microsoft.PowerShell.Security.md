@@ -1,13 +1,13 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-US
-keywords:  powershell,cmdlet
-Help Version:  6.1.0.1
-Download Help Link:  https://go.microsoft.com/fwlink/?linkid=855959
-Module Guid:  a94c8c7e-9810-47c0-b8af-65089c13a35a
-title:  Microsoft.PowerShell.Security
-Module Name:  Microsoft.PowerShell.Security
+Download Help Link: https://go.microsoft.com/fwlink/?linkid=855959
+Help Version: 6.1.0.1
+keywords: powershell,cmdlet
+locale: en-US
+Module Guid: a94c8c7e-9810-47c0-b8af-65089c13a35a
+Module Name: Microsoft.PowerShell.Security
+ms.date: 06/09/2017
+schema: 2.0.0
+title: Microsoft.PowerShell.Security
 ---
 # Microsoft.PowerShell.Security Module
 

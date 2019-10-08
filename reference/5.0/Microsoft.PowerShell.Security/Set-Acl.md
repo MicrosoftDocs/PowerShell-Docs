@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Security
 ms.date: 06/09/2017
-online version: https://go.microsoft.com/fwlink/?linkid=821717
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.security/set-acl?view=powershell-5.0&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-Acl
 ---

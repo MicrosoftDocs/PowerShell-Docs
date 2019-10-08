@@ -1,9 +1,10 @@
 ---
+keywords: powershell,cmdlet
+locale: en-us
 ms.date: 09/13/2019
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-title:  about_Preference_Variables
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_preference_variables?view=powershell-5.0&WT.mc_id=ps-gethelp
+schema: 2.0.0
+title: about_Preference_Variables
 ---
 
 # About Preference Variables

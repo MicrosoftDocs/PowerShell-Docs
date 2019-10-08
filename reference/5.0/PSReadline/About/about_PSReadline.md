@@ -1,9 +1,10 @@
 ---
-ms.date:  12/08/2018
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell
-title:  About PSReadLine
+keywords: powershell
+locale: en-us
+ms.date: 12/08/2018
+online version: https://docs.microsoft.com/powershell/module/psreadline/about/about_psreadline?view=powershell-5.0&WT.mc_id=ps-gethelp
+schema: 2.0.0
+title: About PSReadLine
 ---
 
 # PSReadLine

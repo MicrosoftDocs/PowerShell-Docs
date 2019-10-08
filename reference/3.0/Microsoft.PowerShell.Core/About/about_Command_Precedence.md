@@ -1,8 +1,9 @@
 ---
-ms.date:  05/20/2019
-schema:  2.0.0
-keywords:  powershell,cmdlet
-title:  about_Command_Precedence
+keywords: powershell,cmdlet
+ms.date: 05/20/2019
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_command_precedence?view=powershell-3.0&WT.mc_id=ps-gethelp
+schema: 2.0.0
+title: about_Command_Precedence
 ---
 # About Command Precedence
 

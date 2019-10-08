@@ -1,9 +1,10 @@
-﻿---
-ms.date:  08/06/2019
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-title:  about_Debuggers
+---
+keywords: powershell,cmdlet
+locale: en-us
+ms.date: 08/06/2019
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_debuggers?view=powershell-3.0&WT.mc_id=ps-gethelp
+schema: 2.0.0
+title: about_Debuggers
 ---
 # About Debuggers
 

@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: PowerShellGet
 ms.date: 05/23/2019
-online version: https://go.microsoft.com/fwlink/?linkid=821660
+online version: https://docs.microsoft.com/powershell/module/powershellget/get-installedmodule?view=powershell-5.0&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-InstalledModule
 ---

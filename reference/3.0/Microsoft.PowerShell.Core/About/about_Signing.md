@@ -1,9 +1,10 @@
 ---
-ms.date:  08/21/2018
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-title:  about_Signing
+keywords: powershell,cmdlet
+locale: en-us
+ms.date: 08/21/2018
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_signing?view=powershell-3.0&WT.mc_id=ps-gethelp
+schema: 2.0.0
+title: about_Signing
 ---
 
 # About Signing

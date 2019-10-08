@@ -1,8 +1,9 @@
 ---
+keywords: powershell,cmdlet
 ms.date: 5/9/2019
-schema:  2.0.0
-keywords:  powershell,cmdlet
-title:  about_Continue
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_continue?view=powershell-5.0&WT.mc_id=ps-gethelp
+schema: 2.0.0
+title: about_Continue
 ---
 # About Continue
 

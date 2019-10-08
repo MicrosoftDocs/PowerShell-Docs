@@ -1,8 +1,9 @@
 ---
-ms.date:  11/30/2017
-schema:  2.0.0
-keywords:  powershell,cmdlet
-title:  about_Profiles
+keywords: powershell,cmdlet
+ms.date: 11/30/2017
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_profiles?view=powershell-5.0&WT.mc_id=ps-gethelp
+schema: 2.0.0
+title: about_Profiles
 ---
 # About Profiles
 

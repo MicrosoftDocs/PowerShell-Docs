@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Management
 ms.date: 04/04/2019
-online version: https://go.microsoft.com/fwlink/?linkid=821614
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/remove-computer?view=powershell-5.0&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Remove-Computer
 ---

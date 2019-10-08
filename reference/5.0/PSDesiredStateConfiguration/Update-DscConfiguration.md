@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: PSDesiredStateConfiguration
 ms.date: 06/09/2017
-online version: https://go.microsoft.com/fwlink/?linkid=821467
+online version: https://docs.microsoft.com/powershell/module/psdesiredstateconfiguration/update-dscconfiguration?view=powershell-5.0&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Update-DscConfiguration
 ---

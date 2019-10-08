@@ -1,13 +1,13 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-Help Version:  3.3.0.2
-Download Help Link:  https://go.microsoft.com/fwlink/?linkid=210599
-Module Guid:  1da87e53-152b-403e-98dc-74d7b4d63d59
-title:  Microsoft.PowerShell.Utility
-Module Name:  Microsoft.PowerShell.Utility
+Download Help Link: https://go.microsoft.com/fwlink/?linkid=210599
+Help Version: 3.3.0.2
+keywords: powershell,cmdlet
+locale: en-us
+Module Guid: 1da87e53-152b-403e-98dc-74d7b4d63d59
+Module Name: Microsoft.PowerShell.Utility
+ms.date: 06/09/2017
+schema: 2.0.0
+title: Microsoft.PowerShell.Utility
 ---
 # Microsoft.PowerShell.Utility Module
 

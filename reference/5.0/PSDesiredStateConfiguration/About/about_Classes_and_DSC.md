@@ -1,9 +1,10 @@
 ---
-ms.date:  1/11/2019
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-title:  about_Classes_and_DSC
+keywords: powershell,cmdlet
+locale: en-us
+ms.date: 1/11/2019
+online version: https://docs.microsoft.com/powershell/module/psdesiredstateconfiguration/about/about_classes_and_dsc?view=powershell-5.0&WT.mc_id=ps-gethelp
+schema: 2.0.0
+title: about_Classes_and_DSC
 ---
 
 # About Classes and Desired State Configuration

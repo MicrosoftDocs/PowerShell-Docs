@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.ODataUtils
 ms.date: 06/09/2017
-online version: https://go.microsoft.com/fwlink/?linkid=510069
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.odatautils/export-odataendpointproxy?view=powershell-5.0&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Export-ODataEndpointProxy
 ---

@@ -4,6 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: CimCmdlets
 ms.date: 02/20/2019
+online version: https://docs.microsoft.com/powershell/module/cimcmdlets/register-cimindicationevent?view=powershell-5.0&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Register-CimIndicationEvent
 ---

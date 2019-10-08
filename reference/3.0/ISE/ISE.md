@@ -1,13 +1,13 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-Help Version:  3.0.0.2
-Download Help Link:  https://go.microsoft.com/fwlink/?LinkID=238789
-Module Guid:  bae93d8e-782c-4a23-b87f-8699bfc17ee0
-title:  ISE
-Module Name:  ISE
+Download Help Link: https://go.microsoft.com/fwlink/?LinkID=238789
+Help Version: 3.0.0.2
+keywords: powershell,cmdlet
+locale: en-us
+Module Guid: bae93d8e-782c-4a23-b87f-8699bfc17ee0
+Module Name: ISE
+ms.date: 06/09/2017
+schema: 2.0.0
+title: ISE
 ---
 # ISE Module
 
