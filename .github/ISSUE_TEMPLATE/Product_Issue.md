@@ -1,6 +1,6 @@
 ---
 name: PowerShell Product Issue 🐛
-about: PowerShell behavior issues should be filed in the [PowerShell](https://github.com/PowerShell/PowerShell/issues/new) code repository
+about: PowerShell behavior issues should be filed at https://github.com/PowerShell/PowerShell/issues/new/choose
 title: Issue title
 labels: issue-product-feedback
 assignees: ''
