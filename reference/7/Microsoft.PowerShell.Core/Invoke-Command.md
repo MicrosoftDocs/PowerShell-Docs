@@ -823,8 +823,7 @@ add a computer name to the **TrustedHosts** list, see [How to Add a Computer to 
 List](./about/about_remote_troubleshooting.md#how-to-add-a-computer-to-the-trusted-hosts-list).
 
 On Windows Vista and later versions of the Windows operating system, to include the local computer
-in the value of **ComputerName**, you must open PowerShell by using the **Run as administrator**
-option.
+in the value of **ComputerName**, you must run PowerShell using the **Run as administrator** option.
 
 ```yaml
 Type: String[]
@@ -1500,8 +1499,8 @@ returns the output of the invoked command, which is the value of the **ScriptBlo
 ## NOTES
 
 On Windows Vista, and later versions of the Windows operating system, to use the **ComputerName**
-parameter of `Invoke-Command` to run a command on the local computer, you must open PowerShell by
-using the Run as administrator option.
+parameter of `Invoke-Command` to run a command on the local computer, you must run PowerShell using
+the **Run as administrator** option.
 
 When you run commands on multiple computers, PowerShell connects to the computers in the order in
 which they appear in the list. However, the command output is displayed in the order that it's
@@ -1520,25 +1519,19 @@ is the name of the remote computer:
 
 `Set-Item -Path WSMan:\Localhost\Client\TrustedHosts -Value \<Remote-Computer-Name\>`
 
-In PowerShell 2.0, you can't use the `Select-Object` cmdlet to select the **PSComputerName**
-property of the object that `Invoke-Command` returns. Instead, to display the value of the
-**PSComputerName** property, use the dot method to get the **PSComputerName** property value
-($result.PSComputerName), use a **Format** cmdlet, such as the `Format-Table` cmdlet, to display the
-value of the **PSComputerName** property, or use a `Select-Object` command where the value of the
-property parameter is a calculated property that has a label other than PSComputerName. This
-limitation doesn't apply to PowerShell 3.0 or later versions.
-
-When you disconnect a **PSSession**, such as by using **InDisconnectedSession**, the session state
-is Disconnected and the availability is **None**. The value of the **State** property is relative to
-the current session. A value of **Disconnected** means that the **PSSession** isn't connected to the
-current session. However, it doesn't mean that the **PSSession** is disconnected from all sessions.
-It might be connected to a different session. To determine whether you can connect or reconnect to
-the session, use the **Availability** property.
+When you disconnect a **PSSession**, by using the **InDisconnectedSession** parameter, the session
+state is **Disconnected** and the availability is **None**. The value of the **State** property is
+relative to the current session. A value of **Disconnected** means that the **PSSession** isn't
+connected to the current session. However, it doesn't mean that the **PSSession** is disconnected
+from all sessions. It might be connected to a different session. To determine whether you can
+connect or reconnect to the session, use the **Availability** property.
 
 An **Availability** value of **None** indicates that you can connect to the session. A value of
 **Busy** indicates that you can't connect to the **PSSession** because it's connected to another
-session. For more information about the values of the **State** property of sessions, see [RunspaceState](/dotnet/api/system.management.automation.runspaces.runspacestate).
-For more information about the values of the **Availability** property of sessions, see [RunspaceAvailability](/dotnet/api/system.management.automation.runspaces.runspaceavailability).
+session. For more information about the values of the **State** property of sessions, see
+[RunspaceState](/dotnet/api/system.management.automation.runspaces.runspacestate). For more
+information about the values of the **Availability** property of sessions, see
+[RunspaceAvailability](/dotnet/api/system.management.automation.runspaces.runspaceavailability).
 
 The **HostName** and **SSHConnection** parameters were included starting with PowerShell 6.0. They
 were added to provide PowerShell remoting based on Secure Shell (SSH). PowerShell and SSH are
