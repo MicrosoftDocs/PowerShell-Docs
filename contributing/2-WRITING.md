@@ -1,8 +1,8 @@
 # Writing PowerShell documentation
 
 One of the easiest ways to contribute to PowerShell is by helping to write and edit documentation.
-All of our documentation hosted on GitHub is written using *Markdown*. Markdown is a lightweight
-markup language with plain text formatting syntax. Markdown forms the basis of our documentation's
+All the documentation hosted on GitHub is written using *Markdown*. Markdown is a lightweight markup
+language with plain text formatting syntax. Markdown forms the basis of our documentation's
 conceptual authoring language. Creating new articles is as easy as writing a simple text file by
 using your favorite text editor.
 
@@ -18,21 +18,21 @@ Here are some Markdown editors you can try out:
 
 To get started using Markdown, see [How to use Markdown for writing Docs](https://docs.microsoft.com/contribute/how-to-write-use-markdown).
 
-The Open Publishing System (OPS) is the platform used by docs.microsoft.com. OPS uses DocFX
-Flavored Markdown (DFM). DFM supports all GitHub Flavored Markdown (GFM) syntax and is compatible
-with CommonMark. There are some [differences between DFM and GFM][dfm-diffs] that can affect
-content preview in GitHub or your editor.
+The Open Publishing System (OPS) is the platform used by docs.microsoft.com. OPS uses DocFX Flavored
+Markdown (DFM). DFM supports all GitHub Flavored Markdown (GFM) syntax and is compatible with
+CommonMark. There are some [differences between DFM and GFM][dfm-diffs] that can affect content
+preview in GitHub or your editor.
 
 The default Markdown engine in OPS is built on the top of [markdig][]. This engine is based on the
-CommonMark specification and supports extensions for DocFX. In the latest version of the
-[CommonMark][] specification, many spacing rules have changed. Spaces are significant in Markdown.
-Don't use hard tabs in Markdown. For more detailed information about the Markdown specification,
-see the [Markdown Specifics](4-MARKDOWN-SPECIFICS.md) article.
+CommonMark specification and supports extensions for DocFX. In the latest version of the [CommonMark][]
+specification, many spacing rules have changed. Spaces are significant in Markdown. Don't use hard
+tabs in Markdown. For more detailed information about the Markdown specification, see the
+[Markdown Specifics](4-MARKDOWN-SPECIFICS.md) article.
 
 ## Creating new topics
 
-To contribute new documentation, check for issues tagged as ["in progress"][labels] to make
-sure you're not duplicating efforts. If no one seems to be working on what you have planned:
+To contribute new documentation, check for issues tagged as ["in progress"][labels] to make sure
+you're not duplicating efforts. If no one seems to be working on what you have planned:
 
 - Open a new issue and label it as "in progress". If you don't have rights to assign labels, add "in
   progress" as a comment to tell others what you're working on.

@@ -1,11 +1,11 @@
 ---
+external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
 ms.date: 6/27/2019
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version: https://go.microsoft.com/fwlink/?linkid=293966
-external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-title:  Get-Date
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/get-date?view=powershell-4.0&WT.mc_id=ps-gethelp
+schema: 2.0.0
+title: Get-Date
 ---
 
 # Get-Date

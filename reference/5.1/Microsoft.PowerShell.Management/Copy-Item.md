@@ -1,11 +1,11 @@
 ---
+external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
 ms.date: 5/30/2019
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version: https://go.microsoft.com/fwlink/?linkid=821574
-external help file:  Microsoft.PowerShell.Commands.Management.dll-Help.xml
-title:  Copy-Item
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/copy-item?view=powershell-5.1&WT.mc_id=ps-gethelp
+schema: 2.0.0
+title: Copy-Item
 ---
 
 # Copy-Item
@@ -449,7 +449,7 @@ Accept wildcard characters: False
 ### -ToSession
 
 Specifies the **PSSession** object to which a remote file is being copied. When you use this
-parameter, the **Path** and **LiteralPath** parameters refer to the local path on the remote
+parameter, the **Destination** parameter refers to the local path on the remote
 machine.
 
 ```yaml

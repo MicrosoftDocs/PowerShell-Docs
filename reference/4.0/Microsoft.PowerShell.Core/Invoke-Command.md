@@ -4,14 +4,13 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Core
 ms.date: 08/20/2019
-online version: https://go.microsoft.com/fwlink/?linkid=289592
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/invoke-command?view=powershell-4.0&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Invoke-Command
 ---
 # Invoke-Command
 
 ## SYNOPSIS
-
 Runs commands on local and remote computers.
 
 ## SYNTAX
@@ -136,6 +135,7 @@ The `Invoke-Command` cmdlet runs the `Get-Culture` command on Server02. Tne **Se
 specifies the session saved in the `$s` variable.
 
 In response, PowerShell runs the command in the session on the Server02 computer.
+
 ### Example 4: Use a session to run a series of commands that share data
 
 This example compares the effects of using **ComputerName** and **Session** parameters of
@@ -305,7 +305,7 @@ display. You can still use the **Format** cmdlets to display the **PsComputerNam
 of the affected objects.
 
 ```powershell
-`Invoke-Command` -ComputerName S1, S2 -ScriptBlock {Get-Process PowerShell}
+Invoke-Command -ComputerName S1, S2 -ScriptBlock {Get-Process PowerShell}
 ```
 
 ```Output

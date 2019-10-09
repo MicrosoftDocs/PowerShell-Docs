@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: PSWorkflow
 ms.date: 07/10/2019
-online version: https://go.microsoft.com/fwlink/?linkid=287542
+online version: https://docs.microsoft.com/powershell/module/psworkflow/new-psworkflowsession?view=powershell-4.0&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: New-PSWorkflowSession
 ---
@@ -408,8 +408,3 @@ A `New-PSWorkflowSession` command is equivalent to the following command:
 [about_Workflows](../PSWorkflow/About/about_Workflows.md)
 
 [about_WorkflowCommonParameters](About/about_WorkflowCommonParameters.md)
-
-[PSWorkflow Module](PSWorkflow.md)
-
-[PSWorkflowUtility Module](../PSWorkflowUtility/PSWorkflowUtility.md)
-

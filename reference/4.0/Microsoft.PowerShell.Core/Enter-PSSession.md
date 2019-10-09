@@ -1,11 +1,11 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version: https://go.microsoft.com/fwlink/?linkid=289578
-external help file:  System.Management.Automation.dll-Help.xml
-title:  Enter-PSSession
+external help file: System.Management.Automation.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+ms.date: 06/09/2017
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/enter-pssession?view=powershell-4.0&WT.mc_id=ps-gethelp
+schema: 2.0.0
+title: Enter-PSSession
 ---
 # Enter-PSSession
 
@@ -263,14 +263,15 @@ Accept wildcard characters: False
 Specifies the session configuration that is used for the interactive session.
 
 Enter a configuration name or the fully qualified resource URI for a session configuration.
-If you specify only the configuration name, the following schema URI is prepended:  http://schemas.microsoft.com/powershell.
+If you specify only the configuration name, the following schema URI is prepended:
+`http://schemas.microsoft.com/powershell`.
 
 The session configuration for a session is located on the remote computer.
 If the specified session configuration does not exist on the remote computer, the command fails.
 
 The default value is the value of the $PSSessionConfigurationName preference variable on the local computer.
 If this preference variable is not set, the default is Microsoft.PowerShell.
-For more information, see about_Preference_Variables.
+For more information, see [about_Preference_Variables](./About/about_Preference_Variables.md).
 
 ```yaml
 Type: String
@@ -294,7 +295,7 @@ The format of this string is as follows:
 
 The default value is as follows:
 
-http://localhost:5985/WSMAN
+`http://localhost:5985/WSMAN`
 
 If you do not specify a **ConnectionURI**, you can use the **UseSSL**, **ComputerName**, **Port**, and **ApplicationName** parameters to specify the **ConnectionURI** values.
 
@@ -310,8 +311,8 @@ Parameter Sets: Uri
 Aliases: URI, CU
 
 Required: False
-Position: 1
-Default value: Http://localhost:80/WSMAN
+Position: 2
+Default value: http://localhost:80/WSMAN
 Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```

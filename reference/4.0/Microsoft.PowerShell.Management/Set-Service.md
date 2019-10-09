@@ -1,11 +1,11 @@
 ---
-ms.date:  07/17/2019
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version: https://go.microsoft.com/fwlink/?linkid=293913
-external help file:  Microsoft.PowerShell.Commands.Management.dll-Help.xml
-title:  Set-Service
+external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+ms.date: 07/17/2019
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/set-service?view=powershell-4.0&WT.mc_id=ps-gethelp
+schema: 2.0.0
+title: Set-Service
 ---
 
 # Set-Service

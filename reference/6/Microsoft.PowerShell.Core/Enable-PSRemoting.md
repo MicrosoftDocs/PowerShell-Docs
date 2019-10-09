@@ -1,11 +1,11 @@
 ---
-ms.date:  10/02/2018
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version: https://go.microsoft.com/fwlink/?linkid=2096264
-external help file:  System.Management.Automation.dll-Help.xml
-title:  Enable-PSRemoting
+external help file: System.Management.Automation.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+ms.date: 10/02/2018
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/enable-psremoting?view=powershell-6&WT.mc_id=ps-gethelp
+schema: 2.0.0
+title: Enable-PSRemoting
 ---
 # Enable-PSRemoting
 

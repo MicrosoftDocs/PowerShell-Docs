@@ -1,11 +1,12 @@
 {
     "build": {
-        "content": [
-            { "files": ["**/**.md", "**/**.yml"], "exclude": ["**/obj/**"] }
-        ],
+        "content": [{
+            "files": ["**/**.md", "**/**.yml"],
+            "exclude": ["**/obj/**"]
+        }],
         "globalMetadata": {
             "toc_preview": true,
-            "breadcrumb_path": "~/bread/toc.yml",
+            "breadcrumb_path": "",
             "uhfHeaderId": "MSDocsHeader-Powershell",
             "layout": "conceptual",
             "ROBOTS": "INDEX, FOLLOW",
@@ -23,9 +24,10 @@
             "ms.author": { "**/**.md": "robreed" },
             "author": { "**/**.md": "bobbytreed" }
         },
-        "resource": [
-            { "files": ["**/images/**", "**/*.png", "**/*.gif", "**/*.jpeg", "**/*.jpg", "**/*.svg"], "exclude": ["**/obj/**", "**/includes/**"] }
-        ],
+        "resource": [{
+            "files": ["**/images/**", "**/*.png", "**/*.gif", "**/*.jpeg", "**/*.jpg", "**/*.svg"],
+            "exclude": ["**/obj/**", "**/includes/**"]
+        }],
         "template": "op.html",
         "dest": "dsc",
         "markdownEngineName": "markdig"

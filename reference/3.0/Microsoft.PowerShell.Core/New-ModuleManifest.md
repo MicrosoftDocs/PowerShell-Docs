@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Core
 ms.date: 07/11/2019
-online version: https://go.microsoft.com/fwlink/?linkid=141555
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/new-modulemanifest?view=powershell-3.0&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: New-ModuleManifest
 ---
@@ -204,7 +204,7 @@ the module.
 
 ```powershell
 $moduleSettings = @{
-  HelpInfoUri = 'http://https://go.microsoft.com/fwlink/?LinkID=603'
+  HelpInfoUri = 'https://go.microsoft.com/fwlink/?LinkID=603'
   Path = 'C:\ps-test\ManifestTest.psd1'
 }
 New-ModuleManifest @moduleSettings

@@ -1,11 +1,11 @@
 ---
+external help file: System.Management.Automation.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
 ms.date: 5/15/2019
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version: https://go.microsoft.com/fwlink/?linkid=289572
-external help file:  System.Management.Automation.dll-Help.xml
-title:  Connect-PSSession
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/connect-pssession?view=powershell-4.0&WT.mc_id=ps-gethelp
+schema: 2.0.0
+title: Connect-PSSession
 ---
 # Connect-PSSession
 
@@ -368,7 +368,7 @@ Connects only to sessions that use the specified session configuration.
 
 Enter a configuration name or the fully qualified resource URI for a session configuration.
 If you specify only the configuration name, the following schema URI is prepended: 
-http://schemas.microsoft.com/powershell.
+`http://schemas.microsoft.com/powershell`.
 The configuration name of a session is stored in the **ConfigurationName** property of the session.
 
 The value of this parameter is used to select and filter sessions.

@@ -1,9 +1,10 @@
 ---
-ms.date:  12/08/2018
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell
-title:  About PSReadLine
+keywords: powershell
+locale: en-us
+ms.date: 12/08/2018
+online version: https://docs.microsoft.com/powershell/module/psreadline/about/about_psreadline?view=powershell-5.0&WT.mc_id=ps-gethelp
+schema: 2.0.0
+title: About PSReadLine
 ---
 
 # PSReadLine
@@ -607,6 +608,15 @@ The contents of the kill ring are cleared.
 This is similar to Yank, but uses the system clipboard instead of the kill
 ring.
 
+ [!IMPORTANT]
+> When using the **Paste** function, the entire contents of the clipboard
+> buffer is pasted into the input buffer of PSReadLine. The input buffer is
+> then passed to the PowerShell parser. Input pasted using the console
+> application's **right-click** paste method is copied to the input buffer one
+> character at a time. The input buffer is passed to the parser when a newline
+> character is copied. Therefore, the input is parsed one line at a time. The
+> difference between paste methods results in different execution behavior.
+
 ### YankLastArg
 
 - Cmd: `<Alt+.>`
@@ -947,7 +957,15 @@ typical call looks like
 PSReadLine requires PowerShell 3.0, or newer, and the console host. It does
 not work in PowerShell ISE. It does work in the console of Visual Studio Code.
 
-### FEEDBACK & CONTRIBUTING TO PSREADLINE
+### COMMAND HISTORY
+
+PSReadLine maintains a history file containing all the commands and data you have entered from the
+command line. This may contain sensitive data including passwords. For example, if you use the
+`ConvertTo-SecureString` cmdlet the password is logged in the history file as plain text. The
+history files is a file named `$($host.Name)_history.txt`. On Windows systems the history file is
+stored at `$env:APPDATA\Microsoft\Windows\PowerShell\PSReadLine`. 
+
+### FEEDBACK & CONTRIBUTING TO PSReadLine
 
 [PSReadLine on GitHub](https://github.com/lzybkr/PSReadLine)
 

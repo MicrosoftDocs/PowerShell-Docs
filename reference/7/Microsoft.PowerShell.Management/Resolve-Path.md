@@ -1,11 +1,11 @@
 ---
+external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
 ms.date: 5/14/2019
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version: https://go.microsoft.com/fwlink/?linkid=2097143
-external help file:  Microsoft.PowerShell.Commands.Management.dll-Help.xml
-title:  Resolve-Path
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/resolve-path?view=powershell-7&WT.mc_id=ps-gethelp
+schema: 2.0.0
+title: Resolve-Path
 ---
 # Resolve-Path
 

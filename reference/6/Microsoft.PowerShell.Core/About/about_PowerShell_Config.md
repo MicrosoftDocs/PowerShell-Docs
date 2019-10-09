@@ -1,9 +1,10 @@
 ---
-ms.date:  11/02/2018
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell
-title:  about_PowerShell_Config
+keywords: powershell
+locale: en-us
+ms.date: 11/02/2018
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_powershell_config?view=powershell-6&WT.mc_id=ps-gethelp
+schema: 2.0.0
+title: about_PowerShell_Config
 ---
 # About PowerShell Config
 
@@ -200,7 +201,7 @@ For more information on experimental features, see [PowerShell RFC 29][RFC0029].
 
 PowerShell's logging on macOS and Linux can be configured in the PowerShell
 configuration file. For a full description of PowerShell logging for
-non-Windows systems, see [About Logging](./about_Logging.md).
+non-Windows systems, see [About Logging](./about_Logging_Non-Windows.md).
 
 ### LogIdentity
 

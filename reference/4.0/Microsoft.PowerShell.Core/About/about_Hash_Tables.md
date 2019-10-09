@@ -1,9 +1,10 @@
 ---
-ms.date:  11/28/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-title:  about_Hash_Tables
+keywords: powershell,cmdlet
+locale: en-us
+ms.date: 11/28/2017
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_hash_tables?view=powershell-4.0&WT.mc_id=ps-gethelp
+schema: 2.0.0
+title: about_Hash_Tables
 ---
 
 # About Hash Tables
@@ -499,4 +500,4 @@ For more information about here-strings, see [about_Quoting_Rules](about_Quoting
 
 [Import-LocalizedData](../../Microsoft.PowerShell.Utility/Import-LocalizedData.md)
 
-[System.Collections.Hashtable](http://msdn.microsoft.com/en-us/library/system.collections.hashtable\(v=vs.110\).aspx) on MSDN
+[System.Collections.Hashtable](/dotnet/api/system.collections.hashtable)

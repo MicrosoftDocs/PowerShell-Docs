@@ -1,11 +1,11 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version: https://go.microsoft.com/fwlink/?linkid=822386
-external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-title:  ConvertFrom-String
+external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+ms.date: 06/09/2017
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/convertfrom-string?view=powershell-5.0&WT.mc_id=ps-gethelp
+schema: 2.0.0
+title: ConvertFrom-String
 ---
 # ConvertFrom-String
 
@@ -45,7 +45,7 @@ This cmdlet supports two modes: basic delimited parsing, and automatically-gener
 Delimited parsing, by default, splits the input at white space, and assigns property names to the resulting groups.
 You can customize the delimiter by piping the **ConvertFrom-String** results into one of the Format-* cmdlets, or you can use the *Delimiter* parameter.
 
-The cmdlet also supports automatically-generated, example-driven parsing based on the [FlashExtract, research work by Microsoft Research](http://research.microsoft.com/en-us/um/people/sumitg/flashextract.html).
+The cmdlet also supports automatically-generated, example-driven parsing based on the [FlashExtract, research work by Microsoft Research](https://research.microsoft.com/en-us/um/people/sumitg/flashextract.html).
 
 ## EXAMPLES
 
@@ -421,7 +421,7 @@ For more information, see [about_CommonParameters](../Microsoft.PowerShell.Core/
 
 ## RELATED LINKS
 
-[ConvertFrom-String: Example-based text parsing](http://blogs.msdn.com/b/powershell/archive/2014/10/31/convertfrom-string-example-based-text-parsing.aspx)
+[ConvertFrom-String: Example-based text parsing](https://blogs.msdn.com/b/powershell/archive/2014/10/31/convertfrom-string-example-based-text-parsing.aspx)
 
 [ConvertFrom-StringData](ConvertFrom-StringData.md)
 

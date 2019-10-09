@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Utility
 ms.date: 08/22/2019
-online version: https://go.microsoft.com/fwlink/?linkid=2096443
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/invoke-webrequest?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Invoke-WebRequest
 ---
@@ -91,7 +91,7 @@ This cmdlet was introduced in PowerShell 3.0.
 This command uses the `Invoke-WebRequest` cmdlet to send a web request to the Bing.com site.
 
 ```powershell
-$response = Invoke-WebRequest -URI http://www.bing.com/search?q=how+many+feet+in+a+mile
+$response = Invoke-WebRequest -URI https://www.bing.com/search?q=how+many+feet+in+a+mile
 $response.InputFields | Where-Object {
     $_.name -like "* Value*"
 } | Select-Object Name, Value
@@ -104,7 +104,7 @@ From Value 1
 To Value   5280
 ```
 
-The first command issues the request and saves the response in the `$R` variable.
+The first command issues the request and saves the response in the `$response` variable.
 
 The second command gets any **InputField** where the **name** property is like "* Value". The
 filtered results are piped to `Select-Object` to select the **name** and **value** properties.
@@ -118,11 +118,11 @@ $Body = @{
     User = 'jdoe'
     password = 'P@S$w0rd!'
 }
-$LoginResponse = Invoke-WebRequest 'http://www.contoso.com/login/' -SessionVariable 'Session' -Body $Body -Method 'POST'
+$LoginResponse = Invoke-WebRequest 'https://www.contoso.com/login/' -SessionVariable 'Session' -Body $Body -Method 'POST'
 
 $Session
 
-$ProfileResponse = Invoke-WebRequest 'http://www.contoso.com/profile/' -WebSession $Session
+$ProfileResponse = Invoke-WebRequest 'https://www.contoso.com/profile/' -WebSession $Session
 
 $ProfileResponse
 ```
@@ -1081,7 +1081,7 @@ such as Chrome, FireFox, InternetExplorer, Opera, and Safari.
 For example, the following command uses the user agent string for Internet Explorer
 
 ```powershell
-Invoke-WebRequest -Uri http://website.com/ -UserAgent ([Microsoft.PowerShell.Commands.PSUserAgent]::InternetExplorer)
+Invoke-WebRequest -Uri https://website.com/ -UserAgent ([Microsoft.PowerShell.Commands.PSUserAgent]::InternetExplorer)
 ```
 
 ```yaml

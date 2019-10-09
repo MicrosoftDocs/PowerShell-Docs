@@ -4,6 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: CimCmdlets
 ms.date: 06/09/2017
+online version: https://docs.microsoft.com/powershell/module/cimcmdlets/new-ciminstance?view=powershell-4.0&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: New-CimInstance
 ---
@@ -41,16 +42,16 @@ New-CimInstance -ResourceUri <Uri> [-Key <String[]>] [[-Property] <IDictionary>]
  [-OperationTimeoutSec <UInt32>] [-ComputerName <String[]>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### CimClassComputerSet
-```
-New-CimInstance [-CimClass] <CimClass> [[-Property] <IDictionary>] [-OperationTimeoutSec <UInt32>]
- [-ComputerName <String[]>] [-ClientOnly] [-WhatIf] [-Confirm] [<CommonParameters>]
-```
-
 ### CimClassSessionSet
 ```
 New-CimInstance [-CimClass] <CimClass> [[-Property] <IDictionary>] [-OperationTimeoutSec <UInt32>]
  -CimSession <CimSession[]> [-ClientOnly] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### CimClassComputerSet
+```
+New-CimInstance [-CimClass] <CimClass> [[-Property] <IDictionary>] [-OperationTimeoutSec <UInt32>]
+ [-ComputerName <String[]>] [-ClientOnly] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -63,8 +64,8 @@ By default, the New-CimInstance cmdlet creates an instance on the local computer
 ## EXAMPLES
 
 ### Example 1: Create an instance of a CIM class
-```
-PS C:\>New-CimInstance -ClassName Win32_Environment -Property @{Name="testvar";VariableValue="testvalue";UserName="domain\user"}
+```powershell
+New-CimInstance -ClassName Win32_Environment -Property @{Name="testvar";VariableValue="testvalue";UserName="domain\user"}
 ```
 
 This command creates an instance of a CIM Class named win32_environment in the root/cimv2 namespace on the computer.
@@ -74,26 +75,26 @@ No client side validation is performed if the class does not exist, the properti
 If the instance is created successfully, then the New-CimInstance cmdlet outputs the newly created instance.
 
 ### Example 2: Create an instance of a CIM class using a class schema
-```
-PS C:\>$class = Get-CimClass -ClassName Win32_Environment
+```powershell
+$class = Get-CimClass -ClassName Win32_Environment
 
 
 
-PS C:\>New-CimInstance -CimClass $class -Property @{Name="testvar";VariableValue="testvalue";UserName="Contoso\User1"}
+New-CimInstance -CimClass $class -Property @{Name="testvar";VariableValue="testvalue";UserName="Contoso\User1"}
 ```
 
 This set of commands retrieves a CIM class object and stores it in a variable named $class using the Get-CimClass cmdlet.
 The contents of the variable are then passed to the New-CimInstance cmdlet.
 
 ### Example 3: Create a dynamic instance on the client
-```
-PS C:\>$a = New-CimInstance -ClassName Win32_Process -Property @{Handle=0} -Key Handle -ClientOnly
+```powershell
+$a = New-CimInstance -ClassName Win32_Process -Property @{Handle=0} -Key Handle -ClientOnly
 
 
-PS C:\>Get-CimInstance -CimInstance $a
+Get-CimInstance -CimInstance $a
 
 
-PS C:\>Invoke-CimMethod -CimInstance $a -MethodName GetOwner
+Invoke-CimMethod -CimInstance $a -MethodName GetOwner
 ```
 
 This set of commands creates a dynamic instance of a CIM class named win32_Process on the client computer without getting the instance from the server.
@@ -103,12 +104,12 @@ The Get-CimInstance cmdlet then retrieves a particular single instance, and invo
 This dynamic instance can be used to perform operations if the instance with this key exists on the server.
 
 ### Example 4: Create an instance for a CIM class of a specific namespace
-```
-PS C:\>$class = Get-CimClass -ClassName MSFT_Something -Namespace root/somewhere
+```powershell
+$class = Get-CimClass -ClassName MSFT_Something -Namespace root/somewhere
 
 
 
-PS C:\>New-CimInstance -CimClass $class -Property @{"Prop1"=1;"Prop2"="value"} -ClientOnly
+New-CimInstance -CimClass $class -Property @{"Prop1"=1;"Prop2"="value"} -ClientOnly
 ```
 
 This set of commands gets an instance of a CIM class named MSFT_Something in the namespace root/somewhere and stores it in a variable named $class using the Get-CimClass cmdlet.
@@ -129,11 +130,11 @@ Using this parameter results in better client side schema validations.
 
 ```yaml
 Type: CimClass
-Parameter Sets: CimClassComputerSet, CimClassSessionSet
+Parameter Sets: CimClassSessionSet, CimClassComputerSet
 Aliases:
 
 Required: True
-Position: 1
+Position: 0
 Default value: None
 Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
@@ -157,8 +158,8 @@ Accept wildcard characters: False
 ```
 
 ### -ClassName
-Specifies the name of the CIM class of which the operation creates an instance. 
-NOTE: You can use tab completion to browse the list of classes, because Windows PowerShell gets a list of classes from the local WMI server to provide a list of class names.
+Specifies the name of the CIM class of which the operation creates an instance.
+NOTE: You can use tab completion to browse the list of classes, because PowerShell gets a list of classes from the local WMI server to provide a list of class names.
 
 ```yaml
 Type: String
@@ -166,7 +167,7 @@ Parameter Sets: ClassNameComputerSet, ClassNameSessionSet
 Aliases:
 
 Required: True
-Position: 1
+Position: 0
 Default value: None
 Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
@@ -174,11 +175,11 @@ Accept wildcard characters: False
 
 ### -ClientOnly
 Indicates that the instance is only created in PowerShell without going to the CIM server.
-You can use this parameter to create an in-memory CIM instance for use in subsequent Windows PowerShell operations.
+You can use this parameter to create an in-memory CIM instance for use in subsequent PowerShell operations.
 
 ```yaml
 Type: SwitchParameter
-Parameter Sets: ClassNameComputerSet, ClassNameSessionSet, CimClassComputerSet, CimClassSessionSet
+Parameter Sets: ClassNameComputerSet, ClassNameSessionSet, CimClassSessionSet, CimClassComputerSet
 Aliases: Local
 
 Required: False
@@ -229,7 +230,7 @@ Accept wildcard characters: False
 ### -Namespace
 Specifies the namespace of the class for the new instance.
 
-The default namespace is root/cimv2. 
+The default namespace is root/cimv2.
 NOTE: You can use tab completion to browse the list of namespaces, because PowerShell gets a list of namespaces from the local WMI server to provide the list of namespaces.
 
 ```yaml
@@ -275,7 +276,7 @@ Parameter Sets: (All)
 Aliases: Arguments
 
 Required: False
-Position: 2
+Position: 1
 Default value: None
 Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
@@ -286,14 +287,13 @@ Specifies the resource uniform resource identifier (URI) of the resource class o
 The URI is used to identify a specific type of resource, such as disks or processes, on a computer.
 
 A URI consists of a prefix and a path to a resource.
-For example: 
+For example:
 
-http://schemas.microsoft.com/wbem/wsman/1/wmi/root/cimv2/Win32_LogicalDisk
-http://intel.com/wbem/wscim/1/amt-schema/1/AMT_GeneralSettings
+`http://schemas.microsoft.com/wbem/wsman/1/wmi/root/cimv2/Win32_LogicalDisk`
 
+`http://intel.com/wbem/wscim/1/amt-schema/1/AMT_GeneralSettings`
 
-                        
-By default, if you do not specify this parameter, the DMTF standard resource URI http://schemas.dmtf.org/wbem/wscim/1/cim-schema/2/ is used and the class name is appended to it.
+By default, if you do not specify this parameter, the DMTF standard resource URI `http://schemas.dmtf.org/wbem/wscim/1/cim-schema/2/` is used and the class name is appended to it.
 
 ResourceURI can only be used with CIM sessions created using the WSMan protocol, or when specifying the ComputerName parameter, which creates a CIM session using WSMan.
 If you specify this parameter without specifying the ComputerName parameter, or if you specify a CIM session created using DCOM protocol, you will get an error, because the DCOM protocol does not support the ResourceURI parameter.

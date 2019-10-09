@@ -1,9 +1,10 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-title:  about_Methods
+keywords: powershell,cmdlet
+locale: en-us
+ms.date: 06/09/2017
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_methods?view=powershell-4.0&WT.mc_id=ps-gethelp
+schema: 2.0.0
+title: about_Methods
 ---
 # About methods
 
@@ -95,8 +96,7 @@ supported.
 
 To find definitions of the methods of an object, go to help topic for the
 object type in MSDN and look for its methods page. For example, the following
-page describes the methods of process objects
-[System.Diagnostics.Process](http://msdn.microsoft.com/library/system.diagnostics.process_methods).
+page describes the methods of process objects [System.Diagnostics.Process](/dotnet/api/system.diagnostics.process#methods).
 
 To determine the arguments of a method, review the method definition, which is
 like the syntax diagram of a PowerShell cmdlet.

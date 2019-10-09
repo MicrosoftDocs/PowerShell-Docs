@@ -1,8 +1,9 @@
 ---
-ms.date:  03/28/2019
-schema:  2.0.0
-locale:  en-us
-title:  about_PowerShell_Editions
+locale: en-us
+ms.date: 03/28/2019
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_powershell_editions?view=powershell-6&WT.mc_id=ps-gethelp
+schema: 2.0.0
+title: about_PowerShell_Editions
 ---
 # About PowerShell Editions
 

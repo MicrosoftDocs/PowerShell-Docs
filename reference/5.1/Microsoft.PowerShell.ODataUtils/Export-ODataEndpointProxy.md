@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.ODataUtils
 ms.date: 06/09/2017
-online version: https://go.microsoft.com/fwlink/?linkid=510069
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.odatautils/export-odataendpointproxy?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Export-ODataEndpointProxy
 ---
@@ -329,9 +329,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## RELATED LINKS
 
-[OData Library](http://technet.microsoft.com/windowsserver/hh525392(v=vs.85).aspx)
+[OData Library](https://technet.microsoft.com/windowsserver/hh525392(v=vs.85).aspx)
 
-[What is the OData Protocol?](http://www.odata.org/)
+[What is the OData Protocol?](https://www.odata.org/)
 
 [Invoke-RestMethod](../Microsoft.PowerShell.Utility/Invoke-RestMethod.md)
 

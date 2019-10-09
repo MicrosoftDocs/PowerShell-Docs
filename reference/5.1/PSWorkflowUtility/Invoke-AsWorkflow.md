@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: PSWorkflowUtility
 ms.date: 06/09/2017
-online version: https://go.microsoft.com/fwlink/?linkid=821723
+online version: https://docs.microsoft.com/powershell/module/psworkflowutility/invoke-asworkflow?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Invoke-AsWorkflow
 ---
@@ -206,7 +206,3 @@ However, it runs the workflow, which might generate output.
 [about_Workflows](../PSWorkflow/About/about_Workflows.md)
 
 [about_Workflow_Common_Parameters](../PSWorkflow/About/about_WorkflowCommonParameters.md)
-
-[Windows PowerShell Workflow Module](../PSWorkflow/PSWorkflow.md)
-
-[Windows PowerShell Workflow Utility Module](PSWorkflowUtility.md)

@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Utility
 ms.date: 06/09/2017
-online version: https://go.microsoft.com/fwlink/?linkid=821826
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/invoke-webrequest?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Invoke-WebRequest
 ---
@@ -43,8 +43,8 @@ This cmdlet was introduced in Windows PowerShell 3.0.
 This command uses the `Invoke-WebRequest` cmdlet to send a web request to the Bing.com site.
 
 ```powershell
-$response = Invoke-WebRequest -URI http://www.bing.com/search?q=how+many+feet+in+a+mile
-$response.AllElements | Where-Object {
+$R = Invoke-WebRequest -URI https://www.bing.com?q=how+many+feet+in+a+mile
+$R.AllElements | Where-Object {
     $_.name -like "* Value" -and $_.tagName -eq "INPUT"
 } | Select-Object Name, Value
 ```
@@ -67,7 +67,7 @@ to select the **name** and **value** properties.
 This example shows how to use the `Invoke-WebRequest` cmdlet with a stateful web service, such as Facebook.
 
 ```powershell
-$R = Invoke-WebRequest http://www.facebook.com/login.php -SessionVariable fb
+$R = Invoke-WebRequest https://www.facebook.com/login.php -SessionVariable fb
 # This command stores the first form in the Forms property of the $R variable in the $Form variable.
 $Form = $R.Forms[0]
 # This command shows the fields available in the Form.
@@ -111,7 +111,7 @@ web response object in the `$R` variable indicates that the user is signed in su
 This command gets the links in a web page.
 
 ```powershell
-(Invoke-WebRequest -Uri "http://msdn.microsoft.com/en-us/library/aa973757(v=vs.85).aspx").Links.Href
+(Invoke-WebRequest -Uri "https://devblogs.microsoft.com/powershell/").Links.Href
 ```
 
 The `Invoke-WebRequest` cmdlet gets the web page content.
@@ -163,6 +163,16 @@ of the request body in the standard `name=value` format.
 
 When the body is a form, or it is the output of an `Invoke-WebRequest` call, PowerShell sets the
 request content to the form fields.
+For example:
+
+`$r = Invoke-WebRequest https://website.com/login.aspx`
+`$r.Forms\[0\].Name = "MyName"`
+`$r.Forms\[0\].Password = "MyPassword"`
+`Invoke-RestMethod https://website.com/service.aspx -Body $r`
+
+- or -
+
+`Invoke-RestMethod https://website.com/service.aspx -Body $r.Forms\[0\]`
 
 ```yaml
 Type: Object
@@ -602,7 +612,7 @@ Specifies a user agent string for the web request. The default user agent is sim
 each operating system and platform.
 
 To test a website with the standard user agent string that is used by most Internet browsers, use
-the properties of the [PSUserAgent](http://msdn.microsoft.com/library/windows/desktop/hh484857&#40;v=vs.85&#41;)
+the properties of the [PSUserAgent](/dotnet/api/microsoft.powershell.commands.psuseragent)
 class, such as Chrome, FireFox, InternetExplorer, Opera, and Safari. For example, the following
 command uses the user agent string for Internet Explorer
 

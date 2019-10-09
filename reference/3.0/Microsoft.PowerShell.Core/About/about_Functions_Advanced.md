@@ -1,9 +1,10 @@
-﻿---
-ms.date:  11/28/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-title:  about_Functions_Advanced
+---
+keywords: powershell,cmdlet
+locale: en-us
+ms.date: 11/28/2017
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_functions_advanced?view=powershell-3.0&WT.mc_id=ps-gethelp
+schema: 2.0.0
+title: about_Functions_Advanced
 ---
 # About Functions Advanced
 

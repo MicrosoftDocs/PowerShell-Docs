@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Core
 ms.date: 06/09/2017
-online version: https://go.microsoft.com/fwlink/?linkid=821482
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/get-command?view=powershell-5.0&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Command
 ---
@@ -517,14 +517,7 @@ Accept wildcard characters: True
 
 Indicates that this cmdlet displays command information.
 
-For more information about the method that PowerShell uses to select the command to run when
-multiple commands have the same name, see [about_Command_Precedence](About/about_Command_Precedence.md).
-For information about module-qualified command names and running commands that do not run by default
-because of a name conflict, see [about_Modules](About/about_Modules.md).
-
-This parameter was introduced in Windows PowerShell 3.0.
-
-In Windows PowerShell 2.0, `Get-Command` gets all commands by default.
+This parameter was introduced in Windows PowerShell 5.0.
 
 ```yaml
 Type: SwitchParameter

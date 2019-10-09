@@ -1,9 +1,10 @@
 ---
-ms.date:  11/27/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-title:  about_Aliases
+keywords: powershell,cmdlet
+locale: en-us
+ms.date: 11/27/2017
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_aliases?view=powershell-5.1&WT.mc_id=ps-gethelp
+schema: 2.0.0
+title: about_Aliases
 ---
 
 # About Aliases
@@ -148,8 +149,10 @@ Get-Alias returns only one type of object, an AliasInfo object
 include a hyphen, such as "cd" are displayed in the following format:
 
 ```powershell
-PS C:\> Get-Alias ac
+Get-Alias ac
+```
 
+```Output
 CommandType     Name                    Version    Source
 -----------     ----                    -------    ------
 Alias           ac -> Add-Content
@@ -268,4 +271,4 @@ Get-Help Alias
 - [about_providers](about_providers.md)
 
 <!-- External links -->
-[aliasinfo]: http://go.microsoft.com/fwlink/?LinkId=143644
+[aliasinfo]: /dotnet/api/system.management.automation.aliasinfo

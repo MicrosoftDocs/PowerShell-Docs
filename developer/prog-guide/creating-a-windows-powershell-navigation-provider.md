@@ -150,11 +150,11 @@ For complete sample code, see [AccessDbProviderSample05 Code Sample](./accessdbp
 
 ## Defining Object Types and Formatting
 
-It is possible for a provider to add members to existing objects or define new objects. For more information, see[Extending Object Types and Formatting](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351).
+It is possible for a provider to add members to existing objects or define new objects. For more information, see[Extending Object Types and Formatting](https://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351).
 
 ## Building the Windows PowerShell provider
 
-For more information, see [How to Register Cmdlets, Providers, and Host Applications](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c).
+For more information, see [How to Register Cmdlets, Providers, and Host Applications](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c).
 
 ## Testing the Windows PowerShell provider
 
@@ -284,11 +284,11 @@ When your Windows PowerShell provider has been registered with Windows PowerShel
 
 [Design Your Windows PowerShell provider](./designing-your-windows-powershell-provider.md)
 
-[Extending Object Types and Formatting](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)
+[Extending Object Types and Formatting](https://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)
 
 [Implement a Container Windows PowerShell provider](./creating-a-windows-powershell-container-provider.md)
 
-[How to Register Cmdlets, Providers, and Host Applications](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
+[How to Register Cmdlets, Providers, and Host Applications](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
 
 [Windows PowerShell Programmer's Guide](./windows-powershell-programmer-s-guide.md)
 

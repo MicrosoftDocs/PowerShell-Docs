@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Core
 ms.date: 08/20/2019
-online version: https://go.microsoft.com/fwlink/?linkid=2096789
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/invoke-command?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Invoke-Command
 ---
@@ -404,7 +404,7 @@ display. You can still use the **Format** cmdlets to display the **PsComputerNam
 of the affected objects.
 
 ```powershell
-`Invoke-Command` -ComputerName S1, S2 -ScriptBlock {Get-Process PowerShell}
+Invoke-Command -ComputerName S1, S2 -ScriptBlock {Get-Process PowerShell}
 ```
 
 ```Output

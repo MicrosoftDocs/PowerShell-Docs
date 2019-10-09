@@ -1,9 +1,10 @@
 ---
+keywords: powershell,cmdlet
+locale: en-us
 ms.date: 2/27/2019
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-title:  about_Switch
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_switch?view=powershell-4.0&WT.mc_id=ps-gethelp
+schema: 2.0.0
+title: about_Switch
 ---
 # About Switch
 

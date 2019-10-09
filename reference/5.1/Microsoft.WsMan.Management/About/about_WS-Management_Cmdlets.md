@@ -1,9 +1,10 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-title:  about_WS Management_Cmdlets
+keywords: powershell,cmdlet
+locale: en-us
+ms.date: 06/09/2017
+online version: https://docs.microsoft.com/powershell/module/microsoft.wsman.management/about/about_ws-management_cmdlets?view=powershell-5.1&WT.mc_id=ps-gethelp
+schema: 2.0.0
+title: about_WS Management_Cmdlets
 ---
 
 # About WS-Management Cmdlets
@@ -144,27 +145,25 @@ input to one or more parameters of a WS-Management cmdlet.
 For more information about WS-Management, see the following topics in the
 MSDN (Microsoft Developer Network) library.
 
-[Windows Remote Management](http://go.microsoft.com/fwlink/?LinkId=142321)
+[Windows Remote Management](/windows/win32/winrm/portal)
 
-[About Windows Remote Management](http://go.microsoft.com/fwlink/?LinkId=142322)
+[About Windows Remote Management](/windows/win32/winrm/about-windows-remote-management)
 
-[Installation and Configuration for Windows Remote Management](http://go.microsoft.com/fwlink/?LinkId=142323)
+[Installation and Configuration for Windows Remote Management](/windows/win32/winrm/installation-and-configuration-for-windows-remote-management)
 
-[Windows Remote Management Architecture](http://go.microsoft.com/fwlink/?LinkId=142324)
+[Windows Remote Management Architecture](/windows/win32/winrm/windows-remote-management-architecture)
 
-[WS-Management Protocol](http://go.microsoft.com/fwlink/?LinkId=142325)
+[WS-Management Protocol](/windows/win32/winrm/ws-management-protocol)
 
-[Windows Remote Management and WMI](http://go.microsoft.com/fwlink/?LinkId=142326)
+[Windows Remote Management and WMI](/windows/win32/winrm/windows-remote-management-and-wmi)
 
-[Resource URIs](http://go.microsoft.com/fwlink/?LinkId=142327)
+[Resource URIs](/windows/win32/winrm/resource-uris)
 
-[Remote Hardware Management](http://go.microsoft.com/fwlink/?LinkId=142328)
+[Remote Hardware Management](/windows/win32/winrm/remote-hardware-management)
 
-[Events](http://go.microsoft.com/fwlink/?LinkId=142329)
+[Events](/windows/win32/winrm/events)
 
 ## SEE ALSO
-
-[Online version](http://go.microsoft.com/fwlink/?LinkId=142331)
 
 [Connect-WSMan](../Connect-WSMan.md)
 

@@ -1,9 +1,10 @@
 ---
-ms.date: 12/07/2018
-schema: 2.0.0
-locale: en-us
-keywords: powershell,cmdlet
 external help file: PSReadLine-help.xml
+keywords: powershell,cmdlet
+locale: en-us
+ms.date: 12/07/2018
+online version: https://docs.microsoft.com/powershell/module/psreadline/psconsolehostreadline?view=powershell-5.0&WT.mc_id=ps-gethelp
+schema: 2.0.0
 title: PSConsoleHostReadLine
 ---
 

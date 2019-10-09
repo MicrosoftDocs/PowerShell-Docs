@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Utility
 ms.date: 06/09/2017
-online version: https://go.microsoft.com/fwlink/?linkid=293989
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/measure-command?view=powershell-4.0&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Measure-Command
 ---
@@ -103,6 +103,10 @@ TotalMinutes      : 0.000204453333333333
 TotalSeconds      : 0.0122672
 TotalMilliseconds : 12.2672
 ```
+
+### Example 4: Displaying output of measured command
+
+To display output of expression in `Measure-Command` you can use a pipe to `Out-Default`.
 
 ```powershell
 # Perform the same operation as above adding Out-Default to every execution.

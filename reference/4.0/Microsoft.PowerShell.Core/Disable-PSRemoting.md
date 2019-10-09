@@ -1,11 +1,11 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version: https://go.microsoft.com/fwlink/?linkid=289573
-external help file:  System.Management.Automation.dll-Help.xml
-title:  Disable-PSRemoting
+external help file: System.Management.Automation.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+ms.date: 06/09/2017
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/disable-psremoting?view=powershell-4.0&WT.mc_id=ps-gethelp
+schema: 2.0.0
+title: Disable-PSRemoting
 ---
 # Disable-PSRemoting
 
@@ -378,4 +378,4 @@ Beginning in Windows PowerShell 3.0, it is a cmdlet.
 
 [Unregister-PSSessionConfiguration](Unregister-PSSessionConfiguration.md)
 
-[WSMan Provider](../microsoft.wsman.management/about/about_wsman_provider.md)
+[WSMan Provider](../Microsoft.WsMan.Management/About/about_WSMan_Provider.md)

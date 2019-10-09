@@ -1,9 +1,10 @@
 ---
+keywords: powershell,cmdlet
+locale: en-us
 ms.date: 08/12/2019
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-title:  about_Automatic_Variables
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_automatic_variables?view=powershell-3.0&WT.mc_id=ps-gethelp
+schema: 2.0.0
+title: about_Automatic_Variables
 ---
 
 # About Automatic Variables

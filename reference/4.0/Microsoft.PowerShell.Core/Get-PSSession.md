@@ -1,11 +1,11 @@
 ---
+external help file: System.Management.Automation.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
 ms.date: 5/15/2019
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version: https://go.microsoft.com/fwlink/?linkid=289588
-external help file:  System.Management.Automation.dll-Help.xml
-title:  Get-PSSession
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/get-pssession?view=powershell-4.0&WT.mc_id=ps-gethelp
+schema: 2.0.0
+title: Get-PSSession
 ---
 # Get-PSSession
 
@@ -428,7 +428,7 @@ The format of this string is:
 
 \<Transport\>://\<ComputerName\>:\<Port\>/\<ApplicationName\>
 
-The default value is: http://localhost:5985/WSMAN.
+The default value is: `http://localhost:5985/WSMAN`.
 
 If you do not specify a *ConnectionUri*, you can use the *UseSSL*, *ComputerName*, *Port*, and
 *ApplicationName* parameters to specify the *ConnectionURI* values.

@@ -1,9 +1,10 @@
 ---
-ms.date:  12/08/2018
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-title:  About PSReadLine
+keywords: powershell,cmdlet
+locale: en-us
+ms.date: 12/08/2018
+online version: https://docs.microsoft.com/powershell/module/psreadline/about/about_psreadline?view=powershell-6&WT.mc_id=ps-gethelp
+schema: 2.0.0
+title: About PSReadLine
 ---
 # PSReadLine
 
@@ -247,6 +248,15 @@ Paste text from the system clipboard.
 - Cmd: `<Ctrl+v>`, `<Shift+Insert>`
 - Vi insert mode: `<Ctrl+v>`
 - Vi command mode: `<Ctrl+v>`
+
+> [!IMPORTANT]
+> When using the **Paste** function, the entire contents of the clipboard
+> buffer is pasted into the input buffer of PSReadLine. The input buffer is
+> then passed to the PowerShell parser. Input pasted using the console
+> application's **right-click** paste method is copied to the input buffer one
+> character at a time. The input buffer is passed to the parser when a newline
+> character is copied. Therefore, the input is parsed one line at a time. The
+> difference between paste methods results in different execution behavior.
 
 ### PasteAfter
 
@@ -1397,6 +1407,16 @@ typical call looks like
 
 PSReadLine requires PowerShell 3.0, or newer, and the console host. It does
 not work in PowerShell ISE. It does work in the console of Visual Studio Code.
+
+### COMMAND HISTORY
+
+PSReadLine maintains a history file containing all the commands and data you have entered from the
+command line. This may contain sensitive data including passwords. For example, if you use the
+`ConvertTo-SecureString` cmdlet the password is logged in the history file as plain text. The
+history files is a file named `$($host.Name)_history.txt`. On Windows systems the history file is
+stored at `$env:APPDATA\Microsoft\Windows\PowerShell\PSReadLine`. On non-Windows systems, the
+history files is stored at `$env:XDG_DATA_HOME/powershell/PSReadLine` or
+`$env:HOME/.local/share/powershell/PSReadLine`.
 
 ### FEEDBACK & CONTRIBUTING TO PSReadLine
 

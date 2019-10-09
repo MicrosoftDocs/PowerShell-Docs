@@ -1,9 +1,10 @@
 ---
-ms.date:  01/04/2018
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-title:  about_Windows_PowerShell_5.0
+keywords: powershell,cmdlet
+locale: en-us
+ms.date: 01/04/2018
+online version: https://docs.microsoft.com/powershell/module/?view=powershell-5.0&WT.mc_id=ps-gethelp
+schema: 2.0.0
+title: about_Windows_PowerShell_5.0
 ---
 # about_Windows_PowerShell_5.0
 
@@ -285,14 +286,12 @@ You can also read about changes to Windows PowerShell 5.0 in
 
 - Windows PowerShell 5.0 includes a new COM implementation, which offers
   significant performance improvements when you are working with COM objects.
-  For a video demonstration of the effect, see
-  [Com_Perf_Improvements](http://1drv.ms/1qu3UPZ).
 
 For more information about Windows PowerShell 5.0, visit the following web
 sites:
 
 - [Windows PowerShell Scripting website](/powershell/scripting/overview)
-- [Windows PowerShell Team Blog](http://go.microsoft.com/fwlink/?LinkId=143696)
+- [Windows PowerShell Team Blog](https://devblogs.microsoft.com/powershell/)
 - [Windows PowerShell Web Access](/powershell/scripting/core-powershell/web-access)
 
 ## SEE ALSO

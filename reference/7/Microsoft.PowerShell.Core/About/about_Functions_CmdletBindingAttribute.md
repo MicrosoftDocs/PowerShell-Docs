@@ -1,9 +1,10 @@
 ---
-ms.date:  11/28/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-title:  about_Functions_CmdletBindingAttribute
+keywords: powershell,cmdlet
+locale: en-us
+ms.date: 11/28/2017
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_functions_cmdletbindingattribute?view=powershell-7&WT.mc_id=ps-gethelp
+schema: 2.0.0
+title: about_Functions_CmdletBindingAttribute
 ---
 # About Functions CmdletBindingAttribute
 
@@ -61,9 +62,7 @@ $ConfirmPreference preference variable. (The default value of the
 argument is Medium.) Specify this argument only when the
 SupportsShouldProcess argument is also specified.
 
-For more information about confirmation requests, see "Requesting
-Confirmation" in the MSDN (Microsoft Developer Network) library at
-http://go.microsoft.com/fwlink/?LinkId=136658.
+For more information about confirmation requests, see [Requesting Confirmation](/powershell/developer/cmdlet/requesting-confirmation).
 
 ## DefaultParameterSetName
 

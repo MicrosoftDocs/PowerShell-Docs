@@ -17,7 +17,7 @@ This section explains how to populate the **DYNAMIC PARAMETERS** section of a pr
 
 The dynamic parameters that are documented in a provider help topic are the dynamic parameters that the provider adds to the cmdlet or function when the cmdlet or function is used in the provider drive.
 
-Dynamic parameters can also be documented in custom cmdlet help for a provider. When writing both provider help and custom cmdlet help for a provider, include the dynamic parameter documentation in both documents. For more information about custom cmdlet help, see [Writing Windows PowerShell Custom Cmdlet Help for Providers](./writing-custom-cmdlet-help-for-windows-powershell-providers.md).
+Dynamic parameters can also be documented in custom cmdlet help for a provider. When writing both provider help and custom cmdlet help for a provider, include the dynamic parameter documentation in both documents.
 
 If a provider does not implement any dynamic parameters, the provider help topic contains an empty `DynamicParameters` element.
 

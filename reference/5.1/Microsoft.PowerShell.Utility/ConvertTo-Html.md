@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Utility
 ms.date: 06/09/2017
-online version: https://go.microsoft.com/fwlink/?linkid=821758
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/convertto-html?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: ConvertTo-Html
 ---
@@ -90,9 +90,10 @@ The second command uses the Invoke-Item cmdlet (alias = ii) to open the Proc.htm
 The two commands are separated by a semicolon (;).
 
 ### Example 5: Create a web page to display service objects
+
 ```
-PS C:\> Get-Service | ConvertTo-Html -CssUri "test.css"
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+PS> get-service | convertto-html -CssUri "test.css"
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"  "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html>
 <head>
 <title>HTML TABLE</title>
@@ -366,9 +367,7 @@ For example, if you use *InputObject* to submit the processes on a computer to *
 
   To comply with the XHTML Strict DTD, the DOCTYPE tag is modified accordingly:
 
-   (\<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"\>)
-
-*
+   (\<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"       "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"\>)
 
 ## RELATED LINKS
 

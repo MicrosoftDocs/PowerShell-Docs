@@ -1,10 +1,12 @@
 ---
-ms.date:  07/01/2019
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-title:  about_Requires
+keywords: powershell,cmdlet
+locale: en-us
+ms.date: 07/01/2019
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_requires?view=powershell-4.0&WT.mc_id=ps-gethelp
+schema: 2.0.0
+title: about_Requires
 ---
+
 # About Requires
 
 ## Short description
@@ -12,10 +14,9 @@ Prevents a script from running without the required elements.
 
 ## Long description
 
-The `#Requires` statement prevents a script from running unless the
-PowerShell version, modules (and version), or snap-ins (and version)
-prerequisites are met. If the prerequisites are not met, PowerShell
-does not run the script.
+The `#Requires` statement prevents a script from running unless the PowerShell
+version, modules (and version), or snap-ins (and version) prerequisites are
+met. If the prerequisites aren't met, PowerShell doesn't run the script.
 
 ### Syntax
 
@@ -49,7 +50,7 @@ Example:
   #Requires -Modules Hyper-V
   ```
 
-You might think that the above code should not run because the required module
+You might think that the above code shouldn't run because the required module
 was removed before the `#Requires` statement. However, the `#Requires` state
 had to be met before the script could even execute. Then the first line of the
 script invalidated the required state.
@@ -83,8 +84,8 @@ For example:
 Specifies PowerShell modules that the script requires. Enter the module name
 and an optional version number.
 
-If the required modules are not in the current session, PowerShell imports
-them. If the modules cannot be imported, PowerShell throws a terminating error.
+If the required modules aren't in the current session, PowerShell imports them.
+If the modules can't be imported, PowerShell throws a terminating error.
 
 For each module, type the module name (\<String\>) or a hash table. The value
 can be a combination of strings and hash tables. The hash table has the
@@ -111,8 +112,9 @@ Require that any version of `PSScheduledJob` and `PSWorkflow` are installed.
 #### -ShellId
 
 Specifies the shell that the script requires. Enter the shell ID. If you use
-the **ShellId** parameter you must also include the **PSSnapin** parameter. You
-can find current ShellId by querying `$ShellId` automatic variable.
+the **ShellId** parameter, you must also include the **PSSnapin** parameter.
+You can find the current **ShellId** by querying the `$ShellId` automatic
+variable.
 
 For example:
 
@@ -139,7 +141,7 @@ For example:
 ### Examples
 
 The following script has two `#Requires` statements. If the requirements
-specified in both statements are not met, the script does not run. Each
+specified in both statements aren't met, the script doesn't run. Each
 `#Requires` statement must be the first item on a line:
 
 ```powershell

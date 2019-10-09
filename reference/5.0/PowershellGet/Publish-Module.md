@@ -1,11 +1,12 @@
 ---
-ms.date:  06/28/2019
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version: https://go.microsoft.com/fwlink/?linkid=821666
-external help file:  PSGet-help.xml
-title:  Publish-Module
+external help file: PSModule-help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: PowerShellGet
+ms.date: 10/03/2019
+online version: https://docs.microsoft.com/powershell/module/powershellget/publish-module?view=powershell-5.0&WT.mc_id=ps-gethelp
+schema: 2.0.0
+title: Publish-Module
 ---
 
 # Publish-Module
@@ -41,12 +42,6 @@ When you specify a module by name, `Publish-Module` publishes the first module t
 by running `Get-Module -ListAvailable <Name>`. If you specify a minimum version of a module to
 publish, `Publish-Module` publishes the first module with a version that is greater than or equal to
 the minimum version that you have specified.
-
-Publishing a module requires metadata that is displayed on the gallery page for the module. Required
-metadata includes the module name, version, description, and author. Although most metadata is taken
-from the module manifest, some metadata must be specified in `Publish-Module` parameters, such as
-**Tag**, **ReleaseNote**, **IconUri**, **ProjectUri**, and **LicenseUri**, because these parameters
-match fields in a NuGet-based gallery.
 
 ## EXAMPLES
 
@@ -171,7 +166,7 @@ Type: String
 Parameter Sets: (All)
 Aliases:
 
-Required: True
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -307,12 +302,20 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
+### None
+
+`Publish-Module` shows no output if a module is published successfully.
+
 ## NOTES
 
 `Publish-Module` runs on PowerShell 3.0 or later releases of PowerShell, on Windows 7 or Windows
 2008 R2 and later releases of Windows.
 
-`Publish-Module` shows no output if a module is published successfully.
+Publishing a module requires metadata that is displayed on the gallery page for the module. Required
+metadata includes the module name, version, description, and author. Most metadata is taken from the
+module manifest, but some metadata can be specified in `Publish-Module` parameters, such as **Tag**,
+**ReleaseNote**, **IconUri**, **ProjectUri**, and **LicenseUri**. For more information, see
+[Package manifest values that impact the PowerShell Gallery UI](/powershell/scripting/gallery/concepts/package-manifest-affecting-ui).
 
 ## RELATED LINKS
 

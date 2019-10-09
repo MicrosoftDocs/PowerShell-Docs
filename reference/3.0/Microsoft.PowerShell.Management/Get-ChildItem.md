@@ -1,10 +1,10 @@
 ---
-ms.date:  2/19/2019
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version: https://go.microsoft.com/fwlink/?linkid=113308
-external help file:  Microsoft.PowerShell.Commands.Management.dll-Help.xml
+external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+ms.date: 2/19/2019
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/get-childitem?view=powershell-3.0&WT.mc_id=ps-gethelp
+schema: 2.0.0
 title: Get-ChildItem
 ---
 # Get-ChildItem

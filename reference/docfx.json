@@ -1,6 +1,12 @@
 {
     "build": {
         "content": [
+            {
+              "files": ["index.yml", "module/index.md","digital-art.md"],
+              "exclude": ["**/obj/**", "**/includes/**", "README.md"],
+              "dest": ""
+            },
+
             { "files": ["bread/toc.yml"], "dest": "scripting" },
 
             { "files": ["toc.yml"], "src": "docs-conceptual", "version": "powershell-3.0", "dest": "scripting/powershell-3.0" },
@@ -37,30 +43,41 @@
             { "files": ["**/*.md"], "src": "virtual-directory-module", "dest": "module" }
         ],
         "resource": [
-            { "files": ["**/images/**", "**/*.png", "**/*.gif", "**/*.jpeg", "**/*.jpg", "**/*.svg"],
+            {
+              "files": ["**/media/**/*.png", "**/media/**/*.gif", "**/media/**/*.jpeg", "**/media/**/*.jpg", "**/media/**/*.svg"],
               "exclude": ["**/obj/**", "**/includes/**"]
             },
-            { "files": ["**/images/**", "**/*.png", "**/*.gif", "**/*.jpeg", "**/*.jpg", "**/*.svg"],
+            {
+              "files": ["**/images/**", "**/*.png", "**/*.gif", "**/*.jpeg", "**/*.jpg", "**/*.svg"],
+              "exclude": ["**/obj/**", "**/includes/**"]
+            },
+            {
+              "files": ["**/images/**", "**/*.png", "**/*.gif", "**/*.jpeg", "**/*.jpg", "**/*.svg"],
               "exclude": ["**/obj/**", "**/includes/**"],
               "version": "powershell-3.0"
             },
-            { "files": ["**/images/**", "**/*.png", "**/*.gif", "**/*.jpeg", "**/*.jpg", "**/*.svg"],
+            {
+              "files": ["**/images/**", "**/*.png", "**/*.gif", "**/*.jpeg", "**/*.jpg", "**/*.svg"],
               "exclude": ["**/obj/**", "**/includes/**"],
               "version": "powershell-4.0"
             },
-            { "files": ["**/images/**", "**/*.png", "**/*.gif", "**/*.jpeg", "**/*.jpg", "**/*.svg"],
+            {
+              "files": ["**/images/**", "**/*.png", "**/*.gif", "**/*.jpeg", "**/*.jpg", "**/*.svg"],
               "exclude": ["**/obj/**", "**/includes/**"],
               "version": "powershell-5.0"
             },
-            { "files": ["**/images/**", "**/*.png", "**/*.gif", "**/*.jpeg", "**/*.jpg", "**/*.svg"],
+            {
+              "files": ["**/images/**", "**/*.png", "**/*.gif", "**/*.jpeg", "**/*.jpg", "**/*.svg"],
               "exclude": ["**/obj/**", "**/includes/**"],
               "version": "powershell-5.1"
             },
-            { "files": ["**/images/**", "**/*.png", "**/*.gif", "**/*.jpeg", "**/*.jpg", "**/*.svg"],
+            {
+              "files": ["**/images/**", "**/*.png", "**/*.gif", "**/*.jpeg", "**/*.jpg", "**/*.svg"],
               "exclude": ["**/obj/**", "**/includes/**"],
               "version": "powershell-6"
             },
-            { "files": ["**/images/**", "**/*.png", "**/*.gif", "**/*.jpeg", "**/*.jpg", "**/*.svg"],
+            {
+              "files": ["**/images/**", "**/*.png", "**/*.gif", "**/*.jpeg", "**/*.jpg", "**/*.svg"],
               "exclude": ["**/obj/**", "**/includes/**"],
               "version": "powershell-7"
             }
@@ -78,11 +95,12 @@
         "globalMetadata": {
             "toc_preview": true,
             "searchScope": [ "PowerShell" ],
-            "hideScope": true,
+            "hideScope": false,
             "breadcrumb_path": "/powershell/scripting/bread/toc.json",
             "uhfHeaderId": "MSDocsHeader-Powershell",
             "apiPlatform": "powershell",
             "ms.devlang": "powershell",
+            "titleSuffix": "PowerShell",
             "ROBOTS": "INDEX, FOLLOW",
             "feedback_system": "GitHub",
             "feedback_github_repo": "MicrosoftDocs/PowerShell-Docs",
@@ -132,6 +150,9 @@
                 "**/PSScheduledJob/**.md": "SteveL-MSFT",
                 "**/PSWorkflow/**.md": "SteveL-MSFT",
                 "**/PSWorkflowUtility/**.md": "SteveL-MSFT",
+                "docs-conceptual/learn/remoting/jea/**.md": "rpsqrd",
+                "docs-conceptual/gallery/**/**.md": "SydneyhSmith",
+                "docs-conceptual/dsc/**/**.md": "mgreenegit",
                 "docs-conceptual/**.md": "joeyaiello"
             },
             "ms.author": {
@@ -156,6 +177,9 @@
                 "**/PSScheduledJob/**.md": "slee",
                 "**/PSWorkflow/**.md": "slee",
                 "**/PSWorkflowUtility/**.md": "slee",
+                "docs-conceptual/learn/remoting/jea/**/**.md": "ryanpu",
+                "docs-conceptual/gallery/**/**.md": "sysmith",
+                "docs-conceptual/dsc/**/**.md": "migreene",
                 "docs-conceptual/**.md": "jaiello"
             }
         },
