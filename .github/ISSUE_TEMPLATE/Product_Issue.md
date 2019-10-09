@@ -1,5 +1,5 @@
 ---
-name: Code Bug Report 🐛
+name: PowerShell Product Issue 🐛
 about: PowerShell behavior issues should be filed in the [PowerShell](https://github.com/PowerShell/PowerShell/issues/new) code repository
 title: Issue title
 labels: issue-product-feedback
