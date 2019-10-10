@@ -169,7 +169,7 @@ Indicates that this cmdlet runs as a background job.
 To use this parameter, the local and remote computers must be configured for remoting and, on
 Windows Vista and later versions of the Windows operating system, you must open PowerShell by using
 the **Run as administrator** option. For more information, see
-[about_Remote_Requirements](../microsoft.powershell.core/about/about_remote_requirements).
+[about_Remote_Requirements](../microsoft.powershell.core/about/about_remote_requirements.md).
 
 When you specify the **AsJob** parameter, the command immediately returns an object that represents
 the background job. You can continue to work in the session while the job finishes. The job is
