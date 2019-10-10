@@ -35,7 +35,7 @@ For simple modules that contain only a single .psm1 or binary assembly, a module
 
 2. Add in any additional elements to the manifest that you want to have in the file.
 
-   Generally speaking, this will probably be done in whatever text editor you prefer, such as Notepad. However this technically is a script file that contains code, so you may wish to edit it in an actual scripting or development environment, such as the PowerShell ISE. Again, note that all elements of a manifest file are optional, except for the ModuleVersion number.
+   Generally speaking, this will probably be done in whatever text editor you prefer, such as Notepad. However this technically is a script file that contains code, so you may wish to edit it in an actual scripting or development environment, such as Visual Studio Code. Again, note that all elements of a manifest file are optional, except for the ModuleVersion number.
 
    For descriptions of the keys and values you can have in a module manifest, see the **Module Manifest Elements** below. For additional information, see the parameter descriptions in the  [New-ModuleManifest](/powershell/module/Microsoft.PowerShell.Core/New-ModuleManifest) cmdlet.
 
@@ -77,16 +77,16 @@ The following table describes the elements you can have in a module manifest
 |RequiredModules<br /><br /> Type: [string[]]|@()|Modules that must be imported into the global environment prior to importing this module. This will load any modules listed unless they have already been loaded. (For example, some modules may already be loaded by a different module.). It is also possible to specify a specific version to load using `RequiredVersion` rather than `ModuleVersion`. When using `ModuleVersion` it will load the newest version available with a minimum of the version specified.<br /><br /> Example: `RequiredModules = @(@{ModuleName="myDependentModule"; ModuleVersion="2.0"; Guid="cfc45206-1e49-459d-a8ad-5b571ef94857"})`<br /><br /> Example: `RequiredModules = @(@{ModuleName="myDependentModule"; RequiredVersion="1.5"; Guid="cfc45206-1e49-459d-a8ad-5b571ef94857"})`|
 |RequiredAssemblies<br /><br /> Type: [string[]]|@()|Assemblies that must be loaded prior to importing this module.<br /><br /> Note that unlike RequiredModules, PowerShell will load the RequiredAssemblies if they are not already loaded.|
 |ScriptsToProcess<br /><br /> Type: [string[]]|@()|Script (.ps1) files that are run in the caller's session state when the module is imported. This could be the global session state or, for nested modules, the session state of another module. You can use these scripts to prepare an environment just as you might use a login script.<br /><br /> These scripts are run before any of the modules listed in the manifest are loaded.|
-|TypesToProcess<br /><br /> Type: [Object[]]|@()|Type files (.ps1xml) to be loaded when importing this module.|
-|FormatsToProcess<br /><br /> Type: [Object[]]|@()|Format files (.ps1xml) to be loaded when importing this module.|
-|NestedModules<br /><br /> Type: [Object[]]|@()|Modules to import as nested modules of the module specified in RootModule/ModuleToProcess.<br /><br /> Adding a module name to this element is similar to calling `Import-Module` from within your script or assembly code. The main difference is that it's easier to see what you are loading here in the manifest file. Also, if a module fails to load here, you will not yet have loaded your actual module.<br /><br /> In addition to other modules, you may also load script (.ps1) files here. These files will execute in the context of the root module. (This is equivalent to dot sourcing the script in your root module.)|
-|FunctionsToExport<br /><br /> Type: String|'*'|Specifies the functions that the module exports (wildcard characters are permitted) to the caller's session state. By default, all functions are exported. You can use this key to restrict the functions that are exported by the module.<br /><br /> The caller's session state can be the global session state or, for nested modules, the session state of another module. When chaining nested modules, all functions that are exported by a nested module will be exported to the global session state unless a module in the chain restricts the function by using the FunctionsToExport key.<br /><br /> If the manifest also exports aliases for the functions, this key can remove functions whose aliases are listed in the AliasesToExport key, but this key cannot add function aliases to the list.|
-|CmdletsToExport<br /><br /> Type: String|'*'|Specifies the cmdlets that the module exports (wildcard characters are permitted). By default, all cmdlets are exported. You can use this key to restrict the cmdlets that are exported by the module.<br /><br /> The caller's session state can be the global session state or, for nested modules, the session state of another module. When you are chaining nested modules, all cmdlets that are exported by a nested module will be ultimately exported to the global session state unless a module in the chain restricts the cmdlet by using the CmdletsToExport key.<br /><br /> If the manifest also exports aliases for the cmdlets, this key can remove cmdlets whose aliases are listed in the AliasesToExport key, but this key cannot add cmdlet aliases to the list.|
-|VariablesToExport<br /><br /> Type: String|'*'|Specifies the variables that the module exports (wildcard characters are permitted) to the caller's session state. By default, all variables are exported. You can use this key to restrict the variables that are exported by the module.<br /><br /> The caller's session state can be the global session state or, for nested modules, the session state of another module. When you are chaining nested modules, all variables that are exported by a nested module will be exported to the global session state unless a module in the chain restricts the variable by using the VariablesToExport key.<br /><br /> If the manifest also exports aliases for the variables, this key can remove variables whose aliases are listed in the AliasesToExport key, but this key cannot add variable aliases to the list.|
-|AliasesToExport<br /><br /> Type: String|'*'|Specifies the aliases that the module exports (wildcard characters are permitted) to the caller's session state. By default, all aliases are exported. You can use this key to restrict the aliases that are exported by the module.<br /><br /> The caller's session state can be the global session state or, for nested modules, the session state of another module. When you are chaining nested modules, all aliases that are exported by a nested module will be ultimately exported to the global session state unless a module in the chain restricts the alias by using the AliasesToExport key.|
+|TypesToProcess<br /><br /> Type: [string[]]|@()|Type files (.ps1xml) to be loaded when importing this module.|
+|FormatsToProcess<br /><br /> Type: [string[]]|@()|Format files (.ps1xml) to be loaded when importing this module.|
+|NestedModules<br /><br /> Type: [string[]]|@()|Modules to import as nested modules of the module specified in RootModule/ModuleToProcess.<br /><br /> Adding a module name to this element is similar to calling `Import-Module` from within your script or assembly code. The main difference is that it's easier to see what you are loading here in the manifest file. Also, if a module fails to load here, you will not yet have loaded your actual module.<br /><br /> In addition to other modules, you may also load script (.ps1) files here. These files will execute in the context of the root module. (This is equivalent to dot sourcing the script in your root module.)|
+|FunctionsToExport<br /><br /> Type: [string[]]|@()|Specifies the functions that the module exports (wildcard characters are permitted but discouraged) to the caller's session state. By default, no functions are exported. You can use this key to list the functions that are exported by the module.<br /><br /> The caller's session state can be the global session state or, for nested modules, the session state of another module. When chaining nested modules, all functions that are exported by a nested module will be exported to the global session state unless a module in the chain restricts the function by using the FunctionsToExport key.<br /><br /> If the manifest also exports aliases for the functions, this key can remove functions whose aliases are listed in the AliasesToExport key, but this key cannot add function aliases to the list.|
+|CmdletsToExport<br /><br /> Type: [string[]]|@()|Specifies the cmdlets that the module exports (wildcard characters are permitted but discouraged). By default, no cmdlets are exported. You can use this key to list the cmdlets that are exported by the module.<br /><br /> The caller's session state can be the global session state or, for nested modules, the session state of another module. When you are chaining nested modules, all cmdlets that are exported by a nested module will be ultimately exported to the global session state unless a module in the chain restricts the cmdlet by using the CmdletsToExport key.<br /><br /> If the manifest also exports aliases for the cmdlets, this key can remove cmdlets whose aliases are listed in the AliasesToExport key, but this key cannot add cmdlet aliases to the list.|
+|VariablesToExport<br /><br /> Type: string|'*'|Specifies the variables that the module exports (wildcard characters are permitted) to the caller's session state. By default, all variables are exported. You can use this key to restrict the variables that are exported by the module.<br /><br /> The caller's session state can be the global session state or, for nested modules, the session state of another module. When you are chaining nested modules, all variables that are exported by a nested module will be exported to the global session state unless a module in the chain restricts the variable by using the VariablesToExport key.<br /><br /> If the manifest also exports aliases for the variables, this key can remove variables whose aliases are listed in the AliasesToExport key, but this key cannot add variable aliases to the list.|
+|AliasesToExport<br /><br /> Type: [string[]]|@()|Specifies the aliases that the module exports (wildcard characters are permitted but discouraged) to the caller's session state. By default, no aliases are exported. You can use this key to list the aliases that are exported by the module.<br /><br /> The caller's session state can be the global session state or, for nested modules, the session state of another module. When you are chaining nested modules, all aliases that are exported by a nested module will be ultimately exported to the global session state unless a module in the chain restricts the alias by using the AliasesToExport key.|
 |ModuleList<br /><br /> Type: [string[]]|@()|Specifies all the modules that are packaged with this module. These modules can be entered by name (a comma-separated string) or as a hash table with ModuleName and GUID keys. The hash table can also have an optional ModuleVersion key. The ModuleList key is designed to act as a module inventory. These modules are not automatically processed.|
 |FileList<br /><br /> Type: [string[]]|@()|List of all files packaged with this module. As with ModuleList, FileList is to assist you as an inventory list, and is not otherwise processed.|
-|PrivateData<br /><br /> Type: [object]|' '|Specifies any private data that needs to be passed to the root module specified by the RootModule/ModuleToProcess key.|
+|PrivateData<br /><br /> Type: [object]|@{...}|Specifies any private data that needs to be passed to the root module specified by the RootModule/ModuleToProcess key.|
 |HelpInfoURI<br /><br /> Type: string|' '|HelpInfo URI of this module.|
 |DefaultCommandPrefix<br /><br /> Type: string|' '|Default prefix for commands exported from this module. Override the default prefix using `Import-Module` -Prefix.|
 
@@ -100,19 +100,22 @@ The following sample module manifest shows the keys and default values in a modu
 #
 # Generated by: User01
 #
-# Generated on: 1/24/2012
+# Generated on: 2019-10-09
 #
 
 @{
 
-# Script module or binary module file associated with this manifest
-#RootModule = ''
+# Script module or binary module file associated with this manifest.
+# RootModule = ''
 
 # Version number of this module.
 ModuleVersion = '1.0'
 
+# Supported PSEditions
+# CompatiblePSEditions = @()
+
 # ID used to uniquely identify this module
-GUID = 'd0a9150d-b6a4-4b17-a325-e3a24fed0aa9'
+GUID = 'b888e5a2-8578-4c0b-938d-0cd9b5b836ba'
 
 # Author of this module
 Author = 'User01'
@@ -121,7 +124,7 @@ Author = 'User01'
 CompanyName = 'Unknown'
 
 # Copyright statement for this module
-Copyright = '(c) 2012 User01. All rights reserved.'
+Copyright = '(c) 2019 User01. All rights reserved.'
 
 # Description of the functionality provided by this module
 # Description = ''
@@ -135,10 +138,10 @@ Copyright = '(c) 2012 User01. All rights reserved.'
 # Minimum version of the Windows PowerShell host required by this module
 # PowerShellHostVersion = ''
 
-# Minimum version of the .NET Framework required by this module
+# Minimum version of Microsoft .NET Framework required by this module. This prerequisite is valid for the PowerShell Desktop edition only.
 # DotNetFrameworkVersion = ''
 
-# Minimum version of the common language runtime (CLR) required by this module
+# Minimum version of the common language runtime (CLR) required by this module. This prerequisite is valid for the PowerShell Desktop edition only.
 # CLRVersion = ''
 
 # Processor architecture (None, X86, Amd64) required by this module
@@ -150,7 +153,7 @@ Copyright = '(c) 2012 User01. All rights reserved.'
 # Assemblies that must be loaded prior to importing this module
 # RequiredAssemblies = @()
 
-# Script files (.ps1) that are run in the caller's environment prior to importing this module
+# Script files (.ps1) that are run in the caller's environment prior to importing this module.
 # ScriptsToProcess = @()
 
 # Type files (.ps1xml) to be loaded when importing this module
@@ -162,17 +165,20 @@ Copyright = '(c) 2012 User01. All rights reserved.'
 # Modules to import as nested modules of the module specified in RootModule/ModuleToProcess
 # NestedModules = @()
 
-# Functions to export from this module
-FunctionsToExport = '*'
+# Functions to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no functions to export.
+FunctionsToExport = @()
 
-# Cmdlets to export from this module
-CmdletsToExport = '*'
+# Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.
+CmdletsToExport = @()
 
 # Variables to export from this module
 VariablesToExport = '*'
 
-# Aliases to export from this module
-AliasesToExport = '*'
+# Aliases to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no aliases to export.
+AliasesToExport = @()
+
+# DSC resources to export from this module
+# DscResourcesToExport = @()
 
 # List of all modules packaged with this module
 # ModuleList = @()
@@ -180,8 +186,29 @@ AliasesToExport = '*'
 # List of all files packaged with this module
 # FileList = @()
 
-# Private data to pass to the module specified in RootModule/ModuleToProcess
-# PrivateData = ''
+# Private data to pass to the module specified in RootModule/ModuleToProcess. This may also contain a PSData hashtable with additional module metadata used by PowerShell.
+PrivateData = @{
+
+    PSData = @{
+
+        # Tags applied to this module. These help with module discovery in online galleries.
+        # Tags = @()
+
+        # A URL to the license for this module.
+        # LicenseUri = ''
+
+        # A URL to the main website for this project.
+        # ProjectUri = ''
+
+        # A URL to an icon representing this module.
+        # IconUri = ''
+
+        # ReleaseNotes of this module
+        # ReleaseNotes = ''
+
+    } # End of PSData hashtable
+
+} # End of PrivateData hashtable
 
 # HelpInfo URI of this module
 # HelpInfoURI = ''
