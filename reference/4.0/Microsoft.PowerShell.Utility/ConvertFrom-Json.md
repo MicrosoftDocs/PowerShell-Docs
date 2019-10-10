@@ -2,7 +2,8 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
 locale: en-us
-ms.date: 01/14/2019
+Module Name: Microsoft.PowerShell.Utility
+ms.date: 10/10/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/convertfrom-json?view=powershell-4.0&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: ConvertFrom-Json
@@ -10,7 +11,6 @@ title: ConvertFrom-Json
 # ConvertFrom-Json
 
 ## SYNOPSIS
-
 Converts a JSON-formatted string to a custom object.
 
 ## SYNTAX
@@ -30,6 +30,9 @@ contains duplicate keys, only the last key is used by this cmdlet. See other exa
 To generate a JSON string from any object, use the `ConvertTo-Json` cmdlet.
 
 This cmdlet was introduced in PowerShell 3.0.
+
+> [!NOTE]
+> This cmdlet doesn't support JSON with comments.
 
 ## EXAMPLES
 
