@@ -368,8 +368,12 @@ At line:1 char:1
 
 PowerShell uses APIs in the Windows Desktop Shell (`explorer.exe`) to validate
 the Zone of a script file. The Windows Shell is not available on Windows Server
-Core or Windows Nano Server. You could also encounter this error on any Windows
-system if the Windows Desktop Shell is not available or unresponsive.
+Core and Windows Nano Server.
+
+You could also get this error on any Windows system if the Windows Desktop
+Shell is unavailable or unresponsive. For example, during sign on, a PowerShell
+logon script could start execution before the Windows Desktop is ready,
+resulting in failure.
 
 Using an execution policy of **ByPass** or **AllSigned** does not require a
 Zone check which avoids the problem.
