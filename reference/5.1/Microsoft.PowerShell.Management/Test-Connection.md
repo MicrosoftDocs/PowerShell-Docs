@@ -20,9 +20,9 @@ Sends ICMP echo request packets, or pings, to one or more computers.
 
 ```
 Test-Connection [-ComputerName] <String[]> [-AsJob] [-DcomAuthentication <AuthenticationLevel>]
-[-WsmanAuthentication <String>] [-Protocol <String>] [-BufferSize <Int32>] [-Count <Int32>]
-[-Impersonation <ImpersonationLevel>] [-ThrottleLimit <Int32>] [-TimeToLive <Int32>]
-[-Delay <Int32>] [<CommonParameters>]
+ [-WsmanAuthentication <String>] [-Protocol <String>] [-BufferSize <Int32>] [-Count <Int32>]
+ [-Impersonation <ImpersonationLevel>] [-ThrottleLimit <Int32>] [-TimeToLive <Int32>]
+ [-Delay <Int32>] [<CommonParameters>]
 ```
 
 ### Source
