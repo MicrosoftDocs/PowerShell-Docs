@@ -32,7 +32,8 @@ To generate a JSON string from any object, use the `ConvertTo-Json` cmdlet.
 
 This cmdlet was introduced in PowerShell 3.0.
 
-Beginning with PowerShell 6, this cmdlet support JSON with comments.
+> [!NOTE]
+> Beginning with PowerShell 6, this cmdlet supports JSON with comments.
 
 ## EXAMPLES
 

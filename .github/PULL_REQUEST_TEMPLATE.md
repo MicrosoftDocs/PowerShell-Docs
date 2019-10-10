@@ -22,7 +22,7 @@ Version(s) of documents impacted
 - [ ] I have read the [contributors guide](https://github.com/MicrosoftDocs/PowerShell-Docs/blob/staging/CONTRIBUTING.md)
   and followed the style and process guidelines
 - [ ] PR has a meaningful title
-- [ ] PR is targetted at the _staging_ branch
+- [ ] PR is targeted at the _staging_ branch
 - [ ] All relevant versions updated
 - [ ] Includes reference to related issues and PRs - see [Closing issues using keywords](https://help.github.com/en/articles/closing-issues-using-keywords).
 - [ ] This PR is ready to merge and is not **Work in Progress**
