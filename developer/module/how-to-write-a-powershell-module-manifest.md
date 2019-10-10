@@ -35,7 +35,7 @@ For simple modules that contain only a single .psm1 or binary assembly, a module
 
 2. Add in any additional elements to the manifest that you want to have in the file.
 
-   Generally speaking, this will probably be done in whatever text editor you prefer, such as Notepad. However this technically is a script file that contains code, so you may wish to edit it in an actual scripting or development environment, such as the Visual Studio Code. Again, note that all elements of a manifest file are optional, except for the ModuleVersion number.
+   Generally speaking, this will probably be done in whatever text editor you prefer, such as Notepad. However this technically is a script file that contains code, so you may wish to edit it in an actual scripting or development environment, such as Visual Studio Code. Again, note that all elements of a manifest file are optional, except for the ModuleVersion number.
 
    For descriptions of the keys and values you can have in a module manifest, see the **Module Manifest Elements** below. For additional information, see the parameter descriptions in the  [New-ModuleManifest](/powershell/module/Microsoft.PowerShell.Core/New-ModuleManifest) cmdlet.
 
