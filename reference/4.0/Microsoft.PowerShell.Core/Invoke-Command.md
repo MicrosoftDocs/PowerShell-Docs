@@ -8,6 +8,7 @@ online version: https://docs.microsoft.com/powershell/module/microsoft.powershel
 schema: 2.0.0
 title: Invoke-Command
 ---
+
 # Invoke-Command
 
 ## SYNOPSIS
@@ -78,14 +79,16 @@ multiple computers.
 To run a single command on a remote computer, use the **ComputerName** parameter. To run a series of
 related commands that share data, use the `New-PSSession` cmdlet to create a **PSSession** (a
 persistent connection) on the remote computer, and then use the **Session** parameter of
-`Invoke-Command` to run the command in the PSSession. To run a command in a disconnected session,
-use the **InDisconnectedSession** parameter. To run a command in a background job, use the **AsJob**
-parameter.
+`Invoke-Command` to run the command in the **PSSession**. To run a command in a disconnected
+session, use the **InDisconnectedSession** parameter. To run a command in a background job, use the
+**AsJob** parameter.
 
 You can also use `Invoke-Command` on a local computer to a script block as a command. PowerShell
 runs the script block immediately in a child scope of the current scope.
 
-Before using `Invoke-Command` to run commands on a remote computer, read [about_Remote](About/about_Remote.md).
+Before using `Invoke-Command` to run commands on a remote computer, read [about_Remote](./About/about_Remote.md).
+
+Some code samples use splatting to reduce the line length. For more information, see [about_Splatting](./About/about_Splatting.md).
 
 ## EXAMPLES
 
@@ -105,7 +108,7 @@ on the remote computer and the results are returned to the local computer.
 This example runs a `Get-Culture` command on the Server01 remote computer.
 
 ```powershell
-Invoke-Command -ComputerName server01 -Credential domain01\user01 -ScriptBlock {Get-Culture}
+Invoke-Command -ComputerName Server01 -Credential Domain01\User01 -ScriptBlock { Get-Culture }
 ```
 
 The **ComputerName** parameter specifies the name of the remote computer. The **Credential**
@@ -113,14 +116,13 @@ parameter is used to run the command in the security context of Domain01\User01,
 permission to run commands. The **ScriptBlock** parameter specifies the command to be run on the
 remote computer.
 
-In response, PowerShell displays a dialog box that requests the password and an authentication
-method for the User01 account. It then runs the command on the Server01 computer and returns the
-result.
+In response, PowerShell requests the password and an authentication method for the User01 account.
+It then runs the command on the Server01 computer and returns the result.
 
 ### Example 3: Run a command in a persistent connection
 
-This example runs the same `Get-Culture` command in a session, using a persistent connection, on
-the remote computer named Server02.
+This example runs the same `Get-Culture` command in a session, using a persistent connection, on the
+remote computer named Server02.
 
 ```powershell
 $s = New-PSSession -ComputerName Server02 -Credential Domain01\User01
@@ -131,7 +133,7 @@ The `New-PSSession` cmdlet creates a session on the Server02 remote computer and
 `$s` variable. Typically, you create a session only when you run a series of commands on the remote
 computer.
 
-The `Invoke-Command` cmdlet runs the `Get-Culture` command on Server02. Tne **Session** parameter
+The `Invoke-Command` cmdlet runs the `Get-Culture` command on Server02. The **Session** parameter
 specifies the session saved in the `$s` variable.
 
 In response, PowerShell runs the command in the session on the Server02 computer.
@@ -161,10 +163,10 @@ value of the **VirtualMemorySize** property of the PowerShell process.
 
 When you use the **ComputerName** parameter, PowerShell creates a new session to run the command.
 The session is closed when the command completes. The `$p` variable was created in one connection,
-but it does not exist in the connection created for the second command.
+but it doesn't exist in the connection created for the second command.
 
 The problem is solved by creating a persistent session on the remote computer, then running both of
-the both commands in the same session.
+the commands in the same session.
 
 The `New-PSSession` cmdlet creates a persistent session on the computer Server02 and saves the
 session in the `$s` variable. The `Invoke-Command` lines that follow use the **Session** parameter
@@ -178,28 +180,31 @@ When the script block is saved in a local variable, you can specify the variable
 **ScriptBlock** parameter.
 
 ```powershell
-$command = { Get-EventLog -log "Windows PowerShell" | where {$_.Message -like "*certificate*"} }
+$command = { Get-EventLog -LogName "Windows PowerShell" |
+  Where-Object {$_.Message -like "*certificate*"} }
 Invoke-Command -ComputerName S1, S2 -ScriptBlock $command
 ```
 
-The first line saves a `Get-EventLog` command in the `$command` variable. The command is formatted
-as a script block. The second line uses `Invoke-Command` to run the command in `$command` on the S1
-and S2 remote computers.
+The `$command` variable stores the `Get-EventLog` command that's formatted as a script block. The
+`Invoke-Command` runs the command stored in `$command` on the S1 and S2 remote computers.
 
 ### Example 6: Run a single command on several computers
 
 This example demonstrates how to use `Invoke-Command` to run a single command on multiple computers.
 
-The command uses the **ComputerName** parameter to specify the computers. The computer names are
-presented in a comma-separated list. The list of computers includes the localhost value, which
-represents the local computer. In this example, the command in the script block gets the events in
-the Windows PowerShell event log on each remote computer.
-
 ```powershell
-Invoke-Command -ComputerName Server01, Server02, TST-0143, localhost -ConfigurationName MySession.PowerShell -ScriptBlock {Get-EventLog "Windows PowerShell"}
+$parameters = @{
+  ComputerName = "Server01", "Server02", "TST-0143", "localhost"
+  ConfigurationName = 'MySession.PowerShell'
+  ScriptBlock = { Get-EventLog "Windows PowerShell" }
+}
+Invoke-Command @parameters
 ```
-The command uses the **ConfigurationName** parameter to specify an alternate session configuration
-for PowerShell and the **ScriptBlock** parameter to specify the command.
+
+The **ComputerName** parameter specifies a comma-separated list of computer names. The list of
+computers includes the localhost value, which represents the local computer. The
+**ConfigurationName** parameter specifies an alternate session configuration. The **ScriptBlock**
+parameter runs `Get-EventLog` to get the Windows PowerShell event logs from each computer.
 
 ### Example 7: Get the version of the host program on multiple computers
 
@@ -209,7 +214,7 @@ This example gets the version of the PowerShell host program running on 200 remo
 $version = Invoke-Command -ComputerName (Get-Content Machines.txt) -ScriptBlock {(Get-Host).Version}
 ```
 
-Because only one command is run, you do not have to create persistent connections to each of the
+Because only one command is run, you don't have to create persistent connections to each of the
 computers. Instead, the command uses the **ComputerName** parameter to indicate the computers. To
 specify the computers, it uses the `Get-Content` cmdlet to get the contents of the Machine.txt file,
 a file of computer names.
@@ -225,8 +230,7 @@ which the data originated.
 
 This example runs a command on two remote computers. The `Invoke-Command` command uses the **AsJob**
 parameter so that the command runs as a background job. The commands run on the remote computers,
-but the job actually resides on the local computer. The results are transmitted to the local
-computer.
+but the job exists on the local computer. The results are transmitted to the local computer.
 
 ```powershell
 $s = New-PSSession -ComputerName Server01, Server02
@@ -281,26 +285,25 @@ the results in the `$results` variable.
 ### Example 9: Include local variables in a command run on a remote computer
 
 This example shows how to include the values of local variables in a command run on a remote
-computer. The command uses the Using scope modifier to identify a local variable in a remote
-command. By default, all variables are assumed to be defined in the remote session. The Using scope
-modifier was introduced in Windows PowerShell 3.0. For more information about the Using scope
-modifier, see [about_Remote_Variables](About/about_Remote_Variables.md).
+computer. The command uses the `Using` scope modifier to identify a local variable in a remote
+command. By default, all variables are assumed to be defined in the remote session. The `Using`
+scope modifier was introduced in PowerShell 3.0. For more information about the `Using` scope
+modifier, see [about_Remote_Variables](./About/about_Remote_Variables.md) and [about_Scopes](./about/about_scopes.md).
 
 ```powershell
-$MWFO_Log = "Microsoft-Windows-Forwarding/Operational"
-Invoke-Command -ComputerName Server01 -ScriptBlock {Get-EventLog -LogName $Using:MWFO_Log -Newest 10}
+$Log = "Windows PowerShell"
+Invoke-Command -ComputerName Server01 -ScriptBlock { Get-EventLog -LogName $Using:Log -Newest 10 }
 ```
 
-The first line stores the name of the event log in the `$MWFO_Log` variable. The `Invoke-Command`
-cmdlet runs `Get-EventLog` on Server01 to get the 10 newest events from the
-Microsoft-Windows-Forwarding/Operational event log. The value of the **LogName** parameter is the
-`$MWFO_Log` variable, which is prefixed by the `Using` scope modifier to indicate that it was
-created in the local session, not in the remote session.
+The `$Log` variable stores the name of the event log, Windows PowerShell. The `Invoke-Command`
+cmdlet runs `Get-EventLog` on Server01 to get the ten newest events from the event log. The value of
+the **LogName** parameter is the `$Log` variable, which is prefixed by the `Using` scope modifier to
+indicate that it was created in the local session, not in the remote session.
 
 ### Example 10: Hide the computer name
 
 This example shows the effect of using the **HideComputerName** parameter of `Invoke-Command`.
-**HideComputerName** does not change the object that this cmdlet returns. It changes only the
+**HideComputerName** doesn't change the object that this cmdlet returns. It changes only the
 display. You can still use the **Format** cmdlets to display the **PsComputerName** property of any
 of the affected objects.
 
@@ -329,13 +332,13 @@ Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id   ProcessName
 The first two commands use `Invoke-Command` to run a `Get-Process` command for the PowerShell
 process. The output of the first command includes the **PsComputerName** property, which contains
 the name of the computer on which the command ran. The output of the second command, which uses
-**HideComputerName**, does not include the **PsComputerName** column.
+**HideComputerName**, doesn't include the **PsComputerName** column.
 
 ### Example 11: Run a script on all the computers listed in a text file
 
 This example uses the `Invoke-Command` cmdlet to run the `Sample.ps1` script on all the computers
 listed in the `Servers.txt` file. The command uses the **FilePath** parameter to specify the script
-file. This command lets you run the script on the remote computers, even if the script file is not
+file. This command lets you run the script on the remote computers, even if the script file isn't
 accessible to the remote computers.
 
 ```powershell
@@ -348,8 +351,8 @@ the script block is run on each of the remote computers. This procedure is equiv
 
 ### Example 12: Run a command on a remote computer by using a URI
 
-This example shows how to run a command on a remote computer that is identified by a URI. This
-particular example runs a `Set-Mailbox` command on a remote Exchange server.
+This example shows how to run a command on a remote computer that's identified by a Uniform Resource
+Identifier (URI). This particular example runs a `Set-Mailbox` command on a remote Exchange server.
 
 ```powershell
 $LiveCred = Get-Credential
@@ -364,17 +367,14 @@ Invoke-Command @parameters
 ```
 
 The first line uses the `Get-Credential` cmdlet to store Windows Live ID credentials in the
-`$LiveCred` variable. A credentials dialog box prompts the user to enter Windows Live ID
-credentials.
+`$LiveCred` variable. PowerShell prompts the user to enter Windows Live ID credentials.
 
 The `$parameters` variable is a hash table containing the parameters to be passed to the
-`Invoke-Command` cmdlet. The parameter values are passed to `Invoke-Command` cmdlet using PowerShell
-splatting. For more information, see [about_Splatting](about/about_Splatting.md). The
-`Invoke-Command` cmdlet runs a `Set-Mailbox` command using the **Microsoft.Exchange** session
-configuration. The **ConnectionURI** parameter specifies the URL of the Exchange server endpoint.
-The **Credential** parameter specifies the credentials stored in the `$LiveCred` variable. The
-**AuthenticationMechanism** parameter specifies the use of basic authentication. The **ScriptBlock**
-parameter specifies a script block that contains the command.
+`Invoke-Command` cmdlet. The `Invoke-Command` cmdlet runs a `Set-Mailbox` command using the
+**Microsoft.Exchange** session configuration. The **ConnectionURI** parameter specifies the URL of
+the Exchange server endpoint. The **Credential** parameter specifies the credentials stored in the
+`$LiveCred` variable. The **AuthenticationMechanism** parameter specifies the use of basic
+authentication. The **ScriptBlock** parameter specifies a script block that contains the command.
 
 ### Example 13: Use a session option
 
@@ -386,8 +386,8 @@ Invoke-Command -ComputerName server01 -UseSSL -ScriptBlock { Get-HotFix } -Sessi
 ```
 
 The `New-PSSessionOption` cmdlet creates a session option object that causes the remote end not to
-verify the Certificate Authority, Canonical Name and Revocation Lists while evaluating the incoming
-HTTPS connection. The SessionOption object is saved in the `$so` variable.
+verify the Certificate Authority, Canonical Name, and Revocation Lists while evaluating the incoming
+HTTPS connection. The **SessionOption** object is saved in the `$so` variable.
 
 > [!NOTE]
 > Disabling these checks is convenient for troubleshooting, but obviously not secure.
@@ -402,16 +402,23 @@ URI redirection in a remote command.
 
 ```powershell
 $max = New-PSSessionOption -MaximumRedirection 1
-Invoke-Command -ConnectionUri https://ps.exchangelabs.com/PowerShell -ScriptBlock {Get-Mailbox dan} -AllowRedirection -SessionOption $max
+$parameters = @{
+  ConnectionUri = "https://ps.exchangelabs.com/PowerShell"
+  ScriptBlock = { Get-Mailbox dan }
+  AllowRedirection = $true
+  SessionOption = $max
+}
+Invoke-Command @parameters
 ```
 
-The `New-PSSessionOption` cmdlet to creates a **PSSessionOption** object that
-is saved in the `$max` variable. The command uses the **MaximumRedirection** parameter to set the
+The `New-PSSessionOption` cmdlet creates a **PSSessionOption** object that is saved in the `$max`
+variable. The command uses the **MaximumRedirection** parameter to set the
 **MaximumConnectionRedirectionCount** property of the **PSSessionOption** object to 1.
 
 The `Invoke-Command` cmdlet runs a `Get-Mailbox` command on a remote Microsoft Exchange Server. The
 **AllowRedirection** parameter provides explicit permission to redirect the connection to an
-alternate endpoint. The **SessionOption** parameter use the session object in the `$max` variable.
+alternate endpoint. The **SessionOption** parameter uses the session object stored in the `$max`
+variable.
 
 As a result, if the remote computer specified by **ConnectionURI** returns a redirection message,
 PowerShell redirects the connection, but if the new destination returns another redirection message,
@@ -419,44 +426,61 @@ the redirection count value of 1 is exceeded, and `Invoke-Command` returns a non
 
 ### Example 15: Access a network share in a remote session
 
-This example shows how to access a network share from a remote session. The command requires that
-CredSSP delegation be enabled in the client settings on the local computer and in the service
-settings on the remote computer. To run the commands in this example, you must be a member of the
-Administrators group on the local computer and the remote computer.
+This example shows how to access a network share from a remote session. Three computers are used to
+demonstrate the example. Server01 is the local computer, Server02 is the remote computer, and Net03
+contains the network share. Server01 connects to Server02, and then Server02 does a second hop to
+Net03 to access the network share. For more information about how PowerShell Remoting supports hops
+between computers, see
+[Making the second hop in PowerShell Remoting](/powershell/scripting/learn/remoting/ps-remoting-second-hop).
+
+The required Credential Security Support Provider (CredSSP) delegation is enabled in the client
+settings on the local computer, and in the service settings on the remote computer. To run the
+commands in this example, you must be a member of the **Administrators** group on the local computer
+and the remote computer.
 
 ```powershell
-Enable-WSManCredSSP -Delegate Server02
-Connect-WSMan Server02
-Set-Item WSMan:\Server02*\Service\Auth\CredSSP -Value $True
+Enable-WSManCredSSP -Role Client -DelegateComputer Server02
 $s = New-PSSession Server02
-Invoke-Command -Session $s -ScriptBlock {Get-Item \\Net03\Scripts\LogFiles.ps1} -Authentication CredSSP -Credential Domain01\Admin01
+Invoke-Command -Session $s -ScriptBlock {Enable-WSManCredSSP -Role Server -Force}
+$parameters = @{
+  Session = $s
+  ScriptBlock = { Get-Item \\Net03\Scripts\LogFiles.ps1 }
+  Authentication = "CredSSP"
+  Credential = "Domain01\Admin01"
+}
+Invoke-Command @parameters
 ```
 
 The `Enable-WSManCredSSP` cmdlet enables CredSSP delegation from the Server01 local computer to the
-Server02 remote computer. This configures the CredSSP client setting on the local computer.
+Server02 remote computer. The **Role** parameter specifies **Client** to configure the CredSSP
+client setting on the local computer.
 
-The `Connect-WSMan` cmdlet connects to the Server02 computer. This action adds a node for the
-Server02 computer to the WSMan: drive on the local computer. You can use the WSMAN: drive to view
-and change the WS-Management settings on the Server02 computer.
-
-The `Set-Item` cmdlet changes the value of the CredSSP item in the Service node of the Server02
-computer to `True`. This action enables CredSSP in the service settings on the remote computer.
-
-The `New-PSSession` cmdlet creates a PSSession on the Server02 computer that is saved in the `$s`
+`New-PSSession` creates a **PSSession** object for Server02 and stores the object in the `$s`
 variable.
 
-The `Invoke-Command` cmdlet runs a `Get-Item` command in the session in `$s`. This command gets a
-script from the `\\Net03\Scripts` network share. The command uses the **Credential** parameter with
-a value of **Domain01\Admin01** and the **Authentication** parameter with a value of **CredSSP**.
+The `Invoke-Command` cmdlet uses the `$s` variable to connect to the remote computer, Server02. The
+**ScriptBlock** parameter runs `Enable-WSManCredSSP` on the remote computer. The **Role** parameter
+specifies **Server** to configure the CredSSP server setting on the remote computer.
+
+The `$parameters` variable contains the parameter values to connect to the network share. The
+`Invoke-Command` cmdlet runs a `Get-Item` command in the session in `$s`. This command gets a script
+from the `\\Net03\Scripts` network share. The command uses the **Authentication** parameter with a
+value of **CredSSP** and the **Credential** parameter with a value of **Domain01\Admin01**.
 
 ### Example 16: Start scripts on many remote computers
 
-This command runs a script on more than a hundred computers. To minimize the impact on the local
+This example runs a script on more than a hundred computers. To minimize the impact on the local
 computer, it connects to each computer, starts the script, and then disconnects from each computer.
 The script continues to run in the disconnected sessions.
 
 ```powershell
-Invoke-Command -ComputerName (Get-Content Servers.txt) -InDisconnectedSession -FilePath \\Scripts\Public\ConfigInventory.ps1 -SessionOption @{OutputBufferingMode="Drop";IdleTimeout=43200000}
+$parameters = @{
+  ComputerName = (Get-Content -Path C:\Test\Servers.txt)
+  InDisconnectedSession = $true
+  FilePath = "\\Scripts\Public\ConfigInventory.ps1"
+  SessionOption = @{OutputBufferingMode="Drop";IdleTimeout=43200000}
+}
+Invoke-Command @parameters
 ```
 
 The command uses `Invoke-Command` to run the script. The value of the **ComputerName** parameter is
@@ -464,9 +488,8 @@ a `Get-Content` command that gets the names of the remote computers from a text 
 **InDisconnectedSession** parameter disconnects the sessions as soon as it starts the command. The
 value of the **FilePath** parameter is the script that `Invoke-Command` runs on each computer.
 
-The value of **SessionOption** is a hash table that sets the value of the **OutputBufferingMode**
-option to **Drop** and the value of the **IdleTimeout** option to **43200000** milliseconds (12
-hours).
+The value of **SessionOption** is a hash table. The **OutputBufferingMode** value is set to **Drop**
+and the **IdleTimeout** value is set to **43200000** milliseconds (12 hours).
 
 To get the results of commands and scripts that run in disconnected sessions, use the
 `Receive-PSSession` cmdlet.
@@ -478,7 +501,7 @@ To get the results of commands and scripts that run in disconnected sessions, us
 Allows redirection of this connection to an alternate Uniform Resource Identifier (URI).
 
 When you use the **ConnectionURI** parameter, the remote destination can return an instruction to
-redirect to a different URI. By default, PowerShell does not redirect connections, but you can use
+redirect to a different URI. By default, PowerShell doesn't redirect connections, but you can use
 this parameter to allow it to redirect the connection.
 
 You can also limit the number of times the connection is redirected by changing the
@@ -501,11 +524,11 @@ Accept wildcard characters: False
 ### -ApplicationName
 
 Specifies the application name segment of the connection URI. Use this parameter to specify the
-application name when you are not using the **ConnectionURI** parameter in the command.
+application name when you aren't using the **ConnectionURI** parameter in the command.
 
 The default value is the value of the `$PSSessionApplicationName` preference variable on the local
-computer. If this preference variable is not defined, the default value is WSMAN. This value is
-appropriate for most uses. For more information, see [about_Preference_Variables](About/about_Preference_Variables.md).
+computer. If this preference variable isn't defined, the default value is WSMAN. This value is
+appropriate for most uses. For more information, see [about_Preference_Variables](./About/about_Preference_Variables.md).
 
 The WinRM service uses the application name to select a listener to service the connection request.
 The value of this parameter should match the value of the **URLPrefix** property of a listener on
@@ -518,7 +541,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: $PSSessionApplicationName if set on the local computer, otherwise WSMAN
 Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
@@ -527,7 +550,7 @@ Accept wildcard characters: False
 
 Supplies the values of local variables in the command. The variables in the command are replaced by
 these values before the command is run on the remote computer. Enter the values in a comma-separated
-list. Values are associated with variables in the order that they are listed. The alias for
+list. Values are associated with variables in the order that they're listed. The alias for
 **ArgumentList** is Args.
 
 The values in the **ArgumentList** parameter can be actual values, such as 1024, or they can be
@@ -539,7 +562,7 @@ To use local variables in a command, use the following command format:
 -or- `<local-variable>`
 
 The **param** keyword lists the local variables that are used in the command. **ArgumentList**
-supplies the values of the variables, in the order that they are listed.
+supplies the values of the variables, in the order that they're listed.
 
 ```yaml
 Type: Object[]
@@ -564,11 +587,10 @@ manage the job, use the `*-Job` cmdlets. To get the job results, use the `Receiv
 
 The **AsJob** parameter resembles using the `Invoke-Command` cmdlet to run a `Start-Job` cmdlet
 remotely. However, with **AsJob**, the job is created on the local computer, even though the job
-runs on a remote computer, and the results of the remote job are automatically returned to the local
+runs on a remote computer. The results of the remote job are automatically returned to the local
 computer.
 
-For more information about PowerShell background jobs, see [about_Jobs](About/about_Jobs.md) and
-[about_Remote_Jobs](About/about_Remote_Jobs.md).
+For more information about PowerShell background jobs, see [about_Jobs](About/about_Jobs.md) and [about_Remote_Jobs](About/about_Remote_Jobs.md).
 
 ```yaml
 Type: SwitchParameter
@@ -584,8 +606,11 @@ Accept wildcard characters: False
 
 ### -Authentication
 
-Specifies the mechanism that is used to authenticate the user's credentials. The acceptable values
-for this parameter are:
+Specifies the mechanism that's used to authenticate the user's credentials. CredSSP authentication
+is available only in Windows Vista, Windows Server 2008, and later versions of the Windows operating
+system.
+
+The acceptable values for this parameter are as follows:
 
 - Default
 - Basic
@@ -597,9 +622,6 @@ for this parameter are:
 
 The default value is Default.
 
-CredSSP authentication is available only in Windows Vista, Windows Server 2008, and later versions
-of the Windows operating system.
-
 For more information about the values of this parameter, see
 [AuthenticationMechanism Enumeration](/dotnet/api/system.management.automation.runspaces.authenticationmechanism).
 
@@ -608,7 +630,9 @@ For more information about the values of this parameter, see
 > passed to a remote computer to be authenticated, is designed for commands that require
 > authentication on more than one resource, such as accessing a remote network share. This mechanism
 > increases the security risk of the remote operation. If the remote computer is compromised, the
-> credentials that are passed to it can be used to control the network session.
+> credentials that are passed to it can be used to control the network session. For more
+> information, see
+> [Credential Security Support Provider](/windows/win32/secauthn/credential-security-support-provider).
 
 ```yaml
 Type: AuthenticationMechanism
@@ -629,7 +653,7 @@ Specifies the digital public key certificate (X509) of a user account that has p
 to the disconnected session. Enter the certificate thumbprint of the certificate.
 
 Certificates are used in client certificate-based authentication. They can be mapped only to local
-user accounts; they do not work with domain accounts.
+user accounts and they don't work with domain accounts.
 
 To get a certificate thumbprint, use a `Get-Item` or `Get-ChildItem` command in the PowerShell Cert:
 drive.
@@ -650,7 +674,7 @@ Accept wildcard characters: False
 
 Specifies the computers on which the command runs. The default is the local computer.
 
-When you use the **ComputerName** parameter, PowerShell creates a temporary connection that is used
+When you use the **ComputerName** parameter, PowerShell creates a temporary connection that's used
 only to run the specified command and is then closed. If you need a persistent connection, use the
 **Session** parameter.
 
@@ -659,13 +683,13 @@ comma-separated list. To specify the local computer, type the computer name, loc
 (`.`).
 
 To use an IP address in the value of **ComputerName**, the command must include the **Credential**
-parameter. Also, the computer must be configured for HTTPS transport or the IP address of the remote
-computer must be included in the WinRM TrustedHosts list on the local computer. For instructions for
-adding a computer name to the TrustedHosts list, see "How to Add a Computer to the Trusted Host
-List" in about_Remote_Troubleshooting.
+parameter. The computer must be configured for the HTTPS transport or the IP address of the remote
+computer must be included in the local computer's WinRM **TrustedHosts** list. For instructions to
+add a computer name to the **TrustedHosts** list, see [How to Add a Computer to the Trusted Host
+List](./about/about_remote_troubleshooting.md#how-to-add-a-computer-to-the-trusted-hosts-list).
 
 On Windows Vista and later versions of the Windows operating system, to include the local computer
-in the value of **ComputerName**, you must open PowerShell by using the Run as administrator option.
+in the value of **ComputerName**, you must run PowerShell using the **Run as administrator** option.
 
 ```yaml
 Type: String[]
@@ -688,10 +712,10 @@ specify only the configuration name, the following schema URI is prepended:
 `http://schemas.microsoft.com/PowerShell`.
 
 The session configuration for a session is located on the remote computer. If the specified session
-configuration does not exist on the remote computer, the command fails.
+configuration doesn't exist on the remote computer, the command fails.
 
 The default value is the value of the `$PSSessionConfigurationName` preference variable on the local
-computer. If this preference variable is not set, the default is **Microsoft.PowerShell**. For more
+computer. If this preference variable isn't set, the default is **Microsoft.PowerShell**. For more
 information, see [about_Preference_Variables](about/about_Preference_Variables.md).
 
 ```yaml
@@ -701,15 +725,15 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: Microsoft.PowerShell
+Default value: $PSSessionConfigurationName if set on the local computer, otherwise Microsoft.PowerShell
 Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
 ### -ConnectionUri
 
-Specifies a URI that defines the connection endpoint of the session. The URI must be fully
-qualified.
+Specifies a Uniform Resource Identifier (URI) that defines the connection endpoint of the session.
+The URI must be fully qualified.
 
 The format of this string is as follows:
 
@@ -719,11 +743,11 @@ The default value is as follows:
 
 `http://localhost:5985/WSMAN`
 
-If you do not specify a connection URI, you can use the **UseSSL** and **Port** parameters to
-specify the connection URI values.
+If you don't specify a connection URI, you can use the **UseSSL** and **Port** parameters to specify
+the connection URI values.
 
 Valid values for the **Transport** segment of the URI are HTTP and HTTPS. If you specify a
-connection URI with a Transport segment, but do not specify a port, the session is created with
+connection URI with a Transport segment, but don't specify a port, the session is created with the
 standards ports: 80 for HTTP and 443 for HTTPS. To use the default ports for PowerShell remoting,
 specify port 5985 for HTTP or 5986 for HTTPS.
 
@@ -771,8 +795,8 @@ you can run a command in the session that copies XML files from a remote compute
 computer.
 
 A loopback session is a **PSSession** that originates and ends on the same computer. To create a
-loopback session, omit the **ComputerName** parameter or set its value to . (dot), localhost, or the
-name of the local computer.
+loopback session, omit the **ComputerName** parameter or set its value to dot (`.`), localhost, or
+the name of the local computer.
 
 By default, loopback sessions are created by using a network token, which might not provide
 sufficient permission to authenticate to remote computers.
@@ -781,7 +805,7 @@ The **EnableNetworkAccess** parameter is effective only in loopback sessions. If
 **EnableNetworkAccess** when you create a session on a remote computer, the command succeeds, but
 the parameter is ignored.
 
-You can also allow remote access in a loopback session by using the **CredSSP** value of the
+You can allow remote access in a loopback session by using the **CredSSP** value of the
 **Authentication** parameter, which delegates the session credentials to other computers.
 
 To protect the computer from malicious access, disconnected loopback sessions that have interactive
@@ -789,7 +813,7 @@ tokens, which are those created by using **EnableNetworkAccess**, can be reconne
 computer on which the session was created. Disconnected sessions that use CredSSP authentication can
 be reconnected from other computers. For more information, see `Disconnect-PSSession`.
 
-This parameter was introduced in Windows PowerShell 3.0.
+This parameter was introduced in PowerShell 3.0.
 
 ```yaml
 Type: SwitchParameter
@@ -830,7 +854,7 @@ Accept wildcard characters: False
 Indicates that this cmdlet omits the computer name of each object from the output display. By
 default, the name of the computer that generated the object appears in the display.
 
-This parameter affects only the output display. It does not change the object.
+This parameter affects only the output display. It doesn't change the object.
 
 ```yaml
 Type: SwitchParameter
@@ -852,28 +876,27 @@ When you use the **InDisconnectedSession** parameter, `Invoke-Command` creates a
 on each remote computer, starts the command specified by the **ScriptBlock** or **FilePath**
 parameter, and then disconnects from the session. The commands continue to run in the disconnected
 sessions. **InDisconnectedSession** enables you to run commands without maintaining a connection to
-the remote sessions. Also, because the session is disconnected before any results are returned,
+the remote sessions. And, because the session is disconnected before any results are returned,
 **InDisconnectedSession** makes sure that all command results are returned to the reconnected
 session, instead of being split between sessions.
 
-You cannot use **InDisconnectedSession** with the **Session** parameter or the **AsJob** parameter.
+You can't use **InDisconnectedSession** with the **Session** parameter or the **AsJob** parameter.
 
 Commands that use **InDisconnectedSession** return a **PSSession** object that represents the
-disconnected session. They do not return the command output. To connect to the disconnected session,
+disconnected session. They don't return the command output. To connect to the disconnected session,
 use the `Connect-PSSession` or `Receive-PSSession` cmdlets. To get the results of commands that ran
 in the session, use the `Receive-PSSession` cmdlet. To run commands that generate output in a
-disconnected session, set the value of the **OutputBufferingMode** session option to Drop. If you
-intend to connect to the disconnected session, set the idle time-out in the session so that it
+disconnected session, set the value of the **OutputBufferingMode** session option to **Drop**. If
+you intend to connect to the disconnected session, set the idle time-out in the session so that it
 provides sufficient time for you to connect before deleting the session.
 
 You can set the output buffering mode and idle time-out in the **SessionOption** parameter or in the
 `$PSSessionOption` preference variable. For more information about session options, see
-`New-PSSessionOption` and about_Preference_Variables.
+`New-PSSessionOption` and [about_Preference_Variables](./about/about_preference_variables.md).
 
-For more information about the Disconnected Sessions feature, see
-[about_Remote_Disconnected_Sessions](about/about_Remote_Disconnected_Sessions.md).
+For more information about the Disconnected Sessions feature, see [about_Remote_Disconnected_Sessions](about/about_Remote_Disconnected_Sessions.md).
 
-This parameter was introduced in Windows PowerShell 3.0.
+This parameter was introduced in PowerShell 3.0.
 
 ```yaml
 Type: SwitchParameter
@@ -913,9 +936,9 @@ Specifies a friendly name for the background job. By default, jobs are named `Jo
 is an ordinal number.
 
 If you use the **JobName** parameter in a command, the command is run as a job, and `Invoke-Command`
-returns a job object, even if you do not include **AsJob** in the command.
+returns a job object, even if you don't include **AsJob** in the command.
 
-For more information about PowerShell background jobs, see [about_Jobs](About/about_Jobs.md).
+For more information about PowerShell background jobs, see [about_Jobs](./About/about_Jobs.md).
 
 ```yaml
 Type: String
@@ -937,7 +960,7 @@ Indicates that this cmdlet runs the specified command in the current scope. By d
 This parameter is valid only in commands that are run in the current session, that is, commands that
 omit both the **ComputerName** and **Session** parameters.
 
-This parameter was introduced in Windows PowerShell 3.0.
+This parameter was introduced in PowerShell 3.0.
 
 ```yaml
 Type: SwitchParameter
@@ -965,9 +988,9 @@ that port. To configure the listener, type the following two commands at the Pow
 
 `New-Item -Path WSMan:\Localhost\listener -Transport http -Address * -Port \<port-number\>`
 
-Do not use the **Port** parameter unless you must. The port that is set in the command applies to
-all computers or sessions on which the command runs. An alternate port setting might prevent the
-command from running on all computers.
+Don't use the **Port** parameter unless you must. The port that is set in the command applies to all
+computers or sessions on which the command runs. An alternate port setting might prevent the command
+from running on all computers.
 
 ```yaml
 Type: Int32
@@ -983,8 +1006,8 @@ Accept wildcard characters: False
 
 ### -ScriptBlock
 
-Specifies the commands to run. Enclose the commands in braces ( { } ) to create a script block. This
-parameter is required.
+Specifies the commands to run. Enclose the commands in curly braces `{ }` to create a script block.
+This parameter is required.
 
 By default, any variables in the command are evaluated on the remote computer. To include local
 variables in the command, use **ArgumentList**.
@@ -1010,7 +1033,7 @@ Specifies an array of sessions in which this cmdlet runs the command. Enter a va
 When you create a **PSSession**, PowerShell establishes a persistent connection to the remote
 computer. Use a **PSSession** to run a series of related commands that share data. To run a single
 command or a series of unrelated commands, use the **ComputerName** parameter. For more information,
-see about_PSSessions.
+see [about_PSSessions](./About/about_PSSessions.md).
 
 ```yaml
 Type: PSSession[]
@@ -1030,7 +1053,7 @@ Specifies a friendly name for a disconnected session. You can use the name to re
 in subsequent commands, such as a `Get-PSSession` command. This parameter is valid only with the
 **InDisconnectedSession** parameter.
 
-This parameter was introduced in Windows PowerShell 3.0.
+This parameter was introduced in PowerShell 3.0.
 
 ```yaml
 Type: String[]
@@ -1051,12 +1074,12 @@ create by using the `New-PSSessionOption` cmdlet, or a hash table in which the k
 option names and the values are session option values.
 
 The default values for the options are determined by the value of the `$PSSessionOption` preference
-variable, if it is set. Otherwise, the default values are established by options set in the session
+variable, if it's set. Otherwise, the default values are established by options set in the session
 configuration.
 
 The session option values take precedence over default values for sessions set in the
-`$PSSessionOption` preference variable and in the session configuration. However, they do not take
-precedence over maximum values, quotas or limits set in the session configuration.
+`$PSSessionOption` preference variable and in the session configuration. However, they don't take
+precedence over maximum values, quotas, or limits set in the session configuration.
 
 For a description of the session options that includes the default values, see
 `New-PSSessionOption`. For information about the `$PSSessionOption` preference variable, see [about_Preference_Variables](About/about_Preference_Variables.md).
@@ -1096,12 +1119,12 @@ Accept wildcard characters: False
 ### -UseSSL
 
 Indicates that this cmdlet uses the Secure Sockets Layer (SSL) protocol to establish a connection to
-the remote computer. By default, SSL is not used.
+the remote computer. By default, SSL isn't used.
 
 WS-Management encrypts all PowerShell content transmitted over the network. The **UseSSL** parameter
 is an additional protection that sends the data across an HTTPS, instead of HTTP.
 
-If you use this parameter, but SSL is not available on the port that is used for the command, the
+If you use this parameter, but SSL isn't available on the port that's used for the command, the
 command fails.
 
 ```yaml
@@ -1120,7 +1143,7 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](About/about_CommonParameters.md).
+-WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -1139,48 +1162,54 @@ returns the output of the invoked command, which is the value of the **ScriptBlo
 
 ## NOTES
 
-- On Windows Vista, and later versions of the Windows operating system, to use the **ComputerName**
-  parameter of `Invoke-Command` to run a command on the local computer, you must open PowerShell by
-  using the Run as administrator option.
-- When you run commands on multiple computers, PowerShell connects to the computers in the order in
-  which they appear in the list. However, the command output is displayed in the order that it is
-  received from the remote computers, which might be different.
-- Errors that result from the command that `Invoke-Command` runs are included in the command
-  results. Errors that would be terminating errors in a local command are treated as non-terminating
-  errors in a remote command. This strategy makes sure that terminating errors on one computer do
-  not close the command on all computers on which it is run. This practice is used even when a
-  remote command is run on a single computer.
-- If the remote computer is not in a domain that the local computer trusts, the computer might not
-  be able to authenticate the credentials of the user. To add the remote computer to the list of
-  trusted hosts in WS-Management, use the following command in the WSMAN provider, where
-  `<Remote-Computer-Name>` is the name of the remote computer:
+On Windows Vista, and later versions of the Windows operating system, to use the **ComputerName**
+parameter of `Invoke-Command` to run a command on the local computer, you must run PowerShell using
+the **Run as administrator** option.
 
-  `Set-Item -Path WSMan:\Localhost\Client\TrustedHosts -Value \<Remote-Computer-Name\>`
-- In Windows PowerShell 2.0, you cannot use the `Select-Object` cmdlet to select the
-  **PSComputerName** property of the object that `Invoke-Command` returns. Instead, to display the
-  value of the **PSComputerName** property, use the dot method to get the **PSComputerName**
-  property value ($result.PSComputerName), use a **Format** cmdlet, such as the `Format-Table`
-  cmdlet, to display the value of the **PSComputerName** property, or use a `Select-Object` command
-  where the value of the property parameter is a calculated property that has a label other than
-  PSComputerName. This limitation does not apply to Windows PowerShell 3.0 or later versions of
-  Windows PowerShell or PowerShell Core.
-- When you disconnect a **PSSession**, such as by using **InDisconnectedSession**, the session state
-  is Disconnected and the availability is None. The value of the **State** property is relative to
-  the current session. Therefore, a value of Disconnected means that the **PSSession** is not
-  connected to the current session. However, it does not mean that the **PSSession** is disconnected
-  from all sessions. It might be connected to a different session. To determine whether you can
-  connect or reconnect to the session, use the **Availability** property.
+When you run commands on multiple computers, PowerShell connects to the computers in the order in
+which they appear in the list. However, the command output is displayed in the order that it's
+received from the remote computers, which might be different.
 
-  An **Availability** value of None indicates that you can connect to the session. A value of Busy
-  indicates that you cannot connect to the PSSession because it is connected to another session.
+Errors that result from the command that `Invoke-Command` runs are included in the command results.
+Errors that would be terminating errors in a local command are treated as non-terminating errors in
+a remote command. This strategy makes sure that terminating errors on one computer don't close the
+command on all computers on which it's run. This practice is used even when a remote command is run
+on a single computer.
 
-  For more information about the values of the **State** property of sessions, see
-  [RunspaceState Enumeration](https://msdn.microsoft.com/library/system.management.automation.runspaces.runspacestate).
+If the remote computer isn't in a domain that the local computer trusts, the computer might not be
+able to authenticate the user's credentials. To add the remote computer to the list of trusted hosts
+in WS-Management, use the following command in the `WSMAN` provider, where `<Remote-Computer-Name>`
+is the name of the remote computer:
 
-  For more information about the values of the **Availability** property of sessions, see
-  [RunspaceAvailability Enumeration](https://msdn.microsoft.com/library/system.management.automation.runspaces.runspaceavailability).
+`Set-Item -Path WSMan:\Localhost\Client\TrustedHosts -Value \<Remote-Computer-Name\>`
+
+When you disconnect a **PSSession**, by using the **InDisconnectedSession** parameter, the session
+state is **Disconnected** and the availability is **None**. The value of the **State** property is
+relative to the current session. A value of **Disconnected** means that the **PSSession** isn't
+connected to the current session. However, it doesn't mean that the **PSSession** is disconnected
+from all sessions. It might be connected to a different session. To determine whether you can
+connect or reconnect to the session, use the **Availability** property.
+
+An **Availability** value of **None** indicates that you can connect to the session. A value of
+**Busy** indicates that you can't connect to the **PSSession** because it's connected to another
+session. For more information about the values of the **State** property of sessions, see
+[RunspaceState](/dotnet/api/system.management.automation.runspaces.runspacestate). For more
+information about the values of the **Availability** property of sessions, see
+[RunspaceAvailability](/dotnet/api/system.management.automation.runspaces.runspaceavailability).
 
 ## RELATED LINKS
+
+[about_PSSessions](./About/about_PSSessions.md)
+
+[about_Remote](./About/about_Remote.md)
+
+[about_Remote_Disconnected_Sessions](./About/about_Remote_Disconnected_Sessions.md)
+
+[about_Remote_Troubleshooting](./About/about_remote_troubleshooting.md)
+
+[about_Remote_Variables](./About/about_Remote_Variables.md)
+
+[about_Scopes](./About/about_scopes.md)
 
 [Enter-PSSession](Enter-PSSession.md)
 
@@ -1195,13 +1224,3 @@ returns the output of the invoked command, which is the value of the **ScriptBlo
 [Remove-PSSession](Remove-PSSession.md)
 
 [WSMan Provider](../Microsoft.WsMan.Management/About/about_WSMan_Provider.md)
-
-[about_PSSessions](About/about_PSSessions.md)
-
-[about_Remote](About/about_Remote.md)
-
-[about_Remote_Disconnected_Sessions](About/about_Remote_Disconnected_Sessions.md)
-
-[about_Remote_Variables](About/about_Remote_Variables.md)
-
-[about_Scopes](About/about_scopes.md)
