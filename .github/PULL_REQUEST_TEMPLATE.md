@@ -19,8 +19,7 @@ Version(s) of documents impacted
 
 ## PR Checklist
 
-- [ ] I have read the [contributors guide](https://github.com/MicrosoftDocs/PowerShell-Docs/blob/staging/CONTRIBUTING.md)
-  and followed the style and process guidelines
+- [ ] I have read the [contributors guide](https://github.com/MicrosoftDocs/PowerShell-Docs/blob/staging/CONTRIBUTING.md) and followed the style and process guidelines
 - [ ] PR has a meaningful title
 - [ ] PR is targeted at the _staging_ branch
 - [ ] All relevant versions updated
