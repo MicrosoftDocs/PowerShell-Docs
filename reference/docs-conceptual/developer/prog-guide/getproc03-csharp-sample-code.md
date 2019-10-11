@@ -20,7 +20,7 @@ The following code shows the implementation of a `Get-Process` cmdlet that can a
 
 ## Code Sample
 
-[!code-csharp[GetProcessSample03.cs](../../../powershell-sdk-samples/SDK-2.0/csharp/GetProcessSample03/GetProcessSample03.cs#L11-L78 "GetProcessSample03.cs")]
+[!code-csharp[GetProcessSample03.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/GetProcessSample03/GetProcessSample03.cs#L11-L78 "GetProcessSample03.cs")]
 
 ## See Also
 

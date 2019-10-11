@@ -20,7 +20,7 @@ The following code shows the implementation of the GetProc01 sample cmdlet. Noti
 
 ## Code Sample
 
-[!code-csharp[GetProcessSample01.cs](../../../powershell-sdk-samples/SDK-2.0/csharp/GetProcessSample01/GetProcessSample01.cs#L11-L126 "GetProcessSample01.cs")]
+[!code-csharp[GetProcessSample01.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/GetProcessSample01/GetProcessSample01.cs#L11-L126 "GetProcessSample01.cs")]
 
 ## See Also
 

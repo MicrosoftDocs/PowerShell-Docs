@@ -22,7 +22,7 @@ The following code shows the implementation of the Windows PowerShell provider d
 
 ## Code Sample
 
-[!code-csharp[AccessDBProviderSample02.cs](../../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample02/AccessDBProviderSample02.cs#L11-L154 "AccessDBProviderSample02.cs")]
+[!code-csharp[AccessDBProviderSample02.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample02/AccessDBProviderSample02.cs#L11-L154 "AccessDBProviderSample02.cs")]
 
 
 ## See Also

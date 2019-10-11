@@ -18,7 +18,7 @@ Here is the complete C# sample code for the StopProc04 sample cmdlet. This is th
 >
 > The downloaded source files are available in the **\<PowerShell Samples>** directory.
 
-[!code-csharp[StopProcessSample04.cs](../../../powershell-sdk-samples/SDK-2.0/csharp/StopProcessSample04/StopProcessSample04.cs#L11-L435 "StopProcessSample04.cs")]
+[!code-csharp[StopProcessSample04.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/StopProcessSample04/StopProcessSample04.cs#L11-L435 "StopProcessSample04.cs")]
 
 ## See Also
 

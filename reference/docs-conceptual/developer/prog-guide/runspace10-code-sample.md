@@ -20,7 +20,7 @@ Here is the source code for the Runspace10 sample. This sample application adds 
 
 ## Code Sample
 
-[!code-csharp[Runspace10.cs](../../../powershell-sdk-samples/SDK-2.0/csharp/Runspace10/Runspace10.cs#L11-L118 "Runspace10.cs")]
+[!code-csharp[Runspace10.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/Runspace10/Runspace10.cs#L11-L118 "Runspace10.cs")]
 
 ## See Also
 

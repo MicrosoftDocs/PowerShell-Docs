@@ -43,7 +43,7 @@ However, when a cmdlet needs to process pipeline input, it must have its paramet
 
 Here is the parameter declaration for the `Name` parameter of this Get-Proc cmdlet that accepts pipeline input.
 
-[!code-csharp[GetProcessSample03.cs](../../../powershell-sdk-samples/SDK-2.0/csharp/GetProcessSample03/GetProcessSample03.cs#L35-L44 "GetProcessSample03.cs")]
+[!code-csharp[GetProcessSample03.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/GetProcessSample03/GetProcessSample03.cs#L35-L44 "GetProcessSample03.cs")]
 
 ```vb
 <Parameter(Position:=0, ValueFromPipeline:=True, _

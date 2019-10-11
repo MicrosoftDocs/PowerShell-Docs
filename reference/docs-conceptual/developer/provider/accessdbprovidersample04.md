@@ -38,7 +38,7 @@ This sample demonstrates the following:
 
 This sample shows how to overwrite the methods needed to copy, create, and remove items, as well as methods for getting the child items of a parent item.
 
-[!code-csharp[AccessDBProviderSample04.cs](../../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample06/AccessDBProviderSample06.cs#L11-L1635 "AccessDBProviderSample04.cs")]
+[!code-csharp[AccessDBProviderSample04.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample06/AccessDBProviderSample06.cs#L11-L1635 "AccessDBProviderSample04.cs")]
 
 ## See Also
 

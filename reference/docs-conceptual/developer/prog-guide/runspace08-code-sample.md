@@ -15,7 +15,7 @@ Here is the source code for the Runspace08 sample described in [Creating a Conso
 
 ## Code Sample
 
-[!code-csharp[Runspace08.cs](../../../powershell-sdk-samples/SDK-2.0/csharp/Runspace08/Runspace08.cs#L11-L86 "Runspace08.cs")]
+[!code-csharp[Runspace08.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/Runspace08/Runspace08.cs#L11-L86 "Runspace08.cs")]
 
 ## See Also
 

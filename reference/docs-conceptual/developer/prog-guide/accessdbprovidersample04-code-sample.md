@@ -15,7 +15,7 @@ The following code shows the implementation of the Windows PowerShell provider d
 
 ## Code Sample
 
-[!code-csharp[AccessDBProviderSample04.cs](../../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample04/AccessDBProviderSample04.cs#L11-L1635 "AccessDBProviderSample04.cs")]
+[!code-csharp[AccessDBProviderSample04.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample04/AccessDBProviderSample04.cs#L11-L1635 "AccessDBProviderSample04.cs")]
 
 ## See Also
 

@@ -28,7 +28,7 @@ a script and how to retrieve error objects as well as the output objects.
 
 ## Code Sample
 
-[!code-csharp[Runspace03.cs](../../../powershell-sdk-samples/SDK-2.0/csharp/Runspace03/Runspace03.cs#L11-L88 "Runspace03.cs")]
+[!code-csharp[Runspace03.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/Runspace03/Runspace03.cs#L11-L88 "Runspace03.cs")]
 
 ## See Also
 

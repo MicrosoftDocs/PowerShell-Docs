@@ -20,7 +20,7 @@ Here is the source code for the Runspace05 sample that is described in [Configur
 
 ## Code Sample
 
-[!code-csharp[Runspace05.cs](../../../powershell-sdk-samples/SDK-2.0/csharp/Runspace05/Runspace05.cs#L11-L86 "Runspace05.cs")]
+[!code-csharp[Runspace05.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/Runspace05/Runspace05.cs#L11-L86 "Runspace05.cs")]
 
 ## See Also
 
