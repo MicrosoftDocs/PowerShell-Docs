@@ -59,7 +59,7 @@ The preferred method is as follows:
 
 ```sh
 # Download the Microsoft repository GPG keys
-wget -q https://packages.microsoft.com/config/ubuntu/16.04/packages-microsoft-prod.deb
+wget -q https://packages.microsoft.com/config/ubuntu/$(. /etc/os-release && echo $VERSION_ID)/packages-microsoft-prod.deb
 
 # Register the Microsoft repository GPG keys
 sudo dpkg -i packages-microsoft-prod.deb
@@ -109,7 +109,7 @@ The preferred method is as follows:
 
 ```sh
 # Download the Microsoft repository GPG keys
-wget -q https://packages.microsoft.com/config/ubuntu/18.04/packages-microsoft-prod.deb
+wget -q https://packages.microsoft.com/config/ubuntu/$(. /etc/os-release && echo $VERSION_ID)/packages-microsoft-prod.deb
 
 # Register the Microsoft repository GPG keys
 sudo dpkg -i packages-microsoft-prod.deb
@@ -183,7 +183,7 @@ sudo apt-get install -y curl apt-transport-https
 curl https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
 
 # Register the Microsoft Product feed
-sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/microsoft-debian-jessie-prod jessie main" > /etc/apt/sources.list.d/microsoft.list'
+sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/microsoft-$(. /etc/os-release && echo $ID-$VERSION_CODENAME-prod $VERSION_CODENAME) main" > /etc/apt/sources.list.d/microsoft.list'
 
 # Update the list of products
 sudo apt-get update
@@ -215,7 +215,7 @@ sudo apt-get install -y curl gnupg apt-transport-https
 curl https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
 
 # Register the Microsoft Product feed
-sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/microsoft-debian-stretch-prod stretch main" > /etc/apt/sources.list.d/microsoft.list'
+sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/microsoft-$(. /etc/os-release && echo $ID-$VERSION_CODENAME-prod $VERSION_CODENAME) main" > /etc/apt/sources.list.d/microsoft.list'
 
 # Update the list of products
 sudo apt-get update
