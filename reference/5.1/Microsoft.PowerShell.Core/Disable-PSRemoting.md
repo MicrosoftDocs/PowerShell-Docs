@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Core
 ms.date: 06/09/2017
-online version: https://go.microsoft.com/fwlink/?linkid=821472
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/disable-psremoting?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Disable-PSRemoting
 ---
@@ -333,4 +333,4 @@ Beginning in Windows PowerShell 3.0, it is a cmdlet.
 
 [Unregister-PSSessionConfiguration](Unregister-PSSessionConfiguration.md)
 
-
+[WSMan Provider](../Microsoft.WsMan.Management/About/about_WSMan_Provider.md)

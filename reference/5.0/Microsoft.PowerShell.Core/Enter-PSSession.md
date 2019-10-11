@@ -1,11 +1,11 @@
 ---
+external help file: System.Management.Automation.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
 ms.date: 5/15/2019
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version: https://go.microsoft.com/fwlink/?linkid=821477
-external help file:  System.Management.Automation.dll-Help.xml
-title:  Enter-PSSession
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/enter-pssession?view=powershell-5.0&WT.mc_id=ps-gethelp
+schema: 2.0.0
+title: Enter-PSSession
 ---
 # Enter-PSSession
 
@@ -318,7 +318,7 @@ Specifies the session configuration that is used for the interactive session.
 
 Enter a configuration name or the fully qualified resource URI for a session configuration.
 If you specify only the configuration name, the following schema URI is prepended:
-http://schemas.microsoft.com/powershell.
+`http://schemas.microsoft.com/powershell`.
 
 The session configuration for a session is located on the remote computer.
 If the specified session configuration does not exist on the remote computer, the command fails.
@@ -392,7 +392,7 @@ Accept wildcard characters: False
 Parameter Sets: ComputerName, Uri, VMId, VMName
 Required: True (VMId, VMName), False (ComputerName, Uri)
 Default value: None
-Aliases: 
+Aliases:
 Type: PSCredential
 ```
 

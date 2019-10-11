@@ -1,9 +1,10 @@
 ---
-ms.date:  02/19/2019
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-title:  about_Format.ps1xml
+keywords: powershell,cmdlet
+locale: en-us
+ms.date: 02/19/2019
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_format.ps1xml?view=powershell-4.0&WT.mc_id=ps-gethelp
+schema: 2.0.0
+title: about_Format.ps1xml
 ---
 # About Format.ps1xml
 

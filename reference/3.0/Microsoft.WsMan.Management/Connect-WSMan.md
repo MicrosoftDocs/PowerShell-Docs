@@ -1,11 +1,11 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version: https://go.microsoft.com/fwlink/?linkid=141437
-external help file:  Microsoft.WSMan.Management.dll-Help.xml
-title:  Connect-WSMan
+external help file: Microsoft.WSMan.Management.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+ms.date: 06/09/2017
+online version: https://docs.microsoft.com/powershell/module/microsoft.wsman.management/connect-wsman?view=powershell-3.0&WT.mc_id=ps-gethelp
+schema: 2.0.0
+title: Connect-WSMan
 ---
 # Connect-WSMan
 
@@ -154,7 +154,7 @@ The complete identifier for the remote endpoint is in the following format:
 
 For example:
 
-http://server01:8080/WSMAN
+`http://server01:8080/WSMAN`
 
 Internet Information Services (IIS), which hosts the session, forwards requests with this endpoint to the specified application.
 This default setting of "WSMAN" is appropriate for most uses.
@@ -253,7 +253,8 @@ The format of this string is:
 
 The following string is a properly formatted value for this parameter:
 
-http://Server01:8080/WSMAN.
+`http://Server01:8080/WSMAN`.
+
 The URI must be fully qualified .
 
 ```yaml

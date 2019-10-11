@@ -1,0 +1,101 @@
+### YamlMime:Landing
+
+title: Sample scripts for system administration # < 60 chars
+summary: A collection of examples walks through scenarios for administering systems with PowerShell. # < 160 chars
+
+metadata:
+  title: Sample scripts for system administration # Required; page title displayed in search results. Include the brand. < 60 chars.
+  description: A collection of examples walks through scenarios for administering systems with PowerShell. # Required; article description that is displayed in search results. < 160 chars.
+  ms.topic: landing-page # Required
+  author: sdwheeler #Required; your GitHub user alias, with correct capitalization.
+  ms.author: sewhee #Required; microsoft alias of author; optional team alias.
+  ms.date: 09/05/2019 #Required; mm/dd/yyyy format.
+
+# linkListType: architecture | concept | deploy | download | get-started | how-to-guide | learn |
+#               overview | quickstart | reference | tutorial | video | whats-new
+
+landingContent:
+# Cards and links should be based on top customer tasks or top subjects
+# Start card title with a verb
+  - title: Working with objects
+    linkLists:
+      - linkListType: how-to-guide
+        links:
+          - text: Viewing object structure
+            url: ./viewing-object-structure--get-member-.md
+          - text: Selecting parts of object
+            url: ./selecting-parts-of-objects--select-object-.md
+          - text: Filtering objects in the pipeline
+            url: ./removing-objects-from-the-pipeline--where-object-.md
+          - text: Sorting objects
+            url: ./sorting-objects.md
+          - text: Repeating a task for multiple objects
+            url: ./repeating-a-task-for-multiple-objects--foreach-object-.md
+          - text: Creating .NET and COM objects
+            url: ./creating-.net-and-com-objects--new-object-.md
+          - text: Using static classes and methods
+            url: ./using-static-classes-and-methods.md
+          - text: Getting WMI objects - Get-WmiObject
+            url: ./getting-wmi-objects--get-wmiobject-.md
+  - title: Managing computers
+    linkLists:
+      - linkListType: how-to-guide
+        links:
+          - text: Changing computer state
+            url: ./changing-computer-state.md
+          - text: Collecting information about computers
+            url: ./collecting-information-about-computers.md
+          - text: Creating Get-WinEvent queries with FilterHashtable
+            url: ./creating-get-winEvent-queries-with-filterhashtable.md
+  - title: Managing processes & services
+    linkLists:
+      - linkListType: how-to-guide
+        links:
+          - text: Managing processes with process cmdlets
+            url: ./managing-processes-with-process-cmdlets.md
+          - text: Managing services
+            url: ./managing-services.md
+          - text: Managing Windows PowerShell drives
+            url: ./managing-windows-powershell-drives.md
+          - text: Working with printers
+            url: ./working-with-printers.md
+          - text: Performing networking tasks
+            url: ./performing-networking-tasks.md
+          - text: Working with software installations
+            url: ./working-with-software-installations.md
+          - text: Decode a PowerShell command from a running process
+            url: ./decode-powershell-command-from-a-running-process.md
+  - title: Working with output
+    linkLists:
+      - linkListType: concept
+        links:
+          - text: Redirecting data with Out-* cmdlets
+            url: ./redirecting-data-with-out---cmdlets.md
+          - text: Using format commands to change output view
+            url: ./using-format-commands-to-change-output-view.md
+  - title: Managing drives & files
+    linkLists:
+      - linkListType: how-to-guide
+        links:
+          - text: Managing current location
+            url: ./managing-current-location.md
+          - text: Working with files and folders
+            url: ./working-with-files-and-folders.md
+          - text: Working with files folders and registry keys
+            url: ./working-with-files-folders-and-registry-keys.md
+          - text: Working with registry entries
+            url: ./working-with-registry-entries.md
+          - text: Working with registry keys
+            url: ./working-with-registry-keys.md
+  - title: Creating UI elements
+    linkLists:
+      - linkListType: how-to-guide
+        links:
+          - text: Creating a custom input box
+            url: ./creating-a-custom-input-box.md
+          - text: Creating a graphical date picker
+            url: ./creating-a-graphical-date-picker.md
+          - text: Multiple selection list boxes
+            url: ./multiple-selection-list-boxes.md
+          - text: Selecting items from a list box
+            url: ./selecting-items-from-a-list-box.md

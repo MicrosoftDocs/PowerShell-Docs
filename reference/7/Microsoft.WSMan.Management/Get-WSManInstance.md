@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.WSMan.Management
 ms.date: 06/09/2017
-online version: https://go.microsoft.com/fwlink/?linkid=2096627
+online version: https://docs.microsoft.com/powershell/module/microsoft.wsman.management/get-wsmaninstance?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-WSManInstance
 ---
@@ -538,12 +538,9 @@ Specifies the dialect to use in the filter predicate.
 This can be any dialect that is supported by the remote service.
 The following aliases can be used for the dialect URI:
 
-- WQL.
-http://schemas.microsoft.com/wbem/wsman/1/WQL
-- Selector.
-http://schemas.microsoft.com/wbem/wsman/1/wsman/SelectorFilter
-- Association.
-http://schemas.dmtf.org/wbem/wsman/1/cimbinding/associationFilter
+- WQL `http://schemas.microsoft.com/wbem/wsman/1/WQL`
+- Selector `http://schemas.microsoft.com/wbem/wsman/1/wsman/SelectorFilter`
+- Association `http://schemas.dmtf.org/wbem/wsman/1/cimbinding/associationFilter`
 
 ```yaml
 Type: Uri

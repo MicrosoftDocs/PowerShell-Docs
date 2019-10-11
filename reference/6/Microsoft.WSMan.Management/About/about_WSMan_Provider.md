@@ -1,10 +1,10 @@
 ---
-ms.date:  10/18/2018
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-title:  WSMan Provider
-online version: https://go.microsoft.com/fwlink/?linkid=2096458
+keywords: powershell,cmdlet
+locale: en-us
+ms.date: 10/18/2018
+online version: https://docs.microsoft.com/powershell/module/microsoft.wsman.management/about/about_wsman_provider?view=powershell-6&WT.mc_id=ps-gethelp
+schema: 2.0.0
+title: WSMan Provider
 ---
 # WSMan Provider
 
@@ -45,6 +45,7 @@ in this article.
 - [Get-ChildItem](../../Microsoft.PowerShell.Management/Get-ChildItem.md)
 - [New-Item](../../Microsoft.PowerShell.Management/New-Item.md)
 - [Remove-Item](../../Microsoft.PowerShell.Management/Remove-Item.md)
+
 > [!NOTE]
 > You can use commands in the `WSMan:` drive to change the values of the new
 > properties. However, you cannot use the `WSMan:` drive in PowerShell 2.0
@@ -469,9 +470,9 @@ resource. `Win32_LogicalDisk="C:\\"` is a specific instance of the resource.
 A Uniform Resource Identifier (URI) contains a prefix and a path to a resource.
 For example:
 
-http://schemas.microsoft.com/wbem/wsman/1/wmi/root/cimv2/Win32_LogicalDisk
+`http://schemas.microsoft.com/wbem/wsman/1/wmi/root/cimv2/Win32_LogicalDisk`
 
-http://schemas.dmtf.org/wbem/wscim/1/cim-schema/2/CIM_NumericSensor
+`http://schemas.dmtf.org/wbem/wscim/1/cim-schema/2/CIM_NumericSensor`
 
 #### Cmdlets Supported
 
@@ -484,9 +485,9 @@ of resource, such as a disk or a process, on a computer.
 
 A URI consists of a prefix and a path to a resource. For example:
 
-http://schemas.microsoft.com/wbem/wsman/1/wmi/root/cimv2/Win32_LogicalDisk
+`http://schemas.microsoft.com/wbem/wsman/1/wmi/root/cimv2/Win32_LogicalDisk`
 
-http://schemas.dmtf.org/wbem/wscim/1/cim-schema/2/CIM_NumericSensor
+`http://schemas.dmtf.org/wbem/wscim/1/cim-schema/2/CIM_NumericSensor`
 
 #### Cmdlets Supported
 
@@ -535,7 +536,7 @@ A URL prefix on which to accept HTTP or HTTPS requests. This is a string
 containing only the characters `[a-z]`, `[A-Z]`, `[9-0]`,
 underscore (`_`) and backslash (`/`). The string must not start with or end
 with a backslash (`/`). For example, if the computer name is "SampleComputer",
-the WS-Management client would specify "http://SampleMachine/URLPrefix"
+the WS-Management client would specify `http://SampleMachine/URLPrefix`
 in the destination address.
 
 #### Cmdlets Supported

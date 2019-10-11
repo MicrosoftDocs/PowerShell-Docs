@@ -402,7 +402,7 @@ The **Get-Help -Online** feature in Windows PowerShell 3.0 is now even more powe
 
 ```
 PS C:\>(Get-Command Get-ScheduledJob).HelpUri
-http://go.microsoft.com/fwlink/?LinkID=223923
+https://go.microsoft.com/fwlink/?LinkID=223923
 ```
 
 Beginning in Windows PowerShell 3.0, authors of C# cmdlets can populate the **HelpUri** property by creating a **HelpUri** attribute on the cmdlet class. Authors of advanced functions can define a **HelpUri** property on the **CmdletBinding** attribute. The value of the **HelpUri** property must begin with "http" or "https".

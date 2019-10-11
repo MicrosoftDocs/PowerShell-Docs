@@ -1,11 +1,11 @@
 ---
+external help file: Stop-DscConfiguration.cdxml-help.xml
+keywords: powershell,cmdlet
+locale: en-us
 ms.date: 08/19/2019
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version: https://go.microsoft.com/fwlink/?linkid=821463
-external help file:  Stop-DscConfiguration.cdxml-help.xml
-title:  Stop-DscConfiguration
+online version: https://docs.microsoft.com/powershell/module/psdesiredstateconfiguration/stop-dscconfiguration?view=powershell-5.0&WT.mc_id=ps-gethelp
+schema: 2.0.0
+title: Stop-DscConfiguration
 ---
 
 # Stop-DscConfiguration
@@ -31,7 +31,7 @@ configuration job running, this cmdlet returns a warning message.
 `Stop-DscConfiguration` is only available as part of the
 [November 2014 update rollup for Windows RT 8.1, Windows 8.1, and Windows Server 2012 R2](https://support.microsoft.com/kb/3000850)
 from the Microsoft Support library. Before you use this cmdlet, review the information in
-[What's New in Windows PowerShell 5.0](../../docs-conceptual/whats-new/What-s-New-in-Windows-PowerShell-50.md)
+[What's New in Windows PowerShell 5.0](/powershell/scripting/whats-new/What-s-New-in-Windows-PowerShell-50.md)
 
 ## EXAMPLES
 

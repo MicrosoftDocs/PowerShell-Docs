@@ -1,9 +1,10 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-title:  about_ActivityCommonParameters
+keywords: powershell,cmdlet
+locale: en-us
+ms.date: 06/09/2017
+online version: https://docs.microsoft.com/powershell/module/psworkflow/about/about_activitycommonparameters?view=powershell-4.0&WT.mc_id=ps-gethelp
+schema: 2.0.0
+title: about_ActivityCommonParameters
 ---
 # About ActivityCommonParameters
 
@@ -229,8 +230,8 @@ parameter.
 Certificates are used in client certificate-based authentication. They can only
 be mapped to local user accounts; they do not work with domain accounts.
 
-To get a certificate, use the [Get-Item](http://go.microsoft.com/fwlink/?LinkID=113319)
-or [Get-ChildItem](http://go.microsoft.com/fwlink/?LinkID=113308)
+To get a certificate, use the [Get-Item](../../Microsoft.PowerShell.Management/Get-Item.md)
+or [Get-ChildItem](../../Microsoft.PowerShell.Management/Get-ChildItem.md)
 cmdlets in the Windows PowerShell Cert: drive.
 
 #### PSComputerName \<String[]\>
@@ -256,7 +257,7 @@ for HTTPS transport or the IP address of the remote computer must be included
 in the WinRM TrustedHosts list on the local computer. For instructions for
 adding a computer name to the TrustedHosts list, see "How to Add a Computer to
 the Trusted Host List" in
-[about_Remote_Troubleshooting](http://go.microsoft.com/fwlink/?LinkID=135188).
+[about_Remote_Troubleshooting](../../Microsoft.PowerShell.Core/About/about_Remote_Troubleshooting.md).
 
 #### PSConfigurationName \<String\>
 
@@ -292,7 +293,7 @@ The format of this string is as follows:
 <Transport>://<ComputerName>:<Port>/<ApplicationName>
 ```
 
-The default value is http://localhost:5985/WSMAN.
+The default value is `http://localhost:5985/WSMAN`.
 
 If you do not specify a PSConnectionURI, you can use the PSUseSSL,
 PSComputerName, PSPort, and PSApplicationName parameters to specify the
@@ -486,7 +487,7 @@ uses the values specified in the session configuration.
 
 For a description of the session options, including the default values, see the
 help topic for the New-PSSessionOption cmdlet
-[New-PSSessionOption](http://go.microsoft.com/fwlink/?LinkID=144305).
+[New-PSSessionOption](../../Microsoft.PowerShell.Core/New-PSSessionOption.md).
 
 For more information about the $PSSessionOption preference variable, see
 [about_Preference_Variables](../../Microsoft.PowerShell.Core/About/about_Preference_Variables.md).

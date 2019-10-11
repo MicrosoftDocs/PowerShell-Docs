@@ -45,7 +45,7 @@ brew cask upgrade powershell
 > but then the PowerShell shell must be exited and restarted to complete the upgrade
 > and refresh the values shown in `$PSVersionTable`.
 
-[brew]: http://brew.sh/
+[brew]: https://brew.sh/
 
 ## Installation of latest preview release via Homebrew on macOS 10.12 or higher
 

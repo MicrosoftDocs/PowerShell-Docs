@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Management
 ms.date: 06/09/2017
-online version: https://go.microsoft.com/fwlink/?linkid=821609
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/new-webserviceproxy?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: New-WebServiceProxy
 ---
@@ -175,7 +175,7 @@ Specifies the URI of the Web service.
 Enter a URI or the path and file name of a file that contains a service description.
 
 The URI must refer to an .asmx page or to a page that returns a service description.
-To return a service description of a Web service that was created by using ASP.NET, append `?WSDL` to the URL of the Web service, for example: http://www.contoso.com/MyWebService.asmx?WSDL.
+To return a service description of a Web service that was created by using ASP.NET, append "?WSDL" to the URL of the Web service (for example,  `http://www.contoso.com/MyWebService.asmx?WSDL`).
 
 ```yaml
 Type: Uri

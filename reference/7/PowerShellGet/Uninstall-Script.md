@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: PowerShellGet
 ms.date: 07/03/2019
-online version: https://go.microsoft.com/fwlink/?linkid=2096629
+online version: https://docs.microsoft.com/powershell/module/powershellget/uninstall-script?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Uninstall-Script
 ---

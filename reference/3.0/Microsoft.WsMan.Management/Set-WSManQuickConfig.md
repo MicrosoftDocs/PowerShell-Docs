@@ -1,19 +1,21 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version: https://go.microsoft.com/fwlink/?linkid=141463
-external help file:  Microsoft.WSMan.Management.dll-Help.xml
-title:  Set-WSManQuickConfig
+external help file: Microsoft.WSMan.Management.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+ms.date: 10/02/2019
+online version: https://docs.microsoft.com/powershell/module/microsoft.wsman.management/set-wsmanquickconfig?view=powershell-3.0&WT.mc_id=ps-gethelp
+schema: 2.0.0
+title: Set-WSManQuickConfig
 ---
+
 # Set-WSManQuickConfig
 
 ## SYNOPSIS
-
 Configures the local computer for remote management.
 
 ## SYNTAX
+
+### All
 
 ```
 Set-WSManQuickConfig [-UseSSL] [-Force] [-SkipNetworkProfileCheck] [<CommonParameters>]
@@ -21,42 +23,48 @@ Set-WSManQuickConfig [-UseSSL] [-Force] [-SkipNetworkProfileCheck] [<CommonParam
 
 ## DESCRIPTION
 
-The Set-WSManQuickConfig cmdlet configures the computer to receive Windows PowerShell remote commands that are sent by using the Web Services for Management (WS-Management) technology.
+The `Set-WSManQuickConfig` cmdlet configures the computer to receive PowerShell remote commands that
+are sent by using the Web Services for Management (WS-Management) technology.
 
-The cmdlet performs the following:
+`Set-WSManQuickConfig` performs the following actions:
 
-- Checks whether the WinRM service is running. If the WinRM service is not running, the service is started.
+- Checks whether the WinRM service is running. If the WinRM service isn't running, the service is
+  started.
 - Sets the WinRM service startup type to automatic.
-- Creates a listener to accept requests on any IP address. By default, the transport is HTTP.
-- Enables a firewall exception for WinRM traffic .
+- Creates a listener to accept requests on any IP address. The default transport is **HTTP**.
+- Enables a firewall exception for WinRM traffic.
 
-To run this cmdlet, start Windows PowerShell with the "Run as administrator" option.
+To run `Set-WSManQuickConfig`, start PowerShell with the **Run as Administrator** option.
 
 ## EXAMPLES
 
-### Example 1
+### Example 1: Enable remote management of the local computer over HTTP
+
+This example sets the required configuration to enable remote management of the local computer. By
+default, this command creates a WS-Management listener on **HTTP**.
 
 ```powershell
 Set-WSManQuickConfig
 ```
 
-This command sets the required configuration to enable remote management of the local computer.
-By default, this command creates a WS-Management listener on HTTP.
+### Example 2: Enable remote management of the local computer over HTTPS
 
-### Example 2
+This example sets the required configuration to enable remote management of the local computer. The
+**UseSSL** parameter specifies that **HTTPS** is used to communicate with the computer.
 
 ```powershell
 Set-WSManQuickConfig -UseSSL
 ```
 
-The command sets the required configuration to enable remote management of the local computer.
-The UseSSL parameter makes the command create a WS-Management listener on HTTPS.
+> [!NOTE]
+> **HTTPS** requires manual configuration. For more information, see the **UseSSL** parameter's
+> description.
 
 ## PARAMETERS
 
 ### -Force
 
-Sets the configuration without first prompting the user.
+Forces the command to run without asking for user confirmation.
 
 ```yaml
 Type: SwitchParameter
@@ -65,22 +73,25 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -SkipNetworkProfileCheck
 
-Configures client versions of Windows for remoting when the computer is on a public network.
-This parameter enables a firewall rule for public networks that allows remote access only from computers in the same local subnet.
+Configures Windows client versions for remoting when the computer is on a public network. This
+parameter enables a firewall rule for public networks that allows remote access only from computers
+in the same local subnet.
 
-This parameter has no effect on server versions of Windows, which, by default, have a local subnet firewall rule for public networks.
-If the local subnet firewall rule is disabled on a server version of Windows, **Enable-PSRemoting** re-enables it, regardless of the value of this parameter.
+This parameter has no effect on server versions of Windows, that by default, have a local subnet
+firewall rule for public networks. If the local subnet firewall rule is disabled on the server
+version of Windows, `Enable-PSRemoting` re-enables it, regardless of this parameter's value.
 
-To remove the local subnet restriction and enable remote access from all locations on public networks, use the **Set-NetFirewallRule** cmdlet in the **NetSecurity** module.
+To remove the local subnet restriction and enable remote access from all locations on public
+networks, use the `Set-NetFirewallRule` cmdlet in the **NetSecurity** module.
 
-This parameter is introduced in Windows PowerShell 3.0.
+This parameter was introduced in PowerShell 3.0.
 
 ```yaml
 Type: SwitchParameter
@@ -89,19 +100,23 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -UseSSL
 
-Specifies that the Secure Sockets Layer (SSL) protocol should be used to establish a connection to the remote computer.
-By default, SSL is not used.
+Specifies that the Secure Sockets Layer (SSL) protocol is used to establish a connection to the
+remote computer. By default, SSL isn't used.
 
-WS-Management encrypts all Windows PowerShell content transmitted over the network.
-The UseSSL parameter lets you specify that the additional protection of using HTTPS instead of HTTP should be used.
-If you specify this parameter, but SSL is not available on the port used for the connection, the command fails.
+WS-Management encrypts all the PowerShell content that is transmitted over the network. The
+**UseSSL** parameter lets you specify the additional protection of HTTPS instead of HTTP. If you use
+this parameter and SSL isn't available on the port that's used for the connection, the command
+fails.
+
+**HTTPS** requires manual configuration of WinRM and firewall rules. For more information, see
+[How To: Configure WINRM for HTTPS](https://support.microsoft.com/en-us/help/2019527/how-to-configure-winrm-for-https).
 
 ```yaml
 Type: SwitchParameter
@@ -110,34 +125,32 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### CommonParameters
 
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+-InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
+-WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### None
 
-This cmdlet does not accept any input.
+This cmdlet doesn't accept any input.
 
 ## OUTPUTS
 
 ### None
 
-This cmdlet does not generate any output.
+This cmdlet doesn't generate any output.
 
 ## NOTES
 
 ## RELATED LINKS
-
-[Enable-PSRemoting](../Microsoft.PowerShell.Core/Enable-PSRemoting.md)
-
-[New-PSSession](../Microsoft.PowerShell.Core/New-PSSession.md)
 
 [Connect-WSMan](Connect-WSMan.md)
 
@@ -145,18 +158,22 @@ This cmdlet does not generate any output.
 
 [Disconnect-WSMan](Disconnect-WSMan.md)
 
+[Enable-PSRemoting](../Microsoft.PowerShell.Core/Enable-PSRemoting.md)
+
 [Enable-WSManCredSSP](Enable-WSManCredSSP.md)
 
 [Get-WSManCredSSP](Get-WSManCredSSP.md)
 
 [Get-WSManInstance](Get-WSManInstance.md)
 
+[How To: Configure WINRM for HTTPS](https://support.microsoft.com/en-us/help/2019527/how-to-configure-winrm-for-https)
+
 [Invoke-WSManAction](Invoke-WSManAction.md)
+
+[New-PSSession](../Microsoft.PowerShell.Core/New-PSSession.md)
 
 [New-WSManInstance](New-WSManInstance.md)
 
 [New-WSManSessionOption](New-WSManSessionOption.md)
 
 [Test-WSMan](Test-WSMan.md)
-
-

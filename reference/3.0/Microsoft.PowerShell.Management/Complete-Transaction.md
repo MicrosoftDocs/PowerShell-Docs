@@ -1,11 +1,11 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version: https://go.microsoft.com/fwlink/?linkid=135200
-external help file:  Microsoft.PowerShell.Commands.Management.dll-Help.xml
-title:  Complete-Transaction
+external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+ms.date: 06/09/2017
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/complete-transaction?view=powershell-3.0&WT.mc_id=ps-gethelp
+schema: 2.0.0
+title: Complete-Transaction
 ---
 
 # Complete-Transaction

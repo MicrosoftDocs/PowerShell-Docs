@@ -1,9 +1,10 @@
 ---
-ms.date:  08/28/2018
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-title:  about_Operators
+keywords: powershell,cmdlet
+locale: en-us
+ms.date: 08/28/2018
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_operators?view=powershell-7&WT.mc_id=ps-gethelp
+schema: 2.0.0
+title: about_Operators
 ---
 # About Operators
 
@@ -50,6 +51,9 @@ expressions, and (`-like`, `-notlike`) use wildcards `*`.
 
 Containment comparison operators determine whether a test value appears in a
 reference set (`-in`, `-notin`, `-contains`, `-notcontains`).
+
+Type comparison operators (`-is`, `-isnot`) determine whether an object is
+of a given type.
 
 Bitwise comparison operators (`-bAND`, `-bOR`, `-bXOR`, `-bNOT`) manipulate
 the bit patterns in values.
@@ -441,6 +445,18 @@ a scalar. For multiple results, returns an array.
 $($x * 23)
 $(Get-WmiObject win32_Directory)
 ```
+
+#### Ternary operator `? <if-true> : <if-false>`
+
+> [!NOTE]
+> This is an experimental feature. For more information see
+> [about_Experimental_Features](about_Experimental_Features.md).
+
+You can use the ternary operator as a replacement for the `if-else` statement
+in simple conditional cases. The ternary operator was introduced in PowerShell
+7.0 as an experimental feature.
+
+For more information, see [about_If](about_If.md).
 
 ## See also
 

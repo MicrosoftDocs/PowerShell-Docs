@@ -1,9 +1,10 @@
 ---
-ms.date:  04/23/2019
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-title:  about_Data_Sections
+keywords: powershell,cmdlet
+locale: en-us
+ms.date: 04/23/2019
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_data_sections?view=powershell-4.0&WT.mc_id=ps-gethelp
+schema: 2.0.0
+title: about_Data_Sections
 ---
 # About Data Sections
 

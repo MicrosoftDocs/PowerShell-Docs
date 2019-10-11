@@ -1,12 +1,12 @@
 ---
-ms.date: 11/27/2018
-schema: 2.0.0
-Locale: en-US
-keywords: powershell,cmdlet
-Help Version:  5.0.0.1
 Download Help Link: https://go.microsoft.com/fwlink/?linkid=855965
+Help Version: 5.0.0.1
+keywords: powershell,cmdlet
+Locale: en-US
 Module Guid: c61d6278-02a3-4618-ae37-a524d40a7f44
 Module Name: PSDiagnostics
+ms.date: 11/27/2018
+schema: 2.0.0
 title: PSDiagnostics Module
 ---
 # PSDiagnostics Module

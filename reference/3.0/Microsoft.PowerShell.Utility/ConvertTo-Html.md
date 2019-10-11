@@ -1,16 +1,15 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version: https://go.microsoft.com/fwlink/?linkid=113290
-external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-title:  ConvertTo-Html
+external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+ms.date: 06/09/2017
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/convertto-html?view=powershell-3.0&WT.mc_id=ps-gethelp
+schema: 2.0.0
+title: ConvertTo-Html
 ---
 # ConvertTo-Html
 
 ## SYNOPSIS
-
 Converts Microsoft .NET Framework objects into HTML that can be displayed in a Web browser.
 
 ## SYNTAX
@@ -99,7 +98,7 @@ The two commands are separated by a semicolon (;).
 
 ```
 PS> get-service | convertto-html -CssUri "test.css"
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"  "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html>
 <head>
 <title>HTML TABLE</title>

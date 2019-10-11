@@ -1,11 +1,11 @@
 ---
-ms.date:  01/22/2019
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version: https://go.microsoft.com/fwlink/?linkid=293885
-external help file:  Microsoft.PowerShell.Commands.Management.dll-Help.xml
-title:  New-EventLog
+external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+ms.date: 01/22/2019
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/new-eventlog?view=powershell-4.0&WT.mc_id=ps-gethelp
+schema: 2.0.0
+title: New-EventLog
 ---
 
 # New-EventLog

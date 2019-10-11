@@ -4,6 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: CimCmdlets
 ms.date: 5/15/2019
+online version: https://docs.microsoft.com/powershell/module/cimcmdlets/remove-ciminstance?view=powershell-4.0&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Remove-CimInstance
 ---
@@ -249,7 +250,7 @@ For example:
 - `http://intel.com/wbem/wscim/1/amt-schema/1/AMT_GeneralSettings`
 
 By default, if you do not specify this parameter, the DMTF standard resource URI
-http://schemas.dmtf.org/wbem/wscim/1/cim-schema/2/ is used and the class name is appended to it.
+`http://schemas.dmtf.org/wbem/wscim/1/cim-schema/2/` is used and the class name is appended to it.
 
 ResourceURI can only be used with CIM sessions created using the WSMan protocol, or when specifying
 the ComputerName parameter, which creates a CIM session using WSMan.

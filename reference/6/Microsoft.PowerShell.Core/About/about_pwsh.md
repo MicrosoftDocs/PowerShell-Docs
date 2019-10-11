@@ -1,8 +1,9 @@
 ---
-ms.date:  06/19/2019
-schema:  2.0.0
-keywords:  powershell,cmdlet
-title:  about_pwsh
+keywords: powershell,cmdlet
+ms.date: 06/19/2019
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_pwsh?view=powershell-6&WT.mc_id=ps-gethelp
+schema: 2.0.0
+title: about_pwsh
 ---
 # About pwsh
 

@@ -1,11 +1,11 @@
 ---
+external help file: Microsoft.PowerShell.Security.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
 ms.date: 3/22/2019
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version: https://go.microsoft.com/fwlink/?linkid=113315
-external help file:  Microsoft.PowerShell.Security.dll-Help.xml
-title:  Get-ExecutionPolicy
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.security/get-executionpolicy?view=powershell-3.0&WT.mc_id=ps-gethelp
+schema: 2.0.0
+title: Get-ExecutionPolicy
 ---
 
 # Get-ExecutionPolicy

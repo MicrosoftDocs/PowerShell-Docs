@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Core
 ms.date: 5/15/2019
-online version: https://go.microsoft.com/fwlink/?linkid=821477
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/enter-pssession?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Enter-PSSession
 ---
@@ -328,14 +328,14 @@ Specifies the session configuration that is used for the interactive session.
 
 Enter a configuration name or the fully qualified resource URI for a session configuration.
 If you specify only the configuration name, the following schema URI is prepended:
-http://schemas.microsoft.com/powershell.
+`http://schemas.microsoft.com/powershell`.
 
 The session configuration for a session is located on the remote computer.
 If the specified session configuration does not exist on the remote computer, the command fails.
 
 The default value is the value of the $PSSessionConfigurationName preference variable on the local
 computer. If this preference variable is not set, the default is Microsoft.PowerShell.
-For more information, see about_Preference_Variables.
+For more information, see [about_Preference_Variables](About/about_Preference_Variables.md).
 
 ```yaml
 Type: String

@@ -1,11 +1,12 @@
 {
     "build": {
-        "content": [
-            { "files": ["**/**.yml", "**/**.md"], "exclude": ["**/obj/**"] }
-        ],
+        "content": [{
+            "files": ["**/**.yml", "**/**.md"],
+            "exclude": ["**/obj/**", "README.md"]
+        }],
         "globalMetadata": {
             "toc_preview": true,
-            "breadcrumb_path": "bread/toc.yml",
+            "breadcrumb_path": "",
             "uhfHeaderId": "MSDocsHeader-Powershell",
             "ROBOTS": "INDEX, FOLLOW",
             "ms.prod": "powershell",
@@ -19,9 +20,10 @@
             "feedback_github_repo": "MicrosoftDocs/PowerShell-Docs",
             "feedback_product_url": "https://github.com/PowerShell/PowerShell/issues/new/choose"
         },
-        "resource": [
-            { "files": ["**/media/**", "**/*.png", "**/*.gif", "**/*.jpeg", "**/*.jpg", "**/*.svg"], "exclude": ["**/obj/**", "**/includes/**"] }
-        ],
+        "resource": [{
+            "files": ["**/media/**", "**/*.png", "**/*.gif", "**/*.jpeg", "**/*.jpg", "**/*.svg"],
+            "exclude": ["**/obj/**", "**/includes/**"]
+        }],
         "template": "op.html",
         "dest": "developer",
         "markdownEngineName": "markdig"

@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Core
 ms.date: 03/26/2019
-online version: https://go.microsoft.com/fwlink/?linkid=2096791
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/new-pssessionconfigurationfile?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: New-PSSessionConfigurationFile
 ---
@@ -1089,7 +1089,7 @@ This cmdlet does not generate any output.
 
 [Unregister-PSSessionConfiguration](Unregister-PSSessionConfiguration.md)
 
-[WSMan Provider](../Microsoft.WsMan.Management/Providers/WSMan-Provider.md)
+[WSMan Provider](../Microsoft.WsMan.Management/About/about_WSMan_Provider.md)
 
 [about_Session_Configurations](About/about_Session_Configurations.md)
 

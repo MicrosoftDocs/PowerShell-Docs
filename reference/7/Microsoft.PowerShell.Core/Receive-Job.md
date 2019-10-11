@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Core
 ms.date: 06/09/2017
-online version: https://go.microsoft.com/fwlink/?linkid=2096965
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/receive-job?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Receive-Job
 ---
@@ -171,7 +171,7 @@ Id   Name     State      HasMoreData   Location       Command
 ```
 
 ```powershell
-# Use the Receive-Job cmdlet to get the results of ust the Job3 child job that ran on the Server02 computer.
+# Use the Receive-Job cmdlet to get the results of just the Job3 child job that ran on the Server02 computer.
 # Use the *Keep* parameter to allow you to view the aggregated stream data more than once.
 Receive-Job -Name Job3 -Keep
 ```

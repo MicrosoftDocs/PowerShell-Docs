@@ -1,11 +1,11 @@
 ---
+external help file: PSGet-help.xml
+keywords: powershell,cmdlet
+locale: en-us
 ms.date: 07/02/2019
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version: https://go.microsoft.com/fwlink/?linkid=821673
-external help file:  PSGet-help.xml
-title:  Uninstall-Module
+online version: https://docs.microsoft.com/powershell/module/powershellget/uninstall-module?view=powershell-5.0&WT.mc_id=ps-gethelp
+schema: 2.0.0
+title: Uninstall-Module
 ---
 
 # Uninstall-Module

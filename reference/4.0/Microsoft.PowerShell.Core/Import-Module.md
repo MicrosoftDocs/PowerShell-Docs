@@ -3,8 +3,8 @@ external help file: System.Management.Automation.dll-Help.xml
 keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Core
-ms.date:  06/09/2017
-online version: https://go.microsoft.com/fwlink/?linkid=289591
+ms.date: 06/09/2017
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/import-module?view=powershell-4.0&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Import-Module
 ---
@@ -710,6 +710,11 @@ scriptblock, all the commands are imported into the global session state.
 
 When invoked from another module, `Import-Module` cmdlet imports the commands in a module, including
 commands from nested modules, into the caller's session state.
+
+> [!TIP]
+> You should avoid calling `Import-Module` from within a module. Instead, declare the target module
+> as a nested module in the parent module's manifest. Declaring nested modules improves the
+> discoverability of dependencies.
 
 The **Global** parameter is equivalent to the **Scope** parameter with a value of Global.
 

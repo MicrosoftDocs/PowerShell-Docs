@@ -1,9 +1,10 @@
 ---
-ms.date:  05/02/2019
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-title:  about_PowerShell_exe
+keywords: powershell,cmdlet
+locale: en-us
+ms.date: 05/02/2019
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_powershell_exe?view=powershell-4.0&WT.mc_id=ps-gethelp
+schema: 2.0.0
+title: about_PowerShell_exe
 ---
 # About PowerShell.exe
 
@@ -54,7 +55,7 @@ PowerShell.
 Starts the specified version of PowerShell. Valid values are 2.0 and
 3.0. The version that you specify must be installed on the system. If Windows
 PowerShell 3.0 is installed on the computer, "3.0" is the default version.
-Otherwise, "2.0" is the default version. For more information, see [Installing PowerShell](/powershell/scripting/install/installing-windows-powershell.md).
+Otherwise, "2.0" is the default version. For more information, see [Installing PowerShell](/powershell/scripting/install/installing-windows-powershell).
 
 #### -NoLogo
 
@@ -104,7 +105,7 @@ Maximized and Hidden.
 
 Accepts a base-64-encoded string version of a command. Use this parameter to
 submit commands to PowerShell that require complex quotation marks or curly
-braces. The string must be formatted using UTF-16 character encoding.
+braces. The string must be formatted using UTF-16LE character encoding.
 
 #### -ConfigurationName \<string\>
 

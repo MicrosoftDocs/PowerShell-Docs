@@ -1,22 +1,20 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version: https://go.microsoft.com/fwlink/?linkid=141446
-external help file:  Microsoft.WSMan.Management.dll-Help.xml
-title:  Invoke-WSManAction
+external help file: Microsoft.WSMan.Management.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+ms.date: 06/09/2017
+online version: https://docs.microsoft.com/powershell/module/microsoft.wsman.management/invoke-wsmanaction?view=powershell-3.0&WT.mc_id=ps-gethelp
+schema: 2.0.0
+title: Invoke-WSManAction
 ---
 # Invoke-WSManAction
 
 ## SYNOPSIS
-
 Invokes an action on the object that is specified by the Resource URI and by the selectors.
 
 ## SYNTAX
 
 ### URI (Default)
-
 ```
 Invoke-WSManAction [-Action] <String> [-ConnectionURI <Uri>] [-FilePath <String>] [-OptionSet <Hashtable>]
  [[-SelectorSet] <Hashtable>] [-SessionOption <SessionOption>] [-ValueSet <Hashtable>] [-ResourceURI] <Uri>
@@ -25,7 +23,6 @@ Invoke-WSManAction [-Action] <String> [-ConnectionURI <Uri>] [-FilePath <String>
 ```
 
 ### ComputerName
-
 ```
 Invoke-WSManAction [-Action] <String> [-ApplicationName <String>] [-ComputerName <String>] [-FilePath <String>]
  [-OptionSet <Hashtable>] [-Port <Int32>] [[-SelectorSet] <Hashtable>] [-SessionOption <SessionOption>]
@@ -34,7 +31,6 @@ Invoke-WSManAction [-Action] <String> [-ApplicationName <String>] [-ComputerName
 ```
 
 ## DESCRIPTION
-
 The Invoke-WSManAction runs an action on the object that is specified by RESOURCE_URI, where parameters are specified by key value pairs.
 
 This cmdlet uses the WSMan connection/transport layer to run the action.
@@ -47,7 +43,7 @@ This cmdlet uses the WSMan connection/transport layer to run the action.
 Invoke-WSManAction -Action startservice -ResourceURI wmicimv2/win32_service  -SelectorSet @{name="spooler"} -Authentication default
 ```
 
-```output
+```Output
 xsi         : http://www.w3.org/2001/XMLSchema-instance
 p           : http://schemas.microsoft.com/wbem/wsman/1/wmi/root/cimv2/Win32_Service
 cim         : http://schemas.dmtf.org/wbem/wscim/1/common
@@ -67,7 +63,7 @@ A return value of 5 indicates that the service is already started.
 Invoke-WSManAction -Action stopservice -ResourceURI wmicimv2/Win32_Service -SelectorSet @{Name="spooler"} -FilePath:input.xml -Authentication default
 ```
 
-```output
+```Output
 xsi         : http://www.w3.org/2001/XMLSchema-instance
 p           : http://schemas.microsoft.com/wbem/wsman/1/wmi/root/cimv2/Win32_Service
 cim         : http://schemas.dmtf.org/wbem/wscim/1/common
@@ -78,7 +74,7 @@ ReturnValue : 0
 This command calls the StopService method on the Spooler service by using input from a file.
 The file, Input.xml, contains the following content:
 
-\<p:StopService_INPUT xmlns:p="http://schemas.microsoft.com/wbem/wsman/1/wmi/root/cimv2/Win32_Service"/\>
+`<p:StopService_INPUT xmlns:p="http://schemas.microsoft.com/wbem/wsman/1/wmi/root/cimv2/Win32_Service" />`
 
 The return value indicates whether the action was successful.
 In this case, a return value of 0 indicates success.
@@ -90,7 +86,7 @@ A return value of 5 indicates that the service is already started.
 Invoke-WSManAction -Action create -ResourceURI wmicimv2/win32_process -ValueSet @{commandline="notepad.exe";currentdirectory="C:\"}
 ```
 
-```output
+```Output
 xsi         : http://www.w3.org/2001/XMLSchema-instance
 p           : http://schemas.microsoft.com/wbem/wsman/1/wmi/root/cimv2/Win32_Process
 cim         : http://schemas.dmtf.org/wbem/wscim/1/common
@@ -109,7 +105,7 @@ As a result, a new process is created to run Notepad, and the current directory 
 Invoke-WSManAction -Action startservice -ResourceURI wmicimv2/win32_service  -SelectorSet @{name="spooler"} -ComputerName server01 -Authentication default
 ```
 
-```output
+```Output
 xsi         : http://www.w3.org/2001/XMLSchema-instance
 p           : http://schemas.microsoft.com/wbem/wsman/1/wmi/root/cimv2/Win32_Service
 cim         : http://schemas.dmtf.org/wbem/wscim/1/common
@@ -152,7 +148,7 @@ The complete identifier for the remote endpoint is in the following format:
 
 For example:
 
-http://server01:8080/WSMAN
+`http://server01:8080/WSMAN`
 
 Internet Information Services (IIS), which hosts the session, forwards requests with this endpoint to the specified application.
 This default setting of "WSMAN" is appropriate for most uses.
@@ -251,7 +247,7 @@ The format of this string is:
 
 The following string is a properly formatted value for this parameter:
 
-http://Server01:8080/WSMAN
+`http://Server01:8080/WSMAN`
 
 The URI must be fully qualified.
 
@@ -298,7 +294,7 @@ invoke-wsmanaction -action stopservice -resourceuri wmicimv2/Win32_Service -Sele
 This command calls the StopService method on the Spooler service by using input from a file.
 The file, Input.xml, contains the following content:
 
-\<p:StopService_INPUT xmlns:p="http://schemas.microsoft.com/wbem/wsman/1/wmi/root/cimv2/Win32_Service"/\>
+`<p:StopService_INPUT xmlns:p="http://schemas.microsoft.com/wbem/wsman/1/wmi/root/cimv2/Win32_Service" />`
 
 ```yaml
 Type: String
@@ -363,9 +359,9 @@ The URI is used to identify a specific type of resource, such as disks or proces
 A URI consists of a prefix and a path to a resource.
 For example:
 
-http://schemas.microsoft.com/wbem/wsman/1/wmi/root/cimv2/Win32_LogicalDisk
+`http://schemas.microsoft.com/wbem/wsman/1/wmi/root/cimv2/Win32_LogicalDisk`
 
-http://schemas.dmtf.org/wbem/wscim/1/cim-schema/2/CIM_NumericSensor
+`http://schemas.dmtf.org/wbem/wscim/1/cim-schema/2/CIM_NumericSensor`
 
 ```yaml
 Type: Uri
@@ -503,5 +499,4 @@ This cmdlet does not generate any output.
 [Set-WSManQuickConfig](Set-WSManQuickConfig.md)
 
 [Test-WSMan](Test-WSMan.md)
-
 

@@ -1,9 +1,10 @@
-﻿---
-ms.date:  12/01/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-title:  about_Remote_FAQ
+---
+keywords: powershell,cmdlet
+locale: en-us
+ms.date: 12/01/2017
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_remote_faq?view=powershell-3.0&WT.mc_id=ps-gethelp
+schema: 2.0.0
+title: about_Remote_FAQ
 ---
 # About Remote FAQ
 
@@ -52,8 +53,8 @@ session on the local computer.
 
 To transmit the commands and receive the output, Windows PowerShell uses the
 WS-Management protocol. For information about the WS-Management protocol, see
-[WS-Management Protocol](http://go.microsoft.com/fwlink/?LinkId=144634) in
-the MSDN library.
+[WS-Management Protocol](/windows/win32/winrm/ws-management-protocol) in
+the Windows documentation.
 
 Beginning in Windows PowerShell 3.0, remote sessions are stored on the remote
 computer. This enables you to disconnect from the session and reconnect from a

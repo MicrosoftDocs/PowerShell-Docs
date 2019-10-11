@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Core
 ms.date: 03/28/2019
-online version: https://go.microsoft.com/fwlink/?linkid=144308
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/unregister-pssessionconfiguration?view=powershell-3.0&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Unregister-PSSessionConfiguration
 ---
@@ -86,7 +86,7 @@ PS> New-PSSession -ConfigurationName MaintenanceShell
 
 [localhost] Connecting to remote server failed with the following error message :
  The WS-Management service cannot process the request.
- The resource URI (http://schemas.microsoft.com/powershell/MaintenanceShell) was not found in the WS-Management catalog.
+ The resource URI (https://schemas.microsoft.com/powershell/MaintenanceShell) was not found in the WS-Management catalog.
  The catalog contains the metadata that describes resources, or logical endpoints.
  For more information, see the about_Remote_Troubleshooting Help topic.
  + CategoryInfo          : OpenError: (System.Manageme....RemoteRunspace:RemoteRunspace) [], PSRemotingTransportException

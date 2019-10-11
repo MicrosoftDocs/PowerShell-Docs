@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Management
 ms.date: 6/17/2019
-online version: https://go.microsoft.com/fwlink/?linkid=821625
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/restart-computer?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Restart-Computer
 ---
@@ -528,10 +528,11 @@ output is generated.
 
 ## NOTES
 
-`Restart-Computer` uses the
-[Win32Shutdown method](/windows/desktop/CIMWin32Prov/win32shutdown-method-in-class-win32-operatingsystem)
-of the Windows Management Instrumentation (WMI) [Win32_OperatingSystem](/windows/desktop/CIMWin32Prov/win32-operatingsystem)
-class.
+- `Restart-Computer` only work on computers running Windows and requires WinRM and WMI to shutdown a
+  system, including the local system.
+- `Restart-Computer` uses the [Win32Shutdown method](/windows/desktop/CIMWin32Prov/win32shutdown-method-in-class-win32-operatingsystem)
+  of the Windows Management Instrumentation (WMI) [Win32_OperatingSystem](/windows/desktop/CIMWin32Prov/win32-operatingsystem)
+  class.
 
 In Windows PowerShell 2.0, the **AsJob** parameter doesn't work reliably when you are restarting or
 stopping remote computers. In Windows PowerShell 3.0, the implementation is changed to resolve this
@@ -542,7 +543,5 @@ problem.
 [About Windows Remote Management](/windows/desktop/WinRM/about-windows-remote-management)
 
 [Get-Credential](../Microsoft.PowerShell.Security/Get-Credential.md)
-
-[Microsoft.PowerShell.Management](Microsoft.PowerShell.Management.md)
 
 [WS-Management Protocol](/windows/desktop/WinRM/ws-management-protocol)

@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Diagnostics
 ms.date: 6/21/2019
-online version: https://go.microsoft.com/fwlink/?linkid=138335
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.diagnostics/get-counter?view=powershell-3.0&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Counter
 ---
@@ -638,8 +638,6 @@ command. To set different values for different counters, enter separate `Get-Cou
 [Format-Table](../Microsoft.PowerShell.Utility/Format-Table.md)
 
 [Get-Member](../Microsoft.PowerShell.Utility/Get-Member.md)
-
-[Microsoft.PowerShell.Diagnostics](Microsoft.PowerShell.Diagnostics.md)
 
 [Receive-Job](../Microsoft.PowerShell.Core/Receive-Job.md)
 

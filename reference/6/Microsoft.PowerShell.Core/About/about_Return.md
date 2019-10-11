@@ -1,9 +1,10 @@
 ---
-ms.date:  01/03/2018
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-title:  about_Return
+keywords: powershell,cmdlet
+locale: en-us
+ms.date: 01/03/2018
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_return?view=powershell-6&WT.mc_id=ps-gethelp
+schema: 2.0.0
+title: about_Return
 ---
 # About Return
 
@@ -21,13 +22,13 @@ Users who are familiar with languages like C or C\# might want to use the
 `return` keyword to make the logic of leaving a scope explicit.
 
 In PowerShell, the results of each statement are returned as output, even
-without a statement that contains the Return keyword. Languages like C or C\#
+without a statement that contains the `return` keyword. Languages like C or C\#
 return only the value or values that are specified by the `return` keyword.
 
 > [!NOTE]
 > Beginning in PowerShell 5.0, PowerShell added language for defining
 > classes, by using formal syntax.  In the context of a PowerShell class,
-> nothing is output from a method except what you specify using a
+> nothing is output from a method except what you specify a
 > `return` statement. You can read more about PowerShell classes in
 > [about_Classes](about_Classes.md).
 
@@ -52,7 +53,7 @@ return (2 + $a)
 
 The following example uses the `return` keyword to exit a function at a
 specific point if a conditional is met. Odd numbers are not multiplied
-because the return statement exits before that statement can execute.
+because the `return` statement exits before that statement can execute.
 
 ```powershell
 function MultiplyEven

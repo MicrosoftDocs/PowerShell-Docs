@@ -1,0 +1,34 @@
+{
+    "build": {
+        "content": [{
+            "files": ["**/**.md", "**/**.yml"],
+            "exclude": ["**/obj/**","README.md"]
+        }],
+        "globalMetadata": {
+            "toc_preview": true,
+            "breadcrumb_path": "",
+            "uhfHeaderId": "MSDocsHeader-Powershell",
+            "ROBOTS": "INDEX, FOLLOW",
+            "ms.devlang": "powershell",
+            "ms.tgt_pltfr": "windows, macos, linux",
+            "feedback_system": "GitHub",
+            "feedback_github_repo": "MicrosoftDocs/PowerShell-Docs",
+            "feedback_product_url": "https://github.com/powershell/jea/issues/new"
+        },
+        "fileMetadata": {
+            "ms.prod": { "**/**.md": "powershell" },
+            "ms.technology": { "**/**.md": "powershell-jea" },
+            "ms.topic": { "**/**.md": "conceptual" },
+            "manager": { "**/**.md": "carmonm" },
+            "author": { "**/**.md": "rpsqrd" },
+            "ms.author": { "**/**.md": "ryanpu" }
+        },
+        "resource": [{
+            "files": ["**/images/**"],
+            "exclude": ["**/obj/**"]
+        }],
+        "template": "op.html",
+        "dest": "jea",
+        "markdownEngineName": "markdig"
+    }
+}

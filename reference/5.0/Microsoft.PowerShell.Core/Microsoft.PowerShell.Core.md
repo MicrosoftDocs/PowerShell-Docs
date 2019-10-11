@@ -1,13 +1,13 @@
 ---
-ms.date:  02/28/2019
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-Help Version:  5.0.7.4
-Download Help Link:  https://go.microsoft.com/fwlink/?linkid=390782
-Module Guid:  00000000-0000-0000-0000-000000000000
-title:  Microsoft.PowerShell.Core
-Module Name:  Microsoft.PowerShell.Core
+Download Help Link: https://go.microsoft.com/fwlink/?linkid=390782
+Help Version: 5.0.7.4
+keywords: powershell,cmdlet
+locale: en-us
+Module Guid: 00000000-0000-0000-0000-000000000000
+Module Name: Microsoft.PowerShell.Core
+ms.date: 02/28/2019
+schema: 2.0.0
+title: Microsoft.PowerShell.Core
 ---
 # Microsoft.PowerShell.Core Module
 
@@ -105,9 +105,6 @@ Runs commands on local and remote computers.
 
 ### [Invoke-History](Invoke-History.md)
 Runs commands from the session history.
-
-### [Microsoft.PowerShell.Core](Microsoft.PowerShell.Core.md)
-This section contains the help topics for the cmdlets that are installed with PowerShell Microsoft.PowerShell.Core module. The Core module contains cmdlets and providers that manage the basic features of PowerShell.
 
 ### [New-Module](New-Module.md)
 Creates a new dynamic module that exists only in memory.

@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Core
 ms.date: 5/15/2019
-online version: https://go.microsoft.com/fwlink/?linkid=821498
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/new-pssession?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: New-PSSession
 ---
@@ -401,8 +401,7 @@ Accept wildcard characters: False
 Specifies the session configuration that is used for the new **PSSession**.
 
 Enter a configuration name or the fully qualified resource URI for a session configuration.
-If you specify only the configuration name, the following schema URI is prepended:
-http://schemas.microsoft.com/PowerShell.
+If you specify only the configuration name, the following schema URI is prepended: `http://schemas.microsoft.com/PowerShell`.
 
 The session configuration for a session is located on the remote computer.
 If the specified session configuration does not exist on the remote computer, the command fails.

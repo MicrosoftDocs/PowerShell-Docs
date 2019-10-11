@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Utility
 ms.date: 5/10/2019
-online version: https://go.microsoft.com/fwlink/?linkid=113349
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/measure-object?view=powershell-3.0&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Measure-Object
 ---

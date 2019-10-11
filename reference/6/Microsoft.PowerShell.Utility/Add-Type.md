@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Utility
 ms.date: 08/26/2019
-online version: https://go.microsoft.com/fwlink/?linkid=2096418
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/add-type?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Add-Type
 ---
@@ -498,6 +498,9 @@ Accept wildcard characters: False
 Specifies the assemblies upon which the type depends. By default, `Add-Type` references `System.dll`
 and `System.Management.Automation.dll`. The assemblies that you specify by using this parameter are
 referenced in addition to the default assemblies.
+
+Beginning in PowerShell 6, **ReferencedAssemblies** doesn't include the default .NET assemblies. You
+must include a specific reference to them in the value passed to this parameter.
 
 You can't use the **CompilerOptions** and **ReferencedAssemblies** parameters in the same command.
 

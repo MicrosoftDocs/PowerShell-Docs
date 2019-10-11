@@ -1,9 +1,10 @@
 ---
-ms.date:  12/01/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-title:  about_Types.ps1xml
+keywords: powershell,cmdlet
+locale: en-us
+ms.date: 12/01/2017
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_types.ps1xml?view=powershell-4.0&WT.mc_id=ps-gethelp
+schema: 2.0.0
+title: about_Types.ps1xml
 ---
 
 # About Types.ps1xml
@@ -45,7 +46,7 @@ Sunday, January 29, 2012 9:43:57 AM
 ```
 
 You won't find the `DateTime` property in the description of the
-[`System.DateTime` structure](http://msdn.microsoft.com/library/system.datetime.aspx),
+[`System.DateTime` structure](/dotnet/api/system.datetime),
 because PowerShell adds the property and it is visible only in Windows
 PowerShell.
 
@@ -555,9 +556,8 @@ property of the `GetVersionInfo` static method of
 </Type>
 ```
 
-For more information, see the [Windows PowerShell Software Development
-Kit (SDK) in the MSDN (Microsoft Developer Network)
-library](http://go.microsoft.com/fwlink/?LinkId=144538).
+For more information, see the
+[Windows PowerShell Software Development Kit (SDK)](/powershell/developer/windows-powershell).
 
 ## `Update-TypeData`
 

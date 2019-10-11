@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Core
 ms.date: 5/15/2019
-online version: https://go.microsoft.com/fwlink/?linkid=2096174
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/enter-pssession?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Enter-PSSession
 ---
@@ -362,7 +362,7 @@ Specifies the session configuration that is used for the interactive session.
 
 Enter a configuration name or the fully qualified resource URI for a session configuration.
 If you specify only the configuration name, the following schema URI is prepended:
-http://schemas.microsoft.com/powershell.
+`http://schemas.microsoft.com/powershell`.
 
 When used with SSH, this specifies the subsystem to use on the target as defined in sshd_config.
 The default value for SSH is the `powershell` subsystem.
