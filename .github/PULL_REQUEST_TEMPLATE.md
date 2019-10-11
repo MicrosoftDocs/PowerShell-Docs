@@ -4,11 +4,11 @@
 ## PR Context
 <!--
 There is a numbered folder for each version of the PowerShell cmdlet content. Changes to cmdlet
-content should be made to all versions where applicable. The /docs-conceptual folder tree does not
-have version folders.
+reference should be made to all versions where applicable. The /docs-conceptual folder tree does
+not have version folders.
 -->
 
-Version(s) of documents impacted
+Select the type(s) of documents being changed.
 
 **Cmdlet reference & about_ topics**
 - [ ] Version 7 content
