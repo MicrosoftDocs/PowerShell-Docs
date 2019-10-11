@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.WSMan.Management
 ms.date: 08/20/2019
-online version: https://go.microsoft.com/fwlink/?linkid=821727
+online version: https://docs.microsoft.com/powershell/module/microsoft.wsman.management/enable-wsmancredssp?view=powershell-5.0&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Enable-WSManCredSSP
 ---

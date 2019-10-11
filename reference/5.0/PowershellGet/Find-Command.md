@@ -1,11 +1,11 @@
 ---
+external help file: PSModule-help.xml
+keywords: powershell,cmdlet
+locale: en-us
 ms.date: 06/03/2019
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version: https://go.microsoft.com/fwlink/?linkid=822318
-external help file:  PSModule-help.xml
-title:  Find-Command
+online version: https://docs.microsoft.com/powershell/module/powershellget/find-command?view=powershell-5.0&WT.mc_id=ps-gethelp
+schema: 2.0.0
+title: Find-Command
 ---
 
 # Find-Command

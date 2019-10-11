@@ -1,8 +1,9 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-keywords:  powershell,cmdlet
-title:  about_Comment_Based_Help
+keywords: powershell,cmdlet
+ms.date: 06/09/2017
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_comment_based_help?view=powershell-5.0&WT.mc_id=ps-gethelp
+schema: 2.0.0
+title: about_Comment_Based_Help
 ---
 # About Comment Based Help
 

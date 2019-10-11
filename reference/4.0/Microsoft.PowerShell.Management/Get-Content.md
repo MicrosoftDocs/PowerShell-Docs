@@ -1,11 +1,11 @@
 ---
+external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
 ms.date: 04/23/2019
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version: https://go.microsoft.com/fwlink/?linkid=290491
-external help file:  Microsoft.PowerShell.Commands.Management.dll-Help.xml
-title:  Get-Content
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/get-content?view=powershell-4.0&WT.mc_id=ps-gethelp
+schema: 2.0.0
+title: Get-Content
 ---
 # Get-Content
 

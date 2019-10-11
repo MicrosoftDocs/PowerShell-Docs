@@ -1,11 +1,11 @@
 ---
+external help file: System.Management.Automation.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
 ms.date: 5/15/2019
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version: https://go.microsoft.com/fwlink/?linkid=135219
-external help file:  System.Management.Automation.dll-Help.xml
-title:  Get-PSSession
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/get-pssession?view=powershell-3.0&WT.mc_id=ps-gethelp
+schema: 2.0.0
+title: Get-PSSession
 ---
 # Get-PSSession
 

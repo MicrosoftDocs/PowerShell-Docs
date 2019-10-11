@@ -1,13 +1,13 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-Help Version:  5.0.5.3
-Download Help Link:  https://go.microsoft.com/fwlink/?linkid=392040
-Module Guid:  4ae9fd46-338a-459c-8186-07f910774cb8
-title:  PackageManagement
-Module Name:  PackageManagement
+Download Help Link: https://go.microsoft.com/fwlink/?linkid=392040
+Help Version: 5.0.5.3
+keywords: powershell,cmdlet
+locale: en-us
+Module Guid: 4ae9fd46-338a-459c-8186-07f910774cb8
+Module Name: PackageManagement
+ms.date: 06/09/2017
+schema: 2.0.0
+title: PackageManagement
 ---
 # PackageManagement Module
 

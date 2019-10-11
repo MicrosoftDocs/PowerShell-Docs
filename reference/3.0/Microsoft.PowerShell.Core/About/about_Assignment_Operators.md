@@ -1,8 +1,9 @@
-﻿---
-ms.date:  11/27/2017
-schema:  2.0.0
-keywords:  powershell,cmdlet
-title:  about_Assignment_Operators
+---
+keywords: powershell,cmdlet
+ms.date: 11/27/2017
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_assignment_operators?view=powershell-3.0&WT.mc_id=ps-gethelp
+schema: 2.0.0
+title: about_Assignment_Operators
 ---
 
 # About Assignment Operators

@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: PSDesiredStateConfiguration
 ms.date: 08/19/2019
-online version: https://go.microsoft.com/fwlink/?linkid=821463
+online version: https://docs.microsoft.com/powershell/module/psdesiredstateconfiguration/stop-dscconfiguration?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Stop-DscConfiguration
 ---

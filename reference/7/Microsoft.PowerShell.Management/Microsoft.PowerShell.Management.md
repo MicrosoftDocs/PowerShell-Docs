@@ -1,13 +1,13 @@
 ---
-ms.date:  03/01/2019
-schema:  2.0.0
-locale:  en-US
-keywords:  powershell,cmdlet
-Help Version:  6.1.0.1
-Download Help Link:  https://go.microsoft.com/fwlink/?linkid=855958
-Module Guid:  eefcb906-b326-4e99-9f54-8b4bb6ef3c6d
-title:  Microsoft.PowerShell.Management
-Module Name:  Microsoft.PowerShell.Management
+Download Help Link: https://go.microsoft.com/fwlink/?linkid=855958
+Help Version: 6.1.0.1
+keywords: powershell,cmdlet
+locale: en-US
+Module Guid: eefcb906-b326-4e99-9f54-8b4bb6ef3c6d
+Module Name: Microsoft.PowerShell.Management
+ms.date: 03/01/2019
+schema: 2.0.0
+title: Microsoft.PowerShell.Management
 ---
 # Microsoft.PowerShell.Management Module
 

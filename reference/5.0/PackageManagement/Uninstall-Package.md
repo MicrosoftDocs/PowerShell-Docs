@@ -1,11 +1,11 @@
 ---
+external help file: Microsoft.PowerShell.PackageManagement.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
 ms.date: 05/24/2019
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version: https://go.microsoft.com/fwlink/?linkid=517142
-external help file:  Microsoft.PowerShell.PackageManagement.dll-Help.xml
-title:  Uninstall-Package
+online version: https://docs.microsoft.com/powershell/module/packagemanagement/uninstall-package?view=powershell-5.0&WT.mc_id=ps-gethelp
+schema: 2.0.0
+title: Uninstall-Package
 ---
 
 # Uninstall-Package

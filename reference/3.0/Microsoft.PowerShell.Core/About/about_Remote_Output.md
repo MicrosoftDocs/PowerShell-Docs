@@ -1,9 +1,10 @@
-﻿---
-ms.date:  12/01/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-title:  about_Remote_Output
+---
+keywords: powershell,cmdlet
+locale: en-us
+ms.date: 12/01/2017
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_remote_output?view=powershell-3.0&WT.mc_id=ps-gethelp
+schema: 2.0.0
+title: about_Remote_Output
 ---
 # About Remote Output
 

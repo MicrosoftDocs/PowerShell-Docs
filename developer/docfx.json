@@ -2,11 +2,11 @@
     "build": {
         "content": [{
             "files": ["**/**.yml", "**/**.md"],
-            "exclude": ["**/obj/**","README.md"]
+            "exclude": ["**/obj/**", "README.md"]
         }],
         "globalMetadata": {
             "toc_preview": true,
-            "breadcrumb_path": "bread/toc.yml",
+            "breadcrumb_path": "",
             "uhfHeaderId": "MSDocsHeader-Powershell",
             "ROBOTS": "INDEX, FOLLOW",
             "ms.prod": "powershell",

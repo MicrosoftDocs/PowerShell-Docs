@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: PowerShellGet
 ms.date: 06/09/2017
-online version: https://go.microsoft.com/fwlink/?linkid=2096946
+online version: https://docs.microsoft.com/powershell/module/powershellget/find-script?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Find-Script
 ---

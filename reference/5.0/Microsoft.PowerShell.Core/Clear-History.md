@@ -1,11 +1,11 @@
 ---
-ms.date:  2/22/2019
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version: https://go.microsoft.com/fwlink/?linkid=821470
-external help file:  System.Management.Automation.dll-Help.xml
-title:  Clear-History
+external help file: System.Management.Automation.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+ms.date: 2/22/2019
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/clear-history?view=powershell-5.0&WT.mc_id=ps-gethelp
+schema: 2.0.0
+title: Clear-History
 ---
 
 # Clear-History

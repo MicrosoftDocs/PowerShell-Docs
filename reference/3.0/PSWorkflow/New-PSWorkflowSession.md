@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: PSWorkflow
 ms.date: 07/10/2019
-online version: https://go.microsoft.com/fwlink/?linkid=238268
+online version: https://docs.microsoft.com/powershell/module/psworkflow/new-psworkflowsession?view=powershell-3.0&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: New-PSWorkflowSession
 ---

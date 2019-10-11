@@ -1,11 +1,11 @@
 ---
-ms.date:  12/13/2018
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version: https://go.microsoft.com/fwlink/?linkid=293987
-external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-title:  Invoke-RestMethod
+external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+ms.date: 12/13/2018
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/invoke-restmethod?view=powershell-4.0&WT.mc_id=ps-gethelp
+schema: 2.0.0
+title: Invoke-RestMethod
 ---
 # Invoke-RestMethod
 

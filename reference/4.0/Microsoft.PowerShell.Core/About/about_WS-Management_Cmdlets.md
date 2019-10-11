@@ -1,9 +1,10 @@
 ---
-ms.date:  01/04/2018
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-title:  about_WS Management_Cmdlets
+keywords: powershell,cmdlet
+locale: en-us
+ms.date: 01/04/2018
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_ws-management_cmdlets?view=powershell-4.0&WT.mc_id=ps-gethelp
+schema: 2.0.0
+title: about_WS Management_Cmdlets
 ---
 
 # About WS-Management Cmdlets

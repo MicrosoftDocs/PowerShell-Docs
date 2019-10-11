@@ -1,9 +1,10 @@
 ---
-ms.date:  06/03/2019
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-title:  about_Object_Creation
+keywords: powershell,cmdlet
+locale: en-us
+ms.date: 06/03/2019
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_object_creation?view=powershell-5.0&WT.mc_id=ps-gethelp
+schema: 2.0.0
+title: about_Object_Creation
 ---
 # About Object Creation
 

@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: PSReadLine
 ms.date: 09/23/2019
-online version: https://go.microsoft.com/fwlink/?linkid=821453
+online version: https://docs.microsoft.com/powershell/module/psreadline/set-psreadlineoption?view=powershell-5.0&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-PSReadLineOption
 ---

@@ -1,9 +1,10 @@
 ---
-ms.date:  01/18/2019
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-title:  about_Comparison_Operators
+keywords: powershell,cmdlet
+locale: en-us
+ms.date: 01/18/2019
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_comparison_operators?view=powershell-5.0&WT.mc_id=ps-gethelp
+schema: 2.0.0
+title: about_Comparison_Operators
 ---
 # About Comparison Operators
 

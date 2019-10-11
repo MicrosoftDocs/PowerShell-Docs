@@ -1,11 +1,11 @@
 ---
-ms.date:  10/18/2018
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version: https://go.microsoft.com/fwlink/?linkid=293883
-external help file:  Microsoft.PowerShell.Commands.Management.dll-Help.xml
-title:  Move-Item
+external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+ms.date: 10/18/2018
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/move-item?view=powershell-4.0&WT.mc_id=ps-gethelp
+schema: 2.0.0
+title: Move-Item
 ---
 # Move-Item
 

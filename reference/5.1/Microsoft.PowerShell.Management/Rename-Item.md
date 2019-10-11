@@ -1,11 +1,11 @@
 ---
+external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
 ms.date: 10/03/2019
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version: https://go.microsoft.com/fwlink/?linkid=821621
-external help file:  Microsoft.PowerShell.Commands.Management.dll-Help.xml
-title:  Rename-Item
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/rename-item?view=powershell-5.1&WT.mc_id=ps-gethelp
+schema: 2.0.0
+title: Rename-Item
 ---
 # Rename-Item
 

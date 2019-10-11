@@ -12,7 +12,7 @@ are overwritten.
 If you are submitting a change to documentation that only applies to an unreleased version of
 PowerShell, check to see if there is a release branch for that version. All changes that apply to
 a specific, future version should be targeted at the release branch. Release branches have the
-following name pattern: `release-<verison>`.
+following name pattern: `release-<version>`.
 
 ## Make the pull request queue work better for everyone
 

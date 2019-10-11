@@ -1,11 +1,11 @@
 ---
+external help file: System.Management.Automation.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
 ms.date: 5/20/2019
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version: https://go.microsoft.com/fwlink/?linkid=821507
-external help file:  System.Management.Automation.dll-Help.xml
-title:  Register-ArgumentCompleter
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/register-argumentcompleter?view=powershell-5.0&WT.mc_id=ps-gethelp
+schema: 2.0.0
+title: Register-ArgumentCompleter
 ---
 # Register-ArgumentCompleter
 
