@@ -19,12 +19,12 @@ the OS in separate steps.
 All packages are available on our GitHub [releases][] page. After the package is installed, run
 `pwsh` from a terminal. Run `pwsh-preview` if you installed a [Preview release](#installing-preview-releases).
 
-[u16]: #ubuntu-1604
-[u1804]: #ubuntu-1804
-[u1810]: #ubuntu-1810
-[u1904]: #ubuntu-1904
-[deb8]: #debian-8
-[deb9]: #debian-9
+[u16]: #ubuntu-1604-lts-xenial-xerus-and-1804-lts-bionic-beaver
+[u1804]: #ubuntu-1604-lts-xenial-xerus-and-1804-lts-bionic-beaver
+[u1810]: #ubuntu-1810-cosmic-cuttlefish-and-1904-disco-dingo
+[u1904]: #ubuntu-1810-cosmic-cuttlefish-and-1904-disco-dingo
+[deb8]: #debian-8-jessie-and-9-stretch
+[deb9]: #debian-8-jessie-and-9-stretch
 [cos]: #centos-7
 [rhel7]: #red-hat-enterprise-linux-rhel-7
 [opensuse]: #opensuse
@@ -49,59 +49,9 @@ various package managers:
 | CentOS, RedHat |`sudo yum install -y powershell` | `sudo yum install -y powershell-preview`|
 | Fedora   |`sudo dnf install -y powershell` | `sudo dnf install -y powershell-preview`|
 
-## Ubuntu 16.04
+## Ubuntu 16.04 LTS (Xenial Xerus) and 18.04 LTS (Bionic Beaver)
 
-### Installation via Package Repository - Ubuntu 16.04
-
-PowerShell Core for Linux is published to package repositories for easy installation and updates.
-
-The preferred method is as follows:
-
-```sh
-# Download the Microsoft repository GPG keys
-wget -q https://packages.microsoft.com/config/ubuntu/$(. /etc/os-release && echo $VERSION_ID)/packages-microsoft-prod.deb
-
-# Register the Microsoft repository GPG keys
-sudo dpkg -i packages-microsoft-prod.deb
-
-# Update the list of products
-sudo apt-get update
-
-# Install PowerShell
-sudo apt-get install -y powershell
-
-# Start PowerShell
-pwsh
-```
-
-As superuser, register the Microsoft repository once. After registration, you can update
-PowerShell with `sudo apt-get upgrade powershell`.
-
-### Installation via Direct Download - Ubuntu 16.04
-
-Download the Debian package `powershell_6.2.0-1.ubuntu.16.04_amd64.deb` from the [releases][] page
-onto the Ubuntu machine.
-
-Then, in the terminal, execute the following commands:
-
-```sh
-sudo dpkg -i powershell_6.2.0-1.ubuntu.16.04_amd64.deb
-sudo apt-get install -f
-```
-
-> [!NOTE]
-> The `dpkg -i` command fails with unmet dependencies. The next command, `apt-get install -f`
-> resolves these issues then finishes configuring the PowerShell package.
-
-### Uninstallation - Ubuntu 16.04
-
-```sh
-sudo apt-get remove powershell
-```
-
-## Ubuntu 18.04
-
-### Installation via Package Repository - Ubuntu 18.04
+### Installation via Package Repository - Ubuntu 16.04 and 18.04
 
 PowerShell Core for Linux is published to package repositories for easy installation and updates.
 
@@ -130,15 +80,13 @@ pwsh
 As superuser, register the Microsoft repository once. After registration, you can update
 PowerShell with `sudo apt-get upgrade powershell`.
 
-### Installation via Direct Download - Ubuntu 18.04
+### Installation via Direct Download - Ubuntu 16.04 and 18.04
 
-Download the Debian package `powershell_6.2.0-1.ubuntu.18.04_amd64.deb` from the [releases][] page
-onto the Ubuntu machine.
-
-Then, in the terminal, execute the following commands:
+Execute the following commands in the terminal:
 
 ```sh
-sudo dpkg -i powershell_6.2.0-1.ubuntu.18.04_amd64.deb
+wget -qO pwsh.deb https://github.com/PowerShell/PowerShell/releases/download/v6.2.3/powershell_6.2.3-1.ubuntu.$(. /etc/os-release && echo $VERSION_ID)_amd64.deb
+sudo dpkg -i pwsh.deb
 sudo apt-get install -f
 ```
 
@@ -146,61 +94,23 @@ sudo apt-get install -f
 > The `dpkg -i` command fails with unmet dependencies. The next command, `apt-get install -f`
 > resolves these issues then finishes configuring the PowerShell package.
 
-### Uninstallation - Ubuntu 18.04
+### Uninstallation - Ubuntu 16.04 and 18.04
 
 ```sh
 sudo apt-get remove powershell
 ```
 
-## Ubuntu 18.10
+
+## Ubuntu 18.10 (Cosmic Cuttlefish) and 19.04 (Disco Dingo)
 
 Installation is supported via `snapd`. For instructions, see [Snap Package][snap].
 
 > [!NOTE]
-> Ubuntu 18.10 is an [interim release](https://www.ubuntu.com/about/release-cycle) that's [community supported](../powershell-support-lifecycle.md).
+> Ubuntu 18.10 and 19.04 are an [interim release](https://www.ubuntu.com/about/release-cycle) that's [community supported](../powershell-support-lifecycle.md).
 
-## Ubuntu 19.04
+## Debian 8 (jessie) and 9 (stretch)
 
-Installation is supported via `snapd`. For instructions, see [Snap Package][snap].
-
-> [!NOTE]
-> Ubuntu 19.04 is an [interim release](https://www.ubuntu.com/about/release-cycle) that's [community supported](../powershell-support-lifecycle.md).
-
-## Debian 8
-
-### Installation via Package Repository - Debian 8
-
-PowerShell Core for Linux is published to package repositories for easy installation and updates.
-
-The preferred method is as follows:
-
-```sh
-# Install system components
-sudo apt-get update
-sudo apt-get install -y curl apt-transport-https
-
-# Import the public repository GPG keys
-curl https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
-
-# Register the Microsoft Product feed
-sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/microsoft-$(. /etc/os-release && echo $ID-$VERSION_CODENAME-prod $VERSION_CODENAME) main" > /etc/apt/sources.list.d/microsoft.list'
-
-# Update the list of products
-sudo apt-get update
-
-# Install PowerShell
-sudo apt-get install -y powershell
-
-# Start PowerShell
-pwsh
-```
-
-As superuser, register the Microsoft repository once. After registration, you can update
-PowerShell with `sudo apt-get upgrade powershell`.
-
-## Debian 9
-
-### Installation via Package Repository - Debian 9
+### Installation via Package Repository - Debian
 
 PowerShell Core for Linux is published to package repositories for easy installation and updates.
 
@@ -232,13 +142,13 @@ PowerShell with `sudo apt-get upgrade powershell`.
 
 ### Installation via Direct Download - Debian 9
 
-Download the Debian package `powershell_6.2.0-1.debian.9_amd64.deb` from the [releases][] page onto
+Download the Debian package `powershell_6.2.3-1.debian.9_amd64.deb` from the [releases][] page onto
 the Debian machine.
 
 Then, in the terminal, execute the following commands:
 
 ```sh
-sudo dpkg -i powershell_6.2.0-1.debian.9_amd64.deb
+sudo dpkg -i powershell_6.2.3-1.debian.9_amd64.deb
 sudo apt-get install -f
 ```
 

@@ -118,7 +118,7 @@ an SSH subsystem to host a PowerShell process on the remote computer. And, you m
 ## Set up on an Ubuntu 16.04 Linux computer
 
 1. Install the latest version of PowerShell, see
-   [Installing PowerShell Core on Linux](../../install/installing-powershell-core-on-linux.md#ubuntu-1604).
+   [Installing PowerShell Core on Linux](../../install/installing-powershell-core-on-linux.md#ubuntu-1604-lts-xenial-xerus-and-1804-lts-bionic-beaver).
 1. Install [Ubuntu OpenSSH Server](https://help.ubuntu.com/lts/serverguide/openssh-server.html).
 
    ```bash
@@ -344,7 +344,7 @@ The **sudo** command doesn't work in a remote session to a Linux computer.
 
 ## See also
 
-[Installing PowerShell Core on Linux](../../install/installing-powershell-core-on-linux.md#ubuntu-1604)
+[Installing PowerShell Core on Linux](../../install/installing-powershell-core-on-linux.md#ubuntu-1604-lts-xenial-xerus-and-1804-lts-bionic-beaver)
 
 [Installing PowerShell Core on macOS](../../install/installing-powershell-core-on-macos.md)
 
