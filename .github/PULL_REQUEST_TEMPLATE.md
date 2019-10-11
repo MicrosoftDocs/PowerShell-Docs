@@ -19,7 +19,8 @@ Select the type(s) of documents being changed.
 - [ ] Version 3.0 content
 
 **Conceptual articles**
-- [ ] PowerShell articles
+- [ ] Fundamental conceptual articles
+- [ ] Script sample articles
 - [ ] DSC articles
 - [ ] Gallery articles
 - [ ] JEA articles
@@ -32,7 +33,7 @@ Select the type(s) of documents being changed.
 - [ ] PR has a meaningful title
 - [ ] PR is targeted at the _staging_ branch
 - [ ] All relevant versions updated
-- [ ] Includes content to related issues and PRs - see [Closing issues using keywords](https://help.github.com/en/articles/closing-issues-using-keywords).
+- [ ] Includes content related to issues and PRs - see [Closing issues using keywords](https://help.github.com/en/articles/closing-issues-using-keywords).
 - [ ] This PR is ready to merge and is not **Work in Progress**
   - If the PR is work in progress, please add the prefix `WIP:` or `[ WIP ]` to the beginning of the
     title and remove the prefix when the PR is ready.
