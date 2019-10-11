@@ -20,7 +20,7 @@ Here are the code samples for the runspace described in [Creating a Console Appl
 
 ## Code Sample
 
-[!code-csharp[Runspace01.cs](../../powershell-sdk-samples/SDK-2.0/csharp/Runspace01/Runspace01.cs#L11-L62 "Runspace01.cs")]
+[!code-csharp[Runspace01.cs](../../../powershell-sdk-samples/SDK-2.0/csharp/Runspace01/Runspace01.cs#L11-L62 "Runspace01.cs")]
 
 ## See Also
 

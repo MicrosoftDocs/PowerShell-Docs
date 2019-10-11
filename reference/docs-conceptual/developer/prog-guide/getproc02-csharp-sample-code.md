@@ -15,7 +15,7 @@ The following code shows the implementation of a `Get-Process` cmdlet that accep
 
 ## Code Sample
 
-[!code-csharp[GetProcessSample02.cs](../../powershell-sdk-samples/SDK-2.0/csharp/GetProcessSample02/GetProcessSample02.cs#L11-L76 "GetProcessSample02.cs")]
+[!code-csharp[GetProcessSample02.cs](../../../powershell-sdk-samples/SDK-2.0/csharp/GetProcessSample02/GetProcessSample02.cs#L11-L76 "GetProcessSample02.cs")]
 
 ## See Also
 

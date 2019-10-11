@@ -40,7 +40,7 @@ This sample demonstrates the following:
 
 This sample shows how to overwrite the methods needed to clear, get, and set the content of items in a Microsoft Access data base.
 
-[!code-csharp[AccessDBProviderSample06.cs](../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample06/AccessDBProviderSample06.cs#L11-L2399 "AccessDBProviderSample06.cs")]
+[!code-csharp[AccessDBProviderSample06.cs](../../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample06/AccessDBProviderSample06.cs#L11-L2399 "AccessDBProviderSample06.cs")]
 
 ## See Also
 

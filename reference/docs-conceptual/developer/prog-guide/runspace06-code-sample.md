@@ -20,7 +20,7 @@ Here is the source code for the Runspace06 sample described in [Configuring a Ru
 
 ## Code Sample
 
-[!code-csharp[Runspace06.cs](../../powershell-sdk-samples/SDK-2.0/csharp/Runspace06/Runspace06.cs#L11-L85 "Runspace06.cs")]
+[!code-csharp[Runspace06.cs](../../../powershell-sdk-samples/SDK-2.0/csharp/Runspace06/Runspace06.cs#L11-L85 "Runspace06.cs")]
 
 ## See Also
 

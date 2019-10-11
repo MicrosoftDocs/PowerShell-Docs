@@ -39,7 +39,7 @@ A Windows PowerShell container provider must define a .NET class that derives fr
    public class AccessDBProvider : ContainerCmdletProvider
 ```
 
-[!code-csharp[AccessDBProviderSample04.cs](../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample04/AccessDBProviderSample04.cs#L34-L35 "AccessDBProviderSample04.cs")]
+[!code-csharp[AccessDBProviderSample04.cs](../../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample04/AccessDBProviderSample04.cs#L34-L35 "AccessDBProviderSample04.cs")]
 
 Notice that in this class definition, the [System.Management.Automation.Provider.Cmdletproviderattribute](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute) attribute includes two parameters. The first parameter specifies a user-friendly name for the provider that is used by Windows PowerShell. The second parameter specifies the Windows PowerShell specific capabilities that the provider exposes to the Windows PowerShell runtime during command processing. For this provider, there are no Windows PowerShell specific capabilities that are added.
 
@@ -114,7 +114,7 @@ protected override void GetChildItems(string path, bool recurse)
 } // GetChildItems
 ```
 
-[!code-csharp[AccessDBProviderSample04.cs](../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample04/AccessDBProviderSample04.cs#L311-L362 "AccessDBProviderSample04.cs")]
+[!code-csharp[AccessDBProviderSample04.cs](../../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample04/AccessDBProviderSample04.cs#L311-L362 "AccessDBProviderSample04.cs")]
 
 #### Things to Remember About Implementing GetChildItems
 
@@ -188,7 +188,7 @@ protected override void GetChildNames(string path,
 } // GetChildNames
 ```
 
-[!code-csharp[AccessDBProviderSample04.cs](../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample04/AccessDBProviderSample04.cs#L369-L411 "AccessDBProviderSample04.cs")]
+[!code-csharp[AccessDBProviderSample04.cs](../../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample04/AccessDBProviderSample04.cs#L369-L411 "AccessDBProviderSample04.cs")]
 
 #### Things to Remember About Implementing GetChildNames
 
@@ -267,7 +267,7 @@ protected override void NewItem( string path, string type,
 } // NewItem
 ```
 
-[!code-csharp[AccessDBProviderSample04.cs](../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample04/AccessDBProviderSample04.cs#L939-L955 "AccessDBProviderSample04.cs")]
+[!code-csharp[AccessDBProviderSample04.cs](../../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample04/AccessDBProviderSample04.cs#L939-L955 "AccessDBProviderSample04.cs")]
 
 #### Things to Remember About Implementing NewItem
 
@@ -328,7 +328,7 @@ protected override bool HasChildItems( string path )
 } // HasChildItems
 ```
 
-[!code-csharp[AccessDBProviderSample04.cs](../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample04/AccessDBProviderSample04.cs#L1094-L1097 "AccessDBProviderSample04.cs")]
+[!code-csharp[AccessDBProviderSample04.cs](../../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample04/AccessDBProviderSample04.cs#L1094-L1097 "AccessDBProviderSample04.cs")]
 
 #### Things to Remember About Implementing HasChildItems
 

@@ -15,7 +15,7 @@ The following code shows the implementation of the Windows PowerShell navigation
 
 ## Code Sample
 
-[!code-csharp[AccessDBProviderSample05.cs](../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample05/AccessDBProviderSample05.cs#L11-L1960 "AccessDBProviderSample05.cs")]
+[!code-csharp[AccessDBProviderSample05.cs](../../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample05/AccessDBProviderSample05.cs#L11-L1960 "AccessDBProviderSample05.cs")]
 
 ## See Also
 

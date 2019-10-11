@@ -35,7 +35,7 @@ This sample demonstrates the following:
 
 This sample shows how to open the runspaces of a runspace pool, and how to asynchronously run commands in those runspaces.
 
-[!code-csharp[PowerShell02.cs](../../powershell-sdk-samples/SDK-2.0/csharp/PowerShell02/PowerShell02.cs#L11-L96 "PowerShell02.cs")]
+[!code-csharp[PowerShell02.cs](../../../powershell-sdk-samples/SDK-2.0/csharp/PowerShell02/PowerShell02.cs#L11-L96 "PowerShell02.cs")]
 
 ## See Also
 

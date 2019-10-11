@@ -20,7 +20,7 @@ Here is the source code for the Runspace07 sample described in [Creating a Conso
 
 ## Code Sample
 
-[!code-csharp[Runspace07.cs](../../powershell-sdk-samples/SDK-2.0/csharp/Runspace07/Runspace07.cs#L11-L108 "Runspace07.cs")]
+[!code-csharp[Runspace07.cs](../../../powershell-sdk-samples/SDK-2.0/csharp/Runspace07/Runspace07.cs#L11-L108 "Runspace07.cs")]
 
 ## See Also
 

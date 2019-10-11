@@ -15,7 +15,7 @@ Here is the C# source code for the Runspace02 sample. This sample uses the [Syst
 
 ## Code Sample
 
-[!code-csharp[Runspace02.cs](../../powershell-sdk-samples/SDK-2.0/csharp/Runspace02/Runspace02.cs#L11-L82 "Runspace02.cs")]
+[!code-csharp[Runspace02.cs](../../../powershell-sdk-samples/SDK-2.0/csharp/Runspace02/Runspace02.cs#L11-L82 "Runspace02.cs")]
 
 ## See Also
 
