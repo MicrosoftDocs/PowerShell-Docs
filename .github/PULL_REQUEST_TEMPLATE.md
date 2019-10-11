@@ -10,12 +10,21 @@ have version folders.
 
 Version(s) of documents impacted
 
+**Cmdlet reference & about_ topics**
 - [ ] Impacts 7 document
 - [ ] Impacts 6 document
 - [ ] Impacts 5.1 document
 - [ ] Impacts 5.0 document
 - [ ] Impacts 4.0 document
 - [ ] Impacts 3.0 document
+
+**Conceptual articles**
+- [ ] PowerShell articles
+- [ ] DSC articles
+- [ ] Gallery articles
+- [ ] JEA articles
+- [ ] WMF articles
+- [ ] SDK articles
 
 ## PR Checklist
 
