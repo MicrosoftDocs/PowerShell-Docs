@@ -17,13 +17,16 @@ Enables the breakpoints in the current console.
 ## SYNTAX
 
 ### Id (Default)
+
 ```
 Enable-PSBreakpoint [-PassThru] [-Id] <Int32[]> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### Breakpoint
+
 ```
-Enable-PSBreakpoint [-PassThru] [-Breakpoint] <Breakpoint[]> [-WhatIf] [-Confirm] [<CommonParameters>]
+Enable-PSBreakpoint [-PassThru] [-Breakpoint] <Breakpoint[]> [-WhatIf] [-Confirm]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -35,11 +38,11 @@ A breakpoint is a point in a script where execution stops temporarily so that yo
 state of the script. Newly created breakpoints are automatically enabled, but can be disabled using
 `Disable-PSBreakpoint`.
 
-Technically, this cmdlet changes the value of the **Enabled** property of a breakpoint object to **True**.
+Technically, this cmdlet changes the value of the **Enabled** property of a breakpoint object to
+**True**.
 
 `Enable-PSBreakpoint` is one of several cmdlets designed for debugging PowerShell scripts. For more
-information about the PowerShell debugger, see
-[about_Debuggers](../Microsoft.PowerShell.Core/About/About_Debuggers.md).
+information about the PowerShell debugger, see [about_Debuggers](../Microsoft.PowerShell.Core/About/about_Debuggers.md).
 
 ## EXAMPLES
 
@@ -94,8 +97,8 @@ ScriptName : C:\ps-test\sample.ps1
 the breakpoint object in the `$B` variable. The **PassThru** parameter displays the value of the
 **Enabled** property of the breakpoint is **False**.
 
-`Enable-PSBreakpoint` re-enables the breakpoint and using the **PassThru** parameter to display the
-value of the **Enabled** property is **True**.
+`Enable-PSBreakpoint` re-enables the breakpoint. Again, using the **PassThru** parameter we see that
+the value of the **Enabled** property is **True**.
 
 ### Example 4: Enable breakpoints using a variable
 
@@ -106,18 +109,18 @@ $B = Get-PSBreakpoint -Id 3, 5
 Enable-PSBreakpoint -Breakpoint $B
 ```
 
-`Get-PSBreakpoint` gets breakpoints by ID number and stores them in the `$B` variable.
+`Get-PSBreakpoint` gets the breakpoints and saves them in the `$B` variable. Using the
+**Breakpoint** parameter, `Enable-PSBreakpoint` enables the breakpoints.
 
-`Enable-PSBreakpoint` enables the breakpoints stored in `$B` using the **Breakpoint** parameter.
-
-This example is the equivalent of `Enable-PSBreakpoint -Id 3, 5`.
+This example is equivalent to running `Enable-PSBreakpoint -Id 3, 5`.
 
 ## PARAMETERS
 
 ### -Breakpoint
 
-Specifies the breakpoints to enable. Provide a variable or a command, such as `Get-PSBreakpoint`,
-that contains breakpoint objects. You can also pipe breakpoint objects to `Enable-PSBreakpoint`.
+Specifies the breakpoints to enable. Provide a variable containing breakpoints or a command that
+gets breakpoint objects, such as `Get-PSBreakpoint`. You can also pipe breakpoint objects to
+`Enable-PSBreakpoint`.
 
 ```yaml
 Type: Breakpoint[]
@@ -133,9 +136,9 @@ Accept wildcard characters: False
 
 ### -Id
 
-Specifies breakpoint **ID** numbers to enable. The default value is all breakpoints. Provide a list
-or variable that contains **ID** numbers. You cannot use the pipeline to send **ID** numbers to
-`Enable-PSBreakpoint`. To find the **ID** number of a breakpoint, use the `Get-PSBreakpoint` cmdlet.
+Specifies the **Id** numbers of the breakpoints to enable. The default value is all breakpoints.
+Provide the **Id** by number or in a variable. You can't pipe **Id** numbers to
+`Enable-PSBreakpoint`. To find the **Id** of a breakpoint, use the `Get-PSBreakpoint` cmdlet.
 
 ```yaml
 Type: Int32[]
@@ -151,7 +154,7 @@ Accept wildcard characters: False
 
 ### -PassThru
 
-Returns an object representing the item with which you are working. By default, this cmdlet does not
+Returns an object representing the breakpoint being enabled. By default, this cmdlet doesn't
 generate any output.
 
 ```yaml
@@ -167,6 +170,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
+
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
@@ -183,7 +187,7 @@ Accept wildcard characters: False
 
 ### -WhatIf
 
-Shows what would happen if the cmdlet runs. The cmdlet is not run.
+Shows what would happen if the cmdlet runs. The cmdlet isn't run.
 
 ```yaml
 Type: SwitchParameter
@@ -201,8 +205,7 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see
-[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+-WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -214,16 +217,15 @@ You can pipe a breakpoint object to `Enable-PSBreakpoint`.
 
 ### None or System.Management.Automation.Breakpoint
 
-When you use the **PassThru** parameter, `Enable-PSBreakpoint` returns a result that the breakpoint
-is enabled. Otherwise, this does not generate any output.
+When you use the **PassThru** parameter, `Enable-PSBreakpoint` returns a breakpoint object that represents that breakpoint that was enabled. Otherwise, this cmdlet doesn't generate any output.
 
 ## NOTES
 
-- The `Enable-PSBreakpoint` cmdlet does not generate an error if you try to enable a breakpoint that
+- The `Enable-PSBreakpoint` cmdlet doesn't generate an error if you try to enable a breakpoint that
   is already enabled. As such, you can enable all breakpoints without error, even when only a few
   are disabled.
 
-- Breakpoints are enabled when you create them by using the `Set-PSBreakpoint` cmdlet. You do not
+- Breakpoints are enabled when you create them by using the `Set-PSBreakpoint` cmdlet. You don't
   need to enable newly created breakpoints.
 
 ## RELATED LINKS
