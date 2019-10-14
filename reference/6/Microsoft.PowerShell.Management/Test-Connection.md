@@ -2,77 +2,79 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 keywords: powershell,cmdlet
 locale: en-us
-ms.date: 06/09/2017
+ms.date: 10/09/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/test-connection?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Test-Connection
 ---
+
 # Test-Connection
 
 ## SYNOPSIS
-Sends ICMP echo request packets ("pings") to one or more computers.
+Sends ICMP echo request packets, or pings, to one or more computers.
 
 ## SYNTAX
 
 ### PingCount (Default)
 
 ```
-Test-Connection [-TargetName] <string[]> [-Ping] [-IPv4] [-IPv6] [-ResolveDestination]
-  [-Source <string>] [-MaxHops <int>] [-Count <int>] [-Delay <int>] [-BufferSize <int>]
-  [-DontFragment] [-TimeoutSeconds <int>] [-Quiet] [<CommonParameters>]
+Test-Connection [-TargetName] <String[]> [-Ping] [-IPv4] [-IPv6] [-ResolveDestination]
+ [-Source <String>] [-MaxHops <Int32>] [-Count <Int32>] [-Delay <Int32>] [-BufferSize <Int32>]
+ [-DontFragment] [-TimeoutSeconds <Int32>] [-Quiet] [<CommonParameters>]
 ```
 
 ### PingContinues
 
 ```
-Test-Connection [-TargetName] <string[]> [-Ping] [-IPv4] [-IPv6] [-ResolveDestination]
-  [-Source <string>] [-MaxHops <int>] [-Delay <int>] [-BufferSize <int>] [-DontFragment]
-  [-Continues] [-TimeoutSeconds <int>] [-Quiet] [<CommonParameters>]
+Test-Connection [-TargetName] <String[]> [-Ping] [-IPv4] [-IPv6] [-ResolveDestination]
+ [-Source <String>] [-MaxHops <Int32>] [-Delay <Int32>] [-BufferSize <Int32>] [-DontFragment]
+ [-Continues] [-TimeoutSeconds <Int32>] [-Quiet] [<CommonParameters>]
 ```
 
 ### DetectionOfMTUSize
 
 ```
-Test-Connection [-TargetName] <string[]> -MTUSizeDetect [-IPv4] [-IPv6] [-ResolveDestination]
-  [-TimeoutSeconds <int>] [-Quiet] [<CommonParameters>]
+Test-Connection [-TargetName] <String[]> -MTUSizeDetect [-IPv4] [-IPv6] [-ResolveDestination]
+ [-TimeoutSeconds <Int32>] [-Quiet] [<CommonParameters>]
 ```
 
 ### TraceRoute
 
 ```
-Test-Connection [-TargetName] <string[]> -Traceroute [-IPv4] [-IPv6] [-ResolveDestination]
-  [-Source <string>] [-MaxHops <int>] [-TimeoutSeconds <int>] [-Quiet] [<CommonParameters>]
+Test-Connection [-TargetName] <String[]> -Traceroute [-IPv4] [-IPv6] [-ResolveDestination]
+ [-Source <String>] [-MaxHops <Int32>] [-TimeoutSeconds <Int32>] [-Quiet] [<CommonParameters>]
 ```
 
 ### ConnectionByTCPPort
 
 ```
-Test-Connection [-TargetName] <string[]> -TCPPort <int> [-IPv4] [-IPv6] [-ResolveDestination]
-  [-Source <string>] [-TimeoutSeconds <int>] [-Quiet] [<CommonParameters>]
+Test-Connection [-TargetName] <String[]> -TCPPort <Int32> [-IPv4] [-IPv6] [-ResolveDestination]
+ [-Source <String>] [-TimeoutSeconds <Int32>] [-Quiet] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 
-The `Test-Connection` cmdlet sends Internet Control Message Protocol (ICMP) echo request packets,
-or pings, to one or more remote computers and returns the echo response replies. You can use this
+The `Test-Connection` cmdlet sends Internet Control Message Protocol (ICMP) echo request packets, or
+pings, to one or more remote computers and returns the echo response replies. You can use this
 cmdlet to determine whether a particular computer can be contacted across an IP network.
 
-You can use the parameters of `Test-Connection` to specify both the sending and receiving
-computers, to run the command as a background job, to set a time-out and number of pings, and to
-configure the connection and authentication.
+You can use the parameters of `Test-Connection` to specify both the sending and receiving computers,
+to run the command as a background job, to set a time-out and number of pings, and to configure the
+connection and authentication.
 
 Unlike the familiar **ping** command, `Test-Connection` returns a
-**TestConnectionCommand+PingReport**. You can use the **Quiet** parameter to force it to return
-only a **Boolean** value.
+**TestConnectionCommand+PingReport** object that you can investigate in PowerShell. The **Quiet**
+parameter returns a **Boolean** value in a **System.Boolean** object for each tested connection. If
+multiple connections are tested, an array of **Boolean** values is returned.
 
 ## EXAMPLES
 
 ### Example 1: Send echo requests to a remote computer
 
-This command sends echo request packets from the local computer to the Server01 computer.
+This example sends echo request packets from the local computer to the Server01 computer.
 
 ```powershell
-Test-Connection Server01 -IPv4
+Test-Connection -TargetName Server01 -IPv4
 ```
 
 ```Output
@@ -85,43 +87,45 @@ Ping complete.
 
 Source     Destination Replies
 ------     ----------- -------
-Server01   Server01    {System.Net.NetworkInformation.PingReply, System.Net.NetworkInformation.PingReply, System.Ne...
+Server01   Server01    {System.Net.NetworkInformation.PingReply, System.Net.NetworkInformation ...
 ```
 
-This command uses the **TargetName** parameter to specify the Server01 computer, but omits the
-optional parameter name. In the example above, the ping output is sent to the **Information**
-stream while the **TestConnectionCommand+PingReport** object sent to the **Success** stream. For
-more information about the output streams, see
+`Test-Connection` uses the **TargetName** parameter to specify the Server01 computer. The **IPv4**
+parameter specifies the protocol for the test.
+
+The ping output is sent to the **Information** stream while the **TestConnectionCommand+PingReport**
+object sent to the **Success** stream. For more information about the output streams, see
 [about_Redirection](../microsoft.powershell.core/about/about_redirection.md).
 
 ### Example 2: Send echo requests to several computers
 
-This command sends pings from the local computer to several remote computers.
+This example sends pings from the local computer to several remote computers.
 
 ```powershell
-Test-Connection -ComputerName Server01, Server02, Server12
+Test-Connection -TargetName Server01, Server02, Server12
 ```
 
 ### Example 3: Send echo requests from several computers to a computer
 
-This command sends pings from different source computers to a single remote computer, Server01.
+This example sends pings from different source computers to a single remote computer, Server01.
 
 ```powershell
-Test-Connection -Source "Server02", "Server12", "localhost" -ComputerName "Server01"
+Test-Connection -Source Server02, Server12, localhost -TargetName Server01
 ```
 
 Use this command format to test the latency of connections from multiple points.
 
-### Example 4: Customize the test command
+### Example 4: Use parameters to customize the test command
 
-It uses the parameters of `Test-Connection` to customize the command.
+This example uses the parameters of `Test-Connection` to customize the command. The local computer
+sends a ping test to a remote computer.
 
 ```powershell
-Test-Connection -ComputerName Server01 -Count 3 -Delay 2 -MaxHops 255 -BufferSize 256 -ThrottleLimit 32
+Test-Connection -TargetName Server01 -Count 3 -Delay 2 -MaxHops 255 -BufferSize 256
 ```
 
-This command sends three pings from the local computer to the Server01 computer at 2-second
-intervals.
+`Test-Connection` uses the **TargetName** parameter to specify Server01. The **Count** parameter
+specifies three pings are sent to the Server01 computer with a **Delay** of 2-second intervals.
 
 You might use these options when the ping response is expected to take longer than usual, either
 because of an extended number of hops or a high-traffic network condition.
@@ -135,36 +139,37 @@ $job = Start-Job -ScriptBlock { Test-Connection -TargetName (Get-Content "Server
 if ($job.JobStateInfo.State -ne "Running") { $Results = Receive-Job $job }
 ```
 
-The first command uses the `Test-Connection` cmdlet to ping many computers in an enterprise. The
-value of the **TargetName** parameter is a `Get-Content` command that reads a list of computer
-names from the Servers.txt file. The command uses the `Start-Job` cmdlet to run the command as a
+The `Start-Job` command uses the `Test-Connection` cmdlet to ping many computers in an enterprise.
+The value of the **TargetName** parameter is a `Get-Content` command that reads a list of computer
+names from the `Servers.txt` file. The command uses the `Start-Job` cmdlet to run the command as a
 background job and it saves the job in the `$job` variable.
 
-The second command checks to see that the job is not still running, and if it is not, it uses a
-`Receive-Job` command to get the results and store them in the `$Results` variable.
+The `if` command checks to see that the job isn't still running. If the job isn't running,
+`Receive-Job` gets the results and stores them in the `$Results` variable.
 
 ### Example 6: Create a session only if a connection test succeeds
 
-This command creates a session on the Server01 computer only if at least one of the pings sent to
+This example creates a session on the Server01 computer only if at least one of the pings sent to
 the computer succeeds.
 
 ```powershell
 if (Test-Connection -TargetName Server01 -Quiet) {New-PSSession Server01}
 ```
 
-The command uses the `Test-Connection` cmdlet to ping the Server01 computer. The command uses the
-**Quiet** parameter, which returns a **Boolean** value, instead of a
+The `if` command uses the `Test-Connection` cmdlet to ping the Server01 computer. The command uses
+the **Quiet** parameter, which returns a **Boolean** value, instead of a
 **TestConnectionCommand+PingReport** object.
 
 The value is `$True` if any of the four pings succeed. If none of the pings succeed, the value is
 `$False`.
 
-If the `Test-Connection` command returns a value of `$True`, the command uses the `New-PSSession` cmdlet to create the **PSSession**.
+If the `Test-Connection` command returns a value of `$True`, the command uses the `New-PSSession`
+cmdlet to create the **PSSession**.
 
 ### Example 7: Use the Traceroute parameter
 
 Beginning in PowerShell 6.0, the **Traceroute** parameter maps a route between the local computer
-and the remote destination you specify to **TargetName**.
+and the remote destination you specify with the **TargetName** parameter.
 
 ```powershell
 Test-Connection -TargetName www.microsoft.com -Traceroute | ForEach-Object {
@@ -218,9 +223,9 @@ Success 96.6.27.90             2 System.Net.NetworkInformation.PingOptions {97, 
 Success 96.6.27.90             4 System.Net.NetworkInformation.PingOptions {97, 98, 99, 100…}
 ```
 
-The first command calls the `Test-Connection` cmdlet with the **Traceroute** parameter. The results,
-which are `[Microsoft.PowerShell.Commands.TestConnectionCommand+TraceRouteResult]` objects are piped
-to the `ForEach-Object` cmdlet, which creates a structured output of the contained
+The `Test-Connection` command uses the **Traceroute** parameter. The results, which are
+`[Microsoft.PowerShell.Commands.TestConnectionCommand+TraceRouteResult]` objects, are piped to the
+`ForEach-Object` cmdlet. `ForEach-Object` creates a structured output of the contained
 `[Microsoft.PowerShell.Commands.TestConnectionCommand+TraceRouteReply]` objects and subsequent
 `[System.Net.NetworkInformation.PingReply]` objects.
 
@@ -228,8 +233,7 @@ to the `ForEach-Object` cmdlet, which creates a structured output of the contain
 
 ### -BufferSize
 
-Specifies the size, in bytes, of the buffer sent with this command.
-The default value is 32.
+Specifies the size, in bytes, of the buffer sent with this command. The default value is 32.
 
 ```yaml
 Type: Int32
@@ -238,14 +242,14 @@ Aliases: Size, Bytes, BS
 
 Required: False
 Position: Named
-Default value: None
+Default value: 32
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -Continues
 
-Causes the cmdlet to send ping requests continuously. This parameter cannot be used with the
+Causes the cmdlet to send ping requests continuously. This parameter can't be used with the
 **Count** parameter.
 
 ```yaml
@@ -262,8 +266,7 @@ Accept wildcard characters: False
 
 ### -Count
 
-Specifies the number of echo requests to send.
-The default value is 4.
+Specifies the number of echo requests to send. The default value is 4.
 
 ```yaml
 Type: Int32
@@ -295,8 +298,8 @@ Accept wildcard characters: False
 
 ### -DontFragment
 
-This parameter sets the "Don't Fragment" flag in the IP header. You can use this parameter with the
-**BufferSize** parameter to test the Path MTU size. For more information about Path MTU, see the
+This parameter sets the **Don't Fragment** flag in the IP header. You can use this parameter with
+the **BufferSize** parameter to test the Path MTU size. For more information about Path MTU, see the
 [Path MTU Discovery](https://wikipedia.org/wiki/Path_MTU_Discovery) article in wikipedia.
 
 ```yaml
@@ -306,7 +309,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -322,7 +325,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -338,7 +341,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -355,7 +358,7 @@ Aliases: Ttl
 
 Required: False
 Position: Named
-Default value: None
+Default value: 128 hops in Windows 10
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -373,14 +376,14 @@ Aliases:
 
 Required: True
 Position: Named
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -Ping
 
-Causes the cmdlet to do a ping test. This is the default action.
+Causes the cmdlet to do a ping test, which is the default action.
 
 ```yaml
 Type: SwitchParameter
@@ -389,16 +392,22 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: Ping test
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -Quiet
 
-Indicates that this cmdlet suppresses errors.
-If any ping succeeds, this cmdlet returns `$True`.
-If all pings fail, this cmdlet returns `$False`.
+The **Quiet** parameter returns a **Boolean** value in a **System.Boolean** object. Using this
+parameter suppresses all errors.
+
+Each connection that's tested returns a **Boolean** value. If the **TargetName** parameter
+specifies multiple computers, an array of **Boolean** values is returned.
+
+If **any** ping succeeds, `$True` is returned.
+
+If **all** pings fail, `$False` is returned.
 
 ```yaml
 Type: SwitchParameter
@@ -423,14 +432,15 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -Source
 
-The **Source** is not currently implemented.
+Specifies the names of the computers where the ping originates. Enter a comma-separated list of
+computer names. The default is the local computer.
 
 ```yaml
 Type: String
@@ -438,8 +448,8 @@ Parameter Sets: PingCount, PingContinues, TraceRoute, ConnectionByTCPPort
 Aliases:
 
 Required: False
-Position: 2
-Default value: None
+Position: Named
+Default value: Local computer
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -447,7 +457,8 @@ Accept wildcard characters: False
 ### -TargetName
 
 Specifies the computers to test. Type the computer names or type IP addresses in IPv4 or IPv6
-format. Wildcard characters are not permitted. This parameter is required.
+format. Wildcard characters aren't permitted. This parameter is required. **ComputerName** is an
+alias for this parameter.
 
 ```yaml
 Type: String[]
@@ -455,7 +466,7 @@ Parameter Sets: (All)
 Aliases: ComputerName
 
 Required: True
-Position: Named
+Position: 0
 Default value: None
 Accept pipeline input: True (ByPropertyName, ByValue)
 Accept wildcard characters: False
@@ -480,8 +491,8 @@ Accept wildcard characters: False
 
 ### -TimeoutSeconds
 
-Sets the timeout value for the test. The test fails if a response is not received before the
-timeout expires.
+Sets the timeout value for the test. The test fails if a response isn't received before the timeout
+expires. The default is five seconds.
 
 ```yaml
 Type: Int32
@@ -507,7 +518,7 @@ Aliases:
 
 Required: True
 Position: Named
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -523,14 +534,15 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### None
 
-You cannot pipe input to this cmdlet.
+You can't pipe input to this cmdlet.
 
 ## OUTPUTS
 
 ### TestConnectionCommand+PingReport, TestConnectionCommand+TraceRouteResult, Boolean, PingReply#MTUSize
 
-If you specify the **Quiet** parameter, the cmdlet returns a **Boolean** object.
-Otherwise, this cmdlet returns the object type specific to the test.
+If you specify the **Quiet** parameter, it returns a **Boolean** value. If multiple connections are
+tested, an array of **Boolean** values is returned. Otherwise, `Test-Connection` returns a
+**TestConnectionCommand+PingReport** object for each ping.
 
 ## NOTES
 

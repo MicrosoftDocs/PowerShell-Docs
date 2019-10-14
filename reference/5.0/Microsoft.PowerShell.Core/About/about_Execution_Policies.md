@@ -17,7 +17,7 @@ Describes the PowerShell execution policies and explains how to manage them.
 
 PowerShell's execution policy is a safety feature that controls the conditions
 under which PowerShell loads configuration files and runs scripts. This feature
-helps prevent the the execution of malicious scripts.
+helps prevent the execution of malicious scripts.
 
 On a Windows computer you can set an execution policy for the local computer,
 for the current user, or for a particular session. You can also use a Group
@@ -34,7 +34,7 @@ the command line when they cannot run a script. Instead, the execution policy
 helps users to set basic rules and prevents them from violating them
 unintentionally.
 
-## PowerShell Execution Policies
+## PowerShell execution policies
 
 The PowerShell execution policies are as follows:
 
@@ -77,7 +77,7 @@ The PowerShell execution policies are as follows:
 ### Restricted
 
 - The default execution policy for Windows client computers.
-- Permits individual commands, but will not run scripts.
+- Permits individual commands, but does not allow scripts.
 - Prevents running of all script files, including formatting and configuration
   files (`.ps1xml`), module script files (`.psm1`), and PowerShell profiles
   (`.ps1`).
@@ -90,16 +90,18 @@ The PowerShell execution policies are as follows:
 
 ### Unrestricted
 
+- The default execution policy for non-Windows computers and cannot be
+  changed.
 - Unsigned scripts can run. There is a risk of running malicious scripts.
 - Warns the user before running scripts and configuration files that are
-  downloaded from the internet.
+  not from the local intranet zone.
 
 > [!NOTE]
 > On systems that do not distinguish Universal Naming Convention (UNC) paths
 > from internet paths, scripts that are identified by a UNC path might not be
 > permitted to run with the **RemoteSigned** execution policy.
 
-## Execution Policy Scope
+## Execution policy scope
 
 You can set an execution policy that is effective only in a particular scope.
 
@@ -138,7 +140,7 @@ The execution policy affects only the current user. It's stored in the
 The execution policy affects all users on the current computer. It's stored in
 the **HKEY_LOCAL_MACHINE** registry subkey.
 
-## Get Your Execution Policy
+## Managing the execution policy with PowerShell
 
 To get the effective execution policy for the current PowerShell session, use
 the `Get-ExecutionPolicy` cmdlet.
@@ -156,7 +158,7 @@ display them in precedence order:
 Get-ExecutionPolicy -List
 ```
 
-The result will look similar to the following sample output:
+The result looks similar to the following sample output:
 
 ```Output
         Scope ExecutionPolicy
@@ -182,7 +184,7 @@ For example, the following command gets the execution policy for the
 Get-ExecutionPolicy -Scope CurrentUser
 ```
 
-## Change Your Execution Policy
+### Change the execution policy
 
 To change the PowerShell execution policy on your Windows computer, use the
 `Set-ExecutionPolicy` cmdlet. The change is effective immediately. You don't
@@ -231,7 +233,7 @@ effective execution policy.
 For example, a command that sets the execution policy for the local computer
 can succeed but be overridden by the execution policy for the current user.
 
-## Remove Your Execution Policy
+### Remove the execution policy
 
 To remove the execution policy for a particular scope, set the execution policy
 to **Undefined**.
@@ -252,7 +254,7 @@ Set-ExecutionPolicy -ExecutionPolicy Undefined -Scope CurrentUser
 If no execution policy is set in any scope, the effective execution policy is
 **Restricted**, which is the default for Windows clients.
 
-## Set a Different Execution Policy for One Session
+### Set a different policy for one session
 
 You can use the **ExecutionPolicy** parameter of **powershell.exe** to set an
 execution policy for a new PowerShell session. The policy affects only the
@@ -293,11 +295,11 @@ The **Turn on Script Execution** policy settings are as follows:
   policy. The Group Policy settings are equivalent to the following execution
   policy settings:
 
-  | Group Policy                                   | Execution Policy |
-  | ---------------------------------------------- | ---------------- |
-  | Allow all scripts.                             | Unrestricted     |
-  | Allow local scripts and remote signed scripts. | RemoteSigned     |
-  | Allow only signed scripts.                     | AllSigned        |
+  | Group Policy                                  | Execution Policy |
+  | --------------------------------------------- | ---------------- |
+  | Allow all scripts                             | Unrestricted     |
+  | Allow local scripts and remote signed scripts | RemoteSigned     |
+  | Allow only signed scripts                     | AllSigned        |
 
 - If **Turn on Script Execution** is not configured, it has no effect. The
   execution policy set in PowerShell is effective.
@@ -320,7 +322,7 @@ set in the User Configuration node.
 
 For more information, see [about_Group_Policy_Settings](about_Group_Policy_Settings.md).
 
-## Execution Policy Precedence
+### Execution policy precedence
 
 When determining the effective execution policy for a session, PowerShell
 evaluates the execution policies in the following precedence order:
@@ -331,7 +333,7 @@ evaluates the execution policies in the following precedence order:
 - Execution Policy: CurrentUser
 - Execution Policy: LocalMachine
 
-## Manage Signed and Unsigned Scripts
+## Manage signed and unsigned scripts
 
 If your PowerShell execution policy is **RemoteSigned**, PowerShell won't run
 unsigned scripts that are downloaded from the internet which includes email and

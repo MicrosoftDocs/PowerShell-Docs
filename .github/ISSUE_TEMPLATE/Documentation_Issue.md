@@ -4,32 +4,41 @@ about: Problems with PowerShell documentation
 title: "Documentation Issue"
 labels: issue-question
 assignees: ''
-
 ---
-
-# Documentation Issue
-
 <!--
 Use this template to report issues with documentation. This can include typos, technical and factual
 errors, grammar, spelling, formatting, presentation, etc.
-
 Be sure to change the issue title. Titles should be brief and meaningful.
 -->
+# Documentation Issue
+<!-- Enter brief description here -->
 
-## Details of the issue
+
+## Context of the issue
 
 - URL to the article (Docs or GitHub URL):
-- Is the issue version specific (Y/N - include version info) :
-  - [ ] Impacts 7 document
-  - [ ] Impacts 6 document
-  - [ ] Impacts 5.1 document
-  - [ ] Impacts 5.0 document
-  - [ ] Impacts 4.0 document
-  - [ ] Impacts 3.0 document
+- Issue affects the following content (check all that apply):
+  
+  **Cmdlet reference & about_ topics**
+  - [ ] Version 7 content
+  - [ ] Version 6 content
+  - [ ] Version 5.1 content
+  - [ ] Version 5.0 content
+  - [ ] Version 4.0 content
+  - [ ] Version 3.0 content
+
+  **Conceptual articles**
+  - [ ] Fundamental conceptual articles
+  - [ ] Script sample articles
+  - [ ] DSC articles
+  - [ ] Gallery articles
+  - [ ] JEA articles
+  - [ ] WMF articles
+  - [ ] SDK articles
 - Is the issue specific to a platform (Y/N - Win/macOS/Linux):
 
-Description of the issue:
-
+## Detailed description of the issue
 <!--
 Enter your problem description below. Use markdown code fences for example code and output.
 -->
+
