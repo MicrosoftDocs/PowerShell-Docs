@@ -141,7 +141,8 @@ The following table describes the elements you can include in a module manifest.
 
 The following module manifest sample shows the keys and default values. This example was created by
 using the `New-ModuleManifest` cmdlet in PowerShell 7. If you need to create multiple modules, use
-`New-ModuleManifest` to create a module manifest template that can be modified for different modules.
+`New-ModuleManifest` to create a module manifest template that can be modified for different
+modules.
 
 ```powershell
 #
