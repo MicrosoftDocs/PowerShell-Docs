@@ -1,5 +1,11 @@
 {
-    "redirections": [{
+    "redirections": [
+        {
+            "source_path": "developer/index.md",
+            "redirect_url": "/powershell/scripting/developer/windows-powershell",
+            "redirect_document_id": true
+        },
+        {
             "source_path": "developer/cmdlet/activity-parameters.md",
             "redirect_url": "/powershell/scripting/developer/cmdlet/activity-parameters",
             "redirect_document_id": true
@@ -2617,7 +2623,7 @@
         {
             "source_path": "developer/windows-powershell.md",
             "redirect_url": "/powershell/scripting/developer/windows-powershell",
-            "redirect_document_id": true
+            "redirect_document_id": false
         },
         {
             "source_path": "developer/windows-powershell-reference.md",
@@ -2628,6 +2634,11 @@
             "source_path": "developer/windows-powershell-reference-whats-new.md",
             "redirect_url": "/powershell/scripting/developer/windows-powershell-reference-whats-new",
             "redirect_document_id": true
+        },
+        {
+            "source_path": "dsc/index.md",
+            "redirect_url": "/powershell/scripting/dsc/overview/overview",
+            "redirect_document_id": false
         },
         {
             "source_path": "dsc/configurations/add-parameters-to-a-configuration.md",
