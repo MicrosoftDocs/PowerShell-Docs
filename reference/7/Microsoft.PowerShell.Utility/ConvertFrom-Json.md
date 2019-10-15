@@ -17,7 +17,7 @@ Converts a JSON-formatted string to a custom object or a hash table.
 ## SYNTAX
 
 ```
-ConvertFrom-Json [-InputObject] <String> [-AsHashtable] [-Depth <Int32>] [-ExcludeNull] [<CommonParameters>]
+ConvertFrom-Json [-InputObject] <String> [-AsHashtable] [-Depth <Int32>] [-IgnoreNullProperties] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -150,7 +150,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ExcludeNull
+### -IgnoreNullProperties
 
 Ignore properties with null value when serializing objets.
 
