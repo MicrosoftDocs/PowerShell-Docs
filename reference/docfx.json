@@ -92,6 +92,7 @@
         "externalReference": [],
         "globalMetadata": {
             "toc_preview": true,
+            "archive_url": "https://docs.microsoft.com/previous-versions/powershell/scripting/overview",
             "searchScope": ["PowerShell"],
             "hideScope": false,
             "breadcrumb_path": "/powershell/scripting/bread/toc.json",

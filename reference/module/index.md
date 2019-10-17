@@ -9,7 +9,8 @@ ms.service: azure-powershell
 ms.devlang: powershell
 ms.topic: landing-page
 ms.manager: carmonm
-ms.date: 08/07/2017
+ms.date: 10/17/2019
+archive_url: ''
 layout: ApiBrowserPage
 apiPlatform: powershell
 quickFilterColumn1: powershell-6,win10-ps
