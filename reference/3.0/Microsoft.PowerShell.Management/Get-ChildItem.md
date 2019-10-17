@@ -19,17 +19,17 @@ Gets the items and child items in one or more specified locations.
 
 ```
 Get-ChildItem [[-Path] <String[]>] [[-Filter] <String>] [-Include <String[]>] [-Exclude <String[]>]
-[-Recurse] [-Force] [-Name] [-UseTransaction] [-Attributes <FlagsExpression`1>] [-Directory] [-File]
-[-Hidden] [-ReadOnly] [-System] [<CommonParameters>]
+ [-Recurse] [-Force] [-Name] [-UseTransaction] [-Attributes <FlagsExpression`1>] [-Directory] [-File]
+ [-Hidden] [-ReadOnly] [-System] [<CommonParameters>]
 ```
 
 ### LiteralItems
 
 ```
 Get-ChildItem -LiteralPath <String[]> [[-Filter] <String>] [-Include <String[]>]
-[-Exclude <String[]>] [-Recurse] [-Force] [-Name] [-UseTransaction]
-[-Attributes <FlagsExpression`1>] [-Directory] [-File] [-Hidden] [-ReadOnly] [-System]
-[<CommonParameters>]
+ [-Exclude <String[]>] [-Recurse] [-Force] [-Name] [-UseTransaction]
+ [-Attributes <FlagsExpression`1>] [-Directory] [-File] [-Hidden] [-ReadOnly] [-System]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
