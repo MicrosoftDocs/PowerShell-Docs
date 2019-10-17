@@ -8,21 +8,6 @@
 
             { "files": ["bread/toc.yml"], "dest": "scripting" },
 
-            { "files": ["toc.yml"], "src": "docs-conceptual", "version": "powershell-3.0", "dest": "scripting/powershell-3.0" },
-            { "files": ["**/*.md", "**/**.yml"], "src": "docs-conceptual", "version": "powershell-3.0", "dest": "scripting" },
-            { "files": ["toc.yml"], "src": "3.0", "version": "powershell-3.0", "dest": "module/psdocs" },
-            { "files": ["**/*.md"], "src": "3.0", "version": "powershell-3.0", "exclude": ["docs-conceptual/**"], "dest": "module" },
-
-            { "files": ["toc.yml"], "src": "docs-conceptual", "version": "powershell-4.0", "dest": "scripting/powershell-4.0" },
-            { "files": ["**/*.md", "**/**.yml"], "src": "docs-conceptual", "version": "powershell-4.0", "dest": "scripting" },
-            { "files": ["toc.yml"], "src": "4.0", "version": "powershell-4.0", "dest": "module/psdocs" },
-            { "files": ["**/*.md"], "src": "4.0", "version": "powershell-4.0", "exclude": ["docs-conceptual/**"], "dest": "module" },
-
-            { "files": ["toc.yml"], "src": "docs-conceptual", "version": "powershell-5.0", "dest": "scripting/powershell-5.0" },
-            { "files": ["**/*.md", "**/**.yml"], "src": "docs-conceptual", "version": "powershell-5.0", "dest": "scripting" },
-            { "files": ["toc.yml"], "src": "5.0", "version": "powershell-5.0", "dest": "module/psdocs" },
-            { "files": ["**/*.md"], "src": "5.0", "version": "powershell-5.0", "exclude": ["docs-conceptual/**"], "dest": "module" },
-
             { "files": ["toc.yml"], "src": "docs-conceptual", "version": "powershell-5.1", "dest": "scripting/powershell-5.1" },
             { "files": ["**/*.md", "**/**.yml"], "src": "docs-conceptual", "version": "powershell-5.1", "dest": "scripting" },
             { "files": ["toc.yml"], "src": "5.1", "version": "powershell-5.1", "dest": "module/psdocs" },
@@ -52,21 +37,6 @@
             {
                 "files": ["**/images/**", "**/*.png", "**/*.gif", "**/*.jpeg", "**/*.jpg", "**/*.svg"],
                 "exclude": ["**/obj/**", "**/includes/**"],
-                "version": "powershell-3.0"
-            },
-            {
-                "files": ["**/images/**", "**/*.png", "**/*.gif", "**/*.jpeg", "**/*.jpg", "**/*.svg"],
-                "exclude": ["**/obj/**", "**/includes/**"],
-                "version": "powershell-4.0"
-            },
-            {
-                "files": ["**/images/**", "**/*.png", "**/*.gif", "**/*.jpeg", "**/*.jpg", "**/*.svg"],
-                "exclude": ["**/obj/**", "**/includes/**"],
-                "version": "powershell-5.0"
-            },
-            {
-                "files": ["**/images/**", "**/*.png", "**/*.gif", "**/*.jpeg", "**/*.jpg", "**/*.svg"],
-                "exclude": ["**/obj/**", "**/includes/**"],
                 "version": "powershell-5.1"
             },
             {
@@ -81,9 +51,6 @@
             }
         ],
         "versions": {
-            "powershell-3.0": { "dest": "powershell-3.0" },
-            "powershell-4.0": { "dest": "powershell-4.0" },
-            "powershell-5.0": { "dest": "powershell-5.0" },
             "powershell-5.1": { "dest": "powershell-5.1" },
             "powershell-6": { "dest": "powershell-6" },
             "powershell-7": { "dest": "powershell-7" }
@@ -108,18 +75,12 @@
         "fileMetadata": {
             "ms.prod": { "**/**.md": "powershell" },
             "ms.technology": {
-                "3.0/**.md": "powershell-cmdlets",
-                "4.0/**.md": "powershell-cmdlets",
-                "5.0/**.md": "powershell-cmdlets",
                 "5.1/**.md": "powershell-cmdlets",
                 "6/**.md": "powershell-cmdlets",
                 "7/**.md": "powershell-cmdlets",
                 "docs-conceptual/**.md": "powershell-conceptual"
             },
             "ms.topic": {
-                "3.0/**.md": "reference",
-                "4.0/**.md": "reference",
-                "5.0/**.md": "reference",
                 "5.1/**.md": "reference",
                 "6/**.md": "reference",
                 "7/**.md": "reference",
