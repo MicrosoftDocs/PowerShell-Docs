@@ -25,7 +25,7 @@ docker build --tag powershell:arm32v7 .
 docker run --rm --interactive --tty powershell:arm32v7
 ```
 
-# ARM 64-bit
+## ARM 64-bit
 
 More information will be available here as our ARM64 story progresses.
 
