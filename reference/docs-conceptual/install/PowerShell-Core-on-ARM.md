@@ -13,7 +13,7 @@ For more information on installing these experimental builds, see the installati
 [Windows 10 IoT](installing-powershell-core-on-windows.md#deploying-on-windows-iot)
 and [Raspbian](installing-powershell-core-on-linux.md#raspbian).
 
-# PowerShell Core in Docker, on ARM
+## PowerShell Core in Docker
 
 You can run PowerShell Core in a Docker container on a ARM device, such as a Raspberry Pi. There is not currently a pre-built container image published to a public repository, such as Docker Hub. However, you can build your own container image by downloading the `Dockerfile` for [PowerShell Core on ARM](https://github.com/PowerShell/PowerShell-Docker/blob/master/release/stable/arm32v7/docker/Dockerfile).
 
