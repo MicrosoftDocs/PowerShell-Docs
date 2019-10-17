@@ -3,7 +3,7 @@ external help file: System.Management.Automation.dll-Help.xml
 keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Core
-ms.date: 08/20/2019
+ms.date: 10/17/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/invoke-command?view=powershell-5.0&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Invoke-Command
@@ -377,7 +377,69 @@ process. The output of the first command includes the **PsComputerName** propert
 the name of the computer on which the command ran. The output of the second command, which uses
 **HideComputerName**, doesn't include the **PsComputerName** column.
 
-### Example 11: Run a script on all the computers listed in a text file
+### Example 11: Use the Param keyword in a script block
+
+The `Param` keyword and the **ArgumentList** parameter are used to pass variable values to named
+parameters in a script block. This example displays file names that begin with the letter `a` and
+have the `.pdf` extension.
+
+For more information about the `Param` keyword, see
+[about_Language_Keywords](./about/about_language_keywords.md#param).
+
+```powershell
+$parameters = @{
+    ComputerName = "Server01"
+    ScriptBlock = { Param ($param1,$param2) Get-ChildItem -Name $param1 -Include $param2 }
+    ArgumentList = "a*", "*.pdf"
+}
+Invoke-Command @parameters
+```
+
+```Output
+aa.pdf
+ab.pdf
+ac.pdf
+az.pdf
+```
+
+`Invoke-Command` uses the **ScriptBlock** parameter that defines two variables, `$param1` and
+`$param2`. `Get-ChildItem` uses the named parameters, **Name** and **Include** with the variable
+names. The **ArgumentList** passes the values to the variables.
+
+### Example 12: Use the $args automatic variable in a script block
+
+The `$args` automatic variable and the **ArgumentList** parameter are used to pass array values to
+parameter positions in a script block. This example displays a server's directory contents of `.txt`
+files. The `Get-ChildItem` **Path** parameter is position 0 and the **Filter** parameter is position
+1.
+
+For more information about the `$args` variable, see
+[about_Automatic_Variables](./about/about_automatic_variables.md#args)
+
+```powershell
+$parameters = @{
+    ComputerName = "Server01"
+    ScriptBlock = { Get-ChildItem $args[0] $args[1] }
+    ArgumentList = "C:\Test", "*.txt*"
+}
+Invoke-Command @parameters
+```
+
+```Output
+    Directory: C:\Test
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a---           6/12/2019    15:15            128 alog.txt
+-a---           7/27/2019    15:16            256 blog.txt
+-a---           9/28/2019    17:10             64 zlog.txt
+```
+
+`Invoke-Command` uses a **ScriptBlock** parameter and `Get-ChildItem` specifies the `$args[0]` and
+`$args[1]` array values. The **ArgumentList** passes the `$args` array values to the `Get-ChildItem`
+parameter positions for **Path** and **Filter**.
+
+### Example 13: Run a script on all the computers listed in a text file
 
 This example uses the `Invoke-Command` cmdlet to run the `Sample.ps1` script on all the computers
 listed in the `Servers.txt` file. The command uses the **FilePath** parameter to specify the script
@@ -392,7 +454,7 @@ When you submit the command, the content of the `Sample.ps1` file is copied into
 the script block is run on each of the remote computers. This procedure is equivalent to using the
 **ScriptBlock** parameter to submit the contents of the script.
 
-### Example 12: Run a command on a remote computer by using a URI
+### Example 14: Run a command on a remote computer by using a URI
 
 This example shows how to run a command on a remote computer that's identified by a Uniform Resource
 Identifier (URI). This particular example runs a `Set-Mailbox` command on a remote Exchange server.
@@ -419,7 +481,7 @@ the Exchange server endpoint. The **Credential** parameter specifies the credent
 `$LiveCred` variable. The **AuthenticationMechanism** parameter specifies the use of basic
 authentication. The **ScriptBlock** parameter specifies a script block that contains the command.
 
-### Example 13: Use a session option
+### Example 15: Use a session option
 
 This example shows how to create and use a **SessionOption** parameter.
 
@@ -438,7 +500,7 @@ HTTPS connection. The **SessionOption** object is saved in the `$so` variable.
 The `Invoke-Command` cmdlet runs a `Get-HotFix` command remotely. The **SessionOption** parameter is
 given the `$so` variable.
 
-### Example 14: Manage URI redirection in a remote command
+### Example 16: Manage URI redirection in a remote command
 
 This example shows how to use the **AllowRedirection** and **SessionOption** parameters to manage
 URI redirection in a remote command.
@@ -467,7 +529,7 @@ As a result, if the remote computer specified by **ConnectionURI** returns a red
 PowerShell redirects the connection, but if the new destination returns another redirection message,
 the redirection count value of 1 is exceeded, and `Invoke-Command` returns a non-terminating error.
 
-### Example 15: Access a network share in a remote session
+### Example 17: Access a network share in a remote session
 
 This example shows how to access a network share from a remote session. Three computers are used to
 demonstrate the example. Server01 is the local computer, Server02 is the remote computer, and Net03
@@ -510,7 +572,7 @@ The `$parameters` variable contains the parameter values to connect to the netwo
 from the `\\Net03\Scripts` network share. The command uses the **Authentication** parameter with a
 value of **CredSSP** and the **Credential** parameter with a value of **Domain01\Admin01**.
 
-### Example 16: Start scripts on many remote computers
+### Example 18: Start scripts on many remote computers
 
 This example runs a script on more than a hundred computers. To minimize the impact on the local
 computer, it connects to each computer, starts the script, and then disconnects from each computer.
