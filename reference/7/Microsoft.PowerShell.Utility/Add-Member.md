@@ -269,7 +269,7 @@ The acceptable values for this parameter are:
 - ScriptProperty
 - CodeProperty
 - ScriptMethod
-- CopyMethod
+- CodeMethod
 
 For information about these values, see [PSMemberTypes Enumeration](/dotnet/api/system.management.automation.psmembertypes)
 in the MSDN library.
