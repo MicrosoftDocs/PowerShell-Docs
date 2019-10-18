@@ -551,7 +551,8 @@ Accept wildcard characters: False
 
 ### -WorkingDirectory
 
-Specifies the initial working directory(location) of the background job. If it is not specified it defaults to `$HOME`.
+Specifies the initial working directory (location) of the background job. If it's not specified it
+defaults to `$HOME`.
 
  ```yaml
 Type: String
