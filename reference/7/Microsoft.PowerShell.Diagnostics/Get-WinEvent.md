@@ -47,7 +47,7 @@ Get-WinEvent [-ProviderName] <String[]> [-MaxEvents <Int64>] [-ComputerName <Str
 
 ```
 Get-WinEvent [-Path] <String[]> [-MaxEvents <Int64>] [-Credential <PSCredential>]
-[-FilterXPath <String>] [-Oldest] [<CommonParameters>]
+ [-FilterXPath <String>] [-Oldest] [<CommonParameters>]
 ```
 
 ### HashQuerySet
