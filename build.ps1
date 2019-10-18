@@ -32,7 +32,7 @@ $ReferenceDocset = Join-Path $PSScriptRoot 'reference'
 
 # Go through all the directories in the reference folder
 $jobs = [System.Collections.Generic.List[object]]::new()
-$excludeList = 'docs-conceptual', 'mapping', 'bread', '7'
+$excludeList = 'module', 'media', 'docs-conceptual', 'mapping', 'bread', '7'
 Get-ChildItem $ReferenceDocset -Directory -Exclude $excludeList | ForEach-Object -Process {
     $job = Start-ThreadJob -Name $_.Name -ArgumentList @($SkipCabs,$pandocExePath,$PSScriptRoot,$_) -ScriptBlock {
         param($SkipCabs, $pandocExePath, $WorkingDirectory, $DocSet)

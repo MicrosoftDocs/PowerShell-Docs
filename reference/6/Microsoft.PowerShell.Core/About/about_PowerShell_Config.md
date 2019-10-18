@@ -1,9 +1,10 @@
 ---
-ms.date:  11/02/2018
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell
-title:  about_PowerShell_Config
+keywords: powershell
+locale: en-us
+ms.date: 11/02/2018
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_powershell_config?view=powershell-6&WT.mc_id=ps-gethelp
+schema: 2.0.0
+title: about_PowerShell_Config
 ---
 # About PowerShell Config
 

@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Utility
 ms.date: 1/7/2019
-online version: https://go.microsoft.com/fwlink/?linkid=2096415
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/convertto-csv?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: ConvertTo-Csv
 ---
@@ -19,14 +19,14 @@ Converts objects into a series of character-separated value (CSV) strings.
 
 ```
 ConvertTo-Csv [-InputObject] <psobject> [[-Delimiter] <char>] [-IncludeTypeInformation]
-[-NoTypeInformation] [<CommonParameters>]
+ [-NoTypeInformation] [<CommonParameters>]
 ```
 
 ### UseCulture
 
 ```
 ConvertTo-Csv [-InputObject] <psobject> [-UseCulture] [-IncludeTypeInformation]
-[-NoTypeInformation] [<CommonParameters>]
+ [-NoTypeInformation] [<CommonParameters>]
 ```
 
 ## DESCRIPTION

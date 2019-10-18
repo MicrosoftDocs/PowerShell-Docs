@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Management
 ms.date: 6/17/2019
-online version: https://go.microsoft.com/fwlink/?linkid=2096818
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/restart-computer?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Restart-Computer
 ---
@@ -363,17 +363,16 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## NOTES
 
-`Restart-Computer` uses the
-[Win32Shutdown method](/windows/desktop/CIMWin32Prov/win32shutdown-method-in-class-win32-operatingsystem)
-of the Windows Management Instrumentation (WMI) [Win32_OperatingSystem](/windows/desktop/CIMWin32Prov/win32-operatingsystem)
-class.
+- `Restart-Computer` only work on computers running Windows and requires WinRM and WMI to shutdown a
+  system, including the local system.
+- `Restart-Computer` uses the [Win32Shutdown method](/windows/desktop/CIMWin32Prov/win32shutdown-method-in-class-win32-operatingsystem)
+  of the Windows Management Instrumentation (WMI) [Win32_OperatingSystem](/windows/desktop/CIMWin32Prov/win32-operatingsystem)
+  class.
 
 ## RELATED LINKS
 
 [About Windows Remote Management](/windows/desktop/WinRM/about-windows-remote-management)
 
 [Get-Credential](../Microsoft.PowerShell.Security/Get-Credential.md)
-
-[Microsoft.PowerShell.Management](Microsoft.PowerShell.Management.md)
 
 [WS-Management Protocol](/windows/desktop/WinRM/ws-management-protocol)

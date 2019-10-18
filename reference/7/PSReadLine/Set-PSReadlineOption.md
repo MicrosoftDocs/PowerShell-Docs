@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: PSReadLine
 ms.date: 09/23/2019
-online version: https://go.microsoft.com/fwlink/?linkid=2096858
+online version: https://docs.microsoft.com/powershell/module/psreadline/set-psreadlineoption?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-PSReadLineOption
 ---
@@ -673,7 +673,7 @@ You can't send objects down the pipeline to `Set-PSReadLineOption`.
 
 ## RELATED LINKS
 
-[about_PSReadLine](./About/PSReadLine.md)
+[about_PSReadLine](./About/about_PSReadLine.md)
 
 [Get-PSReadLineKeyHandler](Get-PSReadLineKeyHandler.md)
 

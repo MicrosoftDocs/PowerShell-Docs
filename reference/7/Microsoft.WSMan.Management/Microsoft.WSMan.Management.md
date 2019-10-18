@@ -1,13 +1,13 @@
 ---
-ms.date:  03/01/2019
-schema:  2.0.0
-locale:  en-US
-keywords:  powershell,cmdlet
-Help Version:  6.1.0.1
-Download Help Link:  https://go.microsoft.com/fwlink/?linkid=855961
-Module Guid:  766204a6-330e-4263-a7ab-46c87afc366c
-title:  Microsoft.WSMan.Management
-Module Name:  Microsoft.WSMan.Management
+Download Help Link: https://go.microsoft.com/fwlink/?linkid=855961
+Help Version: 6.1.0.1
+keywords: powershell,cmdlet
+locale: en-US
+Module Guid: 766204a6-330e-4263-a7ab-46c87afc366c
+Module Name: Microsoft.WSMan.Management
+ms.date: 03/01/2019
+schema: 2.0.0
+title: Microsoft.WSMan.Management
 ---
 # Microsoft.WSMan.Management Module
 

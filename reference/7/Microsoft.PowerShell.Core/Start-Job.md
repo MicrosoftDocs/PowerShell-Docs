@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Core
 ms.date: 08/09/2019
-online version: https://go.microsoft.com/fwlink/?linkid=2096796
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/start-job?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Start-Job
 ---
@@ -20,8 +20,9 @@ Starts a PowerShell background job.
 
 ```
 Start-Job [-Name <String>] [-ScriptBlock] <ScriptBlock> [-Credential <PSCredential>]
- [-Authentication <AuthenticationMechanism>] [[-InitializationScript] <ScriptBlock>] [WorkingDirectory <String>] [-RunAs32]
- [-PSVersion <Version>] [-InputObject <PSObject>] [-ArgumentList <Object[]>] [<CommonParameters>]
+ [-Authentication <AuthenticationMechanism>] [[-InitializationScript] <ScriptBlock>]
+ [WorkingDirectory <String>] [-RunAs32] [-PSVersion <Version>] [-InputObject <PSObject>]
+ [-ArgumentList <Object[]>] [<CommonParameters>]
 ```
 
 ### DefinitionName
@@ -35,16 +36,18 @@ Start-Job [-DefinitionName] <String> [[-DefinitionPath] <String>] [[-Type] <Stri
 
 ```
 Start-Job [-Name <String>] [-Credential <PSCredential>] [-FilePath] <String>
- [-Authentication <AuthenticationMechanism>] [[-InitializationScript] <ScriptBlock>] [WorkingDirectory <String>] [-RunAs32]
- [-PSVersion <Version>] [-InputObject <PSObject>] [-ArgumentList <Object[]>] [<CommonParameters>]
+ [-Authentication <AuthenticationMechanism>] [[-InitializationScript] <ScriptBlock>]
+ [WorkingDirectory <String>] [-RunAs32] [-PSVersion <Version>] [-InputObject <PSObject>]
+ [-ArgumentList <Object[]>] [<CommonParameters>]
 ```
 
 ### LiteralFilePathComputerName
 
 ```
 Start-Job [-Name <String>] [-Credential <PSCredential>] -LiteralPath <String>
- [-Authentication <AuthenticationMechanism>] [[-InitializationScript] <ScriptBlock>] [WorkingDirectory <String>] [-RunAs32]
- [-PSVersion <Version>] [-InputObject <PSObject>] [-ArgumentList <Object[]>] [<CommonParameters>]
+ [-Authentication <AuthenticationMechanism>] [[-InitializationScript] <ScriptBlock>]
+ [WorkingDirectory <String>] [-RunAs32] [-PSVersion <Version>] [-InputObject <PSObject>]
+ [-ArgumentList <Object[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -548,7 +551,8 @@ Accept wildcard characters: False
 
 ### -WorkingDirectory
 
-Specifies the initial working directory(location) of the background job. If it is not specified it defaults to `$HOME`.
+Specifies the initial working directory (location) of the background job. If it's not specified it
+defaults to `$HOME`.
 
  ```yaml
 Type: String

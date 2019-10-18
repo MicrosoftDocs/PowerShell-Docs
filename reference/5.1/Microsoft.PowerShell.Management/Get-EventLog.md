@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Management
 ms.date: 3/26/2019
-online version: https://go.microsoft.com/fwlink/?linkid=821585
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/get-eventlog?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-EventLog
 ---
@@ -21,9 +21,9 @@ computers.
 
 ```
 Get-EventLog [-LogName] <String> [-ComputerName <String[]>] [-Newest <Int32>] [-After <DateTime>]
-[-Before <DateTime>] [-UserName <String[]>] [[-InstanceId] <Int64[]>] [-Index <Int32[]>]
-[-EntryType <String[]>] [-Source <String[]>] [-Message <String>] [-AsBaseObject]
-[<CommonParameters>]
+ [-Before <DateTime>] [-UserName <String[]>] [[-InstanceId] <Int64[]>] [-Index <Int32[]>]
+ [-EntryType <String[]>] [-Source <String[]>] [-Message <String>] [-AsBaseObject]
+ [<CommonParameters>]
 ```
 
 ### List

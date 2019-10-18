@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Utility
 ms.date: 1/7/2019
-online version: https://go.microsoft.com/fwlink/?linkid=2096523
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/export-csv?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Export-Csv
 ---
@@ -20,16 +20,16 @@ file.
 
 ```
 Export-Csv [[-Path] <string>] [[-Delimiter] <char>] -InputObject <psobject> [-LiteralPath <string>]
-[-Force] [-NoClobber] [-Encoding <Encoding>] [-Append] [-IncludeTypeInformation]
-[-NoTypeInformation] [-WhatIf] [-Confirm] [<CommonParameters>]
+ [-Force] [-NoClobber] [-Encoding <Encoding>] [-Append] [-IncludeTypeInformation]
+ [-NoTypeInformation] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### UseCulture
 
 ```
 Export-Csv [[-Path] <string>] -InputObject <psobject> [-LiteralPath <string>] [-Force] [-NoClobber]
-[-Encoding <Encoding>] [-Append] [-UseCulture] [-IncludeTypeInformation] [-NoTypeInformation]
-[-WhatIf] [-Confirm] [<CommonParameters>]
+ [-Encoding <Encoding>] [-Append] [-UseCulture] [-IncludeTypeInformation] [-NoTypeInformation]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION

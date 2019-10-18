@@ -1,10 +1,10 @@
 ---
-ms.date: 3/18/2019
-schema: 2.0.0
-locale: en-us
+external help file: Microsoft.PowerShell.Commands.Diagnostics.dll-Help.xml
 keywords: powershell,cmdlet
-online version: https://go.microsoft.com/fwlink/?linkid=2096259
-external help file:  Microsoft.PowerShell.Commands.Diagnostics.dll-Help.xml
+locale: en-us
+ms.date: 3/18/2019
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.diagnostics/get-winevent?view=powershell-6&WT.mc_id=ps-gethelp
+schema: 2.0.0
 title: Get-WinEvent
 ---
 
@@ -19,49 +19,49 @@ Gets events from event logs and event tracing log files on local and remote comp
 
 ```
 Get-WinEvent [[-LogName] <String[]>] [-MaxEvents <Int64>] [-ComputerName <String>]
-[-Credential <PSCredential>] [-FilterXPath <String>] [-Force] [-Oldest] [<CommonParameters>]
+ [-Credential <PSCredential>] [-FilterXPath <String>] [-Force] [-Oldest] [<CommonParameters>]
 ```
 
 ### ListLogSet
 
 ```
 Get-WinEvent [-ListLog] <String[]> [-ComputerName <String>] [-Credential <PSCredential>] [-Force]
-[<CommonParameters>]
+ [<CommonParameters>]
 ```
 
 ### ListProviderSet
 
 ```
 Get-WinEvent [-ListProvider] <String[]> [-ComputerName <String>] [-Credential <PSCredential>]
-[<CommonParameters>]
+ [<CommonParameters>]
 ```
 
 ### GetProviderSet
 
 ```
 Get-WinEvent [-ProviderName] <String[]> [-MaxEvents <Int64>] [-ComputerName <String>]
-[-Credential <PSCredential>] [-FilterXPath <String>] [-Force] [-Oldest] [<CommonParameters>]
+ [-Credential <PSCredential>] [-FilterXPath <String>] [-Force] [-Oldest] [<CommonParameters>]
 ```
 
 ### FileSet
 
 ```
 Get-WinEvent [-Path] <String[]> [-MaxEvents <Int64>] [-Credential <PSCredential>]
-[-FilterXPath <String>] [-Oldest] [<CommonParameters>]
+ [-FilterXPath <String>] [-Oldest] [<CommonParameters>]
 ```
 
 ### HashQuerySet
 
 ```
 Get-WinEvent [-MaxEvents <Int64>] [-ComputerName <String>] [-Credential <PSCredential>]
-[-FilterHashtable] <Hashtable[]> [-Force] [-Oldest] [<CommonParameters>]
+ [-FilterHashtable] <Hashtable[]> [-Force] [-Oldest] [<CommonParameters>]
 ```
 
 ### XmlQuerySet
 
 ```
-Get-WinEvent [-MaxEvents <Int64>] [-ComputerName <String>] [-Credential <PSCredential>] [-FilterXml]
-<XmlDocument> [-Oldest] [<CommonParameters>]
+Get-WinEvent [-MaxEvents <Int64>] [-ComputerName <String>] [-Credential <PSCredential>]
+ [-FilterXml] <XmlDocument> [-Oldest] [<CommonParameters>]
 ```
 
 ## DESCRIPTION

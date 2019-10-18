@@ -64,28 +64,35 @@ supported. These packages are marked as `Community` in the table.
 Platforms listed as `Experimental` aren't officially supported, but are available for
 experimentation and feedback.
 
-| Platform                                          | 6.1         | 6.2         |
-|---------------------------------------------------|:-----------:|:-----------:|
-| Windows 7, 8.1, and 10                            | Supported   | Supported   |
-| Windows Server 2008 R2, 2012 R2, 2016             | Supported   | Supported   |
-| [Windows Server Semi-Annual Channel][semi-annual] | Supported   | Supported   |
-| Ubuntu 16.04 and 18.04                            | Supported   | Supported   |
-| Ubuntu 18.10 (via Snap Package)                   | Community   | Community   |
-| Ubuntu 19.04 (via Snap Package)                   | Community   | Community   |
-| Debian 9                                          | Supported   | Supported   |
-| CentOS 7                                          | Supported   | Supported   |
-| Red Hat Enterprise Linux 7                        | Supported   | Supported   |
-| openSUSE 42.3                                     | Supported   | Supported   |
-| Fedora 28                                         | Supported   | Supported   |
-| macOS 10.12+                                      | Supported   | Supported   |
-| Arch                                              | Community   | Community   |
-| Raspbian                                          | Community   | Community   |
-| Kali                                              | Community   | Community   |
-| AppImage (works on multiple Linux platforms)      | Community   | Community   |
-| [Snap Package](https://snapcraft.io/powershell)   | See note    | See note    |
+| Platform                                          |      6.2      |    7.0    |
+|---------------------------------------------------|:-------------:|:---------:|
+| Windows 7, 8.1, and 10                            |   Supported   | Supported |
+| Windows Server 2008 R2, 2012 R2, 2016             |   Supported   | Supported |
+| [Windows Server Semi-Annual Channel][semi-annual] |   Supported   | Supported |
+| Ubuntu 16.04 and 18.04                            |   Supported   | Supported |
+| Ubuntu 18.10 (via Snap Package)                   |   Community   | Community |
+| Ubuntu 19.04 (via Snap Package)                   |   Community   | Community |
+| Debian 9                                          |   Supported   | Supported |
+| Debian 10                                         | Not Supported | Supported |
+| CentOS 7                                          |   Supported   | Supported |
+| Red Hat Enterprise Linux 7                        |   Supported   | Supported |
+| openSUSE 42.3                                     |   Supported   | Supported |
+| Fedora 28                                         |   Supported   | Supported |
+| Fedora 29, 30                                     | Not Supported | Supported |
+| Alpine 3.8                                        |   See Note    | See Note  |
+| Alpine 3.9 and 3.10                               | Not Supported | See Note  |
+| macOS 10.12+                                      |   Supported   | Supported |
+| Arch                                              |   Community   | Community |
+| Raspbian                                          |   Community   | Community |
+| Kali                                              |   Community   | Community |
+| AppImage (works on multiple Linux platforms)      |   Community   | Community |
+| [Snap Package](https://snapcraft.io/powershell)   |   See note    | See note  |
 
 > [!NOTE]
 > Snap packages are supported the same as the distribution you're running the package on.
+
+> [!NOTE]
+> CIM, PowerShell Remoting, and DSC are not supported on Alpine.
 
 ## PowerShell releases end-of-life
 

@@ -1,10 +1,10 @@
 ---
+external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
 ms.date: 5/14/2019
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version: https://go.microsoft.com/fwlink/?linkid=821580
-external help file:  Microsoft.PowerShell.Commands.Management.dll-Help.xml
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/get-childitem?view=powershell-5.1&WT.mc_id=ps-gethelp
+schema: 2.0.0
 title: Get-ChildItem
 ---
 # Get-ChildItem
@@ -19,18 +19,18 @@ Gets the items and child items in one or more specified locations.
 
 ```
 Get-ChildItem [[-Path] <string[]>] [[-Filter] <string>] [-Include <string[]>] [-Exclude <string[]>]
-[-Recurse] [-Depth <uint32>] [-Force] [-Name] [-UseTransaction]
-[-Attributes <FlagsExpression[FileAttributes]>] [-Directory] [-File] [-Hidden] [-ReadOnly] [-System]
-[<CommonParameters>]
+ [-Recurse] [-Depth <uint32>] [-Force] [-Name] [-UseTransaction]
+ [-Attributes <FlagsExpression[FileAttributes]>] [-Directory] [-File] [-Hidden] [-ReadOnly] [-System]
+ [<CommonParameters>]
 ```
 
 ### LiteralItems
 
 ```
 Get-ChildItem [[-Filter] <string>] -LiteralPath <string[]> [-Include <string[]>]
-[-Exclude <string[]>] [-Recurse] [-Depth <uint32>] [-Force] [-Name] [-UseTransaction]
-[-Attributes <FlagsExpression[FileAttributes]>] [-Directory] [-File] [-Hidden] [-ReadOnly] [-System]
-[<CommonParameters>]
+ [-Exclude <string[]>] [-Recurse] [-Depth <uint32>] [-Force] [-Name] [-UseTransaction]
+ [-Attributes <FlagsExpression[FileAttributes]>] [-Directory] [-File] [-Hidden] [-ReadOnly] [-System]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION

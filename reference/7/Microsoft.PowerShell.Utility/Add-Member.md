@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Utility
 ms.date: 4/26/2019
-online version: https://go.microsoft.com/fwlink/?linkid=2097109
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/add-member?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Add-Member
 ---
@@ -269,7 +269,7 @@ The acceptable values for this parameter are:
 - ScriptProperty
 - CodeProperty
 - ScriptMethod
-- CopyMethod
+- CodeMethod
 
 For information about these values, see [PSMemberTypes Enumeration](/dotnet/api/system.management.automation.psmembertypes)
 in the MSDN library.
