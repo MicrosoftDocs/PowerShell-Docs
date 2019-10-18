@@ -20,7 +20,7 @@ Converts objects into a series of comma-separated value (CSV) strings.
 
 ```
 ConvertTo-Csv [-InputObject] <psobject> [[-Delimiter] <char>] [-NoTypeInformation]
-[<CommonParameters>]
+ [<CommonParameters>]
 ```
 
 ### UseCulture
