@@ -19,14 +19,14 @@ Converts objects into a series of character-separated value (CSV) strings.
 
 ```
 ConvertTo-Csv [-InputObject] <psobject> [[-Delimiter] <char>] [-IncludeTypeInformation]
-[-NoTypeInformation] [<CommonParameters>]
+ [-NoTypeInformation] [<CommonParameters>]
 ```
 
 ### UseCulture
 
 ```
 ConvertTo-Csv [-InputObject] <psobject> [-UseCulture] [-IncludeTypeInformation]
-[-NoTypeInformation] [<CommonParameters>]
+ [-NoTypeInformation] [<CommonParameters>]
 ```
 
 ## DESCRIPTION

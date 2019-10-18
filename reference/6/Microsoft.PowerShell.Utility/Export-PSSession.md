@@ -17,10 +17,10 @@ Exports commands from another session and saves them in a PowerShell module.
 
 ```
 Export-PSSession [-Session] <PSSession> [-OutputModule] <string> [[-CommandName] <string[]>]
-[[-FormatTypeName] <string[]>] [-Force] [-Encoding <Encoding>] [-AllowClobber]
-[-ArgumentList <Object[]>] [-CommandType <CommandTypes>] [-Module <string[]>]
-[-FullyQualifiedModule <ModuleSpecification[]>] [-Certificate <X509Certificate2>]
-[<CommonParameters>]
+ [[-FormatTypeName] <string[]>] [-Force] [-Encoding <Encoding>] [-AllowClobber]
+ [-ArgumentList <Object[]>] [-CommandType <CommandTypes>] [-Module <string[]>]
+ [-FullyQualifiedModule <ModuleSpecification[]>] [-Certificate <X509Certificate2>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
