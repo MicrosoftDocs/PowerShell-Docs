@@ -18,18 +18,18 @@ Writes new content or replaces existing content in a file.
 
 ```
 Set-Content [-Path] <string[]> [-Value] <Object[]> [-PassThru] [-Filter <string>]
-[-Include <string[]>] [-Exclude <string[]>] [-Force] [-Credential <pscredential>]
-[-WhatIf] [-Confirm] [-NoNewline] [-Encoding <Encoding>][-AsByteStream] [-Stream <string>]
-[<CommonParameters>]
+ [-Include <string[]>] [-Exclude <string[]>] [-Force] [-Credential <pscredential>]
+ [-WhatIf] [-Confirm] [-NoNewline] [-Encoding <Encoding>][-AsByteStream] [-Stream <string>]
+ [<CommonParameters>]
 ```
 
 ### LiteralPath
 
 ```
 Set-Content [-Value] <Object[]> -LiteralPath <string[]> [-PassThru] [-Filter <string>]
-[-Include <string[]>] [-Exclude <string[]>] [-Force] [-Credential <pscredential>]
-[-WhatIf] [-Confirm] [-NoNewline] [-Encoding <Encoding>][-AsByteStream] [-Stream <string>]
-[<CommonParameters>]
+ [-Include <string[]>] [-Exclude <string[]>] [-Force] [-Credential <pscredential>]
+ [-WhatIf] [-Confirm] [-NoNewline] [-Encoding <Encoding>][-AsByteStream] [-Stream <string>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION

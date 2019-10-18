@@ -20,8 +20,9 @@ Starts a PowerShell background job.
 
 ```
 Start-Job [-Name <String>] [-ScriptBlock] <ScriptBlock> [-Credential <PSCredential>]
- [-Authentication <AuthenticationMechanism>] [[-InitializationScript] <ScriptBlock>] [WorkingDirectory <String>] [-RunAs32]
- [-PSVersion <Version>] [-InputObject <PSObject>] [-ArgumentList <Object[]>] [<CommonParameters>]
+ [-Authentication <AuthenticationMechanism>] [[-InitializationScript] <ScriptBlock>]
+ [WorkingDirectory <String>] [-RunAs32] [-PSVersion <Version>] [-InputObject <PSObject>]
+ [-ArgumentList <Object[]>] [<CommonParameters>]
 ```
 
 ### DefinitionName
@@ -35,16 +36,18 @@ Start-Job [-DefinitionName] <String> [[-DefinitionPath] <String>] [[-Type] <Stri
 
 ```
 Start-Job [-Name <String>] [-Credential <PSCredential>] [-FilePath] <String>
- [-Authentication <AuthenticationMechanism>] [[-InitializationScript] <ScriptBlock>] [WorkingDirectory <String>] [-RunAs32]
- [-PSVersion <Version>] [-InputObject <PSObject>] [-ArgumentList <Object[]>] [<CommonParameters>]
+ [-Authentication <AuthenticationMechanism>] [[-InitializationScript] <ScriptBlock>]
+ [WorkingDirectory <String>] [-RunAs32] [-PSVersion <Version>] [-InputObject <PSObject>]
+ [-ArgumentList <Object[]>] [<CommonParameters>]
 ```
 
 ### LiteralFilePathComputerName
 
 ```
 Start-Job [-Name <String>] [-Credential <PSCredential>] -LiteralPath <String>
- [-Authentication <AuthenticationMechanism>] [[-InitializationScript] <ScriptBlock>] [WorkingDirectory <String>] [-RunAs32]
- [-PSVersion <Version>] [-InputObject <PSObject>] [-ArgumentList <Object[]>] [<CommonParameters>]
+ [-Authentication <AuthenticationMechanism>] [[-InitializationScript] <ScriptBlock>]
+ [WorkingDirectory <String>] [-RunAs32] [-PSVersion <Version>] [-InputObject <PSObject>]
+ [-ArgumentList <Object[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION

@@ -20,16 +20,16 @@ Downloads and installs the newest help files on your computer.
 
 ```
 Update-Help [[-Module] <String[]>] [-FullyQualifiedModule <ModuleSpecification[]>]
-[[-SourcePath] <String[]>] [-Recurse] [[-UICulture] <CultureInfo[]>] [-Credential <PSCredential>]
-[-UseDefaultCredentials] [-Force] [-WhatIf] [-Confirm] [<CommonParameters>]
+ [[-SourcePath] <String[]>] [-Recurse] [[-UICulture] <CultureInfo[]>] [-Credential <PSCredential>]
+ [-UseDefaultCredentials] [-Force] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### LiteralPath
 
 ```
 Update-Help [[-Module] <String[]>] [-FullyQualifiedModule <ModuleSpecification[]>]
-[-LiteralPath <String[]>] [-Recurse] [[-UICulture] <CultureInfo[]>] [-Credential <PSCredential>]
-[-UseDefaultCredentials] [-Force] [-WhatIf] [-Confirm] [<CommonParameters>]
+ [-LiteralPath <String[]>] [-Recurse] [[-UICulture] <CultureInfo[]>] [-Credential <PSCredential>]
+ [-UseDefaultCredentials] [-Force] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -251,7 +251,7 @@ foreach ($mModule in $Modules)
     if (Test-Path $mdir\*helpinfo.xml)
     {
         $mName=$mModule.Name
-        $mNodes = dir $mdir\*helpinfo.xml -ErrorAction SilentlyContinue | 
+        $mNodes = dir $mdir\*helpinfo.xml -ErrorAction SilentlyContinue |
             Select-Xml -Namespace $HelpInfoNamespace -XPath "//helpInfo:UICulture"
         foreach ($mNode in $mNodes)
         {
@@ -572,15 +572,15 @@ Only members of the Administrators group on the computer can update help for the
 modules, the commands that are installed together with PowerShell, and for modules in the
 `$PSHOME\Modules` folder. If you don't have permission to update help files, you can read the help
 files online. For example, `Get-Help Update-Help -Online`.
-  
+
 Modules are the smallest unit of updatable help. You can't update help for a particular cmdlet. To
 find the module that contains a particular cmdlet, use the **ModuleName** property of the
 `Get-Command` cmdlet, for example, `(Get-Command Update-Help).ModuleName`.
-  
+
 Because help files are installed in the module directory, the `Update-Help` cmdlet can install
 updated help file only for modules that are installed on the computer. However, the `Save-Help`
 cmdlet can save help for modules that aren't installed on the computer.
-  
+
 If `Update-Help` can't find updated help files for a module, or can't find updated help in the
 specified language, it continues silently without displaying an error message. To see status and
 progress details, use the **Verbose** parameter.
@@ -596,7 +596,7 @@ for HTTP and port 443 for HTTPS.
 
 `Update-Help` supports all modules and the PowerShell Core snap-ins. It doesn't support any other
 snap-ins.
-  
+
 To update help for a module in a location that isn't listed in the `$env:PSModulePath` environment
 variable, import the module into the current session and then run an `Update-Help` command. Run
 `Update-Help` without parameters or use the **Module** parameter to specify the module name. The
