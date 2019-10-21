@@ -10,6 +10,13 @@ PowerShell Core supports macOS 10.12 and higher.
 All packages are available on our GitHub [releases][] page.
 After the package is installed, run `pwsh` from a terminal.
 
+> [!TIP]
+> If you already have the [.NET Core SDK](/dotnet/core/sdk) installed, it’s easy to install PowerShell as a [.NET Global tool](/dotnet/core/tools/global-tools).
+>
+> ```
+> dotnet tool install --global PowerShell
+> ```
+
 ## About Brew
 
 [Homebrew][brew] is the preferred package manager for macOS.
