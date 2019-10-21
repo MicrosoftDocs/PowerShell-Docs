@@ -1,9 +1,10 @@
 ---
-ms.date:  08/28/2018
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-title:  about_Operators
+keywords: powershell,cmdlet
+locale: en-us
+ms.date: 08/28/2018
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_operators?view=powershell-7&WT.mc_id=ps-gethelp
+schema: 2.0.0
+title: about_Operators
 ---
 # About Operators
 
@@ -12,21 +13,20 @@ Describes the operators that are supported by PowerShell.
 
 ## Long description
 
-An operator is a language element that you can use in a command or
-expression. PowerShell supports several types of operators to help you
-manipulate values.
+An operator is a language element that you can use in a command or expression.
+PowerShell supports several types of operators to help you manipulate values.
 
 ### Arithmetic Operators
 
 Use arithmetic operators (`+`, `-`, `*`, `/`, `%`) to calculate values in a
-command or expression. With these operators, you can add, subtract,
-multiply, or divide values, and calculate the remainder (modulus) of a
-division operation.
+command or expression. With these operators, you can add, subtract, multiply,
+or divide values, and calculate the remainder (modulus) of a division
+operation.
 
 The addition operator concatenates elements. The multiplication operator
-returns the specified number of copies of each element. You can use
-arithmetic operators on any .NET type that implements them, such as: `Int`,
-`String`, `DateTime`, `Hashtable`, and Arrays.
+returns the specified number of copies of each element. You can use arithmetic
+operators on any .NET type that implements them, such as: `Int`, `String`,
+`DateTime`, `Hashtable`, and Arrays.
 
 For more information, see [about_Arithmetic_Operators](about_Arithmetic_Operators.md).
 
@@ -40,9 +40,9 @@ For more information, see [about_Assignment_Operators](about_Assignment_Operator
 
 ### Comparison Operators
 
-Use comparison operators (`-eq`, `-ne`, `-gt`, `-lt`, `-le`, `-ge`) to
-compare values and test conditions. For example, you can compare two string
-values to determine whether they are equal.
+Use comparison operators (`-eq`, `-ne`, `-gt`, `-lt`, `-le`, `-ge`) to compare
+values and test conditions. For example, you can compare two string values to
+determine whether they are equal.
 
 The comparison operators also include operators that find or replace patterns
 in text. The (`-match`, `-notmatch`, `-replace`) operators use regular
@@ -62,9 +62,9 @@ For more information, see [about_Comparison_Operators](about_Comparison_Operator
 ### Logical Operators
 
 Use logical operators (`-and`, `-or`, `-xor`, `-not`, `!`) to connect
-conditional statements into a single complex conditional. For example, you
-can use a logical `-and` operator to create an object filter with two
-different conditions.
+conditional statements into a single complex conditional. For example, you can
+use a logical `-and` operator to create an object filter with two different
+conditions.
 
 For more information, see [about_Logical_Operators](about_logical_operators.md).
 
@@ -80,9 +80,9 @@ For more information, see [about_Redirection](about_Redirection.md)
 
 ### Split and Join Operators
 
-The `-split` and `-join` operators divide and combine substrings. The
-`-split` operator splits a string into substrings. The `-join` operator
-concatenates multiple strings into a single string.
+The `-split` and `-join` operators divide and combine substrings. The `-split`
+operator splits a string into substrings. The `-join` operator concatenates
+multiple strings into a single string.
 
 For more information, see [about_Split](about_Split.md) and
 [about_Join](about_Join.md).
@@ -96,15 +96,15 @@ For more information, see [about_Type_Operators](about_Type_Operators.md).
 
 ### Unary Operators
 
-Use unary operators to increment or decrement variables or object
-properties and to set integers to positive or negative numbers. For
-example, to increment the variable `$a` from `9` to `10`, you type `$a++`.
+Use unary operators to increment or decrement variables or object properties
+and to set integers to positive or negative numbers. For example, to increment
+the variable `$a` from `9` to `10`, you type `$a++`.
 
 ### Special Operators
 
 Special operators have specific use-cases that do not fit into any other
-operator group. For example, special operators allow you to
-run commands, change a value's data type, or retrieve elements from an array.
+operator group. For example, special operators allow you to run commands,
+change a value's data type, or retrieve elements from an array.
 
 #### Array subexpression operator `@( )`
 
@@ -264,8 +264,8 @@ $job = Start-Job -ScriptBlock {Get-Process -Name pwsh}
 Receive-Job $job -Wait
 ```
 
-If you want to run multiple commands, each in their own background process
-but all on one line, simply place `&` between and after each of the commands.
+If you want to run multiple commands, each in their own background process but
+all on one line, simply place `&` between and after each of the commands.
 
 For more information on PowerShell jobs, see [about_Jobs](about_Jobs.md).
 
@@ -303,8 +303,8 @@ variables that the script creates are added to the current scope.
 > distinguish the dot from the dot (`.`) symbol that represents the current
 > directory.
 
-In the following example, the Sample.ps1 script in the current directory is
-run in the current scope.
+In the following example, the Sample.ps1 script in the current directory is run
+in the current scope.
 
 ```powershell
 . .\sample.ps1
@@ -312,9 +312,9 @@ run in the current scope.
 
 #### Format operator `-f`
 
-Formats strings by using the format method of string objects. Enter the
-format string on the left side of the operator and the objects to be
-formatted on the right side of the operator.
+Formats strings by using the format method of string objects. Enter the format
+string on the left side of the operator and the objects to be formatted on the
+right side of the operator.
 
 ```powershell
 "{0} {1,-10} {2:N}" -f 1,"hello",[math]::pi
@@ -329,10 +329,10 @@ method and [Composite Formatting](/dotnet/standard/base-types/composite-formatti
 
 #### Index operator `[ ]`
 
-Selects objects from indexed collections, such as arrays and hash tables.
-Array indexes are zero-based, so the first object is indexed as `[0]`. For
-arrays (only), you can also use negative indexes to get the last values.
-Hash tables are indexed by key value.
+Selects objects from indexed collections, such as arrays and hash tables. Array
+indexes are zero-based, so the first object is indexed as `[0]`. For arrays
+(only), you can also use negative indexes to get the last values. Hash tables
+are indexed by key value.
 
 ```
 PS> $a = 1, 2, 3
@@ -368,13 +368,33 @@ Once upon a time...
 
 #### Pipeline operator `|`
 
-Sends ("pipes") the output of the command that precedes it to the command
-that follows it. When the output includes more than one object (a
-"collection"), the pipeline operator sends the objects one at a time.
+Sends ("pipes") the output of the command that precedes it to the command that
+follows it. When the output includes more than one object (a "collection"), the
+pipeline operator sends the objects one at a time.
 
 ```powershell
 Get-Process | Get-Member
 Get-PSSnapin | Where-Object {$_.vendor -ne "Microsoft"}
+```
+
+#### Pipeline chain operators `&&` and `||`
+
+> [!NOTE]
+> This is an experimental feature. For more information see
+> [about_Experimental_Features](about_Experimental_Features.md).
+
+Conditionally execute the right-hand side pipeline based on the success of the
+left-hand side pipeline.
+
+```powershell
+# If Get-Process successfully finds a process called notepad,
+# Stop-Process -Name notepad is called
+Get-Process notepad && Stop-Process -Name notepad
+```
+
+```powershell
+# If npm install fails, the node_modules directory is removed
+npm install || Remove-Item -Recurse ./node_modules
 ```
 
 #### Property dereferences operator `.`
@@ -468,6 +488,8 @@ For more information, see [about_If](about_If.md).
 [about_Logical_Operators](about_logical_operators.md)
 
 [about_Type_Operators](about_Type_Operators.md)
+
+[about_Pipeline_Chain_Operators](about_Pipeline_Chain_Operators.md)
 
 [about_Split](about_Split.md)
 

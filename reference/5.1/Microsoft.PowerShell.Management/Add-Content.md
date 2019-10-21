@@ -1,11 +1,11 @@
 ---
-ms.date:  04/23/2019
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version: https://go.microsoft.com/fwlink/?linkid=821565
-external help file:  Microsoft.PowerShell.Commands.Management.dll-Help.xml
-title:  Add-Content
+external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+ms.date: 04/23/2019
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/add-content?view=powershell-5.1&WT.mc_id=ps-gethelp
+schema: 2.0.0
+title: Add-Content
 ---
 # Add-Content
 
@@ -17,19 +17,19 @@ Adds content to the specified items, such as adding words to a file.
 ### Path (Default)
 
 ```
-Add-Content [-Path] <string[]> [-Value] <Object[]> [-PassThru] [-Filter <string>] [-Include
-<string[]>] [-Exclude <string[]>] [-Force] [-Credential <pscredential>] [-WhatIf] [-Confirm]
-[-UseTransaction] [-NoNewline] [-Encoding <FileSystemCmdletProviderEncoding>] [-Stream <string>]
-[<CommonParameters>]
+Add-Content [-Path] <string[]> [-Value] <Object[]> [-PassThru] [-Filter <string>]
+ [-Include <string[]>] [-Exclude <string[]>] [-Force] [-Credential <pscredential>] [-WhatIf]
+ [-Confirm] [-UseTransaction] [-NoNewline] [-Encoding <FileSystemCmdletProviderEncoding>]
+ [-Stream <string>] [<CommonParameters>]
 ```
 
 ### LiteralPath
 
 ```
-Add-Content [-Value] <Object[]> -LiteralPath <string[]> [-PassThru] [-Filter <string>] [-Include
-<string[]>] [-Exclude <string[]>] [-Force] [-Credential <pscredential>] [-WhatIf] [-Confirm]
-[-UseTransaction] [-NoNewline] [-Encoding <FileSystemCmdletProviderEncoding>] [-Stream <string>]
-[<CommonParameters>]
+Add-Content [-Value] <Object[]> -LiteralPath <string[]> [-PassThru] [-Filter <string>]
+ [-Include <string[]>] [-Exclude <string[]>] [-Force] [-Credential <pscredential>] [-WhatIf]
+ [-Confirm] [-UseTransaction] [-NoNewline] [-Encoding <FileSystemCmdletProviderEncoding>]
+ [-Stream <string>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION

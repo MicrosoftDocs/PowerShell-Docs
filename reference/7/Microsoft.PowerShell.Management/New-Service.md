@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Management
 ms.date: 06/09/2017
-online version: https://go.microsoft.com/fwlink/?linkid=2096905
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/new-service?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: New-Service
 ---
@@ -17,8 +17,8 @@ Creates a new Windows service.
 
 ```
 New-Service [-Name] <String> [-BinaryPathName] <String> [-DisplayName <String>] [-Description <String>]
- [-StartupType <ServiceStartupType>] [-Credential <PSCredential>] [-DependsOn <String[]>] [-WhatIf] [-Confirm]
- [<CommonParameters>]
+ [-SecurityDescriptorSddl <String>] [-StartupType <ServiceStartupType>] [-Credential <PSCredential>]
+ [-DependsOn <String[]>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -61,6 +61,18 @@ Status    : OK
 
 This command uses **Get-WmiObject** to get the **Win32_Service** object for the new service.
 This object includes the start mode and the service description.
+
+### Example 4: Set the SecurityDescriptor of a service when creating.
+
+This example adds the **SecurityDescriptor** of the service being created.
+
+```powershell
+$SDDLToSet = "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;SU)"
+New-Service -Name "TestService" -BinaryPathName "C:\WINDOWS\System32\svchost.exe -k netsvcs" -DependsOn NetLogon -DisplayName "Test Service" -StartupType Manual -Description "This is a test service." -SecurityDescriptorSddl $SDDLToSet
+```
+
+The **SecurityDescriptor** is stored in the `$SDDLToSet` variable. The **SecurityDescriptorSddl** parameter uses
+`$SDDLToSet` to set the **SecurityDescriptor** of the new service.
 
 ## PARAMETERS
 
@@ -194,6 +206,22 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -SecurityDescriptorSddl
+
+Specifies the **SecurityDescriptor** for the service in **Sddl** format.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Confirm
 
 Prompts you for confirmation before running the cmdlet.
@@ -264,5 +292,3 @@ This cmdlet returns an object that represents the new service.
 [Suspend-Service](Suspend-Service.md)
 
 [Remove-Service](Remove-Service.md)
-
-

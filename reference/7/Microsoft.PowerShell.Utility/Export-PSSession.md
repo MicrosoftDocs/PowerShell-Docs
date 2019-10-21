@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Utility
 ms.date: 04/23/2019
-online version: https://go.microsoft.com/fwlink/?linkid=2096604
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/export-pssession?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Export-PSSession
 ---
@@ -17,10 +17,10 @@ Exports commands from another session and saves them in a PowerShell module.
 
 ```
 Export-PSSession [-Session] <PSSession> [-OutputModule] <string> [[-CommandName] <string[]>]
-[[-FormatTypeName] <string[]>] [-Force] [-Encoding <Encoding>] [-AllowClobber]
-[-ArgumentList <Object[]>] [-CommandType <CommandTypes>] [-Module <string[]>]
-[-FullyQualifiedModule <ModuleSpecification[]>] [-Certificate <X509Certificate2>]
-[<CommonParameters>]
+ [[-FormatTypeName] <string[]>] [-Force] [-Encoding <Encoding>] [-AllowClobber]
+ [-ArgumentList <Object[]>] [-CommandType <CommandTypes>] [-Module <string[]>]
+ [-FullyQualifiedModule <ModuleSpecification[]>] [-Certificate <X509Certificate2>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION

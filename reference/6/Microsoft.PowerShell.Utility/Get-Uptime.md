@@ -1,9 +1,9 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Module Name: Microsoft.PowerShell.Utility
-online version: https://go.microsoft.com/fwlink/?linkid=834862
-schema: 2.0.0
 ms.date: 06/27/2019
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/get-uptime?view=powershell-6&WT.mc_id=ps-gethelp
+schema: 2.0.0
 title: Get-Uptime
 ---
 

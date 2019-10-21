@@ -1,9 +1,9 @@
 ---
-Module Name: ThreadJob
-Module Guid: 29955884-f6a6-49ba-a071-a4dc8842697f
 Download Help Link: {{ Update Download Link }}
 Help Version: 2.0.1
 Locale: en-US
+Module Guid: 29955884-f6a6-49ba-a071-a4dc8842697f
+Module Name: ThreadJob
 ms.date: 07/09/2019
 title: ThreadJob Module
 ---

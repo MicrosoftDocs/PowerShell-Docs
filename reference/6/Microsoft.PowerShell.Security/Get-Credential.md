@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Security
 ms.date: 02/25/2019
-online version: https://go.microsoft.com/fwlink/?linkid=2096411
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.security/get-credential?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Credential
 ---
