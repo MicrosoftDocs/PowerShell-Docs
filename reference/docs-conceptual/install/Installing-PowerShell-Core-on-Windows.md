@@ -7,6 +7,13 @@ ms.date: 08/06/2018
 
 There are multiple ways to install PowerShell Core in Windows.
 
+> [!TIP]
+> If you already have the [.NET Core SDK](/dotnet/core/sdk) installed, it’s easy to install PowerShell as a [.NET Global tool](/dotnet/core/tools/global-tools).
+>
+> ```
+> dotnet tool install --global PowerShell
+> ```
+
 ## Prerequisites
 
 To enable PowerShell remoting over WSMan, the following prerequisites need to be met:
