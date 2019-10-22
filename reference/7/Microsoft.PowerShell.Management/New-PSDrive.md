@@ -39,8 +39,8 @@ by using `Set-Location`, and access the contents of the drive by using `Get-Item
 `Get-ChildItem`.
 
 Because temporary drives are known only to PowerShell, you can't access them by using File Explorer,
-Windows Management Instrumentation (WMI), Component Object Model (COM), or the Microsoft .NET
-Framework, or by using tools such as **net use**.
+Windows Management Instrumentation (WMI), Component Object Model (COM), Microsoft .NET Framework, or
+with tools such as **net use**.
 
 The following features were added to `New-PSDrive` in PowerShell 3.0:
 
@@ -53,7 +53,7 @@ The following features were added to `New-PSDrive` in PowerShell 3.0:
   scope in which the command is running. If you're running `New-PSDrive` inside a script, and you
   want the drive to persist indefinitely, you must dot-source the script. For best results, to force
   a new drive to persist indefinitely, add the **Scope** parameter to your command, and set its
-  value to **Global**. For more informaton about dot-sourcing, see
+  value to **Global**. For more information about dot-sourcing, see
   [about_Scripts](../Microsoft.PowerShell.Core/About/about_Scripts.md#script-scope-and-dot-sourcing).
 - External drives. When an external drive is connected to the computer, PowerShell automatically
   adds a **PSDrive** to the file system that represents the new drive. You don't have to restart
@@ -170,9 +170,8 @@ a remote computer. **Persist** creates a Windows mapped network drive that's sav
 computer. **PSProvider** specifies the `FileSystem` provider. **Credential** uses the `$cred`
 variable to get the service account credentials for authentication.
 
-The mapped drive can be viewed on the local computer in PowerShell sessions, Windows Explorer, and
-with tools, such as **net use**. To view the contents from a PowerShell session:
-`Get-ChildItem -Path S:`
+The mapped drive can be viewed on the local computer in PowerShell sessions, File Explorer, and with
+tools such as **net use**. To view the contents from a PowerShell session: `Get-ChildItem -Path S:`
 
 ### Example 5: Create persistent and temporary drives
 
@@ -181,8 +180,8 @@ PowerShell drive that is mapped to the same network share.
 
 If you close the PowerShell session and then open a new session, the temporary `PSDrive:` isn't
 available, but the persistent `X:` drive is available. When deciding which method to use to map
-network drives, consider how you'll use the drive, whether it has to be persistent, and whether the
-drive has to be visible to other Windows features.
+network drives, consider how you'll use the drive. For example, whether it has to be persistent, and
+whether the drive has to be visible to other Windows features.
 
 ```powershell
 # Create a temporary PowerShell drive called PSDrive:
@@ -335,8 +334,8 @@ available on Windows.
 Mapped network drives are saved in Windows on the local computer. They're persistent, not
 session-specific, and can be viewed and managed in File Explorer and other tools.
 
-When you scope the command locally, that is, without dot-sourcing, the **Persist** parameter doesn't
-persist the creation of a **PSDrive** beyond the scope in which you run the command. If you run
+When you scope the command locally, without dot-sourcing, the **Persist** parameter doesn't persist
+the creation of a **PSDrive** beyond the scope in which you run the command. If you run
 `New-PSDrive` inside a script, and you want the new drive to persist indefinitely, you must
 dot-source the script. For best results, to force a new drive to persist, specify **Global** as the
 value of the **Scope** parameter and include **Persist** in your command.
