@@ -58,7 +58,7 @@ computer.
 - GetProcessSample02 - Shows how to add parameters to the cmdlet. The cmdlet takes one or more
 process names and returns the matching processes.
 - GetProcessSample03 - Shows how to add parameters that accept input from the pipeline.
-- GetProcessSample04 - Shows how to handle nonterminating errors.
+- GetProcessSample04 - Shows how to handle non-terminating errors.
 - GetProcessSample05 - Shows how to display a list of specified processes.
 - SelectObject - Shows how to write a filter to select only certain objects.
 - SelectString - Shows how to search files for specified patterns.
