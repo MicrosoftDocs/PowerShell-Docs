@@ -15,35 +15,28 @@ Windows PowerShell 3.0 is automatically installed with Windows 8 and Windows Ser
 addition, you can download and install the reference assemblies for Windows PowerShell 3.0 as part
 of the Windows 8 SDK. These assemblies allow you to write cmdlets, providers, and host programs for
 Windows PowerShell 3.0. When you install the Windows SDK for Windows 8, the Windows PowerShell
-assemblies are automatically installed in the reference assembly folder, in \Program Files
-(x86)\Reference Assemblies\Microsoft\WindowsPowerShell\3.0. For more information, see the Windows 8
-SDK download site. Windows PowerShell code samples are also available on the Development Center.
-For more information, see the Desktop code sample page on the Dev center site.
-
-In addition, Windows PowerShell 3.0 is backwards-compatible with the Windows PowerShell 2.0 SDK,
-which includes a number of code samples. For more information on how to download the Windows
-PowerShell 2.0 SDK, see below. (Note that while the 2.0 code samples are compatible with Windows 8
-and Windows PowerShell 3.0, you cannot install Windows PowerShell 2.0 on a Windows 8 platform.)
+assemblies are automatically installed in the reference assembly folder, in `\Program Files
+(x86)\Reference Assemblies\Microsoft\WindowsPowerShell\3.0`. For more information, see the Windows 8
+SDK download site. Windows PowerShell code samples are also available on the Development Center at
+[Windows PowerShell 3.0 SDK Sample Pack](https://code.msdn.microsoft.com/Windows-PowerShell-30-SDK-9a34641d).
 
 ## Installing Windows PowerShell 3.0 SDK for Windows 7 and Windows Server 2008 R2
 
 Windows 7 and Windows Server 2008 R2 automatically have PowerShell 2.0 installed. In addition, you
-can install PowerShell 3.0 on these systems. (For more information, see Installing Windows
-PowerShell.). As described above, you can also install the Windows 8 SDK on Windows 7 and Windows
-Server 2008 R2.
+can install PowerShell 3.0 on these systems. You can also install the Windows 8 SDK on Windows 7 and
+Windows Server 2008 R2 as described above.
 
 ## Installing Windows PowerShell 2.0 SDK for Windows 7, Vista, XP, Server 2003, and Server 2008
 
 The Windows PowerShell 2.0 SDK provides the reference assemblies needed to write cmdlets,
 providers, and hosting applications, and it provides C# sample code that can be used as the
-starting point when you begin writing code.
-
-To install this SDK, see Windows PowerShell 2.0 SDK.
+starting point when you begin writing code. You can download the code samples from
+[https://www.microsoft.com/download/details.aspx?id=2560](https://www.microsoft.com/download/details.aspx?id=2560).
 
 ### Reference assemblies
 
-Reference assemblies are installed in the following location by default: c:\Program Files\Reference
-Assemblies\Microsoft\WindowsPowerShell\V1.0.
+Reference assemblies are installed in the following location by default: `c:\Program Files\Reference
+Assemblies\Microsoft\WindowsPowerShell\V1.0`.
 
 > [!NOTE]
 >
@@ -54,8 +47,8 @@ Assemblies\Microsoft\WindowsPowerShell\V1.0.
 
 ### Samples
 
-Code samples are installed in the following location by default: C:\Program Files\Microsoft
-SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\. The following sections provide a brief
+Code samples are installed in the following location by default: `C:\Program Files\Microsoft
+SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\`. The following sections provide a brief
 description of what each sample does.
 
 #### Cmdlet samples
