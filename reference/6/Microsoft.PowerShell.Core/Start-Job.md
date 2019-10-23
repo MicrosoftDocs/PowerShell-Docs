@@ -72,9 +72,6 @@ Starting in PowerShell 3.0, `Start-Job` can start instances of custom job types,
 jobs. For information about how to use `Start-Job` to start jobs with custom types, see the help
 documents for the job type feature.
 
-PowerShell 7 introduced the **WorkingDirectory** parameter that specifies a background job's initial
-working directory.
-
 > [!NOTE]
 > Creating an out-of-process background job with `Start-Job` is not supported in the scenario where
 > PowerShell is being hosted in other applications, such as the PowerShell Azure Functions.
@@ -248,26 +245,6 @@ Server04
 variable. The `$input` variable gets objects from the **InputObject** parameter. `Receive-Job` uses
 the **Name** parameter to specify the job and outputs the results. The **Keep** parameter saves the
 job output so it can be viewed again during the PowerShell session.
-
-### Example 9: Set the working directory for a background job
-
-The **WorkingDirectory** allows you to specify an alternate directory for a job from which you can
-run scripts or open files. In this example, the background job specifies a working directory that's
-different than the current directory location.
-
-```
-PS C:\Test> Start-Job -WorkingDirectory C:\Test\Scripts { $PWD } | Receive-Job -AutoRemoveJob -Wait
-
-Path
-----
-C:\Test\Scripts
-```
-
-You can use `PWD` to display the current working directory. `Start-Job` uses the
-**WorkingDirectory** parameter to specify the job's working directory. The **ScriptBlock** parameter
-uses `$PWD` to display the job's working directory. `Receive-Job` displays the background job's
-output. **AutoRemoveJob** deletes the job and **Wait** suppresses the command prompt until all
-results are received.
 
 ## PARAMETERS
 

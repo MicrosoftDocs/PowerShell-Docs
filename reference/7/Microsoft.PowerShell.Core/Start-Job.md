@@ -265,11 +265,11 @@ Path
 C:\Test\Scripts
 ```
 
-You can use `PWD` to display the current working directory. `Start-Job` uses the
-**WorkingDirectory** parameter to specify the job's working directory. The **ScriptBlock** parameter
-uses `$PWD` to display the job's working directory. `Receive-Job` displays the background job's
-output. **AutoRemoveJob** deletes the job and **Wait** suppresses the command prompt until all
-results are received.
+This example's current working directory is `C:\Test`. `Start-Job` uses the **WorkingDirectory**
+parameter to specify the job's working directory. The **ScriptBlock** parameter uses `$PWD` to
+display the job's working directory. `Receive-Job` displays the background job's output.
+**AutoRemoveJob** deletes the job and **Wait** suppresses the command prompt until all results are
+received.
 
 ## PARAMETERS
 
