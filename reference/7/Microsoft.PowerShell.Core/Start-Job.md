@@ -66,14 +66,14 @@ To run a background job on a remote computer, use the **AsJob** parameter that i
 cmdlets, or use the `Invoke-Command` cmdlet to run a `Start-Job` command on the remote computer. For
 more information, see [about_Remote_Jobs](./About/about_Remote_Jobs.md).
 
-You can start jobs using the ampersand (`&`) background operator. The functionality of the
-background operator is similar to `Start-Job`. Both methods to start a job create a
-**PSRemotingJob** job object. For more information about using the ampersand (`&`), see
-[about_Operators](./about/about_operators.md#background-operator-).
-
 Starting in PowerShell 3.0, `Start-Job` can start instances of custom job types, such as scheduled
 jobs. For information about how to use `Start-Job` to start jobs with custom types, see the help
 documents for the job type feature.
+
+Beginning in PowerShell 6.0, you can start jobs using the ampersand (`&`) background operator. The
+functionality of the background operator is similar to `Start-Job`. Both methods to start a job
+create a **PSRemotingJob** job object. For more information about using the ampersand (`&`), see
+[about_Operators](./about/about_operators.md#background-operator-).
 
 PowerShell 7 introduced the **WorkingDirectory** parameter that specifies a background job's initial
 working directory.
