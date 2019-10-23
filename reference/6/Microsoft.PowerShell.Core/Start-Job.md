@@ -64,7 +64,7 @@ cmdlets, or use the `Invoke-Command` cmdlet to run a `Start-Job` command on the 
 more information, see [about_Remote_Jobs](./About/about_Remote_Jobs.md).
 
 You can start jobs using the ampersand (`&`) background operator. The functionality of the
-background operator is simliar to `Start-Job`. Both methods to start a job create a
+background operator is similar to `Start-Job`. Both methods to start a job create a
 **PSRemotingJob** job object. For more information about using the ampersand (`&`), see
 [about_Operators](./about/about_operators.md#background-operator-).
 
