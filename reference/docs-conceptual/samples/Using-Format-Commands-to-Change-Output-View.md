@@ -77,7 +77,7 @@ Wide
 ### Controlling Format-Wide Display with Column
 
 With the `Format-Wide` cmdlet, you can only display a single property at a time. This makes it
-useful for displaying simple lists that show in multiple columns.
+useful for displaying large lists in multiple columns.
 
 ```powershell
 Get-Command -Verb Format | Format-Wide -Property Noun -Column 3
@@ -134,7 +134,7 @@ Id          : 21748
 
 The `Format-List` cmdlet lets you use a wildcard as the value of its **Property** parameter. This
 lets you display detailed information. Often, objects include more information than you need, which
-is why PowerShell does not show all property values by default. To show all of properties of
+is why PowerShell doesn't show all property values by default. To show all of properties of
 an object, use the **Format-List -Property \&#42;** command. The following command generates over 60
 lines of output for a single process:
 
@@ -148,9 +148,8 @@ that includes many items, a simpler tabular view is often more useful.
 ## Using Format-Table for Tabular Output
 
 If you use the `Format-Table` cmdlet with no property names specified to format the output of the
-`Get-Process` command, you get exactly the same output as you do without performing any
-formatting. The reason is that processes are usually displayed in a tabular format, as are most
-PowerShell objects.
+`Get-Process` command, you get exactly the same output as you do without a `Format` cmdlet. By
+default, PowerShell displays **Process** objects in a tabular format.
 
 ```powershell
 Get-Service -Name win* | Format-Table
@@ -167,11 +166,11 @@ Running  WinRM              Windows Remote Management (WS-Manag...
 
 ### Improving Format-Table Output (AutoSize)
 
-Although a tabular view is useful for displaying a lot of information, it may be difficult to
+Although a tabular view is useful for displaying lots of information, it may be difficult to
 interpret if the display is too narrow for the data. In the previous example, the output is
 truncated. If you specify the **AutoSize** parameter when you run the `Format-Table` command,
-PowerShell calculates column widths based on the actual data displayed. This
-makes the columns readable.
+PowerShell calculates column widths based on the actual data displayed. This makes the columns
+readable.
 
 ```powershell
 Get-Service -Name win* | Format-Table -AutoSize
@@ -204,10 +203,10 @@ Winmgmt             Running Automatic Windows Management Instrumentation        
 WinRM               Running Automatic Windows Remote Management (WS-Management) {}
 ```
 
-The `Format-Table` command assumes that the nearer a property is to the beginning of the property
-list, the more important it is. So it attempts to display the properties nearest the beginning
-completely. If the `Format-Table` command cannot display all the properties, it removes some columns
-from the display. You can see this behavior in the **DependentServices** property previous example.
+The `Format-Table` command assumes that properties are listed in order of importance. So it attempts
+to fully display the properties nearest the beginning. If the `Format-Table` command can't display
+all the properties, it removes some columns from the display. You can see this behavior in the
+**DependentServices** property previous example.
 
 ### Wrapping Format-Table Output in Columns (Wrap)
 
@@ -233,22 +232,25 @@ Winmgmt             Running Automatic Windows Management Instrumentation        
 WinRM               Running Automatic Windows Remote Management (WS-Management) {}
 ```
 
-An advantage of using the **Wrap** parameter by itself is that it does not slow down processing very
-much. When you use **AutoSize**, to format a recursive file listing of a large directory structure,
-it might take a very long time and use a lot of memory before displaying the first output items.
+Using the **Wrap** parameter by itself doesn't slow down processing very much. However, using
+**AutoSize** to format a recursive file listing of a large directory structure can take a long time
+and use lots of memory before displaying the first output items.
 
-If you are not concerned about system load, then **AutoSize** works well with the **Wrap**
-parameter. The initial columns are always allotted as much width as they need to display items on
-one line, just as when you specify **AutoSize** without the **Wrap** parameter. The only difference
-is that the final column will be wrapped if necessary.
+If you aren't concerned about system load, then **AutoSize** works well with the **Wrap** parameter.
+The initial columns still use as much width as needed to display items on one line, but the final
+column is wrapped, if necessary.
 
-Some columns might not be displayed if you specify the widest columns first, so it is safest to
-specify the smallest data elements first. In the following example, we specify the wide
-properties first. Even with wrapping, we still lose the final **Id** column:
+> [!NOTE]
+> Some columns may not be displayed when you specify the widest columns first. For best results,
+> specify the smallest data elements first.
+
+In the following example, we specify the widest properties first.
 
 ```powershell
 Get-Process -Name iexplore | Format-Table -Wrap -AutoSize -Property FileVersion,Path,Name,Id
 ```
+
+Even with wrapping, the final **Id** column is omitted:
 
 ```Output
 FileVersion                          Path                                                  Nam
