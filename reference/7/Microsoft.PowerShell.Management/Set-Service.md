@@ -3,7 +3,7 @@ external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Management
-ms.date: 07/17/2019
+ms.date: 10/25/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/set-service?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-Service
@@ -347,10 +347,15 @@ Specifies the start mode of the service.
 
 The acceptable values for this parameter are as follows:
 
-- **Automatic**. Starts when the system starts.
-- **AutomaticDelayedStart**. Starts shortly after the system boots.
-- **Disabled**. Service can't be started.
-- **Manual**. Starts only when started by a user or program.
+- **Automatic** - The service is started or was started by the operating system, at system start-up.
+  If an automatically started service depends on a manually started service, the manually started
+  service is also started automatically at system startup.
+- **AutomaticDelayedStart** - Starts shortly after the system boots.
+- **Disabled** - The service is disabled and cannot be started by a user or application.
+- **InvalidValue** - Has no effect. The cmdlet does not return an error but the StartupType of the
+  service is not changed.
+- **Manual** - The service is started only manually, by a user, using the Service Control Manager,
+  or by an application.
 
 ```yaml
 Type: ServiceStartupType

@@ -3,7 +3,7 @@ external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Management
-ms.date: 06/09/2017
+ms.date: 10/25/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/new-service?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: New-Service
@@ -168,18 +168,18 @@ Accept wildcard characters: False
 
 ### -StartupType
 
-Sets the startup type of the service.
-The acceptable values for this parameter are:
+Sets the startup type of the service. The acceptable values for this parameter are:
 
-- Manual.
-The service is started only manually, by a user, using the Service Control Manager, or by an application.
-- Automatic.
-The service is started or was started by the operating system, at system start-up.
-If an automatically started service depends on a manually started service, the manually started service is also started automatically at system startup.
-- Disabled.
-The service is disabled and cannot be started by a user or application.
+- **Automatic** - The service is started or was started by the operating system, at system start-up.
+  If an automatically started service depends on a manually started service, the manually started
+  service is also started automatically at system startup.
+- **AutomaticDelayedStart** - Starts shortly after the system boots.
+- **Disabled** - The service is disabled and cannot be started by a user or application.
+- **InvalidValue** - This value is not supported. Using this value results in an error.
+- **Manual** - The service is started only manually, by a user, using the Service Control Manager,
+  or by an application.
 
- The default value is Automatic.
+ The default value is **Automatic**.
 
 ```yaml
 Type: ServiceStartupType
@@ -264,5 +264,4 @@ This cmdlet returns an object that represents the new service.
 [Suspend-Service](Suspend-Service.md)
 
 [Remove-Service](Remove-Service.md)
-
 
