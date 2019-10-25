@@ -73,7 +73,7 @@ module that is included in Windows PowerShell.
 
 For more information about Scheduled Jobs, see the About articles in the **PSScheduledJob** module.
 Import the **PSScheduledJob** module and then type: `Get-Help about_Scheduled*` or see
-[about_Scheduled_Jobs](./about/about_scheduled_jobs).
+[about_Scheduled_Jobs](./about/about_scheduled_jobs.md).
 
 This cmdlet was introduced in Windows PowerShell 3.0.
 
