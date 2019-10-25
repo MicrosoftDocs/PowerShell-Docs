@@ -11,7 +11,7 @@ title: Import-PowerShellDataFile
 # Import-PowerShellDataFile
 
 ## SYNOPSIS
-Imports values from a .PSD1 file without invoking its contents.
+Imports values from a `.PSD1` file without invoking its contents.
 
 ## SYNTAX
 
@@ -37,9 +37,9 @@ code.
 
 ## EXAMPLES
 
-### 1: Retrieve values from PSD1
+### Example 1: Retrieve values from PSD1
 
-This examples retrieves the key-value pairs stored in the hashtable kept inside the
+This example retrieves the key-value pairs stored in the hashtable kept inside the
 `Configuration.psd1` file. `Get-Content` is used to show the contents of the `Configuration.psd1`
 file.
 
