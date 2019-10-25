@@ -68,7 +68,7 @@ The **Options** parameter lets you customize the options settings for the schedu
 change them at any time. Because job option settings can prevent the scheduled job from running,
 review the job options and set them carefully.
 
-`Register-ScheduledJob` is one of a collection of job scheduling cmdlets in the PSScheduledJob
+`Register-ScheduledJob` is one of a collection of job scheduling cmdlets in the **PSScheduledJob**
 module that is included in Windows PowerShell.
 
 For more information about Scheduled Jobs, see the About articles in the **PSScheduledJob** module.
