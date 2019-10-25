@@ -100,7 +100,7 @@ Mode                LastWriteTime         Length Name
 ----                -------------         ------ ----
 -a----        8/11/2016   2:02 PM           2034 TestVM.mof
 
-    Directory: C:\DscTests\SharePointConfig
+    Directory: C:\PartialConfigTest\SharePointConfig
 
 Mode                LastWriteTime         Length Name
 ----                -------------         ------ ----
