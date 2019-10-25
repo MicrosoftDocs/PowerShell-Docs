@@ -64,6 +64,8 @@ Configuration WebsiteTest {
         }
     }
 }
+
+WebsiteTest -OutputPath:"WebsiteTest"
 ```
 
 Save the file as `WebsiteTest.ps1`.
