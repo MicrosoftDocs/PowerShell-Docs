@@ -85,16 +85,19 @@ This example creates a scheduled job on the local computer.
 
 ```powershell
 Register-ScheduledJob -Name "Archive-Scripts" -ScriptBlock {
-    Get-ChildItem $home\*.ps1 -Recurse | Copy-Item -Destination "\\Server\Share\PSScriptArchive" }
+  Get-ChildItem $home\*.ps1 -Recurse |
+    Copy-Item -Destination "\\Server\Share\PSScriptArchive"
+}
 ```
 
-`Register-ScheduledJob` uses the **Name** parameter to create the `Archive-Scripts` scheduled job.
-The **ScriptBlock** parameter value contains a command that searches the `$home` directory
-recursively for `.ps1` files and copies them to a directory in a file share.
+`Register-ScheduledJob` uses the **Name** parameter to create the **Archive-Scripts** scheduled job.
+The **ScriptBlock** parameter runs `Get-ChildItem` that searches the `$home` directory recursively
+for `.ps1` files. The `Copy-Item` cmdlet copies the files to a directory specified by the
+**Destination** parameter.
 
-Because the scheduled job doesn't contain a trigger, it's not started automatically. You can use add
-job triggers later, use the `Start-Job` cmdlet to start the job on demand, or use the scheduled job
-as a template for other scheduled jobs.
+Because the scheduled job doesn't contain a trigger, it's not started automatically. You can add job
+triggers with `Add-JobTrigger`, use the `Start-Job` cmdlet to start the job on demand, or use the
+scheduled job as a template for other scheduled jobs.
 
 ### Example 2: Create a scheduled job with triggers and custom options
 
@@ -114,22 +117,32 @@ if necessary, and allows multiple instances of the job to run in a series.
 The `$T` variable stores the result from the `New-JobTrigger` cmdlet to create job trigger that
 starts a job every other Monday at 9:00 PM.
 
-The `$path` variable stores the path to the script file. `Register-ScheduledJob` creates the
-**UpdateVersion** scheduled job, which runs the `UpdateVersion.ps1` script every Monday at 9:00 p.m.
-The **FilePath** parameter uses `$path` to specify the script in that the job runs. The
-**ScheduledJobOption** parameter specifies the options stored in the `$O` variable. The **Trigger**
-parameter specifies the job triggers stored in the `$T` variable.
+The `$path` variable stores the path to the `UpdateVersion.ps1` script file.
+
+`Register-ScheduledJob` uses the **Name** paramter to create the **UpdateVersion** scheduled job.
+The **FilePath** parameter uses `$path` to specify the script that the job runs. The
+**ScheduledJobOption** parameter uses the job options stored in `$O`. The **Trigger** parameter uses
+the job triggers stored in `$T`.
 
 ### Example 3: Use hash tables to specify a trigger and scheduled job options
 
 This example has the same effect as the command in Example 2. It creates a scheduled job, using hash
-tables to specify the values of the **Trigger** and **ScheduledJobOption** parameters. The hash
-tables replace the `$O` and `$T`variables defined in Example 2.
+tables to specify the values of the **Trigger** and **ScheduledJobOption** parameters. The `$O` and
+`$T`variables defined in Example 2 are replaced with hash tables.
 
 ```powershell
-Register-ScheduledJob -Name UpdateVersion -FilePath "\\Srv01\Scripts\Update-Version.ps1" -Trigger @{
-    Frequency="Weekly"; At="9:00PM"; DaysOfWeek="Monday"; Interval=2} -ScheduledJobOption @{
-        WakeToRun=$true; StartIfNotIdle=$false; MultipleInstancePolicy="Queue"}
+$T = @{
+  Frequency="Weekly"
+  At="9:00PM"
+  DaysOfWeek="Monday"
+  Interval=2
+}
+$O = @{
+  WakeToRun=$true
+  StartIfNotIdle=$false
+  MultipleInstancePolicy="Queue"
+}
+Register-ScheduledJob -Trigger $T -ScheduledJobOption $O -Name UpdateVersion -FilePath "\\Srv01\Scripts\Update-Version.ps1"
 ```
 
 ### Example 4: Create scheduled jobs on remote computers
@@ -139,45 +152,73 @@ scheduled job runs a script that gathers raw data and saves it in a running log 
 computer.
 
 ```powershell
-Invoke-Command -ComputerName (Get-Content Servers.txt) -ScriptBlock {
-    Register-ScheduledJob -Name "Get-EnergyData" -FilePath "\\Srv01\Scripts\Get-EnergyData.ps1"
-     -ScheduledJobOption $O -Trigger $T } -Credential $Cred
+$Cred = Get-Credential
+$O = New-ScheduledJobOption -WakeToRun -StartIfIdle -MultipleInstancePolicy Queue
+$T = New-JobTrigger -Weekly -At "9:00 PM" -DaysOfWeek Monday -WeeksInterval 2
+Invoke-Command -ComputerName (Get-Content Servers.txt) -Credential $Cred -ScriptBlock {
+  $params = @{
+      Name = "Get-EnergyData"
+      FilePath = "\\Srv01\Scripts\Get-EnergyData.ps1"
+      ScheduledJobOption = $using:O
+      Trigger = $using:T
+  }
+  Register-ScheduledJob @params
+}
 ```
 
-This example uses variables defined in Example 2: `$O` for the **ScheduledJobOption** parameter and
-`$T` for the **Trigger** parameter.
+The `$Cred` variable stores credentials in a **PSCredential** object for a user with permissions to
+create scheduled jobs. The `$O` variable stores the job options created with
+`New-ScheduledJobOption`. The `$T` variable stores the job triggers created with `New-JobTrigger`.
 
-The `Invoke-Command` cmdlet runs a `Register-ScheduledJob` command on the computers in the
-`Servers.txt` file. `Invoke-Command` uses the **Credential** parameter and a credential object
-stored in `$Cred`. The object provides the credentials of a user that has permission to create
-scheduled jobs on the computers in the `Servers.txt` file.
+The `Invoke-Command` cmdlet uses the **ComputerName** parameter to get a list of server names from
+the `Servers.txt` file. The **Credential** parameter gets the credential object stored in `$Cred`.
+The **ScriptBlock** parameter runs a `Register-ScheduledJob` command on the computers in the
+`Servers.txt` file.
 
-The `Register-ScheduledJob` command creates a scheduled job on the remote computer that runs the
-`EnergyData.ps1` script on the scheduled specified by the job trigger in the `$T` variable. The
-script is located on a file server that is available to all participating computers.
+The parameters for `Register-ScheduledJob` are defined by `$params`. The **Name** parameters
+specifies the job is named **Get-EnergyData** on each remote computer. **FilePath** provides the
+location of the `EnergyData.ps1` script. The script is located on a file server that is available to
+all participating computers.The job runs on the schedule specified by the job triggers in `$T` and
+the job options in `$O`.
+
+The `Register-ScheduledJob @params` command creates the scheduled job with the parameters from the
+script block.
 
 ### Example 5: Create a scheduled job that runs a script on remote computers
 
-This example creates the **CollectEnergyData** scheduled job on the local computer.
+This example creates the **CollectEnergyData** scheduled job on the local computer. The job runs on
+multiple remote computers.
 
 ```powershell
+$Admin = Get-Credential
+$T = New-JobTrigger -Weekly -At "9:00 PM" -DaysOfWeek Monday -WeeksInterval 2
 Register-ScheduledJob -Name "CollectEnergyData" -Trigger $T -MaxResultCount 99 -ScriptBlock {
-     Invoke-Command -AsJob -ComputerName (Servers.txt)
-     -FilePath "\\Srv01\Scripts\Get-EnergyData.ps1" -Credential $Admin -Authentication CredSSP }
+  $params = @{
+    AsJob = $true
+    ComputerName = (Get-Content Servers.txt)
+    FilePath = '\\Srv01\Scripts\Get-EnergyData.ps1'
+    Credential = $using:Admin
+    Authentication = 'CredSSP'
+  }
+  Invoke-Command @params
+}
 ```
 
-This example uses the `$T` variable for the **Trigger** parameter that was defined in Example 2.
+The `$Admin` variable stores credentials for a user with permissions to run the commands in a
+**PSCredential** object. The `$T` variable stores the job triggers created with `New-JobTrigger`.
 
 The `Register-ScheduledJob` cmdlet uses the **Name** parameter to create the **CollectEnergyData**
-scheduled job on the local computer. The **Trigger** parameter specifies the job schedule and the
-**MaxResultCount** parameter to increase the number of saved results to 99.
+scheduled job on the local computer. The **Trigger** parameter specifies the job triggers in `$T`
+and the **MaxResultCount** parameter increases the number of saved results to 99.
 
-The **CollectEnergyData** job uses the `Invoke-Command` cmdlet to run the `EnergyData.ps1` script as
-a background on the computers listed in the `Servers.txt` file. The `Invoke-Command` cmdlet uses the
-**AsJob** parameter to create the background job object on the local computer, even though the
-`Energydata.ps1` script runs on the remote computers. The **Credential** parameter specifies a user
-account that has permission to run scripts on the remote computers. And, the **Authentication**
-parameter specifies a value of **CredSSP** to allow delegated credentials.
+The **ScriptBlock** parameter defines the `Invoke-Command` parameters with `$params`. The **AsJob**
+parameter creates the background job object on the local computer, even though the `Energydata.ps1`
+script runs on the remote computers. The **ComputerName** parameter gets a list of server names from
+the `Servers.txt` file. The **Credential** parameter specifies a user account that has permission to
+run scripts on the remote computers. And, the **Authentication** parameter specifies a value of
+**CredSSP** to allow delegated credentials.
+
+The `Invoke-Command @params` runs the command with the parameters from the script block.
 
 ## PARAMETERS
 
@@ -352,7 +393,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: 32
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
