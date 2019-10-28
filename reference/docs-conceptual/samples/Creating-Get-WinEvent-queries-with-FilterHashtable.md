@@ -178,7 +178,7 @@ WdiDiagnostic    Property   static System.Diagnostics.Eventing.Reader.StandardEv
 ```
 
 The enumerated values are documented in the **.NET Framework**. For more information, see
-[StandardEventKeywords Enumeration](https://docs.microsoft.com/en-us/dotnet/api/system.diagnostics.eventing.reader.standardeventkeywords?redirectedfrom=MSDN&view=netframework-4.7.2).
+[StandardEventKeywords Enumeration](/dotnet/api/system.diagnostics.eventing.reader.standardeventkeywords?redirectedfrom=MSDN&view=netframework-4.7.2).
 
 The **Keywords** names and enumerated values are as follows:
 
@@ -267,7 +267,7 @@ Warning       Property   static System.Diagnostics.Eventing.Reader.StandardEvent
 ```
 
 The enumerated values are documented in the **.NET Framework**. For more information, see
-[StandardEventLevel Enumeration](https://docs.microsoft.com/en-us/dotnet/api/system.diagnostics.eventing.reader.standardeventlevel?redirectedfrom=MSDN&view=netframework-4.7.2).
+[StandardEventLevel Enumeration](/dotnet/api/system.diagnostics.eventing.reader.standardeventlevel?redirectedfrom=MSDN&view=netframework-4.7.2).
 
 The **Level** key's names and enumerated values are as follows:
 
