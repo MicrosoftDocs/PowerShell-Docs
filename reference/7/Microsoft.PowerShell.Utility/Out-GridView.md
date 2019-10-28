@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Utility
 ms.date: 10/28/2019
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/out-gridview?view=powershell-5.1&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/out-gridview?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Out-GridView
 ---
@@ -56,6 +56,10 @@ You can use the following features of the table to examine your data:
   (copy). You can paste the data into any text or spreadsheet program.
 
 For full instructions, see the [Notes](#notes) section of this article.
+
+> [!NOTE]
+> This cmdlet was reintroduced in PowerShell 7. This cmdlet is only available on Windows system that
+> support the Windows Desktop.
 
 ## EXAMPLES
 
