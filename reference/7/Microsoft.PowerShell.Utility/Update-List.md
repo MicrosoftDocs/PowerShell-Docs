@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Utility
 ms.date: 10/28/2019
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/update-list?view=powershell-5.1&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/update-list?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Update-List
 ---
@@ -48,6 +48,8 @@ interface.
 
 The core cmdlets that are installed with PowerShell do not support this interface. To
 determine whether a cmdlet supports `Update-List`, see the cmdlet Help topic.
+
+This cmdlet was reintroduced in PowerShell 7.
 
 ## EXAMPLES
 
