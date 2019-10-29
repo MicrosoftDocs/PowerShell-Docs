@@ -24,6 +24,13 @@ To enable PowerShell remoting over WSMan, the following prerequisites need to be
 - Install the Windows Management Framework (WMF) 4.0 or newer on Windows 7 and Windows Server 2008
   R2. For more information about WMF, see [WMF Overview](/powershell/wmf/overview).
 
+## <a id="chocolatey" />Installing Powershell Core with Chocolatey
+[Chocolatey](https://chocolatey.org/) is one of the most popular package manager for Windows. The latest stable version of Powershell Core can be installed using Chocolatey. Assuming you have Chocolatey installed on your Windows machine, Powershell Core can be installed using the Administrative Powershell prompt as follows
+
+```powershell
+choco install powershell-core -y
+```
+
 ## <a id="msi" />Installing the MSI package
 
 To install PowerShell on a Windows client or Windows Server (works on Windows 7 SP1, Server 2008 R2,
