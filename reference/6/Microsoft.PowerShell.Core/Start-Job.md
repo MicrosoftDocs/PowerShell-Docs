@@ -81,7 +81,7 @@ create a **PSRemotingJob** job object. For more information about using the ampe
 > PowerShell, it's directly using the PowerShell NuGet SDK packages and won't have `pwsh` shipped
 > along.
 >
-> The substitute in that scenario is `Start-ThreadJob` from the module **ThreadJob**.
+> The substitute in that scenario is `Start-ThreadJob` from the module **[ThreadJob](https://www.powershellgallery.com/packages/ThreadJob)**.
 
 ## EXAMPLES
 
