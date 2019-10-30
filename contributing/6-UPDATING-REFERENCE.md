@@ -19,16 +19,16 @@ errors that must be fixed before we can accept your contribution.
 ## Formatting About_ files
 
 `About_*` files are now processed by [Pandoc][], instead of PlatyPS. `About_*` files are formatted
-for the best compatibility across with all versions of PowerShell and with the publishing tools. For
+for the best compatibility across all versions of PowerShell and with the publishing tools. For
 details, see [issue #1806][issue1806]. Please do not alter the formatting of `about_*` files without
-checking in with a repo maintainer.
+checking with a repo maintainer.
 
 Basic formatting guidelines:
 
 - Limit lines to 80 characters
-- Code blocks and table are limited to 76 characters - Pandoc indents these by 4 spaces during
+- Code blocks and tables are limited to 76 characters - Pandoc indents these by 4 spaces during
   conversion
-- Tables need fit within 76 characters
+- Tables need to fit within 76 characters
   - Manually wrap contents of cells across multiple lines
   - Use opening and closing `|` characters on each line
   - See a working example in [about_Comparison_Operators][about-example]
