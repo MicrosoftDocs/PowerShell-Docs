@@ -139,7 +139,8 @@ running processes and stores them in the `$Processes_After` variable.
 `Compare-Object` compares the two sets of process objects. The output displays the difference,
 **notepad.exe**, from the `$Processes_After` object.
 
-### <a id="ex5" />Example 5: Show the difference when using the PassThru parameter
+<a name="ex5" />
+### Example 5: Show the difference when using the PassThru parameter
 
 Normally, `Compare-Object` returns a **PSCustomObject** type with the following properties:
 
