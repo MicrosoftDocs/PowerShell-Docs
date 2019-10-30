@@ -8,6 +8,7 @@ online version: https://docs.microsoft.com/powershell/module/microsoft.powershel
 schema: 2.0.0
 title: Get-Service
 ---
+
 # Get-Service
 
 ## SYNOPSIS
@@ -318,7 +319,11 @@ This cmdlet returns objects that represent the services on the computer.
 
 ## NOTES
 
-You can also refer to **Get-Service** by its built-in alias, "gsv". For more information, see about_Aliases.
+Beginning in PowerShell 6.0, the following properties are added to the **ServiceController**
+objects: **UserName**, **Description**, **DelayedAutoStart**, **BinaryPathName**, and
+**StartupType** .
+
+You can also refer to **Get-Service** by its built-in alias, `gsv`. For more information, see about_Aliases.
 
 This cmdlet can display services only when the current user has permission to see them.
 If this cmdlet does not display services, you might not have permission to see them.
