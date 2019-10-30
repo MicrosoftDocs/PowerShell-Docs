@@ -84,7 +84,7 @@ Accept wildcard characters: False
 
 ### -Name
 
-Specifies the alternate printer. The parameter name **Name** is optional.
+Sends the output to the specified printer. The parameter name **Name** is optional.
 
 ```yaml
 Type: String
