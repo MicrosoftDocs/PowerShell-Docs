@@ -39,21 +39,16 @@ Out-GridView [-InputObject <PSObject>] [-Title <String>] [-OutputMode <OutputMod
 The `Out-GridView` cmdlet sends the output from a command to a grid view window where the output is
 displayed in an interactive table.
 
-Because this cmdlet requires a user interface, it does not work on Server Core installations of
-Windows Server.
+Because this cmdlet requires a user interface, it does not work on Windows Server Core or Windows
+Nano Server.
 
 You can use the following features of the table to examine your data:
 
-- Hide, Show, and Reorder Columns: To hide, show, or reorder a column, right-click a column header
-  and then click Select Columns.
-- Sort. To sort the data, click a column header. Click again to toggle from ascending to descending
-  order.
-- Quick Filter. Use the Filter box at the top of the window to search the text in the table. You can
-  search for text in a particular column, search for literals, and search for multiple words.
-- Criteria Filter. Use the Add criteria drop-down menu to create rules to filter the data. This is
-  very useful for very large data sets, such as event logs.
-- Copy and paste. To copy rows of data from `Out-GridView`, press <kbd>CTRL</kbd>+<kbd>C</kbd>
-  (copy). You can paste the data into any text or spreadsheet program.
+- Hide, Show, and Reorder Columns
+- Sort rows
+- Quick Filter
+- Add Criteria Filter
+- Copy and paste
 
 For full instructions, see the [Notes](#notes) section of this article.
 
@@ -196,8 +191,6 @@ The values of this parameter determine how many items you can send down the pipe
 - Multiple. Zero, one, or many items. Use this value when the next command can take multiple input
   objects. This value is equivalent to the **Passthru** parameter.
 
-This parameter was introduced in Windows PowerShell 3.0.
-
 ```yaml
 Type: OutputModeOption
 Parameter Sets: OutputMode
@@ -316,7 +309,7 @@ Deserialized output from remote commands might not be formatted correctly in the
 
 **To hide or show a column:**
 
-1. Right click any column header and click **Select Columns**.
+1. Right-click any column header and click **Select Columns**.
 2. In the **Select Columns** dialog box, use the arrow keys to move the columns between the Selected
     columns to the Available columns boxes. Only columns in the **Select Columns** box appear in the
     grid view window.
@@ -325,7 +318,7 @@ Deserialized output from remote commands might not be formatted correctly in the
 
 You can drag and drop columns into the desired location. Or use the following steps:
 
-1. Right click any column header and click **Select Columns**.
+1. Right-click any column header and click **Select Columns**.
 2. In the **Select Columns** dialog box, use the **Move up** and **Move down** buttons to reorder
    the columns. Columns at the top of the list appear to the left of columns at the bottom of the
    list in the grid view window.
@@ -339,11 +332,11 @@ You can drag and drop columns into the desired location. Or use the following st
 
 **How to Select Table Data**
 
-- To select a row, click the row or use the up or down arrow to navigate to the row.
+- To select a row, select the row or use the up or down arrow to navigate to the row.
 - To select all rows (except for the header row), press <kbd>CTRL</kbd>+<kbd>A</kbd>.
-- To select consecutive rows, press and hold the SHIFT key while clicking the rows or using the
+- To select consecutive rows, press and hold the <kbd>SHIFT</kbd> key while clicking the rows or using the
   arrow keys.
-- To select nonconsecutive rows, press the CTRL key and click to add a row to the selection.
+- To select nonconsecutive rows, press the <kbd>CTRL</kbd> key and click to add a row to the selection.
 - You cannot select columns, and you cannot select the entire column header row.
 
 **How to Copy Rows**
@@ -397,7 +390,7 @@ The criteria only affects the display. It does not delete items from the table.
 
 **How to Add Criteria**
 
-1. To display the Add criteria menu button, in the upper right corner of the window, click the
+1. To display the **Add criteria** menu button, in the upper right corner of the window, click the
    Expand arrow.
 2. Click the **Add Criteria** menu button.
 3. Click to select columns (properties). You can select one or many properties.
@@ -407,8 +400,8 @@ The criteria only affects the display. It does not delete items from the table.
 
 **How to Edit a Criterion**
 
-- To change an operator, click the blue operator value, and then click to select a different
-  operator from the drop-down list.
+- To change an operator, click the blue operator value, and then select a different operator from
+  the drop-down list.
 - To enter or change a value, type a value in the value box. If you enter a value that is not valid,
   a circular X icon appears. To remove it, change the value.
 - To create an **OR** statement, add a criteria with the same property.

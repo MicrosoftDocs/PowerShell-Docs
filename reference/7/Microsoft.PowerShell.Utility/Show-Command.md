@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Utility
 ms.date: 10/29/2019
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/show-command?view=powershell-5.1&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/show-command?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Show-Command
 ---
@@ -48,10 +48,10 @@ In the PowerShell Integrated Scripting Environment (ISE), a variation of the `Sh
 is displayed by default. For information about using this command window, see the PowerShell ISE
 Help topics.
 
-This cmdlet was introduced in PowerShell 3.0.
+This cmdlet was reintroduced in PowerShell 7. 
 
-Because this cmdlet requires a user interface, it does not work on Windows Server Core.
-This cmdlet is only available on Windows systems that support the Windows Desktop.
+Because this cmdlet requires a user interface, it does not work on Windows Server Core or Windows
+Nano Server. This cmdlet is only available on Windows systems that support the Windows Desktop.
 
 ## EXAMPLES
 
