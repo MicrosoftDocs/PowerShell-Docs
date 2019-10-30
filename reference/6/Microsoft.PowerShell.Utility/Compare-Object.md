@@ -3,7 +3,7 @@ external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 09/17/2019
+ms.date: 10/28/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/compare-object?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Compare-Object
@@ -37,9 +37,12 @@ If the **reference** or the **difference** objects are null (`$null`), `Compare-
 terminating error.
 
 Some examples use splatting to reduce the line length of the code samples. For more information, see
-[about_Splatting](../Microsoft.PowerShell.Core/About/about_Splatting.md). And, the examples use two
-text files, with each value on a separate line. `Testfile1.txt` contains the values: dog, squirrel,
-and bird. `Testfile2.txt` contains the values: cat, bird, and racoon.
+[about_Splatting](../Microsoft.PowerShell.Core/About/about_Splatting.md).
+
+The examples use two text files, with each value on a separate line.
+
+- `Testfile1.txt` contains the values: dog, squirrel, and bird.
+- `Testfile2.txt` contains the values: cat, bird, and racoon.
 
 ## EXAMPLES
 
@@ -74,8 +77,8 @@ The **SideIndicator** specifies if the line appears in the `Testfile1.txt` **ref
 
 ```powershell
 $objects = @{
-ReferenceObject = $(Get-Content -Path C:\Test\Testfile1.txt)
-DifferenceObject = $(Get-Content -Path C:\Test\Testfile2.txt)
+  ReferenceObject = $(Get-Content -Path C:\Test\Testfile1.txt)
+  DifferenceObject = $(Get-Content -Path C:\Test\Testfile2.txt)
 }
 Compare-Object @objects -IncludeEqual
 ```
@@ -100,8 +103,8 @@ contained in both files, as shown by the **SideIndicator** (`==`).
 
 ```powershell
 $objects = @{
-ReferenceObject = $(Get-Content -Path C:\Test\Testfile1.txt)
-DifferenceObject = $(Get-Content -Path C:\Test\Testfile2.txt)
+  ReferenceObject = $(Get-Content -Path C:\Test\Testfile1.txt)
+  DifferenceObject = $(Get-Content -Path C:\Test\Testfile2.txt)
 }
 Compare-Object @objects -IncludeEqual -ExcludeDifferent
 ```
@@ -129,17 +132,89 @@ InputObject                            SideIndicator
 System.Diagnostics.Process (notepad)   =>
 ```
 
-The `Get-Process` cmdlet gets the computer's running processes and stores them in the
-`$Processes_Before` variable.
+First, `Get-Process` gets a list of running processes and stores them in the `$Processes_Before`
+variable then the **notepad.exe** application is started. Next, `Get-Process` gets an updated list of
+running processes and stores them in the `$Processes_After` variable.
 
-The **notepad.exe** application is started.
+`Compare-Object` compares the two sets of process objects. The output displays the difference,
+**notepad.exe**, from the `$Processes_After` object.
 
-`Get-Process` gets the computer's updated list of running processes and stores them in the
-`$Processes_After` variable.
+<a name="ex5" />
+### Example 5: Show the difference when using the PassThru parameter
 
-The `Compare-Object` compare the two sets of process objects stored in the `$Processes_Before` and
-`$Processes_After` variables. The output displays the difference, **notepad.exe**, from the
-`$Processes_After` object.
+Normally, `Compare-Object` returns a **PSCustomObject** type with the following properties:
+
+- The **InputObject** being compared
+- The **SideIndicator** property showing which input object the output belongs to
+
+When you use the **PassThru** parameter, the **Type** of the object is not changed but the instance
+of the object returned has an added **NoteProperty** named **SideIndicator**. **SideIndicator**
+shows which input object the output belongs to.
+
+The following examples shows the different output types.
+
+```powershell
+$a = $True
+Compare-Object -IncludeEqual $a $a
+(Compare-Object -IncludeEqual $a $a) | Get-Member
+```
+
+```Output
+InputObject SideIndicator
+----------- -------------
+       True ==
+
+   TypeName: System.Management.Automation.PSCustomObject
+Name          MemberType   Definition
+----          ----------   ----------
+Equals        Method       bool Equals(System.Object obj)
+GetHashCode   Method       int GetHashCode()
+GetType       Method       type GetType()
+ToString      Method       string ToString()
+InputObject   NoteProperty System.Boolean InputObject=True
+SideIndicator NoteProperty string SideIndicator===
+```
+
+```powershell
+Compare-Object -IncludeEqual $a $a -PassThru
+(Compare-Object -IncludeEqual $a $a -PassThru) | Get-Member
+```
+
+```Output
+True
+
+   TypeName: System.Boolean
+Name          MemberType   Definition
+----          ----------   ----------
+CompareTo     Method       int CompareTo(System.Object obj), int CompareTo(bool value), int IComparable.CompareTo(Syst
+Equals        Method       bool Equals(System.Object obj), bool Equals(bool obj), bool IEquatable[bool].Equals(bool ot
+GetHashCode   Method       int GetHashCode()
+GetType       Method       type GetType()
+GetTypeCode   Method       System.TypeCode GetTypeCode(), System.TypeCode IConvertible.GetTypeCode()
+ToBoolean     Method       bool IConvertible.ToBoolean(System.IFormatProvider provider)
+ToByte        Method       byte IConvertible.ToByte(System.IFormatProvider provider)
+ToChar        Method       char IConvertible.ToChar(System.IFormatProvider provider)
+ToDateTime    Method       datetime IConvertible.ToDateTime(System.IFormatProvider provider)
+ToDecimal     Method       decimal IConvertible.ToDecimal(System.IFormatProvider provider)
+ToDouble      Method       double IConvertible.ToDouble(System.IFormatProvider provider)
+ToInt16       Method       short IConvertible.ToInt16(System.IFormatProvider provider)
+ToInt32       Method       int IConvertible.ToInt32(System.IFormatProvider provider)
+ToInt64       Method       long IConvertible.ToInt64(System.IFormatProvider provider)
+ToSByte       Method       sbyte IConvertible.ToSByte(System.IFormatProvider provider)
+ToSingle      Method       float IConvertible.ToSingle(System.IFormatProvider provider)
+ToString      Method       string ToString(), string ToString(System.IFormatProvider provider), string IConvertible.To
+ToType        Method       System.Object IConvertible.ToType(type conversionType, System.IFormatProvider provider)
+ToUInt16      Method       ushort IConvertible.ToUInt16(System.IFormatProvider provider)
+ToUInt32      Method       uint IConvertible.ToUInt32(System.IFormatProvider provider)
+ToUInt64      Method       ulong IConvertible.ToUInt64(System.IFormatProvider provider)
+TryFormat     Method       bool TryFormat(System.Span[char] destination, [ref] int charsWritten)
+SideIndicator NoteProperty string SideIndicator===
+```
+
+When using **PassThru**, the original object type (**System.Boolean**) is returned. Note how the
+output displayed by the default format for **System.Boolean** objects didn't display the
+**SideIndicator** property. However, the returned **System.Boolean** object has the added
+**NoteProperty**.
 
 ## PARAMETERS
 
@@ -316,16 +391,24 @@ You can send an object down the pipeline to the **DifferenceObject** parameter.
 
 ### None
 
-If the **reference** object and the **difference** object are the same, there's no output.
+If the **reference** object and the **difference** object are the same, there's no output, unless
+you use the **IncludeEqual** parameter.
 
 ### System.Management.Automation.PSCustomObject
 
 If the objects are different, `Compare-Object` wraps the differing objects in a `PSCustomObject`
-wrapper with a **SideIndicator** property to reference the differences. When you use the
-**PassThru** parameter, `Compare-Object` omits the `PSCustomObject` wrapper around the compared
-objects and returns the differing objects, unchanged.
+wrapper with a **SideIndicator** property to reference the differences.
+
+When you use the **PassThru** parameter, the **Type** of the object is not changed but the instance
+of the object returned has an added **NoteProperty** named **SideIndicator**. **SideIndicator**
+shows which input object the output belongs to.
 
 ## NOTES
+
+When using the **PassThru** parameter, the output displayed in the console may not include the
+**SideIndicator** property. The default format view of the for the object type output by
+`Compare-Object` does not include the **SideIndicator** property. For more information see
+[Example 5](#ex5) in this article.
 
 ## RELATED LINKS
 
