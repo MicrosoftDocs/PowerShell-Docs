@@ -141,14 +141,15 @@ running processes and stores them in the `$Processes_After` variable.
 
 ### Example 5: Show the difference when using the PassThru parameter
 
-Normally, `Compare-Object` returns a **PSCustomObject** type with the following properties:
+<a id='ex5'></a>Normally, `Compare-Object` returns a **PSCustomObject** type with the following
+properties:
 
 - The **InputObject** being compared
 - The **SideIndicator** property showing which input object the output belongs to
 
-When you use the **PassThru** parameter **Type** of the object is not changed but the instance of
-the object returned has an added **NoteProperty** named **SideIndicator**. **SideIndicator** shows
-which input object the output belongs to.
+When you use the **PassThru** parameter, the **Type** of the object is not changed but the instance
+of the object returned has an added **NoteProperty** named **SideIndicator**. **SideIndicator**
+shows which input object the output belongs to.
 
 The following examples shows the different output types.
 
@@ -185,8 +186,8 @@ True
    TypeName: System.Boolean
 Name          MemberType   Definition
 ----          ----------   ----------
-CompareTo     Method       int CompareTo(System.Object obj), int CompareTo(bool value), int IComparable.CompareTo(Syst…
-Equals        Method       bool Equals(System.Object obj), bool Equals(bool obj), bool IEquatable[bool].Equals(bool ot…
+CompareTo     Method       int CompareTo(System.Object obj), int CompareTo(bool value), int IComparable.CompareTo(Syst
+Equals        Method       bool Equals(System.Object obj), bool Equals(bool obj), bool IEquatable[bool].Equals(bool ot
 GetHashCode   Method       int GetHashCode()
 GetType       Method       type GetType()
 GetTypeCode   Method       System.TypeCode GetTypeCode(), System.TypeCode IConvertible.GetTypeCode()
@@ -201,7 +202,7 @@ ToInt32       Method       int IConvertible.ToInt32(System.IFormatProvider provi
 ToInt64       Method       long IConvertible.ToInt64(System.IFormatProvider provider)
 ToSByte       Method       sbyte IConvertible.ToSByte(System.IFormatProvider provider)
 ToSingle      Method       float IConvertible.ToSingle(System.IFormatProvider provider)
-ToString      Method       string ToString(), string ToString(System.IFormatProvider provider), string IConvertible.To…
+ToString      Method       string ToString(), string ToString(System.IFormatProvider provider), string IConvertible.To
 ToType        Method       System.Object IConvertible.ToType(type conversionType, System.IFormatProvider provider)
 ToUInt16      Method       ushort IConvertible.ToUInt16(System.IFormatProvider provider)
 ToUInt32      Method       uint IConvertible.ToUInt32(System.IFormatProvider provider)
@@ -211,8 +212,9 @@ SideIndicator NoteProperty string SideIndicator===
 ```
 
 When using **PassThru**, the original object type (**System.Boolean**) is returned. Note how the
-output display by the default format **System.Boolean** objects didn't display the **SideIndicator**
-property. However, the returned **System.Boolean** has the added **NoteProperty**.
+output displayed by the default format for **System.Boolean** objects didn't display the
+**SideIndicator** property. However, the returned **System.Boolean** object has the added
+**NoteProperty**.
 
 ## PARAMETERS
 
@@ -397,16 +399,16 @@ you use the **IncludeEqual** parameter.
 If the objects are different, `Compare-Object` wraps the differing objects in a `PSCustomObject`
 wrapper with a **SideIndicator** property to reference the differences.
 
-When you use the **PassThru** parameter **Type** of the object is not changed but the instance of
-the object returned has an added **NoteProperty** named **SideIndicator**. **SideIndicator** shows
-which input object the output belongs to.
+When you use the **PassThru** parameter, the **Type** of the object is not changed but the instance
+of the object returned has an added **NoteProperty** named **SideIndicator**. **SideIndicator**
+shows which input object the output belongs to.
 
 ## NOTES
 
 When using the **PassThru** parameter, the output displayed in the console may not include the
 **SideIndicator** property. The default format view of the for the object type output by
-`Compare-Object` does not include the **SideIndicator** property. For more information see Example 5
-in this article.
+`Compare-Object` does not include the **SideIndicator** property. For more information see
+[Example 5](#ex5) in this article.
 
 ## RELATED LINKS
 
