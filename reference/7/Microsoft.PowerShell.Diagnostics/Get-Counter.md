@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Diagnostics
 ms.date: 6/21/2019
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.diagnostics/get-counter?view=powershell-5.1&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.diagnostics/get-counter?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Counter
 ---
@@ -42,6 +42,8 @@ system counters.
 
 Many counter sets are protected by access control lists (ACL). To see all counter sets, open
 PowerShell with the **Run as administrator** option.
+
+This cmdlet was reintroduced in PowerShell 7.
 
 ## EXAMPLES
 
