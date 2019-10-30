@@ -82,8 +82,8 @@ an SSH subsystem to host a PowerShell process on the remote computer. And, you m
    ```
 
    > [!NOTE]
-   > You must use the 8.3 short name for an file paths that contain spaces. There's a bug in OpenSSH
-   > for Windows that prevents spaces from working in subsystem executable paths. For more
+   > You must use the 8.3 short name for any file paths that contain spaces. There's a bug in
+   > OpenSSH for Windows that prevents spaces from working in subsystem executable paths. For more
    > information, see this [GitHub issue](https://github.com/PowerShell/Win32-OpenSSH/issues/784).
    >
    > The 8.3 short name for the `Program Files` folder in Windows is usually `Progra~1`. However,
