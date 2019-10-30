@@ -78,25 +78,27 @@ an SSH subsystem to host a PowerShell process on the remote computer. And, you m
    Create the SSH subsystem that hosts a PowerShell process on the remote computer:
 
    ```
-   Subsystem powershell c:/program files/powershell/6/pwsh.exe -sshs -NoLogo -NoProfile
+   Subsystem powershell c:/progra~1/powershell/6/pwsh.exe -sshs -NoLogo -NoProfile
    ```
 
    > [!NOTE]
-   > There's a bug in OpenSSH for Windows that prevents spaces from working in subsystem executable
-   > paths. For more information, see this [GitHub issue](https://github.com/PowerShell/Win32-OpenSSH/issues/784).
-
-   A solution is to create a symbolic link to the PowerShell installation directory that doesn't
-   include spaces:
-
-   ```powershell
-   New-Item -ItemType SymbolicLink -Path "C:\pwshdir" -Value "C:\Program Files\PowerShell\6"
-   ```
-
-   Use the symbolic link path to the PowerShell executable in the subsystem:
-
-   ```
-   Subsystem powershell C:\pwshdir\pwsh.exe -sshs -NoLogo -NoProfile
-   ```
+   > You must use the 8.3 short name for an file paths that contain spaces. There's a bug in OpenSSH
+   > for Windows that prevents spaces from working in subsystem executable paths. For more
+   > information, see this [GitHub issue](https://github.com/PowerShell/Win32-OpenSSH/issues/784).
+   >
+   > The 8.3 short name for the `Program Files` folder in Windows is usually `Progra~1`. However,
+   > you can use the following command to make sure:
+   >
+   > ```powershell
+   > Get-CimInstance Win32_Directory -Filter 'Name="C:\\Program Files"' |
+   >   Select-Object EightDotThreeFileName
+   > ```
+   >
+   > ```Output
+   > EightDotThreeFileName
+   > ---------------------
+   > c:\progra~1
+   > ```
 
    Optionally, enable key authentication:
 
