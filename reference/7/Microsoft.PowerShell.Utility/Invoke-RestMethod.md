@@ -326,7 +326,7 @@ Specifies the content type of the web request.
 If this parameter is omitted and the request method is POST, `Invoke-RestMethod` sets the content type to `application/x-www-form-urlencoded`.
 Otherwise, the content type is not specified in the call.
 
-**-ContentType** will be overridden when a `MultipartFormDataContent` object is supplied for **-Body**.
+**ContentType** will be overridden when a `MultipartFormDataContent` object is supplied for **Body**.
 
 ```yaml
 Type: String
@@ -373,11 +373,9 @@ Accept wildcard characters: False
 
 ### -CustomMethod
 
-Specifies custom method used for the web request. This can be used with the Request Method required by the endpoint is not an available option on the **-Method**. **-Method** and **-CustomMethod** cannot be used together.
+Specifies custom method used for the web request. This can be used with the Request Method required by the endpoint is not an available option on the **Method**. **Method** and **CustomMethod** cannot be used together.
 
 Example:
-
-
 
 Invoke-WebRequest -uri 'https://api.contoso.com/widget/' -CustomMethod 'TEST'
 
@@ -417,10 +415,10 @@ Accept wildcard characters: False
 
 ### -FollowRelLink
 
-Indicates the cmdlet should follow relation links. 
+Indicates the cmdlet should follow relation links.
 
 Some REST APIs support pagination via Relation Links per [RFC5988](https://tools.ietf.org/html/rfc5988#page-6).
-Instead of parsing the header to get the URL for the next page, you can have the cmdlet do this for you. 
+Instead of parsing the header to get the URL for the next page, you can have the cmdlet do this for you.
 To set how many times to follow relation links, use the **MaximumFollowRelLink** parameter.
 
 When using this switch, the cmdlet returns a collection of pages of results.
@@ -626,6 +624,8 @@ Accept wildcard characters: False
 Indicates that the cmdlet will not use a proxy to reach the destination.
 
 When you need to bypass the proxy configured in Internet Explorer, or a proxy specified in the environment, use this switch.
+
+This parameter was introduced in PowerShell 6.0.
 
 ```yaml
 Type: SwitchParameter
@@ -961,6 +961,8 @@ The OAuth or Bearer token to include in the request. **-Token** is required by c
 **-Token** takes a `SecureString` containing the token. To supply the token manually use the following:
 
 `Invoke-RestMethod -Uri $uri -Authentication OAuth -Token (Read-Host -AsSecureString)`
+
+This parameter was introduced in PowerShell 6.0.
 
 ```yaml
 Type: SecureString

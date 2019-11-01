@@ -525,6 +525,8 @@ recursion, but does not recurse into them. Use the **FollowSymlink** parameter t
 directories that target those symbolic links. The **FollowSymlink** is a dynamic parameter and is
 supported only in the **FileSystem** provider.
 
+This parameter was introduced in PowerShell 6.0.
+
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
