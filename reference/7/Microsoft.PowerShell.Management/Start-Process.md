@@ -414,6 +414,8 @@ Accept wildcard characters: False
 
 Shows what would happen if the cmdlet runs. The cmdlet is not run.
 
+This parameter was introduced in PowerShell 6.0.
+
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
