@@ -983,6 +983,8 @@ following:
 
 `Invoke-WebRequest -Uri $uri -Authentication OAuth -Token (Read-Host -AsSecureString)`
 
+This parameter was introduced in PowerShell 6.0.
+
 ```yaml
 Type: SecureString
 Parameter Sets: (All)

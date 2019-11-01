@@ -983,6 +983,8 @@ following:
 
 `Invoke-WebRequest -Uri $uri -Authentication OAuth -Token (Read-Host -AsSecureString)`
 
+This parameter was introduced in PowerShell 6.0.
+
 ```yaml
 Type: SecureString
 Parameter Sets: (All)
@@ -1088,7 +1090,7 @@ such as Chrome, FireFox, InternetExplorer, Opera, and Safari.
 For example, the following command uses the user agent string for Internet Explorer
 
 ```powershell
-Invoke-WebRequest -Uri http://website.com/ -UserAgent ([Microsoft.PowerShell.Commands.PSUserAgent]::InternetExplorer)
+Invoke-WebRequest -Uri https://website.com/ -UserAgent ([Microsoft.PowerShell.Commands.PSUserAgent]::InternetExplorer)
 ```
 
 ```yaml
