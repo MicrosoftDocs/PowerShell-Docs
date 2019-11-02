@@ -243,6 +243,8 @@ Accept wildcard characters: False
 
 Sets the text of the title bar for the authentication dialog.
 
+This parameter was introduced in PowerShell 6.0.
+
 ```yaml
 Type: String
 Parameter Sets: MessageSet
@@ -314,8 +316,8 @@ For example, it has no effect in the Windows PowerShell Integrated Scripting Env
 information about the effect of the **ConsolePrompting** registry entry, see the help topics for
 the host program.
 
-The **Credential** parameter is not supported by all providers that are installed with PowerShell. Beginning in Windows PowerShell 3.0, it is supported on selected cmdlet, such as the
-Get-WmiObject and New-PSDrive cmdlets.
+The **Credential** parameter is not supported by all providers that are installed with PowerShell.
+Beginning in Windows PowerShell 3.0, it is supported on selected cmdlet, such as the `Get-WmiObject`
+and `New-PSDrive` cmdlets.
 
 ## RELATED LINKS
-

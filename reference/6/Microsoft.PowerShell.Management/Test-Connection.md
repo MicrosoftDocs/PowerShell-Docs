@@ -494,6 +494,8 @@ Accept wildcard characters: False
 Sets the timeout value for the test. The test fails if a response isn't received before the timeout
 expires. The default is five seconds.
 
+This parameter was introduced in PowerShell 6.0.
+
 ```yaml
 Type: Int32
 Parameter Sets: (All)
