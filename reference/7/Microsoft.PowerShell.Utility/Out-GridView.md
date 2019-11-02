@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Utility
 ms.date: 10/28/2019
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/out-gridview?view=powershell-5.1&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/out-gridview?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Out-GridView
 ---
@@ -39,8 +39,8 @@ Out-GridView [-InputObject <PSObject>] [-Title <String>] [-OutputMode <OutputMod
 The `Out-GridView` cmdlet sends the output from a command to a grid view window where the output is
 displayed in an interactive table.
 
-Because this cmdlet requires a user interface, it does not work on Server Core installations of
-Windows Server.
+Because this cmdlet requires a user interface, it does not work on Windows Server Core or Windows
+Nano Server.
 
 You can use the following features of the table to examine your data:
 
@@ -51,6 +51,10 @@ You can use the following features of the table to examine your data:
 - Copy and paste
 
 For full instructions, see the [Notes](#notes) section of this article.
+
+> [!NOTE]
+> This cmdlet was reintroduced in PowerShell 7. This cmdlet is only available on Windows systems
+> that support the Windows Desktop.
 
 ## EXAMPLES
 
@@ -186,8 +190,6 @@ The values of this parameter determine how many items you can send down the pipe
   object.
 - Multiple. Zero, one, or many items. Use this value when the next command can take multiple input
   objects. This value is equivalent to the **Passthru** parameter.
-
-This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
 Type: OutputModeOption
