@@ -138,6 +138,8 @@ Accept wildcard characters: False
 Gets or sets the maximum depth the JSON input is allowed to have.
 By default, it is 1024.
 
+This parameter was introduced in PowerShell 6.2.
+
 ```yaml
 Type: Int32
 Parameter Sets: (All)

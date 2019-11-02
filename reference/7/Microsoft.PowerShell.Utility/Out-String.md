@@ -119,7 +119,11 @@ Accept wildcard characters: False
 ```
 
 ### -NoNewline
-Removes all newlines from formatter generated output. Note that newlines present as part of string objects are preserved
+
+Removes all newlines from formatter generated output. Note that newlines present as part of string
+objects are preserved.
+
+This parameter was introduced in PowerShell 6.0.
 
 ```yaml
 Type: SwitchParameter

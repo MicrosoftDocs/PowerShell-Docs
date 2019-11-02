@@ -33,6 +33,13 @@ All packages are available on our GitHub [releases][] page. After the package is
 [snap]: #snap-package
 [tar]: #binary-archives
 
+> [!TIP]
+> If you already have the [.NET Core SDK](/dotnet/core/sdk) installed, it’s easy to install PowerShell as a [.NET Global tool](/dotnet/core/tools/global-tools).
+>
+> ```
+> dotnet tool install --global PowerShell
+> ```
+
 ## Installing Preview Releases
 
 When installing a PowerShell Core Preview release for Linux via a Package Repository, the package
@@ -559,7 +566,7 @@ sudo dnf remove powershell
 ## Arch Linux
 
 > [!NOTE]
-> Arch support is experimental.
+> Arch support is not officially supported by Microsoft and is maintained by the community.
 
 PowerShell is available from the [Arch Linux][] User Repository (AUR).
 
@@ -625,6 +632,9 @@ sudo snap remove powershell-preview
 ```
 
 ## Kali
+
+> [!NOTE]
+> Kali support is not officially supported by Microsoft and is maintained by the community.
 
 ### Installation - Kali
 

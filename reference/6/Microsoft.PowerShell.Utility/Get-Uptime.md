@@ -30,6 +30,8 @@ Get-Uptime [-Since] [<CommonParameters>]
 
 This cmdlet returns the time elapsed since the last boot of the operating system.
 
+The `Get-Uptime` cmdlet was introduced in PowerShell 6.0.
+
 ## EXAMPLES
 
 ### Example 1 - Show time since last boot
@@ -116,4 +118,3 @@ On Windows, the value returned is the same as the **LastBootUpTime** property of
 ## RELATED LINKS
 
 [Win32_OperatingSystem](/windows/win32/cimwin32prov/win32-operatingsystem#properties)
-

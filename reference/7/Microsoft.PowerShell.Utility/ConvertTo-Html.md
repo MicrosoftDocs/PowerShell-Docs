@@ -239,6 +239,8 @@ Accept wildcard characters: False
 Specifies text to add to the opening \<charset\> tag.
 By default, there is no text in that position.
 
+This parameter was introduced in PowerShell 6.0.
+
 ```yaml
 Type: String
 Parameter Sets: Page
@@ -328,6 +330,8 @@ Accept wildcard characters: False
 Specifies text to add to the opening \<meta\> tag.
 By default, there is no text in that position.
 
+This parameter was introduced in PowerShell 6.0.
+
 ```yaml
 Type: Hashtable
 Parameter Sets: Page
@@ -416,6 +420,8 @@ Accept wildcard characters: False
 
 Changes the DOCTYPE to XHTML Transitional DTD
 Default DOCTYPE is XHTML Strict DTD
+
+This parameter was introduced in PowerShell 6.0.
 
 ```yaml
 Type: SwitchParameter

@@ -3,7 +3,7 @@ external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Management
-ms.date: 07/17/2019
+ms.date: 10/25/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/set-service?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-Service
@@ -281,23 +281,31 @@ Accept wildcard characters: False
 
 ### -StartupType
 
-Specifies the start mode of the service.
+Sets the startup type of the service. The acceptable values for this parameter are:
 
-The acceptable values for this parameter are as follows:
+- **Automatic** - The service is started or was started by the operating system, at system start-up.
+  If an automatically started service depends on a manually started service, the manually started
+  service is also started automatically at system startup.
+- **AutomaticDelayedStart** - Starts shortly after the system boots.
+- **Disabled** - The service is disabled and cannot be started by a user or application.
+- **Manual** - The service is started only manually, by a user, using the Service Control Manager,
+  or by an application.
+- **Boot** - Indicates that the service is a device driver started by the system loader. This
+  value is valid only for device drivers.
+- **System** - Indicates that the service is a device driver started by the 'IOInitSystem()'
+  function. This value is valid only for device drivers.
 
-- **Automatic**. Starts when the system starts.
-- **Disabled**. Service can't be started.
-- **Manual**. Starts only when started by a user or program.
+ The default value is **Automatic**.
 
 ```yaml
 Type: ServiceStartMode
 Parameter Sets: (All)
-Aliases: StartMode, SM, ST
-Accepted values: Automatic, Boot, Disabled, Manual, System
+Aliases:
+Accepted values: Boot, System, Automatic, Manual, Disabled
 
 Required: False
 Position: Named
-Default value: None
+Default value: Automatic
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
