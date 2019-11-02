@@ -566,7 +566,7 @@ sudo dnf remove powershell
 ## Arch Linux
 
 > [!NOTE]
-> Arch support is experimental.
+> Arch support is not officially supported by Microsoft and is maintained by the community.
 
 PowerShell is available from the [Arch Linux][] User Repository (AUR).
 
@@ -632,6 +632,9 @@ sudo snap remove powershell-preview
 ```
 
 ## Kali
+
+> [!NOTE]
+> Kali support is not officially supported by Microsoft and is maintained by the community.
 
 ### Installation - Kali
 

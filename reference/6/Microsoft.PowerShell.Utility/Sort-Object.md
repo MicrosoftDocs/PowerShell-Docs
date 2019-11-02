@@ -383,6 +383,8 @@ stable sort.
 Specifies the number of objects to get from the end of a sorted object array. This results in a
 stable sort.
 
+This parameter was introduced in PowerShell 6.0.
+
 ```yaml
 Type: Int32
 Parameter Sets: Bottom
@@ -503,6 +505,8 @@ Accept wildcard characters: True
 
 Specifies the number of objects to get from the start of a sorted object array. This results in a
 stable sort.
+
+This parameter was introduced in PowerShell 6.0.
 
 ```yaml
 Type: Int32
