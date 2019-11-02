@@ -236,6 +236,25 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -EscapeHandling
+
+Controls how certain characters are escaped in the resulting JSON output. By default, only control
+characters (e.g. newline) are escaped.
+
+This parameter was introduced in PowerShell 6.2.
+
+```yaml
+Type: NewtonSoft.Json.StringEscapeHandling
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: Default
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -InputObject
 
 Specifies the objects to convert to JSON format. Enter a variable that contains the objects, or type
@@ -254,23 +273,6 @@ Required: True
 Position: 0
 Default value: None
 Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -EscapeHandling
-
-Controls how certain characters are escaped in the resulting JSON output. By default, only control
-characters (e.g. newline) are escaped.
-
-```yaml
-Type: NewtonSoft.Json.StringEscapeHandling
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: Default
-Accept pipeline input: False
 Accept wildcard characters: False
 ```
 

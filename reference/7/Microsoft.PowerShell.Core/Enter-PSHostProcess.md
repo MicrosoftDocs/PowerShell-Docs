@@ -200,6 +200,8 @@ Gets or sets the custom named pipe name to connect to.
 This is usually used in conjunction with
 `pwsh -CustomPipeName`.
 
+This parameter was introduced in PowerShell 6.2.
+
 ```yaml
 Type: String
 Parameter Sets: PipeNameParameterSet

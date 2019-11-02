@@ -96,7 +96,7 @@ that it is a PDF file.
 ### -Encoding
 
 Specifies the encoding of the output. This only applies to `[string]` input. The parameter has no
-effect on numeric types. The default value is **UTF8NoBOM**. 
+effect on numeric types. The default value is **UTF8NoBOM**.
 
 The acceptable values for this parameter are as follows:
 
@@ -213,6 +213,8 @@ Accept wildcard characters: False
 
 This represents the number of bytes to skip from being part of the hex output.
 
+This parameter was introduced in PowerShell 6.2.
+
 ```yaml
 Type: Int64
 Parameter Sets: (All)
@@ -228,6 +230,8 @@ Accept wildcard characters: False
 ### -Count
 
 This represents the number of bytes to include in the hex output.
+
+This parameter was introduced in PowerShell 6.2.
 
 ```yaml
 Type: Int64

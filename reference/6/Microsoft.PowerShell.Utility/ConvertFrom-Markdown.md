@@ -45,6 +45,8 @@ properties:
 - The **VT100EncodedString** property has the converted string with ANSI (VT100) escape sequences if
   the **AsVT100EncodedString** parameter was specified
 
+This cmdlet was introduced in PowerShell 6.1.
+
 ## EXAMPLES
 
 ### Example 1: Convert a file containing Markdown content to HTML

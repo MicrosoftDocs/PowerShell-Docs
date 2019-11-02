@@ -119,6 +119,8 @@ Gets only the specified groups.
 Enter the name of a group.
 Wildcards are not allowed.
 
+This parameter was introduced in PowerShell 6.0.
+
 ```yaml
 Type: String[]
 Parameter Sets: (All)

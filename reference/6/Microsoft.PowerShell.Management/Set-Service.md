@@ -221,6 +221,8 @@ object and the password is stored as a [SecureString](/dotnet/api/system.securit
 > For more information about **SecureString** data protection, see
 > [How secure is SecureString?](/dotnet/api/system.security.securestring#how-secure-is-securestring).
 
+This parameter was introduced in PowerShell 6.0.
+
 ```yaml
 Type: PSCredential
 Parameter Sets: (All)
