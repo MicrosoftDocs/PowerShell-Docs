@@ -155,16 +155,43 @@ Next we create a configuration that calls the composite resource. This configura
 ```powershell
 configuration RenameVM
 {
-    $VmNames = 'DC01', 'SQL01', 'SLQ02'
-    $count = 1
     Import-DscResource -Module xVirtualMachine
-    foreach ($Name in $VmNames)
+    Node localhost
     {
-        Node "localhost$count"
+        xVirtualMachine VM
         {
-            xVirtualMachine "VM$count"
+            VMName = "Test"
+            SwitchName = "Internal"
+            SwitchType = "Internal"
+            VhdParentPath = "C:\Demo\VHD\RTM.vhd"
+            VHDPath = "C:\Demo\VHD"
+            VMStartupMemory = 1024MB
+            VMState = "Running"
+        }
+    }
+
+    Node "192.168.10.1"
+    {
+        xComputer Name
+        {
+            Name = "SQL01"
+            DomainName = "fourthcoffee.com"
+        }
+    }
+}
+```
+
+You can also use this resource to create multiple VMs by passing in an array of VM names to the xVirtualMachine resource.
+
+```PowerShell
+    Configuration MultipleVms
+    {
+        Import-DscResource -Module xVirtualMachine
+        Node localhost
+        {
+            xVirtualMachine VMs
             {
-                VMName = "Test$count"
+                VMName = "IIS01", "SQL01", "SQL02"
                 SwitchName = "Internal"
                 SwitchType = "Internal"
                 VhdParentPath = "C:\Demo\VHD\RTM.vhd"
@@ -173,19 +200,7 @@ configuration RenameVM
                 VMState = "Running"
             }
         }
-
-        Node "192.168.10.$count"
-        {
-            xComputer $Name
-            {
-                Name = $Name
-                DomainName = "fourthcoffee.com"
-            }
-        }
-
-        $count = $count + 1
     }
-}
 ```
 
 ## Supporting PsDscRunAsCredential
