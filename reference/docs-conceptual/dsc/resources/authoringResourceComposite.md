@@ -153,32 +153,37 @@ The resource is now discoverable by using the Get-DscResource cmdlet, and its pr
 Next we create a configuration that calls the composite resource. This configuration calls the xVirtualMachine composite resource to create a virtual machine, and then calls the **xComputer** resource to rename it.
 
 ```powershell
-
 configuration RenameVM
 {
-
+    $VmNames = 'DC01', 'SQL01', 'SLQ02'
+    $count = 1
     Import-DscResource -Module xVirtualMachine
-    Node localhost
+    foreach ($Name in $VmNames)
     {
-        xVirtualMachine VM
+        Node "localhost$count"
         {
-            VMName = "Test"
-            SwitchName = "Internal"
-            SwitchType = "Internal"
-            VhdParentPath = "C:\Demo\VHD\RTM.vhd"
-            VHDPath = "C:\Demo\VHD"
-            VMStartupMemory = 1024MB
-            VMState = "Running"
+            xVirtualMachine "VM$count"
+            {
+                VMName = "Test$count"
+                SwitchName = "Internal"
+                SwitchType = "Internal"
+                VhdParentPath = "C:\Demo\VHD\RTM.vhd"
+                VHDPath = "C:\Demo\VHD"
+                VMStartupMemory = 1024MB
+                VMState = "Running"
+            }
         }
-    }
 
-    Node "192.168.10.1"
-    {
-        xComputer Name
+        Node "192.168.10.$count"
         {
-            Name = "SQL01"
-            DomainName = "fourthcoffee.com"
+            xComputer $Name
+            {
+                Name = $Name
+                DomainName = "fourthcoffee.com"
+            }
         }
+
+        $count = $count + 1
     }
 }
 ```
