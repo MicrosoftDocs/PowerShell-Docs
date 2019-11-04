@@ -205,7 +205,7 @@ Configuration MultipleVms
 
 ## Supporting PsDscRunAsCredential
 
->[!Note:]
+> [!NOTE]
 > **PsDscRunAsCredential** is supported in PowerShell 5.0 and later.
 
 The **PsDscRunAsCredential** property can be used in [DSC configurations](../configurations/configurations.md) resource block to specify that the
