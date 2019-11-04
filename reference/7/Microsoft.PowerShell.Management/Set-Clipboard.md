@@ -15,33 +15,16 @@ Sets the contents of the clipboard.
 
 ## SYNTAX
 
-### String (Default)
-
 ```
-Set-Clipboard [-Append] [-AsHtml] [-WhatIf] [-Confirm] [<CommonParameters>]
-```
-
-### Value
-
-```
-Set-Clipboard [-Value] <String[]> [-Append] [-AsHtml] [-WhatIf] [-Confirm] [<CommonParameters>]
-```
-
-### Path
-
-```
-Set-Clipboard [-Append] -Path <String[]> [-AsHtml] [-WhatIf] [-Confirm] [<CommonParameters>]
-```
-
-### LiteralPath
-
-```
-Set-Clipboard [-Append] -LiteralPath <String[]> [-AsHtml] [-WhatIf] [-Confirm] [<CommonParameters>]
+Set-Clipboard [-Value] <string[]> [-Append] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 
 The `Set-Clipboard` cmdlet sets the contents of the clipboard.
+
+[!NOTE]
+> On Linux, this cmdlet requires the `xclip` utility to be in the path.
 
 ## EXAMPLES
 
@@ -50,17 +33,6 @@ The `Set-Clipboard` cmdlet sets the contents of the clipboard.
 ```powershell
 Set-Clipboard -Value "This is a test string"
 ```
-
-### Example 2: Copy the contents of a directory to the clipboard
-
-This command copies the content of the specified folder to the clipboard.
-
-```powershell
-Set-Clipboard -Path "C:\Staging\"
-```
-
-> [!NOTE]
-> Types other than text are only supported on Windows.
 
 ## PARAMETERS
 
@@ -77,82 +49,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -AsHtml
-
-Indicates that the cmdlet renders the content as HTML to the clipboard.
-
-> [!NOTE]
-> This switch is only supported on Windows.
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -LiteralPath
-
-Specifies the path to the item that is copied to the clipboard. Unlike **Path**, the value of
-**LiteralPath** is used exactly as it is typed. No characters are interpreted as wildcards. If the
-path includes escape characters, enclose it in single quotation marks. Single quotation marks tell
-Windows PowerShell not to interpret any characters as escape sequences.
-
-> [!NOTE]
-> This switch is only supported on Windows.
-
-```yaml
-Type: String[]
-Parameter Sets: LiteralPath
-Aliases: PSPath
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
-```
-
-### -Path
-
-Specifies the path to the item that is copied to the clipboard. Wildcard characters are permitted.
-
-> [!NOTE]
-> This switch is only supported on Windows.
-
-```yaml
-Type: String[]
-Parameter Sets: Path
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: True
-```
-
-### -Value
-
-Specifies, as a string array, the content to copy to the clipboard.
-
-```yaml
-Type: String[]
-Parameter Sets: Value
-Aliases:
-
-Required: True
-Position: 0
-Default value: None
-Accept pipeline input: True (ByPropertyName, ByValue)
 Accept wildcard characters: False
 ```
 
