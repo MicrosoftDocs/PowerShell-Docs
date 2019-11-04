@@ -76,7 +76,8 @@ create a **PSRemotingJob** job object. For more information about using the ampe
 [about_Operators](./about/about_operators.md#background-operator-).
 
 PowerShell 7 introduced the **WorkingDirectory** parameter that specifies a background job's initial
-working directory.
+working directory. If the parameter isn't specified, the current working directory of the caller
+that started the job.
 
 > [!NOTE]
 > Creating an out-of-process background job with `Start-Job` is not supported in the scenario where
@@ -600,8 +601,8 @@ Accept wildcard characters: False
 ### -WorkingDirectory
 
 Specifies the initial working directory of the background job. If the parameter isn't specified, the
-job runs from the default location. The Windows default is `$HOME\Documents` and on Linux or macOS
-the default is `$HOME`.
+job runs from the default location. The default location is the current working directory of the
+caller that started the job.
 
 This parameter was introduced in PowerShell 7.
 

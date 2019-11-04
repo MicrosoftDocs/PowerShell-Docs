@@ -67,6 +67,10 @@ Starting in PowerShell 3.0, `Start-Job` can start instances of custom job types,
 jobs. For information about how to use `Start-Job` to start jobs with custom types, see the help
 documents for the job type feature.
 
+The default working directory for jobs is hardcoded. The Windows default is `$HOME\Documents` and on
+Linux or macOS the default is `$HOME`. The script code running in the background job needs to manage
+the working directory as needed.
+
 ## EXAMPLES
 
 ### Example 1: Start a background job

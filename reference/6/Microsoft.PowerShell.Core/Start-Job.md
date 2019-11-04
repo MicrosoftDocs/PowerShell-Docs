@@ -72,6 +72,10 @@ functionality of the background operator is similar to `Start-Job`. Both methods
 create a **PSRemotingJob** job object. For more information about using the ampersand (`&`), see
 [about_Operators](./about/about_operators.md#background-operator-).
 
+The default working directory for jobs is hardcoded. The Windows default is `$HOME\Documents` and on
+Linux or macOS the default is `$HOME`. The script code running in the background job needs to manage
+the working directory as needed.
+
 > [!NOTE]
 > Creating an out-of-process background job with `Start-Job` is not supported in the scenario where
 > PowerShell is being hosted in other applications, such as the PowerShell Azure Functions.
