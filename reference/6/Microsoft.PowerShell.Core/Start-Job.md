@@ -3,7 +3,7 @@ external help file: System.Management.Automation.dll-Help.xml
 keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Core
-ms.date: 10/23/2019
+ms.date: 11/04/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/start-job?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Start-Job
@@ -71,6 +71,10 @@ Beginning in PowerShell 6.0, you can start jobs using the ampersand (`&`) backgr
 functionality of the background operator is similar to `Start-Job`. Both methods to start a job
 create a **PSRemotingJob** job object. For more information about using the ampersand (`&`), see
 [about_Operators](./about/about_operators.md#background-operator-).
+
+The default working directory for jobs is hardcoded. The Windows default is `$HOME\Documents` and on
+Linux or macOS the default is `$HOME`. The script code running in the background job needs to manage
+the working directory as needed.
 
 > [!NOTE]
 > Creating an out-of-process background job with `Start-Job` is not supported in the scenario where
