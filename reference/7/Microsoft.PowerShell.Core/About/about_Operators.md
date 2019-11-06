@@ -201,8 +201,9 @@ Runs the pipeline before it in the background, in a PowerShell job. This
 operator acts similarly to the UNIX control operator ampersand (`&`), which
 runs the command before it asynchronously in sub shell as a job.
 
-This operator is functionally equivalent to `Start-Job`. The following example
-demonstrates basic usage of the background job operator.
+This operator is functionally equivalent to `Start-Job`. By default, the background operator starts
+the jobs in the current working directory of the caller that started the parallel tasks. The
+following example demonstrates basic usage of the background job operator.
 
 ```powershell
 Get-Process -Name pwsh &

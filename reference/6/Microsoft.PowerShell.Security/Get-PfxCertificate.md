@@ -119,7 +119,13 @@ Accept wildcard characters: False
 
 ### -Password
 
-Specifies a password required to access a .pfx certificate file.
+Specifies a password required to access a `.pfx` certificate file.
+
+This parameter was introduced in PowerShell 6.1.
+
+> [!NOTE]
+> For more information about **SecureString** data protection, see
+> [How secure is SecureString?](/dotnet/api/system.security.securestring#how-secure-is-securestring).
 
 ```yaml
 Type: SecureString
@@ -158,5 +164,3 @@ You can pipe a string that contains a file path to `Get-PfxCertificate`.
 [Get-AuthenticodeSignature](Get-AuthenticodeSignature.md)
 
 [Set-AuthenticodeSignature](Set-AuthenticodeSignature.md)
-
-

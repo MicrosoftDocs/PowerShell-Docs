@@ -22,6 +22,8 @@ Disable-ExperimentalFeature [-Name] <String[]> [-Scope <ConfigScope>] [-WhatIf] 
 The `Disable-ExperimentalFeature` cmdlet disables experimental features by removing the named
 experimental features from the `powershell.config.json` settings file read on PowerShell startup.
 
+This cmdlet was introduced in PowerShell 6.2.
+
 > [!NOTE]
 > Any changes to experimental feature state only takes effect on restart of PowerShell
 
