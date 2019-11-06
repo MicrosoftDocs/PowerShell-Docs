@@ -361,22 +361,15 @@ multiple paths, and include files in multiple locations, use commas to separate 
 This parameter accepts wildcard characters. Wildcard characters allow you to add all files in a
 directory to your archive file.
 
-Using wildcards with a root directory will change how the archive's contents:
+Using wildcards with a root directory affects the archive's contents:
 
 - To create an archive that **includes** the root directory, and all its files and subdirectories,
-  specify the root directory in the **Path** without wildcards.
-
-  For example: `-Path C:\Reference`
-
+  specify the root directory in the **Path** without wildcards. For example: `-Path C:\Reference`
 - To create an archive that **excludes** the root directory, but zips all its files and
-  subdirectories, use the asterisk (`*`) wildcard.
-
-  For example: `-Path C:\Reference\*`
-
+  subdirectories, use the asterisk (`*`) wildcard. For example: `-Path C:\Reference\*`
 - To create an archive that only zips the files in the root directory, use the **star-dot-star**
-  (`*.*`) wildcard. Subdirectories of the root aren't included in the archive.
-
-  For example: `-Path C:\Reference\*.*`
+  (`*.*`) wildcard. Subdirectories of the root aren't included in the archive. For example:
+  `-Path C:\Reference\*.*`
 
 ```yaml
 Type: String[]
