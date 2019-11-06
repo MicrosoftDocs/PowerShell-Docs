@@ -3,7 +3,7 @@ external help file: Microsoft.PowerShell.Archive-help.xml
 keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Archive
-ms.date: 02/12/2019
+ms.date: 11/06/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.archive/compress-archive?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Compress-Archive
@@ -12,7 +12,7 @@ title: Compress-Archive
 # Compress-Archive
 
 ## SYNOPSIS
-Creates a compressed archive, or zipped file, from specified files and folders.
+Creates a compressed archive, or zipped file, from specified files and directories.
 
 ## SYNTAX
 
@@ -61,90 +61,176 @@ Compress-Archive -LiteralPath <String[]> [-DestinationPath] <String> [-Compressi
 ## DESCRIPTION
 
 The `Compress-Archive` cmdlet creates a compressed, or zipped, archive file from one or more
-specified files or folders. An archive packages multiple files, with optional compression, into a
-single zipped file for easier distribution and storage. An archive file can be compressed by using
+specified files or directories. An archive packages multiple files, with optional compression, into
+a single zipped file for easier distribution and storage. An archive file can be compressed by using
 the compression algorithm specified by the **CompressionLevel** parameter.
 
-The `Compress-Archive` cmdlet uses the Microsoft .NET API [System.IO.Compression.ZipArchive](/dotnet/api/system.io.compression.ziparchive)
-to compress files. The maximum file size is 2 GB because there's a limitation of the underlying API.
+The `Compress-Archive` cmdlet uses the Microsoft .NET API
+[System.IO.Compression.ZipArchive](/dotnet/api/system.io.compression.ziparchive) to compress files.
+The maximum file size is 2 GB because there's a limitation of the underlying API.
 
 Some examples use splatting to reduce the line length of the code samples. For more information, see
 [about_Splatting](../Microsoft.PowerShell.Core/About/about_Splatting.md).
 
 ## EXAMPLES
 
-### Example 1: Create an archive file
+### Example 1: Compress files to create an archive file
 
-This example creates a new archive file, `Draft.zip`, by compressing two files, `Draftdoc.docx` and
-`diagram2.vsd`, specified by the **Path** parameter. The compression level specified for this
-operation is **Optimal**.
+This example compresses files from different directories and creates an archive file. A wildcard is
+used to get all files with a particular file extension. There's no directory structure in the
+archive file because the **Path** only specifies file names.
 
 ```powershell
 $compress = @{
-Path= "C:\Test\Reference\Draftdoc.docx", "C:\Test\Reference\Images\diagram2.vsd"
-CompressionLevel = "Optimal"
-DestinationPath = "C:\Test\Archives\Draft.Zip"
+Path= "C:\Reference\Draftdoc.docx", "C:\Reference\Images\*.vsd"
+CompressionLevel = "Fastest"
+DestinationPath = "C:\Archives\Draft.Zip"
 }
 Compress-Archive @compress
 ```
 
-### Example 2: Create an archive file using LiteralPath
+The **Path** parameter accepts specific file names and file names with wildcards, `*.vsd`. The
+**Path** uses a comma-separated list to get files from different directories. The compression level
+is **Fastest** to reduce processing time. The **DestinationPath** parameter specifies the location
+for the `Draft.zip` file. The `Draft.zip` file contains `Draftdoc.docx` and all the files with a
+`.vsd` extension.
 
-This example creates a new archive file, `Draft.zip`, by compressing two files, `Draft doc.docx` and
-`Diagram [2].vsd`, specified by the **LiteralPath** parameter. The compression level specified for
-this operation is **Optimal**.
+### Example 2: Compress files using a LiteralPath
+
+This example compresses specific named files and creates a new archive file. There's no directory
+structure in the archive file because the **Path** only specifies file names.
 
 ```powershell
 $compress = @{
-LiteralPath= "C:\Test\Reference\Draft Doc.docx", "C:\Test\Reference\Images\Diagram [2].vsd"
-CompressionLevel = "Optimal"
-DestinationPath = "C:\Test\Archives\Draft.Zip"
+LiteralPath= "C:\Reference\Draft Doc.docx", "C:\Reference\Images\diagram2.vsd"
+CompressionLevel = "Fastest"
+DestinationPath = "C:\Archives\Draft.Zip"
 }
 Compress-Archive @compress
 ```
 
-### Example 3: Create an archive with wildcard characters
+Absolute path and file names are used because the **LiteralPath** parameter doesn't accept
+wildcards. The **Path** uses a comma-separated list to get files from different directories. The
+compression level is **Fastest** to reduce processing time. The **DestinationPath** parameter
+specifies the location for the `Draft.zip` file. The `Draft.zip` file only contains `Draftdoc.docx`
+and `diagram2.vsd`.
 
-This example creates a new archive file, `Draft.zip`, in the `C:\Archives` folder. The new archive
-file contains every file, folder, and subfolder in the `C:\Reference` root folder, because an
-asterisk (`*`) wildcard character was used in place of specific file names in the **Path**
-parameter. The root folder, `Reference`, is excluded from the archive.
+### Example 3: Compress a directory that includes the root directory
 
-```powershell
-Compress-Archive -Path C:\Reference\* -CompressionLevel Fastest -DestinationPath C:\Archives\Draft
-```
-
-Notice that the file name extension `.zip` wasn't added to the value of the **DestinationPath**
-parameter. PowerShell appends the `.zip` extension to the file name automatically. The specified
-compression level is **Fastest**. The faster compression level will compress large numbers of files
-faster, but might result in a larger output file.
-
-> [!NOTE]
-> To zip only the files in the specified root folder, use the **star-dot-star** (`*.*`) wildcard.
-
-### Example 4: Update an existing archive file
-
-This example updates an existing archive file, `Draft.Zip`, in the `C:\Archives` folder.
+This example compresses a directory and creates an archive file that **includes** the root
+directory, and all its files and subdirectories. The archive file has a directory structure because
+the **Path** specifies a root directory.
 
 ```powershell
-Compress-Archive -Path C:\Reference\* -Update -DestinationPath C:\Archives\Draft.Zip
+Compress-Archive -Path C:\Reference -DestinationPath C:\Archives\Draft.zip
 ```
 
-The command is run to update `Draft.Zip` with newer versions of existing files that came from the
-C:\Reference folder, and also to add new files that have been added to `C:\Reference` since
-`Draft.Zip` was initially created.
+`Compress-Archive` uses the **Path** parameter to specify the root directory, `C:\Reference`. The
+**DestinationPath** parameter specifies the location for the archive file. The `Draft.zip` archive
+includes the `Reference` root directory, and all its files and subdirectories.
 
-### Example 5: Create an archive from an entire folder
+### Example 4: Compress a directory that excludes the root directory
 
-This example creates an archive from an entire folder, `C:\Reference`. The archive contains the root
-folder, `Reference`, and all its files, folders, and subfolders.
+This example compresses a directory and creates an archive file that **excludes** the root directory
+because the **Path** uses an asterisk (`*`) wildcard. The archive contains a directory structure
+that contains the root directory's files and subdirectories.
 
 ```powershell
-Compress-Archive -Path C:\Reference -DestinationPath C:\Archives\Draft
+Compress-Archive -Path C:\Reference\* -DestinationPath C:\Archives\Draft.zip
 ```
 
-Notice that the file name extension `.zip` wasn't added to the value of the **DestinationPath**
-parameter. PowerShell appends the `.zip` extension to the file name automatically.
+`Compress-Archive` uses the **Path** parameter to specify the root directory, `C:\Reference` with an
+asterisk (`*`) wildcard. The **DestinationPath** parameter specifies the location for the archive
+file. The `Draft.zip` archive contains the root directory's files and subdirectories. The
+`Reference` root directory is excluded from the archive.
+
+### Example 5: Compress only the files in a root directory
+
+This example compresses only the files in a root directory and creates an archive file. There's no
+directory structure in the archive because only files are compressed.
+
+```powershell
+Compress-Archive -Path C:\Reference\*.* -DestinationPath C:\Archives\Draft.zip
+```
+
+`Compress-Archive` uses the **Path** parameter to specify the root directory, `C:\Reference` with a
+**star-dot-star** (`*.*`) wildcard. The **DestinationPath** parameter specifies the location for the
+archive file. The `Draft.zip` archive only contains the `Reference` root directory's files and the
+root directory is excluded.
+
+### Example 6: Use the pipeline to archive files
+
+This example sends files down the pipeline to create an archive. There's no directory structure in
+the archive file because the **Path** only specifies file names.
+
+```powershell
+Get-ChildItem -Path C:\Reference\Afile.txt, C:\Reference\Images\Bfile.txt |
+  Compress-Archive -DestinationPath C:\Archives\PipelineFiles.zip
+```
+
+`Get-ChildItem` uses the **Path** parameter to specify two files from different directories. Each
+file is represented by a **FileInfo** object and is sent down the pipeline to `Compress-Archive`.
+The two specified files are archived in `PipelineFiles.zip`.
+
+### Example 7: Use the pipeline to archive a directory
+
+This example sends a directory down the pipeline to create an archive. Files are sent as
+**FileInfo** objects and directories as **DirectoryInfo** objects. The archive's directory structure
+doesn't include the root directory, but its files and subdirectories are included in the archive.
+
+```powershell
+Get-ChildItem -Path C:\LogFiles | Compress-Archive -DestinationPath C:\Archives\PipelineDir.zip
+```
+
+`Get-ChildItem` uses the **Path** parameter to specify the `C:\LogFiles` root directory. Each
+**FileInfo** and **DirectoryInfo** object is sent down the pipeline.
+
+`Compress-Archive` adds each object to the `PipelineDir.zip` archive. The **Path** parameter isn't
+specified because the pipeline objects are received into parameter position 0.
+
+### Example 8: How recursion can affect archives
+
+This example shows how recursion can duplicate files in your archive. For example, if you use
+`Get-ChildItem` with the **Recurse** parameter. As recursion processes, each **FileInfo** and
+**DirectoryInfo** object is sent down the pipeline and added to the archive.
+
+```powershell
+Get-ChildItem -Path C:\TestLog -Recurse |
+  Compress-Archive -DestinationPath C:\Archives\PipelineRecurse.zip
+```
+
+The `C:\TestLog` directory doesn't contain any files. It does contain a subdirectory named `testsub`
+that contains the `testlog.txt` file.
+
+`Get-ChildItem` uses the **Path** parameter to specify the root directory, `C:\TestLog`. The
+**Recurse** parameter processes the files and directories. A **DirectoryInfo** object is created for
+`testsub` and a **FileInfo** object `testlog.txt`.
+
+Each object is sent down the pipeline to `Compress-Archive`. The **DestinationPath** specifies the
+location for the archive file. The **Path** parameter isn't specified because the pipeline objects
+are received into parameter position 0.
+
+The following summary describes the `PipelineRecurse.zip` archive's contents that contains a
+duplicate file:
+
+- The **DirectoryInfo** object creates the `testsub` directory and contains the `testlog.txt` file,
+  which reflects the original directory structure.
+- The **FileInfo** object creates a duplicate `testlog.txt` in the archive's root. The duplicate
+  file is created because recursion sent a file object to `Compress-Archive`. This behavior is
+  expected because each object sent down the pipeline is added to the archive.
+
+### Example 9: Update an existing archive file
+
+This example updates an existing archive file, `Draft.Zip`, in the `C:\Archives` directory. In this
+example, the existing archive file contains the root directory, and its files and subdirectories.
+
+```powershell
+Compress-Archive -Path C:\Reference -Update -DestinationPath C:\Archives\Draft.Zip
+```
+
+The command updates `Draft.Zip` with newer versions of existing files in the `C:\Reference`
+directory and its subdirectories. And, new files that were added to `C:\Reference` or its
+subdirectories are included in the updated `Draft.Zip` archive.
 
 ## PARAMETERS
 
@@ -155,7 +241,7 @@ requires less time to create the file, but can result in larger file sizes.
 
 If this parameter isn't specified, the command uses the default value, **Optimal**.
 
-The acceptable values for this parameter are as follows:
+The following are the acceptable values for this parameter:
 
 - **Fastest**. Use the fastest compression method available to reduce processing time. Faster
   compression can result in larger file sizes.
@@ -193,11 +279,12 @@ Accept wildcard characters: False
 
 ### -DestinationPath
 
-Specifies the path to the archive output file. This parameter is required. The specified
-**DestinationPath** value should include the desired name of the output zipped file, and specifies
-either the absolute or relative path to the zipped file. If the file name specified in
-**DestinationPath** doesn't have a `.zip` file name extension, the cmdlet adds a `.zip` file name
-extension.
+This parameter is required and specifies the path to the archive output file. The
+**DestinationPath** should include the name of the zipped file, and either the absolute or relative
+path to the zipped file.
+
+If the file name in **DestinationPath** doesn't have a `.zip` file name extension, the cmdlet adds
+the `.zip` file name extension.
 
 ```yaml
 Type: String
@@ -250,23 +337,28 @@ Accept wildcard characters: False
 
 ### -Path
 
-Specifies the path or paths to the files that you want to add to the archive zipped file. This
-parameter can accept wildcard characters. Wildcard characters allow you to add all files in a folder
-to your zipped archive file. To specify multiple paths, and include files in multiple locations in
-your output zipped file, use commas to separate the paths.
+Specifies the path or paths to the files that you want to add to the archive zipped file. To specify
+multiple paths, and include files in multiple locations, use commas to separate the paths.
 
-To zip all the files, folders, and subfolders in a specified root folder, use the asterisk (`*`)
-wildcard. The root folder is excluded from the archive.
+This parameter accepts wildcard characters. Wildcard characters allow you to add all files in a
+directory to your archive file.
 
-For example:
+Using wildcards with a root directory will change how the archive's contents:
 
-`-Path C:\Reference\*`
+- To create an archive that **includes** the root directory, and all its files and subdirectories,
+  specify the root directory in the **Path** without wildcards.
 
-To zip only the files in the specified root folder, use the **star-dot-star** (`*.*`) wildcard.
+  For example: `-Path C:\Reference`
 
-For example:
+- To create an archive that **excludes** the root directory, but zips all its files and
+  subdirectories, use the asterisk (`*`) wildcard.
 
-`-Path C:\Reference\*.*`
+  For example: `-Path C:\Reference\*`
+
+- To create an archive that only zips the files in the root directory, use the **star-dot-star**
+  (`*.*`) wildcard. Subdirectories of the root aren't included in the archive.
+
+  For example: `-Path C:\Reference\*.*`
 
 ```yaml
 Type: String[]
@@ -318,7 +410,8 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -332,6 +425,12 @@ You can pipe a string that contains a path to one or more files.
 
 ## NOTES
 
+Using recursion and sending objects down the pipeline can duplicate files in your archive. For
+example, if you use `Get-ChildItem` with the **Recurse** parameter, each **FileInfo** and
+**DirectoryInfo** object that's sent down the pipeline is added to the archive.
+
 ## RELATED LINKS
 
 [Expand-Archive](Expand-Archive.md)
+
+[Get-ChildItem](../Microsoft.PowerShell.Management/Get-ChildItem.md)
