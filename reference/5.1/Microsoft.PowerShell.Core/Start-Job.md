@@ -3,7 +3,7 @@ external help file: System.Management.Automation.dll-Help.xml
 keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Core
-ms.date: 08/09/2019
+ms.date: 11/04/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/start-job?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Start-Job
@@ -66,6 +66,10 @@ more information, see [about_Remote_Jobs](./About/about_Remote_Jobs.md).
 Starting in PowerShell 3.0, `Start-Job` can start instances of custom job types, such as scheduled
 jobs. For information about how to use `Start-Job` to start jobs with custom types, see the help
 documents for the job type feature.
+
+The default working directory for jobs is hardcoded. The Windows default is `$HOME\Documents` and on
+Linux or macOS the default is `$HOME`. The script code running in the background job needs to manage
+the working directory as needed.
 
 ## EXAMPLES
 

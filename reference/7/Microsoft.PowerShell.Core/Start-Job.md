@@ -3,7 +3,7 @@ external help file: System.Management.Automation.dll-Help.xml
 keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Core
-ms.date: 10/23/2019
+ms.date: 11/04/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/start-job?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Start-Job
@@ -76,7 +76,8 @@ create a **PSRemotingJob** job object. For more information about using the ampe
 [about_Operators](./about/about_operators.md#background-operator-).
 
 PowerShell 7 introduced the **WorkingDirectory** parameter that specifies a background job's initial
-working directory.
+working directory. If the parameter isn't specified, `Start-Job` defaults to the current working
+directory of the caller that started the job.
 
 > [!NOTE]
 > Creating an out-of-process background job with `Start-Job` is not supported in the scenario where
@@ -600,8 +601,8 @@ Accept wildcard characters: False
 ### -WorkingDirectory
 
 Specifies the initial working directory of the background job. If the parameter isn't specified, the
-job runs from the default location. The Windows default is `$HOME\Documents` and on Linux or macOS
-the default is `$HOME`.
+job runs from the default location. The default location is the current working directory of the
+caller that started the job.
 
 This parameter was introduced in PowerShell 7.
 
