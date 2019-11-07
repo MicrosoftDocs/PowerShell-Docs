@@ -1,7 +1,7 @@
 ---
 title: Using Visual Studio Code for PowerShell Development
 description: Using Visual Studio Code for PowerShell Development
-ms.date: 08/06/2018
+ms.date: 11/07/2019
 ---
 
 # Using Visual Studio Code for PowerShell Development
@@ -10,9 +10,9 @@ In addition to the [PowerShell ISE][ise], PowerShell is also well-supported in V
 (VSCode). The ISE isn't supported with PowerShell Core, but VSCode is supported for PowerShell Core
 on all platforms: Windows, macOS, and Linux.
 
-You can use VSCode on Windows with PowerShell version 5 by using Windows 10 or by installing
-[Windows Management Framework 5.0 RTM](https://devblogs.microsoft.com/powershell/windows-management-framework-wmf-5-0-rtm-is-now-available-via-the-microsoft-update-catalog/)
-for down-level Windows OSs such as Windows 8.1.
+You can use VSCode on Windows with PowerShell version 5 by using Windows 10 or by installing Windows
+Management Framework 5.1 for down-level Windows OSs such as Windows 8.1. For more information, see
+[Install and Configure WMF 5.1](/powershell/scripting/wmf/setup/install-configure).
 
 Before you begin, make sure PowerShell exists on your system. For modern workloads on Windows,
 macOS, and Linux, see the following links:
@@ -297,14 +297,14 @@ Studio Code:
 [install-pscore-windows]: ../../setup/Installing-PowerShell-Core-on-Windows.md
 [install-winps]: ../../setup/Installing-Windows-PowerShell.md
 [ps-extension]: https://blogs.msdn.microsoft.com/cdndevs/2015/12/11/visual-studio-code-powershell-extension/
-[debug]: https://blogs.msdn.microsoft.com/powershell/2015/11/16/announcing-powershell-language-support-for-visual-studio-code-and-more/
+[debug]: https://devblogs.microsoft.com/powershell/announcing-powershell-language-support-for-visual-studio-code-and-more/
 [vscode-guide]: https://johnpapa.net/debugging-with-visual-studio-code/
 [ps-vscode]: https://github.com/PowerShell/vscode-powershell/tree/master/examples
-[getting-started]: https://blogs.technet.microsoft.com/heyscriptingguy/2016/12/05/get-started-with-powershell-development-in-visual-studio-code/
-[editing-part1]: https://blogs.technet.microsoft.com/heyscriptingguy/2017/01/11/visual-studio-code-editing-features-for-powershell-development-part-1/
-[editing-part2]: https://blogs.technet.microsoft.com/heyscriptingguy/2017/01/12/visual-studio-code-editing-features-for-powershell-development-part-2/
-[debugging-part1]: https://blogs.technet.microsoft.com/heyscriptingguy/2017/02/06/debugging-powershell-script-in-visual-studio-code-part-1/
-[debugging-part2]: https://blogs.technet.microsoft.com/heyscriptingguy/2017/02/13/debugging-powershell-script-in-visual-studio-code-part-2/
+[getting-started]: https://devblogs.microsoft.com/scripting/get-started-with-powershell-development-in-visual-studio-code/
+[editing-part1]: https://devblogs.microsoft.com/scripting/visual-studio-code-editing-features-for-powershell-development-part-1/
+[editing-part2]: https://devblogs.microsoft.com/scripting/visual-studio-code-editing-features-for-powershell-development-part-2/
+[debugging-part1]: https://devblogs.microsoft.com/scripting/debugging-powershell-script-in-visual-studio-code-part-1/
+[debugging-part2]: https://devblogs.microsoft.com/scripting/debugging-powershell-script-in-visual-studio-code-part-2/
 
 ## PowerShell Extension for VSCode
 
