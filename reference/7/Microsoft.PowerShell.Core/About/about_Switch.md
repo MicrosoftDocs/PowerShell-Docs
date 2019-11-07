@@ -167,21 +167,11 @@ conditions. It is equivalent to an `Else` clause in an `If` statement. Only one
 
 |Parameter   |Description                                               |
 |------------|----------------------------------------------------------|
-|**Wildcard**|Indicates that the condition is a wildcard string. |
-|            |If the match clause is not a string, the parameter is|
-|            |ignored.                                                   |
-|**Exact**        |Indicates that the match clause, if it is a string, must   |
-|             |match exactly. If the match clause is not a string, this parameter      |
-|             |is ignored.                                                    |
-|**CaseSensitive**|Performs a case-sensitive match. If the match clause is not|
-|                 |a string, this parameter is ignored.                       |
-|**File**     |Takes input from a file rather than a value statement. If      |
-|             |multiple **File** parameters are included, only the last one is|
-|             |used. Each line of the file is read and evaluated by the       |
-|             |`Switch` statement.                                            |
-|**Regex**    |Performs regular expression matching of the value to the       |
-|             |condition. If the|
-|             |match clause is not a string, this parameter is ignored.       |
+|**Wildcard**|Indicates that the condition is a wildcard string.<br />If the match clause is not a string, the parameter is<br />ignored. |
+|**Exact**        |Indicates that the match clause, if it is a string, must<br />match exactly. If the match clause is not a string, this parameter<br />is ignored. |
+|**CaseSensitive**|Performs a case-sensitive match. If the match clause is not<br />a string, this parameter is ignored.|
+|**File**     |Takes input from a file rather than a value statement. If<br />multiple **File** parameters are included, only the last one is<br />used. Each line of the file is read and evaluated by the<br />`Switch` statement. |
+|**Regex**    |Performs regular expression matching of the value to the<br />condition. If the<br />match clause is not a string, this parameter is ignored. |
 
 > [!NOTE]
 > When specifying conflicting values, like **Regex** and **Wildcard**, the last
