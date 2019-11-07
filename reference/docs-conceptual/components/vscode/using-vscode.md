@@ -49,7 +49,7 @@ For traditional Windows PowerShell workloads, see [Installing Windows PowerShell
       - **Windows**: typing `code` in your PowerShell session
       - **Linux**: typing `code` in your terminal
       - **macOS**: typing `code` in your terminal
-   1. Launch **Quick Open** on Windows or Linux by pressing <kbd>Ctrl</kbd>+<kbd>P</kbd>. on macOS,
+   1. Launch **Quick Open** on Windows or Linux by pressing <kbd>Ctrl</kbd>+<kbd>P</kbd>. On macOS,
       press <kbd>Cmd</kbd>+<kbd>P</kbd>.
    1. In Quick Open, type `ext install powershell` and press **Enter**.
    1. The **Extensions** view opens on the Side Bar. Select the PowerShell extension from Microsoft.
