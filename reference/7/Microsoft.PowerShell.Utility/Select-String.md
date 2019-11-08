@@ -537,8 +537,8 @@ Accept wildcard characters: False
 
 ### -NoEmphasis
 
-By default, the **NoEmphasis** parameter highlights the string found by `Select-String`. To disable
-the emphasis, specify the **NoEmphasis** parameter in your command.
+By default, `Select-String` highlights the string that matches the pattern you searched for with the
+**Pattern** parameter. The **NoEmphasis** parameter disables the highlighting.
 
 The emphasis uses negative colors based on your PowerShell background and text colors. For example,
 if your PowerShell colors are a black background with white text. The emphasis is a white background
