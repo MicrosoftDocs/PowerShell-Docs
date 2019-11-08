@@ -20,48 +20,48 @@ Finds text in strings and files.
 
 ```
 Select-String [-Pattern] <String[]> [-Path] <String[]> [-SimpleMatch] [-CaseSensitive] [-Quiet]
- [-List] [-Include <String[]>] [-Exclude <String[]>] [-NotMatch] [-AllMatches]
- [-Encoding <Encoding>] [-Context <Int32[]>]  [<CommonParameters>]
+ [-List] [-NoEmphasis] [-Include <String[]>] [-Exclude <String[]>] [-NotMatch] [-AllMatches]
+ [-Encoding <Encoding>] [-Context <Int32[]>] [<CommonParameters>]
 ```
 
 ### ObjectRaw
 
 ```
 Select-String -InputObject <PSObject> [-Pattern] <String[]> -Raw [-SimpleMatch] [-CaseSensitive]
- [-List] [-Include <String[]>] [-Exclude <String[]>] [-NotMatch] [-AllMatches]
- [-Encoding <Encoding>] [-Context <Int32[]>]  [<CommonParameters>]
+ [-List] [-NoEmphasis] [-Include <String[]>] [-Exclude <String[]>] [-NotMatch] [-AllMatches]
+ [-Encoding <Encoding>] [-Context <Int32[]>] [<CommonParameters>]
 ```
 
 ### Object
 
 ```
 Select-String -InputObject <PSObject> [-Pattern] <String[]> [-SimpleMatch] [-CaseSensitive] [-Quiet]
- [-List] [-Include <String[]>] [-Exclude <String[]>] [-NotMatch] [-AllMatches]
- [-Encoding <Encoding>] [-Context <Int32[]>]  [<CommonParameters>]
+ [-List] [-NoEmphasis] [-Include <String[]>] [-Exclude <String[]>] [-NotMatch] [-AllMatches]
+ [-Encoding <Encoding>] [-Context <Int32[]>] [<CommonParameters>]
 ```
 
 ### FileRaw
 
 ```
 Select-String [-Pattern] <String[]> [-Path] <String[]> -Raw [-SimpleMatch] [-CaseSensitive] [-List]
- [-Include <String[]>] [-Exclude <String[]>] [-NotMatch] [-AllMatches] [-Encoding <Encoding>]
- [-Context <Int32[]>]  [<CommonParameters>]
-```
-
-### LiteralFileRaw
-
-```
-Select-String [-Pattern] <String[]> -LiteralPath <String[]> -Raw [-SimpleMatch] [-CaseSensitive]
- [-List] [-Include <String[]>] [-Exclude <String[]>] [-NotMatch] [-AllMatches]
- [-Encoding <Encoding>] [-Context <Int32[]>]  [<CommonParameters>]
+ [-NoEmphasis] [-Include <String[]>] [-Exclude <String[]>] [-NotMatch] [-AllMatches]
+ [-Encoding <Encoding>] [-Context <Int32[]>] [<CommonParameters>]
 ```
 
 ### LiteralFile
 
 ```
 Select-String [-Pattern] <String[]> -LiteralPath <String[]> [-SimpleMatch] [-CaseSensitive] [-Quiet]
- [-List] [-Include <String[]>] [-Exclude <String[]>] [-NotMatch] [-AllMatches]
- [-Encoding <Encoding>] [-Context <Int32[]>]  [<CommonParameters>]
+ [-List] [-NoEmphasis] [-Include <String[]>] [-Exclude <String[]>] [-NotMatch] [-AllMatches]
+ [-Encoding <Encoding>] [-Context <Int32[]>] [<CommonParameters>]
+```
+
+### LiteralFileRaw
+
+```
+Select-String [-Pattern] <String[]> -LiteralPath <String[]> -Raw [-SimpleMatch] [-CaseSensitive]
+ [-List] [-NoEmphasis] [-Include <String[]>] [-Exclude <String[]>] [-NotMatch] [-AllMatches]
+ [-Encoding <Encoding>] [-Context <Int32[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -500,7 +500,7 @@ Accept wildcard characters: False
 ### -List
 
 Only the first instance of matching text is returned from each input file. This is the most
-efficient way to retrieve a list files that have contents matching the regular expression.
+efficient way to retrieve a list of files that have contents matching the regular expression.
 
 By default, `Select-String` returns a **MatchInfo** object for each match it finds.
 
@@ -532,6 +532,29 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -NoEmphasis
+
+By default, `Select-String` highlights the string that matches the pattern you searched for with the
+**Pattern** parameter. The **NoEmphasis** parameter disables the highlighting.
+
+The emphasis uses negative colors based on your PowerShell background and text colors. For example,
+if your PowerShell colors are a black background with white text. The emphasis is a white background
+with black text.
+
+This parameter was introduced in PowerShell 7.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -610,8 +633,10 @@ Accept wildcard characters: False
 ### -Raw
 
 Causes the cmdlet to output only the matching strings, rather than **MatchInfo** objects. This is
-the results in behavior that is the most similar to the Unix **grep** or Windows **findstr.exe**
+the results in behavior that's the most similar to the Unix **grep** or Windows **findstr.exe**
 commands.
+
+This parameter was introduced in PowerShell 7.
 
 ```yaml
 Type: SwitchParameter
@@ -683,8 +708,9 @@ parameter. To specify the text to be searched, use the following criteria:
 - If the text is stored in files, use the **Path** parameter to specify the path to the files.
 
 By default, `Select-String` interprets the value of the **Pattern** parameter as a regular
-expression. (For more information, see [about_Regular_Expressions](../Microsoft.PowerShell.Core/About/about_Regular_Expressions.md).
-You can use the **SimpleMatch** parameter to override the regular expression matching. The
+expression. For more information, see
+[about_Regular_Expressions](../Microsoft.PowerShell.Core/About/about_Regular_Expressions.md). You
+can use the **SimpleMatch** parameter to override the regular expression matching. The
 **SimpleMatch** parameter finds instances of the value of the **Pattern** parameter in the input.
 
 The default output of `Select-String` is a **MatchInfo** object, which includes detailed information
@@ -697,7 +723,7 @@ If you don't need the information in the **MatchInfo** object, use the **Quiet**
 instead of a **MatchInfo** object.
 
 When matching phrases, `Select-String` uses the current culture that is set for the system. To find
-the current culture, use the Get-Culture cmdlet.
+the current culture, use the `Get-Culture` cmdlet.
 
 To find the properties of a **MatchInfo** object, type the following command:
 
