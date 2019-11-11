@@ -69,7 +69,7 @@ class Cards {
     }
 
     NewDeck() {
-        $_suits = "`u{2663}","`u{2666}","`u{2665}","`u{2660}"
+        $_suits = [char]0x2663,[char]0x2666,[char]0x2665,[char]0x2660
         $_values = 'A',2,3,4,5,6,7,8,9,10,'J','Q','K'
         $_deck = foreach ($s in $_suits){ foreach ($v in $_values){ "$v$s"} }
         $this | Update-List -Property cards -Add $_deck | Out-Null
