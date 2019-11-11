@@ -3,7 +3,7 @@ external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 10/28/2019
+ms.date: 11/11/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/update-list?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Update-List
@@ -53,68 +53,122 @@ This cmdlet was reintroduced in PowerShell 7.
 
 ## EXAMPLES
 
-### Example 1: Add and remove items from a property value
+### Example 1: Add items to a property value
 
-This example adds and removes values from the **Aliases** property of a mailbox object.
-
-```powershell
-Get-MailBox | Update-List -Property aliases -Add "A","B" -Remove "X","Y" | Set-MailBox
-```
-
-The command uses the [Get-Mailbox](/previous-versions/office/exchange-server-2007/bb123685(v=exchg.80))
-cmdlet from Microsoft Exchange Server to get the mailbox then pipe it to the `Update-List` cmdlet.
-The `Update-List` command uses the **Property** parameter to indicate that the **Aliases** property
-of the mailbox is being updated, and it uses the **Add** and **Remove** parameters to specify the
-items that are being added and removed from the collection. The **Aliases** property fulfills the
-conditions of `Update-List`, because it stores a collection objects that have **Add** and **Remove**
-methods. The `Update-List` cmdlet returns the updated mailbox, which is piped to the `Set-MailBox`
-cmdlet, which changes the mailbox.
-
-### Example 2: Add and remove items from a property value in a variable
-
-This example adds and removes values from the **Aliases** property of a mailbox object. The commands
-have the same effect as the previous example, although it has a slightly different format.
+In this example we create a class that represents a deck of cards where the cards are stored as a
+**List** collection object. The **NewDeck()** method uses `Update-List`to add a complete deck of
+card values to the **cards** collection.
 
 ```powershell
-$M = Get-MailBox
-Update-List -InputObject $M -Property aliases -Add "A","B" -Remove "X", "Y" | Set-MailBox
+class Cards {
+
+    [System.Collections.Generic.List[string]]$cards
+    [string]$name
+
+    Cards([string]$_name) {
+        $this.name = $_name
+        $this.cards = [System.Collections.Generic.List[string]]::new()
+    }
+
+    NewDeck() {
+        $_suits = "`u{2663}","`u{2666}","`u{2665}","`u{2660}"
+        $_values = 'A',2,3,4,5,6,7,8,9,10,'J','Q','K'
+        $_deck = foreach ($s in $_suits){ foreach ($v in $_values){ "$v$s"} }
+        $this | Update-List -Property cards -Add $_deck | Out-Null
+    }
+
+    Show() {
+        Write-Host
+        Write-Host $this.name ": " $this.cards[0..12]
+        if ($this.cards.count -gt 13) {
+            Write-Host (' ' * ($this.name.length+3)) $this.cards[13..25]
+        }
+        if ($this.cards.count -gt 26) {
+            Write-Host (' ' * ($this.name.length+3)) $this.cards[26..38]
+        }
+        if ($this.cards.count -gt 39) {
+            Write-Host (' ' * ($this.name.length+3)) $this.cards[39..51]
+        }
+    }
+
+    Shuffle() { $this.cards = Get-Random -InputObject $this.cards -Count 52 }
+
+    Sort() { $this.cards.Sort() }
+}
 ```
 
-`Get-MailBox` gets the mailbox and it saves the mailbox in the `$M` variable. The **InputObject**
-parameter of `Update-List` specifies the mailbox stored in the `$M` variable. The **Property**
-parameter specifies the **Aliases** property. The **Add** and **Remove** parameters specify the
-items being added to and removed from the value of **Aliases**.
+> [!NOTE]
+> The `Update-List` cmdlet outputs the updated object to the pipeline. We pipe the output to
+> `Out-Null` to suppress the unwanted display.
 
-The command uses a pipeline operator (`|`) to send the updated mailbox object to the `Set-Mailbox`
-cmdlet, which changes the mailbox.
+### Example 2: Add and remove items of a collection property
 
-### Example 3: Add and remove items from a property value
-
-This example has the same effect as the two previous commands, but it uses a different procedure to
-perform the task.
+Continuing with the code in Example 1, we will create instances of the **Cards** class to represent
+a deck of cards and the cards held by two players. We use the `Update-List` cmdlet to add cards to
+the players' hands and to remove cards from the deck.
 
 ```powershell
-Get-MailBox | Set-MailBox -Alias (Update-List -Add "A", "B" -Remove "X","Y")
+$deck = [Cards]::new('Deck')
+$deck.NewDeck()
+$deck.Shuffle()
+$deck.Show()
+
+# Deal two hands
+$player1 | Update-List -Property cards -Add $deck.cards[0,2,4,6,8] | Out-Null
+$player2 | Update-List -Property cards -Add $deck.cards[1,3,5,7,9] | Out-Null
+$deck | Update-List -Property cards -Remove $player1.cards | Out-Null
+$deck | Update-List -Property cards -Remove $player2.cards | Out-Null
+
+$player1.Show()
+$player2.Show()
+$deck.Show()
 ```
 
-`Get-MailBox` gets the mailbox and pipes it to the `Set-Mailbox` cmdlet, which changes mailboxes.
-Instead of updating the **Aliases** property of the mailbox before sending it to `Set-Mailbox`, this
-example uses `Update-List` to create an object that represents the change and submits the change to
-the **Alias** parameter of `Set-Mailbox`. The `Update-List` command is enclosed in parentheses to
-ensure that it runs before the value of the **Alias** parameter is evaluated. When the `Set-Mailbox`
-command completes, the mailbox is changed.
+```Output
+Deck :  4♦ 7♥ J♦ 5♣ A♣ 8♦ J♣ Q♥ 6♦ 3♦ 9♦ 6♣ 2♣
+        K♥ 4♠ 10♥ 8♠ 10♦ 9♠ 6♠ K♦ 7♣ 3♣ Q♣ A♥ Q♠
+        3♥ 5♥ 2♦ 5♠ J♥ J♠ 10♣ 4♥ Q♦ 10♠ 4♣ 2♠ 2♥
+        6♥ 7♦ A♠ 5♦ 8♣ 9♥ K♠ 7♠ 3♠ 9♣ A♦ K♣ 8♥
 
-### Example 4: Replace a property collection
+Player 1 :  4♦ J♦ A♣ J♣ 6♦
 
-This example uses the **Replace** parameter of `Update-List` to replace the collection in the
-**Aliases** property of the object stored in the `$A` variable.
+Player 2 :  7♥ 5♣ 8♦ Q♥ 3♦
+
+Deck :  9♦ 6♣ 2♣ K♥ 4♠ 10♥ 8♠ 10♦ 9♠ 6♠ K♦ 7♣ 3♣
+        Q♣ A♥ Q♠ 3♥ 5♥ 2♦ 5♠ J♥ J♠ 10♣ 4♥ Q♦ 10♠
+        4♣ 2♠ 2♥ 6♥ 7♦ A♠ 5♦ 8♣ 9♥ K♠ 7♠ 3♠ 9♣
+        A♦ K♣ 8♥
+```
+
+The output shows the state of the deck before the cards were dealt to the players. You can see that
+each player received five cards from the deck. The final output shows the state of the deck after
+dealing the cards to the players. `Update-List` was used to select the cards from the deck and add
+them to the players' collection. Then the players' cards were removed from the deck using
+`Update-List`.
+
+### Example 3: Add and remove items in a single command
+
+`Update-List` allows you to use the **Add** and **Remove** parameters in a single command. In this
+example, Player 1 wants to discard the `4♦` and `6♦` and get two new cards.
 
 ```powershell
-Update-List -InputObject $A -Property aliases -Replace "A", "B" | Set-MailBox
+# Player 1 wants two new cards - remove 2 cards & add 2 cards
+$player1 | Update-List -Property cards -Remove $player1.cards[0,4] -Add $deck.cards[0..1] | Out-Null
+$player1.Show()
+
+# remove dealt cards from deck
+$deck | Update-List -Property cards -Remove $deck.cards[0..1] | Out-Null
+$deck.Show()
 ```
 
-Passing `$A` via the **InputObject** parameter is equivalent to using a pipeline operator to pass
-`$A` to `Update-List`.
+```Output
+Player 1 :  J♦ A♣ J♣ 9♦ 6♣
+
+Deck :  2♣ K♥ 4♠ 10♥ 8♠ 10♦ 9♠ 6♠ K♦ 7♣ 3♣ Q♣ A♥
+        Q♠ 3♥ 5♥ 2♦ 5♠ J♥ J♠ 10♣ 4♥ Q♦ 10♠ 4♣ 2♠
+        2♥ 6♥ 7♦ A♠ 5♦ 8♣ 9♥ K♠ 7♠ 3♠ 9♣ A♦ K♣
+        8♥
+```
 
 ## PARAMETERS
 
