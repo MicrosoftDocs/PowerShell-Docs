@@ -3,7 +3,7 @@ external help file: PSModule-help.xml
 keywords: powershell,cmdlet
 locale: en-us
 Module Name: PowerShellGet
-ms.date: 07/01/2019
+ms.date: 11/11/2019
 online version: https://docs.microsoft.com/powershell/module/powershellget/save-module?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Save-Module
@@ -55,7 +55,8 @@ Save-Module [-InputObject] <PSObject[]> -Path <String> [-Proxy <Uri>]
 The `Save-Module` cmdlet downloads a module and any dependencies from a registered repository.
 `Save-Module` downloads and saves the most current version of a module. The files are saved to a
 specified path on the local computer. The module isn't installed, but the contents are available for
-inspection by an administrator.
+inspection by an administrator. The saved module can then be copied into the appropriate
+`$env:PSModulePath` location of the offline machine.
 
 `Get-PSRepository` displays the local computer's registered repositories. You can use the
 `Find-Module` cmdlet to search registered repositories.
