@@ -108,6 +108,9 @@ a deck of cards and the cards held by two players. We use the `Update-List` cmdl
 the players' hands and to remove cards from the deck.
 
 ```powershell
+$player1 = [Cards]::new('Player 1')
+$player2 = [Cards]::new('Player 2')
+
 $deck = [Cards]::new('Deck')
 $deck.NewDeck()
 $deck.Shuffle()
