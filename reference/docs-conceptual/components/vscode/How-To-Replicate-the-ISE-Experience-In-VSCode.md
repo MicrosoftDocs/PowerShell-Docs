@@ -27,12 +27,29 @@ to make the user experience a bit more familiar compared to the ISE.
 You can [configure your own key bindings](https://code.visualstudio.com/docs/getstarted/keybindings#_custom-keybindings-for-refactorings)
 in VSCode as well.
 
+## Simplified ISE-like UI
+
+If you're looking to simplify the Visual Studio Code UI to look more closely to the UI of the ISE, apply these two settings:
+
+```json
+"workbench.activityBar.visible": false,
+"debug.openDebug": "neverOpen",
+```
+
+This will hide the "Activity Bar" and the "Debug Side Bar" sections below inside of the red box:
+
+![highlighted section includes Activity Bar and Debug Side Bar](https://user-images.githubusercontent.com/2644648/68706263-52020300-0544-11ea-94fa-0bc4b5a7f4e1.png)
+
+The end result looks like this:
+
+![Simplified view of VS Code](https://user-images.githubusercontent.com/2644648/68706430-b1f8a980-0544-11ea-9313-6556c8dedfcc.png)
+
 ## Tab completion
 
 To enable more ISE-like tab completion, add this setting:
 
 ```json
-"editor.tabCompletion": "on"
+"editor.tabCompletion": "on",
 ```
 
 > [!NOTE]
@@ -65,7 +82,7 @@ But the console won't be shown.
 To make new/untitled files, register as PowerShell by default:
 
 ```json
-"files.defaultLanguage": "powershell"
+"files.defaultLanguage": "powershell",
 ```
 
 ## Color scheme
@@ -80,7 +97,7 @@ In the drop-down list, select `PowerShell ISE`.
 You can set this theme in the settings with:
 
 ```json
-"workbench.colorTheme": "PowerShell ISE"
+"workbench.colorTheme": "PowerShell ISE",
 ```
 
 ## PowerShell Command Explorer
