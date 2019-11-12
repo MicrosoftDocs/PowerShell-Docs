@@ -51,6 +51,8 @@ browser.
 
 You can change how `Show-Markdown` renders Markdown in a terminal by using `Set-MarkdownOption`.
 
+This cmdlet was introduced in PowerShell 6.1.
+
 ## EXAMPLES
 
 ### Example 1: Simple example specifying a path

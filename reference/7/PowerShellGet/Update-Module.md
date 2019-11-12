@@ -276,6 +276,8 @@ accessible only to the current user of the computer:
 
 `$home\Documents\PowerShell\Modules`
 
+This parameter was introduced in PowerShell 7.
+
 ```yaml
 Type: String
 Parameter Sets: (All)
@@ -284,7 +286,7 @@ Accepted values: AllUsers, CurrentUser
 
 Required: False
 Position: Named
-Default value: None
+Default value: CurrentUser
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

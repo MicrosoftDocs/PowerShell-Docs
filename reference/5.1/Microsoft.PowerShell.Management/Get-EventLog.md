@@ -21,9 +21,9 @@ computers.
 
 ```
 Get-EventLog [-LogName] <String> [-ComputerName <String[]>] [-Newest <Int32>] [-After <DateTime>]
-[-Before <DateTime>] [-UserName <String[]>] [[-InstanceId] <Int64[]>] [-Index <Int32[]>]
-[-EntryType <String[]>] [-Source <String[]>] [-Message <String>] [-AsBaseObject]
-[<CommonParameters>]
+ [-Before <DateTime>] [-UserName <String[]>] [[-InstanceId] <Int64[]>] [-Index <Int32[]>]
+ [-EntryType <String[]>] [-Source <String[]>] [-Message <String>] [-AsBaseObject]
+ [<CommonParameters>]
 ```
 
 ### List

@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 keywords: powershell,cmdlet
 locale: en-us
-ms.date: 10/09/2019
+ms.date: 11/12/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/test-connection?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Test-Connection
@@ -18,38 +18,38 @@ Sends ICMP echo request packets, or pings, to one or more computers.
 ### PingCount (Default)
 
 ```
-Test-Connection [-TargetName] <String[]> [-Ping] [-IPv4] [-IPv6] [-ResolveDestination]
- [-Source <String>] [-MaxHops <Int32>] [-Count <Int32>] [-Delay <Int32>] [-BufferSize <Int32>]
- [-DontFragment] [-TimeoutSeconds <Int32>] [-Quiet] [<CommonParameters>]
+Test-Connection [-Ping] [-IPv4] [-IPv6] [-ResolveDestination] [-Source <String>] [-MaxHops <Int32>]
+ [-Count <Int32>] [-Delay <Int32>] [-BufferSize <Int32>] [-DontFragment] [-TimeoutSeconds <Int32>]
+ [-TargetName] <String[]> [-Quiet] [<CommonParameters>]
 ```
 
 ### PingContinues
 
 ```
-Test-Connection [-TargetName] <String[]> [-Ping] [-IPv4] [-IPv6] [-ResolveDestination]
- [-Source <String>] [-MaxHops <Int32>] [-Delay <Int32>] [-BufferSize <Int32>] [-DontFragment]
- [-Continues] [-TimeoutSeconds <Int32>] [-Quiet] [<CommonParameters>]
+Test-Connection [-Ping] [-IPv4] [-IPv6] [-ResolveDestination] [-Source <String>] [-MaxHops <Int32>]
+ [-Delay <Int32>] [-BufferSize <Int32>] [-DontFragment] [-Continues] [-TimeoutSeconds <Int32>]
+ [-TargetName] <String[]> [-Quiet] [<CommonParameters>]
 ```
 
 ### DetectionOfMTUSize
 
 ```
-Test-Connection [-TargetName] <String[]> -MTUSizeDetect [-IPv4] [-IPv6] [-ResolveDestination]
- [-TimeoutSeconds <Int32>] [-Quiet] [<CommonParameters>]
+Test-Connection [-IPv4] [-IPv6] [-ResolveDestination] [-TimeoutSeconds <Int32>]
+ [-TargetName] <String[]> -MTUSizeDetect [-Quiet] [<CommonParameters>]
 ```
 
 ### TraceRoute
 
 ```
-Test-Connection [-TargetName] <String[]> -Traceroute [-IPv4] [-IPv6] [-ResolveDestination]
- [-Source <String>] [-MaxHops <Int32>] [-TimeoutSeconds <Int32>] [-Quiet] [<CommonParameters>]
+Test-Connection [-IPv4] [-IPv6] [-ResolveDestination] [-Source <String>] [-MaxHops <Int32>]
+ [-TimeoutSeconds <Int32>] [-TargetName] <String[]> -Traceroute [-Quiet] [<CommonParameters>]
 ```
 
 ### ConnectionByTCPPort
 
 ```
-Test-Connection [-TargetName] <String[]> -TCPPort <Int32> [-IPv4] [-IPv6] [-ResolveDestination]
- [-Source <String>] [-TimeoutSeconds <Int32>] [-Quiet] [<CommonParameters>]
+Test-Connection [-IPv4] [-IPv6] [-ResolveDestination] [-Source <String>] [-TimeoutSeconds <Int32>]
+ [-TargetName] <String[]> -TCPPort <Int32> [-Quiet] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -493,6 +493,8 @@ Accept wildcard characters: False
 
 Sets the timeout value for the test. The test fails if a response isn't received before the timeout
 expires. The default is five seconds.
+
+This parameter was introduced in PowerShell 6.0.
 
 ```yaml
 Type: Int32

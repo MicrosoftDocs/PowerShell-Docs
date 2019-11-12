@@ -19,49 +19,49 @@ Gets events from event logs and event tracing log files on local and remote comp
 
 ```
 Get-WinEvent [[-LogName] <String[]>] [-MaxEvents <Int64>] [-ComputerName <String>]
-[-Credential <PSCredential>] [-FilterXPath <String>] [-Force] [-Oldest] [<CommonParameters>]
+ [-Credential <PSCredential>] [-FilterXPath <String>] [-Force] [-Oldest] [<CommonParameters>]
 ```
 
 ### ListLogSet
 
 ```
 Get-WinEvent [-ListLog] <String[]> [-ComputerName <String>] [-Credential <PSCredential>] [-Force]
-[<CommonParameters>]
+ [<CommonParameters>]
 ```
 
 ### ListProviderSet
 
 ```
 Get-WinEvent [-ListProvider] <String[]> [-ComputerName <String>] [-Credential <PSCredential>]
-[<CommonParameters>]
+ [<CommonParameters>]
 ```
 
 ### GetProviderSet
 
 ```
 Get-WinEvent [-ProviderName] <String[]> [-MaxEvents <Int64>] [-ComputerName <String>]
-[-Credential <PSCredential>] [-FilterXPath <String>] [-Force] [-Oldest] [<CommonParameters>]
+ [-Credential <PSCredential>] [-FilterXPath <String>] [-Force] [-Oldest] [<CommonParameters>]
 ```
 
 ### FileSet
 
 ```
 Get-WinEvent [-Path] <String[]> [-MaxEvents <Int64>] [-Credential <PSCredential>]
-[-FilterXPath <String>] [-Oldest] [<CommonParameters>]
+ [-FilterXPath <String>] [-Oldest] [<CommonParameters>]
 ```
 
 ### HashQuerySet
 
 ```
 Get-WinEvent [-MaxEvents <Int64>] [-ComputerName <String>] [-Credential <PSCredential>]
-[-FilterHashtable] <Hashtable[]> [-Force] [-Oldest] [<CommonParameters>]
+ [-FilterHashtable] <Hashtable[]> [-Force] [-Oldest] [<CommonParameters>]
 ```
 
 ### XmlQuerySet
 
 ```
-Get-WinEvent [-MaxEvents <Int64>] [-ComputerName <String>] [-Credential <PSCredential>] [-FilterXml]
-<XmlDocument> [-Oldest] [<CommonParameters>]
+Get-WinEvent [-MaxEvents <Int64>] [-ComputerName <String>] [-Credential <PSCredential>]
+ [-FilterXml] <XmlDocument> [-Oldest] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -503,7 +503,7 @@ PS> Get-WinEvent -LogName 'Windows PowerShell' -FilterXPath "*[System[Level=3 an
 ### Example 16: Use FilterHashtable to get events from the Application log
 
 This example uses the **FilterHashtable** parameter to get events from the **Application** log. The
-hash table uses **key/value** pairs. For more information about the **FilterHashtable** parameter,
+hash table uses **key-value** pairs. For more information about the **FilterHashtable** parameter,
 see [Creating Get-WinEvent queries with FilterHashtable](/powershell/scripting/samples/Creating-Get-WinEvent-queries-with-FilterHashtable).
 For more information about hash tables, see [about_Hash_Tables](../Microsoft.PowerShell.Core/about/about_hash_tables.md).
 
@@ -589,7 +589,7 @@ Accept wildcard characters: False
 ### -FilterHashtable
 
 Specifies a query in hash table format to select events from one or more event logs. The query
-contains a hash table with one or more **key/value** pairs.
+contains a hash table with one or more **key-value** pairs.
 
 Hash table queries have the following rules:
 
@@ -603,12 +603,11 @@ Hash table queries have the following rules:
   used to construct a valid **System.Security.Principal.NTAccount object**.
 - The **Data** value takes event data in an unnamed field. For example, events in classic event
   logs.
-- `<named-data>` key represents a named event data field.
 
-When `Get-WinEvent` cannot interpret a **key/value** pair, it interprets the key as a case-sensitive
+When `Get-WinEvent` cannot interpret a **key-value** pair, it interprets the key as a case-sensitive
 name for the event data in the event.
 
-The valid `Get-WinEvent` **key/value** pairs are as follows:
+The valid `Get-WinEvent` **key-value** pairs are as follows:
 
 - **LogName**=`<String[]>`
 - **ProviderName**=`<String[]>`
@@ -620,7 +619,6 @@ The valid `Get-WinEvent` **key/value** pairs are as follows:
 - **EndTime**=`<DateTime>`
 - **UserID**=`<SID>`
 - **Data**=`<String[]>`
-- `<named-data>`=`<String[]>`
 
 ```yaml
 Type: Hashtable[]

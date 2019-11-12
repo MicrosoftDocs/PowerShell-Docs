@@ -301,8 +301,10 @@ Accept wildcard characters: False
 
 ### -SkipAutomaticTags
 
-Removes commands and resources from being included as tags.
-Skips automatically adding tags to a module.
+Removes commands and resources from being included as tags. Skips automatically adding tags to a
+module.
+
+This parameter was introduced in PowerShell 7.
 
 ```yaml
 Type: SwitchParameter

@@ -18,6 +18,10 @@ support PowerShell Workflow in PowerShell Core.
 In the future, we would like to enable native parallelism/concurrency in the PowerShell language
 without the need for PowerShell Workflow.
 
+If there is a need to use checkpoints to resume a script after the OS restarts, we recommend
+using Task Scheduler to run a script on OS startup, but the script would need to maintain
+its own state (like persisting it to a file).
+
 [workflow]: https://docs.microsoft.com/powershell/scripting/core-powershell/workflows-guide
 [workflow-foundation]: https://docs.microsoft.com/dotnet/framework/windows-workflow-foundation/
 

@@ -19,8 +19,8 @@ Sends ICMP echo request packets, or pings, to one or more computers.
 ### Default (Default)
 
 ```
-Test-Connection [-ComputerName] <String[]> [-AsJob] [-DcomAuthentication <AuthenticationLevel>]
- [-WsmanAuthentication <String>] [-Protocol <String>] [-BufferSize <Int32>] [-Count <Int32>]
+Test-Connection [-AsJob] [-DcomAuthentication <AuthenticationLevel>] [-WsmanAuthentication <String>]
+ [-Protocol <String>] [-BufferSize <Int32>] [-ComputerName] <String[]> [-Count <Int32>]
  [-Impersonation <ImpersonationLevel>] [-ThrottleLimit <Int32>] [-TimeToLive <Int32>]
  [-Delay <Int32>] [<CommonParameters>]
 ```
@@ -28,18 +28,17 @@ Test-Connection [-ComputerName] <String[]> [-AsJob] [-DcomAuthentication <Authen
 ### Source
 
 ```
-Test-Connection [-ComputerName] <String[]> [-Source] <String[]> [-AsJob]
- [-DcomAuthentication <AuthenticationLevel>] [-WsmanAuthentication <String>] [-Protocol <String>]
- [-BufferSize <Int32>] [-Count <Int32>] [-Credential <PSCredential>]
- [-Impersonation <ImpersonationLevel>] [-ThrottleLimit <Int32>] [-TimeToLive <Int32>]
- [-Delay <Int32>] [<CommonParameters>]
+Test-Connection [-AsJob] [-DcomAuthentication <AuthenticationLevel>] [-WsmanAuthentication <String>]
+ [-Protocol <String>] [-BufferSize <Int32>] [-ComputerName] <String[]> [-Count <Int32>]
+ [-Credential <PSCredential>] [-Source] <String[]> [-Impersonation <ImpersonationLevel>]
+ [-ThrottleLimit <Int32>] [-TimeToLive <Int32>] [-Delay <Int32>] [<CommonParameters>]
 ```
 
 ### Quiet
 
 ```
-Test-Connection [-ComputerName] <String[]> [-DcomAuthentication <AuthenticationLevel>]
- [-WsmanAuthentication <String>] [-Protocol <String>] [-BufferSize <Int32>] [-Count <Int32>]
+Test-Connection [-DcomAuthentication <AuthenticationLevel>] [-WsmanAuthentication <String>]
+ [-Protocol <String>] [-BufferSize <Int32>] [-ComputerName] <String[]> [-Count <Int32>]
  [-Impersonation <ImpersonationLevel>] [-TimeToLive <Int32>] [-Delay <Int32>] [-Quiet]
  [<CommonParameters>]
 ```
@@ -109,7 +108,7 @@ sends a ping test to a remote computer.
 Test-Connection -ComputerName Server01 -Count 3 -Delay 2 -TTL 255 -BufferSize 256 -ThrottleLimit 32
 ```
 
-`Test-Connection` uses the **TargetName** parameter to specify Server01. The **Count** parameter
+`Test-Connection` uses the **ComputerName** parameter to specify Server01. The **Count** parameter
 specifies three pings are sent to the Server01 computer with a **Delay** of 2-second intervals.
 
 You might use these options when the ping response is expected to take longer than usual, either

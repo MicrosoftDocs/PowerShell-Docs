@@ -56,6 +56,8 @@ Instead of a property name, a script block can be used. In that case the result 
 will be converted to a string before joining it to form the result. It can either combine the text
 of a property of an object or the result of converting the object to a string.
 
+This cmdlet was introduced in PowerShell 6.2.
+
 ## EXAMPLES
 
 ### Example 1
