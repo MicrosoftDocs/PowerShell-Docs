@@ -598,6 +598,8 @@ Accept wildcard characters: False
 When the **ViModeIndicator** is set to `Script`, the script block provided will be invoked every
 time the mode changes. The script block is provided one argument of type `ViMode`.
 
+This parameter was introduced in PowerShell 7.
+
 ```yaml
 Type: ScriptBlock
 Parameter Sets: (All)

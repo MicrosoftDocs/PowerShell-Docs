@@ -3,7 +3,7 @@ external help file: System.Management.Automation.dll-Help.xml
 keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Core
-ms.date: 08/23/2019
+ms.date: 10/28/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/get-help?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Help
@@ -26,29 +26,36 @@ Get-Help [[-Name] <String>] [-Path <String>] [-Category <String[]>] [-Full] [-Co
 ### DetailedView
 
 ```
-Get-Help [[-Name] <String>] -Detailed [-Path <String>] [-Category <String[]>]
+Get-Help [[-Name] <String>] [-Path <String>] [-Category <String[]>] -Detailed
  [-Component <String[]>] [-Functionality <String[]>] [-Role <String[]>] [<CommonParameters>]
 ```
 
 ### Examples
 
 ```
-Get-Help [[-Name] <String>] -Examples [-Path <String>] [-Category <String[]>]
+Get-Help [[-Name] <String>] [-Path <String>] [-Category <String[]>] -Examples
  [-Component <String[]>] [-Functionality <String[]>] [-Role <String[]>] [<CommonParameters>]
 ```
 
 ### Parameters
 
 ```
-Get-Help [[-Name] <String>] -Parameter <String[]> [-Path <String>] [-Category <String[]>]
+Get-Help [[-Name] <String>] [-Path <String>] [-Category <String[]>] -Parameter <String[]>
  [-Component <String[]>] [-Functionality <String[]>] [-Role <String[]>] [<CommonParameters>]
 ```
 
 ### Online
 
 ```
-Get-Help [[-Name] <String>] -Online [-Path <String>] [-Category <String[]>] [-Component <String[]>]
- [-Functionality <String[]>] [-Role <String[]>] [<CommonParameters>]
+Get-Help [[-Name] <String>] [-Path <String>] [-Category <String[]>] [-Component <String[]>]
+ [-Functionality <String[]>] [-Role <String[]>] -Online [<CommonParameters>]
+```
+
+### ShowWindow
+
+```
+Get-Help [[-Name] <String>] [-Path <String>] [-Category <String[]>] [-Component <String[]>]
+ [-Functionality <String[]>] [-Role <String[]>] -ShowWindow [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -564,6 +571,29 @@ Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: True
+```
+
+### -ShowWindow
+
+Displays the help topic in a window for easier reading. The window includes a **Find** search
+feature and a **Settings** box that lets you set options for the display, including options to
+display only selected sections of a help topic.
+
+The **ShowWindow** parameter supports help topics for commands (cmdlets, functions, CIM commands,
+scripts) and conceptual **About** articles. It does not support provider help.
+
+This parameter was reintroduced in PowerShell 7.0.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: ShowWindow
+Aliases:
+
+Required: True
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
 ```
 
 ### CommonParameters

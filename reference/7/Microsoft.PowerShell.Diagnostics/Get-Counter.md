@@ -3,8 +3,8 @@ external help file: Microsoft.PowerShell.Commands.Diagnostics.dll-Help.xml
 keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Diagnostics
-ms.date: 10/30/2019
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.diagnostics/get-counter?view=powershell-5.1&WT.mc_id=ps-gethelp
+ms.date: 11/06/2019
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.diagnostics/get-counter?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Counter
 ---
@@ -42,6 +42,8 @@ system counters.
 
 Many counter sets are protected by access control lists (ACL). To see all counter sets, open
 PowerShell with the **Run as administrator** option.
+
+This cmdlet was reintroduced in PowerShell 7.
 
 ## EXAMPLES
 
@@ -131,20 +133,22 @@ This example uses the pipeline to get the counter list set and then sort the lis
 order.
 
 ```powershell
-Get-Counter -ListSet * | Sort-Object -Property CounterSetName | Format-Table -AutoSize
+Get-Counter -ListSet * |
+  Sort-Object -Property CounterSetName |
+    Format-Table CounterSetName, CounterSetType -AutoSize
 ```
 
 ```Output
-CounterSetName                        MachineName CounterSetType  Description
---------------                        ----------- --------------  -----------
-.NET CLR Data                         .           SingleInstance  .Net CLR Data
-.NET Data Provider for SqlServer      .           SingleInstance  Counters for System.Data.SqlClient
-AppV Client Streamed Data Percentage  .           SingleInstance  Size of data streamed to disk ...
-Authorization Manager Applications    .           SingleInstance  The set of Counters for ...
-BitLocker                             .           MultiInstance   BitLocker Drive Encryption ...
-Bluetooth Device                      .           SingleInstance  Counters related to a remote ...
-Cache                                 .           SingleInstance  The Cache performance object ...
-Client Side Caching                   .           SingleInstance  Performance counters for SMB ...
+CounterSetName                        CounterSetType
+--------------                        --------------
+.NET CLR Data                         SingleInstance
+.NET Data Provider for SqlServer      SingleInstance
+AppV Client Streamed Data Percentage  SingleInstance
+Authorization Manager Applications    SingleInstance
+BitLocker                             MultiInstance
+Bluetooth Device                      SingleInstance
+Cache                                 SingleInstance
+Client Side Caching                   SingleInstance
 ```
 
 `Get-Counter` uses the **ListSet** parameter with an asterisk (`*`) to get a complete list of
@@ -539,6 +543,10 @@ For example to send each **Processor** counter path to `Get-Counter`:
 
 `Get-Counter -ListSet Processor | Get-Counter`
 
+> [!NOTE]
+> In PowerShell 7, `Get-Counter` can't retrieve the **Description** property of the counter set. The
+> **Description** is set to `$null`.
+
 ```yaml
 Type: String[]
 Parameter Sets: ListSetSet
@@ -626,6 +634,9 @@ increase the interval.
 
 The **MaxSamples** and **SampleInterval** values apply to all the counters on each computer in the
 command. To set different values for different counters, enter separate `Get-Counter` commands.
+
+In PowerShell 7, when using the **ListSet** parameter, `Get-Counter` can't retrieve the
+**Description** property of the counter set. The **Description** is set to `$null`.
 
 ## RELATED LINKS
 

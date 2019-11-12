@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Utility
 ms.date: 11/11/2019
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/update-list?view=powershell-5.1&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/update-list?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Update-List
 ---
@@ -49,6 +49,8 @@ interface.
 The core cmdlets that are installed with PowerShell do not support this interface. To
 determine whether a cmdlet supports `Update-List`, see the cmdlet Help topic.
 
+This cmdlet was reintroduced in PowerShell 7.
+
 ## EXAMPLES
 
 ### Example 1: Add items to a property value
@@ -69,7 +71,7 @@ class Cards {
     }
 
     NewDeck() {
-        $_suits = [char]0x2663,[char]0x2666,[char]0x2665,[char]0x2660
+        $_suits = "`u{2663}","`u{2666}","`u{2665}","`u{2660}"
         $_values = 'A',2,3,4,5,6,7,8,9,10,'J','Q','K'
         $_deck = foreach ($s in $_suits){ foreach ($v in $_values){ "$v$s"} }
         $this | Update-List -Property cards -Add $_deck | Out-Null

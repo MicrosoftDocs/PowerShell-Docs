@@ -1,7 +1,7 @@
 ---
 external help file: ThreadJob.dll-Help.xml
 Module Name: threadjob
-ms.date: 07/09/2019
+ms.date: 11/04/2019
 online version: https://docs.microsoft.com/powershell/module/threadjob/start-threadjob?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Start-ThreadJob
@@ -30,7 +30,8 @@ Start-ThreadJob [-FilePath] <String> [-Name <String>] [-InitializationScript <Sc
 ## DESCRIPTION
 
 `Start-ThreadJob` creates background jobs similar to the `Start-Job` cmdlet. The main difference is
-that the jobs which are created run in separate threads within the local process.
+that the jobs which are created run in separate threads within the local process. By default, the
+jobs use the current working directory of the caller that started the job.
 
 The cmdlet also supports a **ThrottleLimit** parameter to limit the number of jobs running at one
 time. As more jobs are started, they are queued and wait until the current number of jobs drops
