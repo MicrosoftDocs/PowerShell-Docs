@@ -38,11 +38,11 @@ If you're looking to simplify the Visual Studio Code UI to look more closely to 
 
 This will hide the "Activity Bar" and the "Debug Side Bar" sections below inside of the red box:
 
-![highlighted section includes Activity Bar and Debug Side Bar](https://user-images.githubusercontent.com/2644648/68706263-52020300-0544-11ea-94fa-0bc4b5a7f4e1.png)
+![highlighted section includes Activity Bar and Debug Side Bar](images/How-To-Replicate-the-ISE-Experience-In-VSCode/1-highlighted-sidebar.png)
 
 The end result looks like this:
 
-![Simplified view of VS Code](https://user-images.githubusercontent.com/2644648/68706430-b1f8a980-0544-11ea-9313-6556c8dedfcc.png)
+![Simplified view of VS Code](images/How-To-Replicate-the-ISE-Experience-In-VSCode/2-simplified-ui.png)
 
 ## Tab completion
 
