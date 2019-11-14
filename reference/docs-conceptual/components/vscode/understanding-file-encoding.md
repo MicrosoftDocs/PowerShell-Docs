@@ -12,7 +12,7 @@ using the correct character encoding format.
 
 VSCode manages the interface between a human entering strings of characters into a buffer and
 reading/writing blocks of bytes to the filesystem. When VSCode saves a file, it uses a text
-encoding to do this.
+encoding to decide what bytes each character becomes.
 
 Similarly, when PowerShell runs a script it must convert the bytes in a file to characters to
 reconstruct the file into a PowerShell program. Since VSCode writes the file and PowerShell reads
@@ -31,6 +31,7 @@ encoding of PowerShell. There is no way for PowerShell to automatically determin
 
 You're more likely to have encoding problems when you're using characters not in the [7-bit ASCII character set](https://ascii.cl/). For example:
 
+- Extended non-letter characters like em-dash (`—`), non-breaking space (` `) or left double quotation mark (`“`)
 - Accented latin characters (`É`, `ü`)
 - Non-latin characters like Cyrillic (`Д`, `Ц`)
 - Han Chinese (`脚`, `本`)
