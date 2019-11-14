@@ -34,7 +34,7 @@ You're more likely to have encoding problems when you're using characters not in
 - Extended non-letter characters like em-dash (`—`), non-breaking space (` `) or left double quotation mark (`“`)
 - Accented latin characters (`É`, `ü`)
 - Non-latin characters like Cyrillic (`Д`, `Ц`)
-- Han Chinese (`脚`, `本`)
+- CJK characters (`本`, `화`, `が`)
 
 Common reasons for encoding issues are:
 
