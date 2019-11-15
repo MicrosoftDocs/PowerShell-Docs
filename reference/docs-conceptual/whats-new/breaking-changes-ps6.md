@@ -1,10 +1,10 @@
 ---
-ms.date:  05/17/2018
+ms.date:  11/15/2019
 keywords:  powershell,core
 title:  Breaking Changes for PowerShell 6.0
 ---
 
-# Breaking Changes for PowerShell 6.0
+# Breaking Changes for PowerShell 6.x
 
 ## Features no longer available in PowerShell Core
 
@@ -22,7 +22,7 @@ If there is a need to use checkpoints to resume a script after the OS restarts, 
 using Task Scheduler to run a script on OS startup, but the script would need to maintain
 its own state (like persisting it to a file).
 
-[workflow]: https://docs.microsoft.com/powershell/scripting/core-powershell/workflows-guide
+[workflow]: /powershell/scripting/components/workflows-guide
 [workflow-foundation]: https://docs.microsoft.com/dotnet/framework/windows-workflow-foundation/
 
 ### Custom snap-ins
@@ -375,3 +375,5 @@ Internet Explorer have resulted in several breaking changes within `Invoke-WebRe
   supply the `-AllowUnencryptedAuthentication` parameter to suppress the error.
 - `-MaximumRedirection` now produces a terminating error when redirection attempts exceed the
   provided limit instead of returning the results of the last redirection.
+- In PowerShell 6.2, a change was made to default to UTF-8 encoding for JSON responses. When a
+  charset is not supplied for a JSON response, the default encoding should be UTF-8 per RFC 8259.
