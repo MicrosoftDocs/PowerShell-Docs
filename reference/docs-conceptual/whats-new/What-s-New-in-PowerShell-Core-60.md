@@ -395,7 +395,7 @@ You can find out more about how we use this data in this [blog post][telemetry-b
 [.NET Standard]: https://docs.microsoft.com/dotnet/standard/net-standard
 [os_log]: https://developer.apple.com/documentation/os/logging
 [Syslog]: https://en.wikipedia.org/wiki/Syslog
-[ssh-remoting]: ../core-powershell/SSH-Remoting-in-PowerShell-Core.md
+[ssh-remoting]: ../learn/remoting/SSH-Remoting-in-PowerShell-Core.md
 [breaking-changes]: breaking-changes-ps6.md
 [changelog]: https://github.com/PowerShell/PowerShell/tree/master/CHANGELOG.md
 [community-dashboard]: https://aka.ms/PSGitHubBI

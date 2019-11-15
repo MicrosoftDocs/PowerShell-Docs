@@ -263,4 +263,4 @@ learn Windows PowerShell.
 ## See also
 
 For more information about using Windows PowerShell ISE, see
-[Exploring the Windows PowerShell Integrated Scripting Environment](../getting-started/fundamental/exploring-the-windows-powershell-ise.md).
+[Exploring the Windows PowerShell Integrated Scripting Environment](../components/ise/exploring-the-windows-powershell-ise.md).

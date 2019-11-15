@@ -12,7 +12,7 @@ You can use the Windows PowerShell® Integrated Scripting Environment (ISE) to c
 
 ## Menu Bar
 
-The menu bar contains the **File**, **Edit**, **View**, **Tools**, **Debug**, **Add-ons**, and **Help** menus. The buttons on the menus allow you to perform tasks related to writing and running scripts and running commands in the Windows PowerShell ISE. Additionally, an [add-on tool](../../core-powershell/ise/The-ISEAddOnTool-Object.md) may be placed on the menu bar by running scripts that use the [The ISE Object Model Hierarchy](../../core-powershell/ise/The-ISE-Object-Model-Hierarchy.md).
+The menu bar contains the **File**, **Edit**, **View**, **Tools**, **Debug**, **Add-ons**, and **Help** menus. The buttons on the menus allow you to perform tasks related to writing and running scripts and running commands in the Windows PowerShell ISE. Additionally, an [add-on tool](object-model/The-ISEAddOnTool-Object.md) may be placed on the menu bar by running scripts that use the [The ISE Object Model Hierarchy](object-model/The-ISE-Object-Model-Hierarchy.md).
 
 > [!NOTE]
 > In Windows PowerShell ISE 2.0, The **Tools** and **Add-ons** menus were not present.
@@ -77,4 +77,4 @@ Help for Windows PowerShell ISE is available on the Web in the TechNet Library. 
 
 ## See Also
 
-- [Introducing the Windows PowerShell ISE](../../core-powershell/ise/Introducing-the-Windows-PowerShell-ISE.md)
+- [Introducing the Windows PowerShell ISE](Introducing-the-Windows-PowerShell-ISE.md)
