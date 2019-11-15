@@ -292,10 +292,10 @@ Studio Code:
 - [Debugging PowerShell script in Visual Studio Code – Part 2][debugging-part2]
 
 [ise]: ../ise/Introducing-the-Windows-PowerShell-ISE.md
-[install-pscore-linux]:  ../../setup/Installing-PowerShell-Core-on-Linux.md
-[install-pscore-macos]:  ../../setup/Installing-PowerShell-Core-on-macOS.md
-[install-pscore-windows]: ../../setup/Installing-PowerShell-Core-on-Windows.md
-[install-winps]: ../../setup/Installing-Windows-PowerShell.md
+[install-pscore-linux]:  ../../install/Installing-PowerShell-Core-on-Linux.md
+[install-pscore-macos]:  ../../install/Installing-PowerShell-Core-on-macOS.md
+[install-pscore-windows]: ../../install/Installing-PowerShell-Core-on-Windows.md
+[install-winps]: ../../install/Installing-Windows-PowerShell.md
 [ps-extension]: https://blogs.msdn.microsoft.com/cdndevs/2015/12/11/visual-studio-code-powershell-extension/
 [debug]: https://devblogs.microsoft.com/powershell/announcing-powershell-language-support-for-visual-studio-code-and-more/
 [vscode-guide]: https://johnpapa.net/debugging-with-visual-studio-code/
