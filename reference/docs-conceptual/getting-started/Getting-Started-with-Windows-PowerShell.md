@@ -21,4 +21,4 @@ In this topic:
 
 - [Installing Windows PowerShell](../install/Installing-Windows-PowerShell.md)
 
-- [Starting Windows PowerShell](../install/Starting-Windows-PowerShell.md)
+- [Starting Windows PowerShell](Starting-Windows-PowerShell.md)
