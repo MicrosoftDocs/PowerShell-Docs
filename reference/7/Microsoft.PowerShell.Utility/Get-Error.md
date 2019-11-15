@@ -141,7 +141,8 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-Input supports any PSObject, but results will vary unless an ErrorRecord or Exception object are supplied.
+Supports input from any PSObject, but results will vary unless an ErrorRecord or Exception object
+are supplied.
 
 ### Pipeline input
 
