@@ -16,8 +16,16 @@ Gets and displays the most recent error messages from the current session.
 
 ## SYNTAX
 
+### ByNewest (Default)
+
 ```
-Get-Error [[-InputObject] <psobject>] [-Newest <Int>] [<CommonParameters>]
+Get-Error [-Newest <Int>] [<CommonParameters>]
+```
+
+### ByPipeline
+
+```
+Get-Error [[-InputObject] <psobject>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -25,10 +33,10 @@ Get-Error [[-InputObject] <psobject>] [-Newest <Int>] [<CommonParameters>]
 The `Get-Error` cmdlet gets a **PSExtendedError** object that represents the current error details
 from the last error that occurred in the session.
 
-You can use 'Get-Error' to display a specified number of errors that have occurred in the current
+You can use `Get-Error` to display a specified number of errors that have occurred in the current
 session using the **Newest** parameter.
 
-The 'Get-Error' cmdlet also receives error objects from a collection, such as **$Error**, to display
+The `Get-Error` cmdlet also receives error objects from a collection, such as **$Error**, to display
 multiple errors from the current session.
 
 ## EXAMPLES
@@ -39,7 +47,7 @@ In this example, `Get-Error` displays the details of the most recent error that 
 current session.
 
 ```powershell
-Get-Childitem -path c:\NoRealDirectory
+Get-Childitem -path /NoRealDirectory
 Get-Error
 ```
 
@@ -100,7 +108,7 @@ Get-Error -Newest 3
 The **$Error** automatic variable contains an array of error objects in the current session. The
 array of objects can be piped to `Get-Error` to receive detailed error messages.
 
-In this example, **$Error** is piped to the 'Get-Error' cmdlet. the result is list of detailed error
+In this example, `$Error` is piped to the `Get-Error` cmdlet. the result is list of detailed error
 messages, similar to the result of Example 1.
 
 ```powershell
@@ -133,12 +141,18 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
+Input supports any PSObject, but results will vary unless an ErrorRecord or Exception object are supplied.
+
 ### Pipeline input
 
 `Get-Error` accepts pipeline input. For example, `$Error | Get-Error`.
 
 ## OUTPUTS
 
+Output in a PSExtendedError object.
+
 ## NOTES
 
 ## RELATED LINKS
+
+[about_Try_Catch_Finally](about_Try_Catch_Finally.md)
