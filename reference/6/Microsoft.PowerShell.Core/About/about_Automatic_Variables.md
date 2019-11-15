@@ -56,11 +56,12 @@ For the latter purpose, `$PSCmdlet.WriteError()` should be used instead.
 For native commands (executables), `$?` is set to **True** when `$LASTEXITCODE` is 0,
 and set to **False** when `$LASTEXITCODE` is any other value.
 
-Until PowerShell 7, containing a statement withing parentheses `(...)`,
-subexpression syntax `$(...)` or array expression `@(...)` always reset
-`$?` to **True**, so that `(Write-Error)` shows `$?` as **True**.
-This has been changed in PowerShell 7, so that `$?` will always reflect
-the actual success of the last command run in these expressions.
+> [!NOTE]
+> Until PowerShell 7, containing a statement withing parentheses `(...)`,
+> subexpression syntax `$(...)` or array expression `@(...)` always reset
+> `$?` to **True**, so that `(Write-Error)` shows `$?` as **True**.
+> This has been changed in PowerShell 7, so that `$?` will always reflect
+> the actual success of the last command run in these expressions.
 
 ### $^
 
