@@ -194,4 +194,4 @@ C:\ps-test\MyScript.ps1
 
 ## See Also
 
-- [Exploring the Windows PowerShell ISE](../../getting-started/fundamental/exploring-the-windows-powershell-ise.md)
+- [Exploring the Windows PowerShell ISE](exploring-the-windows-powershell-ise.md)

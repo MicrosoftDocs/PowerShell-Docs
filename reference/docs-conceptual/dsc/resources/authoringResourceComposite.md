@@ -153,10 +153,8 @@ The resource is now discoverable by using the Get-DscResource cmdlet, and its pr
 Next we create a configuration that calls the composite resource. This configuration calls the xVirtualMachine composite resource to create a virtual machine, and then calls the **xComputer** resource to rename it.
 
 ```powershell
-
 configuration RenameVM
 {
-
     Import-DscResource -Module xVirtualMachine
     Node localhost
     {
@@ -183,9 +181,32 @@ configuration RenameVM
 }
 ```
 
+You can also use this resource to create multiple VMs by passing in an array of VM names to the xVirtualMachine resource.
+
+```PowerShell
+Configuration MultipleVms
+{
+    Import-DscResource -Module xVirtualMachine
+    Node localhost
+    {
+        xVirtualMachine VMs
+        {
+            VMName = "IIS01", "SQL01", "SQL02"
+            SwitchName = "Internal"
+            SwitchType = "Internal"
+            VhdParentPath = "C:\Demo\VHD\RTM.vhd"
+            VHDPath = "C:\Demo\VHD"
+            VMStartupMemory = 1024MB
+            VMState = "Running"
+        }
+    }
+}
+```
+
 ## Supporting PsDscRunAsCredential
 
->**Note:** **PsDscRunAsCredential** is supported in PowerShell 5.0 and later.
+> [!NOTE]
+> **PsDscRunAsCredential** is supported in PowerShell 5.0 and later.
 
 The **PsDscRunAsCredential** property can be used in [DSC configurations](../configurations/configurations.md) resource block to specify that the
 resource should be run under a specified set of credentials.

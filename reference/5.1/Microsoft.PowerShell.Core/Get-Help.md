@@ -26,36 +26,36 @@ Get-Help [[-Name] <String>] [-Path <String>] [-Category <String[]>] [-Component 
 ### DetailedView
 
 ```
-Get-Help [[-Name] <String>] -Detailed [-Path <String>] [-Category <String[]>]
- [-Component <String[]>] [-Functionality <String[]>] [-Role <String[]>] [<CommonParameters>]
+Get-Help [[-Name] <String>] [-Path <String>] [-Category <String[]>] [-Component <String[]>]
+ [-Functionality <String[]>] [-Role <String[]>] -Detailed [<CommonParameters>]
 ```
 
 ### Examples
 
 ```
-Get-Help [[-Name] <String>] -Examples [-Path <String>] [-Category <String[]>]
- [-Component <String[]>] [-Functionality <String[]>] [-Role <String[]>] [<CommonParameters>]
+Get-Help [[-Name] <String>] [-Path <String>] [-Category <String[]>] [-Component <String[]>]
+ [-Functionality <String[]>] [-Role <String[]>] -Examples [<CommonParameters>]
 ```
 
 ### Parameters
 
 ```
-Get-Help [[-Name] <String>] -Parameter <String> [-Path <String>] [-Category <String[]>]
- [-Component <String[]>] [-Functionality <String[]>] [-Role <String[]>] [<CommonParameters>]
+Get-Help [[-Name] <String>] [-Path <String>] [-Category <String[]>] [-Component <String[]>]
+ [-Functionality <String[]>] [-Role <String[]>] -Parameter <String> [<CommonParameters>]
 ```
 
 ### Online
 
 ```
-Get-Help [[-Name] <String>] -Online [-Path <String>] [-Category <String[]>] [-Component <String[]>]
- [-Functionality <String[]>] [-Role <String[]>] [<CommonParameters>]
+Get-Help [[-Name] <String>] [-Path <String>] [-Category <String[]>] [-Component <String[]>]
+ [-Functionality <String[]>] [-Role <String[]>] -Online [<CommonParameters>]
 ```
 
 ### ShowWindow
 
 ```
-Get-Help [[-Name] <String>] -ShowWindow [-Path <String>] [-Category <String[]>]
- [-Component <String[]>] [-Functionality <String[]>] [-Role <String[]>] [<CommonParameters>]
+Get-Help [[-Name] <String>] [-Path <String>] [-Category <String[]>] [-Component <String[]>]
+ [-Functionality <String[]>] [-Role <String[]>] -ShowWindow [<CommonParameters>]
 ```
 
 ## DESCRIPTION

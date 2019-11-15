@@ -179,8 +179,9 @@ At line:1 char:11
 
 ### Example 8: Test a path with whitespace as the value
 
-When a whitespace is or empty string in provided for the the `-Path` parameter, it returns false.
-The following example show whitespace and empty string.
+When a whitespace string is provided for the the `-Path` parameter, it returns **True**. When an
+empty string is provided, `Test-Path` returns an error. The following example shows whitespace and
+empty string.
 
 ```powershell
 Test-Path ' '
@@ -188,7 +189,7 @@ Test-Path ''
 ```
 
 ```Output
-False
+True
 Test-Path : Cannot bind argument to parameter 'Path' because it is an empty string.
 At line:1 char:11
 + Test-Path ''

@@ -400,12 +400,14 @@ variable is valid in all scripts.
 
 ### $PSCulture
 
-Contains the name of the culture currently in use in the operating system.
-The culture determines the display format of items such as numbers,
-currency, and dates. This is the value of the
-**System.Globalization.CultureInfo.CurrentCulture.Name** property of the
-system. To get the **System.Globalization.CultureInfo** object for the system,
-use the `Get-Culture` cmdlet.
+Beginning in PowerShell 7, `$PSCulture` reflects the culture of the current
+PowerShell runspace (session). If the culture is changed in a PowerShell
+runspace, the `$PSCulture` value for that runspace is updated.
+
+The culture determines the display format of items such as numbers, currency,
+and dates, and is stored in a **System.Globalization.CultureInfo** object. Use
+`Get-Culture` to display the computer's culture. `$PSCulture` contains the
+**Name** property's value.
 
 ### $PSDebugContext
 

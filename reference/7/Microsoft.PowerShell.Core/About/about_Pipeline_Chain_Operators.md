@@ -161,10 +161,28 @@ individually redirected, and that entire pipeline chains can be backgrounded,
 assigned to variables, or separated as statements.
 
 To use lower precedence syntax within a pipeline chain,
-consider the use of parentheses `(...)` or a subexpression `$(...)`.
-Note that enclosing an expression in parentheses or a subexpression
-will set `$?` to true irrespective of the expression itself,
-causing a different outcome in the pipeline chain.
+consider the use of parentheses `(...)`.
+Similarly, to embed a statement within a pipeline chain,
+a subexpression `$(...)` can be used.
+This can be useful for combining native commands with control flow:
+
+```powershell
+foreach ($file in 'file1','file2','file3')
+{
+    # When find succeeds, the loop breaks
+    find $file && Write-Output "Found $file" && $(break)
+}
+```
+
+```Output
+find: file1: No such file or directory
+file2
+Found file2
+```
+
+As of PowerShell 7, the behaviour of these syntaxes has been changed
+so that `$?` is set as expected when a command succeeds or fails
+within parentheses or a subexpression.
 
 Like most other operators in PowerShell, `&&` and `||` are also *left-associative*,
 meaning they group from the left. For example:

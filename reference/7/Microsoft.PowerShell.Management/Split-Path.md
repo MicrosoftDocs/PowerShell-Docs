@@ -170,6 +170,8 @@ Accept wildcard characters: False
 Indicates that this cmdlet returns only the extension of the leaf.
 For example, in the path `C:\Test\Logs\Pass1.log`, it returns only `.log`.
 
+This parameter was introduced in PowerShell 6.0.
+
 ```yaml
 Type: SwitchParameter
 Parameter Sets: ExtensionSet
@@ -220,6 +222,8 @@ Accept wildcard characters: False
 
 Indicates that this cmdlet returns only base name of the leaf.
 For example, in the path `C:\Test\Logs\Pass1.log`, it returns only `Pass1`.
+
+This parameter was introduced in PowerShell 6.0.
 
 ```yaml
 Type: SwitchParameter
