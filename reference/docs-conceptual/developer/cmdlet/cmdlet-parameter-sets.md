@@ -83,8 +83,7 @@ set. The **SharedParam** parameter belongs to both sets and is mandatory for the
 set but optional for the `Test02` parameter set.
 
 ```csharp
-[Parameter(Position = 0, Mandatory = true,
-           ParameterSetName = "Test01")]
+[Parameter(Position = 0, Mandatory = true, ParameterSetName = "Test01")]
 public string UserName
 {
   get { return userName; }
@@ -92,8 +91,7 @@ public string UserName
 }
 private string userName;
 
-[Parameter(Position = 0, Mandatory = true,
-           ParameterSetName = "Test02")]
+[Parameter(Position = 0, Mandatory = true, ParameterSetName = "Test02")]
 public string ComputerName
 {
   get { return computerName; }
