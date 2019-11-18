@@ -12,6 +12,7 @@ title: Get-Error
 # Get-Error
 
 ## SYNOPSIS
+
 Gets and displays the most recent error messages from the current session.
 
 ## SYNTAX
@@ -141,6 +142,8 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
+### PSObject
+
 Supports input from any PSObject, but results will vary unless an ErrorRecord or Exception object
 are supplied.
 
@@ -149,6 +152,8 @@ are supplied.
 `Get-Error` accepts pipeline input. For example, `$Error | Get-Error`.
 
 ## OUTPUTS
+
+### PSExtendedError
 
 Output in a PSExtendedError object.
 
