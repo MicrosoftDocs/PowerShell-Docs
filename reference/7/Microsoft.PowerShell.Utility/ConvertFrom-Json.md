@@ -17,7 +17,7 @@ Converts a JSON-formatted string to a custom object or a hash table.
 ## SYNTAX
 
 ```
-ConvertFrom-Json [-InputObject] <String> [-AsHashtable] [-Depth <Int32>] [<CommonParameters>]
+ConvertFrom-Json [-InputObject] <String> [-AsHashtable] [-Depth <Int32>] [-NoEnumerate] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -107,6 +107,24 @@ This command shows an example where the `-AsHashtable` switch can overcome limit
 The JSON string contains two key value pairs with keys that differ only in casing. Without the switch,
 the command would have thrown an error.
 
+### Example 5: Round-trip a single element array
+
+This command shows an example where the `-NoEnumerate` switch is used to round-trip a single element
+JSON array.
+
+```powershell
+Write-Output "With -NoEnumerate: $('[1]' | ConvertFrom-Json -NoEnumerate | ConvertTo-Json -Compress)"
+Write-Output "Without -NoEnumerate: $('[1]' | ConvertFrom-Json | ConvertTo-Json -Compress)"
+```
+
+```Output
+With -NoEnumerate: [1]
+Without -NoEnumerate: 1
+```
+
+The JSON string contains an array with a single element. Without the switch, converting the JSON to
+a PSObject and then converting it back with the `ConvertTo-Json` command results in a single integer.
+
 ## PARAMETERS
 
 ### -AsHashtable
@@ -174,12 +192,28 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
+### -NoEnumerate
+
+Specifies that output is not enumerated.
+
+Setting this parameter causes arrays to be sent as a single object instead of sending every
+element separately. This guarantees that JSON can be round-tripped via `ConvertTo-Json`.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### CommonParameters
 
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
--InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see
-[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
