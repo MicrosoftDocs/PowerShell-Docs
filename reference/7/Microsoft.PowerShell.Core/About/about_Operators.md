@@ -398,6 +398,8 @@ Get-Process notepad && Stop-Process -Name notepad
 npm install || Remove-Item -Recurse ./node_modules
 ```
 
+For more information, see [About_Pipeline_Chain_Operators](About_Pipeline_Chain_Operators.md).
+
 #### Property dereferences operator `.`
 
 Accesses the properties and methods of an object.
