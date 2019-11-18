@@ -30,7 +30,7 @@ The following table lists the preference variables and their default values.
 | `$ConfirmPreference`         | High|
 | `$DebugPreference`           | SilentlyContinue |
 | `$ErrorActionPreference`     | Continue |
-| `$ErrorView`                 | NormalView |
+| `$ErrorView`                 | ConciseView |
 | `$FormatEnumerationLimit`    | 4 |
 | `$InformationPreference`     | SilentlyContinue |
 | `$LogCommandHealthEvent`     | False (not logged) |
@@ -470,9 +470,21 @@ Determines the display format of error messages in PowerShell.
 
 The valid values are as follows:
 
-- **NormalView**: (Default) A detailed view designed for most users. Consists
-  of a description of the error, and the name of the object involved in the
-  error.
+- **ConciseView**: (Default) Provides a concise error message and a refactored
+  view for advanced module builders. If the error is from command line it's a
+  single line error message. Otherwise, you receive a multiline error message
+  that contains the error and a pointer to the error showing where it occurs in
+  that line. If the terminal supports Virtual Terminal, then ANSI color codes
+  are used to provide color accent. The Accent color can be changed at
+  `$Host.PrivateData.ErrorAccentColor`. Use `Get-Error` cmdlet for a
+  comprehensive detailed view of the fully qualified error, including inner
+  exceptions.
+
+  **ConciseView** was added in PowerShell 7.
+
+- **NormalView**: A detailed view designed for most users. Consists of a
+  description of the error, and the name of the object involved in the error.
+
 - **CategoryView**: A succinct, structured view designed for production
   environments. The format is as follows:
 
@@ -484,7 +496,34 @@ class.
 #### Examples
 
 This example shows how an error appears when the value of `$ErrorView` is the
-default, **NormalView**. `Get-ChildItem` is used to find a non-existent file.
+default, **ConciseView**. `Get-ChildItem` is used to find a non-existent
+directory.
+
+```powershell
+Get-ChildItem -path 'C:\NoRealDirectory'
+```
+
+```Output
+Get-ChildItem: Cannot find path 'C:\NoRealDirectory' because it does not exist.
+```
+
+This example shows how an error appears when the value of `$ErrorView` is the
+default, **ConciseView**. `Script.ps1` is run and throws an error from
+`Get-Item` statement.
+
+```powershell
+./Script.ps1
+```
+
+```Output
+Get-Item: C:\Script.ps1
+Line |
+  11 | Get-Item -Path .\stuff
+     | ^ Cannot find path 'C:\demo\stuff' because it does not exist.
+```
+
+This example shows how an error appears when the value of `$ErrorView` is
+changed to **NormalView**. `Get-ChildItem` is used to find a non-existent file.
 
 ```powershell
 Get-ChildItem -Path C:\nofile.txt
