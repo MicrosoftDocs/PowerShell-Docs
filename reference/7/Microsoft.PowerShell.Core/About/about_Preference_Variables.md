@@ -30,7 +30,7 @@ The following table lists the preference variables and their default values.
 | `$ConfirmPreference`         | High|
 | `$DebugPreference`           | SilentlyContinue |
 | `$ErrorActionPreference`     | Continue |
-| `$ErrorView`                 | NormalView |
+| `$ErrorView`                 | ConciseView |
 | `$FormatEnumerationLimit`    | 4 |
 | `$InformationPreference`     | SilentlyContinue |
 | `$LogCommandHealthEvent`     | False (not logged) |
