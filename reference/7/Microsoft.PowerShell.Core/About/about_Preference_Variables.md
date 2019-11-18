@@ -502,7 +502,7 @@ Get-ChildItem -path 'C:\NoRealDirectory'
 Get-ChildItem: Cannot find path 'C:\NoRealDirectory' because it does not exist.
 ```
 
-This example shows how an error appears when the value os `$ErrorView` is the default,
+This example shows how an error appears when the value of `$ErrorView` is the default,
 **ConciseView**. `Script.ps1` is run and throws an error from `Get-Item` statement.
 
 ```powershell
