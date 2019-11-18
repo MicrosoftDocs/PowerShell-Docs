@@ -181,4 +181,4 @@ Save As commands.
 
 ## See Also
 
-- [Exploring the Windows PowerShell ISE](../../getting-started/fundamental/exploring-the-windows-powershell-ise.md)
+- [Exploring the Windows PowerShell ISE](exploring-the-windows-powershell-ise.md)
