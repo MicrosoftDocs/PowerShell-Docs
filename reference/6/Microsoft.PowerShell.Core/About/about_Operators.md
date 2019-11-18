@@ -112,7 +112,7 @@ Returns the result of one or more statements as an array. If there is only one
 item, the array has only one member.
 
 ```powershell
-@(Get-WmiObject win32_logicalDisk)
+@(Get-CimInstance win32_logicalDisk)
 ```
 
 #### Call operator `&`
