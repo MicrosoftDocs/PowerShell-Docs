@@ -387,6 +387,8 @@ the object is available. Hidden members are hidden from the `Get-Member` cmdlet
 and can't be displayed using tab completion or IntelliSense outside of the
 class definition.
 
+For more information, see [About_hidden](About_hidden.md).
+
 ### Example using hidden attributes
 
 When a **Rack** object is created, the number of slots for devices is a fixed
@@ -823,6 +825,7 @@ module isn't loaded in the current session, the `using` statement fails.
 
 ## See also
 
+- [About_hidden](About_hidden.md)
 - [about_Enum](about_Enum.md)
 - [about_Language_Keywords](about_language_keywords.md)
 - [about_Methods](about_methods.md)
