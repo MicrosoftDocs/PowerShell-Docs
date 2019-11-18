@@ -37,7 +37,7 @@ from the last error that occurred in the session.
 You can use `Get-Error` to display a specified number of errors that have occurred in the current
 session using the **Newest** parameter.
 
-The `Get-Error` cmdlet also receives error objects from a collection, such as **$Error**, to display
+The `Get-Error` cmdlet also receives error objects from a collection, such as `$Error`, to display
 multiple errors from the current session.
 
 ## EXAMPLES
@@ -108,7 +108,7 @@ Get-Error -Newest 3
 
 ### Example 3: Send a collection of errors to receive detailed messages
 
-The **$Error** automatic variable contains an array of error objects in the current session. The
+The `$Error` automatic variable contains an array of error objects in the current session. The
 array of objects can be piped to `Get-Error` to receive detailed error messages.
 
 In this example, `$Error` is piped to the `Get-Error` cmdlet. the result is list of detailed error
@@ -146,20 +146,18 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### PSObject
 
-Supports input from any PSObject, but results vary unless either an ErrorRecord or Exception object
-are supplied.
-
-### Pipeline input
-
-`Get-Error` accepts pipeline input. For example, `$Error | Get-Error`.
+Supports input from any **PSObject**, but results vary unless either an **ErrorRecord** or
+**Exception** object are supplied.
 
 ## OUTPUTS
 
 ### PSExtendedError
 
-Output in a PSExtendedError object.
+Output in a **PSExtendedError** object.
 
 ## NOTES
+
+`Get-Error` accepts pipeline input. For example, `$Error | Get-Error`.
 
 ## RELATED LINKS
 
