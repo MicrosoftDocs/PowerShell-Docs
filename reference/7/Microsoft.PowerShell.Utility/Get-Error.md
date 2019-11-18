@@ -52,7 +52,9 @@ Get-Childitem -path /NoRealDirectory
 Get-Error
 ```
 
-```Output
+```
+Get-ChildItem: Cannot find path 'C:\NoRealDirectory' because it does not exist.
+
 Exception             :
     ErrorRecord          :
         Exception             :
