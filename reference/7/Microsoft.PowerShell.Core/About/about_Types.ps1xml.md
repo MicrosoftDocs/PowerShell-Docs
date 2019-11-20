@@ -553,7 +553,7 @@ property of the `GetVersionInfo` static method of
 ```
 
 For more information, see the
-[Windows PowerShell Software Development Kit (SDK)](/powershell/developer/windows-powershell).
+[Windows PowerShell Software Development Kit (SDK)](/powershell/scripting/developer/windows-powershell).
 
 ## `Update-TypeData`
 

@@ -162,9 +162,9 @@ credentials are needed that have permissions to access the file share and instal
 file share is used, it's possible to update computers that are behind firewalls or aren't connected
 to the internet.
 
-```
-PS> Save-Help -DestinationPath \\Server01\Share\PSHelp -Credential Domain01\Admin01
-PS> Invoke-Command -ComputerName (Get-Content Servers.txt) -ScriptBlock {
+```powershell
+Save-Help -DestinationPath \\Server01\Share\PSHelp -Credential Domain01\Admin01
+Invoke-Command -ComputerName (Get-Content Servers.txt) -ScriptBlock {
      Update-Help -SourcePath \\Server01\Share\PSHelp -Credential Domain01\Admin01
 }
 ```
@@ -232,7 +232,7 @@ information file (*helpinfo.xml) to find the latest version number.
 
 The script uses the **PSCustomObject** class and a hash table to create a custom output object.
 
-```
+```powershell
 # Get-UpdateHelpVersion.ps1
 Param(
     [parameter(Mandatory=$False)]
@@ -597,7 +597,7 @@ specified language, it continues silently without displaying an error message. T
 progress details, use the **Verbose** parameter.
 
 The `Update-Help` cmdlet was introduced in Windows PowerShell 3.0. It doesn't work in earlier
-versions of Windows PowerShell. On computers that have both Windows PowerShell 2.0 and Windows
+versions of PowerShell. On computers that have both Windows PowerShell 2.0 and Windows
 PowerShell 3.0, use the `Update-Help` cmdlet in a Windows PowerShell 3.0 session to download and
 update help files. The help files are available to both Windows PowerShell 2.0 and Windows
 PowerShell 3.0.
@@ -615,7 +615,7 @@ variable, import the module into the current session and then run an `Update-Hel
 module file or module manifest file.
 
 Any module can support Updatable Help. For instructions for supporting Updatable Help in the modules
-that you author, see [Supporting Updatable Help](/powershell/developer/module/supporting-updatable-help).
+that you author, see [Supporting Updatable Help](/powershell/scripting/developer/module/supporting-updatable-help).
 
 The `Update-Help` and `Save-Help` cmdlets are not supported on Windows Preinstallation Environment
 (Windows PE).

@@ -22,7 +22,7 @@ PowerShell Workflow was introduced in PowerShell 3.0 and the module is
 available up to PowerShell 5.1. For more information about PowerShell Workflow,
 see the [Workflows Guide](/powershell/scripting/components/workflows-guide)
 and
-[Writing a Windows PowerShell Workflow](/powershell/developer/workflow/writing-a-windows-powershell-workflow).
+[Writing a Windows PowerShell Workflow](/powershell/scripting/developer/workflow/writing-a-windows-powershell-workflow).
 
 ## About workflows
 
@@ -278,4 +278,4 @@ of the workflow common parameters, see [about_WorkflowCommonParameters](about_Wo
 
 [Workflows Guide](/powershell/scripting/components/workflows-guide)
 
-[Writing a Windows PowerShell Workflow](/powershell/developer/workflow/writing-a-windows-powershell-workflow)
+[Writing a Windows PowerShell Workflow](/powershell/scripting/developer/workflow/writing-a-windows-powershell-workflow)

@@ -413,4 +413,6 @@ signature. For more information, see [about_Signing](about_Signing.md).
 
 [Get-TraceSource](../../Microsoft.PowerShell.Utility/Get-TraceSource.md)
 
-[Format Schema XML Reference](/powershell/developer/format/format-schema-xml-reference)
+[Format Schema XML Reference](/powershell/scripting/developer/format/format-schema-xml-reference)
+
+[Writing a PowerShell Formatting File](/powershell/scripting/developer/format/writing-a-powershell-formatting-file)

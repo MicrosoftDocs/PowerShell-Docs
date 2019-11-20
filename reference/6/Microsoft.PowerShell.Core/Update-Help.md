@@ -602,7 +602,7 @@ variable, import the module into the current session and then run an `Update-Hel
 module file or module manifest file.
 
 Any module can support Updatable Help. For instructions for supporting Updatable Help in the modules
-that you author, see [Supporting Updatable Help](/powershell/developer/module/supporting-updatable-help).
+that you author, see [Supporting Updatable Help](/powershell/scripting/developer/module/supporting-updatable-help).
 
 The `Update-Help` and `Save-Help` cmdlets are not supported on Windows Preinstallation Environment
 (Windows PE).
