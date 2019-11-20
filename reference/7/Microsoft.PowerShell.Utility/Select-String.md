@@ -695,7 +695,7 @@ If you use the **Raw** parameter, the output is a set of **String** objects that
 The **sls** alias for the `Select-String` cmdlet was introduced in PowerShell 3.0.
 
 > [!NOTE]
-> According to [Approved Verbs for PowerShell Commands](/powershell/developer/cmdlet/approved-verbs-for-windows-powershell-commands),
+> According to [Approved Verbs for PowerShell Commands](/powershell/scripting/developer/cmdlet/approved-verbs-for-windows-powershell-commands),
 > the official alias prefix for `Select-*` cmdlets is `sc`, not `sl`. Therefore, the proper alias
 > for `Select-String` should be `scs`, not `sls`. This is an exception to this rule.
 

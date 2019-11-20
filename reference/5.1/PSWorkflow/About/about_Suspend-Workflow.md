@@ -133,4 +133,4 @@ PSComputerName    : localhost
 
 [Workflows Guide](/powershell/scripting/components/workflows-guide)
 
-[Writing a Windows PowerShell Workflow](/powershell/developer/workflow/writing-a-windows-powershell-workflow)
+[Writing a Windows PowerShell Workflow](/powershell/scripting/developer/workflow/writing-a-windows-powershell-workflow)

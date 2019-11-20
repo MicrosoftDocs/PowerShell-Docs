@@ -227,7 +227,7 @@ Param(
 )
 ```
 
-For more information about parameter sets, see [Cmdlet Parameter Sets](/powershell/developer/cmdlet/cmdlet-parameter-sets).
+For more information about parameter sets, see [Cmdlet Parameter Sets](/powershell/scripting/developer/cmdlet/cmdlet-parameter-sets).
 
 ### ValueFromPipeline argument
 
