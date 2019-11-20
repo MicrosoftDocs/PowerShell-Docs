@@ -342,12 +342,12 @@ log. The event objects are stored in the `$Event` variable. The **Count** proper
 the total number of logged events.
 
 The `$Event` variable is sent down the pipeline to the `Group-Object` cmdlet. `Group-Object` uses
-the **Property** parameter to specify the **Id** property and counts the objects by **Id**. The
-**NoElement** parameter removes other properties from the objects output. The grouped objects are
-sent down the pipeline to the `Sort-Object` cmdlet. `Sort-Object` uses the **Property** parameter to
-sort the objects by **Count**. The **Descending** parameter displays the output by count, from
-highest to lowest. In the output, the **Count** column contains the total number of each event. The
-**Name** column contains the grouped **Id** numbers.
+the **Property** parameter to specify the **Id** property and counts the objects by the event Id
+value. The **NoElement** parameter removes other properties from the objects output. The grouped
+objects are sent down the pipeline to the `Sort-Object` cmdlet. `Sort-Object` uses the **Property**
+parameter to sort the objects by **Count**. The **Descending** parameter displays the output by
+count, from highest to lowest. In the output, the **Count** column contains the total number of each
+event. The **Name** column contains the grouped event Id numbers.
 
 The `$Event` variable is sent down the pipeline to the `Group-Object` cmdlet. `Group-Object` uses
 the **Property** parameter to specify the **LevelDisplayName** property and counts the objects by
@@ -362,7 +362,7 @@ This example uses a comma-separated string of log names. The output is grouped b
 error or warning and the log name.
 
 ```powershell
-Get-WinEvent -LogName  *PowerShell*, Microsoft-Windows-Kernel-WHEA* |
+Get-WinEvent -LogName *PowerShell*, Microsoft-Windows-Kernel-WHEA* |
   Group-Object -Property LevelDisplayName, LogName -NoElement |
     Format-Table -AutoSize
 ```
@@ -501,8 +501,8 @@ Get-WinEvent -FilterHashtable @{ LogName='Windows PowerShell'; Level=3; StartTim
 # Using the FilterXML parameter:
 $xmlQuery = @'
 <QueryList>
-  <Query Id="0" Path="System">
-    <Select Path="System">*[System[(Level=2) and
+  <Query Id="0" Path="Windows PowerShell">
+    <Select Path="System">*[System[(Level=3) and
         TimeCreated[timediff(@SystemTime) &lt;= 86400000]]]</Select>
   </Query>
 </QueryList>
@@ -510,7 +510,7 @@ $xmlQuery = @'
 Get-WinEvent -FilterXML $xmlQuery
 
 # Using the FilterXPath parameter:
-$XPath = "*[System[Level=3 and TimeCreated[timediff(@SystemTime) &lt;= 86400000]]]"
+$XPath = '*[System[Level=3 and TimeCreated[timediff(@SystemTime) &lt;= 86400000]]]'
 Get-WinEvent -LogName 'Windows PowerShell' -FilterXPath $XPath
 ```
 
