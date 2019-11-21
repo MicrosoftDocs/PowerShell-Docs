@@ -17,7 +17,7 @@ There are several ways to address this problem. In this topic, we'll look at sev
 
 ## CredSSP
 
-You can use the [Credential Security Support Provider (CredSSP)](https://msdn.microsoft.com/library/windows/desktop/bb931352.aspx) for authentication. CredSSP caches credentials
+You can use the [Credential Security Support Provider (CredSSP)](/windows/win32/secauthn/credential-security-support-provider) for authentication. CredSSP caches credentials
 on the remote server (_ServerB_), so using it opens you up to credential theft attacks. If the remote computer is compromised, the attacker has access to the user's credentials. CredSSP is disabled by
 default on both client and server computers. You should enable CredSSP only in the most trusted environments. For example, a domain administrator connecting to a domain controller
 because the domain controller is highly trusted.
@@ -163,7 +163,7 @@ $x.'msDS-AllowedToActOnBehalfOfOtherIdentity'.Access
 Get-ADComputer -Identity $ServerC -Properties PrincipalsAllowedToDelegateToAccount
 ```
 
-The Kerberos [Key Distribution Center (KDC)](https://msdn.microsoft.com/library/windows/desktop/aa378170(v=vs.85).aspx) caches denied access attempts (negative cache) for 15
+The Kerberos [Key Distribution Center (KDC)](/windows/win32/secauthn/key-distribution-center) caches denied access attempts (negative cache) for 15
 minutes. If _ServerB_ has previously attempted to access _ServerC_, you will need to clear the cache on _ServerB_ by invoking the following command:
 
 ```powershell
@@ -226,8 +226,8 @@ Set-ADComputer -Identity $ServerC -PrincipalsAllowedToDelegateToAccount $null
 - [How Windows Server 2012 Eases the Pain of Kerberos Constrained Delegation, Part 1](https://www.itprotoday.com/windows-server/how-windows-server-2012-eases-pain-kerberos-constrained-delegation-part-1)
 - [How Windows Server 2012 Eases the Pain of Kerberos Constrained Delegation, Part 2](https://www.itprotoday.com/windows-server/how-windows-server-2012-eases-pain-kerberos-constrained-delegation-part-2)
 - [Understanding Kerberos Constrained Delegation for Azure Active Directory Application Proxy Deployments with Integrated Windows Authentication](https://aka.ms/kcdpaper)
-- [[MS-ADA2]: Active Directory Schema Attributes M2.210 Attribute msDS-AllowedToActOnBehalfOfOtherIdentity](https://msdn.microsoft.com/library/hh554126.aspx)
-- [[MS-SFU]: Kerberos Protocol Extensions: Service for User and Constrained Delegation Protocol 1.3.2 S4U2proxy](https://msdn.microsoft.com/library/cc246079.aspx)
+- [[MS-ADA2]: Active Directory Schema Attributes M2.210 Attribute msDS-AllowedToActOnBehalfOfOtherIdentity](/openspecs/windows_protocols/ms-ada2/cea4ac11-a4b2-4f2d-84cc-aebb4a4ad405)
+- [[MS-SFU]: Kerberos Protocol Extensions: Service for User and Constrained Delegation Protocol 1.3.2 S4U2proxy](/openspecs/windows_protocols/ms-sfu/bde93b0e-f3c9-4ddf-9f44-e1453be7af5a)
 - [Resource Based Kerberos Constrained Delegation](https://blog.kloud.com.au/2013/07/11/kerberos-constrained-delegation/)
 - [Remote Administration Without Constrained Delegation Using PrincipalsAllowedToDelegateToAccount](https://blogs.msdn.microsoft.com/taylorb/2012/11/06/remote-administration-without-constrained-delegation-using-principalsallowedtodelegatetoaccount/)
 
@@ -265,7 +265,7 @@ For information about JEA, see [Just Enough Administration](/powershell/scriptin
 ## Pass credentials inside an Invoke-Command script block
 
 You can pass credentials inside the **ScriptBlock** parameter of a call to the
-[Invoke-Command](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/invoke-command) cmdlet.
+[Invoke-Command](/powershell/module/microsoft.powershell.core/invoke-command) cmdlet.
 
 ### Pros
 
