@@ -72,7 +72,7 @@ To deploy JEA with DSC, ensure the following prerequisites are met:
   configuration file when using the JEA DSC resource.
 - You have credentials that allow administrative actions on each machine or access to the DSC pull
   server used to manage the machines.
-- You've downloaded the [JEA DSC resource](https://github.com/powershell/scripting/JEA/tree/master/DSC%20Resource).
+- You've downloaded the [JEA DSC resource](https://github.com/powershell/JEA/tree/master/DSC%20Resource).
 
 Create a DSC configuration for your JEA endpoint on a target machine or pull server. In this
 configuration, the **JustEnoughAdministration** DSC resource defines the session configuration file

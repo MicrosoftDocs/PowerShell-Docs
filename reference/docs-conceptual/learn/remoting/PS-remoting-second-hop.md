@@ -251,7 +251,7 @@ For information about using PSSessionConfiguration and RunAs to solve the second
 
 JEA allows you to restrict what commands an administrator can run during a PowerShell session. It can be used to solve the second hop problem.
 
-For information about JEA, see [Just Enough Administration](https://docs.microsoft.com/powershell/scripting/jea/overview).
+For information about JEA, see [Just Enough Administration](/powershell/scripting/learn/remoting/jea/overview).
 
 ### Pros
 
