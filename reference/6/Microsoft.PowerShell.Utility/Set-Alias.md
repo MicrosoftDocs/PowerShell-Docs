@@ -212,7 +212,7 @@ Accept wildcard characters: False
 
 ### -Name
 
-Specifies the name of a new alias. An alias name can contain alphanumeric characters. Alias names
+Specifies the name of a new alias. An alias name can contain alphanumeric characters and hyphens. Alias names
 cannot be numeric, such as 123.
 
 ```yaml
