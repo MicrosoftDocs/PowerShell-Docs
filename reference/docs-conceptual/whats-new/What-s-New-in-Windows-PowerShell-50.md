@@ -409,7 +409,7 @@ Beginning in Windows PowerShell 3.0, authors of C# cmdlets can populate the **He
 
 You can also include a **HelpUri** value in the first related link of an XML-based cmdlet help file or the .Link directive of comment-based help in a function.
 
-For more information about supporting online help, see [Supporting Online Help](/powershell/developer/module/supporting-online-help) in the Microsoft Docs.
+For more information about supporting online help, see [Supporting Online Help](/powershell/scripting/developer/module/supporting-online-help) in the Microsoft Docs.
 
 ### CIM integration
 

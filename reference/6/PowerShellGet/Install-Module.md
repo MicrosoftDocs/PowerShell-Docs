@@ -119,7 +119,7 @@ user's directory, `$home\Documents\PowerShell\Modules`.
 ### -AcceptLicense
 
 For modules that require a license, **AcceptLicense** automatically accepts the license agreement
-during installation. For more information, see [Modules Requiring License Acceptance](/powershell/gallery/concepts/module-license-acceptance).
+during installation. For more information, see [Modules Requiring License Acceptance](/powershell/scripting/gallery/concepts/module-license-acceptance).
 
 ```yaml
 Type: SwitchParameter

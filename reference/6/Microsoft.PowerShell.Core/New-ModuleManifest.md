@@ -240,7 +240,7 @@ New-ModuleManifest @moduleSettings
 ```
 
 For information about Updatable Help, see [about_Updatable_Help](./About/about_Updatable_Help.md).
-For information about the HelpInfo XML file, see [Supporting Updatable Help](/powershell/developer/module/supporting-updatable-help).
+For information about the HelpInfo XML file, see [Supporting Updatable Help](/powershell/scripting/developer/module/supporting-updatable-help).
 
 ### Example 5 - Getting module information
 
@@ -420,7 +420,7 @@ Accept wildcard characters: False
 ### -CompatiblePSEditions
 
 Specifies the module's compatible PSEditions. For information about PSEdition, see
-[Modules with compatible PowerShell Editions](/powershell/gallery/concepts/module-psedition-support).
+[Modules with compatible PowerShell Editions](/powershell/scripting/gallery/concepts/module-psedition-support).
 
 ```yaml
 Type: String[]
@@ -596,7 +596,7 @@ contains information about the location of downloadable help files for the modul
 numbers of the newest help files for each supported locale.
 
 For information about Updatable Help, see [about_Updatable_Help](./About/about_Updatable_Help.md).
-For information about the HelpInfo XML file, see [Supporting Updatable Help](/powershell/developer/module/supporting-updatable-help).
+For information about the HelpInfo XML file, see [Supporting Updatable Help](/powershell/scripting/developer/module/supporting-updatable-help).
 
 This parameter was introduced in PowerShell 3.0.
 
@@ -1141,5 +1141,4 @@ module and the caller's session state is the module's session state.
 [Test-ModuleManifest](Test-ModuleManifest.md)
 
 [about_Modules](./About/about_Modules.md)
-
 

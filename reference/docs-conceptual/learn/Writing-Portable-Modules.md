@@ -17,7 +17,7 @@ of these differences.
 
 ### Porting a PSSnapIn
 
-PowerShell [SnapIns](/powershell/developer/cmdlet/modules-and-snap-ins) aren't supported in
+PowerShell [SnapIns](/powershell/scripting/developer/cmdlet/modules-and-snap-ins) aren't supported in
 PowerShell Core. However, it's trivial to convert a PSSnapIn to a PowerShell module. Typically, the
 PSSnapIn registration code is in a single source file of a class that derives from [PSSnapIn][].
 Remove this source file from the build; it's no longer needed.
@@ -299,4 +299,4 @@ Example:
 [PowerShell Standard 5.1]: https://www.nuget.org/packages/PowerShellStandard.Library/5.1.0
 [PowerShell Gallery]: https://www.powershellgallery.com
 [.NET Portability Analyzer]: https://github.com/Microsoft/dotnet-apiport
-[CompatiblePSEditions]: /powershell/gallery/concepts/module-psedition-support
+[CompatiblePSEditions]: /powershell/scripting/gallery/concepts/module-psedition-support

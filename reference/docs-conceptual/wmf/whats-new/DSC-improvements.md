@@ -169,8 +169,8 @@ See the snapshots below:
 
 ## Using PsDscRunAsCredential with DSC composite resources
 
-We have added support for using [PsDscRunAsCredential](/powershell/dsc/configurations/runAsUser)
-with DSC [Composite](https://msdn.microsoft.com/powershell/dsc/authoringresourcecomposite)
+We have added support for using [PsDscRunAsCredential](/powershell/scripting/dsc/configurations/runAsUser)
+with DSC [Composite](/powershell/scripting/dsc/authoringresourcecomposite)
 resources.
 
 You can now specify a value for **PsDscRunAsCredential** when using composite resources inside
@@ -180,7 +180,7 @@ user. RunAs credentials are propagated to any level of the composite resource hi
 resource inside a composite resource specifies its own value for **PsDscRunAsCredential**, a merge
 error results during configuration compilation.
 
-This example shows usage with the [WindowsFeatureSet](/powershell/dsc/reference/resources/windows/windowsfeaturesetresource)
+This example shows usage with the [WindowsFeatureSet](/powershell/scripting/dsc/reference/resources/windows/windowsfeaturesetresource)
 composite resource included in PSDesiredStateConfiguration module.
 
 ```powershell

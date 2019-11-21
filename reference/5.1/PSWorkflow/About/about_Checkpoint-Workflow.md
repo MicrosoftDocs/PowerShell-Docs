@@ -79,4 +79,4 @@ Workflow Test-Workflow
 
 ## SEE ALSO
 
-[Writing a Windows PowerShell Workflow](/powershell/developer/workflow/writing-a-windows-powershell-workflow)
+[Writing a Windows PowerShell Workflow](/powershell/scripting/developer/workflow/writing-a-windows-powershell-workflow)
