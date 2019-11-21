@@ -37,7 +37,7 @@ work in Windows PowerShell 5.1 without changes.
 Windows PowerShell 5.1 is installed by default on Windows Server 2016 and
 Windows 10. To install Windows PowerShell 5.1 on Windows Server 2012 R2,
 Windows 8.1 Enterprise, or Windows 8.1 Pro, see
-[Install and Configure WMF 5.1](/powershell/wmf/setup/install-configure).
+[Install and Configure WMF 5.1](/powershell/scripting/wmf/setup/install-configure).
 Be sure to read the download details, and meet all system requirements, before
 you install Windows Management Framework 5.1.
 
@@ -63,8 +63,8 @@ Starting with version 5.1, PowerShell is available in different editions which d
 
 - [Determine running edition of PowerShell using $PSVersionTable](/powershell/module/microsoft.powershell.core/about/about_automatic_variables)
 - [Filter Get-Module results by CompatiblePSEditions using PSEdition parameter](/powershell/module/microsoft.powershell.core/get-module)
-- [Prevent script execution unless run on a compatible edition of PowerShell](/powershell/gallery/concepts/script-psedition-support)
-- [Declare a module's compatibility to specific PowerShell versions](/powershell/gallery/concepts/module-psedition-support)
+- [Prevent script execution unless run on a compatible edition of PowerShell](/powershell/scripting/gallery/concepts/script-psedition-support)
+- [Declare a module's compatibility to specific PowerShell versions](/powershell/scripting/gallery/concepts/module-psedition-support)
 
 ### Catalog Cmdlets
 

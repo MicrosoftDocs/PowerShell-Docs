@@ -414,7 +414,7 @@ Accept wildcard characters: False
 ### -CompatiblePSEditions
 
 Specifies the module's compatible PSEditions. For information about PSEdition, see
-[Modules with compatible PowerShell Editions](/powershell/gallery/concepts/module-psedition-support).
+[Modules with compatible PowerShell Editions](/powershell/scripting/gallery/concepts/module-psedition-support).
 
 ```yaml
 Type: String[]

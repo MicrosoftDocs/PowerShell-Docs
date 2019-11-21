@@ -60,7 +60,7 @@ endpoint.
 ## Multi-machine configuration with DSC
 
 When deploying JEA on multiple machines, the simplest deployment model uses the JEA
-[Desired State Configuration (DSC)](/powershell/dsc/overview) resource to quickly and consistently
+[Desired State Configuration (DSC)](/powershell/scripting/dsc/overview) resource to quickly and consistently
 deploy JEA on each machine.
 
 To deploy JEA with DSC, ensure the following prerequisites are met:
@@ -72,7 +72,7 @@ To deploy JEA with DSC, ensure the following prerequisites are met:
   configuration file when using the JEA DSC resource.
 - You have credentials that allow administrative actions on each machine or access to the DSC pull
   server used to manage the machines.
-- You've downloaded the [JEA DSC resource](https://github.com/PowerShell/JEA/tree/master/DSC%20Resource).
+- You've downloaded the [JEA DSC resource](https://github.com/powershell/scripting/JEA/tree/master/DSC%20Resource).
 
 Create a DSC configuration for your JEA endpoint on a target machine or pull server. In this
 configuration, the **JustEnoughAdministration** DSC resource defines the session configuration file
@@ -119,8 +119,8 @@ Configuration JEAMaintenance
 }
 ```
 
-Next, the configuration is applied on a system by directly invoking the [Local Configuration Manager](/powershell/dsc/managing-nodes/metaConfig)
-or updating the [pull server configuration](/powershell/dsc/pull-server/pullServer).
+Next, the configuration is applied on a system by directly invoking the [Local Configuration Manager](/powershell/scripting/dsc/managing-nodes/metaConfig)
+or updating the [pull server configuration](/powershell/scripting/dsc/pull-server/pullServer).
 
 The DSC resource also allows you to replace the default **Microsoft.PowerShell** endpoint. When
 replaced, the resource automatically registers a backup endpoint named

@@ -56,7 +56,7 @@ If LCM is in DebugMode, `Stop-DscConfiguration` may not respond while trying to 
 started by `Get-DscConfiguration`
 
 **Resolution:** Finish the debugging of the operation started by `Get-DscConfiguration` as outlined
-in [Debugging DSC resources](/powershell/dsc/troubleshooting/debugResource).
+in [Debugging DSC resources](/powershell/scripting/dsc/troubleshooting/debugResource).
 
 ## No Verbose Error Messages are shown in DebugMode
 
@@ -88,7 +88,7 @@ they were produced by LCM or the DSC resource.
 ## DSC Resources cannot be debugged easily when used with Invoke-DscResource
 
 When LCM is running in debug mode, `Invoke-DscResource` cmdlet does not give information about
-runspace to connect to for debugging. For more information, see [Debugging DSC resources](/powershell/dsc/troubleshooting/debugResource).
+runspace to connect to for debugging. For more information, see [Debugging DSC resources](/powershell/scripting/dsc/troubleshooting/debugResource).
 
 **Resolution:** Discover and attach to the runspace using cmdlets `Get-PSHostProcessInfo`,
 `Enter-PSHostProcess` , `Get-Runspace` and `Debug-Runspace` to debug the DSC resource.
