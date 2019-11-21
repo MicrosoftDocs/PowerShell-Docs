@@ -153,7 +153,7 @@ with the package. The module structure enables including the other packages we l
 practices: cmdlet help, documentation, examples, and tests. The biggest disadvantage is that a
 script inside a module must be exposed and used as a function. For information on how to create a
 module, see
-[Writing a Windows PowerShell Module](/powershell/developer/module/writing-a-windows-powershell-module).
+[Writing a Windows PowerShell Module](/powershell/scripting/developer/module/writing-a-windows-powershell-module).
 
 There are situations where a script provides a better experience for the user, particularly with DSC
 configurations. The best practice for DSC configurations is to publish the configuration as a script
@@ -254,7 +254,7 @@ script is loaded. PowerShell can be constrained using the [Execution Policy](/po
 cmdlets to ensure use of signed scripts.
 
 Catalog signing modules is a feature added to PowerShell in version 5.1. How to sign a module is
-covered in the [Catalog Cmdlets](/powershell/wmf/5.1/catalog-cmdlets) article. In overview, catalog
+covered in the [Catalog Cmdlets](/powershell/scripting/wmf/5.1/catalog-cmdlets) article. In overview, catalog
 signing is done by creating a catalog file, which contains a hash value for every file in the
 module, and then signing that file.
 

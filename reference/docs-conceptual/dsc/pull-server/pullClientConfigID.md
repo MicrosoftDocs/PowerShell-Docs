@@ -45,7 +45,7 @@ You can create a random **Guid** using the example below, or by using the [New-G
 [System.Guid]::NewGuid()
 ```
 
-For more information about using **Guids** in your environment, see [Plan for Guids](/powershell/dsc/secureserver#guids).
+For more information about using **Guids** in your environment, see [Plan for Guids](/powershell/scripting/dsc/secureserver#guids).
 
 ## Set up a Pull Client to download Configurations
 

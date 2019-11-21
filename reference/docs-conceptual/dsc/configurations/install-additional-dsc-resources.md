@@ -34,7 +34,7 @@ You can find DSC resources in both the [PowerShell Gallery](https://www.powershe
 
 ## Installing PowerShellGet
 
-To determine if you already have **PowerShell** get, or to get help installing it, see the following guide: [Installing PowerShellGet](/powershell/gallery/installing-psget).
+To determine if you already have **PowerShell** get, or to get help installing it, see the following guide: [Installing PowerShellGet](/powershell/scripting/gallery/installing-psget).
 
 ## Finding DSC resources using PowerShellGet
 

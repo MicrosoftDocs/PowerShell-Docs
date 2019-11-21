@@ -201,4 +201,4 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 [Update-DscConfiguration](Update-DscConfiguration.md)
 
-[Windows PowerShell Desired State Configuration Overview](/powershell/dsc/overview/overview)
+[Windows PowerShell Desired State Configuration Overview](/powershell/scripting/dsc/overview/overview)

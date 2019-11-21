@@ -22,7 +22,7 @@ script and how to retrieve error objects as well as the output objects.
 > You can download the VB.NET source file (runspace03.vb) for this sample by
 > using the Windows Software Development Kit for Windows Vista and Microsoft
 > .NET Framework 3.0 Runtime Components. For download instructions, see
-> [How to Install Windows PowerShell and Download the Windows PowerShell SDK](/powershell/developer/installing-the-windows-powershell-sdk).
+> [How to Install Windows PowerShell and Download the Windows PowerShell SDK](/powershell/scripting/developer/installing-the-windows-powershell-sdk).
 > The downloaded source files are available in the **\<PowerShell Samples>**
 > directory.
 

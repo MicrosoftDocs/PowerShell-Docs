@@ -1206,7 +1206,7 @@ When your cmdlet has been registered with Windows PowerShell, you can test it by
 
 ## See Also
 
-[How to Create a Windows PowerShell Cmdlet](/powershell/developer/cmdlet/writing-a-windows-powershell-cmdlet)
+[How to Create a Windows PowerShell Cmdlet](/powershell/scripting/developer/cmdlet/writing-a-windows-powershell-cmdlet)
 
 [Creating Your First Cmdlet](./creating-a-cmdlet-without-parameters.md)
 
