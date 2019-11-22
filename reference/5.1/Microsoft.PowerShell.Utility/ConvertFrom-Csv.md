@@ -21,7 +21,7 @@ objects.
 
 ```
 ConvertFrom-Csv [-InputObject] <psobject[]> [[-Delimiter] <char>] [-Header <string[]>]
-[<CommonParameters>]
+ [<CommonParameters>]
 ```
 
 ### UseCulture

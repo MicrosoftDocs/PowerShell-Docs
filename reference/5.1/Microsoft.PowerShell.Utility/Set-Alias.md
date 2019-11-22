@@ -20,7 +20,7 @@ Creates or changes an alias for a cmdlet or other command in the current PowerSh
 
 ```
 Set-Alias [-Name] <string> [-Value] <string> [-Description <string>] [-Option <ScopedItemOptions>]
-[-PassThru] [-Scope <string>] [-Force] [-WhatIf] [-Confirm] [<CommonParameters>]
+ [-PassThru] [-Scope <string>] [-Force] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -212,7 +212,7 @@ Accept wildcard characters: False
 
 ### -Name
 
-Specifies the name of a new alias. An alias name can contain alphanumeric characters. Alias names
+Specifies the name of a new alias. An alias name can contain alphanumeric characters and hyphens. Alias names
 cannot be numeric, such as 123.
 
 ```yaml

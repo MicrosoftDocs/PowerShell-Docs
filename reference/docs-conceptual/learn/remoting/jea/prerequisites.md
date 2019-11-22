@@ -60,7 +60,7 @@ You can also use JEA on your home or work computer:
 ### Install Windows Management Framework
 
 If you're running an older version of PowerShell, you may need to update your system with the latest
-Windows Management Framework (WMF) update. For more information, see the [WMF documentation](/powershell/wmf/overview).
+Windows Management Framework (WMF) update. For more information, see the [WMF documentation](/powershell/scripting/wmf/overview).
 
 It's recommended that you test your workload's compatibility with WMF before upgrading all of your
 servers.

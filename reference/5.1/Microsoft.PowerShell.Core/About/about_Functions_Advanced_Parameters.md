@@ -26,7 +26,8 @@ parameters, see [about_CommonParameters](about_CommonParameters.md).
 
 Beginning in PowerShell 3.0, you can use splatting with `@Args` to represent
 the parameters in a command. Splatting is valid on simple and advanced
-functions. For more information, see [about_Functions](about_Functions.md) and [about_Splatting](about_Splatting.md).
+functions. For more information, see [about_Functions](about_Functions.md) and
+[about_Splatting](about_Splatting.md).
 
 ## Static parameters
 
@@ -165,13 +166,6 @@ Param(
 )
 ```
 
-> [!NOTE]
-> When the `Get-Help` cmdlet displays the corresponding **Position** parameter
-> attribute, the position value is incremented by one.
->
-> For example, a parameter with a `Position` argument value of **0** has a
-> parameter attribute of **Position=1**.
-
 ### ParameterSetName argument
 
 The `ParameterSetName` argument specifies the parameter set to which a
@@ -233,7 +227,7 @@ Param(
 )
 ```
 
-For more information about parameter sets, see [Cmdlet Parameter Sets](/powershell/developer/cmdlet/cmdlet-parameter-sets).
+For more information about parameter sets, see [Cmdlet Parameter Sets](/powershell/scripting/developer/cmdlet/cmdlet-parameter-sets).
 
 ### ValueFromPipeline argument
 
@@ -544,9 +538,10 @@ than or equal to the current date and time.
 ### ValidateSet attribute
 
 The **ValidateSet** attribute specifies a set of valid values for a parameter
-or variable. PowerShell generates an error if a parameter or variable value
-doesn't match a value in the set. In the following example, the value of the
-**Detail** parameter can only be Low, Average, or High.
+or variable and enables tab completion. PowerShell generates an error if a
+parameter or variable value doesn't match a value in the set. In the following
+example, the value of the **Detail** parameter can only be Low, Average, or
+High.
 
 ```powershell
 Param(
@@ -774,12 +769,13 @@ value is required.
 ## ArgumentCompleter attribute
 
 The **ArgumentCompleter** attribute allows you to add tab completion values to
-a specific parameter. Like **DynamicParameters**, the available values are
-calculated at runtime when the user presses <kbd>Tab</kbd> after the parameter
-name.
+a specific parameter. An **ArgumentCompleter** attribute must be defined for
+each parameter that needs tab completion. Similar to **DynamicParameters**, the
+available values are calculated at runtime when the user presses <kbd>Tab</kbd>
+after the parameter name.
 
 To add an **ArgumentCompleter** attribute, you need to define a script block
-that will determine the values. The script block must take the following
+that determines the values. The script block must take the following
 parameters in the order specified below. The parameter's names don't matter as
 the values are provided positionally.
 
@@ -789,7 +785,11 @@ The syntax is as follows:
 Param(
     [Parameter(Mandatory)]
     [ArgumentCompleter({
-        param ($commandName, $parameterName, $wordToComplete, $commandAst, $fakeBoundParameter)
+        param ( $commandName,
+                $parameterName,
+                $wordToComplete,
+                $commandAst,
+                $fakeBoundParameters )
         # Perform calculation of tab completed values here.
     })]
 )
@@ -807,21 +807,25 @@ The script block parameters are set to the following values:
   provided before they pressed <kbd>Tab</kbd>. Your script block should use
   this value to determine tab completion values.
 - `$commandAst` (Position 3) - This parameter is set to the Abstract Syntax
-  Tree (AST) for the current input line. For more information, see [Ast Class](/dotnet/api/system.management.automation.language.ast).
-- `$fakeBoundParameter` (Position 4) - This parameter is set to a hashtable
+  Tree (AST) for the current input line. For more information, see
+  [Ast Class](/dotnet/api/system.management.automation.language.ast).
+- `$fakeBoundParameters` (Position 4) - This parameter is set to a hashtable
   containing the `$PSBoundParameters` for the cmdlet, before the user pressed
-  <kbd>Tab</kbd>. For more information, see [about_Automatic_Variables](about_Automatic_Variables.md).
+  <kbd>Tab</kbd>. For more information, see
+  [about_Automatic_Variables](about_Automatic_Variables.md).
 
 The **ArgumentCompleter** script block must unroll the values using the
-pipeline, such as`ForEach-Object`, `Where-Object`, or another suitable method.
+pipeline, such as `ForEach-Object`, `Where-Object`, or another suitable method.
 Returning an array of values causes PowerShell to treat the entire array as
 **one** tab completion value.
 
-The following example adds tab completion to the **Value** parameter. If no
-`$Type` is specified, fruits and vegetables are returned. If a `$Type` is
-specified, only values for the type are specified. In addition, the `-like`
-operator ensures that if the user types the following command and uses
-<kbd>Tab</kbd> completion, only **Apple** is returned.
+The following example adds tab completion to the **Value** parameter. If only
+the **Value** parameter is specified, all possible values, or arguments, for
+**Value** are displayed. When the **Type** parameter is specified, the
+**Value** parameter only displays the possible values for that type.
+
+In addition, the `-like` operator ensures that if the user types the following
+command and uses <kbd>Tab</kbd> completion, only **Apple** is returned.
 
 `Test-ArgumentCompleter -Type Fruits -Value A`
 
@@ -829,10 +833,10 @@ operator ensures that if the user types the following command and uses
 function Test-ArgumentCompleter {
 [CmdletBinding()]
  param (
-        [Parameter(Mandatory)]
+        [Parameter(Mandatory=$true)]
         [ValidateSet('Fruits', 'Vegetables')]
         $Type,
-        [Parameter(Mandatory)]
+        [Parameter(Mandatory=$true)]
         [ArgumentCompleter( {
             param ( $commandName,
                     $parameterName,

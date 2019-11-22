@@ -20,16 +20,16 @@ file.
 
 ```
 Export-Csv [[-Path] <string>] [[-Delimiter] <char>] -InputObject <psobject> [-LiteralPath <string>]
-[-Force] [-NoClobber] [-Encoding <Encoding>] [-Append] [-IncludeTypeInformation]
-[-NoTypeInformation] [-WhatIf] [-Confirm] [<CommonParameters>]
+ [-Force] [-NoClobber] [-Encoding <Encoding>] [-Append] [-IncludeTypeInformation]
+ [-NoTypeInformation] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### UseCulture
 
 ```
 Export-Csv [[-Path] <string>] -InputObject <psobject> [-LiteralPath <string>] [-Force] [-NoClobber]
-[-Encoding <Encoding>] [-Append] [-UseCulture] [-IncludeTypeInformation] [-NoTypeInformation]
-[-WhatIf] [-Confirm] [<CommonParameters>]
+ [-Encoding <Encoding>] [-Append] [-UseCulture] [-IncludeTypeInformation] [-NoTypeInformation]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION

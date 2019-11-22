@@ -17,19 +17,19 @@ Adds content to the specified items, such as adding words to a file.
 ### Path (Default)
 
 ```
-Add-Content [-Path] <string[]> [-Value] <Object[]> [-PassThru] [-Filter <string>] [-Include
-<string[]>] [-Exclude <string[]>] [-Force] [-Credential <pscredential>] [-WhatIf] [-Confirm]
-[-UseTransaction] [-NoNewline] [-Encoding <FileSystemCmdletProviderEncoding>] [-Stream <string>]
-[<CommonParameters>]
+Add-Content [-Path] <string[]> [-Value] <Object[]> [-PassThru] [-Filter <string>]
+ [-Include <string[]>] [-Exclude <string[]>] [-Force] [-Credential <pscredential>] [-WhatIf]
+ [-Confirm] [-UseTransaction] [-NoNewline] [-Encoding <FileSystemCmdletProviderEncoding>]
+ [-Stream <string>] [<CommonParameters>]
 ```
 
 ### LiteralPath
 
 ```
-Add-Content [-Value] <Object[]> -LiteralPath <string[]> [-PassThru] [-Filter <string>] [-Include
-<string[]>] [-Exclude <string[]>] [-Force] [-Credential <pscredential>] [-WhatIf] [-Confirm]
-[-UseTransaction] [-NoNewline] [-Encoding <FileSystemCmdletProviderEncoding>] [-Stream <string>]
-[<CommonParameters>]
+Add-Content [-Value] <Object[]> -LiteralPath <string[]> [-PassThru] [-Filter <string>]
+ [-Include <string[]>] [-Exclude <string[]>] [-Force] [-Credential <pscredential>] [-WhatIf]
+ [-Confirm] [-UseTransaction] [-NoNewline] [-Encoding <FileSystemCmdletProviderEncoding>]
+ [-Stream <string>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION

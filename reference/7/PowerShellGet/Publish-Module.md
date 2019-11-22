@@ -131,7 +131,7 @@ Accept wildcard characters: False
 
 Accepts only valid values specified by the **ValidateSet** attribute.
 
-For more information, see [ValidateSet Attribute Declaration](/powershell/developer/cmdlet/validateset-attribute-declaration)
+For more information, see [ValidateSet Attribute Declaration](/powershell/scripting/developer/cmdlet/validateset-attribute-declaration)
 and [ValidateSetAttribute](/dotnet/api/system.management.automation.validatesetattribute).
 
 ```yaml
@@ -301,8 +301,10 @@ Accept wildcard characters: False
 
 ### -SkipAutomaticTags
 
-Removes commands and resources from being included as tags.
-Skips automatically adding tags to a module.
+Removes commands and resources from being included as tags. Skips automatically adding tags to a
+module.
+
+This parameter was introduced in PowerShell 7.
 
 ```yaml
 Type: SwitchParameter

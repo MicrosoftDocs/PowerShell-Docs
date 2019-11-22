@@ -14,9 +14,6 @@ Select the type(s) of documents being changed.
 - [ ] Version 7 content
 - [ ] Version 6 content
 - [ ] Version 5.1 content
-- [ ] Version 5.0 content
-- [ ] Version 4.0 content
-- [ ] Version 3.0 content
 
 **Conceptual articles**
 - [ ] Fundamental conceptual articles

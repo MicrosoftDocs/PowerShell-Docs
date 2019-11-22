@@ -19,24 +19,24 @@ Finds text in strings and files.
 ### File (Default)
 
 ```
-Select-String [-Pattern] <string[]> [-Path] <string[]> [-SimpleMatch] [-CaseSensitive] [-Quiet]
- [-List] [-Include <string[]>] [-Exclude <string[]>] [-NotMatch] [-AllMatches] [-Encoding <string>]
+Select-String [-Pattern] <String[]> [-Path] <String[]> [-SimpleMatch] [-CaseSensitive] [-Quiet]
+ [-List] [-Include <String[]>] [-Exclude <String[]>] [-NotMatch] [-AllMatches] [-Encoding <String>]
  [-Context <Int32[]>] [<CommonParameters>]
 ```
 
 ### Object
 
 ```
-Select-String [-Pattern] <string[]> -InputObject <psobject> [-SimpleMatch] [-CaseSensitive] [-Quiet]
- [-List] [-Include <string[]>] [-Exclude <string[]>] [-NotMatch] [-AllMatches] [-Encoding <string>]
+Select-String -InputObject <PSObject> [-Pattern] <String[]> [-SimpleMatch] [-CaseSensitive] [-Quiet]
+ [-List] [-Include <String[]>] [-Exclude <String[]>] [-NotMatch] [-AllMatches] [-Encoding <String>]
  [-Context <Int32[]>] [<CommonParameters>]
 ```
 
 ### LiteralFile
 
 ```
-Select-String [-Pattern] <string[]> -LiteralPath <string[]> [-SimpleMatch] [-CaseSensitive] [-Quiet]
- [-List] [-Include <string[]>] [-Exclude <string[]>] [-NotMatch] [-AllMatches] [-Encoding <string>]
+Select-String [-Pattern] <String[]> -LiteralPath <String[]> [-SimpleMatch] [-CaseSensitive] [-Quiet]
+ [-List] [-Include <String[]>] [-Exclude <String[]>] [-NotMatch] [-AllMatches] [-Encoding <String>]
  [-Context <Int32[]>] [<CommonParameters>]
 ```
 
@@ -469,7 +469,7 @@ Accept wildcard characters: False
 ### -List
 
 Only the first instance of matching text is returned from each input file. This is the most
-efficient way to retrieve a list files that have contents matching the regular expression.
+efficient way to retrieve a list of files that have contents matching the regular expression.
 
 By default, `Select-String` returns a **MatchInfo** object for each match it finds.
 
@@ -620,7 +620,7 @@ the **Quiet** parameter, the output is a Boolean value indicating whether the pa
 The **sls** alias for the `Select-String` cmdlet was introduced in PowerShell 3.0.
 
 > [!NOTE]
-> According to [Approved Verbs for PowerShell Commands](/powershell/developer/cmdlet/approved-verbs-for-windows-powershell-commands),
+> According to [Approved Verbs for PowerShell Commands](/powershell/scripting/developer/cmdlet/approved-verbs-for-windows-powershell-commands),
 > the official alias prefix for `Select-*` cmdlets is `sc`, not `sl`. Therefore, the proper alias
 > for `Select-String` should be `scs`, not `sls`. This is an exception to this rule.
 
@@ -633,8 +633,9 @@ parameter. To specify the text to be searched, use the following criteria:
 - If the text is stored in files, use the **Path** parameter to specify the path to the files.
 
 By default, `Select-String` interprets the value of the **Pattern** parameter as a regular
-expression. (For more information, see [about_Regular_Expressions](../Microsoft.PowerShell.Core/About/about_Regular_Expressions.md).
-You can use the **SimpleMatch** parameter to override the regular expression matching. The
+expression. For more information, see
+[about_Regular_Expressions](../Microsoft.PowerShell.Core/About/about_Regular_Expressions.md). You
+can use the **SimpleMatch** parameter to override the regular expression matching. The
 **SimpleMatch** parameter finds instances of the value of the **Pattern** parameter in the input.
 
 The default output of `Select-String` is a **MatchInfo** object, which includes detailed information
@@ -647,7 +648,7 @@ If you don't need the information in the **MatchInfo** object, use the **Quiet**
 instead of a **MatchInfo** object.
 
 When matching phrases, `Select-String` uses the current culture that is set for the system. To find
-the current culture, use the Get-Culture cmdlet.
+the current culture, use the `Get-Culture` cmdlet.
 
 To find the properties of a **MatchInfo** object, type the following command:
 

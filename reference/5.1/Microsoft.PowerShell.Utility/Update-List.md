@@ -3,7 +3,7 @@ external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 06/09/2017
+ms.date: 11/11/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/update-list?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Update-List
@@ -17,97 +17,166 @@ Adds items to and removes items from a property value that contains a collection
 ## SYNTAX
 
 ### AddRemoveSet (Default)
+
 ```
 Update-List [-Add <Object[]>] [-Remove <Object[]>] [-InputObject <PSObject>] [[-Property] <String>]
  [<CommonParameters>]
 ```
 
 ### ReplaceSet
+
 ```
 Update-List -Replace <Object[]> [-InputObject <PSObject>] [[-Property] <String>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-The **Update-List** cmdlet adds items to and removes items from a property value of an object, and then it returns the updated object.
-This cmdlet is designed for properties that contain collections of objects.
 
-The *Add* and *Remove* parameters add individual items to and remove them from the collection.
-The *Replace* parameter replaces the entire collection.
+The `Update-List` cmdlet adds, removes, or replaces items in a property value of an object and
+returns the updated object. This cmdlet is designed for properties that contain collections of
+objects.
 
-If you do not specify a property in the command, **Update-List** returns an object that describes the update instead of updating the object.
-You can submit the update object to cmdlets that change objects, such as Set-* cmdlets.
+The **Add** and **Remove** parameters add individual items to and remove them from the collection.
+The **Replace** parameter replaces the entire collection.
 
-This cmdlet works only when the property that is being updated supports the IList interface that **Update-List** uses.
-Also, any Set-* cmdlets that accept an update must support the IList interface.
-The core cmdlets that are installed with Windows PowerShell do not support this interface.
-To determine whether a cmdlet supports **Update-List**, see the cmdlet Help topic.
+If you do not specify a property in the command, `Update-List` returns an object that describes the
+update instead of updating the object. You can submit the update object to cmdlets that change
+objects, such as `Set` cmdlets.
+
+This cmdlet works only when the property that is being updated supports the **IList** interface that
+`Update-List` uses. Also, any `Set` cmdlets that accept an update must support the **IList**
+interface.
+
+The core cmdlets that are installed with PowerShell do not support this interface. To
+determine whether a cmdlet supports `Update-List`, see the cmdlet Help topic.
 
 ## EXAMPLES
 
-### Example 1: Add and remove items from a property value
-```
-PS C:\> Get-MailBox | Update-List -Property aliases -Add "A","B" -Remove "X","Y" | Set-MailBox
-```
+### Example 1: Add items to a property value
 
-This command adds A and B and removes X and Y from the Aliases property of a mailbox.
+In this example we create a class that represents a deck of cards where the cards are stored as a
+**List** collection object. The **NewDeck()** method uses `Update-List`to add a complete deck of
+card values to the **cards** collection.
 
-The command uses the [Get-Mailbox](https://go.microsoft.com/fwlink/?LinkId=111536) cmdlet from Microsoft Exchange Server to get the mailbox.
-A pipeline operator sends the mailbox object to the **Update-List** cmdlet.
+```powershell
+class Cards {
 
-The **Update-List** command uses the *Property* parameter to indicate that the Aliases property of the mailbox is being updated, and it uses the *Add* and *Remove* parameters to specify the items that are being added and removed from the collection.
-The Aliases property fulfills the conditions of **Update-List**, because it stores a collection of Microsoft .NET Framework objects that have Add and Remove methods.
+    [System.Collections.Generic.List[string]]$cards
+    [string]$name
 
-The **Update-List** cmdlet returns the updated mailbox, which is piped to the **Set-MailBox** cmdlet, which changes the mailbox.
+    Cards([string]$_name) {
+        $this.name = $_name
+        $this.cards = [System.Collections.Generic.List[string]]::new()
+    }
 
-### Example 2: Add and remove items from a property value in a variable
-```
-PS C:\> $M = Get-MailBox
-PS C:\> Update-List -InputObject $M -Property aliases -Add "A","B" -Remove "X", "Y" | Set-MailBox
-```
+    NewDeck() {
+        $_suits = [char]0x2663,[char]0x2666,[char]0x2665,[char]0x2660
+        $_values = 'A',2,3,4,5,6,7,8,9,10,'J','Q','K'
+        $_deck = foreach ($s in $_suits){ foreach ($v in $_values){ "$v$s"} }
+        $this | Update-List -Property cards -Add $_deck | Out-Null
+    }
 
-This command adds A and B to the value of the Aliases property of a mailbox and removes X and Y.
-This command has the same effect as the previous command, although it has a slightly different format.
+    Show() {
+        Write-Host
+        Write-Host $this.name ": " $this.cards[0..12]
+        if ($this.cards.count -gt 13) {
+            Write-Host (' ' * ($this.name.length+3)) $this.cards[13..25]
+        }
+        if ($this.cards.count -gt 26) {
+            Write-Host (' ' * ($this.name.length+3)) $this.cards[26..38]
+        }
+        if ($this.cards.count -gt 39) {
+            Write-Host (' ' * ($this.name.length+3)) $this.cards[39..51]
+        }
+    }
 
-The command uses the **Get-MailBox** cmdlet to get the mailbox, and it saves the mailbox in the $M variable.
-This command uses the *InputObject* parameter of **Update-List** to specify the mailbox.
-The value of *InputObject* is the mailbox in the $M variable.
-It uses the *Property* parameter to specify the Aliases property and the *Add* and *Remove* parameters to specify the items being added to and removed from the value of Aliases.
+    Shuffle() { $this.cards = Get-Random -InputObject $this.cards -Count 52 }
 
-The command uses a pipeline operator (|) to send the updated mailbox object to the **Set-Mailbox** cmdlet, which changes the mailbox.
-
-### Example 3: Add and remove items from a property value
-```
-PS C:\> Get-MailBox | Set-MailBox -Alias (Update-List -Add "A", "B" -Remove "X","Y")
-```
-
-This command adds A and B to the value of the Aliases property of a mailbox and removes X and Y.
-This command has the same effect as the two previous commands, but it uses a different procedure to perform the task.
-
-Instead of updating the Aliases property of the mailbox before sending it to **Set-Mailbox**, this command uses **Update-List** to create an object that represents the change.
-Then it submits the change to the *Alias* parameter of **Set-Mailbox**.
-
-The command uses the **Get-MailBox** cmdlet to get the mailbox.
-A pipeline operator sends the mailbox object to the **Set-Mailbox** cmdlet, which changes mailboxes.
-
-The command uses the *Alias* parameter of **Set-Mailbox** to change the Aliases property of the mailbox object.
-The value of the *Alias* parameter is an **Update-List** command that creates an object that represents the update.
-The **Update-List** command is enclosed in parentheses to ensure that it runs before the value of the *Alias* parameter is evaluated.
-When the **Set-Mailbox** command completes, the mailbox is changed.
-
-### Example 4: Replace a property collection
-```
-PS C:\> Update-List -InputObject $A -Property aliases -Replace "A", "B" | Set-MailBox
+    Sort() { $this.cards.Sort() }
+}
 ```
 
-This command uses the Replace operator of **Update-List** to replace the collection in the Aliases property of the object in $A with a new collection.
+> [!NOTE]
+> The `Update-List` cmdlet outputs the updated object to the pipeline. We pipe the output to
+> `Out-Null` to suppress the unwanted display.
 
-This command uses the *InputObject* parameter which, in this case, is equivalent to using a pipeline operator to pass $A to **Update-List**.
+### Example 2: Add and remove items of a collection property
+
+Continuing with the code in Example 1, we will create instances of the **Cards** class to represent
+a deck of cards and the cards held by two players. We use the `Update-List` cmdlet to add cards to
+the players' hands and to remove cards from the deck.
+
+```powershell
+$player1 = [Cards]::new('Player 1')
+$player2 = [Cards]::new('Player 2')
+
+$deck = [Cards]::new('Deck')
+$deck.NewDeck()
+$deck.Shuffle()
+$deck.Show()
+
+# Deal two hands
+$player1 | Update-List -Property cards -Add $deck.cards[0,2,4,6,8] | Out-Null
+$player2 | Update-List -Property cards -Add $deck.cards[1,3,5,7,9] | Out-Null
+$deck | Update-List -Property cards -Remove $player1.cards | Out-Null
+$deck | Update-List -Property cards -Remove $player2.cards | Out-Null
+
+$player1.Show()
+$player2.Show()
+$deck.Show()
+```
+
+```Output
+Deck :  4♦ 7♥ J♦ 5♣ A♣ 8♦ J♣ Q♥ 6♦ 3♦ 9♦ 6♣ 2♣
+        K♥ 4♠ 10♥ 8♠ 10♦ 9♠ 6♠ K♦ 7♣ 3♣ Q♣ A♥ Q♠
+        3♥ 5♥ 2♦ 5♠ J♥ J♠ 10♣ 4♥ Q♦ 10♠ 4♣ 2♠ 2♥
+        6♥ 7♦ A♠ 5♦ 8♣ 9♥ K♠ 7♠ 3♠ 9♣ A♦ K♣ 8♥
+
+Player 1 :  4♦ J♦ A♣ J♣ 6♦
+
+Player 2 :  7♥ 5♣ 8♦ Q♥ 3♦
+
+Deck :  9♦ 6♣ 2♣ K♥ 4♠ 10♥ 8♠ 10♦ 9♠ 6♠ K♦ 7♣ 3♣
+        Q♣ A♥ Q♠ 3♥ 5♥ 2♦ 5♠ J♥ J♠ 10♣ 4♥ Q♦ 10♠
+        4♣ 2♠ 2♥ 6♥ 7♦ A♠ 5♦ 8♣ 9♥ K♠ 7♠ 3♠ 9♣
+        A♦ K♣ 8♥
+```
+
+The output shows the state of the deck before the cards were dealt to the players. You can see that
+each player received five cards from the deck. The final output shows the state of the deck after
+dealing the cards to the players. `Update-List` was used to select the cards from the deck and add
+them to the players' collection. Then the players' cards were removed from the deck using
+`Update-List`.
+
+### Example 3: Add and remove items in a single command
+
+`Update-List` allows you to use the **Add** and **Remove** parameters in a single command. In this
+example, Player 1 wants to discard the `4♦` and `6♦` and get two new cards.
+
+```powershell
+# Player 1 wants two new cards - remove 2 cards & add 2 cards
+$player1 | Update-List -Property cards -Remove $player1.cards[0,4] -Add $deck.cards[0..1] | Out-Null
+$player1.Show()
+
+# remove dealt cards from deck
+$deck | Update-List -Property cards -Remove $deck.cards[0..1] | Out-Null
+$deck.Show()
+```
+
+```Output
+Player 1 :  J♦ A♣ J♣ 9♦ 6♣
+
+Deck :  2♣ K♥ 4♠ 10♥ 8♠ 10♦ 9♠ 6♠ K♦ 7♣ 3♣ Q♣ A♥
+        Q♠ 3♥ 5♥ 2♦ 5♠ J♥ J♠ 10♣ 4♥ Q♦ 10♠ 4♣ 2♠
+        2♥ 6♥ 7♦ A♠ 5♦ 8♣ 9♥ K♠ 7♠ 3♠ 9♣ A♦ K♣
+        8♥
+```
 
 ## PARAMETERS
 
 ### -Add
-Specifies the property values to be added to the collection.
-Enter the values in the order that they should appear in the collection.
+
+Specifies the property values to be added to the collection. Enter the values in the order that they
+should appear in the collection.
 
 ```yaml
 Type: Object[]
@@ -122,8 +191,8 @@ Accept wildcard characters: False
 ```
 
 ### -InputObject
-Specifies the objects to be updated.
-You can also pipe the object to be updated to **Update-List**.
+
+Specifies the objects to be updated. You can also pipe the object to be updated to `Update-List`.
 
 ```yaml
 Type: PSObject
@@ -138,8 +207,10 @@ Accept wildcard characters: False
 ```
 
 ### -Property
-Specifies the property that contains the collection that is being updated.
-If you omit this parameter, **Update-List** returns an object that represents the change instead of changing the object.
+
+Specifies the property that contains the collection that is being updated. If you omit this
+parameter, `Update-List` returns an object that represents the change instead of changing the
+object.
 
 ```yaml
 Type: String
@@ -154,6 +225,7 @@ Accept wildcard characters: False
 ```
 
 ### -Remove
+
 Specifies the property values to be removed from the collection.
 
 ```yaml
@@ -169,8 +241,9 @@ Accept wildcard characters: False
 ```
 
 ### -Replace
-Specifies a new collection.
-This parameter replaces all items in the original collection with the items specified by this parameter.
+
+Specifies a new collection. This parameter replaces all items in the original collection with the
+items specified by this parameter.
 
 ```yaml
 Type: Object[]
@@ -185,17 +258,22 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+-InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
+-WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### System.Management.Automation.PSObject
-You can pipe the objects to be updated to **Update-List**.
+
+You can pipe the objects to be updated to `Update-List`.
 
 ## OUTPUTS
 
 ### Objects or System.Management.Automation.PSListModifier
-**Update-List** returns the updated object, or it returns an object that represents the update action.
+
+`Update-List` returns the updated object, or it returns an object that represents the update action.
 
 ## NOTES
 
@@ -204,5 +282,3 @@ You can pipe the objects to be updated to **Update-List**.
 [Format-List](Format-List.md)
 
 [Select-Object](Select-Object.md)
-
-

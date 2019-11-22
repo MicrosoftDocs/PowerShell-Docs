@@ -23,7 +23,7 @@ commands.
 
 This topic explains how to use PowerShell modules. For information about how
 to write PowerShell modules, see
-[Writing a PowerShell Module](/powershell/developer/module/writing-a-windows-powershell-module).
+[Writing a PowerShell Module](/powershell/scripting/developer/module/writing-a-windows-powershell-module).
 
 ## What Is a Module?
 

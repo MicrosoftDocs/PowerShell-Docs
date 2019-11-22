@@ -20,7 +20,7 @@ Sorts objects by property values.
 
 ```
 Sort-Object [[-Property] <Object[]>] [-Descending] [-Unique] [-InputObject <psobject>]
-[-Culture <string>] [-CaseSensitive] [<CommonParameters>]
+ [-Culture <string>] [-CaseSensitive] [<CommonParameters>]
 ```
 
 ## DESCRIPTION

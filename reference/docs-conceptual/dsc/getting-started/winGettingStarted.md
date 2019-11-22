@@ -113,4 +113,4 @@ Requires the path to the Meta Configuration MOF.
 Logs for DSC are written to Windows Event Log in the path
 `Microsoft-Windows-Dsc/Operational`.
 Additional logs for debugging purposes can be enabled following the steps in
-[Where Are DSC Event Logs](/powershell/dsc/troubleshooting/troubleshooting#where-are-dsc-event-logs).
+[Where Are DSC Event Logs](/powershell/scripting/dsc/troubleshooting/troubleshooting#where-are-dsc-event-logs).

@@ -26,36 +26,36 @@ Get-Help [[-Name] <String>] [-Path <String>] [-Category <String[]>] [-Component 
 ### DetailedView
 
 ```
-Get-Help [[-Name] <String>] -Detailed [-Path <String>] [-Category <String[]>]
- [-Component <String[]>] [-Functionality <String[]>] [-Role <String[]>] [<CommonParameters>]
+Get-Help [[-Name] <String>] [-Path <String>] [-Category <String[]>] [-Component <String[]>]
+ [-Functionality <String[]>] [-Role <String[]>] -Detailed [<CommonParameters>]
 ```
 
 ### Examples
 
 ```
-Get-Help [[-Name] <String>] -Examples [-Path <String>] [-Category <String[]>]
- [-Component <String[]>] [-Functionality <String[]>] [-Role <String[]>] [<CommonParameters>]
+Get-Help [[-Name] <String>] [-Path <String>] [-Category <String[]>] [-Component <String[]>]
+ [-Functionality <String[]>] [-Role <String[]>] -Examples [<CommonParameters>]
 ```
 
 ### Parameters
 
 ```
-Get-Help [[-Name] <String>] -Parameter <String> [-Path <String>] [-Category <String[]>]
- [-Component <String[]>] [-Functionality <String[]>] [-Role <String[]>] [<CommonParameters>]
+Get-Help [[-Name] <String>] [-Path <String>] [-Category <String[]>] [-Component <String[]>]
+ [-Functionality <String[]>] [-Role <String[]>] -Parameter <String> [<CommonParameters>]
 ```
 
 ### Online
 
 ```
-Get-Help [[-Name] <String>] -Online [-Path <String>] [-Category <String[]>] [-Component <String[]>]
- [-Functionality <String[]>] [-Role <String[]>] [<CommonParameters>]
+Get-Help [[-Name] <String>] [-Path <String>] [-Category <String[]>] [-Component <String[]>]
+ [-Functionality <String[]>] [-Role <String[]>] -Online [<CommonParameters>]
 ```
 
 ### ShowWindow
 
 ```
-Get-Help [[-Name] <String>] -ShowWindow [-Path <String>] [-Category <String[]>]
- [-Component <String[]>] [-Functionality <String[]>] [-Role <String[]>] [<CommonParameters>]
+Get-Help [[-Name] <String>] [-Path <String>] [-Category <String[]>] [-Component <String[]>]
+ [-Functionality <String[]>] [-Role <String[]>] -ShowWindow [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -490,8 +490,8 @@ for cmdlet, function, workflow, and script help articles. You can't use the **On
 with `Get-Help` in a remote session.
 
 For information about supporting this feature in help articles that you write, see [about_Comment_Based_Help](./About/about_Comment_Based_Help.md),
-and [Supporting Online Help](/powershell/developer/module/supporting-online-help), and
-[Writing Help for PowerShell Cmdlets](/powershell/developer/help/writing-help-for-windows-powershell-cmdlets).
+and [Supporting Online Help](/powershell/scripting/developer/module/supporting-online-help), and
+[Writing Help for PowerShell Cmdlets](/powershell/scripting/developer/help/writing-help-for-windows-powershell-cmdlets).
 
 ```yaml
 Type: SwitchParameter
@@ -673,10 +673,10 @@ following fields:
 
 [Get-Command](Get-Command.md)
 
-[Supporting Updatable Help](/powershell/developer/module/supporting-updatable-help)
+[Supporting Updatable Help](/powershell/scripting/developer/module/supporting-updatable-help)
 
 [Update-Help](Update-Help.md)
 
-[Writing Comment-Based Help Topics](/powershell/developer/help/writing-comment-based-help-topics)
+[Writing Comment-Based Help Topics](/powershell/scripting/developer/help/writing-comment-based-help-topics)
 
-[Writing Help for PowerShell Cmdlets](/powershell/developer/help/writing-help-for-windows-powershell-cmdlets)
+[Writing Help for PowerShell Cmdlets](/powershell/scripting/developer/help/writing-help-for-windows-powershell-cmdlets)

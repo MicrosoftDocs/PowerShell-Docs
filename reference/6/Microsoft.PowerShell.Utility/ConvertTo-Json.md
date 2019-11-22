@@ -81,7 +81,7 @@ PS C:\> Get-Date | ConvertTo-Json; Get-Date | ConvertTo-Json -AsArray
 ]
 ```
 
-This example shows the output from `ConvertTo-Json` cmdlet with and without the `-AsArray` switch
+This example shows the output from `ConvertTo-Json` cmdlet with and without the **AsArray** switch
 parameter. You can see the second portion of the output is wrapped in array brackets.
 
 ### Example 3
@@ -94,7 +94,7 @@ PS C:\> @{Account="User01";Domain="Domain01";Admin="True"} | ConvertTo-Json -Com
 {"Domain":"Domain01","Account":"User01","Admin":"True"}
 ```
 
-This command shows the effect of using the `-Compress` parameter of `ConvertTo-Json`. The
+This command shows the effect of using the **Compress** parameter of `ConvertTo-Json`. The
 compression affects only the appearance of the string, not its validity.
 
 ### Example 4
@@ -236,12 +236,37 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -EscapeHandling
+
+Controls how certain characters are escaped in the resulting JSON output. By default, only control
+characters (like newline) are escaped.
+
+Acceptable values are:
+
+- Default - Only control characters are escaped.
+- EscapeNonAscii - All non-ASCII and control characters are escaped.
+- EscapeHtml - HTML (`<`, `>`, `&`, `'`, `"`) and control characters are escaped.
+
+This parameter was introduced in PowerShell 6.2.
+
+```yaml
+Type: NewtonSoft.Json.StringEscapeHandling
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: Default
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -InputObject
 
 Specifies the objects to convert to JSON format. Enter a variable that contains the objects, or type
 a command or expression that gets the objects. You can also pipe an object to `ConvertTo-Json`.
 
-The *InputObject* parameter is required, but its value can be null (`$null`) or an empty string.
+The **InputObject** parameter is required, but its value can be null (`$null`) or an empty string.
 When the input object is `$null`, `ConvertTo-Json` does not generate any output. When the input
 object is an empty string, `ConvertTo-Json` returns an empty string.
 
@@ -257,28 +282,11 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -EscapeHandling
-
-Controls how certain characters are escaped in the resulting JSON output. By default, only control
-characters (e.g. newline) are escaped.
-
-```yaml
-Type: NewtonSoft.Json.StringEscapeHandling
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: Default
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### CommonParameters
 
-This cmdlet supports the common parameters: `-Debug`, `-ErrorAction`, `-ErrorVariable`,
-`-InformationAction`, `-InformationVariable`, `-OutVariable`, `-OutBuffer`, `-PipelineVariable`,
-`-Verbose`, `-WarningAction`, and `-WarningVariable`. For more information, see [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+-InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable,
+-Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
 
 ## INPUTS
 

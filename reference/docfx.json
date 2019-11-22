@@ -92,6 +92,7 @@
         "externalReference": [],
         "globalMetadata": {
             "toc_preview": true,
+            "archive_url": "https://docs.microsoft.com/previous-versions/powershell/scripting/overview",
             "searchScope": ["PowerShell"],
             "hideScope": false,
             "breadcrumb_path": "/powershell/scripting/bread/toc.json",
@@ -107,18 +108,12 @@
         "fileMetadata": {
             "ms.prod": { "**/**.md": "powershell" },
             "ms.technology": {
-                "3.0/**.md": "powershell-cmdlets",
-                "4.0/**.md": "powershell-cmdlets",
-                "5.0/**.md": "powershell-cmdlets",
                 "5.1/**.md": "powershell-cmdlets",
                 "6/**.md": "powershell-cmdlets",
                 "7/**.md": "powershell-cmdlets",
                 "docs-conceptual/**.md": "powershell-conceptual"
             },
             "ms.topic": {
-                "3.0/**.md": "reference",
-                "4.0/**.md": "reference",
-                "5.0/**.md": "reference",
                 "5.1/**.md": "reference",
                 "6/**.md": "reference",
                 "7/**.md": "reference",

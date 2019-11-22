@@ -162,6 +162,8 @@ debugging and other cross-process communication. This offers a predictable
 mechanism for connecting to other PowerShell instances. Typically used with the
 **CustomPipeName** parameter on `Enter-PSHostProcess`.
 
+This parameter was introduced in PowerShell 6.2.
+
 For example:
 
 ```powershell

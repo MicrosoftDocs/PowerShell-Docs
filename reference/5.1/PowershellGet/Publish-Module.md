@@ -124,7 +124,7 @@ Accept wildcard characters: False
 
 Accepts only valid values specified by the **ValidateSet** attribute.
 
-For more information, see [ValidateSet Attribute Declaration](/powershell/developer/cmdlet/validateset-attribute-declaration)
+For more information, see [ValidateSet Attribute Declaration](/powershell/scripting/developer/cmdlet/validateset-attribute-declaration)
 and [ValidateSetAttribute](/dotnet/api/system.management.automation.validatesetattribute).
 
 ```yaml

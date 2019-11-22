@@ -44,7 +44,7 @@ themselves. Let us define some terms:
 
 The PackageManagement module includes the following cmdlets. For more
 information, see the
-[PackageManagement](/powershell/gallery/psget/oneget/packagemanagement_cmdlets)
+[PackageManagement](/powershell/scripting/gallery/psget/oneget/packagemanagement_cmdlets)
 help.
 
 - `Get-PackageProvider`: Returns a list of package providers that are

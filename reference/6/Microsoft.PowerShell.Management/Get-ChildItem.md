@@ -19,17 +19,17 @@ Gets the items and child items in one or more specified locations.
 
 ```
 Get-ChildItem [[-Path] <string[]>] [[-Filter] <string>] [-Include <string[]>] [-Exclude <string[]>]
-[-Recurse] [-Depth <uint32>] [-Force] [-Name] [-Attributes <FlagsExpression[FileAttributes]>]
-[-FollowSymlink] [-Directory] [-File] [-Hidden] [-ReadOnly] [-System] [<CommonParameters>]
+ [-Recurse] [-Depth <uint32>] [-Force] [-Name] [-Attributes <FlagsExpression[FileAttributes]>]
+ [-FollowSymlink] [-Directory] [-File] [-Hidden] [-ReadOnly] [-System] [<CommonParameters>]
 ```
 
 ### LiteralItems
 
 ```
 Get-ChildItem [[-Filter] <string>] -LiteralPath <string[]> [-Include <string[]>]
-[-Exclude <string[]>] [-Recurse] [-Depth <uint32>] [-Force] [-Name]
-[-Attributes <FlagsExpression[FileAttributes]>] [-FollowSymlink] [-Directory] [-File] [-Hidden]
-[-ReadOnly] [-System] [<CommonParameters>]
+ [-Exclude <string[]>] [-Recurse] [-Depth <uint32>] [-Force] [-Name]
+ [-Attributes <FlagsExpression[FileAttributes]>] [-FollowSymlink] [-Directory] [-File] [-Hidden]
+ [-ReadOnly] [-System] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -524,6 +524,8 @@ By default, the `Get-ChildItem` cmdlet displays symbolic links to directories fo
 recursion, but does not recurse into them. Use the **FollowSymlink** parameter to search the
 directories that target those symbolic links. The **FollowSymlink** is a dynamic parameter and is
 supported only in the **FileSystem** provider.
+
+This parameter was introduced in PowerShell 6.0.
 
 ```yaml
 Type: SwitchParameter

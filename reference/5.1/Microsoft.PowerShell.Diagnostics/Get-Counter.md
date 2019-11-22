@@ -3,7 +3,7 @@ external help file: Microsoft.PowerShell.Commands.Diagnostics.dll-Help.xml
 keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Diagnostics
-ms.date: 6/21/2019
+ms.date: 10/30/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.diagnostics/get-counter?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Counter
@@ -238,7 +238,7 @@ Timestamp                 CounterSamples
 ```
 
 The `Get-Random` cmdlet uses `Get-Content` to select 50 random computer names from the
-**Servers.txt** file. The remote computer names are stored in the `$Servers` variable. The
+`Servers.txt` file. The remote computer names are stored in the `$Servers` variable. The
 `\Processor(*)\% Processor Time` counter's path is stored in the `$Counter` variable. `Get-Counter`
 uses the **Counter** parameter to specify the counters in the `$Counter` variable. The
 **ComputerName** parameter specifies the computer names in the `$Servers` variable.
@@ -272,7 +272,7 @@ For more information, see [about_Automatic_Variables](../Microsoft.PowerShell.Co
 `Get-Counter` uses the **ListSet** parameter to specify the **Memory** counter set. The command is
 enclosed in parentheses so that the **Paths** property returns each path as a string. The objects
 are sent down the pipeline to `Where-Object`. `Where-Object` uses the variable `$_` to process each
-object and uses the **like** parameter to find matches for the string `*Cache*`. The asterisks (`*`)
+object and uses the `-like` operator to find matches for the string `*Cache*`. The asterisks (`*`)
 are wildcards for any characters.
 
 ### Example 9: Use the PathsWithInstances property to get formatted path names

@@ -3,7 +3,7 @@ external help file: System.Management.Automation.dll-Help.xml
 keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Core
-ms.date: 08/09/2019
+ms.date: 11/04/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/start-job?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Start-Job
@@ -67,6 +67,15 @@ Starting in PowerShell 3.0, `Start-Job` can start instances of custom job types,
 jobs. For information about how to use `Start-Job` to start jobs with custom types, see the help
 documents for the job type feature.
 
+Beginning in PowerShell 6.0, you can start jobs using the ampersand (`&`) background operator. The
+functionality of the background operator is similar to `Start-Job`. Both methods to start a job
+create a **PSRemotingJob** job object. For more information about using the ampersand (`&`), see
+[about_Operators](./about/about_operators.md#background-operator-).
+
+The default working directory for jobs is hardcoded. The Windows default is `$HOME\Documents` and on
+Linux or macOS the default is `$HOME`. The script code running in the background job needs to manage
+the working directory as needed.
+
 > [!NOTE]
 > Creating an out-of-process background job with `Start-Job` is not supported in the scenario where
 > PowerShell is being hosted in other applications, such as the PowerShell Azure Functions.
@@ -76,28 +85,52 @@ documents for the job type feature.
 > PowerShell, it's directly using the PowerShell NuGet SDK packages and won't have `pwsh` shipped
 > along.
 >
-> The substitute in that scenario is `Start-ThreadJob` from the module **ThreadJob**.
+> The substitute in that scenario is `Start-ThreadJob` from the module **[ThreadJob](https://www.powershellgallery.com/packages/ThreadJob)**.
 
 ## EXAMPLES
 
 ### Example 1: Start a background job
 
-This example starts a job that runs in the background on the local computer.
+This example starts a background job that runs on the local computer.
 
 ```powershell
-Start-Job -ScriptBlock {Get-Process}
+Start-Job -ScriptBlock { Get-Process -Name pwsh }
 ```
 
 ```Output
 Id  Name   PSJobTypeName   State     HasMoreData   Location    Command
 --  ----   -------------   -----     -----------   --------    -------
-1   Job1   BackgroundJob   Running   True          localhost   Get-Process
+1   Job1   BackgroundJob   Running   True          localhost   Get-Process -Name pwsh
 ```
 
-`Start-Job` uses the **ScriptBlock** parameter to run `Get-Process` as a background job. The job
-information is displayed and PowerShell returns to a prompt while the job runs in the background.
+`Start-Job` uses the **ScriptBlock** parameter to run `Get-Process` as a background job. The
+**Name** parameter specifies to find PowerShell processes, `pwsh`. The job information is displayed
+and PowerShell returns to a prompt while the job runs in the background.
 
-### Example 2: Start a job using Invoke-Command
+To view the job's output, use the `Receive-Job` cmdlet. For example, `Receive-Job -Id 1`.
+
+### Example 2: Use the background operator to start a background job
+
+This example uses the ampersand (`&`) background operator to start a background job on the local
+computer. The job gets the same result as `Start-Job` in Example 1.
+
+```powershell
+Get-Process -Name pwsh &
+```
+
+```Output
+Id    Name   PSJobTypeName   State       HasMoreData     Location      Command
+--    ----   -------------   -----       -----------     --------      -------
+5     Job5   BackgroundJob   Running     True            localhost     Microsoft.PowerShell.Man...
+```
+
+`Get-Process` uses the **Name** parameter to specify PowerShell processes, `pwsh`. The ampersand
+(`&`) runs the command as a background job. The job information is displayed and PowerShell returns
+to a prompt while the job runs in the background.
+
+To view the job's output, use the `Receive-Job` cmdlet. For example, `Receive-Job -Id 5`.
+
+### Example 3: Start a job using Invoke-Command
 
 This example runs a job on multiple computers. The job is stored in a variable and is executed by
 using the variable name on the PowerShell command line.
@@ -116,7 +149,7 @@ The **ScriptBlock** parameter specifies a command that `Get-Service` gets the **
 parameter limits the number of concurrent commands to 16. The **AsJob** parameter starts a
 background job that runs the command on the servers.
 
-### Example 3: Get job information
+### Example 4: Get job information
 
 This example gets information about a job and displays the results of a completed job that was run
 on the local computer.
@@ -157,7 +190,7 @@ run the job on the computer. The job object is stored in the `$j` variable.
 The object in the `$j` variable is sent down the pipeline to `Select-Object`. The **Property**
 parameter specifies an asterisk (`*`) to display all the job object's properties.
 
-### Example 4: Run a script as a background job
+### Example 5: Run a script as a background job
 
 In this example, a script on the local computer is run as a background job.
 
@@ -168,7 +201,7 @@ Start-Job -FilePath C:\Scripts\Sample.ps1
 `Start-Job` uses the **FilePath** parameter to specify a script file that's stored on the local
 computer.
 
-### Example 5: Get a process using a background job
+### Example 6: Get a process using a background job
 
 This example uses a background job to get a specified process by name.
 
@@ -179,7 +212,7 @@ Start-Job -Name PShellJob -ScriptBlock { Get-Process -Name PowerShell }
 `Start-Job` uses the **Name** parameter to specify a friendly job name, **PShellJob**. The
 **ScriptBlock** parameter specifies `Get-Process` to get processes with the name **PowerShell**.
 
-### Example 6: Collect and save data by using a background job
+### Example 7: Collect and save data by using a background job
 
 This example starts a job that collects a large amount of map data and then saves it in a `.tif`
 file.
@@ -195,7 +228,7 @@ Start-Job -Name GetMappingFiles -InitializationScript {Import-Module MapFunction
 by the **Path** parameter. The **RunAs32** parameter runs the process as 32-bit, even on a 64-bit
 operating system.
 
-### Example 7: Pass input to a background job
+### Example 8: Pass input to a background job
 
 This example uses the `$input` automatic variable to process an input object. Use `Receive-Job` to
 view the job's output.
@@ -286,8 +319,16 @@ Accept wildcard characters: False
 Specifies a user account that has permission to perform this action. If the **Credential** parameter
 isn't specified, the command uses the current user's credentials.
 
-Type a user name, such as **User01** or **Domain01\User01**, or enter a **PSCredential** object,
-such as one from the `Get-Credential` cmdlet.
+Type a user name, such as **User01** or **Domain01\User01**, or enter a **PSCredential** object
+generated by the `Get-Credential` cmdlet. If you type a user name, you're prompted to enter the
+password.
+
+Credentials are stored in a [PSCredential](/dotnet/api/system.management.automation.pscredential)
+object and the password is stored as a [SecureString](/dotnet/api/system.security.securestring).
+
+> [!NOTE]
+> For more information about **SecureString** data protection, see
+> [How secure is SecureString?](/dotnet/api/system.security.securestring#how-secure-is-securestring).
 
 ```yaml
 Type: PSCredential
