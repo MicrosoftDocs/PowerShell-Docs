@@ -29,7 +29,7 @@
         "mapping/monikerMapping.json"
       ],
       "version": 0
-    },
+    }
   ],
   "notification_subscribers": [],
   "sync_notification_subscribers": [],
