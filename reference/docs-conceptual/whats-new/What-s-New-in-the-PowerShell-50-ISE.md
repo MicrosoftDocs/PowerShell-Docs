@@ -6,8 +6,17 @@ title:  What's New in the PowerShell 5.0 ISE
 
 # What's New in the Windows PowerShell 5.0 ISE
 
-This topic explains the new and updated features that have been introduced in versions of Windows
+This topic explains the new and updated features that have been introduced in version 5.0 of Windows
 PowerShell Integrated Scripting Environment (ISE).
+
+> [!NOTE]
+> The PowerShell ISE is no longer in active feature development. As a shipping component of
+> Windows, it continues to be officially supported for security and high-priority servicing fixes.
+> We currently have no plans to remove the ISE from Windows.
+>
+> There is no support for the ISE in PowerShell v6 and beyond. Users looking for replacement for the
+> ISE should use [Visual Studio Code](https://code.visualstudio.com/) with the
+> [PowerShell Extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode.PowerShell).
 
 ## Feature description
 
