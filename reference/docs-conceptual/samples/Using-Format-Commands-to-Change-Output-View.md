@@ -1,5 +1,5 @@
 ---
-ms.date:  10/22/2019
+ms.date:  11/22/2019
 keywords:  powershell,cmdlet
 title:  Using Format Commands to Change Output View
 ---
@@ -135,7 +135,7 @@ Id          : 21748
 The `Format-List` cmdlet lets you use a wildcard as the value of its **Property** parameter. This
 lets you display detailed information. Often, objects include more information than you need, which
 is why PowerShell doesn't show all property values by default. To show all of properties of
-an object, use the **Format-List -Property \&#42;** command. The following command generates over 60
+an object, use the **Format-List -Property \*** command. The following command generates over 60
 lines of output for a single process:
 
 ```powershell
