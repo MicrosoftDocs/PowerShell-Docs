@@ -33,10 +33,10 @@ PowerShell V5.1.
 Key features in Windows PowerShell ISE include:
 
 - Multiline editing: To insert a blank line under the current line in the Command pane, press
-  SHIFT+ENTER.
+  <kbd>SHIFT</kbd>+<kbd>ENTER</kbd>.
 - Selective execution: To run part of a script, select the text you want to run, and then click the
-  **Run Script** button. Or, press F5.
-- Context-sensitive help: Type `Invoke-Item`, and then press F1. The Help file opens to the
+  **Run Script** button. Or, press <kbd>F5</kbd>.
+- Context-sensitive help: Type `Invoke-Item`, and then press <kbd>F1</kbd>. The Help file opens to the
   article for the `Invoke-Item` cmdlet.
 
 The Windows PowerShell ISE lets you customize some aspects of its appearance. It also has its own
@@ -49,6 +49,6 @@ Alternately, you can type `powershell_ise.exe` in any command shell or in the Ru
 
 ## To get Help in the Windows PowerShell ISE
 
-On the **Help** menu, click **Windows PowerShell Help**. Or, press F1. The file that opens
+On the **Help** menu, click **Windows PowerShell Help**. Or, press <kbd>F1</kbd>. The file that opens
 describes Windows PowerShell ISE and Windows PowerShell, including all the help available from
 the `Get-Help` cmdlet.

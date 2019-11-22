@@ -6,8 +6,8 @@ title:  What's New in the PowerShell 5.0 ISE
 
 # What's New in the Windows PowerShell 5.0 ISE
 
-This topic explains the new and updated features that have been introduced in version 5.0 of Windows
-PowerShell Integrated Scripting Environment (ISE).
+This topic explains the new and updated features that have been introduced in version 5.0 of the
+Windows PowerShell Integrated Scripting Environment (ISE).
 
 > [!NOTE]
 > The PowerShell ISE is no longer in active feature development. As a shipping component of

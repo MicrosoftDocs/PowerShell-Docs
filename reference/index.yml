@@ -94,7 +94,7 @@ productDirectory:
     - title: Developer resources
       imageSrc: https://docs.microsoft.com/media/common/i_code-edit.svg
       links:
-        - url: https://docs.microsoft.com/powershell/scripting/developer
+        - url: https://docs.microsoft.com/powershell/scripting/developer/windows-powershell
           text: PowerShell SDK documentation
         - url: https://docs.microsoft.com/dotnet/api/?view=pscore-6.2.0
           text: PowerShell Core SDK 6.2.0 API reference
@@ -106,7 +106,7 @@ productDirectory:
     - title: Related technologies
       imageSrc: https://docs.microsoft.com/media/common/i_tools.svg
       links:
-        - url: https://docs.microsoft.com/powershell/scripting/wmf/
+        - url: https://docs.microsoft.com/powershell/scripting/wmf/overview
           text: Windows Management Framework
         - url: https://docs.microsoft.com/powershell/windows/get-started?view=win10-ps
           text: PowerShell modules to manage Windows
