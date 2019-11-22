@@ -692,7 +692,7 @@ Param(
 
 ### ValidateTrustedData validation attribute
 
-This attribute was added in PowerShell 6.
+This attribute was added in PowerShell 6.1.1.
 
 At this time, the attribute is used internally by PowerShell itself and is not intended for external
 usage.
