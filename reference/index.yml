@@ -74,19 +74,19 @@ productDirectory:
       links:
         - url: https://www.powershellgallery.com/
           text: PowerShell Gallery
-        - url: https://docs.microsoft.com/powershell/gallery/overview
+        - url: https://docs.microsoft.com/powershell/scripting/gallery/overview
           text: What is the PowerShell Gallery
-        - url: https://docs.microsoft.com/powershell/gallery/concepts/publishing-guidelines
+        - url: https://docs.microsoft.com/powershell/scripting/gallery/concepts/publishing-guidelines
           text: Best practices
-        - url: https://docs.microsoft.com/powershell/gallery/faqs
+        - url: https://docs.microsoft.com/powershell/scripting/gallery/faqs
           text: FAQs
     # Card 4
     - title: PowerShell DSC
       imageSrc: https://docs.microsoft.com/media/common/i_config-tools.svg
       links:
-        - url: https://docs.microsoft.com/powershell/dsc/overview/overview
+        - url: https://docs.microsoft.com/powershell/scripting/dsc/overview/overview
           text: DSC Overview
-        - url: https://docs.microsoft.com/powershell/dsc/getting-started/lnxgettingstarted
+        - url: https://docs.microsoft.com/powershell/scripting/dsc/getting-started/lnxgettingstarted
           text: Get started with DSC for Linux
         - url: https://dsccommunity.org/
           text: DSC Community
@@ -94,7 +94,7 @@ productDirectory:
     - title: Developer resources
       imageSrc: https://docs.microsoft.com/media/common/i_code-edit.svg
       links:
-        - url: https://docs.microsoft.com/powershell/developer
+        - url: https://docs.microsoft.com/powershell/scripting/developer
           text: PowerShell SDK documentation
         - url: https://docs.microsoft.com/dotnet/api/?view=pscore-6.2.0
           text: PowerShell Core SDK 6.2.0 API reference
@@ -106,7 +106,7 @@ productDirectory:
     - title: Related technologies
       imageSrc: https://docs.microsoft.com/media/common/i_tools.svg
       links:
-        - url: https://docs.microsoft.com/powershell/wmf/
+        - url: https://docs.microsoft.com/powershell/scripting/wmf/
           text: Windows Management Framework
         - url: https://docs.microsoft.com/powershell/windows/get-started?view=win10-ps
           text: PowerShell modules to manage Windows
