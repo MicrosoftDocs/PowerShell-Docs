@@ -31,7 +31,6 @@ command or script, and can be used with all PowerShell job manipulating cmdlets.
 |Cmdlet           |Description                                            |
 |-----------------|-------------------------------------------------------|
 |`Start-ThreadJob`|Starts a thread job on a local computer.               |
-|                 |used with -Parallel and -AsJob parameters.             |
 |`Get-Job`        |Gets the jobs that were started in the current session.|
 |`Receive-Job`    |Gets the results of jobs.                              |
 |`Stop-Job`       |Stops a running job.                                   |
