@@ -58,7 +58,7 @@ The **Action** parameters are **ActionPreference** type values.
 | Stop             | 1     |
 | SilentlyContinue | 0     |
 
-You may use the name or the value wit the parameter.
+You may use the name or the value with the parameter.
 
 In addition to the common parameters, many cmdlets offer risk mitigation
 parameters. Cmdlets that involve risk to the system or to user data usually
@@ -115,7 +115,6 @@ Default value: Depends on preference variable
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
-
 
 The **ErrorAction** parameter overrides the value of the `$ErrorActionPreference`
 variable for the current command. Because the default value of the
