@@ -1152,7 +1152,7 @@ You can pipe the body of a web request to `Invoke-WebRequest`.
 
 ## OUTPUTS
 
-### Microsoft.PowerShell.Commands.BasicHtmlWebResponseObject
+[Microsoft.PowerShell.Commands.BasicHtmlWebResponseObject](https://docs.microsoft.com/en-us/dotnet/api/microsoft.powershell.commands.basichtmlwebresponseobject)
 
 ## NOTES
 
