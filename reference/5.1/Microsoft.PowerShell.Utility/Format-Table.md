@@ -100,7 +100,7 @@ table output for **System.IO.DirectoryInfo** and **System.IO.FileInfo** objects 
 
 The custom view in this example was created from the `FileSystem.format.ps1xml` file that's stored
 in `$PSHOME` on PowerShell 5.1. For more information about views and the code used to create this
-example's view, see [about_Format.ps1xml](../Microsoft.PowerShell.Core/About/about_Format.ps1xml.md#sample-XML-for-a-format-table-custom-view).
+example's view, see [about_Format.ps1xml](../Microsoft.PowerShell.Core/About/about_Format.ps1xml.md#sample-xml-for-a-format-table-custom-view).
 
 ```powershell
 Get-ChildItem  -Path C:\Test | Format-Table -View mygciview

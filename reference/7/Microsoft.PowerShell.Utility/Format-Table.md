@@ -100,7 +100,7 @@ In this example, a custom view displays a directory's contents. The custom view 
 
 The custom view in this example was created from the view defined in PowerShell source code. For
 more information about views and the code used to create this example's view, see
-[about_Format.ps1xml](../Microsoft.PowerShell.Core/About/about_Format.ps1xml.md#sample-XML-for-a-format-table-custom-view).
+[about_Format.ps1xml](../Microsoft.PowerShell.Core/About/about_Format.ps1xml.md#sample-xml-for-a-format-table-custom-view).
 
 ```powershell
 Get-ChildItem  -Path C:\Test | Format-Table -View mygciview
