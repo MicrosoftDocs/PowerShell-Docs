@@ -1,7 +1,7 @@
 ---
 keywords: powershell,cmdlet
 locale: en-us
-ms.date: 5/28/2019
+ms.date: 11/26/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_commonparameters?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_CommonParameters
@@ -29,9 +29,7 @@ Several common parameters override system defaults or preferences that you set
 by using the PowerShell preference variables. Unlike the preference variables,
 the common parameters affect only the commands in which they're used.
 
-In addition to the common parameters, many cmdlets offer the **WhatIf** and
-**Confirm** risk mitigation parameters. Cmdlets that involve risk to the system
-or to user data usually offer these parameters.
+For more information, see [about_Preference_Variables](./about_Preference_Variables.md).
 
 The following list displays the common parameters. Their aliases are listed in
 parentheses.
@@ -48,23 +46,48 @@ parentheses.
 - **WarningAction** (wa)
 - **WarningVariable** (wv)
 
+The **Action** parameters are **ActionPreference** type values.
+**ActionPreference** is an enumeration with the following values:
+
+| Name             | Value |
+|------------------|-------|
+| Suspend          | 5     |
+| Ignore           | 4     |
+| Inquire          | 3     |
+| Continue         | 2     |
+| Stop             | 1     |
+| SilentlyContinue | 0     |
+
+You may use the name or the value with the parameter.
+
+In addition to the common parameters, many cmdlets offer risk mitigation
+parameters. Cmdlets that involve risk to the system or to user data usually
+offer these parameters.
+
 The risk mitigation parameters are:
 
 - **WhatIf** (wi)
 - **Confirm** (cf)
 
-For more information, see [about_Preference_Variables](./about_Preference_Variables.md).
-
 ### COMMON PARAMETER DESCRIPTIONS
 
 #### Debug
-
-The alias for **Debug** is **db**.
 
 Displays programmer-level detail about the operation done by the command. This
 parameter works only when the command generates a debugging message. For
 example, this parameter works when a command contains the `Write-Debug`
 cmdlet.
+
+```yaml
+Type: SwitchParameter
+Aliases: db
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
 
 The **Debug** parameter overrides the value of the `$DebugPreference` variable
 for the current command, setting the value of `$DebugPreference` to
@@ -77,11 +100,21 @@ suppress the display of debugging messages when `$DebugPreference` isn't
 
 #### ErrorAction
 
-The alias for **ErrorAction** is **ea**.
-
 Determines how the cmdlet responds to a non-terminating error from the command.
 This parameter works only when the command generates a non-terminating error,
 such as those from the `Write-Error` cmdlet.
+
+```yaml
+Type: ActionPreference
+Aliases: ea
+Accepted values: Suspend, Ignore, Inquire, Continue, Stop, SilentlyContinue
+
+Required: False
+Position: Named
+Default value: Depends on preference variable
+Accept pipeline input: False
+Accept wildcard characters: False
+```
 
 The **ErrorAction** parameter overrides the value of the `$ErrorActionPreference`
 variable for the current command. Because the default value of the
@@ -118,14 +151,19 @@ available for workflows.
 
 #### ErrorVariable
 
-The alias for **ErrorVariable** is **ev**.
-
 **ErrorVariable** stores error messages about the command in the specified
-variable and in the `$Error` automatic variable. For more information, type
-the following command:
+variable and in the `$Error` automatic variable. For more information, see
+[about_Automatic_Variables](about_Automatic_Variables.md)
 
-```powershell
-Get-Help about_Automatic_Variables
+```yaml
+Type: String
+Aliases: ev
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
 ```
 
 By default, new error messages overwrite error messages that are already stored
@@ -158,8 +196,6 @@ as `$a[0]` or `$error[1,2]` to refer to specific errors stored in the variables.
 
 #### InformationAction
 
-The alias for **InformationAction** is **ia**.
-
 Introduced in PowerShell 5.0. Within the command or script in which it's used,
 the **InformationAction** common parameter overrides the value of the
 `$InformationPreference` preference variable, which by default is set to
@@ -167,6 +203,18 @@ the **InformationAction** common parameter overrides the value of the
 **InformationAction**, `Write-Information` values are shown depending on the
 value of the **InformationAction** parameter. For more information about
 `$InformationPreference`, see [about_Preference_Variables](./about_Preference_Variables.md).
+
+```yaml
+Type: ActionPreference
+Aliases: ia
+Accepted values: Suspend, Ignore, Inquire, Continue, Stop, SilentlyContinue
+
+Required: False
+Position: Named
+Default value: Depends on preference variable
+Accept pipeline input: False
+Accept wildcard characters: False
+```
 
 `-InformationAction:Stop` stops a command or script at an occurrence of the
 `Write-Information` command.
@@ -195,8 +243,6 @@ aren't (Default) displayed, and the script continues without interruption.
 
 #### InformationVariable
 
-The alias for **InformationVariable** is **iv**.
-
 Introduced in PowerShell 5.0. Within the command or script in which it's used,
 the **InformationVariable** common parameter stores in a variable a string that
 you specify by adding the `Write-Information` command. `Write-Information`
@@ -206,13 +252,33 @@ parameter; if you don't add the **InformationAction** common parameter,
 `$InformationPreference` preference variable. For more information about
 `$InformationPreference`, see [about_Preference_Variables](./about_Preference_Variables.md).
 
-#### OutBuffer
+```yaml
+Type: String
+Aliases: iv
 
-The alias for **OutBuffer** is **ob** and takes a **System.Int32** value.
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+#### OutBuffer
 
 Determines the number of objects to accumulate in a buffer before any objects
 are sent through the pipeline. If you omit this parameter, objects are sent as
 they're generated.
+
+```yaml
+Type: Int32
+Aliases: ob
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
 
 This resource management parameter is designed for advanced users. When you use
 this parameter, PowerShell sends data to the next cmdlet in batches of
@@ -242,10 +308,19 @@ blocks that use the `Write-Host` cmdlet. The display alternates in batches of
 
 #### OutVariable
 
-The alias for **OutVariable** is **ov**.
-
 Stores output objects from the command in the specified variable in addition
 to sending the output along the pipeline.
+
+```yaml
+Type: String
+Aliases: ov
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
 
 To add the output to the variable, instead of replacing any output that might
 already be stored there, type a plus sign (`+`) before the variable name.
@@ -275,10 +350,19 @@ $out
 
 #### PipelineVariable
 
-The alias for **PipelineVariable** is **pv** and takes a **string** value.
-
 **PipelineVariable** stores the value of the current pipeline element as a
 variable, for any named command as it flows through the pipeline.
+
+```yaml
+Type: String
+Aliases: pv
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
 
 Valid values are strings, the same as for any variable names.
 
@@ -317,12 +401,21 @@ range member = product".
 
 #### Verbose
 
-The alias for **Verbose** is **vb**.
-
 Displays detailed information about the operation done by the command. This
 information resembles the information in a trace or in a transaction log. This
 parameter works only when the command generates a verbose message. For example,
 this parameter works when a command contains the `Write-Verbose` cmdlet.
+
+```yaml
+Type: SwitchParameter
+Aliases: vb
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
 
 The **Verbose** parameter overrides the value of the `$VerbosePreference`
 variable for the current command. Because the default value of the
@@ -337,12 +430,22 @@ default).
 
 #### WarningAction
 
-The alias for **WarningAction** is **wa**.
-
 Determines how the cmdlet responds to a warning from the command. **Continue**
 is the default value. This parameter works only when the command generates a
 warning message. For example, this parameter works when a command contains the
 `Write-Warning` cmdlet.
+
+```yaml
+Type: ActionPreference
+Aliases: wa
+Accepted values: Suspend, Ignore, Inquire, Continue, Stop, SilentlyContinue
+
+Required: False
+Position: Named
+Default value: Depends on preference variable
+Accept pipeline input: False
+Accept wildcard characters: False
+```
 
 The **WarningAction** parameter overrides the value of the
 `$WarningPreference` variable for the current command. Because the default
@@ -369,9 +472,18 @@ command.
 
 #### WarningVariable
 
-The alias for **WarningVariable** is **wv**.
-
 Stores warnings about the command in the specified variable.
+
+```yaml
+Type: String
+Aliases: wv
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
 
 All generated warnings are saved in the variable even if the warnings aren't
 displayed to the user.
@@ -411,19 +523,24 @@ to refer to specific warnings stored in the variable.
 
 #### WhatIf
 
-The alias for **WhatIf** is **wi**.
-
 Displays a message that describes the effect of the command, instead of
 executing the command.
+
+```yaml
+Type: SwitchParameter
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
 
 The **WhatIf** parameter overrides the value of the `$WhatIfPreference` variable
 for the current command. Because the default value of the `$WhatIfPreference`
 variable is 0 (disabled), **WhatIf** behavior isn't done without the
-**WhatIf** parameter. For more information, type the following command:
-
-```powershell
-Get-Help about_Preference_Variables
-```
+**WhatIf** parameter. For more information, see [about_Preference_Variables](about_Preference_Variables.md)
 
 `-WhatIf:$true` has the same effect as `-WhatIf`.
 
@@ -448,17 +565,22 @@ Target "C:\ps-test\date.csv".
 
 #### Confirm
 
-The alias for **Confirm** is **cf**.
-
 Prompts you for confirmation before executing the command.
+
+```yaml
+Type: SwitchParameter
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: Depends on preference variable
+Accept pipeline input: False
+Accept wildcard characters: False
+```
 
 The **Confirm** parameter overrides the value of the `$ConfirmPreference`
 variable for the current command. The default value is true. For more
-information, type the following command:
-
-```powershell
-Get-Help about_Preference_Variables
-```
+information, see [about_Preference_Variables](about_Preference_Variables.md)
 
 `-Confirm:$true` has the same effect as `-Confirm`.
 
