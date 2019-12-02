@@ -167,7 +167,7 @@ it displays the time before the path.
 
 ```powershell
 Set-Item -Path Function:prompt -Value {
-  'PS '+ $(Get-Date -Format t) + " " + $(Get-Location) + '> '
+  'PS '+ (Get-Date -Format t) + " " + (Get-Location) + '> '
   }
 ```
 
