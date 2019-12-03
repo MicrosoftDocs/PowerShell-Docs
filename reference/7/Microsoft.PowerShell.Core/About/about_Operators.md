@@ -106,6 +106,41 @@ Special operators have specific use-cases that do not fit into any other
 operator group. For example, special operators allow you to run commands,
 change a value's data type, or retrieve elements from an array.
 
+#### Grouping operator `( )`
+
+As in other languages, `(...)` serves to override operator precedence in
+expressions. For example: `(1 + 2) / 3`
+
+However, in PowerShell, there are additional behaviors.
+
+- `(...)` allows you to let output from a _command_ participate in an expression. For example:
+
+  ```powershell
+  PS> (Get-Item *.txt).Count -gt 10
+  True
+  ```
+
+- When used as the first segment of a pipeline, wrapping a command or
+  expression in parentheses invariably causes _enumeration_ of the expression
+  result. if the parentheses wrap a _command_, it is run to completion with all
+  output _collected in memory_ before the results are sent through the
+  pipeline.
+
+#### Subexpression operator `$( )`
+
+Returns the result of one or more statements. For a single result, returns a
+scalar. For multiple results, returns an array. Use this when you want to use
+an expression within another expression. For example, to embed the results of
+command in a string expression.
+
+```powershell
+PS> "Today is $(Get-Date)"
+Today is 12/02/2019 13:15:20
+
+PS> "Folder list: $((dir c:\ -dir).Name -join ', ')"
+Folder list: Program Files, Program Files (x86), Users, Windows
+```
+
 #### Array subexpression operator `@( )`
 
 Returns the result of one or more statements as an array. If there is only one
@@ -400,15 +435,6 @@ npm install || Remove-Item -Recurse ./node_modules
 
 For more information, see [About_Pipeline_Chain_Operators](About_Pipeline_Chain_Operators.md).
 
-#### Member access operator `.`
-
-Accesses the properties and methods of an object.
-
-```powershell
-$myProcess.peakWorkingSet
-(Get-Process PowerShell).kill()
-```
-
 #### Range operator `..`
 
 Represents the sequential integers in an integer array, given an upper, and
@@ -448,6 +474,15 @@ B
 A
 ```
 
+#### Member access operator `.`
+
+Accesses the properties and methods of an object.
+
+```powershell
+$myProcess.peakWorkingSet
+(Get-Process PowerShell).kill()
+```
+
 #### Static member operator `::`
 
 Calls the static properties operator and methods of a .NET Framework class. To
@@ -456,16 +491,6 @@ of the `Get-Member` cmdlet.
 
 ```powershell
 [datetime]::now
-```
-
-#### Subexpression operator `$( )`
-
-Returns the result of one or more statements. For a single result, returns a
-scalar. For multiple results, returns an array.
-
-```powershell
-$($x * 23)
-$(Get-CimInstance win32_Directory)
 ```
 
 #### Ternary operator `? <if-true> : <if-false>`
