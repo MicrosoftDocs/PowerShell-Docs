@@ -3,11 +3,12 @@ external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 08/22/2019
+ms.date: 12/03/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/invoke-webrequest?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Invoke-WebRequest
 ---
+
 # Invoke-WebRequest
 
 ## SYNOPSIS
@@ -28,7 +29,7 @@ Invoke-WebRequest [-UseBasicParsing] [-Uri] <Uri> [-WebSession <WebRequestSessio
  [-Proxy <Uri>] [-ProxyCredential <PSCredential>] [-ProxyUseDefaultCredentials] [-Body <Object>]
  [-Form <IDictionary>] [-ContentType <String>] [-TransferEncoding <String>] [-InFile <String>]
  [-OutFile <String>] [-PassThru] [-Resume] [-PreserveAuthorizationOnRedirect]
- [-SkipHeaderValidation]  [<CommonParameters>]
+ [-SkipHeaderValidation] [<CommonParameters>]
 ```
 
 ### StandardMethodNoProxy
@@ -43,7 +44,7 @@ Invoke-WebRequest [-UseBasicParsing] [-Uri] <Uri> [-WebSession <WebRequestSessio
  [-MaximumRetryCount <Int32>] [-RetryIntervalSec <Int32>] [-Method <WebRequestMethod>] -NoProxy
  [-Body <Object>] [-Form <IDictionary>] [-ContentType <String>] [-TransferEncoding <String>]
  [-InFile <String>] [-OutFile <String>] [-PassThru] [-Resume] [-PreserveAuthorizationOnRedirect]
- [-SkipHeaderValidation]  [<CommonParameters>]
+ [-SkipHeaderValidation] [<CommonParameters>]
 ```
 
 ### CustomMethod
@@ -59,7 +60,7 @@ Invoke-WebRequest [-UseBasicParsing] [-Uri] <Uri> [-WebSession <WebRequestSessio
  [-ProxyCredential <PSCredential>] [-ProxyUseDefaultCredentials] [-Body <Object>]
  [-Form <IDictionary>] [-ContentType <String>] [-TransferEncoding <String>] [-InFile <String>]
  [-OutFile <String>] [-PassThru] [-Resume] [-PreserveAuthorizationOnRedirect]
- [-SkipHeaderValidation]  [<CommonParameters>]
+ [-SkipHeaderValidation] [<CommonParameters>]
 ```
 
 ### CustomMethodNoProxy
@@ -74,7 +75,7 @@ Invoke-WebRequest [-UseBasicParsing] [-Uri] <Uri> [-WebSession <WebRequestSessio
  [-MaximumRetryCount <Int32>] [-RetryIntervalSec <Int32>] -CustomMethod <String> -NoProxy
  [-Body <Object>] [-Form <IDictionary>] [-ContentType <String>] [-TransferEncoding <String>]
  [-InFile <String>] [-OutFile <String>] [-PassThru] [-Resume] [-PreserveAuthorizationOnRedirect]
- [-SkipHeaderValidation]  [<CommonParameters>]
+ [-SkipHeaderValidation] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -88,7 +89,7 @@ This cmdlet was introduced in PowerShell 3.0.
 
 ### Example 1: Send a web request
 
-This command uses the `Invoke-WebRequest` cmdlet to send a web request to the Bing.com site.
+This example uses the `Invoke-WebRequest` cmdlet to send a web request to the Bing.com site.
 
 ```powershell
 $response = Invoke-WebRequest -URI https://www.bing.com/search?q=how+many+feet+in+a+mile
@@ -106,8 +107,8 @@ To Value   5280
 
 The first command issues the request and saves the response in the `$response` variable.
 
-The second command gets any **InputField** where the **name** property is like "* Value". The
-filtered results are piped to `Select-Object` to select the **name** and **value** properties.
+The second command gets any **InputField** where the **Name** property is like `"* Value"`. The
+filtered results are piped to `Select-Object` to select the **Name** and **Value** properties.
 
 ### Example 2: Use a stateful web service
 
@@ -144,15 +145,18 @@ The call to `$ProfileResponse` by itself shows the `BasicHtmlWebResponseObject` 
 
 ### Example 3: Get links from a web page
 
+This example gets the links in a web page. It uses the `Invoke-WebRequest` cmdlet to get the web
+page content. Then it uses the **Links** property of the `BasicHtmlWebResponseObject` that
+`Invoke-WebRequest` returns, and the **Href** property of each link.
+
 ```powershell
 (Invoke-WebRequest -Uri "https://aka.ms/pscore6-docs").Links.Href
 ```
 
-This command gets the links in a web page. It uses the `Invoke-WebRequest` cmdlet to get the web
-page content. Then it users the **Links** property of the `BasicHtmlWebResponseObject` that
-`Invoke-WebRequest` returns, and the Href property of each link.
-
 ### Example 4: Writes the response content to a file using the encoding defined in the requested page.
+
+This example uses the `Invoke-WebRequest` cmdlet to retrieve the web page content of a PowerShell
+documentation page.
 
 ```powershell
 $Response = Invoke-WebRequest -Uri "https://aka.ms/pscore6-docs"
@@ -165,18 +169,20 @@ finally {
 }
 ```
 
-This command uses the `Invoke-WebRequest` cmdlet to retrieve the web page content of an msdn page.
-
-The first command retrieves the page and saves the response object in a variable.
+The first command retrieves the page and saves the response object in the `$Response` variable.
 
 The second command creates a `StreamWriter` to use to write the response content to a file. The
 **Encoding** property of the response object is used to set the encoding for the file.
 
 The final few commands write the **Content** property to the file then disposes the `StreamWriter`.
 
-Note that the **Encoding** property is null if the web request does not return text content.
+Note that the **Encoding** property is null if the web request doesn't return text content.
 
 ### Example 5: Submit a multipart/form-data file
+
+This example uses the `Invoke-WebRequest` cmdlet upload a file as a `multipart/form-data`
+submission. The file `c:\document.txt` is submitted as the form field `document` with the
+`Content-Type` of `text/plain`.
 
 ```powershell
 $FilePath = 'c:\document.txt'
@@ -197,11 +203,10 @@ $MultipartContent.Add($FileContent)
 $Response = Invoke-WebRequest -Body $MultipartContent -Method 'POST' -Uri 'https://api.contoso.com/upload'
 ```
 
-This example uses the `Invoke-WebRequest` cmdlet upload a file as a `multipart/form-data`
-submission. The file `c:\document.txt` is submitted as the form field `document` with the
-`Content-Type` of `text/plain`.
-
 ### Example 6: Simplified Multipart/Form-Data Submission
+
+Some APIs require `multipart/form-data` submissions to upload files and mixed content. This example
+demonstrates updating a user profile.
 
 ```powershell
 $Uri = 'https://api.contoso.com/v2/profile'
@@ -216,11 +221,9 @@ $Form = @{
 $Result = Invoke-RestMethod -Uri $Uri -Method Post -Form $Form
 ```
 
-Some APIs require `multipart/form-data` submissions to upload files and mixed content. This example
-demonstrates updating a user profile. The profile form requires these fields: `firstName`,
-`lastName`, `email`, `avatar`, `birthday`, and `hobbies`. The API is expecting an image for the user
-profile pic to be supplied in the `avatar` field. The API also accepts multiple `hobbies` entries to
-be submitted in the same form.
+The profile form requires these fields: `firstName`, `lastName`, `email`, `avatar`, `birthday`, and
+`hobbies`. The API is expecting an image for the user profile pic to be supplied in the `avatar`
+field. The API also accepts multiple `hobbies` entries to be submitted in the same form.
 
 When creating the `$Form` HashTable, the key names are used as form field names. By default, the
 values of the HashTable are converted to strings. If a **System.IO.FileInfo** value is present, the
@@ -237,7 +240,7 @@ each list item.
 
 When `Invoke-WebRequest` encounters a non-success HTTP message (404, 500, etc.), it returns no
 output and throws a terminating error. To catch the error and view the **StatusCode** you can
-enclose execution in a `try/catch` block. The following example shows how to accomplish this.
+enclose execution in a `try/catch` block.
 
 ```powershell
 try
@@ -257,7 +260,7 @@ $StatusCode
 404
 ```
 
-The first command calls `Invoke-WebRequest` with an **ErrorAction** of **Stop**, which forces
+The command calls `Invoke-WebRequest` with an **ErrorAction** of **Stop**, which forces
 `Invoke-WebRequest` to throw a terminating error on any failed requests. The terminating error is
 caught by the `catch` block which retrieves the **StatusCode** from the **Exception** object.
 
@@ -296,7 +299,7 @@ Specifies the explicit authentication type to use for the request. The default i
 
 Available Authentication Options:
 
-- **None**: This is the default option when **Authentication** is not supplied; no explicit
+- **None**: This is the default option when **Authentication** isn't supplied; no explicit
   authentication is used.
 - **Basic**: Requires **Credential**. The credentials are sent in an RFC 7617 Basic Authentication
   header in the format of `base64(user:password)`.
@@ -336,8 +339,8 @@ is added to the URI as query parameters. For other request types (such as POST),
 the value of the request body in the standard `name=value` format.
 
 The **Body** parameter may also accept a `System.Net.Http.MultipartFormDataContent` object. This
-facilitates `multipart/form-data` requests. When a **MultipartFormDataContent** object is supplied for
-**Body**, any Content related headers supplied to the **ContentType**, **Headers**, or
+facilitates `multipart/form-data` requests. When a **MultipartFormDataContent** object is supplied
+for **Body**, any Content related headers supplied to the **ContentType**, **Headers**, or
 **WebSession** parameters is overridden by the Content headers of the **MultipartFormDataContent**
 object. This feature was added in PowerShell 6.0.0.
 
@@ -355,11 +358,11 @@ Accept wildcard characters: False
 
 ### -Certificate
 
-Specifies the client certificate that is used for a secure web request. Enter a variable that
+Specifies the client certificate that's used for a secure web request. Enter a variable that
 contains a certificate or a command or expression that gets the certificate.
 
 To find a certificate, use `Get-PfxCertificate` or use the `Get-ChildItem` cmdlet in the Certificate
-(`Cert:`) drive. If the certificate is not valid or does not have sufficient authority, the command
+(`Cert:`) drive. If the certificate isn't valid or doesn't have sufficient authority, the command
 fails.
 
 ```yaml
@@ -380,7 +383,7 @@ Specifies the digital public key certificate (X509) of a user account that has p
 the request. Enter the certificate thumbprint of the certificate.
 
 Certificates are used in client certificate-based authentication. They can be mapped only to local
-user accounts; they do not work with domain accounts.
+user accounts; they don't work with domain accounts.
 
 To get a certificate thumbprint, use the `Get-Item` or `Get-ChildItem` command in the PowerShell
 `Cert:` drive.
@@ -405,7 +408,7 @@ Accept wildcard characters: False
 Specifies the content type of the web request.
 
 If this parameter is omitted and the request method is POST, `Invoke-WebRequest` sets the content
-type to `application/x-www-form-urlencoded`. Otherwise, the content type is not specified in the
+type to `application/x-www-form-urlencoded`. Otherwise, the content type isn't specified in the
 call.
 
 **ContentType** is overridden when a **MultipartFormDataContent** object is supplied for **Body**.
@@ -448,15 +451,15 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: Current user
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -CustomMethod
 
-Specifies custom method used for the web request. This can be used with the Request Method required
-by the endpoint is not an available option on the **Method**. **Method** and **CustomMethod** cannot
+Specifies a custom method used for the web request. This can be used if the Request Method required
+by the endpoint isn't an available option on the **Method**. **Method** and **CustomMethod** can't
 be used together.
 
 This example makes a `TEST` HTTP request to the API:
@@ -480,8 +483,8 @@ Accept wildcard characters: False
 ### -DisableKeepAlive
 
 Indicates that the cmdlet sets the **KeepAlive** value in the HTTP header to **False**. By default,
-**KeepAlive** is True. **KeepAlive** establishes a persistent connection to the server to facilitate
-subsequent requests.
+**KeepAlive** is **True**. **KeepAlive** establishes a persistent connection to the server to
+facilitate subsequent requests.
 
 ```yaml
 Type: SwitchParameter
@@ -498,7 +501,7 @@ Accept wildcard characters: False
 ### -Form
 
 Converts a dictionary to a `multipart/form-data` submission. **Form** may not be used with **Body**.
-If **ContentType** is used, it is ignored.
+If **ContentType** is used, it's ignored.
 
 The keys of the dictionary are used as the form field names. By default, form values are converted
 to string values.
@@ -516,7 +519,7 @@ $Form = @{
 
 If the value is a collection type, such Arrays or Lists, the for field are submitted multiple times.
 The values of the list are treated as strings by default. If the value is a **System.IO.FileInfo**
-object, then the binary file contents are submitted. Nested collections are not supported.
+object, then the binary file contents are submitted. Nested collections aren't supported.
 
 ```powershell
 $Form = @{
@@ -525,9 +528,9 @@ $Form = @{
 }
 ```
 
-In the above example the `tags` field are supplied 3 times in the form, once for each of `Vacation`,
-`Italy`, and `2017`. The `pictures` field is also submitted once for each file in the `2017-Italy`
-folder. The binary contents of the files in that folder are submitted as the values.
+In the above example the `tags` field are supplied three times in the form, once for each of
+`Vacation`, `Italy`, and `2017`. The `pictures` field is also submitted once for each file in the
+`2017-Italy` folder. The binary contents of the files in that folder are submitted as the values.
 
 This feature was added in PowerShell 6.1.0.
 
@@ -547,7 +550,7 @@ Accept wildcard characters: False
 
 Specifies the headers of the web request. Enter a hash table or dictionary.
 
-To set UserAgent headers, use the **UserAgent** parameter. You cannot use this parameter to specify
+To set UserAgent headers, use the **UserAgent** parameter. You can't use this parameter to specify
 **User-Agent** or cookie headers.
 
 Content related headers, such as `Content-Type` is overridden when a **MultipartFormDataContent**
@@ -650,7 +653,7 @@ Accept wildcard characters: False
 
 ### -NoProxy
 
-Indicates that the cmdlet should not use a proxy to reach the destination. When you need to bypass
+Indicates that the cmdlet shouldn't use a proxy to reach the destination. When you need to bypass
 the proxy configured in the environment, use this switch. This feature was added in PowerShell
 6.0.0.
 
@@ -727,7 +730,7 @@ Accept wildcard characters: False
 
 ### -Proxy
 
-Specifies a proxy server for the request, rather than connecting directly to the Internet resource.
+Specifies a proxy server for the request, rather than connecting directly to the internet resource.
 Enter the URI of a network proxy server.
 
 ```yaml
@@ -747,11 +750,11 @@ Accept wildcard characters: False
 Specifies a user account that has permission to use the proxy server that is specified by the
 **Proxy** parameter. The default is the current user.
 
-Type a user name, such as "User01" or "Domain01\User01", "User@Domain.Com", or enter a
+Type a user name, such as **User01** or **Domain01\User01**, **User@Domain.Com**, or enter a
 `PSCredential` object, such as one generated by the `Get-Credential` cmdlet.
 
-This parameter is valid only when the **Proxy** parameter is also used in the command. You cannot
-use the **ProxyCredential** and **ProxyUseDefaultCredentials** parameters in the same command.
+This parameter is valid only when the **Proxy** parameter is also used in the command. You can't use
+the **ProxyCredential** and **ProxyUseDefaultCredentials** parameters in the same command.
 
 ```yaml
 Type: PSCredential
@@ -760,7 +763,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: Current user
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -770,8 +773,8 @@ Accept wildcard characters: False
 Indicates that the cmdlet uses the credentials of the current user to access the proxy server that
 is specified by the **Proxy** parameter.
 
-This parameter is valid only when the **Proxy** parameter is also used in the command. You cannot
-use the **ProxyCredential** and **ProxyUseDefaultCredentials** parameters in the same command.
+This parameter is valid only when the **Proxy** parameter is also used in the command. You can't use
+the **ProxyCredential** and **ProxyUseDefaultCredentials** parameters in the same command.
 
 ```yaml
 Type: SwitchParameter
@@ -787,7 +790,8 @@ Accept wildcard characters: False
 
 ### -Resume
 
-Performs a best effort attempt to resume downloading a partial file. **Resume** requires **OutFile**.
+Performs a best effort attempt to resume downloading a partial file. **Resume** requires
+**OutFile**.
 
 **Resume** only operates on the size of the local file and remote file and performs no other
 validation that the local file and the remote file are the same.
@@ -850,8 +854,8 @@ When you specify a session variable, `Invoke-WebRequest` creates a web request s
 assigns it to a variable with the specified name in your PowerShell session. You can use the
 variable in your session as soon as the command completes.
 
-Unlike a remote session, the web request session is not a persistent connection. It is an object
-that contains information about the connection and the request, including cookies, credentials, the
+Unlike a remote session, the web request session is not a persistent connection. It's an object that
+contains information about the connection and the request, including cookies, credentials, the
 maximum redirection value, and the user agent string. You can use it to share state and data among
 web requests.
 
@@ -861,7 +865,7 @@ establishing the new connection. To override a value in the web request session,
 parameter, such as **UserAgent** or **Credential**. Parameter values take precedence over values in
 the web request session.
 
-You cannot use the **SessionVariable** and **WebSession** parameters in the same command.
+You can't use the **SessionVariable** and **WebSession** parameters in the same command.
 
 ```yaml
 Type: String
@@ -906,8 +910,8 @@ This switch should be used for sites that require header values that do not conf
 Specifying this switch disables validation to allow the value to be passed unchecked. When
 specified, all headers are added without validation.
 
-This switch disables validation for values passed to the **ContentType**, **Headers** and **UserAgent**
-parameters.
+This switch disables validation for values passed to the **ContentType**, **Headers** and
+**UserAgent** parameters.
 
 This feature was added in PowerShell 6.0.0.
 
@@ -1023,7 +1027,7 @@ Accept wildcard characters: False
 
 ### -Uri
 
-Specifies the Uniform Resource Identifier (URI) of the Internet resource to which the web request is
+Specifies the Uniform Resource Identifier (URI) of the internet resource to which the web request is
 sent. Enter a URI. This parameter supports HTTP or HTTPS only.
 
 This parameter is required. The parameter name **Uri** is optional.
@@ -1061,7 +1065,7 @@ Accept wildcard characters: False
 ### -UseDefaultCredentials
 
 Indicates that the cmdlet uses the credentials of the current user to send the web request. This
-cannot be used with **Authentication** or **Credential** and may not be supported on all platforms.
+can't be used with **Authentication** or **Credential** and may not be supported on all platforms.
 
 ```yaml
 Type: SwitchParameter
@@ -1083,11 +1087,11 @@ The default user agent is similar to
 `Mozilla/5.0 (Windows NT 10.0; Microsoft Windows 10.0.15063; en-US) PowerShell/6.0.0` with slight
 variations for each operating system and platform.
 
-To test a website with the standard user agent string that is used by most Internet browsers, use
+To test a website with the standard user agent string that is used by most internet browsers, use
 the properties of the [PSUserAgent](/dotnet/api/microsoft.powershell.commands.psuseragent) class,
 such as Chrome, FireFox, InternetExplorer, Opera, and Safari.
 
-For example, the following command uses the user agent string for Internet Explorer
+For example, the following command uses the user agent string for Internet Explorer:
 
 ```powershell
 Invoke-WebRequest -Uri https://website.com/ -UserAgent ([Microsoft.PowerShell.Commands.PSUserAgent]::InternetExplorer)
@@ -1114,17 +1118,17 @@ To override a value in the web request session, use a cmdlet parameter, such as 
 related headers, such as `Content-Type`, are also be overridden when a **MultipartFormDataContent**
 object is supplied for **Body**.
 
-Unlike a remote session, the web request session is not a persistent connection. It is an object
-that contains information about the connection and the request, including cookies, credentials, the
+Unlike a remote session, the web request session isn't a persistent connection. It's an object that
+contains information about the connection and the request, including cookies, credentials, the
 maximum redirection value, and the user agent string. You can use it to share state and data among
 web requests.
 
-To create a web request session, enter a variable name (without a dollar sign) in the value of the
+To create a web request session, enter a variable name, without a dollar sign, in the value of the
 **SessionVariable** parameter of an `Invoke-WebRequest` command. `Invoke-WebRequest` creates the
 session and saves it in the variable. In subsequent commands, use the variable as the value of the
 **WebSession** parameter.
 
-You cannot use the **SessionVariable** and **WebSession** parameters in the same command.
+You can't use the **SessionVariable** and **WebSession** parameters in the same command.
 
 ```yaml
 Type: WebRequestSession
@@ -1142,7 +1146,8 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -1157,6 +1162,13 @@ You can pipe the body of a web request to `Invoke-WebRequest`.
 ## NOTES
 
 Beginning with PowerShell 6.0.0 `Invoke-WebRequest` supports basic parsing only.
+
+For more information about the **Microsoft.PowerShell.Commands.BasicHtmlWebResponseObject** object
+type, see
+[BasicHtmlWebResponseObject](/dotnet/api/microsoft.powershell.commands.basichtmlwebresponseobject).
+
+For more information about how .NET provides proxy services to PowerShell, see
+[Accessing the Internet Through a Proxy](/dotnet/framework/network-programming/accessing-the-internet-through-a-proxy).
 
 ## RELATED LINKS
 
