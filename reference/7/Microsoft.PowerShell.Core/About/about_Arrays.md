@@ -34,7 +34,7 @@ $A = 22,5,10,8,12,9,80
 ```
 
 You can also create and initialize an array by using the range operator (`..`).
-The following example creates an array named containing the values 5 through 8.
+The following example creates an array containing the values 5 through 8.
 
 ```powershell
 $B = 5..8
@@ -44,8 +44,8 @@ As a result, `$B` contains four values: 5, 6, 7, and 8.
 
 When no data type is specified, PowerShell creates each array as an object
 array (**System.Object[]**). To determine the data type of an array, use the
-GetType() method. For example, to determine the data type of the `$a` array,
-type:
+**GetType()** method. For example, to determine the data type of the `$A`
+array, type:
 
 ```powershell
 $a.GetType()
@@ -369,8 +369,8 @@ $a = @(
 $a rank: 1
 ```
 
-Building a truly multidimensional array, in PowerShell, requires the
-assistance of the .Net Framework. Like in the following example:
+The following example shows how to create a truly multidimensional array using
+the .Net Framework.
 
 ```powershell
 [int[,]]$rank2 = [int[,]]::new(5,5)
