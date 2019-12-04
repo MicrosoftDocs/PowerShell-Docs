@@ -1,7 +1,7 @@
 ---
 keywords: PowerShell,cmdlet
 locale: en-us
-ms.date: 12/01/2017
+ms.date: 12/04/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_redirection?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Redirection
@@ -9,7 +9,6 @@ title: about_Redirection
 # About Redirection
 
 ## Short description
-
 Explains how to redirect output from PowerShell to text files.
 
 ## Long description
@@ -37,15 +36,15 @@ The redirection operators enable you to send streams of data to a file or the
 The PowerShell redirection operators use the following numbers to represent
 the available output streams:
 
-|Stream # |Description  |Introduced in |
-|---------|---------|---------|
-|1|**Success** Stream|PowerShell 2.0|
-|2|**Error** Stream|PowerShell 2.0|
-|3|**Warning** Stream|PowerShell 3.0|
-|4|**Verbose** Stream|PowerShell 3.0|
-|5|**Debug** Stream|PowerShell 3.0|
-|6|**Information** Stream|PowerShell 5.0|
-|*|All Streams|PowerShell 3.0|
+| Stream # |      Description       | Introduced in  |
+| -------- | ---------------------- | -------------- |
+| 1        | **Success** Stream     | PowerShell 2.0 |
+| 2        | **Error** Stream       | PowerShell 2.0 |
+| 3        | **Warning** Stream     | PowerShell 3.0 |
+| 4        | **Verbose** Stream     | PowerShell 3.0 |
+| 5        | **Debug** Stream       | PowerShell 3.0 |
+| 6        | **Information** Stream | PowerShell 5.0 |
+| *        | All Streams            | PowerShell 3.0 |
 
 > [!NOTE]
 > There is also a **Progress** stream in PowerShell, but it is not used for
@@ -55,11 +54,15 @@ The PowerShell redirection operators are as follows, where `n` represents
 the stream number. The **Success** stream ( `1` ) is the default if no stream
 is specified.
 
-|Operator|Description| Syntax|
-|---------|---------|--------|
-|`>`|Send specified stream to a file.|`n>`|
-|`>>`|**Append** specified stream to a file.|`n>>`|
-|`>&1`|*Redirects* the specified stream to the **Success** stream.|`n>&1`|
+| Operator |                         Description                         | Syntax |
+| -------- | ----------------------------------------------------------- | ------ |
+| `>`      | Send specified stream to a file.                            | `n>`   |
+| `>>`     | **Append** specified stream to a file.                      | `n>>`  |
+| `>&1`    | *Redirects* the specified stream to the **Success** stream. | `n>&1` |
+
+> [!NOTE]
+> Unlike some Unix shells, you can only redirect other streams to the
+> **Success** stream.
 
 ## Examples
 
@@ -120,7 +123,9 @@ file called `script.log`
 ```
 
 This example suppresses all information stream data. To read more about
-**Information** stream cmdlets, see [Write-Host](../../microsoft.powershell.utility/Write-Host.md) and [Write-Information](../../microsoft.powershell.utility/Write-Information.md)
+**Information** stream cmdlets, see
+[Write-Host](../../microsoft.powershell.utility/Write-Host.md) and
+[Write-Information](../../microsoft.powershell.utility/Write-Information.md)
 
 ## Notes
 
@@ -141,16 +146,20 @@ with its `Encoding` parameter.
 
 ### Potential confusion with comparison operators
 
-The `>` operator is not to be confused with the [Greater-than](about_Comparison_Operators.md#-gt) comparison operator (often denoted as `>` in other programming languages).
+The `>` operator is not to be confused with the
+[Greater-than](about_Comparison_Operators.md#-gt) comparison operator (often
+denoted as `>` in other programming languages).
 
-Depending on the objects being compared, the output using `>` can appear to be correct (because 36 is not greater than 42).
+Depending on the objects being compared, the output using `>` can appear to be
+correct (because 36 is not greater than 42).
 
 ```powershell
 PS> if (36 > 42) { "true" } else { "false" }
 false
 ```
 
-However, a check of the local filesystem can see that a file called `42` was written, with the contents `36`.
+However, a check of the local filesystem can see that a file called `42` was
+written, with the contents `36`.
 
 ```powershell
 PS> dir
@@ -175,7 +184,8 @@ The '<' operator is reserved for future use.
 + FullyQualifiedErrorId : RedirectionNotSupported
 ```
 
-If numeric comparison is the required operation, `-lt` and `-gt` should be used. See: [`-gt` Comparison Operator](about_Comparison_Operators.md#-gt)
+If numeric comparison is the required operation, `-lt` and `-gt` should be
+used. See: [`-gt` Comparison Operator](about_Comparison_Operators.md#-gt)
 
 ## See also
 
