@@ -3,7 +3,7 @@ external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 08/26/2019
+ms.date: 12/04/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/select-string?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Select-String
@@ -19,49 +19,49 @@ Finds text in strings and files.
 ### File (Default)
 
 ```
-Select-String [-Pattern] <String[]> [-Path] <String[]> [-SimpleMatch] [-CaseSensitive] [-Quiet]
- [-List] [-NoEmphasis] [-Include <String[]>] [-Exclude <String[]>] [-NotMatch] [-AllMatches]
- [-Encoding <Encoding>] [-Context <Int32[]>] [<CommonParameters>]
+Select-String [-Culture <String>] [-Pattern] <String[]> [-Path] <String[]> [-SimpleMatch]
+ [-CaseSensitive] [-Quiet] [-List] [-NoEmphasis] [-Include <String[]>] [-Exclude <String[]>]
+ [-NotMatch] [-AllMatches] [-Encoding <Encoding>] [-Context <Int32[]>] [<CommonParameters>]
 ```
 
 ### ObjectRaw
 
 ```
-Select-String -InputObject <PSObject> [-Pattern] <String[]> -Raw [-SimpleMatch] [-CaseSensitive]
- [-List] [-NoEmphasis] [-Include <String[]>] [-Exclude <String[]>] [-NotMatch] [-AllMatches]
- [-Encoding <Encoding>] [-Context <Int32[]>] [<CommonParameters>]
+Select-String [-Culture <String>] -InputObject <PSObject> [-Pattern] <String[]> -Raw [-SimpleMatch]
+ [-CaseSensitive] [-List] [-NoEmphasis] [-Include <String[]>] [-Exclude <String[]>] [-NotMatch]
+ [-AllMatches] [-Encoding <Encoding>] [-Context <Int32[]>] [<CommonParameters>]
 ```
 
 ### Object
 
 ```
-Select-String -InputObject <PSObject> [-Pattern] <String[]> [-SimpleMatch] [-CaseSensitive] [-Quiet]
- [-List] [-NoEmphasis] [-Include <String[]>] [-Exclude <String[]>] [-NotMatch] [-AllMatches]
- [-Encoding <Encoding>] [-Context <Int32[]>] [<CommonParameters>]
+Select-String [-Culture <String>] -InputObject <PSObject> [-Pattern] <String[]> [-SimpleMatch]
+ [-CaseSensitive] [-Quiet] [-List] [-NoEmphasis] [-Include <String[]>] [-Exclude <String[]>]
+ [-NotMatch] [-AllMatches] [-Encoding <Encoding>] [-Context <Int32[]>] [<CommonParameters>]
 ```
 
 ### FileRaw
 
 ```
-Select-String [-Pattern] <String[]> [-Path] <String[]> -Raw [-SimpleMatch] [-CaseSensitive] [-List]
- [-NoEmphasis] [-Include <String[]>] [-Exclude <String[]>] [-NotMatch] [-AllMatches]
- [-Encoding <Encoding>] [-Context <Int32[]>] [<CommonParameters>]
+Select-String [-Culture <String>] [-Pattern] <String[]> [-Path] <String[]> -Raw [-SimpleMatch]
+ [-CaseSensitive] [-List] [-NoEmphasis] [-Include <String[]>] [-Exclude <String[]>] [-NotMatch]
+ [-AllMatches] [-Encoding <Encoding>] [-Context <Int32[]>] [<CommonParameters>]
 ```
 
 ### LiteralFile
 
 ```
-Select-String [-Pattern] <String[]> -LiteralPath <String[]> [-SimpleMatch] [-CaseSensitive] [-Quiet]
- [-List] [-NoEmphasis] [-Include <String[]>] [-Exclude <String[]>] [-NotMatch] [-AllMatches]
- [-Encoding <Encoding>] [-Context <Int32[]>] [<CommonParameters>]
+Select-String [-Culture <String>] [-Pattern] <String[]> -LiteralPath <String[]> [-SimpleMatch]
+ [-CaseSensitive] [-Quiet] [-List] [-NoEmphasis] [-Include <String[]>] [-Exclude <String[]>]
+ [-NotMatch] [-AllMatches] [-Encoding <Encoding>] [-Context <Int32[]>] [<CommonParameters>]
 ```
 
 ### LiteralFileRaw
 
 ```
-Select-String [-Pattern] <String[]> -LiteralPath <String[]> -Raw [-SimpleMatch] [-CaseSensitive]
- [-List] [-NoEmphasis] [-Include <String[]>] [-Exclude <String[]>] [-NotMatch] [-AllMatches]
- [-Encoding <Encoding>] [-Context <Int32[]>] [<CommonParameters>]
+Select-String [-Culture <String>] [-Pattern] <String[]> -LiteralPath <String[]> -Raw [-SimpleMatch]
+ [-CaseSensitive] [-List] [-NoEmphasis] [-Include <String[]>] [-Exclude <String[]>] [-NotMatch]
+ [-AllMatches] [-Encoding <Encoding>] [-Context <Int32[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -398,6 +398,34 @@ Aliases:
 Required: False
 Position: Named
 Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Culture
+
+Specifies a culture to match the specified pattern. The **Culture** parameter must be used with the
+**SimpleMatch** parameter. The default behavior uses the culture of the current PowerShell runspace
+(session).
+
+The **Culture** parameter uses tab completion to scroll through the list of arguments that specify
+the available cultures. To list all available arguments, use the following command:
+
+`(Get-Command Select-String).Parameters.Culture.Attributes.ValidValues`
+
+For more information about .NET CultureInfo, see
+[CultureInfo](/dotnet/api/system.globalization.cultureinfo).
+
+The **Culture** parameter was introduced in PowerShell 7.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: Culture of the current PowerShell session
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
