@@ -7,8 +7,9 @@ ms.date: 07/19/2019
 # Installing PowerShell Core on Linux
 
 Supports [Ubuntu 16.04][u16], [Ubuntu 18.04][u1804], [Ubuntu 18.10][u1810], [Ubuntu 19.04][u1904],
- [Debian 8][deb8],  [Debian 9][deb9], [CentOS 7][cos], [Red Hat Enterprise Linux (RHEL) 7][rhel7],
- [openSUSE 42.3][opensuse], [openSUSE Leap 15][opensuse], [Fedora 27][fedora], [Fedora 28][fedora],
+ [Debian 8][deb8], [Debian 9][deb9], [Debian 10][deb10], [CentOS 7][cos],
+ [Red Hat Enterprise Linux (RHEL) 7][rhel7], [openSUSE 42.3][opensuse],
+ [openSUSE Leap 15][opensuse], [Fedora 27][fedora], [Fedora 28][fedora],
  and [Arch Linux][arch].
 
 For Linux distributions that aren't officially supported, you can try to install PowerShell using
@@ -25,6 +26,7 @@ All packages are available on our GitHub [releases][] page. After the package is
 [u1904]: #ubuntu-1904
 [deb8]: #debian-8
 [deb9]: #debian-9
+[deb10]: #debian-10
 [cos]: #centos-7
 [rhel7]: #red-hat-enterprise-linux-rhel-7
 [opensuse]: #opensuse
