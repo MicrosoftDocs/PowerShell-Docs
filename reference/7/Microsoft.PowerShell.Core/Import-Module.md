@@ -3,7 +3,7 @@ external help file: System.Management.Automation.dll-Help.xml
 keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Core
-ms.date: 08/15/2019
+ms.date: 12/02/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/import-module?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Import-Module
@@ -427,17 +427,51 @@ For more information about command precedence in PowerShell, see [about_Command_
 ### Example 10: Import a minimum version of a module
 
 ```powershell
-Import-Module -Name PSWorkflow -MinimumVersion 3.0.0.0
+Import-Module -Name PowerShellGet -MinimumVersion 2.0.0
 ```
 
-This command imports the **PSWorkflow** module. It uses the **MinimumVersion** parameter of
-`Import-Module` to import only version 3.0.0.0 or greater of the module.
+This command imports the **PowerShellGet** module. It uses the **MinimumVersion** parameter of
+`Import-Module` to import only version 2.0.0 or greater of the module.
 
 You can also use the **RequiredVersion** parameter to import a particular version of a module, or
 use the **Module** and **Version** parameters of the `#Requires` keyword to require a particular
 version of a module in a script.
 
-### Example 11: Import a module from a remote computer
+### Example 11: Import using a fully qualified name
+
+This example imports a specific version of a module using the FullyQualifiedName.
+
+```powershell
+PS> Get-Module -ListAvailable PowerShellGet | Select-Object Name, Version
+
+Name          Version
+----          -------
+PowerShellGet 2.2.1
+PowerShellGet 2.1.3
+PowerShellGet 2.1.2
+PowerShellGet 1.0.0.1
+
+PS> Import-Module -FullyQualifiedName @{ModuleName = 'PowerShellGet'; ModuleVersion = '2.1.3' }
+```
+
+### Example 12: Import using a fully qualified path
+
+This example imports a specific version of a module using the fully qualified path.
+
+```powershell
+PS> Get-Module -ListAvailable PowerShellGet | Select-Object Path
+
+Path
+----
+C:\Program Files\PowerShell\Modules\PowerShellGet\2.2.1\PowerShellGet.psd1
+C:\program files\powershell\6\Modules\PowerShellGet\PowerShellGet.psd1
+C:\Program Files\WindowsPowerShell\Modules\PowerShellGet\2.1.2\PowerShellGet.psd1
+C:\Program Files\WindowsPowerShell\Modules\PowerShellGet\1.0.0.1\PowerShellGet.psd1
+
+PS> Import-Module -Name 'C:\Program Files\PowerShell\Modules\PowerShellGet\2.2.1\PowerShellGet.psd1'
+```
+
+### Example 13: Import a module from a remote computer
 
 This example shows how to use the `Import-Module` cmdlet to import a module from a remote computer.
 This command uses the Implicit Remoting feature of PowerShell.
@@ -509,7 +543,7 @@ The fifth command uses the `Get-NetFirewallRule` cmdlet to get Windows Remote Ma
 rules on the Server01 computer. This command is equivalent to using the `Invoke-Command` cmdlet to
 run a `Get-NetFirewallRule` command on the session in the `$s` variable.
 
-### Example 12: Manage storage on a remote computer without the Windows operating system
+### Example 14: Manage storage on a remote computer without the Windows operating system
 
 In this example, because the administrator of the computer has installed the Module Discovery WMI
 provider, the CIM commands can use the default values, which are designed for the provider.
@@ -781,7 +815,16 @@ Accept wildcard characters: False
 
 ### -FullyQualifiedName
 
-Specifies the fully qualified name of the module specification.
+Specifies the fully qualified name of the module as a hash table. The value can be a combination of
+strings and hash tables. The hash table has the following keys.
+
+- `ModuleName` - **Required** Specifies the module name.
+- `GUID` - **Optional** Specifies the GUID of the module.
+- It's also **Required** to specify one of the three below keys. These keys
+  can't be used together.
+  - `ModuleVersion` - Specifies a minimum acceptable version of the module.
+  - `RequiredVersion` - Specifies an exact, required version of the module.
+  - `MaximumVersion` - Specifies the maximum acceptable version of the module.
 
 ```yaml
 Type: ModuleSpecification[]

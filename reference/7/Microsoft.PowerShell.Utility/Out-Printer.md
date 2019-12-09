@@ -8,6 +8,7 @@ online version: https://docs.microsoft.com/powershell/module/microsoft.powershel
 schema: 2.0.0
 title: Out-Printer
 ---
+
 # Out-Printer
 
 ## SYNOPSIS
@@ -30,12 +31,12 @@ specified.
 
 ## EXAMPLES
 
-### Example 1 - send a file to be printed on the default printer
+### Example 1 - Send a file to be printed on the default printer
 
 This example shows how to print a file, even though `Out-Printer` does not have a **Path** parameter.
 
 ```powershell
-Get-Help ./readme.txt | Out-Printer
+Get-Content -Path ./readme.txt | Out-Printer
 ```
 
 `Get-Content`gets the contents of the `readme.txt` file in the current directory and pipes it to

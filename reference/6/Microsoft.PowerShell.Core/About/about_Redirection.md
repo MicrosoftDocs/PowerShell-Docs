@@ -1,7 +1,7 @@
 ---
 keywords: PowerShell,cmdlet
 locale: en-us
-ms.date: 12/01/2017
+ms.date: 12/04/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_redirection?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Redirection
@@ -36,15 +36,15 @@ The redirection operators enable you to send streams of data to a file or the
 The PowerShell redirection operators use the following numbers to represent
 the available output streams:
 
-|Stream # |Description  |Introduced in |
-|---------|---------|---------|
-|1|**Success** Stream|PowerShell 2.0|
-|2|**Error** Stream|PowerShell 2.0|
-|3|**Warning** Stream|PowerShell 3.0|
-|4|**Verbose** Stream|PowerShell 3.0|
-|5|**Debug** Stream|PowerShell 3.0|
-|6|**Information** Stream|PowerShell 5.0|
-|*|All Streams|PowerShell 3.0|
+| Stream # |      Description       | Introduced in  |
+| -------- | ---------------------- | -------------- |
+| 1        | **Success** Stream     | PowerShell 2.0 |
+| 2        | **Error** Stream       | PowerShell 2.0 |
+| 3        | **Warning** Stream     | PowerShell 3.0 |
+| 4        | **Verbose** Stream     | PowerShell 3.0 |
+| 5        | **Debug** Stream       | PowerShell 3.0 |
+| 6        | **Information** Stream | PowerShell 5.0 |
+| *        | All Streams            | PowerShell 3.0 |
 
 > [!NOTE]
 > There is also a **Progress** stream in PowerShell, but it is not used for
@@ -54,11 +54,15 @@ The PowerShell redirection operators are as follows, where `n` represents
 the stream number. The **Success** stream ( `1` ) is the default if no stream
 is specified.
 
-|Operator|Description| Syntax|
-|---------|---------|--------|
-|`>`|Send specified stream to a file.|`n>`|
-|`>>`|**Append** specified stream to a file.|`n>>`|
-|`>&1`|*Redirects* the specified stream to the **Success** stream.|`n>&1`|
+| Operator |                         Description                         | Syntax |
+| -------- | ----------------------------------------------------------- | ------ |
+| `>`      | Send specified stream to a file.                            | `n>`   |
+| `>>`     | **Append** specified stream to a file.                      | `n>>`  |
+| `>&1`    | *Redirects* the specified stream to the **Success** stream. | `n>&1` |
+
+> [!NOTE]
+> Unlike some Unix shells, you can only redirect other streams to the
+> **Success** stream.
 
 ## Examples
 
