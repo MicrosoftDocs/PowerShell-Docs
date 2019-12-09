@@ -3,7 +3,7 @@ external help file: System.Management.Automation.dll-Help.xml
 keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Core
-ms.date: 11/04/2019
+ms.date: 12/09/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/start-job?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Start-Job
@@ -75,20 +75,23 @@ the working directory as needed.
 
 ### Example 1: Start a background job
 
-This example starts a job that runs in the background on the local computer.
+This example starts a background job that runs on the local computer.
 
 ```powershell
-Start-Job -ScriptBlock {Get-Process}
+Start-Job -ScriptBlock { Get-Process -Name powershell }
 ```
 
 ```Output
 Id  Name   PSJobTypeName   State     HasMoreData   Location    Command
 --  ----   -------------   -----     -----------   --------    -------
-1   Job1   BackgroundJob   Running   True          localhost   Get-Process
+1   Job1   BackgroundJob   Running   True          localhost   Get-Process -Name powershell
 ```
 
-`Start-Job` uses the **ScriptBlock** parameter to run `Get-Process` as a background job. The job
-information is displayed and PowerShell returns to a prompt while the job runs in the background.
+`Start-Job` uses the **ScriptBlock** parameter to run `Get-Process` as a background job. The
+**Name** parameter specifies to find PowerShell processes, `powershell`. The job information is
+displayed and PowerShell returns to a prompt while the job runs in the background.
+
+To view the job's output, use the `Receive-Job` cmdlet. For example, `Receive-Job -Id 1`.
 
 ### Example 2: Start a job using Invoke-Command
 
@@ -210,15 +213,38 @@ variable. The `$input` variable gets objects from the **InputObject** parameter.
 the **Name** parameter to specify the job and outputs the results. The **Keep** parameter saves the
 job output so it can be viewed again during the PowerShell session.
 
+### Example 8: Use the ArgumentList parameter to specify an array
+
+This example uses the **ArgumentList** parameter to specify an array of arguments. The array is a
+comma-separated list of process names.
+
+```powershell
+Start-Job -ScriptBlock { Get-Process -Name $args } -ArgumentList powershell, pwsh, notepad
+```
+
+```Output
+Id     Name      PSJobTypeName   State       HasMoreData     Location     Command
+--     ----      -------------   -----       -----------     --------     -------
+1      Job1      BackgroundJob   Running     True            localhost    Get-Process -Name $args
+```
+
+The `Start-Job` cmdlet uses the **ScriptBlock** parameter to run a command. `Get-Process` uses the
+**Name** parameter to specify the automatic variable `$args`. The **ArgumentList** parameter passes
+the array of process names to `$args`. The process names powershell, pwsh, and notepad are processes
+running on the local computer.
+
+To view the job's output, use the `Receive-Job` cmdlet. For example, `Receive-Job -Id 1`.
+
 ## PARAMETERS
 
 ### -ArgumentList
 
 Specifies an array of arguments, or parameter values, for the script that is specified by the
-**FilePath** parameter.
+**FilePath** parameter or a command specified with the **ScriptBlock** parameter.
 
-Because all the values that follow the **ArgumentList** parameter name are interpreted as being
-values of **ArgumentList**, specify this parameter as the last parameter in the command.
+Arguments must be passed to **ArgumentList** as single-dimension array argument. For example, a
+comma-separated list. For more information about array dimensions, see
+[about_Arrays](./about/about_arrays.md#rank).
 
 ```yaml
 Type: Object[]
@@ -558,6 +584,10 @@ the `Invoke-Command` cmdlet to run a `Start-Job` command in a session on a remot
 `Start-Job` runs in a session in the remote session.
 
 ## RELATED LINKS
+
+[about_Arrays](./about/about_arrays.md)
+
+[about_Automatic_Variables](./about/about_automatic_variables.md)
 
 [about_Jobs](./About/about_Jobs.md)
 
