@@ -81,8 +81,8 @@ Install-Module 'PSDscResources' -Verbose
 
 #### Apply the configuration to the machine
 
-> [!NOTE] To allow DSC to run, Windows needs to be configured to receive PowerShell remote commands.
-> Even when you're running a `localhost` configuration. To easily configure your environment
+> [!NOTE] To allow DSC to run, Windows needs to be configured to receive PowerShell remote commands,
+> even when you're running a `localhost` configuration. To easily configure your environment
 > correctly, just run `Set-WsManQuickConfig -Force` in an elevated PowerShell Terminal.
 
 Configuration documents (MOF files) can be applied to the machineusing the [Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration)
