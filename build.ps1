@@ -24,7 +24,16 @@ $pandocExePath = Join-Path (Join-Path $pandocDestinationPath "pandoc-$panDocVers
 # Install ThreadJob if not available
 $threadJob = Get-Module ThreadJob -ListAvailable
 if ($null -eq $threadjob) {
-    Install-Module ThreadJob -RequiredVersion 1.1.2 -Scope CurrentUser -Force
+    Install-Module ThreadJob -RequiredVersion 2.0.2 -Scope CurrentUser -Force -Verbose
+
+    $psmPathContainsUserPath = ($env:PSModulePath).Contains("$env:UserProfile\Documents\WindowsPowerShell\Modules")
+
+    if(-not $psmPathContainsUserPath)
+    {
+        $env:PSModulePath += ";$env:UserProfile\Documents\WindowsPowerShell\Modules"
+    }
+
+    Import-Module ThreadJob -Force -Verbose
 }
 
 # Find the reference folder path w.r.t the script
