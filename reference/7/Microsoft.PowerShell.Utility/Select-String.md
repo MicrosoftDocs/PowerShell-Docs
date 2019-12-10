@@ -404,17 +404,27 @@ Accept wildcard characters: False
 
 ### -Culture
 
-Specifies a culture to match the specified pattern. The **Culture** parameter must be used with the
+Specifies a culture name to match the specified pattern. The **Culture** parameter must be used with the
 **SimpleMatch** parameter. The default behavior uses the culture of the current PowerShell runspace
 (session).
+
+To get a list of all supported cultures, use `Get-Culture -ListAvailable` command.
+
+In addition, this parameter accepts the following arguments:
+
+- CurrentCulture, that is default;
+- Ordinal, that is non-linguistic binary comparison;
+- Invariant, that is culture independent comparison.
+
+With `Select-String -Culture Ordinal -CaseSensitive -SimpleMatch` command you gets fastest binary comparison.
 
 The **Culture** parameter uses tab completion to scroll through the list of arguments that specify
 the available cultures. To list all available arguments, use the following command:
 
 `(Get-Command Select-String).Parameters.Culture.Attributes.ValidValues`
 
-For more information about .NET CultureInfo, see
-[CultureInfo](/dotnet/api/system.globalization.cultureinfo).
+For more information about .NET CultureInfo.Name property, see
+[CultureInfo.Name](/dotnet/api//system.globalization.cultureinfo.name).
 
 The **Culture** parameter was introduced in PowerShell 7.
 
