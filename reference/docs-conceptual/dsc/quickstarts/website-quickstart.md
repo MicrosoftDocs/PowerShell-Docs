@@ -112,7 +112,8 @@ The `Start-DscConfiguration` cmdlet tells the [Local Configuration Manager (LCM)
 which is the engine of DSC, to apply the configuration.
 The LCM does the work of calling the DSC resources to apply the configuration.
 
-> [!NOTE] To allow DSC to run, Windows needs to be configured to receive PowerShell remote commands,
+> [!NOTE]
+> To allow DSC to run, Windows needs to be configured to receive PowerShell remote commands,
 > even when you're running a `localhost` configuration. To easily configure your environment
 > correctly, just run `Set-WsManQuickConfig -Force` in an elevated PowerShell Terminal.
 
