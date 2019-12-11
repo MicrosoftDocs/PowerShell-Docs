@@ -135,8 +135,8 @@ Configuration xVirtualMachine
 }
 ```
 
-> [NOTE!]
-> DSC doesn't currently support composite resources or nested configurations within a
+> [!NOTE]
+> DSC doesn't currently support placing composite resources or nested configurations within a
 > composite resource.
 
 ### Saving the configuration as a composite resource
