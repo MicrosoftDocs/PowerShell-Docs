@@ -6,7 +6,7 @@ title:  Quickstart - Create a website with DSC
 
 > Applies To: Windows PowerShell 4.0, Windows PowerShell 5.0
 
-# Quickstart - Create a website with DSC
+# Quickstart - Create a website with Desired State Configuration (DSC)
 
 This exercise walks through creating and applying a Desired State Configuration (DSC) configuration from start to finish.
 The example we'll use ensures that a server has the `Web-Server` (IIS) feature enabled,
@@ -70,7 +70,7 @@ Save the file as `WebsiteTest.ps1`.
 
 You can see that it looks like a PowerShell function, with the addition of the keyword **Configuration** used before the name of the function.
 
-The **Node** block specifies the target node to be configured, in this case `localhost`.
+The **Node** block specifies the target node to be configured. In this case, `localhost`.
 
 The configuration calls two [resources](../resources/resources.md), **WindowsFeature** and **File**.
 Resources do the work of ensuring that the target node is in the state defined by the configuration.
@@ -101,7 +101,7 @@ The first line makes the configuration function available in the console.
 The second line runs the configuration.
 The result is that a new folder, named `WebsiteTest` is created as a subfolder of the current folder.
 The `WebsiteTest` folder contains a file named `localhost.mof`.
-It is this file that can then be applied to the target node.
+This is the file that can then be applied to the target node.
 
 ## Apply the configuration
 
@@ -111,6 +111,10 @@ Now that you have the compiled MOF, you can apply the configuration to the targe
 The `Start-DscConfiguration` cmdlet tells the [Local Configuration Manager (LCM)](../managing-nodes/metaConfig.md),
 which is the engine of DSC, to apply the configuration.
 The LCM does the work of calling the DSC resources to apply the configuration.
+
+> [!NOTE] To allow DSC to run, Windows needs to be configured to receive PowerShell remote commands,
+> even when you're running a `localhost` configuration. To easily configure your environment
+> correctly, just run `Set-WsManQuickConfig -Force` in an elevated PowerShell Terminal.
 
 In a PowerShell console, navigate to the same folder where you saved your configuration and run the following command:
 
