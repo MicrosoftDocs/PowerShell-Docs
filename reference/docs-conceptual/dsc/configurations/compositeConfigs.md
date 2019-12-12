@@ -57,4 +57,4 @@ nest a configuration one layer deep.
 
 ## See Also
 
-* [Composite resources--Using a DSC configuration as a resource](../resources/authoringResourceComposite.md)
+- [Composite resources--Using a DSC configuration as a resource](../resources/authoringResourceComposite.md)

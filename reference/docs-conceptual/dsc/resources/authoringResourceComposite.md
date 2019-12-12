@@ -13,7 +13,7 @@ resources and setting a vast number of properties. To help address this complexi
 Windows PowerShell Desired State Configuration (DSC) configuration as a resource for other
 configurations. This is called a composite resource. A composite resource is a DSC configuration that
 takes parameters. The parameters of the configuration act as the properties of the resource. The
-configuration is saved as a file with a **.schema.psm1** extension. It takes the place of both the
+configuration is saved as a file with a `.schema.psm1` extension. It takes the place of both the
 MOF schema, and the resource script in a typical DSC resource. For more information about DSC
 resources, see [Windows PowerShell Desired State Configuration Resources](resources.md).
 
@@ -142,17 +142,17 @@ Configuration xVirtualMachine
 ### Saving the configuration as a composite resource
 
 To use the parameterized configuration as a DSC resource, save it in a directory structure like that
-of any other MOF-based resource, and name it with a **.schema.psm1** extension. For this example,
-we'll name the file **xVirtualMachine.schema.psm1**. You also need to create a manifest named
-**xVirtualMachine.psd1** that contains the following line.
+of any other MOF-based resource, and name it with a `.schema.psm1` extension. For this example,
+we'll name the file `xVirtualMachine.schema.psm1`. You also need to create a manifest named
+`xVirtualMachine.psd1` that contains the following line.
 
 ```powershell
 RootModule = 'xVirtualMachine.schema.psm1'
 ```
 
 > [!NOTE]
-> This is in addition to **MyDscResources.psd1**, the module manifest for all resources under the
-> **MyDscResources** folder.
+> This is in addition to `MyDscResources.psd1`, the module manifest for all resources under the
+> `MyDscResources` folder.
 
 When you are done, the folder structure should be as follows.
 
@@ -167,7 +167,7 @@ $env: psmodulepath
 ```
 
 The resource is now discoverable by using the `Get-DscResource` cmdlet, and its properties are
-discoverable by either that cmdlet or by using **Ctrl+Space** autocomplete in the Windows
+discoverable by either that cmdlet or by using <kbd>Ctrl</kbd>+<kbd>Space</kbd> autocomplete in the Windows
 PowerShell ISE.
 
 ## Using the composite resource
@@ -252,5 +252,5 @@ if ($PsDscContext.RunAsUser) {
 
 ### Concepts
 
-* [Writing a custom DSC resource with MOF](authoringResourceMOF.md)
-* [Get Started with Windows PowerShell Desired State Configuration](../overview/overview.md)
+- [Writing a custom DSC resource with MOF](authoringResourceMOF.md)
+- [Get Started with Windows PowerShell Desired State Configuration](../overview/overview.md)
