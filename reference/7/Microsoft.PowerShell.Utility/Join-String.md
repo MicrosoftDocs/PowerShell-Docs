@@ -120,6 +120,7 @@ Get-Service -Name se* | Join-String -Property Name -Separator "`r`n`t" -OutputPr
 ```
 
 ```Output
+
     seclogon
     SecurityHealthService
     SEMgrSvc
