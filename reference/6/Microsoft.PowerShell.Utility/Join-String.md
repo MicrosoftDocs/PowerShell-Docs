@@ -116,11 +116,11 @@ For more information about automatic variables and substrings, see
 This example joins service names with each service on a separate line and indented by a tab.
 
 ```powershell
-Get-Service -Name se* | Join-String -Property Name -Separator "`r`n`t" -OutputPrefix "`t"
+Get-Service -Name se* | Join-String -Property Name -Separator "`r`n`t" -OutputPrefix "Services:`n`t"
 ```
 
 ```Output
-
+Services:
     seclogon
     SecurityHealthService
     SEMgrSvc
@@ -138,7 +138,7 @@ asterisk (`*`) is a wildcard for any character.
 The objects are sent down the pipeline to `Join-String` that uses the **Property** parameter to
 specify the service names. The **Separator** parameter specifies three special characters that
 represent a carriage return (`` `r ``), newline (`` `n ``), and tab (`` `t ``). The **OutputPrefix**
-inserts a tab before the first line of output.
+inserts a label **Services:** with a new line and tab before the first line of output.
 
 For more information about special characters, see
 [about_Special_Characters](..//microsoft.powershell.core/about/about_special_characters.md).
