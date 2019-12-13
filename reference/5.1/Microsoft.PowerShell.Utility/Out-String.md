@@ -176,9 +176,8 @@ You can send objects down the pipeline to `Out-String`.
 
 ## NOTES
 
-The cmdlets that contain the `Out` verb that don't format objects; they just render objects and send
-them to the specified display destination. If you send an unformatted object to an `Out` cmdlet, the
-cmdlet sends it to a formatting cmdlet before rendering it.
+The cmdlets that contain the `Out` verb don't format objects. The `Out` cmdlets send objects to the
+formatter for the specified display destination.
 
 The `Out` cmdlets don't have parameters that accept names or file paths. To send the output of a
 PowerShell command to an `Out` cmdlet, use the pipeline. Or, you can store data in a variable and

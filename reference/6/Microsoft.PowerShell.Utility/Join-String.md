@@ -143,16 +143,15 @@ inserts a label **Services:** with a new line and tab before the first line of o
 For more information about special characters, see
 [about_Special_Characters](..//microsoft.powershell.core/about/about_special_characters.md).
 
-### Example 4
+### Example 4: Create a class definition from an object
 
-This example generates a PowerShell class definition from a custom **PSOBject** by joining the names
-of the properties.
+This example generates a PowerShell class definition using an existing object as a template.
 
 This code sample uses splatting to reduce the line length and improve readability. For more
 information, see [about_Splatting](../Microsoft.PowerShell.Core/About/about_Splatting.md).
 
 ```powershell
-$obj = ([pscustomobject] @{Name = "Joe"; Age = 42}).PSObject.Properties
+$obj = [pscustomobject] @{Name = "Joe"; Age = 42}
 $parms = @{
   Property = "Name"
   FormatString = '  ${0}'
@@ -160,7 +159,7 @@ $parms = @{
   OutputSuffix = "`n}`n"
   Separator = "`n"
 }
-$obj | Join-String @parms
+$obj.PSObject.Properties | Join-String @parms
 ```
 
 ```Output
