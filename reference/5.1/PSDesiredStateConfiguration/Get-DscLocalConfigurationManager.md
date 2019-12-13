@@ -37,7 +37,7 @@ computer.
 Get-DscLocalConfigurationManager
 ```
 
-```output
+```Output
 ActionAfterReboot              : ContinueConfiguration
 AgentId                        : 47edd8c9-2798-4827-839a-b35cc87e69fb
 AllowModuleOverWrite           : False
@@ -79,7 +79,7 @@ $Session = New-CimSession -ComputerName "Server01" -Credential ACCOUNTS\PattiFul
 Get-DscLocalConfigurationManager -CimSession $Session
 ```
 
-```output
+```Output
 ActionAfterReboot              : ContinueConfiguration
 AgentId                        : 169dfa57-a7f9-43be-a7a5-9dd06587e052
 AllowModuleOverWrite           : False
@@ -174,10 +174,9 @@ Accept wildcard characters: False
 
 ### CommonParameters
 
-This cmdlet supports the common parameters: **-Debug**, **-ErrorAction**, **-ErrorVariable**,
-**-InformationAction**, **-InformationVariable**, **-OutVariable**, **-OutBuffer**,
-**-PipelineVariable**, **-Verbose**, **-WarningAction**, and **-WarningVariable**. For more
-information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+-InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
+-WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
