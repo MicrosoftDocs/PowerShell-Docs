@@ -70,7 +70,7 @@ PSComputerName
 This command gets LCM settings for the local computer.
 
 For more information on the individual attributes of the output, see the
-[Configuring the Local Configuration Manager](../../docs-conceptual/dsc/managing-nodes/metaconfig#basic-settings) documentation.
+[Configuring the Local Configuration Manager](../../docs-conceptual/dsc/managing-nodes/metaconfig.md#basic-settings) documentation.
 
 ### Example 2: Get LCM settings for a specified computer
 
