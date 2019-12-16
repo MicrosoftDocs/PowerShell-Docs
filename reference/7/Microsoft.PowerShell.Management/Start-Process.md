@@ -102,6 +102,7 @@ $startExe.verbs
 ```Output
 open
 runas
+runasuser
 ```
 
 The example uses `New-Object` to create a **System.Diagnostics.ProcessStartInfo** object for
