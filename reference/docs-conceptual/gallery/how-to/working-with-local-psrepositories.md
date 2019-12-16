@@ -4,6 +4,7 @@ contributor:  JKeithB
 keywords:  gallery,powershell,cmdlet,psgallery,psget
 title:  Working with local PSRepositories
 ---
+
 # Working with Private PowerShellGet Repositories
 
 The PowerShellGet module support repositories other than the PowerShell Gallery.
@@ -23,7 +24,7 @@ cmdlets to install the latest version of PowerShellGet into your local repositor
 There are two ways to create a local PSRepository: NuGet server or file share. Each type has
 advantages and disadvantages:
 
-NuGet Server
+### NuGet Server
 
 | Advantages| Disadvantages |
 | --- | --- |
@@ -32,7 +33,7 @@ NuGet Server
 | NuGet supports metadata in `.Nupkg` packages | Publishing requires API Key management & maintenance |
 | Provides search, package administration, etc. | |
 
-File Share
+### File Share
 
 | Advantages| Disadvantages |
 | --- | --- |
@@ -144,7 +145,7 @@ Example:
 
 ```powershell
 # Publish from the PSGallery to your local Repository
-Save-Package -Name 'PackageName' -Provider Nuget -Source https://www.powershellgallery.com/api/v2 -Path '\\localhost\PSRepoLocal\'
+Save-Package -Name 'PackageName' -Provider NuGet -Source https://www.powershellgallery.com/api/v2 -Path '\\localhost\PSRepoLocal\'
 ```
 
 If your local PSRepository is web-based, it requires an additional step that uses nuget.exe to publish.
@@ -208,7 +209,7 @@ Publish-Module -Path 'F:\OfflinePowershellGet' -Repository LocalPsRepo -NuGetApi
 Publish-Module -Path 'F:\OfflinePowerShellGet' -Repository LocalPsRepo -NuGetApiKey 'AnyStringWillDo'
 ```
 
-## PowerShellGet repositories using Packaging solutions
+## Use Packaging solutions to host PowerShellGet repositories
 
 You can also use packaging solutions like Azure Artifacts to host a private or public PowerShellGet
 repository. For more information and instructions, see the [Azure Artifacts documentation](https://docs.microsoft.com/azure/devops/artifacts/tutorials/private-powershell-library).
