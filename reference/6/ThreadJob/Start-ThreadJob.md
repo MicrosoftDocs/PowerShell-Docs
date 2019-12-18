@@ -30,7 +30,8 @@ Start-ThreadJob [-FilePath] <String> [-Name <String>] [-InitializationScript <Sc
 ## DESCRIPTION
 
 `Start-ThreadJob` creates background jobs similar to the `Start-Job` cmdlet. The main difference is
-that the jobs which are created run in separate threads within the local process.
+that the jobs which are created run in separate threads within the local process. By default, the
+jobs use the current working directory of the caller that started the job.
 
 The cmdlet also supports a **ThrottleLimit** parameter to limit the number of jobs running at one
 time. As more jobs are started, they are queued and wait until the current number of jobs drops
@@ -116,7 +117,7 @@ Accept wildcard characters: False
 
 ### -InitializationScript
 
-Specifies commands that run before the job starts. Enclose the commands in braces ( { } ) to create
+Specifies commands that run before the job starts. Enclose the commands in braces (`{}`) to create
 a script block.
 
 Use this parameter to prepare the session in which the job runs. For example, you can use it to add
@@ -176,9 +177,9 @@ Accept wildcard characters: False
 
 ### -ScriptBlock
 
-Specifies the commands to run in the background job. Enclose the commands in braces ( { } ) to
-create a script block. Use the `$Input` automatic variable to access the value of the
-**InputObject** parameter. This parameter is required.
+Specifies the commands to run in the background job. Enclose the commands in braces (`{}`) to create
+a script block. Use the `$Input` automatic variable to access the value of the **InputObject**
+parameter. This parameter is required.
 
 ```yaml
 Type: System.Management.Automation.ScriptBlock
@@ -213,7 +214,8 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
