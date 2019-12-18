@@ -6,16 +6,14 @@ online version: https://docs.microsoft.com/powershell/module/microsoft.powershel
 schema: 2.0.0
 title: about_Splatting
 ---
+
 # About Splatting
 
 ## SHORT DESCRIPTION
+
 Describes how to use splatting to pass parameters to commands in PowerShell.
 
 ## LONG DESCRIPTION
-
-[This topic was contributed by Rohn Edwards of Gulfport, Mississippi, a system
-administrator and the winner of the Advanced Division of the 2012 Scripting
-Games. Revised for Windows PowerShell 3.0.]
 
 Splatting is a method of passing a collection of parameter values to a command
 as unit. PowerShell associates each value in the collection with a command
@@ -24,7 +22,7 @@ which look like standard variables, but begin with an At symbol (`@`) instead
 of a dollar sign (`$`). The At symbol tells PowerShell that you are passing a
 collection of values, instead of a single value.
 
-Splatting makes your commands shorter and easier to read. You can re-use the
+Splatting makes your commands shorter and easier to read. You can reuse the
 splatting values in different command calls and use splatting to pass parameter
 values from the `$PSBoundParameters` automatic variable to other scripts and
 functions.
@@ -34,7 +32,7 @@ all parameters of a command.
 
 ## SYNTAX
 
-```
+```powershell
 <CommandName> <optional parameters> @<HashTable> <optional parameters>
 <CommandName> <optional parameters> @<Array> <optional parameters>
 ```
@@ -47,7 +45,7 @@ parameter list.
 When splatting, you do not need to use a hash table or an array to pass all
 parameters. You may pass some parameters by using splatting and pass others by
 position or by parameter name. Also, you can splat multiple objects in a single
-command just so you pass no more than one value for each parameter.
+command so you don't pass more than one value for each parameter.
 
 ## SPLATTING WITH HASH TABLES
 
@@ -71,7 +69,7 @@ table of parameter-name and parameter-value pairs and stores it in the
 variable in a command with splatting. The At symbol (`@HashArguments`) replaces
 the dollar sign (`$HashArguments`) in the command.
 
-To provide a value for the WhatIf switch parameter, use `$True` or `$False`.
+To provide a value for the **WhatIf** switch parameter, use `$True` or `$False`.
 
 ```powershell
 $HashArguments = @{
@@ -115,7 +113,7 @@ Copy-Item @ArrayArguments -WhatIf
 
 ## EXAMPLES
 
-This example shows how to re-use splatted values in different commands. The
+This example shows how to reuse splatted values in different commands. The
 commands in this example use the `Write-Host` cmdlet to write messages to the
 host program console. It uses splatting to specify the foreground and
 background colors.
@@ -281,6 +279,11 @@ FileVersionInfo    : File:             C:\Windows\System32\WindowsPowerShell
 ```
 
 ## NOTES
+
+If you make a function into an advanced function by using either the
+**CmdletBinding** or **Parameter** attributes, the `$args` automatic variable
+is no longer available in the function. Advanced functions require explicit
+parameter definition.
 
 PowerShell Desired State Configuration (DSC) was not designed to use splatting.
 You cannot use splatting to pass values into a DSC resource. For more
