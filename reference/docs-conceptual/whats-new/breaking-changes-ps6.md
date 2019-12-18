@@ -1,5 +1,5 @@
 ---
-ms.date:  11/15/2019
+ms.date:  12/18/2019
 keywords:  powershell,core
 title:  Breaking Changes for PowerShell 6.0
 ---
@@ -10,10 +10,12 @@ title:  Breaking Changes for PowerShell 6.0
 
 ### PowerShell Workflow
 
-[PowerShell Workflow][workflow] is a feature in Windows PowerShell that builds on top of [Windows Workflow Foundation (WF)][workflow-foundation] that enables the creation of robust runbooks for long-running or parallelized tasks.
+[PowerShell Workflow][workflow] is a feature in Windows PowerShell that builds on top of
+[Windows Workflow Foundation (WF)][workflow-foundation] that enables the creation of robust runbooks
+for long-running or parallelized tasks.
 
-Due to the lack of support for Windows Workflow Foundation in .NET Core, we will not continue to
-support PowerShell Workflow in PowerShell Core.
+Due to the lack of support for Windows Workflow Foundation in .NET Core, we are not supporting
+PowerShell Workflow in PowerShell Core.
 
 In the future, we would like to enable native parallelism/concurrency in the PowerShell language
 without the need for PowerShell Workflow.
@@ -67,6 +69,11 @@ functionality with new functionality and a redesigned syntax:
 
 Due to the use of unsupported APIs, `Microsoft.PowerShell.LocalAccounts` has been removed from
 PowerShell Core until a better solution is found.
+
+### `New-WebServiceProxy` cmdlet removed
+
+.NET Core does not support the Windows Communication Framework, which provide services for using the
+SOAP protocol. This cmdlet was removed because it requires SOAP.
 
 ### `*-Computer` cmdlets
 
