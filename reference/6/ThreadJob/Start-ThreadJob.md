@@ -58,12 +58,14 @@ Id   Name   PSJobTypeName   State        HasMoreData   Location     Command
 
 ### Example 2 - Compare the performance of Start-Job and Start-ThreadJob
 
-This example shows the difference between `Start-Job` and `Start-ThreadJob`.
+This example shows the difference between `Start-Job` and `Start-ThreadJob`. The jobs run the
+`Start-Sleep` cmdlet for 1 second. Since the jobs run in parallel, the total execution time
+is about 1 second, plus any time required to create the jobs.
 
 ```powershell
 # start five background jobs each running 1 second
-Measure-Command {1..5 | % {Start-Job {Sleep 1}} | Wait-Job} | Select TotalSeconds
-Measure-Command {1..5 | % {Start-ThreadJob {Sleep 1}} | Wait-Job} | Select TotalSeconds
+Measure-Command {1..5 | % {Start-Job {Start-Sleep 1}} | Wait-Job} | Select-Object TotalSeconds
+Measure-Command {1..5 | % {Start-ThreadJob {Start-Sleep 1}} | Wait-Job} | Select-Object TotalSeconds
 ```
 
 ```Output
@@ -73,11 +75,11 @@ TotalSeconds
    1.5735008
 ```
 
-As shown above, `Start-Job` takes about 4.8 seconds to create five jobs. `Start-ThreadJob` is 8
-times faster, taking about 0.6 seconds to create five jobs. The results may vary in your environment
-but the relative improvement should be the same.
+After subtracting 1 second for execution time, you can see that `Start-Job` takes about 4.8 seconds
+to create five jobs. `Start-ThreadJob` is 8 times faster, taking about 0.6 seconds to create five
+jobs. The results may vary in your environment but the relative improvement should be the same.
 
-### Example 3 - Create jobs using **InputObject**
+### Example 3 - Create jobs using InputObject
 
 In this example, the script block uses the `$input` variable to receive input from the
 **InputObject** parameter. This can also be done by piping objects to `Start-ThreadJob`.
