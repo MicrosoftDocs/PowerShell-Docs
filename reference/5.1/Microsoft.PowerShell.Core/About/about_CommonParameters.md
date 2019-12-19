@@ -141,8 +141,8 @@ executing the command.
 
 `-ErrorAction:Stop` displays the error message and stops executing the command.
 
-`-ErrorAction:Suspend` isn't supported on PowerShell Core as it is only
-available for workflows.
+`-ErrorAction:Suspend` suspends execution of a workflow. You are presented with
+ a nested command prompt from which you can inspect the suspended state.
 
 > [!NOTE]
 > The **ErrorAction** parameter overrides, but does not replace the value of

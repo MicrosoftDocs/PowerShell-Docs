@@ -222,7 +222,7 @@
               href: gallery/how-to/managing-profile/managing-account.md
             - name: Managing API Keys
               href: gallery/how-to/managing-profile/creating-apikeys.md
-        - name: Working with Local PowerShellGet Repositories
+        - name: Working with Private PowerShellGet Repositories
           href: gallery/how-to/working-with-local-psrepositories.md
     - name: Concepts
       items:
