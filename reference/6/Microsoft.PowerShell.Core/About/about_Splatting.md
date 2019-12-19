@@ -32,7 +32,7 @@ all parameters of a command.
 
 ## SYNTAX
 
-```powershell
+```
 <CommandName> <optional parameters> @<HashTable> <optional parameters>
 <CommandName> <optional parameters> @<Array> <optional parameters>
 ```
