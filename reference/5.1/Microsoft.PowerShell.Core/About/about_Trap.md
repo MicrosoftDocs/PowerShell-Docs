@@ -6,9 +6,11 @@ online version: https://docs.microsoft.com/powershell/module/microsoft.powershel
 schema: 2.0.0
 title: about_Trap
 ---
+
 # About Trap
 
 ## Short description
+
 Describes a keyword that handles a terminating error.
 
 ## Long description
@@ -280,6 +282,11 @@ Remove-Item -ErrorAction Stop ThisFileDoesNotExist
 trap { "whoops 1"; continue }
 trap { "whoops 2"; continue }
 ```
+
+> [!IMPORTANT]
+> A Trap statement is scoped to where it compiles. If you have a Trap statement
+> inside a dot sourced script or function, when the dot sourced script or
+> function exits, all Trap statements inside are removed.
 
 ### Using the `break` and `continue` keywords
 
