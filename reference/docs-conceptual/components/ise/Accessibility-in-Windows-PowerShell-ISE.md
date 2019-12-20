@@ -103,17 +103,17 @@ You can use the following keyboard shortcuts when you run scripts in the Script 
 You can use the following keyboard shortcuts to customize the view in Windows PowerShell ISE. They
 are accessible from all the panes in the application.
 
-|           Action           |           Keyboard Shortcut           |
-| -------------------------- | ------------------------------------- |
-| **Go to Console Pane**     | <kbd>CTRL</kbd>+<kbd>D</kbd>          |
-| **Go to Script Pane**      | <kbd>CTRL</kbd>+<kbd>I</kbd>          |
-| **Show Script Pane**       | <kbd>CTRL</kbd>+<kbd>R</kbd>          |
-| **Hide Script Pane**       | <kbd>CTRL</kbd>+<kbd>R</kbd>          |
-| **Move Script Pane Up**    | <kbd>CTRL</kbd>+<kbd>1</kbd>          |
-| **Move Script Pane Right** | <kbd>CTRL</kbd>+<kbd>2</kbd>          |
-| **Maximize Script Pane**   | <kbd>CTRL</kbd>+<kbd>3</kbd>          |
-| **Zoom In**                | <kbd>CTRL</kbd>+<kbd>PLUS</kbd> SIGN  |
-| **Zoom Out**               | <kbd>CTRL</kbd>+<kbd>MINUS</kbd> SIGN |
+|           Action           |         Keyboard Shortcut        |
+| -------------------------- | -------------------------------- |
+| **Go to Console Pane**     | <kbd>CTRL</kbd>+<kbd>D</kbd>     |
+| **Go to Script Pane**      | <kbd>CTRL</kbd>+<kbd>I</kbd>     |
+| **Show Script Pane**       | <kbd>CTRL</kbd>+<kbd>R</kbd>     |
+| **Hide Script Pane**       | <kbd>CTRL</kbd>+<kbd>R</kbd>     |
+| **Move Script Pane Up**    | <kbd>CTRL</kbd>+<kbd>1</kbd>     |
+| **Move Script Pane Right** | <kbd>CTRL</kbd>+<kbd>2</kbd>     |
+| **Maximize Script Pane**   | <kbd>CTRL</kbd>+<kbd>3</kbd>     |
+| **Zoom In**                | <kbd>CTRL</kbd>+<kbd>PLUS</kbd>  |
+| **Zoom Out**               | <kbd>CTRL</kbd>+<kbd>MINUS</kbd> |
 
 ## Keyboard shortcuts for debugging scripts
 
