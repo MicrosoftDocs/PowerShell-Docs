@@ -164,7 +164,7 @@ port 8081. For more information, see the description of the **Port** parameter.
 ### Example 5: Create a session based on an existing session
 
 ```powershell
-New-PSSession -Session `$s` -Credential Domain01\User01
+New-PSSession -Session $s -Credential Domain01\User01
 ```
 
 This command creates a **PSSession** with the same properties as an existing **PSSession**. You can
