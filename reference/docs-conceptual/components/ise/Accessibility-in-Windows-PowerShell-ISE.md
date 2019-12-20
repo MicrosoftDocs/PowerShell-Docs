@@ -1,5 +1,5 @@
 ---
-ms.date: 06/05/2017
+ms.date: 12/19/2019
 keywords: powershell,cmdlet
 title: Accessibility in Windows PowerShell ISE
 ---
@@ -27,8 +27,8 @@ make Windows PowerShell ISE more accessible for people with disabilities:
 
 - Keyboard Shortcuts
 
-- Syntax Coloring Table and the ability to modify several other color settings using the [$psISE.Options](object-model/The-ISEOptions-Object.md)
-  scripting object.
+- Syntax Coloring Table and the ability to modify several other color settings using the
+  [$psISE.Options](object-model/The-ISEOptions-Object.md) scripting object.
 
 - Text Size Change
 
@@ -88,15 +88,15 @@ You can use the following keyboard shortcuts when you edit text.
 
 You can use the following keyboard shortcuts when you run scripts in the Script Pane.
 
-|Action|Keyboard Shortcut|
-|----------|---------------------|
-|**New**|<kbd>CTRL</kbd>+<kbd>N</kbd>|
-|**Open**|<kbd>CTRL</kbd>+<kbd>O</kbd>|
-|**Run**|<kbd>F5</kbd>|
-|**Run Selection**|<kbd>F8</kbd>|
-|**Stop Execution**|<kbd>CTRL</kbd>+<kbd>BREAK</kbd>. <kbd>CTRL</kbd>+<kbd>C</kbd> can be used when the context is unambiguous (when there is no text selected).|
-|**Tab** (to next script)|<kbd>CTRL</kbd>+<kbd>TAB</kbd> **Note:** Tab to next script works only when you have a single PowerShell tab open, or when you have more than one PowerShell tab open, but the focus is in the Script Pane.|
-|**Tab** (to previous script)|<kbd>CTRL</kbd>+<kbd>SHIFT</kbd+<kbd>TAB</kbd> **Note:** Tab to previous script works when you have only one PowerShell tab open, or if you have more  than one PowerShell tab open, and the focus is in the Script Pane.|
+|            Action            |                                                                                                     Keyboard Shortcut                                                                                                      |
+| ---------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **New**                      | <kbd>CTRL</kbd>+<kbd>N</kbd>                                                                                                                                                                                               |
+| **Open**                     | <kbd>CTRL</kbd>+<kbd>O</kbd>                                                                                                                                                                                               |
+| **Run**                      | <kbd>F5</kbd>                                                                                                                                                                                                              |
+| **Run Selection**            | <kbd>F8</kbd>                                                                                                                                                                                                              |
+| **Stop Execution**           | <kbd>CTRL</kbd>+<kbd>BREAK</kbd>. <kbd>CTRL</kbd>+<kbd>C</kbd> can be used when the context is unambiguous (when there is no text selected).                                                                               |
+| **Tab** (to next script)     | <kbd>CTRL</kbd>+<kbd>TAB</kbd> **Note:** Tab to next script works only when you have a single PowerShell tab open, or when you have more than one PowerShell tab open, but the focus is in the Script Pane.                |
+| **Tab** (to previous script) | <kbd>CTRL</kbd>+<kbd>SHIFT</kbd>+<kbd>TAB</kbd> **Note:** Tab to previous script works when you have only one PowerShell tab open, or if you have more  than one PowerShell tab open, and the focus is in the Script Pane. |
 
 ## Keyboard shortcuts for customizing the view
 
@@ -119,34 +119,34 @@ are accessible from all the panes in the application.
 
 You can use the following keyboard shortcuts when you debug scripts.
 
-|           Action           |               Keyboard Shortcut               |                Use in                |
-| -------------------------- | --------------------------------------------- | ------------------------------------ |
-| **Run/Continue**           | <kbd>F5</kbd>                                 | Script Pane, when debugging a script |
-| **Step Into**              | <kbd>F11</kbd>                                | Script Pane, when debugging a script |
-| **Step Over**              | <kbd>F10</kbd>                                | Script Pane, when debugging a script |
-| **Step Out**               | <kbd>SHIFT</kbd>+<kbd>F11</kbd>               | Script Pane, when debugging a script |
-| **Display Call Stack**     | <kbd>CTRL</kbd>+<kbd>SHIFT</kbd+<kbd>D</kbd>  | Script Pane, when debugging a script |
-| **List Breakpoints**       | <kbd>CTRL</kbd>+<kbd>SHIFT</kbd+<kbd>L</kbd>  | Script Pane, when debugging a script |
-| **Toggle Breakpoint**      | <kbd>F9</kbd>                                 | Script Pane, when debugging a script |
-| **Remove All Breakpoints** | <kbd>CTRL</kbd>+<kbd>SHIFT</kbd+<kbd>F9</kbd> | Script Pane, when debugging a script |
-| **Stop Debugger**          | <kbd>SHIFT</kbd>+<kbd>F5</kbd>                | Script Pane, when debugging a script |
+|           Action           |               Keyboard Shortcut                |                Use in                |
+| -------------------------- | ---------------------------------------------- | ------------------------------------ |
+| **Run/Continue**           | <kbd>F5</kbd>                                  | Script Pane, when debugging a script |
+| **Step Into**              | <kbd>F11</kbd>                                 | Script Pane, when debugging a script |
+| **Step Over**              | <kbd>F10</kbd>                                 | Script Pane, when debugging a script |
+| **Step Out**               | <kbd>SHIFT</kbd>+<kbd>F11</kbd>                | Script Pane, when debugging a script |
+| **Display Call Stack**     | <kbd>CTRL</kbd>+<kbd>SHIFT</kbd>+<kbd>D</kbd>  | Script Pane, when debugging a script |
+| **List Breakpoints**       | <kbd>CTRL</kbd>+<kbd>SHIFT</kbd>+<kbd>L</kbd>  | Script Pane, when debugging a script |
+| **Toggle Breakpoint**      | <kbd>F9</kbd>                                  | Script Pane, when debugging a script |
+| **Remove All Breakpoints** | <kbd>CTRL</kbd>+<kbd>SHIFT</kbd>+<kbd>F9</kbd> | Script Pane, when debugging a script |
+| **Stop Debugger**          | <kbd>SHIFT</kbd>+<kbd>F5</kbd>                 | Script Pane, when debugging a script |
 
 > [!NOTE]
 > You can also use the keyboard shortcuts designed for the Windows PowerShell console when you debug
 > scripts in Windows PowerShell ISE. To use these shortcuts, you must type the shortcut in the
 > Console Pane and press ENTER.
 
-|                 Action                  | Keyboard Shortcut |                Use in                 |
-| --------------------------------------- | ----------------- | ------------------------------------- |
-| **Continue**                            | C                 | Console Pane, when debugging a script |
-| **Step Into**                           | S                 | Console Pane, when debugging a script |
-| **Step Over**                           | V                 | Console Pane, when debugging a script |
-| **Step Out**                            | O                 | Console Pane, when debugging a script |
-| **Repeat Last Command**(Step Into/Over) | ENTER             | Console Pane, when debugging a script |
-| **Display Call Stack**                  | K                 | Console Pane, when debugging a script |
-| **Stop Debugging**                      | Q                 | Console Pane, when debugging a script |
-| **List the Script**                     | L                 | Console Pane, when debugging a script |
-| **Display Console Debugging Commands**  | H or ?            | Console Pane, when debugging a script |
+|                 Action                  |      Keyboard Shortcut       |                Use in                 |
+| --------------------------------------- | ---------------------------- | ------------------------------------- |
+| **Continue**                            | <kbd>C</kbd>                 | Console Pane, when debugging a script |
+| **Step Into**                           | <kbd>S</kbd>                 | Console Pane, when debugging a script |
+| **Step Over**                           | <kbd>V</kbd>                 | Console Pane, when debugging a script |
+| **Step Out**                            | <kbd>O</kbd>                 | Console Pane, when debugging a script |
+| **Repeat Last Command**(Step Into/Over) | <kbd>ENTER</kbd>             | Console Pane, when debugging a script |
+| **Display Call Stack**                  | <kbd>K</kbd>                 | Console Pane, when debugging a script |
+| **Stop Debugging**                      | <kbd>Q</kbd>                 | Console Pane, when debugging a script |
+| **List the Script**                     | <kbd>L</kbd>                 | Console Pane, when debugging a script |
+| **Display Console Debugging Commands**  | <kbd>H</kbd> or <kbd>?</kbd> | Console Pane, when debugging a script |
 
 ## Keyboard shortcuts for Windows PowerShell tabs
 
@@ -156,7 +156,7 @@ You can use the following keyboard shortcuts when you use Windows PowerShell tab
 | ------------------------------- | ---------------------------------------------------------------------------------- |
 | **Close PowerShell Tab**        | <kbd>CTRL</kbd>+<kbd>W</kbd>                                                       |
 | **New PowerShell Tab**          | <kbd>CTRL</kbd>+<kbd>T</kbd>                                                       |
-| **Previous PowerShell tab**     | <kbd>CTRL</kbd>+<kbd>SHIFT</kbd+<kbd>TAB</kbd> (Only when no files are open on any PowerShell tab)                 |
+| **Previous PowerShell tab**     | <kbd>CTRL</kbd>+<kbd>SHIFT</kbd>+<kbd>TAB</kbd> (Only when no files are open on any PowerShell tab)                 |
 | **Next Windows PowerShell tab** | <kbd>CTRL</kbd>+<kbd>TAB</kbd> (Only when no files are open on any PowerShell tab) |
 
 ## Keyboard shortcuts for starting and exiting
@@ -164,10 +164,10 @@ You can use the following keyboard shortcuts when you use Windows PowerShell tab
 You can use the following keyboard shortcuts to start the Windows PowerShell console
 (**PowerShell.exe**) or to exit Windows PowerShell ISE.
 
-|                        Action                         |              Keyboard Shortcut               |
-| ----------------------------------------------------- | -------------------------------------------- |
-| **Exit**                                              | <kbd>ALT</kbd>+<kbd>F4</kbd>                 |
-| **Start PowerShell.exe** (Windows PowerShell console) | <kbd>CTRL</kbd>+<kbd>SHIFT</kbd+<kbd>P</kbd> |
+|                        Action                         |               Keyboard Shortcut               |
+| ----------------------------------------------------- | --------------------------------------------- |
+| **Exit**                                              | <kbd>ALT</kbd>+<kbd>F4</kbd>                  |
+| **Start PowerShell.exe** (Windows PowerShell console) | <kbd>CTRL</kbd>+<kbd>SHIFT</kbd>+<kbd>P</kbd> |
 
 ## Breakpoint Management
 
