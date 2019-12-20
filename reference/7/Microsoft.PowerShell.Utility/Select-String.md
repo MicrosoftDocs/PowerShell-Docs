@@ -3,7 +3,7 @@ external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 12/04/2019
+ms.date: 12/20/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/select-string?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Select-String
@@ -334,8 +334,15 @@ Indicates that the cmdlet searches for more than one match in each line of text.
 parameter, `Select-String` finds only the first match in each line of text.
 
 When `Select-String` finds more than one match in a line of text, it still emits only one
-**MatchInfo** object for the line, but the **Matches** property of the object contains all of the
+**MatchInfo** object for the line, but the **Matches** property of the object contains all the
 matches.
+
+> [!NOTE]
+> This parameter is ignored when used in combination with the **SimpleMatch** parameter. If you wish
+> to return all matches and the pattern that you are searching for contains regular expression
+> characters, you must escape those characters rather than using **SimpleMatch**. See
+> [about_Regular_Expressions](../Microsoft.PowerShell.Core/About/about_Regular_Expressions.md) for
+> more information about escaping regular expressions.
 
 ```yaml
 Type: SwitchParameter
@@ -634,8 +641,7 @@ Accept wildcard characters: True
 
 ### -Pattern
 
-Specifies the text to find on each line. Type a string or regular expression. If you type a string,
-use the **SimpleMatch** parameter.
+Specifies the text to find on each line. The pattern value is treated as a regular expression.
 
 To learn about regular expressions, see [about_Regular_Expressions](../Microsoft.PowerShell.Core/About/about_Regular_Expressions.md).
 
@@ -693,6 +699,12 @@ Accept wildcard characters: False
 Indicates that the cmdlet uses a simple match rather than a regular expression match. In a simple
 match, `Select-String` searches the input for the text in the **Pattern** parameter. It doesn't
 interpret the value of the **Pattern** parameter as a regular expression statement.
+
+Also, when **SimpleMatch** is used, the **Matches** property of the **MatchInfo** object returned is
+empty.
+
+> [!NOTE]
+> When this parameter is used with the **AllMatches** parameter, the **AllMatches** is ignored.
 
 ```yaml
 Type: SwitchParameter
