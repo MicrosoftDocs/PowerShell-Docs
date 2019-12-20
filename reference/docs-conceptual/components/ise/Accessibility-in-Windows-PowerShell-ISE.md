@@ -172,8 +172,8 @@ You can use the following keyboard shortcuts to start the Windows PowerShell con
 ## Breakpoint Management
 
 For the visually impaired, breakpoint information is available through the cmdlets for managing
-breakpoints, such as [Get-PSBreakpoint](../../../6/Microsoft.PowerShell.Utility/Get-PSBreakpoint.md)
-and [Set-PSBreakpoint](../../../6/Microsoft.PowerShell.Utility/Set-PSBreakpoint.md).
+breakpoints, such as [Get-PSBreakpoint](/reference/6/Microsoft.PowerShell.Utility/Get-PSBreakpoint.md)
+and [Set-PSBreakpoint](/reference/6/Microsoft.PowerShell.Utility/Set-PSBreakpoint.md).
 For more information please see 'How to manage breakpoints' in
 [How to Debug Scripts in the Windows PowerShell ISE](How-to-Debug-Scripts-in-Windows-PowerShell-ISE.md).
 
