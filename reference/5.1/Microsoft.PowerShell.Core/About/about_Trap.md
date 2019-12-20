@@ -285,8 +285,8 @@ trap { "whoops 2"; continue }
 
 > [!IMPORTANT]
 > A Trap statement is scoped to where it compiles. If you have a Trap statement
-> inside a dot sourced script or function, when the dot sourced script or
-> function exits, all Trap statements inside are removed.
+> inside a function or dot sourced script, when the function or dot sourced
+> script exits, all Trap statements inside are removed.
 
 ### Using the `break` and `continue` keywords
 
