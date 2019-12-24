@@ -1,5 +1,5 @@
 ---
-ms.date:  06/03/2019
+ms.date:  12/23/2019
 keywords:  powershell,cmdlet
 title:  Working with Software Installations
 ---
@@ -11,7 +11,8 @@ Applications that use alternate setup routines are not usually managed by the Wi
 Specific techniques for working with those applications depends on the installer software and
 decisions made by the application developer. For example, applications installed by copying the
 files to a folder on the computer usually cannot be managed by using techniques discussed here. You
-can manage these applications as files and folders by using the techniques discussed in [Working With Files and Folders](Working-with-Files-and-Folders.md).
+can manage these applications as files and folders by using the techniques discussed in
+[Working With Files and Folders](Working-with-Files-and-Folders.md).
 
 > [!CAUTION]
 > The **Win32_Product** class is not query optimized. Queries that use wildcard filters cause WMI to
@@ -27,13 +28,13 @@ following simple WMI query:
 
 ```powershell
 Get-CimInstance -Class Win32_Product |
-  Where-Object Name -eq "Microsoft .NET Core Runtime - 2.1.2 (x64)"
+  Where-Object Name -eq "Microsoft .NET Core Runtime - 2.1.5 (x64)"
 ```
 
 ```Output
-Name               Caption                     Vendor                 Version      IdentifyingNumber
-----               -------                     ------                 -------      -----------------
-Microsoft .NET ... Microsoft .NET Core Runt... Microsoft Corporation  16.72.26629  {ACC73072-9AD5-416C-94B...
+Name             Caption                   Vendor                    Version       IdentifyingNumber
+----             -------                   ------                    -------       -----------------
+Microsoft .NET … Microsoft .NET Core Runt… Microsoft Corporation     16.84.26919   {BEB59D04-C6DD-4926-AFE…
 ```
 
 To display all the properties of the **Win32_Product** object to the display, use the **Properties**
@@ -41,31 +42,31 @@ parameter of the formatting cmdlets, such as the `Format-List` cmdlet, with a va
 
 ```powershell
 Get-CimInstance -Class Win32_Product |
-  Where-Object Name -eq "Microsoft .NET Core Runtime - 2.1.2 (x64)" |
+  Where-Object Name -eq "Microsoft .NET Core Runtime - 2.1.5 (x64)" |
     Format-List -Property *
 ```
 
 ```Output
-Name                  : Microsoft .NET Core Runtime - 2.1.2 (x64)
-Version               : 16.72.26629
+Name                  : Microsoft .NET Core Runtime - 2.1.5 (x64)
+Version               : 16.84.26919
 InstallState          : 5
-Caption               : Microsoft .NET Core Runtime - 2.1.2 (x64)
-Description           : Microsoft .NET Core Runtime - 2.1.2 (x64)
-IdentifyingNumber     : {ACC73072-9AD5-416C-94BF-D82DDCEA0F1B}
+Caption               : Microsoft .NET Core Runtime - 2.1.5 (x64)
+Description           : Microsoft .NET Core Runtime - 2.1.5 (x64)
+IdentifyingNumber     : {BEB59D04-C6DD-4926-AFEB-410CBE2EBCE4}
 SKUNumber             :
 Vendor                : Microsoft Corporation
 AssignmentType        : 1
 HelpLink              :
 HelpTelephone         :
-InstallDate           : 20180816
+InstallDate           : 20181105
 InstallDate2          :
 InstallLocation       :
-InstallSource         : C:\ProgramData\Package Cache\{ACC73072-9AD5-416C-94BF-D82DDCEA0F1B}v16.72.26629\
+InstallSource         : C:\ProgramData\Package Cache\{BEB59D04-C6DD-4926-AFEB-410CBE2EBCE4}v16.84.26919\
 Language              : 1033
-LocalPackage          : C:\WINDOWS\Installer\414c96e.msi
-PackageCache          : C:\WINDOWS\Installer\414c96e.msi
-PackageCode           : {D20AC783-1EC5-4A58-9277-F452F5EB9AD9}
-PackageName           : dotnet-runtime-2.1.2-win-x64.msi
+LocalPackage          : C:\WINDOWS\Installer\4f97a771.msi
+PackageCache          : C:\WINDOWS\Installer\4f97a771.msi
+PackageCode           : {9A271A10-039D-49EA-8D24-043D91B9F915}
+PackageName           : dotnet-runtime-2.1.5-win-x64.msi
 ProductID             :
 RegCompany            :
 RegOwner              :
@@ -79,12 +80,12 @@ CimInstanceProperties : {Caption, Description, IdentifyingNumber, Name...}
 CimSystemProperties   : Microsoft.Management.Infrastructure.CimSystemProperties
 ```
 
-Or, you could use the `Get-CimInstance` **Filter** parameter to select only Microsoft .NET Framework
-2.0. The value of the **Filter** parameter uses WMI Query Language (WQL) syntax, not Windows
+Or, you could use the `Get-CimInstance` **Filter** parameter to select only Microsoft .NET 2.0
+Runtime. The value of the **Filter** parameter uses WMI Query Language (WQL) syntax, not Windows
 PowerShell syntax. For example:
 
 ```powershell
-Get-CimInstance -Class Win32_Product -Filter "Name='Microsoft .NET Core Runtime - 2.1.2 (x64)'" |
+Get-CimInstance -Class Win32_Product -Filter "Name='Microsoft .NET Core Runtime - 2.1.5 (x64)'" |
   Format-List -Property *
 ```
 
@@ -92,15 +93,15 @@ To list only the properties that interest you, use the **Property** parameter of
 cmdlets to list the desired properties.
 
 ```powershell
-Get-CimInstance -Class Win32_Product  -Filter "Name='Microsoft .NET Core Runtime - 2.1.2 (x64)'" |
+Get-CimInstance -Class Win32_Product  -Filter "Name='Microsoft .NET Core Runtime - 2.1.5 (x64)'" |
   Format-List -Property Name,InstallDate,InstallLocation,PackageCache,Vendor,Version,IdentifyingNumber
 ```
 
 ```Output
-Name              : Microsoft .NET Core Runtime - 2.1.2 (x64)
+Name              : Microsoft .NET Core Runtime - 2.1.5 (x64)
 InstallDate       : 20180816
 InstallLocation   :
-PackageCache      : C:\WINDOWS\Installer\414c96e.msi
+PackageCache      : C:\WINDOWS\Installer\4f97a771.msi
 Vendor            : Microsoft Corporation
 Version           : 16.72.26629
 IdentifyingNumber : {ACC73072-9AD5-416C-94BF-D82DDCEA0F1B}
@@ -111,8 +112,7 @@ IdentifyingNumber : {ACC73072-9AD5-416C-94BF-D82DDCEA0F1B}
 Because most standard applications register an uninstaller with Windows, we can work with those
 locally by finding them in the Windows registry. There is no guaranteed way to find every
 application on a system. However, it is possible to find all programs with listings displayed in
-**Add or Remove Programs**. **Add or Remove Programs** finds these applications in the following
-registry key:
+**Add or Remove Programs** in the following registry key:
 
 `HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Uninstall`.
 
@@ -128,17 +128,21 @@ Name       Provider      Root                                   CurrentLocation
 ----       --------      ----                                   ---------------
 Uninstall  Registry      HKEY_LOCAL_MACHINE\SOFTWARE\Micr...
 ```
+
 We now have a drive named "Uninstall:" that can be used to quickly and conveniently look for
 application installations. We can find the number of installed applications by counting the number
 of registry keys in the Uninstall: PowerShell drive:
 
-```
+```powershell
 (Get-ChildItem -Path Uninstall:).Count
+```
+
+```Output
 459
 ```
 
 We can search this list of applications further by using a variety of techniques, beginning with
-**Get-ChildItem**. To get a list of applications and save them in the **$UninstallableApplications**
+`Get-ChildItem`. To get a list of applications and save them in the `$UninstallableApplications`
 variable, use the following command:
 
 ```powershell
@@ -159,38 +163,42 @@ There is no guarantee that these values are unique. In the following example, tw
 appear as "Windows Media Encoder 9 Series":
 
 ```powershell
-$UninstallableApplications | Where-Object -FilterScript { $_.GetValue("DisplayName") -eq "Windows Media Encoder 9 Series"}
+$UninstallableApplications | Where-Object -FilterScript {
+  $_.GetValue("DisplayName") -eq "Microsoft Silverlight"
+}
 ```
 
 ```Output
+    Hive: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall
+
 Name                           Property
 ----                           --------
-{ACC73072-9AD5-416C-94BF-D82DD AuthorizedCDFPrefix :
-CEA0F1B}                       Comments            :
+{89F4137D-6C26-4A84-BDB8-2E5A4 AuthorizedCDFPrefix :
+BB71E00}                       Comments            :
                                Contact             :
-                               DisplayVersion      : 16.72.26629
-                               HelpLink            :
+                               DisplayVersion      : 5.1.50918.0
+                               HelpLink            : http://go.microsoft.com/fwlink/?LinkID=91955
                                HelpTelephone       :
-                               InstallDate         : 20180816
-                               InstallLocation     :
-                               InstallSource       : C:\ProgramData\Package
-                               Cache\{ACC73072-9AD5-416C-94BF-D82DDCEA0F1B}v16.72.26629\
-                               ModifyPath          : MsiExec.exe /X{ACC73072-9AD5-416C-94BF-D82DDCEA0F1B}
+                               InstallDate         : 20190115
+                               InstallLocation     : C:\Program Files\Microsoft Silverlight\
+                               InstallSource       : c:\ef64c54526db9c34cd477c103e68a254\
+                               ModifyPath          : MsiExec.exe /X{89F4137D-6C26-4A84-BDB8-2E5A4BB71E00}
                                NoModify            : 1
+                               NoRepair            : 1
                                Publisher           : Microsoft Corporation
                                Readme              :
                                Size                :
-                               EstimatedSize       : 67156
-                               SystemComponent     : 1
-                               UninstallString     : MsiExec.exe /X{ACC73072-9AD5-416C-94BF-D82DDCEA0F1B}
+                               EstimatedSize       : 236432
+                               UninstallString     : MsiExec.exe /X{89F4137D-6C26-4A84-BDB8-2E5A4BB71E00}
                                URLInfoAbout        :
                                URLUpdateInfo       :
-                               VersionMajor        : 16
-                               VersionMinor        : 72
+                               VersionMajor        : 5
+                               VersionMinor        : 1
                                WindowsInstaller    : 1
-                               Version             : 273180677
+                               Version             : 84002534
                                Language            : 1033
-                               DisplayName         : Microsoft .NET Core Runtime - 2.1.2 (x64)
+                               DisplayName         : Microsoft Silverlight
+                               sEstimatedSize2     : 79214
 ```
 
 ## Installing Applications
@@ -198,8 +206,7 @@ CEA0F1B}                       Comments            :
 You can use the **Win32_Product** class to install Windows Installer packages, remotely or locally.
 
 > [!NOTE]
-> To install an application, you must start PowerShell with the "Run as administrator"
-> option.
+> To install an application, you must start PowerShell with the "Run as administrator" option.
 
 When installing remotely, use a Universal Naming Convention (UNC) network path to specify the path
 to the .msi package, because the WMI subsystem does not understand PowerShell paths. For example, to

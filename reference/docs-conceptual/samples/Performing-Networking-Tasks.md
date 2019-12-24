@@ -1,77 +1,101 @@
 ---
-ms.date:  06/05/2017
+ms.date:  12/23/2019
 keywords:  powershell,cmdlet
 title:  Performing Networking Tasks
 ---
 # Performing Networking Tasks
 
-Because TCP/IP is the most commonly used network protocol, most low-level network protocol administration tasks involve TCP/IP. In this section, we use Windows PowerShell and WMI to do these tasks.
+Because TCP/IP is the most commonly used network protocol, most low-level network protocol
+administration tasks involve TCP/IP. In this section, we use Windows PowerShell and WMI to do these
+tasks.
 
 ## Listing IP Addresses for a Computer
 
 To get all IP addresses in use on the local computer, use the following command:
 
 ```powershell
-Get-WmiObject -Class Win32_NetworkAdapterConfiguration -Filter IPEnabled=$true -ComputerName . | Format-Table -Property IPAddress
+ Get-CimInstance -Class Win32_NetworkAdapterConfiguration -Filter IPEnabled=$true |
+  Select-Object -ExpandProperty IPAddress
 ```
 
 The output of this command differs from most property lists, because values are enclosed in braces:
 
-```output
-IPAddress
----------
-{192.168.1.80}
-{192.168.148.1}
-{192.168.171.1}
-{0.0.0.0}
+```Output
+10.0.0.1
+fe80::60ea:29a7:a233:7cb7
+2601:600:a27f:a470:f532:6451:5630:ec8b
+2601:600:a27f:a470:e167:477d:6c5c:342d
+2601:600:a27f:a470:b021:7f0d:eab9:6299
+2601:600:a27f:a470:a40e:ebce:1a8c:a2f3
+2601:600:a27f:a470:613c:12a2:e0e0:bd89
+2601:600:a27f:a470:444f:17ec:b463:7edd
+2601:600:a27f:a470:10fd:7063:28e9:c9f3
+2601:600:a27f:a470:60ea:29a7:a233:7cb7
+2601:600:a27f:a470::2ec1
 ```
 
-To understand why the braces appear, use the Get-Member cmdlet to examine the **IPAddress** property:
+To understand why the braces appear, use the `Get-Member` cmdlet to examine the **IPAddress**
+property:
 
+```powershell
+ Get-CimInstance -Class Win32_NetworkAdapterConfiguration -Filter IPEnabled=$true |
+  Get-Member -Name IPAddress
 ```
-PS> Get-WmiObject -Class Win32_NetworkAdapterConfiguration -Filter IPEnabled=$true -ComputerName . | Get-Member -Name IPAddress
 
-
-TypeName: System.Management.ManagementObject#root\cimv2\Win32_NetworkAdapterConfiguration
-
+```Output
+   TypeName: Microsoft.Management.Infrastructure.CimInstance#root/cimv2/Win32_NetworkAdapterConfiguration
 Name      MemberType Definition
 ----      ---------- ----------
-IPAddress Property   System.String[] IPAddress {get;}
+IPAddress Property   string[] IPAddress {get;}
 ```
 
-The IPAddress property for each network adapter is actually an array. The braces in the definition indicate that **IPAddress** is not a **System.String** value, but an array of **System.String** values.
+The IPAddress property for each network adapter is actually an array. The braces in the definition
+indicate that **IPAddress** is not a **System.String** value, but an array of **System.String**
+values.
 
 ## Listing IP Configuration Data
 
 To display detailed IP configuration data for each network adapter, use the following command:
 
 ```powershell
-Get-WmiObject -Class Win32_NetworkAdapterConfiguration -Filter IPEnabled=$true -ComputerName .
+Get-CimInstance -Class Win32_NetworkAdapterConfiguration -Filter IPEnabled=$true
 ```
 
-The default display for the network adapter configuration object is a very reduced set of the available information. For in-depth inspection and troubleshooting, use Select-Object or a formatting cmdlet, such as Format-List, to specify the properties to be displayed.
+The default display for the network adapter configuration object is a very reduced set of the
+available information. For in-depth inspection and troubleshooting, use `Select-Object` or a
+formatting cmdlet, such as `Format-List`, to specify the properties to be displayed.
 
-If you are not interested in IPX or WINS properties—probably the case in a modern TCP/IP network—you can use the ExcludeProperty parameter of Select-Object to hide properties with names that begin with "WINS" or "IPX:"
+If you are not interested in IPX or WINS properties—probably the case in a modern TCP/IP network—you
+can use the ExcludeProperty parameter of `Select-Object` to hide properties with names that begin with
+"WINS" or "IPX:"
 
 ```powershell
-Get-WmiObject -Class Win32_NetworkAdapterConfiguration -Filter IPEnabled=$true -ComputerName . | Select-Object -Property [a-z]* -ExcludeProperty IPX*,WINS*
+Get-CimInstance -Class Win32_NetworkAdapterConfiguration -Filter IPEnabled=$true |
+  Select-Object -ExcludeProperty IPX*,WINS*
 ```
 
-This command returns detailed information about DHCP, DNS, routing, and other minor IP configuration properties.
+This command returns detailed information about DHCP, DNS, routing, and other minor IP configuration
+properties.
 
 ## Pinging Computers
 
-You can perform a simple ping against a computer using by **Win32_PingStatus**. The following command performs the ping, but returns lengthy output:
+You can perform a simple ping against a computer using by **Win32_PingStatus**. The following
+command performs the ping, but returns lengthy output:
 
 ```powershell
-Get-WmiObject -Class Win32_PingStatus -Filter "Address='127.0.0.1'" -ComputerName .
+Get-CimInstance -Class Win32_PingStatus -Filter "Address='127.0.0.1'"
 ```
 
-A more useful form for summary information a display of the Address, ResponseTime, and StatusCode properties, as generated by the following command. The Autosize parameter of Format-Table resizes the table columns so that they display properly in Windows PowerShell.
+A more useful form for summary information a display of the Address, ResponseTime, and StatusCode
+properties, as generated by the following command. The **Autosize** parameter of `Format-Table` resizes
+the table columns so that they display properly in Windows PowerShell.
 
+```powershell
+Get-CimInstance -Class Win32_PingStatus -Filter "Address='127.0.0.1'" |
+  Format-Table -Property Address,ResponseTime,StatusCode -Autosize
 ```
-PS> Get-WmiObject -Class Win32_PingStatus -Filter "Address='127.0.0.1'" -ComputerName . | Format-Table -Property Address,ResponseTime,StatusCode -Autosize
 
+```Output
 Address   ResponseTime StatusCode
 -------   ------------ ----------
 127.0.0.1            0          0
@@ -79,21 +103,34 @@ Address   ResponseTime StatusCode
 
 A StatusCode of 0 indicates a successful ping.
 
-You can use an array to ping multiple computers with a single command. Because there is more than one address, use the **ForEach-Object** to ping each address separately:
+You can use an array to ping multiple computers with a single command. Because there is more than
+one address, use the `ForEach-Object` to ping each address separately:
 
 ```powershell
-'127.0.0.1','localhost','research.microsoft.com' | ForEach-Object -Process {Get-WmiObject -Class Win32_PingStatus -Filter ("Address='" + $_ + "'") -ComputerName .} | Select-Object -Property Address,ResponseTime,StatusCode
+'127.0.0.1','localhost','research.microsoft.com' |
+  ForEach-Object -Process {
+    Get-CimInstance -Class Win32_PingStatus -Filter ("Address='$_'") |
+      Select-Object -Property Address,ResponseTime,StatusCode
+  }
 ```
 
-You can use the same command format to ping all of the computers on a subnet, such as a private network that uses network number 192.168.1.0 and a standard Class C subnet mask (255.255.255.0)., Only addresses in the range of 192.168.1.1 through 192.168.1.254 are legitimate local addresses (0 is always reserved for the network number and 255 is a subnet broadcast address).
+You can use the same command format to ping all of the computers on a subnet, such as a private
+network that uses network number 192.168.1.0 and a standard Class C subnet mask (255.255.255.0).,
+Only addresses in the range of 192.168.1.1 through 192.168.1.254 are legitimate local addresses (0
+is always reserved for the network number and 255 is a subnet broadcast address).
 
-To represent an array of the numbers from 1 through 254 in Windows PowerShell, use the statement **1..254.** A complete subnet ping can be performed by generating the array and then adding the values onto a partial address in the ping statement:
+To represent an array of the numbers from 1 through 254 in Windows PowerShell, use the statement
+**1..254.** A complete subnet ping can be performed by generating the array and then adding the
+values onto a partial address in the ping statement:
 
 ```powershell
-1..254| ForEach-Object -Process {Get-WmiObject -Class Win32_PingStatus -Filter ("Address='192.168.1." + $_ + "'") -ComputerName .} | Select-Object -Property Address,ResponseTime,StatusCode
+1..254| ForEach-Object -Process {
+  Get-CimInstance -Class Win32_PingStatus -Filter ("Address='192.168.1.$_ '") } |
+    Select-Object -Property Address,ResponseTime,StatusCode
 ```
 
-Note that this technique for generating a range of addresses can be used elsewhere as well. You can generate a complete set of addresses in this way:
+Note that this technique for generating a range of addresses can be used elsewhere as well. You can
+generate a complete set of addresses in this way:
 
 ```powershell
 $ips = 1..254 | ForEach-Object -Process {'192.168.1.' + $_}
@@ -101,52 +138,69 @@ $ips = 1..254 | ForEach-Object -Process {'192.168.1.' + $_}
 
 ## Retrieving Network Adapter Properties
 
-Earlier in this user's guide, we mentioned that you could retrieve general configuration properties by using **Win32_NetworkAdapterConfiguration**. Although not strictly TCP/IP information, network adapter information such as MAC addresses and adapter types can be useful for understanding what is going on with a computer. To get a summary of this information, use the following command:
+Earlier in this user's guide, we mentioned that you could retrieve general configuration properties
+by using **Win32_NetworkAdapterConfiguration**. Although not strictly TCP/IP information, network
+adapter information such as MAC addresses and adapter types can be useful for understanding what is
+going on with a computer. To get a summary of this information, use the following command:
 
 ```powershell
-Get-WmiObject -Class Win32_NetworkAdapter -ComputerName .
+Get-CimInstance -Class Win32_NetworkAdapter -ComputerName .
 ```
 
 ## Assigning the DNS Domain for a Network Adapter
 
-To assign the DNS domain for automatic name resolution, use the **Win32_NetworkAdapterConfiguration SetDNSDomain** method. Because you assign the DNS domain for each network adapter configuration independently, you need to use a **ForEach-Object** statement to assign the domain to each adapter:
+To assign the DNS domain for automatic name resolution, use the **SetDNSDomain** method of the
+**Win32_NetworkAdapterConfiguration**. Because you assign the DNS domain for each network adapter
+configuration independently, you need to use a `ForEach-Object` statement to assign the domain to
+each adapter:
 
 ```powershell
-Get-WmiObject -Class Win32_NetworkAdapterConfiguration -Filter IPEnabled=$true -ComputerName . | ForEach-Object -Process { $_. SetDNSDomain('fabrikam.com') }
+Get-CimInstance -Class Win32_NetworkAdapterConfiguration -Filter IPEnabled=$true |
+  ForEach-Object -Process { $_.SetDNSDomain('fabrikam.com') }
 ```
 
-The filtering statement "IPEnabled=$true" is necessary, because even on a network that uses only TCP/IP, several of the network adapter configurations on a computer are not true TCP/IP adapters; they are general software elements supporting RAS, PPTP, QoS, and other services for all adapters and thus do not have an address of their own.
+The filtering statement `IPEnabled=$true` is necessary, because even on a network that uses only
+TCP/IP, several of the network adapter configurations on a computer are not true TCP/IP adapters;
+they are general software elements supporting RAS, PPTP, QoS, and other services for all adapters
+and thus do not have an address of their own.
 
-You can filter the command by using the **Where-Object** cmdlet, instead of using the **Get-WmiObject** filter.
+You can filter the command by using the `Where-Object` cmdlet, instead of using the
+`Get-CimInstance` filter.
 
 ```powershell
-Get-WmiObject -Class Win32_NetworkAdapterConfiguration -ComputerName . | Where-Object -FilterScript {$_.IPEnabled} | ForEach-Object -Process {$_.SetDNSDomain('fabrikam.com')}
+Get-CimInstance -Class Win32_NetworkAdapterConfiguration |
+  Where-Object {$_.IPEnabled} |
+    ForEach-Object -Process {$_.SetDNSDomain('fabrikam.com')}
 ```
 
 ## Performing DHCP Configuration Tasks
 
-Modifying DHCP details involves working with a set of network adapters, just as the DNS configuration does. There are several distinct actions you can perform by using WMI, and we will step through a few of the common ones.
+Modifying DHCP details involves working with a set of network adapters, just as the DNS
+configuration does. There are several distinct actions you can perform by using WMI, and we will
+step through a few of the common ones.
 
 ### Determining DHCP-Enabled Adapters
 
 To find the DHCP-enabled adapters on a computer, use the following command:
 
 ```powershell
-Get-WmiObject -Class Win32_NetworkAdapterConfiguration -Filter "DHCPEnabled=$true" -ComputerName .
+Get-CimInstance -Class Win32_NetworkAdapterConfiguration -Filter "DHCPEnabled=$true"
 ```
 
 To exclude adapters with IP configuration problems, you can retrieve only IP-enabled adapters:
 
 ```powershell
-Get-WmiObject -Class Win32_NetworkAdapterConfiguration -Filter "IPEnabled=$true and DHCPEnabled=$true" -ComputerName .
+Get-CimInstance -Class Win32_NetworkAdapterConfiguration -Filter "IPEnabled=$true and DHCPEnabled=$true"
 ```
 
 ### Retrieving DHCP Properties
 
-Because DHCP-related properties for an adapter generally begin with "DHCP," you can use the Property parameter of Format-Table to display only those properties:
+Because DHCP-related properties for an adapter generally begin with `DHCP`, you can use the Property
+parameter of `Format-Table` to display only those properties:
 
 ```powershell
-Get-WmiObject -Class Win32_NetworkAdapterConfiguration -Filter "DHCPEnabled=$true" -ComputerName . | Format-Table -Property DHCP*
+Get-CimInstance -Class Win32_NetworkAdapterConfiguration -Filter "DHCPEnabled=$true" |
+  Format-Table -Property DHCP*
 ```
 
 ### Enabling DHCP on Each Adapter
@@ -154,56 +208,81 @@ Get-WmiObject -Class Win32_NetworkAdapterConfiguration -Filter "DHCPEnabled=$tru
 To enable DHCP on all adapters, use the following command:
 
 ```powershell
-Get-WmiObject -Class Win32_NetworkAdapterConfiguration -Filter IPEnabled=$true -ComputerName . | ForEach-Object -Process {$_.EnableDHCP()}
+Get-CimInstance -Class Win32_NetworkAdapterConfiguration -Filter IPEnabled=$true |
+  ForEach-Object -Process {$_.EnableDHCP()}
 ```
 
-You can use the **Filter** statement "IPEnabled=$true and DHCPEnabled=$false" to avoid enabling DHCP where it is already enabled, but omitting this step will not cause errors.
+You can use the **Filter** statement `IPEnabled=$true and DHCPEnabled=$false` to avoid enabling DHCP
+where it is already enabled, but omitting this step will not cause errors.
 
 ### Releasing and Renewing DHCP Leases on Specific Adapters
 
-The **Win32_NetworkAdapterConfiguration** class has **ReleaseDHCPLease** and **RenewDHCPLease** methods. Both are used in the same way. In general, use these methods if you only need to release or renew addresses for an adapter on a specific subnet. The easiest way to filter adapters on a subnet is to choose only the adapter configurations that use the gateway for that subnet. For example, the following command releases all DHCP leases on adapters on the local computer that are obtaining DHCP leases from 192.168.1.254:
+The **Win32_NetworkAdapterConfiguration** class has **ReleaseDHCPLease** and **RenewDHCPLease**
+methods. Both are used in the same way. In general, use these methods if you only need to release or
+renew addresses for an adapter on a specific subnet. The easiest way to filter adapters on a subnet
+is to choose only the adapter configurations that use the gateway for that subnet. For example, the
+following command releases all DHCP leases on adapters on the local computer that are obtaining DHCP
+leases from 192.168.1.254:
 
 ```powershell
-Get-WmiObject -Class Win32_NetworkAdapterConfiguration -Filter "IPEnabled=$true and DHCPEnabled=$true" -ComputerName . | Where-Object -FilterScript {$_.DHCPServer -contains '192.168.1.254'} | ForEach-Object -Process {$_.ReleaseDHCPLease()}
+Get-CimInstance -Class Win32_NetworkAdapterConfiguration -Filter "IPEnabled=$true and DHCPEnabled=$true" |
+  Where-Object {$_.DHCPServer -contains '192.168.1.254'} |
+    ForEach-Object -Process {$_.ReleaseDHCPLease()}
 ```
 
-The only change for renewing a DHCP lease is to use the **RenewDHCPLease** method instead of the **ReleaseDHCPLease** method:
+The only change for renewing a DHCP lease is to use the **RenewDHCPLease** method instead of the
+**ReleaseDHCPLease** method:
 
 ```powershell
-Get-WmiObject -Class Win32_NetworkAdapterConfiguration -Filter "IPEnabled=$true and DHCPEnabled=$true" -ComputerName . | Where-Object -FilterScript {$_.DHCPServer -contains '192.168.1.254'} | ForEach-Object -Process {$_.ReleaseDHCPLease()}
+Get-CimInstance -Class Win32_NetworkAdapterConfiguration -Filter "IPEnabled=$true and DHCPEnabled=$true" |
+  Where-Object {$_.DHCPServer -contains '192.168.1.254'} |
+    ForEach-Object -Process {$_.ReleaseDHCPLease()}
 ```
 
 > [!NOTE]
-> When using these methods on a remote computer, be aware that you can lose access to the remote system if you are connected to it through the adapter with the released or renewed lease.
+> When using these methods on a remote computer, be aware that you can lose access to the remote
+> system if you are connected to it through the adapter with the released or renewed lease.
 
 ### Releasing and Renewing DHCP Leases on All Adapters
 
-You can perform global DHCP address releases or renewals on all adapters by using the **Win32_NetworkAdapterConfiguration** methods, **ReleaseDHCPLeaseAll** and **RenewDHCPLeaseAll**. However, the command must apply to the WMI class, rather than a particular adapter, because releasing and renewing leases globally is performed on the class, not on a specific adapter.
+You can perform global DHCP address releases or renewals on all adapters by using the
+**Win32_NetworkAdapterConfiguration** methods, **ReleaseDHCPLeaseAll** and **RenewDHCPLeaseAll**.
+However, the command must apply to the WMI class, rather than a particular adapter, because
+releasing and renewing leases globally is performed on the class, not on a specific adapter.
 
-You can get a reference to a WMI class, instead of class instances, by listing all WMI classes and then selecting only the desired class by name. For example, the following command returns the Win32_NetworkAdapterConfiguration class:
+You can get a reference to a WMI class, instead of class instances, by listing all WMI classes and
+then selecting only the desired class by name. For example, the following command returns the
+**Win32_NetworkAdapterConfiguration** class:
 
 ```powershell
-Get-WmiObject -List | Where-Object -FilterScript {$_.Name -eq 'Win32_NetworkAdapterConfiguration'}
+Get-CimInstance -List | Where-Object {$_.Name -eq 'Win32_NetworkAdapterConfiguration'}
 ```
 
-You can treat the entire command as the class and then invoke the **ReleaseDHCPAdapterLease** method on it. In the following command, the parentheses surrounding the **Get-WmiObject** and **Where-Object** pipeline elements direct Windows PowerShell to evaluate them first:
+You can treat the entire command as the class and then invoke the **ReleaseDHCPAdapterLease** method
+on it. In the following command, the parentheses surrounding the `Get-CimInstance` and
+`Where-Object` pipeline elements direct Windows PowerShell to evaluate them first:
 
 ```powershell
-( Get-WmiObject -List | Where-Object -FilterScript {$_.Name -eq 'Win32_NetworkAdapterConfiguration'} ).ReleaseDHCPLeaseAll()
+(Get-CimInstance -List |
+  Where-Object {$_.Name -eq 'Win32_NetworkAdapterConfiguration'}).ReleaseDHCPLeaseAll()
 ```
 
 You can use the same command format to invoke the **RenewDHCPLeaseAll** method:
 
 ```powershell
-( Get-WmiObject -List | Where-Object -FilterScript {$_.Name -eq 'Win32_NetworkAdapterConfiguration'} ).RenewDHCPLeaseAll()
+(Get-CimInstance -List |
+  Where-Object {$_.Name -eq 'Win32_NetworkAdapterConfiguration'}).RenewDHCPLeaseAll()
 ```
 
 ## Creating a Network Share
 
-To create a network share, use the **Win32_Share Create** method:
+To create a network share, use the **Create** method of **Win32_Share**:
 
 ```powershell
-(Get-WmiObject -List -ComputerName . | Where-Object -FilterScript {$_.Name -eq 'Win32_Share'}).Create('C:\temp','TempShare',0,25,'test share of the temp folder')
+(Get-CimInstance -List |
+  Where-Object {$_.Name -eq 'Win32_Share'}).Create(
+    'C:\temp','TempShare',0,25,'test share of the temp folder'
+  )
 ```
 
 You can also create the share by using **net share** in Windows PowerShell:
@@ -214,23 +293,30 @@ net share tempshare=c:\temp /users:25 /remark:"test share of the temp folder"
 
 ## Removing a Network Share
 
-You can remove a network share with **Win32_Share**, but the process is slightly different from creating a share, because you need to retrieve the specific share to be removed, rather than the **Win32_Share** class. The following statement deletes the share "TempShare":
+You can remove a network share with **Win32_Share**, but the process is slightly different from
+creating a share, because you need to retrieve the specific share to be removed, rather than the
+**Win32_Share** class. The following statement deletes the share **TempShare**:
 
 ```powershell
-(Get-WmiObject -Class Win32_Share -ComputerName . -Filter "Name='TempShare'").Delete()
+(Get-CimInstance -Class Win32_Share -Filter "Name='TempShare'").Delete()
 ```
 
 **Net share** works as well:
 
+```powershell
+net share tempshare /delete
 ```
-PS> net share tempshare /delete
 
+```Output
 tempshare was deleted successfully.
 ```
 
 ## Connecting a Windows Accessible Network Drive
 
-The **New-PSDrive** cmdlets creates a Windows PowerShell drive, but drives created this way are available only to Windows PowerShell. To create a new networked drive, you can use the **WScript.Network** COM object. The following command maps the share \\\\FPS01\\users to local drive B:
+The `New-PSDrive` cmdlets creates a Windows PowerShell drive, but drives created this way are
+available only to Windows PowerShell. To create a new networked drive, you can use the
+**WScript.Network** COM object. The following command maps the share `\\FPS01\users` to local drive
+`B:`,
 
 ```powershell
 (New-Object -ComObject WScript.Network).MapNetworkDrive('B:', '\\FPS01\users')
@@ -242,4 +328,5 @@ The **net use** command works as well:
 net use B: \\FPS01\users
 ```
 
-Drives mapped with either **WScript.Network** or net use are immediately available to Windows PowerShell.
+Drives mapped with either **WScript.Network** or net use are immediately available to Windows
+PowerShell.
