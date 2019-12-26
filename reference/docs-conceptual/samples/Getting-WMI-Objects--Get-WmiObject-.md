@@ -10,7 +10,7 @@ title:  Getting WMI Objects Get WmiObject
 Windows Management Instrumentation (WMI) is a core technology for Windows system administration
 because it exposes a wide range of information in a uniform manner. Because of how much WMI makes
 possible, the PowerShell cmdlet for accessing WMI objects, `Get-CimInstance`, is one of the
-most useful for doing real work. We are going to discuss how to use Get-WmiObject to access WMI
+most useful for doing real work. We are going to discuss how to use the CimCmdlets to access WMI
 objects and then how to use WMI objects to do specific things.
 
 ### Listing WMI Classes
@@ -56,7 +56,7 @@ computer is running and the particular WMI extensions added by installed applica
 
 > [!NOTE]
 > When using CIM cmdlets to connect to a remote computer, the remote computer must be running WMI
-> and, the account you are using must be in the local administrators group on the remote computer.
+> and the account you are using must be in the local administrators group on the remote computer.
 > The remote system does not need to have PowerShell installed. This allows you to administer
 > operating systems that are not running PowerShell, but do have WMI available.
 

@@ -55,7 +55,7 @@ Get-CimInstance -Classname Win32_OperatingSystem | Invoke-CimMethod -MethodName 
 
 Shutting down and restarting computers are generally the same types of task. Tools that shut down a
 computer will generally restart it as well—and vice versa. There are two straightforward options for
-restarting a computer from PowerShell. Use either **Tsshutdn.exe** or **Shutdown.exe** with
+restarting a computer from PowerShell. Use either **tsshutdn.exe** or **shutdown.exe** with
 appropriate arguments. You can get detailed usage information from `tsshutdn.exe /?` or
 `shutdown.exe /?`.
 

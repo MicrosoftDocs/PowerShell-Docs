@@ -19,9 +19,9 @@ the test are removed from the pipeline. You supply the test condition as the val
 ## Performing Simple Tests with Where-Object
 
 The value of **FilterScript** is a *script block* - one or more PowerShell commands surrounded by
-braces {} - that evaluates to true or false. These script blocks can be very simple, but creating
-them requires knowing about another PowerShell concept, comparison operators. A comparison operator
-compares the items that appear on each side of it. Comparison operators begin with a hyphen
+braces (`{}`) - that evaluates to true or false. These script blocks can be very simple, but
+creating them requires knowing about another PowerShell concept, comparison operators. A comparison
+operator compares the items that appear on each side of it. Comparison operators begin with a hyphen
 character (`-`) and are followed by a name. Basic comparison operators work on almost any kind of
 object. The more advanced comparison operators might only work on text or arrays.
 

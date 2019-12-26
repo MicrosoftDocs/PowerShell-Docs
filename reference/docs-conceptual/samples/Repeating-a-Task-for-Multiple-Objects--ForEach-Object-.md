@@ -18,12 +18,9 @@ Get-CimInstance -Class Win32_LogicalDisk
 ```
 
 ```Output
-DeviceID     : C:
-DriveType    : 3
-ProviderName :
-FreeSpace    : 50665070592
-Size         : 203912880128
-VolumeName   : Local Disk
+DeviceID DriveType ProviderName VolumeName Size          FreeSpace
+-------- --------- ------------ ---------- ----          ---------
+C:       3                      Local Disk 203912880128  50665070592
 ```
 
 We can convert the **FreeSpace** value to megabytes by dividing each value by 1MB. You can do that
@@ -53,8 +50,8 @@ You get an error message:
 At line:2 char:28
 +   ForEach-Object -Process {$_.FreeSpace = ($_.FreeSpace)/1MB}
 +                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    + CategoryInfo          : NotSpecified: (:) [], SetValueException
-    + FullyQualifiedErrorId : ReadOnlyCIMProperty
++ CategoryInfo          : NotSpecified: (:) [], SetValueException
++ FullyQualifiedErrorId : ReadOnlyCIMProperty
 ```
 
 You could reorganize the data by using some advanced techniques, but a simpler approach is to create

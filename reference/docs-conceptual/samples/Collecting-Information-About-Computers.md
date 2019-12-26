@@ -11,12 +11,6 @@ objects that are in collections of one or more items. Because Windows PowerShell
 objects and has a pipeline that allows you to treat single or multiple objects in the same way,
 generic WMI access allows you to perform some advanced tasks with very little work.
 
-The following examples demonstrate how to collect specific information by using `Get-CimInstance`
-against an arbitrary computer. We specify the **ComputerName** parameter with the dot value (**.**),
-which represents the local computer. You can specify a name or IP address associated with any
-computer you can reach through WMI. To retrieve information about the local computer, you could omit
-the **ComputerName** parameter.
-
 ## Listing Desktop Settings
 
 We'll begin with a command that collects information about the desktops on the local computer.
@@ -132,9 +126,9 @@ CimSystemProperties   : Microsoft.Management.Infrastructure.CimSystemProperties
 ...
 ```
 
-The additional data is returned, because the Property parameter in `Get-CimInstance` restricts the
-properties returned from WMI class instances, not the object returned to Windows PowerShell. To
-reduce the output, use `Select-Object`:
+The additional data is returned, because the **Property** parameter in `Get-CimInstance` restricts
+the properties returned from WMI class instances, not the object returned to PowerShell. To reduce
+the output, use `Select-Object`:
 
 ```powershell
 Get-CimInstance -ClassName Win32_QuickFixEngineering -Property HotFixId | Select-Object -Property HotFixId
@@ -176,7 +170,7 @@ ServicePackMinorVersion : 0
 ## Listing Local Users and Owner
 
 Local general user information — number of licensed users, current number of users, and owner name —
-can be found with a selection of **Win32_OperatingSystem** class' properties. You can explicitly
+can be found with a selection of **Win32_OperatingSystem** class properties. You can explicitly
 select the properties to display like this:
 
 ```powershell
