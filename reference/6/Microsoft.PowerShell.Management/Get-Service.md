@@ -19,21 +19,21 @@ Gets the services on the computer.
 ### Default (Default)
 
 ```
-Get-Service [[-Name] <String[]>] [-DependentServices] [-RequiredServices] [-Include <String[]>]
+Get-Service [[-Name] <String[]>] [-ComputerName <string[]>] [-DependentServices] [-RequiredServices] [-Include <String[]>]
  [-Exclude <String[]>] [<CommonParameters>]
 ```
 
 ### DisplayName
 
 ```
-Get-Service [-DependentServices] [-RequiredServices] -DisplayName <String[]> [-Include <String[]>]
+Get-Service [-DependentServices] [-ComputerName <string[]>] [-RequiredServices] -DisplayName <String[]> [-Include <String[]>]
  [-Exclude <String[]>] [<CommonParameters>]
 ```
 
 ### InputObject
 
 ```
-Get-Service [-DependentServices] [-RequiredServices] [-Include <String[]>] [-Exclude <String[]>]
+Get-Service [-ComputerName <string[]>] [-DependentServices] [-RequiredServices] [-Include <String[]>] [-Exclude <String[]>]
  [-InputObject <ServiceController[]>] [<CommonParameters>]
 ```
 
