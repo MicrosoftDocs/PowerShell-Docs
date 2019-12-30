@@ -6,9 +6,11 @@ online version: https://docs.microsoft.com/powershell/module/microsoft.powershel
 schema: 2.0.0
 title: about_Functions
 ---
+
 # About Functions
 
 ## Short description
+
 Describes how to create and use functions in PowerShell.
 
 ## Long description
@@ -138,7 +140,7 @@ about dynamic parameters in functions, see
 You can define any number of named parameters. You can include a default value
 for named parameters, as described later in this topic.
 
-You can define parameters inside the braces using the **Param** keyword, as
+You can define parameters inside the braces using the `Param` keyword, as
 shown in the following sample syntax:
 
 ```
@@ -373,7 +375,8 @@ function.
 
 > [!IMPORTANT]
 > If your function defines a `Begin`, `Process` or `End` block, all of your code
-> must reside inside one of the blocks.
+> must reside inside those blocks. No code will be recognized outside the blocks
+> if **any** of the blocks are defined.
 
 The `Process` statement list runs one time for each object in the pipeline.
 While the `Process` block is running, each pipeline object is assigned to the

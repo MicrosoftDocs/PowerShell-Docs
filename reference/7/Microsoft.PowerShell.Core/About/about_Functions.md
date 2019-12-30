@@ -175,8 +175,8 @@ a variable that contains the parameter name. The value of that variable can be
 used in the function.
 
 The following example is a function called `Get-SmallFiles`. This function
-has a `$size` parameter. The function displays all the files that are smaller
-than the value of the `$size` parameter, and it excludes directories:
+has a `$Size` parameter. The function displays all the files that are smaller
+than the value of the `$Size` parameter, and it excludes directories:
 
 ```powershell
 function Get-SmallFiles {
@@ -187,7 +187,7 @@ function Get-SmallFiles {
 }
 ```
 
-In the function, you can use the `$size` variable, which is the name defined for
+In the function, you can use the `$Size` variable, which is the name defined for
 the parameter.
 
 To use this function, type the following command:
@@ -230,7 +230,7 @@ description of your parameter, and specifying the **Help** property of
 function Get-SmallFiles {
   param (
       [PSDefaultValue(Help = '100')]
-      $size = 100
+      $Size = 100
   )
 }
 ```
