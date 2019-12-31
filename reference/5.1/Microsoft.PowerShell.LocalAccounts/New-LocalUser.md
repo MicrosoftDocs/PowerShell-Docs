@@ -44,9 +44,7 @@ Name    Enabled  Description
 User02  True     Description of this account.
 ```
 
-This command creates a local user account.
-The command does not specify the *AccountExpires* parameter.
-Therefore, the account does not expire.
+This command creates a local user account without an initial password.  This is not a recommended "best practice".
 
 ### Example 2: Create a user account that has a password
 ```
@@ -287,7 +285,7 @@ This object provides information about the user account.
 - Azure Active Directory group
 - Microsoft Account
 
-**PrincipalSource** is supported only by Windows 10, Windows Server 2016, and later versions of the Windows operating system. For earlier versions, the property is blank.
+**PrincipalSource** is supported only by Windows 10, Windows Server 2016, and later versions of the Windows operating system. For earlier versions, the property is blank. As of Windows 10 1909 with PowerShell 5.1 the **PrincipalSource** property is no longer available.
 
 ## RELATED LINKS
 
