@@ -1,11 +1,13 @@
 ---
-ms.date:  06/05/2017
+ms.date:  12/31/2019
 keywords:  powershell,cmdlet
 title:  The ISEFileCollection Object
 ---
+
 # The ISEFileCollection Object
 
-The **ISEFileCollection** object is a collection of **ISEFile** objects. An example is the $psISE.CurrentPowerShellTab.Files collection.
+The **ISEFileCollection** object is a collection of **ISEFile** objects. An example is the
+`$psISE.CurrentPowerShellTab.Files` collection.
 
 ## Methods
 
@@ -13,10 +15,12 @@ The **ISEFileCollection** object is a collection of **ISEFile** objects. An exam
 
 Supported in Windows PowerShell ISE 2.0 and later.
 
-Creates and returns a new untitled file and adds it to the collection. The **IsUntitled** property of the newly created file is **$true**.
+Creates and returns a new untitled file and adds it to the collection. The **IsUntitled** property
+of the newly created file is `$true`.
 
-**\[fullPath\]** - Optional string
-The fully specified path of the file. An exception is generated if you include the **fullPath** parameter and a relative path, or if you use a file name instead of the full path.
+**\[fullPath\]** - Optional string The fully specified path of the file. An exception is generated
+if you include the **fullPath** parameter and a relative path, or if you use a file name instead of
+the full path.
 
 ```powershell
 # Adds a new untitled file to the collection of files in the current PowerShell tab.
@@ -32,11 +36,12 @@ Supported in Windows PowerShell ISE 2.0 and later.
 
 Removes a specified file from the current PowerShell tab.
 
-**File** - String
-The ISEFile file that you want to remove from the collection. If the file has not been saved, this method throws an exception. Use the **Force** switch parameter to force the removal of an unsaved file.
+**File** - String The ISEFile file that you want to remove from the collection. If the file has not
+been saved, this method throws an exception. Use the **Force** switch parameter to force the removal
+of an unsaved file.
 
-**\[Force\]** - optional Boolean
-If set to **$true**, grants permission to remove the file even if it has not been saved after last use. The default is **$false**.
+**\[Force\]** - optional Boolean If set to `$true`, grants permission to remove the file even if it
+has not been saved after last use. The default is `$false`.
 
 ```powershell
 # Removes the first opened file from the file collection associated with the current PowerShell tab.

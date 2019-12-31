@@ -1,11 +1,14 @@
 ---
-ms.date:  06/05/2017
+ms.date:  12/31/2019
 keywords:  powershell,cmdlet
 title:  The ISEMenuItem Object
 ---
+
 # The ISEMenuItem Object
 
-An **ISEMenuItem** object is an instance of the Microsoft.PowerShell.Host.ISE.ISEMenuItem class. All menu objects on the **Add-ons** menu are instances of the **Microsoft.PowerShell.Host.ISE.ISEMenuItem** class.
+An **ISEMenuItem** object is an instance of the **Microsoft.PowerShell.Host.ISE.ISEMenuItem** class.
+All menu objects on the **Add-ons** menu are instances of the
+**Microsoft.PowerShell.Host.ISE.ISEMenuItem** class.
 
 ## Properties
 
@@ -26,7 +29,8 @@ $psISE.CurrentPowerShellTab.AddOnsMenu.DisplayName
 
 Supported in Windows PowerShell ISE 2.0 and later.
 
-The read-only property that gets the block of script. It invokes the action when you click the menu item.
+The read-only property that gets the block of script. It invokes the action when you click the menu
+item.
 
 ```powershell
 # Get the action associated with the first submenu item.
@@ -55,7 +59,8 @@ $psISE.CurrentPowerShellTab.AddOnsMenu.Submenus[0].Shortcut
 
 Supported in Windows PowerShell ISE 2.0 and later.
 
-The read-only property that gets the [list of submenus](The-ISEMenuItemCollection-Object.md) of the menu item.
+The read-only property that gets the [list of submenus](The-ISEMenuItemCollection-Object.md) of the
+menu item.
 
 ```powershell
 # List the submenus of the Add-ons menu
@@ -66,7 +71,8 @@ $psISE.CurrentPowerShellTab.AddOnsMenu.Submenus
 
 ## Scripting example
 
-To better understand the use of the Add-ons menu and its scriptable properties, read through the following scripting example.
+To better understand the use of the Add-ons menu and its scriptable properties, read through the
+following scripting example.
 
 ```powershell
 # This is a scripting example that shows the use of the Add-ons menu.
