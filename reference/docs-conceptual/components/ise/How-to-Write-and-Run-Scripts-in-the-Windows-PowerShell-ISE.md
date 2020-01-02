@@ -1,8 +1,9 @@
 ---
-ms.date:  08/14/2018
+ms.date:  01/02/2020
 keywords:  powershell,cmdlet
 title:  How to Write and Run Scripts in the Windows PowerShell ISE
 ---
+
 # How to Write and Run Scripts in the Windows PowerShell ISE
 
 This article describes how to create, edit, run, and save scripts in the Script Pane.
@@ -10,9 +11,9 @@ This article describes how to create, edit, run, and save scripts in the Script 
 ## How to create and run scripts
 
 You can open and edit Windows PowerShell files in the Script Pane. Specific file types of interest
-in Windows PowerShell are script files (.ps1), script data files (.psd1), and script module files
-(.psm1). These file types are syntax colored in the Script Pane editor. Other common file types you
-may open in the Script Pane are configuration files (.ps1xml), XML files, and text files.
+in Windows PowerShell are script files (`.ps1`), script data files (`.psd1`), and script module files
+(`.psm1`). These file types are syntax colored in the Script Pane editor. Other common file types you
+may open in the Script Pane are configuration files (`.ps1xml`), XML files, and text files.
 
 > [!NOTE]
 > The Windows PowerShell execution policy determines whether you can run scripts and load Windows
@@ -26,7 +27,7 @@ may open in the Script Pane are configuration files (.ps1xml), XML files, and te
 
 On the toolbar, click **New**, or on the **File** menu, click **New**. The created file appears in
 a new file tab under the current PowerShell tab. Remember that the PowerShell tabs are only visible
-when there are more than one. By default a file of type script (.ps1) is created, but it can be
+when there are more than one. By default a file of type script (`.ps1`) is created, but it can be
 saved with a new name and extension. Multiple script files can be created in the same PowerShell
 tab.
 
@@ -37,7 +38,7 @@ box, select the file you want to open. The opened file appears in a new tab.
 
 ### To close a script tab
 
-Click the **Close** icon (X) of the file tab you want to close or select the **File** menu and
+Click the **Close** icon (**X**) of the file tab you want to close or select the **File** menu and
 click **Close**.
 
 If the file has been altered since it was last saved, you're prompted to save or discard it.
@@ -61,10 +62,10 @@ On the toolbar, click **Run Script**, or on the **File** menu, click **Run**.
 There are several ways to stop a running script.
 
 - Click **Stop Operation** on the toolbar
-- Press CTRL+BREAK
+- Press <kbd>CTRL</kbd>+<kbd>BREAK</kbd>
 - Select the **File** menu and click **Stop Operation**.
 
-Pressing **CTRL+C** also works unless some text is currently selected, in which case **CTRL+C**
+Pressing <kbd>CTRL</kbd>+<kbd>C</kbd> also works unless some text is currently selected, in which case <kbd>CTRL</kbd>+<kbd>C</kbd>
 maps to the copy function for the selected text.
 
 ## How to write and edit text in the Script Pane
@@ -84,20 +85,20 @@ used for all Windows applications.
 
 ### To find text in the Script Pane
 
-1. To find text anywhere, press **CTRL+F** or, on the **Edit** menu, click **Find in Script**.
-2. To find text after the cursor, press **F3** or, on the **Edit** menu, click **Find Next in
+1. To find text anywhere, press <kbd>CTRL</kbd>+<kbd>F</kbd> or, on the **Edit** menu, click **Find in Script**.
+2. To find text after the cursor, press <kbd>F3</kbd> or, on the **Edit** menu, click **Find Next in
    Script**.
-3. To find text before the cursor, press **SHIFT+F3** or, on the **Edit** menu, click **Find
+3. To find text before the cursor, press <kbd>SHIFT</kbd>+<kbd>F3</kbd> or, on the **Edit** menu, click **Find
    Previous in Script**.
 
 ### To find and replace text in the Script Pane
 
-Press **CTRL+H** or, on the **Edit** menu, click **Replace in Script**. Enter the text you
-want to find and the replacement text, then press **ENTER**.
+Press <kbd>CTRL</kbd>+<kbd>H</kbd> or, on the **Edit** menu, click **Replace in Script**. Enter the text you
+want to find and the replacement text, then press <kbd>ENTER</kbd>.
 
 ### To go to a particular line of text in the Script Pane
 
-1. In the Script Pane, press **CTRL+G** or, on the **Edit** menu, click **Go to Line**.
+1. In the Script Pane, press <kbd>CTRL</kbd>+<kbd>G</kbd> or, on the **Edit** menu, click **Go to Line**.
 
 2. Enter a line number.
 
@@ -105,28 +106,28 @@ want to find and the replacement text, then press **ENTER**.
 
 1. In the Script Pane, select the text that you want to copy.
 
-2. Press **CTRL+C** or, on the toolbar, click the **Copy** icon, or on the **Edit** menu, click
+2. Press <kbd>CTRL</kbd>+<kbd>C</kbd> or, on the toolbar, click the **Copy** icon, or on the **Edit** menu, click
 **Copy**.
 
 ### To cut text in the Script Pane
 
 1. In the Script Pane, select the text that you want to cut.
-2. Press **CTRL+X** or, on the toolbar, click the **Cut** icon, or on the **Edit** menu, click
+2. Press <kbd>CTRL</kbd>+<kbd>X</kbd> or, on the toolbar, click the **Cut** icon, or on the **Edit** menu, click
    **Cut**.
 
 ### To paste text into the Script Pane
 
-Press **CTRL+V** or, on the toolbar, click the **Paste** icon, or on the **Edit** menu, click
+Press <kbd>CTRL</kbd>+<kbd>V</kbd> or, on the toolbar, click the **Paste** icon, or on the **Edit** menu, click
 **Paste**.
 
 ### To undo an action in the Script Pane
 
-Press **CTRL+Z** or, on the toolbar, click the **Undo** icon, or on the **Edit** menu, click
+Press <kbd>CTRL</kbd>+<kbd>Z</kbd> or, on the toolbar, click the **Undo** icon, or on the **Edit** menu, click
 **Undo**.
 
 ### To redo an action in the Script Pane
 
-Press **CTRL+Y** or, on the toolbar, click the **Redo** icon, or on the **Edit** menu, click
+Press <kbd>CTRL</kbd>+<kbd>Y</kbd> or, on the toolbar, click the **Redo** icon, or on the **Edit** menu, click
 **Redo**.
 
 ## How to save a script
@@ -136,7 +137,7 @@ changed. The asterisk disappears when the file is saved.
 
 ### To save a script
 
-Press **CTRL+S** or, on the toolbar, click the **Save** icon, or on the **File** menu, click
+Press <kbd>CTRL</kbd>+<kbd>S</kbd> or, on the toolbar, click the **Save** icon, or on the **File** menu, click
 **Save**.
 
 ### To save and name a script
@@ -149,8 +150,8 @@ Press **CTRL+S** or, on the toolbar, click the **Save** icon, or on the **File**
 
 ### To save a script in ASCII encoding
 
-By default, Windows PowerShell ISE saves new script files (.ps1), script data files (.psd1), and
-script module files (.psm1) as Unicode (BigEndianUnicode) by default.Â To save a script in another
+By default, Windows PowerShell ISE saves new script files (`.ps1`), script data files (`.psd1`), and
+script module files (`.psm`1) as Unicode (BigEndianUnicode) by default.Â To save a script in another
 encoding, such as ASCII (ANSI), use the **Save** or **SaveAs** methods on the
 [$psISE.CurrentFile](object-model/the-ise-object-model-hierarchy.md) object.
 

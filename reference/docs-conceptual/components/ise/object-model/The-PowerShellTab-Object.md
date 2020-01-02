@@ -3,6 +3,7 @@ ms.date:  06/05/2017
 keywords:  powershell,cmdlet
 title:  The PowerShellTab Object
 ---
+
 # The PowerShellTab Object
 
 The **PowerShellTab** object represents a Windows PowerShell runtime environment.
@@ -16,7 +17,9 @@ Supported in Windows PowerShell ISE 2.0 and later.
 Runs the given script in the PowerShell tab.
 
 > [!NOTE]
-> This method only works on other PowerShell tabs, not the PowerShell tab from which it is run. It does not return any object or value. If the code modifies any variable, then those changes persist on the tab against which the command was invoked.
+> This method only works on other PowerShell tabs, not the PowerShell tab from which it is run. It
+> does not return any object or value. If the code modifies any variable, then those changes persist
+> on the tab against which the command was invoked.
 
 **Script** - System.Management.Automation.ScriptBlock or String
 The script block to run.
@@ -34,16 +37,22 @@ Supported in Windows PowerShell ISE 3.0 and later, and not present in earlier ve
 Runs the given script in the PowerShell tab.
 
 > [!NOTE]
-> This method only works on other PowerShell tabs, not the PowerShell tab from which it is run. The script block is run and any value that is returned from the script is returned to the run environment from which you invoked the command. If the command takes longer to run than the **millesecondsTimeout** value specifies, then the command fails with an exception: "The operation has timed out."
+> This method only works on other PowerShell tabs, not the PowerShell tab from which it is run. The
+> script block is run and any value that is returned from the script is returned to the run
+> environment from which you invoked the command. If the command takes longer to run than the
+> **millesecondsTimeout** value specifies, then the command fails with an exception: "The operation
+> has timed out."
 
 **Script** - System.Management.Automation.ScriptBlock or String
 The script block to run.
 
-**\[useNewScope\]** -  Optional Boolean that defaults to **$true**
-If set to **$true**, then a new scope is created within which to run the command. It does not modify the runtime environment of the PowerShell tab that is specified by the command.
+**\[useNewScope\]** -  Optional Boolean that defaults to `$true`
+If set to `$true`, then a new scope is created within which to run the command. It does not modify
+the runtime environment of the PowerShell tab that is specified by the command.
 
 **\[millisecondsTimeout\]** -  Optional integer that defaults to **500**.
-If the command does not finish within the specified time, then the command generates a **TimeoutException** with the message "The operation has timed out."
+If the command does not finish within the specified time, then the command generates a
+**TimeoutException** with the message "The operation has timed out."
 
 ```powershell
 # Create a new PowerShell tab and then switch back to the first
@@ -89,7 +98,8 @@ $psISE.CurrentPowerShellTab.AddOnsMenu
 
 Supported in Windows PowerShell ISE 2.0 and later.
 
-The read-only Boolean property that returns a **$true** value if a script can be invoked with the [Invoke( Script )](#invoke-script-) method.
+The read-only Boolean property that returns a `$true` value if a script can be invoked with the [Invoke( Script )](#invoke-script-)
+method.
 
 ```powershell
 # CanInvoke will be false if the PowerShell
@@ -106,7 +116,8 @@ $secondTab.CanInvoke
 
 ### Consolepane
 
-Supported in Windows PowerShell ISE 3.0 and later, and not present in earlier versions.  In Windows PowerShell ISE 2.0 this was named **CommandPane**.
+Supported in Windows PowerShell ISE 3.0 and later, and not present in earlier versions. In Windows
+PowerShell ISE 2.0 this was named **CommandPane**.
 
 The read-only property that gets the Console pane [editor](The-ISEEditor-Object.md) object.
 
@@ -119,7 +130,8 @@ $psISE.CurrentPowerShellTab.ConsolePane
 
 Supported in Windows PowerShell ISE 2.0 and later.
 
-The read-write property that gets or sets the text that is displayed on the PowerShell tab. By default, tabs are named "PowerShell #", where the # represents a number.
+The read-write property that gets or sets the text that is displayed on the PowerShell tab. By
+default, tabs are named "PowerShell #", where the # represents a number.
 
 ```powershell
 $newTab = $psISE.PowerShellTabs.Add()
@@ -142,7 +154,8 @@ $psISE.CurrentPowerShellTab.ExpandedScript = !$psISE.CurrentPowerShellTab.Expand
 
 Supported in Windows PowerShell ISE 2.0 and later.
 
-The read-only property that gets the [collection of script files](The-ISEFileCollection-Object.md) that are open in the PowerShell tab.
+The read-only property that gets the [collection of script files](The-ISEFileCollection-Object.md)
+that are open in the PowerShell tab.
 
 ```powershell
 $newFile = $psISE.CurrentPowerShellTab.Files.Add()
@@ -153,7 +166,9 @@ $newFile.Editor.LineCount
 
 ### Output
 
-This feature is present in Windows PowerShell ISE 2.0, but was removed or renamed in later versions of the ISE.  In later versions of Windows PowerShell ISE, you can use the **ConsolePane** object for the same purposes.
+This feature is present in Windows PowerShell ISE 2.0, but was removed or renamed in later versions
+of the ISE. In later versions of Windows PowerShell ISE, you can use the **ConsolePane** object for
+the same purposes.
 
 The read-only property that gets the Output pane of the current [editor](The-ISEEditor-Object.md).
 
@@ -166,7 +181,9 @@ $psISE.CurrentPowerShellTab.output.clear()
 
 Supported in Windows PowerShell ISE 2.0 and later.
 
-The read-only property that gets the current prompt text. Note: the **Prompt** function can be overridden by the user'™s profile. If the result is other than a simple string, then this property returns nothing.
+The read-only property that gets the current prompt text. Note: the **Prompt** function can be
+overridden by the user'™s profile. If the result is other than a simple string, then this property
+returns nothing.
 
 ```powershell
 # Gets the current prompt text.
