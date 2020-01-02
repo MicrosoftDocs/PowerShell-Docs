@@ -8,9 +8,11 @@ online version: https://docs.microsoft.com/powershell/module/microsoft.powershel
 schema: 2.0.0
 title: Export-PSSession
 ---
+
 # Export-PSSession
 
 ## SYNOPSIS
+
 Exports commands from another session and saves them in a PowerShell module.
 
 ## SYNTAX
@@ -67,12 +69,12 @@ This example exports all of the `Get` and `Set` commands from a server.
 
 ```powershell
 $S = New-PSSession -ConnectionUri http://exchange.microsoft.com/mailbox -Credential exchangeadmin01@hotmail.com -Authentication Negotiate
-Export-PSSession -Session $R -Module exch* -CommandName Get-*, Set-* -FormatTypeName * -OutputModule $pshome\Modules\Exchange -Encoding ASCII
+Export-PSSession -Session $S -Module exch* -CommandName Get-*, Set-* -FormatTypeName * -OutputModule $PSHOME\Modules\Exchange -Encoding ASCII
 ```
 
 These commands export the `Get` and `Set` commands from a Microsoft Exchange Server snap-in on a
-remote computer to an Exchange module in the `$pshome`\Modules directory on the local computer.
-Placing the module in the `$pshome`\Modules directory makes it accessible to all users of the
+remote computer to an Exchange module in the `$PSHOME`\Modules directory on the local computer.
+Placing the module in the `$PSHOME`\Modules directory makes it accessible to all users of the
 computer.
 
 ### Example 3: Export commands from a remote computer
@@ -182,7 +184,7 @@ Exports the variant of the command that results from using the specified argumen
 values).
 
 For example, to export the variant of the `Get-Item` command in the certificate (Cert:) drive in
-the PSSession in `$S`, type `export-pssession -session $S -command get-item -argumentlist cert:`.
+the PSSession in `$S`, type `Export-PSSession -Session $S -Command Get-Item -ArgumentList cert:`.
 
 ```yaml
 Type: Object[]
