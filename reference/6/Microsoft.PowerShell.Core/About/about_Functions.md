@@ -376,7 +376,7 @@ function.
 > [!IMPORTANT]
 > If your function defines a `Begin`, `Process` or `End` block, all of your code
 > must reside inside those blocks. No code will be recognized outside the blocks
-> if **any** of the blocks are defined.
+> if *any* of the blocks are defined.
 
 The `Process` statement list runs one time for each object in the pipeline.
 While the `Process` block is running, each pipeline object is assigned to the
