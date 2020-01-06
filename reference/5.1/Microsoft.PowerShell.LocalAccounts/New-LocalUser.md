@@ -44,7 +44,7 @@ Name    Enabled  Description
 User02  True     Description of this account.
 ```
 
-This command creates a local user account without an initial password.  This is not a recommended "best practice".
+This command creates a local user account and does not specify the *AccountExpires* or *Password* parameters. Therefore, the account doesn't expire or have a password by default.
 
 ### Example 2: Create a user account that has a password
 ```
@@ -274,19 +274,26 @@ This cmdlet returns a **LocalUser** object.
 This object provides information about the user account.
 
 ## NOTES
-* A user name cannot be identical to any other user name or group name on the computer. A user name cannot consist only of periods (.) or spaces. A user name can contain up to 20 uppercase characters or lowercase characters. A user name cannot contain the following characters:
 
-" / \ \[ \] : ; | = , + * ? \< \> @
-* A password can contain up to 127 characters.
-* The **PrincipalSource** property is a property on **LocalUser**, **LocalGroup**, and **LocalPrincipal** objects that describes the source of the object. The possible sources are as follows:
+- A user name cannot be identical to any other user name or group name on the computer. A user name
+  cannot consist only of periods (.) or spaces. A user name can contain up to 20 uppercase
+  characters or lowercase characters. A user name cannot contain the following characters:
 
-- Local
-- Active Directory
-- Azure Active Directory group
-- Microsoft Account
+`" / \ \[ \] : ; | = , + * ? \< \> @`
 
-**PrincipalSource** is supported only by Windows 10, Windows Server 2016, and later versions of the Windows operating system. For earlier versions, the property is blank. As of Windows 10 1909 with PowerShell 5.1 the **PrincipalSource** property is no longer available.
+- A password can contain up to 127 characters.
+- The **PrincipalSource** property is a property on **LocalUser**, **LocalGroup**, and
+  **LocalPrincipal** objects that describes the source of the object. The possible sources are as
+  follows:
 
+  - Local
+  - Active Directory
+  - Azure Active Directory group
+  - Microsoft Account
+
+> [!NOTE]
+> **PrincipalSource** is supported only by Windows 10, Windows Server 2016, and later versions of the
+> Windows operating system. For earlier versions, the property is blank.
 ## RELATED LINKS
 
 [Disable-LocalUser](Disable-LocalUser.md)
