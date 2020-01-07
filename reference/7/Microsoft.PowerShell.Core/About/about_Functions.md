@@ -6,9 +6,11 @@ online version: https://docs.microsoft.com/powershell/module/microsoft.powershel
 schema: 2.0.0
 title: about_Functions
 ---
+
 # About Functions
 
 ## Short description
+
 Describes how to create and use functions in PowerShell.
 
 ## Long description
@@ -138,7 +140,7 @@ about dynamic parameters in functions, see
 You can define any number of named parameters. You can include a default value
 for named parameters, as described later in this topic.
 
-You can define parameters inside the braces using the **Param** keyword, as
+You can define parameters inside the braces using the `Param` keyword, as
 shown in the following sample syntax:
 
 ```
@@ -173,8 +175,8 @@ a variable that contains the parameter name. The value of that variable can be
 used in the function.
 
 The following example is a function called `Get-SmallFiles`. This function
-has a `$size` parameter. The function displays all the files that are smaller
-than the value of the `$size` parameter, and it excludes directories:
+has a `$Size` parameter. The function displays all the files that are smaller
+than the value of the `$Size` parameter, and it excludes directories:
 
 ```powershell
 function Get-SmallFiles {
@@ -185,7 +187,7 @@ function Get-SmallFiles {
 }
 ```
 
-In the function, you can use the `$size` variable, which is the name defined for
+In the function, you can use the `$Size` variable, which is the name defined for
 the parameter.
 
 To use this function, type the following command:
@@ -228,7 +230,7 @@ description of your parameter, and specifying the **Help** property of
 function Get-SmallFiles {
   param (
       [PSDefaultValue(Help = '100')]
-      $size = 100
+      $Size = 100
   )
 }
 ```
@@ -373,7 +375,8 @@ function.
 
 > [!IMPORTANT]
 > If your function defines a `Begin`, `Process` or `End` block, all of your code
-> must reside inside one of the blocks.
+> must reside inside those blocks. No code will be recognized outside the blocks
+> if *any* of the blocks are defined.
 
 The `Process` statement list runs one time for each object in the pipeline.
 While the `Process` block is running, each pipeline object is assigned to the
