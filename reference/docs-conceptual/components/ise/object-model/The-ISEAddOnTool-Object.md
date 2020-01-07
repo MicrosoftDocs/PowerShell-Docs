@@ -3,13 +3,23 @@ ms.date:  06/05/2017
 keywords:  powershell,cmdlet
 title:  The ISEAddOnTool Object
 ---
+
 # The ISEAddOnTool Object
 
-An **ISEAddonTool** object represents an installed add-on tool that provides additional functionality toWindows PowerShell ISE. An example is the **Commands** tool that you can display by clicking **View**, then **Show Command Add-on**. This tool is then accessible to you by manipulating the various available **ISEAddOnTool** objects.
+An **ISEAddonTool** object represents an installed add-on tool that provides additional
+functionality toWindows PowerShell ISE. An example is the **Commands** tool that you can display by
+clicking **View**, then **Show Command Add-on**. This tool is then accessible to you by manipulating
+the various available **ISEAddOnTool** objects.
 
-Each add-on tool can be associated with either the vertical pane or the horizontal pane. The vertical pane is docked to the right edge of Windows PowerShell ISE. The horizontal pane is docked to the bottom edge.
+Each add-on tool can be associated with either the vertical pane or the horizontal pane. The
+vertical pane is docked to the right edge of Windows PowerShell ISE. The horizontal pane is docked
+to the bottom edge.
 
-Each PowerShell tab in Windows PowerShell ISE can have its own set of add-on tools installed. See [$psISE.CurrentPowerShellTab.HorizontalAddOnTools](The-PowerShellTab-Object.md) and [$psISE.CurrentPowerShellTab.VerticalAddOnTools](The-PowerShellTab-Object.md) to access the collection of tools available to the currently selected tab or the same properties on any of the **PowerShellTab** objects in the [$psISE.PowerShellTabs](The-PowerShellTabCollection-Object.md) collection object.
+Each PowerShell tab in Windows PowerShell ISE can have its own set of add-on tools installed. See [$psISE.CurrentPowerShellTab.HorizontalAddOnTools](The-PowerShellTab-Object.md)
+and [$psISE.CurrentPowerShellTab.VerticalAddOnTools](The-PowerShellTab-Object.md) to access the
+collection of tools available to the currently selected tab or the same properties on any of the
+**PowerShellTab** objects in the [$psISE.PowerShellTabs](The-PowerShellTabCollection-Object.md)
+collection object.
 
 ## Methods
 
@@ -27,6 +37,9 @@ The **Control** property provides read access to many of the details of the Comm
 # View the properties of the Commands add-on tool.
 # (assumes that it is visible in the vertical pane)
 $psISE.CurrentVisibleVerticalTool.Control
+```
+
+```Output
 HostObject                  : Microsoft.PowerShell.Host.ISE.ObjectModelRoot
 Content                     :
 HasContent                  :
@@ -137,7 +150,12 @@ Dispatcher                  : System.Windows.Threading.Dispatcher
 
 Supported in Windows PowerShell ISE 3.0 and later, and not present in earlier versions.
 
-The Boolean property that indicates whether the add-on tool is currently visible in its assigned pane. If it is visible, you can set the **IsVisible** property to **$false** to hide the tool, or set the **IsVisible** property to **$true** to make an add-on tool visible on its PowerShell tab. Note that after an add-on tool is hidden, it is no longer accessible through the **CurrentVisibleHorizontalTool** or **CurrentVisibleVerticalTool** objects, and therefore cannot be made visible by using this property on that object.
+The Boolean property that indicates whether the add-on tool is currently visible in its assigned
+pane. If it is visible, you can set the **IsVisible** property to `$false` to hide the tool, or
+set the **IsVisible** property to `$true` to make an add-on tool visible on its PowerShell tab.
+Note that after an add-on tool is hidden, it is no longer accessible through the
+**CurrentVisibleHorizontalTool** or **CurrentVisibleVerticalTool** objects, and therefore cannot be
+made visible by using this property on that object.
 
 ```powershell
 # Hide the current tool in the vertical tool pane
@@ -155,6 +173,9 @@ The read-only property that gets the name of the add-on tool.
 ```powershell
 # Gets the name of the visible vertical pane add-on tool.
 $psISE.CurrentVisibleVerticalTool.Name
+```
+
+```Output
 Commands
 ```
 

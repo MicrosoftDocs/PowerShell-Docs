@@ -1,11 +1,15 @@
 ---
-ms.date:  06/05/2017
+ms.date:  12/31/2019
 keywords:  powershell,cmdlet
 title:  The ISEMenuItemCollection Object
 ---
+
 # The ISEMenuItemCollection Object
 
-An **ISEMenuItemCollection** object is a collection of **ISEMenuItem** objects. It is an instance of the Microsoft.PowerShell.Host.ISE.ISEMenuItemCollection class. An example is the **$psISE.CurrentPowerShellTab.AddOnsMenu.Submenus** object that is used to customize the **Add-On** menu in Windows PowerShell® Integrated Scripting Environment (ISE).
+An **ISEMenuItemCollection** object is a collection of **ISEMenuItem** objects. It is an instance of
+the **Microsoft.PowerShell.Host.ISE.ISEMenuItemCollection** class. An example is the
+`$psISE.CurrentPowerShellTab.AddOnsMenu.Submenus` object that is used to customize the **Add-On**
+menu in Windows PowerShell® Integrated Scripting Environment (ISE).
 
 ## Method
 
@@ -18,14 +22,14 @@ Adds a menu item to the collection.
 **DisplayName**
 The display name of the menu to be added.
 
-**Action**
-The **System.Management.Automation.ScriptBlock** object that specifies the action that is associated with this menu item.
+**Action** The **System.Management.Automation.ScriptBlock** object that specifies the action that is
+associated with this menu item.
 
 **Shortcut**
 The keyboard shortcut for the action.
 
 **Returns**
-The ISEMenuItem object that was just added.
+The **ISEMenuItem** object that was just added.
 
 ```powershell
 # Create an Add-ons menu with an fast access key and a shortcut.

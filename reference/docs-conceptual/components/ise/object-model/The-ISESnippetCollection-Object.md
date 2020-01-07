@@ -1,11 +1,14 @@
 ---
-ms.date:  06/05/2017
+ms.date:  12/31/2019
 keywords:  powershell,cmdlet
 title:  The ISESnippetCollection Object
 ---
+
 # The ISESnippetCollection Object
 
-The **ISESnippetCollection** object is a collection of **ISESnippet** objects. The files collection that is associated with a **PowerShellTab** object is a member of this class. An example is the **$psISE.CurrentPowerShellTab.Files** collection.
+The **ISESnippetCollection** object is a collection of **ISESnippet** objects. The files collection
+that is associated with a **PowerShellTab** object is a member of this class. An example is the
+`$psISE.CurrentPowerShellTab.Files` collection.
 
 ## Methods
 
@@ -13,7 +16,9 @@ The **ISESnippetCollection** object is a collection of **ISESnippet** objects. T
 
 Supported in Windows PowerShell ISE 3.0 and later, and not present in earlier versions.
 
-Loads a .snippets.ps1xml file that contains user-defined snippets. The easiest way to create snippets is to use the New-IseSnippet cmdlet, which automatically stores them in your profile folder so that they are loaded every time that you start Windows PowerShell ISE.
+Loads a `.snippets.ps1xml` file that contains user-defined snippets. The easiest way to create
+snippets is to use the `New-IseSnippet` cmdlet, which automatically stores them in your profile folder
+so that they are loaded every time that you start Windows PowerShell ISE.
 
 **FilePathName** - String
 The path and file name to a .snippets.ps1xml file that contains snippet definitions.
