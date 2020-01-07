@@ -5,7 +5,10 @@ title:  The PowerShellTabCollection Object
 ---
 # The PowerShellTabCollection Object
 
-The **PowerShellTab** collection object is a collection of **PowerShellTab** objects. Each **PowerShellTab** object functions as a separate runtime environment. It is an instance of Microsoft.PowerShell.Host.ISE.PowerShellTabs class. An example is the **$psISE.PowerShellTabs** object.
+The **PowerShellTab** collection object is a collection of **PowerShellTab** objects. Each
+**PowerShellTab** object functions as a separate runtime environment. It is an instance of
+Microsoft.PowerShell.Host.ISE.PowerShellTabs class. An example is the `$psISE.PowerShellTabs`
+object.
 
 ## Methods
 
@@ -41,7 +44,8 @@ $psISE.PowerShellTabs.Remove($newTab)
 
 Supported in Windows PowerShell ISE 2.0 and later.
 
-Selects the PowerShell tab that is specified by the **psTab** parameter to make it the currently active PowerShell tab.
+Selects the PowerShell tab that is specified by the **psTab** parameter to make it the currently
+active PowerShell tab.
 
 **psTab**
 The PowerShell tab to select.

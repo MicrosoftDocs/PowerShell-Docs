@@ -1,24 +1,31 @@
 ---
-ms.date:  06/05/2017
+ms.date:  01/02/2020
 keywords:  powershell,cmdlet
 title:  How to Use Tab Completion in the Script Pane and Console Pane
 ---
+
 # How to Use Tab Completion in the Script Pane and Console Pane
 
-Tab completion provides automatic help when you are typing in the Script Pane or in the Command Pane. Use the following steps to take advantage of this feature:
+Tab completion provides automatic help when you are typing in the Script Pane or in the Command
+Pane. Use the following steps to take advantage of this feature:
 
 ## To automatically complete a command entry
 
-In the Command Pane or Script Pane, type a few characters of a command and then press TAB to select the desired completion text. If multiple items begin with the text that you initially typed, then continue pressing Tab until the item you want appears. Tab completion can help with typing a cmdlet name, parameter name, variable name, object property name, or a file path.
+In the Command Pane or Script Pane, type a few characters of a command and then press <kbd>TAB</kbd> to select
+the desired completion text. If multiple items begin with the text that you initially typed, then
+continue pressing <kbd>TAB</kbd> until the item you want appears. Tab completion can help with typing a cmdlet
+name, parameter name, variable name, object property name, or a file path.
 
 > [!NOTE]
-> In the Script Pane, pressing TAB will automatically complete a command only when you are editing .ps1, .psd1, or .psm1 files. Tab completion works any time when you are typing in the Command Pane.
+> In the Script Pane, pressing <kbd>TAB</kbd> will automatically complete a command only when you are editing
+> `.ps1`, `.psd1`, or `.psm1` files. Tab completion works any time when you are typing in the Command Pane.
 
 ## To automatically complete a cmdlet parameter entry
 
-In the Command Pane or Script pane, type a cmdlet followed by a dash and then press TAB.
+In the Command Pane or Script pane, type a cmdlet followed by a dash and then press <kbd>TAB</kbd>.
 
-For example, type `Get-Process -` and then press TAB multiple times to display each of the parameters for the cmdlet in turn.
+For example, type `Get-Process -` and then press <kbd>TAB</kbd> multiple times to display each of
+the parameters for the cmdlet in turn.
 
 ## See Also
 
