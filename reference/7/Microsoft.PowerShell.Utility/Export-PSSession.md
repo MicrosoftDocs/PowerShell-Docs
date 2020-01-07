@@ -73,8 +73,8 @@ Export-PSSession -Session $S -Module exch* -CommandName Get-*, Set-* -FormatType
 ```
 
 These commands export the `Get` and `Set` commands from a Microsoft Exchange Server snap-in on a
-remote computer to an Exchange module in the `$PSHOME`\Modules directory on the local computer.
-Placing the module in the `$PSHOME`\Modules directory makes it accessible to all users of the
+remote computer to an Exchange module in the `$PSHOME\Modules` directory on the local computer.
+Placing the module in the `$PSHOME\Modules` directory makes it accessible to all users of the
 computer.
 
 ### Example 3: Export commands from a remote computer
