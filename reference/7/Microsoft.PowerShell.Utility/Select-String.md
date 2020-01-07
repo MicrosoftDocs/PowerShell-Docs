@@ -3,7 +3,7 @@ external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 08/26/2019
+ms.date: 12/20/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/select-string?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Select-String
@@ -19,49 +19,49 @@ Finds text in strings and files.
 ### File (Default)
 
 ```
-Select-String [-Pattern] <String[]> [-Path] <String[]> [-SimpleMatch] [-CaseSensitive] [-Quiet]
- [-List] [-NoEmphasis] [-Include <String[]>] [-Exclude <String[]>] [-NotMatch] [-AllMatches]
- [-Encoding <Encoding>] [-Context <Int32[]>] [<CommonParameters>]
+Select-String [-Culture <String>] [-Pattern] <String[]> [-Path] <String[]> [-SimpleMatch]
+ [-CaseSensitive] [-Quiet] [-List] [-NoEmphasis] [-Include <String[]>] [-Exclude <String[]>]
+ [-NotMatch] [-AllMatches] [-Encoding <Encoding>] [-Context <Int32[]>] [<CommonParameters>]
 ```
 
 ### ObjectRaw
 
 ```
-Select-String -InputObject <PSObject> [-Pattern] <String[]> -Raw [-SimpleMatch] [-CaseSensitive]
- [-List] [-NoEmphasis] [-Include <String[]>] [-Exclude <String[]>] [-NotMatch] [-AllMatches]
- [-Encoding <Encoding>] [-Context <Int32[]>] [<CommonParameters>]
+Select-String [-Culture <String>] -InputObject <PSObject> [-Pattern] <String[]> -Raw [-SimpleMatch]
+ [-CaseSensitive] [-List] [-NoEmphasis] [-Include <String[]>] [-Exclude <String[]>] [-NotMatch]
+ [-AllMatches] [-Encoding <Encoding>] [-Context <Int32[]>] [<CommonParameters>]
 ```
 
 ### Object
 
 ```
-Select-String -InputObject <PSObject> [-Pattern] <String[]> [-SimpleMatch] [-CaseSensitive] [-Quiet]
- [-List] [-NoEmphasis] [-Include <String[]>] [-Exclude <String[]>] [-NotMatch] [-AllMatches]
- [-Encoding <Encoding>] [-Context <Int32[]>] [<CommonParameters>]
+Select-String [-Culture <String>] -InputObject <PSObject> [-Pattern] <String[]> [-SimpleMatch]
+ [-CaseSensitive] [-Quiet] [-List] [-NoEmphasis] [-Include <String[]>] [-Exclude <String[]>]
+ [-NotMatch] [-AllMatches] [-Encoding <Encoding>] [-Context <Int32[]>] [<CommonParameters>]
 ```
 
 ### FileRaw
 
 ```
-Select-String [-Pattern] <String[]> [-Path] <String[]> -Raw [-SimpleMatch] [-CaseSensitive] [-List]
- [-NoEmphasis] [-Include <String[]>] [-Exclude <String[]>] [-NotMatch] [-AllMatches]
- [-Encoding <Encoding>] [-Context <Int32[]>] [<CommonParameters>]
+Select-String [-Culture <String>] [-Pattern] <String[]> [-Path] <String[]> -Raw [-SimpleMatch]
+ [-CaseSensitive] [-List] [-NoEmphasis] [-Include <String[]>] [-Exclude <String[]>] [-NotMatch]
+ [-AllMatches] [-Encoding <Encoding>] [-Context <Int32[]>] [<CommonParameters>]
 ```
 
 ### LiteralFile
 
 ```
-Select-String [-Pattern] <String[]> -LiteralPath <String[]> [-SimpleMatch] [-CaseSensitive] [-Quiet]
- [-List] [-NoEmphasis] [-Include <String[]>] [-Exclude <String[]>] [-NotMatch] [-AllMatches]
- [-Encoding <Encoding>] [-Context <Int32[]>] [<CommonParameters>]
+Select-String [-Culture <String>] [-Pattern] <String[]> -LiteralPath <String[]> [-SimpleMatch]
+ [-CaseSensitive] [-Quiet] [-List] [-NoEmphasis] [-Include <String[]>] [-Exclude <String[]>]
+ [-NotMatch] [-AllMatches] [-Encoding <Encoding>] [-Context <Int32[]>] [<CommonParameters>]
 ```
 
 ### LiteralFileRaw
 
 ```
-Select-String [-Pattern] <String[]> -LiteralPath <String[]> -Raw [-SimpleMatch] [-CaseSensitive]
- [-List] [-NoEmphasis] [-Include <String[]>] [-Exclude <String[]>] [-NotMatch] [-AllMatches]
- [-Encoding <Encoding>] [-Context <Int32[]>] [<CommonParameters>]
+Select-String [-Culture <String>] [-Pattern] <String[]> -LiteralPath <String[]> -Raw [-SimpleMatch]
+ [-CaseSensitive] [-List] [-NoEmphasis] [-Include <String[]>] [-Exclude <String[]>] [-NotMatch]
+ [-AllMatches] [-Encoding <Encoding>] [-Context <Int32[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -334,8 +334,15 @@ Indicates that the cmdlet searches for more than one match in each line of text.
 parameter, `Select-String` finds only the first match in each line of text.
 
 When `Select-String` finds more than one match in a line of text, it still emits only one
-**MatchInfo** object for the line, but the **Matches** property of the object contains all of the
+**MatchInfo** object for the line, but the **Matches** property of the object contains all the
 matches.
+
+> [!NOTE]
+> This parameter is ignored when used in combination with the **SimpleMatch** parameter. If you wish
+> to return all matches and the pattern that you are searching for contains regular expression
+> characters, you must escape those characters rather than using **SimpleMatch**. See
+> [about_Regular_Expressions](../Microsoft.PowerShell.Core/About/about_Regular_Expressions.md) for
+> more information about escaping regular expressions.
 
 ```yaml
 Type: SwitchParameter
@@ -398,6 +405,44 @@ Aliases:
 Required: False
 Position: Named
 Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Culture
+
+Specifies a culture name to match the specified pattern. The **Culture** parameter must be used with the
+**SimpleMatch** parameter. The default behavior uses the culture of the current PowerShell runspace
+(session).
+
+To get a list of all supported cultures, use `Get-Culture -ListAvailable` command.
+
+In addition, this parameter accepts the following arguments:
+
+- CurrentCulture, that is default;
+- Ordinal, that is non-linguistic binary comparison;
+- Invariant, that is culture independent comparison.
+
+With `Select-String -Culture Ordinal -CaseSensitive -SimpleMatch` command you gets fastest binary comparison.
+
+The **Culture** parameter uses tab completion to scroll through the list of arguments that specify
+the available cultures. To list all available arguments, use the following command:
+
+`(Get-Command Select-String).Parameters.Culture.Attributes.ValidValues`
+
+For more information about .NET CultureInfo.Name property, see
+[CultureInfo.Name](/dotnet/api//system.globalization.cultureinfo.name).
+
+The **Culture** parameter was introduced in PowerShell 7.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: Culture of the current PowerShell session
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -596,8 +641,7 @@ Accept wildcard characters: True
 
 ### -Pattern
 
-Specifies the text to find on each line. Type a string or regular expression. If you type a string,
-use the **SimpleMatch** parameter.
+Specifies the text to find on each line. The pattern value is treated as a regular expression.
 
 To learn about regular expressions, see [about_Regular_Expressions](../Microsoft.PowerShell.Core/About/about_Regular_Expressions.md).
 
@@ -656,6 +700,12 @@ Indicates that the cmdlet uses a simple match rather than a regular expression m
 match, `Select-String` searches the input for the text in the **Pattern** parameter. It doesn't
 interpret the value of the **Pattern** parameter as a regular expression statement.
 
+Also, when **SimpleMatch** is used, the **Matches** property of the **MatchInfo** object returned is
+empty.
+
+> [!NOTE]
+> When this parameter is used with the **AllMatches** parameter, the **AllMatches** is ignored.
+
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
@@ -695,7 +745,7 @@ If you use the **Raw** parameter, the output is a set of **String** objects that
 The **sls** alias for the `Select-String` cmdlet was introduced in PowerShell 3.0.
 
 > [!NOTE]
-> According to [Approved Verbs for PowerShell Commands](/powershell/developer/cmdlet/approved-verbs-for-windows-powershell-commands),
+> According to [Approved Verbs for PowerShell Commands](/powershell/scripting/developer/cmdlet/approved-verbs-for-windows-powershell-commands),
 > the official alias prefix for `Select-*` cmdlets is `sc`, not `sl`. Therefore, the proper alias
 > for `Select-String` should be `scs`, not `sls`. This is an exception to this rule.
 

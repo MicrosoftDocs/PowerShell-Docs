@@ -83,7 +83,7 @@ for the operating system you are using.
 
 ```powershell
 PS> "Hello World!" > Temp:/hello.txt
-PS> `Get-Content` Temp:/hello.txt
+PS> Get-Content Temp:/hello.txt
 Hello World!
 ```
 

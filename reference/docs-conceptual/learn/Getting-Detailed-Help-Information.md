@@ -85,7 +85,7 @@ Get-Help Get-ChildItem -Examples
 ```
 
 For information about how to write Help articles for the cmdlets that you write, see
-[How to Write Cmdlet Help](/powershell/developer/help/writing-help-for-windows-powershell-cmdlets).
+[How to Write Cmdlet Help](/powershell/scripting/developer/help/writing-help-for-windows-powershell-cmdlets).
 
 ## Getting conceptual help
 

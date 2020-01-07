@@ -61,8 +61,8 @@ feature sets and platform compatibility.
 
 - [Determine running edition of PowerShell using $PSVersionTable](/powershell/module/microsoft.powershell.core/about/about_automatic_variables)
 - [Filter Get-Module results by CompatiblePSEditions using PSEdition parameter](/powershell/module/microsoft.powershell.core/get-module)
-- [Prevent script execution unless run on a compatible edition of PowerShell](/powershell/gallery/concepts/script-psedition-support)
-- [Declare a module's compatibility to specific PowerShell versions](/powershell/gallery/concepts/module-psedition-support)
+- [Prevent script execution unless run on a compatible edition of PowerShell](/powershell/scripting/gallery/concepts/script-psedition-support)
+- [Declare a module's compatibility to specific PowerShell versions](/powershell/scripting/gallery/concepts/module-psedition-support)
 
 ## Module Analysis Cache
 

@@ -51,11 +51,11 @@ expressions, and (`-like`, `-notlike`) use wildcards `*`.
 Containment comparison operators determine whether a test value appears in a
 reference set (`-in`, `-notin`, `-contains`, `-notcontains`).
 
-Type comparison operators (`-is`, `-isnot`) determine whether an object is
-of a given type.
+Type comparison operators (`-is`, `-isnot`) determine whether an object is of a
+given type.
 
-Bitwise comparison operators (`-bAND`, `-bOR`, `-bXOR`, `-bNOT`) manipulate
-the bit patterns in values.
+Bitwise comparison operators (`-bAND`, `-bOR`, `-bXOR`, `-bNOT`) manipulate the
+bit patterns in values.
 
 For more information, see [about_Comparison_Operators](about_Comparison_Operators.md).
 
@@ -106,13 +106,48 @@ Special operators have specific use-cases that do not fit into any other
 operator group. For example, special operators allow you to run commands,
 change a value's data type, or retrieve elements from an array.
 
-#### Array subexpression operator `@( )`
+#### Grouping operator `( )`
 
-Returns the result of one or more statements as an array. If there is only
-one item, the array has only one member.
+As in other languages, `(...)` serves to override operator precedence in
+expressions. For example: `(1 + 2) / 3`
+
+However, in PowerShell, there are additional behaviors.
+
+- `(...)` allows you to let output from a _command_ participate in an expression. For example:
+
+  ```powershell
+  PS> (Get-Item *.txt).Count -gt 10
+  True
+  ```
+
+- When used as the first segment of a pipeline, wrapping a command or
+  expression in parentheses invariably causes _enumeration_ of the expression
+  result. if the parentheses wrap a _command_, it is run to completion with all
+  output _collected in memory_ before the results are sent through the
+  pipeline.
+
+#### Subexpression operator `$( )`
+
+Returns the result of one or more statements. For a single result, returns a
+scalar. For multiple results, returns an array. Use this when you want to use
+an expression within another expression. For example, to embed the results of
+command in a string expression.
 
 ```powershell
-@(Get-WmiObject win32_logicalDisk)
+PS> "Today is $(Get-Date)"
+Today is 12/02/2019 13:15:20
+
+PS> "Folder list: $((dir c:\ -dir).Name -join ', ')"
+Folder list: Program Files, Program Files (x86), Users, Windows
+```
+
+#### Array subexpression operator `@( )`
+
+Returns the result of one or more statements as an array. If there is only one
+item, the array has only one member.
+
+```powershell
+@(Get-CimInstance win32_logicalDisk)
 ```
 
 #### Call operator `&`
@@ -152,8 +187,7 @@ At line:1 char:2
     + FullyQualifiedErrorId : CommandNotFoundException
 ```
 
-The
-[Invoke-Expression](../../Microsoft.PowerShell.Utility/Invoke-Expression.md)
+The [Invoke-Expression](../../Microsoft.PowerShell.Utility/Invoke-Expression.md)
 cmdlet can execute code that causes parsing errors when using the call
 operator.
 
@@ -201,9 +235,10 @@ Runs the pipeline before it in the background, in a PowerShell job. This
 operator acts similarly to the UNIX control operator ampersand (`&`), which
 runs the command before it asynchronously in sub shell as a job.
 
-This operator is functionally equivalent to `Start-Job`. By default, the background operator starts
-the jobs in the current working directory of the caller that started the parallel tasks. The
-following example demonstrates basic usage of the background job operator.
+This operator is functionally equivalent to `Start-Job`. By default, the
+background operator starts the jobs in the current working directory of the
+caller that started the parallel tasks. The following example demonstrates
+basic usage of the background job operator.
 
 ```powershell
 Get-Process -Name pwsh &
@@ -215,9 +250,9 @@ That command is functionally equivalent to the following usage of `Start-Job`:
 Start-Job -ScriptBlock {Get-Process -Name pwsh}
 ```
 
-Just like `Start-Job`, the `&` background operator returns a `Job` object.
-This object can be used with `Receive-Job` and `Remove-Job`, just as if you
-had used `Start-Job` to start the job.
+Just like `Start-Job`, the `&` background operator returns a `Job` object. This
+object can be used with `Receive-Job` and `Remove-Job`, just as if you had used
+`Start-Job` to start the job.
 
 ```powershell
 $job = Get-Process -Name pwsh &
@@ -398,14 +433,7 @@ Get-Process notepad && Stop-Process -Name notepad
 npm install || Remove-Item -Recurse ./node_modules
 ```
 
-#### Property dereferences operator `.`
-
-Accesses the properties and methods of an object.
-
-```powershell
-$myProcess.peakWorkingSet
-(Get-Process PowerShell).kill()
-```
+For more information, see [About_Pipeline_Chain_Operators](About_Pipeline_Chain_Operators.md).
 
 #### Range operator `..`
 
@@ -446,24 +474,23 @@ B
 A
 ```
 
+#### Member access operator `.`
+
+Accesses the properties and methods of an object.
+
+```powershell
+$myProcess.peakWorkingSet
+(Get-Process PowerShell).kill()
+```
+
 #### Static member operator `::`
 
-Calls the static properties operator and methods of a .NET Framework class.
-To find the static properties and methods of an object, use the Static
-parameter of the `Get-Member` cmdlet.
+Calls the static properties operator and methods of a .NET Framework class. To
+find the static properties and methods of an object, use the Static parameter
+of the `Get-Member` cmdlet.
 
 ```powershell
 [datetime]::now
-```
-
-#### Subexpression operator `$( )`
-
-Returns the result of one or more statements. For a single result, returns
-a scalar. For multiple results, returns an array.
-
-```powershell
-$($x * 23)
-$(Get-WmiObject win32_Directory)
 ```
 
 #### Ternary operator `? <if-true> : <if-false>`

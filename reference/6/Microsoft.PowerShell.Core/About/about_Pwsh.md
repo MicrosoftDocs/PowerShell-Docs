@@ -1,9 +1,9 @@
 ---
 keywords: powershell,cmdlet
 ms.date: 06/19/2019
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_pwsh?view=powershell-7&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_pwsh?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
-title: about_pwsh
+title: about_Pwsh
 ---
 # About pwsh
 
@@ -28,15 +28,12 @@ pwsh[.exe]
    [-ExecutionPolicy <ExecutionPolicy>]
    [-InputFormat {Text | XML}]
    [-Interactive]
-   [-Login]
-   [-MTA]
    [-NoExit]
    [-NoLogo]
    [-NonInteractive]
    [-NoProfile]
    [-OutputFormat {Text | XML}]
    [-SettingsFile <SettingsFilePath>]
-   [-STA]
    [-Version]
    [-WindowStyle <style>]
    [-WorkingDirectory <directoryPath>]
@@ -204,21 +201,6 @@ strings) or "XML" (serialized CLIXML format).
 Present an interactive prompt to the user. Inverse for NonInteractive
 parameter.
 
-### -Login | -l
-
-On Linux and macOS, starts PowerShell as a login shell,
-using /bin/sh to execute login profiles such as /etc/profile and ~/.profile.
-On Windows, this switch does nothing.
-
-> [!IMPORTANT]
-> This parameter must come first to start PowerShell as a login shell.
-> Passing this parameter in another position will be ignored.
-
-### -MTA
-
-Start PowerShell using a multi-threaded apartment.
-This switch is only available on Windows.
-
 ### -NoExit | -noe
 
 Does not exit after running startup commands.
@@ -254,11 +236,6 @@ Note that these settings are not used by the endpoint specified by the
 `-ConfigurationName` argument.
 
 Example: `pwsh -SettingsFile c:\myproject\powershell.config.json`
-
-### -STA
-
-Start PowerShell using a single-threaded apartment.  This is the default.
-This switch is only available on Windows.
 
 ### -Version | -v
 

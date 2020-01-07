@@ -3,6 +3,7 @@ ms.date:  08/14/2018
 keywords:  powershell,cmdlet
 title:  Introducing the Windows PowerShell ISE
 ---
+
 # The Windows PowerShell ISE
 
 The Windows PowerShell Integrated Scripting Environment (ISE) is a host application for Windows
@@ -15,22 +16,29 @@ ISE, you can right-click on a line of code in the edit pane to set a breakpoint.
 
 ## Support
 
-The ISE was first introduced with Windows PowerShell V2 and was re-designed with PowerShell V3. 
-The ISE is supported in all supported versions of Windows PowerShell up to and including Windows PowerShell V5.1. 
-The ISE, however, is in maintenance mode and no new features are likely to be added.
-Additionally, there is no support for the ISE with PowerShell v6 and beyond. 
-Users wanting a graphical tool with which to manage PowerShell scripts, etc, should consider [Visual Studio Code](https://code.visualstudio.com/).
+The ISE was first introduced with Windows PowerShell V2 and was re-designed with PowerShell V3. The
+ISE is supported in all supported versions of Windows PowerShell up to and including Windows
+PowerShell V5.1.
+
+> [!NOTE]
+> The PowerShell ISE is no longer in active feature development. As a shipping component of
+> Windows, it continues to be officially supported for security and high-priority servicing fixes.
+> We currently have no plans to remove the ISE from Windows.
+>
+> There is no support for the ISE in PowerShell v6 and beyond. Users looking for replacement for the
+> ISE should use [Visual Studio Code](https://code.visualstudio.com/) with the
+> [PowerShell Extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode.PowerShell).
 
 ## Key Features
 
 Key features in Windows PowerShell ISE include:
 
 - Multiline editing: To insert a blank line under the current line in the Command pane, press
-  SHIFT+ENTER.
+  <kbd>SHIFT</kbd>+<kbd>ENTER</kbd>.
 - Selective execution: To run part of a script, select the text you want to run, and then click the
-  **Run Script** button. Or, press F5.
-- Context-sensitive help: Type **Invoke-Item**, and then press F1. The Help file opens to the
-  article for the **Invoke-Item** cmdlet.
+  **Run Script** button. Or, press <kbd>F5</kbd>.
+- Context-sensitive help: Type `Invoke-Item`, and then press <kbd>F1</kbd>. The Help file opens to the
+  article for the `Invoke-Item` cmdlet.
 
 The Windows PowerShell ISE lets you customize some aspects of its appearance. It also has its own
 Windows PowerShell profile script.
@@ -42,6 +50,6 @@ Alternately, you can type `powershell_ise.exe` in any command shell or in the Ru
 
 ## To get Help in the Windows PowerShell ISE
 
-On the **Help** menu, click **Windows PowerShell Help**. Or, press F1. The file that opens
-describes Windows PowerShell ISE and Windows PowerShell, including all of the help available from
-the Get-Help cmdlet.
+On the **Help** menu, click **Windows PowerShell Help**. Or, press <kbd>F1</kbd>. The file that opens
+describes Windows PowerShell ISE and Windows PowerShell, including all the help available from
+the `Get-Help` cmdlet.

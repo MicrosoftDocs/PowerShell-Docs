@@ -55,7 +55,7 @@ different between the files. `Testfile1.txt` is the **reference** object (`<=`) 
 Lines with content that appear in both files aren't displayed.
 
 ```powershell
-Compare-Object -ReferenceObject $(Get-Content -Path C:\Test\Testfile1.txt) -DifferenceObject $(Get-Content -Path C:\Test\Testfile2.txt)
+Compare-Object -ReferenceObject (Get-Content -Path C:\Test\Testfile1.txt) -DifferenceObject (Get-Content -Path C:\Test\Testfile2.txt)
 ```
 
 ```Output
@@ -77,8 +77,8 @@ The **SideIndicator** specifies if the line appears in the `Testfile1.txt` **ref
 
 ```powershell
 $objects = @{
-  ReferenceObject = $(Get-Content -Path C:\Test\Testfile1.txt)
-  DifferenceObject = $(Get-Content -Path C:\Test\Testfile2.txt)
+  ReferenceObject = (Get-Content -Path C:\Test\Testfile1.txt)
+  DifferenceObject = (Get-Content -Path C:\Test\Testfile2.txt)
 }
 Compare-Object @objects -IncludeEqual
 ```
@@ -103,8 +103,8 @@ contained in both files, as shown by the **SideIndicator** (`==`).
 
 ```powershell
 $objects = @{
-  ReferenceObject = $(Get-Content -Path C:\Test\Testfile1.txt)
-  DifferenceObject = $(Get-Content -Path C:\Test\Testfile2.txt)
+  ReferenceObject = (Get-Content -Path C:\Test\Testfile1.txt)
+  DifferenceObject = (Get-Content -Path C:\Test\Testfile2.txt)
 }
 Compare-Object @objects -IncludeEqual -ExcludeDifferent
 ```

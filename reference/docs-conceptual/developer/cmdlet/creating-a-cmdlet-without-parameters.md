@@ -256,7 +256,7 @@ When your cmdlet has been registered with Windows PowerShell, you can test it by
 
 [Creating a Cmdlet to Process Pipeline Input](./adding-parameters-that-process-pipeline-input.md)
 
-[How to Create a Windows PowerShell Cmdlet](/powershell/developer/cmdlet/writing-a-windows-powershell-cmdlet)
+[How to Create a Windows PowerShell Cmdlet](/powershell/scripting/developer/cmdlet/writing-a-windows-powershell-cmdlet)
 
 [Extending Object Types and Formatting](/previous-versions//ms714665(v=vs.85))
 

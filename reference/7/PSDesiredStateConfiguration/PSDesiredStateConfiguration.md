@@ -1,6 +1,6 @@
 ---
-Download Help Link: https://go.microsoft.com/fwlink/?linkid=855964
-Help Version: 6.1.0.1
+Download Help Link: https://go.microsoft.com/fwlink/?linkid=2113535
+Help Version: 7.0.0.0
 keywords: powershell,cmdlet
 locale: en-US
 Module Guid: 94b905ff-74b5-437e-89ed-7df44386533c
@@ -12,15 +12,12 @@ title: PSDesiredStateConfiguration
 # PSDesiredStateConfiguration Module
 
 ## Description
-
 This module contains cmdlets that designed to work with DSC Resources.
 
 ## PSDesiredStateConfiguration Cmdlets
 
 ### [Get-DscResource](Get-DscResource.md)
-
 Gets the DSC resources present on the computer.
 
 ### [New-DSCCheckSum](New-DSCCheckSum.md)
-
 Creates checksum files for DSC documents and DSC resources.

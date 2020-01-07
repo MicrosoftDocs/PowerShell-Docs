@@ -1,7 +1,7 @@
 ---
 keywords: powershell,cmdlet
 locale: en-us
-ms.date: 05/20/2019
+ms.date: 11/21/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_functions_advanced_parameters?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Functions_Advanced_Parameters
@@ -227,7 +227,7 @@ Param(
 )
 ```
 
-For more information about parameter sets, see [Cmdlet Parameter Sets](/powershell/developer/cmdlet/cmdlet-parameter-sets).
+For more information about parameter sets, see [Cmdlet Parameter Sets](/powershell/scripting/developer/cmdlet/cmdlet-parameter-sets).
 
 ### ValueFromPipeline argument
 
@@ -689,6 +689,13 @@ Param(
     [String]$Path
 )
 ```
+
+### ValidateTrustedData validation attribute
+
+This attribute was added in PowerShell 6.1.1.
+
+At this time, the attribute is used internally by PowerShell itself and is not intended for external
+usage.
 
 ## Dynamic parameters
 

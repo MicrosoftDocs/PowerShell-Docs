@@ -1,6 +1,6 @@
 ---
-Download Help Link: https://go.microsoft.com/fwlink/?linkid=855961
-Help Version: 6.1.0.1
+Download Help Link: https://go.microsoft.com/fwlink/?linkid=2113537
+Help Version: 7.0.0.0
 keywords: powershell,cmdlet
 locale: en-US
 Module Guid: 766204a6-330e-4263-a7ab-46c87afc366c

@@ -43,5 +43,5 @@ The Microsoft Virtual Academy videos have been moved to Channel 9.
 The following resources provide resources to help developers create their own PowerShell modules,
 functions, cmdlets, providers, and hosting applications.
 
-- [PowerShell SDK](/powershell/developer/windows-powershell)
+- [PowerShell SDK](/powershell/scripting/developer/windows-powershell)
 - [PowerShell SDK API Browser](/dotnet/api/system.management.automation)

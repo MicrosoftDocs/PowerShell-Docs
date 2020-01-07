@@ -22,7 +22,7 @@ To enable PowerShell remoting over WSMan, the following prerequisites need to be
   Windows versions prior to Windows 10. It is available via direct download or Windows Update. Fully
   patched (including optional packages), supported systems will already have this installed.
 - Install the Windows Management Framework (WMF) 4.0 or newer on Windows 7 and Windows Server 2008
-  R2. For more information about WMF, see [WMF Overview](/powershell/wmf/overview).
+  R2. For more information about WMF, see [WMF Overview](/powershell/scripting/wmf/overview).
 
 ## <a id="msi" />Installing the MSI package
 
@@ -62,6 +62,21 @@ msiexec.exe /package PowerShell-<version>-win-<os-arch>.msi /quiet ADD_EXPLORER_
 ```
 
 For a full list of command line options for Msiexec.exe, see [Command line options](/windows/desktop/Msi/command-line-options).
+
+## <a id="msix" />Installing the MSIX package
+
+To manually install the MSIX package on a Windows 10 client, download the MSIX package from our
+GitHub [releases][releases] page. Scroll down to the **Assets** section of the Release you want to
+install. The Assets section may be collapsed, so you may need to click to expand it.
+
+The MSI file looks like this - `PowerShell-<version>-win-<os-arch>.msix`
+
+Once downloaded, you cannot simply double-click on the installer as this package requires
+use of un-virtualized resources.  To install, you must use the `Add-AppxPackage` cmdlet:
+
+```powershell
+Add-AppxPackage PowerShell-<version>-win-<os-arch>.msix
+```
 
 ## <a id="zip" />Installing the ZIP package
 

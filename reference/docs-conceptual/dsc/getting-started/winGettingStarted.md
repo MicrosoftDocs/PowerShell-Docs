@@ -3,6 +3,7 @@ ms.date:  08/15/2019
 keywords:  dsc,powershell,configuration,setup
 title:  Get started with Desired State Configuration (DSC) for Windows
 ---
+
 # Get started with Desired State Configuration (DSC) for Windows
 
 This topic explains how to get started using PowerShell Desired State Configuration (DSC) for Windows.
@@ -22,14 +23,13 @@ The following versions are supported:
 - Windows 7
 
 The [Microsoft Hyper-V Server](/windows-server/virtualization/hyper-v/hyper-v-server-2016)
-standalone product sku does not contain an implementation of Desired State Configuraion
+standalone product sku doesn't contain an implementation of Desired State Configuration
 so it cannot be managed by PowerShell DSC or Azure Automation State Configuration.
 
 ## Installing DSC
 
-PowerShell Desired State Configuration is included in Windows and updated through Windows Management Framework.
-The latest version is
-[Windows Management Framework 5.1](https://www.microsoft.com/en-us/download/details.aspx?id=54616).
+PowerShell Desired State Configuration is included in Windows and updated through Windows Management
+Framework. The latest version is [Windows Management Framework 5.1](https://www.microsoft.com/en-us/download/details.aspx?id=54616).
 
 > [!NOTE]
 > You do not need to enable the Windows Server feature 'DSC-Service' to manage a machine using DSC.
@@ -41,7 +41,7 @@ The following sections explain how to create and run DSC configurations on Windo
 
 ### Creating a configuration MOF document
 
-The Windows PowerShell Configuration keyword is used to create a configuration.
+The Windows PowerShell `Configuration` keyword is used to create a configuration.
 The following steps describe the creation of a configuration document using Windows PowerShell.
 
 #### Define a configuration and generate the configuration document:
@@ -68,37 +68,54 @@ Configuration EnvironmentVariable_Path
 
 EnvironmentVariable_Path -OutputPath:"C:\EnvironmentVariable_Path"
 ```
+
 #### Install a module containing DSC resources
 
 Windows PowerShell Desired State Configuration includes built-in modules containing DSC resources.
-You can also load modules from external sources such as the PowerShell Gallery, using the PowerShellGet cmdlets.
+You can also load modules from external sources such as the PowerShell Gallery, using the
+PowerShellGet cmdlets.
 
-`Install-Module 'PSDscResources' -Verbose`
+```PowerShell
+Install-Module 'PSDscResources' -Verbose
+```
 
 #### Apply the configuration to the machine
 
-Configuration documents (MOF files) can be applied to the machine
-using the [Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration) cmdlet.
+> [!NOTE]
+> To allow DSC to run, Windows needs to be configured to receive PowerShell remote commands
+> even when you're running a `localhost` configuration. To easily configure your environment
+> correctly, just run `Set-WsManQuickConfig -Force` in an elevated PowerShell Terminal.
 
-`Start-DscConfiguration -Path 'C:\EnvironmentVariable_Path' -Wait -Verbose`
+Configuration documents (MOF files) can be applied to the machineusing the [Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration)
+cmdlet.
+
+```powershell
+Start-DscConfiguration -Path 'C:\EnvironmentVariable_Path' -Wait -Verbose
+```
 
 #### Get the current state of the configuration
 
 The [Get-DscConfiguration](/powershell/module/psdesiredstateconfiguration/get-dscconfiguration)
 cmdlet queries the current status of the machine and returns the current values for the configuration.
 
-`Get-DscConfiguration`
+```powershell
+Get-DscConfiguration
+```
 
 The [Get-DscLocalConfigurationManager](/powershell/module/psdesiredstateconfiguration/get-dscLocalConfigurationManager)
 cmdlet returns the current meta-configuration applied to the machine.
 
-`Get-DscLocalConfigurationManager`
+```powershell
+Get-DscLocalConfigurationManager
+```
 
 #### Remove the current configuration from a machine
 
 The [Remove-DscConfigurationDocument](/powershell/module/psdesiredstateconfiguration/remove-dscconfigurationdocument)
 
-`Remove-DscConfigurationDocument -Stage Current -Verbose`
+```powershell
+Remove-DscConfigurationDocument -Stage Current -Verbose
+```
 
 #### Configure settings in Local Configuration Manager
 
@@ -106,11 +123,13 @@ Apply a Meta Configuration MOF file to the machine
 using the [Set-DSCLocalConfigurationManager](/powershell/module/PSDesiredStateConfiguration/Set-DscLocalConfigurationManager) cmdlet.
 Requires the path to the Meta Configuration MOF.
 
-`Set-DSCLocalConfigurationManager -Path 'c:\metaconfig\localhost.meta.mof' -Verbose`
+```powershell
+Set-DSCLocalConfigurationManager -Path 'c:\metaconfig\localhost.meta.mof' -Verbose
+```
 
 ## Windows PowerShell Desired State Configuration log files
 
 Logs for DSC are written to Windows Event Log in the path
 `Microsoft-Windows-Dsc/Operational`.
 Additional logs for debugging purposes can be enabled following the steps in
-[Where Are DSC Event Logs](/powershell/dsc/troubleshooting/troubleshooting#where-are-dsc-event-logs).
+[Where Are DSC Event Logs](/powershell/scripting/dsc/troubleshooting/troubleshooting#where-are-dsc-event-logs).

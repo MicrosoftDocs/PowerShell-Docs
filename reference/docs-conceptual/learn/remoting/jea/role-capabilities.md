@@ -243,7 +243,7 @@ New-Item -ItemType Directory $rcFolder
 Copy-Item -Path .\MyFirstJEARole.psrc -Destination $rcFolder
 ```
 
-For more information about PowerShell modules, see [Understanding a PowerShell Module](/powershell/developer/windows-powershell).
+For more information about PowerShell modules, see [Understanding a PowerShell Module](/powershell/scripting/developer/windows-powershell).
 
 ## Updating role capabilities
 

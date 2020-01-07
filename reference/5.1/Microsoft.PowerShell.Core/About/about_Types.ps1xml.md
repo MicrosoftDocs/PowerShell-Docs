@@ -6,11 +6,9 @@ online version: https://docs.microsoft.com/powershell/module/microsoft.powershel
 schema: 2.0.0
 title: about_Types.ps1xml
 ---
-
 # About Types.ps1xml
 
 ## SHORT DESCRIPTION
-
 Explains how to use Types.ps1xml files to extend the types of objects
 that are used in PowerShell.
 
@@ -557,7 +555,7 @@ property of the `GetVersionInfo` static method of
 ```
 
 For more information, see the
-[Windows PowerShell Software Development Kit (SDK)](/powershell/developer/windows-powershell).
+[Windows PowerShell Software Development Kit (SDK)](/powershell/scripting/developer/windows-powershell).
 
 ## `Update-TypeData`
 

@@ -153,7 +153,7 @@ Accept wildcard characters: False
 ### -CompatiblePSEditions
 
 Specifies the compatible **PSEditions** of the module. For information about **PSEdition**, see
-[Modules with compatible PowerShell Editions](/powershell/gallery/concepts/module-psedition-support).
+[Modules with compatible PowerShell Editions](/powershell/scripting/gallery/concepts/module-psedition-support).
 
 ```yaml
 Type: String[]
@@ -346,7 +346,7 @@ version 3.0. It contains information about the location of the module's download
 the version numbers of the newest help files for each supported locale.
 
 For information about Updatable Help, see [about_Updatable_Help](../Microsoft.PowerShell.Core/About/about_Updatable_Help.md).
-For information about the **HelpInfo XML** file, see [Supporting Updatable Help](/powershell/developer/module/supporting-updatable-help).
+For information about the **HelpInfo XML** file, see [Supporting Updatable Help](/powershell/scripting/developer/module/supporting-updatable-help).
 
 ```yaml
 Type: Uri

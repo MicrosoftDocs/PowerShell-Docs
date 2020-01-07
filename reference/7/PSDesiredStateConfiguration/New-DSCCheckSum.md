@@ -141,4 +141,5 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## RELATED LINKS
 
-[PowerShell Desired State Configuration Overview](/powershell/dsc)
+[Windows PowerShell Desired State Configuration Overview](/powershell/scripting/dsc/overview/dscforengineers)
+

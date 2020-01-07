@@ -1,11 +1,15 @@
 ---
-ms.date:  06/05/2017
+ms.date:  12/31/2019
 keywords:  powershell,cmdlet
 title:  The ISEEditor Object
 ---
+
 # The ISEEditor Object
 
-An **ISEEditor** object is an instance of the Microsoft.PowerShell.Host.ISE.ISEEditor class. The Console pane is an **ISEEditor** object. Each [ISEFile](The-ISEFile-Object.md) object has an associated **ISEEditor** object. The following sections list the methods and properties of an **ISEEditor** object.
+An **ISEEditor** object is an instance of the Microsoft.PowerShell.Host.ISE.ISEEditor class. The
+Console pane is an **ISEEditor** object. Each [ISEFile](The-ISEFile-Object.md) object has an
+associated **ISEEditor** object. The following sections list the methods and properties of an
+**ISEEditor** object.
 
 ## Methods
 
@@ -24,7 +28,9 @@ $psISE.CurrentPowerShellTab.ConsolePane.Clear()
 
 Supported in Windows PowerShell ISE 2.0 and later.
 
-Scrolls the editor so that the line that corresponds to the specified **lineNumber** parameter value is visible. It throws an exception if the specified line number is outside the range of 1,last line number, which defines the valid line numbers.
+Scrolls the editor so that the line that corresponds to the specified **lineNumber** parameter value
+is visible. It throws an exception if the specified line number is outside the range of 1,last line
+number, which defines the valid line numbers.
 
 **lineNumber**
 The number of the line that is to be made visible.
@@ -66,7 +72,11 @@ $psISE.CurrentPowerShellTab.ConsolePane.GetLineLength(1)
 
 Supported in Windows PowerShell ISE 3.0 and later, and not present in earlier versions.
 
-Moves the caret to the matching character if the **CanGoToMatch** property of the editor object is **$true**, which occurs when the caret is immediately before an opening parenthesis, bracket, or brace - \(,\[,{ - or immediately after a closing parenthesis, bracket, or brace - \),\],}.  The caret is placed before an opening character or after a closing character. If the **CanGoToMatch** property is **$false**, then this method does nothing.
+Moves the caret to the matching character if the **CanGoToMatch** property of the editor object is
+`$true`, which occurs when the caret is immediately before an opening parenthesis, bracket, or
+brace - `(`,`[`,`{` - or immediately after a closing parenthesis, bracket, or brace - `)`,`]`,`}`. The caret
+is placed before an opening character or after a closing character. If the **CanGoToMatch** property
+is `$false`, then this method does nothing.
 
 ```powershell
 # Goes to the matching character if CanGoToMatch() is $true
@@ -121,7 +131,8 @@ $psISE.CurrentFile.Editor.SelectCaretLine()
 
 Supported in Windows PowerShell ISE 2.0 and later.
 
-Sets the caret position at the line number and the column number. It throws an exception if either the caret line number  or the caret column number  are out of their respective valid ranges.
+Sets the caret position at the line number and the column number. It throws an exception if either
+the caret line number or the caret column number are out of their respective valid ranges.
 
 **lineNumber** - Integer
 The caret line number.
@@ -151,7 +162,10 @@ $psISE.CurrentFile.Editor.ToggleOutliningExpansion()
 
 Supported in Windows PowerShell ISE 3.0 and later, and not present in earlier versions.
 
-The read-only Boolean property to indicate whether the caret is next to a parenthesis, bracket, or brace - \(\), \[\], {}. If the caret is immediately before the opening character or immediately after the closing character of a pair, then this property value is **$true**. Otherwise, it is **$false**.
+The read-only Boolean property to indicate whether the caret is next to a parenthesis, bracket, or
+brace - `()`, `[]`, `{}`. If the caret is immediately before the opening character or immediately
+after the closing character of a pair, then this property value is `$true`. Otherwise, it is
+`$false`.
 
 ```powershell
 # Test to see if the caret is next to a parenthesis, bracket, or brace

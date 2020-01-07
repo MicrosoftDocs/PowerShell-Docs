@@ -18,10 +18,11 @@ problem.
 ## Community Support
 
 We also offer [community support][] on GitHub where you can file an issue, bug, or feature request.
-Also, you may find help from other members of the community on the general [Microsoft Community][]
-or the Microsoft [PowerShell Tech Community][]. We offer no guarantee there that the community will
-address or resolve your issue in a timely manner. If you have a problem that requires immediate
-attention, you should use the traditional, paid support options.
+Also, you may find help from other members of the community in the Microsoft [PowerShell Tech Community][]
+or any of the forums listed in the community section of [PowerShell][pshub] hub page. We offer no
+guarantee there that the community will address or resolve your issue in a timely manner. If you
+have a problem that requires immediate attention, you should use the traditional, paid support
+options.
 
 ## Lifecycle of PowerShell Core
 
@@ -140,10 +141,10 @@ PowerShell Core. For example, using the `ActiveDirectory` module that ships as p
 Server is an unsupported scenario.
 
 However, modules that don't explicitly support PowerShell Core may be compatible in some cases. By
-installing the [`WindowsPSModulePath`][] module, you can add the Windows PowerShell `PSModulePath`
+installing the [WindowsPSModulePath][] module, you can add the Windows PowerShell `PSModulePath`
 to your PowerShell Core `PSModulePath`.
 
-First, install the `WindowsPSModulePath` module from the PowerShell Gallery:
+First, install the **WindowsPSModulePath** module from the PowerShell Gallery:
 
 ```powershell
 # Add `-Scope CurrentUser` if you're installing as non-admin
@@ -166,12 +167,12 @@ Add-WindowsPSModulePath
 [enterprise-agreement]: https://www.microsoft.com/en-us/licensing/licensing-programs/enterprise.aspx
 [assurance]: https://www.microsoft.com/en-us/licensing/licensing-programs/software-assurance-default.aspx
 [community support]: https://github.com/powershell/powershell/issues
-[Microsoft Community]: https://answers.microsoft.com/
+[pshub]: https://docs.microsoft.com/powershell
 [PowerShell Tech Community]: https://techcommunity.microsoft.com/t5/PowerShell/ct-p/WindowsPowerShell
 [assisted support]: https://support.microsoft.com/assistedsupportproducts
 [modern]: https://support.microsoft.com/help/30881/modern-lifecycle-policy
 [lifecycle-chart]: ./images/modern-lifecycle.png
 [semi-annual]: https://docs.microsoft.com/windows-server/get-started/semi-annual-channel-overview
 [MIT license]: https://github.com/PowerShell/PowerShell/blob/master/LICENSE.txt
-[`WindowsPSModulePath`]: https://www.powershellgallery.com/packages/WindowsPSModulePath/
+[WindowsPSModulePath]: https://www.powershellgallery.com/packages/WindowsPSModulePath/
 [Experimental features]: /powershell/module/microsoft.powershell.core/about/about_powershell_config?view=powershell-6#experimentalfeatures

@@ -117,7 +117,7 @@ For more information about this method, see
 [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/system.management.automation.cmdlet.shouldprocess).
 
 For more information about how to request confirmation, see
-[Requesting Confirmation](/powershell/developer/cmdlet/requesting-confirmation).
+[Requesting Confirmation](/powershell/scripting/developer/cmdlet/requesting-confirmation).
 
 #### ShouldContinue
 
