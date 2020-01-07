@@ -4,20 +4,20 @@ keywords:  dsc,powershell,configuration,setup
 title:  Conditional statements and loops in Configurations
 ---
 
-# Conditional statements and loops in Configurations
+# Conditional statements and loops in a Configuration
 
-You can make your [Configurations](configurations.md) more dynamic using PowerShell flow-control
+You can make your [Configuration](configurations.md) more dynamic by using PowerShell flow-control
 keywords. This article shows you how you can use conditional statements and loops to make your
-`Configurations` more dynamic. Combining conditional statements and loops with [parameters](add-parameters-to-a-configuration.md)
+`Configuration` more dynamic. Combining conditional statements and loops with [parameters](add-parameters-to-a-configuration.md)
 and [Configuration Data](configData.md) allows you more flexibility and control when compiling your
-`Configurations`.
+`Configuration`.
 
 Just like a function or a script block, you can use any PowerShell language feature within a `Configuration`.
 The statements you use will only be evaluated when you call your `Configuration` to compile a `.mof`
-file. The examples below show simple scenarios to demonstrate concepts. Conditional statements and
+file. The examples below show scenarios to demonstrate concepts. Conditional statements and
 loops are more often used with parameters and configuration Data.
 
-In this simple example, the **Service** resource block retrieves the current state of a service at
+In this  example, the **Service** resource block retrieves the current state of a service at
 compile time to generate a `.mof` file that maintains its current state.
 
 > [!NOTE]
@@ -64,8 +64,7 @@ Configuration ServiceState
 }
 ```
 
-You could also create `Configurations` only for machines that are online by using a simple `if`
-statement.
+You could also create a `Configuration` only for machines that are online by using an `if` statement.
 
 ```powershell
 Configuration ServiceState
