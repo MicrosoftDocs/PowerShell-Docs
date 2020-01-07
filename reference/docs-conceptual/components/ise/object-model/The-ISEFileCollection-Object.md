@@ -11,15 +11,15 @@ The **ISEFileCollection** object is a collection of **ISEFile** objects. An exam
 
 ## Methods
 
-### Add\( \[fullPath\] \)
+### Add\( \[FullPath\] \)
 
 Supported in Windows PowerShell ISE 2.0 and later.
 
 Creates and returns a new untitled file and adds it to the collection. The **IsUntitled** property
 of the newly created file is `$true`.
 
-**\[fullPath\]** - Optional string The fully specified path of the file. An exception is generated
-if you include the **fullPath** parameter and a relative path, or if you use a file name instead of
+**\[FullPath\]** - Optional string The fully specified path of the file. An exception is generated
+if you include the **FullPath** parameter and a relative path, or if you use a file name instead of
 the full path.
 
 ```powershell
@@ -58,9 +58,9 @@ $psISE.CurrentPowerShellTab.Files.Remove($firstfile, $true)
 
 Supported in Windows PowerShell ISE 2.0 and later.
 
-Selects the file that is specified by the **selectedFile** parameter.
+Selects the file that is specified by the **SelectedFile** parameter.
 
-**selectedFile** - Microsoft.PowerShell.Host.ISE.ISEFile
+**SelectedFile** - Microsoft.PowerShell.Host.ISE.ISEFile
 The ISEFile file that you want to select.
 
 ```powershell

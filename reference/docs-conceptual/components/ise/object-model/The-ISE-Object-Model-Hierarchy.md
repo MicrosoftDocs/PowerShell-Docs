@@ -51,5 +51,5 @@ member in the collection is an instance of the [PowerShellTab](The-PowerShellTab
 
 ## See Also
 
-- [Purpose of the Windows PowerShell ISE Scripting Object Mode](Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md)
+- [Purpose of the Windows PowerShell ISE Scripting Object Model](Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md)
 - [The ISE Object Model Hierarchy](The-ISE-Object-Model-Hierarchy.md)

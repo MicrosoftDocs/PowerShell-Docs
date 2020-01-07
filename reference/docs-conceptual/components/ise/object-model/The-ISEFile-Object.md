@@ -71,7 +71,7 @@ $psISE.CurrentFile.SaveAs($fullPath, [System.Text.Encoding]::UTF8)
 Supported in Windows PowerShell ISE 2.0 and later.
 
 The read-only property that gets the string that contains the display name of this file. The name is
-shown on the **File** tab at the top of the editor. The presence of an asterisk \(\*\) at the end of
+shown on the **File** tab at the top of the editor. The presence of an asterisk `(*)` at the end of
 the name indicates that the file has changes that have not been saved.
 
 ```powershell

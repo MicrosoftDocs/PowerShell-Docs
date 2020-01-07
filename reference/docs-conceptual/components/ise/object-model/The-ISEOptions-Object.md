@@ -432,8 +432,8 @@ $psISE.Options.ShowLineNumbers = $false
 Supported in Windows PowerShell ISE 3.0 and later, and not present in earlier versions.
 
 Specifies whether the Script pane displays expandable and collapsible brackets next to sections of
-code in the left margin. When they are displayed, you can click the minus \(-\) icons next to a
-block of text to collapse it or click the plus \(+\) icon to expand a block of text. The default
+code in the left margin. When they are displayed, you can click the minus `-` icons next to a
+block of text to collapse it or click the plus `+` icon to expand a block of text. The default
 value is `$true`.
 
 ```powershell

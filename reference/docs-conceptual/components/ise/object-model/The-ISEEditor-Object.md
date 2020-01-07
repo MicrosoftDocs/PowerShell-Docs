@@ -74,7 +74,7 @@ Supported in Windows PowerShell ISE 3.0 and later, and not present in earlier ve
 
 Moves the caret to the matching character if the **CanGoToMatch** property of the editor object is
 `$true`, which occurs when the caret is immediately before an opening parenthesis, bracket, or
-brace - \(,\[,{ - or immediately after a closing parenthesis, bracket, or brace - \),\],}. The caret
+brace - `(`,`[`,`{` - or immediately after a closing parenthesis, bracket, or brace - `)`,`]`,`}`. The caret
 is placed before an opening character or after a closing character. If the **CanGoToMatch** property
 is `$false`, then this method does nothing.
 
@@ -163,7 +163,7 @@ $psISE.CurrentFile.Editor.ToggleOutliningExpansion()
 Supported in Windows PowerShell ISE 3.0 and later, and not present in earlier versions.
 
 The read-only Boolean property to indicate whether the caret is next to a parenthesis, bracket, or
-brace - \(\), \[\], {}. If the caret is immediately before the opening character or immediately
+brace - `()`, `[]`, `{}`. If the caret is immediately before the opening character or immediately
 after the closing character of a pair, then this property value is `$true`. Otherwise, it is
 `$false`.
 
