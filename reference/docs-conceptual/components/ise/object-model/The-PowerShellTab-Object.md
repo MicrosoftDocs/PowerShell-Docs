@@ -114,7 +114,7 @@ $secondTab.Invoke({sleep 20})
 $secondTab.CanInvoke
 ```
 
-### Consolepane
+### ConsolePane
 
 Supported in Windows PowerShell ISE 3.0 and later, and not present in earlier versions. In Windows
 PowerShell ISE 2.0 this was named **CommandPane**.

@@ -75,7 +75,7 @@ contents in the Output Pane.
 ## Command Pane
 
 Allows you to write commands. You can run a one line command or a multiline command in the Command
-Pane. Press <kbd>SHIFT</kbd>+<kbd>ENTER</kbd> to enter each line of a multiline command, and press ENTER after the last
+Pane. Press <kbd>SHIFT</kbd>+<kbd>ENTER</kbd> to enter each line of a multiline command, and press <kbd>ENTER</kbd> after the last
 line to execute the multiline command. The prompt displayed on top of the Command Pane shows the
 path to the current working directory.
 

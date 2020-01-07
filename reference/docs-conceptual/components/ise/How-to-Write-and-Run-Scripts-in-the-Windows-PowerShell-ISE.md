@@ -145,13 +145,13 @@ Press <kbd>CTRL</kbd>+<kbd>S</kbd> or, on the toolbar, click the **Save** icon, 
 1. On the **File** menu, click **Save As**. The **Save As** dialog box will appear.
 2. In the **File name** box, enter a name for the file.
 3. In the **Save as type** box, select a file type. For example, in the **Save as type** box,
-   select 'PowerShell Scripts (\*.ps1)'.
+   select 'PowerShell Scripts (`*.ps1`)'.
 4. Click **Save**.
 
 ### To save a script in ASCII encoding
 
 By default, Windows PowerShell ISE saves new script files (`.ps1`), script data files (`.psd1`), and
-script module files (`.psm`1) as Unicode (BigEndianUnicode) by default.Â To save a script in another
+script module files (`.psm1`) as Unicode (BigEndianUnicode) by default. To save a script in another
 encoding, such as ASCII (ANSI), use the **Save** or **SaveAs** methods on the
 [$psISE.CurrentFile](object-model/the-ise-object-model-hierarchy.md) object.
 
