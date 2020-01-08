@@ -1,5 +1,5 @@
 ---
-Download Help Link: {{ Update Download Link }}
+Download Help Link: https://go.microsoft.com/fwlink/?linkid=2113580
 Help Version: 2.0.1
 Locale: en-US
 Module Guid: 29955884-f6a6-49ba-a071-a4dc8842697f

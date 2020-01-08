@@ -1,11 +1,13 @@
 ---
-ms.date:  06/05/2017
+ms.date:  12/31/2019
 keywords:  powershell,cmdlet
 title:  The ISEAddOnToolCollection Object
 ---
+
 # The ISEAddOnToolCollection Object
 
-The **ISEAddOnToolCollection** object is a collection of **ISEAddOnTool** objects. An example is the **$psISE.CurrentPowerShellTab.VerticalAddOnTools** object.
+The **ISEAddOnToolCollection** object is a collection of **ISEAddOnTool** objects. An example is the
+`$psISE.CurrentPowerShellTab.VerticalAddOnTools` object.
 
 ## Methods
 
@@ -13,7 +15,8 @@ The **ISEAddOnToolCollection** object is a collection of **ISEAddOnTool** object
 
 Supported in Windows PowerShell ISE 3.0 and later, and not present in earlier versions.
 
-Adds a new add-on tool to the collection. It returns the newly added add-on tool. Before you run this command, you must install the add-on tool on the local computer and load the assembly.
+Adds a new add-on tool to the collection. It returns the newly added add-on tool. Before you run
+this command, you must install the add-on tool on the local computer and load the assembly.
 
 **Name** - String
 Specifies the display name of the add-on tool that is added to Windows PowerShell ISE.
@@ -22,7 +25,7 @@ Specifies the display name of the add-on tool that is added to Windows PowerShel
 Specifies the control that is added.
 
 **\[IsVisible\]** - optional Boolean
-If set to **$true**, the add-on tool is immediately visible in the associated tool pane.
+If set to `$true`, the add-on tool is immediately visible in the associated tool pane.
 
 ```powershell
 # Load a DLL with an add-on and then add it to the ISE

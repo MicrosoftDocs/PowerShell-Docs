@@ -1,11 +1,15 @@
 ---
-ms.date:  06/05/2017
+ms.date:  12/31/2019
 keywords:  powershell,cmdlet
 title:  The ISEFile Object
 ---
+
 # The ISEFile Object
 
-An **ISEFile** object represents a file in Windows PowerShell® Integrated Scripting Environment (ISE). It is an instance of the Microsoft.PowerShell.Host.ISE.ISEFile class. This topic lists its member methods and member properties. The **$psISE.CurrentFile** and the files in the Files collection in a PowerShell tab are all instances of the Microsoft.PowerShell.Host.ISE.ISEFile class.
+An **ISEFile** object represents a file in Windows PowerShell® Integrated Scripting Environment
+(ISE). It is an instance of the **Microsoft.PowerShell.Host.ISE.ISEFile** class. This topic lists its
+member methods and member properties. The `$psISE.CurrentFile` and the files in the Files
+collection in a PowerShell tab are all instances of the ****Microsoft.PowerShell.Host.ISE.ISEFile** class.
 
 ## Methods
 
@@ -66,7 +70,9 @@ $psISE.CurrentFile.SaveAs($fullPath, [System.Text.Encoding]::UTF8)
 
 Supported in Windows PowerShell ISE 2.0 and later.
 
-The read-only property that gets the string that contains the display name of this file. The name is shown on the **File** tab at the top of the editor. The presence of an asterisk \(\*\) at the end of the name indicates that the file has changes that have not been saved.
+The read-only property that gets the string that contains the display name of this file. The name is
+shown on the **File** tab at the top of the editor. The presence of an asterisk `(*)` at the end of
+the name indicates that the file has changes that have not been saved.
 
 ```powershell
 # Shows the display name of the file.
@@ -77,7 +83,8 @@ $psISE.CurrentFile.DisplayName
 
 Supported in Windows PowerShell ISE 2.0 and later.
 
-The read-only property that gets the [editor object](The-ISEEditor-Object.md) that is used for the specified file.
+The read-only property that gets the [editor object](The-ISEEditor-Object.md) that is used for the
+specified file.
 
 ```powershell
 # Gets the editor and the text.
@@ -110,7 +117,7 @@ $psISE.CurrentFile.FullPath
 
 Supported in Windows PowerShell ISE 2.0 and later.
 
-The read-only Boolean property that returns **$true** if the file has been saved after it was last modified.
+The read-only Boolean property that returns `$true` if the file has been saved after it was last modified.
 
 ```powershell
 # Determines whether the file has been saved since it was last modified.
@@ -122,7 +129,7 @@ $myfile.IsSaved
 
 Supported in Windows PowerShell ISE 2.0 and later.
 
-The read-only property that returns **$true** if the file has never been given a title.
+The read-only property that returns `$true` if the file has never been given a title.
 
 ```powershell
 # Determines whether the file has never been given a title.
