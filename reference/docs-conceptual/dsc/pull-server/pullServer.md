@@ -79,7 +79,7 @@ example script is provided below.
 | MDB     | ESENT (Default), MDB | ESENT (Default), MDB | ESENT (Default), SQL Server, MDB               |
 
 Starting in release 17090 of
-[Windows Server Insider Preview](https://www.microsoft.com/en-us/software-download/windowsinsiderpreviewserver),
+[Windows Server Insider Preview](https://www.microsoft.com/software-download/windowsinsiderpreviewserver),
 SQL Server is a supported option for the Pull Service (Windows Feature *DSC-Service*). This provides
 a new option for scaling large DSC environments that have not migrated to [Azure Automation DSC](/azure/automation/automation-dsc-getting-started).
 
@@ -90,22 +90,20 @@ a new option for scaling large DSC environments that have not migrated to [Azure
 To configure the pull server to use SQL Server, set **SqlProvider** to `$true` and
 **SqlConnectionString** to a valid SQL Server Connection String. For more information, see [SqlClient Connection Strings](/dotnet/framework/data/adonet/connection-string-syntax#sqlclient-connection-strings).
 For an example of SQL Server configuration with **xDscWebService**, first read [Using the xDscWebService resource](#using-the-xdscwebservice-resource)
-and then review [Sample_xDscWebServiceRegistration_UseSQLProvider.ps1 on GitHub](https://github.com/PowerShell/xPSDesiredStateConfiguration/blob/master/Examples/Sample_xDscWebServiceRegistration_UseSQLProvider.ps1).
+and then review [Sample_xDscWebServiceRegistration_UseSQLProvider.ps1 on GitHub](https://github.com/dsccommunity/xPSDesiredStateConfiguration/blob/master/source/Examples/Sample_xDscWebServiceRegistration_UseSQLProvider.ps1).
 
 ### Using the xDscWebService resource
 
 The easiest way to set up a web pull server is to use the **xDscWebService** resource, included in
 the **xPSDesiredStateConfiguration** module. The following steps explain how to use the resource in
-a configuration that sets up the web service.
+a `Configuration` that sets up the web service.
 
-1. Call the [Install-Module](/powershell/module/PowershellGet/Install-Module) cmdlet to install the
+1. Call the [Install-Module](/reference/6/PowerShellGet/Install-Module.md) cmdlet to install the
    **xPSDesiredStateConfiguration** module.
 
    > [!NOTE]
-   > **Install-Module** is included in the
-   > **PowerShellGet** module, which is included in PowerShell 5.0. You can download the
-   > **PowerShellGet** module for PowerShell 3.0 and 4.0 at
-   > [PackageManagement PowerShell Modules Preview](https://www.microsoft.com/en-us/download/details.aspx?id=49186).
+   > `Install-Module` is included in the **PowerShellGet** module, which is included in PowerShell
+   > 5.0 and higher.
 
 1. Get an SSL certificate for the DSC Pull server from a trusted Certificate Authority, either
    within your organization or a public authority. The certificate received from the authority is
@@ -117,9 +115,9 @@ a configuration that sets up the web service.
    following at the PS prompt and press enter: `[guid]::newGuid()` or `New-Guid`. This key will be
    used by client nodes as a shared key to authenticate during registration. For more information,
    see the Registration Key section below.
-1. In the PowerShell ISE, start (<kbd>F5</kbd>) the following configuration script (included in the Examples
-   folder of the **xPSDesiredStateConfiguration** module as
-   `Sample_xDscWebServiceRegistration.ps1`). This script sets up the pull server.
+1. In the PowerShell ISE, start (<kbd>F5</kbd>) the following configuration script (included in the
+   folder of the **xPSDesiredStateConfiguration** module as `Sample_xDscWebServiceRegistration.ps1`)
+   . This script sets up the pull server.
 
     ```powershell
     configuration Sample_xDscWebServiceRegistration
@@ -295,7 +293,7 @@ Use `New-DscChecksum {module zip file}` to create a checksum file for the newly 
 ### Configuration MOF format
 
 A configuration MOF file needs to be paired with a checksum file so that an LCM on a target node can
-validate the configuration. To create a checksum, call the [New-DscChecksum](/powershell/module/PSDesiredStateConfiguration/New-DscChecksum)
+validate the configuration. To create a checksum, call the [New-DscChecksum](/reference/6/PSDesiredStateConfiguration/New-DSCCheckSum.md)
 cmdlet. The cmdlet takes a **Path** parameter that specifies the folder where the configuration MOF
 is located. The cmdlet creates a checksum file named `ConfigurationMOFName.mof.checksum`, where
 `ConfigurationMOFName` is the name of the configuration mof file. If there are more than one
@@ -348,5 +346,5 @@ The following topics describe setting up pull clients in detail:
 - [Windows PowerShell Desired State Configuration Overview](../overview/overview.md)
 - [Enacting configurations](enactingConfigurations.md)
 - [Using a DSC report server](reportServer.md)
-- [[MS-DSCPM]: Desired State Configuration Pull Model Protocol](https://msdn.microsoft.com/library/dn393548.aspx)
-- [[MS-DSCPM]: Desired State Configuration Pull Model Protocol Errata](https://msdn.microsoft.com/library/mt612824.aspx)
+- [[MS-DSCPM]: Desired State Configuration Pull Model Protocol](https://docs.microsoft.com/openspecs/windows_protocols/ms-dscpm/ea744c01-51a2-4000-9ef2-312711dcc8c9)
+- [[MS-DSCPM]: Desired State Configuration Pull Model Protocol Errata](https://docs.microsoft.com/openspecs/windows_protocols/ms-winerrata/f5fc7ae3-9172-41e8-ac6a-2a5a5b7bfaf5)
