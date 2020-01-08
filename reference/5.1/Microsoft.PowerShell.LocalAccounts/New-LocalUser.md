@@ -12,11 +12,13 @@ title: New-LocalUser
 # New-LocalUser
 
 ## SYNOPSIS
+
 Creates a local user account.
 
 ## SYNTAX
 
 ### Password (Default)
+
 ```
 New-LocalUser [-AccountExpires <DateTime>] [-AccountNeverExpires] [-Description <String>] [-Disabled]
  [-FullName <String>] [-Name] <String> -Password <SecureString> [-PasswordNeverExpires]
@@ -24,6 +26,7 @@ New-LocalUser [-AccountExpires <DateTime>] [-AccountNeverExpires] [-Description 
 ```
 
 ### NoPassword
+
 ```
 New-LocalUser [-AccountExpires <DateTime>] [-AccountNeverExpires] [-Description <String>] [-Disabled]
  [-FullName <String>] [-Name] <String> [-NoPassword] [-UserMayNotChangePassword] [-WhatIf] [-Confirm]
@@ -31,12 +34,14 @@ New-LocalUser [-AccountExpires <DateTime>] [-AccountNeverExpires] [-Description 
 ```
 
 ## DESCRIPTION
-The **New-LocalUser** cmdlet creates a local user account.
-This cmdlet creates a local user account or a local user account that is connected to a Microsoft account.
+
+The `New-LocalUser` cmdlet creates a local user account. This cmdlet creates a local user account
+or a local user account that is connected to a Microsoft account.
 
 ## EXAMPLES
 
 ### Example 1: Create a user account
+
 ```
 PS C:\> New-LocalUser -Name "User02" -Description "Description of this account." -NoPassword
 Name    Enabled  Description
@@ -44,9 +49,11 @@ Name    Enabled  Description
 User02  True     Description of this account.
 ```
 
-This command creates a local user account and does not specify the *AccountExpires* or *Password* parameters. Therefore, the account doesn't expire or have a password by default.
+This command creates a local user account and does not specify the **AccountExpires** or **Password**
+parameters. Therefore, the account doesn't expire or have a password by default.
 
 ### Example 2: Create a user account that has a password
+
 ```
 PS C:\> $Password = Read-Host -AsSecureString
 PS C:\> New-LocalUser "User03" -Password $Password -FullName "Third User" -Description "Description of this account."
@@ -55,17 +62,17 @@ Name    Enabled  Description
 User03  True     Description of this account.
 ```
 
-The first command prompts you for a password by using the Read-Host cmdlet.
-The command stores the password as a secure string in the $Password variable.
+The first command prompts you for a password by using the `Read-Host` cmdlet. The command stores the
+password as a secure string in the `$Password` variable.
 
-The second command creates a local user account by using the password stored in $Password.
-The command specifies a user name, full name, and description for the user account.
+The second command creates a local user account by using the password stored in `$Password`. The
+command specifies a user name, full name, and description for the user account.
 
 ## PARAMETERS
 
 ### -AccountExpires
-Specifies when the user account expires.
-To obtain a **DateTime** object, use the Get-Date cmdlet.
+
+Specifies when the user account expires. To obtain a **DateTime** object, use the `Get-Date` cmdlet.
 If you do not specify this parameter, the account does not expire.
 
 ```yaml
@@ -81,6 +88,7 @@ Accept wildcard characters: False
 ```
 
 ### -AccountNeverExpires
+
 Indicates that the account does not expire.
 
 ```yaml
@@ -96,6 +104,7 @@ Accept wildcard characters: False
 ```
 
 ### -Description
+
 Specifies a comment for the user account.
 The maximum length is 48 characters.
 
@@ -112,6 +121,7 @@ Accept wildcard characters: False
 ```
 
 ### -Disabled
+
 Indicates that this cmdlet creates the user account as disabled.
 
 ```yaml
@@ -127,8 +137,9 @@ Accept wildcard characters: False
 ```
 
 ### -FullName
-Specifies the full name for the user account.
-The full name differs from the user name of the user account.
+
+Specifies the full name for the user account. The full name differs from the user name of the user
+account.
 
 ```yaml
 Type: String
@@ -143,15 +154,15 @@ Accept wildcard characters: False
 ```
 
 ### -Name
+
 Specifies the user name for the user account.
 
-If you create a local user account for the local system, the user name can contain up to 20 uppercase characters or lowercase characters.
-A user name cannot contain the following characters:
+If you create a local user account for the local system, the user name can contain up to 20
+uppercase characters or lowercase characters. A user name cannot contain the following characters:
 
-" / \ \[ \] : ; | = , + * ?
-\< \> @
+`"`, `/`, `\`, `[`, `]`, `:`, `;`, `|`, `=`, `,`, `+`, `*`, `?`, `<`, `>`, `@`
 
-A user name cannot consist only of periods (.) or spaces.
+A user name cannot consist only of periods `.` or spaces.
 
 ```yaml
 Type: String
@@ -166,6 +177,7 @@ Accept wildcard characters: False
 ```
 
 ### -NoPassword
+
 Indicates that the user account does not have a password.
 
 ```yaml
@@ -181,10 +193,12 @@ Accept wildcard characters: False
 ```
 
 ### -Password
-Specifies a password for the user account.
-You can use `Read-Host -GetCredential`, Get-Credential, or ConvertTo-SecureString to create a **SecureString** object for the password.
 
-If you omit the *Password* and *NoPassword* parameters, **New-LocalUser** prompts you for the new user's password.
+Specifies a password for the user account. You can use `Read-Host -GetCredential`, `Get-Credential`,
+or `ConvertTo-SecureString` to create a **SecureString** object for the password.
+
+If you omit the **Password** and **NoPassword** parameters, `New-LocalUser` prompts you for the new
+user's password.
 
 ```yaml
 Type: SecureString
@@ -199,6 +213,7 @@ Accept wildcard characters: False
 ```
 
 ### -PasswordNeverExpires
+
 Indicates whether the password expires.
 
 ```yaml
@@ -214,6 +229,7 @@ Accept wildcard characters: False
 ```
 
 ### -UserMayNotChangePassword
+
 Indicates that the user cannot change the password on the user account.
 
 ```yaml
@@ -229,6 +245,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
+
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
@@ -244,6 +261,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
+
 Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
@@ -260,26 +278,31 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+
+This cmdlet supports the common parameters: `-Debug`, `-ErrorAction`, `-ErrorVariable`,
+`-InformationAction`, `-InformationVariable`, `-OutVariable`, `-OutBuffer`, `-PipelineVariable`, `-Verbose`,
+`-WarningAction`, and `-WarningVariable`. For more information, see [about_CommonParameters](/reference/6/Microsoft.PowerShell.Core/About/about_CommonParameters.md).
 
 ## INPUTS
 
 ### System.String, System.DateTime, System.Boolean, System.Security.SecureString
-You can pipe a string, a **DateTime** object, a **Boolean** value, or a secure string to this cmdlet.
+
+You can pipe a string, a **DateTime** object, a boolean value, or a secure string to this cmdlet.
 
 ## OUTPUTS
 
 ### System.Management.Automation.SecurityAccountsManager.LocalUser
+
 This cmdlet returns a **LocalUser** object.
 This object provides information about the user account.
 
 ## NOTES
 
 - A user name cannot be identical to any other user name or group name on the computer. A user name
-  cannot consist only of periods (.) or spaces. A user name can contain up to 20 uppercase
+  cannot consist only of periods `.` or spaces. A user name can contain up to 20 uppercase
   characters or lowercase characters. A user name cannot contain the following characters:
 
-`" / \ \[ \] : ; | = , + * ? \< \> @`
+`"`, `/`, `\`, `[`, `]`, `:`, `;`, `|`, `=`, `,`, `+`, `*`, `?`, `<`, `>`, `@`
 
 - A password can contain up to 127 characters.
 - The **PrincipalSource** property is a property on **LocalUser**, **LocalGroup**, and
@@ -294,6 +317,7 @@ This object provides information about the user account.
 > [!NOTE]
 > **PrincipalSource** is supported only by Windows 10, Windows Server 2016, and later versions of the
 > Windows operating system. For earlier versions, the property is blank.
+
 ## RELATED LINKS
 
 [Disable-LocalUser](Disable-LocalUser.md)
@@ -307,5 +331,3 @@ This object provides information about the user account.
 [Rename-LocalUser](Rename-LocalUser.md)
 
 [Set-LocalUser](Set-LocalUser.md)
-
-
