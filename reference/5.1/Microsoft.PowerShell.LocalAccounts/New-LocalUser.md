@@ -49,7 +49,7 @@ Name    Enabled  Description
 User02  True     Description of this account.
 ```
 
-This command creates a local user account and does not specify the _AccountExpires_ or _Password_
+This command creates a local user account and does not specify the **AccountExpires** or **Password**
 parameters. Therefore, the account doesn't expire or have a password by default.
 
 ### Example 2: Create a user account that has a password
@@ -197,7 +197,7 @@ Accept wildcard characters: False
 Specifies a password for the user account. You can use `Read-Host -GetCredential`, `Get-Credential`,
 or `ConvertTo-SecureString` to create a **SecureString** object for the password.
 
-If you omit the _Password_ and _NoPassword_ parameters, `New-LocalUser` prompts you for the new
+If you omit the **Password** and **NoPassword** parameters, `New-LocalUser` prompts you for the new
 user's password.
 
 ```yaml
