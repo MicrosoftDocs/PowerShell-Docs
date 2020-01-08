@@ -27,16 +27,16 @@ Log [string] #ResourceName
 
 ## Properties
 
-|Property |Description |
-|---|---|
-|Message |Indicates the message you want to write to the Microsoft-Windows-Desired State Configuration/Analytic event log. |
+| Property |                                                   Description                                                    |
+| -------- | ---------------------------------------------------------------------------------------------------------------- |
+| Message  | Indicates the message you want to write to the Microsoft-Windows-Desired State Configuration/Analytic event log. |
 
 ## Common properties
 
-|Property |Description |
-|---|---|
-|DependsOn |Indicates that the configuration of another resource must run before this resource is configured. For example, if the ID of the resource configuration script block that you want to run first is ResourceName and its type is ResourceType, the syntax for using this property is `DependsOn = "[ResourceType]ResourceName"`. |
-|PsDscRunAsCredential |Sets the credential for running the entire resource as. |
+|       Property       |                                                                                                                                                          Description                                                                                                                                                           |
+| -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| DependsOn            | Indicates that the configuration of another resource must run before this resource is configured. For example, if the ID of the resource configuration script block that you want to run first is ResourceName and its type is ResourceType, the syntax for using this property is `DependsOn = "[ResourceType]ResourceName"`. |
+| PsDscRunAsCredential | Sets the credential for running the entire resource as.                                                                                                                                                                                                                                                                        |
 
 > [!NOTE]
 > The **PsDscRunAsCredential** common property was added in WMF 5.0 to allow running any DSC
@@ -48,8 +48,8 @@ The following example shows how to include a message in the Microsoft-Windows-De
 Configuration/Analytic event log.
 
 > [!NOTE]
-> If you run [Test-DscConfiguration](https://technet.microsoft.com/en-us/library/dn407382.aspx) with
-> this resource configured, it will always return **$false**.
+> If you run [Test-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/test-dscconfiguration?view=powershell-5.1)
+> with this resource configured, it will always return **$false**.
 
 ```powershell
 Configuration logResourceTest
