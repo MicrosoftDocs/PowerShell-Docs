@@ -57,8 +57,7 @@ DSC can manage on-premises and off-premises deployments. For on-premises solutio
 [Pull Server](../pull-server/pullServer.md) that's used to centralize management of machines and
 report on their status. For off-premises cloud solutions, DSC is usable any place Windows is usable.
 There are specific offerings from Azure built on DSC, such as
-[Azure Automation](https://azure.microsoft.com/en-us/documentation/services/automation/), that
-centralizes DSC reporting.
+[Azure Automation](/azure/automation), that centralizes DSC reporting.
 
 ## DSC and compatibility
 

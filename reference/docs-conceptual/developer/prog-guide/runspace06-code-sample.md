@@ -11,11 +11,18 @@ caps.latest.revision: 6
 ---
 # RunSpace06 Code Sample
 
-Here is the source code for the Runspace06 sample described in [Configuring a Runspace Using a Windows PowerShell Snap-in](https://msdn.microsoft.com/en-us/a7289ee8-9732-49ee-91c7-d533e9538b83). This sample application creates a runspace based on a Windows PowerShell snap-in, which is then used to run a pipeline with a single command. To do this, the application creates the runspace configuration information, creates a runspace, creates a pipeline with a single command, and then executes the pipeline.
+Here is the source code for the Runspace06 sample described in
+[Configuring a Runspace Using a Windows PowerShell Snap-in](https://msdn.microsoft.com/a7289ee8-9732-49ee-91c7-d533e9538b83).
+This sample application creates a runspace based on a Windows PowerShell snap-in, which is then used
+to run a pipeline with a single command. To do this, the application creates the runspace
+configuration information, creates a runspace, creates a pipeline with a single command, and then
+executes the pipeline.
 
 > [!NOTE]
-> You can download the C# source file (runspace06.cs) by using the Windows Software Development Kit for Windows Vista and Microsoft .NET Framework 3.0 Runtime Components. For download instructions, see [How to Install Windows PowerShell and Download the Windows PowerShell SDK](/powershell/scripting/developer/installing-the-windows-powershell-sdk).
->
+> You can download the C# source file (runspace06.cs) by using the Windows Software Development Kit
+> for Windows Vista and Microsoft .NET Framework 3.0 Runtime Components. For download instructions,
+> see
+> [How to Install Windows PowerShell and Download the Windows PowerShell SDK](/powershell/scripting/developer/installing-the-windows-powershell-sdk).
 > The downloaded source files are available in the **\<PowerShell Samples>** directory.
 
 ## Code Sample
