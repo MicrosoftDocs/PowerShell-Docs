@@ -265,7 +265,7 @@ TODO formatting for all the below
 - Update FWLink Id for Clear-RecycleBin (#10925)
 - During tab completion, skip file if can't read file attributes (#10910)
 - Add back Clear-RecycleBin for Windows (#10909)
-- Add $env:__SuppressAnsiEscapeSequences to control whether to have VT escape sequence in output (#10814)
+- Add '$env:__SuppressAnsiEscapeSequences' to control whether to have VT escape sequence in output (#10814)
 - Add -NoEmphasize parameter to colorize Select-String output (#8963) (Thanks @derek-xia!)
 - Add back Get-HotFix cmdlet (#10740)
 - Make Add-Type usable in applications that host PowerShell (#10587)
