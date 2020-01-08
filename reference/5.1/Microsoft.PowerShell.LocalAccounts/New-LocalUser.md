@@ -62,7 +62,7 @@ Name    Enabled  Description
 User03  True     Description of this account.
 ```
 
-The first command prompts you for a password by using the Read-Host cmdlet. The command stores the
+The first command prompts you for a password by using the `Read-Host` cmdlet. The command stores the
 password as a secure string in the `$Password` variable.
 
 The second command creates a local user account by using the password stored in `$Password`. The
