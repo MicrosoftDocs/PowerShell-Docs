@@ -11,11 +11,17 @@ caps.latest.revision: 6
 ---
 # RunSpace07 Code Sample
 
-Here is the source code for the Runspace07 sample described in [Creating a Console Application That Adds Commands to a Pipeline](https://msdn.microsoft.com/en-us/01eb7808-e97b-4905-80be-9e2fa38c262e). This sample application creates a runspace, creates a pipeline, adds two commands to the pipeline, and then executes the pipeline. The commands added to the pipeline are the `Get-Process` and `Measure-Object` cmdlets.
+Here is the source code for the Runspace07 sample described in
+[Creating a Console Application That Adds Commands to a Pipeline](https://msdn.microsoft.com/01eb7808-e97b-4905-80be-9e2fa38c262e).
+This sample application creates a runspace, creates a pipeline, adds two commands to the pipeline,
+and then executes the pipeline. The commands added to the pipeline are the `Get-Process` and
+`Measure-Object` cmdlets.
 
 > [!NOTE]
-> You can download the C# source file (runspace07.cs) using the Microsoft Windows Software Development Kit for Windows Vista and Microsoft .NET Framework 3.0 Runtime Components. For download instructions, see [How to Install Windows PowerShell and Download the Windows PowerShell SDK](/powershell/scripting/developer/installing-the-windows-powershell-sdk).
->
+> You can download the C# source file (runspace07.cs) using the Microsoft Windows Software
+> Development Kit for Windows Vista and Microsoft .NET Framework 3.0 Runtime Components. For
+> download instructions, see
+> [How to Install Windows PowerShell and Download the Windows PowerShell SDK](/powershell/scripting/developer/installing-the-windows-powershell-sdk).
 > The downloaded source files are available in the **\<PowerShell Samples>** directory.
 
 ## Code Sample
