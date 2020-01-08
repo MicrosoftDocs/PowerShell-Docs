@@ -1,16 +1,8 @@
 ---
-title: "Creating a Windows PowerShell Content Provider | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords:
-  - "content providers [PowerShell Programmer's Guide]"
-  - "providers [PowerShell Programmer's Guide], content provider"
+title: Creating a Windows PowerShell Content Provider
+ms.date: 09/13/2016
+ms.topic: article
 ms.assetid: 3da88ff9-c4c7-4ace-aa24-0a29c8cfa060
-caps.latest.revision: 6
 ---
 # Creating a Windows PowerShell Content Provider
 
@@ -33,8 +25,7 @@ A Windows PowerShell content provider must create a .NET class that supports the
 [System.Management.Automation.Provider.Icontentcmdletprovider](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider)
 interface. Here is the class definition for the item provider described in this section.
 
-[!code-csharp[AccessDBProviderSample06.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample06/AccessDBProviderSample06.cs#L32-L33
-"AccessDBProviderSample06.cs")]
+[!code-csharp[AccessDBProviderSample06.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample06/AccessDBProviderSample06.cs#L32-L33 "AccessDBProviderSample06.cs")]
 
 Note that in this class definition, the
 [System.Management.Automation.Provider.Cmdletproviderattribute](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute)
@@ -94,8 +85,7 @@ content reader class defines a **Read** method that retrieves the data from the 
 returns a list representing that data, a **Seek** method that moves the content reader, a **Close**
 method that closes the content reader, and a **Dispose** method.
 
-[!code-csharp[AccessDBProviderSample06.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample06/AccessDBProviderSample06.cs#L2115-L2241
-"AccessDBProviderSample06.cs")]
+[!code-csharp[AccessDBProviderSample06.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample06/AccessDBProviderSample06.cs#L2115-L2241 "AccessDBProviderSample06.cs")]
 
 ## Implementing a Content Writer
 

@@ -1,16 +1,8 @@
 ---
-title: "Creating a Windows PowerShell Navigation Provider | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords:
-  - "navigation providers [PowerShell Programmer's Guide]"
-  - "providers [PowerShell Programmer's Guide], navigation provider"
+title: Creating a Windows PowerShell Navigation Provider
+ms.date: 09/13/2016
+ms.topic: article
 ms.assetid: 8bd3224d-ca6f-4640-9464-cb4d9f4e13b1
-caps.latest.revision: 5
 ---
 # Creating a Windows PowerShell Navigation Provider
 
@@ -33,8 +25,9 @@ implement methods that can make drive-qualified paths required for navigation, n
 paths, move items of the data store, as well as methods that get child names, get the parent path of
 an item, and test to identify if an item is a container.
 
-> [!CAUTION] Be aware that this design assumes a database that has a field with the name ID, and
-> that the type of the field is LongInteger.
+> [!CAUTION]
+> Be aware that this design assumes a database that has a field with the name ID, and that the type
+> of the field is LongInteger.
 
 ## Define the Windows PowerShell provider
 
@@ -42,8 +35,7 @@ A Windows PowerShell navigation provider must create a .NET class that derives f
 [System.Management.Automation.Provider.Navigationcmdletprovider](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider)
 base class. Here is the class definition for the navigation provider described in this section.
 
-[!code-csharp[AccessDBProviderSample05.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample05/AccessDBProviderSample05.cs#L31-L32
-"AccessDBProviderSample05.cs")]
+[!code-csharp[AccessDBProviderSample05.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample05/AccessDBProviderSample05.cs#L31-L32 "AccessDBProviderSample05.cs")]
 
 Note that in this provider, the
 [System.Management.Automation.Provider.Cmdletproviderattribute](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute)

@@ -1,13 +1,8 @@
-
-title: "Remote Runspace Samples | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+---
+title: Remote Runspace Samples
+ms.date: 09/13/2016
+ms.topic: article
 ms.assetid: 8c44df35-b22b-41b0-b34c-ba7ce17b889b
-caps.latest.revision: 7
 ---
 # Remote Runspace Samples
 
@@ -18,7 +13,8 @@ your host application.
 
 ## In This Section
 
-> [!NOTE] For more information about running commands on a remote computer, see
+> [!NOTE]
+> For more information about running commands on a remote computer, see
 > [Windows PowerShell Remoting](/previous-versions/ms714644(v=vs.85)).
 
  [RemoteRunspace01 Sample](./remoterunspace01-sample.md) This sample shows how to create a remote
@@ -26,5 +22,3 @@ your host application.
 
  [RemoteRunspacePool01 Sample](./remoterunspacepool01-sample.md) This sample shows how to construct
  a remote runspace pool and how to run multiple commands concurrently by using this pool.
-
-## See Also
