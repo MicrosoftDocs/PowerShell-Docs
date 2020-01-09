@@ -15372,12 +15372,22 @@
     },
     {
       "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/functions/Clear-Host.md",
-      "redirect_url": "https://docs.microsoft.com/powershell/module/microsoft.powershell.core/functions/clear-host?view=powershell-5.1",
+      "redirect_url": "https://docs.microsoft.com/powershell/module/microsoft.powershell.core/clear-host?view=powershell-5.1",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/Clear-Host.md",
+      "redirect_url": "https://docs.microsoft.com/powershell/module/microsoft.powershell.core/clear-host?view=powershell-5.1",
       "redirect_document_id": false
     },
     {
       "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/functions/Get-Verb.md",
-      "redirect_url": "https://docs.microsoft.com/powershell/module/microsoft.powershell.core/functions/get-verb?view=powershell-5.1",
+      "redirect_url": "https://docs.microsoft.com/powershell/module/microsoft.powershell.core/get-verb?view=powershell-5.1",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/Get-Verb.md",
+      "redirect_url": "https://docs.microsoft.com/powershell/module/microsoft.powershell.core/get-verb?view=powershell-5.1",
       "redirect_document_id": false
     },
     {
@@ -18316,7 +18326,7 @@
       "redirect_document_id": false
     },
     {
-      "source_path": "reference/virtual-directory-module/6/Microsoft.PowerShell.Core/functions/Clear-Host.md",
+      "source_path": "reference/virtual-directory-module/6/Microsoft.PowerShell.Core/Clear-Host.md",
       "redirect_url": "https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Core/Clear-Host?view=powershell-6",
       "redirect_document_id": false
     },
@@ -20232,7 +20242,7 @@
     },
     {
       "source_path": "reference/virtual-directory-module/Microsoft.PowerShell.Core/Clear-Host.md",
-      "redirect_url": "https://docs.microsoft.com/powershell/module/microsoft.powershell.core/functions/clear-host",
+      "redirect_url": "https://docs.microsoft.com/powershell/module/microsoft.powershell.core/clear-host",
       "redirect_document_id": false
     },
     {
@@ -20267,7 +20277,7 @@
     },
     {
       "source_path": "reference/virtual-directory-module/Microsoft.PowerShell.Core/Get-Verb.md",
-      "redirect_url": "https://docs.microsoft.com/powershell/module/microsoft.powershell.core/functions/get-verb",
+      "redirect_url": "https://docs.microsoft.com/powershell/module/microsoft.powershell.core/get-verb",
       "redirect_document_id": false
     },
     {
