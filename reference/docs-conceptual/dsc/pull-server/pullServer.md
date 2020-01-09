@@ -1,8 +1,9 @@
 ---
-ms.date:  03/04/2019
+ms.date:  01/08/2020
 keywords:  dsc,powershell,configuration,setup
 title:  DSC Pull Service
 ---
+
 # Desired State Configuration Pull Service
 
 > [!IMPORTANT]
@@ -12,15 +13,12 @@ title:  DSC Pull Service
 > (includes features beyond Pull Server on Windows Server) or one of the community solutions
 > listed [here](pullserver.md#community-solutions-for-pull-service).
 
-Local Configuration Manager can be centrally managed by a Pull Service solution.
-When using this approach, the node that is being managed is registered with a
-service and assigned a configuration in LCM settings.
-The configuration and all DSC resources needed as dependencies
-for the configuration are downloaded to the machine and used by LCM
-to manage the configuration.
-Information about the state of the machine being managed is uploaded
-to the service for reporting.
-This concept is referred to as "pull service."
+Local Configuration Manager (LCM) can be centrally managed by a Pull Service solution. When using this
+approach, the node that is being managed is registered with a service and assigned a configuration
+in LCM settings. The configuration and all DSC resources needed as dependencies for the
+configuration are downloaded to the machine and used by LCM to manage the configuration. Information
+about the state of the machine being managed is uploaded to the service for reporting. This concept
+is referred to as "pull service".
 
 The current options for pull service include:
 
@@ -29,14 +27,11 @@ The current options for pull service include:
 - Community maintained open-source solutions
 - An SMB share
 
-**The recommended solution**, and the option with the most features available,
-is [Azure Automation DSC](/azure/automation/automation-dsc-getting-started).
+**The recommended solution**, and the option with the most features available, is [Azure Automation DSC](/azure/automation/automation-dsc-getting-started).
 
-The Azure service can manage nodes on-premises in private datacenters,
-or in public clouds such as Azure and AWS.
-For private environments where servers cannot directly connect to the Internet,
-consider limiting outbound traffic to only the published Azure IP range
-(see [Azure Datacenter IP Ranges](https://www.microsoft.com/en-us/download/details.aspx?id=41653)).
+The Azure service can manage nodes on-premises in private datacenters, or in public clouds such as
+Azure and AWS. For private environments where servers cannot directly connect to the Internet,
+consider limiting outbound traffic to only the published Azure IP range (see [Azure Datacenter IP Ranges](https://www.microsoft.com/download/details.aspx?id=41653)).
 
 Features of the online service that are not currently available in the pull service on Windows
 Server include:
@@ -56,18 +51,14 @@ Server include:
 
 ## DSC pull service in Windows Server
 
-It is possible to configure a pull service
-to run on Windows Server.
-Be advised that the pull service solution included in Windows Server
-includes only capabilities of storing configurations/modules for download
-and capturing report data in to database.
-It does not include many of the capabilities offered by the service in Azure
-and so is not a good tool for evaluating how the service would be used.
+It is possible to configure a pull service to run on Windows Server. Be advised that the pull
+service solution included in Windows Server includes only capabilities of storing
+configurations/modules for download and capturing report data in to database. It does not include
+many of the capabilities offered by the service in Azure and so, is not a good tool for evaluating
+how the service would be used.
 
-The pull service offered in Windows Server
-is a web service in IIS that uses an OData interface
-to make DSC configuration files available
-to target nodes when those nodes ask for them.
+The pull service offered in Windows Server is a web service in IIS that uses an OData interface to
+make DSC configuration files available to target nodes when those nodes ask for them.
 
 Requirements for using a pull server:
 
@@ -78,59 +69,55 @@ Requirements for using a pull server:
 - Ideally, some means of generating a certificate, to secure credentials passed to the Local
   Configuration Manager (LCM) on target nodes
 
-The best way to configure Windows Server to host pull service
-is to use a DSC configuration.
-An example script is provided below.
+The best way to configure Windows Server to host pull service is to use a DSC configuration. An
+example script is provided below.
 
 ### Supported database systems
 
-|WMF 4.0   |WMF 5.0  |WMF 5.1 |WMF 5.1 (Windows Server Insider Preview 17090)|
-|---------|---------|---------|---------|
-|MDB     |ESENT (Default), MDB |ESENT (Default), MDB|ESENT (Default), SQL Server, MDB
+| WMF 4.0 |       WMF 5.0        |       WMF 5.1        | WMF 5.1 (Windows Server Insider Preview 17090) |
+| ------- | -------------------- | -------------------- | ---------------------------------------------- |
+| MDB     | ESENT (Default), MDB | ESENT (Default), MDB | ESENT (Default), SQL Server, MDB               |
 
 Starting in release 17090 of
-[Windows Server Insider Preview](https://www.microsoft.com/en-us/software-download/windowsinsiderpreviewserver),
+[Windows Server Insider Preview](https://www.microsoft.com/software-download/windowsinsiderpreviewserver),
 SQL Server is a supported option for the Pull Service (Windows Feature *DSC-Service*). This provides
 a new option for scaling large DSC environments that have not migrated to [Azure Automation DSC](/azure/automation/automation-dsc-getting-started).
 
 > [!NOTE]
-> SQL Server support will not be added to previous versions of WMF 5.1 (or earlier)
-> and will only be available on Windows Server versions greater than or equal to 17090.
+> SQL Server support will not be added to previous versions of WMF 5.1 (or earlier) and will only be
+> available on Windows Server versions greater than or equal to 17090.
 
 To configure the pull server to use SQL Server, set **SqlProvider** to `$true` and
-**SqlConnectionString** to a valid SQL Server Connection String. For more information, see
-[SqlClient Connection Strings](/dotnet/framework/data/adonet/connection-string-syntax#sqlclient-connection-strings).
-For an example of SQL Server configuration with **xDscWebService**, first read
-[Using the xDscWebService resource](#using-the-xdscwebservice-resource) and then review
-[Sample_xDscWebServiceRegistration_UseSQLProvider.ps1 on GitHub](https://github.com/PowerShell/xPSDesiredStateConfiguration/blob/master/Examples/Sample_xDscWebServiceRegistration_UseSQLProvider.ps1).
+**SqlConnectionString** to a valid SQL Server Connection String. For more information, see [SqlClient Connection Strings](/dotnet/framework/data/adonet/connection-string-syntax#sqlclient-connection-strings).
+For an example of SQL Server configuration with **xDscWebService**, first read [Using the xDscWebService resource](#using-the-xdscwebservice-resource)
+and then review [Sample_xDscWebServiceRegistration_UseSQLProvider.ps1 on GitHub](https://github.com/dsccommunity/xPSDesiredStateConfiguration/blob/master/source/Examples/Sample_xDscWebServiceRegistration_UseSQLProvider.ps1).
 
 ### Using the xDscWebService resource
 
-The easiest way to set up a web pull server is to use the **xDscWebService** resource,
-included in the **xPSDesiredStateConfiguration** module.
-The following steps explain how to use the resource
-in a configuration that sets up the web service.
+The easiest way to set up a web pull server is to use the **xDscWebService** resource, included in
+the **xPSDesiredStateConfiguration** module. The following steps explain how to use the resource in
+a `Configuration` that sets up the web service.
 
-1. Call the [Install-Module](/powershell/module/PowershellGet/Install-Module) cmdlet to install the
+1. Call the [Install-Module](/reference/6/PowerShellGet/Install-Module.md) cmdlet to install the
    **xPSDesiredStateConfiguration** module.
+
    > [!NOTE]
-   > **Install-Module** is included in the
-   > **PowerShellGet** module, which is included in PowerShell 5.0. You can download the
-   > **PowerShellGet** module for PowerShell 3.0 and 4.0 at
-   > [PackageManagement PowerShell Modules Preview](https://www.microsoft.com/en-us/download/details.aspx?id=49186).
-2. Get an SSL certificate for the DSC Pull server from a trusted Certificate Authority, either
+   > `Install-Module` is included in the **PowerShellGet** module, which is included in PowerShell
+   > 5.0 and higher.
+
+1. Get an SSL certificate for the DSC Pull server from a trusted Certificate Authority, either
    within your organization or a public authority. The certificate received from the authority is
    usually in the PFX format.
-3. Install the certificate on the node that will become the DSC Pull server in the default location,
+1. Install the certificate on the node that will become the DSC Pull server in the default location,
    which should be `CERT:\LocalMachine\My`.
    - Make a note of the certificate thumbprint.
-4. Select a GUID to be used as the Registration Key. To generate one using PowerShell enter the
+1. Select a GUID to be used as the Registration Key. To generate one using PowerShell enter the
    following at the PS prompt and press enter: `[guid]::newGuid()` or `New-Guid`. This key will be
    used by client nodes as a shared key to authenticate during registration. For more information,
    see the Registration Key section below.
-5. In the PowerShell ISE, start (F5) the following configuration script (included in the Examples
-   folder of the **xPSDesiredStateConfiguration** module as
-   `Sample_xDscWebServiceRegistration.ps1`). This script sets up the pull server.
+1. In the PowerShell ISE, start (<kbd>F5</kbd>) the following configuration script (included in the
+   folder of the **xPSDesiredStateConfiguration** module as `Sample_xDscWebServiceRegistration.ps1`)
+   . This script sets up the pull server.
 
     ```powershell
     configuration Sample_xDscWebServiceRegistration
@@ -186,7 +173,7 @@ in a configuration that sets up the web service.
     }
     ```
 
-6. Run the configuration, passing the thumbprint of the SSL certificate as the
+1. Run the configuration, passing the thumbprint of the SSL certificate as the
    **certificateThumbPrint** parameter and a GUID registration key as the **RegistrationKey**
    parameter:
 
@@ -267,11 +254,10 @@ Sample_MetaConfigurationToRegisterWithLessSecurePullServer -RegistrationKey $Reg
 > [!NOTE]
 > The **ReportServerWeb** section allows reporting data to be sent to the pull server.
 
-The lack of the **ConfigurationID** property in the metaconfiguration file
-implicitly means that pull server is supporting the V2 version
-of the pull server protocol so an initial registration is required.
-Conversely, the presence of a **ConfigurationID** means that the V1 version
-of the pull server protocol is used and there is no registration processing.
+The lack of the **ConfigurationID** property in the metaconfiguration file implicitly means that
+pull server is supporting the V2 version of the pull server protocol so an initial registration is
+required. Conversely, the presence of a **ConfigurationID** means that the V1 version of the pull
+server protocol is used and there is no registration processing.
 
 > [!NOTE]
 > In a PUSH scenario, a bug exists in the current release that makes it necessary to define
@@ -281,64 +267,50 @@ of the pull server protocol is used and there is no registration processing.
 
 ## Placing configurations and resources
 
-After the pull server setup completes,
-the folders defined by the **ConfigurationPath** and **ModulePath** properties
-in the pull server configuration are where you will place modules
-and configurations that will be available for target nodes to pull.
-These files need to be in a specific format in order for the pull server
-to correctly process them.
+After the pull server setup completes, the folders defined by the **ConfigurationPath** and
+**ModulePath** properties in the pull server configuration are where you will place modules and
+configurations that will be available for target nodes to pull. These files need to be in a specific
+format in order for the pull server to correctly process them.
 
 ### DSC resource module package format
 
-Each resource module needs to be zipped and named
-according to the following pattern `{Module Name}_{Module Version}.zip`.
+Each resource module needs to be zipped and named according to the following pattern
+`{Module Name}_{Module Version}.zip`.
 
-For example, a module named xWebAdminstration with a module version
-of 3.1.2.0 would be named `xWebAdministration_3.1.2.0.zip`.
-Each version of a module must be contained in a single zip file.
-Since there is only a single version of a resource in each zip file,
-the module format added in WMF 5.0 with support for multiple module versions
-in a single directory is not supported.
-This means that before packaging up DSC resource modules for use with
-pull server you will need to make a small change to the directory structure.
-The default format of modules containing DSC resource in WMF 5.0 is
-`{Module Folder}\{Module Version}\DscResources\{DSC Resource Folder}\`.
-Before packaging up for the pull server,
-remove the **{Module version}** folder so the path becomes
-`{Module Folder}\DscResources\{DSC Resource Folder}\`.
-With this change, zip the folder as described above and place these zip files
-in the **ModulePath** folder.
+For example, a module named xWebAdminstration with a module version of 3.1.2.0 would be named
+`xWebAdministration_3.1.2.0.zip`. Each version of a module must be contained in a single zip file.
+Since there is only a single version of a resource in each zip file, the module format added in WMF
+5.0 with support for multiple module versions in a single directory is not supported. This means
+that before packaging up DSC resource modules for use with pull server you will need to make a small
+change to the directory structure. The default format of modules containing DSC resource in WMF 5.0
+is `{Module Folder}\{Module Version}\DscResources\{DSC Resource Folder}\`. Before packaging up for
+the pull server, remove the **{Module version}** folder so the path becomes
+`{Module Folder}\DscResources\{DSC Resource Folder}\`. With this change, zip the folder as described
+above and place these zip files in the **ModulePath** folder.
 
-Use `New-DscChecksum {module zip file}` to create a checksum file
-for the newly added module.
+Use `New-DscChecksum {module zip file}` to create a checksum file for the newly added module.
 
 ### Configuration MOF format
 
-A configuration MOF file needs to be paired with a checksum file
-so that an LCM on a target node can validate the configuration.
-To create a checksum, call the
-[New-DscChecksum](/powershell/module/PSDesiredStateConfiguration/New-DscChecksum) cmdlet.
-The cmdlet takes a **Path** parameter that specifies the folder
-where the configuration MOF is located.
-The cmdlet creates a checksum file named `ConfigurationMOFName.mof.checksum`,
-where `ConfigurationMOFName` is the name of the configuration mof file.
-If there are more than one configuration MOF files in the specified folder,
-a checksum is created for each configuration in the folder.
-Place the MOF files and their associated checksum files
-in the **ConfigurationPath** folder.
+A configuration MOF file needs to be paired with a checksum file so that an LCM on a target node can
+validate the configuration. To create a checksum, call the [New-DscChecksum](/reference/6/PSDesiredStateConfiguration/New-DSCCheckSum.md)
+cmdlet. The cmdlet takes a **Path** parameter that specifies the folder where the configuration MOF
+is located. The cmdlet creates a checksum file named `ConfigurationMOFName.mof.checksum`, where
+`ConfigurationMOFName` is the name of the configuration mof file. If there are more than one
+configuration MOF files in the specified folder, a checksum is created for each configuration in the
+folder. Place the MOF files and their associated checksum files in the **ConfigurationPath** folder.
 
 > [!NOTE]
 > If you change the configuration MOF file in any way, you must also recreate the checksum file.
 
 ### Tooling
 
-In order to make setting up, validating and managing the pull server easier,
-the following tools are included as examples
-in the latest version of the xPSDesiredStateConfiguration module:
+In order to make setting up, validating and managing the pull server easier, the following tools are
+included as examples in the latest version of the xPSDesiredStateConfiguration module:
 
 1. A module that will help with packaging DSC resource modules and configuration files for use on
    the pull server.
-   [PublishModulesAndMofsToPullServer.psm1](https://github.com/PowerShell/xPSDesiredStateConfiguration/blob/master/DSCPullServerSetup/PublishModulesAndMofsToPullServer.psm1).
+   [PublishModulesAndMofsToPullServer.psm1](https://github.com/dsccommunity/xPSDesiredStateConfiguration/blob/master/source/Modules/DscPullServerSetup/DscPullServerSetup.psm1).
    Examples below:
 
     ```powershell
@@ -350,15 +322,13 @@ in the latest version of the xPSDesiredStateConfiguration module:
          Publish-DSCModuleAndMof -Source C:\LocalDepot -Force
     ```
 
-1. A script that validates the pull server is configured correctly. [PullServerSetupTests.ps1](https://github.com/PowerShell/xPSDesiredStateConfiguration/blob/master/DSCPullServerSetup/PullServerDeploymentVerificationTest/PullServerSetupTests.ps1).
+1. A script that validates the pull server is configured correctly. [PullServerSetupTests.ps1](https://github.com/dsccommunity/xPSDesiredStateConfiguration/blob/master/source/Modules/DscPullServerSetup/DscPullServerSetupTest/DscPullServerSetupTest.ps1).
 
 ## Community Solutions for Pull Service
 
-The DSC community has authored multiple solutions to implement
-the pull service protocol.
-For on-premises environments, these offer pull service capabilities
-and an opportunity to contribute back to the community
-with incremental enhancements.
+The DSC community has authored multiple solutions to implement the pull service protocol. For
+on-premises environments, these offer pull service capabilities and an opportunity to contribute
+back to the community with incremental enhancements.
 
 - [Tug](https://github.com/powershellorg/tug)
 - [DSC-TRÆK](https://github.com/powershellorg/dsc-traek)
@@ -376,5 +346,5 @@ The following topics describe setting up pull clients in detail:
 - [Windows PowerShell Desired State Configuration Overview](../overview/overview.md)
 - [Enacting configurations](enactingConfigurations.md)
 - [Using a DSC report server](reportServer.md)
-- [[MS-DSCPM]: Desired State Configuration Pull Model Protocol](https://msdn.microsoft.com/library/dn393548.aspx)
-- [[MS-DSCPM]: Desired State Configuration Pull Model Protocol Errata](https://msdn.microsoft.com/library/mt612824.aspx)
+- [[MS-DSCPM]: Desired State Configuration Pull Model Protocol](https://docs.microsoft.com/openspecs/windows_protocols/ms-dscpm/ea744c01-51a2-4000-9ef2-312711dcc8c9)
+- [[MS-DSCPM]: Desired State Configuration Pull Model Protocol Errata](https://docs.microsoft.com/openspecs/windows_protocols/ms-winerrata/f5fc7ae3-9172-41e8-ac6a-2a5a5b7bfaf5)
