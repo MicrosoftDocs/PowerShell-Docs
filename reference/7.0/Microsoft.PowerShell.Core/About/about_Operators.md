@@ -505,6 +505,108 @@ in simple conditional cases. The ternary operator was introduced in PowerShell
 
 For more information, see [about_If](about_If.md).
 
+#### Null-coalescing operator `??`
+
+The null-coalescing operator `??` returns the value of its left-hand operand if it isn't null;
+otherwise, it evaluates the right-hand operand and returns its result. The `??` operator doesn't
+evaluate its right-hand operand if the left-hand operand evaluates to non-null.
+
+```powershell
+$x = $null
+$x ?? 100
+```
+
+```output
+100
+```
+
+In the following example, the right-hand operand won't be evaluated.
+
+```powershell
+[string] $todaysDate = '1/10/2020'
+$todaysDate ?? (Get-Date).ToShortDateString()
+```
+
+```output
+1/10/2020
+```
+
+#### Null-coalescing assignment operator `??=`
+
+The null-coalescing assignment operator `??=` assigns the value of its right-hand operand to its
+left-hand operand only if the left-hand operand evaluates to null. The `??=` operator doesn't
+evaluate its right-hand operand if the left-hand operand evaluates to non-null.
+
+```powershell
+$x = $null
+$x ??= 100
+$x
+```
+
+```output
+100
+```
+
+In the following example, the right-hand operand won't be evaluated.
+
+```powershell
+[string] $todaysDate = '1/10/2020'
+$todaysDate ??= (Get-Date).ToShortDateString()
+```
+
+```output
+1/10/2020
+```
+
+#### Null-conditional operators `?.` and `?[]`
+
+> [!NOTE]
+> This is an experimental feature. For more information see
+> [about_Experimental_Features](about_Experimental_Features.md).
+
+A null-conditional operator applies a member access, `?.`, or element access, `?[]`, operation to
+its operand only if that operand evaluates to non-null; otherwise, it returns null.
+
+Since PowerShell allows *?* to be part of the variable name, formal specification of the variable
+name is required for using these operators. So it is _required_ to use *{}* around the variable names
+like `${a}` or when *?* is part of the variable name `${a?}`.
+
+In the following example, the value of *PropName* is returned.
+
+```powershell
+$a = @{ PropName = 100 }
+${a}?.PropName
+```
+
+```output
+100
+```
+
+The following example will return null, without trying to access the member name *PropName*.
+
+```powershell
+$a = $null
+${a}?.PropName
+```
+
+Similarly, the value of the element will be returned.
+
+```powershell
+$a = 1..10
+${a}?[0]
+```
+
+```output
+1
+```
+
+And when the operand is null, the element isn't accessed and null is returned.
+
+```PowerShell
+$a = $null
+${a}?[0]
+```
+
 ## See also
 
 [about_Arithmetic_Operators](about_Arithmetic_Operators.md)
