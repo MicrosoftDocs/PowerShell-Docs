@@ -1,5 +1,5 @@
 ---
-ms.date:  12/14/2018
+ms.date:  01/10/2020
 keywords:  powershell,cmdlet
 title:  Writing Portable Modules
 ---
@@ -287,6 +287,48 @@ Example:
 }
 ```
 
+## Dependency on Native Libraries
+
+Modules intended for use across different operating systems or processor architectures may
+depend on a managed library that itself depends on some native libraries.
+
+Prior to PowerShell 7, one would have to have custom code to load the appropriate native
+dll so that the managed library can find it correctly.
+
+With PowerShell 7, native binaries to load are searched in sub-folders within the managed
+library's location following a subset of the [.NET RID Catalog][] notation.
+
+```none
+managed.dll folder
+                |
+                |--- 'win-x64' folder
+                |       |--- native.dll
+                |
+                |--- 'win-x86' folder
+                |       |--- native.dll
+                |
+                |--- 'win-arm' folder
+                |       |--- native.dll
+                |
+                |--- 'win-arm64' folder
+                |       |--- native.dll
+                |
+                |--- 'linux-x64' folder
+                |       |--- native.dll
+                |
+                |--- 'linux-x86' folder
+                |       |--- native.dll
+                |
+                |--- 'linux-arm' folder
+                |       |--- native.dll
+                |
+                |--- 'linux-arm64' folder
+                |       |--- native.dll
+                |
+                |--- 'osx-x64' folder
+                |       |--- native.dll
+```
+
 <!-- reference links -->
 [.NET Framework]: /dotnet/framework/
 [.NET Core]: /dotnet/core/
@@ -300,3 +342,4 @@ Example:
 [PowerShell Gallery]: https://www.powershellgallery.com
 [.NET Portability Analyzer]: https://github.com/Microsoft/dotnet-apiport
 [CompatiblePSEditions]: /powershell/scripting/gallery/concepts/module-psedition-support
+[.NET RID Catalog]: https://docs.microsoft.com/en-us/dotnet/core/rid-catalog
