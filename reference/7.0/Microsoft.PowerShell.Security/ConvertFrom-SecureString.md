@@ -105,7 +105,7 @@ ConvertFrom-SecureString -SecureString $secureString -AsPlainText # 'Example'
 
 ### -AsPlainText
 
-When set, `ConvertFrom-SecureString** will convert secure strings to the decrypted plaintext string
+When set, `ConvertFrom-SecureString` will convert secure strings to the decrypted plaintext string
 as output.
 
 ```yaml
