@@ -177,10 +177,10 @@ This cmdlet does not generate any output.
 
 ## NOTES
 
-* macOS support was added in PowerShell 7
-* The **Unblock-File** cmdlet works only in file system drives.
-* **Unblock-File** performs the same operation as the **Unblock** button on the **Properties** dialog box in File Explorer.
-* If you use the **Unblock-File** cmdlet on a file that is not blocked, the command has no effect on the unblocked file and the cmdlet does not generate errors.
+- macOS support was added in PowerShell 7
+- The `Unblock-File` cmdlet works only in file system drives.
+- `Unblock-File` performs the same operation as the **Unblock** button on the **Properties** dialog box in File Explorer.
+- If you use the `Unblock-File` cmdlet on a file that is not blocked, the command has no effect on the unblocked file and the cmdlet does not generate errors.
 
 ## RELATED LINKS
 
