@@ -560,7 +560,7 @@ its operand only if that operand evaluates to non-null; otherwise, it returns nu
 
 Since PowerShell allows `?` to be part of the variable name, formal specification of the variable
 name is required for using these operators. So it is required to use `{}` around the variable names
-like `${a}` or when *?* is part of the variable name `${a?}`.
+like `${a}` or when `?` is part of the variable name `${a?}`.
 
 In the following example, the value of **PropName** is returned.
 
