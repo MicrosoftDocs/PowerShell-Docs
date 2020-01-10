@@ -138,6 +138,29 @@ To get the hardlink information, pipe the output to `Format-Table -View children
 Get-Item -Path C:\PathWhichIsAHardLink | Format-Table -View childrenWithHardlink
 ```
 
+### Example 9: Output for experimental feature PSUnixFileStat
+
+In PowerShell 7 on Unix systems, the experimental feature _PSUnixFileStat_ provides Unix-like output:
+
+```powershell
+PS> Get-Item /Users
+```
+
+```Output
+    Directory: /
+
+UnixMode    User  Group   LastWriteTime      Size  Name
+--------    ----  -----   -------------      ----  ----
+drwxr-xr-x  root  admin   12/20/2019 11:46   192   Users
+```
+
+The new properties which are now part of the output are:
+
+- `UnixMode` is the file permissions as represented on a Unix system
+- `User` is the file owner
+- `Group` is the group owner
+- `Size` is the size of the file or directory as represented on a Unix system
+
 ## PARAMETERS
 
 ### -Stream
