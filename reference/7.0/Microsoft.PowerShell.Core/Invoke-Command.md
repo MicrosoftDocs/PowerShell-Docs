@@ -118,7 +118,7 @@ Invoke-Command -Credential <PSCredential> [-ConfigurationName <String>] [-Thrott
 ### SSHHost
 
 ```
-Invoke-Command [-Port <Int32>] [-AsJob] [-HideComputerName] -ScriptBlock <ScriptBlock>
+Invoke-Command [-Port <Int32>] [-AsJob] [-HideComputerName] [-JobName <String>] [-ScriptBlock] <ScriptBlock>
  -HostName <String[]> [-UserName <String>] [-KeyFilePath <String>] [-SSHTransport] [-RemoteDebug]
  [-InputObject <PSObject>] [-ArgumentList <Object[]>] [-Subsystem <String>]  [<CommonParameters>]
 ```
@@ -142,7 +142,7 @@ Invoke-Command [-ConfigurationName <String>] [-ThrottleLimit <Int32>] [-AsJob] [
 ### FilePathSSHHost
 
 ```
-Invoke-Command [-AsJob] [-HideComputerName] -FilePath <String> -HostName <String[]>
+Invoke-Command [-AsJob] [-HideComputerName] [-FilePath] <String> -HostName <String[]>
  [-UserName <String>] [-KeyFilePath <String>] [-SSHTransport] [-RemoteDebug]
  [-InputObject <PSObject>] [-ArgumentList <Object[]>]  [<CommonParameters>]
 ```
@@ -150,14 +150,14 @@ Invoke-Command [-AsJob] [-HideComputerName] -FilePath <String> -HostName <String
 ### SSHHostHashParam
 
 ```
-Invoke-Command [-AsJob] [-HideComputerName] -ScriptBlock <ScriptBlock> -SSHConnection <Hashtable[]>
+Invoke-Command [-AsJob] [-HideComputerName] [-JobName <String>] [-ScriptBlock] <ScriptBlock> -SSHConnection <Hashtable[]>
  [-RemoteDebug] [-InputObject <PSObject>] [-ArgumentList <Object[]>]  [<CommonParameters>]
 ```
 
 ### FilePathSSHHostHash
 
 ```
-Invoke-Command [-AsJob] [-HideComputerName] -FilePath <String> -SSHConnection <Hashtable[]>
+Invoke-Command [-AsJob] [-HideComputerName] [-FilePath] <String> -SSHConnection <Hashtable[]>
  [-RemoteDebug] [-InputObject <PSObject>] [-ArgumentList <Object[]>]  [<CommonParameters>]
 ```
 
@@ -483,7 +483,7 @@ Invoke-Command @parameters
 ```
 
 ```Output
-    Directory: C:\Test
+Directory: C:\Test
 
 Mode                 LastWriteTime         Length Name
 ----                 -------------         ------ ----
@@ -1183,7 +1183,7 @@ For more information about PowerShell background jobs, see [about_Jobs](./About/
 
 ```yaml
 Type: String
-Parameter Sets: FilePathRunspace, Session, ComputerName, FilePathComputerName, Uri, FilePathUri, FilePathContainerId, ContainerId
+Parameter Sets: FilePathRunspace, Session, ComputerName, FilePathComputerName, Uri, FilePathUri, FilePathContainerId, ContainerId, SSHHost, SSHHostHashParam
 Aliases:
 
 Required: False
@@ -1540,6 +1540,22 @@ Aliases:
 Required: True
 Position: Named
 Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -Subsystem
+
+The name of the ssh subsystem. The default subsystem used is "powershell".
+
+```yaml
+Type: String
+Parameter Sets: SSHHost
+Aliases:
+
+Required: False
+Position: Named
+Default value: powershell
 Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
