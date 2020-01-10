@@ -298,7 +298,7 @@ dll so that the managed library can find it correctly.
 With PowerShell 7, native binaries to load are searched in sub-folders within the managed
 library's location following a subset of the [.NET RID Catalog][] notation.
 
-```none
+```
 managed.dll folder
                 |
                 |--- 'win-x64' folder
