@@ -415,10 +415,6 @@ Get-PSSnapin | Where-Object {$_.vendor -ne "Microsoft"}
 
 #### Pipeline chain operators `&&` and `||`
 
-> [!NOTE]
-> This is an experimental feature. For more information see
-> [about_Experimental_Features](about_Experimental_Features.md).
-
 Conditionally execute the right-hand side pipeline based on the success of the
 left-hand side pipeline.
 
@@ -495,13 +491,8 @@ of the `Get-Member` cmdlet.
 
 #### Ternary operator `? <if-true> : <if-false>`
 
-> [!NOTE]
-> This is an experimental feature. For more information see
-> [about_Experimental_Features](about_Experimental_Features.md).
-
 You can use the ternary operator as a replacement for the `if-else` statement
-in simple conditional cases. The ternary operator was introduced in PowerShell
-7.0 as an experimental feature.
+in simple conditional cases.
 
 For more information, see [about_If](about_If.md).
 

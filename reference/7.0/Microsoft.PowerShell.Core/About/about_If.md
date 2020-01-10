@@ -97,10 +97,6 @@ else {
 
 ### Using the ternary operator syntax
 
-> [!NOTE]
-> This is an experimental feature. For more information see
-> [about_Experimental_Features](about_Experimental_Features.md).
-
 PowerShell 7.0 introduced a new syntax using the ternary operator. It follows the C# ternary
 operator syntax:
 
