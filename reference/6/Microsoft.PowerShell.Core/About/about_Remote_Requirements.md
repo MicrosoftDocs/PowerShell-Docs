@@ -231,7 +231,7 @@ installing a certificate on the target server. The certificate must have a
 CN name that matches the hostname, is not expired or revoked. A self-signed
 certificate may be used for testing purposes.
 
-See [How To: Configure WINRM for HTTPS](https://support.microsoft.com/en-us/help/2019527/how-to-configure-winrm-for-https)
+See [How To: Configure WINRM for HTTPS](https://support.microsoft.com/help/2019527/how-to-configure-winrm-for-https)
 for additonal details.
 
 The following command, run from an elevated command prompt, will configure the
@@ -272,7 +272,7 @@ $session = New-PSSession -Computer <hostname> -Credential $cred `
 > administrators, other than the built in administrator, to connect using NTLM.
 > Refer to the LocalAccountTokenFilterPolicy registry setting under Negotiate
 > Authentication in
-> [Authentication for Remote Connections](https://msdn.microsoft.com/en-us/library/aa384295(v=vs.85).aspx)
+> [Authentication for Remote Connections](/windows/win32/winrm/authentication-for-remote-connections)
 
 ## SEE ALSO
 
