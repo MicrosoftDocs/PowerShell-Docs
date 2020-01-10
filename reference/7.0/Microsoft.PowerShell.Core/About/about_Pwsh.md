@@ -214,6 +214,27 @@ On Windows, this switch does nothing.
 > This parameter must come first to start PowerShell as a login shell.
 > Passing this parameter in another position will be ignored.
 
+To set up `pwsh` as the login shell on UNIX-like operating systems:
+
+- Verify that the full absolute path to `pwsh` is listed under `/etc/shells`
+  - This path is usually something like `/usr/bin/pwsh` on Linux
+    or `/usr/local/bin/pwsh` on macOS
+  - With some installation methods, this entry will be added automatically at installation time
+  - If `pwsh` is not present in `/etc/shells`,
+    use an editor to append the path to `pwsh` on the last line.
+    This requires elevated privileges to edit.
+- Use the [`chsh`](https://linux.die.net/man/1/chsh) utility to set
+  your current user's shell to `pwsh`:
+
+  ```sh
+  chsh -s pwsh
+  ```
+
+> [!WARNING]
+> Currently this is not supported on Windows Subsystem for Linux,
+> and attempting to set `pwsh` as the login shell there may lead
+> to being unable to start WSL interactively.
+
 ### -MTA
 
 Start PowerShell using a multi-threaded apartment.
