@@ -76,10 +76,6 @@ Starting in Windows PowerShell 3.0, there are two different ways to construct a 
   By default, the parallel scriptblocks use the current working directory of the caller that started
   the parallel tasks.
 
-> [!NOTE]
-> This is an experimental feature. For more information see
-> [about_Experimental_Features](about/about_Experimental_Features.md).
-
 ## EXAMPLES
 
 ### Example 1: Divide integers in an array

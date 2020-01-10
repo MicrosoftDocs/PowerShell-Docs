@@ -76,7 +76,9 @@ experimentation and feedback.
 | Debian 9                                          |   Supported   | Supported |
 | Debian 10                                         | Not Supported | Supported |
 | CentOS 7                                          |   Supported   | Supported |
+| CentOS 8                                          | Not Supported | Supported |
 | Red Hat Enterprise Linux 7                        |   Supported   | Supported |
+| Red Hat Enterprise Linux 8                        | Not Supported | Supported |
 | openSUSE 42.3                                     |   Supported   | Supported |
 | Fedora 28                                         |   Supported   | Supported |
 | Fedora 29, 30                                     | Not Supported | Supported |

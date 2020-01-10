@@ -351,6 +351,38 @@ In PowerShell 6.2, an alternate view was added to get hard link information.
 Get-ChildItem -Path C:\PathContainingHardLink | Format-Table -View childrenWithHardLink
 ```
 
+### Example 9: Output for experimental feature PSUnixFileStat
+
+In PowerShell 7 on Unix systems, the experimental feature **PSUnixFileStat** provides Unix-like output:
+
+```powershell
+PS> Get-ChildItem /etc/r* 
+```
+
+```Output
+    Directory: /etc
+
+UnixMode   User Group    LastWriteTime Size Name
+--------   ---- -----    ------------- ---- ----
+drwxr-xr-x root wheel  9/30/2019 19:19  128 racoon
+-rw-r--r-- root wheel  9/26/2019 18:20 1560 rc.common
+-rw-r--r-- root wheel  7/31/2017 17:30 1560 rc.common~previous
+-rw-r--r-- root wheel  9/27/2019 20:34 5264 rc.netboot
+lrwxr-xr-x root wheel  11/8/2019 15:35   22 resolv.conf -> /private/var/run/resolv.conf
+-rw-r--r-- root wheel 10/23/2019 17:41    0 rmtab
+-rw-r--r-- root wheel 10/23/2019 17:41 1735 rpc
+-rw-r--r-- root wheel  7/25/2017 18:37 1735 rpc~previous
+-rw-r--r-- root wheel 10/23/2019 18:42  891 rtadvd.conf
+-rw-r--r-- root wheel  8/24/2017 21:54  891 rtadvd.conf~previous
+```
+
+The new properties which are now part of the output are:
+
+- **UnixMode** is the file permissions as represented on a Unix system
+- **User** is the file owner
+- **Group** is the group owner
+- **Size** is the size of the file or directory as represented on a Unix system
+
 ## Parameters
 
 ### -Attributes

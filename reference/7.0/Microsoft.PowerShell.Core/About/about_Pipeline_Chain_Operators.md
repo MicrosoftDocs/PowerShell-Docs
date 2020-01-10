@@ -14,10 +14,6 @@ Describes chaining pipelines with the `&&` and `||` operators in PowerShell.
 
 ## Long description
 
-> [!NOTE]
-> This is an experimental feature. For more information see
-> [about_Experimental_Features](about_Experimental_Features.md).
-
 Beginning in PowerShell 7, PowerShell implements the `&&` and `||` operators to
 conditionally chain pipelines. These operators are known in PowerShell as
 *pipeline chain operators*, and are similar to
