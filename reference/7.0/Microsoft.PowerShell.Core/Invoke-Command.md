@@ -998,27 +998,14 @@ object and the password is stored as a [SecureString](/dotnet/api/system.securit
 > [How secure is SecureString?](/dotnet/api/system.security.securestring#how-secure-is-securestring).
 
 ```yaml
-Type: PSCredential
-Parameter Sets: ComputerName, FilePathComputerName, Uri, FilePathUri
-Aliases:
-
-Required: False
-Position: Named
-Default value: Current user
 Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
-```
-
-```yaml
-Type: PSCredential
-Parameter Sets: VMId, VMName, FilePathVMId, FilePathVMName
-Aliases:
-
-Required: True
 Position: Named
-Default value: Current user
-Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
+Parameter Sets: ComputerName, FilePathComputerName, Uri, FilePathUri, VMId, VMName, FilePathVMId, FilePathVMName
+Required: True (VMId, VMName, FilePathVMId, FilePathVMName), False (ComputerName, FilePathComputerName, Uri, FilePathUri)
+Default value: Current user
+Aliases:
+Type: PSCredential
 ```
 
 ### -EnableNetworkAccess
