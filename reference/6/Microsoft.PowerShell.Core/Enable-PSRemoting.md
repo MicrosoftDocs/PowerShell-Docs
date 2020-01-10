@@ -34,8 +34,7 @@ accept remote connections, it is prudent to run it only where it is needed.
 
 Enabling PowerShell remoting on client versions of Windows when the computer is on a public network
 is normally disallowed, but you can skip this restriction by using the **SkipNetworkProfileCheck**
-parameter. For more information, see the description of the
-[SkipNetworkProfileCheck](#-skipnetworkprofilecheck) parameter.
+parameter. For more information, see the description of the **SkipNetworkProfileCheck** parameter.
 
 Multiple PowerShell installations can exist side-by-side on a single computer. Running
 `Enable-PSRemoting` will configure a remoting endpoint for the specific installation version that
