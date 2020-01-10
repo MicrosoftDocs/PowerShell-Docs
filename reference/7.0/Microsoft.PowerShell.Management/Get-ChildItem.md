@@ -353,7 +353,7 @@ Get-ChildItem -Path C:\PathContainingHardLink | Format-Table -View childrenWithH
 
 ### Example 9: Output for experimental feature PSUnixFileStat
 
-In PowerShell 7 on Unix systems, the experimental feature _PSUnixFileStat_ provides Unix-like output:
+In PowerShell 7 on Unix systems, the experimental feature **PSUnixFileStat** provides Unix-like output:
 
 ```powershell
 PS> Get-ChildItem /etc/r* 
@@ -378,10 +378,10 @@ lrwxr-xr-x root wheel  11/8/2019 15:35   22 resolv.conf -> /private/var/run/reso
 
 The new properties which are now part of the output are:
 
-- `UnixMode` is the file permissions as represented on a Unix system
-- `User` is the file owner
-- `Group` is the group owner
-- `Size` is the size of the file or directory as represented on a Unix system
+- **UnixMode** is the file permissions as represented on a Unix system
+- **User** is the file owner
+- **Group** is the group owner
+- **Size** is the size of the file or directory as represented on a Unix system
 
 ## Parameters
 
