@@ -231,7 +231,7 @@ To set up `pwsh` as the login shell on UNIX-like operating systems:
   ```
 
 > [!WARNING]
-> Currently this is not supported on Windows Subsystem for Linux,
+> Setting `pwsh` as the login shell is currently not supported on Windows Subsystem for Linux,
 > and attempting to set `pwsh` as the login shell there may lead
 > to being unable to start WSL interactively.
 
