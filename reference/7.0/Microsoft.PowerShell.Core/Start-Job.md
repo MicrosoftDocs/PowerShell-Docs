@@ -540,8 +540,23 @@ Accept wildcard characters: False
 
 ### -PSVersion
 
-Specifies a version. `Start-Job` runs the job with the version of PowerShell. The acceptable values
-for this parameter are: `2.0` and `3.0`.
+Specifies a version of PowerShell to use for running the job.
+Curently this parameter does not have any effect (job is run in PowerShell Core)
+except for value `5.1` which on Windows OS runs the job in a Windows PowerShell v5.1
+
+```powershell
+$PSVersionTable.PSVersion
+# produces:
+# Major  Minor  Patch  PreReleaseLabel BuildLabel
+# -----  -----  -----  --------------- ----------
+# 7      0      0      rc.1
+$job = Start-Job { $PSVersionTable.PSVersion } -PSVersion 5.1
+Receive-Job $job
+# produces:
+# Major  Minor  Build  Revision
+# -----  -----  -----  --------
+# 5      1      14393  3383
+```
 
 This parameter was introduced in PowerShell 3.0.
 
