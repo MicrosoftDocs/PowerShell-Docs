@@ -8,9 +8,11 @@ online version: https://docs.microsoft.com/powershell/module/microsoft.powershel
 schema: 2.0.0
 title: ConvertFrom-SecureString
 ---
+
 # ConvertFrom-SecureString
 
 ## SYNOPSIS
+
 Converts a secure string to an encrypted standard string.
 
 ## SYNTAX
@@ -19,6 +21,12 @@ Converts a secure string to an encrypted standard string.
 
 ```
 ConvertFrom-SecureString [-SecureString] <SecureString> [[-SecureKey] <SecureString>] [<CommonParameters>]
+```
+
+### AsPlainText
+
+```
+ConvertFrom-SecureString [-SecureString] <SecureString> [-AsPlainText] [<CommonParameters>]
 ```
 
 ### Open
@@ -85,7 +93,32 @@ Because each decimal numeral represents a single byte (8 bits), the key has 24 d
 The second command uses the key in the `$Key` variable to convert the secure string to an encrypted
 standard string.
 
+### Example 4: Convert a secure string directly to a plaintext string
+
+```powershell
+$secureString = ConvertTo-SecureString -String 'Example' -AsPlainText
+$secureString # 'System.Security.SecureString'
+ConvertFrom-SecureString -SecureString $secureString -AsPlainText # 'Example'
+```
+
 ## PARAMETERS
+
+### -AsPlainText
+
+When set, `ConvertFrom-SecureString` will convert secure strings to the decrypted plaintext string
+as output.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: AsPlainText
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
 
 ### -Key
 
@@ -138,9 +171,10 @@ Accept wildcard characters: False
 
 ### CommonParameters
 
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
--InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
+This cmdlet supports the common parameters:
+`-Debug`, `-ErrorAction`, `-ErrorVariable`, `-InformationAction`,`-InformationVariable`,
+`-OutVariable`, `-OutBuffer`, `-PipelineVariable`, `-Verbose`, `-WarningAction`, and `-WarningVariable`.
+For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
