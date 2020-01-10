@@ -1546,7 +1546,7 @@ Accept wildcard characters: False
 
 ### -Subsystem
 
-The ssh subsystem to use.
+The name of the ssh subsystem. The default subsystem used is "powershell".
 
 ```yaml
 Type: String
@@ -1555,7 +1555,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: powershell
 Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
