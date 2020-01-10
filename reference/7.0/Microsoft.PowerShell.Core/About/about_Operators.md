@@ -498,8 +498,8 @@ For more information, see [about_If](about_If.md).
 
 #### Null-coalescing operator `??`
 
-The null-coalescing operator `??` returns the value of its left-hand operand if it isn't null;
-otherwise, it evaluates the right-hand operand and returns its result. The `??` operator doesn't
+The null-coalescing operator `??` returns the value of its left-hand operand if it isn't null.
+Otherwise, it evaluates the right-hand operand and returns its result. The `??` operator doesn't
 evaluate its right-hand operand if the left-hand operand evaluates to non-null.
 
 ```powershell
@@ -507,7 +507,7 @@ $x = $null
 $x ?? 100
 ```
 
-```output
+```Output
 100
 ```
 
@@ -518,7 +518,7 @@ In the following example, the right-hand operand won't be evaluated.
 $todaysDate ?? (Get-Date).ToShortDateString()
 ```
 
-```output
+```Output
 1/10/2020
 ```
 
@@ -534,7 +534,7 @@ $x ??= 100
 $x
 ```
 
-```output
+```Output
 100
 ```
 
@@ -545,7 +545,7 @@ In the following example, the right-hand operand won't be evaluated.
 $todaysDate ??= (Get-Date).ToShortDateString()
 ```
 
-```output
+```Output
 1/10/2020
 ```
 
@@ -558,22 +558,22 @@ $todaysDate ??= (Get-Date).ToShortDateString()
 A null-conditional operator applies a member access, `?.`, or element access, `?[]`, operation to
 its operand only if that operand evaluates to non-null; otherwise, it returns null.
 
-Since PowerShell allows *?* to be part of the variable name, formal specification of the variable
-name is required for using these operators. So it is _required_ to use *{}* around the variable names
+Since PowerShell allows `?` to be part of the variable name, formal specification of the variable
+name is required for using these operators. So it is required to use `{}` around the variable names
 like `${a}` or when *?* is part of the variable name `${a?}`.
 
-In the following example, the value of *PropName* is returned.
+In the following example, the value of **PropName** is returned.
 
 ```powershell
 $a = @{ PropName = 100 }
 ${a}?.PropName
 ```
 
-```output
+```Output
 100
 ```
 
-The following example will return null, without trying to access the member name *PropName*.
+The following example will return null, without trying to access the member name **PropName**.
 
 ```powershell
 $a = $null
@@ -587,7 +587,7 @@ $a = 1..10
 ${a}?[0]
 ```
 
-```output
+```Output
 1
 ```
 
