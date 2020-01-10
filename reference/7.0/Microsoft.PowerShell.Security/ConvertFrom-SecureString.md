@@ -12,21 +12,25 @@ title: ConvertFrom-SecureString
 # ConvertFrom-SecureString
 
 ## SYNOPSIS
+
 Converts a secure string to an encrypted standard string.
 
 ## SYNTAX
 
 ### Secure (Default)
+
 ```
 ConvertFrom-SecureString [-SecureString] <SecureString> [[-SecureKey] <SecureString>] [<CommonParameters>]
 ```
 
 ### AsPlainText
+
 ```
 ConvertFrom-SecureString [-SecureString] <SecureString> [-AsPlainText] [<CommonParameters>]
 ```
 
 ### Open
+
 ```
 ConvertFrom-SecureString [-SecureString] <SecureString> [-Key <Byte[]>] [<CommonParameters>]
 ```
@@ -100,6 +104,7 @@ ConvertFrom-SecureString -SecureString $secureString -AsPlainText # 'Example'
 ## PARAMETERS
 
 ### -AsPlainText
+
 When set, `ConvertFrom-SecureString** will convert secure strings to the decrypted plaintext string
 as output.
 
@@ -165,6 +170,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters:
 `-Debug`, `-ErrorAction`, `-ErrorVariable`, `-InformationAction`,`-InformationVariable`,
 `-OutVariable`, `-OutBuffer`, `-PipelineVariable`, `-Verbose`, `-WarningAction`, and `-WarningVariable`.
