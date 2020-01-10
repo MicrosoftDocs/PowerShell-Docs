@@ -12,12 +12,11 @@ title: Invoke-DscResource
 # Invoke-DscResource
 
 ## SYNOPSIS
-
 Runs a method of a specified PowerShell Desired State Configuration (DSC) resource.
 
 ## SYNTAX
 
-```powershell
+```
 Invoke-DscResource [-Name] <String> [-Method] <String> -ModuleName <ModuleSpecification> -Property <Hashtable>
  [<CommonParameters>]
 ```
@@ -39,7 +38,9 @@ This command invokes the **Set** method of a resource named Log and specifies a 
 for it.
 
 ```powershell
-PS C:\> Invoke-DscResource -Name Log -Method Set -Property @{Message = 'Hello World'} -ModuleName PSDesiredStateConfiguration
+Invoke-DscResource -Name Log -Method Set -ModuleName PSDesiredStateConfiguration -Property @{
+  Message = 'Hello World'
+}
 ```
 
 ### Example 2: Invoke the Test method of a resource for a specified module
@@ -48,7 +49,14 @@ This command invokes the **Test** method of a resource named WindowsProcess, whi
 named PSDesiredStateConfiguration.
 
 ```powershell
-PS C:\> Invoke-DscResource -Name WindowsProcess -Method Test -Property @{Path = 'C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe'; Arguments = ''} -ModuleName PSDesiredStateConfiguration
+$SplatParam = @{
+  Name = 'WindowsProcess'
+  ModuleName = 'PSDesiredStateConfiguration'
+  Property = '@{Path = 'C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe'; Arguments = ''}'
+  Method = Test
+}
+
+Invoke-DscResource @SplatParam
 ```
 
 ## PARAMETERS
