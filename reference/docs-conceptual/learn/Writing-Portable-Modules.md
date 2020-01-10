@@ -314,19 +314,19 @@ managed.dll folder
                 |       |--- native.dll
                 |
                 |--- 'linux-x64' folder
-                |       |--- native.dll
+                |       |--- native.so
                 |
                 |--- 'linux-x86' folder
-                |       |--- native.dll
+                |       |--- native.so
                 |
                 |--- 'linux-arm' folder
-                |       |--- native.dll
+                |       |--- native.so
                 |
                 |--- 'linux-arm64' folder
-                |       |--- native.dll
+                |       |--- native.so
                 |
                 |--- 'osx-x64' folder
-                |       |--- native.dll
+                |       |--- native.dylib
 ```
 
 <!-- reference links -->
