@@ -35,21 +35,21 @@ This cmdlet also enables debugging of resources when the DSC engine is running w
 
 ### Example 1: Invoke the Set method of a resource by specifying its mandatory properties
 
+This command invokes the **Set** method of a resource named Log and specifies a **Message** property
+for it.
+
 ```powershell
 PS C:\> Invoke-DscResource -Name Log -Method Set -Property @{Message = 'Hello World'} -ModuleName PSDesiredStateConfiguration
 ```
 
-This command invokes the **Set** method of a resource named Log and specifies a **Message** property
-for it.
-
 ### Example 2: Invoke the Test method of a resource for a specified module
+
+This command invokes the **Test** method of a resource named WindowsProcess, which is in the module
+named PSDesiredStateConfiguration.
 
 ```powershell
 PS C:\> Invoke-DscResource -Name WindowsProcess -Method Test -Property @{Path = 'C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe'; Arguments = ''} -ModuleName PSDesiredStateConfiguration
 ```
-
-This command invokes the **Test** method of a resource named WindowsProcess, which is in the module
-named PSDesiredStateConfiguration.
 
 ## PARAMETERS
 
@@ -134,9 +134,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## NOTES
 
-Previously, Windows PowerShell 5.1 resources ran under System context unless specifically specified
+Previously, Windows PowerShell 5.1 resources ran under System context unless specified
 with user context using the key **PsDscRunAsCredential**. In PowerShell 7.0, Resources run in the
-users context, and **PsDscRunAsCredential** is no longer supported. Previous configurations using
+user's context, and **PsDscRunAsCredential** is no longer supported. Previous configurations using
 this key will throw an exception.
 
 ## RELATED LINKS
