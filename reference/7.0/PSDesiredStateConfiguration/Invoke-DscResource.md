@@ -46,7 +46,7 @@ Invoke-DscResource -Name Log -Method Set -ModuleName PSDesiredStateConfiguration
 ### Example 2: Invoke the Test method of a resource for a specified module
 
 This command invokes the **Test** method of a resource named WindowsProcess, which is in the module
-named PSDesiredStateConfiguration.
+named **PSDesiredStateConfiguration**.
 
 ```powershell
 $SplatParam = @{
