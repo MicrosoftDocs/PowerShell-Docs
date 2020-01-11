@@ -72,8 +72,9 @@ The `Enable-PSRemoting` cmdlet performs the following operations:
 To run this cmdlet on the Windows platform, start PowerShell by using the Run as administrator
 option. This cmdlet is not available on Linux or MacOS versions of PowerShell.
 
-> [!CAUTION] This cmdlet does not affect remote endpoint configurations created by Windows
-> PowerShell. It only affects endpoints created with PowerShell version 6 and greater. To enable and
+> [!CAUTION]
+> This cmdlet does not affect remote endpoint configurations created by Windows PowerShell.
+> It only affects endpoints created with PowerShell version 6 and greater. To enable and
 > disable PowerShell remoting endpoints that are hosted by Windows PowerShell, run the
 > `Enable-PSRemoting` cmdlet from within a Windows PowerShell session.
 
@@ -87,7 +88,7 @@ This command configures the computer to receive remote commands.
 Enable-PSRemoting
 ```
 
-```output
+```Output
 WARNING: PowerShell remoting has been enabled only for PowerShell Core configurations and does not
 affect Windows PowerShell remoting configurations. Run this cmdlet in Windows PowerShell to affect
 all PowerShell remoting configurations.
@@ -102,7 +103,7 @@ The **Force** parameter suppresses the user prompts.
 Enable-PSRemoting -Force
 ```
 
-```output
+```Output
 WARNING: PowerShell remoting has been enabled only for PowerShell Core configurations and does not
 affect Windows PowerShell remoting configurations. Run this cmdlet in Windows PowerShell to affect
 all PowerShell remoting configurations.
@@ -159,7 +160,7 @@ $session = New-PSSession -ComputerName localhost -ConfigurationName PowerShell.6
 Invoke-Command -Session $session -ScriptBlock { $PSVersionTable }
 ```
 
-```output
+```Output
 WARNING: PowerShell remoting has been enabled only for PowerShell Core configurations and does not
 affect Windows PowerShell remoting configurations. Run this cmdlet in Windows PowerShell to affect
 all PowerShell remoting configurations.
