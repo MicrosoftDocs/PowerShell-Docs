@@ -29,31 +29,20 @@ PowerShell includes the following comparison operators:
 |             | -lt          | less than                                   |
 |             | -le          | less than or equal                          |
 |             |              |                                             |
-| Matching    | -like        | Returns true when string matches wildcard   |
-|             |              | pattern                                     |
-|             | -notlike     | Returns true when string does not match     |
-|             |              | wildcard pattern                            |
-|             | -match       | Returns true when string matches regex      |
-|             |              | pattern; $matches contains matching strings |
-|             | -notmatch    | Returns true when string does not match     |
-|             |              | regex pattern; $matches contains matching   |
-|             |              | strings                                     |
+| Matching    | -like        | Returns true when string matches wildcard<br/>pattern |
+|             | -notlike     | Returns true when string does not match<br/>wildcard pattern |
+|             | -match       | Returns true when string matches regex<br/>pattern; $matches contains matching strings |
+|             | -notmatch    | Returns true when string does not match<br/>regex pattern; $matches contains matching<br/>strings |
 |             |              |                                             |
-| Containment | -contains    | Returns true when reference value contained |
-|             |              | in a collection                             |
-|             | -notcontains | Returns true when reference value not       |
-|             |              | contained in a collection                   |
-|             | -in          | Returns true when test value contained in a |
-|             |              | collection                                  |
-|             | -notin       | Returns true when test value not contained  |
-|             |              | in a collection                             |
+| Containment | -contains    | Returns true when reference value contained<br/>in a collection |
+|             | -notcontains | Returns true when reference value not<br/>contained in a collection |
+|             | -in          | Returns true when test value contained in a collection |
+|             | -notin       | Returns true when test value not contained in a collection |
 |             |              |                                             |
 | Replacement | -replace     | Replaces a string pattern                   |
 |             |              |                                             |
-| Type        | -is          | Returns true if both object are the same    |
-|             |              | type                                        |
-|             | -isnot       | Returns true if the objects are not the same|
-|             |              | type                                        |
+| Type        | -is          | Returns true if both object are the same<br/>type |
+|             | -isnot       | Returns true if the objects are not the same<br/>type |
 
 By default, all comparison operators are case-insensitive. To make a
 comparison operator case-sensitive, precede the operator name with a `c`. For
