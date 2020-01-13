@@ -546,16 +546,23 @@ except for value `5.1` which on Windows OS runs the job in a Windows PowerShell 
 
 ```powershell
 $PSVersionTable.PSVersion
-# produces:
-# Major  Minor  Patch  PreReleaseLabel BuildLabel
-# -----  -----  -----  --------------- ----------
-# 7      0      0      rc.1
+```
+
+```Output
+Major  Minor  Patch  PreReleaseLabel BuildLabel
+-----  -----  -----  --------------- ----------
+7      0      0      rc.1
+```
+
+```powershell
 $job = Start-Job { $PSVersionTable.PSVersion } -PSVersion 5.1
 Receive-Job $job
-# produces:
-# Major  Minor  Build  Revision
-# -----  -----  -----  --------
-# 5      1      14393  3383
+```
+
+```Output
+Major  Minor  Build  Revision
+-----  -----  -----  --------
+5      1      14393  3383
 ```
 
 This parameter was introduced in PowerShell 3.0.
