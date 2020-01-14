@@ -61,7 +61,7 @@ $s = Get-PSSession -Name WinPSCompatSession
 Invoke-Command -Session $s -ScriptBlock {"Running in Windows PowerShell version $($PSVersionTable.PSVersion)";<#Get-WinPSLiveObject | Set-WinPSLiveObject#>}
 ```
 
-The background Windows PowerShell 5.1 process is created when a first module
+The background Windows PowerShell 5.1 process is created when the first module
 is imported using Windows PowerShell Compatibility funtionality and closed
 when the last such module is removed (using `Remove-Module`) or when
 PowerShell process exit.
