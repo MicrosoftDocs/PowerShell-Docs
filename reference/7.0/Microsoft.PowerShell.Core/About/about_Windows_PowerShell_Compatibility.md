@@ -77,7 +77,7 @@ Compatibility funtionality.
 
 The Windows PowerShell Compatibility functionality:
 
-1. works only locally on Windows OS
+1. Only works locally on Windows OS
 1. requires Windows PowerShell 5.1 installed on the system
    (can fix this by installing WMF 5.1 on earlier OSes)
 1. operates on de/serialized cmdlet parameters and return values (not on live objects)
