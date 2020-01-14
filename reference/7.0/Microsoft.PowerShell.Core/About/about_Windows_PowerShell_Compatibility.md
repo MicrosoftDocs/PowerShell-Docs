@@ -66,7 +66,7 @@ is imported using Windows PowerShell Compatibility funtionality and closed
 when the last such module is removed (using `Remove-Module`) or when
 PowerShell process exits.
 
-When a module is imported using Windows PowerShell Compatibility funtionality
+When a module is imported using Windows PowerShell Compatibility functionality,
 implicit remoting generates a proxy module in user `$env:Temp` directory
 and imports this proxy module into current PowerShell session.
 So the module's path (along with `(Get-Module -Name ServerManager).PrivateData.ImplicitRemoting`
