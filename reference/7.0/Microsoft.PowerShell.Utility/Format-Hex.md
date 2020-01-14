@@ -4,13 +4,15 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Utility
 ms.date: 04/25/2019
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/format-hex?view=powershell-7&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/format-hex?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Format-Hex
 ---
+
 # Format-Hex
 
 ## SYNOPSIS
+
 Displays a file or other input as hexadecimal.
 
 ## SYNTAX
@@ -27,7 +29,7 @@ Format-Hex [-Path] <string[]> [-Count <long>] [-Offset <long>] [<CommonParameter
 Format-Hex -LiteralPath <string[]> [-Count <long>] [-Offset <long>] [<CommonParameters>]
 ```
 
-### ByInputObject
+### InputObject
 
 ```
 Format-Hex -InputObject <psobject> [-Encoding <Encoding>] [-Count <long>] [-Offset <long>] [-Raw] [<CommonParameters>]
@@ -57,9 +59,12 @@ This command returns the hexadecimal values of a string.
 ```
 
 ```Output
-           00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
+   Label: String (System.String) <2944BEC3>
 
-00000000   48 65 6C 6C 6F 20 57 6F 72 6C 64                 Hello World
+          Offset Bytes                                           Ascii
+                 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
+          ------ ----------------------------------------------- -----
+0000000000000000 48 65 6C 6C 6F 20 57 6F 72 6C 64                Hello World
 ```
 
 The string **Hello World** is sent down the pipeline to the `Format-Hex` cmdlet. The hexadecimal
@@ -71,17 +76,18 @@ This example uses the hexadecimal output to determine the file type. The cmdlet 
 full path and the hexadecimal values.
 
 To test the following command, make a copy of an existing PDF file on your local computer and rename
-the copied file to **File.t7f**.
+the copied file to `File.t7f`.
 
 ```powershell
 Format-Hex -Path .\File.t7f
 ```
 
 ```Output
-           Path: C:\Test\File.t7f
+   Label: C:\Test\File.t7f
 
-           00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
-
+          Offset Bytes                                           Ascii
+                 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
+          ------ ----------------------------------------------- -----
 00000000   25 50 44 46 2D 31 2E 35 0D 0A 25 B5 B5 B5 B5 0D  %PDF-1.5..%????.
 00000010   0A 31 20 30 20 6F 62 6A 0D 0A 3C 3C 2F 54 79 70  .1 0 obj..<</Typ
 00000020   65 2F 43 61 74 61 6C 6F 67 2F 50 61 67 65 73 20  e/Catalog/Pages
@@ -141,6 +147,7 @@ The supported scalar types are:
 - `[int]`, `[uint]`, `[int32]`, `[uint32]`,
 - `[long]`, `[ulong]`, `[int64]`, `[uint64]`
 - `[single]`, `[float]`, `[double]`
+- `[boolean]`
 
 ```yaml
 Type: PSObject
