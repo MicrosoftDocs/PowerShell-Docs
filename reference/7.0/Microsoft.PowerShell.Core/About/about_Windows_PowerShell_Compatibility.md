@@ -10,7 +10,7 @@ title: about_Windows_PowerShell_Compatibility
 
 ## SHORT DESCRIPTION
 
-Describes the Windows PowerShell Compatibility funtionality for PowerShell
+Describes the Windows PowerShell Compatibility functionality for PowerShell 7.
 
 ## LONG DESCRIPTION
 
