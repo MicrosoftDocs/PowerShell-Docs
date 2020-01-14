@@ -8,9 +8,11 @@ online version: https://docs.microsoft.com/powershell/module/microsoft.powershel
 schema: 2.0.0
 title: Format-Hex
 ---
+
 # Format-Hex
 
 ## SYNOPSIS
+
 Displays a file or other input as hexadecimal.
 
 ## SYNTAX
@@ -27,7 +29,7 @@ Format-Hex [-Path] <string[]> [-Count <long>] [-Offset <long>] [<CommonParameter
 Format-Hex -LiteralPath <string[]> [-Count <long>] [-Offset <long>] [<CommonParameters>]
 ```
 
-### ByInputObject
+### InputObject
 
 ```
 Format-Hex -InputObject <psobject> [-Encoding <Encoding>] [-Count <long>] [-Offset <long>] [-Raw] [<CommonParameters>]
@@ -71,7 +73,7 @@ This example uses the hexadecimal output to determine the file type. The cmdlet 
 full path and the hexadecimal values.
 
 To test the following command, make a copy of an existing PDF file on your local computer and rename
-the copied file to **File.t7f**.
+the copied file to `File.t7f`.
 
 ```powershell
 Format-Hex -Path .\File.t7f
