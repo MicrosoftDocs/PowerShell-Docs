@@ -64,7 +64,7 @@ Invoke-Command -Session $s -ScriptBlock {"Running in Windows PowerShell version 
 The background Windows PowerShell 5.1 process is created when the first module
 is imported using Windows PowerShell Compatibility funtionality and closed
 when the last such module is removed (using `Remove-Module`) or when
-PowerShell process exit.
+PowerShell process exits.
 
 When a module is imported using Windows PowerShell Compatibility funtionality
 implicit remoting generates a proxy module in user `$env:Temp` directory
