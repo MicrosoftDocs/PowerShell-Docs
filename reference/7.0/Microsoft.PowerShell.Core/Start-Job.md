@@ -541,7 +541,10 @@ Accept wildcard characters: False
 ### -PSVersion
 
 Specifies a version of PowerShell to use for running the job.
-Curently this parameter does not have any effect (job is run in PowerShell Core)
+When the value of **PSVersion** is **5.1** The job is run in a Windows PowerShell 5.1 session.
+For any other value, the job is run using the current version of PowerShell.
+
+This parameter was added in PowerShell 7 and only works on Windows.
 except for value `5.1` which on Windows OS runs the job in a Windows PowerShell v5.1
 
 ```powershell
