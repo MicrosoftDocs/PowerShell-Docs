@@ -148,7 +148,7 @@ indicates an environment variable.
 > [!NOTE]
 > In Windows, environment variable names are case-insensitive. On Linux and
 > macOS, environment variable names are case-sensitive. In most cases,
-> environment variable are all uppercase. Refer to the documentation for your
+> environment variables are all uppercase. Refer to the documentation for your
 > operating system for specific information.
 
 ### Changing Environment Variables
@@ -170,7 +170,7 @@ You can change the values of variables without using a cmdlet by using the
 following syntax:
 
 ```powershell
-$Env:<variable-name> += "<new-value>"
+$Env:<variable-name> = "<new-value>"
 ```
 
 For example, to append `;c:\temp` to the value of the `Path` environment
