@@ -75,7 +75,7 @@ Compatibility funtionality.
 
 ## LIMITATIONS
 
-Windows PowerShell Compatibility funtionality
+The Windows PowerShell Compatibility functionality:
 
 1. works only locally on Windows OS
 1. requires Windows PowerShell 5.1 installed on the system
