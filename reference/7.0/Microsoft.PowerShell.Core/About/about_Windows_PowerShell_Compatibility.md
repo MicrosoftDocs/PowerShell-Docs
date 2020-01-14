@@ -54,7 +54,7 @@ When a first module is imported using Windows PowerShell Compatibility funtional
 a `WinPSCompatSession` remoting session is created (using the same transport that
 PowerShell jobs use). This remoting session can be used for operations that
 do not work correctly on deserialized objects. The entire pipeline is executed
-in Windows PowerShell and only final result is returned.
+in Windows PowerShell and only the final result is returned.
 
 ```powershell
 $s = Get-PSSession -Name WinPSCompatSession
