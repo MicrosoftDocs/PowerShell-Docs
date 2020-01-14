@@ -53,7 +53,7 @@ pwsh -settingsFile $ConfigPath # Implicit Windows PowerShell Compatibility funti
 When a first module is imported using Windows PowerShell Compatibility funtionality
 a `WinPSCompatSession` remoting session is created (using the same transport that
 PowerShell jobs use). This remoting session can be used for operations that
-do not work corrctly on de/serialized objects so that entire pipeline is executed
+do not work correctly on deserialized objects. The entire pipeline is executed
 in Windows PowerShell and only final result is returned.
 
 ```powershell
