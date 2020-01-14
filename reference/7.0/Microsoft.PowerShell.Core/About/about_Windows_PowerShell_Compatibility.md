@@ -42,7 +42,7 @@ Windows PowerShell Compatibility funtionality can be invoked in 3 ways:
    ```
 
 To disable implicit Windows PowerShell Compatibility import (cases 2 and 3 above)
-one can use `DisableImplicitWinCompat` setting in PowerShell configuration file.
+you can use `DisableImplicitWinCompat` setting in PowerShell configuration file.
 
 ```powershell
 $ConfigPath = "$PSHOME\DisableWinCompat.powershell.config.json"
