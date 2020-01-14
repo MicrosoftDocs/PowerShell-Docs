@@ -81,7 +81,7 @@ The Windows PowerShell Compatibility functionality:
 1. Requires that Windows PowerShell 5.1 is installed on the system
    (Can be installed via [WMF 5.1](/powershell/scripting/wmf/setup/install-configure) on older OSes.)
 1. Operates on serialized cmdlet parameters and return values (not on live objects)
-1. all modules imported into the Windows PowerShell remoting session share the same runspace
+1. All modules imported into the Windows PowerShell remoting session share the same runspace.
 
 ## KEYWORDS
 
