@@ -46,8 +46,7 @@
             { "files": ["**/*.md"], "src": "virtual-directory", "dest": "scripting" },
             { "files": ["**/*.md"], "src": "virtual-directory-module", "dest": "module" }
         ],
-        "resource": [
-            {
+        "resource": [{
                 "files": ["**/media/**/*.png", "**/media/**/*.gif", "**/media/**/*.jpeg", "**/media/**/*.jpg", "**/media/**/*.svg"],
                 "exclude": ["**/obj/**", "**/includes/**"]
             },
@@ -84,6 +83,11 @@
                 "files": ["**/images/**", "**/*.png", "**/*.gif", "**/*.jpeg", "**/*.jpg", "**/*.svg"],
                 "exclude": ["**/obj/**", "**/includes/**"],
                 "version": "powershell-7"
+            },
+            {
+                "files": ["**/images/**", "**/*.png", "**/*.gif", "**/*.jpeg", "**/*.jpg", "**/*.svg"],
+                "exclude": ["**/obj/**", "**/includes/**"],
+                "version": "powershell-7.x"
             }
         ],
         "versions": {
@@ -92,7 +96,8 @@
             "powershell-5.0": { "dest": "powershell-5.0" },
             "powershell-5.1": { "dest": "powershell-5.1" },
             "powershell-6": { "dest": "powershell-6" },
-            "powershell-7": { "dest": "powershell-7" }
+            "powershell-7": { "dest": "powershell-7" },
+            "powershell-7.x": { "dest": "powershell-7.1" }
         },
         "overwrite": [],
         "externalReference": [],
