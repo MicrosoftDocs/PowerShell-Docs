@@ -42,6 +42,10 @@ Limit the number of users in the Administrators group.
 
 If the computer is joined to a domain, you can add user accounts, computer accounts, and group accounts from that domain and from trusted domains to a local group.
 
+> [!NOTE]
+> The Microsoft.PowerShell.LocalAccounts module is not available in 32-bit PowerShell on a 64-bit
+> system.
+
 ## EXAMPLES
 
 ### Example 1: Add members to the Administrators group

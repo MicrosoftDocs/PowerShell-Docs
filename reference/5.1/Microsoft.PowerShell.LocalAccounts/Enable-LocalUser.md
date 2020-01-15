@@ -36,6 +36,10 @@ The **Enable-LocalUser** cmdlet enables local user accounts.
 When a user account is disabled, the user cannot log on.
 When a user account is enabled, the user can log on.
 
+> [!NOTE]
+> The Microsoft.PowerShell.LocalAccounts module is not available in 32-bit PowerShell on a 64-bit
+> system.
+
 ## EXAMPLES
 
 ### Example 1: Enable an account by specifying a name

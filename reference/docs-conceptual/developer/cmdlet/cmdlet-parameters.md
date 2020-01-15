@@ -30,7 +30,7 @@ Provides basic information you must understand before you declare the parameters
 Describes the different types of parameters that you can declare in cmdlets.
 
 [Cmdlet Parameter Name and Functionality Guidelines](./standard-cmdlet-parameter-names-and-types.md)
-Discuses the names, recommended data type, and functionality of standard parameters.
+Discusses the names, recommended data type, and functionality of standard parameters.
 
 [Parameter Aliases](./parameter-aliases.md)
 Discusses the aliases that you can define for parameters.
