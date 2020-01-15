@@ -34,6 +34,10 @@ Rename-LocalGroup [-NewName] <String> [-SID] <SecurityIdentifier> [-WhatIf] [-Co
 ## DESCRIPTION
 The **Rename-LocalGroup** cmdlet renames a local security group.
 
+> [!NOTE]
+> The Microsoft.PowerShell.LocalAccounts module is not available in 32-bit PowerShell on a 64-bit
+> system.
+
 ## EXAMPLES
 
 ### Example 1: Change the name of a group

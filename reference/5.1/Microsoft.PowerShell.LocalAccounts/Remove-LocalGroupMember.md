@@ -36,6 +36,10 @@ Remove-LocalGroupMember [-Member] <LocalPrincipal[]> [-SID] <SecurityIdentifier>
 ## DESCRIPTION
 The **Remove-LocalGroupMember** cmdlet removes users or groups from a local group.
 
+> [!NOTE]
+> The Microsoft.PowerShell.LocalAccounts module is not available in 32-bit PowerShell on a 64-bit
+> system.
+
 ## EXAMPLES
 
 ### Example 1: Remove members from the Administrators group
