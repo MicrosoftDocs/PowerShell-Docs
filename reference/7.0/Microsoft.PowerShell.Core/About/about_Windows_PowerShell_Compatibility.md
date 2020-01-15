@@ -6,7 +6,7 @@ online version: https://docs.microsoft.com/powershell/module/microsoft.powershel
 schema: 2.0.0
 title: about_Windows_PowerShell_Compatibility
 ---
-# About Group Policy Settings
+# About Windows PowerShell compatibility
 
 ## SHORT DESCRIPTION
 
@@ -50,7 +50,7 @@ $ConfigPath = "$PSHOME\DisableWinCompat.powershell.config.json"
 pwsh -settingsFile $ConfigPath # Implicit Windows PowerShell Compatibility funtionality is Disabled in this PowerShell
 ```
 
-When a first module is imported using Windows PowerShell Compatibility funtionality
+When the first module is imported using Windows PowerShell Compatibility funtionality
 a `WinPSCompatSession` remoting session is created (using the same transport that
 PowerShell jobs use). This remoting session can be used for operations that
 do not work correctly on deserialized objects. The entire pipeline is executed
