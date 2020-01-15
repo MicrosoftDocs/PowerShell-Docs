@@ -30,6 +30,10 @@ Get-LocalUser [[-SID] <SecurityIdentifier[]>] [<CommonParameters>]
 The **Get-LocalUser** cmdlet gets local user accounts.
 This cmdlet gets default built-in user accounts, local user accounts that you created, and local accounts that you connected to Microsoft accounts.
 
+> [!NOTE]
+> The Microsoft.PowerShell.LocalAccounts module is not available in 32-bit PowerShell on a 64-bit
+> system.
+
 ## EXAMPLES
 
 ### Example 1: Get an account by using its name

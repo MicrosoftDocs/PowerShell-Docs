@@ -38,6 +38,10 @@ New-LocalUser [-AccountExpires <DateTime>] [-AccountNeverExpires] [-Description 
 The `New-LocalUser` cmdlet creates a local user account. This cmdlet creates a local user account
 or a local user account that is connected to a Microsoft account.
 
+> [!NOTE]
+> The Microsoft.PowerShell.LocalAccounts module is not available in 32-bit PowerShell on a 64-bit
+> system.
+
 ## EXAMPLES
 
 ### Example 1: Create a user account

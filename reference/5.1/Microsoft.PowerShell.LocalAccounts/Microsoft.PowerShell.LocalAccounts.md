@@ -14,6 +14,9 @@ title: Microsoft.PowerShell.LocalAccounts
 ## Description
 This section contains the help topics for the Local Accounts cmdlets in Windows PowerShell.
 
+> [!NOTE]
+> This module is not available in 32-bit PowerShell on a 64-bit system.
+
 ## Microsoft.PowerShell.LocalAccounts Cmdlets
 
 ### [Add-LocalGroupMember](Add-LocalGroupMember.md)

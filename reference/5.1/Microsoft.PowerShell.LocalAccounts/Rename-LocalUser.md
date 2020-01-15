@@ -34,6 +34,10 @@ Rename-LocalUser [-NewName] <String> [-SID] <SecurityIdentifier> [-WhatIf] [-Con
 ## DESCRIPTION
 The **Rename-LocalUser** cmdlet renames a local user account.
 
+> [!NOTE]
+> The Microsoft.PowerShell.LocalAccounts module is not available in 32-bit PowerShell on a 64-bit
+> system.
+
 ## EXAMPLES
 
 ### Example 1: Rename a user account

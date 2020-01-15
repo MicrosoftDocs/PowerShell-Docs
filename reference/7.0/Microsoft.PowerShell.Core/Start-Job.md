@@ -294,6 +294,32 @@ running on the local computer.
 
 To view the job's output, use the `Receive-Job` cmdlet. For example, `Receive-Job -Id 1`.
 
+### Example 11: Run job in a Windows PowerShell 5.1
+
+This example uses the **PSVersion** parameter with value **5.1** to run job
+in a Windows PowerShell 5.1 session.
+
+```powershell
+$PSVersionTable.PSVersion
+```
+
+```Output
+Major  Minor  Patch  PreReleaseLabel BuildLabel
+-----  -----  -----  --------------- ----------
+7      0      0      rc.1
+```
+
+```powershell
+$job = Start-Job { $PSVersionTable.PSVersion } -PSVersion 5.1
+Receive-Job $job
+```
+
+```Output
+Major  Minor  Build  Revision
+-----  -----  -----  --------
+5      1      14393  3383
+```
+
 ## PARAMETERS
 
 ### -ArgumentList
@@ -540,10 +566,11 @@ Accept wildcard characters: False
 
 ### -PSVersion
 
-Specifies a version. `Start-Job` runs the job with the version of PowerShell. The acceptable values
-for this parameter are: `2.0` and `3.0`.
+Specifies a version of PowerShell to use for running the job.
+When the value of **PSVersion** is **5.1** The job is run in a Windows PowerShell 5.1 session.
+For any other value, the job is run using the current version of PowerShell.
 
-This parameter was introduced in PowerShell 3.0.
+This parameter was added in PowerShell 7 and only works on Windows.
 
 ```yaml
 Type: Version
