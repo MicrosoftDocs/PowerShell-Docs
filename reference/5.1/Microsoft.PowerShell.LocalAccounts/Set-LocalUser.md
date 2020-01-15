@@ -41,6 +41,10 @@ Set-LocalUser [-AccountExpires <DateTime>] [-AccountNeverExpires] [-Description 
 The **Set-LocalUser** cmdlet modifies a local user account.
 This cmdlet can reset the password of a local user account.
 
+> [!NOTE]
+> The Microsoft.PowerShell.LocalAccounts module is not available in 32-bit PowerShell on a 64-bit
+> system.
+
 ## EXAMPLES
 
 ### Example 1: Change a description of a user account

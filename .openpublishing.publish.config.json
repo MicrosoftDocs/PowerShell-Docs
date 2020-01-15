@@ -1,74 +1,70 @@
 {
-  "build_entry_point": "docs",
-  "docsets_to_publish": [
-    {
-      "docset_name": "PowerShell_PowerShell-docs_reference",
-      "build_source_folder": "reference",
-      "build_output_subfolder": "reference",
-      "locale": "en-us",
-      "monikers": [],
-      "moniker_ranges": [],
-      "open_to_public_contributors": true,
-      "type_mapping": {
-        "AzurePSModulePage": "Content",
-        "Conceptual": "Content",
-        "ManagedReference": "Content",
-        "RestApi": "Content"
-      },
-      "build_entry_point": "docs",
-      "template_folder": "_themes",
-      "customized_tasks": {
-        "docset_prebuild": [
-          "_dependentPackages/CommonPlugins/tools/PowerShellReference.ps1"
-        ]
-      },
-      "customized_template_paths": [
-        "_dependentPackages/azurecli.plugins/azurecli"
-      ],
-      "monikerPath": [
-        "mapping/monikerMapping.json"
-      ],
-      "version": 0
-    }
-  ],
-  "notification_subscribers": [],
-  "sync_notification_subscribers": [],
-  "branches_to_filter": [],
-  "git_repository_url_open_to_public_contributors": "https://github.com/MicrosoftDocs/PowerShell-Docs",
-  "git_repository_branch_open_to_public_contributors": "staging",
-  "skip_source_output_uploading": false,
-  "need_preview_pull_request": true,
-  "contribution_branch_mappings": {},
-  "dependent_repositories": [
-    {
-      "path_to_root": "_themes",
-      "url": "https://github.com/Microsoft/templates.docs.msft",
-      "branch": "master",
-      "branch_mapping": {}
-    },
-    {
-      "path_to_root": "powershell-sdk-samples",
-      "url": "https://github.com/MicrosoftDocs/powershell-sdk-samples",
-      "branch": "master",
-      "branch_mapping": {}
-    }
-  ],
-  "branch_target_mapping": {},
-  "need_generate_pdf_url_template": false,
-  "targets": {},
-  "dependent_packages": [
-    {
-      "id": "opbuild.templates.azurecli",
-      "nuget_feed": "https://www.myget.org/F/op/api/v2",
-      "path_to_root": "_dependentPackages/azurecli.plugins",
-      "version": "latest"
-    },
-    {
-      "id": "Microsoft.OpenPublishing.CommonPlugins",
-      "nuget_feed": "https://www.myget.org/F/op/api/v2",
-      "path_to_root": "_dependentPackages/CommonPlugins",
-      "target_framework": "net45",
-      "version": "latest"
-    }
-  ]
+    "build_entry_point": "docs",
+    "docsets_to_publish": [{
+        "docset_name": "PowerShell_PowerShell-docs_reference",
+        "build_source_folder": "reference",
+        "build_output_subfolder": "reference",
+        "locale": "en-us",
+        "monikers": [],
+        "moniker_ranges": [],
+        "open_to_public_contributors": true,
+        "type_mapping": {
+            "AzurePSModulePage": "Content",
+            "Conceptual": "Content",
+            "ManagedReference": "Content",
+            "RestApi": "Content"
+        },
+        "build_entry_point": "docs",
+        "template_folder": "_themes",
+        "customized_tasks": {
+            "docset_prebuild": [
+                "_dependentPackages/CommonPlugins/tools/PowerShellReference.ps1"
+            ]
+        },
+        "customized_template_paths": [
+            "_dependentPackages/azurecli.plugins/azurecli"
+        ],
+        "monikerPath": [
+            "mapping/monikerMapping.json"
+        ],
+        "version": 0
+    }],
+    "notification_subscribers": [],
+    "sync_notification_subscribers": [],
+    "branches_to_filter": [],
+    "git_repository_url_open_to_public_contributors": "https://github.com/MicrosoftDocs/PowerShell-Docs",
+    "git_repository_branch_open_to_public_contributors": "staging",
+    "skip_source_output_uploading": false,
+    "need_preview_pull_request": true,
+    "contribution_branch_mappings": {},
+    "dependent_repositories": [{
+            "path_to_root": "_themes",
+            "url": "https://github.com/Microsoft/templates.docs.msft",
+            "branch": "master",
+            "branch_mapping": {}
+        },
+        {
+            "path_to_root": "powershell-sdk-samples",
+            "url": "https://github.com/MicrosoftDocs/powershell-sdk-samples",
+            "branch": "master",
+            "branch_mapping": {}
+        }
+    ],
+    "branch_target_mapping": {},
+    "need_generate_pdf_url_template": false,
+    "targets": {},
+    "dependent_packages": [{
+            "id": "opbuild.templates.azurecli",
+            "nuget_feed": "https://www.myget.org/F/op/api/v2",
+            "path_to_root": "_dependentPackages/azurecli.plugins",
+            "version": "latest"
+        },
+        {
+            "id": "Microsoft.OpenPublishing.CommonPlugins",
+            "nuget_feed": "https://www.myget.org/F/op/api/v2",
+            "path_to_root": "_dependentPackages/CommonPlugins",
+            "target_framework": "net45",
+            "version": "latest"
+        }
+    ]
 }
