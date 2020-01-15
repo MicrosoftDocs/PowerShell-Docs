@@ -43,6 +43,10 @@ PS C:\> Remove-LocalUser -Name "AdminContoso02"
 
 This command deletes the user account named AdminContoso02.
 
+> [!NOTE]
+> The Microsoft.PowerShell.LocalAccounts module is not available in 32-bit PowerShell on a 64-bit
+> system.
+
 ## PARAMETERS
 
 ### -InputObject
