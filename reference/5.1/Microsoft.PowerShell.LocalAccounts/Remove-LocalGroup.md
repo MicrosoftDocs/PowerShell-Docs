@@ -40,6 +40,10 @@ You cannot recover a deleted group.
 If you delete a group and then create another group that has the same group name, you must set new permissions for the new group.
 The new group does not inherit the permissions that were assigned to the group.
 
+> [!NOTE]
+> The Microsoft.PowerShell.LocalAccounts module is not available in 32-bit PowerShell on a 64-bit
+> system.
+
 ## EXAMPLES
 
 ### Example 1: Delete a security group

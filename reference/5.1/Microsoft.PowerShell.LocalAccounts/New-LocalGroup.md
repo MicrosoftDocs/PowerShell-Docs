@@ -23,6 +23,10 @@ New-LocalGroup [-Description <String>] [-Name] <String> [-WhatIf] [-Confirm] [<C
 ## DESCRIPTION
 The **New-LocalGroup** cmdlet creates a local security group in the Security Account Manager.
 
+> [!NOTE]
+> The Microsoft.PowerShell.LocalAccounts module is not available in 32-bit PowerShell on a 64-bit
+> system.
+
 ## EXAMPLES
 
 ### Example 1: Create a security group

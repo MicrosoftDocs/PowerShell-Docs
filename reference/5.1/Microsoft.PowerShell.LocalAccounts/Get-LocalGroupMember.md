@@ -34,6 +34,10 @@ Get-LocalGroupMember [[-Member] <String>] [-SID] <SecurityIdentifier> [<CommonPa
 ## DESCRIPTION
 The **Get-LocalGroupMember** cmdlet gets members from a local group.
 
+> [!NOTE]
+> The Microsoft.PowerShell.LocalAccounts module is not available in 32-bit PowerShell on a 64-bit
+> system.
+
 ## EXAMPLES
 
 ### Example 1: Get all members of the Administrators group

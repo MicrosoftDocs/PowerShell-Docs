@@ -18,9 +18,10 @@ Be sure to change the issue title. Titles should be brief and meaningful.
 
 - URL to the article (Docs or GitHub URL):
 - Issue affects the following content (check all that apply):
-  
+
   **Cmdlet reference & about_ topics**
-  - [ ] Version 7 content
+  - [ ] Version 7.x preview content
+  - [ ] Version 7.0 content
   - [ ] Version 6 content
   - [ ] Version 5.1 content
 

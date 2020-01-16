@@ -47,6 +47,16 @@ Import-Module [-Global] [-Prefix <String>] [-Name] <String[]> [-Function <String
  [<CommonParameters>]
 ```
 
+### UseWindowsPowerShell
+
+```
+Import-Module [-Name] <string[]> -UseWindowsPowerShell [-Global] [-Prefix <string>]
+ [-Function <string[]>] [-Cmdlet <string[]>] [-Variable <string[]>] [-Alias <string[]>]
+ [-Force] [-PassThru] [-AsCustomObject] [-MinimumVersion <version>] [-MaximumVersion <string>]
+ [-RequiredVersion <version>] [-ArgumentList <Object[]>] [-DisableNameChecking] [-NoClobber]
+ [-Scope <string>] [<CommonParameters>]
+```
+
 ### FullyQualifiedName
 
 ```
@@ -63,6 +73,15 @@ Import-Module [-Global] [-Prefix <String>] [-FullyQualifiedName] <ModuleSpecific
  [-Function <String[]>] [-Cmdlet <String[]>] [-Variable <String[]>] [-Alias <String[]>] [-Force]
  [-SkipEditionCheck] [-PassThru] [-AsCustomObject] [-ArgumentList <Object[]>] [-DisableNameChecking]
  [-NoClobber] [-Scope <String>] -PSSession <PSSession>  [<CommonParameters>]
+```
+
+### FullyQualifiedNameAndUseWindowsPowerShell
+
+```
+Import-Module [-FullyQualifiedName] <ModuleSpecification[]> -UseWindowsPowerShell [-Global]
+ [-Prefix <string>] [-Function <string[]>] [-Cmdlet <string[]>] [-Variable <string[]>]
+ [-Alias <string[]>] [-Force] [-PassThru] [-AsCustomObject] [-ArgumentList <Object[]>]
+ [-DisableNameChecking] [-NoClobber] [-Scope <string>] [<CommonParameters>]
 ```
 
 ### Assembly
@@ -1185,6 +1204,24 @@ See [about_PowerShell_Editions](About/about_PowerShell_Editions.md) for more inf
 Type: SwitchParameter
 Parameter Sets: (All)
 Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -UseWindowsPowerShell
+
+Loads module using Windows PowerShell Compatibility funtionality.
+See [about_Windows_PowerShell_Compatibility](About/about_Windows_PowerShell_Compatibility.md)
+for more information.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: UseWinPS
 
 Required: False
 Position: Named
