@@ -118,7 +118,81 @@ productDirectory:
           text: Azure Automation runbooks
         - url: https://docs.microsoft.com/azure/azure-functions/functions-create-first-function-powershell
           text: Azure Functions using PowerShell
-
+productDirectory:
+  title: PowerShell Editions + Tools
+  summary: Available editions, tools, and technology that supports PowerShell # < 160 chars (optional)
+  items:
+    # Card 1
+    - title: PowerShell 5.1
+      # imageSrc should be square in ratio with no whitespace
+      imageSrc: ./media/index/powershell_128.svg
+      links:
+        - url: https://docs.microsoft.com/powershell/scripting/install/installing-windows-powershell
+          text: Install Windows PowerShell
+        - url: https://docs.microsoft.com/powershell/scripting/whats-new/what-s-new-in-windows-powershell-50
+          text: What's new in PowerShell 5.x
+    # Card 2
+    - title: PowerShell Core
+      imageSrc: ./media/index/ps_black_128.svg
+      links:
+        - url: https://docs.microsoft.com/powershell/scripting/install/installing-powershell-core-on-windows
+          text: Install PowerShell Core on Windows
+        - url: https://docs.microsoft.com/powershell/scripting/install/installing-powershell-core-on-linux
+          text: Install PowerShell Core on Linux
+        - url: https://docs.microsoft.com/powershell/scripting/install/installing-powershell-core-on-macos
+          text: Install PowerShell Core on macOS
+        - url: https://docs.microsoft.com/powershell/scripting/whats-new/what-s-new-in-powershell-core-62
+          text: What's new in PowerShell 6.2
+    # Card 3
+    - title: PowerShell Gallery
+      imageSrc: ./media/index/avatar_128.svg
+      links:
+        - url: https://www.powershellgallery.com/
+          text: PowerShell Gallery
+        - url: https://docs.microsoft.com/powershell/scripting/gallery/overview
+          text: What is the PowerShell Gallery
+        - url: https://docs.microsoft.com/powershell/scripting/gallery/concepts/publishing-guidelines
+          text: Best practices
+        - url: https://docs.microsoft.com/powershell/scripting/gallery/faqs
+          text: FAQs
+    # Card 4
+    - title: PowerShell DSC
+      imageSrc: https://docs.microsoft.com/media/common/i_config-tools.svg
+      links:
+        - url: https://docs.microsoft.com/powershell/scripting/dsc/overview/overview
+          text: DSC Overview
+        - url: https://docs.microsoft.com/powershell/scripting/dsc/getting-started/lnxgettingstarted
+          text: Get started with DSC for Linux
+        - url: https://dsccommunity.org/
+          text: DSC Community
+    # Card 5
+    - title: Developer resources
+      imageSrc: https://docs.microsoft.com/media/common/i_code-edit.svg
+      links:
+        - url: https://docs.microsoft.com/powershell/scripting/developer/windows-powershell
+          text: PowerShell SDK documentation
+        - url: https://docs.microsoft.com/dotnet/api/?view=pscore-6.2.0
+          text: PowerShell Core SDK 6.2.0 API reference
+        - url: https://code.visualstudio.com/docs/languages/powershell
+          text: Visual Studio Code PowerShell Extension
+        - url: https://docs.microsoft.com/powershell/scripting/components/vscode/using-vscode-for-remote-editing-and-debugging
+          text: Using VSCode for remote editing and debugging
+    # Card 6
+    - title: Related technologies
+      imageSrc: https://docs.microsoft.com/media/common/i_tools.svg
+      links:
+        - url: https://docs.microsoft.com/powershell/scripting/wmf/overview
+          text: Windows Management Framework
+        - url: https://docs.microsoft.com/powershell/windows/get-started?view=win10-ps
+          text: PowerShell modules to manage Windows
+        - url: https://aka.ms/cloudshell/powershell-docs
+          text: PowerShell in Azure Cloud Shell
+        - url: https://docs.microsoft.com/powershell/azure/overview
+          text: Azure PowerShell
+        - url: https://docs.microsoft.com/azure/automation/automation-runbook-types
+          text: Azure Automation runbooks
+        - url: https://docs.microsoft.com/azure/azure-functions/functions-create-first-function-powershell
+          text: Azure Functions using PowerShell
 tools:
   title: Community Resources # < 60 chars (optional)
   summary: Connect with other PowerShell users
