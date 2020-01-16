@@ -193,6 +193,7 @@ WARNING: Disabling the session configurations does not undo all the changes made
     3. Disable the firewall exceptions for WS-Management communications.
     4. Restore the value of the LocalAccountTokenFilterPolicy to 0, which restricts remote access to
        members of the Administrators group on the computer.
+```
 
 ```powershell
 New-PSSession -ComputerName localhost -ConfigurationName powershell.6 -Credential (Get-Credential)
