@@ -295,10 +295,18 @@ For more information, see
 [Invoke-DSCResource](https://docs.microsoft.com/en-us/powershell/module/psdesiredstateconfiguration/invoke-dscresource?view=powershell-7)
 
 ## New version notification
-
-
 TODO: Wordsmith
 TODO: Example
+
+Beginning with PowerShell 7.0, PowerShell uses update notifications to alert users to the existence of updates to PowerShell. Once per day, PowerShell queries an online service to determine if a newer version is available.
+
+ Note
+
+While the update check happens during the first session in a given 24-hour period, for performance reasons, the notification will only be shown on the start of subsequent sessions. Also for performance reasons, the check will not start until at least 3 seconds after the session begins.
+
+By default, PowerShell subscribes to one of two different notification channels depending on its version/branch. Supported, Generally Available (GA) versions of PowerShell only return notifications for updated GA releases. Preview and Release Candidate (RC) releases notify of updates to preview, RC, and GA releases.
+
+
 
 For more information, see
 [About Update Notifications](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_update_notifications?view=powershell-7)
