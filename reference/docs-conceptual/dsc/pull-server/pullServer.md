@@ -277,7 +277,7 @@ format in order for the pull server to correctly process them.
 Each resource module needs to be zipped and named according to the following pattern
 `{Module Name}_{Module Version}.zip`.
 
-For example, a module named ****xWebAdminstration** with a module version of 3.1.2.0 would be named
+For example, a module named **xWebAdminstration** with a module version of 3.1.2.0 would be named
 `xWebAdministration_3.1.2.0.zip`. Each version of a module must be contained in a single zip file.
 Since there is only a single version of a resource in each zip file, the module format added in WMF
 5.0 with support for multiple module versions in a single directory is not supported. This means
