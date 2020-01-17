@@ -55,9 +55,7 @@ Write-Error 'Bad' && Write-Output 'Second'
 ```
 
 ```Output
-Write-Error 'Bad' && Write-Output 'Second' : Bad
-+ CategoryInfo          : NotSpecified: (:) [Write-Error], WriteErrorException
-+ FullyQualifiedErrorId : Microsoft.PowerShell.Commands.WriteErrorException
+Write-Error: Bad
 ```
 
 #### First command succeeds, so the second command is not executed
@@ -77,10 +75,7 @@ Write-Error 'Bad' || Write-Output 'Second'
 ```
 
 ```Output
-Write-Error 'Bad' && Write-Output 'Second' : Bad
-+ CategoryInfo          : NotSpecified: (:) [Write-Error], WriteErrorException
-+ FullyQualifiedErrorId : Microsoft.PowerShell.Commands.WriteErrorException
-
+Write-Error: Bad
 Second
 ```
 
@@ -215,12 +210,7 @@ $(throw 'Bad') || Write-Output '2'
 ```
 
 ```Output
-Bad
-At line:1 char:3
-+ $(throw 'Bad') || Write-Output '2'
-+   ~~~~~~~~~~~
-+ CategoryInfo          : OperationStopped: (Bad:String) [], RuntimeException
-+ FullyQualifiedErrorId : Bad
+Exception: Bad
 ```
 
 Even when the error is caught, the pipeline chain is still terminated:
@@ -264,13 +254,7 @@ Test-NonTerminatingError || Write-Output 'Second'
 ```
 
 ```Output
-Test-NonTerminatingError : BAD
-At line:1 char:1
-+ Test-NonTerminatingError || Write-Output 'Second'
-+ ~~~~~~~~~~~~~~~~~~~~~~~~
-+ CategoryInfo          : NotSpecified: (:) [Test-NonTerminatingError], Exception
-+ FullyQualifiedErrorId : BAD,Test-NonTerminatingError
-
+Test-NonTerminatingError: BAD
 Second
 ```
 
@@ -312,12 +296,6 @@ function Test-NotTwo
 ```Output
 1
 Test-NotTwo : Input is 2
-At line:1 char:9
-+ 1,2,3 | Test-NotTwo && Write-Output 'All done!'
-+         ~~~~~~~~~~~
-+ CategoryInfo          : InvalidData: (:) [Test-NotTwo], Exception
-+ FullyQualifiedErrorId : InputTwo,Test-NotTwo
-
 3
 ```
 
