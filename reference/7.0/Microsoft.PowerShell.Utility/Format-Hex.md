@@ -94,7 +94,7 @@ Format-Hex -Path .\File.t7f
 ```
 
 The `Format-Hex` cmdlet uses the **Path** parameter to specify a filename in the current directory,
-**File.t7f**. The file extension **.t7f** is uncommon, but the hexadecimal output **%PDF** shows
+`File.t7f`. The file extension `.t7f` is uncommon, but the hexadecimal output `%PDF` shows
 that it is a PDF file.
 
 ## PARAMETERS
@@ -148,6 +148,10 @@ The supported scalar types are:
 - `[long]`, `[ulong]`, `[int64]`, `[uint64]`
 - `[single]`, `[float]`, `[double]`
 - `[boolean]`
+
+Prior to PowerShell 6.2, `Format-Hex` would handle a Pipeline input with multiple input types by
+grouping all like objects together. Now, it handles each individual object as it passes through the
+Pipeline and won't group objects together unless like objects are adjacent.
 
 ```yaml
 Type: PSObject
@@ -270,12 +274,13 @@ You can pipe a string to this cmdlet.
 
 This cmdlet returns a **ByteCollection**. This object represents a collection of bytes. It includes
 methods that convert the collection of bytes to a string formatted like each line of output returned
-by `Format-Hex`. If you specify the **Path** or **LiteralPath** parameter, the object also contains
-the path of the file that contains each byte.
+by `Format-Hex`. The output also states they type of bytes being processed. If you specify the
+**Path** or **LiteralPath** parameter, the object contains the path of the file that contains
+each byte. If you pass a string, boolean, integer, etc, it will be labeled appropriately.
 
 ## NOTES
 
-The right-most column of output tries to render the bytes as characters:
+The right-most column of output tries to render the bytes as ASCII characters:
 
 Generally, each byte is interpreted as a Unicode code point, which means that:
 
