@@ -5,6 +5,7 @@ ms.date: 01/21/2020
 ---
 
 # What's New in PowerShell 7.0
+TODO: Wordsmith
 
 PowerShell 7 is the latest major release to PowerShell, the cross-platform (Windows, Linux, and
 macOS) scripting language and automation engine for IT Management, DevOps pipelines, application
@@ -18,55 +19,173 @@ our detailed [changelogs](https://github.com/PowerShell/PowerShell/releases) on 
 
 ## Improved backwards compatibility with Windows PowerShell
 
-[Doc ref](Link)TODO
-
-## Improved VSCode PowerShell Extension
-
-[Using VSCode for PowerShell Development](https://docs.microsoft.com/en-us/powershell/scripting/components/vscode/using-vscode?view=powershell-7)
-
-Visual Studio code is a lightweight powerful source code editor built to support your development
-needs. With the addition of the PowerShell Extension, you have a complete management and automation
-development platform, to handle your needs today, and as you automate to the future.
-
-TODO: Show powershell extension install
-TODO: Show command-p ISE setting
+TODO: Jason - Get the doc reference from Joey [Doc ref](Link)
+TODO: Wordsmith
 
 ## Improved Foreach-Object with Parallelism support
+TODO: Wordsmith
 
-[Foreach-Object](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/foreach-object?view=powershell-7)
+Building on the parallelism built into Powershell 2.0 with remoting and background jobs, the cmdlet `Foreach-Object` has been improved to provide... TODO
+
+OR - The ForEach-Object cmdlet performs an operation on each item in a collection of input objects. The input objects can be piped to the cmdlet or specified by using the InputObject parameter.
 
 The Foreach-Object cmdlet, which iterates items in a collection, now has built-in parallelism with the new -Parallel parameter.
 
-TODO: examples
+Parallel running script block. Beginning with PowerShell 7.0, a third parameter set is available that runs each script block in parallel. There is a -ThrottleLimit parameter that limits the number of parallel scripts running at a time. As before, use the $_ variable to represent the current input object in the script block. Use the $using: keyword to pass variable references to the running script.
 
-## Introducing Secrets Management
+By default, the parallel scriptblocks use the current working directory of the caller that started the parallel tasks.
 
-TODO: Doc link
-TODO: Text
-TODO: Example
+This example retrieves 50,000 log entries from 5 system logs on a local Windows machine.
+
+```powershell
+$logNames = 'Security','Application','System','Windows PowerShell','Microsoft-Windows-Store/Operational'
+
+$logEntries = $logNames | ForEach-Object -Parallel {
+    Get-WinEvent -LogName $_ -MaxEvents 10000
+} -ThrottleLimit 5
+
+$logEntries.Count
+
+50000
+```
+
+The Parallel parameter specifies the script block that is run in parallel for each input log name. The ThrottleLimit parameter ensures that all five script blocks run at the same time.
+
+[!NOTE] The cmdlet `Foreach-Object` includes a switch parameter **-AsJob** to run as a background job. For further details see; [Background Jobs](https://docs.microsoft.com/en-us/powershell/scripting/developer/cmdlet/background-jobs?view=powershell-7)
+
+For more information, see
+[Foreach-Object](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/foreach-object?view=powershell-7)
 
 ## Ternary operator
+TODO: Wordsmith
 
-TODO: Doc link
-TODO: Text
-TODO: Example
+Using the ternary operator syntax
+PowerShell 7.0 introduced a new syntax using the ternary operator. It follows the C# ternary operator syntax:
+
+<condition> ? <if-true> : <if-false>
+The ternary operator behaves like the simplified if-else statement. The <condition> expression is evaluated and the result is converted to a boolean to determine which branch should be evaluated next:
+
+The <if-true> expression is executed if the <condition> expression is true
+The <if-false> expression is executed if the <condition> expression is false
+For example:
+
+$message = (Test-Path $path) ? "Path exists" : "Path not found"
+In this example, the value of $message is "Path exists" when Test-Path returns $true. When Test-Path returns $false, the value of $message is "Path not found".
+
+For more information, see
+[About If](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_if?view=powershell-7)
 
 ## Pipeline chain operators
+TODO: Wordsmith
 
+Beginning in PowerShell 7, PowerShell implements the && and || operators to conditionally chain pipelines. These operators are known in PowerShell as pipeline chain operators, and are similar to AND-OR lists in POSIX shells like bash, zsh and sh, as well as conditional processing symbols in the Windows Command Shell (cmd.exe).
+
+The && operator executes the right-hand pipeline, if the left-hand pipeline succeeded. Conversely, the || operator executes the right-hand pipeline if the left-hand pipeline failed.
+
+[NOTE!] These operators use the $? and $LASTEXITCODE variables to determine if a pipeline failed. This allows you to use them with native commands and not just with cmdlets or functions.
+
+Here, the first command succeeds and the second command is executed.
+
+```powershell
+Write-Output 'First' && Write-Output 'Second'
+```
+
+```output
+First
+Second
+```
+
+Here, the first command fails, the second is not executed.
+
+```powershell
+Write-Error 'Bad' && Write-Output 'Second'
+```
+
+```output
+Write-Error: Bad
+```
+
+Here, the first command succeeds, the second command is not executed
+
+```powershell
+Write-Output 'First' || Write-Output 'Second'
+```
+
+```output
+First
+```
+Here, the first command fails, so the second command is executed.
+
+```powershell
+Write-Error 'Bad' || Write-Output 'Second'
+```
+
+```output
+Write-Error 'Bad'
+Second
+```
+For more information, see
 [About Pipeline Chain Operators](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_pipeline_chain_operators?view=powershell-7)
 
-TODO: Text
-TODO Example
+## Null-coalescing operators
+TODO: Wordsmith
+TODO: Example format
 
-## Null Condition operators
+https://github.com/MicrosoftDocs/PowerShell-Docs/blob/staging/reference/7.0/Microsoft.PowerShell.Core/About/about_Operators.md
 
-TODO: Doc link
-TODO: Text
-TODO: Example
+Null-coalescing operator ??
+The null-coalescing operator ?? returns the value of its left-hand operand if it isn't null. Otherwise, it evaluates the right-hand operand and returns its result. The ?? operator doesn't evaluate its right-hand operand if the left-hand operand evaluates to non-null.
+
+$x = $null
+$x ?? 100
+100
+In the following example, the right-hand operand won't be evaluated.
+
+[string] $todaysDate = '1/10/2020'
+$todaysDate ?? (Get-Date).ToShortDateString()
+1/10/2020
+Null-coalescing assignment operator ??=
+The null-coalescing assignment operator ??= assigns the value of its right-hand operand to its left-hand operand only if the left-hand operand evaluates to null. The ??= operator doesn't evaluate its right-hand operand if the left-hand operand evaluates to non-null.
+
+$x = $null
+$x ??= 100
+$x
+100
+In the following example, the right-hand operand won't be evaluated.
+
+[string] $todaysDate = '1/10/2020'
+$todaysDate ??= (Get-Date).ToShortDateString()
+1/10/2020
+Null-conditional operators ?. and ?[]
+[!NOTE] This is an experimental feature. For more information see about_Experimental_Features.
+
+A null-conditional operator applies a member access, ?., or element access, ?[], operation to its operand only if that operand evaluates to non-null; otherwise, it returns null.
+
+Since PowerShell allows ? to be part of the variable name, formal specification of the variable name is required for using these operators. So it is required to use {} around the variable names like ${a} or when ? is part of the variable name ${a?}.
+
+In the following example, the value of PropName is returned.
+
+$a = @{ PropName = 100 }
+${a}?.PropName
+100
+The following example will return null, without trying to access the member name PropName.
+
+$a = $null
+${a}?.PropName
+Similarly, the value of the element will be returned.
+
+$a = 1..10
+${a}?[0]
+1
+And when the operand is null, the element isn't accessed and null is returned.
+
+$a = $null
+${a}?[0]
+
+for more information, see
+[About_Operators](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_operators?view=powershell-7)
 
 ## New ErrorView and Get-Error cmdlets
-
-[Get-Error](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/get-error?view=powershell-7)
 
 The display of error messages has been improved to enhance the readability of interactive and script
 errors with a new default view ConciseView. The views are user selectable through the preference
@@ -83,11 +202,11 @@ With ConciseView, If an error is not from a script or parser error, then
 it's a single line error message.
 
 ```powershell
-PS C:\> Get-Childitem -Path c:\notreal
+Get-Childitem -Path c:\NotReal
 ```
 
 ```output
-Get-ChildItem: Cannot find path ‘C:\notreal’ because it does not exist
+Get-ChildItem: Cannot find path ‘C:\NotReal’ because it does not exist
 ```
 
 If the error occurs during script execution or is a parsing error, you get a multiline error message
@@ -95,14 +214,17 @@ that contains the error, a pointer and error message showing where the error is 
 terminal doesn't support Virtual Terminal, then vt100 color codes are not used.
 
 ```powershell
-c:\>.\Myscript.ps1
+.\Myscript.ps1
 ```
 
 ```output
-MethodInvocationException: C:\GitHub\pri-tests\MyScript.ps1
+Selct-object: C:\GitHub\MyScript.ps1
 Line |
-   2 | [System.Net.DNS]::GetHostByName('Notonline')
-     | ^ Exception calling "GetHostByName" with "1" argument(s): "No such host is known."
+  25 | Get-Process | Selct-object -property NotReal
+     |               ~~~~~~~~~~~~
+     | The term 'Selct-object' is not recognized as the name of a cmdlet, function, script file,
+     | or operable program. Check the spelling of the name, or if a path was included,
+     | verify that the | path is correct and try again.
 ```
 
 [!NOTE] A new property **ErrorAccentColor** is added to $Host.PrivateData to support changing the
@@ -152,29 +274,43 @@ session you wish displayed.
 Get-Error -Newest 3 # Displays the lst three errors that occurred in the session
 ```
 
+For more information, see
+[Get-Error](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/get-error?view=powershell-7)
+
 ## New DSC Resource support with Invoke-DSCResource
 
-TODO: Doc link
-TODO: Text
-TODO: Example
+The Invoke-DscResource cmdlet runs a method of a specified PowerShell Desired State Configuration (DSC) resource.
+
+This cmdlet invokes a DSC resource directly, without creating a configuration document. Using this cmdlet, configuration management products can manage windows or Linux by using DSC resources. This cmdlet also enables debugging of resources when the DSC engine is running with debugging enabled.
+
+This command invokes the Set method of a resource named Log and specifies a Message property for it.
+
+```powershell
+Invoke-DscResource -Name Log -Method Set -ModuleName PSDesiredStateConfiguration -Property @{
+  Message = 'Hello World'
+}
+```
+
+For more information, see
+[Invoke-DSCResource](https://docs.microsoft.com/en-us/powershell/module/psdesiredstateconfiguration/invoke-dscresource?view=powershell-7)
 
 ## New version notification
 
-TODO: Doc link
-TODO: Text
+
+TODO: Wordsmith
 TODO: Example
+
+For more information, see
+[About Update Notifications](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_update_notifications?view=powershell-7)
 
 ## Migrating from Windows PowerShell 5.1 to PowerShell 7.0
 
+TODO: Wordsmith
+TODO: Example?
 TODO: Doc link
-TODO: Text
-TODO: Example
-
-
-# Changelog from pre-release is here and complete - TODO formatting
-TODO formatting for all the below
 
 ## Breaking Changes
+TODO: formatting
 
 - Make update notification support LTS and default channels (#11132)
 - Update Test-Connection to work more like the one in Windows PowerShell (#10697) (Thanks @vexx32!)
