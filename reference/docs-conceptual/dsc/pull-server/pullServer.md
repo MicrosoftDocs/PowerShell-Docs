@@ -53,7 +53,7 @@ Server include:
 
 It is possible to configure a pull service to run on Windows Server. Be advised that the pull
 service solution included in Windows Server includes only capabilities of storing
-configurations/modules for download and capturing report data in to a database. It does not include
+configurations/modules for download and capturing report data into a database. It does not include
 many of the capabilities offered by the service in Azure and so, is not a good tool for evaluating
 how the service would be used.
 

@@ -97,6 +97,55 @@ The `Format-Hex` cmdlet uses the **Path** parameter to specify a filename in the
 `File.t7f`. The file extension `.t7f` is uncommon, but the hexadecimal output `%PDF` shows
 that it is a PDF file.
 
+### Example 3: Format an array of different data types
+
+This example uses an array of different data types to highlight how `Format-Hex` handles them in the
+Pipeline.
+
+It will pass each object through the Pipeline and process individually. However, if it's numeric
+data, and the adjacent object is also numeric, it will group them into a single output block.
+
+```powershell
+'Hello world!', 1, 1138, 'foo', 'bar', 0xdeadbeef, 1gb, 0b1101011100 | Format-Hex
+```
+
+```Output
+   Label: String (System.String) <24F1F0A3>
+
+          Offset Bytes                                           Ascii
+                 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
+          ------ ----------------------------------------------- -----
+0000000000000000 48 65 6C 6C 6F 20 77 6F 72 6C 64 21             Hello world!
+
+   Label: Int32 (System.Int32) <2EB933C5>
+
+          Offset Bytes                                           Ascii
+                 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
+          ------ ----------------------------------------------- -----
+0000000000000000 01 00 00 00 72 04 00 00                         �   r�
+
+   Label: String (System.String) <4078B66C>
+
+          Offset Bytes                                           Ascii
+                 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
+          ------ ----------------------------------------------- -----
+0000000000000000 66 6F 6F                                        foo
+
+   Label: String (System.String) <51E4A317>
+
+          Offset Bytes                                           Ascii
+                 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
+          ------ ----------------------------------------------- -----
+0000000000000000 62 61 72                                        bar
+
+   Label: Int32 (System.Int32) <5ADF167B>
+
+          Offset Bytes                                           Ascii
+                 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
+          ------ ----------------------------------------------- -----
+0000000000000000 EF BE AD DE 00 00 00 40 5C 03 00 00             ï¾­Þ   @\�
+```
+
 ## PARAMETERS
 
 ### -Encoding
