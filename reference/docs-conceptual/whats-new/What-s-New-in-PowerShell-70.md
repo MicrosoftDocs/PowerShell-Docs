@@ -383,6 +383,18 @@ variable. The following values are supported:
 [!NOTE] the environment variable **POWERSHELL_UPDATECHECK** does not exist until it is set for the
 first time. The default behavior of version notifications is `Default` unless set to `Off` or `LTS`.
 
+To set the version notification for `LTS` releases only:
+
+```powershell
+$Env:POWERSHELL_UPDATECHECK = 'LTS'
+```
+
+To set the version notification to the `Default` behavior:
+
+```powershell
+$Env:POWERSHELL_UPDATECHECK = 'Default'
+```
+
 For more information, see
 [About Update Notifications](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_update_notifications?view=powershell-7)
 
