@@ -251,7 +251,8 @@ The display of error messages has been improved to enhance the readability of in
 errors with a new default view ConciseView. The views are user selectable through the preference
 variable **$ErrorView**.
 
-The default view in PowerShell 7 is **ConciseView**; previous views **NormalView** and **CategoryView** are selectable by setting the preference variable **$ErrorView**.
+The default view in PowerShell 7 is **ConciseView**; previous views **NormalView** and
+**CategoryView** are selectable by setting the preference variable **$ErrorView**.
 
 ```powershell
 $ErrorView = 'Normalview' # Sets the error view to NormalView
