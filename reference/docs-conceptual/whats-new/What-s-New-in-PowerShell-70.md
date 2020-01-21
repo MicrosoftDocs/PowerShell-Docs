@@ -4,6 +4,20 @@ description: New features and changes released in PowerShell 7.0
 ms.date: 01/21/2020
 ---
 
+TODO
+- # What's New in PowerShell 7.0:
+  - TODO: Wordsmith
+- ## Improved backwards compatibility with Windows PowerShell
+  - TODO: Jason - Get the doc reference from Joey [Doc ref](Link)
+  - TODO: Wordsmith
+- ## New version notification
+  - TODO: Wordsmith
+  - TODO: Example
+- ## Migrating from Windows PowerShell 5.1 to PowerShell 7.0
+  - TODO: Wordsmith
+  - TODO: Example?
+  - TODO: Doc link
+
 # What's New in PowerShell 7.0
 TODO: Wordsmith
 
@@ -23,17 +37,17 @@ TODO: Jason - Get the doc reference from Joey [Doc ref](Link)
 TODO: Wordsmith
 
 ## Improved Foreach-Object with Parallelism support
-TODO: Wordsmith
 
-Building on the parallelism built into Powershell 2.0 with remoting and background jobs, the cmdlet `Foreach-Object` has been improved to provide... TODO
+The `Foreach-Object` cmdlet, which iterates items in a collection, now has built-in parallelism with
+the new **Parallel** parameter.
 
-OR - The ForEach-Object cmdlet performs an operation on each item in a collection of input objects. The input objects can be piped to the cmdlet or specified by using the InputObject parameter.
+Beginning with PowerShell 7.0, a third parameter set is available that runs each script block in
+parallel. There is a **ThrottleLimit** parameter that limits the number of parallel scripts running
+at a time. As before, use the **$_** variable to represent the current input object in the script
+block. Use the **$using:** keyword to pass variable references to the running script.
 
-The Foreach-Object cmdlet, which iterates items in a collection, now has built-in parallelism with the new -Parallel parameter.
-
-Parallel running script block. Beginning with PowerShell 7.0, a third parameter set is available that runs each script block in parallel. There is a -ThrottleLimit parameter that limits the number of parallel scripts running at a time. As before, use the $_ variable to represent the current input object in the script block. Use the $using: keyword to pass variable references to the running script.
-
-By default, the parallel scriptblocks use the current working directory of the caller that started the parallel tasks.
+By default, parallel scriptblocks use the current working directory of the caller that started the
+parallel tasks.
 
 This example retrieves 50,000 log entries from 5 system logs on a local Windows machine.
 
@@ -49,40 +63,56 @@ $logEntries.Count
 50000
 ```
 
-The Parallel parameter specifies the script block that is run in parallel for each input log name. The ThrottleLimit parameter ensures that all five script blocks run at the same time.
+The **Parallel** parameter specifies the script block that is run in parallel for each input log name.
+The **ThrottleLimit** parameter ensures that all five script blocks run at the same time.
 
-[!NOTE] The cmdlet `Foreach-Object` includes a switch parameter **-AsJob** to run as a background job. For further details see; [Background Jobs](https://docs.microsoft.com/en-us/powershell/scripting/developer/cmdlet/background-jobs?view=powershell-7)
+[!NOTE] The cmdlet `Foreach-Object` includes a switch parameter **-AsJob** to run as a background
+job. For further details see;
+[Background Jobs](https://docs.microsoft.com/en-us/powershell/scripting/developer/cmdlet/background-jobs?view=powershell-7)
 
 For more information, see
 [Foreach-Object](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/foreach-object?view=powershell-7)
 
 ## Ternary operator
-TODO: Wordsmith
 
-Using the ternary operator syntax
-PowerShell 7.0 introduced a new syntax using the ternary operator. It follows the C# ternary operator syntax:
+PowerShell 7.0 introduced a new syntax using the ternary operator which behaves like a simplified
+if-else statement. It follows the C# ternary operator syntax:
 
+```
 <condition> ? <if-true> : <if-false>
-The ternary operator behaves like the simplified if-else statement. The <condition> expression is evaluated and the result is converted to a boolean to determine which branch should be evaluated next:
+```
 
-The <if-true> expression is executed if the <condition> expression is true
-The <if-false> expression is executed if the <condition> expression is false
+The ternary operator behaves like the simplified `if-else` statement. The condition-expression will
+always be evaluated, and its result will be converted to boolean to determine which branch will be
+evaluated next:
+
+- The `<if-true>` expression is executed if the `<condition>` expression is true
+- The `<if-false>` expression is executed if the `<condition>` expression is false
+
 For example:
 
+```powershell
 $message = (Test-Path $path) ? "Path exists" : "Path not found"
-In this example, the value of $message is "Path exists" when Test-Path returns $true. When Test-Path returns $false, the value of $message is "Path not found".
+```
+
+In this example, if the path exists, then "Path exists" is displayed. If the path does not exist,
+then "Path not found" is displayed.
 
 For more information, see
 [About If](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_if?view=powershell-7)
 
 ## Pipeline chain operators
-TODO: Wordsmith
 
-Beginning in PowerShell 7, PowerShell implements the && and || operators to conditionally chain pipelines. These operators are known in PowerShell as pipeline chain operators, and are similar to AND-OR lists in POSIX shells like bash, zsh and sh, as well as conditional processing symbols in the Windows Command Shell (cmd.exe).
+Beginning in PowerShell 7, PowerShell implements the `&&` and `||` operators to conditionally chain
+pipelines. These operators are known in PowerShell as pipeline chain operators, and are similar to
+AND-OR lists in POSIX shells like **Bash**, **Zsh** and **Sh**, as well as conditional processing
+symbols in the Windows Command Shell (cmd.exe).
 
-The && operator executes the right-hand pipeline, if the left-hand pipeline succeeded. Conversely, the || operator executes the right-hand pipeline if the left-hand pipeline failed.
+The `&&` operator executes the right-hand pipeline, if the left-hand pipeline succeeded. Conversely,
+the `||` operator executes the right-hand pipeline if the left-hand pipeline failed.
 
-[NOTE!] These operators use the $? and $LASTEXITCODE variables to determine if a pipeline failed. This allows you to use them with native commands and not just with cmdlets or functions.
+[NOTE!] These operators use the **$?** and **$LASTEXITCODE** variables to determine if a pipeline
+failed. This allows you to use them with native commands and not just with cmdlets or functions.
 
 Here, the first command succeeds and the second command is executed.
 
@@ -124,63 +154,96 @@ Write-Error 'Bad' || Write-Output 'Second'
 Write-Error 'Bad'
 Second
 ```
+
 For more information, see
 [About Pipeline Chain Operators](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_pipeline_chain_operators?view=powershell-7)
 
-## Null-coalescing operators
-TODO: Wordsmith
-TODO: Example format
+## Null-coalescing, assignment, and conditional operators
 
-https://github.com/MicrosoftDocs/PowerShell-Docs/blob/staging/reference/7.0/Microsoft.PowerShell.Core/About/about_Operators.md
+New to PowerShell 7 are the Null operators `??` for coalescing, `??=` for assignment, and
+conditional operators `?.` and `?[]`.
 
-Null-coalescing operator ??
-The null-coalescing operator ?? returns the value of its left-hand operand if it isn't null. Otherwise, it evaluates the right-hand operand and returns its result. The ?? operator doesn't evaluate its right-hand operand if the left-hand operand evaluates to non-null.
+### Null-coalescing Operator ??
 
+The null-coalescing operator `??` returns the value of its left-hand operand if it isn't null.
+Otherwise, it evaluates the right-hand operand and returns its result. The `??` operator doesn't
+evaluate its right-hand operand if the left-hand operand evaluates to non-null.
+
+```powershell
 $x = $null
 $x ?? 100
 100
+```
+
 In the following example, the right-hand operand won't be evaluated.
 
+```powershell
 [string] $todaysDate = '1/10/2020'
 $todaysDate ?? (Get-Date).ToShortDateString()
 1/10/2020
-Null-coalescing assignment operator ??=
-The null-coalescing assignment operator ??= assigns the value of its right-hand operand to its left-hand operand only if the left-hand operand evaluates to null. The ??= operator doesn't evaluate its right-hand operand if the left-hand operand evaluates to non-null.
+```
 
+### Null-coalescing assignment operator ??=
+
+The null-coalescing assignment operator `??=` assigns the value of its right-hand operand to its
+left-hand operand only if the left-hand operand evaluates to null. The ??= operator doesn't evaluate
+its right-hand operand if the left-hand operand evaluates to non-null.
+
+```powershell
 $x = $null
 $x ??= 100
 $x
 100
+```
+
 In the following example, the right-hand operand won't be evaluated.
 
+```powershell
 [string] $todaysDate = '1/10/2020'
 $todaysDate ??= (Get-Date).ToShortDateString()
 1/10/2020
-Null-conditional operators ?. and ?[]
-[!NOTE] This is an experimental feature. For more information see about_Experimental_Features.
+```
 
-A null-conditional operator applies a member access, ?., or element access, ?[], operation to its operand only if that operand evaluates to non-null; otherwise, it returns null.
+### Null-conditional operators ?. and ?[]
 
-Since PowerShell allows ? to be part of the variable name, formal specification of the variable name is required for using these operators. So it is required to use {} around the variable names like ${a} or when ? is part of the variable name ${a?}.
+[!NOTE] This is an experimental feature. For more information see [about_Experimental_Features](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_experimental_features?view=powershell-7).
 
-In the following example, the value of PropName is returned.
+A null-conditional operator permits member access, `?.`, or element access, `?[]`, to its operand
+only if that operand evaluates to non-null; otherwise, it returns null.
 
-$a = @{ PropName = 100 }
-${a}?.PropName
-100
+[!NOTE]Since PowerShell allows `?` to be part of the variable name, formal specification of the
+variable name is required for using these operators. So it is required to use `{}` around the
+variable names like `${a}` or when `?` is part of the variable name `${a?}`.
+
+In the following example, the value of the member property **Status** is returned.
+
+```powershell
+$Service = Get-Service -Name 'bits'
+${Service}?.status
+Stopped
+```
+
 The following example will return null, without trying to access the member name PropName.
 
-$a = $null
-${a}?.PropName
-Similarly, the value of the element will be returned.
+```powershell
+$service = $Null
+${Service}?.status
+```
 
+Similarly, using `?[]`, the value of the element will be returned.
+
+```powershell
 $a = 1..10
 ${a}?[0]
 1
+```
+
 And when the operand is null, the element isn't accessed and null is returned.
 
+```powershell
 $a = $null
 ${a}?[0]
+```
 
 for more information, see
 [About_Operators](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_operators?view=powershell-7)
@@ -191,14 +254,14 @@ The display of error messages has been improved to enhance the readability of in
 errors with a new default view ConciseView. The views are user selectable through the preference
 variable **$ErrorView**.
 
-The default view in PowerShell 7 is ConciseView, but previous views NormalView and CategoryView are still selectable by setting the preference variable $ErrorView
+The default view in PowerShell 7 is **ConciseView**; previous views **NormalView** and **CategoryView** are selectable by setting the preference variable **$ErrorView**.
 
 ```powershell
 $ErrorView = 'Normalview' # Sets the error view to NormalView
 $Errorview = 'ConciseView' # Sets the error view to ConciseView
 ```
 
-With ConciseView, If an error is not from a script or parser error, then
+With **ConciseView**, If an error is not from a script or parser error, then
 it's a single line error message.
 
 ```powershell
@@ -227,8 +290,8 @@ Line |
      | verify that the | path is correct and try again.
 ```
 
-[!NOTE] A new property **ErrorAccentColor** is added to $Host.PrivateData to support changing the
-accent color of the error message. If the terminal doesn't support Virtual Terminal, then vt100
+[!NOTE] A new property **ErrorAccentColor** is added to **$Host.PrivateData** to support changing
+the accent color of the error message. If the terminal doesn't support Virtual Terminal, then vt100
 color codes are not used.
 
 A new cmdlet `Get-Error` will provide complete detailed view of the fully qualified error when
@@ -279,9 +342,11 @@ For more information, see
 
 ## New DSC Resource support with Invoke-DSCResource
 
-The Invoke-DscResource cmdlet runs a method of a specified PowerShell Desired State Configuration (DSC) resource.
+The `Invoke-DscResource` cmdlet runs a method of a specified PowerShell Desired State Configuration (DSC) resource.
 
-This cmdlet invokes a DSC resource directly, without creating a configuration document. Using this cmdlet, configuration management products can manage windows or Linux by using DSC resources. This cmdlet also enables debugging of resources when the DSC engine is running with debugging enabled.
+This cmdlet invokes a DSC resource directly, without creating a configuration document. Using this
+cmdlet, configuration management products can manage windows or Linux by using DSC resources. This
+cmdlet also enables debugging of resources when the DSC engine is running with debugging enabled.
 
 This command invokes the Set method of a resource named Log and specifies a Message property for it.
 
