@@ -20241,11 +20241,6 @@
       "redirect_document_id": false
     },
     {
-      "source_path": "reference/virtual-directory-module/Microsoft.PowerShell.Core/Clear-Host.md",
-      "redirect_url": "https://docs.microsoft.com/powershell/module/microsoft.powershell.core/clear-host",
-      "redirect_document_id": false
-    },
-    {
       "source_path": "reference/virtual-directory-module/Microsoft.PowerShell.Core/Environment-Provider.md",
       "redirect_url": "https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_environment_provider",
       "redirect_document_id": false
@@ -20273,11 +20268,6 @@
     {
       "source_path": "reference/virtual-directory-module/Microsoft.PowerShell.Core/Get-Item-for-FileSystem.md",
       "redirect_url": "https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_filesystem_provider/get-item-for-filesystem",
-      "redirect_document_id": false
-    },
-    {
-      "source_path": "reference/virtual-directory-module/Microsoft.PowerShell.Core/Get-Verb.md",
-      "redirect_url": "https://docs.microsoft.com/powershell/module/microsoft.powershell.core/get-verb",
       "redirect_document_id": false
     },
     {
