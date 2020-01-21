@@ -10,9 +10,6 @@ TODO
 - ## Improved backwards compatibility with Windows PowerShell
   - TODO: Jason - Get the doc reference from Joey [Doc ref](Link)
   - TODO: Wordsmith
-- ## New version notification
-  - TODO: Wordsmith
-  - TODO: Example
 - ## Migrating from Windows PowerShell 5.1 to PowerShell 7.0
   - TODO: Wordsmith
   - TODO: Example?
@@ -111,7 +108,7 @@ symbols in the Windows Command Shell (cmd.exe).
 The `&&` operator executes the right-hand pipeline, if the left-hand pipeline succeeded. Conversely,
 the `||` operator executes the right-hand pipeline if the left-hand pipeline failed.
 
-[NOTE!] These operators use the **$?** and **$LASTEXITCODE** variables to determine if a pipeline
+[!NOTE] These operators use the **$?** and **$LASTEXITCODE** variables to determine if a pipeline
 failed. This allows you to use them with native commands and not just with cmdlets or functions.
 
 Here, the first command succeeds and the second command is executed.
@@ -360,18 +357,31 @@ For more information, see
 [Invoke-DSCResource](https://docs.microsoft.com/en-us/powershell/module/psdesiredstateconfiguration/invoke-dscresource?view=powershell-7)
 
 ## New version notification
-TODO: Wordsmith
-TODO: Example
 
-Beginning with PowerShell 7.0, PowerShell uses update notifications to alert users to the existence of updates to PowerShell. Once per day, PowerShell queries an online service to determine if a newer version is available.
+Beginning with PowerShell 7.0, PowerShell uses update notifications to alert users to the existence
+of updates to PowerShell. Once per day, PowerShell queries an online service to determine if a newer
+version is available.
 
- Note
+[!NOTE] While the update check happens during the first session in a given 24-hour period, for
+performance reasons, the notification will only be shown on the start of subsequent sessions. Also
+for performance reasons, the check will not start until at least 3 seconds after the session begins.
 
-While the update check happens during the first session in a given 24-hour period, for performance reasons, the notification will only be shown on the start of subsequent sessions. Also for performance reasons, the check will not start until at least 3 seconds after the session begins.
+By default, PowerShell subscribes to one of two different notification channels depending on its
+version/branch. Supported, Generally Available (GA) versions of PowerShell only return notifications
+for updated GA releases. Preview and Release Candidate (RC) releases notify of updates to preview,
+RC, and GA releases.
 
-By default, PowerShell subscribes to one of two different notification channels depending on its version/branch. Supported, Generally Available (GA) versions of PowerShell only return notifications for updated GA releases. Preview and Release Candidate (RC) releases notify of updates to preview, RC, and GA releases.
+The update notification behavior can be changed using the **POWERSHELL_UPDATECHECK** environment
+variable. The following values are supported:
 
+- `Default` is the same as not defining **POWERSHELL_UPDATECHECK**
+  - GA releases notify of updates to GA releases
+  - Preview/RC releases notify of updates to GA and preview releases
+- `Off` turns off the update notification feature
+- `LTS` only notifies of updates to long-term-servicing (LTS) GA releases
 
+[!NOTE] the environment variable **POWERSHELL_UPDATECHECK** does not exist until it is set for the
+first time. The default behavior of version notifications is `Default` unless set to `Off` or `LTS`.
 
 For more information, see
 [About Update Notifications](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_update_notifications?view=powershell-7)
@@ -383,7 +393,6 @@ TODO: Example?
 TODO: Doc link
 
 ## Breaking Changes
-TODO: formatting
 
 - Make update notification support LTS and default channels (#11132)
 - Update Test-Connection to work more like the one in Windows PowerShell (#10697) (Thanks @vexx32!)
