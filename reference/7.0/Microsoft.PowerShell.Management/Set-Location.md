@@ -92,7 +92,7 @@ Set-Location -StackName "WSManPaths"
 This command makes the WSManPaths location stack the current location stack.
 
 The `*-Location` cmdlets use the current location stack unless a different location stack is
-specified in the command. For information about location stacks, see the [Notes Section](#Notes).
+specified in the command. For information about location stacks, see the Notes.
 
 ### Example 5: Navigate location history using +/-
 
@@ -114,9 +114,8 @@ PS C:\Windows> cd +
 PS Cert:\>
 ```
 
-Using the alias, `cd -` or `cd +` is an easy way to navigate through your location history while
-in your terminal. For more information on navigating with `-`/`+`, see the [Path parameter](#-Path)
-section.
+Using the alias, `cd -` or `cd +` is an easy way to navigate through your location history while in
+your terminal. For more information on navigating with `-`/`+`, see the Path parameter.
 
 ## PARAMETERS
 
