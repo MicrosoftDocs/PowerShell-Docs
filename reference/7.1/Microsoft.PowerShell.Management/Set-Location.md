@@ -44,11 +44,8 @@ stack. For more information about location stacks, see the Notes.
 
 ### Example 1: Set the current location
 
-```powershell
-Set-Location -Path "HKLM:"
 ```
-
-```output
+PS C:\> Set-Location -Path "HKLM:"
 PS HKLM:\>
 ```
 
@@ -56,11 +53,11 @@ This command sets the current location to the root of the HKLM: drive.
 
 ### Example 2: Set the current location and display that location
 
-```powershell
-Set-Location -Path "Env:" -PassThru
+```
+PS C:\> Set-Location -Path "Env:" -PassThru
 ```
 
-```output
+```Output
 Path
 ----
 Env:\
@@ -73,11 +70,8 @@ parameter to direct PowerShell to return a **PathInfo** object that represents t
 
 ### Example 3: Set location to the C: drive
 
-```powershell
-Set-Location C:
 ```
-
-```output
+PS Env:\> Set-Location C:
 PS C:\>
 ```
 
@@ -85,8 +79,8 @@ This command sets the current location C: drive in the FileSystem provider.
 
 ### Example 4: Set the current location to a named stack
 
-```powershell
-PS C:\> Set-Location -StackName "WSManPaths"
+```
+PS C:\> Set-Location 'C:\Program Files\PowerShell\' -StackName "WSManPaths"
 ```
 
 This command makes the WSManPaths location stack the current location stack.
