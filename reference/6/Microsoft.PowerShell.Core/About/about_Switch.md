@@ -19,10 +19,10 @@ and the properties of objects.
 
 To check multiple conditions, use a `Switch` statement. The `Switch` statement
 is equivalent to a series of If statements, but it is simpler. The `Switch`
-statement lists each condition and an optional action. If a condition
-obtains, the action is performed.
+statement lists each condition and an optional action. If a condition obtains,
+the action is performed.
 
-The `Switch` statement also uses the `$switch` automatic variable. For more
+The `Switch` statement can use the `$_` and `$switch` automatic variables. For more
 information, see [about_Automatic_Variables](about_Automatic_Variables.md).
 
 A basic `Switch` statement has the following format:
@@ -36,8 +36,8 @@ Switch (<test-value>)
 ```
 
 For example, the following `Switch` statement compares the test value, 3, to
-each of the conditions. When the test value matches the condition, the
-action is performed.
+each of the conditions. When the test value matches the condition, the action
+is performed.
 
 ```powershell
 switch (3)
@@ -53,10 +53,10 @@ switch (3)
 It is three.
 ```
 
-In this simple example, the value is compared to each condition in the
-list, even though there is a match for the value 3. The following `Switch`
-statement has two conditions for a value of 3. It demonstrates that, by
-default, all conditions are tested.
+In this simple example, the value is compared to each condition in the list,
+even though there is a match for the value 3. The following `Switch` statement
+has two conditions for a value of 3. It demonstrates that, by default, all
+conditions are tested.
 
 ```powershell
 switch (3)
@@ -153,9 +153,9 @@ switch [-regex|-wildcard|-exact][-casesensitive] -file filename
 }
 ```
 
-If no parameters are used, `Switch` performs a case-insensitive exact match
-for the value. If the value is a collection, each element is evaluated in
-the order in which it appears.
+If no parameters are used, `Switch` behaves the same as using the **Exact**
+parameter. It performs a case-insensitive match for the value. If the value is
+a collection, each element is evaluated in the order in which it appears.
 
 The `Switch` statement must include at least one condition statement.
 
@@ -165,29 +165,58 @@ conditions. It is equivalent to an `Else` clause in an `If` statement. Only one
 
 `Switch` has the following parameters:
 
-|Parameter   |Description                                               |
-|------------|----------------------------------------------------------|
-|**Wildcard**|Indicates that the condition is a wildcard string. |
-|            |If the match clause is not a string, the parameter is|
-|            |ignored.                                                   |
-|**Exact**        |Indicates that the match clause, if it is a string, must   |
-|             |match exactly. If the match clause is not a string, this parameter      |
-|             |is ignored.                                                    |
-|**CaseSensitive**|Performs a case-sensitive match. If the match clause is not|
-|                 |a string, this parameter is ignored.                       |
-|**File**     |Takes input from a file rather than a value statement. If      |
-|             |multiple **File** parameters are included, only the last one is|
-|             |used. Each line of the file is read and evaluated by the       |
-|             |`Switch` statement.                                            |
-|**Regex**    |Performs regular expression matching of the value to the       |
-|             |condition. If the|
-|             |match clause is not a string, this parameter is ignored.       |
+- **Wildcard** - Indicates that the condition is a wildcard string. If the
+  match clause is not a string, the parameter is ignored. The comparison is
+  case-insensitive.
+- **Exact** - Indicates that the match clause, if it is a string, must match
+  exactly. If the match clause is not a string, this parameter is ignored. The
+  comparison is case-insensitive.
+- **CaseSensitive** - Performs a case-sensitive match. If the match clause is
+  not a string, this parameter is ignored.
+- **File**- Takes input from a file rather than a value statement. If multiple
+  **File** parameters are included, only the last one is used. Each line of the
+  file is read and evaluated by the `Switch` statement. The comparison is
+  case-insensitive.
+- **Regex** - Performs regular expression matching of the value to the
+  condition. If the match clause is not a string, this parameter is ignored.
+  The comparison is case-insensitive. The `$matches` automatic variable is
+  available for use within the matching statement block.
 
 > [!NOTE]
 > When specifying conflicting values, like **Regex** and **Wildcard**, the last
 > parameter specified takes precedence, and all conflicting parameters are ignored.
 > Multiple instances of parameters are also permitted. However, only the
 > last parameter used is effective.
+
+In this example, an object that's not a string or numerical data is passed to
+the `Switch` The `Switch` performs a string coercion on the object and
+evaluates the outcome.
+
+```powershell
+$test = @{
+    Test  = 'test'
+    Test2 = 'test2'
+}
+
+$test.ToString()
+
+switch -Exact ($test)
+{
+    'System.Collections.Hashtable'
+    {
+        'Hashtable string coercion'
+    }
+    'test'
+    {
+        'Hashtable value'
+    }
+}
+```
+
+```Output
+System.Collections.Hashtable
+Hashtable string coercion
+```
 
 In this example, there is no matching case so there is no output.
 
@@ -244,12 +273,12 @@ That's too many.
 The following example uses the `-Regex` parameter.
 
 ```powershell
-$target = 'user@contoso.com'
+$target = 'https://bing.com'
 switch -Regex ($target)
 {
     'ftp\://.*' { "$_ is an ftp address"; Break }
     '\w+@\w+\.com|edu|org' { "$_ is an email address"; Break }
-    'http[s]?\://.*' { "$_ is a web address"; Break }
+    '(http[s]?)\://.*' { "$_ is a web address that uses $($matches[1])"; Break }
 }
 ```
 
@@ -257,12 +286,14 @@ switch -Regex ($target)
 user@contoso.com is an email address
 ```
 
-A `Switch` statement condition may be either:
+A Switch statement condition may be either:
 
 - An expression whose value is compared to the input value
-- A script block which should return `$true` if a condition is met. The
-  script block receives the current object to compare in the `$_`
-  automatic variable and is evaluated in its own scope.
+- A script block which should return $true if a condition is met.
+
+The $_ automatic variable contains the value passed to the switch statement and
+is available for evaluation and use within the scope of the condition
+statements.
 
 The action for each condition is independent of the actions in other
 conditions.
@@ -277,14 +308,14 @@ switch ("Test")
         "Found a string"
     }
     "Test" {
-        "This executes as well"
+        "This $_ executes as well"
     }
 }
 ```
 
 ```Output
 Found a string
-This executes as well
+This Test executes as well
 ```
 
 If the value matches multiple conditions, the action for each condition is
