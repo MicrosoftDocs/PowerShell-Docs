@@ -324,20 +324,20 @@ session and use the public items without worrying that the other items might
 override the cmdlets, scripts, functions, and other items in your session.
 
 By default, modules are loaded into the top-level of the current _session
-state_ not the current _scope_. Adding a module to a session does not change
-the scope. This could be a module session state or the global session state. If
-you are in the global scope, then modules are loaded into the global session
-state. Any exports are placed into the global tables. If you load module2 from
-_within_ module1, module2 is loaded into the module1's session state, not the
-global session state. Any exports from module2 are placed at the top of the
-module1's session state. If you use `Import-Module -Scope local`, then the
-exports are placed into the current scope object rather than at the top level.
-If you are _in a module_ and use `Import-Module -Scope global` (or
-`Import-Module -Global`) to load another module, that module and it's exports
-are loaded into the global session state instead of the module's local session
-state. This feature was designed for writing module that manipulate modules.
-The WindowsCompatibility module does this to import proxy modules into the
-global session state.
+state_ not the current _scope_. The current session state could be a module
+session state or the global session state. Adding a module to a session does
+not change the scope. If you are in the global scope, then modules are loaded
+into the global session state. Any exports are placed into the global tables.
+If you load module2 from _within_ module1, module2 is loaded into the session
+state of module1 not the global session state. Any exports from module2 are
+placed at the top of the module1 session state. If you use
+`Import-Module -Scope local`, then the exports are placed into the current
+scope object rather than at the top level. If you are _in a module_ and use
+`Import-Module -Scope global` (or `Import-Module -Global`) to load another
+module, that module and it's exports are loaded into the global session state
+instead of the module's local session state. This feature was designed for
+writing module that manipulate modules. The **WindowsCompatibility** module
+does this to import proxy modules into the global session state.
 
 Within the session state, modules have their own scope. Consider the following
 module `C:\temp\mod1.psm1`:
@@ -359,7 +359,7 @@ $a = "Goodbye"
 foo
 ```
 
-The module declares the variable `$a` in the module scope then The function
+The module declares the variable `$a` in the module scope then the function
 **foo** outputs the value of the variable in both scopes.
 
 ```Output
