@@ -189,7 +189,7 @@ conditions. It is equivalent to an `Else` clause in an `If` statement. Only one
 > last parameter used is effective.
 
 In this example, an object that's not a string or numerical data is passed to
-the `Switch` The `Switch` performs a string coercion on the object and
+the `Switch`. The `Switch` performs a string coercion on the object and
 evaluates the outcome.
 
 ```powershell
@@ -283,7 +283,7 @@ switch -Regex ($target)
 ```
 
 ```Output
-user@contoso.com is an email address
+https://bing.com is a web address that uses https
 ```
 
 A Switch statement condition may be either:
