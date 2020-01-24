@@ -644,7 +644,7 @@ Two of the ways to reference capturing groups is by **Number** and by **Name**
 > Hello Universe
 > ```
 >
-> Additionally, sicne the `$` character is used in substitution, you will need
+> Additionally, since the `$` character is used in substitution, you will need
 > to escape any instances in your string.
 >
 > ```powershell

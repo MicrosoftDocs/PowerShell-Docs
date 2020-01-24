@@ -43,7 +43,7 @@ OLEDB database.
 ## Enable Circular log on ESENT database instance
 
 In eariler version of DSC-PullServer, the ESENT database log files were filling up the disk space of
-the pullserver becouse the database instance was being created without circular logging. In this
+the pullserver because the database instance was being created without circular logging. In this
 release, you have the option to control the circular logging behavior of the instance using the
 web.config of the pullserver. By default CircularLogging is set to TRUE.
 
