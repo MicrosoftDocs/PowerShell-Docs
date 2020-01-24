@@ -20,12 +20,22 @@ function or script in the current pipeline. In other languages, such as C\#,
 terminating errors are known as exceptions.
 
 The `Trap` keyword specifies a list of statements to run when a terminating
-error occurs. Trap statements handle the terminating errors and allow
-execution of the script or function to continue instead of stopping.
+error occurs. Trap statements handle the terminating errors in the following
+ways:
+
+- Display the error after processing the `Trap` statement block and
+  continuing execution of the script or function containing the `Trap`. This is
+  the default behavior.
+
+- Display the error and abort execution of the script or function
+  containing the `Trap` using `Break` in the `Trap` statement.
+
+- Silence the error, but continue execution of the script or function
+  containing the `Trap` by using `Continue` in the `Trap` statement.
 
 `Trap` statements can also be more complex. The statement list of the `Trap` can
 include multiple conditions or function calls. A `Trap` can write logs, test
-conditions,  or even run another program.
+conditions, or even run another program.
 
 ### Syntax
 
@@ -287,7 +297,7 @@ trap { "whoops 2"; continue }
 > inside a function or dot sourced script, when the function or dot sourced
 > script exits, all `Trap` statements inside are removed.
 
-### Using the `break` and `continue` keywords
+### Using the `Break` and `Continue` keywords
 
 You can use the `Break` and `Continue` keywords in a `Trap` statement to
 determine whether a script or command continues to run after a terminating
@@ -319,7 +329,7 @@ At line:4 char:7
 Because the `Trap` statement included the `Break` keyword, the function does
 not continue to run, and the "Function completed" line is not run.
 
-If you include a `Continue` statement in a `Trap` statement, PowerShell resumes
+If you include a `Continue` keyword in a `Trap` statement, PowerShell resumes
 after the statement that caused the error, just as it would without `Break` or
 `Continue`. With the `Continue` keyword, however, PowerShell does not write an
 error to the error stream.
