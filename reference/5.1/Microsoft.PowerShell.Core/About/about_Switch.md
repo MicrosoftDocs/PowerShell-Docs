@@ -22,8 +22,9 @@ is equivalent to a series of If statements, but it is simpler. The `Switch`
 statement lists each condition and an optional action. If a condition obtains,
 the action is performed.
 
-The `Switch` statement can use the `$_` and `$switch` automatic variables. For more
-information, see [about_Automatic_Variables](about_Automatic_Variables.md).
+The `Switch` statement can use the `$_` and `$switch` automatic variables. For
+more information, see
+[about_Automatic_Variables](about_Automatic_Variables.md).
 
 A basic `Switch` statement has the following format:
 
@@ -184,9 +185,9 @@ conditions. It is equivalent to an `Else` clause in an `If` statement. Only one
 
 > [!NOTE]
 > When specifying conflicting values, like **Regex** and **Wildcard**, the last
-> parameter specified takes precedence, and all conflicting parameters are ignored.
-> Multiple instances of parameters are also permitted. However, only the
-> last parameter used is effective.
+> parameter specified takes precedence, and all conflicting parameters are
+> ignored. Multiple instances of parameters are also permitted. However, only
+> the last parameter used is effective.
 
 In this example, an object that's not a string or numerical data is passed to
 the `Switch`. The `Switch` performs a string coercion on the object and
@@ -291,8 +292,8 @@ A Switch statement condition may be either:
 - An expression whose value is compared to the input value
 - A script block which should return $true if a condition is met.
 
-The $_ automatic variable contains the value passed to the switch statement and
-is available for evaluation and use within the scope of the condition
+The `$_` automatic variable contains the value passed to the switch statement
+and is available for evaluation and use within the scope of the condition
 statements.
 
 The action for each condition is independent of the actions in other
