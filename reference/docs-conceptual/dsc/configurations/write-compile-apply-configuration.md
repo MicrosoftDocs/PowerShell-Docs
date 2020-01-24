@@ -44,7 +44,7 @@ Configuration HelloWorld {
 
 > !Important
 > In more advanced scenarios where multiple modules need to be imported so you can work with many DSC Resources
-> in the same configuration, make sure to put each module in a seperate line using `Import-DscResource`.
+> in the same configuration, make sure to put each module in a separate line using `Import-DscResource`.
 > This is easier to maintain in source control and required when working with DSC in Azure State Configuration.
 >
 > ```powershell
