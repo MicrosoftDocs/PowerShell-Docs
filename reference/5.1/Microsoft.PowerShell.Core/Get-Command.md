@@ -156,7 +156,7 @@ Get-Command *
 It returns an **ApplicationInfo** object (System.Management.Automation.ApplicationInfo) for each
 file, not a **FileInfo** object (System.IO.FileInfo).
 
-### Example 9: Get cmdlets by using a name
+### Example 9: Get cmdlets by using a parameter name and type
 
 This command gets cmdlets that have a parameter whose name includes Auth and whose type is
 **AuthenticationMechanism**.
