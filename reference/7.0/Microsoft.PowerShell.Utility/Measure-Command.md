@@ -3,7 +3,7 @@ external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 06/09/2017
+ms.date: 01/24/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/measure-command?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Measure-Command
@@ -21,13 +21,18 @@ Measure-Command [-InputObject <PSObject>] [-Expression] <ScriptBlock> [<CommonPa
 
 ## DESCRIPTION
 
-The `Measure-Command` cmdlet runs a script block or cmdlet internally, times the execution of the operation, and returns the execution time.
+The `Measure-Command` cmdlet runs a script block or cmdlet internally, times the execution of the
+operation, and returns the execution time.
+
+> [!NOTE]
+> Script blocks run by `Measure-Command` run in the current scope, not a child scope.
 
 ## EXAMPLES
 
 ### Example 1: Measure a command
 
-This command measures the time it takes to run a `Get-EventLog` command that gets the events in the Windows PowerShell event log.
+This example measures the time it takes to run a `Get-EventLog` command that gets the events in the
+Windows PowerShell event log.
 
 ```powershell
 Measure-Command { Get-EventLog "windows powershell" }
@@ -35,9 +40,12 @@ Measure-Command { Get-EventLog "windows powershell" }
 
 ### Example 2: Compare two outputs from Measure-Command
 
-The first command measures the time it takes to process a recursive `Get-ChildItem` command that uses the `-Path` parameter to get only .txt files in the C:\Windows directory and its subdirectories.
+The first command measures the time it takes to process a recursive `Get-ChildItem` command that
+uses the `-Path` parameter to get only .txt files in the C:\Windows directory and its
+subdirectories.
 
-The second command measures the time it takes to process a recursive `Get-ChildItem` command that uses the provider-specific `-Filter` parameter.
+The second command measures the time it takes to process a recursive `Get-ChildItem` command that
+uses the provider-specific `-Filter` parameter.
 
 These commands show the value of using a provider-specific filter in PowerShell commands.
 
@@ -45,7 +53,7 @@ These commands show the value of using a provider-specific filter in PowerShell 
 Measure-Command { Get-ChildItem -Path C:\Windows\*.txt -Recurse }
 ```
 
-```output
+```Output
 Days              : 0
 Hours             : 0
 Minutes           : 0
@@ -63,7 +71,7 @@ TotalMilliseconds : 8618.2763
 Measure-Command {Get-ChildItem C:\Windows -Filter "*.txt" -Recurse}
 ```
 
-```output
+```Output
 Days              : 0
 Hours             : 0
 Minutes           : 0
@@ -79,18 +87,21 @@ TotalMilliseconds : 1140.9189
 
 ### Example 3: Use the InputObject parameter of Measure-Command
 
-This example shows how to use the `InputObject` parameter of `Measure-Command`. The `ScriptBlock` passed to the `Expression` parameter is executed once for each object passed, or piped into the `InputObject` parameter.
+This example shows how to use the `InputObject` parameter of `Measure-Command`. The `ScriptBlock`
+passed to the `Expression` parameter is executed once for each object passed, or piped into the
+`InputObject` parameter.
 
 > [!NOTE]
-> `Measure-Command` still provides a measurement of overall `ScriptBlock` execution for every element passed to the `InputObject` parameter.
+> `Measure-Command` still provides a measurement of overall `ScriptBlock` execution for every
+> element passed to the `InputObject` parameter.
 
 ```powershell
 # Perform a simple operation to demonstrate the InputObject parameter
 # Note that no output is displayed.
-10, 20, 50 | Measure-Command -Expression {for($i=0; $i -lt $_;$i++) {$i} }
+10, 20, 50 | Measure-Command -Expression { for($i=0; $i -lt $_;$i++) {$i} }
 ```
 
-```output
+```Output
 Days              : 0
 Hours             : 0
 Minutes           : 0
@@ -114,7 +125,7 @@ To display output of expression in `Measure-Command` you can use a pipe to `Out-
 10, 20, 50 | Measure-Command -Expression {for($i=0; $i -lt $_;$i++) {$i}; "$($_)" | Out-Default }
 ```
 
-```output
+```Output
 10
 20
 50
@@ -133,13 +144,34 @@ TotalSeconds      : 0.0113745
 TotalMilliseconds : 11.3745
 ```
 
+### Example 5: Measuring execution in a child scope
+
+`Measure-Command` runs the script block in the current scope, so the script block can modify values
+in the current scope. To avoid changes to the current scope, you must wrap the script block in
+braces (`{}`) and use the invocation operator (`&`) to execute the block in a child scope.
+
+```powershell
+$foo = 'Value 1'
+$null = Measure-Command { $foo = 'Value 2' }
+$foo
+$null = Measure-Command { & { $foo = 'Value 3' } }
+$foo
+```
+
+```Output
+Value 2
+Value 2
+```
+
+For more information about the invocation operator, see
+[about_Operators](../Microsoft.PowerShell.Core/About/about_Operators.md#call-operator-).
+
 ## PARAMETERS
 
 ### -Expression
 
-Specifies the expression that is being timed.
-Enclose the expression in braces ({}).
-The parameter name ("**Expression**") is optional.
+Specifies the expression that is being timed. Enclose the expression in braces ({}). The parameter
+name ("**Expression**") is optional.
 
 ```yaml
 Type: ScriptBlock
@@ -155,8 +187,9 @@ Accept wildcard characters: False
 
 ### -InputObject
 
-Objects bound to the `InputObject` parameter are optional input for the `ScriptBlock` passed to the `Expression` parameter.
-Inside the `ScriptBlock`, `$_` can be used to reference the current object in the pipeline.
+Objects bound to the `InputObject` parameter are optional input for the `ScriptBlock` passed to the
+`Expression` parameter. Inside the `ScriptBlock`, `$_` can be used to reference the current object
+in the pipeline.
 
 ```yaml
 Type: PSObject
@@ -172,7 +205,10 @@ Accept wildcard characters: False
 
 ### CommonParameters
 
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+-InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
