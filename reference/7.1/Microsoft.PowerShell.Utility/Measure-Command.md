@@ -41,11 +41,11 @@ Measure-Command { Get-EventLog "windows powershell" }
 ### Example 2: Compare two outputs from Measure-Command
 
 The first command measures the time it takes to process a recursive `Get-ChildItem` command that
-uses the `-Path` parameter to get only `.txt` files in the `C:\Windows` directory and its
+uses the **Path** parameter to get only `.txt` files in the `C:\Windows` directory and its
 subdirectories.
 
 The second command measures the time it takes to process a recursive `Get-ChildItem` command that
-uses the provider-specific `-Filter` parameter.
+uses the provider-specific ` parameter.
 
 These commands show the value of using a provider-specific filter in PowerShell commands.
 
@@ -87,8 +87,8 @@ TotalMilliseconds : 1140.9189
 
 ### Example 3: Piping input to Measure-Command
 
-Objects that are piped to `Measure-Command` are available to the `ScriptBlock` that is passed to the
-`Expression` parameter. The script block is executed once for each object on the pipeline.
+Objects that are piped to `Measure-Command` are available to the script block that is passed to the
+**Expression** parameter. The script block is executed once for each object on the pipeline.
 
 ```powershell
 # Perform a simple operation to demonstrate the InputObject parameter
@@ -181,8 +181,8 @@ Accept wildcard characters: False
 
 ### -InputObject
 
-Objects bound to the `InputObject` parameter are optional input for the `ScriptBlock` passed to the
-`Expression` parameter. Inside the `ScriptBlock`, `$_` can be used to reference the current object
+Objects bound to the **InputObject** parameter are optional input for the script block passed to the
+**Expression** parameter. Inside the script block, `$_` can be used to reference the current object
 in the pipeline.
 
 ```yaml
