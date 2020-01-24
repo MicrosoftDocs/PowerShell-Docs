@@ -41,7 +41,7 @@ Measure-Command { Get-EventLog "windows powershell" }
 ### Example 2: Compare two outputs from Measure-Command
 
 The first command measures the time it takes to process a recursive `Get-ChildItem` command that
-uses the `-Path` parameter to get only .txt files in the C:\Windows directory and its
+uses the `-Path` parameter to get only `.txt` files in the `C:\Windows` directory and its
 subdirectories.
 
 The second command measures the time it takes to process a recursive `Get-ChildItem` command that
@@ -85,20 +85,15 @@ TotalSeconds      : 1.1409189
 TotalMilliseconds : 1140.9189
 ```
 
-### Example 3: Use the InputObject parameter of Measure-Command
+### Example 3: Piping input to Measure-Command
 
-This example shows how to use the `InputObject` parameter of `Measure-Command`. The `ScriptBlock`
-passed to the `Expression` parameter is executed once for each object passed, or piped into the
-`InputObject` parameter.
-
-> [!NOTE]
-> `Measure-Command` still provides a measurement of overall `ScriptBlock` execution for every
-> element passed to the `InputObject` parameter.
+Objects that are piped to `Measure-Command` are available to the `ScriptBlock` that is passed to the
+`Expression` parameter. The script block is executed once for each object on the pipeline.
 
 ```powershell
 # Perform a simple operation to demonstrate the InputObject parameter
 # Note that no output is displayed.
-10, 20, 50 | Measure-Command -Expression { for($i=0; $i -lt $_;$i++) {$i} }
+10, 20, 50 | Measure-Command -Expression { for ($i=0; $i -lt $_ i++) {$i} }
 ```
 
 ```Output
@@ -122,7 +117,7 @@ To display output of expression in `Measure-Command` you can use a pipe to `Out-
 ```powershell
 # Perform the same operation as above adding Out-Default to every execution.
 # This will show that the ScriptBlock is in fact executing for every item.
-10, 20, 50 | Measure-Command -Expression {for($i=0; $i -lt $_;$i++) {$i}; "$($_)" | Out-Default }
+10, 20, 50 | Measure-Command -Expression {for ($i=0; $i -lt $_; $i++) {$i}; "$($_)" | Out-Default }
 ```
 
 ```Output
@@ -170,8 +165,7 @@ For more information about the invocation operator, see
 
 ### -Expression
 
-Specifies the expression that is being timed. Enclose the expression in braces ({}). The parameter
-name ("**Expression**") is optional.
+Specifies the expression that is being timed. Enclose the expression in braces (`{}`).
 
 ```yaml
 Type: ScriptBlock
