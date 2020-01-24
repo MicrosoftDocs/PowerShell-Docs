@@ -56,7 +56,7 @@ for($I = 1; $I -lt 101; $I++ )
 }
 ```
 
-```powershell
+```Output
 Updating
 Progress ->
  [ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo]
