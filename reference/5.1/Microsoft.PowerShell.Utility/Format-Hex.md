@@ -3,14 +3,16 @@ external help file: Microsoft.PowerShell.Utility-help.xml
 keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 04/25/2019
+ms.date: 01/17/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/format-hex?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Format-Hex
 ---
+
 # Format-Hex
 
 ## SYNOPSIS
+
 Displays a file or other input as hexadecimal.
 
 ## SYNTAX
@@ -88,7 +90,7 @@ Format-Hex -Path .\File.t7f
 ```
 
 The `Format-Hex` cmdlet uses the **Path** parameter to specify a filename in the current directory,
-**File.t7f**. The file extension **.t7f** is uncommon, but the hexadecimal output **%PDF** shows
+`File.t7f`. The file extension `.t7f` is uncommon, but the hexadecimal output `%PDF` shows
 that it is a PDF file.
 
 ## PARAMETERS

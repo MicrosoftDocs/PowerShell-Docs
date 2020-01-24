@@ -233,7 +233,7 @@ CN name that matches the hostname, is not expired or revoked. A self-signed
 certificate may be used for testing purposes.
 
 See [How To: Configure WINRM for HTTPS](https://support.microsoft.com/help/2019527/how-to-configure-winrm-for-https)
-for additonal details.
+for additional details.
 
 The following command, run from an elevated command prompt, will configure the
 HTTPS listener on Windows with the installed certificate.
