@@ -48,7 +48,7 @@ Because the name of the *Id* parameter is optional, you can abbreviate this comm
 ### Example 3: Run the most recent command by using the command text
 
 ```powershell
-Invoke-History -ID get-pr
+Invoke-History -Id get-pr
 ```
 
 This command runs the most recent **Get-Process** command in the session history.
