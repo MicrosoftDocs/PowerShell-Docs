@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 keywords: powershell,cmdlet
 locale: en-us
-ms.date: 08/26/2019
+ms.date: 01/27/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/set-location?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-Location
@@ -37,8 +37,9 @@ Set-Location [-PassThru] [-StackName <String>] [<CommonParameters>]
 The `Set-Location` cmdlet sets the working location to a specified location. That location could be
 a directory, a subdirectory, a registry location, or any provider path.
 
-You can also use the **StackName** parameter to make a named location stack the current location
-stack. For more information about location stacks, see the Notes.
+PowerShell 6.2 added support for `-` and `+` with the **Path** parameter. PowerShell maintains a
+history of the last 20 locations that can be access with `-` and `+`. This list is independent from
+the location stack that is accessed using the **StackName** parameter.
 
 ## EXAMPLES
 
@@ -108,8 +109,8 @@ PS C:\Windows> cd +
 PS Cert:\>
 ```
 
-Using the alias, `cd -` or `cd +` is an easy way to navigate through your location history while in
-your terminal. For more information on navigating with `-`/`+`, see the Path parameter.
+Using the alias, `cd -` or `cd +` is an easy way to navigate through your location history while
+in your terminal. For more information on navigating with `-`/`+`, see the Path parameter.
 
 ## PARAMETERS
 
@@ -119,13 +120,6 @@ Specifies a path of the location. The value of the **LiteralPath** parameter is 
 is typed. No characters are interpreted as wildcard characters. If the path includes escape
 characters, enclose it in single quotation marks. Single quotation marks tell PowerShell not to
 interpret any characters as escape sequences.
-
-PowerShell keeps a history of the last 20 locations you have set. If the path is the `-` character,
-then the new working location will be the previous working location in history (if it exists).
-Similarly, if the path is the `+` character, then the new working location will be the next working
-location in history (if it exists). This is similar to using `Pop-Location` and `Push-Location`
-except that the history is a list, not a stack, and is implicitly tracked, not manually controlled.
-Currently, there is no way to view the history list.
 
 ```yaml
 Type: String
@@ -188,7 +182,7 @@ location stack name. To indicate the unnamed default location stack, type `$null
 ("").
 
 The `*-Location` cmdlets act on the current stack unless you use the **StackName** parameter to
-specify a different stack.
+specify a different stack. For more information about location stacks, see the [Notes](#notes).
 
 ```yaml
 Type: String
