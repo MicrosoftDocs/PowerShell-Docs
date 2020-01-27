@@ -46,12 +46,12 @@ Get-FormatData
 
 ### Example 2: Get formatting data by type name
 
+This example gets the formatting data items whose names begin with
+`System.Management.Automation.Cmd`.
+
 ```powershell
 Get-FormatData -TypeName 'System.Management.Automation.Cmd*'
 ```
-
-This command gets the formatting data items whose names begin with
-`System.Management.Automation.Cmd*`.
 
 ### Example 3: Examine a formatting data object
 
@@ -129,9 +129,10 @@ Get-Content c:\test\bits.format.ps1xml
 The first four commands use the `Get-FormatData`, `Import-Module`, and `Compare-Object` cmdlets to
 identify the format type that the **BitsTransfer** module adds to the session.
 
-The fifth command uses the `Get-FormatData` cmdlet to get the format type that the BitsTransfer
-module adds. It uses a pipeline operator (|) to send the format type object to the `Export-FormatData`
-cmdlet, which converts it back to XML and saves it in the specified format.ps1xml file.
+The fifth command uses the `Get-FormatData` cmdlet to get the format type that the **BitsTransfer**
+module adds. It uses a pipeline operator (`|`) to send the format type object to the
+`Export-FormatData` cmdlet, which converts it back to XML and saves it in the specified
+`format.ps1xml` file.
 
 The final command shows an excerpt of the `format.ps1xml` file content.
 
