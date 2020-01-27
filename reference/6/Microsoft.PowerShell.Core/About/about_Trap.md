@@ -85,6 +85,15 @@ Running this function returns the following:
 
 ```Output
 Error found.
+nonsenseString : The term 'nonsenseString' is not recognized as the name of a
+cmdlet, function, script file, or operable program. Check the spelling of the
+name, or if a path was included, verify that the path is correct and try again.
+At line:3 char:5
++     nonsenseString
++     ~~~~~~~~~~~~~~
++ CategoryInfo          : ObjectNotFound: (nonsenseString:String) [],
+CommandNotFoundException
++ FullyQualifiedErrorId : CommandNotFoundException
 ```
 
 The following example includes a Trap statement that displays the error by using
@@ -104,8 +113,16 @@ Running this version of the function returns the following:
 ```Output
 Error found: The term 'nonsenseString' is not recognized as the name of a
 cmdlet, function, script file, or operable program. Check the spelling of the
-name, or if a path was included verify that the path is correct, and then try
-again.
+name, or if a path was included, verify that the path is correct and try again.
+nonsenseString : The term 'nonsenseString' is not recognized as the name of a
+cmdlet, function, script file, or operable program. Check the spelling of the
+name, or if a path was included, verify that the path is correct and try again.
+At line:3 char:5
++     nonsenseString
++     ~~~~~~~~~~~~~~
++ CategoryInfo          : ObjectNotFound: (nonsenseString:String) [],
+CommandNotFoundException
++ FullyQualifiedErrorId : CommandNotFoundException
 ```
 
 > [!IMPORTANT]
@@ -166,7 +183,7 @@ nonsenseString
 
 Running this script produces the following result:
 
-```powershell
+```Output
 Command error trapped
 nonsenseString : The term 'nonsenseString' is not recognized as the name of a
 cmdlet, function, script file, or operable program. Check the spelling of the
@@ -174,7 +191,8 @@ name, or if a path was included, verify that the path is correct and try again.
 At C:\temp\test\traptest.ps1:5 char:1
 + nonsenseString
 + ~~~~~~~~~~~~~~
-+ CategoryInfo          : ObjectNotFound: (nonsenseString:String) [], CommandNotFoundException
++ CategoryInfo          : ObjectNotFound: (nonsenseString:String) [],
+CommandNotFoundException
 + FullyQualifiedErrorId : CommandNotFoundException
 ```
 
@@ -194,7 +212,7 @@ trap [System.Management.Automation.CommandNotFoundException]
 
 Running this script produces the following result:
 
-```powershell
+```Output
 Other terminating error trapped
 Attempted to divide by zero.
 At C:\temp\test\traptest.ps1:5 char:1
@@ -232,13 +250,12 @@ function function1 {
 Later in the script, running the Function1 function produces the following
 result:
 
-```powershell
+```Output
 function1
 An error:
-The term 'NonsenseString' is not recognized as the name of a cmdlet,
-function, script file, or operable program. Check the spelling of the
-name, or if a path was included verify that the path is correct, and
-then try again.
+The term 'NonsenseString' is not recognized as the name of a cmdlet, function,
+script file, or operable program. Check the spelling of the name, or if a path
+was included verify that the path is correct, and then try again.
 At C:\PS>TestScript1.ps1:3 char:19
 +     NonsenseString <<<<
 
@@ -265,14 +282,17 @@ function2
 
 Running the `Function2` function produces the following result:
 
-```powershell
+```Output
 An error:
-The term 'NonsenseString' is not recognized as the name of a cmdlet,
-function, script file, or operable program. Check the spelling of the
-name, or if a path was included verify that the path is correct, and
-then try again.
-At C:\PS>TestScript2.ps1:4 char:19
-+     NonsenseString <<<<
+NonsenseString : The term 'NonsenseString' is not recognized as the name of a
+cmdlet, function, script file, or operable program. Check the spelling of the
+name, or if a path was included, verify that the path is correct and try again.
+At line:2 char:5
++     NonsenseString
++     ~~~~~~~~~~~~~~
++ CategoryInfo          : ObjectNotFound: (NonsenseString:String) [],
+CommandNotFoundException
++ FullyQualifiedErrorId : CommandNotFoundException
 ```
 
 In this example, the "function2 was completed" command was not run. In both
