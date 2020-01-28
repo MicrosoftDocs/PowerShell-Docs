@@ -28,7 +28,19 @@ After three successful releases of PowerShell Core, we couldn't be more excited 
 the next chapter of PowerShell's ongoing development. Join us in this release of PowerShell 7, the
 community built, cross-platform management tool and automation language!
 
-To see a full list of improvements, check out
+In this release, we're introducing a number of new features, including:
+
+- Pipeline parallelization with ForEach-Object -Parallel
+- New operators:
+  - Ternary operator: a ? b : c
+  - Pipeline chain operators: || and &&
+  - Null conditional operators: ?? and ??=
+- A simplified and dynamic error view and Get-Error cmdlet for easier investigation of errors
+- A compatibility layer that enables users to import modules in an implicit Windows PowerShell session
+- Automatic new version notifications
+- The ability to invoke to invoke DSC resources directly from PowerShell 7 (experimental)
+
+To see a full list of features and fixes, check out
 our detailed [changelogs](https://github.com/PowerShell/PowerShell/releases) on GitHub.
 
 ## Improved backwards compatibility with Windows PowerShell
