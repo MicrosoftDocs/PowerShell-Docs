@@ -22,8 +22,6 @@ PowerShell 7 is the latest major release to PowerShell, the cross-platform (Wind
 macOS) scripting language and automation engine for IT Management, DevOps pipelines, application
 development and more.
 
-PowerShell 7...  TODO
-
 To see a full list of improvements, check out
 our detailed [changelogs](https://github.com/PowerShell/PowerShell/releases) on GitHub.
 
