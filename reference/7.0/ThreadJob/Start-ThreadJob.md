@@ -229,7 +229,8 @@ Accept wildcard characters: False
 ### -ThrottleLimit
 
 This parameter limits the number of jobs running at one time. As jobs are started, they are queued
-and wait until a thread is available in the thread pool to run the job. The default limit is 5.
+and wait until a thread is available in the thread pool to run the job. The default limit is 5
+threads.
 
 The thread pool size is global to the PowerShell session. Specifying a **ThrottleLimit** in one
 call sets the limit for subsequent calls in the same session.
