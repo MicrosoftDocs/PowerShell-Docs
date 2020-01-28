@@ -5,31 +5,48 @@ ms.date: 01/21/2020
 ---
 
 TODO
-- # What's New in PowerShell 7.0:
-  - TODO: Wordsmith
-- ## Improved backwards compatibility with Windows PowerShell
-  - TODO: Jason - Get the doc reference from Joey [Doc ref](Link)
-  - TODO: Wordsmith
-- ## Migrating from Windows PowerShell 5.1 to PowerShell 7.0
+
+- Improved backwards compatibility with Windows PowerShell
+  - TODO: Jason - Get the doc reference from Joey [Module Compatibility Table](Link)
+- Migrating from Windows PowerShell 5.1 to PowerShell 7.0
   - TODO: Wordsmith
   - TODO: Example?
   - TODO: Doc link
 
 # What's New in PowerShell 7.0
-TODO: Wordsmith
 
-PowerShell 7 is the latest major release to PowerShell, the cross-platform (Windows, Linux, and
-macOS) scripting language and automation engine for IT Management, DevOps pipelines, application
-development and more.
+We are happy to announce the Generally Available (GA) release of PowerShell 7.0! First! We'd like to
+thank our many, open-source contributors for making this release possible by submitting code,
+tests, documentation, and issue feedback. PowerShell 7 would not have been possible without your
+help.
+
+Three years ago, we announced PowerShell Core 6 as a completely new edition of PowerShell. Built on
+top of .NET Core and introduced cross-platform support across Windows, macOS, and Linux.
+Additionally, it was the first release of PowerShell made under an open-source license (MIT)
+
+After three successful releases of PowerShell Core, we couldn't be more excited about PowerShell 7,
+the next chapter of PowerShell's ongoing development. Join us in this release of PowerShell 7, the
+community built, cross-platform management tool and automation language!
 
 To see a full list of improvements, check out
 our detailed [changelogs](https://github.com/PowerShell/PowerShell/releases) on GitHub.
 
-
 ## Improved backwards compatibility with Windows PowerShell
 
 TODO: Jason - Get the doc reference from Joey [Doc ref](Link)
-TODO: Wordsmith
+
+If you weren't able to use PowerShell Core 6.x in the past because of module compatibility issues,
+this might be the first time you get to take advantage of some of the awesome features we already
+delivered since we started the Core project!
+
+The shift from PowerShell Core 6.x to 7.0 marks our move from .NET Core 2.x to 3.1. .NET Core
+3.1 brings back a host of .NET Framework APIs (especially on Windows), enabling significantly more
+backwards compatibility with existing Windows PowerShell modules. This includes many modules on
+Windows that require GUI functionality like `Out-GridView` and `Show-Command`, as well as many role
+management modules that ship as part of Windows.
+
+For more info, check out our module compatibility table showing off how you can the latest,
+up-to-date modules that work with PowerShell 7: [Module Compatibility Table](TODO)
 
 ## Improved Foreach-Object with Parallelism support
 
