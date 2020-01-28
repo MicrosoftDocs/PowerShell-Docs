@@ -30,12 +30,12 @@ community built, cross-platform management tool and automation language!
 
 In this release, we're introducing a number of new features, including:
 
-- Pipeline parallelization with ForEach-Object -Parallel
+- Pipeline parallelization with `ForEach-Object -Parallel`
 - New operators:
-  - Ternary operator: a ? b : c
-  - Pipeline chain operators: || and &&
-  - Null conditional operators: ?? and ??=
-- A simplified and dynamic error view and Get-Error cmdlet for easier investigation of errors
+  - Ternary operator: `a ? b : c`
+  - Pipeline chain operators: `||` and `&&`
+  - Null conditional operators: `??` and `??=`
+- A simplified and dynamic error view and `Get-Error` cmdlet for easier investigation of errors
 - A compatibility layer that enables users to import modules in an implicit Windows PowerShell session
 - Automatic new version notifications
 - The ability to invoke to invoke DSC resources directly from PowerShell 7 (experimental)
@@ -431,6 +431,19 @@ For more information, see
 TODO: Wordsmith
 TODO: Example?
 TODO: Doc link
+
+### How do I get PowerShell 7?
+
+TODO: Add links
+
+First, check out our install docs for Windows, macOS, or Linux. Depending on the version of your OS and preferred package format, there may be multiple installation methods.
+
+If you already know what you're doing, and you're just looking for a binary package (whether it's an MSI, ZIP, RPM, or something else), hop on over to our latest release tag on GitHub
+
+Additionally, you may want to use one of our many Docker container images. For more information on using those, check out our PowerShell-Docker repo.
+
+### PowerShell SSH Remoting
+
 
 ## Breaking Changes
 
