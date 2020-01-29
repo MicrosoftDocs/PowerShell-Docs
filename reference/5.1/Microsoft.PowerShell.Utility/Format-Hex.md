@@ -96,7 +96,7 @@ that it is a PDF file.
 ### Example 3: Display raw hexadecimal output
 
 By default `Format-Hex` opts for compact output of numeric data types: single-byte or double-byte
-sequences are used if the value is small enough. The **Raw** parameter deactivates behavior.
+sequences are used if the value is small enough. The **Raw** parameter deactivates this behavior.
 
 ```
 PS> 1,2,3,1000 | Format-Hex
@@ -117,8 +117,8 @@ PS> 1,2,3,1000 | Format-Hex -Raw
 00000000   01 00 00 00 02 00 00 00 03 00 00 00 E8 03 00 00  ............è...
 ```
 
-Notice the difference in output when the **Raw** parameter is used. The numbers are treated as
-4-byte **Int32** values.
+Notice the difference in output. The **Raw** parameter displays the numbers as 4-byte values, true
+to their **Int32** types.
 
 ## PARAMETERS
 
@@ -218,7 +218,7 @@ Accept wildcard characters: True
 ### -Raw
 
 By default `Format-Hex` opts for compact output of numeric data types: single-byte or double-byte
-sequences are used if the value is small enough. The **Raw** parameter deactivates behavior.
+sequences are used if the value is small enough. The **Raw** parameter deactivates this behavior.
 
 ```yaml
 Type: SwitchParameter
