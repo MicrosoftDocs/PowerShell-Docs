@@ -17,7 +17,7 @@ The `using` statement allows you to specify which namespaces are used in the
 session. Adding namespaces simplifies usage of .NET classes and member and
 allows you to import classes from script modules and assemblies.
 
-The `using` statement needs to be the first statement in the script.
+The `using` statements must come before any other statements in a script.
 
 The `using` statement should not be confused with the `using:` scope modifier
 for variables. For more information, see
@@ -25,7 +25,7 @@ for variables. For more information, see
 
 ## Syntax
 
-To preload typenames from a .NET namespace:
+To specify .NET namespaces from which to resolve types:
 
 ```
 using namespace <.NET-namespace>
@@ -37,17 +37,20 @@ To load classes from a PowerShell module:
 using module <module-name>
 ```
 
-To preload classes from a .NET assembly:
+To preload types from a .NET assembly:
 
 ```
 using assembly <.NET-assembly-path>
 ```
 
-Loading a namespace makes it easier to reference types by their short names.
-Loading an assembly preloads classes into a script at parse time. This allows
-you to create new PowerShell classes that are derived from the preloaded
-classes. If you are not creating new PowerShell classes, use the `Add-Type`
-cmdlet instead. For more information, see
+Specifying a namespace makes it easier to reference types by their short names.
+
+Loading an assembly preloads .NET types from that assembly into a script at
+parse time. This allows you to create new PowerShell classes that use types
+from the preloaded assembly.
+
+If you are not creating new PowerShell classes, use the `Add-Type` cmdlet
+instead. For more information, see
 [Add-Type](../../Microsoft.PowerShell.Utility/Add-Type.md).
 
 ## Examples
@@ -78,16 +81,15 @@ $hashfromstream.Hash.ToString()
 
 ### Example 2 - Load classes from a script module
 
-In this example, we have a PowerShell script module named **CardGames** the
+In this example, we have a PowerShell script module named **CardGames** that
 defines the following classes:
 
 - **CardGames.Deck**
 - **CardGames.Card**
 
-The `using module` command imports the module. `Import-Module` and the
-`#requires` statement only import the module functions, aliases, and variables,
-as defined by the module. Classes are not imported. The `using module`
-statement imports the classes defined in the module.
+`Import-Module` and the `#requires` statement only import the module functions,
+aliases, and variables, as defined by the module. Classes are not imported. The
+`using module` command imports the module and also loads the class definitions.
 
 ```powershell
 using module CardGames
