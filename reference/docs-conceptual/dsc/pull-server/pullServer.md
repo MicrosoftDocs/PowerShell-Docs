@@ -27,6 +27,14 @@ The current options for pull service include:
 - Community maintained open-source solutions
 - An SMB share
 
+The recommended scale for each solution is as follows:
+
+| Solution | Client nodes
+|-|-
+| Windows Pull Server using MDB/ESENT database | Up to 500 nodes
+| Windows Pull Server using SQL database | Up to 1000 nodes
+| Azure Automation DSC | Scenarios with greater than 1000 nodes
+
 **The recommended solution**, and the option with the most features available, is [Azure Automation DSC](/azure/automation/automation-dsc-getting-started).
 
 The Azure service can manage nodes on-premises in private datacenters, or in public clouds such as
