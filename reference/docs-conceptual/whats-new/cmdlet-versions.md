@@ -1,3 +1,7 @@
+---
+ms.date: 01/30/2020
+title:  Release history of modules and cmdlets
+---
 # Release history of modules and cmdlets
 
 This is a work in progress.
