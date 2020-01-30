@@ -63,7 +63,7 @@ This is a work in progress.
 | Connect-WSMan                              | &check; | &check; | &check; | &check; |                                           |
 | ConvertFrom-Csv                            | &check; | &check; | &check; | &check; |                                           |
 | ConvertFrom-Json                           | &check; | &check; | &check; | &check; |                                           |
-| ConvertFrom-Markdown                       |         |   6.X   | &check; | &check; |                                           |
+| ConvertFrom-Markdown                       |         |   6.1   | &check; | &check; |                                           |
 | ConvertFrom-SddlString                     | &check; | &check; | &check; | &check; |                                           |
 | ConvertFrom-SecureString                   | &check; | &check; | &check; | &check; |                                           |
 | ConvertFrom-String                         | &check; |         |         |         |                                           |
@@ -195,7 +195,7 @@ This is a work in progress.
 | Get-LocalUser                              | &check; |         |         |         |                                           |
 | Get-Location                               | &check; | &check; | &check; | &check; |                                           |
 | Get-LogProperties                          | &check; |   6.2   | &check; | &check; | Windows only                              |
-| Get-MarkdownOption                         |         |   6.X   | &check; | &check; |                                           |
+| Get-MarkdownOption                         |         |   6.1   | &check; | &check; |                                           |
 | Get-Member                                 | &check; | &check; | &check; | &check; |                                           |
 | Get-Module                                 | &check; | &check; | &check; | &check; |                                           |
 | Get-MofInstanceName                        |         | &check; |         |         |                                           |
@@ -407,7 +407,7 @@ This is a work in progress.
 | Set-LocalUser                              | &check; |         |         |         |                                           |
 | Set-Location                               | &check; | &check; | &check; | &check; |                                           |
 | Set-LogProperties                          | &check; |   6.2   | &check; | &check; | Windows only                              |
-| Set-MarkdownOption                         |         |   6.X   | &check; | &check; |                                           |
+| Set-MarkdownOption                         |         |   6.1   | &check; | &check; |                                           |
 | Set-NodeExclusiveResources                 |         | &check; |         |         |                                           |
 | Set-NodeManager                            |         | &check; |         |         |                                           |
 | Set-NodeResources                          |         | &check; |         |         |                                           |
@@ -437,7 +437,7 @@ This is a work in progress.
 | Show-Command                               | &check; |         | &check; | &check; |                                           |
 | Show-ControlPanelItem                      | &check; |         |         |         |                                           |
 | Show-EventLog                              | &check; |         |         |         |                                           |
-| Show-Markdown                              |         |   6.X   | &check; | &check; |                                           |
+| Show-Markdown                              |         |   6.1   | &check; | &check; |                                           |
 | Sort-Object                                | &check; | &check; | &check; | &check; |                                           |
 | Split-Path                                 | &check; | &check; | &check; | &check; |                                           |
 | Start-DscConfiguration                     | &check; |         |         |         |                                           |
@@ -461,7 +461,7 @@ This is a work in progress.
 | Tee-Object                                 | &check; | &check; | &check; | &check; |                                           |
 | Test-ComputerSecureChannel                 | &check; |         |         |         |                                           |
 | Test-ConflictingResources                  |         | &check; |         | &check; |                                           |
-| Test-Connection                            | &check; |   6.X   | &check; | &check; |                                           |
+| Test-Connection                            | &check; |   6.1   | &check; | &check; |                                           |
 | Test-DscConfiguration                      | &check; |         |         |         |                                           |
 | Test-FileCatalog                           | &check; | &check; | &check; | &check; |                                           |
 | Test-Json                                  |         | &check; | &check; | &check; |                                           |
