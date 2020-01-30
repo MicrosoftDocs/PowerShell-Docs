@@ -24,11 +24,11 @@ This is a work in progress.
 | Microsoft.PowerShell.Utility              | &check; | &check; | &check; | &check; |              |
 | Microsoft.WsMan.Management                | &check; | &check; | &check; | &check; | Windows only |
 | PackageManagement                         | &check; | &check; | &check; | &check; |              |
-| PowershellGet 1.x                         |   1.2   |         |         |         |              |
-| PowershellGet 2.x                         |         | &check; | &check; | &check; |              |
+| PowershellGet                             | &check; | &check; | &check; | &check; |              |
 | PSDesiredStateConfiguration               | &check; | &check; | &check; | &check; |              |
 | PSDiagnostics                             | &check; | &check; | &check; | &check; | Windows only |
-| PSReadline                                | &check; | &check; | &check; | &check; |              |
+| PSReadline 1.x                            | &check; |         |         |         |              |
+| PSReadline 2.x                            |         | &check; | &check; | &check; |              |
 | PSScheduledJob                            | &check; |         |         |         |              |
 | PSWorkflow                                | &check; |         |         |         |              |
 | PSWorkflowUtility                         | &check; |         |         |         |              |
