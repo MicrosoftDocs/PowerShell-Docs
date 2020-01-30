@@ -289,7 +289,7 @@
         - name: What's new in the PowerShell 5.0 ISE
           href: whats-new/what-s-new-in-the-powershell-50-ise.md
     - name: Module and cmdlet release history
-      href: cmdlet-versions.md
+      href: whats-new/cmdlet-versions.md
 - name: PowerShell Core support lifecycle
   href: powershell-support-lifecycle.md
 - name: Windows Management Framework (WMF)
