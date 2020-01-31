@@ -244,7 +244,7 @@ function function1 {
     trap { "An error: " }
     NonsenseString
     "function1 was completed"
-    }
+}
 ```
 
 Later in the script, running the Function1 function produces the following

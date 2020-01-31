@@ -173,6 +173,16 @@ inherit from the **SystemException** type.
 If you specify an error class and one of its derived classes, place the `Catch`
 block for the derived class before the `Catch` block for the general class.
 
+### Using Traps in a Try Catch
+
+When a terminating error occurs in a `Try` block with a `Trap` defined within
+the `Try` block, even if there is a matching `Catch` block, the `Trap` statement
+takes control.
+
+If a `Trap` exists at a higher block than the `Try`, and there is no matching
+`Catch` block within the current scope, the `Trap` will take control, even if
+any parent scope has a matching `Catch` block.
+
 ### ACCESSING EXCEPTION INFORMATION
 
 Within a `Catch` block, the current error can be accessed using `$_`, which
