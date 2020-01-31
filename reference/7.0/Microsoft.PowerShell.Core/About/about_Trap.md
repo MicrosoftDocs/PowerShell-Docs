@@ -33,9 +33,8 @@ ways:
 - Silence the error, but continue execution of the script or function
   containing the `Trap` by using `Continue` in the `Trap` statement.
 
-`Trap` statements can also be more complex. The statement list of the `Trap` can
-include multiple conditions or function calls. A `Trap` can write logs, test
-conditions, or even run another program.
+The statement list of the `Trap` can include multiple conditions or function
+calls. A `Trap` can write logs, test conditions, or even run another program.
 
 ### Syntax
 
