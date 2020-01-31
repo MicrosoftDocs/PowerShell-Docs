@@ -8,470 +8,515 @@ This is a work in progress.
 
 ## Module release history
 
-|         Module Name / PS Version          |  3.0  |  4.0  |  5.0  |  5.1  |   6   |  7.0  |  7.1  |
-| ----------------------------------------- | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| CimCmdlets                                |   X   |   X   |   X   |   X   |   X   |   X   |   X   |
-| ISE (introduced in 2.0)                   |   X   |   X   |   X   |   X   |       |       |       |
-| Microsoft.PowerShell.Archive              |       |       |   X   |   X   |   X   |   X   |   X   |
-| Microsoft.PowerShell.Core                 |   X   |   X   |   X   |   X   |   X   |   X   |   X   |
-| Microsoft.PowerShell.Diagnostics          |   X   |   X   |   X   |   X   |   X   |   X   |   X   |
-| Microsoft.PowerShell.Host                 |   X   |   X   |   X   |   X   |   X   |   X   |   X   |
-| Microsoft.PowerShell.LocalAccounts        |       |       |       |   X   |       |       |       |
-| Microsoft.PowerShell.Management           |   X   |   X   |   X   |   X   |   X   |   X   |   X   |
-| Microsoft.PowerShell.ODataUtils           |       |       |   X   |   X   |       |       |       |
-| Microsoft.PowerShell.Operation.Validation |       |       |       |   X   |       |       |       |
-| Microsoft.PowerShell.Security             |   X   |   X   |   X   |   X   |   X   |   X   |   X   |
-| Microsoft.PowerShell.Utility              |   X   |   X   |   X   |   X   |   X   |   X   |   X   |
-| Microsoft.WsMan.Management                |   X   |   X   |   X   |   X   |   X   |   X   |   X   |
-| PackageManagement                         |       |       |   X   |   X   |   X   |   X   |   X   |
-| PowershellGet 1.x                         |       |       |  1.1  |  1.2  |       |       |       |
-| PowershellGet 2.x                         |       |       |       |       |   X   |   X   |   X   |
-| PSDesiredStateConfiguration               |       |   X   |   X   |   X   |   X   |   X   |   X   |
-| PSDiagnostics                             |   X   |   X   |   X   |   X   |   X   |   X   |   X   |
-| PSReadline                                |       |       |   X   |   X   |   X   |   X   |   X   |
-| PSScheduledJob                            |   X   |   X   |   X   |   X   |       |       |       |
-| PSWorkflow                                |   X   |   X   |   X   |   X   |       |       |       |
-| PSWorkflowUtility                         |   X   |   X   |   X   |   X   |       |       |       |
-| ThreadJob                                 |       |       |       |       |   X   |   X   |   X   |
+|         Module Name / PS Version          |   5.1   |   6.x   |   7.0   |   7.1   |     Note     |
+| ----------------------------------------- | :-----: | :-----: | :-----: | :-----: | ------------ |
+| CimCmdlets                                | &check; | &check; | &check; | &check; | Windows only |
+| ISE (introduced in 2.0)                   | &check; |         |         |         |              |
+| Microsoft.PowerShell.Archive              | &check; | &check; | &check; | &check; |              |
+| Microsoft.PowerShell.Core                 | &check; | &check; | &check; | &check; |              |
+| Microsoft.PowerShell.Diagnostics          | &check; | &check; | &check; | &check; | Windows only |
+| Microsoft.PowerShell.Host                 | &check; | &check; | &check; | &check; |              |
+| Microsoft.PowerShell.LocalAccounts        | &check; |         |         |         |              |
+| Microsoft.PowerShell.Management           | &check; | &check; | &check; | &check; |              |
+| Microsoft.PowerShell.ODataUtils           | &check; |         |         |         |              |
+| Microsoft.PowerShell.Operation.Validation | &check; |         |         |         |              |
+| Microsoft.PowerShell.Security             | &check; | &check; | &check; | &check; |              |
+| Microsoft.PowerShell.Utility              | &check; | &check; | &check; | &check; |              |
+| Microsoft.WsMan.Management                | &check; | &check; | &check; | &check; | Windows only |
+| PackageManagement                         | &check; | &check; | &check; | &check; |              |
+| PowershellGet                             | &check; | &check; | &check; | &check; |              |
+| PSDesiredStateConfiguration               | &check; | &check; | &check; | &check; |              |
+| PSDiagnostics                             | &check; | &check; | &check; | &check; | Windows only |
+| PSReadline 1.x                            | &check; |         |         |         |              |
+| PSReadline 2.x                            |         | &check; | &check; | &check; |              |
+| PSScheduledJob                            | &check; |         |         |         |              |
+| PSWorkflow                                | &check; |         |         |         |              |
+| PSWorkflowUtility                         | &check; |         |         |         |              |
+| ThreadJob                                 |         | &check; | &check; | &check; |              |
 
 ## Cmdlet release history
 
-|              Cmdlet               |  5.1  |  6.x  |  7.0  |  7.1  |                   Note                    |
-| --------------------------------- | :---: | :---: | :---: | :---: | ----------------------------------------- |
-| Add-Computer                      |   X   |       |       |       |                                           |
-| Add-Content                       |   X   |   X   |   X   |   X   |                                           |
-| Add-History                       |   X   |   X   |   X   |   X   |                                           |
-| Add-JobTrigger                    |   X   |       |       |       |                                           |
-| Add-LocalGroupMember              |   X   |       |       |       |                                           |
-| Add-Member                        |   X   |   X   |   X   |   X   |                                           |
-| Add-PSSnapin                      |   X   |       |       |       |                                           |
-| Add-Type                          |   X   |   X   |   X   |   X   |                                           |
-| Checkpoint-Computer               |   X   |       |       |       |                                           |
-| Clear-Content                     |   X   |   X   |   X   |   X   |                                           |
-| Clear-EventLog                    |   X   |       |       |       |                                           |
-| Clear-History                     |   X   |   X   |   X   |   X   |                                           |
-| Clear-Host                        |   X   |   X   |   X   |   X   |                                           |
-| Clear-Item                        |   X   |   X   |   X   |   X   |                                           |
-| Clear-ItemProperty                |   X   |   X   |   X   |   X   |                                           |
-| Clear-RecycleBin                  |   X   |       |   X   |   X   | Windows only                              |
-| Clear-Variable                    |   X   |   X   |   X   |   X   |                                           |
-| Compare-Object                    |   X   |   X   |   X   |   X   |                                           |
-| Complete-Transaction              |   X   |       |       |       |                                           |
-| Compress-Archive                  |   X   |   X   |   X   |   X   |                                           |
-| Connect-PSSession                 |   X   |   X   |   X   |   X   |                                           |
-| Connect-WSMan                     |   X   |   X   |   X   |   X   |                                           |
-| Convert-Path                      |   X   |   X   |   X   |   X   |                                           |
-| Convert-String                    |   X   |       |       |       |                                           |
-| ConvertFrom-Csv                   |   X   |   X   |   X   |   X   |                                           |
-| ConvertFrom-Json                  |   X   |   X   |   X   |   X   |                                           |
-| ConvertFrom-Markdown              |       |  6.1  |   X   |   X   |                                           |
-| ConvertFrom-SddlString            |   X   |   X   |   X   |   X   |                                           |
-| ConvertFrom-SecureString          |   X   |   X   |   X   |   X   |                                           |
-| ConvertFrom-String                |   X   |       |       |       |                                           |
-| ConvertFrom-StringData            |   X   |   X   |   X   |   X   |                                           |
-| ConvertTo-Csv                     |   X   |   X   |   X   |   X   |                                           |
-| ConvertTo-Html                    |   X   |   X   |   X   |   X   |                                           |
-| ConvertTo-Json                    |   X   |   X   |   X   |   X   |                                           |
-| ConvertTo-SecureString            |   X   |   X   |   X   |   X   |                                           |
-| ConvertTo-Xml                     |   X   |   X   |   X   |   X   |                                           |
-| Copy-Item                         |   X   |   X   |   X   |   X   |                                           |
-| Copy-ItemProperty                 |   X   |   X   |   X   |   X   |                                           |
-| Debug-Job                         |   X   |   X   |   X   |   X   |                                           |
-| Debug-Process                     |   X   |   X   |   X   |   X   |                                           |
-| Debug-Runspace                    |   X   |   X   |   X   |   X   |                                           |
-| Disable-ComputerRestore           |   X   |       |       |       |                                           |
-| Disable-DscDebug                  |   X   |       |       |       |                                           |
-| Disable-ExperimentalFeature       |       |  6.2  |   X   |   X   |                                           |
-| Disable-JobTrigger                |   X   |       |       |       |                                           |
-| Disable-LocalUser                 |   X   |       |       |       |                                           |
-| Disable-PSBreakpoint              |   X   |   X   |   X   |   X   |                                           |
-| Disable-PSRemoting                |   X   |   X   |   X   |   X   |                                           |
-| Disable-PSSessionConfiguration    |   X   |   X   |   X   |   X   |                                           |
-| Disable-PSTrace                   |   X   |  6.2  |   X   |   X   | Windows only                              |
-| Disable-PSWSManCombinedTrace      |   X   |  6.2  |   X   |   X   | Windows only                              |
-| Disable-RunspaceDebug             |   X   |   X   |   X   |   X   |                                           |
-| Disable-ScheduledJob              |   X   |       |       |       |                                           |
-| Disable-WSManCredSSP              |   X   |   X   |   X   |   X   | Windows only                              |
-| Disable-WSManTrace                |   X   |  6.2  |   X   |   X   | Windows only                              |
-| Disconnect-PSSession              |   X   |   X   |   X   |   X   |                                           |
-| Disconnect-WSMan                  |   X   |   X   |   X   |   X   | Windows only                              |
-| Enable-ComputerRestore            |   X   |       |       |       |                                           |
-| Enable-DscDebug                   |   X   |       |       |       |                                           |
-| Enable-ExperimentalFeature        |       |  6.2  |   X   |   X   |                                           |
-| Enable-JobTrigger                 |   X   |       |       |       |                                           |
-| Enable-LocalUser                  |   X   |       |       |       |                                           |
-| Enable-PSBreakpoint               |   X   |   X   |   X   |   X   |                                           |
-| Enable-PSRemoting                 |   X   |   X   |   X   |   X   |                                           |
-| Enable-PSSessionConfiguration     |   X   |   X   |   X   |   X   |                                           |
-| Enable-PSTrace                    |   X   |  6.2  |   X   |   X   | Windows only                              |
-| Enable-PSWSManCombinedTrace       |   X   |  6.2  |   X   |   X   | Windows only                              |
-| Enable-RunspaceDebug              |   X   |   X   |   X   |   X   |                                           |
-| Enable-ScheduledJob               |   X   |       |       |       |                                           |
-| Enable-WSManCredSSP               |   X   |   X   |   X   |   X   | Windows only                              |
-| Enable-WSManTrace                 |   X   |  6.2  |   X   |   X   | Windows only                              |
-| Enter-PSHostProcess               |   X   |   X   |   X   |   X   | Added Linux support in 6.2                |
-| Enter-PSSession                   |   X   |   X   |   X   |   X   |                                           |
-| Exit-PSHostProcess                |   X   |   X   |   X   |   X   |                                           |
-| Exit-PSSession                    |   X   |   X   |   X   |   X   |                                           |
-| Expand-Archive                    |   X   |   X   |   X   |   X   |                                           |
-| Export-Alias                      |   X   |   X   |   X   |   X   |                                           |
-| Export-BinaryMiLog                |       |   X   |   X   |   X   |                                           |
-| Export-Clixml                     |   X   |   X   |   X   |   X   |                                           |
-| Export-Console                    |   X   |       |       |       |                                           |
-| Export-Counter                    |   X   |       |       |       |                                           |
-| Export-Csv                        |   X   |   X   |   X   |   X   |                                           |
-| Export-FormatData                 |   X   |   X   |   X   |   X   |                                           |
-| Export-ModuleMember               |   X   |   X   |   X   |   X   |                                           |
-| Export-ODataEndpointProxy         |   X   |       |       |       |                                           |
-| Export-PSSession                  |   X   |   X   |   X   |   X   |                                           |
-| Find-Command                      |   X   |   X   |   X   |   X   |                                           |
-| Find-DscResource                  |   X   |   X   |   X   |   X   |                                           |
-| Find-Module                       |   X   |   X   |   X   |   X   |                                           |
-| Find-Package                      |   X   |   X   |   X   |   X   |                                           |
-| Find-PackageProvider              |   X   |   X   |   X   |   X   |                                           |
-| Find-RoleCapability               |   X   |   X   |   X   |   X   |                                           |
-| Find-Script                       |   X   |   X   |   X   |   X   |                                           |
-| ForEach-Object                    |   X   |   X   |   X   |   X   |                                           |
-| Format-Custom                     |   X   |   X   |   X   |   X   |                                           |
-| Format-Hex                        |   X   |   X   |   X   |   X   |                                           |
-| Format-List                       |   X   |   X   |   X   |   X   |                                           |
-| Format-Table                      |   X   |   X   |   X   |   X   |                                           |
-| Format-Wide                       |   X   |   X   |   X   |   X   |                                           |
-| Get-Acl                           |   X   |   X   |   X   |   X   | Windows only                              |
-| Get-Alias                         |   X   |   X   |   X   |   X   |                                           |
-| Get-AuthenticodeSignature         |   X   |   X   |   X   |   X   | Windows only                              |
-| Get-ChildItem                     |   X   |   X   |   X   |   X   |                                           |
-| Get-CimAssociatedInstance         |   X   |   X   |   X   |   X   |                                           |
-| Get-CimClass                      |   X   |   X   |   X   |   X   |                                           |
-| Get-CimInstance                   |   X   |   X   |   X   |   X   |                                           |
-| Get-CimSession                    |   X   |   X   |   X   |   X   |                                           |
-| Get-Clipboard                     |   X   |       |   X   |   X   | Not supported on macOS                    |
-| Get-CmsMessage                    |   X   |   X   |   X   |   X   |                                           |
-| Get-Command                       |   X   |   X   |   X   |   X   |                                           |
-| Get-ComputerInfo                  |   X   |   X   |   X   |   X   |                                           |
-| Get-ComputerRestorePoint          |   X   |       |       |       |                                           |
-| Get-Content                       |   X   |   X   |   X   |   X   |                                           |
-| Get-ControlPanelItem              |   X   |       |       |       |                                           |
-| Get-Counter                       |   X   |       |   X   |   X   | Windows only                              |
-| Get-Credential                    |   X   |   X   |   X   |   X   |                                           |
-| Get-Culture                       |   X   |   X   |   X   |   X   |                                           |
-| Get-Date                          |   X   |   X   |   X   |   X   |                                           |
-| Get-DscConfiguration              |   X   |       |       |       |                                           |
-| Get-DscConfigurationStatus        |   X   |       |       |       |                                           |
-| Get-DscLocalConfigurationManager  |   X   |       |       |       |                                           |
-| Get-DscResource                   |   X   |   X   |   X   |   X   |                                           |
-| Get-Error                         |       |       |   X   |   X   |                                           |
-| Get-Event                         |   X   |   X   |   X   |   X   | No event sources available on Linux/macOS |
-| Get-EventLog                      |   X   |       |       |       |                                           |
-| Get-EventSubscriber               |   X   |   X   |   X   |   X   |                                           |
-| Get-ExecutionPolicy               |   X   |   X   |   X   |   X   |                                           |
-| Get-ExperimentalFeature           |       |  6.2  |   X   |   X   |                                           |
-| Get-FileHash                      |   X   |   X   |   X   |   X   |                                           |
-| Get-FormatData                    |   X   |   X   |   X   |   X   |                                           |
-| Get-Help                          |   X   |   X   |   X   |   X   |                                           |
-| Get-History                       |   X   |   X   |   X   |   X   |                                           |
-| Get-Host                          |   X   |   X   |   X   |   X   |                                           |
-| Get-HotFix                        |   X   |       |   X   |   X   | Windows only                              |
-| Get-InstalledModule               |   X   |   X   |   X   |   X   |                                           |
-| Get-InstalledScript               |   X   |   X   |   X   |   X   |                                           |
-| Get-IseSnippet                    |   X   |       |       |       |                                           |
-| Get-Item                          |   X   |   X   |   X   |   X   |                                           |
-| Get-ItemProperty                  |   X   |   X   |   X   |   X   |                                           |
-| Get-ItemPropertyValue             |   X   |   X   |   X   |   X   |                                           |
-| Get-Job                           |   X   |   X   |   X   |   X   |                                           |
-| Get-JobTrigger                    |   X   |       |       |       |                                           |
-| Get-LocalGroup                    |   X   |       |       |       |                                           |
-| Get-LocalGroupMember              |   X   |       |       |       |                                           |
-| Get-LocalUser                     |   X   |       |       |       |                                           |
-| Get-Location                      |   X   |   X   |   X   |   X   |                                           |
-| Get-LogProperties                 |   X   |  6.2  |   X   |   X   | Windows only                              |
-| Get-MarkdownOption                |       |  6.1  |   X   |   X   |                                           |
-| Get-Member                        |   X   |   X   |   X   |   X   |                                           |
-| Get-Module                        |   X   |   X   |   X   |   X   |                                           |
-| Get-OperationValidation           |   X   |       |       |       |                                           |
-| Get-Package                       |   X   |   X   |   X   |   X   |                                           |
-| Get-PackageProvider               |   X   |   X   |   X   |   X   |                                           |
-| Get-PackageSource                 |   X   |   X   |   X   |   X   |                                           |
-| Get-PfxCertificate                |   X   |   X   |   X   |   X   |                                           |
-| Get-Process                       |   X   |   X   |   X   |   X   |                                           |
-| Get-PSBreakpoint                  |   X   |   X   |   X   |   X   |                                           |
-| Get-PSCallStack                   |   X   |   X   |   X   |   X   |                                           |
-| Get-PSDrive                       |   X   |   X   |   X   |   X   |                                           |
-| Get-PSHostProcess                 |   X   |   X   |   X   |   X   | Added Linux support in 6.2                |
-| Get-PSHostProcessInfo             |   X   |   X   |   X   |   X   |                                           |
-| Get-PSProvider                    |   X   |   X   |   X   |   X   |                                           |
-| Get-PSReadlineKeyHandler          |   X   |   X   |   X   |   X   |                                           |
-| Get-PSReadlineOption              |   X   |   X   |   X   |   X   |                                           |
-| Get-PSRepository                  |   X   |   X   |   X   |   X   |                                           |
-| Get-PSSession                     |   X   |   X   |   X   |   X   |                                           |
-| Get-PSSessionCapability           |   X   |   X   |   X   |   X   |                                           |
-| Get-PSSessionConfiguration        |   X   |   X   |   X   |   X   | Does not work on Linux/macOS              |
-| Get-PSSnapin                      |   X   |       |       |       |                                           |
-| Get-Random                        |   X   |   X   |   X   |   X   |                                           |
-| Get-Runspace                      |   X   |   X   |   X   |   X   |                                           |
-| Get-RunspaceDebug                 |   X   |   X   |   X   |   X   |                                           |
-| Get-ScheduledJob                  |   X   |       |       |       |                                           |
-| Get-ScheduledJobOption            |   X   |       |       |       |                                           |
-| Get-Service                       |   X   |   X   |   X   |   X   | Windows only                              |
-| Get-TimeZone                      |   X   |   X   |   X   |   X   |                                           |
-| Get-TraceSource                   |   X   |   X   |   X   |   X   |                                           |
-| Get-Transaction                   |   X   |       |       |       |                                           |
-| Get-TypeData                      |   X   |   X   |   X   |   X   |                                           |
-| Get-UICulture                     |   X   |   X   |   X   |   X   |                                           |
-| Get-Unique                        |   X   |   X   |   X   |   X   |                                           |
-| Get-Uptime                        |       |   X   |   X   |   X   |                                           |
-| Get-Variable                      |   X   |   X   |   X   |   X   |                                           |
-| Get-Verb                          |   X   |   X   |   X   |   X   |                                           |
-| Get-WinEvent                      |   X   |   X   |   X   |   X   |                                           |
-| Get-WmiObject                     |   X   |       |       |       |                                           |
-| Get-WSManCredSSP                  |   X   |   X   |   X   |   X   | Windows only                              |
-| Get-WSManInstance                 |   X   |   X   |   X   |   X   | Windows only                              |
-| Group-Object                      |   X   |   X   |   X   |   X   |                                           |
-| Import-Alias                      |   X   |   X   |   X   |   X   |                                           |
-| Import-BinaryMiLog                |       |   X   |   X   |   X   |                                           |
-| Import-Clixml                     |   X   |   X   |   X   |   X   |                                           |
-| Import-Counter                    |   X   |       |       |       |                                           |
-| Import-Csv                        |   X   |   X   |   X   |   X   |                                           |
-| Import-IseSnippet                 |   X   |       |       |       |                                           |
-| Import-LocalizedData              |   X   |   X   |   X   |   X   |                                           |
-| Import-Module                     |   X   |   X   |   X   |   X   |                                           |
-| Import-PackageProvider            |   X   |   X   |   X   |   X   |                                           |
-| Import-PowerShellDataFile         |   X   |   X   |   X   |   X   |                                           |
-| Import-PSSession                  |   X   |   X   |   X   |   X   |                                           |
-| Install-Module                    |   X   |   X   |   X   |   X   |                                           |
-| Install-Package                   |   X   |   X   |   X   |   X   |                                           |
-| Install-PackageProvider           |   X   |   X   |   X   |   X   |                                           |
-| Install-Script                    |   X   |   X   |   X   |   X   |                                           |
-| Invoke-AsWorkflow                 |   X   |       |       |       |                                           |
-| Invoke-CimMethod                  |   X   |   X   |   X   |   X   |                                           |
-| Invoke-Command                    |   X   |   X   |   X   |   X   |                                           |
-| Invoke-DscResource                |   X   |       |   X   |   X   |                                           |
-| Invoke-Expression                 |   X   |   X   |   X   |   X   |                                           |
-| Invoke-History                    |   X   |   X   |   X   |   X   |                                           |
-| Invoke-Item                       |   X   |   X   |   X   |   X   |                                           |
-| Invoke-OperationValidation        |   X   |       |       |       |                                           |
-| Invoke-RestMethod                 |   X   |   X   |   X   |   X   |                                           |
-| Invoke-WebRequest                 |   X   |   X   |   X   |   X   |                                           |
-| Invoke-WmiMethod                  |   X   |       |       |       |                                           |
-| Invoke-WSManAction                |   X   |   X   |   X   |   X   |                                           |
-| Join-Path                         |   X   |   X   |   X   |   X   |                                           |
-| Join-String                       |       |   X   |   X   |   X   |                                           |
-| Limit-EventLog                    |   X   |       |       |       |                                           |
-| Measure-Command                   |   X   |   X   |   X   |   X   |                                           |
-| Measure-Object                    |   X   |   X   |   X   |   X   |                                           |
-| Microsoft.PowerShell.Archive      |   X   |       |       |       |                                           |
-| Move-Item                         |   X   |   X   |   X   |   X   |                                           |
-| Move-ItemProperty                 |   X   |   X   |   X   |   X   |                                           |
-| New-Alias                         |   X   |   X   |   X   |   X   |                                           |
-| New-CimInstance                   |   X   |   X   |   X   |   X   |                                           |
-| New-CimSession                    |   X   |   X   |   X   |   X   |                                           |
-| New-CimSessionOption              |   X   |   X   |   X   |   X   |                                           |
-| New-DSCCheckSum                   |   X   |   X   |   X   |   X   |                                           |
-| New-Event                         |   X   |   X   |   X   |   X   | No event sources available on Linux/macOS |
-| New-EventLog                      |   X   |       |       |       |                                           |
-| New-FileCatalog                   |   X   |   X   |   X   |   X   |                                           |
-| New-Guid                          |   X   |   X   |   X   |   X   |                                           |
-| New-IseSnippet                    |   X   |       |       |       |                                           |
-| New-Item                          |   X   |   X   |   X   |   X   |                                           |
-| New-ItemProperty                  |   X   |   X   |   X   |   X   |                                           |
-| New-JobTrigger                    |   X   |       |       |       |                                           |
-| New-LocalGroup                    |   X   |       |       |       |                                           |
-| New-LocalUser                     |   X   |       |       |       |                                           |
-| New-Module                        |   X   |   X   |   X   |   X   |                                           |
-| New-ModuleManifest                |   X   |   X   |   X   |   X   |                                           |
-| New-Object                        |   X   |   X   |   X   |   X   |                                           |
-| New-PSDrive                       |   X   |   X   |   X   |   X   |                                           |
-| New-PSRoleCapabilityFile          |   X   |   X   |   X   |   X   |                                           |
-| New-PSSession                     |   X   |   X   |   X   |   X   | Does not work on Linux/macOS              |
-| New-PSSessionConfigurationFile    |   X   |   X   |   X   |   X   |                                           |
-| New-PSSessionOption               |   X   |   X   |   X   |   X   |                                           |
-| New-PSTransportOption             |   X   |   X   |   X   |   X   |                                           |
-| New-PSWorkflowExecutionOption     |   X   |       |       |       |                                           |
-| New-PSWorkflowSession             |   X   |       |       |       |                                           |
-| New-ScheduledJobOption            |   X   |       |       |       |                                           |
-| New-ScriptFileInfo                |   X   |   X   |   X   |   X   |                                           |
-| New-Service                       |   X   |   X   |   X   |   X   | Windows only                              |
-| New-TemporaryFile                 |   X   |   X   |   X   |   X   |                                           |
-| New-TimeSpan                      |   X   |   X   |   X   |   X   |                                           |
-| New-Variable                      |   X   |   X   |   X   |   X   |                                           |
-| New-WebServiceProxy               |   X   |       |       |       |                                           |
-| New-WinEvent                      |   X   |   X   |   X   |   X   |                                           |
-| New-WSManInstance                 |   X   |   X   |   X   |   X   | Windows only                              |
-| New-WSManSessionOption            |   X   |   X   |   X   |   X   | Windows only                              |
-| Out-Default                       |   X   |   X   |   X   |   X   |                                           |
-| Out-File                          |   X   |   X   |   X   |   X   |                                           |
-| Out-GridView                      |   X   |       |   X   |   X   |                                           |
-| Out-Host                          |   X   |   X   |   X   |   X   |                                           |
-| Out-Null                          |   X   |   X   |   X   |   X   |                                           |
-| Out-Printer                       |   X   |       |   X   |   X   | Windows only                              |
-| Out-String                        |   X   |   X   |   X   |   X   |                                           |
-| Pop-Location                      |   X   |   X   |   X   |   X   |                                           |
-| Protect-CmsMessage                |   X   |   X   |   X   |   X   |                                           |
-| PSDesiredStateConfiguration       |   X   |   X   |       |       |                                           |
-| Publish-DscConfiguration          |   X   |       |       |       |                                           |
-| Publish-Module                    |   X   |   X   |   X   |   X   |                                           |
-| Publish-Script                    |   X   |   X   |   X   |   X   |                                           |
-| Push-Location                     |   X   |   X   |   X   |   X   |                                           |
-| Read-Host                         |   X   |   X   |   X   |   X   |                                           |
-| Receive-Job                       |   X   |   X   |   X   |   X   |                                           |
-| Receive-PSSession                 |   X   |   X   |   X   |   X   |                                           |
-| Register-ArgumentCompleter        |   X   |   X   |   X   |   X   |                                           |
-| Register-CimIndicationEvent       |   X   |   X   |   X   |   X   |                                           |
-| Register-EngineEvent              |   X   |   X   |   X   |   X   | No event sources available on Linux/macOS |
-| Register-ObjectEvent              |   X   |   X   |   X   |   X   |                                           |
-| Register-PackageSource            |   X   |   X   |   X   |   X   |                                           |
-| Register-PSRepository             |   X   |   X   |   X   |   X   |                                           |
-| Register-PSSessionConfiguration   |   X   |   X   |   X   |   X   | Does not work on Linux/macOS              |
-| Register-ScheduledJob             |   X   |       |       |       |                                           |
-| Register-WmiEvent                 |   X   |       |       |       | No event sources available on Linux/macOS |
-| Remove-Alias                      |       |   X   |   X   |   X   |                                           |
-| Remove-CimInstance                |   X   |   X   |   X   |   X   |                                           |
-| Remove-CimSession                 |   X   |   X   |   X   |   X   |                                           |
-| Remove-Computer                   |   X   |       |       |       |                                           |
-| Remove-DscConfigurationDocument   |   X   |       |       |       |                                           |
-| Remove-Event                      |   X   |   X   |   X   |   X   | No event sources available on Linux/macOS |
-| Remove-EventLog                   |   X   |       |       |       |                                           |
-| Remove-Item                       |   X   |   X   |   X   |   X   |                                           |
-| Remove-ItemProperty               |   X   |   X   |   X   |   X   |                                           |
-| Remove-Job                        |   X   |   X   |   X   |   X   |                                           |
-| Remove-JobTrigger                 |   X   |       |       |       |                                           |
-| Remove-LocalGroup                 |   X   |       |       |       |                                           |
-| Remove-LocalGroupMember           |   X   |       |       |       |                                           |
-| Remove-LocalUser                  |   X   |       |       |       |                                           |
-| Remove-Module                     |   X   |   X   |   X   |   X   |                                           |
-| Remove-PSBreakpoint               |   X   |   X   |   X   |   X   |                                           |
-| Remove-PSDrive                    |   X   |   X   |   X   |   X   |                                           |
-| Remove-PSReadlineKeyHandler       |   X   |   X   |   X   |   X   |                                           |
-| Remove-PSSession                  |   X   |   X   |   X   |   X   |                                           |
-| Remove-PSSnapin                   |   X   |       |       |       |                                           |
-| Remove-Service                    |       |   X   |   X   |   X   | Windows only                              |
-| Remove-TypeData                   |   X   |   X   |   X   |   X   |                                           |
-| Remove-Variable                   |   X   |   X   |   X   |   X   |                                           |
-| Remove-WmiObject                  |   X   |       |       |       |                                           |
-| Remove-WSManInstance              |   X   |   X   |   X   |   X   | Windows only                              |
-| Rename-Computer                   |   X   |   X   |   X   |   X   |                                           |
-| Rename-Item                       |   X   |   X   |   X   |   X   |                                           |
-| Rename-ItemProperty               |   X   |   X   |   X   |   X   |                                           |
-| Rename-LocalGroup                 |   X   |       |       |       |                                           |
-| Rename-LocalUser                  |   X   |       |       |       |                                           |
-| Reset-ComputerMachinePassword     |   X   |       |       |       |                                           |
-| Resolve-Path                      |   X   |   X   |   X   |   X   |                                           |
-| Restart-Computer                  |   X   |   X   |   X   |   X   |                                           |
-| Restart-Service                   |   X   |   X   |   X   |   X   | Windows only                              |
-| Restore-Computer                  |   X   |       |       |       |                                           |
-| Restore-DscConfiguration          |   X   |       |       |       |                                           |
-| Resume-Job                        |   X   |       |       |       |                                           |
-| Resume-Service                    |   X   |   X   |   X   |   X   | Windows only                              |
-| Save-Help                         |   X   |   X   |   X   |   X   |                                           |
-| Save-Module                       |   X   |   X   |   X   |   X   |                                           |
-| Save-Package                      |   X   |   X   |   X   |   X   |                                           |
-| Save-Script                       |   X   |   X   |   X   |   X   |                                           |
-| Select-Object                     |   X   |   X   |   X   |   X   |                                           |
-| Select-String                     |   X   |   X   |   X   |   X   |                                           |
-| Select-Xml                        |   X   |   X   |   X   |   X   |                                           |
-| Send-MailMessage                  |   X   |   X   |   X   |   X   |                                           |
-| Set-Acl                           |   X   |   X   |   X   |   X   | Windows only                              |
-| Set-Alias                         |   X   |   X   |   X   |   X   |                                           |
-| Set-AuthenticodeSignature         |   X   |   X   |   X   |   X   | Windows only                              |
-| Set-CimInstance                   |   X   |   X   |   X   |   X   |                                           |
-| Set-Clipboard                     |   X   |       |   X   |   X   | Not supported on macOS                    |
-| Set-Content                       |   X   |   X   |   X   |   X   |                                           |
-| Set-Date                          |   X   |   X   |   X   |   X   |                                           |
-| Set-DscLocalConfigurationManager  |   X   |       |       |       |                                           |
-| Set-ExecutionPolicy               |   X   |   X   |   X   |   X   | Does nothing on Linux/macOS               |
-| Set-Item                          |   X   |   X   |   X   |   X   |                                           |
-| Set-ItemProperty                  |   X   |   X   |   X   |   X   |                                           |
-| Set-JobTrigger                    |   X   |       |       |       |                                           |
-| Set-LocalGroup                    |   X   |       |       |       |                                           |
-| Set-LocalUser                     |   X   |       |       |       |                                           |
-| Set-Location                      |   X   |   X   |   X   |   X   |                                           |
-| Set-LogProperties                 |   X   |  6.2  |   X   |   X   | Windows only                              |
-| Set-MarkdownOption                |       |  6.1  |   X   |   X   |                                           |
-| Set-PackageSource                 |   X   |   X   |   X   |   X   |                                           |
-| Set-PSBreakpoint                  |   X   |   X   |   X   |   X   |                                           |
-| Set-PSDebug                       |   X   |   X   |   X   |   X   |                                           |
-| Set-PSReadlineKeyHandler          |   X   |   X   |   X   |   X   |                                           |
-| Set-PSReadlineOption              |   X   |   X   |   X   |   X   |                                           |
-| Set-PSRepository                  |   X   |   X   |   X   |   X   |                                           |
-| Set-PSSessionConfiguration        |   X   |   X   |   X   |   X   |                                           |
-| Set-ScheduledJob                  |   X   |       |       |       |                                           |
-| Set-ScheduledJobOption            |   X   |       |       |       |                                           |
-| Set-Service                       |   X   |   X   |   X   |   X   |                                           |
-| Set-StrictMode                    |   X   |   X   |   X   |   X   |                                           |
-| Set-TimeZone                      |   X   |   X   |   X   |   X   |                                           |
-| Set-TraceSource                   |   X   |   X   |   X   |   X   |                                           |
-| Set-Variable                      |   X   |   X   |   X   |   X   |                                           |
-| Set-WmiInstance                   |   X   |       |       |       |                                           |
-| Set-WSManInstance                 |   X   |   X   |   X   |   X   | Windows only                              |
-| Set-WSManQuickConfig              |   X   |   X   |   X   |   X   | Windows only                              |
-| Show-Command                      |   X   |       |   X   |   X   |                                           |
-| Show-ControlPanelItem             |   X   |       |       |       |                                           |
-| Show-EventLog                     |   X   |       |       |       |                                           |
-| Show-Markdown                     |       |  6.1  |   X   |   X   |                                           |
-| Sort-Object                       |   X   |   X   |   X   |   X   |                                           |
-| Split-Path                        |   X   |   X   |   X   |   X   |                                           |
-| Start-DscConfiguration            |   X   |       |       |       |                                           |
-| Start-Job                         |   X   |   X   |   X   |   X   |                                           |
-| Start-Process                     |   X   |   X   |   X   |   X   |                                           |
-| Start-Service                     |   X   |   X   |   X   |   X   | Windows only                              |
-| Start-Sleep                       |   X   |   X   |   X   |   X   |                                           |
-| Start-ThreadJob                   |       |   X   |   X   |   X   |                                           |
-| Start-Trace                       |   X   |  6.2  |   X   |   X   | Windows only                              |
-| Start-Transaction                 |   X   |       |       |       |                                           |
-| Start-Transcript                  |   X   |   X   |   X   |   X   |                                           |
-| Stop-Computer                     |   X   |   X   |   X   |   X   | Added support for Linux/macOS in 7.0      |
-| Stop-DscConfiguration             |   X   |       |       |       |                                           |
-| Stop-Job                          |   X   |   X   |   X   |   X   |                                           |
-| Stop-Process                      |   X   |   X   |   X   |   X   |                                           |
-| Stop-Service                      |   X   |   X   |   X   |   X   | Windows only                              |
-| Stop-Trace                        |   X   |  6.2  |   X   |   X   | Windows only                              |
-| Stop-Transcript                   |   X   |   X   |   X   |   X   |                                           |
-| Suspend-Job                       |   X   |       |       |       |                                           |
-| Suspend-Service                   |   X   |   X   |   X   |   X   | Windows only                              |
-| Tee-Object                        |   X   |   X   |   X   |   X   |                                           |
-| Test-ComputerSecureChannel        |   X   |       |       |       |                                           |
-| Test-Connection                   |   X   |  6.1  |   X   |   X   |                                           |
-| Test-DscConfiguration             |   X   |       |       |       |                                           |
-| Test-FileCatalog                  |   X   |   X   |   X   |   X   |                                           |
-| Test-Json                         |       |   X   |   X   |   X   |                                           |
-| Test-ModuleManifest               |   X   |   X   |   X   |   X   |                                           |
-| Test-Path                         |   X   |   X   |   X   |   X   |                                           |
-| Test-PSSessionConfigurationFile   |   X   |   X   |   X   |   X   |                                           |
-| Test-ScriptFileInfo               |   X   |   X   |   X   |   X   |                                           |
-| Test-WSMan                        |   X   |   X   |   X   |   X   | Windows only                              |
-| Trace-Command                     |   X   |   X   |   X   |   X   |                                           |
-| Unblock-File                      |   X   |   X   |   X   |   X   | Added support for macOS in 7.0            |
-| Undo-Transaction                  |   X   |       |       |       |                                           |
-| Uninstall-Module                  |   X   |   X   |   X   |   X   |                                           |
-| Uninstall-Package                 |   X   |   X   |   X   |   X   |                                           |
-| Uninstall-Script                  |   X   |   X   |   X   |   X   |                                           |
-| Unprotect-CmsMessage              |   X   |   X   |   X   |   X   |                                           |
-| Unregister-Event                  |   X   |   X   |   X   |   X   | No event sources available on Linux/macOS |
-| Unregister-PackageSource          |   X   |   X   |   X   |   X   |                                           |
-| Unregister-PSRepository           |   X   |   X   |   X   |   X   |                                           |
-| Unregister-PSSessionConfiguration |   X   |   X   |   X   |   X   | Does not work on Linux/macOS              |
-| Unregister-ScheduledJob           |   X   |       |       |       |                                           |
-| Update-DscConfiguration           |   X   |       |       |       |                                           |
-| Update-FormatData                 |   X   |   X   |   X   |   X   |                                           |
-| Update-Help                       |   X   |   X   |   X   |   X   |                                           |
-| Update-List                       |   X   |       |   X   |   X   |                                           |
-| Update-Module                     |   X   |   X   |   X   |   X   |                                           |
-| Update-ModuleManifest             |   X   |   X   |   X   |   X   |                                           |
-| Update-Script                     |   X   |   X   |   X   |   X   |                                           |
-| Update-ScriptFileInfo             |   X   |   X   |   X   |   X   |                                           |
-| Update-TypeData                   |   X   |   X   |   X   |   X   |                                           |
-| Use-Transaction                   |   X   |       |       |       |                                           |
-| Wait-Debugger                     |   X   |   X   |   X   |   X   |                                           |
-| Wait-Event                        |   X   |   X   |   X   |   X   |                                           |
-| Wait-Job                          |   X   |   X   |   X   |   X   |                                           |
-| Wait-Process                      |   X   |   X   |   X   |   X   | Does not work on Linux/macOS              |
-| Where-Object                      |   X   |   X   |   X   |   X   |                                           |
-| Write-Debug                       |   X   |   X   |   X   |   X   |                                           |
-| Write-Error                       |   X   |   X   |   X   |   X   |                                           |
-| Write-EventLog                    |   X   |       |       |       |                                           |
-| Write-Host                        |   X   |   X   |   X   |   X   |                                           |
-| Write-Information                 |   X   |   X   |   X   |   X   |                                           |
-| Write-Output                      |   X   |   X   |   X   |   X   |                                           |
-| Write-Progress                    |   X   |   X   |   X   |   X   |                                           |
-| Write-Verbose                     |   X   |   X   |   X   |   X   |                                           |
-| Write-Warning                     |   X   |   X   |   X   |   X   |                                           |
+|                   Cmdlet                   |   5.1   |   6.x   |    7    |   7.1   |                   Note                    |
+| ------------------------------------------ | :-----: | :-----: | :-----: | :-----: | ----------------------------------------- |
+| Add-Computer                               | &check; |         |         |         |                                           |
+| Add-Content                                | &check; | &check; | &check; | &check; |                                           |
+| Add-History                                | &check; | &check; | &check; | &check; |                                           |
+| Add-JobTrigger                             | &check; |         |         |         |                                           |
+| Add-LocalGroupMember                       | &check; |         |         |         |                                           |
+| Add-Member                                 | &check; | &check; | &check; | &check; |                                           |
+| Add-NodeKeys                               |         | &check; |         |         |                                           |
+| Add-PSSnapin                               | &check; |         |         |         |                                           |
+| Add-Type                                   | &check; | &check; | &check; | &check; |                                           |
+| Checkpoint-Computer                        | &check; |         |         |         |                                           |
+| Clear-Content                              | &check; | &check; | &check; | &check; |                                           |
+| Clear-EventLog                             | &check; |         |         |         |                                           |
+| Clear-History                              | &check; | &check; | &check; | &check; |                                           |
+| Clear-Host                                 | &check; | &check; | &check; | &check; |                                           |
+| Clear-Item                                 | &check; | &check; | &check; | &check; |                                           |
+| Clear-ItemProperty                         | &check; | &check; | &check; | &check; |                                           |
+| Clear-RecycleBin                           | &check; |         | &check; | &check; | Windows only                              |
+| Clear-Variable                             | &check; | &check; | &check; | &check; |                                           |
+| Compare-Object                             | &check; | &check; | &check; | &check; |                                           |
+| Complete-Transaction                       | &check; |         |         |         |                                           |
+| Compress-Archive                           | &check; | &check; | &check; | &check; |                                           |
+| Connect-PSSession                          | &check; | &check; | &check; | &check; |                                           |
+| Connect-WSMan                              | &check; | &check; | &check; | &check; |                                           |
+| ConvertFrom-Csv                            | &check; | &check; | &check; | &check; |                                           |
+| ConvertFrom-Json                           | &check; | &check; | &check; | &check; |                                           |
+| ConvertFrom-Markdown                       |         |   6.1   | &check; | &check; |                                           |
+| ConvertFrom-SddlString                     | &check; | &check; | &check; | &check; |                                           |
+| ConvertFrom-SecureString                   | &check; | &check; | &check; | &check; |                                           |
+| ConvertFrom-String                         | &check; |         |         |         |                                           |
+| ConvertFrom-StringData                     | &check; | &check; | &check; | &check; |                                           |
+| Convert-Path                               | &check; | &check; | &check; | &check; |                                           |
+| Convert-String                             | &check; |         |         |         |                                           |
+| ConvertTo-Csv                              | &check; | &check; | &check; | &check; |                                           |
+| ConvertTo-Html                             | &check; | &check; | &check; | &check; |                                           |
+| ConvertTo-Json                             | &check; | &check; | &check; | &check; |                                           |
+| ConvertTo-MOFInstance                      |         | &check; |         | &check; |                                           |
+| ConvertTo-SecureString                     | &check; | &check; | &check; | &check; |                                           |
+| ConvertTo-Xml                              | &check; | &check; | &check; | &check; |                                           |
+| Copy-Item                                  | &check; | &check; | &check; | &check; |                                           |
+| Copy-ItemProperty                          | &check; | &check; | &check; | &check; |                                           |
+| Debug-Job                                  | &check; | &check; | &check; | &check; |                                           |
+| Debug-Process                              | &check; | &check; | &check; | &check; |                                           |
+| Debug-Runspace                             | &check; | &check; | &check; | &check; |                                           |
+| Disable-ComputerRestore                    | &check; |         |         |         |                                           |
+| Disable-DscDebug                           | &check; |         |         |         |                                           |
+| Disable-ExperimentalFeature                |         |   6.2   | &check; | &check; |                                           |
+| Disable-JobTrigger                         | &check; |         |         |         |                                           |
+| Disable-LocalUser                          | &check; |         |         |         |                                           |
+| Disable-PSBreakpoint                       | &check; | &check; | &check; | &check; |                                           |
+| Disable-PSRemoting                         | &check; | &check; | &check; | &check; |                                           |
+| Disable-PSSessionConfiguration             | &check; | &check; | &check; | &check; |                                           |
+| Disable-PSTrace                            | &check; |   6.2   | &check; | &check; | Windows only                              |
+| Disable-PSWSManCombinedTrace               | &check; |   6.2   | &check; | &check; | Windows only                              |
+| Disable-RunspaceDebug                      | &check; | &check; | &check; | &check; |                                           |
+| Disable-ScheduledJob                       | &check; |         |         |         |                                           |
+| Disable-WSManCredSSP                       | &check; | &check; | &check; | &check; | Windows only                              |
+| Disable-WSManTrace                         | &check; |   6.2   | &check; | &check; | Windows only                              |
+| Disconnect-PSSession                       | &check; | &check; | &check; | &check; |                                           |
+| Disconnect-WSMan                           | &check; | &check; | &check; | &check; | Windows only                              |
+| Enable-ComputerRestore                     | &check; |         |         |         |                                           |
+| Enable-DscDebug                            | &check; |         |         |         |                                           |
+| Enable-ExperimentalFeature                 |         |   6.2   | &check; | &check; |                                           |
+| Enable-JobTrigger                          | &check; |         |         |         |                                           |
+| Enable-LocalUser                           | &check; |         |         |         |                                           |
+| Enable-PSBreakpoint                        | &check; | &check; | &check; | &check; |                                           |
+| Enable-PSRemoting                          | &check; | &check; | &check; | &check; |                                           |
+| Enable-PSSessionConfiguration              | &check; | &check; | &check; | &check; |                                           |
+| Enable-PSTrace                             | &check; |   6.2   | &check; | &check; | Windows only                              |
+| Enable-PSWSManCombinedTrace                | &check; |   6.2   | &check; | &check; | Windows only                              |
+| Enable-RunspaceDebug                       | &check; | &check; | &check; | &check; |                                           |
+| Enable-ScheduledJob                        | &check; |         |         |         |                                           |
+| Enable-WSManCredSSP                        | &check; | &check; | &check; | &check; | Windows only                              |
+| Enable-WSManTrace                          | &check; |   6.2   | &check; | &check; | Windows only                              |
+| Enter-PSHostProcess                        | &check; | &check; | &check; | &check; | Added Linux support in 6.2                |
+| Enter-PSSession                            | &check; | &check; | &check; | &check; |                                           |
+| Exit-PSHostProcess                         | &check; | &check; | &check; | &check; |                                           |
+| Exit-PSSession                             | &check; | &check; | &check; | &check; |                                           |
+| Expand-Archive                             | &check; | &check; | &check; | &check; |                                           |
+| Export-Alias                               | &check; | &check; | &check; | &check; |                                           |
+| Export-BinaryMiLog                         | &check; |         |         |         |                                           |
+| Export-Clixml                              | &check; | &check; | &check; | &check; |                                           |
+| Export-Console                             | &check; |         |         |         |                                           |
+| Export-Counter                             | &check; |         |         |         |                                           |
+| Export-Csv                                 | &check; | &check; | &check; | &check; |                                           |
+| Export-FormatData                          | &check; | &check; | &check; | &check; |                                           |
+| Export-ModuleMember                        | &check; | &check; | &check; | &check; |                                           |
+| Export-ODataEndpointProxy                  | &check; |         |         |         |                                           |
+| Export-PSSession                           | &check; | &check; | &check; | &check; |                                           |
+| Find-Command                               | &check; | &check; | &check; | &check; |                                           |
+| Find-DscResource                           | &check; | &check; | &check; | &check; |                                           |
+| Find-Module                                | &check; | &check; | &check; | &check; |                                           |
+| Find-Package                               | &check; | &check; | &check; | &check; |                                           |
+| Find-PackageProvider                       | &check; | &check; | &check; | &check; |                                           |
+| Find-RoleCapability                        | &check; | &check; | &check; | &check; |                                           |
+| Find-Script                                | &check; | &check; | &check; | &check; |                                           |
+| ForEach-Object                             | &check; | &check; | &check; | &check; |                                           |
+| Format-Custom                              | &check; | &check; | &check; | &check; |                                           |
+| Format-Hex                                 | &check; | &check; | &check; | &check; |                                           |
+| Format-List                                | &check; | &check; | &check; | &check; |                                           |
+| Format-Table                               | &check; | &check; | &check; | &check; |                                           |
+| Format-Wide                                | &check; | &check; | &check; | &check; |                                           |
+| Generate-VersionInfo                       |         | &check; |         | &check; |                                           |
+| Get-Acl                                    | &check; | &check; | &check; | &check; | Windows only                              |
+| Get-Alias                                  | &check; | &check; | &check; | &check; |                                           |
+| Get-AuthenticodeSignature                  | &check; | &check; | &check; | &check; | Windows only                              |
+| Get-ChildItem                              | &check; | &check; | &check; | &check; |                                           |
+| Get-CimAssociatedInstance                  | &check; | &check; | &check; | &check; |                                           |
+| Get-CimClass                               | &check; | &check; | &check; | &check; |                                           |
+| Get-CimInstance                            | &check; | &check; | &check; | &check; |                                           |
+| Get-CimSession                             | &check; | &check; | &check; | &check; |                                           |
+| Get-Clipboard                              | &check; |         | &check; | &check; | Not supported on macOS                    |
+| Get-CmsMessage                             | &check; | &check; | &check; | &check; |                                           |
+| Get-Command                                | &check; | &check; | &check; | &check; |                                           |
+| Get-CompatibleVersionAddtionaPropertiesStr |         | &check; |         |         |                                           |
+| Get-ComplexResourceQualifier               |         | &check; |         | &check; |                                           |
+| Get-ComputerInfo                           | &check; | &check; | &check; | &check; |                                           |
+| Get-ComputerRestorePoint                   | &check; |         |         |         |                                           |
+| Get-ConfigurationErrorCount                |         | &check; |         | &check; |                                           |
+| Get-Content                                | &check; | &check; | &check; | &check; |                                           |
+| Get-ControlPanelItem                       | &check; |         |         |         |                                           |
+| Get-Counter                                | &check; |         | &check; | &check; | Windows only                              |
+| Get-Credential                             | &check; | &check; | &check; | &check; |                                           |
+| Get-CredsFromCredentialProvider            |         | &check; | &check; | &check; |                                           |
+| Get-Culture                                | &check; | &check; | &check; | &check; |                                           |
+| Get-Date                                   | &check; | &check; | &check; | &check; |                                           |
+| Get-DscConfiguration                       | &check; |         |         |         |                                           |
+| Get-DscConfigurationStatus                 | &check; |         |         |         |                                           |
+| Get-DscLocalConfigurationManager           | &check; |         |         |         |                                           |
+| Get-DscResource                            | &check; | &check; | &check; | &check; |                                           |
+| Get-DSCResourceModules                     |         | &check; |         |         |                                           |
+| Get-EncryptedPassword                      |         | &check; |         | &check; |                                           |
+| Get-Error                                  |         |         | &check; | &check; |                                           |
+| Get-Event                                  | &check; | &check; | &check; | &check; | No event sources available on Linux/macOS |
+| Get-EventLog                               | &check; |         |         |         |                                           |
+| Get-EventSubscriber                        | &check; | &check; | &check; | &check; |                                           |
+| Get-ExecutionPolicy                        | &check; | &check; | &check; | &check; |                                           |
+| Get-ExperimentalFeature                    |         |   6.2   | &check; | &check; |                                           |
+| Get-FileHash                               | &check; | &check; | &check; | &check; |                                           |
+| Get-FormatData                             | &check; | &check; | &check; | &check; |                                           |
+| Get-Help                                   | &check; | &check; | &check; | &check; |                                           |
+| Get-History                                | &check; | &check; | &check; | &check; |                                           |
+| Get-Host                                   | &check; | &check; | &check; | &check; |                                           |
+| Get-HotFix                                 | &check; |         | &check; | &check; | Windows only                              |
+| Get-InnerMostErrorRecord                   |         | &check; |         | &check; |                                           |
+| Get-InstalledModule                        | &check; | &check; | &check; | &check; |                                           |
+| Get-InstalledScript                        | &check; | &check; | &check; | &check; |                                           |
+| Get-IseSnippet                             | &check; |         |         |         |                                           |
+| Get-Item                                   | &check; | &check; | &check; | &check; |                                           |
+| Get-ItemProperty                           | &check; | &check; | &check; | &check; |                                           |
+| Get-ItemPropertyValue                      | &check; | &check; | &check; | &check; |                                           |
+| Get-Job                                    | &check; | &check; | &check; | &check; |                                           |
+| Get-JobTrigger                             | &check; |         |         |         |                                           |
+| Get-LocalGroup                             | &check; |         |         |         |                                           |
+| Get-LocalGroupMember                       | &check; |         |         |         |                                           |
+| Get-LocalUser                              | &check; |         |         |         |                                           |
+| Get-Location                               | &check; | &check; | &check; | &check; |                                           |
+| Get-LogProperties                          | &check; |   6.2   | &check; | &check; | Windows only                              |
+| Get-MarkdownOption                         |         |   6.1   | &check; | &check; |                                           |
+| Get-Member                                 | &check; | &check; | &check; | &check; |                                           |
+| Get-Module                                 | &check; | &check; | &check; | &check; |                                           |
+| Get-MofInstanceName                        |         | &check; |         |         |                                           |
+| Get-MofInstanceText                        |         | &check; |         |         |                                           |
+| Get-OperationValidation                    | &check; |         |         |         |                                           |
+| Get-Package                                | &check; | &check; | &check; | &check; |                                           |
+| Get-PackageProvider                        | &check; | &check; | &check; | &check; |                                           |
+| Get-PackageSource                          | &check; | &check; | &check; | &check; |                                           |
+| Get-PfxCertificate                         | &check; | &check; | &check; | &check; |                                           |
+| Get-PositionInfo                           |         | &check; |         | &check; |                                           |
+| Get-Process                                | &check; | &check; | &check; | &check; |                                           |
+| Get-PSBreakpoint                           | &check; | &check; | &check; | &check; |                                           |
+| Get-PSCallStack                            | &check; | &check; | &check; | &check; |                                           |
+| Get-PSCurrentConfigurationNode             |         | &check; |         |         |                                           |
+| Get-PSDefaultConfigurationDocument         |         | &check; |         | &check; |                                           |
+| Get-PSDrive                                | &check; | &check; | &check; | &check; |                                           |
+| Get-PSHostProcess                          | &check; | &check; | &check; | &check; | Added Linux support in 6.2                |
+| Get-PSHostProcessInfo                      | &check; | &check; | &check; | &check; |                                           |
+| Get-PSMetaConfigDocumentInstVersionInfo    |         | &check; |         |         |                                           |
+| Get-PSMetaConfigurationProcessed           |         | &check; |         | &check; |                                           |
+| Get-PSProvider                             | &check; | &check; | &check; | &check; |                                           |
+| Get-PSReadlineKeyHandler                   | &check; | &check; | &check; | &check; |                                           |
+| Get-PSReadlineOption                       | &check; | &check; | &check; | &check; |                                           |
+| Get-PSRepository                           | &check; | &check; | &check; | &check; |                                           |
+| Get-PSSession                              | &check; | &check; | &check; | &check; |                                           |
+| Get-PSSessionCapability                    | &check; | &check; | &check; | &check; |                                           |
+| Get-PSSessionConfiguration                 | &check; | &check; | &check; | &check; | Does not work on Linux/macOS              |
+| Get-PSSnapin                               | &check; |         |         |         |                                           |
+| Get-PSTopConfigurationName                 |         | &check; |         |         |                                           |
+| Get-PublicKeyFromFile                      |         | &check; |         |         |                                           |
+| Get-PublicKeyFromStore                     |         | &check; |         | &check; |                                           |
+| Get-Random                                 | &check; | &check; | &check; | &check; |                                           |
+| Get-Runspace                               | &check; | &check; | &check; | &check; |                                           |
+| Get-RunspaceDebug                          | &check; | &check; | &check; | &check; |                                           |
+| Get-ScheduledJob                           | &check; |         |         |         |                                           |
+| Get-ScheduledJobOption                     | &check; |         |         |         |                                           |
+| Get-Service                                | &check; | &check; | &check; | &check; | Windows only                              |
+| Get-TimeZone                               | &check; | &check; | &check; | &check; |                                           |
+| Get-TraceSource                            | &check; | &check; | &check; | &check; |                                           |
+| Get-Transaction                            | &check; |         |         |         |                                           |
+| Get-TypeData                               | &check; | &check; | &check; | &check; |                                           |
+| Get-UICulture                              | &check; | &check; | &check; | &check; |                                           |
+| Get-Unique                                 | &check; | &check; | &check; | &check; |                                           |
+| Get-Uptime                                 |         | &check; | &check; | &check; |                                           |
+| Get-Variable                               | &check; | &check; | &check; | &check; |                                           |
+| Get-Verb                                   | &check; | &check; | &check; | &check; |                                           |
+| Get-WinEvent                               | &check; | &check; | &check; | &check; |                                           |
+| Get-WmiObject                              | &check; |         |         |         |                                           |
+| Get-WSManCredSSP                           | &check; | &check; | &check; | &check; | Windows only                              |
+| Get-WSManInstance                          | &check; | &check; | &check; | &check; | Windows only                              |
+| Group-Object                               | &check; | &check; | &check; | &check; |                                           |
+| Import-Alias                               | &check; | &check; | &check; | &check; |                                           |
+| Import-BinaryMiLog                         | &check; |         |         |         |                                           |
+| Import-Clixml                              | &check; | &check; | &check; | &check; |                                           |
+| Import-Counter                             | &check; |         |         |         |                                           |
+| Import-Csv                                 | &check; | &check; | &check; | &check; |                                           |
+| Import-IseSnippet                          | &check; |         |         |         |                                           |
+| Import-LocalizedData                       | &check; | &check; | &check; | &check; |                                           |
+| Import-Module                              | &check; | &check; | &check; | &check; |                                           |
+| Import-PackageProvider                     | &check; | &check; | &check; | &check; |                                           |
+| Import-PowerShellDataFile                  | &check; | &check; | &check; | &check; |                                           |
+| Import-PSSession                           | &check; | &check; | &check; | &check; |                                           |
+| Initialize-ConfigurationRuntimeState       |         | &check; |         | &check; |                                           |
+| Install-Module                             | &check; | &check; | &check; | &check; |                                           |
+| Install-Package                            | &check; | &check; | &check; | &check; |                                           |
+| Install-PackageProvider                    | &check; | &check; | &check; | &check; |                                           |
+| Install-Script                             | &check; | &check; | &check; | &check; |                                           |
+| Invoke-AsWorkflow                          | &check; |         |         |         |                                           |
+| Invoke-CimMethod                           | &check; | &check; | &check; | &check; |                                           |
+| Invoke-Command                             | &check; | &check; | &check; | &check; |                                           |
+| Invoke-DscResource                         | &check; |         | &check; | &check; |                                           |
+| Invoke-Expression                          | &check; | &check; | &check; | &check; |                                           |
+| Invoke-History                             | &check; | &check; | &check; | &check; |                                           |
+| Invoke-Item                                | &check; | &check; | &check; | &check; |                                           |
+| Invoke-OperationValidation                 | &check; |         |         |         |                                           |
+| Invoke-RestMethod                          | &check; | &check; | &check; | &check; |                                           |
+| Invoke-WebRequest                          | &check; | &check; | &check; | &check; |                                           |
+| Invoke-WmiMethod                           | &check; |         |         |         |                                           |
+| Invoke-WSManAction                         | &check; | &check; | &check; | &check; |                                           |
+| Join-Path                                  | &check; | &check; | &check; | &check; |                                           |
+| Join-String                                |         | &check; | &check; | &check; |                                           |
+| Limit-EventLog                             | &check; |         |         |         |                                           |
+| Measure-Command                            | &check; | &check; | &check; | &check; |                                           |
+| Measure-Object                             | &check; | &check; | &check; | &check; |                                           |
+| Microsoft.PowerShell.Archive               | &check; |         |         |         |                                           |
+| Move-Item                                  | &check; | &check; | &check; | &check; |                                           |
+| Move-ItemProperty                          | &check; | &check; | &check; | &check; |                                           |
+| New-Alias                                  | &check; | &check; | &check; | &check; |                                           |
+| New-CimInstance                            | &check; | &check; | &check; | &check; |                                           |
+| New-CimSession                             | &check; | &check; | &check; | &check; |                                           |
+| New-CimSessionOption                       | &check; | &check; | &check; | &check; |                                           |
+| New-DSCCheckSum                            | &check; | &check; | &check; | &check; |                                           |
+| New-Event                                  | &check; | &check; | &check; | &check; | No event sources available on Linux/macOS |
+| New-EventLog                               | &check; |         |         |         |                                           |
+| New-FileCatalog                            | &check; | &check; | &check; | &check; |                                           |
+| New-Guid                                   | &check; | &check; | &check; | &check; |                                           |
+| New-IseSnippet                             | &check; |         |         |         |                                           |
+| New-Item                                   | &check; | &check; | &check; | &check; |                                           |
+| New-ItemProperty                           | &check; | &check; | &check; | &check; |                                           |
+| New-JobTrigger                             | &check; |         |         |         |                                           |
+| New-LocalGroup                             | &check; |         |         |         |                                           |
+| New-LocalUser                              | &check; |         |         |         |                                           |
+| New-Module                                 | &check; | &check; | &check; | &check; |                                           |
+| New-ModuleManifest                         | &check; | &check; | &check; | &check; |                                           |
+| New-Object                                 | &check; | &check; | &check; | &check; |                                           |
+| New-PSDrive                                | &check; | &check; | &check; | &check; |                                           |
+| New-PSRoleCapabilityFile                   | &check; | &check; | &check; | &check; |                                           |
+| New-PSSession                              | &check; | &check; | &check; | &check; | Does not work on Linux/macOS              |
+| New-PSSessionConfigurationFile             | &check; | &check; | &check; | &check; |                                           |
+| New-PSSessionOption                        | &check; | &check; | &check; | &check; |                                           |
+| New-PSTransportOption                      | &check; | &check; | &check; | &check; |                                           |
+| New-PSWorkflowExecutionOption              | &check; |         |         |         |                                           |
+| New-PSWorkflowSession                      | &check; |         |         |         |                                           |
+| New-ScheduledJobOption                     | &check; |         |         |         |                                           |
+| New-ScriptFileInfo                         | &check; | &check; | &check; | &check; |                                           |
+| New-Service                                | &check; | &check; | &check; | &check; | Windows only                              |
+| New-TemporaryFile                          | &check; | &check; | &check; | &check; |                                           |
+| New-TimeSpan                               | &check; | &check; | &check; | &check; |                                           |
+| New-Variable                               | &check; | &check; | &check; | &check; |                                           |
+| New-WebServiceProxy                        | &check; |         |         |         |                                           |
+| New-WinEvent                               | &check; | &check; | &check; | &check; |                                           |
+| New-WSManInstance                          | &check; | &check; | &check; | &check; | Windows only                              |
+| New-WSManSessionOption                     | &check; | &check; | &check; | &check; | Windows only                              |
+| Out-Default                                | &check; | &check; | &check; | &check; |                                           |
+| Out-File                                   | &check; | &check; | &check; | &check; |                                           |
+| Out-GridView                               | &check; |         | &check; | &check; |                                           |
+| Out-Host                                   | &check; | &check; | &check; | &check; |                                           |
+| Out-Null                                   | &check; | &check; | &check; | &check; |                                           |
+| Out-Printer                                | &check; |         | &check; | &check; | Windows only                              |
+| Out-String                                 | &check; | &check; | &check; | &check; |                                           |
+| Pop-Location                               | &check; | &check; | &check; | &check; |                                           |
+| Protect-CmsMessage                         | &check; | &check; | &check; | &check; |                                           |
+| PSDesiredStateConfiguration                | &check; | &check; |         |         |                                           |
+| Publish-DscConfiguration                   | &check; |         |         |         |                                           |
+| Publish-Module                             | &check; | &check; | &check; | &check; |                                           |
+| Publish-Script                             | &check; | &check; | &check; | &check; |                                           |
+| Push-Location                              | &check; | &check; | &check; | &check; |                                           |
+| Read-Host                                  | &check; | &check; | &check; | &check; |                                           |
+| Receive-Job                                | &check; | &check; | &check; | &check; |                                           |
+| Receive-PSSession                          | &check; | &check; | &check; | &check; |                                           |
+| Register-ArgumentCompleter                 | &check; | &check; | &check; | &check; |                                           |
+| Register-CimIndicationEvent                | &check; | &check; | &check; | &check; |                                           |
+| Register-EngineEvent                       | &check; | &check; | &check; | &check; | No event sources available on Linux/macOS |
+| Register-ObjectEvent                       | &check; | &check; | &check; | &check; |                                           |
+| Register-PackageSource                     | &check; | &check; | &check; | &check; |                                           |
+| Register-PSRepository                      | &check; | &check; | &check; | &check; |                                           |
+| Register-PSSessionConfiguration            | &check; | &check; | &check; | &check; | Does not work on Linux/macOS              |
+| Register-ScheduledJob                      | &check; |         |         |         |                                           |
+| Register-WmiEvent                          | &check; |         |         |         | No event sources available on Linux/macOS |
+| Remove-Alias                               |         | &check; | &check; | &check; |                                           |
+| Remove-CimInstance                         | &check; | &check; | &check; | &check; |                                           |
+| Remove-CimSession                          | &check; | &check; | &check; | &check; |                                           |
+| Remove-Computer                            | &check; |         |         |         |                                           |
+| Remove-DscConfigurationDocument            | &check; |         |         |         |                                           |
+| Remove-Event                               | &check; | &check; | &check; | &check; | No event sources available on Linux/macOS |
+| Remove-EventLog                            | &check; |         |         |         |                                           |
+| Remove-Item                                | &check; | &check; | &check; | &check; |                                           |
+| Remove-ItemProperty                        | &check; | &check; | &check; | &check; |                                           |
+| Remove-Job                                 | &check; | &check; | &check; | &check; |                                           |
+| Remove-JobTrigger                          | &check; |         |         |         |                                           |
+| Remove-LocalGroup                          | &check; |         |         |         |                                           |
+| Remove-LocalGroupMember                    | &check; |         |         |         |                                           |
+| Remove-LocalUser                           | &check; |         |         |         |                                           |
+| Remove-Module                              | &check; | &check; | &check; | &check; |                                           |
+| Remove-PSBreakpoint                        | &check; | &check; | &check; | &check; |                                           |
+| Remove-PSDrive                             | &check; | &check; | &check; | &check; |                                           |
+| Remove-PSReadlineKeyHandler                | &check; | &check; | &check; | &check; |                                           |
+| Remove-PSSession                           | &check; | &check; | &check; | &check; |                                           |
+| Remove-PSSnapin                            | &check; |         |         |         |                                           |
+| Remove-Service                             |         | &check; | &check; | &check; | Windows only                              |
+| Remove-TypeData                            | &check; | &check; | &check; | &check; |                                           |
+| Remove-Variable                            | &check; | &check; | &check; | &check; |                                           |
+| Remove-WmiObject                           | &check; |         |         |         |                                           |
+| Remove-WSManInstance                       | &check; | &check; | &check; | &check; | Windows only                              |
+| Rename-Computer                            | &check; | &check; | &check; | &check; |                                           |
+| Rename-Item                                | &check; | &check; | &check; | &check; |                                           |
+| Rename-ItemProperty                        | &check; | &check; | &check; | &check; |                                           |
+| Rename-LocalGroup                          | &check; |         |         |         |                                           |
+| Rename-LocalUser                           | &check; |         |         |         |                                           |
+| Reset-ComputerMachinePassword              | &check; |         |         |         |                                           |
+| Resolve-Path                               | &check; | &check; | &check; | &check; |                                           |
+| Restart-Computer                           | &check; | &check; | &check; | &check; |                                           |
+| Restart-Service                            | &check; | &check; | &check; | &check; | Windows only                              |
+| Restore-Computer                           | &check; |         |         |         |                                           |
+| Restore-DscConfiguration                   | &check; |         |         |         |                                           |
+| Resume-Job                                 | &check; |         |         |         |                                           |
+| Resume-Service                             | &check; | &check; | &check; | &check; | Windows only                              |
+| Save-Help                                  | &check; | &check; | &check; | &check; |                                           |
+| Save-Module                                | &check; | &check; | &check; | &check; |                                           |
+| Save-Package                               | &check; | &check; | &check; | &check; |                                           |
+| Save-Script                                | &check; | &check; | &check; | &check; |                                           |
+| Select-Object                              | &check; | &check; | &check; | &check; |                                           |
+| Select-String                              | &check; | &check; | &check; | &check; |                                           |
+| Select-Xml                                 | &check; | &check; | &check; | &check; |                                           |
+| Send-MailMessage                           | &check; | &check; | &check; | &check; |                                           |
+| Set-Acl                                    | &check; | &check; | &check; | &check; | Windows only                              |
+| Set-Alias                                  | &check; | &check; | &check; | &check; |                                           |
+| Set-AuthenticodeSignature                  | &check; | &check; | &check; | &check; | Windows only                              |
+| Set-CimInstance                            | &check; | &check; | &check; | &check; |                                           |
+| Set-Clipboard                              | &check; |         | &check; | &check; | Not supported on macOS                    |
+| Set-Content                                | &check; | &check; | &check; | &check; |                                           |
+| Set-Date                                   | &check; | &check; | &check; | &check; |                                           |
+| Set-DscLocalConfigurationManager           | &check; |         |         |         |                                           |
+| Set-ExecutionPolicy                        | &check; | &check; | &check; | &check; | Does nothing on Linux/macOS               |
+| Set-Item                                   | &check; | &check; | &check; | &check; |                                           |
+| Set-ItemProperty                           | &check; | &check; | &check; | &check; |                                           |
+| Set-JobTrigger                             | &check; |         |         |         |                                           |
+| Set-LocalGroup                             | &check; |         |         |         |                                           |
+| Set-LocalUser                              | &check; |         |         |         |                                           |
+| Set-Location                               | &check; | &check; | &check; | &check; |                                           |
+| Set-LogProperties                          | &check; |   6.2   | &check; | &check; | Windows only                              |
+| Set-MarkdownOption                         |         |   6.1   | &check; | &check; |                                           |
+| Set-NodeExclusiveResources                 |         | &check; |         |         |                                           |
+| Set-NodeManager                            |         | &check; |         |         |                                           |
+| Set-NodeResources                          |         | &check; |         |         |                                           |
+| Set-NodeResourceSource                     |         | &check; |         | &check; |                                           |
+| Set-PackageSource                          | &check; | &check; | &check; | &check; |                                           |
+| Set-PSBreakpoint                           | &check; | &check; | &check; | &check; |                                           |
+| Set-PSCurrentConfigurationNode             |         | &check; |         | &check; |                                           |
+| Set-PSDebug                                | &check; | &check; | &check; | &check; |                                           |
+| Set-PSDefaultConfigurationDocument         |         | &check; |         |         |                                           |
+| Set-PSMetaConfigDocInsProcessedBeforeMeta  |         | &check; |         |         |                                           |
+| Set-PSMetaConfigVersionInfoV2              |         | &check; |         | &check; |                                           |
+| Set-PSReadlineKeyHandler                   | &check; | &check; | &check; | &check; |                                           |
+| Set-PSReadlineOption                       | &check; | &check; | &check; | &check; |                                           |
+| Set-PSRepository                           | &check; | &check; | &check; | &check; |                                           |
+| Set-PSSessionConfiguration                 | &check; | &check; | &check; | &check; |                                           |
+| Set-PSTopConfigurationName                 |         | &check; |         |         |                                           |
+| Set-ScheduledJob                           | &check; |         |         |         |                                           |
+| Set-ScheduledJobOption                     | &check; |         |         |         |                                           |
+| Set-Service                                | &check; | &check; | &check; | &check; |                                           |
+| Set-StrictMode                             | &check; | &check; | &check; | &check; |                                           |
+| Set-TimeZone                               | &check; | &check; | &check; | &check; |                                           |
+| Set-TraceSource                            | &check; | &check; | &check; | &check; |                                           |
+| Set-Variable                               | &check; | &check; | &check; | &check; |                                           |
+| Set-WmiInstance                            | &check; |         |         |         |                                           |
+| Set-WSManInstance                          | &check; | &check; | &check; | &check; | Windows only                              |
+| Set-WSManQuickConfig                       | &check; | &check; | &check; | &check; | Windows only                              |
+| Show-Command                               | &check; |         | &check; | &check; |                                           |
+| Show-ControlPanelItem                      | &check; |         |         |         |                                           |
+| Show-EventLog                              | &check; |         |         |         |                                           |
+| Show-Markdown                              |         |   6.1   | &check; | &check; |                                           |
+| Sort-Object                                | &check; | &check; | &check; | &check; |                                           |
+| Split-Path                                 | &check; | &check; | &check; | &check; |                                           |
+| Start-DscConfiguration                     | &check; |         |         |         |                                           |
+| Start-Job                                  | &check; | &check; | &check; | &check; |                                           |
+| Start-Process                              | &check; | &check; | &check; | &check; |                                           |
+| Start-Service                              | &check; | &check; | &check; | &check; | Windows only                              |
+| Start-Sleep                                | &check; | &check; | &check; | &check; |                                           |
+| Start-ThreadJob                            |         | &check; | &check; | &check; |                                           |
+| Start-Trace                                | &check; |   6.2   | &check; | &check; | Windows only                              |
+| Start-Transaction                          | &check; |         |         |         |                                           |
+| Start-Transcript                           | &check; | &check; | &check; | &check; |                                           |
+| Stop-Computer                              | &check; | &check; | &check; | &check; | Added support for Linux/macOS in 7.0      |
+| Stop-DscConfiguration                      | &check; |         |         |         |                                           |
+| Stop-Job                                   | &check; | &check; | &check; | &check; |                                           |
+| Stop-Process                               | &check; | &check; | &check; | &check; |                                           |
+| Stop-Service                               | &check; | &check; | &check; | &check; | Windows only                              |
+| Stop-Trace                                 | &check; |   6.2   | &check; | &check; | Windows only                              |
+| Stop-Transcript                            | &check; | &check; | &check; | &check; |                                           |
+| Suspend-Job                                | &check; |         |         |         |                                           |
+| Suspend-Service                            | &check; | &check; | &check; | &check; | Windows only                              |
+| Tee-Object                                 | &check; | &check; | &check; | &check; |                                           |
+| Test-ComputerSecureChannel                 | &check; |         |         |         |                                           |
+| Test-ConflictingResources                  |         | &check; |         | &check; |                                           |
+| Test-Connection                            | &check; |   6.1   | &check; | &check; |                                           |
+| Test-DscConfiguration                      | &check; |         |         |         |                                           |
+| Test-FileCatalog                           | &check; | &check; | &check; | &check; |                                           |
+| Test-Json                                  |         | &check; | &check; | &check; |                                           |
+| Test-ModuleManifest                        | &check; | &check; | &check; | &check; |                                           |
+| Test-ModuleReloadRequired                  |         | &check; |         |         |                                           |
+| Test-MofInstanceText                       |         | &check; |         |         |                                           |
+| Test-NodeManager                           |         | &check; |         |         |                                           |
+| Test-NodeResources                         |         | &check; |         |         |                                           |
+| Test-NodeResourceSource                    |         | &check; |         | &check; |                                           |
+| Test-Path                                  | &check; | &check; | &check; | &check; |                                           |
+| Test-PSSessionConfigurationFile            | &check; | &check; | &check; | &check; |                                           |
+| Test-ScriptFileInfo                        | &check; | &check; | &check; | &check; |                                           |
+| Test-WSMan                                 | &check; | &check; | &check; | &check; | Windows only                              |
+| Trace-Command                              | &check; | &check; | &check; | &check; |                                           |
+| Unblock-File                               | &check; | &check; | &check; | &check; | Added support for macOS in 7.0            |
+| Undo-Transaction                           | &check; |         |         |         |                                           |
+| Uninstall-Module                           | &check; | &check; | &check; | &check; |                                           |
+| Uninstall-Package                          | &check; | &check; | &check; | &check; |                                           |
+| Uninstall-Script                           | &check; | &check; | &check; | &check; |                                           |
+| Unprotect-CmsMessage                       | &check; | &check; | &check; | &check; |                                           |
+| Unregister-Event                           | &check; | &check; | &check; | &check; | No event sources available on Linux/macOS |
+| Unregister-PackageSource                   | &check; | &check; | &check; | &check; |                                           |
+| Unregister-PSRepository                    | &check; | &check; | &check; | &check; |                                           |
+| Unregister-PSSessionConfiguration          | &check; | &check; | &check; | &check; | Does not work on Linux/macOS              |
+| Unregister-ScheduledJob                    | &check; |         |         |         |                                           |
+| Update-ConfigurationDocumentRef            |         | &check; |         |         |                                           |
+| Update-ConfigurationErrorCount             |         | &check; |         |         |                                           |
+| Update-DependsOn                           |         | &check; |         |         |                                           |
+| Update-DscConfiguration                    | &check; |         |         |         |                                           |
+| Update-FormatData                          | &check; | &check; | &check; | &check; |                                           |
+| Update-Help                                | &check; | &check; | &check; | &check; |                                           |
+| Update-List                                | &check; |         | &check; | &check; |                                           |
+| Update-LocalConfigManager                  |         | &check; |         | &check; |                                           |
+| Update-Module                              | &check; | &check; | &check; | &check; |                                           |
+| Update-ModuleManifest                      | &check; | &check; | &check; | &check; |                                           |
+| Update-ModuleVersion                       |         | &check; |         |         |                                           |
+| Update-Script                              | &check; | &check; | &check; | &check; |                                           |
+| Update-ScriptFileInfo                      | &check; | &check; | &check; | &check; |                                           |
+| Update-TypeData                            | &check; | &check; | &check; | &check; |                                           |
+| Use-Transaction                            | &check; |         |         |         |                                           |
+| ValidateUpdate-ConfigurationData           |         | &check; |         | &check; |                                           |
+| Wait-Debugger                              | &check; | &check; | &check; | &check; |                                           |
+| Wait-Event                                 | &check; | &check; | &check; | &check; |                                           |
+| Wait-Job                                   | &check; | &check; | &check; | &check; |                                           |
+| Wait-Process                               | &check; | &check; | &check; | &check; | Does not work on Linux/macOS              |
+| Where-Object                               | &check; | &check; | &check; | &check; |                                           |
+| Write-Debug                                | &check; | &check; | &check; | &check; |                                           |
+| Write-Error                                | &check; | &check; | &check; | &check; |                                           |
+| Write-EventLog                             | &check; |         |         |         |                                           |
+| Write-Host                                 | &check; | &check; | &check; | &check; |                                           |
+| Write-Information                          | &check; | &check; | &check; | &check; |                                           |
+| Write-Log                                  |         | &check; |         |         |                                           |
+| Write-MetaConfigFile                       |         | &check; |         |         |                                           |
+| Write-NodeMOFFile                          |         | &check; |         | &check; |                                           |
+| Write-Output                               | &check; | &check; | &check; | &check; |                                           |
+| Write-Progress                             | &check; | &check; | &check; | &check; |                                           |
+| Write-Verbose                              | &check; | &check; | &check; | &check; |                                           |
+| Write-Warning                              | &check; | &check; | &check; | &check; |                                           |
