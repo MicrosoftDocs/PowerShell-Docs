@@ -31,7 +31,7 @@ You can use this cmdlet to add specific commands to the history or to create a s
 ### Example 1: Add commands to the history of a different session
 ```powershell
 Get-History | Export-Csv c:\testing\history.csv
-Import-Csv history.csv | Add-History
+Import-Csv c:\testing\history.csv | Add-History
 ```
 
 These commands add the commands typed in one PowerShell session to the history of a different PowerShell session.
@@ -82,12 +82,12 @@ Without the *PassThru* parameter, the **Add-History** cmdlet does not generate a
 
 ### Example 5: Add commands in an .xml file to the current history
 ```powershell
-Add-History -InputObject (Import-Clixml c:\temp\history01.xml)
+Add-History -InputObject (Import-Clixml c:\temp\history.xml)
 ```
 
-This command adds the commands in the History01.xml file to the current session history.
+This command adds the commands in the history.xml file to the current session history.
 It uses the *InputObject* parameter to pass the results of the command in parentheses to the **Add-History** cmdlet.
-The command in parentheses, which is executed first, imports the History01.xml file into PowerShell.
+The command in parentheses, which is executed first, imports the history.xml file into PowerShell.
 The **Add-History** cmdlet then adds the commands in the file to the session history.
 
 ## PARAMETERS

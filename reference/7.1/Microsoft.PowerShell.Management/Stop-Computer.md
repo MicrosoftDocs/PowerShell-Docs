@@ -30,6 +30,9 @@ The `Stop-Computer` cmdlet shuts down the local computer and remote computers.
 You can use the parameters of `Stop-Computer` to specify the authentication levels and alternate
 credentials, and to force an immediate shut down.
 
+In PowerShell 7.1, `Stop-Computer` was added for Linux and macOS. The parameters have no effect on
+these platforms. The cmdlet is just calling the native command `/sbin/shutdown`.
+
 ## EXAMPLES
 
 ### Example 1: Shut down the local computer
@@ -262,6 +265,9 @@ You can't pipe input to this cmdlet.
 ## NOTES
 
 This cmdlet uses the **Win32Shutdown** method of the **Win32_OperatingSystem** WMI class.
+
+In PowerShell 7.1, `Stop-Computer` was added for Linux and macOS. For these platorms, the cmdlet
+calls the native command `/sbin/shutdown`.
 
 ## RELATED LINKS
 

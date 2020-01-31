@@ -653,7 +653,7 @@ namespace Microsoft.Samples.PowerShell.Host
     }
 
     /// <summary>
-    /// Gets the dimentions of the largest window size that can be
+    /// Gets the dimensions of the largest window size that can be
     /// displayed. This example uses the Console.LargestWindowWidth and
     /// console.LargestWindowHeight properties to determine the returned
     /// value of this property.
