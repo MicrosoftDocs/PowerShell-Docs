@@ -122,10 +122,10 @@ if a path was included, verify that the path is correct and try again.
 
 > [!IMPORTANT]
 > `Trap` statements may be defined anywhere within a given scope, but always
-> apply to all statements in that scope. At runtime, `Trap`s in a block are
+> apply to all statements in that scope. At runtime, `Trap` statements in a block are
 > defined before any other statements are executed. In JavaScript, this is
 > known as [hoisting](https://wikipedia.org/wiki/JavaScript_syntax#hoisting).
-> This means that `Trap`s apply to all statements in that block even if execution
+> This means that `Trap` statements apply to all statements in that block even if execution
 > has not advanced past the point at which they are defined. For example,
 > defining a `Trap` at the end of a script and throwing an error in the first
 > statement still triggers that `Trap`.
@@ -302,7 +302,8 @@ trap { "whoops 1"; continue }
 trap { "whoops 2"; continue }
 ```
 
-> [!IMPORTANT] A Trap statement is scoped to where it compiles. If you have a
+> [!IMPORTANT]
+> A Trap statement is scoped to where it compiles. If you have a
 > `Trap` statement inside a function or dot sourced script, when the function
 > or dot sourced script exits, all `Trap` statements inside are removed.
 
