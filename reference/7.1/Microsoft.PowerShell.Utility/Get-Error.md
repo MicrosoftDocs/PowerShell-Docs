@@ -161,4 +161,4 @@ Output in a **PSExtendedError** object.
 
 ## RELATED LINKS
 
-[about_Try_Catch_Finally](about_Try_Catch_Finally.md)
+[about_Try_Catch_Finally](../microsoft.powershell.Microsoft.PowerShell.Core/About/about_Try_Catch_Finally.md)
