@@ -223,7 +223,7 @@ Accept wildcard characters: False
 
 Specifies the maximum version of a single module to install. If you want to install multiple
 modules, you cannot use **MaximumVersion**. **MaximumVersion** and **RequiredVersion** cannot be
-used in the same `Install-Module` command. The value is treated inclusive. 
+used in the same `Install-Module` command. The value is treated inclusive.
 
 ```yaml
 Type: String
