@@ -1,5 +1,5 @@
 ---
-ms.date:  12/18/2019
+ms.date: 01/31/2020
 keywords:  powershell,core
 title:  Breaking Changes for PowerShell 6.0
 ---
@@ -7,6 +7,18 @@ title:  Breaking Changes for PowerShell 6.0
 # Breaking Changes for PowerShell 6.x
 
 ## Features no longer available in PowerShell Core
+
+### Modules not shipped for PowerShell 6.x
+
+For various compatibility reasons, the following modules are not included in PowerShell 6.
+
+- ISE
+- Microsoft.PowerShell.LocalAccounts
+- Microsoft.PowerShell.ODataUtils
+- Microsoft.PowerShell.Operation.Validation
+- PSScheduledJob
+- PSWorkflow
+- PSWorkflowUtility
 
 ### PowerShell Workflow
 
@@ -44,10 +56,11 @@ Today, this breaks the `ActiveDirectory` and `DnsClient` modules in Windows and 
 Due to the complexity of supporting two sets of WMI-based modules, we removed the WMI v1 cmdlets
 from PowerShell Core:
 
-- `Get-WmiObject`
-- `Invoke-WmiMethod`
 - `Register-WmiEvent`
 - `Set-WmiInstance`
+- `Invoke-WmiMethod`
+- `Get-WmiObject`
+- `Remove-WmiObject`
 
 Instead, we recommend that you the use the CIM (aka WMI v2) cmdlets which provide the same
 functionality with new functionality and a redesigned syntax:
@@ -75,15 +88,40 @@ PowerShell Core until a better solution is found.
 .NET Core does not support the Windows Communication Framework, which provide services for using the
 SOAP protocol. This cmdlet was removed because it requires SOAP.
 
-### `*-Computer` cmdlets
+### `*-Transaction` cmdlets removed
 
-Due to the use of unsupported APIs, the following cmdlets have been removed from PowerShell Core until a
-better solution is found.
+These cmdlets had very limited usage. The decision was made to discontinue support for them.
 
-- Add-Computer
-- Checkpoint-Computer
-- Remove-Computer
-- Restore-Computer
+- `Complete-Transaction`
+- `Get-Transaction`
+- `Start-Transaction`
+- `Undo-Transaction`
+- `Use-Transaction`
+
+### `*-Computer`and other Windows-specific cmdlets
+
+Due to the use of unsupported APIs, the following cmdlets have been removed from PowerShell Core
+until a better solution is found.
+
+- `Get-Clipboard`
+- `Set-Clipboard`
+- `Add-Computer`
+- `Checkpoint-Computer`
+- `Remove-Computer`
+- `Restore-Computer`
+- `Reset-ComputerMachinePassword`
+- `Disable-ComputerRestore`
+- `Enable-ComputerRestore`
+- `Get-ComputerRestorePoint`
+- `Test-ComputerSecureChannel`
+- `Get-ControlPanelItem`
+- `Show-ControlPanelItem`
+- `Get-HotFix`
+- `Clear-RecycleBin`
+- `Update-List`
+- `Out-Printer`
+- `ConvertFrom-String`
+- `Convert-String`
 
 ### `*-Counter` cmdlets
 
@@ -95,6 +133,31 @@ better solution is found.
 Due to the use of unsupported APIs, the `*-EventLog` has been removed from PowerShell Core. until a
 better solution is found. `Get-WinEvent` and `Create-WinEvent` are available to get and create
 events on Windows.
+
+### Cmdlets that use WPF removed
+
+The Windows Presentation Framework is not supported on CoreCLR. The following cmdlets are affected:
+
+- `Show-Command`
+- `Out-GridView`
+- The **showwindow** parameter of `Get-Help`
+
+### Some DSC cmdlets removed
+
+- `Get-DscConfiguration`
+- `Publish-DscConfiguration`
+- `Restore-DscConfiguration`
+- `Start-DscConfiguration`
+- `Stop-DscConfiguration`
+- `Test-DscConfiguration`
+- `Update-DscConfiguration`
+- `Remove-DscConfigurationDocument`
+- `Get-DscConfigurationStatus`
+- `Disable-DscDebug`
+- `Enable-DscDebug`
+- `Get-DscLocalConfigurationManager`
+- `Set-DscLocalConfigurationManager`
+- `Invoke-DscResource`
 
 ## Engine/language changes
 

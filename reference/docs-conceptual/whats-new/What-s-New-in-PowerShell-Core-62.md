@@ -16,8 +16,8 @@ Previously, we enabled support for [Experimental Features][]. In the 6.2 release
 experimental features to try out. Please provide feedback so we can make improvements and to decide
 whether the feature is worth promoting to mainstream status.
 
-Use `Get-ExperimentalFeature` to get a list of available experimental features. You can enable
-or disable these features with `Enable-ExperimentalFeature` and `Disable-ExperimentalFeature`.
+Use `Get-ExperimentalFeature` to get a list of available experimental features. You can enable or
+disable these features with `Enable-ExperimentalFeature` and `Disable-ExperimentalFeature`.
 
 ### Command Not Found Suggestions
 

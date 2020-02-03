@@ -222,9 +222,10 @@ Accept wildcard characters: False
 
 ### -MaximumVersion
 
-Specifies the maximum version of a single module to install. If you want to install multiple
-modules, you cannot use **MaximumVersion**. **MaximumVersion** and **RequiredVersion** cannot be
-used in the same `Install-Module` command.
+Specifies the maximum version of a single module to install. The version installed must be less than
+or equal to **MaximumVersion**. If you want to install multiple modules, you cannot use
+**MaximumVersion**. **MaximumVersion** and **RequiredVersion** cannot be used in the same
+`Install-Module` command. 
 
 ```yaml
 Type: String
@@ -240,10 +241,11 @@ Accept wildcard characters: False
 
 ### -MinimumVersion
 
-Specifies the minimum version of a single module to install. If there is a newer version of the
-module available, the newer version is installed. If you want to install multiple modules, you
-cannot use **MinimumVersion**. **MinimumVersion** and **RequiredVersion** cannot be used in the same
-`Install-Module` command.
+Specifies the minimum version of a single module to install. The version installed must be greater than
+or equal to **MinimumVersion**. If there is a newer version of the module available, the newer
+version is installed. If you want to install multiple modules, you cannot use **MinimumVersion**.
+**MinimumVersion** and **RequiredVersion** cannot be used in the same `Install-Module` command.
+
 
 ```yaml
 Type: String
