@@ -56,7 +56,7 @@ for($I = 1; $I -lt 101; $I++ )
 }
 ```
 
-```powershell
+```Output
 Updating
 Progress ->
  [ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo]
@@ -112,6 +112,32 @@ This command displays the progress of a command to find the string "bios" in the
 The **PercentComplete** parameter value is calculated by dividing the number of events that have
 been processed `$I` by the total number of events retrieved `$Events.count` and then multiplying
 that result by 100.
+
+### Example 4: Display progress for each level of a nested process
+
+```powershell
+foreach ( $i in 1..10 ) {
+  Write-Progress -Id 0 "Step $i"
+  foreach ( $j in 1..10 ) {
+    Write-Progress -Id 1 -ParentId 0 "Step $i - Substep $j"
+    foreach ( $k in 1..10 ) {
+      Write-Progress -Id 2  -ParentId 1 "Step $i - Substep $j - iteration $k"; start-sleep -m 150
+    }
+  }
+}
+```
+
+```Output
+Step 1
+     Processing
+    Step 1 - Substep 2
+         Processing
+        Step 1 - Substep 2 - Iteration 3
+             Processing
+```
+
+In this example you can use the **ParentId** parameter to have indented output to show parent/child
+relationships in the progress of each step.
 
 ## PARAMETERS
 
@@ -237,7 +263,8 @@ Accept wildcard characters: False
 
 ### -SourceId
 
-Specifies the source of the record.
+Specifies the source of the record. You can use this in place of **Id** but cannot be used with
+other parameters like **ParentId**.
 
 ```yaml
 Type: Int32

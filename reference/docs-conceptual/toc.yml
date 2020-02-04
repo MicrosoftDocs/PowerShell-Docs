@@ -654,8 +654,8 @@
           href: samples/creating-.net-and-com-objects--new-object-.md
         - name: Using static classes and methods
           href: samples/using-static-classes-and-methods.md
-        - name: Getting WMI objects - Get-WmiObject
-          href: samples/getting-wmi-objects--get-wmiobject-.md
+        - name: Getting WMI objects - Get-CimInstance
+          href: samples/getting-wmi-objects--get-ciminstance-.md
     - name: Managing computers
       items:
         - name: Changing computer state

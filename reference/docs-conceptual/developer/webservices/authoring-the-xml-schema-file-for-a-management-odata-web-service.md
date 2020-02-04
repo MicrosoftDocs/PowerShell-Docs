@@ -19,7 +19,7 @@ The first part of the XML file maps the resources defined in the MOF schema file
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
-<ResourceMetadata xmlns="http://schemas.microsoft.com/powershell-web-services/2010/09">
+<ResourceMetadata xmlns="https://schemas.microsoft.com/powershell-web-services/2010/09">
     <SchemaNamespace>PswsTest</SchemaNamespace>
     <ContainerName>PSWSEntityContainer</ContainerName>
     <Resources>

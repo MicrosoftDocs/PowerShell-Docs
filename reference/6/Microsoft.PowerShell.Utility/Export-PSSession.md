@@ -68,7 +68,7 @@ formatting data into the Server01 module.
 This example exports all of the `Get` and `Set` commands from a server.
 
 ```powershell
-$S = New-PSSession -ConnectionUri http://exchange.microsoft.com/mailbox -Credential exchangeadmin01@hotmail.com -Authentication Negotiate
+$S = New-PSSession -ConnectionUri https://exchange.microsoft.com/mailbox -Credential exchangeadmin01@hotmail.com -Authentication Negotiate
 Export-PSSession -Session $S -Module exch* -CommandName Get-*, Set-* -FormatTypeName * -OutputModule $PSHOME\Modules\Exchange -Encoding ASCII
 ```
 

@@ -3,12 +3,11 @@ external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Management
-ms.date: 01/22/2019
+ms.date: 02/04/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/push-location?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Push-Location
 ---
-
 # Push-Location
 
 ## SYNOPSIS
@@ -45,7 +44,8 @@ For more information about location stacks, see the Notes.
 
 ### Example 1
 
-This example pushes the current location onto the default location stack and then changes the location to `C:\Windows`.
+This example pushes the current location onto the default location stack and then changes the
+location to `C:\Windows`.
 
 ```
 PS C:\> Push-Location C:\Windows
@@ -53,7 +53,8 @@ PS C:\> Push-Location C:\Windows
 
 ### Example 2
 
-This example pushes the current location onto the RegFunction stack and changes the current location to the `HKLM:\Software\Policies` location.
+This example pushes the current location onto the RegFunction stack and changes the current location
+to the `HKLM:\Software\Policies` location.
 
 ```
 PS C:\> Push-Location HKLM:\Software\Policies -StackName RegFunction
@@ -63,8 +64,7 @@ You can use the Location cmdlets in any PowerShell drive (PSDrive).
 
 ### Example 3
 
-This command pushes the current location onto the default stack.
-It does not change the location.
+This command pushes the current location onto the default stack. It does not change the location.
 
 ```
 PS C:\> Push-Location
@@ -84,10 +84,9 @@ The first command pushes the current location onto a new stack named Stack2, and
 current location to the home directory, which is represented in the command by the tilde symbol (~)
 (same as `$env:USERPROFILE` or `$HOME`).
 
-If Stack2 does not already exist in the session, `Push-Location` creates it. The second command
-uses the `Pop-Location` cmdlet to pop the original location (PS C:\\\>) from the Stack2 stack.
-Without the StackName parameter, `Pop-Location` would pop the location from the unnamed default
-stack.
+If Stack2 does not already exist in the session, `Push-Location` creates it. The second command uses
+the `Pop-Location` cmdlet to pop the original location (`C:\`) from the Stack2 stack. Without the
+StackName parameter, `Pop-Location` would pop the location from the unnamed default stack.
 
 For more information about location stacks, see the [Notes](#notes).
 
@@ -98,7 +97,7 @@ For more information about location stacks, see the [Notes](#notes).
 Specifies the path to the new location. Unlike the **Path** parameter, the value of the
 **LiteralPath** parameter is used exactly as it is typed. No characters are interpreted as
 wildcards. If the path includes escape characters, enclose it in single quotation marks. Single
-quotation marks tell Windows PowerShell not to interpret any characters as escape sequences.
+quotation marks tell PowerShell not to interpret any characters as escape sequences.
 
 ```yaml
 Type: String
@@ -176,7 +175,8 @@ Accept wildcard characters: False
 ### -UseTransaction
 
 Includes the command in the active transaction. This parameter is valid only when a transaction is
-in progress. For more information, see [about_Transactions](../Microsoft.PowerShell.Core/About/about_transactions.md).
+in progress. For more information, see
+[about_Transactions](../Microsoft.PowerShell.Core/About/about_transactions.md).
 
 ```yaml
 Type: SwitchParameter
@@ -212,6 +212,14 @@ When you use the PassThru parameter, `Push-Location` generates a
 cmdlet does not generate any output.
 
 ## NOTES
+
+PowerShell supports multiple runspaces per process. Each runspace has its own _current directory_.
+This is not that same as `[System.Environment]::CurrentDirectory`. This behavior can be an issue
+when calling .NET APIs or running native applications without providing explicit directory paths.
+
+Even if the location cmdlets did set the process-wide current directory, you can't depend on it
+because another runspace might change it at any time. You should use the location cmdlets to perform
+path-based operations using the current working directory specific to the current runspace.
 
 A "stack" is a last-in, first-out list in which only the most recently added item is accessible.
 You add items to a stack in the order that you use them, and then retrieve them for use in the
@@ -260,4 +268,3 @@ providers available in your session, type `Get-PSProvider`. For more information
 [Set-Location](Set-Location.md)
 
 [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md)
-
