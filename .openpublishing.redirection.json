@@ -61,6 +61,11 @@
       "redirect_document_id": true
     },
     {
+      "source_path": "reference/docs-conceptual/samples/Getting-WMI-Objects--Get-WmiObject-.md",
+      "redirect_url": "https://docs.microsoft.com/PowerShell/scripting/samples/getting-wmi-objects--get-ciminstance-",
+      "redirect_document_id": true
+    },
+    {
       "source_path": "reference/5.1/Microsoft.PowerShell.Core/about/about_psreadline.md",
       "redirect_url": "https://docs.microsoft.com/powershell/module/psreadline/about/about_psreadline?view=powershell-5.1",
       "redirect_document_id": false
