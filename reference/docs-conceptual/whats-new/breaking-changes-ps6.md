@@ -1,5 +1,5 @@
 ---
-ms.date: 01/31/2020
+ms.date: 02/03/2020
 keywords:  powershell,core
 title:  Breaking Changes for PowerShell 6.0
 ---
@@ -97,6 +97,18 @@ These cmdlets had very limited usage. The decision was made to discontinue suppo
 - `Start-Transaction`
 - `Undo-Transaction`
 - `Use-Transaction`
+
+### Security cmdlets not available on non-Windows platforms
+
+- `Get-Acl`
+- `Set-Acl`
+- `Get-AuthenticodeSignature`
+- `Set-AuthenticodeSignature`
+- `Get-CmsMessage`
+- `Protect-CmsMessage`
+- `Unprotect-CmsMessage`
+- `New-FileCatalog`
+- `Test-FileCatalog`
 
 ### `*-Computer`and other Windows-specific cmdlets
 
