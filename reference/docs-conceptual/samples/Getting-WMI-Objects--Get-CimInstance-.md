@@ -1,11 +1,11 @@
 ---
 ms.date:  12/23/2019
 keywords:  powershell,cmdlet
-title:  Getting WMI Objects Get WmiObject
+title:  Getting WMI Objects Get CimInstance
 ---
-# Getting WMI Objects (Get-WmiObject)
+# Getting WMI Objects (Get-CimInstance)
 
-## Getting WMI Objects (Get-WmiObject)
+## Getting WMI Objects (Get-CimInstance)
 
 Windows Management Instrumentation (WMI) is a core technology for Windows system administration
 because it exposes a wide range of information in a uniform manner. Because of how much WMI makes
@@ -84,7 +84,7 @@ parameters. With `Get-CimInstance`, if no name is specified for the first parame
 treats it as the **Class** parameter. This means the last command could have been issued by typing:
 
 ```powershell
-Get-WmiObject Win32_OperatingSystem
+Get-CimInstance Win32_OperatingSystem
 ```
 
 The **Win32_OperatingSystem** class has many more properties than those displayed here. You can use
