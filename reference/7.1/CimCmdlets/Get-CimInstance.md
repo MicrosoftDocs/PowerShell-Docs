@@ -440,7 +440,7 @@ is used to identify a specific type of resource, such as disks or processes, on 
 
 A URI consists of a prefix and a path to a resource. For example:
 
-- `http://schemas.microsoft.com/wbem/wsman/1/wmi/root/cimv2/Win32_LogicalDisk`
+- `https://schemas.microsoft.com/wbem/wsman/1/wmi/root/cimv2/Win32_LogicalDisk`
 - `http://intel.com/wbem/wscim/1/amt-schema/1/AMT_GeneralSettings`
 
 By default, if you do not specify this parameter, the DMTF standard resource URI

@@ -1,7 +1,7 @@
 ---
 external help file: PSDesiredStateConfiguration-help.xml
 Module Name: PSDesiredStateConfiguration
-online version: http://go.microsoft.com/fwlink/?LinkId=517195
+online version: https://go.microsoft.com/fwlink/?LinkId=517195
 schema: 2.0.0
 ---
 
