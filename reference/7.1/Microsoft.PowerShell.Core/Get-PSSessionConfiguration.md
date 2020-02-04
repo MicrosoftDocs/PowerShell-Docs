@@ -82,11 +82,11 @@ SchemaVersion                 : 1.0.0.0
 LanguageMode                  : FullLanguage
 Architecture                  : 64
 Filename                      : %windir%\system32\pwrshplugin.dll
-ResourceUri                   : http://schemas.microsoft.com/powershell/Full
+ResourceUri                   : https://schemas.microsoft.com/powershell/Full
 MaxConcurrentCommandsPerShell : 1500
 UseSharedProcess              : false
 ProcessIdleTimeoutSec         : 0
-xmlns                         : http://schemas.microsoft.com/wbem/wsman/1/config/PluginConfiguration
+xmlns                         : https://schemas.microsoft.com/wbem/wsman/1/config/PluginConfiguration
 MaxConcurrentUsers            : 10
 lang                          : en-US
 SupportsOptions               : true
@@ -230,7 +230,7 @@ variable, which takes a resource URI.
 ```
 
 ```Output
-http://schemas.microsoft.com/powershell/microsoft.CustomShell
+https://schemas.microsoft.com/powershell/microsoft.CustomShell
 ```
 
 The `$PSSessionConfigurationName` variable specifies the default configuration that is used when you

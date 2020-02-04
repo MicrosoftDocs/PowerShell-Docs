@@ -177,7 +177,7 @@ Name                           Property
 BB71E00}                       Comments            :
                                Contact             :
                                DisplayVersion      : 5.1.50918.0
-                               HelpLink            : http://go.microsoft.com/fwlink/?LinkID=91955
+                               HelpLink            : https://go.microsoft.com/fwlink/?LinkID=91955
                                HelpTelephone       :
                                InstallDate         : 20190115
                                InstallLocation     : C:\Program Files\Microsoft Silverlight\

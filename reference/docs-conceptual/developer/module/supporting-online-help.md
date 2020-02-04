@@ -50,7 +50,7 @@ The following XML shows the correct placement of the URI. The "Online version:" 
 <maml:relatedLinks>
     <maml:navigationLink>
         <maml:linkText>Online version:</maml:linkText>
-        <maml:uri>http://go.microsoft.com/fwlink/?LinkID=113279</maml:uri>
+        <maml:uri>https://go.microsoft.com/fwlink/?LinkID=113279</maml:uri>
     </maml:navigationLink>
     <maml:navigationLink>
         <maml:linkText>about_History</maml:linkText>
@@ -70,7 +70,7 @@ For cmdlets written in C#, add a **HelpUri** attribute to the Cmdlet class. The 
 The following code shows the HelpUri attribute of the `Get-History` cmdlet class.
 
 ```
-[Cmdlet(VerbsCommon.Get, "History", HelpUri = "http://go.microsoft.com/fwlink/?LinkID=001122")]
+[Cmdlet(VerbsCommon.Get, "History", HelpUri = "https://go.microsoft.com/fwlink/?LinkID=001122")]
 ```
 
 ### Adding a HelpUri Property to an Advanced Function
@@ -83,7 +83,7 @@ The following code shows the HelpUri attribute of the New-Calendar function
 
 function New-Calendar {
     [CmdletBinding(SupportsShouldProcess=$true,
-    HelpURI="http://go.microsoft.com/fwlink/?LinkID=01122")]
+    HelpURI="https://go.microsoft.com/fwlink/?LinkID=01122")]
 ```
 
 ### Adding a HelpUri Attribute to a CIM Command
@@ -93,7 +93,7 @@ For CIM commands, add a **HelpUri** attribute to the **CmdletMetadata** element 
 The following code shows the HelpUri attribute of the Start-Debug CIM command
 
 ```
-<CmdletMetadata Verb="Debug" HelpUri="http://go.microsoft.com/fwlink/?LinkID=001122"/>
+<CmdletMetadata Verb="Debug" HelpUri="https://go.microsoft.com/fwlink/?LinkID=001122"/>
 ```
 
 ### Adding a HelpUri Attribute to a Workflow
@@ -106,5 +106,5 @@ For workflows that are written in the Windows PowerShell language, add an **.Ext
 The following code shows the .ExternalHelp directive in a workflow file.
 
 ```powershell
-# .ExternalHelp "http://go.microsoft.com/fwlink/?LinkID=138338"
+# .ExternalHelp "https://go.microsoft.com/fwlink/?LinkID=138338"
 ```

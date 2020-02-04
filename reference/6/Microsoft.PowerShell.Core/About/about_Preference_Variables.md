@@ -47,7 +47,7 @@ The following table lists the preference variables and their default values.
 | `$PSEmailServer`                 | (None)                    |
 | `$PSModuleAutoLoadingPreference` | All                       |
 | `$PSSessionApplicationName`      | wsman                     |
-| `$PSSessionConfigurationName`    | `http://schemas.microsoft.com/powershell/Microsoft.PowerShell` |
+| `$PSSessionConfigurationName`    | `https://schemas.microsoft.com/powershell/Microsoft.PowerShell` |
 | `$PSSessionOption`               | See [$PSSessionOption](#pssessionoption) |
 | `$VerbosePreference`             | SilentlyContinue          |
 | `$WarningPreference`             | Continue                  |
@@ -966,13 +966,13 @@ The value of the `$PSSessionConfigurationName` variable is a fully qualified
 resource URI.
 
 The default value
-`http://schemas.microsoft.com/PowerShell/microsoft.PowerShell` indicates the
+`https://schemas.microsoft.com/PowerShell/microsoft.PowerShell` indicates the
 **Microsoft.PowerShell** session configuration on the remote computer.
 
 If you specify only a configuration name, the following schema URI is
 prepended:
 
-`http://schemas.microsoft.com/PowerShell/`
+`https://schemas.microsoft.com/PowerShell/`
 
 You can override the default and select a different session configuration for a
 particular session by using the **ConfigurationName** parameter of the
