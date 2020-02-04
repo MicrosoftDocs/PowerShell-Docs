@@ -34,7 +34,7 @@ For example:
 @{
 RootModule = TestModule.psm1
 ModuleVersion = '2.0'
-HelpInfoURI = 'http://go.microsoft.com/fwlink/?LinkID=0123'
+HelpInfoURI = 'https://go.microsoft.com/fwlink/?LinkID=0123'
 }
 ```
 

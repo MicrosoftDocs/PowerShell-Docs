@@ -32,7 +32,7 @@ highlightedContent:
     # Card
     - title: PowerShell Gallery
       itemType: deploy
-      url: http://www.powershellgallery.com/
+      url: https://www.powershellgallery.com/
     # Card
     - title: PowerShell Module Browser
       itemType: reference
