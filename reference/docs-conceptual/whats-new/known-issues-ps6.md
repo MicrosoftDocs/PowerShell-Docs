@@ -1,5 +1,5 @@
 ---
-ms.date:  05/17/2018
+ms.date: 02/03/2020
 keywords:  powershell,core
 title:  Known Issues for PowerShell 6.0
 ---
@@ -16,7 +16,7 @@ community regarding the choices we make.
 
 Note: Due to the similarities of many underlying subsystems, PowerShell on Linux and macOS tend to
 share the same level of maturity in both features and bugs. Except as noted below, the issues in
-this section will apply to both operating systems.
+this section apply to both operating systems.
 
 ### Case-sensitivity in PowerShell
 
@@ -31,44 +31,43 @@ standard of the file system; this is exposed through a number of ways, obvious a
 #### Indirectly
 
 - If a script tries to load a module and the module name is not cased correctly, then the module
-  load will fail. This may cause a problem with existing scripts if the name by which the module is
-  referenced doesn't match the actual file name.
-- Tab-completion will not auto-complete if the file name case is wrong. The fragment to complete
-  must be cased properly. (Completion is case-insensitive for type name and type member
-  completions.)
+  load fails. This may cause a problem with existing scripts if the name by which the module is
+  referenced doesn't match the actual filename.
+- Tab-completion does not auto-complete if the filename case is wrong. The fragment to complete must
+  be cased properly. (Completion is case-insensitive for type name and type member completions.)
 
 ### .PS1 File Extensions
 
 PowerShell scripts must end in `.ps1` for the interpreter to understand how to load and run them in
 the current process. Running scripts in the current process is the expected usual behavior for
-PowerShell. The `#!` magic number may be added to a script that doesn't have a `.ps1` extension,
-but this will cause the script to be run in a new PowerShell instance preventing the script from
-working properly when interchanging objects. (Note: this may be the desirable behavior when
-executing a PowerShell script from `bash` or another shell.)
+PowerShell. The `#!` magic number may be added to a script that doesn't have a `.ps1` extension, but
+this causes the script to be run in a new PowerShell instance preventing the script from working
+properly when interchanging objects. (Note: this may be the desirable behavior when executing a
+PowerShell script from `bash` or another shell.)
 
 ### Missing command aliases
 
 On Linux/macOS, the "convenience aliases" for the basic commands `ls`, `cp`, `mv`, `rm`, `cat`,
-`man`, `mount`, `ps` have been removed. On Windows, PowerShell provides a set of aliases that map
-to Linux command names for user convenience. These aliases have been removed from the default
-PowerShell on Linux/macOS distributions, allowing the native executable to be run without
-specifying a path.
+`man`, `mount`, `ps` have been removed. On Windows, PowerShell provides a set of aliases that map to
+Linux command names for user convenience. These aliases have been removed from the default
+PowerShell on Linux/macOS distributions, allowing the native executable to be run without specifying
+a path.
 
-There are pros and cons to doing this. Removing the aliases exposes the native command experience
-to the PowerShell user, but reduces functionality in the shell because the native commands return
+There are pros and cons to doing this. Removing the aliases exposes the native command experience to
+the PowerShell user, but reduces functionality in the shell because the native commands return
 strings instead of objects.
 
 > [!NOTE]
-> This is an area where the PowerShell team is looking for feedback.
-> What is the preferred solution? Should we leave it as is or add the convenience aliases back? See
+> This is an area where the PowerShell team is looking for feedback. What is the preferred solution?
+> Should we leave it as is or add the convenience aliases back? See
 > [Issue #929](https://github.com/PowerShell/PowerShell/issues/929).
 
 ### Missing Wildcard (globbing) Support
 
 Currently, PowerShell only does wildcard expansion (globbing) for built-in cmdlets on Windows, and
 for external commands or binaries as well as cmdlets on Linux. This means that a command like `ls
-*.txt` will fail because the asterisk will not be expanded to match file names. You can work around
-this by doing `ls (gci *.txt | % name)` or, more simply, `gci *.txt` using the PowerShell built-in
+*.txt` fails because the asterisk is not expanded to match filenames. You can work around this by
+doing `ls (gci *.txt | % name)` or, more simply, `gci *.txt` using the PowerShell built-in
 equivalent to `ls`.
 
 See [#954](https://github.com/PowerShell/PowerShell/issues/954) to give us feedback on how to
@@ -82,10 +81,11 @@ types, methods, etc. As a result, scripts that run on Windows may not run on non
 because of the differences in the frameworks. For more information about .NET Core Framework, see
 [dotnetfoundation.org](https://dotnetfoundation.org/).
 
-With the advent of [.NET Standard2.0](https://devblogs.microsoft.com/dotnet/introducing-net-standard/),
-.NET Core 2.0 will bring back many of the traditional types and methods present in the full .NET
-Framework. This means that PowerShell Core will be able to load many traditional Windows PowerShell
-modules without modification. You can follow our .NET Standard 2.0 related work
+With the advent of
+[.NET Standard 2.0](https://devblogs.microsoft.com/dotnet/introducing-net-standard/), .NET Core 2.0
+brings back many of the traditional types and methods present in the full .NET Framework. This means
+that PowerShell Core can load many traditional Windows PowerShell modules without modification. You
+can follow our .NET Standard 2.0 related work
 [here](https://github.com/PowerShell/PowerShell/projects/4).
 
 ### Redirection Issues
@@ -95,10 +95,9 @@ Input redirection is not supported in PowerShell on any platform.
 
 Use `Get-Content` to write the contents of a file into the pipeline.
 
-Redirected output will contain the Unicode byte order mark (BOM) when the default UTF-8 encoding is
-used. The BOM will cause problems when working with utilities that do not expect it or when
-appending to a file. Use `-Encoding Ascii` to write ASCII text (which, not being Unicode, will not
-have a BOM).
+Redirected output contains the Unicode byte order mark (BOM) when the default UTF-8 encoding is
+used. The BOM causes problems when working with utilities that do not expect it or when appending to
+a file. Use `-Encoding Ascii` to write ASCII text, which does not have a BOM.
 
 > [!Note]
 > see [RFC0020](https://github.com/PowerShell/PowerShell-RFC/issues/71) to give
@@ -141,15 +140,16 @@ run a PowerShell cmdlet from within PowerShell with sudo, for example, `sudo Set
 then you would do `sudo pwsh Set-Date 8/18/2016`. Likewise, you can't exec a PowerShell
 built-in directly. Instead you would have to do `exec pwsh item_to_exec`.
 
-This issue is currently being tracked as part of [#3232](https://github.com/PowerShell/PowerShell/issues/3232).
+This issue is being tracked as part of
+[#3232](https://github.com/PowerShell/PowerShell/issues/3232).
 
 ### Missing Cmdlets
 
 A large number of the commands (cmdlets) normally available in PowerShell are not available on
 Linux/macOS. In many cases, these commands make no sense on these platforms (e.g. Windows-specific
 features like the registry). Other commands like the service control commands
-(Get/Start/Stop-Service) are present, but not functional. Future releases will correct these
-problems, fixing the broken cmdlets and adding new ones over time.
+(Get/Start/Stop-Service) are present, but not functional. Future releases may correct these problems
+by fixing the broken cmdlets and adding new ones over time.
 
 ### Command Availability
 
@@ -157,11 +157,10 @@ The following table lists commands that are known not to work in PowerShell on L
 
 |Commands|Operational State|Notes|
 |--------|-----------------|-----|
-|`Get-Service`, `New-Service`, `Restart-Service`, `Resume-Service`, `Set-Service`, `Start-Service`, `Stop-Service`, `Suspend-Service`|Not Available.|These commands will not be recognized. This should be fixed in a future release.|
-|`Get-Acl`, `Set-Acl`|Not available.|These commands will not be recognized. This should be fixed in a future release.|
-|`Get-AuthenticodeSignature`, `Set-AuthenticodeSignature`|Not available.|These commands will not be recognized. This should be fixed in a future release.|
+|`Get-Service`, `New-Service`, `Restart-Service`, `Resume-Service`, `Set-Service`, `Start-Service`, `Stop-Service`, `Suspend-Service`|Not Available.|These commands are not recognized. This should be fixed in a future release.|
+|`Get-Acl`, `Get-AuthenticodeSignature`, `Get-CmsMessage`, `New-FileCatalog`, `Protect-CmsMessage`, `Set-Acl`, `Set-AuthenticodeSignature`, `Test-FileCatalog`, `Unprotect-CmsMessage`|Not available.|These commands are not recognized. This should be fixed in a future release.|
 |`Wait-Process`|Available, doesn't work properly. |For example `Start-Process gvim -PassThru | Wait-Process` doesn't work; it fails to wait for the process.|
-|`Register-PSSessionConfiguration`, `Unregister-PSSessionConfiguration`, `Get-PSSessionConfiguration`|Available but doesn't work.|Writes an error message indicating that the commands are not working. These should be fixed in a future release.|
-|`Get-Event`, `New-Event`, `Register-EngineEvent`, `Register-WmiEvent`, `Remove-Event`, `Unregister-Event`|Available but no event sources are available.|The PowerShell eventing commands are present but most of the event sources used with the commands (such as System.Timers.Timer) are not available on Linux making the commands useless in the Alpha release.|
+|`Connect-PSSession`, `Disable-PSRemoting`, `Disable-PSSessionConfiguration`, `Disconnect-PSSession`, `Enable-PSRemoting`, `Enable-PSSessionConfiguration`, `Get-PSSessionCapability`, `Get-PSSessionConfiguration`, `New-PSSessionConfigurationFile`, `Receive-PSSession`, `Register-PSSessionConfiguration`, `Set-PSSessionConfiguration`, `Test-PSSessionConfigurationFile`, `Unregister-PSSessionConfiguration`|Not Available.|These commands are not recognized. This should be fixed in a future release.|
+|`Get-Event`, `New-Event`, `Register-EngineEvent`, `Remove-Event`, `Unregister-Event`|Available but no event sources are available.|The PowerShell eventing commands are present but most of the event sources used with the commands (such as System.Timers.Timer) are not available on Linux making the commands useless in the Alpha release.|
 |`Set-ExecutionPolicy`|Available but doesn't work.|Returns a message saying not supported on this platform. Execution policy is a user-focused "safety belt" that helps prevent the user from making expensive mistakes. It is not a security boundary.|
 |`New-PSSessionOption`, `New-PSTransportOption`|Available but `New-PSSession` doesn't work.|`New-PSSessionOption` and `New-PSTransportOption` are not currently verified to work now that `New-PSSession` works.|
