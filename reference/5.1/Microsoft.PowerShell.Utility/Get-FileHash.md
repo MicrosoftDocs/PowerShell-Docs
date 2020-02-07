@@ -56,79 +56,75 @@ is supported by the target operating system can be used.
 
 ## EXAMPLES
 
-### Example 1: Compute the hash value for a PowerShell.exe file
+### Example 1: Compute the hash value for a file
 
 This example uses the `Get-FileHash` cmdlet to compute the hash value for the `Powershell.exe` file.
 The hash algorithm used is the default, SHA256. The output is piped to the `Format-List` cmdlet to
 format the output as a list.
 
 ```powershell
-Get-FileHash $pshome\powershell.exe | Format-List
+Get-FileHash $PSHOME\powershell.exe | Format-List
 ```
 
 ```Output
 Algorithm : SHA256
-Hash      : 6A785ADC0263238DAB3EB37F4C185C8FBA7FEB5D425D034CA9864F1BE1C1B473
+Hash      : 908B64B1971A979C7E3E8CE4621945CBA84854CB98D76367B791A6E22B5F6D53
 Path      : C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
 ```
 
 ### Example 2: Compute the hash value for an ISO file
 
-This example uses the `Get-FileHash` cmdlet and the SHA384 algorithm to compute the hash value for
-an ISO file that an administrator has downloaded from the internet. The output is piped to the
+This example uses the `Get-FileHash` cmdlet and the **SHA384** algorithm to compute the hash value
+for an ISO file that an administrator has downloaded from the internet. The output is piped to the
 `Format-List` cmdlet to format the output as a list.
 
 ```powershell
-Get-FileHash C:\Users\Andris\Downloads\Contoso8_1_ENT.iso -Algorithm SHA384 | Format-List
+Get-FileHash C:\Users\user1\Downloads\Contoso8_1_ENT.iso -Algorithm SHA384 | Format-List
 ```
 
 ```Output
 Algorithm : SHA384
 Hash      : 20AB1C2EE19FC96A7C66E33917D191A24E3CE9DAC99DB7C786ACCE31E559144FEAFC695C58E508E2EBBC9D3C96F21FA3
-Path      : C:\Users\Andris\Downloads\Contoso8_1_ENT.iso
+Path      : C:\Users\user1\Downloads\Contoso8_1_ENT.iso
 ```
 
-### Example 3: Compute the hash value of a stream and compare the procedure with getting the hash from the file directly
+### Example 3: Compute the hash value of a stream
 
-This example uses the `Get-FileHash` cmdlet and the SHA384 algorithm to compute the hash value for
-an ISO file that an administrator has downloaded from the internet. The output is piped to the
-`Format-List` cmdlet to format the output as a list.
+For this example, we get are using **System.Net.WebClient** to download a package from the
+[Powershell release page](https://github.com/PowerShell/PowerShell/releases/tag/v6.2.4). The release
+page also documents the SHA256 hash of each package file. We can compare the published hash value
+with the one we calculate with `Get-FileHash`.
 
 ```powershell
-# Path of Microsoft.PowerShell.Utility.psd1
-$file = (Get-Module Microsoft.PowerShell.Utility).Path
-
-$hashFromFile = Get-FileHash -Path $file -Algorithm MD5
-
-# Open $file as a stream
-$stream = [System.IO.File]::OpenRead($file)
-$hashFromStream = Get-FileHash -InputStream $stream -Algorithm MD5
-$stream.Close()
-
-Write-Host '### Hash from File ###' -NoNewline
-$hashFromFile | Format-List
-Write-Host '### Hash from Stream ###' -NoNewline
-$hashFromStream | Format-List
-
-# Check both hashes are the same
-if ($hashFromFile.Hash -eq $hashFromStream.Hash) {
-  Write-Host 'Get-FileHash results are consistent' -ForegroundColor Green
-} else {
-  Write-Host 'Get-FileHash results are inconsistent!!' -ForegroundColor Red
-}
+$wc = [System.Net.WebClient]::new()
+$pkgurl = 'https://github.com/PowerShell/PowerShell/releases/download/v6.2.4/powershell_6.2.4-1.debian.9_amd64.deb'
+$publishedHash = '8E28E54D601F0751922DE24632C1E716B4684876255CF82304A9B19E89A9CCAC'
+$FileHash = Get-FileHash -InputStream ($wc.OpenRead($pkgurl))
+$FileHash.Hash -eq $publishedHash
 ```
 
 ```Output
-Algorithm : MD5
-Hash      : 593D6592BD9B7F9174711AB136F5E751
-Path      : C:\Program Files\PowerShell\6.0.0\Modules\Microsoft.Powe
-            rShell.Utility\Microsoft.PowerShell.Utility.psd1
+True
+```
 
-Algorithm : MD5
-Hash      : 593D6592BD9B7F9174711AB136F5E751
-Path      :
+### Example 4: Compute the hash of a string
 
-Get-FileHash results are consistent
+PowerShell does not provide a cmdlet to compute the hash of a string. However, you can write a
+string to a stream and use the **InputStream** parameter of `Get-FileHash` to get the hash value.
+
+```powershell
+$stringAsStream = [System.IO.MemoryStream]::new()
+$writer = [System.IO.StreamWriter]::new($stringAsStream)
+$writer.write("Hello world")
+$writer.Flush()
+$stringAsStream.Position = 0
+Get-FileHash -InputStream $stringAsStream | Select-Object Hash
+```
+
+```Output
+Hash
+----
+E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855
 ```
 
 ## PARAMETERS
@@ -136,9 +132,9 @@ Get-FileHash results are consistent
 ### -Algorithm
 
 Specifies the cryptographic hash function to use for computing the hash value of the contents of the
-specified file. A cryptographic hash function has the property that it is infeasible to find two
-different files with the same hash value. Hash functions are commonly used with digital signatures
-and for data integrity. The acceptable values for this parameter are:
+specified file or stream. A cryptographic hash function has the property that it is infeasible to
+find two different files with the same hash value. Hash functions are commonly used with digital
+signatures and for data integrity. The acceptable values for this parameter are:
 
 - SHA1
 - SHA256
