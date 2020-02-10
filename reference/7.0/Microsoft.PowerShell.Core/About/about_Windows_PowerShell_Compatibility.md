@@ -50,7 +50,7 @@ $ConfigPath = "$PSHOME\DisableWinCompat.powershell.config.json"
 pwsh -settingsFile $ConfigPath # Implicit Windows PowerShell Compatibility funtionality is Disabled in this PowerShell
 ```
 
-In All 3 cases above a praticular module can be blocked from loading using
+In All 3 cases above a module can be blocked from loading using
 Windows PowerShell Compatibility by a `WindowsPowerShellCompatibilityModuleDenyList`
 setting in PowerShell configuration file. The default value of this setting:
 
