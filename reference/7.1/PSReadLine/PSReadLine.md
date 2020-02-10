@@ -19,10 +19,12 @@ in PowerShell. These articles documents PSReadLine v2.0. This version ships in P
 the Windows 10 October 2018 Update (Build 1809).
 
 > [!NOTE]
-> In PowerShell 7.0, PowerShell skips auto-loading PSReadLine on Windows if the
-> [NVDA screen reader](https://www.nvaccess.org/download/) is active.
-> Currently, PSReadLine doesn't work well with the screen reader. The default
-> rendering and formatting of PowerShell 7.0 on Windows works properly.
+> Beginning with PowerShell 7.0, PowerShell skips auto-loading PSReadLine on
+> Windows if a screen reader program is detected. Currently, PSReadLine doesn't
+> work well with the screen readers. The default rendering and formatting of
+> PowerShell 7.0 on Windows works properly. You can manually load the module if
+> necessary.
+
 
 ## PSReadLine Cmdlets
 
