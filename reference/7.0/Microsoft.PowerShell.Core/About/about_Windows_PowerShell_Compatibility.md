@@ -50,6 +50,14 @@ $ConfigPath = "$PSHOME\DisableWinCompat.powershell.config.json"
 pwsh -settingsFile $ConfigPath # Implicit Windows PowerShell Compatibility funtionality is Disabled in this PowerShell
 ```
 
+In All 3 cases above a praticular module can be blocked from loading using
+Windows PowerShell Compatibility by a `WindowsPowerShellCompatibilityModuleDenyList`
+setting in PowerShell configuration file. The default value of this setting:
+
+```json
+"WindowsPowerShellCompatibilityModuleDenyList":  ["PSScheduledJob","BestPractices","UpdateServices"]
+```
+
 When the first module is imported using Windows PowerShell Compatibility funtionality
 a `WinPSCompatSession` remoting session is created (using the same transport that
 PowerShell jobs use). This remoting session can be used for operations that
