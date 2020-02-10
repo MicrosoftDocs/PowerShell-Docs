@@ -5,7 +5,7 @@ keywords: powershell
 locale: en-US
 Module Guid: 5714753b-2afd-4492-a5fd-01d9e2cff8b5
 Module Name: PSReadLine
-ms.date: 12/07/2018
+ms.date: 02/10/2020
 schema: 2.0.0
 title: PSReadLine
 ---
@@ -17,6 +17,12 @@ title: PSReadLine
 The PSReadLine module contains cmdlets that let you customize the command-line editing environment
 in PowerShell. These articles documents PSReadLine v2.0. This version ships in PowerShell v6 and
 the Windows 10 October 2018 Update (Build 1809).
+
+> [!NOTE]
+> In PowerShell 7.0, PowerShell skips auto-loading PSReadLine on Windows if the
+> [NVDA screen reader](https://www.nvaccess.org/download/) is active.
+> Currently, PSReadLine doesn't work well with the screen reader. The default
+> rendering and formatting of PowerShell 7.0 on Windows works properly.
 
 ## PSReadLine Cmdlets
 
