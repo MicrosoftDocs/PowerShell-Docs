@@ -89,10 +89,10 @@ The **ThrottleLimit** parameter ensures that all five script blocks run at the s
 
 [!NOTE] The cmdlet `Foreach-Object` includes a switch parameter **-AsJob** to run as a background
 job. For further details see;
-[Background Jobs](https://docs.microsoft.com/en-us/powershell/scripting/developer/cmdlet/background-jobs?view=powershell-7)
+[Background Jobs](https://docs.microsoft.com/powershell/scripting/developer/cmdlet/background-jobs?view=powershell-7)
 
 For more information, see
-[Foreach-Object](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/foreach-object?view=powershell-7)
+[Foreach-Object](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/foreach-object?view=powershell-7)
 
 ## Ternary operator
 
@@ -120,7 +120,7 @@ In this example, if the path exists, then "Path exists" is displayed. If the pat
 then "Path not found" is displayed.
 
 For more information, see
-[About If](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_if?view=powershell-7)
+[About If](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_if?view=powershell-7)
 
 ## Pipeline chain operators
 
@@ -177,7 +177,7 @@ Second
 ```
 
 For more information, see
-[About Pipeline Chain Operators](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_pipeline_chain_operators?view=powershell-7)
+[About Pipeline Chain Operators](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_pipeline_chain_operators?view=powershell-7)
 
 ## Null-coalescing, assignment, and conditional operators
 
@@ -227,7 +227,7 @@ $todaysDate ??= (Get-Date).ToShortDateString()
 
 ### Null-conditional operators ?. and ?[]
 
-[!NOTE] This is an experimental feature. For more information see [about_Experimental_Features](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_experimental_features?view=powershell-7).
+[!NOTE] This is an experimental feature. For more information see [about_Experimental_Features](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_experimental_features?view=powershell-7).
 
 A null-conditional operator permits member access, `?.`, or element access, `?[]`, to its operand
 only if that operand evaluates to non-null; otherwise, it returns null.
@@ -267,7 +267,7 @@ ${a}?[0]
 ```
 
 for more information, see
-[About_Operators](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_operators?view=powershell-7)
+[About_Operators](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_operators?view=powershell-7)
 
 ## New ErrorView and Get-Error cmdlets
 
@@ -360,7 +360,7 @@ Get-Error -Newest 3 # Displays the lst three errors that occurred in the session
 ```
 
 For more information, see
-[Get-Error](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/get-error?view=powershell-7)
+[Get-Error](https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/get-error?view=powershell-7)
 
 ## New DSC Resource support with Invoke-DSCResource
 
@@ -380,7 +380,7 @@ Invoke-DscResource -Name Log -Method Set -ModuleName PSDesiredStateConfiguration
 ```
 
 For more information, see
-[Invoke-DSCResource](https://docs.microsoft.com/en-us/powershell/module/psdesiredstateconfiguration/invoke-dscresource?view=powershell-7)
+[Invoke-DSCResource](https://docs.microsoft.com/powershell/module/psdesiredstateconfiguration/invoke-dscresource?view=powershell-7)
 
 ## New version notification
 
@@ -422,7 +422,7 @@ $Env:POWERSHELL_UPDATECHECK = 'Default'
 ```
 
 For more information, see
-[About Update Notifications](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_update_notifications?view=powershell-7)
+[About Update Notifications](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_update_notifications?view=powershell-7)
 
 ## Installing or Migrating to PowerShell 7.0
 
@@ -435,10 +435,10 @@ Core, the below information will get you started.
 
 If this is your first time installing PowerShell, check the installation instructions for your
 preferred operating system
-[Windows](https://docs.microsoft.com/en-us/powershell/scripting/install/installing-powershell-core-on-windows?view=powershell-7),
-[macOS](https://docs.microsoft.com/en-us/powershell/scripting/install/installing-powershell-core-on-macos?view=powershell-7),
+[Windows](https://docs.microsoft.com/powershell/scripting/install/installing-powershell-core-on-windows?view=powershell-7),
+[macOS](https://docs.microsoft.com/powershell/scripting/install/installing-powershell-core-on-macos?view=powershell-7),
 or
-[Linux](https://docs.microsoft.com/en-us/powershell/scripting/install/installing-powershell-core-on-linux?view=powershell-7).
+[Linux](https://docs.microsoft.com/powershell/scripting/install/installing-powershell-core-on-linux?view=powershell-7).
 
 If you already have experience installing PowerShell Core or one of the previews and just looking
 for a binary package (whether it's an MSI, ZIP, RPM, or something else), then visit the
@@ -479,7 +479,7 @@ remoting is now available and allows true multiplatform PowerShell Remoting.
 
 SSH remoting creates a PowerShell host process on the target computer as an SSH subsystem. For
 details and examples on setting up Windows or Linux for SSH-based remoting, see:
-[PowerShell Remoting over SSH](https://docs.microsoft.com/en-us/powershell/scripting/learn/remoting/ssh-remoting-in-powershell-core?view=powershell-7)
+[PowerShell Remoting over SSH](https://docs.microsoft.com/powershell/scripting/learn/remoting/ssh-remoting-in-powershell-core?view=powershell-7)
 
 The `New-PSSession`, `Enter-PSSession`, and `Invoke-Command` cmdlets now have a new parameter set to
 support this new remoting connection.
@@ -505,7 +505,7 @@ Enter-PSSession -HostName <Username>@<Computer>
 
 You can also use SSH key authentication using a private key file with the KeyFilePath parameter. For
 more information, see;
-[OpenSSH Key Management](https://docs.microsoft.com/en-us/windows-server/administration/openssh/openssh_keymanagement)
+[OpenSSH Key Management](https://docs.microsoft.com/windows-server/administration/openssh/openssh_keymanagement)
 
 ## Breaking Changes and Improvements
 
