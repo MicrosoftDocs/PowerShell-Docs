@@ -364,7 +364,8 @@ For more information, see
 
 ## New DSC Resource support with Invoke-DSCResource
 
-The `Invoke-DscResource` cmdlet runs a method of a specified PowerShell Desired State Configuration (DSC) resource.
+The `Invoke-DscResource` cmdlet runs a method of a specified PowerShell Desired State Configuration
+(DSC) resource.
 
 This cmdlet invokes a DSC resource directly, without creating a configuration document. Using this
 cmdlet, configuration management products can manage windows or Linux by using DSC resources. This
