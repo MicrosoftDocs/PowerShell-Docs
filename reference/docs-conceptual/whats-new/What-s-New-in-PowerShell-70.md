@@ -1,17 +1,8 @@
 ---
 title: What's New in PowerShell 7.0
 description: New features and changes released in PowerShell 7.0
-ms.date: 01/21/2020
+ms.date: 02/19/2020
 ---
-
-TODO
-
-- Improved backwards compatibility with Windows PowerShell
-  - TODO: Jason - Get the doc reference from Joey [Module Compatibility Table](Link)
-- Migrating from Windows PowerShell 5.1 to PowerShell 7.0
-  - TODO: Wordsmith
-  - TODO: Example?
-  - TODO: Doc link
 
 # What's New in PowerShell 7.0
 
@@ -45,7 +36,7 @@ our detailed [changelogs](https://github.com/PowerShell/PowerShell/releases) on 
 
 ## Improved backwards compatibility with Windows PowerShell
 
-TODO: Jason - Get the doc reference from Joey [Doc ref](Link)
+TODO - links with TODO
 
 If you weren't able to use PowerShell Core 6.x in the past because of module compatibility issues,
 this might be the first time you get to take advantage of some of the awesome features we already
@@ -56,6 +47,12 @@ The shift from PowerShell Core 6.x to 7.0 marks our move from .NET Core 2.x to 3
 backwards compatibility with existing Windows PowerShell modules. This includes many modules on
 Windows that require GUI functionality like `Out-GridView` and `Show-Command`, as well as many role
 management modules that ship as part of Windows.
+
+On Windows, we've also added a **-UseWindowsPowerShell** switch to `Import-Module` to ease the
+transition to PowerShell 7 for those using incompatible modules. This switch creates a proxy module
+in PowerShell 7 that uses a local Windows PowerShell process to implicitly run any cmdlets contained
+in that module. For more information on this functionality, check out the [Import-Module](TODO)
+documentation.
 
 For more info, check out our module compatibility table showing off how you can the latest,
 up-to-date modules that work with PowerShell 7: [Module Compatibility Table](TODO)
@@ -426,26 +423,92 @@ $Env:POWERSHELL_UPDATECHECK = 'Default'
 For more information, see
 [About Update Notifications](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_update_notifications?view=powershell-7)
 
-## Migrating from Windows PowerShell 5.1 to PowerShell 7.0
+## Installing or Migrating to PowerShell 7.0
 
-TODO: Wordsmith
-TODO: Example?
-TODO: Doc link
+PowerShell 7 is designed to work fully side-by-side with Windows PowerShell and PowerShell Core, so
+migrating to PowerShell 7 won't interfere with your existing work. Whether your installing
+PowerShell on macOS or Linux for the first time, or migrating from Windows PowerShell or PowerShell
+Core, the below information will get you started.
 
 ### How do I get PowerShell 7?
 
-TODO: Add links
+If this is your first time installing PowerShell, check the installation instructions for your
+preferred operating system
+[Windows](https://docs.microsoft.com/en-us/powershell/scripting/install/installing-powershell-core-on-windows?view=powershell-7),
+[macOS](https://docs.microsoft.com/en-us/powershell/scripting/install/installing-powershell-core-on-macos?view=powershell-7),
+or
+[Linux](https://docs.microsoft.com/en-us/powershell/scripting/install/installing-powershell-core-on-linux?view=powershell-7).
 
-First, check out our install docs for Windows, macOS, or Linux. Depending on the version of your OS and preferred package format, there may be multiple installation methods.
+If you already have experience installing PowerShell Core or one of the previews and just looking
+for a binary package (whether it's an MSI, ZIP, RPM, or something else), then visit the
+[GitHub Release page](https://github.com/PowerShell/PowerShell/releases) and get the PowerShell 7
+package of your choice.
 
-If you already know what you're doing, and you're just looking for a binary package (whether it's an MSI, ZIP, RPM, or something else), hop on over to our latest release tag on GitHub
+Additionally, you may want to use one of our many Docker container images. For more information on
+using those, check out our [PowerShell-Docker](https://hub.docker.com/_/microsoft-powershell) repo.
 
-Additionally, you may want to use one of our many Docker container images. For more information on using those, check out our PowerShell-Docker repo.
+### Running PowerShell 7
+
+PowerShell 7 runs side-by-side with previous versions of Windows PowerShell or PowerShell Core. When
+PowerShell 7 installs, a new directory containing the installation is added to your path. Your
+existing install directory will remain.
+
+- Windows PowerShell 5.1 : `C:\Windows\System32\WindowsPowerShell\v1.0` will add
+`%programfiles%\PowerShell\7`
+- PowerShell Core 6.x on Windows: `%programfiles%\PowerShell\6` will add
+add to with `%programfiles%\PowerShell\7`
+- Linux: `/opt/microsoft/powershell/6` will add
+`/opt/microsoft/powershell/7`
+- macOS: `/usr/local/microsoft/powershell/6` will add
+`/usr/local/microsoft/powershell/7`
+
+[!NOTE] In Windows PowerShell, the executable to launch PowerShell is named `powershell.exe`. In
+version 6 and above, the executable is changed to support side-by-side execution. The new executable
+to launch PowerShell 7 is `pwsh.exe`.
+
+[!NOTE] Preview builds will remain in-place as `pwsh-preview` instead of `pwsh` under the 7-preview
+directory instead of 7. We plan on releasing a 7.1 preview very soon so that you can already try out
+some of the new features that have been merged on GitHub.
 
 ### PowerShell SSH Remoting
 
+In previous versions of Windows PowerShell, remoting was handled through WinRM for connection
+negotiation and data transport. To support cross platform needs for Windows and Linux, SSH-based
+remoting is now available and allows true multiplatform PowerShell Remoting.
 
-## Breaking Changes
+SSH remoting creates a PowerShell host process on the target computer as an SSH subsystem. For
+details and examples on setting up Windows or Linux for SSH-based remoting, see:
+[PowerShell Remoting over SSH](https://docs.microsoft.com/en-us/powershell/scripting/learn/remoting/ssh-remoting-in-powershell-core?view=powershell-7)
+
+The `New-PSSession`, `Enter-PSSession`, and `Invoke-Command` cmdlets now have a new parameter set to
+support this new remoting connection.
+
+```powershell
+[-HostName <string>]  [-UserName <string>]  [-KeyFilePath <string>]
+```
+
+To create a remote session, you specify the target computer with the **HostName** parameter and
+provide the user name with **UserName**. When running the cmdlets interactively, you're prompted for
+a password.
+
+```powershell
+Enter-PSSession -HostName <Computer> -UserName <Username>
+```
+
+Alternatively, When using the **HostName** parameter, you can provide the username information
+followed by the **@** sign, followed by the computer name.
+
+```powershell
+Enter-PSSession -HostName <Username>@<Computer>
+```
+
+You can also use SSH key authentication using a private key file with the KeyFilePath parameter. For
+more information, see;
+[OpenSSH Key Management](https://docs.microsoft.com/en-us/windows-server/administration/openssh/openssh_keymanagement)
+
+## Breaking Changes and Improvements
+
+### Breaking Changes
 
 - Make update notification support LTS and default channels (#11132)
 - Update Test-Connection to work more like the one in Windows PowerShell (#10697) (Thanks @vexx32!)
@@ -453,7 +516,7 @@ Additionally, you may want to use one of our many Docker container images. For m
 - Set working directory to current directory in Start-Job (#10920) (Thanks @iSazonov!)
 - Make $PSCulture consistently reflect in-session culture changes (#10138) (Thanks @iSazonov!)
 
-## Experimental Features
+### Experimental Features
 
 - Provide Unix stat information in filesystem output (#11042)
 - Support null-conditional operators ?. and ?[] in PowerShell language (#10960)
@@ -467,7 +530,7 @@ Additionally, you may want to use one of our many Docker container images. For m
 - Add APIs for breakpoint management in runspaces and enable attach to process without BreakAll for PowerShell Editor Services (#10338) (Thanks @KirkMunro!)
 - Support ternary operator in PowerShell language (#10367)
 
-## Engine Updates and Fixes
+### Engine Updates and Fixes
 
 - Improvements in breakpoint APIs for remote scenarios (#11312)
 - Fix PowerShell class definition leaking into another Runspace (#11273)
@@ -488,7 +551,7 @@ Additionally, you may want to use one of our many Docker container images. For m
 - Add support to ActionPreference.Break to break into debugger when Debug, Error, Information, Progress, Verbose or Warning messages are generated (#8205) (Thanks @KirkMunro!)
 - Enable starting control panel add-ins within PowerShell Core without specifying .CPL extension. (#9828)
 
-## General Cmdlet Updates and Fixes
+### General Cmdlet Updates and Fixes
 
 - Fix for issue on Raspbian for setting date of file changes in UnixStat Experimental Feature (#11313)
 - Add -AsPlainText to ConvertFrom-SecureString (#11142)
@@ -575,9 +638,7 @@ Additionally, you may want to use one of our many Docker container images. For m
 - Increase built-with-PowerShell module versions to 7.0.0.0 (#10356)
 - Add throwing an error in Add-Type if a type with the same name already exists (#9609) (Thanks @iSazonov!)
 
-
-
-## Performance
+### Performance
 
 - Avoid using closure in Parser.SaveError (#11006)
 - Improve the caching when creating new Regex instances (#10657) (Thanks @iSazonov!)
@@ -586,8 +647,7 @@ Additionally, you may want to use one of our many Docker container images. For m
 - Add minor performance improvements for runspace initialization (#10569) (Thanks @iSazonov!)
 - Make ForEach-Object faster for its commonly used scenarios (#10454) and fix ForEach-Object -Parallel performance problem with many runspaces (#10455)
 
-
-## Code Cleanup
+### Code Cleanup
 
 - Change comment and element text to meet Microsoft standards (#11304)
 - Cleanup style issues in Compiler.cs (#10368) (Thanks @iSazonov!)
@@ -615,7 +675,7 @@ Additionally, you may want to use one of our many Docker container images. For m
 - Cleanup AutomationEngine and remove extra SetSessionStateDrive method call (#10416) (Thanks @iSazonov!)
 - Rename default ParameterSetName back to Delimiter for ConvertTo-Csv and ConvertFrom-Csv (#10425)
 
-## Tools
+### Tools
 
 - Add default setting for the SDKToUse property so that it builds in VS (#11085)
 - Install-Powershell.ps1: Add parameter to use MSI installation (#10921) (Thanks @MJECloud!)
@@ -626,8 +686,7 @@ Additionally, you may want to use one of our many Docker container images. For m
 - Remove unneeded tap in installpsh-osx.sh (#10752)
 - Update install-powershell.ps1 to check for already installed daily build (#10489)
 
-
-## Tests
+### Tests
 
 - Make unreliable DSC test pending (#11131)
 - Fix stringdata test to correctly validate keys of hashtables (#10810)
@@ -643,7 +702,7 @@ Additionally, you may want to use one of our many Docker container images. For m
 - Add experimental check to ForEach-Object -Parallel tests (#10354) (Thanks @KirkMunro!)
 - Update tests for Alpine validation (#10428)
 
-## Build and Package Improvements
+### Build and Package Improvements
 
 - Fix Nuget package signing for Coordinated Package build (#11316)
 - Update dependencies from PowerShell Gallery and NuGet (#11323)
@@ -696,8 +755,7 @@ Additionally, you may want to use one of our many Docker container images. For m
 - Bump NJsonSchema version from 10.0.22 to 10.0.23 (#10421)
 - Remove the deletion of linux-x64 build folder because some dependencies for Alpine need it (#10407)
 
-
-## Documentation and Help Content
+### Documentation and Help Content
 
 - Refactor change logs into one log per release (#11165)
 - Fix FWLinks for PowerShell 7 online help documents (#11071)
