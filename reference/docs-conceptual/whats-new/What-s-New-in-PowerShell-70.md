@@ -457,7 +457,7 @@ existing install directory will remain.
 - Windows PowerShell 5.1 : `C:\Windows\System32\WindowsPowerShell\v1.0` will add
 `%programfiles%\PowerShell\7`
 - PowerShell Core 6.x on Windows: `%programfiles%\PowerShell\6` will add
-add to with `%programfiles%\PowerShell\7`
+ `%programfiles%\PowerShell\7`
 - Linux: `/opt/microsoft/powershell/6` will add
 `/opt/microsoft/powershell/7`
 - macOS: `/usr/local/microsoft/powershell/6` will add
