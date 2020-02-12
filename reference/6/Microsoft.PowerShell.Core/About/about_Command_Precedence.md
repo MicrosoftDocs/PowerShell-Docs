@@ -106,12 +106,12 @@ For more information about how PowerShell uses wildcards, see [about_Wildcards](
 > few guarantees that the file will be found.
 
 If you do not specify a path, PowerShell uses the following precedence order
-when it runs commands:
+when it runs commands for all items loaded in the current session:
 
   1. Alias
   2. Function
   3. Cmdlet
-  4. Native Windows commands
+  4. External executable files (programs and scripts)
 
 Therefore, if you type "help", PowerShell first looks for an alias named
 `help`, then a function named `Help`, and finally a cmdlet named `Help`. It
@@ -119,6 +119,14 @@ runs the first `help` item that it finds.
 
 For example, if your session contains a cmdlet and a function, both named
 `Get-Map`, when you type `Get-Map`, PowerShell runs the function.
+
+> [!NOTE]
+> This only applies to loaded commands. If there is a `build` executable and an
+> Alias `build` for a function with the name of `Invoke-Build` inside a module that
+> is not loaded into the current session, PowerShell will execute the `build` executable
+> instead. It will not auto-load modules if it finds the external executable in this case.
+> It is only if no external executable is found that an alias / function / cmdlet with
+> the given name is invoked, thereby triggering auto-loading of its module.
 
 When the session contains items of the same type that have the same name,
 PowerShell runs the newer item.
