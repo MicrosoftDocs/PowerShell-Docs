@@ -1,7 +1,7 @@
 ---
 keywords: powershell,cmdlet
 locale: en-us
-ms.date: 11/21/2019
+ms.date: 02/12/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_functions_advanced_parameters?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Functions_Advanced_Parameters
@@ -227,7 +227,7 @@ Param(
 )
 ```
 
-For more information about parameter sets, see [Cmdlet Parameter Sets](/powershell/scripting/developer/cmdlet/cmdlet-parameter-sets).
+For more information about parameter sets, see [About Parameter Sets](about_parameter_sets.md).
 
 ### ValueFromPipeline argument
 
