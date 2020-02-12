@@ -3,7 +3,7 @@ external help file: Microsoft.PowerShell.Utility-help.xml
 keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 06/09/2017
+ms.date: 02/06/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/get-filehash?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-FileHash
@@ -35,99 +35,106 @@ Get-FileHash -InputStream <Stream> [-Algorithm <String>] [<CommonParameters>]
 
 ## DESCRIPTION
 
-The **Get-FileHash** cmdlet computes the hash value for a file by using a specified hash algorithm.
-A hash value is a unique value that corresponds to the content of the file.
-Rather than identifying the contents of a file by its file name, extension, or other designation, a hash assigns a unique value to the contents of a file.
-File names and extensions can be changed without altering the content of the file, and without changing the hash value.
-Similarly, the file's content can be changed without changing the name or extension.
-However, changing even a single character in the contents of a file changes the hash value of the file.
+The `Get-FileHash` cmdlet computes the hash value for a file by using a specified hash algorithm.
+A hash value is a unique value that corresponds to the content of the file. Rather than identifying
+the contents of a file by its file name, extension, or other designation, a hash assigns a unique
+value to the contents of a file. File names and extensions can be changed without altering the
+content of the file, and without changing the hash value. Similarly, the file's content can be
+changed without changing the name or extension. However, changing even a single character in the
+contents of a file changes the hash value of the file.
 
-The purpose of hash values is to provide a cryptographically-secure way to verify that the contents of a file have not been changed.
-While some hash algorithms, including MD5 and SHA1, are no longer considered secure against attack, the goal of a secure hash algorithm is to render it impossible to change the contents of a file-either by accident, or by malicious or unauthorized attempt-and maintain the same hash value.
-You can also use hash values to determine if two different files have exactly the same content.
-If the hash values of two files are identical, the contents of the files are also identical.
+The purpose of hash values is to provide a cryptographically-secure way to verify that the contents
+of a file have not been changed. While some hash algorithms, including MD5 and SHA1, are no longer
+considered secure against attack, the goal of a secure hash algorithm is to render it impossible to
+change the contents of a file -- either by accident, or by malicious or unauthorized attempt -- and
+maintain the same hash value. You can also use hash values to determine if two different files have
+exactly the same content. If the hash values of two files are identical, the contents of the files
+are also identical.
 
-By default, the **Get-FileHash** cmdlet uses the SHA256 algorithm, although any hash algorithm that is supported by the target operating system can be used.
+By default, the `Get-FileHash` cmdlet uses the SHA256 algorithm, although any hash algorithm that
+is supported by the target operating system can be used.
 
 ## EXAMPLES
 
-### Example 1: Compute the hash value for a PowerShell.exe file
+### Example 1: Compute the hash value for a file
+
+This example uses the `Get-FileHash` cmdlet to compute the hash value for the `Powershell.exe` file.
+The hash algorithm used is the default, SHA256. The output is piped to the `Format-List` cmdlet to
+format the output as a list.
 
 ```powershell
-PS C:\> Get-FileHash $pshome\powershell.exe | Format-List
+Get-FileHash $PSHOME\powershell.exe | Format-List
+```
+
+```Output
 Algorithm : SHA256
-Hash      : 6A785ADC0263238DAB3EB37F4C185C8FBA7FEB5D425D034CA9864F1BE1C1B473
+Hash      : 908B64B1971A979C7E3E8CE4621945CBA84854CB98D76367B791A6E22B5F6D53
 Path      : C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
 ```
 
-This command uses the **Get-FileHash** cmdlet to compute the hash value for the Powershell.exe file.
-The hash algorithm used is the default, SHA256.
-The output is piped to the Format-List cmdlet to format the output as a list.
-
 ### Example 2: Compute the hash value for an ISO file
 
-```powershell
-PS C:\> Get-FileHash C:\Users\Andris\Downloads\Contoso8_1_ENT.iso -Algorithm SHA384 | Format-List
+This example uses the `Get-FileHash` cmdlet and the **SHA384** algorithm to compute the hash value
+for an ISO file that an administrator has downloaded from the internet. The output is piped to the
+`Format-List` cmdlet to format the output as a list.
 
+```powershell
+Get-FileHash C:\Users\user1\Downloads\Contoso8_1_ENT.iso -Algorithm SHA384 | Format-List
+```
+
+```Output
 Algorithm : SHA384
 Hash      : 20AB1C2EE19FC96A7C66E33917D191A24E3CE9DAC99DB7C786ACCE31E559144FEAFC695C58E508E2EBBC9D3C96F21FA3
-Path      : C:\Users\Andris\Downloads\Contoso8_1_ENT.iso
+Path      : C:\Users\user1\Downloads\Contoso8_1_ENT.iso
 ```
 
-This command uses the **Get-FileHash** cmdlet and the SHA384 algorithm to compute the hash value for an ISO file that an administrator has downloaded from the Internet.
-The output is piped to the Format-List cmdlet to format the output as a list.
+### Example 3: Compute the hash value of a stream
 
-### Example 3: Compute the hash value of a stream and compare the procedure with getting the hash from the file directly
+For this example, we get are using **System.Net.WebClient** to download a package from the
+[Powershell release page](https://github.com/PowerShell/PowerShell/releases/tag/v6.2.4). The release
+page also documents the SHA256 hash of each package file. We can compare the published hash value
+with the one we calculate with `Get-FileHash`.
 
 ```powershell
-# Path of Microsoft.PowerShell.Utility.psd1
-$file = (Get-Module Microsoft.PowerShell.Utility).Path
-
-$hashFromFile = Get-FileHash -Path $file -Algorithm MD5
-
-# Open $file as a stream
-$stream = [System.IO.File]::OpenRead($file)
-$hashFromStream = Get-FileHash -InputStream $stream -Algorithm MD5
-$stream.Close()
-
-Write-Host '### Hash from File ###' -NoNewline
-$hashFromFile | Format-List
-Write-Host '### Hash from Stream ###' -NoNewline
-$hashFromStream | Format-List
-
-# Check both hashes are the same
-if ($hashFromFile.Hash -eq $hashFromStream.Hash) {
-	Write-Host 'Get-FileHash results are consistent' -ForegroundColor Green
-} else {
-	Write-Host 'Get-FileHash results are inconsistent!!' -ForegroundColor Red
-}
+$wc = [System.Net.WebClient]::new()
+$pkgurl = 'https://github.com/PowerShell/PowerShell/releases/download/v6.2.4/powershell_6.2.4-1.debian.9_amd64.deb'
+$publishedHash = '8E28E54D601F0751922DE24632C1E716B4684876255CF82304A9B19E89A9CCAC'
+$FileHash = Get-FileHash -InputStream ($wc.OpenRead($pkgurl))
+$FileHash.Hash -eq $publishedHash
 ```
 
-```output
-### Hash from File ###
+```Output
+True
+```
 
-Algorithm : MD5
-Hash      : 593D6592BD9B7F9174711AB136F5E751
-Path      : C:\WINDOWS\System32\WindowsPowerShell\v1.0\Modules\Microsoft.Powe
-            rShell.Utility\Microsoft.PowerShell.Utility.psd1
+### Example 4: Compute the hash of a string
 
-### Hash from Stream ###
+PowerShell does not provide a cmdlet to compute the hash of a string. However, you can write a
+string to a stream and use the **InputStream** parameter of `Get-FileHash` to get the hash value.
 
-Algorithm : MD5
-Hash      : 593D6592BD9B7F9174711AB136F5E751
-Path      :
+```powershell
+$stringAsStream = [System.IO.MemoryStream]::new()
+$writer = [System.IO.StreamWriter]::new($stringAsStream)
+$writer.write("Hello world")
+$writer.Flush()
+$stringAsStream.Position = 0
+Get-FileHash -InputStream $stringAsStream | Select-Object Hash
+```
 
-Get-FileHash results are consistent
+```Output
+Hash
+----
+E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855
 ```
 
 ## PARAMETERS
 
 ### -Algorithm
 
-Specifies the cryptographic hash function to use for computing the hash value of the contents of the specified file.
-A cryptographic hash function includes the property that it is not possible to find two distinct inputs that generate the same hash values.
-Hash functions are commonly used with digital signatures and for data integrity.
-The acceptable values for this parameter are:
+Specifies the cryptographic hash function to use for computing the hash value of the contents of the
+specified file or stream. A cryptographic hash function has the property that it is infeasible to
+find two different files with the same hash value. Hash functions are commonly used with digital
+signatures and for data integrity. The acceptable values for this parameter are:
 
 - SHA1
 - SHA256
@@ -139,7 +146,9 @@ The acceptable values for this parameter are:
 
 If no value is specified, or if the parameter is omitted, the default value is SHA256.
 
-For security reasons, MD5 and SHA1, which are no longer considered secure, should only be used for simple change validation, and should not be used to generate hash values for files that require protection from attack or tampering.
+For security reasons, MD5 and SHA1, which are no longer considered secure, should only be used for
+simple change validation, and should not be used to generate hash values for files that require
+protection from attack or tampering.
 
 ```yaml
 Type: String
@@ -172,11 +181,10 @@ Accept wildcard characters: False
 
 ### -LiteralPath
 
-Specifies the path to a file.
-Unlike the *Path* parameter, the value of the *LiteralPath* parameter is used exactly as it is typed.
-No characters are interpreted as wildcard characters.
-If the path includes escape characters, enclose the path in single quotation marks.
-Single quotation marks instruct PowerShell not to interpret characters as escape sequences.
+Specifies the path to a file. Unlike the **Path** parameter, the value of the **LiteralPath**
+parameter is used exactly as it is typed. No characters are interpreted as wildcard characters. If
+the path includes escape characters, enclose the path in single quotation marks. Single quotation
+marks instruct PowerShell not to interpret characters as escape sequences.
 
 ```yaml
 Type: String[]
@@ -192,8 +200,7 @@ Accept wildcard characters: False
 
 ### -Path
 
-Specifies the path to one or more files as an array.
-Wildcard characters are permitted.
+Specifies the path to one or more files as an array. Wildcard characters are permitted.
 
 ```yaml
 Type: String[]
@@ -203,25 +210,29 @@ Aliases:
 Required: True
 Position: 0
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName, ByValue)
 Accept wildcard characters: True
 ```
 
 ### CommonParameters
 
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+-InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### System.String
 
-You can pipe a string to the **Get-FileHash** cmdlet that contains a path to one or more files.
+You can pipe a string to the `Get-FileHash` cmdlet that contains a path to one or more files.
 
 ## OUTPUTS
 
 ### Microsoft.Powershell.Utility.FileHash
 
-**Get-FileHash** returns an object that represents the path to the specified file, the value of the computed hash, and the algorithm used to compute the hash.
+`Get-FileHash` returns an object that represents the path to the specified file, the value of the
+computed hash, and the algorithm used to compute the hash.
 
 ## NOTES
 

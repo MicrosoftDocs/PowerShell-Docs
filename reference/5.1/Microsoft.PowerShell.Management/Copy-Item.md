@@ -119,14 +119,15 @@ $Session = New-PSSession -ComputerName "Server01" -Credential "Contoso\User01"
 Copy-Item "D:\Folder001\test.log" -Destination "C:\Folder001_Copy\" -ToSession $Session
 ```
 
-### Example 6: Copy the entire contents of a folder to a remote computer
+### Example 6: Copy a folder to a remote computer
 
 A session is created to the remote computer named **Server01** with the credential of
 `Contoso\User01` and stores the results in the variable named `$Session`.
 
-The `Copy-Item` cmdlet copies the entire contents from the `D:\Folder002` folder to the
+The `Copy-Item` cmdlet copies the `D:\Folder002` folder to the
 `C:\Folder002_Copy` directory on the remote computer using the session information stored in the
-`$Session` variable. The subfolders are copied with their file trees intact.
+`$Session` variable. Any subfolders or files are not copied without using the **Recurse** switch.
+The operation creates the `Folder002_Copy` folder if it doesn't already exist.
 
 ```powershell
 $Session = New-PSSession -ComputerName "Server02" -Credential "Contoso\User01"
@@ -140,8 +141,8 @@ A session is created to the remote computer named **Server01** with the credenti
 
 The `Copy-Item` cmdlet copies the entire contents from the `D:\Folder003` folder to the
 `C:\Folder003_Copy` directory on the remote computer using the session information stored in the
-`$Session` variable. The subfolders are copied with their file trees intact. Because the **Recurse**
-parameter is used, the operation creates the `Folder003_Copy` folder if it doesn't already exist.
+`$Session` variable. The subfolders are copied with their file trees intact. The operation creates
+the `Folder003_Copy` folder if it doesn't already exist.
 
 ```powershell
 $Session = New-PSSession -ComputerName "Server04" -Credential "Contoso\User01"
