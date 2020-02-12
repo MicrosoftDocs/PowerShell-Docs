@@ -327,22 +327,7 @@ namespace Microsoft.Samples.PowerShell.Commands
       }
     } // End DoProcessLogic.
   } //End GetProcCommand
-}    void DoProcessLogic(bool asJob)
-    {
-      Process[] p = Process.GetProcesses();
-
-      foreach (Process pl in p)
-      {
-        if (!asjob)
-        {
-          WriteObject(pl);
-        }
-        else
-        {
-          job.ChildJobs[0].Output.Add(new PSObject(pl));
-        }
-      }
-    } // End DoProcessLogic.
+}
 ```
 
 <!-- TODO!!!: review snippet reference  [!CODE [msh_samplesGetProc06#GetProc06All](msh_samplesGetProc06#GetProc06All)]  -->
