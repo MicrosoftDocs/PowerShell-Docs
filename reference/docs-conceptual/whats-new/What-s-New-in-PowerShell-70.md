@@ -450,17 +450,22 @@ using those, check out our [PowerShell-Docker](https://hub.docker.com/_/microsof
 
 ### Running PowerShell 7
 
-PowerShell 7 runs side-by-side with previous versions of Windows PowerShell or PowerShell Core. When
+PowerShell 7 runs side-by-side with previous versions of Windows PowerShell. When
 PowerShell 7 installs, a new directory containing the installation is added to your path. Your
 existing install directory will remain.
 
 - Windows PowerShell 5.1 : `C:\Windows\System32\WindowsPowerShell\v1.0` will add
 `%programfiles%\PowerShell\7`
-- PowerShell Core 6.x on Windows: `%programfiles%\PowerShell\6` will add
+
+TODO - validate below
+
+PowerShell 7 will upgrade previous versions of PowerShell Core:
+
+- PowerShell Core 6.x on Windows: `%programfiles%\PowerShell\6` will be replaced by
  `%programfiles%\PowerShell\7`
-- Linux: `/opt/microsoft/powershell/6` will add
+- Linux: `/opt/microsoft/powershell/6` will be replaced by
 `/opt/microsoft/powershell/7`
-- macOS: `/usr/local/microsoft/powershell/6` will add
+- macOS: `/usr/local/microsoft/powershell/6` will be replaced by
 `/usr/local/microsoft/powershell/7`
 
 [!NOTE] In Windows PowerShell, the executable to launch PowerShell is named `powershell.exe`. In
