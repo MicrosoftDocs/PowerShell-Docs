@@ -34,6 +34,29 @@ In this release, we're introducing a number of new features, including:
 To see a full list of features and fixes, check out
 our detailed [changelogs](https://github.com/PowerShell/PowerShell/releases) on GitHub.
 
+## Where can I Install PowerShell?
+
+PowerShell 7 supports the following operating systems on x64, including:
+
+TODO: have Travis validate
+
+Windows 7, 8.1, and 10
+Windows Server 2008 R2, 2012, 2012 R2, 2016, and 2019
+macOS 10.13+
+Red Hat Enterprise Linux (RHEL) / CentOS 7+
+Fedora 29+
+Debian 9+
+Ubuntu 16.04+
+openSUSE 15+
+Alpine Linux 3.8+
+Additionally, we support ARM32 and ARM64 flavors of Debian and Ubuntu, as well as ARM64 Alpine Linux.
+
+While not officially supported, the community has also provided packages for Arch and Kali Linux.
+
+[!NOTE] Debian 10 and CentOS 8 currently do not support WinRM remoting. For details on setting up
+SSH-based remoting, see
+[PowerShell Remoting over SSH](https://docs.microsoft.com/powershell/scripting/learn/remoting/ssh-remoting-in-powershell-core?view=powershell-7)
+
 ## Improved backwards compatibility with Windows PowerShell
 
 TODO - links with TODO
@@ -431,7 +454,7 @@ migrating to PowerShell 7 won't interfere with your existing work. Whether your 
 PowerShell on macOS or Linux for the first time, or migrating from Windows PowerShell or PowerShell
 Core, the below information will get you started.
 
-### How do I get PowerShell 7?
+### How do I install PowerShell 7?
 
 If this is your first time installing PowerShell, check the installation instructions for your
 preferred operating system
