@@ -274,6 +274,8 @@
       items:
         - name: What's new in PowerShell 7.0
           href: whats-new/what-s-new-in-powershell-70.md
+        - name: Migrating from Windows PowerShell 5.1 to PowerShell 7
+          href: whats-new/migrating-from-windows-powershell-51-to-powershell-7.md
     - name: What's new in PowerShell Core 6.x
       items:
         - name: What's new in PowerShell Core 6.2
