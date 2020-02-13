@@ -36,19 +36,17 @@ our detailed [changelogs](https://github.com/PowerShell/PowerShell/releases) on 
 
 ## Where can I Install PowerShell?
 
-PowerShell 7 supports the following operating systems on x64, including:
-
-TODO: have Travis validate
+PowerShell 7 currently supports the following operating systems on x64, including:
 
 Windows 8.1, and 10
-Windows Server 2008 R2, 2012, 2012 R2, 2016, and 2019
+Windows Server 2012, 2012 R2, 2016, and 2019
 macOS 10.13+
-Red Hat Enterprise Linux (RHEL) / CentOS 7+
-Fedora 29+
-Debian 9+
-Ubuntu 16.04+
-openSUSE 15+
+Red Hat Enterprise Linux (RHEL) / CentOS 7
+Fedora 30+
+Debian 9
+Ubuntu LTS 16.04+
 Alpine Linux 3.8+
+
 Additionally, we support ARM32 and ARM64 flavors of Debian and Ubuntu, as well as ARM64 Alpine Linux.
 
 While not officially supported, the community has also provided packages for Arch and Kali Linux.
@@ -56,6 +54,10 @@ While not officially supported, the community has also provided packages for Arc
 [!NOTE] Debian 10 and CentOS 8 currently do not support WinRM remoting. For details on setting up
 SSH-based remoting, see
 [PowerShell Remoting over SSH](https://docs.microsoft.com/powershell/scripting/learn/remoting/ssh-remoting-in-powershell-core?view=powershell-7)
+
+For more up-to-date information about supported operating systems and support lifecycle, see;
+[PowerShell Support Lifecycle](https://docs.microsoft.com/en-us/powershell/scripting/powershell-support-lifecycle?view=powershell-7)
+
 
 ## Improved backwards compatibility with Windows PowerShell
 
@@ -188,6 +190,7 @@ Write-Output 'First' || Write-Output 'Second'
 ```output
 First
 ```
+
 Here, the first command fails, so the second command is executed.
 
 ```powershell
