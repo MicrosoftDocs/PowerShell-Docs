@@ -40,7 +40,7 @@ PowerShell 7 supports the following operating systems on x64, including:
 
 TODO: have Travis validate
 
-Windows 7, 8.1, and 10
+Windows 8.1, and 10
 Windows Server 2008 R2, 2012, 2012 R2, 2016, and 2019
 macOS 10.13+
 Red Hat Enterprise Linux (RHEL) / CentOS 7+
