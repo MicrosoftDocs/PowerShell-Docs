@@ -362,7 +362,7 @@ that are expanded when the value is retrieved.   Equivalent to **REG_EXPAND_SZ**
   Indicates an unsupported registry data type, such as **REG_RESOURCE_LIST**.
 
 ```yaml
-Type: String
+Type: RegistryValueKind
 Parameter Sets: (All)
 Aliases:
 
@@ -411,6 +411,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
+
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
