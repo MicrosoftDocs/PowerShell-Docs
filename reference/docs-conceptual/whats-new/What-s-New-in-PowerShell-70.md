@@ -6,14 +6,14 @@ ms.date: 02/19/2020
 
 # What's New in PowerShell 7.0
 
-We are happy to announce the Generally Available (GA) release of PowerShell 7.0! First! We'd like to
+We are happy to announce the Generally Available (GA) release of PowerShell 7.0! First, we'd like to
 thank our many, open-source contributors for making this release possible by submitting code,
 tests, documentation, and issue feedback. PowerShell 7 would not have been possible without your
 help.
 
 Three years ago, we announced PowerShell Core 6 as a completely new edition of PowerShell. Built on
 top of .NET Core and introduced cross-platform support across Windows, macOS, and Linux.
-Additionally, it was the first release of PowerShell made under an open-source license (MIT)
+Additionally, it was the first release of PowerShell made under an open-source license (MIT).
 
 After three successful releases of PowerShell Core, we couldn't be more excited about PowerShell 7,
 the next chapter of PowerShell's ongoing development. Join us in this release of PowerShell 7, the
@@ -29,12 +29,12 @@ In this release, we're introducing a number of new features, including:
 - A simplified and dynamic error view and `Get-Error` cmdlet for easier investigation of errors
 - A compatibility layer that enables users to import modules in an implicit Windows PowerShell session
 - Automatic new version notifications
-- The ability to invoke to invoke DSC resources directly from PowerShell 7 (experimental)
+- The ability to invoke DSC resources directly from PowerShell 7 (experimental)
 
 To see a full list of features and fixes, check out
 our detailed [changelogs](https://github.com/PowerShell/PowerShell/releases) on GitHub.
 
-## Where can I Install PowerShell?
+## Where can I install PowerShell?
 
 PowerShell 7 currently supports the following operating systems on x64, including:
 
@@ -67,32 +67,32 @@ If you weren't able to use PowerShell Core 6.x in the past because of module com
 this might be the first time you get to take advantage of some of the awesome features we already
 delivered since we started the Core project!
 
-The shift from PowerShell Core 6.x to 7.0 marks our move from .NET Core 2.x to 3.1. .NET Core
-3.1 brings back a host of .NET Framework APIs (especially on Windows), enabling significantly more
-backwards compatibility with existing Windows PowerShell modules. This includes many modules on
+The shift from PowerShell Core 6.x to 7.0 marks our move from .NET Core 2.x to .NET Core 3.1. .NET
+Core 3.1 brings back a host of .NET Framework APIs (especially on Windows), enabling significantly
+more backwards compatibility with existing Windows PowerShell modules. This includes many modules on
 Windows that require GUI functionality like `Out-GridView` and `Show-Command`, as well as many role
 management modules that ship as part of Windows.
 
-On Windows, we've also added a **-UseWindowsPowerShell** switch to `Import-Module` to ease the
+On Windows, we've also added a **UseWindowsPowerShell** switch to `Import-Module` to ease the
 transition to PowerShell 7 for those using incompatible modules. This switch creates a proxy module
 in PowerShell 7 that uses a local Windows PowerShell process to implicitly run any cmdlets contained
 in that module. For more information on this functionality, check out the [Import-Module](TODO)
 documentation.
 
-For more info, check out our module compatibility table showing off how you can the latest,
-up-to-date modules that work with PowerShell 7: [Module Compatibility Table](TODO)
+For more info, check out our module compatibility table showing off the latest up-to-date modules
+that work with PowerShell 7: [Module Compatibility Table](TODO)
 
-## Improved Foreach-Object with Parallelism support
+## Improved ForEach-Object with parallelism support
 
-The `Foreach-Object` cmdlet, which iterates items in a collection, now has built-in parallelism with
+The `ForEach-Object` cmdlet, which iterates items in a collection, now has built-in parallelism with
 the new **Parallel** parameter.
 
 Beginning with PowerShell 7.0, a third parameter set is available that runs each script block in
-parallel. There is a **ThrottleLimit** parameter that limits the number of parallel scripts running
-at a time. As before, use the **$_** variable to represent the current input object in the script
-block. Use the **$using:** keyword to pass variable references to the running script.
+parallel. There is a **ThrottleLimit** parameter that limits the number of parallel script blocks
+running at a time. As before, use the **$_** variable to represent the current input object in the
+script block. Use the **$using:** scope to pass variable references to the running script block.
 
-By default, parallel scriptblocks use the current working directory of the caller that started the
+By default, parallel script blocks use the current working directory of the caller that started the
 parallel tasks.
 
 This example retrieves 50,000 log entries from 5 system logs on a local Windows machine.
@@ -112,12 +112,12 @@ $logEntries.Count
 The **Parallel** parameter specifies the script block that is run in parallel for each input log name.
 The **ThrottleLimit** parameter ensures that all five script blocks run at the same time.
 
-[!NOTE] The cmdlet `Foreach-Object` includes a switch parameter **-AsJob** to run as a background
+[!NOTE] The cmdlet `ForEach-Object` includes a switch parameter **AsJob** to run as a background
 job. For further details see;
 [Background Jobs](https://docs.microsoft.com/powershell/scripting/developer/cmdlet/background-jobs?view=powershell-7)
 
 For more information, see
-[Foreach-Object](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/foreach-object?view=powershell-7)
+[ForEach-Object](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/foreach-object?view=powershell-7)
 
 ## Ternary operator
 
