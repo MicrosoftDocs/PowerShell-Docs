@@ -476,16 +476,19 @@ using those, check out our [PowerShell-Docker](https://hub.docker.com/_/microsof
 
 ### Running PowerShell 7
 
-PowerShell 7 runs side-by-side with previous versions of Windows PowerShell. When
-PowerShell 7 installs, a new directory containing the installation is added to your path. Your
-existing install directory will remain.
+TODO - validate
+
+PowerShell 7 runs side-by-side with previous versions of Windows PowerShell. When PowerShell 7
+installs on Microsoft Windows, a new directory containing the installation is added to your path and
+your previous Windows PowerShell remains. If your migrating from PowerShell Core 6.x to PowerShell
+7, the installation is upgraded and the path replaced.
+
+PowerShell 7 installation path is added to Microsoft Windows:
 
 - Windows PowerShell 5.1 : `C:\Windows\System32\WindowsPowerShell\v1.0` will add
 `%programfiles%\PowerShell\7`
 
-TODO - validate below
-
-PowerShell 7 will upgrade previous versions of PowerShell Core:
+PowerShell 7 will upgrade previous versions of PowerShell Core 6.x:
 
 - PowerShell Core 6.x on Windows: `%programfiles%\PowerShell\6` will be replaced by
  `%programfiles%\PowerShell\7`
