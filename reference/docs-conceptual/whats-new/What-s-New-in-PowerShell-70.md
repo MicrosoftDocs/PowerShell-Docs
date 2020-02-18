@@ -56,7 +56,7 @@ SSH-based remoting, see
 [PowerShell Remoting over SSH](https://docs.microsoft.com/powershell/scripting/learn/remoting/ssh-remoting-in-powershell-core?view=powershell-7)
 
 For more up-to-date information about supported operating systems and support lifecycle, see;
-[PowerShell Support Lifecycle](https://docs.microsoft.com/en-us/powershell/scripting/powershell-support-lifecycle?view=powershell-7)
+[PowerShell Support Lifecycle](https://docs.microsoft.com/powershell/scripting/powershell-support-lifecycle?view=powershell-7)
 
 
 ## Improved backwards compatibility with Windows PowerShell
