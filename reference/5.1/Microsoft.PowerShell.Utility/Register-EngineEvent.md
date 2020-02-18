@@ -70,7 +70,7 @@ The **SupportEvent** parameter is added to hide the event subscription. When Pow
 this case, the command history from the exiting session is exported an XML file in the user's
 `$Home` directory.
 
-### Example 3: Create and subscribe to an user-defined event
+### Example 3: Create and subscribe to a user-defined event
 
 This example creates a subscription for events from the source **MyEventSource**. This is an
 arbitrary source that we are going to use to monitor the progress of a job. `Register-EngineEvent`
