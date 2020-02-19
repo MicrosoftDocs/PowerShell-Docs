@@ -122,15 +122,14 @@ For more information, see
 ## Ternary operator
 
 PowerShell 7.0 introduced a new syntax using the ternary operator which behaves like a simplified
-if-else statement. It follows the C# ternary operator syntax:
+`if-else` statement. It follows the C# ternary operator syntax:
 
 ```
 <condition> ? <if-true> : <if-false>
 ```
 
-The ternary operator behaves like the simplified `if-else` statement. The condition-expression will
-always be evaluated, and its result will be converted to boolean to determine which branch will be
-evaluated next:
+The condition-expression will always be evaluated, and its result will be converted to boolean to
+determine which branch will be evaluated next:
 
 - The `<if-true>` expression is executed if the `<condition>` expression is true
 - The `<if-false>` expression is executed if the `<condition>` expression is false
@@ -295,10 +294,10 @@ ${a}?[0]
 for more information, see
 [About_Operators](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_operators?view=powershell-7)
 
-## New ErrorView and Get-Error cmdlets
+## New View ErrorView and Cmdlet Get-Error
 
 The display of error messages has been improved to enhance the readability of interactive and script
-errors with a new default view ConciseView. The views are user selectable through the preference
+errors with a new default view **ConciseView**. The views are user-selectable through the preference
 variable **$ErrorView**.
 
 The default view in PowerShell 7 is **ConciseView**; previous views **NormalView** and
@@ -309,7 +308,7 @@ $ErrorView = 'Normalview' # Sets the error view to NormalView
 $Errorview = 'ConciseView' # Sets the error view to ConciseView
 ```
 
-With **ConciseView**, If an error is not from a script or parser error, then
+With **ConciseView**, if an error is not from a script or parser error, then
 it's a single line error message.
 
 ```powershell
@@ -371,15 +370,15 @@ Exception             :
     StackTrace           :
 ```
 
-Get-Error supports pipelined passed errors by using the built in variable $error. Get-Error will
+Get-Error supports pipeline passed errors by using the built-in variable $error. Get-Error will
 display all passed errors.
 
 ```powershell
 $Error | Get-Error
 ```
 
-Get-Error supports the -Newest parameter, allowing you to specify how many errors from the current
-session you wish displayed.
+Get-Error supports the **Newest** parameter, allowing you to specify how many errors from the
+current session you wish displayed.
 
 ```powershell
 Get-Error -Newest 3 # Displays the lst three errors that occurred in the session
@@ -394,7 +393,7 @@ The `Invoke-DscResource` cmdlet runs a method of a specified PowerShell Desired 
 (DSC) resource.
 
 This cmdlet invokes a DSC resource directly, without creating a configuration document. Using this
-cmdlet, configuration management products can manage windows or Linux by using DSC resources. This
+cmdlet, configuration management products can manage Windows or Linux by using DSC resources. This
 cmdlet also enables debugging of resources when the DSC engine is running with debugging enabled.
 
 This command invokes the Set method of a resource named Log and specifies a Message property for it.
@@ -432,7 +431,7 @@ variable. The following values are supported:
 - `Off` turns off the update notification feature
 - `LTS` only notifies of updates to long-term-servicing (LTS) GA releases
 
-[!NOTE] the environment variable **POWERSHELL_UPDATECHECK** does not exist until it is set for the
+[!NOTE] The environment variable **POWERSHELL_UPDATECHECK** does not exist until it is set for the
 first time. The default behavior of version notifications is `Default` unless set to `Off` or `LTS`.
 
 To set the version notification for `LTS` releases only:
@@ -450,10 +449,10 @@ $Env:POWERSHELL_UPDATECHECK = 'Default'
 For more information, see
 [About Update Notifications](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_update_notifications?view=powershell-7)
 
-## Installing or Migrating to PowerShell 7.0
+## Installing or migrating to PowerShell 7.0
 
 PowerShell 7 is designed to work fully side-by-side with Windows PowerShell and PowerShell Core, so
-migrating to PowerShell 7 won't interfere with your existing work. Whether your installing
+migrating to PowerShell 7 won't interfere with your existing work. Whether you're installing
 PowerShell on macOS or Linux for the first time, or migrating from Windows PowerShell or PowerShell
 Core, the below information will get you started.
 
@@ -499,7 +498,7 @@ PowerShell 7 will upgrade previous versions of PowerShell Core 6.x:
 
 [!NOTE] In Windows PowerShell, the executable to launch PowerShell is named `powershell.exe`. In
 version 6 and above, the executable is changed to support side-by-side execution. The new executable
-to launch PowerShell 7 is `pwsh.exe`.
+to launch PowerShell 7 on Windows is `pwsh.exe` (pwsh without extension on Linux and macOS).
 
 [!NOTE] Preview builds will remain in-place as `pwsh-preview` instead of `pwsh` under the 7-preview
 directory instead of 7. We plan on releasing a 7.1 preview very soon so that you can already try out
