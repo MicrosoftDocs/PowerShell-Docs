@@ -105,7 +105,7 @@ optional scope modifiers:
 
 - `global:` - Specifies that the name exists in the **Global** scope.
 - `local:` - Specifies that the name exists in the **Local** scope. The current
-  scope is alway the **Local** scope.
+  scope is always the **Local** scope.
 - `private:` - Specifies that the name is **Private** and only visible to the
   current scope.
 - `script:` - Specifies that the name exists in the **Script** scope.
