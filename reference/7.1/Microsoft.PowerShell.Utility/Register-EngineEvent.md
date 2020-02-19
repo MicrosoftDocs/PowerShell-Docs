@@ -107,8 +107,8 @@ ForwardEvent     : False
 
 Id     Name            PSJobTypeName   State         HasMoreData     Location             Command
 --     ----            -------------   -----         -----------     --------             -------
-18     MyEventSource                   Running       True                                 …
-19     TestJob         BackgroundJob   Running       True            localhost            …
+18     MyEventSource                   Running       True                                 â€¦
+19     TestJob         BackgroundJob   Running       True            localhost            â€¦
 ```
 
 `Register-EngineEvent` created Job Id 18. `Start-Job` created Job Id 19. In Example #4, we remove
@@ -126,8 +126,8 @@ PS> Get-Job
 
 Id     Name            PSJobTypeName   State         HasMoreData     Location             Command
 --     ----            -------------   -----         -----------     --------             -------
-18     MyEventSource                   Stopped       False                                …
-19     TestJob         BackgroundJob   Running       True            localhost            …
+18     MyEventSource                   Stopped       False                                â€¦
+19     TestJob         BackgroundJob   Running       True            localhost            â€¦
 
 PS> Stop-Job -Id 19
 PS> Get-Job | Remove-Job
@@ -155,7 +155,7 @@ script block.
 
 The value of the **Action** parameter can include the `$Event`, `$EventSubscriber`, `$Sender`,
 `$EventArgs`, and `$Args` automatic variables, which provide information about the event to the
-Action script block. For more information, see
+**Action** script block. For more information, see
 [about_Automatic_Variables](../Microsoft.PowerShell.Core/About/about_Automatic_Variables.md).
 
 When you specify an action, `Register-EngineEvent` returns an event job object that represents that
