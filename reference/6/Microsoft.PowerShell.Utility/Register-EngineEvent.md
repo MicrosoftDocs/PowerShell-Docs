@@ -155,7 +155,7 @@ script block.
 
 The value of the **Action** parameter can include the `$Event`, `$EventSubscriber`, `$Sender`,
 `$EventArgs`, and `$Args` automatic variables, which provide information about the event to the
-Action script block. For more information, see
+**Action** script block. For more information, see
 [about_Automatic_Variables](../Microsoft.PowerShell.Core/About/about_Automatic_Variables.md).
 
 When you specify an action, `Register-EngineEvent` returns an event job object that represents that
