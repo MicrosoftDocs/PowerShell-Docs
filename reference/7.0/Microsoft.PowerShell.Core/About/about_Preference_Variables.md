@@ -6,7 +6,6 @@ online version: https://docs.microsoft.com/powershell/module/microsoft.powershel
 schema: 2.0.0
 title: about_Preference_Variables
 ---
-
 # About Preference Variables
 
 ## Short description
@@ -375,9 +374,15 @@ The valid values are as follows:
   continue.
 - **SilentlyContinue**: No effect. The error message isn't displayed and
   execution continues without interruption.
-- **Stop**: Displays the error message and stops executing.
-- **Suspend** is only available for workflows which aren't supported in
-  PowerShell 6 and beyond.
+- **Stop**: Displays the error message and stops executing. In addition to the
+  error generated, the **Stop** value generates an ActionPreferenceStopException
+  object to the error stream.
+  stream
+- **Suspend**: Automatically suspends a workflow job to allow for further
+  investigation. After investigation, the workflow can be resumed. The
+  **Suspend** value is intended for per-command use, not for use as saved
+  preference. **Suspend** isn't a valid value for the `$ErrorActionPreference`
+  variable.
 
 `$ErrorActionPreference` and the **ErrorAction** parameter don't affect how
 PowerShell responds to terminating errors that stop cmdlet processing. For more
@@ -394,90 +399,81 @@ This example shows the `$ErrorActionPreference` default value, **Continue**. A
 non-terminating error is generated. The message is displayed and processing
 continues.
 
+```powershell
+# Change the ErrorActionPreference to 'Continue'
+$ErrorActionPreference = 'Continue'
+# Generate a non-terminating error and continue processing the script.
+Write-Error -Message  'Test Error' ; Write-Host 'Hello World'
 ```
-PS> $ErrorActionPreference = "Continue"
-PS> # Display the value of the preference.
-PS> $ErrorActionPreference
-Continue
-PS> # Generate a non-terminating error.
-PS> Write-Error -Message  "Hello, World"
-Write-Error -Message  "Hello, World" : Hello, World
-+ CategoryInfo          : NotSpecified: (:) [Write-Error],WriteErrorException
-+ FullyQualifiedErrorId : Microsoft.PowerShell.Commands.WriteErrorException
-PS> # The error message is displayed and execution continues.
-PS> # Use the ErrorAction parameter with a value of "SilentlyContinue".
-PS> Write-Error -Message  "Hello, World" -ErrorAction:SilentlyContinue
-PS> # The error message isn't displayed and execution continues.
+
+```Output
+Write-Error: Test Error
+Hello World
+```
+
+This example shows the `$ErrorActionPreference` default value, **Inquire**. An
+error is generated and a prompt for action is shown.
+
+```powershell
+# Change the ErrorActionPreference to 'Inquire'
+$ErrorActionPreference = 'Inquire'
+Write-Error -Message 'Test Error' ; Write-Host 'Hello World'
+```
+
+```Output
+Confirm
+Test Error
+[Y] Yes  [A] Yes to All  [H] Halt Command  [S] Suspend  [?] Help (default is "Y"):
 ```
 
 This example shows the `$ErrorActionPreference` set to **SilentlyContinue**.
 The error message is suppressed.
 
-```
-PS> # Display the value of the preference
-PS> $ErrorActionPreference = "SilentlyContinue"
-PS> # Generate an error message
-PS> Write-Error -Message "Hello, World"
-PS> # Error message is suppressed
-PS> # Use the ErrorAction parameter with a value of "Continue"
-PS> Write-Error -Message "Hello, World" -ErrorAction:Continue
-Write-Error -Message "Hello, World" -ErrorAction:Continue : Hello, World
-+ CategoryInfo          : NotSpecified: (:) [Write-Error], WriteErrorException
-+ FullyQualifiedErrorId : Microsoft.PowerShell.Commands.WriteErrorException
+```powershell
+# Change the ErrorActionPreference to 'SilentlyContinue'
+$ErrorActionPreference = 'SilentlyContinue'
+# Generate an error message
+Write-Error -Message 'Test Error' ; Write-Host 'Hello World'
+# Error message is suppressed and script continues processing
 ```
 
-This example shows the effect of a real error. In this case, the command gets a
-non-existent file, `nofile.txt`.
-
+```Output
+Hello World
 ```
-PS> # Display the value of the preference.
-PS> $ErrorActionPreference
-SilentlyContinue
-PS> Get-ChildItem -Path C:\nofile.txt
-PS> # Error message is suppressed.
-PS> # Change the value to Continue.
-PS> $ErrorActionPreference = "Continue"
-PS> Get-ChildItem -Path C:\nofile.txt
-Get-ChildItem : Cannot find path 'C:\nofile.txt' because it does not exist.
-At line:1 char:1
-+ Get-ChildItem -Path C:\nofile.txt
-+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-+ CategoryInfo : ObjectNotFound: (C:\nofile.txt:String) [Get-ChildItem],
-    ItemNotFoundException
-+ FullyQualifiedErrorId : PathNotFound,Microsoft.PowerShell.Commands.
-    GetChildItemCommand
-PS> # Use the ErrorAction parameter
-PS> Get-ChildItem -Path C:\nofile.txt -ErrorAction SilentlyContinue
-PS> # Error message is suppressed.
-PS> # Change the value to Inquire.
-PS> $ErrorActionPreference = "Inquire"
-PS> Get-ChildItem -Path C:\nofile.txt
-Confirm
-Cannot find path 'C:\nofile.txt' because it does not exist.
-[Y] Yes  [A] Yes to All  [H] Halt Command  [?] Help (default is "Y"): Y
-Get-ChildItem : Cannot find path 'C:\nofile.txt' because it does not exist.
-At line:1 char:1
-+ Get-ChildItem -Path C:\nofile.txt
-+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-+ CategoryInfo : ObjectNotFound: (C:\nofile.txt:String) [Get-ChildItem],
-   ItemNotFoundException
-+ FullyQualifiedErrorId : PathNotFound,Microsoft.PowerShell.Commands.
-   GetChildItemCommand
-PS> # Change the value to Continue.
-PS> $ErrorActionPreference = "Continue"
-PS> # Use the ErrorAction parameter to override the preference value.
-PS> Get-Childitem C:\nofile.txt -ErrorAction "Inquire"
-Confirm
-Cannot find path 'C:\nofile.txt' because it does not exist.
-[Y] Yes  [A] Yes to All  [H] Halt Command  [?] Help (default is "Y"): Y
-Get-Childitem : Cannot find path 'C:\nofile.txt' because it does not exist.
-At line:1 char:1
-+ Get-Childitem C:\nofile.txt -ErrorAction "Inquire"
-+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-+ CategoryInfo : ObjectNotFound: (C:\nofile.txt:String) [Get-ChildItem],
-   ItemNotFoundException
-+ FullyQualifiedErrorId : PathNotFound,Microsoft.PowerShell.Commands.
-   GetChildItemCommand
+
+This example shows the `$ErrorActionPreference` set to **Stop**. It also shows
+the extra object generated to the `$Error` variable.
+
+```powershell
+# Change the ErrorActionPreference to 'Stop'
+$ErrorActionPreference = 'Stop'
+# Error message is is generated and script stops processing
+Write-Error -Message 'Test Error' ; Write-Host 'Hello World'
+
+# Show the ActionPreferenceStopException and the error generated
+$Error[0]
+$Error[1]
+```
+
+```Output
+Write-Error: Test Error
+
+ErrorRecord                 : Test Error
+WasThrownFromThrowStatement : False
+TargetSite                  : System.Collections.ObjectModel.Collection`1[System.Management.Automation.PSObject]
+                              Invoke(System.Collections.IEnumerable)
+StackTrace                  :    at System.Management.Automation.Runspaces.PipelineBase.Invoke(IEnumerable input)
+                                 at Microsoft.PowerShell.Executor.ExecuteCommandHelper(Pipeline tempPipeline,
+                              Exception& exceptionThrown, ExecutionOptions options)
+Message                     : The running command stopped because the preference variable "ErrorActionPreference" or
+                              common parameter is set to Stop: Test Error
+Data                        : {System.Management.Automation.Interpreter.InterpretedFrameInfo}
+InnerException              :
+HelpLink                    :
+Source                      : System.Management.Automation
+HResult                     : -2146233087
+
+Write-Error: Test Error
 ```
 
 ### \$ErrorView
