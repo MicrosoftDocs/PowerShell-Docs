@@ -139,7 +139,7 @@ $form.Controls.Add($label)
 
 Add the control (in this case, a list box) that lets users provide the information you’ve described
 in your label text. There are many other controls you can apply besides list boxes; for more
-controls, see [System.Windows.Forms Namespace](https://msdn.microsoft.com/library/k50ex0x9(v=vs.110).aspx)
+controls, see [System.Windows.Forms Namespace](https://docs.microsoft.com/dotnet/api/system.windows.forms)
 on MSDN.
 
 ```powershell
@@ -151,7 +151,8 @@ $listBox.Height = 80
 
 In the next section, you specify the values you want the list box to display to users.
 
-> [!NOTE] The list box created by this script allows only one selection. To create a list box
+> [!NOTE]
+> The list box created by this script allows only one selection. To create a list box
 > control that allows multiple selections, specify a value for the **SelectionMode** property,
 > similarly to the following: `$listBox.SelectionMode = 'MultiExtended'`. For more information, see
 > [Multiple-selection List Boxes](Multiple-selection-List-Boxes.md).
@@ -166,7 +167,8 @@ In the next section, you specify the values you want the list box to display to 
 [void] $listBox.Items.Add('atl-dc-007')
 ```
 
-Add the list box control to your form, and instruct Windows to open the form atop other windows and dialog boxes when it’s opened.
+Add the list box control to your form, and instruct Windows to open the form atop other windows and
+dialog boxes when it’s opened.
 
 ```powershell
 $form.Controls.Add($listBox)
@@ -193,4 +195,4 @@ if ($result -eq [System.Windows.Forms.DialogResult]::OK)
 ## See Also
 
 - [GitHub: Dave Wyatt's WinFormsExampleUpdates](https://github.com/dlwyatt/WinFormsExampleUpdates)
-- [Windows PowerShell Tip of the Week:  Selecting Items from a List Box](https://technet.microsoft.com/library/ff730949.aspx)
+- [Windows PowerShell Tip of the Week:  Selecting Items from a List Box](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-powershell-1.0/ff730949(v=technet.10))

@@ -128,7 +128,7 @@ $form.Controls.Add($label)
 
 Add the control (in this case, a text box) that lets users provide the information you’ve described
 in your label text. There are many other controls you can apply besides text boxes; for more
-controls, see [System.Windows.Forms Namespace](https://msdn.microsoft.com/library/k50ex0x9(v=vs.110).aspx)
+controls, see [System.Windows.Forms Namespace](https://docs.microsoft.com/dotnet/api/system.windows.forms)
 on MSDN.
 
 ```powershell
@@ -170,5 +170,5 @@ if ($result -eq [System.Windows.Forms.DialogResult]::OK)
 
 ## See Also
 
-- [GitHub: Dave Wyatt's WinFormsExampleUpdates](https://github.com/dlwyatt/WinFormsExampleUpdates)
+- [GitHub: Dave Wyatt's WinFormsExampleUpdates](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-powershell-1.0/ff730941(v=technet.10))
 - [Windows PowerShell Tip of the Week:  Creating a Custom Input Box](https://technet.microsoft.com/library/ff730941.aspx)

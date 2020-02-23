@@ -82,8 +82,8 @@ This example assigns values to four properties of this class by using the **Prop
 3. **Text**:
    This becomes the title of the window.
 
-4. **Topmost**:
-   By setting this property to `$true`, you can force the window to open atop other open windows and dialog boxes.
+4. **Topmost**: By setting this property to `$true`, you can force the window to open atop other
+   open windows and dialog boxes.
 
 Next, create and then add a calendar control in your form.
 In this example, the current day is not highlighted or circled.
@@ -148,4 +148,4 @@ if ($result -eq [Windows.Forms.DialogResult]::OK) {
 ## See Also
 
 - [GitHub: Dave Wyatt's WinFormsExampleUpdates](https://github.com/dlwyatt/WinFormsExampleUpdates)
-- [Windows PowerShell Tip of the Week:  Creating a Graphical Date Picker](https://technet.microsoft.com/library/ff730942.aspx)
+- [Windows PowerShell Tip of the Week:  Creating a Graphical Date Picker](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-powershell-1.0/ff730942(v=technet.10))
