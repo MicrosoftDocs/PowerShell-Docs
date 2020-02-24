@@ -43,7 +43,7 @@ This is a work in progress. Please help us keep this information fresh.
 | PSScheduledJob                            | &check; |         |         |         | Windows only |
 | PSWorkflow                                | &check; |         |         |         | Windows only |
 | PSWorkflowUtility                         | &check; |         |         |         | Windows only |
-| ThreadJob                                 |         | &check; | &check; | &check; |              |
+| ThreadJob                                 |         | &check; | &check; | &check; | Can be installed in PowerShell 5.1 |
 
 ## Cmdlet release history
 
@@ -632,4 +632,4 @@ This is a work in progress. Please help us keep this information fresh.
 
 |   Cmdlet name   |  5.1  |   6.x   |   7.0   |   7.1   | Note |
 | --------------- | :---: | :-----: | :-----: | :-----: | ---- |
-| Start-ThreadJob |       | &check; | &check; | &check; |      |
+| Start-ThreadJob |       | &check; | &check; | &check; | Can be installed in PowerShell 5.1 |
