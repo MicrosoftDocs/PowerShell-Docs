@@ -3,7 +3,6 @@ ms.date:  07/10/2019
 keywords:  jea,powershell,security
 title:  Registering JEA Configurations
 ---
-
 # Registering JEA Configurations
 
 Once you have your [role capabilities](role-capabilities.md) and [session configuration file](session-configurations.md)
@@ -60,7 +59,7 @@ endpoint.
 ## Multi-machine configuration with DSC
 
 When deploying JEA on multiple machines, the simplest deployment model uses the JEA
-[Desired State Configuration (DSC)](/powershell/scripting/dsc/overview) resource to quickly and consistently
+[Desired State Configuration (DSC)](../../../dsc/overview/overview.md) resource to quickly and consistently
 deploy JEA on each machine.
 
 To deploy JEA with DSC, ensure the following prerequisites are met:
