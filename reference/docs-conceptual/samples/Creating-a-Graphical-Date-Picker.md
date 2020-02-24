@@ -97,11 +97,10 @@ $calendar = New-Object Windows.Forms.MonthCalendar -Property @{
 $form.Controls.Add($calendar)
 ```
 
-Next, create an **OK** button for your form.
-Specify the size and behavior of the **OK** button.
-In this example, the button position is 165 pixels from the form’s top edge, and 38 pixels from the left edge.
-The button height is 23 pixels, while the button length is 75 pixels.
-The script uses predefined Windows Forms types to determine the button behaviors.
+Next, create an **OK** button for your form. Specify the size and behavior of the **OK** button. In
+this example, the button position is 165 pixels from the form’s top edge, and 38 pixels from the
+left edge. The button height is 23 pixels, while the button length is 75 pixels. The script uses
+predefined Windows Forms types to determine the button behaviors.
 
 ```powershell
 $okButton = New-Object Windows.Forms.Button -Property @{
@@ -148,4 +147,4 @@ if ($result -eq [Windows.Forms.DialogResult]::OK) {
 ## See Also
 
 - [GitHub: Dave Wyatt's WinFormsExampleUpdates](https://github.com/dlwyatt/WinFormsExampleUpdates)
-- [Windows PowerShell Tip of the Week:  Creating a Graphical Date Picker](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-powershell-1.0/ff730942(v=technet.10))
+- [Windows PowerShell Tip of the Week:  Creating a Graphical Date Picker](/previous-versions/windows/it-pro/windows-powershell-1.0/ff730942(v=technet.10))

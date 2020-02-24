@@ -139,7 +139,7 @@ $form.Controls.Add($label)
 
 Add the control (in this case, a list box) that lets users provide the information you’ve described
 in your label text. There are many other controls you can apply besides list boxes; for more
-controls, see [System.Windows.Forms Namespace](https://docs.microsoft.com/dotnet/api/system.windows.forms)
+controls, see [System.Windows.Forms Namespace](/dotnet/api/system.windows.forms)
 on MSDN.
 
 ```powershell
@@ -195,4 +195,4 @@ if ($result -eq [System.Windows.Forms.DialogResult]::OK)
 ## See Also
 
 - [GitHub: Dave Wyatt's WinFormsExampleUpdates](https://github.com/dlwyatt/WinFormsExampleUpdates)
-- [Windows PowerShell Tip of the Week:  Selecting Items from a List Box](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-powershell-1.0/ff730949(v=technet.10))
+- [Windows PowerShell Tip of the Week:  Selecting Items from a List Box](/previous-versions/windows/it-pro/windows-powershell-1.0/ff730949(v=technet.10))
