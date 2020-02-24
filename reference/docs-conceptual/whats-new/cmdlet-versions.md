@@ -117,7 +117,7 @@ This is a work in progress. Please help us keep this information fresh.
 | Get-PSSessionCapability           | &check; | &check; | &check; | &check; |                            |
 | Get-PSSessionConfiguration        | &check; | &check; | &check; | &check; |                            |
 | Get-PSSnapin                      | &check; |         |         |         | Windows only               |
-| Get-Verb                          | &check; |         |         |         | Windows only               |
+| Get-Verb                          | &check; |         |         |         | Moved to Microsoft.PowerShell.Utility 6.0+ |
 | Import-Module                     | &check; | &check; | &check; | &check; |                            |
 | Invoke-Command                    | &check; | &check; | &check; | &check; |                            |
 | Invoke-History                    | &check; | &check; | &check; | &check; |                            |
