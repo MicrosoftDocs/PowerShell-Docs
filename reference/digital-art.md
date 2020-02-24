@@ -13,7 +13,7 @@ entrusted with the Scrolls of Monad!*
 
 ## PowerShell Infographic
 
-- [PowerShell Infographic](https://github.com/MicrosoftDocs/PowerShell-Docs/blob/staging/assets/Powershell_7_Infographic.pdf)
+- [PowerShell Infographic](https://github.com/MicrosoftDocs/PowerShell-Docs/blob/staging/assets/PowerShell_7_Infographic.pdf)
 
 ## Comic
 
