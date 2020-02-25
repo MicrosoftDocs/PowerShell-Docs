@@ -268,12 +268,12 @@ module members were correctly prefixed.
 
 ### Example 7: Get and use a custom object
 
-These example demonstrates how to get and use the custom object returned by **Import-Module**.
+This example demonstrates how to get and use the custom object returned by **Import-Module**.
 
 Custom objects include synthetic members that represent each of the imported module members. For
 example, the cmdlets and functions in a module are converted to script methods of the custom object.
 
-Custom objects are very useful in scripting. They are also useful when several imported objects have
+Custom objects are useful in scripting. They are also useful when several imported objects have
 the same names. Using the script method of an object is equivalent to specifying the fully qualified
 name of an imported member, including its module name.
 
@@ -325,9 +325,9 @@ saved object. The output shows a **Show-Calendar** script method.
 To call the **Show-Calendar** script method, the method name must be enclosed in quotation marks
 because the name includes a hyphen.
 
-### Example 8: Re-import a module into the same session
+### Example 8: Reimport a module into the same session
 
-This example shows how to use the **Force** parameter of `Import-Module` when you're re-importing a
+This example shows how to use the **Force** parameter of `Import-Module` when you're reimporting a
 module into the same session. The **Force** parameter removes the loaded module and then imports it
 again.
 
@@ -392,7 +392,7 @@ results show that there are two `Get-Date` commands in the session, a function f
 **TestModule** module and a cmdlet from the **Microsoft.PowerShell.Utility** module.
 
 Because functions take precedence over cmdlets, the `Get-Date` function from the **TestModule**
-module runs, instead of the `Get-Date` cmdlet. To run the original version of `Get-Date` you must
+module runs, instead of the `Get-Date` cmdlet. To run the original version of `Get-Date`, you must
 qualify the command name with the module name.
 
 For more information about command precedence in PowerShell, see [about_Command_Precedence](about/about_Command_Precedence.md).
@@ -450,7 +450,7 @@ This example shows how to use the `Import-Module` cmdlet to import a module from
 This command uses the Implicit Remoting feature of PowerShell.
 
 When you import modules from another session, you can use the cmdlets in the current session.
-However, commands that use the cmdlets actually run in the remote session.
+However, commands that use the cmdlets run in the remote session.
 
 ```powershell
 $s = New-PSSession -ComputerName Server01
@@ -694,7 +694,7 @@ command.
 
 `Import-Module` uses the CIM session connection to import modules from the remote computer into the
 current session. When you use the commands from the imported module in the current session, the
-commands actually run on the remote computer.
+commands run on the remote computer.
 
 You can use this parameter to import modules from computers and devices that aren't running the
 Windows operating system, and Windows computers that have PowerShell, but don't have PowerShell
@@ -917,8 +917,8 @@ Accept wildcard characters: False
 ### -Name
 
 Specifies the names of the modules to import. Enter the name of the module or the name of a file in
-the module, such as a .psd1, .psm1, .dll, or ps1 file. File paths are optional. Wildcard characters
-aren't permitted. You can also pipe module names and file names to `Import-Module`.
+the module, such as a `.psd1`, `.psm1`, `.dll`, or `.ps1` file. File paths are optional. Wildcard characters
+aren't permitted. You can also pipe module names and filenames to `Import-Module`.
 
 If you omit a path, `Import-Module` looks for the module in the paths saved in the
 `$env:PSModulePath` environment variable.
@@ -941,8 +941,8 @@ Accept wildcard characters: True
 
 ### -NoClobber
 
-Indicates that this cmdlet does not import commands that have the same names as existing commands in
-the current session. By default, `Import-Module` imports all exported module commands.
+Prevents importing commands that have the same names as existing commands in the current session. By
+default, `Import-Module` imports all exported module commands.
 
 Commands that have the same names can hide or replace commands in the session. To avoid command name
 conflicts in a session, use the **Prefix** or **NoClobber** parameters. For more information about
@@ -1009,13 +1009,13 @@ Accept wildcard characters: False
 
 ### -PSSession
 
-Specifies a PowerShell user-managed session (**PSSession**) from which this cmdlet import modules
+Specifies a PowerShell user-managed session (**PSSession**) from which this cmdlet imports modules
 into the current session. Enter a variable that contains a **PSSession** or a command that gets a
 **PSSession**, such as a `Get-PSSession` command.
 
 When you import a module from a different session into the current session, you can use the cmdlets
 from the module in the current session, just as you would use cmdlets from a local module. Commands
-that use the remote cmdlets actually run in the remote session, but the remoting details are managed
+that use the remote cmdlets run in the remote session, but the remoting details are managed
 in the background by PowerShell.
 
 This parameter uses the Implicit Remoting feature of PowerShell. It is equivalent to using the
@@ -1135,7 +1135,7 @@ directory into PowerShell Core when that module does not specify `Core` in the
 When importing a module from another path, this switch does nothing, since the check is not
 performed. On Linux and macOS, this switch does nothing.
 
-See [about_PowerShell_Editions](About/about_PowerShell_Editions.md) for more information.
+For more information, see [about_PowerShell_Editions](About/about_PowerShell_Editions.md).
 
 > [!WARNING]
 > `Import-Module -SkipEditionCheck` is still likely to fail to import a module. Even if it does
@@ -1181,12 +1181,12 @@ module. If you specify the **AsCustomObject** parameter, it generates a **PSCust
   information, see [about_Modules](About/about_Modules.md).
 
   You can also use the **PSSession** and **CIMSession** parameters to import modules that are
-  installed on remote computers. However, commands that use the cmdlets in these modules actually
-  run in the remote session on the remote computer.
+  installed on remote computers. However, commands that use the cmdlets in these modules run in the
+  remote session on the remote computer.
 
 - If you import members with the same name and the same type into your session, PowerShell uses the
   member imported last by default. Variables and aliases are replaced, and the originals aren't
-  accessible. Functions, cmdlets and providers are merely shadowed by the new members. They can be
+  accessible. Functions, cmdlets, and providers are merely shadowed by the new members. They can be
   accessed by qualifying the command name with the name of its snap-in, module, or function path.
 
 - To update the formatting data for commands that have been imported from a module, use the
@@ -1240,7 +1240,7 @@ module. If you specify the **AsCustomObject** parameter, it generates a **PSCust
   remoting enabled, including the local computer. When you create a CIM session on the local
   computer, PowerShell uses DCOM, instead of WMI, to create the session.
 
-- By default, `Import-Module` imports modules in the the global scope even when called from a
+- By default, `Import-Module` imports modules in the global scope even when called from a
   descendant scope. The top-level scope and all descendant scopes have access to the module's
   exported elements.
 
