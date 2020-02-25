@@ -79,15 +79,15 @@ cmdlet and only returns running services.
 ```powershell
 $s = {
     param($commandName, $parameterName, $wordToComplete, $commandAst, $fakeBoundParameters)
-    $services = Get-Service | Where-Object {$_.Status -eq "Running" }
-    $services | Where-Object { $_.Name -like "$wordToComplete*" } | ForEach-Object {
-        New-Object -Type System.Management.Automation.CompletionResult -ArgumentList $_,
-            $_,
+    $services = Get-Service | Where-Object {$_.Status -eq "Running" -and $_.Name -like "$wordToComplete*"}
+    $services | ForEach-Object {
+        New-Object -Type System.Management.Automation.CompletionResult -ArgumentList $_.Name,
+            $_.Name,
             "ParameterValue",
-            $_
+            $_.Name
     }
 }
-Register-ArgumentCompleter -CommandName dotnet -Native -ScriptBlock $s
+Register-ArgumentCompleter -CommandName Stop-Service -ParameterName Name -ScriptBlock $s
 ```
 
 The first command creates a script block which takes the required parameters which are passed in
