@@ -1223,7 +1223,7 @@ module. If you specify the **AsCustomObject** parameter, it generates a **PSCust
 
   If the module includes class and enum definitions, use `using module` at the beginning of your
   script. This import the scripts, including the class and enum definitions. For more information,
-  see [about_Using](about_Using.md).
+  see [about_Using](About/about_Using.md).
 
 ## RELATED LINKS
 
