@@ -50,9 +50,9 @@ named **PSDesiredStateConfiguration**.
 
 ```powershell
 $SplatParam = @{
-  Name       = 'WindowsProcess'
+  Name = 'WindowsProcess'
   ModuleName = 'PSDesiredStateConfiguration'
-  Property   = @{Path = 'C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe'; Arguments = ''}
+  Property = @{Path = 'C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe'; Arguments = ''}
   Method = Test
 }
 

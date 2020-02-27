@@ -346,10 +346,10 @@ PS> $Matches.user
 jsmith
 ```
 
-The following example stores the newest log entry in the Windows Security
-Log. The provided regular expression extracts the username and domain
-from the message and stores them under the keys:**N** for name and
-**D** for domain
+The following example stores the newest log entry in the
+Windows Security Log. The provided regular expression extracts the username and
+domain from the message and stores them under the keys:**N** for name and
+**D** for domain 
 
 ```powershell
 $log = (Get-WinEvent -LogName Security -MaxEvents 1).message
