@@ -3,7 +3,7 @@ external help file: Microsoft.PowerShell.Archive-help.xml
 keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Archive
-ms.date: 11/06/2019
+ms.date: 02/20/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.archive/compress-archive?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Compress-Archive
@@ -82,9 +82,9 @@ archive file because the **Path** only specifies file names.
 
 ```powershell
 $compress = @{
-Path= "C:\Reference\Draftdoc.docx", "C:\Reference\Images\*.vsd"
-CompressionLevel = "Fastest"
-DestinationPath = "C:\Archives\Draft.Zip"
+  Path = "C:\Reference\Draftdoc.docx", "C:\Reference\Images\*.vsd"
+  CompressionLevel = "Fastest"
+  DestinationPath = "C:\Archives\Draft.Zip"
 }
 Compress-Archive @compress
 ```
@@ -421,6 +421,13 @@ You can pipe a string that contains a path to one or more files.
 Using recursion and sending objects down the pipeline can duplicate files in your archive. For
 example, if you use `Get-ChildItem` with the **Recurse** parameter, each **FileInfo** and
 **DirectoryInfo** object that's sent down the pipeline is added to the archive.
+
+The [ZIP file specification](https://pkware.cachefly.net/webdocs/casestudies/APPNOTE.TXT) does not
+specify a standard way of encoding filenames that contain non-ASCII characters. The
+`Compress-Archive` cmdlet uses UTF-8 encoding. Other ZIP archive tools may use a different encoding
+scheme. When extracting files with filenames not stored using UTF-8 encoding, `Expand-Archive` uses
+the raw value found in the archive. This can result in a filename that is different than the source
+filename stored in the archive.
 
 ## RELATED LINKS
 
