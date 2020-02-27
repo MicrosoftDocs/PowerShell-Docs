@@ -2,7 +2,7 @@
 keywords: powershell,cmdlet
 locale: en-us
 ms.date: 12/01/2017
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_regular_expressions?view=powershell-7&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_regular_expressions?view=powershell-7.x&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Regular_Expressions
 ---
@@ -346,10 +346,10 @@ PS> $Matches.user
 jsmith
 ```
 
-The following example stores the newest log entry in the Windows Security
-Log. The provided regular expression extracts the username and domain
-from the message and stores them under the keys:**N** for name and
-**D** for domain
+The following example stores the newest log entry in the
+Windows Security Log. The provided regular expression extracts the username and
+domain from the message and stores them under the keys:**N** for name and
+**D** for domain 
 
 ```powershell
 $log = (Get-WinEvent -LogName Security -MaxEvents 1).message

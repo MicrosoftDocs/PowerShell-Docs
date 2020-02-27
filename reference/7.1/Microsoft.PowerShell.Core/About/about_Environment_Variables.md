@@ -2,7 +2,7 @@
 keywords: powershell,cmdlet
 locale: en-us
 ms.date: 01/14/2020
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_environment_variables?view=powershell-7&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_environment_variables?view=powershell-7.x&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Environment_Variables
 ---
@@ -289,7 +289,7 @@ Trace-Command -PSHost -Name Modules -Expression { Import-Module Microsoft.PowerS
   The default value of `$Env:PSModulePath` on Windows is:
 
   ```powershell
-  $HOME\Documents\WindowsPowerShell\Modules;$PSHOME\Modules
+  $HOME\Documents\PowerShell\Modules;$env:PROGRAMFILES\PowerShell\Modules;$PSHOME\Modules
   ```
 
   The default value of `$Env:PSModulePath` on Linux or macOS is:
@@ -298,10 +298,14 @@ Trace-Command -PSHost -Name Modules -Expression { Import-Module Microsoft.PowerS
   $HOME/.local/share/powershell/Modules:/usr/local/share/powershell/Modules:$PSHOME/Modules
   ```
 
-PowerShell sets the value of `$PSHOME\Modules` in the registry. It sets the
-value of `$HOME\Documents\PowerShell\Modules` each time you start PowerShell.
+PowerShell will prefix the user module path, the shared module path, and the $PSHOME
+module path to `PSModulePath` if it is not already in `PSModulePath`.
 
-In addition, setup programs that install modules in other directories, such as
+In addition, on Windows, if the inherited `PSModulePath` is the same as the one stored
+as the user environment variable, then the machine `PSModulePath` environment variable
+is appended to the end.
+
+Also, setup programs that install modules in other directories, such as
 the `Program Files` directory, can append their locations to the value of
 PSModulePath.
 
@@ -359,6 +363,10 @@ For more information about the methods of the System.Environment class, see
 You can add also add a command that changes the value to your profile or use
 System in Control Panel to change the value of the `PSModulePath` environment
 variable in the registry.
+
+When starting Windows PowerShell or PowerShell ISE, PowerShell will remove the
+version specific user module path, shared module path, and $PSHOME module path
+from `PSModulePath` given to the child process.
 
 For more information, see [about_Modules](about_Modules.md).
 
