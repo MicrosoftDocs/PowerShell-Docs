@@ -96,9 +96,9 @@ Accept wildcard characters: False
 
 ### -MaximumVersion
 
-Specifies the maximum, or newest, version of a module to get.
-The **MaximumVersion** and **RequiredVersion** parameters are mutually exclusive; you cannot use both
-parameters in the same command.
+Specifies the maximum, or newest, version of a module to get. The **MaximumVersion** and
+**RequiredVersion** parameters are mutually exclusive; you cannot use both parameters in the same
+command.
 
 ```yaml
 Type: String
@@ -114,9 +114,9 @@ Accept wildcard characters: False
 
 ### -MinimumVersion
 
-Specifies the minimum version of a single module to get.
-The **MinimumVersion** and **RequiredVersion** parameters are mutually exclusive; you cannot use both
-parameters in the same command.
+Specifies the minimum version of a single module to get. The **MinimumVersion** and
+**RequiredVersion** parameters are mutually exclusive; you cannot use both parameters in the same
+command.
 
 ```yaml
 Type: String
@@ -172,7 +172,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.PowerShell.Commands.PSRepositoryItemInfo
+### System.Management.Automation.PSCustomObject
 
 ## NOTES
 
