@@ -15,18 +15,23 @@ Creates a file that defines a session configuration.
 
 ## SYNTAX
 
+### All
+
 ```
-New-PSSessionConfigurationFile [-Path] <String> [-SchemaVersion <Version>] [-Guid <Guid>] [-Author <String>]
-[-Description <String>] [-CompanyName <String>] [-Copyright <String>] [-SessionType <SessionType>]
-[-TranscriptDirectory <String>] [-RunAsVirtualAccount] [-RunAsVirtualAccountGroups <String[]>]
-[-MountUserDrive] [-UserDriveMaximumSize <Int64>] [-GroupManagedServiceAccount <String>] [-ScriptsToProcess <String[]>]
-[-RoleDefinitions <IDictionary>] [-RequiredGroups <IDictionary>] [-LanguageMode <PSLanguageMode>]
-[-ExecutionPolicy <ExecutionPolicy>] [-PowerShellVersion <Version>] [-ModulesToImport <Object[]>]
-[-VisibleAliases <String[]>] [-VisibleCmdlets <Object[]>] [-VisibleFunctions <Object[]>] [-VisibleExternalCommands <String[]>]
-[-VisibleProviders <String[]>] [-AliasDefinitions <IDictionary[]>] [-FunctionDefinitions <IDictionary[]>]
-[-VariableDefinitions <Object>] [-EnvironmentVariables <IDictionary>] [-TypesToProcess <String[]>]
-[-FormatsToProcess <String[]>] [-AssembliesToLoad <String[]>] [-Full] [<CommonParameters>]
+New-PSSessionConfigurationFile [-Path] <String> [-SchemaVersion <Version>] [-Guid <Guid>]
+ [-Author <String>] [-Description <String>] [-CompanyName <String>] [-Copyright <String>]
+ [-SessionType <SessionType>] [-TranscriptDirectory <String>] [-RunAsVirtualAccount]
+ [-RunAsVirtualAccountGroups <String[]>] [-MountUserDrive] [-UserDriveMaximumSize <Int64>]
+ [-GroupManagedServiceAccount <String>] [-ScriptsToProcess <String[]>]
+ [-RoleDefinitions <IDictionary>] [-RequiredGroups <IDictionary>] [-LanguageMode <PSLanguageMode>]
+ [-ExecutionPolicy <ExecutionPolicy>] [-PowerShellVersion <Version>] [-ModulesToImport <Object[]>]
+ [-VisibleAliases <String[]>] [-VisibleCmdlets <Object[]>] [-VisibleFunctions <Object[]>]
+ [-VisibleExternalCommands <String[]>] [-VisibleProviders <String[]>]
+ [-AliasDefinitions <IDictionary[]>] [-FunctionDefinitions <IDictionary[]>]
+ [-VariableDefinitions <Object>] [-EnvironmentVariables <IDictionary>] [-TypesToProcess <String[]>]
+ [-FormatsToProcess <String[]>] [-AssembliesToLoad <String[]>] [-Full] [<CommonParameters>]
 ```
+
 
 ## DESCRIPTION
 

@@ -349,7 +349,7 @@ as escape sequences.
 ```yaml
 Type: String[]
 Parameter Sets: LiteralPath
-Aliases: PSPath
+Aliases: PSPath, LP
 
 Required: False
 Position: Named
@@ -429,7 +429,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: CurrentUser
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 

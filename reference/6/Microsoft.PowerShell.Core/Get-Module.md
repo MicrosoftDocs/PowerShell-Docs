@@ -502,14 +502,15 @@ Without this parameter, `Get-Module` gets only the modules that are both listed 
 **PSModulePath** environment variable, even if those modules are loaded in the current session.
 
 ```yaml
-Accept pipeline input: False
-Position: Named
-Accept wildcard characters: False
-Parameter Sets: Available, PsSession, CimSession
-Required: True (Available), False (PsSession, CimSession)
-Default value: None
-Aliases:
 Type: SwitchParameter
+Parameter Sets: Available, PsSession, CimSession
+Aliases:
+
+Required: True (Available), False (PsSession, CimSession)
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
 ```
 
 ### -Name

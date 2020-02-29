@@ -22,7 +22,8 @@ Publishes a specified module from the local computer to an online gallery.
 Publish-Module -Name <String> [-RequiredVersion <String>] [-NuGetApiKey <String>]
  [-Repository <String>] [-Credential <PSCredential>] [-FormatVersion <Version>]
  [-ReleaseNotes <String[]>] [-Tags <String[]>] [-LicenseUri <Uri>] [-IconUri <Uri>]
- [-ProjectUri <Uri>] [-Force] [-AllowPrerelease] [-WhatIf] [-Confirm] [<CommonParameters>]
+ [-ProjectUri <Uri>] [-Exclude <String[]>] [-Force] [-AllowPrerelease] [-SkipAutomaticTags]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### ModulePathParameterSet
@@ -30,8 +31,8 @@ Publish-Module -Name <String> [-RequiredVersion <String>] [-NuGetApiKey <String>
 ```
 Publish-Module -Path <String> [-NuGetApiKey <String>] [-Repository <String>]
  [-Credential <PSCredential>] [-FormatVersion <Version>] [-ReleaseNotes <String[]>]
- [-Tags <String[]>] [-LicenseUri <Uri>] [-IconUri <Uri>] [-ProjectUri <Uri>] [-Force] [-WhatIf]
- [-Confirm] [<CommonParameters>]
+ [-Tags <String[]>] [-LicenseUri <Uri>] [-IconUri <Uri>] [-ProjectUri <Uri>] [-Force]
+ [-SkipAutomaticTags] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -87,6 +88,22 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -Confirm
+
+Prompts you for confirmation before running the `Publish-Module`.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Credential
 
 Specifies a user account that has rights to publish a module for a specified package provider or
@@ -101,6 +118,20 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -Exclude
+
+```yaml
+Type: String[]
+Parameter Sets: ModuleNameParameterSet
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -292,6 +323,21 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -SkipAutomaticTags
+{{ Fill SkipAutomaticTags Description }}
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Tags
 
 Adds one or more tags to the module that you are publishing. Example tags include
@@ -305,22 +351,6 @@ Aliases:
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Confirm
-
-Prompts you for confirmation before running the `Publish-Module`.
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: (All)
-Aliases: cf
-
-Required: False
-Position: Named
-Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -349,13 +379,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### PSModuleInfo
+### System.String
+
+### System.Management.Automation.PSCredential
 
 ## OUTPUTS
 
-### None
-
-`Publish-Module` shows no output if a module is published successfully.
+### System.Object
 
 ## NOTES
 

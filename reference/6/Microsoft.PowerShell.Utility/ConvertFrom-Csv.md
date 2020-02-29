@@ -16,17 +16,23 @@ objects.
 
 ## SYNTAX
 
-### Delimiter (Default)
+### DelimiterPath (Default)
 
 ```
-ConvertFrom-Csv [-InputObject] <psobject[]> [[-Delimiter] <char>] [-Header <string[]>]
+ConvertFrom-Csv [[-Delimiter] <Char>] [-InputObject] <PSObject[]> [-Header <String[]>]
  [<CommonParameters>]
 ```
 
-### UseCulture
+### CultureLiteralPath
 
 ```
-ConvertFrom-Csv [-InputObject] <psobject[]> -UseCulture [-Header <string[]>] [<CommonParameters>]
+ConvertFrom-Csv -UseCulture [-InputObject] <PSObject[]> [-Header <String[]>] [<CommonParameters>]
+```
+
+### CulturePath
+
+```
+ConvertFrom-Csv -UseCulture [-InputObject] <PSObject[]> [-Header <String[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -159,7 +165,7 @@ cannot create the objects from the CSV strings and will return the CSV strings.
 
 ```yaml
 Type: Char
-Parameter Sets: Delimiter
+Parameter Sets: DelimiterPath
 Aliases:
 
 Required: False
@@ -221,7 +227,7 @@ for a culture, use the following command: `(Get-Culture).TextInfo.ListSeparator`
 
 ```yaml
 Type: SwitchParameter
-Parameter Sets: UseCulture
+Parameter Sets: CultureLiteralPath, CulturePath
 Aliases:
 
 Required: True

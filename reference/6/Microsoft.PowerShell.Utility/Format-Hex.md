@@ -167,7 +167,7 @@ escape sequences. For more information, see [about_Quoting_Rules](../Microsoft.P
 ```yaml
 Type: String[]
 Parameter Sets: LiteralPath
-Aliases: PSPath
+Aliases: PSPath, LP
 
 Required: True
 Position: Named
