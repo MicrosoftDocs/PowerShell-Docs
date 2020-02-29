@@ -57,7 +57,8 @@ New-CimSession
 This example creates a CIM session to the computer specified by **ComputerName**.
 By default, `New-CimSession` creates a WSMan session when **ComputerName** is specified.
 
-```powershell New-CimSession -ComputerName Server01
+```powershell
+New-CimSession -ComputerName Server01
 ```
 
 ### Example 3: Create a CIM session to multiple computers
@@ -168,7 +169,7 @@ For more information, see [about_Certificate_Provider](../Microsoft.PowerShell.S
 
 ```yaml
 Type: String
-Parameter Sets: CertificatePrameterSet
+Parameter Sets: CertificateParameterSet
 Aliases:
 
 Required: False

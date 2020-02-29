@@ -16,7 +16,7 @@ Converts a SDDL string to a custom object.
 ## SYNTAX
 
 ```
-ConvertFrom-SddlString [-Sddl] <String> [-Type <Object>] [<CommonParameters>]
+ConvertFrom-SddlString [-Sddl] <String> [-Type <AccessRightTypeNames>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -112,7 +112,7 @@ By default cmdlet uses file system rights.
 CryptoKeyRights and ActiveDirectoryRights are not supported in PowerShell Core.
 
 ```yaml
-Type: Object
+Type: AccessRightTypeNames
 Parameter Sets: (All)
 Aliases:
 Accepted values: FileSystemRights, RegistryRights, ActiveDirectoryRights, MutexRights, SemaphoreRights, CryptoKeyRights, EventWaitHandleRights

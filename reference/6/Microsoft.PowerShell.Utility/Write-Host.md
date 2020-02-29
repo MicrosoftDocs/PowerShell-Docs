@@ -208,7 +208,7 @@ Objects to display in the host.
 ```yaml
 Type: Object
 Parameter Sets: (All)
-Aliases:
+Aliases: Msg, Message
 
 Required: False
 Position: 0

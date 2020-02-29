@@ -19,7 +19,7 @@ Enables Credential Security Support Provider (CredSSP) authentication on a compu
 ### All
 
 ```
-Enable-WSManCredSSP [-Role] <String> [[-DelegateComputer] <String[]>] [-Force] [<CommonParameters>]
+Enable-WSManCredSSP [[-DelegateComputer] <String[]>] [-Force] [-Role] <String> [<CommonParameters>]
 ```
 
 ## DESCRIPTION

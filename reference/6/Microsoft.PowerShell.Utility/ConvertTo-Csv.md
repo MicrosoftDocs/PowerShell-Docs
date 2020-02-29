@@ -15,18 +15,25 @@ Converts objects into a series of character-separated value (CSV) strings.
 
 ## SYNTAX
 
-### Delimiter (Default)
+### DelimiterPath (Default)
 
 ```
-ConvertTo-Csv [-InputObject] <psobject> [[-Delimiter] <char>] [-IncludeTypeInformation]
+ConvertTo-Csv [-InputObject] <PSObject> [-IncludeTypeInformation] [-NoTypeInformation]
+ [<CommonParameters>]
+```
+
+### Delimiter
+
+```
+ConvertTo-Csv [-InputObject] <PSObject> [[-Delimiter] <Char>] [-IncludeTypeInformation]
  [-NoTypeInformation] [<CommonParameters>]
 ```
 
 ### UseCulture
 
 ```
-ConvertTo-Csv [-InputObject] <psobject> [-UseCulture] [-IncludeTypeInformation]
- [-NoTypeInformation] [<CommonParameters>]
+ConvertTo-Csv [-InputObject] <PSObject> [-UseCulture] [-IncludeTypeInformation] [-NoTypeInformation]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
