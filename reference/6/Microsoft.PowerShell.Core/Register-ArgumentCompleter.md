@@ -148,14 +148,15 @@ to create a new **CompletionResult** object for each value.
 Specifies the name of the commands as an array.
 
 ```yaml
-Accept pipeline input: False
-Position: Named
-Accept wildcard characters: False
-Parameter Sets: NativeSet, PowerShellSet
-Required: True (NativeSet), False (PowerShellSet)
-Default value: None
-Aliases:
 Type: String[]
+Parameter Sets: NativeSet, PowerShellSet
+Aliases:
+
+Required: True (NativeSet), False (PowerShellSet)
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
 ```
 
 ### -Native

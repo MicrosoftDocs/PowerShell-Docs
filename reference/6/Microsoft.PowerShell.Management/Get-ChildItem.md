@@ -607,7 +607,7 @@ For more information, see [about_Quoting_Rules](../Microsoft.Powershell.Core/Abo
 ```yaml
 Type: String[]
 Parameter Sets: LiteralItems
-Aliases: PSPath
+Aliases: PSPath, LP
 
 Required: True
 Position: Named

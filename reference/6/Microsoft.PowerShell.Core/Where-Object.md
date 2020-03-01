@@ -18,13 +18,8 @@ Selects objects from a collection based on their property values.
 ### EqualSet (Default)
 
 ```
-Where-Object [-InputObject <PSObject>] [-Property] <String> [[-Value] <Object>] [-EQ] [<CommonParameters>]
-```
-
-### NotSet
-
-```
-Where-Object [-Property] <string> -Not [-InputObject <psobject>] [<CommonParameters>]
+Where-Object [-InputObject <PSObject>] [-Property] <String> [[-Value] <Object>] [-EQ]
+ [<CommonParameters>]
 ```
 
 ### ScriptBlockSet
@@ -33,185 +28,213 @@ Where-Object [-Property] <string> -Not [-InputObject <psobject>] [<CommonParamet
 Where-Object [-InputObject <PSObject>] [-FilterScript] <ScriptBlock> [<CommonParameters>]
 ```
 
-### CaseSensitiveLessOrEqualSet
+### CaseSensitiveGreaterOrEqualSet
 
 ```
-Where-Object [-InputObject <PSObject>] [-Property] <String> [[-Value] <Object>] [-CLE] [<CommonParameters>]
+Where-Object [-InputObject <PSObject>] [-Property] <String> [[-Value] <Object>] -CGE
+ [<CommonParameters>]
 ```
 
 ### CaseSensitiveEqualSet
 
 ```
-Where-Object [-InputObject <PSObject>] [-Property] <String> [[-Value] <Object>] [-CEQ] [<CommonParameters>]
+Where-Object [-InputObject <PSObject>] [-Property] <String> [[-Value] <Object>] -CEQ
+ [<CommonParameters>]
 ```
 
 ### NotEqualSet
 
 ```
-Where-Object [-InputObject <PSObject>] [-Property] <String> [[-Value] <Object>] [-NE] [<CommonParameters>]
+Where-Object [-InputObject <PSObject>] [-Property] <String> [[-Value] <Object>] -NE
+ [<CommonParameters>]
 ```
 
 ### CaseSensitiveNotEqualSet
 
 ```
-Where-Object [-InputObject <PSObject>] [-Property] <String> [[-Value] <Object>] [-CNE] [<CommonParameters>]
+Where-Object [-InputObject <PSObject>] [-Property] <String> [[-Value] <Object>] -CNE
+ [<CommonParameters>]
 ```
 
 ### GreaterThanSet
 
 ```
-Where-Object [-InputObject <PSObject>] [-Property] <String> [[-Value] <Object>] [-GT] [<CommonParameters>]
+Where-Object [-InputObject <PSObject>] [-Property] <String> [[-Value] <Object>] -GT
+ [<CommonParameters>]
 ```
 
 ### CaseSensitiveGreaterThanSet
 
 ```
-Where-Object [-InputObject <PSObject>] [-Property] <String> [[-Value] <Object>] [-CGT] [<CommonParameters>]
+Where-Object [-InputObject <PSObject>] [-Property] <String> [[-Value] <Object>] -CGT
+ [<CommonParameters>]
 ```
 
 ### LessThanSet
 
 ```
-Where-Object [-InputObject <PSObject>] [-Property] <String> [[-Value] <Object>] [-LT] [<CommonParameters>]
+Where-Object [-InputObject <PSObject>] [-Property] <String> [[-Value] <Object>] -LT
+ [<CommonParameters>]
 ```
 
 ### CaseSensitiveLessThanSet
 
 ```
-Where-Object [-InputObject <PSObject>] [-Property] <String> [[-Value] <Object>] [-CLT] [<CommonParameters>]
+Where-Object [-InputObject <PSObject>] [-Property] <String> [[-Value] <Object>] -CLT
+ [<CommonParameters>]
 ```
 
 ### GreaterOrEqualSet
 
 ```
-Where-Object [-InputObject <PSObject>] [-Property] <String> [[-Value] <Object>] [-GE] [<CommonParameters>]
-```
-
-### CaseSensitiveGreaterOrEqualSet
-
-```
-Where-Object [-InputObject <PSObject>] [-Property] <String> [[-Value] <Object>] [-CGE] [<CommonParameters>]
+Where-Object [-InputObject <PSObject>] [-Property] <String> [[-Value] <Object>] -GE
+ [<CommonParameters>]
 ```
 
 ### LessOrEqualSet
 
 ```
-Where-Object [-InputObject <PSObject>] [-Property] <String> [[-Value] <Object>] [-LE] [<CommonParameters>]
+Where-Object [-InputObject <PSObject>] [-Property] <String> [[-Value] <Object>] -LE
+ [<CommonParameters>]
+```
+
+### CaseSensitiveLessOrEqualSet
+
+```
+Where-Object [-InputObject <PSObject>] [-Property] <String> [[-Value] <Object>] -CLE
+ [<CommonParameters>]
 ```
 
 ### LikeSet
 
 ```
-Where-Object [-InputObject <PSObject>] [-Property] <String> [[-Value] <Object>] [-Like] [<CommonParameters>]
+Where-Object [-InputObject <PSObject>] [-Property] <String> [[-Value] <Object>] -Like
+ [<CommonParameters>]
 ```
 
 ### CaseSensitiveLikeSet
 
 ```
-Where-Object [-InputObject <PSObject>] [-Property] <String> [[-Value] <Object>] [-CLike] [<CommonParameters>]
+Where-Object [-InputObject <PSObject>] [-Property] <String> [[-Value] <Object>] -CLike
+ [<CommonParameters>]
 ```
 
 ### NotLikeSet
 
 ```
-Where-Object [-InputObject <PSObject>] [-Property] <String> [[-Value] <Object>] [-NotLike] [<CommonParameters>]
+Where-Object [-InputObject <PSObject>] [-Property] <String> [[-Value] <Object>] -NotLike
+ [<CommonParameters>]
 ```
 
 ### CaseSensitiveNotLikeSet
 
 ```
-Where-Object [-InputObject <PSObject>] [-Property] <String> [[-Value] <Object>] [-CNotLike]
+Where-Object [-InputObject <PSObject>] [-Property] <String> [[-Value] <Object>] -CNotLike
  [<CommonParameters>]
 ```
 
 ### MatchSet
 
 ```
-Where-Object [-InputObject <PSObject>] [-Property] <String> [[-Value] <Object>] [-Match] [<CommonParameters>]
+Where-Object [-InputObject <PSObject>] [-Property] <String> [[-Value] <Object>] -Match
+ [<CommonParameters>]
 ```
 
 ### CaseSensitiveMatchSet
 
 ```
-Where-Object [-InputObject <PSObject>] [-Property] <String> [[-Value] <Object>] [-CMatch] [<CommonParameters>]
+Where-Object [-InputObject <PSObject>] [-Property] <String> [[-Value] <Object>] -CMatch
+ [<CommonParameters>]
 ```
 
 ### NotMatchSet
 
 ```
-Where-Object [-InputObject <PSObject>] [-Property] <String> [[-Value] <Object>] [-NotMatch]
+Where-Object [-InputObject <PSObject>] [-Property] <String> [[-Value] <Object>] -NotMatch
  [<CommonParameters>]
 ```
 
 ### CaseSensitiveNotMatchSet
 
 ```
-Where-Object [-InputObject <PSObject>] [-Property] <String> [[-Value] <Object>] [-CNotMatch]
+Where-Object [-InputObject <PSObject>] [-Property] <String> [[-Value] <Object>] -CNotMatch
  [<CommonParameters>]
 ```
 
 ### ContainsSet
 
 ```
-Where-Object [-InputObject <PSObject>] [-Property] <String> [[-Value] <Object>] [-Contains]
+Where-Object [-InputObject <PSObject>] [-Property] <String> [[-Value] <Object>] -Contains
  [<CommonParameters>]
 ```
 
 ### CaseSensitiveContainsSet
 
 ```
-Where-Object [-InputObject <PSObject>] [-Property] <String> [[-Value] <Object>] [-CContains]
+Where-Object [-InputObject <PSObject>] [-Property] <String> [[-Value] <Object>] -CContains
  [<CommonParameters>]
 ```
 
 ### NotContainsSet
 
 ```
-Where-Object [-InputObject <PSObject>] [-Property] <String> [[-Value] <Object>] [-NotContains]
+Where-Object [-InputObject <PSObject>] [-Property] <String> [[-Value] <Object>] -NotContains
  [<CommonParameters>]
 ```
 
 ### CaseSensitiveNotContainsSet
 
 ```
-Where-Object [-InputObject <PSObject>] [-Property] <String> [[-Value] <Object>] [-CNotContains]
+Where-Object [-InputObject <PSObject>] [-Property] <String> [[-Value] <Object>] -CNotContains
  [<CommonParameters>]
 ```
 
 ### InSet
 
 ```
-Where-Object [-InputObject <PSObject>] [-Property] <String> [[-Value] <Object>] [-In] [<CommonParameters>]
+Where-Object [-InputObject <PSObject>] [-Property] <String> [[-Value] <Object>] -In
+ [<CommonParameters>]
 ```
 
 ### CaseSensitiveInSet
 
 ```
-Where-Object [-InputObject <PSObject>] [-Property] <String> [[-Value] <Object>] [-CIn] [<CommonParameters>]
+Where-Object [-InputObject <PSObject>] [-Property] <String> [[-Value] <Object>] -CIn
+ [<CommonParameters>]
 ```
 
 ### NotInSet
 
 ```
-Where-Object [-InputObject <PSObject>] [-Property] <String> [[-Value] <Object>] [-NotIn] [<CommonParameters>]
+Where-Object [-InputObject <PSObject>] [-Property] <String> [[-Value] <Object>] -NotIn
+ [<CommonParameters>]
 ```
 
 ### CaseSensitiveNotInSet
 
 ```
-Where-Object [-InputObject <PSObject>] [-Property] <String> [[-Value] <Object>] [-CNotIn] [<CommonParameters>]
+Where-Object [-InputObject <PSObject>] [-Property] <String> [[-Value] <Object>] -CNotIn
+ [<CommonParameters>]
 ```
 
 ### IsSet
 
 ```
-Where-Object [-InputObject <PSObject>] [-Property] <String> [[-Value] <Object>] [-Is] [<CommonParameters>]
+Where-Object [-InputObject <PSObject>] [-Property] <String> [[-Value] <Object>] -Is
+ [<CommonParameters>]
 ```
 
 ### IsNotSet
 
 ```
-Where-Object [-InputObject <PSObject>] [-Property] <String> [[-Value] <Object>] [-IsNot] [<CommonParameters>]
+Where-Object [-InputObject <PSObject>] [-Property] <String> [[-Value] <Object>] -IsNot
+ [<CommonParameters>]
+```
+
+### Not
+
+```
+Where-Object [-InputObject <PSObject>] [-Property] <String> -Not [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -1050,7 +1073,7 @@ This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
 Type: String
-Parameter Sets: EqualSet, CaseSensitiveLessOrEqualSet, CaseSensitiveEqualSet, NotEqualSet, CaseSensitiveNotEqualSet, GreaterThanSet, CaseSensitiveGreaterThanSet, LessThanSet, CaseSensitiveLessThanSet, GreaterOrEqualSet, CaseSensitiveGreaterOrEqualSet, LessOrEqualSet, LikeSet, CaseSensitiveLikeSet, NotLikeSet, CaseSensitiveNotLikeSet, MatchSet, CaseSensitiveMatchSet, NotMatchSet, CaseSensitiveNotMatchSet, ContainsSet, CaseSensitiveContainsSet, NotContainsSet, CaseSensitiveNotContainsSet, InSet, CaseSensitiveInSet, NotInSet, CaseSensitiveNotInSet, IsSet, IsNotSet
+Parameter Sets: EqualSet, CaseSensitiveGreaterOrEqualSet, CaseSensitiveEqualSet, NotEqualSet, CaseSensitiveNotEqualSet, GreaterThanSet, CaseSensitiveGreaterThanSet, LessThanSet, CaseSensitiveLessThanSet, GreaterOrEqualSet, LessOrEqualSet, CaseSensitiveLessOrEqualSet, LikeSet, CaseSensitiveLikeSet, NotLikeSet, CaseSensitiveNotLikeSet, MatchSet, CaseSensitiveMatchSet, NotMatchSet, CaseSensitiveNotMatchSet, ContainsSet, CaseSensitiveContainsSet, NotContainsSet, CaseSensitiveNotContainsSet, InSet, CaseSensitiveInSet, NotInSet, CaseSensitiveNotInSet, IsSet, IsNotSet, Not
 Aliases:
 
 Required: True
@@ -1074,7 +1097,7 @@ This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
 Type: Object
-Parameter Sets: EqualSet, CaseSensitiveLessOrEqualSet, CaseSensitiveEqualSet, NotEqualSet, CaseSensitiveNotEqualSet, GreaterThanSet, CaseSensitiveGreaterThanSet, LessThanSet, CaseSensitiveLessThanSet, GreaterOrEqualSet, CaseSensitiveGreaterOrEqualSet, LessOrEqualSet, LikeSet, CaseSensitiveLikeSet, NotLikeSet, CaseSensitiveNotLikeSet, MatchSet, CaseSensitiveMatchSet, NotMatchSet, CaseSensitiveNotMatchSet, ContainsSet, CaseSensitiveContainsSet, NotContainsSet, CaseSensitiveNotContainsSet, InSet, CaseSensitiveInSet, NotInSet, CaseSensitiveNotInSet, IsSet, IsNotSet
+Parameter Sets: EqualSet, CaseSensitiveGreaterOrEqualSet, CaseSensitiveEqualSet, NotEqualSet, CaseSensitiveNotEqualSet, GreaterThanSet, CaseSensitiveGreaterThanSet, LessThanSet, CaseSensitiveLessThanSet, GreaterOrEqualSet, LessOrEqualSet, CaseSensitiveLessOrEqualSet, LikeSet, CaseSensitiveLikeSet, NotLikeSet, CaseSensitiveNotLikeSet, MatchSet, CaseSensitiveMatchSet, NotMatchSet, CaseSensitiveNotMatchSet, ContainsSet, CaseSensitiveContainsSet, NotContainsSet, CaseSensitiveNotContainsSet, InSet, CaseSensitiveInSet, NotInSet, CaseSensitiveNotInSet, IsSet, IsNotSet
 Aliases:
 
 Required: False

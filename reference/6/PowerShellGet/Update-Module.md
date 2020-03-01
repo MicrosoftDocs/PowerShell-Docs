@@ -137,6 +137,22 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -Confirm
+
+Prompts you for confirmation before running `Update-Module`.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Credential
 
 Specifies a user account that has permission to update a module.
@@ -209,6 +225,21 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: True
 ```
 
+### -PassThru
+{{ Fill PassThru Description }}
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Proxy
 
 Specifies a proxy server for the request, rather than connecting directly to an internet resource.
@@ -260,18 +291,37 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Confirm
+### -Scope
 
-Prompts you for confirmation before running `Update-Module`.
+Specifies the installation scope of the module. The acceptable values for this parameter are
+**AllUsers** and **CurrentUser**.
+
+The **AllUsers** scope installs modules in a location that is accessible to all users of the
+computer:
+
+`$env:ProgramFiles\PowerShell\Modules`
+
+The **CurrentUser** installs modules in a location that is accessible only to the current user of
+the computer:
+
+`$home\Documents\PowerShell\Modules`
+
+When no **Scope** is defined, the default is set based on the PowerShellGet version.
+
+- In PowerShellGet versions 2.0.0 and above, the default is **CurrentUser**, which does not require
+  elevation for install.
+- In PowerShellGet 1.x versions, the default is **AllUsers**, which requires elevation for install.
+
 
 ```yaml
-Type: SwitchParameter
+Type: String
 Parameter Sets: (All)
-Aliases: cf
+Aliases:
+Accepted values: CurrentUser, AllUsers
 
 Required: False
 Position: Named
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -300,7 +350,17 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
+### System.String[]
+
+### System.String
+
+### System.Management.Automation.PSCredential
+
+### System.Uri
+
 ## OUTPUTS
+
+### System.Object
 
 ## NOTES
 

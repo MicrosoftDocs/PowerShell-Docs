@@ -419,7 +419,7 @@ This feature was added in PowerShell 6.0.0.
 
 ```yaml
 Type: String
-Parameter Sets: CustomMethodNoProxy, CustomMethod
+Parameter Sets: CustomMethod, CustomMethodNoProxy
 Aliases: CM
 
 Required: True

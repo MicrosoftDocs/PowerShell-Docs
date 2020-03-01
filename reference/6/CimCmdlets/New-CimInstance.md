@@ -120,7 +120,6 @@ PSComputerName :
 The `Get-CimInstance` cmdlet then retrieves a particular single instance. The `Invoke-CimMethod`
 cmdlet calls the **GetOwner** method on the retrieved instance.
 
-
 ### Example 4: Create an instance for a CIM class of a specific namespace
 
 This example gets an instance of a CIM class named **MSFT_Something** in the namespace

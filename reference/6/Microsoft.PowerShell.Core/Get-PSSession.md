@@ -21,15 +21,6 @@ Gets the PowerShell sessions on local and remote computers.
 Get-PSSession [-Name <String[]>] [<CommonParameters>]
 ```
 
-### ComputerName
-
-```
-Get-PSSession [-ComputerName] <String[]> [-ApplicationName <String>] [-ConfigurationName <String>]
- [-Name <String[]>] [-Credential <PSCredential>] [-Authentication <AuthenticationMechanism>]
- [-CertificateThumbprint <String>] [-Port <Int32>] [-UseSSL] [-ThrottleLimit <Int32>]
- [-State <SessionFilterState>] [-SessionOption <PSSessionOption>] [<CommonParameters>]
-```
-
 ### ComputerInstanceId
 
 ```
@@ -39,26 +30,37 @@ Get-PSSession [-ComputerName] <String[]> [-ApplicationName <String>] [-Configura
  [-State <SessionFilterState>] [-SessionOption <PSSessionOption>] [<CommonParameters>]
 ```
 
-### ConnectionUri
+### ComputerName
 
 ```
-Get-PSSession [-ConnectionUri] <Uri[]> [-ConfigurationName <String>] [-AllowRedirection] [-Name <String[]>]
- [-Credential <PSCredential>] [-Authentication <AuthenticationMechanism>] [-CertificateThumbprint <String>]
- [-ThrottleLimit <Int32>] [-State <SessionFilterState>] [-SessionOption <PSSessionOption>] [<CommonParameters>]
+Get-PSSession [-ComputerName] <String[]> [-ApplicationName <String>] [-ConfigurationName <String>]
+ [-Name <String[]>] [-Credential <PSCredential>] [-Authentication <AuthenticationMechanism>]
+ [-CertificateThumbprint <String>] [-Port <Int32>] [-UseSSL] [-ThrottleLimit <Int32>]
+ [-State <SessionFilterState>] [-SessionOption <PSSessionOption>] [<CommonParameters>]
 ```
 
 ### ConnectionUriInstanceId
 
 ```
-Get-PSSession [-ConnectionUri] <Uri[]> [-ConfigurationName <String>] [-AllowRedirection] -InstanceId <Guid[]>
- [-Credential <PSCredential>] [-Authentication <AuthenticationMechanism>] [-CertificateThumbprint <String>]
- [-ThrottleLimit <Int32>] [-State <SessionFilterState>] [-SessionOption <PSSessionOption>] [<CommonParameters>]
+Get-PSSession [-ConnectionUri] <Uri[]> [-ConfigurationName <String>] [-AllowRedirection]
+ -InstanceId <Guid[]> [-Credential <PSCredential>] [-Authentication <AuthenticationMechanism>]
+ [-CertificateThumbprint <String>] [-ThrottleLimit <Int32>] [-State <SessionFilterState>]
+ [-SessionOption <PSSessionOption>] [<CommonParameters>]
 ```
 
-### VMNameInstanceId
+### ConnectionUri
 
 ```
-Get-PSSession [-ConfigurationName <String>] -InstanceId <Guid[]> [-State <SessionFilterState>]
+Get-PSSession [-ConnectionUri] <Uri[]> [-ConfigurationName <String>] [-AllowRedirection]
+ [-Name <String[]>] [-Credential <PSCredential>] [-Authentication <AuthenticationMechanism>]
+ [-CertificateThumbprint <String>] [-ThrottleLimit <Int32>] [-State <SessionFilterState>]
+ [-SessionOption <PSSessionOption>] [<CommonParameters>]
+```
+
+### VMName
+
+```
+Get-PSSession [-ConfigurationName <String>] [-Name <String[]>] [-State <SessionFilterState>]
  -VMName <String[]> [<CommonParameters>]
 ```
 
@@ -79,22 +81,22 @@ Get-PSSession [-ConfigurationName <String>] -InstanceId <Guid[]> [-State <Sessio
 ### VMId
 
 ```
-Get-PSSession [-ConfigurationName <String>] [-Name <String[]>] [-State <SessionFilterState>] -VMId <Guid[]>
- [<CommonParameters>]
+Get-PSSession [-ConfigurationName <String>] [-Name <String[]>] [-State <SessionFilterState>]
+ -VMId <Guid[]> [<CommonParameters>]
 ```
 
 ### VMIdInstanceId
 
 ```
-Get-PSSession [-ConfigurationName <String>] -InstanceId <Guid[]> [-State <SessionFilterState>] -VMId <Guid[]>
- [<CommonParameters>]
+Get-PSSession [-ConfigurationName <String>] -InstanceId <Guid[]> [-State <SessionFilterState>]
+ -VMId <Guid[]> [<CommonParameters>]
 ```
 
-### VMName
+### VMNameInstanceId
 
 ```
-Get-PSSession [-ConfigurationName <String>] [-Name <String[]>] [-State <SessionFilterState>] -VMName <String[]>
- [<CommonParameters>]
+Get-PSSession [-ConfigurationName <String>] -InstanceId <Guid[]> [-State <SessionFilterState>]
+ -VMName <String[]> [<CommonParameters>]
 ```
 
 ### InstanceId
@@ -292,7 +294,7 @@ This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
 Type: SwitchParameter
-Parameter Sets: ConnectionUri, ConnectionUriInstanceId
+Parameter Sets: ConnectionUriInstanceId, ConnectionUri
 Aliases:
 
 Required: False
@@ -318,7 +320,7 @@ It does not change the application that the session uses.
 
 ```yaml
 Type: String
-Parameter Sets: ComputerName, ComputerInstanceId
+Parameter Sets: ComputerInstanceId, ComputerName
 Aliases:
 
 Required: False
@@ -362,7 +364,7 @@ This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
 Type: AuthenticationMechanism
-Parameter Sets: ComputerName, ComputerInstanceId, ConnectionUri, ConnectionUriInstanceId
+Parameter Sets: ComputerInstanceId, ComputerName, ConnectionUriInstanceId, ConnectionUri
 Aliases:
 Accepted values: Default, Basic, Negotiate, NegotiateWithImplicitCredential, Credssp, Digest, Kerberos
 
@@ -392,7 +394,7 @@ This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
 Type: String
-Parameter Sets: ComputerName, ComputerInstanceId, ConnectionUri, ConnectionUriInstanceId
+Parameter Sets: ComputerInstanceId, ComputerName, ConnectionUriInstanceId, ConnectionUri
 Aliases:
 
 Required: False
@@ -422,7 +424,7 @@ versions of PowerShell. Earlier versions do not store sessions.
 
 ```yaml
 Type: String[]
-Parameter Sets: ComputerName, ComputerInstanceId
+Parameter Sets: ComputerInstanceId, ComputerName
 Aliases: Cn
 
 Required: True
@@ -449,7 +451,7 @@ For more information about session configurations, see [about_Session_Configurat
 
 ```yaml
 Type: String
-Parameter Sets: ComputerName, ComputerInstanceId, ConnectionUri, ConnectionUriInstanceId, VMNameInstanceId, ContainerId, ContainerIdInstanceId, VMId, VMIdInstanceId, VMName
+Parameter Sets: ComputerInstanceId, ComputerName, ConnectionUriInstanceId, ConnectionUri, VMName, ContainerId, ContainerIdInstanceId, VMId, VMIdInstanceId, VMNameInstanceId
 Aliases:
 
 Required: False
@@ -490,7 +492,7 @@ of Windows PowerShell or PowerShell Core. Earlier versions do not store sessions
 
 ```yaml
 Type: Uri[]
-Parameter Sets: ConnectionUri, ConnectionUriInstanceId
+Parameter Sets: ConnectionUriInstanceId, ConnectionUri
 Aliases: URI, CU
 
 Required: True
@@ -542,7 +544,7 @@ This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
 Type: PSCredential
-Parameter Sets: ComputerName, ComputerInstanceId, ConnectionUri, ConnectionUriInstanceId
+Parameter Sets: ComputerInstanceId, ComputerName, ConnectionUriInstanceId, ConnectionUri
 Aliases:
 
 Required: False
@@ -586,14 +588,15 @@ The **InstanceID** is unique, even when you have multiple sessions running in Po
 The instance ID of a session is stored in the **InstanceID** property of the session.
 
 ```yaml
-Accept pipeline input: False
-Position: Named
-Accept wildcard characters: False
-Parameter Sets: ComputerInstanceId, ConnectionUriInstanceId, VMNameInstanceId, ContainerIdInstanceId, VMIdInstanceId, InstanceId
-Required: True (ComputerInstanceId, ConnectionUriInstanceId, VMNameInstanceId, ContainerIdInstanceId, VMIdInstanceId), False (InstanceId)
-Default value: None
-Aliases:
 Type: Guid[]
+Parameter Sets: ComputerInstanceId, ConnectionUriInstanceId, VMNameInstanceId, ContainerIdInstanceId, VMIdInstanceId, InstanceId
+Aliases:
+
+Required: True (ComputerInstanceId, ConnectionUriInstanceId, VMNameInstanceId, ContainerIdInstanceId, VMIdInstanceId), False (InstanceId)
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
 ```
 
 ### -Name
@@ -605,14 +608,15 @@ Wildcard characters are permitted.
 The friendly name of a session is stored in the **Name** property of the session.
 
 ```yaml
-Accept pipeline input: True (ByPropertyName)
-Position: Named
-Accept wildcard characters: False
-Parameter Sets: Name, ComputerName, ConnectionUri, ContainerId, VMId, VMName
-Required: False
-Default value: None
-Aliases:
 Type: String[]
+Parameter Sets: Name, ComputerName, ConnectionUri, ContainerId, VMId, VMName
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
 ```
 
 ### -Port
@@ -643,7 +647,7 @@ This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
 Type: Int32
-Parameter Sets: ComputerName, ComputerInstanceId
+Parameter Sets: ComputerInstanceId, ComputerName
 Aliases:
 
 Required: False
@@ -675,7 +679,7 @@ For more information about session configurations, see [about_Session_Configurat
 
 ```yaml
 Type: PSSessionOption
-Parameter Sets: ComputerName, ComputerInstanceId, ConnectionUri, ConnectionUriInstanceId
+Parameter Sets: ComputerInstanceId, ComputerName, ConnectionUriInstanceId, ConnectionUri
 Aliases:
 
 Required: False
@@ -702,7 +706,7 @@ This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
 Type: SessionFilterState
-Parameter Sets: ComputerName, ComputerInstanceId, ConnectionUri, ConnectionUriInstanceId, VMNameInstanceId, ContainerId, ContainerIdInstanceId, VMId, VMIdInstanceId, VMName
+Parameter Sets: ComputerInstanceId, ComputerName, ConnectionUriInstanceId, ConnectionUri, VMName, ContainerId, ContainerIdInstanceId, VMId, VMIdInstanceId, VMNameInstanceId
 Aliases:
 Accepted values: All, Opened, Disconnected, Closed, Broken
 
@@ -724,7 +728,7 @@ This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
 Type: Int32
-Parameter Sets: ComputerName, ComputerInstanceId, ConnectionUri, ConnectionUriInstanceId
+Parameter Sets: ComputerInstanceId, ComputerName, ConnectionUriInstanceId, ConnectionUri
 Aliases:
 
 Required: False
@@ -748,7 +752,7 @@ This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
 Type: SwitchParameter
-Parameter Sets: ComputerName, ComputerInstanceId
+Parameter Sets: ComputerInstanceId, ComputerName
 Aliases:
 
 Required: False
@@ -786,7 +790,7 @@ To see the virtual machines that are available to you, use the **Get-VM** cmdlet
 
 ```yaml
 Type: String[]
-Parameter Sets: VMNameInstanceId, VMName
+Parameter Sets: VMName, VMNameInstanceId
 Aliases:
 
 Required: True

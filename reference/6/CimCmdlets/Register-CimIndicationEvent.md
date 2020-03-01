@@ -70,6 +70,7 @@ class raises an event whenever a process starts.
 Register-CimIndicationEvent -ClassName 'Win32_ProcessStartTrace' -SourceIdentifier "ProcessStarted"
 Get-Event -SourceIdentifier "ProcessStarted"
 ```
+
 The `Get-Event` cmdlet gets the events with **ProcessStarted** subscription. For more information,
 see [Get-Event](../Microsoft.PowerShell.Utility/Get-Event.md).
 
