@@ -16,7 +16,7 @@ If the command is the last command in the pipeline, the objects are displayed in
 
 ## SYNTAX
 
-```powershell
+```
 Write-Output [-InputObject] <PSObject[]> [-NoEnumerate] [<CommonParameters>]
 ```
 
