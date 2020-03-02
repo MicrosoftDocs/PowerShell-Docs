@@ -200,28 +200,6 @@ Accept pipeline input: True (ByPropertyName, ByValue)
 Accept wildcard characters: True
 ```
 
-### -AllCentralAccessPolicies
-
-Gets information about all central access policies that are enabled on the computer.
-
-Beginning in Windows Server 2012, administrators can use Active Directory and Group Policy to set
-central access policies for users and groups. For more information, see
-[Dynamic Access Control: Scenario Overview](/windows-server/identity/solution-guides/dynamic-access-control--scenario-overview).
-
-This parameter is introduced in Windows PowerShell 3.0.
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: False
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -InputObject
 
 Gets the security descriptor for the specified object.
@@ -261,27 +239,6 @@ Aliases: PSPath
 
 Required: False
 Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName, ByValue)
-Accept wildcard characters: False
-```
-
-### -Path
-
-Specifies the path to a resource.
-**Get-Acl** gets the security descriptor of the resource indicated by the path.
-Wildcards are permitted.
-If you omit the *Path* parameter, **Get-Acl** gets the security descriptor of the current directory.
-
-It is not necessary to type `Path` when you specify a value for this parameter.
-
-```yaml
-Type: String[]
-Parameter Sets: ByPath
-Aliases:
-
-Required: False
-Position: 0
 Default value: None
 Accept pipeline input: True (ByPropertyName, ByValue)
 Accept wildcard characters: False

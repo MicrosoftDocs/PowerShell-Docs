@@ -405,10 +405,10 @@ information, see [about_History](About/about_History.md).
 
 [Get-History](Get-History.md)
 
-[Get-PSReadLineOption](/powershell/module/psreadline/get-psreadlineoption)
+[Get-PSReadLineOption](../PSReadLine/Get-PSReadLineOption.md)
 
 [Invoke-History](Invoke-History.md)
 
 [PSReadLine](../PSReadLine/PSReadLine.md)
 
-[Set-PSReadLineOption](/powershell/module/psreadline/set-psreadlineoption)
+[Set-PSReadLineOption](../PSReadLine/Set-PSReadLineOption.md)

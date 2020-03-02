@@ -244,7 +244,7 @@ sequences. For more information, see [about_Quoting_Rules](../Microsoft.Powershe
 ```yaml
 Type: String
 Parameter Sets: ByLiteralPath
-Aliases: PSPath
+Aliases: PSPath, LP
 
 Required: True
 Position: Named
@@ -296,7 +296,7 @@ not wrapped. If this parameter is not used, the width is determined by the chara
 host. The default for the PowerShell console is 80 characters.
 
 ```yaml
-Type: Int
+Type: Int32
 Parameter Sets: (All)
 Aliases:
 

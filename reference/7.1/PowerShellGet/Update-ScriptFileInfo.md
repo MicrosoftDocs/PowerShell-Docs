@@ -143,6 +143,22 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -Confirm
+
+Prompts you for confirmation before running `Update-ScriptFileInfo`.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Copyright
 
 Specifies a copyright statement for the script.
@@ -282,7 +298,7 @@ characters as escape sequences.
 ```yaml
 Type: String
 Parameter Sets: LiteralPathParameterSet
-Aliases:
+Aliases: PSPath
 
 Required: True
 Position: 0
@@ -438,22 +454,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Confirm
-
-Prompts you for confirmation before running `Update-ScriptFileInfo`.
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: (All)
-Aliases: cf
-
-Required: False
-Position: Named
-Default value: False
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -WhatIf
 
 Shows what would happen if `Update-ScriptFileInfo` runs. The cmdlet isn't run.
@@ -478,7 +478,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
+### System.String
+
 ## OUTPUTS
+
+### System.Object
 
 ## NOTES
 

@@ -19,14 +19,14 @@ objects.
 ### Delimiter (Default)
 
 ```
-ConvertFrom-Csv [-InputObject] <psobject[]> [[-Delimiter] <char>] [-Header <string[]>]
+ConvertFrom-Csv [[-Delimiter] <Char>] [-InputObject] <PSObject[]> [-Header <String[]>]
  [<CommonParameters>]
 ```
 
 ### UseCulture
 
 ```
-ConvertFrom-Csv [-InputObject] <psobject[]> -UseCulture [-Header <string[]>] [<CommonParameters>]
+ConvertFrom-Csv -UseCulture [-InputObject] <PSObject[]> [-Header <String[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION

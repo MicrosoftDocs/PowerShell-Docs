@@ -306,7 +306,7 @@ as errors.
 
 ```yaml
 Type: SwitchParameter
-Parameter Sets: (All)
+Parameter Sets: FromSource, FromMember, FromPath, FromLiteralPath
 Aliases:
 
 Required: False
@@ -344,7 +344,7 @@ marks. Single quotation marks tell PowerShell not to interpret any characters as
 ```yaml
 Type: String[]
 Parameter Sets: FromLiteralPath
-Aliases: PSPath
+Aliases: PSPath, LP
 
 Required: True
 Position: Named

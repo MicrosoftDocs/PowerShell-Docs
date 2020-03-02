@@ -39,7 +39,7 @@ ForEach-Object -Parallel <scriptblock> [-InputObject <PSObject>] [-ThrottleLimit
 ## DESCRIPTION
 
 The `ForEach-Object` cmdlet performs an operation on each item in a collection of input objects.
-The input objects can be piped to the cmdlet or specified by using the *InputObject* parameter.
+The input objects can be piped to the cmdlet or specified by using the **InputObject** parameter.
 
 Starting in Windows PowerShell 3.0, there are two different ways to construct a `ForEach-Object` command.
 

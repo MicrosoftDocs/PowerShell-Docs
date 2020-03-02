@@ -89,7 +89,7 @@ This command makes the WSManPaths location stack the current location stack.
 The `*-Location` cmdlets use the current location stack unless a different location stack is
 specified in the command. For information about location stacks, see the Notes.
 
-### Example 5: Navigate location history using +/-
+### Example 5: Navigate location history using `+` or `-`
 
 ```
 PS C:\> Set-Location -Path $env:SystemRoot
@@ -124,7 +124,7 @@ interpret any characters as escape sequences.
 ```yaml
 Type: String
 Parameter Sets: LiteralPath
-Aliases: PSPath
+Aliases: PSPath, LP
 
 Required: True
 Position: Named

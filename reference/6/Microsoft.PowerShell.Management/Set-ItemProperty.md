@@ -431,7 +431,7 @@ You can pipe objects to this cmdlet.
 ### None, System.Management.Automation.PSCustomObject
 
 This cmdlet generates a **PSCustomObject** object that represents the item that was changed and its
-new property value, if you specify the *PassThru* parameter.
+new property value, if you specify the **PassThru** parameter.
 Otherwise, this cmdlet does not generate any output.
 
 ## NOTES

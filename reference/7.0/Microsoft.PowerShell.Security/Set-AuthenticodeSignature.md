@@ -268,7 +268,6 @@ Accept pipeline input: True (ByPropertyName, ByValue)
 Accept wildcard characters: False
 ```
 
-
 ### -Content
 
 Contents of a file as a byte array, on which digital signature is added.

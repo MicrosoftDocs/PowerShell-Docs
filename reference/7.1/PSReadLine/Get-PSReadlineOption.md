@@ -96,6 +96,9 @@ You cannot pipe objects to this cmdlet.
 
 ### Microsoft.PowerShell.PSConsoleReadLineOptions
 
+An instance of the current options. Changing the values will update the settings in PSReadLine
+directly without invoking `Set-PSReadLineOption`.
+
 ## NOTES
 
 ## RELATED LINKS
