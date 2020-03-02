@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Utility
 ms.date: 12/20/2019
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/select-string?view=powershell-7&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/select-string?view=powershell-7.x&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Select-String
 ---
@@ -48,20 +48,20 @@ Select-String [-Culture <String>] [-Pattern] <String[]> [-Path] <String[]> -Raw 
  [-AllMatches] [-Encoding <Encoding>] [-Context <Int32[]>] [<CommonParameters>]
 ```
 
-### LiteralFile
-
-```
-Select-String [-Culture <String>] [-Pattern] <String[]> -LiteralPath <String[]> [-SimpleMatch]
- [-CaseSensitive] [-Quiet] [-List] [-NoEmphasis] [-Include <String[]>] [-Exclude <String[]>]
- [-NotMatch] [-AllMatches] [-Encoding <Encoding>] [-Context <Int32[]>] [<CommonParameters>]
-```
-
 ### LiteralFileRaw
 
 ```
 Select-String [-Culture <String>] [-Pattern] <String[]> -LiteralPath <String[]> -Raw [-SimpleMatch]
  [-CaseSensitive] [-List] [-NoEmphasis] [-Include <String[]>] [-Exclude <String[]>] [-NotMatch]
  [-AllMatches] [-Encoding <Encoding>] [-Context <Int32[]>] [<CommonParameters>]
+```
+
+### LiteralFile
+
+```
+Select-String [-Culture <String>] [-Pattern] <String[]> -LiteralPath <String[]> [-SimpleMatch]
+ [-CaseSensitive] [-Quiet] [-List] [-NoEmphasis] [-Include <String[]>] [-Exclude <String[]>]
+ [-NotMatch] [-AllMatches] [-Encoding <Encoding>] [-Context <Int32[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION

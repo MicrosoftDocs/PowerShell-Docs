@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Module Name: Microsoft.PowerShell.Utility
 ms.date: 12/12/2019
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/join-string?view=powershell-7&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/join-string?view=powershell-7.x&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Join-String
 ---
@@ -209,7 +209,7 @@ Specifies the text to be joined. Enter a variable that contains the text, or typ
 expression that gets the objects to join into strings.
 
 ```yaml
-Type: PSObject
+Type: PSObject[]
 Parameter Sets: (All)
 Aliases:
 

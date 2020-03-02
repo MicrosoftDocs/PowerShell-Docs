@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: PowerShellGet
 ms.date: 03/07/2019
-online version: https://docs.microsoft.com/powershell/module/powershellget/install-module?view=powershell-7&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/powershellget/install-module?view=powershell-7.x&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Install-Module
 ---
@@ -21,7 +21,7 @@ Downloads one or more modules from a repository, and installs them on the local 
 Install-Module [-Name] <String[]> [-MinimumVersion <String>] [-MaximumVersion <String>]
  [-RequiredVersion <String>] [-Repository <String[]>] [-Credential <PSCredential>] [-Scope <String>]
  [-Proxy <Uri>] [-ProxyCredential <PSCredential>] [-AllowClobber] [-SkipPublisherCheck] [-Force]
- [-AllowPrerelease] [-AcceptLicense] [-WhatIf] [-Confirm] [<CommonParameters>]
+ [-AllowPrerelease] [-AcceptLicense] [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### InputObject
@@ -29,7 +29,7 @@ Install-Module [-Name] <String[]> [-MinimumVersion <String>] [-MaximumVersion <S
 ```
 Install-Module [-InputObject] <PSObject[]> [-Credential <PSCredential>] [-Scope <String>]
  [-Proxy <Uri>] [-ProxyCredential <PSCredential>] [-AllowClobber] [-SkipPublisherCheck] [-Force]
- [-AcceptLicense] [-WhatIf] [-Confirm] [<CommonParameters>]
+ [-AcceptLicense] [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -167,6 +167,22 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -Confirm
+
+Prompts you for confirmation before running the `Install-Module` cmdlet.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Credential
 
 Specifies a user account that has rights to install a module for a specified package provider or
@@ -275,6 +291,20 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
+### -PassThru
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Proxy
 
 Specifies a proxy server for the request, rather than connecting directly to the Internet resource.
@@ -371,7 +401,7 @@ When no **Scope** is defined, the default is set based on the PowerShellGet vers
 Type: String
 Parameter Sets: (All)
 Aliases:
-Accepted values: AllUsers, CurrentUser
+Accepted values: CurrentUser, AllUsers
 
 Required: False
 Position: Named
@@ -394,22 +424,6 @@ Aliases:
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Confirm
-
-Prompts you for confirmation before running the `Install-Module` cmdlet.
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: (All)
-Aliases: cf
-
-Required: False
-Position: Named
-Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -443,7 +457,19 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 `Find-Module` creates **PSRepositoryItemInfo** objects that can be sent down the pipeline to
 `Install-Module`.
 
+### System.String[]
+
+### System.Management.Automation.PSObject[]
+
+### System.String
+
+### System.Management.Automation.PSCredential
+
+### System.Uri
+
 ## OUTPUTS
+
+### System.Object
 
 ## NOTES
 

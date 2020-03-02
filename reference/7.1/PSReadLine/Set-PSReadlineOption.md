@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: PSReadLine
 ms.date: 09/23/2019
-online version: https://docs.microsoft.com/powershell/module/psreadline/set-psreadlineoption?view=powershell-7&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/psreadline/set-psreadlineoption?view=powershell-7.x&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-PSReadLineOption
 ---
@@ -25,7 +25,7 @@ Set-PSReadLineOption [-EditMode <EditMode>] [-ContinuationPrompt <String>] [-His
  [-ShowToolTips] [-ExtraPromptLineCount <Int32>] [-DingTone <Int32>] [-DingDuration <Int32>]
  [-BellStyle <BellStyle>] [-CompletionQueryItems <Int32>] [-WordDelimiters <String>]
  [-HistorySearchCaseSensitive] [-HistorySaveStyle <HistorySaveStyle>] [-HistorySavePath <String>]
- [-AnsiEscapeTimeout <Int32>] [-PromptText <String>] [-ViModeIndicator <ViModeStyle>]
+ [-AnsiEscapeTimeout <Int32>] [-PromptText <String[]>] [-ViModeIndicator <ViModeStyle>]
  [-ViModeChangeHandler <ScriptBlock>] [-Colors <Hashtable>] [<CommonParameters>]
 ```
 

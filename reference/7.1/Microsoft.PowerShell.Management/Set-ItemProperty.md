@@ -3,7 +3,7 @@ external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 keywords: powershell,cmdlet
 locale: en-us
 ms.date: 5/14/2019
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/set-itemproperty?view=powershell-7&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/set-itemproperty?view=powershell-7.x&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-ItemProperty
 ---
@@ -89,7 +89,7 @@ Set-ItemProperty -Path "HKLM:\Software\ContosoCompany" -Name "NoOfEmployees" -Va
 Get-ItemProperty -Path "HKLM:\Software\ContosoCompany"
 ```
 
-```output
+```Output
 PSPath        : Microsoft.PowerShell.Core\Registry::HKEY_LOCAL_MACHINE\software\contosocompany
 PSParentPath  : Microsoft.PowerShell.Core\Registry::HKEY_LOCAL_MACHINE\software
 PSChildName   : contosocompany
@@ -97,7 +97,6 @@ PSDrive       : HKLM
 PSProvider    : Microsoft.PowerShell.Core\Registry
 NoOfLocations : 2
 NoOfEmployees : 823
-
 ```
 
 ```powershell
@@ -105,7 +104,7 @@ Set-ItemProperty -Path "HKLM:\Software\ContosoCompany" -Name "NoOfEmployees" -Va
 Get-ItemProperty -Path "HKLM:\Software\ContosoCompany"
 ```
 
-```output
+```Output
 PSPath        : Microsoft.PowerShell.Core\Registry::HKEY_LOCAL_MACHINE\software\contosocompany
 PSParentPath  : Microsoft.PowerShell.Core\Registry::HKEY_LOCAL_MACHINE\software
 PSChildName   : contosocompany
@@ -274,8 +273,8 @@ For more information, see [about_Quoting_Rules](../Microsoft.Powershell.Core/Abo
 
 ```yaml
 Type: String[]
-Parameter Sets: propertyValueLiteralPathSet, propertyPSObjectLiteralPathSet
-Aliases: PSPath
+Parameter Sets: propertyPSObjectLiteralPathSet, propertyValueLiteralPathSet
+Aliases: PSPath, LP
 
 Required: True
 Position: Named

@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: PowerShellGet
 ms.date: 07/03/2019
-online version: https://docs.microsoft.com/powershell/module/powershellget/uninstall-script?view=powershell-7&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/powershellget/uninstall-script?view=powershell-7.x&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Uninstall-Script
 ---
@@ -71,6 +71,22 @@ Aliases:
 Required: False
 Position: Named
 Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Confirm
+
+Prompts you for confirmation before running `Uninstall-Script`.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -174,22 +190,6 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Confirm
-
-Prompts you for confirmation before running `Uninstall-Script`.
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: (All)
-Aliases: cf
-
-Required: False
-Position: Named
-Default value: False
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -WhatIf
 
 Shows what would happen if `Uninstall-Script` runs. The cmdlet isn't run.
@@ -214,11 +214,15 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### PSRepositoryItemInfo
+### System.String[]
 
-`Uninstall-Script` accepts **PSRepositoryItemInfo** objects from the pipeline.
+### System.Management.Automation.PSObject[]
+
+### System.String
 
 ## OUTPUTS
+
+### System.Object
 
 ## NOTES
 

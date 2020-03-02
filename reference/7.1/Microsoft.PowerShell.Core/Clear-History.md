@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Core
 ms.date: 2/22/2019
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/clear-history?view=powershell-7&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/clear-history?view=powershell-7.x&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Clear-History
 ---
@@ -405,10 +405,10 @@ information, see [about_History](About/about_History.md).
 
 [Get-History](Get-History.md)
 
-[Get-PSReadLineOption](../PSReadLine/Get-PSReadLineOption)
+[Get-PSReadLineOption](../PSReadLine/Get-PSReadLineOption.md)
 
 [Invoke-History](Invoke-History.md)
 
 [PSReadLine](../PSReadLine/PSReadLine.md)
 
-[Set-PSReadLineOption](../PSReadLine/Set-PSReadLineOption)
+[Set-PSReadLineOption](../PSReadLine/Set-PSReadLineOption.md)

@@ -3,7 +3,7 @@ external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
 locale: en-us
 ms.date: 2/11/2019
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/send-mailmessage?view=powershell-7&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/send-mailmessage?view=powershell-7.x&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Send-MailMessage
 ---
@@ -18,11 +18,11 @@ Sends an email message.
 ### All
 
 ```
-Send-MailMessage [-To] <string[]> [[-Subject] <string>] [[-Body] <string>] [[-SmtpServer] <string>]
- -From <string> [-Attachments <string[]>] [-Bcc <string[]>] [-BodyAsHtml] [-Encoding <Encoding>]
- [-Cc <string[]>] [-DeliveryNotificationOption <DeliveryNotificationOptions>]
- [-Priority <MailPriority>] [-ReplyTo <string[]>] [-Credential <pscredential>] [-UseSsl]
- [-Port <int>] [<CommonParameters>]
+Send-MailMessage [-Attachments <String[]>] [-Bcc <String[]>] [[-Body] <String>] [-BodyAsHtml]
+ [-Encoding <Encoding>] [-Cc <String[]>] [-DeliveryNotificationOption <DeliveryNotificationOptions>]
+ -From <String> [[-SmtpServer] <String>] [-Priority <MailPriority>] [-ReplyTo <String[]>]
+ [[-Subject] <String>] [-To] <String[]> [-Credential <PSCredential>] [-UseSsl] [-Port <Int32>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -40,8 +40,9 @@ information, see [about_Preference_Variables](../Microsoft.PowerShell.Core/About
 
 This example sends an email message from one person to another person.
 
-The **From** and **To** parameters are required by `Send-MailMessage`. This example uses the default
-`$PSEmailServer` variable for the SMTP server, so the **SmtpServer** parameter is not needed.
+The **From**, **To**, and **Subject** parameters are required by `Send-MailMessage`. This example
+uses the default `$PSEmailServer` variable for the SMTP server, so the **SmtpServer** parameter is
+not needed.
 
 ```powershell
 Send-MailMessage -From 'User01 <user01@fabrikam.com>' -To 'User02 <user02@fabrikam.com>' -Subject 'Test mail'
@@ -102,7 +103,7 @@ Aliases: PsPath
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: True (ByValue)
+Accept pipeline input: True (ByPropertyName, ByValue)
 Accept wildcard characters: False
 ```
 
@@ -119,7 +120,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -135,7 +136,7 @@ Aliases:
 Required: False
 Position: 2
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -151,7 +152,7 @@ Aliases: BAH
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -168,7 +169,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -195,7 +196,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: Current user
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -223,7 +224,7 @@ Accepted values: None, OnSuccess, OnFailure, Delay, Never
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -257,7 +258,7 @@ Accepted values: ASCII, BigEndianUnicode, OEM, Unicode, UTF7, UTF8, UTF8BOM, UTF
 Required: False
 Position: Named
 Default value: UTF8NoBOM
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -274,7 +275,7 @@ Aliases:
 Required: True
 Position: Named
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -291,7 +292,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 25
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -309,7 +310,7 @@ Accepted values: Normal, High, Low
 Required: False
 Position: Named
 Default value: Normal
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -328,7 +329,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -347,7 +348,7 @@ Aliases: ComputerName
 Required: False
 Position: 3
 Default value: $PSEmailServer
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -356,14 +357,14 @@ Accept wildcard characters: False
 The **Subject** parameter isn't required. This parameter specifies the subject of the email message.
 
 ```yaml
-Type: String
+Type: String[]
 Parameter Sets: (All)
 Aliases: sub
 
 Required: False
 Position: 1
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -381,7 +382,7 @@ Aliases:
 Required: True
 Position: 0
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -398,7 +399,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 

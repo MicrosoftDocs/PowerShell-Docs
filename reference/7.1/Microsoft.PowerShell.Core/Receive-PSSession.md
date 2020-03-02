@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Core
 ms.date: 12/11/2019
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/receive-pssession?view=powershell-7&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/receive-pssession?view=powershell-7.x&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Receive-PSSession
 ---
@@ -31,20 +31,20 @@ Receive-PSSession [-Id] <Int32> [-OutTarget <OutTarget>] [-JobName <String>] [-W
  [<CommonParameters>]
 ```
 
-### ComputerInstanceId
-
-```
-Receive-PSSession [-ComputerName] <String> [-ApplicationName <String>] [-ConfigurationName <String>]
- -InstanceId <Guid> [-OutTarget <OutTarget>] [-JobName <String>] [-Credential <PSCredential>]
- [-Authentication <AuthenticationMechanism>] [-CertificateThumbprint <String>] [-Port <Int32>]
- [-UseSSL] [-SessionOption <PSSessionOption>] [-WhatIf] [-Confirm] [<CommonParameters>]
-```
-
 ### ComputerSessionName
 
 ```
 Receive-PSSession [-ComputerName] <String> [-ApplicationName <String>] [-ConfigurationName <String>]
  -Name <String> [-OutTarget <OutTarget>] [-JobName <String>] [-Credential <PSCredential>]
+ [-Authentication <AuthenticationMechanism>] [-CertificateThumbprint <String>] [-Port <Int32>]
+ [-UseSSL] [-SessionOption <PSSessionOption>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### ComputerInstanceId
+
+```
+Receive-PSSession [-ComputerName] <String> [-ApplicationName <String>] [-ConfigurationName <String>]
+ -InstanceId <Guid> [-OutTarget <OutTarget>] [-JobName <String>] [-Credential <PSCredential>]
  [-Authentication <AuthenticationMechanism>] [-CertificateThumbprint <String>] [-Port <Int32>]
  [-UseSSL] [-SessionOption <PSSessionOption>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
@@ -423,7 +423,7 @@ the session uses.
 
 ```yaml
 Type: String
-Parameter Sets: ComputerInstanceId, ComputerSessionName
+Parameter Sets: ComputerSessionName, ComputerInstanceId
 Aliases:
 
 Required: False
@@ -460,7 +460,7 @@ For more information about the values of this parameter, see
 
 ```yaml
 Type: AuthenticationMechanism
-Parameter Sets: ComputerInstanceId, ComputerSessionName, ConnectionUriSessionName, ConnectionUriInstanceId
+Parameter Sets: ComputerSessionName, ComputerInstanceId, ConnectionUriSessionName, ConnectionUriInstanceId
 Aliases:
 Accepted values: Default, Basic, Negotiate, NegotiateWithImplicitCredential, Credssp, Digest, Kerberos
 
@@ -484,7 +484,7 @@ To get a certificate thumbprint, use a `Get-Item` or `Get-ChildItem` command in 
 
 ```yaml
 Type: String
-Parameter Sets: ComputerInstanceId, ComputerSessionName, ConnectionUriSessionName, ConnectionUriInstanceId
+Parameter Sets: ComputerSessionName, ComputerInstanceId, ConnectionUriSessionName, ConnectionUriInstanceId
 Aliases:
 
 Required: False
@@ -506,7 +506,7 @@ Wildcard characters aren't permitted. To specify the local computer, type the co
 
 ```yaml
 Type: String
-Parameter Sets: ComputerInstanceId, ComputerSessionName
+Parameter Sets: ComputerSessionName, ComputerInstanceId
 Aliases: Cn
 
 Required: True
@@ -536,7 +536,7 @@ For more information about session configurations, see
 
 ```yaml
 Type: String
-Parameter Sets: ComputerInstanceId, ComputerSessionName, ConnectionUriSessionName, ConnectionUriInstanceId
+Parameter Sets: ComputerSessionName, ComputerInstanceId, ConnectionUriSessionName, ConnectionUriInstanceId
 Aliases:
 
 Required: False
@@ -600,7 +600,7 @@ object and the password is stored as a [SecureString](/dotnet/api/system.securit
 
 ```yaml
 Type: PSCredential
-Parameter Sets: ComputerInstanceId, ComputerSessionName, ConnectionUriSessionName, ConnectionUriInstanceId
+Parameter Sets: ComputerSessionName, ComputerInstanceId, ConnectionUriSessionName, ConnectionUriInstanceId
 Aliases:
 
 Required: False
@@ -742,7 +742,7 @@ command from running on all computers.
 
 ```yaml
 Type: Int32
-Parameter Sets: ComputerInstanceId, ComputerSessionName
+Parameter Sets: ComputerSessionName, ComputerInstanceId
 Aliases:
 
 Required: False
@@ -791,7 +791,7 @@ session configurations, see
 
 ```yaml
 Type: PSSessionOption
-Parameter Sets: ComputerInstanceId, ComputerSessionName, ConnectionUriSessionName, ConnectionUriInstanceId
+Parameter Sets: ComputerSessionName, ComputerInstanceId, ConnectionUriSessionName, ConnectionUriInstanceId
 Aliases:
 
 Required: False
@@ -814,7 +814,7 @@ command fails.
 
 ```yaml
 Type: SwitchParameter
-Parameter Sets: ComputerInstanceId, ComputerSessionName
+Parameter Sets: ComputerSessionName, ComputerInstanceId
 Aliases:
 
 Required: False

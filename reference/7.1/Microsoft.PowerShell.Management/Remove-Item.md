@@ -3,7 +3,7 @@ external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 keywords: powershell,cmdlet
 locale: en-us
 ms.date: 5/14/2019
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/remove-item?view=powershell-7&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/remove-item?view=powershell-7.x&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Remove-Item
 ---
@@ -111,7 +111,7 @@ parentheses.
 Get-ChildItem
 ```
 
-```output
+```Output
     Directory: C:\temp\Downloads
 
 Mode                LastWriteTime         Length Name
@@ -127,7 +127,7 @@ Mode                LastWriteTime         Length Name
 Get-ChildItem | Where-Object Name -Like '*`[*'
 ```
 
-```output
+```Output
     Directory: C:\temp\Downloads
 
 Mode                LastWriteTime         Length Name
@@ -143,7 +143,7 @@ Get-ChildItem | Where-Object Name -Like '*`[*' | ForEach-Object { Remove-Item -L
 Get-ChildItem
 ```
 
-```output
+```Output
     Directory: C:\temp\Downloads
 
 Mode                LastWriteTime         Length Name
@@ -160,7 +160,7 @@ alternate data stream. The stream parameter is introduced in Windows PowerShell 
 Get-Item C:\Test\Copy-Script.ps1 -Stream Zone.Identifier
 ```
 
-```output
+```Output
    FileName: \\C:\Test\Copy-Script.ps1
 
 Stream                   Length
@@ -174,7 +174,7 @@ Remove-Item C:\Test\Copy-Script.ps1 -Stream Zone.Identifier
 Get-Item C:\Test\Copy-Script.ps1 -Stream Zone.Identifier
 ```
 
-```output
+```Output
 Get-Item : Could not open alternate data stream 'Zone.Identifier' of file 'C:\Test\Copy-Script.ps1'.
 At line:1 char:1
 + Get-Item 'C:\Test\Copy-Script.ps1' -Stream Zone.Identifier
@@ -331,7 +331,7 @@ For more information, see [about_Quoting_Rules](../Microsoft.Powershell.Core/Abo
 ```yaml
 Type: String[]
 Parameter Sets: LiteralPath
-Aliases: PSPath
+Aliases: PSPath, LP
 
 Required: True
 Position: Named
@@ -386,7 +386,7 @@ Prompts you for confirmation before running the cmdlet.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases:
+Aliases: cf
 
 Required: False
 Position: Named
@@ -403,7 +403,7 @@ The cmdlet is not run.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: cf
+Aliases: wi
 
 Required: False
 Position: Named

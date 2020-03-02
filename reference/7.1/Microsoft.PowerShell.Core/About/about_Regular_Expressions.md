@@ -2,7 +2,7 @@
 keywords: powershell,cmdlet
 locale: en-us
 ms.date: 12/01/2017
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_regular_expressions?view=powershell-7&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_regular_expressions?view=powershell-7.x&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Regular_Expressions
 ---
@@ -193,9 +193,9 @@ characters.
 ```
 
 > [!NOTE]
-> WHen defining a regex containing an `$` anchor, be sure to enclose the regex
+> When defining a regex containing an `$` anchor, be sure to enclose the regex
 > using single quotes (`'`) instead of double quotes (`"`) or PowerShell will
-> expand the the expression as a variable.
+> expand the expression as a variable.
 
 When using anchors in PowerShell, you should understand the difference between
 **Singleline** and **Multiline** regular expression options.
@@ -346,10 +346,10 @@ PS> $Matches.user
 jsmith
 ```
 
-The following example stores the newest log entry in the Windows Security
-Log. The provided regular expression extracts the username and domain
-from the message and stores them under the keys:**N** for name and
-**D** for domain
+The following example stores the newest log entry in the
+Windows Security Log. The provided regular expression extracts the username and
+domain from the message and stores them under the keys:**N** for name and
+**D** for domain 
 
 ```powershell
 $log = (Get-WinEvent -LogName Security -MaxEvents 1).message

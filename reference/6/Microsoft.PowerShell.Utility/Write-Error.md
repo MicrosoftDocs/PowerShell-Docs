@@ -290,7 +290,7 @@ Type: String
 Parameter Sets: NoException, WithException
 Aliases: Msg
 
-Required: True
+Required: True (NoException), True (WithException)
 Position: 0
 Default value: None
 Accept pipeline input: True (ByValue)

@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Utility
 ms.date: 10/28/2019
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/compare-object?view=powershell-7&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/compare-object?view=powershell-7.x&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Compare-Object
 ---
@@ -140,6 +140,7 @@ running processes and stores them in the `$Processes_After` variable.
 **notepad.exe**, from the `$Processes_After` object.
 
 <a name="ex5" />
+
 ### Example 5: Show the difference when using the PassThru parameter
 
 Normally, `Compare-Object` returns a **PSCustomObject** type with the following properties:

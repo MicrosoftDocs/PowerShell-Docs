@@ -3,7 +3,7 @@ external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 keywords: powershell,cmdlet
 locale: en-us
 ms.date: 02/04/2020
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/set-location?view=powershell-7&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/set-location?view=powershell-7.x&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-Location
 ---
@@ -89,7 +89,7 @@ This command makes the WSManPaths location stack the current location stack.
 The `*-Location` cmdlets use the current location stack unless a different location stack is
 specified in the command. For information about location stacks, see the Notes.
 
-### Example 5: Navigate location history using +/-
+### Example 5: Navigate location history using `+` or `-`
 
 ```
 PS C:\> Set-Location -Path $env:SystemRoot
@@ -124,7 +124,7 @@ interpret any characters as escape sequences.
 ```yaml
 Type: String
 Parameter Sets: LiteralPath
-Aliases: PSPath
+Aliases: PSPath, LP
 
 Required: True
 Position: Named

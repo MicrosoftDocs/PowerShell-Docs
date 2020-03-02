@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name:
 ms.date: 06/09/2017
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/clear-host?view=powershell-7&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/clear-host?view=powershell-7.x&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Clear-Host
 ---
@@ -72,6 +72,11 @@ PS C:>
 ```
 
 This command uses the `cls` alias of `Clear-Host` to clear the current display.
+
+## PARAMETERS
+
+### CommonParameters
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 

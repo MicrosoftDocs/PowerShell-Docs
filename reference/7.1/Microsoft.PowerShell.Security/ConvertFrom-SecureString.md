@@ -4,15 +4,13 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Security
 ms.date: 04/27/2019
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.security/convertfrom-securestring?view=powershell-7&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.security/convertfrom-securestring?view=powershell-7.x&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: ConvertFrom-SecureString
 ---
-
 # ConvertFrom-SecureString
 
 ## SYNOPSIS
-
 Converts a secure string to an encrypted standard string.
 
 ## SYNTAX

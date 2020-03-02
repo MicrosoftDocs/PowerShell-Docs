@@ -790,7 +790,7 @@ For more information about PowerShell background jobs, see [about_Jobs](About/ab
 
 ```yaml
 Type: SwitchParameter
-Parameter Sets: FilePathRunspace, Session, ComputerName, FilePathComputerName, VMId, Uri, FilePathUri, VMName, FilePathVMId, FilePathVMName, SSHHost, FilePathContainerId, ContainerId, SSHHostHashParam, FilePathSSHHost, FilePathSSHHostHash
+Parameter Sets: FilePathRunspace, Session, ComputerName, FilePathComputerName, Uri, FilePathUri, VMId, VMName, FilePathVMId, FilePathVMName, SSHHost, ContainerId, FilePathContainerId, SSHHostHashParam, FilePathSSHHost, FilePathSSHHostHash
 Aliases:
 
 Required: False
@@ -919,7 +919,7 @@ information, see [about_Preference_Variables](about/about_Preference_Variables.m
 
 ```yaml
 Type: String
-Parameter Sets: ComputerName, FilePathComputerName, VMId, Uri, FilePathUri, VMName, FilePathVMId, FilePathVMName, FilePathContainerId, ContainerId
+Parameter Sets: ComputerName, FilePathComputerName, Uri, FilePathUri, VMId, VMName, FilePathVMId, FilePathVMName, ContainerId, FilePathContainerId
 Aliases:
 
 Required: False
@@ -971,7 +971,7 @@ Specifies an array of container IDs.
 
 ```yaml
 Type: String[]
-Parameter Sets: FilePathContainerId, ContainerId
+Parameter Sets: ContainerId, FilePathContainerId
 Aliases:
 
 Required: True
@@ -998,14 +998,15 @@ object and the password is stored as a [SecureString](/dotnet/api/system.securit
 > [How secure is SecureString?](/dotnet/api/system.security.securestring#how-secure-is-securestring).
 
 ```yaml
-Accept pipeline input: True (ByPropertyName)
-Position: Named
-Accept wildcard characters: False
-Parameter Sets: ComputerName, FilePathComputerName, Uri, FilePathUri, VMId, VMName, FilePathVMId, FilePathVMName
-Required: True (VMId, VMName, FilePathVMId, FilePathVMName), False (ComputerName, FilePathComputerName, Uri, FilePathUri)
-Default value: Current user
-Aliases:
 Type: PSCredential
+Parameter Sets: ComputerName, FilePathComputerName, Uri, FilePathUri, VMId, VMName, FilePathVMId, FilePathVMName
+Aliases:
+
+Required: True (VMId, VMName, FilePathVMId, FilePathVMName), False (ComputerName, FilePathComputerName, Uri, FilePathUri)
+Position: Named
+Default value: Current user
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
 ```
 
 ### -EnableNetworkAccess
@@ -1079,7 +1080,7 @@ This parameter affects only the output display. It doesn't change the object.
 
 ```yaml
 Type: SwitchParameter
-Parameter Sets: FilePathRunspace, Session, ComputerName, FilePathComputerName, VMId, Uri, FilePathUri, VMName, FilePathVMId, FilePathVMName, SSHHost, FilePathContainerId, ContainerId, SSHHostHashParam, FilePathSSHHost, FilePathSSHHostHash
+Parameter Sets: FilePathRunspace, Session, ComputerName, FilePathComputerName, Uri, FilePathUri, VMId, VMName, FilePathVMId, FilePathVMName, SSHHost, ContainerId, FilePathContainerId, SSHHostHashParam, FilePathSSHHost, FilePathSSHHostHash
 Aliases: HCN
 
 Required: False
@@ -1183,7 +1184,7 @@ For more information about PowerShell background jobs, see [about_Jobs](./About/
 
 ```yaml
 Type: String
-Parameter Sets: FilePathRunspace, Session, ComputerName, FilePathComputerName, Uri, FilePathUri, FilePathContainerId, ContainerId
+Parameter Sets: FilePathRunspace, Session, ComputerName, FilePathComputerName, Uri, FilePathUri, ContainerId, FilePathContainerId
 Aliases:
 
 Required: False
@@ -1273,7 +1274,7 @@ Used to run the invoked command in debug mode in the remote PowerShell session.
 
 ```yaml
 Type: SwitchParameter
-Parameter Sets: FilePathRunspace, Session, ComputerName, FilePathComputerName, VMId, Uri, FilePathUri, VMName, FilePathVMId, FilePathVMName, SSHHost, FilePathContainerId, ContainerId, SSHHostHashParam, FilePathSSHHost, FilePathSSHHostHash
+Parameter Sets: FilePathRunspace, Session, ComputerName, FilePathComputerName, Uri, FilePathUri, VMId, VMName, FilePathVMId, FilePathVMName, SSHHost, ContainerId, FilePathContainerId, SSHHostHashParam, FilePathSSHHost, FilePathSSHHostHash
 Aliases:
 
 Required: False
@@ -1289,7 +1290,7 @@ Indicates that this cmdlet invokes a command as an Administrator.
 
 ```yaml
 Type: SwitchParameter
-Parameter Sets: FilePathContainerId, ContainerId
+Parameter Sets: ContainerId, FilePathContainerId
 Aliases:
 
 Required: False
@@ -1309,7 +1310,7 @@ variables in the command, use **ArgumentList**.
 
 ```yaml
 Type: ScriptBlock
-Parameter Sets: InProcess, Session, ComputerName, VMId, Uri, VMName, SSHHost, ContainerId, SSHHostHashParam
+Parameter Sets: InProcess, Session, ComputerName, Uri, VMId, VMName, SSHHost, ContainerId, SSHHostHashParam
 Aliases: Command
 
 Required: True
@@ -1448,7 +1449,7 @@ The throttle limit applies only to the current command, not to the session or to
 
 ```yaml
 Type: Int32
-Parameter Sets: FilePathRunspace, Session, ComputerName, FilePathComputerName, VMId, Uri, FilePathUri, VMName, FilePathVMId, FilePathVMName, FilePathContainerId, ContainerId
+Parameter Sets: FilePathRunspace, Session, ComputerName, FilePathComputerName, Uri, FilePathUri, VMId, VMName, FilePathVMId, FilePathVMName, ContainerId, FilePathContainerId
 Aliases:
 
 Required: False
@@ -1538,6 +1539,28 @@ Parameter Sets: VMName, FilePathVMName
 Aliases:
 
 Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -Subsystem
+
+Specifies the SSH subsystem used for the new **PSSession**.
+
+This specifies the subsystem to use on the target as defined in sshd_config.
+The subsystem starts a specific version of PowerShell with predefined parameters.
+If the specified subsystem does not exist on the remote computer, the command fails.
+
+If this parameter is not used, the default is the 'powershell' subsystem.
+
+```yaml
+Type: String
+Parameter Sets: SSHHost
+Aliases:
+
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: True (ByPropertyName)

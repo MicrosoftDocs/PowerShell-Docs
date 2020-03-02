@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Core
 ms.date: 5/20/2019
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/register-argumentcompleter?view=powershell-7&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/register-argumentcompleter?view=powershell-7.x&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Register-ArgumentCompleter
 ---
@@ -148,14 +148,15 @@ to create a new **CompletionResult** object for each value.
 Specifies the name of the commands as an array.
 
 ```yaml
-Accept pipeline input: False
-Position: Named
-Accept wildcard characters: False
-Parameter Sets: NativeSet, PowerShellSet
-Required: True (NativeSet), False (PowerShellSet)
-Default value: None
-Aliases:
 Type: String[]
+Parameter Sets: NativeSet, PowerShellSet
+Aliases:
+
+Required: True (NativeSet), False (PowerShellSet)
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
 ```
 
 ### -Native

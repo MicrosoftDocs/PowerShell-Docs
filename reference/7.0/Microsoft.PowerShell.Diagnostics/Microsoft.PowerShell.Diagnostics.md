@@ -18,6 +18,9 @@ Microsoft.PowerShell.Diagnostics module, which contains cmdlets that manage data
 
 ## Microsoft.PowerShell.Diagnostics Cmdlets
 
+### Get-Counter
+Gets performance counter data from local and remote computers.
+
 ### [Get-WinEvent](Get-WinEvent.md)
 Gets events from event logs and event tracing log files on local and remote computers.
 

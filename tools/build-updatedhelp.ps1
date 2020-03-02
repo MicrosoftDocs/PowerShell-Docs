@@ -27,22 +27,47 @@ $global:ProgressPreference = 'SilentlyContinue'
 
 $tempDir = [System.IO.Path]::GetTempPath()
 
+$needPandoc = $needPlatyps = $true
+
 # Pandoc source URL
 $panDocVersion = "2.7.3"
 $pandocSourceURL = "https://github.com/jgm/pandoc/releases/download/$panDocVersion/pandoc-$panDocVersion-windows-x86_64.zip"
 
 $docToolsPath = New-Item (Join-Path $tempDir "doctools") -ItemType Directory -Force
-$pandocZipPath = Join-Path $docToolsPath "pandoc-$panDocVersion-windows-x86_64.zip"
-Write-Verbose "Downloading Pandoc..."
-Invoke-WebRequest -Uri $pandocSourceURL -OutFile $pandocZipPath
 
-Expand-Archive -Path $pandocZipPath -DestinationPath $docToolsPath -Force
-$pandocExePath = Join-Path $docToolsPath "pandoc-$panDocVersion-windows-x86_64\pandoc.exe"
+$pandoc = Get-Command pandoc.exe -ea SilentlyContinue
+if ($pandoc) {
+    $version = (& $pandoc.Source --version | Select-String -pattern 'pandoc\.exe').Line.Split(' ')[-1]
+    if ($version -ge $panDocVersion) {
+        Write-Host "Found Pandoc version $version."
+        $pandocExePath = $pandoc.Source
+        $needPandoc = $false
+    }
+}
+
+if ($needPandoc) {
+    $pandocZipPath = Join-Path $docToolsPath "pandoc-$panDocVersion-windows-x86_64.zip"
+    Write-Verbose "Downloading Pandoc..."
+    Invoke-WebRequest -Uri $pandocSourceURL -OutFile $pandocZipPath
+    Expand-Archive -Path $pandocZipPath -DestinationPath $docToolsPath -Force
+    $pandocExePath = Join-Path $docToolsPath "pandoc-$panDocVersion-windows-x86_64\pandoc.exe"
+}
+
 
 $platyPSversion = "0.14.0"
-Write-Verbose "Downloading platyPS..."
-Save-Module -Name platyPS -Repository PSGallery -Force -Path $docToolsPath -RequiredVersion $platyPSversion
-Import-Module -FullyQualifiedName $docToolsPath\platyPS\$platyPSversion\platyPS.psd1
+$platyps = Get-Module -list platyps
+
+if ($platyps) {
+    if ($platyps.Version.ToString() -ge $platyPSversion) {
+        Write-Host "Found PlatyPS version $($platyps.Version.ToString())"
+        Import-Module platyps
+        $needPlatyps = $false
+    }
+} else {
+    Write-Verbose "Downloading platyPS..."
+    Save-Module -Name platyPS -Repository PSGallery -Force -Path $docToolsPath -RequiredVersion $platyPSversion
+    Import-Module -FullyQualifiedName $docToolsPath\platyPS\$platyPSversion\platyPS.psd1
+}
 
 $DocSet = Get-Item $sourceFolder
 $WorkingDirectory = $PWD

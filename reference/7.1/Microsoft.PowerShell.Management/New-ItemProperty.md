@@ -3,7 +3,7 @@ external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 keywords: powershell,cmdlet
 locale: en-us
 ms.date: 5/14/2019
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/new-itemproperty?view=powershell-7&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/new-itemproperty?view=powershell-7.x&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: New-ItemProperty
 ---
@@ -83,10 +83,9 @@ registry entry ("NoOfLocations"), and its value (3), to the "MyCompany" key.
 Get-Item -Path "HKLM:\Software\MyCompany" | New-ItemProperty -Name NoOfLocations -Value 3
 ```
 
-This command works because the parameter-binding feature of PowerShell associates the path
-of the `RegistryKey` object that `Get-Item` returns with the **LiteralPath** parameter of
-`New-ItemProperty`.
-For more information, see [about_Pipelines](../Microsoft.PowerShell.Core/About/about_pipelines.md).
+This command works because the parameter-binding feature of PowerShell associates the path of the
+`RegistryKey` object that `Get-Item` returns with the **LiteralPath** parameter of
+`New-ItemProperty`. For more information, see [about_Pipelines](../Microsoft.PowerShell.Core/About/about_pipelines.md).
 
 ### Example 3: Create a MultiString value in the registry using a Here-String
 
@@ -229,7 +228,7 @@ For more information, see [about_Quoting_Rules](../Microsoft.Powershell.Core/Abo
 ```yaml
 Type: String[]
 Parameter Sets: LiteralPath
-Aliases: PSPath
+Aliases: PSPath, LP
 
 Required: True
 Position: Named

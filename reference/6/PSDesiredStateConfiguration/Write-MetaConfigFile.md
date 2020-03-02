@@ -14,7 +14,7 @@ schema: 2.0.0
 
 ```
 Write-MetaConfigFile [[-ConfigurationName] <String>] [[-mofNode] <String>]
- [[-mofNodeHash] <System.Collections.Generic.Dictionary`2[System.String,System.String]>]
+ [[-mofNodeHash] <System.Collections.Generic.Dictionary`2[System.String,System.String]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -75,6 +75,9 @@ Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
+
+### CommonParameters
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 

@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Utility
 ms.date: 08/26/2019
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/add-type?view=powershell-7&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/add-type?view=powershell-7.x&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Add-Type
 ---
@@ -306,7 +306,7 @@ as errors.
 
 ```yaml
 Type: SwitchParameter
-Parameter Sets: (All)
+Parameter Sets: FromSource, FromMember, FromPath, FromLiteralPath
 Aliases:
 
 Required: False
@@ -344,7 +344,7 @@ marks. Single quotation marks tell PowerShell not to interpret any characters as
 ```yaml
 Type: String[]
 Parameter Sets: FromLiteralPath
-Aliases: PSPath
+Aliases: PSPath, LP
 
 Required: True
 Position: Named

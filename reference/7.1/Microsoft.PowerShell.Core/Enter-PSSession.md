@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Core
 ms.date: 5/15/2019
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/enter-pssession?view=powershell-7&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/enter-pssession?view=powershell-7.x&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Enter-PSSession
 ---
@@ -454,14 +454,15 @@ object and the password is stored as a [SecureString](/dotnet/api/system.securit
 > [How secure is SecureString?](/dotnet/api/system.security.securestring#how-secure-is-securestring).
 
 ```yaml
-Accept pipeline input: True (ByPropertyName)
-Position: 1
-Accept wildcard characters: False
-Parameter Sets: ComputerName, Uri, VMId, VMName
-Required: True (VMId, VMName), False (ComputerName, Uri)
-Default value: Current user
-Aliases:
 Type: PSCredential
+Parameter Sets: ComputerName, Uri, VMId, VMName
+Aliases:
+
+Required: True (VMId, VMName), False (ComputerName, Uri)
+Position: 1
+Default value: Current user
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
 ```
 
 ### -EnableNetworkAccess
