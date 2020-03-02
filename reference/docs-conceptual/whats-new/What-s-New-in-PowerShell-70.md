@@ -21,21 +21,20 @@ In this release, we're introducing a number of new features, including:
 - Automatic new version notifications
 - The ability to invoke DSC resources directly from PowerShell 7 (experimental)
 
-To see a full list of features and fixes, see the detailed
-[changelogs](https://github.com/PowerShell/PowerShell/blob/master/CHANGELOG/7.0.md) on GitHub.
+To see a full list of features and fixes, see the [changelogs](https://github.com/PowerShell/PowerShell/blob/master/CHANGELOG/7.0.md).
 
 ## Where can I install PowerShell?
 
 PowerShell 7 currently supports the following operating systems on x64, including:
 
-Windows 8.1, and 10
-Windows Server 2012, 2012 R2, 2016, and 2019
-macOS 10.13+
-Red Hat Enterprise Linux (RHEL) / CentOS 7
-Fedora 30+
-Debian 9
-Ubuntu LTS 16.04+
-Alpine Linux 3.8+
+- Windows 8.1, and 10
+- Windows Server 2012, 2012 R2, 2016, and 2019
+- macOS 10.13+
+- Red Hat Enterprise Linux (RHEL) / CentOS 7
+- Fedora 30+
+- Debian 9
+- Ubuntu LTS 16.04+
+- Alpine Linux 3.8+
 
 Additionally, PowerShell 7.0 supports ARM32 and ARM64 flavors of Debian, Ubuntu, and ARM64 Alpine
 Linux.
