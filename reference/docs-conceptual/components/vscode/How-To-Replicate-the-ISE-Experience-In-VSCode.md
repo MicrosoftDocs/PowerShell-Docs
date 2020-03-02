@@ -14,6 +14,25 @@ for users of the ISE.
 This document tries to list settings you can configure in VSCode
 to make the user experience a bit more familiar compared to the ISE.
 
+## ISE Mode
+
+> [!NOTE]
+> This feature is available in the PowerShell Preview extension since version 2019.12.0
+> and in the PowerShell extension since version 2020.3.0.
+
+The easiest way to replicate the ISE experience in Visual Studio Code is by turning on "ISE Mode".
+To do this, open the command pallet (<kbd>F1</kbd> OR <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd> OR
+<kbd>Cmd</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd> on macOS) and type in "ISE Mode".
+Select "PowerShell: Enable ISE Mode" from the list.
+
+This command will apply a lot of the settings found in this document automatically.
+The result looks like this:
+
+![ISE Mode](images/How-To-Replicate-the-ISE-Experience-In-VSCode/3-ise-mode.png)
+
+The rest of this article includes more detailed information on settings in ISE Mode and
+some additional settings.
+
 ## Key bindings
 
 | Function                              | ISE Binding                  | VSCode Binding                              |
@@ -36,6 +55,9 @@ If you're looking to simplify the Visual Studio Code UI to look more closely to 
 "debug.openDebug": "neverOpen",
 ```
 
+> [!NOTE]
+> These settings are included in ["ISE Mode"](#ise-mode).
+
 This will hide the "Activity Bar" and the "Debug Side Bar" sections below inside of the red box:
 
 ![highlighted section includes Activity Bar and Debug Side Bar](images/How-To-Replicate-the-ISE-Experience-In-VSCode/1-highlighted-sidebar.png)
@@ -55,6 +77,9 @@ To enable more ISE-like tab completion, add this setting:
 > [!NOTE]
 > This setting was added directly to VSCode (rather than in the extension). Its behavior is determined by VSCode directly and cannot be changed by the extension.
 
+> [!NOTE]
+> This setting is included in ["ISE Mode"](#ise-mode).
+
 ## No focus on console when executing
 
 To keep the focus in the editor when you execute with <kbd>F8</kbd>:
@@ -62,6 +87,9 @@ To keep the focus in the editor when you execute with <kbd>F8</kbd>:
 ```json
 "powershell.integratedConsole.focusConsoleOnExecute": false
 ```
+
+> [!NOTE]
+> This setting is included in ["ISE Mode"](#ise-mode).
 
 The default is `true` for accessibility purposes.
 
@@ -85,6 +113,9 @@ To make new/untitled files, register as PowerShell by default:
 "files.defaultLanguage": "powershell",
 ```
 
+> [!NOTE]
+> This setting is included in ["ISE Mode"](#ise-mode).
+
 ## Color scheme
 
 There are a number of ISE themes available for VSCode
@@ -100,6 +131,9 @@ You can set this theme in the settings with:
 "workbench.colorTheme": "PowerShell ISE",
 ```
 
+> [!NOTE]
+> This setting is included in ["ISE Mode"](#ise-mode).
+
 ## PowerShell Command Explorer
 
 Thanks to the work of [@corbob](https://github.com/corbob),
@@ -107,6 +141,9 @@ the PowerShell extension has the beginnings of its own command explorer.
 
 In the [Command Palette],
 enter `PowerShell Command Explorer` and press <kbd>Enter</kbd>.
+
+> [!NOTE]
+> This is shown automatically in ["ISE Mode"](#ise-mode).
 
 ## Open in the ISE
 
