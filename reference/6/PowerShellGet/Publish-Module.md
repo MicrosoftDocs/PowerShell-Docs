@@ -46,6 +46,12 @@ by running `Get-Module -ListAvailable <Name>`. If you specify a minimum version 
 publish, `Publish-Module` publishes the first module with a version that is greater than or equal to
 the minimum version that you have specified.
 
+Publishing a module requires metadata that is displayed on the gallery page for the module. Required
+metadata includes the module name, version, description, and author. Although most metadata is taken
+from the module manifest, some metadata must be specified in `Publish-Module` parameters, such as
+**Tag**, **ReleaseNote**, **IconUri**, **ProjectUri**, and **LicenseUri**, because these parameters
+match fields in a NuGet-based gallery.
+
 ## EXAMPLES
 
 ### Example 1: Publish a module
@@ -324,7 +330,9 @@ Accept wildcard characters: False
 ```
 
 ### -SkipAutomaticTags
-{{ Fill SkipAutomaticTags Description }}
+
+Removes commands and resources from being included as tags. Skips automatically adding tags to a
+module.
 
 ```yaml
 Type: SwitchParameter
@@ -333,7 +341,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

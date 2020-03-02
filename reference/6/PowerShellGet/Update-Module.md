@@ -21,8 +21,8 @@ computer.
 
 ```
 Update-Module [[-Name] <String[]>] [-RequiredVersion <String>] [-MaximumVersion <String>]
- [-Credential <PSCredential>] [-Proxy <Uri>] [-ProxyCredential <PSCredential>] [-Force]
- [-AllowPrerelease] [-AcceptLicense] [-WhatIf] [-Confirm] [<CommonParameters>]
+ [-Credential <PSCredential>] [-Scope <String>] [-Proxy <Uri>] [-ProxyCredential <PSCredential>]
+ [-Force] [-AllowPrerelease] [-AcceptLicense] [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -226,7 +226,6 @@ Accept wildcard characters: True
 ```
 
 ### -PassThru
-{{ Fill PassThru Description }}
 
 ```yaml
 Type: SwitchParameter
@@ -294,15 +293,16 @@ Accept wildcard characters: False
 ### -Scope
 
 Specifies the installation scope of the module. The acceptable values for this parameter are
-**AllUsers** and **CurrentUser**.
+**AllUsers** and **CurrentUser**. If **Scope** isn't specified, the update is installed in the
+**CurrentUser** scope.
 
-The **AllUsers** scope installs modules in a location that is accessible to all users of the
-computer:
+The **AllUsers** scope requires elevated permissions and installs modules in a location that is
+accessible to all users of the computer:
 
 `$env:ProgramFiles\PowerShell\Modules`
 
-The **CurrentUser** installs modules in a location that is accessible only to the current user of
-the computer:
+The **CurrentUser** doesn't require elevated permissions and installs modules in a location that is
+accessible only to the current user of the computer:
 
 `$home\Documents\PowerShell\Modules`
 
@@ -321,7 +321,7 @@ Accepted values: CurrentUser, AllUsers
 
 Required: False
 Position: Named
-Default value: None
+Default value: CurrentUser
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

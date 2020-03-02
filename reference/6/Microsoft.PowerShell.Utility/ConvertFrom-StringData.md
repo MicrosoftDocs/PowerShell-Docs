@@ -15,6 +15,8 @@ Converts a string containing one or more key and value pairs to a hash table.
 
 ## SYNTAX
 
+### All
+
 ```
 ConvertFrom-StringData [-StringData] <String> [<CommonParameters>]
 ```

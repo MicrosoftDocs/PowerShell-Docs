@@ -51,7 +51,7 @@ MaxLogSize : 15728640
 Used to force the change without prompting.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -67,7 +67,7 @@ Accept wildcard characters: False
 The updated configuration settings to be assigned to the event log.
 
 ```yaml
-Type: Microsoft.PowerShell.Diagnostics.LogDetails
+Type: LogDetails
 Parameter Sets: (All)
 Aliases:
 

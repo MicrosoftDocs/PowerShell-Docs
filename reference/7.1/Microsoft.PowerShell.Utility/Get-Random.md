@@ -353,7 +353,8 @@ Specifies a seed value for the random number generator. This seed value is used 
 command and for all subsequent `Get-Random` commands in the current session until you use
 **SetSeed** again or close the session. You can't reset the seed to its default value.
 
-The **SetSeed** parameter isn't required. By default, `Get-Random` uses the [RandomNumberGenerator()](/dotnet/api/system.security.cryptography.randomnumbergenerator)
+The **SetSeed** parameter is not required. By default, `Get-Random` uses the
+[RandomNumberGenerator()](/dotnet/api/system.security.cryptography.randomnumbergenerator)
 method to generate a seed value. Because **SetSeed** results in non-random behavior, it's typically
 used only when trying to reproduce behavior, such as when debugging or analyzing a script that
 includes `Get-Random` commands.

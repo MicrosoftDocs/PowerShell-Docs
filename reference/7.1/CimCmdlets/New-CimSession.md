@@ -128,9 +128,9 @@ parameter are:
 - NtlmDomain
 - CredSsp
 
-You cannot use the **NtlmDomain** authentication type for connection to the local computer.
-**CredSSP** authentication is available only in Windows Vista, Windows Server 2008, and later
-versions of Windows.
+You cannot use the **NtlmDomain** authentication type for connection to the local computer. **CredSSP**
+authentication is available only in Windows Vista, Windows Server 2008, and later versions of
+Windows.
 
 > [!CAUTION]
 > Credential Security Service Provider (CredSSP) authentication is designed for commands that
@@ -235,9 +235,8 @@ Accept wildcard characters: False
 
 Specifies a friendly name for the CIM session.
 
-You can use the name to refer to the CIM session when using other cmdlets, such as the
-[`Get-CimSession`](Get-CimSession.md) cmdlet. The name is not required to be unique to the computer
-or the current session.
+You can use the name to refer to the CIM session when using other cmdlets, such as the [Get-CimSession](Get-CimSession.md) cmdlet.
+The name is not required to be unique to the computer or the current session.
 
 ```yaml
 Type: String

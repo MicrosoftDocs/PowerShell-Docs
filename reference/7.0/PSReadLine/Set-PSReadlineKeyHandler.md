@@ -19,14 +19,15 @@ Binds keys to user-defined or PSReadLine key handler functions.
 ### ScriptBlock
 
 ```
-Set-PSReadLineKeyHandler [-ScriptBlock] <ScriptBlock> [-BriefDescription <String>] [-Description <String>]
- [-Chord] <String[]> [-ViMode <ViMode>] [<CommonParameters>]
+Set-PSReadLineKeyHandler [-ScriptBlock] <ScriptBlock> [-BriefDescription <String>]
+ [-Description <String>] [-Chord] <String[]> [-ViMode <ViMode>] [<CommonParameters>]
 ```
 
 ### Function
 
 ```
-Set-PSReadLineKeyHandler [-Chord] <String[]> [-ViMode <ViMode>] [-Function] <String> [<CommonParameters>]
+Set-PSReadLineKeyHandler [-Chord] <String[]> [-ViMode <ViMode>] [-Function] <String>
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION

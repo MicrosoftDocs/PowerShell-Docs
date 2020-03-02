@@ -22,11 +22,11 @@ Write-Output [-InputObject] <PSObject[]> [-NoEnumerate] [<CommonParameters>]
 
 ## DESCRIPTION
 
-The `Write-Output` cmdlet sends the specified object down the pipeline to the next command. If the
-command is the last command in the pipeline, the object is displayed in the console.
+The `Write-Output` cmdlet sends the specified object down the pipeline to the next command.
+If the command is the last command in the pipeline, the object is displayed in the console.
 
 `Write-Output` sends objects down the primary pipeline, also known as the "output stream" or the
-"success pipeline." To send error objects down the error pipeline, use `Write-Error`.
+"success pipeline." To send error objects down the error pipeline, use Write-Error.
 
 This cmdlet is typically used in scripts to display strings and other objects on the console.
 However, because the default behavior is to display the objects at the end of a pipeline, it is
@@ -48,7 +48,7 @@ The second and third commands display the process objects in $P on the console.
 
 ### Example 2: Pass output to another cmdlet
 
-```PowerShell
+```powershell
 Write-Output "test output" | Get-Member
 ```
 
@@ -82,11 +82,11 @@ through the pipeline.
 
 ### -InputObject
 
-Specifies the objects to send down the pipeline.
-Enter a variable that contains the objects, or type a command or expression that gets the objects.
+Specifies the objects to send down the pipeline. Enter a variable that contains the objects, or type
+a command or expression that gets the objects.
 
 ```yaml
-Type: PSObject[]
+Type: PSObject
 Parameter Sets: (All)
 Aliases:
 
@@ -124,7 +124,10 @@ Accept wildcard characters: False
 
 ### CommonParameters
 
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+-InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -157,5 +160,4 @@ You can pipe objects to `Write-Output`.
 [Write-Verbose](Write-Verbose.md)
 
 [Write-Warning](Write-Warning.md)
-
 

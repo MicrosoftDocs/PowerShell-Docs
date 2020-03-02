@@ -235,7 +235,7 @@ Accept wildcard characters: False
 
 Specifies a friendly name for the CIM session.
 
-You can use the name to refer to the CIM session when using other cmdlets, such as the [`Get-CimSession`](Get-CimSession.md) cmdlet.
+You can use the name to refer to the CIM session when using other cmdlets, such as the [Get-CimSession](Get-CimSession.md) cmdlet.
 The name is not required to be unique to the computer or the current session.
 
 ```yaml
@@ -254,9 +254,13 @@ Accept wildcard characters: False
 
 Duration for which the cmdlet waits for a response from the server.
 
-By default, the value of this parameter is 0, which means that the cmdlet uses the default timeout value for the server.
+By default, the value of this parameter is 0, which means that the cmdlet uses the default timeout
+value for the server.
 
-If the **OperationTimeoutSec** parameter is set to a value less than the robust connection retry timeout of 3 minutes, network failures that last more than the value of the **OperationTimeoutSec** parameter are not recoverable, because the operation on the server times out before the client can reconnect.
+If the **OperationTimeoutSec** parameter is set to a value less than the robust connection retry
+timeout of 3 minutes, network failures that last more than the value of the **OperationTimeoutSec**
+parameter are not recoverable, because the operation on the server times out before the client can
+reconnect.
 
 ```yaml
 Type: UInt32
@@ -272,12 +276,12 @@ Accept wildcard characters: False
 
 ### -Port
 
-Specifies the network port on the remote computer that is used for this connection.
-To connect to a remote computer, the remote computer must be listening on the port that the connection uses.
-The default ports are 5985 (the WinRM port for HTTP) and 5986 (the WinRM port for HTTPS).
+Specifies the network port on the remote computer that is used for this connection. To connect to a
+remote computer, the remote computer must be listening on the port that the connection uses. The
+default ports are 5985 (the WinRM port for HTTP) and 5986 (the WinRM port for HTTPS).
 
-Before using an alternate port, you must configure the WinRM listener on the remote computer to listen at that port.
-Use the following commands to configure the listener:
+Before using an alternate port, you must configure the WinRM listener on the remote computer to
+listen at that port. Use the following commands to configure the listener:
 
 `winrm delete winrm/config/listener?Address=*+Transport=HTTP`
 

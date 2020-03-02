@@ -412,7 +412,6 @@ At line:1 char:1
 + CategoryInfo          : OpenError: (System.Management.A\u2026tion.RemoteRunspace:RemoteRunspace)
  [New-PSSession], PSRemotingTransportException
 + FullyQualifiedErrorId : AccessDenied,PSSessionOpenFailed
-
 ```
 
 Now the `Get-PSSessionConfiguration` and `Format-Table` cmdlets shows that an **AccessDenied**

@@ -270,7 +270,7 @@ the path of the file that contains each byte.
 
 ## NOTES
 
-The right-most column of output tries to render the bytes as characters:
+The right-most column of output tries to render the bytes as ASCII characters:
 
 Generally, each byte is interpreted as a Unicode code point, which means that:
 

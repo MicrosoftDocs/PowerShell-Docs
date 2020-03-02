@@ -52,7 +52,7 @@ The second and third commands display the process objects in $P on the console.
 Write-Output "test output" | Get-Member
 ```
 
-This command pipes the "test output" string to the Get-Member cmdlet, which displays the members of
+This command pipes the "test output" string to the `Get-Member` cmdlet, which displays the members of
 the **System.String** class, demonstrating that the string was passed along the pipeline.
 
 ### Example 3: Suppress enumeration in output
@@ -122,7 +122,10 @@ Accept wildcard characters: False
 
 ### CommonParameters
 
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+-InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 

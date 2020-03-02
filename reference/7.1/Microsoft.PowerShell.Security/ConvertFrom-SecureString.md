@@ -8,11 +8,9 @@ online version: https://docs.microsoft.com/powershell/module/microsoft.powershel
 schema: 2.0.0
 title: ConvertFrom-SecureString
 ---
-
 # ConvertFrom-SecureString
 
 ## SYNOPSIS
-
 Converts a secure string to an encrypted standard string.
 
 ## SYNTAX

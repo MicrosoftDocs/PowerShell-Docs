@@ -146,7 +146,7 @@ An example is "Test complete."
 ```yaml
 Type: Object
 Parameter Sets: (All)
-Aliases: Msg
+Aliases: Msg, Message
 
 Required: True
 Position: 0

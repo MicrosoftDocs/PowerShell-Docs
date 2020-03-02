@@ -310,7 +310,7 @@ In Windows PowerShell 2.0, `Get-Command` gets all commands by default.
 
 ```yaml
 Type: SwitchParameter
-Parameter Sets: (All)
+Parameter Sets: AllCommandSet
 Aliases:
 
 Required: False
@@ -336,7 +336,7 @@ information about the provider cmdlets, see [about_Providers](About/about_Provid
 
 ```yaml
 Type: Object[]
-Parameter Sets: (All)
+Parameter Sets: AllCommandSet
 Aliases: Args
 
 Required: False
@@ -397,7 +397,7 @@ parameter. The two parameters are mutually exclusive.
 
 ```yaml
 Type: ModuleSpecification[]
-Parameter Sets: (All)
+Parameter Sets: AllCommandSet
 Aliases:
 
 Required: False
@@ -419,7 +419,7 @@ This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
 Type: SwitchParameter
-Parameter Sets: (All)
+Parameter Sets: AllCommandSet
 Aliases:
 
 Required: False
@@ -439,8 +439,8 @@ object, such as the objects that the `Get-Module` and `Import-PSSession` cmdlets
 
 ```yaml
 Type: String[]
-Parameter Sets: (All)
-Aliases: PSSnapin
+Parameter Sets: AllCommandSet
+Aliases:
 
 Required: False
 Position: Named
@@ -498,7 +498,7 @@ This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
 Type: String[]
-Parameter Sets: (All)
+Parameter Sets: AllCommandSet
 Aliases:
 
 Required: False
@@ -520,7 +520,7 @@ This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
 Type: PSTypeName[]
-Parameter Sets: (All)
+Parameter Sets: AllCommandSet
 Aliases:
 
 Required: False
@@ -538,7 +538,7 @@ This parameter was introduced in Windows PowerShell 5.0.
 
 ```yaml
 Type: SwitchParameter
-Parameter Sets: (All)
+Parameter Sets: AllCommandSet
 Aliases:
 
 Required: False
@@ -559,7 +559,7 @@ Indicates that this cmdlet gets only the following specified data about the comm
 
 ```yaml
 Type: SwitchParameter
-Parameter Sets: (All)
+Parameter Sets: AllCommandSet
 Aliases:
 
 Required: False

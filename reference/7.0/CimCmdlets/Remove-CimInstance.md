@@ -193,10 +193,10 @@ Accept wildcard characters: False
 Specifies a query to run on the CIM server. You can specify the query dialect using the
 **QueryDialect** parameter.
 
-If the value specified contains double quotes ("), single quotes ('), or a backslash (\\), you must
-escape those characters by prefixing them with the backslash (\\) character. If the value specified
-uses the WQL LIKE operator, then you must escape the following characters by enclosing them in
-square brackets (\[\]): percent (%), underscore (_), or opening square bracket (\[).
+If the value specified contains double quotes (`"`), single quotes (`'`), or a backslash (`\`), you
+must escape those characters by prefixing them with the backslash (`\`) character. If the value
+specified uses the WQL LIKE operator, then you must escape the following characters by enclosing
+them in square brackets (`[]`): percent (`%`), underscore (`_`), or opening square bracket (`[`).
 
 ```yaml
 Type: String
@@ -243,8 +243,7 @@ By default, if you do not specify this parameter, the DMTF standard resource URI
 ResourceURI can only be used with CIM sessions created using the WSMan protocol, or when specifying
 the ComputerName parameter, which creates a CIM session using WSMan. If you specify this parameter
 without specifying the ComputerName parameter, or if you specify a CIM session created using DCOM
-protocol, you will get an error, because the DCOM protocol does not support the ResourceURI
-parameter.
+protocol, you get an error, because the DCOM protocol does not support the ResourceURI parameter.
 
 If both the **ResourceUri** parameter and the **Filter** parameter are specified, the **Filter**
 parameter is ignored.

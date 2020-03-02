@@ -15,6 +15,8 @@ Converts a SDDL string to a custom object.
 
 ## SYNTAX
 
+### All
+
 ```
 ConvertFrom-SddlString [-Sddl] <String> [-Type <AccessRightTypeNames>] [<CommonParameters>]
 ```
