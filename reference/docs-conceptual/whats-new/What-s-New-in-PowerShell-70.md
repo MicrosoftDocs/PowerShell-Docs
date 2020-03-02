@@ -6,18 +6,8 @@ ms.date: 02/19/2020
 
 # What's New in PowerShell 7.0
 
-We are happy to announce the Generally Available (GA) release of PowerShell 7.0! First, we'd like to
-thank our many, open-source contributors for making this release possible by submitting code,
-tests, documentation, and issue feedback. PowerShell 7 would not have been possible without your
-help.
-
-Three years ago, we announced PowerShell Core 6 as a completely new edition of PowerShell. Built on
-top of .NET Core and introduced cross-platform support across Windows, macOS, and Linux.
-Additionally, it was the first release of PowerShell made under an open-source license (MIT).
-
-After three successful releases of PowerShell Core, we couldn't be more excited about PowerShell 7,
-the next chapter of PowerShell's ongoing development. Join us in this release of PowerShell 7, the
-community built, cross-platform management tool and automation language!
+PowerShell 7.0 is an open-source, cross-platform (Windows, macOS, and Linux) edition of PowerShell,
+built to manage heterogeneous environments and hybrid cloud.
 
 In this release, we're introducing a number of new features, including:
 
@@ -31,8 +21,8 @@ In this release, we're introducing a number of new features, including:
 - Automatic new version notifications
 - The ability to invoke DSC resources directly from PowerShell 7 (experimental)
 
-To see a full list of features and fixes, check out
-our detailed [changelogs](https://github.com/PowerShell/PowerShell/releases) on GitHub.
+To see a full list of features and fixes, see the detailed
+[changelogs](https://github.com/PowerShell/PowerShell/blob/master/CHANGELOG/7.0.md) on GitHub.
 
 ## Where can I install PowerShell?
 
@@ -47,55 +37,48 @@ Debian 9
 Ubuntu LTS 16.04+
 Alpine Linux 3.8+
 
-Additionally, we support ARM32 and ARM64 flavors of Debian and Ubuntu, as well as ARM64 Alpine Linux.
+Additionally, PowerShell 7.0 supports ARM32 and ARM64 flavors of Debian, Ubuntu, and ARM64 Alpine
+Linux.
 
-While not officially supported, the community has also provided packages for Arch and Kali Linux.
+Check the installation instructions for your preferred operating system
+[Windows](https://docs.microsoft.com/powershell/scripting/install/installing-powershell-core-on-windows?view=powershell-7),
+[macOS](https://docs.microsoft.com/powershell/scripting/install/installing-powershell-core-on-macos?view=powershell-7),
+or
+[Linux](https://docs.microsoft.com/powershell/scripting/install/installing-powershell-core-on-linux?view=powershell-7).
+
+While not officially supported, the community has also provided packages for
+[Arch](https://aur.archlinux.org/packages/powershell/) and Kali Linux.
 
 [!NOTE] Debian 10 and CentOS 8 currently do not support WinRM remoting. For details on setting up
 SSH-based remoting, see
-[PowerShell Remoting over SSH](https://docs.microsoft.com/powershell/scripting/learn/remoting/ssh-remoting-in-powershell-core?view=powershell-7)
+[PowerShell Remoting over SSH](https://docs.microsoft.com/powershell/scripting/learn/remoting/ssh-remoting-in-powershell-core?view=powershell-7).
 
-For more up-to-date information about supported operating systems and support lifecycle, see;
-[PowerShell Support Lifecycle](https://docs.microsoft.com/powershell/scripting/powershell-support-lifecycle?view=powershell-7)
-
+For more up-to-date information about supported operating systems and support lifecycle, see the
+[PowerShell Support Lifecycle](https://docs.microsoft.com/powershell/scripting/powershell-support-lifecycle?view=powershell-7).
 
 ## Improved backwards compatibility with Windows PowerShell
 
-TODO - links with TODO
+PowerShell 7.0 marks a move a to .NET Core 3.1, enabling significantly more backwards compatibility
+with existing Windows PowerShell modules. This includes many modules on Windows that require GUI
+functionality like `Out-GridView` and `Show-Command`, as well as many role management modules that
+ship as part of Windows.
 
-If you weren't able to use PowerShell Core 6.x in the past because of module compatibility issues,
-this might be the first time you get to take advantage of some of the awesome features we already
-delivered since we started the Core project!
+For Windows, a new switch parameter **UseWindowsPowerShell** is added to `Import-Module`.
+This switch creates a proxy module in PowerShell 7 that uses a local Windows PowerShell process to
+implicitly run any cmdlets contained in that module. For more information on this functionality,
+check out the [Import-Module](TODO) documentation.
 
-The shift from PowerShell Core 6.x to 7.0 marks our move from .NET Core 2.x to .NET Core 3.1. .NET
-Core 3.1 brings back a host of .NET Framework APIs (especially on Windows), enabling significantly
-more backwards compatibility with existing Windows PowerShell modules. This includes many modules on
-Windows that require GUI functionality like `Out-GridView` and `Show-Command`, as well as many role
-management modules that ship as part of Windows.
-
-On Windows, we've also added a **UseWindowsPowerShell** switch to `Import-Module` to ease the
-transition to PowerShell 7 for those using incompatible modules. This switch creates a proxy module
-in PowerShell 7 that uses a local Windows PowerShell process to implicitly run any cmdlets contained
-in that module. For more information on this functionality, check out the [Import-Module](TODO)
-documentation.
-
-For more info, check out our module compatibility table showing off the latest up-to-date modules
-that work with PowerShell 7: [Module Compatibility Table](TODO)
+For more information on which Microsoft modules work with PowerShell 7.0, see the [Module Compatibility Table](TODO).
 
 ## Improved ForEach-Object with parallelism support
 
 The `ForEach-Object` cmdlet, which iterates items in a collection, now has built-in parallelism with
 the new **Parallel** parameter.
 
-Beginning with PowerShell 7.0, a third parameter set is available that runs each script block in
-parallel. There is a **ThrottleLimit** parameter that limits the number of parallel script blocks
-running at a time. As before, use the **$_** variable to represent the current input object in the
-script block. Use the **$using:** scope to pass variable references to the running script block.
-
 By default, parallel script blocks use the current working directory of the caller that started the
 parallel tasks.
 
-This example retrieves 50,000 log entries from 5 system logs on a local Windows machine.
+This example retrieves 50,000 log entries from 5 system logs on a local Windows machine:
 
 ```powershell
 $logNames = 'Security','Application','System','Windows PowerShell','Microsoft-Windows-Store/Operational'
@@ -110,25 +93,29 @@ $logEntries.Count
 ```
 
 The **Parallel** parameter specifies the script block that is run in parallel for each input log name.
-The **ThrottleLimit** parameter ensures that all five script blocks run at the same time.
 
-[!NOTE] The cmdlet `ForEach-Object` includes a switch parameter **AsJob** to run as a background
-job. For further details see;
-[Background Jobs](https://docs.microsoft.com/powershell/scripting/developer/cmdlet/background-jobs?view=powershell-7)
+The new **ThrottleLimit** parameter limits the number of script blocks running in parallel at a
+given time. The default is 5.
 
-For more information, see
-[ForEach-Object](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/foreach-object?view=powershell-7)
+Use the **$_** variable to represent the current input object in the script block. Use the
+**$using:** scope to pass variable references to the running script block.
+
+[!NOTE] The cmdlet `ForEach-Object` includes a switch parameter **AsJob** to run as
+[Background Jobs](https://docs.microsoft.com/powershell/scripting/developer/cmdlet/background-jobs?view=powershell-7).
+
+For more information about
+[ForEach-Object](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/foreach-object?view=powershell-7).
 
 ## Ternary operator
 
-PowerShell 7.0 introduced a new syntax using the ternary operator which behaves like a simplified
-`if-else` statement. It follows the C# ternary operator syntax:
+PowerShell 7.0 introduces a ternary operator which behaves like a simplified `if-else` statement.
+PowerShell's ternary operator is closely modeled from the C# ternary operator syntax:
 
 ```
 <condition> ? <if-true> : <if-false>
 ```
 
-The condition-expression will always be evaluated, and its result will be converted to boolean to
+The condition-expression will always be evaluated, and its result will be converted to a Boolean to
 determine which branch will be evaluated next:
 
 - The `<if-true>` expression is executed if the `<condition>` expression is true
@@ -143,15 +130,15 @@ $message = (Test-Path $path) ? "Path exists" : "Path not found"
 In this example, if the path exists, then "Path exists" is displayed. If the path does not exist,
 then "Path not found" is displayed.
 
-For more information, see
-[About If](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_if?view=powershell-7)
+For more information
+[About If](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_if?view=powershell-7).
 
 ## Pipeline chain operators
 
-Beginning in PowerShell 7, PowerShell implements the `&&` and `||` operators to conditionally chain
-pipelines. These operators are known in PowerShell as pipeline chain operators, and are similar to
-AND-OR lists in POSIX shells like **Bash**, **Zsh** and **Sh**, as well as conditional processing
-symbols in the Windows Command Shell (cmd.exe).
+PowerShell 7 implements the `&&` and `||` operators to conditionally chain pipelines. These
+operators are known in PowerShell as "pipeline chain operators", and are similar to AND and OR lists
+in shells like **Bash** and **Zsh**, as well as conditional processing symbols in the
+Windows Command Shell (cmd.exe).
 
 The `&&` operator executes the right-hand pipeline, if the left-hand pipeline succeeded. Conversely,
 the `||` operator executes the right-hand pipeline if the left-hand pipeline failed.
@@ -159,55 +146,55 @@ the `||` operator executes the right-hand pipeline if the left-hand pipeline fai
 [!NOTE] These operators use the **$?** and **$LASTEXITCODE** variables to determine if a pipeline
 failed. This allows you to use them with native commands and not just with cmdlets or functions.
 
-Here, the first command succeeds and the second command is executed.
+Here, the first command succeeds and the second command is executed:
 
 ```powershell
 Write-Output 'First' && Write-Output 'Second'
 ```
 
-```output
+```Output
 First
 Second
 ```
 
-Here, the first command fails, the second is not executed.
+Here, the first command fails, the second is not executed:
 
 ```powershell
 Write-Error 'Bad' && Write-Output 'Second'
 ```
 
-```output
+```Output
 Write-Error: Bad
 ```
 
-Here, the first command succeeds, the second command is not executed
+Here, the first command succeeds, the second command is not executed:
 
 ```powershell
 Write-Output 'First' || Write-Output 'Second'
 ```
 
-```output
+```Output
 First
 ```
 
-Here, the first command fails, so the second command is executed.
+Here, the first command fails, so the second command is executed:
 
 ```powershell
 Write-Error 'Bad' || Write-Output 'Second'
 ```
 
-```output
+```Output
 Write-Error 'Bad'
 Second
 ```
 
-For more information, see
-[About Pipeline Chain Operators](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_pipeline_chain_operators?view=powershell-7)
+For more information
+[About Pipeline Chain Operators](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_pipeline_chain_operators?view=powershell-7).
 
 ## Null-coalescing, assignment, and conditional operators
 
-New to PowerShell 7 are the Null operators `??` for coalescing, `??=` for assignment, and
-conditional operators `?.` and `?[]`.
+PowerShell 7 includes Null coalescing operator `??`, Null conditional assignment `??=`, and Null
+conditional member access operators `?.` and `?[]`.
 
 ### Null-coalescing Operator ??
 
@@ -221,7 +208,7 @@ $x ?? 100
 100
 ```
 
-In the following example, the right-hand operand won't be evaluated.
+In the following example, the right-hand operand won't be evaluated:
 
 ```powershell
 [string] $todaysDate = '1/10/2020'
@@ -229,11 +216,11 @@ $todaysDate ?? (Get-Date).ToShortDateString()
 1/10/2020
 ```
 
-### Null-coalescing assignment operator ??=
+### Null conditional assignment operator ??=
 
-The null-coalescing assignment operator `??=` assigns the value of its right-hand operand to its
-left-hand operand only if the left-hand operand evaluates to null. The ??= operator doesn't evaluate
-its right-hand operand if the left-hand operand evaluates to non-null.
+The null conditional assignment operator `??=` assigns the value of its right-hand operand to its
+left-hand operand only if the left-hand operand evaluates to null. The `??=` operator doesn't
+evaluate its right-hand operand if the left-hand operand evaluates to non-null.
 
 ```powershell
 $x = $null
@@ -242,7 +229,7 @@ $x
 100
 ```
 
-In the following example, the right-hand operand won't be evaluated.
+In the following example, the right-hand operand won't be evaluated:
 
 ```powershell
 [string] $todaysDate = '1/10/2020'
@@ -250,18 +237,19 @@ $todaysDate ??= (Get-Date).ToShortDateString()
 1/10/2020
 ```
 
-### Null-conditional operators ?. and ?[]
+### Null conditional member access operators ?. and ?[] (Experimental)
 
-[!NOTE] This is an experimental feature. For more information see [about_Experimental_Features](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_experimental_features?view=powershell-7).
+[!NOTE] This is an experimental feature. To learn more
+[About Experimental Features](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_experimental_features?view=powershell-7).
 
-A null-conditional operator permits member access, `?.`, or element access, `?[]`, to its operand
+A null conditional operator permits member access, `?.`, or element access, `?[]`, to its operand
 only if that operand evaluates to non-null; otherwise, it returns null.
 
-[!NOTE]Since PowerShell allows `?` to be part of the variable name, formal specification of the
+[!NOTE] Since PowerShell allows `?` to be part of the variable name, formal specification of the
 variable name is required for using these operators. So it is required to use `{}` around the
 variable names like `${a}` or when `?` is part of the variable name `${a?}`.
 
-In the following example, the value of the member property **Status** is returned.
+In the following example, the value of the member property **Status** is returned:
 
 ```powershell
 $Service = Get-Service -Name 'bits'
@@ -269,14 +257,14 @@ ${Service}?.status
 Stopped
 ```
 
-The following example will return null, without trying to access the member name PropName.
+The following example will return null, without trying to access the member name **Status**:
 
 ```powershell
 $service = $Null
 ${Service}?.status
 ```
 
-Similarly, using `?[]`, the value of the element will be returned.
+Similarly, using `?[]`, the value of the element will be returned:
 
 ```powershell
 $a = 1..10
@@ -284,138 +272,81 @@ ${a}?[0]
 1
 ```
 
-And when the operand is null, the element isn't accessed and null is returned.
+And when the operand is null, the element isn't accessed and null is returned:
 
 ```powershell
 $a = $null
 ${a}?[0]
 ```
 
-for more information, see
-[About_Operators](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_operators?view=powershell-7)
+For more information
+[About_Operators](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_operators?view=powershell-7).
 
-## New View ErrorView and Cmdlet Get-Error
+## New view ConciseView and cmdlet Get-Error
 
 The display of error messages has been improved to enhance the readability of interactive and script
 errors with a new default view **ConciseView**. The views are user-selectable through the preference
 variable **$ErrorView**.
 
-The default view in PowerShell 7 is **ConciseView**; previous views **NormalView** and
-**CategoryView** are selectable by setting the preference variable **$ErrorView**.
-
-```powershell
-$ErrorView = 'Normalview' # Sets the error view to NormalView
-$Errorview = 'ConciseView' # Sets the error view to ConciseView
-```
-
 With **ConciseView**, if an error is not from a script or parser error, then
-it's a single line error message.
+it's a single line error message:
 
 ```powershell
 Get-Childitem -Path c:\NotReal
 ```
 
-```output
+```Output
 Get-ChildItem: Cannot find path ‘C:\NotReal’ because it does not exist
 ```
 
-If the error occurs during script execution or is a parsing error, you get a multiline error message
-that contains the error, a pointer and error message showing where the error is in that line. If the
-terminal doesn't support Virtual Terminal, then vt100 color codes are not used.
+If the error occurs during script execution or is a parsing error, a multiline error message will
+return that contains the error, a pointer and error message showing where the error is in that line.
+If the terminal doesn't support ANSI color escape sequences (VT100), then colors will not be
+displayed.
+
+![Error display from a script](./media/What-s-New-in-PowerShell-70/myscript-error.png)
+
+The default view in PowerShell 7 is **ConciseView**. The previous default view **NormalView** are
+user selectable by setting the preference variable **$ErrorView**.
 
 ```powershell
-.\Myscript.ps1
-```
-
-```output
-Selct-object: C:\GitHub\MyScript.ps1
-Line |
-  25 | Get-Process | Selct-object -property NotReal
-     |               ~~~~~~~~~~~~
-     | The term 'Selct-object' is not recognized as the name of a cmdlet, function, script file,
-     | or operable program. Check the spelling of the name, or if a path was included,
-     | verify that the | path is correct and try again.
+$ErrorView = 'NormalView' # Sets the error view to NormalView
+$ErrorView = 'ConciseView' # Sets the error view to ConciseView
 ```
 
 [!NOTE] A new property **ErrorAccentColor** is added to **$Host.PrivateData** to support changing
-the accent color of the error message. If the terminal doesn't support Virtual Terminal, then vt100
-color codes are not used.
+the accent color of the error message.
 
-A new cmdlet `Get-Error` will provide complete detailed view of the fully qualified error when
-desired. By default the cmdlet displays the full details, including inner exceptions, of the last
-error that occurred.
+A new cmdlet `Get-Error` provides complete detailed view of the fully qualified error when desired.
+By default the cmdlet displays the full details, including inner exceptions, of the last error that
+occurred.
 
-```powershell
-Get-Error
-```
+![Display from Get-Error](./media/What-s-New-in-PowerShell-70/myscript-geterror.png)
 
-```output
-# Truncated for brevity
-
-Exception             :
-    ErrorRecord          :
-        Exception             :
-            Message : Cannot find path 'C:\notreal' because it does not exist.
-            HResult : -2146233087
-        TargetObject          : C:\notreal
-        CategoryInfo          : ObjectNotFound: (C:\notreal:String) [], ParentContainsErrorRecordException
-        FullyQualifiedErrorId : PathNotFound
-    ItemName             : C:\notreal
-    SessionStateCategory : Drive
-    TargetSite           :
-        Name          : GetChildItems
-        DeclaringType : System.Management.Automation.SessionStateInternal
-        MemberType    : Method
-        Module        : System.Management.Automation.dll
-    StackTrace           :
-```
-
-Get-Error supports pipeline passed errors by using the built-in variable $error. Get-Error will
-display all passed errors.
+The `Get-Error` cmdlet supports pipeline passed errors by using the built-in variable **$error**.
+`Get-Error` will display all passed errors.
 
 ```powershell
 $Error | Get-Error
 ```
 
-Get-Error supports the **Newest** parameter, allowing you to specify how many errors from the
-current session you wish displayed.
+The `Get-Error` cmdlet supports the **Newest** parameter, allowing you to specify how many errors
+from the current session you wish displayed.
 
 ```powershell
 Get-Error -Newest 3 # Displays the lst three errors that occurred in the session
 ```
 
-For more information, see
-[Get-Error](https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/get-error?view=powershell-7)
-
-## New DSC Resource support with Invoke-DSCResource
-
-The `Invoke-DscResource` cmdlet runs a method of a specified PowerShell Desired State Configuration
-(DSC) resource.
-
-This cmdlet invokes a DSC resource directly, without creating a configuration document. Using this
-cmdlet, configuration management products can manage Windows or Linux by using DSC resources. This
-cmdlet also enables debugging of resources when the DSC engine is running with debugging enabled.
-
-This command invokes the Set method of a resource named Log and specifies a Message property for it.
-
-```powershell
-Invoke-DscResource -Name Log -Method Set -ModuleName PSDesiredStateConfiguration -Property @{
-  Message = 'Hello World'
-}
-```
-
-For more information, see
-[Invoke-DSCResource](https://docs.microsoft.com/powershell/module/psdesiredstateconfiguration/invoke-dscresource?view=powershell-7)
+For more information about [Get-Error](https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/get-error?view=powershell-7).
 
 ## New version notification
 
-Beginning with PowerShell 7.0, PowerShell uses update notifications to alert users to the existence
-of updates to PowerShell. Once per day, PowerShell queries an online service to determine if a newer
-version is available.
+PowerShell 7 uses update notifications to alert users to the existence of updates to PowerShell.
+Once per day, PowerShell queries an online service to determine if a newer version is available.
 
-[!NOTE] While the update check happens during the first session in a given 24-hour period, for
-performance reasons, the notification will only be shown on the start of subsequent sessions. Also
-for performance reasons, the check will not start until at least 3 seconds after the session begins.
+[!NOTE] The update check happens during the first session in a given 24-hour period. For performance
+reasons, the update check will start 3 seconds after the session begins, and the notification will
+only be shown on the start of subsequent sessions.
 
 By default, PowerShell subscribes to one of two different notification channels depending on its
 version/branch. Supported, Generally Available (GA) versions of PowerShell only return notifications
@@ -446,99 +377,30 @@ To set the version notification to the `Default` behavior:
 $Env:POWERSHELL_UPDATECHECK = 'Default'
 ```
 
-For more information, see
-[About Update Notifications](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_update_notifications?view=powershell-7)
+For more information [About Update Notifications](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_update_notifications?view=powershell-7).
 
-## Installing or migrating to PowerShell 7.0
+## New DSC Resource support with Invoke-DSCResource (Experimental)
 
-PowerShell 7 is designed to work fully side-by-side with Windows PowerShell and PowerShell Core, so
-migrating to PowerShell 7 won't interfere with your existing work. Whether you're installing
-PowerShell on macOS or Linux for the first time, or migrating from Windows PowerShell or PowerShell
-Core, the below information will get you started.
+[!NOTE] This is an experimental feature. To learn more
+[About Experimental Features](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_experimental_features?view=powershell-7).
 
-### How do I install PowerShell 7?
+The `Invoke-DscResource` cmdlet runs a method of a specified PowerShell Desired State Configuration
+(DSC) resource.
 
-If this is your first time installing PowerShell, check the installation instructions for your
-preferred operating system
-[Windows](https://docs.microsoft.com/powershell/scripting/install/installing-powershell-core-on-windows?view=powershell-7),
-[macOS](https://docs.microsoft.com/powershell/scripting/install/installing-powershell-core-on-macos?view=powershell-7),
-or
-[Linux](https://docs.microsoft.com/powershell/scripting/install/installing-powershell-core-on-linux?view=powershell-7).
+This cmdlet invokes a DSC resource directly, without creating a configuration document. Using this
+cmdlet, configuration management products can manage Windows or Linux by using DSC resources. This
+cmdlet also enables debugging of resources when the DSC engine is running with debugging enabled.
 
-If you already have experience installing PowerShell Core or one of the previews and just looking
-for a binary package (whether it's an MSI, ZIP, RPM, or something else), then visit the
-[GitHub Release page](https://github.com/PowerShell/PowerShell/releases) and get the PowerShell 7
-package of your choice.
-
-Additionally, you may want to use one of our many Docker container images. For more information on
-using those, check out our [PowerShell-Docker](https://hub.docker.com/_/microsoft-powershell) repo.
-
-### Running PowerShell 7
-
-TODO - validate
-
-PowerShell 7 runs side-by-side with previous versions of Windows PowerShell. When PowerShell 7
-installs on Microsoft Windows, a new directory containing the installation is added to your path and
-your previous Windows PowerShell remains. If your migrating from PowerShell Core 6.x to PowerShell
-7, the installation is upgraded and the path replaced.
-
-PowerShell 7 installation path is added to Microsoft Windows:
-
-- Windows PowerShell 5.1 : `C:\Windows\System32\WindowsPowerShell\v1.0` will add
-`%programfiles%\PowerShell\7`
-
-PowerShell 7 will upgrade previous versions of PowerShell Core 6.x:
-
-- PowerShell Core 6.x on Windows: `%programfiles%\PowerShell\6` will be replaced by
- `%programfiles%\PowerShell\7`
-- Linux: `/opt/microsoft/powershell/6` will be replaced by
-`/opt/microsoft/powershell/7`
-- macOS: `/usr/local/microsoft/powershell/6` will be replaced by
-`/usr/local/microsoft/powershell/7`
-
-[!NOTE] In Windows PowerShell, the executable to launch PowerShell is named `powershell.exe`. In
-version 6 and above, the executable is changed to support side-by-side execution. The new executable
-to launch PowerShell 7 on Windows is `pwsh.exe` (pwsh without extension on Linux and macOS).
-
-[!NOTE] Preview builds will remain in-place as `pwsh-preview` instead of `pwsh` under the 7-preview
-directory instead of 7. We plan on releasing a 7.1 preview very soon so that you can already try out
-some of the new features that have been merged on GitHub.
-
-### PowerShell SSH Remoting
-
-In previous versions of Windows PowerShell, remoting was handled through WinRM for connection
-negotiation and data transport. To support cross platform needs for Windows and Linux, SSH-based
-remoting is now available and allows true multiplatform PowerShell Remoting.
-
-SSH remoting creates a PowerShell host process on the target computer as an SSH subsystem. For
-details and examples on setting up Windows or Linux for SSH-based remoting, see:
-[PowerShell Remoting over SSH](https://docs.microsoft.com/powershell/scripting/learn/remoting/ssh-remoting-in-powershell-core?view=powershell-7)
-
-The `New-PSSession`, `Enter-PSSession`, and `Invoke-Command` cmdlets now have a new parameter set to
-support this new remoting connection.
+This command invokes the **Set** method of a resource named Log and specifies a **Message** property.
 
 ```powershell
-[-HostName <string>]  [-UserName <string>]  [-KeyFilePath <string>]
+Invoke-DscResource -Name Log -Method Set -ModuleName PSDesiredStateConfiguration -Property @{
+  Message = 'Hello World'
+}
 ```
 
-To create a remote session, you specify the target computer with the **HostName** parameter and
-provide the user name with **UserName**. When running the cmdlets interactively, you're prompted for
-a password.
-
-```powershell
-Enter-PSSession -HostName <Computer> -UserName <Username>
-```
-
-Alternatively, When using the **HostName** parameter, you can provide the username information
-followed by the **@** sign, followed by the computer name.
-
-```powershell
-Enter-PSSession -HostName <Username>@<Computer>
-```
-
-You can also use SSH key authentication using a private key file with the KeyFilePath parameter. For
-more information, see;
-[OpenSSH Key Management](https://docs.microsoft.com/windows-server/administration/openssh/openssh_keymanagement)
+For more information about
+[Invoke-DSCResource](https://docs.microsoft.com/powershell/module/psdesiredstateconfiguration/invoke-dscresource?view=powershell-7).
 
 ## Breaking Changes and Improvements
 
@@ -549,20 +411,6 @@ more information, see;
 - Preserve $? for ParenExpression, SubExpression and ArrayExpression (#11040)
 - Set working directory to current directory in Start-Job (#10920) (Thanks @iSazonov!)
 - Make $PSCulture consistently reflect in-session culture changes (#10138) (Thanks @iSazonov!)
-
-### Experimental Features
-
-- Provide Unix stat information in filesystem output (#11042)
-- Support null-conditional operators ?. and ?[] in PowerShell language (#10960)
-- Support using non-compatible Windows PowerShell modules in PowerShell Core (#10973)
-- Implement Get-Error cmdlet as Experimental Feature (#10727,#10800)
-- Add ConciseView for $ErrorView and update it to remove unnecessary text and not color entire line in red (#10641,#10724)
-- Support the pipeline chain operators && and || in PowerShell language (#9849,#10825,#10836)
-- Implement null coalescing (??) and null coalescing assignment (??=) operators (#10636)
-- Support notification on pwsh startup when a new release is available and update notification message (#10689,#10777)
-- Update PSDesiredStateConfiguration module version to 2.0.3 and bring new tests; enable compilation to MOF on non-Windows and use of Invoke-DSCResource without LCM (#10516)
-- Add APIs for breakpoint management in runspaces and enable attach to process without BreakAll for PowerShell Editor Services (#10338) (Thanks @KirkMunro!)
-- Support ternary operator in PowerShell language (#10367)
 
 ### Engine Updates and Fixes
 
