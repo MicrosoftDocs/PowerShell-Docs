@@ -40,20 +40,21 @@ Additionally, PowerShell 7.0 supports ARM32 and ARM64 flavors of Debian, Ubuntu,
 Linux.
 
 Check the installation instructions for your preferred operating system
-[Windows](https://docs.microsoft.com/powershell/scripting/install/installing-powershell-core-on-windows?view=powershell-7),
-[macOS](https://docs.microsoft.com/powershell/scripting/install/installing-powershell-core-on-macos?view=powershell-7),
+[Windows](/powershell/scripting/install/installing-powershell-core-on-windows?view=powershell-7),
+[macOS](/powershell/scripting/install/installing-powershell-core-on-macos?view=powershell-7),
 or
-[Linux](https://docs.microsoft.com/powershell/scripting/install/installing-powershell-core-on-linux?view=powershell-7).
+[Linux](/powershell/scripting/install/installing-powershell-core-on-linux?view=powershell-7).
 
 While not officially supported, the community has also provided packages for
 [Arch](https://aur.archlinux.org/packages/powershell/) and Kali Linux.
 
-[!NOTE] Debian 10 and CentOS 8 currently do not support WinRM remoting. For details on setting up
-SSH-based remoting, see
-[PowerShell Remoting over SSH](https://docs.microsoft.com/powershell/scripting/learn/remoting/ssh-remoting-in-powershell-core?view=powershell-7).
+> [!NOTE]
+> Debian 10 and CentOS 8 currently do not support WinRM remoting. For details on setting up
+> SSH-based remoting, see
+> [PowerShell Remoting over SSH](/powershell/scripting/learn/remoting/ssh-remoting-in-powershell-core?view=powershell-7).
 
 For more up-to-date information about supported operating systems and support lifecycle, see the
-[PowerShell Support Lifecycle](https://docs.microsoft.com/powershell/scripting/powershell-support-lifecycle?view=powershell-7).
+[PowerShell Support Lifecycle](/powershell/scripting/powershell-support-lifecycle?view=powershell-7).
 
 ## Improved backwards compatibility with Windows PowerShell
 
@@ -69,7 +70,7 @@ check out the [Import-Module](TODO) documentation.
 
 For more information on which Microsoft modules work with PowerShell 7.0, see the [Module Compatibility Table](TODO).
 
-## Improved ForEach-Object with parallelism support
+## Parallel execution added to ForEach-Object
 
 The `ForEach-Object` cmdlet, which iterates items in a collection, now has built-in parallelism with
 the new **Parallel** parameter.
@@ -96,14 +97,11 @@ The **Parallel** parameter specifies the script block that is run in parallel fo
 The new **ThrottleLimit** parameter limits the number of script blocks running in parallel at a
 given time. The default is 5.
 
-Use the **$_** variable to represent the current input object in the script block. Use the
-**$using:** scope to pass variable references to the running script block.
-
-[!NOTE] The cmdlet `ForEach-Object` includes a switch parameter **AsJob** to run as
-[Background Jobs](https://docs.microsoft.com/powershell/scripting/developer/cmdlet/background-jobs?view=powershell-7).
+Use the `$_` variable to represent the current input object in the script block. Use the
+`$using:` scope to pass variable references to the running script block.
 
 For more information about
-[ForEach-Object](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/foreach-object?view=powershell-7).
+[ForEach-Object](/powershell/module/microsoft.powershell.core/foreach-object?view=powershell-7).
 
 ## Ternary operator
 
@@ -114,8 +112,8 @@ PowerShell's ternary operator is closely modeled from the C# ternary operator sy
 <condition> ? <if-true> : <if-false>
 ```
 
-The condition-expression will always be evaluated, and its result will be converted to a Boolean to
-determine which branch will be evaluated next:
+The condition-expression is always evaluated, and its result ware converted to a **Boolean** to
+determine which branch is evaluated next:
 
 - The `<if-true>` expression is executed if the `<condition>` expression is true
 - The `<if-false>` expression is executed if the `<condition>` expression is false
@@ -126,24 +124,25 @@ For example:
 $message = (Test-Path $path) ? "Path exists" : "Path not found"
 ```
 
-In this example, if the path exists, then "Path exists" is displayed. If the path does not exist,
-then "Path not found" is displayed.
+In this example, if the path exists, then **Path exists** is displayed. If the path does not exist,
+then **Path not found** is displayed.
 
 For more information
-[About If](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_if?view=powershell-7).
+[About If](/powershell/module/microsoft.powershell.core/about/about_if?view=powershell-7).
 
 ## Pipeline chain operators
 
 PowerShell 7 implements the `&&` and `||` operators to conditionally chain pipelines. These
 operators are known in PowerShell as "pipeline chain operators", and are similar to AND and OR lists
 in shells like **Bash** and **Zsh**, as well as conditional processing symbols in the
-Windows Command Shell (cmd.exe).
+Windows Command Shell (**cmd.exe**).
 
 The `&&` operator executes the right-hand pipeline, if the left-hand pipeline succeeded. Conversely,
 the `||` operator executes the right-hand pipeline if the left-hand pipeline failed.
 
-[!NOTE] These operators use the **$?** and **$LASTEXITCODE** variables to determine if a pipeline
-failed. This allows you to use them with native commands and not just with cmdlets or functions.
+> [!NOTE]
+> These operators use the `$?` and `$LASTEXITCODE` variables to determine if a pipeline
+> failed. This allows you to use them with native commands and not just with cmdlets or functions.
 
 Here, the first command succeeds and the second command is executed:
 
@@ -188,7 +187,7 @@ Second
 ```
 
 For more information
-[About Pipeline Chain Operators](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_pipeline_chain_operators?view=powershell-7).
+[About Pipeline Chain Operators](/powershell/module/microsoft.powershell.core/about/about_pipeline_chain_operators?view=powershell-7).
 
 ## Null-coalescing, assignment, and conditional operators
 
@@ -238,15 +237,17 @@ $todaysDate ??= (Get-Date).ToShortDateString()
 
 ### Null conditional member access operators ?. and ?[] (Experimental)
 
-[!NOTE] This is an experimental feature. To learn more
-[About Experimental Features](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_experimental_features?view=powershell-7).
+> [!NOTE]
+> This is an experimental feature named **PSNullConditionalOperators**. To learn more
+> [About Experimental Features](/powershell/module/microsoft.powershell.core/about/about_experimental_features?view=powershell-7).
 
 A null conditional operator permits member access, `?.`, or element access, `?[]`, to its operand
 only if that operand evaluates to non-null; otherwise, it returns null.
 
-[!NOTE] Since PowerShell allows `?` to be part of the variable name, formal specification of the
-variable name is required for using these operators. So it is required to use `{}` around the
-variable names like `${a}` or when `?` is part of the variable name `${a?}`.
+> [!NOTE]
+> Since PowerShell allows `?` to be part of the variable name, formal specification of the
+> variable name is required for using these operators. So it is required to use `{}` around the
+> variable names like `${a}` or when `?` is part of the variable name `${a?}`.
 
 In the following example, the value of the member property **Status** is returned:
 
@@ -279,13 +280,13 @@ ${a}?[0]
 ```
 
 For more information
-[About_Operators](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_operators?view=powershell-7).
+[About_Operators](/powershell/module/microsoft.powershell.core/about/about_operators?view=powershell-7).
 
 ## New view ConciseView and cmdlet Get-Error
 
 The display of error messages has been improved to enhance the readability of interactive and script
 errors with a new default view **ConciseView**. The views are user-selectable through the preference
-variable **$ErrorView**.
+variable `$ErrorView`.
 
 With **ConciseView**, if an error is not from a script or parser error, then
 it's a single line error message:
@@ -298,23 +299,23 @@ Get-Childitem -Path c:\NotReal
 Get-ChildItem: Cannot find path ‘C:\NotReal’ because it does not exist
 ```
 
-If the error occurs during script execution or is a parsing error, a multiline error message will
-return that contains the error, a pointer and error message showing where the error is in that line.
-If the terminal doesn't support ANSI color escape sequences (VT100), then colors will not be
-displayed.
+If the error occurs during script execution or is a parsing error, PowerShell returns a multiline
+error message that contains the error, a pointer and error message showing where the error is in
+that line. If the terminal doesn't support ANSI color escape sequences (VT100), then colors are not displayed.
 
 ![Error display from a script](./media/What-s-New-in-PowerShell-70/myscript-error.png)
 
 The default view in PowerShell 7 is **ConciseView**. The previous default view **NormalView** are
-user selectable by setting the preference variable **$ErrorView**.
+user selectable by setting the preference variable `$ErrorView`.
 
 ```powershell
 $ErrorView = 'NormalView' # Sets the error view to NormalView
 $ErrorView = 'ConciseView' # Sets the error view to ConciseView
 ```
 
-[!NOTE] A new property **ErrorAccentColor** is added to **$Host.PrivateData** to support changing
-the accent color of the error message.
+> [!NOTE]
+> A new property **ErrorAccentColor** is added to `$Host.PrivateData` to support changing
+> the accent color of the error message.
 
 A new cmdlet `Get-Error` provides complete detailed view of the fully qualified error when desired.
 By default the cmdlet displays the full details, including inner exceptions, of the last error that
@@ -322,8 +323,8 @@ occurred.
 
 ![Display from Get-Error](./media/What-s-New-in-PowerShell-70/myscript-geterror.png)
 
-The `Get-Error` cmdlet supports pipeline passed errors by using the built-in variable **$error**.
-`Get-Error` will display all passed errors.
+The `Get-Error` cmdlet supports input from the pipeline using the built-in variable `$Error`.
+`Get-Error` displays all piped errors.
 
 ```powershell
 $Error | Get-Error
@@ -336,33 +337,35 @@ from the current session you wish displayed.
 Get-Error -Newest 3 # Displays the lst three errors that occurred in the session
 ```
 
-For more information about [Get-Error](https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/get-error?view=powershell-7).
+For more information about [Get-Error](/powershell/module/microsoft.powershell.utility/get-error?view=powershell-7).
 
 ## New version notification
 
 PowerShell 7 uses update notifications to alert users to the existence of updates to PowerShell.
 Once per day, PowerShell queries an online service to determine if a newer version is available.
 
-[!NOTE] The update check happens during the first session in a given 24-hour period. For performance
-reasons, the update check will start 3 seconds after the session begins, and the notification will
-only be shown on the start of subsequent sessions.
+> [!NOTE]
+> The update check happens during the first session in a given 24-hour period. For performance
+> reasons, the update check starts 3 seconds after the session begins. The notification is shown
+> only on the start of subsequent sessions.
 
 By default, PowerShell subscribes to one of two different notification channels depending on its
 version/branch. Supported, Generally Available (GA) versions of PowerShell only return notifications
 for updated GA releases. Preview and Release Candidate (RC) releases notify of updates to preview,
 RC, and GA releases.
 
-The update notification behavior can be changed using the **POWERSHELL_UPDATECHECK** environment
+The update notification behavior can be changed using the `$Env:POWERSHELL_UPDATECHECK` environment
 variable. The following values are supported:
 
-- `Default` is the same as not defining **POWERSHELL_UPDATECHECK**
+- **Default** is the same as not defining `$Env:POWERSHELL_UPDATECHECK`
   - GA releases notify of updates to GA releases
   - Preview/RC releases notify of updates to GA and preview releases
-- `Off` turns off the update notification feature
-- `LTS` only notifies of updates to long-term-servicing (LTS) GA releases
+- **Off** turns off the update notification feature
+- **LTS** only notifies of updates to long-term-servicing (LTS) GA releases
 
-[!NOTE] The environment variable **POWERSHELL_UPDATECHECK** does not exist until it is set for the
-first time. The default behavior of version notifications is `Default` unless set to `Off` or `LTS`.
+> [!NOTE]
+> The environment variable `$Env:POWERSHELL_UPDATECHECK` does not exist until it is set for
+> the first time.
 
 To set the version notification for `LTS` releases only:
 
@@ -376,12 +379,14 @@ To set the version notification to the `Default` behavior:
 $Env:POWERSHELL_UPDATECHECK = 'Default'
 ```
 
-For more information [About Update Notifications](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_update_notifications?view=powershell-7).
+For more information [About Update Notifications](/powershell/module/microsoft.powershell.core/about/about_update_notifications?view=powershell-7).
 
 ## New DSC Resource support with Invoke-DSCResource (Experimental)
 
-[!NOTE] This is an experimental feature. To learn more
-[About Experimental Features](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_experimental_features?view=powershell-7).
+> [!NOTE]
+> This is an experimental feature named **PSDesiredStateConfiguration.InvokeDscResource**. To learn
+> more
+> [About Experimental Features](/powershell/module/microsoft.powershell.core/about/about_experimental_features?view=powershell-7).
 
 The `Invoke-DscResource` cmdlet runs a method of a specified PowerShell Desired State Configuration
 (DSC) resource.
@@ -399,7 +404,7 @@ Invoke-DscResource -Name Log -Method Set -ModuleName PSDesiredStateConfiguration
 ```
 
 For more information about
-[Invoke-DSCResource](https://docs.microsoft.com/powershell/module/psdesiredstateconfiguration/invoke-dscresource?view=powershell-7).
+[Invoke-DSCResource](/powershell/module/psdesiredstateconfiguration/invoke-dscresource?view=powershell-7).
 
 ## Breaking Changes and Improvements
 
