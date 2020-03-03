@@ -24,6 +24,8 @@
           href: install/installing-the-windows-powershell-2.0-engine.md
         - name: Windows PowerShell System Requirements
           href: install/windows-powershell-system-requirements.md
+    - name: Using PowerShell in Docker
+      href: install/PowerShell-in-Docker.md
 - name: Get started
   items:
     - name: Getting started with PowerShell
