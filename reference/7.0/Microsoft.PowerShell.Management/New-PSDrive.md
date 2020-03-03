@@ -159,7 +159,7 @@ OK           S:        \\Server01\Scripts        Microsoft Windows Network
 
 > [!NOTE]
 > Remember, if you use the above snippet in a script, set the **Scope** parameter value to
-> "Global" to ensure the drive persists outside the current session.
+> "Global" to ensure the drive persists outside the current scope.
 
 The `$cred` variable stores a **PSCredential** object that contains the service account's
 credentials. `Get-Credential` prompts you to enter the password that's stored in a **SecureString**.
