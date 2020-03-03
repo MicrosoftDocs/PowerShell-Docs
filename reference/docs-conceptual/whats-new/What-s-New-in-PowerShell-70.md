@@ -63,10 +63,10 @@ with existing Windows PowerShell modules. This includes many modules on Windows 
 functionality like `Out-GridView` and `Show-Command`, as well as many role management modules that
 ship as part of Windows.
 
-For Windows, a new switch parameter **UseWindowsPowerShell** is added to `Import-Module`.
-This switch creates a proxy module in PowerShell 7 that uses a local Windows PowerShell process to
-implicitly run any cmdlets contained in that module. For more information on this functionality,
-check out the [Import-Module](TODO) documentation.
+For Windows, a new switch parameter **UseWindowsPowerShell** is added to `Import-Module`. This
+switch creates a proxy module in PowerShell 7 that uses a local Windows PowerShell process to
+implicitly run any cmdlets contained in that module. For more information on
+[Import-Module](/powershell/module/microsoft.powershell.core/import-module?view=powershell-7).
 
 For more information on which Microsoft modules work with PowerShell 7.0, see the [Module Compatibility Table](TODO).
 
@@ -296,7 +296,7 @@ Get-Childitem -Path c:\NotReal
 ```
 
 ```Output
-Get-ChildItem: Cannot find path ‘C:\NotReal’ because it does not exist
+Get-ChildItem: Cannot find path 'C:\NotReal' because it does not exist
 ```
 
 If the error occurs during script execution or is a parsing error, PowerShell returns a multiline
