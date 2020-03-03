@@ -6,7 +6,7 @@
   items:
     - name: Installing various versions of PowerShell
       href: install/installing-powershell.md
-    - name: PowerShell Core
+    - name: Installing PowerShell
       items:
         - name: Installing PowerShell Core on Windows
           href: install/installing-powershell-core-on-windows.md
@@ -16,7 +16,7 @@
           href: install/installing-powershell-core-on-macos.md
         - name: Installing PowerShell Core on ARM
           href: install/powershell-core-on-arm.md
-    - name: Windows PowerShell
+    - name: Installing Windows PowerShell 5.1
       items:
         - name: Installing Windows PowerShell
           href: install/installing-windows-powershell.md
@@ -24,6 +24,8 @@
           href: install/installing-the-windows-powershell-2.0-engine.md
         - name: Windows PowerShell System Requirements
           href: install/windows-powershell-system-requirements.md
+    - name: Using PowerShell in Docker
+      href: install/PowerShell-in-Docker.md
 - name: Get started
   items:
     - name: Getting started with PowerShell
