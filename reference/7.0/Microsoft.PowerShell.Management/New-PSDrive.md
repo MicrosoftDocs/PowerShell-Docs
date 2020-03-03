@@ -224,12 +224,12 @@ GetHashCode         Method       System.Int32 GetHashCode()
 ```
 
 ```powershell
-# Net Use and Get-WmiObject for the Win32_LogicalDisk class,
+# Net Use and Get-CimInstance for the Win32_LogicalDisk class,
 # and Win32_NetworkConnection class find only the persistent X: drive.
 # PowerShell temporary drives are known only to PowerShell.
 Net Use
-Get-WmiObject Win32_LogicalDisk | Format-Table -Property DeviceID
-Get-WmiObject Win32_NetworkConnection
+Get-CimInstance Win32_LogicalDisk | Format-Table -Property DeviceID
+Get-CimInstance Win32_NetworkConnection
 ```
 
 ```Output
