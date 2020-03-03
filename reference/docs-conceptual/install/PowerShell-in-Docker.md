@@ -1,5 +1,5 @@
 ---
-title: Using  PowerShell in Docker
+title: Using PowerShell in Docker
 description: How to use PowerShell that is preinstalled in a Docker image.
 ms.devlang: powershell
 ms.topic: conceptual
