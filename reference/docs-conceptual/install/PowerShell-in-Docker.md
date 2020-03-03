@@ -8,7 +8,7 @@ ms.date: 03/03/2020
 
 # Using PowerShell in Docker
 
-We are publishing Docker images with PowerShell preinstalled. This article shows you how to get
+We publish Docker images with PowerShell preinstalled. This article shows you how to get
 started using PowerShell in the Docker container.
 
 ## Finding available images
