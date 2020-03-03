@@ -1,7 +1,7 @@
 ---
 external help file: ThreadJob.dll-Help.xml
 Module Name: threadjob
-ms.date: 12/19/2019
+ms.date: 01/28/2020
 online version: https://docs.microsoft.com/powershell/module/threadjob/start-threadjob?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Start-ThreadJob
@@ -120,7 +120,7 @@ Specifies an array of arguments, or parameter values, for the script that is spe
 parameter name are interpreted values in the argument list.
 
 ```yaml
-Type: System.Object[]
+Type: Object[]
 Parameter Sets: (All)
 Aliases:
 
@@ -140,7 +140,7 @@ When you use this parameter, PowerShell converts the contents of the specified s
 script block and runs the script block as a background job.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: FilePath
 Aliases:
 
@@ -160,7 +160,7 @@ Use this parameter to prepare the session in which the job runs. For example, yo
 functions and modules to the session.
 
 ```yaml
-Type: System.Management.Automation.ScriptBlock
+Type: ScriptBlock
 Parameter Sets: (All)
 Aliases:
 
@@ -177,7 +177,7 @@ Specifies the objects used as input to the script block. It also allows for pipe
 `$input` automatic variable in the script block to access the input objects.
 
 ```yaml
-Type: System.Management.Automation.PSObject
+Type: PSObject
 Parameter Sets: (All)
 Aliases:
 
@@ -197,7 +197,7 @@ The default friendly name is "Job#", where "#" is an ordinal number that is incr
 job.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: (All)
 Aliases:
 
@@ -215,7 +215,7 @@ a script block. Use the `$Input` automatic variable to access the value of the *
 parameter. This parameter is required.
 
 ```yaml
-Type: System.Management.Automation.ScriptBlock
+Type: ScriptBlock
 Parameter Sets: ScriptBlock
 Aliases:
 
@@ -228,17 +228,21 @@ Accept wildcard characters: False
 
 ### -ThrottleLimit
 
-This parameter limits the number of jobs running at one time. As more jobs are started, they are
-queued and wait until the current number of jobs drops below the throttle limit.
+This parameter limits the number of jobs running at one time. As jobs are started, they are queued
+and wait until a thread is available in the thread pool to run the job. The default limit is 5
+threads.
+
+The thread pool size is global to the PowerShell session. Specifying a **ThrottleLimit** in one
+call sets the limit for subsequent calls in the same session.
 
 ```yaml
-Type: System.Int32
+Type: Int32
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: 5
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

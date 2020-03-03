@@ -36,6 +36,12 @@ Select-Object [-InputObject <PSObject>] [[-Property] <Object[]>] [-ExcludeProper
 Select-Object [-InputObject <PSObject>] [-Unique] [-Wait] [-Index <Int32[]>] [<CommonParameters>]
 ```
 
+### SkipIndexParameter
+
+```
+Select-Object [-InputObject <PSObject>] [-Unique] [-SkipIndex <Int32[]>] [<CommonParameters>]
+```
+
 ## DESCRIPTION
 
 The `Select-Object` cmdlet selects specified properties of an object or set of objects. It can also
@@ -530,6 +536,20 @@ This parameter was introduced in Windows PowerShell 3.0.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: DefaultParameter, IndexParameter
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -SkipIndex
+
+```yaml
+Type: Int32[]
+Parameter Sets: SkipIndexParameter
 Aliases:
 
 Required: False

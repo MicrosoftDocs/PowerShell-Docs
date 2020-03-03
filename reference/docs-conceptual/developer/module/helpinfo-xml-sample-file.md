@@ -18,8 +18,8 @@ This topic displays a sample of a well-formed Updatable Help Information file, c
 ```xml
 
 <?xml version="1.0" encoding="utf-8"?>
-<HelpInfo xmlns="http://schemas.microsoft.com/powershell/help/2010/05">
-   <HelpContentURI>http://go.microsoft.com/fwlink/?LinkID=141553</HelpContentURI>
+<HelpInfo xmlns="https://schemas.microsoft.com/powershell/help/2010/05">
+   <HelpContentURI>https://go.microsoft.com/fwlink/?LinkID=141553</HelpContentURI>
    <SupportedUICultures>
     <UICulture>
       <UICultureName>de-DE</UICultureName>

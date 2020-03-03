@@ -294,6 +294,32 @@ running on the local computer.
 
 To view the job's output, use the `Receive-Job` cmdlet. For example, `Receive-Job -Id 1`.
 
+### Example 11: Run job in a Windows PowerShell 5.1
+
+This example uses the **PSVersion** parameter with value **5.1** to run job
+in a Windows PowerShell 5.1 session.
+
+```powershell
+$PSVersionTable.PSVersion
+```
+
+```Output
+Major  Minor  Patch  PreReleaseLabel BuildLabel
+-----  -----  -----  --------------- ----------
+7      0      0      rc.1
+```
+
+```powershell
+$job = Start-Job { $PSVersionTable.PSVersion } -PSVersion 5.1
+Receive-Job $job
+```
+
+```Output
+Major  Minor  Build  Revision
+-----  -----  -----  --------
+5      1      14393  3383
+```
+
 ## PARAMETERS
 
 ### -ArgumentList
@@ -307,7 +333,7 @@ comma-separated list. For more information about array dimensions, see
 
 ```yaml
 Type: Object[]
-Parameter Sets: ComputerName, FilePathComputerName, LiteralFilePathComputerName
+Parameter Sets: ComputerName, LiteralFilePathComputerName, FilePathComputerName
 Aliases: Args
 
 Required: False
@@ -348,7 +374,7 @@ For more information about the values of this parameter, see
 
 ```yaml
 Type: AuthenticationMechanism
-Parameter Sets: ComputerName, FilePathComputerName, LiteralFilePathComputerName
+Parameter Sets: ComputerName, LiteralFilePathComputerName, FilePathComputerName
 Aliases:
 Accepted values: Default, Basic, Negotiate, NegotiateWithImplicitCredential, Credssp, Digest, Kerberos
 
@@ -377,7 +403,7 @@ object and the password is stored as a [SecureString](/dotnet/api/system.securit
 
 ```yaml
 Type: PSCredential
-Parameter Sets: ComputerName, FilePathComputerName, LiteralFilePathComputerName
+Parameter Sets: ComputerName, LiteralFilePathComputerName, FilePathComputerName
 Aliases:
 
 Required: False
@@ -466,7 +492,7 @@ functions, snap-ins, and modules to the session.
 
 ```yaml
 Type: ScriptBlock
-Parameter Sets: ComputerName, FilePathComputerName, LiteralFilePathComputerName
+Parameter Sets: ComputerName, LiteralFilePathComputerName, FilePathComputerName
 Aliases:
 
 Required: False
@@ -486,7 +512,7 @@ input objects.
 
 ```yaml
 Type: PSObject
-Parameter Sets: ComputerName, FilePathComputerName, LiteralFilePathComputerName
+Parameter Sets: ComputerName, LiteralFilePathComputerName, FilePathComputerName
 Aliases:
 
 Required: False
@@ -509,7 +535,7 @@ sequences.
 ```yaml
 Type: String
 Parameter Sets: LiteralFilePathComputerName
-Aliases: PSPath
+Aliases: PSPath, LP
 
 Required: True
 Position: Named
@@ -540,14 +566,15 @@ Accept wildcard characters: False
 
 ### -PSVersion
 
-Specifies a version. `Start-Job` runs the job with the version of PowerShell. The acceptable values
-for this parameter are: `2.0` and `3.0`.
+Specifies a version of PowerShell to use for running the job.
+When the value of **PSVersion** is **5.1** The job is run in a Windows PowerShell 5.1 session.
+For any other value, the job is run using the current version of PowerShell.
 
-This parameter was introduced in PowerShell 3.0.
+This parameter was added in PowerShell 7 and only works on Windows.
 
 ```yaml
 Type: Version
-Parameter Sets: ComputerName, FilePathComputerName, LiteralFilePathComputerName
+Parameter Sets: ComputerName, LiteralFilePathComputerName, FilePathComputerName
 Aliases:
 
 Required: False
@@ -573,7 +600,7 @@ another user.
 
 ```yaml
 Type: SwitchParameter
-Parameter Sets: ComputerName, FilePathComputerName, LiteralFilePathComputerName
+Parameter Sets: ComputerName, LiteralFilePathComputerName, FilePathComputerName
 Aliases:
 
 Required: False

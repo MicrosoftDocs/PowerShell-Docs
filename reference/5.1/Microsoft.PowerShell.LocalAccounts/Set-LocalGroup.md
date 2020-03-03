@@ -43,6 +43,10 @@ PS C:\> Set-LocalGroup -Name "SecurityGroup04" -Description "This is a sample de
 
 This command changes the description of a local group.
 
+> [!NOTE]
+> The Microsoft.PowerShell.LocalAccounts module is not available in 32-bit PowerShell on a 64-bit
+> system.
+
 ## PARAMETERS
 
 ### -Description

@@ -292,6 +292,8 @@
           href: whats-new/what-s-new-in-windows-powershell-50.md
         - name: What's new in the PowerShell 5.0 ISE
           href: whats-new/what-s-new-in-the-powershell-50-ise.md
+    - name: Module and cmdlet release history
+      href: whats-new/cmdlet-versions.md
 - name: PowerShell Core support lifecycle
   href: powershell-support-lifecycle.md
 - name: Windows Management Framework (WMF)
@@ -656,8 +658,8 @@
           href: samples/creating-.net-and-com-objects--new-object-.md
         - name: Using static classes and methods
           href: samples/using-static-classes-and-methods.md
-        - name: Getting WMI objects - Get-WmiObject
-          href: samples/getting-wmi-objects--get-wmiobject-.md
+        - name: Getting WMI objects - Get-CimInstance
+          href: samples/getting-wmi-objects--get-ciminstance-.md
     - name: Managing computers
       items:
         - name: Changing computer state

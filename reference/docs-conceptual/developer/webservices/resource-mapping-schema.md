@@ -19,7 +19,7 @@ The following XSD defines the schema for Management OData IIS Extension resource
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
-<xs:schema xmlns="http://schemas.microsoft.com/powershell-web-services/2010/09" targetNamespace="http://schemas.microsoft.com/powershell-web-services/2010/09" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+<xs:schema xmlns="https://schemas.microsoft.com/powershell-web-services/2010/09" targetNamespace="https://schemas.microsoft.com/powershell-web-services/2010/09" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
   <xs:element name="ResourceMetadata">
     <xs:complexType>
       <xs:all>

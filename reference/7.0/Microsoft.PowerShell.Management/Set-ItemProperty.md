@@ -89,7 +89,7 @@ Set-ItemProperty -Path "HKLM:\Software\ContosoCompany" -Name "NoOfEmployees" -Va
 Get-ItemProperty -Path "HKLM:\Software\ContosoCompany"
 ```
 
-```output
+```Output
 PSPath        : Microsoft.PowerShell.Core\Registry::HKEY_LOCAL_MACHINE\software\contosocompany
 PSParentPath  : Microsoft.PowerShell.Core\Registry::HKEY_LOCAL_MACHINE\software
 PSChildName   : contosocompany
@@ -97,7 +97,6 @@ PSDrive       : HKLM
 PSProvider    : Microsoft.PowerShell.Core\Registry
 NoOfLocations : 2
 NoOfEmployees : 823
-
 ```
 
 ```powershell
@@ -105,7 +104,7 @@ Set-ItemProperty -Path "HKLM:\Software\ContosoCompany" -Name "NoOfEmployees" -Va
 Get-ItemProperty -Path "HKLM:\Software\ContosoCompany"
 ```
 
-```output
+```Output
 PSPath        : Microsoft.PowerShell.Core\Registry::HKEY_LOCAL_MACHINE\software\contosocompany
 PSParentPath  : Microsoft.PowerShell.Core\Registry::HKEY_LOCAL_MACHINE\software
 PSChildName   : contosocompany
@@ -274,8 +273,8 @@ For more information, see [about_Quoting_Rules](../Microsoft.Powershell.Core/Abo
 
 ```yaml
 Type: String[]
-Parameter Sets: propertyValueLiteralPathSet, propertyPSObjectLiteralPathSet
-Aliases: PSPath
+Parameter Sets: propertyPSObjectLiteralPathSet, propertyValueLiteralPathSet
+Aliases: PSPath, LP
 
 Required: True
 Position: Named
@@ -332,6 +331,37 @@ Position: 0
 Default value: None
 Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: True
+```
+
+### -Type
+
+**Type** is a dynamic parameter that the Registry provider adds to the `Set-ItemProperty` cmdlet.
+This parameter only works in the registry drives.
+
+Specifies the type of property that this cmdlet adds.
+The acceptable values for this parameter are:
+
+- **String**: Specifies a null-terminated string. Equivalent to **REG_SZ**.
+- **ExpandString**: Specifies a null-terminated string that contains unexpanded references to
+  environment variables that are expanded when the value is retrieved. Equivalent to
+  **REG_EXPAND_SZ**.
+- **Binary**: Specifies binary data in any form. Equivalent to **REG_BINARY**.
+- **DWord**: Specifies a 32-bit binary number. Equivalent to **REG_DWORD**.
+- **MultiString**: Specifies an array of null-terminated strings terminated by two null characters.
+  Equivalent to **REG_MULTI_SZ**.
+- **Qword**: Specifies a 64-bit binary number. Equivalent to **REG_QWORD**.
+- **Unknown**: Indicates an unsupported registry data type, such as **REG_RESOURCE_LIST**.
+
+```yaml
+Type: RegistryValueKind
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
 ```
 
 ### -Value
@@ -401,7 +431,7 @@ You can pipe objects to this cmdlet.
 ### None, System.Management.Automation.PSCustomObject
 
 This cmdlet generates a **PSCustomObject** object that represents the item that was changed and its
-new property value, if you specify the *PassThru* parameter.
+new property value, if you specify the **PassThru** parameter.
 Otherwise, this cmdlet does not generate any output.
 
 ## NOTES

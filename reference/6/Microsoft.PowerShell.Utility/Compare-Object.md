@@ -140,6 +140,7 @@ running processes and stores them in the `$Processes_After` variable.
 **notepad.exe**, from the `$Processes_After` object.
 
 <a name="ex5" />
+
 ### Example 5: Show the difference when using the PassThru parameter
 
 Normally, `Compare-Object` returns a **PSCustomObject** type with the following properties:

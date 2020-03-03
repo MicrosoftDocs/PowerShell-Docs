@@ -19,15 +19,17 @@ Downloads and saves the newest help files to a file system directory.
 
 ```
 Save-Help [-DestinationPath] <String[]> [[-Module] <PSModuleInfo[]>]
- [-FullyQualifiedModule <ModuleSpecification[]>] [[-UICulture] <CultureInfo[]>] [-Credential <PSCredential>]
- [-UseDefaultCredentials] [-Force] [<CommonParameters>]
+ [-FullyQualifiedModule <ModuleSpecification[]>] [[-UICulture] <CultureInfo[]>]
+ [-Credential <PSCredential>] [-UseDefaultCredentials] [-Force] [-Scope <UpdateHelpScope>]
+ [<CommonParameters>]
 ```
 
 ### LiteralPath
 
 ```
-Save-Help -LiteralPath <String[]> [[-Module] <PSModuleInfo[]>] [-FullyQualifiedModule <ModuleSpecification[]>]
- [[-UICulture] <CultureInfo[]>] [-Credential <PSCredential>] [-UseDefaultCredentials] [-Force]
+Save-Help -LiteralPath <String[]> [[-Module] <PSModuleInfo[]>]
+ [-FullyQualifiedModule <ModuleSpecification[]>] [[-UICulture] <CultureInfo[]>]
+ [-Credential <PSCredential>] [-UseDefaultCredentials] [-Force] [-Scope <UpdateHelpScope>]
  [<CommonParameters>]
 ```
 
@@ -278,7 +280,7 @@ Single quotation marks tell PowerShell not to interpret any characters as escape
 ```yaml
 Type: String[]
 Parameter Sets: LiteralPath
-Aliases: PSPath
+Aliases: PSPath, LP
 
 Required: True
 Position: Named
@@ -360,6 +362,22 @@ Required: False
 Position: Named
 Default value: False
 Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Scope
+
+This paramater does nothing in this cmdlet.
+
+```yaml
+Type: UpdateHelpScope
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 

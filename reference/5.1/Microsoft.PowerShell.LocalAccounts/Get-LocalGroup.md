@@ -30,6 +30,10 @@ Get-LocalGroup [[-SID] <SecurityIdentifier[]>] [<CommonParameters>]
 The **Get-LocalGroup** cmdlet gets local security groups in Security Account Manager.
 This cmdlet gets default built-in groups and local security groups that you create.
 
+> [!NOTE]
+> The Microsoft.PowerShell.LocalAccounts module is not available in 32-bit PowerShell on a 64-bit
+> system.
+
 ## EXAMPLES
 
 ### Example 1: Get the Administrators group

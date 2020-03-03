@@ -261,7 +261,6 @@ StandardDeviation : 859.444048419069
 Property          : CPU
 ```
 
-
 ### Example 12: Measure using wildcards
 
 Beginning in PowerShell 6, `Measure-Object` supports measurement of objects by using wildcards in

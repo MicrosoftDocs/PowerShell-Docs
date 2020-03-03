@@ -1,7 +1,7 @@
 ---
 author: sdwheeler
 ms.author: sewhee
-ms.date: 09/04/2019
+ms.date: 02/14/2020
 title: PowerShell Digital Art
 ---
 # PowerShell Digital Art
@@ -11,14 +11,15 @@ title: PowerShell Digital Art
 Please enjoy the digital artwork linked below. Demonstrate to your peers that *you have been
 entrusted with the Scrolls of Monad!*
 
+## PowerShell Infographic
+
+- [PowerShell Infographic](https://github.com/MicrosoftDocs/PowerShell-Docs/blob/staging/assets/PowerShell_7_Infographic.pdf)
+
 ## Comic
 
 - [PowerShell Hero Comic (High resolution)](https://aka.ms/powershellherocomic_highres)
 - [PowerShell Hero Comic (Print resolution)](https://aka.ms/powershellherocomic_print)
 - [PowerShell Hero Comic (Web resolution)](https://aka.ms/powershellherocomic_web)
-
-To share a link to the comic, you can also use <https://aka.ms/powershellcomic>, which redirects to
-the Web resolution file.
 
 ## Wallpaper
 

@@ -3,7 +3,7 @@ external help file: PSModule-help.xml
 keywords: powershell,cmdlet
 locale: en-us
 Module Name: PowerShellGet
-ms.date: 05/23/2019
+ms.date: 02/27/2020
 online version: https://docs.microsoft.com/powershell/module/powershellget/get-installedmodule?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-InstalledModule
@@ -96,9 +96,9 @@ Accept wildcard characters: False
 
 ### -MaximumVersion
 
-Specifies the maximum, or newest, version of a module to get.
-The **MaximumVersion** and **RequiredVersion** parameters are mutually exclusive; you cannot use both
-parameters in the same command.
+Specifies the maximum, or newest, version of a module to get. The **MaximumVersion** and
+**RequiredVersion** parameters are mutually exclusive; you cannot use both parameters in the same
+command.
 
 ```yaml
 Type: String
@@ -114,9 +114,9 @@ Accept wildcard characters: False
 
 ### -MinimumVersion
 
-Specifies the minimum version of a single module to get.
-The **MinimumVersion** and **RequiredVersion** parameters are mutually exclusive; you cannot use both
-parameters in the same command.
+Specifies the minimum version of a single module to get. The **MinimumVersion** and
+**RequiredVersion** parameters are mutually exclusive; you cannot use both parameters in the same
+command.
 
 ```yaml
 Type: String
@@ -170,9 +170,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
+### System.String[]
+
+### System.String
+
 ## OUTPUTS
 
-### Microsoft.PowerShell.Commands.PSRepositoryItemInfo
+### System.Management.Automation.PSCustomObject
 
 ## NOTES
 

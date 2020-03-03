@@ -3,7 +3,7 @@ external help file: Microsoft.PowerShell.Archive-help.xml
 keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Archive
-ms.date: 06/09/2017
+ms.date: 02/20/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.archive/expand-archive?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Expand-Archive
@@ -19,46 +19,52 @@ Extracts files from a specified archive (zipped) file.
 ### Path (Default)
 
 ```
-Expand-Archive [-Path] <String> [[-DestinationPath] <String>] [-Force] [-PassThru] [-WhatIf] [-Confirm]
- [<CommonParameters>]
+Expand-Archive [-Path] <String> [[-DestinationPath] <String>] [-Force] [-PassThru] [-WhatIf]
+ [-Confirm] [<CommonParameters>]
 ```
 
 ### LiteralPath
 
 ```
-Expand-Archive -LiteralPath <String> [[-DestinationPath] <String>] [-Force] [-PassThru] [-WhatIf] [-Confirm]
- [<CommonParameters>]
+Expand-Archive -LiteralPath <String> [[-DestinationPath] <String>] [-Force] [-PassThru] [-WhatIf]
+ [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 
-The `Expand-Archive` cmdlet extracts files from a specified zipped archive file to a specified destination folder.
-An archive file allows multiple files to be packaged, and optionally compressed, into a single zipped file for easier distribution and storage.
+The `Expand-Archive` cmdlet extracts files from a specified zipped archive file to a specified
+destination folder. An archive file allows multiple files to be packaged, and optionally compressed,
+into a single zipped file for easier distribution and storage.
 
 ## EXAMPLES
 
 ### Example 1: Extract the contents of an archive
 
+This example extracts the contents of an existing archive file into the folder specified by the
+**DestinationPath** parameter.
+
 ```powershell
-Expand-Archive -LiteralPath C:\Archives\Draft.Zip -DestinationPath C:\Reference
+Expand-Archive -LiteralPath 'C:\Archives\Draft[v1].Zip' -DestinationPath C:\Reference
 ```
 
-This command extracts the contents of an existing archive file, Draft.zip, into the folder specified by the **DestinationPath** parameter, C:\Reference.
+In this example, the **LiteralPath** parameter is used because the filename contains characters that
+could be interpreted as wildcards.
 
 ### Example 2: Extract the contents of an archive in the current folder
 
-```powershell
-Expand-Archive -Path Draft.Zip -DestinationPath C:\Reference
-```
+This example extracts the contents of an existing archive file in the current folder into the folder
+specified by the **DestinationPath** parameter.
 
-This command extracts the contents of an existing archive file in the current folder, Draft.zip, into the folder specified by the **DestinationPath** parameter, C:\Reference.
+```powershell
+Expand-Archive -Path Draftv2.Zip -DestinationPath C:\Reference
+```
 
 ## PARAMETERS
 
 ### -DestinationPath
 
-Specifies the path to the folder in which you want the command to save extracted files.
-Enter the path to a folder, but do not specify a file name or file name extension.
+Specifies the path to the folder in which you want the command to save extracted files. Enter the
+path to a folder, but do not specify a filename or filename extension.
 
 ```yaml
 Type: String
@@ -90,10 +96,10 @@ Accept wildcard characters: False
 
 ### -LiteralPath
 
-Specifies the path to an archive file.
-Unlike the **Path** parameter, the value of **LiteralPath** is used exactly as it is typed.
-Wildcard characters are not supported.
-If the path includes escape characters, enclose each escape character in single quotation marks, to instruct PowerShell not to interpret any characters as escape sequences.
+Specifies the path to an archive file. Unlike the **Path** parameter, the value of **LiteralPath**
+is used exactly as it is typed. Wildcard characters are not supported. If the path includes escape
+characters, enclose each escape character in single quotation marks, to instruct PowerShell not to
+interpret any characters as escape sequences.
 
 ```yaml
 Type: String
@@ -157,8 +163,7 @@ Accept wildcard characters: False
 
 ### -WhatIf
 
-Shows what would happen if the cmdlet runs.
-The cmdlet is not run.
+Shows what would happen if the cmdlet runs. The cmdlet is not run.
 
 ```yaml
 Type: SwitchParameter
@@ -192,6 +197,13 @@ When the `-PassThru` parameter is used, the cmdlet outputs a list of files that 
 the archive.
 
 ## NOTES
+
+The [ZIP file specification](https://pkware.cachefly.net/webdocs/casestudies/APPNOTE.TXT) does not
+specify a standard way of encoding filenames that contain non-ASCII characters. The
+`Compress-Archive` cmdlet uses UTF-8 encoding. Other ZIP archive tools may use a different encoding
+scheme. When extracting files with filenames not stored using UTF-8 encoding, `Expand-Archive` uses
+the raw value found in the archive. This can result in a filename that is different than the source
+filename stored in the archive.
 
 ## RELATED LINKS
 

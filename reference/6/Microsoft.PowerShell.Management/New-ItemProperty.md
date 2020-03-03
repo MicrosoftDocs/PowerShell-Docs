@@ -83,10 +83,9 @@ registry entry ("NoOfLocations"), and its value (3), to the "MyCompany" key.
 Get-Item -Path "HKLM:\Software\MyCompany" | New-ItemProperty -Name NoOfLocations -Value 3
 ```
 
-This command works because the parameter-binding feature of PowerShell associates the path
-of the `RegistryKey` object that `Get-Item` returns with the **LiteralPath** parameter of
-`New-ItemProperty`.
-For more information, see [about_Pipelines](../Microsoft.PowerShell.Core/About/about_pipelines.md).
+This command works because the parameter-binding feature of PowerShell associates the path of the
+`RegistryKey` object that `Get-Item` returns with the **LiteralPath** parameter of
+`New-ItemProperty`. For more information, see [about_Pipelines](../Microsoft.PowerShell.Core/About/about_pipelines.md).
 
 ### Example 3: Create a MultiString value in the registry using a Here-String
 
@@ -229,7 +228,7 @@ For more information, see [about_Quoting_Rules](../Microsoft.Powershell.Core/Abo
 ```yaml
 Type: String[]
 Parameter Sets: LiteralPath
-Aliases: PSPath
+Aliases: PSPath, LP
 
 Required: True
 Position: Named
@@ -278,26 +277,16 @@ Accept wildcard characters: True
 Specifies the type of property that this cmdlet adds.
 The acceptable values for this parameter are:
 
-- **String**:
-  Specifies a null-terminated string.
-  Equivalent to **REG_SZ**.
-- **ExpandString**:
-  Specifies a null-terminated string that contains unexpanded references to environment variables
-that are expanded when the value is retrieved.   Equivalent to **REG_EXPAND_SZ**.
-- **Binary**:
-  Specifies binary data in any form.
-  Equivalent to **REG_BINARY**.
-- **DWord**:
-  Specifies a 32-bit binary number.
-  Equivalent to **REG_DWORD**.
-- **MultiString**:
-  Specifies an array of null-terminated strings terminated by two null characters.
+- **String**: Specifies a null-terminated string. Equivalent to **REG_SZ**.
+- **ExpandString**: Specifies a null-terminated string that contains unexpanded references to
+  environment variables that are expanded when the value is retrieved. Equivalent to
+  **REG_EXPAND_SZ**.
+- **Binary**: Specifies binary data in any form. Equivalent to **REG_BINARY**.
+- **DWord**: Specifies a 32-bit binary number. Equivalent to **REG_DWORD**.
+- **MultiString**: Specifies an array of null-terminated strings terminated by two null characters.
   Equivalent to **REG_MULTI_SZ**.
-- **Qword**:
-  Specifies a 64-bit binary number.
-  Equivalent to **REG_QWORD**.
-- **Unknown**:
-  Indicates an unsupported registry data type, such as **REG_RESOURCE_LIST**.
+- **Qword**: Specifies a 64-bit binary number. Equivalent to **REG_QWORD**.
+- **Unknown**: Indicates an unsupported registry data type, such as **REG_RESOURCE_LIST**.
 
 ```yaml
 Type: String

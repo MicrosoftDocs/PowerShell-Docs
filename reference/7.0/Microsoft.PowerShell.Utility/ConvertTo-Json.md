@@ -250,7 +250,7 @@ Acceptable values are:
 This parameter was introduced in PowerShell 6.2.
 
 ```yaml
-Type: NewtonSoft.Json.StringEscapeHandling
+Type: StringEscapeHandling
 Parameter Sets: (All)
 Aliases:
 

@@ -1,5 +1,5 @@
 ---
-external help file: Microsoft.PowerShell.PSReadLine.dll-Help.xml
+external help file: Microsoft.PowerShell.PSReadLine2.dll-Help.xml
 keywords: powershell,cmdlet
 locale: en-us
 Module Name: PSReadLine
@@ -95,6 +95,9 @@ You cannot pipe objects to this cmdlet.
 ## OUTPUTS
 
 ### Microsoft.PowerShell.PSConsoleReadLineOptions
+
+An instance of the current options. Changing the values will update the settings in PSReadLine
+directly without invoking `Set-PSReadLineOption`.
 
 ## NOTES
 
