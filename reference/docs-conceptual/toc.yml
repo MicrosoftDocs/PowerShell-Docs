@@ -6,7 +6,7 @@
   items:
     - name: Installing various versions of PowerShell
       href: install/installing-powershell.md
-    - name: PowerShell Core
+    - name: PowerShell
       items:
         - name: Installing PowerShell Core on Windows
           href: install/installing-powershell-core-on-windows.md
@@ -16,7 +16,7 @@
           href: install/installing-powershell-core-on-macos.md
         - name: Installing PowerShell Core on ARM
           href: install/powershell-core-on-arm.md
-    - name: Windows PowerShell
+    - name: Windows PowerShell 5.1
       items:
         - name: Installing Windows PowerShell
           href: install/installing-windows-powershell.md
