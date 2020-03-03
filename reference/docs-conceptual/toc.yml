@@ -270,6 +270,10 @@
       href: gallery/faqs.md
 - name: What's New
   items:
+    - name: What's new in PowerShell 7.x
+      items:
+        - name: What's new in PowerShell 7.0
+          href: whats-new/what-s-new-in-powershell-70.md
     - name: What's new in PowerShell Core 6.x
       items:
         - name: What's new in PowerShell Core 6.2
