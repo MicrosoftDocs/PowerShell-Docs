@@ -68,7 +68,8 @@ switch creates a proxy module in PowerShell 7 that uses a local Windows PowerShe
 implicitly run any cmdlets contained in that module. For more information on
 [Import-Module](/powershell/module/microsoft.powershell.core/import-module?view=powershell-7).
 
-For more information on which Microsoft modules work with PowerShell 7.0, see the [Module Compatibility Table](https://aka.ms/PSModuleCompat).
+For more information on which Microsoft modules work with PowerShell 7.0, see the
+[Module Compatibility Table](https://aka.ms/PSModuleCompat).
 
 ## Parallel execution added to ForEach-Object
 
