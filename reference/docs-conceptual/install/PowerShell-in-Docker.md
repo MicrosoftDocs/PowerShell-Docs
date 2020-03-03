@@ -51,16 +51,16 @@ PowerShell is licensed under the [MIT license][].
 By requesting and using the Container OS Image for Windows containers, you acknowledge,
 understand, and consent to the Supplemental License Terms available on Docker hub:
 
-- [Window Server Core](https://hub.docker.com/r/microsoft/windowsservercore/)
-- [Nano Server](https://hub.docker.com/r/microsoft/nanoserver/)
+- [Window Server Core][Window Server Core]
+- [Nano Server][Nano Server]
 
 ### Telemetry
 
-By default, PowerShell collects the OS description and the version of PowerShell (equivalent to
-`$PSVersionTable.OS` and `$PSVersionTable.GitCommitId`) using [Application Insights][appinsights].
-To opt-out of sending telemetry, create an environment variable called `POWERSHELL_TELEMETRY_OPTOUT`
-set to a value of `1` before starting PowerShell from the installed location. The telemetry we
-collect falls under the [Microsoft Privacy Statement](https://privacy.microsoft.com/privacystatement/).
+By default, PowerShell collects limited telemetry without personally identifiable information to
+help aid development of future versions of PowerShell. To opt-out of sending telemetry, create an
+environment variable called `POWERSHELL_TELEMETRY_OPTOUT` set to a value of `1` before starting
+PowerShell from the installed location. The telemetry we collect falls under the
+[Microsoft Privacy Statement][privacy].
 
 <!-- link references -->
 [install]: https://docs.docker.com/engine/installation/
@@ -68,3 +68,6 @@ collect falls under the [Microsoft Privacy Statement](https://privacy.microsoft.
 [appinsights]: https://azure.microsoft.com/services/application-insights/
 [MIT license]: https://github.com/PowerShell/PowerShell/tree/master/LICENSE.txt
 [PowerShell-Docker]: https://github.com/PowerShell/PowerShell-Docker
+[Window Server Core]: https://hub.docker.com/r/microsoft/windowsservercore/
+[Nano Server]: https://hub.docker.com/r/microsoft/nanoserver/
+[privacy]: https://privacy.microsoft.com/privacystatement/
