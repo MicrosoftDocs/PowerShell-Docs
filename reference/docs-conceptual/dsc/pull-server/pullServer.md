@@ -32,10 +32,11 @@ The recommended scale for each solution is as follows:
 |                   Solution                   |              Client nodes              |
 | -------------------------------------------- | -------------------------------------- |
 | Windows Pull Server using MDB/ESENT database | Up to 500 nodes                        |
-| Windows Pull Server using SQL database       | Up to 1000 nodes                       |
-| Azure Automation DSC                         | Scenarios with greater than 1000 nodes |
+| Windows Pull Server using SQL database       | Up to 3500 nodes                       |
+| Azure Automation DSC                         | Both small and large environments      |
 
-**The recommended solution**, and the option with the most features available, is [Azure Automation DSC](/azure/automation/automation-dsc-getting-started).
+**The recommended solution**, and the option with the most features available, is [Azure Automation DSC](/azure/automation/automation-dsc-getting-started). An upper limit for number of nodes per Automation Account
+has not been identified.
 
 The Azure service can manage nodes on-premises in private datacenters, or in public clouds such as
 Azure and AWS. For private environments where servers cannot directly connect to the Internet,
