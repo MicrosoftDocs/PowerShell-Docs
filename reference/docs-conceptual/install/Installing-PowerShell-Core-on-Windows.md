@@ -72,7 +72,7 @@ To manually install the MSIX package on a Windows 10 client, download the MSIX p
 GitHub [releases][releases] page. Scroll down to the **Assets** section of the Release you want to
 install. The Assets section may be collapsed, so you may need to click to expand it.
 
-The MSI file looks like this - `PowerShell-<version>-win-<os-arch>.msix`
+The MSIX file looks like this - `PowerShell-<version>-win-<os-arch>.msix`
 
 Once downloaded, you cannot simply double-click on the installer as this package requires
 use of un-virtualized resources.  To install, you must use the `Add-AppxPackage` cmdlet:
