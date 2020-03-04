@@ -724,6 +724,14 @@
           href: samples/appendix-1---compatibility-aliases.md
         - name: Appendix 2 Creating a custom powershell shortcut
           href: samples/appendix-2---creating-a-custom-powershell-shortcut.md
+- name: Community
+  items:
+    - name: Community resources
+      href: community-support.md
+    - name: Digital art
+      href: digital-art.md
+    - name: What's in PowerShell Docs
+      href: what-new-in-docs.md
 - name: PowerShell SDK
   items:
     - name: Overview

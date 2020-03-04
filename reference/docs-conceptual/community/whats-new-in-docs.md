@@ -15,7 +15,8 @@ Highlights
 - PowerShell 7 documentation updates
 - Updates to address issues
 - New documents added
-  -
+  - [about_Parameter_Sets](/powershell/module/microsoft.powershell.core/about/about_parameter_sets)
+  - [Release history of modules and cmdlets](/powershell/scripting/whats-new/cmdlet-versions)
 - GitHub stats
   - 52 PRs merged (9 from Community)
   - 49 issues opened (42 from Community)
@@ -37,7 +38,7 @@ Highlights
 - PowerShell 7 documentation updates
 - Updates to address issues
 - New documents added
-  -
+  - [about_Windows_PowerShell_Compatibility](/powershell/module/microsoft.powershell.core/about/about_Windows_PowerShell_Compatibility)
 - GitHub stats
   - 58 PRs merged (7 from Community)
   - 57 issues opened (43 from Community)
@@ -58,21 +59,6 @@ The PowerShell Community is a vibrant and collaborative group. We greatly apprec
 and support we get from the community.
 
 As of March 1, 2020, these GitHub users are the All-Time Top Community Contributors.
-
-### GitHub issues opened
-
-GitHub issues help us identify errors and gaps in our documentation.
-
-| Docs Issues opened | 2016 | 2017 | 2018 | 2019 | 2020 | Grand Total |
-| ------------------ | ---: | ---: | ---: | ---: | ---: | ----------: |
-| Community Total    |   34 |   95 |  213 |  575 |   86 |        1003 |
-| mklement0          |      |   19 |   60 |   56 |   13 |         148 |
-| jszabo98           |      |      |    2 |   15 |    2 |          19 |
-| iSazonov           |      |    1 |    4 |   10 |      |          15 |
-| doctordns          |      |    5 |    3 |    5 |    2 |          15 |
-| KirkMunro          |      |      |    7 |    7 |      |          14 |
-| vexx32             |      |      |    3 |   11 |      |          14 |
-| alexandair         |    6 |    4 |    2 |      |      |          12 |
 
 ### Pull Requests opened
 
@@ -95,3 +81,18 @@ Pull Requests help us fix those issues and make the documentation better for eve
 | kvprasoon          |    2 |    1 |    7 |    2 |      |          12 |
 | PlagueHO           |   10 |      |      |    1 |      |          11 |
 | exchange12rocks    |      |    7 |    3 |      |      |          10 |
+
+### GitHub issues opened
+
+GitHub issues help us identify errors and gaps in our documentation.
+
+| Docs Issues opened | 2016 | 2017 | 2018 | 2019 | 2020 | Grand Total |
+| ------------------ | ---: | ---: | ---: | ---: | ---: | ----------: |
+| Community Total    |   34 |   95 |  213 |  575 |   86 |        1003 |
+| mklement0          |      |   19 |   60 |   56 |   13 |         148 |
+| jszabo98           |      |      |    2 |   15 |    2 |          19 |
+| iSazonov           |      |    1 |    4 |   10 |      |          15 |
+| doctordns          |      |    5 |    3 |    5 |    2 |          15 |
+| KirkMunro          |      |      |    7 |    7 |      |          14 |
+| vexx32             |      |      |    3 |   11 |      |          14 |
+| alexandair         |    6 |    4 |    2 |      |      |          12 |
