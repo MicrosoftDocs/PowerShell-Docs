@@ -56,6 +56,29 @@ While not officially supported, the community has also provided packages for
 For more up-to-date information about supported operating systems and support lifecycle, see the
 [PowerShell Support Lifecycle](/powershell/scripting/powershell-support-lifecycle?view=powershell-7).
 
+## Running PowerShell 7
+
+PowerShell 7 installs to a new directory and runs side-by-side with Windows PowerShell 5.1. For
+PowerShell Core 6.x, PowerShell 7 is an in-place upgrade that removes PowerShell Core 6.x.
+
+- Windows PowerShell 5.1 : `C:\Windows\System32\WindowsPowerShell\v1.0` will add
+`%programfiles%\PowerShell\7`
+
+PowerShell 7 will upgrade previous versions of PowerShell Core 6.x:
+
+- PowerShell Core 6.x on Windows: `%programfiles%\PowerShell\6` is replaced by
+ `%programfiles%\PowerShell\7`
+- Linux: `/opt/microsoft/powershell/6` is replaced by
+`/opt/microsoft/powershell/7`
+- macOS: `/usr/local/microsoft/powershell/6` is replaced by
+`/usr/local/microsoft/powershell/7`
+
+> [!NOTE]
+> In Windows PowerShell, the executable to launch PowerShell is named `powershell.exe`. In version 6
+> and above, the executable is changed to support side-by-side execution. The new executable to
+> launch PowerShell 7 is `pwsh.exe`. Preview builds will remain in-place as `pwsh-preview` instead
+> of `pwsh` under the 7-preview directory.
+
 ## Improved backwards compatibility with Windows PowerShell
 
 PowerShell 7.0 marks a move a to .NET Core 3.1, enabling significantly more backwards compatibility
