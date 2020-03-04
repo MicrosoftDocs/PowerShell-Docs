@@ -7,13 +7,6 @@ ms.date: 08/06/2018
 
 There are multiple ways to install PowerShell Core in Windows.
 
-> [!TIP]
-> If you already have the [.NET Core SDK](/dotnet/core/sdk) installed, it’s easy to install PowerShell as a [.NET Global tool](/dotnet/core/tools/global-tools).
->
-> ```
-> dotnet tool install --global PowerShell
-> ```
-
 ## Prerequisites
 
 To enable PowerShell remoting over WSMan, the following prerequisites need to be met:
@@ -32,7 +25,6 @@ and later), download the MSI package from our GitHub [releases][releases] page. 
 may need to click to expand it.
 
 The MSI file looks like this - `PowerShell-<version>-win-<os-arch>.msi`
-<!-- TODO: should be updated to point to the Download Center as well -->
 
 Once downloaded, double-click the installer and follow the prompts.
 
@@ -40,6 +32,17 @@ The installer creates a shortcut in the Windows Start Menu.
 
 - By default the package is installed to `$env:ProgramFiles\PowerShell\<version>`
 - You can launch PowerShell via the Start Menu or `$env:ProgramFiles\PowerShell\<version>\pwsh.exe`
+
+> [!NOTE]
+> PowerShell 7 installs to a new directory and runs side-by-side with Windows PowerShell 5.1. For
+> PowerShell Core 6.x, PowerShell 7 is an in-place upgrade that removes PowerShell Core 6.x.
+>
+> - PowerShell 7 is installed to `%programfiles%\PowerShell\7`
+> - The `%programfiles%\PowerShell\7` folder is added to `$env:PATH`
+> - The `%programfiles%\PowerShell\6` folder is deleted
+>
+> If you need to run PowerShell 6 side-by-side with PowerShell 7, reinstall PowerShell 6 using the
+> [ZIP install](#zip) method.
 
 ### Administrative install from the command line
 
@@ -182,6 +185,15 @@ Nano Server and the configuration of its remote endpoint.
 
 - If you want WSMan-based remoting, follow the instructions to create a remoting endpoint using the
   ["another instance technique"](../learn/remoting/WSMan-Remoting-in-PowerShell-Core.md#executed-by-another-instance-of-powershell-on-behalf-of-the-instance-that-it-will-register).
+
+## Install as a .NET Global tool
+
+If you already have the [.NET Core SDK](/dotnet/core/sdk) installed, it's easy to install PowerShell
+as a [.NET Global tool](/dotnet/core/tools/global-tools).
+
+```
+dotnet tool install --global PowerShell
+```
 
 ## How to create a remoting endpoint
 
