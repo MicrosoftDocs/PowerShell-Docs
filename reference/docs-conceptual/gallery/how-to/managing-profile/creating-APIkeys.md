@@ -18,7 +18,7 @@ expiration date.
 
 The following image shows the options available when creating a scoped API key.
 
-![Creating API keys](../../Images/PSGallery_KeyScoped.png)
+![Creating API keys](media/creating-APIkeys/PSGallery_KeyScoped.png)
 
 In this example, we created an API key named **AzureRMDataFactory**. This key value can be used to
 push packages with names that begin with 'AzureRM.DataFactory' and is valid for 365 days. This is a
@@ -38,7 +38,7 @@ named 'AzureRm.DataFactoryV2.Netcore' using this key since the package matches t
 For security, a newly created key value is never shown on the screen and is only available with the
 Copy button, as shown below.
 
-![Obtaining new API key value](../../Images/PSGallery_CopyCreatedKey.png)
+![Obtaining new API key value](media/creating-APIkeys/PSGallery_CopyCreatedKey.png)
 
 > [!IMPORTANT]
 > You can only copy the API key value immediately after creating or refreshing it. It will not be
@@ -70,7 +70,7 @@ You can change some settings of an existing key. As previously noted, you cannot
 security scope for an existing API key or change the expiration. The changeable options are shown in
 the following screenshot:
 
-![Obtaining new API key value](../../Images/PSGallery_EditAPIKey.png)
+![Obtaining new API key value](media/creating-APIkeys/PSGallery_EditAPIKey.png)
 
 To change the packages controlled by a key, you can choose individual packages from the list or
 change the glob pattern.

@@ -23,7 +23,7 @@ The email address is the destination for PowerShell Gallery notifications. It do
 match the login account. You may use any email account you have access to. Your email address is
 never directly provided by the PowerShell Gallery to other users.
 
-![Changing email address](../../Images/PSGallery_AcccountEmailAddress.png)
+![Changing email address](media/managing-account/PSGallery_AcccountEmailAddress.png)
 
 When you enter a new email address, the PowerShell Gallery sends a verification mail to that
 address. The verification mail contains a link back to the PowerShell Gallery to complete the
@@ -37,7 +37,7 @@ PowerShell Gallery provides the following notification options:
 - Users can contact me through the PowerShell Gallery
 - Notify me when an package is pushed to the PowerShell Gallery using my account
 
-![Changing email address](../../Images/PSGallery_AccountEmailOptions.png)
+![Changing email address](media/managing-account/PSGallery_AccountEmailOptions.png)
 
 As noted on the page, critical notifications from the PowerShell Gallery can't be disabled.
 These include:
@@ -51,22 +51,22 @@ These include:
 To change the login account, you must be signed in with the current account. Use the following
 steps to complete the change.
 
-![Login Account settings](../../Images/PSGallery_LoginAccountSettings.png)
+![Login Account settings](media/managing-account/PSGallery_LoginAccountSettings.png)
 
 1. Click on **Change Account**. A pop-up window explains that changing the login account applies to
    all uses of that account in the PowerShell Gallery. Review the information, then click **OK** to
    continue.
 
-   ![Login Account settings](../../Images/PSGallery_LoginAccountChange-1.png)
+   ![Login Account settings](media/managing-account/PSGallery_LoginAccountChange-1.png)
 
 2. You are then prompted to sign in using the _new account_.
 
-   ![Login Account settings](../../Images/PSGallery_LoginAccountChange-2.png)
+   ![Login Account settings](media/managing-account/PSGallery_LoginAccountChange-2.png)
 
 3. When you click **Next**, you see a message that you are signed in using the current account.
    Click **Sign out and sign in with a different account**.
 
-   ![Login Account settings](../../Images/PSGallery_LoginAccountChange-3.png)
+   ![Login Account settings](media/managing-account/PSGallery_LoginAccountChange-3.png)
 
 4. Enter the password of the new account. After entering the password, you are returned to the
    Account Settings page showing you that the login account has been updated.

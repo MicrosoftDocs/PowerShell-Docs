@@ -142,7 +142,7 @@ At the PowerShell cmdlet layer, [Install-Module][] is actually a thin wrapper ar
 
 At the PackageManagement package provider layer, the PSModule package provider actually calls into other PackageManagement package providers. For example, when you are working with NuGet-based galleries (such as the PowerShell Gallery), the PSModule package provider uses the NuGet Package Provider to work with the repository.
 
-![PowerShellGet Architecture](Images/powershellgetArchitecture.png)
+![PowerShellGet Architecture](media/faqs/powershellgetArchitecture.png)
 
 Figure 1: PowerShellGet Architecture
 
