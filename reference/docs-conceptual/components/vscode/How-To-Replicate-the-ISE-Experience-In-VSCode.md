@@ -28,7 +28,7 @@ Select "PowerShell: Enable ISE Mode" from the list.
 This command will apply a lot of the settings found in this document automatically.
 The result looks like this:
 
-![ISE Mode](images/How-To-Replicate-the-ISE-Experience-In-VSCode/3-ise-mode.png)
+![ISE Mode](media/How-To-Replicate-the-ISE-Experience-In-VSCode/3-ise-mode.png)
 
 The rest of this article includes more detailed information on settings in ISE Mode and
 some additional settings.
@@ -60,11 +60,11 @@ If you're looking to simplify the Visual Studio Code UI to look more closely to 
 
 This will hide the "Activity Bar" and the "Debug Side Bar" sections below inside of the red box:
 
-![highlighted section includes Activity Bar and Debug Side Bar](images/How-To-Replicate-the-ISE-Experience-In-VSCode/1-highlighted-sidebar.png)
+![highlighted section includes Activity Bar and Debug Side Bar](media/How-To-Replicate-the-ISE-Experience-In-VSCode/1-highlighted-sidebar.png)
 
 The end result looks like this:
 
-![Simplified view of VS Code](images/How-To-Replicate-the-ISE-Experience-In-VSCode/2-simplified-ui.png)
+![Simplified view of VS Code](media/How-To-Replicate-the-ISE-Experience-In-VSCode/2-simplified-ui.png)
 
 ## Tab completion
 
