@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Core
 ms.date: 06/09/2017
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/new-pstransportoption?view=powershell-7&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/new-pstransportoption?view=powershell-7.x&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: New-PSTransportOption
 ---
@@ -81,11 +81,11 @@ Get-PSSessionConfiguration -Name ITTasks | Format-List -Property *
 ```Output
 Architecture                  : 64
 Filename                      : %windir%\system32\pwrshplugin.dll
-ResourceUri                   : http://schemas.microsoft.com/powershell/ITTasks
+ResourceUri                   : https://schemas.microsoft.com/powershell/ITTasks
 MaxConcurrentCommandsPerShell : 1000
 UseSharedProcess              : false
 ProcessIdleTimeoutSec         : 0
-xmlns                         : http://schemas.microsoft.com/wbem/wsman/1/config/PluginConfiguration
+xmlns                         : https://schemas.microsoft.com/wbem/wsman/1/config/PluginConfiguration
 MaxConcurrentUsers            : 5
 lang                          : en-US
 SupportsOptions               : true

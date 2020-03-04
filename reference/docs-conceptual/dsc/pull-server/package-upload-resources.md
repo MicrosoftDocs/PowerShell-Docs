@@ -22,7 +22,7 @@ Each resource available for a client to download must be stored in a ".zip" file
 
 You can compress the resource directory using any utility, script, or method that you prefer. In Windows, you can *right-click* on the "xPSDesiredStateConfiguration" directory, and select "Send To", then "Compressed Folder".
 
-![Right Click](../media/right-click.gif)
+![Right Click](media/package-upload-resources/right-click.gif)
 
 ### Naming the Resource Archive
 

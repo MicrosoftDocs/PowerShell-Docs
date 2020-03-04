@@ -12,6 +12,7 @@ title: Register-ArgumentCompleter
 # Register-ArgumentCompleter
 
 ## SYNOPSIS
+
 Registers a custom argument completer.
 
 ## SYNTAX
@@ -123,11 +124,11 @@ example adds tab-completion for the `dotnet` Command Line Interface (CLI).
 
 ```powershell
 $scriptblock = {
-     param($commandName, $wordToComplete, $cursorPosition)
-         dotnet complete --position $cursorPosition "$wordToComplete" | ForEach-Object {
+    param($wordToComplete, $commandAst, $cursorPosition)
+        dotnet complete --position $cursorPosition $commandAst.ToString() | ForEach-Object {
             [System.Management.Automation.CompletionResult]::new($_, $_, 'ParameterValue', $_)
-         }
- }
+        }
+}
 Register-ArgumentCompleter -Native -CommandName dotnet -ScriptBlock $scriptblock
 ```
 
@@ -147,14 +148,15 @@ to create a new **CompletionResult** object for each value.
 Specifies the name of the commands as an array.
 
 ```yaml
-Accept pipeline input: False
-Position: Named
-Accept wildcard characters: False
-Parameter Sets: NativeSet, PowerShellSet
-Required: True (NativeSet), False (PowerShellSet)
-Default value: None
-Aliases:
 Type: String[]
+Parameter Sets: NativeSet, PowerShellSet
+Aliases:
+
+Required: True (NativeSet), False (PowerShellSet)
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
 ```
 
 ### -Native
@@ -221,11 +223,12 @@ When you specify the **Native** parameter, the script block must take the follow
 the specified order. The names of the parameters aren't important because PowerShell passes in the
 values by position.
 
-- `$commandName` (Position 0) - This parameter is set to the name of the
-  command for which the script block is providing tab completion.
-- `$wordToComplete` (Position 1) - This parameter is set to value the user has
-  provided before they pressed <kbd>Tab</kbd>. Your script block should use this value
-  to determine tab completion values.
+- `$wordToComplete` (Position 0) - This parameter is set to value the user has provided before they
+  pressed <kbd>Tab</kbd>. Your script block should use this value to determine tab completion
+  values.
+- `$commandAst` (Position 1) - This parameter is set to the Abstract Syntax
+  Tree (AST) for the current input line. For more information, see
+  [Ast Class](/dotnet/api/system.management.automation.language.ast).
 - `$cursorPosition` (Position 2) - This parameter is set to the position of the cursor when the user
   pressed <kbd>Tab</kbd>.
 

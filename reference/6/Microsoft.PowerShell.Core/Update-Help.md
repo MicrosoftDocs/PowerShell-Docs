@@ -199,7 +199,7 @@ Param(
     [String[]]
     $Module
 )
-$HelpInfoNamespace = @{helpInfo='http://schemas.microsoft.com/powershell/help/2010/05'}
+$HelpInfoNamespace = @{helpInfo='https://schemas.microsoft.com/powershell/help/2010/05'}
 
 if ($Module) { $Modules = Get-Module $Module -ListAvailable | where {$_.HelpInfoUri} }
 else { $Modules = Get-Module -ListAvailable | where {$_.HelpInfoUri} }
@@ -349,7 +349,7 @@ as escape sequences.
 ```yaml
 Type: String[]
 Parameter Sets: LiteralPath
-Aliases: PSPath
+Aliases: PSPath, LP
 
 Required: False
 Position: Named
@@ -429,7 +429,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: CurrentUser
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 

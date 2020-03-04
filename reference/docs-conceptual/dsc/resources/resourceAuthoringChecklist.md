@@ -126,7 +126,7 @@ Possible types of issues:
 - Credential/Session may behave differently because the DSC agent runs as a service.  Be sure to test any features here end to end.
 - Errors output by `Start-DscConfiguration` may be different than those displayed when calling the `Set-TargetResource` function directly.
 
-## Test compatability on all DSC supported platforms
+## Test compatibility on all DSC supported platforms
 
 Resource should work on all DSC supported platforms (Windows Server 2008 R2 and newer). Install the latest WMF (Windows Management Framework) on your OS to get the latest version of DSC. If your resource does not work on some of these platforms by design, a specific error message should be returned. Also, make sure your resource checks whether cmdlets you are calling are present on particular machine. Windows Server 2012 added a large number of new cmdlets that are not available on Windows Server 2008R2, even with WMF installed.
 

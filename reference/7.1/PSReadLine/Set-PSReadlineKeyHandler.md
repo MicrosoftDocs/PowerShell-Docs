@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: PSReadLine
 ms.date: 12/07/2018
-online version: https://docs.microsoft.com/powershell/module/psreadline/set-psreadlinekeyhandler?view=powershell-7&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/psreadline/set-psreadlinekeyhandler?view=powershell-7.x&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-PSReadLineKeyHandler
 ---
@@ -19,14 +19,15 @@ Binds keys to user-defined or PSReadLine key handler functions.
 ### ScriptBlock
 
 ```
-Set-PSReadLineKeyHandler [-ScriptBlock] <ScriptBlock> [-BriefDescription <String>] [-Description <String>]
- [-Chord] <String[]> [-ViMode <ViMode>] [<CommonParameters>]
+Set-PSReadLineKeyHandler [-ScriptBlock] <ScriptBlock> [-BriefDescription <String>]
+ [-Description <String>] [-Chord] <String[]> [-ViMode <ViMode>] [<CommonParameters>]
 ```
 
 ### Function
 
 ```
-Set-PSReadLineKeyHandler [-Chord] <String[]> [-ViMode <ViMode>] [-Function] <String> [<CommonParameters>]
+Set-PSReadLineKeyHandler [-Chord] <String[]> [-ViMode <ViMode>] [-Function] <String>
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION

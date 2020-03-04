@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Utility
 ms.date: 12/03/2019
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/invoke-restmethod?view=powershell-7&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/invoke-restmethod?view=powershell-7.x&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Invoke-RestMethod
 ---
@@ -248,7 +248,7 @@ Available Authentication Options:
   Authentication `Authorization: Basic` header in the format of `base64(user:password)`.
 - **Bearer**: Requires **Token**. Will send and RFC 6750 `Authorization: Bearer` header with the
   supplied token. This is an alias for **OAuth**
-- **OAuth**: Requires **Token**. Will send and RFC 6750 `Authorization: Bearer` header with the
+- **OAuth**: Requires **Token**. Will send an RFC 6750 `Authorization: Bearer` header with the
   supplied token. This is an alias for **Bearer**
 
 Supplying **Authentication** will override any `Authorization` headers supplied to **Headers** or
@@ -419,7 +419,7 @@ This feature was added in PowerShell 6.0.0.
 
 ```yaml
 Type: String
-Parameter Sets: CustomMethodNoProxy, CustomMethod
+Parameter Sets: CustomMethod, CustomMethodNoProxy
 Aliases: CM
 
 Required: True

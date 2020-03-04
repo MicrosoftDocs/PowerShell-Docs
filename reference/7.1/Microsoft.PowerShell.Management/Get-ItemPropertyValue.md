@@ -3,7 +3,7 @@ external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 keywords: powershell,cmdlet
 locale: en-us
 ms.date: 5/14/2019
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/get-itempropertyvalue?view=powershell-7&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/get-itempropertyvalue?view=powershell-7.x&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-ItemPropertyValue
 ---
@@ -188,7 +188,7 @@ For more information, see [about_Quoting_Rules](../Microsoft.Powershell.Core/Abo
 ```yaml
 Type: String[]
 Parameter Sets: LiteralPath
-Aliases: PSPath
+Aliases: PSPath, LP
 
 Required: True
 Position: Named

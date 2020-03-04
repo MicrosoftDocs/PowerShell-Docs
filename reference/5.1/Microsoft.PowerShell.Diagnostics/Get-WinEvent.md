@@ -760,6 +760,12 @@ Specifies the event logs that this cmdlet get events from. Enter the event log n
 comma-separated list. Wildcards are permitted. You can also pipe log names to the `Get-WinEvent`
 cmdlet.
 
+> [!NOTE]
+> PowerShell does not limit the amount of logs you can request. However, the `Get-WinEvent` cmdlet
+> queries the Windows API which has a limit of 256. This can make it difficult to filter through all
+> of your logs at one time. You can work around this by using a `foreach` loop to iterate through each
+> log like this: `Get-WinEvent -ListLog * | ForEach-Object{ Get-WinEvent -LogName $_.Logname }`
+
 ```yaml
 Type: String[]
 Parameter Sets: GetLogSet

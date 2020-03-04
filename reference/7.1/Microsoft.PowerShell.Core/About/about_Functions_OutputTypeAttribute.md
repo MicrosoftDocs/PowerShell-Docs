@@ -2,7 +2,7 @@
 keywords: powershell,cmdlet
 locale: en-us
 ms.date: 01/03/2018
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_functions_outputtypeattribute?view=powershell-7&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_functions_outputtypeattribute?view=powershell-7.x&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Functions_OutputTypeAttribute
 ---
@@ -22,7 +22,7 @@ The OutputType attribute is supported on simple and advanced functions. It is
 independent of the CmdletBinding attribute.
 
 The OutputType attribute provides the value of the OutputType property of the
-System.Management.Automation.FunctionInfo object that the Get-Command cmdlet
+**System.Management.Automation.FunctionInfo** object that the `Get-Command` cmdlet
 returns.
 
 The OutputType attribute value is only a documentation note. It is not derived
@@ -38,7 +38,7 @@ The OutputType attribute of functions has the following syntax:
 [OutputType("<TypeNameString>", ParameterSetName="<Name>")]
 ```
 
-The ParameterSetName parameter is optional.
+The **ParameterSetName** parameter is optional.
 
 You can list multiple types in the OutputType attribute.
 
@@ -46,7 +46,7 @@ You can list multiple types in the OutputType attribute.
 [OutputType([<Type1>],[<Type2>],[<Type3>])]
 ```
 
-You can use the ParameterSetName parameter to indicate that different
+You can use the **ParameterSetName** parameter to indicate that different
 parameter sets return different types.
 
 ```
@@ -55,7 +55,7 @@ parameter sets return different types.
 ```
 
 Place the OutputType attribute statements in the attributes list that precedes
-the Param statement.
+the `Param` statement.
 
 The following example shows the placement of the OutputType attribute in a
 simple function.
@@ -83,7 +83,6 @@ function AdvancedFunction1
     $Parameter1
   )
 
-
   <function body>
 }
 
@@ -97,15 +96,13 @@ function AdvancedFunction2
     $Parameter1
   )
 
-
   <function body>
 }
 ```
 
 ## EXAMPLES
 
-The following function uses the OutputType attribute to indicate that it returns
-a string value.
+### Example 1: Create a function that has the OutputType of String
 
 ```powershell
 function Send-Greeting
@@ -117,15 +114,19 @@ function Send-Greeting
 }
 ```
 
-To see the resulting output type property, use the Get-Command cmdlet.
+To see the resulting output type property, use the `Get-Command` cmdlet.
 
+```powershell
+(Get-Command Send-Greeting).OutputType
 ```
-PS C:> (Get-Command Send-Greeting).OutputType
 
+```Output
 Name                                               Type
 ----                                               ----
 System.String                                      System.String
 ```
+
+### Example 2: Use the Output attribute to indicate dynamic output types
 
 The following advanced function uses the OutputType attribute to indicate that
 the function returns different types depending on the parameter set used in the
@@ -149,17 +150,18 @@ function Get-User
     $UserName
   )
 
-
   <function body>
 }
 ```
 
+### Example 3: Shows when an actual output differs from the OutputType
+
 The following example demonstrates that the output type property value
 displays the value of the OutputType attribute, even when it is inaccurate.
 
-The Get-Time function returns a string that contains the short form of
+The `Get-Time` function returns a string that contains the short form of
 the time in any DateTime object. However, the OutputType attribute reports
-that it returns a System.DateTime object.
+that it returns a **System.DateTime** object.
 
 ```powershell
 function Get-Time
@@ -174,28 +176,47 @@ function Get-Time
 }
 ```
 
-The Get-Type method confirms that the function returns a string.
+The `GetType()` method confirms that the function returns a string.
 
+```powershell
+(Get-Time -DateTime (Get-Date)).GetType().FullName
 ```
-PS C:> (Get-Time -DateTime (Get-Date)).Gettype().FullName
+
+```Output
 System.String
 ```
 
 However, the OutputType property, which gets its value from the OutputType
-attribute, reports that the function returns a DateTime object.
+attribute, reports that the function returns a **DateTime** object.
 
+```powershell
+(Get-Command Get-Time).OutputType
 ```
-PS C:> (Get-Command Get-Time).OutputType
 
+```Output
 Name                                      Type
 ----                                      ----
 System.DateTime                           System.DateTime
 ```
 
+### Example 4: A function  that shouldn't have output
+
+The following example shows a custom function that should perform and action
+but not return anything.
+
+```powershell
+function Invoke-Notepad
+{
+  [OutputType([System.Void])]
+  Param ()
+  & notepad.exe | Out-Null
+}
+```
+
 ## NOTES
 
-The value of the OutputType property of a FunctionInfo object is an array of
-System.Management.Automation.PSTypeName objects, each of which have Name and
+The value of the OutputType property of a **FunctionInfo** object is an array of
+**System.Management.Automation.PSTypeName** objects, each of which have Name and
 Type properties.
 
 To get only the name of each output type, use a command with the following
@@ -206,7 +227,7 @@ format.
 ```
 
 The value of the OutputType property can be null. Use a null value when
-the output is a not a .NET type, such as a WMI object or a formatted view
+the output is a not a .NET type, such as a **WMI** object or a formatted view
 of an object.
 
 ## SEE ALSO

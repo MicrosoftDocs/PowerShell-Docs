@@ -1,8 +1,8 @@
 ---
 keywords: powershell,cmdlet
 locale: en-us
-ms.date: 12/08/2018
-online version: https://docs.microsoft.com/powershell/module/psreadline/about/about_psreadline?view=powershell-7&WT.mc_id=ps-gethelp
+ms.date: 02/10/2020
+online version: https://docs.microsoft.com/powershell/module/psreadline/about/about_psreadline?view=powershell-7.x&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: About PSReadLine
 ---
@@ -12,12 +12,12 @@ title: About PSReadLine
 
 ## SHORT DESCRIPTION
 
-PSReadLine provides an improved command line editing experience in the
+PSReadLine provides an improved command line-editing experience in the
 PowerShell console.
 
 ## LONG DESCRIPTION
 
-PSReadLine provides a powerful command line editing experience for the
+PSReadLine 2.0 provides a powerful command line-editing experience for the
 PowerShell console. It provides:
 
 - Syntax coloring of the command line
@@ -32,6 +32,13 @@ PowerShell console. It provides:
 
 The following functions are available in the class
 **[Microsoft.PowerShell.PSConsoleReadLine]**.
+
+> [!NOTE]
+> Beginning with PowerShell 7.0, PowerShell skips auto-loading PSReadLine on
+> Windows if a screen reader program is detected. Currently, PSReadLine doesn't
+> work well with the screen readers. The default rendering and formatting of
+> PowerShell 7.0 on Windows works properly. You can manually load the module if
+> necessary.
 
 ## Basic editing functions
 

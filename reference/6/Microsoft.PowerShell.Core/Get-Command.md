@@ -18,17 +18,19 @@ Gets all commands.
 ### CmdletSet (Default)
 
 ```
-Get-Command [-Verb <String[]>] [-Noun <String[]>] [-Module <String[]>] [-FullyQualifiedModule <ModuleSpecification[]>]
- [-TotalCount <Int32>] [-Syntax] [-ShowCommandInfo] [[-ArgumentList] <Object[]>] [-All] [-ListImported]
- [-ParameterName <String[]>] [-ParameterType <PSTypeName[]>] [<CommonParameters>]
+Get-Command [-Verb <String[]>] [-Noun <String[]>] [-Module <String[]>]
+ [-FullyQualifiedModule <ModuleSpecification[]>] [-TotalCount <Int32>] [-Syntax] [-ShowCommandInfo]
+ [[-ArgumentList] <Object[]>] [-All] [-ListImported] [-ParameterName <String[]>]
+ [-ParameterType <PSTypeName[]>] [<CommonParameters>]
 ```
 
 ### AllCommandSet
 
 ```
-Get-Command [[-Name] <String[]>] [-Module <String[]>] [-FullyQualifiedModule <ModuleSpecification[]>]
- [-CommandType <CommandTypes>] [-TotalCount <Int32>] [-Syntax] [-ShowCommandInfo] [[-ArgumentList] <Object[]>]
- [-All] [-ListImported] [-ParameterName <String[]>] [-ParameterType <PSTypeName[]>] [-UseFuzzyMatching]
+Get-Command [[-Name] <String[]>] [-Module <String[]>]
+ [-FullyQualifiedModule <ModuleSpecification[]>] [-CommandType <CommandTypes>] [-TotalCount <Int32>]
+ [-Syntax] [-ShowCommandInfo] [[-ArgumentList] <Object[]>] [-All] [-ListImported]
+ [-ParameterName <String[]>] [-ParameterType <PSTypeName[]>] [-UseFuzzyMatching]
  [<CommonParameters>]
 ```
 
@@ -157,7 +159,7 @@ Get-Command *
 It returns an **ApplicationInfo** object (System.Management.Automation.ApplicationInfo) for each
 file, not a **FileInfo** object (System.IO.FileInfo).
 
-### Example 9: Get cmdlets by using a name
+### Example 9: Get cmdlets by using a parameter name and type
 
 This command gets cmdlets that have a parameter whose name includes Auth and whose type is
 **AuthenticationMechanism**.
@@ -574,7 +576,7 @@ command.
 
 ```yaml
 Type: Int32
-Parameter Sets: AllCommandSet
+Parameter Sets: (All)
 Aliases:
 
 Required: False

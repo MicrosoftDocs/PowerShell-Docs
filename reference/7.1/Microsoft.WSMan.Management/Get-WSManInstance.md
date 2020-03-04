@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.WSMan.Management
 ms.date: 06/09/2017
-online version: https://docs.microsoft.com/powershell/module/microsoft.wsman.management/get-wsmaninstance?view=powershell-7&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.wsman.management/get-wsmaninstance?view=powershell-7.x&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-WSManInstance
 ---
@@ -46,7 +46,7 @@ This cmdlet uses the WS-Management connection/transport layer to retrieve inform
 ```
 PS C:\> Get-WSManInstance -ResourceURI wmicimv2/win32_service -SelectorSet @{name="winrm"} -ComputerName "Server01"
 xsi                     : http://www.w3.org/2001/XMLSchema-instance
-p                       : http://schemas.microsoft.com/wbem/wsman/1/wmi/root/cimv2/Win32_Service
+p                       : https://schemas.microsoft.com/wbem/wsman/1/wmi/root/cimv2/Win32_Service
 cim                     : http://schemas.dmtf.org/wbem/wscim/1/common
 type                    : p:Win32_Service_Type
 lang                    : en-US
@@ -101,7 +101,7 @@ This command returns only the status of the **Spooler** service on the remote se
 ```
 PS C:\> Get-WSManInstance -Enumerate -ResourceURI wmicimv2/win32_service -ReturnType EPR
 xsi                     : http://www.w3.org/2001/XMLSchema-instance
-p                       : http://schemas.microsoft.com/wbem/wsman/1/wmi/root/cimv2/Win32_Service
+p                       : https://schemas.microsoft.com/wbem/wsman/1/wmi/root/cimv2/Win32_Service
 cim                     : http://schemas.dmtf.org/wbem/wscim/1/common
 type                    : p:Win32_Service_Type
 lang                    : en-US
@@ -141,7 +141,7 @@ This command returns endpoint references that correspond to all the services on 
 ```
 PS C:\> Get-WSManInstance -Enumerate -ResourceURI wmicimv2/* -Filter "select * from win32_service where StartMode = 'Auto' and State = 'Stopped'" -ComputerName "Server01"
 xsi                     : http://www.w3.org/2001/XMLSchema-instance
-p                       : http://schemas.microsoft.com/wbem/wsman/1/wmi/root/cimv2/Win32_Service
+p                       : https://schemas.microsoft.com/wbem/wsman/1/wmi/root/cimv2/Win32_Service
 cim                     : http://schemas.dmtf.org/wbem/wscim/1/common
 type                    : p:Win32_Service_Type
 lang                    : en-US
@@ -182,7 +182,7 @@ This command lists all of the services that meet the following criteria on the r
 ### Example 5: Get listener configuration that matches criteria on the local computer
 ```
 PS C:\> Get-WSManInstance -ResourceURI winrm/config/listener -SelectorSet @{Address="*";Transport="http"}
-cfg                   : http://schemas.microsoft.com/wbem/wsman/1/config/listener
+cfg                   : https://schemas.microsoft.com/wbem/wsman/1/config/listener
 xsi                   : http://www.w3.org/2001/XMLSchema-instance
 lang                  : en-US
 Address               : *
@@ -200,7 +200,7 @@ This command lists the WS-Management listener configuration on the local compute
 ### Example 6: Get listener configuration that matches criteria on a remote computer
 ```
 PS C:\> Get-WSManInstance -ResourceURI winrm/config/listener -SelectorSet @{Address="*";Transport="http"} -ComputerName "Server01"
-cfg                   : http://schemas.microsoft.com/wbem/wsman/1/config/listener
+cfg                   : https://schemas.microsoft.com/wbem/wsman/1/config/listener
 xsi                   : http://www.w3.org/2001/XMLSchema-instance
 lang                  : en-US
 Address               : *
@@ -219,7 +219,7 @@ This command lists the WS-Management listener configuration on the remote server
 ```
 PS C:\> Get-WSManInstance -Enumerate -Dialect Association -Filter "{Object=win32_service?name=winrm}" -ResourceURI wmicimv2/*
 xsi                       : http://www.w3.org/2001/XMLSchema-instance
-p                         : http://schemas.microsoft.com/wbem/wsman/1/wmi/root/cimv2/Win32_ComputerSystem
+p                         : https://schemas.microsoft.com/wbem/wsman/1/wmi/root/cimv2/Win32_ComputerSystem
 cim                       : http://schemas.dmtf.org/wbem/wscim/1/common
 type                      : p:Win32_ComputerSystem_Type
 lang                      : en-US
@@ -277,7 +277,7 @@ UserName                  : FABRIKAM\testuser01
 WakeUpType                : 6
 Workgroup                 : Workgroup
 xsi                     : http://www.w3.org/2001/XMLSchema-instance
-p                       : http://schemas.microsoft.com/wbem/wsman/1/wmi/root/cimv2/Win32_Service
+p                       : https://schemas.microsoft.com/wbem/wsman/1/wmi/root/cimv2/Win32_Service
 cim                     : http://schemas.dmtf.org/wbem/wscim/1/common
 type                    : p:Win32_Service_Type
 lang                    : en-US
@@ -310,7 +310,7 @@ TagId                   : 0
 WaitHint                : 0
 
 xsi                     : http://www.w3.org/2001/XMLSchema-instance
-p                       : http://schemas.microsoft.com/wbem/wsman/1/wmi/root/cimv2/Win32_SystemDriver
+p                       : https://schemas.microsoft.com/wbem/wsman/1/wmi/root/cimv2/Win32_SystemDriver
 cim                     : http://schemas.dmtf.org/wbem/wscim/1/common
 type                    : p:Win32_SystemDriver_Type
 lang                    : en-US
@@ -538,8 +538,8 @@ Specifies the dialect to use in the filter predicate.
 This can be any dialect that is supported by the remote service.
 The following aliases can be used for the dialect URI:
 
-- WQL `http://schemas.microsoft.com/wbem/wsman/1/WQL`
-- Selector `http://schemas.microsoft.com/wbem/wsman/1/wsman/SelectorFilter`
+- WQL `https://schemas.microsoft.com/wbem/wsman/1/WQL`
+- Selector `https://schemas.microsoft.com/wbem/wsman/1/wsman/SelectorFilter`
 - Association `http://schemas.dmtf.org/wbem/wsman/1/cimbinding/associationFilter`
 
 ```yaml
@@ -661,7 +661,7 @@ The URI identifies a specific type of resource, such as disks or processes, on a
 A URI consists of a prefix and a path of a resource.
 For example:
 
-`http://schemas.microsoft.com/wbem/wsman/1/wmi/root/cimv2/Win32_LogicalDisk`
+`https://schemas.microsoft.com/wbem/wsman/1/wmi/root/cimv2/Win32_LogicalDisk`
 
 `http://schemas.dmtf.org/wbem/wscim/1/cim-schema/2/CIM_NumericSensor`
 

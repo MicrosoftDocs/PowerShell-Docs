@@ -1,11 +1,16 @@
 ---
 title: What's New in PowerShell 7.0
 description: New features and changes released in PowerShell 7.0
+<<<<<<< HEAD
 ms.date: 02/19/2020
+=======
+ms.date: 03/04/2020
+>>>>>>> 97499597306ee5b81d53b7c752edf85c0086b924
 ---
 
 # What's New in PowerShell 7.0
 
+<<<<<<< HEAD
 We are happy to announce the Generally Available (GA) release of PowerShell 7.0! First! We'd like to
 thank our many, open-source contributors for making this release possible by submitting code,
 tests, documentation, and issue feedback. PowerShell 7 would not have been possible without your
@@ -18,6 +23,10 @@ Additionally, it was the first release of PowerShell made under an open-source l
 After three successful releases of PowerShell Core, we couldn't be more excited about PowerShell 7,
 the next chapter of PowerShell's ongoing development. Join us in this release of PowerShell 7, the
 community built, cross-platform management tool and automation language!
+=======
+PowerShell 7.0 is an open-source, cross-platform (Windows, macOS, and Linux) edition of PowerShell,
+built to manage heterogeneous environments and hybrid cloud.
+>>>>>>> 97499597306ee5b81d53b7c752edf85c0086b924
 
 In this release, we're introducing a number of new features, including:
 
@@ -29,6 +38,7 @@ In this release, we're introducing a number of new features, including:
 - A simplified and dynamic error view and `Get-Error` cmdlet for easier investigation of errors
 - A compatibility layer that enables users to import modules in an implicit Windows PowerShell session
 - Automatic new version notifications
+<<<<<<< HEAD
 - The ability to invoke to invoke DSC resources directly from PowerShell 7 (experimental)
 
 To see a full list of features and fixes, check out
@@ -94,6 +104,69 @@ By default, parallel scriptblocks use the current working directory of the calle
 parallel tasks.
 
 This example retrieves 50,000 log entries from 5 system logs on a local Windows machine.
+=======
+- The ability to invoke DSC resources directly from PowerShell 7 (experimental)
+
+To see a full list of features and fixes, see the [changelogs](https://github.com/PowerShell/PowerShell/blob/master/CHANGELOG/7.0.md).
+
+## Where can I install PowerShell?
+
+PowerShell 7 currently supports the following operating systems on x64, including:
+
+- Windows 8.1, and 10
+- Windows Server 2012, 2012 R2, 2016, and 2019
+- macOS 10.13+
+- Red Hat Enterprise Linux (RHEL) / CentOS 7
+- Fedora 30+
+- Debian 9
+- Ubuntu LTS 16.04+
+- Alpine Linux 3.8+
+
+Additionally, PowerShell 7.0 supports ARM32 and ARM64 flavors of Debian, Ubuntu, and ARM64 Alpine
+Linux.
+
+Check the installation instructions for your preferred operating system
+[Windows](/powershell/scripting/install/installing-powershell-core-on-windows?view=powershell-7),
+[macOS](/powershell/scripting/install/installing-powershell-core-on-macos?view=powershell-7),
+or
+[Linux](/powershell/scripting/install/installing-powershell-core-on-linux?view=powershell-7).
+
+While not officially supported, the community has also provided packages for
+[Arch](https://aur.archlinux.org/packages/powershell/) and Kali Linux.
+
+> [!NOTE]
+> Debian 10 and CentOS 8 currently do not support WinRM remoting. For details on setting up
+> SSH-based remoting, see
+> [PowerShell Remoting over SSH](/powershell/scripting/learn/remoting/ssh-remoting-in-powershell-core?view=powershell-7).
+
+For more up-to-date information about supported operating systems and support lifecycle, see the
+[PowerShell Support Lifecycle](/powershell/scripting/powershell-support-lifecycle?view=powershell-7).
+
+## Improved backwards compatibility with Windows PowerShell
+
+PowerShell 7.0 marks a move a to .NET Core 3.1, enabling significantly more backwards compatibility
+with existing Windows PowerShell modules. This includes many modules on Windows that require GUI
+functionality like `Out-GridView` and `Show-Command`, as well as many role management modules that
+ship as part of Windows.
+
+For Windows, a new switch parameter **UseWindowsPowerShell** is added to `Import-Module`. This
+switch creates a proxy module in PowerShell 7 that uses a local Windows PowerShell process to
+implicitly run any cmdlets contained in that module. For more information on
+[Import-Module](/powershell/module/microsoft.powershell.core/import-module?view=powershell-7).
+
+For more information on which Microsoft modules work with PowerShell 7.0, see the
+[Module Compatibility Table](https://aka.ms/PSModuleCompat).
+
+## Parallel execution added to ForEach-Object
+
+The `ForEach-Object` cmdlet, which iterates items in a collection, now has built-in parallelism with
+the new **Parallel** parameter.
+
+By default, parallel script blocks use the current working directory of the caller that started the
+parallel tasks.
+
+This example retrieves 50,000 log entries from 5 system logs on a local Windows machine:
+>>>>>>> 97499597306ee5b81d53b7c752edf85c0086b924
 
 ```powershell
 $logNames = 'Security','Application','System','Windows PowerShell','Microsoft-Windows-Store/Operational'
@@ -108,6 +181,7 @@ $logEntries.Count
 ```
 
 The **Parallel** parameter specifies the script block that is run in parallel for each input log name.
+<<<<<<< HEAD
 The **ThrottleLimit** parameter ensures that all five script blocks run at the same time.
 
 [!NOTE] The cmdlet `Foreach-Object` includes a switch parameter **-AsJob** to run as a background
@@ -121,14 +195,35 @@ For more information, see
 
 PowerShell 7.0 introduced a new syntax using the ternary operator which behaves like a simplified
 if-else statement. It follows the C# ternary operator syntax:
+=======
+
+The new **ThrottleLimit** parameter limits the number of script blocks running in parallel at a
+given time. The default is 5.
+
+Use the `$_` variable to represent the current input object in the script block. Use the
+`$using:` scope to pass variable references to the running script block.
+
+For more information about
+[ForEach-Object](/powershell/module/microsoft.powershell.core/foreach-object?view=powershell-7).
+
+## Ternary operator
+
+PowerShell 7.0 introduces a ternary operator which behaves like a simplified `if-else` statement.
+PowerShell's ternary operator is closely modeled from the C# ternary operator syntax:
+>>>>>>> 97499597306ee5b81d53b7c752edf85c0086b924
 
 ```
 <condition> ? <if-true> : <if-false>
 ```
 
+<<<<<<< HEAD
 The ternary operator behaves like the simplified `if-else` statement. The condition-expression will
 always be evaluated, and its result will be converted to boolean to determine which branch will be
 evaluated next:
+=======
+The condition-expression is always evaluated, and its result ware converted to a **Boolean** to
+determine which branch is evaluated next:
+>>>>>>> 97499597306ee5b81d53b7c752edf85c0086b924
 
 - The `<if-true>` expression is executed if the `<condition>` expression is true
 - The `<if-false>` expression is executed if the `<condition>` expression is false
@@ -139,6 +234,7 @@ For example:
 $message = (Test-Path $path) ? "Path exists" : "Path not found"
 ```
 
+<<<<<<< HEAD
 In this example, if the path exists, then "Path exists" is displayed. If the path does not exist,
 then "Path not found" is displayed.
 
@@ -151,54 +247,105 @@ Beginning in PowerShell 7, PowerShell implements the `&&` and `||` operators to 
 pipelines. These operators are known in PowerShell as pipeline chain operators, and are similar to
 AND-OR lists in POSIX shells like **Bash**, **Zsh** and **Sh**, as well as conditional processing
 symbols in the Windows Command Shell (cmd.exe).
+=======
+In this example, if the path exists, then **Path exists** is displayed. If the path does not exist,
+then **Path not found** is displayed.
+
+For more information
+[About If](/powershell/module/microsoft.powershell.core/about/about_if?view=powershell-7).
+
+## Pipeline chain operators
+
+PowerShell 7 implements the `&&` and `||` operators to conditionally chain pipelines. These
+operators are known in PowerShell as "pipeline chain operators", and are similar to AND and OR lists
+in shells like **Bash** and **Zsh**, as well as conditional processing symbols in the
+Windows Command Shell (**cmd.exe**).
+>>>>>>> 97499597306ee5b81d53b7c752edf85c0086b924
 
 The `&&` operator executes the right-hand pipeline, if the left-hand pipeline succeeded. Conversely,
 the `||` operator executes the right-hand pipeline if the left-hand pipeline failed.
 
+<<<<<<< HEAD
 [!NOTE] These operators use the **$?** and **$LASTEXITCODE** variables to determine if a pipeline
 failed. This allows you to use them with native commands and not just with cmdlets or functions.
 
 Here, the first command succeeds and the second command is executed.
+=======
+> [!NOTE]
+> These operators use the `$?` and `$LASTEXITCODE` variables to determine if a pipeline
+> failed. This allows you to use them with native commands and not just with cmdlets or functions.
+
+Here, the first command succeeds and the second command is executed:
+>>>>>>> 97499597306ee5b81d53b7c752edf85c0086b924
 
 ```powershell
 Write-Output 'First' && Write-Output 'Second'
 ```
 
+<<<<<<< HEAD
 ```output
+=======
+```Output
+>>>>>>> 97499597306ee5b81d53b7c752edf85c0086b924
 First
 Second
 ```
 
+<<<<<<< HEAD
 Here, the first command fails, the second is not executed.
+=======
+Here, the first command fails, the second is not executed:
+>>>>>>> 97499597306ee5b81d53b7c752edf85c0086b924
 
 ```powershell
 Write-Error 'Bad' && Write-Output 'Second'
 ```
 
+<<<<<<< HEAD
 ```output
 Write-Error: Bad
 ```
 
 Here, the first command succeeds, the second command is not executed
+=======
+```Output
+Write-Error: Bad
+```
+
+Here, the first command succeeds, the second command is not executed:
+>>>>>>> 97499597306ee5b81d53b7c752edf85c0086b924
 
 ```powershell
 Write-Output 'First' || Write-Output 'Second'
 ```
 
+<<<<<<< HEAD
 ```output
 First
 ```
 Here, the first command fails, so the second command is executed.
+=======
+```Output
+First
+```
+
+Here, the first command fails, so the second command is executed:
+>>>>>>> 97499597306ee5b81d53b7c752edf85c0086b924
 
 ```powershell
 Write-Error 'Bad' || Write-Output 'Second'
 ```
 
+<<<<<<< HEAD
 ```output
+=======
+```Output
+>>>>>>> 97499597306ee5b81d53b7c752edf85c0086b924
 Write-Error 'Bad'
 Second
 ```
 
+<<<<<<< HEAD
 For more information, see
 [About Pipeline Chain Operators](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_pipeline_chain_operators?view=powershell-7)
 
@@ -206,6 +353,15 @@ For more information, see
 
 New to PowerShell 7 are the Null operators `??` for coalescing, `??=` for assignment, and
 conditional operators `?.` and `?[]`.
+=======
+For more information
+[About Pipeline Chain Operators](/powershell/module/microsoft.powershell.core/about/about_pipeline_chain_operators?view=powershell-7).
+
+## Null-coalescing, assignment, and conditional operators
+
+PowerShell 7 includes Null coalescing operator `??`, Null conditional assignment `??=`, and Null
+conditional member access operators `?.` and `?[]`.
+>>>>>>> 97499597306ee5b81d53b7c752edf85c0086b924
 
 ### Null-coalescing Operator ??
 
@@ -219,7 +375,11 @@ $x ?? 100
 100
 ```
 
+<<<<<<< HEAD
 In the following example, the right-hand operand won't be evaluated.
+=======
+In the following example, the right-hand operand won't be evaluated:
+>>>>>>> 97499597306ee5b81d53b7c752edf85c0086b924
 
 ```powershell
 [string] $todaysDate = '1/10/2020'
@@ -227,11 +387,19 @@ $todaysDate ?? (Get-Date).ToShortDateString()
 1/10/2020
 ```
 
+<<<<<<< HEAD
 ### Null-coalescing assignment operator ??=
 
 The null-coalescing assignment operator `??=` assigns the value of its right-hand operand to its
 left-hand operand only if the left-hand operand evaluates to null. The ??= operator doesn't evaluate
 its right-hand operand if the left-hand operand evaluates to non-null.
+=======
+### Null conditional assignment operator ??=
+
+The null conditional assignment operator `??=` assigns the value of its right-hand operand to its
+left-hand operand only if the left-hand operand evaluates to null. The `??=` operator doesn't
+evaluate its right-hand operand if the left-hand operand evaluates to non-null.
+>>>>>>> 97499597306ee5b81d53b7c752edf85c0086b924
 
 ```powershell
 $x = $null
@@ -240,7 +408,11 @@ $x
 100
 ```
 
+<<<<<<< HEAD
 In the following example, the right-hand operand won't be evaluated.
+=======
+In the following example, the right-hand operand won't be evaluated:
+>>>>>>> 97499597306ee5b81d53b7c752edf85c0086b924
 
 ```powershell
 [string] $todaysDate = '1/10/2020'
@@ -248,6 +420,7 @@ $todaysDate ??= (Get-Date).ToShortDateString()
 1/10/2020
 ```
 
+<<<<<<< HEAD
 ### Null-conditional operators ?. and ?[]
 
 [!NOTE] This is an experimental feature. For more information see [about_Experimental_Features](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_experimental_features?view=powershell-7).
@@ -260,6 +433,23 @@ variable name is required for using these operators. So it is required to use `{
 variable names like `${a}` or when `?` is part of the variable name `${a?}`.
 
 In the following example, the value of the member property **Status** is returned.
+=======
+### Null conditional member access operators ?. and ?[] (Experimental)
+
+> [!NOTE]
+> This is an experimental feature named **PSNullConditionalOperators**. To learn more
+> [About Experimental Features](/powershell/module/microsoft.powershell.core/about/about_experimental_features?view=powershell-7).
+
+A null conditional operator permits member access, `?.`, or element access, `?[]`, to its operand
+only if that operand evaluates to non-null; otherwise, it returns null.
+
+> [!NOTE]
+> Since PowerShell allows `?` to be part of the variable name, formal specification of the
+> variable name is required for using these operators. So it is required to use `{}` around the
+> variable names like `${a}` or when `?` is part of the variable name `${a?}`.
+
+In the following example, the value of the member property **Status** is returned:
+>>>>>>> 97499597306ee5b81d53b7c752edf85c0086b924
 
 ```powershell
 $Service = Get-Service -Name 'bits'
@@ -267,14 +457,22 @@ ${Service}?.status
 Stopped
 ```
 
+<<<<<<< HEAD
 The following example will return null, without trying to access the member name PropName.
+=======
+The following example will return null, without trying to access the member name **Status**:
+>>>>>>> 97499597306ee5b81d53b7c752edf85c0086b924
 
 ```powershell
 $service = $Null
 ${Service}?.status
 ```
 
+<<<<<<< HEAD
 Similarly, using `?[]`, the value of the element will be returned.
+=======
+Similarly, using `?[]`, the value of the element will be returned:
+>>>>>>> 97499597306ee5b81d53b7c752edf85c0086b924
 
 ```powershell
 $a = 1..10
@@ -282,13 +480,18 @@ ${a}?[0]
 1
 ```
 
+<<<<<<< HEAD
 And when the operand is null, the element isn't accessed and null is returned.
+=======
+And when the operand is null, the element isn't accessed and null is returned:
+>>>>>>> 97499597306ee5b81d53b7c752edf85c0086b924
 
 ```powershell
 $a = $null
 ${a}?[0]
 ```
 
+<<<<<<< HEAD
 for more information, see
 [About_Operators](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_operators?view=powershell-7)
 
@@ -308,11 +511,25 @@ $Errorview = 'ConciseView' # Sets the error view to ConciseView
 
 With **ConciseView**, If an error is not from a script or parser error, then
 it's a single line error message.
+=======
+For more information
+[About_Operators](/powershell/module/microsoft.powershell.core/about/about_operators?view=powershell-7).
+
+## New view ConciseView and cmdlet Get-Error
+
+The display of error messages has been improved to enhance the readability of interactive and script
+errors with a new default view **ConciseView**. The views are user-selectable through the preference
+variable `$ErrorView`.
+
+With **ConciseView**, if an error is not from a script or parser error, then
+it's a single line error message:
+>>>>>>> 97499597306ee5b81d53b7c752edf85c0086b924
 
 ```powershell
 Get-Childitem -Path c:\NotReal
 ```
 
+<<<<<<< HEAD
 ```output
 Get-ChildItem: Cannot find path ‘C:\NotReal’ because it does not exist
 ```
@@ -414,12 +631,68 @@ version is available.
 [!NOTE] While the update check happens during the first session in a given 24-hour period, for
 performance reasons, the notification will only be shown on the start of subsequent sessions. Also
 for performance reasons, the check will not start until at least 3 seconds after the session begins.
+=======
+```Output
+Get-ChildItem: Cannot find path 'C:\NotReal' because it does not exist
+```
+
+If the error occurs during script execution or is a parsing error, PowerShell returns a multiline
+error message that contains the error, a pointer and error message showing where the error is in
+that line. If the terminal doesn't support ANSI color escape sequences (VT100), then colors are not displayed.
+
+![Error display from a script](./media/What-s-New-in-PowerShell-70/myscript-error.png)
+
+The default view in PowerShell 7 is **ConciseView**. The previous default view **NormalView** are
+user selectable by setting the preference variable `$ErrorView`.
+
+```powershell
+$ErrorView = 'NormalView' # Sets the error view to NormalView
+$ErrorView = 'ConciseView' # Sets the error view to ConciseView
+```
+
+> [!NOTE]
+> A new property **ErrorAccentColor** is added to `$Host.PrivateData` to support changing
+> the accent color of the error message.
+
+A new cmdlet `Get-Error` provides complete detailed view of the fully qualified error when desired.
+By default the cmdlet displays the full details, including inner exceptions, of the last error that
+occurred.
+
+![Display from Get-Error](./media/What-s-New-in-PowerShell-70/myscript-geterror.png)
+
+The `Get-Error` cmdlet supports input from the pipeline using the built-in variable `$Error`.
+`Get-Error` displays all piped errors.
+
+```powershell
+$Error | Get-Error
+```
+
+The `Get-Error` cmdlet supports the **Newest** parameter, allowing you to specify how many errors
+from the current session you wish displayed.
+
+```powershell
+Get-Error -Newest 3 # Displays the lst three errors that occurred in the session
+```
+
+For more information about [Get-Error](/powershell/module/microsoft.powershell.utility/get-error?view=powershell-7).
+
+## New version notification
+
+PowerShell 7 uses update notifications to alert users to the existence of updates to PowerShell.
+Once per day, PowerShell queries an online service to determine if a newer version is available.
+
+> [!NOTE]
+> The update check happens during the first session in a given 24-hour period. For performance
+> reasons, the update check starts 3 seconds after the session begins. The notification is shown
+> only on the start of subsequent sessions.
+>>>>>>> 97499597306ee5b81d53b7c752edf85c0086b924
 
 By default, PowerShell subscribes to one of two different notification channels depending on its
 version/branch. Supported, Generally Available (GA) versions of PowerShell only return notifications
 for updated GA releases. Preview and Release Candidate (RC) releases notify of updates to preview,
 RC, and GA releases.
 
+<<<<<<< HEAD
 The update notification behavior can be changed using the **POWERSHELL_UPDATECHECK** environment
 variable. The following values are supported:
 
@@ -431,6 +704,20 @@ variable. The following values are supported:
 
 [!NOTE] the environment variable **POWERSHELL_UPDATECHECK** does not exist until it is set for the
 first time. The default behavior of version notifications is `Default` unless set to `Off` or `LTS`.
+=======
+The update notification behavior can be changed using the `$Env:POWERSHELL_UPDATECHECK` environment
+variable. The following values are supported:
+
+- **Default** is the same as not defining `$Env:POWERSHELL_UPDATECHECK`
+  - GA releases notify of updates to GA releases
+  - Preview/RC releases notify of updates to GA and preview releases
+- **Off** turns off the update notification feature
+- **LTS** only notifies of updates to long-term-servicing (LTS) GA releases
+
+> [!NOTE]
+> The environment variable `$Env:POWERSHELL_UPDATECHECK` does not exist until it is set for
+> the first time.
+>>>>>>> 97499597306ee5b81d53b7c752edf85c0086b924
 
 To set the version notification for `LTS` releases only:
 
@@ -444,6 +731,7 @@ To set the version notification to the `Default` behavior:
 $Env:POWERSHELL_UPDATECHECK = 'Default'
 ```
 
+<<<<<<< HEAD
 For more information, see
 [About Update Notifications](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_update_notifications?view=powershell-7)
 
@@ -534,6 +822,34 @@ Enter-PSSession -HostName <Username>@<Computer>
 You can also use SSH key authentication using a private key file with the KeyFilePath parameter. For
 more information, see;
 [OpenSSH Key Management](https://docs.microsoft.com/windows-server/administration/openssh/openssh_keymanagement)
+=======
+For more information [About Update Notifications](/powershell/module/microsoft.powershell.core/about/about_update_notifications?view=powershell-7).
+
+## New DSC Resource support with Invoke-DSCResource (Experimental)
+
+> [!NOTE]
+> This is an experimental feature named **PSDesiredStateConfiguration.InvokeDscResource**. To learn
+> more
+> [About Experimental Features](/powershell/module/microsoft.powershell.core/about/about_experimental_features?view=powershell-7).
+
+The `Invoke-DscResource` cmdlet runs a method of a specified PowerShell Desired State Configuration
+(DSC) resource.
+
+This cmdlet invokes a DSC resource directly, without creating a configuration document. Using this
+cmdlet, configuration management products can manage Windows or Linux by using DSC resources. This
+cmdlet also enables debugging of resources when the DSC engine is running with debugging enabled.
+
+This command invokes the **Set** method of a resource named Log and specifies a **Message** property.
+
+```powershell
+Invoke-DscResource -Name Log -Method Set -ModuleName PSDesiredStateConfiguration -Property @{
+  Message = 'Hello World'
+}
+```
+
+For more information about
+[Invoke-DSCResource](/powershell/module/psdesiredstateconfiguration/invoke-dscresource?view=powershell-7).
+>>>>>>> 97499597306ee5b81d53b7c752edf85c0086b924
 
 ## Breaking Changes and Improvements
 
@@ -545,6 +861,7 @@ more information, see;
 - Set working directory to current directory in Start-Job (#10920) (Thanks @iSazonov!)
 - Make $PSCulture consistently reflect in-session culture changes (#10138) (Thanks @iSazonov!)
 
+<<<<<<< HEAD
 ### Experimental Features
 
 - Provide Unix stat information in filesystem output (#11042)
@@ -559,6 +876,8 @@ more information, see;
 - Add APIs for breakpoint management in runspaces and enable attach to process without BreakAll for PowerShell Editor Services (#10338) (Thanks @KirkMunro!)
 - Support ternary operator in PowerShell language (#10367)
 
+=======
+>>>>>>> 97499597306ee5b81d53b7c752edf85c0086b924
 ### Engine Updates and Fixes
 
 - Improvements in breakpoint APIs for remote scenarios (#11312)
@@ -803,4 +1122,8 @@ more information, see;
 - Update README.md and metadata for v6.1.6 and v6.2.3 releases (#10523)
 - Fix a typo in README.md (#10465) (Thanks @vedhasp!)
 - Add a reference to PSKoans module to Learning Resources documentation (#10369) (Thanks @vexx32!)
+<<<<<<< HEAD
 - Update README.md and metadata.json for 7.0.0-preview.3 (#10393)
+=======
+- Update README.md and metadata.json for 7.0.0-preview.3 (#10393)
+>>>>>>> 97499597306ee5b81d53b7c752edf85c0086b924

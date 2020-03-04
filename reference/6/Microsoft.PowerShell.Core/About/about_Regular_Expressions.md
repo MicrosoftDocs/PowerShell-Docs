@@ -6,7 +6,6 @@ online version: https://docs.microsoft.com/powershell/module/microsoft.powershel
 schema: 2.0.0
 title: about_Regular_Expressions
 ---
-
 # About Regular Expressions
 
 ## Short description
@@ -35,11 +34,11 @@ more about their syntax and usage at the links below.
 PowerShell regular expressions are case-insensitive by default. Each method
 shown above has a different way to force case sensitivity.
 
-|Method  |Case Sensitivity  |
-|---------|---------|
-|`Select-String`|use `-CaseSensitive` switch|
-|`switch` statement |use the `-casesensitive` option|
-|operators|prefix with **'c'** (`-cmatch`, `-csplit`, or `-creplace`)|
+|       Method       |                      Case Sensitivity                      |
+| ------------------ | ---------------------------------------------------------- |
+| `Select-String`    | use `-CaseSensitive` switch                                |
+| `switch` statement | use the `-casesensitive` option                            |
+| operators          | prefix with **'c'** (`-cmatch`, `-csplit`, or `-creplace`) |
 
 ### Character literals
 
@@ -48,7 +47,7 @@ causes the engine to match the text specified exactly.
 
 ```powershell
 # This statement returns true because book contains the string "oo"
-"book" -match "oo"
+'book' -match 'oo'
 ```
 
 ### Character classes
@@ -63,7 +62,7 @@ while `[^character group]` only matches characters NOT in the group.
 
 ```powershell
 # This expression returns true if the pattern matches big, bog, or bug.
-"big" -match "b[iou]g"
+'big' -match 'b[iou]g'
 ```
 
 If your list of characters to match includes the hyphen character (`-`), it
@@ -77,7 +76,7 @@ numeric `[0-9]`, or even ASCII-based `[ -~]` (all printable characters).
 
 ```powershell
 # This expression returns true if the pattern matches any 2 digit number.
-42 -match "[0-9][0-9]"
+42 -match '[0-9][0-9]'
 ```
 
 #### Numbers
@@ -88,7 +87,7 @@ match any non-decimal digit.
 ```powershell
 # This expression returns true if it matches a server name.
 # (Server-01 - Server-99).
-"Server-01" -match "Server-\d\d"
+'Server-01' -match 'Server-\d\d'
 ```
 
 #### Word characters
@@ -99,7 +98,7 @@ any non-word character, use `\W`.
 ```powershell
 # This expression returns true.
 # The pattern matches the first word character 'B'.
-"Book" -match "\w"
+'Book' -match '\w'
 ```
 
 #### Wildcards
@@ -110,7 +109,7 @@ any character except a newline (`\n`).
 ```powershell
 # This expression returns true.
 # The pattern matches any 4 characters except the newline.
-"a1\ " -match "...."
+'a1\ ' -match '....'
 ```
 
 #### Whitespace
@@ -122,7 +121,7 @@ used.
 ```powershell
 # This expression returns true.
 # The pattern uses both methods to match the space.
-" - " -match "\s- "
+' - ' -match '\s- '
 ```
 
 ### Quantifiers
@@ -132,26 +131,26 @@ input string.
 
 The following are a few of the quantifiers available in PowerShell:
 
-|Quantifier  |Description  |
-|---------|---------|
-|`*`|Zero or more times.|
-|`+`|One or more times.|
-|`?`|Zero or one time.|
-|`{n,m}`|At least `n`, but no more than `m` times.|
+| Quantifier |                Description                |
+| ---------- | ----------------------------------------- |
+| `*`        | Zero or more times.                       |
+| `+`        | One or more times.                        |
+| `?`        | Zero or one time.                         |
+| `{n,m}`    | At least `n`, but no more than `m` times. |
 
 The asterisk (`*`) matches the previous element zero or more times. The result
 is that even an input string without the element would be a match.
 
 ```powershell
 # This returns true for all account name strings even if the name is absent.
-"ACCOUNT NAME:    Administrator" -match "ACCOUNT NAME:\s*\w*"
+'ACCOUNT NAME:    Administrator' -match 'ACCOUNT NAME:\s*\w*'
 ```
 
 The plus sign (`+`) matches the previous element one or more times.
 
 ```powershell
 # This returns true if it matches any server name.
-"DC-01" -match "[A-Z]+-\d\d"
+'DC-01' -match '[A-Z]+-\d\d'
 ```
 
 The question mark `?` matches the previous element zero or one time. Like
@@ -159,22 +158,22 @@ asterisk `*`, it will even match strings where the element is absent.
 
 ```powershell
 # This returns true for any server name, even server names without dashes.
-"SERVER01" -match "[A-Z]+-?\d\d"
+'SERVER01' -match '[A-Z]+-?\d\d'
 ```
 
 The `{n, m}` quantifier can be used several different ways to allow granular
 control over the quantifier. The second element `m` and the comma `,` are
 optional.
 
-|Quantifier  |Description  |
-|---------|---------|
-|`{n}`|Match EXACTLY `n` number of times.|
-|`{n,}`|Match at LEAST `n` number of times.|
-|`{n,m}`|Match between `n` and `m` number of times.|
+| Quantifier |                Description                 |
+| ---------- | ------------------------------------------ |
+| `{n}`      | Match EXACTLY `n` number of times.         |
+| `{n,}`     | Match at LEAST `n` number of times.        |
+| `{n,m}`    | Match between `n` and `m` number of times. |
 
 ```powershell
 # This returns true if it matches any phone number.
-"111-222-3333" -match "\d{3}-\d{3}-\d{4}"
+'111-222-3333' -match '\d{3}-\d{3}-\d{4}'
 ```
 
 ### Anchors
@@ -190,10 +189,15 @@ characters.
 ```powershell
 # The pattern expects the 'h' to be followed by the end of the word.
 # This will return FALSE.
-"fishing" -match "^fish$"
+'fishing' -match '^fish$'
 ```
 
-When using anchors in powershell, you should understand the difference between
+> [!NOTE]
+> When defining a regex containing an `$` anchor, be sure to enclose the regex
+> using single quotes (`'`) instead of double quotes (`"`) or PowerShell will
+> expand the expression as a variable.
+
+When using anchors in PowerShell, you should understand the difference between
 **Singleline** and **Multiline** regular expression options.
 
 - **Multiline**: Multiline mode forces `^` and `$` to match the beginning end
@@ -218,13 +222,13 @@ input strings.
 ```powershell
 # This returns true and matches numbers with at least 2 digits of precision.
 # The decimal point is escaped using the backslash.
-"3.141" -match "3\.\d{2,}"
+'3.141' -match '3\.\d{2,}'
 ```
 
 There`s a static method of the regex class that can escape text for you.
 
 ```powershell
-[regex]::escape("3.\d{2,}")
+[regex]::escape('3.\d{2,}')
 ```
 
 ```Output
@@ -261,7 +265,7 @@ text matched by the enclosed regular expression is captured. The following
 example will break the input text into two capturing groups.
 
 ```powershell
-"The last logged on user was CONTOSO\jsmith" -match "(.+was )(.+)"
+'The last logged on user was CONTOSO\jsmith' -match '(.+was )(.+)'
 ```
 
 ```Output
@@ -300,7 +304,7 @@ Name                           Value
 > the value stored.
 >
 > ```
-> PS> "Good Dog" -match "Dog"
+> PS> 'Good Dog' -match 'Dog'
 > True
 >
 > PS> $Matches[0]
@@ -323,8 +327,8 @@ Inside a capturing group, use `?<keyname>` to store captured data under a named
 key.
 
 ```
-PS> $string = "The last logged on user was CONTOSO\jsmith"
-PS> $string -match "was (?<domain>.+)\\(?<user>.+)"
+PS> $string = 'The last logged on user was CONTOSO\jsmith'
+PS> $string -match 'was (?<domain>.+)\\(?<user>.+)'
 True
 
 PS> $Matches
@@ -342,13 +346,12 @@ PS> $Matches.user
 jsmith
 ```
 
-The following example stores the message from the newest log entry in the
-Windows Security Log. The provided regular expression extracts the username and
-domain from the message and stores them under the keys: **N** for name and
-**D** for domain.
+The following example stores the newest log entry in the Windows Security Log.
+The provided regular expression extracts the username and domain from the
+message and stores them under the keys:**N** for name and **D** for domain.
 
 ```powershell
-$log = (Get-WinEvent -LogName Security -MaxEvents 1).message
+$log = (Get-WinEvent -LogName Security -MaxEvents 1).message	
 $r = '(?s).*Account Name:\s*(?<N>.*).*Account Domain:\s*(?<D>[A-Z,0-9]*)'
 $log -match $r
 ```
@@ -386,7 +389,7 @@ Two ways to reference capturing groups are by **Number** and by **Name**.
 - By **Number** - Capturing Groups are numbered from left to right.
 
   ```powershell
-  "John D. Smith" -replace "(\w+) (\w+)\. (\w+)", '$1.$2.$3@contoso.com'
+  'John D. Smith' -replace '(\w+) (\w+)\. (\w+)', '$1.$2.$3@contoso.com'
   ```
 
   ```Output
@@ -396,7 +399,7 @@ Two ways to reference capturing groups are by **Number** and by **Name**.
 - By **Name** - Capturing Groups can also be referenced by name.
 
   ```powershell
-  "CONTOSO\Administrator" -replace '\w+\\(?<user>\w+)', 'FABRIKAM\${user}'
+  'CONTOSO\Administrator' -replace '\w+\\(?<user>\w+)', 'FABRIKAM\${user}'
   ```
 
   ```Output
@@ -406,7 +409,7 @@ Two ways to reference capturing groups are by **Number** and by **Name**.
 The `$&` expression represents all the text matched.
 
 ```powershell
-"Gobble" -replace "Gobble", "$& $&"
+'Gobble' -replace 'Gobble', '$& $&'
 ```
 
 ```Output
@@ -418,7 +421,7 @@ Gobble Gobble
 > literal strings with substitution, or escape the `$` character.
 >
 > ```powershell
-> 'Hello World' -replace '(\w+) \w+', "`$1 Universe"
+> 'Hello World' -replace '(\w+) \w+', '`$1 Universe'
 > ```
 >
 > ```Output

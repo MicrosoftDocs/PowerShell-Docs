@@ -142,7 +142,7 @@ At the PowerShell cmdlet layer, [Install-Module][] is actually a thin wrapper ar
 
 At the PackageManagement package provider layer, the PSModule package provider actually calls into other PackageManagement package providers. For example, when you are working with NuGet-based galleries (such as the PowerShell Gallery), the PSModule package provider uses the NuGet Package Provider to work with the repository.
 
-![PowerShellGet Architecture](Images/powershellgetArchitecture.png)
+![PowerShellGet Architecture](media/faqs/powershellgetArchitecture.png)
 
 Figure 1: PowerShellGet Architecture
 
@@ -166,7 +166,7 @@ Therefore, **PowerShellGet** requires one of the following operating systems:
 
 ## Is it possible to reserve names for packages that will be published in future?
 
-It is not possible to squat package names. If you feel that an existing package has taken the name which suits your package more, try [contacting the owner of the package](./how-to/working-with-packages/contacting-package-owners.md). If you didnt get response within a couple of weeks, you can contact support and the PowerShell Gallery team will look in to it.
+It is not possible to squat package names. If you feel that an existing package has taken the name which suits your package more, try [contacting the owner of the package](./how-to/working-with-packages/contacting-package-owners.md). If you didn't get response within a couple of weeks, you can contact support and the PowerShell Gallery team will look in to it.
 
 ## How do I claim ownership for packages?
 

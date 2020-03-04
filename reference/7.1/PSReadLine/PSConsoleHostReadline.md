@@ -3,7 +3,7 @@ external help file: PSReadLine-help.xml
 keywords: powershell,cmdlet
 locale: en-us
 ms.date: 12/07/2018
-online version: https://docs.microsoft.com/powershell/module/psreadline/psconsolehostreadline?view=powershell-7&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/psreadline/psconsolehostreadline?view=powershell-7.x&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: PSConsoleHostReadLine
 ---

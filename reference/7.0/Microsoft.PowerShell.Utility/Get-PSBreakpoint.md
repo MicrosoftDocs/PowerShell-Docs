@@ -185,14 +185,15 @@ Enter the path (optional) and names of one or more script files.
 If you omit the path, the default location is the current directory.
 
 ```yaml
-Accept pipeline input: True (ByValue)
-Position: Named
-Accept wildcard characters: False
-Parameter Sets: Script, Variable, Command, Type
-Required: False
-Default value: None
-Aliases: 
 Type: String[]
+Parameter Sets: Script, Variable, Command, Type
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
 ```
 
 ### -Type

@@ -3,7 +3,7 @@ external help file: Microsoft.PowerShell.Commands.Diagnostics.dll-Help.xml
 keywords: powershell,cmdlet
 locale: en-us
 ms.date: 11/20/2019
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.diagnostics/get-winevent?view=powershell-7&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.diagnostics/get-winevent?view=powershell-7.x&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-WinEvent
 ---
@@ -782,6 +782,12 @@ Accept wildcard characters: True
 Specifies the event logs that this cmdlet get events from. Enter the event log names in a
 comma-separated list. Wildcards are permitted. You can also pipe log names to the `Get-WinEvent`
 cmdlet.
+
+> [!NOTE]
+> PowerShell does not limit the amount of logs you can request. However, the `Get-WinEvent` cmdlet
+> queries the Windows API which has a limit of 256. This can make it difficult to filter through all
+> of your logs at one time. You can work around this by using a `foreach` loop to iterate through each
+> log like this: `Get-WinEvent -ListLog * | ForEach-Object{ Get-WinEvent -LogName $_.Logname }`
 
 ```yaml
 Type: String[]

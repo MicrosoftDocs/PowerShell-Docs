@@ -27,7 +27,16 @@ The current options for pull service include:
 - Community maintained open-source solutions
 - An SMB share
 
-**The recommended solution**, and the option with the most features available, is [Azure Automation DSC](/azure/automation/automation-dsc-getting-started).
+The recommended scale for each solution is as follows:
+
+|                   Solution                   |              Client nodes              |
+| -------------------------------------------- | -------------------------------------- |
+| Windows Pull Server using MDB/ESENT database | Up to 500 nodes                        |
+| Windows Pull Server using SQL database       | Up to 3500 nodes                       |
+| Azure Automation DSC                         | Both small and large environments      |
+
+**The recommended solution**, and the option with the most features available, is [Azure Automation DSC](/azure/automation/automation-dsc-getting-started). An upper limit for number of nodes per Automation Account
+has not been identified.
 
 The Azure service can manage nodes on-premises in private datacenters, or in public clouds such as
 Azure and AWS. For private environments where servers cannot directly connect to the Internet,
@@ -53,7 +62,7 @@ Server include:
 
 It is possible to configure a pull service to run on Windows Server. Be advised that the pull
 service solution included in Windows Server includes only capabilities of storing
-configurations/modules for download and capturing report data in to database. It does not include
+configurations/modules for download and capturing report data into a database. It does not include
 many of the capabilities offered by the service in Azure and so, is not a good tool for evaluating
 how the service would be used.
 
@@ -277,7 +286,7 @@ format in order for the pull server to correctly process them.
 Each resource module needs to be zipped and named according to the following pattern
 `{Module Name}_{Module Version}.zip`.
 
-For example, a module named xWebAdminstration with a module version of 3.1.2.0 would be named
+For example, a module named **xWebAdminstration** with a module version of 3.1.2.0 would be named
 `xWebAdministration_3.1.2.0.zip`. Each version of a module must be contained in a single zip file.
 Since there is only a single version of a resource in each zip file, the module format added in WMF
 5.0 with support for multiple module versions in a single directory is not supported. This means

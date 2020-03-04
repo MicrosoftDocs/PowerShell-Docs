@@ -3,7 +3,7 @@ external help file: Microsoft.PowerShell.Security.dll-Help.xml
 keywords: powershell,cmdlet
 locale: en-us
 ms.date: 02/19/2019
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.security/set-authenticodesignature?view=powershell-7&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.security/set-authenticodesignature?view=powershell-7.x&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-AuthenticodeSignature
 ---
@@ -70,10 +70,15 @@ The second command uses the `Set-AuthenticodeSignature` cmdlet to sign the `PSTe
 script. It uses the **FilePath** parameter to specify the name of the script and the **Certificate**
 parameter to specify that the certificate is stored in the `$cert` variable.
 
+> [!NOTE]
+> Using the **CodeSigningCert** parameter with `Get-ChildItem` only returns certificates that have
+> code-signing authority and contain a private key. If there is no private key, the certificates
+> cannot be used for signing.
+
 ### Example 2 - Sign a script using a certificate from a PFX file
 
-These commands use the `Get-PfxCertificate` cmdlet to load a code signing certificate.
-Then, use it to sign a PowerShell script.
+These commands use the `Get-PfxCertificate` cmdlet to load a code signing certificate. Then, use it
+to sign a PowerShell script.
 
 ```powershell
 $cert = Get-PfxCertificate -FilePath C:\Test\Mysign.pfx
@@ -262,7 +267,6 @@ Default value: None
 Accept pipeline input: True (ByPropertyName, ByValue)
 Accept wildcard characters: False
 ```
-
 
 ### -Content
 

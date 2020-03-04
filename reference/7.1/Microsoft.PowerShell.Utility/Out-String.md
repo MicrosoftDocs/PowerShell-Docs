@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Utility
 ms.date: 12/13/2019
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/out-string?view=powershell-7&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/out-string?view=powershell-7.x&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Out-String
 ---
@@ -47,7 +47,7 @@ console.
 Get-Content -Path C:\Test\Testfile.txt | Out-String
 ```
 
-`Get-Culture` sends the contents of the `Testfile.txt` file down the pipeline. Each line of the file
+`Get-Content` sends the contents of the `Testfile.txt` file down the pipeline. Each line of the file
 has its own properties. `Out-String` converts the objects into an array of strings and then displays
 the contents as one string in the PowerShell console.
 

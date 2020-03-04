@@ -3,7 +3,7 @@ external help file: System.Management.Automation.dll-Help.xml
 keywords: powershell,cmdlet
 locale: en-us
 ms.date: 01/10/2020
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/disable-psremoting?view=powershell-7&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/disable-psremoting?view=powershell-7.x&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Disable-PSRemoting
 ---
@@ -412,7 +412,6 @@ At line:1 char:1
 + CategoryInfo          : OpenError: (System.Management.A\u2026tion.RemoteRunspace:RemoteRunspace)
  [New-PSSession], PSRemotingTransportException
 + FullyQualifiedErrorId : AccessDenied,PSSessionOpenFailed
-
 ```
 
 Now the `Get-PSSessionConfiguration` and `Format-Table` cmdlets shows that an **AccessDenied**

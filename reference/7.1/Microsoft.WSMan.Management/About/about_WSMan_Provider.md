@@ -2,7 +2,7 @@
 keywords: powershell,cmdlet
 locale: en-us
 ms.date: 10/18/2018
-online version: https://docs.microsoft.com/powershell/module/microsoft.wsman.management/about/about_wsman_provider?view=powershell-7&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.wsman.management/about/about_wsman_provider?view=powershell-7.x&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: WSMan Provider
 ---
@@ -470,7 +470,7 @@ resource. `Win32_LogicalDisk="C:\\"` is a specific instance of the resource.
 A Uniform Resource Identifier (URI) contains a prefix and a path to a resource.
 For example:
 
-`http://schemas.microsoft.com/wbem/wsman/1/wmi/root/cimv2/Win32_LogicalDisk`
+`https://schemas.microsoft.com/wbem/wsman/1/wmi/root/cimv2/Win32_LogicalDisk`
 
 `http://schemas.dmtf.org/wbem/wscim/1/cim-schema/2/CIM_NumericSensor`
 
@@ -485,7 +485,7 @@ of resource, such as a disk or a process, on a computer.
 
 A URI consists of a prefix and a path to a resource. For example:
 
-`http://schemas.microsoft.com/wbem/wsman/1/wmi/root/cimv2/Win32_LogicalDisk`
+`https://schemas.microsoft.com/wbem/wsman/1/wmi/root/cimv2/Win32_LogicalDisk`
 
 `http://schemas.dmtf.org/wbem/wscim/1/cim-schema/2/CIM_NumericSensor`
 

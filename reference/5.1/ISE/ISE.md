@@ -13,8 +13,9 @@ title: ISE
 
 ## Description
 
-This section contains the help topics for the cmdlets that are installed with the Windows PowerShell Integrated Scripting Environment (ISE) module.
-The Windows PowerShell ISE module contains cmdlets that add features to Windows PowerShell ISE.
+This section contains the help topics for the cmdlets that are installed with the Windows PowerShell
+Integrated Scripting Environment (ISE) module. The Windows PowerShell ISE module contains cmdlets
+that add features to Windows PowerShell ISE.
 
 ## ISE Cmdlets
 
@@ -26,5 +27,3 @@ Imports ISE snippets into the current session
 
 ### [New-IseSnippet](New-IseSnippet.md)
 Creates a Windows PowerShell ISE code snippet.
-
-

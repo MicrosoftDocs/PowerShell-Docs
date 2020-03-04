@@ -235,6 +235,43 @@ The environment variables that store preferences include:
 
     For more information, see [about_Execution_Policies](about_Execution_Policies.md).
 
+- PSModuleAnalysisCachePath
+
+  PowerShell provides control over the file that is used to cache data about a
+  module, such as the commands it exports.
+
+  By default on Windows, this cache is normally stored in the file
+  `Microsoft\Windows\PowerShell\ModuleAnalysisCache` within `$env:LOCALAPPDATA`. The cache is typically read
+  at startup while searching for a command and is written on a background thread sometime after a
+  module is imported.
+
+  To change the default location of the cache, set the `$env:PSModuleAnalysisCachePath` environment
+  variable before starting PowerShell. Changes to this environment variable only affects children
+  processes. The value should name a full path (including filename) that PowerShell has permission to
+  create and write files. To disable the file cache, set this value to an invalid location, for
+  example:
+
+```powershell
+# `NUL` here is a special device on Windows that cannot be written to, on non-Windows you would
+# use `/dev/null`
+$env:PSModuleAnalysisCachePath = 'NUL'
+```
+
+  This sets the path to an invalid device. If PowerShell can't write to the path, no error is
+  returned, but you can see error reporting by using a tracer:
+
+```powershell
+Trace-Command -PSHost -Name Modules -Expression { Import-Module Microsoft.PowerShell.Management -Force }
+```
+
+- PSDisableModuleAnalysisCacheCleanup
+
+  When writing out the module analysis cache, PowerShell checks for modules that no longer exist
+  to avoid an unnecessarily large cache. Sometimes these checks are not desirable, in which case you
+  can turn them off by setting this environment variable value to `1`.
+
+  Setting this environment variable takes effect immediately in the current process.
+
 - PSModulePath
 
   Stores the paths to the default module directories. PowerShell looks

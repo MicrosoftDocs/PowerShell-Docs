@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Management
 ms.date: 10/22/2019
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/new-psdrive?view=powershell-7&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/new-psdrive?view=powershell-7.x&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: New-PSDrive
 ---
@@ -157,6 +157,10 @@ Status       Local     Remote                    Network
 OK           S:        \\Server01\Scripts        Microsoft Windows Network
 ```
 
+> [!NOTE]
+> Remember, if you use the above snippet in a script, set the **Scope** parameter value to
+> "Global" to ensure the drive persists outside the current scope.
+
 The `$cred` variable stores a **PSCredential** object that contains the service account's
 credentials. `Get-Credential` prompts you to enter the password that's stored in a **SecureString**.
 
@@ -220,12 +224,12 @@ GetHashCode         Method       System.Int32 GetHashCode()
 ```
 
 ```powershell
-# Net Use and Get-WmiObject for the Win32_LogicalDisk class,
+# Net Use and Get-CimInstance for the Win32_LogicalDisk class,
 # and Win32_NetworkConnection class find only the persistent X: drive.
 # PowerShell temporary drives are known only to PowerShell.
 Net Use
-Get-WmiObject Win32_LogicalDisk | Format-Table -Property DeviceID
-Get-WmiObject Win32_NetworkConnection
+Get-CimInstance Win32_LogicalDisk | Format-Table -Property DeviceID
+Get-CimInstance Win32_NetworkConnection
 ```
 
 ```Output

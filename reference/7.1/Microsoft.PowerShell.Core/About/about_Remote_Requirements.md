@@ -2,7 +2,7 @@
 keywords: powershell,cmdlet
 locale: en-us
 ms.date: 01/03/2018
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_remote_requirements?view=powershell-7&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_remote_requirements?view=powershell-7.x&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Remote_Requirements
 ---
@@ -233,7 +233,7 @@ CN name that matches the hostname, is not expired or revoked. A self-signed
 certificate may be used for testing purposes.
 
 See [How To: Configure WINRM for HTTPS](https://support.microsoft.com/help/2019527/how-to-configure-winrm-for-https)
-for additonal details.
+for additional details.
 
 The following command, run from an elevated command prompt, will configure the
 HTTPS listener on Windows with the installed certificate.

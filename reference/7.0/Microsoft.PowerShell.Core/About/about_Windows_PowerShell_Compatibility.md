@@ -21,7 +21,7 @@ PowerShell Core then that module will be loaded in a background
 Windows PowerShell 5.1 process and using implicit remoting reflected
 into current PowerShell session.
 
-Windows PowerShell Compatibility funtionality can be invoked in 3 ways:
+Windows PowerShell Compatibility funtionality can be invoked in three ways:
 
 1. Explicitly using module import with `-UseWindowsPowerShell` parameter
 
@@ -48,6 +48,14 @@ you can use `DisableImplicitWinCompat` setting in PowerShell configuration file.
 $ConfigPath = "$PSHOME\DisableWinCompat.powershell.config.json"
 '{"DisableImplicitWinCompat" : "False", "Microsoft.PowerShell:ExecutionPolicy": "RemoteSigned"}' | Out-File -Force $ConfigPath
 pwsh -settingsFile $ConfigPath # Implicit Windows PowerShell Compatibility funtionality is Disabled in this PowerShell
+```
+
+In all three cases above a module can be blocked from loading using
+Windows PowerShell Compatibility by a `WindowsPowerShellCompatibilityModuleDenyList`
+setting in PowerShell configuration file. The default value of this setting:
+
+```json
+"WindowsPowerShellCompatibilityModuleDenyList":  ["PSScheduledJob","BestPractices","UpdateServices"]
 ```
 
 When the first module is imported using Windows PowerShell Compatibility funtionality

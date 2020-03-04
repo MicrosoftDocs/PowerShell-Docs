@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.WSMan.Management
 ms.date: 08/20/2019
-online version: https://docs.microsoft.com/powershell/module/microsoft.wsman.management/enable-wsmancredssp?view=powershell-7&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.wsman.management/enable-wsmancredssp?view=powershell-7.x&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Enable-WSManCredSSP
 ---
@@ -54,7 +54,7 @@ Enable-WSManCredSSP -Role "Client" -DelegateComputer "Server02.fabrikam.com"
 ```
 
 ```Output
-cfg         : http://schemas.microsoft.com/wbem/wsman/1/config/client/auth
+cfg         : https://schemas.microsoft.com/wbem/wsman/1/config/client/auth
 lang        : en-US
 Basic       : true
 Digest      : true
@@ -78,7 +78,7 @@ Enable-WSManCredSSP -Role "Client" -DelegateComputer "*.fabrikam.com"
 ```
 
 ```Output
-cfg         : http://schemas.microsoft.com/wbem/wsman/1/config/client/auth
+cfg         : https://schemas.microsoft.com/wbem/wsman/1/config/client/auth
 lang        : en-US
 Basic       : true
 Digest      : true
@@ -98,7 +98,7 @@ Enable-WSManCredSSP -Role "Client" -DelegateComputer $servers
 ```
 
 ```Output
-cfg         : http://schemas.microsoft.com/wbem/wsman/1/config/client/auth
+cfg         : https://schemas.microsoft.com/wbem/wsman/1/config/client/auth
 lang        : en-US
 Basic       : true
 Digest      : true

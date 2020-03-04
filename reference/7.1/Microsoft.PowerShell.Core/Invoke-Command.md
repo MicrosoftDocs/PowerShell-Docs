@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Core
 ms.date: 10/17/2019
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/invoke-command?view=powershell-7&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/invoke-command?view=powershell-7.x&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Invoke-Command
 ---
@@ -905,7 +905,7 @@ Specifies the session configuration that is used for the new **PSSession**.
 
 Enter a configuration name or the fully qualified resource URI for a session configuration. If you
 specify only the configuration name, the following schema URI is prepended:
-`http://schemas.microsoft.com/PowerShell`.
+`https://schemas.microsoft.com/PowerShell`.
 
 When used with SSH, this parameter specifies the subsystem to use on the target as defined in
 `sshd_config`. The default value for SSH is the `powershell` subsystem.

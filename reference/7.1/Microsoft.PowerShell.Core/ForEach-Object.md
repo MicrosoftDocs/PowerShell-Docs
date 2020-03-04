@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Core
 ms.date: 11/04/2019
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/foreach-object?view=powershell-7&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/foreach-object?view=powershell-7.x&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: ForEach-Object
 ---
@@ -39,7 +39,7 @@ ForEach-Object -Parallel <scriptblock> [-InputObject <PSObject>] [-ThrottleLimit
 ## DESCRIPTION
 
 The `ForEach-Object` cmdlet performs an operation on each item in a collection of input objects.
-The input objects can be piped to the cmdlet or specified by using the *InputObject* parameter.
+The input objects can be piped to the cmdlet or specified by using the **InputObject** parameter.
 
 Starting in Windows PowerShell 3.0, there are two different ways to construct a `ForEach-Object` command.
 

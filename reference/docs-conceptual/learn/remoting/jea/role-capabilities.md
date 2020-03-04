@@ -219,13 +219,15 @@ like you would with built-in and third-party modules.
 For tab completion to work properly in JEA sessions you must include the built-in function
 `tabexpansion2` in the **VisibleFunctions** list.
 
-## Place role capabilities in a module
+## Make the role capabilities available to a configuration
 
-In order for PowerShell to find a role capability file, it must be stored in a **RoleCapabilities**
-folder in a PowerShell module. The module can be stored in any folder included in the
-`$env:PSModulePath` environment variable, however you shouldn't place it in System32 or a folder
-where the untrusted, connecting users could modify the files. Below is an example of creating a
-basic PowerShell script module called **ContosoJEA** in the `$env:ProgramFiles` path.
+Prior to PowerShell 6, for PowerShell to find a role capability file it must be stored in a
+**RoleCapabilities** folder in a PowerShell module. The module can be stored in any folder included
+in the `$env:PSModulePath` environment variable, however you shouldn't place it in
+`$env:SystemRoot\System32` or a folder where untrusted users could modify the files.
+
+The following example creates a PowerShell script module called **ContosoJEA** in the
+`$env:ProgramFiles` path to host the role capabilities file.
 
 ```powershell
 # Create a folder for the module
@@ -244,6 +246,11 @@ Copy-Item -Path .\MyFirstJEARole.psrc -Destination $rcFolder
 ```
 
 For more information about PowerShell modules, see [Understanding a PowerShell Module](/powershell/scripting/developer/windows-powershell).
+
+Starting in PowerShell 6, the **RoleDefinitions** property was added to the session configuration
+file. This property lets you specify the location of a role configuration file for your role
+definition. See the examples in
+[New-PSSessionConfigurationFile](/powershell/module/microsoft.powershell.core/new-pssessionconfigurationfile).
 
 ## Updating role capabilities
 

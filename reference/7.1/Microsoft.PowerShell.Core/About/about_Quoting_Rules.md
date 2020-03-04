@@ -2,7 +2,7 @@
 keywords: powershell,cmdlet
 locale: en-us
 ms.date: 01/03/2018
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_quoting_rules?view=powershell-7&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_quoting_rules?view=powershell-7.x&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Quoting_Rules
 ---
@@ -293,9 +293,9 @@ variable.
 
 ```powershell
 $page = [XML] @"
-<command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10"
-xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10"
-xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10">
+<command:command xmlns:maml="https://schemas.microsoft.com/maml/2004/10"
+xmlns:command="https://schemas.microsoft.com/maml/dev/command/2004/10"
+xmlns:dev="https://schemas.microsoft.com/maml/dev/2004/10">
 <command:details>
         <command:name>
                Format-Table

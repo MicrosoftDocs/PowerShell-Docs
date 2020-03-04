@@ -3,14 +3,16 @@ external help file: Microsoft.PowerShell.Utility-help.xml
 keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 04/25/2019
+ms.date: 01/17/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/format-hex?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Format-Hex
 ---
+
 # Format-Hex
 
 ## SYNOPSIS
+
 Displays a file or other input as hexadecimal.
 
 ## SYNTAX
@@ -88,8 +90,35 @@ Format-Hex -Path .\File.t7f
 ```
 
 The `Format-Hex` cmdlet uses the **Path** parameter to specify a filename in the current directory,
-**File.t7f**. The file extension **.t7f** is uncommon, but the hexadecimal output **%PDF** shows
+`File.t7f`. The file extension `.t7f` is uncommon, but the hexadecimal output `%PDF` shows
 that it is a PDF file.
+
+### Example 3: Display raw hexadecimal output
+
+By default `Format-Hex` opts for compact output of numeric data types: single-byte or double-byte
+sequences are used if the value is small enough. The **Raw** parameter deactivates this behavior.
+
+```
+PS> 1,2,3,1000 | Format-Hex
+
+           Path:
+
+           00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
+
+00000000   01 02 03 E8 03                                   ...è.
+
+
+PS> 1,2,3,1000 | Format-Hex -Raw
+
+           Path:
+
+           00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
+
+00000000   01 00 00 00 02 00 00 00 03 00 00 00 E8 03 00 00  ............è...
+```
+
+Notice the difference in output. The **Raw** parameter displays the numbers as 4-byte values, true
+to their **Int32** types.
 
 ## PARAMETERS
 
@@ -188,7 +217,8 @@ Accept wildcard characters: True
 
 ### -Raw
 
-This parameter no longer does anything. It is retained for script compatibility.
+By default `Format-Hex` opts for compact output of numeric data types: single-byte or double-byte
+sequences are used if the value is small enough. The **Raw** parameter deactivates this behavior.
 
 ```yaml
 Type: SwitchParameter

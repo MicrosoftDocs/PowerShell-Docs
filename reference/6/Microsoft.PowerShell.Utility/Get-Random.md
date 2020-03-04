@@ -148,7 +148,7 @@ yellow
 
 This example shows the effect of using the **SetSeed** parameter.
 
-Because **SetSeed** produces non-random behavior, it is typically used only to reproduce results,
+Because **SetSeed** produces non-random behavior, it's typically used only to reproduce results,
 such as when debugging or analyzing a script.
 
 ```powershell
@@ -224,6 +224,21 @@ Name Count
 4      226
 5      185
 6      188
+```
+
+### Example 12: Use the Count parameter
+
+You can now use the **Count** parameter without piping objects to `Get-Random`.
+The following example gets three random numbers less than 10.
+
+```powershell
+Get-Random -Count 3 -Maximum 10
+```
+
+```Output
+9
+0
+8
 ```
 
 ## PARAMETERS
@@ -320,11 +335,11 @@ Accept wildcard characters: False
 
 Specifies a seed value for the random number generator. This seed value is used for the current
 command and for all subsequent `Get-Random` commands in the current session until you use
-**SetSeed** again or close the session. You cannot reset the seed to its default value.
+**SetSeed** again or close the session. You can't reset the seed to its default value.
 
 The **SetSeed** parameter is not required. By default, `Get-Random` uses the
 [RandomNumberGenerator()](/dotnet/api/system.security.cryptography.randomnumbergenerator)
-method to generate a seed value. Because **SetSeed** results in non-random behavior, it is typically
+method to generate a seed value. Because **SetSeed** results in non-random behavior, it's typically
 used only when trying to reproduce behavior, such as when debugging or analyzing a script that
 includes `Get-Random` commands.
 

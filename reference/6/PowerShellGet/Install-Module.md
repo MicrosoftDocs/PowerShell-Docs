@@ -21,7 +21,7 @@ Downloads one or more modules from a repository, and installs them on the local 
 Install-Module [-Name] <String[]> [-MinimumVersion <String>] [-MaximumVersion <String>]
  [-RequiredVersion <String>] [-Repository <String[]>] [-Credential <PSCredential>] [-Scope <String>]
  [-Proxy <Uri>] [-ProxyCredential <PSCredential>] [-AllowClobber] [-SkipPublisherCheck] [-Force]
- [-AllowPrerelease] [-AcceptLicense] [-WhatIf] [-Confirm] [<CommonParameters>]
+ [-AllowPrerelease] [-AcceptLicense] [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### InputObject
@@ -29,7 +29,7 @@ Install-Module [-Name] <String[]> [-MinimumVersion <String>] [-MaximumVersion <S
 ```
 Install-Module [-InputObject] <PSObject[]> [-Credential <PSCredential>] [-Scope <String>]
  [-Proxy <Uri>] [-ProxyCredential <PSCredential>] [-AllowClobber] [-SkipPublisherCheck] [-Force]
- [-AcceptLicense] [-WhatIf] [-Confirm] [<CommonParameters>]
+ [-AcceptLicense] [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -167,6 +167,22 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -Confirm
+
+Prompts you for confirmation before running the `Install-Module` cmdlet.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Credential
 
 Specifies a user account that has rights to install a module for a specified package provider or
@@ -221,9 +237,10 @@ Accept wildcard characters: False
 
 ### -MaximumVersion
 
-Specifies the maximum version of a single module to install. If you want to install multiple
-modules, you cannot use **MaximumVersion**. **MaximumVersion** and **RequiredVersion** cannot be
-used in the same `Install-Module` command.
+Specifies the maximum version of a single module to install. The version installed must be less than
+or equal to **MaximumVersion**. If you want to install multiple modules, you cannot use
+**MaximumVersion**. **MaximumVersion** and **RequiredVersion** cannot be used in the same
+`Install-Module` command. 
 
 ```yaml
 Type: String
@@ -239,10 +256,10 @@ Accept wildcard characters: False
 
 ### -MinimumVersion
 
-Specifies the minimum version of a single module to install. If there is a newer version of the
-module available, the newer version is installed. If you want to install multiple modules, you
-cannot use **MinimumVersion**. **MinimumVersion** and **RequiredVersion** cannot be used in the same
-`Install-Module` command.
+Specifies the minimum version of a single module to install. The version installed must be greater than
+or equal to **MinimumVersion**. If there is a newer version of the module available, the newer
+version is installed. If you want to install multiple modules, you cannot use **MinimumVersion**.
+**MinimumVersion** and **RequiredVersion** cannot be used in the same `Install-Module` command.
 
 ```yaml
 Type: String
@@ -271,6 +288,20 @@ Required: True
 Position: 0
 Default value: None
 Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -PassThru
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -370,7 +401,7 @@ When no **Scope** is defined, the default is set based on the PowerShellGet vers
 Type: String
 Parameter Sets: (All)
 Aliases:
-Accepted values: AllUsers, CurrentUser
+Accepted values: CurrentUser, AllUsers
 
 Required: False
 Position: Named
@@ -393,22 +424,6 @@ Aliases:
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Confirm
-
-Prompts you for confirmation before running the `Install-Module` cmdlet.
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: (All)
-Aliases: cf
-
-Required: False
-Position: Named
-Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -442,7 +457,19 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 `Find-Module` creates **PSRepositoryItemInfo** objects that can be sent down the pipeline to
 `Install-Module`.
 
+### System.String[]
+
+### System.Management.Automation.PSObject[]
+
+### System.String
+
+### System.Management.Automation.PSCredential
+
+### System.Uri
+
 ## OUTPUTS
+
+### System.Object
 
 ## NOTES
 

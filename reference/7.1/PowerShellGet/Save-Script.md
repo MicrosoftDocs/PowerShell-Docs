@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: PowerShellGet
 ms.date: 07/02/2019
-online version: https://docs.microsoft.com/powershell/module/powershellget/save-script?view=powershell-7&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/powershellget/save-script?view=powershell-7.x&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Save-Script
 ---
@@ -110,6 +110,22 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -Confirm
+
+Prompts you for confirmation before running `Save-Script`.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Credential
 
 Specifies a user account that has permission to save a script.
@@ -169,7 +185,7 @@ characters enclosed in single quotation marks as escape sequences.
 ```yaml
 Type: String
 Parameter Sets: NameAndLiteralPathParameterSet, InputObjectAndLiteralPathParameterSet
-Aliases:
+Aliases: PSPath
 
 Required: True
 Position: Named
@@ -310,22 +326,6 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Confirm
-
-Prompts you for confirmation before running `Save-Script`.
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: (All)
-Aliases: cf
-
-Required: False
-Position: Named
-Default value: False
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -WhatIf
 
 Shows what would happen if `Save-Script` runs. The cmdlet isn't run.
@@ -350,7 +350,19 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
+### System.String[]
+
+### System.Management.Automation.PSObject[]
+
+### System.String
+
+### System.Uri
+
+### System.Management.Automation.PSCredential
+
 ## OUTPUTS
+
+### System.Object
 
 ## NOTES
 

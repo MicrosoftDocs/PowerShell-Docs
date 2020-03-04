@@ -57,7 +57,7 @@ For native commands (executables), `$?` is set to **True** when `$LASTEXITCODE`
 is 0, and set to **False** when `$LASTEXITCODE` is any other value.
 
 > [!NOTE]
-> Until PowerShell 7, containing a statement withing parentheses `(...)`,
+> Until PowerShell 7, containing a statement within parentheses `(...)`,
 > subexpression syntax `$(...)` or array expression `@(...)` always reset
 > `$?` to **True**, so that `(Write-Error)` shows `$?` as **True**.
 > This has been changed in PowerShell 7, so that `$?` will always reflect

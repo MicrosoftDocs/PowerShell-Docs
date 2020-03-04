@@ -6,11 +6,12 @@ ms.date: 09/13/2018
 
 # What's New in PowerShell Core 6.1
 
-Below is a selection of some of the major new features and changes that have been introduced
-in PowerShell Core 6.1.
+Below is a selection of some of the major new features and changes that have been introduced in
+PowerShell Core 6.1.
 
-There's also **tons** of "boring stuff" that make PowerShell faster and more stable (plus lots and lots of bug fixes)!
-For a full list of changes, check out our [changelog on GitHub](https://github.com/PowerShell/PowerShell/blob/master/CHANGELOG.md).
+There's also **tons** of "boring stuff" that make PowerShell faster and more stable (plus lots and
+lots of bug fixes)! For a full list of changes, check out our
+[changelog on GitHub](https://github.com/PowerShell/PowerShell/blob/master/CHANGELOG.md).
 
 And while we call out some names below, thank you to
 [all of the community contributors](https://github.com/PowerShell/PowerShell/graphs/contributors)
@@ -29,24 +30,30 @@ resulting in a number of improvements to PowerShell, including:
 
 ## Windows Compatibility Pack for .NET Core
 
-On Windows, the .NET team shipped the [Windows Compatibility Pack for .NET Core](https://blogs.msdn.microsoft.com/dotnet/2017/11/16/announcing-the-windows-compatibility-pack-for-net-core/),
+On Windows, the .NET team shipped the
+[Windows Compatibility Pack for .NET Core](https://blogs.msdn.microsoft.com/dotnet/2017/11/16/announcing-the-windows-compatibility-pack-for-net-core/),
 a set of assemblies that add a number of removed APIs back to .NET Core on Windows.
 
-We've added the Windows Compatibility Pack to PowerShell Core 6.1 release
-so that any modules or scripts that use these APIs can rely on them being available.
+We've added the Windows Compatibility Pack to PowerShell Core 6.1 release so that any modules or
+scripts that use these APIs can rely on them being available.
 
-The Windows Compatibility Pack enables PowerShell Core to use **more than 1900 cmdlets that ship with Windows 10 October 2018 Update and Windows Server 2019**.
+The Windows Compatibility Pack enables PowerShell Core to use **more than 1900 cmdlets that ship
+with Windows 10 October 2018 Update and Windows Server 2019**.
 
 ## Support for Application Whitelisting
 
-PowerShell Core 6.1 has parity with Windows PowerShell 5.1 supporting [AppLocker](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-application-control/applocker/applocker-overview)
-and [Device Guard](https://docs.microsoft.com/windows/security/threat-protection/device-guard/introduction-to-device-guard-virtualization-based-security-and-windows-defender-application-control) application whitelisting.
-Application whitelisting allows granular control of what binaries are allowed to be executed used with PowerShell [Constrained Language mode](https://blogs.msdn.microsoft.com/powershell/2017/11/02/powershell-constrained-language-mode/).
+PowerShell Core 6.1 has parity with Windows PowerShell 5.1 supporting
+[AppLocker](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-application-control/applocker/applocker-overview)
+and
+[Device Guard](https://docs.microsoft.com/windows/security/threat-protection/device-guard/introduction-to-device-guard-virtualization-based-security-and-windows-defender-application-control)
+application whitelisting. Application whitelisting allows granular control of what binaries are
+allowed to be executed used with PowerShell
+[Constrained Language mode](https://blogs.msdn.microsoft.com/powershell/2017/11/02/powershell-constrained-language-mode/).
 
 ## Performance improvements
 
-PowerShell Core 6.0 made some significant performance improvements.
-PowerShell Core 6.1 continues to improve the speed of certain operations.
+PowerShell Core 6.0 made some significant performance improvements. PowerShell Core 6.1 continues to
+improve the speed of certain operations.
 
 For example, `Group-Object` has been sped up by 66%:
 
@@ -97,13 +104,12 @@ Measure-Command {Get-Content .\foo.json | ConvertFrom-Json}
 
 ## Check `system32` for compatible in-box modules on Windows
 
-In the Windows 10 1809 update and Windows Server 2019,
-we updated a number of in-box PowerShell modules to mark them as compatible with PowerShell Core.
+In the Windows 10 1809 update and Windows Server 2019, we updated a number of in-box PowerShell
+modules to mark them as compatible with PowerShell Core.
 
-When PowerShell Core 6.1 starts up, it will automatically include `$windir\System32`
-as part of the `PSModulePath` environment variable.
-However, it only exposes modules to `Get-Module` and `Import-Module`
-if its `CompatiblePSEdition` is marked as compatible with `Core`.
+When PowerShell Core 6.1 starts up, it will automatically include `$windir\System32` as part of the
+`PSModulePath` environment variable. However, it only exposes modules to `Get-Module` and
+`Import-Module` if its `CompatiblePSEdition` is marked as compatible with `Core`.
 
 
 ```powershell
@@ -165,15 +171,16 @@ Manifest   1.0.0.0    NetworkSwitchManager        Core,Desk {Disable-NetworkSwit
 Manifest   1.0.0.0    NetworkTransition           Core,Desk {Add-NetIPHttpsCertBinding, Disable-NetDnsTransi...
 ```
 
-For more information about this behavior, check out [PowerShell RFC0025](https://github.com/PowerShell/PowerShell-RFC/blob/master/5-Final/RFC0025-PSCore6-and-Windows-Modules.md).
+For more information about this behavior, check out
+[PowerShell RFC0025](https://github.com/PowerShell/PowerShell-RFC/blob/master/5-Final/RFC0025-PSCore6-and-Windows-Modules.md).
 
 ## Markdown cmdlets and rendering
 
-Markdown is a standard for creating readable plaintext documents with
-basic formatting that can be rendered into HTML.
+Markdown is a standard for creating readable plaintext documents with basic formatting that can be
+rendered into HTML.
 
-We've added some cmdlets in 6.1 that allow you to convert and render
-Markdown documents in the console, including:
+We've added some cmdlets in 6.1 that allow you to convert and render Markdown documents in the
+console, including:
 
 - `ConvertFrom-Markdown`
 - `Get-MarkdownOption`
@@ -182,7 +189,7 @@ Markdown documents in the console, including:
 
 For example, `Show-Markdown` renders a Markdown file in the console:
 
-![Show-Markdown example](./images/markdown_example.png)
+![Show-Markdown example](media/What-s-New-in-PowerShell-Core-61/markdown_example.png)
 
 For more information about how these cmdlets work, check out
 [this RFC](https://github.com/PowerShell/PowerShell-RFC/blob/master/5-Final/RFC0025-Native-Markdown-Rendering.md).
@@ -193,10 +200,11 @@ We enabled support for [Experimental Features][]. This allows PowerShell develop
 features and get feedback before the design is complete. This way we avoid making breaking changes
 as the design evolves.
 
-Use `Get-ExperimentalFeature` to get a list of available experimental features. You can enable
-or disable these features with `Enable-ExperimentalFeature` and `Disable-ExperimentalFeature`.
+Use `Get-ExperimentalFeature` to get a list of available experimental features. You can enable or
+disable these features with `Enable-ExperimentalFeature` and `Disable-ExperimentalFeature`.
 
-You can learn more about this feature in [PowerShell RFC0029](https://github.com/PowerShell/PowerShell-RFC/blob/master/5-Final/RFC0029-Support-Experimental-Features.md).
+You can learn more about this feature in
+[PowerShell RFC0029](https://github.com/PowerShell/PowerShell-RFC/blob/master/5-Final/RFC0029-Support-Experimental-Features.md).
 
 ## Web cmdlet improvements
 
@@ -204,29 +212,36 @@ Thanks to [@markekraus](https://github.com/markekraus), a whole slew of improvem
 [`Invoke-WebRequest`](/powershell/module/microsoft.powershell.utility/invoke-webrequest)
 and [`Invoke-RestMethod`](/powershell/module/microsoft.powershell.utility/invoke-restmethod).
 
-- [PR #6109](https://github.com/PowerShell/PowerShell/pull/6109) - default encoding set to UTF-8 for `application-json` responses
-- [PR #6018](https://github.com/PowerShell/PowerShell/pull/6018) - `-SkipHeaderValidation` parameter to allow `Content-Type` headers that aren't standards-compliant
-- [PR #5972](https://github.com/PowerShell/PowerShell/pull/5972) - `Form` parameter to support simplified `multipart/form-data` support
-- [PR #6338](https://github.com/PowerShell/PowerShell/pull/6338) - Compliant, case-insensitive handling of relation keys
-- [PR #6447](https://github.com/PowerShell/PowerShell/pull/6447) - Add `-Resume` parameter for web cmdlets
+- [PR #6109](https://github.com/PowerShell/PowerShell/pull/6109) - default encoding set to UTF-8 for
+  `application-json` responses
+- [PR #6018](https://github.com/PowerShell/PowerShell/pull/6018) - `-SkipHeaderValidation` parameter
+  to allow `Content-Type` headers that aren't standards-compliant
+- [PR #5972](https://github.com/PowerShell/PowerShell/pull/5972) - `Form` parameter to support
+  simplified `multipart/form-data` support
+- [PR #6338](https://github.com/PowerShell/PowerShell/pull/6338) - Compliant, case-insensitive
+  handling of relation keys
+- [PR #6447](https://github.com/PowerShell/PowerShell/pull/6447) - Add `-Resume` parameter for web
+  cmdlets
 
 ## Remoting improvements
 
 ### PowerShell Direct for Containers tries to use PowerShell Core first
 
-[PowerShell Direct](/virtualization/hyper-v-on-windows/user-guide/powershell-direct)
-is a feature of PowerShell and Hyper-V that allows you to connect to a Hyper-V VM or Container
-without network connectivity or other remote management services.
+[PowerShell Direct](/virtualization/hyper-v-on-windows/user-guide/powershell-direct) is a feature of
+PowerShell and Hyper-V that allows you to connect to a Hyper-V VM or Container without network
+connectivity or other remote management services.
 
-In the past, PowerShell Direct connected using the inbox Windows PowerShell instance on the Container.
-Now, PowerShell Direct first attempts to connect using any available `pwsh.exe` on the `PATH` environment variable.
-If `pwsh.exe` isn't available, PowerShell Direct falls back to use `powershell.exe`.
+In the past, PowerShell Direct connected using the inbox Windows PowerShell instance on the
+Container. Now, PowerShell Direct first attempts to connect using any available `pwsh.exe` on the
+`PATH` environment variable. If `pwsh.exe` isn't available, PowerShell Direct falls back to use
+`powershell.exe`.
 
 ### `Enable-PSRemoting` now creates separate remoting endpoints for preview versions
 
 `Enable-PSRemoting` now creates two remoting session configurations:
 
-- One for the major version of PowerShell. For example, `PowerShell.6`. This endpoint that can be relied upon across minor version updates as the "system-wide" PowerShell 6 session configuration
+- One for the major version of PowerShell. For example, `PowerShell.6`. This endpoint that can be
+  relied upon across minor version updates as the "system-wide" PowerShell 6 session configuration
 - One version-specific session configuration, for example: `PowerShell.6.1.0`
 
 This behavior is useful if you want to have multiple PowerShell 6 versions installed and accessible
@@ -246,9 +261,8 @@ WinRM is already set up to receive requests on this computer.
 WinRM is already set up for remote management on this computer.
 ```
 
-Then you can see separate PowerShell session configurations for
-the preview and stable builds of PowerShell 6,
-and for each specific version.
+Then you can see separate PowerShell session configurations for the preview and stable builds of
+PowerShell 6, and for each specific version.
 
 ```powershell
 Get-PSSessionConfiguration
@@ -282,26 +296,28 @@ Permission    : NT AUTHORITY\INTERACTIVE AccessAllowed, BUILTIN\Administrators A
 
 ### `user@host:port` syntax supported for SSH
 
-SSH clients typically support a connection string in the format `user@host:port`.
-With the addition of SSH as a protocol for PowerShell Remoting,
-we've added support for this format of connection string:
+SSH clients typically support a connection string in the format `user@host:port`. With the addition
+of SSH as a protocol for PowerShell Remoting, we've added support for this format of connection
+string:
 
 `Enter-PSSession -HostName fooUser@ssh.contoso.com:2222`
 
 ## MSI option to add explorer shell context menu on Windows
 
-Thanks to [@bergmeister](https://github.com/bergmeister), now you can enable a context menu on Windows. Now you can open your
-system-wide installation of PowerShell 6.1 from any folder in the Windows Explorer:
+Thanks to [@bergmeister](https://github.com/bergmeister), now you can enable a context menu on
+Windows. Now you can open your system-wide installation of PowerShell 6.1 from any folder in the
+Windows Explorer:
 
-![Shell context menu for PowerShell 6](./images/shell_context_menu.png)
+![Shell context menu for PowerShell 6](media/What-s-New-in-PowerShell-Core-61/shell_context_menu.png)
 
 ## Goodies
 
 ### "Run as Administrator" in the Windows shortcut jump list
 
-Thanks to [@bergmeister](https://github.com/bergmeister), the PowerShell Core shortcut's jump list now includes "Run as Administrator":
+Thanks to [@bergmeister](https://github.com/bergmeister), the PowerShell Core shortcut's jump list
+now includes "Run as Administrator":
 
-![Run as administrator in the PowerShell 6 jump list](./images/jumplist.png)
+![Run as administrator in the PowerShell 6 jump list](media/What-s-New-in-PowerShell-Core-61/jumplist.png)
 
 ### `cd -` returns to previous directory
 
@@ -323,18 +339,19 @@ Also, `cd` and `cd --` change to `$HOME`.
 
 ### `Test-Connection`
 
-Thanks to [@iSazonov](https://github.com/iSazonov), the [`Test-Connection`](/powershell/module/microsoft.powershell.management/test-connection)
-cmdlet has been ported to PowerShell Core.
+Thanks to [@iSazonov](https://github.com/iSazonov), the
+[`Test-Connection`](/powershell/module/microsoft.powershell.management/test-connection) cmdlet has
+been ported to PowerShell Core.
 
 ### `Update-Help` as non-admin
 
-By popular demand, `Update-Help` no longer needs to be run as an administrator.
-`Update-Help` now defaults to saving help to a user-scoped folder.
+By popular demand, `Update-Help` no longer needs to be run as an administrator. `Update-Help` now
+defaults to saving help to a user-scoped folder.
 
 ### New methods/properties on `PSCustomObject`
 
-Thanks to [@iSazonov](https://github.com/iSazonov), we've added new methods and properties to `PSCustomObject`.
-`PSCustomObject` now includes a `Count`/`Length` property like other objects.
+Thanks to [@iSazonov](https://github.com/iSazonov), we've added new methods and properties to
+`PSCustomObject`. `PSCustomObject` now includes a `Count`/`Length` property like other objects.
 
 ```powershell
 $PSCustomObject = [pscustomobject]@{foo = 1}
@@ -354,8 +371,8 @@ $PSCustomObject.Count
 1
 ```
 
-This work also includes `ForEach` and `Where` methods that allow you
-to operate and filter on `PSCustomObject` items:
+This work also includes `ForEach` and `Where` methods that allow you to operate and filter on
+`PSCustomObject` items:
 
 ```powershell
 $PSCustomObject.ForEach({$_.foo + 1})
@@ -377,9 +394,8 @@ foo
 
 ### `Where-Object -Not`
 
-Thanks to @SimonWahlin, we've added the `-Not` parameter to `Where-Object`.
-Now you can filter an object at the pipeline for the non-existence of a property,
-or a null/empty property value.
+Thanks to @SimonWahlin, we've added the `-Not` parameter to `Where-Object`. Now you can filter an
+object at the pipeline for the non-existence of a property, or a null/empty property value.
 
 For example, this command returns all services that don't have any dependent services defined:
 
@@ -389,15 +405,14 @@ Get-Service | Where-Object -Not DependentServices
 
 ### `New-ModuleManifest` creates a BOM-less UTF-8 document
 
-Given our move to BOM-less UTF-8 in PowerShell 6.0,
-we've updated the `New-ModuleManifest` cmdlet to create a BOM-less UTF-8 document
-instead of a UTF-16 one.
+Given our move to BOM-less UTF-8 in PowerShell 6.0, we've updated the `New-ModuleManifest` cmdlet to
+create a BOM-less UTF-8 document instead of a UTF-16 one.
 
 ### Conversions from PSMethod to Delegate
 
-Thanks to [@powercode](https://github.com/powercode), we now support the conversion of a `PSMethod` into a delegate.
-This allows you to do things like passing `PSMethod` `[M]::DoubleStrLen`
-as a delegate value into `[M]::AggregateString`:
+Thanks to [@powercode](https://github.com/powercode), we now support the conversion of a `PSMethod`
+into a delegate. This allows you to do things like passing `PSMethod` `[M]::DoubleStrLen` as a
+delegate value into `[M]::AggregateString`:
 
 ```powershell
 class M {
@@ -419,7 +434,8 @@ For more info on this change, check out [PR #5287](https://github.com/PowerShell
 
 ### Standard deviation in `Measure-Object`
 
-Thanks to [@CloudyDino](https://github.com/CloudyDino), we've added a `StandardDeviation` property to `Measure-Object`:
+Thanks to [@CloudyDino](https://github.com/CloudyDino), we've added a `StandardDeviation` property
+to `Measure-Object`:
 
 ```powershell
 Get-Process | Measure-Object -Property CPU -AllStats
@@ -437,8 +453,8 @@ Property          : CPU
 
 ### `GetPfxCertificate -Password`
 
-Thanks to [@maybe-hello-world](https://github.com/maybe-hello-world), `Get-PfxCertificate` now has the `Password` parameter,
-which takes a `SecureString`. This allows you to use it non-interactively:
+Thanks to [@maybe-hello-world](https://github.com/maybe-hello-world), `Get-PfxCertificate` now has
+the `Password` parameter, which takes a `SecureString`. This allows you to use it non-interactively:
 
 ```powershell
 $certFile = '\\server\share\pwd-protected.pfx'
@@ -449,8 +465,8 @@ $certThumbPrint = (Get-PfxCertificate -FilePath $certFile -Password $certPass ).
 
 ### Removal of the `more` function
 
-In the past, PowerShell shipped a function on Windows called `more` that wrapped `more.com`.
-That function has now been removed.
+In the past, PowerShell shipped a function on Windows called `more` that wrapped `more.com`. That
+function has now been removed.
 
 Also, the `help` function changed to use `more.com` on Windows, or the system's default pager
 specified by `$env:PAGER` on non-Windows platforms.
@@ -460,11 +476,13 @@ specified by `$env:PAGER` on non-Windows platforms.
 Previously, using `Set-Location` or `cd` to return to a PSDrive sent users
 to the default location for that drive.
 
-Thanks to [@mcbobke](https://github.com/mcbobke), users are now sent to the last known current working directory for that session.
+Thanks to [@mcbobke](https://github.com/mcbobke), users are now sent to the last known current
+working directory for that session.
 
 ### Windows PowerShell type accelerators
 
-In Windows PowerShell, we included the following type accelerators to make it easier to work with their respective types:
+In Windows PowerShell, we included the following type accelerators to make it easier to work with
+their respective types:
 
 - `[adsi]`: `System.DirectoryServices.DirectoryEntry`
 - `[adsisearcher]`: `System.DirectoryServices.DirectorySearcher`
@@ -472,7 +490,8 @@ In Windows PowerShell, we included the following type accelerators to make it ea
 - `[wmiclass]`: `System.Management.ManagementClass`
 - `[wmisearcher]`: `System.Management.ManagementObjectSearcher`
 
-These type accelerators were not included in PowerShell 6, but have been added to PowerShell 6.1 running on Windows.
+These type accelerators were not included in PowerShell 6, but have been added to PowerShell 6.1
+running on Windows.
 
 These types are useful in easily constructing AD and WMI objects.
 
@@ -513,8 +532,8 @@ Win32_OperatingSystem               {Reboot, Shutdown... {BootDevice, BuildNumbe
 
 ### `-lp` alias for all `-LiteralPath` parameters
 
-Thanks to [@kvprasoon](https://github.com/kvprasoon), we now have a parameter alias `-lp` for all the
-built-in PowerShell cmdlets that have a `-LiteralPath` parameter.
+Thanks to [@kvprasoon](https://github.com/kvprasoon), we now have a parameter alias `-lp` for all
+the built-in PowerShell cmdlets that have a `-LiteralPath` parameter.
 
 ## Breaking Changes
 
@@ -527,7 +546,8 @@ On Windows, the MSI package now installs to the following path:
 
 This change ensures that PowerShell Core can be updated/serviced by Microsoft Update.
 
-For more information, check out [PowerShell RFC0026](https://github.com/PowerShell/PowerShell-RFC/blob/master/5-Final/RFC0026-MSI-Installation-Path.md).
+For more information, check out
+[PowerShell RFC0026](https://github.com/PowerShell/PowerShell-RFC/blob/master/5-Final/RFC0026-MSI-Installation-Path.md).
 
 ### Telemetry can only be disabled with an environment variable
 
@@ -548,12 +568,13 @@ For more information on these changes, check out [Issue #6779](https://github.co
 
 ### Removed `VisualBasic` as a supported language in Add-Type
 
-In the past, you could compile Visual Basic code using the `Add-Type` cmdlet.
-Visual Basic was rarely used with `Add-Type`. We removed this feature to reduce the size of PowerShell.
+In the past, you could compile Visual Basic code using the `Add-Type` cmdlet. Visual Basic was
+rarely used with `Add-Type`. We removed this feature to reduce the size of PowerShell.
 
 ### Cleaned up uses of `CommandTypes.Workflow` and `WorkflowInfoCleaned`
 
-For more information on these changes, check out [PR #6708](https://github.com/PowerShell/PowerShell/pull/6708).
+For more information on these changes, check out
+[PR #6708](https://github.com/PowerShell/PowerShell/pull/6708).
 
 ### Group-Object now sorts the groups
 

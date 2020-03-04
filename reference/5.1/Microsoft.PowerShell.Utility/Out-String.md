@@ -41,7 +41,7 @@ console.
 Get-Content -Path C:\Test\Testfile.txt | Out-String
 ```
 
-`Get-Culture` sends the contents of the `Testfile.txt` file down the pipeline. Each line of the file
+`Get-Content` sends the contents of the `Testfile.txt` file down the pipeline. Each line of the file
 has its own properties. `Out-String` converts the objects into an array of strings and then displays
 the contents as one string in the PowerShell console.
 

@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: PowerShellGet
 ms.date: 10/03/2019
-online version: https://docs.microsoft.com/powershell/module/powershellget/publish-module?view=powershell-7&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/powershellget/publish-module?view=powershell-7.x&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Publish-Module
 ---
@@ -94,6 +94,22 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -Confirm
+
+Prompts you for confirmation before running the `Publish-Module`.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Credential
 
 Specifies a user account that has rights to publish a module for a specified package provider or
@@ -108,6 +124,20 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -Exclude
+
+```yaml
+Type: String[]
+Parameter Sets: ModuleNameParameterSet
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -304,8 +334,6 @@ Accept wildcard characters: False
 Removes commands and resources from being included as tags. Skips automatically adding tags to a
 module.
 
-This parameter was introduced in PowerShell 7.
-
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
@@ -335,22 +363,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Confirm
-
-Prompts you for confirmation before running the `Publish-Module`.
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: (All)
-Aliases: cf
-
-Required: False
-Position: Named
-Default value: False
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -WhatIf
 
 Shows what would happen if the `Publish-Module` runs. The cmdlet is not run.
@@ -375,13 +387,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### PSModuleInfo
+### System.String
+
+### System.Management.Automation.PSCredential
 
 ## OUTPUTS
 
-### None
-
-`Publish-Module` shows no output if a module is published successfully.
+### System.Object
 
 ## NOTES
 

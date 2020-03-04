@@ -455,7 +455,7 @@ Specifies the session configuration that is used for the new **PSSession**.
 
 Enter a configuration name or the fully qualified resource URI for a session configuration. If you
 specify only the configuration name, the following schema URI is prepended:
-`http://schemas.microsoft.com/PowerShell`.
+`https://schemas.microsoft.com/PowerShell`.
 
 The session configuration for a session is located on the remote computer. If the specified session
 configuration does not exist on the remote computer, the command fails.
@@ -466,7 +466,7 @@ information, see [about_Preference_Variables](About/about_Preference_Variables.m
 
 ```yaml
 Type: String
-Parameter Sets: ComputerName, Uri, VMId, VMName, ContainerId
+Parameter Sets: ComputerName, VMId, Uri, VMName, ContainerId
 Aliases:
 
 Required: False
@@ -545,14 +545,15 @@ object and the password is stored as a [SecureString](/dotnet/api/system.securit
 > [How secure is SecureString?](/dotnet/api/system.security.securestring#how-secure-is-securestring).
 
 ```yaml
-Accept pipeline input: True (ByPropertyName)
-Position: Named
-Accept wildcard characters: False
-Parameter Sets: ComputerName, Uri, VMId, VMName
-Required: True (VMId, VMName), False (ComputerName, Uri)
-Default value: Current user
-Aliases:
 Type: PSCredential
+Parameter Sets: ComputerName, Uri, VMId, VMName
+Aliases:
+
+Required: True (VMId, VMName), False (ComputerName, Uri)
+Position: Named
+Default value: Current user
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
 ```
 
 ### -EnableNetworkAccess
@@ -815,7 +816,7 @@ The throttle limit applies only to the current command, not to the session or to
 
 ```yaml
 Type: Int32
-Parameter Sets: ComputerName, VMName, Uri, VMId, Session, ContainerId
+Parameter Sets: ComputerName, VMId, Uri, VMName, Session, ContainerId
 Aliases:
 
 Required: False

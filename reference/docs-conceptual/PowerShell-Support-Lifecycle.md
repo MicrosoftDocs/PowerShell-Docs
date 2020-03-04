@@ -66,22 +66,20 @@ Platforms listed as `Experimental` aren't officially supported, but are availabl
 experimentation and feedback.
 
 | Platform                                          |      6.2      |    7.0    |
-|---------------------------------------------------|:-------------:|:---------:|
-| Windows 7, 8.1, and 10                            |   Supported   | Supported |
-| Windows Server 2008 R2, 2012 R2, 2016             |   Supported   | Supported |
+| ------------------------------------------------- | :-----------: | :-------: |
+| Windows 8.1, and 10                               |   Supported   | Supported |
+| Windows Server 2012 R2, 2016                      |   Supported   | Supported |
 | [Windows Server Semi-Annual Channel][semi-annual] |   Supported   | Supported |
 | Ubuntu 16.04 and 18.04                            |   Supported   | Supported |
-| Ubuntu 18.10 (via Snap Package)                   |   Community   | Community |
-| Ubuntu 19.04 (via Snap Package)                   |   Community   | Community |
+| Ubuntu 19.10 (via Snap Package)                   |   Community   | Community |
+| Ubuntu 20.04 (via Snap Package)                   |   Community   | Community |
 | Debian 9                                          |   Supported   | Supported |
 | Debian 10                                         | Not Supported | Supported |
 | CentOS 7                                          |   Supported   | Supported |
 | CentOS 8                                          | Not Supported | Supported |
 | Red Hat Enterprise Linux 7                        |   Supported   | Supported |
 | Red Hat Enterprise Linux 8                        | Not Supported | Supported |
-| openSUSE 42.3                                     |   Supported   | Supported |
-| Fedora 28                                         |   Supported   | Supported |
-| Fedora 29, 30                                     | Not Supported | Supported |
+| Fedora 30                                         | Not Supported | Supported |
 | Alpine 3.8                                        |   See Note    | See Note  |
 | Alpine 3.9 and 3.10                               | Not Supported | See Note  |
 | macOS 10.12+                                      |   Supported   | Supported |
@@ -116,19 +114,23 @@ customers needing access but formal support and updates of any kind will no long
 
 So, the distribution owners ended support for the following versions and aren't supported.
 
-| Platform | Version | End of Life                                                                                 |
-|----------|---------|---------------------------------------------------------------------------------------------|
-| Fedora   | 24      | [August 2017](https://fedoramagazine.org/fedora-24-eol/)                                    |
-| Fedora   | 25      | [December 2017](https://fedoramagazine.org/fedora-25-end-life/)                             |
-| Fedora   | 26      | [May 2018](https://fedoramagazine.org/fedora-26-end-life/)                                  |
-| openSUSE | 42.1    | [May 2017](https://lists.opensuse.org/opensuse-security-announce/2017-05/msg00053.html)     |
-| openSUSE | 42.2    | [January 2018](https://lists.opensuse.org/opensuse-security-announce/2017-11/msg00066.html) |
-| Ubuntu   | 16.10   | [July 2017](https://lists.ubuntu.com/archives/ubuntu-announce/2017-July/000223.html)        |
-| Ubuntu   | 17.04   | [January 2018](https://lists.ubuntu.com/archives/ubuntu-announce/2018-January.txt)          |
-| Ubuntu   | 17.10   | [July 2018](https://lists.ubuntu.com/archives/ubuntu-announce/2018-July/000232.html)        |
-| Debian   | 8       | [June 2018](https://lists.debian.org/debian-security-announce/2018/msg00132.html)           |
-| Fedora   | 27      | [November 2018](https://fedoramagazine.org/fedora-27-end-of-life/)                          |
-| Ubuntu   | 14.04   | [April 2019](https://wiki.ubuntu.com/Releases)                                              |
+| Platform       | Version | End of Life                                                                                                                        |
+| -------------- | ------- | ---------------------------------------------------------------------------------------------------------------------------------- |
+| Debian         | 8       | [June 2018](https://lists.debian.org/debian-security-announce/2018/msg00132.html)                                                  |
+| Fedora         | 24      | [August 2017](https://fedoramagazine.org/fedora-24-eol/)                                                                           |
+| Fedora         | 25      | [December 2017](https://fedoramagazine.org/fedora-25-end-life/)                                                                    |
+| Fedora         | 26      | [May 2018](https://fedoramagazine.org/fedora-26-end-life/)                                                                         |
+| Fedora         | 27      | [November 2018](https://fedoramagazine.org/fedora-27-end-of-life/)                                                                 |
+| Fedora         | 28      | [May 2019](https://fedoramagazine.org/fedora-28-end-of-life/)                                                                      |
+| openSUSE       | 42.1    | [May 2017](https://lists.opensuse.org/opensuse-security-announce/2017-05/msg00053.html)                                            |
+| openSUSE       | 42.2    | [January 2018](https://lists.opensuse.org/opensuse-security-announce/2017-11/msg00066.html)                                        |
+| openSUSE       | 42.3    | [July 2019](https://lists.opensuse.org/opensuse-security-announce/2019-07/msg00000.html)                                           |
+| Ubuntu         | 14.04   | [April 2019](https://wiki.ubuntu.com/Releases)                                                                                     |
+| Ubuntu         | 16.10   | [July 2017](https://lists.ubuntu.com/archives/ubuntu-announce/2017-July/000223.html)                                               |
+| Ubuntu         | 17.04   | [January 2018](https://lists.ubuntu.com/archives/ubuntu-announce/2018-January.txt)                                                 |
+| Ubuntu         | 17.10   | [July 2018](https://lists.ubuntu.com/archives/ubuntu-announce/2018-July/000232.html)                                               |
+| Windows        | 7       | [January 2020](https://support.microsoft.com/en-us/help/4057281/windows-7-support-ended-on-january-14-2020)                        |
+| Windows Server | 2008 R2 | [January 2020](https://support.microsoft.com/en-us/help/4456235/end-of-support-for-windows-server-2008-and-windows-server-2008-r2) |
 
 ## Notes on licensing
 
@@ -165,6 +167,23 @@ Add-WindowsPSModulePath
 
 [Experimental features][] are limited to [community support](#community-support).
 
+## Release history
+
+The following table contains a timeline of the major releases of PowerShell. This table is provided
+for historical reference. It is not intended for use to determine the support lifecycle.
+
+|       Version        | Release Date |                                                                     Note                                                                      |
+| -------------------- | :----------: | --------------------------------------------------------------------------------------------------------------------------------------------- |
+| PowerShell 7.0 (LTS) |   Mar-2020   | Built on .NET Core 3.1 (LTS)                                                                                                                  |
+| PowerShell 6.0       |   Jan-2018   | First release, built on .NET Core 2.1. Installable on Windows, Linux, and macOS.                                                              |
+| PowerShell 5.1       |   Aug-2016   | Released in Windows 10 Anniversary Update and Windows Server 2016                                                                             |
+| PowerShell 5.0       |   Feb-2016   | Released in Windows Management Framework (WMF) 5.0                                                                                            |
+| PowerShell 4.0       |   Oct-2013   | Integrated in Windows 8.1 and with Windows Server 2012 R2. Installable on Windows 7 SP1, Windows Server 2008 R2 SP1, and Windows Server 2012. |
+| PowerShell 3.0       |   Oct-2012   | Integrated in Windows 8 and with Windows Server 2012. Installable on Windows 7 SP1, Windows Server 2008 SP1, and Windows Server 2008 R2 SP1.  |
+| PowerShell 2.0       |   Jul-2009   | Integrated in Windows 7 and Windows Server 2008 R2. Installable on Windows XP SP3, Windows Server 2003 SP2, and Windows Vista SP1.            |
+| PowerShell 1.0       |   Nov-2006   | Installable on Windows XP SP2, Windows Server 2003 SP1 and Windows Vista. Optional component of Windows Server 2008.                          |
+
+<!-- hyperlink references -->
 [Premier]: https://www.microsoft.com/en-us/microsoftservices/support.aspx
 [enterprise-agreement]: https://www.microsoft.com/en-us/licensing/licensing-programs/enterprise.aspx
 [assurance]: https://www.microsoft.com/en-us/licensing/licensing-programs/software-assurance-default.aspx

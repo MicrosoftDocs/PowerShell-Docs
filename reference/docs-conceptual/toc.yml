@@ -6,7 +6,7 @@
   items:
     - name: Installing various versions of PowerShell
       href: install/installing-powershell.md
-    - name: PowerShell Core
+    - name: Installing PowerShell
       items:
         - name: Installing PowerShell Core on Windows
           href: install/installing-powershell-core-on-windows.md
@@ -16,7 +16,7 @@
           href: install/installing-powershell-core-on-macos.md
         - name: Installing PowerShell Core on ARM
           href: install/powershell-core-on-arm.md
-    - name: Windows PowerShell
+    - name: Installing Windows PowerShell 5.1
       items:
         - name: Installing Windows PowerShell
           href: install/installing-windows-powershell.md
@@ -24,6 +24,8 @@
           href: install/installing-the-windows-powershell-2.0-engine.md
         - name: Windows PowerShell System Requirements
           href: install/windows-powershell-system-requirements.md
+    - name: Using PowerShell in Docker
+      href: install/PowerShell-in-Docker.md
 - name: Get started
   items:
     - name: Getting started with PowerShell
@@ -268,6 +270,10 @@
       href: gallery/faqs.md
 - name: What's New
   items:
+    - name: What's new in PowerShell 7.x
+      items:
+        - name: What's new in PowerShell 7.0
+          href: whats-new/what-s-new-in-powershell-70.md
     - name: What's new in PowerShell Core 6.x
       items:
         - name: What's new in PowerShell Core 6.2
@@ -288,6 +294,8 @@
           href: whats-new/what-s-new-in-windows-powershell-50.md
         - name: What's new in the PowerShell 5.0 ISE
           href: whats-new/what-s-new-in-the-powershell-50-ise.md
+    - name: Module and cmdlet release history
+      href: whats-new/cmdlet-versions.md
 - name: PowerShell Core support lifecycle
   href: powershell-support-lifecycle.md
 - name: Windows Management Framework (WMF)
@@ -652,8 +660,8 @@
           href: samples/creating-.net-and-com-objects--new-object-.md
         - name: Using static classes and methods
           href: samples/using-static-classes-and-methods.md
-        - name: Getting WMI objects - Get-WmiObject
-          href: samples/getting-wmi-objects--get-wmiobject-.md
+        - name: Getting WMI objects - Get-CimInstance
+          href: samples/getting-wmi-objects--get-ciminstance-.md
     - name: Managing computers
       items:
         - name: Changing computer state

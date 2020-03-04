@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Core
 ms.date: 03/26/2019
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/set-pssessionconfiguration?view=powershell-7&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/set-pssessionconfiguration?view=powershell-7.x&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-PSSessionConfiguration
 ---
@@ -151,7 +151,7 @@ Get-PSSessionConfiguration MaintenanceShell | Format-List -Property *
 ```
 
 ```Output
-xmlns            : http://schemas.microsoft.com/wbem/wsman/1/config/PluginConfiguration
+xmlns            : https://schemas.microsoft.com/wbem/wsman/1/config/PluginConfiguration
 Name             : MaintenanceShell
 Filename         : %windir%\system32\pwrshplugin.dll
 SDKVersion       : 1
@@ -159,7 +159,7 @@ XmlRenderingType : text
 lang             : en-US
 PSVersion        : 2.0
 startupscript    : c:\ps-test\Maintenance.ps1
-ResourceUri      : http://schemas.microsoft.com/powershell/MaintenanceShell
+ResourceUri      : https://schemas.microsoft.com/powershell/MaintenanceShell
 SupportsOptions  : true
 ExactMatch       : true
 Capability       : {Shell}
