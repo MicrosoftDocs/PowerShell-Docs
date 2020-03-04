@@ -20,6 +20,14 @@ the OS in separate steps.
 All packages are available on our GitHub [releases][] page. After the package is installed, run
 `pwsh` from a terminal. Run `pwsh-preview` if you installed a [Preview release](#installing-preview-releases).
 
+> [!NOTE]
+> PowerShell 7 is an in-place upgrade that removes PowerShell Core 6.x.
+>
+> The `/usr/local/microsoft/powershell/6` folder is replaced by `/usr/local/microsoft/powershell/7`.
+>
+> If you need to run PowerShell 6 side-by-side with PowerShell 7, reinstall PowerShell 6 using the
+> [binary archive](#binary-archives) method.
+
 [u16]: #ubuntu-1604
 [u1804]: #ubuntu-1804
 [u1810]: #ubuntu-1810
@@ -35,12 +43,6 @@ All packages are available on our GitHub [releases][] page. After the package is
 [snap]: #snap-package
 [tar]: #binary-archives
 
-> [!TIP]
-> If you already have the [.NET Core SDK](/dotnet/core/sdk) installed, it’s easy to install PowerShell as a [.NET Global tool](/dotnet/core/tools/global-tools).
->
-> ```
-> dotnet tool install --global PowerShell
-> ```
 
 ## Installing Preview Releases
 
@@ -715,6 +717,15 @@ sudo ~/powershell/pwsh -c New-Item -ItemType SymbolicLink -Path "/usr/bin/pwsh" 
 
 ```sh
 rm -rf ~/powershell
+```
+
+## Install as a .NET Global tool
+
+If you already have the [.NET Core SDK](/dotnet/core/sdk) installed, it's easy to install PowerShell
+as a [.NET Global tool](/dotnet/core/tools/global-tools).
+
+```
+dotnet tool install --global PowerShell
 ```
 
 ## Binary Archives

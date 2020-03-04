@@ -10,18 +10,20 @@ PowerShell Core supports macOS 10.12 and higher.
 All packages are available on our GitHub [releases][] page.
 After the package is installed, run `pwsh` from a terminal.
 
-> [!TIP]
-> If you already have the [.NET Core SDK](/dotnet/core/sdk) installed, it’s easy to install PowerShell as a [.NET Global tool](/dotnet/core/tools/global-tools).
+> [!NOTE]
+> PowerShell 7 is an in-place upgrade that removes PowerShell Core 6.x.
 >
-> ```
-> dotnet tool install --global PowerShell
-> ```
+> The `/usr/local/microsoft/powershell/6` folder is replaced by `/usr/local/microsoft/powershell/7`.
+>
+> If you need to run PowerShell 6 side-by-side with PowerShell 7, reinstall PowerShell 6 using the
+> [binary archive](#binary-archives) method.
 
 ## About Brew
 
-[Homebrew][brew] is the preferred package manager for macOS.
-If the `brew` command is not found, you need to install Homebrew following [their instructions][brew].
-Otherwise you may install PowerShell via [Direct Download](#installation-via-direct-download) or from [Binary Archives](#binary-archives).
+[Homebrew][brew] is the preferred package manager for macOS. If the `brew` command is not found, you
+need to install Homebrew following [their instructions][brew]. Otherwise you may install PowerShell
+via [Direct Download](#installation-via-direct-download) or from
+[Binary Archives](#binary-archives).
 
 ## Installation of latest stable release via Homebrew on macOS 10.12 or higher
 
@@ -104,6 +106,15 @@ sudo installer -pkg powershell-6.2.0-osx-x64.pkg -target /
 ```
 
 Install [OpenSSL](#install-openssl). OpenSSL is needed for PowerShell remoting and CIM operations.
+
+## Install as a .NET Global tool
+
+If you already have the [.NET Core SDK](/dotnet/core/sdk) installed, it's easy to install PowerShell
+as a [.NET Global tool](/dotnet/core/tools/global-tools).
+
+```
+dotnet tool install --global PowerShell
+```
 
 ## Binary Archives
 

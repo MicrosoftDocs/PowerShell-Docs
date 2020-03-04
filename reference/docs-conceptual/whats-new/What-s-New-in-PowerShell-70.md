@@ -61,17 +61,15 @@ For more up-to-date information about supported operating systems and support li
 PowerShell 7 installs to a new directory and runs side-by-side with Windows PowerShell 5.1. For
 PowerShell Core 6.x, PowerShell 7 is an in-place upgrade that removes PowerShell Core 6.x.
 
-- Windows PowerShell 5.1 : `C:\Windows\System32\WindowsPowerShell\v1.0` will add
-`%programfiles%\PowerShell\7`
+- PowerShell 7 is installed to `%programfiles%\PowerShell\7`
+- The `%programfiles%\PowerShell\7` folder is added to `$env:PATH`
 
-PowerShell 7 will upgrade previous versions of PowerShell Core 6.x:
+The PowerShell 7 installer packages upgrade previous versions of PowerShell Core 6.x:
 
 - PowerShell Core 6.x on Windows: `%programfiles%\PowerShell\6` is replaced by
- `%programfiles%\PowerShell\7`
-- Linux: `/opt/microsoft/powershell/6` is replaced by
-`/opt/microsoft/powershell/7`
-- macOS: `/usr/local/microsoft/powershell/6` is replaced by
-`/usr/local/microsoft/powershell/7`
+  `%programfiles%\PowerShell\7`
+- Linux: `/opt/microsoft/powershell/6` is replaced by `/opt/microsoft/powershell/7`
+- macOS: `/usr/local/microsoft/powershell/6` is replaced by `/usr/local/microsoft/powershell/7`
 
 > [!NOTE]
 > In Windows PowerShell, the executable to launch PowerShell is named `powershell.exe`. In version 6
