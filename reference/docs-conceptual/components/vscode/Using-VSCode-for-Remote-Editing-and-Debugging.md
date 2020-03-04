@@ -39,7 +39,7 @@ With the PowerShell extension for VSCode started and the PowerShell Integrated C
 can type `Open-EditorFile foo.ps1` or `psedit foo.ps1` to open the local foo.ps1 file right in the
 editor.
 
-![Open-EditorFile foo.ps1 works locally](images/Using-VSCode-for-Remote-Editing-and-Debugging/1-open-local-file.png)
+![Open-EditorFile foo.ps1 works locally](media/Using-VSCode-for-Remote-Editing-and-Debugging/1-open-local-file.png)
 
 >[!NOTE]
 > The file `foo.ps1` must already exist.
@@ -48,11 +48,11 @@ From there, we can:
 
 - Add breakpoints to the gutter
 
-  ![adding breakpoint to gutter](images/Using-VSCode-for-Remote-Editing-and-Debugging/2-adding-breakpoint-gutter.png)
+  ![adding breakpoint to gutter](media/Using-VSCode-for-Remote-Editing-and-Debugging/2-adding-breakpoint-gutter.png)
 
 - Hit F5 to debug the PowerShell script.
 
-  ![debugging the PowerShell local script](images/Using-VSCode-for-Remote-Editing-and-Debugging/3-local-debug.png)
+  ![debugging the PowerShell local script](media/Using-VSCode-for-Remote-Editing-and-Debugging/3-local-debug.png)
 
 While debugging, you can interact with the debug console, check out the variables in the scope on
 the left, and all the other standard debugging tools.
@@ -77,20 +77,20 @@ Since we are going from macOS to an Ubuntu VM in Azure, we are using SSH for rem
 First, in the Integrated Console, run `Enter-PSSession`. You're connected to the remote session
 when `[<hostname>]` shows up to the left of your prompt.
 
-![The call to Enter-PSSession](images/Using-VSCode-for-Remote-Editing-and-Debugging/4-enter-pssession.png)
+![The call to Enter-PSSession](media/Using-VSCode-for-Remote-Editing-and-Debugging/4-enter-pssession.png)
 
 Now, we can do the same steps as if we are editing a local script.
 
 1. Run `Open-EditorFile test.ps1` or `psedit test.ps1` to open the remote `test.ps1` file
 
-  ![Open-EditorFile the test.ps1 file](images/Using-VSCode-for-Remote-Editing-and-Debugging/5-open-remote-file.png)
+  ![Open-EditorFile the test.ps1 file](media/Using-VSCode-for-Remote-Editing-and-Debugging/5-open-remote-file.png)
 
 1. Edit the file/set breakpoints
 
-   ![edit and set breakpoints](images/Using-VSCode-for-Remote-Editing-and-Debugging/6-set-breakpoints.png)
+   ![edit and set breakpoints](media/Using-VSCode-for-Remote-Editing-and-Debugging/6-set-breakpoints.png)
 
 1. Start debugging (F5) the remote file
 
-   ![debugging the remote file](images/Using-VSCode-for-Remote-Editing-and-Debugging/7-start-debugging.png)
+   ![debugging the remote file](media/Using-VSCode-for-Remote-Editing-and-Debugging/7-start-debugging.png)
 
 If you have any problems, you can open issues in the [GitHub repo](https://github.com/powershell/vscode-powershell).
