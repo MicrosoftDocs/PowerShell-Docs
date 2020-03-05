@@ -70,3 +70,5 @@ will remove the **c:\ModulePath** path from the current session.
 ## See Also
 
 [Writing a Windows PowerShell Module](./writing-a-windows-powershell-module.md)
+
+[about_Modules](../../../7.0/Microsoft.PowerShell.Core/About/about_modules.md)
