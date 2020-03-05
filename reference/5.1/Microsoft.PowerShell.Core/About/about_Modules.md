@@ -289,7 +289,7 @@ locations that are searched to find modules and resources.
 
 The default locations assigned to `$env:PSModulePath` are:
 
-- System-wide locations: `$PSHOME\Modules` or (`$env:windir\System32\PowerShell\<version>\Modules`)
+- System-wide locations: `$PSHOME\Modules` or (`$env:windir\System32\WindowsPowerShell\<version>\Modules`)
 
   These folders contain modules that ship with Windows and PowerShell.
 
