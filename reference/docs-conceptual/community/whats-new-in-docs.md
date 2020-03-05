@@ -22,7 +22,7 @@ Highlights
   - 49 issues opened (42 from Community)
   - 55 issues closed
 
-Top Contributors
+Top Community Contributors
 
 - Maamue - 2 PRs
 - doctordns - 2 PRs
@@ -44,7 +44,7 @@ Highlights
   - 57 issues opened (43 from Community)
   - 70 issues closed
 
-Top Contributors
+Top Community Contributors
 
 - Makovec - 3 PRs
 - mklement0 - 9 issues
