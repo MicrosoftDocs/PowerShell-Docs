@@ -6,23 +6,28 @@ ms.date: 03/04/2020
 
 # What's new in PowerShell Docs
 
-## Documentation update
+This article lists some of the major changes to docs during this previous month and celebrates the
+contributions from the community.
 
-### 2020-February
+## 2020-February
 
-Highlights
+### Highlights
 
-- PowerShell 7 documentation updates
-- Updates to address issues
-- New documents added
+- New documents
   - [about_Parameter_Sets](/powershell/module/microsoft.powershell.core/about/about_parameter_sets)
   - [Release history of modules and cmdlets](/powershell/scripting/whats-new/cmdlet-versions)
+- PowerShell 7 documentation updates
+- Updates to address issues
+- Ran PlatyPS to verify parameter info for all cmdlets and versions
 - GitHub stats
   - 52 PRs merged (9 from Community)
   - 49 issues opened (42 from Community)
   - 55 issues closed
 
-Top Community Contributors
+### Top Community Contributors
+
+The following people have contributed to PowerShell docs by submitting Pull Requests or filling
+Issues. Thank you!
 
 - Maamue - 2 PRs
 - doctordns - 2 PRs
@@ -31,20 +36,23 @@ Top Community Contributors
 - VectorBCO - 2 issues
 - metablaster - 2 issues
 
-### 2020-January
+## 2020-January
 
-Highlights
+### Highlights
 
+- New documents
+  - [about_Windows_PowerShell_Compatibility](/powershell/module/microsoft.powershell.core/about/about_Windows_PowerShell_Compatibility)
 - PowerShell 7 documentation updates
 - Updates to address issues
-- New documents added
-  - [about_Windows_PowerShell_Compatibility](/powershell/module/microsoft.powershell.core/about/about_Windows_PowerShell_Compatibility)
 - GitHub stats
   - 58 PRs merged (7 from Community)
   - 57 issues opened (43 from Community)
   - 70 issues closed
 
-Top Community Contributors
+### Top Community Contributors
+
+The following people have contributed to PowerShell docs by submitting Pull Requests or filling
+Issues. Thank you!
 
 - Makovec - 3 PRs
 - mklement0 - 9 issues
@@ -56,7 +64,8 @@ Top Community Contributors
 ## Community Contributor Hall of Fame
 
 The PowerShell Community is a vibrant and collaborative group. We greatly appreciate all the help
-and support we get from the community.
+and support we get from the community. Learn how you can contribute by reading the
+[Contributor's Guide][contrib].
 
 As of March 1, 2020, these GitHub users are the All-Time Top Community Contributors.
 
@@ -96,3 +105,11 @@ GitHub issues help us identify errors and gaps in our documentation.
 | KirkMunro          |      |      |    7 |    7 |      |          14 |
 | vexx32             |      |      |    3 |   11 |      |          14 |
 | alexandair         |    6 |    4 |    2 |      |      |          12 |
+
+## Get involved!
+
+Help us make the documentation better for you. Learn how you can contribute by reading the
+[Contributor's Guide][contrib].
+
+<!-- Link references -->
+[contrib]: contributing/overview.md

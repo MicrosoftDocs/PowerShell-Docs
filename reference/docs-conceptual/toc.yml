@@ -732,6 +732,10 @@
       href: community/digital-art.md
     - name: What's in PowerShell Docs
       href: community/whats-new-in-docs.md
+    - name: Contributor's Guide
+      items:
+        - name: Editor's checklist
+          href: community/contributing/editor-checklist.md
 - name: PowerShell SDK
   items:
     - name: Overview
