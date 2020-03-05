@@ -1,12 +1,12 @@
 ---
-title: Installing PowerShell Core on macOS
-description: Information about installing PowerShell Core on macOS
+title: Installing PowerShell on macOS
+description: Information about installing PowerShell on macOS
 ms.date: 12/12/2018
 ---
 
-# Installing PowerShell Core on macOS
+# Installing PowerShell on macOS
 
-PowerShell Core supports macOS 10.12 and higher.
+PowerShell supports macOS 10.12 and higher.
 All packages are available on our GitHub [releases][] page.
 After the package is installed, run `pwsh` from a terminal.
 
@@ -176,7 +176,7 @@ sudo mkdir -p /usr/local/opt/openssl
 sudo ln -s /opt/local/lib /usr/local/opt/openssl/lib
 ```
 
-## Uninstalling PowerShell Core
+## Uninstalling PowerShell
 
 If you installed PowerShell with Homebrew, use the following command to uninstall:
 
