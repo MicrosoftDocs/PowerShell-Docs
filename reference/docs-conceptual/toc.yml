@@ -727,11 +727,11 @@
 - name: Community
   items:
     - name: Community resources
-      href: community-support.md
+      href: community/community-support.md
     - name: Digital art
-      href: digital-art.md
+      href: community/digital-art.md
     - name: What's in PowerShell Docs
-      href: what-new-in-docs.md
+      href: community/what-new-in-docs.md
 - name: PowerShell SDK
   items:
     - name: Overview
