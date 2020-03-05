@@ -62,6 +62,23 @@ PowerShell binary ZIP archives are provided to enable advanced deployment scenar
 when using the ZIP archive, you won't get the prerequisites check as in the MSI package. For
 remoting over WSMan to work properly, ensure that you have met the [prerequisites](#prerequisites).
 
+## <a id="choco" />Installation via Chocolatey
+
+If you are using chocolatey, you can install PowerShell using the following command:
+
+From an elevated prompt:
+```powershell
+choco install powershell-core -y
+```
+
+If you wish to _upgrade_ your currently installed PowerShell version with chocolatey, you can do so by issuing the following command:
+
+From an elevated prompt
+```powershell
+choco upgrade powershell-core -y
+```
+
+
 ## Deploying on Windows IoT
 
 Windows IoT already comes with Windows PowerShell which we will use to deploy PowerShell Core 6.
