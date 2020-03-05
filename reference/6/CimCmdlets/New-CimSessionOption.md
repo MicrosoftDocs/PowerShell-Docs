@@ -258,7 +258,8 @@ Accept wildcard characters: False
 
 ### -Protocol
 
-Specifies the protocol to use. The acceptable values for this parameter are: DCOM or WinRM.
+Specifies the protocol to use. The acceptable values for this parameter are: **DCOM**, **Default**,
+or **Wsman**.
 
 ```yaml
 Type: ProtocolType
