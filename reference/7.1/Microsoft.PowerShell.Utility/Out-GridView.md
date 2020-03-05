@@ -54,7 +54,9 @@ For full instructions, see the [Notes](#notes) section of this article.
 
 > [!NOTE]
 > This cmdlet was reintroduced in PowerShell 7. This cmdlet is only available on Windows systems
-> that support the Windows Desktop.
+> that support the Windows Desktop. For a cross-platform version of this cmdlet, see the
+> [GraphicalTools](https://www.powershellgallery.com/packages/Microsoft.PowerShell.GraphicalTools)
+> module in the PowerShell Gallery.
 
 ## EXAMPLES
 
