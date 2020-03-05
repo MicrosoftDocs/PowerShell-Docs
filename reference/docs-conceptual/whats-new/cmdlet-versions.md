@@ -397,7 +397,7 @@ This is a work in progress. Please help us keep this information fresh.
 | New-TimeSpan              | &check; | &check; | &check; | &check; |                                           |
 | New-Variable              | &check; | &check; | &check; | &check; |                                           |
 | Out-File                  | &check; | &check; | &check; | &check; |                                           |
-| Out-GridView              | &check; |         | &check; | &check; |                                           |
+| Out-GridView              | &check; |         | &check; | &check; | Windows only                              |
 | Out-Printer               | &check; |         | &check; | &check; |                                           |
 | Out-String                | &check; | &check; | &check; | &check; |                                           |
 | Read-Host                 | &check; | &check; | &check; | &check; |                                           |
