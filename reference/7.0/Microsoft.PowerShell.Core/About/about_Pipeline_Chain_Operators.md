@@ -120,7 +120,7 @@ $result
 2
 ```
 
-If a script-terminating error is thrown during assignment from a pipeline
+If a script-terminating error is occurs during assignment from a pipeline
 chain, the assignment does not succeed:
 
 ```powershell
@@ -300,7 +300,7 @@ Test-NotTwo : Input is 2
 ```
 
 Note that `Write-Output 'All done!'` is not executed, since `Test-NotTwo` is
-deemed to have failed after throwing the non-terminating error.
+deemed to have failed after generating the non-terminating error.
 
 ## See also
 
