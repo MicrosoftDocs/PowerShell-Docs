@@ -731,7 +731,7 @@
     - name: Digital art
       href: community/digital-art.md
     - name: What's in PowerShell Docs
-      href: community/what-new-in-docs.md
+      href: community/whats-new-in-docs.md
 - name: PowerShell SDK
   items:
     - name: Overview
