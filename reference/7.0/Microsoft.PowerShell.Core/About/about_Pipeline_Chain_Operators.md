@@ -120,8 +120,8 @@ $result
 2
 ```
 
-If a script-terminating error is occurs during assignment from a pipeline
-chain, the assignment does not succeed:
+If a script-terminating error occurs during assignment from a pipeline chain, the assignment does
+not succeed:
 
 ```powershell
 try
