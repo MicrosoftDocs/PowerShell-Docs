@@ -156,6 +156,10 @@ Methods define the actions that a class can perform. Methods may take
 parameters that provide input data. Methods can return output. Data returned by
 a method can be any defined data type.
 
+When defining a method for a class, you reference the current class object by
+using the `$this` automatic variable. This allows you to access properties and
+other methods defined in the current class.
+
 ### Example simple class with properties and methods
 
 Extending the **Rack** class to add and remove devices
