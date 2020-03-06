@@ -41,7 +41,7 @@ To use WMI to set the default printer, find the printer in the **Win32_Printer**
 invoke the **SetDefaultPrinter** method:
 
 ```powershell
-$printer = Get-CimInstance -Class Win32_Printer -Filter "Name='HP LaserJet 5Si'")
+$printer = Get-CimInstance -Class Win32_Printer -Filter "Name='HP LaserJet 5Si'"
 Invoke-CimMethod -InputObject $printer -MethodName SetDefaultPrinter
 ```
 
