@@ -25,10 +25,6 @@ Availability:
 
 Status: Untested with Compatibility Layer
 
-Availability:
-
-- Under investigation
-
 ### AppBackgroundTask
 
 Status: Natively Compatible
@@ -41,17 +37,9 @@ Availability:
 
 Status: Untested with Compatibility Layer
 
-Availability:
-
-- Under investigation
-
 ### AppvClient
 
 Status: Untested with Compatibility Layer
-
-Availability:
-
-- Under investigation
 
 ### Appx
 
@@ -73,10 +61,6 @@ Availability:
 ### BestPractices
 
 Status: Untested with Compatibility Layer
-
-Availability:
-
-- Under investigation
 
 ### BitLocker
 
@@ -100,10 +84,6 @@ Availability:
 
 Status: Untested with Compatibility Layer
 
-Availability:
-
-- Under investigation
-
 ### BranchCache
 
 Status: Natively Compatible
@@ -125,17 +105,9 @@ Availability:
 
 Status: Untested with Compatibility Layer
 
-Availability:
-
-- Under investigation
-
 ### ConfigCI
 
 Status: Untested with Compatibility Layer
-
-Availability:
-
-- Under investigation
 
 ### Defender
 
@@ -168,17 +140,9 @@ Availability:
 
 Status: Untested with Compatibility Layer
 
-Availability:
-
-- Under investigation
-
 ### DhcpServer
 
 Status: Untested with Compatibility Layer
-
-Availability:
-
-- Under investigation
 
 ### DirectAccessClientComponents
 
@@ -229,17 +193,9 @@ Availability:
 
 Status: Untested with Compatibility Layer
 
-Availability:
-
-- Under investigation
-
 ### FailoverClusterSet
 
 Status: Untested with Compatibility Layer
-
-Availability:
-
-- Under investigation
 
 ### FileServerResourceManager
 
@@ -252,10 +208,6 @@ Availability:
 ### GroupPolicy
 
 Status: Untested with Compatibility Layer
-
-Availability:
-
-- Under investigation
 
 ### HgsClient
 
@@ -288,10 +240,6 @@ Availability:
 
 Status: Untested with Compatibility Layer
 
-Availability:
-
-- Under investigation
-
 ### International
 
 Status: Natively Compatible
@@ -305,33 +253,17 @@ Availability:
 
 Status: Untested with Compatibility Layer
 
-Availability:
-
-- Under investigation
-
 ### iSCSI
 
 Status: Untested with Compatibility Layer
-
-Availability:
-
-- Under investigation
 
 ### IscsiTarget
 
 Status: Untested with Compatibility Layer
 
-Availability:
-
-- Under investigation
-
 ### ISE
 
 Status: Untested with Compatibility Layer
-
-Availability:
-
-- Under investigation
 
 ### Kds
 
@@ -387,10 +319,6 @@ Availability:
 
 Status: Untested with Compatibility Layer
 
-Availability:
-
-- Under investigation
-
 ### Microsoft.PowerShell.Security
 
 Status: Natively Compatible
@@ -436,10 +364,6 @@ Availability:
 
 Status: Untested with Compatibility Layer
 
-Availability:
-
-- Under investigation
-
 ### NetAdapter
 
 Status: Natively Compatible
@@ -479,10 +403,6 @@ Availability:
 ### NetLldpAgent
 
 Status: Untested with Compatibility Layer
-
-Availability:
-
-- Under investigation
 
 ### NetNat
 
@@ -533,10 +453,6 @@ Availability:
 
 Status: Untested with Compatibility Layer
 
-Availability:
-
-- Under investigation
-
 ### NetworkConnectivityStatus
 
 Status: Natively Compatible
@@ -550,25 +466,13 @@ Availability:
 
 Status: Untested with Compatibility Layer
 
-Availability:
-
-- Under investigation
-
 ### NetworkControllerDiagnostics
 
 Status: Untested with Compatibility Layer
 
-Availability:
-
-- Under investigation
-
 ### NetworkLoadBalancingClusters
 
 Status: Untested with Compatibility Layer
-
-Availability:
-
-- Under investigation
 
 ### NetworkSwitchManager
 
@@ -618,17 +522,9 @@ Availability:
 
 Status: Untested with Compatibility Layer
 
-Availability:
-
-- Under investigation
-
 ### PKI
 
 Status: Untested with Compatibility Layer
-
-Availability:
-
-- Under investigation
 
 ### PnpDevice
 
@@ -669,10 +565,6 @@ Availability:
 
 Status: Untested with Compatibility Layer
 
-Availability:
-
-- Under investigation
-
 ### PSDesiredStateConfiguration
 
 Status: Partially
@@ -701,33 +593,17 @@ Availability:
 
 Status: Untested with Compatibility Layer
 
-Availability:
-
-- Under investigation
-
 ### PSWorkflowUtility
 
 Status: Untested with Compatibility Layer
-
-Availability:
-
-- Under investigation
 
 ### RemoteAccess
 
 Status: Untested with Compatibility Layer
 
-Availability:
-
-- Under investigation
-
 ### RemoteDesktop
 
 Status: Untested with Compatibility Layer
-
-Availability:
-
-- Under investigation
 
 ### ScheduledTasks
 
@@ -751,25 +627,13 @@ Availability:
 
 Status: Untested with Compatibility Layer
 
-Availability:
-
-- Under investigation
-
 ### ServerManager
 
 Status: Untested with Compatibility Layer
 
-Availability:
-
-- Under investigation
-
 ### ServerManagerTasks
 
 Status: Untested with Compatibility Layer
-
-Availability:
-
-- Under investigation
 
 ### ShieldedVMDataFile
 
@@ -828,10 +692,6 @@ Availability:
 
 Status: Untested with Compatibility Layer
 
-Availability:
-
-- Under investigation
-
 ### SoftwareInventoryLogging
 
 Status: Natively Compatible
@@ -862,17 +722,9 @@ Availability:
 
 Status: Untested with Compatibility Layer
 
-Availability:
-
-- Under investigation
-
 ### StorageMigrationService
 
 Status: Untested with Compatibility Layer
-
-Availability:
-
-- Under investigation
 
 ### StorageQOS
 
@@ -887,10 +739,6 @@ Availability:
 
 Status: Untested with Compatibility Layer
 
-Availability:
-
-- Under investigation
-
 ### SyncShare
 
 Status: Natively Compatible
@@ -903,17 +751,9 @@ Availability:
 
 Status: Untested with Compatibility Layer
 
-Availability:
-
-- Under investigation
-
 ### TLS
 
 Status: Untested with Compatibility Layer
-
-Availability:
-
-- Under investigation
 
 ### TroubleshootingPack
 
@@ -945,10 +785,6 @@ Availability:
 
 Status: Not working with Compatibility Layer
 
-Availability:
-
-- Under investigation
-
 ### VpnClient
 
 Status: Natively Compatible
@@ -970,10 +806,6 @@ Availability:
 ### WebAdministration
 
 Status: Untested with Compatibility Layer
-
-Availability:
-
-- Under investigation
 
 ### WHEA
 
