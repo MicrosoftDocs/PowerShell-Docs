@@ -318,7 +318,7 @@ Trace-Command -PSHost -Name Modules -Expression { Import-Module Microsoft.PowerS
   following command format to change the value of the `PSModulePath` environment
   variable.
 
-  For example, to add the `C:\\Program Files\\Fabrikam\\Modules` directory to
+  For example, to add the `C:\Program Files\Fabrikam\Modules` directory to
   the value of the PSModulePath environment variable, type:
 
   ```powershell
@@ -334,7 +334,7 @@ Trace-Command -PSHost -Name Modules -Expression { Import-Module Microsoft.PowerS
 
   The following command uses the **GetEnvironmentVariable** method to get the
   machine setting of `PSModulePath` and the **SetEnvironmentVariable** method
-  to add the `C:\\Program Files\\Fabrikam\\Modules` path to the value.
+  to add the `C:\Program Files\Fabrikam\Modules` path to the value.
 
   ```powershell
   $path = [System.Environment]::GetEnvironmentVariable("PSModulePath",
