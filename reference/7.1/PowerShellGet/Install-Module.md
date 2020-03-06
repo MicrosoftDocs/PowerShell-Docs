@@ -240,7 +240,7 @@ Accept wildcard characters: False
 Specifies the maximum version of a single module to install. The version installed must be less than
 or equal to **MaximumVersion**. If you want to install multiple modules, you cannot use
 **MaximumVersion**. **MaximumVersion** and **RequiredVersion** cannot be used in the same
-`Install-Module` command. 
+`Install-Module` command.
 
 ```yaml
 Type: String
@@ -527,3 +527,5 @@ The publisher will specify the required modules and their versions in the module
 [Uninstall-Module](Uninstall-Module.md)
 
 [Update-Module](Update-Module.md)
+
+[about_Module](../Microsoft.PowerShell.Core/About/about_Modules)

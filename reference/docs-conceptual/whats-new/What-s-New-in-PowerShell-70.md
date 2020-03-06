@@ -134,7 +134,7 @@ PowerShell's ternary operator is closely modeled from the C# ternary operator sy
 <condition> ? <if-true> : <if-false>
 ```
 
-The condition-expression is always evaluated, and its result ware converted to a **Boolean** to
+The condition-expression is always evaluated and its result converted to a **Boolean** to
 determine which branch is evaluated next:
 
 - The `<if-true>` expression is executed if the `<condition>` expression is true
@@ -260,7 +260,7 @@ $todaysDate ??= (Get-Date).ToShortDateString()
 ### Null conditional member access operators ?. and ?[] (Experimental)
 
 > [!NOTE]
-> This is an experimental feature named **PSNullConditionalOperators**. To learn more
+> This is an experimental feature named **PSNullConditionalOperators**. Learn more
 > [About Experimental Features](/powershell/module/microsoft.powershell.core/about/about_experimental_features?view=powershell-7).
 
 A null conditional operator permits member access, `?.`, or element access, `?[]`, to its operand
@@ -327,7 +327,7 @@ that line. If the terminal doesn't support ANSI color escape sequences (VT100), 
 
 ![Error display from a script](./media/What-s-New-in-PowerShell-70/myscript-error.png)
 
-The default view in PowerShell 7 is **ConciseView**. The previous default view **NormalView** are
+The default view in PowerShell 7 is **ConciseView**. The previous default view was **NormalView** and is
 user selectable by setting the preference variable `$ErrorView`.
 
 ```powershell
@@ -406,7 +406,7 @@ For more information [About Update Notifications](/powershell/module/microsoft.p
 ## New DSC Resource support with Invoke-DSCResource (Experimental)
 
 > [!NOTE]
-> This is an experimental feature named **PSDesiredStateConfiguration.InvokeDscResource**. To learn
+> This is an experimental feature named **PSDesiredStateConfiguration.InvokeDscResource**. Learn
 > more
 > [About Experimental Features](/powershell/module/microsoft.powershell.core/about/about_experimental_features?view=powershell-7).
 
