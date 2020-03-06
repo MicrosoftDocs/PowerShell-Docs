@@ -46,7 +46,7 @@ Add-WindowsCapability -Online -Name Rsat.ServerManager.Tools~~~~0.0.1.0
 
 Status: Natively Compatible
 
-Availability:
+Compatible with:
 
 - Server version: 1809+ with RSAT-AD-PowerShell
 - Windows 10 version: 1809+ with Rsat.ActiveDirectory.DS-LDS.Tools
@@ -59,7 +59,7 @@ Status: Untested with Compatibility Layer
 
 Status: Natively Compatible
 
-Availability:
+Compatible with:
 
 - Windows 10 version: 1903+
 
@@ -75,7 +75,7 @@ Status: Untested with Compatibility Layer
 
 Status: Natively Compatible
 
-Availability:
+Compatible with:
 
 - Server version: 1809+
 - Windows 10 version: 1809+
@@ -84,7 +84,7 @@ Availability:
 
 Status: Natively Compatible
 
-Availability:
+Compatible with:
 
 - Windows 10 version: 1809+
 
@@ -96,7 +96,7 @@ Status: Untested with Compatibility Layer
 
 Status: Natively Compatible
 
-Availability:
+Compatible with:
 
 - Server version: 1809+ with BitLocker
 - Windows 10 version: 1809+
@@ -105,7 +105,7 @@ Availability:
 
 Status: Natively Compatible
 
-Availability:
+Compatible with:
 
 - Server version: 20H1
 - Windows 10 version: 20H1
@@ -118,7 +118,7 @@ Status: Untested with Compatibility Layer
 
 Status: Natively Compatible
 
-Availability:
+Compatible with:
 
 - Server version: 1809+
 - Windows 10 version: 1809+
@@ -127,7 +127,7 @@ Availability:
 
 Status: Natively Compatible
 
-Availability:
+Compatible with:
 
 - Built into PowerShell 7
 
@@ -143,7 +143,7 @@ Status: Untested with Compatibility Layer
 
 Status: Natively Compatible
 
-Availability:
+Compatible with:
 
 - Server version: 1809+
 - Windows 10 version: 1809+
@@ -152,7 +152,7 @@ Availability:
 
 Status: Natively Compatible
 
-Availability:
+Compatible with:
 
 - Server version: 1903+
 - Windows 10 version: 1903+
@@ -161,7 +161,7 @@ Availability:
 
 Status: Natively Compatible
 
-Availability:
+Compatible with:
 
 - Server version: 1809+ with FS-DFS-Namespace
 - Windows 10 version: 1809+ with Rsat.FailoverCluster.Management.Tools
@@ -178,7 +178,7 @@ Status: Untested with Compatibility Layer
 
 Status: Natively Compatible
 
-Availability:
+Compatible with:
 
 - Server version: 1809+
 - Windows 10 version: 1809+
@@ -187,7 +187,7 @@ Availability:
 
 Status: Natively Compatible
 
-Availability:
+Compatible with:
 
 - Server version: 1903+
 - Windows 10 version: 1903+
@@ -196,7 +196,7 @@ Availability:
 
 Status: Natively Compatible
 
-Availability:
+Compatible with:
 
 - Server version: 1809+
 - Windows 10 version: 1809+
@@ -205,7 +205,7 @@ Availability:
 
 Status: Natively Compatible
 
-Availability:
+Compatible with:
 
 - Server version: 1809+ with DNS or RSAT-DNS-Server
 - Windows 10 version: 1809+ with Rsat.Dns.Tools
@@ -214,7 +214,7 @@ Availability:
 
 Status: Natively Compatible
 
-Availability:
+Compatible with:
 
 - Server version: 1809+
 - Windows 10 version: 1809+
@@ -231,7 +231,7 @@ Status: Untested with Compatibility Layer
 
 Status: Natively Compatible
 
-Availability:
+Compatible with:
 
 - Server version: 1809+ with FS-Resource-Manager
 
@@ -243,7 +243,7 @@ Status: Untested with Compatibility Layer
 
 Status: Natively Compatible
 
-Availability:
+Compatible with:
 
 - Server version: 1903+ with Hyper-V or RSAT-Shielded-VM-Tools
 - Windows 10 version: 1903+ with Rsat.Shielded.VM.Tools
@@ -252,7 +252,7 @@ Availability:
 
 Status: Natively Compatible
 
-Availability:
+Compatible with:
 
 - Server version: 1809+ with Hyper-V or RSAT-Shielded-VM-Tools
 - Windows 10 version: 1809+ with Rsat.Shielded.VM.Tools
@@ -261,7 +261,7 @@ Availability:
 
 Status: Natively Compatible
 
-Availability:
+Compatible with:
 
 - Server version: 1809+ with Hyper-V-PowerShell
 - Windows 10 version: 1809+ with Microsoft-Hyper-V-Management-PowerShell
@@ -274,7 +274,7 @@ Status: Untested with Compatibility Layer
 
 Status: Natively Compatible
 
-Availability:
+Compatible with:
 
 - Server version: 1903+
 - Windows 10 version: 1903+
@@ -299,7 +299,7 @@ Status: Untested with Compatibility Layer
 
 Status: Natively Compatible
 
-Availability:
+Compatible with:
 
 - Server version: 20H1
 - Windows 10 version: 20H1
@@ -308,7 +308,7 @@ Availability:
 
 Status: Natively Compatible
 
-Availability:
+Compatible with:
 
 - Built into PowerShell 7
 
@@ -316,7 +316,7 @@ Availability:
 
 Status: Natively Compatible
 
-Availability:
+Compatible with:
 
 - Built into PowerShell 7
 
@@ -324,7 +324,7 @@ Availability:
 
 Status: Natively Compatible
 
-Availability:
+Compatible with:
 
 - Built into PowerShell 7
 
@@ -332,7 +332,7 @@ Availability:
 
 Status: Natively Compatible
 
-Availability:
+Compatible with:
 
 - Server version: 1809+
 - Windows 10 version: 1809+
@@ -341,7 +341,7 @@ Availability:
 
 Status: Natively Compatible
 
-Availability:
+Compatible with:
 
 - Built into PowerShell 7
 
@@ -353,7 +353,7 @@ Status: Untested with Compatibility Layer
 
 Status: Natively Compatible
 
-Availability:
+Compatible with:
 
 - Built into PowerShell 7
 
@@ -361,7 +361,7 @@ Availability:
 
 Status: Natively Compatible
 
-Availability:
+Compatible with:
 
 - Built into PowerShell 7
 
@@ -369,7 +369,7 @@ Availability:
 
 Status: Natively Compatible
 
-Availability:
+Compatible with:
 
 - Built into PowerShell 7
 
@@ -377,7 +377,7 @@ Availability:
 
 Status: Natively Compatible
 
-Availability:
+Compatible with:
 
 - Server version: 1809+
 - Windows 10 version: 1809+
@@ -386,7 +386,7 @@ Availability:
 
 Status: Natively Compatible
 
-Availability:
+Compatible with:
 
 - Server version: 1809+ with Multipath-IO
 
@@ -398,7 +398,7 @@ Status: Untested with Compatibility Layer
 
 Status: Natively Compatible
 
-Availability:
+Compatible with:
 
 - Server version: 1809+
 - Windows 10 version: 1809+
@@ -407,7 +407,7 @@ Availability:
 
 Status: Natively Compatible
 
-Availability:
+Compatible with:
 
 - Server version: 1809+
 - Windows 10 version: 1809+
@@ -416,7 +416,7 @@ Availability:
 
 Status: Natively Compatible
 
-Availability:
+Compatible with:
 
 - Server version: 1809+
 - Windows 10 version: 1809+
@@ -425,7 +425,7 @@ Availability:
 
 Status: Natively Compatible
 
-Availability:
+Compatible with:
 
 - Server version: 1809+
 - Windows 10 version: 1809+
@@ -438,7 +438,7 @@ Status: Untested with Compatibility Layer
 
 Status: Natively Compatible
 
-Availability:
+Compatible with:
 
 - Server version: 1809+
 - Windows 10 version: 1809+
@@ -447,7 +447,7 @@ Availability:
 
 Status: Natively Compatible
 
-Availability:
+Compatible with:
 
 - Server version: 1809+
 - Windows 10 version: 1809+
@@ -456,7 +456,7 @@ Availability:
 
 Status: Natively Compatible
 
-Availability:
+Compatible with:
 
 - Server version: 1809+
 - Windows 10 version: 1809+
@@ -465,7 +465,7 @@ Availability:
 
 Status: Natively Compatible
 
-Availability:
+Compatible with:
 
 - Server version: 1809+
 - Windows 10 version: 1809+
@@ -474,7 +474,7 @@ Availability:
 
 Status: Natively Compatible
 
-Availability:
+Compatible with:
 
 - Server version: 1809+
 - Windows 10 version: 1809+
@@ -487,7 +487,7 @@ Status: Untested with Compatibility Layer
 
 Status: Natively Compatible
 
-Availability:
+Compatible with:
 
 - Server version: 1809+
 - Windows 10 version: 1809+
@@ -508,7 +508,7 @@ Status: Untested with Compatibility Layer
 
 Status: Natively Compatible
 
-Availability:
+Compatible with:
 
 - Server version: 1809+
 - Windows 10 version: 1809+
@@ -517,7 +517,7 @@ Availability:
 
 Status: Natively Compatible
 
-Availability:
+Compatible with:
 
 - Server version: 1809+
 - Windows 10 version: 1809+
@@ -526,7 +526,7 @@ Availability:
 
 Status: Natively Compatible
 
-Availability:
+Compatible with:
 
 - Server version: 1809+
 - Windows 10 version: 1809+ with Rsat.ServerManager.Tools
@@ -535,7 +535,7 @@ Availability:
 
 Status: Natively Compatible
 
-Availability:
+Compatible with:
 
 - Built into PowerShell 7
 
@@ -543,7 +543,7 @@ Availability:
 
 Status: Natively Compatible
 
-Availability:
+Compatible with:
 
 - Server version: 1809+
 - Windows 10 version: 1809+
@@ -560,7 +560,7 @@ Status: Untested with Compatibility Layer
 
 Status: Natively Compatible
 
-Availability:
+Compatible with:
 
 - Server version: 1809+
 - Windows 10 version: 1809+
@@ -569,7 +569,7 @@ Availability:
 
 Status: Natively Compatible
 
-Availability:
+Compatible with:
 
 - Built into PowerShell 7
 
@@ -577,7 +577,7 @@ Availability:
 
 Status: Natively Compatible
 
-Availability:
+Compatible with:
 
 - Server version: 1903+ with Print-Services
 - Windows 10 version: 1903+
@@ -586,7 +586,7 @@ Availability:
 
 Status: Natively Compatible
 
-Availability:
+Compatible with:
 
 - Server version: 1903+
 - Windows 10 version: 1903+
@@ -599,7 +599,7 @@ Status: Untested with Compatibility Layer
 
 Status: Partially
 
-Availability:
+Compatible with:
 
 - Built into PowerShell 7
 
@@ -607,7 +607,7 @@ Availability:
 
 Status: Natively Compatible
 
-Availability:
+Compatible with:
 
 - Built into PowerShell 7
 
@@ -615,7 +615,7 @@ Availability:
 
 Status: Not working with Compatibility Layer
 
-Availability:
+Compatible with:
 
 - Built into PowerShell 5.1
 
@@ -639,7 +639,7 @@ Status: Untested with Compatibility Layer
 
 Status: Natively Compatible
 
-Availability:
+Compatible with:
 
 - Server version: 1809+
 - Windows 10 version: 1809+
@@ -648,7 +648,7 @@ Availability:
 
 Status: Natively Compatible
 
-Availability:
+Compatible with:
 
 - Server version: 1809+
 - Windows 10 version: 1809+
@@ -669,7 +669,7 @@ Status: Untested with Compatibility Layer
 
 Status: Natively Compatible
 
-Availability:
+Compatible with:
 
 - Server version: 1903+ with RSAT-Shielded-VM-Tools
 - Windows 10 version: 1903+ with Rsat.Shielded.VM.Tools
@@ -678,7 +678,7 @@ Availability:
 
 Status: Natively Compatible
 
-Availability:
+Compatible with:
 
 - Server version: 1809+ with HostGuardian
 - Windows 10 version: 1809+ with HostGuardian
@@ -687,7 +687,7 @@ Availability:
 
 Status: Natively Compatible
 
-Availability:
+Compatible with:
 
 - Server version: 1809+ with RSAT-Shielded-VM-Tools
 - Windows 10 version: 1809+ with Rsat.Shielded.VM.Tools
@@ -696,7 +696,7 @@ Availability:
 
 Status: Natively Compatible
 
-Availability:
+Compatible with:
 
 - Server version: 1809+
 - Windows 10 version: 1809+
@@ -705,7 +705,7 @@ Availability:
 
 Status: Natively Compatible
 
-Availability:
+Compatible with:
 
 - Server version: 1809+
 - Windows 10 version: 1809+
@@ -714,7 +714,7 @@ Availability:
 
 Status: Natively Compatible
 
-Availability:
+Compatible with:
 
 - Server version: 1903+ with WindowsStorageManagementService
 
@@ -726,7 +726,7 @@ Status: Untested with Compatibility Layer
 
 Status: Natively Compatible
 
-Availability:
+Compatible with:
 
 - Server version: 1809+
 
@@ -734,7 +734,7 @@ Availability:
 
 Status: Natively Compatible
 
-Availability:
+Compatible with:
 
 - Server version: 1809+ with Desktop Experience
 - Windows 10 version: 1809+
@@ -743,7 +743,7 @@ Availability:
 
 Status: Natively Compatible
 
-Availability:
+Compatible with:
 
 - Server version: 1809+
 - Windows 10 version: 1809+
@@ -760,7 +760,7 @@ Status: Untested with Compatibility Layer
 
 Status: Natively Compatible
 
-Availability:
+Compatible with:
 
 - Server version: 1809+ with RSAT-Clustering-PowerShell
 - Windows 10 version: 1809+ with Rsat.FailoverCluster.Management.Tools
@@ -773,7 +773,7 @@ Status: Untested with Compatibility Layer
 
 Status: Natively Compatible
 
-Availability:
+Compatible with:
 
 - Server version: 1809+ with FS-SyncShareService
 
@@ -789,7 +789,7 @@ Status: Untested with Compatibility Layer
 
 Status: Natively Compatible
 
-Availability:
+Compatible with:
 
 - Windows 10 version: 1903+
 
@@ -797,7 +797,7 @@ Availability:
 
 Status: Natively Compatible
 
-Availability:
+Compatible with:
 
 - Server version: 1809+
 - Windows 10 version: 1809+
@@ -806,7 +806,7 @@ Availability:
 
 Status: Natively Compatible
 
-Availability:
+Compatible with:
 
 - Server version: ??Future version of Server with Desktop Experience??
 - Windows 10 version: 1903+
@@ -819,7 +819,7 @@ Status: Not working with Compatibility Layer
 
 Status: Natively Compatible
 
-Availability:
+Compatible with:
 
 - Server version: 1809+
 - Windows 10 version: 1809+
@@ -828,7 +828,7 @@ Availability:
 
 Status: Natively Compatible
 
-Availability:
+Compatible with:
 
 - Server version: 1809+
 - Windows 10 version: 1809+
@@ -841,7 +841,7 @@ Status: Untested with Compatibility Layer
 
 Status: Natively Compatible
 
-Availability:
+Compatible with:
 
 - Server version: 1903+
 - Windows 10 version: 1903+
@@ -850,7 +850,7 @@ Availability:
 
 Status: Natively Compatible
 
-Availability:
+Compatible with:
 
 - Server version: 1809+ with Desktop Experience
 - Windows 10 version: 1809+
@@ -859,7 +859,7 @@ Availability:
 
 Status: Natively Compatible
 
-Availability:
+Compatible with:
 
 - Server version: 1809+
 - Windows 10 version: 1809+
@@ -868,7 +868,7 @@ Availability:
 
 Status: Natively Compatible
 
-Availability:
+Compatible with:
 
 - Windows 10 version: 1903+
 
@@ -876,7 +876,7 @@ Availability:
 
 Status: Natively Compatible
 
-Availability:
+Compatible with:
 
 - Server version: 19H2 with Windows-Server-Backup
 
@@ -884,7 +884,7 @@ Availability:
 
 Status: Natively Compatible
 
-Availability:
+Compatible with:
 
 - Server version: 1809+
 - Windows 10 version: 1809+
@@ -893,7 +893,7 @@ Availability:
 
 Status: Natively Compatible
 
-Availability:
+Compatible with:
 
 - Server version: 1809+
 - Windows 10 version: 1809+
