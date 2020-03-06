@@ -10,7 +10,37 @@ management and support for various Microsoft products and services. These module
 to work natively with PowerShell 7 or tested for compatibility with PowerShell 7. This list will be
 updated with new information as more modules are identified and tested.
 
+If you have information to share or issues with specific modules, please file an issue in the
+[WindowsCompatibility repo](https://github.com/PowerShell/WindowsCompatibility).
+
 ## Windows management modules
+
+The Windows management module are installed in different ways dependent on the Edition of Windows
+and how the module was packaged for that Edition.
+
+On Windows Server, use the feature name with the [Install-WindowsFeature](/powershell/module/servermanager/install-windowsfeature)
+cmdlet as an Administrator. For example:
+
+```powershell
+Install-WindowsFeature -Name ActiveDirectory
+```
+
+On Windows 10, you have to use one of two cmdlets as an Administrator:
+- [Enable-WindowsOptionalFeature](/powershell/module/dism/enable-windowsoptionalfeature)
+- [Add-WindowsCapability](/powershell/module/dism/add-windowscapability)
+
+For modules that install as Windows Features:
+
+```powershell
+Enable-WindowsOptionalFeature -Online -FeatureName FooFeatureName
+```
+
+For modules that install as Windows Capabilities you have to append `~~~~0.0.1.0` to the end of the
+name. For example:
+
+```powershell
+Add-WindowsCapability -Online -Name Rsat.ServerManager.Tools~~~~0.0.1.0
+```
 
 ### ActiveDirectory
 
