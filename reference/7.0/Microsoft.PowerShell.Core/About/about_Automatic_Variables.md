@@ -527,6 +527,9 @@ and change the current loop iteration. For more information, see
 In a script block that defines a script property or script method, the
 `$this` variable refers to the object that is being extended.
 
+In a custom class, the `$this` variable refers to the class object itself
+allowing access to properties and methods defined in the class.
+
 ### $true
 
 Contains **True**. You can use this variable to represent **True** in commands
