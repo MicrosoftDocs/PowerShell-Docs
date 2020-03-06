@@ -189,8 +189,8 @@ $Env:path += ":/usr/local/temp"
 
 You can also use the Item cmdlets, such as `Set-Item`, `Remove-Item`, and
 `Copy-Item` to change the values of environment variables. For example, to use
-the `Set-Item` cmdlet to append `;c:\temp` to the value of the `Path` environment
-variable, use the following syntax:
+the `Set-Item` cmdlet to append `;c:\temp` to the value of the `Path`
+environment variable, use the following syntax:
 
 ```powershell
 Set-Item -Path Env:Path -Value ($Env:Path + ";C:\Temp")
@@ -249,15 +249,17 @@ The environment variables that store preferences include:
   module, such as the commands it exports.
 
   By default on Windows, this cache is normally stored in the file
-  `Microsoft\Windows\PowerShell\ModuleAnalysisCache` within `$env:LOCALAPPDATA`. The cache is typically read
-  at startup while searching for a command and is written on a background thread sometime after a
-  module is imported.
+  `Microsoft\Windows\PowerShell\ModuleAnalysisCache` within
+  `$env:LOCALAPPDATA`. The cache is typically read at startup while searching
+  for a command and is written on a background thread sometime after a module
+  is imported.
 
-  To change the default location of the cache, set the `$env:PSModuleAnalysisCachePath` environment
-  variable before starting PowerShell. Changes to this environment variable only affects children
-  processes. The value should name a full path (including filename) that PowerShell has permission to
-  create and write files. To disable the file cache, set this value to an invalid location, for
-  example:
+  To change the default location of the cache, set the
+  `$env:PSModuleAnalysisCachePath` environment variable before starting
+  PowerShell. Changes to this environment variable only affects children
+  processes. The value should name a full path (including filename) that
+  PowerShell has permission to create and write files. To disable the file
+  cache, set this value to an invalid location, for example:
 
 ```powershell
 # `NUL` here is a special device on Windows that cannot be written to, on non-Windows you would
@@ -265,8 +267,9 @@ The environment variables that store preferences include:
 $env:PSModuleAnalysisCachePath = 'NUL'
 ```
 
-  This sets the path to an invalid device. If PowerShell can't write to the path, no error is
-  returned, but you can see error reporting by using a tracer:
+  This sets the path to an invalid device. If PowerShell can't write to the
+  path, no error is returned, but you can see error reporting by using a
+  tracer:
 
 ```powershell
 Trace-Command -PSHost -Name Modules -Expression { Import-Module Microsoft.PowerShell.Management -Force }
@@ -274,93 +277,91 @@ Trace-Command -PSHost -Name Modules -Expression { Import-Module Microsoft.PowerS
 
 - PSDisableModuleAnalysisCacheCleanup
 
-  When writing out the module analysis cache, PowerShell checks for modules that no longer exist
-  to avoid an unnecessarily large cache. Sometimes these checks are not desirable, in which case you
-  can turn them off by setting this environment variable value to `1`.
+  When writing out the module analysis cache, PowerShell checks for modules
+  that no longer exist to avoid an unnecessarily large cache. Sometimes these
+  checks are not desirable, in which case you can turn them off by setting this
+  environment variable value to `1`.
 
-  Setting this environment variable takes effect immediately in the current process.
+  Setting this environment variable takes effect immediately in the current
+  process.
 
 - PSModulePath
 
-  Stores the paths to the default module directories. PowerShell looks for
-  modules in the specified directories when you do not specify a full path to a
-  module.
+  Stores the paths to the default module directories. PowerShell looks
+  for modules in the specified directories when you do not specify a full path
+  to a module.
 
-  The default value of `$Env:PSModulePath` on Windows is:
-
-  ```powershell
-  $HOME\Documents\WindowsPowerShell\Modules;$PSHOME\Modules
-  ```
-
-  The default value of `$Env:PSModulePath` on Linux or macOS is:
+  The default value of `$Env:PSModulePath` is:
 
   ```powershell
-  $HOME/.local/share/powershell/Modules:/usr/local/share/powershell/Modules:$PSHOME/Modules
+  $HOME\Documents\WindowsPowerShell\Modules; $PSHOME\Modules
   ```
 
-PowerShell sets the value of `$PSHOME\Modules` in the registry. It sets the
-value of `$HOME\Documents\PowerShell\Modules` each time you start PowerShell.
+  - All Users scope
 
-In addition, setup programs that install modules in other directories, such as
-the `Program Files` directory, can append their locations to the value of
-PSModulePath.
+    The `$PSHOME\Modules` folder contains modules that ship with Windows and
+    PowerShell.
 
-To change the default module directories for the current session, use the
-following command format to change the value of the `PSModulePath` environment
-variable.
+  - Current User scope
 
-For example, to add the `C:\Program Files\Fabrikam\Modules` directory to the
-value of the `PSModulePath` environment variable, type:
+    The user-specific **CurrentUser** location is the `PowerShell\Modules`
+    folder located in the **Documents** location in your user profile. The
+    specific path of that location varies by version of Windows and whether or
+    not you are using folder redirection. By default, on Windows 10, that
+    location is `$HOME\Documents\PowerShell\Modules`. On Linux or Mac, the
+    **CurrentUser** location is `$HOME/.local/share/powershell/Modules`.
 
-```powershell
-$Env:PSModulePath += ";C:\Program Files\Fabrikam\Modules"
-```
+  In addition, setup programs that install modules in other directories, such
+  as the Program Files directory, can append their locations to the value of
+  `PSModulePath`.
 
-On Windows, the semicolon (`;`) in the command separates the new path from the
-path that precedes it in the list.
+  To change the default module directories for the current session, use the
+  following command format to change the value of the `PSModulePath` environment
+  variable.
 
-On Linux or MacOS, to add the `/usr/local/Fabrikam/Modules` directory to
-the value of the `PSModulePath` environment variable, type:
+  For example, to add the `C:\Program Files\Fabrikam\Modules` directory to
+  the value of the PSModulePath environment variable, type:
 
-```powershell
-$Env:PSModulePath += ":/usr/local/Fabrikam/Modules"
-```
+  ```powershell
+  $Env:PSModulePath = $Env:PSModulePath+";C:\Program Files\Fabrikam\Modules"
+  ```
 
-On Linux or MacOS, the colon (`:`) in the command separates the new path from
-the path that precedes it in the list.
+  The semi-colon (;) in the command separates the new path from the path that
+  precedes it in the list.
 
-To change the value of `PSModulePath` in every session, add the previous
-command to your PowerShell profile
+  To change the value of `PSModulePath` in every session, add the previous
+  command to your PowerShell profile or use the **SetEnvironmentVariable**
+  method of the **Environment** class.
 
-On Windows systems, you can also use the **SetEnvironmentVariable** method of
-the **Environment** class. The following command uses the
-**GetEnvironmentVariable** method to get the machine setting of
-`PSModulePath` and the **SetEnvironmentVariable** method to add the
-`C:\Program Files\Fabrikam\Modules` path to the value.
+  The following command uses the **GetEnvironmentVariable** method to get the
+  machine setting of `PSModulePath` and the **SetEnvironmentVariable** method
+  to add the `C:\Program Files\Fabrikam\Modules` path to the value.
 
-```powershell
-$path = [System.Environment]::GetEnvironmentVariable("PSModulePath",
- "Machine")
-[System.Environment]::SetEnvironmentVariable("PSModulePath", $path +
-";C:\Program Files\Fabrikam\Modules", "Machine")
-```
+  ```powershell
+  $path = [System.Environment]::GetEnvironmentVariable("PSModulePath",
+   "Machine")
+  [System.Environment]::SetEnvironmentVariable("PSModulePath", $path +
+  ";C:\Program Files\Fabrikam\Modules", "Machine")
+  ```
 
-To add a path to the user setting, change the target value to User.
+  To add a path to the user setting, change the target value to User.
 
-```powershell
-$path = [System.Environment]::GetEnvironmentVariable('PSModulePath','User')
-[System.Environment]::SetEnvironmentVariable('PSModulePath', $path +
-";$home\Documents\Fabrikam\Modules", 'User')
-```
+  ```powershell
+  $path = [System.Environment]::GetEnvironmentVariable("PSModulePath",
+   "User")
+  [System.Environment]::SetEnvironmentVariable("PSModulePath", $path +
+  ";$home\Documents\Fabrikam\Modules", "User")
+  ```
 
-For more information about the methods of the System.Environment class, see
-[Environment Methods](/dotnet/api/system.environment).
+  For more information about the methods of the System.Environment class, see
+  [Environment Methods](/dotnet/api/system.environment) in
+  MSDN.
 
-You can add also add a command that changes the value to your profile or use
-System in Control Panel to change the value of the `PSModulePath` environment
-variable in the registry.
+  You can add also add a command that changes the value to your profile or use
+  System in Control Panel to change the value of the `PSModulePath` environment
+  variable in the registry.
 
-For more information, see [about_Modules](about_Modules.md).
+  For more information, see [about_Modules](about_Modules.md).
 
 ## SEE ALSO
 
