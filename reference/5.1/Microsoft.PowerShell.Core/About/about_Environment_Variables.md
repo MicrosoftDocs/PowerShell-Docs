@@ -310,7 +310,7 @@ The environment variables that store preferences include:
   following command format to change the value of the `PSModulePath` environment
   variable.
 
-  For example, to add the `C:\\Program Files\\Fabrikam\\Modules` directory to
+  For example, to add the `C:\Program Files\Fabrikam\Modules` directory to
   the value of the PSModulePath environment variable, type:
 
   ```powershell
@@ -326,7 +326,7 @@ The environment variables that store preferences include:
 
   The following command uses the **GetEnvironmentVariable** method to get the
   machine setting of `PSModulePath` and the **SetEnvironmentVariable** method
-  to add the `C:\\Program Files\\Fabrikam\\Modules` path to the value.
+  to add the `C:\Program Files\Fabrikam\Modules` path to the value.
 
   ```powershell
   $path = [System.Environment]::GetEnvironmentVariable("PSModulePath",
@@ -345,8 +345,7 @@ The environment variables that store preferences include:
   ```
 
   For more information about the methods of the System.Environment class, see
-  [Environment Methods](/dotnet/api/system.environment) in
-  MSDN.
+  [Environment Methods](/dotnet/api/system.environment).
 
   You can add also add a command that changes the value to your profile or use
   System in Control Panel to change the value of the `PSModulePath` environment
