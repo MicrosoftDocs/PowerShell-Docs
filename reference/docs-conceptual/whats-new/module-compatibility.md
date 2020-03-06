@@ -5,27 +5,28 @@ ms.date: 02/03/2020
 
 # PowerShell 7 module compatibility
 
-This article contains a list of PowerShell modules published by Microsoft. This modules provide
-management and support for various Microsoft products and services. These modules have been update
-to work natively with PowerShell 7 or tested for compatibility with PowerShell 7. This list will be
-updated with new information as more modules are identified and tested.
+This article contains a list of PowerShell modules published by Microsoft that provide management
+and support for various Microsoft products and services. These modules have been updated to work
+natively with PowerShell 7 or tested for compatibility with PowerShell 7.
 
-If you have information to share or issues with specific modules, please file an issue in the
-[WindowsCompatibility repo](https://github.com/PowerShell/WindowsCompatibility).
+This list will be updated with new information as more modules are identified and tested. If you
+have information to share or issues with specific modules, please file an issue in the
+[WindowsCompatibility](https://github.com/PowerShell/WindowsCompatibility) repository.
 
 ## Windows management modules
 
-The Windows management module are installed in different ways dependent on the Edition of Windows
-and how the module was packaged for that Edition.
+The Windows management modules are installed in different ways depending on the type of Windows
+and how the module was packaged. These modules must be installed from an elevate PowerShell session
+using the **Run as administrator** option.
 
 On Windows Server, use the feature name with the [Install-WindowsFeature](/powershell/module/servermanager/install-windowsfeature)
-cmdlet as an Administrator. For example:
+to install the module. For example:
 
 ```powershell
 Install-WindowsFeature -Name ActiveDirectory
 ```
 
-On Windows 10, you have to use one of two cmdlets as an Administrator:
+On Windows 10, you have to use one of these cmdlets depending the package type:
 - [Enable-WindowsOptionalFeature](/powershell/module/dism/enable-windowsoptionalfeature)
 - [Add-WindowsCapability](/powershell/module/dism/add-windowscapability)
 
@@ -35,8 +36,8 @@ For modules that install as Windows Features:
 Enable-WindowsOptionalFeature -Online -FeatureName FooFeatureName
 ```
 
-For modules that install as Windows Capabilities you have to append `~~~~0.0.1.0` to the end of the
-name. For example:
+For modules that install as Windows Capabilities, you have to append `~~~~0.0.1.0` to the end of the
+package name. For example:
 
 ```powershell
 Add-WindowsCapability -Online -Name Rsat.ServerManager.Tools~~~~0.0.1.0
