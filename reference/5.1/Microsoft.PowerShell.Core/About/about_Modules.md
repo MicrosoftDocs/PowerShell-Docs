@@ -299,7 +299,7 @@ The default locations assigned to `$env:PSModulePath` are:
 - User-specific modules: These are modules installed by the user in the user's
   scope. `Install-Module` has a **Scope** parameter that allows you to specify
   whether the module is installed for the current user or for all users. For
-  more information, see [Install-Module](../Install-Module.md).
+  more information, see [Install-Module](../../PowerShellGet/Install-Module.md).
 
   The user-specific **CurrentUser** location is the `PowerShell\Modules` folder located in the
   **Documents** location in your user profile. The specific path of that
