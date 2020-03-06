@@ -1,10 +1,10 @@
 ---
-title: Installing PowerShell Core on Linux
-description: Information about installing PowerShell Core on various Linux distributions
+title: Installing PowerShell on Linux
+description: Information about installing PowerShell on various Linux distributions
 ms.date: 07/19/2019
 ---
 
-# Installing PowerShell Core on Linux
+# Installing PowerShell on Linux
 
 Supports [Ubuntu 16.04][u16], [Ubuntu 18.04][u1804], [Ubuntu 18.10][u1810], [Ubuntu 19.04][u1904],
  [Debian 8][deb8], [Debian 9][deb9], [Debian 10][deb10], [CentOS 7][cos],
@@ -46,8 +46,8 @@ All packages are available on our GitHub [releases][] page. After the package is
 
 ## Installing Preview Releases
 
-When installing a PowerShell Core Preview release for Linux via a Package Repository, the package
-name changes from `powershell` to `powershell-preview`.
+When installing a PowerShell Preview release for Linux via a Package Repository, the package name
+changes from `powershell` to `powershell-preview`.
 
 Installing via direct download doesn't change, other than the file name.
 
@@ -64,7 +64,7 @@ various package managers:
 
 ### Installation via Package Repository - Ubuntu 16.04
 
-PowerShell Core for Linux is published to package repositories for easy installation and updates.
+PowerShell for Linux is published to package repositories for easy installation and updates.
 
 The preferred method is as follows:
 
@@ -114,7 +114,7 @@ sudo apt-get remove powershell
 
 ### Installation via Package Repository - Ubuntu 18.04
 
-PowerShell Core for Linux is published to package repositories for easy installation and updates.
+PowerShell for Linux is published to package repositories for easy installation and updates.
 
 The preferred method is as follows:
 
@@ -181,7 +181,7 @@ Installation is supported via `snapd`. For instructions, see [Snap Package][snap
 
 ### Installation via Package Repository - Debian 8
 
-PowerShell Core for Linux is published to package repositories for easy installation and updates.
+PowerShell for Linux is published to package repositories for easy installation and updates.
 
 The preferred method is as follows:
 
@@ -213,7 +213,7 @@ PowerShell with `sudo apt-get upgrade powershell`.
 
 ### Installation via Package Repository - Debian 9
 
-PowerShell Core for Linux is published to package repositories for easy installation and updates.
+PowerShell for Linux is published to package repositories for easy installation and updates.
 
 The preferred method is as follows:
 
@@ -365,7 +365,7 @@ pwsh-preview
 
 ### Installation via Package Repository (preferred) - CentOS 7
 
-PowerShell Core for Linux is published to official Microsoft repositories for easy installation and
+PowerShell for Linux is published to official Microsoft repositories for easy installation and
 updates.
 
 ```sh
@@ -411,7 +411,7 @@ sudo yum remove powershell
 
 ### Installation via Package Repository (preferred) - Red Hat Enterprise Linux (RHEL) 7
 
-PowerShell Core for Linux is published to official Microsoft repositories for easy installation and
+PowerShell for Linux is published to official Microsoft repositories for easy installation and
 updates.
 
 ```sh
@@ -512,14 +512,14 @@ rm -rf /usr/bin/pwsh /opt/microsoft/powershell
 ## Fedora
 
 > [!NOTE]
-> Fedora 28 is only supported in PowerShell Core 6.1 and newer.
+> Fedora 28 is only supported in PowerShell 6.1 and newer.
 
 > [!NOTE]
 > Fedora 29 and 30 are only supported in PowerShell 7.0 and newer.
 
 ### Installation via Package Repository (preferred) - Fedora 28, 29, and 30
 
-PowerShell Core for Linux is published to official Microsoft repositories for easy installation and
+PowerShell for Linux is published to official Microsoft repositories for easy installation and
 updates.
 
 ```sh
@@ -597,7 +597,7 @@ to make sure you have `snapd` installed.
 
 ### Installation via Snap
 
-PowerShell Core for Linux is published to the [Snap store](https://snapcraft.io/store) for easy
+PowerShell for Linux is published to the [Snap store](https://snapcraft.io/store) for easy
 installation and updates.
 
 The preferred method is as follows:
@@ -664,7 +664,7 @@ apt -y remove powershell
 
 Currently, PowerShell is only supported on Raspbian Stretch.
 
-CoreCLR and PowerShell Core will only work on Pi 2 and Pi 3 devices as other devices, like [Pi Zero](https://github.com/dotnet/coreclr/issues/10605),
+CoreCLR and PowerShell will only work on Pi 2 and Pi 3 devices as other devices, like [Pi Zero](https://github.com/dotnet/coreclr/issues/10605),
 have an unsupported processor.
 
 Download [Raspbian Stretch](https://www.raspberrypi.org/downloads/raspbian/) and follow the
