@@ -1,6 +1,5 @@
 ---
 ms.date:  06/12/2017
-contributor:  user1
 keywords:  gallery,powershell,cmdlet,psget
 title:  Bootstrapping NuGet
 ---
