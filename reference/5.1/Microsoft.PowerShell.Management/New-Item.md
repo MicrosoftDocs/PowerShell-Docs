@@ -182,10 +182,10 @@ Accept wildcard characters: False
 
 ### -Name
 
-Specifies the name of the new item.
-
-You can specify the name of the new item in the **Name** or **Path** parameter value, and you can
-specify the path of the new item in **Name** or **Path** value.
+Specifies the name of the new item. You can specify the name of the new item in the **Name** or
+**Path** parameter value, and you can specify the path of the new item in **Name** or **Path**
+value. Items names passed using the **Name** parameter are created relative to the value of the
+**Path** parameter.
 
 ```yaml
 Type: String
@@ -201,10 +201,15 @@ Accept wildcard characters: False
 
 ### -Path
 
-Specifies the path of the location of the new item.
-Wildcard characters are permitted.
+Specifies the path of the location of the new item. The default is the current location when
+**Path** is omitted. You can specify the name of the new item in **Name**, or include it in
+**Path**. Items names passed using the **Name** parameter are created relative to the value of the
+**Path** parameter.
 
-You can specify the name of the new item in **Name**, or include it in **Path**.
+For this cmdlet, the **Path** parameter works like the **LiteralPath** parameter of other cmdlets.
+Wildcard characters are not interpreted. All characters are passed to the location's provider. The
+provider may not support all characters. For example, you cannot create a filename that contains an
+asterisk (`*`) character.
 
 ```yaml
 Type: String[]
@@ -213,9 +218,9 @@ Aliases:
 
 Required: True (pathSet), False (nameSet)
 Position: 0
-Default value: None
+Default value: Current location
 Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: True
+Accept wildcard characters: False
 ```
 
 ### -UseTransaction
