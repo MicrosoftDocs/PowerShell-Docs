@@ -25,22 +25,49 @@ cmdlet as an Administrator. For example:
 Install-WindowsFeature -Name ActiveDirectory
 ```
 
-On Windows 10, you have to use one of two cmdlets as an Administrator:
-- [Enable-WindowsOptionalFeature](/powershell/module/dism/enable-windowsoptionalfeature)
-- [Add-WindowsCapability](/powershell/module/dism/add-windowscapability)
+On Windows 10, the Windows management modules are made available as **Windows Optional Features** or
+**Windows Capabilities**. The following commands must be run from an elevated session using **Run as
+administrator**.
 
-For modules that install as Windows Features:
 
-```powershell
-Enable-WindowsOptionalFeature -Online -FeatureName FooFeatureName
-```
+- For Windows Optional Features
 
-For modules that install as Windows Capabilities you have to append `~~~~0.0.1.0` to the end of the
-name. For example:
+  To get a list of Optional Features, run the following command:
 
-```powershell
-Add-WindowsCapability -Online -Name Rsat.ServerManager.Tools~~~~0.0.1.0
-```
+  ```powershell
+  Get-WindowsOptionalFeature -Online
+  ```
+
+  To install the feature:
+
+  ```powershell
+  Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V-Management-PowerShell
+  ```
+
+  For more information see:
+
+  - [Get-WindowsOptionalFeature](/powershell/module/dism/get-windowsoptionalfeature)
+  - [Enable-WindowsOptionalFeature](/powershell/module/dism/enable-windowsoptionalfeature)
+
+- For Windows Capabilities
+
+  To get a list of Windows Capabilities, run the following command:
+
+  ```powershell
+  Get-WindowsCapability -online
+  ```
+
+  Notice that the name of the capability package ends with `~~~~0.0.1.0`. You must use the full name
+  to install the capability:
+
+  ```powershell
+  Add-WindowsCapability -Online -Name Rsat.ServerManager.Tools~~~~0.0.1.0
+  ```
+
+  For more information see:
+
+  - [Get-WindowsCapability](/powershell/module/dism/get-windowscapability)
+  - [Add-WindowsCapability](/powershell/module/dism/add-windowscapability)
 
 ### Module list
 
