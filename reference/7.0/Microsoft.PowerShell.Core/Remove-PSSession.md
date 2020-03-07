@@ -173,9 +173,9 @@ Accept wildcard characters: True
 
 ### -ContainerId
 
-Specifies an array of IDs of containers.
-This cmdlet starts an interactive session with each of the specified containers.
-To see the containers that are available to you, use the **Get-Container** cmdlet.
+Specifies an array of IDs of containers. This cmdlet removes sessions for each of the specified
+containers. Use the `docker ps` command to get a list of container IDs. For more information, see
+the help for the [docker ps](https://docs.docker.com/engine/reference/commandline/ps/) command.
 
 ```yaml
 Type: String[]
