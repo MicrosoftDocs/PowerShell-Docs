@@ -7,7 +7,7 @@ ms.topic: conceptual
 # PowerShell-Docs style guide
 
 This article provides style guidance specific to the PowerShell-Docs content. This builds on the
-information outlined in the [Overview](overview.md#getting-started-writing-docs).
+information outlined in the [Overview](overview.md#get-started-writing-docs).
 
 ## Product Terminology
 
