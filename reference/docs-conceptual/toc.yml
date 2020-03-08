@@ -743,15 +743,15 @@
         - name: Get started writing docs
           href: community/contributing/get-started-writing.md
         - name: Submitting a pull request
-          href: community/contributing/pull-requests.md.md
+          href: community/contributing/pull-requests.md
         - name: PowerShell-Docs style guide
           href: community/contributing/powershell-style-guide.md
         - name: Editing cmdlet reference
           href: community/contributing/editing-cmdlet-ref.md
-        - name: Editorial checklist
-          href: community/contributing/editorial-checklist.md
         - name: Additional resources
           items:
+            - name: Editorial checklist
+              href: community/contributing/editorial-checklist.md
             - name: How we manage issues
               href: community/contributing/managing-issues.md
             - name: How we manage pull requests

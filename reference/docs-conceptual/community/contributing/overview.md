@@ -40,7 +40,7 @@ tools and understand the processes we use for making contributions.
 1. [Set up a local Git repository](/contribute/get-started-setup-local)
 1. [Review Git and GitHub fundamentals](/contribute/git-github-fundamentals)
 
-## Getting started writing docs
+## Get started writing docs
 
 There are two ways to contribute changes to the documentation:
 
@@ -77,21 +77,17 @@ PowerShell content.
 
 Review the following documents:
 
-Process guides
+- [How to file an issue](file-an-issue.md)
+- [Get started writing docs](get-started-writing.md)
+- [Submitting a pull request](pull-requests.md)
+- [PowerShell-Docs style guide](powershell-style-guide.md)
+- [Editing cmdlet reference](editing-cmdlet-ref.md)
 
-- PowerShell-Docs structure
-- Pull requests
-- Managing PRs
+Additional resources
 
-PowerShell style guides
-
-- PlatyPS specifics
-- PS Code styling
-
-Editorial resources
-
-- Markdown best practices
-- Editorial checklist
+- [Editorial checklist](editorial-checklist.md)
+- [How we manage issues](managing-issues.md)
+- [How we manage pull requests](managing-pull-requests.md)
 
 <!--link refs-->
 [cla]: https://cla.microsoft.com/
