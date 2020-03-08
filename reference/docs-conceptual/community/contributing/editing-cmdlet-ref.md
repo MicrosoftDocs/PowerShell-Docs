@@ -19,7 +19,7 @@ errors that must be fixed before we can accept your contribution.
 - Do not remove any of the header structures. PlatyPS expects a specific set of headers.
 - The **Input type** and **Output type** headers must have a type. If the cmdlet does not take input
   or return a value then use the value `None`.
-- Fenced code blocks are only allowed in the [Examples](#writing-examples) section.
+- Fenced code blocks are only allowed in the [Examples](#structuring-examples) section.
 - Inline code spans can be used in any paragraph.
 
 ## Formatting About_ files

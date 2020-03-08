@@ -71,7 +71,7 @@ You'll see the following behavior:
    to fix the issues.
 1. When validation succeeds, the following comment is added to the PR:
 
-   ![build validation](images/7-pull-requests/build-validation.png)
+   ![build validation](media/pull-requests/build-validation.png)
 
 > [!NOTE]
 > If you are an external (not a Microsoft employee) contributor you do not have access to the detailed
@@ -79,7 +79,7 @@ You'll see the following behavior:
 
 When the PR is reviewed by a member of the PowerShell-Docs team, you may be asked to make changes or
 fix problems flagged by the validation report. The PowerShell-Docs team can help you understand how
-to avoid these problems for future submissions.
+to fix and avoid these problems for future submissions.
 
 ## Next steps
 

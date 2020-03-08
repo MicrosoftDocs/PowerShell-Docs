@@ -749,7 +749,7 @@
         - name: Editing cmdlet reference
           href: community/contributing/editing-cmdlet-ref.md
         - name: Editorial checklist
-          href: community/contributing/editor-checklist.md
+          href: community/contributing/editorial-checklist.md
         - name: Additional resources
           items:
             - name: How we manage issues

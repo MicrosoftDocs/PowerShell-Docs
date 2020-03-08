@@ -103,10 +103,10 @@ articles in the Contributor's Guide for detailed explanations and examples of th
 ## Linking to other documents
 
 - Linking outside the docset or between cmdlet reference and conceptual
-  - Use relative URLs when linking to docs.microsoft.com (remove https://docs.microsoft.com/en-us)
-  - Do not include locales in URLs on Microsoft properties (eg. remove "/en-us" from URL)
+  - Use relative URLs when linking to docs.microsoft.com (remove `https://docs.microsoft.com/en-us`)
+  - Do not include locales in URLs on Microsoft properties (eg. remove `/en-us` from URL)
   - All URLs to external websites should use HTTPS unless that is not valid for the target site
 - Within docset
-  - Link to file path (e.g. ../folder/file.md)
-  - All file paths use forward-slash characters
+  - Link to file path (e.g. `../folder/file.md`)
+  - All file paths use forward-slash (`/`) characters
 - Image links should have unique alt text
