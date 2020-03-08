@@ -46,6 +46,7 @@ articles in the Contributor's Guide for detailed explanations and examples of th
 - H1 is first - only one H1 per article
 - Use [ATX Headers](https://github.github.com/gfm/#atx-headings) only
 - Use sentence case for all headers
+- Do not skip levels - no H3 without an H2
 - Max depth of H3 or H4
 - Blank line before and after
 - PlatyPS enforces specific headers in its schema - do not add or remove headers

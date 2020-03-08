@@ -226,7 +226,7 @@ article under the `media` folder. Copy the images for that article to that new f
 is used by multiple articles, each image folder must have a copy of that image file. This practice
 prevents a change to an image in one article affecting another article.
 
-The following image file types are supported: *.png", *.gif", *.jpeg", *.jpg", *.svg
+The following image file types are supported: `*.png`, `*.gif`, `*.jpeg`, `*.jpg`, `*.svg`
 
 ### Markdown extensions supported by Open Publishing
 
@@ -279,6 +279,7 @@ These alerts look like this on docs.microsoft.com:
   `http://schemas.dmtf.org/wbem/wscim/1/cim-schema/2/` is used and the class name is appended to it.
   ```
 
+- URL links should be HTTPS when possible.
 - Links must have a friendly name, usually the title of the linked topic
 - All items in the "related links" section at the bottom should be hyperlinked.
 - Do not use backticks, bold, or other markup inside the brackets of a hyperlink.
