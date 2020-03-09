@@ -80,6 +80,10 @@ Get-Command
 Get-Command -ListImported
 ```
 
+## Next steps
+
+[Editorial checklist](editorial-checklist.md)
+
 <!-- link references -->
 [PlatyPS]: https://github.com/powershell/platyps
 [platyPS.schema.md]: https://github.com/PowerShell/platyPS/blob/master/platyPS.schema.md

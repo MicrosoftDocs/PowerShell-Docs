@@ -87,7 +87,7 @@ to fix and avoid these problems for future submissions.
 
 ## Next steps
 
-[PowerShell-Docs style guide](powerShell-style-guide.md)
+[PowerShell-Docs style guide](powershell-style-guide.md)
 
 ## Additional resources
 

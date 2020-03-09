@@ -6,6 +6,8 @@ ms.topic: conceptual
 ---
 # Get started contributing to PowerShell documentation
 
+This article is an overview of how to get started as a contributor to the PowerShell documentation.
+
 ## PowerShell-Docs structure
 
 The [PowerShell-Docs repository][psdocs] is divided into two groups of content. Git branches are
@@ -61,7 +63,7 @@ update-to-date copy of the `staging` or `release` branch.
 Make the changes you want to submit following the process in the
 [Making your change][[making-changes] section of the central Contributor's Guide.
 
-### Creating new topics
+### Creating new articles
 
 A GitHub issue must be created for any new document you want to contribute. Check for existing
 issues to make sure you're not duplicating efforts. Issues that are assigned to someone are
@@ -73,7 +75,7 @@ that you don't spend a lot of time and effort on something that gets rejected by
 team. This also allows us to consult with you on the scope of the content and where is should fit
 within the PowerShell documentation.
 
-### Updating topics that existing articles
+### Updating existing articles
 
 Where applicable, cmdlet reference article are duplicated across all versions of PowerShell. When
 reporting an issue about a cmdlet reference or an `About_` article, you must specify which versions

@@ -1,10 +1,10 @@
 ---
-title: How to file an issue
+title: How to file a PowerShell-Docs issue
 description: This article explains how to give feedback about the PowerShell documentation.
 ms.date: 03/05/2020
 ms.topic: conceptual
 ---
-# How to file an issue
+# How to file a PowerShell-Docs issue
 
 There are two ways to create an issue:
 
@@ -23,8 +23,8 @@ links it to the current article.
 
 > [!NOTE]
 > This is not a support channel. This is a way to ask clarifying questions about documentation or
-> report errors and omissions. If you need technical support, see the
-> [Community resources](../community-support.md) page.
+> report errors and omissions. If you need technical support, see
+> [Community resources](../community-support.md).
 
 ## Filing issues on GitHub
 

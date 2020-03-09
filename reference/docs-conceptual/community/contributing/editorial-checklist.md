@@ -58,17 +58,19 @@ articles in the Contributor's Guide for detailed explanations and examples of th
 - Untagged fence - syntax blocks or other shells
 - Put **Output** in separate code block except for simple examples where you don't intend the for
   the reader to use the **Copy** button
+- See list of [supported languages](/contribute/code-in-docs#supported-languages)
 
 ### Lists
 
 - Indented properly
 - Blank line before first item and after last item
-- Bullet - use hyphen "-" not asterisk "*" - too easy to confuse with emphasis
+- Bullet - use hyphen (`-`) not asterisk (`*`) - too easy to confuse with emphasis
 - For numbered lists, all numbers are "1."
 
 ## Terminology
 
 - PowerShell vs. Windows PowerShell vs. PowerShell Core
+- See [Product Terminology](powershell-style-guide.md#product-terminology)
 
 ## Cmdlet reference examples
 

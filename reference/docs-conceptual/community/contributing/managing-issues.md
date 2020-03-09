@@ -4,10 +4,10 @@ description: This article explains how the PowerShell-Docs team manages pull req
 ms.date: 03/05/2020
 ms.topic: conceptual
 ---
-# Managing Issues
+# How we manage issues
 
 This article documents how we manage issues in the PowerShell-Docs repo. This article is designed to
-be a job aid for member of the PowerShell-Docs team. It is published here to provide process
+be a job aid for members of the PowerShell-Docs team. It is published here to provide process
 transparency for our public contributors.
 
 ## Sources of issues
@@ -33,7 +33,7 @@ transparency for our public contributors.
 |Issue   | Used to classify the type of feedback for issue                     |
 |Review  | Used for issue that require further review by the team              |
 |Status  | Used to indicate the status of the work item                        |
-|Waiting | Used to indicate that we are waiting on                             |
+|Waiting | Used to indicate that we are waiting on something                   |
 
 #### Milestones
 
@@ -58,7 +58,7 @@ assigned. PowerShell docs team members are encouraged to review the issues daily
 issues as they arrive. The weekly triage meeting can then be used to discuss the new issues in more
 detail, as needed.
 
-Misplaced product feedback
+### Misplaced product feedback
 
 - Enter a comment for the customer indicating it is product feedback and provide a link to the
   appropriate feedback channel.
@@ -74,7 +74,7 @@ Misplaced product feedback
   | reference | https://github.com/PowerShell/PowerShell/issues/new/choose   |
   | wmf       | https://windowsserver.uservoice.com/forums/301869-powershell |
 
-Support requests
+### Support requests
 
 - If the support question is simple, answer it politely and close the issue.
 - If the question is more complicated, or the submitter replies with more questions, redirect them
@@ -84,7 +84,7 @@ Support requests
     > community support forum. For a list of community forums see:
     > https://docs.microsoft.com/powershell/scripting/community/community-support
 
-Code of conduct violations
+### Code of conduct violations
 
 - Edit the issue to remove any offensive content, if necessary.
 - Enter a comment indicating the issue is spam, close the issue, and then lock it to prevent further

@@ -738,7 +738,7 @@
       items:
         - name: Overview
           href: community/contributing/overview.md
-        - name: How to file an issue
+        - name: How to file a Docs issue
           href: community/contributing/file-an-issue.md
         - name: Get started writing docs
           href: community/contributing/get-started-writing.md
