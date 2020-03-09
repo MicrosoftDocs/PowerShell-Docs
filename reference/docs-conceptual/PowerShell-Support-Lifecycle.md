@@ -25,7 +25,7 @@ options.
 
 ## LifeCycle of PowerShell 7
 
-PowerShell 7 has moved from the Microsoft Modern Lifecycle Policy to being linked to [.NET Core's support lifecycle][Long-Term].
+With the release of PowerShell 7, support has moved from the Microsoft Modern Lifecycle Policy to follow [.NET Core's support lifecycle][Long-Term].
 In this servicing approach, customers can choose Long Term Support (LTS) releases or Current
 releases. PowerShell 7.0 is an LTS release and support will end with support of .NET Core 3.1 and
 the next LTS release will follow the next .NET core LTS release. You can see the [PowerShell releases end of life table](#PowerShell-releases-end-of-life)
