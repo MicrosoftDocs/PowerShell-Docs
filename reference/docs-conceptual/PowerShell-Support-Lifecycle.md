@@ -9,7 +9,7 @@ PowerShell is a distinct set of tools and components that is shipped, installed,
 separately from Windows PowerShell. PowerShell isn't included in the Windows
 licensing agreements.
 
-However, PowerShell is supported under traditional Microsoft support agreements, including [Premier][],
+PowerShell is supported under traditional Microsoft support agreements, including [Premier][],
 [Microsoft Enterprise Agreements][enterprise-agreement], and [Microsoft Software Assurance][assurance].
 You can also pay for [assisted support][] for PowerShell by filing a support request for your
 problem.
