@@ -109,7 +109,7 @@ experimentation and feedback.
 > [!NOTE]
 > CIM, PowerShell Remoting, and DSC are not supported on Alpine.
 
-## PowerShell releases end-of-life
+## PowerShell releases end of life
 
 Based on [Lifecycle of PowerShell](#lifecycle-of-powershell-7), the following table lists
 the dates when various releases will no longer be supported.
