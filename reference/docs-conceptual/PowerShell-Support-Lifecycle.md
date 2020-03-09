@@ -1,9 +1,8 @@
 ---
 title: PowerShell Core Support Lifecycle
 description: Policies governing support for PowerShell Core
-ms.date: 08/06/2018
+ms.date: 03/09/2020
 ---
-
 # PowerShell Support Lifecycle
 
 PowerShell is a distinct set of tools and components that is shipped, installed, and configured
