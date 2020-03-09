@@ -6,7 +6,7 @@ ms.date: 03/09/2020
 # PowerShell Support Lifecycle
 
 PowerShell is a distinct set of tools and components that is shipped, installed, and configured
-separately from Windows PowerShell. So, PowerShell isn't included in the Windows 7/8.1/10 or
+separately from Windows PowerShell. PowerShell isn't included in the Windows
 Windows Server licensing agreements.
 
 However, PowerShell is supported under traditional Microsoft support agreements, including [Premier][],
