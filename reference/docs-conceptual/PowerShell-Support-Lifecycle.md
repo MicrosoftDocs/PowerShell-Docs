@@ -32,9 +32,7 @@ The next LTS release follows the next .NET core LTS release. See the [PowerShell
 for current ending support dates. LTS release updates only contain critical, compatible updates and
 fixes.
 
-In between LTS releases, there will be Current releases containing critical fixes as well as
-innovations and new features. However, Current releases are only supported for three months after a
-subsequent Current or LTS release.
+A Current release is a release that occurs between LTS releases. Current releases can contain critical fixes, innovations, and new features. A current release is supported for three months after the next Current or LTS release.
 
 > [!IMPORTANT]
 > You must have the latest patch update installed to qualify for support. For example, if you're
