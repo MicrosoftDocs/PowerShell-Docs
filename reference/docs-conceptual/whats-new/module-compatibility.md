@@ -81,7 +81,7 @@ administrator**.
 | AppvClient                         | Untested with Compatibility Layer    |                                    |
 | Appx                               | Natively Compatible                  | Windows Server 1809+<br>Windows 10 1809+ |
 | AssignedAccess                     | Natively Compatible                  | Windows 10 1809+                   |
-| BestPractices                      | Not Working   |                                    |
+| BestPractices                      | Not Working with Compatibility Layer |                                    |
 | BitLocker                          | Natively Compatible                  | Windows Server 1809+ with BitLocker<br>Windows 10 1809+ |
 | BitsTransfer                       | Natively Compatible                  | Windows Server 20H1<br>Windows 10 20H1 |
 | BootEventCollector                 | Untested with Compatibility Layer    |                                        |
@@ -162,7 +162,7 @@ administrator**.
 | ScheduledTasks                     | Natively Compatible                  | Windows Server 1809+<br>Windows 10 1809+      |
 | SecureBoot                         | Natively Compatible                  | Windows Server 1809+<br>Windows 10 1809+      |
 | ServerCore                         | Untested with Compatibility Layer    |                                               |
-| ServerManager                      | Works with Compatibility Layer    |                                               |
+| ServerManager                      | Works with Compatibility Layer       |                                               |
 | ServerManagerTasks                 | Untested with Compatibility Layer    |                                               |
 | ShieldedVMDataFile                 | Natively Compatible                  | Windows Server 1903+ with RSAT-Shielded-VM-Tools<br>Windows 10 1903+ with Rsat.Shielded.VM.Tools |
 | ShieldedVMProvisioning             | Natively Compatible                  | Windows Server 1809+ with HostGuardian<br>Windows 10 1809+ with HostGuardian  |
@@ -184,7 +184,7 @@ administrator**.
 | TroubleshootingPack                | Natively Compatible                  | Windows 10 1903+                              |
 | TrustedPlatformModule              | Natively Compatible                  | Windows Server 1809+<br>Windows 10 1809+      |
 | UEV                                | Natively Compatible                  | Windows Server ??Future version of Server with Desktop Experience??<br>Windows 10 1903+ |
-| UpdateServices                     | Not Working with Compatibilityh Layer |                                               |
+| UpdateServices                     | Not Working with Compatibility Layer |                                               |
 | VpnClient                          | Natively Compatible                  | Windows Server 1809+<br>Windows 10 1809+      |
 | Wdac                               | Natively Compatible                  | Windows Server 1809+<br>Windows 10 1809+      |
 | WebAdministration                  | Untested with Compatibility Layer    |                                               |
