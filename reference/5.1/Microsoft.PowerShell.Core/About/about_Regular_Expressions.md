@@ -1,7 +1,7 @@
 ---
 keywords: powershell,cmdlet
 locale: en-us
-ms.date: 12/01/2017
+ms.date: 03/10/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_regular_expressions?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Regular_Expressions
@@ -379,11 +379,16 @@ For more information, see
 #### Substitutions in Regular Expressions
 
 Using the regular expressions with the `-replace` operator allows you to
-dynamically replace text using captured text. Capturing groups can be
-referenced in the \<substitute\> string. The substitution is done by using the
-`$` character before the group identifier.
+dynamically replace text using captured text.
 
 `<input> -replace <original>, <substitute>`
+
+`<input>` is regular string input but `<original>` and `<substitute>` are both
+interpreted as regex statements and are subject to the parsing rules of the
+regex engine listed above.
+
+Capturing groups can be referenced in the `<substitute>` string. The
+substitution is done by using the `$` character before the group identifier.
 
 Two ways to reference capturing groups are by **Number** and by **Name**.
 
@@ -432,8 +437,9 @@ Gobble Gobble
 > Hello Universe
 > ```
 >
-> Additionally, since the `$` character is used in substitution, you will need
-> to escape any instances in your string.
+> Additionally, if you want to have the `$` as a literal character, use `$$`
+> instead of the normal escape characters. When using double quotes, still
+> escape all instances of `$` to avoid incorrect substitution.
 >
 > ```powershell
 > '5.72' -replace '(.+)', '$$$1'
@@ -445,8 +451,7 @@ Gobble Gobble
 > $5.72
 > ```
 
-For more information, see
-[Substitutions in Regular Expressions](/dotnet/standard/base-types/substitutions-in-regular-expressions).
+For more information, see [Substitutions in Regular Expressions](/dotnet/standard/base-types/substitutions-in-regular-expressions).
 
 ## See also
 
