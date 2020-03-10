@@ -54,11 +54,11 @@ Installing via direct download doesn't change, other than the file name.
 The following table contains the commands to install the stable and preview packages using the
 various package managers:
 
-|Distribution(s)|Stable Command | Preview Command |
-|---------------|---------------|-----------------|
-| Ubuntu, Debian |`sudo apt-get install -y powershell`| `sudo apt-get install -y powershell-preview`|
-| CentOS, RedHat |`sudo yum install -y powershell` | `sudo yum install -y powershell-preview`|
-| Fedora   |`sudo dnf install -y powershell` | `sudo dnf install -y powershell-preview`|
+| Distribution(s) |            Stable Command            |               Preview Command                |
+| --------------- | ------------------------------------ | -------------------------------------------- |
+| Ubuntu, Debian  | `sudo apt-get install -y powershell` | `sudo apt-get install -y powershell-preview` |
+| CentOS, RedHat  | `sudo yum install -y powershell`     | `sudo yum install -y powershell-preview`     |
+| Fedora          | `sudo dnf install -y powershell`     | `sudo dnf install -y powershell-preview`     |
 
 ## Ubuntu 16.04
 
@@ -266,8 +266,8 @@ sudo apt-get remove powershell
 
 ### Installation via Direct Download - Debian 10
 
-Download the tar.gz package `powershell_7.0.0-preview-7-linux-x64.tar.gz` from the [releases][] page onto
-the Debian machine.
+Download the tar.gz package `powershell_7.0.0-linux-x64.tar.gz` from the [releases][] page
+onto the Debian machine.
 
 Then, in the terminal, execute the following commands:
 
@@ -289,22 +289,22 @@ sudo apt-get install -y \
         curl
 
 # Download the powershell '.tar.gz' archive
-curl -L https://github.com/PowerShell/PowerShell/releases/download/v7.0.0-preview.4/powershell-7.0.0-preview.4-linux-x64.tar.gz -o /tmp/powershell.tar.gz
+curl -L  https://github.com/PowerShell/PowerShell/releases/download/v7.0.0/powershell-7.0.0-linux-x64.tar.gz -o /tmp/powershell.tar.gz
 
 # Create the target folder where powershell will be placed
-sudo mkdir -p /opt/microsoft/powershell/7-preview
+sudo mkdir -p /opt/microsoft/powershell/7
 
 # Expand powershell to the target folder
-sudo tar zxf /tmp/powershell.tar.gz -C /opt/microsoft/powershell/7-preview
+sudo tar zxf /tmp/powershell.tar.gz -C /opt/microsoft/powershell/7
 
 # Set execute permissions
-sudo chmod +x /opt/microsoft/powershell/7-preview/pwsh
+sudo chmod +x /opt/microsoft/powershell/7/pwsh
 
 # Create the symbolic link that points to pwsh
-sudo ln -s /opt/microsoft/powershell/7-preview/pwsh /usr/bin/pwsh-preview
+sudo ln -s /opt/microsoft/powershell/7/pwsh /usr/bin/pwsh-preview
 
 # Start PowerShell
-pwsh-preview
+pwsh
 ```
 
 ## Alpine 3.9 and 3.10
@@ -314,7 +314,7 @@ pwsh-preview
 
 ### Installation via Direct Download - Alpine 3.9 and 3.10
 
-Download the tar.gz package `powershell_7.0.0-preview-7-linux-x64.tar.gz` from the [releases][] page onto
+Download the tar.gz package `powershell_7.0.0-linux-x64.tar.gz` from the [releases][] page onto
 the Alpine machine.
 
 Then, in the terminal, execute the following commands:
@@ -340,22 +340,22 @@ sudo apk -X https://dl-cdn.alpinelinux.org/alpine/edge/main add --no-cache \
     lttng-ust
 
 # Download the powershell '.tar.gz' archive
-curl -L https://github.com/PowerShell/PowerShell/releases/download/v7.0.0-preview.4/powershell-7.0.0-preview.4-linux-alpine-x64.tar.gz -o /tmp/powershell.tar.gz
+curl -L https://github.com/PowerShell/PowerShell/releases/download/v7.0.0/powershell-7.0.0-linux-alpine-x64.tar.gz -o /tmp/powershell.tar.gz
 
 # Create the target folder where powershell will be placed
-sudo mkdir -p /opt/microsoft/powershell/7-preview
+sudo mkdir -p /opt/microsoft/powershell/7
 
 # Expand powershell to the target folder
-sudo tar zxf /tmp/powershell.tar.gz -C /opt/microsoft/powershell/7-preview
+sudo tar zxf /tmp/powershell.tar.gz -C /opt/microsoft/powershell/7
 
 # Set execute permissions
-sudo chmod +x /opt/microsoft/powershell/7-preview/pwsh
+sudo chmod +x /opt/microsoft/powershell/7/pwsh
 
 # Create the symbolic link that points to pwsh
-sudo ln -s /opt/microsoft/powershell/7-preview/pwsh /usr/bin/pwsh-preview
+sudo ln -s /opt/microsoft/powershell/7/pwsh /usr/bin/pwsh
 
 # Start PowerShell
-pwsh-preview
+pwsh
 ```
 
 ## CentOS 7
@@ -788,13 +788,13 @@ sudo rm -rf /usr/bin/pwsh /opt/microsoft/powershell
 
 ## Paths
 
-* `$PSHOME` is `/opt/microsoft/powershell/7/`
-* User profiles will be read from `~/.config/powershell/profile.ps1`
-* Default profiles will be read from `$PSHOME/profile.ps1`
-* User modules will be read from `~/.local/share/powershell/Modules`
-* Shared modules will be read from `/usr/local/share/powershell/Modules`
-* Default modules will be read from `$PSHOME/Modules`
-* PSReadline history will be recorded to `~/.local/share/powershell/PSReadLine/ConsoleHost_history.txt`
+- `$PSHOME` is `/opt/microsoft/powershell/7/`
+- User profiles will be read from `~/.config/powershell/profile.ps1`
+- Default profiles will be read from `$PSHOME/profile.ps1`
+- User modules will be read from `~/.local/share/powershell/Modules`
+- Shared modules will be read from `/usr/local/share/powershell/Modules`
+- Default modules will be read from `$PSHOME/Modules`
+- PSReadline history will be recorded to `~/.local/share/powershell/PSReadLine/ConsoleHost_history.txt`
 
 The profiles respect PowerShell's per-host configuration, so the default host-specific profiles
 exists at `Microsoft.PowerShell_profile.ps1` in the same locations.
