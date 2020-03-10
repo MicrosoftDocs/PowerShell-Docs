@@ -1,9 +1,8 @@
 ---
 title: Installing PowerShell on Linux
 description: Information about installing PowerShell on various Linux distributions
-ms.date: 07/19/2019
+ms.date: 03/09/2020
 ---
-
 # Installing PowerShell on Linux
 
 Supports [Ubuntu 16.04][u16], [Ubuntu 18.04][u1804], [Ubuntu 18.10][u1810], [Ubuntu 19.04][u1904],
