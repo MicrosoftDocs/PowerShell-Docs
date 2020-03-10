@@ -52,8 +52,8 @@ Get-ChildItem
 ```
 
 You can view the environment variables in the `Env:` drive from any other
-PowerShell drive, and you can go into the `Env:` drive to view and
-change the environment variables.
+PowerShell drive, and you can go into the `Env:` drive to view and change the
+environment variables.
 
 ### Environment Variable Objects
 
@@ -69,9 +69,9 @@ change an environment variable in PowerShell, use the methods that are
 associated with the **DictionaryEntry** object.
 
 To display the properties and methods of the object that represents an
-environment variable in PowerShell, use the `Get-Member` cmdlet. For
-example, to display the methods and properties of all the objects in the `Env:`
-drive, type:
+environment variable in PowerShell, use the `Get-Member` cmdlet. For example,
+to display the methods and properties of all the objects in the `Env:` drive,
+type:
 
 ```powershell
 Get-Item -Path Env:* | Get-Member
@@ -81,8 +81,8 @@ Get-Item -Path Env:* | Get-Member
 
 You can use the cmdlets that contain the Item noun (the Item cmdlets) to
 display and change the values of environment variables. Because environment
-variables do not have child items, the output of `Get-Item` and `Get-ChildItem` is
-the same.
+variables do not have child items, the output of `Get-Item` and `Get-ChildItem`
+is the same.
 
 When you refer to an environment variable, type the `Env:` drive name followed
 by the name of the variable. For example, to display the value of the
@@ -128,15 +128,15 @@ PS Env:\> Get-ChildItem ComputerName
 ```
 
 You can also display and change the values of environment variables without
-using a cmdlet by using the expression parser in PowerShell. To
-display the value of an environment variable, use the following syntax:
+using a cmdlet by using the expression parser in PowerShell. To display the
+value of an environment variable, use the following syntax:
 
 ```
 $Env:<variable-name>
 ```
 
-For example, to display the value of the `WINDIR` environment variable,
-type the following command at the PowerShell command prompt:
+For example, to display the value of the `WINDIR` environment variable, type
+the following command at the PowerShell command prompt:
 
 ```powershell
 $Env:windir
@@ -157,10 +157,9 @@ To make a persistent change to an environment variable, use System in Control
 Panel (Advanced tab or the Advanced System Settings item) to store the change
 in the registry.
 
-When you change environment variables in PowerShell, the change
-affects only the current session. This behavior resembles the behavior of the
-Set command in Windows-based environments and the `Setenv` command in UNIX-based
-environments.
+When you change environment variables in PowerShell, the change affects only
+the current session. This behavior resembles the behavior of the Set command in
+Windows-based environments and the `Setenv` command in UNIX-based environments.
 
 You must also have permission to change the values of the variables. If you
 try to change a value without sufficient permission, the command fails, and
@@ -261,19 +260,19 @@ The environment variables that store preferences include:
   PowerShell has permission to create and write files. To disable the file
   cache, set this value to an invalid location, for example:
 
-```powershell
-# `NUL` here is a special device on Windows that cannot be written to, on non-Windows you would
-# use `/dev/null`
-$env:PSModuleAnalysisCachePath = 'NUL'
-```
+  ```powershell
+  # `NUL` here is a special device on Windows that cannot be written to,
+  # on non-Windows you would use `/dev/null`
+  $env:PSModuleAnalysisCachePath = 'NUL'
+  ```
 
   This sets the path to an invalid device. If PowerShell can't write to the
   path, no error is returned, but you can see error reporting by using a
   tracer:
 
-```powershell
-Trace-Command -PSHost -Name Modules -Expression { Import-Module Microsoft.PowerShell.Management -Force }
-```
+  ```powershell
+  Trace-Command -PSHost -Name Modules -Expression { Import-Module Microsoft.PowerShell.Management -Force }
+  ```
 
 - PSDisableModuleAnalysisCacheCleanup
 
@@ -287,37 +286,48 @@ Trace-Command -PSHost -Name Modules -Expression { Import-Module Microsoft.PowerS
 
 - PSModulePath
 
-  Stores the paths to the default module directories. PowerShell looks
-  for modules in the specified directories when you do not specify a full path
-  to a module.
+  The `$env:PSModulePath` environment variable contains a list of folder
+  locations that are searched to find modules and resources.
 
-  The default value of `$Env:PSModulePath` is:
+  By default, the effective locations assigned to `$env:PSModulePath` are:
 
-  ```powershell
-  $HOME\Documents\WindowsPowerShell\Modules; $PSHOME\Modules
-  ```
+  - System-wide locations: `$PSHOME\Modules`
 
-  - All Users scope
+    These folders contain modules that ship with Windows and PowerShell.
 
-    The `$PSHOME\Modules` folder contains modules that ship with Windows and
-    PowerShell.
+    DSC resources that are included with PowerShell are stored in the
+    `$PSHOME\Modules\PSDesiredStateConfiguration\DSCResources` folder.
 
-  - Current User scope
+  - User-specific modules: These are modules installed by the user in the
+    user's scope. `Install-Module` has a **Scope** parameter that allows you to
+    specify whether the module is installed for the current user or for all
+    users. For more information, see
+    [Install-Module](../../PowerShellGet/Install-Module.md).
 
-    The user-specific **CurrentUser** location is the `PowerShell\Modules`
-    folder located in the **Documents** location in your user profile. The
-    specific path of that location varies by version of Windows and whether or
-    not you are using folder redirection. By default, on Windows 10, that
-    location is `$HOME\Documents\PowerShell\Modules`. On Linux or Mac, the
-    **CurrentUser** location is `$HOME/.local/share/powershell/Modules`.
+    The user-specific **CurrentUser** location on Windows is the
+    `PowerShell\Modules` folder located in the **Documents** location in your
+    user profile. The specific path of that location varies by version of
+    Windows and whether or not you are using folder redirection. Microsoft
+    OneDrive can also change the location of your **Documents** folder.
+
+    By default, on Windows 10, that location is
+    `$HOME\Documents\PowerShell\Modules`. On Linux or Mac, the **CurrentUser**
+    location is `$HOME/.local/share/powershell/Modules`.
+
+    > [!NOTE]
+    > You can verify the location of your **Documents** folder using the
+    > following command: `[Environment]::GetFolderPath('MyDocuments')`.
+
+  - The **AllUsers** location is `$env:PROGRAMFILES\WindowsPowerShell\Modules`.
+    on Windows.
 
   In addition, setup programs that install modules in other directories, such
   as the Program Files directory, can append their locations to the value of
   `PSModulePath`.
 
   To change the default module directories for the current session, use the
-  following command format to change the value of the `PSModulePath` environment
-  variable.
+  following command format to change the value of the `PSModulePath`
+  environment variable.
 
   For example, to add the `C:\Program Files\Fabrikam\Modules` directory to
   the value of the PSModulePath environment variable, type:
@@ -354,8 +364,7 @@ Trace-Command -PSHost -Name Modules -Expression { Import-Module Microsoft.PowerS
   ```
 
   For more information about the methods of the System.Environment class, see
-  [Environment Methods](/dotnet/api/system.environment) in
-  MSDN.
+  [Environment Methods](/dotnet/api/system.environment).
 
   You can add also add a command that changes the value to your profile or use
   System in Control Panel to change the value of the `PSModulePath` environment

@@ -387,7 +387,7 @@ computer:
 `$env:ProgramFiles\PowerShell\Modules`
 
 The **CurrentUser** installs modules in a location that is accessible only to the current user of
-the computer:
+the computer. For example:
 
 `$home\Documents\PowerShell\Modules`
 
