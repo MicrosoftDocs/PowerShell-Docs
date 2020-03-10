@@ -61,7 +61,7 @@ repository before creating your working branch. The working branch should be cre
 update-to-date copy of the `staging` or `release` branch.
 
 Make the changes you want to submit following the process in the
-[Making your change][[making-changes] section of the central Contributor's Guide.
+[Making your change][making-changes] section of the central Contributor's Guide.
 
 ### Creating new articles
 
