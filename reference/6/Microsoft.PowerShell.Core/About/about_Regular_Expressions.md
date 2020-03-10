@@ -351,7 +351,7 @@ The provided regular expression extracts the username and domain from the
 message and stores them under the keys:**N** for name and **D** for domain.
 
 ```powershell
-$log = (Get-WinEvent -LogName Security -MaxEvents 1).message	
+$log = (Get-WinEvent -LogName Security -MaxEvents 1).message
 $r = '(?s).*Account Name:\s*(?<N>.*).*Account Domain:\s*(?<D>[A-Z,0-9]*)'
 $log -match $r
 ```
@@ -418,13 +418,16 @@ Gobble Gobble
 
 > [!WARNING]
 > Since the `$` character is used in string expansion, you'll need to use
-> literal strings with substitution, or escape the `$` character.
+> literal strings with substitution, or escape the `$` character when using
+> double quotes.
 >
 > ```powershell
-> 'Hello World' -replace '(\w+) \w+', '`$1 Universe'
+> 'Hello World' -replace '(\w+) \w+', '$1 Universe'
+> "Hello World" -replace "(\w+) \w+", "`$1 Universe"
 > ```
 >
 > ```Output
+> Hello Universe
 > Hello Universe
 > ```
 >
@@ -433,9 +436,11 @@ Gobble Gobble
 >
 > ```powershell
 > '5.72' -replace '(.+)', '$$$1'
+> "5.72" -replace "(.+)", "`$`$`$1"
 > ```
 >
 > ```Output
+> $5.72
 > $5.72
 > ```
 

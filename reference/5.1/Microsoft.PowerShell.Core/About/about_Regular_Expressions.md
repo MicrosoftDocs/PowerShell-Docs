@@ -419,13 +419,16 @@ Gobble Gobble
 
 > [!WARNING]
 > Since the `$` character is used in string expansion, you'll need to use
-> literal strings with substitution, or escape the `$` character.
+> literal strings with substitution, or escape the `$` character when using
+> double quotes.
 >
 > ```powershell
-> 'Hello World' -replace '(\w+) \w+', '`$1 Universe'
+> 'Hello World' -replace '(\w+) \w+', '$1 Universe'
+> "Hello World" -replace "(\w+) \w+", "`$1 Universe"
 > ```
 >
 > ```Output
+> Hello Universe
 > Hello Universe
 > ```
 >
@@ -434,9 +437,11 @@ Gobble Gobble
 >
 > ```powershell
 > '5.72' -replace '(.+)', '$$$1'
+> "5.72" -replace "(.+)", "`$`$`$1"
 > ```
 >
 > ```Output
+> $5.72
 > $5.72
 > ```
 
