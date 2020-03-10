@@ -13,7 +13,7 @@ PowerShell 7.
 ## Where can I Install PowerShell?
 
 PowerShell 7 is ready to deploy for Microsoft Windows client and server. Together with Microsoft
-Windows, PowerShell 7 will support you on cross-platforms macOS and Linux. See below for the
+Windows, PowerShell 7 supports you on cross-platforms macOS and Linux. See below for the
 currently supported operating systems.
 
 PowerShell 7 currently supports the following operating systems on x64, including:
@@ -35,7 +35,7 @@ Linux.
 > SSH-based remoting, see
 > [PowerShell Remoting over SSH](/powershell/scripting/learn/remoting/ssh-remoting-in-powershell-core?view=powershell-7).
 
-For more up-to-date information about supported operating systems and support lifecycle, see the
+For more information about the supported operating systems and support lifecycle, see the
 [PowerShell Support Lifecycle](/powershell/scripting/powershell-support-lifecycle?view=powershell-7).
 
 ## How do I install PowerShell 7?
@@ -43,12 +43,12 @@ For more up-to-date information about supported operating systems and support li
 To support the needs and flexibility requirements of the IT, DevOps and Development, there are
 several options for obtaining methods PowerShell 7. Choose the option that best suits your needs.
 
-To get PowerShell 7 on your Windows 10 laptop, open the Microsoft Store and enter **PowerShell 7**
-in the search bar. This will use an MSIX package to install PowerShell 7.
+To install PowerShell 7 on your Windows 10 laptop, open the Microsoft Store and enter `PowerShell 7`
+in the search bar. The Store installs the MSIX package of PowerShell 7.
 
 If you already have experience installing PowerShell Core or one of the previews, or need to deploy
-PowerShell 7 to servers, get the binary (.zip, .msi, .deb, .rpm) for your operating system. You can
-download the binaries from the
+PowerShell 7 to servers, get the binary package (.zip, .msi, .deb, .rpm) for your operating system.
+You can download the packages from the
 [GitHub Release page](https://github.com/PowerShell/PowerShell/releases).
 
 If this is your first time installing PowerShell, check the installation instructions for your
@@ -63,7 +63,7 @@ While not officially supported, the community has also provided packages for
 [Arch](https://aur.archlinux.org/packages/powershell/) and Kali Linux.
 
 Additionally, you may want to use one of our many Docker container images. For more information, see
-[PowerShell-Docker](https://hub.docker.com/_/microsoft-powershell) repo.
+[PowerShell-Docker](https://docs.microsoft.com/powershell/scripting/install/powershell-in-docker).
 
 ## Running PowerShell 7
 
@@ -92,10 +92,12 @@ PowerShell 7 will upgrade previous versions of PowerShell Core 6.x:
 > launch PowerShell 7 is `pwsh.exe`. Preview builds will remain in-place as `pwsh-preview` instead
 > of `pwsh` under the 7-preview directory.
 
+For more information about [installing PowerShell 7](https://aka.ms/install-PowerShell).
+
 ## Modules and Module paths
 
-PowerShell 7 on Microsoft Windows combines new module path locations, with those from Windows
-PowerShell, to provide easy importing of both Core and Desktop modules. By default, Windows
+PowerShell 7 on Microsoft Windows combines the Windows PowerShell Module paths and the new
+PowerShell 7 paths to provide autoloading of both Core and Desktop modules. By default, Windows
 PowerShell and PowerShell 7 have different `$Env:PSModulePath` values except for
 `%WINDIR%\system32\WindowsPowerShell\v1.0\Modules` module path which is shared by both.
 
@@ -135,17 +137,10 @@ C:\Program Files\WindowsPowerShell\Modules
 C:\WINDOWS\System32\WindowsPowerShell\v1.0\Modules
 ```
 
-> [!NOTE]
-> PowerShell 7 on Windows adds the module path for Windows PowerShell to permit the
-> autoloading of modules from Windows PowerShell.
-
 ### Starting Windows PowerShell from PowerShell 7
 
-PowerShell 7 on Microsoft Windows combines new module path locations needed for PowerShell 7 with
-those from Windows PowerShell to provide easy importing of both Core and Desktop modules. This
-includes adding or removing additional module paths created by applications or the user. When
-running Windows PowerShell from PowerShell 7, only the paths needed for Windows PowerShell modules
-are added.
+When running Windows PowerShell from PowerShell 7, only the paths needed for Windows PowerShell
+modules are added.
 
 PowerShell 7 path on Windows before starting Windows PowerShell:
 
@@ -184,20 +179,19 @@ for more information about Modules, see [about_Modules](https://github.com/Micro
 
 ## Where is the ISE (Integrated Scripting Environment)?
 
-The Windows PowerShell Integrated Scripting Environment (ISE) is only available in Windows
+The Windows PowerShell Integrated Scripting Environment (ISE) is only supported in Windows
 PowerShell. To support the growing needs of the automation and scripting community, along with
 DevOps and developers, we recommend [Visual Studio Code (VSCode)](https://code.visualstudio.com/)
 and the [PowerShell Extension](https://code.visualstudio.com/docs/languages/powershell) for writing
 and debugging scripts and modules.
 
-To make the transition from the **ISE** to **VSCode** smoother, a new option **Enable ISE Mode** is
-available in the the Command Palette to switch **VSCode** into an **ISE** style layout. By
-transitioning to **VSCode** and the new **ISE** layout, you will continue to get all the new
-features and capabilities of PowerShell in a familiar scripting tool.
+To make the transition to VSCode easier, use the **Enable ISE Mode** function available in the the
+Command Palette. This function switches VSCode into an ISE-style layout. The ISE-style layout give
+you all the new features and capabilities of PowerShell in a familiar user experience.
 
 To switch between the default layout and the new ISE layout, press;
 
-<kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd>
++ <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd>
 
 Type and select: **PowerShell:Enable ISE Mode**
 
@@ -205,13 +199,12 @@ To set the layout to the original VSCode layout, open the Command Palette, type 
 **PowerShell: Disable ISE Mode (restore to defaults)**
 
 For details about customizing the VSCode layout to ISE, see
-[How to Replicate the ISE Experience in Visual Studio Code](https://docs.microsoft.com/powershell/scripting/components/vscode/how-to-replicate-the-ise-experience-in-vscode?view=powershell-7)
+[How to Replicate the ISE Experience in Visual Studio Code](/powershell/scripting/components/vscode/how-to-replicate-the-ise-experience-in-vscode)
 
-> [!NOTE]
-> The PowerShell Team and partners are actively working to improve the scripting experience in the
-> PowerShell extension for VSCode. We currently have no plans to update the ISE with new features
-> going forward. In the latest versions of Windows 10 and Windows Server, the ISE is now a
-> user-uninstallable feature, but this does not signal any plans to make it unavailable in the  future.
+> [!NOTE] The PowerShell Team and its partners are actively working to improve the scripting
+> experience in the PowerShell extension for VSCode. We currently have no plans to update the ISE
+> with new features. In the latest versions of Windows 10 and Windows Server, the ISE is now a
+> user-uninstallable feature. We have no plans to make the ISE unavailable in the future.
 
 ## PowerShell SSH Remoting
 
@@ -248,3 +241,5 @@ Enter-PSSession -HostName <Username>@<Computer>
 You may setup **SSH** key authentication using a private key file with the KeyFilePath parameter.
 For more information, see;
 [OpenSSH Key Management](https://docs.microsoft.com/windows-server/administration/openssh/openssh_keymanagement).
+
+## Next Steps
