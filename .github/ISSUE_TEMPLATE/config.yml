@@ -7,5 +7,5 @@ contact_links:
     url: https://windowsserver.uservoice.com/forums/301869-powershell
     about: Windows PowerShell issues or suggestions.
   - name: Support
-    url: https://github.com/MicrosoftDocs/PowerShell-Docs/blob/staging/.github/SUPPORT.md
+    url: https://docs.microsoft.com/powershell/scripting/community/community-support
     about: PowerShell Support Questions/Help
