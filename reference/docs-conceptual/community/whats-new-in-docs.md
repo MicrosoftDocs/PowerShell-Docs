@@ -9,6 +9,9 @@ ms.date: 03/04/2020
 This article lists some of the major changes to docs during this previous month and celebrates the
 contributions from the community.
 
+Help us make the documentation better for you. Read the [Contributor's Guide][contrib] to learn how
+to get started.
+
 ## 2020-February
 
 ### Highlights
@@ -105,11 +108,6 @@ GitHub issues help us identify errors and gaps in our documentation.
 | KirkMunro          |      |      |    7 |    7 |      |          14 |
 | vexx32             |      |      |    3 |   11 |      |          14 |
 | alexandair         |    6 |    4 |    2 |      |      |          12 |
-
-## Get involved!
-
-Help us make the documentation better for you. Learn how you can contribute by reading the
-[Contributor's Guide][contrib].
 
 <!-- Link references -->
 [contrib]: contributing/overview.md
