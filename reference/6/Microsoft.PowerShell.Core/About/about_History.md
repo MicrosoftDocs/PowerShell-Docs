@@ -31,7 +31,7 @@ PowerShell has a set of cmdlets that manage the command history.
 ### Keyboard Shortcuts for Managing History
 
 In the PowerShell console, you can use the following shortcuts to manage the
-command history. For other host applications, see the product documentation.
+command history.
 
 - <kbd>UpArrow</kbd> - Displays the previous command.
 - <kbd>DownArrow</kbd> - Displays the next command.
@@ -43,12 +43,14 @@ command history. For other host applications, see the product documentation.
   <kbd>F9</kbd>. Press <kbd>F7</kbd> to find the ID.
 
 > [!NOTE]
-> These key bindings are implemented by the PowerShell console host. The
-> bindings can be overridden by the PSReadLine module. PSReadLine loads
-> automatically when you start a new PowerShell session. With PSReadLine
-> loaded, <kbd>F7</kbd> and <kbd>F9</kbd> are not bound to any function.
-> PSReadLine does not provide equivalent functionality. For more information,
-> see [about_PSReadLine](../../PSReadLine/About/about_PSReadLine.md).
+> These key bindings are implemented by the console host application. Other
+> applications, such as Visual Studio Code or Windows Terminal, can have
+> different key bindings. The bindings can be overridden by the PSReadLine
+> module. PSReadLine loads automatically when you start a new PowerShell
+> session. With PSReadLine loaded, <kbd>F7</kbd> and <kbd>F9</kbd> are not
+> bound to any function. PSReadLine does not provide equivalent functionality.
+> For more information, see
+> [about_PSReadLine](../../PSReadLine/About/about_PSReadLine.md).
 
 ### MaximumHistoryCount
 
