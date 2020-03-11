@@ -26,12 +26,12 @@ options.
 ## LifeCycle of PowerShell 7
 
 With the release of PowerShell 7, PowerShell continues to be supported under the [Microsoft Modern Lifecycle Policy][modern],
-but support dates are linked to [.NET Core's support lifecycle][Long-Term]. In
-this servicing approach, customers can choose Long Term Support (LTS) releases or Current releases.
-PowerShell 7.0 is an LTS release. Support ends with the support of .NET Core 3.1. The next LTS
-release follows the next .NET core LTS release. See the [PowerShell releases end of life table](#powerShell-releases-end-of-life)
-for current ending support dates. LTS release updates only contain critical, compatible updates and
-fixes.
+but support dates are linked to [.NET Core's support lifecycle][Long-Term]. In this servicing
+approach, customers can choose Long Term Support (LTS) releases or Current releases. PowerShell 7.0
+is an LTS release. Support ends with the support of .NET Core 3.1. The next LTS release follows the
+next .NET core LTS release. See the [PowerShell releases end of life table](#powerShell-releases-end-of-life)
+for current ending support dates. LTS release updates only contain critical security and servicing
+updates and fixes that are designed to avoid or minimize impact to existing workloads.
 
 A Current release is a release that occurs between LTS releases. Current releases can contain
 critical fixes, innovations, and new features. A current release is supported for three months after
@@ -113,7 +113,7 @@ experimentation and feedback.
 
 ## PowerShell releases end of life
 
-Based on [Lifecycle of PowerShell](#lifecycle-of-powershell-7), the following table lists
+Based on the [Lifecycle of PowerShell](#lifecycle-of-powershell-7), the following table lists
 the dates when various releases will no longer be supported.
 
 | Version |    End-of-life     |
@@ -157,7 +157,7 @@ makes no guarantees of responsiveness or fixes.
 
 ## Windows PowerShell Compatibility
 
-The support lifecycle for PowerShell doesn't cover modules that ship outside of PowerShell 7. For
+The support lifecycle for PowerShell doesn't cover modules that ship outside of the PowerShell 7 release package. For
 example, using the `ActiveDirectory` module that ships as part of Windows Server is supported under
 the [Windows Support Lifecycle][].
 
@@ -165,7 +165,7 @@ PowerShell 7 improves compatibility with existing PowerShell modules written for
 For more information, see the [about_Windows_Compatibility][] article and the [module compatibility list][].
 
 > [!NOTE]
-> The **WindowsPSModulePath** module is no longer necessary in PowerShell 7 and is not supported.
+> The [**WindowsPSModulePath**](https://www.powershellgallery.com/packages/WindowsPSModulePath) module is no longer necessary in PowerShell 7 and is not supported.
 
 ## Experimental features
 
