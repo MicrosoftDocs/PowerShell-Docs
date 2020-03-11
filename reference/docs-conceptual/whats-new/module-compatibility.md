@@ -74,7 +74,7 @@ administrator**.
 | Module name                        | Status                               | Supported OS                       |
 | ---------------------------------- | ------------------------------------ | ---------------------------------- |
 | ActiveDirectory                    | Natively Compatible                  | Windows Server 1809+ with RSAT-AD-PowerShell<br>Windows 10 1809+ with Rsat.ActiveDirectory.DS-LDS.Tools |
-| AD Deployment                      | Works with Compatibility Layer    |  Windows Server 2019 1809+                                  |
+| ADDSDeployment                     | Works with Compatibility Layer    |  Windows Server 2019 1809+                                  |
 | ADFS                               | Untested with Compatibility Layer    |                                    |
 | AppBackgroundTask                  | Natively Compatible                  | Windows 10 1903+                   |
 | AppLocker                          | Untested with Compatibility Layer    |                                    |
