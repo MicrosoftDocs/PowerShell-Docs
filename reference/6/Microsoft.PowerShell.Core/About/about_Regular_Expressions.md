@@ -378,11 +378,21 @@ For more information, see
 #### Substitutions in Regular Expressions
 
 Using the regular expressions with the `-replace` operator allows you to
-dynamically replace text using captured text. Capturing groups can be
-referenced in the \<substitute\> string. The substitution is done by using the
-`$` character before the group identifier.
+dynamically replace text using captured text.
 
 `<input> -replace <original>, <substitute>`
+
+- `<input>`: Regular string input
+- `<original>`: Regular expression define all or part of input string to replace
+- `<substitute>`: Uses regular expression patterns to replace the matched
+`<original>` text from the input string.
+
+> [!NOTE]
+> The `<original>` and `<substitute>` operands are subject to rules of the
+> regular expression engine such as character escaping.
+
+Capturing groups can be referenced in the `<substitute>` string. The
+substitution is done by using the `$` character before the group identifier.
 
 Two ways to reference capturing groups are by **Number** and by **Name**.
 
@@ -431,8 +441,9 @@ Gobble Gobble
 > Hello Universe
 > ```
 >
-> Additionally, since the `$` character is used in substitution, you will need
-> to escape any instances in your string.
+> Additionally, if you want to have the `$` as a literal character, use `$$`
+> instead of the normal escape characters. When using double quotes, still
+> escape all instances of `$` to avoid incorrect substitution.
 >
 > ```powershell
 > '5.72' -replace '(.+)', '$$$1'
@@ -444,8 +455,7 @@ Gobble Gobble
 > $5.72
 > ```
 
-For more information, see
-[Substitutions in Regular Expressions](/dotnet/standard/base-types/substitutions-in-regular-expressions).
+For more information, see [Substitutions in Regular Expressions](/dotnet/standard/base-types/substitutions-in-regular-expressions).
 
 ## See also
 

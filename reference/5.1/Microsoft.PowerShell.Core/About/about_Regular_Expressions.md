@@ -383,9 +383,14 @@ dynamically replace text using captured text.
 
 `<input> -replace <original>, <substitute>`
 
-`<input>` is regular string input but `<original>` and `<substitute>` are both
-interpreted as regex statements and are subject to the parsing rules of the
-regex engine listed above.
+- `<input>`: Regular string input
+- `<original>`: Regular expression define all or part of input string to replace
+- `<substitute>`: Uses regular expression patterns to replace the matched
+`<original>` text from the input string.
+
+> [!NOTE]
+> The `<original>` and `<substitute>` operands are subject to rules of the
+> regular expression engine such as character escaping.
 
 Capturing groups can be referenced in the `<substitute>` string. The
 substitution is done by using the `$` character before the group identifier.
