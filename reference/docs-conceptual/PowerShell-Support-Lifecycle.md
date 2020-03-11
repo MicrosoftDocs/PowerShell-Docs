@@ -25,14 +25,17 @@ options.
 
 ## LifeCycle of PowerShell 7
 
-With the release of PowerShell 7, support has moved from the Microsoft Modern Lifecycle Policy to follow [.NET Core's support lifecycle][Long-Term].
-In this servicing approach, customers can choose Long Term Support (LTS) releases or Current
-releases. PowerShell 7.0 is an LTS release. Support ends with the support of .NET Core 3.1.
-The next LTS release follows the next .NET core LTS release. See the [PowerShell releases end of life table](#powerShell-releases-end-of-life)
+With the release of PowerShell 7, PowerShell continues to be supported under the [Microsoft Modern Lifecycle Policy][modern],
+but support dates are linked to [.NET Core's support lifecycle][Long-Term]. In
+this servicing approach, customers can choose Long Term Support (LTS) releases or Current releases.
+PowerShell 7.0 is an LTS release. Support ends with the support of .NET Core 3.1. The next LTS
+release follows the next .NET core LTS release. See the [PowerShell releases end of life table](#powerShell-releases-end-of-life)
 for current ending support dates. LTS release updates only contain critical, compatible updates and
 fixes.
 
-A Current release is a release that occurs between LTS releases. Current releases can contain critical fixes, innovations, and new features. A current release is supported for three months after the next Current or LTS release.
+A Current release is a release that occurs between LTS releases. Current releases can contain
+critical fixes, innovations, and new features. A current release is supported for three months after
+the next Current or LTS release.
 
 > [!IMPORTANT]
 > You must have the latest patch update installed to qualify for support. For example, if you're
@@ -44,9 +47,10 @@ A Current release is a release that occurs between LTS releases. Current release
 PowerShell Core used the [Microsoft Modern Lifecycle Policy][modern]. This support lifecycle
 is intended to keep customers up-to-date with the latest versions.
 
-The version 6.x branch of PowerShell Core was updated approximately once every six months
-(examples: 6.0, 6.1, 6.2, etc.). However, with the release of PowerShell 7, there won't be anymore
-releases of 6.x.
+The version 6.x branch of PowerShell Core was updated approximately once every six months (examples:
+6.0, 6.1, 6.2, etc.). However, with the release of PowerShell 7, there won't be anymore minor
+version releases releases of 6.x. PowerShell 6.2.x will continue to receive servicing updates while
+still supported.
 
 > [!IMPORTANT]
 > You must update within six months after each new minor version release to continue receiving
@@ -155,10 +159,10 @@ makes no guarantees of responsiveness or fixes.
 
 The support lifecycle for PowerShell doesn't cover modules that ship outside of PowerShell 7. For
 example, using the `ActiveDirectory` module that ships as part of Windows Server is supported under
-the [Windows Support Lifecycle][]. 
+the [Windows Support Lifecycle][].
 
-PowerShell 7 improves compatibility with existing PowerShell modules written for Windows PowerShell. For more information, see the [about_Windows_Compatibility][]
-article and the [module compatibility list][].
+PowerShell 7 improves compatibility with existing PowerShell modules written for Windows PowerShell.
+For more information, see the [about_Windows_Compatibility][] article and the [module compatibility list][].
 
 > [!NOTE]
 > The **WindowsPSModulePath** module is no longer necessary in PowerShell 7 and is not supported.
