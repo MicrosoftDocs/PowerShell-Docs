@@ -300,7 +300,7 @@ sudo tar zxf /tmp/powershell.tar.gz -C /opt/microsoft/powershell/7
 sudo chmod +x /opt/microsoft/powershell/7/pwsh
 
 # Create the symbolic link that points to pwsh
-sudo ln -s /opt/microsoft/powershell/7/pwsh /usr/bin/pwsh-preview
+sudo ln -s /opt/microsoft/powershell/7/pwsh /usr/bin/pwsh
 
 # Start PowerShell
 pwsh
