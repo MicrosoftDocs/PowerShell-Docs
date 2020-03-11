@@ -383,10 +383,10 @@ dynamically replace text using captured text.
 
 `<input> -replace <original>, <substitute>`
 
-- `<input>`: Regular string input
-- `<original>`: Regular expression define all or part of input string to replace
-- `<substitute>`: Uses regular expression patterns to replace the matched
-`<original>` text from the input string.
+- `<input>`: The string to be searched
+- `<original>`: A regular expression used to search the input string
+- `<substitute>`: A regular expression substitution expression to replace
+  matches found in the input string.
 
 > [!NOTE]
 > The `<original>` and `<substitute>` operands are subject to rules of the
