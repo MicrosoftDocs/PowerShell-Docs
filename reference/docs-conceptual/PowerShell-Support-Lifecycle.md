@@ -109,7 +109,7 @@ experimentation and feedback.
 
 ## PowerShell releases end of life
 
-Based on [Lifecycle of PowerShell](#lifecycle-of-powershell-7), the following table lists
+Based on the [Lifecycle of PowerShell](#lifecycle-of-powershell-7), the following table lists
 the dates when various releases will no longer be supported.
 
 | Version |    End-of-life     |
