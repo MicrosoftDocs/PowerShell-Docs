@@ -287,7 +287,7 @@ a module does not uninstall the module. For more information, see
 The `$env:PSModulePath` environment variable contains a list of folder
 locations that are searched to find modules and resources.
 
-The default locations assigned to `$env:PSModulePath` are:
+By default, the effective locations assigned to `$env:PSModulePath` are:
 
 - System-wide locations: `$PSHOME\Modules`
 
@@ -296,25 +296,33 @@ The default locations assigned to `$env:PSModulePath` are:
   DSC resources that are included with PowerShell are stored in the
   `$PSHOME\Modules\PSDesiredStateConfiguration\DSCResources` folder.
 
-- User-specific modules: These are modules installed by the user in the user's
-  scope. `Install-Module` has a **Scope** parameter that allows you to specify
-  whether the module is installed for the current user or for all users. For
-  more information, see [Install-Module](../../PowerShellGet/Install-Module.md).
+- User-specific modules: These are modules installed by the user in the
+  user's scope. `Install-Module` has a **Scope** parameter that allows you to
+  specify whether the module is installed for the current user or for all
+  users. For more information, see
+  [Install-Module](../../PowerShellGet/Install-Module.md).
 
   The user-specific **CurrentUser** location on Windows is the
   `PowerShell\Modules` folder located in the **Documents** location in your
-  user profile. The specific path of that location varies by version of Windows
-  and whether or not you are using folder redirection. By default, on Windows
-  10, that location is `$HOME\Documents\PowerShell\Modules`. On Linux or Mac,
-  the **CurrentUser** location is `$HOME/.local/share/powershell/Modules`.
+  user profile. The specific path of that location varies by version of
+  Windows and whether or not you are using folder redirection. Microsoft
+  OneDrive can also change the location of your **Documents** folder.
 
-  The user-specific **AllUsers** location is
-  `$env:PROGRAMFILES\WindowsPowerShell\Modules`. on Windows. On Linux or Mac
-  the modules are stores at `/usr/local/share/powershell/Modules`.
+  By default, on Windows 10, that location is
+  `$HOME\Documents\PowerShell\Modules`. On Linux or Mac, the **CurrentUser**
+  location is `$HOME/.local/share/powershell/Modules`.
+
+  > [!NOTE]
+  > You can verify the location of your **Documents** folder using the
+  > following command: `[Environment]::GetFolderPath('MyDocuments')`.
+
+- The **AllUsers** location is `$env:PROGRAMFILES\WindowsPowerShell\Modules` on
+  Windows. On Linux or Mac the modules are stored at
+  `/usr/local/share/powershell/Modules`.
 
 > [!NOTE]
 > To add or change files in the `$env:Windir\System32` directory, start
-> PowerShell with the "Run as administrator" option.
+> PowerShell with the **Run as administrator** option.
 
 You can change the default module locations on your system by changing the
 value of the **PSModulePath** environment variable, `$Env:PSModulePath`. The
