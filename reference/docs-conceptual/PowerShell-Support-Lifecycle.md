@@ -153,7 +153,7 @@ makes no guarantees of responsiveness or fixes.
 
 ## Windows PowerShell Compatibility
 
-The support lifecycle for PowerShell doesn't cover modules that ship outside of PowerShell 7. For
+The support lifecycle for PowerShell doesn't cover modules that ship outside of the PowerShell 7 release package. For
 example, using the `ActiveDirectory` module that ships as part of Windows Server is supported under
 the [Windows Support Lifecycle][]. 
 
