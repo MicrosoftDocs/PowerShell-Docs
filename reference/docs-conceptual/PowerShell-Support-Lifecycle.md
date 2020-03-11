@@ -161,7 +161,7 @@ PowerShell 7 improves compatibility with existing PowerShell modules written for
 article and the [module compatibility list][].
 
 > [!NOTE]
-> The **WindowsPSModulePath** module is no longer necessary in PowerShell 7 and is not supported.
+> The [**WindowsPSModulePath**](https://www.powershellgallery.com/packages/WindowsPSModulePath) module is no longer necessary in PowerShell 7 and is not supported.
 
 ## Experimental features
 
