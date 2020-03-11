@@ -30,11 +30,11 @@ but support dates are linked to [.NET Core's support lifecycle][Long-Term]. In t
 approach, customers can choose Long Term Support (LTS) releases or Current releases. PowerShell 7.0
 is an LTS release. Support ends with the support of .NET Core 3.1. The next LTS release follows the
 next .NET core LTS release. See the [PowerShell releases end of life table](#powershell-releases-end-of-life)
-for current ending support dates. LTS release updates only contain critical security and servicing
+for urrent ending support dates. LTS release updates only contain critical security and servicing
 updates and fixes that are designed to avoid or minimize impact to existing workloads.
 
 A Current release is a release that occurs between LTS releases. Current releases can contain
-critical fixes, innovations, and new features. A current release is supported for three months after
+critical fixes, innovations, and new features. A Current release is supported for three months after
 the next Current or LTS release.
 
 > [!IMPORTANT]
