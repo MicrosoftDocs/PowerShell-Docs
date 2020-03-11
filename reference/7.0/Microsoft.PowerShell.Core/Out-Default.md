@@ -114,7 +114,4 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 [about_Format.ps1xml](About/about_Format.ps1xml.md)
 
-[Out-Default: Secrets Revealed](https://get-powershellblog.blogspot.com/2017/04/out-default-secrets-revealed.html)
-
 [How PowerShell Formatting and Outputting REALLY works](https://devblogs.microsoft.com/powershell/how-powershell-formatting-and-outputting-really-works/)
-
