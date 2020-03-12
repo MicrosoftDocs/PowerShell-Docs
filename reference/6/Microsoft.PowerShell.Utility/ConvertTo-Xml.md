@@ -22,13 +22,19 @@ ConvertTo-Xml [-Depth <Int32>] [-InputObject] <PSObject> [-NoTypeInformation] [-
 
 ## DESCRIPTION
 
-The `ConvertTo-Xml` cmdlet creates an XML-based representation of one or more Microsoft .NET Framework objects.
-To use this cmdlet, pipe one or more objects to the cmdlet, or use the **InputObject** parameter to specify the object.
+The `ConvertTo-Xml` cmdlet creates an [XML-based](/dotnet/api/system.xml.xmldocument) representation
+of one or more Microsoft .NET Framework objects. To use this cmdlet, pipe one or more objects to the
+cmdlet, or use the **InputObject** parameter to specify the object.
 
-When you pipe multiple objects to `ConvertTo-Xml` or use the **InputObject** parameter to submit multiple objects, `ConvertTo-Xml` returns a single XML document that includes representations of all of the objects.
+When you pipe multiple objects to `ConvertTo-Xml` or use the **InputObject** parameter to submit
+multiple objects, `ConvertTo-Xml` returns a single, in-memory XML document that includes
+representations of all of the objects.
 
-This cmdlet is similar to `Export-Clixml` except that `Export-Clixml` stores the resulting XML in a file.
-`ConvertTo-Xml` returns the XML, so you can continue to process it in PowerShell.
+This cmdlet is similar to [Export-Clixml](./Export-Clixml.md) except that `Export-Clixml` stores the
+resulting XML in a [Common Language Infrastructure(CLI) XML](https://www.ecma-international.org/publications/standards/Ecma-335.htm)
+file that can be reimported as objects with [Import-Clixml](./Import-Clixml.md). `ConvertTo-Xml`
+returns an in-memory representation of an XML document, so you can continue to process it in
+PowerShell. `ConvertTo-Xml` does not have an option to convert objects to CLI XML.
 
 ## EXAMPLES
 
@@ -46,8 +52,8 @@ This command converts the current date (a **DateTime** object) to XML.
 PS C:\> ConvertTo-Xml -As "Document" -InputObject (Get-Process) -Depth 3
 ```
 
-This command converts the process objects that represent all of the processes on the computer into an XML document.
-The objects are expanded to a depth of three levels.
+This command converts the process objects that represent all of the processes on the computer into
+an XML document. The objects are expanded to a depth of three levels.
 
 ## PARAMETERS
 
@@ -80,13 +86,14 @@ Accept wildcard characters: False
 
 ### -Depth
 
-Specifies how many levels of contained objects are included in the XML representation.
-The default value is 1.
+Specifies how many levels of contained objects are included in the XML representation. The default
+value is 1.
 
-For example, if the object's properties also contain objects, to save an XML representation of the properties of the contained objects, you must specify a depth of 2.
+For example, if the object's properties also contain objects, to save an XML representation of the
+properties of the contained objects, you must specify a depth of 2.
 
-The default value can be overridden for the object type in the Types.ps1xml files.
-For more information, see about_Types.ps1xml.
+The default value can be overridden for the object type in the Types.ps1xml files. For more
+information, see about_Types.ps1xml.
 
 ```yaml
 Type: Int32
@@ -102,9 +109,8 @@ Accept wildcard characters: False
 
 ### -InputObject
 
-Specifies the object to be converted.
-Enter a variable that contains the objects, or type a command or expression that gets the objects.
-You can also pipe objects to **ConvertTo-XML**.
+Specifies the object to be converted. Enter a variable that contains the objects, or type a command
+or expression that gets the objects. You can also pipe objects to **ConvertTo-XML**.
 
 ```yaml
 Type: PSObject
@@ -163,5 +169,3 @@ The value of the *As* parameter determines the type of object that **ConvertTo-X
 [Get-Date](Get-Date.md)
 
 [Import-Clixml](Import-Clixml.md)
-
-
