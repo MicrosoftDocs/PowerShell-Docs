@@ -1210,7 +1210,7 @@ by the following environment variables:
   accessed. For example: `*.test.example.com,.example2.com`.
 
 On Windows machines, PowerShell falls back to the proxy configuration defined in your **Internet
-Settings** control panel when these variable are not defined.
+Settings** control panel when these variables are not defined.
 
 ## RELATED LINKS
 
