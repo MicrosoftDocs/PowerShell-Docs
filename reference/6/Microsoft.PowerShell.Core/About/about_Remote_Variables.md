@@ -45,6 +45,14 @@ Invoke-Command -Session $s -ScriptBlock {$ps = "*PowerShell*"}
 Invoke-Command -Session $s -ScriptBlock {Get-WinEvent -LogName $ps}
 ```
 
+The `Using` scope modifier cannot be used to modify a local variable from **PSSession**.
+
+```powershell
+$s = New-PSSession -ComputerName S1
+$ps = "*PowerShell*"
+Invoke-Command -Session $s -ScriptBlock {$Using:ps = 'Cannot assign new value'}
+```
+
 ## Using local variables
 
 You can use local variables in remote commands, but the variable must be
@@ -70,7 +78,10 @@ Invoke-Command -ComputerName S1 -ScriptBlock {
 }
 ```
 
-The `Using` scope modifier can be used in a **PSSession**.
+A variable reference such as `$using:var` expands to the value of variable `$var` 
+from the caller's context. You do not get access to the caller's variable object.
+The `Using` scope modifier cannot be used to modify a local variable within the
+**PSSession**. For example, the following code does not work:
 
 ```powershell
 $s = New-PSSession -ComputerName S1

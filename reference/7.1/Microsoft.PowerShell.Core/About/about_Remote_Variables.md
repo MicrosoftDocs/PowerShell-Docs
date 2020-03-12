@@ -78,6 +78,17 @@ $ps = "*PowerShell*"
 Invoke-Command -Session $s -ScriptBlock {Get-WinEvent -LogName $Using:ps}
 ```
 
+A variable reference such as `$using:var` expands to the value of variable `$var` 
+from the caller's context. You do not get access to the caller's variable object.
+The `Using` scope modifier cannot be used to modify a local variable within the
+**PSSession**. For example, the following code does not work:
+
+```powershell
+$s = New-PSSession -ComputerName S1
+$ps = "*PowerShell*"
+Invoke-Command -Session $s -ScriptBlock {$Using:ps = 'Cannot assign new value'}
+```
+
 ### Using splatting
 
 PowerShell splatting passes a collection of parameter names and values to a
