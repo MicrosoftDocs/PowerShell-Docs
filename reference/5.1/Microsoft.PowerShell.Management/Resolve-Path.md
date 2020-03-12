@@ -2,16 +2,14 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 keywords: powershell,cmdlet
 locale: en-us
-ms.date: 08/23/2018
+ms.date: 03/12/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/resolve-path?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Resolve-Path
 ---
-
 # Resolve-Path
 
 ## SYNOPSIS
-
 Resolves the wildcard characters in a path, and displays the path contents.
 
 ## SYNTAX
@@ -112,8 +110,8 @@ PS C:\> Resolve-Path -LiteralPath 'test[xml]'
 
 ### -Credential
 
-Specifies a user account that has permission to perform this action.
-The default is the current user.
+Specifies a user account that has permission to perform this action. The default is the current
+user.
 
 Type a user name, such as User01 or Domain01\User01, or pass a **PSCredential** object. You can
 create a **PSCredential** object using the `Get-Credential` cmdlet. If you type a user name, this
@@ -135,11 +133,10 @@ Accept wildcard characters: False
 
 ### -LiteralPath
 
-Specifies the path to be resolved.
-The value of the **LiteralPath** parameter is used exactly as typed.
-No characters are interpreted as wildcard characters.
-If the path includes escape characters, enclose it in single quotation marks.
-Single quotation marks tell PowerShell not to interpret any characters as escape sequences.
+Specifies the path to be resolved. The value of the **LiteralPath** parameter is used exactly as
+typed. No characters are interpreted as wildcard characters. If the path includes escape characters,
+enclose it in single quotation marks. Single quotation marks tell PowerShell not to interpret any
+characters as escape sequences.
 
 ```yaml
 Type: String[]
@@ -155,9 +152,8 @@ Accept wildcard characters: False
 
 ### -Path
 
-Specifies the PowerShell path to resolve.
-This parameter is required.
-You can also pipe a path string to `Resolve-Path`.
+Specifies the PowerShell path to resolve. This parameter is required. You can also pipe a path
+string to `Resolve-Path`. Wildcard characters are permitted.
 
 ```yaml
 Type: String[]
@@ -165,10 +161,10 @@ Parameter Sets: Path
 Aliases:
 
 Required: True
-Position: 1
+Position: 0
 Default value: None
 Accept pipeline input: True (ByPropertyName, ByValue)
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -Relative
@@ -208,7 +204,8 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
 
 ## INPUTS
 
@@ -221,14 +218,18 @@ You can pipe a string that contains a path to this cmdlet.
 ### System.Management.Automation.PathInfo, System.String
 
 Returns a **PathInfo** object. Returns a string value for the resolved path if you specify the
-*Relative* parameter.
+**Relative** parameter.
 
 ## NOTES
 
-- The `*-Path` cmdlets work with the FileSystem, Registry, and Certificate providers.
-- `Resolve-Path` is designed to work with any provider. To list the providers available in your
-  session, type `Get-PSProvider`. For more information, see
-  [about_providers](../microsoft.powershell.core/about/about_providers.md).
+The `*-Path` cmdlets work with the FileSystem, Registry, and Certificate providers.
+
+`Resolve-Path` is designed to work with any provider. To list the providers available in your
+session, type `Get-PSProvider`. For more information, see
+[about_providers](../microsoft.powershell.core/about/about_providers.md).
+
+`Resolve-Path` only resolves existing paths. It cannot be used to resolve a location that does not
+exist yet.
 
 ## RELATED LINKS
 
