@@ -6,7 +6,6 @@ online version: https://docs.microsoft.com/powershell/module/microsoft.powershel
 schema: 2.0.0
 title: about_Remote_Variables
 ---
-
 # About Remote Variables
 
 ## Short description
@@ -78,7 +77,7 @@ $ps = "*PowerShell*"
 Invoke-Command -Session $s -ScriptBlock {Get-WinEvent -LogName $Using:ps}
 ```
 
-A variable reference such as `$using:var` expands to the value of variable `$var` 
+A variable reference such as `$using:var` expands to the value of variable `$var`
 from the caller's context. You do not get access to the caller's variable object.
 The `Using` scope modifier cannot be used to modify a local variable within the
 **PSSession**. For example, the following code does not work:
@@ -88,6 +87,8 @@ $s = New-PSSession -ComputerName S1
 $ps = "*PowerShell*"
 Invoke-Command -Session $s -ScriptBlock {$Using:ps = 'Cannot assign new value'}
 ```
+
+For more information about `Using`, see [about_Scopes](./about_Scopes.md)
 
 ### Using splatting
 
