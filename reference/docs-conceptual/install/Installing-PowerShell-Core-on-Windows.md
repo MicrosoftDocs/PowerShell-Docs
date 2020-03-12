@@ -94,7 +94,8 @@ Windows IoT already comes with Windows PowerShell which we can use to deploy Pow
 1. Create `PSSession` to target device
 
    ```powershell
-   $s = New-PSSession -ComputerName <deviceIp> -Credential Administrator
+   Set-Item -Path WSMan:\localhost\Client\TrustedHosts <deviceip>
+   $S = New-PSSession -ComputerName <deviceIp> -Credential Administrator
    ```
 
 2. Copy the ZIP package to the device
