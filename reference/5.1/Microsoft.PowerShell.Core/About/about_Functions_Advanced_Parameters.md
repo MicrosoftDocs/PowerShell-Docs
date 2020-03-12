@@ -95,9 +95,14 @@ Advanced functions use culture-invariant parsing, which results in the
 following error.
 
 ```Output
-Get-Date_Func: Cannot process argument transformation on parameter 'Date'.
-Cannot convert value "19-06-2018" to type "System.DateTime". Error: "String
-'19-06-2018' was not recognized as a valid DateTime."
+Get-Date_Func : Cannot process argument transformation on parameter 'Date'. Cannot convert
+ value "19-06-2018" to type "System.DateTime". Error: "String was not recognized as a valid
+ DateTime."
+At line:13 char:15
++ Get-Date_Func $dateStr
++               ~~~~~~~~
+    + CategoryInfo          : InvalidData: (:) [Get-Date_Func], ParameterBindingArgumentTransformationException
+    + FullyQualifiedErrorId : ParameterArgumentTransformationError,Get-Date_Func
 ```
 
 ## Static parameters
