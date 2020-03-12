@@ -45,6 +45,14 @@ Invoke-Command -Session $s -ScriptBlock {$ps = "*PowerShell*"}
 Invoke-Command -Session $s -ScriptBlock {Get-WinEvent -LogName $ps}
 ```
 
+The `Using` scope modifier cannot be used to modify a local variable from **PSSession**.
+
+```powershell
+$s = New-PSSession -ComputerName S1
+$ps = "*PowerShell*"
+Invoke-Command -Session $s -ScriptBlock {$Using:ps = 'Cannot assign new value'}
+```
+
 ## Using local variables
 
 You can use local variables in remote commands, but the variable must be

@@ -78,6 +78,14 @@ $ps = "*PowerShell*"
 Invoke-Command -Session $s -ScriptBlock {Get-WinEvent -LogName $Using:ps}
 ```
 
+The `Using` scope modifier cannot be used to modify a local variable from **PSSession**.
+
+```powershell
+$s = New-PSSession -ComputerName S1
+$ps = "*PowerShell*"
+Invoke-Command -Session $s -ScriptBlock {$Using:ps = 'Cannot assign new value'}
+```
+
 ### Using splatting
 
 PowerShell splatting passes a collection of parameter names and values to a
