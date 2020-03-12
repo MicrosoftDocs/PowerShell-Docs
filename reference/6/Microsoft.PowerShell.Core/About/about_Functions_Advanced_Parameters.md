@@ -1,7 +1,7 @@
 ---
 keywords: powershell,cmdlet
 locale: en-us
-ms.date: 02/12/2020
+ms.date: 03/12/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_functions_advanced_parameters?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Functions_Advanced_Parameters
@@ -28,6 +28,82 @@ Beginning in PowerShell 3.0, you can use splatting with `@Args` to represent
 the parameters in a command. Splatting is valid on simple and advanced
 functions. For more information, see [about_Functions](about_Functions.md) and
 [about_Splatting](about_Splatting.md).
+
+## Type conversion of parameter values
+
+When you supply strings as arguments to parameters that expect a different
+type, PowerShell implicitly converts the strings to the parameter target type.
+Advanced functions perform culture-invariant parsing of parameter values.
+
+By contrast, a culture-sensitive conversion is performed during parameter
+binding for compiled cmdlets.
+
+In this example, we create a cmdlet and a script function that take a
+`[datetime]` parameter. The current culture is changed to use German settings.
+A German-formatted date is passed to the parameter.
+
+```powershell
+# Create a cmdlet that accepts a [datetime] argument.
+Add-Type @'
+  using System;
+  using System.Management.Automation;
+  [Cmdlet("Get", "Date_Cmdlet")]
+  public class GetFooCmdlet : Cmdlet {
+
+    [Parameter(Position=0)]
+    public DateTime Date { get; set; }
+
+    protected override void ProcessRecord() {
+      WriteObject(Date);
+    }
+  }
+'@ -PassThru | % Assembly | Import-Module
+
+[cultureinfo]::CurrentCulture = 'de-DE'
+$dateStr = '19-06-2018'
+
+Get-Date_Cmdlet $dateStr
+```
+
+```Output
+Dienstag, 19. Juni 2018 00:00:00
+```
+
+As shown above, cmdlets use culture-sensitive parsing to convert the string.
+
+```powershell
+# Define an equivalent function.
+function Get-Date_Func {
+  param(
+    [DateTime] $Date
+  )
+  process {
+    $Date
+  }
+}
+
+[cultureinfo]::CurrentCulture = 'de-DE'
+
+# This German-format date string doesn't work with the invariant culture.
+# E.g., [datetime] '19-06-2018' breaks.
+$dateStr = '19-06-2018'
+
+Get-Date_Func $dateStr
+```
+
+Advanced functions use culture-invariant parsing, which results in the
+following error.
+
+```Output
+Get-Date_Func : Cannot process argument transformation on parameter 'Date'. Cannot convert
+ value "19-06-2018" to type "System.DateTime". Error: "String was not recognized as a valid
+ DateTime."
+At line:13 char:15
++ Get-Date_Func $dateStr
++               ~~~~~~~~
+    + CategoryInfo          : InvalidData: (:) [Get-Date_Func], ParameterBindingArgumentTransformationException
+    + FullyQualifiedErrorId : ParameterArgumentTransformationError,Get-Date_Func
+```
 
 ## Static parameters
 
@@ -272,16 +348,15 @@ Param(
 
 > [!NOTE]
 > A typed parameter that accepts pipeline input (`by Value`) or
-> (`by PropertyName`) enables use of **delay-bind** script blocks on the
+> (`by PropertyName`) enables use of _delay-bind_ script blocks on the
 > parameter.
 >
-> The **delay-bind** script block is run automatically during
+> The _delay-bind_ script block is run automatically during
 > **ParameterBinding**. The result is bound to the parameter. Delay binding
-> **does not** work for parameters defined as type `ScriptBlock` or
-> `System.Object`, the script block is passed through **without** being
-> invoked.
+> does not work for parameters defined as type `ScriptBlock` or
+> `System.Object`. The script block is passed through _without_ being invoked.
 >
-> You can read about **delay-bind** script blocks here [about_Script_Blocks.md](about_Script_Blocks.md).
+> You can read about _delay-bind_ script blocks here [about_Script_Blocks.md](about_Script_Blocks.md).
 
 ### ValueFromRemainingArguments argument
 
