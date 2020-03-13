@@ -196,6 +196,10 @@ as a [.NET Global tool](/dotnet/core/tools/global-tools).
 dotnet tool install --global PowerShell
 ```
 
+The dotnet tool installer adds `$env:USERPROFILE\dotnet\tools` to your `$env:PATH` environment
+variable. However, the currently running shell does not have the update `$env:PATH`. You should be
+able to start PowerShell from a new shell by typing `pwsh`.
+
 ## How to create a remoting endpoint
 
 PowerShell supports the PowerShell Remoting Protocol (PSRP) over both WSMan and SSH. For more
