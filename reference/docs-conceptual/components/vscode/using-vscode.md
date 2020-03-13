@@ -6,11 +6,11 @@ ms.date: 11/07/2019
 
 # Using Visual Studio Code for PowerShell Development
 
-Visual Studio Code is a cross-platform (Windows, macOS, and Linux) script editor by Microsoft.
-With Visual Studio Code and
-[the PowerShell extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode.PowerShell)
-you are provided a rich and interactive script editing experience allowing you to write scripts with
-ease and confidence.
+[Visual Studio Code](https://code.visualstudio.com/) is a cross-platform (Windows, macOS, and Linux)
+script editor by Microsoft. Together with the
+[the PowerShell extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode.PowerShell),
+it provides a rich and interactive script editing experience,
+making it easier to write reliable PowerShell scripts.
 
 Visual Studio Code with the PowerShell extension is the recommended editor for writing PowerShell scripts.
 It supports the following PowerShell versions:
@@ -33,9 +33,9 @@ For traditional Windows PowerShell workloads, see [Installing Windows PowerShell
 
 > [!IMPORTANT]
 > The [Windows PowerShell ISE][ise] is also still available for Windows, however, it is no longer in
-> active feature development. As a shipping component of Windows, it continues to be officially
-> supported for security and high-priority servicing fixes. We currently have no plans to remove the
-> ISE from Windows.
+> active feature development and does not work with PowerShell 7 and up or PowerShell Core 6.
+> As a shipping component of Windows, it continues to be officially supported for security and
+> high-priority servicing fixes. We currently have no plans to remove the ISE from Windows.
 
 ## Editing with Visual Studio Code
 
@@ -93,6 +93,11 @@ You're prompted with **Do you want to run software from this untrusted publisher
 Type `A` to run the file. Then, open Visual Studio Code and check that the PowerShell extension is
 functioning properly. If you still have issues getting started, let us know on
 [GitHub](https://github.com/PowerShell/vscode-powershell/issues).
+
+> [!NOTE]
+> The PowerShell extension for Visual Studio Code does not support running in
+> constrained language mode. Please see the [GitHub issue tracking that support](https://github.com/PowerShell/vscode-powershell/issues/606)
+> for more information.
 
 ### Choosing a version of PowerShell to use with the extension
 
