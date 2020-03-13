@@ -727,6 +727,10 @@ as a [.NET Global tool](/dotnet/core/tools/global-tools).
 dotnet tool install --global PowerShell
 ```
 
+The dotnet tool installer adds `~/.dotnet/tools` to your `PATH` environment variable. However, the
+currently running shell does not have the updated `PATH`. You should be able to start PowerShell
+from a new shell by typing `pwsh`.
+
 ## Binary Archives
 
 PowerShell binary `tar.gz` archives are provided for Linux platforms to enable advanced deployment
