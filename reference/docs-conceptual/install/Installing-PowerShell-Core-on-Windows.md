@@ -197,7 +197,7 @@ dotnet tool install --global PowerShell
 ```
 
 The dotnet tool installer adds `$env:USERPROFILE\dotnet\tools` to your `$env:PATH` environment
-variable. However, the currently running shell does not have the update `$env:PATH`. You should be
+variable. However, the currently running shell does not have the updated `$env:PATH`. You should be
 able to start PowerShell from a new shell by typing `pwsh`.
 
 ## How to create a remoting endpoint
