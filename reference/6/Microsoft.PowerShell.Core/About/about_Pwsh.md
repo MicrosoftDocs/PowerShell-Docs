@@ -8,10 +8,10 @@ title: about_Pwsh
 # About pwsh
 
 ## Short Description
-Explains how to use the **pwsh** command-line tool. Displays the syntax and
+Explains how to use the `pwsh` command-line tool. Displays the syntax and
 describes the command-line switches.
 
-pwsh starts a PowerShell session.
+`pwsh` starts a PowerShell session.
 
 ## Long Description
 
@@ -47,7 +47,7 @@ All parameters are case-insensitive.
 
 ### -File | -f
 
-If the value of **File** is "-", the command text is read from standard input.
+If the value of **File** is `-` the command text is read from standard input.
 Running `pwsh -File -` without redirected standard input starts a regular
 session. This is the same as not specifying the **File** parameter at all.
 
@@ -65,8 +65,9 @@ Get-Script.ps1 script file: `-File .\Get-Script.ps1 -All`
 
 In rare cases, you might need to provide a Boolean value for a switch
 parameter. To provide a Boolean value for a switch parameter in the value of
-the File parameter, enclose the parameter name and value in curly braces, such
-as the following: `-File .\Get-Script.ps1 {-All:$False}.`
+the File parameter, Use the parameter normally followed immediately by a colon
+and the boolean value, such as the following:
+`-File .\Get-Script.ps1 -All:$False`.
 
 Parameters passed to the script are passed as literal strings, after
 interpretation by the current shell. For example, if you are in **cmd.exe** and
