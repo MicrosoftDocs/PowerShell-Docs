@@ -210,9 +210,8 @@ field. For example:
 
 > [!TIP]
 > For more information about file encoding in Visual Studio Code, see [Understanding file encoding](understanding-file-encoding.md).
-
-> [!TIP]
-Also check out the [How to replicate the ISE experience in Visual Studio Code](How-To-Replicate-the-ISE-Experience-In-VSCode.md)
+>
+> Also check out the [How to replicate the ISE experience in Visual Studio Code](How-To-Replicate-the-ISE-Experience-In-VSCode.md)
 for other tips on how to configure Visual Studio Code for PowerShell editing.
 
 ## Debugging with Visual Studio Code
