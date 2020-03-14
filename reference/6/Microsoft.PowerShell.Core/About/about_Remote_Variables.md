@@ -105,13 +105,51 @@ $Splat = @{ Name = "Win*"; Include = "WinRM" }
 Invoke-Command -Session $s -ScriptBlock { Get-Service @Using:Splat }
 ```
 
-## Using local variables in PowerShell 2.0
+### Other situations where the 'Using' scope modifier is needed
+
+For anything that executes out-of-runspace, doesn't execute directly in the
+caller's runspace, you need the `Using` scope modifier in order to embed
+variable values from the caller's scope, so that the out-of-runspace code
+can access it. (Conversely, all other contexts neither require nor support the
+'Using' scope modifier.) Specifically, this includes the following contexts:
+
+- Remotely executed commands, started with Invoke-Command's `-ComputerName` or
+  `-Session` parameter (remote runspace)
+- Background jobs, started with Start-Job (out-of-process runspace)
+- Thread jobs, started via Start-ThreadJob (separate runspace)
+
+> [!NOTE]
+> Note that out-of-runspace code can never modify variables in the caller's
+> scope. However, in the case of thread jobs (but not during remoting and not in
+> background jobs), if the variable value happens to be an instance of a reference
+> type (like a collection type), it is possible to modify that instance in
+> another thread, which requires synchronizing the modifications across threads,
+> should multiple threads perform modifications.
+
+## Serialization of variable values
+
+Remotely executed commands and background jobs run out-of-process. For values
+in variables to cross these process boundaries they undergo XML-based
+serialization and deserialization. This typically involves loss of type fidelity
+\- both on input and output. --> todo: example needed
+
+Thread jobs, by contrast, because they run in a different runspace (thread) in
+the same process receive $using: variable values as their original, live objects
+and, similarly, return such objects.
+
+The caveat is that explicit synchronization across runspaces (threads) may be
+needed, if they all access a given, mutable object - which is most likely to
+happen with ForEach-Object -Parallel.
+
+Generally, though, thread jobs are the better alternative to background jobs in
+most cases, due to their significantly better performance, lower resource use,
+and type fidelity.
+
+## Using local variables with `-ArgumentList` parameter
 
 You can use local variables in a remote command by defining parameters for the
 remote command and using the **ArgumentList** parameter of the `Invoke-Command`
 cmdlet to specify the local variable as the parameter value.
-
-The following command format is valid on PowerShell 2.0 and later versions:
 
 - Use the `param` keyword to define parameters for the remote command. The
   parameter names are placeholders that don't need to match the local
