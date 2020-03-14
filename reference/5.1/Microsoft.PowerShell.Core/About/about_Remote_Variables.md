@@ -1,7 +1,7 @@
 ---
 keywords: powershell,cmdlet
 locale: en-us
-ms.date: 07/23/2019
+ms.date: 03/13/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_remote_variables?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Remote_Variables
@@ -107,46 +107,30 @@ Invoke-Command -Session $s -ScriptBlock { Get-Service @Using:Splat }
 
 ### Other situations where the 'Using' scope modifier is needed
 
-For anything that executes out-of-runspace, doesn't execute directly in the
-caller's runspace, you need the `Using` scope modifier in order to embed
-variable values from the caller's scope, so that the out-of-runspace code
-can access it. (Conversely, all other contexts neither require nor support the
-'Using' scope modifier.) Specifically, this includes the following contexts:
+For any script or command that executes out of session, you need the `Using`
+scope modifier to embed variable values from the calling session scope, so that
+out of session code can access them. The `Using` scope modifier is supported in
+the following contexts:
 
-- Remotely executed commands, started with Invoke-Command's `-ComputerName` or
-  `-Session` parameter (remote runspace)
-- Background jobs, started with Start-Job (out-of-process runspace)
-- Thread jobs, started via Start-ThreadJob (separate runspace)
-- InlineScript in Workflows (out-of-process)
+- Remotely executed commands, started with `Invoke-Command` using the
+  **ComputerName** or **Session** parameter (remote session)
+- Background jobs, started with `Start-Job` (out-of-process session)
+- Thread jobs, started via `Start-ThreadJob` (separate thread session)
 
-> [!NOTE]
-> Note that out-of-runspace code can never modify variables in the caller's
-> scope. However, in the case of thread jobs (but not during remoting and not in
-> background jobs), if the variable value happens to be an instance of a reference
-> type (like a collection type), it is possible to modify that instance in
-> another thread, which requires synchronizing the modifications across threads,
-> should multiple threads perform modifications.
+Depending on the context, embedded variables are copied values of the variables
+in the caller's scope. Out-of-process sessions, such as remote sessions,
+background jobs, and workflows, receive values of variables through the
+PowerShell serialization system.
 
 ## Serialization of variable values
 
-Remotely executed commands and background jobs run out-of-process. For values
-in variables to cross these process boundaries they undergo XML-based
-serialization and deserialization. This typically involves loss of type fidelity
-\- both on input and output. --> todo: example needed
+Remotely executed commands and background jobs run out-of-process. PowerShell
+uses XML-based serialization and deserialization to make the values of
+variables available across the process boundaries. The serialization process
+converts objects to a **PSObject** type. The **PSObject** is general type that
+contains the original objects properties but not its methods.
 
-Thread jobs, by contrast, because they run in a different runspace (thread) in
-the same process receive $using: variable values as their original, live objects
-and, similarly, return such objects.
-
-The caveat is that explicit synchronization across runspaces (threads) may be
-needed, if they all access a given, mutable object - which is most likely to
-happen with ForEach-Object -Parallel.
-
-Generally, though, thread jobs are the better alternative to background jobs in
-most cases, due to their significantly better performance, lower resource use,
-and type fidelity.
-
-## Using local variables with `-ArgumentList` parameter
+## Using local variables with **ArgumentList** parameter
 
 You can use local variables in a remote command by defining parameters for the
 remote command and using the **ArgumentList** parameter of the `Invoke-Command`
@@ -190,3 +174,4 @@ Invoke-Command -ComputerName S1 -ScriptBlock {
 [Invoke-Command](../Invoke-Command.md)
 
 [New-PSSession](../New-PSSession.md)
+
