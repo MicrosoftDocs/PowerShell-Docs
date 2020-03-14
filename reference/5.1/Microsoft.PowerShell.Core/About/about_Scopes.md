@@ -1,7 +1,7 @@
 ---
 keywords: powershell,cmdlet
 locale: en-us
-ms.date: 01/23/2020
+ms.date: 03/13/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_scopes?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_scopes
@@ -191,9 +191,40 @@ Using is a special scope modifier that identifies a local variable in a remote
 command. Without a modifier, PowerShell expects variables in remote commands
 to be defined in the remote session.
 
-The Using scope modifier is introduced in PowerShell 3.0.
+The `Using` scope modifier is introduced in PowerShell 3.0.
+
+r any script or command that executes out of session, you need the `Using`
+scope modifier to embed variable values from the calling session scope, so that
+out of session code can access them. The `Using` scope modifier is supported in
+the following contexts:
+
+- Remotely executed commands, started with `Invoke-Command` using the
+  **ComputerName** or **Session** parameter (remote session)
+- Background jobs, started with `Start-Job` (out-of-process session)
+- Thread jobs, started via `Start-ThreadJob` (separate runspace)
+
+Depending on the context, embedded variables are copies values or references to
+the caller's scope variables. Out-of-process sessions, such as remote sessions,
+background jobs, and workflows, receive values of variables through the
+PowerShell serialization system.
 
 For more information, see [about_Remote_Variables](about_Remote_Variables.md).
+
+But for thread jobs receive references to variables. This means it is possible
+to modify call scope variables in a different thread. To safely modify
+variables requires thread synchronization.
+
+For more information see:
+
+- [Start-ThreadJob](../../ThreadJob/Start-ThreadJob.md)
+
+#### Serialization of variable values
+
+Remotely executed commands and background jobs run out-of-process. PowerShell
+uses XML-based serialization and deserialization to make the values of
+variables available across the process boundaries. The serialization process
+converts objects to a **PSObject** type. The **PSObject** is general type that
+contains the original objects properties but not its methods.
 
 ### The AllScope Option
 
