@@ -24,7 +24,7 @@ New-TemporaryFile [-WhatIf] [-Confirm] [<CommonParameters>]
 This cmdlet creates temporary files that you can use in scripts.
 
 The `New-TemporaryFile` cmdlet creates an empty file that has the .tmp file name extension.
-This cmdlet names the file `tmp`NNNN`.tmp`, where NNNN is a random hexadecimal number.
+This cmdlet names the file `tmp<NNNN>.tmp`, where `<NNNN>` is a random hexadecimal number.
 The cmdlet creates the file in your **TEMP** folder.
 
 This cmdlet uses the [Path.GetTempPath()](/dotnet/api/system.io.path.gettemppath) method to find
