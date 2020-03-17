@@ -193,26 +193,26 @@ to be defined in the remote session.
 
 The `Using` scope modifier is introduced in PowerShell 3.0.
 
-r any script or command that executes out of session, you need the `Using`
+For any script or command that executes out of session, you need the `Using`
 scope modifier to embed variable values from the calling session scope, so that
 out of session code can access them. The `Using` scope modifier is supported in
 the following contexts:
 
 - Remotely executed commands, started with `Invoke-Command` using the
-  **ComputerName** or **Session** parameter (remote session)
+  **ComputerName**, **HostName**, **SSHConnection** or **Session** parameters
+  (remote session)
 - Background jobs, started with `Start-Job` (out-of-process session)
-- Thread jobs, started via `Start-ThreadJob` (separate runspace)
+- Thread jobs started via `Start-ThreadJob` (separate thread session)
 
-Depending on the context, embedded variables are copies values or references to
-the caller's scope variables. Out-of-process sessions, such as remote sessions,
-background jobs, and workflows, receive values of variables through the
-PowerShell serialization system.
+Depending on the context, embedded variable values are either independent
+copies of the data in the caller's scope or references to it. In remote and
+out-of-process sessions, they are always independent copies.
 
 For more information, see [about_Remote_Variables](about_Remote_Variables.md).
 
-But for thread jobs receive references to variables. This means it is possible
-to modify call scope variables in a different thread. To safely modify
-variables requires thread synchronization.
+In thread sessions, they are passed by reference. This means it is possible to
+modify call scope variables in a different thread. To safely modify variables
+requires thread synchronization.
 
 For more information see:
 
@@ -637,3 +637,5 @@ Invoke-Command $s {
 [about_Functions](about_Functions.md)
 
 [about_Script_Blocks](about_Script_Blocks.md)
+
+[Start-ThreadJob](/powershell/module/ThreadJob/Start-ThreadJob)

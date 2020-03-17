@@ -113,23 +113,29 @@ out of session code can access them. The `Using` scope modifier is supported in
 the following contexts:
 
 - Remotely executed commands, started with `Invoke-Command` using the
-  **ComputerName** or **Session** parameter (remote session)
+  **ComputerName**, **HostName**, **SSHConnection** or **Session** parameters
+  (remote session)
 - Background jobs, started with `Start-Job` (out-of-process session)
 - Thread jobs, started via `Start-ThreadJob` or `ForEach-Object -Parallel`
   (separate thread session)
 
-Depending on the context, embedded variables are copied values of the variables
-in the caller's scope. Out-of-process sessions, such as remote sessions,
-background jobs, and workflows, receive values of variables through the
-PowerShell serialization system.
+Depending on the context, embedded variable values are either independent
+copies of the data in the caller's scope or references to it. In remote and
+out-of-process sessions, they are always independent copies. In thread
+sessions, they are passed by reference.
 
 ## Serialization of variable values
 
-Remotely executed commands and background jobs run out-of-process. PowerShell
-uses XML-based serialization and deserialization to make the values of
-variables available across the process boundaries. The serialization process
-converts objects to a **PSObject** type. The **PSObject** is general type that
-contains the original objects properties but not its methods.
+Remotely executed commands and background jobs run out-of-process.
+Out-of-process sessions use XML-based serialization and deserialization to make
+the values of variables available across the process boundaries. The
+serialization process converts objects to a general type that contains the
+original objects properties but not its methods.
+
+Deserialization maintains type fidelity only for a limited set of known types.
+Instances of all other types are emulated. The **PSTypeNames** property
+contains the original type name prefixed with **Deserialized**, for example,
+**Deserialized.System.Data.DataTable**
 
 ## Using local variables with **ArgumentList** parameter
 
