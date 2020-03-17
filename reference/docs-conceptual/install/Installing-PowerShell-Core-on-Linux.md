@@ -313,7 +313,7 @@ pwsh
 
 ### Installation via Direct Download - Alpine 3.9 and 3.10
 
-Download the tar.gz package `powershell_7.0.0-linux-x64.tar.gz` from the [releases][] page onto
+Download the tar.gz package `powershell-7.0.0-linux-alpine-x64.tar.gz` from the [releases][] page onto
 the Alpine machine.
 
 Then, in the terminal, execute the following commands:
