@@ -222,11 +222,20 @@ For more information see:
 
 #### Serialization of variable values
 
-Remotely executed commands and background jobs run out-of-process. PowerShell
-uses XML-based serialization and deserialization to make the values of
-variables available across the process boundaries. The serialization process
-converts objects to a **PSObject** type. The **PSObject** is general type that
-contains the original objects properties but not its methods.
+Remotely executed commands and background jobs run out-of-process.
+Out-of-process sessions use XML-based serialization and deserialization to make
+the values of variables available across the process boundaries. The
+serialization process converts objects to a **PSObject** that contains the
+original objects properties but not its methods.
+
+For a limited set of types, deserialization rehydrates objects back to the
+original type. The rehydrated object contains the properties but not the
+methods of the original instance. Also, rehydrated certificate types do not
+include the private key.
+
+Instances of all other types are **PSObject** instances. The **PSTypeNames**
+property contains the original type name prefixed with **Deserialized**, for
+example, **Deserialized.System.Data.DataTable**
 
 ### The AllScope Option
 
