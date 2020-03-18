@@ -131,9 +131,11 @@ serialization process converts objects to a **PSObject** that contains the
 original objects properties but not its methods.
 
 For a limited set of types, deserialization rehydrates objects back to the
-original type. The rehydrated object contains the properties but not the
-methods of the original instance. Also, rehydrated certificate types do not
-include the private key.
+original type. The rehydrated object is a copy of the original object instance.
+It has the type properties and methods. For simple types, such as
+**System.Version**, the copy is exact. For complex types, the copy is
+imperfect. For example, rehydrated certificate objects do not include the
+private key.
 
 Instances of all other types are **PSObject** instances. The **PSTypeNames**
 property contains the original type name prefixed with **Deserialized**, for
