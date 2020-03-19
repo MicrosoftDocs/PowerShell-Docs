@@ -1,7 +1,7 @@
 ---
 keywords: powershell,cmdlet
 locale: en-us
-ms.date: 09/03/2019
+ms.date: 03/19/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_variables?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Variables
@@ -381,6 +381,12 @@ global scope, even when it's created in a script or function.
 $Global:Computers = "Server01"
 ```
 
+For any script or command that executes out of session, you need the `Using`
+scope modifier to embed variable values from the calling session scope, so that
+out of session code can access them.
+
+For more information, see [about_Remote_Variables](about_Remote_Variables.md).
+
 ## Saving variables
 
 Variables that you create are available only in the session in which you create
@@ -491,3 +497,5 @@ Get-Help <cmdlet-name>
 [about_Quoting_Rules](about_Quoting_Rules.md)
 
 [about_Scopes](about_Scopes.md)
+
+[about_Remote_Variables](about_Remote_Variables.md)
