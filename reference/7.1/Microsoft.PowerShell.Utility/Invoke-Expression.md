@@ -3,7 +3,7 @@ external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 06/09/2017
+ms.date: 03/19/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/invoke-expression?view=powershell-7.x&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Invoke-Expression
@@ -22,9 +22,10 @@ Invoke-Expression [-Command] <String> [<CommonParameters>]
 ## DESCRIPTION
 
 The `Invoke-Expression` cmdlet evaluates or runs a specified string as a command and returns the
-results of the expression or command.
-Without `Invoke-Expression`, a string submitted at the command line would be returned (echoed)
-unchanged.
+results of the expression or command. Without `Invoke-Expression`, a string submitted at the command
+line is returned (echoed) unchanged.
+
+Expressions are evaluated and run in the current scope. For more information, see [about_Scopes](../Microsoft.PowerShell.Core/About/about_Scopes.md).
 
 ## EXAMPLES
 
@@ -155,3 +156,7 @@ parameter).
   rather than allowing freeform input.
 
 ## RELATED LINKS
+
+[Invoke-Command](../Microsoft.PowerShell.Core/Invoke-Command.md)
+
+[about_Scopes](../Microsoft.PowerShell.Core/About/about_Scopes.md)
