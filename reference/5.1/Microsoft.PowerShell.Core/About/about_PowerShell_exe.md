@@ -150,9 +150,9 @@ For example, the following command uses the **All** parameter of the
 `Get-Script.ps1` script file: `-File .\Get-Script.ps1 -All`
 
 In rare cases, you might need to provide a **Boolean** value for a switch
-parameter. To provide a **Boolean** value for a switch parameter in the value
-of the File parameter, enclose the parameter name and value in curly braces,
-such as the following: `-File .\Get-Script.ps1 {-All:$False}`.
+parameter. It is not possible to pass an explicit boolean value for a switch
+parameter when running a script in the way. This limitation was removed in
+PowerShell 6 (`pwsh.exe`).
 
 #### -ExecutionPolicy \<ExecutionPolicy\>
 

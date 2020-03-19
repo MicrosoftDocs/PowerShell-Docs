@@ -68,8 +68,9 @@ Get-Script.ps1 script file: `-File .\Get-Script.ps1 -All`
 
 In rare cases, you might need to provide a Boolean value for a switch
 parameter. To provide a Boolean value for a switch parameter in the value of
-the File parameter, enclose the parameter name and value in curly braces, such
-as the following: `-File .\Get-Script.ps1 {-All:$False}.`
+the File parameter, Use the parameter normally followed immediately by a colon
+and the boolean value, such as the following:
+`-File .\Get-Script.ps1 -All:$False`.
 
 Parameters passed to the script are passed as literal strings, after
 interpretation by the current shell. For example, if you are in **cmd.exe** and

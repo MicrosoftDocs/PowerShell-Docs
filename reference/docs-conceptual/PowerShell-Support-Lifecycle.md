@@ -23,7 +23,7 @@ guarantee there that the community will address or resolve your issue in a timel
 have a problem that requires immediate attention, you should use the traditional, paid support
 options.
 
-## LifeCycle of PowerShell 7
+## Lifecycle of PowerShell 7
 
 With the release of PowerShell 7, PowerShell continues to be supported under the [Microsoft Modern Lifecycle Policy][modern],
 but support dates are linked to [.NET Core's support lifecycle][Long-Term]. In this servicing

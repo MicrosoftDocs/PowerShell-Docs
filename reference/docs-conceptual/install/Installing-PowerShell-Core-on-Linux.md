@@ -313,7 +313,7 @@ pwsh
 
 ### Installation via Direct Download - Alpine 3.9 and 3.10
 
-Download the tar.gz package `powershell_7.0.0-linux-x64.tar.gz` from the [releases][] page onto
+Download the tar.gz package `powershell-7.0.0-linux-alpine-x64.tar.gz` from the [releases][] page onto
 the Alpine machine.
 
 Then, in the terminal, execute the following commands:
@@ -726,6 +726,10 @@ as a [.NET Global tool](/dotnet/core/tools/global-tools).
 ```
 dotnet tool install --global PowerShell
 ```
+
+The dotnet tool installer adds `~/.dotnet/tools` to your `PATH` environment variable. However, the
+currently running shell does not have the updated `PATH`. You should be able to start PowerShell
+from a new shell by typing `pwsh`.
 
 ## Binary Archives
 
