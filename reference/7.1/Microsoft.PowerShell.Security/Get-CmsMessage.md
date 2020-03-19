@@ -54,8 +54,7 @@ path to the encrypted content. You can pipe the results of `Get-CmsMessage` to
 `Unprotect-CmsMessage` to decrypt the content, provided that you have information about the document
 encryption certificate that was used to encrypt the content.
 
-> [!NOTE]
-> This cmdlet is only available on Windows.
+Support for Linux and macOS was added in PowerShell 7.1.
 
 ## EXAMPLES
 
