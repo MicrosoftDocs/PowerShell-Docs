@@ -307,17 +307,17 @@ This is a work in progress. Please help us keep this information fresh.
 | ConvertTo-SecureString    | &check; | &check; | &check; | &check; |                                         |
 | Get-Acl                   | &check; | &check; | &check; | &check; | Windows only                            |
 | Get-AuthenticodeSignature | &check; | &check; | &check; | &check; | Windows only                            |
-| Get-CmsMessage            | &check; | &check; | &check; | &check; | Windows only                            |
+| Get-CmsMessage            | &check; | &check; | &check; | &check; | Support for Linux/macOS added in 7.1    |
 | Get-Credential            | &check; | &check; | &check; | &check; |                                         |
 | Get-ExecutionPolicy       | &check; | &check; | &check; | &check; | Returns **Unrestricted** on Linux/macOS |
 | Get-PfxCertificate        | &check; | &check; | &check; | &check; |                                         |
 | New-FileCatalog           | &check; | &check; | &check; | &check; | Windows only                            |
-| Protect-CmsMessage        | &check; | &check; | &check; | &check; | Windows only                            |
+| Protect-CmsMessage        | &check; | &check; | &check; | &check; | Support for Linux/macOS added in 7.1    |
 | Set-Acl                   | &check; | &check; | &check; | &check; | Windows only                            |
 | Set-AuthenticodeSignature | &check; | &check; | &check; | &check; | Windows only                            |
 | Set-ExecutionPolicy       | &check; | &check; | &check; | &check; | Does nothing on Linux/macOS             |
 | Test-FileCatalog          | &check; | &check; | &check; | &check; | Windows only                            |
-| Unprotect-CmsMessage      | &check; | &check; | &check; | &check; | Windows only                            |
+| Unprotect-CmsMessage      | &check; | &check; | &check; | &check; | Support for Linux/macOS added in 7.1    |
 
 ### Microsoft.PowerShell.Utility
 

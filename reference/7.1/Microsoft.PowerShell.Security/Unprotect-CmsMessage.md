@@ -61,8 +61,7 @@ can specify content that you want to decrypt as a string, by the encryption even
 number, or by path to the encrypted content. The `Unprotect-CmsMessage` cmdlet returns the decrypted
 content.
 
-> [!NOTE]
-> This cmdlet is only available on Windows.
+Support for Linux and macOS was added in PowerShell 7.1.
 
 ## EXAMPLES
 

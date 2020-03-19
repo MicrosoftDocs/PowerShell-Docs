@@ -54,8 +54,7 @@ To be recognized in PowerShell, encryption certificates require a unique extende
 the IDs for Code Signing and Encrypted Mail). For an example of a certificate that would work for
 document encryption, see Example 1 in this topic.
 
-> [!NOTE]
-> This cmdlet is only available on Windows.
+Support for Linux and macOS was added in PowerShell 7.1.
 
 ## EXAMPLES
 
