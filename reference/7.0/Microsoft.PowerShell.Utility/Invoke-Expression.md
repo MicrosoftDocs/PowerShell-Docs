@@ -3,7 +3,7 @@ external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 06/09/2017
+ms.date: 03/19/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/invoke-expression?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Invoke-Expression
@@ -22,9 +22,10 @@ Invoke-Expression [-Command] <String> [<CommonParameters>]
 ## DESCRIPTION
 
 The `Invoke-Expression` cmdlet evaluates or runs a specified string as a command and returns the
-results of the expression or command.
-Without `Invoke-Expression`, a string submitted at the command line would be returned (echoed)
-unchanged.
+results of the expression or command. Without `Invoke-Expression`, a string submitted at the command
+line is returned (echoed) unchanged.
+
+Expressions are evaluated and run in the current scope. For more information, see [about_Scopes](../Microsoft.PowerShell.Core/About/about_Scopes.md).
 
 ## EXAMPLES
 
@@ -36,7 +37,7 @@ $Command
 ```
 
 ```Output
-Get-Process PS
+Get-Process
 ```
 
 ```powershell
@@ -71,10 +72,9 @@ Invoke-Expression -Command "C:\ps-test\testscript.ps1"
 "C:\ps-test\testscript.ps1" | Invoke-Expression
 ```
 
-These commands use `Invoke-Expression` to run a script, TestScript.ps1, on the local computer.
-The two commands are equivalent.
-The first uses the **Command** parameter to specify the command to run.
-The second uses a pipeline operator (|) to send the command string to `Invoke-Expression`.
+These commands use `Invoke-Expression` to run a script, TestScript.ps1, on the local computer. The
+two commands are equivalent. The first uses the **Command** parameter to specify the command to run.
+The second uses a pipeline operator (`|`) to send the command string to `Invoke-Expression`.
 
 ### Example 3: Run a command in a variable
 
@@ -103,7 +103,7 @@ This command retrieves and runs the first example in the `Get-EventLog` cmdlet H
 
 To run an example of a different cmdlet, change the value of the `$Cmdlet_name` variable to the name
 of the cmdlet. And, change the `$Example_number` variable to the example number you want to run.
-The command will fail if the example number is not valid.
+The command fails if the example number is not valid.
 
 ## PARAMETERS
 
@@ -155,3 +155,7 @@ parameter).
   rather than allowing freeform input.
 
 ## RELATED LINKS
+
+[Invoke-Command](../Microsoft.PowerShell.Core/Invoke-Command.md)
+
+[about_Scopes](../Microsoft.PowerShell.Core/About/about_Scopes.md)
