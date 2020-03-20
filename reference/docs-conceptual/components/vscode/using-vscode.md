@@ -126,7 +126,8 @@ the version:
 
 ### Adding your own PowerShell paths to the session menu
 
-You can add other PowerShell executable paths to the session menu through a Visual Studio Code setting.
+You can add other PowerShell executable paths to the session menu through a
+[Visual Studio Code setting](https://code.visualstudio.com/docs/getstarted/settings).
 
 Add an item to the list `powershell.powerShellAdditionalExePaths` or create the list if it doesn't
 exist in your `settings.json`:
@@ -182,6 +183,9 @@ If you open the session menu, you now see your additional PowerShell versions!
 > PowerShell.
 
 ### Configuration settings for Visual Studio Code
+
+First, if you're not familiar with how to change settings in Visual Studio Code,
+we recommend looking at [Visual Studio Code's settings documentation](https://code.visualstudio.com/docs/getstarted/settings).
 
 By using the steps in the previous paragraph, you can add configuration settings in `settings.json`.
 
