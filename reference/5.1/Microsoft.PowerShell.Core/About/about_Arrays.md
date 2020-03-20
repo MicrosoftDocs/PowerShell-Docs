@@ -24,7 +24,7 @@ some properties of arrays.
 
 To create and initialize an array, assign multiple values to a variable. The
 values stored in the array are delimited with a comma and separated from the
-variable name by the assignment operator (=).
+variable name by the assignment operator (`=`).
 
 For example, to create an array named `$A` that contains the seven numeric (int)
 values of 22, 5, 10, 8, 12, 9, and 80, type:
@@ -225,7 +225,7 @@ Also, one common mistake is to assume `$a[0..-2]` refers to all the elements
 of the array, except for the last one. It refers to the first, last, and
 second-to-last elements in the array.
 
-You can use the plus operator (+) to combine a ranges with a list of elements
+You can use the plus operator (`+`) to combine a ranges with a list of elements
 in an array. For example, to display the elements at index positions 0, 2, and
 4 through 6, type:
 
@@ -521,9 +521,9 @@ configured to accept them.
 
 > [!NOTE]
 > Starting in Windows PowerShell 3.0 retrieving properties and executing
-methods for each item in a collection can also be accomplished using
-> "Methods of scalar objects and collections"
-> You can read more about that here [about_methods](about_methods.md)
+> methods for each item in a collection can also be accomplished using "Methods
+> of scalar objects and collections" You can read more about that here
+> [about_methods](about_methods.md).
 
 ### Where
 
@@ -634,7 +634,7 @@ $computers.Where({ Test-Connection $_ }, 'SkipUntil', 1)
 localhost
 ```
 
-### Until
+#### Until
 
 The `Until` mode inverts the `SkipUntil` mode.  It returns **ALL** items in a
 collection until an item passes the script block expression. Once an item
@@ -752,7 +752,7 @@ combine the values from two arrays into a third array.
 
 To change the value of a particular element in an array, specify the array
 name and the index of the element that you want to change, and then use the
-assignment operator (=) to specify a new value for the element. For example,
+assignment operator (`=`) to specify a new value for the element. For example,
 to change the value of the second item in the `$a` array (index position 1) to
 10, type:
 
@@ -760,7 +760,7 @@ to change the value of the second item in the `$a` array (index position 1) to
 $a[1] = 10
 ```
 
-You can also use the SetValue method of an array to change a value. The
+You can also use the **SetValue** method of an array to change a value. The
 following example changes the second value (index position 1) of the `$a` array
 to 500:
 
@@ -768,7 +768,7 @@ to 500:
 $a.SetValue(500,1)
 ```
 
-You can use the += operator to add an element to an array. The following
+You can use the `+=` operator to add an element to an array. The following
 example shows how to add an element to the `$a` array.
 
 ```powershell
@@ -791,7 +791,7 @@ value at index position 2, type:
 $t = $a[0,1 + 3..($a.length - 1)]
 ```
 
-To combine two arrays into a single array, use the plus operator (+). The
+To combine two arrays into a single array, use the plus operator (`+`). The
 following example creates two arrays, combines them, and then displays the
 resulting combined array.
 
