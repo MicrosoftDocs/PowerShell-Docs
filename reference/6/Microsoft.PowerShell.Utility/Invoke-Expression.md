@@ -72,10 +72,9 @@ Invoke-Expression -Command "C:\ps-test\testscript.ps1"
 "C:\ps-test\testscript.ps1" | Invoke-Expression
 ```
 
-These commands use `Invoke-Expression` to run a script, TestScript.ps1, on the local computer.
-The two commands are equivalent.
-The first uses the **Command** parameter to specify the command to run.
-The second uses a pipeline operator (|) to send the command string to `Invoke-Expression`.
+These commands use `Invoke-Expression` to run a script, TestScript.ps1, on the local computer. The
+two commands are equivalent. The first uses the **Command** parameter to specify the command to run.
+The second uses a pipeline operator (`|`) to send the command string to `Invoke-Expression`.
 
 ### Example 3: Run a command in a variable
 
@@ -104,7 +103,7 @@ This command retrieves and runs the first example in the `Get-EventLog` cmdlet H
 
 To run an example of a different cmdlet, change the value of the `$Cmdlet_name` variable to the name
 of the cmdlet. And, change the `$Example_number` variable to the example number you want to run.
-The command will fail if the example number is not valid.
+The command fails if the example number is not valid.
 
 ## PARAMETERS
 
