@@ -37,7 +37,7 @@ $Command
 ```
 
 ```Output
-Get-Process PS
+Get-Process
 ```
 
 ```powershell
