@@ -226,21 +226,6 @@ Name Count
 6      188
 ```
 
-### Example 12: Use the Count parameter
-
-You can now use the **Count** parameter without piping objects to `Get-Random`.
-The following example gets three random numbers less than 10.
-
-```powershell
-Get-Random -Count 3 -Maximum 10
-```
-
-```Output
-9
-0
-8
-```
-
 ## PARAMETERS
 
 ### -Count
