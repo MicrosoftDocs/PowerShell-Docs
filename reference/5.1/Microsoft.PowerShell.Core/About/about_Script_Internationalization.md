@@ -16,8 +16,8 @@ scripts to display messages and instructions to users in their user interface
 ## Long Description
 
 The PowerShell script internationalization features allow you to better serve
-users throughout the world by displaying Help and user messages for scripts and
-functions in the user's UI language.
+users throughout the world by displaying help and user messages in the user's
+language.
 
 The script internationalization features query the UI culture of the operating
 system during execution, import the appropriate translated text strings, and
@@ -29,24 +29,24 @@ tables to facilitate translation.
 To support international Help text, PowerShell includes the following
 features:
 
-* A Data section that separates text strings from code instructions. For more
+- A Data section that separates text strings from code instructions. For more
   information about the Data section, see
   [about_Data_Sections](about_Data_Sections.md).
 
-* New automatic variables, `$PSCulture` and `$PSUICulture`. `$PSCulture` stores
+- New automatic variables, `$PSCulture` and `$PSUICulture`. `$PSCulture` stores
   the name of the UI language used on the system for elements such as the date,
   time, and currency. The `$PSUICulture` variable stores the name of the UI
   language used on the system for user interface elements such as menus and
   text strings.
 
-* A cmdlet, `ConvertFrom-StringData`, that converts text strings into
+- A cmdlet, `ConvertFrom-StringData`, that converts text strings into
   dictionary-like hash tables to facilitate translation. For more information,
   see [ConvertFrom-StringData](../../Microsoft.PowerShell.Utility/ConvertFrom-StringData.md).
 
-* A new file type, `.psd1`, that stores translated text strings. The `.psd1`
+- A new file type, `.psd1`, that stores translated text strings. The `.psd1`
   files are stored in language-specific subdirectories of the script directory.
 
-* A cmdlet, `Import-LocalizedData`, that imports translated text strings for a
+- A cmdlet, `Import-LocalizedData`, that imports translated text strings for a
   specified language into a script at runtime. This cmdlet recognizes and
   imports strings in any Windows-supported language. For more information see
   [Import-LocalizedData](../../Microsoft.PowerShell.Utility/Import-LocalizedData.md).

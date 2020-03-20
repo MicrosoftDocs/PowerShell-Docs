@@ -14,10 +14,10 @@ Describes the operators that work with Microsoft .NET types.
 ## LONG DESCRIPTION
 
 The Boolean type operators (`-is` and `-isNot`) tell whether an object is an
-instance of a specified .NET type. The `-is` operator returns a value of TRUE
-if the type matches and a value of FALSE otherwise. The `-isNot` operator
-returns a value of **FALSE** if the type matches and a value of **TRUE**
-otherwise.
+instance of a specified .NET type. The `-is` operator returns a value of
+**TRUE** if the type matches and a value of **FALSE** otherwise. The `-isNot`
+operator returns a value of **FALSE** if the type matches and a value of
+**TRUE** otherwise.
 
 The `-as` operator tries to convert the input object to the specified .NET
 type. If it succeeds, it returns the converted object. It if fails, it returns
