@@ -247,24 +247,12 @@ command.
 
 When you provide a single **Property** to `Where-Object`, the value of the property is treated as
 a boolean expression. When the value of **Length** is not zero, the expression evaluates to
-**True**. For example:
-
-```powershell
-PS> 'hi', '', 'there' | Where-Object Length
-hi
-there
-```
+**True**. For example: `('hi', '', 'there') | Where-Object Length`
 
 The previous example is functionally equivalent to:
 
-```powershell
-PS> 'hi', '', 'there' | Where-Object Length -GT 0
-hi
-there
-PS> 'hi', '', 'there' | Where-Object {$_.Length -gt 0}
-hi
-there
-  ```
+- `('hi', '', 'there') | Where-Object Length -GT 0`
+- `('hi', '', 'there') | Where-Object {$_.Length -gt 0}`
 
 ## EXAMPLES
 
