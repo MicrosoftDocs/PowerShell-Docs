@@ -328,7 +328,7 @@ This example shows how to use the new comparison statement format of the `Where-
 The first command uses the comparison statement format.
 In this command, no aliases are used and all parameters include the parameter name.
 
-The second command is the more natural use of the comparison command format. The **where** alias is
+The second command is the more natural use of the comparison command format. The `where` alias is
 substituted for the `Where-Object` cmdlet name and all optional parameter names are omitted.
 
 ```powershell
@@ -374,10 +374,10 @@ This example shows how to create a `Where-Object` command with multiple conditio
 
 This command gets non-core modules that support the Updatable Help feature. The command uses the
 **ListAvailable** parameter of the `Get-Module` cmdlet to get all modules on the computer. A
-pipeline operator (|) sends the modules to the `Where-Object` cmdlet, which gets modules whose names
-do not begin with Microsoft or PS, and have a value for the **HelpInfoURI** property, which tells
-PowerShell where to find updated help files for the module. The comparison statements are connected
-by the **And** logical operator.
+pipeline operator (`|`) sends the modules to the `Where-Object` cmdlet, which gets modules whose
+names do not begin with Microsoft or PS, and have a value for the **HelpInfoURI** property, which
+tells PowerShell where to find updated help files for the module. The comparison statements are
+connected by the **And** logical operator.
 
 The example uses the script block command format. Logical operators, such as **And** and **Or**, are
 valid only in script blocks. You cannot use them in the comparison statement format of a
