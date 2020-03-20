@@ -1,7 +1,7 @@
 ---
 keywords: powershell,cmdlet
 locale: en-us
-ms.date: 12/04/2019
+ms.date: 03/19/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_arrays?view=powershell-7.x&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Arrays
@@ -548,6 +548,18 @@ optional argument allows additional selection capabilities, and the
 `numberToReturn` optional argument allows the ability to limit how many items
 are returned from the filter.
 
+The acceptable values for `mode` are:
+
+- Default (0) - Return all items
+- First (1) - Return the first item
+- Last (2) - Return the last item
+- SkipUntil (3) - Skip items until condition is true, the return the remaining
+  items
+- Until (4) - Return all items until condition is true
+- Split (5) - Return an array of two elements
+  - The first element contains matching items
+  - The second element contains the remaining items
+
 The following example shows how to select all odd numbers from the array.
 
 ```powershell
@@ -562,17 +574,16 @@ The following example shows how to select all odd numbers from the array.
 9
 ```
 
-The acceptable values for `mode` are:
+This example show how to select the strings that are not empty.
 
-- Default (0) - Return all items
-- First (1) - Return the first item
-- Last (2) - Return the last item
-- SkipUntil (3) - Skip items until condition is true, the return the remaining
-  items
-- Until (4) - Return all items until condition is true
-- Split (5) - Return an array of two elements
-  - The first element contains matching items
-  - The second element contains the remaining items
+```powershell
+('hi', '', 'there').Where({$_.Length})
+```
+
+```Output
+hi
+there
+```
 
 #### Default
 
