@@ -108,8 +108,8 @@ you can still use the last version of the extension that did.
 > There will be no additional fixes to this older version of the extension. It's provided "AS IS" but
 > is available for you if you are still using Windows PowerShell v3 and Windows PowerShell v4.
 
-First, open the Extension pane and search for "PowerShell". Then click the gear and select
-"Install another version...".
+First, open the Extension pane and search for `PowerShell`. Then click the gear and select
+**Install another version...**.
 
 ![Install another version...](media/using-vscode/install-another-version.png)
 
@@ -132,7 +132,7 @@ Because of this, and lack of support, we highly recommend either:
 the best with the PowerShell extension
 - Upgrading to Windows PowerShell 5.1
 
-The ["Editing with Visual Studio Code"](#editing-with-visual-studio-code) section in this article
+The [Editing with Visual Studio Code](#editing-with-visual-studio-code) section in this article
 links to where to install these.
 
 ### Choosing a version of PowerShell to use with the extension
