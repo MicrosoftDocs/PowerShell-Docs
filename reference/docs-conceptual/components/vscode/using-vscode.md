@@ -99,6 +99,42 @@ functioning properly. If you still have issues getting started, let us know on
 > constrained language mode. Please see the [GitHub issue tracking that support](https://github.com/PowerShell/vscode-powershell/issues/606)
 > for more information.
 
+### Using an older version of the PowerShell Extension for Windows PowerShell v3 and v4
+
+Although the current PowerShell extension [stopped supporting v3 and v4](https://github.com/PowerShell/vscode-powershell/issues/1310),
+you can still use the last version of the extension that did.
+
+> [!NOTE]
+> There will be no additional fixes to this older version of the extension. It's provided "AS IS" but
+> is available for you if you are still using Windows PowerShell v3 and Windows PowerShell v4.
+
+First, open the Extension pane and search for `PowerShell`. Then click the gear and select
+**Install another version...**.
+
+![Install another version...](media/using-vscode/install-another-version.png)
+
+Then select the **`2020.1.0`** version. This version of the extension was the last version to support
+v3 and v4.
+
+Also, add the following setting so that your extension version doesn't update automatically:
+
+```json
+{
+    "extensions.autoUpdate": false
+}
+```
+
+Although this will work in the forseeable future,
+Visual Studio Code could implement a change that breaks this version of the extension.
+Because of this, and lack of support, we highly recommend either:
+
+- Downloading PowerShell 7 - which is a side-by-side install to Windows PowerShell and works
+the best with the PowerShell extension
+- Upgrading to Windows PowerShell 5.1
+
+The [Editing with Visual Studio Code](#editing-with-visual-studio-code) section in this article
+links to where to install these.
+
 ### Choosing a version of PowerShell to use with the extension
 
 With PowerShell Core installing side-by-side with Windows PowerShell, it's now possible to use a
@@ -126,7 +162,9 @@ the version:
 
 ### Adding your own PowerShell paths to the session menu
 
-You can add other PowerShell executable paths to the session menu through a Visual Studio Code setting.
+You can add other PowerShell executable paths to the session menu through the
+[Visual Studio Code setting](https://code.visualstudio.com/docs/getstarted/settings):
+`powershell.powerShellAdditionalExePaths`.
 
 Add an item to the list `powershell.powerShellAdditionalExePaths` or create the list if it doesn't
 exist in your `settings.json`:
@@ -182,6 +220,9 @@ If you open the session menu, you now see your additional PowerShell versions!
 > PowerShell.
 
 ### Configuration settings for Visual Studio Code
+
+First, if you're not familiar with how to change settings in Visual Studio Code,
+we recommend looking at [Visual Studio Code's settings documentation](https://code.visualstudio.com/docs/getstarted/settings).
 
 By using the steps in the previous paragraph, you can add configuration settings in `settings.json`.
 
