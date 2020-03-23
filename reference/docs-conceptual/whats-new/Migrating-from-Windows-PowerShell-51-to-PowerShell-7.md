@@ -164,7 +164,8 @@ To set the layout to the original VSCode layout, open the Command Palette, type 
 For details about customizing the VSCode layout to ISE, see
 [How to Replicate the ISE Experience in Visual Studio Code](/powershell/scripting/components/vscode/how-to-replicate-the-ise-experience-in-vscode)
 
-> [!NOTE] The PowerShell Team and its partners are actively working to improve the scripting
+> [!NOTE]
+> The PowerShell Team and its partners are actively working to improve the scripting
 > experience in the PowerShell extension for VSCode. We currently have no plans to update the ISE
 > with new features. In the latest versions of Windows 10 and Windows Server, the ISE is now a
 > user-uninstallable feature. We have no plans to make the ISE unavailable in the future.
@@ -199,7 +200,8 @@ Windows PowerShell 5.1 and below use the `WS-Management` protocol for connection
 negotiation and data transport. If remoting has been
 enabled, installing PowerShell 7 will use the existing **WinRM** configuration.
 
-> [!NOTE] PowerShell 7 will use the existing Windows PowerShell 5.1 endpoint for remoting
+> [!NOTE]
+> PowerShell 7 will use the existing Windows PowerShell 5.1 endpoint for remoting
 > connections. To update PowerShell 7 to include it own endpoint, run the
 > `Install-PowerShellRemoting.ps1` located in **$PSHOME**. For information about connecting to
 > specific endpoints, see
