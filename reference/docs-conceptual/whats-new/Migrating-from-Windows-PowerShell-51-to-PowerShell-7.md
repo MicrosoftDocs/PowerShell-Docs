@@ -36,10 +36,11 @@ you can reduce the installation options to the two below:
 1. To install PowerShell 7 on your Windows client 8.1/10 computer, open the Microsoft Store and
    enter `PowerShell 7` in the search bar.
 
-2. To deploy to Windows Server, get the binary **.msi** or **.zip** package. You can download the packages
-   from [GitHub Release page](https://github.com/PowerShell/PowerShell/releases).
+2. To deploy to Windows Server, get the binary **.msi** or **.zip** package. You can download the
+   packages from [GitHub Release page](https://github.com/PowerShell/PowerShell/releases).
 
-> [!NOTE] The **.msi** package is updated and supported with management products such as Microsoft
+> [!NOTE]
+> The **.msi** package is updated and supported with management products such as Microsoft
 > System Center Configuration Manager (SCCM)
 
 For details on installing PowerShell 7 on Windows, macOS or Linux, see [Installing PowerShell](https://aka.ms/Get-PowerShell)
@@ -124,7 +125,7 @@ Most of the modules you experience in Windows PowerShell 5.1 already work with P
 - Active Directory
 - Many of the modules in Windows 10 and Windows Server (check with `Get-Module -ListAvailable`)
 
-For the current list of supported modules, see [PowerShell 7 module compatability](https://docs.microsoft.com/en-us/powershell/scripting/whats-new/module-compatibility?view=powershell-7).
+For the current list of supported modules, see [PowerShell 7 module compatability](/powershell/scripting/whats-new/module-compatibility?view=powershell-7).
 
 [!NOTE]
 > On Windows, we've also added a **UseWindowsPowerShell** switch to Import-Module to ease the
