@@ -458,6 +458,7 @@ For more information about
 - Fix a resource leak by unregistering the event handler from AppDomain.CurrentDomain.ProcessExit (#10626)
 - Add support to ActionPreference.Break to break into debugger when Debug, Error, Information, Progress, Verbose or Warning messages are generated (#8205) (Thanks @KirkMunro!)
 - Enable starting control panel add-ins within PowerShell Core without specifying .CPL extension. (#9828)
+- Support negative numbers in -split operator (#8960) (Thanks @ece-jacob-scott!)
 
 ### General Cmdlet Updates and Fixes
 
