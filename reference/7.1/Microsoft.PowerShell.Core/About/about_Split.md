@@ -135,7 +135,7 @@ input string.
 > Support for negative values was added in PowerShell 7.
 
 **Max-substrings** does not specify the maximum number of objects that are
-returned. its value equals the maximum number of times that a string is split.
+returned. Its value equals the maximum number of times that a string is split.
 If you submit more than one string (an array of strings) to the `-split`
 operator, the **Max-substrings** limit is applied to each string separately.
 
