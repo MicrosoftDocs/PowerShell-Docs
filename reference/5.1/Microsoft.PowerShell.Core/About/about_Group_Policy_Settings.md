@@ -22,17 +22,14 @@ The PowerShell Group Policy settings are in the following Group Policy paths:
 ```
 Computer Configuration\
   Administrative Templates\
-    PowerShell Core
+    Windows Components\
+      Windows PowerShell
 
-    Computer Configuration\
-      Administrative Templates\
-        Windows Components\
-          Windows PowerShell
-
-    User Configuration\
-      Administrative Templates\
-        Windows Components\
-          Windows PowerShell
+User Configuration\
+  Administrative Templates\
+    Windows Components\
+      Windows PowerShell
+```
 
 Group policy settings in the User Configuration path take precedence over Group
 Policy settings in the Computer Configuration path.
@@ -52,7 +49,6 @@ The policies are as follows:
 For more information about acquiring other templates and configuring Group
 policy, see
 [How to create and manage the Central Store for Group Policy Administrative Templates in Windows][gpstore].
-
 
 ## Turn on module logging
 
