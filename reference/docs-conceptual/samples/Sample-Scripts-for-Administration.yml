@@ -36,7 +36,7 @@ landingContent:
           - text: Using static classes and methods
             url: ./using-static-classes-and-methods.md
           - text: Getting WMI objects - Get-CimInstance
-            url: samples/getting-wmi-objects--get-ciminstance-.md
+            url: ./getting-wmi-objects--get-ciminstance-.md
   - title: Managing computers
     linkLists:
       - linkListType: how-to-guide
