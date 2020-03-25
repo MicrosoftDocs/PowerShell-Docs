@@ -21,11 +21,13 @@ The PowerShell Group Policy settings are in the following Group Policy paths:
 ```
 Computer Configuration\
   Administrative Templates\
-    PowerShell Core
+    Windows Components\
+      Windows PowerShell
 
 User Configuration\
   Administrative Templates\
-    PowerShell Core
+    Windows Components\
+      Windows PowerShell
 ```
 
 Group policy settings in the User Configuration path take precedence over Group
@@ -46,27 +48,9 @@ The policies are as follows:
 - Set the default source path for `Update-Help`: Sets the source for Updatable
   Help to a directory, not the Internet.
 
-Each PowerShell Group Policy setting has an option ('Use Windows PowerShell
-Policy setting' field) to use the value from a similar Windows PowerShell Group
-Policy setting that is located in the following Group Policy paths:
-
-```
-Computer Configuration\
-  Administrative Templates\
-    Windows Components\
-      Windows PowerShell
-
-User Configuration\
-  Administrative Templates\
-    Windows Components\
-      Windows PowerShell
-```
-
-> [!NOTE]
-> These **PowerShell Core Administrative Templates** do not include settings
-> for Windows PowerShell. For more information about acquiring other templates
-> and configuring Group policy, see
-> [How to create and manage the Central Store for Group Policy Administrative Templates in Windows][gpstore].
+For more information about acquiring other templates and configuring Group
+policy, see
+[How to create and manage the Central Store for Group Policy Administrative Templates in Windows][gpstore].
 
 ## Turn on module logging
 
