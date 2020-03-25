@@ -67,9 +67,9 @@ PowerShell 7 installs to a new directory, enabling side-by-side execution with W
 
 Install locations by version:
 
-- Windows PowerShell 5.1: `C:\Windows\System32\WindowsPowerShell\v1.0`
-- PowerShell Core 6.x: `$Env:programfiles\PowerShell\6`
-- PowerShell 7: `$Env:programfiles\PowerShell\7`
+- Windows PowerShell 5.1: `$env:WINDIR\System32\WindowsPowerShell\v1.0`
+- PowerShell Core 6.x: `$env:ProgramFiles\PowerShell\6`
+- PowerShell 7: `$env:ProgramFiles\PowerShell\7`
 
 The new location is added to your PATH allowing you to run both Windows PowerShell 5.1 and
 PowerShell 7. If you're migrating from PowerShell Core 6.x to PowerShell 7, PowerShell 6 is removed
@@ -88,8 +88,8 @@ load both Core and Desktop modules.
 
 |            Install Scope            |                Windows PowerShell 5.1                 |             PowerShell 7.0             |
 | ----------------------------------- | ----------------------------------------------------- | -------------------------------------- |
-| PowerShell modules                  | `$Env:WINDIR\system32\WindowsPowerShell\v1.0\Modules` | `$PSHOME\Modules`                      |
-| User installed<br>AllUsers scope    | `$Env:ProgramFiles\WindowsPowerShell\Modules`         | `$Env:ProgramFiles\PowerShell\Modules` |
+| PowerShell modules                  | `$env:WINDIR\system32\WindowsPowerShell\v1.0\Modules` | `$PSHOME\Modules`                      |
+| User installed<br>AllUsers scope    | `$env:ProgramFiles\WindowsPowerShell\Modules`         | `$env:ProgramFiles\PowerShell\Modules` |
 | User installed<br>CurrentUser scope | `$HOME\Documents\WindowsPowerShell\Modules`           | `$HOME\Documents\PowerShell\Modules`   |
 
 The following examples show the default values of `$Env:PSModulePath` for each version.
