@@ -43,6 +43,10 @@ the following methods:
 > The MSI package can be deployed and updated with management products such as Microsoft System Center
 > Configuration Manager (SCCM). Download the packages from [GitHub Release page](https://github.com/PowerShell/PowerShell/releases).
 
+Deploying the MSI package requires Adminstrator permission. The ZIP package can be deployed by any
+user. The ZIP package is the easiest way to install PowerShell 7 for testing, before committing to a
+full installation.
+
 ## Using PowerShell 7 side-by-side with Windows PowerShell 5.1
 
 PowerShell 7 is designed to coexist with Windows PowerShell 5.1. The following features ensure that
@@ -64,8 +68,8 @@ PowerShell 7 installs to a new directory, enabling side-by-side execution with W
 Install locations by version:
 
 - Windows PowerShell 5.1: `C:\Windows\System32\WindowsPowerShell\v1.0`
-- PowerShell Core 6.x: `%programfiles%\PowerShell\6`
-- PowerShell 7: `%programfiles%\PowerShell\7`
+- PowerShell Core 6.x: `$Env:programfiles\PowerShell\6`
+- PowerShell 7: `$Env:programfiles\PowerShell\7`
 
 The new location is added to your PATH allowing you to run both Windows PowerShell 5.1 and
 PowerShell 7. If you're migrating from PowerShell Core 6.x to PowerShell 7, PowerShell 6 is removed
@@ -82,11 +86,11 @@ combines those locations in the `$Env:PSModulePath` environment variable. When i
 name, PowerShell checks the location specified by `$Env:PSModulePath`. This allows PowerShell 7 to
 load both Core and Desktop modules.
 
-| Version |                System-wide location                |           User-specific location            |
-| ------- | -------------------------------------------------- | ------------------------------------------- |
-| PS 5.1  | `%WINDIR%\system32\WindowsPowerShell\v1.0\Modules` | `$HOME\Documents\WindowsPowerShell\Modules` |
-| PS 7.0  | `$PSHOME\Modules`                                  | `$HOME\Documents\PowerShell\Modules`        |
-
+|            Install Scope            |                Windows PowerShell 5.1                 |             PowerShell 7.0             |
+| ----------------------------------- | ----------------------------------------------------- | -------------------------------------- |
+| PowerShell modules                  | `$Env:WINDIR\system32\WindowsPowerShell\v1.0\Modules` | `$PSHOME\Modules`                      |
+| User installed<br>AllUsers scope    | `$Env:ProgramFiles\WindowsPowerShell\Modules`         | `$Env:ProgramFiles\PowerShell\Modules` |
+| User installed<br>CurrentUser scope | `$HOME\Documents\WindowsPowerShell\Modules`           | `$HOME\Documents\PowerShell\Modules`   |
 
 The following examples show the default values of `$Env:PSModulePath` for each version.
 
@@ -180,10 +184,10 @@ data transport. If remoting has been enabled, installing PowerShell 7 will use t
 **WinRM** configuration.
 
 > [!NOTE]
-> PowerShell 7 will use the existing Windows PowerShell 5.1 endpoint for remoting
-> connections. To update PowerShell 7 to include it own endpoint, run the
-> `Install-PowerShellRemoting.ps1` located in `$PSHOME`. For information about connecting to
-> specific endpoints, see
+> By default, PowerShell 7 uses the existing Windows PowerShell 5.1 endpoint named
+> `Microsoft.PowerShell` for remoting connections. To update PowerShell 7 to include its own
+> endpoint, run the `Enable-PSRemoting` cmdle. For information about connecting to specific
+> endpoints, see
 > [WS-Management Remoting in PowerShell Core](/powershell/scripting/learn/remoting/wsman-remoting-in-powershell-core)
 
 To use Windows PowerShell remoting, the remote computer must be configured for remote management.
