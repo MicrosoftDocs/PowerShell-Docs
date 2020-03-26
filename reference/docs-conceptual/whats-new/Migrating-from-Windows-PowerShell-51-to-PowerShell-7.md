@@ -17,9 +17,8 @@ enhancements and [new features](What-s-New-in-PowerShell-70.md).
 - Cross-platform interoperability
 - Support for Docker containers
 
-PowerShell 7 works side-by-side with Windows PowerShell letting you easily test and compare between editions before
-deployment. Migration is simple, quick, and safe.
-failure.
+PowerShell 7 works side-by-side with Windows PowerShell letting you easily test and compare between
+editions before deployment. Migration is simple, quick, and safe. failure.
 
 PowerShell 7 is supported on the following Windows operating systems:
 
@@ -41,10 +40,10 @@ the following methods:
 
 > [!NOTE]
 > The MSI package can be deployed and updated with management products such as
-> [System Center Configuration Manager (SCCM)](https://docs.microsoft.com/en-us/configmgr/apps/).
-> Download the packages from [GitHub Release page](https://github.com/PowerShell/PowerShell/releases).
+> [System Center Configuration Manager (SCCM)](/configmgr/apps/). Download the packages from
+> [GitHub Release page](https://github.com/PowerShell/PowerShell/releases).
 
-Deploying the MSI package requires Adminstrator permission. The ZIP package can be deployed by any
+Deploying the MSI package requires Administrator permission. The ZIP package can be deployed by any
 user. The ZIP package is the easiest way to install PowerShell 7 for testing, before committing to a
 full installation.
 
@@ -136,9 +135,9 @@ For more information about Modules, see
 
 ### Separate profiles
 
-A PowerShell profile is a script that executes when PowerShell starts. This script customizes
-your environment by adding commands, aliases, functions, variables, modules, and PowerShell drives.
-The profile script makes these customizations available in every session without having to manually
+A PowerShell profile is a script that executes when PowerShell starts. This script customizes your
+environment by adding commands, aliases, functions, variables, modules, and PowerShell drives. The
+profile script makes these customizations available in every session without having to manually
 recreate them.
 
 The path to the location of the profile has changed in PowerShell 7.
@@ -180,16 +179,12 @@ establish persistent connections, start interactive sessions, and run scripts on
 
 #### WS-Management remoting
 
-Windows PowerShell 5.1 and below use the `WS-Management` protocol for connection negotiation and
-data transport. If remoting has been enabled, installing PowerShell 7 will use the existing
-**WinRM** configuration.
-
-> [!NOTE]
-> By default, PowerShell 7 uses the existing Windows PowerShell 5.1 endpoint named
-> `Microsoft.PowerShell` for remoting connections. To update PowerShell 7 to include its own
-> endpoint, run the `Enable-PSRemoting` cmdle. For information about connecting to specific
-> endpoints, see
-> [WS-Management Remoting in PowerShell Core](/powershell/scripting/learn/remoting/wsman-remoting-in-powershell-core)
+Windows PowerShell 5.1 and below use the WS-Management (WSMAN) protocol for connection negotiation
+and data transport. Windows Remote Management (WinRM) uses the WSMAN protocol. If WinRM has been
+enabled, PowerShell 7 uses the existing Windows PowerShell 5.1 endpoint named `Microsoft.PowerShell`
+for remoting connections. To update PowerShell 7 to include its own endpoint, run the
+`Enable-PSRemoting` cmdlet. For information about connecting to specific endpoints, see
+[WS-Management Remoting in PowerShell Core](/powershell/scripting/learn/remoting/wsman-remoting-in-powershell-core)
 
 To use Windows PowerShell remoting, the remote computer must be configured for remote management.
 For more information, including instructions, see
@@ -201,9 +196,9 @@ For more information about working with remoting, see
 #### SSH-based remoting
 
 SSH-based remoting was added in PowerShell Core 6.x to support other operating systems that can't
-use Windows native components like **WinRM**. SSH remoting creates a PowerShell host process on
-the target computer as an SSH subsystem. For details and examples on setting up SSH-based remoting
-on Windows or Linux, see:
+use Windows native components like **WinRM**. SSH remoting creates a PowerShell host process on the
+target computer as an SSH subsystem. For details and examples on setting up SSH-based remoting on
+Windows or Linux, see:
 [PowerShell remoting over SSH](/powershell/scripting/learn/remoting/ssh-remoting-in-powershell-core).
 
 > [!NOTE]
@@ -277,8 +272,8 @@ Mode                 LastWriteTime         Length Name
 
 ### Separate Event Logs
 
-Windows PowerShell and PowerShell 7 log events to separate event logs. Use the
-following command to get a list of the PowerShell logs.
+Windows PowerShell and PowerShell 7 log events to separate event logs. Use the following command to
+get a list of the PowerShell logs.
 
 ```powershell
 Get-WinEvent -ListLog *PowerShell*
