@@ -17,8 +17,8 @@ enhancements and [new features](What-s-New-in-PowerShell-70.md).
 - Cross-platform interoperability
 - Support for Docker containers
 
-PowerShell 7 works side-by-side with Windows PowerShell letting you easily test and compare before
-deployment. Migration is simple, requiring a minimal investment of time and lower the risk of
+PowerShell 7 works side-by-side with Windows PowerShell letting you easily test and compare between editions before
+deployment. Migration is simple, quick, and safe.
 failure.
 
 PowerShell 7 is supported on the following Windows operating systems:
@@ -40,8 +40,9 @@ the following methods:
 - Deploy PowerShell using the [ZIP package](/powershell/scripting/install/installing-powershell-core-on-windows#installing-the-zip-package)
 
 > [!NOTE]
-> The MSI package can be deployed and updated with management products such as Microsoft System Center
-> Configuration Manager (SCCM). Download the packages from [GitHub Release page](https://github.com/PowerShell/PowerShell/releases).
+> The MSI package can be deployed and updated with management products such as
+> [System Center Configuration Manager (SCCM)](https://docs.microsoft.com/en-us/configmgr/apps/).
+> Download the packages from [GitHub Release page](https://github.com/PowerShell/PowerShell/releases).
 
 Deploying the MSI package requires Adminstrator permission. The ZIP package can be deployed by any
 user. The ZIP package is the easiest way to install PowerShell 7 for testing, before committing to a
@@ -81,7 +82,7 @@ both versions.
 
 ### Separate PSModulePath
 
-By default, Windows PowerShell and PowerShell 7 store modules in different locations. PowerShell 7,
+By default, Windows PowerShell and PowerShell 7 store modules in different locations. PowerShell 7
 combines those locations in the `$Env:PSModulePath` environment variable. When importing a module by
 name, PowerShell checks the location specified by `$Env:PSModulePath`. This allows PowerShell 7 to
 load both Core and Desktop modules.
@@ -276,7 +277,7 @@ Mode                 LastWriteTime         Length Name
 
 ### Separate Event Logs
 
-PowerShell 7 includes separate event logs for Windows PowerShell and PowerShell Core. Use the
+Windows PowerShell and PowerShell 7 log events to separate event logs. Use the
 following command to get a list of the PowerShell logs.
 
 ```powershell
@@ -294,7 +295,7 @@ scripting environment for PowerShell 7. The Windows PowerShell Integrated Script
 
 The updated PowerShell extension includes:
 
-- New ISE compatibility module
+- New ISE compatibility mode
 - PSReadLine in the Integrated Console, including syntax highlighting, multi-line editing, and back
   search
 - Stability and performance improvements
