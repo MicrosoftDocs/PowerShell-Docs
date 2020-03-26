@@ -40,8 +40,8 @@ the following methods:
 
 > [!NOTE]
 > The MSI package can be deployed and updated with management products such as
-> [System Center Configuration Manager (SCCM)](https://docs.microsoft.com/en-us/configmgr/apps/).
-> Download the packages from [GitHub Release page](https://github.com/PowerShell/PowerShell/releases).
+> [System Center Configuration Manager (SCCM)](/configmgr/apps/). Download the packages from
+> [GitHub Release page](https://github.com/PowerShell/PowerShell/releases).
 
 Deploying the MSI package requires Administrator permission. The ZIP package can be deployed by any
 user. The ZIP package is the easiest way to install PowerShell 7 for testing, before committing to a
