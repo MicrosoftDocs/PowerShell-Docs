@@ -263,6 +263,33 @@ sudo apt-get remove powershell
 > [!NOTE]
 > Debian 10 is only supported in PowerShell 7.0 and newer.
 
+### Installation via Package Repository - Debian 10
+
+PowerShell for Linux is published to package repositories for easy installation and updates.
+
+The preferred method is as follows:
+
+```sh
+# Install system components
+sudo apt-get update
+sudo apt-get install -y curl gnupg apt-transport-https
+
+# Import the public repository GPG keys
+curl https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
+
+# Register the Microsoft Product feed
+sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/microsoft-debian-buster-prod buster main" > /etc/apt/sources.list.d/microsoft.list'
+
+# Update the list of products
+sudo apt-get update
+
+# Install PowerShell
+sudo apt-get install -y powershell
+
+# Start PowerShell
+pwsh
+```
+
 ### Installation via Direct Download - Debian 10
 
 Download the tar.gz package `powershell_7.0.0-linux-x64.tar.gz` from the [releases][] page
