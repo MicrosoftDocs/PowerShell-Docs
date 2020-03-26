@@ -216,7 +216,7 @@ requires thread synchronization.
 
 For more information see:
 
-- [Start-ThreadJob](../../ThreadJob/Start-ThreadJob.md)
+- [Start-ThreadJob](/powershell/module/ThreadJob/Start-ThreadJob)
 
 #### Serialization of variable values
 
