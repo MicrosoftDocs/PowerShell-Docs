@@ -37,9 +37,9 @@ The `Publish-Script` cmdlet publishes the specified script to the online gallery
 
 ### Example 1: Create a script file, add content to it, and publish it
 
-The `New-ScriptFileInfo` cmdlet created a script file named `Demo-Script.ps1`. `Get-Content`
+The `New-ScriptFileInfo` cmdlet creates a script file named `Demo-Script.ps1`. `Get-Content`
 displays the content of `Demo-Script.ps1`. The `Add-Content` cmdlet adds a function and a workflow
-to `Demo-Script`.
+to `Demo-Script.ps1`.
 
 ```powershell
 $newScriptInfo = @{
@@ -175,8 +175,7 @@ Accept wildcard characters: False
 ### -NuGetApiKey
 
 Specifies the API key that you want to use to publish a script to the online gallery. The API key is
-part of your profile in the online gallery, and can be found on your user account page in the
-gallery. The API key is NuGet-specific functionality.
+part of your profile in the online gallery. For more information see [Managing API keys](/powershell/scripting/gallery/how-to/managing-profile/creating-apikeys).
 
 ```yaml
 Type: String
@@ -202,7 +201,7 @@ Aliases:
 
 Required: True
 Position: Named
-Default value: Current location
+Default value: <Current location>
 Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: True
 ```
