@@ -270,15 +270,11 @@ PowerShell for Linux is published to package repositories for easy installation 
 The preferred method is as follows:
 
 ```sh
-# Install system components
-sudo apt-get update
-sudo apt-get install -y curl gnupg apt-transport-https
+# Download the Microsoft repository GPG keys
+wget https://packages.microsoft.com/config/debian/10/packages-microsoft-prod.deb
 
-# Import the public repository GPG keys
-curl https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
-
-# Register the Microsoft Product feed
-sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/microsoft-debian-buster-prod buster main" > /etc/apt/sources.list.d/microsoft.list'
+# Register the Microsoft repository GPG keys
+sudo dpkg -i packages-microsoft-prod.deb
 
 # Update the list of products
 sudo apt-get update
