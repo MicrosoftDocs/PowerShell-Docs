@@ -2,7 +2,7 @@
 description: Describes how you can use classes to create your own custom types.
 keywords: powershell,cmdlet
 locale: en-us
-ms.date: 08/15/2019
+ms.date: 03/27/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_classes?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Classes
@@ -385,11 +385,10 @@ Microsoft   Surface Pro 4   5072641000
 
 ## Hidden attribute
 
-The `hidden` attribute makes a property or method less visible. The property or
-method is still accessible to the user and is available in all scopes in which
-the object is available. Hidden members are hidden from the `Get-Member` cmdlet
-and can't be displayed using tab completion or IntelliSense outside of the
-class definition.
+The `hidden` attribute hides a property or method. The property or method is
+still accessible to the user and is available in all scopes in which the object
+is available. Hidden members are hidden from the `Get-Member` cmdlet and can't
+be displayed using tab completion or IntelliSense outside the class definition.
 
 For more information, see [About_hidden](About_hidden.md).
 
@@ -593,7 +592,7 @@ This example shows inheritance with an interface declaration coming after the
 base class.
 
 ```powershell
-Class Derived : Base.Interface {...}
+Class Derived : Base, Interface {...}
 ```
 
 ### Example of simple inheritance in PowerShell classes
@@ -751,7 +750,7 @@ $littleone.Age
 
 ## Invoke base class methods
 
-To override existing methods in subclasses, declare methods by using the same
+To override existing methods in subclasses, declare methods using the same
 name and signature.
 
 ```powershell
@@ -803,7 +802,7 @@ interfaces after base types or immediately after a colon (`:`) when there is no
 base type specified. Separate all type names with commas.
 
 ```powershell
-class MyComparable : system.IComparable
+class MyComparable : System.IComparable
 {
     [int] CompareTo([object] $obj)
     {
@@ -811,7 +810,7 @@ class MyComparable : system.IComparable
     }
 }
 
-class MyComparableBar : bar, system.IComparable
+class MyComparableBar : bar, System.IComparable
 {
     [int] CompareTo([object] $obj)
     {
