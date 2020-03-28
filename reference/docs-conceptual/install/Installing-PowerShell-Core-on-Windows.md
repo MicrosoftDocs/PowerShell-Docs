@@ -9,22 +9,28 @@ There are multiple ways to install PowerShell in Windows.
 
 ## Prerequisites
 
+The latest release of PowerShell is supported on Windows 7 SP1, Server 2008 R2, and later versions.
+
 To enable PowerShell remoting over WSMan, the following prerequisites need to be met:
 
 - Install the [Universal C Runtime](https://www.microsoft.com/download/details.aspx?id=50410) on
-  Windows versions prior to Windows 10. It is available via direct download or Windows Update. Fully
-  patched (including optional packages), supported systems will already have this installed.
+  Windows versions predating Windows 10. It's available via direct download or Windows Update. Fully
+  patched systems already have this package installed.
 - Install the Windows Management Framework (WMF) 4.0 or newer on Windows 7 and Windows Server 2008
   R2. For more information about WMF, see [WMF Overview](/powershell/scripting/wmf/overview).
 
+## Download the installer package
+
+To install PowerShell on Windows, download the install package from our GitHub [releases][releases]
+page. Scroll down to the **Assets** section of the Release page. The **Assets** section may be
+collapsed, so you may need to click to expand it.
+
 ## <a id="msi" />Installing the MSI package
 
-To install PowerShell on a Windows client or Windows Server (works on Windows 7 SP1, Server 2008 R2,
-and later), download the MSI package from our GitHub [releases][releases] page. Scroll down to the
-**Assets** section of the Release you want to install. The Assets section may be collapsed, so you
-may need to click to expand it.
+The MSI file looks like `PowerShell-<version>-win-<os-arch>.msi`. For example:
 
-The MSI file looks like this - `PowerShell-<version>-win-<os-arch>.msi`
+- `PowerShell-7.0.0-win-x64.msi`
+- `PowerShell-7.0.0-win-x86.msi`
 
 Once downloaded, double-click the installer and follow the prompts.
 
@@ -37,18 +43,18 @@ The installer creates a shortcut in the Windows Start Menu.
 > PowerShell 7 installs to a new directory and runs side-by-side with Windows PowerShell 5.1. For
 > PowerShell Core 6.x, PowerShell 7 is an in-place upgrade that removes PowerShell Core 6.x.
 >
-> - PowerShell 7 is installed to `%programfiles%\PowerShell\7`
-> - The `%programfiles%\PowerShell\7` folder is added to `$env:PATH`
-> - The `%programfiles%\PowerShell\6` folder is deleted
+> - PowerShell 7 is installed to `$env:ProgramFiles\PowerShell\7`
+> - The `$env:ProgramFiles\PowerShell\7` folder is added to `$env:PATH`
+> - The `$env:ProgramFiles\PowerShell\6` folder is deleted
 >
 > If you need to run PowerShell 6 side-by-side with PowerShell 7, reinstall PowerShell 6 using the
 > [ZIP install](#zip) method.
 
 ### Administrative install from the command line
 
-MSI packages can be installed from the command line. This allows administrators to deploy packages
-without user interaction. The MSI package for PowerShell includes the following properties to
-control the installation options:
+MSI packages can be installed from the command line allowing administrators to deploy packages
+without user interaction. The MSI package includes the following properties to control the
+installation options:
 
 - **ADD_EXPLORER_CONTEXT_MENU_OPENPOWERSHELL** - This property controls the option for adding the
   **Open PowerShell** item to the context menu in Windows Explorer.
@@ -57,14 +63,13 @@ control the installation options:
 - **REGISTER_MANIFEST** - This property controls the option for registering the Windows Event
   Logging manifest.
 
-The following examples shows how to silently install PowerShell with all the install options
-enabled.
+The following example shows how to silently install PowerShell with all the install options enabled.
 
 ```powershell
-msiexec.exe /package PowerShell-<version>-win-<os-arch>.msi /quiet ADD_EXPLORER_CONTEXT_MENU_OPENPOWERSHELL=1 ENABLE_PSREMOTING=1 REGISTER_MANIFEST=1
+msiexec.exe /package PowerShell-7.0.0-win-x64.msi /quiet ADD_EXPLORER_CONTEXT_MENU_OPENPOWERSHELL=1 ENABLE_PSREMOTING=1 REGISTER_MANIFEST=1
 ```
 
-For a full list of command line options for Msiexec.exe, see [Command line options](/windows/desktop/Msi/command-line-options).
+For a full list of command-line options for `Msiexec.exe`, see [Command line options](/windows/desktop/Msi/command-line-options).
 
 ## <a id="msix" />Installing the MSIX package
 
@@ -74,22 +79,25 @@ install. The Assets section may be collapsed, so you may need to click to expand
 
 The MSIX file looks like this - `PowerShell-<version>-win-<os-arch>.msix`
 
-Once downloaded, you cannot simply double-click on the installer as this package requires
-use of un-virtualized resources.  To install, you must use the `Add-AppxPackage` cmdlet:
+To install the package, you must use the `Add-AppxPackage` cmdlet.
 
 ```powershell
 Add-AppxPackage PowerShell-<version>-win-<os-arch>.msix
 ```
 
+> [!NOTE]
+> The MSIX package has not been released yet. When released, the package will be available in the
+> Microsoft Store and from the GitHub [releases][releases] page.
+
 ## <a id="zip" />Installing the ZIP package
 
-PowerShell binary ZIP archives are provided to enable advanced deployment scenarios. Be noted that
-when using the ZIP archive, you won't get the prerequisites check as in the MSI package. For
-remoting over WSMan to work properly, ensure that you have met the [prerequisites](#prerequisites).
+PowerShell binary ZIP archives are provided to enable advanced deployment scenarios. Installing the
+ZIP archive doesn't check the prerequisites like the MSI packages do. For remoting over WSMan to
+work properly, ensure that you've met the [prerequisites](#prerequisites).
 
 ## Deploying on Windows IoT
 
-Windows IoT already comes with Windows PowerShell which we can use to deploy PowerShell 7.
+Windows IoT comes with Windows PowerShell, which we can use to deploy PowerShell 7.
 
 1. Create `PSSession` to target device
 
@@ -115,7 +123,7 @@ Windows IoT already comes with Windows PowerShell which we can use to deploy Pow
    Expand-Archive .\PowerShell-<version>-win-<os-arch>.zip
    ```
 
-4. Setup remoting to PowerShell 7
+4. Set up remoting to PowerShell 7
 
    ```powershell
    Set-Location .\PowerShell-<version>-win-<os-arch>
@@ -134,16 +142,18 @@ Windows IoT already comes with Windows PowerShell which we can use to deploy Pow
 
 ## Deploying on Nano Server
 
-These instructions assume that a version of PowerShell is already running on the Nano Server image
-and that it has been generated by the [Nano Server Image Builder](/windows-server/get-started/deploy-nano-server).
-Nano Server is a "headless" OS. PowerShell binaries can be deploy using two different methods.
+These instructions assume that the Nano Server is a "headless" OS that has a version of PowerShell
+is already running on it. For more information, see the
+[Nano Server Image Builder](/windows-server/get-started/deploy-nano-server) documentation.
+
+PowerShell binaries can be deployed using two different methods.
 
 1. Offline - Mount the Nano Server VHD and unzip the contents of the zip file to your chosen
    location within the mounted image.
 2. Online - Transfer the zip file over a PowerShell Session and unzip it in your chosen location.
 
-In both cases, you will need the Windows 10 x64 ZIP release package and will need to run the
-commands within an "Administrator" PowerShell instance.
+In both cases, you need the Windows 10 x64 ZIP release package. Run the commands within an
+"Administrator" instance of PowerShell.
 
 ### Offline Deployment of PowerShell
 
@@ -156,8 +166,7 @@ commands within an "Administrator" PowerShell instance.
 
 ### Online Deployment of PowerShell
 
-The following steps guide you through the deployment of PowerShell to a running instance of
-Nano Server and the configuration of its remote endpoint.
+Deploy PowerShell to Nano Server using the following steps.
 
 - Connect to the inbox instance of Windows PowerShell
 
@@ -197,8 +206,8 @@ dotnet tool install --global PowerShell
 ```
 
 The dotnet tool installer adds `$env:USERPROFILE\dotnet\tools` to your `$env:PATH` environment
-variable. However, the currently running shell does not have the updated `$env:PATH`. You should be
-able to start PowerShell from a new shell by typing `pwsh`.
+variable. However, the currently running shell doesn't have the updated `$env:PATH`. You can start
+PowerShell from a new shell by typing `pwsh`.
 
 ## How to create a remoting endpoint
 
