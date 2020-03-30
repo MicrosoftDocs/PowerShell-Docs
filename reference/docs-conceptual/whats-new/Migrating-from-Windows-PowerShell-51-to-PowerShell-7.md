@@ -166,7 +166,7 @@ PowerShell 7 support for more modules including Microsoft Graph, Office 365, and
 current list of supported modules, see
 [PowerShell 7 module compatibility](/powershell/scripting/whats-new/module-compatibility).
 
-[!NOTE]
+> [!NOTE]
 > On Windows, we've also added a **UseWindowsPowerShell** switch to `Import-Module` to ease the
 > transition to PowerShell 7 for those using incompatible modules. For more information on this
 > functionality, see
