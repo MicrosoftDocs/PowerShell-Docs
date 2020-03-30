@@ -107,9 +107,6 @@ PowerShell sends the following command string to the Icacls program:
 
 `X:\VMS /grant Dom\HVAdmin:(CI)(OI)F`
 
-> [!NOTE]
-> The stop-parsing symbol only intended for use on Windows platforms.
-
 ## SEE ALSO
 
 [about_Command_Syntax](about_Command_Syntax.md)
