@@ -30,4 +30,4 @@ For information about our support policy, see the
 
 We have a collection of digital artwork available for your enjoyment.
 
-[Digital Art](https://docs.microsoft.com/powershell/scripting/community/digital-art.md)
+[Digital Art](/powershell/scripting/community/digital-art)
