@@ -145,4 +145,4 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## RELATED LINKS
 
-[Enable-DscDebug]/powershell/module/PSDesiredStateConfiguration/Enable-DscDebug)
+[Enable-DscDebug](/powershell/module/PSDesiredStateConfiguration/Enable-DscDebug)
