@@ -728,7 +728,7 @@ Optionally, you can create a symbolic link to start PowerShell without specifyin
 
 ```sh
 # Start PowerShell from bash with sudo to create a symbolic link
-sudo ~/powershell/pwsh -c New-Item -ItemType SymbolicLink -Path "/usr/bin/pwsh" -Target "\$PSHOME/pwsh" -Force
+sudo ~/powershell/pwsh -c New-Item -ItemType SymbolicLink -Path "/usr/bin/pwsh" -Target "$PSHOME/pwsh" -Force
 
 # alternatively you can run following to create a symbolic link
 # sudo ln -s ~/powershell/pwsh /usr/bin/pwsh
