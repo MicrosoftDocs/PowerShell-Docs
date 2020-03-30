@@ -163,7 +163,7 @@ You can get help for `log` by running `log show --help` for additional details.
 
 You may also want to consider saving the event logs to a more secure location
 such as a central event log collector, or [SIEM][] aggregator. You can set up
-SEIM in Azure. For more information, see
+SIEM in Azure. For more information, see
 [Generic SIEM integration](/cloud-app-security/siem).
 
 ## Configuring logging on a non-Windows system

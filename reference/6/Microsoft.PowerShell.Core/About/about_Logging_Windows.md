@@ -132,7 +132,7 @@ more information about Public Key Cryptography, see
 To enable a Protected Event Logging policy, deploy a public key to all machines
 that have event log data to protect. The corresponding private key is used to
 post-process the event logs at a more secure location such as a central event
-log collector, or [SIEM][] aggregator. You can set up SEIM in Azure. For more
+log collector, or [SIEM][] aggregator. You can set up SIEM in Azure. For more
 information, see [Generic SIEM integration](/cloud-app-security/siem).
 
 ### Enabling Protected Event Logging via Group Policy
