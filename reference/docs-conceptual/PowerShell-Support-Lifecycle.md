@@ -29,7 +29,7 @@ With the release of PowerShell 7, PowerShell continues to be supported under the
 but support dates are linked to [.NET Core's support lifecycle][Long-Term]. In this servicing
 approach, customers can choose Long Term Support (LTS) releases or Current releases. PowerShell 7.0
 is an LTS release. Support ends with the support of .NET Core 3.1. The next LTS release follows the
-next .NET core LTS release. See the [PowerShell releases end of life table](#powershell-releases-end-of-life)
+next .NET Core LTS release. See the [PowerShell releases end of life table](#powershell-releases-end-of-life)
 for urrent ending support dates. LTS release updates only contain critical security and servicing
 updates and fixes that are designed to avoid or minimize impact to existing workloads.
 
