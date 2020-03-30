@@ -22,9 +22,9 @@ It supports the following PowerShell versions:
 Before you begin, make sure PowerShell exists on your system. For modern workloads on Windows,
 macOS, and Linux, see the following links:
 
-- [Installing PowerShell Core on Linux][install-pscore-linux]
-- [Installing PowerShell Core on macOS][install-pscore-macos]
-- [Installing PowerShell Core on Windows][install-pscore-windows]
+- [Installing PowerShell on Linux][install-pscore-linux]
+- [Installing PowerShell on macOS][install-pscore-macos]
+- [Installing PowerShell on Windows][install-pscore-windows]
 
 For traditional Windows PowerShell workloads, see [Installing Windows PowerShell][install-winps].
 
