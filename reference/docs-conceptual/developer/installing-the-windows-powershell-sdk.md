@@ -1,6 +1,6 @@
 ---
 title: Installing the Windows PowerShell SDK
-ms.date: 09/13/2016
+ms.date: 03/30/2020
 ms.topic: "article"
 ---
 # Installing the Windows PowerShell SDK
@@ -17,8 +17,9 @@ of the Windows 8 SDK. These assemblies allow you to write cmdlets, providers, an
 Windows PowerShell 3.0. When you install the Windows SDK for Windows 8, the Windows PowerShell
 assemblies are automatically installed in the reference assembly folder, in `\Program Files
 (x86)\Reference Assemblies\Microsoft\WindowsPowerShell\3.0`. For more information, see the Windows 8
-SDK download site. Windows PowerShell code samples are also available on the Development Center at
-[Windows PowerShell 3.0 SDK Sample Pack](https://code.msdn.microsoft.com/Windows-PowerShell-30-SDK-9a34641d).
+SDK download site. Windows PowerShell code samples are also available in the
+[powershell-sdk-samples](https://github.com/MicrosoftDocs/powershell-sdk-samples/tree/master/SDK-3.0)
+repository.
 
 ## Installing Windows PowerShell 3.0 SDK for Windows 7 and Windows Server 2008 R2
 
@@ -134,7 +135,7 @@ can access the functionality of the cmdlet only through the proxy command.
 
 - Host01 - Shows how to implement a host application that uses a custom host. In this sample a
 runspace is created that uses the custom host, and then the PowerShell API is used to run a script
-that calls “exit.” The host application then looks at the output of the script and prints out the
+that calls "exit." The host application then looks at the output of the script and prints out the
 results.
 - Host02 - Shows how to write a host application that uses the Windows PowerShell runtime along
 with a custom host implementation. The host application sets the host culture to German, runs the
