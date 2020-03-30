@@ -26,12 +26,12 @@ cmdlet and waits for a debugger to be attached. This is similar to using
 `Enable-RunspaceDebug -BreakAll` in a DSC resource but breaks at a specific point in the script.
 
 > [!CAUTION]
-> Make sure you remove the `Wait-Debugger` lines after you are done. Running script appear to be
+> Make sure you remove the `Wait-Debugger` lines after you are done. A running script appears to be
 > hung when it is stopped at a `Wait-Debugger`.
 
 ## EXAMPLES
 
-### 1: Insert breakpoint for debugging
+### Example 1: Insert breakpoint for debugging
 
 ```
 [DscResource()]
