@@ -85,7 +85,7 @@ Accept wildcard characters: False
 
 Specifies the authentication mechanism to be used at the server. Possible values are:
 
-- Basic: Basic is a scheme in which the user name and password are sent in clear text to the server
+- Basic: Basic is a scheme in which the username and password are sent in clear text to the server
   or proxy.
 - Default: Use the authentication method implemented by the WS-Management protocol. This is the
   default.
