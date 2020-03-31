@@ -50,27 +50,24 @@ service as a .NET Framework object.
 
 ### Example 1: Create a proxy for a Web service
 
+This example creates a .NET Framework proxy of the calculator Web service in Windows PowerShell.
+
 ```powershell
-$zip = New-WebServiceProxy -Uri "http://www.dneonline.com/calculator.asmx?wsdl"
+$calc = New-WebServiceProxy -Uri "http://www.dneonline.com/calculator.asmx?wsdl"
 ```
 
-This example creates a .NET Framework proxy of the US Zip Web service in Windows PowerShell.
-
 ### Example 2: Create a proxy for a Web service and specify namespace and class
+
+This example uses the `New-WebServiceProxy` cmdlet to create a .NET Framework proxy of the
+calculator Web service.
 
 ```powershell
 $URI = "http://www.dneonline.com/calculator.asmx?wsdl"
 $calc = New-WebServiceProxy -Uri $URI -Namespace "WSProxy" -Class "Calculator"
 ```
 
-This example uses the `New-WebServiceProxy` cmdlet to create a .NET Framework proxy of the US Zip
-Web service.
-
-The first command stores the URI of the Web service in the `$URI` variable.
-
-The second command creates the Web service proxy. The command uses the **Uri** parameter to specify
-the URI and the **Namespace** and **Class** parameters to specify the namespace and class of the
-object.
+The command uses the **Uri** parameter to specify the URI and the **Namespace** and **Class**
+parameters to specify the namespace and class of the object.
 
 ### Example 3: Display methods of a Web service proxy
 
