@@ -810,7 +810,7 @@ the session configuration file to a session configuration, use the `Register-PSS
 or `Set-PSSessionConfiguration cmdlets.
 
 For more information, see
-[about_Session_Configuration_Files](powershell/module/microsoft.powershell.core/about/about_session_configuration_files?view=powershell-5.0)
+[about_Session_Configuration_Files](/powershell/module/microsoft.powershell.core/about/about_session_configuration_files)
 and `New-PSSessionConfigurationFile`.
 
 ### Scheduled Jobs and Task Scheduler Integration

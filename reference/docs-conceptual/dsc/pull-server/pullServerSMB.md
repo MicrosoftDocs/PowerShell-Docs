@@ -194,10 +194,10 @@ resources.
 For more information about configuring the LCM, see
 [Setting up a pull client using configuration ID](pullClientConfigID.md).
 
-> [!NOTE] For simplicity, this example uses the **PSDscAllowPlainTextPassword** to allow passing a
-> plaintext password to the **Credential** parameter. For information about passing credentials more
-> securely, see
-> [Credentials Options in Configuration Data](../configurations/configDataCredentials.md). You
+> [!NOTE]
+> For simplicity, this example uses the **PSDscAllowPlainTextPassword** to allow passing a plaintext
+> password to the **Credential** parameter. For information about passing credentials more securely,
+> see [Credentials Options in Configuration Data](../configurations/configDataCredentials.md). You
 > **MUST** specify a **ConfigurationID** in the **Settings** block of a metaconfiguration for an SMB
 > pull server, even if you are only pulling resources.
 
