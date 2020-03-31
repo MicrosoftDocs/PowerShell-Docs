@@ -508,7 +508,7 @@ The valid **UFormat specifiers** are displayed in the following table:
 | `%R` | Time in 24-hour format -no seconds | 17:45 |
 | `%r` | Time in 12-hour format | 09:15:36 AM |
 | `%S` | Seconds | 05 |
-| `%s` | Seconds elapsed since January 1, 1970 00:00:00 | 1150451174.95705 |
+| `%s` | Seconds elapsed since January 1, 1970 00:00:00 | 1150451174 |
 | `%t` | Horizontal tab character | |
 | `%T` | Time in 24-hour format | 17:45:52 |
 | `%U` | Same as 'W' | |
