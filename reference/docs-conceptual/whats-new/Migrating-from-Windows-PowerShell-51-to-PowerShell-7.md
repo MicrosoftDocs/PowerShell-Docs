@@ -170,7 +170,7 @@ current list of supported modules, see
 > On Windows, we've also added a **UseWindowsPowerShell** switch to `Import-Module` to ease the
 > transition to PowerShell 7 for those using incompatible modules. For more information on this
 > functionality, see
-> [about_Windows_PowerShell_Compatibility](/powershell/modules/Microsoft.PowerShell.Core/About/about_windows_powershell_compatibility).
+> [about_Windows_PowerShell_Compatibility](/powershell/module/Microsoft.PowerShell.Core/About/about_windows_powershell_compatibility).
 
 ### PowerShell Remoting
 

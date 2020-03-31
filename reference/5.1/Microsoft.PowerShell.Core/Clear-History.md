@@ -41,8 +41,7 @@ use parameters with `Clear-History` to delete selected commands.
 a history file that contains every PowerShell command from every PowerShell session. From a
 PowerShell prompt, use the up and down arrows on your keyboard to scroll through the command
 history. To display the `PSReadLine` configuration for command history, use `Get-PSReadLineOption`.
-`PSReadLine` shipped with PowerShell 5.0 and above. For more information, see [PSReadLine](../PSReadLine/PSReadLine.md)
-and [about_PSReadLine](../PSReadLine/About/about_PSReadLine.md).
+`PSReadLine` shipped with PowerShell 5.0 and above. For more information, see [about_PSReadLine](../PSReadLine/About/about_PSReadLine.md).
 
 ## EXAMPLES
 
@@ -50,20 +49,25 @@ and [about_PSReadLine](../PSReadLine/About/about_PSReadLine.md).
 
 This command deletes all of the commands from a PowerShell session's history.
 
+```powershell
+Get-History
 ```
-PS> Get-History
 
+```Output
   Id CommandLine
   -- -----------
    1 Set-Location .\Test
    2 Update-Help
    3 Set-Location C:\Test\Logs
    4 Get-Location
+```
 
-PS> Clear-History
+```powershell
+Clear-History
+Get-History
+```
 
-PS> Get-History
-
+```Output
   Id CommandLine
   -- -----------
    5 Clear-History
@@ -78,9 +82,11 @@ history was deleted.
 This command uses the **Count** and **Newest** parameters to delete the newest commands from a
 PowerShell session's history.
 
+```powershell
+Get-History
 ```
-PS> Get-History
 
+```Output
   Id CommandLine
   -- -----------
    1 Set-Location C:\Test\
@@ -93,11 +99,14 @@ PS> Get-History
    8 Set-Location C:\Test\Logs
    9 Get-Help Get-Variable
   10 Get-Help Get-ChildItem
+```
 
-PS> Clear-History -Count 5 -Newest
+```powershell
+Clear-History -Count 5 -Newest
+Get-History
+```
 
-PS> Get-History
-
+```Output
   Id CommandLine
   -- -----------
    1 Set-Location C:\Test\
@@ -118,9 +127,11 @@ five newest commands were deleted, **Id 6** - **Id 10**.
 
 This command deletes commands that match specific criteria defined by the **CommandLine** parameter.
 
+```powershell
+Get-History
 ```
-PS C:\Test> Get-History
 
+```Output
   Id CommandLine
   -- -----------
    1 Set-Location C:\Test\
@@ -130,11 +141,14 @@ PS C:\Test> Get-History
    5 Get-Help Get-Alias
    6 Get-Command Get-ChildItem -Syntax
    7 Get-Help Clear-History
+```
 
-PS> Clear-History -CommandLine *Help*, *Syntax
+```powershell
+Clear-History -CommandLine *Help*, *Syntax
+Get-History
+```
 
-PS> Get-History
-
+```Output
   Id CommandLine
   -- -----------
    1 Set-Location C:\Test\
@@ -153,9 +167,11 @@ command history. The **CommandLine** parameter specifies commands that contain *
 This command deletes specific history items using the **Id**. To delete multiple commands, submit a
 comma-separated list of **Id** numbers.
 
+```powershell
+Get-History
 ```
-PS> Get-History
 
+```Output
   Id CommandLine
   -- -----------
    1 Set-Location C:\Test\
@@ -164,11 +180,14 @@ PS> Get-History
    4 Get-Command Clear-History
    5 Get-Command Clear-History -Syntax
    6 Get-Command Clear-History -ShowCommandInfo
+```
 
-PS C:\> Clear-History -Id 3, 5
+```powershell
+Clear-History -Id 3, 5
+Get-History
+```
 
-PS> Get-History
-
+```Output
   Id CommandLine
   -- -----------
    1 Set-Location C:\Test\
@@ -188,9 +207,11 @@ updated command history and confirms that **Id 3** and **Id 5** were deleted.
 This command uses the **Id** and **Count** parameters to delete command history. Commands are
 deleted from the specified **Id** in reverse order, newest to oldest.
 
+```powershell
+Get-History
 ```
-PS> Get-History
 
+```Output
   Id CommandLine
   -- -----------
    1 Set-Location C:\Test\
@@ -203,11 +224,14 @@ PS> Get-History
    8 Set-Location C:\Test\Logs
    9 Get-Help Get-Variable
   10 Get-Help Get-ChildItem
+```
 
-PS> Clear-History -Id 7 -Count 5
+```powershell
+Clear-History -Id 7 -Count 5
+Get-History
+```
 
-PS> Get-History
-
+```Output
   Id CommandLine
   -- -----------
    1 Set-Location C:\Test\
@@ -383,7 +407,5 @@ information, see [about_History](About/about_History.md).
 [Get-PSReadLineOption](/powershell/module/psreadline/get-psreadlineoption)
 
 [Invoke-History](Invoke-History.md)
-
-[PSReadLine](../PSReadLine/PSReadLine.md)
 
 [Set-PSReadLineOption](/powershell/module/psreadline/set-psreadlineoption)

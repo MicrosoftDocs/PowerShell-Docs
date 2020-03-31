@@ -30,14 +30,15 @@ for the best compatibility across all versions of PowerShell and with the publis
 Basic formatting guidelines:
 
 - Limit lines to 80 characters
-- Code blocks and tables are limited to 76 characters because Pandoc indents these by four spaces during
-  conversion to plain text
+- Code blocks and tables are limited to 76 characters because Pandoc indents these by four spaces
+  during conversion to plain text
 - Tables need to fit within 76 characters
   - Manually wrap contents of cells across multiple lines
   - Use opening and closing `|` characters on each line
   - See a working example in [about_Comparison_Operators][about-example]
 - Using Pandoc special characters `\`,`$`, and `<`
-  - Within a header - these characters must be escaped using a leading `\` character or enclosed in backticks (`` ` ``)
+  - Within a header - these characters must be escaped using a leading `\` character or enclosed in
+    backticks (`` ` ``)
   - Within a paragraph, these characters should be put into code spans. For example:
 
     ~~~markdown
@@ -88,5 +89,5 @@ Get-Command -ListImported
 [PlatyPS]: https://github.com/powershell/platyps
 [platyPS.schema.md]: https://github.com/PowerShell/platyPS/blob/master/platyPS.schema.md
 [issue1806]: https://github.com/MicrosoftDocs/PowerShell-Docs/issues/1806
-[about-example]: https://github.com/MicrosoftDocs/PowerShell-Docs/reference/5.1/Microsoft.PowerShell.Core/About/about_Comparison_Operators.md
+[about-example]: /PowerShell/module/Microsoft.PowerShell.Core/About/about_Comparison_Operators
 [Pandoc]: https://pandoc.org

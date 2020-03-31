@@ -173,4 +173,4 @@ The pipeline takes a string that is used as the catalog filename.
 
 [Test-FileCatalog](Test-FileCatalog.md)
 
-[PowerShellGet](../PowerShellGet/PowerShellGet.md)
+[PowerShellGet](/powerShell/module/powershellget)

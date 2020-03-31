@@ -114,9 +114,9 @@ $filteredCommands = $commands.Name | Where-Object { $jeaDefaultCmdlets -notconta
 Import-PSSession -Session $jeasession -Prefix 'JEA' -CommandName $filteredCommands
 ```
 
-You can also persist the proxied cmdlets from implicit remoting using [Export-PSSession](/powershell/microsoft.powershell.utility/Export-PSSession).
-For more information about implicit remoting, see the documentation for [Import-PSSession](/powershell/microsoft.powershell.utility/import-pssession)
-and [Import-Module](/powershell/microsoft.powershell.core/import-module).
+You can also persist the proxied cmdlets from implicit remoting using [Export-PSSession](/powershell/module/microsoft.powershell.utility/Export-PSSession).
+For more information about implicit remoting, see the documentation for [Import-PSSession](/powershell/module/microsoft.powershell.utility/import-pssession)
+and [Import-Module](/powershell/module/microsoft.powershell.core/import-module).
 
 ## Using JEA programmatically
 

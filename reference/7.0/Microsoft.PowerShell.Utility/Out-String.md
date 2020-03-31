@@ -113,7 +113,7 @@ PowerShell formatter. New lines that are part of the string objects created with
 removed.
 
 The example uses a special character (`` `n ``) to create a new line. For more information, see
-[about_Special_Characters](/microsoft.powershell.core/about/about_special_characters).
+[about_Special_Characters](../microsoft.powershell.core/about/about_special_characters.md).
 
 ```
 PS> "a", "b`n", "c", "d" | Out-String

@@ -223,8 +223,8 @@ activities.
 ## Notes
 
 Authors of module authors can add logging features to their modules. For more
-information, see [Writing a Windows PowerShell Module](https://go.microsoft.com/fwlink/?LinkID=144916)
-in the MSDN library.
+information, see
+[Writing a Windows PowerShell Module](/powershell/scripting/developer/module/writing-a-windows-powershell-module).
 
 ## See Also
 
