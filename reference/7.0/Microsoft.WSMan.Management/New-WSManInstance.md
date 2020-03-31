@@ -87,11 +87,11 @@ Specifies the authentication mechanism to be used at the server. Possible values
 
 - Basic: Basic is a scheme in which the user name and password are sent in clear text to the server
   or proxy.
-- Default : Use the authentication method implemented by the WS-Management protocol. This is the
+- Default: Use the authentication method implemented by the WS-Management protocol. This is the
   default.
 - Digest: Digest is a challenge-response scheme that uses a server-specified data string for the
   challenge.
-- Kerberos: The client computer and the server mutually authenticate by using Kerberos certificates.
+- Kerberos: The client computer and the server mutually authenticate using Kerberos certificates.
 - Negotiate: Negotiate is a challenge-response scheme that negotiates with the server or proxy to
   determine the scheme to use for authentication. For example, this parameter value allows
   negotiation to determine whether the Kerberos protocol or NTLM is used.
@@ -208,7 +208,7 @@ Accept wildcard characters: False
 ### -FilePath
 
 Specifies the path of a file that is used to create a management resource. You specify the
-management resource by using the **ResourceURI** parameter and the **SelectorSet** parameter . For
+management resource using the **ResourceURI** parameter and the **SelectorSet** parameter . For
 example, the following command uses the **File** parameter:
 
 `Invoke-WSManAction -Action stopservice -ResourceUri wmi/cimv2/Win32_Service -SelectorSet @{Name="spooler"} -File c:\input.xml -Authentication Default`

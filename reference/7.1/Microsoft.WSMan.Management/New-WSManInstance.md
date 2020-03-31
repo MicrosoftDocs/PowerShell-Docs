@@ -87,7 +87,7 @@ Specifies the authentication mechanism to be used at the server. Possible values
 
 - Basic: Basic is a scheme in which the user name and password are sent in clear text to the server
   or proxy.
-- Default : Use the authentication method implemented by the WS-Management protocol. This is the
+- Default: Use the authentication method implemented by the WS-Management protocol. This is the
   default.
 - Digest: Digest is a challenge-response scheme that uses a server-specified data string for the
   challenge.

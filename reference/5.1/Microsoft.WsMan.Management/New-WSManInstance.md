@@ -87,7 +87,7 @@ Specifies the authentication mechanism to be used at the server. Possible values
 
 - Basic: Basic is a scheme in which the user name and password are sent in clear text to the server
   or proxy.
-- Default : Use the authentication method implemented by the WS-Management protocol. This is the
+- Default: Use the authentication method implemented by the WS-Management protocol. This is the
   default.
 - Digest: Digest is a challenge-response scheme that uses a server-specified data string for the
   challenge.
@@ -221,7 +221,7 @@ file, `Input.xml`, contains the following content:
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases:
+Aliases: Path
 
 Required: False
 Position: Named
@@ -293,7 +293,7 @@ Parameter Sets: (All)
 Aliases: ruri
 
 Required: True
-Position: 1
+Position: 0
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
