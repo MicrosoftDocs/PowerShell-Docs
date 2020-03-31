@@ -77,7 +77,7 @@ PS> (Get-Item /) -is [System.IO.FileSystemInfo]
 True
 ```
 
-The `is` operator can also match interfaces if the `<input>` implements the
+The `-is` operator can also match interfaces if the `<input>` implements the
 interace in the comparison. In this example, the input is an array. Arrays
 implement the **System.Collections.IList** interface.
 
