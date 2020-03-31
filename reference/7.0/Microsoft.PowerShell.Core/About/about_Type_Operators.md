@@ -64,7 +64,7 @@ not the types of the collection's _elements_.
 The **Boolean** type operators (`-is` and `-isNot`) always return a **Boolean**
 value, even if the input is a collection of objects.
 
-If the `<input>` is a type is the same type or is _derived_ from the .NET Type,
+If `<input>` is a type that is the same as or is _derived_ from the .NET Type,
 the `-is` operator returns `$True`.
 
 For example, the **DirectoryInfo** type is derived from the **FileSystemInfo**
@@ -78,7 +78,7 @@ True
 ```
 
 The `-is` operator can also match interfaces if the `<input>` implements the
-interace in the comparison. In this example, the input is an array. Arrays
+interface in the comparison. In this example, the input is an array. Arrays
 implement the **System.Collections.IList** interface.
 
 ```powershell
@@ -87,13 +87,15 @@ True
 ```
 
 ### -as operator
+
 The `-as` operator tries to convert the input object to the specified .NET
 type. If it succeeds, it returns the converted object. It if fails, it returns
 `$null`. It does not return an error.
 
-If the `<input>` is a type that is _derived_ from the .NET Type `-as`
-_passes through_ returns input object unchanged. For example, the **DirectoryInfo** type is derived from the **FileSystemInfo**
-type. Therefore, the object type is unchanged in the following example:
+If the `<input>` is a type that is _derived_ from the .NET Type `-as` _passes
+through_ returns input object unchanged. For example, the **DirectoryInfo**
+type is derived from the **FileSystemInfo** type. Therefore, the object type is
+unchanged in the following example:
 
 ```powershell
 PS> $fsroot = (Get-Item /) -as [System.IO.FileSystemInfo]
