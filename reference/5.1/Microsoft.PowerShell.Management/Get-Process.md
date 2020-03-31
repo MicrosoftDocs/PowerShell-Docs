@@ -289,7 +289,7 @@ Aliases: Cn
 Required: False
 Position: Named
 Default value: Local computer
-Accept pipeline input: True (ByPropertyName)
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -421,7 +421,7 @@ Aliases: ProcessName
 Required: False
 Position: 0
 Default value: None
-Accept pipeline input: True (ByPropertyName)
+Accept pipeline input: False
 Accept wildcard characters: True
 ```
 
