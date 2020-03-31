@@ -51,7 +51,7 @@ service as a .NET Framework object.
 ### Example 1: Create a proxy for a Web service
 
 ```powershell
-$zip = New-WebServiceProxy -Uri "http://www.contoso.net/uszip.asmx?WSDL"
+$zip = New-WebServiceProxy -Uri "http://www.dneonline.com/calculator.asmx?wsdl"
 ```
 
 This example creates a .NET Framework proxy of the US Zip Web service in Windows PowerShell.
@@ -59,8 +59,8 @@ This example creates a .NET Framework proxy of the US Zip Web service in Windows
 ### Example 2: Create a proxy for a Web service and specify namespace and class
 
 ```powershell
-$URI = "http://www.contoso.net/uszip.asmx?WSDL"
-$zip = New-WebServiceProxy -Uri $URI -Namespace "WebServiceProxy" -Class "USZip"
+$URI = "http://www.dneonline.com/calculator.asmx?wsdl"
+$calc = New-WebServiceProxy -Uri $URI -Namespace "WSProxy" -Class "Calculator"
 ```
 
 This example uses the `New-WebServiceProxy` cmdlet to create a .NET Framework proxy of the US Zip
@@ -75,39 +75,45 @@ object.
 ### Example 3: Display methods of a Web service proxy
 
 ```powershell
-$zip | Get-Member -MemberType method
+$calc | Get-Member -MemberType method
 ```
 
 ```Output
-TypeName: WebServiceProxy.USZip
+   TypeName: WSProxy.Calculator
+
 Name                      MemberType Definition
 ----                      ---------- ----------
-Abort                     Method     System.Void Abort(
-BeginGetInfoByAreaCode    Method     System.IAsyncResul
-BeginGetInfoByCity        Method     System.IAsyncResul
-BeginGetInfoByState       Method     System.IAsyncResul
-BeginGetInfoByZIP         Method     System.IAsyncResul
-CreateObjRef              Method     System.Runtime.Rem
-Discover                  Method     System.Void Discov
-Dispose                   Method     System.Void Dispos
-EndGetInfoByAreaCode      Method     System.Xml.XmlNode
-EndGetInfoByCity          Method     System.Xml.XmlNode
-EndGetInfoByState         Method     System.Xml.XmlNode
-EndGetInfoByZIP           Method     System.Xml.XmlNode
-Equals                    Method     System.Boolean Equ
-GetHashCode               Method     System.Int32 GetHa
-GetInfoByAreaCode         Method     System.Xml.XmlNode
-GetInfoByCity             Method     System.Xml.XmlNode
-GetInfoByState            Method     System.Xml.XmlNode
-GetInfoByZIP              Method     System.Xml.XmlNode
-GetLifetimeService        Method     System.Object GetL
-GetType                   Method     System.Type GetTyp
-InitializeLifetimeService Method     System.Object Init
-ToString                  Method     System.String ToSt
+Abort                     Method     void Abort()
+Add                       Method     int Add(int intA, int intB)
+AddAsync                  Method     void AddAsync(int intA, int intB), void AddAsync(int intA,
+BeginAdd                  Method     System.IAsyncResult BeginAdd(int intA, int intB, System.Asy
+BeginDivide               Method     System.IAsyncResult BeginDivide(int intA, int intB, System.
+BeginMultiply             Method     System.IAsyncResult BeginMultiply(int intA, int intB, Syste
+BeginSubtract             Method     System.IAsyncResult BeginSubtract(int intA, int intB, Syste
+CancelAsync               Method     void CancelAsync(System.Object userState)
+CreateObjRef              Method     System.Runtime.Remoting.ObjRef CreateObjRef(type requestedT
+Discover                  Method     void Discover()
+Dispose                   Method     void Dispose(), void IDisposable.Dispose()
+Divide                    Method     int Divide(int intA, int intB)
+DivideAsync               Method     void DivideAsync(int intA, int intB), void DivideAsync(int
+EndAdd                    Method     int EndAdd(System.IAsyncResult asyncResult)
+EndDivide                 Method     int EndDivide(System.IAsyncResult asyncResult)
+EndMultiply               Method     int EndMultiply(System.IAsyncResult asyncResult)
+EndSubtract               Method     int EndSubtract(System.IAsyncResult asyncResult)
+Equals                    Method     bool Equals(System.Object obj)
+GetHashCode               Method     int GetHashCode()
+GetLifetimeService        Method     System.Object GetLifetimeService()
+GetType                   Method     type GetType()
+InitializeLifetimeService Method     System.Object InitializeLifetimeService()
+Multiply                  Method     int Multiply(int intA, int intB)
+MultiplyAsync             Method     void MultiplyAsync(int intA, int intB), void MultiplyAsync(
+Subtract                  Method     int Subtract(int intA, int intB)
+SubtractAsync             Method     void SubtractAsync(int intA, int intB), void SubtractAsync(
+ToString                  Method     string ToString()
 ```
 
 This example uses the `Get-Member` cmdlet to display the methods of the Web service proxy object in
-the `$zip` variable. We uses these methods in the following example.
+the `$calc` variable. We uses these methods in the following example.
 
 Notice that the **TypeName** of the proxy object, WebServiceProxy, reflects the namespace and class
 names that were specified in the previous example.
@@ -115,16 +121,12 @@ names that were specified in the previous example.
 ### Example 4: Use a Web service proxy
 
 ```powershell
-$zip.GetInfoByZip(20500).table
-CITY      : Washington
-STATE     : DC
-ZIP       : 20500
-AREA_CODE : 202
-TIME_ZONE : E
+PS> $calc.Multiply(6,7)
+42
 ```
 
-This example uses the Web service proxy stored in the `$zip` variable. The command uses the
-**GetInfoByZip** method of the proxy and its Table property.
+This example uses the Web service proxy stored in the `$calc` variable. The command uses the
+**Multiply** method of the proxy.
 
 ## PARAMETERS
 
