@@ -11,7 +11,12 @@ caps.latest.revision: 4
 ---
 # Authoring the Web.config file for a Management OData web service
 
-Before you can deploy your Management OData web service, you must configure the web.config file to point to the XML schema files and the DLLs that implement the [Microsoft.Management.Odata.Customauthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization) and  [System.Management.Automation.Remoting.Pssessionconfiguration](/dotnet/api/System.Management.Automation.Remoting.PSSessionConfiguration) interfaces.
+Before you can deploy your Management OData web service, you must configure the web.config file to
+point to the XML schema files and the DLLs that implement the
+[Microsoft.Management.Odata.Customauthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization)
+and
+[System.Management.Automation.Remoting.Pssessionconfiguration](/dotnet/api/System.Management.Automation.Remoting.PSSessionConfiguration)
+interfaces.
 
 ## Sample config file
 

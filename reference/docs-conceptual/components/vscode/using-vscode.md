@@ -22,9 +22,9 @@ It supports the following PowerShell versions:
 Before you begin, make sure PowerShell exists on your system. For modern workloads on Windows,
 macOS, and Linux, see the following links:
 
-- [Installing PowerShell Core on Linux][install-pscore-linux]
-- [Installing PowerShell Core on macOS][install-pscore-macos]
-- [Installing PowerShell Core on Windows][install-pscore-windows]
+- [Installing PowerShell on Linux][install-pscore-linux]
+- [Installing PowerShell on macOS][install-pscore-macos]
+- [Installing PowerShell on Windows][install-pscore-windows]
 
 For traditional Windows PowerShell workloads, see [Installing Windows PowerShell][install-winps].
 
@@ -333,8 +333,17 @@ After the debug configuration is established, you can select which configuration
 during a debug session. Select a configuration from the debug configuration drop-down in the
 **Debug** view's toolbar.
 
-There are a few blogs that may be helpful to get you started using PowerShell extension for Visual
+## Useful resources
+
+There are a few videos and blog posts that may be helpful to get you started using the PowerShell extension for Visual
 Studio Code:
+
+### Videos
+
+- [Using Visual Studio Code as Your Default PowerShell Editor](https://youtu.be/bGn45vIeAMM)
+- [Visual Studio Code: deep dive into debugging your PowerShell scripts](https://youtu.be/cSbIXmlkr8o)
+
+### Blog posts
 
 - [PowerShell Extension][ps-extension]
 - [Write and debug PowerShell scripts in Visual Studio Code][debug]
@@ -345,6 +354,20 @@ Studio Code:
 - [Visual Studio Code editing features for PowerShell development – Part 2][editing-part2]
 - [Debugging PowerShell script in Visual Studio Code – Part 1][debugging-part1]
 - [Debugging PowerShell script in Visual Studio Code – Part 2][debugging-part2]
+
+## PowerShell extension for Visual Studio Code
+
+The PowerShell extension's source code can be found on [GitHub](https://github.com/PowerShell/vscode-powershell).
+
+If you're interested in contributing, Pull Request are greatly appreciated. Follow along with the
+[developer documentation on GitHub](https://github.com/PowerShell/vscode-powershell/blob/master/docs/development.md)
+to get started.
+
+## Troubleshooting the PowerShell extension for Visual Studio Code
+
+If you experience any issues using Visual Studio Code for PowerShell script development,
+please take a look at the
+[troubleshooting guide on GitHub](https://github.com/PowerShell/vscode-powershell/blob/master/docs/troubleshooting.md)
 
 [ise]: ../ise/Introducing-the-Windows-PowerShell-ISE.md
 [install-pscore-linux]:  ../../install/Installing-PowerShell-Core-on-Linux.md
@@ -360,17 +383,3 @@ Studio Code:
 [editing-part2]: https://devblogs.microsoft.com/scripting/visual-studio-code-editing-features-for-powershell-development-part-2/
 [debugging-part1]: https://devblogs.microsoft.com/scripting/debugging-powershell-script-in-visual-studio-code-part-1/
 [debugging-part2]: https://devblogs.microsoft.com/scripting/debugging-powershell-script-in-visual-studio-code-part-2/
-
-## PowerShell extension for Visual Studio Code
-
-The PowerShell extension's source code can be found on [GitHub](https://github.com/PowerShell/vscode-powershell).
-
-If you're interested in contributing, Pull Request are greatly appreciated. Follow along with the
-[developer documentation on GitHub](https://github.com/PowerShell/vscode-powershell/blob/master/docs/development.md)
-to get started.
-
-## Troubleshooting the PowerShell extension for Visual Studio Code
-
-If you experience any issues using Visual Studio Code for PowerShell script development,
-please take a look at the
-[troubleshooting guide on GitHub](https://github.com/PowerShell/vscode-powershell/blob/master/docs/troubleshooting.md)

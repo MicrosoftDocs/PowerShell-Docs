@@ -1,7 +1,7 @@
 ---
 keywords: powershell,cmdlet
 locale: en-us
-ms.date: 03/20/2020
+ms.date: 03/30/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_type_operators?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Type_Operators
@@ -48,28 +48,64 @@ You can also use the following syntax:
 <input> <operator> ".NET type"
 ```
 
-To specify the .NET type, enclose the type name in brackets (`[]`), or enter
-the type as a string, such as `[DateTime]` or **DateTime** for
-**System.DateTime**. If the type is not at the root of the system namespace,
-specify the full name of the object type. You can omit "System.". For example,
-to specify **System.Diagnostics.Process**, enter
+The .NET type can be written as a type name in brackets or a string, such as
+`[DateTime]` or `"DateTime"` for **System.DateTime**. If the type is not at the
+root of the system namespace, specify the full name of the object type. You can
+omit "System.". For example, to specify **System.Diagnostics.Process**, enter
 `[System.Diagnostics.Process]`, `[Diagnostics.Process]`, or
-**Diagnostics.Process**.
+`"Diagnostics.Process"`.
+
+The type operators always operate on the input object as a whole. That is, if
+the input object is a collection, it is the _collection_ type that is tested,
+not the types of the collection's _elements_.
+
+### -is/isNot operators
 
 The **Boolean** type operators (`-is` and `-isNot`) always return a **Boolean**
-value, even if the input is a collection of objects. The type operators always
-operate on the input object as a whole. That is, if the input object is a
-collection, it is the _collection_ type that is tested, not the types of the
-collection's _elements_.
+value, even if the input is a collection of objects.
 
-If the `<input>` is a type that is _derived_ from the .NET Type `-is` returns
-`$True`. If the `<input>` is a type that is _derived_ from the .NET Type `-as`
-_passes through_ converts the input to the target type. For example,
-`(Get-Item /) -is [System.IO.FileSystemInfo]` returns `$True`, because the type
-of the input, `[System.IO.DirectoryInfo]`, is _derived_ from the
-`[System.IO.FileSystemInfo]`.
+If `<input>` is a type that is the same as or is _derived_ from the .NET Type,
+the `-is` operator returns `$True`.
 
-Unlike type casting, converting to `[datetime]` type using the `-as` operator
+For example, the **DirectoryInfo** type is derived from the **FileSystemInfo**
+type. Therefore, both of these examples return **True**.
+
+```powershell
+PS> (Get-Item /) -is [System.IO.DirectoryInfo]
+True
+PS> (Get-Item /) -is [System.IO.FileSystemInfo]
+True
+```
+
+The `-is` operator can also match interfaces if the `<input>` implements the
+interface in the comparison. In this example, the input is an array. Arrays
+implement the **System.Collections.IList** interface.
+
+```powershell
+PS> 1, 2 -is [System.Collections.IList]
+True
+```
+
+### -as operator
+
+The `-as` operator tries to convert the input object to the specified .NET
+type. If it succeeds, it returns the converted object. It if fails, it returns
+`$null`. It does not return an error.
+
+If the `<input>` is a type that is _derived_ from the .NET Type `-as` _passes
+through_ returns input object unchanged. For example, the **DirectoryInfo**
+type is derived from the **FileSystemInfo** type. Therefore, the object type is
+unchanged in the following example:
+
+```powershell
+PS> $fsroot = (Get-Item /) -as [System.IO.FileSystemInfo]
+PS> $fsroot.GetType().FullName
+System.IO.DirectoryInfo
+```
+
+#### Converting the DateTime type is culture-sensitive
+
+Unlike type casting, converting to `[DateTime]` type using the `-as` operator
 only works with strings that are formatted according to the rules of the
 current culture.
 
@@ -95,7 +131,7 @@ of this method. For example, the following statement gets the type of the
 return value of a `Get-Culture` command:
 
 ```powershell
-PS> (get-culture).gettype().fullname
+PS> (Get-Culture).GetType().FullName
 System.Globalization.CultureInfo
 ```
 

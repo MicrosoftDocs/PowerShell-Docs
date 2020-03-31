@@ -156,7 +156,7 @@ allow specific users to connect only to specific session configurations when the
 Windows PowerShell Web Access. You can use access control lists (ACLs) to determine which users
 have access to specific endpoints, and further restrict access to the endpoint for a specific set
 of users by using authorization rules described in this section. For more information about
-restricted runspaces, see [Creating a constrained runspace](https://msdn.microsoft.com/library/dn614668).
+restricted runspaces, see [Creating a constrained runspace](/powershell/scripting/developer/hosting/creating-a-constrained-runspace).
 
 ### Configuring authorization rules
 
@@ -202,7 +202,7 @@ or session configurations).
 
 3. This authorization rule allows a specific user access to one computer on the network to which
    they typically have access, with access to a specific session configuration that is scoped to
-   the user'™s typical scripting and cmdlet needs. Type the following, and then press **Enter**.
+   the user'&trade;s typical scripting and cmdlet needs. Type the following, and then press **Enter**.
 
    ```
    Add-PswaAuthorizationRule -UserName <domain\user | computer\user> `
@@ -263,8 +263,8 @@ other computers from their allowed Windows PowerShell runspace, and improves the
 Windows PowerShell Web Access environment. The session configuration can be distributed (by using
 Group Policy) to all computers that administrators want to make accessible through Windows
 PowerShell Web Access. For more information about session configurations, see
-[about_Session_Configurations](https://technet.microsoft.com/library/dd819508.aspx). The following
-are some examples of this scenario.
+[about_Session_Configurations](/powershell/module/Microsoft.PowerShell.Core/About/about_session_configurations).
+The following are some examples of this scenario.
 
 - An administrator creates an endpoint, called **PswaEndpoint**, with a restricted runspace. Then,
   the administrator creates a rule, `*,*,PswaEndpoint`, and distributes the endpoint to other
@@ -334,9 +334,9 @@ authorization rule.
    > Web Access authorization rule cmdlets. Authorization rules do not define a trust relationship
    > between computers; they can only authorize users to connect to specific target computers and
    > session configurations. For more information about how to configure a trust relationship
-   > between different domains, see [Creating Domain and Forest Trusts](https://technet.microsoft.com/library/cc794775.aspx).
+   > between different domains, see [Creating Domain and Forest Trusts](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc794775(v=ws.10)).
    > For more information about how to add workgroup computers to a trusted hosts list, see
-   > [Remote Management with Server Manager](https://technet.microsoft.com/library/dd759202.aspx).
+   > [Remote Management with Server Manager](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd759202(v=ws.11)).
 
 ### Using a single set of authorization rules for multiple sites
 
@@ -370,7 +370,7 @@ sign-in page. You can configure values in the **web.config** file that is descri
 preceding paragraph. Default values for the sign-in page settings are found in the **appSettings**
 section of the web.config file; the following is an example of the **appSettings** section. Valid
 values for many of these settings are the same as those for the corresponding parameters of the
-[New-PSSession](https://technet.microsoft.com/library/hh849717.aspx) cmdlet in Windows PowerShell.
+[New-PSSession](/powershell/module/Microsoft.PowerShell.Core/New-PSSession) cmdlet in Windows PowerShell.
 
 For example, the `defaultApplicationName` key, as shown in the following code block, is the value
 of the **$PSSessionApplicationName** preference variable on the target computer.
@@ -411,8 +411,8 @@ time-out period specified by the gateway administrator has lapsed.
 
 ## See Also
 
-[Install and Use Windows PowerShell Web Access](https://technet.microsoft.com/library/hh831611(v=ws.11).aspx)
+[Install and Use Windows PowerShell Web Access](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831611(v=ws.11))
 
-[about_Session_Configurations](https://technet.microsoft.com/library/dd819508.aspx)
+[about_Session_Configurations](/powershell/module/microsoft.powershell.core/about/about_Session_Configurations)
 
 [Windows PowerShell Web Access Cmdlets](/powershell/module/powershellwebaccess/?view=winserver2012r2-ps)

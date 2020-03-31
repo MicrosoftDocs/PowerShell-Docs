@@ -9,7 +9,7 @@ PowerShell is a distinct set of tools and components that is shipped, installed,
 separately from Windows PowerShell. PowerShell isn't included in the Windows
 licensing agreements.
 
-PowerShell is supported under traditional Microsoft support agreements, including [Premier][],
+PowerShell is supported under traditional Microsoft support agreements, including [paid support][],
 [Microsoft Enterprise Agreements][enterprise-agreement], and [Microsoft Software Assurance][assurance].
 You can also pay for [assisted support][] for PowerShell by filing a support request for your
 problem.
@@ -188,7 +188,7 @@ for historical reference. It is not intended for use to determine the support li
 | PowerShell 1.0       |   Nov-2006   | Installable on Windows XP SP2, Windows Server 2003 SP1 and Windows Vista. Optional component of Windows Server 2008.                          |
 
 <!-- hyperlink references -->
-[Premier]: https://www.microsoft.com/microsoftservices/support.aspx
+[paid support]: https://support.microsoft.com/hub/4343728/support-for-business
 [enterprise-agreement]: https://www.microsoft.com/licensing/licensing-programs/enterprise.aspx
 [assurance]: https://www.microsoft.com/licensing/licensing-programs/software-assurance-default.aspx
 [community support]: /powershell/scripting/community/community-support

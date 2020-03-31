@@ -8,7 +8,7 @@ title:  The ISESnippetObject
 
 An **ISESnippet** object is an instance of the Microsoft.PowerShell.Host.ISE.ISESnippet class. The
 members of the `$psISE.CurrentPowerShellTab.Snippets` collection are all examples of
-**ISESnippet** objects. The easiest way to create a snippet is to use the [New-IseSnippet](/reference/5.1/ISE/New-IseSnippet.md)
+**ISESnippet** objects. The easiest way to create a snippet is to use the [New-IseSnippet](/powershell/module/ISE/New-IseSnippet)
 cmdlet.
 
 ## Properties

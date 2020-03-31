@@ -32,7 +32,7 @@ configuration job running, this cmdlet returns a warning message.
 `Stop-DscConfiguration` is only available as part of the
 [November 2014 update rollup for Windows RT 8.1, Windows 8.1, and Windows Server 2012 R2](https://support.microsoft.com/kb/3000850)
 from the Microsoft Support library. Before you use this cmdlet, review the information in
-[What's New in Windows PowerShell 5.0](/powershell/scripting/whats-new/What-s-New-in-Windows-PowerShell-50.md)
+[What's New in Windows PowerShell 5.0](/powershell/scripting/whats-new/What-s-New-in-Windows-PowerShell-50)
 
 ## EXAMPLES
 

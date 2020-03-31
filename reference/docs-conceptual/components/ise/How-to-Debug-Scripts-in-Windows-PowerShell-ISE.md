@@ -31,7 +31,7 @@ You can set three types of breakpoints in the Windows PowerShell debugging envir
 
 Of these, in the Windows PowerShell ISE debugging environment, only line breakpoints can be set by
 using the menu or the keyboard shortcuts. The other two types of breakpoints can be set, but they
-are set from the Console Pane by using the [Set-PSBreakpoint](/reference/6/Microsoft.PowerShell.Utility/Set-PSBreakpoint.md)
+are set from the Console Pane by using the [Set-PSBreakpoint](/powershell/module/Microsoft.PowerShell.Utility/Set-PSBreakpoint)
 cmdlet. This section describes how you can perform debugging tasks in Windows PowerShell ISE by
 using the menus where available, and perform a wider range of commands from the Console Pane by
 using scripting.
@@ -43,7 +43,7 @@ want to set a line breakpoint, and then click **Toggle Breakpoint**. Or, click t
 want to set a line breakpoint, and press <kbd>F9</kbd> or, on the **Debug** menu, click **Toggle Breakpoint**.
 
 The following script is an example of how you can set a variable breakpoint from the Console Pane by
-using the [Set-PSBreakpoint](/reference/6/Microsoft.PowerShell.Utility/Set-PSBreakpoint.md)
+using the [Set-PSBreakpoint](/powershell/module/Microsoft.PowerShell.Utility/Set-PSBreakpoint)
 cmdlet.
 
 ```powershell
@@ -56,7 +56,7 @@ Set-PSBreakpoint -Script sample.ps1 -Variable Server
 Displays all breakpoints in the current Windows PowerShell session.
 
 On the **Debug** menu, click **List Breakpoints**. The following script is an example of how you can
-list all breakpoints from the Console Pane by using the [Get-PSBreakpoint](/reference/6/Microsoft.PowerShell.Utility/Get-PSBreakpoint.md)
+list all breakpoints from the Console Pane by using the [Get-PSBreakpoint](/powershell/module/Microsoft.PowerShell.Utility/Get-PSBreakpoint)
 cmdlet.
 
 ```powershell
@@ -72,7 +72,7 @@ If you think you might want to use it again later, consider [Disable a Breakpoin
 it instead. Right-click the line where you want to remove a breakpoint, and then click **ToggleBreakpoint**.
 Or, click the line where you want to remove a breakpoint, and on the **Debug** menu, click
 **Toggle Breakpoint**. The following script is an example of how to remove a breakpoint with a
-specified ID from the Console Pane by using the [Remove-PSBreakpoint](/reference/6/Microsoft.PowerShell.Utility/Remove-PSBreakpoint.md)
+specified ID from the Console Pane by using the [Remove-PSBreakpoint](/powershell/module/Microsoft.PowerShell.Utility/Remove-PSBreakpoint)
 cmdlet.
 
 ```powershell
@@ -85,7 +85,7 @@ Remove-PSBreakpoint -Id 2
 To remove all breakpoints defined in the current session, on the **Debug** menu, click **Remove All Breakpoints**.
 
 The following script is an example of how to remove all breakpoints from the Console Pane by using
-the [Remove-PSBreakpoint](/reference/6/Microsoft.PowerShell.Utility/Remove-PSBreakpoint.md)
+the [Remove-PSBreakpoint](/powershell/module/Microsoft.PowerShell.Utility/Remove-PSBreakpoint)
 cmdlet.
 
 ```powershell
@@ -99,7 +99,7 @@ Disabling a breakpoint does not remove it; it turns it off until it is enabled. 
 specific line breakpoint, right-click the line where you want to disable a breakpoint, and then
 click **Disable Breakpoint**. Or, click the line where you want to disable a breakpoint, and press
 <kbd>F9</kbd> or, on the **Debug** menu, click **Disable Breakpoint**. The following script is an
-example of how you can remove a breakpoint with a specified ID from the Console Pane by using the [Disable-PSBreakpoint](/reference/6/Microsoft.PowerShell.Utility/Disable-PSBreakpoint.md)
+example of how you can remove a breakpoint with a specified ID from the Console Pane by using the [Disable-PSBreakpoint](/powershell/module/Microsoft.PowerShell.Utility/Disable-PSBreakpoint)
 cmdlet.
 
 ```powershell
@@ -112,7 +112,7 @@ Disable-PSBreakpoint -Id 0
 Disabling a breakpoint does not remove it; it turns it off until it is enabled. To disable all
 breakpoints in the current session, on the **Debug** menu, click **Disable all Breakpoints**. The
 following script is an example of how you can disable all breakpoints from the Console Pane by using
-the [Disable-PSBreakpoint](/reference/6/Microsoft.PowerShell.Utility/Disable-PSBreakpoint.md)
+the [Disable-PSBreakpoint](/powershell/module/Microsoft.PowerShell.Utility/Disable-PSBreakpoint)
 cmdlet.
 
 ```powershell
@@ -126,7 +126,7 @@ Get-PSBreakpoint | Disable-PSBreakpoint
 To enable a specific breakpoint, right-click the line where you want to enable a breakpoint, and
 then click **Enable Breakpoint**. Or, click the line where you want to enable a breakpoint, and then
 press <kbd>F9</kbd> or, on the **Debug** menu, click **Enable Breakpoint**. The following script is an
-example of how you can enable specific breakpoints from the Console Pane by using the [Enable-PSBreakpoint](/reference/6/Microsoft.PowerShell.Utility/Enable-PSBreakpoint.md)
+example of how you can enable specific breakpoints from the Console Pane by using the [Enable-PSBreakpoint](/powershell/module/Microsoft.PowerShell.Utility/Enable-PSBreakpoint)
 cmdlet.
 
 ```powershell
@@ -138,7 +138,7 @@ Enable-PSBreakpoint -Id 0, 1, 5
 
 To enable all breakpoints defined in the current session, on the **Debug** menu, click **Enable all
 Breakpoints**. The following script is an example of how you can enable all breakpoints from the
-Console Pane by using the [Enable-PSBreakpoint](/reference/6/Microsoft.PowerShell.Utility/Enable-PSBreakpoint.md)
+Console Pane by using the [Enable-PSBreakpoint](/powershell/module/Microsoft.PowerShell.Utility/Enable-PSBreakpoint)
 cmdlet.
 
 ```powershell
@@ -151,7 +151,7 @@ Get-PSBreakpoint | Enable-PSBreakpoint
 
 Before you start debugging, you must set one or more breakpoints. You cannot set a breakpoint unless
 the script that you want to debug is saved. For directions on of how to set a breakpoint, see [How to manage breakpoints](#how-to-manage-breakpoints)
-or [Set-PSBreakpoint](/reference/6/Microsoft.PowerShell.Utility/Set-PSBreakpoint.md).
+or [Set-PSBreakpoint](/powershell/module/Microsoft.PowerShell.Utility/Set-PSBreakpoint).
 After you start debugging, you cannot edit a script until you stop debugging. A script that has one
 or more breakpoints set is automatically saved before it is run.
 
@@ -164,9 +164,9 @@ operation there and highlights the line on which it paused.
 ### To continue debugging
 
 Press <kbd>F5</kbd> or, on the toolbar, click the **Run Script** icon, or on the **Debug** menu,
-click **Run/Continue** or, in the Console Pane, type `C` and then press <kbd>ENTER</kbd>. This causes the
-script to continue running to the next breakpoint or to the end of the script if no further
-breakpoints are encountered.
+click **Run/Continue** or, in the Console Pane, type `C` and then press <kbd>ENTER</kbd>. This
+causes the script to continue running to the next breakpoint or to the end of the script if no
+further breakpoints are encountered.
 
 ### To view the call stack
 
@@ -177,8 +177,9 @@ in which a function was called. The next line up shows that function and the lin
 another function might have been called. The top-most row shows the current context of the current
 line on which the breakpoint is set.
 
-While paused, to see the current call stack, press <kbd>CTRL</kbd>+<kbd>SHIFT</kbd>+<kbd>D</kbd> or, on the **Debug** menu, click
-**Display Call Stack** or, in the Console Pane, type `K` and then press <kbd>ENTER</kbd>.
+While paused, to see the current call stack, press <kbd>CTRL</kbd>+<kbd>SHIFT</kbd>+<kbd>D</kbd> or,
+on the **Debug** menu, click **Display Call Stack** or, in the Console Pane, type `K` and then press
+<kbd>ENTER</kbd>.
 
 ### To stop debugging
 
@@ -231,17 +232,17 @@ debugging a script. However, these methods do not work for the following automat
 
 If you try to display the value of any of these variables, you get the value of that variable for in
 an internal pipeline the debugger uses, not the value of the variable in the script. You can work
-around this for a few variables (`$_`, `$Input`, `$MyInvocation`, `$PSBoundParameters`, and `$Args`) by using
-the following method:
+around this for a few variables (`$_`, `$Input`, `$MyInvocation`, `$PSBoundParameters`, and `$Args`)
+by using the following method:
 
 1. In the script, assign the value of the automatic variable to a new variable.
 
 1. Display the value of the new variable, either by hovering over the new variable in the Script
    Pane, or by typing the new variable in the Console Pane.
 
-For example, to display the value of the `$MyInvocation` variable, in the script, assign the value to
-a new variable, such as `$scriptName`, and then hover over or type the `$scriptName` variable to display
-its value.
+For example, to display the value of the `$MyInvocation` variable, in the script, assign the value
+to a new variable, such as `$scriptName`, and then hover over or type the `$scriptName` variable to
+display its value.
 
 ```powershell
 # In C:\ps-test\MyScript.ps1
@@ -260,4 +261,4 @@ C:\ps-test\MyScript.ps1
 
 ## See Also
 
-- [Exploring the Windows PowerShell ISE](exploring-the-windows-powershell-ise.md)
+[Exploring the Windows PowerShell ISE](exploring-the-windows-powershell-ise.md)

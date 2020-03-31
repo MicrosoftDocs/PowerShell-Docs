@@ -151,7 +151,7 @@ variable and use the **InputObject** parameter to pass the data to the cmdlet.
 
 ## RELATED LINKS
 
-[Clear-Host](./Functions/Clear-Host.md)
+[Clear-Host](Clear-Host.md)
 
 [Out-Default](Out-Default.md)
 

@@ -96,7 +96,7 @@ configured with a PowerShell SSH endpoint. The benefit of an SSH based PowerShel
 that it can work across multiple platforms (Windows, Linux, macOS). For SSH based sessions you use
 the **HostName** or **SSHConnection** parameter set to specify the remote computer and relevant
 connection information. For more information about how to set up PowerShell SSH remoting, see
-[PowerShell Remoting Over SSH](/powershell/scripting/core-powershell/ssh-remoting-in-powershell-core).
+[PowerShell Remoting Over SSH](/powershell/scripting/learn/remoting/ssh-remoting-in-powershell-core).
 
 > [!NOTE]
 > When using WSMan remoting from a Linux or macOS client with a HTTPS endpoint where the server
@@ -1106,7 +1106,7 @@ You can pipe a string, URI, or session object to this cmdlet.
   specific features and limitations do not apply. For example WinRM based quotas, session options,
   custom endpoint configuration, and disconnect/reconnect features are currently not supported. For
   more information about how to set up PowerShell SSH remoting, see
-  [PowerShell Remoting Over SSH](/powershell/scripting/core-powershell/ssh-remoting-in-powershell-core).
+  [PowerShell Remoting Over SSH](/powershell/scripting/learn/remoting/ssh-remoting-in-powershell-core).
 
 ## RELATED LINKS
 

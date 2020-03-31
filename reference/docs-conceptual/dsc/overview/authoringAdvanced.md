@@ -48,7 +48,7 @@ Additionally, customers have provided feedback that when using this model, each 
 configuration changes are unlikely to be fully tested through a release pipeline, leading to
 unexpected results in production.
 
-**It is critical that a single pipeline be used to evaluate all changes release to servers.**
+**It is critical that a single pipeline be used to evaluate all changes released to servers.**
 
 In the illustration below, Team B releases their partial configuration to Team A. Team A then runs
 their tests against a server with both configurations applied. In this model, only one authority has
