@@ -388,7 +388,7 @@ the script.
 
 The Online parameter does not work with About topics. To see the about topics
 for PowerShell Core, including help topics about the PowerShell language, see
-[PowerShell Core Module About Topics](/powershell/module/microsoft.powershell.core/about).
+[PowerShell Core Module About Topics](about.md).
 
 ## HOW TO MINIMIZE OR PREVENT INTERNET DOWNLOADS
 

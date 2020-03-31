@@ -158,7 +158,7 @@ tools:
     # Card 9
     - title: Digital Art
       imageSrc: https://docs.microsoft.com/media/hubs/powershell/i_digital-art.svg
-      url: https://docs.microsoft.com/powershell/scripting/community/digital-art.md
+      url: https://docs.microsoft.com/powershell/scripting/community/digital-art
 
 additionalContent:
   # Supports up to 3 sections

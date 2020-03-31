@@ -211,9 +211,6 @@ Measures the time it takes to run script blocks and cmdlets.
 ### [Measure-Object](Measure-Object.md)
 Calculates the numeric properties of objects, and the characters, words, and lines in string objects, such as files of text.
 
-### [Microsoft.PowerShell.Utility](Microsoft.PowerShell.Utility.md)
-This section contains the help topics for the cmdlets that are installed with the Microsoft.PowerShell.Utility module. This module contains cmdlets that manage the basic features of PowerShell.
-
 ### [New-Alias](New-Alias.md)
 Creates a new alias.
 

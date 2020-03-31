@@ -69,7 +69,7 @@ cmdlet.
 Rename-Item -Path .\localhost.mof -NewName '64856475-939e-41fb-aba5-4469f4006059.mof'
 ```
 
-For more information about using **Guids** in your environment, see [Plan for Guids](/powershell/scripting/dsc/secureserver#guids).
+For more information about using **Guids** in your environment, see [Plan for Guids](secureServer.md#guids).
 
 ### Configuration names
 

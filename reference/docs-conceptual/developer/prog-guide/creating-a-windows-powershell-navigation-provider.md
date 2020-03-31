@@ -35,7 +35,7 @@ A Windows PowerShell navigation provider must create a .NET class that derives f
 [System.Management.Automation.Provider.Navigationcmdletprovider](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider)
 base class. Here is the class definition for the navigation provider described in this section.
 
-[!code-csharp[AccessDBProviderSample05.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample05/AccessDBProviderSample05.cs#L31-L32
+[!code-csharp[AccessDBProviderSample05.cs](/powershell/scripting/developer/prog-guide/accessdbprovidersample05-code-sample#L31-L32
 "AccessDBProviderSample05.cs")]
 
 Note that in this provider, the
@@ -177,7 +177,7 @@ The following code shows the
 implementation in our sample navigation provider. The method verifies that the specified path is
 correct and if the table exists, and returns true if the path indicates a container.
 
-[!code-csharp[AccessDBProviderSample05.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample05/AccessDBProviderSample05.cs#L847-L872 "AccessDBProviderSample05.cs")]
+[!code-csharp[AccessDBProviderSample05.cs](/powershell/scripting/developer/prog-guide/accessdbprovidersample05-code-sample#L847-L872 "AccessDBProviderSample05.cs")]
 
 #### Things to Remember About Implementing IsItemContainer
 

@@ -158,8 +158,8 @@ Any of the following signs you out of a web-based Windows PowerShell session.
 
 - Running the **Exit** command in the web console. This command does not work if the session
   configuration to which you are connected to is configured to support
-  [NoLanguage](https://msdn.microsoft.com/library/windows/desktop/system.management.automation.pslanguagemode.aspx)
-  mode, or is in a restricted runspace.
+  [NoLanguage](/dotnet/api/system.management.automation.pslanguagemode) mode, or is in a restricted
+  runspace.
 
 If you want to sign in again, open the Windows PowerShell Web Access web page again, and sign in by
 following the steps in
@@ -330,8 +330,5 @@ Alt+F7          | Clear the command history list
 
 ## See Also
 
-- [Windows PowerShell Cmdlet Reference](https://technet.microsoft.com/library/ee407531(ws.10).aspx)
-- [Windows PowerShell on Microsoft TechNet](https://technet.microsoft.com/library/bb978526.aspx)
-- [TechNet Script Center Repository](https://gallery.technet.microsoft.com/scriptcenter)
-- [Script Center - Hey, Scripting Guy!](https://technet.microsoft.com/scriptcenter)
-- [Windows PowerShell Team Blog](https://blogs.msdn.com/b/powershell/)
+- [Hey, Scripting Guy!](https://devblogs.microsoft.com/scripting/)
+- [PowerShell Team Blog](https://devblogs.microsoft.com/powershell/)

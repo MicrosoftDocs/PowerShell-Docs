@@ -8,8 +8,9 @@ title:  Quickstart - Convert Group Policy into DSC
 
 # Quickstart: Convert Group Policy into DSC
 
-You can generate a DSC configuration from a Group Policy or Azure Security Center baseline. The [BaselineManagement](https://www.powershellgallery.com/packages/BaselineManagement)
-module includes the following commands for accomplishing this task.
+You can generate a DSC configuration from a Group Policy or Azure Security Center baseline. The
+[BaselineManagement](https://www.powershellgallery.com/packages/BaselineManagement) module includes
+the following commands for accomplishing this task.
 
 - `ConvertFrom-GPO` - Converts Group Policies, stored as files. You can also specify a directory
   containing multiple policies that will be combined into one Configuration.
@@ -61,6 +62,6 @@ Each managed node will also need the following two modules:
 
 ## Next steps
 
-- To upload your configuration script into Azure Automation State Configuration, see [Getting Started](/automation/automation-dsc-getting-started#importing-a-configuration-into-azure-automation).
+- To upload your configuration script into Azure Automation State Configuration, see [Getting Started](/azure/automation/automation-dsc-getting-started#importing-a-configuration-into-azure-automation).
 - Add the **SecurityPolicyDSC** and **AuditPolicyDSC** modules to your [Automation Account](/azure/automation/shared-resources/modules).
 - Find DSC configurations and resources in the [PowerShell Gallery](https://www.powershellgallery.com/).

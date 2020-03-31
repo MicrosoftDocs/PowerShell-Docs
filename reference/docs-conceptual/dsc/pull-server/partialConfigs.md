@@ -36,9 +36,9 @@ cmdlet.
 To configure the LCM for partial configurations in push mode, you create a
 **DSCLocalConfigurationManager** configuration with one **PartialConfiguration** block for each
 partial configuration. For more information about configuring the LCM, see
-[Windows Configuring the Local Configuration Manager](/powershell/scripting/dsc/metaConfig). The following
-example shows an LCM configuration that expects two partial configurations—one that deploys the OS,
-and one that deploys and configures SharePoint.
+[Windows Configuring the Local Configuration Manager](../managing-nodes/metaConfig.md). The
+following example shows an LCM configuration that expects two partial configurations—one that
+deploys the OS, and one that deploys and configures SharePoint.
 
 ```powershell
 [DSCLocalConfigurationManager()]

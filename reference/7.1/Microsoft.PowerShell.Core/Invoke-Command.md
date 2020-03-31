@@ -187,7 +187,7 @@ must be configured with a PowerShell SSH endpoint. The benefit of an SSH based P
 session is that it works across multiple platforms (Windows, Linux, macOS). For SSH based session
 you use the **HostName** or **SSHConnection** parameters to specify the remote computer and relevant
 connection information. For more information about how to set up PowerShell SSH remoting, see
-[PowerShell Remoting Over SSH](/powershell/scripting/core-powershell/ssh-remoting-in-powershell-core).
+[PowerShell Remoting Over SSH](/powershell/scripting/learn/remoting/ssh-remoting-in-powershell-core).
 
 Some code samples use splatting to reduce the line length. For more information, see [about_Splatting](./About/about_Splatting.md).
 
@@ -1637,7 +1637,7 @@ Windows only remoting that is based on WinRM and many of the WinRM specific feat
 don't apply. For example WinRM based quotas, session options, custom endpoint configuration, and
 disconnect/reconnect features are currently not supported. For more information about how to set up
 PowerShell SSH remoting, see
-[PowerShell Remoting Over SSH](/powershell/scripting/core-powershell/ssh-remoting-in-powershell-core).
+[PowerShell Remoting Over SSH](/powershell/scripting/learn/remoting/ssh-remoting-in-powershell-core).
 
 ## RELATED LINKS
 
