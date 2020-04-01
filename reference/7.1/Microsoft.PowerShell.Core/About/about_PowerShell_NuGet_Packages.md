@@ -45,7 +45,7 @@ To serve these scenarios, PowerShell can be targeted through a number of NuGet p
   cross-platform module development.
 - [System.Management.Automation], the core PowerShell engine assembly,
   suitable for some minimal PowerShell integrations.
-- The Windows PowerShell reference assembly packages, named like `Microsoft.PowerShell.<n>.ReferenceAssemblies`,
+- The Windows PowerShell reference assembly packages, named like `Microsoft.PowerShell.<version>.ReferenceAssemblies`,
   that provide [façade assemblies] for Windows PowerShell versions
   [3](https://www.nuget.org/packages/Microsoft.PowerShell.3.ReferenceAssemblies/),
   [4](https://www.nuget.org/packages/Microsoft.PowerShell.4.ReferenceAssemblies/),
@@ -143,10 +143,49 @@ with multiple PowerShell versions, but has the following consequences:
 > it may be preferable to target multiple .NET runtimes.
 > This will publish an assembly for each target runtime,
 > and the correct assembly will need to be loaded at module load time
-> (often accomplished with a small psm1).
+> (for example with a small psm1 as the root module).
 
 For more information on PowerShell Standard and using it to write a binary module
 that works in multiple PowerShell versions, see [this blog post](https://devblogs.microsoft.com/powershell/powershell-standard-library-build-single-module-that-works-across-windows-powershell-and-powershell-core/).
+
+### System.Management.Automation
+
+The PowerShell engine assembly, which contains the core runtime and commands for PowerShell,
+is published as a separate NuGet package.
+This is primarily to facilitate the way the PowerShell SDK is propagated,
+but this package may also be used in particular reduced scenarios:
+
+- For using the PowerShell parser and AST APIs
+  in the `System.Management.Automation.Language` namespace
+  without executing any PowerShell or otherwise using the PowerShell runtime.
+- For minimal PowerShell executions using only the `Microsoft.PowerShell.Core` commands
+  and run in a session state created with `InitialSessionState.CreateDefault2()`.
+- As a minimal reference assembly for specific versions of the PowerShell engine,
+  when references to core module types (in `Microsoft.PowerShell.*` namespaces) are not required.
+
+As with the façade assemblies, if the System.Management.Automation package
+is used as a reference assembly, it should be used with `PrivateAssets = "all"`.
+
+### Windows PowerShell reference assemblies
+
+Windows PowerShell (PowerShell versions 5.1 and older) APIs can be targeted
+through the Windows PowerShell reference assemblies,
+published under the `Microsoft.PowerShell.<version>.ReferenceAssemblies` NuGet packages.
+
+These reference assemblies can be used for targeting specific versions of Windows PowerShell,
+just as versions of the PowerShell SDK can be used to target specific versions of PowerShell 6+.
+
+The Windows PowerShell reference assemblies should be used when implementing
+a host for Windows PowerShell or for implementing PowerShell modules that require specific
+APIs in Windows PowerShell or specific Windows PowerShell versions.
+
+> [!NOTE]
+> Because Windows PowerShell is always guaranteed to be present on Windows,
+> targeting the Windows PowerShell reference assemblies
+> is the same as targeting the Windows PowerShell implementation.
+
+For more information on using the Windows PowerShell reference assemblies,
+see [Installing the Windows PowerShell SDK](https://docs.microsoft.com/en-us/powershell/scripting/developer/installing-the-windows-powershell-sdk).
 
 [pwsh.exe]: ./about_pwsh.md
 [about_Modules]: ./about_Modules.md
