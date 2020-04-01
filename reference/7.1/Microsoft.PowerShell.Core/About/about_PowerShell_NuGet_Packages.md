@@ -29,7 +29,7 @@ Some particular scenarios where a .NET project may need to call PowerShell APIs 
   whereby the object-oriented PowerShell engine can be linked up
   to a textual or graphical presentation layer.
   Examples of this include the PowerShell ConsoleHost, the PowerShell Editor Services Host
-  and the PowerShell ISE Host. See [about_PowerShell_Hosts] for more details.
+  and the PowerShell ISE Host.
 - **Calling PowerShell for some functionalities of a .NET application or library**.
   Sometimes the implementation of a .NET project may find it easiest
   to use PowerShell behind the scenes to implement a feature or service a request.
@@ -189,7 +189,6 @@ see [Installing the Windows PowerShell SDK](https://docs.microsoft.com/en-us/pow
 
 [pwsh.exe]: ./about_pwsh.md
 [about_Modules]: ./about_Modules.md
-[about_PowerShell_Hosts]: ./about_PowerShell_Hosts.md
 [PowerShell SDK]: https://www.nuget.org/packages/Microsoft.PowerShell.SDK/
 [PowerShell Standard]: https://www.nuget.org/packages/PowerShellStandard.Library/
 [System.Management.Automation]: https://www.nuget.org/packages/System.Management.Automation/
