@@ -99,7 +99,7 @@ so provides no functionality for standalone applications.
 > Because it provides no implementation, PowerShell Standard should not be published with a build.
 > If it is published and invoked, it may surface as a `NullReferenceException` due to the default
 > implementation of the façade assembly.
-> To prevent this, it is recommended to set the [PrivateAssets attribute](https://docs.microsoft.com/en-us/dotnet/core/tools/csproj#packagereference):
+> To prevent this, it is recommended to set the [PrivateAssets attribute](https://docs.microsoft.com/dotnet/core/tools/csproj#packagereference):
 > 
 > ```xml
 > <PackageReference Include="PowerShellStandard.Library" Version="5.1.0.0" PrivateAssets="all" />
@@ -187,7 +187,7 @@ APIs in Windows PowerShell or specific Windows PowerShell versions.
 > is the same as targeting the Windows PowerShell implementation.
 
 For more information on using the Windows PowerShell reference assemblies,
-see [Installing the Windows PowerShell SDK](https://docs.microsoft.com/en-us/powershell/scripting/developer/installing-the-windows-powershell-sdk).
+see [Installing the Windows PowerShell SDK](https://docs.microsoft.com/powershell/scripting/developer/installing-the-windows-powershell-sdk).
 
 [pwsh.exe]: ./about_pwsh.md
 [about_Modules]: ./about_Modules.md
@@ -198,6 +198,6 @@ see [Installing the Windows PowerShell SDK](https://docs.microsoft.com/en-us/pow
 [PowerShell Standard 5.1]: https://www.nuget.org/packages/PowerShellStandard.Library/5.1.0
 [PowerShell Standard 7]: https://www.nuget.org/packages/PowerShellStandard.Library/
 [PowerShell Standard 3]: https://www.nuget.org/packages/PowerShellStandard.Library/3.0.0-preview-01
-[.NET Standard]: https://docs.microsoft.com/en-us/dotnet/standard/net-standard
+[.NET Standard]: https://docs.microsoft.com/dotnet/standard/net-standard
 [NETStandard.Library]: https://www.nuget.org/packages/NETStandard.Library/
 [PowerShell Standard GitHub repository]: https://github.com/PowerShell/PowerShellStandard
