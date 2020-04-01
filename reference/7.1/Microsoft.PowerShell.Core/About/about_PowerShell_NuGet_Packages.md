@@ -95,14 +95,15 @@ or other code only intended to be run after loading it into a PowerShell process
 Because it is a façade assembly, PowerShell Standard contains no implementation itself,
 so provides no functionality for standalone applications.
 
-Because it provides no implementation, PowerShell Standard should not be published with a build.
-If it is published and invoked, it may surface as a `NullReferenceException` due to the default
-implementation of the façade assembly.
-To prevent this, it is recommended to set the [PrivateAssets attribute](https://docs.microsoft.com/en-us/dotnet/core/tools/csproj#packagereference):
-
-```xml
-<PackageReference Include="PowerShellStandard.Library" Version="5.1.0.0" PrivateAssets="all" />
-```
+> [!TIP]
+> Because it provides no implementation, PowerShell Standard should not be published with a build.
+> If it is published and invoked, it may surface as a `NullReferenceException` due to the default
+> implementation of the façade assembly.
+> To prevent this, it is recommended to set the [PrivateAssets attribute](https://docs.microsoft.com/en-us/dotnet/core/tools/csproj#packagereference):
+> 
+> ```xml
+> <PackageReference Include="PowerShellStandard.Library" Version="5.1.0.0" PrivateAssets="all" />
+> ```
 
 There are currently three versions of PowerShell Standard:
 
@@ -147,6 +148,7 @@ with multiple PowerShell versions, but has the following consequences:
 
 For more information on PowerShell Standard and using it to write a binary module
 that works in multiple PowerShell versions, see [this blog post](https://devblogs.microsoft.com/powershell/powershell-standard-library-build-single-module-that-works-across-windows-powershell-and-powershell-core/).
+Also see the [PowerShell Standard GitHub repository].
 
 ### System.Management.Automation
 
@@ -193,8 +195,9 @@ see [Installing the Windows PowerShell SDK](https://docs.microsoft.com/en-us/pow
 [PowerShell Standard]: https://www.nuget.org/packages/PowerShellStandard.Library/
 [System.Management.Automation]: https://www.nuget.org/packages/System.Management.Automation/
 [façade assemblies]: https://github.com/dotnet/standard/blob/master/docs/history/evolution-of-design-time-assemblies.md#definitions
-[PowerShell Standard 5.1]: https://www.nuget.org/packages/PowerShellStandard.Library
-[PowerShell Standard 7]: ./TODO
+[PowerShell Standard 5.1]: https://www.nuget.org/packages/PowerShellStandard.Library/5.1.0
+[PowerShell Standard 7]: https://www.nuget.org/packages/PowerShellStandard.Library/
 [PowerShell Standard 3]: https://www.nuget.org/packages/PowerShellStandard.Library/3.0.0-preview-01
 [.NET Standard]: https://docs.microsoft.com/en-us/dotnet/standard/net-standard
 [NETStandard.Library]: https://www.nuget.org/packages/NETStandard.Library/
+[PowerShell Standard GitHub repository]: https://github.com/PowerShell/PowerShellStandard
