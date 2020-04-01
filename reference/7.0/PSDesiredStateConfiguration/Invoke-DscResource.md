@@ -34,9 +34,7 @@ cmdlet also enables debugging of resources when the DSC engine is running with d
 > `Invoke-DscResource` is an experimental feature in PowerShell 7. To use the cmdlet, you must
 > enable it using the following command.
 >
-> ```powershell
-> Enable-ExperimentalFeature PSDesiredStateConfiguration.InvokeDscResource
-> ```
+> `Enable-ExperimentalFeature PSDesiredStateConfiguration.InvokeDscResource`
 
 ## EXAMPLES
 
