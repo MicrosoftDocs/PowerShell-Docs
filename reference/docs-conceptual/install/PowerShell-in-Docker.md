@@ -36,7 +36,7 @@ docker run -it mcr.microsoft.com/powershell
 
 ### Remove the image when no longer needed
 
-The following command is used to delete the Docker container when you no longer need it.
+The following command is used to delete the Docker image when you no longer need it.
 
 ```console
 docker rmi mcr.microsoft.com/powershell
