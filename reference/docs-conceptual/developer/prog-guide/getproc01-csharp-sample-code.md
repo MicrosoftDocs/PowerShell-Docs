@@ -25,7 +25,7 @@ method.
 
 ## Code Sample
 
-:::code language="csharp" source="~/../powershell-sdk-samples/SDK-2.0/csharp/GetProcessSample01/GetProcessSample01cs" range="11-126":::
+:::code language="csharp" source="~/../powershell-sdk-samples/SDK-2.0/csharp/GetProcessSample01/GetProcessSample01.cs" range="11-126":::
 
 ## See Also
 

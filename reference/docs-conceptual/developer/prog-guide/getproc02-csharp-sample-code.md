@@ -19,7 +19,7 @@ method as the output mechanism for sending output objects to the pipeline.
 
 ## Code Sample
 
-:::code language="csharp" source="~/../powershell-sdk-samples/SDK-2.0/csharp/GetProcessSample02/GetProcessSample02cs" range="11-76":::
+:::code language="csharp" source="~/../powershell-sdk-samples/SDK-2.0/csharp/GetProcessSample02/GetProcessSample02.cs" range="11-76":::
 
 ## See Also
 

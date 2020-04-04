@@ -37,7 +37,7 @@ A Windows PowerShell item provider must define a .NET class that derives from th
 [System.Management.Automation.Provider.Itemcmdletprovider](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider)
 base class. The following is the class definition for the item provider described in this section.
 
-:::code language="csharp" source="~/../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample03/AccessDBProviderSample03cs" range="34-36":::
+:::code language="csharp" source="~/../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample03/AccessDBProviderSample03.cs" range="34-36":::
 
 Note that in this class definition, the
 [System.Management.Automation.Provider.Cmdletproviderattribute](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute)
@@ -83,7 +83,7 @@ Here is the implementation of the
 method for this provider. Note that this implementation calls a NormalizePath helper method to
 convert all separators in the path to a uniform one.
 
-:::code language="csharp" source="~/../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample03/AccessDBProviderSample03cs" range="274-298":::
+:::code language="csharp" source="~/../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample03/AccessDBProviderSample03.cs" range="274-298":::
 
 ## Determining if an Item Exists
 
@@ -98,7 +98,7 @@ Here is the implementation of the
 method for this provider. Note that this method calls the PathIsDrive, ChunkPath, and GetTable
 helper methods, and uses a provider defined DatabaseTableInfo object.
 
-:::code language="csharp" source="~/../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample03/AccessDBProviderSample03cs" range="229-267":::
+:::code language="csharp" source="~/../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample03/AccessDBProviderSample03.cs" range="229-267":::
 
 #### Things to Remember About Implementing ItemExists
 
@@ -151,7 +151,7 @@ method.
 
 Here is the implementation of the [System.Management.Automation.Provider.Itemcmdletprovider.Getitem*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItem) method for this provider. Note that this method uses the GetTable and GetRow helper methods to retrieve items that are either tables in the Access database or rows in a data table.
 
-:::code language="csharp" source="~/../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample03/AccessDBProviderSample03cs" range="132-163":::
+:::code language="csharp" source="~/../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample03/AccessDBProviderSample03.cs" range="132-163":::
 
 #### Things to Remember About Implementing GetItem
 

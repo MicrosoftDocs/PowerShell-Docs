@@ -18,7 +18,7 @@ used to display the results in a DataGridView control
 
 ## Code Sample
 
-:::code language="csharp" source="~/../powershell-sdk-samples/SDK-2.0/csharp/Runspace02/Runspace02.cs" range="11-L82":::
+:::code language="csharp" source="~/../powershell-sdk-samples/SDK-2.0/csharp/Runspace02/Runspace02.cs" range="11-82":::
 
 ## See Also
 

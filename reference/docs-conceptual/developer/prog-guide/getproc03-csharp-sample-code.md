@@ -26,7 +26,7 @@ method as the output mechanism for sending objects to the pipeline.
 
 ## Code Sample
 
-:::code language="csharp" source="~/../powershell-sdk-samples/SDK-2.0/csharp/GetProcessSample03/GetProcessSample03cs" range="11-78":::
+:::code language="csharp" source="~/../powershell-sdk-samples/SDK-2.0/csharp/GetProcessSample03/GetProcessSample03.cs" range="11-78":::
 
 ## See Also
 

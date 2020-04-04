@@ -26,7 +26,7 @@ pipeline). The command that is invoked is the `Get-Process` cmdlet.
 
 ## Code Sample
 
-:::code language="csharp" source="~/../powershell-sdk-samples/SDK-2.0/csharp/Runspace01/Runspace01cs" range="11-62":::
+:::code language="csharp" source="~/../powershell-sdk-samples/SDK-2.0/csharp/Runspace01/Runspace01.cs" range="11-62":::
 
 ## See Also
 
