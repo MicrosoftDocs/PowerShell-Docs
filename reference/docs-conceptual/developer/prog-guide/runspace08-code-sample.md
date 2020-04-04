@@ -19,7 +19,7 @@ added to the pipeline are the `Get-Process` and `Sort-Object` cmdlets.
 
 ## Code Sample
 
-[!code-csharp[Runspace08.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/Runspace08/Runspace08.cs#L11-L86 "Runspace08.cs")]
+:::code language="csharp" source="~/../powershell-sdk-samples/SDK-2.0/csharp/Runspace08/Runspace08.cs" range="11-86":::
 
 ## See Also
 
