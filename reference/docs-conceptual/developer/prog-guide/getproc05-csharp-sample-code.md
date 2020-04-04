@@ -13,7 +13,7 @@ caps.latest.revision: 6
 
 Here is the complete C# code for the GetProc05 sample cmdlet.
 
-[!code-csharp[GetProcessSample05.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/GetProcessSample05/GetProcessSample05.cs#L11-L411 "GetProcessSample05.cs")]
+:::code language="csharp" source="~/../powershell-sdk-samples/SDK-2.0/csharp/GetProcessSample05/GetProcessSample05cs" range="11-L411":::
 
 ## See Also
 
