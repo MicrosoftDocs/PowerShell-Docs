@@ -189,7 +189,7 @@ This example outputs the **up down arrow** (&#x2195;) symbol.
 
 The horizontal tab (`` `v ``) character advances to the next vertical tab stop
 and writes the remaining output at that point. This has no effect in the
-default PowerShell console.
+default Windows console.
 
 ```powershell
 Write-Host "There is a vertical tab`vbetween the words."
