@@ -102,7 +102,7 @@ parameters, such as **Debug**, in a `Clear-Host` command.
 
 [Get-Host](../Microsoft.PowerShell.Utility/Get-Host.md)
 
-[Out-Host](../Out-Host.md)
+[Out-Host](Out-Host.md)
 
 [Read-Host](../Microsoft.PowerShell.Utility/Read-Host.md)
 

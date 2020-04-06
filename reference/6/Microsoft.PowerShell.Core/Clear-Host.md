@@ -77,7 +77,10 @@ This command uses the `cls` alias of `Clear-Host` to clear the current display.
 ## PARAMETERS
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+-InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -100,7 +103,7 @@ parameters, such as **Debug**, in a `Clear-Host` command.
 
 [Get-Host](../Microsoft.PowerShell.Utility/Get-Host.md)
 
-[Out-Host](../Out-Host.md)
+[Out-Host](Out-Host.md)
 
 [Read-Host](../Microsoft.PowerShell.Utility/Read-Host.md)
 

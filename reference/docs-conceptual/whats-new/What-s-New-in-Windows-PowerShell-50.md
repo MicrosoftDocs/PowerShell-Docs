@@ -834,7 +834,7 @@ In addition, scheduled jobs come with a customized set of cmdlets for managing t
 you create, edit, manage, disable, and re-enable scheduled jobs, create scheduled job triggers and
 set scheduled job options.
 
-For more information about scheduled jobs, see [about_Scheduled_Jobs](/powershell/module/microsoft.powershell.core/about/about_Scheduled_Jobs).
+For more information about scheduled jobs, see [about_Scheduled_Jobs](/powershell/module/psscheduledjob/about/about_scheduled_jobs?view=powershell-5.1).
 
 ### Windows PowerShell Language Enhancements
 
