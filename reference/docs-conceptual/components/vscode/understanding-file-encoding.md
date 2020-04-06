@@ -5,7 +5,7 @@ ms.date: 02/28/2019
 ---
 # Understanding file encoding in VSCode and PowerShell
 
-When using VS Code to create and edit PowerShell scripts, it is important that your files are saved
+When using VSCode to create and edit PowerShell scripts, it is important that your files are saved
 using the correct character encoding format.
 
 ## What is file encoding and why is it important?
