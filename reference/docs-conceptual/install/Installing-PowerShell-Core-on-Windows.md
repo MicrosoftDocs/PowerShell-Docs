@@ -95,9 +95,9 @@ PowerShell binary ZIP archives are provided to enable advanced deployment scenar
 ZIP archive doesn't check the prerequisites like the MSI packages do. For remoting over WSMan to
 work properly, ensure that you've met the [prerequisites](#prerequisites).
 
-## Deploying on Windows IoT
+## Deploying on Windows 10 IoT Enterprise
 
-Windows IoT comes with Windows PowerShell, which we can use to deploy PowerShell 7.
+Windows 10 IoT Enterprise comes with Windows PowerShell, which we can use to deploy PowerShell 7.
 
 1. Create `PSSession` to target device
 
@@ -139,6 +139,16 @@ Windows IoT comes with Windows PowerShell, which we can use to deploy PowerShell
    # Be sure to use the -Configuration parameter.  If you omit it, you will connect to Windows PowerShell 5.1
    Enter-PSSession -ComputerName <deviceIp> -Credential Administrator -Configuration powershell.<version>
    ```
+## Deploying on Windows 10 IoT Core
+
+Windows 10 IoT Core adds Windows PowerShell when you include *IOT_POWERSHELL* feature, which we can use to deploy PowerShell 7.
+The steps defined above for Windows 10 IoT Enterprise can be followed for IoT Core as well.
+
+For adding the latest powershell in the shipping image, use [Import-PSCoreRelease](https://github.com/ms-iot/iot-adk-addonkit/blob/master/Tools/IoTCoreImaging/Docs/Import-PSCoreRelease.md#Import-PSCoreRelease) command to include the package in the workarea and add *OPENSRC_POWERSHELL* feature to your image.
+
+> [!NOTE]
+> For ARM64 architecture, Windows Powershell is not added when you include *IOT_POWERSHELL*. So the zip based install will not work.
+> You will need to use Import-PSCoreRelease command to add it in the image.
 
 ## Deploying on Nano Server
 
