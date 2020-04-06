@@ -32,10 +32,10 @@ macOS, and Linux, see the following links:
 For traditional Windows PowerShell workloads, see [Installing Windows PowerShell][install-winps].
 
 > [!IMPORTANT]
-> The [Windows PowerShell ISE][ise] is also still available for Windows, however, it is no longer in
-> active feature development. The ISE does not work with PowerShell 6 and higher. As a shipping
-> component of Windows, it continues to be officially supported for security and high-priority
-> servicing fixes. We have no plans to remove the ISE from Windows.
+> The [Windows PowerShell ISE][ise] is still available for Windows. However, it is no longer in
+> active feature development. The ISE does not work with PowerShell 6 and higher. As a component of
+> Windows, it continues to be officially supported for security and high-priority servicing fixes.
+> We have no plans to remove the ISE from Windows.
 
 ## Editing with Visual Studio Code
 
@@ -115,7 +115,7 @@ If you installed PowerShell to a non-typical location, it might not show up init
 Menu. You can extend the session menu by [adding your own custom paths](#adding-your-own-powershell-paths-to-the-session-menu)
 as described below.
 
->[!NOTE]
+> [!NOTE]
 > The PowerShell session menu can also be accessed from the green version number in the bottom right
 > corner of status bar. Clicking this version number opens the session menu.
 
@@ -227,7 +227,7 @@ First, open the Extension pane and search for `PowerShell`. Then click the gear 
 
 ![Install another version...](media/using-vscode/install-another-version.png)
 
-Then select the **`2020.1.0`** version. This version of the extension was the last version to
+Then select the **2020.1.0** version. This version of the extension was the last version to
 support v3 and v4. Be sure to add the following setting so that your extension version doesn't
 update automatically:
 
@@ -237,8 +237,9 @@ update automatically:
 }
 ```
 
-Version `2020.1.0` will work in the foreseeable future, Visual Studio Code could implement a change that
-breaks this version of the extension. Because of this, and lack of support, we recommend:
+Version **2020.1.0** will work for the foreseeable future. However, Visual Studio Code could
+implement a change that breaks this version of the extension. Because of this, and lack of support,
+we recommend:
 
 - Upgrading to Windows PowerShell 5.1
 - Install PowerShell 7, which is a side-by-side install to Windows PowerShell and works the
@@ -267,17 +268,17 @@ configurations other than just debugging the currently open file.
 
 Follow these steps to create a debug configuration file:
 
-  1. Open the **Debug** view on Windows or Linux by pressing
-     <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>D</kbd>. On macOS, press
-     <kbd>Cmd</kbd>+<kbd>Shift</kbd>+<kbd>D</kbd>.
-  1. Click the **create a launch.json file** link.
-  1. From the **Select Environment** prompt, choose **PowerShell**.
-  1. Choose the type of debugging you'd like to use:
+1. Open the **Debug** view on Windows or Linux by pressing
+   <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>D</kbd>. On macOS, press
+   <kbd>Cmd</kbd>+<kbd>Shift</kbd>+<kbd>D</kbd>.
+1. Click the **create a launch.json file** link.
+1. From the **Select Environment** prompt, choose **PowerShell**.
+1. Choose the type of debugging you'd like to use:
 
-     - **Launch Current File** - Launch and debug the file in the currently active editor window
-     - **Launch Script** - Launch and debug the specified file or command
-     - **Interactive Session** - Debug commands executed from the Integrated Console
-     - **Attach** - Attach the debugger to a running PowerShell Host Process
+   - **Launch Current File** - Launch and debug the file in the currently active editor window
+   - **Launch Script** - Launch and debug the specified file or command
+   - **Interactive Session** - Debug commands executed from the Integrated Console
+   - **Attach** - Attach the debugger to a running PowerShell Host Process
 
 Visual Studio Code creates a directory and a file `.vscode\launch.json` in the root of your
 workspace folder to store the debug configuration. If your files are in a Git repository, you
