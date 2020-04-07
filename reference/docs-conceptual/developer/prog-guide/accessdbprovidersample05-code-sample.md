@@ -11,11 +11,15 @@ caps.latest.revision: 6
 ---
 # AccessDbProviderSample05 Code Sample
 
-The following code shows the implementation of the Windows PowerShell navigation provider described in [Creating a Windows PowerShell Navigation Provider](./creating-a-windows-powershell-navigation-provider.md). This provider supports recursive commands, nested containers, and relative paths that allow it to navigate the data store.
+The following code shows the implementation of the Windows PowerShell navigation provider described
+in
+[Creating a Windows PowerShell Navigation Provider](./creating-a-windows-powershell-navigation-provider.md).
+This provider supports recursive commands, nested containers, and relative paths that allow it to
+navigate the data store.
 
 ## Code Sample
 
-[!code-csharp[AccessDBProviderSample05.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample05/AccessDBProviderSample05.cs#L11-L1960 "AccessDBProviderSample05.cs")]
+:::code language="csharp" source="~/../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample05/AccessDBProviderSample05.cs" range="11-1960":::
 
 ## See Also
 

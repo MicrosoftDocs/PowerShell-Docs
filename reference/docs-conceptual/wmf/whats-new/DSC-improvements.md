@@ -170,7 +170,7 @@ See the snapshots below:
 ## Using PsDscRunAsCredential with DSC composite resources
 
 We have added support for using [PsDscRunAsCredential](/powershell/scripting/dsc/configurations/runAsUser)
-with DSC [Composite](/powershell/scripting/dsc/authoringresourcecomposite)
+with DSC [Composite](/powershell/scripting/dsc/resources/authoringresourcecomposite)
 resources.
 
 You can now specify a value for **PsDscRunAsCredential** when using composite resources inside

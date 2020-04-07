@@ -326,9 +326,8 @@ Alt+F7          | Clear the command history list
     You can change the height of the console in a similar manner.
 
     Additional examples for customizing the console view are available in the
-    [Windows PowerShell Team Blog](hhttps://devblogs.microsoft.com/powershell).
+    [Windows PowerShell Team Blog](https://devblogs.microsoft.com/powershell).
 
 ## See Also
 
 - [Hey, Scripting Guy!](https://devblogs.microsoft.com/scripting/)
-- [PowerShell Team Blog](https://devblogs.microsoft.com/powershell/)

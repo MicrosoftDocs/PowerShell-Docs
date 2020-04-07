@@ -11,7 +11,9 @@ caps.latest.revision: 9
 ---
 # Windows PowerShell02 Sample
 
-This sample shows how to run commands asynchronously by using the runspaces of a runspace pool. The sample generates a list of commands, and then runs those commands while the Windows PowerShell engine opens a runspace from the pool when it is needed.
+This sample shows how to run commands asynchronously using the runspaces of a runspace pool. The
+sample generates a list of commands, and then runs those commands while the Windows PowerShell
+engine opens a runspace from the pool when it is needed.
 
 ## Requirements
 
@@ -21,21 +23,21 @@ This sample shows how to run commands asynchronously by using the runspaces of a
 
 This sample demonstrates the following:
 
-- Creating a RunspacePool object with a minimum and maximum number of runspaces allowed to be open at the same time.
-
+- Creating a RunspacePool object with a minimum and maximum number of runspaces allowed to be open
+  at the same time.
 - Creating a list of commands.
-
 - Running the commands asynchronously.
-
-- Calling the [System.Management.Automation.Runspaces.Runspacepool.Getavailablerunspaces*](/dotnet/api/System.Management.Automation.Runspaces.RunspacePool.GetAvailableRunspaces) method to see how many runspaces are free.
-
-- Capturing the command output with the [System.Management.Automation.Powershell.Endinvoke*](/dotnet/api/System.Management.Automation.PowerShell.EndInvoke) method.
+- Calling the [System.Management.Automation.Runspaces.Runspacepool.Getavailablerunspaces*](/dotnet/api/System.Management.Automation.Runspaces.RunspacePool.GetAvailableRunspaces)
+  method to see how many runspaces are free.
+- Capturing the command output with the [System.Management.Automation.Powershell.Endinvoke*](/dotnet/api/System.Management.Automation.PowerShell.EndInvoke)
+  method.
 
 ## Example
 
-This sample shows how to open the runspaces of a runspace pool, and how to asynchronously run commands in those runspaces.
+This sample shows how to open the runspaces of a runspace pool, and how to asynchronously run
+commands in those runspaces.
 
-[!code-csharp[PowerShell02.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/PowerShell02/PowerShell02.cs#L11-L96 "PowerShell02.cs")]
+:::code language="csharp" source="~/../powershell-sdk-samples/SDK-2.0/csharp/PowerShell02/PowerShell02.cs" range="11-96":::
 
 ## See Also
 
