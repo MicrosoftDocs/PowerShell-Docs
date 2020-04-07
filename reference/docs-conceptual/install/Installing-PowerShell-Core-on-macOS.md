@@ -156,13 +156,7 @@ xcode-select --install
 
 ### Install OpenSSL
 
-OpenSSL is needed for PowerShell remoting and CIM operations. You can install via MacPorts or Brew.
-
-#### Install OpenSSL via Brew
-
-See [About Brew](#about-brew) for information about Brew.
-
-To install OpenSSL, run `brew install openssl`.
+OpenSSL is needed for PowerShell remoting and CIM operations. You can install via MacPorts.
 
 #### Install OpenSSL via MacPorts
 
@@ -172,12 +166,12 @@ To install OpenSSL, run `brew install openssl`.
    [installation guide](https://guide.macports.org/chunked/installing.macports.html).
 1. Update MacPorts by running `sudo port selfupdate`.
 1. Upgrade MacPorts packages by running `sudo port upgrade outdated`.
-1. Install OpenSSL by running `sudo port install openssl`.
+1. Install OpenSSL by running `sudo port install openssl10`.
 1. Link the libraries to make them available to PowerShell:
 
 ```sh
 sudo mkdir -p /usr/local/opt/openssl
-sudo ln -s /opt/local/lib /usr/local/opt/openssl/lib
+sudo ln -s /opt/local/lib/openssl-1.0 /usr/local/opt/openssl/lib
 ```
 
 ## Uninstalling PowerShell
