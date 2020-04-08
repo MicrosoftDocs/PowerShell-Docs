@@ -27,11 +27,14 @@ Select the type(s) of documents being changed.
 
 ## PR Checklist
 
-- [ ] I have read the [contributors guide](https://docs.microsoft.com/powershell/scripting/community/contributing/overview) and followed the style and process guidelines
+- [ ] I have read the [contributors guide][contrib] and followed the style and process guidelines
 - [ ] PR has a meaningful title
 - [ ] PR is targeted at the _staging_ branch
 - [ ] All relevant versions updated
-- [ ] Includes content related to issues and PRs - see [Closing issues using keywords](https://help.github.com/en/articles/closing-issues-using-keywords).
+- [ ] Includes content related to issues and PRs - see [Closing issues using keywords][key].
 - [ ] This PR is ready to merge and is not **Work in Progress**
-  - If the PR is work in progress, please add the prefix `WIP:` or `[ WIP ]` to the beginning of the
+  - If the PR is work in progress, please add the prefix `WIP:` or `[WIP]` to the beginning of the
     title and remove the prefix when the PR is ready.
+
+[contrib]: https://docs.microsoft.com/powershell/scripting/community/contributing/overview
+[key]: https://help.github.com/en/articles/closing-issues-using-keywords

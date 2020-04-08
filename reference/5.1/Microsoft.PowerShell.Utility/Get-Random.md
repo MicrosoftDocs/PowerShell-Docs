@@ -3,7 +3,7 @@ external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 08/20/2019
+ms.date: 04/08/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/get-random?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Random
@@ -363,6 +363,22 @@ submitted collection.
 
 `Get-Random` sets a default seed for each session based on the system time clock when the session
 starts.
+
+`Get-Random` does not alway return the same data type as the input value. The following table shows
+the output type for each of the numeric input types.
+
+| Input Type | Output Type |
+| :--------: | :---------: |
+|   SByte    |   Double    |
+|    Byte    |   Double    |
+|   Int16    |   Double    |
+|   UInt16   |   Double    |
+|   Int32    |    Int32    |
+|   UInt32   |   Double    |
+|   Int64    |    Int64    |
+|   UInt64   |   Double    |
+|   Double   |   Double    |
+|   Single   |   Double    |
 
 Beginning in Windows PowerShell 3.0, `Get-Random` supports 64-bit integers. In Windows PowerShell
 2.0, all values are cast to **System.Int32**.
