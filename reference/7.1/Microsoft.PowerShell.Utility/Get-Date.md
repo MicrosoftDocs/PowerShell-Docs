@@ -3,7 +3,7 @@ external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 6/27/2019
+ms.date: 04/07/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/get-date?view=powershell-7.x&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Date
@@ -19,17 +19,17 @@ Gets the current date and time.
 ### net (Default)
 
 ```
-Get-Date [[-Date] <DateTime>] [-Year <Int32>] [-Month <Int32>] [-Day <Int32>] [-Hour <Int32>]
- [-Minute <Int32>] [-Second <Int32>] [-Millisecond <Int32>] [-DisplayHint <DisplayHintType>]
- [-Format <String>] [<CommonParameters>]
+Get-Date [[-Date] <DateTime>] [-FromUnixTime] [-Year <Int32>] [-Month <Int32>] [-Day <Int32>]
+ [-Hour <Int32>] [-Minute <Int32>] [-Second <Int32>] [-Millisecond <Int32>]
+ [-DisplayHint <DisplayHintType>] [-Format <String>] [<CommonParameters>]
 ```
 
 ### UFormat
 
 ```
-Get-Date [[-Date] <DateTime>] [-Year <Int32>] [-Month <Int32>] [-Day <Int32>] [-Hour <Int32>]
- [-Minute <Int32>] [-Second <Int32>] [-Millisecond <Int32>] [-DisplayHint <DisplayHintType>]
- [-UFormat <String>] [<CommonParameters>]
+Get-Date [[-Date] <DateTime>] [-FromUnixTime] [-Year <Int32>] [-Month <Int32>] [-Day <Int32>]
+ [-Hour <Int32>] [-Minute <Int32>] [-Second <Int32>] [-Millisecond <Int32>]
+ [-DisplayHint <DisplayHintType>] [-UFormat <String>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -215,6 +215,18 @@ replaced by periods.
 includes the `$timestamp` variable as the directory name. The **Type** parameter specifies that a
 directory is created.
 
+### Example 9: Convert a Unix timestamp
+
+This example converts the **Date** value represented as a Unix timestamp.
+
+```powershell
+Get-Date -Date 1577836800 -FromUnixTime
+```
+
+```Output
+Wednesday, January 01, 2020 12:00:00 AM
+```
+
 ## PARAMETERS
 
 ### -Date
@@ -323,6 +335,24 @@ Aliases:
 Required: False
 Position: Named
 Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -FromUnixTime
+
+When this parameter is used, the value of the **Date** parameter is treated as a Unix timestamp. A
+Unix timestamp is a numeric value that is the of seconds elapsed since
+**1970-01-01​T00:00:00.000Z**.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
