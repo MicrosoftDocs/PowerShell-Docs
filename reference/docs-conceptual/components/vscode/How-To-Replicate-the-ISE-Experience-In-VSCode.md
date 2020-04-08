@@ -80,7 +80,7 @@ ISE Mode makes the following changes to VS Code settings.
 
   The default is `true` for accessibility purposes.
 
-  - Don't start integrated console on startup
+- Don't start integrated console on startup
 
   To stop the integrated console on startup, set:
 
@@ -89,8 +89,8 @@ ISE Mode makes the following changes to VS Code settings.
   ```
 
   > [!NOTE]
-  > The background PowerShell process will still start since that provides IntelliSense, script
-  > analysis, symbol navigation, etc. But the console won't be shown.
+  > The background PowerShell process still starts to provide IntelliSense, script analysis, symbol
+  > navigation, etc., but the console won't be shown.
 
 - Assume files are PowerShell by default
 
@@ -123,8 +123,8 @@ ISE Mode makes the following changes to VS Code settings.
 
 - Open in the ISE
 
-  If you end up wanting to open a file in the ISE anyway,
-  you can use <kbd>Shift</kbd>+<kbd>Alt</kbd>+<kbd>P</kbd>.
+  If you want to open a file in the Windows PowerShell ISE anyway, open the [Command Palette][],
+  search for "open in ise", then select **PowerShell: Open Current File in PowerShell ISE**.
 
 ## Other resources
 
