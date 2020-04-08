@@ -159,7 +159,7 @@ We're always happy to accept PRs and contributions as well!
 <!-- link references -->
 [vsc-docs]: https://code.visualstudio.com/docs/getstarted/userinterface#_command-palette
 [Command Palette]: #vs-code-tips
-[open an issue]: https://github.com/PowerShell/VS Code-powershell/issues/new/choose
+[open an issue]: https://github.com/PowerShell/VSCode-powershell/issues/new/choose
 
 [4sysops]: https://4sysops.com/archives/make-visual-studio-code-look-and-behave-like-powershell-ise/
 [mikefrobbins]: https://mikefrobbins.com/2017/08/24/how-to-install-visual-studio-code-and-configure-it-as-a-replacement-for-the-powershell-ise/
