@@ -89,10 +89,16 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-The **Debug** parameter overrides the value of the `$DebugPreference` variable
-for the current command, setting the value of `$DebugPreference` to
-**Continue**. Because the default value of the `$DebugPreference` variable is
-**SilentlyContinue**, debugging messages aren't displayed by default.
+By default, debugging messages aren't displayed because the value of the
+`$DebugPreference` variable is **SilentlyContinue**.
+
+In interactive mode, the **Debug** parameter overrides the value of the
+`$DebugPreference` variable for the current command, setting the value of
+`$DebugPreference` to **Inquire**.
+
+In non-interactive mode, the **Debug** parameter overrides the value of the
+`$DebugPreference` variable for the current command, setting the value of
+`$DebugPreference` to **Continue**.
 
 `-Debug:$true` has the same effect as `-Debug`. Use `-Debug:$false` to
 suppress the display of debugging messages when `$DebugPreference` isn't

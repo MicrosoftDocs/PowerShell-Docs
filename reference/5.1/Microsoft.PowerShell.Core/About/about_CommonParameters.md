@@ -89,10 +89,16 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-The **Debug** parameter overrides the value of the `$DebugPreference` variable
-for the current command, setting the value of `$DebugPreference` to
-**Continue**. Because the default value of the `$DebugPreference` variable is
-**SilentlyContinue**, debugging messages aren't displayed by default.
+By default, debugging messages aren't displayed because the value of the
+`$DebugPreference` variable is **SilentlyContinue**.
+
+In interactive mode, the **Debug** parameter overrides the value of the
+`$DebugPreference` variable for the current command, setting the value of
+`$DebugPreference` to **Inquire**.
+
+In non-interactive mode, the **Debug** parameter overrides the value of the
+`$DebugPreference` variable for the current command, setting the value of
+`$DebugPreference` to **Continue**.
 
 `-Debug:$true` has the same effect as `-Debug`. Use `-Debug:$false` to
 suppress the display of debugging messages when `$DebugPreference` isn't
@@ -141,8 +147,8 @@ executing the command.
 
 `-ErrorAction:Stop` displays the error message and stops executing the command.
 
-`-ErrorAction:Suspend` suspends execution of a workflow. You are presented with
- a nested command prompt from which you can inspect the suspended state.
+`-ErrorAction:Suspend` is only available for workflows which aren't supported
+in PowerShell 6 and beyond.
 
 > [!NOTE]
 > The **ErrorAction** parameter overrides, but does not replace the value of
