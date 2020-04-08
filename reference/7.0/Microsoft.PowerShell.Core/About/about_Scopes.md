@@ -54,7 +54,7 @@ PowerShell supports the following scopes:
 
 > [!NOTE]
 > **Private** is not a scope. It is an [option](#private-option) that changes
-> the visibility of an item outside of the the scope where the item is defined.
+> the visibility of an item outside of the scope where the item is defined.
 
 ## Parent and Child Scopes
 
