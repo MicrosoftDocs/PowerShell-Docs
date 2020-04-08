@@ -199,7 +199,7 @@ the session configuration has a LanguageMode property. You can find the
 language mode by getting the value of the LanguageMode property.
 
 ```powershell
-PS> (Get-PSSessionConfiguration -Name Test).LanguageMode
+(Get-PSSessionConfiguration -Name Test).LanguageMode
 FullLanguage
 ```
 
@@ -216,7 +216,7 @@ state.
 For example:
 
 ```powershell
-PS> $ExecutionContext.SessionState.LanguageMode
+$ExecutionContext.SessionState.LanguageMode
 ConstrainedLanguage
 ```
 
