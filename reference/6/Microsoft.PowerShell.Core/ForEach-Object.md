@@ -3,7 +3,7 @@ external help file: System.Management.Automation.dll-Help.xml
 keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Core
-ms.date: 06/09/2017
+ms.date: 04/08/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/foreach-object?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: ForEach-Object
@@ -203,7 +203,8 @@ the **MemberName** and **ArgumentList** parameters, which are optional.
 
 ### -ArgumentList
 
-Specifies an array of arguments to a method call.
+Specifies an array of arguments to a method call. For more information about the behavior of
+**ArgumentList**, see [about_Splatting](about/about_Splatting.md#splatting-with-arrays).
 
 This parameter was introduced in Windows PowerShell 3.0.
 
