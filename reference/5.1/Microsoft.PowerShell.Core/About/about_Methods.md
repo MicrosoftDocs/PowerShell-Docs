@@ -121,9 +121,9 @@ the `C:\Bin` directory.
 ```
 
 > [!NOTE]
-> Unlike PowerShell's *argument* mode, object methods execute in *expression*
+> Unlike PowerShell's _argument_ mode, object methods execute in _expression_
 > mode, which is a pass-through to the .NET framework that PowerShell is built
-> on. In *expression* mode **bareword** arguments (unquoted strings) are not
+> on. In _expression_ mode **bareword** arguments (unquoted strings) are not
 > allowed. You can see this difference when using a the path as a parameter,
 > versus the path as an argument. You can read more about parsing modes in
 > [about_Parsing](about_Parsing.md)
@@ -216,7 +216,7 @@ supported. This allows use of two new methods when dealing with collections
 
 You can read more about these methods in [about_arrays](about_arrays.md)
 
-### Calling a specific method when multiple overloads existing
+### Calling a specific method when multiple overloads exist
 
 Consider the following scenario when calling .NET methods. If a method takes an
 object but has an overload via an interface taking a more specific type,
@@ -234,15 +234,15 @@ Add-Type -TypeDefinition @'
    // Type that implements the interface
    public class Foo : IFoo {
 
-    // Direct member method named 'Bar'
-     public string Bar(object p) { return $"object: {p}"; }
+   // Direct member method named 'Bar'
+   public string Bar(object p) { return $"object: {p}"; }
 
-     // *Explicit* implementation of IFoo's 'Bar' method().
-     string IFoo.Bar(int p) {
+   // *Explicit* implementation of IFoo's 'Bar' method().
+   string IFoo.Bar(int p) {
        return $"int: {p}";
-     }
+   }
 
-    }
+}
 '@
 ```
 
