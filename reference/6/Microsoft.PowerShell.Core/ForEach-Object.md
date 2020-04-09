@@ -50,7 +50,7 @@ Starting in Windows PowerShell 3.0, there are two different ways to construct a 
 
   > [!NOTE]
   > The script blocks run in the caller's scope. Therefore the blocks have access to variables in
-  > that scope and can create new variable that persist in that scope after the cmdlet completes.
+  > that scope and can create new variables that persist in that scope after the cmdlet completes.
 
 - **Operation statement**. You can also write an operation statement, which is much more like
   natural language. You can use the operation statement to specify a property value or call a
@@ -60,12 +60,6 @@ Starting in Windows PowerShell 3.0, there are two different ways to construct a 
   process on the computer.
 
   `Get-Process | ForEach-Object ProcessName`
-
-  When using the script block format, in addition to using the script block that describes the
-  operations that are performed on each input object, you can provide two additional script blocks.
-  The Begin script block, which is the value of the **Begin** parameter, runs before this cmdlet
-  processes the first input object. The End script block, which is the value of the **End**
-  parameter, runs after this cmdlet processes the last input object.
 
 ## EXAMPLES
 
@@ -249,7 +243,7 @@ end
 
 ### Example 10: Run multiple script blocks for each pipeline item
 
-As shown in the previous example, multiple script block passed using the **Process** parameter get
+As shown in the previous example, multiple script blocks passed using the **Process** parameter get
 mapped to the **Begin** and **End** parameters. To avoid this mapping, you must provide explicit
 values for the **Begin** and **End** parameters.
 
@@ -374,8 +368,8 @@ Accept wildcard characters: True
 
 ### -Process
 
-Specifies the operation that is performed on each input object. This script block is only run once
-for the entire pipeline. For more information about the `process` block, see
+Specifies the operation that is performed on each input object. This script block is for every
+object in the pipeline. For more information about the `process` block, see
 [about_Functions](about/about_functions.md#piping-objects-to-functions).
 
 When you provide multiple script blocks to the **Process** parameter, the first script block is
