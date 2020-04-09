@@ -62,8 +62,8 @@ Only use [ATX headings][atx] (# style, as opposed to `=` or `-` style headers).
 ### Limit line length to 100 characters
 
 This applies to conceptual articles and cmdlet reference. About_topics are limited to 80 characters.
-Limiting the line length improves the readability git diffs and history. It also makes it easier for
-other writers to make contributions.
+Limiting the line length improves the readability of git diffs and history. It also makes it easier
+for other writers to make contributions.
 
 Use the [Reflow Markdown][reflow] extension in Visual Studio Code to easily reflow paragraphs to fit
 the prescribed line length.
@@ -292,7 +292,7 @@ A URL link can be a URL path that is relative to the root of docs.microsoft.com.
 
 - Use URL links when linking to content outside of PowerShell-Docs or between cmdlet reference and
   conceptual articles within PowerShell-docs.
-- The simplest way to link create a relative link is to copy the URL from your browser then remove
+- The simplest way to create a relative link is to copy the URL from your browser then remove
   `https://docs.microsoft.com/en-us` from the value you paste into markdown.
    - Do not include locales in URLs on Microsoft properties (eg. remove "/en-us" from URL).
 - All URLs to external websites should use HTTPS unless that is not valid for the target site.
@@ -477,8 +477,8 @@ code.
 
 ### Using parameters in examples
 
-Avoid using positional parameters. In general, you should use always include the parameter name in
-an example, even if the parameter positional. This reduces the chance of confusion in your examples.
+Avoid using positional parameters. In general, you should always include the parameter name in an
+example, even if the parameter is positional. This reduces the chance of confusion in your examples.
 
 ## Next steps
 
