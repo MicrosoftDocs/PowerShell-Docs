@@ -3,7 +3,7 @@ external help file: Microsoft.PowerShell.PSReadLine.dll-Help.xml
 keywords: powershell,cmdlet
 locale: en-us
 Module Name: PSReadLine
-ms.date: 09/23/2019
+ms.date: 04/09/2020
 online version: https://docs.microsoft.com/powershell/module/psreadline/set-psreadlineoption?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-PSReadLineOption
@@ -337,6 +337,8 @@ The valid values are as follows:
 - **Emacs**: Key bindings emulate Bash or Emacs.
 - **Vi**: Key bindings emulate Vi.
 
+Use `Get-PSReadLineKeyHandler` to see the key bindings for the currently configured **EditMode**.
+
 ```yaml
 Type: EditMode
 Parameter Sets: (All)
@@ -614,7 +616,8 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 

@@ -360,6 +360,8 @@ The valid values are as follows:
 - **Emacs**: Key bindings emulate Bash or Emacs.
 - **Vi**: Key bindings emulate Vi.
 
+Use `Get-PSReadLineKeyHandler` to see the key bindings for the currently configured **EditMode**.
+
 ```yaml
 Type: EditMode
 Parameter Sets: (All)
@@ -657,7 +659,8 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
