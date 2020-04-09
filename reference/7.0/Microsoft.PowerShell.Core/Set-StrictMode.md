@@ -3,7 +3,7 @@ external help file: System.Management.Automation.dll-Help.xml
 keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Core
-ms.date: 08/22/2019
+ms.date: 04/09/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/set-strictmode?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-StrictMode
@@ -223,11 +223,13 @@ The effective values for this parameter are:
 - 1.0
   - Prohibits references to uninitialized variables, except for uninitialized variables in strings.
 - 2.0
-  - Prohibits references to uninitialized variables. This includes uninitialized variables in strings.
+  - Prohibits references to uninitialized variables. This includes uninitialized variables in
+    strings.
   - Prohibits references to non-existent properties of an object.
   - Prohibits function calls that use the syntax for calling methods.
 - 3.0
-  - Prohibits references to uninitialized variables. This includes uninitialized variables in strings.
+  - Prohibits references to uninitialized variables. This includes uninitialized variables in
+    strings.
   - Prohibits references to non-existent properties of an object.
   - Prohibits function calls that use the syntax for calling methods.
   - Prohibit out of bounds or unresolvable array indexes.
@@ -235,6 +237,12 @@ The effective values for this parameter are:
   - Selects the latest version available. The latest version is the most strict. Use this value to
     make sure that scripts use the strictest available version, even when new versions are added to
     PowerShell.
+
+> [!CAUTION]
+> Using a **Version** of **Latest** in scripts. The meaning of **Latest** can change in new releases
+> of PowerShell. Therefore, a script written for an older version of PowerShell that uses
+> `Set-StrictMode -Version Latest` is subject to more restrictive rules when run in a newer version
+> of PowerShell.
 
 ```yaml
 Type: Version
@@ -252,8 +260,8 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see about_CommonParameters
-(https://go.microsoft.com/fwlink/?LinkID=113216).
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
