@@ -3,7 +3,7 @@ external help file: System.Management.Automation.dll-Help.xml
 keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Core
-ms.date: 04/08/2020
+ms.date: 04/09/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/foreach-object?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: ForEach-Object
@@ -18,32 +18,39 @@ Performs an operation against each item in a collection of input objects.
 ### ScriptBlockSet (Default)
 
 ```
-ForEach-Object [-InputObject <PSObject>] [-Begin <ScriptBlock>] [-Process] <ScriptBlock[]> [-End <ScriptBlock>]
- [-RemainingScripts <ScriptBlock[]>] [-WhatIf] [-Confirm] [<CommonParameters>]
+ForEach-Object [-InputObject <PSObject>] [-Begin <ScriptBlock>] [-Process] <ScriptBlock[]>
+ [-End <ScriptBlock>] [-RemainingScripts <ScriptBlock[]>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### PropertyAndMethodSet
 
 ```
-ForEach-Object [-InputObject <PSObject>] [-MemberName] <String> [-ArgumentList <Object[]>] [-WhatIf] [-Confirm]
- [<CommonParameters>]
+ForEach-Object [-InputObject <PSObject>] [-MemberName] <String> [-ArgumentList <Object[]>] [-WhatIf]
+ [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 
-The `ForEach-Object` cmdlet performs an operation on each item in a collection of input objects.
-The input objects can be piped to the cmdlet or specified by using the **InputObject** parameter.
+The `ForEach-Object` cmdlet performs an operation on each item in a collection of input objects. The
+input objects can be piped to the cmdlet or specified by using the **InputObject** parameter.
 
 Starting in Windows PowerShell 3.0, there are two different ways to construct a `ForEach-Object` command.
 
 - **Script block**. You can use a script block to specify the operation. Within the script block,
   use the `$_` variable to represent the current object. The script block is the value of the
-  *Process* parameter. The script block can contain any PowerShell script.
+  **Process** parameter. The script block can contain any PowerShell script.
 
   For example, the following command gets the value of the **ProcessName** property of each process
   on the computer.
 
   `Get-Process | ForEach-Object {$_.ProcessName}`
+
+  `ForEach-Object` supports the `begin`, `process`, and `end` blocks as described in
+  [about_functions](about/about_functions.md#piping-objects-to-functions).
+
+  > [!NOTE]
+  > The script blocks run in the caller's scope. Therefore the blocks have access to variables in
+  > that scope and can create new variables that persist in that scope after the cmdlet completes.
 
 - **Operation statement**. You can also write an operation statement, which is much more like
   natural language. You can use the operation statement to specify a property value or call a
@@ -53,12 +60,6 @@ Starting in Windows PowerShell 3.0, there are two different ways to construct a 
   process on the computer.
 
   `Get-Process | ForEach-Object ProcessName`
-
-  When using the script block format, in addition to using the script block that describes the
-  operations that are performed on each input object, you can provide two additional script blocks.
-  The Begin script block, which is the value of the **Begin** parameter, runs before this cmdlet
-  processes the first input object. The End script block, which is the value of the **End**
-  parameter, runs after this cmdlet processes the last input object.
 
 ## EXAMPLES
 
@@ -112,7 +113,8 @@ This example changes the value of the **RemotePath** registry entry in all of th
 `HKCU:\Network` key to uppercase text.
 
 ```powershell
-Get-ItemProperty -Path HKCU:\Network\* | ForEach-Object {Set-ItemProperty -Path $_.PSPath -Name RemotePath -Value $_.RemotePath.ToUpper();}
+Get-ItemProperty -Path HKCU:\Network\* |
+  ForEach-Object {Set-ItemProperty -Path $_.PSPath -Name RemotePath -Value $_.RemotePath.ToUpper();}
 ```
 
 You can use this format to change the form or content of a registry entry value.
@@ -147,7 +149,8 @@ Hello
 Hello
 ```
 
-Because PowerShell treats null as an explicit placeholder, the `ForEach-Object` cmdlet generates a value for `$Null`, just as it does for other objects that you pipe to it.
+Because PowerShell treats null as an explicit placeholder, the `ForEach-Object` cmdlet generates a
+value for `$Null`, just as it does for other objects that you pipe to it.
 
 
 ### Example 6: Get property values
@@ -199,6 +202,64 @@ The second command uses the **MemberName** parameter to specify the **Split** me
 The third command uses the **Foreach** alias of the `ForEach-Object` cmdlet and omits the names of
 the **MemberName** and **ArgumentList** parameters, which are optional.
 
+### Example 8: Using ForeEach-Object with two script blocks
+
+In this example we pass two script blocks positionally. All the script blocks bind to the
+**Process** parameter. However, they are treated as if they had been passed to the **Begin** and
+**Process** parameters.
+
+```powershell
+1..2 | ForEach-Object { 'begin' } { 'process' }
+```
+
+```Output
+begin
+process
+process
+```
+
+### Example 9: Using ForeEach-Object with more than two script blocks
+
+In this example we pass two script blocks positionally. All the script blocks bind to the
+**Process** parameter. However, they are treated as if they had been passed to the **Begin**,
+**Process**, and **End** parameters.
+
+```powershell
+1..2 | ForEach-Object { 'begin' } { 'process A' }  { 'process B' }  { 'end' }
+```
+
+```Output
+begin
+process A
+process B
+process A
+process B
+end
+```
+
+> [!NOTE]
+> The first script block is always mapped to the `begin` block, the last block is mapped to the
+> `end` block, and the blocks in between are all mapped to the `process` block.
+
+### Example 10: Run multiple script blocks for each pipeline item
+
+As shown in the previous example, multiple script blocks passed using the **Process** parameter get
+mapped to the **Begin** and **End** parameters. To avoid this mapping, you must provide explicit
+values for the **Begin** and **End** parameters.
+
+```powershell
+1..2 | ForEach-Object -Begin $null -Process { 'one' }, { 'two' }, { 'three' } -End $null
+```
+
+```Output
+one
+two
+three
+one
+two
+three
+```
+
 ## PARAMETERS
 
 ### -ArgumentList
@@ -222,7 +283,9 @@ Accept wildcard characters: False
 
 ### -Begin
 
-Specifies a script block that runs before this cmdlet processes any input objects.
+Specifies a script block that runs before this cmdlet processes any input objects. This script block
+is only run once for the entire pipeline. For more information about the `begin` block, see
+[about_Functions](about/about_functions.md#piping-objects-to-functions).
 
 ```yaml
 Type: ScriptBlock
@@ -238,7 +301,9 @@ Accept wildcard characters: False
 
 ### -End
 
-Specifies a script block that runs after this cmdlet processes all input objects.
+Specifies a script block that runs after this cmdlet processes all input objects. This script block
+is only run once for the entire pipeline. For more information about the `end` block, see
+[about_Functions](about/about_functions.md#piping-objects-to-functions).
 
 ```yaml
 Type: ScriptBlock
@@ -303,8 +368,15 @@ Accept wildcard characters: True
 
 ### -Process
 
-Specifies the operation that is performed on each input object. Enter a script block that describes
-the operation.
+Specifies the operation that is performed on each input object. This script block is run for every
+object in the pipeline. For more information about the `process` block, see
+[about_Functions](about/about_functions.md#piping-objects-to-functions).
+
+When you provide multiple script blocks to the **Process** parameter, the first script block is
+always mapped to the `begin` block. If there are only two script blocks, the second block is mapped
+to the `process` block. If there are three or more script blocks, first script block is always
+mapped to the `begin` block, the last block is mapped to the `end` block, and the blocks in between
+are all mapped to the `process` block.
 
 ```yaml
 Type: ScriptBlock[]
@@ -372,7 +444,8 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -389,7 +462,8 @@ This cmdlet returns objects that are determined by the input.
 ## NOTES
 
 - The `ForEach-Object` cmdlet works much like the **Foreach** statement, except that you cannot pipe
-  input to a **Foreach** statement. For more information about the **Foreach** statement, see [about_Foreach](./About/about_Foreach.md).
+  input to a **Foreach** statement. For more information about the **Foreach** statement, see
+  [about_Foreach](./About/about_Foreach.md).
 
 - Starting in PowerShell 4.0, `Where` and `ForEach` methods were added for use with collections. You
   can read more about these new methods here [about_arrays](./About/about_Arrays.md)
