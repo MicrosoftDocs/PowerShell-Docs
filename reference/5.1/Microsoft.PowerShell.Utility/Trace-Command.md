@@ -82,7 +82,8 @@ expression. In effect, the command being processed during the trace is
 Specifies the parameters and parameter values for the command being traced. The alias for
 **ArgumentList** is **Args**. This feature is especially useful for debugging dynamic parameters.
 
-For more information about the behavior of **ArgumentList**, see [about_Splatting](about_Splatting.md#splatting-with-arrays).
+For more information about the behavior of **ArgumentList**, see
+[about_Splatting](../Microsoft.PowerShell.Core/About/about_Splatting.md#splatting-with-arrays).
 
 ```yaml
 Type: Object[]

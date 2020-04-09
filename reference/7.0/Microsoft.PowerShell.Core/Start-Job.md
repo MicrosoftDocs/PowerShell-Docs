@@ -329,7 +329,7 @@ Specifies an array of arguments, or parameter values, for the script that is spe
 
 Arguments must be passed to **ArgumentList** as single-dimension array argument. For example, a
 comma-separated list. For more information about the behavior of **ArgumentList**, see
-[about_Splatting](about_Splatting.md#splatting-with-arrays).
+[about_Splatting](about/about_Splatting.md#splatting-with-arrays).
 
 
 ```yaml

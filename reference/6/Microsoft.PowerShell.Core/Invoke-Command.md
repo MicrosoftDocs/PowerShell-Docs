@@ -758,7 +758,7 @@ To use local variables in a command, use the following command format:
 
 The **param** keyword lists the local variables that are used in the command. **ArgumentList**
 supplies the values of the variables, in the order that they're listed. For more information about
-the behavior of **ArgumentList**, see [about_Splatting](about_Splatting.md#splatting-with-arrays).
+the behavior of **ArgumentList**, see [about_Splatting](about/about_Splatting.md#splatting-with-arrays).
 
 ```yaml
 Type: Object[]

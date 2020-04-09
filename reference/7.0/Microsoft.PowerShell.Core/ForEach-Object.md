@@ -330,7 +330,7 @@ safe to use here.
 ### -ArgumentList
 
 Specifies an array of arguments to a method call. For more information about the behavior of
-**ArgumentList**, see [about_Splatting](about_Splatting.md#splatting-with-arrays).
+**ArgumentList**, see [about_Splatting](about/about_Splatting.md#splatting-with-arrays).
 
 This parameter was introduced in Windows PowerShell 3.0.
 

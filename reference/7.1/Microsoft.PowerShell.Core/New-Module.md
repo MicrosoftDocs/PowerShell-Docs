@@ -255,7 +255,7 @@ Hello, World!
 ### -ArgumentList
 
 Specifies an array of arguments which are parameter values that are passed to the script block. For
-more information about the behavior of **ArgumentList**, see [about_Splatting](about_Splatting.md#splatting-with-arrays).
+more information about the behavior of **ArgumentList**, see [about_Splatting](about/about_Splatting.md#splatting-with-arrays).
 
 ```yaml
 Type: Object[]

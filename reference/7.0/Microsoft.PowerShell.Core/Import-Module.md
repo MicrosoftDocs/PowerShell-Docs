@@ -603,7 +603,7 @@ Specifies an array of arguments, or parameter values, that are passed to a scrip
 `Import-Module` command. This parameter is valid only when you're importing a script module.
 
 You can also refer to the **ArgumentList** parameter by its alias, **args**. For more information
-about the behavior of **ArgumentList**, see [about_Splatting](about_Splatting.md#splatting-with-arrays).
+about the behavior of **ArgumentList**, see [about_Splatting](about/about_Splatting.md#splatting-with-arrays).
 
 ```yaml
 Type: Object[]
