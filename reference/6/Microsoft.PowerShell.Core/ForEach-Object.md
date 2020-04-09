@@ -368,7 +368,7 @@ Accept wildcard characters: True
 
 ### -Process
 
-Specifies the operation that is performed on each input object. This script block is for every
+Specifies the operation that is performed on each input object. This script block is run for every
 object in the pipeline. For more information about the `process` block, see
 [about_Functions](about/about_functions.md#piping-objects-to-functions).
 
