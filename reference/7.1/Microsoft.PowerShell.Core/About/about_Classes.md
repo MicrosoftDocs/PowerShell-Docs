@@ -245,6 +245,12 @@ code.
 > This is fundamentally different from how PowerShell functions handle output,
 > where everything goes to the pipeline.
 
+Non-terminating errors written to the error stream from inside a class method
+are not passed through. You must use `throw` to surface a terminating error.
+Using the `Write-*` cmdlets, you can still write to PowerShell's output streams
+from within a class method. However, this should be avoided so that the method
+emits objects using only the `return` statement.
+
 ### Method output
 
 This example demonstrates no accidental output to the pipeline from class
@@ -274,11 +280,8 @@ class FunWithIntegers
 }
 
 $ints = [FunWithIntegers]::new()
-
 $ints.GetOddIntegers()
-
 $ints.GetEvenIntegers()
-
 $ints.SayHello()
 ```
 
