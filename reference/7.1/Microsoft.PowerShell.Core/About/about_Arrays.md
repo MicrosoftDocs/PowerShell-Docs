@@ -1,7 +1,7 @@
 ---
 keywords: powershell,cmdlet
 locale: en-us
-ms.date: 04/08/2020
+ms.date: 04/09/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_arrays?view=powershell-7.x&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Arrays
@@ -823,7 +823,7 @@ command that expects a collection gets fewer than two items.
 
 The following examples demonstrate this feature.
 
-## Zero objects
+### Zero objects
 
 ```powershell
 $a = $null
@@ -836,7 +836,7 @@ $a.Length
 0
 ```
 
-## One object
+### One object
 
 ```powershell
 $a = 4
@@ -852,6 +852,30 @@ $a[-1]
 4
 4
 ```
+
+## Indexing support for System.Tuple objects
+
+PowerShell 6.1 added the support for indexed access of **Tuple** objects, similar to arrays.
+For example:
+
+```powershell
+PS> $tuple = [Tuple]::Create(1, 'test')
+PS> $tuple[0]
+1
+PS> $tuple[1]
+test
+PS> $tuple[0..1]
+1
+test
+PS> $tuple[-1]
+test
+```
+
+Unlike arrays and other collection objects, **Tuple** objects are treated as a
+single object when passed through the pipeline or by parameters that support
+arrays of objects.
+
+For more information, see [System.Tuple](/dotnet/api/system.tuple).
 
 ## See also
 
