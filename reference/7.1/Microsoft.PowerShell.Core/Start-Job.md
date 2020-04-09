@@ -3,7 +3,7 @@ external help file: System.Management.Automation.dll-Help.xml
 keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Core
-ms.date: 12/09/2019
+ms.date: 04/08/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/start-job?view=powershell-7.x&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Start-Job
@@ -328,8 +328,9 @@ Specifies an array of arguments, or parameter values, for the script that is spe
 **FilePath** parameter or a command specified with the **ScriptBlock** parameter.
 
 Arguments must be passed to **ArgumentList** as single-dimension array argument. For example, a
-comma-separated list. For more information about array dimensions, see
-[about_Arrays](./about/about_arrays.md#rank).
+comma-separated list. For more information about the behavior of **ArgumentList**, see
+[about_Splatting](about_Splatting.md#splatting-with-arrays).
+
 
 ```yaml
 Type: Object[]

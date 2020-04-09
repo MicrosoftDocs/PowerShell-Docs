@@ -1,7 +1,7 @@
 ---
 keywords: powershell,cmdlet
 locale: en-us
-ms.date: 03/19/2020
+ms.date: 04/08/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_arrays?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Arrays
@@ -462,6 +462,9 @@ $a.ForEach({ $_ * $_})
 Just like the `-ArgumentList` parameter of `ForEach-Object`, the `arguments`
 parameter allows the passing of an array of arguments to a script block
 configured to accept them.
+
+For more information about the behavior of **ArgumentList**, see
+[about_Splatting](about_Splatting.md#splatting-with-arrays).
 
 #### ForEach(type convertToType)
 

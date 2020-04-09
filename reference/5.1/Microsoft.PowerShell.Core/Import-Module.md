@@ -3,7 +3,7 @@ external help file: System.Management.Automation.dll-Help.xml
 keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Core
-ms.date: 02/25/2020
+ms.date: 04/08/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/import-module?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Import-Module
@@ -583,8 +583,8 @@ Accept wildcard characters: True
 Specifies an array of arguments, or parameter values, that are passed to a script module during the
 `Import-Module` command. This parameter is valid only when you're importing a script module.
 
-You can also refer to the **ArgumentList** parameter by its alias, **args**. For more information,
-see [about_Aliases](About/about_Aliases.md).
+You can also refer to the **ArgumentList** parameter by its alias, **args**. For more information
+about the behavior of **ArgumentList**, see [about_Splatting](about_Splatting.md#splatting-with-arrays).
 
 ```yaml
 Type: Object[]

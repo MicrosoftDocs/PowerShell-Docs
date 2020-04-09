@@ -3,7 +3,7 @@ external help file: System.Management.Automation.dll-Help.xml
 keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Core
-ms.date: 03/30/2020
+ms.date: 04/08/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/invoke-command?view=powershell-7.x&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Invoke-Command
@@ -759,7 +759,8 @@ To use local variables in a command, use the following command format:
 -or- `<local-variable>`
 
 The **param** keyword lists the local variables that are used in the command. **ArgumentList**
-supplies the values of the variables, in the order that they're listed.
+supplies the values of the variables, in the order that they're listed. For more information about
+the behavior of **ArgumentList**, see [about_Splatting](about_Splatting.md#splatting-with-arrays).
 
 ```yaml
 Type: Object[]
