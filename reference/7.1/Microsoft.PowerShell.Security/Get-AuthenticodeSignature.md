@@ -72,7 +72,7 @@ The command uses the `Get-ChildItem` cmdlet to get the files in the `$PSHOME` di
 pattern of *.* to exclude directories (although it also excludes files without a dot in the
 filename).
 
-The command uses a pipeline operator (|) to send the files in `$PSHOME` to the `ForEach-Object`
+The command uses a pipeline operator (`|`) to send the files in `$PSHOME` to the `ForEach-Object`
 cmdlet, where `Get-AuthenticodeSignature` is called for each file.
 
 The results of the `Get-AuthenticodeSignature` command are sent to a `Where-Object` command that
@@ -92,7 +92,8 @@ example, the file extension is specified along with the content of the file.
 ### -Content
 
 Contents of a file as a byte array for which the Authenticode signature is retrieved. This parameter
-must be used with **SourcePathOrExtension** parameter. The contents of the file must be in Unicode (UTF-16LE) format.
+must be used with **SourcePathOrExtension** parameter. The contents of the file must be in Unicode
+(UTF-16LE) format.
 
 ```yaml
 Type: Byte[]
