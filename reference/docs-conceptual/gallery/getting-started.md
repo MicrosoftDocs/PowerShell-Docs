@@ -7,21 +7,22 @@ title:  Get Started with the PowerShell Gallery
 # Getting Started with the PowerShell Gallery
 
 The PowerShell Gallery is a package repository containing scripts, modules, and DSC resources you
-can download and leverage. You use the cmdlets in the [PowerShellGet](/powershell/module/powershellget)
-module to install packages from the PowerShell Gallery. You do not need to sign in to download items
-from the PowerShell Gallery.
+can download and leverage. You use the cmdlets in the
+[PowerShellGet](/powershell/module/powershellget) module to install packages from the PowerShell
+Gallery. You do not need to sign in to download items from the PowerShell Gallery.
 
 > [!NOTE]
 > It is possible to download a package from the PowerShell Gallery directly, but this is not a
-> recommended approach. For more details, see [Manual Package Download](how-to/working-with-packages/manual-download.md).
+> recommended approach. For more details, see
+> [Manual Package Download](how-to/working-with-packages/manual-download.md).
 
 ## Discovering packages from the PowerShell Gallery
 
 You can find packages in the PowerShell Gallery by using the **Search** control on the PowerShell
 Gallery's [home page](https://www.powershellgallery.com), or by browsing through the Modules and
 Scripts from the [Packages page](https://www.powershellgallery.com/packages). You can also find
-packages from the PowerShell Gallery by running the [Find-Module][], [Find-DscResource], and [Find-Script][]
-cmdlets, depending on the package type, with `-Repository PSGallery`.
+packages from the PowerShell Gallery by running the [Find-Module][], [Find-DscResource], and
+[Find-Script][] cmdlets, depending on the package type, with `-Repository PSGallery`.
 
 You can filter results from the Gallery by using the following parameters:
 
@@ -36,10 +37,10 @@ You can filter results from the Gallery by using the following parameters:
 - Command
 - Filter
 
-If you're only interested in discovering specific DSC resources in the Gallery, you can run the [Find-DscResource][]
-cmdlet. Find-DscResource returns data on DSC resources contained in the Gallery. Because DSC
-resources are always delivered as part of a module, you still need to run [Install-Module][] to
-install those DSC resources.
+If you're only interested in discovering specific DSC resources in the Gallery, you can run the
+[Find-DscResource][] cmdlet. Find-DscResource returns data on DSC resources contained in the
+Gallery. Because DSC resources are always delivered as part of a module, you still need to run
+[Install-Module][] to install those DSC resources.
 
 ## Learning about packages in the PowerShell Gallery
 
@@ -63,9 +64,10 @@ We encourage the following process when downloading packages from the PowerShell
 
 ### Inspect
 
-To download a package from the Gallery for inspection, run either the [Save-Module][] or [Save-Script][]
-cmdlet, depending on the package type. This lets you save the package locally without installing it,
-and inspect the package contents. Remember to delete the saved package manually.
+To download a package from the Gallery for inspection, run either the [Save-Module][] or
+[Save-Script][] cmdlet, depending on the package type. This lets you save the package locally
+without installing it, and inspect the package contents. Remember to delete the saved package
+manually.
 
 Some of these packages are authored by Microsoft, and others are authored by the PowerShell
 community. Microsoft recommends that you review the contents and code of packages on this gallery
@@ -76,8 +78,8 @@ that package's page.
 
 ### Install
 
-To install a package from the Gallery for use, run either the [Install-Module][] or [Install-Script][]
-cmdlet, depending on the package type.
+To install a package from the Gallery for use, run either the [Install-Module][] or
+[Install-Script][] cmdlet, depending on the package type.
 
 [Install-Module][] installs the module to `$env:ProgramFiles\WindowsPowerShell\Modules` by default.
 This requires an administrator account. If you add the `-Scope CurrentUser` parameter, the module is
@@ -103,23 +105,34 @@ To learn more about Azure Automation, see the [Azure Automation](/azure/automati
 
 ## Updating packages from the PowerShell Gallery
 
-To update packages installed from the PowerShell Gallery, run either the [Update-Module][] or [Update-Script][]
-cmdlet. When run without any additional parameters, [Update-Module][] attempts to update all modules
-installed by running [Install-Module][]. To selectively update modules, add the `-Name` parameter.
+To update packages installed from the PowerShell Gallery, run either the [Update-Module][] or
+[Update-Script][] cmdlet. When run without any additional parameters, [Update-Module][] attempts to
+update all modules installed by running [Install-Module][]. To selectively update modules, add the
+`-Name` parameter.
 
-Similarly, when run without any additional parameters, [Update-Script][] also attempts to update
-all scripts installed by running [Install-Script][]. To selectively update scripts, add the `-Name`
+Similarly, when run without any additional parameters, [Update-Script][] also attempts to update all
+scripts installed by running [Install-Script][]. To selectively update scripts, add the `-Name`
 parameter.
 
 ## List packages that you have installed from the PowerShell Gallery
 
-To find out which modules you have installed from the PowerShell Gallery, run the [Get-InstalledModule][]
-cmdlet. This command lists all of the modules you have on your system that were installed directly
-from the PowerShell Gallery.
+To find out which modules you have installed from the PowerShell Gallery, run the
+[Get-InstalledModule][] cmdlet. This command lists all of the modules you have on your system that
+were installed directly from the PowerShell Gallery.
 
-Similarly, to find out which scripts you have installed from the PowerShell Gallery, run the [Get-InstalledScript][]
-cmdlet. This command lists all the scripts you have on your system that were installed directly from
-the PowerShell Gallery.
+Similarly, to find out which scripts you have installed from the PowerShell Gallery, run the
+[Get-InstalledScript][] cmdlet. This command lists all the scripts you have on your system that were
+installed directly from the PowerShell Gallery.
+
+## Network access to the PowerShell Gallery
+
+The PowerShell Gallery uses the following hostnames.
+
+- psg-prod-eastus.azureedge.net - the CDN hostname
+- devopsgallerystorage.blob.core.windows.net - the storage account hostname
+- *.powershellgallery.com - the website
+
+These hostnames should be added to the allow lists that control access from your network.
 
 [Find-DscResource]: /powershell/module/powershellget/Find-DscResource
 [Find-Module]: /powershell/module/powershellget/Find-Module
