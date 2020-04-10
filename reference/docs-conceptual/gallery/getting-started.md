@@ -128,9 +128,9 @@ installed directly from the PowerShell Gallery.
 
 The PowerShell Gallery uses the following hostnames.
 
-- psg-prod-eastus.azureedge.net - the CDN hostname
-- devopsgallerystorage.blob.core.windows.net - the storage account hostname
-- *.powershellgallery.com - the website
+- `psg-prod-eastus.azureedge.net` - the CDN hostname
+- `devopsgallerystorage.blob.core.windows.net` - the storage account hostname
+- `*.powershellgallery.com` - the website
 
 These hostnames should be added to the allow lists that control access from your network.
 
