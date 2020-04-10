@@ -461,16 +461,16 @@ Write-Error -Message 'Test Error' ; Write-Host 'Hello World' : Test Error
 At line:1 char:1
 + Write-Error -Message 'Test Error' ; Write-Host 'Hello World'
 + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-+ CategoryInfo          : NotSpecified: (:) [Write-Error], WriteErrorException
-+ FullyQualifiedErrorId : Microsoft.PowerShell.Commands.WriteErrorException
+    + CategoryInfo          : NotSpecified: (:) [Write-Error], WriteErrorException
+    + FullyQualifiedErrorId : Microsoft.PowerShell.Commands.WriteErrorException
 
-The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to
-Stop: Hello World
+The running command stopped because the preference variable "ErrorActionPreference"
+or common parameter is set to Stop: Test Error
 
-Write-Error 'Hello World' ; Write-Host 'Hello World' : Hello World
+Write-Error -Message 'Test Error' ; Write-Host 'Hello World' : Test Error
 At line:1 char:1
-+ Write-Error 'Hello World' ; Write-Host 'Hello World'
-+ ~~~~~~~~~~~~~~~~~~~~~~~~~
++ Write-Error -Message 'Test Error' ; Write-Host 'Hello World'
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     + CategoryInfo          : NotSpecified: (:) [Write-Error], WriteErrorException
     + FullyQualifiedErrorId : Microsoft.PowerShell.Commands.WriteErrorException
 ```
