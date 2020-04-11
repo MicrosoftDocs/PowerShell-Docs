@@ -5,7 +5,10 @@ title:  workflows guide
 ---
 # PSWorkflow Module
 
-This section contains the help topics for the **PSWorkflow** module, which includes cmdlets that support the Windows PowerShell Workflow feature. The **PSWorkflow** module is installed with Windows PowerShell.
+This section contains the help topics for the **PSWorkflow** module, which includes cmdlets that support the Windows PowerShell Workflow feature. The **PSWorkflow** module is installed with Windows PowerShell 5.1.
+
+> [!NOTE]
+> Workflows are only supported in Windows PowerShell 5.1.
 
 ## Help Topics
 
