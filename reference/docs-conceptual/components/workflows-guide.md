@@ -21,5 +21,5 @@ This section contains the help topics for the **PSWorkflow** module, which inclu
 - [about_InlineScript](/powershell/module/psworkflow/about/about_InlineScript?view=powershell-5.1)
 - [about_Parallel](/powershell/module/psworkflow/about/about_Parallel?view=powershell-5.1)
 - [about_Sequence](/powershell/module/psworkflow/about/about_Sequence?view=powershell-5.1)
-- [about_Suspend-Workflow](/powershell/module/psworkflow/about/aabout_Suspend-Workflow?view=powershell-5.1)
+- [about_Suspend-Workflow](/powershell/module/psworkflow/about/about_Suspend-Workflow?view=powershell-5.1)
 - [PowerShell Workflow Utility Cmdlets](/powershell/module/psworkflowutility/?view=powershell-5.1)
