@@ -105,7 +105,7 @@ Write-Host "I won't print" 6>$null
 
 ```
 
-These commands suppress output from Write-Host. The first command uses the `Ignore` argument for the `-InformationAction` parameter. The second command uses output redirection to `$null` to suppress output.
+These commands effectively suppress output of the Write-Host cmdlet. The first one uses the InformationAction parameter with the Ignore Value to suppress output to the information stream. The second example redirects the information stream of the command to the $null variable and thereby suppresses it.
 
 ## PARAMETERS
 
