@@ -2,7 +2,7 @@
 description: Describes how you can use classes to create your own custom types.
 keywords: powershell,cmdlet
 locale: en-us
-ms.date: 03/27/2020
+ms.date: 04/12/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_classes?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Classes
@@ -798,11 +798,19 @@ class ChildClass1 : BaseClass
 1
 ```
 
-## Interfaces
+## Inheriting from interfaces
 
-The syntax for declaring interfaces is similar to C#. You can declare
-interfaces after base types or immediately after a colon (`:`) when there is no
-base type specified. Separate all type names with commas.
+PowerShell classes can implement an interface using the same inheritance syntax
+used to extend base classes. Because interfaces allow multiple inheritance, a
+PowerShell class implementing an interface may inherit from multiple types, by
+separating the type names after the colon (`:`) with commas (`,`). A PowerShell
+class that implements an interface must implement all the members of that
+interface. Not implementing interface members causes a parse-time error in the
+script.
+
+> [!NOTE]
+> PowerShell does not currently support declaring new interfaces in PowerShell
+> script.
 
 ```powershell
 class MyComparable : System.IComparable
