@@ -105,8 +105,7 @@ Write-Host "I won't print" 6>$null
 
 ```
 
-This command displays the string "Red on white text." The text is 'red', as defined by the `ForegroundColor` parameter.
-The background is 'white', as defined by the `BackgroundColor` parameter.
+These commands suppress output from Write-Host. The first command uses the `Ignore` argument for the `-InformationAction` parameter. The second command uses output redirection to `$null` to suppress output.
 
 ## PARAMETERS
 
