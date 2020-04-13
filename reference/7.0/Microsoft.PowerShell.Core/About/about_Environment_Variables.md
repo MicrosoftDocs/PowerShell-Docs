@@ -1,7 +1,7 @@
 ---
 keywords: powershell,cmdlet
 locale: en-us
-ms.date: 01/14/2020
+ms.date: 04/13/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_environment_variables?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Environment_Variables
@@ -23,50 +23,19 @@ other programs. For example, the `WINDIR` environment variable contains the
 location of the Windows installation directory. Programs can query the value of
 this variable to determine where Windows operating system files are located.
 
-PowerShell can manage and access environment variables in any of the supported
-operating system platforms. You view and change Windows environment variables,
-including the variables set in the registry, and those set for a particular
-session. The PowerShell environment provider simplifies this process by making
-it easy to view and change the environment variables.
+PowerShell can access and manage environment variables in any of the supported
+operating system platforms. The PowerShell environment provider simplifies this
+process by making it easy to view and change the environment variables.
 
-Unlike other types of variables in PowerShell, environment variables
-and their values are inherited by child sessions, such as local background
-jobs and the sessions in which module members run. This makes environment
-variables well suited to storing values that are needed in both parent and
-child sessions.
+Unlike other types of variables in PowerShell, environment variables and their
+values are inherited by child sessions, such as local background jobs and the
+sessions in which module members run. This makes environment variables well
+suited to storing values that are needed in both parent and child sessions.
 
-### PowerShell Environment Provider
-
-The PowerShell environment provider lets you access environment variables in a
-PowerShell drive (the `Env:` drive). This drive looks much like a file system
-drive. To go to the `Env:` drive, type:
-
-```powershell
-Set-Location Env:
-```
-
-Then, to display the contents of the `Env:` drive, type:
-
-```powershell
-Get-ChildItem
-```
-
-You can view the environment variables in the `Env:` drive from any other
-PowerShell drive, and you can go into the `Env:` drive to view and change the
-environment variables.
-
-### Environment Variable Objects
-
-In PowerShell, each environment variable is represented by an object
-that is an instance of the **System.Collections.DictionaryEntry** class.
-
-In each **DictionaryEntry** object, the name of the environment variable is the
-dictionary key. The value of the variable is the dictionary value.
-
-To display an environment variable in PowerShell, get an object that represents
-the variable, and then display the values of the object properties. When you
-change an environment variable in PowerShell, use the methods that are
-associated with the **DictionaryEntry** object.
+Each environment variable is represented by an instance of the
+**System.Collections.DictionaryEntry** class. In each **DictionaryEntry**
+object, the name of the environment variable is the dictionary key. The value
+of the variable is the dictionary value.
 
 To display the properties and methods of the object that represents an
 environment variable in PowerShell, use the `Get-Member` cmdlet. For example,
@@ -77,154 +46,12 @@ type:
 Get-Item -Path Env:* | Get-Member
 ```
 
-### Displaying Environment Variables
+## Environment Variables That Store Preferences
 
-You can use the cmdlets that contain the Item noun (the Item cmdlets) to
-display and change the values of environment variables. Because environment
-variables do not have child items, the output of `Get-Item` and `Get-ChildItem`
-is the same.
-
-When you refer to an environment variable, type the `Env:` drive name followed
-by the name of the variable. For example, to display the value of the
-`COMPUTERNAME` environment variable, type:
-
-```powershell
-Get-ChildItem Env:Computername
-```
-
-To display the values of all the environment variables, type:
-
-```powershell
-Get-ChildItem Env:
-```
-
-By default, PowerShell displays the environment variables in the order in which
-it retrieves them. To sort the list of environment variables by variable name,
-pipe the output of a `Get-ChildItem` command to the `Sort-Object` cmdlet. For
-example, from any PowerShell drive, type:
-
-```powershell
-Get-ChildItem Env: | Sort Name
-```
-
-You can also go into the `Env:` drive by using the `Set-Location` cmdlet:
-
-```powershell
-Set-Location Env:
-```
-
-When you are in the `Env:` drive, you can omit the `Env:` drive name from the
-path. For example, to display all the environment variables, type:
-
-```powershell
-PS Env:\> Get-ChildItem
-```
-
-To display the value of the `COMPUTERNAME` variable from within the `Env:`
-drive, type:
-
-```powershell
-PS Env:\> Get-ChildItem ComputerName
-```
-
-You can also display and change the values of environment variables without
-using a cmdlet by using the expression parser in PowerShell. To display the
-value of an environment variable, use the following syntax:
-
-```
-$Env:<variable-name>
-```
-
-For example, to display the value of the `WINDIR` environment variable, type
-the following command at the PowerShell command prompt:
-
-```powershell
-$Env:windir
-```
-
-In this syntax, the dollar sign (`$`) indicates a variable, and the drive name
-indicates an environment variable.
-
-> [!NOTE]
-> In Windows, environment variable names are case-insensitive. On Linux and
-> macOS, environment variable names are case-sensitive. In most cases,
-> environment variables are all uppercase. Refer to the documentation for your
-> operating system for specific information.
-
-### Changing Environment Variables
-
-To make a persistent change to an environment variable, use System in Control
-Panel (Advanced tab or the Advanced System Settings item) to store the change
-in the registry.
-
-When you change environment variables in PowerShell, the change affects only
-the current session. This behavior resembles the behavior of the Set command in
-Windows-based environments and the `Setenv` command in UNIX-based environments.
-
-You must also have permission to change the values of the variables. If you
-try to change a value without sufficient permission, the command fails, and
-PowerShell displays an error.
-
-You can change the values of variables without using a cmdlet by using the
-following syntax:
-
-```powershell
-$Env:<variable-name> = "<new-value>"
-```
-
-For example, to append `;c:\temp` to the value of the `Path` environment
-variable, use the following syntax:
-
-```powershell
-$Env:path += ";c:\temp"
-```
-
-On Linux or MacOS, the colon (`:`) in the command separates the new path from
-the path that precedes it in the list.
-
-```powershell
-$Env:path += ":/usr/local/temp"
-```
-
-You can also use the Item cmdlets, such as `Set-Item`, `Remove-Item`, and
-`Copy-Item` to change the values of environment variables. For example, to use
-the `Set-Item` cmdlet to append `;c:\temp` to the value of the `Path`
-environment variable, use the following syntax:
-
-```powershell
-Set-Item -Path Env:Path -Value ($Env:Path + ";C:\Temp")
-```
-
-In this command, the value is enclosed in parentheses so that it is
-interpreted as a unit.
-
-### Saving Changes to Environment Variables
-
-To create or change the value of an environment variable in every PowerShell
-session, add the change to your PowerShell profile.
-
-For example, to add the `C:\Temp` directory to the `Path` environment
-variable in every PowerShell session, add the following command to your
-PowerShell profile.
-
-```powershell
-$Env:Path += ";C:\Temp"
-```
-
-To add the command to an existing profile, such as the **CurrentUser**,
-**AllHosts** profile, type:
-
-```powershell
-Add-Content -Path $Profile.CurrentUserAllHosts -Value '$Env:Path += ";C:\Temp"'
-```
-
-### Environment Variables That Store Preferences
-
-PowerShell features can use environment variables to store user
-preferences. These variables work like preference variables, but they are
-inherited by child sessions of the sessions in which they are created. For
-more information about preference variables, see
-[about_preference_variables](about_Preference_Variables.md).
+PowerShell features can use environment variables to store user preferences.
+These variables work like preference variables, but they are inherited by child
+sessions of the sessions in which they are created. For more information about
+preference variables, see [about_preference_variables](about_Preference_Variables.md).
 
 The environment variables that store preferences include:
 
@@ -245,20 +72,27 @@ The environment variables that store preferences include:
 - PSModuleAnalysisCachePath
 
   PowerShell provides control over the file that is used to cache data about a
-  module, such as the commands it exports.
+  module, such as the commands it exports. The cache is read at startup while
+  searching for a command and is written on a background thread sometime after
+  a module is imported.
 
-  By default on Windows, this cache is normally stored in the file
-  `Microsoft\Windows\PowerShell\ModuleAnalysisCache` within
-  `$env:LOCALAPPDATA`. The cache is typically read at startup while searching
-  for a command and is written on a background thread sometime after a module
-  is imported.
+  Default location of the cache is:
 
-  To change the default location of the cache, set the
-  `$env:PSModuleAnalysisCachePath` environment variable before starting
-  PowerShell. Changes to this environment variable only affects children
-  processes. The value should name a full path (including filename) that
-  PowerShell has permission to create and write files. To disable the file
-  cache, set this value to an invalid location, for example:
+  - Windows PowerShell 5.1: `$env:LOCALAPPDATA\Microsoft\Windows\PowerShell`
+  - PowerShell 6.0 and higher: `$env:LOCALAPPDATA\Microsoft\PowerShell`
+  - Non-Windows default: `~/.cache/powershell`
+
+  The default filename for the cache is `ModuleAnalysisCache`. When you have
+  multiple instances of PowerShell installed, the filename will include a
+  hexadecimal suffix so that there is a a unique filename per installation.
+
+  To change the default location of the cache, set the environment variable
+  before starting PowerShell. Changes to this environment variable only affect
+  child processes. The value should name a full path (including filename)
+  that PowerShell has permission to create and write files.
+
+  To disable the file cache, set this value to an invalid location, for
+  example:
 
   ```powershell
   # `NUL` here is a special device on Windows that cannot be written to,
@@ -291,86 +125,222 @@ The environment variables that store preferences include:
 
   By default, the effective locations assigned to `$env:PSModulePath` are:
 
-  - System-wide locations: `$PSHOME\Modules`
+  - System-wide locations: These folders contain modules that ship with
+    PowerShell. The modules are store in the `$PSHOME\Modules` location. Also,
+    This is the location where the Windows management modules are installed.
 
-    These folders contain modules that ship with Windows and PowerShell.
+  - User-installed modules: These are modules installed by the user.
+    `Install-Module` has a **Scope** parameter that allows you to specify
+    whether the module is installed for the current user or for all users. For
+    more information, see [Install-Module](../../PowerShellGet/Install-Module.md).
 
-    DSC resources that are included with PowerShell are stored in the
-    `$PSHOME\Modules\PSDesiredStateConfiguration\DSCResources` folder.
-
-  - User-specific modules: These are modules installed by the user in the
-    user's scope. `Install-Module` has a **Scope** parameter that allows you to
-    specify whether the module is installed for the current user or for all
-    users. For more information, see
-    [Install-Module](../../PowerShellGet/Install-Module.md).
-
-    The user-specific **CurrentUser** location on Windows is the
-    `PowerShell\Modules` folder located in the **Documents** location in your
-    user profile. The specific path of that location varies by version of
-    Windows and whether or not you are using folder redirection. Microsoft
-    OneDrive can also change the location of your **Documents** folder.
-
-    By default, on Windows 10, that location is
-    `$HOME\Documents\PowerShell\Modules`. On Linux or Mac, the **CurrentUser**
-    location is `$HOME/.local/share/powershell/Modules`.
-
-    > [!NOTE]
-    > You can verify the location of your **Documents** folder using the
-    > following command: `[Environment]::GetFolderPath('MyDocuments')`.
-
-  - The **AllUsers** location is `$env:PROGRAMFILES\WindowsPowerShell\Modules`.
-    on Windows.
+    - On Windows, the location of the user-specific **CurrentUser** scope is
+      the `$HOME\Documents\PowerShell\Modules` folder. The location of the
+      **AllUsers** scope is `$env:ProgramFiles\PowerShell\Modules`.
+    - On non-Windows systems, the location of the user-specific **CurrentUser**
+      scope is the `$HOME/.local/share/powershell/Modules` folder. The location
+      of the **AllUsers** scope is `/usr/local/share/powershell/Modules`.
 
   In addition, setup programs that install modules in other directories, such
   as the Program Files directory, can append their locations to the value of
-  `PSModulePath`.
+  `$env:PSModulePath`.
 
-  To change the default module directories for the current session, use the
-  following command format to change the value of the `PSModulePath`
-  environment variable.
+  For more information, see [about_PSModulePath](about_PSModulePath.md).
 
-  For example, to add the `C:\Program Files\Fabrikam\Modules` directory to
-  the value of the PSModulePath environment variable, type:
+## Managing environment variables
 
-  ```powershell
-  $Env:PSModulePath = $Env:PSModulePath+";C:\Program Files\Fabrikam\Modules"
-  ```
+Environment variables can be access and changed using several different methods
+in PowerShell.
 
-  The semi-colon (;) in the command separates the new path from the path that
-  precedes it in the list.
+- You can use the Environment provider drive.
+- You can use the Item cmdlets to get or set values.
+- You can use the .NET **System.Environment** class.
+- On Windows, you can also use the System Control Panel.
 
-  To change the value of `PSModulePath` in every session, add the previous
-  command to your PowerShell profile or use the **SetEnvironmentVariable**
-  method of the **Environment** class.
 
-  The following command uses the **GetEnvironmentVariable** method to get the
-  machine setting of `PSModulePath` and the **SetEnvironmentVariable** method
-  to add the `C:\Program Files\Fabrikam\Modules` path to the value.
+### Using the Environment provider
 
-  ```powershell
-  $path = [System.Environment]::GetEnvironmentVariable("PSModulePath",
-   "Machine")
-  [System.Environment]::SetEnvironmentVariable("PSModulePath", $path +
-  ";C:\Program Files\Fabrikam\Modules", "Machine")
-  ```
+The PowerShell environment provider lets you access environment variables in a
+PowerShell drive (the `Env:` drive). This drive looks much like a file system
+drive. To go to the `Env:` drive, type:
 
-  To add a path to the user setting, change the target value to User.
+```powershell
+Set-Location Env:
+```
 
-  ```powershell
-  $path = [System.Environment]::GetEnvironmentVariable("PSModulePath",
-   "User")
-  [System.Environment]::SetEnvironmentVariable("PSModulePath", $path +
-  ";$home\Documents\Fabrikam\Modules", "User")
-  ```
+Use the Content cmdlets to get or set the values of an environment variable.
 
-  For more information about the methods of the System.Environment class, see
-  [Environment Methods](/dotnet/api/system.environment).
+```powershell
+PS Env:\> Set-Content -Path Test -Value 'Test value'
+PS Env:\> Get-Content -Path Test
+Test value
+```
 
-  You can add also add a command that changes the value to your profile or use
-  System in Control Panel to change the value of the `PSModulePath` environment
-  variable in the registry.
+You can view the environment variables in the `Env:` drive from any other
+PowerShell drive, and you can go into the `Env:` drive to view and change the
+environment variables.
 
-  For more information, see [about_Modules](about_Modules.md).
+### Using Item cmdlets
+
+When you refer to an environment variable, type the `Env:` drive name followed
+by the name of the variable. For example, to display the value of the
+`COMPUTERNAME` environment variable, type:
+
+```powershell
+Get-ChildItem Env:Computername
+```
+
+To display the values of all the environment variables, type:
+
+```powershell
+Get-ChildItem Env:
+```
+
+Because environment variables do not have child items, the output of `Get-Item`
+and `Get-ChildItem` is the same.
+
+By default, PowerShell displays the environment variables in the order in which
+it retrieves them. To sort the list of environment variables by variable name,
+pipe the output of a `Get-ChildItem` command to the `Sort-Object` cmdlet. For
+example, from any PowerShell drive, type:
+
+```powershell
+Get-ChildItem Env: | Sort Name
+```
+
+You can also go into the `Env:` drive by using the `Set-Location` cmdlet:
+
+```powershell
+Set-Location Env:
+```
+
+When you are in the `Env:` drive, you can omit the `Env:` drive name from the
+path. For example, to display all the environment variables, type:
+
+```powershell
+PS Env:\> Get-ChildItem
+```
+
+To display the value of the `COMPUTERNAME` variable from within the `Env:`
+drive, type:
+
+```powershell
+PS Env:\> Get-ChildItem ComputerName
+```
+
+### Using variable syntax
+
+You can also display and change the values of environment variables without
+using a cmdlet by using the expression parser in PowerShell. To display the
+value of an environment variable, use the following syntax:
+
+```
+$Env:<variable-name>
+```
+
+For example, to display the value of the `WINDIR` environment variable, type
+the following command at the PowerShell command prompt:
+
+```powershell
+$Env:windir
+```
+
+In this syntax, the dollar sign (`$`) indicates a variable, and the drive name
+indicates an environment variable.
+
+> [!NOTE]
+> In Windows, environment variable names are case-insensitive. On Linux and
+> macOS, environment variable names are case-sensitive. In most cases,
+> environment variables are all uppercase. Refer to the documentation for your
+> operating system for specific information.
+
+### Changing Environment Variables
+
+On Windows, environment variables can be defined in three scopes:
+
+- Machine (or System) scope
+- User scope
+- Process scope
+
+The _Process_ scope contains the environment variables available in the current
+process, or PowerShell session. This list of variables is inherited from the
+parent process and is constructed from the variables in the _Machine_ and
+_User_ scopes. Unix-based platforms only have the _Process_ scope.
+
+When you change environment variables in PowerShell, the change affects only
+the current session. This behavior resembles the behavior of the `Set` command
+in the Windows Command Shell and the `Setenv` command in UNIX-based
+environments. To change values in the Machine or User scopes, you must use the
+methods of the **System.Environment** class.
+
+To make changes to variable, must also have permission. If you try to change a
+value without sufficient permission, the command fails and PowerShell displays
+an error.
+
+You can change the values of variables without using a cmdlet using the
+following syntax:
+
+```powershell
+$Env:<variable-name> = "<new-value>"
+```
+
+For example, to append `;c:\temp` to the value of the `Path` environment
+variable, use the following syntax:
+
+```powershell
+$Env:Path += ";c:\temp"
+```
+
+On Linux or MacOS, the colon (`:`) in the command separates the new path from
+the path that precedes it in the list.
+
+```powershell
+$Env:PATH += ":/usr/local/temp"
+```
+
+You can also use the Item cmdlets, such as `Set-Item`, `Remove-Item`, and
+`Copy-Item` to change the values of environment variables. For example, to use
+the `Set-Item` cmdlet to append `;c:\temp` to the value of the `Path`
+environment variable, use the following syntax:
+
+```powershell
+Set-Item -Path Env:Path -Value ($Env:Path + ";C:\Temp")
+```
+
+In this command, the value is enclosed in parentheses so that it is
+interpreted as a unit.
+
+### Saving Changes to Environment Variables
+
+To make a persistent change to an environment variable on Windows, use the
+System Control Panel. Select **Advanced System Settings**. On the **Advanced**
+tab, click **Environment Variable...**. You can add or edit existing
+environment variables in the **User** and **System** (Machine) scopes. Windows
+writes these values to the Registry so that they persist across sessions and
+system restarts.
+
+Alternately, you can add or change environment variables in your PowerShell
+profile. This method works for any version of PowerShell on any supported
+platform.
+
+### Using System.Environment methods
+
+The **System.Environment** class provides **GetEnvironmentVariable** and
+**SetEnvironmentVariable** Methods that allow you specify the scope of the
+variable.
+
+The following example uses the **GetEnvironmentVariable** method to get the
+machine setting of `PSModulePath` and the **SetEnvironmentVariable** method
+to add the `C:\Program Files\Fabrikam\Modules` path to the value.
+
+```powershell
+$path = [Environment]::GetEnvironmentVariable('PSModulePath', 'Machine')
+$newpath = $path + ';C:\Program Files\Fabrikam\Modules'
+[Environment]::SetEnvironmentVariable("PSModulePath", $newpath, 'Machine')
+```
+
+For more information about the methods of the **System.Environment** class, see
+[Environment Methods](/dotnet/api/system.environment).
 
 ## SEE ALSO
 
