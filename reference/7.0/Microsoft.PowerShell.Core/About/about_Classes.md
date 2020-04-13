@@ -2,7 +2,7 @@
 description: Describes how you can use classes to create your own custom types.
 keywords: powershell,cmdlet
 locale: en-us
-ms.date: 03/27/2020
+ms.date: 04/12/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_classes?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Classes
@@ -718,7 +718,7 @@ Brand               : Fabrikam, Inc.
 Model               : Fbk5040
 ```
 
-## Calling base class constructors
+### Calling base class constructors
 
 To invoke a base class constructor from a subclass, add the `base` keyword.
 
@@ -751,7 +751,7 @@ $littleone.Age
 10
 ```
 
-## Invoke base class methods
+### Invoke base class methods
 
 To override existing methods in subclasses, declare methods using the same
 name and signature.
@@ -798,11 +798,19 @@ class ChildClass1 : BaseClass
 1
 ```
 
-## Interfaces
+### Inheriting from interfaces
 
-The syntax for declaring interfaces is similar to C#. You can declare
-interfaces after base types or immediately after a colon (`:`) when there is no
-base type specified. Separate all type names with commas.
+PowerShell classes can implement an interface using the same inheritance syntax
+used to extend base classes. Because interfaces allow multiple inheritance, a
+PowerShell class implementing an interface may inherit from multiple types, by
+separating the type names after the colon (`:`) with commas (`,`). A PowerShell
+class that implements an interface must implement all the members of that
+interface. Omitting the implemention interface members causes a parse-time
+error in the script.
+
+> [!NOTE]
+> PowerShell does not currently support declaring new interfaces in PowerShell
+> script.
 
 ```powershell
 class MyComparable : System.IComparable
@@ -828,6 +836,16 @@ class MyComparableBar : bar, System.IComparable
 aliases, and variables, as defined by the module. Classes are not imported. The
 `using module` statement imports the classes defined in the module. If the
 module isn't loaded in the current session, the `using` statement fails.
+
+## The PSReference type is not supported with class members
+
+Using the `[ref]` type-cast with a class member silently fails. APIs that use
+`[ref]` parameters cannot be used with class members. The **PSReference** was
+designed to support COM objects. COM objects have cases where you need to pass
+a value in by reference.
+
+For more information about the `[ref]` type, see
+[PSReference Class](/dotnet/api/system.management.automation.psreference).
 
 ## See also
 
