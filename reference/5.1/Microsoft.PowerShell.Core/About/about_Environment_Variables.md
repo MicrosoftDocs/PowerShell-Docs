@@ -46,7 +46,7 @@ type:
 Get-Item -Path Env:* | Get-Member
 ```
 
-## Environment Variables That Store Preferences
+## Environment variables that store preferences
 
 PowerShell features can use environment variables to store user preferences.
 These variables work like preference variables, but they are inherited by child
@@ -97,8 +97,8 @@ The environment variables that store preferences include:
   $env:PSModuleAnalysisCachePath = 'NUL'
   ```
 
-  This sets the path to an invalid device. If PowerShell can't write to the
-  path, no error is returned, but you can see error reporting by using a
+  This sets the path to the **NUL** device. PowerShell can't write to the
+  path but no error is returned. You can see the errors reported using a
   tracer:
 
   ```powershell
@@ -154,7 +154,7 @@ in PowerShell.
 
 ### Using the Environment provider
 
-The PowerShell environment provider lets you access environment variables in a
+The PowerShell Environment provider lets you access environment variables in a
 PowerShell drive (the `Env:` drive). This drive looks much like a file system
 drive. To go to the `Env:` drive, type:
 
@@ -242,7 +242,7 @@ $Env:windir
 In this syntax, the dollar sign (`$`) indicates a variable, and the drive name
 indicates an environment variable.
 
-### Changing Environment Variables
+### Changing environment variables
 
 On Windows, environment variables can be defined in three scopes:
 
@@ -279,13 +279,6 @@ variable, use the following syntax:
 $Env:Path += ";c:\temp"
 ```
 
-On Linux or MacOS, the colon (`:`) in the command separates the new path from
-the path that precedes it in the list.
-
-```powershell
-$Env:PATH += ":/usr/local/temp"
-```
-
 You can also use the Item cmdlets, such as `Set-Item`, `Remove-Item`, and
 `Copy-Item` to change the values of environment variables. For example, to use
 the `Set-Item` cmdlet to append `;c:\temp` to the value of the `Path`
@@ -298,7 +291,7 @@ Set-Item -Path Env:Path -Value ($Env:Path + ";C:\Temp")
 In this command, the value is enclosed in parentheses so that it is
 interpreted as a unit.
 
-### Saving Changes to Environment Variables
+### Saving changes to environment variables
 
 To make a persistent change to an environment variable on Windows, use the
 System Control Panel. Select **Advanced System Settings**. On the **Advanced**
@@ -314,7 +307,7 @@ platform.
 ### Using System.Environment methods
 
 The **System.Environment** class provides **GetEnvironmentVariable** and
-**SetEnvironmentVariable** Methods that allow you specify the scope of the
+**SetEnvironmentVariable** methods that allow you to specify the scope of the
 variable.
 
 The following example uses the **GetEnvironmentVariable** method to get the

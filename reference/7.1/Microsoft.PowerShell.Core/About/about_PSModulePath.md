@@ -2,7 +2,7 @@
 keywords: powershell,cmdlet
 locale: en-us
 ms.date: 04/13/2020
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_PSModulePath?view=powershell-7&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_PSModulePath?view=powershell-7.x&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_PSModulePath
 ---
@@ -13,9 +13,9 @@ locations that are searched to find modules and resources.
 
 By default, the effective locations assigned to `$env:PSModulePath` are:
 
-- System-wide locations: `$PSHOME\Modules`
-
-  These folders contain modules that ship with PowerShell.
+- System-wide locations: These folders contain modules that ship with
+  PowerShell. These modules are store in the `$PSHOME\Modules` folder. This is
+  also the location where the Windows management modules are installed.
 
 - User-installed modules: These are modules installed by the user.
   `Install-Module` has a **Scope** parameter that allows you to specify
@@ -35,12 +35,12 @@ as the Program Files directory, can append their locations to the value of
 `$env:PSModulePath`.
 
 > [!NOTE]
-> On Windows, the user-specific **CurrentUser** location on Windows is the
-> `PowerShell\Modules` folder located in the **Documents** location in your
-> user profile. The specific path of that location varies by version of Windows
-> and whether or not you are using folder redirection. Microsoft OneDrive can
-> also change the location of your **Documents** folder. You can verify the
-> location of your **Documents** folder using the following command:
+> On Windows, the user-specific location is the `PowerShell\Modules` folder
+> located in the **Documents** folder in your user profile. The specific path
+> of that location varies by version of Windows and whether or not you are
+> using folder redirection. Microsoft OneDrive can also change the location of
+> your **Documents** folder. You can verify the location of your **Documents**
+> folder using the following command:
 > `[Environment]::GetFolderPath('MyDocuments')`.
 
 ## Modifying PSModulePath
@@ -69,18 +69,17 @@ machine setting of `PSModulePath` and the **SetEnvironmentVariable** method
 to add the `C:\Program Files\Fabrikam\Modules` path to the value.
 
 ```powershell
-$path = [System.Environment]::GetEnvironmentVariable("PSModulePath",
-  "Machine")
-[System.Environment]::SetEnvironmentVariable("PSModulePath", $path +
-";C:\Program Files\Fabrikam\Modules", "Machine")
+$path = [Environment]::GetEnvironmentVariable('PSModulePath', 'Machine')
+$newpath = $path + ';C:\Program Files\Fabrikam\Modules'
+[Environment]::SetEnvironmentVariable('PSModulePath', $newpath, 'Machine')
 ```
 
-To add a path to the user setting, change the target value to User.
+To add a path to the user setting, change the target value to **User**.
 
 ```powershell
-$path = [System.Environment]::GetEnvironmentVariable("PSModulePath", "User")
-[System.Environment]::SetEnvironmentVariable("PSModulePath", $path +
-";$home\Documents\Fabrikam\Modules", "User")
+$path = [Environment]::GetEnvironmentVariable('PSModulePath', 'User')
+$newpath = $path + ';C:\Program Files\Fabrikam\Modules'
+[Environment]::SetEnvironmentVariable('PSModulePath', $newpath, 'User')
 ```
 
 For more information about the methods of the **System.Environment** class, see
@@ -129,15 +128,15 @@ environment variables. When a process is started, Windows combines the
 User-scoped `Path` with the Machine-scoped `Path`.
 
 - Retrieve the User-scoped `PSModulePath`
-- Compare to process inherited `PSModulePath` env var
+- Compare to process inherited `PSModulePath` environment variable
   - If the same:
-    - Append the `System` `PSModulePath` to the end following the semantics of
-      the `Path` env var
-    - The Windows system32 path comes from the machine defined `PSModulePath`
+    - Append the **AllUsers** `PSModulePath` to the end following the semantics
+      of the `Path` environment variable
+    - The Windows `System32` path comes from the machine defined `PSModulePath`
       so does not need to be added explicitly
   - If different, treat as though user explicitly modified it and don't append
-    `System` `PSModulePath`
-- Prefix with PS7 user, system, and $PSHOME paths in that order
+    **AllUsers** `PSModulePath`
+- Prefix with PS7 User, System, and `$PSHOME` paths in that order
   - If `powershell.config.json` contains a user scoped `PSModulePath`, use that
     instead of the default for the user
   - If `powershell.config.json` contains a system scoped `PSModulePath`, use
@@ -152,18 +151,18 @@ already defined.
 For this discussion, _Windows PowerShell_ means both `powershell.exe` and
 `powershell_ise.exe`.
 
-Copy process `$env:PSModulePath` as `WinPSModulePath`:
+Copy process `$env:PSModulePath` to `WinPSModulePath`:
 
 - Remove PS7 the User module path
 - Remove PS7 the System module path
 - Remove PS7 the `$PSHOME` module path
 
-Use that `WinPSModulePath` when starting Windows PowerShell.
+Use `WinPSModulePath` when starting Windows PowerShell.
 
 ### Starting PowerShell 7 from Windows PowerShell
 
 The PowerShell 7 startup continues as-is with the addition of inheriting paths
-Windows PowerShell have added. Since the PS7 specific paths are prefixed, there
+that Windows PowerShell added. Since the PS7-specific paths are prefixed, there
 is no functional issue.
 
 ### Starting PowerShell 6 from PowerShell 7

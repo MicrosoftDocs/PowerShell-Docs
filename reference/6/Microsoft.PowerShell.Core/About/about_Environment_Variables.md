@@ -46,7 +46,7 @@ type:
 Get-Item -Path Env:* | Get-Member
 ```
 
-## Environment Variables That Store Preferences
+## Environment variables that store preferences
 
 PowerShell features can use environment variables to store user preferences.
 These variables work like preference variables, but they are inherited by child
@@ -100,8 +100,8 @@ The environment variables that store preferences include:
   $env:PSModuleAnalysisCachePath = 'NUL'
   ```
 
-  This sets the path to an invalid device. If PowerShell can't write to the
-  path, no error is returned, but you can see error reporting by using a
+  This sets the path to the **NUL** device. PowerShell can't write to the
+  path but no error is returned. You can see the errors reported using a
   tracer:
 
   ```powershell
@@ -160,7 +160,7 @@ in PowerShell.
 
 ### Using the Environment provider
 
-The PowerShell environment provider lets you access environment variables in a
+The PowerShell Environment provider lets you access environment variables in a
 PowerShell drive (the `Env:` drive). This drive looks much like a file system
 drive. To go to the `Env:` drive, type:
 
@@ -254,7 +254,7 @@ indicates an environment variable.
 > environment variables are all uppercase. Refer to the documentation for your
 > operating system for specific information.
 
-### Changing Environment Variables
+### Changing environment variables
 
 On Windows, environment variables can be defined in three scopes:
 
@@ -310,7 +310,7 @@ Set-Item -Path Env:Path -Value ($Env:Path + ";C:\Temp")
 In this command, the value is enclosed in parentheses so that it is
 interpreted as a unit.
 
-### Saving Changes to Environment Variables
+### Saving changes to environment variables
 
 To make a persistent change to an environment variable on Windows, use the
 System Control Panel. Select **Advanced System Settings**. On the **Advanced**
@@ -326,7 +326,7 @@ platform.
 ### Using System.Environment methods
 
 The **System.Environment** class provides **GetEnvironmentVariable** and
-**SetEnvironmentVariable** Methods that allow you specify the scope of the
+**SetEnvironmentVariable** methods that allow you to specify the scope of the
 variable.
 
 The following example uses the **GetEnvironmentVariable** method to get the
