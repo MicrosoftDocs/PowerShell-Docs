@@ -242,12 +242,6 @@ $Env:windir
 In this syntax, the dollar sign (`$`) indicates a variable, and the drive name
 indicates an environment variable.
 
-> [!NOTE]
-> In Windows, environment variable names are case-insensitive. On Linux and
-> macOS, environment variable names are case-sensitive. In most cases,
-> environment variables are all uppercase. Refer to the documentation for your
-> operating system for specific information.
-
 ### Changing Environment Variables
 
 On Windows, environment variables can be defined in three scopes:
