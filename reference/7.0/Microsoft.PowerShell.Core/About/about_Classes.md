@@ -805,8 +805,8 @@ used to extend base classes. Because interfaces allow multiple inheritance, a
 PowerShell class implementing an interface may inherit from multiple types, by
 separating the type names after the colon (`:`) with commas (`,`). A PowerShell
 class that implements an interface must implement all the members of that
-interface. Not implementing interface members causes a parse-time error in the
-script.
+interface. Omitting the implemention interface members causes a parse-time
+error in the script.
 
 > [!NOTE]
 > PowerShell does not currently support declaring new interfaces in PowerShell
@@ -839,10 +839,10 @@ module isn't loaded in the current session, the `using` statement fails.
 
 ## The PSReference type is not supported with class members
 
-Using the `[ref]` type cast with a class member silently fails. APIs that use
-`[ref]` parameters cannot be used with class members. The `[ref]` was designed
-to support COM objects. COM objects have cases where you need to pass a value
-in by reference.
+Using the `[ref]` type-cast with a class member silently fails. APIs that use
+`[ref]` parameters cannot be used with class members. The **PSReference** was
+designed to support COM objects. COM objects have cases where you need to pass
+a value in by reference.
 
 For more information about the `[ref]` type, see
 [PSReference Class](/dotnet/api/system.management.automation.psreference).
