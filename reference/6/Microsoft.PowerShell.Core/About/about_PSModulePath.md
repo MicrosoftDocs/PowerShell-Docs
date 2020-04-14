@@ -122,10 +122,10 @@ In Windows, for most environment variables, if the User-scoped variable exists, 
 new process uses that value only even if a Machine-scoped variable of the same
 name exists.
 
-In PowerShell 7, `PSModulePath` behaves like the `Path` environment variable
-works on Windows. `Path` on Windows is treated differently from other
-environment variables. When a process is started, Windows combines the
-User-scoped `Path` with the Machine-scoped `Path`.
+In PowerShell 7, `PSModulePath` is treated similar to how the `Path`
+environment variable is treated on Windows. On Windows, `Path` is treated
+differently from other environment variables. When a process is started,
+Windows combines the User-scoped `Path` with the Machine-scoped `Path`.
 
 - Retrieve the User-scoped `PSModulePath`
 - Compare to process inherited `PSModulePath` environment variable
@@ -151,13 +151,16 @@ already defined.
 For this discussion, _Windows PowerShell_ means both `powershell.exe` and
 `powershell_ise.exe`.
 
-Copy process `$env:PSModulePath` to `WinPSModulePath`:
+The value of `$env:PSModulePath` is copied to `WinPSModulePath` with the
+following modifications:
 
 - Remove PS7 the User module path
 - Remove PS7 the System module path
 - Remove PS7 the `$PSHOME` module path
 
-Use `WinPSModulePath` when starting Windows PowerShell.
+The PS7 paths are removed so that PS7 modules don't get loaded in Windows
+PowerShell. The `WinPSModulePath` value is used when starting Windows
+PowerShell.
 
 ### Starting PowerShell 7 from Windows PowerShell
 
