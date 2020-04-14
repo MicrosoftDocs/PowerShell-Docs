@@ -3,7 +3,7 @@ external help file: System.Management.Automation.dll-Help.xml
 keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Core
-ms.date: 07/11/2019
+ms.date: 04/14/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/new-modulemanifest?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: New-ModuleManifest
@@ -55,6 +55,11 @@ for the associated value that has no effect.
 In PowerShell 2.0, `New-ModuleManifest` prompts you for the values of commonly used parameters that
 aren't specified in the command, in addition to required parameter values. Beginning in PowerShell
 3.0, `New-ModuleManifest` prompts only when required parameter values aren't specified.
+
+If you are planning to publish your module in the PowerShell Gallery, the manifest must contain
+values for certain properties. For more information, see
+[Required metadata for items published to the PowerShell Gallery](/powershell/scripting/gallery/how-to/publishing-packages/publishing-a-package#required-metadata-for-items-published-to-the-powershell-gallery)
+in the Gallery documentation.
 
 ## EXAMPLES
 
