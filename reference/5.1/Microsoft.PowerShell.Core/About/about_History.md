@@ -1,7 +1,7 @@
 ---
 keywords: powershell,cmdlet
 locale: en-us
-ms.date: 03/09/2020
+ms.date: 04/14/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_history?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_History
@@ -41,6 +41,9 @@ command history.
   <kbd>F8</kbd>. Press <kbd>F8</kbd> again the next instance.
 - <kbd>F9</kbd> - Find a command by history ID. Type the history ID then press
   <kbd>F9</kbd>. Press <kbd>F7</kbd> to find the ID.
+- <kbd>#</kbd>`<string>`</kbd><kbd>Tab</kbd> - Search the history for
+  `*<string>*` and returns the most recent match. If you press <kbd>Tab</kbd>
+  repeatedly, it cycles through the matching items in your history.
 
 > [!NOTE]
 > These key bindings are implemented by the console host application. Other
