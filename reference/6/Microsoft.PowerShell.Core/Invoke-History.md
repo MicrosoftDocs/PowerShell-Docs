@@ -23,7 +23,7 @@ Invoke-History [[-Id] <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
 
 The `Invoke-History` cmdlet runs commands from the session history. You can pass objects
 representing the commands from Get-History to `Invoke-History`, or you can identify commands in the
-current history by using their **Id**number. To find the identification number of a command, use the
+current history by using their **Id** number. To find the identification number of a command, use the
 `Get-History` cmdlet.
 
 ## EXAMPLES
@@ -74,7 +74,7 @@ uses the `ForEach-Object` cmdlet to run the `Invoke-History` command one time fo
 This example runs the seven commands in the history that end with command 255 (249 through 255). It
 uses the `Get-History` cmdlet to retrieve the commands. Because you can list only one **Id** value,
 the command uses the `ForEach-Object` cmdlet to run the `Invoke-History` command once for each
-**ID** value.
+**Id** value.
 
 ```powershell
 Get-History -Id 255 -Count 7 | ForEach {Invoke-History -Id $_.Id}
@@ -146,7 +146,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### System.String
 
-You can pipe a history **Id**to this cmdlet.
+You can pipe a history **Id** to this cmdlet.
 
 ## OUTPUTS
 

@@ -41,9 +41,9 @@ command history.
   <kbd>F8</kbd>. Press <kbd>F8</kbd> again the next instance.
 - <kbd>F9</kbd> - Find a command by history ID. Type the history ID then press
   <kbd>F9</kbd>. Press <kbd>F7</kbd> to find the ID.
-- <kbd>#</kbd>`<string>`</kbd><kbd>Tab</kbd> - search the history for
-  `*<string>*` and returns the most recent match. Press <kbd>Tab</kbd> again to
-  find the previous match.
+- <kbd>#</kbd>`<string>`</kbd><kbd>Tab</kbd> - Search the history for
+  `*<string>*` and returns the most recent match. If you press <kbd>Tab</kbd>
+  repeatedly, it cycles through the matching items in your history.
 
 > [!NOTE]
 > These key bindings are implemented by the console host application. Other
