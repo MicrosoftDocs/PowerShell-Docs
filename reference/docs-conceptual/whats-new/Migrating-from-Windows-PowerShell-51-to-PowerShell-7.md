@@ -223,7 +223,7 @@ Enter-PSSession -HostName <Computer> -UserName <Username>
 ```
 
 Alternatively, when using the **HostName** parameter, provide the username information followed by
-the at sign ('\@'), followed by the computer name.
+the at sign (`@`), followed by the computer name.
 
 ```powershell
 Enter-PSSession -HostName <Username>@<Computer>
