@@ -16,12 +16,10 @@ Compares two sets of objects.
 
 ## SYNTAX
 
-### All
-
 ```
-Compare-Object [-ReferenceObject] <PSObject[]> [-DifferenceObject] <PSObject[]>
- [-SyncWindow <Int32>] [-Property <Object[]>] [-ExcludeDifferent] [-IncludeEqual] [-PassThru]
- [-Culture <String>] [-CaseSensitive] [<CommonParameters>]
+Compare-Object [-ReferenceObject] <PSObject[]> [-DifferenceObject] <PSObject[]> [-SyncWindow <Int32>]
+ [-Property <Object[]>] [-ExcludeDifferent] [-IncludeEqual] [-PassThru] [-Culture <String>] [-CaseSensitive]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -275,7 +273,7 @@ differences between the objects are discarded.
 Use **ExcludeDifferent** with **IncludeEqual** to display only the lines that match between the
 **reference** and **difference** objects.
 
-If **ExcludeDifferent** is specified without **IncludeEqual**, there's no output.
+If **ExcludeDifferent** is specified without **IncludeEqual**, **IncludeEqual** is inferred.  To override, pass **$false** to **IncludeEqual**.
 
 ```yaml
 Type: SwitchParameter
@@ -377,10 +375,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
--InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
