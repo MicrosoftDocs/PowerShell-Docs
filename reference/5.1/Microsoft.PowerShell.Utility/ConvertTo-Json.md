@@ -8,17 +8,16 @@ online version: https://docs.microsoft.com/powershell/module/microsoft.powershel
 schema: 2.0.0
 title: ConvertTo-Json
 ---
-
 # ConvertTo-Json
 
 ## SYNOPSIS
-
 Converts an object to a JSON-formatted string.
 
 ## SYNTAX
 
 ```
-ConvertTo-Json [-InputObject] <Object> [-Depth <Int32>] [-Compress] [<CommonParameters>]
+ConvertTo-Json [-InputObject] <Object> [-Depth <Int32>] [-Compress]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -62,7 +61,6 @@ JSON-formatted string.
 
 ### Example 2
 
-```powershell
 ```powershell
 @{Account="User01";Domain="Domain01";Admin="True"} | ConvertTo-Json -Compress
 ```
