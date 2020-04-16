@@ -1,5 +1,5 @@
 ---
-ms.date:  06/05/2017
+ms.date: 04/15/2020
 keywords:  powershell,cmdlet
 title:  Making the second hop in PowerShell Remoting
 ---
@@ -10,25 +10,31 @@ The "second hop problem" refers to a situation like the following:
 
 1. You are logged in to _ServerA_.
 2. From _ServerA_, you start a remote PowerShell session to connect to _ServerB_.
-3. A command you run on _ServerB_ via your PowerShell Remoting session attempts to access a resource on _ServerC_.
-4. Access to the resource on _ServerC_ is denied, because the credentials you used to create the PowerShell Remoting session are not passed from _ServerB_ to _ServerC_.
+3. A command you run on _ServerB_ via your PowerShell Remoting session attempts to access a resource
+   on _ServerC_.
+4. Access to the resource on _ServerC_ is denied, because the credentials you used to create the
+   PowerShell Remoting session are not passed from _ServerB_ to _ServerC_.
 
-There are several ways to address this problem. In this topic, we'll look at several of the most popular solutions to the second hop problem.
+There are several ways to address this problem. In this topic, we'll look at several of the most
+popular solutions to the second hop problem.
 
 ## CredSSP
 
-You can use the [Credential Security Support Provider (CredSSP)](/windows/win32/secauthn/credential-security-support-provider) for authentication. CredSSP caches credentials
-on the remote server (_ServerB_), so using it opens you up to credential theft attacks. If the remote computer is compromised, the attacker has access to the user's credentials. CredSSP is disabled by
-default on both client and server computers. You should enable CredSSP only in the most trusted environments. For example, a domain administrator connecting to a domain controller
-because the domain controller is highly trusted.
+You can use the [Credential Security Support Provider (CredSSP)](/windows/win32/secauthn/credential-security-support-provider)
+for authentication. CredSSP caches credentials on the remote server (_ServerB_), so using it opens
+you up to credential theft attacks. If the remote computer is compromised, the attacker has access
+to the user's credentials. CredSSP is disabled by default on both client and server computers. You
+should enable CredSSP only in the most trusted environments. For example, a domain administrator
+connecting to a domain controller because the domain controller is highly trusted.
 
 For more information about security concerns when using CredSSP for PowerShell Remoting, see
 [Accidental Sabotage: Beware of CredSSP](https://www.powershellmagazine.com/2014/03/06/accidental-sabotage-beware-of-credssp).
 
-For more information about credential theft attacks, see [Mitigating Pass-the-Hash (PtH) Attacks and Other Credential Theft](https://www.microsoft.com/en-us/download/details.aspx?id=36036).
+For more information about credential theft attacks, see
+[Mitigating Pass-the-Hash (PtH) Attacks and Other Credential Theft](https://www.microsoft.com/en-us/download/details.aspx?id=36036).
 
 For an example of how to enable and use CredSSP for PowerShell remoting, see
-[Using CredSSP to solve the second-hop problem](https://blogs.technet.microsoft.com/heyscriptingguy/2012/11/14/enable-powershell-second-hop-functionality-with-credssp/).
+[Enable PowerShell "Second-Hop" Functionality with CredSSP](https://devblogs.microsoft.com/scripting/enable-powershell-second-hop-functionality-with-credssp/).
 
 ### Pros
 
@@ -41,11 +47,14 @@ For an example of how to enable and use CredSSP for PowerShell remoting, see
 
 ## Kerberos delegation (unconstrained)
 
-You can also used Kerberos unconstrained delegation to make the second hop. However, this method provides no control of where delegated credentials are used.
+You can also used Kerberos unconstrained delegation to make the second hop. However, this method
+provides no control of where delegated credentials are used.
 
->**Note:** Active Directory accounts that have the **Account is sensitive and cannot be delegated** property set cannot be delegated. For more information, see
->[Security Focus: Analysing 'Account is sensitive and cannot be delegated' for Privileged Accounts](https://blogs.technet.microsoft.com/poshchap/2015/05/01/security-focus-analysing-account-is-sensitive-and-cannot-be-delegated-for-privileged-accounts/)
->and [Kerberos Authentication Tools and Settings](https://technet.microsoft.com/library/cc738673(v=ws.10).aspx)
+> [!NOTE]
+> Active Directory accounts that have the **Account is sensitive and cannot be delegated** property
+> set cannot be delegated. For more information, see
+> [Security Focus: Analysing 'Account is sensitive and cannot be delegated' for Privileged Accounts](/archive/blogs/poshchap/security-focus-analysing-account-is-sensitive-and-cannot-be-delegated-for-privileged-accounts)
+> and [Kerberos Authentication Tools and Settings](https://technet.microsoft.com/library/cc738673(v=ws.10).aspx).
 
 ### Pros
 
@@ -58,11 +67,14 @@ You can also used Kerberos unconstrained delegation to make the second hop. Howe
 
 ## Kerberos constrained delegation
 
-You can use legacy constrained delegation (not resource-based) to make the second hop. Configure Kerberos constrained delegation with the option "Use any authentication protocol" to allow protocol transition.
+You can use legacy constrained delegation (not resource-based) to make the second hop. Configure
+Kerberos constrained delegation with the option "Use any authentication protocol" to allow protocol
+transition.
 
 > [!NOTE]
-> Active Directory accounts that have the **Account is sensitive and cannot be delegated** property set cannot
-> be delegated. For more information, see [Security Focus: Analysing 'Account is sensitive and cannot be delegated' for Privileged Accounts](https://blogs.technet.microsoft.com/poshchap/2015/05/01/security-focus-analysing-account-is-sensitive-and-cannot-be-delegated-for-privileged-accounts/)
+> Active Directory accounts that have the **Account is sensitive and cannot be delegated** property
+> set cannot be delegated. For more information, see
+> [Security Focus: Analysing 'Account is sensitive and cannot be delegated' for Privileged Accounts](/archive/blogs/poshchap/security-focus-analysing-account-is-sensitive-and-cannot-be-delegated-for-privileged-accounts)
 > and [Kerberos Authentication Tools and Settings](https://technet.microsoft.com/library/cc738673(v=ws.10).aspx)
 
 ### Pros
@@ -78,12 +90,16 @@ You can use legacy constrained delegation (not resource-based) to make the secon
 
 ## Resource-based Kerberos constrained delegation
 
-Using resource-based Kerberos constrained delegation (introduced in Windows Server 2012), you configure credential delegation on the server object where resources reside.
-In the second hop scenario described above, you configure _ServerC_ to specify from where it will accept delegated credentials.
+Using resource-based Kerberos constrained delegation (introduced in Windows Server 2012), you
+configure credential delegation on the server object where resources reside. In the second hop
+scenario described above, you configure _ServerC_ to specify from where it will accept delegated
+credentials.
 
->**Note:** Active Directory accounts that have the **Account is sensitive and cannot be delegated** property set cannot be delegated. For more information, see
->[Security Focus: Analysing 'Account is sensitive and cannot be delegated' for Privileged Accounts](https://blogs.technet.microsoft.com/poshchap/2015/05/01/security-focus-analysing-account-is-sensitive-and-cannot-be-delegated-for-privileged-accounts/)
->and [Kerberos Authentication Tools and Settings](https://technet.microsoft.com/library/cc738673(v=ws.10).aspx)
+> [!NOTE]
+> Active Directory accounts that have the **Account is sensitive and cannot be delegated** property
+> set cannot be delegated. For more information, see
+> [Security Focus: Analysing 'Account is sensitive and cannot be delegated' for Privileged Accounts](/archive/blogs/poshchap/security-focus-analysing-account-is-sensitive-and-cannot-be-delegated-for-privileged-accounts)
+> and [Kerberos Authentication Tools and Settings](https://technet.microsoft.com/library/cc738673(v=ws.10).aspx)
 
 ### Pros
 
@@ -101,18 +117,19 @@ In the second hop scenario described above, you configure _ServerC_ to specify f
 
 ### Example
 
-Let's look at a PowerShell example that configures resource based constrained delegation on _ServerC_ to allow delegated credentials from a _ServerB_.
-This example assumes that all servers are running Windows Server 2012 or later, and that there is at least one Windows Server 2012 domain controller each domain to which
-any of the servers belong.
+Let's look at a PowerShell example that configures resource based constrained delegation on
+_ServerC_ to allow delegated credentials from a _ServerB_. This example assumes that all servers are
+running Windows Server 2012 or later, and that there is at least one Windows Server 2012 domain
+controller each domain to which any of the servers belong.
 
-Before you can configure constrained delegation, you must add the `RSAT-AD-PowerShell` feature to install the Active Directory PowerShell module, and then import that
-module into your session:
+Before you can configure constrained delegation, you must add the `RSAT-AD-PowerShell` feature to
+install the Active Directory PowerShell module, and then import that module into your session:
 
 ```powershell
 PS C:\> Add-WindowsFeature RSAT-AD-PowerShell
-
 PS C:\> Import-Module ActiveDirectory
 ```
+
 Several available cmdlets now have a **PrincipalsAllowedToDelegateToAccount** parameter:
 
 ```powershell
@@ -128,8 +145,10 @@ Cmdlet      Set-ADServiceAccount ActiveDirectory
 Cmdlet      Set-ADUser           ActiveDirectory
 ```
 
-The **PrincipalsAllowedToDelegateToAccount** parameter sets the Active Directory object attribute **msDS-AllowedToActOnBehalfOfOtherIdentity**, which contains an access control list (ACL)
-that specifies which accounts have permission to delegate credentials to the associated account (in our example, it will be the machine account for _Server_).
+The **PrincipalsAllowedToDelegateToAccount** parameter sets the Active Directory object attribute
+**msDS-AllowedToActOnBehalfOfOtherIdentity**, which contains an access control list (ACL) that
+specifies which accounts have permission to delegate credentials to the associated account (in our
+example, it will be the machine account for _Server_).
 
 Now let's set up the variables we'll use to represent the servers:
 
@@ -140,7 +159,8 @@ $ServerB = Get-ADComputer -Identity ServerB
 $ServerC = Get-ADComputer -Identity ServerC
 ```
 
-WinRM (and therefore PowerShell remoting) runs as the computer account by default. You can see this by looking at the **StartName** property of the `winrm` service:
+WinRM (and therefore PowerShell remoting) runs as the computer account by default. You can see this
+by looking at the **StartName** property of the `winrm` service:
 
 ```powershell
 PS C:\> Get-WmiObject win32_service -filter 'name="winrm"' | Format-List StartName
@@ -148,8 +168,9 @@ PS C:\> Get-WmiObject win32_service -filter 'name="winrm"' | Format-List StartNa
 StartName : NT AUTHORITY\NetworkService
 ```
 
-For _ServerC_ to allow delegation from a PowerShell remoting session on _ServerB_, we will grant access by setting the **PrincipalsAllowedToDelegateToAccount** parameter
-on _ServerC_ to the computer object of _ServerB_:
+For _ServerC_ to allow delegation from a PowerShell remoting session on _ServerB_, we will grant
+access by setting the **PrincipalsAllowedToDelegateToAccount** parameter on _ServerC_ to the
+computer object of _ServerB_:
 
 ```powershell
 # Grant resource-based Kerberos constrained delegation
@@ -163,8 +184,9 @@ $x.'msDS-AllowedToActOnBehalfOfOtherIdentity'.Access
 Get-ADComputer -Identity $ServerC -Properties PrincipalsAllowedToDelegateToAccount
 ```
 
-The Kerberos [Key Distribution Center (KDC)](/windows/win32/secauthn/key-distribution-center) caches denied access attempts (negative cache) for 15
-minutes. If _ServerB_ has previously attempted to access _ServerC_, you will need to clear the cache on _ServerB_ by invoking the following command:
+The Kerberos [Key Distribution Center (KDC)](/windows/win32/secauthn/key-distribution-center) caches
+denied access attempts (negative cache) for 15 minutes. If _ServerB_ has previously attempted to
+access _ServerC_, you will need to clear the cache on _ServerB_ by invoking the following command:
 
 ```powershell
 Invoke-Command -ComputerName $ServerB.Name -Credential $cred -ScriptBlock {
@@ -174,7 +196,8 @@ Invoke-Command -ComputerName $ServerB.Name -Credential $cred -ScriptBlock {
 
 You could also restart the computer, or wait at least 15 minutes to clear the cache.
 
-After clearing the cache, you can successfully run code from _ServerA_ through _ServerB_ to _ServerC_:
+After clearing the cache, you can successfully run code from _ServerA_ through _ServerB_ to
+_ServerC_:
 
 ```powershell
 # Capture a credential
@@ -188,10 +211,12 @@ Invoke-Command -ComputerName $ServerB.Name -Credential $cred -ScriptBlock {
 }
 ```
 
-In this example, the `$using` variable is used to make the `$ServerC` variable visible to _ServerB_. For more information about the `$using` variable, see
+In this example, the `$using` variable is used to make the `$ServerC` variable visible to _ServerB_.
+For more information about the `$using` variable, see
 [about_Remote_Variables](https://technet.microsoft.com/library/jj149005.aspx).
 
-To allow multiple servers to delegate credentials to _ServerC_, set the value of the **PrincipalsAllowedToDelegateToAccount** parameter on _ServerC_ to an array:
+To allow multiple servers to delegate credentials to _ServerC_, set the value of the
+**PrincipalsAllowedToDelegateToAccount** parameter on _ServerC_ to an array:
 
 ```powershell
 # Set up variables for each server
@@ -205,7 +230,8 @@ Set-ADComputer -Identity $ServerC `
     -PrincipalsAllowedToDelegateToAccount @($ServerB1,$ServerB2,$ServerB3)
 ```
 
-If you want to make the second hop across domains, add fully-qualified domain name (FQDN) of the domain controller of the domain to which _ServerB_ belongs:
+If you want to make the second hop across domains, add fully-qualified domain name (FQDN) of the
+domain controller of the domain to which _ServerB_ belongs:
 
 ```powershell
 # For ServerC in Contoso domain and ServerB in other domain
@@ -214,7 +240,8 @@ $ServerC = Get-ADComputer -Identity ServerC
 Set-ADComputer -Identity $ServerC -PrincipalsAllowedToDelegateToAccount $ServerB
 ```
 
-To remove the ability to delegate credentials to ServerC, set the value of the **PrincipalsAllowedToDelegateToAccount** parameter on _ServerC_ to `$null`:
+To remove the ability to delegate credentials to ServerC, set the value of the
+**PrincipalsAllowedToDelegateToAccount** parameter on _ServerC_ to `$null`:
 
 ```powershell
 Set-ADComputer -Identity $ServerC -PrincipalsAllowedToDelegateToAccount $null
@@ -222,21 +249,20 @@ Set-ADComputer -Identity $ServerC -PrincipalsAllowedToDelegateToAccount $null
 
 ### Information on resource-based Kerberos constrained delegation
 
-- [What's New in Kerberos Authentication](https://technet.microsoft.com/library/hh831747.aspx)
+- [What's New in Kerberos Authentication](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831747(v=ws.11))
 - [How Windows Server 2012 Eases the Pain of Kerberos Constrained Delegation, Part 1](https://www.itprotoday.com/windows-server/how-windows-server-2012-eases-pain-kerberos-constrained-delegation-part-1)
 - [How Windows Server 2012 Eases the Pain of Kerberos Constrained Delegation, Part 2](https://www.itprotoday.com/windows-server/how-windows-server-2012-eases-pain-kerberos-constrained-delegation-part-2)
 - [Understanding Kerberos Constrained Delegation for Azure Active Directory Application Proxy Deployments with Integrated Windows Authentication](https://aka.ms/kcdpaper)
 - [[MS-ADA2]: Active Directory Schema Attributes M2.210 Attribute msDS-AllowedToActOnBehalfOfOtherIdentity](/openspecs/windows_protocols/ms-ada2/cea4ac11-a4b2-4f2d-84cc-aebb4a4ad405)
 - [[MS-SFU]: Kerberos Protocol Extensions: Service for User and Constrained Delegation Protocol 1.3.2 S4U2proxy](/openspecs/windows_protocols/ms-sfu/bde93b0e-f3c9-4ddf-9f44-e1453be7af5a)
-- [Resource Based Kerberos Constrained Delegation](https://blog.kloud.com.au/2013/07/11/kerberos-constrained-delegation/)
-- [Remote Administration Without Constrained Delegation Using PrincipalsAllowedToDelegateToAccount](https://blogs.msdn.microsoft.com/taylorb/2012/11/06/remote-administration-without-constrained-delegation-using-principalsallowedtodelegatetoaccount/)
+- [Remote Administration Without Constrained Delegation Using PrincipalsAllowedToDelegateToAccount](/archive/blogs/taylorb/remote-administration-without-constrained-delegation-using-principalsallowedtodelegatetoaccount)
 
 ## PSSessionConfiguration using RunAs
 
 You can create a session configuration on _ServerB_ and set its **RunAsCredential** parameter.
 
 For information about using PSSessionConfiguration and RunAs to solve the second hop problem, see
-[Another solution to multi-hop PowerShell remoting](https://blogs.msdn.microsoft.com/sergey_babkins_blog/2015/03/18/another-solution-to-multi-hop-powershell-remoting/).
+[Another solution to multi-hop PowerShell remoting](/archive/blogs/sergey_babkins_blog/another-solution-to-multi-hop-powershell-remoting).
 
 ### Pros
 
@@ -244,12 +270,14 @@ For information about using PSSessionConfiguration and RunAs to solve the second
 
 ### Cons
 
-- Requires configuration of **PSSessionConfiguration** and **RunAs** on every intermediate server (_ServerB_).
+- Requires configuration of **PSSessionConfiguration** and **RunAs** on every intermediate server
+  (_ServerB_).
 - Requires password maintenance when using a domain **RunAs** account
 
 ## Just Enough Administration (JEA)
 
-JEA allows you to restrict what commands an administrator can run during a PowerShell session. It can be used to solve the second hop problem.
+JEA allows you to restrict what commands an administrator can run during a PowerShell session. It
+can be used to solve the second hop problem.
 
 For information about JEA, see [Just Enough Administration](/powershell/scripting/learn/remoting/jea/overview).
 
