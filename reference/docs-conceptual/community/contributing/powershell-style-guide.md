@@ -12,19 +12,29 @@ information outlined in the [Overview](overview.md#get-started-writing-docs).
 ## Product Terminology
 
 There are several variants of PowerShell.
-This table defines some of the different terms used to discuss PowerShell.
 
 - **PowerShell** - This is the default. We consider PowerShell 7 and beyond to be the one, true
   PowerShell going forward.
-
 - **PowerShell Core** - PowerShell built on .NET Core. Usage of the term **Core** should be limited
   to cases where it is necessary to differentiate it from Windows PowerShell.
-
 - **Windows PowerShell** - PowerShell built on .NET Framework. Windows PowerShell ships only on
   Windows and requires the complete Framework.
 
-In general, references to "Windows PowerShell" in documentation can be changed to "PowerShell".
-"Windows PowerShell" should **not** be changed when Windows-specific technology is being discussed.
+  In general, references to "Windows PowerShell" in documentation can be changed to "PowerShell".
+  "Windows PowerShell" should be used when "Windows PowerShell"-specific behavior is being
+  discussed.
+
+Related products
+
+- **Visual Studio Code (VS Code)** - This is Microsoft's free, open source editor. At first mention,
+  the full name should be used. After that you may use **VS Code**. Do not user "VSCode".
+- **PowerShell Extension for Visual Studio Code** - The extension turns VS Code into the preferred
+  IDE for PowerShell. At first mention, the full name should be used. After that you may use **PowerShell extension**.
+- **Azure PowerShell** - This is the collection of PowerShell modules used to manage Azure services.
+- **Azure Stack PowerShell** - This is the collection of PowerShell modules used to manage
+  Microsoft's hybrid cloud solution.
+
+
 
 ## Markdown specifics
 
@@ -152,61 +162,6 @@ The resulting Markdown is rendered as follows:
 
 1. The next numbered item starts here.
 
-### Formatting command syntax elements
-
-- Always use the full name for cmdlets and parameters. Avoid using aliases unless you are
-  specifically demonstrating the alias.
-
-- Property, parameter, object, type names, class names, class methods should be **bold**.
-  - Property and parameter values should be wrapped in backticks (`` ` ``).
-  - When referring to types using the bracketed style, use backticks. For example:
-    `[System.Io.FileInfo]`
-
-- Language keywords, cmdlet names, variables, native EXEs, and file paths should be wrapped in
-  backtick (`` ` ``) characters.
-
-  For example:
-
-  ~~~markdown
-  The following code uses `Get-ChildItem` to list the contents of `C:\Windows` and assigns
-  the output to the `$files` variable.
-
-  ```powershell
-  $files = Get-ChildItem C:\Windows
-  ```
-  ~~~
-
-  - When referring to a parameter by name, the name should be **bold**. When illustrating the use of
-    a parameter with the hyphen prefix, the parameter should be wrapped in backticks. For example:
-
-    ```markdown
-    The parameter's name is **Name**, but it is typed as `-Name` when used on the command
-    line as a parameter.
-    ```
-
-  - When showing example usage of an external command, the example should be wrapped in backticks.
-    Always include the file extension in the native command. For example:
-
-    ```markdown
-    To start the spooler service on a remote computer named DC01, you type `sc.exe \\DC01 start spooler`.
-    ```
-
-    Including the file extension ensures that the correct command is executed according PowerShell's
-    command precedence.
-
-- When writing a conceptual article (as opposed to reference content), the first instance of a
-  cmdlet name should be hyperlinked to the cmdlet documentation. Do not use backticks, bold, or
-  other markup inside the brackets of a hyperlink.
-
-  For example:
-
-  ```markdown
-  This [Write-Host](/powershell/module/Microsoft.PowerShell.Utility/Write-Host) cmdlet
-  uses the **Object** parameter to ...
-  ```
-
-  For more information, see [Hyperlinks](#hyperlinks) section of this article.
-
 ### Images
 
 The syntax to include an image is:
@@ -281,7 +236,7 @@ Warning block
 > [!WARNING]
 > Dangerous certain consequences of an action.
 
-## Hyperlinks
+### Hyperlinks
 
 - Hyperlinks must use Markdown syntax `[friendlyname](url-or-path)`
 - Links should be HTTPS when possible.
@@ -296,7 +251,7 @@ Warning block
   `http://schemas.dmtf.org/wbem/wscim/1/cim-schema/2/` is used and the class name is appended to it.
   ```
 
-### Linking to other content
+#### Linking to other content
 
 There are two types of hyperlinks supported by the publishing system:
 
@@ -329,6 +284,61 @@ For example:
 - `[custom key bindings](https://code.visualstudio.com/docs/getstarted/keybindings#_custom-keybindings-for-refactorings)`
 
 For more information, see [Use links in documentation](https://docs.microsoft.com/contribute/how-to-write-links).
+
+## Formatting command syntax elements
+
+- Always use the full name for cmdlets and parameters. Avoid using aliases unless you are
+  specifically demonstrating the alias.
+
+- Property, parameter, object, type names, class names, class methods should be **bold**.
+  - Property and parameter values should be wrapped in backticks (`` ` ``).
+  - When referring to types using the bracketed style, use backticks. For example:
+    `[System.Io.FileInfo]`
+
+- Language keywords, cmdlet names, functions, variables, native EXEs, file paths, and inline syntax
+  examples should be wrapped in backtick (`` ` ``) characters.
+
+  For example:
+
+  ~~~markdown
+  The following code uses `Get-ChildItem` to list the contents of `C:\Windows` and assigns
+  the output to the `$files` variable.
+
+  ```powershell
+  $files = Get-ChildItem C:\Windows
+  ```
+  ~~~
+
+  - When referring to a parameter by name, the name should be **bold**. When illustrating the use of
+    a parameter with the hyphen prefix, the parameter should be wrapped in backticks. For example:
+
+    ```markdown
+    The parameter's name is **Name**, but it is typed as `-Name` when used on the command
+    line as a parameter.
+    ```
+
+  - When showing example usage of an external command, the example should be wrapped in backticks.
+    Always include the file extension in the native command. For example:
+
+    ```markdown
+    To start the spooler service on a remote computer named DC01, you type `sc.exe \\DC01 start spooler`.
+    ```
+
+    Including the file extension ensures that the correct command is executed according PowerShell's
+    command precedence.
+
+- When writing a conceptual article (as opposed to reference content), the first instance of a
+  cmdlet name should be hyperlinked to the cmdlet documentation. Do not use backticks, bold, or
+  other markup inside the brackets of a hyperlink.
+
+  For example:
+
+  ```markdown
+  This [Write-Host](/powershell/module/Microsoft.PowerShell.Utility/Write-Host) cmdlet
+  uses the **Object** parameter to ...
+  ```
+
+  For more information, see [Hyperlinks](#hyperlinks) section of this article.
 
 ## Markdown for code samples
 
