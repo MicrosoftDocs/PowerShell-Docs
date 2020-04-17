@@ -27,14 +27,12 @@ There are several variants of PowerShell.
 Related products
 
 - **Visual Studio Code (VS Code)** - This is Microsoft's free, open source editor. At first mention,
-  the full name should be used. After that you may use **VS Code**. Do not user "VSCode".
+  the full name should be used. After that you may use **VS Code**. Do not use "VSCode".
 - **PowerShell Extension for Visual Studio Code** - The extension turns VS Code into the preferred
   IDE for PowerShell. At first mention, the full name should be used. After that you may use **PowerShell extension**.
 - **Azure PowerShell** - This is the collection of PowerShell modules used to manage Azure services.
 - **Azure Stack PowerShell** - This is the collection of PowerShell modules used to manage
   Microsoft's hybrid cloud solution.
-
-
 
 ## Markdown specifics
 
