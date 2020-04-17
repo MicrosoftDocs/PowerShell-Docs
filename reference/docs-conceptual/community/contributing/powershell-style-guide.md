@@ -79,7 +79,7 @@ Use the [Reflow Markdown][reflow] extension in Visual Studio Code to easily refl
 the prescribed line length.
 
 About_topics are limited to 80 characters. For more specific information, see
-[Editing reference articles](./editing-cmdlet-ref.md#formatting-about-files).
+[Editing reference articles](./editing-cmdlet-ref.md#formatting-about_-files).
 
 ### Lists
 
