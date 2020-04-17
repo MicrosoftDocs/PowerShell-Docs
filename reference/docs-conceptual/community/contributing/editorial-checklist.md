@@ -31,8 +31,9 @@ articles in the Contributor's Guide for detailed explanations and examples of th
   - Syntactic examples `Verb-Noun -Parameter`
   - File paths `C:\Program Files\PowerShell`, `/usr/bin/pwsh`
   - URLs that are not meant to be clickable in the document
-- Use bold for property names, parameter values, parameter names, class names, module names, entity
-  names, object or type names
+  - Property or parameter values
+- Use bold for property names, parameter names, class names, module names, entity names, object or
+  type names
   - Bold is used for semantic markup, not emphasis
   - Bold - use asterisks `**`
 - Italic - use underscore `_`
@@ -56,8 +57,8 @@ articles in the Contributor's Guide for detailed explanations and examples of th
 - Blank line before and after
 - Use tagged code fences - **powershell**, **Output**, or other appropriate language ID
 - Untagged fence - syntax blocks or other shells
-- Put **Output** in separate code block except for simple examples where you don't intend the for
-  the reader to use the **Copy** button
+- Put output in separate code block except for simple examples where you don't intend the for the
+  reader to use the **Copy** button
 - See list of [supported languages](/contribute/code-in-docs#supported-languages)
 
 ### Lists
