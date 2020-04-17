@@ -202,7 +202,7 @@ or session configurations).
 
 3. This authorization rule allows a specific user access to one computer on the network to which
    they typically have access, with access to a specific session configuration that is scoped to
-   the user'&trade;s typical scripting and cmdlet needs. Type the following, and then press **Enter**.
+   the user's typical scripting and cmdlet needs. Type the following, and then press **Enter**.
 
    ```
    Add-PswaAuthorizationRule -UserName <domain\user | computer\user> `
