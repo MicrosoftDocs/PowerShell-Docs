@@ -63,7 +63,7 @@ The parameter can be abbreviated as **m**.
 ```yaml
 Type: Int32
 Parameter Sets: Milliseconds
-Aliases: ms
+Aliases: m
 
 Required: True
 Position: Named
