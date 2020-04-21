@@ -292,7 +292,7 @@ Type: String
 Parameter Sets: NoException, WithException
 Aliases: Msg
 
-Required: True (NoException), True (WithException)
+Required: True (NoException), False (WithException)
 Position: 0
 Default value: None
 Accept pipeline input: True (ByValue)
@@ -372,4 +372,3 @@ a terminating error condition. To signal a terminating error, use the
 [Write-Verbose](Write-Verbose.md)
 
 [Write-Warning](Write-Warning.md)
-
