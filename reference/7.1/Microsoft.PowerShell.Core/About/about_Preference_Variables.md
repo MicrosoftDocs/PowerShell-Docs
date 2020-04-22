@@ -48,6 +48,7 @@ The following table lists the preference variables and their default values.
 | `$PSSessionApplicationName`      | wsman                     |
 | `$PSSessionConfigurationName`    | `https://schemas.microsoft.com/powershell/Microsoft.PowerShell` |
 | `$PSSessionOption`               | See [$PSSessionOption](#pssessionoption) |
+| `$Transcript`                    | (none)                    |
 | `$VerbosePreference`             | SilentlyContinue          |
 | `$WarningPreference`             | Continue                  |
 | `$WhatIfPreference`              | False                     |
