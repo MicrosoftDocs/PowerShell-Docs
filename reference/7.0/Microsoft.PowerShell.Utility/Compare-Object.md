@@ -3,7 +3,7 @@ external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 10/28/2019
+ms.date: 04/23/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/compare-object?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Compare-Object
@@ -35,6 +35,11 @@ used, (`==`) indicates the value is in both objects.
 
 If the **reference** or the **difference** objects are null (`$null`), `Compare-Object` generates a
 terminating error.
+
+For simple objects, like strings or numbers, the cmdlet compares the values of the objects. For
+complex objects, you must provide one or more properties to be used for comparison. If you do
+provide a property, the cmdlet checks for **IComparable** interfaces to perform the comparison. If
+that fails, the object are converted to strings and the string values are compared.
 
 Some examples use splatting to reduce the line length of the code samples. For more information, see
 [about_Splatting](../Microsoft.PowerShell.Core/About/about_Splatting.md).
@@ -133,7 +138,7 @@ System.Diagnostics.Process (notepad)   =>
 ```
 
 First, `Get-Process` gets a list of running processes and stores them in the `$Processes_Before`
-variable then the **notepad.exe** application is started. Next, `Get-Process` gets an updated list of
+variable then the `notepad.exe` application is started. Next, `Get-Process` gets an updated list of
 running processes and stores them in the `$Processes_After` variable.
 
 `Compare-Object` compares the two sets of process objects. The output displays the difference,
@@ -216,6 +221,39 @@ When using **PassThru**, the original object type (**System.Boolean**) is return
 output displayed by the default format for **System.Boolean** objects didn't display the
 **SideIndicator** property. However, the returned **System.Boolean** object has the added
 **NoteProperty**.
+
+### Example 6 - Comparing complex objects
+
+This example show the behavior when comparing complex objects. In this example we store two
+different process objects for different instances of PowerShell. Both variables contain process
+object with the same name. When the objects are compared without specifying the **Property**
+parameter, the cmdlet consider the objects to be equal.
+
+```powershell
+PS> Get-Process pwsh
+
+ NPM(K)    PM(M)      WS(M)     CPU(s)      Id  SI ProcessName
+ ------    -----      -----     ------      --  -- -----------
+    101   123.32     139.10      35.81   11168   1 pwsh
+     89   107.55      66.97      11.44   17600   1 pwsh
+
+PS> $a = Get-Process -Id 11168
+PS> $b = Get-Process -Id 17600
+PS> Compare-Object $a $b -IncludeEqual
+
+InputObject                       SideIndicator
+-----------                       -------------
+System.Diagnostics.Process (pwsh) ==
+
+PS> Compare-Object $a $b -Property ProcessName, Id, CPU
+
+ProcessName    Id       CPU SideIndicator
+-----------    --       --- -------------
+pwsh        17600   11.4375 =>
+pwsh        11168 36.203125 <=
+```
+
+When you specify properties to be compared, the cmdlet show the differences.
 
 ## PARAMETERS
 
