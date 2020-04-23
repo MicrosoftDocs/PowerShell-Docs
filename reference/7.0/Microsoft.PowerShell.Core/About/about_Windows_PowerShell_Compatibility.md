@@ -1,7 +1,7 @@
 ---
 keywords: powershell,cmdlet
 locale: en-us
-ms.date: 03/21/2020
+ms.date: 04/22/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_windows_powershell_compatibility?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Windows_PowerShell_Compatibility
@@ -72,7 +72,7 @@ Windows PowerShell Compatibility blocks loading of modules that are listed in
 the `WindowsPowerShellCompatibilityModuleDenyList` setting in PowerShell
 configuration file.
 
-The default value of this setting:
+The default value of this setting is:
 
 ```json
 "WindowsPowerShellCompatibilityModuleDenyList":  [
@@ -103,6 +103,36 @@ pwsh -settingsFile $ConfigPath
 
 For more the latest information about module compatibility, see the
 [PowerShell 7 module compatibility](https://aka.ms/PSModuleCompat) list.
+
+### Managing cmdlet clobbering
+
+The Windows PowerShell Compatibility feature uses implicit remoting to load
+modules in compatibility mode. The result is that commands exported by the
+module take precedence over commands of the same name in the current PowerShell
+7 session. In the PowerShell 7.0.0 release, this included the core modules that
+ship with PowerShell.
+
+In PowerShell 7.1, the behavior was changed so that the following core
+PowerShell modules are not clobbered:
+
+- Microsoft.PowerShell.ConsoleHost
+- Microsoft.PowerShell.Diagnostics
+- Microsoft.PowerShell.Host
+- Microsoft.PowerShell.Management
+- Microsoft.PowerShell.Security
+- Microsoft.PowerShell.Utility
+- Microsoft.WSMan.Management
+
+PowerShell 7.1 also added the ability to list additional modules that should
+not be clobbered by compatibility mode.
+
+You can add the `WindowsPowerShellCompatibilityNoClobberModuleList` setting to
+PowerShell configuration file. The value of this setting is a comma-separated
+list of module names. The default value of this setting is:
+
+```json
+"WindowsPowerShellCompatibilityNoClobberModuleList": [ ]
+```
 
 ## Limitations
 

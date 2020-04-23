@@ -372,9 +372,9 @@
         - name: Get started with DSC on Nano
           href: dsc/getting-started/nanoDSC.md
         - name: Get started with DSC in Azure Automation
-          href: dsc/getting-started/azureDSC.md
-        - name: Get started with DSC on Azure Virtual Machines
-          href: dsc/getting-started/azureDSCexthistory.md
+          href: /azure/automation/automation-dsc-getting-started
+        - name: Get started with Azure Policy's Guest Configuration
+          href: /azure/governance/policy/concepts/guest-configuration
     - name: Quickstarts
       expanded: true
       items:
