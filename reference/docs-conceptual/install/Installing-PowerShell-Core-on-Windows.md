@@ -92,8 +92,11 @@ Add-AppxPackage PowerShell-<version>-win-<os-arch>.msix
 ## <a id="zip" />Installing the ZIP package
 
 PowerShell binary ZIP archives are provided to enable advanced deployment scenarios. Installing the
-ZIP archive doesn't check the prerequisites like the MSI packages do. For remoting over WSMan to
-work properly, ensure that you've met the [prerequisites](#prerequisites).
+ZIP archive doesn't check the prerequisites like the MSI packages do. Download the ZIP archive from
+the [releases][releases] page. Depending on how you download the file you may need to unblock the
+file using the `Unblock-File` cmdlet. Unzip the contents to the location of your choice and run
+`pwsh.exe` from there. For remoting over WSMan to work properly, ensure that you've met the
+[prerequisites](#prerequisites).
 
 ## Deploying on Windows 10 IoT Enterprise
 
