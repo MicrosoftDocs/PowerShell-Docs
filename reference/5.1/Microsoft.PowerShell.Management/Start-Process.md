@@ -79,7 +79,7 @@ variables.
 
 ### Example 4: Start a process in a maximized window
 
-This example starts the *`Notepad.exe` process. It maximizes the window and retains the window until
+This example starts the `Notepad.exe` process. It maximizes the window and retains the window until
 the process completes.
 
 ```powershell
