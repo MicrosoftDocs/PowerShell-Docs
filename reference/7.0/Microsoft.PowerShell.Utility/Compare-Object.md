@@ -39,7 +39,7 @@ terminating error.
 For simple objects, like strings or numbers, the cmdlet compares the values of the objects. For
 complex objects, you must provide one or more properties to be used for comparison. If you do
 provide a property, the cmdlet checks for **IComparable** interfaces to perform the comparison. If
-that fails, the object are converted to strings and the string values are compared.
+that fails, the objects are converted to strings and the string values are compared.
 
 Some examples use splatting to reduce the line length of the code samples. For more information, see
 [about_Splatting](../Microsoft.PowerShell.Core/About/about_Splatting.md).
@@ -224,10 +224,10 @@ output displayed by the default format for **System.Boolean** objects didn't dis
 
 ### Example 6 - Comparing complex objects
 
-This example show the behavior when comparing complex objects. In this example we store two
+This example shows the behavior when comparing complex objects. In this example we store two
 different process objects for different instances of PowerShell. Both variables contain process
-object with the same name. When the objects are compared without specifying the **Property**
-parameter, the cmdlet consider the objects to be equal.
+objects with the same name. When the objects are compared without specifying the **Property**
+parameter, the cmdlet considers the objects to be equal.
 
 ```powershell
 PS> Get-Process pwsh
@@ -253,7 +253,7 @@ pwsh        17600   11.4375 =>
 pwsh        11168 36.203125 <=
 ```
 
-When you specify properties to be compared, the cmdlet show the differences.
+When you specify properties to be compared, the cmdlet shows the differences.
 
 ## PARAMETERS
 
