@@ -106,7 +106,7 @@ Configuration TestConfig
 {
     param
     (
-        [String]
+        [String[]]
         $ComputerName="localhost"
     )
 
