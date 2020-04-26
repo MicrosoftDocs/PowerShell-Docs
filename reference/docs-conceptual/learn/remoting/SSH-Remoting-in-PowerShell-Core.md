@@ -78,10 +78,13 @@ an SSH subsystem to host a PowerShell process on the remote computer. And, you m
    Create the SSH subsystem that hosts a PowerShell process on the remote computer:
 
    ```
-   Subsystem powershell c:/progra~1/powershell/6/pwsh.exe -sshs -NoLogo -NoProfile
+   Subsystem powershell c:/progra~1/powershell/7/pwsh.exe -sshs -NoLogo -NoProfile
    ```
 
    > [!NOTE]
+   > The default location of the PowerShell executable is `c:/progra~1/powershell/7/pwsh.exe`. The
+   > location can vary depending on how you installed PowerShell.
+   >
    > You must use the 8.3 short name for any file paths that contain spaces. There's a bug in
    > OpenSSH for Windows that prevents spaces from working in subsystem executable paths. For more
    > information, see this [GitHub issue](https://github.com/PowerShell/Win32-OpenSSH/issues/784).
@@ -141,6 +144,10 @@ an SSH subsystem to host a PowerShell process on the remote computer. And, you m
    ```
    Subsystem powershell /usr/bin/pwsh -sshs -NoLogo -NoProfile
    ```
+
+   > [!NOTE]
+   > The default location of the PowerShell executable is `/usr/bin/pwsh`. The location can vary
+   > depending on how you installed PowerShell.
 
    Optionally, enable key authentication:
 
