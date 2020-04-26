@@ -837,6 +837,18 @@ $d, $e, $f = $c
 This command assigns the value 3 to the $d variable, the value 4 to the $e
 variable, and the value 5 to the $f variable.
 
+If the assignment value contains less elements than variables, all the
+remaining elements at the end are not assigned any values. For example, the
+following command contains three variables and two values:
+
+```powershell
+$a, $b, $c = 1, 2
+```
+
+Therefore, PowerShell assigns the value 1 to the $a variable and
+the value 2 to the $b variable. It will not assign any value to the $c
+variable.
+
 You can also assign a single value to multiple variables by chaining the
 variables. For example, the following command assigns a value of "three" to
 all four variables:
