@@ -150,7 +150,7 @@ property of arrays in PowerShell. For example:
 4
 ```
 
-## Creating New Types.ps1xml files
+## Creating new Types.ps1xml files
 
 The `.ps1xml` files that are installed with PowerShell are
 digitally signed to prevent tampering because the formatting can include
