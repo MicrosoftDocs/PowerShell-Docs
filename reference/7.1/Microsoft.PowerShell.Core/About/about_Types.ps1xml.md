@@ -27,7 +27,7 @@ This topic describes `Types.ps1xml` files. For more information about using the
 session see
 [Update-TypeData](../../Microsoft.PowerShell.Utility/Update-TypeData.md).
 
-## About Extended Type Data
+## About extended type data
 
 Extended type data defines additional properties and methods ("members") of
 object types in PowerShell. You can extend any type that is supported by
@@ -55,7 +55,7 @@ property is part of this default set. Prior to PowerShell 6, the type
 definitions were stored the `Types.ps1xml` file in the PowerShell installation
 directory (`$PSHOME`).
 
-## Adding Extended Type Data to PowerShell.
+## Adding extended type data to PowerShell
 
 There are three sources of extended type data in PowerShell sessions.
 
@@ -73,10 +73,10 @@ In the session, the extended type data from the three sources is applied
 to objects in the same way and is available on all objects of the specified
 types.
 
-## The TypeData Cmdlets
+## The TypeData cmdlets
 
-The following TypeData cmdlets are included in the
-**Microsoft.PowerShell.Utility** module in PowerShell 3.0 and later.
+The following cmdlets are included in the **Microsoft.PowerShell.Utility**
+module in PowerShell 3.0 and later.
 
 - `Get-TypeData`: Gets extended type data in the current session.
 - `Update-TypeData`: Reloads `Types.ps1xml` files. Adds extended type data to
@@ -85,7 +85,7 @@ The following TypeData cmdlets are included in the
 
 For more information about these cmdlets, see the help topic for each cmdlet.
 
-## Built-in `Types.ps1xml` Files
+## Built-in Types.ps1xml files
 
 The `Types.ps1xml` files in the `$PSHOME` directory are added automatically to
 every session.
@@ -150,7 +150,7 @@ property of arrays in PowerShell. For example:
 4
 ```
 
-## Creating New `Types.ps1xml` Files
+## Creating New Types.ps1xml files
 
 The `.ps1xml` files that are installed with PowerShell are
 digitally signed to prevent tampering because the formatting can include
@@ -166,10 +166,10 @@ it is useful to place the files in the PowerShell installation directory
 
 When you have saved the new file, use the `Update-TypeData` cmdlet to add the
 new file to your PowerShell session. If you want your types to take precedence
-over the types that are defined in the built-in file, use the **PrependData**
-parameter of the `Update-TypeData` cmdlet. `Update-TypeData` affects only the
-current session. To make the change to all future sessions, export the console,
-or add the `Update-TypeData` command to your PowerShell profile.
+over the built-in types that are defined, use the **PrependData** parameter of
+the `Update-TypeData` cmdlet. `Update-TypeData` affects only the current
+session. To make the change to all future sessions, export the console, or add
+the `Update-TypeData` command to your PowerShell profile.
 
 ## Types.ps1xml and Add-Member
 
@@ -180,7 +180,7 @@ the `Add-Member` cmdlet.
 
 For more information, see [Add-Member](../../Microsoft.PowerShell.Utility/Add-Member.md).
 
-## Example: Adding an `Age` Member to `FileInfo` Objects
+## Example: Adding an Age member to FileInfo objects
 
 This example shows how to add an **Age** property to **System.IO.FileInfo**
 objects. The age of a file is the difference between its creation time and the
@@ -210,7 +210,7 @@ Save the follow XML code to the file `$PSHOME\MyTypes.ps1xml`.
 
 Run `Update-TypeData` to add the new `Types.ps1xml` file to the current
 session. The command uses the **PrependData** parameter to place the new file
-in a higher precedence order than the original file.
+in a precedence order higher than the original definitions.
 
 For more information about `Update-TypeData`, see
 [Update-TypeData](../../Microsoft.PowerShell.Utility/Update-TypeData.md).
@@ -229,36 +229,35 @@ Get-ChildItem $PSHOME\pwsh.exe | Select-Object Age
 ```
 
 ```Output
-60
+142
 ```
 
-## The XML in Types.ps1xml Files
+## The XML in Types.ps1xml files
 
 The full schema definition can be found in
 [Types.xsd](https://github.com/PowerShell/PowerShell/blob/master/src/Schemas/Types.xsd)
 in the PowerShell source code repository on GitHub.
 
 The `<Types>` tag encloses all of the types that are defined in the file. There
-should be only one pair of `<Types>` tags.
+should be only one `<Types>` tag.
 
-Each .NET type mentioned in the file should be represented by a pair of
-`<Type>` tags.
+Each .NET type mentioned in the file should be represented by a `<Type>` tag.
 
 The type tags must contain the following tags:
 
-`<Name>`: A pair of `<Name>` tags that enclose the name of the affected .NET
+`<Name>`: Encloses the name of the affected .NET
 type.
 
-`<Members>`: A pair of `<Members>` tags that enclose the tags for the new
-properties and methods that are defined for the .NET type.
+`<Members>`: Encloses the tags for the new properties and methods that are
+defined for the .NET type.
 
-Any of the following member tags can be inside the `<Members>` tags.
+Any of the following member tags can be inside the `<Members>` tag.
 
 `<AliasProperty>`: Defines a new name for an existing property.
 
-The `<AliasProperty>` tag must have a pair of `<Name>` tags that specify the
-name of the new property and a pair of `<ReferencedMemberName>` tags that
-specify the existing property.
+The `<AliasProperty>` tag must have a `<Name>` tag that specifies the name of
+the new property and a `<ReferencedMemberName>` tag that specifies the existing
+property.
 
 For example, the **Count** alias property is an alias for the **Length**
 property of array objects.
@@ -277,12 +276,12 @@ property of array objects.
 
 `<CodeMethod>`:  References a static method of a .NET class.
 
-The `<CodeMethod>` tag must have a pair of `<Name>` tags that specify the name
-of the new method and a pair of `<GetCodeReference>` tags that specify the code
-in which the method is defined.
+The `<CodeMethod>` tag must have a `<Name>` tag that specifies the name of the
+new method and a `<GetCodeReference>` tag that specifies the code in which the
+method is defined.
 
-For example, the **Mode** property of directories (`System.IO.DirectoryInfo`
-objects) is a code property defined in the PowerShell FileSystem provider.
+For example, the **Mode** property of `System.IO.DirectoryInfo` objects is a
+code property defined in the PowerShell FileSystem provider.
 
 ```xml
 <Type>
@@ -303,12 +302,12 @@ objects) is a code property defined in the PowerShell FileSystem provider.
 
 `<CodeProperty>`: References a static method of a .NET class.
 
-The `<CodeProperty>` tag must have a pair of `<Name>` tags that specify the
-name of the new property and a pair of `<GetCodeReference>` tags that specify
-the code in which the property is defined.
+The `<CodeProperty>` tag must have a `<Name>` tag that specifies the name of
+the new property and a `<GetCodeReference>` tag that specifies the code in
+which the property is defined.
 
-For example, the **Mode** property of directories (`System.IO.DirectoryInfo`
-objects) is a code property defined in the PowerShell FileSystem provider.
+For example, the **Mode** property of `System.IO.DirectoryInfo` objects is a
+code property defined in the PowerShell FileSystem provider.
 
 ```xml
 <Type>
@@ -330,8 +329,8 @@ objects) is a code property defined in the PowerShell FileSystem provider.
 `<MemberSet>`: Defines a collection of members (properties and methods).
 
 The `<MemberSet>` tags appear within the primary `<Members>` tags. The tags
-must enclose a pair of `<Name>` tags surrounding the name of the member set and
-a pair of secondary `<Members>` tags that surround the members (properties and
+must enclose a `<Name>` tag surrounding the name of the member set and
+a secondary `<Members>` tag that surround the members (properties and
 methods) in the set. Any of the tags that create a property (such as
 `<NoteProperty>` or `<ScriptProperty>`) or a method (such as `<Method>` or
 `<ScriptMethod>`) can be members of the set.
@@ -383,12 +382,11 @@ consists of a default property set with the **Status**, **Name**, and
 
 `<NoteProperty>`: Defines a property with a static value.
 
-The `<NoteProperty>` tag must have a pair of `<Name>` tags that specify the
-name of the new property and a pair of `<Value>` tags that specify the value of
-the property.
+The `<NoteProperty>` tag must have a `<Name>` tag that specifies the name of
+the new property and a `<Value>` tag that specifies the value of the property.
 
-For example, the following XML creates a Status property for directories
-(`System.IO.DirectoryInfo` objects). The value of the **Status** property is
+For example, the following XML creates a **Status** property for
+**System.IO.DirectoryInfo** objects. The value of the **Status** property is
 always **Success**.
 
 ```xml
@@ -412,16 +410,16 @@ value.
 
 `<PropertySet>`: Defines a collection of properties of the object.
 
-The `<PropertySet>` tag must have a pair of `<Name>` tags that specify the name
-of the property set and a pair of `<ReferencedProperty>` tags that specify the
-properties. The names of the properties are enclosed in `<Name>` tag pairs.
+The `<PropertySet>` tag must have a `<Name>` tag that specifies the name
+of the property set and a `<ReferencedProperty>` tag that specifies the
+properties. The names of the properties are enclosed in `<Name>` tag.
 
 In `Types.ps1xml`, `<PropertySet>` tags are used to define sets of properties
 for the default display of an object. You can identify the default displays by
 the value **PsStandardMembers** in the `<Name>` tag of a `<MemberSet>` tag.
 
-For example, the following XML creates a **Status** property for directories
-(`System.IO.DirectoryInfo` objects). The value of the **Status** property is
+For example, the following XML creates a **Status** property for the
+`System.IO.DirectoryInfo` object. The value of the **Status** property is
 always **Success**.
 
 ```xml
@@ -447,8 +445,8 @@ always **Success**.
 
 `<ScriptMethod>`: Defines a method whose value is the output of a script.
 
-The `<ScriptMethod>` tag must have a pair of `<Name>` tags that specify the
-name of the new method and a pair of `<Script>` tags that enclose the script
+The `<ScriptMethod>` tag must have a `<Name>` tag that specifies the
+name of the new method and a `<Script>` tag that encloses the script
 block that returns the method result.
 
 For example, the `ConvertToDateTime` and `ConvertFromDateTime` methods of
@@ -478,14 +476,14 @@ methods that use the `ToDateTime` and `ToDmtfDateTime` static methods of the
 
 `<ScriptProperty>`: Defines a property whose value is the output of a script.
 
-The `<ScriptProperty>` tag must have a pair of `<Name>` tags that specify the
-name of the new property and a pair of `<GetScriptBlock>` tags that enclose the
+The `<ScriptProperty>` tag must have a `<Name>` tag that specifies the
+name of the new property and a `<GetScriptBlock>` tag that encloses the
 script block that returns the property value.
 
-For example, the **VersionInfo** property of files (`System.IO.FileInfo`
-objects) is a script property that results from using the **FullName** property
-of the **GetVersionInfo** static method of
-**System.Diagnostics.FileVersionInfo** objects.
+For example, the **VersionInfo** property of the **System.IO.FileInfo** object
+is a script property that results from using the **FullName** property of the
+**GetVersionInfo** static method of **System.Diagnostics.FileVersionInfo**
+objects.
 
 ```xml
 <Type>
@@ -504,7 +502,7 @@ of the **GetVersionInfo** static method of
 For more information, see the
 [Windows PowerShell Software Development Kit (SDK)](/powershell/scripting/developer/windows-powershell).
 
-## `Update-TypeData`
+## Update-TypeData
 
 To load your `Types.ps1xml` files into a PowerShell session, run the
 `Update-TypeData` cmdlet. If you want the types in your file to take precedence
@@ -527,7 +525,7 @@ following example:
 Note that method syntax can only be used with .NET properties. Properties that
 are added by running the `Update-TypeData` cmdlet cannot use method syntax.
 
-## Signing a Types.ps1xml File
+## Signing a Types.ps1xml file
 
 To protect users of your `Types.ps1xml` file, you can sign the file using a
 digital signature. For more information, see
