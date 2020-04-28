@@ -1,18 +1,18 @@
 ---
 keywords: powershell,cmdlet
 locale: en-us
-ms.date: 06/03/2019
+ms.date: 04/27/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_object_creation?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Object_Creation
 ---
 # About Object Creation
 
-## SHORT DESCRIPTION
+## Short description
 
 Explains how to create objects in PowerShell.
 
-## LONG DESCRIPTION
+## Long description
 
 You can create objects in PowerShell and use the objects that you create in
 commands and scripts.
@@ -43,14 +43,14 @@ There are many ways to create objects, this list is not definitive:
 
 The following additional methods are covered in this article:
 
-- Static `new` operator: Beginning in PowerShell 5.0, you can create objects by
-  calling a type's constructor using a static `new` operator.
+- Static **new()** method: Beginning in PowerShell 5.0, you can create objects by
+  calling a type's constructor using a static **new()** method.
 - [System.Activator](/dotnet/api/system.activator) class: Creates objects
   given the assembly name and type name.
 - Hash tables: Beginning in PowerShell 3.0, you can create objects
   from hash tables of property names and property values.
 
-### Determining constructors for a type
+## Determining constructors for a type
 
 You can determine the available constructors for a given type using the
 following sample script.
@@ -89,13 +89,13 @@ String (System.Char c, System.Int32 count)
 String (System.ReadOnlySpan`1[[System.Char, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]] value)
 ```
 
-### Static new() method
+## Static new() method
 
-Beginning in PowerShell 5.0, all .NET types have an added `new` operator which
+Beginning in PowerShell 5.0, all .NET types have an added **new()** operator which
 allows you to construct instances more easily. You can also see all the
 available constructors for a given type.
 
-To see the constructors for a type, specify the `new` static method after the
+To see the constructors for a type, specify the **new()** static method after the
 type name and press `<ENTER>`.
 
 ```powershell
@@ -131,12 +131,56 @@ You can use the following sample to determine what .NET types are currently
 loaded for you to instantiate.
 
 ```powershell
-[AppDomain]::CurrentDomain.GetAssemblies() | ForEach-Object {
-                $_.GetExportedTypes() | ForEach-Object { $_.FullName }
-} | Out-Host -Paging
+[AppDomain]::CurrentDomain.GetAssemblies() |
+  ForEach-Object {
+    $_.GetExportedTypes() |
+      ForEach-Object { $_.FullName }
+  }
 ```
 
-### System.Activator class
+Objects created using the **new()** method may not have the same properties as
+objects of the same time that are created by PowerShell cmdlets. PowerShell
+cmdlets, ,providers, and Extended Type System can add extra properties to the
+instance.
+
+For example, the FileSystem provider in PowerShell add six **NoteProperty**
+values to the **DirectoryInfo** object returned by `Get-Item`.
+
+```powershell
+$PSDirInfo = Get-Item /
+$PSDirInfo | Get-Member | Group-Object MemberType | Select-Object Count, Name
+```
+
+```Output
+Count Name
+----- ----
+    4 CodeProperty
+   13 Property
+    6 NoteProperty
+    1 ScriptProperty
+   18 Method
+```
+
+When you create a **DirectoryInfo** object directly, it does not have those six
+**NoteProperty** values.
+
+```powershell
+$NewDirInfo = [System.IO.DirectoryInfo]::new('/')
+$NewDirInfo | Get-Member | Group-Object MemberType | Select-Object Count, Name
+```
+
+```Output
+Count Name
+----- ----
+    4 CodeProperty
+   13 Property
+    1 ScriptProperty
+   18 Method
+```
+
+For more information about the extended type system, see [about_Types.ps1xml](about_Types.ps1xml.md).
+
+## System.Activator class
 
 The **System.Activator** class allows you to create a type by specifying the
 assembly and type name.
@@ -163,7 +207,7 @@ IsRunning Elapsed  ElapsedMilliseconds ElapsedTicks
     False 00:00:00                   0            0
 ```
 
-### CREATE OBJECTS FROM HASH TABLES
+## Create objects from hash tables
 
 Beginning in PowerShell 3.0, you can create an object from a hash table of
 properties and property values.
@@ -181,7 +225,7 @@ This method works only for classes that have a null constructor, that is, a
 constructor that has no parameters. The object properties must be public and
 settable.
 
-### CREATE CUSTOM OBJECTS FROM HASH TABLES
+## Create custom objects from hash tables
 
 Custom objects are very useful and are easy to create using the hash table
 method. The PSCustomObject class is designed specifically for this purpose.
@@ -238,7 +282,7 @@ standard objects.
  PSWorkflow
 ```
 
-#### CREATE NON-CUSTOM OBJECTS FROM HASH TABLES
+## Create non-custom objects from hash tables
 
 You can also use hash tables to create objects for non-custom classes. When
 you create an object for a non-custom class, the full namespace name is
@@ -271,12 +315,12 @@ Arguments               :
 ArgumentList            : {}
 CreateNoWindow          : True
 EnvironmentVariables    : {OneDriveConsumer, PROCESSOR_ARCHITECTURE,
-                           CommonProgramFiles(x86), APPDATA…}
+                           CommonProgramFiles(x86), APPDATA...}
 Environment             : {[OneDriveConsumer, C:\Users\robreed\OneDrive],
                            [PROCESSOR_ARCHITECTURE, AMD64],
                            [CommonProgramFiles(x86),
                            C:\Program Files (x86)\Common Files],
-                           [APPDATA, C:\Users\robreed\AppData\Roaming]…}
+                           [APPDATA, C:\Users\robreed\AppData\Roaming]...}
 RedirectStandardInput   : False
 RedirectStandardOutput  : False
 RedirectStandardError   : False
@@ -298,7 +342,7 @@ Register-ScheduledJob Name Test -FilePath .\Get-Inventory.ps1 -Trigger @{
 }
 ```
 
-### Generic Objects
+## Generic objects
 
 You can also create generic objects in PowerShell. Generics are classes,
 structures, interfaces, and methods that have placeholders (type parameters)
@@ -320,7 +364,7 @@ One     1
 
 For more information on Generics, see [Generics in .NET](/dotnet/standard/generics).
 
-## SEE ALSO
+## See also
 
 [about_Objects](about_Objects.md)
 
@@ -329,3 +373,5 @@ For more information on Generics, see [Generics in .NET](/dotnet/standard/generi
 [about_Properties](about_Properties.md)
 
 [about_Pipelines](about_Pipelines.md)
+
+[about_Types.ps1xml](about_Types.ps1xml.md)
