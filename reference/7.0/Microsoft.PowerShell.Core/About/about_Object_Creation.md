@@ -139,11 +139,11 @@ loaded for you to instantiate.
 ```
 
 Objects created using the **new()** method may not have the same properties as
-objects of the same time that are created by PowerShell cmdlets. PowerShell
-cmdlets, ,providers, and Extended Type System can add extra properties to the
+objects of the same type that are created by PowerShell cmdlets. PowerShell
+cmdlets, providers, and Extended Type System can add extra properties to the
 instance.
 
-For example, the FileSystem provider in PowerShell add six **NoteProperty**
+For example, the FileSystem provider in PowerShell adds six **NoteProperty**
 values to the **DirectoryInfo** object returned by `Get-Item`.
 
 ```powershell
@@ -178,7 +178,7 @@ Count Name
    18 Method
 ```
 
-For more information about the extended type system, see [about_Types.ps1xml](about_Types.ps1xml.md).
+For more information about the Extended Type System, see [about_Types.ps1xml](about_Types.ps1xml.md).
 
 ## System.Activator class
 

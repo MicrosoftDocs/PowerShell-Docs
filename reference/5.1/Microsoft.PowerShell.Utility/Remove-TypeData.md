@@ -42,7 +42,7 @@ affects only the current session and sessions that are created in the current se
 You can add properties and methods to objects in PowerShell by defining them in `Update-TypeData`
 commands and `Types.ps1xml` files. `Remove-TypeData` deletes those extended properties and methods
 from the current session. `Remove-TypeData` does not delete the `Types.ps1xml` files or delete any
-extended type definitions from the `Types.ps1xml` files. For more information about Types.ps1xml
+extended type definitions from the `Types.ps1xml` files. For more information about `Types.ps1xml`
 files, see [about_Types.ps1xml](../Microsoft.PowerShell.Core/about/about_Types.ps1xml.md).
 
 This cmdlet was introduced in Windows PowerShell 3.0.

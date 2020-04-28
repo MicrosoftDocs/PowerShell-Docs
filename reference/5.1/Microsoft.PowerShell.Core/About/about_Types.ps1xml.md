@@ -49,9 +49,11 @@ You won't find the **DateTime** property in the description of the
 [System.DateTime](/dotnet/api/system.datetime) structure, because PowerShell
 adds the property and it is visible only in PowerShell.
 
-To add the **DateTime** property to all PowerShell sessions, PowerShell defines
-the **DateTime** property in the `Types.ps1xml` file in the PowerShell
-installation directory (`$PSHOME`).
+PowerShell internally defines a default set of extended types. This type
+information is loaded in every PowerShell session at startup. The **DateTime**
+property is part of this default set. Prior to PowerShell 6, the type
+definitions were stored the `Types.ps1xml` file in the PowerShell installation
+directory (`$PSHOME`).
 
 ## Adding Extended Type Data to PowerShell.
 
@@ -223,7 +225,7 @@ cmdlet to list all of the properties of the file. As a result of the change,
 the **Age** property appears in the list.
 
 ```powershell
-Get-ChildItem $PSHOME\powershell.exe | Select-Object Age
+Get-ChildItem $PSHOME\pwsh.exe | Select-Object Age
 ```
 
 ```Output

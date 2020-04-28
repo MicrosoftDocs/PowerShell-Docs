@@ -75,7 +75,7 @@ of exceptions by using method syntax instead, as shown in the following example:
 Note that method syntax can only be used with .NET properties. Properties that are added by running
 the `Update-TypeData` cmdlet cannot use method syntax.
 
-For more information about the `*types.ps1xml` files in PowerShell, see
+For more information about the `Types.ps1xml` files in PowerShell, see
 [about_Types.ps1xml](../Microsoft.PowerShell.Core/About/about_Types.ps1xml.md).
 
 ## Examples
@@ -86,15 +86,15 @@ For more information about the `*types.ps1xml` files in PowerShell, see
 Update-TypeData
 ```
 
-This command updates the extended type configuration from the `*.types.ps1xml` files that have already
+This command updates the extended type configuration from the `Types.ps1xml` files that have already
 been used in the session.
 
 ### Example 2: Update types multiple times
 
 This example shows how to update the types in a type file multiple times in the same session.
 
-The first command updates the extended type configuration from the `*.types.ps1xml` files,
-processing the `TypesA.types.ps1xml` and `TypesB.types.ps1xml` files first.
+The first command updates the extended type configuration from the `Types.ps1xml` files, processing
+the `TypesA.types.ps1xml` and `TypesB.types.ps1xml` files first.
 
 The second command shows how to update the `TypesA.types.ps1xml` again, such as you might do if you
 added or changed a type in the file. You can either repeat the previous command for the
@@ -162,7 +162,7 @@ The first command uses the `Update-TypeData` cmdlet to set the default list prop
 properties include the new **Quarter** script property that was added in a previous example.
 
 The second command uses the `Get-Date` cmdlet to get a **System.DateTime** object that represents
-the current date. The command uses a pipeline operator (|) to send the **DateTime** object to the
+the current date. The command uses a pipeline operator (`|`) to send the **DateTime** object to the
 `Format-List` cmdlet. Because the `Format-List` command does not specify the properties to display
 in the list, PowerShell uses the default values that were established by the `Update-TypeData`
 command.
@@ -200,15 +200,15 @@ object type. However, if you pipe a collection of objects to `Update-TypeData`, 
 data of the first object type and then returns an error for all other objects in the collection
 because the member is already defined on the type.
 
-The first command uses the `Get-Module` cmdlet to get the PSScheduledJob module. The command pipes the
-module object to the `Update-TypeData` cmdlet, which updates the type data for the
+The first command uses the `Get-Module` cmdlet to get the PSScheduledJob module. The command pipes
+the module object to the `Update-TypeData` cmdlet, which updates the type data for the
 **System.Management.Automation.PSModuleInfo** type and the types derived from it, such as the
-ModuleInfoGrouping type that `Get-Module` returns when you use the **ListAvailable** parameter in the
-command.
+ModuleInfoGrouping type that `Get-Module` returns when you use the **ListAvailable** parameter in
+the command.
 
 The `Update-TypeData` commands adds the **SupportsUpdatableHelp** script property to all imported
-modules. The value of the **Value** parameter is a script that returns `$True` if the **HelpInfoUri**
-property of the module is populated and `$False` otherwise.
+modules. The value of the **Value** parameter is a script that returns `$True` if the
+**HelpInfoUri** property of the module is populated and `$False` otherwise.
 
 The second command pipes the module objects from `Get-Module` to the `Format-Table` cmdlet, which
 displays the **Name** and **SupportsUpdatableHelp** properties of all modules in a list.

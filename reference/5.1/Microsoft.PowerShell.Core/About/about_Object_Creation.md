@@ -8,11 +8,11 @@ title: about_Object_Creation
 ---
 # About Object Creation
 
-## SHORT DESCRIPTION
+## Short description
 
 Explains how to create objects in PowerShell.
 
-## LONG DESCRIPTION
+## Long description
 
 You can create objects in PowerShell and use the objects that you create in
 commands and scripts.
@@ -143,11 +143,11 @@ loaded for you to instantiate.
 ```
 
 Objects created using the **new()** method may not have the same properties as
-objects of the same time that are created by PowerShell cmdlets. PowerShell
-cmdlets, ,providers, and Extended Type System can add extra properties to the
+objects of the same type that are created by PowerShell cmdlets. PowerShell
+cmdlets, providers, and Extended Type System can add extra properties to the
 instance.
 
-For example, the FileSystem provider in PowerShell add six **NoteProperty**
+For example, the FileSystem provider in PowerShell adds six **NoteProperty**
 values to the **DirectoryInfo** object returned by `Get-Item`.
 
 ```powershell
@@ -182,7 +182,7 @@ Count Name
    18 Method
 ```
 
-For more information about the extended type system, see [about_Types.ps1xml](about_Types.ps1xml.md).
+For more information about the Extended Type System, see [about_Types.ps1xml](about_Types.ps1xml.md).
 
 ## System.Activator class
 
