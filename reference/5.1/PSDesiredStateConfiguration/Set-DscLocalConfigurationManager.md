@@ -45,7 +45,7 @@ settings to the local computer.
 Set-DscLocalConfigurationManager -Path "C:\DSC\Configurations\"
 ```
 
-This command applies the LCM settings from C:\DSC\Configurations\ to the targeted nodes. After
+This command applies the LCM settings from `C:\DSC\Configurations\` to the targeted nodes. After
 receiving the settings, LCM processes them.
 
 > [!WARNING]
@@ -64,10 +64,10 @@ session for a computer named Server01 for use with the cmdlet. Alternatively, cr
 sessions to apply the cmdlet to multiple specified computers.
 
 The first command creates a CIM session by using the `New-CimSession` cmdlet, and then stores the
-**CimSession** object in the $Session variable. The command prompts you for a password. For more
+**CimSession** object in the `$Session` variable. The command prompts you for a password. For more
 information, type `Get-Help New-CimSession`.
 
-The second command applies LCM settings for the targeted node from C:\DSC\Configurations\ to the
+The second command applies LCM settings for the targeted node from `C:\DSC\Configurations\` to the
 computer identified by the **CimSession** objects stored in the $Session variable. In this example,
 the $Session variable contains a CIM session only for the computer named Server01. The command
 applies the settings. After receiving the settings, LCM processes them.
@@ -77,8 +77,8 @@ applies the settings. After receiving the settings, LCM processes them.
 ### -CimSession
 
 Runs the cmdlet in a remote session or on a remote computer. Enter a computer name or a session
-object, such as the output of a [New-CimSession](https://docs.microsoft.com/powershell/module/cimcmdlets/new-cimsession)
-or [Get-CimSession](https://docs.microsoft.com/powershell/module/cimcmdlets/get-cimsession) cmdlet.
+object, such as the output of a [New-CimSession](/reference/7.0/CimCmdlets/New-CimSession)
+or [Get-CimSession](/reference/7.0/CimCmdlets/Get-CimSession) cmdlet.
 The default is the current session on the local computer.
 
 ```yaml
@@ -148,7 +148,7 @@ Accept wildcard characters: False
 
 Specifies a file path of a folder that contains configuration settings files. The cmdlet publishes
 and applies these LCM settings to computers that have settings files in the specified path. Each
-target node must have a settings file of the following format: NetBIOS Name.meta.mof.
+target node must have a settings file of the following format: `NetBIOS Name.meta.mof`.
 
 ```yaml
 Type: String
@@ -229,6 +229,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## RELATED LINKS
 
-[Windows PowerShell Desired State Configuration Overview](/reference/docs-conceptual/dsc/overview/DscForEngineers.md)
+[Windows PowerShell Desired State Configuration Overview](/reference/docs-conceptual/dsc/overview/DscForEngineers)
 
-[Get-DscLocalConfigurationManager](Get-DscLocalConfigurationManager.md)
+[Get-DscLocalConfigurationManager](Get-DscLocalConfigurationManager)
