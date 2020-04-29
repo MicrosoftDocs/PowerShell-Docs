@@ -25,8 +25,8 @@ The following table lists the feature that are available in various versions of 
 | PSImplicitRemotingBatching                                 | &check; | &check; |    &check;    |
 | PSNativePSPathResolution                                   |         |         |    &check;    |
 | PSNullConditionalOperators                                 |         | &check; |    &check;    |
-| PSTempDrive                                                | &check; |         |               |
-| PSUseAbbreviationExpansion                                 | &check; |         |               |
+| PSTempDrive (mainstream in PS 7.0+)                        | &check; |         |               |
+| PSUseAbbreviationExpansion (mainstream in PS 7.0+)         | &check; |         |               |
 | PSUnixFileStat (non-Windows only)                          |         | &check; |    &check;    |
 
 ## Microsoft.PowerShell.Utility.PSManageBreakpointsInRunspace
@@ -159,13 +159,17 @@ the indexer is used only if `$x` is not null. If `$x` is null, then null is retu
 The `?.` and `?[]` operators are member access operators and do not allow a space in between the
 variable name and the operator.
 
-Since PowerShell allows `?` as part of the variable namem, disambiguation is required when the
+Since PowerShell allows `?` as part of the variable name, disambiguation is required when the
 operators are used without a space between the variable name and the operator. To disambiguate, the
 variables must use `{}` around the variable name like: `${x?}?.propertyName` or `${y}?[0]`.
 
 ## PSTempDrive
 
 Creates the `TEMP:` PSDrive mapped to user's temporary directory path.
+
+> [!NOTE]
+> This feature has moved out of the experimental phase and is a mainstream feature in PowerShell 7
+> and higher.
 
 ## PSUnixFileStat
 
@@ -201,3 +205,7 @@ For example:
 
 This only works for tab completion (interactive use), so `i-psdf` is not a valid cmdlet name in a
 script.
+
+> [!NOTE]
+> This feature has moved out of the experimental phase and is a mainstream feature in PowerShell 7
+> and higher.
