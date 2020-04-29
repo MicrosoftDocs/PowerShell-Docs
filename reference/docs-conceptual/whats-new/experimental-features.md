@@ -138,42 +138,30 @@ operating system.
 
 ## PSNullConditionalOperators
 
-Introduces new operators for null coalescing and null conditional assignment. The operators provide
-the script authors a short-hand syntax for performing null checks.
-
-### Null assignment operator - `??=`
-
-Assign the value to the variable if the variable value is null or the variable does not exist.
-
-```powershell
-$x ??= 'new value'
-${x}??='new value'
-
-$x? ??= 'new value'
-${x?}??='new value'
-```
-
-### Null coalescing operator - `??`
-
-Return the left hand side if it is not null, else return the right hand side.
+Introduces new operators for Null conditional member access operators - `?.` and `?[]`. Null member
+access operators can used on scalar types and array types. Return the value of the accessed member
+if the variable is not null. If the value of the variable is null, then return null.
 
 ```powershell
 $x = $null
-$x ?? 100
-100
+${x}?.propname
+${x?}?.propname
+
+${x}?[0]
+${x?}?[0]
+
+${x}?.MyMethod()
 ```
 
-```powershell
-$x = 'some value'
-$x ?? 100
-some value
-```
+The property `propname` is accessed and it's value is returned only if `$x` is not null. Similarly,
+the indexer is used only if `$x` is not null. If `$x` is null, then null is returned.
 
-```powershell
-$x? = 'some value'
-${x?}??100
-some value
-```
+The `?.` and `?[]` operators are member access operators and do not allow a space in between the
+variable name and the operator.
+
+Since PowerShell allows `?` as part of the variable namem, disambiguation is required when the
+operators are used without a space between the variable name and the operator. To disambiguate, the
+variables must use `{}` around the variable name like: `${x?}?.propertyName` or `${y}?[0]`.
 
 ## PSTempDrive
 
