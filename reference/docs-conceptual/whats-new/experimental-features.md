@@ -1,0 +1,215 @@
+---
+ms.date: 04/28/2020
+title: Using experimental features in PowerShell
+description: Lists the currently available experimental features and how to use them.
+---
+# Using experimental features in PowerShell
+
+The Experimental Features support in PowerShell provides a mechanism for experimental features to
+coexist with existing stable features in PowerShell or PowerShell modules.
+
+This article describes the experimental features that are available and how to use the feature. For
+more information about enabling or disabling these features, see
+[about_Experimental_Features](/powershell/module/microsoft.powershell.core/about/about_experimental_features).
+
+## Available features
+
+The following table lists the feature that are available in various versions of PowerShell.
+
+|                            Name                            |   6.2   |   7.0   | 7.1 (preview) |
+| ---------------------------------------------------------- | :-----: | :-----: | :-----------: |
+| Microsoft.PowerShell.Utility.PSManageBreakpointsInRunspace |         | &check; |    &check;    |
+| PSCommandNotFoundSuggestion                                | &check; | &check; |    &check;    |
+| PSCultureInvariantReplaceOperator                          |         |         |    &check;    |
+| PSDesiredStateConfiguration.InvokeDscResource              |         | &check; |    &check;    |
+| PSImplicitRemotingBatching                                 | &check; | &check; |    &check;    |
+| PSNativePSPathResolution                                   |         |         |    &check;    |
+| PSNullConditionalOperators                                 |         | &check; |    &check;    |
+| PSTempDrive                                                | &check; |         |               |
+| PSUseAbbreviationExpansion                                 | &check; |         |               |
+| PSUnixFileStat (non-Windows only)                          |         | &check; |    &check;    |
+
+## Microsoft.PowerShell.Utility.PSManageBreakpointsInRunspace
+
+Enables the **BreakAll** parameter on the `Debug-Runspace` and `Debug-Job` cmdlets to allow users to
+decide if they want PowerShell to break immediately in the current location when they attach a
+debugger.
+
+## PSCommandNotFoundSuggestion
+
+Recommends potential commands based on fuzzy matching search after a **CommandNotFoundException**.
+
+```powershell
+PS> get
+```
+
+```Output
+get: The term 'get' is not recognized as the name of a cmdlet, function, script file, or operable
+program. Check the spelling of the name, or if a path was included, verify that the path is correct
+and try again.
+
+Suggestion [4,General]: The most similar commands are: set, del, ft, gal, gbp, gc, gci, gcm, gdr,
+gcs.
+```
+
+## PSCultureInvariantReplaceOperator
+
+When the left-hand operand in a `-replace` operator statement is not a string, that operand is
+converted to a string.
+
+When this feature is disabled, the `-replace` operator does a culture-sensitive string conversion.
+For example, if your culture is set to French (fr), the value `1.2` is converted to the string
+`1,2`.
+
+```powershell
+PS> [cultureinfo]::CurrentCulture = 'fr'
+PS> 1.2 -replace ','
+12
+PS> [cultureinfo]::CurrentCulture = 'en'
+PS> 1.2 -replace ','
+1.2
+```
+
+With the feature enabled:
+
+```powershell
+PS> [cultureinfo]::CurrentCulture = 'fr'
+PS> 1.2 -replace ','
+1.2
+```
+
+## PSDesiredStateConfiguration.InvokeDscResource
+
+Enables compilation to MOF on non-Windows systems and enables the use of `Invoke-DSCResource`
+without an LCM.
+
+## PSImplicitRemotingBatching
+
+This feature examines the command typed in the shell, and if all the commands are implicit remoting
+proxy commands that form a simple pipeline, then the commands are batched together and invoked as a
+single remote pipeline.
+
+Example:
+
+```powershell
+# Create remote session and import TestIMod module
+$s = nsn -host remoteMachine
+icm $s { ipmo 'C:\Users\user\Documents\WindowsPowerShell\Modules\TestIMod\TestIMod.psd1' }
+Import-PSSession $s -mod testimod
+
+$maxProcs = 1000
+$filter = 'pwsh','powershell*','wmi*'
+
+# Without batching, this pipeline takes approximately 12 seconds to run
+Measure-Command { Get-AllProcesses -MaxCount $maxProcs | Select-Custom $filter | Group-Stuff $filter }
+Days              : 0
+Hours             : 0
+Minutes           : 0
+Seconds           : 12
+Milliseconds      : 463
+
+# But with the batching experimental feature enabled, it takes approximately 0.20 seconds
+Measure-Command { Get-AllProcesses -MaxCount $maxProcs | Select-Custom $filter | Group-Stuff $filter }
+Days              : 0
+Hours             : 0
+Minutes           : 0
+Seconds           : 0
+Milliseconds      : 209
+```
+
+As seen above, with the batching feature enabled, all three implicit remoting proxy commands,
+`Get-AllProcesses`, `Select-Custom`, `Group-Stuff`, run in the remote session and the result from
+the pipeline is the only data returned to the client. This decreases the amount of data sent back
+and forth between client and remote session, and also reduces the amount of object serialization and
+de-serialization.
+
+## PSNativePSPathResolution
+
+If a PSDrive path that uses the FileSystem provider is passed to a native command, the resolved file
+path is passed to the native command. This means a command like `code temp:/test.txt` now works as
+expected.
+
+Also, on Windows, if the path starts with `~`, that is resolved to the full path and passed to the native
+command. In both cases, the path is normalized to the directory separators for the relevant
+operating system.
+
+- If the path is not a PSDrive or `~` (on Windows), then path normalization doesn't occur
+- If the path is in single quotes, then it's not resolved and treated as literal
+
+## PSNullConditionalOperators
+
+Introduces new operators for null coalescing and null conditional assignment. The operators provide
+the script authors a short-hand syntax for performing null checks.
+
+### Null assignment operator - `??=`
+
+Assign the value to the variable if the variable value is null or the variable does not exist.
+
+```powershell
+$x ??= 'new value'
+${x}??='new value'
+
+$x? ??= 'new value'
+${x?}??='new value'
+```
+
+### Null coalescing operator - `??`
+
+Return the left hand side if it is not null, else return the right hand side.
+
+```powershell
+$x = $null
+$x ?? 100
+100
+```
+
+```powershell
+$x = 'some value'
+$x ?? 100
+some value
+```
+
+```powershell
+$x? = 'some value'
+${x?}??100
+some value
+```
+
+## PSTempDrive
+
+Creates the `TEMP:` PSDrive mapped to user's temporary directory path.
+
+## PSUnixFileStat
+
+This feature provides new behavior to include data from the Unix **stat** API in the output of the
+file system provider to facilitate a more Unix-like file listing. It adds a new note property in the
+filesystem provider named **UnixStat** that includes a common expression of the `stat(2)` API from
+the underlying Unix type system.
+
+The output from `Get-ChildItem` should look something like this:
+
+```powershell
+PS> dir | select -first 4 -skip 5
+
+
+    Directory: /Users/jimtru/src/github/forks/JamesWTruher/PowerShell-1
+
+UnixMode   User      Group           LastWriteTime        Size Name
+--------   ----      -----           -------------        ---- ----
+drwxr-xr-x jimtru    staff        10/23/2019 13:16         416 test
+drwxr-xr-x jimtru    staff         11/8/2019 10:37         896 tools
+-rw-r--r-- jimtru    staff         11/8/2019 10:37      112858 build.psm1
+-rw-r--r-- jimtru    staff         11/8/2019 10:37      201297 CHANGELOG.md
+```
+
+## PSUseAbbreviationExpansion
+
+This feature enables tab-completion of abbreviated cmdlets and functions:
+
+For example:
+
+- `i-psdf<tab>` returns `Import-PowerShellDataFile`.
+- `u-akvmssdr<tab>` returns `Undo-AzKeyVaultManagedStorageSasDefinitionRemoval`
+
+This only works for tab completion (interactive use), so `i-psdf` is not a valid cmdlet name in a
+script.
