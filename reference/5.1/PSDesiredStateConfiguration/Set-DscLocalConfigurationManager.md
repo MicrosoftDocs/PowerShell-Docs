@@ -3,7 +3,7 @@ external help file: Microsoft.Windows.DSC.CoreConfProviders.dll-Help.xml
 keywords: powershell,cmdlet
 locale: en-us
 Module Name: PSDesiredStateConfiguration
-ms.date: 06/09/2017
+ms.date: 04/29/2020
 online version: https://docs.microsoft.com/powershell/module/psdesiredstateconfiguration/set-dsclocalconfigurationmanager?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-DscLocalConfigurationManager
@@ -68,8 +68,8 @@ The first command creates a CIM session by using the `New-CimSession` cmdlet, an
 information, type `Get-Help New-CimSession`.
 
 The second command applies LCM settings for the targeted node from `C:\DSC\Configurations\` to the
-computer identified by the **CimSession** objects stored in the $Session variable. In this example,
-the $Session variable contains a CIM session only for the computer named Server01. The command
+computer identified by the **CimSession** objects stored in the `$Session` variable. In this example,
+the `$Session` variable contains a CIM session only for the computer named Server01. The command
 applies the settings. After receiving the settings, LCM processes them.
 
 ## PARAMETERS
