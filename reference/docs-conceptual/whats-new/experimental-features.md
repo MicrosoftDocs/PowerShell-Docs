@@ -26,8 +26,8 @@ The following table lists the feature that are available in various versions of 
 | PSNativePSPathResolution                                   |         |         |    &check;    |
 | PSNullConditionalOperators                                 |         | &check; |    &check;    |
 | PSTempDrive (mainstream in PS 7.0+)                        | &check; |         |               |
-| PSUseAbbreviationExpansion (mainstream in PS 7.0+)         | &check; |         |               |
 | PSUnixFileStat (non-Windows only)                          |         | &check; |    &check;    |
+| PSUseAbbreviationExpansion (mainstream in PS 7.0+)         | &check; |         |               |
 
 ## Microsoft.PowerShell.Utility.PSManageBreakpointsInRunspace
 
