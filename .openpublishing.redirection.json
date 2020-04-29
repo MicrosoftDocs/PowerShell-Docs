@@ -10,6 +10,11 @@
             "redirect_document_id": false
         },
         {
+            "source_path": "reference/docs-conceptual/community/whats-new-in-docs.md",
+            "redirect_url": "https://docs.microsoft.com/powershell/scripting/community/community-update",
+            "redirect_document_id": false
+        },
+        {
             "source_path": "reference/docs-conceptual/developer/index.md",
             "redirect_url": "https://docs.microsoft.com/powershell/scripting/developer/windows-powershell",
             "redirect_document_id": true
