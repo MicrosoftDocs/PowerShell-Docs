@@ -1,9 +1,9 @@
 ---
 ms.date: 04/28/2020
-title: Using experimental features in PowerShell
+title: Using Experimental Features in PowerShell
 description: Lists the currently available experimental features and how to use them.
 ---
-# Using experimental features in PowerShell
+# Using Experimental Features in PowerShell
 
 The Experimental Features support in PowerShell provides a mechanism for experimental features to
 coexist with existing stable features in PowerShell or PowerShell modules.
