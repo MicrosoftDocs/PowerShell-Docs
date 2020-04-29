@@ -11,7 +11,8 @@ caps.latest.revision: 6
 ---
 # How to Validate Parameter Input
 
-This section contains examples that show how to validate parameter input by using various attributes to implement validation rules.
+This section contains examples that show how to validate parameter input by using various attributes
+to implement validation rules.
 
 ## In This Section
 
