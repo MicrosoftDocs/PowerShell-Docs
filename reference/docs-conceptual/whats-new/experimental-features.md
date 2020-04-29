@@ -18,16 +18,16 @@ The following table lists the feature that are available in various versions of 
 
 |                            Name                            |   6.2   |   7.0   | 7.1 (preview) |
 | ---------------------------------------------------------- | :-----: | :-----: | :-----------: |
-| Microsoft.PowerShell.Utility.PSManageBreakpointsInRunspace |         | &check; |    &check;    |
-| PSCommandNotFoundSuggestion                                | &check; | &check; |    &check;    |
-| PSCultureInvariantReplaceOperator                          |         |         |    &check;    |
-| PSDesiredStateConfiguration.InvokeDscResource              |         | &check; |    &check;    |
-| PSImplicitRemotingBatching                                 | &check; | &check; |    &check;    |
-| PSNativePSPathResolution                                   |         |         |    &check;    |
-| PSNullConditionalOperators                                 |         | &check; |    &check;    |
 | PSTempDrive (mainstream in PS 7.0+)                        | &check; |         |               |
-| PSUnixFileStat (non-Windows only)                          |         | &check; |    &check;    |
 | PSUseAbbreviationExpansion (mainstream in PS 7.0+)         | &check; |         |               |
+| PSCommandNotFoundSuggestion                                | &check; | &check; |    &check;    |
+| PSImplicitRemotingBatching                                 | &check; | &check; |    &check;    |
+| Microsoft.PowerShell.Utility.PSManageBreakpointsInRunspace |         | &check; |    &check;    |
+| PSDesiredStateConfiguration.InvokeDscResource              |         | &check; |    &check;    |
+| PSNullConditionalOperators                                 |         | &check; |    &check;    |
+| PSUnixFileStat (non-Windows only)                          |         | &check; |    &check;    |
+| PSNativePSPathResolution                                   |         |         |    &check;    |
+| PSCultureInvariantReplaceOperator                          |         |         |    &check;    |
 
 ## Microsoft.PowerShell.Utility.PSManageBreakpointsInRunspace
 
