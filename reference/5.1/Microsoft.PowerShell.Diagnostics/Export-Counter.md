@@ -54,17 +54,12 @@ memory.
 
 This example converts a CSV file to a counter data BLG format.
 
-The first command uses the built-in Windows PowerShell conversion feature to store the value of 1
-gigabyte (GB) in bytes in the `$1GBInBytes` variable. When you type a value followed by KB
-(kilobyte), MB (megabyte), GB (gigabyte), TB (terabyte), and PB (Petabyte), PowerShell returns the
-value in bytes.
-
-The second command uses the `Import-Counter` cmdlet to import performance counter data from the
-Threads.csv file. The example presumes that this file was previously exported by using the
-`Export-Counter` cmdlet. A pipeline operator (|) sends the imported data to the `Export-Counter`
-cmdlet. The command uses the **Path** parameter to specify the location of the output file. It uses
-the **Circular** and **MaxSize** parameters to direct the `Export-Counter` cmdlet to create a
-circular log that wraps at 1 GB. The **MaxSize** parameter is expressed in megabytes.
+The `Import-Counter` cmdlet imports performance counter data from the `Threads.csv` file. The
+example presumes that this file was previously exported by using the `Export-Counter` cmdlet. A
+pipeline operator (`|`) sends the imported data to the `Export-Counter` cmdlet. The command uses the
+**Path** parameter to specify the location of the output file. It uses the **Circular** and
+**MaxSize** parameters to direct the `Export-Counter` cmdlet to create a circular log that wraps at
+1 GB. The **MaxSize** parameter is expressed in megabytes.
 
 ```powershell
 $1GBInMB = 1024 # 1GB = 1024MB
