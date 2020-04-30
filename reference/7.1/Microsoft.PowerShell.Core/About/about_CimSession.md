@@ -9,7 +9,7 @@ title: about_CimSession
 # About CimSession
 
 ## Short description
-Describes a CimSession object and the difference between CIM sessions and
+Describes a **CimSession** object and the difference between CIM sessions and
 PowerShell sessions.
 
 ## Long description
@@ -23,16 +23,16 @@ You can use the `New-CimSession` cmdlet to create a CIM session that contains
 information about a connection, such as computer name, the protocol used for
 the connection, session ID, and instance ID.
 
-After you create a CimSession object that specifies information required to
+After you create a **CimSession** object that specifies information required to
 establish a connection, PowerShell does not establish the connection
 immediately. When a cmdlet uses the CIM session, PowerShell connects to the
 specified computer, and then, when the cmdlet finishes, PowerShell terminates
 the connection.
 
-If you create a PSSession instead of using a CIM session, PowerShell validates
-connection settings, and then establishes and maintains the connection. If you
-use CIM sessions, PowerShell does not open a network connection until needed.
-For more information about PowerShell sessions, see
+If you create a **PSSession** instead of using a CIM session, PowerShell
+validates connection settings, and then establishes and maintains the
+connection. If you use CIM sessions, PowerShell does not open a network
+connection until needed. For more information about PowerShell sessions, see
 [about_PSSessions](about_PSSessions.md).
 
 ### When to use a CIM session
