@@ -80,7 +80,7 @@ because it has no special meaning to the current **cmd.exe** shell. The
 
 Similarly, if you want to execute the same command from a **Batch script**, you 
 would use `%~dp0` instead of `.\` or `$PSScriptRoot` to represent the current 
-execution directory: `powershell.exe -File %~dp0test.ps1 -TestParam %windir%`. 
+execution directory: `pwsh -File %~dp0test.ps1 -TestParam %windir%`. 
 If you instead used `.\test.ps1`, PowerShell would throw an error because it 
 cannot find the literal path `.\test.ps1`
 
