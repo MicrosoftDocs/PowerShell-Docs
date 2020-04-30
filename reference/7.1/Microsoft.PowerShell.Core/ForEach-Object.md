@@ -3,7 +3,7 @@ external help file: System.Management.Automation.dll-Help.xml
 keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Core
-ms.date: 04/09/2020
+ms.date: 04/30/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/foreach-object?view=powershell-7.x&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: ForEach-Object
