@@ -33,7 +33,7 @@ ForEach-Object [-InputObject <PSObject>] [-MemberName] <String> [-ArgumentList <
 
 ```
 ForEach-Object -Parallel <scriptblock> [-InputObject <PSObject>] [-ThrottleLimit <int>]
- [-TimeoutSeconds <int>]  [-AsJob] [-WhatIf] [-Confirm] [<CommonParameters>]
+[-UseNewRunspace] [-TimeoutSeconds <int>] [-AsJob] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -73,6 +73,12 @@ Starting in Windows PowerShell 3.0, there are two different ways to construct a 
   limits the number of parallel scripts running at a time. As before, use the `$_` variable to
   represent the current input object in the script block. Use the `$using:` keyword to pass variable
   references to the running script.
+
+  In PowerShell 7, a new runspace is created for each loop iteration to ensure max isolation. This
+  can be a large performance and resource hit if the work you are doing is small compared to
+  creating new runspaces or if there are a lot of iterations performing significant work. As of
+  PowerShell 7.1 preview release 2, runspaces from a runspace pool are reused by default. However,
+  you can still create a runspace for each iteration using the **UseNewRunspace** switch.
 
   By default, the parallel scriptblocks use the current working directory of the caller that started
   the parallel tasks.
@@ -167,7 +173,6 @@ Hello
 
 Because PowerShell treats null as an explicit placeholder, the `ForEach-Object` cmdlet generates a
 value for `$Null`, just as it does for other objects that you pipe to it.
-
 
 ### Example 6: Get property values
 
@@ -590,6 +595,25 @@ Aliases:
 Required: False
 Position: Named
 Default value: 0
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -UseNewRunspace(preview)
+
+Causes the parallel invocation to create a new runspace for every loop iteration instead of reusing
+runspaces from the a runspace pool.
+
+This parameter was introduced in PowerShell 7.1 preview release 2.
+
+```yml
+Type: SwitchParameter
+Parameter Sets: ParallelParameterSet
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
