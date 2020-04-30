@@ -22,11 +22,12 @@ PSConsoleHostReadLine
 ## DESCRIPTION
 
 `PSConsoleHostReadLine` is the main entry point for the PSReadLine module. The PowerShell console
-host automatically loads the PSReadLine modules and calls this function. Under normal operating
+host automatically loads the PSReadLine module and calls this function. Under normal operating
 conditions, this function is not intended to be used from the command line.
 
-If you wanted to create your own custom ReadLine function, you could replace this function with
-your own implementation.
+The extension point `PSConsoleHostReadLine` is special to the console host. The host calls any
+alias, function, or script with this name. PSReadLine defines this function so that it is called
+from the console host.
 
 ## EXAMPLES
 

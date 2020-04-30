@@ -1,5 +1,5 @@
 ---
-external help file: Microsoft.PowerShell.PSReadLine.dll-Help.xml
+external help file: Microsoft.PowerShell.PSReadLine2.dll-Help.xml
 keywords: powershell,cmdlet
 locale: en-us
 Module Name: PSReadLine
@@ -8,33 +8,31 @@ online version: https://docs.microsoft.com/powershell/module/psreadline/set-psre
 schema: 2.0.0
 title: Set-PSReadLineOption
 ---
-
 # Set-PSReadLineOption
 
-## SYNOPSIS
+## Synopsis
 Customizes the behavior of command line editing in **PSReadLine**.
 
-## SYNTAX
-
-### All
+## Syntax
 
 ```
 Set-PSReadLineOption [-EditMode <EditMode>] [-ContinuationPrompt <String>] [-HistoryNoDuplicates]
- [-AddToHistoryHandler <Func`2>] [-CommandValidationHandler <Action`1>]
+ [-AddToHistoryHandler <System.Func[System.String,System.Object]>]
+ [-CommandValidationHandler <System.Action[System.Management.Automation.Language.CommandAst]>]
  [-HistorySearchCursorMovesToEnd] [-MaximumHistoryCount <Int32>] [-MaximumKillRingCount <Int32>]
  [-ShowToolTips] [-ExtraPromptLineCount <Int32>] [-DingTone <Int32>] [-DingDuration <Int32>]
  [-BellStyle <BellStyle>] [-CompletionQueryItems <Int32>] [-WordDelimiters <String>]
  [-HistorySearchCaseSensitive] [-HistorySaveStyle <HistorySaveStyle>] [-HistorySavePath <String>]
- [-AnsiEscapeTimeout <Int32>] [-PromptText <String>] [-ViModeIndicator <ViModeStyle>]
- [-Colors <Hashtable>] [<CommonParameters>]
+ [-AnsiEscapeTimeout <Int32>] [-PromptText <String[]>] [-ViModeIndicator <ViModeStyle>]
+ [-ViModeChangeHandler <ScriptBlock>] [-Colors <Hashtable>] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The `Set-PSReadLineOption` cmdlet customizes the behavior of the **PSReadLine** module when you're
 editing the command line. To view the **PSReadLine** settings, use `Get-PSReadLineOption`.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Set foreground and background colors
 
@@ -57,6 +55,9 @@ The **BellStyle** is set to emit an audible beep at 1221 Hz for 60 ms.
 ```powershell
 Set-PSReadLineOption -BellStyle Audible -DingTone 1221 -DingDuration 60
 ```
+
+> [!NOTE]
+> This feature may not work in all hosts on platforms.
 
 ### Example 3: Set multiple options
 
@@ -116,7 +117,31 @@ Set-PSReadLineOption -Colors @{
 }
 ```
 
-## PARAMETERS
+### Example 6: Use ViModeChangeHandler to display Vi mode changes
+
+This example emits a cursor change VT escape in response to a **Vi** mode change.
+
+```powershell
+function OnViModeChange {
+    if ($args[0] -eq 'Command') {
+        # Set the cursor to a blinking block.
+        Write-Host -NoNewLine "`e[1 q"
+    } else {
+        # Set the cursor to a blinking line.
+        Write-Host -NoNewLine "`e[5 q"
+    }
+}
+Set-PSReadLineOption -ViModeIndicator Script -ViModeChangeHandler $Function:OnViModeChange
+```
+
+The **OnViModeChange** function sets the cursor options for the **Vi** modes: insert and command.
+**ViModeChangeHandler** uses the `Function:` provider to reference **OnViModeChange** as a script
+block object.
+
+For more information, see
+[about_Providers](/powershell/module/microsoft.powershell.core/about/about_providers).
+
+## Parameters
 
 ### -AddToHistoryHandler
 
@@ -126,7 +151,7 @@ The **ScriptBlock** receives the command line as input. If the **ScriptBlock** r
 command line is added to the history.
 
 ```yaml
-Type: Func[String, Boolean]
+Type: System.Func[System.String,System.Object]
 Parameter Sets: (All)
 Aliases:
 
@@ -177,7 +202,6 @@ The valid values are as follows:
 Type: BellStyle
 Parameter Sets: (All)
 Aliases:
-Accepted values: None, Visual, Audible
 
 Required: False
 Position: Named
@@ -247,7 +271,7 @@ common typographical errors.
 **ValidateAndAcceptLine** is used to avoid cluttering your history with commands that can't work.
 
 ```yaml
-Type: Action[CommandAst]
+Type: System.Action[System.Management.Automation.Language.CommandAst]
 Parameter Sets: (All)
 Aliases:
 
@@ -343,7 +367,6 @@ Use `Get-PSReadLineKeyHandler` to see the key bindings for the currently configu
 Type: EditMode
 Parameter Sets: (All)
 Aliases:
-Accepted values: Windows, Emacs, Vi
 
 Required: False
 Position: Named
@@ -440,7 +463,6 @@ Valid values are as follows:
 Type: HistorySaveStyle
 Parameter Sets: (All)
 Aliases:
-Accepted values: SaveIncrementally, SaveAtExit, SaveNothing
 
 Required: False
 Position: Named
@@ -542,7 +564,7 @@ Then set:
 `Set-PSReadLineOption -PromptText "# "`
 
 ```yaml
-Type: String
+Type: String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -572,6 +594,25 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -ViModeChangeHandler
+
+When the **ViModeIndicator** is set to `Script`, the script block provided will be invoked every
+time the mode changes. The script block is provided one argument of type `ViMode`.
+
+This parameter was introduced in PowerShell 7.
+
+```yaml
+Type: ScriptBlock
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -ViModeIndicator
 
 This option sets the visual indication for the current **Vi** mode. Either insert mode or command
@@ -582,12 +623,12 @@ The valid values are as follows:
 - **None**: There's no indication.
 - **Prompt**: The prompt changes color.
 - **Cursor**: The cursor changes size.
+- **Script**: User-specified text is printed.
 
 ```yaml
 Type: ViModeStyle
 Parameter Sets: (All)
 Aliases:
-Accepted values: None, Prompt, Cursor
 
 Required: False
 Position: Named
@@ -607,7 +648,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: ;:,.[]{}()/\|^&*-=+'"---
+Default value: ;:,.[]{}()/\|^&*-=+'"–—-
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -619,21 +660,21 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### None
 
-You can't send objects down the pipeline to `Set-PSReadLineOption`.
+You cannot pipe objects to `Set-PSReadLineOption.`
 
-## OUTPUTS
+## Outputs
 
 ### None
 
-`Set-PSReadLineOption` doesn't generate output.
+This cmdlet does not generate any output.
 
-## NOTES
+## Notes
 
-## RELATED LINKS
+## Related links
 
 [about_PSReadLine](./About/about_PSReadLine.md)
 
