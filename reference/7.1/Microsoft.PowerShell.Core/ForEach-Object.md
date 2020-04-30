@@ -74,11 +74,12 @@ Starting in Windows PowerShell 3.0, there are two different ways to construct a 
   represent the current input object in the script block. Use the `$using:` keyword to pass variable
   references to the running script.
 
-  In PowerShell 7, a new runspace is created for each loop iteration to ensure max isolation. This
-  can be a large performance and resource hit if the work you are doing is small compared to
+  In PowerShell 7, a new runspace is created for each loop iteration to ensure maximum isolation.
+  This can be a large performance and resource hit if the work you are doing is small compared to
   creating new runspaces or if there are a lot of iterations performing significant work. As of
-  PowerShell 7.1 preview release 2, runspaces from a runspace pool are reused by default. However,
-  you can still create a runspace for each iteration using the **UseNewRunspace** switch.
+  PowerShell 7.1, runspaces from a runspace pool are reused by default. The runspace size is
+  specified by the **ThrottleLimit** parameter. The default runspace pool size is 5. You can still
+  create a new runspace for each iteration using the **UseNewRunspace** switch.
 
   By default, the parallel scriptblocks use the current working directory of the caller that started
   the parallel tasks.
@@ -599,12 +600,12 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -UseNewRunspace(preview)
+### -UseNewRunspace
 
 Causes the parallel invocation to create a new runspace for every loop iteration instead of reusing
 runspaces from the a runspace pool.
 
-This parameter was introduced in PowerShell 7.1 preview release 2.
+This parameter was introduced in PowerShell 7.1
 
 ```yml
 Type: SwitchParameter
