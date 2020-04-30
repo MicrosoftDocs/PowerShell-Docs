@@ -77,7 +77,7 @@ Starting in Windows PowerShell 3.0, there are two different ways to construct a 
   In PowerShell 7, a new runspace is created for each loop iteration to ensure maximum isolation.
   This can be a large performance and resource hit if the work you are doing is small compared to
   creating new runspaces or if there are a lot of iterations performing significant work. As of
-  PowerShell 7.1, runspaces from a runspace pool are reused by default. The runspace size is
+  PowerShell 7.1, runspaces from a runspace pool are reused by default. The runspace pool size is
   specified by the **ThrottleLimit** parameter. The default runspace pool size is 5. You can still
   create a new runspace for each iteration using the **UseNewRunspace** switch.
 
