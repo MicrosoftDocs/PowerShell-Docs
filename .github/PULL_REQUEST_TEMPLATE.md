@@ -11,12 +11,12 @@ not have version folders.
 Select the type(s) of documents being changed.
 
 **Cmdlet reference & about_ topics**
-- [ ] Version 7.x preview content
+- [ ] Version 7.1 preview content
 - [ ] Version 7.0 content
 - [ ] Version 6 content
 - [ ] Version 5.1 content
 
-**Conceptual articles**
+**Conceptual content**
 - [ ] Fundamental conceptual articles
 - [ ] Script sample articles
 - [ ] DSC articles
@@ -24,6 +24,7 @@ Select the type(s) of documents being changed.
 - [ ] JEA articles
 - [ ] WMF articles
 - [ ] SDK articles
+- [ ] Community content
 
 ## PR Checklist
 
