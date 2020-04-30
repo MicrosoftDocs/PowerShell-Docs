@@ -8,7 +8,6 @@ online version: https://docs.microsoft.com/powershell/module/psreadline/get-psre
 schema: 2.0.0
 title: Get-PSReadLineOption
 ---
-
 # Get-PSReadLineOption
 
 ## SYNOPSIS
@@ -39,8 +38,8 @@ Get-PSReadLineOption
 EditMode                               : Windows
 AddToHistoryHandler                    :
 HistoryNoDuplicates                    : True
-HistorySavePath                        : C:\Users\testuser\AppData\Roaming\Microsoft\Windows\PowerShell\PSReadLine\Consol
-                                         eHost_history.txt
+HistorySavePath                        : C:\Users\testuser\AppData\Roaming\Microsoft\Win
+                                         dows\PowerShell\PSReadLine\ConsoleHost_history.txt
 HistorySaveStyle                       : SaveIncrementally
 HistorySearchCaseSensitive             : False
 HistorySearchCursorMovesToEnd          : False
@@ -84,7 +83,7 @@ This command returns the list of available PSReadLine options and their current 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see
-[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+[about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -96,8 +95,8 @@ You cannot pipe objects to this cmdlet.
 
 ### Microsoft.PowerShell.PSConsoleReadLineOptions
 
-An instance of the current options. Changing the values will update the settings in PSReadLine
-directly without invoking `Set-PSReadLineOption`.
+An instance of the current options. Changing the property values of this object updates the settings
+in PSReadLine directly without invoking `Set-PSReadLineOption`.
 
 ## NOTES
 
