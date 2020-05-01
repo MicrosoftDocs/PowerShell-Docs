@@ -201,6 +201,11 @@ Mode                LastWriteTime         Length Name
 -a----         5/1/2020   8:32 AM              0 TestFile.txt
 ```
 
+> [!NOTE]
+> When using `New-Item` with the `-FOrce` switch to create registry keys, the command will behave
+> the same as when overwriting a file. If the registry key already exists, the key and all
+> properties and values will be overwritten with an empty registry key.
+
 ## PARAMETERS
 
 ### -Credential
