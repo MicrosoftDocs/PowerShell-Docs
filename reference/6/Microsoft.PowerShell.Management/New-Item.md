@@ -202,7 +202,7 @@ Mode                LastWriteTime         Length Name
 ```
 
 > [!NOTE]
-> When using `New-Item` with the `-FOrce` switch to create registry keys, the command will behave
+> When using `New-Item` with the `-Force` switch to create registry keys, the command will behave
 > the same as when overwriting a file. If the registry key already exists, the key and all
 > properties and values will be overwritten with an empty registry key.
 
@@ -229,8 +229,8 @@ Accept wildcard characters: False
 ### -Force
 
 Forces this cmdlet to create an item that writes over an existing read-only item. Implementation
-varies from provider to provider. For more information, see [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).
-Even using the **Force** parameter, the cmdlet cannot override security restrictions.
+varies from provider to provider. Even using the **Force** parameter, the cmdlet cannot override
+security restrictions.
 
 ```yaml
 Type: SwitchParameter
