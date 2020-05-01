@@ -155,6 +155,52 @@ SymbolicLink {.\Notice.txt}
 In this example, **Target** is an alias for the **Value** parameter. The target of the symbolic link
 can be a relative path. Prior to PowerShell v6.2, the target must be a fully-qualified path.
 
+### Example 8: Use the -Force parameter to attempt to recreate folders
+
+This example creates a folder with a file inside. Then, attempts to create the same folder using
+`-Force`. It will not overwrite the folder but simply return the existing folder object with the
+file created intact.
+
+```powershell
+PS> New-Item -Path .\TestFolder -ItemType Directory
+PS> New-Item -Path .\TestFolder\TestFile.txt -ItemType File
+
+PS> New-Item -Path .\TestFolder -ItemType Directory -Force
+
+    Directory: C:\
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+d-----         5/1/2020   8:03 AM                TestFolder
+
+PS> Get-ChildItem .\TestFolder\
+
+    Directory: C:\TestFolder
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+-a----         5/1/2020   8:03 AM              0 TestFile.txt
+```
+
+### Example 9: Use the -Force parameter to overwrite existing files
+
+This example creates a file with a value and then recreates the file using `-Force`. This overwrites
+The existing file and it will lose it's content as you can see by the length property
+
+```powershell
+PS> New-Item ./TestFile.txt -ItemType File -Value 'This is just a test file'
+
+    Directory: C:\Source\Test
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+-a----         5/1/2020   8:32 AM             24 TestFile.txt
+
+New-Item ./TestFile.txt -ItemType File -Force
+
+    Directory: C:\Source\Test
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+-a----         5/1/2020   8:32 AM              0 TestFile.txt
+```
+
 ## PARAMETERS
 
 ### -Credential
