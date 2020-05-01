@@ -8,13 +8,22 @@ description: Lists the currently available experimental features and how to use 
 The Experimental Features support in PowerShell provides a mechanism for experimental features to
 coexist with existing stable features in PowerShell or PowerShell modules.
 
-This article describes the experimental features that are available and how to use the feature. For
-more information about enabling or disabling these features, see
+An experimental feature is one where the design is not finalized. The feature is available for users
+to test and provide feedback. Once an experimental feature is finalized, the design changes become
+breaking changes.
+
+> [!CAUTION]
+> Experimental features aren't intended to be used in production since the changes are allowed to be
+> breaking. Experimental features are not officially supported. However, we appreciate any feedback
+> and bug reports. You can file issues in the
+> [GitHub source repository](https://github.com/PowerShell/PowerShell/issues/new/choose).
+
+For more information about enabling or disabling these features, see
 [about_Experimental_Features](/powershell/module/microsoft.powershell.core/about/about_experimental_features).
 
 ## Available features
 
-The following table lists the feature that are available in various versions of PowerShell.
+This article describes the experimental features that are available and how to use the feature.
 
 |                            Name                            |   6.2   |   7.0   | 7.1 (preview) |
 | ---------------------------------------------------------- | :-----: | :-----: | :-----------: |

@@ -731,13 +731,20 @@
         - name: Appendix 2 Creating a custom powershell shortcut
           href: samples/appendix-2---creating-a-custom-powershell-shortcut.md
 - name: Community
+  expanded: true
   items:
-    - name: Community resources
+    - name: Community update
+      href: community/community-update.yml
+    - name: Community support
       href: community/community-support.md
-    - name: Digital art
-      href: community/digital-art.md
-    - name: What's new in PowerShell Docs
-      href: community/whats-new-in-docs.md
+    - name: Contributor Hall of Fame
+      href: community/hall-of-fame.md
+    - name: What's new in Docs
+      items:
+        - name: 2020-Q2
+          href: community/2020-Q2.md
+        - name: 2020-Q1
+          href: community/2020-Q1.md
     - name: Contributor's Guide
       items:
         - name: Overview
@@ -760,6 +767,8 @@
               href: community/contributing/managing-issues.md
             - name: How we manage pull requests
               href: community/contributing/managing-pull-requests.md
+    - name: Digital art
+      href: community/digital-art.md
 - name: PowerShell SDK
   items:
     - name: Overview

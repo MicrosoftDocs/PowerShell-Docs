@@ -25,7 +25,6 @@ the Windows 10 October 2018 Update (Build 1809).
 > PowerShell 7.0 on Windows works properly. You can manually load the module if
 > necessary.
 
-
 ## PSReadLine Cmdlets
 
 ### [PSConsoleHostReadLine](PSConsoleHostReadLine.md)
