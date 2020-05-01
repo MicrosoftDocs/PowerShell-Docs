@@ -15,7 +15,7 @@ Describes the Type accelerators available for .NET framework classes
 
 Type accelerators are aliases for .NET framework classes. They allow you to
 access specific .NET framework classes without having to explicitly type the
-entire class name. For example, you can shorten the .NET **AliasAttribute**
+entire class name. For example, you can shorten the **AliasAttribute**
 class from `[System.Management.Automation.AliasAttribute]` to `[Alias]`.
 
 > [!NOTE]
