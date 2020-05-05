@@ -32,7 +32,6 @@ class from `[System.Management.Automation.AliasAttribute]` to `[Alias]`.
 |AllowEmptyString             | System.Management.Automation.AllowEmptyStringAttribute              |
 |AllowNull                    | System.Management.Automation.AllowNullAttribute                     |
 |ArgumentCompleter            | System.Management.Automation.ArgumentCompleterAttribute             |
-|ArgumentCompletions          | System.Management.Automation.ArgumentCompletionsAttribute           |
 |array                        | System.Array                                                        |
 |bigint                       | System.Numerics.BigInteger                                          |
 |bool                         | System.Boolean                                                      |
@@ -51,9 +50,6 @@ class from `[System.Management.Automation.AliasAttribute]` to `[Alias]`.
 |DscLocalConfigurationManager | System.Management.Automation.DscLocalConfigurationManagerAttribute  |
 |DscProperty                  | System.Management.Automation.DscPropertyAttribute                   |
 |DscResource                  | System.Management.Automation.DscResourceAttribute                   |
-|ExperimentAction             | System.Management.Automation.ExperimentAction                       |
-|Experimental                 | System.Management.Automation.ExperimentalAttribute                  |
-|ExperimentalFeature          | System.Management.Automation.ExperimentalFeature                    |
 |float                        | System.Single                                                       |
 |guid                         | System.Guid                                                         |
 |hashtable                    | System.Collections.Hashtable                                        |
@@ -81,7 +77,6 @@ class from `[System.Management.Automation.AliasAttribute]` to `[Alias]`.
 |psnoteproperty               | System.Management.Automation.PSNoteProperty                         |
 |psobject                     | System.Management.Automation.PSObject                               |
 |psprimitivedictionary        | System.Management.Automation.PSPrimitiveDictionary                  |
-|pspropertyexpression         | Microsoft.PowerShell.Commands.PSPropertyExpression                  |
 |psscriptmethod               | System.Management.Automation.PSScriptMethod                         |
 |psscriptproperty             | System.Management.Automation.PSScriptProperty                       |
 |PSTypeNameAttribute          | System.Management.Automation.PSTypeNameAttribute                    |
@@ -94,21 +89,16 @@ class from `[System.Management.Automation.AliasAttribute]` to `[Alias]`.
 |sbyte                        | System.SByte                                                        |
 |scriptblock                  | System.Management.Automation.ScriptBlock                            |
 |securestring                 | System.Security.SecureString                                        |
-|semver                       | System.Management.Automation.SemanticVersion                        |
-|short                        | System.Int16                                                        |
 |single                       | System.Single                                                       |
 |string                       | System.String                                                       |
 |SupportsWildcards            | System.Management.Automation.SupportsWildcardsAttribute             |
 |switch                       | System.Management.Automation.SwitchParameter                        |
 |timespan                     | System.TimeSpan                                                     |
 |type                         | System.Type                                                         |
-|uint                         | System.UInt32                                                       |
 |uint16                       | System.UInt16                                                       |
 |uint32                       | System.UInt32                                                       |
 |uint64                       | System.UInt64                                                       |
-|ulong                        | System.UInt64                                                       |
 |uri                          | System.Uri                                                          |
-|ushort                       | System.UInt16                                                       |
 |ValidateCount                | System.Management.Automation.ValidateCountAttribute                 |
 |ValidateDrive                | System.Management.Automation.ValidateDriveAttribute                 |
 |ValidateLength               | System.Management.Automation.ValidateLengthAttribute                |
