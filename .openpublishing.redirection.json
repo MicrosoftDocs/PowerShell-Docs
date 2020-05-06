@@ -90,6 +90,27 @@
             "redirect_document_id": false
         },
         {
+            "source_path": "reference/6/Microsoft.PowerShell.Core/about/about_powershell_exe.md",
+            "redirect_url": "https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_pwsh?view=powershell-6",
+            "redirect_document_id": false
+        },
+        {
+            "source_path": "reference/7.0/Microsoft.PowerShell.Core/about/about_powershell_exe.md",
+            "redirect_url": "https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_pwsh?view=powershell-7",
+            "redirect_document_id": false
+        },
+        {
+            "source_path": "reference/7.1/Microsoft.PowerShell.Core/about/about_powershell_exe.md",
+            "redirect_url": "https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_pwsh?view=powershell-7.x",
+            "redirect_document_id": false
+        },
+
+        {
+            "source_path": "reference/docs-conceptual/whats-new/What-s-New-With-PowerShell.md",
+            "redirect_url": "https://docs.microsoft.com/powershell/scripting/whats-new/what-s-new-in-windows-powershell-50",
+            "redirect_document_id": false
+        },
+        {
             "source_path": "reference/virtual-directory-module/5.1/ISE.md",
             "redirect_url": "https://docs.microsoft.com/powershell/module/ISE?view=powershell-5.1",
             "redirect_document_id": false
