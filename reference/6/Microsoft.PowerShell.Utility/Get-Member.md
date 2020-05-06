@@ -109,15 +109,17 @@ This example gets the methods and properties of service objects that were extend
 `Types.ps1xml` file or the `Add-Member` cmdlet.
 
 ```powershell
-Get-Service| Get-Member -View Extended
+Get-Service | Get-Member -View Extended
 ```
 
 ```Output
-    TypeName: System.ServiceProcess.ServiceController
+   TypeName: System.Service.ServiceController#StartupType
 
-Name MemberType    Definition
----- ----------    ----------
-Name AliasProperty Name = ServiceName
+Name             MemberType    Definition
+----             ----------    ----------
+Name             AliasProperty Name = ServiceName
+RequiredServices AliasProperty RequiredServices = ServicesDependedOn
+ToString         ScriptMethod  System.Object ToString();
 ```
 
 The `Get-Member` command uses the **View** parameter to get only the extended members of the service
@@ -147,15 +149,15 @@ The command returns the **Message** property of the **EventLogRecord** object.
 
 ### Example 5: Get objects with a specified property
 
-This example gets objects that have a **MachineName** property from a list of cmdlets.
+This example gets objects that have a **MachineName** property in the output from a list of cmdlets.
 
-The `$list` variable contains a list of cmdlets to run. The **foreach** statement invokes each
-command and sends the results to `Get-Member`. The **Name** parameter limits the results from
+The `$list` variable contains a list of cmdlets to be evaluated. The **foreach** statement invokes
+each command and sends the results to `Get-Member`. The **Name** parameter limits the results from
 `Get-Member` to members that have the name **MachineName**.
 
 ```powershell
 $list = "Get-Process", "Get-Service", "Get-Culture", "Get-PSDrive", "Get-ExecutionPolicy"
-ForEach ($cmdlet in $A) {& $cmdlet | Get-Member -Name MachineName}
+foreach ($cmdlet in $list) {& $cmdlet | Get-Member -Name MachineName}
 ```
 
 ```Output
@@ -182,8 +184,8 @@ If you pass the array using the **InputObject** parameter, the array is treated 
 
 
 ```powershell
-PS> $array = @(1,'hello')
-PS> $array | Get-Member
+$array = @(1,'hello')
+$array | Get-Member
 ```
 
 ```Output
@@ -272,16 +274,16 @@ Attributes
 Adds the intrinsic members and the compiler-generated **get_** and **set_** methods to the display.
 The following list describes the properties that are added when you use the **Force** parameter:
 
-- PSBase: The original properties of the .NET Framework object without extension or adaptation.
-  These are the properties defined for the object class and listed in MSDN.
-- PSAdapted. The properties and methods defined in the PowerShell extended type system.
-- PSExtended. The properties and methods that were added in the Types.ps1xml files or by using the
-  `Add-Member` cmdlet.
-- PSObject. The adapter that converts the base object to a PowerShell**PSObject** object.
-- PSTypeNames. A list of object types that describe the object, in order of specificity. When
-  formatting the object, PowerShell searches for the types in the Format.ps1xml files in the
-  PowerShell installation directory ($pshome). It uses the formatting definition for the first type
-  that it finds.
+- **PSBase**: The original properties of the .NET object without extension or adaptation. These are
+  the properties defined for the object class.
+- **PSAdapted**. The properties and methods defined in the PowerShell extended type system.
+- **PSExtended**. The properties and methods that were added in the `Types.ps1xml` files or by using
+  the `Add-Member` cmdlet.
+- **PSObject**. The adapter that converts the base object to a PowerShell **PSObject** object.
+- **PSTypeNames**. A list of object types that describe the object, in order of specificity. When
+  formatting the object, PowerShell searches for the types in the `Format.ps1xml` files in the
+  PowerShell installation directory (`$PSHOME`). It uses the formatting definition for the first
+  type that it finds.
 
 By default, `Get-Member` gets these properties in all views except **Base** and **Adapted**, but
 does not display them.
