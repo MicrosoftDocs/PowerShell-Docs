@@ -32,9 +32,6 @@ Get-EventLog [-LogName] <String> [-ComputerName <String[]>] [-Newest <Int32>] [-
 Get-EventLog [-ComputerName <String[]>] [-List] [-AsString] [<CommonParameters>]
 ```
 
-> [!NOTE]
-> `Get-EventLog` is deprecated from Powershell 6.0 and above. Though it still works in Windows PowerShell 5.1, the results may not be accurate. It is highly recommended not to use `Get-EventLog`, instead you can use `Get-WinEvent`.
-
 ## DESCRIPTION
 
 The `Get-EventLog` cmdlet gets events and event logs from local and remote computers. By default,
@@ -47,6 +44,10 @@ events that match the specified property values.
 PowerShell cmdlets that contain the `EventLog` noun work only on Windows classic event logs such as
 Application, System, or Security. To get logs that use the Windows Event Log technology in Windows
 Vista and later Windows versions, use `Get-WinEvent`.
+
+> [!NOTE]
+> `Get-EventLog` uses a Win32 API that is deprecated. The results may not be accurate. Use the 
+> `Get-WinEvent` cmdlet instead.
 
 ## EXAMPLES
 
