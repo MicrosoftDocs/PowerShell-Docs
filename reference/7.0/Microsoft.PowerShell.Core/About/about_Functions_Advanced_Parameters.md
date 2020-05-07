@@ -1,7 +1,7 @@
 ---
 keywords: powershell,cmdlet
 locale: en-us
-ms.date: 03/12/2020
+ms.date: 05/06/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_functions_advanced_parameters?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Functions_Advanced_Parameters
@@ -167,6 +167,23 @@ Param(
 )
 ```
 
+The boolean argument types of the **Parameter** attribute default to **False**
+when omitted from the **Parameter** attribute. Set the argument value to
+`$true` or just list the argument by name. For example, the following
+**Parameter** attributes are equivalent.
+
+```powershell
+Param(
+    [Parameter(Mandatory=$true)]
+)
+
+# Boolean arguments can be defined using this shorthand syntax
+
+Param(
+    [Parameter(Mandatory)]
+)
+```
+
 If you use the **Parameter** attribute without arguments, as an alternative to
 using the **CmdletBinding** attribute, the parentheses that follow the
 attribute name are still required.
@@ -178,7 +195,7 @@ Param(
 )
 ```
 
-### Mandatory argument
+#### Mandatory argument
 
 The `Mandatory` argument indicates that the parameter is required. If this
 argument isn't specified, the parameter is optional.
@@ -194,7 +211,7 @@ Param(
 )
 ```
 
-### Position argument
+#### Position argument
 
 The `Position` argument determines whether the parameter name is required when
 the parameter is used in a command. When a parameter declaration includes the
@@ -210,10 +227,9 @@ By default, all function parameters are positional. PowerShell assigns position
 numbers to parameters in the order in which the parameters are declared in the
 function. To disable this feature, set the value of the `PositionalBinding`
 argument of the **CmdletBinding** attribute to `$False`. The `Position`
-argument takes precedence over the value of the `PositionalBinding` argument
-for the parameters on which it's declared. For more information, see
-`PositionalBinding` in
-[about_Functions_CmdletBindingAttribute](about_Functions_CmdletBindingAttribute.md).
+argument takes precedence over the value of the `PositionalBinding` argument of
+the **CmdletBinding** attribute. For more information, see `PositionalBinding`
+in [about_Functions_CmdletBindingAttribute](about_Functions_CmdletBindingAttribute.md).
 
 The value of the `Position` argument is specified as an integer. A position
 value of **0** represents the first position in the command, a position value
@@ -237,7 +253,7 @@ Param(
 )
 ```
 
-### ParameterSetName argument
+#### ParameterSetName argument
 
 The `ParameterSetName` argument specifies the parameter set to which a
 parameter belongs. If no parameter set is specified, the parameter belongs to
@@ -300,7 +316,7 @@ Param(
 
 For more information about parameter sets, see [About Parameter Sets](about_parameter_sets.md).
 
-### ValueFromPipeline argument
+#### ValueFromPipeline argument
 
 The `ValueFromPipeline` argument indicates that the parameter accepts input
 from a pipeline object. Specify this argument if the function accepts the
@@ -318,7 +334,7 @@ Param(
 )
 ```
 
-### ValueFromPipelineByPropertyName argument
+#### ValueFromPipelineByPropertyName argument
 
 The `ValueFromPipelineByPropertyName` argument indicates that the parameter
 accepts input from a property of a pipeline object. The object property must
@@ -353,7 +369,7 @@ Param(
 >
 > You can read about _delay-bind_ script blocks here [about_Script_Blocks.md](about_Script_Blocks.md).
 
-### ValueFromRemainingArguments argument
+#### ValueFromRemainingArguments argument
 
 The `ValueFromRemainingArguments` argument indicates that the parameter accepts
 all the parameter's values in the command that aren't assigned to other
@@ -392,7 +408,7 @@ Found 2 elements
 > Prior to PowerShell 6.2, the **ValueFromRemainingArguments** collection was
 > joined as single entity under index **0**.
 
-### HelpMessage argument
+#### HelpMessage argument
 
 The `HelpMessage` argument specifies a string that contains a brief description
 of the parameter or its value. PowerShell displays this message in the prompt
