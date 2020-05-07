@@ -5,17 +5,6 @@ ms.date: 03/09/2020
 ---
 # Installing PowerShell on Linux
 
-Supports [Ubuntu 16.04][u16], [Ubuntu 18.04][u1804], [Ubuntu 18.10][u1810], [Ubuntu 19.04][u1904],
- [Debian 8][deb8], [Debian 9][deb9], [Debian 10][deb10], [Alpine 3.9 and 3.10][alpine], [CentOS 7][cos],
- [Red Hat Enterprise Linux (RHEL) 7][rhel7], [openSUSE 42.3][opensuse],
- [openSUSE Leap 15][opensuse], [Fedora 28][fedora], [Fedora 29][fedora], [Fedora 30][fedora],
- and [Arch Linux][arch].
-
-For Linux distributions that aren't officially supported, you can try to install PowerShell using
-the [PowerShell Snap Package][snap]. You can also try deploying PowerShell binaries directly using
-the Linux [`tar.gz` archive][tar], but you would need to set up the necessary dependencies based on
-the OS in separate steps.
-
 All packages are available on our GitHub [releases][] page. After the package is installed, run
 `pwsh` from a terminal. Run `pwsh-preview` if you installed a [Preview release](#installing-preview-releases).
 
@@ -27,38 +16,43 @@ All packages are available on our GitHub [releases][] page. After the package is
 > If you need to run PowerShell 6 side-by-side with PowerShell 7, reinstall PowerShell 6 using the
 > [binary archive](#binary-archives) method.
 
-[u16]: #ubuntu-1604
-[u1804]: #ubuntu-1804
-[u1810]: #ubuntu-1810
-[u1904]: #ubuntu-1904
-[deb8]: #debian-8
-[deb9]: #debian-9
-[deb10]: #debian-10
-[alpine]: #alpine-39-and-310
-[cos]: #centos-7
-[rhel7]: #red-hat-enterprise-linux-rhel-7
-[opensuse]: #opensuse
-[fedora]: #fedora
-[arch]: #arch-linux
+For Linux distributions that aren't officially supported, you can try to install PowerShell using
+the [PowerShell Snap Package][snap]. You can also try deploying PowerShell binaries directly using
+the Linux [`tar.gz` archive][tar], but you would need to set up the necessary dependencies based on
+the OS in separate steps.
+
 [snap]: #snap-package
 [tar]: #binary-archives
 
+Officially supported releases
 
-## Installing Preview Releases
+- Ubuntu 16.04
+- Ubuntu 18.04
+- Debian 8
+- Debian 9
+- Debian 10
+- Alpine 3.9 and 3.10
+- CentOS 7
+- Red Hat Enterprise Linux (RHEL) 7
+- Fedora 28
+- Fedora 29
+- Fedora 30
+- openSUSE 42.3
+- openSUSE Leap 15
 
-When installing a PowerShell Preview release for Linux via a Package Repository, the package name
-changes from `powershell` to `powershell-preview`.
+Community supported releases
 
-Installing via direct download doesn't change, other than the file name.
+- Ubuntu 18.10
+- Ubuntu 19.04
+- Arch Linux
+- Kali
+- Raspbian (experimental)
 
-The following table contains the commands to install the stable and preview packages using the
-various package managers:
+Alternate install methods
 
-| Distribution(s) |            Stable Command            |               Preview Command                |
-| --------------- | ------------------------------------ | -------------------------------------------- |
-| Ubuntu, Debian  | `sudo apt-get install -y powershell` | `sudo apt-get install -y powershell-preview` |
-| CentOS, RedHat  | `sudo yum install -y powershell`     | `sudo yum install -y powershell-preview`     |
-| Fedora          | `sudo dnf install -y powershell`     | `sudo dnf install -y powershell-preview`     |
+- Snap Package
+- Binary Archives
+- .NET Global tool
 
 ## Ubuntu 16.04
 
@@ -553,7 +547,7 @@ sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
 curl https://packages.microsoft.com/config/rhel/7/prod.repo | sudo tee /etc/yum.repos.d/microsoft.repo
 
 # Update the list of products
-sudo dnf update
+sudo dnf check-update
 
 # Install a system component
 sudo dnf install compat-openssl10
@@ -597,9 +591,9 @@ sudo dnf remove powershell
 
 PowerShell is available from the [Arch Linux][] User Repository (AUR).
 
-* It can be compiled with the [latest tagged release][arch-release]
-* It can be compiled from the [latest commit to master][arch-git]
-* It can be installed using the [latest release binary][arch-bin]
+- It can be compiled with the [latest tagged release][arch-release]
+- It can be compiled from the [latest commit to master][arch-git]
+- It can be installed using the [latest release binary][arch-bin]
 
 Packages in the AUR are community maintained; there's no official support.
 
@@ -742,6 +736,22 @@ sudo ~/powershell/pwsh -c New-Item -ItemType SymbolicLink -Path "/usr/bin/pwsh" 
 rm -rf ~/powershell
 ```
 
+## Installing Preview Releases
+
+When installing a PowerShell Preview release for Linux via a Package Repository, the package name
+changes from `powershell` to `powershell-preview`.
+
+Installing via direct download doesn't change, other than the file name.
+
+The following table contains the commands to install the stable and preview packages using the
+various package managers:
+
+| Distribution(s) |            Stable Command            |               Preview Command                |
+| --------------- | ------------------------------------ | -------------------------------------------- |
+| Ubuntu, Debian  | `sudo apt-get install -y powershell` | `sudo apt-get install -y powershell-preview` |
+| CentOS, RedHat  | `sudo yum install -y powershell`     | `sudo yum install -y powershell-preview`     |
+| Fedora          | `sudo dnf install -y powershell`     | `sudo dnf install -y powershell-preview`     |
+
 ## Install as a .NET Global tool
 
 If you already have the [.NET Core SDK](/dotnet/core/sdk) installed, it's easy to install PowerShell
@@ -781,8 +791,9 @@ Linux distributions.
 | Fedora 27 <br> Fedora 28 | libunwind, libcurl, openssl-libs, libicu, compat-openssl10 |
 
 To deploy PowerShell binaries on Linux distributions that aren't officially supported, you need to
-install the necessary dependencies for the target OS in separate steps. For example, our [Amazon Linux dockerfile][amazon-dockerfile]
-installs dependencies first, and then extracts the Linux `tar.gz` archive.
+install the necessary dependencies for the target OS in separate steps. For example, our
+[Amazon Linux dockerfile][amazon-dockerfile] installs dependencies first, and then extracts the
+Linux `tar.gz` archive.
 
 [amazon-dockerfile]: https://github.com/PowerShell/PowerShell-Docker/blob/master/release/community-stable/amazonlinux/docker/Dockerfile
 
@@ -821,7 +832,7 @@ sudo rm -rf /usr/bin/pwsh /opt/microsoft/powershell
 - User modules will be read from `~/.local/share/powershell/Modules`
 - Shared modules will be read from `/usr/local/share/powershell/Modules`
 - Default modules will be read from `$PSHOME/Modules`
-- PSReadline history will be recorded to `~/.local/share/powershell/PSReadLine/ConsoleHost_history.txt`
+- PSReadLine history will be recorded to `~/.local/share/powershell/PSReadLine/ConsoleHost_history.txt`
 
 The profiles respect PowerShell's per-host configuration, so the default host-specific profiles
 exists at `Microsoft.PowerShell_profile.ps1` in the same locations.

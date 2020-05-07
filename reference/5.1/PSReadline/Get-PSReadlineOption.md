@@ -1,5 +1,5 @@
 ---
-external help file: Microsoft.PowerShell.PSReadLine.dll-Help.xml
+external help file: Microsoft.PowerShell.PSReadLine2.dll-Help.xml
 keywords: powershell,cmdlet
 locale: en-us
 Module Name: PSReadLine
@@ -8,7 +8,6 @@ online version: https://docs.microsoft.com/powershell/module/psreadline/get-psre
 schema: 2.0.0
 title: Get-PSReadLineOption
 ---
-
 # Get-PSReadLineOption
 
 ## SYNOPSIS
@@ -37,54 +36,42 @@ Get-PSReadLineOption
 
 ```Output
 EditMode                               : Windows
-ContinuationPrompt                     : >>
-ContinuationPromptForegroundColor      : DarkYellow
-ContinuationPromptBackgroundColor      : DarkMagenta
-ExtraPromptLineCount                   : 0
 AddToHistoryHandler                    :
-CommandValidationHandler               :
-CommandsToValidateScriptBlockArguments : {ForEach-Object, %, Invoke-Command, icm...}
-HistoryNoDuplicates                    : False
-MaximumHistoryCount                    : 4096
-MaximumKillRingCount                   : 10
-HistorySearchCursorMovesToEnd          : False
-ShowToolTips                           : False
-DingTone                               : 1221
-CompletionQueryItems                   : 100
-WordDelimiters                         : ;:,.[]{}()/\|^&*-=+'"
-DingDuration                           : 50
-BellStyle                              : Audible
-HistorySearchCaseSensitive             : False
-ViModeIndicator                        : None
-HistorySavePath                        : C:\Users\testuser\AppData\Roaming\Microsoft\Windows\PowerShell\PSReadLine\Cons
-                                         oleHost_history.txt
+HistoryNoDuplicates                    : True
+HistorySavePath                        : C:\Users\testuser\AppData\Roaming\Microsoft\Win
+                                         dows\PowerShell\PSReadLine\ConsoleHost_history.txt
 HistorySaveStyle                       : SaveIncrementally
-DefaultTokenForegroundColor            : DarkYellow
-CommentForegroundColor                 : DarkGreen
-KeywordForegroundColor                 : Green
-StringForegroundColor                  : DarkCyan
-OperatorForegroundColor                : DarkGray
-VariableForegroundColor                : Green
-CommandForegroundColor                 : Yellow
-ParameterForegroundColor               : DarkGray
-TypeForegroundColor                    : Gray
-NumberForegroundColor                  : White
-MemberForegroundColor                  : White
-DefaultTokenBackgroundColor            : DarkMagenta
-CommentBackgroundColor                 : DarkMagenta
-KeywordBackgroundColor                 : DarkMagenta
-StringBackgroundColor                  : DarkMagenta
-OperatorBackgroundColor                : DarkMagenta
-VariableBackgroundColor                : DarkMagenta
-CommandBackgroundColor                 : DarkMagenta
-ParameterBackgroundColor               : DarkMagenta
-TypeBackgroundColor                    : DarkMagenta
-NumberBackgroundColor                  : DarkMagenta
-MemberBackgroundColor                  : DarkMagenta
-EmphasisForegroundColor                : Cyan
-EmphasisBackgroundColor                : DarkMagenta
-ErrorForegroundColor                   : Red
-ErrorBackgroundColor                   : DarkMagenta
+HistorySearchCaseSensitive             : False
+HistorySearchCursorMovesToEnd          : False
+MaximumHistoryCount                    : 4096
+ContinuationPrompt                     : >>
+ExtraPromptLineCount                   : 0
+PromptText                             :
+BellStyle                              : Audible
+DingDuration                           : 50
+DingTone                               : 1221
+CommandsToValidateScriptBlockArguments : {ForEach-Object, %, Invoke-Command, icm...}
+CommandValidationHandler               :
+CompletionQueryItems                   : 100
+MaximumKillRingCount                   : 10
+ShowToolTips                           : True
+ViModeIndicator                        : None
+WordDelimiters                         : ;:,.[]{}()/\|^&*-=+'"–—-
+CommandColor                           : "$([char]0x1b)[93m"
+CommentColor                           : "$([char]0x1b)[32m"
+ContinuationPromptColor                : "$([char]0x1b)[37m"
+DefaultTokenColor                      : "$([char]0x1b)[37m"
+EmphasisColor                          : "$([char]0x1b)[96m"
+ErrorColor                             : "$([char]0x1b)[91m"
+KeywordColor                           : "$([char]0x1b)[92m"
+MemberColor                            : "$([char]0x1b)[97m"
+NumberColor                            : "$([char]0x1b)[97m"
+OperatorColor                          : "$([char]0x1b)[90m"
+ParameterColor                         : "$([char]0x1b)[90m"
+SelectionColor                         : "$([char]0x1b)[30;47m"
+StringColor                            : "$([char]0x1b)[36m"
+TypeColor                              : "$([char]0x1b)[37m"
+VariableColor                          : "$([char]0x1b)[92m"
 ```
 
 This command returns the list of available PSReadLine options and their current values.
@@ -96,7 +83,7 @@ This command returns the list of available PSReadLine options and their current 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see
-[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+[about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -107,6 +94,9 @@ You cannot pipe objects to this cmdlet.
 ## OUTPUTS
 
 ### Microsoft.PowerShell.PSConsoleReadLineOptions
+
+An instance of the current options. Changing the property values of this object updates the settings
+in PSReadLine directly without invoking `Set-PSReadLineOption`.
 
 ## NOTES
 

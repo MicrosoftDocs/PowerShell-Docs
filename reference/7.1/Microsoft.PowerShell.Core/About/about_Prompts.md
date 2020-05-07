@@ -1,7 +1,7 @@
 ---
 keywords: powershell,cmdlet
 locale: en-us
-ms.date: 10/04/2019
+ms.date: 04/15/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_prompts?view=powershell-7.x&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Prompts
@@ -217,10 +217,10 @@ built-in PowerShell prompt when PowerShell is opened by using the
 function prompt {
   $identity = [Security.Principal.WindowsIdentity]::GetCurrent()
   $principal = [Security.Principal.WindowsPrincipal] $identity
+  $adminRole = [Security.Principal.WindowsBuiltInRole]::Administrator
 
   $(if (Test-Path variable:/PSDebugContext) { '[DBG]: ' }
-    elseif($principal.IsInRole([Security.Principal.WindowsBuiltInRole]
-      "Administrator")) { "[ADMIN]: " }
+    elseif($principal.IsInRole($adminRole)) { "[ADMIN]: " }
     else { '' }
   ) + 'PS ' + $(Get-Location) +
     $(if ($NestedPromptLevel -ge 1) { '>>' }) + '> '

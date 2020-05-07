@@ -78,6 +78,12 @@ because it has no special meaning to the current **cmd.exe** shell. The
 `$env:windir` style of environment variable reference _can_ be used inside a
 **Command** parameter, since there it is interpreted as PowerShell code.
 
+Similarly, if you want to execute the same command from a **Batch script**, you 
+would use `%~dp0` instead of `.\` or `$PSScriptRoot` to represent the current 
+execution directory: `pwsh -File %~dp0test.ps1 -TestParam %windir%`. 
+If you instead used `.\test.ps1`, PowerShell would throw an error because it 
+cannot find the literal path `.\test.ps1`
+
 ### -Command | -c
 
 Executes the specified commands (and any parameters) as though they were typed

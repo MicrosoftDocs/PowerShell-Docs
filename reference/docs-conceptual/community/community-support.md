@@ -1,14 +1,12 @@
 ---
-title: PowerShell community resources
+title: PowerShell community support resources
 description: List of resources created for and by PowerShell users
-ms.date: 03/04/2020
+ms.date: 04/29/2020
 ---
-# PowerShell community resources
+# Getting support from the community
 
 The PowerShell Community is a vibrant and active group of users. This article can help you get
 connected with other member of the community.
-
-## Getting support from the community
 
 The PowerShell community can file issues, bugs, or feature requests in our
 [GitHub](https://github.com/powershell/powershell/issues) repository. If you have questions, you may
@@ -25,9 +23,3 @@ find help from other members of the community in one of these public forums:
 
 For information about our support policy, see the
 [PowerShell Support Lifecycle](/powershell/scripting/powershell-support-lifecycle).
-
-## Looking for logos and other digital goodies
-
-We have a collection of digital artwork available for your enjoyment.
-
-[Digital Art](/powershell/scripting/community/digital-art)
