@@ -172,10 +172,10 @@ Param(
 )
 ```
 
-The boolean argument types default to **False** when omitted from the
-**Parameter** attribute. Set the argument value to `$true` or just list the
-argument by name. For example, the following **Parameter** attributes are
-equivalent.
+The boolean argument types of the **Parameter** attribute default to **False**
+when omitted from the **Parameter** attribute. Set the argument value to
+`$true` or just list the argument by name. For example, the following
+**Parameter** attributes are equivalent.
 
 ```powershell
 Param(
@@ -232,10 +232,9 @@ By default, all function parameters are positional. PowerShell assigns position
 numbers to parameters in the order in which the parameters are declared in the
 function. To disable this feature, set the value of the `PositionalBinding`
 argument of the **CmdletBinding** attribute to `$False`. The `Position`
-argument takes precedence over the value of the `PositionalBinding` argument
-for the parameters on which it's declared. For more information, see
-`PositionalBinding` in
-[about_Functions_CmdletBindingAttribute](about_Functions_CmdletBindingAttribute.md).
+argument takes precedence over the value of the `PositionalBinding` argument of
+the **CmdletBinding** attribute. For more information, see `PositionalBinding`
+in [about_Functions_CmdletBindingAttribute](about_Functions_CmdletBindingAttribute.md).
 
 The value of the `Position` argument is specified as an integer. A position
 value of **0** represents the first position in the command, a position value
