@@ -3,7 +3,7 @@ external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 04/23/2020
+ms.date: 05/07/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/compare-object?view=powershell-7.x&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Compare-Object
@@ -15,8 +15,6 @@ title: Compare-Object
 Compares two sets of objects.
 
 ## SYNTAX
-
-### All
 
 ```
 Compare-Object [-ReferenceObject] <PSObject[]> [-DifferenceObject] <PSObject[]>
@@ -313,7 +311,8 @@ differences between the objects are discarded.
 Use **ExcludeDifferent** with **IncludeEqual** to display only the lines that match between the
 **reference** and **difference** objects.
 
-If **ExcludeDifferent** is specified without **IncludeEqual**, there's no output.
+If **ExcludeDifferent** is specified without **IncludeEqual**, **IncludeEqual** is inferred.  To
+override, pass **$false** to **IncludeEqual**.
 
 ```yaml
 Type: SwitchParameter
@@ -416,9 +415,9 @@ Accept wildcard characters: False
 
 ### CommonParameters
 
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
--InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction,
+-InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and
+-WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
