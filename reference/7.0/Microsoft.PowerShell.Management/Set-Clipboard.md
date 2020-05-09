@@ -98,6 +98,10 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## NOTES
 
+In rare cases when using `Set-Clipboard` with a high number of values in rapid succession, like in a
+loop, you might sporadically get a blank value from the clipboard. This can be fixed by using
+`Start-Sleep -Milliseconds 1` in the loop.
+
 ## RELATED LINKS
 
 [Get-Clipboard](Get-Clipboard.md)
