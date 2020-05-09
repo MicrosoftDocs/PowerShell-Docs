@@ -97,8 +97,8 @@ The PowerShell extension interacts with scripts in a number of ways:
 
 The problem occurs when assuming the encoding of BOM-less formats (like [UTF-8][] with no BOM and
 [Windows-1252][]). The PowerShell extension defaults to UTF-8. The extension cannot change VS Code's
-encoding settings. For more information, see [issue #824](https://github.com/Microsoft/VS
-Code/issues/824).
+encoding settings. For more information, see
+[issue #824](https://github.com/Microsoft/VSCode/issues/824).
 
 ## Choosing the right encoding
 
@@ -311,11 +311,11 @@ read:
 
 - [@mklement0]'s [summary of PowerShell encoding on StackOverflow](https://stackoverflow.com/questions/40098771/changing-powershells-default-output-encoding-to-utf-8)
 - Previous issues opened on VS Code-PowerShell for encoding problems:
-  - [#1308](https://github.com/PowerShell/VS Code-powershell/issues/1308)
-  - [#1628](https://github.com/PowerShell/VS Code-powershell/issues/1628)
-  - [#1680](https://github.com/PowerShell/VS Code-powershell/issues/1680)
-  - [#1744](https://github.com/PowerShell/VS Code-powershell/issues/1744)
-  - [#1751](https://github.com/PowerShell/VS Code-powershell/issues/1751)
+  - [#1308](https://github.com/PowerShell/VSCode-powershell/issues/1308)
+  - [#1628](https://github.com/PowerShell/VSCode-powershell/issues/1628)
+  - [#1680](https://github.com/PowerShell/VSCode-powershell/issues/1680)
+  - [#1744](https://github.com/PowerShell/VSCode-powershell/issues/1744)
+  - [#1751](https://github.com/PowerShell/VSCode-powershell/issues/1751)
 - [The classic *Joel on Software* write up about Unicode](https://www.joelonsoftware.com/2003/10/08/the-absolute-minimum-every-software-developer-absolutely-positively-must-know-about-unicode-and-character-sets-no-excuses/)
 - [Encoding in .NET Standard](https://github.com/dotnet/standard/issues/260#issuecomment-289549508)
 
