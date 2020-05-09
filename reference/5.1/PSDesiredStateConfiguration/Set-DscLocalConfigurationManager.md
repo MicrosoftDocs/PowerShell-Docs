@@ -77,8 +77,8 @@ applies the settings. After receiving the settings, LCM processes them.
 ### -CimSession
 
 Runs the cmdlet in a remote session or on a remote computer. Enter a computer name or a session
-object, such as the output of a [New-CimSession](/reference/7.0/CimCmdlets/New-CimSession)
-or [Get-CimSession](/reference/7.0/CimCmdlets/Get-CimSession) cmdlet.
+object, such as the output of a [New-CimSession](/powershell/module/CimCmdlets/New-CimSession)
+or [Get-CimSession](/powershell/module/CimCmdlets/Get-CimSession) cmdlet.
 The default is the current session on the local computer.
 
 ```yaml
@@ -229,6 +229,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## RELATED LINKS
 
-[Windows PowerShell Desired State Configuration Overview](/reference/docs-conceptual/dsc/overview/DscForEngineers)
+[Windows PowerShell Desired State Configuration Overview](/powershell/scripting/dsc/overview/overview)
 
 [Get-DscLocalConfigurationManager](Get-DscLocalConfigurationManager)
