@@ -10,6 +10,6 @@ You can use command line options to run PowerShell from the command line of anot
 
 The command line options allow you to customize the configuration of the PowerShell session and control the input.
 
-For a full list of options for Windows PowerShell (powershell.exe), see [about_PowerShell_exe](/powershell/module/Microsoft.PowerShell.Core/About/about_PowerShell_exe).
+For a full list of options for Windows PowerShell (powershell.exe), see [about_PowerShell_exe](/powershell/module/Microsoft.PowerShell.Core/About/about_PowerShell_exe?view=powershell-5.1).
 
 For a full list of options for PowerShell Core (pwsh), see [about_pwsh](/powershell/module/Microsoft.PowerShell.Core/About/about_pwsh).
