@@ -13,7 +13,7 @@ ms.date: 05/09/2020
 archive_url: ''
 layout: ApiBrowserPage
 apiPlatform: powershell
-quickFilterColumn1: powershell-6,win10-ps
+quickFilterColumn1: powershell-7,win10-ps
 quickFilterColumn2: azps-3.8.0,win-mdop2-ps
 quickFilterColumn3: sqlserver-ps,systemcenter-ps-2019
 ---
