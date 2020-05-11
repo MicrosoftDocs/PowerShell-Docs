@@ -177,7 +177,9 @@ Installation is supported via `snapd`. For instructions, see [Snap Package][snap
 
 ## Ubuntu 20.04
 
-Ubuntu 20.04 which is an LTS release & PowerShell is not currently supported on this version, although support for this version is being considered for the 7.1 release of PowerShell. Please upvote this request if you would like 20.04 support https://github.com/PowerShell/PowerShell/issues/12626 
+Ubuntu 20.04 is an LTS release. PowerShell does not currently support this version. Support for this
+version is being considered for the PowerShell 7.1 release. Please upvote this [request](https://github.com/PowerShell/PowerShell/issues/12626)
+if you would like support for Ubuntu 20.04.
 
 ## Debian 8
 
