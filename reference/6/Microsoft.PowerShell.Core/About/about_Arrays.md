@@ -1,7 +1,7 @@
 ---
 keywords: powershell,cmdlet
 locale: en-us
-ms.date: 04/09/2020
+ms.date: 05/11/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_arrays?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Arrays
@@ -442,7 +442,7 @@ This method was added in PowerShell v4.
 > [!NOTE]
 > The syntax requires the usage of a script block. Parentheses are optional if
 > the scriptblock is the only parameter. Also, there must not be a space
-> between the method and the opening parentheses or brace.
+> between the method and the opening parenthesis or brace.
 
 The following example shows how use the foreach method. In this case the
 intent is to generate the square value of the elements in the array.
@@ -544,7 +544,7 @@ Where(scriptblock expression[, WhereOperatorSelectionMode mode
 > [!NOTE]
 > The syntax requires the usage of a script block. Parentheses are optional if
 > the scriptblock is the only parameter. Also, there must not be a space
-> between the method and the opening parentheses or brace.
+> between the method and the opening parenthesis or brace.
 
 The `Expression` is scriptblock that is required for filtering, the `mode`
 optional argument allows additional selection capabilities, and the
