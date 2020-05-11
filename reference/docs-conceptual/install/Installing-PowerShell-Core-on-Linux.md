@@ -54,6 +54,10 @@ Alternate install methods
 - Binary Archives
 - .NET Global tool
 
+Not currently supported 
+
+- Ubuntu 20.04
+
 ## Ubuntu 16.04
 
 ### Installation via Package Repository - Ubuntu 16.04
@@ -170,6 +174,10 @@ Installation is supported via `snapd`. For instructions, see [Snap Package][snap
 
 > [!NOTE]
 > Ubuntu 19.04 is an [interim release](https://www.ubuntu.com/about/release-cycle) that's [community supported](../powershell-support-lifecycle.md).
+
+## Ubuntu 20.04
+
+Ubuntu 20.04 which is an LTS release & PowerShell is not currently supported on this version, although support for this version is being considered for the 7.1 release of PowerShell. Please upvote this request if you would like 20.04 support https://github.com/PowerShell/PowerShell/issues/12626 
 
 ## Debian 8
 
