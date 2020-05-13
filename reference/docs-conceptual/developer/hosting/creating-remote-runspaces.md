@@ -54,7 +54,7 @@ namespace Samples
       // Create a WSManConnectionInfo object using the default constructor
       // to connect to the "localHost". The WSManConnectionInfo object can
       // also be used to specify connections to remote computers.
-      Uri RemoteComputerUri = new uri("http://Server01:5985/WSMAN");
+      Uri RemoteComputerUri = new Uri("http://Server01:5985/WSMAN");
       WSManConnectionInfo connectionInfo = new WSManConnectionInfo(RemoteComputerUri);
 
       // Set the OperationTimeout property and OpenTimeout properties.
