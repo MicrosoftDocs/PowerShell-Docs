@@ -128,9 +128,9 @@ tools:
       imageSrc: https://docs.microsoft.com/media/hubs/powershell/i_group.svg
       url: https://aka.ms/psusergroup
     # Card 2
-    - title: TechNet Forums
+    - title: PowerShell Tech Community
       imageSrc: https://docs.microsoft.com/media/hubs/powershell/i_group-feedback.svg
-      url: https://social.technet.microsoft.com/forums/home?forum=winserverpowershell
+      url: https://techcommunity.microsoft.com/t5/PowerShell/ct-p/WindowsPowerShell
     # Card 3
     - title: DSC Community
       imageSrc: https://docs.microsoft.com/media/hubs/powershell/i_group-feedback.svg
@@ -158,7 +158,7 @@ tools:
     # Card 9
     - title: Digital Art
       imageSrc: https://docs.microsoft.com/media/hubs/powershell/i_digital-art.svg
-      url: digital-art.md
+      url: https://docs.microsoft.com/powershell/scripting/community/digital-art
 
 additionalContent:
   # Supports up to 3 sections

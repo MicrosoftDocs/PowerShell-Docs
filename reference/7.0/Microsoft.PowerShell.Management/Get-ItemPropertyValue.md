@@ -188,7 +188,7 @@ For more information, see [about_Quoting_Rules](../Microsoft.Powershell.Core/Abo
 ```yaml
 Type: String[]
 Parameter Sets: LiteralPath
-Aliases: PSPath
+Aliases: PSPath, LP
 
 Required: True
 Position: Named

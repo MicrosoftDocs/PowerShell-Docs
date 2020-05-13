@@ -50,7 +50,7 @@ their file name.
 Add-Content -Path .\*.txt -Exclude help* -Value 'End of file'
 ```
 
-The **Path** parameter to specifies all `.txt` files in the current directory, but the **Exclude**
+The **Path** parameter specifies all `.txt` files in the current directory, but the **Exclude**
 parameter ignores file names that match the specified pattern. The **Value** parameter specifies the
 text string that is written to the files.
 
@@ -70,9 +70,9 @@ Tuesday, May 14, 2019 8:24:27 AM
 5/14/2019 8:24:27 AM
 ```
 
-The `Add-Content` creates two new files in the current directory. The **Value** parameter contains
-the output of the `Get-Date` The **PassThru** parameter outputs the added contents to the pipeline.
-Because there is no other cmdlets to receive the output, it is displayed in the PowerShell console.
+The `Add-Content` cmdlet creates two new files in the current directory. The **Value** parameter contains
+the output of the `Get-Date` cmdlet. The **PassThru** parameter outputs the added contents to the pipeline.
+Because there is no other cmdlet to receive the output, it is displayed in the PowerShell console.
 The `Get-Content` cmdlet displays the updated file, `DateTimeFile1.log`.
 
 ### Example 3: Add the contents of a specified file to another file
@@ -334,7 +334,7 @@ For more information, see [about_Quoting_Rules](../Microsoft.Powershell.Core/Abo
 ```yaml
 Type: String[]
 Parameter Sets: LiteralPath
-Aliases: PSPath
+Aliases: PSPath, LP
 
 Required: True
 Position: Named

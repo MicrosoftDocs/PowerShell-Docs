@@ -53,7 +53,7 @@ For more information, see [about_Updatable_Help](./About/about_Updatable_Help.md
 You can use the **Module** parameter to update help files for a particular module. Use the
 **UICulture** parameter to download help files in multiple languages and locales.
 
-You can use `Update-Help` on computers that aren't connected to the internet. Use the `Save-Help`
+You can't use `Update-Help` on computers that aren't connected to the internet. Use the `Save-Help`
 cmdlet to download help files from the internet and save them in a file system location, such as a
 shared folder or file system directory. Then use the **SourcePath** parameter of `Update-Help` to
 download the updated help files from a file system location and install them on the computer.
@@ -349,7 +349,7 @@ as escape sequences.
 ```yaml
 Type: String[]
 Parameter Sets: LiteralPath
-Aliases: PSPath
+Aliases: PSPath, LP
 
 Required: False
 Position: Named
@@ -429,7 +429,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: CurrentUser
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 

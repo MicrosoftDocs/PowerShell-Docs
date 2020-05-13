@@ -50,7 +50,7 @@ the See Also section.
 
 The following diagram shows how Windows PowerShell Web Access works.
 
-![Windows PowerShell Web Access diagram](images/Windows-PowerShell-Web-Access-diagram.jpg)
+![Windows PowerShell Web Access diagram](media/install-and-use-windows-powershell-web-access/Windows-PowerShell-Web-Access-diagram.jpg)
 
 ## Requirements for running Windows PowerShell Web Access
 
@@ -180,8 +180,9 @@ instruct the cmdlet to change the default site container of the web application.
 configuration options that are available for web applications, such as changing the port number or
 the Secure Sockets Layer (SSL) certificate.
 
-> **![Security Note](images/securitynote.jpeg) Security Note**
-> We strongly recommend that administrators configure the gateway to use a valid certificate that has been signed by a CA.
+> [!IMPORTANT]
+> We strongly recommend that administrators configure the gateway to use a valid certificate that
+> has been signed by a CA.
 
 #### To configure the Windows PowerShell Web Access gateway with a test certificate by using Install-PswaWebApplication
 
@@ -194,7 +195,7 @@ the Secure Sockets Layer (SSL) certificate.
 
    `Install-PswaWebApplication -UseTestCertificate`
 
-   > **![Security Note](images/securitynote.jpeg) Security Note**
+   > [!IMPORTANT]
    > The `UseTestCertificate` parameter should only be used in a private test environment. For a
    > secure production environment, we recommend using a valid certificate that has been signed by
    > a CA.
@@ -221,8 +222,9 @@ the Secure Sockets Layer (SSL) certificate.
 
    > [!NOTE]
    > You cannot sign in until users have been granted access to the website by adding authorization
-   > rules. For more information, see [configure a restrictive authorization rule](#configure-a-restrictive-authorization-rule)
-   > and [Authorization Rules and Security Features of Windows PowerShell Web Access](authorization-rules-and-security-features-of-windows-powershell-web-access.md).
+   > rules. For more information, see
+   > [configure a restrictive authorization rule](#configure-a-restrictive-authorization-rule) and
+   > [Authorization Rules and Security Features of Windows PowerShell Web Access](authorization-rules-and-security-features-of-windows-powershell-web-access.md).
 
 #### To configure the Windows PowerShell Web Access gateway with a genuine certificate by using Install-PswaWebApplication and IIS Manager
 
@@ -273,8 +275,10 @@ the Secure Sockets Layer (SSL) certificate.
 
    > [!NOTE]
    > You cannot sign in until users have been granted access to the website by adding authorization
-   > rules. For more information, see [Configure a restrictive authorization rule](#configure-a-restrictive-authorization-rule),
-   > in this topic, and [Authorization Rules and Security Features of Windows PowerShell Web Access](authorization-rules-and-security-features-of-windows-powershell-web-access.md).
+   > rules. For more information, see
+   > [Configure a restrictive authorization rule](#configure-a-restrictive-authorization-rule), in
+   > this topic, and
+   > [Authorization Rules and Security Features of Windows PowerShell Web Access](authorization-rules-and-security-features-of-windows-powershell-web-access.md).
 
 ### Configure a restrictive authorization rule
 
@@ -336,7 +340,8 @@ gateway in IIS Manager.
 1. If Server Manager is already open, go on to the next step. If Server Manager is not already
    open, open it by doing one of the following.
 
-   - On the Windows desktop, start Server Manager by clicking **Server Manager** in the Windows taskbar.
+   - On the Windows desktop, start Server Manager by clicking **Server Manager** in the Windows
+     taskbar.
    - On the Windows **Start** screen, click **Server Manager**.
 
 2. On the **Manage** menu, click **Add Roles and Features**.
@@ -418,7 +423,7 @@ gateway as a root website.
    [To configure an SSL certificate in IIS Manager](#to-configure-an-ssl-certificate-in-iis-manager)
    in this topic.
 
-10. ![Security Note](images/SecurityNote.jpeg) Optional security step:
+10. Optional security step:
 
     With the website selected in the tree pane, double-click **SSL Settings** in the content pane.
     Select **Require SSL**, and then in the **Actions** pane, click **Apply**. Optionally, in the
@@ -536,9 +541,11 @@ gateway as a root website.
    `https://<gateway_server_name>`. You should not need to add **/pswa** to the URL.
 
    > [!NOTE]
-   > You cannot sign in until users have been granted access to the website
-   > by adding authorization rules. For more information, see [Configure a restrictive authorization rule](#configure-a-restrictive-authorization-rule),
-   > in this topic, and [Authorization Rules and Security Features of Windows PowerShell Web Access](authorization-rules-and-security-features-of-windows-powershell-web-access.md).
+   > You cannot sign in until users have been granted access to the website by adding authorization
+   > rules. For more information, see
+   > [Configure a restrictive authorization rule](#configure-a-restrictive-authorization-rule), in
+   > this topic, and
+   > [Authorization Rules and Security Features of Windows PowerShell Web Access](authorization-rules-and-security-features-of-windows-powershell-web-access.md).
 
 ### Configuring a restrictive authorization rule
 
@@ -562,7 +569,7 @@ For more detail about Windows PowerShell Web Access authorization rules and secu
    - On the Windows **Start** screen, right-click **Windows PowerShell**, and then click
      **Run as Administrator**.
 
-1. ![Security Note](images/SecurityNote.jpeg) Optional step for restricting user access by using session configurations:
+1. Optional step for restricting user access by using session configurations:
 
    Verify that session configurations that you want to use in your rules already exist. If they
    have not yet been created, use instructions for creating session configurations in
@@ -574,7 +581,7 @@ For more detail about Windows PowerShell Web Access authorization rules and secu
 
    This authorization rule allows a specific user access to one computer on the network to which
    they typically have access, with access to a specific session configuration that is scoped to
-   the user'™s typical scripting and cmdlet needs.
+   the user'&trade;s typical scripting and cmdlet needs.
 
    In the following example, a user named `JSmith` in the `Contoso` domain is granted access to
    manage the computer `Contoso_214`, and use a session configuration named `NewAdminsOnly`.
@@ -611,9 +618,9 @@ valid SSL certificate from a CA.
      [GeoTrust](https://www.geotrust.com/). The certificate's common name must match the host header
      in the request.
 
-     For example, if the client browser requests `http://www.contoso.com/`, then the common name must
-     also be `http://www.contoso.com/`. This is the most secure and recommended option for providing
-     the Windows PowerShell Web Access gateway with a certificate.
+     For example, if the client browser requests `http://www.contoso.com/`, then the common name
+     must also be `http://www.contoso.com/`. This is the most secure and recommended option for
+     providing the Windows PowerShell Web Access gateway with a certificate.
 
    - Click **Create a Self-Signed Certificate** to create a certificate that you can use
      immediately, and have signed later by a CA if desired. Specify a friendly name for the

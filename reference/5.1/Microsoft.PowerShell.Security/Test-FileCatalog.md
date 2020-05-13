@@ -214,4 +214,4 @@ which hashes were expected vs. found, and the algorithm used in the catalog.
 
 [New-FileCatalog](New-FileCatalog.md)
 
-[PowerShellGet](../PowerShellGet/PowerShellGet.md)
+[PowerShellGet](/powershell/module/PowerShellGet)

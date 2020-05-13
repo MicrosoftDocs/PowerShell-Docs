@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: PowerShellGet
 ms.date: 06/05/2019
-online version: https://docs.microsoft.com/powershell/module/powershellget/find-rolecapability?view=powershell-7&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/powershellget/find-rolecapability?view=powershell-7.x&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Find-RoleCapability
 ---
@@ -337,6 +337,10 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
+
+### System.Uri
+
+### System.Management.Automation.PSCredential
 
 ## OUTPUTS
 

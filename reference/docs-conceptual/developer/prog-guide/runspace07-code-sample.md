@@ -26,7 +26,7 @@ and then executes the pipeline. The commands added to the pipeline are the `Get-
 
 ## Code Sample
 
-[!code-csharp[Runspace07.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/Runspace07/Runspace07.cs#L11-L108 "Runspace07.cs")]
+:::code language="csharp" source="~/../powershell-sdk-samples/SDK-2.0/csharp/Runspace07/Runspace07.cs" range="11-108":::
 
 ## See Also
 

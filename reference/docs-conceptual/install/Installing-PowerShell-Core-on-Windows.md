@@ -1,38 +1,36 @@
 ---
-title: Installing PowerShell Core on Windows
-description: Information about installing PowerShell Core on Windows
+title: Installing PowerShell on Windows
+description: Information about installing PowerShell on Windows
 ms.date: 08/06/2018
 ---
-# Installing PowerShell Core on Windows
+# Installing PowerShell on Windows
 
-There are multiple ways to install PowerShell Core in Windows.
-
-> [!TIP]
-> If you already have the [.NET Core SDK](/dotnet/core/sdk) installed, it’s easy to install PowerShell as a [.NET Global tool](/dotnet/core/tools/global-tools).
->
-> ```
-> dotnet tool install --global PowerShell
-> ```
+There are multiple ways to install PowerShell in Windows.
 
 ## Prerequisites
+
+The latest release of PowerShell is supported on Windows 7 SP1, Server 2008 R2, and later versions.
 
 To enable PowerShell remoting over WSMan, the following prerequisites need to be met:
 
 - Install the [Universal C Runtime](https://www.microsoft.com/download/details.aspx?id=50410) on
-  Windows versions prior to Windows 10. It is available via direct download or Windows Update. Fully
-  patched (including optional packages), supported systems will already have this installed.
+  Windows versions predating Windows 10. It's available via direct download or Windows Update. Fully
+  patched systems already have this package installed.
 - Install the Windows Management Framework (WMF) 4.0 or newer on Windows 7 and Windows Server 2008
   R2. For more information about WMF, see [WMF Overview](/powershell/scripting/wmf/overview).
 
+## Download the installer package
+
+To install PowerShell on Windows, download the install package from our GitHub [releases][releases]
+page. Scroll down to the **Assets** section of the Release page. The **Assets** section may be
+collapsed, so you may need to click to expand it.
+
 ## <a id="msi" />Installing the MSI package
 
-To install PowerShell on a Windows client or Windows Server (works on Windows 7 SP1, Server 2008 R2,
-and later), download the MSI package from our GitHub [releases][releases] page. Scroll down to the
-**Assets** section of the Release you want to install. The Assets section may be collapsed, so you
-may need to click to expand it.
+The MSI file looks like `PowerShell-<version>-win-<os-arch>.msi`. For example:
 
-The MSI file looks like this - `PowerShell-<version>-win-<os-arch>.msi`
-<!-- TODO: should be updated to point to the Download Center as well -->
+- `PowerShell-7.0.0-win-x64.msi`
+- `PowerShell-7.0.0-win-x86.msi`
 
 Once downloaded, double-click the installer and follow the prompts.
 
@@ -41,11 +39,22 @@ The installer creates a shortcut in the Windows Start Menu.
 - By default the package is installed to `$env:ProgramFiles\PowerShell\<version>`
 - You can launch PowerShell via the Start Menu or `$env:ProgramFiles\PowerShell\<version>\pwsh.exe`
 
+> [!NOTE]
+> PowerShell 7 installs to a new directory and runs side-by-side with Windows PowerShell 5.1. For
+> PowerShell Core 6.x, PowerShell 7 is an in-place upgrade that removes PowerShell Core 6.x.
+>
+> - PowerShell 7 is installed to `$env:ProgramFiles\PowerShell\7`
+> - The `$env:ProgramFiles\PowerShell\7` folder is added to `$env:PATH`
+> - The `$env:ProgramFiles\PowerShell\6` folder is deleted
+>
+> If you need to run PowerShell 6 side-by-side with PowerShell 7, reinstall PowerShell 6 using the
+> [ZIP install](#zip) method.
+
 ### Administrative install from the command line
 
-MSI packages can be installed from the command line. This allows administrators to deploy packages
-without user interaction. The MSI package for PowerShell includes the following properties to
-control the installation options:
+MSI packages can be installed from the command line allowing administrators to deploy packages
+without user interaction. The MSI package includes the following properties to control the
+installation options:
 
 - **ADD_EXPLORER_CONTEXT_MENU_OPENPOWERSHELL** - This property controls the option for adding the
   **Open PowerShell** item to the context menu in Windows Explorer.
@@ -54,14 +63,13 @@ control the installation options:
 - **REGISTER_MANIFEST** - This property controls the option for registering the Windows Event
   Logging manifest.
 
-The following examples shows how to silently install PowerShell Core with all the install options
-enabled.
+The following example shows how to silently install PowerShell with all the install options enabled.
 
 ```powershell
-msiexec.exe /package PowerShell-<version>-win-<os-arch>.msi /quiet ADD_EXPLORER_CONTEXT_MENU_OPENPOWERSHELL=1 ENABLE_PSREMOTING=1 REGISTER_MANIFEST=1
+msiexec.exe /package PowerShell-7.0.0-win-x64.msi /quiet ADD_EXPLORER_CONTEXT_MENU_OPENPOWERSHELL=1 ENABLE_PSREMOTING=1 REGISTER_MANIFEST=1
 ```
 
-For a full list of command line options for Msiexec.exe, see [Command line options](/windows/desktop/Msi/command-line-options).
+For a full list of command-line options for `Msiexec.exe`, see [Command line options](/windows/desktop/Msi/command-line-options).
 
 ## <a id="msix" />Installing the MSIX package
 
@@ -69,29 +77,36 @@ To manually install the MSIX package on a Windows 10 client, download the MSIX p
 GitHub [releases][releases] page. Scroll down to the **Assets** section of the Release you want to
 install. The Assets section may be collapsed, so you may need to click to expand it.
 
-The MSI file looks like this - `PowerShell-<version>-win-<os-arch>.msix`
+The MSIX file looks like this - `PowerShell-<version>-win-<os-arch>.msix`
 
-Once downloaded, you cannot simply double-click on the installer as this package requires
-use of un-virtualized resources.  To install, you must use the `Add-AppxPackage` cmdlet:
+To install the package, you must use the `Add-AppxPackage` cmdlet.
 
 ```powershell
 Add-AppxPackage PowerShell-<version>-win-<os-arch>.msix
 ```
 
+> [!NOTE]
+> The MSIX package has not been released yet. When released, the package will be available in the
+> Microsoft Store and from the GitHub [releases][releases] page.
+
 ## <a id="zip" />Installing the ZIP package
 
-PowerShell binary ZIP archives are provided to enable advanced deployment scenarios. Be noted that
-when using the ZIP archive, you won't get the prerequisites check as in the MSI package. For
-remoting over WSMan to work properly, ensure that you have met the [prerequisites](#prerequisites).
+PowerShell binary ZIP archives are provided to enable advanced deployment scenarios. Installing the
+ZIP archive doesn't check the prerequisites like the MSI packages do. Download the ZIP archive from
+the [releases][releases] page. Depending on how you download the file you may need to unblock the
+file using the `Unblock-File` cmdlet. Unzip the contents to the location of your choice and run
+`pwsh.exe` from there. For remoting over WSMan to work properly, ensure that you've met the
+[prerequisites](#prerequisites).
 
-## Deploying on Windows IoT
+## Deploying on Windows 10 IoT Enterprise
 
-Windows IoT already comes with Windows PowerShell which we will use to deploy PowerShell Core 6.
+Windows 10 IoT Enterprise comes with Windows PowerShell, which we can use to deploy PowerShell 7.
 
 1. Create `PSSession` to target device
 
    ```powershell
-   $s = New-PSSession -ComputerName <deviceIp> -Credential Administrator
+   Set-Item -Path WSMan:\localhost\Client\TrustedHosts <deviceip>
+   $S = New-PSSession -ComputerName <deviceIp> -Credential Administrator
    ```
 
 2. Copy the ZIP package to the device
@@ -111,7 +126,7 @@ Windows IoT already comes with Windows PowerShell which we will use to deploy Po
    Expand-Archive .\PowerShell-<version>-win-<os-arch>.zip
    ```
 
-4. Setup remoting to PowerShell Core 6
+4. Set up remoting to PowerShell 7
 
    ```powershell
    Set-Location .\PowerShell-<version>-win-<os-arch>
@@ -121,27 +136,39 @@ Windows IoT already comes with Windows PowerShell which we will use to deploy Po
    # You'll get an error message and will be disconnected from the device because it has to restart WinRM
    ```
 
-5. Connect to PowerShell Core 6 endpoint on device
+5. Connect to PowerShell 7 endpoint on device
 
    ```powershell
    # Be sure to use the -Configuration parameter.  If you omit it, you will connect to Windows PowerShell 5.1
    Enter-PSSession -ComputerName <deviceIp> -Credential Administrator -Configuration powershell.<version>
    ```
+## Deploying on Windows 10 IoT Core
+
+Windows 10 IoT Core adds Windows PowerShell when you include *IOT_POWERSHELL* feature, which we can use to deploy PowerShell 7.
+The steps defined above for Windows 10 IoT Enterprise can be followed for IoT Core as well.
+
+For adding the latest powershell in the shipping image, use [Import-PSCoreRelease](https://github.com/ms-iot/iot-adk-addonkit/blob/master/Tools/IoTCoreImaging/Docs/Import-PSCoreRelease.md#Import-PSCoreRelease) command to include the package in the workarea and add *OPENSRC_POWERSHELL* feature to your image.
+
+> [!NOTE]
+> For ARM64 architecture, Windows Powershell is not added when you include *IOT_POWERSHELL*. So the zip based install will not work.
+> You will need to use Import-PSCoreRelease command to add it in the image.
 
 ## Deploying on Nano Server
 
-These instructions assume that a version of PowerShell is already running on the Nano Server image
-and that it has been generated by the [Nano Server Image Builder](/windows-server/get-started/deploy-nano-server).
-Nano Server is a "headless" OS. Core binaries can be deploy using two different methods.
+These instructions assume that the Nano Server is a "headless" OS that has a version of PowerShell
+is already running on it. For more information, see the
+[Nano Server Image Builder](/windows-server/get-started/deploy-nano-server) documentation.
+
+PowerShell binaries can be deployed using two different methods.
 
 1. Offline - Mount the Nano Server VHD and unzip the contents of the zip file to your chosen
    location within the mounted image.
 2. Online - Transfer the zip file over a PowerShell Session and unzip it in your chosen location.
 
-In both cases, you will need the Windows 10 x64 ZIP release package and will need to run the
-commands within an "Administrator" PowerShell instance.
+In both cases, you need the Windows 10 x64 ZIP release package. Run the commands within an
+"Administrator" instance of PowerShell.
 
-### Offline Deployment of PowerShell Core
+### Offline Deployment of PowerShell
 
 1. Use your favorite zip utility to unzip the package to a directory within the mounted Nano Server
    image.
@@ -150,10 +177,9 @@ commands within an "Administrator" PowerShell instance.
 4. Follow the instructions to create a remoting endpoint using the
    ["another instance technique"](../learn/remoting/wsman-remoting-in-powershell-core.md#executed-by-another-instance-of-powershell-on-behalf-of-the-instance-that-it-will-register).
 
-### Online Deployment of PowerShell Core
+### Online Deployment of PowerShell
 
-The following steps guide you through the deployment of PowerShell Core to a running instance of
-Nano Server and the configuration of its remote endpoint.
+Deploy PowerShell to Nano Server using the following steps.
 
 - Connect to the inbox instance of Windows PowerShell
 
@@ -177,15 +203,28 @@ Nano Server and the configuration of its remote endpoint.
 
   ```powershell
   # Insert the appropriate version.
-  Expand-Archive -Path C:\powershell-<version>-win-x64.zip -DestinationPath "C:\PowerShellCore_<version>"
+  Expand-Archive -Path C:\powershell-<version>-win-x64.zip -DestinationPath "C:\PowerShell_<version>"
   ```
 
 - If you want WSMan-based remoting, follow the instructions to create a remoting endpoint using the
   ["another instance technique"](../learn/remoting/WSMan-Remoting-in-PowerShell-Core.md#executed-by-another-instance-of-powershell-on-behalf-of-the-instance-that-it-will-register).
 
+## Install as a .NET Global tool
+
+If you already have the [.NET Core SDK](/dotnet/core/sdk) installed, it's easy to install PowerShell
+as a [.NET Global tool](/dotnet/core/tools/global-tools).
+
+```
+dotnet tool install --global PowerShell
+```
+
+The dotnet tool installer adds `$env:USERPROFILE\dotnet\tools` to your `$env:PATH` environment
+variable. However, the currently running shell doesn't have the updated `$env:PATH`. You can start
+PowerShell from a new shell by typing `pwsh`.
+
 ## How to create a remoting endpoint
 
-PowerShell Core supports the PowerShell Remoting Protocol (PSRP) over both WSMan and SSH. For more
+PowerShell supports the PowerShell Remoting Protocol (PSRP) over both WSMan and SSH. For more
 information, see:
 
 - [SSH Remoting in PowerShell Core][ssh-remoting]

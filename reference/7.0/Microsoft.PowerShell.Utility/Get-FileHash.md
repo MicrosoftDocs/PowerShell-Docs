@@ -56,7 +56,7 @@ is supported by the target operating system can be used.
 
 ## EXAMPLES
 
-### Example 1: Compute the hash value for a PowerShell.exe file
+### Example 1: Compute the hash value for a file
 
 This example uses the `Get-FileHash` cmdlet to compute the hash value for the
 `/etc/apt/sources.list` file. The hash algorithm used is the default, **SHA256**. The output is
@@ -187,7 +187,7 @@ marks instruct PowerShell not to interpret characters as escape sequences.
 ```yaml
 Type: String[]
 Parameter Sets: LiteralPath
-Aliases: PSPath
+Aliases: PSPath, LP
 
 Required: True
 Position: 0
@@ -237,3 +237,4 @@ computed hash, and the algorithm used to compute the hash.
 ## RELATED LINKS
 
 [Format-List](Format-List.md)
+

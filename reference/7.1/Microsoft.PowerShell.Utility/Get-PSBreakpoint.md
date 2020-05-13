@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Utility
 ms.date: 5/15/2019
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/get-psbreakpoint?view=powershell-7&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/get-psbreakpoint?view=powershell-7.x&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-PSBreakpoint
 ---
@@ -185,14 +185,15 @@ Enter the path (optional) and names of one or more script files.
 If you omit the path, the default location is the current directory.
 
 ```yaml
-Accept pipeline input: True (ByValue)
-Position: Named
-Accept wildcard characters: False
-Parameter Sets: Script, Variable, Command, Type
-Required: False
-Default value: None
-Aliases: 
 Type: String[]
+Parameter Sets: Script, Variable, Command, Type
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
 ```
 
 ### -Type

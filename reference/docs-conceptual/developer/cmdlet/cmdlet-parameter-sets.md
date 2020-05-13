@@ -40,7 +40,7 @@ unique to the first parameter set, **parameter B** is unique to the second param
 **parameter C** is unique to the third parameter set. In the right column, the parameter sets don't
 have a unique parameter.
 
-![ps_parametersets](../media/ps-parametersets.gif)
+![ps_parametersets](media/cmdlet-parameter-sets/ps-parametersets.gif)
 
 ## Parameter set requirements
 

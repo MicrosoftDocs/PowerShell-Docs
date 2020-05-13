@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 keywords: powershell,cmdlet
 locale: en-us
-ms.date: 5/14/2019
+ms.date: 03/27/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/get-item?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Item
@@ -24,15 +24,15 @@ Get-Item [-Path] <String[]> [-Filter <String>] [-Include <String[]>] [-Exclude <
 ### LiteralPath
 
 ```
-Get-Item -LiteralPath <String[]> [-Filter <String>] [-Include <String[]>] [-Exclude <String[]>] [-Force]
- [-Credential <PSCredential>] [-Stream <String[]>] [<CommonParameters>]
+Get-Item -LiteralPath <String[]> [-Filter <String>] [-Include <String[]>] [-Exclude <String[]>]
+ [-Force] [-Credential <PSCredential>] [-Stream <String[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 
-The `Get-Item` cmdlet gets the item at the specified location.
-It does not get the contents of the item at the location unless you use a wildcard character ('*')
-to request all the contents of the item.
+The `Get-Item` cmdlet gets the item at the specified location. It doesn't get the contents of the
+item at the location unless you use a wildcard character (`*`) to request all the contents of the
+item.
 
 This cmdlet is used by PowerShell providers to navigate through different types of data stores.
 
@@ -40,8 +40,8 @@ This cmdlet is used by PowerShell providers to navigate through different types 
 
 ### Example 1: Get the current directory
 
-This command gets the current directory.
-The dot ('.') represents the item at the current location (not its contents).
+This example gets the current directory. The dot ('.') represents the item at the current location
+(not its contents).
 
 ```powershell
 Get-Item .
@@ -57,8 +57,8 @@ d----         7/26/2006  10:01 AM            ps-test
 
 ### Example 2: Get all the items in the current directory
 
-This command gets all the items in the current directory.
-The wildcard character ('*') represents all the contents of the current item.
+This example gets all the items in the current directory. The wildcard character (`*`) represents
+all the contents of the current item.
 
 ```powershell
 Get-Item *
@@ -79,8 +79,8 @@ d----         7/26/2006   9:26 AM            Recs
 
 ### Example 3: Get the current directory of a drive
 
-This command gets the current directory of the C: drive.
-The object that is retrieved represents only the directory, not its contents.
+This example gets the current directory of the `C:` drive. The object that is retrieved represents
+only the directory, not its contents.
 
 ```powershell
 Get-Item C:\
@@ -88,22 +88,21 @@ Get-Item C:\
 
 ### Example 4: Get items in the specified drive
 
-This command gets the items in the C: drive.
-The wildcard character (`*`) represents all the items in the container, not just the container.
+This example gets the items in the `C:` drive. The wildcard character (`*`) represents all the items
+in the container, not just the container.
 
 ```powershell
 Get-Item C:\*
 ```
 
-In PowerShell, use a single asterisk (`*`) to get contents, instead of the traditional `*.*`.
-The format is interpreted literally, so `*.*` would not retrieve directories or file names without a
-dot.
+In PowerShell, use a single asterisk (`*`) to get contents, instead of the traditional `*.*`. The
+format is interpreted literally, so `*.*` wouldn't retrieve directories or filenames without a dot.
 
 ### Example 5: Get a property in the specified directory
 
-This command gets the **LastAccessTime** property of the `C:\Windows` directory.
-**LastAccessTime** is just one property of file system directories.
-To see all of the properties of a directory, type `(Get-Item \<directory-name\>) | Get-Member`.
+This example gets the **LastAccessTime** property of the `C:\Windows` directory. **LastAccessTime**
+is just one property of file system directories. To see all the properties of a directory, type
+`(Get-Item <directory-name>) | Get-Member`.
 
 ```powershell
 (Get-Item C:\Windows).LastAccessTime
@@ -111,9 +110,9 @@ To see all of the properties of a directory, type `(Get-Item \<directory-name\>)
 
 ### Example 6: Show the contents of a registry key
 
-This command shows the contents of the **Microsoft.PowerShell** registry key.
-You can use this cmdlet with the PowerShell Registry provider to get registry keys and subkeys,
-but you must use the `Get-ItemProperty` cmdlet to get the registry values and data.
+This example shows the contents of the **Microsoft.PowerShell** registry key. You can use this
+cmdlet with the PowerShell Registry provider to get registry keys and subkeys, but you must use the
+`Get-ItemProperty` cmdlet to get the registry values and data.
 
 ```powershell
 Get-Item HKLM:\Software\Microsoft\Powershell\1\Shellids\Microsoft.Powershell\
@@ -121,8 +120,8 @@ Get-Item HKLM:\Software\Microsoft\Powershell\1\Shellids\Microsoft.Powershell\
 
 ### Example 7: Get items in a directory that have an exclusion
 
-This command gets items in the Windows directory with names that include a dot (`.`), but do not
-begin with `w*`.This command works only when the path includes a wildcard character (`*`) to specify
+This example gets items in the Windows directory with names that include a dot (`.`), but don't
+begin with `w*`.This example works only when the path includes a wildcard character (`*`) to specify
 the contents of the item.
 
 ```powershell
@@ -131,8 +130,8 @@ Get-Item C:\Windows\*.* -Exclude "w*"
 
 ### Example 8: Getting hardlink information
 
-In PowerShell 6.2, an alternate view was added to get hardlink information.
-To get the hardlink information, pipe the output to `Format-Table -View childrenWithHardlink`
+In PowerShell 6.2, an alternate view was added to get hardlink information. To get the hardlink
+information, pipe the output to `Format-Table -View childrenWithHardlink`
 
 ```powershell
 Get-Item -Path C:\PathWhichIsAHardLink | Format-Table -View childrenWithHardlink
@@ -143,7 +142,7 @@ Get-Item -Path C:\PathWhichIsAHardLink | Format-Table -View childrenWithHardlink
 ### -Stream
 
 Gets the specified alternate NTFS file stream from the file. Enter the stream name. Wildcards are
-supported. To get all streams, use an asterisk (`*`). This parameter is not valid on folders.
+supported. To get all streams, use an asterisk (`*`). This parameter isn't valid on folders.
 
 **Stream** is a dynamic parameter that the **FileSystem** provider adds to the `Get-Item` cmdlet.
 This parameter works only in file system drives.
@@ -163,7 +162,7 @@ Accept wildcard characters: True
 ### -Credential
 
 > [!NOTE]
-> This parameter is not supported by any providers installed with PowerShell.
+> This parameter isn't supported by any providers installed with PowerShell.
 > To impersonate another user, or elevate your credentials when running this cmdlet,
 > use [Invoke-Command](../Microsoft.PowerShell.Core/Invoke-Command.md).
 
@@ -202,10 +201,10 @@ Accept wildcard characters: True
 ### -Filter
 
 Specifies a filter to qualify the **Path** parameter. The [FileSystem](../Microsoft.PowerShell.Core/About/about_FileSystem_Provider.md)
-provider is the only installed PowerShell provider that supports the use of filters. You can find
-the syntax for the **FileSystem** filter language in [about_Wildcards](../Microsoft.PowerShell.Core/About/about_Wildcards.md).
-Filters are more efficient than other parameters, because the provider applies them when the cmdlet
-gets the objects rather than having PowerShell filter the objects after they are retrieved.
+provider is the only installed PowerShell provider that supports filters. Filters are more efficient
+than other parameters. The provider applies filter when the cmdlet gets the objects rather than
+having PowerShell filter the objects after they're retrieved. The filter string is passed to the
+.NET API to enumerate files. The API only supports `*` and `?` wildcards.
 
 ```yaml
 Type: String
@@ -221,10 +220,10 @@ Accept wildcard characters: True
 
 ### -Force
 
-Indicates that this cmdlet gets items that cannot otherwise be accessed, such as hidden items.
-Implementation varies from provider to provider.
-For more information, see [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).
-Even using the **Force** parameter, the cmdlet cannot override security restrictions.
+Indicates that this cmdlet gets items that can't otherwise be accessed, such as hidden items.
+Implementation varies from provider to provider. For more information, see
+[about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md). Even using the **Force**
+parameter, the cmdlet can't override security restrictions.
 
 ```yaml
 Type: SwitchParameter
@@ -242,7 +241,7 @@ Accept wildcard characters: False
 
 Specifies, as a string array, an item or items that this cmdlet includes in the operation. The value
 of this parameter qualifies the **Path** parameter. Enter a path element or pattern, such as
-`"*.txt"`. Wildcard characters are permitted. The **Include** parameter is effective only when the
+`*.txt`. Wildcard characters are permitted. The **Include** parameter is effective only when the
 command includes the contents of an item, such as `C:\Windows\*`, where the wildcard character
 specifies the contents of the `C:\Windows` directory.
 
@@ -260,7 +259,7 @@ Accept wildcard characters: True
 
 ### -LiteralPath
 
-Specifies a path to one or more locations. The value of **LiteralPath** is used exactly as it is
+Specifies a path to one or more locations. The value of **LiteralPath** is used exactly as it's
 typed. No characters are interpreted as wildcards. If the path includes escape characters, enclose
 it in single quotation marks. Single quotation marks tell PowerShell not to interpret any characters
 as escape sequences.
@@ -270,7 +269,7 @@ For more information, see [about_Quoting_Rules](../Microsoft.Powershell.Core/Abo
 ```yaml
 Type: String[]
 Parameter Sets: LiteralPath
-Aliases: PSPath
+Aliases: PSPath, LP
 
 Required: True
 Position: Named
@@ -281,13 +280,11 @@ Accept wildcard characters: False
 
 ### -Path
 
-Specifies the path to an item.
-This cmdlet gets the item at the specified location.
-Wildcard characters are permitted.
-This parameter is required, but the parameter name **Path** is optional.
+Specifies the path to an item. This cmdlet gets the item at the specified location. Wildcard
+characters are permitted. This parameter is required, but the parameter name **Path** is optional.
 
-Use a dot (`.`) to specify the current location.
-Use the wildcard character (`*`) to specify all the items in the current location.
+Use a dot (`.`) to specify the current location. Use the wildcard character (`*`) to specify all the
+items in the current location.
 
 ```yaml
 Type: String[]
@@ -318,17 +315,21 @@ You can pipe a string that contains a path to this cmdlet.
 
 ### System.Object
 
-This cmdlet returns the objects that it gets.
-The type is determined by the type of objects in the path.
+This cmdlet returns the objects that it gets. The type is determined by the type of objects in the
+path.
 
 ## NOTES
 
-- To navigate through the registry, use this cmdlet to get registry keys and the `Get-ItemProperty` to
-  get registry values and data. The registry values are considered to be properties of the registry
-  key.
-- This cmdlet is designed to work with the data exposed by any provider.
-  To list the providers available in your session, type `Get-PsProvider`.
-  For more information, see [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).
+This cmdlet does not have a **Recurse** parameter, because it gets only an item, not its contents.
+To get the contents of an item recursively, use `Get-ChildItem`.
+
+To navigate through the registry, use this cmdlet to get registry keys and the `Get-ItemProperty`
+to get registry values and data. The registry values are considered to be properties of the
+registry key.
+  
+This cmdlet is designed to work with the data exposed by any provider. To list the providers
+available in your session, type `Get-PsProvider`. For more information, see
+[about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).
 
 ## RELATED LINKS
 

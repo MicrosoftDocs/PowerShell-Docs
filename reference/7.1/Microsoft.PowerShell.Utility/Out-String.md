@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Utility
 ms.date: 12/13/2019
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/out-string?view=powershell-7&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/out-string?view=powershell-7.x&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Out-String
 ---
@@ -113,7 +113,7 @@ PowerShell formatter. New lines that are part of the string objects created with
 removed.
 
 The example uses a special character (`` `n ``) to create a new line. For more information, see
-[about_Special_Characters](/microsoft.powershell.core/about/about_special_characters).
+[about_Special_Characters](../microsoft.powershell.core/about/about_special_characters.md).
 
 ```
 PS> "a", "b`n", "c", "d" | Out-String

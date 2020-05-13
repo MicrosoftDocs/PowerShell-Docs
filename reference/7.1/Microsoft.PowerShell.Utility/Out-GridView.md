@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Utility
 ms.date: 10/28/2019
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/out-gridview?view=powershell-7&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/out-gridview?view=powershell-7.x&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Out-GridView
 ---
@@ -54,7 +54,9 @@ For full instructions, see the [Notes](#notes) section of this article.
 
 > [!NOTE]
 > This cmdlet was reintroduced in PowerShell 7. This cmdlet is only available on Windows systems
-> that support the Windows Desktop.
+> that support the Windows Desktop. For a cross-platform version of this cmdlet, see the
+> [GraphicalTools](https://www.powershellgallery.com/packages/Microsoft.PowerShell.GraphicalTools)
+> module in the PowerShell Gallery.
 
 ## EXAMPLES
 

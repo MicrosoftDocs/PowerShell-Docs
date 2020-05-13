@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Core
 ms.date: 12/20/2019
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/new-pssession?view=powershell-7&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/new-pssession?view=powershell-7.x&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: New-PSSession
 ---
@@ -102,7 +102,7 @@ configured with a PowerShell SSH endpoint. The benefit of an SSH based PowerShel
 that it can work across multiple platforms (Windows, Linux, macOS). For SSH based sessions you use
 the **HostName** or **SSHConnection** parameter set to specify the remote computer and relevant
 connection information. For more information about how to set up PowerShell SSH remoting, see
-[PowerShell Remoting Over SSH](/powershell/scripting/core-powershell/ssh-remoting-in-powershell-core).
+[PowerShell Remoting Over SSH](/powershell/scripting/learn/remoting/ssh-remoting-in-powershell-core).
 
 > [!NOTE]
 > When using WSMan remoting from a Linux or macOS client with a HTTPS endpoint where the server
@@ -472,7 +472,7 @@ information, see [about_Preference_Variables](About/about_Preference_Variables.m
 
 ```yaml
 Type: String
-Parameter Sets: ComputerName, Uri, VMId, VMName, ContainerId
+Parameter Sets: ComputerName, VMId, Uri, VMName, ContainerId
 Aliases:
 
 Required: False
@@ -551,14 +551,15 @@ object and the password is stored as a [SecureString](/dotnet/api/system.securit
 > [How secure is SecureString?](/dotnet/api/system.security.securestring#how-secure-is-securestring).
 
 ```yaml
-Accept pipeline input: True (ByPropertyName)
-Position: Named
-Accept wildcard characters: False
-Parameter Sets: ComputerName, Uri, VMId, VMName
-Required: True (VMId, VMName), False (ComputerName, Uri)
-Default value: Current user
-Aliases:
 Type: PSCredential
+Parameter Sets: ComputerName, Uri, VMId, VMName
+Aliases:
+
+Required: True (VMId, VMName), False (ComputerName, Uri)
+Position: Named
+Default value: Current user
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
 ```
 
 ### -EnableNetworkAccess
@@ -821,7 +822,7 @@ The throttle limit applies only to the current command, not to the session or to
 
 ```yaml
 Type: Int32
-Parameter Sets: ComputerName, VMName, Uri, VMId, Session, ContainerId
+Parameter Sets: ComputerName, VMId, Uri, VMName, Session, ContainerId
 Aliases:
 
 Required: False
@@ -1111,7 +1112,7 @@ You can pipe a string, URI, or session object to this cmdlet.
   specific features and limitations do not apply. For example WinRM based quotas, session options,
   custom endpoint configuration, and disconnect/reconnect features are currently not supported. For
   more information about how to set up PowerShell SSH remoting, see
-  [PowerShell Remoting Over SSH](/powershell/scripting/core-powershell/ssh-remoting-in-powershell-core).
+  [PowerShell Remoting Over SSH](/powershell/scripting/learn/remoting/ssh-remoting-in-powershell-core).
 
 ## RELATED LINKS
 

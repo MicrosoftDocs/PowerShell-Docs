@@ -45,7 +45,8 @@ It uses the *Credential* parameter to specify a user account that has permission
 
 ### Example 3: Reset the password on a remote computer
 ```
-PS C:\> Invoke-Command -ComputerName "Server01" -ScriptBlock {Reset-ComputerMachinePassword}
+$cred = Get-Credential
+PS C:\> Invoke-Command -ComputerName "Server01" -ScriptBlock {Reset-ComputerMachinePassword -Credential $using:cred}
 ```
 
 This command uses the Invoke-Command cmdlet to run a **Reset-ComputerMachinePassword** command on the Server01 remote computer.

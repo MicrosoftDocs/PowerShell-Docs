@@ -22,7 +22,8 @@ Publishes a specified module from the local computer to an online gallery.
 Publish-Module -Name <String> [-RequiredVersion <String>] [-NuGetApiKey <String>]
  [-Repository <String>] [-Credential <PSCredential>] [-FormatVersion <Version>]
  [-ReleaseNotes <String[]>] [-Tags <String[]>] [-LicenseUri <Uri>] [-IconUri <Uri>]
- [-ProjectUri <Uri>] [-Force] [-AllowPrerelease] [-WhatIf] [-Confirm] [<CommonParameters>]
+ [-ProjectUri <Uri>] [-Exclude <String[]>] [-Force] [-AllowPrerelease] [-SkipAutomaticTags]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### ModulePathParameterSet
@@ -30,8 +31,8 @@ Publish-Module -Name <String> [-RequiredVersion <String>] [-NuGetApiKey <String>
 ```
 Publish-Module -Path <String> [-NuGetApiKey <String>] [-Repository <String>]
  [-Credential <PSCredential>] [-FormatVersion <Version>] [-ReleaseNotes <String[]>]
- [-Tags <String[]>] [-LicenseUri <Uri>] [-IconUri <Uri>] [-ProjectUri <Uri>] [-Force] [-WhatIf]
- [-Confirm] [<CommonParameters>]
+ [-Tags <String[]>] [-LicenseUri <Uri>] [-IconUri <Uri>] [-ProjectUri <Uri>] [-Force]
+ [-SkipAutomaticTags] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -44,6 +45,12 @@ When you specify a module by name, `Publish-Module` publishes the first module t
 by running `Get-Module -ListAvailable <Name>`. If you specify a minimum version of a module to
 publish, `Publish-Module` publishes the first module with a version that is greater than or equal to
 the minimum version that you have specified.
+
+Publishing a module requires metadata that is displayed on the gallery page for the module. Required
+metadata includes the module name, version, description, and author. Although most metadata is taken
+from the module manifest, some metadata must be specified in `Publish-Module` parameters, such as
+**Tag**, **ReleaseNote**, **IconUri**, **ProjectUri**, and **LicenseUri**, because these parameters
+match fields in a NuGet-based gallery.
 
 ## EXAMPLES
 
@@ -87,6 +94,22 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -Confirm
+
+Prompts you for confirmation before running the `Publish-Module`.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Credential
 
 Specifies a user account that has rights to publish a module for a specified package provider or
@@ -101,6 +124,20 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -Exclude
+
+```yaml
+Type: String[]
+Parameter Sets: ModuleNameParameterSet
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -292,6 +329,23 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -SkipAutomaticTags
+
+Removes commands and resources from being included as tags. Skips automatically adding tags to a
+module.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Tags
 
 Adds one or more tags to the module that you are publishing. Example tags include
@@ -305,22 +359,6 @@ Aliases:
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Confirm
-
-Prompts you for confirmation before running the `Publish-Module`.
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: (All)
-Aliases: cf
-
-Required: False
-Position: Named
-Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -349,13 +387,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### PSModuleInfo
+### System.String
+
+### System.Management.Automation.PSCredential
 
 ## OUTPUTS
 
-### None
-
-`Publish-Module` shows no output if a module is published successfully.
+### System.Object
 
 ## NOTES
 

@@ -12,6 +12,7 @@ title: Register-ArgumentCompleter
 # Register-ArgumentCompleter
 
 ## SYNOPSIS
+
 Registers a custom argument completer.
 
 ## SYNTAX
@@ -78,15 +79,15 @@ cmdlet and only returns running services.
 ```powershell
 $s = {
     param($commandName, $parameterName, $wordToComplete, $commandAst, $fakeBoundParameters)
-    $services = Get-Service | Where-Object {$_.Status -eq "Running" }
-    $services | Where-Object { $_.Name -like "$wordToComplete*" } | ForEach-Object {
-        New-Object -Type System.Management.Automation.CompletionResult -ArgumentList $_,
-            $_,
+    $services = Get-Service | Where-Object {$_.Status -eq "Running" -and $_.Name -like "$wordToComplete*"}
+    $services | ForEach-Object {
+        New-Object -Type System.Management.Automation.CompletionResult -ArgumentList $_.Name,
+            $_.Name,
             "ParameterValue",
-            $_
+            $_.Name
     }
 }
-Register-ArgumentCompleter -CommandName dotnet -Native -ScriptBlock $s
+Register-ArgumentCompleter -CommandName Stop-Service -ParameterName Name -ScriptBlock $s
 ```
 
 The first command creates a script block which takes the required parameters which are passed in
@@ -123,11 +124,11 @@ example adds tab-completion for the `dotnet` Command Line Interface (CLI).
 
 ```powershell
 $scriptblock = {
-     param($commandName, $wordToComplete, $cursorPosition)
-         dotnet complete --position $cursorPosition "$wordToComplete" | ForEach-Object {
+    param($wordToComplete, $commandAst, $cursorPosition)
+        dotnet complete --position $cursorPosition $commandAst.ToString() | ForEach-Object {
             [System.Management.Automation.CompletionResult]::new($_, $_, 'ParameterValue', $_)
-         }
- }
+        }
+}
 Register-ArgumentCompleter -Native -CommandName dotnet -ScriptBlock $scriptblock
 ```
 
@@ -221,11 +222,12 @@ When you specify the **Native** parameter, the script block must take the follow
 the specified order. The names of the parameters aren't important because PowerShell passes in the
 values by position.
 
-- `$commandName` (Position 0) - This parameter is set to the name of the
-  command for which the script block is providing tab completion.
-- `$wordToComplete` (Position 1) - This parameter is set to value the user has
-  provided before they pressed <kbd>Tab</kbd>. Your script block should use this value
-  to determine tab completion values.
+- `$wordToComplete` (Position 0) - This parameter is set to value the user has provided before they
+  pressed <kbd>Tab</kbd>. Your script block should use this value to determine tab completion
+  values.
+- `$commandAst` (Position 1) - This parameter is set to the Abstract Syntax
+  Tree (AST) for the current input line. For more information, see
+  [Ast Class](/dotnet/api/system.management.automation.language.ast).
 - `$cursorPosition` (Position 2) - This parameter is set to the position of the cursor when the user
   pressed <kbd>Tab</kbd>.
 

@@ -3,8 +3,8 @@ external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 10/28/2019
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/compare-object?view=powershell-7&WT.mc_id=ps-gethelp
+ms.date: 05/07/2020
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/compare-object?view=powershell-7.x&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Compare-Object
 ---
@@ -15,8 +15,6 @@ title: Compare-Object
 Compares two sets of objects.
 
 ## SYNTAX
-
-### All
 
 ```
 Compare-Object [-ReferenceObject] <PSObject[]> [-DifferenceObject] <PSObject[]>
@@ -35,6 +33,11 @@ used, (`==`) indicates the value is in both objects.
 
 If the **reference** or the **difference** objects are null (`$null`), `Compare-Object` generates a
 terminating error.
+
+For simple objects, like strings or numbers, the cmdlet compares the values of the objects. For
+complex objects, you must provide one or more properties to be used for comparison. If you do
+provide a property, the cmdlet checks for **IComparable** interfaces to perform the comparison. If
+that fails, the objects are converted to strings and the string values are compared.
 
 Some examples use splatting to reduce the line length of the code samples. For more information, see
 [about_Splatting](../Microsoft.PowerShell.Core/About/about_Splatting.md).
@@ -133,13 +136,14 @@ System.Diagnostics.Process (notepad)   =>
 ```
 
 First, `Get-Process` gets a list of running processes and stores them in the `$Processes_Before`
-variable then the **notepad.exe** application is started. Next, `Get-Process` gets an updated list of
+variable then the `notepad.exe` application is started. Next, `Get-Process` gets an updated list of
 running processes and stores them in the `$Processes_After` variable.
 
 `Compare-Object` compares the two sets of process objects. The output displays the difference,
 **notepad.exe**, from the `$Processes_After` object.
 
 <a name="ex5" />
+
 ### Example 5: Show the difference when using the PassThru parameter
 
 Normally, `Compare-Object` returns a **PSCustomObject** type with the following properties:
@@ -216,6 +220,39 @@ output displayed by the default format for **System.Boolean** objects didn't dis
 **SideIndicator** property. However, the returned **System.Boolean** object has the added
 **NoteProperty**.
 
+### Example 6 - Comparing complex objects
+
+This example shows the behavior when comparing complex objects. In this example we store two
+different process objects for different instances of PowerShell. Both variables contain process
+objects with the same name. When the objects are compared without specifying the **Property**
+parameter, the cmdlet considers the objects to be equal.
+
+```powershell
+PS> Get-Process pwsh
+
+ NPM(K)    PM(M)      WS(M)     CPU(s)      Id  SI ProcessName
+ ------    -----      -----     ------      --  -- -----------
+    101   123.32     139.10      35.81   11168   1 pwsh
+     89   107.55      66.97      11.44   17600   1 pwsh
+
+PS> $a = Get-Process -Id 11168
+PS> $b = Get-Process -Id 17600
+PS> Compare-Object $a $b -IncludeEqual
+
+InputObject                       SideIndicator
+-----------                       -------------
+System.Diagnostics.Process (pwsh) ==
+
+PS> Compare-Object $a $b -Property ProcessName, Id, CPU
+
+ProcessName    Id       CPU SideIndicator
+-----------    --       --- -------------
+pwsh        17600   11.4375 =>
+pwsh        11168 36.203125 <=
+```
+
+When you specify properties to be compared, the cmdlet shows the differences.
+
 ## PARAMETERS
 
 ### -CaseSensitive
@@ -274,7 +311,8 @@ differences between the objects are discarded.
 Use **ExcludeDifferent** with **IncludeEqual** to display only the lines that match between the
 **reference** and **difference** objects.
 
-If **ExcludeDifferent** is specified without **IncludeEqual**, there's no output.
+If **ExcludeDifferent** is specified without **IncludeEqual**, **IncludeEqual** is inferred.  To
+override, pass **$false** to **IncludeEqual**.
 
 ```yaml
 Type: SwitchParameter
@@ -377,9 +415,9 @@ Accept wildcard characters: False
 
 ### CommonParameters
 
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
--InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction,
+-InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and
+-WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 

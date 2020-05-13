@@ -168,6 +168,22 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -Confirm
+
+Prompts you for confirmation before running `Update-ModuleManifest`.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Copyright
 
 Specifies a copyright statement for the module.
@@ -615,7 +631,7 @@ The acceptable values for this parameter are:
 Type: ProcessorArchitecture
 Parameter Sets: (All)
 Aliases:
-Accepted values: Amd64, Arm, IA64, MSIL, None, X86
+Accepted values: None, MSIL, X86, IA64, Amd64, Arm
 
 Required: False
 Position: Named
@@ -814,21 +830,6 @@ Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: True
-```
-
-### -Confirm
-
-Prompts you for confirmation before running `Update-ModuleManifest`.
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: (All)
-Aliases: cf
-
-Required: False
-Position: Named
-Default value: False
-Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -856,7 +857,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
+### System.String
+
 ## OUTPUTS
+
+### System.Object
 
 ## NOTES
 

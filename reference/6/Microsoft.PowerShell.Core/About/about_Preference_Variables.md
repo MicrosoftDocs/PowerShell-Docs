@@ -1,7 +1,7 @@
 ---
 keywords: powershell,cmdlet
 locale: en-us
-ms.date: 09/13/2019
+ms.date: 04/22/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_preference_variables?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Preference_Variables
@@ -48,6 +48,7 @@ The following table lists the preference variables and their default values.
 | `$PSSessionApplicationName`      | wsman                     |
 | `$PSSessionConfigurationName`    | `https://schemas.microsoft.com/powershell/Microsoft.PowerShell` |
 | `$PSSessionOption`               | See [$PSSessionOption](#pssessionoption) |
+| `$Transcript`                    | (none)                    |
 | `$VerbosePreference`             | SilentlyContinue          |
 | `$WarningPreference`             | Continue                  |
 | `$WhatIfPreference`              | False                     |
@@ -461,16 +462,16 @@ Write-Error -Message 'Test Error' ; Write-Host 'Hello World' : Test Error
 At line:1 char:1
 + Write-Error -Message 'Test Error' ; Write-Host 'Hello World'
 + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-+ CategoryInfo          : NotSpecified: (:) [Write-Error], WriteErrorException
-+ FullyQualifiedErrorId : Microsoft.PowerShell.Commands.WriteErrorException
+    + CategoryInfo          : NotSpecified: (:) [Write-Error], WriteErrorException
+    + FullyQualifiedErrorId : Microsoft.PowerShell.Commands.WriteErrorException
 
-The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to
-Stop: Hello World
+The running command stopped because the preference variable "ErrorActionPreference"
+or common parameter is set to Stop: Test Error
 
-Write-Error 'Hello World' ; Write-Host 'Hello World' : Hello World
+Write-Error -Message 'Test Error' ; Write-Host 'Hello World' : Test Error
 At line:1 char:1
-+ Write-Error 'Hello World' ; Write-Host 'Hello World'
-+ ~~~~~~~~~~~~~~~~~~~~~~~~~
++ Write-Error -Message 'Test Error' ; Write-Host 'Hello World'
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     + CategoryInfo          : NotSpecified: (:) [Write-Error], WriteErrorException
     + FullyQualifiedErrorId : Microsoft.PowerShell.Commands.WriteErrorException
 ```
@@ -1052,6 +1053,15 @@ To set custom session options, use the `New-PSSessionOption` cmdlet to create a
 **PSSessionOption** object. Then, use the **PSSessionOption** object as the
 value of the **SessionOption** parameter in cmdlets that create a session, such
 as `New-PSSession`, `Enter-PSSession`, and `Invoke-Command`.
+
+### $Transcript
+
+Used by `Start-Transcript` to specify the name and location of the transcript
+file. If you do not specify a value for the **Path** parameter,
+`Start-Transcript` uses the path in the value of the `$Transcript` global
+variable. If you have not created this variable, `Start-Transcript` stores the
+transcripts in the `$Home\My Documents` directory as
+`\PowerShell_transcript.<time-stamp>.txt` files.
 
 ### \$VerbosePreference
 

@@ -108,7 +108,7 @@ EmphasisItalics : [36m
 Sets the foreground color for rendering bold Markdown text.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: IndividualSetting
 Aliases:
 
@@ -124,7 +124,7 @@ Accept wildcard characters: False
 Sets the color for rendering code blocks and spans in Markdown text.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: IndividualSetting
 Aliases:
 
@@ -140,7 +140,7 @@ Accept wildcard characters: False
 Sets the color for rendering Header1 blocks in Markdown text.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: IndividualSetting
 Aliases:
 
@@ -156,7 +156,7 @@ Accept wildcard characters: False
 Sets the color for rendering Header2 blocks in Markdown text.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: IndividualSetting
 Aliases:
 
@@ -172,7 +172,7 @@ Accept wildcard characters: False
 Sets the color for rendering Header3 blocks in Markdown text.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: IndividualSetting
 Aliases:
 
@@ -188,7 +188,7 @@ Accept wildcard characters: False
 Sets the color for rendering Header4 blocks in Markdown text.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: IndividualSetting
 Aliases:
 
@@ -204,7 +204,7 @@ Accept wildcard characters: False
 Sets the color for rendering Header5 blocks in Markdown text.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: IndividualSetting
 Aliases:
 
@@ -220,7 +220,7 @@ Accept wildcard characters: False
 Sets the color for rendering Header6 blocks in Markdown text.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: IndividualSetting
 Aliases:
 
@@ -237,7 +237,7 @@ Sets the foreground color for rendering the alternate text of an image element i
 
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: IndividualSetting
 Aliases:
 
@@ -253,7 +253,7 @@ Accept wildcard characters: False
 A **PSMarkdownOptionInfo** object containing the configuration to be set.
 
 ```yaml
-Type: System.Management.Automation.PSObject
+Type: PSObject
 Parameter Sets: InputObject
 Aliases:
 
@@ -269,7 +269,7 @@ Accept wildcard characters: False
 Sets the foreground color for rendering the italics in Markdown text.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: IndividualSetting
 Aliases:
 
@@ -285,7 +285,7 @@ Accept wildcard characters: False
 Sets the foreground color for rendering hyperlinks in Markdown text.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: IndividualSetting
 Aliases:
 
@@ -301,7 +301,7 @@ Accept wildcard characters: False
 Causes the cmdlet to output a **PSMarkdownOptionInfo** object containing the new configuration.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -318,7 +318,7 @@ Selects a theme containing predefined color settings. The possible values are **
 **Light**.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: Theme
 Aliases:
 Accepted values: Dark, Light

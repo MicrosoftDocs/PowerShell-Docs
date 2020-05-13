@@ -9,6 +9,7 @@ title: Registry Provider
 # Registry provider
 
 ## Provider name
+
 Registry
 
 ## Drives
@@ -54,7 +55,7 @@ in this article.
 ## Types exposed by this provider
 
 Registry keys are represented as instances of the
-[Microsoft.Win32.RegistryKey](https://docs.microsoft.com/dotnet/api/microsoft.win32.registrykey)
+[Microsoft.Win32.RegistryKey](/dotnet/api/microsoft.win32.registrykey)
 class. Registry entries are represented as instances of the
 [PSCustomObject](/dotnet/api/system.management.automation.pscustomobject)
 class.
@@ -104,7 +105,7 @@ cd "Registry::HKEY_LOCAL_MACHINE\Software"
 ## Displaying the contents of registry keys
 
 The registry is divided into keys, subkeys, and entries. For more information
-about registry structure, see [Structure of the Registry](/windows/desktop/sysinfo/structure-of-the-registry.md).
+about registry structure, see [Structure of the Registry](/windows/desktop/sysinfo/structure-of-the-registry).
 
 In a **Registry** drive, each key is a container. A key can contain any number
 of keys. A registry key that has a parent key is called a subkey. You can

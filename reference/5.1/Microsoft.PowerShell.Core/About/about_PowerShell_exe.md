@@ -137,6 +137,12 @@ because it has no special meaning to the current **cmd.exe** shell. The
 `$env:windir` style of environment variable reference _can_ be used inside a
 **Command** parameter, since there it will be interpreted as PowerShell code.
 
+Similarly, if you want to execute the same command from a **Batch script**, you 
+would use `%~dp0` instead of `.\` or `$PSScriptRoot` to represent the current 
+execution directory: `powershell.exe -File %~dp0test.ps1 -TestParam %windir%`. 
+If you instead used `.\test.ps1`, PowerShell would throw an error because it 
+cannot find the literal path `.\test.ps1`
+
 When the value of **File** is a file path, **File** _must_ be the last
 parameter in the command because any characters typed after the **File**
 parameter name are interpreted as the script file path followed by the script
@@ -150,9 +156,9 @@ For example, the following command uses the **All** parameter of the
 `Get-Script.ps1` script file: `-File .\Get-Script.ps1 -All`
 
 In rare cases, you might need to provide a **Boolean** value for a switch
-parameter. To provide a **Boolean** value for a switch parameter in the value
-of the File parameter, enclose the parameter name and value in curly braces,
-such as the following: `-File .\Get-Script.ps1 {-All:$False}`.
+parameter. It is not possible to pass an explicit boolean value for a switch
+parameter when running a script in the way. This limitation was removed in
+PowerShell 6 (`pwsh.exe`).
 
 #### -ExecutionPolicy \<ExecutionPolicy\>
 

@@ -3,7 +3,7 @@ external help file: Microsoft.Windows.DSC.CoreConfProviders.dll-help.xml
 keywords: powershell,cmdlet
 locale: en-us
 Module Name: PSDesiredStateConfiguration
-ms.date: 01/10/2020
+ms.date: 04/01/2020
 online version: https://docs.microsoft.com/powershell/module/psdesiredstateconfiguration/invoke-dscresource?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Invoke-DscResource
@@ -17,8 +17,8 @@ Runs a method of a specified PowerShell Desired State Configuration (DSC) resour
 ## SYNTAX
 
 ```
-Invoke-DscResource [-Name] <String> [-Method] <String> -ModuleName <ModuleSpecification> -Property <Hashtable>
- [<CommonParameters>]
+Invoke-DscResource [[-Method] <Object>] [[-Name] <Object>] [[-Property] <Object>]
+ [[-ModuleName] <Object>] [-AsJob] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -26,15 +26,21 @@ Invoke-DscResource [-Name] <String> [-Method] <String> -ModuleName <ModuleSpecif
 The `Invoke-DscResource` cmdlet runs a method of a specified PowerShell Desired State Configuration
 (DSC) resource.
 
-This cmdlet invokes a DSC resource directly, without creating a configuration document.
-Using this cmdlet, configuration management products can manage windows or Linux by using DSC resources.
-This cmdlet also enables debugging of resources when the DSC engine is running with debugging enabled.
+This cmdlet invokes a DSC resource directly, without creating a configuration document. Using this
+cmdlet, configuration management products can manage windows or Linux by using DSC resources. This
+cmdlet also enables debugging of resources when the DSC engine is running with debugging enabled.
+
+> [!NOTE]
+> `Invoke-DscResource` is an experimental feature in PowerShell 7. To use the cmdlet, you must
+> enable it using the following command.
+>
+> `Enable-ExperimentalFeature PSDesiredStateConfiguration.InvokeDscResource`
 
 ## EXAMPLES
 
 ### Example 1: Invoke the Set method of a resource by specifying its mandatory properties
 
-This command invokes the **Set** method of a resource named Log and specifies a **Message** property
+This example invokes the **Set** method of a resource named Log and specifies a **Message** property
 for it.
 
 ```powershell
@@ -45,8 +51,8 @@ Invoke-DscResource -Name Log -Method Set -ModuleName PSDesiredStateConfiguration
 
 ### Example 2: Invoke the Test method of a resource for a specified module
 
-This command invokes the **Test** method of a resource named WindowsProcess, which is in the module
-named **PSDesiredStateConfiguration**.
+This example invokes the **Test** method of a resource named **WindowsProcess**, which is in the
+module named **PSDesiredStateConfiguration**.
 
 ```powershell
 $SplatParam = @{
@@ -142,10 +148,10 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## NOTES
 
-Previously, Windows PowerShell 5.1 resources ran under System context unless specified
-with user context using the key **PsDscRunAsCredential**. In PowerShell 7.0, Resources run in the
-user's context, and **PsDscRunAsCredential** is no longer supported. Previous configurations using
-this key will throw an exception.
+Previously, Windows PowerShell 5.1 resources ran under System context unless specified with user
+context using the key **PsDscRunAsCredential**. In PowerShell 7.0, Resources run in the user's
+context, and **PsDscRunAsCredential** is no longer supported. Previous configurations using this key
+will throw an exception.
 
 ## RELATED LINKS
 

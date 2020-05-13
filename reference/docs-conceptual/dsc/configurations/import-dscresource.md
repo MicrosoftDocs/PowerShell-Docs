@@ -75,7 +75,7 @@ This usage has the following benefits:
 
 When authoring the DSC configuration in ISE, PowerShell provides IntelliSence for resources and resource properties. Resource definitions under the `$pshome` module path are loaded automatically. When you import resources using the `Import-DSCResource` keyword, the specified resource definitions are added and Intellisense is expanded to include the imported resource's schema.
 
-![Resource Intellisense](../media/resource-intellisense.png)
+![Resource Intellisense](media/import-dscresource/resource-intellisense.png)
 
 > [!NOTE]
 > Beginning in PowerShell 5.0, tab completion was added to the ISE for DSC resources and their properties. For more information, see [Resources](../resources/resources.md).
@@ -134,11 +134,11 @@ Installing and using multiple versions of resources side by side was not support
 
 In the image below, two versions of the **xPSDesiredStateConfiguration** module are installed.
 
-![Multiple Resource Versions Fixed](../media/multiple-resource-versions-broken.png)
+![Multiple Resource Versions Fixed](media/import-dscresource/multiple-resource-versions-broken.png)
 
 Copy the contents of your desired module version to the top level of the module directory.
 
-![Multiple Resource Versions Fixed](../media/multiple-resource-versions-fixed.png)
+![Multiple Resource Versions Fixed](media/import-dscresource/multiple-resource-versions-fixed.png)
 
 ### Resource location
 

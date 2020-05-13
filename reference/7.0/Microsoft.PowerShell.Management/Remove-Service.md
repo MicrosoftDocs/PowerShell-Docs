@@ -57,7 +57,7 @@ Get-Service -DisplayName "Test Service" | Remove-Service
 
 ### -InputObject
 
-Specifies **ServiceController** objects that represent the services to stop. Enter a variable that
+Specifies **ServiceController** objects that represent the services to remove. Enter a variable that
 contains the objects, or type a command or expression that gets the objects.
 
 ```yaml

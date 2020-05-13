@@ -6,139 +6,161 @@ ms.date: 08/06/2018
 
 # How to replicate the ISE experience in Visual Studio Code
 
-While the PowerShell extension for VSCode doesn't seek
-complete feature parity with the PowerShell ISE,
-there are features in place to make the VSCode experience more natural
-for users of the ISE.
+While the PowerShell extension for VS Code doesn't seek complete feature parity with the PowerShell
+ISE, there are features in place to make the VS Code experience more natural for users of the ISE.
 
-This document tries to list settings you can configure in VSCode
-to make the user experience a bit more familiar compared to the ISE.
+This document tries to list settings you can configure in VS Code to make the user experience a bit
+more familiar compared to the ISE.
 
-## Key bindings
-
-| Function                              | ISE Binding                  | VSCode Binding                              |
-| ----------------                      | -----------                  | --------------                              |
-| Interrupt and break debugger          | <kbd>Ctrl</kbd>+<kbd>B</kbd> | <kbd>F6</kbd>                               |
-| Execute current line/highlighted text | <kbd>F8</kbd>                | <kbd>F8</kbd>                               |
-| List available snippets               | <kbd>Ctrl</kbd>+<kbd>J</kbd> | <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>J</kbd> |
-
-### Custom Key bindings
-
-You can [configure your own key bindings](https://code.visualstudio.com/docs/getstarted/keybindings#_custom-keybindings-for-refactorings)
-in VSCode as well.
-
-## Simplified ISE-like UI
-
-If you're looking to simplify the Visual Studio Code UI to look more closely to the UI of the ISE, apply these two settings:
-
-```json
-"workbench.activityBar.visible": false,
-"debug.openDebug": "neverOpen",
-```
-
-This will hide the "Activity Bar" and the "Debug Side Bar" sections below inside of the red box:
-
-![highlighted section includes Activity Bar and Debug Side Bar](images/How-To-Replicate-the-ISE-Experience-In-VSCode/1-highlighted-sidebar.png)
-
-The end result looks like this:
-
-![Simplified view of VS Code](images/How-To-Replicate-the-ISE-Experience-In-VSCode/2-simplified-ui.png)
-
-## Tab completion
-
-To enable more ISE-like tab completion, add this setting:
-
-```json
-"editor.tabCompletion": "on",
-```
+## ISE Mode
 
 > [!NOTE]
-> This setting was added directly to VSCode (rather than in the extension). Its behavior is determined by VSCode directly and cannot be changed by the extension.
+> This feature is available in the PowerShell Preview extension since version 2019.12.0
+> and in the PowerShell extension since version 2020.3.0.
 
-## No focus on console when executing
+The easiest way to replicate the ISE experience in Visual Studio Code is by turning on "ISE Mode".
+To do this, open the command palette (<kbd>F1</kbd> OR <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd>
+OR <kbd>Cmd</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd> on macOS) and type in "ISE Mode". Select
+"PowerShell: Enable ISE Mode" from the list.
 
-To keep the focus in the editor when you execute with <kbd>F8</kbd>:
+This command automatically applies the settings described below The result looks like this:
 
-```json
-"powershell.integratedConsole.focusConsoleOnExecute": false
-```
+![ISE Mode](media/How-To-Replicate-the-ISE-Experience-In-VSCode/3-ise-mode.png)
 
-The default is `true` for accessibility purposes.
+## ISE Mode configuration settings
 
-## Don't start integrated console on startup
+ISE Mode makes the following changes to VS Code settings.
 
-To stop the integrated console on startup, set:
+- Key bindings
 
-```json
-"powershell.integratedConsole.showOnStartup": false
-```
+  |               Function                |         ISE Binding          |              VS Code Binding                |
+  | ------------------------------------- | ---------------------------- | ------------------------------------------- |
+  | Interrupt and break debugger          | <kbd>Ctrl</kbd>+<kbd>B</kbd> | <kbd>F6</kbd>                               |
+  | Execute current line/highlighted text | <kbd>F8</kbd>                | <kbd>F8</kbd>                               |
+  | List available snippets               | <kbd>Ctrl</kbd>+<kbd>J</kbd> | <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>J</kbd> |
 
-> [!NOTE]
-> The background PowerShell process will still start since that provides IntelliSense, script analysis, symbol navigation, etc.
-But the console won't be shown.
+  > [!NOTE]
+  > You can [configure your own key bindings](https://code.visualstudio.com/docs/getstarted/keybindings#_custom-keybindings-for-refactorings)
+  > in VS Code as well.
 
-## Assume files are PowerShell by default
+- Simplified ISE-like UI
 
-To make new/untitled files, register as PowerShell by default:
+  If you're looking to simplify the Visual Studio Code UI to look more closely to the UI of the ISE,
+  apply these two settings:
 
-```json
-"files.defaultLanguage": "powershell",
-```
+  ```json
+  "workbench.activityBar.visible": false,
+  "debug.openDebug": "neverOpen",
+  ```
 
-## Color scheme
+  These settings hide the "Activity Bar" and the "Debug Side Bar" sections shown inside the red box
+  below:
 
-There are a number of ISE themes available for VSCode
-to make the editor look much more like the ISE.
+  ![highlighted section includes Activity Bar and Debug Side Bar](media/How-To-Replicate-the-ISE-Experience-In-VSCode/1-highlighted-sidebar.png)
 
-In the [Command Palette]
-type `theme` to get `Preferences: Color Theme` and press <kbd>Enter</kbd>.
-In the drop-down list, select `PowerShell ISE`.
+  The end result looks like this:
 
-You can set this theme in the settings with:
+  ![Simplified view of VS Code](media/How-To-Replicate-the-ISE-Experience-In-VSCode/2-simplified-ui.png)
 
-```json
-"workbench.colorTheme": "PowerShell ISE",
-```
+- Tab completion
 
-## PowerShell Command Explorer
+  To enable more ISE-like tab completion, add this setting:
 
-Thanks to the work of [@corbob](https://github.com/corbob),
-the PowerShell extension has the beginnings of its own command explorer.
+  ```json
+  "editor.tabCompletion": "on",
+  ```
 
-In the [Command Palette],
-enter `PowerShell Command Explorer` and press <kbd>Enter</kbd>.
+- No focus on console when executing
 
-## Open in the ISE
+  To keep the focus in the editor when you execute with <kbd>F8</kbd>:
 
-If you end up wanting to open a file in the ISE anyway,
-you can use <kbd>Shift</kbd>+<kbd>Alt</kbd>+<kbd>P</kbd>.
+  ```json
+  "powershell.integratedConsole.focusConsoleOnExecute": false
+  ```
+
+  The default is `true` for accessibility purposes.
+
+- Don't start integrated console on startup
+
+  To stop the integrated console on startup, set:
+
+  ```json
+  "powershell.integratedConsole.showOnStartup": false
+  ```
+
+  > [!NOTE]
+  > The background PowerShell process still starts to provide IntelliSense, script analysis, symbol
+  > navigation, etc., but the console won't be shown.
+
+- Assume files are PowerShell by default
+
+  To make new/untitled files, register as PowerShell by default:
+
+  ```json
+  "files.defaultLanguage": "powershell",
+  ```
+
+- Color scheme
+
+  There are a number of ISE themes available for VS Code to make the editor look much more like the
+  ISE.
+
+  In the [Command Palette][] type `theme` to get `Preferences: Color Theme` and press
+  <kbd>Enter</kbd>. In the drop-down list, select `PowerShell ISE`.
+
+  You can set this theme in the settings with:
+
+  ```json
+  "workbench.colorTheme": "PowerShell ISE",
+  ```
+
+- PowerShell Command Explorer
+
+  Thanks to the work of [@corbob](https://github.com/corbob), the PowerShell extension has the
+  beginnings of its own command explorer.
+
+  In the [Command Palette][], enter `PowerShell Command Explorer` and press <kbd>Enter</kbd>.
+
+- Open in the ISE
+
+  If you want to open a file in the Windows PowerShell ISE anyway, open the [Command Palette][],
+  search for "open in ise", then select **PowerShell: Open Current File in PowerShell ISE**.
 
 ## Other resources
 
-- 4sysops has [a great article](https://4sysops.com/archives/make-visual-studio-code-look-and-behave-like-powershell-ise/)
-  on configuring VSCode to be more like the ISE.
-- Mike F Robbins has [a great post](https://mikefrobbins.com/2017/08/24/how-to-install-visual-studio-code-and-configure-it-as-a-replacement-for-the-powershell-ise/) on setting up VSCode.
-- Learn PowerShell has [an excellent write up](https://www.learnpwsh.com/setup-vs-code-for-powershell/)
-  on getting VSCode setup for PowerShell.
+- 4sysops has [a great article][4sysops] on configuring VS Code to be more like the ISE.
+- Mike F Robbins has [a great post][mikefrobbins] on setting up VS Code.
+- Learn PowerShell has [an excellent write up][learnpwsh] setup for PowerShell.
+
+## VS Code Tips
+
+- Command Palette
+
+  The Command Palette is handy way of executing commands in VS Code. Open the command palette using
+  <kbd>F1</kbd> OR <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd> OR
+  <kbd>Cmd</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd> on macOS.
+
+  For more information, see [the VS Code documentation][vsc-docs].
+
+- Disable the Debug Console
+
+  If you only plan on using VS Code for PowerShell scripting, you can hide the **Debug Console** since
+  it is not used by the PowerShell extension. To do so, right click on **Debug Console** then click on
+  the check mark to hide it.
 
 ## More settings
 
-If you know of more ways to make VSCode feel more familiar
-for ISE users, contribute to this doc.
-If there's a compatibility configuration you're looking for,
-but you can't find any way to enable it, [open an issue](https://github.com/PowerShell/vscode-powershell/issues/new/choose)
-and ask away!
+If you know of more ways to make VS Code feel more familiar for ISE users, contribute to this doc. If
+there's a compatibility configuration you're looking for, but you can't find any way to enable it,
+[open an issue][] and ask away!
 
 We're always happy to accept PRs and contributions as well!
 
-## VSCode Tips
+<!-- link references -->
+[vsc-docs]: https://code.visualstudio.com/docs/getstarted/userinterface#_command-palette
+[Command Palette]: #vs-code-tips
+[open an issue]: https://github.com/PowerShell/VSCode-powershell/issues/new/choose
 
-### Command Palette
-
-<kbd>F1</kbd> OR <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd>
-(<kbd>Cmd</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd> on macOS)
-
-A handy way of executing commands in VSCode.
-For more information, see [the VSCode docs](https://code.visualstudio.com/docs/getstarted/userinterface#_command-palette).
-
-[Command Palette]: #command-palette
+[4sysops]: https://4sysops.com/archives/make-visual-studio-code-look-and-behave-like-powershell-ise/
+[mikefrobbins]: https://mikefrobbins.com/2017/08/24/how-to-install-visual-studio-code-and-configure-it-as-a-replacement-for-the-powershell-ise/
+[learnpwsh]: https://www.learnpwsh.com/setup-vs-code-for-powershell/

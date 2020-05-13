@@ -39,8 +39,8 @@ Out-GridView [-InputObject <PSObject>] [-Title <String>] [-OutputMode <OutputMod
 The `Out-GridView` cmdlet sends the output from a command to a grid view window where the output is
 displayed in an interactive table.
 
-Because this cmdlet requires a user interface, it does not work on Server Core installations of
-Windows Server.
+Because this cmdlet requires a user interface, it does not work on Windows Server Core or Windows
+Nano Server.
 
 You can use the following features of the table to examine your data:
 

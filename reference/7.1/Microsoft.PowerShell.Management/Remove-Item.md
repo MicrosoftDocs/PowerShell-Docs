@@ -2,8 +2,8 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 keywords: powershell,cmdlet
 locale: en-us
-ms.date: 5/14/2019
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/remove-item?view=powershell-7&WT.mc_id=ps-gethelp
+ms.date: 04/07/2020
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/remove-item?view=powershell-7.x&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Remove-Item
 ---
@@ -17,28 +17,30 @@ Deletes the specified items.
 ### Path (Default)
 
 ```
-Remove-Item [-Path] <String[]> [-Filter <String>] [-Include <String[]>] [-Exclude <String[]>] [-Recurse]
- [-Force] [-Credential <PSCredential>] [-WhatIf] [-Confirm] [-Stream <String[]>] [<CommonParameters>]
+Remove-Item [-Path] <String[]> [-Filter <String>] [-Include <String[]>] [-Exclude <String[]>]
+ [-Recurse] [-Force] [-Credential <PSCredential>] [-WhatIf] [-Confirm] [-Stream <String[]>]
+ [<CommonParameters>]
 ```
 
 ### LiteralPath
 
 ```
-Remove-Item -LiteralPath <String[]> [-Filter <String>] [-Include <String[]>] [-Exclude <String[]>] [-Recurse]
- [-Force] [-Credential <PSCredential>] [-WhatIf] [-Confirm] [-Stream <String[]>] [<CommonParameters>]
+Remove-Item -LiteralPath <String[]> [-Filter <String>] [-Include <String[]>] [-Exclude <String[]>]
+ [-Recurse] [-Force] [-Credential <PSCredential>] [-WhatIf] [-Confirm] [-Stream <String[]>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 
-The `Remove-Item` cmdlet deletes one or more items.
-Because it is supported by many providers, it can delete many different types of items, including
-files, folders, registry keys, variables, aliases, and functions.
+The `Remove-Item` cmdlet deletes one or more items. Because it is supported by many providers, it
+can delete many different types of items, including files, folders, registry keys, variables,
+aliases, and functions.
 
 ## EXAMPLES
 
 ### Example 1: Delete files that have any file name extension
 
-This command deletes all of the files that have names that include a dot (`.`) from the `C:\Test`
+This example deletes all of the files that have names that include a dot (`.`) from the `C:\Test`
 folder. Because the command specifies a dot, the command does not delete folders or files that have
 no file name extension.
 
@@ -48,14 +50,14 @@ Remove-Item C:\Test\*.*
 
 ### Example 2: Delete some of the document files in a folder
 
-This command deletes from the current folder all files that have a `.doc` file name extension and a
-name that does not include 1.
+This example deletes from the current folder all files that have a `.doc` file name extension and a
+name that does not include `*1*`.
 
 ```powershell
 Remove-Item * -Include *.doc -Exclude *1*
 ```
 
-It uses the wildcard character ('*') to specify the contents of the current folder. It uses the
+It uses the wildcard character (`*`) to specify the contents of the current folder. It uses the
 **Include** and **Exclude** parameters to specify the files to delete.
 
 ### Example 3: Delete hidden, read-only files
@@ -67,8 +69,8 @@ Remove-Item -Path C:\Test\hidden-RO-file.txt -Force
 ```
 
 It uses the **Path** parameter to specify the file. It uses the **Force**
-parameter to delete it. Without **Force**, you cannot delete *read-only* or
-*hidden* files.
+parameter to delete it. Without **Force**, you cannot delete _read-only_ or
+_hidden_ files.
 
 ### Example 4: Delete files in subfolders recursively
 
@@ -90,13 +92,12 @@ fails.
 
 ### Example 5: Delete subkeys recursively
 
-This command deletes the "OldApp" registry key and all its subkeys and values.
-It uses `Remove-Item` to remove the key.
-The path is specified, but the optional parameter name (**Path**) is omitted.
+This command deletes the "OldApp" registry key and all its subkeys and values. It uses `Remove-Item`
+to remove the key. The path is specified, but the optional parameter name (**Path**) is omitted.
 
-The **Recurse** parameter deletes all of the contents of the "OldApp" key recursively.
-If the key contains subkeys and you omit the **Recurse** parameter, you are prompted to confirm that
-you want to delete the contents of the key.
+The **Recurse** parameter deletes all of the contents of the "OldApp" key recursively. If the key
+contains subkeys and you omit the **Recurse** parameter, you are prompted to confirm that you want
+to delete the contents of the key.
 
 ```powershell
 Remove-Item HKLM:\Software\MyCompany\OldApp -Recurse
@@ -111,7 +112,7 @@ parentheses.
 Get-ChildItem
 ```
 
-```output
+```Output
     Directory: C:\temp\Downloads
 
 Mode                LastWriteTime         Length Name
@@ -127,7 +128,7 @@ Mode                LastWriteTime         Length Name
 Get-ChildItem | Where-Object Name -Like '*`[*'
 ```
 
-```output
+```Output
     Directory: C:\temp\Downloads
 
 Mode                LastWriteTime         Length Name
@@ -143,7 +144,7 @@ Get-ChildItem | Where-Object Name -Like '*`[*' | ForEach-Object { Remove-Item -L
 Get-ChildItem
 ```
 
-```output
+```Output
     Directory: C:\temp\Downloads
 
 Mode                LastWriteTime         Length Name
@@ -153,14 +154,14 @@ Mode                LastWriteTime         Length Name
 
 ### Example 7: Remove an alternate data stream
 
-This example shows how to use the **Stream** dynamic parameter of the `Remove-Item` cmdlet to delete an
-alternate data stream. The stream parameter is introduced in Windows PowerShell 3.0.
+This example shows how to use the **Stream** dynamic parameter of the `Remove-Item` cmdlet to delete
+an alternate data stream. The stream parameter is introduced in Windows PowerShell 3.0.
 
 ```powershell
 Get-Item C:\Test\Copy-Script.ps1 -Stream Zone.Identifier
 ```
 
-```output
+```Output
    FileName: \\C:\Test\Copy-Script.ps1
 
 Stream                   Length
@@ -174,7 +175,7 @@ Remove-Item C:\Test\Copy-Script.ps1 -Stream Zone.Identifier
 Get-Item C:\Test\Copy-Script.ps1 -Stream Zone.Identifier
 ```
 
-```output
+```Output
 Get-Item : Could not open alternate data stream 'Zone.Identifier' of file 'C:\Test\Copy-Script.ps1'.
 At line:1 char:1
 + Get-Item 'C:\Test\Copy-Script.ps1' -Stream Zone.Identifier
@@ -185,40 +186,11 @@ At line:1 char:1
 
 ```
 
-The first command uses the **Stream** dynamic parameter of the `Get-Item` cmdlet to get the
-**Zone.Identifier** stream of the "Copy-Script.ps1" file.
-
-The second command uses the **Stream** dynamic parameter of the `Remove-Item` cmdlet to remove the
-**Zone.Identifier** stream of the file.
-
-The third command uses the **Stream** dynamic parameter of the `Get-Item` cmdlet to verify that the
-**Zone.Identifier** stream is deleted.
+The **Stream** parameter `Get-Item` gets the **Zone.Identifier** stream of the `Copy-Script.ps1`
+file. `Remove-Item` uses the **Stream** parameter to remove the **Zone.Identifier** stream of the
+file. Finally, the `Get-Item` cmdlet shows that the **Zone.Identifier** stream was deleted.
 
 ## PARAMETERS
-
-### -Stream
-
-The **Stream** parameter is a dynamic parameter that the FileSystem provider adds to `Remove-Item`.
-This parameter works only in file system drives.
-
-You can use `Remove-Item` to delete an alternative data stream.
-However, it is not the recommended way to eliminate security checks that block files that are
-downloaded from the Internet.
-If you verify that a downloaded file is safe, use the `Unblock-File` cmdlet.
-
-This parameter was introduced in Windows PowerShell 3.0.
-
-```yaml
-Type: String[]
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: True
-```
 
 ### -Credential
 
@@ -283,9 +255,9 @@ Accept wildcard characters: True
 
 Forces the cmdlet to remove items that cannot otherwise be changed, such as hidden or read-only
 files or read-only aliases or variables. The cmdlet cannot remove constant aliases or variables.
-Implementation varies from provider to provider.
-For more information, see [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).
-Even using the **Force** parameter, the cmdlet cannot override security restrictions.
+Implementation varies from provider to provider. For more information, see
+[about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md). Even using the **Force**
+parameter, the cmdlet cannot override security restrictions.
 
 ```yaml
 Type: SwitchParameter
@@ -331,7 +303,7 @@ For more information, see [about_Quoting_Rules](../Microsoft.Powershell.Core/Abo
 ```yaml
 Type: String[]
 Parameter Sets: LiteralPath
-Aliases: PSPath
+Aliases: PSPath, LP
 
 Required: True
 Position: Named
@@ -363,9 +335,8 @@ Indicates that this cmdlet deletes the items in the specified locations and in a
 the locations.
 
 When it is used with the **Include** parameter, the **Recurse** parameter might not delete all
-subfolders or all child items. This is a known issue.
-As a workaround, try piping results of the `Get-ChildItem -Recurse` command to `Remove-Item`, as
-described in "Example 4" in this topic.
+subfolders or all child items. This is a known issue. As a workaround, try piping results of the
+`Get-ChildItem -Recurse` command to `Remove-Item`, as described in "Example 4" in this topic.
 
 ```yaml
 Type: SwitchParameter
@@ -379,31 +350,57 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Confirm
+### -Stream
 
-Prompts you for confirmation before running the cmdlet.
+The **Stream** parameter is a dynamic parameter that the FileSystem provider adds to `Remove-Item`.
+This parameter works only in file system drives.
+
+You can use `Remove-Item` to delete an alternative data stream. However, it is not the recommended
+way to eliminate security checks that block files that are downloaded from the Internet. If you
+verify that a downloaded file is safe, use the `Unblock-File` cmdlet.
+
+This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
-Type: SwitchParameter
+Type: String[]
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: Named
 Default value: None
+Accept pipeline input: False
+Accept wildcard characters: True
+```
+
+### -Confirm
+
+Prompts you for confirmation before running the cmdlet. For more information, see the following
+articles:
+
+- [about_Preference_Variables](../microsoft.powershell.core/about/about_preference_variables.md#confirmpreference)
+- [about_Functions_CmdletBindingAttribute](../microsoft.powershell.core/about/about_functions_cmdletbindingattribute.md?#confirmimpact)
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -WhatIf
 
-Shows what would happen if the cmdlet runs.
-The cmdlet is not run.
+Shows what would happen if the cmdlet runs. The cmdlet is not run.
 
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: cf
+Aliases: wi
 
 Required: False
 Position: Named
@@ -437,6 +434,10 @@ The `Remove-Item` cmdlet is designed to work with the data exposed by any provid
 providers available in your session, type `Get-PsProvider`. For more information, see
 [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).
 
+When you try to delete a folder that contains items without using the **Recurse** parameter, the
+cmdlet prompts for confirmation. Using `-Confirm:$false` does not suppress the prompt. This is by
+design.
+
 ## RELATED LINKS
 
 [Clear-Item](Clear-Item.md)
@@ -458,3 +459,7 @@ providers available in your session, type `Get-PsProvider`. For more information
 [Set-Item](Set-Item.md)
 
 [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md)
+
+[about_Preference_Variables](../microsoft.powershell.core/about/about_preference_variables.md#confirmpreference)
+
+[about_Functions_CmdletBindingAttribute](../microsoft.powershell.core/about/about_functions_cmdletbindingattribute.md?#confirmimpact)

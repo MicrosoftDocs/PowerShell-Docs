@@ -3,7 +3,7 @@ external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 keywords: powershell,cmdlet
 locale: en-us
 ms.date: 12/12/2019
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/test-connection?view=powershell-7&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/test-connection?view=powershell-7.x&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Test-Connection
 ---
@@ -368,7 +368,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: true
+Default value: True
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

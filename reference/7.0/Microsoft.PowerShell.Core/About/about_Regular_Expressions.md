@@ -1,7 +1,7 @@
 ---
 keywords: powershell,cmdlet
 locale: en-us
-ms.date: 12/01/2017
+ms.date: 03/10/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_regular_expressions?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Regular_Expressions
@@ -193,9 +193,9 @@ characters.
 ```
 
 > [!NOTE]
-> WHen defining a regex containing an `$` anchor, be sure to enclose the regex
+> When defining a regex containing an `$` anchor, be sure to enclose the regex
 > using single quotes (`'`) instead of double quotes (`"`) or PowerShell will
-> expand the the expression as a variable.
+> expand the expression as a variable.
 
 When using anchors in PowerShell, you should understand the difference between
 **Singleline** and **Multiline** regular expression options.
@@ -346,10 +346,9 @@ PS> $Matches.user
 jsmith
 ```
 
-The following example stores the newest log entry in the
-Windows Security Log. The provided regular expression extracts the username and
-domain from the message and stores them under the keys:**N** for name and
-**D** for domain 
+The following example stores the newest log entry in the Windows Security Log.
+The provided regular expression extracts the username and domain from the
+message and stores them under the keys:**N** for name and **D** for domain.
 
 ```powershell
 $log = (Get-WinEvent -LogName Security -MaxEvents 1).message
@@ -379,11 +378,21 @@ For more information, see
 #### Substitutions in Regular Expressions
 
 Using the regular expressions with the `-replace` operator allows you to
-dynamically replace text using captured text. Capturing groups can be
-referenced in the \<substitute\> string. The substitution is done by using the
-`$` character before the group identifier.
+dynamically replace text using captured text.
 
 `<input> -replace <original>, <substitute>`
+
+- `<input>`: The string to be searched
+- `<original>`: A regular expression used to search the input string
+- `<substitute>`: A regular expression substitution expression to replace
+  matches found in the input string.
+
+> [!NOTE]
+> The `<original>` and `<substitute>` operands are subject to rules of the
+> regular expression engine such as character escaping.
+
+Capturing groups can be referenced in the `<substitute>` string. The
+substitution is done by using the `$` character before the group identifier.
 
 Two ways to reference capturing groups are by **Number** and by **Name**.
 
@@ -419,29 +428,34 @@ Gobble Gobble
 
 > [!WARNING]
 > Since the `$` character is used in string expansion, you'll need to use
-> literal strings with substitution, or escape the `$` character.
+> literal strings with substitution, or escape the `$` character when using
+> double quotes.
 >
 > ```powershell
-> 'Hello World' -replace '(\w+) \w+', '`$1 Universe'
+> 'Hello World' -replace '(\w+) \w+', '$1 Universe'
+> "Hello World" -replace "(\w+) \w+", "`$1 Universe"
 > ```
 >
 > ```Output
 > Hello Universe
+> Hello Universe
 > ```
 >
-> Additionally, since the `$` character is used in substitution, you will need
-> to escape any instances in your string.
+> Additionally, if you want to have the `$` as a literal character, use `$$`
+> instead of the normal escape characters. When using double quotes, still
+> escape all instances of `$` to avoid incorrect substitution.
 >
 > ```powershell
 > '5.72' -replace '(.+)', '$$$1'
+> "5.72" -replace "(.+)", "`$`$`$1"
 > ```
 >
 > ```Output
 > $5.72
+> $5.72
 > ```
 
-For more information, see
-[Substitutions in Regular Expressions](/dotnet/standard/base-types/substitutions-in-regular-expressions).
+For more information, see [Substitutions in Regular Expressions](/dotnet/standard/base-types/substitutions-in-regular-expressions).
 
 ## See also
 

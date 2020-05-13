@@ -3,7 +3,7 @@ external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
 locale: en-us
 ms.date: 09/19/2019
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/test-json?view=powershell-7&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/test-json?view=powershell-7.x&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Test-Json
 ---
@@ -22,7 +22,7 @@ Test-Json [-Json] <string> [[-Schema] <string>] [<CommonParameters>]
 ## DESCRIPTION
 
 The `Test-Json` cmdlet tests whether a string is a valid JavaScript Object Notation (JSON) document
-and can optionally very that JSON document against a provided schema.
+and can optionally verify that JSON document against a provided schema.
 
 The verified string can then be used with the `ConvertFrom-Json` cmdlet convert a JSON-formatted
 string to a JSON object, which is easily managed in PowerShell or sent to another program or web

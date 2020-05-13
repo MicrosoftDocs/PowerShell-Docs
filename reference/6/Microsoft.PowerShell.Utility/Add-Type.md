@@ -64,7 +64,7 @@ class is available in all PowerShell sessions.
 
 You can specify the type by specifying an existing assembly or source code files, or you can specify
 the source code inline or saved in a variable. You can even specify only a method and `Add-Type`
-will define and generate the class. On Windows, you can use this feature to make Platform Invoke
+defines and generates the class. On Windows, you can use this feature to make Platform Invoke
 (P/Invoke) calls to unmanaged functions in PowerShell. If you specify source code, `Add-Type`
 compiles the specified source code and generates an in-memory assembly that contains the new .NET
 Core types.
@@ -222,8 +222,9 @@ $ShowWindowAsync::ShowWindowAsync((Get-Process -Id $Pid).MainWindowHandle, 4)
 ```
 
 The `$Signature` variable stores the C# signature of the `ShowWindowAsync` function. To ensure that
-the resulting method will be visible in a PowerShell session, the `public` keyword was added to the
-standard signature. For more information, see [ShowWindowAsync function](/windows/win32/api/winuser/nf-winuser-showwindowasync).
+the resulting method is visible in a PowerShell session, the `public` keyword was added to the
+standard signature. For more information, see
+[ShowWindowAsync function](/windows/win32/api/winuser/nf-winuser-showwindowasync).
 
 The `$ShowWindowAsync` variable stores the object created by the `Add-Type` **PassThru** parameter.
 The `Add-Type` cmdlet adds the `ShowWindowAsync` function to the PowerShell session as a static
@@ -257,7 +258,7 @@ Enter the full or simple name, also known as the partial name, of an assembly. W
 are permitted in the assembly name. If you enter a simple or partial name, `Add-Type` resolves it to
 the full name, and then uses the full name to load the assembly.
 
-This parameter doesn't accept a path or a file name. To enter the path to the assembly dynamic-link
+This parameter doesn't accept a path or a filename. To enter the path to the assembly dynamic-link
 library (DLL) file, use the **Path** parameter.
 
 ```yaml
@@ -301,7 +302,7 @@ as errors.
 
 ```yaml
 Type: SwitchParameter
-Parameter Sets: (All)
+Parameter Sets: FromSource, FromMember, FromPath, FromLiteralPath
 Aliases:
 
 Required: False
@@ -339,7 +340,7 @@ marks. Single quotation marks tell PowerShell not to interpret any characters as
 ```yaml
 Type: String[]
 Parameter Sets: FromLiteralPath
-Aliases: PSPath
+Aliases: PSPath, LP
 
 Required: True
 Position: Named
@@ -413,7 +414,7 @@ Accept wildcard characters: False
 ### -OutputAssembly
 
 Generates a DLL file for the assembly with the specified name in the location. Enter an optional
-path and file name. Wildcard characters are permitted. By default, `Add-Type` generates the assembly
+path and filename. Wildcard characters are permitted. By default, `Add-Type` generates the assembly
 only in memory.
 
 ```yaml
@@ -475,8 +476,8 @@ Accept wildcard characters: False
 Specifies the path to source code files or assembly DLL files that contain the types.
 
 If you submit source code files, `Add-Type` compiles the code in the files and creates an in-memory
-assembly of the types. The file name extension specified in the value of **Path** determines the
-compiler that `Add-Type` uses.
+assembly of the types. The file extension specified in the value of **Path** determines the compiler
+that `Add-Type` uses.
 
 If you submit an assembly file, `Add-Type` takes the types from the assembly. To specify an
 in-memory assembly or the global assembly cache, use the **AssemblyName** parameter.

@@ -1,8 +1,8 @@
 ---
 keywords: powershell,cmdlet
 locale: en-us
-ms.date: 06/09/2017
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_history?view=powershell-7&WT.mc_id=ps-gethelp
+ms.date: 04/14/2020
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_history?view=powershell-7.x&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_History
 ---
@@ -13,10 +13,9 @@ Describes how to get and run commands in the command history.
 
 ## Long Description
 
-When you enter a command at the command prompt, PowerShell saves the
-command in the command history. You can use the commands in the history as a
-record of your work. And, you can recall and run the commands from the command
-history.
+When you enter a command at the command prompt, PowerShell saves the command in
+the command history. You can use the commands in the history as a record of
+your work. And, you can recall and run the commands from the command history.
 
 ### History Cmdlets
 
@@ -31,29 +30,36 @@ PowerShell has a set of cmdlets that manage the command history.
 
 ### Keyboard Shortcuts for Managing History
 
-In the PowerShell console, you can use the following shortcuts to
-manage the command history.
+In the PowerShell console, you can use the following shortcuts to manage the
+command history.
 
-For other host applications, see the product documentation.
+- <kbd>UpArrow</kbd> - Displays the previous command.
+- <kbd>DownArrow</kbd> - Displays the next command.
+- <kbd>F7</kbd> - Displays the command history.
+- <kbd>ESC</kbd> - To hide the history.
+- <kbd>F8</kbd> - Finds a command. Type one or more characters then press
+  <kbd>F8</kbd>. Press <kbd>F8</kbd> again the next instance.
+- <kbd>F9</kbd> - Find a command by history ID. Type the history ID then press
+  <kbd>F9</kbd>. Press <kbd>F7</kbd> to find the ID.
+- <kbd>#</kbd>`<string>`</kbd><kbd>Tab</kbd> - Search the history for
+  `*<string>*` and returns the most recent match. If you press <kbd>Tab</kbd>
+  repeatedly, it cycles through the matching items in your history.
 
-| Use this key | To perform this action                                  |
-| ------------ | ------------------------------------------------------- |
-| UP ARROW     | Displays the previous command.                          |
-| DOWN ARROW   | Displays the next command.                              |
-| F7           | Displays the command history.                           |
-| ESC          | To hide the history.                                    |
-| F8           | Finds a command. Type one or more characters, and then  |
-|              | press F8. For the next instance, press F8 again.        |
-| F9           | Find a command by history ID. Type the history ID, and  |
-|              | then press F9. To find the ID, press F7.                |
+> [!NOTE]
+> These key bindings are implemented by the console host application. Other
+> applications, such as Visual Studio Code or Windows Terminal, can have
+> different key bindings. The bindings can be overridden by the PSReadLine
+> module. PSReadLine loads automatically when you start a new PowerShell
+> session. With PSReadLine loaded, <kbd>F7</kbd> and <kbd>F9</kbd> are not
+> bound to any function. PSReadLine does not provide equivalent functionality.
+> For more information, see
+> [about_PSReadLine](../../PSReadLine/About/about_PSReadLine.md).
 
 ### MaximumHistoryCount
 
-The `$MaximumHistoryCount` preference variable determines the maximum number
-of commands that PowerShell saves in the command history.
-
-The default value is 4096, meaning that PowerShell saves the 4096 most
-recent commands, but you can change the value of the variable.
+The `$MaximumHistoryCount` preference variable determines the maximum number of
+commands that PowerShell saves in the command history. The default value is
+4096.
 
 For example, the following command lowers the `$MaximumHistoryCount` to 100
 commands:
@@ -64,23 +70,20 @@ $MaximumHistoryCount = 100
 
 To apply the setting, restart PowerShell.
 
-To save the new variable value for all your PowerShell sessions, add
-the assignment statement to a PowerShell profile. For more information
-about profiles, see [about_Profiles](about_Profiles.md).
+To save the new variable value for all your PowerShell sessions, add the
+assignment statement to a PowerShell profile. For more information about
+profiles, see [about_Profiles](about_Profiles.md).
 
-For more information about the $MaximumHistoryCount preference variable, see
+For more information about the `$MaximumHistoryCount` preference variable, see
 [about_Preference_Variables](about_Preference_Variables.md).
-
-NOTE: In Windows PowerShell 2.0, the default value of the
-`$MaximumHistoryCount` preference variable is 64.
 
 ### Order of Commands in the History
 
-Commands are added to the history when the command finishes executing, not
-when the command is entered. If commands take some time to be completed, or if
-the commands are executing in a nested prompt, the commands might appear to be
-out of order in the history. (Commands that are executing in a nested prompt
-are completed only when you exit the prompt level.)
+Commands are added to the history when the command finishes executing, not when
+the command is entered. If commands take some time to be completed, or if the
+commands are executing in a nested prompt, the commands might appear to be out
+of order in the history. (Commands that are executing in a nested prompt are
+completed only when you exit the prompt level.)
 
 ## See Also
 

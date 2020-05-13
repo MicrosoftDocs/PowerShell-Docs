@@ -18,18 +18,20 @@ Gets all commands.
 ### CmdletSet (Default)
 
 ```
-Get-Command [-Verb <String[]>] [-Noun <String[]>] [-Module <String[]>] [-FullyQualifiedModule <ModuleSpecification[]>]
- [-TotalCount <Int32>] [-Syntax] [-ShowCommandInfo] [[-ArgumentList] <Object[]>] [-All] [-ListImported]
- [-ParameterName <String[]>] [-ParameterType <PSTypeName[]>]
+Get-Command [-Verb <String[]>] [-Noun <String[]>] [-Module <String[]>]
+ [-FullyQualifiedModule <ModuleSpecification[]>] [-TotalCount <Int32>] [-Syntax] [-ShowCommandInfo]
+ [[-ArgumentList] <Object[]>] [-All] [-ListImported] [-ParameterName <String[]>]
+ [-ParameterType <PSTypeName[]>] [<CommonParameters>]
 ```
 
 ### AllCommandSet
 
 ```
-Get-Command [[-Name] <String[]>] [-Module <String[]>] [-FullyQualifiedModule <ModuleSpecification[]>]
- [-CommandType <CommandTypes>] [-TotalCount <Int32>] [-Syntax] [-ShowCommandInfo] [[-ArgumentList] <Object[]>]
- [-All] [-ListImported] [-ParameterName <String[]>] [-ParameterType <PSTypeName[]>] [-UseFuzzyMatching]
- [<CommonParameters>]
+Get-Command [[-Name] <String[]>] [-Module <String[]>]
+ [-FullyQualifiedModule <ModuleSpecification[]>] [-CommandType <CommandTypes>] [-TotalCount <Int32>]
+ [-Syntax] [-ShowCommandInfo] [[-ArgumentList] <Object[]>] [-All] [-ListImported]
+ [-ParameterName <String[]>] [-ParameterType <PSTypeName[]>] [-UseFuzzyMatching]
+ [-UseAbbreviationExpansion] [<CommonParameters>]
 ```
 
 ## DESCRIPTION

@@ -504,7 +504,7 @@ Displays only the detailed descriptions of the specified parameters. Wildcards a
 parameter has no effect on displays of conceptual (**About_**) help.
 
 ```yaml
-Type: String
+Type: String[]
 Parameter Sets: Parameters
 Aliases:
 

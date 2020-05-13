@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Host
 ms.date: 06/09/2017
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.host/start-transcript?view=powershell-7&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.host/start-transcript?view=powershell-7.x&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Start-Transcript
 ---
@@ -65,7 +65,7 @@ This command starts a transcript in the default file location.
 Start-Transcript -Path "C:\transcripts\transcript0.txt" -NoClobber
 ```
 
-This command starts a transcript in the Transcript0.txt file in C:\transcripts. Since the
+This command starts a transcript in the `Transcript0.txt` file in `C:\transcripts`. Since the
 **NoClobber** parameter is used, the command prevents any existing files from being overwritten. If
 the `Transcript0.txt` file already exists, the command fails.
 
@@ -149,7 +149,7 @@ quotation marks inform PowerShell not to interpret any characters as escape sequ
 ```yaml
 Type: String
 Parameter Sets: ByLiteralPath
-Aliases: PSPath
+Aliases: PSPath, LP
 
 Required: False
 Position: 0
@@ -194,10 +194,10 @@ Accept wildcard characters: False
 
 ### -Path
 
-Specifies a location to the transcript file. Enter a path to a .txt file. Wildcards are not
+Specifies a location to the transcript file. Enter a path to a `.txt` file. Wildcards are not
 permitted.
 
-If you do not specify a path, `Start-Transcript` uses the path in the value of the $Transcript
+If you do not specify a path, `Start-Transcript` uses the path in the value of the `$Transcript`
 global variable. If you have not created this variable, `Start-Transcript` stores the transcripts in
 the `$Home\My Documents directory as \PowerShell_transcript.<time-stamp>.txt` files.
 
@@ -276,4 +276,3 @@ information, see [about_Profiles](../Microsoft.PowerShell.Core/About/about_Profi
 ## RELATED LINKS
 
 [Stop-Transcript](Stop-Transcript.md)
-

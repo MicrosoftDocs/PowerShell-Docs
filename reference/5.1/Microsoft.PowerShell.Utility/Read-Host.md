@@ -99,10 +99,8 @@ Otherwise, it returns a string.
 
 ## RELATED LINKS
 
-[Clear-Host](../Microsoft.PowerShell.Core/Functions/Clear-Host.md)
+[Clear-Host](../Microsoft.PowerShell.Core/Clear-Host.md)
 
 [Get-Host](Get-Host.md)
 
 [Write-Host](Write-Host.md)
-
-

@@ -8,7 +8,7 @@ title:  How to use the PowerShell documentation
 Welcome to the PowerShell online documentation. This site contains cmdlet reference for the
 following versions of PowerShell:
 
-- PowerShell 7 (preview)
+- PowerShell 7
 - PowerShell 6
 - PowerShell 5.1
 
@@ -25,7 +25,7 @@ documentation for the version of PowerShell you are using.
 
 Use the version picker at the top of the page to select the version of PowerShell you want.
 
-![version picker](images/how-to-use-docs/version-search.gif)
+![version picker](media/how-to-use-docs/version-search.gif)
 
 You can verify the version of PowerShell you are using by inspecting the `$PSversionTable.PSVersion`
 value. The following example shows the output for Windows PowerShell v5.1.

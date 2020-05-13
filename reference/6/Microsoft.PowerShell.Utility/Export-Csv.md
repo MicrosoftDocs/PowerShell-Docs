@@ -19,15 +19,15 @@ file.
 ### Delimiter (Default)
 
 ```
-Export-Csv [[-Path] <string>] [[-Delimiter] <char>] -InputObject <psobject> [-LiteralPath <string>]
- [-Force] [-NoClobber] [-Encoding <Encoding>] [-Append] [-IncludeTypeInformation]
+Export-Csv -InputObject <PSObject> [[-Path] <String>] [-LiteralPath <String>] [-Force] [-NoClobber]
+ [-Encoding <Encoding>] [-Append] [[-Delimiter] <Char>] [-IncludeTypeInformation]
  [-NoTypeInformation] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### UseCulture
 
 ```
-Export-Csv [[-Path] <string>] -InputObject <psobject> [-LiteralPath <string>] [-Force] [-NoClobber]
+Export-Csv -InputObject <PSObject> [[-Path] <String>] [-LiteralPath <String>] [-Force] [-NoClobber]
  [-Encoding <Encoding>] [-Append] [-UseCulture] [-IncludeTypeInformation] [-NoTypeInformation]
  [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
@@ -487,7 +487,7 @@ PowerShell not to interpret any characters as escape sequences.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: PSPath
+Aliases: PSPath, LP
 
 Required: False
 Position: Named

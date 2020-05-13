@@ -187,7 +187,7 @@ marks instruct PowerShell not to interpret characters as escape sequences.
 ```yaml
 Type: String[]
 Parameter Sets: LiteralPath
-Aliases: PSPath
+Aliases: PSPath, LP
 
 Required: True
 Position: 0

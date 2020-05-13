@@ -1,6 +1,6 @@
 ---
 keywords: powershell,cmdlet
-ms.date: 06/19/2019
+ms.date: 03/27/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_pwsh?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Pwsh
@@ -10,8 +10,6 @@ title: about_Pwsh
 ## Short Description
 Explains how to use the **pwsh** command-line tool. Displays the syntax and
 describes the command-line switches.
-
-pwsh starts a PowerShell session.
 
 ## Long Description
 
@@ -47,7 +45,7 @@ All parameters are case-insensitive.
 
 ### -File | -f
 
-If the value of **File** is "-", the command text is read from standard input.
+If the value of **File** is `-`, the command text is read from standard input.
 Running `pwsh -File -` without redirected standard input starts a regular
 session. This is the same as not specifying the **File** parameter at all.
 
@@ -65,8 +63,9 @@ Get-Script.ps1 script file: `-File .\Get-Script.ps1 -All`
 
 In rare cases, you might need to provide a Boolean value for a switch
 parameter. To provide a Boolean value for a switch parameter in the value of
-the File parameter, enclose the parameter name and value in curly braces, such
-as the following: `-File .\Get-Script.ps1 {-All:$False}.`
+the File parameter, Use the parameter normally followed immediately by a colon
+and the boolean value, such as the following:
+`-File .\Get-Script.ps1 -All:$False`.
 
 Parameters passed to the script are passed as literal strings, after
 interpretation by the current shell. For example, if you are in **cmd.exe** and
@@ -77,7 +76,13 @@ In contrast, running `pwsh -File .\test.ps1 -TestParam $env:windir`
 in **cmd.exe** results in the script receiving the literal string `$env:windir`
 because it has no special meaning to the current **cmd.exe** shell. The
 `$env:windir` style of environment variable reference _can_ be used inside a
-**Command** parameter, since there it will be interpreted as PowerShell code.
+**Command** parameter, since there it is interpreted as PowerShell code.
+
+Similarly, if you want to execute the same command from a **Batch script**, you 
+would use `%~dp0` instead of `.\` or `$PSScriptRoot` to represent the current 
+execution directory: `pwsh -File %~dp0test.ps1 -TestParam %windir%`. 
+If you instead used `.\test.ps1`, PowerShell would throw an error because it 
+cannot find the literal path `.\test.ps1`
 
 ### -Command | -c
 
@@ -85,8 +90,8 @@ Executes the specified commands (and any parameters) as though they were typed
 at the PowerShell command prompt, and then exits, unless the **NoExit**
 parameter is specified.
 
-The value of **Command** can be "-", a script block, or a string. If the value
-of **Command** is "-", the command text is read from standard input.
+The value of **Command** can be `-`, a script block, or a string. If the value
+of **Command** is `-`, the command text is read from standard input.
 
 The **Command** parameter only accepts a script block for execution when it can
 recognize the value passed to **Command** as a **ScriptBlock** type. This is
@@ -248,14 +253,13 @@ Maximized and Hidden.
 
 ### -WorkingDirectory | -wd
 
-Sets the initial working directory by executing `Set-Location -LiteralPath <path>`
-at startup. Any valid PowerShell file path is supported.
+Sets the initial working directory by executing at startup. Any valid
+PowerShell file path is supported.
 
 To start PowerShell in your home directory, use: `pwsh -WorkingDirectory ~`
 
 ### -Help, -?, /?
 
-Displays help for pwsh. If you are typing a pwsh command in PowerShell,
-prepend the command parameters with a hyphen (-), not a forward slash (/). You
-can use either a hyphen or forward slash in Cmd.exe.
-
+Displays help for **pwsh**. If you are typing a pwsh command in PowerShell,
+prepend the command parameters with a hyphen (`-`), not a forward slash (`/`).
+You can use either a hyphen or forward slash in Cmd.exe.

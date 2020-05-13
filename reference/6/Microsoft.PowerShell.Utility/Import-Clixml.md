@@ -135,7 +135,7 @@ interpret any characters as escape sequences.
 ```yaml
 Type: String[]
 Parameter Sets: ByLiteralPath
-Aliases: PSPath
+Aliases: PSPath, LP
 
 Required: True
 Position: Named

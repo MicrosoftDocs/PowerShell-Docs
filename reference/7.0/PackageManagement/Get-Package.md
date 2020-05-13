@@ -21,7 +21,8 @@ Returns a list of all software packages that were installed with **PackageManage
 ```
 Get-Package [[-Name] <String[]>] [-RequiredVersion <String>] [-MinimumVersion <String>]
  [-MaximumVersion <String>] [-AllVersions] [-Force] [-ForceBootstrap] [-ProviderName <String[]>]
- [-Destination <String>] [-ExcludeVersion] [-Scope <String>] [-SkipDependencies] [<CommonParameters>]
+ [-Destination <String>] [-ExcludeVersion] [-Scope <String>] [-SkipDependencies]
+ [<CommonParameters>]
 ```
 
 ### PowerShellGet

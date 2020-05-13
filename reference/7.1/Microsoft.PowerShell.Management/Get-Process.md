@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Management
 ms.date: 06/09/2017
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/get-process?view=powershell-7&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/get-process?view=powershell-7.x&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Process
 ---
@@ -24,19 +24,19 @@ Get-Process [[-Name] <String[]>] [-Module] [-FileVersionInfo] [<CommonParameters
 ### NameWithUserName
 
 ```
-Get-Process [[-Name] <String[]>] [-IncludeUserName] [<CommonParameters>]
-```
-
-### IdWithUserName
-
-```
-Get-Process -Id <Int32[]> [-IncludeUserName] [<CommonParameters>]
+Get-Process [[-Name] <String[]>] -IncludeUserName [<CommonParameters>]
 ```
 
 ### Id
 
 ```
 Get-Process -Id <Int32[]> [-Module] [-FileVersionInfo] [<CommonParameters>]
+```
+
+### IdWithUserName
+
+```
+Get-Process -Id <Int32[]> -IncludeUserName [<CommonParameters>]
 ```
 
 ### InputObject
@@ -48,7 +48,7 @@ Get-Process -InputObject <Process[]> [-Module] [-FileVersionInfo] [<CommonParame
 ### InputObjectWithUserName
 
 ```
-Get-Process -InputObject <Process[]> [-IncludeUserName] [<CommonParameters>]
+Get-Process -InputObject <Process[]> -IncludeUserName [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -276,7 +276,7 @@ To find the PID of a process, type `Get-Process`.
 
 ```yaml
 Type: Int32[]
-Parameter Sets: IdWithUserName, Id
+Parameter Sets: Id, IdWithUserName
 Aliases: PID
 
 Required: True
@@ -309,7 +309,7 @@ Enter a variable that contains the objects, or type a command or expression that
 
 ```yaml
 Type: Process[]
-Parameter Sets: InputObject, InputObjectWithUserName
+Parameter Sets: InputObjectWithUserName, InputObject
 Aliases:
 
 Required: True

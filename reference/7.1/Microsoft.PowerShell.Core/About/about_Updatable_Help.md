@@ -2,7 +2,7 @@
 keywords: powershell,cmdlet
 locale: en-us
 ms.date: 01/03/2018
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_updatable_help?view=powershell-7&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_updatable_help?view=powershell-7.x&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Updatable_Help
 ---
@@ -388,7 +388,7 @@ the script.
 
 The Online parameter does not work with About topics. To see the about topics
 for PowerShell Core, including help topics about the PowerShell language, see
-[PowerShell Core Module About Topics](/powershell/module/microsoft.powershell.core/about).
+[PowerShell Core Module About Topics](about.md).
 
 ## HOW TO MINIMIZE OR PREVENT INTERNET DOWNLOADS
 

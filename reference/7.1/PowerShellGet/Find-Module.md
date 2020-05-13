@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: PowerShellGet
 ms.date: 03/11/2019
-online version: https://docs.microsoft.com/powershell/module/powershellget/find-module?view=powershell-7&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/powershellget/find-module?view=powershell-7.x&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Find-Module
 ---
@@ -350,7 +350,7 @@ parameter are as follows:
 Type: String[]
 Parameter Sets: (All)
 Aliases:
-Accepted values: Cmdlet, DscResource, Function, RoleCapability
+Accepted values: DscResource, Cmdlet, Function, RoleCapability
 
 Required: False
 Position: Named
@@ -518,6 +518,14 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
+
+### System.String[]
+
+### System.String
+
+### System.Uri
+
+### System.Management.Automation.PSCredential
 
 ## OUTPUTS
 

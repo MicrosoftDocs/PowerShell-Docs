@@ -1,7 +1,8 @@
 ---
-external help file: Microsoft.Management.Infrastructure.CimCmdlets.dll-Help.xml
+external help file: Microsoft.Management.Infrastructure.CimCmdlets.dll-help.xml
 keywords: powershell,cmdlet
 locale: en-us
+Module Name: CimCmdlets
 ms.date: 02/20/2019
 online version: https://docs.microsoft.com/powershell/module/cimcmdlets/export-binarymilog?WT.mc_id=ps-gethelp
 schema: 2.0.0
@@ -15,8 +16,8 @@ Creates a binary encoded representation of an object or objects and stores it in
 
 ## SYNTAX
 
-```powershell
-Export-BinaryMiLog [-InputObject <CimInstance>] [-Path] <String>
+```
+Export-BinaryMiLog [-InputObject <CimInstance>] [-Path] <String> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -36,8 +37,9 @@ object in a binary encoded file.
 Get-CimInstance Win32_Process | Export-BinaryMiLog -Path "Processes.bmil"
 ```
 
-This command exports CimInstances to a binary MI log file specified by the Path parameter.
-See the example for Import-BinaryMiLog to see how to recreate the CimInstances by importing this file.
+This command exports **CimInstances** to a binary MI log file specified by the Path parameter. See
+the example for Import-BinaryMiLog to see how to recreate the **CimInstances** by importing this
+file.
 
 ## PARAMETERS
 
@@ -75,6 +77,13 @@ Default value: None
 Accept pipeline input: False
 Accept wildcard characters: True
 ```
+
+### CommonParameters
+
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+-InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 

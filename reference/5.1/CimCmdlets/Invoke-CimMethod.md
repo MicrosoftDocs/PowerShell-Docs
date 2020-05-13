@@ -96,25 +96,25 @@ Invoke-CimMethod -Query <String> [-QueryDialect <String>] -CimSession <CimSessio
 
 ## DESCRIPTION
 
-The Invoke-CimMethod cmdlet invokes a method of a CIM class or CIM instance using the name-value
-pairs specified by the Arguments parameter.
+The `Invoke-CimMethod` cmdlet invokes a method of a CIM class or CIM instance using the name-value
+pairs specified by the **Arguments** parameter.
 
-If the InputObject parameter is not specified, the cmdlet works in one of the following ways:
+If the **InputObject** parameter is not specified, the cmdlet works in one of the following ways:
 
-- If neither the ComputerName parameter nor the CimSession parameter is specified, then this cmdlet
-  works on local Windows Management Instrumentation (WMI) using a Component Object Model (COM)
-  session.
-- If either the ComputerName parameter or the CimSession parameter is specified, then this cmdlet
-  works against the CIM server specified by either the ComputerName parameter or the CimSession
-  parameter.
+- If neither the **ComputerName** parameter nor the **CimSession** parameter is specified, then this
+  cmdlet works on local Windows Management Instrumentation (WMI) using a Component Object Model
+  (COM) session.
+- If either the **ComputerName** parameter or the **CimSession** parameter is specified, then this
+  cmdlet works against the CIM server specified by either the **ComputerName** parameter or the
+  **CimSession** parameter.
 
-If the InputObject parameter is specified, the cmdlet works in one of the following ways:
+If the **InputObject** parameter is specified, the cmdlet works in one of the following ways:
 
-- If neither the ComputerName parameter nor the CimSession parameter is specified, then this cmdlet
-  uses the CIM session or computer name from the input object.
-- If the either the ComputerName parameter or the CimSession parameter is specified, then this
-  cmdlet uses the either the CimSession parameter value or ComputerName parameter value. Note: This
-  is not very common.
+- If neither the **ComputerName** parameter nor the **CimSession** parameter is specified, then this
+  cmdlet uses the CIM session or computer name from the input object.
+- If the either the **ComputerName** parameter or the **CimSession** parameter is specified, then
+  this cmdlet uses the either the **CimSession** parameter value or **ComputerName** parameter
+  value. This is not a common scenario.
 
 ## EXAMPLES
 
@@ -187,7 +187,7 @@ Using this parameter results in better client side schema validations.
 
 ```yaml
 Type: CimClass
-Parameter Sets: CimClassSessionSet, CimClassComputerSet
+Parameter Sets: CimClassComputerSet, CimClassSessionSet
 Aliases:
 
 Required: True
@@ -199,13 +199,14 @@ Accept wildcard characters: False
 
 ### -CimSession
 
-Runs the command using the specified CIM session. Enter a variable that contains the CIM session,
-or a command that creates or gets the CIM session, such as the `New-CimSession` or `Get-CimSession`
-cmdlets. For more information, see [about_CimSessions](../Microsoft.PowerShell.Core/About/about_CimSession.md).
+Runs the command using the specified CIM session. Enter a variable that contains the CIM session, or
+a command that creates or gets the CIM session, such as the `New-CimSession` or `Get-CimSession`
+cmdlets. For more information, see
+[about_CimSession](../Microsoft.PowerShell.Core/About/about_CimSession.md).
 
 ```yaml
 Type: CimSession[]
-Parameter Sets: ClassNameSessionSet, CimInstanceSessionSet, CimClassSessionSet, QuerySessionSet
+Parameter Sets: ClassNameSessionSet, CimInstanceSessionSet, CimClassSessionSet, QuerySessionSet, ResourceUriSessionSet
 Aliases:
 
 Required: True
@@ -235,8 +236,8 @@ Accept wildcard characters: False
 
 ### -ComputerName
 
-Specifies the name of the computer on which you want to run the CIM operation.
-You can specify a fully qualified domain name (FQDN), a NetBIOS name, or an IP address.
+Specifies the name of the computer on which you want to run the CIM operation. You can specify a
+fully qualified domain name (FQDN), a NetBIOS name, or an IP address.
 
 When using this parameter, the cmdlet creates a temporary session to the specified computer using
 the WsMan protocol. Otherwise, the cmdlet performs the operation on the local computer using
@@ -247,7 +248,7 @@ the same computer.
 
 ```yaml
 Type: String[]
-Parameter Sets: ClassNameComputerSet, ResourceUriComputerSet, CimClassComputerSet, QueryComputerSet
+Parameter Sets: ClassNameComputerSet, ResourceUriComputerSet, CimClassComputerSet, CimInstanceComputerSet, QueryComputerSet
 Aliases: CN, ServerName
 
 Required: False
@@ -259,14 +260,13 @@ Accept wildcard characters: False
 
 ### -InputObject
 
-Specifies a CIM instance object to use as input to invoke a method.
-
-This parameter can only be used to invoke instance methods. To invoke class static methods, use the
-**Class** parameter or the **CimClass** parameter.
+Specifies a CIM instance object to use as input to invoke a method. This parameter can only be used
+to invoke instance methods. To invoke class static methods, use the **Class** parameter or the
+**CimClass** parameter.
 
 ```yaml
 Type: CimInstance
-Parameter Sets: CimInstanceComputerSet, CimInstanceSessionSet
+Parameter Sets: CimInstanceSessionSet, CimInstanceComputerSet
 Aliases: CimInstance
 
 Required: True
@@ -295,15 +295,13 @@ Accept wildcard characters: False
 
 ### -Namespace
 
-Specifies the namespace for the CIM operation.
-
-The default namespace is root/cimv2. You can use tab completion to browse the list of namespaces,
-because PowerShell gets a list of namespaces from the local WMI server to provide the list
-of namespaces.
+Specifies the namespace for the CIM operation. The default namespace is **root/cimv2**. You can use
+tab completion to browse the list of namespaces, because PowerShell gets a list of namespaces from
+the local WMI server to provide the list of namespaces.
 
 ```yaml
 Type: String
-Parameter Sets: ClassNameComputerSet, ClassNameSessionSet, ResourceUriSessionSet, ResourceUriComputerSet, QuerySessionSet, QueryComputerSet
+Parameter Sets: ClassNameComputerSet, ClassNameSessionSet, ResourceUriComputerSet, ResourceUriSessionSet, QueryComputerSet, QuerySessionSet
 Aliases:
 
 Required: False
@@ -346,7 +344,7 @@ them in square brackets (`[]`): percent (`%`), underscore (`_`), or opening squa
 
 ```yaml
 Type: String
-Parameter Sets: QuerySessionSet, QueryComputerSet
+Parameter Sets: QueryComputerSet, QuerySessionSet
 Aliases:
 
 Required: True
@@ -365,7 +363,7 @@ The default value is **WQL**.
 
 ```yaml
 Type: String
-Parameter Sets: QuerySessionSet, QueryComputerSet
+Parameter Sets: QueryComputerSet, QuerySessionSet
 Aliases:
 
 Required: False
@@ -404,7 +402,7 @@ Type: Uri
 Parameter Sets: ResourceUriSessionSet, ResourceUriComputerSet
 Aliases:
 
-Required: True
+Required: True (ResourceUriSessionSet, ResourceUriComputerSet), False (CimInstanceSessionSet, CimInstanceComputerSet)
 Position: Named
 Default value: None
 Accept pipeline input: True (ByPropertyName)

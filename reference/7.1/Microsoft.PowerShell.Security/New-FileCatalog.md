@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Security
 ms.date: 11/02/2018
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.security/new-filecatalog?view=powershell-7&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.security/new-filecatalog?view=powershell-7.x&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: New-FileCatalog
 ---
@@ -173,6 +173,4 @@ The pipeline takes a string that is used as the catalog filename.
 
 [Test-FileCatalog](Test-FileCatalog.md)
 
-[PowerShellGet](/powershell/module/PowerShellGet)
-
-
+[PowerShellGet](/powerShell/module/powershellget)

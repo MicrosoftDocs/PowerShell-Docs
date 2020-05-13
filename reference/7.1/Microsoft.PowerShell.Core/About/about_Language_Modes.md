@@ -2,7 +2,7 @@
 keywords: powershell,cmdlet
 locale: en-us
 ms.date: 09/09/2019
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_language_modes?view=powershell-7&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_language_modes?view=powershell-7.x&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Language_Modes
 ---
@@ -206,7 +206,7 @@ the session configuration has a LanguageMode property. You can find the
 language mode by getting the value of the LanguageMode property.
 
 ```powershell
-PS> (Get-PSSessionConfiguration -Name Test).LanguageMode
+(Get-PSSessionConfiguration -Name Test).LanguageMode
 FullLanguage
 ```
 
@@ -223,7 +223,7 @@ state.
 For example:
 
 ```powershell
-PS> $ExecutionContext.SessionState.LanguageMode
+$ExecutionContext.SessionState.LanguageMode
 ConstrainedLanguage
 ```
 

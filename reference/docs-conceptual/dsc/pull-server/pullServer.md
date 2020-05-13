@@ -32,10 +32,11 @@ The recommended scale for each solution is as follows:
 |                   Solution                   |              Client nodes              |
 | -------------------------------------------- | -------------------------------------- |
 | Windows Pull Server using MDB/ESENT database | Up to 500 nodes                        |
-| Windows Pull Server using SQL database       | Up to 1000 nodes                       |
-| Azure Automation DSC                         | Scenarios with greater than 1000 nodes |
+| Windows Pull Server using SQL database       | Up to 3500 nodes                       |
+| Azure Automation DSC                         | Both small and large environments      |
 
-**The recommended solution**, and the option with the most features available, is [Azure Automation DSC](/azure/automation/automation-dsc-getting-started).
+**The recommended solution**, and the option with the most features available, is [Azure Automation DSC](/azure/automation/automation-dsc-getting-started). An upper limit for number of nodes per Automation Account
+has not been identified.
 
 The Azure service can manage nodes on-premises in private datacenters, or in public clouds such as
 Azure and AWS. For private environments where servers cannot directly connect to the Internet,
@@ -86,19 +87,20 @@ example script is provided below.
 | ------- | -------------------- | -------------------- | ---------------------------------------------- |
 | MDB     | ESENT (Default), MDB | ESENT (Default), MDB | ESENT (Default), SQL Server, MDB               |
 
-Starting in release 17090 of
-[Windows Server Insider Preview](https://www.microsoft.com/software-download/windowsinsiderpreviewserver),
-SQL Server is a supported option for the Pull Service (Windows Feature *DSC-Service*). This provides
-a new option for scaling large DSC environments that have not migrated to [Azure Automation DSC](/azure/automation/automation-dsc-getting-started).
+Starting in release 17090 of Windows Server, SQL Server is a supported option for the Pull Service
+(Windows Feature *DSC-Service*). This provides a new option for scaling large DSC environments that
+have not migrated to [Azure Automation DSC](/azure/automation/automation-dsc-getting-started).
 
 > [!NOTE]
 > SQL Server support will not be added to previous versions of WMF 5.1 (or earlier) and will only be
 > available on Windows Server versions greater than or equal to 17090.
 
 To configure the pull server to use SQL Server, set **SqlProvider** to `$true` and
-**SqlConnectionString** to a valid SQL Server Connection String. For more information, see [SqlClient Connection Strings](/dotnet/framework/data/adonet/connection-string-syntax#sqlclient-connection-strings).
-For an example of SQL Server configuration with **xDscWebService**, first read [Using the xDscWebService resource](#using-the-xdscwebservice-resource)
-and then review [Sample_xDscWebServiceRegistration_UseSQLProvider.ps1 on GitHub](https://github.com/dsccommunity/xPSDesiredStateConfiguration/blob/master/source/Examples/Sample_xDscWebServiceRegistration_UseSQLProvider.ps1).
+**SqlConnectionString** to a valid SQL Server Connection String. For more information, see
+[SqlClient Connection Strings](/dotnet/framework/data/adonet/connection-string-syntax#sqlclient-connection-strings).
+For an example of SQL Server configuration with **xDscWebService**, first read
+[Using the xDscWebService resource](#using-the-xdscwebservice-resource) and then review
+[Sample_xDscWebServiceRegistration_UseSQLProvider.ps1 on GitHub](https://github.com/dsccommunity/xPSDesiredStateConfiguration/blob/master/source/Examples/Sample_xDscWebServiceRegistration_UseSQLProvider.ps1).
 
 ### Using the xDscWebService resource
 
@@ -106,7 +108,7 @@ The easiest way to set up a web pull server is to use the **xDscWebService** res
 the **xPSDesiredStateConfiguration** module. The following steps explain how to use the resource in
 a `Configuration` that sets up the web service.
 
-1. Call the [Install-Module](/reference/6/PowerShellGet/Install-Module.md) cmdlet to install the
+1. Call the [Install-Module](/powershell/module/PowerShellGet/Install-Module) cmdlet to install the
    **xPSDesiredStateConfiguration** module.
 
    > [!NOTE]
@@ -301,7 +303,7 @@ Use `New-DscChecksum {module zip file}` to create a checksum file for the newly 
 ### Configuration MOF format
 
 A configuration MOF file needs to be paired with a checksum file so that an LCM on a target node can
-validate the configuration. To create a checksum, call the [New-DscChecksum](/reference/6/PSDesiredStateConfiguration/New-DSCCheckSum.md)
+validate the configuration. To create a checksum, call the [New-DscChecksum](/powershell/module/PSDesiredStateConfiguration/New-DSCCheckSum)
 cmdlet. The cmdlet takes a **Path** parameter that specifies the folder where the configuration MOF
 is located. The cmdlet creates a checksum file named `ConfigurationMOFName.mof.checksum`, where
 `ConfigurationMOFName` is the name of the configuration mof file. If there are more than one

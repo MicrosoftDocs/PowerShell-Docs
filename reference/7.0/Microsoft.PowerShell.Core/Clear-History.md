@@ -41,8 +41,7 @@ use parameters with `Clear-History` to delete selected commands.
 a history file that contains every PowerShell command from every PowerShell session. From a
 PowerShell prompt, use the up and down arrows on your keyboard to scroll through the command
 history. To display the `PSReadLine` configuration for command history, use `Get-PSReadLineOption`.
-`PSReadLine` shipped with PowerShell 5.0 and above. For more information, see [PSReadLine](../PSReadLine/PSReadLine.md)
-and [about_PSReadLine](../PSReadLine/About/about_PSReadLine.md).
+`PSReadLine` shipped with PowerShell 5.0 and above. For more information, see [about_PSReadLine](../PSReadLine/About/about_PSReadLine.md).
 
 ## EXAMPLES
 
@@ -373,7 +372,7 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+-WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
 
 ## INPUTS
 
@@ -405,10 +404,8 @@ information, see [about_History](About/about_History.md).
 
 [Get-History](Get-History.md)
 
-[Get-PSReadLineOption](../PSReadLine/Get-PSReadLineOption)
+[Get-PSReadLineOption](/powershell/module/psreadline/get-psreadlineoption)
 
 [Invoke-History](Invoke-History.md)
 
-[PSReadLine](../PSReadLine/PSReadLine.md)
-
-[Set-PSReadLineOption](../PSReadLine/Set-PSReadLineOption)
+[Set-PSReadLineOption](/powershell/module/psreadline/set-psreadlineoption)

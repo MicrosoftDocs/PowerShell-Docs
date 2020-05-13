@@ -22,7 +22,7 @@ Test-Json [-Json] <string> [[-Schema] <string>] [<CommonParameters>]
 ## DESCRIPTION
 
 The `Test-Json` cmdlet tests whether a string is a valid JavaScript Object Notation (JSON) document
-and can optionally very that JSON document against a provided schema.
+and can optionally verify that JSON document against a provided schema.
 
 The verified string can then be used with the `ConvertFrom-Json` cmdlet convert a JSON-formatted
 string to a JSON object, which is easily managed in PowerShell or sent to another program or web

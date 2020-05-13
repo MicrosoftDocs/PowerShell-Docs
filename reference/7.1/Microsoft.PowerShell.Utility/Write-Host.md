@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Utility
 ms.date: 11/09/2017
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/write-host?view=powershell-7&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/write-host?view=powershell-7.x&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Write-Host
 ---
@@ -208,7 +208,7 @@ Objects to display in the host.
 ```yaml
 Type: Object
 Parameter Sets: (All)
-Aliases:
+Aliases: Msg, Message
 
 Required: False
 Position: 0
@@ -254,7 +254,7 @@ However, the host might display the objects that `Write-Host` sends to it.
 
 ## RELATED LINKS
 
-[Clear-Host](../Microsoft.PowerShell.Core/Functions/Clear-Host.md)
+[Clear-Host](../Microsoft.PowerShell.Core/Clear-Host.md)
 
 [Out-Host](../Microsoft.PowerShell.Core/Out-Host.md)
 

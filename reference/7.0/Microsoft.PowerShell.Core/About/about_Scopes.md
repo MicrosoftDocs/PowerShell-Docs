@@ -1,7 +1,7 @@
 ---
 keywords: powershell,cmdlet
 locale: en-us
-ms.date: 01/23/2020
+ms.date: 03/13/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_scopes?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_scopes
@@ -54,7 +54,7 @@ PowerShell supports the following scopes:
 
 > [!NOTE]
 > **Private** is not a scope. It is an [option](#private-option) that changes
-> the visibility of an item outside of the the scope where the item is defined.
+> the visibility of an item outside of the scope where the item is defined.
 
 ## Parent and Child Scopes
 
@@ -191,9 +191,53 @@ Using is a special scope modifier that identifies a local variable in a remote
 command. Without a modifier, PowerShell expects variables in remote commands
 to be defined in the remote session.
 
-The Using scope modifier is introduced in PowerShell 3.0.
+The `Using` scope modifier is introduced in PowerShell 3.0.
+
+For any script or command that executes out of session, you need the `Using`
+scope modifier to embed variable values from the calling session scope, so that
+out of session code can access them. The `Using` scope modifier is supported in
+the following contexts:
+
+- Remotely executed commands, started with `Invoke-Command` using the
+  **ComputerName**, **HostName**, **SSHConnection** or **Session** parameters
+  (remote session)
+- Background jobs, started with `Start-Job` (out-of-process session)
+- Thread jobs, started via `Start-ThreadJob` or `ForEach-Object -Parallel`
+  (separate thread session)
+
+Depending on the context, embedded variable values are either independent
+copies of the data in the caller's scope or references to it. In remote and
+out-of-process sessions, they are always independent copies.
 
 For more information, see [about_Remote_Variables](about_Remote_Variables.md).
+
+In thread sessions, they are passed by reference. This means it is possible to
+modify call scope variables in a different thread. To safely modify variables
+requires thread synchronization.
+
+For more information see:
+
+- [Start-ThreadJob](../../ThreadJob/Start-ThreadJob.md)
+- [ForEach-Object](../ForEach-Object.md#notes)
+
+#### Serialization of variable values
+
+Remotely executed commands and background jobs run out-of-process.
+Out-of-process sessions use XML-based serialization and deserialization to make
+the values of variables available across the process boundaries. The
+serialization process converts objects to a **PSObject** that contains the
+original objects properties but not its methods.
+
+For a limited set of types, deserialization rehydrates objects back to the
+original type. The rehydrated object is a copy of the original object instance.
+It has the type properties and methods. For simple types, such as
+**System.Version**, the copy is exact. For complex types, the copy is
+imperfect. For example, rehydrated certificate objects do not include the
+private key.
+
+Instances of all other types are **PSObject** instances. The **PSTypeNames**
+property contains the original type name prefixed with **Deserialized**, for
+example, **Deserialized.System.Data.DataTable**
 
 ### The AllScope Option
 
@@ -606,3 +650,5 @@ Invoke-Command $s {
 [about_Functions](about_Functions.md)
 
 [about_Script_Blocks](about_Script_Blocks.md)
+
+[Start-ThreadJob](/powershell/module/ThreadJob/Start-ThreadJob)

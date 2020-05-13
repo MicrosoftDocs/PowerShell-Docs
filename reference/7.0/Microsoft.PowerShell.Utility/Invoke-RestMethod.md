@@ -3,7 +3,7 @@ external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 12/03/2019
+ms.date: 03/12/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/invoke-restmethod?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Invoke-RestMethod
@@ -92,6 +92,9 @@ the Item or Entry XML nodes. For JavaScript Object Notation (JSON) or XML, Power
 deserializes, the content into objects.
 
 This cmdlet is introduced in Windows PowerShell 3.0.
+
+Beginning in PowerShell 7.0, `Invoke-RestMethod` supports proxy configuration defined by environment
+variables. See the [Notes](#notes) section of this article.
 
 ## EXAMPLES
 
@@ -419,7 +422,7 @@ This feature was added in PowerShell 6.0.0.
 
 ```yaml
 Type: String
-Parameter Sets: CustomMethodNoProxy, CustomMethod
+Parameter Sets: CustomMethod, CustomMethodNoProxy
 Aliases: CM
 
 Required: True
@@ -475,8 +478,8 @@ Accept wildcard characters: False
 
 ### -Form
 
-Converts a dictionary to a `multipart/form-data` submission. `-Form` may not be used with `-Body`.
-If `-ContentType` will be ignored.
+Converts a dictionary to a `multipart/form-data` submission. **Form** may not be used with **Body**.
+If **ContentType** will be ignored.
 
 The keys of the dictionary will be used as the form field names. By default, form values will be
 converted to string values.
@@ -1153,10 +1156,6 @@ To test a website with the standard user agent string that is used by most inter
 the properties of the [PSUserAgent](/dotnet/api/microsoft.powershell.commands.psuseragent) class,
 such as Chrome, FireFox, InternetExplorer, Opera, and Safari.
 
-For example, the following command uses the user agent string for Internet Explorer.
-
-`Invoke-RestMethod -Uri https://website.com/ -UserAgent ([Microsoft.PowerShell.Commands.PSUserAgent]::InternetExplorer)`
-
 ```yaml
 Type: String
 Parameter Sets: (All)
@@ -1232,6 +1231,30 @@ Some features may not be available on all platforms.
 
 For more information about how .NET provides proxy services to PowerShell, see
 [Accessing the Internet Through a Proxy](/dotnet/framework/network-programming/accessing-the-internet-through-a-proxy).
+
+Because of changes in .NET Core 3.1, PowerShell 7.0 and higher supports proxy configuration defined
+by the following environment variables:
+
+- `$env:http_proxy` or `$env:HTTP_PROXY`
+
+  Set this variable to the endpoint of an HTTP proxy. For example: `http://127.0.0.1:3001`
+
+- `$env:https_proxy` or `$env:HTTPS_PROXY`
+
+  Set this variable to the endpoint of an HTTPS proxy. For example: `https://127.0.0.1:8001`
+
+- `$env:all_proxy` or `$env:ALL_PROXY`
+
+  Set this variable to the endpoint to be used for any protocol. For example:
+  `socks://127.0.0.1:8081`.
+
+- `$env:no_proxy` or `$env:NO_PROXY`
+
+  Set this variable to a comma-separated list of host names that should not use a proxy when being
+  accessed. For example: `*.test.example.com,.example2.com`.
+
+On Windows machines, PowerShell falls back to the proxy configuration defined in your **Internet
+Settings** control panel when these variables are not defined.
 
 ## RELATED LINKS
 

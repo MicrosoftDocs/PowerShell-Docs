@@ -74,7 +74,7 @@ Gets drives in the current session.
 Gets information about the specified PowerShell provider.
 
 ### [Get-Service](Get-Service.md)
-Gets the services on the local computer.
+Gets the services on the computer.
 
 ### [Get-TimeZone](Get-TimeZone.md)
 Gets the current time zone or a list of available time zones.
@@ -134,7 +134,7 @@ Renames a property of an item.
 Resolves the wildcard characters in a path, and displays the path contents.
 
 ### [Restart-Computer](Restart-Computer.md)
-Restarts ("reboots") the operating system on local and remote computers.
+Restarts the operating system on local and remote computers.
 
 ### [Restart-Service](Restart-Service.md)
 Stops and then starts one or more services.
@@ -182,10 +182,11 @@ Stops one or more running services.
 Suspends (pauses) one or more running services.
 
 ### [Test-Connection](Test-Connection.md)
-Sends ICMP echo request packets ("pings") to one or more computers.
+Sends ICMP echo request packets, or pings, to one or more computers.
 
 ### [Test-Path](Test-Path.md)
 Determines whether all elements of a path exist.
 
 ### [Wait-Process](Wait-Process.md)
 Waits for the processes to be stopped before accepting more input.
+

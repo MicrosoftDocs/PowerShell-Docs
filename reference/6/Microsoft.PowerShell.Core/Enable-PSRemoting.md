@@ -243,6 +243,8 @@ on a server version, `Enable-PSRemoting` re-enables it, regardless of the value 
 To remove the local subnet restriction and enable remote access from all locations on public
 networks, use the `Set-NetFirewallRule` cmdlet in the **NetSecurity** module.
 
+This parameter was introduced in PowerShell 3.0.
+
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)

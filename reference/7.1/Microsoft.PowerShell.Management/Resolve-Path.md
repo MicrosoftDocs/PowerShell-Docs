@@ -2,8 +2,8 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 keywords: powershell,cmdlet
 locale: en-us
-ms.date: 5/14/2019
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/resolve-path?view=powershell-7&WT.mc_id=ps-gethelp
+ms.date: 03/12/2020
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/resolve-path?view=powershell-7.x&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Resolve-Path
 ---
@@ -141,7 +141,7 @@ Single quotation marks tell PowerShell not to interpret any characters as escape
 ```yaml
 Type: String[]
 Parameter Sets: LiteralPath
-Aliases: PSPath
+Aliases: PSPath, LP
 
 Required: True
 Position: Named
@@ -202,14 +202,18 @@ You can pipe a string that contains a path to this cmdlet
 ### System.Management.Automation.PathInfo, System.String
 
 Returns a **PathInfo** object. Returns a string value for the resolved path if you specify the
-*Relative* parameter.
+**Relative** parameter.
 
 ## NOTES
 
-- The `*-Path` cmdlets work with the FileSystem, Registry, and Certificate providers.
-- `Resolve-Path` is designed to work with any provider. To list the providers available in your
-  session, type `Get-PSProvider`. For more information, see
-  [about_providers](../microsoft.powershell.core/about/about_providers.md).
+The `*-Path` cmdlets work with the FileSystem, Registry, and Certificate providers.
+
+`Resolve-Path` is designed to work with any provider. To list the providers available in your
+session, type `Get-PSProvider`. For more information, see
+[about_providers](../microsoft.powershell.core/about/about_providers.md).
+
+`Resolve-Path` only resolves existing paths. It cannot be used to resolve a location that does not
+exist yet.
 
 ## RELATED LINKS
 

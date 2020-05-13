@@ -18,13 +18,15 @@ Returns the specified part of a path.
 ### ParentSet (Default)
 
 ```
-Split-Path [-Path] <String[]> [-Parent] [-Resolve] [-Credential <PSCredential>] [<CommonParameters>]
+Split-Path [-Path] <String[]> [-Parent] [-Resolve] [-Credential <PSCredential>]
+ [<CommonParameters>]
 ```
 
-### ExtensionSet
+### QualifierSet
 
 ```
-Split-Path [-Path] <String[]> [-Extension] [-Resolve] [-Credential <PSCredential>] [<CommonParameters>]
+Split-Path [-Path] <String[]> [[-Qualifier]] [-Resolve] [-Credential <PSCredential>]
+ [<CommonParameters>]
 ```
 
 ### LeafSet
@@ -36,25 +38,29 @@ Split-Path [-Path] <String[]> [-Leaf] [-Resolve] [-Credential <PSCredential>] [<
 ### LeafBaseSet
 
 ```
-Split-Path [-Path] <String[]> [-LeafBase] [-Resolve] [-Credential <PSCredential>] [<CommonParameters>]
+Split-Path [-Path] <String[]> [-LeafBase] [-Resolve] [-Credential <PSCredential>]
+ [<CommonParameters>]
 ```
 
-### QualifierSet
+### ExtensionSet
 
 ```
-Split-Path [-Path] <String[]> [-Qualifier] [-Resolve] [-Credential <PSCredential>] [<CommonParameters>]
+Split-Path [-Path] <String[]> [-Extension] [-Resolve] [-Credential <PSCredential>]
+ [<CommonParameters>]
 ```
 
 ### NoQualifierSet
 
 ```
-Split-Path [-Path] <String[]> [-NoQualifier] [-Resolve] [-Credential <PSCredential>] [<CommonParameters>]
+Split-Path [-Path] <String[]> [-NoQualifier] [-Resolve] [-Credential <PSCredential>]
+ [<CommonParameters>]
 ```
 
 ### IsAbsoluteSet
 
 ```
-Split-Path [-Path] <String[]> [-Resolve] [-IsAbsolute] [-Credential <PSCredential>] [<CommonParameters>]
+Split-Path [-Path] <String[]> [-Resolve] [-IsAbsolute] [-Credential <PSCredential>]
+ [<CommonParameters>]
 ```
 
 ### LiteralPathSet
@@ -248,7 +254,7 @@ Single quotation marks tell PowerShell not to interpret any characters as escape
 ```yaml
 Type: String[]
 Parameter Sets: LiteralPathSet
-Aliases: PSPath
+Aliases: PSPath, LP
 
 Required: True
 Position: Named
@@ -302,7 +308,7 @@ You can also pipe a path to this cmdlet.
 
 ```yaml
 Type: String[]
-Parameter Sets: ParentSet, ExtensionSet, LeafSet, LeafBaseSet, QualifierSet, NoQualifierSet, IsAbsoluteSet
+Parameter Sets: ParentSet, QualifierSet, LeafSet, LeafBaseSet, ExtensionSet, NoQualifierSet, IsAbsoluteSet
 Aliases:
 
 Required: True

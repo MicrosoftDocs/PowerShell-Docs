@@ -225,7 +225,7 @@ Accept wildcard characters: False
 Specifies the maximum version of a single module to install. The version installed must be less than
 or equal to **MaximumVersion**. If you want to install multiple modules, you cannot use
 **MaximumVersion**. **MaximumVersion** and **RequiredVersion** cannot be used in the same
-`Install-Module` command. 
+`Install-Module` command.
 
 ```yaml
 Type: String
@@ -245,7 +245,6 @@ Specifies the minimum version of a single module to install. The version install
 or equal to **MinimumVersion**. If there is a newer version of the module available, the newer
 version is installed. If you want to install multiple modules, you cannot use **MinimumVersion**.
 **MinimumVersion** and **RequiredVersion** cannot be used in the same `Install-Module` command.
-
 
 ```yaml
 Type: String
@@ -359,17 +358,15 @@ computer:
 `$env:ProgramFiles\WindowsPowerShell\Modules`
 
 The **CurrentUser** installs modules in a location that is accessible only to the current user of
-the computer:
+the computer. For example:
 
 `$home\Documents\WindowsPowerShell\Modules`
 
-When no **Scope** is defined, the default is set based on the current session:
+When no **Scope** is defined, the default is set based on the PowerShellGet version.
 
-- For an elevated PowerShell session, **Scope** defaults to **AllUsers**.
-- For non-elevated PowerShell sessions in [PowerShellGet versions 2.0.0](https://www.powershellgallery.com/packages/PowerShellGet)
-  and above, the **Scope** is **CurrentUser**.
-- For non-elevated PowerShell sessions in PowerShellGet versions 1.6.7 and earlier, **Scope** is
-  undefined, and `Install-Module` fails.
+- In PowerShellGet versions 2.0.0 and above, the default is **CurrentUser**, which does not require
+  elevation for install.
+- In PowerShellGet 1.x versions, the default is **AllUsers**, which requires elevation for install.
 
 ```yaml
 Type: String
@@ -447,7 +444,19 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 `Find-Module` creates **PSRepositoryItemInfo** objects that can be sent down the pipeline to
 `Install-Module`.
 
+### System.String[]
+
+### System.Management.Automation.PSObject[]
+
+### System.String
+
+### System.Management.Automation.PSCredential
+
+### System.Uri
+
 ## OUTPUTS
+
+### System.Object
 
 ## NOTES
 
@@ -487,6 +496,9 @@ If the existing module does not match the values specified by the **MinimumVersi
 version of the existing installed module is lower than the **MinimumVersion** value or not equal to
 the **RequiredVersion** value.
 
+A module installation will also install any dependent modules specified as required by the module publisher.
+The publisher will specify the required modules and their versions in the module manifest.
+
 ## RELATED LINKS
 
 [Find-Module](Find-Module.md)
@@ -502,3 +514,5 @@ the **RequiredVersion** value.
 [Uninstall-Module](Uninstall-Module.md)
 
 [Update-Module](Update-Module.md)
+
+[about_Module](../Microsoft.PowerShell.Core/About/about_Modules)

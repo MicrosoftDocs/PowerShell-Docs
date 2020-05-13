@@ -3,7 +3,7 @@ external help file: System.Management.Automation.dll-Help.xml
 keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Core
-ms.date: 12/09/2019
+ms.date: 04/08/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/start-job?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Start-Job
@@ -31,18 +31,18 @@ Start-Job [-DefinitionName] <String> [[-DefinitionPath] <String>] [[-Type] <Stri
  [<CommonParameters>]
 ```
 
-### FilePathComputerName
-
-```
-Start-Job [-Name <String>] [-Credential <PSCredential>] [-FilePath] <String>
- [-Authentication <AuthenticationMechanism>] [[-InitializationScript] <ScriptBlock>] [-RunAs32]
- [-PSVersion <Version>] [-InputObject <PSObject>] [-ArgumentList <Object[]>] [<CommonParameters>]
-```
-
 ### LiteralFilePathComputerName
 
 ```
 Start-Job [-Name <String>] [-Credential <PSCredential>] -LiteralPath <String>
+ [-Authentication <AuthenticationMechanism>] [[-InitializationScript] <ScriptBlock>] [-RunAs32]
+ [-PSVersion <Version>] [-InputObject <PSObject>] [-ArgumentList <Object[]>] [<CommonParameters>]
+```
+
+### FilePathComputerName
+
+```
+Start-Job [-Name <String>] [-Credential <PSCredential>] [-FilePath] <String>
  [-Authentication <AuthenticationMechanism>] [[-InitializationScript] <ScriptBlock>] [-RunAs32]
  [-PSVersion <Version>] [-InputObject <PSObject>] [-ArgumentList <Object[]>] [<CommonParameters>]
 ```
@@ -280,12 +280,13 @@ Specifies an array of arguments, or parameter values, for the script that is spe
 **FilePath** parameter or a command specified with the **ScriptBlock** parameter.
 
 Arguments must be passed to **ArgumentList** as single-dimension array argument. For example, a
-comma-separated list. For more information about array dimensions, see
-[about_Arrays](./about/about_arrays.md#rank).
+comma-separated list. For more information about the behavior of **ArgumentList**, see
+[about_Splatting](about/about_Splatting.md#splatting-with-arrays).
+
 
 ```yaml
 Type: Object[]
-Parameter Sets: ComputerName, FilePathComputerName, LiteralFilePathComputerName
+Parameter Sets: ComputerName, LiteralFilePathComputerName, FilePathComputerName
 Aliases: Args
 
 Required: False
@@ -326,7 +327,7 @@ For more information about the values of this parameter, see
 
 ```yaml
 Type: AuthenticationMechanism
-Parameter Sets: ComputerName, FilePathComputerName, LiteralFilePathComputerName
+Parameter Sets: ComputerName, LiteralFilePathComputerName, FilePathComputerName
 Aliases:
 Accepted values: Default, Basic, Negotiate, NegotiateWithImplicitCredential, Credssp, Digest, Kerberos
 
@@ -355,7 +356,7 @@ object and the password is stored as a [SecureString](/dotnet/api/system.securit
 
 ```yaml
 Type: PSCredential
-Parameter Sets: ComputerName, FilePathComputerName, LiteralFilePathComputerName
+Parameter Sets: ComputerName, LiteralFilePathComputerName, FilePathComputerName
 Aliases:
 
 Required: False
@@ -444,7 +445,7 @@ functions, snap-ins, and modules to the session.
 
 ```yaml
 Type: ScriptBlock
-Parameter Sets: ComputerName, FilePathComputerName, LiteralFilePathComputerName
+Parameter Sets: ComputerName, LiteralFilePathComputerName, FilePathComputerName
 Aliases:
 
 Required: False
@@ -464,7 +465,7 @@ input objects.
 
 ```yaml
 Type: PSObject
-Parameter Sets: ComputerName, FilePathComputerName, LiteralFilePathComputerName
+Parameter Sets: ComputerName, LiteralFilePathComputerName, FilePathComputerName
 Aliases:
 
 Required: False
@@ -487,7 +488,7 @@ sequences.
 ```yaml
 Type: String
 Parameter Sets: LiteralFilePathComputerName
-Aliases: PSPath
+Aliases: PSPath, LP
 
 Required: True
 Position: Named
@@ -506,7 +507,7 @@ job.
 
 ```yaml
 Type: String
-Parameter Sets: ComputerName, FilePathComputerName, LiteralFilePathComputerName
+Parameter Sets: ComputerName, LiteralFilePathComputerName, FilePathComputerName
 Aliases:
 
 Required: False
@@ -525,7 +526,7 @@ This parameter was introduced in PowerShell 3.0.
 
 ```yaml
 Type: Version
-Parameter Sets: ComputerName, FilePathComputerName, LiteralFilePathComputerName
+Parameter Sets: ComputerName, LiteralFilePathComputerName, FilePathComputerName
 Aliases:
 
 Required: False
@@ -546,7 +547,7 @@ another user.
 
 ```yaml
 Type: SwitchParameter
-Parameter Sets: ComputerName, FilePathComputerName, LiteralFilePathComputerName
+Parameter Sets: ComputerName, LiteralFilePathComputerName, FilePathComputerName
 Aliases:
 
 Required: False

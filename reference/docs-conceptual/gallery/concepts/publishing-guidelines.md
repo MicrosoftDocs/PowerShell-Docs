@@ -14,15 +14,16 @@ users. Packages that are published following these guidelines will be more likel
 trusted, and attract more users.
 
 Included below are guidelines for what makes a good PowerShell Gallery package, what optional
-Manifest settings are most important, improving your code with feedback from initial reviewers and [Powershell Script Analyzer](https://aka.ms/psscriptanalyzer),
-versioning your module, documentation, tests and examples for how to use what you have shared. Much
-of this documentation follows the guidelines for publishing
-[High Quality DSC Resource Modules](https://github.com/PowerShell/DscResources/blob/master/HighQualityModuleGuidelines.md).
+Manifest settings are most important, improving your code with feedback from initial reviewers and
+[Powershell Script Analyzer](https://aka.ms/psscriptanalyzer), versioning your module,
+documentation, tests and examples for how to use what you have shared. Much of this documentation
+follows the guidelines for publishing [High Quality DSC Resource Modules](https://github.com/PowerShell/DscResources/blob/master/HighQualityModuleGuidelines.md).
 
 For the mechanics of publishing a package to the PowerShell Gallery, see
 [Creating and Publishing a Package](../how-to/publishing-packages/publishing-a-package.md).
 
-Feedback on these guidelines is welcomed. If you do have feedback, please open issues in our [GitHub documentation repository](https://github.com/powershell/powershell-docs/issues).
+Feedback on these guidelines is welcomed. If you do have feedback, please open issues in our
+[GitHub documentation repository](https://github.com/powershell/powershell-docs/issues).
 
 ## Best practices for publishing packages
 
@@ -197,7 +198,7 @@ By tagging your package with the compatible platform(s) it will be included in t
 filters on the left pane of the search results. If you host your package on GitHub, when you tag
 your package, you can also take advantage of our
 [PowerShell Gallery compatibility shields](https://img.shields.io/powershellgallery/p/:packageName.svg)
-![compatibility shield](../Images/CosmosDB.svg).
+![compatibility shield](media/publishing-guidelines/CosmosDB.svg).
 
 ## Include tests
 
@@ -254,9 +255,10 @@ script is loaded. PowerShell can be constrained using the [Execution Policy](/po
 cmdlets to ensure use of signed scripts.
 
 Catalog signing modules is a feature added to PowerShell in version 5.1. How to sign a module is
-covered in the [Catalog Cmdlets](/powershell/scripting/wmf/5.1/catalog-cmdlets) article. In overview, catalog
-signing is done by creating a catalog file, which contains a hash value for every file in the
-module, and then signing that file.
+covered in the
+[Catalog Cmdlets](/powershell/scripting/wmf/whats-new/new-updated-cmdlets#catalog-cmdlets) article.
+In overview, catalog signing is done by creating a catalog file, which contains a hash value for
+every file in the module, and then signing that file.
 
 The **PowerShellGet** `Publish-Module`, `Install-Module`, and `Update-Module` cmdlets will check the
 signature to ensure it's valid, then confirm that the hash value for each package matches what is in

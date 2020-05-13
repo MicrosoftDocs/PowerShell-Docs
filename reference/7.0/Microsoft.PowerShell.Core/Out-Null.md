@@ -64,7 +64,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### System.Management.Automation.PSObject
 
 You can pipe any object to this cmdlet.
-.
 
 ## OUTPUTS
 

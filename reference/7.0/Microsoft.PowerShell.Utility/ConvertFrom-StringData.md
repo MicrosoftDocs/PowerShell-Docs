@@ -15,6 +15,8 @@ Converts a string containing one or more key and value pairs to a hash table.
 
 ## SYNTAX
 
+### All
+
 ```
 ConvertFrom-StringData [-StringData] <String> [[-Delimiter] <Char>] [<CommonParameters>]
 ```
@@ -311,3 +313,4 @@ can use the dictionary-style hash tables to isolate text strings from code, such
 files, and to format the text strings for use in translation tools.
 
 ## RELATED LINKS
+

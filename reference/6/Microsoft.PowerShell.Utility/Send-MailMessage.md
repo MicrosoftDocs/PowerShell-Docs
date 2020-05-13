@@ -2,7 +2,8 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
 locale: en-us
-ms.date: 2/11/2019
+Module Name: Microsoft.PowerShell.Utility
+ms.date: 05/11/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/send-mailmessage?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Send-MailMessage
@@ -18,11 +19,11 @@ Sends an email message.
 ### All
 
 ```
-Send-MailMessage [-To] <string[]> [-Subject] <string> [[-Body] <string>] [[-SmtpServer] <string>]
- -From <string> [-Attachments <string[]>] [-Bcc <string[]>] [-BodyAsHtml] [-Encoding <Encoding>]
- [-Cc <string[]>] [-DeliveryNotificationOption <DeliveryNotificationOptions>]
- [-Priority <MailPriority>] [-ReplyTo <string[]>] [-Credential <pscredential>] [-UseSsl]
- [-Port <int>] [<CommonParameters>]
+Send-MailMessage [-Attachments <String[]>] [-Bcc <String[]>] [[-Body] <String>] [-BodyAsHtml]
+ [-Encoding <Encoding>] [-Cc <String[]>] [-DeliveryNotificationOption <DeliveryNotificationOptions>]
+ -From <String> [[-SmtpServer] <String>] [-Priority <MailPriority>] [-ReplyTo <String[]>]
+ [-Subject] <String> [-To] <String[]> [-Credential <PSCredential>] [-UseSsl] [-Port <Int32>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -33,6 +34,12 @@ You must specify a Simple Mail Transfer Protocol (SMTP) server or the `Send-Mail
 fails. Use the **SmtpServer** parameter or set the `$PSEmailServer` variable to a valid SMTP server.
 The value assigned to `$PSEmailServer` is the default SMTP setting for PowerShell. For more
 information, see [about_Preference_Variables](../Microsoft.PowerShell.Core/About/about_Preference_Variables.md).
+
+> [!WARNING]
+> The `Send-MailMessage` cmdlet is obsolete. This cmdlet does not guarantee secure connections to
+> SMTP servers. While there is no immediate replacement available in PowerShell, we recommend you do
+> not use `Send-MailMessage`. For more information, see
+> [Platform Compatibility note DE0005](https://aka.ms/SendMailMessage).
 
 ## EXAMPLES
 
@@ -103,7 +110,7 @@ Aliases: PsPath
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: True (ByValue)
+Accept pipeline input: True (ByPropertyName, ByValue)
 Accept wildcard characters: False
 ```
 
@@ -120,7 +127,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -136,7 +143,7 @@ Aliases:
 Required: False
 Position: 2
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -152,7 +159,7 @@ Aliases: BAH
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -169,7 +176,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -196,7 +203,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: Current user
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -224,7 +231,7 @@ Accepted values: None, OnSuccess, OnFailure, Delay, Never
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -258,7 +265,7 @@ Accepted values: ASCII, BigEndianUnicode, OEM, Unicode, UTF7, UTF8, UTF8BOM, UTF
 Required: False
 Position: Named
 Default value: UTF8NoBOM
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -275,7 +282,7 @@ Aliases:
 Required: True
 Position: Named
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -292,7 +299,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 25
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -310,7 +317,7 @@ Accepted values: Normal, High, Low
 Required: False
 Position: Named
 Default value: Normal
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -329,7 +336,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -348,7 +355,7 @@ Aliases: ComputerName
 Required: False
 Position: 3
 Default value: $PSEmailServer
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -364,7 +371,7 @@ Aliases: sub
 Required: True
 Position: 1
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -382,7 +389,7 @@ Aliases:
 Required: True
 Position: 0
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -399,7 +406,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 

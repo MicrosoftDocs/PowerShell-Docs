@@ -162,7 +162,7 @@ Single quotation marks tell PowerShell not to interpret any characters as escape
 ```yaml
 Type: String
 Parameter Sets: ByLiteralPath
-Aliases: PSPath
+Aliases: PSPath, LP
 
 Required: True
 Position: Named

@@ -43,7 +43,7 @@ This is a work in progress. Please help us keep this information fresh.
 | PSScheduledJob                            | &check; |         |         |         | Windows only |
 | PSWorkflow                                | &check; |         |         |         | Windows only |
 | PSWorkflowUtility                         | &check; |         |         |         | Windows only |
-| ThreadJob                                 |         | &check; | &check; | &check; |              |
+| ThreadJob                                 |         | &check; | &check; | &check; | Can be installed in PowerShell 5.1 |
 
 ## Cmdlet release history
 
@@ -307,17 +307,17 @@ This is a work in progress. Please help us keep this information fresh.
 | ConvertTo-SecureString    | &check; | &check; | &check; | &check; |                                         |
 | Get-Acl                   | &check; | &check; | &check; | &check; | Windows only                            |
 | Get-AuthenticodeSignature | &check; | &check; | &check; | &check; | Windows only                            |
-| Get-CmsMessage            | &check; | &check; | &check; | &check; | Windows only                            |
+| Get-CmsMessage            | &check; | &check; | &check; | &check; | Support for Linux/macOS added in 7.1    |
 | Get-Credential            | &check; | &check; | &check; | &check; |                                         |
 | Get-ExecutionPolicy       | &check; | &check; | &check; | &check; | Returns **Unrestricted** on Linux/macOS |
 | Get-PfxCertificate        | &check; | &check; | &check; | &check; |                                         |
 | New-FileCatalog           | &check; | &check; | &check; | &check; | Windows only                            |
-| Protect-CmsMessage        | &check; | &check; | &check; | &check; | Windows only                            |
+| Protect-CmsMessage        | &check; | &check; | &check; | &check; | Support for Linux/macOS added in 7.1    |
 | Set-Acl                   | &check; | &check; | &check; | &check; | Windows only                            |
 | Set-AuthenticodeSignature | &check; | &check; | &check; | &check; | Windows only                            |
 | Set-ExecutionPolicy       | &check; | &check; | &check; | &check; | Does nothing on Linux/macOS             |
 | Test-FileCatalog          | &check; | &check; | &check; | &check; | Windows only                            |
-| Unprotect-CmsMessage      | &check; | &check; | &check; | &check; | Windows only                            |
+| Unprotect-CmsMessage      | &check; | &check; | &check; | &check; | Support for Linux/macOS added in 7.1    |
 
 ### Microsoft.PowerShell.Utility
 
@@ -397,7 +397,7 @@ This is a work in progress. Please help us keep this information fresh.
 | New-TimeSpan              | &check; | &check; | &check; | &check; |                                           |
 | New-Variable              | &check; | &check; | &check; | &check; |                                           |
 | Out-File                  | &check; | &check; | &check; | &check; |                                           |
-| Out-GridView              | &check; |         | &check; | &check; |                                           |
+| Out-GridView              | &check; |         | &check; | &check; | Windows only                              |
 | Out-Printer               | &check; |         | &check; | &check; |                                           |
 | Out-String                | &check; | &check; | &check; | &check; |                                           |
 | Read-Host                 | &check; | &check; | &check; | &check; |                                           |
@@ -512,66 +512,22 @@ This is a work in progress. Please help us keep this information fresh.
 
 |                Cmdlet name                 |   5.1   |   6.x   |   7.0   |   7.1   |     Note     |
 | ------------------------------------------ | :-----: | :-----: | :-----: | :-----: | ------------ |
-| Add-NodeKeys                               |         | &check; |         |         |              |
-| ConvertTo-MOFInstance                      |         | &check; |         |         |              |
 | Disable-DscDebug                           | &check; |         |         |         | Windows only |
 | Enable-DscDebug                            | &check; |         |         |         | Windows only |
-| Generate-VersionInfo                       |         | &check; |         |         |              |
-| Get-CompatibleVersionAddtionaPropertiesStr |         | &check; |         |         |              |
-| Get-ComplexResourceQualifier               |         | &check; |         |         |              |
-| Get-ConfigurationErrorCount                |         | &check; |         |         |              |
 | Get-DscConfiguration                       | &check; |         |         |         | Windows only |
 | Get-DscConfigurationStatus                 | &check; |         |         |         | Windows only |
 | Get-DscLocalConfigurationManager           | &check; |         |         |         | Windows only |
 | Get-DscResource                            | &check; | &check; | &check; | &check; |              |
-| Get-DSCResourceModules                     |         | &check; |         |         |              |
-| Get-EncryptedPassword                      |         | &check; |         |         |              |
-| Get-InnerMostErrorRecord                   |         | &check; |         |         |              |
-| Get-MofInstanceName                        |         | &check; |         |         |              |
-| Get-MofInstanceText                        |         | &check; |         |         |              |
-| Get-PositionInfo                           |         | &check; |         |         |              |
-| Get-PSCurrentConfigurationNode             |         | &check; |         |         |              |
-| Get-PSDefaultConfigurationDocument         |         | &check; |         |         |              |
-| Get-PSMetaConfigDocumentInstVersionInfo    |         | &check; |         |         |              |
-| Get-PSMetaConfigurationProcessed           |         | &check; |         |         |              |
-| Get-PSTopConfigurationName                 |         | &check; |         |         |              |
-| Get-PublicKeyFromFile                      |         | &check; |         |         |              |
-| Get-PublicKeyFromStore                     |         | &check; |         |         |              |
-| Initialize-ConfigurationRuntimeState       |         | &check; |         |         |              |
 | Invoke-DscResource                         | &check; |         | &check; | &check; |              |
 | New-DSCCheckSum                            | &check; | &check; | &check; | &check; |              |
 | Publish-DscConfiguration                   | &check; |         |         |         | Windows only |
 | Remove-DscConfigurationDocument            | &check; |         |         |         | Windows only |
 | Restore-DscConfiguration                   | &check; |         |         |         | Windows only |
 | Set-DscLocalConfigurationManager           | &check; |         |         |         | Windows only |
-| Set-NodeExclusiveResources                 |         | &check; |         |         |              |
-| Set-NodeManager                            |         | &check; |         |         |              |
-| Set-NodeResources                          |         | &check; |         |         |              |
-| Set-NodeResourceSource                     |         | &check; |         |         |              |
-| Set-PSCurrentConfigurationNode             |         | &check; |         |         |              |
-| Set-PSDefaultConfigurationDocument         |         | &check; |         |         |              |
-| Set-PSMetaConfigDocInsProcessedBeforeMeta  |         | &check; |         |         |              |
-| Set-PSMetaConfigVersionInfoV2              |         | &check; |         |         |              |
-| Set-PSTopConfigurationName                 |         | &check; |         |         |              |
 | Start-DscConfiguration                     | &check; |         |         |         | Windows only |
 | Stop-DscConfiguration                      | &check; |         |         |         | Windows only |
-| Test-ConflictingResources                  |         | &check; |         |         |              |
 | Test-DscConfiguration                      | &check; |         |         |         | Windows only |
-| Test-ModuleReloadRequired                  |         | &check; |         |         |              |
-| Test-MofInstanceText                       |         | &check; |         |         |              |
-| Test-NodeManager                           |         | &check; |         |         |              |
-| Test-NodeResources                         |         | &check; |         |         |              |
-| Test-NodeResourceSource                    |         | &check; |         |         |              |
-| Update-ConfigurationDocumentRef            |         | &check; |         |         |              |
-| Update-ConfigurationErrorCount             |         | &check; |         |         |              |
-| Update-DependsOn                           |         | &check; |         |         |              |
 | Update-DscConfiguration                    | &check; |         |         |         | Windows only |
-| Update-LocalConfigManager                  |         | &check; |         |         |              |
-| Update-ModuleVersion                       |         | &check; |         |         |              |
-| ValidateUpdate-ConfigurationData           |         | &check; |         |         |              |
-| Write-Log                                  |         | &check; |         |         |              |
-| Write-MetaConfigFile                       |         | &check; |         |         |              |
-| Write-NodeMOFFile                          |         | &check; |         |         |              |
 
 ### PSDiagnostics
 
@@ -632,4 +588,4 @@ This is a work in progress. Please help us keep this information fresh.
 
 |   Cmdlet name   |  5.1  |   6.x   |   7.0   |   7.1   | Note |
 | --------------- | :---: | :-----: | :-----: | :-----: | ---- |
-| Start-ThreadJob |       | &check; | &check; | &check; |      |
+| Start-ThreadJob |       | &check; | &check; | &check; | Can be installed in PowerShell 5.1 |

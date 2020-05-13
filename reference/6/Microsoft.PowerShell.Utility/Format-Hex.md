@@ -167,7 +167,7 @@ escape sequences. For more information, see [about_Quoting_Rules](../Microsoft.P
 ```yaml
 Type: String[]
 Parameter Sets: LiteralPath
-Aliases: PSPath
+Aliases: PSPath, LP
 
 Required: True
 Position: Named
@@ -270,7 +270,7 @@ the path of the file that contains each byte.
 
 ## NOTES
 
-The right-most column of output tries to render the bytes as characters:
+The right-most column of output tries to render the bytes as ASCII characters:
 
 Generally, each byte is interpreted as a Unicode code point, which means that:
 

@@ -1,8 +1,8 @@
 ---
 keywords: powershell,cmdlet
 locale: en-us
-ms.date: 08/12/2019
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_automatic_variables?view=powershell-7&WT.mc_id=ps-gethelp
+ms.date: 04/10/2020
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_automatic_variables?view=powershell-7.x&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Automatic_Variables
 ---
@@ -28,8 +28,40 @@ Contains the last token in the last line received by the session.
 
 ### $?
 
-Contains the execution status of the last operation. It contains **True** if
-the last operation succeeded and **False** if it failed.
+Contains the execution status of the last command. It contains **True** if
+the last command succeeded and **False** if it failed.
+
+For cmdlets and advanced functions that are run at multiple stages in a
+pipeline, for example in both `process` and `end` blocks, calling
+`this.WriteError()` or `$PSCmdlet.WriteError()` respectively at any point will
+set `$?` to **False**, as will `this.ThrowTerminatingError()` and
+`$PSCmdlet.ThrowTerminatingError()`.
+
+The `Write-Error` cmdlet always sets `$?` to **False** immediately after it is
+executed, but will not set `$?` to **False** for a function calling it:
+
+```powershell
+function Test-WriteError
+{
+    Write-Error "Bad"
+    $? # $false
+}
+
+Test-WriteError
+$? # $true
+```
+
+For the latter purpose, `$PSCmdlet.WriteError()` should be used instead.
+
+For native commands (executables), `$?` is set to **True** when `$LASTEXITCODE`
+is 0, and set to **False** when `$LASTEXITCODE` is any other value.
+
+> [!NOTE]
+> Until PowerShell 7, containing a statement within parentheses `(...)`,
+> subexpression syntax `$(...)` or array expression `@(...)` always reset
+> `$?` to **True**, so that `(Write-Error)` shows `$?` as **True**.
+> This has been changed in PowerShell 7, so that `$?` will always reflect
+> the actual success of the last command run in these expressions.
 
 ### $^
 
@@ -526,6 +558,9 @@ and change the current loop iteration. For more information, see
 
 In a script block that defines a script property or script method, the
 `$this` variable refers to the object that is being extended.
+
+In a custom class, the `$this` variable refers to the class object itself
+allowing access to properties and methods defined in the class.
 
 ### $true
 

@@ -509,7 +509,7 @@ interpret any characters as escape sequences. For more information, see [about_Q
 ```yaml
 Type: String[]
 Parameter Sets: LiteralFile
-Aliases: PSPath
+Aliases: PSPath, LP
 
 Required: True
 Position: Named

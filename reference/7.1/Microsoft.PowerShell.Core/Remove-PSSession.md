@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Core
 ms.date: 06/09/2017
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/remove-pssession?view=powershell-7&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/remove-pssession?view=powershell-7.x&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Remove-PSSession
 ---
@@ -173,9 +173,9 @@ Accept wildcard characters: True
 
 ### -ContainerId
 
-Specifies an array of IDs of containers.
-This cmdlet starts an interactive session with each of the specified containers.
-To see the containers that are available to you, use the **Get-Container** cmdlet.
+Specifies an array of IDs of containers. This cmdlet removes sessions for each of the specified
+containers. Use the `docker ps` command to get a list of container IDs. For more information, see
+the help for the [docker ps](https://docs.docker.com/engine/reference/commandline/ps/) command.
 
 ```yaml
 Type: String[]

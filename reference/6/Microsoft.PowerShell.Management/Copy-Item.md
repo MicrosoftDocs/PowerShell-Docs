@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 keywords: powershell,cmdlet
 locale: en-us
-ms.date: 5/30/2019
+ms.date: 03/24/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/copy-item?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Copy-Item
@@ -208,6 +208,45 @@ $Session = New-PSSession -ComputerName "Server01" -Credential "Contoso\User01"
 Copy-Item "C:\MyRemoteData\scripts" -Destination "D:\MyLocalData\scripts" -FromSession $Session -Recurse
 ```
 
+### Example 12: Recursively copy files from a folder tree into the current folder
+
+This example shows how to copy files from a multilevel folder structure into a single flat folder.
+The first three commands show the existing folder structure and the contents of two files, both
+names `file3.txt`.
+
+```powershell
+PS C:\temp\test> (Get-ChildItem C:\temp\tree -Recurse).FullName
+C:\temp\tree\subfolder
+C:\temp\tree\file1.txt
+C:\temp\tree\file2.txt
+C:\temp\tree\file3.txt
+C:\temp\tree\subfolder\file3.txt
+C:\temp\tree\subfolder\file4.txt
+C:\temp\tree\subfolder\file5.txt
+
+PS C:\temp\test> Get-Content C:\temp\tree\file3.txt
+This is file3.txt in the root folder
+
+PS C:\temp\test> Get-Content C:\temp\tree\subfolder\file3.txt
+This is file3.txt in the subfolder
+
+PS C:\temp\test> Copy-Item -Path C:\temp\tree -Filter *.txt -Recurse -Container:$false
+PS C:\temp\test> (Get-ChildItem . -Recurse).FullName
+C:\temp\test\subfolder
+C:\temp\test\file1.txt
+C:\temp\test\file2.txt
+C:\temp\test\file3.txt
+C:\temp\test\file4.txt
+C:\temp\test\file5.txt
+
+PS C:\temp\test> Get-Content .\file3.txt
+This is file3.txt in the subfolder
+```
+
+The `Copy-Item` cmdlet has the **Container** parameter set to `$false`. This causes the contents of
+the source folder to be copied but does not preserve the folder structure. Notice that files with
+the same name are overwritten in the destination folder.
+
 ## PARAMETERS
 
 ### -Confirm
@@ -387,7 +426,7 @@ For more information, see [about_Quoting_Rules](../Microsoft.Powershell.Core/Abo
 ```yaml
 Type: String[]
 Parameter Sets: LiteralPath
-Aliases: PSPath
+Aliases: PSPath, LP
 
 Required: True
 Position: Named

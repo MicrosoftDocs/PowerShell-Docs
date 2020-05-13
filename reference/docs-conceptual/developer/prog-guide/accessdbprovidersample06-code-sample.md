@@ -11,18 +11,22 @@ caps.latest.revision: 7
 ---
 # AccessDbProviderSample06 Code Sample
 
-The following code shows the implementation of the Windows PowerShell content provider described in [Creating a Windows PowerShell Content Provider](./creating-a-windows-powershell-content-provider.md). This provider enables the user to manipulate the contents of the items in a data store.
+The following code shows the implementation of the Windows PowerShell content provider described in
+[Creating a Windows PowerShell Content Provider](./creating-a-windows-powershell-content-provider.md).
+This provider enables the user to manipulate the contents of the items in a data store.
 
 > [!NOTE]
-> You can download the C# source file (AccessDBSampleProvider06.cs) for this provider by using the Microsoft Windows Software Development Kit for Windows Vista and Microsoft .NET Framework 3.0 Runtime Components. For download instructions, see [How to Install Windows PowerShell and Download the Windows PowerShell SDK](/powershell/scripting/developer/installing-the-windows-powershell-sdk).
->
-> The downloaded source files are available in the **\<PowerShell Samples>** directory.
->
-> For more information about other Windows PowerShell provider implementations, see [Designing Your Windows PowerShell Provider](./designing-your-windows-powershell-provider.md).
+> You can download the C# source file (AccessDBSampleProvider06.cs) for this provider by using the
+> Microsoft Windows Software Development Kit for Windows Vista and Microsoft .NET Framework 3.0
+> Runtime Components. For download instructions, see
+> [How to Install Windows PowerShell and Download the Windows PowerShell SDK](/powershell/scripting/developer/installing-the-windows-powershell-sdk).
+> The downloaded source files are available in the **\<PowerShell Samples>** directory. For more
+> information about other Windows PowerShell provider implementations, see
+> [Designing Your Windows PowerShell Provider](./designing-your-windows-powershell-provider.md).
 
 ## Code Sample
 
-[!code-csharp[AccessDBProviderSample06.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample06/AccessDBProviderSample06.cs#L11-L2399 "AccessDBProviderSample06.cs")]
+:::code language="csharp" source="~/../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample06/AccessDBProviderSample06.cs" range="11-2399":::
 
 ## See Also
 

@@ -126,7 +126,7 @@ Running  dhcp               DHCP Client
 $job | Receive-Job -Keep
 ```
 
-```output
+```Output
 Cannot find any service with service name 'fakeservice'.
     + CategoryInfo          : ObjectNotFound: (fakeservice:String) [Get-Service], ServiceCommandException
     + FullyQualifiedErrorId : NoServiceFoundForGivenName,Microsoft.PowerShell.Commands.GetServiceCommand
@@ -255,7 +255,7 @@ Start-Job -Name TestJob -ScriptBlock {dir C:\, Z:\}
 Receive-Job -Name TestJob
 ```
 
-```output
+```Output
     Directory: C:\
 
 Mode                LastWriteTime         Length Name
@@ -275,7 +275,7 @@ Cannot find drive. A drive with the name 'Z' does not exist.
 Receive-Job -Name TestJob
 ```
 
-```output
+```Output
 
 ```
 
@@ -285,7 +285,7 @@ $job = Get-Job -Name TestJob
 $job.ChildJobs[0].Error
 ```
 
-```output
+```Output
 Cannot find drive. A drive with the name 'Z' does not exist.
     + CategoryInfo          : ObjectNotFound: (Z:String) [Get-ChildItem], DriveNotFoundException
     + FullyQualifiedErrorId : DriveNotFound,Microsoft.PowerShell.Commands.GetChildItemCommand
@@ -419,7 +419,7 @@ You can also pipe a job object to `Receive-Job`.
 
 ```yaml
 Type: Job[]
-Parameter Sets: Location, Session, ComputerName
+Parameter Sets: Location, ComputerName, Session
 Aliases:
 
 Required: True

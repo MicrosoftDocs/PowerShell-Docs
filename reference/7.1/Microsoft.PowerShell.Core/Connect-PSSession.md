@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Core
 ms.date: 5/15/2019
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/connect-pssession?view=powershell-7&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/connect-pssession?view=powershell-7.x&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Connect-PSSession
 ---
@@ -493,14 +493,15 @@ Accept wildcard characters: False
 Specifies the friendly names of the disconnected sessions.
 
 ```yaml
-Accept pipeline input: False
-Position: Named
-Accept wildcard characters: False
-Parameter Sets: Name, ComputerName, ConnectionUri
-Required: True (Name), False (ComputerName, ConnectionUri)
-Default value: None
-Aliases: 
 Type: String[]
+Parameter Sets: Name, ComputerName, ConnectionUri
+Aliases:
+
+Required: True (Name), False (ComputerName, ConnectionUri)
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
 ```
 
 ### -Port

@@ -189,7 +189,7 @@ console, including:
 
 For example, `Show-Markdown` renders a Markdown file in the console:
 
-![Show-Markdown example](./images/markdown_example.png)
+![Show-Markdown example](media/What-s-New-in-PowerShell-Core-61/markdown_example.png)
 
 For more information about how these cmdlets work, check out
 [this RFC](https://github.com/PowerShell/PowerShell-RFC/blob/master/5-Final/RFC0025-Native-Markdown-Rendering.md).
@@ -308,7 +308,7 @@ Thanks to [@bergmeister](https://github.com/bergmeister), now you can enable a c
 Windows. Now you can open your system-wide installation of PowerShell 6.1 from any folder in the
 Windows Explorer:
 
-![Shell context menu for PowerShell 6](./images/shell_context_menu.png)
+![Shell context menu for PowerShell 6](media/What-s-New-in-PowerShell-Core-61/shell_context_menu.png)
 
 ## Goodies
 
@@ -317,7 +317,7 @@ Windows Explorer:
 Thanks to [@bergmeister](https://github.com/bergmeister), the PowerShell Core shortcut's jump list
 now includes "Run as Administrator":
 
-![Run as administrator in the PowerShell 6 jump list](./images/jumplist.png)
+![Run as administrator in the PowerShell 6 jump list](media/What-s-New-in-PowerShell-Core-61/jumplist.png)
 
 ### `cd -` returns to previous directory
 

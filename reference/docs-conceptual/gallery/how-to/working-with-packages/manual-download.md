@@ -20,7 +20,7 @@ then copy to an internal repository.
 
 Each page has a link for Manual Download, as shown here:
 
-![Manual Download](../../Images/packagedisplaypagewithpseditions.png)
+![Manual Download](media/manual-download/packagedisplaypagewithpseditions.png)
 
 To download manually, click on **Download the raw nupkg file**. A copy of the package is copied to
 the download folder for your browser with the name `<name>.<version>.nupkg`.
@@ -51,7 +51,8 @@ For the list of NuGet-specific elements, see [Using manual download to acquire a
 
 The steps are as follows:
 
-1. Extract the contents of the NuGet package to a local folder.
+1. Unblock the Internet-downloaded NuGet package (`.nupkg`) file, for example using `Unblock-File -Path C:\Downloads\module.nupkg` cmdlet.
+2. Extract the contents of the NuGet package to a local folder.
 2. Delete the NuGet-specific elements from the folder.
 3. Rename the folder. The default folder name is usually `<name>.<version>`. The version can
    include `-prerelease` if the module is tagged as a prerelease version. Rename the folder to just
@@ -74,7 +75,8 @@ The easiest approach is to extract the NuGet package, then use the script direct
 
 The steps are as follows:
 
-1. Extract the contents of the NuGet package.
+1. Unblock the Internet-downloaded NuGet package (`.nupkg`) file, for example using `Unblock-File -Path C:\Downloads\package.nupkg` cmdlet.
+2. Extract the contents of the NuGet package.
 2. The `.PS1` file in the folder can be used directly from this location.
 3. You may delete the NuGet-specific elements in the folder.
 

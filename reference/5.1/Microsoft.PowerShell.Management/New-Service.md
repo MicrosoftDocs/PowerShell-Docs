@@ -204,7 +204,6 @@ Sets the startup type of the service. The acceptable values for this parameter a
 - **Automatic** - The service is started or was started by the operating system, at system start-up.
   If an automatically started service depends on a manually started service, the manually started
   service is also started automatically at system startup.
-- **AutomaticDelayedStart** - Starts shortly after the system boots.
 - **Disabled** - The service is disabled and cannot be started by a user or application.
 - **Manual** - The service is started only manually, by a user, using the Service Control Manager,
   or by an application.

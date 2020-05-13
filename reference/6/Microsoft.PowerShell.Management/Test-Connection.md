@@ -285,7 +285,7 @@ Accept wildcard characters: False
 Specifies the interval between pings, in seconds.
 
 ```yaml
-Type: System.Int32
+Type: Int32
 Parameter Sets: PingCount, PingContinues
 Aliases:
 
@@ -354,7 +354,7 @@ controlled by the operating system. The default value for Windows 10 is 128 hops
 ```yaml
 Type: Int32
 Parameter Sets: PingCount, PingContinues, TraceRoute
-Aliases: Ttl
+Aliases: Ttl, TimeToLive, Hops
 
 Required: False
 Position: Named

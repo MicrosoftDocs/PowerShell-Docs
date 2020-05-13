@@ -238,9 +238,7 @@ Otherwise, this cmdlet does not generate any output.
 
 ## NOTES
 
-* To create a new alias, use Set-Alias or New-Alias. To change an alias, use **Set-Alias**. To delete an alias, use Remove-Item.
-
-*
+* To create a new alias, use `Set-Alias` or `New-Alias`. To change an alias, use `Set-Alias`. To delete an alias, use `Remove-Item`.
 
 ## RELATED LINKS
 

@@ -105,8 +105,7 @@ Write-Host "I won't print" 6>$null
 
 ```
 
-This command displays the string "Red on white text." The text is 'red', as defined by the `ForegroundColor` parameter.
-The background is 'white', as defined by the `BackgroundColor` parameter.
+These commands effectively suppress output of the Write-Host cmdlet. The first one uses the InformationAction parameter with the Ignore Value to suppress output to the information stream. The second example redirects the information stream of the command to the $null variable and thereby suppresses it.
 
 ## PARAMETERS
 
@@ -253,7 +252,7 @@ However, the host might display the objects that `Write-Host` sends to it.
 
 ## RELATED LINKS
 
-[Clear-Host](../Microsoft.PowerShell.Core/Functions/Clear-Host.md)
+[Clear-Host](../Microsoft.PowerShell.Core/Clear-Host.md)
 
 [Out-Host](../Microsoft.PowerShell.Core/Out-Host.md)
 
@@ -268,5 +267,3 @@ However, the host might display the objects that `Write-Host` sends to it.
 [Write-Verbose](Write-Verbose.md)
 
 [Write-Warning](Write-Warning.md)
-
-

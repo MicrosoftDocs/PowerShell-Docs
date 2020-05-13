@@ -3,7 +3,7 @@ external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 04/23/2019
+ms.date: 05/11/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/send-mailmessage?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Send-MailMessage
@@ -33,6 +33,12 @@ You must specify a Simple Mail Transfer Protocol (SMTP) server or the `Send-Mail
 fails. Use the **SmtpServer** parameter or set the `$PSEmailServer` variable to a valid SMTP server.
 The value assigned to `$PSEmailServer` is the default SMTP setting for PowerShell. For more
 information, see [about_Preference_Variables](../Microsoft.PowerShell.Core/About/about_Preference_Variables.md).
+
+> [!WARNING]
+> The `Send-MailMessage` cmdlet is obsolete. This cmdlet does not guarantee secure connections to
+> SMTP servers. While there is no immediate replacement available in PowerShell, we recommend you do
+> not use `Send-MailMessage`. For more information, see
+> [Platform Compatibility note DE0005](https://aka.ms/SendMailMessage).
 
 ## EXAMPLES
 

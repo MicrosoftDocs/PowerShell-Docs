@@ -324,7 +324,7 @@ information about PowerShell jobs, see
     switch to automatically follow `next` `rel` links until they no longer exist or once we hit the
     optional `-MaximumFollowRelLink` parameter value.
 - Add `-CustomMethod` parameter to web cmdlets to allow for non-standard method verbs. (#3142)
-  (Thanks to [@Lee303](https://github.com/Lee303)!)
+  (Thanks to @Lee303!)
 - Add `SslProtocol` support to Web Cmdlets. (#5329) (Thanks
   [@markekraus](https://github.com/markekraus)!)
 - Add Multipart support to web cmdlets. (#4782) (Thanks [@markekraus](https://github.com/markekraus))

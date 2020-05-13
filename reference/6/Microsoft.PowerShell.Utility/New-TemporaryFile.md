@@ -3,7 +3,7 @@ external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 06/09/2017
+ms.date: 03/16/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/new-temporaryfile?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: New-TemporaryFile
@@ -21,11 +21,24 @@ New-TemporaryFile [-WhatIf] [-Confirm] [<CommonParameters>]
 
 ## DESCRIPTION
 
-The `New-TemporaryFile` cmdlet creates an empty file that has the .tmp file name extension.
-This cmdlet names the file `tmp`NNNN`.tmp`, where NNNN is a random hexadecimal number.
-The cmdlet creates the file in your `$Env:Temp` folder.
-
 This cmdlet creates temporary files that you can use in scripts.
+
+The `New-TemporaryFile` cmdlet creates an empty file that has the `.tmp` file name extension.
+This cmdlet names the file `tmp<NNNN>.tmp`, where `<NNNN>` is a random hexadecimal number.
+The cmdlet creates the file in your **TEMP** folder.
+
+This cmdlet uses the [Path.GetTempPath()](/dotnet/api/system.io.path.gettemppath) method to find
+your **TEMP** folder. This method checks for the existence of environment variables in the following
+order and uses the first path found:
+
+- On Windows platforms:
+
+  1. The path specified by the TMP environment variable.
+  1. The path specified by the TEMP environment variable.
+  1. The path specified by the USERPROFILE environment variable.
+  1. The Windows directory.
+
+- On non-Windows platforms: Uses the path specified by the TMPDIR environment variable.
 
 ## EXAMPLES
 

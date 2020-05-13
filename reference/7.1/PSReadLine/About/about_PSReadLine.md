@@ -1,8 +1,8 @@
 ---
-keywords: powershell,cmdlet
+keywords: powershell
 locale: en-us
 ms.date: 02/10/2020
-online version: https://docs.microsoft.com/powershell/module/psreadline/about/about_psreadline?view=powershell-7&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/psreadline/about/about_psreadline?view=powershell-7.x&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: About PSReadLine
 ---
@@ -12,12 +12,12 @@ title: About PSReadLine
 
 ## SHORT DESCRIPTION
 
-PSReadLine provides an improved command line-editing experience in the
+PSReadLine provides an improved command-line editing experience in the
 PowerShell console.
 
 ## LONG DESCRIPTION
 
-PSReadLine 2.0 provides a powerful command line-editing experience for the
+PSReadLine 2.0 provides a powerful command-line editing experience for the
 PowerShell console. It provides:
 
 - Syntax coloring of the command line
@@ -27,7 +27,7 @@ PowerShell console. It provides:
 - Cmd and Emacs modes
 - Many configuration options
 - Bash style completion (optional in Cmd mode, default in Emacs mode)
-- Emacs yank/kill ring
+- Emacs yank/kill-ring
 - PowerShell token based "word" movement and kill
 
 The following functions are available in the class
@@ -89,7 +89,7 @@ Delete the character before the cursor.
 ### BackwardDeleteLine
 
 Like BackwardKillLine - deletes text from the point to the start of the line,
-but does not put the deleted text in the kill ring.
+but does not put the deleted text in the kill-ring.
 
 - Cmd: `<Ctrl+Home>`
 - Vi insert mode: `<Ctrl+u>`, `<Ctrl+Home>`
@@ -104,7 +104,7 @@ Deletes the previous word.
 ### BackwardKillLine
 
 Clear the input from the start of the input to the cursor. The cleared text is
-placed in the kill ring.
+placed in the kill-ring.
 
 - Emacs: `<Ctrl+u>`, `<Ctrl+x,Backspace>`
 
@@ -112,7 +112,7 @@ placed in the kill ring.
 
 Clear the input from the start of the current word to the cursor. If the
 cursor is between words, the input is cleared from the start of the previous
-word to the cursor. The cleared text is placed in the kill ring.
+word to the cursor. The cleared text is placed in the kill-ring.
 
 - Cmd: `<Ctrl+Backspace>`
 - Emacs: `<Alt+Backspace>`, `<Escape,Backspace>`
@@ -196,7 +196,7 @@ Delete the next word.
 ### ForwardDeleteLine
 
 Like ForwardKillLine - deletes text from the point to the end of the line, but
-does not put the deleted text in the kill ring.
+does not put the deleted text in the kill-ring.
 
 - Cmd: `<Ctrl+End>`
 - Vi insert mode: `<Ctrl+End>`
@@ -227,7 +227,7 @@ Invert the case of the current character and move to the next one.
 ### KillLine
 
 Clear the input from the cursor to the end of the input. The cleared text is
-placed in the kill ring.
+placed in the kill-ring.
 
 - Emacs: `<Ctrl+k>`
 
@@ -241,7 +241,7 @@ Kill the text between the cursor and the mark.
 
 Clear the input from the cursor to the end of the current word. If the cursor
 is between words, the input is cleared from the cursor to the end of the next
-word. The cleared text is placed in the kill ring.
+word. The cleared text is placed in the kill-ring.
 
 - Cmd: `<Ctrl+Delete>`
 - Emacs: `<Alt+d>`, `<Escape,d>`
@@ -310,7 +310,7 @@ Reverts all of the input to the current input.
 
 Clear the input from the start of the current word to the cursor. If the
 cursor is between words, the input is cleared from the start of the previous
-word to the cursor. The cleared text is placed in the kill ring.
+word to the cursor. The cleared text is placed in the kill-ring.
 
 Function is unbound.
 
@@ -318,7 +318,7 @@ Function is unbound.
 
 Clear the input from the cursor to the end of the current word. If the cursor
 is between words, the input is cleared from the cursor to the end of the next
-word. The cleared text is placed in the kill ring.
+word. The cleared text is placed in the kill-ring.
 
 Function is unbound.
 
@@ -349,7 +349,7 @@ Undo all previous edits for line.
 
 Clear the input from the start of the current word to the cursor. If the
 cursor is between words, the input is cleared from the start of the previous
-word to the cursor. The cleared text is placed in the kill ring.
+word to the cursor. The cleared text is placed in the kill-ring.
 
 - Emacs: `<Ctrl+w>`
 
@@ -609,7 +609,7 @@ negative, start from the last argument.
 ### YankPop
 
 If the previous operation was Yank or YankPop, replace the previously yanked
-text with the next killed text from the kill ring.
+text with the next killed text from the kill-ring.
 
 - Emacs: `<Alt+y>`, `<Escape,y>`
 
@@ -1302,7 +1302,7 @@ Add a command line to history without executing it.
 void ClearKillRing()
 ```
 
-Clear the kill ring.  This is mostly used for testing.
+Clear the kill-ring.  This is mostly used for testing.
 
 ```csharp
 void Delete(int start, int length)
@@ -1427,9 +1427,9 @@ history files is stored at `$env:XDG_DATA_HOME/powershell/PSReadLine` or
 
 ### FEEDBACK & CONTRIBUTING TO PSReadLine
 
-[PSReadLine on GitHub](https://github.com/lzybkr/PSReadLine)
+[PSReadLine on GitHub](https://github.com/PowerShell/PSReadLine)
 
-Feel free to submit a pull request or submit feedback on the github page.
+Feel free to submit a pull request or submit feedback on the GitHub page.
 
 ## SEE ALSO
 

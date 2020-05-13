@@ -23,7 +23,7 @@ PowerShell.
 Adds custom properties and methods to an instance of a PowerShell object.
 
 ### [Add-Type](Add-Type.md)
-Adds a Microsoft .NET Core type (a class) to a PowerShell session.
+Adds a Microsoft .NET Core class to a PowerShell session.
 
 ### [Clear-Variable](Clear-Variable.md)
 Deletes the value of a variable.
@@ -32,11 +32,13 @@ Deletes the value of a variable.
 Compares two sets of objects.
 
 ### [ConvertFrom-Csv](ConvertFrom-Csv.md)
-Converts object properties in comma-separated value (CSV) format into CSV versions of the original
-objects.
+Converts object properties in comma-separated value (CSV) format into CSV versions of the original objects.
 
 ### [ConvertFrom-Json](ConvertFrom-Json.md)
 Converts a JSON-formatted string to a custom object or a hash table.
+
+### [ConvertFrom-Markdown](ConvertFrom-Markdown.md)
+Convert the contents of a string or a file to a **MarkdownInfo** object.
 
 ### [ConvertFrom-SddlString](ConvertFrom-SddlString.md)
 Converts a SDDL string to a custom object.
@@ -45,7 +47,7 @@ Converts a SDDL string to a custom object.
 Converts a string containing one or more key and value pairs to a hash table.
 
 ### [ConvertTo-Csv](ConvertTo-Csv.md)
-Converts objects into a series of comma-separated value (CSV) strings.
+Converts objects into a series of character-separated value (CSV) strings.
 
 ### [ConvertTo-Html](ConvertTo-Html.md)
 Converts Microsoft .NET Framework objects into HTML that can be displayed in a Web browser.
@@ -78,8 +80,7 @@ Exports information about currently defined aliases to a file.
 Creates an XML-based representation of an object or objects and stores it in a file.
 
 ### [Export-Csv](Export-Csv.md)
-Converts objects into a series of comma-separated value (CSV) strings and saves the strings to a
-file.
+Converts objects into a series of comma-separated value (CSV) strings and saves the strings to a file.
 
 ### [Export-FormatData](Export-FormatData.md)
 Saves formatting data from the current session in a formatting file.
@@ -91,7 +92,7 @@ Exports commands from another session and saves them in a PowerShell module.
 Uses a customized view to format the output.
 
 ### [Format-Hex](Format-Hex.md)
-Displays a file or input such as a string, as hexadecimal.
+Displays a file or other input as hexadecimal.
 
 ### [Format-List](Format-List.md)
 Formats the output as a list of properties in which each property appears on a new line.
@@ -126,6 +127,9 @@ Gets the formatting data in the current session.
 ### [Get-Host](Get-Host.md)
 Gets an object that represents the current host program.
 
+### [Get-MarkdownOption](Get-MarkdownOption.md)
+Returns the current colors and styles used for rendering Markdown content in the console.
+
 ### [Get-Member](Get-Member.md)
 Gets the properties and methods of objects.
 
@@ -156,6 +160,9 @@ Gets the current UI culture settings in the operating system.
 ### [Get-Unique](Get-Unique.md)
 Returns unique items from a sorted list.
 
+### [Get-Uptime](Get-Uptime.md)
+Get the **TimeSpan** since last boot.
+
 ### [Get-Variable](Get-Variable.md)
 Gets the variables in the current console.
 
@@ -175,11 +182,10 @@ Imports a CLIXML file and creates corresponding objects in PowerShell.
 Creates table-like custom objects from the items in a comma-separated value (CSV) file.
 
 ### [Import-LocalizedData](Import-LocalizedData.md)
-Imports language-specific data into scripts and functions based on the UI culture that is selected
-for the operating system.
+Imports language-specific data into scripts and functions based on the UI culture that is selected for the operating system.
 
 ### [Import-PowerShellDataFile](Import-PowerShellDataFile.md)
-Imports values from a .PSD1 file without invoking its contents
+Imports values from a `.PSD1` file without invoking its contents.
 
 ### [Import-PSSession](Import-PSSession.md)
 Imports commands from another session into the current session.
@@ -191,14 +197,16 @@ Runs commands or expressions on the local computer.
 Sends an HTTP or HTTPS request to a RESTful web service.
 
 ### [Invoke-WebRequest](Invoke-WebRequest.md)
-Gets content from a web page on the Internet.
+Gets content from a web page on the internet.
+
+### [Join-String](Join-String.md)
+Combines objects from the pipeline into a single string.
 
 ### [Measure-Command](Measure-Command.md)
 Measures the time it takes to run script blocks and cmdlets.
 
 ### [Measure-Object](Measure-Object.md)
-Calculates the numeric properties of objects, and the characters, words, and lines in string
-objects, such as files of text.
+Calculates the numeric properties of objects, and the characters, words, and lines in string objects, such as files of text.
 
 ### [New-Alias](New-Alias.md)
 Creates a new alias.
@@ -269,6 +277,9 @@ Creates or changes an alias for a cmdlet or other command in the current PowerSh
 ### [Set-Date](Set-Date.md)
 Changes the system time on the computer to a time that you specify.
 
+### [Set-MarkdownOption](Set-MarkdownOption.md)
+Sets the colors and styles used for rendering Markdown content in the console.
+
 ### [Set-PSBreakpoint](Set-PSBreakpoint.md)
 Sets a breakpoint on a line, command, or variable.
 
@@ -276,7 +287,10 @@ Sets a breakpoint on a line, command, or variable.
 Configures, starts, and stops a trace of PowerShell components.
 
 ### [Set-Variable](Set-Variable.md)
-Sets the value of a variable.
+Sets the value of a variable. Creates the variable if one with the requested name does not exist.
+
+### [Show-Markdown](Show-Markdown.md)
+Shows a Markdown file or string in the console in a friendly way using VT100 escape sequences or in a browser using HTML.
 
 ### [Sort-Object](Sort-Object.md)
 Sorts objects by property values.
@@ -324,7 +338,7 @@ Writes customized output to a host.
 Specifies how PowerShell handles information stream data for a command.
 
 ### [Write-Output](Write-Output.md)
-Sends the specified objects to the next command in the pipeline.
+Sends the specified objects to the next command in the pipeline. If the command is the last command in the pipeline, the objects are displayed in the console.
 
 ### [Write-Progress](Write-Progress.md)
 Displays a progress bar within a PowerShell command window.
@@ -334,3 +348,4 @@ Writes text to the verbose message stream.
 
 ### [Write-Warning](Write-Warning.md)
 Writes a warning message.
+

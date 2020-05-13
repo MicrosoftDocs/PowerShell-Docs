@@ -17,20 +17,21 @@ Clears the display in the host program.
 ## SYNTAX
 
 ```
-Clear-Host
+Clear-Host [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 
-The `Clear-Host` function removes all text from the current display, including commands and output that might have accumulated.
-When complete, it displays the command prompt.
-You can use the function name or its alias, `cls`.
+The `Clear-Host` function removes all text from the current display, including commands and output
+that might have accumulated. When complete, it displays the command prompt. You can use the function
+name or its alias, `cls`.
 
-`Clear-Host` affects only the current display.
-It does not delete saved results or remove any items from the session.
-Session-specific items, such as variables and functions, are not affected by this function.
+`Clear-Host` affects only the current display. It does not delete saved results or remove any items
+from the session. Session-specific items, such as variables and functions, are not affected by this
+function.
 
-Because the behavior of the `Clear-Host` function is determined by the host program, `Clear-Host` might work differently in different host programs.
+Because the behavior of the `Clear-Host` function is determined by the host program, `Clear-Host`
+might work differently in different host programs.
 
 ## EXAMPLES
 
@@ -72,6 +73,14 @@ PS C:>
 
 This command uses the `cls` alias of `Clear-Host` to clear the current display.
 
+## PARAMETERS
+
+### CommonParameters
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+-InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+
 ## INPUTS
 
 ### None
@@ -86,15 +95,15 @@ You cannot pipe input to `Clear-Host`.
 
 ## NOTES
 
-`Clear-Host` is a simple function, not an advanced function.
-As such, you cannot use common parameters, such as **Debug**, in a `Clear-Host` command.
+`Clear-Host` is a simple function, not an advanced function. As such, you cannot use common
+parameters, such as **Debug**, in a `Clear-Host` command.
 
 ## RELATED LINKS
 
-[Get-Host](../../Microsoft.PowerShell.Utility/Get-Host.md)
+[Get-Host](../Microsoft.PowerShell.Utility/Get-Host.md)
 
-[Out-Host](../Out-Host.md)
+[Out-Host](Out-Host.md)
 
-[Read-Host](../../Microsoft.PowerShell.Utility/Read-Host.md)
+[Read-Host](../Microsoft.PowerShell.Utility/Read-Host.md)
 
-[Write-Host](../../Microsoft.PowerShell.Utility/Write-Host.md)
+[Write-Host](../Microsoft.PowerShell.Utility/Write-Host.md)

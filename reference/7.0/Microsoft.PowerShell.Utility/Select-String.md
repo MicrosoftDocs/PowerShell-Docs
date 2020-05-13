@@ -48,20 +48,20 @@ Select-String [-Culture <String>] [-Pattern] <String[]> [-Path] <String[]> -Raw 
  [-AllMatches] [-Encoding <Encoding>] [-Context <Int32[]>] [<CommonParameters>]
 ```
 
-### LiteralFile
-
-```
-Select-String [-Culture <String>] [-Pattern] <String[]> -LiteralPath <String[]> [-SimpleMatch]
- [-CaseSensitive] [-Quiet] [-List] [-NoEmphasis] [-Include <String[]>] [-Exclude <String[]>]
- [-NotMatch] [-AllMatches] [-Encoding <Encoding>] [-Context <Int32[]>] [<CommonParameters>]
-```
-
 ### LiteralFileRaw
 
 ```
 Select-String [-Culture <String>] [-Pattern] <String[]> -LiteralPath <String[]> -Raw [-SimpleMatch]
  [-CaseSensitive] [-List] [-NoEmphasis] [-Include <String[]>] [-Exclude <String[]>] [-NotMatch]
  [-AllMatches] [-Encoding <Encoding>] [-Context <Int32[]>] [<CommonParameters>]
+```
+
+### LiteralFile
+
+```
+Select-String [-Culture <String>] [-Pattern] <String[]> -LiteralPath <String[]> [-SimpleMatch]
+ [-CaseSensitive] [-Quiet] [-List] [-NoEmphasis] [-Include <String[]>] [-Exclude <String[]>]
+ [-NotMatch] [-AllMatches] [-Encoding <Encoding>] [-Context <Int32[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION

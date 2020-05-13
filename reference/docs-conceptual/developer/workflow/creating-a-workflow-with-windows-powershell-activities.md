@@ -71,5 +71,5 @@ The following procedures describe how to create a workflow that checks the domai
 
     When you have finished the procedures, the workflow design window should look like this.
 
-    ![JoinDomain XAML in Workflow designer](../media/joindomainworkflow.png)
-    ![JoinDomain XAML in Workflow designer](../media/joindomainworkflow.png "JoinDomainWorkflow")
+    ![JoinDomain XAML in Workflow designer](media/creating-a-workflow-with-windows-powershell-activities/joindomainworkflow.png)
+    ![JoinDomain XAML in Workflow designer](media/creating-a-workflow-with-windows-powershell-activities/joindomainworkflow.png "JoinDomainWorkflow")

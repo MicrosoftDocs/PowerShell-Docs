@@ -50,8 +50,8 @@ Help topics.
 
 This cmdlet was introduced in PowerShell 3.0.
 
-Because this cmdlet requires a user interface, it does not work on Windows Server Core.
-This cmdlet is only available on Windows systems that support the Windows Desktop.
+Because this cmdlet requires a user interface, it does not work on Windows Server Core or Windows
+Nano Server. This cmdlet is only available on Windows systems that support the Windows Desktop.
 
 ## EXAMPLES
 

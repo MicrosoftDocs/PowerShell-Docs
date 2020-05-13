@@ -15,7 +15,8 @@ This module extends the existing PowerShell BackgroundJob to include a new threa
 **ThreadJob** job. This is a lighter weight solution for running concurrent PowerShell scripts that
 works within the existing PowerShell job infrastructure.
 
-## threadjob Cmdlets
+## ThreadJob Cmdlets
 
 ### [Start-ThreadJob](Start-ThreadJob.md)
 Creates background jobs similar to the `Start-Job` cmdlet.
+

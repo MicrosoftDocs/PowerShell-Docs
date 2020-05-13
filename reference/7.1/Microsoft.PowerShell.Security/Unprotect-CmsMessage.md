@@ -2,8 +2,8 @@
 external help file: Microsoft.PowerShell.Security.dll-Help.xml
 keywords: powershell,cmdlet
 locale: en-us
-ms.date: 06/09/2017
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.security/unprotect-cmsmessage?view=powershell-7&WT.mc_id=ps-gethelp
+ms.date: 02/03/2020
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.security/unprotect-cmsmessage?view=powershell-7.x&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Unprotect-CmsMessage
 ---
@@ -42,35 +42,47 @@ Unprotect-CmsMessage [-LiteralPath] <String> [-IncludeContext] [[-To] <CmsMessag
 
 ## DESCRIPTION
 
-The `Unprotect-CmsMessage` cmdlet decrypts content that has been encrypted by using the Cryptographic Message Syntax (CMS) format.
+The `Unprotect-CmsMessage` cmdlet decrypts content that has been encrypted by using the
+Cryptographic Message Syntax (CMS) format.
 
-The CMS cmdlets support encryption and decryption of content using the IETF standard format for cryptographically protecting messages, as documented by [RFC5652](https://tools.ietf.org/html/rfc5652).
+The CMS cmdlets support encryption and decryption of content using the IETF standard format for
+cryptographically protecting messages, as documented by
+[RFC5652](https://tools.ietf.org/html/rfc5652).
 
-The CMS encryption standard uses public key cryptography, where the keys used to encrypt content (the public key) and the keys used to decrypt content (the private key) are separate.
-Your public key can be shared widely, and is not sensitive data.
-If any content is encrypted with this public key, only your private key can decrypt it.
-For more information, see [Public-key cryptography](https://en.wikipedia.org/wiki/Public-key_cryptography).
+The CMS encryption standard uses public key cryptography, where the keys used to encrypt content
+(the public key) and the keys used to decrypt content (the private key) are separate. Your public
+key can be shared widely, and is not sensitive data. If any content is encrypted with this public
+key, only your private key can decrypt it. For more information, see
+[Public-key cryptography](https://en.wikipedia.org/wiki/Public-key_cryptography).
 
-`Unprotect-CmsMessage` decrypts content that has been encrypted in CMS format.
-You can run this cmdlet to decrypt content that you have encrypted by running the `Protect-CmsMessage` cmdlet.
-You can specify content that you want to decrypt as a string, by the encryption event log record ID number, or by path to the encrypted content.
-The `Unprotect-CmsMessage` cmdlet returns the decrypted content.
+`Unprotect-CmsMessage` decrypts content that has been encrypted in CMS format. You can run this
+cmdlet to decrypt content that you have encrypted by running the `Protect-CmsMessage` cmdlet. You
+can specify content that you want to decrypt as a string, by the encryption event log record ID
+number, or by path to the encrypted content. The `Unprotect-CmsMessage` cmdlet returns the decrypted
+content.
+
+Support for Linux and macOS was added in PowerShell 7.1.
 
 ## EXAMPLES
 
 ### Example 1: Decrypt a message
 
+In the following example, you decrypt content that is located at the literal path
+`C:\Users\Test\Documents\PowerShell`. For the value of the required **To** parameter, this example
+uses the thumbprint of the certificate that was used to perform the encryption. The decrypted
+message, "Try the new Break All command," is the result.
+
 ```powershell
-Unprotect-CmsMessage -LiteralPath "C:\Users\Test\Documents\PowerShell\Future_Plans.txt" -To '0f 8j b1 ab e0 ce 35 1d 67 d2 f2 6f a2 d2 00 cl 22 z9 m9 85'
+$parameters = @{
+  LiteralPath = "C:\Users\Test\Documents\PowerShell\Future_Plans.txt"
+  To = '0f 8j b1 ab e0 ce 35 1d 67 d2 f2 6f a2 d2 00 cl 22 z9 m9 85'
+}
+Unprotect-CmsMessage -LiteralPath @parameters
 ```
 
-```output
+```Output
 Try the new Break All command
 ```
-
-In the following example, you decrypt content that is located at the literal path C:\Users\Test\Documents\PowerShell.
-For the value of the required **To** parameter, this example uses the thumbprint of the certificate that was used to perform the encryption.
-The decrypted message, "Try the new Break All command," is the result.
 
 ## PARAMETERS
 
@@ -122,11 +134,10 @@ Accept wildcard characters: False
 
 ### -LiteralPath
 
-Specifies the path to encrypted content that you want to decrypt.
-Unlike **Path**, the value of **LiteralPath** is used exactly as it is typed.
-No characters are interpreted as wildcard characters.
-If the path includes escape characters, enclose it in single quotation marks.
-Single quotation marks tell PowerShell not to interpret any characters as escape sequences.
+Specifies the path to encrypted content that you want to decrypt. Unlike **Path**, the value of
+**LiteralPath** is used exactly as it is typed. No characters are interpreted as wildcard
+characters. If the path includes escape characters, enclose it in single quotation marks. Single
+quotation marks tell PowerShell not to interpret any characters as escape sequences.
 
 ```yaml
 Type: String
@@ -180,7 +191,10 @@ Accept wildcard characters: False
 
 ### CommonParameters
 
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+-InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 

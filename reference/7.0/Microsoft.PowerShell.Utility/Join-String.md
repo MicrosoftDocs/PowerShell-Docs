@@ -209,7 +209,7 @@ Specifies the text to be joined. Enter a variable that contains the text, or typ
 expression that gets the objects to join into strings.
 
 ```yaml
-Type: PSObject
+Type: PSObject[]
 Parameter Sets: (All)
 Aliases:
 

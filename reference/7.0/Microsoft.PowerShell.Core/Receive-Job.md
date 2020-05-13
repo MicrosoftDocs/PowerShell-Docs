@@ -126,7 +126,7 @@ Running  dhcp               DHCP Client
 $job | Receive-Job -Keep
 ```
 
-```output
+```Output
 Cannot find any service with service name 'fakeservice'.
     + CategoryInfo          : ObjectNotFound: (fakeservice:String) [Get-Service], ServiceCommandException
     + FullyQualifiedErrorId : NoServiceFoundForGivenName,Microsoft.PowerShell.Commands.GetServiceCommand
@@ -255,7 +255,7 @@ Start-Job -Name TestJob -ScriptBlock {dir C:\, Z:\}
 Receive-Job -Name TestJob
 ```
 
-```output
+```Output
     Directory: C:\
 
 Mode                LastWriteTime         Length Name
@@ -275,7 +275,7 @@ Cannot find drive. A drive with the name 'Z' does not exist.
 Receive-Job -Name TestJob
 ```
 
-```output
+```Output
 
 ```
 
@@ -285,7 +285,7 @@ $job = Get-Job -Name TestJob
 $job.ChildJobs[0].Error
 ```
 
-```output
+```Output
 Cannot find drive. A drive with the name 'Z' does not exist.
     + CategoryInfo          : ObjectNotFound: (Z:String) [Get-ChildItem], DriveNotFoundException
     + FullyQualifiedErrorId : DriveNotFound,Microsoft.PowerShell.Commands.GetChildItemCommand
@@ -314,7 +314,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -335,9 +335,9 @@ Aliases: Cn
 
 Required: False
 Position: 1
-Default value: None
+Default value: All computers available
 Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -Force
@@ -363,7 +363,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -405,7 +405,7 @@ Aliases:
 
 Required: True
 Position: 0
-Default value: None
+Default value: All instances
 Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
@@ -444,7 +444,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -461,7 +461,7 @@ Aliases:
 
 Required: False
 Position: 1
-Default value: None
+Default value: All locations
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -497,7 +497,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -517,7 +517,7 @@ Aliases:
 
 Required: False
 Position: 1
-Default value: None
+Default value: All sessions
 Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
@@ -568,7 +568,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -589,7 +589,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

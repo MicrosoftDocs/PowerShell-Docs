@@ -208,7 +208,7 @@ Objects to display in the host.
 ```yaml
 Type: Object
 Parameter Sets: (All)
-Aliases:
+Aliases: Msg, Message
 
 Required: False
 Position: 0
@@ -254,7 +254,7 @@ However, the host might display the objects that `Write-Host` sends to it.
 
 ## RELATED LINKS
 
-[Clear-Host](../Microsoft.PowerShell.Core/Functions/Clear-Host.md)
+[Clear-Host](../Microsoft.PowerShell.Core/Clear-Host.md)
 
 [Out-Host](../Microsoft.PowerShell.Core/Out-Host.md)
 

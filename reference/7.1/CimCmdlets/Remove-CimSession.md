@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: CimCmdlets
 ms.date: 06/09/2017
-online version: https://docs.microsoft.com/powershell/module/cimcmdlets/remove-cimsession?view=powershell-7&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/cimcmdlets/remove-cimsession?view=powershell-7.x&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Remove-CimSession
 ---
@@ -43,33 +43,36 @@ Remove-CimSession -Name <String[]> [-WhatIf] [-Confirm] [<CommonParameters>]
 
 ## DESCRIPTION
 
-The `Remove-CimSession` cmdlet removes one or more CIM session objects from the local PowerShell session.
+The `Remove-CimSession` cmdlet removes one or more CIM session objects from the local PowerShell
+session.
 
 ## EXAMPLES
 
 ### Example 1: Remove all the CIM sessions
 
+This example retrieves all the available CIM sessions on the local computer using the
+[Get-CimSession](Get-CimSession.md) cmdlet, and then removes them using the `Remove-CimSession`.
+
 ```powershell
 Get-CimSession | Remove-CimSession
 ```
 
-This command retrieves all the available CIM sessions on the local computer using the [Get-CimSession](Get-CimSession.md) cmdlet, and then removes them using the `Remove-CimSession`.
-
 ### Example 2: Remove a specific CIM session
+
+This example removes the CIM session that has an **Id** value of 5.
 
 ```powershell
 Remove-CimSession -Id 5
 ```
 
-This command removes the CIM session that has an ID value of 5.
-
 ### Example 3: Show the list of CIM sessions to remove by using the WhatIf parameter
+
+This example uses the common parameter **WhatIf** to specify that the removal should not be done,
+but only output what would happen if it were done.
 
 ```powershell
 Remove-CimSession -Name a* -WhatIf
 ```
-
-This command uses the common parameter **WhatIf** to specify that the removal should not be done, but only output what would happen if it were done.
 
 ## PARAMETERS
 
@@ -77,8 +80,10 @@ This command uses the common parameter **WhatIf** to specify that the removal sh
 
 Specifies the session objects of the CIM sessions to close.
 
-Enter a variable that contains the CIM session, or a command that creates or gets the CIM session, such as the [`New-CimSession`](New-CimSession.md) or [`Get-CimSession`](Get-CimSession.md) cmdlets.
-For more information, see [about_CimSessions](../Microsoft.PowerShell.Core/About/about_CimSession.md).
+Enter a variable that contains the CIM session, or a command that creates or gets the CIM session,
+such as the [`New-CimSession`](New-CimSession.md) or [`Get-CimSession`](Get-CimSession.md) cmdlets.
+For more information, see
+[about_CimSessions](../Microsoft.PowerShell.Core/About/about_CimSession.md).
 
 ```yaml
 Type: CimSession[]
@@ -94,10 +99,8 @@ Accept wildcard characters: False
 
 ### -ComputerName
 
-Specifies an array of names of computers.
-Removes the sessions that connect to the specified computers.
-
-You can specify a fully qualified domain name (FQDN) or a NetBIOS name.
+Specifies an array of names of computers. Removes the sessions that connect to the specified
+computers. You can specify a fully qualified domain name (FQDN) or a NetBIOS name.
 
 ```yaml
 Type: String[]
@@ -113,11 +116,9 @@ Accept wildcard characters: True
 
 ### -Id
 
-Specifies the ID of the CIM session to remove.
-Specify one or more IDs separated by commas, or use the range operator (..) to specify a range of IDs.
-
-An ID is an integer that uniquely identifies the CIM session in the current PowerShell session.
-It is easier to remember and type than InstanceId, but it is unique only within the current PowerShell session.
+Specifies the ID of the CIM session to remove. Specify one or more IDs separated by commas, or use
+the range operator (`..`) to specify a range of IDs. An **Id** is an integer that uniquely
+identifies the CIM session in the current PowerShell session.
 
 For more information about the range operator, see [about_Operators](../Microsoft.PowerShell.Core/About/about_Operators.md).
 
@@ -135,12 +136,11 @@ Accept wildcard characters: False
 
 ### -InstanceId
 
-Specifies the instance ID of the CIM session to remove.
+Specifies the instance ID of the CIM session to remove. **InstanceId** is a Globally Unique
+Identifier (GUID) that uniquely identifies a CIM session. The **InstanceId** is unique, even when
+you have multiple sessions running in PowerShell.
 
-InstanceId is a Globally Unique Identifier (GUID) that uniquely identifies a CIM session.
-The InstanceId is unique, even when you have multiple sessions running in PowerShell.
-
-The InstanceId is stored in the **InstanceId** property of the object that represents a CIM session.
+The **InstanceId** is stored in the **InstanceId** property of the object that represents a CIM session.
 
 ```yaml
 Type: Guid[]
@@ -156,8 +156,8 @@ Accept wildcard characters: False
 
 ### -Name
 
-Specifies the friendly name of the CIM session to remove.
-You can use wildcard characters with this parameter.
+Specifies the friendly name of the CIM session to remove. You can use wildcard characters with this
+parameter.
 
 ```yaml
 Type: String[]
@@ -204,8 +204,11 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+-InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -228,4 +231,3 @@ This cmdlet returns an object that contains CIM session information.
 [New-CimSession](New-CimSession.md)
 
 [about_CimSession](../Microsoft.PowerShell.Core/About/about_CimSession.md)
-

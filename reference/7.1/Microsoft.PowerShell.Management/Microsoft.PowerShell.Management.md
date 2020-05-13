@@ -31,6 +31,9 @@ Clears the contents of an item, but does not delete the item.
 ### [Clear-ItemProperty](Clear-ItemProperty.md)
 Clears the value of a property but does not delete the property.
 
+### [Clear-RecycleBin](Clear-RecycleBin.md)
+Clears the contents of a recycle bin.
+
 ### [Convert-Path](Convert-Path.md)
 Converts a path from a PowerShell path to a PowerShell provider path.
 
@@ -46,11 +49,17 @@ Debugs one or more processes running on the local computer.
 ### [Get-ChildItem](Get-ChildItem.md)
 Gets the items and child items in one or more specified locations.
 
+### [Get-Clipboard](Get-Clipboard.md)
+Gets the contents of the clipboard.  [!NOTE] > On Linux, this cmdlet requires the `xclip` utility to be in the path.
+
 ### [Get-ComputerInfo](Get-ComputerInfo.md)
 Gets a consolidated object of system and operating system properties.
 
 ### [Get-Content](Get-Content.md)
 Gets the content of the item at the specified location.
+
+### [Get-HotFix](Get-HotFix.md)
+Gets the hotfixes that are installed on local or remote computers.
 
 ### [Get-Item](Get-Item.md)
 Gets the item at the specified location.
@@ -74,7 +83,7 @@ Gets drives in the current session.
 Gets information about the specified PowerShell provider.
 
 ### [Get-Service](Get-Service.md)
-Gets the services on the local computer.
+Gets the services on the computer.
 
 ### [Get-TimeZone](Get-TimeZone.md)
 Gets the current time zone or a list of available time zones.
@@ -134,13 +143,16 @@ Renames a property of an item.
 Resolves the wildcard characters in a path, and displays the path contents.
 
 ### [Restart-Computer](Restart-Computer.md)
-Restarts ("reboots") the operating system on local and remote computers.
+Restarts the operating system on local and remote computers.
 
 ### [Restart-Service](Restart-Service.md)
 Stops and then starts one or more services.
 
 ### [Resume-Service](Resume-Service.md)
 Resumes one or more suspended (paused) services.
+
+### [Set-Clipboard](Set-Clipboard.md)
+Sets the contents of the clipboard.
 
 ### [Set-Content](Set-Content.md)
 Writes new content or replaces existing content in a file.
@@ -182,10 +194,11 @@ Stops one or more running services.
 Suspends (pauses) one or more running services.
 
 ### [Test-Connection](Test-Connection.md)
-Sends ICMP echo request packets ("pings") to one or more computers.
+Sends ICMP echo request packets, or pings, to one or more computers.
 
 ### [Test-Path](Test-Path.md)
 Determines whether all elements of a path exist.
 
 ### [Wait-Process](Wait-Process.md)
 Waits for the processes to be stopped before accepting more input.
+

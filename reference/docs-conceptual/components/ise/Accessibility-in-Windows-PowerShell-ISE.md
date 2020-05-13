@@ -48,15 +48,17 @@ retained.
 
 Do one of the following:
 
-- To move the Script Pane above the Console Pane, press <kbd>CTRL</kbd>+<kbd>1</kbd> or, on the toolbar, click the
-  **Show Script Pane Top** icon, or in the **View** menu, click **Show Script Pane Top**.
+- To move the Script Pane above the Console Pane, press <kbd>CTRL</kbd>+<kbd>1</kbd> or, on the
+  toolbar, click the **Show Script Pane Top** icon, or in the **View** menu, click **Show Script
+  Pane Top**.
 
-- To move the Script Pane to the right of the Console Pane, press <kbd>CTRL</kbd>+<kbd>2</kbd> or, on the toolbar,
-  click the **Show Script Pane Right** icon, or in the **View** menu, click **Show Script Pane
-  Right**.
+- To move the Script Pane to the right of the Console Pane, press <kbd>CTRL</kbd>+<kbd>2</kbd> or,
+  on the toolbar, click the **Show Script Pane Right** icon, or in the **View** menu, click **Show
+  Script Pane Right**.
 
-- To maximize the Script Pane, press <kbd>CTRL</kbd>+<kbd>3</kbd> or, on the toolbar, click the **Show Script Pane
-  Maximized** icon, or in the **View** menu, click **Show Script Pane Maximized**.
+- To maximize the Script Pane, press <kbd>CTRL</kbd>+<kbd>3</kbd> or, on the toolbar, click the
+  **Show Script Pane Maximized** icon, or in the **View** menu, click **Show Script Pane
+  Maximized**.
 
 - To maximize the Console Pane and hide the Script Pane, on the far right edge of the row of tabs,
   click the **Hide Script Pane** icon, in the **View** menu, click to deselect the **Show Script
@@ -134,7 +136,7 @@ You can use the following keyboard shortcuts when you debug scripts.
 > [!NOTE]
 > You can also use the keyboard shortcuts designed for the Windows PowerShell console when you debug
 > scripts in Windows PowerShell ISE. To use these shortcuts, you must type the shortcut in the
-> Console Pane and press ENTER.
+> Console Pane and press <kbd>ENTER</kbd>.
 
 |                 Action                  |      Keyboard Shortcut       |                Use in                 |
 | --------------------------------------- | ---------------------------- | ------------------------------------- |
@@ -156,7 +158,7 @@ You can use the following keyboard shortcuts when you use Windows PowerShell tab
 | ------------------------------- | ---------------------------------------------------------------------------------- |
 | **Close PowerShell Tab**        | <kbd>CTRL</kbd>+<kbd>W</kbd>                                                       |
 | **New PowerShell Tab**          | <kbd>CTRL</kbd>+<kbd>T</kbd>                                                       |
-| **Previous PowerShell tab**     | <kbd>CTRL</kbd>+<kbd>SHIFT</kbd>+<kbd>TAB</kbd> (Only when no files are open on any PowerShell tab)                 |
+| **Previous PowerShell tab**     | <kbd>CTRL</kbd>+<kbd>SHIFT</kbd>+<kbd>TAB</kbd> (Only when no files are open on any PowerShell tab) |
 | **Next Windows PowerShell tab** | <kbd>CTRL</kbd>+<kbd>TAB</kbd> (Only when no files are open on any PowerShell tab) |
 
 ## Keyboard shortcuts for starting and exiting
@@ -172,9 +174,10 @@ You can use the following keyboard shortcuts to start the Windows PowerShell con
 ## Breakpoint Management
 
 For the visually impaired, breakpoint information is available through the cmdlets for managing
-breakpoints, such as [Get-PSBreakpoint](/reference/6/Microsoft.PowerShell.Utility/Get-PSBreakpoint.md)
-and [Set-PSBreakpoint](/reference/6/Microsoft.PowerShell.Utility/Set-PSBreakpoint.md).
-For more information please see 'How to manage breakpoints' in
+breakpoints, such as
+[Get-PSBreakpoint](/powershell/module/Microsoft.PowerShell.Utility/Get-PSBreakpoint) and
+[Set-PSBreakpoint](/powershell/module/Microsoft.PowerShell.Utility/Set-PSBreakpoint). For more
+information please see 'How to manage breakpoints' in
 [How to Debug Scripts in the Windows PowerShell ISE](How-to-Debug-Scripts-in-Windows-PowerShell-ISE.md).
 
 ## See Also

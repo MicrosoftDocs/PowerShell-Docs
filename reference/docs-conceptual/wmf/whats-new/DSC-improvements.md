@@ -74,7 +74,7 @@ See the snapshots below:
 - Local configuration settings which defines a partial configuration that a node is allowed to
   receive.
 
-  ![Sample metaconfiguration](../images/DSC-improvements/MetaConfigPartialOne.png)
+  ![Sample metaconfiguration](media/DSC-improvements/MetaConfigPartialOne.png)
 
 - Sample partial configuration definition
 
@@ -95,11 +95,11 @@ See the snapshots below:
 
 - 'ConfigurationName' embedded in the generated MOF file.
 
-  ![Sample generated mof file](../images/DSC-improvements/PartialGeneratedMof.png)
+  ![Sample generated mof file](media/DSC-improvements/PartialGeneratedMof.png)
 
 - FileName in the pull configuration repository
 
-  ![FileName in Configuration Repository](../images/DSC-improvements/PartialInConfigRepository.png)
+  ![FileName in Configuration Repository](media/DSC-improvements/PartialInConfigRepository.png)
 
   Azure Automation service name generated MOF files as `<ConfigurationName>.<NodeName>.mof`. So the
   configuration below compiles to PartialOne.localhost.mof.
@@ -170,7 +170,7 @@ See the snapshots below:
 ## Using PsDscRunAsCredential with DSC composite resources
 
 We have added support for using [PsDscRunAsCredential](/powershell/scripting/dsc/configurations/runAsUser)
-with DSC [Composite](/powershell/scripting/dsc/authoringresourcecomposite)
+with DSC [Composite](/powershell/scripting/dsc/resources/authoringresourcecomposite)
 resources.
 
 You can now specify a value for **PsDscRunAsCredential** when using composite resources inside
@@ -302,7 +302,7 @@ signer.
 
 The LocalConfigurationManager of a node performs signing validation of modules and configurations
 based on its current settings. By default, signature validation is disabled. Signature validation
-can enabled by adding the ‘SignatureValidation’ block to the meta-configuration definition of the
+can enabled by adding the 'SignatureValidation' block to the meta-configuration definition of the
 node as shown below:
 
 ```powershell
@@ -354,11 +354,11 @@ the digital signatures.
 > server is unsigned, then processing of the configuration terminates with the error shown below and
 > all temporary files are deleted.
 
-![Sample Error Output Configuration](../images/DSC-improvements/PullUnsignedConfigFail.png)
+![Sample Error Output Configuration](media/DSC-improvements/PullUnsignedConfigFail.png)
 
 Similarly, pulling a module whose catalog is not signed results in the following error:
 
-![Sample Error Output Module](../images/DSC-improvements/PullUnisgnedCatalog.png)
+![Sample Error Output Module](media/DSC-improvements/PullUnisgnedCatalog.png)
 
 #### Push
 
@@ -408,12 +408,12 @@ published configuration(s). Below is a complete example of signature validation 
   Start-DscConfiguration -Path .\Test -Wait -Verbose -Force
   ```
 
-  ![ErrorUnsignedMofPushed](../images/DSC-improvements/PushUnsignedMof.png)
+  ![ErrorUnsignedMofPushed](media/DSC-improvements/PushUnsignedMof.png)
 
 - Sign the configuration file using code-signing certificate.
 
-  ![SignMofFile](../images/DSC-improvements/SignMofFile.png)
+  ![SignMofFile](media/DSC-improvements/SignMofFile.png)
 
 - Try pushing the signed MOF file.
 
-  ![PushSignedMofFile](../images/DSC-improvements/PushSignedMof.png)
+  ![PushSignedMofFile](media/DSC-improvements/PushSignedMof.png)

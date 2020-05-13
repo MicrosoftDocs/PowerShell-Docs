@@ -3,7 +3,7 @@ external help file: Microsoft.PowerShell.Security.dll-Help.xml
 keywords: powershell,cmdlet
 locale: en-us
 ms.date: 02/03/2020
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.security/get-cmsmessage?view=powershell-7&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.security/get-cmsmessage?view=powershell-7.x&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-CmsMessage
 ---
@@ -54,8 +54,7 @@ path to the encrypted content. You can pipe the results of `Get-CmsMessage` to
 `Unprotect-CmsMessage` to decrypt the content, provided that you have information about the document
 encryption certificate that was used to encrypt the content.
 
-> [!NOTE]
-> This cmdlet is only available on Windows.
+Support for Linux and macOS was added in PowerShell 7.1.
 
 ## EXAMPLES
 

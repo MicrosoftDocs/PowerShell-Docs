@@ -1,8 +1,8 @@
 ---
 keywords: powershell,cmdlet
 locale: en-us
-ms.date: 06/09/2017
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_methods?view=powershell-7&WT.mc_id=ps-gethelp
+ms.date: 04/08/2020
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_methods?view=powershell-7.x&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Methods
 ---
@@ -32,7 +32,7 @@ the methods of process objects.
 Get-Process | Get-Member -MemberType Method
 ```
 
-```output
+```Output
 TypeName: System.Diagnostics.Process
 
 Name                      MemberType Definition
@@ -80,7 +80,7 @@ be placed immediately after the end quote of the string.
 'this is rocket science'.Replace('rocket', 'rock')
 ```
 
-```output
+```Output
 this is rock science
 ```
 
@@ -121,14 +121,14 @@ the `C:\Bin` directory.
 ```
 
 > [!NOTE]
-> Unlike PowerShell's *argument* mode, object methods execute in
-> *expression* mode, which is a pass-through to the .NET framework that
-> PowerShell is built on. In *expression* mode **bareword** arguments
-> (unquoted strings) are not allowed. You can see this in the difference
-> path as a parameter, versus the path as an argument.
-> You can read more about parsing modes in [about_Parsing](about_Parsing.md)
+> Unlike PowerShell's _argument_ mode, object methods execute in _expression_
+> mode, which is a pass-through to the .NET framework that PowerShell is built
+> on. In _expression_ mode **bareword** arguments (unquoted strings) are not
+> allowed. You can see this difference when using a the path as a parameter,
+> versus the path as an argument. You can read more about parsing modes in
+> [about_Parsing](about_Parsing.md)
 
-The second method signature take a destination file name and a Boolean value
+The second method signature takes a destination file name and a Boolean value
 that determines whether the destination file should be overwritten, if it
 already exists.
 
@@ -162,48 +162,35 @@ more information, see [about_Properties](about_Properties.md).
 
 ### Examples
 
-The following example runs the Kill method of individual process objects on a
-collection of process objects. This example works only on PowerShell 3.0 and
-later versions of PowerShell.
+The following example runs the **Kill** method of individual process objects in
+a collection of objects.
 
-The first command starts three instances of the Notepad process. The second
-command uses the `Get-Process` command to get all three instance of the Notepad
-process and save them in the \$p variable.
+The first command starts three instances of the Notepad process. `Get-Process`
+gets all three instance of the Notepad process and saves them in the `$p`
+variable.
 
 ```powershell
 Notepad; Notepad; Notepad
 $p = Get-Process Notepad
-```
-
-The third command uses the Count property of all collections to verify that
-there are three processes in the \$p variable.
-
-```powershell
 $p.Count
 ```
 
-```output
+```Output
 3
 ```
 
-The fourth command runs the Kill method on all three processes in the \$p
-variable.
-
-This command works even though a collection of processes does not have a `Kill`
-method.
+The next command runs the **Kill** method on all three processes in the `$p`
+variable. This command works even though a collection of processes does not
+have a `Kill` method.
 
 ```powershell
 $p.Kill()
-```
-
-The fifth command uses the Get-Process command to confirm that the `Kill`
-command worked.
-
-```powershell
 Get-Process Notepad
 ```
 
-```output
+The `Get-Process` command confirms that the `Kill` method worked.
+
+```Output
 Get-Process : Cannot find a process with the name "notepad". Verify the proc
 ess name and call the cmdlet again.
 At line:1 char:12
@@ -214,7 +201,7 @@ At line:1 char:12
 l.Commands.GetProcessCommand
 ```
 
-To perform the same task on PowerShell 2.0, use the `Foreach-Object` cmdlet to
+This example is functionally equivalent to using the `Foreach-Object` cmdlet to
 run the method on each object in the collection.
 
 ```powershell
@@ -228,6 +215,58 @@ supported. This allows use of two new methods when dealing with collections
 `ForEach` and `Where`.
 
 You can read more about these methods in [about_arrays](about_arrays.md)
+
+### Calling a specific method when multiple overloads exist
+
+Consider the following scenario when calling .NET methods. If a method takes an
+object but has an overload via an interface taking a more specific type,
+PowerShell chooses the method that accepts the object unless you explicitly
+cast it to that interface.
+
+```powershell
+Add-Type -TypeDefinition @'
+
+   // Interface
+   public interface IFoo {
+     string Bar(int p);
+   }
+
+   // Type that implements the interface
+   public class Foo : IFoo {
+
+   // Direct member method named 'Bar'
+   public string Bar(object p) { return $"object: {p}"; }
+
+   // *Explicit* implementation of IFoo's 'Bar' method().
+   string IFoo.Bar(int p) {
+       return $"int: {p}";
+   }
+
+}
+'@
+```
+
+In this example the less specific `object` overload of the **Bar** method was chosen.
+
+```powershell
+[Foo]::new().Bar(1)
+```
+
+```Output
+object: 1
+```
+
+In this example we cast the method to the interface **IFoo** to select the more
+specific overload of the **Bar** method.
+
+
+```powershell
+([IFoo] [Foo]::new()).Bar(1)
+```
+
+```Output
+int: 1
+```
 
 ## See Also
 

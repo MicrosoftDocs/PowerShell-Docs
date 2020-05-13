@@ -1,7 +1,7 @@
 ---
 keywords: powershell,cmdlet
 locale: en-us
-ms.date: 08/12/2019
+ms.date: 04/10/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_automatic_variables?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Automatic_Variables
@@ -532,6 +532,9 @@ and change the current loop iteration. For more information, see
 
 In a script block that defines a script property or script method, the
 `$this` variable refers to the object that is being extended.
+
+In a custom class, the `$this` variable refers to the class object itself
+allowing access to properties and methods defined in the class.
 
 ### $true
 

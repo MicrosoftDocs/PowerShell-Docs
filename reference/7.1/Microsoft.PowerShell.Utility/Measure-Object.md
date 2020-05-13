@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Utility
 ms.date: 5/10/2019
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/measure-object?view=powershell-7&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/measure-object?view=powershell-7.x&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Measure-Object
 ---
@@ -260,7 +260,6 @@ Minimum           :
 StandardDeviation : 859.444048419069
 Property          : CPU
 ```
-
 
 ### Example 12: Measure using wildcards
 

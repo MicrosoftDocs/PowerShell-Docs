@@ -89,7 +89,7 @@ Set-ItemProperty -Path "HKLM:\Software\ContosoCompany" -Name "NoOfEmployees" -Va
 Get-ItemProperty -Path "HKLM:\Software\ContosoCompany"
 ```
 
-```output
+```Output
 PSPath        : Microsoft.PowerShell.Core\Registry::HKEY_LOCAL_MACHINE\software\contosocompany
 PSParentPath  : Microsoft.PowerShell.Core\Registry::HKEY_LOCAL_MACHINE\software
 PSChildName   : contosocompany
@@ -97,7 +97,6 @@ PSDrive       : HKLM
 PSProvider    : Microsoft.PowerShell.Core\Registry
 NoOfLocations : 2
 NoOfEmployees : 823
-
 ```
 
 ```powershell
@@ -105,7 +104,7 @@ Set-ItemProperty -Path "HKLM:\Software\ContosoCompany" -Name "NoOfEmployees" -Va
 Get-ItemProperty -Path "HKLM:\Software\ContosoCompany"
 ```
 
-```output
+```Output
 PSPath        : Microsoft.PowerShell.Core\Registry::HKEY_LOCAL_MACHINE\software\contosocompany
 PSParentPath  : Microsoft.PowerShell.Core\Registry::HKEY_LOCAL_MACHINE\software
 PSChildName   : contosocompany
@@ -274,8 +273,8 @@ For more information, see [about_Quoting_Rules](../Microsoft.Powershell.Core/Abo
 
 ```yaml
 Type: String[]
-Parameter Sets: propertyValueLiteralPathSet, propertyPSObjectLiteralPathSet
-Aliases: PSPath
+Parameter Sets: propertyPSObjectLiteralPathSet, propertyValueLiteralPathSet
+Aliases: PSPath, LP
 
 Required: True
 Position: Named
@@ -432,7 +431,7 @@ You can pipe objects to this cmdlet.
 ### None, System.Management.Automation.PSCustomObject
 
 This cmdlet generates a **PSCustomObject** object that represents the item that was changed and its
-new property value, if you specify the *PassThru* parameter.
+new property value, if you specify the **PassThru** parameter.
 Otherwise, this cmdlet does not generate any output.
 
 ## NOTES

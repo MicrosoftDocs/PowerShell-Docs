@@ -1,14 +1,13 @@
 ---
-external help file: Microsoft.PowerShell.PSReadLine.dll-Help.xml
+external help file: Microsoft.PowerShell.PSReadLine2.dll-Help.xml
 keywords: powershell,cmdlet
 locale: en-us
 Module Name: PSReadLine
 ms.date: 12/07/2018
-online version: https://docs.microsoft.com/powershell/module/psreadline/set-psreadlinekeyhandler?view=powershell-7&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/psreadline/set-psreadlinekeyhandler?view=powershell-7.x&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-PSReadLineKeyHandler
 ---
-
 # Set-PSReadLineKeyHandler
 
 ## SYNOPSIS
@@ -19,14 +18,15 @@ Binds keys to user-defined or PSReadLine key handler functions.
 ### ScriptBlock
 
 ```
-Set-PSReadLineKeyHandler [-ScriptBlock] <ScriptBlock> [-BriefDescription <String>] [-Description <String>]
- [-Chord] <String[]> [-ViMode <ViMode>] [<CommonParameters>]
+Set-PSReadLineKeyHandler [-ScriptBlock] <ScriptBlock> [-BriefDescription <String>]
+ [-Description <String>] [-Chord] <String[]> [-ViMode <ViMode>] [<CommonParameters>]
 ```
 
 ### Function
 
 ```
-Set-PSReadLineKeyHandler [-Chord] <String[]> [-ViMode <ViMode>] [-Function] <String> [<CommonParameters>]
+Set-PSReadLineKeyHandler [-Chord] <String[]> [-ViMode <ViMode>] [-Function] <String>
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -39,8 +39,8 @@ PowerShell script.
 
 ### Example 1: Bind the arrow key to a function
 
-This command binds the up arrow key to the function **HistorySearchBackward**. This function uses
-the current contents of the command line as the search string used to search the command history.
+This command binds the up arrow key to the **HistorySearchBackward** function. This function
+searches command history for command lines that start with the current contents of the command line.
 
 ```powershell
 Set-PSReadLineKeyHandler -Chord UpArrow -Function HistorySearchBackward
@@ -48,12 +48,11 @@ Set-PSReadLineKeyHandler -Chord UpArrow -Function HistorySearchBackward
 
 ### Example 2: Bind a key to a script block
 
-This example shows how a single key can be used to run a command. The command binds the key
-`Ctrl+Shift+B` to a script block that clears the line, inserts the word "build", and then accepts
-the line.
+This example shows how a single key can be used to run a command. The command binds the key `Ctrl+B`
+to a script block that clears the line, inserts the word "build", and then accepts the line.
 
 ```powershell
-Set-PSReadLineKeyHandler -Chord Ctrl+Shift+B -ScriptBlock {
+Set-PSReadLineKeyHandler -Chord Ctrl+B -ScriptBlock {
     [Microsoft.PowerShell.PSConsoleReadLine]::RevertLine()
     [Microsoft.PowerShell.PSConsoleReadLine]::Insert('build')
     [Microsoft.PowerShell.PSConsoleReadLine]::AcceptLine()
@@ -128,7 +127,6 @@ rebind existing key bindings, or bind a handler that is currently unbound.
 Type: String
 Parameter Sets: Function
 Aliases:
-Accepted values: Abort, AcceptAndGetNext, AcceptLine, AddLine, BackwardChar, BackwardDeleteChar, BackwardDeleteLine, BackwardDeleteWord, BackwardKillLine, BackwardKillWord, BackwardWord, BeginningOfHistory, BeginningOfLine, CancelLine, CaptureScreen, CharacterSearch, CharacterSearchBackward, ClearHistory, ClearScreen, Complete, Copy, CopyOrCancelLine, Cut, DeleteChar, DeleteCharOrExit, DeleteEndOfWord, DeleteLine, DeleteLineToFirstChar, DeleteToEnd, DeleteWord, DigitArgument, EndOfHistory, EndOfLine, ExchangePointAndMark, ForwardChar, ForwardDeleteLine, ForwardSearchHistory, ForwardWord, GotoBrace, GotoColumn, GotoFirstNonBlankOfLine, HistorySearchBackward, HistorySearchForward, InsertLineAbove, InsertLineBelow, InvertCase, InvokePrompt, KillLine, KillRegion, KillWord, MenuComplete, MoveToEndOfLine, NextHistory, NextLine, NextWord, NextWordEnd, Paste, PasteAfter, PasteBefore, PossibleCompletions, PrependAndAccept, PreviousHistory, PreviousLine, Redo, RepeatLastCharSearch, RepeatLastCharSearchBackwards, RepeatLastCommand, RepeatSearch, RepeatSearchBackward, ReverseSearchHistory, RevertLine, ScrollDisplayDown, ScrollDisplayDownLine, ScrollDisplayToCursor, ScrollDisplayTop, ScrollDisplayUp, ScrollDisplayUpLine, SearchChar, SearchCharBackward, SearchCharBackwardWithBackoff, SearchCharWithBackoff, SearchForward, SelectAll, SelectBackwardChar, SelectBackwardsLine, SelectBackwardWord, SelectForwardChar, SelectForwardWord, SelectLine, SelectNextWord, SelectShellBackwardWord, SelectShellForwardWord, SelectShellNextWord, SelfInsert, SetMark, ShellBackwardKillWord, ShellBackwardWord, ShellForwardWord, ShellKillWord, ShellNextWord, ShowKeyBindings, SwapCharacters, TabCompleteNext, TabCompletePrevious, Undo, UndoAll, UnixWordRubout, ValidateAndAcceptLine, ViAcceptLine, ViAcceptLineOrExit, ViAppendLine, ViBackwardDeleteGlob, ViBackwardGlob, ViBackwardWord, ViCommandMode, ViDeleteBrace, ViDeleteEndOfGlob, ViDeleteGlob, ViDigitArgumentInChord, ViEditVisually, ViExit, ViGotoBrace, ViInsertAtBegining, ViInsertAtEnd, ViInsertLine, ViInsertMode, ViInsertWithAppend, ViInsertWithDelete, ViJoinLines, ViNextWord, ViSearchHistoryBackward, ViTabCompleteNext, ViTabCompletePrevious, ViYankBeginningOfLine, ViYankEndOfGlob, ViYankEndOfWord, ViYankLeft, ViYankLine, ViYankNextGlob, ViYankNextWord, ViYankPercent, ViYankPreviousGlob, ViYankPreviousWord, ViYankRight, ViYankToEndOfLine, ViYankToFirstChar, WhatIsKey, Yank, YankLastArg, YankNthArg, YankPop
 
 Required: True
 Position: 1
@@ -168,7 +166,6 @@ Valid values are:
 Type: ViMode
 Parameter Sets: (All)
 Aliases:
-Accepted values: Insert, Command
 
 Required: False
 Position: Named
@@ -194,6 +191,8 @@ You cannot pipe objects to this cmdlet.
 
 ### None
 
+This cmdlet does not generate any output.
+
 ## NOTES
 
 ## RELATED LINKS
@@ -205,4 +204,3 @@ You cannot pipe objects to this cmdlet.
 [Get-PSReadLineOption](Get-PSReadLineOption.md)
 
 [Set-PSReadLineOption](Set-PSReadLineOption.md)
-

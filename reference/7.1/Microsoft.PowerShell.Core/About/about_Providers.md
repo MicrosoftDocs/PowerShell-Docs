@@ -1,8 +1,8 @@
 ---
 keywords: powershell,cmdlet
 locale: en-us
-ms.date: 01/03/2018
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_providers?view=powershell-7&WT.mc_id=ps-gethelp
+ms.date: 03/27/2020
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_providers?view=powershell-7.x&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Providers
 ---
@@ -10,40 +10,39 @@ title: about_Providers
 
 ## Short description
 Describes how PowerShell providers provide access to data and
-components that would not otherwise be easily accessible at the command line.
+components that wouldn't otherwise be easily accessible at the command line.
 The data is presented in a consistent format that resembles a file system
 drive.
 
 ## Long description
 
-PowerShell providers are Microsoft .NET Framework-based programs that
-make the data in a specialized data store available in PowerShell so
-that you can view and manage it.
-
-The data that a provider exposes appears in a drive, and you access the data
-in a path like you would on a hard disk drive. You can use any of the built-in
-cmdlets that the provider supports to manage the data in the provider drive.
-And, you can use custom cmdlets that are designed especially for the data.
+PowerShell providers are .NET programs that provide access to specialized data
+stores for easier viewing and management. The data appears in a drive, and you
+access the data in a path like you would on a hard disk drive. You can use any
+of the built-in cmdlets that the provider supports to manage the data in the
+provider drive. And, you can use custom cmdlets that are designed especially
+for the data.
 
 The providers can also add dynamic parameters to the built-in cmdlets. These
-are parameters that are available only when you use the cmdlet with the
-provider data.
+parameters are only available when you use the cmdlet with the provider data.
 
 ## Built-in providers
 
 PowerShell includes a set of built-in providers that you can use to
 access the different types of data stores.
 
-|Provider    |Drive        |Data store                                 |
-|------------|-------------|-------------------------------------------|
-|Alias       |Alias:       |PowerShell aliases                 |
-|Certificate |Cert:        |x509 certificates for digital signatures   |
-|Environment |Env:         |Windows environment variables              |
-|FileSystem  |(*)          |File system drives, directories, and files |
-|Function    |Function:    |PowerShell functions               |
-|Registry    |HKLM:, HKCU: |Windows registry                           |
-|Variable    |Variable:    |PowerShell variables               |
-|WSMan       |WSMan:       |WS-Management configuration information    |
+| Provider   |   Drive(s)  |OutputType                                                    |
+|----------- |------------ |--------------------------------------------------------------|
+|Alias       |Alias:       |System.Management.Automation.AliasInfo                        |
+|Certificate |Cert:        |Microsoft.PowerShell.Commands.X509StoreLocation               |
+|            |             |System.Security.Cryptography.X509Certificates.X509Certificate2|
+|Environment |Env:         |System.Collections.DictionaryEntry                            |
+|FileSystem  |C: (*)       |System.IO.FileInfo                                            |
+|            |             |System.IO.DirectoryInfo                                       |
+|Function    |Function:    |System.Management.Automation.FunctionInfo                     |
+|Registry    |HKLM: HKCU:  |Microsoft.Win32.RegistryKey                                   |
+|Variable    |Variable:    |System.Management.Automation.PSVariable                       |
+|WSMan       |WSMan:       |Microsoft.WSMan.Management.WSManConfigContainerElement        |
 
 (*) The FileSystem drives vary on each system.
 
@@ -58,15 +57,15 @@ Get-PSProvider
 ## Installing and removing providers
 
 Providers are typically installed via PowerShell modules. Importing the module
-loads the provider into your session. You cannot uninstall the built-in
+loads the provider into your session. You can't uninstall the built-in
 providers. You can uninstall providers loaded by other modules.
 
-You can unload a provider from the current session. You can do this by using the
-`Remove-Module` cmdlet. This cmdlet does not uninstall the provider, but it
-makes the provider unavailable in the session.
+You can unload a provider from the current session using the `Remove-Module`
+cmdlet. This cmdlet doesn't uninstall the provider, but it makes the provider
+unavailable in the session.
 
 You can also use the `Remove-PSDrive` cmdlet to remove any drive from the
-current session. This data on the drive is not affected, but the drive is no
+current session. This data on the drive isn't affected, but the drive is no
 longer available in that session.
 
 ## Viewing providers
@@ -164,15 +163,13 @@ The primary benefit of a provider is that it exposes its data in a familiar
 and consistent way. The model for data presentation is a file system
 drive.
 
-To use data that the provider exposes, you view it, move through it,
-and change it as though it were data on a hard drive. Therefore, the most
-important information about a provider is the name of the drive
-that it supports.
+The provider allows you to view, navigate, and change items in the data store
+as though they were data in a file system. The data store is accessed by the name
+of the drive that it supports.
 
-The drive is listed in the default display of the `Get-PSProvider` cmdlet,
-but you can get information about the provider drive by using the
-`Get-PSDrive` cmdlet. For example, to get all the properties of the
-Function: drive, type:
+The drive is listed in the default display of the `Get-PSProvider` cmdlet, but
+you can get information about the provider drive using the `Get-PSDrive`
+cmdlet. For example, to get all the properties of the Function: drive, type:
 
 ```powershell
 Get-PSDrive Function | Format-List *
@@ -229,7 +226,7 @@ Set-Location HKLM:\SOFTWARE\
 ```
 
 If any element in the fully qualified name includes spaces, you must enclose
-the name in quotation marks `" "`. The following example shows a fully
+the name in double-quotation marks (`"`). The following example shows a fully
 qualified path that includes spaces.
 
 ```
@@ -237,21 +234,21 @@ qualified path that includes spaces.
 ```
 
 You can also use relative references to locations. A dot (`.`) represents the
-current location. For example, if you are in the HKLM:\Software\Microsoft
+current location. For example, if you are in the `HKLM:\Software\Microsoft`
 registry key, and you want to list the registry subkeys in the
-HKLM:\Software\Microsoft\PowerShell key, type the following command:
+`HKLM:\Software\Microsoft\PowerShell` key, type the following command:
 
 ```powershell
 Get-ChildItem .\PowerShell
 ```
 
-In addition, two dots (`..`) refers to the directory or container directly
-above your current location. You can combine dots (`.`) and double dots (`..`)
-along with your paths to work through a provider hierarchy.
+Also, double-dots (`..`) refers to the directory or container directly above
+your current location. You can use double-dots (`..`) to navigate through a
+provider hierarchy.
 
 ```
-PS C:\Windows\System32> cd "..\..\Program Files"
-PS C:\Program Files>
+PS HKLM:\SYSTEM\CurrentControlSet\Services\LanmanServer\Parameters\> cd ..\..\LanmanWorkstation\Parameters
+PS HKLM:\SYSTEM\CurrentControlSet\Services\LanmanWorkstation\Parameters>
 ```
 
 ## Provider Home
@@ -264,20 +261,21 @@ property of the provider.
 Get-PSProvider | Format-Table Name, Home
 ```
 
-```output
+```Output
 Name        Home
 ----        ----
 Registry
 Alias
 Environment
-FileSystem  C:\Users\robreed
+FileSystem  C:\Users\username
 Function
 Variable
 Certificate
 ```
 
 The **FileSystem** provider is the only provider that has a default value for
-**Home**. It is the same value as `$Home` see [about_Automatic_Variables](about_Automatic_Variables.md).
+**Home**. It's the same value as `$Home`. For more information, see
+[about_Automatic_Variables](about_Automatic_Variables.md).
 
 You can set the **Home** directory for a provider, for the current session,
 using its property.
@@ -287,14 +285,14 @@ using its property.
 ```
 
 The `~` character can be used to represent the provider's home directory.
-If the provider does not have a **Home** location set, you will see an error.
+If the provider doesn't have a **Home** location set, you see an error.
 
 ```powershell
 Cert:\> Set-Location ~
 ```
 
-```output
-Set-Location : Home location for this provider is not set. To set the home
+```Output
+Set-Location : Home location for this provider isn't set. To set the home
 location, call "(get-psprovider 'Certificate').Home = 'path'".
 At line:1 char:1
 + Set-Location ~
@@ -329,7 +327,7 @@ Get-Help certificate
 
 ## Learning about providers
 
-Although all provider data appears in drives, and you use the same methods to
+Although all provider data appears in drives and you use the same methods to
 move through them, the similarity stops there. The data stores that the
 provider exposes can be as varied as Active Directory locations and Microsoft
 Exchange Server mailboxes.

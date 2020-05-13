@@ -77,7 +77,7 @@ Wildcard characters are not processed.
 ```yaml
 Type: String[]
 Parameter Sets: ByLiteralPath
-Aliases: PSPath
+Aliases: PSPath, LP
 
 Required: True
 Position: 0

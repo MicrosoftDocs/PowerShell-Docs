@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: PowerShellGet
 ms.date: 11/11/2019
-online version: https://docs.microsoft.com/powershell/module/powershellget/save-module?view=powershell-7&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/powershellget/save-module?view=powershell-7.x&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Save-Module
 ---
@@ -20,7 +20,7 @@ Saves a module and its dependencies on the local computer but doesn't install th
 
 ```
 Save-Module [-Name] <String[]> [-MinimumVersion <String>] [-MaximumVersion <String>]
- [-RequiredVersion <String>] [-Repository <String[]>] -Path <String> [-Proxy <Uri>]
+ [-RequiredVersion <String>] [-Repository <String[]>] [-Path] <String> [-Proxy <Uri>]
  [-ProxyCredential <PSCredential>] [-Credential <PSCredential>] [-Force] [-AllowPrerelease]
  [-AcceptLicense] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
@@ -45,7 +45,7 @@ Save-Module [-InputObject] <PSObject[]> -LiteralPath <String> [-Proxy <Uri>]
 ### InputObjectAndPathParameterSet
 
 ```
-Save-Module [-InputObject] <PSObject[]> -Path <String> [-Proxy <Uri>]
+Save-Module [-InputObject] <PSObject[]> [-Path] <String> [-Proxy <Uri>]
  [-ProxyCredential <PSCredential>] [-Credential <PSCredential>] [-Force] [-AcceptLicense] [-WhatIf]
  [-Confirm] [<CommonParameters>]
 ```
@@ -171,6 +171,22 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -Confirm
+
+Prompts you for confirmation before running the `Save-Module`.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Credential
 
 Specifies a user account that has rights to save a module.
@@ -230,12 +246,12 @@ enclosed in single quotation marks as escape sequences.
 ```yaml
 Type: String
 Parameter Sets: NameAndLiteralPathParameterSet, InputObjectAndLiteralPathParameterSet
-Aliases:
+Aliases: PSPath
 
 Required: True
 Position: Named
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -302,7 +318,7 @@ Aliases:
 Required: True
 Position: 1
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: True
 ```
 
@@ -371,22 +387,6 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Confirm
-
-Prompts you for confirmation before running the `Save-Module`.
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: (All)
-Aliases: cf
-
-Required: False
-Position: Named
-Default value: False
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -WhatIf
 
 Shows what would happen if the `Save-Module` runs. The cmdlet isn't run.
@@ -411,7 +411,19 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
+### System.String[]
+
+### System.Management.Automation.PSObject[]
+
+### System.String
+
+### System.Uri
+
+### System.Management.Automation.PSCredential
+
 ## OUTPUTS
+
+### System.Object
 
 ## NOTES
 

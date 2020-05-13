@@ -75,6 +75,22 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -Confirm
+
+Prompts you for confirmation before running `Uninstall-Script`.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Force
 
 Forces `Uninstall-Script` to run without asking for user confirmation.
@@ -174,22 +190,6 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Confirm
-
-Prompts you for confirmation before running `Uninstall-Script`.
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: (All)
-Aliases: cf
-
-Required: False
-Position: Named
-Default value: False
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -WhatIf
 
 Shows what would happen if `Uninstall-Script` runs. The cmdlet isn't run.
@@ -214,11 +214,15 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### PSRepositoryItemInfo
+### System.String[]
 
-`Uninstall-Script` accepts **PSRepositoryItemInfo** objects from the pipeline.
+### System.Management.Automation.PSObject[]
+
+### System.String
 
 ## OUTPUTS
+
+### System.Object
 
 ## NOTES
 

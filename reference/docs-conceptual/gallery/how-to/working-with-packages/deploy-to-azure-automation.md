@@ -8,7 +8,7 @@ title:  Deploy to Azure Automation
 
 The Deploy to Azure Automation button on the package details page will deploy the package from the PowerShell Gallery to Azure Automation.
 
-![Deploy to Azure Automation Button](../../Images/DeployToAzureAutomationButton.png)
+![Deploy to Azure Automation Button](media/deploy-to-azure-automation/DeployToAzureAutomationButton.png)
 
 When clicked, it will redirect you to the Azure Management Portal, where you sign in using your Azure account credentials.
 If the package includes dependencies, all the dependencies will be deployed to Azure Automation as well.
@@ -26,7 +26,7 @@ The Deploy to Azure Automation button can be disabled by adding the AzureAutomat
 
 If the module being deployed to Azure Automation requires license acceptance, portal UI will show a disclaimer saying 'This module requires license acceptance. By clicking OK, you are accepting license terms.'
 
-![Deploy to Azure Automation Requires License Acceptance](../../Images/DeployToAzureAutomationRequireLicenseAcceptanceDisclaimer.png)
+![Deploy to Azure Automation Requires License Acceptance](media/deploy-to-azure-automation/DeployToAzureAutomationRequireLicenseAcceptanceDisclaimer.png)
 
 ## More details
 

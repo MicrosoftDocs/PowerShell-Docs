@@ -90,6 +90,10 @@ Accept wildcard characters: False
 
 ### -Path
 
+Accepts a path or array of paths to files or folders that should be included
+in the catalog file.
+If a folder is specified, all the files in the folder will be included as well.
+
 ```yaml
 Type: String[]
 Parameter Sets: (All)
@@ -115,24 +119,6 @@ Required: False
 Position: Named
 Default value: False
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Path
-
-Accepts a path or array of paths to files or folders that should be included
-in the catalog file.
-If a folder is specified, all the files in the folder will be included as well.
-
-```yaml
-Type: String[]
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: 1
-Default value: None
-Accept pipeline input: True (ByPropertyName, ByValue)
 Accept wildcard characters: False
 ```
 
@@ -173,6 +159,4 @@ The pipeline takes a string that is used as the catalog filename.
 
 [Test-FileCatalog](Test-FileCatalog.md)
 
-[PowerShellGet](/powershell/module/PowerShellGet)
-
-
+[PowerShellGet](/powerShell/module/powershellget)

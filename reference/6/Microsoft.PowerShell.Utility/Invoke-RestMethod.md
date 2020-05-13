@@ -246,7 +246,7 @@ Available Authentication Options:
   authentication will be used.
 - **Basic**: Requires **Credential**. The credentials will be used to send an RFC 7617 Basic
   Authentication `Authorization: Basic` header in the format of `base64(user:password)`.
-- **Bearer**: Requires **Token**. Will send an RFC 6750 `Authorization: Bearer` header with the
+- **Bearer**: Requires **Token**. Will send and RFC 6750 `Authorization: Bearer` header with the
   supplied token. This is an alias for **OAuth**
 - **OAuth**: Requires **Token**. Will send an RFC 6750 `Authorization: Bearer` header with the
   supplied token. This is an alias for **Bearer**
@@ -419,7 +419,7 @@ This feature was added in PowerShell 6.0.0.
 
 ```yaml
 Type: String
-Parameter Sets: CustomMethodNoProxy, CustomMethod
+Parameter Sets: CustomMethod, CustomMethodNoProxy
 Aliases: CM
 
 Required: True
@@ -475,8 +475,8 @@ Accept wildcard characters: False
 
 ### -Form
 
-Converts a dictionary to a `multipart/form-data` submission. `-Form` may not be used with `-Body`.
-If `-ContentType` will be ignored.
+Converts a dictionary to a `multipart/form-data` submission. **Form** may not be used with **Body**.
+If **ContentType** will be ignored.
 
 The keys of the dictionary will be used as the form field names. By default, form values will be
 converted to string values.
@@ -1111,10 +1111,6 @@ variations for each operating system and platform.
 To test a website with the standard user agent string that is used by most internet browsers, use
 the properties of the [PSUserAgent](/dotnet/api/microsoft.powershell.commands.psuseragent) class,
 such as Chrome, FireFox, InternetExplorer, Opera, and Safari.
-
-For example, the following command uses the user agent string for Internet Explorer.
-
-`Invoke-RestMethod -Uri https://website.com/ -UserAgent ([Microsoft.PowerShell.Commands.PSUserAgent]::InternetExplorer)`
 
 ```yaml
 Type: String

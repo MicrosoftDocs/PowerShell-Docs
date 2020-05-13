@@ -315,7 +315,7 @@ The file, Input.xml, contains the following content:
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases:
+Aliases: Path
 
 Required: False
 Position: Named

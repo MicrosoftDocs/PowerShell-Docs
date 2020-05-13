@@ -1,8 +1,8 @@
 ---
 keywords: powershell,cmdlet
 locale: en-us
-ms.date: 12/18/2019
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_operator_precedence?view=powershell-7&WT.mc_id=ps-gethelp
+ms.date: 05/06/2020
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_operator_precedence?view=powershell-7.x&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Operator_Precedence
 ---
@@ -75,11 +75,20 @@ order:
 | --------------------------------------- | ------------------------------ |
 | `-band -bnot -bor -bxor`                | [about_Arithmetic_Operators][] |
 | `-and -or -xor`                         | [about_Logical_Operators][]    |
+
+The following items are not true operators. They are part of PowerShell's
+command syntax, not expression syntax. Assignment is always the last action
+that happens.
+
+|                SYNTAX                   |           REFERENCE            |
+| --------------------------------------- | ------------------------------ |
 | `.` (dot-source)                        | [about_Operators][]            |
 | `&` (call)                              | [about_Operators][]            |
+| `? <if-true> : <if-false>` (Ternary operator) | [about_Operators][]      |
 | <code>&#124;</code> (pipeline operator) | [about_Operators][]            |
 | `> >> 2> 2>> 2>&1`                      | [about_Redirection][]          |
-| `= += -= *= /= %=`                      | [about_Assignment_Operators][] |
+| <code>&& &#124;&#124;</code> (pipeline chain operators) | [about_Operators][] |
+| `= += -= *= /= %= ??=`                  | [about_Assignment_Operators][] |
 
 ## EXAMPLES
 

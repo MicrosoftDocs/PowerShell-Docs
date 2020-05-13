@@ -10,20 +10,20 @@ title:  Unlisting packages
 
 The PowerShell Gallery does not support users permanently deleting their packages.
 This enables others to take dependencies on your packages without worrying about possible breaks in the future.
-For example, if the Pester module depends on the Azure module and the Azure module is removed from the gallery, then user can no longer uses the Pester module.
+For example, if the Pester module depends on the Azure module and the Azure module is removed from the gallery, then users can no longer use the Pester module.
 
-Instead of removing an package, however, you can unlist it instead.
+Instead of removing a package you can unlist it.
 
 **What does unlisting a package on PowerShell Gallery do?**
 
-Unlisting a package such as module or script on PowerShell Gallery will remove it from the Packages tab.
+Unlisting a package such as a module or script in the PowerShell Gallery removes it from the Packages tab.
 In addition, unlisted packages will not be discoverable using the search bar.
 The only way to download an unlisted package is to specify the exact name and version of the package.
-Because of this, the unlisting of an package will not break other modules or scripts that depend on it.
+Because of this, the unlisting of a package will not break other modules or scripts that depend on it.
 
-To unlist your package, visit the package details page and select 'Delete Module'. Uncheck the 'Listed' checkbox, and click Save.
+To unlist your package, visit the package details page and select 'Delete Module'. Uncheck the 'Listed' checkbox, and select 'Save'.
 
-**How can I remove an package?**
+**How can I remove a package?**
 
 If you experience a scenario where package deletion is necessary, contact the PowerShell Gallery Administrators.
 Valid deletion scenarios are:
