@@ -167,6 +167,17 @@ Add-WindowsPSModulePath
 
 [Experimental features][] are limited to [community support](#community-support).
 
+## Security Servicing Criteria
+
+PowerShell follows the [Microsoft Security Servicing Criteria for Windows][].
+The table below outlines the features that meet the servicing criteria and those that do not.
+
+| Feature                          | Type             | Intent to Service? |
+|----------------------------------|------------------|--------------------|
+| Execution Policy                 | Defense in Depth | No                 |
+| System Lockdown - with AppLocker | Defense in Depth | No                 |
+| System Lockdown - with WDAC      | Security Feature | Yes                |
+
 ## Release history
 
 The following table contains a timeline of the major releases of PowerShell. This table is provided
@@ -197,3 +208,4 @@ for historical reference. It is not intended for use to determine the support li
 [MIT license]: https://github.com/PowerShell/PowerShell/blob/master/LICENSE.txt
 [WindowsPSModulePath]: https://www.powershellgallery.com/packages/WindowsPSModulePath/
 [Experimental features]: /powershell/module/microsoft.powershell.core/about/about_powershell_config?view=powershell-6#experimentalfeatures
+[Microsoft Security Servicing Criteria for Windows]: https://www.microsoft.com/en-us/msrc/windows-security-servicing-criteria
