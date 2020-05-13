@@ -29,7 +29,7 @@ The history is written to a cental file per host. That history file is
 available to all sessions and contains all past history. The history is not
 deleted when the session ends. Also, that history cannot be managed by the
 `*-History` cmdlets. For more information, see
-[about_PSReadLine](../PSReadLine/About/about_PSReadLine.md).
+[about_PSReadLine](../../PSReadLine/About/about_PSReadLine.md).
 
 ## Using the built-in session history
 
@@ -109,4 +109,4 @@ completed only when you exit the prompt level.
 - [about_Preference_Variables](about_Preference_Variables.md)
 - [about_Profiles](about_Profiles.md)
 - [about_Variables](about_Variables.md)
-- [about_PSReadLine](../PSReadLine/About/about_PSReadLine.md)
+- [about_PSReadLine](../../PSReadLine/About/about_PSReadLine.md)
