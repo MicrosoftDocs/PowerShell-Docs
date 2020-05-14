@@ -24,8 +24,8 @@ is loaded.
 
 ## Using the PSReadLine history
 
-The PSReadLine history tracks the commands used, in all PowerShell sessions.
-The history is written to a cental file per host. That history file is
+The PSReadLine history tracks the commands used in all PowerShell sessions.
+The history is written to a central file per host. That history file is
 available to all sessions and contains all past history. The history is not
 deleted when the session ends. Also, that history cannot be managed by the
 `*-History` cmdlets. For more information, see
@@ -34,7 +34,7 @@ deleted when the session ends. Also, that history cannot be managed by the
 ## Using the built-in session history
 
 The built-in history only tracks the commands used in the current session. The
-history is not available to other session and is deleted when the session ends.
+history is not available to other sessions and is deleted when the session ends.
 
 ### History Cmdlets
 

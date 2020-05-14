@@ -26,8 +26,8 @@ current session.
 
 PowerShell automatically maintains a history of each session. The number of entries in the session
 history is determined by the value of the `$MaximumHistoryCount` preference variable. Beginning in
-Windows PowerShell 3.0, the default value is **4096**. By default, history files are saved in the
-home directory, but you can save the file in any location. For more information about the history
+Windows PowerShell 3.0, the default value is `4096`. By default, history files are saved in the home
+directory, but you can save the file in any location. For more information about the history
 features in PowerShell, see [about_History](About/about_History.md).
 
 The session history is managed separately from the history maintained by the **PSReadLine** module.
@@ -156,8 +156,8 @@ command, PowerShell adds it to the history so that you can reuse it. For more in
 command history, see [about_History](About/about_History.md).
 
 Starting in Windows PowerShell 3.0, the default value of the `$MaximumHistoryCount` preference
-variable is 4096. In Windows PowerShell 2.0, the default value is 64. For more information about the
-`$MaximumHistoryCount` variable, see [about_Preference_Variables](About/about_Preference_Variables.md).
+variable is `4096`. In Windows PowerShell 2.0, the default value is `64`. For more information about
+the `$MaximumHistoryCount` variable, see [about_Preference_Variables](About/about_Preference_Variables.md).
 
 ## RELATED LINKS
 

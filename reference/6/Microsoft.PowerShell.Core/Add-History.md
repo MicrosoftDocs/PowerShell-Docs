@@ -25,11 +25,6 @@ Add-History [[-InputObject] <PSObject[]>] [-Passthru] [<CommonParameters>]
 The `Add-History` cmdlet adds entries to the end of the session history, that is, the list of
 commands entered during the current session.
 
-You can use the `Get-History` cmdlet to get the commands and pass them to `Add-History`, or you can
-export the commands to a CSV or XML file, then import the commands, and pass the imported file to
-`Add-History`. You can use this cmdlet to add specific commands to the history or to create a single
-history file that includes commands from more than one session.
-
 The session history is a list of the commands entered during the session. The session history
 represents the order of execution, the status, and the start and end times of the command. As you
 enter each command, PowerShell adds it to the history so that you can reuse it. For more information
@@ -39,17 +34,22 @@ The session history is managed separately from the history maintained by the **P
 Both histories are available in sessions where **PSReadLine** is loaded. This cmdlet only works with
 the session history. For more information see, [about_PSReadLine](../PSReadLine/About/about_PSReadLine.md).
 
+You can use the `Get-History` cmdlet to get the commands and pass them to `Add-History`, or you can
+export the commands to a CSV or XML file, then import the commands, and pass the imported file to
+`Add-History`. You can use this cmdlet to add specific commands to the history or to create a single
+history file that includes commands from more than one session.
+
 ## EXAMPLES
 
 ### Example 1: Add commands to the history of a different session
+
+This example add the commands typed in one PowerShell session to the history of a different
+PowerShell session.
 
 ```powershell
 Get-History | Export-Csv c:\testing\history.csv -IncludeTypeInformation
 Import-Csv c:\testing\history.csv | Add-History
 ```
-
-These commands add the commands typed in one PowerShell session to the history of a different
-PowerShell session.
 
 The first command gets objects representing the commands in the history and exports them to the
 `History.csv` file.
@@ -61,12 +61,12 @@ objects to the `Add-History` cmdlet, which adds the objects representing the com
 
 ### Example 2: Import and run commands
 
+This example imports commands from the `History.xml` file, adds them to the current session history,
+and then runs the commands in the combined history.
+
 ```powershell
 Import-Clixml c:\temp\history.xml | Add-History -PassThru | ForEach-Object -Process {Invoke-History}
 ```
-
-This command imports commands from the `History.xml` file, adds them to the current session history,
-and then runs the commands in the combined history.
 
 The first command uses the `Import-Clixml` cmdlet to import a command history that was exported to
 the `History.xml` file. The pipeline operator passes the commands to the `Add-History` cmdlet, which
@@ -75,19 +75,20 @@ representing the added commands down the pipeline.
 
 The command then uses the `ForEach-Object` cmdlet to apply the `Invoke-History` command to each of
 the commands in the combined history. The `Invoke-History` command is formatted as a script block,
-enclosed in braces, as required by the **Process** parameter of the `ForEach-Object` cmdlet.
+enclosed in braces (`{}`), as required by the **Process** parameter of the `ForEach-Object` cmdlet.
 
 ### Example 3: Add commands in the history to the end of the history
+
+This example adds the first five commands in the history to the end of the history list.
 
 ```powershell
 Get-History -Id 5 -Count 5 | Add-History
 ```
 
-This command adds the first five commands in the history to the end of the history list. It uses the
-`Get-History` cmdlet to get the five commands ending in command 5. The pipeline operator passes them
-to the `Add-History` cmdlet, which appends them to the current history. The `Add-History` command
-does not include any parameters, but PowerShell associates the objects passed through the pipeline
-with the **InputObject** parameter of `Add-History`.
+The `Get-History` cmdlet gets the five commands ending in command 5. The pipeline operator passes
+them to the `Add-History` cmdlet, which appends them to the current history. The `Add-History`
+command does not include any parameters, but PowerShell associates the objects passed through the
+pipeline with the **InputObject** parameter of `Add-History`.
 
 ### Example 4: Add commands in a .csv file to the current history
 
@@ -108,12 +109,13 @@ current session history. It uses the **InputObject** parameter to specify the `$
 
 ### Example 5: Add commands in an .xml file to the current history
 
+This example adds the commands in the `history.xml` file to the current session history.
+
 ```powershell
 Add-History -InputObject (Import-Clixml c:\temp\history.xml)
 ```
 
-This command adds the commands in the `history.xml` file to the current session history. It uses the
-**InputObject** parameter to pass the results of the command in parentheses to the `Add-History`
+The **InputObject** parameter passes the results of the command in parentheses to the `Add-History`
 cmdlet. The command in parentheses, which is executed first, imports the `history.xml` file into
 PowerShell. The `Add-History` cmdlet then adds the commands in the file to the session history.
 
