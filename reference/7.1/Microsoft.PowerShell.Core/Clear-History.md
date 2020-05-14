@@ -3,7 +3,7 @@ external help file: System.Management.Automation.dll-Help.xml
 keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Core
-ms.date: 2/22/2019
+ms.date: 05/13/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/clear-history?view=powershell-7.x&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Clear-History
@@ -12,7 +12,7 @@ title: Clear-History
 # Clear-History
 
 ## SYNOPSIS
-Deletes entries from the PowerShell command history.
+Deletes entries from the PowerShell session command history.
 
 ## SYNTAX
 
@@ -41,7 +41,8 @@ use parameters with `Clear-History` to delete selected commands.
 a history file that contains every PowerShell command from every PowerShell session. From a
 PowerShell prompt, use the up and down arrows on your keyboard to scroll through the command
 history. To display the `PSReadLine` configuration for command history, use `Get-PSReadLineOption`.
-`PSReadLine` shipped with PowerShell 5.0 and above. For more information, see [about_PSReadLine](../PSReadLine/About/about_PSReadLine.md).
+`PSReadLine` shipped with PowerShell 5.0 and above. For more information, see
+[about_PSReadLine](../PSReadLine/About/about_PSReadLine.md).
 
 ## EXAMPLES
 
@@ -372,7 +373,8 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
 
 ## INPUTS
 
@@ -392,6 +394,10 @@ The PowerShell session history is a list of the commands entered during a PowerS
 can view the history, add and delete commands, and run commands from the history. For more
 information, see [about_History](About/about_History.md).
 
+The session history is managed separately from the history maintained by the **PSReadLine** module.
+Both histories are available in sessions where **PSReadLine** is loaded. This cmdlet only works with
+the session history. For more information see, [about_PSReadLine](../PSReadLine/About/about_PSReadLine.md).
+
 ## RELATED LINKS
 
 [about_History](About/about_History.md)
@@ -404,8 +410,8 @@ information, see [about_History](About/about_History.md).
 
 [Get-History](Get-History.md)
 
-[Get-PSReadLineOption](/powershell/module/psreadline/get-psreadlineoption)
-
 [Invoke-History](Invoke-History.md)
+
+[Get-PSReadLineOption](/powershell/module/psreadline/get-psreadlineoption)
 
 [Set-PSReadLineOption](/powershell/module/psreadline/set-psreadlineoption)
