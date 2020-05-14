@@ -202,7 +202,7 @@ Configuration ScriptTest
 }
 ```
 
-The resulting MOF file include the variables and their values accessed through the using-scope.
+The resulting MOF file includes the variables and their values accessed through the using-scope.
 They are injected into each scriptblock which uses the variables
 (Test and Set scripts removed for brevity):
 
