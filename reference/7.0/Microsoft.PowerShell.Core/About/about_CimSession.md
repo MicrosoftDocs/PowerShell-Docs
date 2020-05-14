@@ -1,7 +1,7 @@
 ---
 keywords: powershell,cmdlet
 locale: en-us
-ms.date: 04/30/2020
+ms.date: 05/13/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_cimsession?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_CimSession
@@ -35,25 +35,32 @@ connection. If you use CIM sessions, PowerShell does not open a network
 connection until needed. For more information about PowerShell sessions, see
 [about_PSSessions](about_PSSessions.md).
 
-### When to use a CIM session
+## When to use a CIM session
 
 Only cmdlets that work with a Windows Management Instrumentation (WMI) provider
 or CIM over WS-Man accept CIM sessions. For other cmdlets, use **PSSessions**.
 
 When you use a CIM session, PowerShell runs the cmdlet on the local client. It
-connects to the WMI provider by using the CIM session. The target computer does
+connects to the WMI provider using the CIM session. The target computer does
 not require PowerShell, or even any version of the Windows operating system.
 
-In contrast, a cmdlet run by using a **PSSession** runs on the target computer.
+In contrast, a cmdlet run using a **PSSession** runs on the target computer.
 It requires PowerShell on the target system. Furthermore, the cmdlet sends data
 back to the local computer. PowerShell manages the data sent over the
 connection, and keeps the size within the limits set by Windows Remote
 Management (WinRM). CIM sessions do not impose the WinRM limits.
 
+## Using CDXML cmdlets
+
 CIM-based Cmdlet Definition XML (CDXML) cmdlets can be written to use any WMI
 Provider. All WMI providers use **CimSession** objects. For more information
-about CDXML, see
-[CDXML definition and terms](/previous-versions/windows/desktop/wmi_v2/cdxml-overview).
+about CDXML, see [CDXML definition and terms](/previous-versions/windows/desktop/wmi_v2/cdxml-overview).
+
+CDXML cmdlets have an automatic **CimSession** parameter that can take an array
+of **CimSession** objects. By default, PowerShell limits number of concurrent
+CIM Connections to 15. This limit can be overridden by CDXML cmdlets that
+implement the **ThrottleLimit**. See the individual cmdlet documentation to
+understand the **ThrottleLimit**.
 
 ## SEE ALSO
 
