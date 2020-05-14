@@ -1,5 +1,5 @@
 ---
-ms.date: 04/15/2020
+ms.date: 05/14/2020
 keywords:  powershell,cmdlet
 title:  Making the second hop in PowerShell Remoting
 ---
@@ -22,7 +22,7 @@ preference.
 | -------------------------------------------------------- | ---------------------------------------------------------------------- |
 | CredSSP                                                  | Balances ease of use and security                                      |
 | Resource-based Kerberos constrained delegation           | Higher security with simpler configuration                             |
-| Kerberos constrained delegation                          | High security but requires Domain Administator                         |
+| Kerberos constrained delegation                          | High security but requires Domain Administrator                         |
 | Kerberos delegation (unconstrained)                      | Not recommended                                                        |
 | Just Enough Administration (JEA)                         | Can provide the best security but requires more detailed configuration |
 | PSSessionConfiguration using RunAs                       | Simpler to configure but requires credential management                |
@@ -246,13 +246,13 @@ Set-ADComputer -Identity $ServerC -PrincipalsAllowedToDelegateToAccount $null
 
 ### Information on resource-based Kerberos constrained delegation
 
-- [What's New in Kerberos Authentication][whats-new][whats-new]
+- [What's New in Kerberos Authentication][whats-new]
 - [How Windows Server 2012 Eases the Pain of Kerberos Constrained Delegation, Part 1][kcd2012-1]
 - [How Windows Server 2012 Eases the Pain of Kerberos Constrained Delegation, Part 2][kcd2012-2]
 - [Understanding Kerberos Constrained Delegation for Azure Active Directory Application Proxy Deployments with Integrated Windows Authentication][kcdpaper]
-- [[MS-ADA2]: Active Directory Schema Attributes M2.210 Attribute msDS-AllowedToActOnBehalfOfOtherIdentity][MS-ADA2]
-- [[MS-SFU]: Kerberos Protocol Extensions: Service for User and Constrained Delegation Protocol 1.3.2 S4U2proxy][MS-SFU]
-- [Remote Administration Without Constrained Delegation Using PrincipalsAllowedToDelegateToAccount][remote-adim]
+- [[MS-ADA2] Active Directory Schema Attributes M2.210 Attribute msDS-AllowedToActOnBehalfOfOtherIdentity][MS-ADA2]
+- [[MS-SFU] Kerberos Protocol Extensions: Service for User and Constrained Delegation Protocol 1.3.2 S4U2proxy][MS-SFU]
+- [Remote Administration Without Constrained Delegation Using PrincipalsAllowedToDelegateToAccount][remote-admin]
 
 ## Kerberos delegation (unconstrained)
 
@@ -283,8 +283,8 @@ For information about JEA, see [Just Enough Administration](/powershell/scriptin
 
 You can create a session configuration on _ServerB_ and set its **RunAsCredential** parameter.
 
-For information about using PSSessionConfiguration and RunAs to solve the second hop problem, see
-[Another solution to multi-hop PowerShell remoting][pssessionconfig].
+For information about using **PSSessionConfiguration** and **RunAs** to solve the second hop
+problem, see [Another solution to multi-hop PowerShell remoting][pssessionconfig].
 
 **Pros**
 
@@ -342,6 +342,6 @@ Invoke-Command -ComputerName ServerB -Credential $cred -ScriptBlock {
 [kcdpaper]: https://aka.ms/kcdpaper
 [MS-ADA2]: /openspecs/windows_protocols/ms-ada2/cea4ac11-a4b2-4f2d-84cc-aebb4a4ad405
 [MS-SFU]: /openspecs/windows_protocols/ms-sfu/bde93b0e-f3c9-4ddf-9f44-e1453be7af5a
-[remote-adim]: /archive/blogs/taylorb/remote-administration-without-constrained-delegation-using-principalsallowedtodelegatetoaccount
+[remote-admin]: /archive/blogs/taylorb/remote-administration-without-constrained-delegation-using-principalsallowedtodelegatetoaccount
 [pssessionconfig]: /archive/blogs/sergey_babkins_blog/another-solution-to-multi-hop-powershell-remoting
 [protected-users]: /windows-server/security/credentials-protection-and-management/protected-users-security-group
