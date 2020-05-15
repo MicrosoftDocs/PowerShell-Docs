@@ -553,9 +553,8 @@ Specifies the source for PSReadLine to get predictive suggestions.
 
 Valid values are:
 
--- None: disable the predictive suggestion feature.
-
--- History: get predictive suggestions from history only.
+- None: disable the predictive suggestion feature
+- History: get predictive suggestions from history only
 
 ```yaml
 Type: PredictionSource
