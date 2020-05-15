@@ -18,7 +18,7 @@ enhancements and [new features](What-s-New-in-PowerShell-70.md).
 - Support for Docker containers
 
 PowerShell 7 works side-by-side with Windows PowerShell letting you easily test and compare between
-editions before deployment. Migration is simple, quick, and safe. failure.
+editions before deployment. Migration is simple, quick, and safe.
 
 PowerShell 7 is supported on the following Windows operating systems:
 
