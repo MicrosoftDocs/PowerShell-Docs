@@ -12,17 +12,27 @@ title: Get-PSReadLineKeyHandler
 # Get-PSReadLineKeyHandler
 
 ## SYNOPSIS
-Gets the key bindings for the PSReadLine module.
+Gets the bound key functions for the PSReadLine module.
 
 ## SYNTAX
 
+### FullListing (default)
+
 ```
-Get-PSReadLineKeyHandler [-Bound] [-Unbound] [<CommonParameters>]
+Get-PSReadLineKeyHandler [-Bound] [-Unbound]
+```
+
+### SpecificBindings
+
+```
+Get-PSReadLineKeyHandler [-Chord] <String[]>
 ```
 
 ## DESCRIPTION
 
-The **Get-PSReadLineKeyHandler** cmdlet returns the currently bound key bindings.
+If no parameter is specified, returns the currently bound key functions for the PSReadLine module.
+
+If **Chord** parameter is specified, the cmdlet returns the specific bound keys.
 
 ## EXAMPLES
 
@@ -102,6 +112,8 @@ Tab                   TabCompleteNext         Complete the input using the next 
 ...
 ```
 
+<!--TODO Need example for new Chord parameter -->
+
 ## PARAMETERS
 
 ### -Bound
@@ -110,12 +122,28 @@ Indicates that this cmdlet returns functions that are bound.
 
 ```yaml
 Type: SwitchParameter
-Parameter Sets: (All)
+Parameter Sets: FullListing
 Aliases:
 
 Required: False
 Position: Named
 Default value: True
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Chord
+
+An array of key values to be displayed.
+
+```yaml
+Type: String[]
+Parameter Sets: SpecificBindings
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -126,12 +154,12 @@ Indicates that this cmdlet returns functions that are unbound.
 
 ```yaml
 Type: SwitchParameter
-Parameter Sets: (All)
+Parameter Sets: FullListing
 Aliases:
 
 Required: False
 Position: Named
-Default value: True
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -164,4 +192,3 @@ You cannot pipe objects to this cmdlet.
 [Set-PSReadLineOption](Set-PSReadLineOption.md)
 
 [Set-PSReadLineKeyHandler](Set-PSReadLineKeyHandler.md)
-
