@@ -24,7 +24,8 @@ Set-PSReadLineOption [-EditMode <EditMode>] [-ContinuationPrompt <String>] [-His
  [-BellStyle <BellStyle>] [-CompletionQueryItems <Int32>] [-WordDelimiters <String>]
  [-HistorySearchCaseSensitive] [-HistorySaveStyle <HistorySaveStyle>] [-HistorySavePath <String>]
  [-AnsiEscapeTimeout <Int32>] [-PromptText <String[]>] [-ViModeIndicator <ViModeStyle>]
- [-ViModeChangeHandler <ScriptBlock>] [-Colors <Hashtable>] [<CommonParameters>]
+ [-ViModeChangeHandler <ScriptBlock>] [-Colors <Hashtable>]  [-PredictionSource <PredictionSource>]
+ [<CommonParameters>]
 ```
 
 ## Description
@@ -546,6 +547,28 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -PredictionSource
+
+Specifies the source for PSReadLine to get predictive suggestions.
+
+Valid values are:
+
+-- None: disable the predictive suggestion feature.
+
+-- History: get predictive suggestions from history only.
+
+```yaml
+Type: PredictionSource
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: false
+Accept wildcard characters: false
+```
+
 ### -PromptText
 
 When there's a parse error, **PSReadLine** changes a part of the prompt red. **PSReadLine** analyzes
@@ -648,7 +671,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: ;:,.[]{}()/\|^&*-=+'"–—-
+Default value: ;:,.[]{}()/\|^&*-=+'"ï¿½ï¿½-
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
