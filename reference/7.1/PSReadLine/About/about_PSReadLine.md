@@ -924,6 +924,18 @@ Ends the current edit group, if needed, and invokes TabCompletePrevious.
 
 ## Miscellaneous functions
 
+### AcceptNextSuggestionWord
+
+Accept the next word of the inline or selected suggestion.
+
+- Function is unbound.
+
+### AcceptSuggestion
+
+Accept the current inline or selected suggestion.
+
+- Function is unbound.
+
 ### CaptureScreen
 
 Start interactive screen capture - up/down arrows select lines, enter copies
