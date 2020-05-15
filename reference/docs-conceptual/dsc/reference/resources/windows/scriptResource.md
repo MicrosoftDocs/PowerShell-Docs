@@ -154,10 +154,10 @@ Configuration ScriptTest
 
 ### Example 3: Utilizing parameters in a Script resource
 
-This example accesses parameters from within the Script resource by making use of the using-scope.
-Please note that ConfigurationData can be accessed in a similar way. Like example 2, a version is
-expected to be stored inside a local file on the target node. Both the local file path as well as
-the version are configurable however, decoupling code from configuration data.
+This example accesses parameters from within the Script resource by making use of the `using`
+scope. Please note that **ConfigurationData** can be accessed in a similar way. Like example 2, a
+version is expected to be stored inside a local file on the target node. Both the local file
+path as well as the version are configurable however, decoupling code from configuration data.
 
 ```powershell
 Configuration ScriptTest
@@ -202,11 +202,11 @@ Configuration ScriptTest
 }
 ```
 
-The resulting MOF file includes the variables and their values accessed through the using-scope.
-They are injected into each scriptblock which uses the variables
-(Test and Set scripts removed for brevity):
+The resulting MOF file includes the variables and their values accessed through the `using` scope.
+They are injected into each scriptblock which uses the variables. Test and Set scripts have been
+removed for brevity:
 
-```code
+```Output
 instance of MSFT_ScriptResource as $MSFT_ScriptResource1ref
 {
  GetScript = "$FilePath ='C:\\Config.ini'\n\n $currentVersion = Get-Content -Path $FilePath\n return @{ 'Result' = \"$currentVersion\" }\n";
