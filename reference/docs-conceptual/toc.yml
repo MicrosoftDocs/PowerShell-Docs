@@ -755,22 +755,20 @@
               href: community/contributing/managing-pull-requests.md
     - name: Digital art
       href: community/digital-art.md
-- name: PowerShell Developer
+- name: Scripting and development
   items:
-    - name: Cross-platform development
+    - name: Visual Studio Code
       items:
-        - name: Visual Studio Code
-          items:
-            - name: Using Visual Studio Code
-              href: components/vscode/using-vscode.md
-            - name: How to replicate the ISE experience in Visual Studio Code
-              href: components/vscode/How-To-Replicate-the-ISE-Experience-In-VSCode.md
-            - name: Using Visual Studio Code for remote editing and debugging
-              href: components/vscode/Using-VSCode-for-Remote-Editing-and-Debugging.md
-            - name: Understanding file encoding in VS Code and PowerShell
-              href: components/vscode/understanding-file-encoding.md
-        - name: Writing portable modules
-          href: learn/writing-portable-modules.md
+        - name: Using Visual Studio Code
+          href: components/vscode/using-vscode.md
+        - name: How to replicate the ISE experience in Visual Studio Code
+          href: components/vscode/How-To-Replicate-the-ISE-Experience-In-VSCode.md
+        - name: Using Visual Studio Code for remote editing and debugging
+          href: components/vscode/Using-VSCode-for-Remote-Editing-and-Debugging.md
+        - name: Understanding file encoding in VS Code and PowerShell
+          href: components/vscode/understanding-file-encoding.md
+    - name: Writing portable modules
+      href: learn/writing-portable-modules.md
     - name: Legacy PowerShell SDK
       items:
         - name: Overview
