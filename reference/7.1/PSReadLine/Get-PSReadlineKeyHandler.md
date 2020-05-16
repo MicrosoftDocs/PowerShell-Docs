@@ -112,7 +112,21 @@ Tab                   TabCompleteNext         Complete the input using the next 
 ...
 ```
 
-<!--TODO Need example for new Chord parameter -->
+### Example 3: Get specific key bindings
+
+This command returns only the bindings for the specified keys.
+
+```powershell
+Get-PSReadLineKeyHandler -Chord Enter, Shift+Enter
+```
+
+```Output
+Key         Function   Description
+---         --------   -----------
+Enter       AcceptLine Accept the input or move to the next line if input is missing a closing token.
+Shift+Enter AddLine    Move the cursor to the next line without attempting to execute the input
+...
+```
 
 ## PARAMETERS
 
@@ -132,22 +146,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Chord
-
-An array of key values to be displayed.
-
-```yaml
-Type: String[]
-Parameter Sets: SpecificBindings
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Unbound
 
 Indicates that this cmdlet returns functions that are unbound.
@@ -160,6 +158,22 @@ Aliases:
 Required: False
 Position: Named
 Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Chord
+
+Return only functions bound to specific keys or sequences.
+
+```yaml
+Type: String[]
+Parameter Sets: SpecificBindings
+Aliases: Key
+
+Required: True
+Position: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
