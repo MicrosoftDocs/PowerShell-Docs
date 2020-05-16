@@ -23,7 +23,7 @@ ConvertTo-Xml [-Depth <Int32>] [-InputObject] <PSObject> [-NoTypeInformation] [-
 ## DESCRIPTION
 
 The `ConvertTo-Xml` cmdlet creates an [XML-based](/dotnet/api/system.xml.xmldocument) representation
-of one or more Microsoft .NET Framework objects. To use this cmdlet, pipe one or more objects to the
+of one or more .NET objects. To use this cmdlet, pipe one or more objects to the
 cmdlet, or use the **InputObject** parameter to specify the object.
 
 When you pipe multiple objects to `ConvertTo-Xml` or use the **InputObject** parameter to submit

@@ -11,7 +11,7 @@ title: ConvertTo-Html
 # ConvertTo-Html
 
 ## SYNOPSIS
-Converts Microsoft .NET Framework objects into HTML that can be displayed in a Web browser.
+Converts .NET objects into HTML that can be displayed in a Web browser.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ ConvertTo-Html [-InputObject <PSObject>] [[-Property] <Object[]>] [-As <String>]
 
 ## DESCRIPTION
 
-The `ConvertTo-Html` cmdlet converts .NET Framework objects into HTML that can be displayed in a
+The `ConvertTo-Html` cmdlet converts .NET objects into HTML that can be displayed in a
 Web browser. You can use this cmdlet to display the output of a command in a Web page.
 
 You can use the parameters of `ConvertTo-Html` to select object properties, to specify a table or
