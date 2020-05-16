@@ -12,17 +12,27 @@ title: Get-PSReadLineKeyHandler
 # Get-PSReadLineKeyHandler
 
 ## SYNOPSIS
-Gets the key bindings for the PSReadLine module.
+Gets the bound key functions for the PSReadLine module.
 
 ## SYNTAX
 
+### FullListing (default)
+
 ```
-Get-PSReadLineKeyHandler [-Bound] [-Unbound] [<CommonParameters>]
+Get-PSReadLineKeyHandler [-Bound] [-Unbound]
+```
+
+### SpecificBindings
+
+```
+Get-PSReadLineKeyHandler [-Chord] <String[]>
 ```
 
 ## DESCRIPTION
 
-The **Get-PSReadLineKeyHandler** cmdlet returns the currently bound key bindings.
+If no parameter is specified, returns the currently bound key functions for the PSReadLine module.
+
+If **Chord** parameter is specified, the cmdlet returns the specific bound keys.
 
 ## EXAMPLES
 
@@ -102,6 +112,22 @@ Tab                   TabCompleteNext         Complete the input using the next 
 ...
 ```
 
+### Example 3: Get specific key bindings
+
+This command returns only the bindings for the specified keys.
+
+```powershell
+Get-PSReadLineKeyHandler -Chord Enter, Shift+Enter
+```
+
+```Output
+Key         Function   Description
+---         --------   -----------
+Enter       AcceptLine Accept the input or move to the next line if input is missing a closing token.
+Shift+Enter AddLine    Move the cursor to the next line without attempting to execute the input
+...
+```
+
 ## PARAMETERS
 
 ### -Bound
@@ -110,7 +136,7 @@ Indicates that this cmdlet returns functions that are bound.
 
 ```yaml
 Type: SwitchParameter
-Parameter Sets: (All)
+Parameter Sets: FullListing
 Aliases:
 
 Required: False
@@ -126,12 +152,28 @@ Indicates that this cmdlet returns functions that are unbound.
 
 ```yaml
 Type: SwitchParameter
-Parameter Sets: (All)
+Parameter Sets: FullListing
 Aliases:
 
 Required: False
 Position: Named
-Default value: True
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Chord
+
+Return only functions bound to specific keys or sequences.
+
+```yaml
+Type: String[]
+Parameter Sets: SpecificBindings
+Aliases: Key
+
+Required: True
+Position: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -164,4 +206,3 @@ You cannot pipe objects to this cmdlet.
 [Set-PSReadLineOption](Set-PSReadLineOption.md)
 
 [Set-PSReadLineKeyHandler](Set-PSReadLineKeyHandler.md)
-

@@ -924,6 +924,18 @@ Ends the current edit group, if needed, and invokes TabCompletePrevious.
 
 ## Miscellaneous functions
 
+### AcceptNextSuggestionWord
+
+Accept the next word of the inline or selected suggestion.
+
+- Function is unbound.
+
+### AcceptSuggestion
+
+Accept the current inline or selected suggestion.
+
+- Function is unbound.
+
 ### CaptureScreen
 
 Start interactive screen capture - up/down arrows select lines, enter copies
@@ -1330,10 +1342,12 @@ second is used if your binding is doing something more advanced with the Ast.
 IEnumerable[Microsoft.PowerShell.KeyHandler]
   GetKeyHandlers(bool includeBound, bool includeUnbound)
 
+IEnumerable[Microsoft.PowerShell.KeyHandler]
+  GetKeyHandlers(string[] Chord)
 ```
 
-This function is used by Get-PSReadLineKeyHandler and probably isn't useful in
-a custom key binding.
+These two functions are used by `Get-PSReadLineKeyHandler`. The first is used to get all key
+bindings. The second is used to get specific key bindings.
 
 ```csharp
 Microsoft.PowerShell.PSConsoleReadLineOptions GetOptions()

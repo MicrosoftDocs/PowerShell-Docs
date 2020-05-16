@@ -2,7 +2,7 @@
     "build": {
         "content": [{
                 "files": ["index.yml", "module/index.md", "digital-art.md"],
-                "exclude": ["**/obj/**", "**/includes/**", "README.md"],
+                "exclude": ["**/obj/**", "**/includes/**", "README.md", "**/README.md"],
                 "dest": ""
             },
 
