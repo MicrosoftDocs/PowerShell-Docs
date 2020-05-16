@@ -22,7 +22,7 @@ ConvertTo-Json [-InputObject] <Object> [-Depth <Int32>] [-Compress]
 
 ## DESCRIPTION
 
-The `ConvertTo-Json` cmdlet converts any object to a string in JavaScript Object Notation (JSON)
+The `ConvertTo-Json` cmdlet converts any .NET object to a string in JavaScript Object Notation (JSON)
 format. The properties are converted to field names, the field values are converted to property
 values, and the methods are removed.
 
