@@ -176,11 +176,11 @@ For more information, see the [about_Windows_Compatibility][] article and the [m
 PowerShell follows the [Microsoft Security Servicing Criteria for Windows][].
 The table below outlines the features that meet the servicing criteria and those that do not.
 
-| Feature                          | Type             | Intent to Service? |
-|----------------------------------|------------------|--------------------|
-| Execution Policy                 | Defense in Depth | No                 |
-| System Lockdown - with AppLocker | Defense in Depth | No                 |
-| System Lockdown - with WDAC      | Security Feature | Yes                |
+| Feature                          | Type             |
+|----------------------------------|------------------|
+| Execution Policy                 | Defense in Depth |
+| System Lockdown - with AppLocker | Defense in Depth |
+| System Lockdown - with WDAC      | Security Feature |
 
 ## Release history
 
