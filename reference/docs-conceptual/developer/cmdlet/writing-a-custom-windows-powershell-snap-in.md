@@ -58,7 +58,7 @@ assembly, see [Writing a Windows PowerShell Snap-in](./writing-a-windows-powersh
 8. Specify the cmdlets that belong to the custom snap-in (optional) using the
    [System.Management.Automation.Runspaces.Cmdletconfigurationentry](/dotnet/api/System.Management.Automation.Runspaces.CmdletConfigurationEntry)
    class. The information added here includes the name of the cmdlet, its .NET type, and the cmdlet
-   Help file name (the format of the cmdlet Help file name should be` name.dll-help.xml`).
+   Help file name (the format of the cmdlet Help file name should be `name.dll-help.xml`).
 
    This example adds the Test-HelloWorld and TestCustomSnapinTest cmdlets.
 

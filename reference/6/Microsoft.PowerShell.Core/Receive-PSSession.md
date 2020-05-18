@@ -355,7 +355,7 @@ Return 3
 Return 4
 ```
 
-The ` New-PSSession` cmdlet creates the Test session on the Server01 computer. The command saves the
+The `New-PSSession` cmdlet creates the Test session on the Server01 computer. The command saves the
 session in the `$s` variable.
 
 The `Invoke-Command` cmdlet runs a command in the session in the `$s` variable. The command uses the
