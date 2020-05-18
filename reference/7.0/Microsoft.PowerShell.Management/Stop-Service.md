@@ -299,5 +299,3 @@ The service names appear in the **Name** column and the display names appear in 
 [Suspend-Service](Suspend-Service.md)
 
 [Remove-Service](Remove-Service.md)
-
-

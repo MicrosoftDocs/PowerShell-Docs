@@ -393,5 +393,3 @@ This cmdlet does not generate any output.
 [Set-WSManQuickConfig](Set-WSManQuickConfig.md)
 
 [Test-WSMan](Test-WSMan.md)
-
-

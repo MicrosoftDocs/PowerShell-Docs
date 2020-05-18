@@ -259,7 +259,6 @@ object: 1
 In this example we cast the method to the interface **IFoo** to select the more
 specific overload of the **Bar** method.
 
-
 ```powershell
 ([IFoo] [Foo]::new()).Bar(1)
 ```

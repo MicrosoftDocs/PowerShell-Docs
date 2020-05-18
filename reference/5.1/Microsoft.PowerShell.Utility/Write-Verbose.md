@@ -103,7 +103,3 @@ You can pipe a string that contains the message to **Write-Verbose**.
 [Write-Progress](Write-Progress.md)
 
 [Write-Warning](Write-Warning.md)
-
-
-
-

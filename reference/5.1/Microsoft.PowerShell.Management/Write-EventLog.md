@@ -219,6 +219,3 @@ This cmdlet returns objects that represents the events in the logs.
 [Show-EventLog](Show-EventLog.md)
 
 [Write-EventLog](Write-EventLog.md)
-
-
-

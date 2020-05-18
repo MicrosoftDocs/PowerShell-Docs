@@ -231,4 +231,3 @@ This cmdlet returns an object that contains CIM session information.
 [New-CimSession](New-CimSession.md)
 
 [about_CimSession](../Microsoft.PowerShell.Core/About/about_CimSession.md)
-

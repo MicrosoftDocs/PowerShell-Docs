@@ -555,5 +555,3 @@ This cmdlet does not generate output.
 [Invoke-WmiMethod](Invoke-WmiMethod.md)
 
 [Remove-WmiObject](Remove-WmiObject.md)
-
-

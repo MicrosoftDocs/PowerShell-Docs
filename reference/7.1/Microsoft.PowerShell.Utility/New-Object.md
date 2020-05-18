@@ -68,7 +68,6 @@ $IE2.Navigate2("www.microsoft.com")`
 $IE2.Visible = $True`
 ```
 
-
 ### Example 3: Use the Strict parameter to generate a non-terminating error
 
 This example demonstrates that adding the **Strict** parameter causes the `New-Object` cmdlet to
@@ -344,4 +343,3 @@ You cannot pipe input to this cmdlet.
 [Sort-Object](Sort-Object.md)
 
 [Tee-Object](Tee-Object.md)
-

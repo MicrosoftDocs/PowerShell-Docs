@@ -35,7 +35,6 @@ This process of invitations prevents users from falsely adding other users as ow
 
 Note that the "Authors" metadata is purely freeform text; only "Owners" are controlled.
 
-
 ## Removing Owners
 
 When a package has multiple owners and one needs to be removed, the process is simple:
@@ -44,8 +43,6 @@ When a package has multiple owners and one needs to be removed, the process is s
 2. Navigate to a package page using the Packages tab, searching, or clicking your username and then [**Manage My Packages**](https://www.powershellgallery.com/account/Packages).
 3. When logged on as a package's owner, there is a 'Manage Owners' link on the left side to click;
 4. Click the 'remove' link next to the owner to be removed.
-
-
 
 ## Transferring Package Ownership
 
@@ -59,7 +56,6 @@ This request has come in under a couple forms but the process works the same.
 
 - The package ownership is changing from one developer to another
 - The package was accidentally published using the wrong account
-
 
 ## Orphaned Packages
 

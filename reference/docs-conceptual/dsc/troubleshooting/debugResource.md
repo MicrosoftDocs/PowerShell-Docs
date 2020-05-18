@@ -18,7 +18,6 @@ You can verify that debugging has been enabled by looking at the result of a cal
 
 The following PowerShell output shows the result of enabling debugging:
 
-
 ```powershell
 PS C:\DebugTest> $LCM = Get-DscLocalConfigurationManager
 
@@ -35,7 +34,6 @@ ResourceScriptBreakAll
 
 PS C:\DebugTest>
 ```
-
 
 ## Starting a configuration with debug enabled
 To debug a DSC resource, you start a configuration that calls that resource.

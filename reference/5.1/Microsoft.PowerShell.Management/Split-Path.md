@@ -361,5 +361,3 @@ For more information, see about_Providers.
 [Resolve-Path](Resolve-Path.md)
 
 [Test-Path](Test-Path.md)
-
-

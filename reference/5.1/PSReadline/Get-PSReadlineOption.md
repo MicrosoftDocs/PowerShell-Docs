@@ -56,7 +56,7 @@ CompletionQueryItems                   : 100
 MaximumKillRingCount                   : 10
 ShowToolTips                           : True
 ViModeIndicator                        : None
-WordDelimiters                         : ;:,.[]{}()/\|^&*-=+'"–—-
+WordDelimiters                         : ;:,.[]{}()/\|^&*-=+'"ï¿½ï¿½-
 CommandColor                           : "$([char]0x1b)[93m"
 CommentColor                           : "$([char]0x1b)[32m"
 ContinuationPromptColor                : "$([char]0x1b)[37m"
@@ -109,4 +109,3 @@ in PSReadLine directly without invoking `Set-PSReadLineOption`.
 [Set-PSReadLineOption](Set-PSReadLineOption.md)
 
 [Set-PSReadLineKeyHandler](Set-PSReadLineKeyHandler.md)
-

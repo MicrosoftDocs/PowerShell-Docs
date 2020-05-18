@@ -421,7 +421,6 @@ parameter using one of the following formats:
 - A variable that contains a CultureInfo object.
 - A command that gets a CultureInfo object, such as `Get-Culture`.
 
-
 ```yaml
 Type: CultureInfo
 Parameter Sets: (All)

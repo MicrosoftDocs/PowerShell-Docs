@@ -133,5 +133,3 @@ This cmdlet returns a security group.
 [Rename-LocalGroup](Rename-LocalGroup.md)
 
 [Set-LocalGroup](Set-LocalGroup.md)
-
-

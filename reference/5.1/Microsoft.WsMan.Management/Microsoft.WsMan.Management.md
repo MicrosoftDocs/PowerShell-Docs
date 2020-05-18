@@ -57,4 +57,3 @@ Configures the local computer for remote management.
 
 ### [Test-WSMan](Test-WSMan.md)
 Tests whether the WinRM service is running on a local or remote computer.
-

@@ -30,6 +30,4 @@ The following XML shows an \<maml:alertset> node with two notes. Notice that eac
     <maml:para></maml:para>
   </maml:alert>
 </maml:alertSet>
-```
-
-
+```

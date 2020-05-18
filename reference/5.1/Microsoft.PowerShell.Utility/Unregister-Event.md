@@ -188,5 +188,3 @@ To delete a custom event from the session, you must remove it programmatically o
 [Unregister-Event](Unregister-Event.md)
 
 [Wait-Event](Wait-Event.md)
-
-

@@ -280,5 +280,3 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 [Set-WSManQuickConfig](Set-WSManQuickConfig.md)
 
 [Test-WSMan](Test-WSMan.md)
-
-

@@ -55,6 +55,3 @@ The following XML shows an example of using the \<maml:returnValues> node to doc
   </command: returnValue>
 </command: returnValues>
 ```
-
-
-

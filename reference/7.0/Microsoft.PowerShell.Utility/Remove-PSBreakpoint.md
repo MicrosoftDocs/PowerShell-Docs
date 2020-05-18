@@ -173,5 +173,3 @@ The cmdlet does not generate any output.
 [Get-PSCallStack](Get-PSCallStack.md)
 
 [Set-PSBreakpoint](Set-PSBreakpoint.md)
-
-
