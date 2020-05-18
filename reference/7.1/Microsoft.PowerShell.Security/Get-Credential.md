@@ -32,13 +32,8 @@ Get-Credential [-Message <String>] [[-UserName] <String>] [-Title <String>] [<Co
 The `Get-Credential` cmdlet creates a credential object for a specified user name and password. You
 can use the credential object in security operations.
 
-Beginning in PowerShell 3.0, you can use the **Message** parameter to specify a customized
-message on the dialog box that prompts the user for their name and password.
-
-The `Get-Credential` cmdlet prompts the user for a password or a user name and password. By default,
-an authentication dialog box appears to prompt the user. However, in some host programs, such as the
-PowerShell console, you can prompt the user at the command line by changing a registry entry. For
-more information about this registry entry, see the notes and examples.
+The `Get-Credential` cmdlet prompts the user for a password or a user name and password. You can use
+the **Message** parameter to specify a customized message in the command line prompt.
 
 ## EXAMPLES
 
@@ -50,7 +45,7 @@ $c = Get-Credential
 
 This command gets a credential object and saves it in the `$c` variable.
 
-When you enter the command, a dialog box appears requesting a user name and password. When you enter
+When you enter the command, you are prompted for a user name and password. When you enter
 the requested information, the cmdlet creates a **PSCredential** object representing the credentials
 of the user and saves it in the `$c` variable.
 
@@ -111,24 +106,6 @@ password. The command saves the resulting credentials in the `$Credential` varia
 The **PromptForCredential** method is an alternative to using the `Get-Credential` cmdlet. When you
 use **PromptForCredential**, you can specify the caption, messages, and user name that appear in the
 message box.
-
-### Example 6
-
-```powershell
-Set-ItemProperty "HKLM:\SOFTWARE\Microsoft\PowerShell\1\ShellIds" -Name ConsolePrompting -Value $true
-```
-
-This example shows how to modify the registry so that the user is prompted at the command line,
-instead of by using a dialog box.
-
-The command creates the **ConsolePrompting** registry entry and sets its value to True. To run this
-command, start PowerShell with the "Run as administrator" option.
-
-To use a dialog box for prompting, set the value of the ConsolePrompting to false ($false) or use
-the `Remove-ItemProperty` cmdlet to delete it.
-
-The ConsolePrompting registry entry works in some host programs, such as the PowerShell console. It
-might not work in all host programs.
 
 ### Example 7
 
@@ -247,7 +224,7 @@ Accept wildcard characters: False
 
 ### -Title
 
-Sets the text of the title bar for the authentication dialog.
+Sets the text of the title line for the authentication prompt in the console.
 
 This parameter was introduced in PowerShell 6.0.
 
@@ -267,10 +244,6 @@ Accept wildcard characters: False
 
 Specifies a user name. The authentication prompt requests a password for the user name. By default,
 the user name is blank and the authentication prompt requests both a user name and password.
-
-When the authentication prompt appears in a dialog box, the user can edit the specified user name.
-However, the user cannot change the user name when the prompt appears at the command line. When
-using this parameter in a shared function or script, consider all possible presentations.
 
 This parameter was introduced in PowerShell 3.0.
 
@@ -310,21 +283,8 @@ You cannot pipe input to this cmdlet.
 You can use the **PSCredential** object that `Get-Credential` creates in cmdlets that request user
 authentication, such as those with a **Credential** parameter.
 
-By default, the authentication prompt appears in a dialog box. To display the authentication prompt
-at the command line, add the **ConsolePrompting** registry entry
-(`HKLM:\SOFTWARE\Microsoft\PowerShell\1\ShellIds\ConsolePrompting`) and set its value to **True**.
-If the **ConsolePrompting** registry entry does not exist or if its value is False, the
-authentication prompt appears in a dialog box. For instructions, see the examples.
-
-The **ConsolePrompting** registry entry works in the PowerShell console, but it does not
-work in all host programs.
-
-For example, it has no effect in the PowerShell Integrated Scripting Environment (ISE). For
-information about the effect of the **ConsolePrompting** registry entry, see the help topics for the
-host program.
-
 The **Credential** parameter is not supported by all providers that are installed with PowerShell.
-Beginning in PowerShell 3.0, it is supported on selected cmdlet, such as the `Get-WmiObject`
+Beginning in PowerShell 3.0, it is supported on select cmdlets, such as the `Get-Content`
 and `New-PSDrive` cmdlets.
 
 ## RELATED LINKS
