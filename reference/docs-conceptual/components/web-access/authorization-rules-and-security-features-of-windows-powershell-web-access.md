@@ -40,7 +40,7 @@ cmdlet.
 Windows PowerShell Web Access authentication rules are whitelist rules. Each
 rule is a definition of an allowed connection between users, target computers,
 and particular Windows PowerShell [session configurations](/powershell/module/microsoft.powershell.core/about/about_session_configurations?view=powershell-5.1)
-(also referred to as endpoints or _runspaces_) on specified target computers.
+(also referred to as endpoints or *runspaces*) on specified target computers.
 For an explanation on **runspaces** see [Beginning Use of PowerShell
 Runspaces](https://blogs.technet.microsoft.com/heyscriptingguy/2015/11/26/beginning-use-of-powershell-runspaces-part-1/)
 
@@ -151,7 +151,7 @@ credentials, the primary user name and password that are used to connect to the 
 used to connect to the target computer.
 
 Authorization rules can be used to allow users access to a particular session configuration. You
-can create _restricted runspaces_ or session configurations for Windows PowerShell Web Access, and
+can create *restricted runspaces* or session configurations for Windows PowerShell Web Access, and
 allow specific users to connect only to specific session configurations when they sign in to
 Windows PowerShell Web Access. You can use access control lists (ACLs) to determine which users
 have access to specific endpoints, and further restrict access to the endpoint for a specific set
@@ -209,8 +209,8 @@ or session configurations).
       -ComputerName <computer_name> -ConfigurationName <session_configuration_name>
    ```
 
-   - In the following example, a user named _JSmith_ in the _Contoso_ domain is granted access to
-     manage the computer _Contoso_214_, and use a session configuration named _NewAdminsOnly_.
+   - In the following example, a user named *JSmith* in the *Contoso* domain is granted access to
+     manage the computer *Contoso_214*, and use a session configuration named *NewAdminsOnly*.
 
    ```powershell
    Add-PswaAuthorizationRule -UserName 'Contoso\JSmith' `

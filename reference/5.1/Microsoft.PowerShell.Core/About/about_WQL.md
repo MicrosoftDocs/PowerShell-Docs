@@ -45,7 +45,7 @@ slowly.
 
 A typical WMI query begins with a Select statement that gets all properties or
 particular properties of a WMI class. To select all properties of a WMI class,
-use an asterisk (*). The From keyword specifies the WMI class.
+use an asterisk (\*). The From keyword specifies the WMI class.
 
 A Select statement has the following format:
 
@@ -500,7 +500,7 @@ Sort-Object -Property Name
 #### EXAMPLE 4: Any characters -- or none (%)
 
 The following commands get processes that have names that begin with "calc".
-The % symbol in WQL is equivalent to the asterisk (*) symbol in regular
+The % symbol in WQL is equivalent to the asterisk (\*) symbol in regular
 expressions.
 
 ```powershell

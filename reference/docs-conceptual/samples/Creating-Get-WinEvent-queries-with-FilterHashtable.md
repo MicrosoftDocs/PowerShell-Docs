@@ -118,7 +118,7 @@ in the following screenshot:
 
 ![Image of Windows Event Viewer sources.](./media/creating-get-winEvent-queries-with-filterhashtable/providername.png)
 
-Update the hash table and include the **key-value** pair with the key, **ProviderName, and the
+Update the hash table and include the **key-value** pair with the key, **ProviderName**, and the
 value, **.NET Runtime**.
 
 ```powershell

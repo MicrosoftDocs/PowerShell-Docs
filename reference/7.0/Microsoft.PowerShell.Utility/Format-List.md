@@ -81,7 +81,7 @@ Get-Process winlogon | Format-List -Property *
 
 It uses the Get-Process cmdlet to get an object representing the Winlogon process. The pipeline
 operator (|) passes the Winlogon process object through the pipeline to `Format-List`. The command
-uses the *Property* parameter to specify the properties and the * to indicate all properties.
+uses the *Property* parameter to specify the properties and the \* to indicate all properties.
 Because the name of the *Property* parameter is optional, you can omit it and type the command as
 `Format-List *`. `Format-List` automatically sends the results to the default output cmdlet for
 display.

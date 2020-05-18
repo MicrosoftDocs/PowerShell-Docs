@@ -47,7 +47,7 @@ PS C:\> Get-FormatData -TypeName "*" | Export-FormatData -Path "allformat.ps1xml
 This command exports all of the format data in the session to the AllFormat.ps1xml file.
 
 The command uses the Get-FormatData cmdlet to get the format data in the session.
-A value of * (all) for the *TypeName* parameter directs the cmdlet to get all of the data in the session.
+A value of \* (all) for the *TypeName* parameter directs the cmdlet to get all of the data in the session.
 
 The command uses a pipeline operator (|) to send the format data from the **Get-FormatData** command to the **Export-FormatData** cmdlet, which exports the format data to the AllFormat.ps1 file.
 

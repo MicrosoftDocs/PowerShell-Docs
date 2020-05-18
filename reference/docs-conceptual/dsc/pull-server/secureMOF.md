@@ -371,10 +371,10 @@ configuration CredentialEncryptionExample
 
 At this point, you can run the configuration, which will output two files:
 
-- A *.meta.mof file that configures the Local Configuration Manager to decrypt the credentials using
+- A \*.meta.mof file that configures the Local Configuration Manager to decrypt the credentials using
   the certificate that is stored on the local machine store and identified by its thumbprint.
   [`Set-DscLocalConfigurationManager`](https://technet.microsoft.com/library/dn521621.aspx) applies
-  the *.meta.mof file.
+  the \*.meta.mof file.
 - A MOF file that actually applies the configuration. Start-DscConfiguration applies the configuration.
 
 These commands will accomplish those steps:
