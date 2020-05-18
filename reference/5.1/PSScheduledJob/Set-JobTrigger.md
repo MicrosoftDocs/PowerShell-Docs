@@ -48,6 +48,7 @@ This cmdlet was introduced in Windows PowerShell 3.0.
 ## EXAMPLES
 
 ### Example 1: Change the days in a job trigger
+
 ```
 PS C:\> Get-JobTrigger -Name "DeployPackage"
 Id         Frequency       Time                   DaysOfWeek              Enabled
@@ -69,6 +70,7 @@ The output shows that the trigger starts the job at midnight on Wednesdays and S
 This command is not required; it is included only to show the effect of the trigger change.
 
 ### Example 2: Change the job trigger type
+
 ```
 PS C:\> Get-JobTrigger -Name "Inventory"
 Id         Frequency       Time                   DaysOfWeek              Enabled
@@ -93,6 +95,7 @@ The output shows that the job has two triggers a daily trigger and an *AtStartup
 This command is not required; it is included only to show the effect of the trigger change.
 
 ### Example 3: Change the user on a remote job trigger
+
 ```
 PS C:\> Invoke-Command -ComputerName "Server01" -ScriptBlock {Get-ScheduledJob | Get-JobTrigger | Where-Object {$_.User} | Set-JobTrigger -User "Domain01/Admin02"}
 ```
@@ -109,6 +112,7 @@ The job triggers are piped to the Where-Object cmdlet, which gets job triggers t
 The selected job triggers are piped to the **Set-JobTrigger** cmdlet, which changes the user to Domain01\Admin02.
 
 ### Example 4: Change one of many job triggers
+
 ```
 PS C:\> Get-JobTrigger -Name "SecurityCheck"
 Id         Frequency       Time                   DaysOfWeek              Enabled

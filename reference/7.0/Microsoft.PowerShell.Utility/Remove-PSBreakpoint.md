@@ -17,11 +17,13 @@ Deletes breakpoints from the current console.
 ## SYNTAX
 
 ### Breakpoint (Default)
+
 ```
 Remove-PSBreakpoint [-Breakpoint] <Breakpoint[]> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### Id
+
 ```
 Remove-PSBreakpoint [-Id] <Int32[]> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
@@ -39,6 +41,7 @@ For more information about the PowerShell debugger, see about_Debuggers.
 ## EXAMPLES
 
 ### Example 1: Remove all breakpoints
+
 ```
 PS C:\> Get-PSBreakpoint | Remove-PSBreakpoint
 ```
@@ -46,6 +49,7 @@ PS C:\> Get-PSBreakpoint | Remove-PSBreakpoint
 This command deletes all of the breakpoints in the current console.
 
 ### Example 2: Remove a specified breakpoint
+
 ```
 PS C:\> $B = Set-PSBreakpoint -Script "sample.ps1" -Variable "Name"
 PS C:\> $B | Remove-PSBreakpoint
@@ -63,6 +67,7 @@ As a result of this command, if you run the script, it runs to completion withou
 Also, the **Get-PSBreakpoint** cmdlet does not return this breakpoint.
 
 ### Example 3: Remove a breakpoint by ID
+
 ```
 PS C:\> Remove-PSBreakpoint -Id 2
 ```
@@ -70,6 +75,7 @@ PS C:\> Remove-PSBreakpoint -Id 2
 This command deletes the breakpoint with breakpoint ID 2.
 
 ### Example 4: Use a function to remove all breakpoints
+
 ```
 PS C:\> function del-psb { get-psbreakpoint | remove-psbreakpoint }
 ```

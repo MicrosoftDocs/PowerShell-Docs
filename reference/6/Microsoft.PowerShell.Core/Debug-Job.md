@@ -17,21 +17,25 @@ Debugs a running background, remote, or PowerShell Workflow job.
 ## SYNTAX
 
 ### JobParameterSet (Default)
+
 ```
 Debug-Job [-Job] <Job> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### JobNameParameterSet
+
 ```
 Debug-Job [-Name] <String> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### JobIdParameterSet
+
 ```
 Debug-Job [-Id] <Int32> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### JobInstanceIdParameterSet
+
 ```
 Debug-Job [-InstanceId] <Guid> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
@@ -46,6 +50,7 @@ Starting in Windows PowerShell 5.0, the **exit** command detaches the debugger, 
 ## EXAMPLES
 
 ### Example 1: Debug a job by job ID
+
 ```
 PS C:\> Debug-Job -ID 3
 Id     Name            PSJobTypeName   State         HasMoreData     Location             Command

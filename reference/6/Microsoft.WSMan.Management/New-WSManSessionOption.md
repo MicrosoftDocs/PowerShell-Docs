@@ -33,6 +33,7 @@ The **New-WSManSessionOption** cmdlet creates a WSMan Session option hash table 
 ## EXAMPLES
 
 ### Example 1: Create a connection that uses connection options
+
 ```
 PS C:\> $a = New-WSManSessionOption -OperationTimeout 30000
 PS C:\> Connect-WSMan -ComputerName "server01" -SessionOption $a

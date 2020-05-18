@@ -17,6 +17,7 @@ Modifies a local user account.
 ## SYNTAX
 
 ### Name (Default)
+
 ```
 Set-LocalUser [-AccountExpires <DateTime>] [-AccountNeverExpires] [-Description <String>] [-FullName <String>]
  [-Name] <String> [-Password <SecureString>] [-PasswordNeverExpires <Boolean>]
@@ -24,6 +25,7 @@ Set-LocalUser [-AccountExpires <DateTime>] [-AccountNeverExpires] [-Description 
 ```
 
 ### InputObject
+
 ```
 Set-LocalUser [-AccountExpires <DateTime>] [-AccountNeverExpires] [-Description <String>] [-FullName <String>]
  [-InputObject] <LocalUser> [-Password <SecureString>] [-PasswordNeverExpires <Boolean>]
@@ -31,6 +33,7 @@ Set-LocalUser [-AccountExpires <DateTime>] [-AccountNeverExpires] [-Description 
 ```
 
 ### SecurityIdentifier
+
 ```
 Set-LocalUser [-AccountExpires <DateTime>] [-AccountNeverExpires] [-Description <String>] [-FullName <String>]
  [-Password <SecureString>] [-PasswordNeverExpires <Boolean>] [-SID] <SecurityIdentifier>
@@ -48,6 +51,7 @@ This cmdlet can reset the password of a local user account.
 ## EXAMPLES
 
 ### Example 1: Change a description of a user account
+
 ```
 PS C:\> Set-LocalUser -Name "Admin07" -Description "Description of this account."
 ```
@@ -55,6 +59,7 @@ PS C:\> Set-LocalUser -Name "Admin07" -Description "Description of this account.
 This command changes the description of a user account named Admin07.
 
 ### Example 2: Change the password on an account
+
 ```
 PS C:\> $Password = Read-Host -AsSecureString
 PS C:\> $UserAccount = Get-LocalUser -Name "User02"

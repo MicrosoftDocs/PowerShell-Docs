@@ -32,6 +32,7 @@ This cmdlet also enables debugging of resources when the DSC engine or LCM is ru
 ## EXAMPLES
 
 ### Example 1: Invoke the Set method of a resource by specifying its mandatory properties
+
 ```
 PS C:\> Invoke-DscResource -Name Log -Method Set -Property @{Message = 'Hello World'} -ModuleName PSDesiredStateConfiguration
 ```
@@ -39,6 +40,7 @@ PS C:\> Invoke-DscResource -Name Log -Method Set -Property @{Message = 'Hello Wo
 This command invokes the **Set** method of a resource named Log and specifies a **Message** property for it.
 
 ### Example 2: Invoke the Test method of a resource for a specified module
+
 ```
 PS C:\> Invoke-DscResource -Name WindowsProcess -Method Test -Property @{Path = 'C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe'; Arguments = ''} -ModuleName PSDesiredStateConfiguration
 ```

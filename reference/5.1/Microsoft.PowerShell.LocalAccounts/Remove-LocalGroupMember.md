@@ -17,17 +17,20 @@ Removes members from a local group.
 ## SYNTAX
 
 ### Group
+
 ```
 Remove-LocalGroupMember [-Group] <LocalGroup> [-Member] <LocalPrincipal[]> [-WhatIf] [-Confirm]
  [<CommonParameters>]
 ```
 
 ### Default
+
 ```
 Remove-LocalGroupMember [-Member] <LocalPrincipal[]> [-Name] <String> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### SecurityIdentifier
+
 ```
 Remove-LocalGroupMember [-Member] <LocalPrincipal[]> [-SID] <SecurityIdentifier> [-WhatIf] [-Confirm]
  [<CommonParameters>]
@@ -43,6 +46,7 @@ The **Remove-LocalGroupMember** cmdlet removes users or groups from a local grou
 ## EXAMPLES
 
 ### Example 1: Remove members from the Administrators group
+
 ```
 PS C:\> Remove-LocalGroupMember -Group "Administrators" -Member "Admin02", "MicrosoftAccount\username@Outlook.com", "AzureAD\DavidChew@contoso.com", "CONTOSO\Domain Admins"
 ```

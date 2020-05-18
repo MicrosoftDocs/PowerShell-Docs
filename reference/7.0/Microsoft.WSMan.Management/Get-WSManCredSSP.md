@@ -42,6 +42,7 @@ If the remote computer is compromised, when credentials are passed to it, the cr
 ## EXAMPLES
 
 ### Example 1: Display CredSSP configuration
+
 ```
 PS C:\> Get-WSManCredSSP
 ```

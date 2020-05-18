@@ -32,6 +32,7 @@ For more information, see about_Transactions.
 ## EXAMPLES
 
 ### Example 1: Commit a transaction
+
 ```
 PS C:\> cd hkcu:\software
 PS HKCU:\software> Start-Transaction
@@ -64,6 +65,7 @@ The **Complete-Transaction** command commits the transaction, which makes the re
 As a result, the second dir command shows that the registry is changed.
 
 ### Example 2: Commit a transaction that has more than one subscriber
+
 ```
 PS C:\> cd hkcu:\software
 PS HKCU:\software> Start-Transaction
@@ -136,6 +138,7 @@ The second **Complete-Transaction** command commits the entire transaction and c
 This is confirmed by a second dir m* command, which shows the changes.
 
 ### Example 3: Perform a transaction that does not change any data
+
 ```
 PS C:\> cd hkcu:\software
 PS HKCU:\software> Start-Transaction

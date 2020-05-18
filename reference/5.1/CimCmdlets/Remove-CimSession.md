@@ -17,26 +17,31 @@ Removes one or more CIM sessions.
 ## SYNTAX
 
 ### CimSessionSet (Default)
+
 ```
 Remove-CimSession [-CimSession] <CimSession[]> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### ComputerNameSet
+
 ```
 Remove-CimSession [-ComputerName] <String[]> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### SessionIdSet
+
 ```
 Remove-CimSession [-Id] <UInt32[]> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### InstanceIdSet
+
 ```
 Remove-CimSession -InstanceId <Guid[]> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### NameSet
+
 ```
 Remove-CimSession -Name <String[]> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```

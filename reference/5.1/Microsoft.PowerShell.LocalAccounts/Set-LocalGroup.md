@@ -17,16 +17,19 @@ Changes a local security group.
 ## SYNTAX
 
 ### InputObject
+
 ```
 Set-LocalGroup -Description <String> [-InputObject] <LocalGroup> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### Default
+
 ```
 Set-LocalGroup -Description <String> [-Name] <String> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### SecurityIdentifier
+
 ```
 Set-LocalGroup -Description <String> [-SID] <SecurityIdentifier> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
@@ -37,6 +40,7 @@ The **Set-LocalGroup** cmdlet changes a local security group.
 ## EXAMPLES
 
 ### Example 1: Change a group description
+
 ```
 PS C:\> Set-LocalGroup -Name "SecurityGroup04" -Description "This is a sample description."
 ```

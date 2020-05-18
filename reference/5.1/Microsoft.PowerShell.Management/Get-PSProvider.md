@@ -30,6 +30,7 @@ For information about Windows PowerShell providers, see about_Providers.
 ## EXAMPLES
 
 ### Example 1: Display a list of all available providers
+
 ```
 PS C:\> Get-PSProvider
 ```
@@ -37,6 +38,7 @@ PS C:\> Get-PSProvider
 This command displays a list of all available Windows PowerShell providers.
 
 ### Example 2: Display a list of all Windows PowerShell providers that begin with specified letters
+
 ```
 PS C:\> Get-PSProvider f*, r* | Format-List
 ```
@@ -44,6 +46,7 @@ PS C:\> Get-PSProvider f*, r* | Format-List
 This command displays a list of all Windows PowerShell providers with names that begin with the letter f or r.
 
 ### Example 3: Find snap-ins or module that added providers to your session
+
 ```
 PS C:\> Get-PSProvider | Format-Table name, module, pssnapin -auto
 
@@ -77,6 +80,7 @@ The first command gets all of the providers in the session and formats them in a
 The second command uses the Where-Object cmdlet to get the providers that come from the **Microsoft.PowerShell.Security** snap-in.
 
 ### Example 4: Resolve the path of the Home property of the file system provider
+
 ```
 PS C:\> Resolve-Path ~
 

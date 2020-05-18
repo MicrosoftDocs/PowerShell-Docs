@@ -28,6 +28,7 @@ You can use it to reset the password of the local computer.
 ## EXAMPLES
 
 ### Example 1: Reset the password for the local computer
+
 ```
 PS C:\> Reset-ComputerMachinePassword
 ```
@@ -36,6 +37,7 @@ This command resets the computer password for the local computer.
 The command runs with the credentials of the current user.
 
 ### Example 2: Reset the password for the local computer by using a specified domain controller
+
 ```
 PS C:\> Reset-ComputerMachinePassword -Server "DC01" -Credential Domain01\Admin01
 ```
@@ -44,6 +46,7 @@ This command resets the computer password of the local computer by using the DC0
 It uses the *Credential* parameter to specify a user account that has permission to reset a computer password in the domain.
 
 ### Example 3: Reset the password on a remote computer
+
 ```
 $cred = Get-Credential
 PS C:\> Invoke-Command -ComputerName "Server01" -ScriptBlock {Reset-ComputerMachinePassword -Credential $using:cred}

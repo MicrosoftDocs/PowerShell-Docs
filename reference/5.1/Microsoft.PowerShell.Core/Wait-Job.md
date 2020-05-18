@@ -17,31 +17,37 @@ Suppresses the command prompt until one or all of the Windows PowerShell backgro
 ## SYNTAX
 
 ### SessionIdParameterSet (Default)
+
 ```
 Wait-Job [-Any] [-Timeout <Int32>] [-Force] [-Id] <Int32[]> [<CommonParameters>]
 ```
 
 ### JobParameterSet
+
 ```
 Wait-Job [-Job] <Job[]> [-Any] [-Timeout <Int32>] [-Force] [<CommonParameters>]
 ```
 
 ### NameParameterSet
+
 ```
 Wait-Job [-Any] [-Timeout <Int32>] [-Force] [-Name] <String[]> [<CommonParameters>]
 ```
 
 ### InstanceIdParameterSet
+
 ```
 Wait-Job [-Any] [-Timeout <Int32>] [-Force] [-InstanceId] <Guid[]> [<CommonParameters>]
 ```
 
 ### StateParameterSet
+
 ```
 Wait-Job [-Any] [-Timeout <Int32>] [-Force] [-State] <JobState> [<CommonParameters>]
 ```
 
 ### FilterParameterSet
+
 ```
 Wait-Job [-Any] [-Timeout <Int32>] [-Force] [-Filter] <Hashtable> [<CommonParameters>]
 ```
@@ -62,6 +68,7 @@ For information about a particular custom job type, see the documentation of the
 ## EXAMPLES
 
 ### Example 1: Wait for all jobs
+
 ```
 PS C:\> Get-Job | Wait-Job
 ```
@@ -69,6 +76,7 @@ PS C:\> Get-Job | Wait-Job
 This command waits for all of the background jobs running in the session to finish.
 
 ### Example 2: Wait for jobs started on remote computers by using Start-Job
+
 ```
 PS C:\> $s = New-PSSession Server01, Server02, Server03
 PS C:\> Invoke-Command -Session $s -ScriptBlock {Start-Job -Name Date1 -ScriptBlock {Get-Date}}
@@ -94,6 +102,7 @@ It stores the resulting collection (array) of job objects in the $done variable.
 The fourth command uses the **Count** property of the array of job objects in the $done variable to determine how many of the jobs are finished.
 
 ### Example 3: Determine when the first background job finishes
+
 ```
 PS C:\> $s = New-PSSession (Get-Content Machines.txt)
 PS C:\> $c = 'Get-EventLog -LogName System | where {$_.EntryType -eq "error" --and $_.Source -eq "LSASRV"} | Out-File Errors.txt'
@@ -121,6 +130,7 @@ The fourth command uses **Invoke-Command** to run a **Wait-Job** command in the 
 It uses the *Any* parameter to wait until the first job on the remote computers is completed.
 
 ### Example 4: Set a wait time for jobs on remote computers
+
 ```
 PS C:\> $s = New-PSSession Server01, Server02, Server03
 PS C:\> $jobs = Invoke-Command -Session $s -ScriptBlock {Start-Job -ScriptBlock {Get-Date}}
@@ -144,6 +154,7 @@ In this case, after 30 seconds, only the command on the Server02 computer has co
 The $done variable contains a job object that represents the job that ran on Server02.
 
 ### Example 5: Wait until one of several jobs finishes
+
 ```
 PS C:\> Wait-Job -id 1,2,5 -Any
 ```
@@ -152,6 +163,7 @@ This command identifies three jobs by their IDs and waits until any one of them 
 The command prompt returns when the first job finishes.
 
 ### Example 6: Wait for a period, then allow job to continue in background
+
 ```
 PS C:\> Wait-Job -Name "DailyLog" -Timeout 120
 ```
@@ -160,6 +172,7 @@ This command waits 120 seconds (two minutes) for the DailyLog job to finish.
 If the job does not finish in the next two minutes, the command prompt returns anyway, and the job continues to run in the background.
 
 ### Example 7: Wait for a job by name
+
 ```
 PS C:\> Wait-Job -Name "Job3"
 ```
@@ -167,6 +180,7 @@ PS C:\> Wait-Job -Name "Job3"
 This command uses the job name to identify the job for which to wait.
 
 ### Example 8: Wait for jobs on local computer started with Start-Job
+
 ```
 PS C:\> $j = Start-Job -ScriptBlock {Get-ChildItem *.ps1| where {$_lastwritetime -gt ((Get-Date) - (New-TimeSpan -Days 7))}}
 PS C:\> $j | Wait-Job
@@ -183,6 +197,7 @@ The third command uses **Wait-Job** to wait until the job is completed.
 When the job finishes, the command displays the job object, which contains information about the job.
 
 ### Example 9: Wait for jobs started on remote computers by using Invoke-Command
+
 ```
 PS C:\> $s = New-PSSession Server01, Server02, Server03
 PS C:\> $j = Invoke-Command -Session $s -ScriptBlock {Get-Process} -AsJob
@@ -204,6 +219,7 @@ The third command uses a pipeline operator (|) to send the job object in $j to t
 An **Invoke-Command** command is not required in this case, because the job resides on the local computer.
 
 ### Example 10: Wait for a job that has an ID
+
 ```
 PS C:\> Get-Job
 

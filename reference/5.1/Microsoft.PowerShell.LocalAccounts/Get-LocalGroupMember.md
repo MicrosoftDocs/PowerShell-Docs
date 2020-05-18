@@ -17,16 +17,19 @@ Gets members from a local group.
 ## SYNTAX
 
 ### Default (Default)
+
 ```
 Get-LocalGroupMember [[-Member] <String>] [-Name] <String> [<CommonParameters>]
 ```
 
 ### Group
+
 ```
 Get-LocalGroupMember [-Group] <LocalGroup> [[-Member] <String>] [<CommonParameters>]
 ```
 
 ### SecurityIdentifier
+
 ```
 Get-LocalGroupMember [[-Member] <String>] [-SID] <SecurityIdentifier> [<CommonParameters>]
 ```
@@ -41,6 +44,7 @@ The **Get-LocalGroupMember** cmdlet gets members from a local group.
 ## EXAMPLES
 
 ### Example 1: Get all members of the Administrators group
+
 ```
 PS C:\> Get-LocalGroupMember -Group "Administrators"
 ObjectClass Name                    PrincipalSource

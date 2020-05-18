@@ -30,6 +30,7 @@ You can later use **Import-Alias** to retrieve that saved alias information.
 ## EXAMPLES
 
 ### Example 1: Create an alias for a cmdlet
+
 ```
 PS C:\> New-Alias -Name "List" Get-ChildItem
 ```
@@ -37,6 +38,7 @@ PS C:\> New-Alias -Name "List" Get-ChildItem
 This command creates an alias named List to represent the Get-ChildItem cmdlet.
 
 ### Example 2: Create a read-only alias for a cmdlet
+
 ```
 PS C:\> New-Alias -Name "W" -Value Get-WmiObject -Description "quick wmi alias" -Option ReadOnly
 PS C:\> Get-Alias -Name "W" | Format-List *

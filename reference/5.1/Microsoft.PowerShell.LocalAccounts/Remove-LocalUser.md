@@ -17,16 +17,19 @@ Deletes local user accounts.
 ## SYNTAX
 
 ### InputObject
+
 ```
 Remove-LocalUser [-InputObject] <LocalUser[]> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### Default
+
 ```
 Remove-LocalUser [-Name] <String[]> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### SecurityIdentifier
+
 ```
 Remove-LocalUser [-SID] <SecurityIdentifier[]> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
@@ -37,6 +40,7 @@ The **Remove-LocalUser** cmdlet deletes local user accounts.
 ## EXAMPLES
 
 ### Example 1: Delete a user account
+
 ```
 PS C:\> Remove-LocalUser -Name "AdminContoso02"
 ```

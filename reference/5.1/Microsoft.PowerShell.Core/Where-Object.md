@@ -95,6 +95,7 @@ Where-Object [-InputObject <PSObject>] [-Property] <String> [[-Value] <Object>] 
 ```
 
 ### CaseSensitiveLessOrEqualSet
+
 ```
 Where-Object [-InputObject <PSObject>] [-Property] <String> [[-Value] <Object>] [-CLE] [<CommonParameters>]
 ```

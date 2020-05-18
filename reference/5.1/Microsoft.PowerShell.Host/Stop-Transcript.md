@@ -27,6 +27,7 @@ Alternatively, you can end a session to stop a transcript.
 ## EXAMPLES
 
 ### Example 1: Stop all transcripts
+
 ```powershell
 Stop-Transcript
 ```

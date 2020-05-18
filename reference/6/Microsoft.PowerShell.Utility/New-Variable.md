@@ -33,6 +33,7 @@ Typically, you create a new variable by typing the variable name and its value, 
 ## EXAMPLES
 
 ### Example 1: Create a variable
+
 ```
 PS C:\> New-Variable days
 ```
@@ -41,6 +42,7 @@ This command creates a new variable named days.
 You are not required to type the *Name* parameter.
 
 ### Example 2: Create a variable and assign it a value
+
 ```
 PS C:\> New-Variable -Name "zipcode" -Value 98033
 ```
@@ -48,6 +50,7 @@ PS C:\> New-Variable -Name "zipcode" -Value 98033
 This command creates a variable named zipcode and assigns it the value 98033.
 
 ### Example 3: Create a variable with the ReadOnly option
+
 ```
 PS C:\> New-Variable -Name Max -Value 256 -Option ReadOnly
 PS C:\> New-Variable -Name max -Value 1024
@@ -74,6 +77,7 @@ The third command uses the *Force* parameter to override the read-only protectio
 In this case, the command to create a new variable with the same name succeeds.
 
 ### Example 4: Create a private variable
+
 ```
 PS C:\> New-Variable -Name counter -Visibility Private
 
@@ -111,6 +115,7 @@ The sample output shows the behavior of a private variable.
 The user who has loaded the module cannot view or change the value of the Counter variable, but the Counter variable can be read and changed by the commands in the module.
 
 ### Example 5: Create a variable with a space
+
 ```
 PS C:\> New-Variable -Name 'with space' -Value 'abc123xyz'
 

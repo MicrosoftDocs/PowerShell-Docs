@@ -32,6 +32,7 @@ This cmdlet does not support the **Confirm** parameter.
 ## EXAMPLES
 
 ### Example 1: Restore the configuration for the local computer
+
 ```
 PS C:\> Restore-DscConfiguration
 ```
@@ -39,6 +40,7 @@ PS C:\> Restore-DscConfiguration
 This command restores the configuration for the local computer.
 
 ### Example 2: Restore configuration for a specified computer
+
 ```
 PS C:\> $Session = New-CimSession -ComputerName "Server01" -Credential ACCOUNTS\PattiFuller
 PS C:\> Restore-DscConfiguration -CimSession $Session

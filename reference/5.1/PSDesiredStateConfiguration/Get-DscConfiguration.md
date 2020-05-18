@@ -28,6 +28,7 @@ If you do not specify a target computer, the cmdlet gets the configuration from 
 ## EXAMPLES
 
 ### Example 1: Get the configuration for the local computer
+
 ```
 PS C:\> Get-DscConfiguration
 ```
@@ -35,6 +36,7 @@ PS C:\> Get-DscConfiguration
 This command gets the current state for the local computer.
 
 ### Example 2: Get the configuration for a specified computer
+
 ```
 PS C:\> $Session = New-CimSession -ComputerName "Server01" -Credential ACCOUNTS\PattiFuller
 PS C:\> Get-DscConfiguration -CimSession $Session

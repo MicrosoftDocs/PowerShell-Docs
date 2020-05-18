@@ -17,12 +17,14 @@ Checks the pull server for an updated configuration and applies it.
 ## SYNTAX
 
 ### ComputerNameSet (Default)
+
 ```
 Update-DscConfiguration [-Wait] [-JobName <String>] [[-ComputerName] <String[]>] [-Credential <PSCredential>]
  [-ThrottleLimit <Int32>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### CimSessionSet
+
 ```
 Update-DscConfiguration [-Wait] [-JobName <String>] [-ThrottleLimit <Int32>] -CimSession <CimSession[]>
  [-WhatIf] [-Confirm] [<CommonParameters>]
@@ -36,6 +38,7 @@ This cmdlet is available only as part of the [November 2014 update rollup for Wi
 ## EXAMPLES
 
 ### Example 1: Update a configuration
+
 ```
 PS C:\> Update-DscConfiguration -Wait -Verbose
 ```
@@ -50,6 +53,7 @@ these parameters combined enable real-time feedback
 about progress and success or failure when applying the configuration.
 
 ### Example 2: Update a configuration by connecting over a CIM session
+
 ```
 PS C:\> $Session = New-CimSession -ComputerName "Server01" -Credential ACCOUNTS\PattiFuller
 PS C:\> Update-DscConfiguration -CimSession $Session -Wait

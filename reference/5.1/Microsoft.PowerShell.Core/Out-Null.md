@@ -29,6 +29,7 @@ makes it easier to test your command for any errors.
 ## EXAMPLES
 
 ### Example 1: Delete output
+
 ```
 PS C:\> Get-ChildItem | Out-Null
 ```

@@ -54,6 +54,7 @@ Configuration PSWebAccess
     }
 PSWebAccess
 ```
+
 After compiling the configuration, start it by calling [Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration).
 The configuration will stop when the Local Configuration Manager (LCM) calls into the first resource in the configuration.
 If you use the `-Verbose` and `-Wait` parameters, the output displays the lines you need to enter to start debugging.
@@ -78,6 +79,7 @@ Enter-PSSession -ComputerName TEST-SRV -Credential <credentials>
 Enter-PSHostProcess -Id 9000 -AppDomainName DscPsPluginWkr_AppDomain
 Debug-Runspace -Id 9
 ```
+
 At this point, the LCM has called the resource, and come to the first break point.
 The last three lines in the output show you how to attach to the process and start debugging the resource script.
 

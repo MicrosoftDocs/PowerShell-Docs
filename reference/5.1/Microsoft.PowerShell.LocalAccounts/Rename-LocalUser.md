@@ -17,16 +17,19 @@ Renames a local user account.
 ## SYNTAX
 
 ### InputObject
+
 ```
 Rename-LocalUser [-InputObject] <LocalUser> [-NewName] <String> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### Default
+
 ```
 Rename-LocalUser [-Name] <String> [-NewName] <String> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### SecurityIdentifier
+
 ```
 Rename-LocalUser [-NewName] <String> [-SID] <SecurityIdentifier> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
@@ -41,6 +44,7 @@ The **Rename-LocalUser** cmdlet renames a local user account.
 ## EXAMPLES
 
 ### Example 1: Rename a user account
+
 ```
 PS C:\> Rename-LocalUser -Name "Admin02" -NewName "AdminContoso02"
 ```

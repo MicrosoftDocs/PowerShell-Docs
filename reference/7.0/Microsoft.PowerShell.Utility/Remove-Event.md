@@ -17,11 +17,13 @@ Deletes events from the event queue.
 ## SYNTAX
 
 ### BySource (Default)
+
 ```
 Remove-Event [-SourceIdentifier] <String> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### ByIdentifier
+
 ```
 Remove-Event [-EventIdentifier] <Int32> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
@@ -35,6 +37,7 @@ To cancel event registrations or unsubscribe, use the Unregister-Event cmdlet.
 ## EXAMPLES
 
 ### Example 1: Remove an event by source identifier
+
 ```
 PS C:\> Remove-Event -SourceIdentifier "ProcessStarted"
 ```
@@ -42,6 +45,7 @@ PS C:\> Remove-Event -SourceIdentifier "ProcessStarted"
 This command deletes events with a source identifier of Process Started from the event queue.
 
 ### Example 2: Remove an event by event identifier
+
 ```
 PS C:\> Remove-Event -EventIdentifier 30
 ```
@@ -49,6 +53,7 @@ PS C:\> Remove-Event -EventIdentifier 30
 This command deletes the event with an event ID of 30 from the event queue.
 
 ### Example 3: Remove all events
+
 ```
 PS C:\> Get-Event | Remove-Event
 ```

@@ -17,6 +17,7 @@ Displays management information for a resource instance specified by a Resource 
 ## SYNTAX
 
 ### GetInstance (Default)
+
 ```
 Get-WSManInstance [-ApplicationName <String>] [-ComputerName <String>] [-ConnectionURI <Uri>] [-Dialect <Uri>]
  [-Fragment <String>] [-OptionSet <Hashtable>] [-Port <Int32>] [-ResourceURI] <Uri> [-SelectorSet <Hashtable>]
@@ -25,6 +26,7 @@ Get-WSManInstance [-ApplicationName <String>] [-ComputerName <String>] [-Connect
 ```
 
 ### Enumerate
+
 ```
 Get-WSManInstance [-ApplicationName <String>] [-BasePropertiesOnly] [-ComputerName <String>]
  [-ConnectionURI <Uri>] [-Dialect <Uri>] [-Enumerate] [-Filter <String>] [-OptionSet <Hashtable>]
@@ -43,6 +45,7 @@ This cmdlet uses the WS-Management connection/transport layer to retrieve inform
 ## EXAMPLES
 
 ### Example 1: Get all information from WMI
+
 ```
 PS C:\> Get-WSManInstance -ResourceURI wmicimv2/win32_service -SelectorSet @{name="winrm"} -ComputerName "Server01"
 xsi                     : http://www.w3.org/2001/XMLSchema-instance
@@ -90,6 +93,7 @@ WaitHint                : 0
 This command returns all of the information that Windows Management Instrumentation (WMI) exposes about the **WinRM** service on the remote server01 computer.
 
 ### Example 2: Get the status of the Spooler service
+
 ```
 PS C:\> Get-WSManInstance -ResourceURI wmicimv2/win32_service -SelectorSet @{name="spooler"} -Fragment Status -ComputerName "Server01"
 XmlFragment=OK
@@ -98,6 +102,7 @@ XmlFragment=OK
 This command returns only the status of the **Spooler** service on the remote server01 computer.
 
 ### Example 3: Get endpoint references for all services
+
 ```
 PS C:\> Get-WSManInstance -Enumerate -ResourceURI wmicimv2/win32_service -ReturnType EPR
 xsi                     : http://www.w3.org/2001/XMLSchema-instance
@@ -138,6 +143,7 @@ WaitHint                : 0
 This command returns endpoint references that correspond to all the services on the local computer.
 
 ### Example 4: Get services that meet specified criteria
+
 ```
 PS C:\> Get-WSManInstance -Enumerate -ResourceURI wmicimv2/* -Filter "select * from win32_service where StartMode = 'Auto' and State = 'Stopped'" -ComputerName "Server01"
 xsi                     : http://www.w3.org/2001/XMLSchema-instance
@@ -180,6 +186,7 @@ This command lists all of the services that meet the following criteria on the r
 - The service is stopped.
 
 ### Example 5: Get listener configuration that matches criteria on the local computer
+
 ```
 PS C:\> Get-WSManInstance -ResourceURI winrm/config/listener -SelectorSet @{Address="*";Transport="http"}
 cfg                   : https://schemas.microsoft.com/wbem/wsman/1/config/listener
@@ -198,6 +205,7 @@ ListeningOn           : {100.0.0.1, 123.123.123.123, ::1, 2001:4898:0:fff:0:5efe
 This command lists the WS-Management listener configuration on the local computer for the listener that matches the criteria in the selector set.
 
 ### Example 6: Get listener configuration that matches criteria on a remote computer
+
 ```
 PS C:\> Get-WSManInstance -ResourceURI winrm/config/listener -SelectorSet @{Address="*";Transport="http"} -ComputerName "Server01"
 cfg                   : https://schemas.microsoft.com/wbem/wsman/1/config/listener
@@ -216,6 +224,7 @@ ListeningOn           : {100.0.0.1, 123.123.123.124, ::1, 2001:4898:0:fff:0:5efe
 This command lists the WS-Management listener configuration on the remote server01 computer for the listener that matches the criteria in the selector set.
 
 ### Example 7: Get associated instances related to a specified instance
+
 ```
 PS C:\> Get-WSManInstance -Enumerate -Dialect Association -Filter "{Object=win32_service?name=winrm}" -ResourceURI wmicimv2/*
 xsi                       : http://www.w3.org/2001/XMLSchema-instance
@@ -343,6 +352,7 @@ This command gets the associated instances that are related to the specified ins
 You must enclose the filter in quotation marks, as shown in the example.
 
 ### Example 8: Get association instances related to a specified instance
+
 ```
 PS C:\> Get-WSManInstance -Enumerate -Dialect Association -Associations -Filter "{Object=win32_service?name=winrm}" -ResourceURI wmicimv2/*
 ```
