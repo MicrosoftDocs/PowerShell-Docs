@@ -65,8 +65,9 @@ This cmdlet was introduced in PowerShell 6.2.
 
 ### Example 1: Join directory names
 
+<!-- markdownlint-disable MD038 -->
 This example joins directory names, wraps the output in double-quotes, and separates the directory
-names with a command and space (`, `). The output is a string object.
+names with a comma and space (`, `). The output is a string object.
 
 ```powershell
 Get-ChildItem -Directory C:\ | Join-String -Property Name -DoubleQuote -Separator ', '
