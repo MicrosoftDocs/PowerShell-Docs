@@ -81,7 +81,7 @@ The **Get()**, **Set()**, and **Test()** methods are analogous to the **Get-Targ
 This code also includes the CopyFile() function, a helper function that copies the file from **$SourcePath** to **$Path**.
 
 ```powershell
-	<#
+    <#
         This method is equivalent of the Set-TargetResource script function.
         It sets the resource to the desired state.
     #>

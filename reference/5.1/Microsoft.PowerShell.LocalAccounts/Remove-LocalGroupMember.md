@@ -178,5 +178,3 @@ This cmdlet does not generate any output.
 [Get-LocalGroupMember](Get-LocalGroupMember.md)
 
 [New-LocalGroup](New-LocalGroup.md)
-
-

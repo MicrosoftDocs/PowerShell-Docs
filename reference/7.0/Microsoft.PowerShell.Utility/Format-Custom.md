@@ -302,4 +302,3 @@ group the objects, use `Sort-Object` to sort them.
 [Format-Wide](Format-Wide.md)
 
 [Get-Process](../Microsoft.PowerShell.Management/Get-Process.md)
-

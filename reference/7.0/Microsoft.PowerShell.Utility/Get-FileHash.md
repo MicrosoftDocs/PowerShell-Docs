@@ -3,7 +3,7 @@ external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 02/06/2020
+ms.date: 05/16/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/get-filehash?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-FileHash
@@ -124,7 +124,7 @@ Get-FileHash -InputStream $stringAsStream | Select-Object Hash
 ```Output
 Hash
 ----
-E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855
+64EC88CA00B268E5BA1A35678A1B5316D212F4F366B2477232534A8AECA37F3C
 ```
 
 ## PARAMETERS
@@ -237,4 +237,3 @@ computed hash, and the algorithm used to compute the hash.
 ## RELATED LINKS
 
 [Format-List](Format-List.md)
-

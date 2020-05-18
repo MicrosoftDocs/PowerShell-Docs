@@ -23,8 +23,8 @@ The following are examples of directly calling resource methods:
 
 ```powershell
 $result = Invoke-DscResource -Name File -Method Set -Property @{
-							DestinationPath = "$env:SystemDrive\\DirectAccess.txt";
-							Contents = 'This file is create by Invoke-DscResource'} -Verbose
+              DestinationPath = "$env:SystemDrive\\DirectAccess.txt";
+              Contents = 'This file is create by Invoke-DscResource'} -Verbose
 $result | fl
 ```
 
@@ -32,8 +32,8 @@ $result | fl
 
 ```powershell
 $result = Invoke-DscResource -Name File -Method Test -Property @{
-							DestinationPath="$env:SystemDrive\\DirectAccess.txt";
-							Contents='This file is create by Invoke-DscResource'} -Verbose
+              DestinationPath="$env:SystemDrive\\DirectAccess.txt";
+              Contents='This file is create by Invoke-DscResource'} -Verbose
 $result | fl
 ```
 
@@ -41,8 +41,8 @@ $result | fl
 
 ```powershell
 $result = Invoke-DscResource -Name File -Method Get -Property @{
-							DestinationPath="$env:SystemDrive\\DirectAccess.txt";
-							Contents='This file is create by Invoke-DscResource'} -Verbose
+              DestinationPath="$env:SystemDrive\\DirectAccess.txt";
+              Contents='This file is create by Invoke-DscResource'} -Verbose
 $result.ItemValue | fl
 ```
 

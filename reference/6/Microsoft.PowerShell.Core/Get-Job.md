@@ -770,7 +770,6 @@ Local job started by using **Start-Job**.
   - **RemoteJob**.
 Job started in a **PSSession** by using the *AsJob* parameter of the Invoke-Command cmdlet.
 
-
 ## RELATED LINKS
 
 [Invoke-Command](Invoke-Command.md)
@@ -784,5 +783,3 @@ Job started in a **PSSession** by using the *AsJob* parameter of the Invoke-Comm
 [Stop-Job](Stop-Job.md)
 
 [Wait-Job](Wait-Job.md)
-
-

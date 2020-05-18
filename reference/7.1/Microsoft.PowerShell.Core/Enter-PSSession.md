@@ -132,7 +132,6 @@ The third command uses the **Exit** keyword to end the interactive session and c
 The fourth command confirms that the Process.txt file is on the remote computer. A `Get-ChildItem`
 ("dir") command on the local computer cannot find the file.
 
-
 ```powershell
 PS C:\> Enter-PSSession -ComputerName Server01
 [Server01]: PS>

@@ -386,7 +386,6 @@ This configuration sets a number of options that only work in macOS or Linux:
 - This PowerShell installation writes to the logs using the **home-powershell**
   identity.
 
-
 ```json
 {
   "PSModulePath": "%HOME%/.powershell/Modules",

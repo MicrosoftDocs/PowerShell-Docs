@@ -143,5 +143,3 @@ This cmdlet does not generate any output.
 [Get-ComputerRestorePoint](Get-ComputerRestorePoint.md)
 
 [Restart-Computer](Restart-Computer.md)
-
-

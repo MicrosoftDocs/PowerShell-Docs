@@ -250,4 +250,3 @@ providers available in your session, type `Get-PSProvider`. For more information
 [Set-Location](Set-Location.md)
 
 [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md)
-

@@ -158,8 +158,8 @@ SKC  VC Name                           Property
 PS HKCU:\software> Complete-Transaction
 ```
 
-This example shows the value of using Get-* commands, and other commands that do not change data, in a transaction.
-When a Get-* command is used in a transaction, it gets the objects that are part of the transaction.
+This example shows the value of using Get-\* commands, and other commands that do not change data, in a transaction.
+When a Get-\* command is used in a transaction, it gets the objects that are part of the transaction.
 This allows you to preview the changes in the transaction before the changes are committed.
 
 In this example, a transaction is started.
@@ -240,5 +240,3 @@ To roll back a different transaction, you must first commit or roll back the act
 [New-Item](New-Item.md)
 
 [New-ItemProperty](New-ItemProperty.md)
-
-

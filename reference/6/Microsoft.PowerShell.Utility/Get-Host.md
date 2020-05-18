@@ -248,5 +248,3 @@ For more information, see [about_Automatic_Variables](../Microsoft.PowerShell.Co
 [Read-Host](Read-Host.md)
 
 [Write-Host](Write-Host.md)
-
-

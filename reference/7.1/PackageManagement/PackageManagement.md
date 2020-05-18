@@ -1,5 +1,5 @@
 ---
-Download Help Link: https://go.microsoft.com/fwlink/?linkid=2113634
+Download Help Link: https://aka.ms/powershell71-help
 Help Version: 7.0.0.0
 keywords: powershell,cmdlet
 locale: en-US
@@ -55,4 +55,3 @@ Uninstalls one or more software packages.
 
 ### [Unregister-PackageSource](Unregister-PackageSource.md)
 Removes a registered package source.
-

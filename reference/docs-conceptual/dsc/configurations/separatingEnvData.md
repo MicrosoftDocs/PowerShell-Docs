@@ -28,19 +28,19 @@ We'll create a single configuration that ensures that **IIS** is present on some
 ```powershell
 Configuration MyDscConfiguration {
 
-	Node $AllNodes.Where{$_.Role -eq "WebServer"}.NodeName
+  Node $AllNodes.Where{$_.Role -eq "WebServer"}.NodeName
     {
-		WindowsFeature IISInstall {
-			Ensure = 'Present'
-			Name   = 'Web-Server'
-		}
+  WindowsFeature IISInstall {
+    Ensure = 'Present'
+    Name   = 'Web-Server'
+  }
 
-	}
+ }
     Node $AllNodes.Where{$_.Role -eq "VMHost"}.NodeName
     {
         WindowsFeature HyperVInstall {
             Ensure = 'Present'
-			Name   = 'Hyper-V'
+            Name   = 'Hyper-V'
         }
     }
 }
@@ -102,7 +102,7 @@ We'll define the development and production environment data in a file named `De
             SQLServerName   = "MySQLServer"
             SqlSource       = "C:\Software\Sql"
             DotNetSrc       = "C:\Software\sxs"
-	    WebSiteName     = "New website"
+            WebSiteName     = "New website"
         },
 
         @{
@@ -259,7 +259,6 @@ In this example, `ConfigFileContents` is accessed with the line:
  ```
  in the `File` resource block.
 
-
 ```powershell
 $MyData =
 @{
@@ -311,7 +310,6 @@ configuration WebsiteConfig
     }
 }
 ```
-
 
 ## See Also
 - [Using configuration data](configData.md)

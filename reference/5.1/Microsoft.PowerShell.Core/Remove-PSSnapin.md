@@ -144,5 +144,3 @@ By default, **Remove-PSSnapin** does not generate any output.
 [Add-PSSnapin](Add-PSSnapin.md)
 
 [Get-PSSnapin](Get-PSSnapin.md)
-
-

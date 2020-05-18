@@ -27,7 +27,6 @@ The events are:
 | EventId | Engine_ScriptBlockCompiled (0x1008 = 4104)                              |
 | Message | Creating Scriptblock text (%1 of %2): </br> %3 </br> ScriptBlock ID: %4 |
 
-
 The text embedded in the message is the extent of the script block compiled. The ID is a GUID that
 is retained for the life of the script block.
 

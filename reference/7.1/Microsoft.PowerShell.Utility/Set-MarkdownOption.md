@@ -235,7 +235,6 @@ Accept wildcard characters: False
 
 Sets the foreground color for rendering the alternate text of an image element in Markdown text.
 
-
 ```yaml
 Type: String
 Parameter Sets: IndividualSetting

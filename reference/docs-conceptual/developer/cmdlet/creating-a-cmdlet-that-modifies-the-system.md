@@ -288,7 +288,7 @@ When your cmdlet has been registered with Windows PowerShell, you can test it by
     PS> stop-proc
     ```
 
-The following output appears.
+    The following output appears.
 
     ```
     Cmdlet stop-proc at command pipeline position 1
@@ -302,7 +302,7 @@ The following output appears.
     PS> stop-proc -Name notepad
     ```
 
-The following output appears.
+    The following output appears.
 
     ```
     Confirm
@@ -317,7 +317,7 @@ The following output appears.
     PS> stop-proc -Name Winlogon
     ```
 
-The following output appears.
+    The following output appears.
 
     ```output
     Confirm
@@ -335,7 +335,7 @@ The following output appears.
     PS> stop-proc -Name winlogon -Force
     ```
 
-The following output appears.
+    The following output appears.
 
     ```output
     Confirm

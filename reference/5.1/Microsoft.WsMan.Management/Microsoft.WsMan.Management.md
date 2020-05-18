@@ -2,7 +2,7 @@
 Download Help Link: https://go.microsoft.com/fwlink/?linkid=390788
 Help Version: 5.1.1.0
 keywords: powershell,cmdlet
-locale: en-us
+locale: en-US
 Module Guid: 766204A6-330E-4263-A7AB-46C87AFC366C
 Module Name: Microsoft.WsMan.Management
 ms.date: 06/09/2017
@@ -57,4 +57,3 @@ Configures the local computer for remote management.
 
 ### [Test-WSMan](Test-WSMan.md)
 Tests whether the WinRM service is running on a local or remote computer.
-

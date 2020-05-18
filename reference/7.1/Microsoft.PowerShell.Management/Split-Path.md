@@ -385,7 +385,6 @@ These include the FileSystem, Registry, and Certificate providers.
 To list the providers available in your session, type `Get-PSProvider`.
 For more information, see about_Providers.
 
-
 ## RELATED LINKS
 
 [Convert-Path](Convert-Path.md)
@@ -395,5 +394,3 @@ For more information, see about_Providers.
 [Resolve-Path](Resolve-Path.md)
 
 [Test-Path](Test-Path.md)
-
-

@@ -266,5 +266,3 @@ Otherwise, this cmdlet does not generate any output.
 [Stop-Service](Stop-Service.md)
 
 [Remove-Service](Remove-Service.md)
-
-

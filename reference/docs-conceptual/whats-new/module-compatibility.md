@@ -29,7 +29,6 @@ On Windows 10, the Windows management modules are made available as **Windows Op
 **Windows Capabilities**. The following commands must be run from an elevated session using **Run as
 administrator**.
 
-
 - For Windows Optional Features
 
   To get a list of Optional Features, run the following command:

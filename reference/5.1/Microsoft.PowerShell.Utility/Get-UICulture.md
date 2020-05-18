@@ -85,5 +85,3 @@ In Windows PowerShell 2.0, it returns a **VistaCultureInfo** object.
 ## RELATED LINKS
 
 ## RELATED LINKS
-
-

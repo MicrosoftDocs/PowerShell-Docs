@@ -1,5 +1,5 @@
 ---
-Download Help Link: https://go.microsoft.com/fwlink/?linkid=2113345
+Download Help Link: https://aka.ms/powershell71-help
 Help Version: 7.0.0.0
 Locale: en-US
 Module Guid: 29955884-f6a6-49ba-a071-a4dc8842697f

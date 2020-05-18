@@ -490,7 +490,7 @@ object, so they are represented by the name of the property value. `Export-Csv` 
 methods of the object.
 
 `Import-Csv` also supports the W3C Extended Log format. Lines starting with `#` are treated as
-comments and ignored unless the comment starts with `#Fields: ` and contains delimited list of
+comments and ignored unless the comment starts with `#Fields:` and contains delimited list of
 column names. In that case, the cmdlet uses those column names. This is the standard format for
 Windows IIS and other web server logs. For more information, see [Extended Log File Format](https://www.w3.org/TR/WD-logfile.html).
 

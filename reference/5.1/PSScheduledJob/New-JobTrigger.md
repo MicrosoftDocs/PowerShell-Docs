@@ -373,7 +373,7 @@ Accept wildcard characters: False
 
 ### -User
 Specifies the users who trigger an *AtLogon* start of a scheduled job.
-Enter the name of a user in \<UserName\> or \<Domain\Username\> format or enter an asterisk (*) to represent all users.
+Enter the name of a user in \<UserName\> or \<Domain\Username\> format or enter an asterisk (\*) to represent all users.
 The default value is all users.
 
 ```yaml
@@ -480,5 +480,3 @@ You cannot pipe input to this cmdlet.
 [Set-ScheduledJobOption](Set-ScheduledJobOption.md)
 
 [Unregister-ScheduledJob](Unregister-ScheduledJob.md)
-
-

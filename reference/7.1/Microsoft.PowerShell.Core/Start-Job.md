@@ -331,7 +331,6 @@ Arguments must be passed to **ArgumentList** as single-dimension array argument.
 comma-separated list. For more information about the behavior of **ArgumentList**, see
 [about_Splatting](about/about_Splatting.md#splatting-with-arrays).
 
-
 ```yaml
 Type: Object[]
 Parameter Sets: ComputerName, LiteralFilePathComputerName, FilePathComputerName

@@ -1,5 +1,5 @@
 ---
-Download Help Link: https://go.microsoft.com/fwlink/?linkid=2113632
+Download Help Link: https://aka.ms/powershell71-help
 Help Version: 7.0.0.0
 keywords: powershell,cmdlet
 locale: en-US
@@ -201,4 +201,3 @@ Determines whether all elements of a path exist.
 
 ### [Wait-Process](Wait-Process.md)
 Waits for the processes to be stopped before accepting more input.
-

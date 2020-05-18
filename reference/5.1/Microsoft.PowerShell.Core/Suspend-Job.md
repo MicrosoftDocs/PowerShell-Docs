@@ -388,6 +388,3 @@ This cmdlet returns the jobs that it suspended.
 [Suspend-Job](Suspend-Job.md)
 
 [Wait-Job](Wait-Job.md)
-
-
-

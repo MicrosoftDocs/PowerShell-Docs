@@ -66,7 +66,6 @@ The second command uses `Remove-ItemProperty` to remove the "Options" registry v
 from the "MyApp" subkey. Because **Path** is required, the command uses a dot (`.`) to indicate the
 current location. The **Confirm** parameter requests a user prompt before deleting the value.
 
-
 ### Example 3: Remove a registry value by using the pipeline
 
 This command deletes the "NoOfEmployees" registry value, and its data, from the

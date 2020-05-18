@@ -166,7 +166,9 @@ Problem 1: The remote computer is not online.
 If a computer is offline, you will not be able to connect to it by using WMI.
 You may receive the following error message:
 
-    Remote server machine does not exist or is unavailable
+```
+Remote server machine does not exist or is unavailable
+```
 
 If you receive this error message, verify that the computer is online. Try to
 ping the remote computer.
@@ -193,7 +195,9 @@ configured to automatically block all unsolicited network traffic, including
 DCOM and WMI. In its default configuration, Windows Firewall rejects an
 incoming WMI request, and you receive the following error message:
 
-    Remote server machine does not exist or is unavailable
+```
+Remote server machine does not exist or is unavailable
+```
 
 ## SEE ALSO
 

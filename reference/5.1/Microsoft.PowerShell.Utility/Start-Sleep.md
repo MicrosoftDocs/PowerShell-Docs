@@ -115,5 +115,4 @@ This cmdlet does not return any output.
   - `Ctrl+C` does not break out of `[Threading.Thread]::Sleep`. For more information, see
     [Thread.Sleep Method](/dotnet/api/system.threading.thread.sleep).
 
-
 ## RELATED LINKS

@@ -379,4 +379,3 @@ current session, the event queue is discarded and the event subscription is canc
 [Unregister-Event](Unregister-Event.md)
 
 [Wait-Event](Wait-Event.md)
-

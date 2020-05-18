@@ -32,6 +32,7 @@ encoding of PowerShell. There is no way for PowerShell to automatically determin
 You're more likely to have encoding problems when you're using characters not in the
 [7-bit ASCII character set](https://ascii.cl/). For example:
 
+<!-- markdownlint-disable MD038 -->
 - Extended non-letter characters like em-dash (`—`), non-breaking space (` `) or left double
   quotation mark (`"`)
 - Accented latin characters (`É`, `ü`)
@@ -318,7 +319,6 @@ read:
   - [#1751](https://github.com/PowerShell/VSCode-powershell/issues/1751)
 - [The classic *Joel on Software* write up about Unicode](https://www.joelonsoftware.com/2003/10/08/the-absolute-minimum-every-software-developer-absolutely-positively-must-know-about-unicode-and-character-sets-no-excuses/)
 - [Encoding in .NET Standard](https://github.com/dotnet/standard/issues/260#issuecomment-289549508)
-
 
 [@mklement0]: https://github.com/mklement0
 [@rkeithhill]: https://github.com/rkeithhill

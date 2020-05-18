@@ -59,7 +59,7 @@ Existing directory separators `\` and handled so there is only one separator bet
 Join-Path "C:\win*" "System*" -Resolve
 ```
 
-This command displays the files and folders that are referenced by joining the C:\Win* path and the System* child path.
+This command displays the files and folders that are referenced by joining the C:\Win\* path and the System\* child path.
 It displays the same files and folders as `Get-ChildItem`, but it displays the fully qualified path to each item.
 In this command, the `Path` and `ChildPath` optional parameter names are omitted.
 
@@ -273,5 +273,3 @@ For more information, see [about_Providers](../Microsoft.PowerShell.Core/About/a
 [Get-ChildItem](Get-ChildItem.md)
 
 [Get-PSDrive](Get-PSDrive.md)
-
-

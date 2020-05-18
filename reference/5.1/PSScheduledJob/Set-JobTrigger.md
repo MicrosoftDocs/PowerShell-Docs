@@ -247,7 +247,7 @@ Accept wildcard characters: False
 
 ### -DaysOfWeek
 Specifies the days of the week on which a weekly scheduled job runs.
-Enter day names, such as Monday, Thursday, integers 0-6, where 0 represents Sunday, or an asterisk (*) to represent every day.
+Enter day names, such as Monday, Thursday, integers 0-6, where 0 represents Sunday, or an asterisk (\*) to represent every day.
 This parameter is required in the Weekly parameter set.
 
 Day names are converted to their integer values in the job trigger.
@@ -402,7 +402,7 @@ Accept wildcard characters: False
 
 ### -User
 Specifies the users who trigger an *AtLogon* start of a scheduled job.
-Enter the name of a user in \<UserName\> or \<Domain\Username\> format or enter an asterisk (*) to represent all users.
+Enter the name of a user in \<UserName\> or \<Domain\Username\> format or enter an asterisk (\*) to represent all users.
 The default value is all users.
 
 ```yaml
@@ -500,5 +500,3 @@ Otherwise, this cmdlet does not generate any output.
 [Set-ScheduledJobOption](Set-ScheduledJobOption.md)
 
 [Unregister-ScheduledJob](Unregister-ScheduledJob.md)
-
-
