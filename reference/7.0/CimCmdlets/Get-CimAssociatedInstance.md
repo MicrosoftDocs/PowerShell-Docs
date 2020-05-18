@@ -329,4 +329,3 @@ This cmdlet returns an object.
 [Get-CimClass](get-cimclass.md)
 
 [Get-CimInstance](get-ciminstance.md)
-

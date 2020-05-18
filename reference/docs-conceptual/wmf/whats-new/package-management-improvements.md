@@ -66,7 +66,6 @@ PackageManagement:
    and then install the NuGet provider with
    `Install-PackageProvider -Name NuGet -Source <Path to folder>`.
 
-
 ## Event logging improvements
 
 When you install packages, you are changing the state of the computer. In WMF 5.1, PackageManagement

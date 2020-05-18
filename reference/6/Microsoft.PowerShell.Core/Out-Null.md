@@ -81,5 +81,3 @@ This cmdlet does not generate any output.
 [Out-Default](Out-Default.md)
 
 [Out-Host](Out-Host.md)
-
-

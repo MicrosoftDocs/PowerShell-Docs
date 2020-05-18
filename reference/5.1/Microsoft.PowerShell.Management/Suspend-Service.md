@@ -264,5 +264,3 @@ Otherwise, this cmdlet does not generate any output.
 [Start-Service](Start-Service.md)
 
 [Stop-Service](Stop-Service.md)
-
-

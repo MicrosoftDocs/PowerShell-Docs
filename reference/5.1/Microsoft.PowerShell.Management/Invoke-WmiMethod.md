@@ -521,5 +521,3 @@ This cmdlet does not generate any output.
 [Remove-WmiObject](Remove-WmiObject.md)
 
 [Set-WmiInstance](Set-WmiInstance.md)
-
-

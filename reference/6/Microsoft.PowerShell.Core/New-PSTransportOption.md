@@ -413,5 +413,3 @@ You cannot pipe input to this cmdlet.
 [Register-PSSessionConfiguration](Register-PSSessionConfiguration.md)
 
 [Set-PSSessionConfiguration](Set-PSSessionConfiguration.md)
-
-

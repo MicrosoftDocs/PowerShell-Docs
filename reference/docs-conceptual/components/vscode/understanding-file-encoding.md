@@ -319,7 +319,6 @@ read:
 - [The classic *Joel on Software* write up about Unicode](https://www.joelonsoftware.com/2003/10/08/the-absolute-minimum-every-software-developer-absolutely-positively-must-know-about-unicode-and-character-sets-no-excuses/)
 - [Encoding in .NET Standard](https://github.com/dotnet/standard/issues/260#issuecomment-289549508)
 
-
 [@mklement0]: https://github.com/mklement0
 [@rkeithhill]: https://github.com/rkeithhill
 [Windows-1252]: https://wikipedia.org/wiki/Windows-1252

@@ -101,5 +101,3 @@ The **PSCustomObject** describes the validation.
 ## RELATED LINKS
 
 [Invoke-OperationValidation](Invoke-OperationValidation.md)
-
-

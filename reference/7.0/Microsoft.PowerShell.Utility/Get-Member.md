@@ -182,7 +182,6 @@ This example demonstrates how to find the members of an array of objects. When y
 objects to `Get-Member`, the cmdlet returns a member list for each unique object type in the array.
 If you pass the array using the **InputObject** parameter, the array is treated as a single object.
 
-
 ```powershell
 $array = @(1,'hello')
 $array | Get-Member

@@ -472,7 +472,6 @@ Specifies an array of friendly names.
 This cmdlet gets the results of jobs that have the specified names.
 Wildcard characters are supported.
 
-
 ```yaml
 Type: String[]
 Parameter Sets: NameParameterSet

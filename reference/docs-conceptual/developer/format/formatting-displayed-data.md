@@ -22,6 +22,4 @@ In the following example the value of the `TotalProcessorTime` property of the [
   <PropertyName>TotalProcessorTime</PropertyName>
   <FormatString>{0:MMM}{0:dd}{0:HH}:{0:mm}</FormatString>
 </TableColumnItem>
-```
-
-
+```

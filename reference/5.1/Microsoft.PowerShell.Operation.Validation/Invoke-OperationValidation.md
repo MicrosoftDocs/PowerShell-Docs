@@ -219,5 +219,3 @@ The **PSCustomObject** describes whether the validation was successful.
 ## RELATED LINKS
 
 [Get-OperationValidation](Get-OperationValidation.md)
-
-

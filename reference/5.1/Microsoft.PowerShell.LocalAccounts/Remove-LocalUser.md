@@ -162,5 +162,3 @@ This cmdlet does not generate any output.
 [Rename-LocalUser](Rename-LocalUser.md)
 
 [Set-LocalUser](Set-LocalUser.md)
-
-

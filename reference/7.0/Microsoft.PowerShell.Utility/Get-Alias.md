@@ -226,5 +226,3 @@ You can pipe alias names to **Get-Alias**.
 [Alias Provider](../Microsoft.PowerShell.Core/About/about_Alias_Provider.md)
 
 [about_Aliases](../Microsoft.PowerShell.Core/About/about_Aliases.md)
-
-

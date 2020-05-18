@@ -297,5 +297,3 @@ The service names appear in the **Name** column and the display names appear in 
 [Start-Service](Start-Service.md)
 
 [Suspend-Service](Suspend-Service.md)
-
-

@@ -301,7 +301,6 @@ sample code, `[int]` converts the string to an integer and `$_` represents each 
 down the pipeline. The integer objects are sent down the pipeline to the `Sort-Object` cmdlet.
 `Sort-Object` sorts the integer objects in numeric order.
 
-
 The `Get-Content` cmdlet uses the **Path** parameter to specify the directory and file name. The
 file **ProductId.txt** contains an unsorted list of product numbers. The string objects are sent
 down the pipeline to the `ForEach-Object` cmdlet. `ForEach-Object` uses a script block to convert

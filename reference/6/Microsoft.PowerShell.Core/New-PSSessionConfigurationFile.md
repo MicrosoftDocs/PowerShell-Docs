@@ -32,7 +32,6 @@ New-PSSessionConfigurationFile [-Path] <String> [-SchemaVersion <Version>] [-Gui
  [-FormatsToProcess <String[]>] [-AssembliesToLoad <String[]>] [-Full] [<CommonParameters>]
 ```
 
-
 ## DESCRIPTION
 
 The `New-PSSessionConfigurationFile` cmdlet creates a file of settings that define a session

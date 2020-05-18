@@ -101,5 +101,3 @@ This cmdlet does not generate any output.
 [Remove-EventLog](Remove-EventLog.md)
 
 [Write-EventLog](Write-EventLog.md)
-
-

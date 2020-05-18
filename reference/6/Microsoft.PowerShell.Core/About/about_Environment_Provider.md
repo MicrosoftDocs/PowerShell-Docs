@@ -48,7 +48,6 @@ in this article.
 - [Remove-Item](../../Microsoft.PowerShell.Management/Remove-Item.md)
 - [Clear-Item](../../Microsoft.PowerShell.Management/Clear-Item.md)
 
-
 ## Types exposed by this provider
 
 Each environment variable is an instance of the

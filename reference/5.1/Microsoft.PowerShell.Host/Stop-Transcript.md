@@ -56,5 +56,3 @@ This cmdlet returns a string that contains a status message and the path to the 
 ## RELATED LINKS
 
 [Start-Transcript](Start-Transcript.md)
-
-

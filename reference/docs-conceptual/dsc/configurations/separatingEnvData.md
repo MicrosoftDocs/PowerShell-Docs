@@ -259,7 +259,6 @@ In this example, `ConfigFileContents` is accessed with the line:
  ```
  in the `File` resource block.
 
-
 ```powershell
 $MyData =
 @{
@@ -311,7 +310,6 @@ configuration WebsiteConfig
     }
 }
 ```
-
 
 ## See Also
 - [Using configuration data](configData.md)
