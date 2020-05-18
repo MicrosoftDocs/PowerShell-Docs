@@ -2,7 +2,7 @@
 Download Help Link: https://go.microsoft.com/fwlink/?linkid=390785
 Help Version: 5.1.1.0
 keywords: powershell,cmdlet
-locale: en-us
+locale: en-US
 Module Guid: eefcb906-b326-4e99-9f54-8b4bb6ef3c6d
 Module Name: Microsoft.PowerShell.Management
 ms.date: 03/01/2019
