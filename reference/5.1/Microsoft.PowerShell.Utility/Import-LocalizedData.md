@@ -319,6 +319,3 @@ Then, when you display a message from the hash table in the variable, the locali
 [Write-Host](Write-Host.md)
 
 [Import-PowerShellDataFile](Import-PowerShellDataFile.md)
-
-
-

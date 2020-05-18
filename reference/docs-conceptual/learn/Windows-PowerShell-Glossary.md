@@ -6,7 +6,6 @@ title:  Windows PowerShell Glossary
 
 # Windows PowerShell Glossary
 
-
 |Term|Definition|
 |--------|--------------|
 |binary module|A Windows PowerShell module whose root module is a binary module file (.dll). A binary module may or may not include a module manifest.|

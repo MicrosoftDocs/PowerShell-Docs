@@ -239,5 +239,3 @@ To see the current settings of the event log properties, type `Get-EventLog -Lis
 [Show-EventLog](Show-EventLog.md)
 
 [Write-EventLog](Write-EventLog.md)
-
-

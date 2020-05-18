@@ -766,4 +766,3 @@ configuration file have additional properties.
 [about_Session_Configurations](About/about_Session_Configurations.md)
 
 [about_Session_Configuration_Files](About/about_Session_Configuration_Files.md)
-

@@ -312,7 +312,6 @@ When no **Scope** is defined, the default is set based on the PowerShellGet vers
   elevation for install.
 - In PowerShellGet 1.x versions, the default is **AllUsers**, which requires elevation for install.
 
-
 ```yaml
 Type: String
 Parameter Sets: (All)

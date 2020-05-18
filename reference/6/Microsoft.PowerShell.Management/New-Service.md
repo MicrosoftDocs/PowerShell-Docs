@@ -286,4 +286,3 @@ PowerShell by using the Run as administrator option.
 [Suspend-Service](Suspend-Service.md)
 
 [Remove-Service](Remove-Service.md)
-

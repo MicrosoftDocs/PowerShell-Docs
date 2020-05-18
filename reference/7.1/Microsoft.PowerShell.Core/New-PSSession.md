@@ -1043,7 +1043,6 @@ This parameter was introduced in PowerShell 6.0.
 The **SSHConnection** parameter is useful for creating multiple sessions where each session requires
 different connection information.
 
-
 ```yaml
 Type: hashtable
 Parameter Sets: SSHConnection

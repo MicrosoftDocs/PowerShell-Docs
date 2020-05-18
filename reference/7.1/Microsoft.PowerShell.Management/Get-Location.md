@@ -293,5 +293,3 @@ to display the locations in the unnamed stack. To make the unnamed stack the cur
 [Push-Location](Push-Location.md)
 
 [Set-Location](Set-Location.md)
-
-

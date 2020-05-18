@@ -93,4 +93,3 @@ Updates a script.
 
 ### [Update-ScriptFileInfo](Update-ScriptFileInfo.md)
 Updates information for a script.
-

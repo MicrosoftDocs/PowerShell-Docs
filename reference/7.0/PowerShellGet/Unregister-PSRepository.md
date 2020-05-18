@@ -82,4 +82,3 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 [Register-PSRepository](Register-PSRepository.md)
 
 [Set-PSRepository](Set-PSRepository.md)
-

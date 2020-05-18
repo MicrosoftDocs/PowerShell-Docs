@@ -174,5 +174,3 @@ This cmdlet does not generate any output.
 [Remove-LocalGroup](Remove-LocalGroup.md)
 
 [Rename-LocalGroup](Rename-LocalGroup.md)
-
-

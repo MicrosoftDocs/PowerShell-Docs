@@ -111,7 +111,6 @@ When PowerShell Core 6.1 starts up, it will automatically include `$windir\Syste
 `PSModulePath` environment variable. However, it only exposes modules to `Get-Module` and
 `Import-Module` if its `CompatiblePSEdition` is marked as compatible with `Core`.
 
-
 ```powershell
 Get-Module -ListAvailable
 ```

@@ -146,5 +146,3 @@ exist yet.
 [Test-Path](Test-Path.md)
 
 [Get-PSProvider](Get-PSProvider.md)
-
-

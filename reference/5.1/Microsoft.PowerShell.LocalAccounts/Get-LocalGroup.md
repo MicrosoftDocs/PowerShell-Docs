@@ -112,5 +112,3 @@ This cmdlet returns a local group.
 [Rename-LocalGroup](Rename-LocalGroup.md)
 
 [Set-LocalGroup](Set-LocalGroup.md)
-
-

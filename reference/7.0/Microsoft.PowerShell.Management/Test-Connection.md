@@ -535,7 +535,6 @@ If you specify the **Traceroute** parameter, the cmdlet will return a
 If you specify the **Quiet** or **TcpPort** parameters, it returns a **Boolean** value. If
 multiple connections are tested, an array of **Boolean** values is returned.
 
-
 ## NOTES
 
 ## RELATED LINKS

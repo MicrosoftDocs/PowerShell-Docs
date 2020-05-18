@@ -54,7 +54,6 @@ Name             Enabled Description
 AdminContoso02   True    Description of this account.
 ```
 
-
 ### Example 2: Get an account that is connected to a Microsoft account
 
 This example gets a user account that is connected to a Microsoft account. This example uses a

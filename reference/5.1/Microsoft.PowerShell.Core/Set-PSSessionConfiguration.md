@@ -757,4 +757,3 @@ introduced in PowerShell 3.0, use the WSMan: drive in PowerShell 3.0.
 [about_Session_Configurations](About/about_Session_Configurations.md)
 
 [about_Session_Configuration_Files](About/about_Session_Configuration_Files.md)
-

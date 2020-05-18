@@ -46,7 +46,6 @@ the publisher. Each item indicates if it may be controlled by the module or scri
 | **License** | A license link is provided for modules in the Privatedata\PSData section of the module manifest by specifying a LicenseURI. In the script manifest, it is controlled by specifying .LICENSEURI. It is important to note that if a license is not provided via the LicenseURI, or within a module, then the terms of use for the PowerShell Gallery specify the terms of use for the package. See the terms of use for details. | Yes | Yes |
 | **Icon** | An icon can be specified for any package in the PowerShell Gallery by supplying the IconURI flag in the script manifest, or in the Privatedata-PSData section of the module manifest. The IconURI should point to a 32x32 image with transparency background. The URI **must** be a direct image URL and **must not** go to a web page containing the image, or a file in the PowerShell Gallery package. | Yes | Yes |
 
-
 ## Editing package details
 
 The PowerShell Gallery Edit package page allows publishers to change several of the fields displayed

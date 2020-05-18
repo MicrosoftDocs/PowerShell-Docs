@@ -299,5 +299,3 @@ This cmdlet does not generate any output object.
 [Set-WSManInstance](Set-WSManInstance.md)
 
 [Set-WSManQuickConfig](Set-WSManQuickConfig.md)
-
-

@@ -148,5 +148,3 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 [Publish-Script](Publish-Script.md)
 
 [Update-ScriptFileInfo](Update-ScriptFileInfo.md)
-
-

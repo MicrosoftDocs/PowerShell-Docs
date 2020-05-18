@@ -57,7 +57,6 @@ specify any tracing options or listener options, the command uses the defaults:
 This example traces the actions of the **ParameterBinding** operations of PowerShell while it processes
 a `Get-Alias` expression that takes input from the pipeline.
 
-
 ```powershell
 $A = "i*"
 Trace-Command ParameterBinding {Get-Alias $Input} -PSHost -InputObject $A

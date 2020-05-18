@@ -497,5 +497,3 @@ Otherwise, this cmdlet does not generate any output.
 [Set-ScheduledJobOption](Set-ScheduledJobOption.md)
 
 [Unregister-ScheduledJob](Unregister-ScheduledJob.md)
-
-

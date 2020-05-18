@@ -251,8 +251,6 @@ member names, and then displays the prefixed member names. The **Prefix** parame
 applies only to the members in the current session. It does not change the module. The **PassThru**
 parameter returns a module object that represents the imported module.
 
-
-
 ```powershell
 Import-Module PSDiagnostics -Prefix x -PassThru
 ```
@@ -298,7 +296,6 @@ name of an imported member, including its module name.
 
 The **AsCustomObject** parameter can be used only when importing a script module. Use `Get-Module`
 to determine which of the available modules is a script module.
-
 
 ```powershell
 Get-Module -List | Format-Table -Property Name, ModuleType -AutoSize

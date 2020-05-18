@@ -324,4 +324,3 @@ a table, use `Format-Custom`.
 [Format-Table](Format-Table.md)
 
 [Format-Wide](Format-Wide.md)
-
