@@ -186,10 +186,10 @@ to the client configuration.
 When choosing a name for the DNS record, keep the solution architecture in mind.
 If using load balancing, the certificate used to secure traffic over HTTPS will need to share the same name as the DNS record.
 
-       Scenario        |                                                                                         Best Practice
-:--------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Test Environment       | Reproduce the planned production environment, if possible. A server hostname is suitable for simple configurations. If DNS is not available, an IP address may be used in lieu of a hostname.
-Single Node Deployment | Create a DNS CNAME record that points to the server hostname.
+|       Scenario        |                                                                                         Best Practice
+|:--------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|Test Environment       | Reproduce the planned production environment, if possible. A server hostname is suitable for simple configurations. If DNS is not available, an IP address may be used in lieu of a hostname.
+|Single Node Deployment | Create a DNS CNAME record that points to the server hostname.
 
 For more information, see [Configuring DNS Round Robin in Windows Server](/previous-versions/windows/it-pro/windows-server-2003/cc787484(v=ws.10)).
 

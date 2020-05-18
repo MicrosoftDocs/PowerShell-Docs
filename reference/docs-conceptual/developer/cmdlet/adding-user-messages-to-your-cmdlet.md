@@ -222,7 +222,7 @@ When your cmdlet has been registered with Windows PowerShell, you can test it by
     PS> stop-proc -Name notepad -Verbose -Debug
     ```
 
-The following output appears.
+    The following output appears.
 
     ```
     VERBOSE: Attempting to stop process " notepad ".
