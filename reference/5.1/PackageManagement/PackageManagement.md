@@ -2,7 +2,7 @@
 Download Help Link: https://go.microsoft.com/fwlink/?linkid=392040
 Help Version: 5.1.1.0
 keywords: powershell,cmdlet
-locale: en-us
+locale: en-US
 Module Guid: 4ae9fd46-338a-459c-8186-07f910774cb8
 Module Name: PackageManagement
 ms.date: 06/09/2017

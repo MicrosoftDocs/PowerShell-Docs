@@ -1,5 +1,5 @@
 ---
-Download Help Link: https://go.microsoft.com/fwlink/?linkid=2113635
+Download Help Link: https://aka.ms/powershell71-help
 Help Version: 7.0.0.0
 keywords: powershell,cmdlet
 Locale: en-US

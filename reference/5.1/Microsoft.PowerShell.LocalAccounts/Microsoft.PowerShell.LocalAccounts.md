@@ -2,7 +2,7 @@
 Download Help Link: https://go.microsoft.com/fwlink/?LinkId=717973
 Help Version: 5.1.1.0
 keywords: powershell,cmdlet
-locale: en-us
+locale: en-US
 Module Guid: 8e362604-2c0b-448f-a414-a6a690a644e2
 Module Name: Microsoft.PowerShell.LocalAccounts
 ms.date: 06/09/2017
