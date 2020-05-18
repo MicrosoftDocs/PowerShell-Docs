@@ -29,6 +29,7 @@ The effect is the same as using **Exit-PSSession**.
 ## EXAMPLES
 
 ### Example 1: Start and stop an interactive session
+
 ```
 PS C:\> Enter-PSSession -computername Server01
 Server01\PS> Exit-PSSession
@@ -38,6 +39,7 @@ PS C:\>
 These commands start and then stop an interactive session with the Server01 remote computer.
 
 ### Example 2: Start and stop an interactive session by using a PSSession object
+
 ```
 PS C:\> $s = New-PSSession -ComputerName Server01
 PS C:\> Enter-PSSession -Session $s
@@ -64,6 +66,7 @@ The final command displays the **PSSession** in the $s variable.
 The **State** property shows the **PSSession** is still open and available for use.
 
 ### Example 3: Use the Exit keyword to stop a session
+
 ```
 PS C:\> Enter-PSSession -computername Server01
 Server01\PS> exit

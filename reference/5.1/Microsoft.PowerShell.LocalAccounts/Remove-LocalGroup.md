@@ -17,16 +17,19 @@ Deletes local security groups.
 ## SYNTAX
 
 ### InputObject
+
 ```
 Remove-LocalGroup [-InputObject] <LocalGroup[]> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### Default
+
 ```
 Remove-LocalGroup [-Name] <String[]> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### SecurityIdentifier
+
 ```
 Remove-LocalGroup [-SID] <SecurityIdentifier[]> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
@@ -47,6 +50,7 @@ The new group does not inherit the permissions that were assigned to the group.
 ## EXAMPLES
 
 ### Example 1: Delete a security group
+
 ```
 PS C:\> Remove-LocalGroup -Name "SecurityGroup04"
 ```

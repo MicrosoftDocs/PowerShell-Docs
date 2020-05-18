@@ -34,6 +34,7 @@ System restore points and the ComputerRestore cmdlets are supported only on clie
 ## EXAMPLES
 
 ### Example 1: Disable System Restore on the specified drive
+
 ```
 PS C:\> Disable-ComputerRestore -Drive "C:\"
 ```
@@ -41,6 +42,7 @@ PS C:\> Disable-ComputerRestore -Drive "C:\"
 This command disables System Restore on the C: drive.
 
 ### Example 2: Disable System Restore on multiple drives
+
 ```
 PS C:\> Disable-ComputerRestore "C:\", "D:\"
 ```

@@ -35,6 +35,7 @@ Get-DscConfigurationStatus [-CimSession <CimSession[]>]
                            [-AsJob]
                            [<CommonParameters>]
 ```
+
 The following parameter set returns the status information for all previous configuration runs:
 
 ```

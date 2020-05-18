@@ -17,6 +17,7 @@ Deletes an instance of an existing Windows Management Instrumentation (WMI) clas
 ## SYNTAX
 
 ### class (Default)
+
 ```
 Remove-WmiObject [-Class] <String> [-AsJob] [-Impersonation <ImpersonationLevel>]
  [-Authentication <AuthenticationLevel>] [-Locale <String>] [-EnableAllPrivileges] [-Authority <String>]
@@ -25,12 +26,14 @@ Remove-WmiObject [-Class] <String> [-AsJob] [-Impersonation <ImpersonationLevel>
 ```
 
 ### object
+
 ```
 Remove-WmiObject -InputObject <ManagementObject> [-AsJob] [-ThrottleLimit <Int32>] [-WhatIf] [-Confirm]
  [<CommonParameters>]
 ```
 
 ### path
+
 ```
 Remove-WmiObject -Path <String> [-AsJob] [-Impersonation <ImpersonationLevel>]
  [-Authentication <AuthenticationLevel>] [-Locale <String>] [-EnableAllPrivileges] [-Authority <String>]
@@ -39,6 +42,7 @@ Remove-WmiObject -Path <String> [-AsJob] [-Impersonation <ImpersonationLevel>]
 ```
 
 ### WQLQuery
+
 ```
 Remove-WmiObject [-AsJob] [-Impersonation <ImpersonationLevel>] [-Authentication <AuthenticationLevel>]
  [-Locale <String>] [-EnableAllPrivileges] [-Authority <String>] [-Credential <PSCredential>]
@@ -47,6 +51,7 @@ Remove-WmiObject [-AsJob] [-Impersonation <ImpersonationLevel>] [-Authentication
 ```
 
 ### query
+
 ```
 Remove-WmiObject [-AsJob] [-Impersonation <ImpersonationLevel>] [-Authentication <AuthenticationLevel>]
  [-Locale <String>] [-EnableAllPrivileges] [-Authority <String>] [-Credential <PSCredential>]
@@ -55,6 +60,7 @@ Remove-WmiObject [-AsJob] [-Impersonation <ImpersonationLevel>] [-Authentication
 ```
 
 ### list
+
 ```
 Remove-WmiObject [-AsJob] [-Impersonation <ImpersonationLevel>] [-Authentication <AuthenticationLevel>]
  [-Locale <String>] [-EnableAllPrivileges] [-Authority <String>] [-Credential <PSCredential>]
@@ -68,6 +74,7 @@ The **Remove-WmiObject** cmdlet deletes an instance of an existing Windows Manag
 ## EXAMPLES
 
 ### Example 1: Close all instances of a Win32 process
+
 ```
 PS C:\> notepad
 PS C:\> $np = Get-WmiObject -Query "select * from win32_process where name='notepad.exe'"
@@ -83,6 +90,7 @@ The second command uses the Get-WmiObject cmdlet to retrieve the instances of th
 The third command passes the object in the $np variable to **Remove-WmiObject**, which deletes all the instances of Notepad.exe.
 
 ### Example 2: Delete a folder
+
 ```
 PS C:\> $a = Get-WMIObject -Query "Select * From Win32_Directory Where Name ='C:\\Test'"
 PS C:\> $a | Remove-WMIObject

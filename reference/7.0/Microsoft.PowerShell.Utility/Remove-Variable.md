@@ -28,6 +28,7 @@ You cannot use this cmdlet to delete variables that are set as constants or thos
 ## EXAMPLES
 
 ### Example 1: Remove a variable
+
 ```
 PS C:\> Remove-Variable Smp
 ```

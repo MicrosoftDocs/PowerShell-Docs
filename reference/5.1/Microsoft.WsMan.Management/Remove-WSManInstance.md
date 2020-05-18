@@ -17,6 +17,7 @@ Deletes a management resource instance.
 ## SYNTAX
 
 ### ComputerName (Default)
+
 ```
 Remove-WSManInstance [-ApplicationName <String>] [-ComputerName <String>] [-OptionSet <Hashtable>]
  [-Port <Int32>] [-ResourceURI] <Uri> [-SelectorSet] <Hashtable> [-SessionOption <SessionOption>] [-UseSSL]
@@ -25,6 +26,7 @@ Remove-WSManInstance [-ApplicationName <String>] [-ComputerName <String>] [-Opti
 ```
 
 ### URI
+
 ```
 Remove-WSManInstance [-ConnectionURI <Uri>] [-OptionSet <Hashtable>] [-ResourceURI] <Uri>
  [-SelectorSet] <Hashtable> [-SessionOption <SessionOption>] [-Credential <PSCredential>]
@@ -39,6 +41,7 @@ This cmdlet uses the WinRM connection/transport layer to delete the management r
 ## EXAMPLES
 
 ### Example 1: Delete a listener
+
 ```
 PS C:\> Remove-WSManInstance -ResourceUri winrm/config/Listener -SelectorSet Address=test.fabrikam.com;Transport=http
 ```

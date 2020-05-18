@@ -17,11 +17,13 @@ Deletes an event log or unregisters an event source.
 ## SYNTAX
 
 ### Default (Default)
+
 ```
 Remove-EventLog [[-ComputerName] <String[]>] [-LogName] <String[]> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### Source
+
 ```
 Remove-EventLog [[-ComputerName] <String[]>] [-Source <String[]>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
@@ -38,6 +40,7 @@ CAUTION: This cmdlet can delete operating system event logs, which might cause a
 ## EXAMPLES
 
 ### Example 1: Remove an event log from the local computer
+
 ```
 PS C:\> Remove-EventLog -LogName "MyLog"
 ```
@@ -45,6 +48,7 @@ PS C:\> Remove-EventLog -LogName "MyLog"
 This command deletes the MyLog event log from the local computer and unregisters its event sources.
 
 ### Example 2: Remove an event log from several computers
+
 ```
 PS C:\> Remove-EventLog -LogName "MyLog", "TestLog" -ComputerName "Server01", "Server02", "localhost"
 ```
@@ -53,6 +57,7 @@ This command deletes the MyLog and TestLog event logs from the local computer an
 The command also unregisters the event sources for these logs.
 
 ### Example 3: Delete an event source
+
 ```
 PS C:\> Remove-EventLog -Source "MyApp"
 ```
@@ -61,6 +66,7 @@ This command deletes the MyApp event source from the logs on the local computer.
 When the command finishes, the MyApp program cannot write to any event logs.
 
 ### Example 4: Remove an event log and confirm the action
+
 ```
 The first command lists the event logs on the local computer.
 PS C:\> Get-EventLog -List
@@ -96,6 +102,7 @@ Max(K) Retain OverflowAction        Entries Log
 These commands show how to list the event logs on a computer and verify that a **Remove-EventLog** command was successful.
 
 ### Example 5: Remove an event source and confirm the action
+
 ```
 PS C:\> Get-WmiObject win32_nteventlogfile -Filter "logfilename='TestLog'" | foreach {$_.sources}
 MyApp

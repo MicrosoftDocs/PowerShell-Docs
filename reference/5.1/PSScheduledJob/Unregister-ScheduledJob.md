@@ -17,17 +17,20 @@ Deletes scheduled jobs on the local computer.
 ## SYNTAX
 
 ### Definition (Default)
+
 ```
 Unregister-ScheduledJob [-InputObject] <ScheduledJobDefinition[]> [-Force] [-WhatIf] [-Confirm]
  [<CommonParameters>]
 ```
 
 ### DefinitionId
+
 ```
 Unregister-ScheduledJob [-Id] <Int32[]> [-Force] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### DefinitionName
+
 ```
 Unregister-ScheduledJob [-Name] <String[]> [-Force] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
@@ -53,6 +56,7 @@ This cmdlet was introduced in Windows PowerShell 3.0.
 ## EXAMPLES
 
 ### Example 1: Delete a scheduled job
+
 ```
 PS C:\> Unregister-ScheduledJob TestJob
 ```
@@ -60,6 +64,7 @@ PS C:\> Unregister-ScheduledJob TestJob
 This command deletes the TestJob scheduled job on the local computer.
 
 ### Example 2: Delete all scheduled jobs
+
 ```
 PS C:\> Get-ScheduledJob | Unregister-ScheduledJob -Force
 PS C:\> Unregister-ScheduledJob -Name "*" -Force
@@ -75,6 +80,7 @@ The second command uses the *Name* parameter of **Unregister-ScheduledJob** with
 Both commands use the *Force* parameter, which deletes a scheduled job even if an instance of the job is running.
 
 ### Example 3: Delete a scheduled job on a remote computer
+
 ```
 PS C:\> Invoke-Command -ComputerName "Server01" { Unregister-ScheduledJob -Name "Test*"}
 ```

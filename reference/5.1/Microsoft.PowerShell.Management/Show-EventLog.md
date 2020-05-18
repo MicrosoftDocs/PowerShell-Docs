@@ -31,6 +31,7 @@ To get events from logs that use the Windows Event Log technology in Windows Vis
 ## EXAMPLES
 
 ### Example 1: Display event logs for the local computer
+
 ```
 PS C:\> Show-EventLog
 ```
@@ -38,6 +39,7 @@ PS C:\> Show-EventLog
 This command opens Event Viewer and displays in it the classic event logs on the local computer.
 
 ### Example 2: Display event logs for a remote computer
+
 ```
 PS C:\> Show-EventLog -ComputerName "Server01"
 ```

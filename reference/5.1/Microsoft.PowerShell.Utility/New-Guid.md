@@ -27,6 +27,7 @@ If you need a unique ID in a script, you can create a GUID, as needed.
 ## EXAMPLES
 
 ### Example 1: Create a GUID
+
 ```
 PS C:\> New-Guid
 Guid

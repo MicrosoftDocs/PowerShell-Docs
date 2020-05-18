@@ -112,6 +112,7 @@ These commands show how to get the instance ID of a job and then use it to stop 
 Unlike the name of a job, which is not unique, the instance ID is unique.
 
 ### Example 3: Get jobs that include a specific command
+
 ```
 PS C:\> Get-Job -Command "*get-process*"
 ```
@@ -121,6 +122,7 @@ The command uses the *Command* parameter of **Get-Job** to limit the jobs retrie
 The command uses wildcard characters (*) to get jobs that include a **Get-Process** command anywhere in the command string.
 
 ### Example 4: Get jobs that include a specific command by using the pipeline
+
 ```
 PS C:\> "*get-process*" | Get-Job
 ```
@@ -130,6 +132,7 @@ The command uses a pipeline operator (|) to send a string, in quotation marks, t
 It is the equivalent of the previous command.
 
 ### Example 5: Get jobs that have not been started
+
 ```
 PS C:\> Get-Job -State NotStarted
 ```
@@ -138,6 +141,7 @@ This command gets only those jobs that have been created but have not yet been s
 This includes jobs that are scheduled to run in the future and those not yet scheduled.
 
 ### Example 6: Get jobs that have not been assigned a name
+
 ```
 PS C:\> Get-Job -Name Job*
 ```
@@ -146,6 +150,7 @@ This command gets all jobs that have job names that begin with job.
 Because job\<number\> is the default name for a job, this command gets all jobs that do not have an explicitly assigned name.
 
 ### Example 7: Use a job object to represent the job in a command
+
 ```
 The first command uses the **Start-Job** cmdlet to start a background job that runs a **Get-Process** command on the local computer. The command uses the *Name* parameter of **Start-Job** to assign a friendly name to the job.
 PS C:\> Start-Job -ScriptBlock {Get-Process} -Name MyJob
@@ -261,6 +266,7 @@ This example shows how to use the *Filter* parameter to get a workflow job.
 The *Filter* parameter, introduced in Windows PowerShell 3.0 is valid only on custom job types, such as workflow jobs and scheduled jobs.
 
 ### Example 11: Get information about child jobs
+
 ```
 The first command gets the jobs in the current session. The output includes a background job, a remote job and several instances of a scheduled job. The remote job, Job4, appears to have failed.
 PS C:\> Get-Job

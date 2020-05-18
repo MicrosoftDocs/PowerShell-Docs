@@ -17,36 +17,42 @@ Tests whether the actual configuration on the nodes matches the desired configur
 ## SYNTAX
 
 ### ComputerNameSet (Default)
+
 ```
 Test-DscConfiguration [[-ComputerName] <String[]>] [-Credential <PSCredential>] [-ThrottleLimit <Int32>]
  [-AsJob] [-Detailed] [<CommonParameters>]
 ```
 
 ### ComputerNameAndPathSet
+
 ```
 Test-DscConfiguration [[-ComputerName] <String[]>] [-Credential <PSCredential>] [-ThrottleLimit <Int32>]
  [-AsJob] [-Path] <String> [<CommonParameters>]
 ```
 
 ### ComputerNameAndReferenceConfigurationSet
+
 ```
 Test-DscConfiguration [[-ComputerName] <String[]>] [-Credential <PSCredential>] [-ThrottleLimit <Int32>]
  [-AsJob] -ReferenceConfiguration <String> [<CommonParameters>]
 ```
 
 ### CimSessionAndPathSet
+
 ```
 Test-DscConfiguration [-ThrottleLimit <Int32>] -CimSession <CimSession[]> [-AsJob] [-Path] <String>
  [<CommonParameters>]
 ```
 
 ### CimSessionAndReferenceConfigurationSet
+
 ```
 Test-DscConfiguration [-ThrottleLimit <Int32>] -CimSession <CimSession[]> [-AsJob]
  -ReferenceConfiguration <String> [<CommonParameters>]
 ```
 
 ### CimSessionSet
+
 ```
 Test-DscConfiguration [-ThrottleLimit <Int32>] -CimSession <CimSession[]> [-AsJob] [-Detailed]
  [<CommonParameters>]
@@ -63,6 +69,7 @@ Otherwise, it returns a string value of 'False'.
 ## EXAMPLES
 
 ### Example 1: Test configuration for the local computer
+
 ```
 PS C:\> Test-DscConfiguration
 ```
@@ -70,6 +77,7 @@ PS C:\> Test-DscConfiguration
 This command tests configuration for the local computer.
 
 ### Example 2: Test configuration for a specified computer
+
 ```
 PS C:\> $Session = New-CimSession -ComputerName "Server01" -Credential ACCOUNTS\PattiFuller
 PS C:\> Test-DscConfiguration -CimSession $Session
@@ -86,6 +94,7 @@ For more information, type `Get-Help New-CimSession`.
 The second command tests configuration for the computers identified by the **CimSession** objects stored in the $Session variable, in this case, the computer named Server01.
 
 ### Example 3: Test configurations with detailed results
+
 ```
 PS C:\> Test-DscConfiguration -ComputerName "Server01", "Server02", "Server03" -Detailed
 ```
@@ -93,6 +102,7 @@ PS C:\> Test-DscConfiguration -ComputerName "Server01", "Server02", "Server03" -
 This command tests configurations for a set of computers specified by the *ComputerName* parameter and returns detailed information that includes the overall state, resources that are in the desired state, resources that are not in the desired state and computer name.
 
 ### Example 4: Test configurations specified in a folder
+
 ```
 PS C:\> Test-DscConfiguration -Path "C:\Dsc\Configurations"
 ```
@@ -101,6 +111,7 @@ This command tests configurations that are defined in a folder specified by the 
 The configurations are tested against a set of computers, each identified by the file name of the configuration file.
 
 ### Example 5: Test configurations specified in a file
+
 ```
 PS C:\> Test-DscConfiguration -ReferenceConfiguration "C:\Dsc\Configurations\WebServer.mof" -ComputerName "Server01", "Server02", "Server03"
 ```

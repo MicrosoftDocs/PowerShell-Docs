@@ -17,17 +17,20 @@ Adds job triggers to scheduled jobs.
 ## SYNTAX
 
 ### JobDefinition (Default)
+
 ```
 Add-JobTrigger [-Trigger] <ScheduledJobTrigger[]> [-InputObject] <ScheduledJobDefinition[]>
  [<CommonParameters>]
 ```
 
 ### JobDefinitionId
+
 ```
 Add-JobTrigger [-Trigger] <ScheduledJobTrigger[]> [-Id] <Int32[]> [<CommonParameters>]
 ```
 
 ### JobDefinitionName
+
 ```
 Add-JobTrigger [-Trigger] <ScheduledJobTrigger[]> [-Name] <String[]> [<CommonParameters>]
 ```
@@ -53,6 +56,7 @@ This cmdlet was introduced in Windows PowerShell 3.0.
 ## EXAMPLES
 
 ### Example 1: Add a job trigger to a scheduled job
+
 ```
 PS C:\> $Daily = New-JobTrigger -Daily -At 3AMPS
 PS C:\> Add-JobTrigger -Trigger $Daily -Name "TestJob"
@@ -66,6 +70,7 @@ The command saves the job trigger in the $Daily variable.
 The second command uses the **Add-JobTrigger** cmdlet to add the job trigger in the $Startup variable to the TestJob scheduled job.
 
 ### Example 2: Add a job trigger to several scheduled jobs
+
 ```
 PS C:\> Get-ScheduledJob | Add-JobTrigger -Trigger (New-JobTrigger -AtStartup)
 ```
@@ -76,6 +81,7 @@ It uses a pipeline operator (|) to send the jobs to the **Add-JobTrigger** cmdle
 The value of the *Trigger* parameter is a New-JobTrigger command that creates the AtStartup job trigger.
 
 ### Example 3: Copy a job trigger
+
 ```
 PS C:\> $T = Get-JobTrigger -Name "BackupArchives"
 PS C:\> Add-JobTrigger -Name "TestBackup,BackupLogs" -Trigger $T

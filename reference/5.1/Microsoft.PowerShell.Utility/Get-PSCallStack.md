@@ -30,6 +30,7 @@ To run a **Get-PSCallStack** command while in the debugger, type `k` or `Get-PSC
 ## EXAMPLES
 
 ### Example 1: Get the call stack for a function
+
 ```
 PS C:\> function my-alias {
 $p = $args[0]

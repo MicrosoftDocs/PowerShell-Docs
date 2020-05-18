@@ -32,6 +32,7 @@ features of the host program user interface, such as the text and background col
 ## EXAMPLES
 
 ### Example 1: Get information about the PowerShell console host
+
 ```
 PS C:\> Get-Host
 Name             : ConsoleHost
@@ -164,6 +165,7 @@ To find the type of an object that is stored in an object property, use the `Get
 display the property values of the object, use the `Format-List` cmdlet.
 
 ### Example 6: Get the RawUI property for the host
+
 ```
 PS C:\> (Get-Host).UI.RawUI | Format-List -Property *
 ForegroundColor       : DarkYellow
@@ -197,6 +199,7 @@ This change is effective only in the current session. To change the background c
 for all sessions, add the command to your Windows PowerShell profile.
 
 ### Example 8: Set the background color for error messages
+
 ```
 PS C:\> $Host.PrivateData.ErrorBackgroundColor = "white"
 ```

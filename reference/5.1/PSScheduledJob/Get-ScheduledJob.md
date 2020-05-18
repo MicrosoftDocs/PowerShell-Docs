@@ -17,11 +17,13 @@ Gets scheduled jobs on the local computer.
 ## SYNTAX
 
 ### DefinitionId (Default)
+
 ```
 Get-ScheduledJob [[-Id] <Int32[]>] [<CommonParameters>]
 ```
 
 ### DefinitionName
+
 ```
 Get-ScheduledJob [-Name] <String[]> [<CommonParameters>]
 ```
@@ -46,6 +48,7 @@ This cmdlet was introduced in Windows PowerShell 3.0.
 ## EXAMPLES
 
 ### Example 1: Get all scheduled jobs
+
 ```
 PS C:\> Get-ScheduledJob
 ```
@@ -53,6 +56,7 @@ PS C:\> Get-ScheduledJob
 This command gets all scheduled jobs on the local computer.
 
 ### Example 2: Get scheduled jobs by name
+
 ```
 PS C:\> Get-ScheduledJob -Name *Backup*, *Archive*
 ```
@@ -61,6 +65,7 @@ This command gets all scheduled jobs on the computer that have names that includ
 This command format lets you search for particular jobs.
 
 ### Example 3: Get scheduled jobs on remote computers
+
 ```
 PS C:\> Invoke-Command -ComputerName (Get-Content Servers.txt) {Get-ScheduledJob}
 ```
@@ -69,6 +74,7 @@ This command gets all scheduled jobs on the computers that are listed in the Ser
 The command uses the Invoke-Command cmdlet to run a **Get-ScheduleJob** command on each computer.
 
 ### Example 4: Pipe scheduled jobs to other cmdlets
+
 ```
 PS C:\> Get-ScheduledJob DailyBackup, WeeklyBackup | Get-JobTrigger
 ```

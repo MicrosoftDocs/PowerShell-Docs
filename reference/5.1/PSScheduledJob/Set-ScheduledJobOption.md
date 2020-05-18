@@ -49,6 +49,7 @@ This cmdlet was introduced in Windows PowerShell 3.0.
 ## EXAMPLES
 
 ### Example 1: Change job options
+
 ```
 PS C:\> Get-ScheduledJobOption -Name "DeployPackage"
 StartIfOnBatteries     : False
@@ -91,6 +92,7 @@ The output shows that the WakeToRun and RunElevated properties are set to $False
 This command is not required; it is included only to show the effect of the option change.
 
 ### Example 2: Change an option on all remote scheduled jobs
+
 ```
 PS C:\> Invoke-Command -Computer "Server01" -ScriptBlock {Get-ScheduledJob | Get-ScheduledJobOption | Set-ScheduledJobOption -IdleTimeout 2:00:00}
 ```

@@ -17,6 +17,7 @@ Creates and registers a new session configuration.
 ## SYNTAX
 
 ### NameParameterSet (Default)
+
 ```
 Register-PSSessionConfiguration [-ProcessorArchitecture <String>] [-SessionType <PSSessionType>]
  [-Name] <String> [-ApplicationBase <String>] [-RunAsCredential <PSCredential>]
@@ -29,6 +30,7 @@ Register-PSSessionConfiguration [-ProcessorArchitecture <String>] [-SessionType 
 ```
 
 ### AssemblyNameParameterSet
+
 ```
 Register-PSSessionConfiguration [-ProcessorArchitecture <String>] [-Name] <String> [-AssemblyName] <String>
  [-ApplicationBase <String>] [-ConfigurationTypeName] <String> [-RunAsCredential <PSCredential>]
@@ -41,6 +43,7 @@ Register-PSSessionConfiguration [-ProcessorArchitecture <String>] [-Name] <Strin
 ```
 
 ### SessionConfigurationFile
+
 ```
 Register-PSSessionConfiguration [-ProcessorArchitecture <String>] [-Name] <String>
  [-RunAsCredential <PSCredential>] [-ThreadApartmentState <ApartmentState>] [-ThreadOptions <PSThreadOptions>]

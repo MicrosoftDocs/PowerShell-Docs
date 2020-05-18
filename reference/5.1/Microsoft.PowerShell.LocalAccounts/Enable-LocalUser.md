@@ -17,16 +17,19 @@ Enables a local user account.
 ## SYNTAX
 
 ### InputObject
+
 ```
 Enable-LocalUser [-InputObject] <LocalUser[]> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### Default
+
 ```
 Enable-LocalUser [-Name] <String[]> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### SecurityIdentifier
+
 ```
 Enable-LocalUser [-SID] <SecurityIdentifier[]> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
@@ -43,6 +46,7 @@ When a user account is enabled, the user can log on.
 ## EXAMPLES
 
 ### Example 1: Enable an account by specifying a name
+
 ```
 PS C:\> Enable-LocalUser -Name "Admin02"
 ```
@@ -50,6 +54,7 @@ PS C:\> Enable-LocalUser -Name "Admin02"
 This command enables the user account named Admin02.
 
 ### Example 2: Enable an account by using the pipeline
+
 ```
 PS C:\> Get-LocalUser -Name "Administrator" | Enable-LocalUser
 ```

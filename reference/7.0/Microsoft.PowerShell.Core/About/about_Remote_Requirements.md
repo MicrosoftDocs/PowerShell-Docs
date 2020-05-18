@@ -261,6 +261,7 @@ in NTLM authentication between the client and server and payload is encrypted
 over HTTP.
 
 The following illustrates using Negotiate with New-PSSession:
+
 ```powershell
 # The specified user must have administrator rights on the target machine.
 $cred = Get-Credential username@hostname

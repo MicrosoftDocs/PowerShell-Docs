@@ -19,16 +19,19 @@ It is used with ConvertFrom-SecureString and Read-Host.
 ## SYNTAX
 
 ### Secure (Default)
+
 ```
 ConvertTo-SecureString [-String] <String> [[-SecureKey] <SecureString>] [<CommonParameters>]
 ```
 
 ### PlainText
+
 ```
 ConvertTo-SecureString [-String] <String> [-AsPlainText] [-Force] [<CommonParameters>]
 ```
 
 ### Open
+
 ```
 ConvertTo-SecureString [-String] <String> [-Key <Byte[]>] [<CommonParameters>]
 ```
@@ -46,6 +49,7 @@ If the standard string being converted was encrypted with **ConvertFrom-SecureSt
 ## EXAMPLES
 
 ### Example 1: Convert a secure string to an encrypted string
+
 ```
 PS C:\> $Secure = Read-Host -AsSecureString
 PS C:\> $Secure
@@ -77,6 +81,7 @@ The sixth command displays the value of the $Secure2 variable.
 The SecureString type indicates that the command was successful.
 
 ### Example 2: Create a secure string from an encrypted string in a file
+
 ```
 PS C:\> $Secure = Read-Host -AsSecureString
 PS C:\> $Encrypted = ConvertFrom-SecureString -SecureString $Secure -Key (1..16)
@@ -99,6 +104,7 @@ The command uses a pipeline operator to send the encrypted string to the **Conve
 The results are saved in the $Secure2 variable.
 
 ### Example 3: Convert a plain text string to a secure string
+
 ```
 PS C:\> $Secure_String_Pwd = ConvertTo-SecureString "P@ssW0rD!" -AsPlainText -Force
 ```

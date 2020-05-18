@@ -17,31 +17,37 @@ Restarts a suspended job.
 ## SYNTAX
 
 ### SessionIdParameterSet (Default)
+
 ```
 Resume-Job [-Wait] [-Id] <Int32[]> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### JobParameterSet
+
 ```
 Resume-Job [-Job] <Job[]> [-Wait] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### NameParameterSet
+
 ```
 Resume-Job [-Wait] [-Name] <String[]> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### InstanceIdParameterSet
+
 ```
 Resume-Job [-Wait] [-InstanceId] <Guid[]> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### StateParameterSet
+
 ```
 Resume-Job [-Wait] [-State] <JobState> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### FilterParameterSet
+
 ```
 Resume-Job [-Wait] [-Filter] <Hashtable> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
@@ -72,6 +78,7 @@ This cmdlet was introduced in Windows PowerShell 3.0.
 ## EXAMPLES
 
 ### Example 1: Resume a job by ID
+
 ```
 The first command uses the **Get-Job** cmdlet to get the job. The output shows that the job is a suspended workflow job.
 PS C:\> Get-Job EventJob
@@ -86,6 +93,7 @@ PS C:\> Resume-Job -Id 4
 The commands in this example verify that the job is a suspended workflow job and then resume the job.
 
 ### Example 2: Resume a job by name
+
 ```
 PS C:\> Resume-Job -Name WorkflowJob, InventoryWorkflow, WFTest*
 ```
@@ -93,6 +101,7 @@ PS C:\> Resume-Job -Name WorkflowJob, InventoryWorkflow, WFTest*
 This command uses the *Name* parameter to resume several workflow jobs on the local computer.
 
 ### Example 3: Use custom property values
+
 ```
 PS C:\> Resume-Job -Filter @{CustomID="T091291"} -State Suspended
 ```
@@ -102,6 +111,7 @@ It uses the *Filter* parameter to identify the workflow job by its **CustomID** 
 It also uses the *State* parameter to verify that the workflow job is suspended, before it tries to resume it.
 
 ### Example 4: Resume all suspended jobs on a remote computer
+
 ```
 PS C:\> Invoke-Command -ComputerName Srv01 -ScriptBlock {Get-Job -State Suspended | Resume-Job}
 ```
@@ -113,6 +123,7 @@ The remote command uses the *State* parameter of the **Get-Job** cmdlet to get a
 A pipeline operator (|) sends the suspended jobs to the **Resume-Job** cmdlet, which resumes them.
 
 ### Example 5: Wait for jobs to resume
+
 ```
 PS C:\> Resume-Job -Name WorkflowJob, InventoryWorkflow, WFTest* -Wait
 ```
@@ -121,6 +132,7 @@ This command uses the *Wait* parameter to direct **Resume-Job** to return only a
 The *Wait* parameter is especially useful in scripts that assume that jobs are resumed before the script continues.
 
 ### Example 6: Resume a workflow that suspends itself
+
 ```
 This code sample shows the **Suspend-Workflow** activity in a workflow.
 #SampleWorkflow

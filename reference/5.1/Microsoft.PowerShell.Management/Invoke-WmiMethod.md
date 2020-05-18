@@ -17,6 +17,7 @@ Calls WMI methods.
 ## SYNTAX
 
 ### class (Default)
+
 ```
 Invoke-WmiMethod [-Class] <String> [-Name] <String> [-ArgumentList <Object[]>] [-AsJob]
  [-Impersonation <ImpersonationLevel>] [-Authentication <AuthenticationLevel>] [-Locale <String>]
@@ -25,12 +26,14 @@ Invoke-WmiMethod [-Class] <String> [-Name] <String> [-ArgumentList <Object[]>] [
 ```
 
 ### object
+
 ```
 Invoke-WmiMethod -InputObject <ManagementObject> [-Name] <String> [-ArgumentList <Object[]>] [-AsJob]
  [-ThrottleLimit <Int32>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### path
+
 ```
 Invoke-WmiMethod -Path <String> [-Name] <String> [-ArgumentList <Object[]>] [-AsJob]
  [-Impersonation <ImpersonationLevel>] [-Authentication <AuthenticationLevel>] [-Locale <String>]
@@ -39,6 +42,7 @@ Invoke-WmiMethod -Path <String> [-Name] <String> [-ArgumentList <Object[]>] [-As
 ```
 
 ### WQLQuery
+
 ```
 Invoke-WmiMethod [-Name] <String> [-AsJob] [-Impersonation <ImpersonationLevel>]
  [-Authentication <AuthenticationLevel>] [-Locale <String>] [-EnableAllPrivileges] [-Authority <String>]
@@ -47,6 +51,7 @@ Invoke-WmiMethod [-Name] <String> [-AsJob] [-Impersonation <ImpersonationLevel>]
 ```
 
 ### query
+
 ```
 Invoke-WmiMethod [-Name] <String> [-AsJob] [-Impersonation <ImpersonationLevel>]
  [-Authentication <AuthenticationLevel>] [-Locale <String>] [-EnableAllPrivileges] [-Authority <String>]
@@ -55,6 +60,7 @@ Invoke-WmiMethod [-Name] <String> [-AsJob] [-Impersonation <ImpersonationLevel>]
 ```
 
 ### list
+
 ```
 Invoke-WmiMethod [-Name] <String> [-AsJob] [-Impersonation <ImpersonationLevel>]
  [-Authentication <AuthenticationLevel>] [-Locale <String>] [-EnableAllPrivileges] [-Authority <String>]
@@ -72,6 +78,7 @@ Instead of using **Invoke-WmiMethod**, consider using Invoke-CimMethod https://d
 ## EXAMPLES
 
 ### Example 1: List the required order of WMI objects
+
 ```
 PS C:\> ([wmiclass]'Win32_Volume').GetMethodParameters('Format')
 __GENUS           : 2
@@ -97,6 +104,7 @@ This command lists the required order of the objects.
 To invoke WMI in PowerShell 3.0 differs from alternate methods, and requires that object values are entered in a specific order.
 
 ### Example 2: Start an instance of an application
+
 ```
 PS C:\> ([Wmiclass]'Win32_Process').GetMethodParameters('Create')
 __GENUS                   : 2
@@ -133,6 +141,7 @@ This command starts an instance of Notepad by calling the Create method of the W
 The **ReturnValue** property is populated with a 0, and the **ProcessId** property is populated with an integer (the next process ID number) if the command is completed.
 
 ### Example 3: Rename a file
+
 ```
 PS C:\> Invoke-WmiMethod -Path "CIM_DataFile.Name='C:\scripts\test.txt'" -Name Rename -ArgumentList "C:\scripts\test_bu.txt"
 __GENUS          : 2

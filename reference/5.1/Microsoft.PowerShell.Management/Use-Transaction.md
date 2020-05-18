@@ -33,6 +33,7 @@ For more information, see about_Transactions.
 ## EXAMPLES
 
 ### Example 1: Script by using a transaction-enabled object
+
 ```
 PS C:\> Start-Transaction
 PS C:\> $transactedString = New-Object Microsoft.PowerShell.Commands.Management.TransactedString
@@ -82,6 +83,7 @@ The seventh command uses the Complete-Transaction cmdlet to commit the transacti
 The final command uses the **ToString** method to display the resulting value of the variable as a string.
 
 ### Example 2: Roll back a transaction
+
 ```
 PS C:\> Start-Transaction
 PS C:\> $transactedString = New-Object Microsoft.PowerShell.Commands.Management.TransactedString

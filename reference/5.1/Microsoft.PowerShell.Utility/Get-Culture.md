@@ -30,6 +30,7 @@ The user-interface (UI) culture determines which text strings are used for user 
 ## EXAMPLES
 
 ### Example 1: Get culture settings
+
 ```
 PS C:\> Get-Culture
 ```
@@ -37,6 +38,7 @@ PS C:\> Get-Culture
 This command displays information about the regional settings on the computer.
 
 ### Example 2: Format the properties of a culture object
+
 ```
 PS C:\> $C = Get-Culture
 PS C:\> $C | Format-List -Property *

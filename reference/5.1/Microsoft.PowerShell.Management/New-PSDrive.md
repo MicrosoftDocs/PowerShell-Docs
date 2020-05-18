@@ -156,6 +156,7 @@ Status       Local     Remote                    Network
 ---------------------------------------------------------
 OK           S:        \\Server01\Scripts        Microsoft Windows Network
 ```
+
 > [!NOTE]
 > Remember, if you use the above snippet in a script, set the **Scope** parameter value to
 > "Global" to ensure the drive persists outside the current scope.

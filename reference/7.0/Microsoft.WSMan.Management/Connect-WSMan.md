@@ -17,6 +17,7 @@ Connects to the WinRM service on a remote computer.
 ## SYNTAX
 
 ### ComputerName (Default)
+
 ```
 Connect-WSMan [-ApplicationName <String>] [[-ComputerName] <String>] [-OptionSet <Hashtable>] [-Port <Int32>]
  [-SessionOption <SessionOption>] [-UseSSL] [-Credential <PSCredential>]
@@ -24,6 +25,7 @@ Connect-WSMan [-ApplicationName <String>] [[-ComputerName] <String>] [-OptionSet
 ```
 
 ### URI
+
 ```
 Connect-WSMan [-ConnectionURI <Uri>] [-OptionSet <Hashtable>] [-Port <Int32>] [-SessionOption <SessionOption>]
  [-Credential <PSCredential>] [-Authentication <AuthenticationMechanism>] [-CertificateThumbprint <String>]
@@ -43,6 +45,7 @@ For information about how to disconnect from the WinRM service on a remote compu
 ## EXAMPLES
 
 ### Example 1: Connect to a remote computer
+
 ```
 PS C:\> Connect-WSMan -ComputerName "server01"
 PS C:\> cd wsman:
@@ -63,6 +66,7 @@ However, you can use the cmdlet to establish connections to remote computers bef
 Those connections appear in the **ComputerName** list.
 
 ### Example 2: Connect to a remote computer by using Administrator credentials
+
 ```
 PS C:\> $cred = Get-Credential Administrator
 PS C:\> Connect-WSMan -ComputerName "server01" -Credential $cred
@@ -86,6 +90,7 @@ The second command uses the *Credential* parameter to pass the credentials store
 **Connect-WSMan** then connects to the remote system server01 by using the Administrator credentials.
 
 ### Example 3: Connect to a remote computer over a specified port
+
 ```
 PS C:\> Connect-WSMan -ComputerName "server01" -Port 80
 PS C:\> cd wsman:
@@ -101,6 +106,7 @@ server01                                      Container
 This command creates a connection to the remote server01 computer over port 80.
 
 ### Example 4: Connect to a remote computer by using connection options
+
 ```
 PS C:\> $a = New-WSManSessionOption -OperationTimeout 30000
 PS C:\> Connect-WSMan -ComputerName "server01" -SessionOption $a
