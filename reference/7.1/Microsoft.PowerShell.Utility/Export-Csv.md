@@ -17,21 +17,39 @@ file.
 
 ## SYNTAX
 
-### Delimiter (Default)
+### DelimiterPath (Default)
 
 ```
-Export-Csv -InputObject <PSObject> [[-Path] <String>] [-LiteralPath <String>] [-Force] [-NoClobber]
- [-Encoding <Encoding>] [-Append] [[-Delimiter] <Char>] [-IncludeTypeInformation]
- [-NoTypeInformation] [-QuoteFields <String[]>] [-UseQuotes <QuoteKind>] [-WhatIf] [-Confirm]
+Export-Csv [-Path] <string> [[-Delimiter] <char>] -InputObject <psobject> [-Force] [-NoClobber]
+ [-Encoding <Encoding>] [-Append] [-IncludeTypeInformation] [-NoTypeInformation]
+ [-QuoteFields <string[]>] [-UseQuotes {Never | Always | AsNeeded}] [-WhatIf] [-Confirm]
  [<CommonParameters>]
 ```
 
-### UseCulture
+### CulturePath
 
 ```
-Export-Csv -InputObject <PSObject> [[-Path] <String>] [-LiteralPath <String>] [-Force] [-NoClobber]
- [-Encoding <Encoding>] [-Append] [-UseCulture] [-IncludeTypeInformation] [-NoTypeInformation]
- [-QuoteFields <String[]>] [-UseQuotes <QuoteKind>] [-WhatIf] [-Confirm]  [<CommonParameters>]
+Export-Csv [-Path] <string> [[-UseCulture]] -InputObject <psobject> [-Force] [-NoClobber]
+ [-Encoding <Encoding>] [-Append] [-IncludeTypeInformation] [-NoTypeInformation]
+ [-QuoteFields <string[]>] [-UseQuotes {Never | Always | AsNeeded}] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
+```
+
+### DelimiterLiteralPath
+
+```
+Export-Csv [-LiteralPath] <string> [[-Delimiter] <char>] -InputObject <psobject> [-Force]
+ [-NoClobber] [-Encoding <Encoding>] [-Append] [-IncludeTypeInformation] [-NoTypeInformation]
+ [-QuoteFields <string[]>] [-UseQuotes {Never | Always | AsNeeded}] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
+```
+
+### CultureLiteralPath
+
+```
+Export-Csv [-LiteralPath] <string> [[-UseCulture]] -InputObject <psobject> [-Force] [-NoClobber]
+ [-Encoding <Encoding>] [-Append] [-IncludeTypeInformation] [-NoTypeInformation] [-QuoteFields <string[]>]
+ [-UseQuotes {Never | Always | AsNeeded}] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -407,7 +425,7 @@ character, such as a colon (`:`). To specify a semicolon (`;`), enclose it in qu
 
 ```yaml
 Type: Char
-Parameter Sets: Delimiter
+Parameter Sets: DelimiterPath, DelimiterLiteralPath
 Aliases:
 
 Required: False
@@ -516,10 +534,10 @@ PowerShell not to interpret any characters as escape sequences.
 
 ```yaml
 Type: String
-Parameter Sets: (All)
+Parameter Sets: DelimiterLiteralPath, CultureLiteralPath
 Aliases: PSPath, LP
 
-Required: False
+Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -566,10 +584,10 @@ A required parameter that specifies the location to save the CSV output file.
 
 ```yaml
 Type: String
-Parameter Sets: (All)
+Parameter Sets: DelimiterPath, CulturePath
 Aliases:
 
-Required: False
+Required: True
 Position: 0
 Default value: None
 Accept pipeline input: False
@@ -583,7 +601,7 @@ for a culture, use the following command: `(Get-Culture).TextInfo.ListSeparator`
 
 ```yaml
 Type: SwitchParameter
-Parameter Sets: UseCulture
+Parameter Sets: CulturePath, CultureLiteralPath
 Aliases:
 
 Required: False
