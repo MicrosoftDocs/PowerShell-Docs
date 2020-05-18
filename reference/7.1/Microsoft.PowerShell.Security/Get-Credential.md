@@ -105,7 +105,7 @@ password. The command saves the resulting credentials in the `$Credential` varia
 
 The **PromptForCredential** method is an alternative to using the `Get-Credential` cmdlet. When you
 use **PromptForCredential**, you can specify the caption, messages, and user name that appear in the
-message box.
+prompt.
 
 ### Example 7
 
