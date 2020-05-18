@@ -154,5 +154,3 @@ The cmdlet does not generate any output.
 [Unregister-Event](Unregister-Event.md)
 
 [Wait-Event](Wait-Event.md)
-
-

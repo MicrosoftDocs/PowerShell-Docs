@@ -330,6 +330,3 @@ If you close the current session, the event queue is discarded and the event sub
 ## RELATED LINKS
 
 ## RELATED LINKS
-
-
-

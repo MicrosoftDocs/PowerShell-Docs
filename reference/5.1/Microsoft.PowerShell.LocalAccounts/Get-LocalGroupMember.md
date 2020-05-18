@@ -149,5 +149,3 @@ This cmdlet returns local principals.
 [New-LocalGroup](New-LocalGroup.md)
 
 [Remove-LocalGroupMember](Remove-LocalGroupMember.md)
-
-

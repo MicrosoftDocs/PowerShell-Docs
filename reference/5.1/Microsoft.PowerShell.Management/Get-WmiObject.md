@@ -643,4 +643,3 @@ properties of a WMI object, use the `Get-Member` or `Format-List` cmdlets.
 [New-WSManInstance](../Microsoft.WsMan.Management/New-WSManInstance.md)
 
 [Remove-WSManInstance](../Microsoft.WsMan.Management/Remove-WSManInstance.md)
-

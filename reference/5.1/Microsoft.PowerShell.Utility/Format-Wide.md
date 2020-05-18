@@ -320,4 +320,3 @@ nor a table, use Format-Custom.
 [Format-List](Format-List.md)
 
 [Format-Table](Format-Table.md)
-

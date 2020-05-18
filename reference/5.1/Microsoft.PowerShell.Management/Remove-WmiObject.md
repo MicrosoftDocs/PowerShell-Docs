@@ -411,6 +411,3 @@ Otherwise, it does not generate any output.
 [Invoke-WmiMethod](Invoke-WmiMethod.md)
 
 [Set-WmiInstance](Set-WmiInstance.md)
-
-
-

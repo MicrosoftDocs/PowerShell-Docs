@@ -146,5 +146,3 @@ You can pipe a string that contains a debug message to `Write-Debug`.
 [Write-Verbose](Write-Verbose.md)
 
 [Write-Warning](Write-Warning.md)
-
-

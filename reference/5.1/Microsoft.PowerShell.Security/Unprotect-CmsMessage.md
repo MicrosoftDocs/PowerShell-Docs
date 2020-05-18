@@ -216,5 +216,3 @@ The unencrypted message.
 [Get-CmsMessage](Get-CmsMessage.md)
 
 [Protect-CmsMessage](Protect-CmsMessage.md)
-
-

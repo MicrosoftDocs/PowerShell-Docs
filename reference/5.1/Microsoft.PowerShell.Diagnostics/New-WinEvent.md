@@ -138,4 +138,3 @@ This cmdlet does to generate any output.
 ## RELATED LINKS
 
 [Get-WinEvent](Get-WinEvent.md)
-

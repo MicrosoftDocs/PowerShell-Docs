@@ -8,7 +8,6 @@ title:  JEA Prerequisites
 Just Enough Administration is a feature included in PowerShell 5.0 and higher. This article
 describes the prerequisites that must be satisfied to start using JEA.
 
-
 ## Check which version of PowerShell is installed
 
 To check which version of PowerShell is installed on your system, check the `$PSVersionTable`

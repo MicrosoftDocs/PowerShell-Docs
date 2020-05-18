@@ -273,5 +273,3 @@ For more information, see [about_Providers](../Microsoft.PowerShell.Core/About/a
 [Get-ChildItem](Get-ChildItem.md)
 
 [Get-PSDrive](Get-PSDrive.md)
-
-

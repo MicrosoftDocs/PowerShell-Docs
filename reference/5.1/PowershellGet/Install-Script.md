@@ -298,7 +298,6 @@ Specifies the maximum version of a single scripts to install. You cannot add thi
 are attempting to install multiple scripts. The **MaximumVersion** and the **RequiredVersion**
 parameters are mutually exclusive; you cannot use both parameters in the same command.
 
-
 ```yaml
 Type: String
 Parameter Sets: NameParameterSet
@@ -513,4 +512,3 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 [Uninstall-Script](Uninstall-Script.md)
 
 [Update-Script](Update-Script.md)
-

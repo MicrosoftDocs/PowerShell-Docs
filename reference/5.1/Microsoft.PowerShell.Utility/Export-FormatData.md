@@ -227,5 +227,3 @@ It generates a file and saves it in the specified path.
 [Get-FormatData](Get-FormatData.md)
 
 [Update-FormatData](Update-FormatData.md)
-
-

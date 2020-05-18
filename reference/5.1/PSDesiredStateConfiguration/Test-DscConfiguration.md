@@ -270,6 +270,3 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 [Restore-DscConfiguration](Restore-DscConfiguration.md)
 
 [Start-DscConfiguration](Start-DscConfiguration.md)
-
-
-

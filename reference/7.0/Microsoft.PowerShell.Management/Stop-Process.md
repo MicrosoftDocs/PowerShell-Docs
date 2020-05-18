@@ -291,5 +291,3 @@ In an extreme case, stopping a process can stop Windows.
 [Stop-Process](Stop-Process.md)
 
 [Wait-Process](Wait-Process.md)
-
-

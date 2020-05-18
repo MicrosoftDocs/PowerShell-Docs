@@ -163,5 +163,3 @@ You cannot pipe input to **Get-ScheduledJob**.
 [Set-ScheduledJobOption](Set-ScheduledJobOption.md)
 
 [Unregister-ScheduledJob](Unregister-ScheduledJob.md)
-
-

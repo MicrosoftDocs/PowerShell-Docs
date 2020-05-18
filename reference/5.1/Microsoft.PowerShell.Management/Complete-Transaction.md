@@ -240,5 +240,3 @@ To roll back a different transaction, you must first commit or roll back the act
 [New-Item](New-Item.md)
 
 [New-ItemProperty](New-ItemProperty.md)
-
-
