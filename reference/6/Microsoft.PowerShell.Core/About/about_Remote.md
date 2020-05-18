@@ -97,8 +97,8 @@ these cmdlets in your session, type:
 
 ```powershell
 Get-Command | Where-Object {
-	$_.Parameters.Keys -contains 'ComputerName' -and
-	$_.Parameters.Keys -notcontains 'Session'
+  $_.Parameters.Keys -contains 'ComputerName' -and
+  $_.Parameters.Keys -notcontains 'Session'
 }
 ```
 
