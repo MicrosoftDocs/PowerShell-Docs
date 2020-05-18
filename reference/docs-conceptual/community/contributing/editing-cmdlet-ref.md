@@ -40,11 +40,11 @@ Basic formatting guidelines:
     code spans using backticks (`` ` ``)
   - Within a paragraph, these characters should be put into code spans. For example:
 
-    ~~~markdown
+    ```markdown
     ### The purpose of the \$foo variable
 
     The `$foo` variable is used to store ...
-    ~~~
+    ```
 
 - Tables need to fit within 76 characters
   - Manually wrap contents of cells across multiple lines
@@ -52,8 +52,7 @@ Basic formatting guidelines:
   - The following example illustrates how to properly construct a table that contains information
     that wraps on multiple lines within a cell.
 
-    ~~~markdown
-    ```
+    ```markdown
     |Operator|Description                |Example                          |
     |--------|---------------------------|---------------------------------|
     |`-is`   |Returns TRUE when the input|`(get-date) -is [DateTime]`      |
@@ -65,7 +64,6 @@ Basic formatting guidelines:
     |`-as`   |Converts the input to the  |`"5/7/07" -as [DateTime]`        |
     |        |specified .NET type.       |`Monday, May 7, 2007 12:00:00 AM`|
     ```
-    ~~~
 
     > [!NOTE]
     > The 76-column limitation applies only to `About_*` topics. You can use wide columns in
@@ -78,7 +76,7 @@ In the PlatyPS schema, the **EXAMPLES** header is an H2 header and each example 
 Within an example, the schema does not allow code blocks to be separated by paragraphs. The
 supported schema is:
 
-```
+```markdown
 ### Example #X title
 
 0 or more paragraphs

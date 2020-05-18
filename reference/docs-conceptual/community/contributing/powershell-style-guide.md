@@ -298,6 +298,7 @@ For more information, see [Use links in documentation](https://docs.microsoft.co
 
   For example:
 
+  <!-- markdownlint-disable MD048-->
   ~~~markdown
   The following code uses `Get-ChildItem` to list the contents of `C:\Windows` and assigns
   the output to the `$files` variable.
