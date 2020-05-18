@@ -174,5 +174,3 @@ This cmdlet returns the result of the transaction.
 [Start-Transaction](Start-Transaction.md)
 
 [Undo-Transaction](Undo-Transaction.md)
-
-

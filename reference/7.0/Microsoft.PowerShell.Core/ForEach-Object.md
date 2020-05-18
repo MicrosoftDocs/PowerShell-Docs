@@ -168,7 +168,6 @@ Hello
 Because PowerShell treats null as an explicit placeholder, the `ForEach-Object` cmdlet generates a
 value for `$Null`, just as it does for other objects that you pipe to it.
 
-
 ### Example 6: Get property values
 
 This example gets the value of the **Path** property of all installed PowerShell modules by using

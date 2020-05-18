@@ -269,4 +269,3 @@ can use the dictionary-style hash tables to isolate text strings from code, such
 files, and to format the text strings for use in translation tools.
 
 ## RELATED LINKS
-

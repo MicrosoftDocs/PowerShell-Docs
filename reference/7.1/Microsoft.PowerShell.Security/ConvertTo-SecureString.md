@@ -230,5 +230,3 @@ ConvertTo-SecureString returns a **SecureString** object.
 ## RELATED LINKS
 
 [ConvertFrom-SecureString](ConvertFrom-SecureString.md)
-
-

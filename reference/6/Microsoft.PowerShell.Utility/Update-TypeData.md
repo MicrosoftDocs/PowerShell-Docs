@@ -106,7 +106,6 @@ Update-TypeData -PrependPath TypesA.types.ps1xml, TypesB.types.ps1xml
 Update-TypeData -PrependPath TypesA.types.ps1xml
 ```
 
-
 ### Example 3: Add a script property to DateTime objects
 
 This example uses `Update-TypeData` to add the **Quarter** script property to **System.DateTime**

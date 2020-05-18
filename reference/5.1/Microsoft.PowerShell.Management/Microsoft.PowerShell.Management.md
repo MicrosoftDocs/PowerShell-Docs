@@ -285,5 +285,3 @@ Waits for the processes to be stopped before accepting more input.
 
 ### [Write-EventLog](Write-EventLog.md)
 Writes an event to an event log.
-
-

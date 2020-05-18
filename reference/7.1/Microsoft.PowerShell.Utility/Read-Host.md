@@ -104,5 +104,3 @@ Otherwise, it returns a string.
 [Get-Host](Get-Host.md)
 
 [Write-Host](Write-Host.md)
-
-

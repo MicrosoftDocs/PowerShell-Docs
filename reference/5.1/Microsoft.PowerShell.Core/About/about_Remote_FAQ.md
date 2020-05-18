@@ -277,7 +277,6 @@ Get-Help * -Parameter ThrottleLimit
 Get-Command -ParameterName ThrottleLimit
 ```
 
-
 ### IS THE OUTPUT OF REMOTE COMMANDS DIFFERENT FROM LOCAL OUTPUT?
 
 When you use Windows PowerShell locally, you send and receive "live" .NET

@@ -143,6 +143,3 @@ You cannot pipe input to this cmdlet.
 [Set-Culture](/powershell/module/internationalcmdlets/set-culture)
 
 [Get-UICulture](Get-UICulture.md)
-
-
-

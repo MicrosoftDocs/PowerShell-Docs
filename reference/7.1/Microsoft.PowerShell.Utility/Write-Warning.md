@@ -137,5 +137,3 @@ It does not generate any other output.
 [Write-Progress](Write-Progress.md)
 
 [Write-Verbose](Write-Verbose.md)
-
-

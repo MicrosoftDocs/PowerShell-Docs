@@ -321,4 +321,3 @@ This cmdlet produces no outputs.
 [Get-CimInstance](get-ciminstance.md)
 
 [Set-CimInstance](Set-CimInstance.md)
-

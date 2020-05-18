@@ -26,6 +26,4 @@ The following XML shows how to add a RelatedLinks node that contains two referen
     <maml:linkText>Topic-name</maml:linkText>
   </maml:navigationLink>
 </ maml:relatedLinks >
-```
-
-
+```

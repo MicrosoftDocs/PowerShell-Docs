@@ -71,7 +71,6 @@ steps to complete the change.
 4. Enter the password of the new account. After entering the password, you are returned to the
    Account Settings page showing you that the login account has been updated.
 
-
 ## Enable Two-Factor Authentication (2FA)
 
 Two-factor authentication is recommended for all users who publish manually to the PowerShell

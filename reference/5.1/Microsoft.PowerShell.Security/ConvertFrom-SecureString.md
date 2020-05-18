@@ -165,4 +165,3 @@ ConvertFrom-SecureString returns a standard string object.
 [ConvertTo-SecureString](ConvertTo-SecureString.md)
 
 [Read-Host](../Microsoft.PowerShell.Utility/Read-Host.md)
-

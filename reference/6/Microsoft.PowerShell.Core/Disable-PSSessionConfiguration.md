@@ -244,4 +244,3 @@ To run this cmdlet you must start PowerShell by using the **Run as administrator
 [about_Session_Configurations](About/about_Session_Configurations.md)
 
 [about_Session_Configuration_Files](About/about_Session_Configuration_Files.md)
-

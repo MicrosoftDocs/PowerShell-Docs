@@ -33,7 +33,6 @@ PowerShell console. It provides:
 The following functions are available in the class
 **[Microsoft.PowerShell.PSConsoleReadLine]**.
 
-
 ## Basic editing functions
 
 ### Abort

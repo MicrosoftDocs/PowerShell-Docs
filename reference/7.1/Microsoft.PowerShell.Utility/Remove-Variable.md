@@ -189,5 +189,3 @@ For more information, see about_Aliases.
 [New-Variable](New-Variable.md)
 
 [Set-Variable](Set-Variable.md)
-
-

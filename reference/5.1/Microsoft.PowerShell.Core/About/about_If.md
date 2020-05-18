@@ -82,7 +82,6 @@ else {
 To further refine this example, you can use the Elseif statement to display
 a message when the value of $a is equal to 2. As the next example shows:
 
-
 ```powershell
 if ($a -gt 2) {
     Write-Host "The value $a is greater than 2."

@@ -397,7 +397,6 @@ If the Group Policy **Turn on Script Execution** is enabled for the computer or 
 preference is saved, but it is not effective. PowerShell displays a message that explains the
 conflict.
 
-
 ## RELATED LINKS
 
 [about_Execution_Policies](../Microsoft.PowerShell.Core/About/about_Execution_Policies.md)
@@ -417,4 +416,3 @@ conflict.
 [Set-AuthenticodeSignature](Set-AuthenticodeSignature.md)
 
 [Unblock-File](../Microsoft.PowerShell.Utility/Unblock-File.md)
-

@@ -665,7 +665,6 @@ also allows you to use a **Suppress XML** element that excludes events from the 
 information about the XML schema for event log queries, see [Query Schema](/windows/win32/wes/queryschema-schema)
 and the XML Event Queries section of [Event Selection](/previous-versions/aa385231(v=vs.85)).
 
-
 ```yaml
 Type: XmlDocument
 Parameter Sets: XmlQuerySet

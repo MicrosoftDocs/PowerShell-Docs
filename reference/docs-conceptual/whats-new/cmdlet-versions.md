@@ -74,7 +74,6 @@ This is a work in progress. Please help us keep this information fresh.
 | Import-IseSnippet | &check; |      |       |       | Windows only |
 | New-IseSnippet    | &check; |      |       |       | Windows only |
 
-
 ### Microsoft.PowerShell.Archive
 
 |   Cmdlet name    |   5.1   |   6.x   |   7.0   |   7.1   | Note |
