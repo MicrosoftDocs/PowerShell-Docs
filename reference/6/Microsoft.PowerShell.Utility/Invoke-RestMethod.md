@@ -931,7 +931,7 @@ This switch should be used for sites that require header values that do not conf
 Specifying this switch disables validation to allow the value to be passed unchecked. When
 specified, all headers are added without validation.
 
-This will disable validation for values passed to the **ContentType**, **Headers, and **UserAgent**
+This will disable validation for values passed to the **ContentType**, **Headers**, and **UserAgent**
 parameters.
 
 This feature was added in PowerShell 6.0.0.
