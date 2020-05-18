@@ -82,6 +82,7 @@ In Windows PowerShell 3.0, it returns a **CultureInfo** object.
 In Windows PowerShell 2.0, it returns a **VistaCultureInfo** object.
 
 ## NOTES
+
 * You can also use the $PsCulture and $PsUICulture variables. The $PsCulture variable stores the name of the current culture, and the $PsUICulture variable stores the name of the current UI culture.
 
 *

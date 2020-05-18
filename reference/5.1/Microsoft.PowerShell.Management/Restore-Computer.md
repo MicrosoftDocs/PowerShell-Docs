@@ -132,6 +132,7 @@ You cannot pipe input to this cmdlet.
 This cmdlet does not generate any output.
 
 ## NOTES
+
 * To run a Restore-Computer command on Windows Vista and later versions of the Windows operating system, open Windows PowerShell by using the Run as administrator option.
 * This cmdlet uses the Windows Management Instrumentation (WMI) **SystemRestore** class.
 

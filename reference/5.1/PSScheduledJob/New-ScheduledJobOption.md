@@ -434,6 +434,7 @@ You cannot pipe input to this cmdlet.
 ### Microsoft.PowerShell.ScheduledJob.ScheduledJobOptions
 
 ## NOTES
+
 * You can use the **ScheduledJobOptions** object that **New-ScheduledJobOption** creates as the value of the *ScheduledJobOption* parameter of the Register-ScheduledJob cmdlet. However, the *ScheduledJobOption* parameter can also take a hash table value that specifies the properties of the **ScheduledJobOptions** object and their values, such as:
 
   `@{ShowInTaskScheduler=$False; RunElevated=$True; IdleDuration="00:05"}`

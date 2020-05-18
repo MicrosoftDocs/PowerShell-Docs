@@ -202,6 +202,7 @@ You cannot pipe input to this cmdlet.
 This cmdlet returns objects that represents the events in the logs.
 
 ## NOTES
+
 * To use **Write-EventLog**, start Windows PowerShell by using the Run as administrator option.
 
 *

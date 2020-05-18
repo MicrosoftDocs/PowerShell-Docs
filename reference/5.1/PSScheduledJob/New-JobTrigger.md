@@ -449,6 +449,7 @@ You cannot pipe input to this cmdlet.
 ### Microsoft.PowerShell.ScheduledJob.ScheduledJobTrigger
 
 ## NOTES
+
 * Job triggers are not saved to disk. However, scheduled jobs are saved to disk, and you can use the Get-JobTrigger to get the job trigger of any scheduled job.
 * **New-JobTrigger** does not prevent you from creating a job trigger that will not run a scheduled job, such as one-time trigger for a date in the past.
 * The Register-ScheduledJob cmdlet accepts a ScheduledJobTrigger object, such as one returned by the **New-JobTrigger** or Get-JobTrigger cmdlets, or a hash table with trigger values.

@@ -149,6 +149,7 @@ You cannot pipe input to this cmdlet.
 To see a description of this object, type `Get-Help Get-Event -Full` and see the Notes section of the help topic.
 
 ## NOTES
+
 * Events, event subscriptions, and the event queue exist only in the current session. If you close the current session, the event queue is discarded and the event subscription is canceled.
 
   The **Get-Event** cmdlet returns a **PSEventArgs** object (**System.Management.Automation.PSEventArgs**) with the following properties:

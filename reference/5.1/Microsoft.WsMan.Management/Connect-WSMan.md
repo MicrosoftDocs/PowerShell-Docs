@@ -370,6 +370,7 @@ This cmdlet does not accept any input.
 This cmdlet does not generate any output.
 
 ## NOTES
+
 * You can run management commands or query management data on a remote computer without creating a WS-Management session. You can do this by using the *ComputerName* parameters of Invoke-WSManAction and Get-WSManInstance. When you use the *ComputerName* parameter, Windows PowerShell creates a temporary connection that is used for the single command. After the command runs, the connection is closed.
 
 *

@@ -169,6 +169,7 @@ You can pipe a process object to this cmdlet.
 This cmdlet does not generate any output.
 
 ## NOTES
+
 * This cmdlet uses the **WaitForExit** method of the System.Diagnostics.Process class. For more information about this method, see the Microsoft .NET Framework SDK.
 
 *

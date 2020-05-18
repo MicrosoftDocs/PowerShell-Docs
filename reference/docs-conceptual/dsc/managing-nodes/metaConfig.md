@@ -130,6 +130,7 @@ A **ConfigurationRepositoryWeb** defines the following properties.
 |ProxyCredential*|pscredential|Credential to use for the http proxy.|
 
 > [!NOTE]
+>
 > * Supported in Windows versions 1809 and later.
 
 An example script to simplify configuring the ConfigurationRepositoryWeb value for on-premises nodes
@@ -159,6 +160,7 @@ A **ResourceRepositoryWeb** defines the following properties.
 |ProxyCredential*|pscredential|Credential to use for the http proxy.|
 
 > [!NOTE]
+>
 > * Supported in Windows versions 1809 and later.
 
 An example script to simplify configuring the ResourceRepositoryWeb value for on-premises nodes
@@ -189,6 +191,7 @@ The report server role is not compatible with SMB based pull service.
 |ProxyCredential*|pscredential|Credential to use for the http proxy.|
 
 > [!NOTE]
+>
 > * Supported in Windows versions 1809 and later.
 
 An example script to simplify configuring the ReportServerWeb value for on-premises nodes

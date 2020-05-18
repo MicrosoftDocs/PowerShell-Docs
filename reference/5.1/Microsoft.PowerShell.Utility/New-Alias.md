@@ -225,6 +225,7 @@ When you use the *Passthru* parameter, **New-Alias** generates a **System.Manage
 Otherwise, this cmdlet does not generate any output.
 
 ## NOTES
+
 * To create a new alias, use Set-Alias or New-Alias. To change an alias, use **Set-Alias**. To delete an alias, use Remove-Item.
 
 *
