@@ -144,7 +144,7 @@ When your cmdlet has been registered with Windows PowerShell, you can test it by
     PS> stop-proc -ProcessName notepad
     ```
 
-The following output appears.
+    The following output appears.
 
     ```
     Confirm
@@ -159,7 +159,7 @@ The following output appears.
     PS> stop-proc
     ```
 
-The following output appears.
+    The following output appears.
 
     ```
     Cmdlet stop-proc at command pipeline position 1
@@ -176,7 +176,7 @@ The following output appears.
     PS> stop-proc -Name *note*
     ```
 
-The following output appears.
+    The following output appears.
 
     ```
     Confirm
@@ -185,7 +185,7 @@ The following output appears.
     [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "Y"): Y
     ```
 
-The following output appears.
+    The following output appears.
 
     ```
     Confirm
@@ -194,7 +194,7 @@ The following output appears.
     [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "Y"): N
     ```
 
-The following output appears.
+    The following output appears.
 
     ```
     Confirm
