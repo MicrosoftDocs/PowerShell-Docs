@@ -35,7 +35,7 @@ This is the computer where you'll do all of the work setting up and running the 
 The client computer must be a Windows computer with the following installed:
 
 - [Git](https://git-scm.com/)
-- a local git repo cloned from https://github.com/PowerShell/Demo_CI
+- a local git repo cloned from <https://github.com/PowerShell/Demo_CI>
 - a text editor, such as [Visual Studio Code](https://code.visualstudio.com/)
 
 ### TFSSrv1

@@ -45,9 +45,9 @@ supported:
 The following endpoints are currently used for determining the latest version of
 each channel:
 
-- `LTS`: https://aka.ms/pwsh-buildinfo-lts
-- `Stable`: https://aka.ms/pwsh-buildinfo-stable
-- `Preview`: https://aka.ms/pwsh-buildinfo-preview
+- `LTS`: <https://aka.ms/pwsh-buildinfo-lts>
+- `Stable`: <https://aka.ms/pwsh-buildinfo-stable>
+- `Preview`: <https://aka.ms/pwsh-buildinfo-preview>
 
 The update notification doesn't provide any way to automatically update
 PowerShell. In the future, there may be more instructions or capabilities to

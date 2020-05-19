@@ -124,7 +124,7 @@ The **Start-Job** command starts a background job that runs the **Get-EventLog**
 
 The command uses the **Using** scope modifier to indicate that the $c variable was defined on the local computer.
 The **Using** scope modifier is introduced in Windows PowerShell 3.0.
-For more information about the **Using** scope modifier, see about_Remote_Variables (https://go.microsoft.com/fwlink/?LinkID=252653).
+For more information about the **Using** scope modifier, see about_Remote_Variables (<https://go.microsoft.com/fwlink/?LinkID=252653>).
 
 The fourth command uses **Invoke-Command** to run a **Wait-Job** command in the sessions.
 It uses the *Any* parameter to wait until the first job on the remote computers is completed.

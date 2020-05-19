@@ -138,7 +138,7 @@ To publish a module from the PSGallery to your local PSRepository, you can use t
 
 - Specify the Name of the Package
 - Specify 'NuGet' as the Provider
-- Specify the PSGallery location as the source (https://www.powershellgallery.com/api/v2)
+- Specify the PSGallery location as the source (<https://www.powershellgallery.com/api/v2>)
 - Specify the path to your local Repository
 
 Example:

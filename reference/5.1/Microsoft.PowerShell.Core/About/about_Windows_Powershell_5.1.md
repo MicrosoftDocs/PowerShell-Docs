@@ -181,7 +181,7 @@ which enables better behavior for Pester on Nano Server.
 
 You can review the changes in versions 3.3.5 to 3.4.0 by inspecting the
 ChangeLog.md file at:
-https://github.com/pester/Pester/blob/master/CHANGELOG.md
+<https://github.com/pester/Pester/blob/master/CHANGELOG.md>
 
 ## KEYWORDS
 

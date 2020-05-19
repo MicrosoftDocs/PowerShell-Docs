@@ -73,7 +73,7 @@ The **Invoke-WmiMethod** cmdlet calls the methods of Windows Management Instrume
 
 New Common Information Model (CIM) cmdlets, introduced in Windows PowerShell 3.0, perform the same tasks as the WMI cmdlets.
 The CIM cmdlets comply with WS-Management (WSMan) standards and with the CIM standard, which enables the cmdlets to use the same techniques to manage Windows computers and those running other operating systems.
-Instead of using **Invoke-WmiMethod**, consider using Invoke-CimMethod https://docs.microsoft.com/en-us/powershell/module/cimcmdlets/invoke-cimmethod?view=powershell-6.
+Instead of using **Invoke-WmiMethod**, consider using [Invoke-CimMethod](https://docs.microsoft.com/powershell/module/cimcmdlets/invoke-cimmethod?view=powershell-6).
 
 ## EXAMPLES
 
