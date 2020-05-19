@@ -14,12 +14,14 @@ To see more details about a particular package, click the package.
 ## Filter By
 
 The drop-down under "Filter By" allows users to filter the results by:
+
 - Include Prerelease
 - Stable Only
 
 For information about "Prerelease" and "Stable", see [Prerelease Versioning Added to PowerShellGet and PowerShell Gallery](https://blogs.msdn.microsoft.com/powershell/2017/12/05/prerelease-versioning-added-to-powershellget-and-powershell-gallery/) in the PowerShell Team Blog.
 
 The checkboxes under the drop-down allow users to filter the results by:
+
 - Package Types
   - Module
   - Script
@@ -43,6 +45,7 @@ Similarly, to see only scripts in the PowerShell Gallery, check Script in the Pa
 ## Sort By
 
 The Sort By drop-down allows users to sort the results by:
+
 - Popularity - Popularity is determined by Download Count
 - A-Z - Alphabetically by package name
 - Recent - Packages appear in order of publish date

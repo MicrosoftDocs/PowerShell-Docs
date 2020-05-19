@@ -501,6 +501,7 @@ are loaded automatically on first-use.
 > commands are packaged in snap-ins.
 
 The following modules (or snap-ins) are installed with PowerShell.
+
 * CimCmdlets
 * Microsoft.PowerShell.Archive
 * Microsoft.PowerShell.Core

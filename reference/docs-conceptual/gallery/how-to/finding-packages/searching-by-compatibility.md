@@ -12,6 +12,7 @@ feature sets and platform compatibilities.
 ## Searching by PowerShell Edition
 
 The two editions of PowerShell are:
+
 - **Desktop Edition:** Built on .NET Framework and provides compatibility with scripts and modules
   targeting versions of PowerShell running on full footprint editions of Windows such as Server Core
   and Windows Desktop.

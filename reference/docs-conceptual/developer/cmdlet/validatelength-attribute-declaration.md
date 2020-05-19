@@ -39,11 +39,11 @@ Required. Specifies the maximum number of characters allowed.
 
 - The Windows PowerShell runtime throws an error under the following conditions:
 
-    - When the value of the `MaxLength` attribute parameter is less than the value of the `MinLength` attribute parameter.
+  - When the value of the `MaxLength` attribute parameter is less than the value of the `MinLength` attribute parameter.
 
-    - When the `MaxLength` attribute parameter is set to 0.
+  - When the `MaxLength` attribute parameter is set to 0.
 
-    - When the argument is not a string.
+  - When the argument is not a string.
 
 - The ValidateLength attribute is defined by the [System.Management.Automation.Validatelengthattribute](/dotnet/api/System.Management.Automation.ValidateLengthAttribute) class.
 

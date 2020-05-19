@@ -465,6 +465,7 @@ The CurrentUser scope lets modules be installed only to
 user.
 
 When no **Scope** is defined, the default will be set based on the current session:
+
 - For an elevated PowerShell session, **Scope** defaults to AllUsers;
 - For non-elevated PowerShell sessions in [PowerShellGet versions 2.0.0](https://www.powershellgallery.com/packages/PowerShellGet)
   and above, **Scope** is CurrentUser;

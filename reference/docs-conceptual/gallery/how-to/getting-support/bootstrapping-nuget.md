@@ -157,7 +157,7 @@ One option is to bootstrap a machine that is Internet connected and copy the fil
 machines using a trusted process. After bootstrapping the Internet connected machine, the NuGet.exe
 binary will be located in one of two folders:
 
- - If the `Publish-Module` or `Publish-Script` cmdlets were executed with elevated permissions (As
+- If the `Publish-Module` or `Publish-Script` cmdlets were executed with elevated permissions (As
    an Administrator):
 
    ```powershell

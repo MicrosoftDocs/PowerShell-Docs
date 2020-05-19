@@ -100,13 +100,11 @@ The execution history contains a record of all triggered job instances.
 Verify that there is a timestamp-named directory in the directory for a
 scheduled job in the following path:
 
-`$home\AppData\Local\Microsoft\Windows\PowerShell\ScheduledJob
-<ScheduledJobName>\Output`
+`$home\AppData\Local\Microsoft\Windows\PowerShell\ScheduledJob\<ScheduledJobName>\Output`
 
 For example:
 
-`C:\Users<UserName>\AppData\Local\Microsoft\Windows\PowerShell\ScheduledJob
-<ScheduledJobName>\Output`
+`C:\Users<UserName>\AppData\Local\Microsoft\Windows\PowerShell\ScheduledJob\<ScheduledJobName>\Output`
 
 For example, the `Get-ChildItem` cmdlet gets the on-disk execution history of
 the **ProcessJob** scheduled job.
@@ -431,7 +429,7 @@ Check the Task Scheduler event log for errors. To check the log, use Event
 Viewer or a PowerShell command such as the following:
 
 ```powershell
-Get-WinEvent -LogName Microsoft-Windows-TaskScheduler/Operational | 
+Get-WinEvent -LogName Microsoft-Windows-TaskScheduler/Operational |
  Where {$_.Message -like "fail"}
 ```
 
@@ -468,19 +466,16 @@ the **ScheduledJob** directory.
 
 The directory's location:
 
-`$env:UserProfile\AppData\Local\Microsoft\Windows\PowerShell
-\ScheduledJobs<ScheduledJobName>`
+`$env:UserProfile\AppData\Local\Microsoft\Windows\PowerShell\ScheduledJobs<ScheduledJobName>`
 
 For example:
 
-`C:\Users<UserName>\AppData\Local\Microsoft\Windows\PowerShell\
-ScheduledJobs<ScheduledJobName>.`
+`C:\Users<UserName>\AppData\Local\Microsoft\Windows\PowerShell\ScheduledJobs<ScheduledJobName>.`
 
 Use Task Scheduler to delete the scheduled job. PowerShell scheduled tasks
 appear in the following Task Scheduler path:
 
-`Task Scheduler Library\Microsoft\Windows\PowerShell
-\ScheduledJobs<ScheduledJobName>`
+`Task Scheduler Library\Microsoft\Windows\PowerShell\ScheduledJobs<ScheduledJobName>`
 
 ## Job cmdlets can't consistently find scheduled jobs
 

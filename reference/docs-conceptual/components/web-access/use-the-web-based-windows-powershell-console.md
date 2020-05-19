@@ -83,6 +83,7 @@ opened with elevated user rights (**Run as Administrator**).
    field, and then provide the URI.
 
    > [!NOTE]
+   >
    > - If the destination computer is in a workgroup, use the following syntax to provide your user
    >   name and sign in to the computer: `<workgroup_name>\<user_name>`
    > - If the destination computer is the gateway server, you can specify `localhost` in the

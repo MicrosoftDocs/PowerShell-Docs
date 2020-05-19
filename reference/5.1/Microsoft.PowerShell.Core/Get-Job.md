@@ -368,8 +368,8 @@ Gets only the child jobs that have the specified state.
 The acceptable values for this parameter are:
 
 - NotStarted
--  Running
--  Completed
+- Running
+- Completed
 - Failed
 - Stopped
 - Blocked

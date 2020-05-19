@@ -39,9 +39,9 @@ Required. Specifies the maximum number of arguments.
 
 - The Windows PowerShell runtime throws an error under the following conditions:
 
-    - The `MinLength` and `MaxLength` attribute parameters are not of type [System.Int32][].
+  - The `MinLength` and `MaxLength` attribute parameters are not of type [System.Int32][].
 
-    - The value of the `MaxLength` attribute parameter is less than the value of the `MinLength` attribute parameter.
+  - The value of the `MaxLength` attribute parameter is less than the value of the `MinLength` attribute parameter.
 
 - The ValidateCount attribute is defined by the [System.Management.Automation.ValidateCountAttribute][] class.
 

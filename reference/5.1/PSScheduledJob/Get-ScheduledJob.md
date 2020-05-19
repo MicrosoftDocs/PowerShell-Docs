@@ -132,6 +132,7 @@ You cannot pipe input to **Get-ScheduledJob**.
 ### Microsoft.PowerShell.ScheduledJob.ScheduledJobDefinition
 
 ## NOTES
+
 * Each scheduled job is saved in a subdirectory of the $home\AppData\Local\Microsoft\Windows\PowerShell\ScheduledJobs directory on the local computer. The subdirectory is named for the scheduled job and contains the XML file for the scheduled job and records of its execution history. For more information about scheduled jobs on disk, see about_Scheduled_Jobs_Advanced.
 * Scheduled jobs that you create in Windows PowerShell appear in Task Scheduler in the Task Scheduler Library\Microsoft\Windows\PowerShell\ScheduledJobs folder. You can use Task Scheduler to view and edit the scheduled job.
 * You can use Task Scheduler, the SchTasks.exe command-line tool, and the Task Scheduler cmdlets to manage scheduled jobs that you create with the Scheduled Job cmdlets. However, you cannot use the Scheduled Job cmdlets to manage tasks that you create in Task Scheduler.

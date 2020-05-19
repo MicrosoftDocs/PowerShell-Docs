@@ -220,6 +220,7 @@ If you use the **Passthru** parameter, **Enable-ScheduledJob** returns the sched
 Otherwise, this cmdlet does not generate any output.
 
 ## NOTES
+
 * **Enable-ScheduledJob** does not generate warnings or errors if you use it to enable a scheduled job that is already enabled.
 
 ## RELATED LINKS

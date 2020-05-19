@@ -220,6 +220,7 @@ You cannot pipe input to this cmdlet.
 This cmdlet does not generate any output.
 
 ## NOTES
+
 * To use this cmdlet on Windows Vista and later versions of Windows, open Windows PowerShell with the Run as administrator option.
 
   This cmdlet changes the properties of the **System.Diagnostics.EventLog** object that represents a classic event log.

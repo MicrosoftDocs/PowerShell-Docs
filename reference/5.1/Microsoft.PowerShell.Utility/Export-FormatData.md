@@ -223,6 +223,7 @@ You can pipe **ExtendedTypeDefinition** objects from **Get-FormatData** to **Exp
 It generates a file and saves it in the specified path.
 
 ## NOTES
+
 * To use any formatting file, including an exported formatting file, the execution policy for the session must allow scripts and configuration files to run. For more information, see about_Execution_Policies.
 
 *

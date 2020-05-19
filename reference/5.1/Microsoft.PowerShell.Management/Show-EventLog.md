@@ -84,6 +84,7 @@ You cannot pipe input to this cmdlet.
 This cmdlet does not generate any output.
 
 ## NOTES
+
 * The Windows PowerShell command prompt returns as soon as Event Viewer opens. You can work in the current session while Event Viewer is open.
 
   Because this cmdlet requires a user interface, it does not work on Server Core installations of Windows Server.
