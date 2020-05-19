@@ -114,7 +114,7 @@ Clear the input from the start of the current word to the cursor. If the
 cursor is between words, the input is cleared from the start of the previous
 word to the cursor. The cleared text is placed in the kill-ring.
 
-- Cmd: `<Ctrl+Backspace>`
+- Cmd: `<Ctrl+Backspace>`, `<Ctrl+w>`
 - Emacs: `<Alt+Backspace>`, `<Escape,Backspace>`
 - Vi insert mode: `<Ctrl+Backspace>`
 - Vi command mode: `<Ctrl+Backspace>`
@@ -154,7 +154,7 @@ Delete the character under the cursor.
 - Cmd: `<Delete>`
 - Emacs: `<Delete>`
 - Vi insert mode: `<Delete>`
-- Vi command mode: `<Delete>`, `<x>`, `<d,l>`, `<d,Space>`
+- Vi command mode: `<Delete>`, `<x>`, `<d,l>`, `<d,Spacebar>`
 
 ### DeleteCharOrExit
 
@@ -243,7 +243,7 @@ Clear the input from the cursor to the end of the current word. If the cursor
 is between words, the input is cleared from the cursor to the end of the next
 word. The cleared text is placed in the kill-ring.
 
-- Cmd: `<Ctrl+Delete>`
+- Cmd: `<Alt+d>`, `<Ctrl+Delete>`
 - Emacs: `<Alt+d>`, `<Escape,d>`
 - Vi insert mode: `<Ctrl+Delete>`
 - Vi command mode: `<Ctrl+Delete>`
@@ -568,7 +568,7 @@ Yank the word(s) before the cursor.
 
 Yank character(s) under and to the right of the cursor.
 
-- Vi command mode: `<y,l>`, `<y,Space>`
+- Vi command mode: `<y,l>`, `<y,Spacebar>`
 
 ### ViYankToEndOfLine
 
@@ -665,7 +665,7 @@ next line of multi-line input.
 - Cmd: `<RightArrow>`
 - Emacs: `<RightArrow>`, `<Ctrl+f>`
 - Vi insert mode: `<RightArrow>`
-- Vi command mode: `<RightArrow>`, `<Space>`, `<l>`
+- Vi command mode: `<RightArrow>`, `<Spacebar>`, `<l>`
 
 ### ForwardWord
 
@@ -693,7 +693,7 @@ Move to the column indicated by arg.
 
 Move the cursor to the first non-blank character in the line.
 
-- Vi command mode: `<^>`
+- Vi command mode: `<^>`, `<_>`
 
 ### MoveToEndOfLine
 
@@ -798,7 +798,7 @@ defined by a configurable set of characters.
 
 Move to the first item in the history.
 
-- Emacs: `<Alt+`<>`
+- Emacs: `<Alt+<>`
 
 ### ClearHistory
 
@@ -883,16 +883,16 @@ multiple possible completions, the longest unambiguous prefix is used for
 completion. If trying to complete the longest unambiguous completion, a list
 of possible completions is displayed.
 
-- Cmd: `<Ctrl+Space>`
-- Emacs: `<Ctrl+Space>`
+- Cmd: `<Ctrl+@>`, `<Ctrl+Spacebar>`
+- Emacs: `<Ctrl+Spacebar>`
 
 ### PossibleCompletions
 
 Display the list of possible completions.
 
 - Emacs: `<Alt+=>`
-- Vi insert mode: `<Ctrl+Space>`
-- Vi command mode: `<Ctrl+Space>`
+- Vi insert mode: `<Ctrl+Spacebar>`
+- Vi command mode: `<Ctrl+Spacebar>`
 
 ### TabCompleteNext
 
@@ -1152,7 +1152,7 @@ Adjust the current selection to include the next word using ShellNextWord.
 Mark the current location of the cursor for use in a subsequent editing
 command.
 
-- Emacs: `<Ctrl+`>`
+- Emacs: `<Ctrl+@>`
 
 ## Search functions
 
