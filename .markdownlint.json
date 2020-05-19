@@ -73,6 +73,15 @@
         "code_blocks": false,
         "names": [
             "PowerShell",
+            "IntelliSense",
+            "Authenticode",
+            "CentOS",
+            "Contoso",
+            "CoreOS",
+            "Debian",
+            "Ubuntu",
+            "openSUSE",
+            "RHEL",
             "JavaScript"
         ]
     },
