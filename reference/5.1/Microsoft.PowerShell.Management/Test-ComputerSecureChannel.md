@@ -35,6 +35,7 @@ Both NetDom and **Test-ComputerSecureChannel** use the **NetLogon** service to p
 ## EXAMPLES
 
 ### Example 1: Test a channel between the local computer and its domain
+
 ```
 PS C:\> Test-ComputerSecureChannel
 True
@@ -43,6 +44,7 @@ True
 This command tests the channel between the local computer and the domain to which it is joined.
 
 ### Example 2: Test a channel between the local computer and a domain controller
+
 ```
 PS C:\> Test-ComputerSecureChannel -Server "DCName.fabrikam.com"
 True
@@ -51,6 +53,7 @@ True
 This command specifies a preferred domain controller for the test.
 
 ### Example 3: Reset the channel between the local computer and its domain
+
 ```
 PS C:\> Test-ComputerSecureChannel -Repair
 True
@@ -59,6 +62,7 @@ True
 This command resets the channel between the local computer and its domain.
 
 ### Example 4: Display detailed information about the test
+
 ```
 PS C:\> Test-ComputerSecureChannel -verbose
 VERBOSE: Performing operation "Test-ComputerSecureChannel" on Target "SERVER01".
@@ -70,6 +74,7 @@ This command uses the *Verbose* common parameter to request detailed messages ab
 For more information about *Verbose*, see about_CommonParameters.
 
 ### Example 5: Test a connection before you run a script
+
 ```
 PS C:\> Set-Alias tcsc Test-ComputerSecureChannel
 if (!(tcsc))
@@ -184,6 +189,7 @@ You cannot pipe input to this cmdlet.
 This cmdlet returns $True if the connection is working correctly and $False if it is not.
 
 ## NOTES
+
 * To run a **Test-ComputerSecureChannel** command on Windows Vista and later versions of the Windows operating system, open Windows PowerShell by using the Run as administrator option.
 * **Test-ComputerSecureChannel** is implemented by using the **I_NetLogonControl2** function, which controls various aspects of the Netlogon service.
 

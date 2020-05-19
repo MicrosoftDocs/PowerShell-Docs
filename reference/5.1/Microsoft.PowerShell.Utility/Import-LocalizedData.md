@@ -38,6 +38,7 @@ For more information about this and about the format of the .psd1 files, see abo
 ## EXAMPLES
 
 ### Example 1: Import text strings
+
 ```
 PS C:\> Import-LocalizedData -BindingVariable "Messages"
 ```
@@ -48,6 +49,7 @@ It uses the default values of all other cmdlet parameters.
 If the command is included in the Archives.ps1 script in the C:\Test directory, and the value of the $PsUICulture automatic variable is zh-CN, **Import-LocalizedData** imports the Archives.psd1 file in the C:\test\zh-CN directory into the $Messages variable.
 
 ### Example 2: Import localized data strings
+
 ```
 PS C:\> Import-LocalizedData -FileName "Test.psd1" -UICulture "en-US"
 
@@ -66,6 +68,7 @@ The command uses the *UICulture* parameter to specify the en-US culture.
 **Import-LocalizedData** returns a hash table that contains the localized data strings.
 
 ### Example 3: Import UI culture strings
+
 ```
 PS C:\> Import-LocalizedData -BindingVariable "MsgTbl" -UICulture "ar-SA" -FileName "Simple" -BaseDirectory "C:\Data\Localized"
 ```
@@ -75,6 +78,7 @@ This command imports text strings into the $MsgTbl variable of a script.
 It uses the *UICulture* parameter to direct the cmdlet to import data from the Simple.psd1 file in the ar-SA subdirectory of C:\Data\Localized.
 
 ### Example 4: Import localized data into a script
+
 ```
 PS C:\> # In C:\Test\en-US\Test.psd1:
 
@@ -112,6 +116,7 @@ The last part of the example runs the script.
 The output shows that it displays the correct user message in the UI language set for the current user of the operating system.
 
 ### Example 5: Replace default text strings in a script
+
 ```
 PS C:\> # In TestScript.ps1
 $UserMessages = DATA
@@ -141,6 +146,7 @@ If the **Import-LocalizedData** command finds a .psd1 file for the $PsUICulture 
 If the command fails for any reason, the command displays the default text strings defined in the DATA section of the script.
 
 ### Example 6: Suppress error messages if the UI culture is not found
+
 ```
 PS C:\> # In Day1.ps1
 
@@ -292,6 +298,7 @@ You cannot pipe input to this cmdlet.
 **Import-LocalizedData** saves the hash table in the variable that is specified by the value of the **BindingVariable** parameter.
 
 ## NOTES
+
 * Before using **Import-LocalizedData**, localize your user messages. Format the messages for each locale (UI culture) in a hash table of key/value pairs, and save the hash table in a file with the same name as the script and a .psd1 file name extension. Create a directory under the script directory for each supported UI culture, and then save the .psd1 file for each UI culture in the directory with the UI culture name.
 
   For example, localize your user messages for the de-DE locale and format them in a hash table.

@@ -49,6 +49,7 @@ $result.ItemValue | fl
 >**Note:** Directly calling composite resource methods is not supported. Instead, call the methods of the underlying resources that make up the composite resource.
 
 ## See Also
+
 - [Writing a custom DSC resource with MOF](../resources/authoringResourceMOF.md)
 - [Writing a custom DSC resource with PowerShell classes](../resources/authoringResourceClass.md)
 - [Debugging DSC resources](../troubleshooting/debugResource.md)

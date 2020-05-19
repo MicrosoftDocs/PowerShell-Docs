@@ -16,6 +16,7 @@ Invokes an action on the object that is specified by the Resource URI and by the
 ## SYNTAX
 
 ### URI (Default)
+
 ```
 Invoke-WSManAction [-Action] <String> [-ConnectionURI <Uri>] [-FilePath <String>] [-OptionSet <Hashtable>]
  [[-SelectorSet] <Hashtable>] [-SessionOption <SessionOption>] [-ValueSet <Hashtable>] [-ResourceURI] <Uri>
@@ -24,6 +25,7 @@ Invoke-WSManAction [-Action] <String> [-ConnectionURI <Uri>] [-FilePath <String>
 ```
 
 ### ComputerName
+
 ```
 Invoke-WSManAction [-Action] <String> [-ApplicationName <String>] [-ComputerName <String>] [-FilePath <String>]
  [-OptionSet <Hashtable>] [-Port <Int32>] [[-SelectorSet] <Hashtable>] [-SessionOption <SessionOption>]

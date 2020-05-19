@@ -40,6 +40,7 @@ For more information about formatting files in Windows PowerShell, see about_For
 ## EXAMPLES
 
 ### Example 1: Reload previously loaded formatting files
+
 ```
 PS C:\> Update-FormatData
 ```
@@ -47,6 +48,7 @@ PS C:\> Update-FormatData
 This command reloads the formatting files that it loaded previously.
 
 ### Example 2: Reload formatting files and trace and log formatting files
+
 ```
 PS C:\> Update-FormatData -AppendPath "trace.format.ps1xml, log.format.ps1xml"
 ```
@@ -58,6 +60,7 @@ Because the command uses the *AppendPath* parameter, the formatting data in the 
 The *AppendPath* parameter is used because the new files contain formatting data for objects that are not referenced in the built-in files.
 
 ### Example 3: Edit a formatting file and reload it
+
 ```
 PS C:\> Update-FormatData -PrependPath "c:\test\NewFiles.format.ps1xml"
 
@@ -165,6 +168,7 @@ You can pipe a string that contains the append path to **Update-FormatData**.
 The cmdlet does not return any output.
 
 ## NOTES
+
 * **Update-FormatData** also updates the formatting data for commands in the session that were imported from modules. If the formatting file for a module changes, you can run an **Update-FormatData** command to update the formatting data for imported commands. You do not need to import the module again.
 
 *

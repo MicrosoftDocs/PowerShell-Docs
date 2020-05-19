@@ -142,6 +142,7 @@ Windows 10 IoT Enterprise comes with Windows PowerShell, which we can use to dep
    # Be sure to use the -Configuration parameter.  If you omit it, you will connect to Windows PowerShell 5.1
    Enter-PSSession -ComputerName <deviceIp> -Credential Administrator -Configuration powershell.<version>
    ```
+
 ## Deploying on Windows 10 IoT Core
 
 Windows 10 IoT Core adds Windows PowerShell when you include *IOT_POWERSHELL* feature, which we can use to deploy PowerShell 7.

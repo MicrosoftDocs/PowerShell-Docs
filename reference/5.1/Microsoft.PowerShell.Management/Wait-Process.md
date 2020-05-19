@@ -17,16 +17,19 @@ Waits for the processes to be stopped before accepting more input.
 ## SYNTAX
 
 ### Name (Default)
+
 ```
 Wait-Process [-Name] <String[]> [[-Timeout] <Int32>] [<CommonParameters>]
 ```
 
 ### Id
+
 ```
 Wait-Process [-Id] <Int32[]> [[-Timeout] <Int32>] [<CommonParameters>]
 ```
 
 ### InputObject
+
 ```
 Wait-Process [[-Timeout] <Int32>] -InputObject <Process[]> [<CommonParameters>]
 ```
@@ -41,6 +44,7 @@ You can specify a process by process name or process ID (PID), or pipe a process
 ## EXAMPLES
 
 ### Example 1: Stop a process and wait
+
 ```
 PS C:\> $nid = (Get-Process notepad).id
 PS C:\> Stop-Process -Id $nid
@@ -58,6 +62,7 @@ The third command uses **Wait-Process** to wait until the Notepad process is sto
 It uses the *Id* parameter of **Wait-Process** to identify the process.
 
 ### Example 2: Specifying a process
+
 ```
 PS C:\> $p = Get-Process notepad
 PS C:\> Wait-Process -Id $p.id
@@ -73,6 +78,7 @@ The second command uses the *Id* parameter, the third command uses the *Name* pa
 These commands have the same results and can be used interchangeably.
 
 ### Example 3: Wait for processes for a specified time
+
 ```
 PS C:\> Wait-Process -Name outlook, winword -Timeout 30
 ```
@@ -163,6 +169,7 @@ You can pipe a process object to this cmdlet.
 This cmdlet does not generate any output.
 
 ## NOTES
+
 * This cmdlet uses the **WaitForExit** method of the System.Diagnostics.Process class. For more information about this method, see the Microsoft .NET Framework SDK.
 
 *

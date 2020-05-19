@@ -599,6 +599,7 @@ The Get-Module cmdlet checks **CompatiblePSEditions** property of **PSModuleInfo
 specified value and returns only those modules that have it set.
 
 > [!NOTE]
+>
 > - **Desktop Edition:** Built on .NET Framework, applies to Windows PowerShell 5.1 and below on
 > most Windows editions.
 > - **Core Edition:** Built on .NET Core, applies to PowerShell Core 6.0 and above, as well as some

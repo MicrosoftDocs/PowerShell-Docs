@@ -81,6 +81,7 @@ WSMan Provider. For more information about the WSMan Provider, type `Get-Help WS
 ## EXAMPLES
 
 ### Example 1: Change the thread apartment state
+
 ```
 PS C:\> Set-PSSessionConfiguration -Name "MaintenanceShell" -ThreadApartmentState STA
 ```

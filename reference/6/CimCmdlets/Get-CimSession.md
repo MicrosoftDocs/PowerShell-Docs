@@ -17,21 +17,25 @@ Gets the CIM session objects from the current session.
 ## SYNTAX
 
 ### ComputerNameSet (Default)
+
 ```
 Get-CimSession [[-ComputerName] <String[]>] [<CommonParameters>]
 ```
 
 ### SessionIdSet
+
 ```
 Get-CimSession [-Id] <UInt32[]> [<CommonParameters>]
 ```
 
 ### InstanceIdSet
+
 ```
 Get-CimSession -InstanceId <Guid[]> [<CommonParameters>]
 ```
 
 ### NameSet
+
 ```
 Get-CimSession -Name <String[]> [<CommonParameters>]
 ```

@@ -23,6 +23,7 @@ Split-Path [-Path] <String[]> [-Parent] [-Resolve] [-Credential <PSCredential>] 
 ```
 
 ### NoQualifierSet
+
 ```
 Split-Path [-Path] <String[]> [-NoQualifier] [-Resolve] [-Credential <PSCredential>] [-UseTransaction]
  [<CommonParameters>]

@@ -29,6 +29,7 @@ If the tested computer is running the service, the cmdlet displays the WS-Manage
 ## EXAMPLES
 
 ### Example 1: Determine the status of the WinRM service
+
 ```
 PS C:\> Test-WSMan
 wsmid           : http://schemas.dmtf.org/wbem/wsman/identity/1/wsmanidentity.xsd
@@ -43,6 +44,7 @@ ProductVersion  : OS: 0.0.0 SP: 0.0 Stack: 2.0
 This command determines whether the WinRM service is running on the local computer or on a remote computer.
 
 ### Example 2: Determine the status of the WinRM service on a remote computer
+
 ```
 PS C:\> Test-WSMan -ComputerName "server01"
 wsmid           : http://schemas.dmtf.org/wbem/wsman/identity/1/wsmanidentity.xsd
@@ -57,6 +59,7 @@ ProductVersion  : OS: 0.0.0 SP: 0.0 Stack: 2.0
 This command determines whether the WinRM service is running on the server01 computer.
 
 ### Example 3: Determine the status of the WinRM service and the operating system version
+
 ```
 PS C:\> Test-WSMan -Authentication default
 wsmid           : http://schemas.dmtf.org/wbem/wsman/identity/1/wsmanidentity.xsd
@@ -73,6 +76,7 @@ This command tests to see whether the WS-Management (WinRM) service is running o
 Using the authentication parameter enables **Test-WSMan** to return the operating system version.
 
 ### Example 4: Determine the status of the WinRM service and the operating system version on a remote computer
+
 ```
 PS C:\> Test-WSMan -ComputerName "server01" -Authentication default
 wsmid           : http://schemas.dmtf.org/wbem/wsman/identity/1/wsmanidentity.xsd
@@ -270,6 +274,7 @@ This cmdlet does not accept any input.
 This cmdlet does not generate any output object.
 
 ## NOTES
+
 * By default, the **Test-WSMan** cmdlet queries the WinRM service without using authentication, and it returns no information that is specific to the operating-system version. Instead, it displays null values for the operating system version and service pack level (OS: 0.0.0 SP: 0.0).
 
 *

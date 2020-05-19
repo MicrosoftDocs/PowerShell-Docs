@@ -17,6 +17,7 @@ Applies configuration to nodes.
 ## SYNTAX
 
 ### ComputerNameAndPathSet (Default)
+
 ```
 Start-DscConfiguration [-Wait] [-Force] [[-Path] <String>] [[-ComputerName] <String[]>]
  [-Credential <PSCredential>] [-ThrottleLimit <Int32>] [-JobName <String>] [-WhatIf] [-Confirm]
@@ -24,18 +25,21 @@ Start-DscConfiguration [-Wait] [-Force] [[-Path] <String>] [[-ComputerName] <Str
 ```
 
 ### CimSessionAndPathSet
+
 ```
 Start-DscConfiguration [-Wait] [-Force] [[-Path] <String>] -CimSession <CimSession[]> [-ThrottleLimit <Int32>]
  [-JobName <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### ComputerNameAndUseExistingSet
+
 ```
 Start-DscConfiguration [-Wait] [-Force] [[-ComputerName] <String[]>] [-Credential <PSCredential>]
  [-ThrottleLimit <Int32>] [-UseExisting] [-JobName <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### CimSessionAndUseExistingSet
+
 ```
 Start-DscConfiguration [-Wait] [-Force] -CimSession <CimSession[]> [-ThrottleLimit <Int32>] [-UseExisting]
  [-JobName <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
@@ -55,6 +59,7 @@ Specify the *Verbose* parameter to see details of what the cmdlet does when it a
 ## EXAMPLES
 
 ### Example 1: Apply configuration settings
+
 ```
 PS C:\> Start-DscConfiguration -Path "C:\DSC\Configurations\"
 ```
@@ -63,6 +68,7 @@ This command applies the configuration settings from C:\DSC\Configurations\ to t
 The command returns **Job** objects for each target node deployed to.
 
 ### Example 2: Apply configuration settings and wait for configuration to complete
+
 ```
 PS C:\> Start-DscConfiguration -Path "C:\DSC\Configurations\" -Wait -Verbose
 ```
@@ -75,6 +81,7 @@ The command includes the *Wait* parameter.
 Therefore, you cannot use the console until the command finishes all configuration tasks.
 
 ### Example 3: Apply configuration settings by using a CIM session
+
 ```
 PS C:\> $Session = New-CimSession -ComputerName "Server01" -Credential ACCOUNTS\PattiFuller
 PS C:\> Start-DscConfiguration -Path "C:\DSC\Configurations\" -CimSession $Session

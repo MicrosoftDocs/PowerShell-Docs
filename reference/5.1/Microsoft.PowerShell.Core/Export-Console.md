@@ -31,6 +31,7 @@ For more information about Windows PowerShell snap-ins, see about_PSSnapins.
 ## EXAMPLES
 
 ### Example 1: Export the names of snap-ins in the current session
+
 ```
 PS C:\> Export-Console -Path $pshome\Consoles\ConsoleS1.psc1
 ```
@@ -38,6 +39,7 @@ PS C:\> Export-Console -Path $pshome\Consoles\ConsoleS1.psc1
 This command exports the names of Windows PowerShell snap-ins in the current session to the ConsoleS1.psc1 file in the Consoles folder of the Windows PowerShell installation folder, $pshome.
 
 ### Example 2: Export the names of snap-ins to the most recent console file
+
 ```
 PS C:\> Export-Console
 ```
@@ -48,6 +50,7 @@ It overwrites the previous file contents.
 If you have not exported a console file during the current session, you are prompted for permission to continue and then prompted for a file name.
 
 ### Example 3: Add a snap-in and export the names of snap-ins
+
 ```
 PS C:\> Add-PSSnapin NewPSSnapin
 PS C:\> Export-Console -path NewPSSnapinConsole.psc1
@@ -65,6 +68,7 @@ The third command starts Windows PowerShell with the NewPSSnapinConsole.psc1 fil
 Because the console file includes the Windows PowerShell snap-in name, the cmdlets and providers in the snap-in are available in the current session.
 
 ### Example 4: Export names of snap-ins to a specified location
+
 ```
 PS C:\> export-console -path Console01
 PS C:\> notepad console01.psc1
@@ -82,6 +86,7 @@ This command exports the names of the Windows PowerShell snap-ins in the current
 The second command displays the contents of the Console01.psc1 file in Notepad.
 
 ### Example 5: Determine the console file to update
+
 ```
 PS C:\> powershell.exe -PSConsoleFile Console01.psc1
 PS C:\> Add-PSSnapin MySnapin
@@ -213,6 +218,7 @@ You can pipe a path string to this cmdlet.
 This cmdlet creates a file that contains the exported aliases.
 
 ## NOTES
+
 * When a console file (.psc1) is used to start the session, the name of the console file is automatically stored in the $ConsoleFileName automatic variable. The value of $ConsoleFileName is updated when you use the *Path* parameter of **Export-Console** to specify a new console file. When no console file is used, $ConsoleFileName has no value ($Null).
 
   To use a Windows PowerShell console file in a new session, use the following syntax to start Windows PowerShell:

@@ -17,16 +17,19 @@ Renames a local user account.
 ## SYNTAX
 
 ### InputObject
+
 ```
 Rename-LocalUser [-InputObject] <LocalUser> [-NewName] <String> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### Default
+
 ```
 Rename-LocalUser [-Name] <String> [-NewName] <String> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### SecurityIdentifier
+
 ```
 Rename-LocalUser [-NewName] <String> [-SID] <SecurityIdentifier> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
@@ -41,6 +44,7 @@ The **Rename-LocalUser** cmdlet renames a local user account.
 ## EXAMPLES
 
 ### Example 1: Rename a user account
+
 ```
 PS C:\> Rename-LocalUser -Name "Admin02" -NewName "AdminContoso02"
 ```
@@ -155,6 +159,7 @@ You can pipe a local user, a string, or a SID to this cmdlet.
 This cmdlet does not generate any output.
 
 ## NOTES
+
 * The **PrincipalSource** property is a property on **LocalUser**, **LocalGroup**, and **LocalPrincipal** objects that describes the source of the object. The possible sources are as follows:
 
 - Local

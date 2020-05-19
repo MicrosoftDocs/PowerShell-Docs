@@ -42,6 +42,7 @@ If the remote computer is compromised, when credentials are passed to it, the cr
 ## EXAMPLES
 
 ### Example 1: Display CredSSP configuration
+
 ```
 PS C:\> Get-WSManCredSSP
 ```
@@ -74,6 +75,7 @@ This cmdlet does not accept any input.
 This cmdlet does not generate any output.
 
 ## NOTES
+
 * To disable CredSSP authentication, use the Disable-WSManCredSSP cmdlet. To enable CredSSP authentication, use the Enable-WSManCredSSP cmdlet.
 
 ## RELATED LINKS

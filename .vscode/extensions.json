@@ -2,6 +2,13 @@
   // See https://go.microsoft.com/fwlink/?LinkId=827846
   // for the documentation about the extensions.json format
   "recommendations": [
-    "docsmsft.docs-authoring-pack"
+    "Acrolinx.vscode-sidebar",
+    "CoenraadS.bracket-pair-colorizer",
+    "marvhen.reflow-markdown",
+    "ms-vscode.powershell",
+    "wmaurer.change-case",
+    "yzane.markdown-pdf",
+    "docsmsft.docs-authoring-pack",
+    "shuworks.vscode-table-formatter"
   ]
 }

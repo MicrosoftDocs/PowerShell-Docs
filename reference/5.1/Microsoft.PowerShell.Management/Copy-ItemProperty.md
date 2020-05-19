@@ -16,6 +16,7 @@ Copies a property and value from a specified location to another location.
 ## SYNTAX
 
 ### Path (Default)
+
 ```
 Copy-ItemProperty [-Path] <String[]> [-Name] <String> [-Destination] <String> [-PassThru] [-Force]
  [-Filter <String>] [-Include <String[]>] [-Exclude <String[]>] [-Credential <PSCredential>] [-WhatIf]
@@ -23,6 +24,7 @@ Copy-ItemProperty [-Path] <String[]> [-Name] <String> [-Destination] <String> [-
 ```
 
 ### LiteralPath
+
 ```
 Copy-ItemProperty -LiteralPath <String[]> [-Name] <String> [-Destination] <String> [-PassThru] [-Force]
  [-Filter <String>] [-Include <String[]>] [-Exclude <String[]>] [-Credential <PSCredential>] [-WhatIf]

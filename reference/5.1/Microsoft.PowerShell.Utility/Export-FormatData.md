@@ -17,12 +17,14 @@ Saves formatting data from the current session in a formatting file.
 ## SYNTAX
 
 ### ByPath (Default)
+
 ```
 Export-FormatData -InputObject <ExtendedTypeDefinition[]> -Path <String> [-Force] [-NoClobber]
  [-IncludeScriptBlock] [<CommonParameters>]
 ```
 
 ### ByLiteralPath
+
 ```
 Export-FormatData -InputObject <ExtendedTypeDefinition[]> -LiteralPath <String> [-Force] [-NoClobber]
  [-IncludeScriptBlock] [<CommonParameters>]
@@ -40,6 +42,7 @@ For more information about formatting files in Windows PowerShell, see about_For
 ## EXAMPLES
 
 ### Example 1: Export session format data
+
 ```
 PS C:\> Get-FormatData -TypeName "*" | Export-FormatData -Path "allformat.ps1xml" -IncludeScriptBlock
 ```
@@ -54,6 +57,7 @@ The command uses a pipeline operator (|) to send the format data from the **Get-
 The **Export-FormatData** command uses the *IncludeScriptBlock* parameter to include script blocks in the format data in the file.
 
 ### Example 2: Export format data for a type
+
 ```
 PS C:\> $F = Get-FormatData -TypeName "helpinfoshort"
 PS C:\> Export-FormatData -InputObject $F -Path "c:\test\help.format.ps1xml" -IncludeScriptBlock
@@ -67,6 +71,7 @@ The second command uses the *InputObject* parameter of the **Export-FormatData**
 It also uses the *IncludeScriptBlock* parameter to include script blocks in the output.
 
 ### Example 3: Export format data without a script block
+
 ```
 PS C:\> Get-FormatData -TypeName "System.Diagnostics.Process" | Export-FormatData -Path process.format.ps1xml
 PS C:\> Update-FormatData -PrependPath ".\process.format.ps1xml"
@@ -218,6 +223,7 @@ You can pipe **ExtendedTypeDefinition** objects from **Get-FormatData** to **Exp
 It generates a file and saves it in the specified path.
 
 ## NOTES
+
 * To use any formatting file, including an exported formatting file, the execution policy for the session must allow scripts and configuration files to run. For more information, see about_Execution_Policies.
 
 *

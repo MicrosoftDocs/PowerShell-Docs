@@ -17,12 +17,14 @@ Publishes a DSC configuration to a set of computers.
 ## SYNTAX
 
 ### ComputerNameSet (Default)
+
 ```
 Publish-DscConfiguration [-Path] <String> [-Force] [[-ComputerName] <String[]>] [-Credential <PSCredential>]
  [-ThrottleLimit <Int32>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### CimSessionSet
+
 ```
 Publish-DscConfiguration [-Path] <String> [-Force] [-ThrottleLimit <Int32>] -CimSession <CimSession[]>
  [-WhatIf] [-Confirm] [<CommonParameters>]
@@ -40,6 +42,7 @@ When multiple configuration documents fragments are delivered, they overwrite th
 ## EXAMPLES
 
 ### Example 1: Publish a configuration to a remote computer
+
 ```
 PS C:\> Publish-DscConfiguration -Path '$home\WebServer' -ComputerName "ContosoWebServer" -Credential (get-credential Contoso\webadministrator)
 ```

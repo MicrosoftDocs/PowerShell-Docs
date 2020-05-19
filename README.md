@@ -11,9 +11,9 @@ comments.
 
 ## Build Status
 
-| Live Branch | Staging Branch |
-|:------------|:---------------|
-| [![live-badge][]][live-badge] | [![staging-badge][]][staging-badge]
+|          Live Branch          |           Staging Branch            |
+| :---------------------------- | :---------------------------------- |
+| [![live-badge][]][live-badge] | [![staging-badge][]][staging-badge] |
 
 ## PowerShell Documentation
 
@@ -44,13 +44,14 @@ Each of the following top-level folders in this repo contain a DocSet that is pu
 ## Contributing
 
 We actively merge contributions into this repository via
-[pull request](https://help.github.com/articles/using-pull-requests/) into the *staging* branch.
-Please note that before you submit a pull request you must
-[sign a Contribution License Agreement](https://cla.microsoft.com/) to ensure that the community is
-free to use your submissions.
+[pull requests](https://help.github.com/articles/using-pull-requests/) into the _staging_ branch.
+Please note that before you submit a pull request you must sign a
+[Contribution License Agreement](https://cla.microsoft.com/) to ensure that the community is free to
+use your submissions.
 
-For more information on contributing, read our [contributor's guide](https://docs.microsoft.com/contribute/powershell/powershell-contribute). The
-contributor's guide contains detail information about how to contribute documentation, suggested
+For more information on contributing, read our
+[contributor's guide](https://docs.microsoft.com/powershell/scripting/community/contributing/overview).
+The contributor's guide contains detail information about how to contribute documentation, suggested
 tools, and style and formatting requirements. Please use the Issue and Pull Request templates to
 help keep documentation consistent across versions.
 

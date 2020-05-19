@@ -37,9 +37,9 @@ Required. Specifies the maximum value allowed.
 
 - The Windows PowerShell runtime throws a validation error under the following conditions:
 
-    - When the value of the argument is less than the `MinRange` limit or greater than the `MaxRange` limit.
+  - When the value of the argument is less than the `MinRange` limit or greater than the `MaxRange` limit.
 
-    - When the argument is not of the same type as the `MinRange` and the `MaxRange` parameters.
+  - When the argument is not of the same type as the `MinRange` and the `MaxRange` parameters.
 
 - The ValidateRange attribute is defined by the [System.Management.Automation.Validaterangeattribute](/dotnet/api/System.Management.Automation.ValidateRangeAttribute) class.
 

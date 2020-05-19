@@ -17,11 +17,13 @@ Gets the local security groups.
 ## SYNTAX
 
 ### Default (Default)
+
 ```
 Get-LocalGroup [[-Name] <String[]>] [<CommonParameters>]
 ```
 
 ### SecurityIdentifier
+
 ```
 Get-LocalGroup [[-SID] <SecurityIdentifier[]>] [<CommonParameters>]
 ```
@@ -37,6 +39,7 @@ This cmdlet gets default built-in groups and local security groups that you crea
 ## EXAMPLES
 
 ### Example 1: Get the Administrators group
+
 ```
 PS C:\> Get-LocalGroup -Name "Administrators"
 Name           Description
@@ -94,6 +97,7 @@ You can pipe a string or a SID to this cmdlet.
 This cmdlet returns a local group.
 
 ## NOTES
+
 * The **PrincipalSource** property is a property on **LocalUser**, **LocalGroup**, and **LocalPrincipal** objects that describes the source of the object. The possible sources are as follows:
 
 - Local

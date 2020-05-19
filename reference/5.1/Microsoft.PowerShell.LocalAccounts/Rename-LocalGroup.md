@@ -17,16 +17,19 @@ Renames a local security group.
 ## SYNTAX
 
 ### InputObject
+
 ```
 Rename-LocalGroup [-InputObject] <LocalGroup> [-NewName] <String> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### Default
+
 ```
 Rename-LocalGroup [-Name] <String> [-NewName] <String> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### SecurityIdentifier
+
 ```
 Rename-LocalGroup [-NewName] <String> [-SID] <SecurityIdentifier> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
@@ -41,6 +44,7 @@ The **Rename-LocalGroup** cmdlet renames a local security group.
 ## EXAMPLES
 
 ### Example 1: Change the name of a group
+
 ```
 PS C:\> Rename-LocalGroup -Name "SecurityGroup" -NewName "SecurityGroup04"
 ```
@@ -155,6 +159,7 @@ You can pipe a security group, a string, or a SID to this cmdlet.
 This cmdlet does not generate any output.
 
 ## NOTES
+
 * The **PrincipalSource** property is a property on **LocalUser**, **LocalGroup**, and **LocalPrincipal** objects that describes the source of the object. The possible sources are as follows:
 
 - Local

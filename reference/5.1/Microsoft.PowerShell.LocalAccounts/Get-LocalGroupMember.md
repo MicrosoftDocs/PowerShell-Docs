@@ -17,16 +17,19 @@ Gets members from a local group.
 ## SYNTAX
 
 ### Default (Default)
+
 ```
 Get-LocalGroupMember [[-Member] <String>] [-Name] <String> [<CommonParameters>]
 ```
 
 ### Group
+
 ```
 Get-LocalGroupMember [-Group] <LocalGroup> [[-Member] <String>] [<CommonParameters>]
 ```
 
 ### SecurityIdentifier
+
 ```
 Get-LocalGroupMember [[-Member] <String>] [-SID] <SecurityIdentifier> [<CommonParameters>]
 ```
@@ -41,6 +44,7 @@ The **Get-LocalGroupMember** cmdlet gets members from a local group.
 ## EXAMPLES
 
 ### Example 1: Get all members of the Administrators group
+
 ```
 PS C:\> Get-LocalGroupMember -Group "Administrators"
 ObjectClass Name                    PrincipalSource
@@ -133,6 +137,7 @@ You can pipe a local group, a string, or a SID to this cmdlet.
 This cmdlet returns local principals.
 
 ## NOTES
+
 * The **PrincipalSource** property is a property on **LocalUser**, **LocalGroup**, and **LocalPrincipal** objects that describes the source of the object. The possible sources are as follows:
 
 - Local

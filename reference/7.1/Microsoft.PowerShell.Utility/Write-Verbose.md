@@ -29,6 +29,7 @@ By default, the verbose message stream is not displayed, but you can display it 
 ## EXAMPLES
 
 ### Example 1: Write a status message
+
 ```
 PS C:\> Write-Verbose -Message "Searching the Application Event Log."
 PS C:\> Write-Verbose -Message "Searching the Application Event Log." -Verbose
@@ -40,6 +41,7 @@ By default, the message is not displayed.
 The second command uses the *Verbose* common parameter, which displays any verbose messages, regardless of the value of the **$VerbosePreference** variable.
 
 ### Example 2: Set $VerbosePreference and write a status message
+
 ```
 PS C:\> $VerbosePreference = "Continue"
 PS C:\> Write-Verbose "Copying file $filename"
@@ -85,6 +87,7 @@ You can pipe a string that contains the message to **Write-Verbose**.
 **Write-Verbose** writes only to the verbose message stream.
 
 ## NOTES
+
 * Verbose messages are returned only when the command uses the **Verbose** common parameter. For more information, see [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
 * In PowerShell background jobs and remote commands, the **$VerbosePreference** variable in the job session and remote session determine whether the verbose message is displayed by default. For more information about the **$VerbosePreference** variable, see [about_Preference_Variables](../Microsoft.PowerShell.Core/About/about_Preference_Variables.md).
 

@@ -8,7 +8,6 @@ online version: https://docs.microsoft.com/powershell/module/microsoft.powershel
 schema: 2.0.0
 title: Compare-Object
 ---
-
 # Compare-Object
 
 ## SYNOPSIS
@@ -98,18 +97,19 @@ squirrel    <=
 
 ### Example 3: Compare each line of content and exclude the differences
 
-This example uses the **IncludeEqual** and **ExcludeDifferent** parameters to compare each line of
+This example uses the **ExcludeDifferent** parameter to compare each line of
 content in two text files.
 
-Because the command uses the **ExcludeDifferent** parameter, the output only contains lines
-contained in both files, as shown by the **SideIndicator** (`==`).
+As of PowerShell 7.1, when using the **ExcludeDifferent** parameter, **IncludeEqual** is inferred
+and the output only contains lines contained in both files, as shown by the **SideIndicator**
+(`==`).
 
 ```powershell
 $objects = @{
   ReferenceObject = (Get-Content -Path C:\Test\Testfile1.txt)
   DifferenceObject = (Get-Content -Path C:\Test\Testfile2.txt)
 }
-Compare-Object @objects -IncludeEqual -ExcludeDifferent
+Compare-Object @objects -ExcludeDifferent
 ```
 
 ```Output
@@ -308,10 +308,7 @@ Accept wildcard characters: False
 Indicates that this cmdlet displays only the characteristics of compared objects that are equal. The
 differences between the objects are discarded.
 
-Use **ExcludeDifferent** with **IncludeEqual** to display only the lines that match between the
-**reference** and **difference** objects.
-
-If **ExcludeDifferent** is specified without **IncludeEqual**, **IncludeEqual** is inferred.  To
+If **ExcludeDifferent** is specified without **IncludeEqual**, **IncludeEqual** is inferred. To
 override, pass **$false** to **IncludeEqual**.
 
 ```yaml

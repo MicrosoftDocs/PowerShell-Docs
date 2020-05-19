@@ -17,11 +17,13 @@ Cancels an event subscription.
 ## SYNTAX
 
 ### BySource (Default)
+
 ```
 Unregister-Event [-SourceIdentifier] <String> [-Force] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### ById
+
 ```
 Unregister-Event [-SubscriptionId] <Int32> [-Force] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
@@ -38,6 +40,7 @@ To delete events, use the Remove-Event cmdlet.
 ## EXAMPLES
 
 ### Example 1: Cancel an event subscription by source identifier
+
 ```
 PS C:\> Unregister-Event -SourceIdentifier "ProcessStarted"
 ```
@@ -48,6 +51,7 @@ To find the source identifier of an event, use the Get-Event cmdlet.
 To find the source identifier of an event subscription, use the **Get-EventSubscriber** cmdlet.
 
 ### Example 2: Cancel an event subscription by subscription identifier
+
 ```
 PS C:\> Unregister-Event -SubscriptionId 2
 ```
@@ -57,6 +61,7 @@ This command cancels the event subscription that has a subscription identifier o
 To find the subscription identifier of an event subscription, use the **Get-EventSubscriber** cmdlet.
 
 ### Example 3: Cancel all event subscriptions
+
 ```
 PS C:\> Get-EventSubscriber -Force | Unregister-Event -Force
 ```
@@ -164,6 +169,7 @@ You can pipe the output from Get-EventSubscriber to **Unregister-Event**.
 This cmdlet does not return any output.
 
 ## NOTES
+
 * Events, event subscriptions, and the event queue exist only in the current session. If you close the current session, the event queue is discarded and the event subscription is canceled.
 
   **Unregister-Event** cannot delete events created by using the New-Event cmdlet unless you have subscribed to the event by using the **Register-EngineEvent** cmdlet.

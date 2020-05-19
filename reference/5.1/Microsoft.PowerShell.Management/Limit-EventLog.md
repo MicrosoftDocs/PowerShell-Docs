@@ -31,6 +31,7 @@ To get events from logs that use the Windows Event Log technology in Windows Vis
 ## EXAMPLES
 
 ### Example 1: Increase the size of an event log
+
 ```
 PS C:\> Limit-EventLog -LogName "Windows PowerShell" -MaximumSize 20KB
 ```
@@ -38,6 +39,7 @@ PS C:\> Limit-EventLog -LogName "Windows PowerShell" -MaximumSize 20KB
 This command increases the maximum size of the Windows PowerShell event log on the local computer to 20480 bytes (20 KB).
 
 ### Example 2: Retain an event log for a specified duration
+
 ```
 PS C:\> Limit-EventLog -LogName Security -ComputerName "Server01", "Server02" -RetentionDays 7
 ```
@@ -45,6 +47,7 @@ PS C:\> Limit-EventLog -LogName Security -ComputerName "Server01", "Server02" -R
 This command ensures that events in the Security log on the Server01 and Server02 computers are retained for at least 7 days.
 
 ### Example 3: Change the overflow action of all event logs
+
 ```
 PS C:\> $Logs = Get-EventLog -List | ForEach {$_.log}
 PS C:\> Limit-EventLog -OverflowAction OverwriteOlder -LogName $Logs
@@ -217,6 +220,7 @@ You cannot pipe input to this cmdlet.
 This cmdlet does not generate any output.
 
 ## NOTES
+
 * To use this cmdlet on Windows Vista and later versions of Windows, open Windows PowerShell with the Run as administrator option.
 
   This cmdlet changes the properties of the **System.Diagnostics.EventLog** object that represents a classic event log.

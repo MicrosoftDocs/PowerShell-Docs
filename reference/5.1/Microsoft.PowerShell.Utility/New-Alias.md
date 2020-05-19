@@ -30,6 +30,7 @@ You can later use **Import-Alias** to retrieve that saved alias information.
 ## EXAMPLES
 
 ### Example 1: Create an alias for a cmdlet
+
 ```
 PS C:\> New-Alias -Name "List" Get-ChildItem
 ```
@@ -37,6 +38,7 @@ PS C:\> New-Alias -Name "List" Get-ChildItem
 This command creates an alias named List to represent the Get-ChildItem cmdlet.
 
 ### Example 2: Create a read-only alias for a cmdlet
+
 ```
 PS C:\> New-Alias -Name "W" -Value Get-WmiObject -Description "quick wmi alias" -Option ReadOnly
 PS C:\> Get-Alias -Name "W" | Format-List *
@@ -223,6 +225,7 @@ When you use the *Passthru* parameter, **New-Alias** generates a **System.Manage
 Otherwise, this cmdlet does not generate any output.
 
 ## NOTES
+
 * To create a new alias, use Set-Alias or New-Alias. To change an alias, use **Set-Alias**. To delete an alias, use Remove-Item.
 
 *

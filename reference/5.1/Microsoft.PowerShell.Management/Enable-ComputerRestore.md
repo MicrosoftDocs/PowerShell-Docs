@@ -33,6 +33,7 @@ System restore points and the ComputerRestore cmdlets are supported only on clie
 ## EXAMPLES
 
 ### Example 1: Enable System Restore on the specified drive
+
 ```
 PS C:\> Enable-ComputerRestore -Drive "C:\"
 ```
@@ -40,6 +41,7 @@ PS C:\> Enable-ComputerRestore -Drive "C:\"
 This command enables System Restore on the C: drive of the local computer.
 
 ### Example 2: Enable System Restore on multiple drives
+
 ```
 PS C:\> Enable-ComputerRestore -Drive "C:\", "D:\"
 ```
@@ -114,6 +116,7 @@ You cannot pipe objects to this cmdlet.
 This cmdlet does not generate any output.
 
 ## NOTES
+
 * To run this cmdlet on Windows Vista and later versions of Windows, open Windows PowerShell with the Run as administrator option.
 
   To find the file system drives that are eligible for system restore, in System in Control Panel, see the System Protection tab.

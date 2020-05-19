@@ -11,7 +11,7 @@ and support we get from the community. Learn how you can contribute by reading t
 
 As of April 2020, these GitHub users are the All-Time Top Community Contributors.
 
-### Pull Requests opened
+## Pull Requests opened
 
 Pull Requests help us fix those issues and make the documentation better for everyone.
 
@@ -36,7 +36,7 @@ Pull Requests help us fix those issues and make the documentation better for eve
 | exchange12rocks    |      |    7 |    3 |      |      |          10 |
 | KirkMunro          |    1 |    1 |    2 |    6 |      |          10 |
 
-### GitHub issues opened
+## GitHub issues opened
 
 GitHub issues help us identify errors and gaps in our documentation.
 

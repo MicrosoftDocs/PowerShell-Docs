@@ -29,6 +29,7 @@ makes it easier to test your command for any errors.
 ## EXAMPLES
 
 ### Example 1: Delete output
+
 ```
 PS C:\> Get-ChildItem | Out-Null
 ```
@@ -70,6 +71,7 @@ You can pipe any object to this cmdlet.
 This cmdlet does not generate any output.
 
 ## NOTES
+
 * The cmdlets that contain the **Out** verb (the **Out** cmdlets) do not have parameters for names or file paths. To send data to an **Out** cmdlet, use a pipeline operator (|) to send the output of a Windows PowerShell command to the cmdlet. You can also store data in a variable and use the *InputObject* parameter to pass the data to the cmdlet. For more information, see the examples.
 * **Out-Null** does not return any output objects. If you pipe the output of **Out-Null** to the Get-Member cmdlet, **Get-Member** reports that no objects have been specified.
 

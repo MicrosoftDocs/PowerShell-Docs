@@ -17,6 +17,7 @@ Changes scheduled jobs.
 ## SYNTAX
 
 ### ScriptBlock (Default)
+
 ```
 Set-ScheduledJob [-Name <String>] [-ScriptBlock <ScriptBlock>] [-Trigger <ScheduledJobTrigger[]>]
  [-InitializationScript <ScriptBlock>] [-RunAs32] [-Credential <PSCredential>]
@@ -26,6 +27,7 @@ Set-ScheduledJob [-Name <String>] [-ScriptBlock <ScriptBlock>] [-Trigger <Schedu
 ```
 
 ### FilePath
+
 ```
 Set-ScheduledJob [-Name <String>] [-FilePath <String>] [-Trigger <ScheduledJobTrigger[]>]
  [-InitializationScript <ScriptBlock>] [-RunAs32] [-Credential <PSCredential>]
@@ -35,6 +37,7 @@ Set-ScheduledJob [-Name <String>] [-FilePath <String>] [-Trigger <ScheduledJobTr
 ```
 
 ### Execution
+
 ```
 Set-ScheduledJob [-InputObject] <ScheduledJobDefinition> [-ClearExecutionHistory] [-PassThru]
  [<CommonParameters>]
@@ -64,6 +67,7 @@ This cmdlet was introduced in Windows PowerShell 3.0.
 ## EXAMPLES
 
 ### Example 1: Change the script that a job runs
+
 ```
 PS C:\> Get-ScheduledJob -Name "Inventory"
 Id         Name            Triggers        Command                                  Enabled
@@ -85,6 +89,7 @@ The output shows that the job runs the Get-Inventory.ps1 script.
 This command is not required; it is included only to show the effect of the script change.
 
 ### Example 2: Delete the execution history of a scheduled job
+
 ```
 PS C:\> Get-ScheduledJob BackupArchive | Set-ScheduledJob -ClearExecutionHistory
 ```
@@ -98,6 +103,7 @@ The **Set-ScheduledJob** cmdlet uses the *ClearExecutionHistory* parameter to de
 For more information about the execution history and saved job results of scheduled jobs, see about_Scheduled_Jobs.
 
 ### Example 3: Change scheduled jobs on a remote computer
+
 ```
 PS C:\> Invoke-Command -Computer "Server01, Server02" -ScriptBlock {Get-ScheduledJob | Set-ScheduledJob -InitializationScript \\SrvA\Scripts\SetForRun.ps1}
 ```

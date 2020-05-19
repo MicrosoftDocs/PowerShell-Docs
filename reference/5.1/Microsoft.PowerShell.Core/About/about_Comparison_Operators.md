@@ -636,6 +636,7 @@ Two of the ways to reference capturing groups is by **Number** and by **Name**
 > [!WARNING]
 > Since the `$` character is used in string expansion, you will need to use
 > literal strings with substitution, or escape the `$` character.
+>
 > ```powershell
 > 'Hello World' -replace '(\w+) \w+', "`$1 Universe"
 > ```
@@ -650,6 +651,7 @@ Two of the ways to reference capturing groups is by **Number** and by **Name**
 > ```powershell
 > '5.72' -replace '(.+)', '$$$1'
 > ```
+>
 > ```Output
 > $5.72
 > ```

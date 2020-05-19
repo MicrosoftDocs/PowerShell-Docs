@@ -17,16 +17,19 @@ Delete job triggers from scheduled jobs.
 ## SYNTAX
 
 ### JobDefinition (Default)
+
 ```
 Remove-JobTrigger [-TriggerId <Int32[]>] [-InputObject] <ScheduledJobDefinition[]> [<CommonParameters>]
 ```
 
 ### JobDefinitionId
+
 ```
 Remove-JobTrigger [-TriggerId <Int32[]>] [-Id] <Int32[]> [<CommonParameters>]
 ```
 
 ### JobDefinitionName
+
 ```
 Remove-JobTrigger [-TriggerId <Int32[]>] [-Name] <String[]> [<CommonParameters>]
 ```
@@ -51,6 +54,7 @@ This cmdlet was introduced in Windows PowerShell 3.0.
 ## EXAMPLES
 
 ### Example 1: Delete all job triggers
+
 ```
 PS C:\> Remove-JobTrigger -Name "Test*"
 ```
@@ -58,6 +62,7 @@ PS C:\> Remove-JobTrigger -Name "Test*"
 This command deletes all job triggers from scheduled job that have names that begin with Test.
 
 ### Example 2: Delete selected job triggers
+
 ```
 PS C:\> Remove-JobTrigger -Name "BackupArchive" -TriggerID 3
 ```
@@ -65,6 +70,7 @@ PS C:\> Remove-JobTrigger -Name "BackupArchive" -TriggerID 3
 This command deletes only the third trigger (ID = 3) from the BackupArchive scheduled job.
 
 ### Example 3: Delete AtStartup job triggers from all scheduled jobs
+
 ```
 PS C:\> function Delete-AtStartup
 {
@@ -88,6 +94,7 @@ The value of the *InputObject* parameter of **Remove-JobTrigger** is the schedul
 The value of the *TriggerID* parameter is the identifier in the ID property of the job trigger.
 
 ### Example 4: Delete a job trigger from a remote scheduled job
+
 ```
 PS C:\> Invoke-Command -ComputerName "Server01" { Remove-JobTrigger -ID 38 -TriggerID 1 }
 ```

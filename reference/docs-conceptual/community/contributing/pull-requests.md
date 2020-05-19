@@ -6,9 +6,9 @@ ms.topic: conceptual
 ---
 # How to submit pull requests
 
-To make changes to content, submit a pull request (PR) from your fork. A pull request must be reviewed
-before it can merged. For best results, review the [editorial checklist](editorial-checklist.md)
-before submitting your pull request.
+To make changes to content, submit a pull request (PR) from your fork. A pull request must be
+reviewed before it can merged. For best results, review the
+[editorial checklist](editorial-checklist.md) before submitting your pull request.
 
 ## Target the correct branch
 
@@ -78,8 +78,8 @@ You'll see the following behavior:
    ![build validation](media/pull-requests/build-validation.png)
 
 > [!NOTE]
-> If you are an external (not a Microsoft employee) contributor you do not have access to the detailed
-> build reports or preview links.
+> If you are an external (not a Microsoft employee) contributor you do not have access to the
+> detailed build reports or preview links.
 
 When the PR is reviewed by a member of the PowerShell-Docs team, you may be asked to make changes or
 fix problems flagged by the validation report. The PowerShell-Docs team can help you understand how

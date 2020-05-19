@@ -18,18 +18,21 @@ Invokes Operation Validation Framework tests.
 ## SYNTAX
 
 ### FileAndTest (Default)
+
 ```
 Invoke-OperationValidation [-TestInfo <PSObject[]>] [-IncludePesterOutput] [-WhatIf] [-Confirm]
  [<CommonParameters>]
 ```
 
 ### Path
+
 ```
 Invoke-OperationValidation [-testFilePath <String[]>] [-IncludePesterOutput] [-WhatIf] [-Confirm]
  [<CommonParameters>]
 ```
 
 ### UseGetOperationTest
+
 ```
 Invoke-OperationValidation [-ModuleName <String[]>] [-TestType <String[]>] [-IncludePesterOutput] [-WhatIf]
  [-Confirm] [<CommonParameters>]

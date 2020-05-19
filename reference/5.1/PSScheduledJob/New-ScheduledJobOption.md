@@ -45,6 +45,7 @@ This cmdlet was introduced in Windows PowerShell 3.0.
 ## EXAMPLES
 
 ### Example 1: Create a scheduled job option object with default values
+
 ```
 PS C:\> New-ScheduledJobOption
 StartIfOnBatteries     : False
@@ -66,6 +67,7 @@ NewJobDefinition       :
 This command creates a scheduled job option object that has all of the default values.
 
 ### Example 2: Create a scheduled job option object with custom values
+
 ```
 PS C:\> New-ScheduledJobOption -RequireNetwork -StartIfOnBattery
 StartIfOnBatteries     : True
@@ -89,6 +91,7 @@ The following command creates a scheduled job object that requires the network a
 The output shows that the *RequireNetwork* parameter changed the value of the RunWithoutNetwork property to $False and the *StartIfOnBattery* parameter changed the value of the StartIfOnBatteries property to $True.
 
 ### Example 3: Set options for a new scheduled job
+
 ```
 The first command creates a **ScheduledJobOptions** object with the *RunElevated* parameter. It saves the object in the $RunAsAdmin variable.
 PS C:\> $RunAsAdmin = New-ScheduledJobOption -RunElevated
@@ -117,6 +120,7 @@ JobDefinition          : Microsoft.PowerShell.ScheduledJob.ScheduledJobDefinitio
 This example shows how to use the **ScheduledJobOptions** object that **New-ScheduledJobOption** returns to set the options for a new scheduled job.
 
 ### Example 4: Sort the properties of a scheduled job option object
+
 ```
 PS C:\> $Options = New-ScheduledJobOption -WakeToRun
 PS C:\> $Options.PSObject.Properties | Sort-Object -Property Name | Format-Table -Property Name, Value -Autosize
@@ -430,6 +434,7 @@ You cannot pipe input to this cmdlet.
 ### Microsoft.PowerShell.ScheduledJob.ScheduledJobOptions
 
 ## NOTES
+
 * You can use the **ScheduledJobOptions** object that **New-ScheduledJobOption** creates as the value of the *ScheduledJobOption* parameter of the Register-ScheduledJob cmdlet. However, the *ScheduledJobOption* parameter can also take a hash table value that specifies the properties of the **ScheduledJobOptions** object and their values, such as:
 
   `@{ShowInTaskScheduler=$False; RunElevated=$True; IdleDuration="00:05"}`

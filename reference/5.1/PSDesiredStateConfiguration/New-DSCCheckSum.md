@@ -29,6 +29,7 @@ Place the checksums together with the associated DSC documents and compressed DS
 ## EXAMPLES
 
 ### Example 1: Create checksum files for all configurations in a specific path
+
 ```
 PS C:\> New-DscCheckSum -Path "C:\DSC\Configurations\"
 ```
@@ -37,6 +38,7 @@ This command creates checksum files for all configurations in the path C:\DSC\Co
 Any checksum files that already exist are skipped.
 
 ### Example 2: Create checksum files for all configurations in a specific path and overwrite the existing checksum files
+
 ```
 PS C:\> New-DscCheckSum -Path "C:\DSC\Configurations\" -Force
 ```

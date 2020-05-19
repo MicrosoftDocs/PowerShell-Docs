@@ -1,74 +1,100 @@
 {
-    "default": true,
-
-    "header-increment": true,
-    "first-header-h1": {
-        "level": 1
+    "blanks-around-fences": true,
+    "blanks-around-headers": true,
+    "blanks-around-lists": true,
+    "code-block-style": {
+        "style": "fenced"
     },
+    "code-fence-style": {
+        "style": "backtick"
+    },
+    "commands-show-output": true,
+    "fenced-code-language": false,
+    "first-line-h1": {
+        "front_matter_title": ""
+    },
+    "first-line-heading": true,
+    "header-increment": true,
+    "header-start-left": true,
     "header-style": {
         "style": "atx"
     },
-    "ul-style": {
-        "style": "dash"
-    },
-    "list-indent": true,
-    "ul-start-left": true,
-    "ul-indent": {
-        "indent": 2
-    },
-    "no-trailing-spaces": true,
-    "no-hard-tabs": true,
-    "no-reversed-links": true,
-    "no-multiple-blanks": true,
-    "line-length": {
-        "line_length": 100,
-        "code_blocks": false,
-        "tables": false,
-        "headers": true
-    },
-    "commands-show-output": true,
-    "no-missing-space-atx": true,
-    "no-multiple-space-atx": true,
-    "no-missing-space-closed-atx": true,
-    "no-multiple-space-closed-atx": true,
-    "blanks-around-headers": true,
-    "header-start-left": true,
-    "no-duplicate-header": true,
-    "single-h1": true,
-    "no-trailing-punctuation": {
-        "punctuation": ".,;:!"
-    },
-    "no-multiple-space-blockquote": true,
-    "no-blanks-blockquote": true,
-    "ol-prefix": {
-        "style": "one_or_ordered"
-    },
-    "list-marker-space": true,
-    "blanks-around-fences": true,
-    "blanks-around-lists": true,
-    "no-inline-html": {
-        "allowed_elements": [
-            "properties",
-            "tags"
-        ]
-    },
-    "no-bare-urls": true,
     "hr-style": {
         "style": "---"
     },
+    "line-length": {
+        "line_length": 100,
+        "heading_line_length": 100,
+        "code_blocks": false,
+        "headings": true,
+        "strict": true,
+        "tables": false
+    },
+    "list-indent": true,
+    "list-marker-space": true,
+    "no-alt-text": true,
+    "no-bare-urls": true,
+    "no-blanks-blockquote": true,
+    "no-duplicate-header": {
+        "siblings_only": true
+    },
     "no-emphasis-as-header": true,
-    "no-space-in-emphasis": true,
-    "no-space-in-code": true,
-    "no-space-in-links": true,
-    "fenced-code-language": false,
-    "first-line-h1": false,
     "no-empty-links": true,
-    "proper-names" : {
+    "no-hard-tabs": true,
+    "no-inline-html": {
+        "allowed_elements": [
+            "a",
+            "br",
+            "code",
+            "kbd",
+            "li",
+            "properties",
+            "sup",
+            "tags",
+            "ul"
+        ]
+    },
+    "no-missing-space-atx": true,
+    "no-missing-space-closed-atx": true,
+    "no-multiple-blanks": true,
+    "no-multiple-space-atx": true,
+    "no-multiple-space-blockquote": true,
+    "no-multiple-space-closed-atx": true,
+    "no-reversed-links": true,
+    "no-space-in-code": true,
+    "no-space-in-emphasis": true,
+    "no-space-in-links": true,
+    "no-trailing-punctuation": true,
+    "no-trailing-spaces": true,
+    "ol-prefix": {
+        "style": "one"
+    },
+    "proper-names": {
+        "code_blocks": false,
         "names": [
             "PowerShell",
+            "IntelliSense",
+            "Authenticode",
+            "CentOS",
+            "Contoso",
+            "CoreOS",
+            "Debian",
+            "Ubuntu",
+            "openSUSE",
+            "RHEL",
             "JavaScript"
-        ],
-        "code_blocks": false
+        ]
     },
-    "no-alt-text": true
+    "single-h1": {
+        "front_matter_title": ""
+    },
+    "single-trailing-newline": true,
+    "ul-indent": {
+        "indent": 2,
+        "start_indented": false
+    },
+    "ul-start-left": true,
+    "ul-style": {
+        "style": "dash"
+    }
 }

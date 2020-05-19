@@ -118,10 +118,12 @@ Intellisense and schema validation allow you to catch more errors during parse a
 
 > [!NOTE]
 > Each DSC resource can have a name, and a **FriendlyName** defined by the resource's schema. Below are the first two lines of "MSFT_ServiceResource.shema.mof".
+>
 > ```syntax
 > [ClassVersion("1.0.0"),FriendlyName("Service")]
 > class MSFT_ServiceResource : OMI_BaseResource
 > ```
+>
 > When using this resource in a Configuration, you can specify **MSFT_ServiceResource** or **Service**.
 
 ## PowerShell v4 and v5 differences

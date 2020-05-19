@@ -22,6 +22,7 @@ The first thing we need to do is decide on properties that the resource will exp
 example, we will define an Active Directory user with the following properties.
 
 Parameter name  Description
+
 * **UserName**: Key property that uniquely identifies a user.
 * **Ensure**: Specifies whether the user account should be Present or Absent. This parameter will
   have only two possible values.

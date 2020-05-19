@@ -232,6 +232,7 @@ $m.hello("Manoj")
 ```Output
 Hello, Manoj
 ```
+
 Piping `$m` to the `Get-Member` cmdlet displays the properties and methods of the custom object. The
 output shows that the object has script methods that represent the `Hello` and `Goodbye` functions.
 Finally, we call these script methods and display the results.

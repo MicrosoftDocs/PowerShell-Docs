@@ -32,6 +32,7 @@ To get events from logs that use the Windows Event Log technology in Windows Vis
 ## EXAMPLES
 
 ### Example 1: Write an event to the Application event log
+
 ```
 PS C:\> Write-EventLog -LogName "Application" -Source "MyApp" -EventID 3001 -EntryType Information -Message "MyApp added a user-requested feature to the display." -Category 1 -RawData 10,20
 ```
@@ -39,6 +40,7 @@ PS C:\> Write-EventLog -LogName "Application" -Source "MyApp" -EventID 3001 -Ent
 This command writes an event from the MyApp source to the Application event log.
 
 ### Example 2: Write an event to the Application event log of a remote computer
+
 ```
 PS C:\> Write-EventLog -ComputerName "Server01" -LogName Application -Source "MyApp" -EventID 3001 -Message "MyApp added a user-requested feature to the display."
 ```
@@ -200,6 +202,7 @@ You cannot pipe input to this cmdlet.
 This cmdlet returns objects that represents the events in the logs.
 
 ## NOTES
+
 * To use **Write-EventLog**, start Windows PowerShell by using the Run as administrator option.
 
 *

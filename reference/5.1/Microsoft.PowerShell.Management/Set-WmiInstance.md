@@ -17,6 +17,7 @@ Creates or updates an instance of an existing Windows Management Instrumentation
 ## SYNTAX
 
 ### class (Default)
+
 ```
 Set-WmiInstance [-Class] <String> [-Arguments <Hashtable>] [-PutType <PutType>] [-AsJob]
  [-Impersonation <ImpersonationLevel>] [-Authentication <AuthenticationLevel>] [-Locale <String>]
@@ -25,12 +26,14 @@ Set-WmiInstance [-Class] <String> [-Arguments <Hashtable>] [-PutType <PutType>] 
 ```
 
 ### object
+
 ```
 Set-WmiInstance -InputObject <ManagementObject> [-Arguments <Hashtable>] [-PutType <PutType>] [-AsJob]
  [-ThrottleLimit <Int32>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### path
+
 ```
 Set-WmiInstance -Path <String> [-Arguments <Hashtable>] [-PutType <PutType>] [-AsJob]
  [-Impersonation <ImpersonationLevel>] [-Authentication <AuthenticationLevel>] [-Locale <String>]
@@ -39,6 +42,7 @@ Set-WmiInstance -Path <String> [-Arguments <Hashtable>] [-PutType <PutType>] [-A
 ```
 
 ### WQLQuery
+
 ```
 Set-WmiInstance [-PutType <PutType>] [-AsJob] [-Impersonation <ImpersonationLevel>]
  [-Authentication <AuthenticationLevel>] [-Locale <String>] [-EnableAllPrivileges] [-Authority <String>]
@@ -47,6 +51,7 @@ Set-WmiInstance [-PutType <PutType>] [-AsJob] [-Impersonation <ImpersonationLeve
 ```
 
 ### query
+
 ```
 Set-WmiInstance [-PutType <PutType>] [-AsJob] [-Impersonation <ImpersonationLevel>]
  [-Authentication <AuthenticationLevel>] [-Locale <String>] [-EnableAllPrivileges] [-Authority <String>]
@@ -55,6 +60,7 @@ Set-WmiInstance [-PutType <PutType>] [-AsJob] [-Impersonation <ImpersonationLeve
 ```
 
 ### list
+
 ```
 Set-WmiInstance [-PutType <PutType>] [-AsJob] [-Impersonation <ImpersonationLevel>]
  [-Authentication <AuthenticationLevel>] [-Locale <String>] [-EnableAllPrivileges] [-Authority <String>]
@@ -74,6 +80,7 @@ Instead of using `Set-WmiInstance`, consider using the [Set-CimInstance](https:/
 ## EXAMPLES
 
 ### Example 1: Set WMI logging level
+
 ```
 PS C:\> Set-WmiInstance -Class Win32_WMISetting -Argument @{LoggingLevel=2}
 __GENUS                        : 2
@@ -122,6 +129,7 @@ The parameter takes a hash table that is defined by the @{property = value} cons
 The class information that is returned reflects the new value.
 
 ### Example 2: Create an environment variable and its value
+
 ```
 PS C:\> Set-WmiInstance -Class win32_environment -Argument @{Name="testvar";VariableValue="testvalue";UserName="<SYSTEM>"}
 __GENUS          : 2
@@ -149,6 +157,7 @@ It does this by creating a new instance of the **Win32_Environment** WMI class.
 This operation requires appropriate credentials and that you may have to restart Windows PowerShell to see the new environment variable.
 
 ### Example 3: Set WMI logging level for several remote computers
+
 ```
 PS C:\> Set-WmiInstance -Class Win32_WMISetting -Argument @{LoggingLevel=2} -Computername "system01", "system02", "system03"
 __GENUS                        : 2

@@ -17,16 +17,19 @@ Disables a local user account.
 ## SYNTAX
 
 ### InputObject
+
 ```
 Disable-LocalUser [-InputObject] <LocalUser[]> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### Default
+
 ```
 Disable-LocalUser [-Name] <String[]> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### SecurityIdentifier
+
 ```
 Disable-LocalUser [-SID] <SecurityIdentifier[]> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
@@ -43,6 +46,7 @@ When a user account is enabled, the user can log on.
 ## EXAMPLES
 
 ### Example 1: Disable an account by specifying a name
+
 ```
 PS C:\> Disable-LocalUser -Name "Admin02"
 ```
@@ -50,6 +54,7 @@ PS C:\> Disable-LocalUser -Name "Admin02"
 This command disables the user account named Admin02.
 
 ### Example 2: Disable an account by using the pipeline
+
 ```
 PS C:\> Get-LocalUser Guest | Disable-LocalUser
 ```
@@ -150,6 +155,7 @@ You can pipe a local user, a string, or a SID to this cmdlet.
 This cmdlet does not generate any output.
 
 ## NOTES
+
 * The **PrincipalSource** property is a property on **LocalUser**, **LocalGroup**, and **LocalPrincipal** objects that describes the source of the object. The possible sources are as follows:
 
 - Local

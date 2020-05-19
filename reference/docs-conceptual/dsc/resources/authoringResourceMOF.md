@@ -62,7 +62,7 @@ Note the following about the previous code:
 
 ### Writing the resource script
 
-The resource script implements the logic of the resource. In this module, you must include three functions called **Get-TargetResource**, **Set-TargetResource**, and **Test-TargetResource**. All three functions must take a parameter set that is identical to the set of properties defined in the MOF schema that you created for your resource. In this document, this set of properties is referred to as the "resource properties." Store these three functions in a file called <ResourceName>.psm1. In the following example, the functions are stored in a file called Demo_IISWebsite.psm1.
+The resource script implements the logic of the resource. In this module, you must include three functions called **Get-TargetResource**, **Set-TargetResource**, and **Test-TargetResource**. All three functions must take a parameter set that is identical to the set of properties defined in the MOF schema that you created for your resource. In this document, this set of properties is referred to as the "resource properties." Store these three functions in a file called `<ResourceName>.psm1`. In the following example, the functions are stored in a file called Demo_IISWebsite.psm1.
 
 > [!NOTE]
 > When you run the same configuration script on your resource more than once, you should receive no errors and the resource should remain in the same state as running the script once. To accomplish this, ensure that your **Get-TargetResource** and **Test-TargetResource** functions leave the resource unchanged, and that invoking the **Set-TargetResource** function more than once in a sequence with the same parameter values is always equivalent to invoking it once.
@@ -217,7 +217,7 @@ $result
 
 ### Creating the module manifest
 
-Finally, use the **New-ModuleManifest** cmdlet to define a <ResourceName>.psd1 file for your custom resource module. When you invoke this cmdlet, reference the script module (.psm1) file described in the previous section. Include **Get-TargetResource**, **Set-TargetResource**, and **Test-TargetResource** in the list of functions to export. Following is an example manifest file.
+Finally, use the **New-ModuleManifest** cmdlet to define a `<ResourceName>.psd1` file for your custom resource module. When you invoke this cmdlet, reference the script module (.psm1) file described in the previous section. Include **Get-TargetResource**, **Set-TargetResource**, and **Test-TargetResource** in the list of functions to export. Following is an example manifest file.
 
 ```powershell
 # Module manifest for module 'Demo.IIS.Website'

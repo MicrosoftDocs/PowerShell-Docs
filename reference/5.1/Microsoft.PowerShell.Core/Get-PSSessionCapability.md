@@ -37,6 +37,7 @@ It includes information such as Language Mode, Execution Policy, and Environment
 ## EXAMPLES
 
 ### Example 1: Get commands available for a user
+
 ```
 PS C:\> Get-PSSessionCapability -ConfigurationName Endpoint1 -Username 'CONTOSO\User'
 ```
@@ -44,6 +45,7 @@ PS C:\> Get-PSSessionCapability -ConfigurationName Endpoint1 -Username 'CONTOSO\
 This example returns the commands available to the user CONTOSO\User when connecting to the Endpoint1 constrained endpoint on the local computer.
 
 ### Example 2: Get details about a runspace for a user
+
 ```
 PS C:\> Get-PSSessionCapability -ConfigurationName Endpoint1 -Username 'CONTOSO\User' -Full
 ```

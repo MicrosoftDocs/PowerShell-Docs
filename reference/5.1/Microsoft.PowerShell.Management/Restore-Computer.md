@@ -31,6 +31,7 @@ System restore points and **Restore-Computer** are supported only on client oper
 ## EXAMPLES
 
 ### Example 1: Restore the local computer
+
 ```
 PS C:\> Restore-Computer -RestorePoint 253
 ```
@@ -38,6 +39,7 @@ PS C:\> Restore-Computer -RestorePoint 253
 This command restores the local computer to the restore point that has sequence number 253.
 
 ### Example 2: Restore the local computer with confirmation
+
 ```
 PS C:\> Restore-Computer -RestorePoint 255 -Confirm
 Confirm
@@ -50,6 +52,7 @@ This command restores the local computer to the restore point that has sequence 
 It uses the *Confirm* parameter to prompt the user before actually performing the operation.
 
 ### Example 3: Restore a computer and check the status
+
 ```
 PS C:\> Get-ComputerRestorePoint
 PS C:\> Restore-Computer -RestorePoint 255
@@ -129,6 +132,7 @@ You cannot pipe input to this cmdlet.
 This cmdlet does not generate any output.
 
 ## NOTES
+
 * To run a Restore-Computer command on Windows Vista and later versions of the Windows operating system, open Windows PowerShell by using the Run as administrator option.
 * This cmdlet uses the Windows Management Instrumentation (WMI) **SystemRestore** class.
 

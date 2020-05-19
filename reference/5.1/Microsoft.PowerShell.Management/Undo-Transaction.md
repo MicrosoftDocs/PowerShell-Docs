@@ -35,6 +35,7 @@ For more information, see about_Transactions.
 ## EXAMPLES
 
 ### Example 1: Roll back the current transaction
+
 ```
 PS C:\> Undo-Transaction
 ```
@@ -42,6 +43,7 @@ PS C:\> Undo-Transaction
 This command rolls back the current, active, transaction.
 
 ### Example 2: Start and roll back a transaction
+
 ```
 PS C:\> cd hkcu:\software
 PS HKCU:\Software> Start-Transaction
@@ -53,6 +55,7 @@ This example starts a transaction and then rolls it back.
 As a result, no changes are made to the registry.
 
 ### Example 3: Roll back a transaction for all subscribers
+
 ```
 PS C:\> cd hkcu:\software
 PS HKCU:\Software> Start-Transaction
@@ -151,6 +154,7 @@ You cannot pipe input to this cmdlet.
 This cmdlet does not return any output.
 
 ## NOTES
+
 * You cannot roll back a transaction that has been committed.
 
   You cannot roll back any transaction other than the active transaction.

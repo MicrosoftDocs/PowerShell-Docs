@@ -34,6 +34,7 @@ System restore points and the ComputerRestore cmdlets are supported only on clie
 ## EXAMPLES
 
 ### Example 1: Disable System Restore on the specified drive
+
 ```
 PS C:\> Disable-ComputerRestore -Drive "C:\"
 ```
@@ -41,6 +42,7 @@ PS C:\> Disable-ComputerRestore -Drive "C:\"
 This command disables System Restore on the C: drive.
 
 ### Example 2: Disable System Restore on multiple drives
+
 ```
 PS C:\> Disable-ComputerRestore "C:\", "D:\"
 ```
@@ -116,6 +118,7 @@ You cannot pipe input to this cmdlet.
 This cmdlet does not generate any output.
 
 ## NOTES
+
 * To run this cmdlet on Windows Vista and later versions of Windows, open Windows PowerShell with the Run as administrator option.
 
   To find the file system drives that are eligible for system restore, in System in Control Panel, see the System Protection tab.

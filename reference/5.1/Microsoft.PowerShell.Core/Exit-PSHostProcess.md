@@ -27,6 +27,7 @@ You run the **Exit-PSHostProcess** cmdlet from within the process, when you are 
 ## EXAMPLES
 
 ### Example 1: Exit a process
+
 ```
 PS C:\> [Process:1520]: PS C:\>  Exit-PSHostProcess
 PS C:\>

@@ -31,6 +31,7 @@ This cmdlet is available only as part of the [November 2014 update rollup for Wi
 ## EXAMPLES
 
 ### Example 1: Remove the current configuration document
+
 ```
 PS C:\> $Session = New-CimSession -ComputerName "Server01" -Credential ACCOUNTS\PattiFuller
 PS C:\> Remove-DscConfigurationDocument -Stage Current -CimSession $Session

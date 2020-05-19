@@ -254,9 +254,11 @@ Note that you can have as many additional keys as you want, and you can name the
 
 You access additional keys by using the special variable **$ConfigurationData**.
 In this example, `ConfigFileContents` is accessed with the line:
+
 ```powershell
  Contents = $ConfigurationData.NonNodeData.ConfigFileContents
  ```
+
  in the `File` resource block.
 
 ```powershell
@@ -312,6 +314,7 @@ configuration WebsiteConfig
 ```
 
 ## See Also
+
 - [Using configuration data](configData.md)
 - [Credentials Options in Configuration Data](configDataCredentials.md)
 - [DSC Configurations](configurations.md)

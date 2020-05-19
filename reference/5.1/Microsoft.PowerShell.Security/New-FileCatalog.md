@@ -91,6 +91,7 @@ Accept wildcard characters: False
 ```
 
 ### -Path
+
 ```yaml
 Type: String[]
 Parameter Sets: (All)

@@ -36,6 +36,7 @@ Modules are imported automatically on first use and you can use the Import-Modul
 ## EXAMPLES
 
 ### Example 1: Get snap-ins that are currently loaded
+
 ```
 PS C:\> Get-PSSnapIn
 ```
@@ -44,6 +45,7 @@ This command gets the Windows PowerShell snap-ins that are currently loaded in t
 This includes the snap-ins that are installed with Windows PowerShell and those that have been added to the session.
 
 ### Example 2: Get snap-ins that have been registered
+
 ```
 PS C:\> get-PSSnapIn -Registered
 ```
@@ -52,6 +54,7 @@ This command gets the Windows PowerShell snap-ins that have been registered on t
 The output does not include snap-ins that are installed with Windows PowerShell or Windows PowerShell snap-in dynamic-link libraries (DLLs) that have not yet been registered on the system.
 
 ### Example 3: Get current snap-ins that match a string
+
 ```
 PS C:\> Get-PSSnapIn -Name smp*
 ```
@@ -110,6 +113,7 @@ You cannot pipe input to this cmdlet.
 Get-PSSnapin returns an object for each snap-in that it gets.
 
 ## NOTES
+
 * Starting in Windows PowerShell 3.0, the core commands that are installed with Windows PowerShell are packaged in modules. In Windows PowerShell 2.0, and in host programs that create older-style sessions in later versions of Windows PowerShell, the core commands are packaged in snap-ins (**PSSnapin**). The exception is **Microsoft.PowerShell.Core**, which is always a snap-in. Also, remote sessions, such as those started by the New-PSSession cmdlet, are older-style sessions that include core snap-ins.
 
   For information about the **CreateDefault2** method that creates newer-style sessions with core modules, see [CreateDefault2 Method](https://msdn.microsoft.com/library/system.management.automation.runspaces.initialsessionstate.createdefault2) in the MSDN library.

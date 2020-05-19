@@ -37,6 +37,7 @@ Get-Member -InputObject (1,2,3,4)
 ```
 
 The command returns the following results.
+
 ```output
 Name           MemberType    Definition
 ----           ----------    ----------
@@ -49,6 +50,7 @@ Get            Method        System.Object Get(Int32 )
 ...
 Length         Property      System.Int32 Length {get;}
 ```
+
 You can use either the `Count` property or the `Length` property to determine how many objects are in an array. For example:
 
 ```powershell

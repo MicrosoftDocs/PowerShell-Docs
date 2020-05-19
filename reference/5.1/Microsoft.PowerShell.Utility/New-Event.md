@@ -36,6 +36,7 @@ If you do not subscribe to the custom event, to delete the event, you must chang
 ## EXAMPLES
 
 ### Example 1: Create a new event in the event queue
+
 ```
 PS C:\> New-Event -SourceIdentifier Timer -Sender windows.timer -MessageData "Test"
 ```
@@ -44,6 +45,7 @@ This command creates a new event in the Windows PowerShell event queue.
 It uses a **Windows.Timer** object to send the event.
 
 ### Example 2: Raise an event in response to another event
+
 ```
 PS C:\> function Enable-ProcessCreationEvent
 {

@@ -28,6 +28,7 @@ Because you can save the input as a secure string, you can use this cmdlet to pr
 ## EXAMPLES
 
 ### Example 1: Save console input to a variable
+
 ```
 PS C:\> $Age = Read-Host "Please enter your age"
 ```
@@ -36,6 +37,7 @@ This command displays the string "Please enter your age:" as a prompt.
 When a value is entered and the Enter key is pressed, the value is stored in the $Age variable.
 
 ### Example 2: Save console input as a secure string
+
 ```
 PS C:\> $pwd_secure_string = Read-Host "Enter a Password" -AsSecureString
 ```

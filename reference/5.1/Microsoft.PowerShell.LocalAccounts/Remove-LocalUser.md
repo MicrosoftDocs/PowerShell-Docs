@@ -17,16 +17,19 @@ Deletes local user accounts.
 ## SYNTAX
 
 ### InputObject
+
 ```
 Remove-LocalUser [-InputObject] <LocalUser[]> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### Default
+
 ```
 Remove-LocalUser [-Name] <String[]> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### SecurityIdentifier
+
 ```
 Remove-LocalUser [-SID] <SecurityIdentifier[]> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
@@ -37,6 +40,7 @@ The **Remove-LocalUser** cmdlet deletes local user accounts.
 ## EXAMPLES
 
 ### Example 1: Delete a user account
+
 ```
 PS C:\> Remove-LocalUser -Name "AdminContoso02"
 ```
@@ -140,6 +144,7 @@ You can pipe a local user, a string, or a SID to this cmdlet.
 This cmdlet does not generate any output.
 
 ## NOTES
+
 * The **PrincipalSource** property is a property on **LocalUser**, **LocalGroup**, and **LocalPrincipal** objects that describes the source of the object. The possible sources are as follows:
 
 - Local
