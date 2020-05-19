@@ -286,7 +286,7 @@ The acceptable values for this parameter are:
 
 - **PasswordPass**: Sets the machine password to the value of the *Credential*(DomainCredential) parameter after performing an unsecured join. This option also indicates that the value of the *Credential* (DomainCredential) parameter is a machine password, not a user password. This option is valid only when the `UnsecuredJoin` option is specified. When using this option, the credential provided to the `-Credential` parameter *must* have a null username.
 
- - **JoinWithNewName**: Renames the computer name in the new domain to the name specified by the *NewName* parameter. When you use the *NewName* parameter, this option is set automatically. This option is designed to be used with the Rename-Computer cmdlet. If you use the **Rename-Computer** cmdlet to rename the computer, but do not restart the computer to make the change effective, you can use this parameter to join the computer to a domain with its new name.
+- **JoinWithNewName**: Renames the computer name in the new domain to the name specified by the *NewName* parameter. When you use the *NewName* parameter, this option is set automatically. This option is designed to be used with the Rename-Computer cmdlet. If you use the **Rename-Computer** cmdlet to rename the computer, but do not restart the computer to make the change effective, you can use this parameter to join the computer to a domain with its new name.
 
 - **JoinReadOnly**: Uses an existing machine account to join the computer to a read-only domain controller. The machine account must be added to the allowed list for password replication policy and the account password must be replicated to the read-only domain controller prior to the join operation.
 
