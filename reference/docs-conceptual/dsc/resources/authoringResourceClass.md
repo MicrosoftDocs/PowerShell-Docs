@@ -496,7 +496,7 @@ class FileResource {
 
 A module can define multiple class based DSC resources. You can create the folder structure in the following ways:
 
-1. Define the first resource in the "<ModuleName>.psm1" file and subsequent resources under the **DSCResources** folder.
+1. Define the first resource in the `<ModuleName>.psm1` file and subsequent resources under the **DSCResources** folder.
 
    ```
    $env:ProgramFiles\WindowsPowerShell\Modules (folder)
