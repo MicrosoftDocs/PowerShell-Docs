@@ -48,8 +48,15 @@
     "blanks-around-lists": true,
     "no-inline-html": {
         "allowed_elements": [
+            "a",
+            "br",
+            "code",
+            "kbd",
+            "li",
             "properties",
-            "tags"
+            "sup",
+            "tags",
+            "ul"
         ]
     },
     "no-bare-urls": true,
