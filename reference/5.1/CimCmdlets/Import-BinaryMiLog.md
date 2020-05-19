@@ -12,6 +12,7 @@ title: Import-BinaryMiLog
 # Import-BinaryMiLog
 
 ## SYNOPSIS
+
 Used to re-create the saved objects based on the contents of an export file.
 
 ## SYNTAX
@@ -55,6 +56,7 @@ Accept wildcard characters: True
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see

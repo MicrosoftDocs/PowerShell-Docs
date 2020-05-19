@@ -13,6 +13,7 @@ Typically, a Windows PowerShell Desired State Configuration (DSC) custom resourc
 Aside from implementing the resource in C# as cmdlets, the process of creating the MOF schema, creating the folder structure, importing and using your custom DSC resource are the same as described in [Writing a custom DSC resource with MOF](authoringResourceMOF.md).
 
 ## Writing a cmdlet-based resource
+
 For this example, we will implement a simple resource that manages a text file and its contents.
 
 ### Writing the MOF schema
@@ -30,6 +31,7 @@ class MSFT_XDemoFile : OMI_BaseResource
 ```
 
 ### Setting up the Visual Studio project
+
 #### Setting up a cmdlet project
 
 1. Open Visual Studio.
@@ -273,7 +275,11 @@ $env: psmodulepath (folder)
 ```
 
 ### See Also
+
 #### Concepts
+
 [Writing a custom DSC resource with MOF](authoringResourceMOF.md)
+
 #### Other Resources
+
 [Writing a Windows PowerShell Cmdlet](/powershell/scripting/developer/windows-powershell)

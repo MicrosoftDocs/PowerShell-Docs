@@ -22,18 +22,21 @@ This document explains the format and correct placement of the help topics, and 
 ## Types of Script and Function Help
 
 ### Comment-Based Help
+
 The help topic that describes a script or function can be implemented as a set of comments within the script or function.
 When writing comment-based help for a script and for functions in a script, pay careful attention to the rules for placing the comment-based help.
 The placement determines whether the `Get-Help` cmdlet associates the help topic with the script or a function.
 For more information about writing comment-based help topics, see [about_Comment_Based_Help](/powershell/module/microsoft.powershell.core/about/about_comment_based_help).
 
 ### XML-Based Command Help
+
 The help topic that describes a script or function can be implemented in an XML file that uses the command help schema.
 To associate the script or function with the XML file, use the `ExternalHelp` comment keyword followed by the path and name of the XML file.
 
 When the `ExternalHelp` comment keyword is present, it takes precedence over comment-based help, even when `Get-Help` cannot find a help file that matches the value of the `ExternalHelp` keyword.
 
 ### Online Help
+
 You can post your help topics on the Internet and then direct `Get-Help` to open the topics.
 For more information about writing comment-based help topics, see [Supporting Online Help](../module/supporting-online-help.md).
 

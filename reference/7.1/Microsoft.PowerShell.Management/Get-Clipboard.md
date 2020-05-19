@@ -11,6 +11,7 @@ title: Get-Clipboard
 # Get-Clipboard
 
 ## SYNOPSIS
+
 Gets the contents of the clipboard.
 
 [!NOTE]

@@ -12,6 +12,7 @@ title: Get-EventSubscriber
 # Get-EventSubscriber
 
 ## SYNOPSIS
+
 Gets the event subscribers in the current session.
 
 ## SYNTAX
@@ -29,6 +30,7 @@ Get-EventSubscriber [-SubscriptionId] <Int32> [-Force] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+
 The **Get-EventSubscriber** cmdlet gets the event subscribers in the current session.
 
 When you subscribe to an event by using a Register event cmdlet, an event subscriber is added to your Windows PowerShell session, and the events to which you subscribed are added to your event queue whenever they are raised.
@@ -143,6 +145,7 @@ For more information about modules, see [about_Modules](../Microsoft.PowerShell.
 ## PARAMETERS
 
 ### -Force
+
 Indicates that this cmdlet gets all event subscribers, including subscribers for events that are hidden by using the *SupportEvent* parameter of Register-ObjectEvent, Register-WmiEvent, and Register-EngineEvent.
 
 ```yaml
@@ -158,6 +161,7 @@ Accept wildcard characters: False
 ```
 
 ### -SourceIdentifier
+
 Specifies the **SourceIdentifier** property value that gets only the event subscribers.
 By default, **Get-EventSubscriber** gets all event subscribers in the session.
 Wildcards are not permitted.
@@ -176,6 +180,7 @@ Accept wildcard characters: False
 ```
 
 ### -SubscriptionId
+
 Specifies the subscription identifier that this cmdlet gets.
 By default, **Get-EventSubscriber** gets all event subscribers in the session.
 
@@ -192,16 +197,19 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### None
+
 You cannot pipe input to this cmdlet.
 
 ## OUTPUTS
 
 ### System.Management.Automation.PSEventSubscriber
+
 **Get-EventSubscriber** returns an object that represents each event subscriber.
 
 ## NOTES

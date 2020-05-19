@@ -11,6 +11,7 @@ title: Unregister-PSSessionConfiguration
 # Unregister-PSSessionConfiguration
 
 ## SYNOPSIS
+
 Deletes registered session configurations from the computer.
 
 ## SYNTAX

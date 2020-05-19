@@ -41,6 +41,7 @@ Use Tags:"PSEdition_Desktop" and Tags:"PSEdition_Core" to filters the packages o
 ![Search results for items compatible with Desktop PSEdition](media/searching-by-compatibility/searchresultswithpseditionsdesktop.PNG)
 
 ### Search for packages to find compatible editions using PowerShell
+
 You can specify tags to filter for the PowerShell edition and OS.
 You use the `Find-Package` cmdlet specifying the `-Tag` parameter to specify the edition (and OS) you are targeting.
 Like this:

@@ -12,6 +12,7 @@ title: Invoke-CimMethod
 # Invoke-CimMethod
 
 ## SYNOPSIS
+
 Invokes a method of a CIM class.
 
 ## SYNTAX

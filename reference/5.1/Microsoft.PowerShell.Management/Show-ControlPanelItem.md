@@ -11,6 +11,7 @@ title: Show-ControlPanelItem
 # Show-ControlPanelItem
 
 ## SYNOPSIS
+
 Opens control panel items.
 
 ## SYNTAX

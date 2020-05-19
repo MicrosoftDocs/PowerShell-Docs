@@ -10,6 +10,7 @@ title: Set-AuthenticodeSignature
 # Set-AuthenticodeSignature
 
 ## SYNOPSIS
+
 Adds an [Authenticode](/windows-hardware/drivers/install/authenticode) signature to a PowerShell
 script or other file.
 

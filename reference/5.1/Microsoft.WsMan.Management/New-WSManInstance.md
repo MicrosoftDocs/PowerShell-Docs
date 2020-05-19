@@ -11,6 +11,7 @@ title: New-WSManInstance
 # New-WSManInstance
 
 ## SYNOPSIS
+
 Creates a new instance of a management resource.
 
 ## SYNTAX

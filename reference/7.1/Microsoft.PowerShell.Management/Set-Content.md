@@ -10,6 +10,7 @@ title: Set-Content
 # Set-Content
 
 ## SYNOPSIS
+
 Writes new content or replaces existing content in a file.
 
 ## SYNTAX

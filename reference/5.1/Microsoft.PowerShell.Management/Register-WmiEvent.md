@@ -12,6 +12,7 @@ title: Register-WmiEvent
 # Register-WmiEvent
 
 ## SYNOPSIS
+
 Subscribes to a Windows Management Instrumentation (WMI) event.
 
 ## SYNTAX
@@ -33,6 +34,7 @@ Register-WmiEvent [-Namespace <String>] [-Credential <PSCredential>] [-ComputerN
 ```
 
 ## DESCRIPTION
+
 The **Register-WmiEvent** cmdlet subscribes to Windows Management Instrumentation (WMI) events on the local computer or on a remote computer.
 
 When the subscribed WMI event is raised, it is added to the event queue in your local session even if the event occurs on a remote computer.
@@ -101,6 +103,7 @@ To retrieve the events, run a local **Get-Event** command.
 ## PARAMETERS
 
 ### -Action
+
 Specifies commands that handle the events.
 The commands in the *Action* parameter run when an event is raised instead of sending the event to the event queue.
 Enclose the commands in braces ( { } ) to create a script block.
@@ -124,6 +127,7 @@ Accept wildcard characters: False
 ```
 
 ### -Class
+
 Specifies the event to which you are subscribing.
 Enter the WMI class that generates the events.
 A *Class* or *Query* parameter is required in every command.
@@ -141,6 +145,7 @@ Accept wildcard characters: False
 ```
 
 ### -ComputerName
+
 Specifies the name of the computer on which the command runs.
 The default is the local computer.
 
@@ -163,6 +168,7 @@ Accept wildcard characters: False
 ```
 
 ### -Credential
+
 Specifies a user account that has permission to perform this action.
 The default is the current user.
 
@@ -182,6 +188,7 @@ Accept wildcard characters: False
 ```
 
 ### -Forward
+
 Indicates that this cmdlet sends events for this subscription to the session on the local computer.
 Use this parameter when you are registering for events on a remote computer or in a remote session.
 
@@ -198,6 +205,7 @@ Accept wildcard characters: False
 ```
 
 ### -MaxTriggerCount
+
 Specifies the maximum trigger count.
 
 ```yaml
@@ -213,6 +221,7 @@ Accept wildcard characters: False
 ```
 
 ### -MessageData
+
 Specifies any additional data to be associated with this event subscription.
 The value of this parameter appears in the **MessageData** property of all events associated with this subscription.
 
@@ -229,6 +238,7 @@ Accept wildcard characters: False
 ```
 
 ### -Namespace
+
 Specifies the namespace of the WMI class.
 
 ```yaml
@@ -244,6 +254,7 @@ Accept wildcard characters: False
 ```
 
 ### -Query
+
 Specifies a query in WMI Query Language (WQL) that identifies the WMI event class, such as: `select * from __InstanceDeletionEvent`.
 
 ```yaml
@@ -259,6 +270,7 @@ Accept wildcard characters: False
 ```
 
 ### -SourceIdentifier
+
 Specifies a name that you select for the subscription.
 The name that you select must be unique in the current session.
 The default value is the GUID that Windows PowerShell assigns.
@@ -278,6 +290,7 @@ Accept wildcard characters: False
 ```
 
 ### -SupportEvent
+
 Indicates that this cmdlet hides the event subscription.
 Use this parameter when the current subscription is part of a more complex event registration mechanism and it should not be discovered independently.
 
@@ -296,6 +309,7 @@ Accept wildcard characters: False
 ```
 
 ### -Timeout
+
 Specifies how long Windows PowerShell waits for this command to finish.
 
 The default value, 0 (zero), means that there is no time-out, and it causes Windows PowerShell to wait indefinitely.
@@ -313,16 +327,19 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### None
+
 You cannot pipe objects to this cmdlet.
 
 ## OUTPUTS
 
 ### None
+
 This cmdlet does not generate any output.
 
 ## NOTES

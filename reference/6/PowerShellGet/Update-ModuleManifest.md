@@ -12,6 +12,7 @@ title: Update-ModuleManifest
 # Update-ModuleManifest
 
 ## SYNOPSIS
+
 Updates a module manifest file.
 
 ## SYNTAX

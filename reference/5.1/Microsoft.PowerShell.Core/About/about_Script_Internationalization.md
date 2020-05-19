@@ -9,6 +9,7 @@ title: about_Script_Internationalization
 # About Script Internationalization
 
 ## Short Description
+
 Describes the script internationalization features that make it easy for
 scripts to display messages and instructions to users in their user interface
 (UI) language.

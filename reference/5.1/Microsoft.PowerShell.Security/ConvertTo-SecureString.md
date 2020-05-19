@@ -12,6 +12,7 @@ title: ConvertTo-SecureString
 # ConvertTo-SecureString
 
 ## SYNOPSIS
+
 Converts encrypted standard strings to secure strings.
 It can also convert plain text to secure strings.
 It is used with ConvertFrom-SecureString and Read-Host.
@@ -37,6 +38,7 @@ ConvertTo-SecureString [-String] <String> [-Key <Byte[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+
 The **ConvertTo-SecureString** cmdlet converts encrypted standard strings into secure strings.
 It can also convert plain text to secure strings.
 It is used with ConvertFrom-SecureString and Read-Host.
@@ -116,6 +118,7 @@ To use the *AsPlainText* parameter, the *Force* parameter must also be included 
 ## PARAMETERS
 
 ### -AsPlainText
+
 Specifies a plain text string to convert to a secure string.
 The secure string cmdlets help protect confidential text.
 The text is encrypted for privacy and is deleted from computer memory after it is used.
@@ -135,6 +138,7 @@ Accept wildcard characters: False
 ```
 
 ### -Force
+
 Confirms that you understand the implications of using the *AsPlainText* parameter and still want to use it.
 
 ```yaml
@@ -150,6 +154,7 @@ Accept wildcard characters: False
 ```
 
 ### -Key
+
 Specifies the encryption key to use when converting a secure string into an encrypted standard string.
 Valid key lengths are 16, 24, and 32 bytes.
 
@@ -166,6 +171,7 @@ Accept wildcard characters: False
 ```
 
 ### -SecureKey
+
 Specifies the encryption key to use when converting a secure string into an encrypted standard string.
 The key must be provided in the format of a secure string.
 The secure string is converted to a byte array before being used as the key.
@@ -184,6 +190,7 @@ Accept wildcard characters: False
 ```
 
 ### -String
+
 Specifies the string to convert to a secure string.
 
 ```yaml
@@ -199,16 +206,19 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### System.String
+
 You can pipe a standard encrypted string to **ConvertTo-SecureString**.
 
 ## OUTPUTS
 
 ### System.Security.SecureString
+
 ConvertTo-SecureString returns a **SecureString** object.
 
 ## NOTES

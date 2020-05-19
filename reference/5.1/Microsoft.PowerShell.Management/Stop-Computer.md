@@ -12,6 +12,7 @@ title: Stop-Computer
 # Stop-Computer
 
 ## SYNOPSIS
+
 Stops (shuts down) local and remote computers.
 
 ## SYNTAX

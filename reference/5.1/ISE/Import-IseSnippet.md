@@ -10,6 +10,7 @@ title: Import-IseSnippet
 # Import-IseSnippet
 
 ## SYNOPSIS
+
 Imports ISE snippets into the current session
 
 ## SYNTAX

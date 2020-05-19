@@ -11,6 +11,7 @@ title: Measure-Command
 # Measure-Command
 
 ## SYNOPSIS
+
 Measures the time it takes to run script blocks and cmdlets.
 
 ## SYNTAX

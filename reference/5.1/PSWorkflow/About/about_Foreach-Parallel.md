@@ -9,6 +9,7 @@ title: about_Foreach Parallel
 # About Foreach-Parallel
 
 ## SHORT DESCRIPTION
+
 Describes the `ForEach -Parallel` language construct in Windows PowerShell
 Workflow.
 

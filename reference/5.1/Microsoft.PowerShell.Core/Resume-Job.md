@@ -12,6 +12,7 @@ title: Resume-Job
 # Resume-Job
 
 ## SYNOPSIS
+
 Restarts a suspended job.
 
 ## SYNTAX
@@ -53,6 +54,7 @@ Resume-Job [-Wait] [-Filter] <Hashtable> [-WhatIf] [-Confirm] [<CommonParameters
 ```
 
 ## DESCRIPTION
+
 The **Resume-Job** cmdlet resumes a workflow job that was suspended, such as by using the Suspend-Job cmdlet or the about_Suspend-Workflow activity.
 When a workflow job resumes, the job engine reconstructs the state, metadata, and output from saved resources, such as checkpoints.
 The job is restarted without any loss of state or data.
@@ -182,6 +184,7 @@ For information about the Suspend-Workflow, see about_Suspend-Workflow.
 ## PARAMETERS
 
 ### -Filter
+
 Specifies a hash table of conditions.
 This cmdlet resumes jobs that satisfy all of the conditions in the hash table.
 Enter a hash table where the keys are job properties and the values are job property values.
@@ -199,6 +202,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
+
 Specifies an array of IDs for jobs that this cmdlet resumes.
 
 The ID is an integer that uniquely identifies the job in the current session.
@@ -219,6 +223,7 @@ Accept wildcard characters: False
 ```
 
 ### -InstanceId
+
 Specifies an array of instance IDs of jobs that this cmdlet resumes.
 The default is all jobs.
 
@@ -238,6 +243,7 @@ Accept wildcard characters: False
 ```
 
 ### -Job
+
 Specifies the jobs to be resumed.
 Enter a variable that contains the jobs or a command that gets the jobs.
 You can also pipe jobs to the **Resume-Job** cmdlet.
@@ -255,6 +261,7 @@ Accept wildcard characters: False
 ```
 
 ### -Name
+
 Specifies an array of friendly names of jobs that this cmdlet resumes.
 Enter one or more job names.
 Wildcard characters are permitted.
@@ -272,6 +279,7 @@ Accept wildcard characters: False
 ```
 
 ### -State
+
 Specifies the state of jobs to resume.
 The acceptable values for this parameter are:
 
@@ -304,6 +312,7 @@ Accept wildcard characters: False
 ```
 
 ### -Wait
+
 Indicates that this cmdlet suppresses the command prompt until all job results are restarted.
 By default, this cmdlet immediately returns the available results.
 
@@ -320,6 +329,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
+
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
@@ -335,6 +345,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
+
 Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
@@ -351,17 +362,20 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### System.Management.Automation.Job
+
 You can pipe all types of jobs to this cmdlet.
 If **Resume-Job** gets a job of an unsupported type, it returns a terminating error.
 
 ## OUTPUTS
 
 ### None, System.Management.Automation.Job
+
 This cmdlet returns the jobs that it tries to resume, if you use the *PassThru* parameter.
 Otherwise, this cmdlet does not generate any output.
 

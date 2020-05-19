@@ -12,6 +12,7 @@ title: Get-LocalUser
 # Get-LocalUser
 
 ## SYNOPSIS
+
 Gets local user accounts.
 
 ## SYNTAX

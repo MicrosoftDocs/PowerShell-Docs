@@ -12,6 +12,7 @@ title: Undo-Transaction
 # Undo-Transaction
 
 ## SYNOPSIS
+
 Rolls back the active transaction.
 
 ## SYNTAX
@@ -21,6 +22,7 @@ Undo-Transaction [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+
 The **Undo-Transaction** cmdlet rolls back the active transaction.
 When you roll back a transaction, the changes that were made by the commands in the transaction are discarded and the data is restored to its original form.
 
@@ -110,6 +112,7 @@ The results show that the transaction is rolled back, and that the subscriber co
 ## PARAMETERS
 
 ### -Confirm
+
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
@@ -125,6 +128,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
+
 Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
@@ -141,16 +145,19 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### None
+
 You cannot pipe input to this cmdlet.
 
 ## OUTPUTS
 
 ### None
+
 This cmdlet does not return any output.
 
 ## NOTES

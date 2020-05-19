@@ -12,6 +12,7 @@ title: Disable-ComputerRestore
 # Disable-ComputerRestore
 
 ## SYNOPSIS
+
 Disables the System Restore feature on the specified file system drive.
 
 ## SYNTAX
@@ -21,6 +22,7 @@ Disable-ComputerRestore [-Drive] <String[]> [-WhatIf] [-Confirm] [<CommonParamet
 ```
 
 ## DESCRIPTION
+
 The **Disable-ComputerRestore** cmdlet turns off the System Restore feature on one or more file system drives.
 As a result, attempts to restore the computer do not affect the specified drive.
 
@@ -53,6 +55,7 @@ The command uses the *Drive* parameter, but it omits the Drive parameter name.
 ## PARAMETERS
 
 ### -Drive
+
 Specifies the file system drives.
 Enter one or more file system drive letters, each followed by a colon and a backslash and enclosed in quotation marks, such as C:\ or D:\.
 This parameter is required.
@@ -74,6 +77,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
+
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
@@ -89,6 +93,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
+
 Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
@@ -105,16 +110,19 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### None
+
 You cannot pipe input to this cmdlet.
 
 ## OUTPUTS
 
 ### None
+
 This cmdlet does not generate any output.
 
 ## NOTES

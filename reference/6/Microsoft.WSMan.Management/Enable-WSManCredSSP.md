@@ -12,6 +12,7 @@ title: Enable-WSManCredSSP
 # Enable-WSManCredSSP
 
 ## SYNOPSIS
+
 Enables Credential Security Support Provider (CredSSP) authentication on a computer.
 
 ## SYNTAX

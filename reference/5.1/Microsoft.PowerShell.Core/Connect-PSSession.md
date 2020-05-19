@@ -11,6 +11,7 @@ title: Connect-PSSession
 # Connect-PSSession
 
 ## SYNOPSIS
+
 Reconnects to disconnected sessions.
 
 ## SYNTAX

@@ -12,6 +12,7 @@ title: Test-DscConfiguration
 # Test-DscConfiguration
 
 ## SYNOPSIS
+
 Tests whether the actual configuration on the nodes matches the desired configuration.
 
 ## SYNTAX
@@ -59,6 +60,7 @@ Test-DscConfiguration [-ThrottleLimit <Int32>] -CimSession <CimSession[]> [-AsJo
 ```
 
 ## DESCRIPTION
+
 The **Test-DscConfiguration** cmdlet tests whether the actual configuration on the nodes matches the desired configuration.
 Specify which computers for which you want to test configurations by using computer names or Common Information Model (CIM) sessions.
 If you do not specify a target computer, the cmdlet tests configuration of the local computer.
@@ -121,6 +123,7 @@ This command tests a configuration defined in a file against a set of computers 
 ## PARAMETERS
 
 ### -AsJob
+
 Indicates that this cmdlet runs the command as a background job.
 
 If you specify the *AsJob* parameter, the command returns an object that represents the job, and then displays the command prompt.
@@ -147,6 +150,7 @@ Accept wildcard characters: False
 ```
 
 ### -CimSession
+
 Runs the cmdlet in a remote session or on a remote computer.
 Enter a computer name or a session object, such as the output of a [New-CimSession](https://docs.microsoft.com/powershell/module/cimcmdlets/new-cimsession) or [Get-CimSession](https://docs.microsoft.com/powershell/module/cimcmdlets/get-cimsession) cmdlet.
 The default is the current session on the local computer.
@@ -164,6 +168,7 @@ Accept wildcard characters: False
 ```
 
 ### -ComputerName
+
 Specifies an array of computer names on which this cmdlet tests the configuration.
 The cmdlet tests the configuration document in the location specified by the *Path* parameter to these computers.
 
@@ -180,6 +185,7 @@ Accept wildcard characters: False
 ```
 
 ### -Credential
+
 Specifies a user name and password, as a **PSCredential** object, for the target computer.
 To obtain a **PSCredential** object, use the Get-Credential cmdlet.
 For more information, type `Get-Help Get-Credential`.
@@ -197,6 +203,7 @@ Accept wildcard characters: False
 ```
 
 ### -Detailed
+
 Indicates that this cmdlet returns a detailed result of comparing the configuration document with the desired state of the nodes.
 The result includes information such as overall state, resources that are in the desired state, resources that are not in desired state, and computer name.
 
@@ -213,6 +220,7 @@ Accept wildcard characters: False
 ```
 
 ### -Path
+
 Specifies the path of a folder that contains configuration document files.
 The cmdlet tests the configuration against the desired state of computers specified by the *ComputerName* or *CimSession* parameter.
 
@@ -229,6 +237,7 @@ Accept wildcard characters: False
 ```
 
 ### -ReferenceConfiguration
+
 Specifies the path of the configuration document file.
 This cmdlet tests the configuration against the actual state of computers specified by the *ComputerName* or *CimSession* parameter.
 
@@ -245,6 +254,7 @@ Accept wildcard characters: False
 ```
 
 ### -ThrottleLimit
+
 Specifies the maximum number of concurrent operations that can be established to run the cmdlet.
 If this parameter is omitted or a value of `0` is entered, then Windows PowerShell calculates an optimum throttle limit for the cmdlet based on the number of CIM cmdlets that are running on the computer.
 The throttle limit applies only to the current cmdlet, not to the session or to the computer.
@@ -262,6 +272,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS

@@ -22,6 +22,7 @@ The following table lists recommended names and functionality for parameters tha
 |**ShortName**<br>Data type: SwitchParameter|Implement this parameter so that short names are supported when the parameter is specified.|
 |**Width**<br>Data type: Int32|Implement this parameter so that the user can specify the width of the output device.|
 |**Wrap**<br>Data type: SwitchParameter|Implement this parameter so that text wrapping is supported when the parameter is specified.|
+
 ## See Also
 
 [Cmdlet Parameters](./cmdlet-parameters.md)

@@ -11,6 +11,7 @@ title: Get-WinEvent
 # Get-WinEvent
 
 ## SYNOPSIS
+
 Gets events from event logs and event tracing log files on local and remote computers.
 
 ## SYNTAX

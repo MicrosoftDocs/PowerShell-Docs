@@ -10,6 +10,7 @@ title: Invoke-Item
 # Invoke-Item
 
 ## SYNOPSIS
+
 Performs the default action on the specified item.
 
 ## SYNTAX

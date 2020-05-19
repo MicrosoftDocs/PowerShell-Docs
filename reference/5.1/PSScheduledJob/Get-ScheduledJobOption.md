@@ -12,6 +12,7 @@ title: Get-ScheduledJobOption
 # Get-ScheduledJobOption
 
 ## SYNOPSIS
+
 Gets the job options of scheduled jobs.
 
 ## SYNTAX
@@ -35,6 +36,7 @@ Get-ScheduledJobOption [-Name] <String> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+
 The **Get-ScheduledJobOption** cmdlet gets the job options of scheduled jobs.
 You can use this command to examine the job options or to pipe the job options to other cmdlets.
 
@@ -173,6 +175,7 @@ The command saves the options in the $O variable.
 ## PARAMETERS
 
 ### -Id
+
 Specifies the identification number of a scheduled job.
 **Get-ScheduledJobOption** gets the job options of the specified scheduled job.
 
@@ -191,6 +194,7 @@ Accept wildcard characters: False
 ```
 
 ### -InputObject
+
 Specifies a scheduled job.
 Enter a variable that contains a **ScheduledJob** object or type a command or expression that gets a **ScheduledJob** object, such as a Get-ScheduledJob command.
 You can also pipe a **ScheduledJob** object to **Get-ScheduledJobOption**.
@@ -208,6 +212,7 @@ Accept wildcard characters: False
 ```
 
 ### -Name
+
 Specifies the names of scheduled jobs.
 **Get-ScheduledJobOption** gets the job options of the specified scheduled job.
 Wildcards are supported.
@@ -227,11 +232,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### Microsoft.PowerShell.ScheduledJob.ScheduledJobDefinition
+
 You can pipe a scheduled job from Get-ScheduledJob to **Get-ScheduledJobOption**.
 
 ## OUTPUTS

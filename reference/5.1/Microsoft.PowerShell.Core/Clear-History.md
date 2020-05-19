@@ -12,6 +12,7 @@ title: Clear-History
 # Clear-History
 
 ## SYNOPSIS
+
 Deletes entries from the PowerShell session command history.
 
 ## SYNTAX

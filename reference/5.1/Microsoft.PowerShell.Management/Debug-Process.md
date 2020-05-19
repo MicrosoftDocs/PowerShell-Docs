@@ -12,6 +12,7 @@ title: Debug-Process
 # Debug-Process
 
 ## SYNOPSIS
+
 Debugs one or more processes running on the local computer.
 
 ## SYNTAX
@@ -35,6 +36,7 @@ Debug-Process -InputObject <Process[]> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+
 The **Debug-Process** cmdlet attaches a debugger to one or more running processes on a local computer.
 You can specify the processes by their process name or process ID (PID), or you can pipe process objects to this cmdlet.
 
@@ -127,6 +129,7 @@ The second command uses the *InputObject* parameter of the **Debug-Process** cmd
 ## PARAMETERS
 
 ### -Id
+
 Specifies the process IDs of the processes to be debugged.
 The *Id* parameter name is optional.
 
@@ -145,6 +148,7 @@ Accept wildcard characters: False
 ```
 
 ### -InputObject
+
 Specifies the process objects that represent processes to be debugged.
 Enter a variable that contains the process objects or a command that gets the process objects, such as the Get-Process cmdlet.
 You can also pipe process objects to this cmdlet.
@@ -162,6 +166,7 @@ Accept wildcard characters: False
 ```
 
 ### -Name
+
 Specifies the names of the processes to be debugged.
 If there is more than one process with the same name, this cmdlet attaches a debugger to all processes with that name.
 The *Name* parameter is optional.
@@ -179,6 +184,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
+
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
@@ -194,6 +200,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
+
 Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
@@ -210,16 +217,19 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### System.Int32, System.Diagnostics.Process, System.String
+
 You can pipe a process ID (Int32), a process object (System.Diagnostics.Process), or a process name (String) to this cmdlet.
 
 ## OUTPUTS
 
 ### None
+
 This cmdlet does not generate any output.
 
 ## NOTES

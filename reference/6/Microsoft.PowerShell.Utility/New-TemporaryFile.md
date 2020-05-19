@@ -11,6 +11,7 @@ title: New-TemporaryFile
 # New-TemporaryFile
 
 ## SYNOPSIS
+
 Creates a temporary file.
 
 ## SYNTAX

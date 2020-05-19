@@ -9,6 +9,7 @@ title: about_Parsing
 # About Parsing
 
 ## SHORT DESCRIPTION
+
 Describes how PowerShell parses commands.
 
 ## LONG DESCRIPTION

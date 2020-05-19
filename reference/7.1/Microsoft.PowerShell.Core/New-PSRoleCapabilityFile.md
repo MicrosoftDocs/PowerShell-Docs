@@ -11,6 +11,7 @@ title: New-PSRoleCapabilityFile
 # New-PSRoleCapabilityFile
 
 ## SYNOPSIS
+
 Creates a file that defines a set of capabilities to be exposed through a session configuration.
 
 ## SYNTAX

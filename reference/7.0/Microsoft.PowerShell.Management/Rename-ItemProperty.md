@@ -10,6 +10,7 @@ title: Rename-ItemProperty
 # Rename-ItemProperty
 
 ## SYNOPSIS
+
 Renames a property of an item.
 
 ## SYNTAX

@@ -12,6 +12,7 @@ title: Group-Object
 # Group-Object
 
 ## SYNOPSIS
+
 Groups objects that contain the same value for specified properties.
 
 ## SYNTAX

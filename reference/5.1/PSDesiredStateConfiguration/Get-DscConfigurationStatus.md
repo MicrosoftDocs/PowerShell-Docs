@@ -12,6 +12,7 @@ title: Get-DscConfigurationStatus
 # Get-DscConfigurationStatus
 
 ## SYNOPSIS
+
 Retrieves data about completed configuration runs.
 
 ## SYNTAX
@@ -22,6 +23,7 @@ Get-DscConfigurationStatus [-All] [-CimSession <CimSession[]>] [-ThrottleLimit <
 ```
 
 ## DESCRIPTION
+
 The **Get-DscConfigurationStatus** cmdlet retrieves detailed information about completed configuration runs on the system.
 By default, it returns the information about the last configuration run.
 This cmdlet is useful for finding historical information about configuration runs, such as when the configurations were run, the status of the runs, the number of resources in the configurations, and which resources succeeded or failed.
@@ -56,6 +58,7 @@ This uses the WSMan transport to connect to the remote computer and requires tha
 ## PARAMETERS
 
 ### -All
+
 Indicates that this cmdlet retrieves information about all the configuration runs on the computer, including the configuration application and the consistency check.
 
 ```yaml
@@ -71,6 +74,7 @@ Accept wildcard characters: False
 ```
 
 ### -AsJob
+
 Indicates that this cmdlet runs the command as a background job.
 
 ```yaml
@@ -86,6 +90,7 @@ Accept wildcard characters: False
 ```
 
 ### -CimSession
+
 Runs the cmdlet in a remote session or on a remote computer.
 Enter a computer name or a session object, such as the output of a [New-CimSession](https://docs.microsoft.com/powershell/module/cimcmdlets/new-cimsession) or [Get-CimSession](https://docs.microsoft.com/powershell/module/cimcmdlets/get-cimsession) cmdlet.
 The default is the current session on the local computer.
@@ -103,6 +108,7 @@ Accept wildcard characters: False
 ```
 
 ### -ThrottleLimit
+
 Specifies the maximum number of concurrent operations that can be established to run the cmdlet.
 If this parameter is omitted or a value of `0` is entered, then Windows PowerShell calculates an optimum throttle limit for the cmdlet based on the number of CIM cmdlets that are running on the computer.
 The throttle limit applies only to the current cmdlet, not to the session or to the computer.
@@ -120,6 +126,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS

@@ -11,6 +11,7 @@ title: Out-Null
 # Out-Null
 
 ## SYNOPSIS
+
 Hides the output instead of sending it down the pipeline or displaying it.
 
 ## SYNTAX

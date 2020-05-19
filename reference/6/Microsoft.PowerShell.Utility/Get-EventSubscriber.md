@@ -11,6 +11,7 @@ title: Get-EventSubscriber
 # Get-EventSubscriber
 
 ## SYNOPSIS
+
 Gets the event subscribers in the current session.
 
 ## SYNTAX

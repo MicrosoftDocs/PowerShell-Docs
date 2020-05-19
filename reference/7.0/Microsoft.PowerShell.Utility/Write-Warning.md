@@ -12,6 +12,7 @@ title: Write-Warning
 # Write-Warning
 
 ## SYNOPSIS
+
 Writes a warning message.
 
 ## SYNTAX
@@ -21,6 +22,7 @@ Write-Warning [-Message] <String> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+
 The **Write-Warning** cmdlet writes a warning message to the PowerShell host.
 The response to the warning depends on the value of the user's $WarningPreference variable and the use of the *WarningAction* common parameter.
 
@@ -93,6 +95,7 @@ For more information about the *WarningAction* common parameter, see about_Commo
 ## PARAMETERS
 
 ### -Message
+
 Specifies the warning message.
 
 ```yaml
@@ -108,16 +111,19 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### System.String
+
 You can pipe a string that contains the warning to **Write-Warning**.
 
 ## OUTPUTS
 
 ### None
+
 **Write-Warning** writes only to the warning stream.
 It does not generate any other output.
 

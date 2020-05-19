@@ -11,6 +11,7 @@ title: Get-InstalledScript
 # Get-InstalledScript
 
 ## SYNOPSIS
+
 Gets an installed script.
 
 ## SYNTAX

@@ -10,6 +10,7 @@ title: about_Classes
 # About Classes
 
 ## Short description
+
 Describes how you can use classes to create your own custom types.
 
 ## Long description

@@ -12,6 +12,7 @@ title: Get-CimAssociatedInstance
 # Get-CimAssociatedInstance
 
 ## SYNOPSIS
+
 Retrieves the CIM instances that are connected to a specific CIM instance by an association.
 
 ## SYNTAX

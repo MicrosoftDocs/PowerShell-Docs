@@ -12,6 +12,7 @@ title: Limit-EventLog
 # Limit-EventLog
 
 ## SYNOPSIS
+
 Sets the event log properties that limit the size of the event log and the age of its entries.
 
 ## SYNTAX
@@ -22,6 +23,7 @@ Limit-EventLog [-LogName] <String[]> [-ComputerName <String[]>] [-RetentionDays 
 ```
 
 ## DESCRIPTION
+
 The **Limit-EventLog** cmdlet sets the maximum size of a classic event log, how long each event must be retained, and what happens when the log reaches its maximum size.
 You can use it to limit the event logs on local or remote computers.
 
@@ -76,6 +78,7 @@ The third command displays the results.
 ## PARAMETERS
 
 ### -ComputerName
+
 Specifies remote computers.
 The default is the local computer.
 
@@ -98,6 +101,7 @@ Accept wildcard characters: False
 ```
 
 ### -LogName
+
 Specifies the event logs.
 Enter the log name (the value of the Log property; not the LogDisplayName) of one or more event logs, separated by commas.
 Wildcard characters are not permitted.
@@ -116,6 +120,7 @@ Accept wildcard characters: False
 ```
 
 ### -MaximumSize
+
 Specifies the maximum size of the event logs in bytes.
 Enter a value between 64 kilobytes (KB) and 4 gigabytes (GB).
 The value must be divisible by 64 KB (65536).
@@ -135,6 +140,7 @@ Accept wildcard characters: False
 ```
 
 ### -OverflowAction
+
 Specifies what happens when the event log reaches its maximum size.
 
 The acceptable values for this parameter are:
@@ -159,6 +165,7 @@ Accept wildcard characters: False
 ```
 
 ### -RetentionDays
+
 Specifies the minimum number of days that an event must remain in the event log.
 
 This parameter specifies the value of the **MinimumRetentionDays** property of the **System.Diagnostics.EventLog** object that represents a classic event log.
@@ -176,6 +183,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
+
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
@@ -191,6 +199,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
+
 Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
@@ -207,16 +216,19 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### None
+
 You cannot pipe input to this cmdlet.
 
 ## OUTPUTS
 
 ### None
+
 This cmdlet does not generate any output.
 
 ## NOTES

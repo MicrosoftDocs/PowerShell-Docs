@@ -11,6 +11,7 @@ title: Set-TraceSource
 # Set-TraceSource
 
 ## SYNOPSIS
+
 Configures, starts, and stops a trace of PowerShell components.
 
 ## SYNTAX

@@ -12,6 +12,7 @@ title: Clear-RecycleBin
 # Clear-RecycleBin
 
 ## SYNOPSIS
+
 Clears the contents of a recycle bin.
 
 ## SYNTAX

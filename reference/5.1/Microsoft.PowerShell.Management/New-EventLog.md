@@ -12,6 +12,7 @@ title: New-EventLog
 # New-EventLog
 
 ## SYNOPSIS
+
 Creates a new event log and a new event source on a local or remote computer.
 
 ## SYNTAX

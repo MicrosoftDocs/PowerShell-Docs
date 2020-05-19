@@ -5,6 +5,7 @@ ms.date: 02/11/2020
 # About parameter sets
 
 ## SHORT DESCRIPTION
+
 Describes how to define and use parameter sets in advanced functions.
 
 ## LONG DESCRIPTION

@@ -12,6 +12,7 @@ title: New-Variable
 # New-Variable
 
 ## SYNOPSIS
+
 Creates a new variable.
 
 ## SYNTAX
@@ -23,6 +24,7 @@ New-Variable [-Name] <String> [[-Value] <Object>] [-Description <String>] [-Opti
 ```
 
 ## DESCRIPTION
+
 The **New-Variable** cmdlet creates a new variable in Windows PowerShell.
 You can assign a value to the variable while creating it or assign or change the value after it is created.
 
@@ -135,6 +137,7 @@ The variables can be accessed using the **Get-Variable** cmdlet or directly by d
 ## PARAMETERS
 
 ### -Description
+
 Specifies a description of the variable.
 
 ```yaml
@@ -150,6 +153,7 @@ Accept wildcard characters: False
 ```
 
 ### -Force
+
 Indicates that the cmdlet creates a variable with the same name as an existing read-only variable.
 
 By default, you can overwrite a variable unless the variable has an option value of ReadOnly or Constant.
@@ -168,6 +172,7 @@ Accept wildcard characters: False
 ```
 
 ### -Name
+
 Specifies a name for the new variable.
 
 ```yaml
@@ -183,6 +188,7 @@ Accept wildcard characters: False
 ```
 
 ### -Option
+
 Specifies the value of the **Options** property of the variable.The acceptable values for this parameter are:
 
 - None.
@@ -216,6 +222,7 @@ Accept wildcard characters: False
 ```
 
 ### -PassThru
+
 Returns an object representing the item with which you are working.
 By default, this cmdlet does not generate any output.
 
@@ -232,6 +239,7 @@ Accept wildcard characters: False
 ```
 
 ### -Scope
+
 Specifies the scope of the new variable.
 The acceptable values for this parameter are:
 
@@ -264,6 +272,7 @@ Accept wildcard characters: False
 ```
 
 ### -Value
+
 Specifies the initial value of the variable.
 
 ```yaml
@@ -279,6 +288,7 @@ Accept wildcard characters: False
 ```
 
 ### -Visibility
+
 Determines whether the variable is visible outside of the session in which it was created.
 This parameter is designed for  use in scripts and commands that will be delivered to other users.
 The acceptable values for this parameter are:
@@ -307,6 +317,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
+
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
@@ -322,6 +333,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
+
 Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
@@ -338,16 +350,19 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### System.Object
+
 You can pipe a value to **New-Variable**.
 
 ## OUTPUTS
 
 ### None or System.Management.Automation.PSVariable
+
 When you use the *PassThru* parameter, **New-Variable** generates a **System.Management.Automation.PSVariable** object representing the new variable.
 Otherwise, this cmdlet does not generate any output.
 

@@ -10,6 +10,7 @@ title: Get-Verb
 # Get-Verb
 
 ## SYNOPSIS
+
 Gets approved PowerShell verbs.
 
 ## SYNTAX

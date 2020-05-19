@@ -12,6 +12,7 @@ title: Get-LocalGroupMember
 # Get-LocalGroupMember
 
 ## SYNOPSIS
+
 Gets members from a local group.
 
 ## SYNTAX
@@ -35,6 +36,7 @@ Get-LocalGroupMember [[-Member] <String>] [-SID] <SecurityIdentifier> [<CommonPa
 ```
 
 ## DESCRIPTION
+
 The **Get-LocalGroupMember** cmdlet gets members from a local group.
 
 > [!NOTE]
@@ -58,6 +60,7 @@ This command gets all the members of the local Administrators group.
 ## PARAMETERS
 
 ### -Group
+
 Specifies the security group from which this cmdlet gets members.
 
 ```yaml
@@ -73,6 +76,7 @@ Accept wildcard characters: False
 ```
 
 ### -Member
+
 Specifies a user or group that this cmdlet gets from a security group.
 You can specify users or groups by name or security ID (SID).
 Specify SID strings in S-R-I-S-S .
@@ -94,6 +98,7 @@ Accept wildcard characters: False
 ```
 
 ### -Name
+
 Specifies the name of the security group from which this cmdlet gets members.
 
 ```yaml
@@ -109,6 +114,7 @@ Accept wildcard characters: False
 ```
 
 ### -SID
+
 Specifies the security ID of the security group from which this cmdlet gets members.
 
 ```yaml
@@ -124,16 +130,19 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### System.Management.Automation.SecurityAccountsManager.LocalGroup, System.String, System.Security.Principal.SecurityIdentifier
+
 You can pipe a local group, a string, or a SID to this cmdlet.
 
 ## OUTPUTS
 
 ### Microsoft.SecurityAccountsManager.LocalPrincipal
+
 This cmdlet returns local principals.
 
 ## NOTES

@@ -12,6 +12,7 @@ title: Remove-Event
 # Remove-Event
 
 ## SYNOPSIS
+
 Deletes events from the event queue.
 
 ## SYNTAX
@@ -29,6 +30,7 @@ Remove-Event [-EventIdentifier] <Int32> [-WhatIf] [-Confirm] [<CommonParameters>
 ```
 
 ## DESCRIPTION
+
 The **Remove-Event** cmdlet deletes events from the event queue in the current session.
 
 This cmdlet deletes only the events currently in the queue.
@@ -63,6 +65,7 @@ This command deletes all events from the event queue.
 ## PARAMETERS
 
 ### -EventIdentifier
+
 Specifies the event identifier for which the cmdlet deletes.
 An *EventIdentifier* or *SourceIdentifier* parameter is required in every command.
 
@@ -79,6 +82,7 @@ Accept wildcard characters: False
 ```
 
 ### -SourceIdentifier
+
 Specifies the source identifier for which this cmdlet deletes events from.
 Wildcards are not permitted.
 An *EventIdentifier* or *SourceIdentifier* parameter is required in every command.
@@ -96,6 +100,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
+
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
@@ -111,6 +116,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
+
 Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
@@ -127,16 +133,19 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### System.Management.Automation.PSEventArgs
+
 You can pipe events from Get-Event to **Remove-Event**.
 
 ## OUTPUTS
 
 ### None
+
 The cmdlet does not generate any output.
 
 ## NOTES

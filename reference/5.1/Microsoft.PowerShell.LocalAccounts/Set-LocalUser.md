@@ -12,6 +12,7 @@ title: Set-LocalUser
 # Set-LocalUser
 
 ## SYNOPSIS
+
 Modifies a local user account.
 
 ## SYNTAX
@@ -41,6 +42,7 @@ Set-LocalUser [-AccountExpires <DateTime>] [-AccountNeverExpires] [-Description 
 ```
 
 ## DESCRIPTION
+
 The **Set-LocalUser** cmdlet modifies a local user account.
 This cmdlet can reset the password of a local user account.
 
@@ -77,6 +79,7 @@ The third command sets the new password on the user account stored in $UserAccou
 ## PARAMETERS
 
 ### -AccountExpires
+
 Specifies when the user account expires.
 To obtain a **DateTime** object, use the Get-Date cmdlet.
 
@@ -95,6 +98,7 @@ Accept wildcard characters: False
 ```
 
 ### -AccountNeverExpires
+
 Indicates that the account does not expire.
 
 ```yaml
@@ -110,6 +114,7 @@ Accept wildcard characters: False
 ```
 
 ### -Description
+
 Specifies a comment for the user account.
 The maximum length is 48 characters.
 
@@ -126,6 +131,7 @@ Accept wildcard characters: False
 ```
 
 ### -FullName
+
 Specifies the full name for the user account.
 The full name differs from the user name of the user account.
 
@@ -142,6 +148,7 @@ Accept wildcard characters: False
 ```
 
 ### -InputObject
+
 Specifies the user account that this cmdlet changes.
 To obtain a user account, use the Get-LocalUser cmdlet.
 
@@ -158,6 +165,7 @@ Accept wildcard characters: False
 ```
 
 ### -Name
+
 Specifies the name of the user account that this cmdlet changes.
 
 ```yaml
@@ -173,6 +181,7 @@ Accept wildcard characters: False
 ```
 
 ### -Password
+
 Specifies a password for the user account.
 If the user account is connected to a Microsoft account, do not set a password.
 
@@ -193,6 +202,7 @@ Accept wildcard characters: False
 ```
 
 ### -PasswordNeverExpires
+
 Indicates whether the password expires.
 
 ```yaml
@@ -208,6 +218,7 @@ Accept wildcard characters: False
 ```
 
 ### -SID
+
 Specifies the security ID (SID) of the user account that this cmdlet changes.
 
 ```yaml
@@ -223,6 +234,7 @@ Accept wildcard characters: False
 ```
 
 ### -UserMayChangePassword
+
 Indicates that the user can change the password on the user account.
 
 ```yaml
@@ -238,6 +250,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
+
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
@@ -253,6 +266,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
+
 Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
@@ -269,16 +283,19 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### System.Management.Automation.SecurityAccountsManager.LocalUser, System.String, System.Security.Principal.SecurityIdentifier
+
 You can pipe a local user, a string, or a SID to this cmdlet.
 
 ## OUTPUTS
 
 ### None
+
 This cmdlet does not generate any output.
 
 ## NOTES

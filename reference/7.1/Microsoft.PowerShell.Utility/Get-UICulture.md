@@ -11,6 +11,7 @@ title: Get-UICulture
 # Get-UICulture
 
 ## SYNOPSIS
+
 Gets the current UI culture settings in the operating system.
 
 ## SYNTAX

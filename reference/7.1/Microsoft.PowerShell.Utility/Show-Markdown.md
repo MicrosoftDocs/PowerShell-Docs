@@ -12,6 +12,7 @@ title: Show-Markdown
 # Show-Markdown
 
 ## SYNOPSIS
+
 Shows a Markdown file or string in the console in a friendly way using VT100 escape sequences or in
 a browser using HTML.
 

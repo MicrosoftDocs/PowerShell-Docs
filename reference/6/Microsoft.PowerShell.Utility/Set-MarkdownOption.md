@@ -8,6 +8,7 @@ schema: 2.0.0
 # Set-MarkdownOption
 
 ## SYNOPSIS
+
 Sets the colors and styles used for rendering Markdown content in the console.
 
 ## SYNTAX

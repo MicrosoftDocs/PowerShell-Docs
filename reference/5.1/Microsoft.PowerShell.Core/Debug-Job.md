@@ -12,6 +12,7 @@ title: Debug-Job
 # Debug-Job
 
 ## SYNOPSIS
+
 Debugs a running background, remote, or Windows PowerShell Workflow job.
 
 ## SYNTAX
@@ -41,6 +42,7 @@ Debug-Job [-InstanceId] <Guid> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+
 The **Debug-Job** cmdlet lets you debug scripts that are running within jobs.
 The cmdlet is designed to debug Windows PowerShell Workflow jobs, background jobs, and jobs running in remote sessions.
 **Debug-Job** accepts a running job object, name, ID, or instance ID as input, and starts a debugging session on the script it is running.
@@ -88,6 +90,7 @@ This command breaks into a running job with an ID of 3.
 ## PARAMETERS
 
 ### -Id
+
 Specifies the ID number of a running job.
 To get the ID number of a job, run the Get-Job cmdlet.
 
@@ -104,6 +107,7 @@ Accept wildcard characters: False
 ```
 
 ### -InstanceId
+
 Specifies the instance ID GUID of a running job.
 To get the *InstanceId* of a job, run the **Get-Job** cmdlet, piping the results into a **Format-*** cmdlet, as shown in the following example:
 
@@ -122,6 +126,7 @@ Accept wildcard characters: False
 ```
 
 ### -Job
+
 Specifies a running job object.
 The simplest way to use this parameter is to save the results of a **Get-Job** command that returns the running job that you want to debug in a variable, and then specify the variable as the value of this parameter.
 
@@ -138,6 +143,7 @@ Accept wildcard characters: False
 ```
 
 ### -Name
+
 Specifies a job by the friendly name of the job.
 When you start a job, you can specify a job name by adding the *JobName* parameter, in cmdlets such as Invoke-Command and Start-Job.
 
@@ -154,6 +160,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
+
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
@@ -169,6 +176,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
+
 Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
@@ -185,6 +193,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS

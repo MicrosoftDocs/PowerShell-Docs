@@ -11,6 +11,7 @@ title: Get-Service
 # Get-Service
 
 ## SYNOPSIS
+
 Gets the services on a local or remote computer.
 
 ## SYNTAX

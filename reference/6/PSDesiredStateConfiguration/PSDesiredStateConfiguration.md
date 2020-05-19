@@ -12,12 +12,15 @@ title: PSDesiredStateConfiguration
 # PSDesiredStateConfiguration Module
 
 ## Description
+
 This module contains cmdlets that designed to work with DSC Resources.
 
 ## PSDesiredStateConfiguration Cmdlets
 
 ### [Get-DscResource](Get-DscResource.md)
+
 Gets Desired State Configuration (DSC) resources present on the computer.
 
 ### [New-DSCCheckSum](New-DSCCheckSum.md)
+
 Creates checksum files for DSC documents and DSC resources.

@@ -10,6 +10,7 @@ title: Set-LogProperties
 # Set-LogProperties
 
 ## SYNOPSIS
+
 Changes the properties of a Windows event log.
 
 ## SYNTAX

@@ -11,6 +11,7 @@ title: New-FileCatalog
 # New-FileCatalog
 
 ## SYNOPSIS
+
 `New-FileCatalog` creates a catalog file of file hashes that can be used to
 validate the authenticity of a file.
 

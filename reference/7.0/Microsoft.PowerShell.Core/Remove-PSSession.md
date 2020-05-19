@@ -11,6 +11,7 @@ title: Remove-PSSession
 # Remove-PSSession
 
 ## SYNOPSIS
+
 Closes one or more PowerShell sessions (PSSessions).
 
 ## SYNTAX

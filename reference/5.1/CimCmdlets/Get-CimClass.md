@@ -12,6 +12,7 @@ title: Get-CimClass
 # Get-CimClass
 
 ## SYNOPSIS
+
 Gets a list of CIM classes in a specific namespace.
 
 ## SYNTAX

@@ -12,6 +12,7 @@ title: Remove-DscConfigurationDocument
 # Remove-DscConfigurationDocument
 
 ## SYNOPSIS
+
 Removes a configuration document from the DSC configuration store.
 
 ## SYNTAX
@@ -22,6 +23,7 @@ Remove-DscConfigurationDocument -Stage <Stage> [-Force] [-CimSession <CimSession
 ```
 
 ## DESCRIPTION
+
 The `Remove-DscConfigurationDocument` cmdlet removes a configuration document (.mof file) from the Windows PowerShell Desired State Configuration (DSC) configuration store.
 During configuration, the `Start-DscConfiguration` cmdlet copies a .mof file to a folder on the target computer.
 This cmdlet removes that configuration document and does additional cleanup.
@@ -46,6 +48,7 @@ The second command removes the current configuration document for the computer s
 ## PARAMETERS
 
 ### -AsJob
+
 Indicates that this cmdlet runs the command as a background job.
 
 If you specify the *AsJob* parameter, the command returns an object that represents the job, and then displays the command prompt.
@@ -72,6 +75,7 @@ Accept wildcard characters: False
 ```
 
 ### -CimSession
+
 Runs the cmdlet in a remote session or on a remote computer.
 Enter a computer name or a session object, such as the output of a **New-CimSession** or **Get-CimSession** cmdlet.
 
@@ -88,6 +92,7 @@ Accept wildcard characters: False
 ```
 
 ### -Force
+
 Indicates that this cmdlet stops the running configuration job before it removes the configuration document.
 Forces the command to run without asking for user confirmation.
 
@@ -104,6 +109,7 @@ Accept wildcard characters: False
 ```
 
 ### -Stage
+
 Specifies which configuration document to remove.
 You can specify multiple documents.
 The acceptable values for this parameter are:
@@ -129,6 +135,7 @@ Accept wildcard characters: False
 ```
 
 ### -ThrottleLimit
+
 Specifies the maximum number of concurrent operations that can be established to run the cmdlet.
 If this parameter is omitted or a value of `0` is entered, then Windows PowerShell calculates an optimum throttle limit for the cmdlet based on the number of CIM cmdlets that are running on the computer.
 The throttle limit applies only to the current cmdlet, not to the session or to the computer.
@@ -146,6 +153,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
+
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
@@ -161,6 +169,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
+
 Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
@@ -177,6 +186,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS

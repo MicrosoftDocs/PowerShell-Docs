@@ -12,6 +12,7 @@ title: Add-Type
 # Add-Type
 
 ## SYNOPSIS
+
 Adds a Microsoft .NET Core class to a PowerShell session.
 
 ## SYNTAX

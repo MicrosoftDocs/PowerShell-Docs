@@ -12,6 +12,7 @@ title: Get-ComputerRestorePoint
 # Get-ComputerRestorePoint
 
 ## SYNOPSIS
+
 Gets the restore points on the local computer.
 
 ## SYNTAX

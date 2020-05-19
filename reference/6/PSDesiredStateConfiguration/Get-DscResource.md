@@ -11,6 +11,7 @@ title: Get-DscResource
 # Get-DscResource
 
 ## SYNOPSIS
+
 Gets Desired State Configuration (DSC) resources present on the computer.
 
 ## SYNTAX

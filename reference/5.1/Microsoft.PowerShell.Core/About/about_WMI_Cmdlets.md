@@ -55,6 +55,7 @@ The following WMI cmdlets are included.
 |Set-WmiInstance  |Creates or modifies instances of WMI classes. |
 
 ### SAMPLE COMMANDS
+
 The following command displays the BIOS information for the local computer.
 
 ```powershell

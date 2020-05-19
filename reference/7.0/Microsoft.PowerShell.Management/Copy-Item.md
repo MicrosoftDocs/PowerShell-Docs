@@ -11,6 +11,7 @@ title: Copy-Item
 # Copy-Item
 
 ## SYNOPSIS
+
 Copies an item from one location to another.
 
 ## SYNTAX

@@ -11,6 +11,7 @@ title: Set-Clipboard
 # Set-Clipboard
 
 ## SYNOPSIS
+
 Sets the current Windows clipboard entry.
 
 ## SYNTAX

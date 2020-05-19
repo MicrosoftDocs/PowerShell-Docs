@@ -12,6 +12,7 @@ title: Wait-Event
 # Wait-Event
 
 ## SYNOPSIS
+
 Waits until a particular event is raised before continuing to run.
 
 ## SYNTAX

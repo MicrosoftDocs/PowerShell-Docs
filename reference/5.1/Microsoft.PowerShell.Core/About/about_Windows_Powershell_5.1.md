@@ -49,6 +49,7 @@ You can also read about changes to Windows PowerShell 5.1 in
 > Note: This information is preliminary and subject to change.
 
 ### PowerShell Editions
+
 Starting with version 5.1, PowerShell is available in different editions which denote varying feature sets and platform compatibility.
 
 - **Desktop Edition:** Built on .NET Framework and provides compatibility with

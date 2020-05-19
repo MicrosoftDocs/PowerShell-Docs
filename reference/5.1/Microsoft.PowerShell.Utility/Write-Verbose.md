@@ -12,6 +12,7 @@ title: Write-Verbose
 # Write-Verbose
 
 ## SYNOPSIS
+
 Writes text to the verbose message stream.
 
 ## SYNTAX
@@ -21,6 +22,7 @@ Write-Verbose [-Message] <String> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+
 The **Write-Verbose** cmdlet writes text to the verbose message stream in Windows PowerShell.
 Typically, the verbose message stream is used to deliver information about command processing that is used for debugging a command.
 
@@ -57,6 +59,7 @@ The second command writes a verbose message.
 ## PARAMETERS
 
 ### -Message
+
 Specifies the message to display.
 This parameter is required.
 You can also pipe a message string to **Write-Verbose**.
@@ -74,16 +77,19 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### System.String
+
 You can pipe a string that contains the message to **Write-Verbose**.
 
 ## OUTPUTS
 
 ### None
+
 **Write-Verbose** writes only to the verbose message stream.
 
 ## NOTES

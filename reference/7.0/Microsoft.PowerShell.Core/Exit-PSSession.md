@@ -11,6 +11,7 @@ title: Exit-PSSession
 # Exit-PSSession
 
 ## SYNOPSIS
+
 Ends an interactive session with a remote computer.
 
 ## SYNTAX

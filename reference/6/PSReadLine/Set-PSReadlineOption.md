@@ -11,6 +11,7 @@ title: Set-PSReadLineOption
 # Set-PSReadLineOption
 
 ## Synopsis
+
 Customizes the behavior of command line editing in **PSReadLine**.
 
 ## Syntax
@@ -648,7 +649,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: ;:,.[]{}()/\|^&*-=+'"–—-
+Default value: ;:,.[]{}()/\|^&*-=+'"ï¿½ï¿½-
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

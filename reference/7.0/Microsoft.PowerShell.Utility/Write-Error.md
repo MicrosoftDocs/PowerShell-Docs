@@ -12,6 +12,7 @@ title: Write-Error
 # Write-Error
 
 ## SYNOPSIS
+
 Writes an object to the error stream.
 
 ## SYNTAX

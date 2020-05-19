@@ -12,6 +12,7 @@ title: Set-WSManQuickConfig
 # Set-WSManQuickConfig
 
 ## SYNOPSIS
+
 Configures the local computer for remote management.
 
 ## SYNTAX

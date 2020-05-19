@@ -12,6 +12,7 @@ title: Exit-PSSession
 # Exit-PSSession
 
 ## SYNOPSIS
+
 Ends an interactive session with a remote computer.
 
 ## SYNTAX
@@ -21,6 +22,7 @@ Exit-PSSession [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+
 The **Exit-PSSession** cmdlet ends interactive sessions that you started by using the Enter-PSSession cmdlet.
 
 You can also use the **Exit** keyword to end an interactive session.
@@ -79,16 +81,19 @@ The **Exit** keyword has the same effect as using **Exit-PSSession**.
 ## PARAMETERS
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### None
+
 You cannot pipe objects to this cmdlet.
 
 ## OUTPUTS
 
 ### None
+
 This cmdlet does not return any output.
 
 ## NOTES

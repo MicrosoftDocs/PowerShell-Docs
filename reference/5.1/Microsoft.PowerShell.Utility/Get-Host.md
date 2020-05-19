@@ -12,6 +12,7 @@ title: Get-Host
 # Get-Host
 
 ## SYNOPSIS
+
 Gets an object that represents the current host program.
 
 ## SYNTAX
@@ -227,6 +228,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### None
+
 You cannot pipe input to this cmdlet.
 
 ## OUTPUTS

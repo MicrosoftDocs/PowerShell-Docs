@@ -12,6 +12,7 @@ title: Remove-WmiObject
 # Remove-WmiObject
 
 ## SYNOPSIS
+
 Deletes an instance of an existing Windows Management Instrumentation (WMI) class.
 
 ## SYNTAX
@@ -69,6 +70,7 @@ Remove-WmiObject [-AsJob] [-Impersonation <ImpersonationLevel>] [-Authentication
 ```
 
 ## DESCRIPTION
+
 The **Remove-WmiObject** cmdlet deletes an instance of an existing Windows Management Instrumentation (WMI)class.
 
 ## EXAMPLES
@@ -105,6 +107,7 @@ The second command pipes the $a variable to **Remove-WMIObject**, which deletes 
 ## PARAMETERS
 
 ### -AsJob
+
 Indicates that this cmdlet run as a background job.
 Use this parameter to run commands that take a long time to finish.
 
@@ -137,6 +140,7 @@ Accept wildcard characters: False
 ```
 
 ### -Authentication
+
 Specifies the authentication level to use for the WMI connection.
 The acceptable values for this parameter are:
 
@@ -169,6 +173,7 @@ Accept wildcard characters: False
 ```
 
 ### -Authority
+
 Specifies the authority to use to authenticate the WMI connection.
 You can specify standard NTLM or Kerberos authentication.
 To use NTLM, set the authority setting to ntlmdomain:\<DomainName\>, where \<DomainName\> identifies a valid NTLM domain name.
@@ -188,6 +193,7 @@ Accept wildcard characters: False
 ```
 
 ### -Class
+
 Specifies the name of a WMI class that this cmdlet deletes.
 
 ```yaml
@@ -203,6 +209,7 @@ Accept wildcard characters: False
 ```
 
 ### -ComputerName
+
 Specifies the name of the computer on which this cmdlet runs.
 The default is the local computer.
 
@@ -225,6 +232,7 @@ Accept wildcard characters: False
 ```
 
 ### -Credential
+
 Specifies a user account that has permission to perform this action.
 The default is the current user.
 
@@ -244,6 +252,7 @@ Accept wildcard characters: False
 ```
 
 ### -EnableAllPrivileges
+
 Indicates that this cmdlet enables all the permissions of the current user before the command it makes the WMI call.
 
 ```yaml
@@ -259,6 +268,7 @@ Accept wildcard characters: False
 ```
 
 ### -Impersonation
+
 Specifies the impersonation level to use.
 The acceptable values for this parameter are:
 
@@ -287,6 +297,7 @@ Accept wildcard characters: False
 ```
 
 ### -InputObject
+
 Specifies a **ManagementObject** object to use as input.
 When this parameter is used, all other parameters are ignored.
 
@@ -303,6 +314,7 @@ Accept wildcard characters: False
 ```
 
 ### -Locale
+
 Specifies the preferred locale for WMI objects.
 The *Locale* parameter is specified as an array in the MS_\<LCID\> format in the preferred order.
 
@@ -319,6 +331,7 @@ Accept wildcard characters: False
 ```
 
 ### -Namespace
+
 Specifies the WMI repository namespace where the referenced WMI class is located when it is used with the *Class* parameter.
 
 ```yaml
@@ -334,6 +347,7 @@ Accept wildcard characters: False
 ```
 
 ### -Path
+
 Specifies the WMI object path of a WMI class, or specifies the WMI object path of an instance of a WMI class to delete.
 
 ```yaml
@@ -349,6 +363,7 @@ Accept wildcard characters: False
 ```
 
 ### -ThrottleLimit
+
 Specifies the maximum number of concurrent connections that can be established to run this command.
 This parameter is used together with the *AsJob* parameter.
 The throttle limit applies only to the current command, not to the session or to the computer.
@@ -366,6 +381,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
+
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
@@ -381,6 +397,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
+
 Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
@@ -397,16 +414,19 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### System.Management.ManagementObject
+
 You can pipe a management object to this cmdlet.
 
 ## OUTPUTS
 
 ### None, System.Management.Automation.RemotingJob
+
 This cmdlet returns a job object, if you specify the *AsJob* parameter.
 Otherwise, it does not generate any output.
 

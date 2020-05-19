@@ -12,6 +12,7 @@ title: Enable-ComputerRestore
 # Enable-ComputerRestore
 
 ## SYNOPSIS
+
 Enables the System Restore feature on the specified file system drive.
 
 ## SYNTAX
@@ -21,6 +22,7 @@ Enable-ComputerRestore [-Drive] <String[]> [-WhatIf] [-Confirm] [<CommonParamete
 ```
 
 ## DESCRIPTION
+
 The **Enable-ComputerRestore** cmdlet turns on the System Restore feature on one or more file system drives.
 As a result, you can use tools, such as the Restore-Computer cmdlet, to restore the computer to a previous state.
 
@@ -51,6 +53,7 @@ This command enables System Restore on the C: and D: drives of the local compute
 ## PARAMETERS
 
 ### -Drive
+
 Specifies the file system drives.
 Enter one or more file system drive letters, each followed by a colon and a backslash and enclosed in quotation marks, such as C:\ or D:\.
 This parameter is required.
@@ -72,6 +75,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
+
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
@@ -87,6 +91,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
+
 Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
@@ -103,16 +108,19 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### None
+
 You cannot pipe objects to this cmdlet.
 
 ## OUTPUTS
 
 ### None
+
 This cmdlet does not generate any output.
 
 ## NOTES

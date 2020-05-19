@@ -10,6 +10,7 @@ title: Clear-EventLog
 # Clear-EventLog
 
 ## SYNOPSIS
+
 Clears all entries from specified event logs on the local or remote computers.
 
 ## SYNTAX

@@ -11,6 +11,7 @@ title: Enable-RunspaceDebug
 # Enable-RunspaceDebug
 
 ## SYNOPSIS
+
 Enables debugging on runspaces where any breakpoint is preserved until a debugger is attached.
 
 ## SYNTAX

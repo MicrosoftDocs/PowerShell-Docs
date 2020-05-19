@@ -11,6 +11,7 @@ title: Out-GridView
 # Out-GridView
 
 ## SYNOPSIS
+
 Sends output to an interactive table in a separate window.
 
 ## SYNTAX

@@ -11,6 +11,7 @@ title: Find-Module
 # Find-Module
 
 ## SYNOPSIS
+
 Finds modules in a repository that match specified criteria.
 
 ## SYNTAX

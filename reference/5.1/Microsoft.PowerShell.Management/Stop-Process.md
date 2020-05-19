@@ -11,6 +11,7 @@ title: Stop-Process
 # Stop-Process
 
 ## SYNOPSIS
+
 Stops one or more running processes.
 
 ## SYNTAX

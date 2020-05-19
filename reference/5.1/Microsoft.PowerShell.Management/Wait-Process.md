@@ -12,6 +12,7 @@ title: Wait-Process
 # Wait-Process
 
 ## SYNOPSIS
+
 Waits for the processes to be stopped before accepting more input.
 
 ## SYNTAX
@@ -35,6 +36,7 @@ Wait-Process [[-Timeout] <Int32>] -InputObject <Process[]> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+
 The **Wait-Process** cmdlet waits for one or more running processes to be stopped before accepting input.
 In the Windows PowerShell console, this cmdlet suppresses the command prompt until the processes are stopped.
 You can specify a process by process name or process ID (PID), or pipe a process object to **Wait-Process**.
@@ -89,6 +91,7 @@ If both processes are not stopped, the cmdlet displays a non-terminating error a
 ## PARAMETERS
 
 ### -Id
+
 Specifies the process IDs of the processes.
 To specify multiple IDs, use commas to separate the IDs.
 To find the PID of a process, type `Get-Process`.
@@ -106,6 +109,7 @@ Accept wildcard characters: False
 ```
 
 ### -InputObject
+
 Specifies the processes by submitting process objects.
 Enter a variable that contains the process objects, or type a command or expression that gets the process objects, such as the Get-Process cmdlet.
 
@@ -122,6 +126,7 @@ Accept wildcard characters: False
 ```
 
 ### -Name
+
 Specifies the process names of the processes.
 To specify multiple names, use commas to separate the names.
 Wildcard characters are not supported.
@@ -139,6 +144,7 @@ Accept wildcard characters: False
 ```
 
 ### -Timeout
+
 Specifies the maximum time, in seconds, that this cmdlet waits for the specified processes to stop.
 When this interval expires, the command displays a non-terminating error that lists the processes that are still running, and ends the wait.
 By default, there is no time-out.
@@ -156,16 +162,19 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### System.Diagnostics.Process
+
 You can pipe a process object to this cmdlet.
 
 ## OUTPUTS
 
 ### None
+
 This cmdlet does not generate any output.
 
 ## NOTES

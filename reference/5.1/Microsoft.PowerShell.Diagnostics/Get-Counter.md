@@ -12,6 +12,7 @@ title: Get-Counter
 # Get-Counter
 
 ## SYNOPSIS
+
 Gets performance counter data from local and remote computers.
 
 ## SYNTAX

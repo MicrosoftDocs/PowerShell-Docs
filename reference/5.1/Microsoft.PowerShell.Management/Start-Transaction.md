@@ -12,6 +12,7 @@ title: Start-Transaction
 # Start-Transaction
 
 ## SYNOPSIS
+
 Starts a transaction.
 
 ## SYNTAX
@@ -22,6 +23,7 @@ Start-Transaction [-Timeout <Int32>] [-Independent] [-RollbackPreference <Rollba
 ```
 
 ## DESCRIPTION
+
 The **Start-Transaction** cmdlet starts a transaction, which is a series of commands that are managed as a unit.
 A transaction can be completed, or committed.
 Alternatively, it can be completely undone, or rolled back, so that any data changed by the transaction is restored to its original state.
@@ -282,6 +284,7 @@ When the time-out expires, you are not notified, but the **Status** property of 
 ## PARAMETERS
 
 ### -Independent
+
 Indicates that this cmdlet starts a transaction that is independent of any transactions in progress.
 By default, if you use **Start-Transaction** while another transaction is in progress, a new subscriber is added to the transaction in progress.
 This parameter has an effect only when a transaction is already in progress in the session.
@@ -308,6 +311,7 @@ Accept wildcard characters: False
 ```
 
 ### -RollbackPreference
+
 Specifies the conditions under which a transaction is automatically rolled back.
 The acceptable values for this parameter are:
 
@@ -334,6 +338,7 @@ Accept wildcard characters: False
 ```
 
 ### -Timeout
+
 Specifies the maximum time, in minutes, that the transaction is active.
 When the time-out expires, the transaction is automatically rolled back.
 
@@ -353,6 +358,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
+
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
@@ -368,6 +374,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
+
 Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
@@ -384,16 +391,19 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### None
+
 You cannot pipe input to this cmdlet.
 
 ## OUTPUTS
 
 ### None
+
 This cmdlet does not generate any output.
 
 ## NOTES

@@ -11,6 +11,7 @@ title: New-Event
 # New-Event
 
 ## SYNOPSIS
+
 Creates a new event.
 
 ## SYNTAX

@@ -12,6 +12,7 @@ title: Disable-ScheduledJob
 # Disable-ScheduledJob
 
 ## SYNOPSIS
+
 Disables a scheduled job.
 
 ## SYNTAX
@@ -36,6 +37,7 @@ Disable-ScheduledJob [-Name] <String> [-PassThru] [-WhatIf] [-Confirm] [<CommonP
 ```
 
 ## DESCRIPTION
+
 The **Disable-ScheduledJob** cmdlet temporarily disables scheduled jobs.
 Disabling preserves all job properties and does not disable the job triggers, but it prevents the scheduled jobs from starting automatically when triggered.
 You can start a disabled scheduled job by using the Start-Job cmdlet or use a disabled scheduled job as a template.
@@ -132,6 +134,7 @@ Use the GlobalID value when precision is required, such as when you are disablin
 ## PARAMETERS
 
 ### -Id
+
 Disables the scheduled job with the specified identification number (ID).
 Enter the ID of a scheduled job.
 
@@ -148,6 +151,7 @@ Accept wildcard characters: False
 ```
 
 ### -InputObject
+
 Specifies the scheduled job to be disabled.
 Enter a variable that contains  **ScheduledJobDefinition** objects or type a command or expression that gets **ScheduledJobDefinition** objects, such as a Get-ScheduledJob command.
 You can also pipe a **ScheduledJobDefinition** object to **Disable-ScheduledJob**.
@@ -165,6 +169,7 @@ Accept wildcard characters: False
 ```
 
 ### -Name
+
 Disables the scheduled jobs with the specified names.
 Enter the name of a scheduled job.
 Wildcards are supported.
@@ -182,6 +187,7 @@ Accept wildcard characters: False
 ```
 
 ### -PassThru
+
 Returns an object representing the item with which you are working.
 By default, this cmdlet does not generate any output.
 
@@ -198,6 +204,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
+
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
@@ -213,6 +220,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
+
 Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
@@ -229,16 +237,19 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### Microsoft.PowerShell.ScheduledJob.ScheduledJobDefinition
+
 You can pipe a scheduled job to **Disable-ScheduledJob**.
 
 ## OUTPUTS
 
 ### None or Microsoft.PowerShell.ScheduledJob.ScheduledJobDefinition
+
 If you use the **Passthru** parameter, **Disable-ScheduledJob** returns the scheduled job that was disabled.
 Otherwise, this cmdlet does not generate any output.
 

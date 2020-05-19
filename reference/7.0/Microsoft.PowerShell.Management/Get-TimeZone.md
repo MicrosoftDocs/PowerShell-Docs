@@ -11,6 +11,7 @@ title: Get-TimeZone
 # Get-TimeZone
 
 ## SYNOPSIS
+
 Gets the current time zone or a list of available time zones.
 
 ## SYNTAX

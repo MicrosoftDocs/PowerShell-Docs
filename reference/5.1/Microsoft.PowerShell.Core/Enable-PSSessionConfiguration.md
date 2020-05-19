@@ -11,6 +11,7 @@ title: Enable-PSSessionConfiguration
 # Enable-PSSessionConfiguration
 
 ## SYNOPSIS
+
 Enables the session configurations on the local computer.
 
 ## SYNTAX

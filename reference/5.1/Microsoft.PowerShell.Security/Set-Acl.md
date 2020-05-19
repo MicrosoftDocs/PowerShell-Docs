@@ -11,6 +11,7 @@ title: Set-Acl
 # Set-Acl
 
 ## SYNOPSIS
+
 Changes the security descriptor of a specified item, such as a file or a registry key.
 
 ## SYNTAX

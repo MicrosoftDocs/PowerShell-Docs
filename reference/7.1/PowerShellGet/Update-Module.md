@@ -12,6 +12,7 @@ title: Update-Module
 # Update-Module
 
 ## SYNOPSIS
+
 Downloads and installs the newest version of specified modules from an online gallery to the local
 computer.
 

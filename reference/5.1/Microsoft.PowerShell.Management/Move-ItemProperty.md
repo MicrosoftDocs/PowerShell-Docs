@@ -10,6 +10,7 @@ title: Move-ItemProperty
 # Move-ItemProperty
 
 ## Synopsis
+
 Moves a property from one location to another.
 
 ## SYNTAX

@@ -11,6 +11,7 @@ title: Clear-Variable
 # Clear-Variable
 
 ## SYNOPSIS
+
 Deletes the value of a variable.
 
 ## SYNTAX

@@ -12,6 +12,7 @@ title: Set-LocalGroup
 # Set-LocalGroup
 
 ## SYNOPSIS
+
 Changes a local security group.
 
 ## SYNTAX
@@ -35,6 +36,7 @@ Set-LocalGroup -Description <String> [-SID] <SecurityIdentifier> [-WhatIf] [-Con
 ```
 
 ## DESCRIPTION
+
 The **Set-LocalGroup** cmdlet changes a local security group.
 
 ## EXAMPLES
@@ -54,6 +56,7 @@ This command changes the description of a local group.
 ## PARAMETERS
 
 ### -Description
+
 Specifies a comment for the group.
 The maximum length is 48 characters.
 
@@ -70,6 +73,7 @@ Accept wildcard characters: False
 ```
 
 ### -InputObject
+
 Specifies the security group that this cmdlet changes.
 To obtain a security group, use the Get-LocalGroup cmdlet.
 
@@ -86,6 +90,7 @@ Accept wildcard characters: False
 ```
 
 ### -Name
+
 Specifies the name of the security group that this cmdlet changes.
 
 ```yaml
@@ -101,6 +106,7 @@ Accept wildcard characters: False
 ```
 
 ### -SID
+
 Specifies the security ID (SID) of the security group that this cmdlet changes.
 
 ```yaml
@@ -116,6 +122,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
+
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
@@ -131,6 +138,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
+
 Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
@@ -147,16 +155,19 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### System.Management.Automation.SecurityAccountsManager.LocalGroup, System.String, System.Security.Principal.SecurityIdentifier
+
 You can pipe a security group, a string, or a SID to this cmdlet.
 
 ## OUTPUTS
 
 ### None
+
 This cmdlet does not generate any output.
 
 ## NOTES

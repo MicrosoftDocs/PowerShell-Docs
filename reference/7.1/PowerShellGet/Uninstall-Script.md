@@ -12,6 +12,7 @@ title: Uninstall-Script
 # Uninstall-Script
 
 ## SYNOPSIS
+
 Uninstalls a script.
 
 ## SYNTAX

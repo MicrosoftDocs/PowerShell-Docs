@@ -11,6 +11,7 @@ title: Out-Default
 # Out-Default
 
 ## SYNOPSIS
+
 Sends the output to the default formatter and to the default output cmdlet.
 
 ## SYNTAX

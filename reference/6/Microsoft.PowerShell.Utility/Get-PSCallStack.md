@@ -11,6 +11,7 @@ title: Get-PSCallStack
 # Get-PSCallStack
 
 ## SYNOPSIS
+
 Displays the current call stack.
 
 ## SYNTAX

@@ -12,6 +12,7 @@ title: Remove-LocalGroupMember
 # Remove-LocalGroupMember
 
 ## SYNOPSIS
+
 Removes members from a local group.
 
 ## SYNTAX
@@ -37,6 +38,7 @@ Remove-LocalGroupMember [-Member] <LocalPrincipal[]> [-SID] <SecurityIdentifier>
 ```
 
 ## DESCRIPTION
+
 The **Remove-LocalGroupMember** cmdlet removes users or groups from a local group.
 
 > [!NOTE]
@@ -58,6 +60,7 @@ This example uses a placeholder value for the user name of an account at Outlook
 ## PARAMETERS
 
 ### -Group
+
 Specifies the security group from which this cmdlet removes members.
 
 ```yaml
@@ -73,6 +76,7 @@ Accept wildcard characters: False
 ```
 
 ### -Member
+
 Specifies an array of users or groups that this cmdlet removes from a security group.
 You can specify users or groups by name, security ID (SID), or **LocalPrincipal** objects.
 Specify SID strings in S-R-I-S-S .
@@ -92,6 +96,7 @@ Accept wildcard characters: False
 ```
 
 ### -Name
+
 Specifies the name of the security group from which this cmdlet removes members.
 
 ```yaml
@@ -107,6 +112,7 @@ Accept wildcard characters: False
 ```
 
 ### -SID
+
 Specifies the security ID of the security group from which this cmdlet removes members.
 
 ```yaml
@@ -122,6 +128,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
+
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
@@ -137,6 +144,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
+
 Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
@@ -153,16 +161,19 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### System.Management.Automation.SecurityAccountsManager.LocalPrincipal, System.String, System.Security.Principal.SecurityIdentifier
+
 You can pipe a local principal, a string, or a SID to this cmdlet.
 
 ## OUTPUTS
 
 ### None
+
 This cmdlet does not generate any output.
 
 ## NOTES

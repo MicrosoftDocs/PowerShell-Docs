@@ -11,6 +11,7 @@ title: Import-PowerShellDataFile
 # Import-PowerShellDataFile
 
 ## SYNOPSIS
+
 Imports values from a `.PSD1` file without invoking its contents.
 
 ## SYNTAX

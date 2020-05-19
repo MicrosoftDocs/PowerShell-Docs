@@ -11,6 +11,7 @@ title: New-Alias
 # New-Alias
 
 ## SYNOPSIS
+
 Creates a new alias.
 
 ## SYNTAX

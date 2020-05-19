@@ -11,6 +11,7 @@ title: Disable-WSManTrace
 # Disable-WSManTrace
 
 ## SYNOPSIS
+
 Stop the WSMan logging session started by Enable-WSManTrace.
 
 ## SYNTAX
@@ -20,6 +21,7 @@ Disable-WSManTrace [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+
 This cmdlet stops the WSMan logging session started by Enable-WSManTrace.
 
 This cmdlet uses the `Stop-Trace` cmdlet.

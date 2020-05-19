@@ -11,6 +11,7 @@ title: Install-Module
 # Install-Module
 
 ## SYNOPSIS
+
 Downloads one or more modules from a repository, and installs them on the local computer.
 
 ## SYNTAX

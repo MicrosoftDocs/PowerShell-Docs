@@ -12,6 +12,7 @@ title: Install-PackageProvider
 # Install-PackageProvider
 
 ## SYNOPSIS
+
 Installs one or more Package Management package providers.
 
 ## SYNTAX
@@ -34,6 +35,7 @@ Install-PackageProvider [-Scope <String>] [-InputObject] <SoftwareIdentity[]> [-
 ```
 
 ## DESCRIPTION
+
 The **Install-PackageProvider** cmdlet installs matching Package Management providers that are available in package sources registered with **PowerShellGet**.
 By default, this includes modules available in the Windows PowerShell Gallery with the **PackageManagement**.
 The **PowerShellGet** Package Management provider is used for finding providers in these repositories.
@@ -103,6 +105,7 @@ This command installs a package provider to $env:LOCALAPPDATA\PackageManagement\
 ## PARAMETERS
 
 ### -AllVersions
+
 Indicates that this cmdlet installs all available versions of the package provider.
 By default, **Install-PackageProvider** only returns the highest available version.
 
@@ -119,6 +122,7 @@ Accept wildcard characters: False
 ```
 
 ### -Credential
+
 Specifies a user account that has permission to install package providers.
 
 ```yaml
@@ -134,6 +138,7 @@ Accept wildcard characters: False
 ```
 
 ### -Force
+
 Indicates that this cmdlet forces all actions with this cmdlet that can be forced.
 Currently, this means the *Force* parameter acts the same as the *ForceBootstrap* parameter.
 
@@ -150,6 +155,7 @@ Accept wildcard characters: False
 ```
 
 ### -ForceBootstrap
+
 Indicates that this cmdlet automatically installs the package provider.
 
 ```yaml
@@ -165,6 +171,7 @@ Accept wildcard characters: False
 ```
 
 ### -InputObject
+
 Specifies a **SoftwareIdentity** object.
 Use the **Find-PackageProvider** cmdlet to obtain a **SoftwareIdentity** object to pipe into **Install-PackageProvider**.
 
@@ -181,6 +188,7 @@ Accept wildcard characters: False
 ```
 
 ### -MaximumVersion
+
 Specifies the maximum allowed version of the package provider that you want to install.
 If you do not add this parameter, **Install-PackageProvider** installs the highest available version of the provider.
 
@@ -197,6 +205,7 @@ Accept wildcard characters: False
 ```
 
 ### -MinimumVersion
+
 Specifies the minimum allowed version of the package provider that you want to install.
 If you do not add this parameter, **Install-PackageProvider** installs the highest available version of the package that also satisfies any requirement specified by the *MaximumVersion* parameter.
 
@@ -213,6 +222,7 @@ Accept wildcard characters: False
 ```
 
 ### -Name
+
 Specifies one or more package provider module names.
 Separate multiple package names with commas.
 Wildcard characters are not supported.
@@ -230,6 +240,7 @@ Accept wildcard characters: False
 ```
 
 ### -Proxy
+
 Specifies a proxy server for the request, rather than connecting directly to the Internet resource.
 
 ```yaml
@@ -245,6 +256,7 @@ Accept wildcard characters: False
 ```
 
 ### -ProxyCredential
+
 Specifies a user account that has permission to use the proxy server that is specified by the **Proxy** parameter.
 
 ```yaml
@@ -260,6 +272,7 @@ Accept wildcard characters: False
 ```
 
 ### -RequiredVersion
+
 Specifies the exact allowed version of the package provider that you want to install.
 If you do not add this parameter, **Install-PackageProvider** installs the highest available version of the provider that also satisfies any maximum version specified by the *MaximumVersion* parameter.
 
@@ -276,6 +289,7 @@ Accept wildcard characters: False
 ```
 
 ### -Scope
+
 Specifies the installation scope of the provider.
 The acceptable values for this parameter are:**AllUsers** and **CurrentUser**.
 
@@ -299,6 +313,7 @@ Accept wildcard characters: False
 ```
 
 ### -Source
+
 Specifies one or more package sources.
 Use the Get-PackageSource cmdlet to get a list of available package sources.
 
@@ -315,6 +330,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
+
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
@@ -330,6 +346,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
+
 Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
@@ -346,11 +363,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### Microsoft.PackageManagement.Packaging.SoftwareIdentity
+
 You can pipe a **SoftwareIdentity** object to this cmdlet.
 Use Find-PackageProvider to get a **SoftwareIdentity** object that can be piped into **Install-PackageProvider**.
 

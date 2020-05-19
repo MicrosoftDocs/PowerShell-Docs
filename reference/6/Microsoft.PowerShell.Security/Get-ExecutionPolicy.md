@@ -12,6 +12,7 @@ title: Get-ExecutionPolicy
 # Get-ExecutionPolicy
 
 ## SYNOPSIS
+
 Gets the execution policies for the current session.
 
 ## SYNTAX

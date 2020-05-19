@@ -12,6 +12,7 @@ title: Unregister-Event
 # Unregister-Event
 
 ## SYNOPSIS
+
 Cancels an event subscription.
 
 ## SYNTAX
@@ -29,6 +30,7 @@ Unregister-Event [-SubscriptionId] <Int32> [-Force] [-WhatIf] [-Confirm] [<Commo
 ```
 
 ## DESCRIPTION
+
 The **Unregister-Event** cmdlet cancels an event subscription that was created by using the Register-EngineEvent, Register-ObjectEvent, or Register-WmiEvent cmdlet.
 
 When an event subscription is canceled, the event subscriber is deleted from the session and the subscribed events are no longer added to the event queue.
@@ -76,6 +78,7 @@ To complete the task, the *Force* parameter is also required on **Unregister-Eve
 ## PARAMETERS
 
 ### -Force
+
 Cancels all event subscriptions, including subscriptions that were hidden by using the *SupportEvent* parameter of **Register-ObjectEvent**, **Register-WmiEvent**, and **Register-EngineEvent**.
 
 ```yaml
@@ -91,6 +94,7 @@ Accept wildcard characters: False
 ```
 
 ### -SourceIdentifier
+
 Specifies a source identifier that this cmdlet cancels event subscriptions.
 
 A *SourceIdentifier* or *SubscriptionId* parameter must be included in every command.
@@ -108,6 +112,7 @@ Accept wildcard characters: False
 ```
 
 ### -SubscriptionId
+
 Specifies a source identifier ID that this cmdlet cancels event subscriptions.
 
 A *SourceIdentifier* or *SubscriptionId* parameter must be included in every command.
@@ -125,6 +130,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
+
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
@@ -140,6 +146,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
+
 Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
@@ -156,16 +163,19 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### System.Management.Automation.PSEventSubscriber
+
 You can pipe the output from Get-EventSubscriber to **Unregister-Event**.
 
 ## OUTPUTS
 
 ### None
+
 This cmdlet does not return any output.
 
 ## NOTES

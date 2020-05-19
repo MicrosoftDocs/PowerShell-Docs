@@ -12,6 +12,7 @@ title: Disable-LocalUser
 # Disable-LocalUser
 
 ## SYNOPSIS
+
 Disables a local user account.
 
 ## SYNTAX
@@ -35,6 +36,7 @@ Disable-LocalUser [-SID] <SecurityIdentifier[]> [-WhatIf] [-Confirm] [<CommonPar
 ```
 
 ## DESCRIPTION
+
 The **Disable-LocalUser** cmdlet disables local user accounts.
 When a user account is disabled, the user cannot log on.
 When a user account is enabled, the user can log on.
@@ -65,6 +67,7 @@ That cmdlet disables that account.
 ## PARAMETERS
 
 ### -InputObject
+
 Specifies an array of user accounts that this cmdlet disables.
 To obtain a user account, use the Get-LocalUser cmdlet.
 
@@ -81,6 +84,7 @@ Accept wildcard characters: False
 ```
 
 ### -Name
+
 Specifies an array of names of the user accounts that this cmdlet disables.
 
 ```yaml
@@ -96,6 +100,7 @@ Accept wildcard characters: False
 ```
 
 ### -SID
+
 Specifies an array of user accounts that this cmdlet disables.
 
 ```yaml
@@ -111,6 +116,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
+
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
@@ -126,6 +132,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
+
 Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
@@ -142,16 +149,19 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### System.Management.Automation.SecurityAccountsManager.LocalUser, System.String, System.Security.Principal.SecurityIdentifier
+
 You can pipe a local user, a string, or a SID to this cmdlet.
 
 ## OUTPUTS
 
 ### None
+
 This cmdlet does not generate any output.
 
 ## NOTES

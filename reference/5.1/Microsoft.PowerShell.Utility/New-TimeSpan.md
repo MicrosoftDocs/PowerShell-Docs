@@ -11,6 +11,7 @@ title: New-TimeSpan
 # New-TimeSpan
 
 ## SYNOPSIS
+
 Creates a TimeSpan object.
 
 ## SYNTAX

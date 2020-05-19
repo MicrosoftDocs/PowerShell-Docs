@@ -11,6 +11,7 @@ title: Import-LocalizedData
 # Import-LocalizedData
 
 ## SYNOPSIS
+
 Imports language-specific data into scripts and functions based on the UI culture that is selected for the operating system.
 
 ## SYNTAX

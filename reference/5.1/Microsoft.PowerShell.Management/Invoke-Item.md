@@ -10,6 +10,7 @@ title: Invoke-Item
 # Invoke-Item
 
 ## SYNOPSIS
+
 Performs the default action on the specified item.
 
 ## SYNTAX
@@ -193,6 +194,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
+
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml

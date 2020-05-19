@@ -11,6 +11,7 @@ title: Set-WSManInstance
 # Set-WSManInstance
 
 ## SYNOPSIS
+
 Modifies the management information that is related to a resource.
 
 ## SYNTAX

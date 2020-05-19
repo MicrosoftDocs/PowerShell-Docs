@@ -11,6 +11,7 @@ title: Set-PSReadLineKeyHandler
 # Set-PSReadLineKeyHandler
 
 ## SYNOPSIS
+
 Binds keys to user-defined or PSReadLine key handler functions.
 
 ## SYNTAX

@@ -11,6 +11,7 @@ title: Get-Event
 # Get-Event
 
 ## SYNOPSIS
+
 Gets the events in the event queue.
 
 ## SYNTAX

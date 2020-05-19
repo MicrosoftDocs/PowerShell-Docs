@@ -11,6 +11,7 @@ title: ConvertFrom-SecureString
 # ConvertFrom-SecureString
 
 ## SYNOPSIS
+
 Converts a secure string to an encrypted standard string.
 
 ## SYNTAX

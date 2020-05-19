@@ -12,6 +12,7 @@ title: Expand-Archive
 # Expand-Archive
 
 ## SYNOPSIS
+
 Extracts files from a specified archive (zipped) file.
 
 ## SYNTAX
@@ -178,6 +179,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see

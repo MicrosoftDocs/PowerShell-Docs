@@ -12,6 +12,7 @@ title: Remove-JobTrigger
 # Remove-JobTrigger
 
 ## SYNOPSIS
+
 Delete job triggers from scheduled jobs.
 
 ## SYNTAX
@@ -35,6 +36,7 @@ Remove-JobTrigger [-TriggerId <Int32[]>] [-Name] <String[]> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+
 The **Remove-JobTrigger** cmdlet deletes job triggers from scheduled jobs.
 
 A job trigger defines a recurring schedule or conditions for starting a scheduled job.
@@ -108,6 +110,7 @@ The *ID* parameter is especially useful when multiple scheduled jobs have the sa
 ## PARAMETERS
 
 ### -Id
+
 Specifies the identification numbers of the scheduled jobs.
 **Remove-JobTrigger** deletes job triggers from the specified scheduled jobs.
 
@@ -126,6 +129,7 @@ Accept wildcard characters: False
 ```
 
 ### -InputObject
+
 Specifies the scheduled jobs.
 Enter a variable that contains **ScheduledJob** objects or type a command or expression that gets **ScheduledJob** objects, such as a Get-ScheduledJob command.
 You can also pipe **ScheduledJob** objects to **Remove-JobTrigger**.
@@ -143,6 +147,7 @@ Accept wildcard characters: False
 ```
 
 ### -Name
+
 Specifies the names of the scheduled jobs.
 **Remove-JobTrigger** deletes the job triggers from the specified scheduled jobs.
 Wildcards are supported.
@@ -162,6 +167,7 @@ Accept wildcard characters: False
 ```
 
 ### -TriggerId
+
 Deletes only the specified job triggers.
 By default, **Remove-JobTrigger** deletes all triggers from the scheduled jobs.
 Use this parameter when the scheduled jobs have multiple job triggers.
@@ -182,16 +188,19 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### Microsoft.PowerShell.ScheduledJob.ScheduledJobDefinition
+
 You can pipe scheduled jobs to the **Remove-JobTrigger** cmdlet.
 
 ## OUTPUTS
 
 ### None
+
 The cmdlet does not generate any output.
 
 ## NOTES

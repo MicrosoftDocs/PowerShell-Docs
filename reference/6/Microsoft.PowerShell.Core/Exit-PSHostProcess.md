@@ -11,6 +11,7 @@ title: Exit-PSHostProcess
 # Exit-PSHostProcess
 
 ## SYNOPSIS
+
 Closes an interactive session with a local process.
 
 ## SYNTAX

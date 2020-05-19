@@ -12,6 +12,7 @@ title: Get-WSManInstance
 # Get-WSManInstance
 
 ## SYNOPSIS
+
 Displays management information for a resource instance specified by a Resource URI.
 
 ## SYNTAX
@@ -36,6 +37,7 @@ Get-WSManInstance [-ApplicationName <String>] [-BasePropertiesOnly] [-ComputerNa
 ```
 
 ## DESCRIPTION
+
 The **Get-WSManInstance** cmdlet retrieves an instance of a management resource that is specified by a resource Uniform Resource Identifier (URI).
 The information that is retrieved can be a complex XML information set, which is an object, or a simple value.
 This cmdlet is the equivalent to the standard Web Services for Management (WS-Management) **Get** command.
@@ -365,6 +367,7 @@ You must enclose the filter in quotation marks, as shown in the example.
 ## PARAMETERS
 
 ### -ApplicationName
+
 Specifies the application name in the connection.
 The default value of the *ApplicationName* parameter is WSMAN.
 The complete identifier for the remote endpoint is in the following format:
@@ -391,6 +394,7 @@ Accept wildcard characters: False
 ```
 
 ### -Associations
+
 Indicates that this cmdlet gets association instances, not associated instances.
 You can use this parameter only when the *Dialect* parameter has a value of Association.
 
@@ -407,6 +411,7 @@ Accept wildcard characters: False
 ```
 
 ### -Authentication
+
 Specifies the authentication mechanism to be used at the server.
 The acceptable values for this parameter are:
 
@@ -444,6 +449,7 @@ Accept wildcard characters: False
 ```
 
 ### -BasePropertiesOnly
+
 Indicates that this cmdlet enumerates only the properties that are part of the base class that is specified by the *ResourceURI* parameter.
 This parameter has no effect if the *Shallow* parameter is specified.
 
@@ -460,6 +466,7 @@ Accept wildcard characters: False
 ```
 
 ### -CertificateThumbprint
+
 Specifies the digital public key certificate (X509) of a user account that has permission to perform this action.
 Enter the certificate thumbprint of the certificate.
 
@@ -481,6 +488,7 @@ Accept wildcard characters: False
 ```
 
 ### -ComputerName
+
 Specifies the computer against which to run the management operation.
 The value can be a fully qualified domain name, a NetBIOS name, or an IP address.
 Use the local computer name, use localhost, or use a dot (.) to specify the local computer.
@@ -501,6 +509,7 @@ Accept wildcard characters: False
 ```
 
 ### -ConnectionURI
+
 Specifies the connection endpoint.
 The format of this string is as follows:
 
@@ -525,6 +534,7 @@ Accept wildcard characters: False
 ```
 
 ### -Credential
+
 Specifies a user account that has permission to perform this action.
 The default is the current user.
 Type a user name, such as User01, Domain01\User01, or User@Domain.com.
@@ -544,6 +554,7 @@ Accept wildcard characters: False
 ```
 
 ### -Dialect
+
 Specifies the dialect to use in the filter predicate.
 This can be any dialect that is supported by the remote service.
 The following aliases can be used for the dialect URI:
@@ -565,6 +576,7 @@ Accept wildcard characters: False
 ```
 
 ### -Enumerate
+
 Indicates that this cmdlet returns all of the instances of a management resource.
 
 ```yaml
@@ -580,6 +592,7 @@ Accept wildcard characters: False
 ```
 
 ### -Filter
+
 Specifies the filter expression for the enumeration.
 If you specify this parameter, you must also specify *Dialect*.
 
@@ -605,6 +618,7 @@ Accept wildcard characters: False
 ```
 
 ### -Fragment
+
 Specifies a section inside the instance that is to be updated or retrieved for the specified operation.
 For example, to get the status of a spooler service, specify the following:
 
@@ -623,6 +637,7 @@ Accept wildcard characters: False
 ```
 
 ### -OptionSet
+
 Specifies a set of switches to a service to modify or refine the nature of the request.
 These resemble switches used in command-line shells because they are service specific.
 Any number of options can be specified.
@@ -644,6 +659,7 @@ Accept wildcard characters: False
 ```
 
 ### -Port
+
 Specifies the port to use when the client connects to the WinRM service.
 When the transport is HTTP, the default port is 80.
 When the transport is HTTPS, the default port is 443.
@@ -665,6 +681,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceURI
+
 Specifies the URI of the resource class or instance.
 The URI identifies a specific type of resource, such as disks or processes, on a computer.
 
@@ -688,6 +705,7 @@ Accept wildcard characters: False
 ```
 
 ### -ReturnType
+
 Specifies the type of data to be returned.
 The acceptable values for this parameter are:
 
@@ -716,6 +734,7 @@ Accept wildcard characters: False
 ```
 
 ### -SelectorSet
+
 Specifies a set of value pairs that are used to select particular management resource instances.
 The *SelectorSet* parameter is used when more than one instance of the resource exists.
 The value of the *SelectorSet* parameter must be a hash table.
@@ -737,6 +756,7 @@ Accept wildcard characters: False
 ```
 
 ### -SessionOption
+
 Specifies extended options for the WS-Management session.
 Enter a **SessionOption** object that you create by using the New-WSManSessionOption cmdlet.
 For more information about the options that are available, type `Get-Help New-WSManSessionOption`.
@@ -754,6 +774,7 @@ Accept wildcard characters: False
 ```
 
 ### -Shallow
+
 Indicates that this cmdlet returns only instances of the base class that is specified in the resource URI.
 If you do not specify this parameter,, this cmdlet returns instances of the base class that is specified in the URI and in all its derived classes.
 
@@ -770,6 +791,7 @@ Accept wildcard characters: False
 ```
 
 ### -UseSSL
+
 Specifies that the Secure Sockets Layer (SSL) protocol is used to establish a connection to the remote computer.
 By default, SSL is not used.
 
@@ -790,16 +812,19 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
 
 ## INPUTS
 
 ### None
+
 This command does not accept any input.
 
 ## OUTPUTS
 
 ### System.Xml.XmlElement
+
 This cmdlet generates an **XMLElement** object.
 
 ## NOTES

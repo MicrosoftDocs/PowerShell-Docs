@@ -11,6 +11,7 @@ title: ConvertTo-SecureString
 # ConvertTo-SecureString
 
 ## SYNOPSIS
+
 Converts encrypted standard strings to secure strings.
 It can also convert plain text to secure strings.
 It is used with ConvertFrom-SecureString and Read-Host.

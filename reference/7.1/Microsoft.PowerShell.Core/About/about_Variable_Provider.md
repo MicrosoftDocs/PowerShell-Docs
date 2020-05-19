@@ -9,6 +9,7 @@ title: Variable Provider
 # Variable provider
 
 ## Provider name
+
 Variable
 
 ## Drives

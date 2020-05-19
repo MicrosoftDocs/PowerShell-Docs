@@ -10,6 +10,7 @@ title: Get-CmsMessage
 # Get-CmsMessage
 
 ## SYNOPSIS
+
 Gets content that has been encrypted by using the Cryptographic Message Syntax format.
 
 ## SYNTAX

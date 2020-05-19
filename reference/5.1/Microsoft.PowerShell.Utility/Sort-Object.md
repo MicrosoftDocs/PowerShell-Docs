@@ -12,6 +12,7 @@ title: Sort-Object
 # Sort-Object
 
 ## SYNOPSIS
+
 Sorts objects by property values.
 
 ## SYNTAX
@@ -307,6 +308,7 @@ down the pipeline to the `ForEach-Object` cmdlet. `ForEach-Object` uses a script
 the strings to integers. In the sample code, `[int]` converts the string to an integer and `$_`
 represents each string as it comes down the pipeline. The integer objects are sent down the pipeline
 to the `Sort-Object` cmdlet. `Sort-Object` sorts the integer objects in numeric order.
+
 ## PARAMETERS
 
 ### -CaseSensitive

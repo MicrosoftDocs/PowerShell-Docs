@@ -11,6 +11,7 @@ title: Test-ModuleManifest
 # Test-ModuleManifest
 
 ## SYNOPSIS
+
 Verifies that a module manifest file accurately describes the contents of a module.
 
 ## SYNTAX

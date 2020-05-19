@@ -12,6 +12,7 @@ title: Get-EventLog
 # Get-EventLog
 
 ## SYNOPSIS
+
 Gets the events in an event log, or a list of the event logs, on the local computer or remote
 computers.
 

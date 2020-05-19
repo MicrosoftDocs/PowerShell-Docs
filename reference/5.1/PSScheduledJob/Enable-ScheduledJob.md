@@ -12,6 +12,7 @@ title: Enable-ScheduledJob
 # Enable-ScheduledJob
 
 ## SYNOPSIS
+
 Enables a scheduled job.
 
 ## SYNTAX
@@ -36,6 +37,7 @@ Enable-ScheduledJob [-Name] <String> [-PassThru] [-WhatIf] [-Confirm] [<CommonPa
 ```
 
 ## DESCRIPTION
+
 The **Enable-ScheduledJob** cmdlet re-enables scheduled jobs that are disabled, such as those that are disabled by using the Disable-ScheduledJob cmdlet.
 Enabled jobs run automatically when triggered.
 
@@ -109,6 +111,7 @@ The command uses the *Name* parameter of **Enable-ScheduledJob** to enable the I
 ## PARAMETERS
 
 ### -Id
+
 Enables the scheduled job with the specified identification number (ID).
 Enter the ID of a scheduled job.
 
@@ -125,6 +128,7 @@ Accept wildcard characters: False
 ```
 
 ### -InputObject
+
 Specifies the scheduled job to enable.
 Enter a variable that contains **ScheduledJobDefinition** objects or type a command or expression that gets **ScheduledJobDefinition** objects, such as a Get-ScheduledJob command.
 You can also pipe a **ScheduledJobDefinition** object to **Enable-ScheduledJob**.
@@ -142,6 +146,7 @@ Accept wildcard characters: False
 ```
 
 ### -Name
+
 Enables the scheduled jobs with the specified names.
 Enter the name of a scheduled job.
 Wildcards are supported.
@@ -159,6 +164,7 @@ Accept wildcard characters: False
 ```
 
 ### -PassThru
+
 Returns an object representing the item with which you are working.
 By default, this cmdlet does not generate any output.
 
@@ -175,6 +181,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
+
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
@@ -190,6 +197,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
+
 Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
@@ -206,16 +214,19 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### Microsoft.PowerShell.ScheduledJob.ScheduledJobDefinition
+
 You can pipe a scheduled job to **Enable-ScheduledJob**.
 
 ## OUTPUTS
 
 ### None or Microsoft.PowerShell.ScheduledJob.ScheduledJobDefinition
+
 If you use the **Passthru** parameter, **Enable-ScheduledJob** returns the scheduled job that was enabled.
 Otherwise, this cmdlet does not generate any output.
 

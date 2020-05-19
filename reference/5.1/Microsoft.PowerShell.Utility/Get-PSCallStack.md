@@ -12,6 +12,7 @@ title: Get-PSCallStack
 # Get-PSCallStack
 
 ## SYNOPSIS
+
 Displays the current call stack.
 
 ## SYNTAX
@@ -21,6 +22,7 @@ Get-PSCallStack [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+
 The **Get-PSCallStack** cmdlet displays the current call stack.
 
 Although it is designed to be used with the Windows PowerShell debugger, you can use this cmdlet to display the call stack in a script or function outside of the debugger.
@@ -81,16 +83,19 @@ The final command is a Step-Out command (o) that exits the debugger and continue
 ## PARAMETERS
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### None
+
 You cannot pipe objects to this cmdlet.
 
 ## OUTPUTS
 
 ### System.Management.Automation.CallStackFrame
+
 **Get-PSCallStack** returns an object that represents the items in the call stack.
 
 ## NOTES

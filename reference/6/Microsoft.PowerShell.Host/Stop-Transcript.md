@@ -11,6 +11,7 @@ title: Stop-Transcript
 # Stop-Transcript
 
 ## SYNOPSIS
+
 Stops a transcript.
 
 ## SYNTAX

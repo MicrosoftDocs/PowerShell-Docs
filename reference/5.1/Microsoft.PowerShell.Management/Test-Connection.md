@@ -12,6 +12,7 @@ title: Test-Connection
 # Test-Connection
 
 ## SYNOPSIS
+
 Sends ICMP echo request packets, or pings, to one or more computers.
 
 ## SYNTAX

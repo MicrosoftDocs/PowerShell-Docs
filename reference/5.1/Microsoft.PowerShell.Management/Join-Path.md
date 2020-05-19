@@ -11,6 +11,7 @@ title: Join-Path
 # Join-Path
 
 ## SYNOPSIS
+
 Combines a path and a child path into a single path.
 
 ## SYNTAX

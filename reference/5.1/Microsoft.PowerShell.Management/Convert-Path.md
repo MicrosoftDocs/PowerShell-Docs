@@ -11,6 +11,7 @@ title: Convert-Path
 # Convert-Path
 
 ## SYNOPSIS
+
 Converts a path from a PowerShell path to a PowerShell provider path.
 
 ## SYNTAX
@@ -100,6 +101,7 @@ Accept wildcard characters: False
 ```
 
 ### -UseTransaction
+
 Includes the command in the active transaction.
 This parameter is valid only when a transaction is in progress.
 For more information, see about_transactions.

@@ -10,6 +10,7 @@ title: Get-WmiObject
 # Get-WmiObject
 
 ## SYNOPSIS
+
 Gets instances of Windows Management Instrumentation (WMI) classes or information about the
 available classes.
 

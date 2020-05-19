@@ -12,6 +12,7 @@ title: Get-LocalGroup
 # Get-LocalGroup
 
 ## SYNOPSIS
+
 Gets the local security groups.
 
 ## SYNTAX
@@ -29,6 +30,7 @@ Get-LocalGroup [[-SID] <SecurityIdentifier[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+
 The **Get-LocalGroup** cmdlet gets local security groups in Security Account Manager.
 This cmdlet gets default built-in groups and local security groups that you create.
 
@@ -53,6 +55,7 @@ The command displays properties of the group in the console.
 ## PARAMETERS
 
 ### -Name
+
 Specifies an array of names of security groups that this cmdlet gets.
 You can use the wildcard character.
 
@@ -69,6 +72,7 @@ Accept wildcard characters: False
 ```
 
 ### -SID
+
 Specifies an array of security IDs (SIDs) of security groups that this cmdlet gets.
 
 ```yaml
@@ -84,16 +88,19 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### System.String, System.Security.Principal.SecurityIdentifier
+
 You can pipe a string or a SID to this cmdlet.
 
 ## OUTPUTS
 
 ### System.Management.Automation.SecurityAccountsManager.LocalGroup
+
 This cmdlet returns a local group.
 
 ## NOTES

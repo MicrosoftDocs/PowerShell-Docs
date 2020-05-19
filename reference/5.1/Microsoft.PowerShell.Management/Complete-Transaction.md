@@ -12,6 +12,7 @@ title: Complete-Transaction
 # Complete-Transaction
 
 ## SYNOPSIS
+
 Commits the active transaction.
 
 ## SYNTAX
@@ -21,6 +22,7 @@ Complete-Transaction [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+
 The **Complete-Transaction** cmdlet commits an active transaction.
 When you commit a transaction, the commands in the transaction are finalized and the data affected by the commands is changed.
 
@@ -175,6 +177,7 @@ However, when you add the *UseTransaction* parameter to the dir command, the com
 ## PARAMETERS
 
 ### -Confirm
+
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
@@ -190,6 +193,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
+
 Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
@@ -206,16 +210,19 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### None
+
 You cannot pipe objects to this cmdlet.
 
 ## OUTPUTS
 
 ### None
+
 This cmdlet does not generate any output.
 
 ## NOTES

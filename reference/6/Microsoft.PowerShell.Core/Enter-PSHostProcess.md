@@ -12,6 +12,7 @@ title: Enter-PSHostProcess
 # Enter-PSHostProcess
 
 ## SYNOPSIS
+
 Connects to and enters into an interactive session with a local process.
 
 ## SYNTAX

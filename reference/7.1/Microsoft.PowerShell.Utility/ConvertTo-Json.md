@@ -11,6 +11,7 @@ title: ConvertTo-Json
 # ConvertTo-Json
 
 ## SYNOPSIS
+
 Converts an object to a JSON-formatted string.
 
 ## SYNTAX

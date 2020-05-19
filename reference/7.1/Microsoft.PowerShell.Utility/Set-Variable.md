@@ -11,6 +11,7 @@ title: Set-Variable
 # Set-Variable
 
 ## SYNOPSIS
+
 Sets the value of a variable.
 Creates the variable if one with the requested name does not exist.
 
@@ -210,6 +211,7 @@ Accept wildcard characters: False
 ```
 
 ### -PassThru
+
 Returns an object representing the new variable.
 By default, this cmdlet does not generate any output.
 
@@ -295,6 +297,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
+
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml

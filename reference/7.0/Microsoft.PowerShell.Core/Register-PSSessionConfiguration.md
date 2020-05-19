@@ -11,6 +11,7 @@ title: Register-PSSessionConfiguration
 # Register-PSSessionConfiguration
 
 ## SYNOPSIS
+
 Creates and registers a new session configuration.
 
 ## SYNTAX

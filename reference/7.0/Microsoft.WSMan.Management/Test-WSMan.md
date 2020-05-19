@@ -11,6 +11,7 @@ title: Test-WSMan
 # Test-WSMan
 
 ## SYNOPSIS
+
 Tests whether the WinRM service is running on a local or remote computer.
 
 ## SYNTAX

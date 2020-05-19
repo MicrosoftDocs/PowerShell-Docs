@@ -10,6 +10,7 @@ title: Invoke-RestMethod
 # Invoke-RestMethod
 
 ## Synopsis
+
 Sends an HTTP or HTTPS request to a RESTful web service.
 
 ## Syntax

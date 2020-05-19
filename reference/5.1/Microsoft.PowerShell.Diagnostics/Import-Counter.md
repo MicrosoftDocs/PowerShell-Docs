@@ -11,6 +11,7 @@ title: Import-Counter
 # Import-Counter
 
 ## SYNOPSIS
+
 Imports performance counter log files and creates the objects that represent each counter sample in the log.
 
 ## SYNTAX

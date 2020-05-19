@@ -11,6 +11,7 @@ title: Write-Debug
 # Write-Debug
 
 ## SYNOPSIS
+
 Writes a debug message to the console.
 
 ## SYNTAX

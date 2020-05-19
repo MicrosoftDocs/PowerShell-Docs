@@ -12,6 +12,7 @@ title: Show-Command
 # Show-Command
 
 ## SYNOPSIS
+
 Displays PowerShell command information in a graphical window.
 
 ## SYNTAX

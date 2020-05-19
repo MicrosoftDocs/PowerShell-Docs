@@ -11,6 +11,7 @@ title: Debug-Process
 # Debug-Process
 
 ## SYNOPSIS
+
 Debugs one or more processes running on the local computer.
 
 ## SYNTAX

@@ -11,6 +11,7 @@ title: Export-ODataEndpointProxy
 # Export-ODataEndpointProxy
 
 ## SYNOPSIS
+
 Generates a module that contains cmdlets to manage an OData endpoint.
 
 ## SYNTAX

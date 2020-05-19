@@ -11,6 +11,7 @@ title: Disable-PSRemoting
 # Disable-PSRemoting
 
 ## SYNOPSIS
+
 Prevents PowerShell endpoints from receiving remote connections.
 
 ## SYNTAX
@@ -339,6 +340,7 @@ Accept wildcard characters: False
 ```
 
 ### -Force
+
 Forces the command to run without asking for user confirmation.
 
 ```yaml

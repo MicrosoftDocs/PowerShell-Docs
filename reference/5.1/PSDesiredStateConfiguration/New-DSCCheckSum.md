@@ -12,6 +12,7 @@ title: New-DscChecksum
 # New-DscChecksum
 
 ## SYNOPSIS
+
 Creates checksum files for DSC documents and DSC resources.
 
 ## SYNTAX
@@ -21,6 +22,7 @@ New-DscChecksum [-Path] <String[]> [[-OutPath] <String>] [-Force] [-WhatIf] [-Co
 ```
 
 ## DESCRIPTION
+
 The **New-DSCCheckSum** cmdlet generates checksum files for Windows PowerShell Desired State Configuration (DSC) documents and compressed DSC resources.
 This cmdlet generates a checksum file for each configuration and resource to be used in pull mode.
 The DSC service uses the checksums to make sure that the correct configuration and resources exist on the target node.
@@ -49,6 +51,7 @@ Specifying the *Force* parameter causes the command to overwrite any checksum fi
 ## PARAMETERS
 
 ### -Force
+
 Indicates that the cmdlet overwrites the specified output file if it already exists.
 
 ```yaml
@@ -64,6 +67,7 @@ Accept wildcard characters: False
 ```
 
 ### -OutPath
+
 Specifies the path and file name of the output checksum file.
 
 ```yaml
@@ -79,6 +83,7 @@ Accept wildcard characters: False
 ```
 
 ### -Path
+
 Specifies the path of the input file.
 
 ```yaml
@@ -94,6 +99,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
+
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
@@ -109,6 +115,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
+
 Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
@@ -125,6 +132,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS

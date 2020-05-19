@@ -12,6 +12,7 @@ title: Restart-Computer
 # Restart-Computer
 
 ## SYNOPSIS
+
 Restarts the operating system on local and remote computers.
 
 ## SYNTAX

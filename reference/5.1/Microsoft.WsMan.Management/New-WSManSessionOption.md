@@ -12,6 +12,7 @@ title: New-WSManSessionOption
 # New-WSManSessionOption
 
 ## SYNOPSIS
+
 Creates session option hash table to use as input parameters for WS-Management cmdlets.
 
 ## SYNTAX
@@ -23,6 +24,7 @@ New-WSManSessionOption [-ProxyAccessType <ProxyAccessType>] [-ProxyAuthenticatio
 ```
 
 ## DESCRIPTION
+
 The **New-WSManSessionOption** cmdlet creates a WSMan Session option hash table which can be passed to WSMan cmdlets:
 
 - Get-WSManInstance
@@ -62,6 +64,7 @@ Those connections appear in the **ComputerName** list.
 ## PARAMETERS
 
 ### -NoEncryption
+
 Indicates that the connection does not use encryption for remote operations over HTTP.
 
 By default, unencrypted traffic is not enabled.
@@ -80,6 +83,7 @@ Accept wildcard characters: False
 ```
 
 ### -OperationTimeout
+
 Specifies the time-out, in milliseconds, for the WS-Management operation.
 
 ```yaml
@@ -95,6 +99,7 @@ Accept wildcard characters: False
 ```
 
 ### -ProxyAccessType
+
 Specifies the mechanism by which the proxy server is located.
 The acceptable values for this parameter are:
 
@@ -124,6 +129,7 @@ Accept wildcard characters: False
 ```
 
 ### -ProxyAuthentication
+
 Specifies the authentication method to use at the proxy.
 The acceptable values for this parameter are:
 
@@ -151,6 +157,7 @@ Accept wildcard characters: False
 ```
 
 ### -ProxyCredential
+
 Specifies a user account that has permission to gain access through an intermediate Web proxy.
 
 ```yaml
@@ -166,6 +173,7 @@ Accept wildcard characters: False
 ```
 
 ### -SkipCACheck
+
 Specifies that, when it connects over HTTPS, the client does not validate that the server certificate is signed by a trusted certification authority (CA).
 Use this option only when the remote computer is trusted by another method, for example, if the remote computer is part of a network that is physically secure and isolated or the remote computer is listed as a trusted host in the WS-Management configuration.
 
@@ -182,6 +190,7 @@ Accept wildcard characters: False
 ```
 
 ### -SkipCNCheck
+
 Specifies that the certificate common name (CN) of the server does not have to match the host name of the server.
 This is used only in remote operations using HTTPS.
 This option should only be used for trusted computers.
@@ -199,6 +208,7 @@ Accept wildcard characters: False
 ```
 
 ### -SkipRevocationCheck
+
 Indicates that the connection does not validate the revocation status on the server certificate.
 
 ```yaml
@@ -214,6 +224,7 @@ Accept wildcard characters: False
 ```
 
 ### -SPNPort
+
 Specifies a port number to append to the connection Service Principal Name (SPN) of the remote server.
 An SPN is used when the authentication mechanism is Kerberos or Negotiate.
 
@@ -230,6 +241,7 @@ Accept wildcard characters: False
 ```
 
 ### -UseUTF16
+
 Indicates that the connection encodes the request in UTF16 format instead of UTF8 format.
 The default is UTF8 encoding.
 
@@ -246,6 +258,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS

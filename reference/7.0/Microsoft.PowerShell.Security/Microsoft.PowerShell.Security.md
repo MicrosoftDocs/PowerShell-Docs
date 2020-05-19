@@ -20,48 +20,63 @@ the basic security features of Windows.
 ## Microsoft.PowerShell.Security Cmdlets
 
 ### [ConvertFrom-SecureString](ConvertFrom-SecureString.md)
+
 Converts a secure string to an encrypted standard string.
 
 ### [ConvertTo-SecureString](ConvertTo-SecureString.md)
+
 Converts encrypted standard strings to secure strings.
 
 ### [Get-Acl](Get-Acl.md)
+
 Gets the security descriptor for a resource, such as a file or registry key.
 
 ### [Get-AuthenticodeSignature](Get-AuthenticodeSignature.md)
+
 Gets information about the Authenticode signature for a file.
 
 ### [Get-CmsMessage](Get-CmsMessage.md)
+
 Gets content that has been encrypted by using the Cryptographic Message Syntax format.
 
 ### [Get-Credential](Get-Credential.md)
+
 Gets a credential object based on a user name and password.
 
 ### [Get-ExecutionPolicy](Get-ExecutionPolicy.md)
+
 Gets the execution policies for the current session.
 
 ### [Get-PfxCertificate](Get-PfxCertificate.md)
+
 Gets information about .pfx certificate files on the computer.
 
 ### [New-FileCatalog](New-FileCatalog.md)
+
 Creates a Windows catalog file containing cryptographic hashes for files and folders in specified
 paths.
 
 ### [Protect-CmsMessage](Protect-CmsMessage.md)
+
 Encrypts content by using the Cryptographic Message Syntax format.
 
 ### [Set-Acl](Set-Acl.md)
+
 Changes the security descriptor of a specified item, such as a file or a registry key.
 
 ### [Set-AuthenticodeSignature](Set-AuthenticodeSignature.md)
+
 Adds an Authenticode signature to a PowerShell script or other file.
 
 ### [Set-ExecutionPolicy](Set-ExecutionPolicy.md)
+
 Changes the user preference for the PowerShell execution policy.
 
 ### [Test-FileCatalog](Test-FileCatalog.md)
+
 Validates files and folders by comparing their path-sensitive hashes against those recorded in a
 catalog.
 
 ### [Unprotect-CmsMessage](Unprotect-CmsMessage.md)
+
 Decrypts content that has been encrypted by using the Cryptographic Message Syntax format.

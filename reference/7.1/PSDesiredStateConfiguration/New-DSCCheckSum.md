@@ -11,6 +11,7 @@ title: New-DscChecksum
 # New-DscChecksum
 
 ## SYNOPSIS
+
 Creates checksum files for DSC documents and DSC resources.
 
 ## SYNTAX

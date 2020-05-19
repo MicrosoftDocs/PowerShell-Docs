@@ -12,6 +12,7 @@ title: Get-PackageSource
 # Get-PackageSource
 
 ## SYNOPSIS
+
 Gets a list of package sources that are registered for a package provider.
 
 ## SYNTAX

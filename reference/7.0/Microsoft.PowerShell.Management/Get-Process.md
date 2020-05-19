@@ -11,6 +11,7 @@ title: Get-Process
 # Get-Process
 
 ## SYNOPSIS
+
 Gets the processes that are running on the local computer.
 
 ## SYNTAX

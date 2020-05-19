@@ -11,6 +11,7 @@ title:  Debugging DSC resources
 In PowerShell 5.0, a new feature was introduced in Desired State Configuration (DSC) that allows you to debug a DSC resource as a configuration is being applied.
 
 ## Enabling DSC debugging
+
 Before you can debug a resource, you have to enable debugging by calling the [Enable-DscDebug](/powershell/module/PSDesiredStateConfiguration/Enable-DscDebug) cmdlet.
 This cmdlet takes a mandatory parameter, **BreakAll**.
 
@@ -36,6 +37,7 @@ PS C:\DebugTest>
 ```
 
 ## Starting a configuration with debug enabled
+
 To debug a DSC resource, you start a configuration that calls that resource.
 For this example, we'll look at a simple configuration that calls the **WindowsFeature** resource to ensure that the "WindowsPowerShellWebAccess" feature is installed:
 

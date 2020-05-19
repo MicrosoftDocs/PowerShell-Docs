@@ -11,6 +11,7 @@ title: Remove-WSManInstance
 # Remove-WSManInstance
 
 ## SYNOPSIS
+
 Deletes a management resource instance.
 
 ## SYNTAX

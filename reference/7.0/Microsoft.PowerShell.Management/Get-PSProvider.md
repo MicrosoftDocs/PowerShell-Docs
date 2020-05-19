@@ -11,6 +11,7 @@ title: Get-PSProvider
 # Get-PSProvider
 
 ## SYNOPSIS
+
 Gets information about the specified PowerShell provider.
 
 ## SYNTAX

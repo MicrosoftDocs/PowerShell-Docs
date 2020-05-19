@@ -19,7 +19,9 @@ Microsoft.PowerShell.Diagnostics module, which contains cmdlets that manage data
 ## Microsoft.PowerShell.Diagnostics Cmdlets
 
 ### [Get-WinEvent](Get-WinEvent.md)
+
 Gets events from event logs and event tracing log files on local and remote computers.
 
 ### [New-WinEvent](New-WinEvent.md)
+
 Creates an ETW event for the specified event provider.

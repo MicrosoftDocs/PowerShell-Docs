@@ -12,6 +12,7 @@ title: New-ModuleManifest
 # New-ModuleManifest
 
 ## SYNOPSIS
+
 Creates a new module manifest.
 
 ## SYNTAX

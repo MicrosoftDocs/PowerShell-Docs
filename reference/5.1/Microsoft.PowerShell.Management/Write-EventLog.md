@@ -12,6 +12,7 @@ title: Write-EventLog
 # Write-EventLog
 
 ## SYNOPSIS
+
 Writes an event to an event log.
 
 ## SYNTAX
@@ -22,6 +23,7 @@ Write-EventLog [-LogName] <String> [-Source] <String> [[-EntryType] <EventLogEnt
 ```
 
 ## DESCRIPTION
+
 The **Write-EventLog** cmdlet writes an event to an event log.
 
 To write an event to an event log, the event log must exist on the computer and the source must be registered for the event log.
@@ -50,6 +52,7 @@ This command writes an event from the MyApp source to the Application event log 
 ## PARAMETERS
 
 ### -Category
+
 Specifies a task category for the event.
 Enter an integer that is associated with the strings in the category message file for the event log.
 
@@ -66,6 +69,7 @@ Accept wildcard characters: False
 ```
 
 ### -ComputerName
+
 Specifies a remote computer.
 The default is the local computer.
 
@@ -87,6 +91,7 @@ Accept wildcard characters: False
 ```
 
 ### -EntryType
+
 Specifies the entry type of the event.
 The acceptable values for this parameter are: Error, Warning, Information, SuccessAudit, and FailureAudit.
 The default value is Information.
@@ -107,6 +112,7 @@ Accept wildcard characters: False
 ```
 
 ### -EventId
+
 Specifies the event identifier.
 This parameter is required.
 The maximum value for the *EventId* parameter is 65535.
@@ -124,6 +130,7 @@ Accept wildcard characters: False
 ```
 
 ### -LogName
+
 Specifies the name of the log to which the event is written.
 Enter the log name.
 The log name is the value of the **Log** property, not the **LogDisplayName**.
@@ -143,6 +150,7 @@ Accept wildcard characters: False
 ```
 
 ### -Message
+
 Specifies the event message.
 This parameter is required.
 
@@ -159,6 +167,7 @@ Accept wildcard characters: False
 ```
 
 ### -RawData
+
 Specifies the binary data that is associated with the event, in bytes.
 
 ```yaml
@@ -174,6 +183,7 @@ Accept wildcard characters: False
 ```
 
 ### -Source
+
 Specifies the event source, which is typically the name of the application that is writing the event to the log.
 
 ```yaml
@@ -189,16 +199,19 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### None
+
 You cannot pipe input to this cmdlet.
 
 ## OUTPUTS
 
 ### System.Diagnostics.EventLogEntry
+
 This cmdlet returns objects that represents the events in the logs.
 
 ## NOTES

@@ -12,6 +12,7 @@ title: Remove-EventLog
 # Remove-EventLog
 
 ## SYNOPSIS
+
 Deletes an event log or unregisters an event source.
 
 ## SYNTAX
@@ -29,6 +30,7 @@ Remove-EventLog [[-ComputerName] <String[]>] [-Source <String[]>] [-WhatIf] [-Co
 ```
 
 ## DESCRIPTION
+
 The **Remove-EventLog** cmdlet deletes an event log file from a local or remote computer and unregisters all its event sources for the log.
 You can also use this cmdlet to unregister event sources without deleting any event logs.
 
@@ -126,6 +128,7 @@ It shows that the MyApp event source was deleted.
 ## PARAMETERS
 
 ### -ComputerName
+
 Specifies a remote computer.
 The default is the local computer.
 
@@ -148,6 +151,7 @@ Accept wildcard characters: False
 ```
 
 ### -LogName
+
 Specifies the event logs.
 Enter the log name of one or more event logs, separated by commas.
 The log name is the value of the **Log** property, not the *LogDisplayName*, Wildcard characters are not permitted.
@@ -166,6 +170,7 @@ Accept wildcard characters: False
 ```
 
 ### -Source
+
 Specifies the event sources that this cmdlet unregisters.
 Enter the source names, not the executable name, separated by commas.
 
@@ -182,6 +187,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
+
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
@@ -197,6 +203,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
+
 Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
@@ -213,16 +220,19 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### None
+
 You cannot pipe input to this cmdlet.
 
 ## OUTPUTS
 
 ### None
+
 This cmdlet does not return any output.
 
 ## NOTES

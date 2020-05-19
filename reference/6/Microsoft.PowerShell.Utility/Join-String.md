@@ -10,6 +10,7 @@ title: Join-String
 # Join-String
 
 ## SYNOPSIS
+
 Combines objects from the pipeline into a single string.
 
 ## SYNTAX

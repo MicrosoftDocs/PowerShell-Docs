@@ -12,6 +12,7 @@ title: Update-Script
 # Update-Script
 
 ## SYNOPSIS
+
 Updates a script.
 
 ## SYNTAX

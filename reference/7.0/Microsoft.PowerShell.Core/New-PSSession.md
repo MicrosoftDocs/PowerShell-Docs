@@ -11,6 +11,7 @@ title: New-PSSession
 # New-PSSession
 
 ## SYNOPSIS
+
 Creates a persistent connection to a local or remote computer.
 
 ## SYNTAX

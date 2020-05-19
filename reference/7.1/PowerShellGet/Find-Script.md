@@ -11,6 +11,7 @@ title: Find-Script
 # Find-Script
 
 ## SYNOPSIS
+
 Finds a script.
 
 ## SYNTAX

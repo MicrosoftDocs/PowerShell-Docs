@@ -12,6 +12,7 @@ title: Remove-PSBreakpoint
 # Remove-PSBreakpoint
 
 ## SYNOPSIS
+
 Deletes breakpoints from the current console.
 
 ## SYNTAX
@@ -29,6 +30,7 @@ Remove-PSBreakpoint [-Id] <Int32[]> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+
 The **Remove-PSBreakpoint** cmdlet deletes a breakpoint.
 Enter a breakpoint object or a breakpoint ID.
 
@@ -91,6 +93,7 @@ To save the function, add it to your Windows PowerShell profile.
 ## PARAMETERS
 
 ### -Breakpoint
+
 Specifies the breakpoints to delete.
 Enter a variable that contains breakpoint objects or a command that gets breakpoint objects, such as a **Get-PSBreakpoint** command.
 You can also pipe breakpoint objects to **Remove-PSBreakpoint**.
@@ -108,6 +111,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
+
 Specifies breakpoint IDs for which this cmdlet deletes breakpoints.
 
 ```yaml
@@ -123,6 +127,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
+
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
@@ -138,6 +143,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
+
 Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
@@ -154,16 +160,19 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### System.Management.Automation.Breakpoint
+
 You can pipe breakpoint objects to **Remove-PSBreakpoint**.
 
 ## OUTPUTS
 
 ### None
+
 The cmdlet does not generate any output.
 
 ## NOTES

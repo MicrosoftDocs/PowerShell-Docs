@@ -11,6 +11,7 @@ title: Set-StrictMode
 # Set-StrictMode
 
 ## SYNOPSIS
+
 Establishes and enforces coding rules in expressions, scripts, and script blocks.
 
 ## SYNTAX

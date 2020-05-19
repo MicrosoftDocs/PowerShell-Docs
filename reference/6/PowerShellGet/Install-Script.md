@@ -11,6 +11,7 @@ title: Install-Script
 # Install-Script
 
 ## SYNOPSIS
+
 Installs a script.
 
 ## SYNTAX

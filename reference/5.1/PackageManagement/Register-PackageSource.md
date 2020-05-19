@@ -12,6 +12,7 @@ title: Register-PackageSource
 # Register-PackageSource
 
 ## SYNOPSIS
+
 Adds a package source for a specified package provider.
 
 ## SYNTAX

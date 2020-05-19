@@ -218,6 +218,7 @@ __Note:__ partial configurations are supported with Azure Automation DSC, but on
 ## See Also
 
 ### Concepts
+
 [Desired State Configuration Overview](../overview/overview.md)
 
 [Getting started with Azure Automation DSC](https://docs.microsoft.com/azure/automation/automation-dsc-getting-started)

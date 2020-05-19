@@ -12,6 +12,7 @@ title: Use-Transaction
 # Use-Transaction
 
 ## SYNOPSIS
+
 Adds the script block to the active transaction.
 
 ## SYNTAX
@@ -21,6 +22,7 @@ Use-Transaction [-TransactedScript] <ScriptBlock> [-UseTransaction] [<CommonPara
 ```
 
 ## DESCRIPTION
+
 The **Use-Transaction** cmdlet adds a script block to an active transaction.
 This enables you to do transacted scripting by using transaction-enabled Microsoft .NET Framework objects.
 The script block can contain only transaction-enabled .NET Framework objects, such as instances of the Microsoft.PowerShell.Commands.Management.TransactedString class.
@@ -116,6 +118,7 @@ The results show that only the changes that were made outside the transaction we
 ## PARAMETERS
 
 ### -TransactedScript
+
 Specifies the script block that is run in the transaction.
 Enter any valid script block enclosed in braces ( { } ).
 This parameter is required.
@@ -133,6 +136,7 @@ Accept wildcard characters: False
 ```
 
 ### -UseTransaction
+
 Includes the command in the active transaction.
 This parameter is valid only when a transaction is in progress.
 For more information, see about_transactions.
@@ -150,16 +154,19 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### None
+
 You cannot pipe input to this cmdlet.
 
 ## OUTPUTS
 
 ### PSObject
+
 This cmdlet returns the result of the transaction.
 
 ## NOTES

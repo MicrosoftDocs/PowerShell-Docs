@@ -12,6 +12,7 @@ title: Get-Service
 # Get-Service
 
 ## SYNOPSIS
+
 Gets the services on the computer.
 
 ## SYNTAX

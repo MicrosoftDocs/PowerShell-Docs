@@ -11,6 +11,7 @@ title: Add-Member
 # Add-Member
 
 ## SYNOPSIS
+
 Adds custom properties and methods to an instance of a PowerShell object.
 
 ## SYNTAX

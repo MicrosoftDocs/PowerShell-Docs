@@ -11,6 +11,7 @@ title: Get-Variable
 # Get-Variable
 
 ## SYNOPSIS
+
 Gets the variables in the current console.
 
 ## SYNTAX

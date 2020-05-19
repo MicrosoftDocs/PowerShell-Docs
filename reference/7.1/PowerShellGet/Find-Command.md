@@ -12,6 +12,7 @@ title: Find-Command
 # Find-Command
 
 ## SYNOPSIS
+
 Finds PowerShell commands in modules.
 
 ## SYNTAX

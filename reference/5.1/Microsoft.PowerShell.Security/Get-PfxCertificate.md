@@ -11,6 +11,7 @@ title: Get-PfxCertificate
 # Get-PfxCertificate
 
 ## SYNOPSIS
+
 Gets information about PFX certificate files on the computer.
 
 ## SYNTAX

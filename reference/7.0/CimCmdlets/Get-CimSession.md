@@ -12,6 +12,7 @@ title: Get-CimSession
 # Get-CimSession
 
 ## SYNOPSIS
+
 Gets the CIM session objects from the current session.
 
 ## SYNTAX
@@ -224,6 +225,7 @@ Accept wildcard characters: True
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see

@@ -9,6 +9,7 @@ title: Get-LogProperties
 # Get-LogProperties
 
 ## SYNOPSIS
+
 Retrieves the properties of a Windows event log.
 
 ## SYNTAX

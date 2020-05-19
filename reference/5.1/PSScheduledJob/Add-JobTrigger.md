@@ -12,6 +12,7 @@ title: Add-JobTrigger
 # Add-JobTrigger
 
 ## SYNOPSIS
+
 Adds job triggers to scheduled jobs.
 
 ## SYNTAX
@@ -36,6 +37,7 @@ Add-JobTrigger [-Trigger] <ScheduledJobTrigger[]> [-Name] <String[]> [<CommonPar
 ```
 
 ## DESCRIPTION
+
 The **Add-JobTrigger** cmdlet adds job triggers to scheduled jobs.
 You can use it to add multiple triggers to multiple scheduled jobs.
 
@@ -97,6 +99,7 @@ The second command uses the **Add-JobTrigger** cmdlet to add the job trigger in 
 ## PARAMETERS
 
 ### -Id
+
 Specifies the identification numbers of the scheduled jobs.
 **Add-JobTrigger** adds the job trigger to the specified scheduled jobs.
 
@@ -115,6 +118,7 @@ Accept wildcard characters: False
 ```
 
 ### -InputObject
+
 Specifies the scheduled jobs.
 Enter a variable that contains **ScheduledJob** objects or type a command or expression that gets **ScheduledJob** objects, such as a Get-ScheduledJob command.
 You can also pipe **ScheduledJob** objects to **Add-JobTrigger**.
@@ -132,6 +136,7 @@ Accept wildcard characters: False
 ```
 
 ### -Name
+
 Specifies the names of the scheduled jobs.
 **Add-JobTrigger** adds the job triggers to the specified scheduled jobs.
 Wildcards are supported.
@@ -151,6 +156,7 @@ Accept wildcard characters: False
 ```
 
 ### -Trigger
+
 Specifies the job triggers to add.
 Enter a hash table that specifies job triggers or a variable that contains **ScheduledJobTrigger** objects, or type a command or expression that gets **ScheduledJobTrigger** objects, such as a Get-JobTrigger command.
 You can also pipe **ScheduledJobTrigger** objects to **Add-JobTrigger**.
@@ -168,16 +174,19 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### Microsoft.PowerShell.ScheduledJob.ScheduledJobTrigger, Microsoft.PowerShell.ScheduledJob.ScheduledJobDefinition
+
 You can pipe job triggers or scheduled jobs to **Add-JobTrigger**.
 
 ## OUTPUTS
 
 ### None
+
 This cmdlet does not return any output.
 
 ## NOTES

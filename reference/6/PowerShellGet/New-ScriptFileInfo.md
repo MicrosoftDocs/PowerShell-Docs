@@ -12,6 +12,7 @@ title: New-ScriptFileInfo
 # New-ScriptFileInfo
 
 ## SYNOPSIS
+
 Creates a script file with metadata.
 
 ## SYNTAX

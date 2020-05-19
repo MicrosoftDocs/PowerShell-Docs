@@ -12,6 +12,7 @@ title: Import-PackageProvider
 # Import-PackageProvider
 
 ## SYNOPSIS
+
 Adds Package Management package providers to the current session.
 
 ## SYNTAX

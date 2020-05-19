@@ -11,6 +11,7 @@ title: Export-Alias
 # Export-Alias
 
 ## SYNOPSIS
+
 Exports information about currently defined aliases to a file.
 
 ## SYNTAX

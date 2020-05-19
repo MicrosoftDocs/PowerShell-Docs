@@ -10,6 +10,7 @@ title: Protect-CmsMessage
 # Protect-CmsMessage
 
 ## SYNOPSIS
+
 Encrypts content by using the Cryptographic Message Syntax format.
 
 ## SYNTAX

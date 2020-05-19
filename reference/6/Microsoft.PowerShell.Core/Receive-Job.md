@@ -11,6 +11,7 @@ title: Receive-Job
 # Receive-Job
 
 ## SYNOPSIS
+
 Gets the results of the PowerShell background jobs in the current session.
 
 ## SYNTAX

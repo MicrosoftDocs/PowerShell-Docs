@@ -9,6 +9,7 @@ title: Enable-ExperimentalFeature
 # Enable-ExperimentalFeature
 
 ## SYNOPSIS
+
 Enable an experimental feature on startup of new instance of PowerShell.
 
 ## SYNTAX

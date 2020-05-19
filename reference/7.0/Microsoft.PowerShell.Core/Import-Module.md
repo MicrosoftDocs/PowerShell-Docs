@@ -12,6 +12,7 @@ title: Import-Module
 # Import-Module
 
 ## SYNOPSIS
+
 Adds modules to the current session.
 
 ## SYNTAX

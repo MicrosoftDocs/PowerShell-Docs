@@ -11,6 +11,7 @@ title: Format-List
 # Format-List
 
 ## SYNOPSIS
+
 Formats the output as a list of properties in which each property appears on a new line.
 
 ## SYNTAX

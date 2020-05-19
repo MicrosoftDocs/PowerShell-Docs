@@ -12,6 +12,7 @@ title: Uninstall-Module
 # Uninstall-Module
 
 ## SYNOPSIS
+
 Uninstalls a module.
 
 ## SYNTAX

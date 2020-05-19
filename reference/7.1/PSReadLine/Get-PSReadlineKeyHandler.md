@@ -12,6 +12,7 @@ title: Get-PSReadLineKeyHandler
 # Get-PSReadLineKeyHandler
 
 ## SYNOPSIS
+
 Gets the bound key functions for the PSReadLine module.
 
 ## SYNTAX

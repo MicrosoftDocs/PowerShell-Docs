@@ -11,6 +11,7 @@ title: Get-Member
 # Get-Member
 
 ## SYNOPSIS
+
 Gets the properties and methods of objects.
 
 ## SYNTAX

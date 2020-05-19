@@ -11,6 +11,7 @@ title: Install-PackageProvider
 # Install-PackageProvider
 
 ## SYNOPSIS
+
 Installs one or more Package Management package providers.
 
 ## SYNTAX

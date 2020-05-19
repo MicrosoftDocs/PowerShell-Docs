@@ -11,6 +11,7 @@ title: Disable-PSBreakpoint
 # Disable-PSBreakpoint
 
 ## SYNOPSIS
+
 Disables the breakpoints in the current console.
 
 ## SYNTAX

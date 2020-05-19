@@ -11,6 +11,7 @@ title: New-Guid
 # New-Guid
 
 ## SYNOPSIS
+
 Creates a GUID.
 
 ## SYNTAX

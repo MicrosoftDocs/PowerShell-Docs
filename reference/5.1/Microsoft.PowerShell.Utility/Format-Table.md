@@ -12,6 +12,7 @@ title: Format-Table
 # Format-Table
 
 ## SYNOPSIS
+
 Formats the output as a table.
 
 ## SYNTAX

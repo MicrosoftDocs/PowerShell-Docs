@@ -12,6 +12,7 @@ title: Set-PSDebug
 # Set-PSDebug
 
 ## SYNOPSIS
+
 Turns script debugging features on and off, sets the trace level, and toggles strict mode.
 
 ## SYNTAX

@@ -10,6 +10,7 @@ title: Enable-PSRemoting
 # Enable-PSRemoting
 
 ## SYNOPSIS
+
 Configures the computer to receive remote commands.
 
 ## SYNTAX

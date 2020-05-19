@@ -9,6 +9,7 @@ title: about_Operator_Precedence
 # About Operator Precedence
 
 ## SHORT DESCRIPTION
+
 Lists the PowerShell operators in precedence order.
 
 ## LONG DESCRIPTION

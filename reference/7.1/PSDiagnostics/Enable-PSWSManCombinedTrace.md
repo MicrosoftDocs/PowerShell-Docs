@@ -11,6 +11,7 @@ title: Enable-PSWSManCombinedTrace
 # Enable-PSWSManCombinedTrace
 
 ## SYNOPSIS
+
 Start a logging session with the WSMan and PowerShell providers enabled.
 
 ## SYNTAX

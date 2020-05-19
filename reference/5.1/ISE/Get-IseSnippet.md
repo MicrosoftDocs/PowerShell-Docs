@@ -11,6 +11,7 @@ title: Get-IseSnippet
 # Get-IseSnippet
 
 ## SYNOPSIS
+
 Gets snippets that the user created.
 
 ## SYNTAX

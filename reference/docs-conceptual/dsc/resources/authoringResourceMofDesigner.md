@@ -18,6 +18,7 @@ this topic, we will create a DSC resource that manages Active Directory users. U
 **xDscResourceDesigner** module.
 
 ## Creating resource properties
+
 The first thing we need to do is decide on properties that the resource will expose. For this
 example, we will define an Active Directory user with the following properties.
 
@@ -196,7 +197,9 @@ MOF resource schema as a parameter. The cmdlet will output any errors in the sch
 ### See Also
 
 #### Concepts
+
 [Build Custom Windows PowerShell Desired State Configuration Resources](authoringResource.md)
 
 #### Other Resources
+
 [xDscResourceDesigner Module](https://www.powershellgallery.com/packages/xDscResourceDesigner/1.12.0.0)

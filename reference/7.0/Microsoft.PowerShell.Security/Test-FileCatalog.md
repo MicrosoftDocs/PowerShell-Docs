@@ -11,6 +11,7 @@ title: Test-FileCatalog
 # Test-FileCatalog
 
 ## SYNOPSIS
+
 `Test-FileCatalog` validates whether the hashes contained in a catalog file
 (.cat) matches the hashes of the actual files in order to validate their
 authenticity.

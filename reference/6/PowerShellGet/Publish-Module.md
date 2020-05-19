@@ -12,6 +12,7 @@ title: Publish-Module
 # Publish-Module
 
 ## SYNOPSIS
+
 Publishes a specified module from the local computer to an online gallery.
 
 ## SYNTAX

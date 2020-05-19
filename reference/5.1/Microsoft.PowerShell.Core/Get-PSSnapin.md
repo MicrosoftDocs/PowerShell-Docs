@@ -12,6 +12,7 @@ title: Get-PSSnapin
 # Get-PSSnapin
 
 ## SYNOPSIS
+
 Gets the Windows PowerShell snap-ins on the computer.
 
 ## SYNTAX
@@ -21,6 +22,7 @@ Get-PSSnapin [[-Name] <String[]>] [-Registered] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+
 The **Get-PSSnapin** cmdlet gets the Windows PowerShell snap-ins that have been added to the current session or that have been registered on the system.
 This cmdlet lists the snap-ins in the order in which they are detected.
 
@@ -64,6 +66,7 @@ This command gets the Windows PowerShell snap-ins in the current session that ha
 ## PARAMETERS
 
 ### -Name
+
 Specifies an array of snap-in names.
 This cmdlet gets only the specified Windows PowerShell snap-ins.
 Wildcard characters are permitted.
@@ -81,6 +84,7 @@ Accept wildcard characters: False
 ```
 
 ### -Registered
+
 Indicates that this cmdlet gets the Windows PowerShell snap-ins that have been registered on the system even if they have not yet been added to the session.
 
 The snap-ins that are installed with Windows PowerShell do not appear in this list.
@@ -100,16 +104,19 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### None
+
 You cannot pipe input to this cmdlet.
 
 ## OUTPUTS
 
 ### System.Management.Automation.PSSnapInInfo
+
 Get-PSSnapin returns an object for each snap-in that it gets.
 
 ## NOTES

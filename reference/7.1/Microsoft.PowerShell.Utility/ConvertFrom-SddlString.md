@@ -11,6 +11,7 @@ title: ConvertFrom-SddlString
 # ConvertFrom-SddlString
 
 ## SYNOPSIS
+
 Converts a SDDL string to a custom object.
 
 ## SYNTAX

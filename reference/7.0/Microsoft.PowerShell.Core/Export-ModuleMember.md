@@ -11,6 +11,7 @@ title: Export-ModuleMember
 # Export-ModuleMember
 
 ## SYNOPSIS
+
 Specifies the module members that are exported.
 
 ## SYNTAX

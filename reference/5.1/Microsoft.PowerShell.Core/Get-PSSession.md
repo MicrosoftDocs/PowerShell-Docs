@@ -11,6 +11,7 @@ title: Get-PSSession
 # Get-PSSession
 
 ## SYNOPSIS
+
 Gets the PowerShell sessions on local and remote computers.
 
 ## SYNTAX

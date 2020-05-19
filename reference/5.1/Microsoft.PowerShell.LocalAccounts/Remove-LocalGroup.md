@@ -12,6 +12,7 @@ title: Remove-LocalGroup
 # Remove-LocalGroup
 
 ## SYNOPSIS
+
 Deletes local security groups.
 
 ## SYNTAX
@@ -35,6 +36,7 @@ Remove-LocalGroup [-SID] <SecurityIdentifier[]> [-WhatIf] [-Confirm] [<CommonPar
 ```
 
 ## DESCRIPTION
+
 The **Remove-LocalGroup** cmdlet deletes local security groups.
 This cmdlet deletes only a local group.
 It does not delete the user accounts, computer accounts, or group accounts that belong to that group.
@@ -60,6 +62,7 @@ This command deletes the group named SecurityGroup04.
 ## PARAMETERS
 
 ### -InputObject
+
 Specifies an array of security groups that this cmdlet deletes.
 To obtain groups, use the Get-LocalGroup cmdlet.
 
@@ -76,6 +79,7 @@ Accept wildcard characters: False
 ```
 
 ### -Name
+
 Specifies an array of names of the security groups that this cmdlet deletes.
 
 ```yaml
@@ -91,6 +95,7 @@ Accept wildcard characters: False
 ```
 
 ### -SID
+
 Specifies an array of security IDs (SIDs) of security groups that this cmdlet deletes.
 
 ```yaml
@@ -106,6 +111,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
+
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
@@ -121,6 +127,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
+
 Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
@@ -137,16 +144,19 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### System.Management.Automation.SecurityAccountsManager.LocalGroup, System.String, System.Security.Principal.SecurityIdentifier
+
 You can pipe a security group, a string, or a SID to this cmdlet.
 
 ## OUTPUTS
 
 ### None
+
 This cmdlet does not generate any output.
 
 ## NOTES

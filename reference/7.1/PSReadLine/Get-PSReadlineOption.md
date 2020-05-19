@@ -11,6 +11,7 @@ title: Get-PSReadLineOption
 # Get-PSReadLineOption
 
 ## SYNOPSIS
+
 Gets values for the options that can be configured.
 
 ## SYNTAX

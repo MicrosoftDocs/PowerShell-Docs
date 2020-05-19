@@ -11,6 +11,7 @@ title: ConvertFrom-StringData
 # ConvertFrom-StringData
 
 ## SYNOPSIS
+
 Converts a string containing one or more key and value pairs to a hash table.
 
 ## SYNTAX

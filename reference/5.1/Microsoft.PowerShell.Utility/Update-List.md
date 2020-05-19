@@ -12,6 +12,7 @@ title: Update-List
 # Update-List
 
 ## SYNOPSIS
+
 Adds items to and removes items from a property value that contains a collection of objects.
 
 ## SYNTAX

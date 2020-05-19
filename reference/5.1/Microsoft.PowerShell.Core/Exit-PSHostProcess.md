@@ -12,6 +12,7 @@ title: Exit-PSHostProcess
 # Exit-PSHostProcess
 
 ## SYNOPSIS
+
 Closes an interactive session with a local process.
 
 ## SYNTAX
@@ -21,6 +22,7 @@ Exit-PSHostProcess [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+
 The **Exit-PSHostProcess** cmdlet closes an interactive session with a local process that you have opened by running the Enter-PSHostProcess cmdlet.
 You run the **Exit-PSHostProcess** cmdlet from within the process, when you are finished debugging or troubleshooting a script that is running within a process.
 
@@ -40,6 +42,7 @@ The cmdlet closes your session in the process, and returns you to the PS C:\\\> 
 ## PARAMETERS
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS

@@ -10,6 +10,7 @@ title: Disable-PSRemoting
 # Disable-PSRemoting
 
 ## SYNOPSIS
+
 Prevents PowerShell endpoints from receiving remote connections.
 
 ## SYNTAX

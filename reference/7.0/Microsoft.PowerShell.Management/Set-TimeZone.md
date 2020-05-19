@@ -11,6 +11,7 @@ title: Set-TimeZone
 # Set-TimeZone
 
 ## SYNOPSIS
+
 Sets the system time zone to a specified time zone.
 
 ## SYNTAX

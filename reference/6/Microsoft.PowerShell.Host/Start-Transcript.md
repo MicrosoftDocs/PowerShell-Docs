@@ -11,6 +11,7 @@ title: Start-Transcript
 # Start-Transcript
 
 ## SYNOPSIS
+
 Creates a record of all or part of a PowerShell session to a text file.
 
 ## SYNTAX

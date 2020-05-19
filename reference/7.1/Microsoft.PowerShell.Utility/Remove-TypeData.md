@@ -12,6 +12,7 @@ title: Remove-TypeData
 # Remove-TypeData
 
 ## Synopsis
+
 Deletes extended types from the current session.
 
 ## Syntax

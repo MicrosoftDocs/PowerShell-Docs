@@ -12,6 +12,7 @@ title: Invoke-DscResource
 # Invoke-DscResource
 
 ## SYNOPSIS
+
 Runs a method of a specified DSC resource.
 
 ## SYNTAX
@@ -22,6 +23,7 @@ Invoke-DscResource [-Name] <String> [-Method] <String> -ModuleName <ModuleSpecif
 ```
 
 ## DESCRIPTION
+
 The **Invoke-DscResource** cmdlet runs a method of a specified Windows PowerShell Desired State Configuration (DSC) resource.
 Before you run this cmdlet, set the refresh mode of the Local Configuration Manager (LCM) to Disabled.
 
@@ -50,6 +52,7 @@ This command invokes the **Test** method of a resource named WindowsProcess, whi
 ## PARAMETERS
 
 ### -Method
+
 Specifies the method of the resource that this cmdlet invokes. The acceptable values for this parameter are: Get, Set, and Test.
 
 ```yaml
@@ -66,6 +69,7 @@ Accept wildcard characters: False
 ```
 
 ### -ModuleName
+
 Specifies the name of the module from which this cmdlet invokes the specified resource.
 
 ```yaml
@@ -81,6 +85,7 @@ Accept wildcard characters: False
 ```
 
 ### -Name
+
 Specifies the name of the DSC resource to start.
 
 ```yaml
@@ -96,6 +101,7 @@ Accept wildcard characters: False
 ```
 
 ### -Property
+
 Specifies the resource property name and its value in a hash table as key and value, respectively. Use the **Get-DscResource** cmdlet to discover resource properties and their types.
 
 ```yaml
@@ -111,6 +117,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS

@@ -12,6 +12,7 @@ title: Export-Counter
 # Export-Counter
 
 ## SYNOPSIS
+
 Exports performance counter data to log files.
 
 ## SYNTAX

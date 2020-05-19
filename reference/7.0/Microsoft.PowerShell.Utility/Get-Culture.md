@@ -12,6 +12,7 @@ title: Get-Culture
 # Get-Culture
 
 ## SYNOPSIS
+
 Gets the current culture set in the operating system.
 
 ## SYNTAX

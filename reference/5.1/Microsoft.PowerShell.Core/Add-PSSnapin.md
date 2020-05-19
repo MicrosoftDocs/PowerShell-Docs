@@ -12,6 +12,7 @@ title: Add-PSSnapin
 # Add-PSSnapin
 
 ## SYNOPSIS
+
 Adds one or more Windows PowerShell snap-ins to the current session.
 
 ## SYNTAX
@@ -149,6 +150,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### None
+
 You cannot pipe objects to this cmdlet.
 
 ## OUTPUTS

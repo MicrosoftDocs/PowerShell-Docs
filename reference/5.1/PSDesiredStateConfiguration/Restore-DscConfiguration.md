@@ -12,6 +12,7 @@ title: Restore-DscConfiguration
 # Restore-DscConfiguration
 
 ## SYNOPSIS
+
 Reapplies the previous configuration for the node.
 
 ## SYNTAX
@@ -22,6 +23,7 @@ Restore-DscConfiguration [-CimSession <CimSession[]>] [-ThrottleLimit <Int32>] [
 ```
 
 ## DESCRIPTION
+
 The **Restore-DscConfiguration** cmdlet reapplies the previous configuration for the node, if a previous configuration exists.
 Specify computers by using Common Information Model (CIM) sessions.
 If you do not specify a target computer, the cmdlet restores the configuration of the local computer.
@@ -59,6 +61,7 @@ The second command restores the configuration for the computers identified by th
 ## PARAMETERS
 
 ### -AsJob
+
 Indicates that this cmdlet runs the command as a background job.
 
 ```yaml
@@ -74,6 +77,7 @@ Accept wildcard characters: False
 ```
 
 ### -CimSession
+
 Runs the cmdlet in a remote session or on a remote computer.
 Enter a computer name or a session object, such as the output of a **New-CimSession** or **Get-CimSession** cmdlet.
 
@@ -90,6 +94,7 @@ Accept wildcard characters: False
 ```
 
 ### -ThrottleLimit
+
 Specifies the maximum number of concurrent operations that can be established to run the cmdlet.
 
 ```yaml
@@ -105,6 +110,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
+
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
@@ -120,6 +126,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
+
 Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
@@ -136,6 +143,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS

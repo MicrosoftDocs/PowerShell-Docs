@@ -12,6 +12,7 @@ title: Remove-CimSession
 # Remove-CimSession
 
 ## SYNOPSIS
+
 Removes one or more CIM sessions.
 
 ## SYNTAX

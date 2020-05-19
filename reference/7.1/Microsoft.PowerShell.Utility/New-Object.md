@@ -11,6 +11,7 @@ title: New-Object
 # New-Object
 
 ## SYNOPSIS
+
 Creates an instance of a Microsoft .NET Framework or COM object.
 
 ## SYNTAX

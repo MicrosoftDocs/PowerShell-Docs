@@ -11,6 +11,7 @@ title: Remove-Module
 # Remove-Module
 
 ## SYNOPSIS
+
 Removes modules from the current session.
 
 ## SYNTAX

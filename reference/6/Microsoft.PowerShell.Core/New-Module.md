@@ -11,6 +11,7 @@ title: New-Module
 # New-Module
 
 ## SYNOPSIS
+
 Creates a new dynamic module that exists only in memory.
 
 ## SYNTAX

@@ -12,6 +12,7 @@ title: Set-ExecutionPolicy
 # Set-ExecutionPolicy
 
 ## SYNOPSIS
+
 Sets the PowerShell execution policies for Windows computers.
 
 ## SYNTAX

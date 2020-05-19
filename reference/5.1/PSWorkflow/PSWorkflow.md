@@ -19,7 +19,9 @@ PSWorkflow module, which contains cmdlets that support the Windows PowerShell Wo
 ## PSWorkflow Cmdlets
 
 ### [New-PSWorkflowExecutionOption](New-PSWorkflowExecutionOption.md)
+
 Creates an object that contains session configuration options for workflow sessions.
 
 ### [New-PSWorkflowSession](New-PSWorkflowSession.md)
+
 Creates a workflow session.

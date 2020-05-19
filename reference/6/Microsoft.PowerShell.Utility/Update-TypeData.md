@@ -12,6 +12,7 @@ title: Update-TypeData
 # Update-TypeData
 
 ## Synopsis
+
 Updates the extended type data in the session.
 
 ## Syntax

@@ -20,10 +20,13 @@ that add features to Windows PowerShell ISE.
 ## ISE Cmdlets
 
 ### [Get-IseSnippet](Get-IseSnippet.md)
+
 Gets snippets that the user created.
 
 ### [Import-IseSnippet](Import-IseSnippet.md)
+
 Imports ISE snippets into the current session
 
 ### [New-IseSnippet](New-IseSnippet.md)
+
 Creates a Windows PowerShell ISE code snippet.

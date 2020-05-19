@@ -12,6 +12,7 @@ title: Out-Printer
 # Out-Printer
 
 ## SYNOPSIS
+
 Sends output to a printer.
 
 ## SYNTAX

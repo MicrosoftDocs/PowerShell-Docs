@@ -11,6 +11,7 @@ title: Select-Object
 # Select-Object
 
 ## SYNOPSIS
+
 Selects objects or object properties.
 
 ## SYNTAX

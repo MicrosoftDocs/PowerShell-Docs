@@ -12,6 +12,7 @@ title: Stop-DscConfiguration
 # Stop-DscConfiguration
 
 ## SYNOPSIS
+
 Stops a configuration job that is running.
 
 ## SYNTAX

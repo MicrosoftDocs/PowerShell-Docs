@@ -10,6 +10,7 @@ title: New-ItemProperty
 # New-ItemProperty
 
 ## SYNOPSIS
+
 Creates a new property for an item and sets its value.
 
 ## SYNTAX

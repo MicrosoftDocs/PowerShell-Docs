@@ -12,6 +12,7 @@ title: Update-ScriptFileInfo
 # Update-ScriptFileInfo
 
 ## SYNOPSIS
+
 Updates information for a script.
 
 ## SYNTAX

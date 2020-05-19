@@ -12,6 +12,7 @@ title: Set-ScheduledJob
 # Set-ScheduledJob
 
 ## SYNOPSIS
+
 Changes scheduled jobs.
 
 ## SYNTAX
@@ -44,6 +45,7 @@ Set-ScheduledJob [-InputObject] <ScheduledJobDefinition> [-ClearExecutionHistory
 ```
 
 ## DESCRIPTION
+
 The **Set-ScheduledJob** cmdlet changes the properties of scheduled jobs, such as the commands that the jobs run or the credentials required to run the job.
 You can also use it to clear the execution history of the scheduled job.
 
@@ -118,6 +120,7 @@ The scheduled jobs are piped to the **Set-ScheduledJob** cmdlet, which changes t
 ## PARAMETERS
 
 ### -ArgumentList
+
 Specifies values for the parameters of the script that is specified by the *FilePath* parameter or for the command that is specified by the *ScriptBlock* parameter.
 
 ```yaml
@@ -133,6 +136,7 @@ Accept wildcard characters: False
 ```
 
 ### -Authentication
+
 Specifies the mechanism that is used to authenticate the user's credentials.
 The acceptable values for this parameter are:
 
@@ -165,6 +169,7 @@ Accept wildcard characters: False
 ```
 
 ### -ClearExecutionHistory
+
 Deletes the current execution history and the saved results of the scheduled job.
 
 The job execution history and job results are saved with the scheduled job in the $home\AppData\Local\Microsoft\Windows\PowerShell\ScheduledJobs directory on the computer on which the job is created.
@@ -187,6 +192,7 @@ Accept wildcard characters: False
 ```
 
 ### -Credential
+
 Specifies a user account that has permission to run the scheduled job.
 The default is the current user.
 
@@ -206,6 +212,7 @@ Accept wildcard characters: False
 ```
 
 ### -FilePath
+
 Specifies a script that the scheduled job runs.
 Enter the path to a .ps1 file on the local computer.
 To specify default values for the script parameters, use the *ArgumentList* parameter.
@@ -224,6 +231,7 @@ Accept wildcard characters: False
 ```
 
 ### -InitializationScript
+
 Specifies the fully qualified path to a Windows PowerShell script (.ps1).
 The initialization script runs in the session that is created for the background job before the commands that are specified by the *ScriptBlock* parameter or the script that is specified by the *FilePath* parameter.
 You can use the initialization script to configure the session, such as adding files, functions, or aliases, creating directories, or checking for prerequisites.
@@ -245,6 +253,7 @@ Accept wildcard characters: False
 ```
 
 ### -InputObject
+
 Specifies the scheduled job to be changed.
 Enter a variable that contains **ScheduledJobDefinition** objects or type a command or expression that gets **ScheduledJobDefinition** objects, such as a Get-ScheduledJob command.
 You can also pipe a **ScheduledJobDefinition** object to **Set-ScheduledJob**.
@@ -264,6 +273,7 @@ Accept wildcard characters: False
 ```
 
 ### -MaxResultCount
+
 Specifies how many job result entries are maintained for the scheduled job.
 The default value is 32.
 
@@ -292,6 +302,7 @@ Accept wildcard characters: False
 ```
 
 ### -Name
+
 Specifies a new name for the scheduled job and instances of the scheduled job.
 The name must be unique on the local computer.
 
@@ -313,6 +324,7 @@ Accept wildcard characters: False
 ```
 
 ### -PassThru
+
 Returns an object representing the item with which you are working.
 By default, this cmdlet does not generate any output.
 
@@ -329,6 +341,7 @@ Accept wildcard characters: False
 ```
 
 ### -RunAs32
+
 Runs the scheduled job in a 32-bit process.
 
 ```yaml
@@ -361,6 +374,7 @@ Accept wildcard characters: False
 ```
 
 ### -RunNow
+
 Starts a job immediately, as soon as the **Set-ScheduledJob** cmdlet is run.
 This parameter eliminates the need to trigger Task Scheduler to run a Windows PowerShell script immediately after registration, and does not require users to create a trigger that specifies a starting date and time.
 
@@ -377,6 +391,7 @@ Accept wildcard characters: False
 ```
 
 ### -ScheduledJobOption
+
 Sets options for the scheduled job.
 Enter a **ScheduledJobOptions** object, such as one that you create by using the New-ScheduledJobOption cmdlet, or a hash table value.
 
@@ -404,6 +419,7 @@ Accept wildcard characters: False
 ```
 
 ### -ScriptBlock
+
 Specifies the commands that the scheduled job runs.
 Enclose the commands in braces ( { } ) to create a script block.
 To specify default values for command parameters, use the *ArgumentList* parameter.
@@ -423,6 +439,7 @@ Accept wildcard characters: False
 ```
 
 ### -Trigger
+
 Specifies the triggers for the scheduled job.
 Enter one or more **ScheduledJobTrigger** objects, such as the objects that the New-JobTrigger cmdlet returns, or a hash table of job trigger keys and values.
 
@@ -455,16 +472,19 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### Microsoft.PowerShell.ScheduledJob.ScheduledJobDefinition
+
 You can pipe scheduled jobs to **Set-ScheduledJob**.
 
 ## OUTPUTS
 
 ### None or Microsoft.PowerShell.ScheduledJob.ScheduledJobDefinition
+
 If you use the *Passthru* parameter, **Set-ScheduledJob** returns the scheduled job that was changed.
 Otherwise, this cmdlet does not generate any output.
 

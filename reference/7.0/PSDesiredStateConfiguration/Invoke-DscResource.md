@@ -12,6 +12,7 @@ title: Invoke-DscResource
 # Invoke-DscResource
 
 ## SYNOPSIS
+
 Runs a method of a specified PowerShell Desired State Configuration (DSC) resource.
 
 ## SYNTAX

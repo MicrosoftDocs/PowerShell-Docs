@@ -11,6 +11,7 @@ title: Get-Module
 # Get-Module
 
 ## SYNOPSIS
+
 Gets the modules that have been imported or that can be imported into the current session.
 
 ## SYNTAX

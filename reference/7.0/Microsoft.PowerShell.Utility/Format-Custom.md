@@ -11,6 +11,7 @@ title: Format-Custom
 # Format-Custom
 
 ## SYNOPSIS
+
 Uses a customized view to format the output.
 
 ## SYNTAX

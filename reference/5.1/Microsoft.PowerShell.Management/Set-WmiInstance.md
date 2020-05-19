@@ -12,6 +12,7 @@ title: Set-WmiInstance
 # Set-WmiInstance
 
 ## SYNOPSIS
+
 Creates or updates an instance of an existing Windows Management Instrumentation (WMI) class.
 
 ## SYNTAX
@@ -69,6 +70,7 @@ Set-WmiInstance [-PutType <PutType>] [-AsJob] [-Impersonation <ImpersonationLeve
 ```
 
 ## DESCRIPTION
+
 The `Set-WmiInstance` cmdlet creates or updates an instance of an existing Windows Management Instrumentation (WMI) class.
 The created or updated instance is written to the WMI repository.
 
@@ -209,6 +211,7 @@ The returned class information reflects the new value.
 ## PARAMETERS
 
 ### -Arguments
+
 Specifies the name of the property to be changed and the new value for that property.
 The name and value must be a name-value pair.
 The name-value pair is passed on the command line as a hash table.
@@ -229,6 +232,7 @@ Accept wildcard characters: False
 ```
 
 ### -AsJob
+
 Indicates that this cmdket runs as a background job.
 Use this parameter to run commands that take a long time to finish.
 
@@ -257,6 +261,7 @@ Accept wildcard characters: False
 ```
 
 ### -Authentication
+
 Specifies the authentication level that must be used with the WMI connection.
 The acceptable values for this parameter are:
 
@@ -289,6 +294,7 @@ Accept wildcard characters: False
 ```
 
 ### -Authority
+
 Specifies the authority to use to authenticate the WMI connection.
 You can specify standard NTLM or Kerberos authentication.
 To use NTLM, set the authority setting to ntlmdomain:\<DomainName\>, where \<DomainName\> identifies a valid NTLM domain name.
@@ -308,6 +314,7 @@ Accept wildcard characters: False
 ```
 
 ### -Class
+
 Specifies the name of a WMI class.
 
 ```yaml
@@ -323,6 +330,7 @@ Accept wildcard characters: False
 ```
 
 ### -ComputerName
+
 Specifies the name of the computer on which this cmdlet runs.
 The default is the local computer.
 
@@ -345,6 +353,7 @@ Accept wildcard characters: False
 ```
 
 ### -Credential
+
 Specifies a user account that has permission to perform this action.
 The default is the current user.
 
@@ -366,6 +375,7 @@ Accept wildcard characters: False
 ```
 
 ### -EnableAllPrivileges
+
 Indicates that this cmdlet enables all the permissions of the current user before the command it makes the WMI call.
 
 ```yaml
@@ -381,6 +391,7 @@ Accept wildcard characters: False
 ```
 
 ### -Impersonation
+
 Specifies the impersonation level to use.
 The acceptable values for this parameter are:
 
@@ -409,6 +420,7 @@ Accept wildcard characters: False
 ```
 
 ### -InputObject
+
 Specifies a **ManagementObject** object to use as input.
 When this parameter is used, all other parameters ,except the *Arguments* parameter, are ignored.
 
@@ -425,6 +437,7 @@ Accept wildcard characters: False
 ```
 
 ### -Locale
+
 Specifies the preferred locale for WMI objects.
 The *Locale* parameter is specified in an array in the MS_\<LCID\> format in the preferred order.
 
@@ -441,6 +454,7 @@ Accept wildcard characters: False
 ```
 
 ### -Namespace
+
 Specifies the WMI repository namespace where the referenced WMI class is located when it is used with the *Class* parameter.
 
 ```yaml
@@ -456,6 +470,7 @@ Accept wildcard characters: False
 ```
 
 ### -Path
+
 Specifies a WMI object path of the instance that you want to create or update.
 
 ```yaml
@@ -471,6 +486,7 @@ Accept wildcard characters: False
 ```
 
 ### -PutType
+
 Indicates whether to create or update the WMI instance.
 The acceptable values for this parameter are:
 
@@ -495,6 +511,7 @@ Accept wildcard characters: False
 ```
 
 ### -ThrottleLimit
+
 Specifies the maximum number of concurrent connections that can be established to run this command.
 This parameter is used together with the *AsJob* parameter.
 The throttle limit applies only to the current command, not to the session or to the computer.
@@ -512,6 +529,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
+
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
@@ -527,6 +545,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
+
 Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
@@ -543,16 +562,19 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### None
+
 This cmdlet does not accept input.
 
 ## OUTPUTS
 
 ### None
+
 This cmdlet does not generate output.
 
 ## NOTES

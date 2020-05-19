@@ -12,6 +12,7 @@ title: Set-JobTrigger
 # Set-JobTrigger
 
 ## SYNOPSIS
+
 Changes the job trigger of a scheduled job.
 
 ## SYNTAX
@@ -24,6 +25,7 @@ Set-JobTrigger [-InputObject] <ScheduledJobTrigger[]> [-DaysInterval <Int32>] [-
 ```
 
 ## DESCRIPTION
+
 The **Set-JobTrigger** cmdlet changes the properties of the job triggers of scheduled jobs.
 You can use it to change the time or frequency at which the jobs start or to change from a time-based schedules to schedules that are triggered by a logon or startup.
 
@@ -162,6 +164,7 @@ The output, which displays the IDs of the job triggers, reveals that the *Once* 
 ## PARAMETERS
 
 ### -At
+
 Starts the job at the specified date and time.
 Enter a **DateTime** object, such as one that the Get-Date cmdlet returns, or a string that can be converted to a time, such as "April 19, 2012 15:00", "12/31/2013 9:00 PM", or "3am".
 
@@ -186,6 +189,7 @@ Accept wildcard characters: False
 ```
 
 ### -AtLogOn
+
 Starts the scheduled job when the specified users log on to the computer.
 To specify a user, use the *User* parameter.
 
@@ -202,6 +206,7 @@ Accept wildcard characters: False
 ```
 
 ### -AtStartup
+
 Starts the scheduled job when Windows starts.
 
 ```yaml
@@ -217,6 +222,7 @@ Accept wildcard characters: False
 ```
 
 ### -Daily
+
 Specifies a recurring daily job schedule.
 Use the other parameters in the *Daily* parameter set to specify the schedule details.
 
@@ -233,6 +239,7 @@ Accept wildcard characters: False
 ```
 
 ### -DaysInterval
+
 Specifies the number of days between occurrences on a daily schedule.
 For example, a value of 3 starts the scheduled job on days 1, 4, 7 and so on.
 The default value is 1.
@@ -250,6 +257,7 @@ Accept wildcard characters: False
 ```
 
 ### -DaysOfWeek
+
 Specifies the days of the week on which a weekly scheduled job runs.
 Enter day names, such as Monday, Thursday, integers 0-6, where 0 represents Sunday, or an asterisk (\*) to represent every day.
 This parameter is required in the Weekly parameter set.
@@ -273,6 +281,7 @@ Accept wildcard characters: False
 ```
 
 ### -InputObject
+
 Specifies the job triggers.
 Enter a variable that contains **ScheduledJobTrigger** objects or type a command or expression that gets **ScheduledJobTrigger** objects, such as a Get-JobTrigger command.
 You can also pipe a **ScheduledJobTrigger** object to **Set-JobTrigger**.
@@ -292,6 +301,7 @@ Accept wildcard characters: False
 ```
 
 ### -Once
+
 Specifies a non-recurring (one time) schedule.
 
 ```yaml
@@ -307,6 +317,7 @@ Accept wildcard characters: False
 ```
 
 ### -PassThru
+
 Returns the job triggers that changed.
 By default, this cmdlet does not generate any output.
 
@@ -323,6 +334,7 @@ Accept wildcard characters: False
 ```
 
 ### -RandomDelay
+
 Enables a random delay that begins at the scheduled start time, and sets the maximum delay value.
 The length of the delay is set pseudo-randomly for each start and varies from no delay to the time specified by the value of this parameter.
 The default value, zero (00:00:00), disables the random delay.
@@ -342,6 +354,7 @@ Accept wildcard characters: False
 ```
 
 ### -RepeatIndefinitely
+
 This parameter, available starting in Windows PowerShell 4.0, eliminates the necessity of specifying a **TimeSpan.MaxValue** value for the *RepetitionDuration* parameter to run a scheduled job repeatedly, for an indefinite period.
 
 ```yaml
@@ -357,6 +370,7 @@ Accept wildcard characters: False
 ```
 
 ### -RepetitionDuration
+
 Repeats the job until the specified time expires.
 The repetition frequency is determined by the value of the *RepetitionInterval* parameter.
 For example, if the value of **RepetitionInterval** is 5 minutes and the value of *RepetitionDuration* is 2 hours, the job is triggered every five minutes for two hours.
@@ -383,6 +397,7 @@ Accept wildcard characters: False
 ```
 
 ### -RepetitionInterval
+
 Repeats the job at the specified time interval.
 For example, if the value of this parameter is 2 hours, the job is triggered every two hours.
 The default value, 0, does not repeat the job.
@@ -405,6 +420,7 @@ Accept wildcard characters: False
 ```
 
 ### -User
+
 Specifies the users who trigger an *AtLogon* start of a scheduled job.
 Enter the name of a user in \<UserName\> or \<Domain\Username\> format or enter an asterisk (\*) to represent all users.
 The default value is all users.
@@ -422,6 +438,7 @@ Accept wildcard characters: False
 ```
 
 ### -Weekly
+
 Specifies a recurring weekly job schedule.
 Use the other parameters in the *Weekly* parameter set to specify the schedule details.
 
@@ -438,6 +455,7 @@ Accept wildcard characters: False
 ```
 
 ### -WeeksInterval
+
 Specifies the number of weeks between occurrences on a weekly job schedule.
 For example, a value of 3 starts the scheduled job on weeks 1, 4, 7 and so on.
 The default value is 1.
@@ -455,16 +473,19 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### Microsoft.PowerShell.ScheduledJob.ScheduledJobTrigger
+
 You can pipe multiple job triggers to **Set-JobTrigger**.
 
 ## OUTPUTS
 
 ### None or Microsoft.PowerShell.ScheduledJob.ScheduledJobTrigger
+
 When you use the *Passthru* parameter, **Set-JobTrigger** returns the job triggers that were changed.
 Otherwise, this cmdlet does not generate any output.
 

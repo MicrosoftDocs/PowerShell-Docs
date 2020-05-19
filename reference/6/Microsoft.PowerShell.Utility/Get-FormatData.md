@@ -11,6 +11,7 @@ title: Get-FormatData
 # Get-FormatData
 
 ## SYNOPSIS
+
 Gets the formatting data in the current session.
 
 ## SYNTAX

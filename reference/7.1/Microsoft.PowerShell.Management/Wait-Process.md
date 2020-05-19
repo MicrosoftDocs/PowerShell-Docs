@@ -11,6 +11,7 @@ title: Wait-Process
 # Wait-Process
 
 ## SYNOPSIS
+
 Waits for the processes to be stopped before accepting more input.
 
 ## SYNTAX

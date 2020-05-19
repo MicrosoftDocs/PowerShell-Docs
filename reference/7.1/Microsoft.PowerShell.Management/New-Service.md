@@ -11,6 +11,7 @@ title: New-Service
 # New-Service
 
 ## SYNOPSIS
+
 Creates a new Windows service.
 
 ## SYNTAX

@@ -12,6 +12,7 @@ title: Get-PSSessionCapability
 # Get-PSSessionCapability
 
 ## SYNOPSIS
+
 Gets the capabilities of a specific user on a constrained session configuration.
 
 ## SYNTAX
@@ -21,6 +22,7 @@ Get-PSSessionCapability [-ConfigurationName] <String> [-Username] <String> [-Ful
 ```
 
 ## DESCRIPTION
+
 The **Get-PSSessionCapability** cmdlet gets the capabilities of a specific user on a constrained session configuration.
 Use this cmdlet to audit customized session configurations for users.
 
@@ -55,6 +57,7 @@ This example returns details about the runspace the user CONTOSO\User would inte
 ## PARAMETERS
 
 ### -ConfigurationName
+
 Specifies the constrained session configuration (endpoint) that you are inspecting.
 
 ```yaml
@@ -70,6 +73,7 @@ Accept wildcard characters: False
 ```
 
 ### -Full
+
 Indicates that this cmdlet returns the entire initial session state for the specified user at the specified constrained endpoint.
 
 ```yaml
@@ -85,6 +89,7 @@ Accept wildcard characters: False
 ```
 
 ### -Username
+
 Specifies the user whose capabilities you are inspecting.
 
 ```yaml
@@ -100,6 +105,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS

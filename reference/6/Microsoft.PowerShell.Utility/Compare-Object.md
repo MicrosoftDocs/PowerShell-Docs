@@ -12,6 +12,7 @@ title: Compare-Object
 # Compare-Object
 
 ## SYNOPSIS
+
 Compares two sets of objects.
 
 ## SYNTAX

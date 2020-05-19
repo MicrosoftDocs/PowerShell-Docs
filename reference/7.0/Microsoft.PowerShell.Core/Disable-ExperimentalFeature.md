@@ -9,6 +9,7 @@ title: Disable-ExperimentalFeature
 # Disable-ExperimentalFeature
 
 ## SYNOPSIS
+
 Disable an experimental feature on startup of new instance of PowerShell.
 
 ## SYNTAX

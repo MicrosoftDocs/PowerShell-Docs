@@ -11,6 +11,7 @@ title: Format-Wide
 # Format-Wide
 
 ## SYNOPSIS
+
 Formats objects as a wide table that displays only one property of each object.
 
 ## SYNTAX

@@ -12,6 +12,7 @@ title: Export-FormatData
 # Export-FormatData
 
 ## SYNOPSIS
+
 Saves formatting data from the current session in a formatting file.
 
 ## SYNTAX
@@ -31,6 +32,7 @@ Export-FormatData -InputObject <ExtendedTypeDefinition[]> -LiteralPath <String> 
 ```
 
 ## DESCRIPTION
+
 The **Export-FormatData** cmdlet creates Windows PowerShell formatting files (format.ps1xml) from the formatting objects in the current session.
 It takes the **ExtendedTypeDefinition** objects that Get-FormatData returns and saves them in a file in XML format.
 
@@ -100,6 +102,7 @@ The output shows that property values that are calculated by using script blocks
 ## PARAMETERS
 
 ### -Force
+
 Forces the command to run without asking for user confirmation.
 
 ```yaml
@@ -115,6 +118,7 @@ Accept wildcard characters: False
 ```
 
 ### -IncludeScriptBlock
+
 Indicates whether script blocks in the format data are exported.
 
 Because script blocks contain code and can be used maliciously, they are not exported by default.
@@ -132,6 +136,7 @@ Accept wildcard characters: False
 ```
 
 ### -InputObject
+
 Specifies the format data objects to be exported.
 Enter a variable that contains the objects or a command that gets the objects, such as a **Get-FormatData** command.
 You can also pipe the objects from **Get-FormatData** to **Export-FormatData**.
@@ -149,6 +154,7 @@ Accept wildcard characters: False
 ```
 
 ### -LiteralPath
+
 Specifies a location for the output file.
 Unlike the *Path* parameter, the value of *LiteralPath* is used exactly as it is typed.
 No characters are interpreted as wildcards.
@@ -168,6 +174,7 @@ Accept wildcard characters: False
 ```
 
 ### -NoClobber
+
 Indicates that the cmdlet does not overwrite existing files.
 By default, **Export-FormatData** overwrites files without warning unless the file has the read-only attribute.
 
@@ -186,6 +193,7 @@ Accept wildcard characters: False
 ```
 
 ### -Path
+
 Specifies a location for the output file.
 Enter a path (optional) and file name with a format.ps1xml file name extension.
 If you omit the path, **Export-FormatData** creates the file in the current directory.
@@ -209,16 +217,19 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### System.Management.Automation.ExtendedTypeDefinition
+
 You can pipe **ExtendedTypeDefinition** objects from **Get-FormatData** to **Export-FormatData**.
 
 ## OUTPUTS
 
 ### None
+
 **Export-FormatData** does not return any objects.
 It generates a file and saves it in the specified path.
 

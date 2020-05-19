@@ -9,6 +9,7 @@ title: about_Debuggers
 # About Debuggers
 
 ## SHORT DESCRIPTION
+
 Describes the PowerShell debugger.
 
 ## LONG DESCRIPTION

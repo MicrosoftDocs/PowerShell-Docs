@@ -11,6 +11,7 @@ title: Test-PSSessionConfigurationFile
 # Test-PSSessionConfigurationFile
 
 ## SYNOPSIS
+
 Verifies the keys and values in a session configuration file.
 
 ## SYNTAX

@@ -12,6 +12,7 @@ title: Update-Help
 # Update-Help
 
 ## SYNOPSIS
+
 Downloads and installs the newest help files on your computer.
 
 ## SYNTAX

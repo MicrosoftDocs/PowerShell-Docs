@@ -12,6 +12,7 @@ title: Get-Date
 # Get-Date
 
 ## SYNOPSIS
+
 Gets the current date and time.
 
 ## SYNTAX

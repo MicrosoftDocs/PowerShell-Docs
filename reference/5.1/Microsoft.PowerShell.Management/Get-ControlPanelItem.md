@@ -11,6 +11,7 @@ title: Get-ControlPanelItem
 # Get-ControlPanelItem
 
 ## SYNOPSIS
+
 Gets control panel items.
 
 ## SYNTAX

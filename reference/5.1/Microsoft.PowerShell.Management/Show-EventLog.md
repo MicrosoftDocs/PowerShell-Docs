@@ -12,6 +12,7 @@ title: Show-EventLog
 # Show-EventLog
 
 ## SYNOPSIS
+
 Displays the event logs of the local or a remote computer in Event Viewer.
 
 ## SYNTAX
@@ -21,6 +22,7 @@ Show-EventLog [[-ComputerName] <String>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+
 The **Show-EventLog** cmdlet opens Event Viewer on the local computer and displays in it all of the classic event logs on the local computer or a remote computer.
 
 To open Event Viewer on Windows Vista and later versions of the Windows operating system, the current user must be a member of the Administrators group on the local computer.
@@ -49,6 +51,7 @@ This command opens Event Viewer and displays in it the classic event logs on the
 ## PARAMETERS
 
 ### -ComputerName
+
 Specifies a remote computer.
 **Show-EventLog** displays the event logs from the specified computer in Event Viewer on the local computer.
 The default is the local computer.
@@ -71,16 +74,19 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### None
+
 You cannot pipe input to this cmdlet.
 
 ## OUTPUTS
 
 ### None
+
 This cmdlet does not generate any output.
 
 ## NOTES

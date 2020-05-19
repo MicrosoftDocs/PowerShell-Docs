@@ -11,6 +11,7 @@ title: Set-CimInstance
 # Set-CimInstance
 
 ## SYNOPSIS
+
 Modifies a CIM instance on a CIM server by calling the ModifyInstance method of the CIM class.
 
 ## SYNTAX

@@ -11,6 +11,7 @@ title: Remove-CimInstance
 # Remove-CimInstance
 
 ## SYNOPSIS
+
 Removes a CIM instance from a computer.
 
 ## SYNTAX

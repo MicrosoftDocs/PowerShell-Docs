@@ -12,6 +12,7 @@ title: New-CimInstance
 # New-CimInstance
 
 ## SYNOPSIS
+
 Creates a CIM instance.
 
 ## SYNTAX

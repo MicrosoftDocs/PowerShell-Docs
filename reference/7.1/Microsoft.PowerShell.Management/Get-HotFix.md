@@ -12,6 +12,7 @@ title: Get-HotFix
 # Get-HotFix
 
 ## SYNOPSIS
+
 Gets the hotfixes that are installed on local or remote computers.
 
 ## SYNTAX

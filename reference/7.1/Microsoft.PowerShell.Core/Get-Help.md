@@ -12,6 +12,7 @@ title: Get-Help
 # Get-Help
 
 ## SYNOPSIS
+
 Displays information about PowerShell commands and concepts.
 
 ## SYNTAX

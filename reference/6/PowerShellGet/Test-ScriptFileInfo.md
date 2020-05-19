@@ -11,6 +11,7 @@ title: Test-ScriptFileInfo
 # Test-ScriptFileInfo
 
 ## SYNOPSIS
+
 Validates a comment block for a script.
 
 ## SYNTAX

@@ -12,6 +12,7 @@ title: Start-DscConfiguration
 # Start-DscConfiguration
 
 ## SYNOPSIS
+
 Applies configuration to nodes.
 
 ## SYNTAX
@@ -46,6 +47,7 @@ Start-DscConfiguration [-Wait] [-Force] -CimSession <CimSession[]> [-ThrottleLim
 ```
 
 ## DESCRIPTION
+
 The **Start-DscConfiguration** cmdlet applies configuration to nodes.
 When used with the *UseExisting* parameter, the existing configuration on the target computer is applied.
 Specify which computers that you want to apply configuration to by specifying computer names or by using Common Information Model (CIM) sessions.
@@ -103,6 +105,7 @@ The command creates **Job** objects for each configured computer.
 ## PARAMETERS
 
 ### -CimSession
+
 Runs the cmdlet in a remote session or on a remote computer.
 Enter a computer name or a session object, such as the output of a [New-CimSession](https://docs.microsoft.com/powershell/module/cimcmdlets/new-cimsession) or [Get-CimSession](https://docs.microsoft.com/powershell/module/cimcmdlets/get-cimsession) cmdlet.
 The default is the current session on the local computer.
@@ -120,6 +123,7 @@ Accept wildcard characters: False
 ```
 
 ### -ComputerName
+
 Specifies an array of computer names.
 This parameter restricts the computers that have configuration documents in the *Path* parameter to those specified in the array.
 
@@ -136,6 +140,7 @@ Accept wildcard characters: False
 ```
 
 ### -Credential
+
 Specifies a user name and password, as a **PSCredential** object, for the target computer.
 To obtain a **PSCredential** object, use the Get-Credential cmdlet.
 For more information, type `Get-Help Get-Credential`.
@@ -153,6 +158,7 @@ Accept wildcard characters: False
 ```
 
 ### -Force
+
 Stops the configuration operation currently running on the target computer and begins the new Start-Configuration operation.
 If the **RefreshMode** property of the Local Configuration Manager is set to **Pull**, specifying this parameter changes it to **Push**.
 
@@ -169,6 +175,7 @@ Accept wildcard characters: False
 ```
 
 ### -JobName
+
 Specifies a friendly name for a job.
 If you specify this parameter, the cmdlet runs as a job, and it returns a **Job** object.
 
@@ -189,6 +196,7 @@ Accept wildcard characters: False
 ```
 
 ### -Path
+
 Specifies a file path of a folder that contains configuration settings files.
 This cmdlet publishes and applies these configuration settings to computers that have settings files in the specified path.
 Each target node must have a settings file of the following format: NetBIOS Name.mof.
@@ -206,6 +214,7 @@ Accept wildcard characters: False
 ```
 
 ### -ThrottleLimit
+
 Specifies the maximum number of concurrent operations that can be established to run the cmdlet.
 If this parameter is omitted or a value of `0` is entered, then Windows PowerShell calculates an optimum throttle limit for the cmdlet based on the number of CIM cmdlets that are running on the computer.
 The throttle limit applies only to the current cmdlet, not to the session or to the computer.
@@ -223,6 +232,7 @@ Accept wildcard characters: False
 ```
 
 ### -UseExisting
+
 Indicates that this cmdlet applies the existing configuration.
 The configuration can exist on the target computer by enactment using **Start-DscConfiguration** or by publication using the Publish-DscConfiguration cmdlet.
 
@@ -241,6 +251,7 @@ Accept wildcard characters: False
 ```
 
 ### -Wait
+
 Indicates that the cmdlet blocks the console until it finishes all configuration tasks.
 
 If you specify this parameter, do not specify the *JobName* parameter.
@@ -258,6 +269,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
+
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
@@ -273,6 +285,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
+
 Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
@@ -289,6 +302,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS

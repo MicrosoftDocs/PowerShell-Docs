@@ -10,6 +10,7 @@ title: New-Item
 # New-Item
 
 ## SYNOPSIS
+
 Creates a new item.
 
 ## SYNTAX

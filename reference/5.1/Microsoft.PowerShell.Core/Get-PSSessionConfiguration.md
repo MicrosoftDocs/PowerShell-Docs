@@ -11,6 +11,7 @@ title: Get-PSSessionConfiguration
 # Get-PSSessionConfiguration
 
 ## SYNOPSIS
+
 Gets the registered session configurations on the computer.
 
 ## SYNTAX

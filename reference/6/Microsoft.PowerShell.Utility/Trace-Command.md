@@ -12,6 +12,7 @@ title: Trace-Command
 # Trace-Command
 
 ## SYNOPSIS
+
 Configures and starts a trace of the specified expression or command.
 
 ## SYNTAX
@@ -33,6 +34,7 @@ Trace-Command [-InputObject <PSObject>] [-Name] <String[]> [[-Option] <PSTraceSo
 ```
 
 ## DESCRIPTION
+
 The `Trace-Command` cmdlet configures and starts a trace of the specified expression or command.
 It works like Set-TraceSource, except that it applies only to the specified command.
 

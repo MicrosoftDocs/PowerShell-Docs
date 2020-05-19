@@ -11,6 +11,7 @@ title: Where-Object
 # Where-Object
 
 ## SYNOPSIS
+
 Selects objects from a collection based on their property values.
 
 ## SYNTAX

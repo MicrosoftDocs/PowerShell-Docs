@@ -12,6 +12,7 @@ title: Enable-PSBreakpoint
 # Enable-PSBreakpoint
 
 ## SYNOPSIS
+
 Enables the breakpoints in the current console.
 
 ## SYNTAX

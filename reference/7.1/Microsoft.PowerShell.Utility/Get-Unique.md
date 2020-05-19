@@ -11,6 +11,7 @@ title: Get-Unique
 # Get-Unique
 
 ## SYNOPSIS
+
 Returns unique items from a sorted list.
 
 ## SYNTAX

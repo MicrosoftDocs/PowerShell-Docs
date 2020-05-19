@@ -12,6 +12,7 @@ title: Export-Console
 # Export-Console
 
 ## SYNOPSIS
+
 Exports the names of snap-ins in the current session to a console file.
 
 ## SYNTAX
@@ -21,6 +22,7 @@ Export-Console [[-Path] <String>] [-Force] [-NoClobber] [-WhatIf] [-Confirm] [<C
 ```
 
 ## DESCRIPTION
+
 The **Export-Console** cmdlet exports the names of the Windows PowerShell snap-ins in the current session to a Windows PowerShell console file (.psc1).
 You can use this cmdlet to save the snap-ins for use in future sessions.
 
@@ -116,6 +118,7 @@ This command exports the names of all the Windows PowerShell snap-ins in the cur
 ## PARAMETERS
 
 ### -Force
+
 Indicates that this cmdlet overwrites the data in a console file without warning, even if the file has the read-only attribute.
 The read-only attribute is changed and is not reset when the command finishes.
 
@@ -132,6 +135,7 @@ Accept wildcard characters: False
 ```
 
 ### -NoClobber
+
 Indicates that this cmdlet does not overwrite  an existing console file.
 By default, if a file occurs in the specified path, **Export-Console** overwrites the file without warning.
 
@@ -148,6 +152,7 @@ Accept wildcard characters: False
 ```
 
 ### -Path
+
 Specifies a path and file name for the console file (*.psc1).
 Enter an optional path and name.
 Wildcard characters are not permitted.
@@ -174,6 +179,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
+
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
@@ -189,6 +195,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
+
 Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
@@ -205,16 +212,19 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### System.String
+
 You can pipe a path string to this cmdlet.
 
 ## OUTPUTS
 
 ### System.IO.FileInfo
+
 This cmdlet creates a file that contains the exported aliases.
 
 ## NOTES

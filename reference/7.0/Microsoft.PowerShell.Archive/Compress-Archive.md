@@ -12,6 +12,7 @@ title: Compress-Archive
 # Compress-Archive
 
 ## SYNOPSIS
+
 Creates a compressed archive, or zipped file, from specified files and directories.
 
 ## SYNTAX

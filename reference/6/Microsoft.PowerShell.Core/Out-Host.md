@@ -12,6 +12,7 @@ title: Out-Host
 # Out-Host
 
 ## SYNOPSIS
+
 Sends output to the command line.
 
 ## SYNTAX

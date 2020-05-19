@@ -11,6 +11,7 @@ title: Get-PSBreakpoint
 # Get-PSBreakpoint
 
 ## SYNOPSIS
+
 Gets the breakpoints that are set in the current session.
 
 ## SYNTAX

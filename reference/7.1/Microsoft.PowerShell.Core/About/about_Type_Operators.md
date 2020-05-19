@@ -9,6 +9,7 @@ title: about_Type_Operators
 # About Type Operators
 
 ## SHORT DESCRIPTION
+
 Describes the operators that work with Microsoft .NET types.
 
 ## LONG DESCRIPTION

@@ -11,6 +11,7 @@ title: Register-PSRepository
 # Register-PSRepository
 
 ## SYNOPSIS
+
 Registers a PowerShell repository.
 
 ## SYNTAX

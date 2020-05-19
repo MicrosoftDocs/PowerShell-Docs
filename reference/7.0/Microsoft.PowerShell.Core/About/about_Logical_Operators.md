@@ -9,6 +9,7 @@ title: about_Logical_Operators
 # about_Logical_Operators
 
 ## SHORT DESCRIPTION
+
 Describes the operators that connect statements in PowerShell.
 
 ## LONG DESCRIPTION

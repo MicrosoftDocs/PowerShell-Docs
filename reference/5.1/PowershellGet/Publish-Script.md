@@ -11,6 +11,7 @@ title: Publish-Script
 # Publish-Script
 
 ## SYNOPSIS
+
 Publishes a script.
 
 ## SYNTAX

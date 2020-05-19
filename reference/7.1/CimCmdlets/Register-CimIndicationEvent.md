@@ -11,6 +11,7 @@ title: Register-CimIndicationEvent
 # Register-CimIndicationEvent
 
 ## SYNOPSIS
+
 Subscribes to indications using a filter expression or a query expression.
 
 ## SYNTAX

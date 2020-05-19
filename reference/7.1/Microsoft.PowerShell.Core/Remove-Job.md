@@ -12,6 +12,7 @@ title: Remove-Job
 # Remove-Job
 
 ## SYNOPSIS
+
 Deletes a PowerShell background job.
 
 ## SYNTAX

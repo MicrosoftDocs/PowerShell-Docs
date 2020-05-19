@@ -11,6 +11,7 @@ title: Restart-Service
 # Restart-Service
 
 ## SYNOPSIS
+
 Stops and then starts one or more services.
 
 ## SYNTAX

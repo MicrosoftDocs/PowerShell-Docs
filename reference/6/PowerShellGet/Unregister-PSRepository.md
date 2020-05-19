@@ -11,6 +11,7 @@ title: Unregister-PSRepository
 # Unregister-PSRepository
 
 ## SYNOPSIS
+
 Unregisters a repository.
 
 ## SYNTAX

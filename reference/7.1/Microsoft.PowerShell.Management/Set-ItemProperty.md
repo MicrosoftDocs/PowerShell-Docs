@@ -10,6 +10,7 @@ title: Set-ItemProperty
 # Set-ItemProperty
 
 ## SYNOPSIS
+
 Creates or changes the value of a property of an item.
 
 ## SYNTAX

@@ -12,6 +12,7 @@ title: Update-FormatData
 # Update-FormatData
 
 ## SYNOPSIS
+
 Updates the formatting data in the current session.
 
 ## SYNTAX
@@ -22,6 +23,7 @@ Update-FormatData [[-AppendPath] <String[]>] [-PrependPath <String[]>] [-WhatIf]
 ```
 
 ## DESCRIPTION
+
 The **Update-FormatData** cmdlet reloads the formatting data from formatting files into the current session.
 This cmdlet lets you update the formatting data without restarting PowerShell.
 
@@ -82,6 +84,7 @@ Because the NewFiles.format.ps1xml file was previously loaded, **Update-FormatDa
 ## PARAMETERS
 
 ### -AppendPath
+
 Specifies formatting files that this cmdlet adds to the session.
 The files are loaded after PowerShell loads the built-in formatting files.
 
@@ -103,6 +106,7 @@ Accept wildcard characters: False
 ```
 
 ### -PrependPath
+
 Specifies formatting files that this cmdlet adds to the session.
 The files are loaded before PowerShell loads the built-in formatting files.
 
@@ -124,6 +128,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
+
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
@@ -139,6 +144,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
+
 Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
@@ -155,16 +161,19 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### System.String
+
 You can pipe a string that contains the append path to **Update-FormatData**.
 
 ## OUTPUTS
 
 ### None
+
 The cmdlet does not return any output.
 
 ## NOTES

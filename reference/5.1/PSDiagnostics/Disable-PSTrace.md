@@ -9,6 +9,7 @@ title: Disable-PSTrace
 # Disable-PSTrace
 
 ## SYNOPSIS
+
 Disables the Microsoft-Windows-PowerShell event provider logs.
 
 ## SYNTAX

@@ -10,6 +10,7 @@ title: Get-AuthenticodeSignature
 # Get-AuthenticodeSignature
 
 ## SYNOPSIS
+
 Gets information about the Authenticode signature for a file.
 
 ## SYNTAX

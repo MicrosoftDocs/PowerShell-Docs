@@ -11,6 +11,7 @@ title: Get-PSSessionCapability
 # Get-PSSessionCapability
 
 ## SYNOPSIS
+
 Gets the capabilities of a specific user on a constrained session configuration.
 
 ## SYNTAX

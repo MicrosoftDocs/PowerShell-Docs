@@ -12,6 +12,7 @@ title: Test-ComputerSecureChannel
 # Test-ComputerSecureChannel
 
 ## SYNOPSIS
+
 Tests and repairs the secure channel between the local computer and its domain.
 
 ## SYNTAX
@@ -22,6 +23,7 @@ Test-ComputerSecureChannel [-Repair] [-Server <String>] [-Credential <PSCredenti
 ```
 
 ## DESCRIPTION
+
 The **Test-ComputerSecureChannel** cmdlet verifies that the channel between the local computer and its domain is working correctly by checking the status of its trust relationships.
 If a connection fails, you can use the *Repair* parameter to try to restore it.
 
@@ -92,6 +94,7 @@ The **If** statement checks the value that **Test-ComputerSecureChannel** return
 ## PARAMETERS
 
 ### -Credential
+
 Specifies a user account that has permission to perform this action.
 Type a user name, such as User01 or Domain01\User01, or enter a **PSCredential** object, such as one that the Get-Credential cmdlet returns.
 By default, the cmdlet uses the credentials of the current user.
@@ -111,6 +114,7 @@ Accept wildcard characters: False
 ```
 
 ### -Repair
+
 Indicates that this cmdlet removes and then rebuilds the channel established by the NetLogon service.
 Use this parameter to try to restore a connection that has failed the test.
 
@@ -129,6 +133,7 @@ Accept wildcard characters: False
 ```
 
 ### -Server
+
 Specifies the domain controller to run the command.
 If this parameter is not specified, this cmdlet selects a default domain controller for the operation.
 
@@ -145,6 +150,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
+
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
@@ -160,6 +166,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
+
 Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
@@ -176,16 +183,19 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### None
+
 You cannot pipe input to this cmdlet.
 
 ## OUTPUTS
 
 ### System.Boolean
+
 This cmdlet returns $True if the connection is working correctly and $False if it is not.
 
 ## NOTES

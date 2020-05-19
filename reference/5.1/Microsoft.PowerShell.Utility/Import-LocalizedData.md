@@ -12,6 +12,7 @@ title: Import-LocalizedData
 # Import-LocalizedData
 
 ## SYNOPSIS
+
 Imports language-specific data into scripts and functions based on the UI culture that is selected for the operating system.
 
 ## SYNTAX
@@ -22,6 +23,7 @@ Import-LocalizedData [[-BindingVariable] <String>] [[-UICulture] <String>] [-Bas
 ```
 
 ## DESCRIPTION
+
 The **Import-LocalizedData** cmdlet dynamically retrieves strings from a subdirectory whose name matches the UI language set for the current user of the operating system.
 It is designed to enable scripts to display user messages in the UI language selected by the current user.
 
@@ -178,6 +180,7 @@ Day2.ps1 just displays the English output.
 ## PARAMETERS
 
 ### -BaseDirectory
+
 Specifies the base directory where the .psd1 files are located.
 The default is the directory where the script is located.
 **Import-LocalizedData** searches for the .psd1 file for the script in a language-specific subdirectory of the base directory.
@@ -195,6 +198,7 @@ Accept wildcard characters: False
 ```
 
 ### -BindingVariable
+
 Specifies the variable into which the text strings are imported.
 Enter a variable name without a dollar sign ($).
 
@@ -220,6 +224,7 @@ Accept wildcard characters: False
 ```
 
 ### -FileName
+
 Specifies the name of the data file (.psd1) to be imported.
 Enter a file name.
 You can specify a file name that does not include its .psd1 file name extension, or you can specify the file name including the .psd1 file name extension.
@@ -244,6 +249,7 @@ Accept wildcard characters: False
 ```
 
 ### -SupportedCommand
+
 Specifies cmdlets and functions that generate only data.
 
 Use this parameter to include cmdlets and functions that you have written or tested.
@@ -262,6 +268,7 @@ Accept wildcard characters: False
 ```
 
 ### -UICulture
+
 Specifies an alternate UI culture.
 The default is the value of the $PsUICulture automatic variable.
 Enter a UI culture in \<language\>-\<region\> format, such as en-US, de-DE, or ar-SA.
@@ -285,16 +292,19 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### None
+
 You cannot pipe input to this cmdlet.
 
 ## OUTPUTS
 
 ### System.Collections.Hashtable
+
 **Import-LocalizedData** saves the hash table in the variable that is specified by the value of the **BindingVariable** parameter.
 
 ## NOTES

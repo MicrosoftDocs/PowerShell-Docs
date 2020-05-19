@@ -11,6 +11,7 @@ title: Remove-Computer
 # Remove-Computer
 
 ## SYNOPSIS
+
 Removes the local computer from its domain.
 
 ## SYNTAX

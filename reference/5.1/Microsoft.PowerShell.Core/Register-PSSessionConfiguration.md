@@ -12,6 +12,7 @@ title: Register-PSSessionConfiguration
 # Register-PSSessionConfiguration
 
 ## SYNOPSIS
+
 Creates and registers a new session configuration.
 
 ## SYNTAX
@@ -625,6 +626,7 @@ Accept wildcard characters: False
 ```
 
 ### -ThreadApartmentState
+
 Specifies the apartment state of the threads in the session.
 The acceptable values for this parameter are: STA, MTA, and Unknown.
 The default value is Unknown.

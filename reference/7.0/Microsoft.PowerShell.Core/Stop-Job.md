@@ -11,6 +11,7 @@ title: Stop-Job
 # Stop-Job
 
 ## SYNOPSIS
+
 Stops a PowerShell background job.
 
 ## SYNTAX

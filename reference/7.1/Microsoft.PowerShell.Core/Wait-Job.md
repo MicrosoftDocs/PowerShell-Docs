@@ -11,6 +11,7 @@ title: Wait-Job
 # Wait-Job
 
 ## SYNOPSIS
+
 Suppresses the command prompt until one or all of the PowerShell background jobs running in the session are completed.
 
 ## SYNTAX

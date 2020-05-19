@@ -12,6 +12,7 @@ title: Unregister-ScheduledJob
 # Unregister-ScheduledJob
 
 ## SYNOPSIS
+
 Deletes scheduled jobs on the local computer.
 
 ## SYNTAX
@@ -36,6 +37,7 @@ Unregister-ScheduledJob [-Name] <String[]> [-Force] [-WhatIf] [-Confirm] [<Commo
 ```
 
 ## DESCRIPTION
+
 The **Unregister-ScheduledJob** cmdlet deletes scheduled jobs from the local computer.
 
 When it deletes or unregisters a scheduled job, **Unregister-ScheduledJob** deletes the directory for the scheduled job (in the $home\AppData\Local\Microsoft\Windows\PowerShell\ScheduledJobs directory), which contains the XML file that defines the scheduled job, the job execution history, and all job results.
@@ -91,6 +93,7 @@ The command uses the Invoke-Command cmdlet to run the **Unregister-ScheduledJob*
 ## PARAMETERS
 
 ### -Force
+
 Deletes the scheduled job even if an instance of the job is running.
 By default, **Unregister-ScheduledJob** does not interrupt running jobs.
 
@@ -107,6 +110,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
+
 Deletes the scheduled jobs with the specified identification numbers (ID).
 Enter the IDs of scheduled jobs on the computer.
 
@@ -123,6 +127,7 @@ Accept wildcard characters: False
 ```
 
 ### -InputObject
+
 Specifies a scheduled job.
 Enter a variable that contains **ScheduledJob** objects or type a command or expression that gets **ScheduledJob** objects, such as a Get-ScheduledJob command.
 You can also pipe **ScheduledJob** objects to **Unregister-JobTrigger**.
@@ -140,6 +145,7 @@ Accept wildcard characters: False
 ```
 
 ### -Name
+
 Deletes the scheduled jobs with the specified names.
 Enter the names of one or more scheduled jobs on the computer.
 Wildcards are supported.
@@ -157,6 +163,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
+
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
@@ -172,6 +179,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
+
 Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
@@ -188,16 +196,19 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### Microsoft.PowerShell.ScheduledJob.ScheduledJobDefinition
+
 You can pipe scheduled jobs to Unregister-ScheduledJob
 
 ## OUTPUTS
 
 ### None
+
 This cmdlet does not generate any output.
 
 ## NOTES

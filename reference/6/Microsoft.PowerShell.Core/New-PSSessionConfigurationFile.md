@@ -11,6 +11,7 @@ title: New-PSSessionConfigurationFile
 # New-PSSessionConfigurationFile
 
 ## SYNOPSIS
+
 Creates a file that defines a session configuration.
 
 ## SYNTAX

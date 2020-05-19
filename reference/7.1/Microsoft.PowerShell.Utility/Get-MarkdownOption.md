@@ -9,6 +9,7 @@ schema: 2.0.0
 # Get-MarkdownOption
 
 ## SYNOPSIS
+
 Returns the current colors and styles used for rendering Markdown content in the console.
 
 ## SYNTAX

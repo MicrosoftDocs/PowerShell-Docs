@@ -11,6 +11,7 @@ title: Split-Path
 # Split-Path
 
 ## SYNOPSIS
+
 Returns the specified part of a path.
 
 ## SYNTAX

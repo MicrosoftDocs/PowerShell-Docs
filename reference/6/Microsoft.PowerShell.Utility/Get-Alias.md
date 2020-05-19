@@ -11,6 +11,7 @@ title: Get-Alias
 # Get-Alias
 
 ## SYNOPSIS
+
 Gets the aliases for the current session.
 
 ## SYNTAX

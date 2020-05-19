@@ -12,6 +12,7 @@ title: Rename-LocalUser
 # Rename-LocalUser
 
 ## SYNOPSIS
+
 Renames a local user account.
 
 ## SYNTAX
@@ -35,6 +36,7 @@ Rename-LocalUser [-NewName] <String> [-SID] <SecurityIdentifier> [-WhatIf] [-Con
 ```
 
 ## DESCRIPTION
+
 The **Rename-LocalUser** cmdlet renames a local user account.
 
 > [!NOTE]
@@ -54,6 +56,7 @@ This command renames the user account named Admin02.
 ## PARAMETERS
 
 ### -InputObject
+
 Specifies the user account that this cmdlet renames.
 To obtain a user account, use the Get-LocalUser cmdlet.
 
@@ -70,6 +73,7 @@ Accept wildcard characters: False
 ```
 
 ### -Name
+
 Specifies the name of the user account that this cmdlet renames.
 
 ```yaml
@@ -85,6 +89,7 @@ Accept wildcard characters: False
 ```
 
 ### -NewName
+
 Specifies a new name for the user account.
 
 ```yaml
@@ -100,6 +105,7 @@ Accept wildcard characters: False
 ```
 
 ### -SID
+
 Specifies the security ID (SID) of a user accounts that this cmdlet renames.
 
 ```yaml
@@ -115,6 +121,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
+
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
@@ -130,6 +137,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
+
 Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
@@ -146,16 +154,19 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### System.Management.Automation.SecurityAccountsManager.LocalUser, System.String, System.Security.Principal.SecurityIdentifier
+
 You can pipe a local user, a string, or a SID to this cmdlet.
 
 ## OUTPUTS
 
 ### None
+
 This cmdlet does not generate any output.
 
 ## NOTES

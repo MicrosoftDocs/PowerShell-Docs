@@ -9,6 +9,7 @@ title: Enable-PSTrace
 # Enable-PSTrace
 
 ## SYNOPSIS
+
 Enables the Microsoft-Windows-PowerShell event provider logs.
 
 ## SYNTAX

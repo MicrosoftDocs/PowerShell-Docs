@@ -11,6 +11,7 @@ title: Unblock-File
 # Unblock-File
 
 ## SYNOPSIS
+
 Unblocks files that were downloaded from the Internet.
 
 ## SYNTAX
@@ -92,6 +93,7 @@ This command shows how to find and unblock PowerShell scripts.
 ## PARAMETERS
 
 ### -LiteralPath
+
 Specifies the files to unblock.
 Unlike *Path*, the value of the *LiteralPath* parameter is used exactly as it is typed.
 No characters are interpreted as wildcards.
@@ -111,6 +113,7 @@ Accept wildcard characters: False
 ```
 
 ### -Path
+
 Specifies the files to unblock.
 Wildcard characters are supported.
 

@@ -9,6 +9,7 @@ title: about_PSSessions
 # About PSSessions
 
 ## Short Description
+
 Describes PowerShell sessions (PSSessions) and explains how to
 establish a persistent connection to a remote computer.
 

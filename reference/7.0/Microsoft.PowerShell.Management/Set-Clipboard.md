@@ -11,6 +11,7 @@ title: Set-Clipboard
 # Set-Clipboard
 
 ## SYNOPSIS
+
 Sets the contents of the clipboard.
 
 ## SYNTAX

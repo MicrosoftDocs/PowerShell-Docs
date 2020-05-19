@@ -12,6 +12,7 @@ title: Get-JobTrigger
 # Get-JobTrigger
 
 ## SYNOPSIS
+
 Gets the job triggers of scheduled jobs.
 
 ## SYNTAX
@@ -35,6 +36,7 @@ Get-JobTrigger [[-TriggerId] <Int32[]>] [-Name] <String> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+
 The **Get-JobTrigger** cmdlet gets the job triggers of scheduled jobs.
 You can use this command to examine the job triggers or to pipe the job triggers to other cmdlets.
 
@@ -159,6 +161,7 @@ This example shows how to compare the job triggers of two scheduled jobs.
 ## PARAMETERS
 
 ### -Id
+
 Specifies the identification number of a scheduled job.
 **Get-JobTrigger** gets the job trigger of the specified scheduled job.
 
@@ -177,6 +180,7 @@ Accept wildcard characters: False
 ```
 
 ### -InputObject
+
 Specifies a scheduled job.
 Enter a variable that contains  **ScheduledJob** objects or type a command or expression that gets **ScheduledJob** objects, such as a Get-ScheduledJob command.
 You can also pipe **ScheduledJob** objects to **Get-JobTrigger**.
@@ -194,6 +198,7 @@ Accept wildcard characters: False
 ```
 
 ### -Name
+
 Specifies the name of a scheduled job.
 **Get-JobTrigger** gets the job trigger of the specified scheduled job.
 Wildcards are supported.
@@ -213,6 +218,7 @@ Accept wildcard characters: False
 ```
 
 ### -TriggerId
+
 Gets the specified job triggers.
 Enter the trigger IDs of one or more job triggers of a scheduled job.
 Use this parameter when the scheduled job that is specified by the *Name*, *ID*, or *InputObject* parameters has multiple job triggers.
@@ -230,11 +236,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### Microsoft.PowerShell.ScheduledJob.ScheduledJobDefinition
+
 You can pipe a scheduled job from Get-ScheduledJob to **Get-JobTrigger**.
 
 ## OUTPUTS

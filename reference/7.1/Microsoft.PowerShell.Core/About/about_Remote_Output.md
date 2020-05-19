@@ -9,6 +9,7 @@ title: about_Remote_Output
 # About Remote Output
 
 ## SHORT DESCRIPTION
+
 Describes how to interpret and format the output of remote commands.
 
 ## LONG DESCRIPTION

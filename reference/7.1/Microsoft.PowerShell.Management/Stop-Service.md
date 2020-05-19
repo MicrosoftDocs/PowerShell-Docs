@@ -11,6 +11,7 @@ title: Stop-Service
 # Stop-Service
 
 ## SYNOPSIS
+
 Stops one or more running services.
 
 ## SYNTAX

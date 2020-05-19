@@ -12,6 +12,7 @@ title: Unregister-PackageSource
 # Unregister-PackageSource
 
 ## SYNOPSIS
+
 Removes a registered package source.
 
 ## SYNTAX

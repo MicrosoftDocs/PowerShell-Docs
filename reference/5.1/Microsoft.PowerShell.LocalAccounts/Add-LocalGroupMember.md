@@ -12,6 +12,7 @@ title: Add-LocalGroupMember
 # Add-LocalGroupMember
 
 ## SYNOPSIS
+
 Adds members to a local group.
 
 ## SYNTAX

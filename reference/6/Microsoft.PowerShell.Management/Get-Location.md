@@ -11,6 +11,7 @@ title: Get-Location
 # Get-Location
 
 ## SYNOPSIS
+
 Gets information about the current working location or a location stack.
 
 ## SYNTAX

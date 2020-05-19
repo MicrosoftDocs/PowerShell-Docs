@@ -11,6 +11,7 @@ title: Set-PSReadLineOption
 # Set-PSReadLineOption
 
 ## Synopsis
+
 Customizes the behavior of command line editing in **PSReadLine**.
 
 ## Syntax

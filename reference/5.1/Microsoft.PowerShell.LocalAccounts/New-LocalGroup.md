@@ -12,6 +12,7 @@ title: New-LocalGroup
 # New-LocalGroup
 
 ## SYNOPSIS
+
 Creates a local security group.
 
 ## SYNTAX
@@ -21,6 +22,7 @@ New-LocalGroup [-Description <String>] [-Name] <String> [-WhatIf] [-Confirm] [<C
 ```
 
 ## DESCRIPTION
+
 The **New-LocalGroup** cmdlet creates a local security group in the Security Account Manager.
 
 > [!NOTE]
@@ -40,6 +42,7 @@ This command creates a group named SecurityGroup04.
 ## PARAMETERS
 
 ### -Description
+
 Specifies a comment for the group.
 The maximum length is 48 characters.
 
@@ -56,6 +59,7 @@ Accept wildcard characters: False
 ```
 
 ### -Name
+
 Specifies a name for the group.
 The maximum length is 256 characters.
 
@@ -72,6 +76,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
+
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
@@ -87,6 +92,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
+
 Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
@@ -103,16 +109,19 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### System.String
+
 You can pipe a string to this cmdlet.
 
 ## OUTPUTS
 
 ### System.Management.Automation.SecurityAccountsManager.LocalGroup
+
 This cmdlet returns a security group.
 
 ## NOTES

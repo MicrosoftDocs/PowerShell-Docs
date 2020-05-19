@@ -10,6 +10,7 @@ title: Get-Uptime
 # Get-Uptime
 
 ## SYNOPSIS
+
 Get the **TimeSpan** since last boot.
 
 ## SYNTAX

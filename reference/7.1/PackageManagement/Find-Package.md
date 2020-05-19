@@ -11,6 +11,7 @@ title: Find-Package
 # Find-Package
 
 ## SYNOPSIS
+
 Finds software packages in available package sources.
 
 ## SYNTAX

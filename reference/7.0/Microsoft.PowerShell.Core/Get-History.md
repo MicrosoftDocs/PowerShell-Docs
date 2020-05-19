@@ -11,6 +11,7 @@ title: Get-History
 # Get-History
 
 ## SYNOPSIS
+
 Gets a list of the commands entered during the current session.
 
 ## SYNTAX

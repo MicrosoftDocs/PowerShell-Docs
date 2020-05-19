@@ -11,6 +11,7 @@ title: New-PSTransportOption
 # New-PSTransportOption
 
 ## SYNOPSIS
+
 Creates an object that contains advanced options for a session configuration.
 
 ## SYNTAX

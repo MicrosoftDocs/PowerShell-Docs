@@ -12,6 +12,7 @@ title: Find-DscResource
 # Find-DscResource
 
 ## SYNOPSIS
+
 Finds Desired State Configuration (DSC) resources.
 
 ## SYNTAX

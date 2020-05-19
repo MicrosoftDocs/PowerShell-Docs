@@ -12,6 +12,7 @@ title: Find-PackageProvider
 # Find-PackageProvider
 
 ## SYNOPSIS
+
 Returns a list of Package Management package providers available for installation.
 
 ## SYNTAX

@@ -11,6 +11,7 @@ title: Get-TraceSource
 # Get-TraceSource
 
 ## SYNOPSIS
+
 Gets PowerShell components that are instrumented for tracing.
 
 ## SYNTAX

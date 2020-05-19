@@ -12,6 +12,7 @@ title: Sort-Object
 # Sort-Object
 
 ## SYNOPSIS
+
 Sorts objects by property values.
 
 ## SYNTAX

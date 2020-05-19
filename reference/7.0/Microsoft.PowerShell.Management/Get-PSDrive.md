@@ -11,6 +11,7 @@ title: Get-PSDrive
 # Get-PSDrive
 
 ## SYNOPSIS
+
 Gets drives in the current session.
 
 ## SYNTAX

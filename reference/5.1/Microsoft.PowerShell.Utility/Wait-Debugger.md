@@ -11,6 +11,7 @@ title: Wait-Debugger
 # Wait-Debugger
 
 ## SYNOPSIS
+
 Stops a script in the debugger before running the next statement in the script.
 
 ## SYNTAX

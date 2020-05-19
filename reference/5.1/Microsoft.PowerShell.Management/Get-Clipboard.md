@@ -11,6 +11,7 @@ title: Get-Clipboard
 # Get-Clipboard
 
 ## SYNOPSIS
+
 Gets the current Windows clipboard entry.
 
 ## SYNTAX

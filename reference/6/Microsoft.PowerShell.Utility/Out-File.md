@@ -12,6 +12,7 @@ title: Out-File
 # Out-File
 
 ## SYNOPSIS
+
 Sends output to a file.
 
 ## SYNTAX

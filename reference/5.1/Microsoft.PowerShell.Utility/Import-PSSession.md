@@ -12,6 +12,7 @@ title: Import-PSSession
 # Import-PSSession
 
 ## SYNOPSIS
+
 Imports commands from another session into the current session.
 
 ## SYNTAX
@@ -24,6 +25,7 @@ Import-PSSession [-Prefix <String>] [-DisableNameChecking] [[-CommandName] <Stri
 ```
 
 ## DESCRIPTION
+
 The **Import-PSSession** cmdlet imports commands , such as cmdlets, functions, and aliases, from a PSSession on a local or remote computer into the current session.
 You can import any command that the Get-Command cmdlet can find in the PSSession.
 
@@ -261,6 +263,7 @@ The **Get-Command** command is the equivalent of `Get-Command $M.Name`".
 ## PARAMETERS
 
 ### -AllowClobber
+
 Indicates that this cmdlet imports the specified commands, even if they have the same names as commands in the current session.
 
 If you import a command with the same name as a command in the current session, the imported command hides or replaces the original commands.
@@ -281,6 +284,7 @@ Accept wildcard characters: False
 ```
 
 ### -ArgumentList
+
 Specifies an array of commands that results from using the specified arguments (parameter values).
 
 For instance, to import the variant of the Get-Item command in the certificate (Cert:) drive in the PSSession in $S, type `Import-PSSession -Session $S -Command Get-Item -ArgumentList cert:`.
@@ -298,6 +302,7 @@ Accept wildcard characters: False
 ```
 
 ### -Certificate
+
 Specifies the client certificate that is used to sign the format files (*.Format.ps1xml) or script module files (.psm1) in the temporary module that **Import-PSSession** creates.
 
 Enter a variable that contains a certificate or a command or expression that gets the certificate.
@@ -318,6 +323,7 @@ Accept wildcard characters: False
 ```
 
 ### -CommandName
+
 Specifies commands with the specified names or name patterns.
 Wildcards are permitted.
 Use *CommandName* or its alias, *Name*.
@@ -342,6 +348,7 @@ Accept wildcard characters: False
 ```
 
 ### -CommandType
+
 Specifies the type of command objects.
 The default value is Cmdlet.
 Use *CommandType* or its alias, *Type*.
@@ -377,6 +384,7 @@ Accept wildcard characters: False
 ```
 
 ### -DisableNameChecking
+
 Indicates that this cmdlet suppresses the message that warns you when you import a cmdlet or function whose name includes an unapproved verb or a prohibited character.
 
 By default, when a module that you import exports cmdlets or functions that have unapproved verbs in their names, the Windows PowerShell displays the following warning message:
@@ -401,6 +409,7 @@ Accept wildcard characters: False
 ```
 
 ### -FormatTypeName
+
 Specifies formatting instructions for the specified Microsoft .NET Framework types.
 Enter the type names.
 Wildcards are permitted.
@@ -427,6 +436,7 @@ Accept wildcard characters: False
 ```
 
 ### -FullyQualifiedModule
+
 Specifies modules with names that are specified in the form of **ModuleSpecification** objects (described in the Remarks section of [ModuleSpecification Constructor (Hashtable)](https://msdn.microsoft.com/library/jj136290) in the MSDN library).
 For example, the *FullyQualifiedModule* parameter accepts a module name that is specified in the format @{ModuleName = "modulename"; ModuleVersion = "version_number"} or @{ModuleName = "modulename"; ModuleVersion = "version_number"; Guid = "GUID"}.
 **ModuleName** and **ModuleVersion** are required, but **Guid** is optional.
@@ -446,6 +456,7 @@ Accept wildcard characters: False
 ```
 
 ### -Module
+
 Specifies and array of commands in the Windows PowerShell snap-ins and modules.
 Enter the snap-in and module names.
 Wildcards are not permitted.
@@ -467,6 +478,7 @@ Accept wildcard characters: False
 ```
 
 ### -Prefix
+
 Specifies a prefix to the nouns in the names of imported commands.
 
 Use this parameter to avoid name conflicts that might occur when different commands in the session have the same name.
@@ -486,6 +498,7 @@ Accept wildcard characters: False
 ```
 
 ### -Session
+
 Specifies the **PSSession** from which the cmdlets are imported.
 Enter a variable that contains a session object or a command that gets a session object, such as a New-PSSession or Get-PSSession command.
 You can specify only one session.
@@ -504,16 +517,19 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### None
+
 You cannot pipe objects to this cmdlet.
 
 ## OUTPUTS
 
 ### System.Management.Automation.PSModuleInfo
+
 **Import-PSSession** returns the same module object that New-Module and Get-Module cmdlets return.
 However, the imported module is temporary and exists only in the current session.
 To create a permanent module on disk, use the Export-PSSession cmdlet.

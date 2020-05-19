@@ -12,6 +12,7 @@ title: Get-UICulture
 # Get-UICulture
 
 ## SYNOPSIS
+
 Gets the current UI culture settings in the operating system.
 
 ## SYNTAX
@@ -21,6 +22,7 @@ Get-UICulture [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+
 The **Get-UICulture** cmdlet gets information about the current user interface (UI) culture settings for Windows.
 The UI culture determines which text strings are used for user interface elements, such as menus and messages.
 
@@ -67,16 +69,19 @@ To see all of the subproperties of the DateTimeFormat property of the UI culture
 ## PARAMETERS
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### None
+
 You cannot pipe input to this cmdlet.
 
 ## OUTPUTS
 
 ### System.Globalization.CultureInfo, Microsoft.PowerShell.VistaCultureInfo
+
 **Get-UICulture** returns an object that represents the current UI culture.
 In Windows PowerShell 3.0, it returns a **CultureInfo** object.
 In Windows PowerShell 2.0, it returns a **VistaCultureInfo** object.

@@ -11,6 +11,7 @@ title: Disable-PSSessionConfiguration
 # Disable-PSSessionConfiguration
 
 ## SYNOPSIS
+
 Disables session configurations on the local computer.
 
 ## SYNTAX

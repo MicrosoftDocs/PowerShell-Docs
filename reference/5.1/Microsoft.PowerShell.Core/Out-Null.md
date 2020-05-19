@@ -12,6 +12,7 @@ title: Out-Null
 # Out-Null
 
 ## SYNOPSIS
+
 Hides the output instead of sending it down the pipeline or displaying it.
 
 ## SYNTAX
@@ -21,6 +22,7 @@ Out-Null [-InputObject <PSObject>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+
 The **Out-Null** cmdlet sends its output to NULL, in effect, removing it from the pipeline and
 preventing the output to be displayed at the screen. This only affects the standard output stream.
 Other output streams, like the Error stream are not affected. Exceptions will be displayed. This
@@ -41,6 +43,7 @@ This is useful for hiding output that you do not need.
 ## PARAMETERS
 
 ### -InputObject
+
 Specifies the object to be sent to NULL (removed from pipeline).
 Enter a variable that contains the objects, or type a command or expression that gets the objects.
 
@@ -57,17 +60,20 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### System.Management.Automation.PSObject
+
 You can pipe any object to this cmdlet.
 .
 
 ## OUTPUTS
 
 ### None
+
 This cmdlet does not generate any output.
 
 ## NOTES

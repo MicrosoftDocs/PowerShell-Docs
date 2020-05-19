@@ -11,6 +11,7 @@ title: Convert-Path
 # Convert-Path
 
 ## SYNOPSIS
+
 Converts a path from a PowerShell path to a PowerShell provider path.
 
 ## SYNTAX

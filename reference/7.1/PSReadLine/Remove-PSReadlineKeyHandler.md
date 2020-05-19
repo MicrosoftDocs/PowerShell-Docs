@@ -12,6 +12,7 @@ title: Remove-PSReadLineKeyHandler
 # Remove-PSReadLineKeyHandler
 
 ## SYNOPSIS
+
 Removes a key binding.
 
 ## SYNTAX

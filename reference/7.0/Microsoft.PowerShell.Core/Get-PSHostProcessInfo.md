@@ -11,6 +11,7 @@ title: Get-PSHostProcessInfo
 # Get-PSHostProcessInfo
 
 ## SYNOPSIS
+
 Gets process information about the PowerShell host.
 
 ## SYNTAX

@@ -11,6 +11,7 @@ title: Get-PackageProvider
 # Get-PackageProvider
 
 ## SYNOPSIS
+
 Returns a list of package providers that are connected to Package Management.
 
 ## SYNTAX

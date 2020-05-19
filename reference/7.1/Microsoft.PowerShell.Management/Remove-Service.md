@@ -11,6 +11,7 @@ title: Remove-Service
 # Remove-Service
 
 ## SYNOPSIS
+
 Removes a Windows service.
 
 ## SYNTAX

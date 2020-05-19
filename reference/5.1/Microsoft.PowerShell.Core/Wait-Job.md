@@ -12,6 +12,7 @@ title: Wait-Job
 # Wait-Job
 
 ## SYNOPSIS
+
 Suppresses the command prompt until one or all of the Windows PowerShell background jobs running in the session are completed.
 
 ## SYNTAX
@@ -53,6 +54,7 @@ Wait-Job [-Any] [-Timeout <Int32>] [-Force] [-Filter] <Hashtable> [<CommonParame
 ```
 
 ## DESCRIPTION
+
 The **Wait-Job** cmdlet waits for Windows PowerShell background jobs to finish before it displays the command prompt.
 You can wait until any background job is complete, or until all background jobs are complete, and you can set a maximum wait time for the job.
 
@@ -236,6 +238,7 @@ This command waits for the job with an ID value of 1.
 ## PARAMETERS
 
 ### -Any
+
 Indicates that this cmdlet displays the command prompt, and returns the job object, when any job finishes.
 By default, **Wait-Job** waits until all of the specified jobs are complete before it displays the prompt.
 
@@ -252,6 +255,7 @@ Accept wildcard characters: False
 ```
 
 ### -Filter
+
 Specifies a hash table of conditions.
 This cmdlet waits for jobs that satisfy all of the conditions in the hash table.
 Enter a hash table where the keys are job properties and the values are job property values.
@@ -275,6 +279,7 @@ Accept wildcard characters: False
 ```
 
 ### -Force
+
 Indicates that this cmdlet continues to wait for jobs in the Suspended or Disconnected state.
 By default, **Wait-Job** returns, or ends  the wait, when jobs are in one of the following states:
 
@@ -299,6 +304,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
+
 Specifies an array of IDs of jobs for which this cmdlet waits.
 
 The ID is an integer that uniquely identifies the job in the current session.
@@ -319,6 +325,7 @@ Accept wildcard characters: False
 ```
 
 ### -InstanceId
+
 Specifies an array of instance IDs of jobs for which this cmdlet waits.
 The default is all jobs.
 
@@ -338,6 +345,7 @@ Accept wildcard characters: False
 ```
 
 ### -Job
+
 Specifies the jobs for which this cmdlet waits.
 Enter a variable that contains the job objects or a command that gets the job objects.
 You can also use a pipeline operator to send job objects to the **Wait-Job** cmdlet.
@@ -356,6 +364,7 @@ Accept wildcard characters: False
 ```
 
 ### -Name
+
 Specifies friendly names of jobs for which this cmdlet waits.
 
 ```yaml
@@ -371,6 +380,7 @@ Accept wildcard characters: False
 ```
 
 ### -State
+
 Specifies a job state.
 This cmdlet waits only for jobs in the specified state.
 The acceptable values for this parameter are:
@@ -402,6 +412,7 @@ Accept wildcard characters: False
 ```
 
 ### -Timeout
+
 Specifies the maximum wait time for each background job, in seconds.
 The default value, -1, indicates that the cmdlet waits until the job finishes.
 The timing starts when you submit the **Wait-Job** command, not the **Start-Job** command.
@@ -422,16 +433,19 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### System.Management.Automation.RemotingJob
+
 You can pipe a job object to this cmdlet.
 
 ## OUTPUTS
 
 ### System.Management.Automation.PSRemotingJob
+
 This cmdlet returns job objects that represent the completed jobs.
 If the wait ends because the value of the *Timeout* parameter is exceeded, **Wait-Job** does not return any objects.
 

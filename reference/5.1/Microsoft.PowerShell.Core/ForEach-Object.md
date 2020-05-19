@@ -11,6 +11,7 @@ title: ForEach-Object
 # ForEach-Object
 
 ## SYNOPSIS
+
 Performs an operation against each item in a collection of input objects.
 
 ## SYNTAX

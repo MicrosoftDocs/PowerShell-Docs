@@ -12,6 +12,7 @@ title: Install-Package
 # Install-Package
 
 ## SYNOPSIS
+
 Installs one or more software packages.
 
 ## SYNTAX

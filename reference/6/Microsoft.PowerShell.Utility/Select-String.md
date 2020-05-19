@@ -12,6 +12,7 @@ title: Select-String
 # Select-String
 
 ## SYNOPSIS
+
 Finds text in strings and files.
 
 ## SYNTAX

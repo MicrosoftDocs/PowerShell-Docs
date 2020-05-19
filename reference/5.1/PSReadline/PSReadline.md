@@ -20,22 +20,29 @@ the Windows 10 October 2018 Update (Build 1809).
 ## PSReadLine Cmdlets
 
 ### [PSConsoleHostReadLine](PSConsoleHostReadLine.md)
+
 The main entry point for PSReadLine.
 
 ### [Get-PSReadLineKeyHandler](Get-PSReadLineKeyHandler.md)
+
 Gets the key bindings for the PSReadLine module.
 
 ### [Get-PSReadlineOption](Get-PSReadlineOption.md)
+
 Returns the values for the options that can be configured.
 
 ### [PSConsoleHostReadline](PSConsoleHostReadline.md)
+
 This function is the main entry point for PSReadLine.
 
 ### [Remove-PSReadlineKeyHandler](Remove-PSReadlineKeyHandler.md)
+
 Removes a key binding.
 
 ### [Set-PSReadlineKeyHandler](Set-PSReadlineKeyHandler.md)
+
 Binds keys to user-defined or PSReadLine key handler functions.
 
 ### [Set-PSReadlineOption](Set-PSReadlineOption.md)
+
 Customizes the behavior of command line editing in PSReadLine.

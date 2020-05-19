@@ -11,6 +11,7 @@ title: Set-PSSessionConfiguration
 # Set-PSSessionConfiguration
 
 ## SYNOPSIS
+
 Changes the properties of a registered session configuration.
 
 ## SYNTAX

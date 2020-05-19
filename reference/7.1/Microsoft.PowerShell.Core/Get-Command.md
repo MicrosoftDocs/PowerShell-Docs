@@ -11,6 +11,7 @@ title: Get-Command
 # Get-Command
 
 ## SYNOPSIS
+
 Gets all commands.
 
 ## SYNTAX

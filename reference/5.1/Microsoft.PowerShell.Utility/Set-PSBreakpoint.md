@@ -11,6 +11,7 @@ title: Set-PSBreakpoint
 # Set-PSBreakpoint
 
 ## SYNOPSIS
+
 Sets a breakpoint on a line, command, or variable.
 
 ## SYNTAX
@@ -382,6 +383,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### None
+
 You cannot pipe input to `Set-PSBreakpoint`.
 
 ## OUTPUTS

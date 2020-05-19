@@ -12,6 +12,7 @@ title: Get-Package
 # Get-Package
 
 ## SYNOPSIS
+
 Returns a list of all software packages that were installed with **PackageManagement**.
 
 ## SYNTAX

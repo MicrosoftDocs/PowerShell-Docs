@@ -12,6 +12,7 @@ title: Start-Trace
 # Start-Trace
 
 ## SYNOPSIS
+
 Start an Event Trace logging session.
 
 ## SYNTAX
@@ -23,6 +24,7 @@ Start-Trace [-SessionName] <String> [[-OutputFilePath] <String>] [[-ProviderFile
 ```
 
 ## DESCRIPTION
+
 This cmdlet starts a Windows Event Trace logging session.
 
 This cmdlet is used by the following cmdlets:
@@ -43,6 +45,7 @@ Start-Trace -SessionName 'wsmlog' -ETS -OutputFilePath "$env:windir\system32\wsm
 ## PARAMETERS
 
 ### -BufferSizeInKB
+
 Event Trace Session buffer size in kilobytes (KB).
 
 ```yaml
@@ -58,6 +61,7 @@ Accept wildcard characters: False
 ```
 
 ### -ETS
+
 Send commands to Event Trace Sessions directly without saving or scheduling.
 
 ```yaml
@@ -73,6 +77,7 @@ Accept wildcard characters: False
 ```
 
 ### -Format
+
 Specifies the log format for the data collector. For SQL database format, you must use the **OutputFilePath**
 option in the command line with the `dsn!log` value. The default is binary (bin). The possible values are:
 
@@ -96,6 +101,7 @@ Accept wildcard characters: False
 ```
 
 ### -MaxBuffers
+
 Sets the maximum number of Event Trace Session buffers.
 
 ```yaml
@@ -111,6 +117,7 @@ Accept wildcard characters: False
 ```
 
 ### -MaxLogFileSizeInMB
+
 Sets the maximum log file size in megabytes (MB) or number of records for SQL logs.
 
 ```yaml
@@ -126,6 +133,7 @@ Accept wildcard characters: False
 ```
 
 ### -MinBuffers
+
 Sets the minimum number of Event Trace Session buffers.
 
 ```yaml
@@ -141,6 +149,7 @@ Accept wildcard characters: False
 ```
 
 ### -OutputFilePath
+
 Path of the output log file or the DSN and log set name in a SQL database. The default path is
 `$env:systemdrive\PerfLogs\Admin`.
 
@@ -157,6 +166,7 @@ Accept wildcard characters: False
 ```
 
 ### -ProviderFilePath
+
 File listing multiple Event Trace providers to enable.
 
 ```yaml
@@ -172,6 +182,7 @@ Accept wildcard characters: False
 ```
 
 ### -SessionName
+
 The name of the Event Trace session. To stop a trace session you must know the session name.
 
 ```yaml

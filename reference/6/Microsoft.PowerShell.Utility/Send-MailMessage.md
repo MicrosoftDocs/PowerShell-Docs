@@ -12,6 +12,7 @@ title: Send-MailMessage
 # Send-MailMessage
 
 ## SYNOPSIS
+
 Sends an email message.
 
 ## SYNTAX

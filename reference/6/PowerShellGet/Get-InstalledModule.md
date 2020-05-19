@@ -11,6 +11,7 @@ title: Get-InstalledModule
 # Get-InstalledModule
 
 ## SYNOPSIS
+
 Gets a list of modules on the computer that were installed by PowerShellGet.
 
 ## SYNTAX

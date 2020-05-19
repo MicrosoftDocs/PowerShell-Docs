@@ -18,4 +18,5 @@ This section contains the help topics for the Microsoft.PowerShell.ODataUtils mo
 ## Microsoft.PowerShell.ODataUtils Cmdlets
 
 ### [Export-ODataEndpointProxy](Export-ODataEndpointProxy.md)
+
 Generates a module that contains cmdlets to manage an OData endpoint.

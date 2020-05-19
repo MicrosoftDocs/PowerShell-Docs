@@ -12,6 +12,7 @@ title: Add-History
 # Add-History
 
 ## SYNOPSIS
+
 Appends entries to the session history.
 
 ## SYNTAX

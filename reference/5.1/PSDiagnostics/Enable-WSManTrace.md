@@ -11,6 +11,7 @@ title: Enable-WSManTrace
 # Enable-WSManTrace
 
 ## SYNOPSIS
+
 Start a logging session with the WSMan providers enabled.
 
 ## SYNTAX
@@ -20,6 +21,7 @@ Enable-WSManTrace [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+
 This cmdlet starts a logging session with the WSMan providers enabled. The following event providers are enabled:
 
 - Event Forwarding

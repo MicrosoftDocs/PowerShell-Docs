@@ -11,6 +11,7 @@ title: PSConsoleHostReadLine
 # PSConsoleHostReadLine
 
 ## SYNOPSIS
+
 This function is the main entry point for PSReadLine.
 
 ## SYNTAX

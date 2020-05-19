@@ -12,6 +12,7 @@ title: Get-Culture
 # Get-Culture
 
 ## SYNOPSIS
+
 Gets the current culture set in the operating system.
 
 ## SYNTAX
@@ -21,6 +22,7 @@ Get-Culture [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+
 The **Get-Culture** cmdlet gets information about the current culture settings.
 This includes information about the current language settings on the system, such as the keyboard layout, and the display format of items such as numbers, currency, and dates.
 
@@ -123,16 +125,19 @@ The fifth command uses dot notation to display the value of the FirstDayOfWeek p
 ## PARAMETERS
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### None
+
 You cannot pipe input to this cmdlet.
 
 ## OUTPUTS
 
 ### System.Globalization.CultureInfo
+
 **Get-Culture** returns an object that represents the current culture.
 
 ## NOTES

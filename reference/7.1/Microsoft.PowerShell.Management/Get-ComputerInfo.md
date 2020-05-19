@@ -11,6 +11,7 @@ title: Get-ComputerInfo
 # Get-ComputerInfo
 
 ## SYNOPSIS
+
 Gets a consolidated object of system and operating system properties.
 
 ## SYNTAX

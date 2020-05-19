@@ -10,6 +10,7 @@ title: Convert-String
 # Convert-String
 
 ## SYNOPSIS
+
 Formats a string to match examples.
 
 ## SYNTAX

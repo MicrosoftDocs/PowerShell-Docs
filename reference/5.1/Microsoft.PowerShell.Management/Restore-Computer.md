@@ -12,6 +12,7 @@ title: Restore-Computer
 # Restore-Computer
 
 ## SYNOPSIS
+
 Starts a system restore on the local computer.
 
 ## SYNTAX
@@ -21,6 +22,7 @@ Restore-Computer [-RestorePoint] <Int32> [-WhatIf] [-Confirm] [<CommonParameters
 ```
 
 ## DESCRIPTION
+
 The **Restore-Computer** cmdlet restores the local computer to the specified system restore point.
 
 **Restore-Computer** restarts the computer.
@@ -71,6 +73,7 @@ Because **Restore-Computer** forces a restart, this command would be entered aft
 ## PARAMETERS
 
 ### -RestorePoint
+
 Specifies the sequence number of the restore point.
 To find the sequence number, use the Get-ComputerRestorePoint cmdlet.
 This parameter is required.
@@ -88,6 +91,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
+
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
@@ -103,6 +107,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
+
 Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
@@ -119,16 +124,19 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### None
+
 You cannot pipe input to this cmdlet.
 
 ## OUTPUTS
 
 ### None
+
 This cmdlet does not generate any output.
 
 ## NOTES

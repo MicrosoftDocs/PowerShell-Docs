@@ -10,6 +10,7 @@ title: Resolve-Path
 # Resolve-Path
 
 ## SYNOPSIS
+
 Resolves the wildcard characters in a path, and displays the path contents.
 
 ## SYNTAX

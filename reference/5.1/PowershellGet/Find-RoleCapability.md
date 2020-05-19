@@ -12,6 +12,7 @@ title: Find-RoleCapability
 # Find-RoleCapability
 
 ## SYNOPSIS
+
 Finds role capabilities in modules.
 
 ## SYNTAX

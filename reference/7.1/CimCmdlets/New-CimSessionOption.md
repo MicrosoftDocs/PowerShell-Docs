@@ -12,6 +12,7 @@ title: New-CimSessionOption
 # New-CimSessionOption
 
 ## SYNOPSIS
+
 Specifies advanced options for the New-CimSession cmdlet.
 
 ## SYNTAX

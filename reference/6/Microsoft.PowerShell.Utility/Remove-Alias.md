@@ -11,6 +11,7 @@ title: Remove-Alias
 # Remove-Alias
 
 ## SYNOPSIS
+
 Remove an alias from the current session.
 
 ## SYNTAX

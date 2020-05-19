@@ -12,6 +12,7 @@ title: New-PSWorkflowSession
 # New-PSWorkflowSession
 
 ## SYNOPSIS
+
 Creates a workflow session.
 
 ## SYNTAX

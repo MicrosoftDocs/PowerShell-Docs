@@ -11,6 +11,7 @@ title: Get-TypeData
 # Get-TypeData
 
 ## Synopsis
+
 Gets the extended type data in the current session.
 
 ## Syntax

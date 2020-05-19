@@ -11,6 +11,7 @@ title: Export-FormatData
 # Export-FormatData
 
 ## SYNOPSIS
+
 Saves formatting data from the current session in a formatting file.
 
 ## SYNTAX

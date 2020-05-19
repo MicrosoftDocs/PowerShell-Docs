@@ -12,6 +12,7 @@ title: New-JobTrigger
 # New-JobTrigger
 
 ## SYNOPSIS
+
 Creates a job trigger for a scheduled job.
 
 ## SYNTAX
@@ -49,6 +50,7 @@ New-JobTrigger [-RandomDelay <TimeSpan>] [-User <String>] [-AtLogOn] [<CommonPar
 ```
 
 ## DESCRIPTION
+
 The **New-JobTrigger** cmdlet creates a job trigger that starts a scheduled job on a one-time or recurring schedule, or when an event occurs.
 
 You can use the **ScheduledJobTrigger** object that **New-JobTrigger** returns to set a job trigger for a new or existing scheduled job.
@@ -182,6 +184,7 @@ The schedule begins tomorrow (9/21/2012) at midnight (0:00 AM).
 ## PARAMETERS
 
 ### -At
+
 Starts the job at the specified date and time.
 Enter a **DateTime** object, such as one that the Get-Date cmdlet returns, or a string that can be converted to a date and time, such as "April 19, 2012 15:00", "12/31", or "3am".
 If you don't specify an element of the date, such as the year, the date in the trigger has the corresponding element from the current date.
@@ -204,6 +207,7 @@ Accept wildcard characters: False
 ```
 
 ### -AtLogOn
+
 Starts the scheduled job when the specified users log on to the computer.
 To specify a user, use the *User* parameter.
 
@@ -220,6 +224,7 @@ Accept wildcard characters: False
 ```
 
 ### -AtStartup
+
 Starts the scheduled job when Windows starts.
 
 ```yaml
@@ -235,6 +240,7 @@ Accept wildcard characters: False
 ```
 
 ### -Daily
+
 Specifies a recurring daily job schedule.
 Use the other parameters in the *Daily* parameter set to specify the schedule details.
 
@@ -251,6 +257,7 @@ Accept wildcard characters: False
 ```
 
 ### -DaysInterval
+
 Specifies the number of days between occurrences on a daily schedule.
 For example, a value of 3 starts the scheduled job on days 1, 4, 7 and so on.
 The default value is 1.
@@ -268,6 +275,7 @@ Accept wildcard characters: False
 ```
 
 ### -DaysOfWeek
+
 Specifies the days of the week on which a weekly scheduled job runs.
 Enter day names, such as "Monday" or integers 0-6, where 0 represents Sunday.
 This parameter is required in the Weekly parameter set.
@@ -291,6 +299,7 @@ Accept wildcard characters: False
 ```
 
 ### -Once
+
 Specifies a non-recurring (one time) or custom repeating schedule.
 To create a repeating schedule, use the *Once* parameter with the *RepetitionDuration* and *RepetitionInterval* parameters.
 
@@ -307,6 +316,7 @@ Accept wildcard characters: False
 ```
 
 ### -RandomDelay
+
 Enables a random delay that begins at the scheduled start time, and sets the maximum delay value.
 The length of the delay is set pseudo-randomly for each start and varies from no delay to the time specified by the value of this parameter.
 The default value, zero (00:00:00), disables the random delay.
@@ -326,6 +336,7 @@ Accept wildcard characters: False
 ```
 
 ### -RepeatIndefinitely
+
 This parameter, available starting in Windows PowerShell 4.0, eliminates the necessity of specifying a **TimeSpan.MaxValue** value for the *RepetitionDuration* parameter to run a scheduled job repeatedly, for an indefinite period.
 
 ```yaml
@@ -341,6 +352,7 @@ Accept wildcard characters: False
 ```
 
 ### -RepetitionDuration
+
 Repeats the job until the specified time expires.
 The repetition frequency is determined by the value of the *RepetitionInterval* parameter.
 For example, if the value of **RepetitionInterval** is 5 minutes and the value of **RepetitionDuration** is 2 hours, the job is triggered every five minutes for two hours.
@@ -366,6 +378,7 @@ Accept wildcard characters: False
 ```
 
 ### -RepetitionInterval
+
 Repeats the job at the specified time interval.
 For example, if the value of this parameter is 2 hours, the job is triggered every two hours.
 The default value, 0, does not repeat the job.
@@ -387,6 +400,7 @@ Accept wildcard characters: False
 ```
 
 ### -User
+
 Specifies the users who trigger an *AtLogon* start of a scheduled job.
 Enter the name of a user in \<UserName\> or \<Domain\Username\> format or enter an asterisk (\*) to represent all users.
 The default value is all users.
@@ -404,6 +418,7 @@ Accept wildcard characters: False
 ```
 
 ### -Weekly
+
 Specifies a recurring weekly job schedule.
 Use the other parameters in the Weekly parameter set to specify the schedule details.
 
@@ -420,6 +435,7 @@ Accept wildcard characters: False
 ```
 
 ### -WeeksInterval
+
 Specifies the number of weeks between occurrences on a weekly job schedule.
 For example, a value of 3 starts the scheduled job on weeks 1, 4, 7 and so on.
 The default value is 1.
@@ -437,11 +453,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### None
+
 You cannot pipe input to this cmdlet.
 
 ## OUTPUTS

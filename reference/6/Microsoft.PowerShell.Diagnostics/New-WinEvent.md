@@ -11,6 +11,7 @@ title: New-WinEvent
 # New-WinEvent
 
 ## SYNOPSIS
+
 Creates a new Windows event for the specified event provider.
 
 ## SYNTAX

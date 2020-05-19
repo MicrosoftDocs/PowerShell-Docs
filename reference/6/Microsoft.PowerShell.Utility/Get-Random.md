@@ -11,6 +11,7 @@ title: Get-Random
 # Get-Random
 
 ## SYNOPSIS
+
 Gets a random number, or selects objects randomly from a collection.
 
 ## SYNTAX

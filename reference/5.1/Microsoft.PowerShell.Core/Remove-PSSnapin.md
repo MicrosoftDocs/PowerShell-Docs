@@ -12,6 +12,7 @@ title: Remove-PSSnapin
 # Remove-PSSnapin
 
 ## SYNOPSIS
+
 Removes Windows PowerShell snap-ins from the current session.
 
 ## SYNTAX
@@ -21,6 +22,7 @@ Remove-PSSnapin [-Name] <String[]> [-PassThru] [-WhatIf] [-Confirm] [<CommonPara
 ```
 
 ## DESCRIPTION
+
 The **Remove-PSSnapin** cmdlet removes a Windows PowerShell snap-in from the current session.
 You can use it to remove snap-ins that you have added to Windows PowerShell You cannot use this cmdlet to remove the snap-ins that are installed with Windows PowerShell.
 
@@ -62,6 +64,7 @@ This command removes all Windows PowerShell snap-ins that have names that includ
 ## PARAMETERS
 
 ### -Name
+
 Specifies the names of Windows PowerShell snap-ins to remove from the current session.
 Wildcard characters (*) are permitted.
 
@@ -78,6 +81,7 @@ Accept wildcard characters: False
 ```
 
 ### -PassThru
+
 Returns an object that represents the snap-in.
 By default, this cmdlet does not generate any output.
 
@@ -94,6 +98,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
+
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
@@ -109,6 +114,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
+
 Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
@@ -125,16 +131,19 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### System.Management.Automation.PSSnapInInfo
+
 You can pipe a snap-in object to this cmdlet.
 
 ## OUTPUTS
 
 ### None, System.Management.Automation.PSSnapInInfo
+
 This cmdlet generates a **System.Management.Automation.PSSnapInInfo** object that represents the snap-in, if you specify the *PassThru* parameter.
 By default, **Remove-PSSnapin** does not generate any output.
 

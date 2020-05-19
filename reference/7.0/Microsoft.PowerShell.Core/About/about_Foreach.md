@@ -9,6 +9,7 @@ title: about_Foreach
 # About ForEach
 
 ## Short description
+
 Describes a language command you can use to traverse all the items in a
 collection of items.
 

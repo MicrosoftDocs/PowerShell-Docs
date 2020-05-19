@@ -11,6 +11,7 @@ title: Disable-PSWSManCombinedTrace
 # Disable-PSWSManCombinedTrace
 
 ## SYNOPSIS
+
 Stop the logging session started by Enable-PSWSManCombinedTrace.
 
 ## SYNTAX

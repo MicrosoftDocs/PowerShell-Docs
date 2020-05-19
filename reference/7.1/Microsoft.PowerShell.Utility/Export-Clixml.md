@@ -12,6 +12,7 @@ title: Export-Clixml
 # Export-Clixml
 
 ## SYNOPSIS
+
 Creates an XML-based representation of an object or objects and stores it in a file.
 
 ## SYNTAX

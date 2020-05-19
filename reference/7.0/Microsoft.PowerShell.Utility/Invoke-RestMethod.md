@@ -12,6 +12,7 @@ title: Invoke-RestMethod
 # Invoke-RestMethod
 
 ## SYNOPSIS
+
 Sends an HTTP or HTTPS request to a RESTful web service.
 
 ## SYNTAX

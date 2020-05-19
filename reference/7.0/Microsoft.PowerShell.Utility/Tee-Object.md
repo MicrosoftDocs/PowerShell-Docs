@@ -11,6 +11,7 @@ title: Tee-Object
 # Tee-Object
 
 ## SYNOPSIS
+
 Saves command output in a file or variable and also sends it down the pipeline.
 
 ## SYNTAX

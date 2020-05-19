@@ -11,6 +11,7 @@ title: New-PSSessionOption
 # New-PSSessionOption
 
 ## SYNOPSIS
+
 Creates an object that contains advanced options for a PSSession.
 
 ## SYNTAX

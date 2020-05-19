@@ -11,6 +11,7 @@ title: Invoke-History
 # Invoke-History
 
 ## SYNOPSIS
+
 Runs commands from the session history.
 
 ## SYNTAX

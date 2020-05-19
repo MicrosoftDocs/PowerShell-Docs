@@ -12,6 +12,7 @@ title: New-WebServiceProxy
 # New-WebServiceProxy
 
 ## SYNOPSIS
+
 Creates a Web service proxy object that lets you use and manage the Web service in PowerShell.
 
 ## SYNTAX

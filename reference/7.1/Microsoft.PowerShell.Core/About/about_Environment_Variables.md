@@ -9,6 +9,7 @@ title: about_Environment_Variables
 # About Environment Variables
 
 ## SHORT DESCRIPTION
+
 Describes how to access Windows environment variables in PowerShell.
 
 ## LONG DESCRIPTION

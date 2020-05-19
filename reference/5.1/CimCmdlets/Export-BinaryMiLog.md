@@ -12,6 +12,7 @@ title: Export-BinaryMiLog
 # Export-BinaryMiLog
 
 ## SYNOPSIS
+
 Creates a binary encoded representation of an object or objects and stores it in a file.
 
 ## SYNTAX

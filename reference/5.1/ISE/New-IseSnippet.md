@@ -10,6 +10,7 @@ title: New-IseSnippet
 # New-IseSnippet
 
 ## SYNOPSIS
+
 Creates a Windows PowerShell ISE code snippet.
 
 ## SYNTAX

@@ -12,6 +12,7 @@ title: Disconnect-PSSession
 # Disconnect-PSSession
 
 ## SYNOPSIS
+
 Disconnects from a session.
 
 ## SYNTAX

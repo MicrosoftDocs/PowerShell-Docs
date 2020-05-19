@@ -11,6 +11,7 @@ title: Rename-Computer
 # Rename-Computer
 
 ## SYNOPSIS
+
 Renames a computer.
 
 ## SYNTAX

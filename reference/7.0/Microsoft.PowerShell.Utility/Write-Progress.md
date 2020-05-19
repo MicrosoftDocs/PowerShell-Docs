@@ -10,6 +10,7 @@ title: Write-Progress
 # Write-Progress
 
 ## SYNOPSIS
+
 Displays a progress bar within a PowerShell command window.
 
 ## SYNTAX
