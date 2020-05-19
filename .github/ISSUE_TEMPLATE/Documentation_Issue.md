@@ -13,7 +13,6 @@ Be sure to change the issue title. Titles should be brief and meaningful.
 # Documentation Issue
 <!-- Enter brief description here -->
 
-
 ## Context of the issue
 
 - URL to the article (Docs or GitHub URL):
@@ -33,6 +32,7 @@ Be sure to change the issue title. Titles should be brief and meaningful.
   - [ ] JEA articles
   - [ ] WMF articles
   - [ ] SDK articles
+  - [ ] Community articles
 - Is the issue specific to a platform (Y/N - Win/macOS/Linux):
 
 ## Detailed description of the issue
