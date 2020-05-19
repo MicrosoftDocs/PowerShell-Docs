@@ -150,6 +150,7 @@ You can pipe a security group, a string, or a SID to this cmdlet.
 This cmdlet does not generate any output.
 
 ## NOTES
+
 * This cmdlet cannot delete the following default groups:
 
 - Administrators
@@ -169,6 +170,7 @@ This cmdlet does not generate any output.
 - Replicator
 - Users
 - WinRMRemoteWMIUsers__
+
 * The **PrincipalSource** property is a property on **LocalUser**, **LocalGroup**, and **LocalPrincipal** objects that describes the source of the object. The possible sources are as follows:
 
 - Local

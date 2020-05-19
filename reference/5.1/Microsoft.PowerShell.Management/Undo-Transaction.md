@@ -154,6 +154,7 @@ You cannot pipe input to this cmdlet.
 This cmdlet does not return any output.
 
 ## NOTES
+
 * You cannot roll back a transaction that has been committed.
 
   You cannot roll back any transaction other than the active transaction.

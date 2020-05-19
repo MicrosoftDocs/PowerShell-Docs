@@ -122,6 +122,7 @@ You can pipe a string that contains the warning to **Write-Warning**.
 It does not generate any other output.
 
 ## NOTES
+
 * The default value for the $WarningPreference variable is Continue, which displays the warning and then continues executing the command. To determine valid values for a preference variable such as $WarningPreference, set it to a string of random characters, such as "abc". The resulting error message will list the valid values.
 
 *

@@ -218,6 +218,7 @@ You can pipe a path string to this cmdlet.
 This cmdlet creates a file that contains the exported aliases.
 
 ## NOTES
+
 * When a console file (.psc1) is used to start the session, the name of the console file is automatically stored in the $ConsoleFileName automatic variable. The value of $ConsoleFileName is updated when you use the *Path* parameter of **Export-Console** to specify a new console file. When no console file is used, $ConsoleFileName has no value ($Null).
 
   To use a Windows PowerShell console file in a new session, use the following syntax to start Windows PowerShell:

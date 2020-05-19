@@ -137,6 +137,7 @@ The **PowerShellGet** module will download the module to:
 `C:\Program Files\Windows PowerShell\Modules`
 
 Planning task
+
 - Do you have access to the installation files for Windows Server 2012 R2?
 - Will the deployment environment have Internet access to download WMF and the module from the
   online gallery?
@@ -157,6 +158,7 @@ for pull server align with the requirements for Windows Server 2012 R2.
 - Network: Gigabit Ethernet Adapter
 
 Planning task
+
 - Will you deploy on physical hardware or on a virtualization platform?
 - What is the process to request a new server for your target environment?
 - What is the average turnaround time for a server to become available?
@@ -194,6 +196,7 @@ If using load balancing, the certificate used to secure traffic over HTTPS will 
 For more information, see [Configuring DNS Round Robin in Windows Server](/previous-versions/windows/it-pro/windows-server-2003/cc787484(v=ws.10)).
 
 Planning task
+
 - Do you know who to contact to have DNS records created and changed?
 - What is the average turnaround for a request for a DNS record?
 - Do you need to request static Hostname (A) records for servers?
@@ -214,6 +217,7 @@ any other HTTPS web site. The **Web Server** template in a Windows Server Certif
 satisfies the required capabilities.
 
 Planning task
+
 - If certificate requests are not automated, who will you need to contact to requests a certificate?
 - What is the average turnaround for the request?
 - How will the certificate file be transferred to you?
@@ -242,6 +246,7 @@ response. No sequential requests are required, so it is not necessary for the lo
 platform to ensure sessions are maintained on a single server at any point in time.
 
 Planning task
+
 - What solution will be used for load balancing traffic across servers?
 - If using a hardware load balancer, who will take a request to add a new configuration to the
   device?
@@ -290,6 +295,7 @@ New-DscChecksum -ConfigurationPath .\ -OutPath .\
 ```
 
 Planning task
+
 - If you are planning a test or lab environment which scenarios are key to validate?
 - Are there publicly available modules that contain resources to cover everything you need or will you need to author your own resources?
 - Will your environment have Internet access to retrieve public modules?
@@ -330,6 +336,7 @@ another tool or software solution. There are two general approaches:
   [Securely allocating Guids in PowerShell Desired State Configuration Pull Mode](https://blogs.msdn.microsoft.com/powershell/2014/12/31/securely-allocating-guids-in-powershell-desired-state-configuration-pull-mode/).
 
 Planning task
+
 - Who will be responsible for copying configurations in to the pull server folder when they are
   ready?
 - If Configurations are authored by an application team, what will the process be to hand them off?

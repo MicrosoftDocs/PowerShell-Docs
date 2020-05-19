@@ -174,6 +174,7 @@ You can pipe job triggers to **Enable-JobTrigger**.
 This cmdlet does not generate any output.
 
 ## NOTES
+
 * **Enable-JobTrigger** does not generate errors or warnings if you enable a job trigger that is already enabled.
 
 ## RELATED LINKS

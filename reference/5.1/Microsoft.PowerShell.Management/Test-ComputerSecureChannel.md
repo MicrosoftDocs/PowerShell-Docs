@@ -189,6 +189,7 @@ You cannot pipe input to this cmdlet.
 This cmdlet returns $True if the connection is working correctly and $False if it is not.
 
 ## NOTES
+
 * To run a **Test-ComputerSecureChannel** command on Windows Vista and later versions of the Windows operating system, open Windows PowerShell by using the Run as administrator option.
 * **Test-ComputerSecureChannel** is implemented by using the **I_NetLogonControl2** function, which controls various aspects of the Netlogon service.
 

@@ -169,6 +169,7 @@ You can pipe the output from Get-EventSubscriber to **Unregister-Event**.
 This cmdlet does not return any output.
 
 ## NOTES
+
 * Events, event subscriptions, and the event queue exist only in the current session. If you close the current session, the event queue is discarded and the event subscription is canceled.
 
   **Unregister-Event** cannot delete events created by using the New-Event cmdlet unless you have subscribed to the event by using the **Register-EngineEvent** cmdlet.

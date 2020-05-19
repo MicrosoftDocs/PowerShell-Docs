@@ -226,6 +226,7 @@ You cannot pipe input to this cmdlet.
 This cmdlet does not return any output.
 
 ## NOTES
+
 * To use **Remove-EventLog** on Windows Vista and later versions of the Windows operating system, start Windows PowerShell by using the Run as administrator option.
 
   If you remove an event log and then re-create the log, you will not be able to register the same event sources.

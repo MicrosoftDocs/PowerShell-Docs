@@ -194,6 +194,7 @@ session configurations to allow remote access.
 
 To enable remote access to the session configurations on the computer, use the
 Enable-PSRemoting cmdlet. This cmdlet creates two session configurations:
+
 - with the name defined as: "PowerShell." + "current PowerShell version"
 - with name "PowerShell.6", untied to any specific PowerShell version.
 

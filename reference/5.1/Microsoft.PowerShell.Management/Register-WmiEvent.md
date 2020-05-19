@@ -326,6 +326,7 @@ You cannot pipe objects to this cmdlet.
 This cmdlet does not generate any output.
 
 ## NOTES
+
 * To use this cmdlet in Windows Vista or a later version of the Windows operating system, start Windows PowerShell by using the Run as administrator option.
 
   Events, event subscriptions, and the event queue exist only in the current session.

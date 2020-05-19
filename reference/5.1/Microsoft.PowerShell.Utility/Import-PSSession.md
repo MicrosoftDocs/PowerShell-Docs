@@ -519,6 +519,7 @@ However, the imported module is temporary and exists only in the current session
 To create a permanent module on disk, use the Export-PSSession cmdlet.
 
 ## NOTES
+
 * **Import-PSSession** relies on the Windows PowerShell remoting infrastructure. To use this cmdlet, the computer must be configured for WS-Management remoting. For more information, see about_Remote and about_Remote_Requirements.
 * **Import-PSSession** does not import variables or Windows PowerShell providers.
 * When you import commands that have the same names as commands in the current session, the imported commands can hide aliases, functions, and cmdlets in the session and they can replace functions and variables in the session. To prevent name conflicts, use the *Prefix* parameter. For more information, see about_Command_Precedence.

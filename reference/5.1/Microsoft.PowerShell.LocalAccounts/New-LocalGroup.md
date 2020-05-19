@@ -116,6 +116,7 @@ You can pipe a string to this cmdlet.
 This cmdlet returns a security group.
 
 ## NOTES
+
 * The **PrincipalSource** property is a property on **LocalUser**, **LocalGroup**, and **LocalPrincipal** objects that describes the source of the object. The possible sources are as follows:
 
 - Local

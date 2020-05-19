@@ -99,6 +99,7 @@ This cmdlet does not accept any input.
 This cmdlet does not generate any output.
 
 ## NOTES
+
 * To enable CredSSP authentication, use the Enable-WSManCredSSP cmdlet.
 
 *

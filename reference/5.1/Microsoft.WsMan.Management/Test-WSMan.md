@@ -274,6 +274,7 @@ This cmdlet does not accept any input.
 This cmdlet does not generate any output object.
 
 ## NOTES
+
 * By default, the **Test-WSMan** cmdlet queries the WinRM service without using authentication, and it returns no information that is specific to the operating-system version. Instead, it displays null values for the operating system version and service pack level (OS: 0.0.0 SP: 0.0).
 
 *
