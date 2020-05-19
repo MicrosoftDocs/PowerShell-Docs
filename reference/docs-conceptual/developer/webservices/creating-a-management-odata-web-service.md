@@ -18,10 +18,10 @@ Download and install the [PswsRoleBasedPlugins](https://code.msdn.microsoft.com:
 > [!IMPORTANT]
 > Before you enabling Management ODATA IIS Extension on Windows Server 2008 R2 SP1, the following features must be enabled.
 >
-> 1.  IIS-WebServerRole
-> 2.  IIS-WebServer
-> 3.  IIS-HttpTracing
-> 4.  IIS-ManagementOData
+> 1. IIS-WebServerRole
+> 2. IIS-WebServer
+> 3. IIS-HttpTracing
+> 4. IIS-ManagementOData
 
 ## Steps for creating a Management OData web service
 
