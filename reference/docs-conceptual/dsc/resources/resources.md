@@ -24,7 +24,7 @@ A resource's schema can be defined in the following ways:
 
 - **'Schema.Mof'** file: Most resources define their _schema_ in a 'schema.mof' file, using [Managed Object Format](/windows/desktop/wmisdk/managed-object-format--mof-).
 - **'\<Resource Name\>.schema.psm1'** file: [Composite Resources](../configurations/compositeConfigs.md)
-  define their *schema* in a '<ResourceName>.schema.psm1' file using a [Parameter Block](/powershell/module/microsoft.powershell.core/about/about_functions?view=powershell-6#functions-with-parameters).
+  define their *schema* in a `<ResourceName>.schema.psm1` file using a [Parameter Block](/powershell/module/microsoft.powershell.core/about/about_functions?view=powershell-6#functions-with-parameters).
 - **'\<Resource Name\>.psm1'** file: Class based DSC resources define their _schema_ in the class
   definition. Syntax items are denoted as Class properties. For more information, see [about_Classes](/powershell/module/psdesiredstateconfiguration/about/about_classes_and_dsc).
 

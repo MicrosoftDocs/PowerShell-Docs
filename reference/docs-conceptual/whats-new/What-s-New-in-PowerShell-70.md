@@ -579,7 +579,7 @@ For more information about
 - Clean up CodeFactor style issues coming in commits for the last month (#10591) (Thanks @iSazonov!)
 - Fix typo in description of PSTernaryOperator experimental feature (#10586) (Thanks @bergmeister!)
 - Convert ActionPreference.Suspend enumeration value into a non-supported, reserved state, and remove restriction on using ActionPreference.Ignore in preference variables (#10317) (Thanks @KirkMunro!)
-- Replace ArrayList with List<T> to get more readable and reliable code without changing functionality (#10333) (Thanks @iSazonov!)
+- Replace ArrayList with List\<T> to get more readable and reliable code without changing functionality (#10333) (Thanks @iSazonov!)
 - Make code style fixes to TestConnectionCommand (#10439) (Thanks @vexx32!)
 - Cleanup AutomationEngine and remove extra SetSessionStateDrive method call (#10416) (Thanks @iSazonov!)
 - Rename default ParameterSetName back to Delimiter for ConvertTo-Csv and ConvertFrom-Csv (#10425)
