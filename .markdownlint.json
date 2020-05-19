@@ -3,10 +3,10 @@
     "blanks-around-headers": true,
     "blanks-around-lists": true,
     "code-block-style": {
-        "fenced": true
+        "style": "fenced"
     },
     "code-fence-style": {
-        "backtick": true
+        "style": "backtick"
     },
     "commands-show-output": true,
     "fenced-code-language": false,
