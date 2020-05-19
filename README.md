@@ -49,7 +49,7 @@ Please note that before you submit a pull request you must
 [sign a Contribution License Agreement](https://cla.microsoft.com/) to ensure that the community is
 free to use your submissions.
 
-For more information on contributing, read our [contributor's guide](https://docs.microsoft.com/contribute/powershell/powershell-contribute). The
+For more information on contributing, read our [contributor's guide](https://docs.microsoft.com/powershell/scripting/community/contributing/overview). The
 contributor's guide contains detail information about how to contribute documentation, suggested
 tools, and style and formatting requirements. Please use the Issue and Pull Request templates to
 help keep documentation consistent across versions.
