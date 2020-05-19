@@ -163,6 +163,7 @@ You cannot pipe input to this cmdlet.
 This cmdlet returns the result of the transaction.
 
 ## NOTES
+
 * The *UseTransaction* parameter includes the command in the active transaction. Because the **Use-Transaction** cmdlet is always used in transactions, this parameter is required to make any **Use-Transaction** command effective.
 
 *

@@ -140,6 +140,7 @@ You can pipe events from Get-Event to **Remove-Event**.
 The cmdlet does not generate any output.
 
 ## NOTES
+
 * Events, event subscriptions, and the event queue exist only in the current session. If you close the current session, the event queue is discarded and the event subscription is canceled.
 
 *

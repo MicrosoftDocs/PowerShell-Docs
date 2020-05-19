@@ -50,6 +50,7 @@ You cannot pipe input to this cmdlet.
 This cmdlet returns a string that contains a status message and the path to the output file.
 
 ## NOTES
+
 * If a transcript has not been started, the command fails.
 
 *

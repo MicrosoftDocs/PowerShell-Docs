@@ -168,6 +168,7 @@ You can pipe a string that contains the append path to **Update-FormatData**.
 The cmdlet does not return any output.
 
 ## NOTES
+
 * **Update-FormatData** also updates the formatting data for commands in the session that were imported from modules. If the formatting file for a module changes, you can run an **Update-FormatData** command to update the formatting data for imported commands. You do not need to import the module again.
 
 *

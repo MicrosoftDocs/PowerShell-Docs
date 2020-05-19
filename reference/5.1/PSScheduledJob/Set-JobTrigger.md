@@ -469,6 +469,7 @@ When you use the *Passthru* parameter, **Set-JobTrigger** returns the job trigge
 Otherwise, this cmdlet does not generate any output.
 
 ## NOTES
+
 * Job triggers have a JobDefintion property that associates them with the scheduled job. When you change the job trigger of a scheduled job, the job is changed. You do not need to use a Set-ScheduledJob command to apply the changed trigger to the scheduled job.
 
 ## RELATED LINKS

@@ -334,6 +334,7 @@ This cmdlet does not accept any input.
 This cmdlet does not generate any output.
 
 ## NOTES
+
 * The Remove-WmiObject cmdlet, a Windows Management Instrumentation (WMI) cmdlet, is similar. **Remove-WmiObject** uses the DCOM connection/transport layer to create or update WMI instances.
 
 *

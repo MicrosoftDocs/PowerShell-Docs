@@ -219,6 +219,7 @@ You cannot pipe objects to this cmdlet.
 This cmdlet does not generate any output.
 
 ## NOTES
+
 * You cannot roll back a transaction that has been committed, or commit a transaction that has been rolled back.
 
   You cannot roll back any transaction other than the active transaction.

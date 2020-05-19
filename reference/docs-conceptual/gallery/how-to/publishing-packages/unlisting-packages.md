@@ -27,6 +27,7 @@ To unlist your package, visit the package details page and select 'Delete Module
 
 If you experience a scenario where package deletion is necessary, contact the PowerShell Gallery Administrators.
 Valid deletion scenarios are:
+
 - Issues of copyright infringement.
 - Package contains potentially harmful content.
 - Package contains sensitive data.

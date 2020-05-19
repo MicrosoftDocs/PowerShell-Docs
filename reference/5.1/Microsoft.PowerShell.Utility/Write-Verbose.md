@@ -87,6 +87,7 @@ You can pipe a string that contains the message to **Write-Verbose**.
 **Write-Verbose** writes only to the verbose message stream.
 
 ## NOTES
+
 * Verbose messages are returned only when the command uses the **Verbose** common parameter. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 * In Windows PowerShell background jobs and remote commands, the **$VerbosePreference** variable in the job session and remote session determine whether the verbose message is displayed by default. For more information about the **$VerbosePreference** variable, see [about_Preference_Variables](../Microsoft.PowerShell.Core/About/about_Preference_Variables.md).
 

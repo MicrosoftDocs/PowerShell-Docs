@@ -366,6 +366,7 @@ This cmdlet returns the jobs that it tries to resume, if you use the *PassThru* 
 Otherwise, this cmdlet does not generate any output.
 
 ## NOTES
+
 * **Resume-Job** can only resume jobs that are suspended. If you submit a job in a different state, **Resume-Job** runs the resume operation on the job, but generates a warning to notify you that the job could not be resumed. To suppress the warning, use the *WarningAction* common parameter with a value of SilentlyContinue.
 * If a job is not of a type that supports resuming, such as a workflow job (**PSWorkflowJob**), **Resume-Job** returns a terminating error.
 * The mechanism and location for saving a suspended job might vary depending on the job type. For example, suspended workflow jobs are saved in a flat file store by default, but can also be saved in a SQL database.

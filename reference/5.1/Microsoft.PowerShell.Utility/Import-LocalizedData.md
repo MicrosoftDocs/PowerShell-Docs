@@ -298,6 +298,7 @@ You cannot pipe input to this cmdlet.
 **Import-LocalizedData** saves the hash table in the variable that is specified by the value of the **BindingVariable** parameter.
 
 ## NOTES
+
 * Before using **Import-LocalizedData**, localize your user messages. Format the messages for each locale (UI culture) in a hash table of key/value pairs, and save the hash table in a file with the same name as the script and a .psd1 file name extension. Create a directory under the script directory for each supported UI culture, and then save the .psd1 file for each UI culture in the directory with the UI culture name.
 
   For example, localize your user messages for the de-DE locale and format them in a hash table.

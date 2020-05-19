@@ -223,6 +223,7 @@ You can pipe a process ID (Int32), a process object (System.Diagnostics.Process)
 This cmdlet does not generate any output.
 
 ## NOTES
+
 * This cmdlet uses the AttachDebugger method of the Windows Management Instrumentation (WMI) Win32_Process class. For more information about this method, see [AttachDebugger method](https://go.microsoft.com/fwlink/?LinkId=143640) in the MSDN library.
 
 ## RELATED LINKS

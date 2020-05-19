@@ -205,6 +205,7 @@ You cannot pipe input to this cmdlet.
 **Get-EventSubscriber** returns an object that represents each event subscriber.
 
 ## NOTES
+
 * The New-Event cmdlet, which creates a custom event, does not generate a subscriber. Therefore, the **Get-EventSubscriber** cmdlet will not find a subscriber object for these events. However, if you use the Register-EngineEvent cmdlet to subscribe to a custom event (in order to forward the event or to specify an action), **Get-EventSubscriber** will find the subscriber that **Register-EngineEvent** generates.
 
   Events, event subscriptions, and the event queue exist only in the current session.
