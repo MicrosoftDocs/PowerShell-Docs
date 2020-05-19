@@ -84,47 +84,47 @@ The previous selection set is referenced in the `ViewSelectedBy` element of a ta
 
 - The following element specifies the selection set to use in all the definitions of the view:
 
-    - [SelectionSetName Element for ViewSelectedBy (Format)](./selectionsetname-element-for-viewselectedby-format.md)
+  - [SelectionSetName Element for ViewSelectedBy (Format)](./selectionsetname-element-for-viewselectedby-format.md)
 
-    - [SelectionSetName Element for EntrySelectedBy for GroupBy (Format)](./selectionsetname-element-for-entryselectedby-for-groupby-format.md)
+  - [SelectionSetName Element for EntrySelectedBy for GroupBy (Format)](./selectionsetname-element-for-entryselectedby-for-groupby-format.md)
 
 - The following elements specify the selection set used by a single view definition:
 
-    - [SelectionSetName Element for EntrySelectedBy for ListControl (Format)](./selectionsetname-element-for-entryselectedby-for-listcontrol-format.md)
+  - [SelectionSetName Element for EntrySelectedBy for ListControl (Format)](./selectionsetname-element-for-entryselectedby-for-listcontrol-format.md)
 
-    - [SelectionSetName Element for EntrySelectedBy for TableControl (Format)](./selectionsetname-element-for-entryselectedby-for-tablecontrol-format.md)
+  - [SelectionSetName Element for EntrySelectedBy for TableControl (Format)](./selectionsetname-element-for-entryselectedby-for-tablecontrol-format.md)
 
-    - [SelectionSetName Element for EntrySelectedBy for WideControl (Format)](./selectionsetname-element-for-entryselectedby-for-widecontrol-format.md)
+  - [SelectionSetName Element for EntrySelectedBy for WideControl (Format)](./selectionsetname-element-for-entryselectedby-for-widecontrol-format.md)
 
-    - [SelectionSetName Element for EntrySelectedBy for CustomControl for View (Format)](./selectionsetname-element-for-entryselectedby-for-customcontrol-for-view-format.md)
+  - [SelectionSetName Element for EntrySelectedBy for CustomControl for View (Format)](./selectionsetname-element-for-entryselectedby-for-customcontrol-for-view-format.md)
 
 - The following elements specify the selection set used by common and view control definitions:
 
-    - [SelectionSetName Element for EntrySelectedBy for Controls for View (Format)](./selectionsetname-element-for-entryselectedby-for-controls-for-view-format.md)
+  - [SelectionSetName Element for EntrySelectedBy for Controls for View (Format)](./selectionsetname-element-for-entryselectedby-for-controls-for-view-format.md)
 
-    - [SelectionSetName Element for EntrySelectedBy for Controls for Configuration (Format)](./selectionsetname-element-for-entryselectedby-for-controls-for-configuration-format.md)
+  - [SelectionSetName Element for EntrySelectedBy for Controls for Configuration (Format)](./selectionsetname-element-for-entryselectedby-for-controls-for-configuration-format.md)
 
 - The following elements specify the selection set used when you define which object to expand:
 
-    - [SelectionSetName Element for EntrySelectedBy for EnumerableExpansion (Format)](./selectionsetname-element-for-entryselectedby-for-enumerableexpansion-format.md)
+  - [SelectionSetName Element for EntrySelectedBy for EnumerableExpansion (Format)](./selectionsetname-element-for-entryselectedby-for-enumerableexpansion-format.md)
 
 - The following elements specify the selection set used by selection conditions.
 
-    - [SelectionSetName Element for SelectionCondition for Controls for Configuration (Format)](./selectionsetname-element-for-selectioncondition-for-controls-for-configuration-format.md)
+  - [SelectionSetName Element for SelectionCondition for Controls for Configuration (Format)](./selectionsetname-element-for-selectioncondition-for-controls-for-configuration-format.md)
 
-    - [SelectionSetName Element for SelectionCondition for Controls for View (Format)](./selectionsetname-element-for-selectioncondition-for-controls-for-view-format.md)
+  - [SelectionSetName Element for SelectionCondition for Controls for View (Format)](./selectionsetname-element-for-selectioncondition-for-controls-for-view-format.md)
 
-    - [SelectionSetName Element for SelectionCondition for CustomControl for View (Format)](./selectionsetname-element-for-selectioncondition-for-customcontrol-for-view-format.md)
+  - [SelectionSetName Element for SelectionCondition for CustomControl for View (Format)](./selectionsetname-element-for-selectioncondition-for-customcontrol-for-view-format.md)
 
-    - [SelectionSetName Element for SelectionCondition for EntrySelectedBy for EnumerableExpansion (Format)](./selectionsetname-element-for-selectioncondition-for-entryselectedby-for-enumerableexpansion-format.md)
+  - [SelectionSetName Element for SelectionCondition for EntrySelectedBy for EnumerableExpansion (Format)](./selectionsetname-element-for-selectioncondition-for-entryselectedby-for-enumerableexpansion-format.md)
 
-    - [SelectionSetName Element for SelectionCondition for EntrySelectedBy for ListEntry (Format)](./selectionsetname-element-for-selectioncondition-for-entryselectedby-for-listentry-format.md)
+  - [SelectionSetName Element for SelectionCondition for EntrySelectedBy for ListEntry (Format)](./selectionsetname-element-for-selectioncondition-for-entryselectedby-for-listentry-format.md)
 
-    - [SelectionSetName Element for SelectionCondition for EntrySelectedBy for TableControl (Format)](./selectionsetname-element-for-selectioncondition-for-entryselectedby-for-tablecontrol-format.md)
+  - [SelectionSetName Element for SelectionCondition for EntrySelectedBy for TableControl (Format)](./selectionsetname-element-for-selectioncondition-for-entryselectedby-for-tablecontrol-format.md)
 
-    - [SelectionSetName Element for SelectionCondition for EntrySelectedBy for WideEntry (Format)](./selectionsetname-element-for-selectioncondition-for-entryselectedby-for-wideentry-format.md)
+  - [SelectionSetName Element for SelectionCondition for EntrySelectedBy for WideEntry (Format)](./selectionsetname-element-for-selectioncondition-for-entryselectedby-for-wideentry-format.md)
 
-    - [SelectionSetName Element for SelectionCondition for GroupBy (Format)](./selectionsetname-element-for-selectioncondition-for-groupby-format.md)
+  - [SelectionSetName Element for SelectionCondition for GroupBy (Format)](./selectionsetname-element-for-selectioncondition-for-groupby-format.md)
 
 ## See Also
 
