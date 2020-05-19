@@ -180,8 +180,8 @@ specifier show no decimal places.
 
 When Foreach appears in a command pipeline, Windows PowerShell uses the
 foreach alias, which calls the ForEach-Object command. When you use the
-foreach alias in a command pipeline, you do not include the `($<item> in
-$<collection>)` syntax as you do with the Foreach statement. This is because
+foreach alias in a command pipeline, you do not include the `($<item> in $<collection>)`
+syntax as you do with the Foreach statement. This is because
 the prior command in the pipeline provides this information. The syntax of the
 foreach alias when used in a command pipeline is as follows:
 
