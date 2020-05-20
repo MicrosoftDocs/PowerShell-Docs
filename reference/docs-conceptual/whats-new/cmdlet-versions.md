@@ -255,7 +255,7 @@ This is a work in progress. Please help us keep this information fresh.
 | Rename-ItemProperty           | &check; | &check; | &check; | &check; |                                  |
 | Reset-ComputerMachinePassword | &check; |         |         |         | Windows only                     |
 | Resolve-Path                  | &check; | &check; | &check; | &check; |                                  |
-| Restart-Computer              | &check; | &check; | &check; | &check; |                                  |
+| Restart-Computer              | &check; | &check; | &check; | &check; | Added Linux/macOS support in 7.1 |
 | Restart-Service               | &check; | &check; | &check; | &check; | Windows only                     |
 | Restore-Computer              | &check; |         |         |         | Windows only                     |
 | Resume-Service                | &check; | &check; | &check; | &check; | Windows only                     |
@@ -273,7 +273,7 @@ This is a work in progress. Please help us keep this information fresh.
 | Start-Process                 | &check; | &check; | &check; | &check; |                                  |
 | Start-Service                 | &check; | &check; | &check; | &check; | Windows only                     |
 | Start-Transaction             | &check; |         |         |         | Windows only                     |
-| Stop-Computer                 | &check; | &check; | &check; | &check; | Added Linux/macOS support in 7.0 |
+| Stop-Computer                 | &check; | &check; | &check; | &check; | Added Linux/macOS support in 7.1 |
 | Stop-Process                  | &check; | &check; | &check; | &check; |                                  |
 | Stop-Service                  | &check; | &check; | &check; | &check; | Windows only                     |
 | Suspend-Service               | &check; | &check; | &check; | &check; | Windows only                     |
