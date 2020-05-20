@@ -194,7 +194,25 @@ aliases, and executable files.
 The output of the command shows the special view of the **Name** property value for aliases. The
 view shows the alias and the full command name.
 
-### Example 11: Get all instances of the Notepad command
+### Example 11: Get Syntax from an alias
+
+This example shows how to get the syntax along with the standard name of an alias.
+
+The output of the command shows the labeled alias with the standard name, followed by the syntax.
+
+```powershell
+Get-Command -Name dir -Syntax
+```
+
+```Output
+dir (alias) -> Get-ChildItem
+
+dir [[-Path] <string[]>] [[-Filter] <string>] [-Include <string[]>] [-Exclude <string[]>] [-Recurse] [-Depth <uint>] [-Force] [-Name] [-Attributes <FlagsExpression[FileAttributes]>] [-FollowSymlink] [-Directory] [-File] [-Hidden] [-ReadOnly] [-System] [<CommonParameters>]
+
+dir [[-Filter] <string>] -LiteralPath <string[]> [-Include <string[]>] [-Exclude <string[]>] [-Recurse] [-Depth <uint>] [-Force] [-Name] [-Attributes <FlagsExpression[FileAttributes]>] [-FollowSymlink] [-Directory] [-File] [-Hidden] [-ReadOnly] [-System] [<CommonParameters>]
+```
+
+### Example 12: Get all instances of the Notepad command
 
 This example uses the **All** parameter of the `Get-Command` cmdlet to show all instances of the
 `Notepad` command on the local computer.
@@ -221,7 +239,7 @@ qualified path to the command.
 
 For more information about command precedence, see [about_Command_Precedence](About/about_Command_Precedence.md).
 
-### Example 12: Get the name of a module that contains a cmdlet
+### Example 13: Get the name of a module that contains a cmdlet
 
 This command gets the name of the module in which the `Get-Date` cmdlet originated.
 The command uses the **ModuleName** property of all commands.
@@ -236,7 +254,7 @@ Microsoft.PowerShell.Utility
 
 This command format works on commands in PowerShell modules, even if they are not imported into the session.
 
-### Example 13: Get cmdlets and functions that have an output type
+### Example 14: Get cmdlets and functions that have an output type
 
 ```powershell
 Get-Command -Type Cmdlet | Where-Object OutputType | Format-List -Property Name, OutputType
@@ -252,7 +270,7 @@ which displays the name and output type of each cmdlet in a list.
 The **OutputType** property of a **CommandInfo** object has a non-null value only when the cmdlet
 code defines the **OutputType** attribute for the cmdlet.
 
-### Example 14: Get cmdlets that take a specific object type as input
+### Example 15: Get cmdlets that take a specific object type as input
 
 ```powershell
 Get-Command -ParameterType (((Get-NetAdapter)[0]).PSTypeNames)
@@ -276,7 +294,7 @@ describe the object. To get the **PSTypeNames** property of a net adapter, and n
 **PSTypeNames** property of a collection of net adapters, the command uses array notation to get the
 first net adapter that the cmdlet returns.
 
-### Example 15: Get commands using a fuzzy match
+### Example 16: Get commands using a fuzzy match
 
 In this example, the name of the command deliberately has a typo as 'get-commnd'.
 Using the `-UseFuzzyMatching` switch, the cmdlet determined that the best match
