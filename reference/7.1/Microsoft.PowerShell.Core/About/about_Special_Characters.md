@@ -2,7 +2,7 @@
 keywords: powershell,cmdlet
 locale: en-us
 ms.date: 04/04/2020
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_special_characters?view=powershell-7.x&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_special_characters?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Special_Characters
 ---
@@ -250,3 +250,4 @@ For more information about the stop-parsing token, see
 ## See also
 
 [about_Quoting_Rules](about_Quoting_Rules.md)
+

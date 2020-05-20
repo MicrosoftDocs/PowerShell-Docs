@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Core
 ms.date: 06/09/2017
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/out-null?view=powershell-7.x&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/out-null?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Out-Null
 ---
@@ -81,3 +81,4 @@ This cmdlet does not generate any output.
 [Out-Default](Out-Default.md)
 
 [Out-Host](Out-Host.md)
+

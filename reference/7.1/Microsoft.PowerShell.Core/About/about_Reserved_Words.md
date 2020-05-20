@@ -2,7 +2,7 @@
 keywords: powershell,cmdlet
 locale: en-us
 ms.date: 06/09/2017
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_reserved_words?view=powershell-7.x&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_reserved_words?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Reserved_Words
 ---
@@ -74,3 +74,4 @@ Get-Help <Reserved_Word>
 - [about_Quoting_Rules](about_Quoting_Rules.md)
 - [about_Script_Blocks](about_Script_Blocks.md)
 - [about_Special_Characters](about_Special_Characters.md)
+

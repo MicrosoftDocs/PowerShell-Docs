@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Utility
 ms.date: 10/29/2019
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/show-command?view=powershell-7.x&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/show-command?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Show-Command
 ---
@@ -323,3 +323,4 @@ When you use the **PassThru** parameter, `Show-Command` returns a command string
 `Show-Command` does not work in remote sessions.
 
 ## RELATED LINKS
+

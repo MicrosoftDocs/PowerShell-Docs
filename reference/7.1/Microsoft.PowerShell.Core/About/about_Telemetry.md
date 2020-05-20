@@ -2,7 +2,7 @@
 keywords: powershell
 locale: en-us
 ms.date: 08/09/2019
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_telemetry?view=powershell-7.x&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_telemetry?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Telemetry
 ---
@@ -33,3 +33,4 @@ The following telemetry points are recorded:
 This data includes the OS name, OS version, the PowerShell version, and the distribution channel.
 
 To opt-out of this telemetry, set the environment variable POWERSHELL_TELEMETRY_OPTOUT to true, yes, or 1.
+

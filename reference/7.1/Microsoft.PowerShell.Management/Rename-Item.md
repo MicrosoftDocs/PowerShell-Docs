@@ -3,7 +3,7 @@ external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 keywords: powershell,cmdlet
 locale: en-us
 ms.date: 10/03/2019
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/rename-item?view=powershell-7.x&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/rename-item?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Rename-Item
 ---
@@ -314,3 +314,4 @@ available in your session, type `Get-PsProvider`. For more information, see [abo
 [Set-Item](Set-Item.md)
 
 [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md)
+

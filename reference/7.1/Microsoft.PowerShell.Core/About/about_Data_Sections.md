@@ -2,7 +2,7 @@
 keywords: powershell,cmdlet
 locale: en-us
 ms.date: 04/23/2019
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_data_sections?view=powershell-7.x&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_data_sections?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Data_Sections
 ---
@@ -217,3 +217,4 @@ DATA -supportedCommand Format-XML {
 [ConvertFrom-StringData](../../Microsoft.PowerShell.Utility/ConvertFrom-StringData.md)
 
 [Import-LocalizedData](../../Microsoft.PowerShell.Utility/Import-LocalizedData.md)
+

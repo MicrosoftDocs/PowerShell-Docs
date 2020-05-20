@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Utility
 ms.date: 06/09/2017
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/get-alias?view=powershell-7.x&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/get-alias?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Alias
 ---
@@ -226,3 +226,4 @@ You can pipe alias names to **Get-Alias**.
 [Alias Provider](../Microsoft.PowerShell.Core/About/about_Alias_Provider.md)
 
 [about_Aliases](../Microsoft.PowerShell.Core/About/about_Aliases.md)
+

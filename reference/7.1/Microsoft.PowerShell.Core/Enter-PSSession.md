@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Core
 ms.date: 5/15/2019
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/enter-pssession?view=powershell-7.x&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/enter-pssession?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Enter-PSSession
 ---
@@ -913,3 +913,4 @@ The cmdlet does not return any output.
 [Disconnect-PSSession](Disconnect-PSSession.md)
 
 [Receive-PSSession](Receive-PSSession.md)
+

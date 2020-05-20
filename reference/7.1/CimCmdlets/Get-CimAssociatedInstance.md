@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: CimCmdlets
 ms.date: 06/09/2017
-online version: https://docs.microsoft.com/powershell/module/cimcmdlets/get-cimassociatedinstance?view=powershell-7.x&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/cimcmdlets/get-cimassociatedinstance?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-CimAssociatedInstance
 ---
@@ -329,3 +329,4 @@ This cmdlet returns an object.
 [Get-CimClass](get-cimclass.md)
 
 [Get-CimInstance](get-ciminstance.md)
+
