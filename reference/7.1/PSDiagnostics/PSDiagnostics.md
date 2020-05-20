@@ -47,3 +47,4 @@ Start an Event Trace logging session.
 
 ### [Stop-Trace](Stop-Trace.md)
 Stop an Event Trace logging session.
+

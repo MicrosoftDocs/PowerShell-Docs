@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Core
 ms.date: 04/30/2020
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/foreach-object?view=powershell-7.x&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/foreach-object?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: ForEach-Object
 ---
@@ -737,3 +737,4 @@ This cmdlet returns objects that are determined by the input.
 [Sort-Object](../Microsoft.PowerShell.Utility/Sort-Object.md)
 
 [Tee-Object](../Microsoft.PowerShell.Utility/Tee-Object.md)
+

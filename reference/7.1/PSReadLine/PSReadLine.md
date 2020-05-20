@@ -47,3 +47,4 @@ Binds keys to user-defined or PSReadLine key handler functions.
 
 ### [Set-PSReadlineOption](Set-PSReadlineOption.md)
 Customizes the behavior of command line editing in PSReadLine.
+

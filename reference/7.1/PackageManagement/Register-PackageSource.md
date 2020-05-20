@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: PackageManagement
 ms.date: 04/01/2019
-online version: https://docs.microsoft.com/powershell/module/packagemanagement/register-packagesource?view=powershell-7.x&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/packagemanagement/register-packagesource?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Register-PackageSource
 ---
@@ -361,3 +361,4 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 [Set-PackageSource](Set-PackageSource.md)
 
 [Unregister-PackageSource](Unregister-PackageSource.md)
+

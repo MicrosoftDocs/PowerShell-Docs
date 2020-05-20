@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Utility
 ms.date: 08/14/2019
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/export-clixml?view=powershell-7.x&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/export-clixml?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Export-Clixml
 ---
@@ -319,3 +319,4 @@ You can pipeline any object to `Export-Clixml`.
 [Use PowerShell to Pass Credentials to Legacy Systems](https://devblogs.microsoft.com/scripting/use-powershell-to-pass-credentials-to-legacy-systems/)
 
 [Windows.Security.Cryptography.DataProtection](/uwp/api/windows.security.cryptography.dataprotection)
+

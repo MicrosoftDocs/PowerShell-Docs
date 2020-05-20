@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Core
 ms.date: 08/22/2019
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/set-psdebug?view=powershell-7.x&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/set-psdebug?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-PSDebug
 ---
@@ -223,3 +223,4 @@ This cmdlet doesn't return any output.
 [Set-StrictMode](Set-StrictMode.md)
 
 [Write-Debug](../Microsoft.PowerShell.Utility/Write-Debug.md)
+

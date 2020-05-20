@@ -3,7 +3,7 @@ external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 keywords: powershell,cmdlet
 locale: en-us
 ms.date: 03/12/2020
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/resolve-path?view=powershell-7.x&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/resolve-path?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Resolve-Path
 ---
@@ -224,3 +224,4 @@ exist yet.
 [Split-Path](Split-Path.md)
 
 [Test-Path](Test-Path.md)
+

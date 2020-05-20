@@ -2,7 +2,7 @@
 keywords: powershell,cmdlet
 locale: en-us
 ms.date: 04/01/2019
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_try_catch_finally?view=powershell-7.x&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_try_catch_finally?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Try_Catch_Finally
 ---
@@ -246,3 +246,4 @@ within a `Catch` block.
 [about_Throw](about_Throw.md)
 
 [about_Trap](about_Trap.md)
+

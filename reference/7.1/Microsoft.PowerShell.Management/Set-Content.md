@@ -3,7 +3,7 @@ external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 keywords: powershell,cmdlet
 locale: en-us
 ms.date: 5/14/2019
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/set-content?view=powershell-7.x&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/set-content?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-Content
 ---
@@ -495,3 +495,4 @@ represents the content. Otherwise, this cmdlet does not generate any output.
 [ForEach-Object](../Microsoft.PowerShell.Core/ForEach-Object.md)
 
 [New-Item](New-Item.md)
+

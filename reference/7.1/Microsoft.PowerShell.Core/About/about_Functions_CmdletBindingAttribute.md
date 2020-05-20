@@ -2,7 +2,7 @@
 keywords: powershell,cmdlet
 locale: en-us
 ms.date: 04/08/2020
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_functions_cmdletbindingattribute?view=powershell-7.x&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_functions_cmdletbindingattribute?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Functions_CmdletBindingAttribute
 ---
@@ -191,3 +191,4 @@ about_Functions_CmdletBinding_Attribute
 [about_Functions_Advanced_Parameters](about_Functions_Advanced_Parameters.md)
 
 [about_Functions_OutputTypeAttribute](about_Functions_OutputTypeAttribute.md)
+

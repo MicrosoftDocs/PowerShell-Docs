@@ -2,7 +2,7 @@
 external help file: PSDiagnostics-help.xml
 Module Name: PSDiagnostics
 ms.date: 11/27/2018
-online version: https://docs.microsoft.com/powershell/module/psdiagnostics/enable-pstrace?view=powershell-7.x&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/psdiagnostics/enable-pstrace?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Enable-PSTrace
 ---
@@ -94,3 +94,4 @@ You must run this cmdlet from an elevated PowerShell session.
 [Set-LogProperties](Set-LogProperties.md)
 
 [Disable-PSTrace](Disable-PSTrace.md)
+

@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Utility
 ms.date: 03/28/2019
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/get-culture?view=powershell-7.x&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/get-culture?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Culture
 ---
@@ -230,3 +230,4 @@ You can also use the `$PsCulture` and `$PsUICulture` variables. The `$PsCulture`
 [Set-Culture](/powershell/module/international/set-culture?view=win10-ps)
 
 [Get-UICulture](Get-UICulture.md)
+

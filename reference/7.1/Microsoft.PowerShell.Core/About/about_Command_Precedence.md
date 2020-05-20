@@ -1,7 +1,7 @@
 ---
 keywords: powershell,cmdlet
 ms.date: 02/13/2020
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_command_precedence?view=powershell-7.x&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_command_precedence?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Command_Precedence
 ---
@@ -326,3 +326,4 @@ For more information, see `Import-Module` and `Import-PSSession` below.
 - [Get-Command](../../Microsoft.PowerShell.Core/Get-Command.md)
 - [Import-Module](../../Microsoft.PowerShell.Core/Import-Module.md)
 - [Import-PSSession](../../Microsoft.PowerShell.Utility/Import-PSSession.md)
+

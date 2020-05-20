@@ -3,7 +3,7 @@ description: Describes how you can use classes to create your own custom types.
 keywords: powershell,cmdlet
 locale: en-us
 ms.date: 04/12/2020
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_classes?view=powershell-7.x&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_classes?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Classes
 ---
@@ -854,3 +854,4 @@ For more information, see [PSReference Class](/dotnet/api/system.management.auto
 - [about_Language_Keywords](about_language_keywords.md)
 - [about_Methods](about_methods.md)
 - [about_Using](about_using.md)
+

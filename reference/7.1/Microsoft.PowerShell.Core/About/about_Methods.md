@@ -2,7 +2,7 @@
 keywords: powershell,cmdlet
 locale: en-us
 ms.date: 04/08/2020
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_methods?view=powershell-7.x&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_methods?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Methods
 ---
@@ -274,3 +274,4 @@ int: 1
 [about_Properties](about_Properties.md)
 
 [Get-Member](../../Microsoft.PowerShell.Utility/Get-Member.md)
+

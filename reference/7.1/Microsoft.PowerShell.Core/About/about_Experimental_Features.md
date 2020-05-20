@@ -2,7 +2,7 @@
 keywords: powershell,cmdlet
 locale: en-us
 ms.date: 03/13/2020
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_experimental_features?view=powershell-7.x&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_experimental_features?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: About experimental features
 ---
@@ -170,3 +170,4 @@ if ([ExperimentalFeature]::IsEnabled("MyModule.MyExperimentalFeature"))
 [Disable-ExperimentalFeature](../Disable-ExperimentalFeature.md)
 
 [Get-ExperimentalFeature](../Get-ExperimentalFeature.md)
+
