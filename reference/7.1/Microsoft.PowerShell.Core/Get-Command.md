@@ -114,7 +114,7 @@ cmdlet when it is used in the Cert: drive. The Cert: drive is a PowerShell drive
 Certificate Provider adds to the session.
 
 ```powershell
-Get-Command Get-Childitem -Args Cert: -Syntax
+Get-Command  -Name Get-Childitem -Args Cert: -Syntax
 ```
 
 When you compare the syntax displayed in the output with the syntax that is displayed when you omit
@@ -132,7 +132,7 @@ that the Certificate provider adds to the `Get-ChildItem` cmdlet when it is used
 function Get-DynamicParameters
 {
     param ($Cmdlet, $PSDrive)
-    (Get-Command $Cmdlet -ArgumentList $PSDrive).ParameterSets | ForEach-Object {$_.Parameters} | Where-Object { $_.IsDynamic } | Select-Object -Property Name -Unique
+    (Get-Command -Name $Cmdlet -ArgumentList $PSDrive).ParameterSets | ForEach-Object {$_.Parameters} | Where-Object { $_.IsDynamic } | Select-Object -Property Name -Unique
 }
 Get-DynamicParameters -Cmdlet Get-ChildItem -PSDrive Cert:
 ```
@@ -179,7 +179,7 @@ value from those that take an **AuthenticationLevel** parameter, even when they 
 This example shows how to use the `Get-Command` cmdlet with an alias.
 
 ```powershell
-Get-Command dir
+Get-Command Name dir
 ```
 
 ```Output
@@ -196,7 +196,8 @@ view shows the alias and the full command name.
 
 ### Example 11: Get all instances of the Notepad command
 
-This example uses the **All** parameter of the `Get-Command` cmdlet to show all instances of the "Notepad" command on the local computer.
+This example uses the **All** parameter of the `Get-Command` cmdlet to show all instances of the
+`Notepad` command on the local computer.
 
 ```powershell
 Get-Command Notepad -All | Format-Table CommandType, Name, Definition
@@ -243,11 +244,13 @@ Get-Command -Type Cmdlet | Where-Object OutputType | Format-List -Property Name,
 
 This command gets the cmdlets and functions that have an output type and the type of objects that they return.
 
-The first part of the command gets all cmdlets.
-A pipeline operator (|) sends the cmdlets to the `Where-Object` cmdlet, which selects only the ones in which the **OutputType** property is populated.
-Another pipeline operator sends the selected cmdlet objects to the `Format-List` cmdlet, which displays the name and output type of each cmdlet in a list.
+The first part of the command gets all cmdlets. A pipeline operator (`|`) sends the cmdlets to the
+`Where-Object` cmdlet, which selects only the ones in which the **OutputType** property is
+populated. Another pipeline operator sends the selected cmdlet objects to the `Format-List` cmdlet,
+which displays the name and output type of each cmdlet in a list.
 
-The **OutputType** property of a **CommandInfo** object has a non-null value only when the cmdlet code defines the **OutputType** attribute for the cmdlet.
+The **OutputType** property of a **CommandInfo** object has a non-null value only when the cmdlet
+code defines the **OutputType** attribute for the cmdlet.
 
 ### Example 14: Get cmdlets that take a specific object type as input
 
@@ -552,7 +555,7 @@ Accept wildcard characters: False
 
 Indicates that this cmdlet gets only the following specified data about the command:
 
-- Aliases. Gets the standard name.
+- Aliases. Gets the standard name and syntax.
 - Cmdlets. Gets the syntax.
 - Functions and filters. Gets the function definition.
 - Scripts and applications or files. Gets the path and filename.
