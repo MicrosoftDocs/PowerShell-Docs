@@ -3,7 +3,7 @@ external help file: System.Management.Automation.dll-Help.xml
 keywords: powershell,cmdlet
 locale: en-us
 ms.date: 10/02/2018
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/enable-psremoting?view=powershell-7.x&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/enable-psremoting?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Enable-PSRemoting
 ---
@@ -181,7 +181,7 @@ Permission    : NT AUTHORITY\INTERACTIVE AccessAllowed, BUILTIN\Administrators A
 
 Name                           Value
 ----                           -----
-PSCompatibleVersions           {1.0, 2.0, 3.0, 4.0…}
+PSCompatibleVersions           {1.0, 2.0, 3.0, 4.0ï¿½}
 PSEdition                      Core
 PSRemotingProtocolVersion      2.3
 Platform                       Win32NT
@@ -333,3 +333,4 @@ access to session configurations that were reserved for local use.
 [about_Remote](About/about_Remote.md)
 
 [about_Session_Configurations](About/about_Session_Configurations.md)
+

@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Security
 ms.date: 11/02/2018
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.security/test-filecatalog?view=powershell-7.x&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.security/test-filecatalog?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Test-FileCatalog
 ---
@@ -198,3 +198,4 @@ which hashes were expected vs. found, and the algorithm used in the catalog.
 [New-FileCatalog](New-FileCatalog.md)
 
 [PowerShellGet](/powershell/module/PowerShellGet)
+

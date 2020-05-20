@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Core
 ms.date: 06/09/2017
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/test-modulemanifest?view=powershell-7.x&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/test-modulemanifest?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Test-ModuleManifest
 ---
@@ -157,3 +157,4 @@ It returns this object even if the manifest has errors.
 [Remove-Module](Remove-Module.md)
 
 [about_Modules](About/about_Modules.md)
+

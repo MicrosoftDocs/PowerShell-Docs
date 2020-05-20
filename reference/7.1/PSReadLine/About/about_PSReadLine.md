@@ -2,7 +2,7 @@
 keywords: powershell
 locale: en-us
 ms.date: 02/10/2020
-online version: https://docs.microsoft.com/powershell/module/psreadline/about/about_psreadline?view=powershell-7.x&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/psreadline/about/about_psreadline?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: About PSReadLine
 ---
@@ -1449,3 +1449,4 @@ Feel free to submit a pull request or submit feedback on the GitHub page.
 
 PSReadLine is heavily influenced by the GNU
 [readline](https://tiswww.case.edu/php/chet/readline/rltop.html) library.
+

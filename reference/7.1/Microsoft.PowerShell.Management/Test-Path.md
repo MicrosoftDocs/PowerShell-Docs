@@ -3,7 +3,7 @@ external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 keywords: powershell,cmdlet
 locale: en-us
 ms.date: 03/22/2019
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/test-path?view=powershell-7.x&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/test-path?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Test-Path
 ---
@@ -429,3 +429,4 @@ For more information, see [about_Providers](../Microsoft.PowerShell.Core/About/a
 [Resolve-Path](Resolve-Path.md)
 
 [Split-Path](Split-Path.md)
+

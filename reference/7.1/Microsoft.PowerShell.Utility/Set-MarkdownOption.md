@@ -360,3 +360,4 @@ The string values used to define the color and style must match the regular expr
 [ANSI_escape_code](https://en.wikipedia.org/wiki/ANSI_escape_code)
 
 [CommonMark](https://commonmark.org/)
+

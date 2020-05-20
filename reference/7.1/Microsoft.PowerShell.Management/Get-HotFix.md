@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Management
 ms.date: 05/20/2019
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/get-hotfix?view=powershell-7.x&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/get-hotfix?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-HotFix
 ---
@@ -221,3 +221,4 @@ The `Get-HotFix` output might vary on different operating systems.
 [Get-Credential](../Microsoft.PowerShell.Security/Get-Credential.md)
 
 [Win32_QuickFixEngineering class](/windows/desktop/CIMWin32Prov/win32-quickfixengineering)
+

@@ -2,7 +2,7 @@
 keywords: powershell,cmdlet
 locale: en-us
 ms.date: 11/30/2017
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_objects?view=powershell-7.x&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_objects?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Objects
 ---
@@ -75,3 +75,4 @@ The second command passes only the file objects to the third command
 [about_Pipelines](about_Pipelines.md)
 
 [Get-Member](../../Microsoft.PowerShell.Utility/Get-Member.md)
+

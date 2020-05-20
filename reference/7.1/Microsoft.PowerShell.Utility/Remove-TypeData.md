@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Utility
 ms.date: 04/27/2020
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/remove-typedata?view=powershell-7.x&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/remove-typedata?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Remove-TypeData
 ---
@@ -250,3 +250,4 @@ extended types that are defined in modules that have not been imported into the 
 [Get-TypeData](Get-TypeData.md)
 
 [Update-TypeData](Update-TypeData.md)
+

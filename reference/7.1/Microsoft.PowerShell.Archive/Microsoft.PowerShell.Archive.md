@@ -23,3 +23,4 @@ Creates an archive, or zipped file, from specified files and folders.
 
 ### [Expand-Archive](Expand-Archive.md)
 Extracts files from a specified archive (zipped) file.
+

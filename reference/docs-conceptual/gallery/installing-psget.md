@@ -48,7 +48,17 @@ have any version of **PowerShellGet** installed.
 
 The `Save-Module` cmdlet is used in both sets of instructions. `Save-Module` downloads and saves a
 module and any dependencies from a registered repository. The module's most current version is saved
-to a specified path on the local computer, but isn't installed. For more information, see [Save-Module](/powershell/module/PowershellGet/Save-Module).
+to a specified path on the local computer, but isn't installed. To install the modules in PowerShell
+3.0 or 4.0, copy the module saved folders to `$env:ProgramFiles\WindowsPowerShell\Modules`.
+
+For more information, see
+[Save-Module](/powershell/module/PowershellGet/Save-Module).
+
+> [!NOTE]
+> PowerShell 3.0 and PowerShell 4.0 only supported one version of a module. Starting in PowerShell
+> 5.0, modules are installed in `<modulename>\<version>`. This allowed you to install
+> multiple versions side-by-side. After downloading the module using `Save-Module` you must copy the
+> files from the `<modulename>\<version>` to the `<modulename>` folder on the destination machine.
 
 #### Computers with the PackageManagement Preview installed
 
@@ -65,8 +75,8 @@ to a specified path on the local computer, but isn't installed. For more informa
 1. Reopen the PowerShell console with elevated permissions and run the following commands.
 
    ```powershell
-   Copy-Item "C:\LocalFolder\PowerShellGet\*" "$env:ProgramFiles\WindowsPowerShell\Modules\PowerShellGet\" -Recurse -Force
-   Copy-Item "C:\LocalFolder\PackageManagement\*" "$env:ProgramFiles\WindowsPowerShell\Modules\PackageManagement\" -Recurse -Force
+   Copy-Item "C:\LocalFolder\PowerShellGet\<version>\*" "$env:ProgramFiles\WindowsPowerShell\Modules\PowerShellGet\" -Recurse -Force
+   Copy-Item "C:\LocalFolder\PackageManagement\<version>\*" "$env:ProgramFiles\WindowsPowerShell\Modules\PackageManagement\" -Recurse -Force
    ```
 
 #### Computers without PowerShellGet

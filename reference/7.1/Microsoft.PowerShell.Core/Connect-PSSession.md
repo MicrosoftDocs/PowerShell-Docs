@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Core
 ms.date: 5/15/2019
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/connect-pssession?view=powershell-7.x&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/connect-pssession?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Connect-PSSession
 ---
@@ -744,3 +744,4 @@ commands are running in the disconnected session.
 [Register-PSSessionConfiguration](Register-PSSessionConfiguration.md)
 
 [Remove-PSSession](Remove-PSSession.md)
+

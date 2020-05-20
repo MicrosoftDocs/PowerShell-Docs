@@ -59,3 +59,4 @@ Removes one or more CIM sessions.
 
 ### [Set-CimInstance](Set-CimInstance.md)
 Modifies a CIM instance on a CIM server by calling the **ModifyInstance** method of the CIM class.
+

@@ -2,7 +2,7 @@
 keywords: powershell,cmdlet
 locale: en-us
 ms.date: 01/03/2018
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_remote_requirements?view=powershell-7.x&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_remote_requirements?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Remote_Requirements
 ---
@@ -289,3 +289,4 @@ $session = New-PSSession -Computer <hostname> -Credential $cred `
 [Enter-PSSession](../Enter-PSSession.md)
 
 [New-PSSession](../New-PSSession.md)
+

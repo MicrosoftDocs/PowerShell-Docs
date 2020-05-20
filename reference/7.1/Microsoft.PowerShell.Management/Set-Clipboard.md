@@ -105,3 +105,4 @@ loop, you might sporadically get a blank value from the clipboard. This can be f
 ## RELATED LINKS
 
 [Get-Clipboard](Get-Clipboard.md)
+

@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Utility
 ms.date: 04/27/2020
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/update-typedata?view=powershell-7.x&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/update-typedata?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Update-TypeData
 ---
@@ -733,3 +733,4 @@ This cmdlet does not return any output.
 [Get-TypeData](Get-TypeData.md)
 
 [Remove-TypeData](Remove-TypeData.md)
+
