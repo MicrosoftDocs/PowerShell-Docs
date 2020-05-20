@@ -2,7 +2,7 @@
 keywords: powershell,cmdlet
 locale: en-us
 ms.date: 06/09/2017
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_language_keywords?view=powershell-7.x&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_language_keywords?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Language_Keywords
 ---
@@ -605,3 +605,4 @@ do {<statement list>} while (<condition>)
 
 - [about_Special_Characters](about_Special_Characters.md)
 - [about_Wildcards](about_Wildcards.md)
+

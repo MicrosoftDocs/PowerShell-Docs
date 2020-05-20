@@ -2,7 +2,7 @@
 keywords: powershell,cmdlet
 locale: en-us
 ms.date: 03/27/2020
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_providers?view=powershell-7.x&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_providers?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Providers
 ---
@@ -355,3 +355,4 @@ Get-Help * -Category Provider
 [about_Locations](about_Locations.md)
 
 [about_Path_Syntax](about_Path_Syntax.md)
+

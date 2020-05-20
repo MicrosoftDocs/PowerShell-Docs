@@ -279,3 +279,4 @@ The above example passes a thread safe dotNet `ConcurrentDictionary` object to
 all child jobs to collect uniquely named process objects. Since it is a thread
 safe object, it can be safely used while the child jobs run concurrently in the
 process.
+

@@ -2,7 +2,7 @@
 keywords: powershell,cmdlet
 locale: en-us
 ms.date: 12/01/2017
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_properties?view=powershell-7.x&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_properties?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Properties
 ---
@@ -313,3 +313,4 @@ information, see [about_Methods](about_methods.md).
 [Select-Object](../../Microsoft.PowerShell.Utility/Select-Object.md)
 
 [Format-List](../../Microsoft.PowerShell.Utility/Format-List.md)
+

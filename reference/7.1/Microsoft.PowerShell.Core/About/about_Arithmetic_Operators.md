@@ -2,7 +2,7 @@
 keywords: powershell,cmdlet
 locale: en-us
 ms.date: 11/27/2017
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_arithmetic_operators?view=powershell-7.x&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_arithmetic_operators?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Arithmetic_Operators
 ---
@@ -519,3 +519,4 @@ right operand determine how many bits of the left operand are shifted.
 * [about_variables](about_Variables.md)
 * [Get-Date](../../Microsoft.PowerShell.Utility/Get-Date.md)
 * [New-TimeSpan](../../Microsoft.PowerShell.Utility/New-TimeSpan.md)
+

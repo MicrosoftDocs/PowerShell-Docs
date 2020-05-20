@@ -1,7 +1,7 @@
 ---
 keywords: powershell,cmdlet
 ms.date: 04/26/2020
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_assignment_operators?view=powershell-7.x&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_assignment_operators?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Assignment_Operators
 ---
@@ -868,3 +868,4 @@ Set-Variable -Name a -Value 1, 2, 3
 [Remove-Variable](../../Microsoft.PowerShell.Utility/Remove-Variable.md)
 
 [Set-Variable](../../Microsoft.PowerShell.Utility/Set-Variable.md)
+

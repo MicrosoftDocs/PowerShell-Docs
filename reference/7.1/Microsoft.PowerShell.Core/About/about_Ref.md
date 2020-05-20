@@ -2,7 +2,7 @@
 keywords: powershell,cmdlet
 locale: en-us
 ms.date: 08/24/2018
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_ref?view=powershell-7.x&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_ref?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Ref
 ---
@@ -158,3 +158,4 @@ Only the reference type's variable was changed.
 [about_Script_Blocks](about_Script_Blocks.md)
 
 [about_Scopes](about_scopes.md)
+
