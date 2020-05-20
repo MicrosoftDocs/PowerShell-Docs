@@ -3,7 +3,7 @@ external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 04/08/2020
+ms.date: 05/20/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/get-random?view=powershell-7.x&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Random
@@ -28,6 +28,12 @@ Get-Random [-SetSeed <Int32>] [[-Maximum] <Object>] [-Minimum <Object>] [<Common
 Get-Random [-SetSeed <Int32>] [-InputObject] <Object[]> [-Count <Int32>] [<CommonParameters>]
 ```
 
+### ShuffleParameterSet
+
+```
+Get-Random [-SetSeed <Int32>] [-InputObject] <Object[]> [-Shuffle] [<CommonParameters>]
+```
+
 ## DESCRIPTION
 
 The `Get-Random` cmdlet gets a randomly selected number. If you submit a collection of objects to
@@ -36,8 +42,8 @@ The `Get-Random` cmdlet gets a randomly selected number. If you submit a collect
 Without parameters or input, a `Get-Random` command returns a randomly selected 32-bit unsigned
 integer between 0 (zero) and **Int32.MaxValue** (`0x7FFFFFFF`, `2,147,483,647`).
 
-You can use the parameters of `Get-Random` to specify a seed number, minimum and maximum values, and
-the number of objects returned from a submitted collection.
+You can use the parameters of `Get-Random` to specify a seed number, minimum and maximum values, the
+number of objects returned from a submitted collection, and the entire collection in a random order.
 
 ## EXAMPLES
 
@@ -113,15 +119,11 @@ This command gets three randomly selected numbers in random order from an array.
 
 ### Example 7: Randomize an entire collection
 
-This command returns the entire collection in random order.
-
-The value of the **Count** parameter is the **MaxValue** static property of integers.
-
-To return an entire collection in random order, enter any number that is greater than or equal to
-the number of objects in the collection.
+Startin in PowerShell 7.1, you can use the **Shuffle** parameter to return the entire collection in
+a random order.
 
 ```powershell
-1, 2, 3, 5, 8, 13 | Get-Random -Count ([int]::MaxValue)
+1, 2, 3, 5, 8, 13 | Get-Random -Shuffle
 ```
 
 ```Output
@@ -361,6 +363,22 @@ includes `Get-Random` commands.
 
 ```yaml
 Type: Int32
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Shuffle
+
+Returns the entire collection in a randomized order.
+
+```yaml
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
