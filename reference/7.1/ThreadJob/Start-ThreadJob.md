@@ -2,7 +2,7 @@
 external help file: ThreadJob.dll-Help.xml
 Module Name: threadjob
 ms.date: 01/28/2020
-online version: https://docs.microsoft.com/powershell/module/threadjob/start-threadjob?view=powershell-7.x&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/threadjob/start-threadjob?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Start-ThreadJob
 ---
@@ -270,3 +270,4 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 [Stop-Job](../Microsoft.PowerShell.Core/Stop-Job.md)
 
 [Receive-Job](../Microsoft.PowerShell.Core/Receive-Job.md)
+

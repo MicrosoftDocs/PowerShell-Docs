@@ -2,7 +2,7 @@
 keywords: powershell,cmdlet
 locale: en-us
 ms.date: 01/03/2018
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_return?view=powershell-7.x&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_return?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Return
 ---
@@ -239,3 +239,4 @@ object to the pipeline, use one of the following two methods:
 [Write-Information](../../Microsoft.PowerShell.Utility/Write-Information.md)
 
 [about_Script_Blocks](about_Script_Blocks.md)
+

@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: PowerShellGet
 ms.date: 07/16/2019
-online version: https://docs.microsoft.com/powershell/module/powershellget/update-module?view=powershell-7.x&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/powershellget/update-module?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Update-Module
 ---
@@ -392,3 +392,4 @@ processes are stopped.
 [Publish-Module](Publish-Module.md)
 
 [Uninstall-Module](Uninstall-Module.md)
+

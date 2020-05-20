@@ -3,7 +3,7 @@ external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 keywords: powershell,cmdlet
 locale: en-us
 ms.date: 5/14/2019
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/set-item?view=powershell-7.x&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/set-item?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-Item
 ---
@@ -328,3 +328,4 @@ Otherwise, this cmdlet does not generate any output.
 [Rename-Item](Rename-Item.md)
 
 [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md)
+

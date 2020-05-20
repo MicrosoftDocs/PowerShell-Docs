@@ -3,7 +3,7 @@ external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
 locale: en-us
 ms.date: 10/24/2019
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/remove-alias?view=powershell-7.x&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/remove-alias?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Remove-Alias
 ---
@@ -156,3 +156,4 @@ For more information, see [about_Aliases](../microsoft.powershell.core/about/abo
 [Set-Alias](Set-Alias.md)
 
 [Where-Object](../Microsoft.PowerShell.Core/Where-Object.md)
+

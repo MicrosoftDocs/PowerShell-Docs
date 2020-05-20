@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Management
 ms.date: 06/09/2017
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/split-path?view=powershell-7.x&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/split-path?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Split-Path
 ---
@@ -394,3 +394,4 @@ For more information, see about_Providers.
 [Resolve-Path](Resolve-Path.md)
 
 [Test-Path](Test-Path.md)
+

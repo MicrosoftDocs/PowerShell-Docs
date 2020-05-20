@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Core
 ms.date: 10/28/2019
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/get-help?view=powershell-7.x&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/get-help?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Help
 ---
@@ -680,3 +680,4 @@ following fields:
 [Writing Comment-Based Help Topics](/powershell/scripting/developer/help/writing-comment-based-help-topics)
 
 [Writing Help for PowerShell Cmdlets](/powershell/scripting/developer/help/writing-help-for-windows-powershell-cmdlets)
+

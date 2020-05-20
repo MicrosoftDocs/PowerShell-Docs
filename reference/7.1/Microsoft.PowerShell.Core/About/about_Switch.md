@@ -2,7 +2,7 @@
 keywords: powershell,cmdlet
 locale: en-us
 ms.date: 2/27/2019
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_switch?view=powershell-7.x&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_switch?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Switch
 ---
@@ -360,3 +360,4 @@ switch (1,4,-1,3,"Hello",2,1)
 [about_If](about_If.md)
 
 [about_Script_Blocks](about_Script_Blocks.md)
+

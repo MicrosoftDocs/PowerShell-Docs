@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: PowerShellGet
 ms.date: 07/09/2019
-online version: https://docs.microsoft.com/powershell/module/powershellget/update-scriptfileinfo?view=powershell-7.x&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/powershellget/update-scriptfileinfo?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Update-ScriptFileInfo
 ---
@@ -494,3 +494,4 @@ for version, GUID, description, and author.
 [New-ScriptFileInfo](New-ScriptFileInfo.md)
 
 [Test-ScriptFileInfo](Test-ScriptFileInfo.md)
+

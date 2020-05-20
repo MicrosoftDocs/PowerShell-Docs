@@ -2,7 +2,7 @@
 keywords: powershell,cmdlet
 locale: en-us
 ms.date: 05/11/2020
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_arrays?view=powershell-7.x&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_arrays?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Arrays
 ---
@@ -885,3 +885,4 @@ For more information, see [System.Tuple](/dotnet/api/system.tuple).
 - [about_For](about_For.md)
 - [about_Foreach](about_Foreach.md)
 - [about_While](about_While.md)
+

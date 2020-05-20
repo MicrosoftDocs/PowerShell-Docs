@@ -3,7 +3,7 @@ external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
 locale: en-us
 ms.date: 09/19/2019
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/test-json?view=powershell-7.x&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/test-json?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Test-Json
 ---
@@ -176,3 +176,4 @@ The `Test-Json` cmdlet is implemented by using the [NJsonSchema Class](https://g
 [Invoke-WebRequest](Invoke-WebRequest.md)
 
 [Invoke-RestMethod](Invoke-RestMethod.md)
+

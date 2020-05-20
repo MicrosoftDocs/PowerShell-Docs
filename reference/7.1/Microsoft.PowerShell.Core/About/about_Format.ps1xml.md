@@ -2,7 +2,7 @@
 keywords: powershell,cmdlet
 locale: en-us
 ms.date: 11/27/2019
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_format.ps1xml?view=powershell-7.x&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_format.ps1xml?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Format.ps1xml
 ---
@@ -434,3 +434,4 @@ Update-FormatData -AppendPath ./Mygciview.Format.ps1xml
 [Update-FormatData](../../Microsoft.PowerShell.Utility/Update-FormatData.md)
 
 [Writing a PowerShell Formatting File](/powershell/scripting/developer/format/writing-a-powershell-formatting-file)
+

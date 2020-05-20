@@ -1,7 +1,7 @@
 ---
 keywords: powershell,cmdlet
 ms.date: 03/27/2020
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_pwsh?view=powershell-7.x&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_pwsh?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Pwsh
 ---
@@ -306,3 +306,4 @@ To start PowerShell in your home directory, use: `pwsh -WorkingDirectory ~`
 Displays help for **pwsh**. If you are typing a pwsh command in PowerShell,
 prepend the command parameters with a hyphen (`-`), not a forward slash (`/`).
 You can use either a hyphen or forward slash in Cmd.exe.
+

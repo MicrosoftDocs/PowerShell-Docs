@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Utility
 ms.date: 10/21/2019
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/convertfrom-stringdata?view=powershell-7.x&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/convertfrom-stringdata?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: ConvertFrom-StringData
 ---
@@ -313,3 +313,4 @@ can use the dictionary-style hash tables to isolate text strings from code, such
 files, and to format the text strings for use in translation tools.
 
 ## RELATED LINKS
+

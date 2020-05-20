@@ -2,7 +2,7 @@
 keywords: powershell,cmdlet
 locale: en-us
 ms.date: 04/27/2020
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_types.ps1xml?view=powershell-7.x&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_types.ps1xml?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Types.ps1xml
 ---
@@ -546,3 +546,4 @@ digital signature. For more information, see
 [Remove-TypeData](../../Microsoft.PowerShell.Utility/Remove-TypeData.md)
 
 [Update-TypeData](../../Microsoft.PowerShell.Utility/Update-TypeData.md)
+

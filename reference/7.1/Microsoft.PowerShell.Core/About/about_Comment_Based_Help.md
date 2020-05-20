@@ -1,7 +1,7 @@
 ---
 keywords: powershell,cmdlet
 ms.date: 06/09/2017
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_comment_based_help?view=powershell-7.x&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_comment_based_help?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Comment_Based_Help
 ---
@@ -855,3 +855,4 @@ Displays information about PowerShell cmdlets and concepts.
 [about_Scripts](about_Scripts.md)
 
 [How to Write Cmdlet Help](https://go.microsoft.com/fwlink/?LinkID=123415)
+

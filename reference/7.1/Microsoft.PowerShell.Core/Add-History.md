@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Core
 ms.date: 05/13/2020
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/add-history?view=powershell-7.x&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/add-history?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Add-History
 ---
@@ -215,3 +215,4 @@ file, and use `Add-History` to append it to the current session history.
 [Get-PSReadLineOption](/powershell/module/psreadline/get-psreadlineoption)
 
 [Set-PSReadLineOption](/powershell/module/psreadline/set-psreadlineoption)
+

@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Utility
 ms.date: 03/28/2019
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/write-output?view=powershell-7.x&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/write-output?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Write-Output
 ---
@@ -158,3 +158,4 @@ You can pipe objects to `Write-Output`.
 [Write-Verbose](Write-Verbose.md)
 
 [Write-Warning](Write-Warning.md)
+

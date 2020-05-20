@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Archive
 ms.date: 02/20/2020
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.archive/expand-archive?view=powershell-7.x&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.archive/expand-archive?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Expand-Archive
 ---
@@ -208,3 +208,4 @@ filename stored in the archive.
 ## RELATED LINKS
 
 [Compress-Archive](compress-archive.md)
+

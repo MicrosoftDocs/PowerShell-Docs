@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Utility
 ms.date: 12/19/2018
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/format-custom?view=powershell-7.x&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/format-custom?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Format-Custom
 ---
@@ -302,3 +302,4 @@ group the objects, use `Sort-Object` to sort them.
 [Format-Wide](Format-Wide.md)
 
 [Get-Process](../Microsoft.PowerShell.Management/Get-Process.md)
+

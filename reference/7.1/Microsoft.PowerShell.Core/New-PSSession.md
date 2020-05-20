@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Core
 ms.date: 12/20/2019
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/new-pssession?view=powershell-7.x&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/new-pssession?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: New-PSSession
 ---
@@ -1130,3 +1130,4 @@ You can pipe a string, URI, or session object to this cmdlet.
 [Receive-PSSession](Receive-PSSession.md)
 
 [Remove-PSSession](Remove-PSSession.md)
+

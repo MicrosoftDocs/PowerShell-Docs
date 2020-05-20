@@ -3,7 +3,7 @@ external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 keywords: powershell,cmdlet
 locale: en-us
 ms.date: 04/07/2020
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/remove-item?view=powershell-7.x&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/remove-item?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Remove-Item
 ---
@@ -463,3 +463,4 @@ design.
 [about_Preference_Variables](../microsoft.powershell.core/about/about_preference_variables.md#confirmpreference)
 
 [about_Functions_CmdletBindingAttribute](../microsoft.powershell.core/about/about_functions_cmdletbindingattribute.md?#confirmimpact)
+
