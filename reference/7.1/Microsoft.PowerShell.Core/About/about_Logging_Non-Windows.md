@@ -2,7 +2,7 @@
 keywords: powershell
 locale: en-us
 ms.date: 03/30/2020
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_logging_non-windows?view=powershell-7.x&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_logging_non-windows?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Logging_Non-Windows
 ---
@@ -278,3 +278,4 @@ For macOS **os_log** information, see
 
 <!-- link references -->
 [SIEM]: https://wikipedia.org/wiki/Security_information_and_event_management
+

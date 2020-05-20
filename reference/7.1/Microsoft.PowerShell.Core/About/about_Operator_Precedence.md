@@ -2,7 +2,7 @@
 keywords: powershell,cmdlet
 locale: en-us
 ms.date: 05/06/2020
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_operator_precedence?view=powershell-7.x&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_operator_precedence?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Operator_Precedence
 ---
@@ -205,3 +205,4 @@ are reading and maintaining your scripts.
 [about_Scopes]: about_Scopes.md
 [about_Split]: about_Split.md
 [about_Type_Operators]: about_Type_Operators.md
+

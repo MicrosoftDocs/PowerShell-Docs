@@ -1,7 +1,7 @@
 ---
 keywords: powershell,cmdlet
 ms.date: 11/30/2017
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_profiles?view=powershell-7.x&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_profiles?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Profiles
 ---
@@ -331,3 +331,4 @@ are available in `$s`.
 [about_Scopes](about_Scopes.md)
 
 [Set-ExecutionPolicy](../../Microsoft.PowerShell.Security/Set-ExecutionPolicy.md)
+

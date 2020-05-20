@@ -26,3 +26,4 @@ Gets events from event logs and event tracing log files on local and remote comp
 
 ### [New-WinEvent](New-WinEvent.md)
 Creates an ETW event for the specified event provider.
+

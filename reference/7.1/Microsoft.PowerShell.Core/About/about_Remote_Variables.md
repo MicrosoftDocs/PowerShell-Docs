@@ -2,7 +2,7 @@
 keywords: powershell,cmdlet
 locale: en-us
 ms.date: 03/13/2020
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_remote_variables?view=powershell-7.x&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_remote_variables?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Remote_Variables
 ---
@@ -191,3 +191,4 @@ Invoke-Command -ComputerName S1 -ScriptBlock {
 [Start-ThreadJob](../../ThreadJob/Start-ThreadJob.md)
 
 [ForEach-Object](../ForEach-Object.md#notes)
+

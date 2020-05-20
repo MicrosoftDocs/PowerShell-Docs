@@ -2,7 +2,7 @@
 keywords: powershell,cmdlet
 locale: en-us
 ms.date: 03/10/2020
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_regular_expressions?view=powershell-7.x&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_regular_expressions?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Regular_Expressions
 ---
@@ -462,3 +462,4 @@ For more information, see [Substitutions in Regular Expressions](/dotnet/standar
 [about_Comparison_Operators](about_Comparison_Operators.md)
 
 [about_Operators](about_Operators.md)
+

@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: PowerShellGet
 ms.date: 03/07/2019
-online version: https://docs.microsoft.com/powershell/module/powershellget/install-module?view=powershell-7.x&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/powershellget/install-module?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Install-Module
 ---
@@ -529,3 +529,4 @@ The publisher will specify the required modules and their versions in the module
 [Update-Module](Update-Module.md)
 
 [about_Module](../Microsoft.PowerShell.Core/About/about_Modules)
+

@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Utility
 ms.date: 04/23/2019
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/export-pssession?view=powershell-7.x&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/export-pssession?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Export-PSSession
 ---
@@ -531,3 +531,4 @@ files that are created will not contain formatting data.
 [New-PSSessionOption](../Microsoft.PowerShell.Core/New-PSSessionOption.md)
 
 [Remove-PSSession](../Microsoft.PowerShell.Core/Remove-PSSession.md)
+

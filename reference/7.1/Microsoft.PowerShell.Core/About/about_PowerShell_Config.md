@@ -2,7 +2,7 @@
 keywords: powershell
 locale: en-us
 ms.date: 11/02/2018
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_powershell_config?view=powershell-7.x&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_powershell_config?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_PowerShell_Config
 ---
@@ -402,3 +402,4 @@ This configuration sets a number of options that only work in macOS or Linux:
 [About Automatic Variables](./about_Automatic_Variables.md)
 
 [RFC0029]: https://github.com/PowerShell/PowerShell-RFC/blob/master/5-Final/RFC0029-Support-Experimental-Features.md
+

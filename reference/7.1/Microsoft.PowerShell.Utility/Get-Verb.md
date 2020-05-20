@@ -3,7 +3,7 @@ external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
 locale: en-us
 ms.date: 09/07/2018
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/get-verb?view=powershell-7.x&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/get-verb?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Verb
 ---
@@ -166,3 +166,4 @@ unapproved verbs. These cmdlets are historic exceptions and their verbs are clas
 ## RELATED LINKS
 
 [Import-Module](../microsoft.powershell.core/import-module.md)
+

@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Core
 ms.date: 04/08/2020
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/invoke-command?view=powershell-7.x&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/invoke-command?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Invoke-Command
 ---
@@ -1667,3 +1667,4 @@ PowerShell SSH remoting, see
 [Remove-PSSession](Remove-PSSession.md)
 
 [WSMan Provider](../Microsoft.WsMan.Management/About/about_WSMan_Provider.md)
+

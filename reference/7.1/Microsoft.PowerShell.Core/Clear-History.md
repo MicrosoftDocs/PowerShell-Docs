@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Core
 ms.date: 05/13/2020
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/clear-history?view=powershell-7.x&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/clear-history?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Clear-History
 ---
@@ -415,3 +415,4 @@ the session history. For more information see, [about_PSReadLine](../PSReadLine/
 [Get-PSReadLineOption](/powershell/module/psreadline/get-psreadlineoption)
 
 [Set-PSReadLineOption](/powershell/module/psreadline/set-psreadlineoption)
+

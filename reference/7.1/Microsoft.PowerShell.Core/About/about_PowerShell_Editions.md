@@ -1,7 +1,7 @@
 ---
 locale: en-us
 ms.date: 03/28/2019
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_powershell_editions?view=powershell-7.x&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_powershell_editions?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_PowerShell_Editions
 ---
@@ -245,3 +245,4 @@ to catch possible behavioral differences between editions. For this you must sti
 [`PSUseCompatibleTypes`]: https://github.com/PowerShell/PSScriptAnalyzer/blob/master/RuleDocumentation/UseCompatibleTypes.md
 [.NET Standard]: https://docs.microsoft.com/dotnet/standard/net-standard
 [PowerShell Standard]: https://devblogs.microsoft.com/powershell/powershell-standard-library-build-single-module-that-works-across-windows-powershell-and-powershell-core/
+
