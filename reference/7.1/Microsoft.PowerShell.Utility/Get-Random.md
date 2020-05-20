@@ -379,7 +379,7 @@ Returns the entire collection in a randomized order.
 
 ```yaml
 Type: SwitchParameter
-Parameter Sets: (All)
+Parameter Sets: ShuffleParameterSet
 Aliases:
 
 Required: False
