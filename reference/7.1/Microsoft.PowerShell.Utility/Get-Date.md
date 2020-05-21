@@ -124,7 +124,7 @@ The **UFormat** format specifiers used in this example are defined as follows:
 | `%m`      | Month number                                          |
 | `%d`      | Day of the month - 2 digits                           |
 | `%Y`      | Year in 4-digit format                                |
-| `%R`      | Time in 24-hour format -no seconds                    |
+| `%R`      | Time in 24-hour format - no seconds                    |
 | `%Z`      | Time zone offset from Universal Time Coordinate (UTC) |
 
 For a list of valid **UFormat** format specifiers, see the [Notes](#notes) section.
