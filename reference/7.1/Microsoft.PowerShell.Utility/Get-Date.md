@@ -3,7 +3,7 @@ external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 04/07/2020
+ms.date: 05/21/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/get-date?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Date
@@ -19,17 +19,17 @@ Gets the current date and time.
 ### net (Default)
 
 ```
-Get-Date [[-Date] <DateTime>] [-FromUnixTime] [-Year <Int32>] [-Month <Int32>] [-Day <Int32>]
- [-Hour <Int32>] [-Minute <Int32>] [-Second <Int32>] [-Millisecond <Int32>]
- [-DisplayHint <DisplayHintType>] [-Format <String>] [<CommonParameters>]
+Get-Date [[-Date] <DateTime>] [-Year <Int32>] [-Month <Int32>] [-Day <Int32>] [-Hour <Int32>]
+ [-Minute <Int32>] [-Second <Int32>] [-Millisecond <Int32>] [-DisplayHint <DisplayHintType>]
+ [-Format <String>] [-AsUTC] [-FromUnixTime] [<CommonParameters>]
 ```
 
 ### UFormat
 
 ```
-Get-Date [[-Date] <DateTime>] [-FromUnixTime] [-Year <Int32>] [-Month <Int32>] [-Day <Int32>]
- [-Hour <Int32>] [-Minute <Int32>] [-Second <Int32>] [-Millisecond <Int32>]
- [-DisplayHint <DisplayHintType>] [-UFormat <String>] [<CommonParameters>]
+Get-Date [[-Date] <DateTime>] [-Year <Int32>] [-Month <Int32>] [-Day <Int32>] [-Hour <Int32>]
+ [-Minute <Int32>] [-Second <Int32>] [-Millisecond <Int32>] [-DisplayHint <DisplayHintType>]
+ [-UFormat <String>] [-FromUnixTime] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -89,14 +89,14 @@ Tuesday 06/25/2019 16:17 -07:00
 
 The .NET format specifiers used in this example are defined as follows:
 
-| Specifier | Definition |
-| --- | --- |
-| `dddd` | Day of the week - full name |
-| `MM` | Month number |
-| `dd` | Day of the month - 2 digits |
-| `yyyy` | Year in 4-digit format |
-| `HH:mm` | Time in 24-hour format -no seconds |
-| `K` | Time zone offset from Universal Time Coordinate (UTC) |
+| Specifier |                      Definition                       |
+| --------- | ----------------------------------------------------- |
+| `dddd`    | Day of the week - full name                           |
+| `MM`      | Month number                                          |
+| `dd`      | Day of the month - 2 digits                           |
+| `yyyy`    | Year in 4-digit format                                |
+| `HH:mm`   | Time in 24-hour format -no seconds                    |
+| `K`       | Time zone offset from Universal Time Coordinate (UTC) |
 
 For more information about .NET format specifiers, see
 [Custom date and time format strings](/dotnet/standard/base-types/custom-date-and-time-format-strings?view=netframework-4.8).
@@ -118,14 +118,14 @@ Tuesday 06/25/2019 16:19 -07
 
 The **UFormat** format specifiers used in this example are defined as follows:
 
-| Specifier | Definition |
-| --- | --- |
-| `%A` | Day of the week - full name |
-| `%m` | Month number |
-| `%d` | Day of the month - 2 digits |
-| `%Y` | Year in 4-digit format |
-| `%R` | Time in 24-hour format -no seconds |
-| `%Z` | Time zone offset from Universal Time Coordinate (UTC) |
+| Specifier |                      Definition                       |
+| --------- | ----------------------------------------------------- |
+| `%A`      | Day of the week - full name                           |
+| `%m`      | Month number                                          |
+| `%d`      | Day of the month - 2 digits                           |
+| `%Y`      | Year in 4-digit format                                |
+| `%R`      | Time in 24-hour format -no seconds                    |
+| `%Z`      | Time zone offset from Universal Time Coordinate (UTC) |
 
 For a list of valid **UFormat** format specifiers, see the [Notes](#notes) section.
 
@@ -198,7 +198,7 @@ New-Item -Path C:\Test\$timestamp -Type Directory
 ```
 
 ```Output
-    Directory: C:\Test
+Directory: C:\Test
 
 Mode                LastWriteTime         Length Name
 ----                -------------         ------ ----
@@ -227,7 +227,56 @@ Get-Date -Date 1577836800 -FromUnixTime
 Wednesday, January 01, 2020 12:00:00 AM
 ```
 
+### Example 10: Return a date value interpreted as UTC
+
+This example shows how to interpret a date value as its UTC equivalent. For the example, this
+machine is set to **Pacific Standard Time**. By default, `Get-Date` returns values for that
+timezone. Use the **AsUTC** parameter to convert the value to the UTC equivalent time.
+
+```powershell
+PS> Get-TimeZone
+
+Id                         : Pacific Standard Time
+DisplayName                : (UTC-08:00) Pacific Time (US & Canada)
+StandardName               : Pacific Standard Time
+DaylightName               : Pacific Daylight Time
+BaseUtcOffset              : -08:00:00
+SupportsDaylightSavingTime : True
+
+PS> (Get-Date -Date "2020-01-01T00:00:00").Kind
+Unspecified
+
+PS> Get-Date -Date "2020-01-01T00:00:00"
+
+Wednesday, January 1, 2020 12:00:00 AM
+
+PS> (Get-Date -Date "2020-01-01T00:00:00" -AsUTC).Kind
+Utc
+
+PS> Get-Date -Date "2020-01-01T00:00:00" -AsUTC
+
+Wednesday, January 1, 2020 8:00:00 AM
+```
+
 ## PARAMETERS
+
+### -AsUTC
+
+Converts the date value to the equivalent time in UTC.
+
+This parameter was added in PowerShell 7.1.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: net
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
 
 ### -Date
 
@@ -335,24 +384,6 @@ Aliases:
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -FromUnixTime
-
-When this parameter is used, the value of the **Date** parameter is treated as a Unix timestamp. A
-Unix timestamp is a numeric value that is the of seconds elapsed since
-**1970-01-01​T00:00:00.000Z**.
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -478,11 +509,30 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -FromUnixTime
+
+When this parameter is used, the value of the **Date** parameter is treated as a Unix timestamp. A
+Unix timestamp is a numeric value that is the of seconds elapsed since
+**1970-01-01​T00:00:00.000Z**.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### CommonParameters
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -565,4 +615,3 @@ The valid **UFormat specifiers** are displayed in the following table:
 [New-TimeSpan](New-TimeSpan.md)
 
 [Set-Date](Set-Date.md)
-
