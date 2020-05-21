@@ -169,29 +169,30 @@ PowerShell supports the following type accelerators:
 The following table contains several examples of numeric literals and lists
 their type and value:
 
-|   Number     |  Type      |    Value     |
-| -----------: | ---------- | -----------: |
-|         100  | Int32      |          100 |
-|        100u  | UInt32     |          100 |
-|        100D  | Decimal    |          100 |
-|        100l  | Int64      |          100 |
-|       100uL  | UInt64     |          100 |
-|       100us  | UInt16     |          100 |
-|       100uy  | Byte       |          100 |
-|        100y  | SByte      |          100 |
-|         1e2  | Double     |          100 |
-|        1.e2  | Double     |          100 |
-|       0x1e2  | Int32      |          482 |
-|      0x1e2L  | Int64      |          482 |
-|      0x1e2D  | Int32      |         7725 |
-|        482D  | Decimal    |          482 |
-|       482gb  | Int64      | 517543559168 |
-|       482ngb | BigInteger | 517543559168 |
-|    0x1e2lgb  | Int64      | 517543559168 |
-|   0b1011011  | Int32      |           91 |
-|  0xFFFFFFFF  | Int32      |           -1 |
-| -0xFFFFFFFF  | Int32      |            1 |
-| 0xFFFFFFFFu  | UInt32     |   4294967295 |
+|   Number    |    Type    |    Value     |
+| ----------: | ---------- | -----------: |
+|         100 | Int32      |          100 |
+|        100u | UInt32     |          100 |
+|        100D | Decimal    |          100 |
+|        100l | Int64      |          100 |
+|       100uL | UInt64     |          100 |
+|       100us | UInt16     |          100 |
+|       100uy | Byte       |          100 |
+|        100y | SByte      |          100 |
+|         1e2 | Double     |          100 |
+|        1.e2 | Double     |          100 |
+|       0x1e2 | Int32      |          482 |
+|      0x1e2L | Int64      |          482 |
+|      0x1e2D | Int32      |         7725 |
+|        482D | Decimal    |          482 |
+|       482gb | Int64      | 517543559168 |
+|      482ngb | BigInteger | 517543559168 |
+|    0x1e2lgb | Int64      | 517543559168 |
+|   0b1011011 | Int32      |           91 |
+|     0xFFFFs | Int16      |           -1 |
+|  0xFFFFFFFF | Int32      |           -1 |
+| -0xFFFFFFFF | Int32      |            1 |
+| 0xFFFFFFFFu | UInt32     |   4294967295 |
 
 ### Working with binary or hexadecimal numbers
 
@@ -207,6 +208,11 @@ bits are still respected above even `[decimal]` ranges, however:
 Specifying an unsigned suffix on binary and hex literals ignores sign bits. For
 example, `0xFFFFFFFF` returns `-1`, but `0xFFFFFFFFu` returns the
 `[uint]::MaxValue` of 4294967295.
+
+In PowerShell 7.1, using a type suffix on a hex literal now returns a signed
+value of that type. For example, in PowerShell 7.0 the expression `0xFFFFs` returns
+an error because the positive value is too large for an `[int16]` type.
+PowerShell 7.1 interprets this as `-1` that is an `[int16]` type.
 
 Prefixing the literal with a `0` will bypass this and be treated as unsigned.
 For example: `0b011111111`. This can be necessary when working with literals
@@ -351,4 +357,3 @@ these values are parsed as `[Double]` using the real-parsing mode.
 
 <!-- reference links -->
 [bigint]: /dotnet/api/system.numerics.biginteger?view=netcore-2.2
-
