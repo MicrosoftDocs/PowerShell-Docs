@@ -79,7 +79,7 @@ To test the following command, make a copy of an existing PDF file on your local
 the copied file to `File.t7f`.
 
 ```powershell
-Format-Hex -Path .\File.t7f
+Format-Hex -Path .\File.t7f -Count 48
 ```
 
 ```Output
@@ -88,14 +88,15 @@ Format-Hex -Path .\File.t7f
           Offset Bytes                                           Ascii
                  00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
           ------ ----------------------------------------------- -----
-00000000   25 50 44 46 2D 31 2E 35 0D 0A 25 B5 B5 B5 B5 0D  %PDF-1.5..%????.
-00000010   0A 31 20 30 20 6F 62 6A 0D 0A 3C 3C 2F 54 79 70  .1 0 obj..<</Typ
-00000020   65 2F 43 61 74 61 6C 6F 67 2F 50 61 67 65 73 20  e/Catalog/Pages
+0000000000000000 25 50 44 46 2D 31 2E 35 0D 0A 25 B5 B5 B5 B5 0D %PDF-1.5..%????.
+0000000000000010 0A 31 20 30 20 6F 62 6A 0D 0A 3C 3C 2F 54 79 70 .1 0 obj..<</Typ
+0000000000000020 65 2F 43 61 74 61 6C 6F 67 2F 50 61 67 65 73 20 e/Catalog/Pages
 ```
 
 The `Format-Hex` cmdlet uses the **Path** parameter to specify a filename in the current directory,
-`File.t7f`. The file extension `.t7f` is uncommon, but the hexadecimal output `%PDF` shows
-that it is a PDF file.
+`File.t7f`. The file extension `.t7f` is uncommon, but the hexadecimal output `%PDF` shows that it
+is a PDF file. In this example, the **Count** parameter is used to limit the output to the first 48
+bytes of the file.
 
 ### Example 3: Format an array of different data types
 
@@ -106,7 +107,7 @@ It will pass each object through the Pipeline and process individually. However,
 data, and the adjacent object is also numeric, it will group them into a single output block.
 
 ```powershell
-'Hello world!', 1, 1138, 'foo', 'bar', 0xdeadbeef, 1gb, 0b1101011100 | Format-Hex
+'Hello world!', 1, 1138, 'foo', 'bar', 0xdeadbeef, 1gb, 0b1101011100 , $true, $false | Format-Hex
 ```
 
 ```Output
@@ -144,19 +145,27 @@ data, and the adjacent object is also numeric, it will group them into a single 
                  00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
           ------ ----------------------------------------------- -----
 0000000000000000 EF BE AD DE 00 00 00 40 5C 03 00 00             ï¾­Þ   @\�
+
+   Label: Boolean (System.Boolean) <7D8C4C1D>
+
+          Offset Bytes                                           Ascii
+                 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
+          ------ ----------------------------------------------- -----
+0000000000000000 01 00 00 00 00 00 00 00                         �
 ```
 
 ## PARAMETERS
 
 ### -Encoding
 
-Specifies the encoding of the output. This only applies to `[string]` input. The parameter has no
-effect on numeric types. The default value is **UTF8NoBOM**.
+Specifies the encoding of the input strings. This only applies to `[string]` input. The parameter
+has no effect on numeric types. The output value is always **UTF8NoBOM**.
 
 The acceptable values for this parameter are as follows:
 
 - **ASCII**: Uses the encoding for the ASCII (7-bit) character set.
 - **BigEndianUnicode**: Encodes in UTF-16 format using the big-endian byte order.
+- **BigEndianUTF32**: Encodes in UTF-32 format using the big-endian byte order.
 - **OEM**: Uses the default encoding for MS-DOS and console programs.
 - **Unicode**: Encodes in UTF-16 format using the little-endian byte order.
 - **UTF7**: Encodes in UTF-7 format.
