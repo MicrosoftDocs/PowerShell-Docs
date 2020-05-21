@@ -95,7 +95,8 @@ Format-Hex -Path .\File.t7f -Count 48
 
 The `Format-Hex` cmdlet uses the **Path** parameter to specify a filename in the current directory,
 `File.t7f`. The file extension `.t7f` is uncommon, but the hexadecimal output `%PDF` shows that it
-is a PDF file. The **Count** parameter specifies to return three lines of the PDF (48 Bytes).
+is a PDF file. In this example, the **Count** parameter is used to limit the output to the first 48
+bytes of the file.
 
 ### Example 3: Format an array of different data types
 
