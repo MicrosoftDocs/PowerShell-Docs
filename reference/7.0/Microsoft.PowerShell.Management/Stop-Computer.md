@@ -261,7 +261,8 @@ You can't pipe input to this cmdlet.
 
 ## NOTES
 
-This cmdlet uses the **Win32Shutdown** method of the **Win32_OperatingSystem** WMI class.
+This cmdlet only works on Windows and uses the **Win32Shutdown** method of the
+**Win32_OperatingSystem** WMI class.
 
 ## RELATED LINKS
 
