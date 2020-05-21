@@ -1,7 +1,7 @@
 ---
 title: Installing PowerShell on macOS
 description: Information about installing PowerShell on macOS
-ms.date: 12/12/2018
+ms.date: 05/21/2020
 ---
 
 # Installing PowerShell on macOS
@@ -95,14 +95,14 @@ brew cask upgrade powershell-preview
 ## Installation via Direct Download
 
 Download the PKG package
-`powershell-lts-7.0.0-osx-x64.pkg`
+`powershell-lts-7.0.1-osx-x64.pkg`
 from the [releases][] page onto your macOS machine.
 
 You can double-click the file and follow the prompts,
 or install it from the terminal:
 
 ```sh
-sudo installer -pkg powershell-lts-7.0.0-osx-x64.pkg -target /
+sudo installer -pkg powershell-lts-7.0.1-osx-x64.pkg -target /
 ```
 
 Install [OpenSSL](#install-openssl). OpenSSL is needed for PowerShell remoting and CIM operations.
@@ -129,19 +129,19 @@ deployment scenarios.
 
 ```sh
 # Download the powershell '.tar.gz' archive
-curl -L -o /tmp/powershell.tar.gz https://github.com/PowerShell/PowerShell/releases/download/v7.0.0/powershell-7.0.0-osx-x64.tar.gz
+curl -L -o /tmp/powershell.tar.gz https://github.com/PowerShell/PowerShell/releases/download/v7.0.1/powershell-7.0.1-osx-x64.tar.gz
 
 # Create the target folder where powershell will be placed
-sudo mkdir -p /usr/local/microsoft/powershell/7.0.0
+sudo mkdir -p /usr/local/microsoft/powershell/7.0.1
 
 # Expand powershell to the target folder
-sudo tar zxf /tmp/powershell.tar.gz -C /usr/local/microsoft/powershell/7.0.0
+sudo tar zxf /tmp/powershell.tar.gz -C /usr/local/microsoft/powershell/7.0.1
 
 # Set execute permissions
-sudo chmod +x /usr/local/microsoft/powershell/7.0.0/pwsh
+sudo chmod +x /usr/local/microsoft/powershell/7.0.1/pwsh
 
 # Create the symbolic link that points to pwsh
-sudo ln -s /usr/local/microsoft/powershell/7.0.0/pwsh /usr/local/bin/pwsh
+sudo ln -s /usr/local/microsoft/powershell/7.0.1/pwsh /usr/local/bin/pwsh
 ```
 
 Install [OpenSSL](#install-openssl). OpenSSL is needed for PowerShell remoting and CIM operations.
@@ -196,7 +196,7 @@ and remove the paths using `sudo rm`.
 
 ## Paths
 
-* `$PSHOME` is `/usr/local/microsoft/powershell/7.0.0/`
+* `$PSHOME` is `/usr/local/microsoft/powershell/7.0.1/`
 * User profiles will be read from `~/.config/powershell/profile.ps1`
 * Default profiles will be read from `$PSHOME/profile.ps1`
 * User modules will be read from `~/.local/share/powershell/Modules`
@@ -210,7 +210,7 @@ So the default host-specific profile exists at `Microsoft.PowerShell_profile.ps1
 PowerShell respects the [XDG Base Directory Specification][xdg-bds] on macOS.
 
 Because macOS is a derivation of BSD, the prefix `/usr/local` is used instead of `/opt`.
-So, `$PSHOME` is `/usr/local/microsoft/powershell/7.0.0/`, and the symbolic link is placed at `/usr/local/bin/pwsh`.
+So, `$PSHOME` is `/usr/local/microsoft/powershell/7.0.1/`, and the symbolic link is placed at `/usr/local/bin/pwsh`.
 
 ## Additional Resources
 
