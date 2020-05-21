@@ -26,7 +26,9 @@ MountUserDrive = $true
 UserDriveMaximumSize = 10485760    # 10 MB
 ```
 
-The folder backing the user drive will be created at `$env:LOCALAPPDATA\Microsoft\Windows\PowerShell\DriveRoots\DOMAIN_USER`
+The folder backing the user drive is created at
+`$env:LOCALAPPDATA\Microsoft\Windows\PowerShell\DriveRoots\`. For each user connecting to the
+endpoint, a folder is created with the name `$env:USERDOMAIN_$env:USERNAME`.
 
 To utilize the user drive and copy files to/from a JEA endpoint configured to expose the User
 drive, use the `-ToSession` and `-FromSession` parameters on `Copy-Item`.
