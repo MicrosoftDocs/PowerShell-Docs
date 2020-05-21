@@ -210,7 +210,7 @@ example, `0xFFFFFFFF` returns `-1`, but `0xFFFFFFFFu` returns the
 `[uint]::MaxValue` of 4294967295.
 
 In PowerShell 7.1, using a type suffix on a hex literal now returns a signed
-value of that type. For example, in PowerShell 7.0 the expression `0xFFFFs` is
+value of that type. For example, in PowerShell 7.0 the expression `0xFFFFs` returns
 an error because the positive value is too large for an `[int16]` type.
 PowerShell 7.1 interprets this as `-1` that is an `[int16]` type.
 
@@ -357,4 +357,3 @@ these values are parsed as `[Double]` using the real-parsing mode.
 
 <!-- reference links -->
 [bigint]: /dotnet/api/system.numerics.biginteger?view=netcore-2.2
-
