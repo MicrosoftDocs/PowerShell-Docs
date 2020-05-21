@@ -38,7 +38,7 @@ Export-Csv [-Path] <string> [[-UseCulture]] -InputObject <psobject> [-Force] [-N
 ### DelimiterLiteralPath
 
 ```
-Export-Csv [-LiteralPath] <string> [[-Delimiter] <char>] -InputObject <psobject> [-Force]
+Export-Csv [[-Delimiter] <char>] [-LiteralPath] <string> -InputObject <psobject> [-Force]
  [-NoClobber] [-Encoding <Encoding>] [-Append] [-IncludeTypeInformation] [-NoTypeInformation]
  [-QuoteFields <string[]>] [-UseQuotes {Never | Always | AsNeeded}] [-WhatIf] [-Confirm]
  [<CommonParameters>]
@@ -47,7 +47,7 @@ Export-Csv [-LiteralPath] <string> [[-Delimiter] <char>] -InputObject <psobject>
 ### CultureLiteralPath
 
 ```
-Export-Csv [-LiteralPath] <string> [[-UseCulture]] -InputObject <psobject> [-Force] [-NoClobber]
+Export-Csv [[-UseCulture]] [-LiteralPath] <string> -InputObject <psobject> [-Force] [-NoClobber]
  [-Encoding <Encoding>] [-Append] [-IncludeTypeInformation] [-NoTypeInformation] [-QuoteFields <string[]>]
  [-UseQuotes {Never | Always | AsNeeded}] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
@@ -604,8 +604,8 @@ Type: SwitchParameter
 Parameter Sets: CulturePath, CultureLiteralPath
 Aliases:
 
-Required: False
-Position: Named
+Required: True
+Position: 1
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
