@@ -2,7 +2,7 @@
 keywords: powershell,cmdlet
 locale: en-us
 ms.date: 06/09/2017
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_core_commands?view=powershell-7.x&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_core_commands?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Core_Commands
 ---
@@ -90,3 +90,4 @@ For more information about a cmdlet, type `get-help <cmdlet-name>`.
 ## SEE ALSO
 
 [about_Providers](about_Providers.md)
+

@@ -2,7 +2,7 @@
 keywords: powershell,cmdlet
 locale: en-us
 ms.date: 07/10/2019
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_line_editing?view=powershell-7.x&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_line_editing?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Line_Editing
 ---
@@ -82,3 +82,4 @@ key. To scroll through a list of values, press the <kbd>Tab</kbd> key again.
 [about_Path_Syntax](about_Path_Syntax.md)
 
 [about_PSReadline](../../PSReadline/About/about_PSReadline.md)
+

@@ -2,7 +2,7 @@
 keywords: powershell,cmdlet
 locale: en-us
 ms.date: 12/01/2017
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_scripts?view=powershell-7.x&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_scripts?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Scripts
 ---
@@ -420,3 +420,4 @@ PowerShell has many useful features that you can use in scripts.
 [about_Signing](about_Signing.md)
 
 [Invoke-Command](../Invoke-Command.md)
+

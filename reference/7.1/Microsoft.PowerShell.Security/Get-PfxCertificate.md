@@ -3,7 +3,7 @@ external help file: Microsoft.PowerShell.Security.dll-Help.xml
 keywords: powershell,cmdlet
 locale: en-us
 ms.date: 06/09/2017
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.security/get-pfxcertificate?view=powershell-7.x&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.security/get-pfxcertificate?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-PfxCertificate
 ---
@@ -169,3 +169,4 @@ certificate file is not password protected, the value of the **Authentication** 
 [Get-AuthenticodeSignature](Get-AuthenticodeSignature.md)
 
 [Set-AuthenticodeSignature](Set-AuthenticodeSignature.md)
+

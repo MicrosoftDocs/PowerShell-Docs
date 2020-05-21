@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: PackageManagement
 ms.date: 05/22/2019
-online version: https://docs.microsoft.com/powershell/module/packagemanagement/get-package?view=powershell-7.x&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/packagemanagement/get-package?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Package
 ---
@@ -479,3 +479,4 @@ parameter set that includes `-NoPathUpdate`, `AllowClobber`, and `SkipPublisherC
 [Save-Package](Save-Package.md)
 
 [Uninstall-Package](Uninstall-Package.md)
+

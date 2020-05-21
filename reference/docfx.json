@@ -38,10 +38,10 @@
             { "files": ["toc.yml"], "src": "7.0", "version": "powershell-7", "dest": "module/psdocs" },
             { "files": ["**/*.md"], "src": "7.0", "version": "powershell-7", "exclude": ["docs-conceptual/**"], "dest": "module" },
 
-            { "files": ["toc.yml"], "src": "docs-conceptual", "version": "powershell-7.x", "dest": "scripting/powershell-7.1" },
-            { "files": ["**/*.md", "**/**.yml"], "src": "docs-conceptual", "version": "powershell-7.x", "dest": "scripting" },
-            { "files": ["toc.yml"], "src": "7.1", "version": "powershell-7.x", "dest": "module/psdocs" },
-            { "files": ["**/*.md"], "src": "7.1", "version": "powershell-7.x", "exclude": ["docs-conceptual/**"], "dest": "module" },
+            { "files": ["toc.yml"], "src": "docs-conceptual", "version": "powershell-7.1", "dest": "scripting/powershell-7.1" },
+            { "files": ["**/*.md", "**/**.yml"], "src": "docs-conceptual", "version": "powershell-7.1", "dest": "scripting" },
+            { "files": ["toc.yml"], "src": "7.1", "version": "powershell-7.1", "dest": "module/psdocs" },
+            { "files": ["**/*.md"], "src": "7.1", "version": "powershell-7.1", "exclude": ["docs-conceptual/**"], "dest": "module" },
 
             { "files": ["**/*.md"], "src": "virtual-directory", "dest": "scripting" },
             { "files": ["**/*.md"], "src": "virtual-directory-module", "dest": "module" }
@@ -87,7 +87,7 @@
             {
                 "files": ["**/images/**", "**/*.png", "**/*.gif", "**/*.jpeg", "**/*.jpg", "**/*.svg"],
                 "exclude": ["**/obj/**", "**/includes/**"],
-                "version": "powershell-7.x"
+                "version": "powershell-7.1"
             }
         ],
         "versions": {
@@ -97,7 +97,7 @@
             "powershell-5.1": { "dest": "powershell-5.1" },
             "powershell-6": { "dest": "powershell-6" },
             "powershell-7": { "dest": "powershell-7" },
-            "powershell-7.x": { "dest": "powershell-7.1" }
+            "powershell-7.1": { "dest": "powershell-7.1" }
         },
         "overwrite": [],
         "externalReference": [],

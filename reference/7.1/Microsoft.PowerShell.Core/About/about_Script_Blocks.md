@@ -2,7 +2,7 @@
 keywords: powershell,cmdlet
 locale: en-us
 ms.date: 04/08/2020
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_script_blocks?view=powershell-7.x&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_script_blocks?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Script_Blocks
 ---
@@ -193,3 +193,4 @@ Notes on **delay-bind** script blocks as parameters:
 [about_Functions_Advanced](about_Functions_Advanced.md)
 
 [about_Operators](about_Operators.md)
+

@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 locale: en-us
 Module Name: PowerShellGet
 ms.date: 10/03/2019
-online version: https://docs.microsoft.com/powershell/module/powershellget/publish-module?view=powershell-7.x&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/powershellget/publish-module?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Publish-Module
 ---
@@ -419,3 +419,4 @@ module manifest, but some metadata can be specified in `Publish-Module` paramete
 [Uninstall-Module](Uninstall-Module.md)
 
 [Update-Module](Update-Module.md)
+

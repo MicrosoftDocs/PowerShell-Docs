@@ -3,8 +3,8 @@ external help file: System.Management.Automation.dll-Help.xml
 keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Core
-ms.date: 12/14/2018
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/get-command?view=powershell-7.x&WT.mc_id=ps-gethelp
+ms.date: 05/20/2020
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/get-command?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Command
 ---
@@ -114,7 +114,7 @@ cmdlet when it is used in the Cert: drive. The Cert: drive is a PowerShell drive
 Certificate Provider adds to the session.
 
 ```powershell
-Get-Command Get-Childitem -Args Cert: -Syntax
+Get-Command  -Name Get-Childitem -Args Cert: -Syntax
 ```
 
 When you compare the syntax displayed in the output with the syntax that is displayed when you omit
@@ -132,7 +132,7 @@ that the Certificate provider adds to the `Get-ChildItem` cmdlet when it is used
 function Get-DynamicParameters
 {
     param ($Cmdlet, $PSDrive)
-    (Get-Command $Cmdlet -ArgumentList $PSDrive).ParameterSets | ForEach-Object {$_.Parameters} | Where-Object { $_.IsDynamic } | Select-Object -Property Name -Unique
+    (Get-Command -Name $Cmdlet -ArgumentList $PSDrive).ParameterSets | ForEach-Object {$_.Parameters} | Where-Object { $_.IsDynamic } | Select-Object -Property Name -Unique
 }
 Get-DynamicParameters -Cmdlet Get-ChildItem -PSDrive Cert:
 ```
@@ -179,7 +179,7 @@ value from those that take an **AuthenticationLevel** parameter, even when they 
 This example shows how to use the `Get-Command` cmdlet with an alias.
 
 ```powershell
-Get-Command dir
+Get-Command Name dir
 ```
 
 ```Output
@@ -194,9 +194,28 @@ aliases, and executable files.
 The output of the command shows the special view of the **Name** property value for aliases. The
 view shows the alias and the full command name.
 
-### Example 11: Get all instances of the Notepad command
+### Example 11: Get Syntax from an alias
 
-This example uses the **All** parameter of the `Get-Command` cmdlet to show all instances of the "Notepad" command on the local computer.
+This example shows how to get the syntax along with the standard name of an alias.
+
+The output of the command shows the labeled alias with the standard name, followed by the syntax.
+
+```powershell
+Get-Command -Name dir -Syntax
+```
+
+```Output
+dir (alias) -> Get-ChildItem
+
+dir [[-Path] <string[]>] [[-Filter] <string>] [-Include <string[]>] [-Exclude <string[]>] [-Recurse] [-Depth <uint>] [-Force] [-Name] [-Attributes <FlagsExpression[FileAttributes]>] [-FollowSymlink] [-Directory] [-File] [-Hidden] [-ReadOnly] [-System] [<CommonParameters>]
+
+dir [[-Filter] <string>] -LiteralPath <string[]> [-Include <string[]>] [-Exclude <string[]>] [-Recurse] [-Depth <uint>] [-Force] [-Name] [-Attributes <FlagsExpression[FileAttributes]>] [-FollowSymlink] [-Directory] [-File] [-Hidden] [-ReadOnly] [-System] [<CommonParameters>]
+```
+
+### Example 12: Get all instances of the Notepad command
+
+This example uses the **All** parameter of the `Get-Command` cmdlet to show all instances of the
+`Notepad` command on the local computer.
 
 ```powershell
 Get-Command Notepad -All | Format-Table CommandType, Name, Definition
@@ -220,7 +239,7 @@ qualified path to the command.
 
 For more information about command precedence, see [about_Command_Precedence](About/about_Command_Precedence.md).
 
-### Example 12: Get the name of a module that contains a cmdlet
+### Example 13: Get the name of a module that contains a cmdlet
 
 This command gets the name of the module in which the `Get-Date` cmdlet originated.
 The command uses the **ModuleName** property of all commands.
@@ -235,7 +254,7 @@ Microsoft.PowerShell.Utility
 
 This command format works on commands in PowerShell modules, even if they are not imported into the session.
 
-### Example 13: Get cmdlets and functions that have an output type
+### Example 14: Get cmdlets and functions that have an output type
 
 ```powershell
 Get-Command -Type Cmdlet | Where-Object OutputType | Format-List -Property Name, OutputType
@@ -243,13 +262,15 @@ Get-Command -Type Cmdlet | Where-Object OutputType | Format-List -Property Name,
 
 This command gets the cmdlets and functions that have an output type and the type of objects that they return.
 
-The first part of the command gets all cmdlets.
-A pipeline operator (|) sends the cmdlets to the `Where-Object` cmdlet, which selects only the ones in which the **OutputType** property is populated.
-Another pipeline operator sends the selected cmdlet objects to the `Format-List` cmdlet, which displays the name and output type of each cmdlet in a list.
+The first part of the command gets all cmdlets. A pipeline operator (`|`) sends the cmdlets to the
+`Where-Object` cmdlet, which selects only the ones in which the **OutputType** property is
+populated. Another pipeline operator sends the selected cmdlet objects to the `Format-List` cmdlet,
+which displays the name and output type of each cmdlet in a list.
 
-The **OutputType** property of a **CommandInfo** object has a non-null value only when the cmdlet code defines the **OutputType** attribute for the cmdlet.
+The **OutputType** property of a **CommandInfo** object has a non-null value only when the cmdlet
+code defines the **OutputType** attribute for the cmdlet.
 
-### Example 14: Get cmdlets that take a specific object type as input
+### Example 15: Get cmdlets that take a specific object type as input
 
 ```powershell
 Get-Command -ParameterType (((Get-NetAdapter)[0]).PSTypeNames)
@@ -273,7 +294,7 @@ describe the object. To get the **PSTypeNames** property of a net adapter, and n
 **PSTypeNames** property of a collection of net adapters, the command uses array notation to get the
 first net adapter that the cmdlet returns.
 
-### Example 15: Get commands using a fuzzy match
+### Example 16: Get commands using a fuzzy match
 
 In this example, the name of the command deliberately has a typo as 'get-commnd'.
 Using the `-UseFuzzyMatching` switch, the cmdlet determined that the best match
@@ -552,7 +573,7 @@ Accept wildcard characters: False
 
 Indicates that this cmdlet gets only the following specified data about the command:
 
-- Aliases. Gets the standard name.
+- Aliases. Gets the standard name and syntax.
 - Cmdlets. Gets the syntax.
 - Functions and filters. Gets the function definition.
 - Scripts and applications or files. Gets the path and filename.
@@ -701,3 +722,4 @@ Represents functions and filters.
 [Import-PSSession](../Microsoft.PowerShell.Utility/Import-PSSession.md)
 
 [about_Command_Precedence](About/about_Command_Precedence.md)
+

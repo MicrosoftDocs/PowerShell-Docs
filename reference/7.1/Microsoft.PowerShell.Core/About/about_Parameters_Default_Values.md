@@ -2,7 +2,7 @@
 keywords: powershell,cmdlet
 locale: en-us
 ms.date: 5/31/2019
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_parameters_default_values?view=powershell-7.x&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_parameters_default_values?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Parameters_Default_Values
 ---
@@ -413,3 +413,4 @@ Send-MailMessage:SmtpServer    ServerXYZ
 [about_Profiles](about_Profiles.md)
 
 [about_Script_Blocks](about_Script_Blocks.md)
+

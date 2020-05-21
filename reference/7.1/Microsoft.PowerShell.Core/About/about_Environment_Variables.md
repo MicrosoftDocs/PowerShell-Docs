@@ -2,7 +2,7 @@
 keywords: powershell,cmdlet
 locale: en-us
 ms.date: 04/13/2020
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_environment_variables?view=powershell-7.x&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_environment_variables?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Environment_Variables
 ---
@@ -350,3 +350,4 @@ For more information about the methods of the **System.Environment** class, see
 
 - [Environment (provider)](../About/about_Environment_Provider.md)
 - [about_Modules](about_Modules.md)
+

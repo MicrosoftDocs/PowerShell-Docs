@@ -2,7 +2,7 @@
 keywords: powershell,cmdlet
 locale: en-us
 ms.date: 10/18/2018
-online version: https://docs.microsoft.com/powershell/module/microsoft.wsman.management/about/about_wsman_provider?view=powershell-7.x&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.wsman.management/about/about_wsman_provider?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: WSMan Provider
 ---
@@ -596,3 +596,4 @@ Get-Help Get-ChildItem -Path wsman:
 ## See also
 
 [about_Providers](../../Microsoft.PowerShell.Core/About/about_Providers.md)
+

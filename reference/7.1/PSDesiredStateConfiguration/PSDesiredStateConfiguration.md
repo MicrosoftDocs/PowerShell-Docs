@@ -24,3 +24,4 @@ Runs a method of a specified PowerShell Desired State Configuration (DSC) resour
 
 ### [New-DSCCheckSum](New-DSCCheckSum.md)
 Creates checksum files for DSC documents and DSC resources.
+
