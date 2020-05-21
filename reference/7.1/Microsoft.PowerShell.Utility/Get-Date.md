@@ -95,7 +95,7 @@ The .NET format specifiers used in this example are defined as follows:
 | `MM`      | Month number                                          |
 | `dd`      | Day of the month - 2 digits                           |
 | `yyyy`    | Year in 4-digit format                                |
-| `HH:mm`   | Time in 24-hour format -no seconds                    |
+| `HH:mm`   | Time in 24-hour format - no seconds                    |
 | `K`       | Time zone offset from Universal Time Coordinate (UTC) |
 
 For more information about .NET format specifiers, see
