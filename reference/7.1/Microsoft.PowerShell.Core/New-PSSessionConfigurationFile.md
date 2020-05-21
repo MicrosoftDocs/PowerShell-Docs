@@ -3,7 +3,7 @@ external help file: System.Management.Automation.dll-Help.xml
 keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Core
-ms.date: 03/26/2019
+ms.date: 05/20/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/new-pssessionconfigurationfile?view=powershell-7.x&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: New-PSSessionConfigurationFile
@@ -53,8 +53,9 @@ A session configuration file makes it easy to define a session configuration wit
 or code assemblies. The settings in the file are used with the optional startup script and any
 assemblies in the session configuration.
 
-For more information about session configurations and session configuration files, see [about_Session_Configurations](About/about_Session_Configurations.md)
-and [about_Session_Configuration_Files](About/about_Session_Configuration_Files.md).
+For more information about session configurations and session configuration files, see
+[about_Session_Configurations](About/about_Session_Configurations.md) and
+[about_Session_Configuration_Files](About/about_Session_Configuration_Files.md).
 
 This cmdlet was introduced in PowerShell 3.0.
 
@@ -634,9 +635,11 @@ Accept wildcard characters: False
 ### -MountUserDrive
 
 Configures sessions that use this session configuration to expose the `User:` PSDrive. User drives
-are unique for each connecting user and allow users to copy data to/from PowerShell endpoints even
-if the File System provider is not exposed. User drive roots are created under
-`$env:LOCALAPPDATA\Microsoft\Windows\PowerShell\DriveRoots\`.
+are unique for each connecting user and allow users to copy data to and from PowerShell endpoints
+even if the File System provider is not exposed. User drive roots are created under
+`$env:LOCALAPPDATA\Microsoft\Windows\PowerShell\DriveRoots\`. For each user connecting to the
+endpoint, a folder is created with the name `$env:USERDOMAIN_$env:USERNAME`.
+
 
 Contents in the user drive persist across user sessions and are not automatically removed. By
 default, users can only store up to 50MB of data in the user drive. This can be customized with the
