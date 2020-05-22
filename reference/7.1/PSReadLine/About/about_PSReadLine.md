@@ -622,8 +622,6 @@ previous line of multi-line input.
 
 - Cmd: `<LeftArrow>`
 - Emacs: `<LeftArrow>`, `<Ctrl+b>`
-- Vi insert mode: `<LeftArrow>`
-- Vi command mode: `<LeftArrow>`, `<Backspace>`, `<h>`
 
 ### BackwardWord
 
@@ -664,8 +662,6 @@ next line of multi-line input.
 
 - Cmd: `<RightArrow>`
 - Emacs: `<RightArrow>`, `<Ctrl+f>`
-- Vi insert mode: `<RightArrow>`
-- Vi command mode: `<RightArrow>`, `<Spacebar>`, `<l>`
 
 ### ForwardWord
 
@@ -752,6 +748,14 @@ to the end of the next word. Word boundaries are defined by PowerShell tokens.
 
 - Function is unbound.
 
+### ViBackwardChar
+
+Move the cursor one character to the left in the Vi edit mode. This may move
+the cursor to the previous line of multi-line input.
+
+- Vi insert mode: `<LeftArrow>`
+- Vi command mode: `<LeftArrow>`, `<Backspace>`, `<h>`
+
 ### ViBackwardWord
 
 Move the cursor back to the start of the current word, or if between words,
@@ -759,6 +763,14 @@ the start of the previous word. Word boundaries are defined by a configurable
 set of characters.
 
 - Vi command mode: `<b>`
+
+### ViForwardChar
+
+Move the cursor one character to the right in the Vi edit mode. This may move
+the cursor to the next line of multi-line input.
+
+- Vi insert mode: `<RightArrow>`
+- Vi command mode: `<RightArrow>`, `<Spacebar>`, `<l>`
 
 ### ViEndOfGlob
 
