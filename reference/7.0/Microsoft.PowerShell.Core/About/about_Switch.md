@@ -8,10 +8,10 @@ title: about_Switch
 ---
 # About Switch
 
-## SHORT DESCRIPTION
+## Short description
 Explains how to use a switch to handle multiple If statements.
 
-## LONG DESCRIPTION
+## Long description
 
 To check a condition in a script or function, use an `If` statement. The `If`
 statement can check many types of conditions, including the value of variables
@@ -277,9 +277,9 @@ The following example uses the `-Regex` parameter.
 $target = 'https://bing.com'
 switch -Regex ($target)
 {
-    'ftp\://.*' { "$_ is an ftp address"; Break }
-    '\w+@\w+\.com|edu|org' { "$_ is an email address"; Break }
-    '(http[s]?)\://.*' { "$_ is a web address that uses $($matches[1])"; Break }
+    '^ftp\://.*$' { "$_ is an ftp address"; Break }
+    '^\w+@\w+\.com|edu|org$' { "$_ is an email address"; Break }
+    '^(http[s]?)\://.*$' { "$_ is a web address that uses $($matches[1])"; Break }
 }
 ```
 
@@ -290,7 +290,7 @@ https://bing.com is a web address that uses https
 A Switch statement condition may be either:
 
 - An expression whose value is compared to the input value
-- A script block which should return $true if a condition is met.
+- A script block which should return `$true` if a condition is met.
 
 The `$_` automatic variable contains the value passed to the switch statement
 and is available for evaluation and use within the scope of the condition
@@ -351,7 +351,7 @@ switch (1,4,-1,3,"Hello",2,1)
 3 is Odd
 ```
 
-## SEE ALSO
+## See also
 
 [about_Break](about_Break.md)
 
