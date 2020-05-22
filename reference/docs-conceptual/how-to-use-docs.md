@@ -1,5 +1,5 @@
 ---
-ms.date:  10/20/2019
+ms.date: 05/22/2020
 keywords:  powershell,cmdlet
 title:  How to use the PowerShell documentation
 ---
@@ -39,3 +39,16 @@ Major  Minor  Build  Revision
 -----  -----  -----  --------
 5      1      18362  145
 ```
+
+## Finding articles for previous versions
+
+Documentation for older versions of PowerShell has been archived in our
+[Previous Versions](https://aka.ms/PSLegacyDocs) site.
+
+This site contains documentation for the following topics:
+
+- PowerShell 3.0
+- PowerShell 4.0
+- PowerShell 5.0
+- PowerShell Workflows
+- PowerShell Web Access

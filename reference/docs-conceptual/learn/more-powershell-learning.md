@@ -1,14 +1,13 @@
 ---
-ms.date:  06/18/2019
-keywords:  powershell,cmdlet
-title:  More PowerShell learning
+ms.date: 06/18/2019
+keywords: powershell,cmdlet
+title: PowerShell learning resources
 ---
-
-# More PowerShell learning
+# PowerShell learning resources
 
 Other sources to learn PowerShell
 
-## Resources for PowerShell users
+## Blogs and community
 
 In addition to the Help available at the command line, the following resources provide more
 information for users who want to run PowerShell.
@@ -18,7 +17,7 @@ information for users who want to run PowerShell.
 - [The Hey, Scripting Guy! Blog](https://devblogs.microsoft.com/scripting/) articles are
   scenario-driven, and written in an engaging and lively manner.
 - Have questions about using PowerShell? Connect with hundreds of other people who have similar
-  interests in one of the many community forums listed on the [PowerShell Community](/powershell/#pivot=main&panel=community)
+  interests in one of the many community forums listed on the [PowerShell Community](/powershell/scripting/community/community-support)
   page.
 
 ## Channel 9 videos
