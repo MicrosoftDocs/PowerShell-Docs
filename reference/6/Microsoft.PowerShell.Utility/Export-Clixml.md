@@ -126,20 +126,14 @@ User: User1
 Password for user User1: ********
 
 PS> $Credential | Export-Clixml ./cred2.xml
-PS> gc ./cred2.xml
-<Objs Version="1.1.0.1" xmlns="http://schemas.microsoft.com/powershell/2004/04">
-  <Obj RefId="0">
-    <TN RefId="0">
-      <T>System.Management.Automation.PSCredential</T>
-      <T>System.Object</T>
-    </TN>
-    <ToString>System.Management.Automation.PSCredential</ToString>
+PS> Get-Content ./cred2.xml
+
+...
     <Props>
       <S N="UserName">User1</S>
       <SS N="Password">700061007300730077006f0072006400</SS>
     </Props>
-  </Obj>
-</Objs>
+...
 
 PS> 'password' | Format-Hex -Encoding unicode
 
@@ -147,8 +141,9 @@ PS> 'password' | Format-Hex -Encoding unicode
 0000000000000000 70 00 61 00 73 00 73 00 77 00 6F 00 72 00 64 00 p a s s w o r d
 ```
 
-Note that the plain text value of the password is stored in the XML file as a Unicode character
-array as proven by `Format-Hex`. So the value is encoded but not encrypted.
+The output of `Get-Content` in this example has been truncate to focus on the credential information
+in the XML file. Note that the plain text value of the password is stored in the XML file as a
+Unicode character array as proven by `Format-Hex`. So the value is encoded but not encrypted.
 
 ## PARAMETERS
 
