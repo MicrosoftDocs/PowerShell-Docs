@@ -3,7 +3,7 @@ external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 08/14/2019
+ms.date: 05/21/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/export-clixml?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Export-Clixml
@@ -74,14 +74,15 @@ object is stored in a file named `FileACL.xml`.
 The `Import-Clixml` cmdlet creates an object from the XML in the `FileACL.xml` file. Then, it saves
 the object in the `$fileacl` variable.
 
-### Example 3: Encrypt an exported credential object
+### Example 3: Encrypt an exported credential object on Windows
 
 In this example, given a credential that you've stored in the `$Credential` variable by running the
 `Get-Credential` cmdlet, you can run the `Export-Clixml` cmdlet to save the credential to disk.
 
 > [!IMPORTANT]
 > `Export-Clixml` only exports encrypted credentials on Windows. On non-Windows operating systems
-> such as macOS and Linux, credentials are exported in plain text.
+> such as macOS and Linux, credentials are exported as a plain text stored as a Unicode character
+> array. This provides some obfuscation but does not provide encryption.
 
 ```powershell
 $Credxmlpath = Join-Path (Split-Path $Profile) TestScript.ps1.credential
@@ -90,10 +91,10 @@ $Credxmlpath = Join-Path (Split-Path $Profile) TestScript.ps1.credential
 $Credential = Import-Clixml $Credxmlpath
 ```
 
-The `Export-Clixml` cmdlet encrypts credential objects by using the Windows [Data Protection API](/previous-versions/windows/apps/hh464970(v=win.10)).
-The encryption ensures that only your user account on only that computer can decrypt the contents of
-the credential object. The exported `CLIXML` file can't be used on a different computer or by a
-different user.
+The `Export-Clixml` cmdlet encrypts credential objects by using the Windows
+[Data Protection API](/previous-versions/windows/apps/hh464970(v=win.10)). The encryption ensures
+that only your user account on only that computer can decrypt the contents of the credential object.
+The exported `CLIXML` file can't be used on a different computer or by a different user.
 
 In the example, the file in which the credential is stored is represented by
 `TestScript.ps1.credential`. Replace **TestScript** with the name of the script with which you're
@@ -105,6 +106,48 @@ You send the credential object down the pipeline to `Export-Clixml`, and save it
 To import the credential automatically into your script, run the final two commands. Run
 `Import-Clixml` to import the secured credential object into your script. This import eliminates the
 risk of exposing plain-text passwords in your script.
+
+### Example 4: Exporting a credential object on Linux or macOS
+
+In this example, we create a **PSCredential** in the `$Credential` variable using the
+`Get-Credential` cmdlet. Then we use `Export-Clixml` to save the credential to disk.
+
+> [!IMPORTANT]
+> `Export-Clixml` only exports encrypted credentials on Windows. On non-Windows operating systems
+> such as macOS and Linux, credentials are exported as a plain text stored as a Unicode character
+> array. This provides some obfuscation but does not provide encryption.
+
+```powershell
+PS> $Credential = Get-Credential
+
+PowerShell credential request
+Enter your credentials.
+User: User1
+Password for user User1: ********
+
+PS> $Credential | Export-Clixml ./cred2.xml
+PS> Get-Content ./cred2.xml
+
+...
+    <Props>
+      <S N="UserName">User1</S>
+      <SS N="Password">700061007300730077006f0072006400</SS>
+    </Props>
+...
+
+PS> 'password' | Format-Hex -Encoding unicode
+
+   Label: String (System.String) <52D60C91>
+
+          Offset Bytes                                           Ascii
+                 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
+          ------ ----------------------------------------------- -----
+0000000000000000 70 00 61 00 73 00 73 00 77 00 6F 00 72 00 64 00 p a s s w o r d
+```
+
+The output of `Get-Content` in this example has been truncate to focus on the credential information
+in the XML file. Note that the plain text value of the password is stored in the XML file as a
+Unicode character array as proven by `Format-Hex`. So the value is encoded but not encrypted.
 
 ## PARAMETERS
 
@@ -319,4 +362,3 @@ You can pipeline any object to `Export-Clixml`.
 [Use PowerShell to Pass Credentials to Legacy Systems](https://devblogs.microsoft.com/scripting/use-powershell-to-pass-credentials-to-legacy-systems/)
 
 [Windows.Security.Cryptography.DataProtection](/uwp/api/windows.security.cryptography.dataprotection)
-
