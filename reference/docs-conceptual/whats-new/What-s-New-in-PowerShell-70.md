@@ -59,7 +59,7 @@ For more up-to-date information about supported operating systems and support li
 ## Running PowerShell 7
 
 PowerShell 7 installs to a directory seperately from Windows PowerShell.
-This enables you to run POwerShell 7 side-by-side with Windows PowerShell 5.1. For
+This enables you to run PowerShell 7 side-by-side with Windows PowerShell 5.1. For
 PowerShell Core 6.x, PowerShell 7 is an in-place upgrade that removes PowerShell Core 6.x.
 
 - PowerShell 7 is installed to `%programfiles%\PowerShell\7`
