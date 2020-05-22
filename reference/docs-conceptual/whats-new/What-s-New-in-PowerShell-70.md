@@ -58,13 +58,14 @@ For more up-to-date information about supported operating systems and support li
 
 ## Running PowerShell 7
 
-PowerShell 7 installs to a new directory and runs side-by-side with Windows PowerShell 5.1. For
+PowerShell 7 installs to a directory seperately from Windows PowerShell.
+This enables you to run PowerShell 7 side-by-side with Windows PowerShell 5.1. For
 PowerShell Core 6.x, PowerShell 7 is an in-place upgrade that removes PowerShell Core 6.x.
 
 - PowerShell 7 is installed to `%programfiles%\PowerShell\7`
 - The `%programfiles%\PowerShell\7` folder is added to `$env:PATH`
 
-The PowerShell 7 installer packages upgrade previous versions of PowerShell Core 6.x:
+The PowerShell 7 installer package upgrades previous versions of PowerShell Core 6.x:
 
 - PowerShell Core 6.x on Windows: `%programfiles%\PowerShell\6` is replaced by
   `%programfiles%\PowerShell\7`
@@ -73,8 +74,8 @@ The PowerShell 7 installer packages upgrade previous versions of PowerShell Core
 
 > [!NOTE]
 > In Windows PowerShell, the executable to launch PowerShell is named `powershell.exe`. In version 6
-> and above, the executable is changed to support side-by-side execution. The new executable to
-> launch PowerShell 7 is `pwsh.exe`. Preview builds will remain in-place as `pwsh-preview` instead
+> and above, the executable name is changed to support side-by-side execution. The new executable name to
+> launch PowerShell 7 is `pwsh.exe`. Preview builds remain in-place as `pwsh-preview` instead
 > of `pwsh` under the 7-preview directory.
 
 ## Improved backwards compatibility with Windows PowerShell
@@ -249,7 +250,7 @@ $x
 100
 ```
 
-In the following example, the right-hand operand won't be evaluated:
+In the following example, the right-hand operand is not evaluated:
 
 ```powershell
 [string] $todaysDate = '1/10/2020'
@@ -279,14 +280,14 @@ ${Service}?.status
 Stopped
 ```
 
-The following example will return null, without trying to access the member name **Status**:
+The following example returns null, without trying to access the member name **Status**:
 
 ```powershell
 $service = $Null
 ${Service}?.status
 ```
 
-Similarly, using `?[]`, the value of the element will be returned:
+Similarly, using `?[]`, the value of the element is returned:
 
 ```powershell
 $a = 1..10
@@ -306,7 +307,7 @@ For more information
 
 ## New view ConciseView and cmdlet Get-Error
 
-The display of error messages has been improved to enhance the readability of interactive and script
+PowerShell 7.0 enhances the display of error messages to improve the readability of interactive and script
 errors with a new default view **ConciseView**. The views are user-selectable through the preference
 variable `$ErrorView`.
 
@@ -327,9 +328,8 @@ that line. If the terminal doesn't support ANSI color escape sequences (VT100), 
 
 ![Error display from a script](./media/What-s-New-in-PowerShell-70/myscript-error.png)
 
-The default view in PowerShell 7 is **ConciseView**. The previous default view was **NormalView** and is
-user selectable by setting the preference variable `$ErrorView`.
-
+The default view in PowerShell 7 is **ConciseView**. The previous default view was **NormalView** and you can select thisby setting the preference variable `$ErrorView`.
+ 
 ```powershell
 $ErrorView = 'NormalView' # Sets the error view to NormalView
 $ErrorView = 'ConciseView' # Sets the error view to ConciseView
@@ -339,7 +339,7 @@ $ErrorView = 'ConciseView' # Sets the error view to ConciseView
 > A new property **ErrorAccentColor** is added to `$Host.PrivateData` to support changing
 > the accent color of the error message.
 
-A new cmdlet `Get-Error` provides complete detailed view of the fully qualified error when desired.
+A new cmdlet `Get-Error` provides a complete detailed view of the fully qualified error when desired.
 By default the cmdlet displays the full details, including inner exceptions, of the last error that
 occurred.
 
