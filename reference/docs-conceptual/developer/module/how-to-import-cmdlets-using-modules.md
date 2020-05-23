@@ -53,4 +53,4 @@ This article describes how to import cmdlets to a PowerShell session by using a 
 
 [Modifying the PSModulePath Installation Path](../module/modifying-the-psmodulepath-installation-path.md)
 
-[Writing a Windows PowerShell Cmdlet](./writing-a-windows-powershell-cmdlet.md)
+[Writing a Windows PowerShell Cmdlet](../cmdlet/cmdlet-overview.md)

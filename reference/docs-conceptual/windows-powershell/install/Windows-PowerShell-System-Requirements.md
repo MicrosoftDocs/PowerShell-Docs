@@ -22,17 +22,17 @@ Windows PowerShell 5.1 runs on the following versions of Windows. To run Windows
 install Windows Management Framework 5.1. For more information, see
 [Install and Configure WMF 5.1](../wmf/setup/install-configure.md).
 
-| Windows version | System requirement |
-| ----- | ----- |
-| Windows Server 2019 | Installed by default |
-| Windows Server 2016 | Installed by default |
-| Windows Server 2012 R2 | Install [Windows Management Framework 5.1](https://aka.ms/wmf5download) |
-| Windows Server 2012 | Install [Windows Management Framework 5.1](https://aka.ms/wmf5download) |
+|              Windows version               |                           System requirement                            |
+| ------------------------------------------ | ----------------------------------------------------------------------- |
+| Windows Server 2019                        | Installed by default                                                    |
+| Windows Server 2016                        | Installed by default                                                    |
+| Windows Server 2012 R2                     | Install [Windows Management Framework 5.1](https://aka.ms/wmf5download) |
+| Windows Server 2012                        | Install [Windows Management Framework 5.1](https://aka.ms/wmf5download) |
 | Windows Server 2008 R2 with Service Pack 1 | Install [Windows Management Framework 5.1](https://aka.ms/wmf5download) |
-| Windows 10 version 1607 and up | Installed by default |
-| Windows 10 version 1507, 1511 | Install [Windows Management Framework 5.1](https://aka.ms/wmf5download) |
-| Windows 8.1 | Install [Windows Management Framework 5.1](https://aka.ms/wmf5download) |
-| Windows 7 with Service Pack 1 | Install [Windows Management Framework 5.1](https://aka.ms/wmf5download) |
+| Windows 10 version 1607 and up             | Installed by default                                                    |
+| Windows 10 version 1507, 1511              | Install [Windows Management Framework 5.1](https://aka.ms/wmf5download) |
+| Windows 8.1                                | Install [Windows Management Framework 5.1](https://aka.ms/wmf5download) |
+| Windows 7 with Service Pack 1              | Install [Windows Management Framework 5.1](https://aka.ms/wmf5download) |
 
 ### Windows PowerShell 5.0
 
@@ -41,28 +41,28 @@ install Windows Management Framework 5.1. For more information, see
 [Install and Configure WMF 5.1](../wmf/setup/install-configure.md). Windows Management Framework 5.1
 supersedes Windows Management Framework 5.0.
 
-| Windows version | System requirement |
-| ----- | ----- |
-| Windows Server 2019 | Higher version installed by default |
-| Windows Server 2016 | Higher version installed by default |
-| Windows Server 2012 R2 | Install [Windows Management Framework 5.1](https://aka.ms/wmf5download) |
-| Windows Server 2012 | Install [Windows Management Framework 5.1](https://aka.ms/wmf5download) |
+|              Windows version               |                           System requirement                            |
+| ------------------------------------------ | ----------------------------------------------------------------------- |
+| Windows Server 2019                        | Higher version installed by default                                     |
+| Windows Server 2016                        | Higher version installed by default                                     |
+| Windows Server 2012 R2                     | Install [Windows Management Framework 5.1](https://aka.ms/wmf5download) |
+| Windows Server 2012                        | Install [Windows Management Framework 5.1](https://aka.ms/wmf5download) |
 | Windows Server 2008 R2 with Service Pack 1 | Install [Windows Management Framework 5.1](https://aka.ms/wmf5download) |
-| Windows 10 version 1607 and up | Higher version installed by default |
-| Windows 10 version 1507, 1511 | Installed by default |
-| Windows 8.1 | Install [Windows Management Framework 5.1](https://aka.ms/wmf5download) |
-| Windows 7 with Service Pack 1 | Install [Windows Management Framework 5.1](https://aka.ms/wmf5download) |
+| Windows 10 version 1607 and up             | Higher version installed by default                                     |
+| Windows 10 version 1507, 1511              | Installed by default                                                    |
+| Windows 8.1                                | Install [Windows Management Framework 5.1](https://aka.ms/wmf5download) |
+| Windows 7 with Service Pack 1              | Install [Windows Management Framework 5.1](https://aka.ms/wmf5download) |
 
 ### Windows PowerShell 4.0
 
 Windows PowerShell 4.0 runs on the following versions of Windows. To run Windows PowerShell 4.0,
 install the specified version of the Windows Management Framework for your operating system.
 
-| Windows version | System requirement |
-| ----- | ----- |
-| Windows 8.1 | Installed by default |
-| Windows Server 2012 R2 | Installed by default |
-| Windows® 7 with Service Pack 1 | Install [Windows Management Framework 4.0](https://www.microsoft.com/en-us/download/details.aspx?id=40855) |
+|               Windows version               |                                             System requirement                                             |
+| ------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| Windows 8.1                                 | Installed by default                                                                                       |
+| Windows Server 2012 R2                      | Installed by default                                                                                       |
+| Windows® 7 with Service Pack 1              | Install [Windows Management Framework 4.0](https://www.microsoft.com/en-us/download/details.aspx?id=40855) |
 | Windows Server® 2008 R2 with Service Pack 1 | Install [Windows Management Framework 4.0](https://www.microsoft.com/en-us/download/details.aspx?id=40855) |
 
 ### Windows PowerShell 3.0
@@ -70,31 +70,31 @@ install the specified version of the Windows Management Framework for your opera
 Windows PowerShell 3.0 runs on the following versions of Windows. To run Windows PowerShell 3.0,
 install the specified version of the Windows Management Framework for your operating system.
 
-| Windows version | System requirement |
-| ----- | ----- |
-| Windows 8 | Installed by default |
-| Windows Server 2012 | Installed by default |
-| Windows® 7 with Service Pack 1 | Install [Windows Management Framework 3.0](https://www.microsoft.com/en-us/download/details.aspx?id=34595) |
+|               Windows version               |                                             System requirement                                             |
+| ------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| Windows 8                                   | Installed by default                                                                                       |
+| Windows Server 2012                         | Installed by default                                                                                       |
+| Windows® 7 with Service Pack 1              | Install [Windows Management Framework 3.0](https://www.microsoft.com/en-us/download/details.aspx?id=34595) |
 | Windows Server® 2008 R2 with Service Pack 1 | Install [Windows Management Framework 3.0](https://www.microsoft.com/en-us/download/details.aspx?id=34595) |
-| Windows Server 2008 with Service Pack 2 | Install [Windows Management Framework 3.0](https://www.microsoft.com/en-us/download/details.aspx?id=34595) |
+| Windows Server 2008 with Service Pack 2     | Install [Windows Management Framework 3.0](https://www.microsoft.com/en-us/download/details.aspx?id=34595) |
 
 ## Microsoft .NET Framework requirements
 
 The following table shows the .NET Framework requirements for Windows PowerShell.
 
-| Version | .NET requirement |
-| ----- | ----- |
-| Windows PowerShell 5.1 | Requires the full installation of Microsoft .NET Framework 4.5. Windows 8.1 and Windows Server 2012 R2 include Microsoft .NET Framework 4.5 by default. |
-| Windows PowerShell 5.0 | Requires the full installation of Microsoft .NET Framework 4.5. Windows 8.1 and Windows Server 2012 R2 include Microsoft .NET Framework 4.5 by default. |
-| Windows PowerShell 4.0 | Requires the full installation of Microsoft .NET Framework 4.5. Windows 8.1 and Windows Server 2012 R2 include Microsoft .NET Framework 4.5 by default. |
+|        Version         |                                                                                 .NET requirement                                                                                  |
+| ---------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Windows PowerShell 5.1 | Requires the full installation of Microsoft .NET Framework 4.5. Windows 8.1 and Windows Server 2012 R2 include Microsoft .NET Framework 4.5 by default.                           |
+| Windows PowerShell 5.0 | Requires the full installation of Microsoft .NET Framework 4.5. Windows 8.1 and Windows Server 2012 R2 include Microsoft .NET Framework 4.5 by default.                           |
+| Windows PowerShell 4.0 | Requires the full installation of Microsoft .NET Framework 4.5. Windows 8.1 and Windows Server 2012 R2 include Microsoft .NET Framework 4.5 by default.                           |
 | Windows PowerShell 3.0 | Requires the full installation of Microsoft .NET Framework 4. Windows 8 and Windows Server 2012 include Microsoft .NET Framework 4.5 by default, which fulfills this requirement. |
 
 Use the following links to download Microsoft .NET Framework from the Microsoft Download Center.
 
-| Version | Link |
-| ----- | ----- |
-| .NET Framework 4.5 (`dotNetFx45_Full_setup.exe`) | [Microsoft .NET Framework 4.5](https://go.microsoft.com/fwlink/?LinkID=242919) |
-| .NET Framework 4 (`dotNetFx40_Full_setup.exe`) | [Microsoft .NET Framework 4 (Web Installer)](https://www.microsoft.com/en-us/download/details.aspx?id=17851) |
+|                     Version                      |                                                     Link                                                     |
+| ------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
+| .NET Framework 4.5 (`dotNetFx45_Full_setup.exe`) | [Microsoft .NET Framework 4.5](https://go.microsoft.com/fwlink/?LinkID=242919)                               |
+| .NET Framework 4 (`dotNetFx40_Full_setup.exe`)   | [Microsoft .NET Framework 4 (Web Installer)](https://www.microsoft.com/en-us/download/details.aspx?id=17851) |
 
 ## Windows Management Framework 4.0
 
@@ -162,7 +162,7 @@ For information about adding or installing the Windows PowerShell 2.0 engine, an
 installing the required versions of the Microsoft .NET Framework, see
 [Installing the Windows PowerShell 2.0 Engine](Installing-the-Windows-PowerShell-2.0-Engine.md). For
 information about starting the Windows PowerShell 2.0 engine, see
-[Starting the Windows PowerShell 2.0 Engine](../getting-started/Starting-the-Windows-PowerShell-2.0-Engine.md).
+[Starting the Windows PowerShell 2.0 Engine](../Starting-the-Windows-PowerShell-2.0-Engine.md).
 
 ## Windows Preinstallation Environment
 
@@ -180,10 +180,8 @@ The **WinRM** service isn't present on Windows PE.
 
 ## See also
 
-[Getting Started with Windows PowerShell](../getting-started/Getting-Started-with-Windows-PowerShell.md)
-
 [Installing Windows PowerShell](Installing-Windows-PowerShell.md)
 
-[Starting Windows PowerShell](../getting-started/Starting-Windows-PowerShell.md)
+[Starting Windows PowerShell](../Starting-Windows-PowerShell.md)
 
 [Windows Management Framework](../wmf/overview.md)
