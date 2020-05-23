@@ -6,7 +6,7 @@ tags: [PowerShell,Everything]
 share-img: "/img/share-img/2018-01-12-Powershell-switch-statement.png"
 ---
 
-Like many other languages, PowerShell has commands for controlling the flow of execution within your scripts. One of those statement is the [switch](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_switch?view=powershell-5.1) statement and in PowerShell, it offers features that are not found in other languages. Today we will take a deep dive into working with the PowerShell `switch`.
+Like many other languages, PowerShell has commands for controlling the flow of execution within your scripts. One of those statement is the [switch](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_switch) statement and in PowerShell, it offers features that are not found in other languages. Today we will take a deep dive into working with the PowerShell `switch`.
 
 <!--more-->
 
@@ -192,7 +192,7 @@ We can enable wildcard support with the `-wildcard` switch. This uses the same w
         }
     }
 
-    # Output 
+    # Output
     WARNING: Warning, out of disk space
 ```
 
@@ -287,17 +287,17 @@ Normally, this is where I would introduce the `break` statement, but it is bette
 ``` powershell
     switch ( 'Word' )
     {
-        'word' 
+        'word'
         {
             'lower case word match'
             continue
         }
-        'Word' 
+        'Word'
         {
             'mixed case word match'
             continue
         }
-        'WORD' 
+        'WORD'
         {
             'upper case word match'
             continue
@@ -368,7 +368,7 @@ A `break` statement will exit the switch. This is the same behavior that `contin
         }
     }
 
-    # Output 
+    # Output
     Downloading update
     WARNING: Ran into errors downloading file
     write-error -message $PSItem : Error: out of disk space
@@ -471,11 +471,11 @@ We can use a scriptblock to perform the evaluation for a match if needed.
 
     switch ( $age )
     {
-        {$PSItem -le 18} 
+        {$PSItem -le 18}
         {
             'child'
         }
-        {$PSItem -gt 18} 
+        {$PSItem -gt 18}
         {
             'adult'
         }

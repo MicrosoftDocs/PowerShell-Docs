@@ -39,7 +39,7 @@ I point this out because `Write-Error` and other non-terminating errors will not
 
 ## Swallowing an exception
 
-This is when you catch an error just to suppress it. Do this with caution because it can make troubleshooting issues very difficult. 
+This is when you catch an error just to suppress it. Do this with caution because it can make troubleshooting issues very difficult.
 
 # Basic command syntax
 
@@ -118,7 +118,7 @@ Any time you open or connect to a resource, you should close it. If the `Execute
 
     $command = [System.Data.SqlClient.SqlCommand]::New(queryString, connection)
     try
-    {         
+    {
         $command.Connection.Open()
         $command.ExecuteNonQuery()
     }
@@ -153,7 +153,7 @@ This will give you the cleanest message to use in logging and general output. `T
     {
         Write-Output "Ran into an issue: $($PSItem.ToString())"
     }
-    
+
     catch
     {
         Write-Output "Ran into an issue: $PSItem"
@@ -190,7 +190,7 @@ This property will show the order of function calls that got you to the code whe
     at Do-Something, C:\blog\throwerror.ps1: line 5
     at <ScriptBlock>, C:\blog\throwerror.ps1: line 18
 
-I am only making calls to functions in the same script but this would track the calls if multiple scripts were involved. 
+I am only making calls to functions in the same script but this would track the calls if multiple scripts were involved.
 
 ## $PSItem.Exception
 
@@ -198,7 +198,7 @@ This is the actual exception that was thrown.
 
 ### $PSItem.Exception.Message
 
-This is the general message that describes the exception and is a good starting point when troubleshooting. Most exceptions have a default message but can also be set to something custom when the exception is thrown. 
+This is the general message that describes the exception and is a good starting point when troubleshooting. Most exceptions have a default message but can also be set to something custom when the exception is thrown.
 
     PS:> $PSItem.Exception.Message
 
@@ -241,7 +241,7 @@ You can be selective with the exceptions that you catch. Exceptions have a type 
         Do-Something -Path $path
     }
     catch [System.IO.FileNotFoundException]
-    {        
+    {
         Write-Output "Could not find $path"
     }
     catch [System.IO.IOException]
@@ -302,13 +302,13 @@ We can add these typed exceptions to `Write-Error` and we can still `catch` the 
 
     # with normal message
     Write-Error -Message "Could not find path: $path" -Exception ([System.IO.FileNotFoundException]::new()) -ErrorAction Stop
-    
+
     # With message inside new exception
     Write-Error -Exception ([System.IO.FileNotFoundException]::new("Could not find path: $path")) -ErrorAction Stop
 
     # Pre PS 5.0
     Write-Error -Exception ([System.IO.FileNotFoundException]"Could not find path: $path") -ErrorAction Stop
-    
+
     Write-Error -Message "Could not find path: $path" -Exception ( New-Object -TypeName System.IO.FileNotFoundException ) -ErrorAction Stop
 
 Then we can catch it like this:
@@ -328,18 +328,18 @@ I start by searching that list for exceptions that feel like they would be a goo
 
 ## Exceptions are objects
 
-If you start using a lot of typed exceptions, remember that they are objects. Different exceptions have different constructors and properties. If we look at the [documentation](https://docs.microsoft.com/en-us/dotnet/api/System.IO.FileNotFoundException?view=netframework-4.7) for `System.IO.FileNotFoundException`, we will see that we can pass in a message and a file path.
+If you start using a lot of typed exceptions, remember that they are objects. Different exceptions have different constructors and properties. If we look at the [documentation](https://docs.microsoft.com/dotnet/api/System.IO.FileNotFoundException) for `System.IO.FileNotFoundException`, we will see that we can pass in a message and a file path.
 
     [System.IO.FileNotFoundException]::new("Could not find file", $path)
 
 And it has a `FileName` property that exposes that file path.
 
     catch [System.IO.FileNotFoundException]
-    {        
+    {
         Write-Output $PSItem.Exception.FileName
     }
 
-You will have to consult the [.Net documentation](https://docs.microsoft.com/en-us/dotnet/api/index?view=netframework-4.7) for other constructors and object properties. 
+You will have to consult the [.Net documentation](https://docs.microsoft.com/dotnet/api) for other constructors and object properties.
 
 ## Re-throwing an exception
 
@@ -398,7 +398,7 @@ Dexter Dhami pointed out that I can use `ThrowTerminatingError()` to correct tha
 
 If we assume that `ThrowTerminatingError()` was called inside a function called `Get-Resource`, then this is the error that we would see.
 
-    Get-Resource : Could not find C:\Program Files (x86)\Reference 
+    Get-Resource : Could not find C:\Program Files (x86)\Reference
     Assemblies\Microsoft\Framework\.NETPortable\v4.6\System.IO.xml
     At line:6 char:5
     +     Get-Resource -Path $Path

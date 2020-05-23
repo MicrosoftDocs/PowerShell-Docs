@@ -24,7 +24,7 @@ This works out OK when there are very few values to add. Especially so if there 
 
     $message = 'Hello, ' + $first + ' ' + $last + '.'
 
-This is a very simple and common requirement and this is already getting harder to read. 
+This is a very simple and common requirement and this is already getting harder to read.
 
 # Variable substitution
 
@@ -41,7 +41,7 @@ Things get a little tricky when you start trying to get the values of properties
     $directory = Get-Item 'c:\windows'
     $message = "Time: $directory.CreationTime"
 
-You would be expecting to get the `CreationTime` off of the `$directory`, but instead you get this `Time: c:\windows.CreationTime` as your value. The reason is that this type of substitution only sees the base variable. It considers the period as part of the string so it stops resolving the value any deeper. 
+You would be expecting to get the `CreationTime` off of the `$directory`, but instead you get this `Time: c:\windows.CreationTime` as your value. The reason is that this type of substitution only sees the base variable. It considers the period as part of the string so it stops resolving the value any deeper.
 
 It just so happens that this object gives a string as a default value when placed into a string. Some objects will give you the type name instead like `System.Collections.Hashtable`. Just something to watch for.
 
@@ -71,7 +71,7 @@ Even though I have this option, I don't like it. It gets cluttered quickly and h
 
 What is happening here is that the string is parsed for the tokens `{0}` and `{1}`, then it uses that number to pick from the values provided. If you want to repeat one value some place in the string, you can reuse that values number.
 
-The more complicated the string gets, the more value you will get out of this approach. 
+The more complicated the string gets, the more value you will get out of this approach.
 
 ## Format values as arrays
 
@@ -87,7 +87,7 @@ This is not splatting because I am passing the whole array in, but the idea is s
 
 ## Advanced formatting
 
-I intentionally called these out as coming from .Net because there are lots of formatting options already well [documented](https://msdn.microsoft.com/en-us/library/system.string.format(v=vs.110).aspx) on it. There are built in ways to format various data types.
+I intentionally called these out as coming from .Net because there are lots of formatting options already well [documented](https://docs.microsoft.com/dotnet/api/system.string.format#overloads) on it. There are built in ways to format various data types.
 
     "{0:yyyyMMdd}" -f (get-date)
     "Population {0:N0}" -f  8175133
@@ -156,7 +156,7 @@ Again, this is something that I am reaching out to .Net for. I don't use it ofte
 
 # Delineation with braces
 
-This is used for suffix concatenation within the string. Sometimes your variable does not have a clean word boundary. 
+This is used for suffix concatenation within the string. Sometimes your variable does not have a clean word boundary.
 
     $test = "Bet"
     $tester = "Better"
@@ -169,7 +169,7 @@ Here is an alternate to this approache:
     Write-Host "$test $tester $($test)ter"
     Write-Host "{0} {1} {0}ter" -f $test, $tester
 
-I personally use format string for this, but this is good to know incase you see it in the wild. 
+I personally use format string for this, but this is good to know incase you see it in the wild.
 
 # Find and replace tokens
 
@@ -180,9 +180,9 @@ Let us assume you pulled in a template from a file that has a lot of text.
     $letter = Get-Content -Path TemplateLetter.txt -RAW
     $letter = $letter -replace '#FULL_NAME#', 'Kevin Marquette'
 
-You may have lots of tokens to replace. The trick is to use a very distinct token that is easy to find and replace. I tend to use a special character at both ends to help distinguish it. 
+You may have lots of tokens to replace. The trick is to use a very distinct token that is easy to find and replace. I tend to use a special character at both ends to help distinguish it.
 
-I recently found a new way to approach this. I decided to leave this section in here because this is a pattern that is commonly used. 
+I recently found a new way to approach this. I decided to leave this section in here because this is a pattern that is commonly used.
 
 ## Replace multiple tokens
 
@@ -208,10 +208,10 @@ Those tokens could be loaded from JSON or CSV if needed.
 There is a clever way to define a substitution string with single quotes and expand the vaiables later. Look at this example:
 
     $message = 'Hello, $Name!'
-    $name = 'Kevin Marquette'    
+    $name = 'Kevin Marquette'
     $string = $ExecutionContext.InvokeCommand.ExpandString($message)
 
-The call to `.InvokeCommand.ExpandString` on the current execution context will use the variables in the current scope for substitution. The key thing here is that the `$message` can be defined very early before the variables even exist. 
+The call to `.InvokeCommand.ExpandString` on the current execution context will use the variables in the current scope for substitution. The key thing here is that the `$message` can be defined very early before the variables even exist.
 
 If we expand on that just a little bit, we can perform this substitution over and over wih different values.
 
@@ -221,17 +221,17 @@ If we expand on that just a little bit, we can perform this substitution over an
         $ExecutionContext.InvokeCommand.ExpandString($message)
     }
 
-To keep going on this idea; you could be importing a large email template from a text file to do this. I have to thank [Mark Kraus](https://get-powershellblog.blogspot.com/) for this [sugestion](https://www.reddit.com/r/PowerShell/comments/5npf8h/kevmar_everything_you_wanted_to_know_about/dcdfia5/). 
+To keep going on this idea; you could be importing a large email template from a text file to do this. I have to thank [Mark Kraus](https://get-powershellblog.blogspot.com/) for this [sugestion](https://www.reddit.com/r/PowerShell/comments/5npf8h/kevmar_everything_you_wanted_to_know_about/dcdfia5/).
 
 
 # Whatever works the best for you
 
-I am a fan of the format string approach. I definitely do this with the more complicated strings or if there are multiple variables. On anything that is very short, I may use any one of these. 
+I am a fan of the format string approach. I definitely do this with the more complicated strings or if there are multiple variables. On anything that is very short, I may use any one of these.
 
 ## Anything else?
 I covered a lot of ground on this one. My hope is that you walk away leaning something new.
 
-Here is a list of everything we covered in case you want to jump back up to something. 
+Here is a list of everything we covered in case you want to jump back up to something.
 
 # Index
 

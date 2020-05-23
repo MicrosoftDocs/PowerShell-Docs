@@ -6,7 +6,7 @@ tags: [PowerShell,Everything]
 share-img: "/img/share-img/2019-08-11-Powershell-if-then-else-equals-operator.png"
 ---
 
-Like many other languages, PowerShell has statements for conditionally executing code in your scripts. One of those statements is the [if](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_if?view=powershell-5.1) statement. Today we will take a deep dive into one of the most fundamental commands in PowerShell.
+Like many other languages, PowerShell has statements for conditionally executing code in your scripts. One of those statements is the [if](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_if) statement. Today we will take a deep dive into one of the most fundamental commands in PowerShell.
 
 <!--more-->
 
@@ -334,7 +334,7 @@ Evaluation happens from left to right. If the first item evaluates to `$false` t
 
 ## -or
 
-The `-or` allows for you to specify two expressions and returns `$true` if either one of them is `$true`. 
+The `-or` allows for you to specify two expressions and returns `$true` if either one of them is `$true`.
 
 ``` posh
     if ( $age -le 13 -or $age -ge 55 )
@@ -343,7 +343,7 @@ The `-or` allows for you to specify two expressions and returns `$true` if eithe
 Just like with the `-and` operator, the evaluation happens from left to right. Except that if the first part is `$true`, then the whole statement is `$true` and it will not process the rest of the expression.
 
 
-Also make note of how the syntax works for these operators. You need two separate expressions. I have seen users try to do something like this `$value -eq 5 -or 6` without realizing their mistake.  
+Also make note of how the syntax works for these operators. You need two separate expressions. I have seen users try to do something like this `$value -eq 5 -or 6` without realizing their mistake.
 
 ## -xor exclusive or
 
@@ -353,7 +353,7 @@ It's rare that anyone would ever use this logical operator and I can't think up 
 
 # Bitwise operators
 
-Bitwise operators perform calculations on the bits within the values and produce a new value as the result. Teaching [bitwise operators](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_arithmetic_operators?view=powershell-6#bitwise-operators) is beyond the scope of this article, but here is the list the them.
+Bitwise operators perform calculations on the bits within the values and produce a new value as the result. Teaching [bitwise operators](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_arithmetic_operators#bitwise-operators) is beyond the scope of this article, but here is the list the them.
 
 * `-band` binary AND
 * `-bor` binary OR
@@ -364,7 +364,7 @@ Bitwise operators perform calculations on the bits within the values and produce
 
 
 # PowerShell expressions
-  
+
 We can use normal PowerShell inside the condition statement.
 
 ``` posh
@@ -659,7 +659,7 @@ We can break this up into multiple statements and check them one at a time. In t
 
 I did have to invert the logic to make the flag logic work correctly. Each evaluation is an individual `if` statement. The advantage of this is that when you are debugging, you can tell exactly what the logic is doing. I was able to add much better verbosity at the same time.
 
-The obvious downside is that it is so much more code to write. The code is more complex to look at as it takes a single line of logic and explodes it into 25 or more lines. 
+The obvious downside is that it is so much more code to write. The code is more complex to look at as it takes a single line of logic and explodes it into 25 or more lines.
 
 ## Using functions
 

@@ -108,7 +108,7 @@ We can take this one more step and use a variable for the property name.
     $property = 'Name'
     $myObject.$property
 
-I know that looks strange, but it works. 
+I know that looks strange, but it works.
 
 ### Convert pscustomboject into a hashtable
 
@@ -214,11 +214,11 @@ Powershell decides for us what properties to display by default. A lot of the na
     $PSStandardMembers = [System.Management.Automation.PSMemberInfo[]]@($defaultDisplayPropertySet)
     $MyObject | Add-Member MemberSet PSStandardMembers $PSStandardMembers
 
-Now when my object just falls to the shell, it will only show those properties by default. 
+Now when my object just falls to the shell, it will only show those properties by default.
 
 ## Update-TypeData with DefaultPropertySet
 
-This is really nice but I recently saw a better way when watching [PowerShell unplugged 2016 with Jeffrey Snover & Don Jones](https://www.youtube.com/watch?v=Ab46gHXNm8Q). He was using [Update-TypeData](https://technet.microsoft.com/en-us/library/hh849908.aspx) to specify the default properties. 
+This is really nice but I recently saw a better way when watching [PowerShell unplugged 2016 with Jeffrey Snover & Don Jones](https://www.youtube.com/watch?v=Ab46gHXNm8Q). He was using [Update-TypeData](https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Utility/Update-TypeData) to specify the default properties.
 
     $TypeData = @{
         TypeName = 'My.Object'
@@ -258,15 +258,15 @@ You can also define an `OutputType` for your advanced functions.
 
     function Get-MyObject
     {
-        [OutputType('My.Object')] 
+        [OutputType('My.Object')]
         [CmdletBinding()]
             param
             (
                 ...
 
-The [OutputType](https://technet.microsoft.com/en-us/library/hh847785.aspx) attribute value is only a documentation note. It is not derived from the function code or compared to the actual function output.
+The [OutputType](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_functions_outputtypeattribute) attribute value is only a documentation note. It is not derived from the function code or compared to the actual function output.
 
-The main reason you would use an output type is so that meta information about your function reflects your intentions. Things like `Get-Command`,`Get-Help` and your development environment can take advantage of that.  If you want more information then take a look at the help for it: [about_Functions_OutputTypeAttribute](https://technet.microsoft.com/en-us/library/hh847785.aspx)
+The main reason you would use an output type is so that meta information about your function reflects your intentions. Things like `Get-Command`,`Get-Help` and your development environment can take advantage of that.  If you want more information then take a look at the help for it: [about_Functions_OutputTypeAttribute](https://technet.microsoft.com/library/hh847785.aspx)
 
 With that said, if you are utilizing Pester to unit test your functions then it would be a good idea to validate the output objects match your `OutputType`. This could catch variables that just fall to the pipe when they shouldn't.
 
@@ -274,5 +274,5 @@ With that said, if you are utilizing Pester to unit test your functions then it 
 
 The context of this was all about `[PSCustomObject]`, but a lot of this information applies to objects in general.
 
-I have seen most of these features in passing before but never saw them presented as a collection of information on `PSCustomObject`. Just this last week I stumbled upon another one and was surprised that I had not seen it before. I wanted to pull all these ideas together so you can hopefully see the bigger picture and be aware of them when you have an opportunity to use them. I hope you learned something and can find a way to work this into your scripts. 
- 
+I have seen most of these features in passing before but never saw them presented as a collection of information on `PSCustomObject`. Just this last week I stumbled upon another one and was surprised that I had not seen it before. I wanted to pull all these ideas together so you can hopefully see the bigger picture and be aware of them when you have an opportunity to use them. I hope you learned something and can find a way to work this into your scripts.
+

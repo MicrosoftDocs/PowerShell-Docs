@@ -18,7 +18,7 @@ This is a really easy feature that you can enable in your functions that provide
 
 # CommonParameters
 
-Before we look at implementing these [common parameters](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_commonparameters?view=powershell-7), I want to take a quick look at how they are used.
+Before we look at implementing these [common parameters](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_commonparameters), I want to take a quick look at how they are used.
 
 # Using -WhatIf
 
@@ -380,7 +380,7 @@ The biggest issue with `ShouldContinue` is that it requires the user to run it i
 
 ## Yes to all
 
-This is automatically handled with `ShouldProcess` but we have to do a little more work for `ShouldContinue`. There is a second method overload where we have to pass in a few values by reference to control the logic. 
+This is automatically handled with `ShouldProcess` but we have to do a little more work for `ShouldContinue`. There is a second method overload where we have to pass in a few values by reference to control the logic.
 
 ``` PowerShell
 function Test-ShouldContinue {

@@ -70,7 +70,7 @@ This makes empty strings and `$null` values easy to spot.
 
 ## In numeric equation
 
-When a `$null` value is used in a numeric equation then your results will be invalid if they don't give an error. Sometimes the `$null` will evaluate to `0` and other times it will make the whole result `$null`. Here is an example with multiplication that gives 0 or `$null` depending on the order of the values.  
+When a `$null` value is used in a numeric equation then your results will be invalid if they don't give an error. Sometimes the `$null` will evaluate to `0` and other times it will make the whole result `$null`. Here is an example with multiplication that gives 0 or `$null` depending on the order of the values.
 
 ``` posh
     PS> $null * 5
@@ -192,7 +192,7 @@ A common way that people check for a non `$null` value is to use a simple `if()`
     }
 ```
 
-If the value is `$null`, this will evaluate to `$false`. This is simple and easy to read, but be careful that it is looking for exactly what you are expecting it to look for. I read that line of code as `If $value has a value`, but thats not the whole story. That line is actually saying `If $value is not $null or 0 or $false or an empty string`. 
+If the value is `$null`, this will evaluate to `$false`. This is simple and easy to read, but be careful that it is looking for exactly what you are expecting it to look for. I read that line of code as `If $value has a value`, but thats not the whole story. That line is actually saying `If $value is not $null or 0 or $false or an empty string`.
 
 Here is a more complete sample of that statement.
 
@@ -256,7 +256,7 @@ Running this example on Windows PowerShell 5.1 and PowerShell 6.0 will give you 
 
 # Empty null
 
-There is one special type of `$null` that acts differently than the others. I am going to call it the empty `$null` but its really a [System.Management.Automation.Internal.AutomationNull](https://docs.microsoft.com/en-us/dotnet/api/system.management.automation.internal.automationnull?view=powershellsdk-1.1.0). This empty `$null` is the one you get as the result of a function or script block that returns nothing (a void result).
+There is one special type of `$null` that acts differently than the others. I am going to call it the empty `$null` but its really a [System.Management.Automation.Internal.AutomationNull](https://docs.microsoft.com/dotnet/api/system.management.automation.internal.automationnull). This empty `$null` is the one you get as the result of a function or script block that returns nothing (a void result).
 
 ``` posh
     PS> function Get-Nothing {}

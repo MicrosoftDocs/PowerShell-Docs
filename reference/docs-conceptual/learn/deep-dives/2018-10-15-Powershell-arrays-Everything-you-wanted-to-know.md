@@ -6,7 +6,7 @@ tags: [PowerShell,Basics,Arrays]
 share-img: "/img/share-img/2018-10-15-Powershell-arrays-Everything-you-wanted-to-know.png"
 ---
 
-[Arrays](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_arrays?view=powershell-6&viewFallbackFrom=powershell-Microsoft.PowerShell.Core) are a fundamental language feature of most programming languages. They are a collection of values or objects and are therefore, difficult to avoid. Let's take a close look at arrays and everything they have to offer.
+[Arrays](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_arrays) are a fundamental language feature of most programming languages. They are a collection of values or objects and are therefore, difficult to avoid. Let's take a close look at arrays and everything they have to offer.
 
 <!--more-->
 
@@ -82,7 +82,7 @@ One cool little trick worth mentioning is that you can use `Write-Output` to qui
     $data = Write-Output Zero One Two Three
 ```
 
-This is handy because you don't have to put quotes around the strings when the parameter accepts strings. I would never do this in a script but it's fair game in the console. 
+This is handy because you don't have to put quotes around the strings when the parameter accepts strings. I would never do this in a script but it's fair game in the console.
 
 ## Accessing items
 
@@ -834,7 +834,7 @@ You can create an array of any type using a similar syntax. When you create a st
 
 ## ArrayList
 
-Adding items to an array is one of its biggest limitations, but there are a few other collections that we can turn to that solve this problem. 
+Adding items to an array is one of its biggest limitations, but there are a few other collections that we can turn to that solve this problem.
 
 The `ArrayList` is commonly one of the first things that we think of when we need an array that is faster to work with. It acts like an object array every place that we need it, but it handles adding items quickly.
 
