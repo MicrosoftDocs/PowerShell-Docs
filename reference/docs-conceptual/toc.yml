@@ -753,6 +753,10 @@
       href: developer/windows-powershell.md
     - name: Installing the Windows PowerShell SDK
       href: developer/installing-the-windows-powershell-sdk.md
+    - name: Windows PowerShell Reference
+      href: developer/windows-powershell-reference.md
+    - name: What's New
+      href: developer/windows-powershell-reference-whats-new.md
     - name: Writing a Windows PowerShell Module
       items:
       - name: Overview
@@ -771,46 +775,6 @@
         href: developer/module/modifying-the-psmodulepath-installation-path.md
       - name: Importing a PowerShell Module
         href: developer/module/importing-a-powershell-module.md
-      - name: Writing Help for Windows PowerShell Modules
-        href: developer/module/writing-help-for-windows-powershell-modules.md
-        items:
-        - name: Naming Help Files
-          href: developer/module/naming-help-files.md
-        - name: Supporting Updatable Help
-          href: developer/module/supporting-updatable-help.md
-          items:
-          - name: Updatable Help Overview
-            href: developer/module/updatable-help-overview.md
-          - name: "Updatable Help Authoring: Step-by-Step"
-            href: developer/module/updatable-help-authoring-step-by-step.md
-          - name: How Updatable Help Works
-            href: developer/module/how-updatable-help-works.md
-          - name: How to Create a HelpInfo XML File
-            href: developer/module/how-to-create-a-helpinfo-xml-file.md
-            items:
-            - name: HelpInfo XML Schema
-              href: developer/module/helpinfo-xml-schema.md
-            - name: HelpInfo XML Sample File
-              href: developer/module/helpinfo-xml-sample-file.md
-            - name: How to Name a HelpInfo XML File
-              href: developer/module/how-to-name-a-helpinfo-xml-file.md
-            - name: How to Set HelpInfo XML Version Numbers
-              href: developer/module/how-to-set-helpinfo-xml-version-numbers.md
-          - name: How to Prepare Updatable Help CAB Files
-            href: developer/module/how-to-prepare-updatable-help-cab-files.md
-            items:
-            - name: How to Create and Upload CAB Files
-              href: developer/module/how-to-create-and-upload-cab-files.md
-            - name: How to Name an Updatable Help CAB File
-              href: developer/module/how-to-name-an-updatable-help-cab-file.md
-            - name: File Types Permitted in an Updatable Help CAB File
-              href: developer/module/file-types-permitted-in-an-updatable-help-cab-file.md
-            - name: How to Update Help Files
-              href: developer/module/how-to-update-help-files.md
-            - name: How to Test Updatable Help
-              href: developer/module/how-to-test-updatable-help.md
-          - name: Supporting Online Help
-            href: developer/module/supporting-online-help.md
     - name: Writing a Windows PowerShell Cmdlet
       items:
       - name: Cmdlet Overview
@@ -1676,6 +1640,46 @@
               href: developer/help/how-to-add-examples-to-a-cmdlet-help-topic.md
             - name: How to Add Related Links to a Cmdlet Help Topic
               href: developer/help/how-to-add-related-links-to-a-cmdlet-help-topic.md
+        - name: Writing Help for Windows PowerShell Modules
+          href: developer/module/writing-help-for-windows-powershell-modules.md
+          items:
+          - name: Naming Help Files
+            href: developer/help/naming-help-files.md
+          - name: Supporting Updatable Help
+            href: developer/help/supporting-updatable-help.md
+            items:
+            - name: Updatable Help Overview
+              href: developer/help/updatable-help-overview.md
+            - name: "Updatable Help Authoring: Step-by-Step"
+              href: developer/help/updatable-help-authoring-step-by-step.md
+            - name: How Updatable Help Works
+              href: developer/help/how-updatable-help-works.md
+            - name: How to Create a HelpInfo XML File
+              href: developer/help/how-to-create-a-helpinfo-xml-file.md
+              items:
+              - name: HelpInfo XML Schema
+                href: developer/help/helpinfo-xml-schema.md
+              - name: HelpInfo XML Sample File
+                href: developer/help/helpinfo-xml-sample-file.md
+              - name: How to Name a HelpInfo XML File
+                href: developer/help/how-to-name-a-helpinfo-xml-file.md
+              - name: How to Set HelpInfo XML Version Numbers
+                href: developer/help/how-to-set-helpinfo-xml-version-numbers.md
+            - name: How to Prepare Updatable Help CAB Files
+              href: developer/help/how-to-prepare-updatable-help-cab-files.md
+              items:
+              - name: How to Create and Upload CAB Files
+                href: developer/help/how-to-create-and-upload-cab-files.md
+              - name: How to Name an Updatable Help CAB File
+                href: developer/help/how-to-name-an-updatable-help-cab-file.md
+              - name: File Types Permitted in an Updatable Help CAB File
+                href: developer/help/file-types-permitted-in-an-updatable-help-cab-file.md
+              - name: How to Update Help Files
+                href: developer/help/how-to-update-help-files.md
+              - name: How to Test Updatable Help
+                href: developer/help/how-to-test-updatable-help.md
+            - name: Supporting Online Help
+              href: developer/help/supporting-online-help.md
         - name: Writing Help for Windows PowerShell Providers
           items:
           - name: How to Add Dynamic Parameters to a Provider Help Topic
@@ -1862,7 +1866,3 @@
           href: developer/prog-guide/runspace09-code-sample.md
         - name: RunSpace10 Code Sample
           href: developer/prog-guide/runspace10-code-sample.md
-    - name: Windows PowerShell Reference
-      href: developer/windows-powershell-reference.md
-    - name: What's New
-      href: developer/windows-powershell-reference-whats-new.md
