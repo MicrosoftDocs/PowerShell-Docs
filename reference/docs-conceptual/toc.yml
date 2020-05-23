@@ -41,8 +41,28 @@
       href: learn/ps101/powershell.exe-command-line-help.md
     - name: Using tab expansion
       href: learn/ps101/using-tab-expansion.md
-  - name: Using Experimental Features
-    href: learn/experimental-features.md
+  - name: Deep dives
+    items:
+    - name: Overview
+      href: learn/deep-dives/overview.md
+    - name: Everything you want to know about arrays
+      href: learn/deep-dives/everything-about-arrays.md
+    - name: Everything you want to know about hashtables
+      href: learn/deep-dives/everything-about-hashtable.md
+    - name: Everything you want to know about PSCustomObject
+      href: learn/deep-dives/everything-about-pscustomobject.md
+    - name: Everything you want to know about string substitution
+      href: learn/deep-dives/everything-about-string-substitutions.md
+    - name: Everything you want to know about if/then/else
+      href: learn/deep-dives/everything-about-if.md
+    - name: Everything you want to know about switch
+      href: learn/deep-dives/everything-about-switch.md
+    - name: Everything you want to know about exceptions
+      href: learn/deep-dives/everything-about-exceptions.md
+    - name: Everything you want to know about $null
+      href: learn/deep-dives/everything-about-null.md
+    - name: Everything you want to know about ShouldProcess
+      href: learn/deep-dives/everything-about-shouldprocess.md
   - name: PowerShell remoting
     items:
     - name: Just Enough Administration (JEA)
@@ -73,6 +93,8 @@
       href: learn/remoting/winrmsecurity.md
     - name: Making the second hop in PowerShell Remoting
       href: learn/remoting/ps-remoting-second-hop.md
+  - name: Using Experimental Features
+    href: learn/experimental-features.md
   - name: Additional resources
     href: learn/more-powershell-learning.md
   - name: Glossary
@@ -748,6 +770,8 @@
       href: dev-cross-plat/vscode/understanding-file-encoding.md
   - name: Writing portable modules
     href: dev-cross-plat/writing-portable-modules.md
+  - name: How to create a Standard Library binary module
+    href: dev-cross-plat/create-standard-library-binary-module.md
   - name: Legacy PowerShell SDK
     items:
     - name: Overview
