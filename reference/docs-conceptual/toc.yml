@@ -757,24 +757,6 @@
       href: developer/windows-powershell-reference.md
     - name: What's New
       href: developer/windows-powershell-reference-whats-new.md
-    - name: Writing a Windows PowerShell Module
-      items:
-      - name: Overview
-        href: developer/module/writing-a-windows-powershell-module.md
-      - name: Understanding a Windows PowerShell Module
-        href: developer/module/understanding-a-windows-powershell-module.md
-      - name: How to Write a PowerShell Script Module
-        href: developer/module/how-to-write-a-powershell-script-module.md
-      - name: How to Write a PowerShell Binary Module
-        href: developer/module/how-to-write-a-powershell-binary-module.md
-      - name: How to Write a PowerShell Module Manifest
-        href: developer/module/how-to-write-a-powershell-module-manifest.md
-      - name: Installing a PowerShell Module
-        href: developer/module/installing-a-powershell-module.md
-      - name: Modifying the PSModulePath Installation Path
-        href: developer/module/modifying-the-psmodulepath-installation-path.md
-      - name: Importing a PowerShell Module
-        href: developer/module/importing-a-powershell-module.md
     - name: Writing a Windows PowerShell Cmdlet
       items:
       - name: Cmdlet Overview
@@ -882,20 +864,6 @@
               href: developer/cmdlet/defining-default-member-sets-for-objects.md
           - name: Custom Formatting Files
             href: developer/cmdlet/custom-formatting-files.md
-        - name: Registering Cmdlets
-          href: developer/cmdlet/registering-cmdlets.md
-          items:
-          - name: Modules and Snap-ins
-            href: developer/cmdlet/modules-and-snap-ins.md
-          - name: How to Import Cmdlets Using Modules
-            href: developer/cmdlet/how-to-import-cmdlets-using-modules.md
-          - name: How to Create a Windows PowerShell Snap-in
-            href: developer/cmdlet/how-to-create-a-windows-powershell-snap-in.md
-            items:
-            - name: Writing a Windows PowerShell Snap-in
-              href: developer/cmdlet/writing-a-windows-powershell-snap-in.md
-            - name: Writing a Custom Windows PowerShell Snap-in
-              href: developer/cmdlet/writing-a-custom-windows-powershell-snap-in.md
         - name: Requesting Confirmation
           href: developer/cmdlet/requesting-confirmation.md
           items:
@@ -1017,6 +985,40 @@
           href: developer/cmdlet/stopprocesssample04-sample.md
         - name: Events01 Sample
           href: developer/cmdlet/events01-sample.md
+    - name: Writing a Windows PowerShell Module
+      items:
+      - name: Overview
+        href: developer/module/writing-a-windows-powershell-module.md
+      - name: Understanding a Windows PowerShell Module
+        href: developer/module/understanding-a-windows-powershell-module.md
+      - name: How to Write a PowerShell Script Module
+        href: developer/module/how-to-write-a-powershell-script-module.md
+      - name: How to Write a PowerShell Binary Module
+        href: developer/module/how-to-write-a-powershell-binary-module.md
+      - name: How to Write a PowerShell Module Manifest
+        href: developer/module/how-to-write-a-powershell-module-manifest.md
+      - name: Installing a PowerShell Module
+        href: developer/module/installing-a-powershell-module.md
+      - name: Modifying the PSModulePath Installation Path
+        href: developer/module/modifying-the-psmodulepath-installation-path.md
+      - name: Registering Cmdlets
+        items:
+        - name: Overview
+          href: developer/module/registering-cmdlets.md
+        - name: Modules and Snap-ins
+          href: developer/module/modules-and-snap-ins.md
+        - name: How to Import Cmdlets Using Modules
+          href: developer/module/how-to-import-cmdlets-using-modules.md
+        - name: How to Create a Windows PowerShell Snap-in
+          items:
+          - name: Overview
+            href: developer/module/how-to-create-a-windows-powershell-snap-in.md
+          - name: Writing a Windows PowerShell Snap-in
+            href: developer/module/writing-a-windows-powershell-snap-in.md
+          - name: Writing a Custom Windows PowerShell Snap-in
+            href: developer/module/writing-a-custom-windows-powershell-snap-in.md
+      - name: Importing a PowerShell Module
+        href: developer/module/importing-a-powershell-module.md
     - name: Writing a Windows PowerShell Provider
       items:
       - name: Windows PowerShell Provider Quickstart
