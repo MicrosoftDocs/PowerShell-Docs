@@ -5,7 +5,7 @@ title: PowerShell learning resources
 ---
 # PowerShell learning resources
 
-Other sources to learn PowerShell
+Additional resources for learning about PowerShell.
 
 ## Blogs and community
 

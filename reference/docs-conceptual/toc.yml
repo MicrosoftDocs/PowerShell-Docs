@@ -1,11 +1,18 @@
 - name: How to use this documentation
   href: how-to-use-docs.md
 - name: Overview
-  href: overview.md
+  expanded: true
+  items:
+  - name: What is PowerShell?
+    href: overview.md
+  - name: PowerShell support lifecycle
+    href: powershell-support-lifecycle.md
 - name: Install
   items:
   - name: Overview
     href: install/installing-powershell.md
+  - name: Migrating from Windows PowerShell 5.1 to PowerShell 7
+    href: install/Migrating-from-Windows-PowerShell-51-to-PowerShell-7.md
   - name: Installing PowerShell on Windows
     href: install/installing-powershell-core-on-windows.md
   - name: Installing PowerShell on Linux
@@ -36,6 +43,8 @@
       href: learn/ps101/powershell.exe-command-line-help.md
     - name: Using tab expansion
       href: learn/ps101/using-tab-expansion.md
+  - name: Using Experimental Features
+    href: learn/experimental-features.md
   - name: PowerShell remoting
     items:
     - name: Just Enough Administration (JEA)
@@ -66,7 +75,7 @@
       href: learn/remoting/winrmsecurity.md
     - name: Making the second hop in PowerShell Remoting
       href: learn/remoting/ps-remoting-second-hop.md
-  - name: More learning resources
+  - name: Additional resources
     href: learn/more-powershell-learning.md
   - name: Glossary
     href: learn/glossary.md
@@ -77,8 +86,6 @@
     items:
     - name: What's new in PowerShell 7.0
       href: whats-new/what-s-new-in-powershell-70.md
-  - name: Migrating from Windows PowerShell 5.1 to PowerShell 7
-    href: whats-new/Migrating-from-Windows-PowerShell-51-to-PowerShell-7.md
   - name: What's new in PowerShell Core 6.x
     items:
     - name: What's new in PowerShell Core 6.2
@@ -91,14 +98,10 @@
       href: whats-new/breaking-changes-ps6.md
     - name: Known issues in PowerShell Core 6.0
       href: whats-new/known-issues-ps6.md
-  - name: Using Experimental Features
-    href: whats-new/experimental-features.md
   - name: Module and cmdlet release history
     href: whats-new/cmdlet-versions.md
   - name: Module compatibility list
     href: whats-new/module-compatibility.md
-- name: PowerShell support lifecycle
-  href: powershell-support-lifecycle.md
 - name: Windows PowerShell
   items:
   - name: Installing Windows PowerShell 5.1
@@ -171,55 +174,55 @@
         href: windows-powershell/ise/object-model/the-powershelltabcollection-object.md
       - name: The PowerShellTab object
         href: windows-powershell/ise/object-model/the-powershelltab-object.md
-    - name: Windows Management Framework (WMF)
+  - name: Windows Management Framework (WMF)
+    items:
+    - name: Overview
+      href: windows-powershell/wmf/overview.md
+    - name: Installation
       items:
-      - name: Overview
-        href: windows-powershell/wmf/overview.md
-      - name: Installation
+      - name: Install and configure WMF 5.1
+        href: windows-powershell/wmf/setup/install-configure.md
+      - name: Uninstall WMF 5.0
+        href: windows-powershell/wmf/setup/uninstall.md
+    - name: What's New
+      expanded: true
+      items:
+      - name: WMF 5.x Release Notes
+        href: windows-powershell/wmf/whats-new/release-notes.md
+      - name: Bug Fixes in WMF 5.1
+        href: windows-powershell/wmf/whats-new/bugfixes.md
+      - name: New and updated cmdlets
+        href: windows-powershell/wmf/whats-new/new-updated-cmdlets.md
+      - name: Creating Custom Types using PowerShell Classes
+        href: windows-powershell/wmf/whats-new/class-overview.md
+      - name: Console Improvements in WMF 5.1
+        href: windows-powershell/wmf/whats-new/console-improvements.md
+      - name: Improvements in PowerShell Script Debugging
+        href: windows-powershell/wmf/whats-new/debug-overview.md
+      - name: Script Tracing and Logging
+        href: windows-powershell/wmf/whats-new/script-logging.md
+      - name: DSC Improvements in WMF 5.1
+        href: windows-powershell/wmf/whats-new/DSC-improvements.md
+      - name: PowerShell Engine Improvements in WMF 5.1
+        href: windows-powershell/wmf/whats-new/engine-improvements.md
+      - name: Information Stream
+        href: windows-powershell/wmf/whats-new/informationstream-overview.md
+      - name: Improvements to Just Enough Administration (JEA)
+        href: windows-powershell/wmf/whats-new/jea-improvements.md
+      - name: Improvements to Package Management in WMF 5.1
+        href: windows-powershell/wmf/whats-new/package-management-improvements.md
+      - name: Software Inventory Logging (SIL)
+        href: windows-powershell/wmf/whats-new/sil-overview.md
+      - name: Product Compatibility Status
+        href: windows-powershell/wmf/whats-new/compatibility.md
+      - name: Known Issues
         items:
-        - name: Install and configure WMF 5.1
-          href: windows-powershell/wmf/setup/install-configure.md
-        - name: Uninstall WMF 5.0
-          href: windows-powershell/wmf/setup/uninstall.md
-      - name: What's New
-        expanded: true
-        items:
-        - name: WMF 5.x Release Notes
-          href: windows-powershell/wmf/whats-new/release-notes.md
-        - name: Bug Fixes in WMF 5.1
-          href: windows-powershell/wmf/whats-new/bugfixes.md
-        - name: New and updated cmdlets
-          href: windows-powershell/wmf/whats-new/new-updated-cmdlets.md
-        - name: Creating Custom Types using PowerShell Classes
-          href: windows-powershell/wmf/whats-new/class-overview.md
-        - name: Console Improvements in WMF 5.1
-          href: windows-powershell/wmf/whats-new/console-improvements.md
-        - name: Improvements in PowerShell Script Debugging
-          href: windows-powershell/wmf/whats-new/debug-overview.md
-        - name: Script Tracing and Logging
-          href: windows-powershell/wmf/whats-new/script-logging.md
-        - name: DSC Improvements in WMF 5.1
-          href: windows-powershell/wmf/whats-new/DSC-improvements.md
-        - name: PowerShell Engine Improvements in WMF 5.1
-          href: windows-powershell/wmf/whats-new/engine-improvements.md
-        - name: Information Stream
-          href: windows-powershell/wmf/whats-new/informationstream-overview.md
-        - name: Improvements to Just Enough Administration (JEA)
-          href: windows-powershell/wmf/whats-new/jea-improvements.md
-        - name: Improvements to Package Management in WMF 5.1
-          href: windows-powershell/wmf/whats-new/package-management-improvements.md
-        - name: Software Inventory Logging (SIL)
-          href: windows-powershell/wmf/whats-new/sil-overview.md
-        - name: Product Compatibility Status
-          href: windows-powershell/wmf/whats-new/compatibility.md
-        - name: Known Issues
-          items:
-          - name: Known Issues in WMF 5.0
-            href: windows-powershell/wmf/known-issues/known-issues-50.md
-          - name: Known Issues in WMF 5.1
-            href: windows-powershell/wmf/known-issues/known-issues-51.md
-          - name: Known Issues and Limitations in DSC
-            href: windows-powershell/wmf/known-issues/known-issues-dsc.md
+        - name: Known Issues in WMF 5.0
+          href: windows-powershell/wmf/known-issues/known-issues-50.md
+        - name: Known Issues in WMF 5.1
+          href: windows-powershell/wmf/known-issues/known-issues-51.md
+        - name: Known Issues and Limitations in DSC
+          href: windows-powershell/wmf/known-issues/known-issues-dsc.md
   - name: Starting Windows PowerShell
     href: windows-powershell/starting-windows-powershell.md
   - name: Starting the Windows PowerShell 2.0 Engine
