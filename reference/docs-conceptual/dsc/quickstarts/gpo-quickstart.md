@@ -3,10 +3,9 @@ ms.date:  07/09/2019
 keywords:  dsc,gpo,powershell,configuration,setup
 title:  Quickstart - Convert Group Policy into DSC
 ---
+# Quickstart: Convert Group Policy into DSC
 
 > Applies To: Windows PowerShell 4.0, Windows PowerShell 5.0
-
-# Quickstart: Convert Group Policy into DSC
 
 You can generate a DSC configuration from a Group Policy or Azure Security Center baseline. The
 [BaselineManagement](https://www.powershellgallery.com/packages/BaselineManagement) module includes

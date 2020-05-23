@@ -62,7 +62,7 @@ PowerShell
 
 You can also use the parameters of the **powershell.exe** program to customize the session. For more
 information, see
-[PowerShell.exe Command-Line Help](../core-powershell/console/PowerShell.exe-Command-Line-Help.md).
+[PowerShell.exe Command-Line Help](/powershell/module/Microsoft.PowerShell.Core/About/about_PowerShell_exe).
 
 #### With Administrative privileges (Run as administrator)
 

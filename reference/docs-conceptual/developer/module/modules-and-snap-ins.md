@@ -23,6 +23,6 @@ We recommend that you use modules as the delivery method for adding cmdlets to a
 
 ## See Also
 
-[Writing a Windows PowerShell Module](../module/writing-a-windows-powershell-module.md)
+[Writing a Windows PowerShell Module](writing-a-windows-powershell-module.md)
 
-[Writing a Windows PowerShell Cmdlet](./writing-a-windows-powershell-cmdlet.md)
+[Writing a Windows PowerShell Cmdlet](../cmdlet/cmdlet-overview.md)

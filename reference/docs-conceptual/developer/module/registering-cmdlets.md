@@ -26,4 +26,4 @@ Describes how to register cmdlets using snap-ins.
 
 ## See Also
 
-[Writing a Windows PowerShell Cmdlet](./writing-a-windows-powershell-cmdlet.md)
+[Writing a Windows PowerShell Cmdlet](../cmdlet/cmdlet-overview.md)

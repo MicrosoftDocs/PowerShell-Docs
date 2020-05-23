@@ -145,7 +145,7 @@ For more information, see [Supporting Online Help](./supporting-online-help.md).
 
 ## See Also
 
-[Writing a PowerShell Module](./writing-a-windows-powershell-module.md)
+[Writing a PowerShell Module](../module/writing-a-windows-powershell-module.md)
 
 [Supporting Updatable Help](./supporting-updatable-help.md)
 
