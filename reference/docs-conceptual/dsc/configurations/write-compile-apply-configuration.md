@@ -3,10 +3,9 @@ ms.date:  12/12/2018
 keywords:  dsc,powershell,configuration,service,setup
 title:  Write, Compile, and Apply a Configuration
 ---
+# Write, Compile, and Apply a Configuration
 
 > Applies To: Windows PowerShell 4.0, Windows PowerShell 5.0
-
-# Write, Compile, and Apply a Configuration
 
 This exercise walks through creating and applying a Desired State Configuration (DSC) configuration from start to finish.
 In the following example, you will learn how to write and apply a very simple Configuration. The Configuration will ensure a "HelloWorld.txt" file exists on your local machine. If you delete the file, DSC will recreate it the next time it updates.

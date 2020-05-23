@@ -3,10 +3,9 @@ ms.date:  06/12/2017
 keywords:  dsc,powershell,configuration,setup
 title:  DSCAutomationHostEnabled registry key
 ---
-
->Applies to: Windows PowerShell 5.0
-
 # DSCAutomationHostEnabled registry key
+
+> Applies to: Windows PowerShell 5.0
 
 DSC uses the **DSCAutomationHostEnabled** registry key under **HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System** to enable configuration of the machine at initial boot-up.
 **DSCAutomationHostEnabled** supports three modes:

@@ -162,7 +162,7 @@ For information about adding or installing the Windows PowerShell 2.0 engine, an
 installing the required versions of the Microsoft .NET Framework, see
 [Installing the Windows PowerShell 2.0 Engine](Installing-the-Windows-PowerShell-2.0-Engine.md). For
 information about starting the Windows PowerShell 2.0 engine, see
-[Starting the Windows PowerShell 2.0 Engine](../getting-started/Starting-the-Windows-PowerShell-2.0-Engine.md).
+[Starting the Windows PowerShell 2.0 Engine](../Starting-the-Windows-PowerShell-2.0-Engine.md).
 
 ## Windows Preinstallation Environment
 
@@ -180,10 +180,8 @@ The **WinRM** service isn't present on Windows PE.
 
 ## See also
 
-[Getting Started with Windows PowerShell](../getting-started/Getting-Started-with-Windows-PowerShell.md)
-
 [Installing Windows PowerShell](Installing-Windows-PowerShell.md)
 
-[Starting Windows PowerShell](../getting-started/Starting-Windows-PowerShell.md)
+[Starting Windows PowerShell](../Starting-Windows-PowerShell.md)
 
 [Windows Management Framework](../wmf/overview.md)

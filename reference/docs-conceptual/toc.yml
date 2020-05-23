@@ -23,8 +23,6 @@
     href: install/powershell-core-on-arm.md
   - name: Using PowerShell in Docker
     href: install/PowerShell-in-Docker.md
-- name: Get started with PowerShell
-  href: getting-started-with-windows-powershell.md
 - name: Learning PowerShell
   items:
   - name: PowerShell 101

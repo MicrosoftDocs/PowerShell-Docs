@@ -7,7 +7,7 @@ ms.date: 03/25/2020
 # Migrating from Windows PowerShell 5.1 to PowerShell 7
 
 Designed for cloud, on-premises, and hybrid environments, PowerShell 7 is packed with
-enhancements and [new features](What-s-New-in-PowerShell-70.md).
+enhancements and [new features](../whats-new/What-s-New-in-PowerShell-70.md).
 
 - Installs and runs side-by-side with Windows PowerShell
 - Improved compatibility with existing Windows PowerShell modules

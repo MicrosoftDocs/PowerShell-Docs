@@ -10,7 +10,7 @@ Windows Server 2008 R2 SP1.
 
 If you are interested in PowerShell 6 and later, you need to install PowerShell Core instead of
 Windows PowerShell. For that, see
-[Installing PowerShell Core on Windows](Installing-PowerShell-Core-on-Windows.md).
+[Installing PowerShell Core on Windows](../../install/Installing-PowerShell-Core-on-Windows.md).
 
 ## Finding PowerShell in Windows 10, 8.1, 8.0, and 7
 
@@ -95,4 +95,4 @@ Otherwise, what you might need is
 
 [Windows PowerShell System Requirements](Windows-PowerShell-System-Requirements.md)
 
-[Starting Windows PowerShell](../getting-started/Starting-Windows-PowerShell.md)
+[Starting Windows PowerShell](../Starting-Windows-PowerShell.md)
