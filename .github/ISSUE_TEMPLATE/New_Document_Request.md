@@ -2,7 +2,7 @@
 name: New Document Request/Idea 🚀
 about: Suggest a new document or major rewrite of an existing one
 title: "Document Request"
-labels: issue-doc-idea
+labels: doc-idea
 assignees: ''
 
 ---

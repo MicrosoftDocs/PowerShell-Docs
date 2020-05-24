@@ -476,7 +476,7 @@
         {
             "source_path": "reference/docs-conceptual/wmf/overview.md",
             "redirect_url": "https://docs.microsoft.com/powershell/scripting/windows-powershell/wmf/overview",
-            "redirect_document_id": "true"
+            "redirect_document_id": "flase"
         },
         {
             "source_path": "reference/docs-conceptual/wmf/setup/install-configure.md",
