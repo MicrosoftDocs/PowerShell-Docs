@@ -4211,11 +4211,6 @@
             "redirect_document_id": false
         },
         {
-            "source_path": "reference/virtual-directory-module/6/Microsoft.PowerShell.Core/help.md",
-            "redirect_url": "https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Core/help?view=powershell-6",
-            "redirect_document_id": false
-        },
-        {
             "source_path": "reference/virtual-directory-module/6/Microsoft.PowerShell.Core/Import-Module.md",
             "redirect_url": "https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Core/Import-Module?view=powershell-6",
             "redirect_document_id": false
