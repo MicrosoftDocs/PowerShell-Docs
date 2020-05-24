@@ -4241,11 +4241,6 @@
             "redirect_document_id": false
         },
         {
-            "source_path": "reference/virtual-directory-module/6/Microsoft.PowerShell.Core/mkdir.md",
-            "redirect_url": "https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Core/mkdir?view=powershell-6",
-            "redirect_document_id": false
-        },
-        {
             "source_path": "reference/virtual-directory-module/6/Microsoft.PowerShell.Core/more.md",
             "redirect_url": "https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Core/more?view=powershell-6",
             "redirect_document_id": false
@@ -4283,11 +4278,6 @@
         {
             "source_path": "reference/virtual-directory-module/6/Microsoft.PowerShell.Core/New-PSTransportOption.md",
             "redirect_url": "https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Core/New-PSTransportOption?view=powershell-6",
-            "redirect_document_id": false
-        },
-        {
-            "source_path": "reference/virtual-directory-module/6/Microsoft.PowerShell.Core/oss.md",
-            "redirect_url": "https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Core/oss?view=powershell-6",
             "redirect_document_id": false
         },
         {
