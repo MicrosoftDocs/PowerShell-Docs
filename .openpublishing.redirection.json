@@ -31,7 +31,7 @@
         },
         {
             "source_path": "reference/docs-conceptual/wmf/index.md",
-            "redirect_url": "https://docs.microsoft.com/powershell/scripting/wmf/overview",
+            "redirect_url": "https://docs.microsoft.com/powershell/scripting/windows-powershell/wmf/overview",
             "redirect_document_id": true
         },
         {
