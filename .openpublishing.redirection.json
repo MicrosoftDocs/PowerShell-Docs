@@ -5817,7 +5817,7 @@
         },
         {
             "source_path": "reference/virtual-directory-module/Microsoft.PowerShell.Core/About.md",
-            "redirect_url": "https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about",
+            "redirect_url": "https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/",
             "redirect_document_id": false
         },
         {
