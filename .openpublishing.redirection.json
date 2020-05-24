@@ -4171,11 +4171,6 @@
             "redirect_document_id": false
         },
         {
-            "source_path": "reference/virtual-directory-module/6/Microsoft.PowerShell.Core/Get-HashValueFromString.md",
-            "redirect_url": "https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Core/Get-HashValueFromString?view=powershell-6",
-            "redirect_document_id": false
-        },
-        {
             "source_path": "reference/virtual-directory-module/6/Microsoft.PowerShell.Core/Get-Help.md",
             "redirect_url": "https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Core/Get-Help?view=powershell-6",
             "redirect_document_id": false
@@ -4193,11 +4188,6 @@
         {
             "source_path": "reference/virtual-directory-module/6/Microsoft.PowerShell.Core/Get-Module.md",
             "redirect_url": "https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Core/Get-Module?view=powershell-6",
-            "redirect_document_id": false
-        },
-        {
-            "source_path": "reference/virtual-directory-module/6/Microsoft.PowerShell.Core/Get-OSVersion.md",
-            "redirect_url": "https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Core/Get-OSVersion?view=powershell-6",
             "redirect_document_id": false
         },
         {
