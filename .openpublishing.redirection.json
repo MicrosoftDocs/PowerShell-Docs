@@ -110,7 +110,7 @@
         },
         {
             "source_path": "reference/docs-conceptual/getting-started/Getting-Started-with-Windows-PowerShell.md",
-            "redirect_url": "https://docs.microsoft.com/powershell/scripting/what-is-powershell",
+            "redirect_url": "https://docs.microsoft.com/powershell/scripting/overview",
             "redirect_document_id": "true"
         },
         {
@@ -120,12 +120,12 @@
         },
         {
             "source_path": "reference/docs-conceptual/learn/Understanding-Important-PowerShell-Concepts.md",
-            "redirect_url": "https://docs.microsoft.com/powershell/scripting/Getting-Started-with-Windows-PowerShell",
+            "redirect_url": "https://docs.microsoft.com/powershell/scripting/overview",
             "redirect_document_id": "true"
         },
         {
             "source_path": "reference/docs-conceptual/learn/Understanding-the-PowerShell-Pipeline.md",
-            "redirect_url": "https://docs.microsoft.com/powershell/scripting/Getting-Started-with-Windows-PowerShell",
+            "redirect_url": "https://docs.microsoft.com/powershell/scripting/overview",
             "redirect_document_id": "true"
         },
         {
