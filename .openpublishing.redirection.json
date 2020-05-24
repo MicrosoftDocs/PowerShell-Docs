@@ -4216,11 +4216,6 @@
             "redirect_document_id": false
         },
         {
-            "source_path": "reference/virtual-directory-module/6/Microsoft.PowerShell.Core/ImportSystemModules.md",
-            "redirect_url": "https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Core/ImportSystemModules?view=powershell-6",
-            "redirect_document_id": false
-        },
-        {
             "source_path": "reference/virtual-directory-module/6/Microsoft.PowerShell.Core/Invoke-Command.md",
             "redirect_url": "https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Core/Invoke-Command?view=powershell-6",
             "redirect_document_id": false
@@ -4233,11 +4228,6 @@
         {
             "source_path": "reference/virtual-directory-module/6/Microsoft.PowerShell.Core/Microsoft.PowerShell.Core.md",
             "redirect_url": "https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Core/?view=powershell-6",
-            "redirect_document_id": false
-        },
-        {
-            "source_path": "reference/virtual-directory-module/6/Microsoft.PowerShell.Core/more.md",
-            "redirect_url": "https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Core/more?view=powershell-6",
             "redirect_document_id": false
         },
         {
@@ -4288,16 +4278,6 @@
         {
             "source_path": "reference/virtual-directory-module/6/Microsoft.PowerShell.Core/Out-Null.md",
             "redirect_url": "https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Core/Out-Null?view=powershell-6",
-            "redirect_document_id": false
-        },
-        {
-            "source_path": "reference/virtual-directory-module/6/Microsoft.PowerShell.Core/Pause.md",
-            "redirect_url": "https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Core/Pause?view=powershell-6",
-            "redirect_document_id": false
-        },
-        {
-            "source_path": "reference/virtual-directory-module/6/Microsoft.PowerShell.Core/prompt.md",
-            "redirect_url": "https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Core/prompt?view=powershell-6",
             "redirect_document_id": false
         },
         {
@@ -4368,11 +4348,6 @@
         {
             "source_path": "reference/virtual-directory-module/6/Microsoft.PowerShell.Core/Stop-Job.md",
             "redirect_url": "https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Core/Stop-Job?view=powershell-6",
-            "redirect_document_id": false
-        },
-        {
-            "source_path": "reference/virtual-directory-module/6/Microsoft.PowerShell.Core/TabExpansion2.md",
-            "redirect_url": "https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Core/TabExpansion2?view=powershell-6",
             "redirect_document_id": false
         },
         {
@@ -5726,11 +5701,6 @@
             "redirect_document_id": false
         },
         {
-            "source_path": "reference/virtual-directory-module/6/PSDesiredStateConfiguration/Configuration.md",
-            "redirect_url": "https://docs.microsoft.com/powershell/module/PSDesiredStateConfiguration/Configuration?view=powershell-6",
-            "redirect_document_id": false
-        },
-        {
             "source_path": "reference/virtual-directory-module/6/PSDesiredStateConfiguration/Get-DscResource.md",
             "redirect_url": "https://docs.microsoft.com/powershell/module/PSDesiredStateConfiguration/Get-DscResource?view=powershell-6",
             "redirect_document_id": false
@@ -5738,11 +5708,6 @@
         {
             "source_path": "reference/virtual-directory-module/6/PSDesiredStateConfiguration/New-DSCCheckSum.md",
             "redirect_url": "https://docs.microsoft.com/powershell/module/PSDesiredStateConfiguration/New-DSCCheckSum?view=powershell-6",
-            "redirect_document_id": false
-        },
-        {
-            "source_path": "reference/virtual-directory-module/6/PSDesiredStateConfiguration/node.exe.md",
-            "redirect_url": "https://docs.microsoft.com/powershell/module/PSDesiredStateConfiguration/node.exe?view=powershell-6",
             "redirect_document_id": false
         },
         {
