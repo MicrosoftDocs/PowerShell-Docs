@@ -35,9 +35,9 @@ Each of the following top-level folders in this repo contain a DocSet that is pu
       Configuration feature
     - [gallery/](https://docs.microsoft.com/powershell/scripting/gallery) is for the
       [PowerShell Gallery](https://www.powershellgallery.com/)
-    - [jea/](https://docs.microsoft.com/powershell/scripting/jea/) is for the Just Enough
+    - [jea/](https://docs.microsoft.com/powershell/scripting/learn/remoting/jea/overview) is for the Just Enough
       Administration feature
-    - [wmf/](https://docs.microsoft.com/powershell/scripting/wmf/overview) contains release notes
+    - [wmf/](https://docs.microsoft.com/powershell/scripting/windows-powershell/wmf/overview) contains release notes
       for the Windows Management Framework, the package used to distribute new versions of
       PowerShell to previous versions of Windows.
 
