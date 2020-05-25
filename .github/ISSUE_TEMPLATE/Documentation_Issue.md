@@ -2,7 +2,7 @@
 name: Documentation Issue 📚
 about: Problems with PowerShell documentation
 title: "Documentation Issue"
-labels: issue-question
+labels: question
 assignees: ''
 ---
 <!--
