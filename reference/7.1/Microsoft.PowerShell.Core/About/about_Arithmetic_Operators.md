@@ -1,7 +1,7 @@
 ---
 keywords: powershell,cmdlet
 locale: en-us
-ms.date: 11/27/2017
+ms.date: 05/24/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_arithmetic_operators?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Arithmetic_Operators
@@ -125,6 +125,17 @@ integer.
 
 Notice how **_5/2_ = 2.5** gets rounded to **2**. But, **_7/2_ = 3.5** gets
 rounded to **4**.
+
+You can use the `[Math]` class to get different rounding behavior.
+
+|                          Expression                          | Result |
+| ------------------------------------------------------------ | ------ |
+| `[int][Math]::Round(5 / 2,[MidpointRounding]::AwayFromZero)` | `3`    |
+| `[int][Math]::Ceiling(5 / 2)`                                | `3`    |
+| `[int][Math]::Floor([5 / 2)`                                 | `2`    |
+
+For more information, see the
+[Math.Round](https://docs.microsoft.com/dotnet/api/system.math.round) method.
 
 ## ADDING AND MULTIPLYING NON-NUMERIC TYPES
 
@@ -519,4 +530,3 @@ right operand determine how many bits of the left operand are shifted.
 * [about_variables](about_Variables.md)
 * [Get-Date](../../Microsoft.PowerShell.Utility/Get-Date.md)
 * [New-TimeSpan](../../Microsoft.PowerShell.Utility/New-TimeSpan.md)
-
