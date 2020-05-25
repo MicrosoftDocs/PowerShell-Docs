@@ -23,4 +23,4 @@ experimental platforms.
 ## Windows PowerShell
 
 For more information about installing the legacy versions of PowerShell on Windows, see
-[Installing Windows PowerShell](../windows-powershell/install/Installing-Windows-PowerShell.md).
+[Installing Windows PowerShell](../windows-powershell/install/installing-windows-powershell.md).
