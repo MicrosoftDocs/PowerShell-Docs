@@ -11,6 +11,18 @@ shell and scripting language. Unlike most shells, which accept and return text, 
 on top of the .NET Common Language Runtime (CLR), and accepts and returns .NET objects. This
 fundamental change brings entirely new tools and methods for automation.
 
+:::row:::
+  :::column span="":::
+    :::image type="content" source="media/overview/windows-desktop-660.gif" alt-text="PowerShell on Windows" lightbox="media/overview/windows-desktop.gif":::
+  :::column-end:::
+  :::column span="":::
+    :::image type="content" source="media/overview/linux-desktop-660.gif" alt-text="PowerShell on Linux" lightbox="media/overview/linux-desktop.gif":::
+  :::column-end:::
+  :::column span="":::
+    :::image type="content" source="media/overview/macos-desktop-660.gif" alt-text="PowerShell on macOS" lightbox="media/overview/macos-desktop.gif":::
+  :::column-end:::
+:::row-end:::
+
 ## Output is object-based
 
 Unlike traditional command-line interfaces, PowerShell cmdlets are designed to deal with objects.
