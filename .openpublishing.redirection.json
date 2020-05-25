@@ -557,7 +557,7 @@
 
         {
             "source_path": "reference/virtual-directory-module/5.1/ise.md",
-            "redirect_url": "https://docs.microsoft.com/powershell/module/ise?view=powershell-5.1",
+            "redirect_url": "https://docs.microsoft.com/powershell/module/ise/?view=powershell-5.1",
             "redirect_document_id": false
         },
         {
@@ -582,7 +582,7 @@
         },
         {
             "source_path": "reference/virtual-directory-module/5.1/microsoft.powershell.archive.md",
-            "redirect_url": "https://docs.microsoft.com/powershell/module/microsoft.powershell.archive?view=powershell-5.1",
+            "redirect_url": "https://docs.microsoft.com/powershell/module/microsoft.powershell.archive/?view=powershell-5.1",
             "redirect_document_id": false
         },
         {
@@ -597,12 +597,12 @@
         },
         {
             "source_path": "reference/virtual-directory-module/5.1/microsoft.powershell.archive/microsoft.powershell.archive.md",
-            "redirect_url": "https://docs.microsoft.com/powershell/module/microsoft.powershell.archive?view=powershell-5.1",
+            "redirect_url": "https://docs.microsoft.com/powershell/module/microsoft.powershell.archive/?view=powershell-5.1",
             "redirect_document_id": false
         },
         {
             "source_path": "reference/virtual-directory-module/5.1/microsoft.powershell.core.md",
-            "redirect_url": "https://docs.microsoft.com/powershell/module/microsoft.powershell.core?view=powershell-5.1",
+            "redirect_url": "https://docs.microsoft.com/powershell/module/microsoft.powershell.core/?view=powershell-5.1",
             "redirect_document_id": false
         },
         {
@@ -1547,7 +1547,7 @@
         },
         {
             "source_path": "reference/virtual-directory-module/5.1/microsoft.powershell.diagnostics.md",
-            "redirect_url": "https://docs.microsoft.com/powershell/module/microsoft.powershell.diagnostics?view=powershell-5.1",
+            "redirect_url": "https://docs.microsoft.com/powershell/module/microsoft.powershell.diagnostics/?view=powershell-5.1",
             "redirect_document_id": false
         },
         {
@@ -1582,7 +1582,7 @@
         },
         {
             "source_path": "reference/virtual-directory-module/5.1/microsoft.powershell.host.md",
-            "redirect_url": "https://docs.microsoft.com/powershell/module/microsoft.powershell.host?view=powershell-5.1",
+            "redirect_url": "https://docs.microsoft.com/powershell/module/microsoft.powershell.host/?view=powershell-5.1",
             "redirect_document_id": false
         },
         {
@@ -1602,7 +1602,7 @@
         },
         {
             "source_path": "reference/virtual-directory-module/5.1/microsoft.powershell.localaccounts.md",
-            "redirect_url": "https://docs.microsoft.com/powershell/module/microsoft.powershell.localaccounts?view=powershell-5.1",
+            "redirect_url": "https://docs.microsoft.com/powershell/module/microsoft.powershell.localaccounts/?view=powershell-5.1",
             "redirect_document_id": false
         },
         {
@@ -1637,7 +1637,7 @@
         },
         {
             "source_path": "reference/virtual-directory-module/5.1/microsoft.powershell.localaccounts/microsoft.powershell.localaccounts.md",
-            "redirect_url": "https://docs.microsoft.com/powershell/module/microsoft.powershell.localaccounts?view=powershell-5.1",
+            "redirect_url": "https://docs.microsoft.com/powershell/module/microsoft.powershell.localaccounts/?view=powershell-5.1",
             "redirect_document_id": false
         },
         {
@@ -1687,7 +1687,7 @@
         },
         {
             "source_path": "reference/virtual-directory-module/5.1/microsoft.powershell.management.md",
-            "redirect_url": "https://docs.microsoft.com/powershell/module/microsoft.powershell.management?view=powershell-5.1",
+            "redirect_url": "https://docs.microsoft.com/powershell/module/microsoft.powershell.management/?view=powershell-5.1",
             "redirect_document_id": false
         },
         {
@@ -1882,7 +1882,7 @@
         },
         {
             "source_path": "reference/virtual-directory-module/5.1/microsoft.powershell.management/microsoft.powershell.management.md",
-            "redirect_url": "https://docs.microsoft.com/powershell/module/microsoft.powershell.management?view=powershell-5.1",
+            "redirect_url": "https://docs.microsoft.com/powershell/module/microsoft.powershell.management/?view=powershell-5.1",
             "redirect_document_id": false
         },
         {
@@ -2142,7 +2142,7 @@
         },
         {
             "source_path": "reference/virtual-directory-module/5.1/microsoft.powershell.odatautils.md",
-            "redirect_url": "https://docs.microsoft.com/powershell/module/microsoft.powershell.odatautils?view=powershell-5.1",
+            "redirect_url": "https://docs.microsoft.com/powershell/module/microsoft.powershell.odatautils/?view=powershell-5.1",
             "redirect_document_id": false
         },
         {
@@ -2152,12 +2152,12 @@
         },
         {
             "source_path": "reference/virtual-directory-module/5.1/microsoft.powershell.odatautils/microsoft.powershell.odatautils.md",
-            "redirect_url": "https://docs.microsoft.com/powershell/module/microsoft.powershell.odatautils?view=powershell-5.1",
+            "redirect_url": "https://docs.microsoft.com/powershell/module/microsoft.powershell.odatautils/?view=powershell-5.1",
             "redirect_document_id": false
         },
         {
             "source_path": "reference/virtual-directory-module/5.1/microsoft.powershell.operation.validation.md",
-            "redirect_url": "https://docs.microsoft.com/powershell/module/microsoft.powershell.operation.validation?view=powershell-5.1",
+            "redirect_url": "https://docs.microsoft.com/powershell/module/microsoft.powershell.operation.validation/?view=powershell-5.1",
             "redirect_document_id": false
         },
         {
@@ -2172,12 +2172,12 @@
         },
         {
             "source_path": "reference/virtual-directory-module/5.1/microsoft.powershell.operation.validation/microsoft.powershell.operation.validation.md",
-            "redirect_url": "https://docs.microsoft.com/powershell/module/microsoft.powershell.operation.validation?view=powershell-5.1",
+            "redirect_url": "https://docs.microsoft.com/powershell/module/microsoft.powershell.operation.validation/?view=powershell-5.1",
             "redirect_document_id": false
         },
         {
             "source_path": "reference/virtual-directory-module/5.1/microsoft.powershell.security.md",
-            "redirect_url": "https://docs.microsoft.com/powershell/module/microsoft.powershell.security?view=powershell-5.1",
+            "redirect_url": "https://docs.microsoft.com/powershell/module/microsoft.powershell.security/?view=powershell-5.1",
             "redirect_document_id": false
         },
         {
@@ -2227,7 +2227,7 @@
         },
         {
             "source_path": "reference/virtual-directory-module/5.1/microsoft.powershell.security/microsoft.powershell.security.md",
-            "redirect_url": "https://docs.microsoft.com/powershell/module/microsoft.powershell.security?view=powershell-5.1",
+            "redirect_url": "https://docs.microsoft.com/powershell/module/microsoft.powershell.security/?view=powershell-5.1",
             "redirect_document_id": false
         },
         {
@@ -2267,7 +2267,7 @@
         },
         {
             "source_path": "reference/virtual-directory-module/5.1/microsoft.powershell.utility.md",
-            "redirect_url": "https://docs.microsoft.com/powershell/module/microsoft.powershell.utility?view=powershell-5.1",
+            "redirect_url": "https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/?view=powershell-5.1",
             "redirect_document_id": false
         },
         {
@@ -2572,7 +2572,7 @@
         },
         {
             "source_path": "reference/virtual-directory-module/5.1/microsoft.powershell.utility/microsoft.powershell.utility.md",
-            "redirect_url": "https://docs.microsoft.com/powershell/module/microsoft.powershell.utility?view=powershell-5.1",
+            "redirect_url": "https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/?view=powershell-5.1",
             "redirect_document_id": false
         },
         {
@@ -2812,7 +2812,7 @@
         },
         {
             "source_path": "reference/virtual-directory-module/5.1/microsoft.wsman.management.md",
-            "redirect_url": "https://docs.microsoft.com/powershell/module/microsoft.wsman.management?view=powershell-5.1",
+            "redirect_url": "https://docs.microsoft.com/powershell/module/microsoft.wsman.management/?view=powershell-5.1",
             "redirect_document_id": false
         },
         {
@@ -2857,7 +2857,7 @@
         },
         {
             "source_path": "reference/virtual-directory-module/5.1/microsoft.wsman.management/microsoft.wsman.management.md",
-            "redirect_url": "https://docs.microsoft.com/powershell/module/microsoft.wsman.management?view=powershell-5.1",
+            "redirect_url": "https://docs.microsoft.com/powershell/module/microsoft.wsman.management/?view=powershell-5.1",
             "redirect_document_id": false
         },
         {
@@ -2897,7 +2897,7 @@
         },
         {
             "source_path": "reference/virtual-directory-module/5.1/packagemanagement.md",
-            "redirect_url": "https://docs.microsoft.com/powershell/module/packagemanagement?view=powershell-5.1",
+            "redirect_url": "https://docs.microsoft.com/powershell/module/packagemanagement/?view=powershell-5.1",
             "redirect_document_id": false
         },
         {
@@ -2942,7 +2942,7 @@
         },
         {
             "source_path": "reference/virtual-directory-module/5.1/packagemanagement/packagemanagement.md",
-            "redirect_url": "https://docs.microsoft.com/powershell/module/packagemanagement?view=powershell-5.1",
+            "redirect_url": "https://docs.microsoft.com/powershell/module/packagemanagement/?view=powershell-5.1",
             "redirect_document_id": false
         },
         {
@@ -2972,7 +2972,7 @@
         },
         {
             "source_path": "reference/virtual-directory-module/5.1/powershellget.md",
-            "redirect_url": "https://docs.microsoft.com/powershell/module/powershellget?view=powershell-5.1",
+            "redirect_url": "https://docs.microsoft.com/powershell/module/powershellget/?view=powershell-5.1",
             "redirect_document_id": false
         },
         {
@@ -3032,7 +3032,7 @@
         },
         {
             "source_path": "reference/virtual-directory-module/5.1/powershellget/powershellget.md",
-            "redirect_url": "https://docs.microsoft.com/powershell/module/powershellget?view=powershell-5.1",
+            "redirect_url": "https://docs.microsoft.com/powershell/module/powershellget/?view=powershell-5.1",
             "redirect_document_id": false
         },
         {
@@ -3107,7 +3107,7 @@
         },
         {
             "source_path": "reference/virtual-directory-module/5.1/psdesiredstateconfiguration.md",
-            "redirect_url": "https://docs.microsoft.com/powershell/module/psdesiredstateconfiguration?view=powershell-5.1",
+            "redirect_url": "https://docs.microsoft.com/powershell/module/psdesiredstateconfiguration/?view=powershell-5.1",
             "redirect_document_id": false
         },
         {
@@ -3157,7 +3157,7 @@
         },
         {
             "source_path": "reference/virtual-directory-module/5.1/psdesiredstateconfiguration/psdesiredstateconfiguration.md",
-            "redirect_url": "https://docs.microsoft.com/powershell/module/psdesiredstateconfiguration?view=powershell-5.1",
+            "redirect_url": "https://docs.microsoft.com/powershell/module/psdesiredstateconfiguration/?view=powershell-5.1",
             "redirect_document_id": false
         },
         {
@@ -3202,7 +3202,7 @@
         },
         {
             "source_path": "reference/virtual-directory-module/5.1/psreadline.md",
-            "redirect_url": "https://docs.microsoft.com/powershell/module/psreadline?view=powershell-5.1",
+            "redirect_url": "https://docs.microsoft.com/powershell/module/psreadline/?view=powershell-5.1",
             "redirect_document_id": false
         },
         {
@@ -3217,7 +3217,7 @@
         },
         {
             "source_path": "reference/virtual-directory-module/5.1/psreadline/psreadline.md",
-            "redirect_url": "https://docs.microsoft.com/powershell/module/psreadline?view=powershell-5.1",
+            "redirect_url": "https://docs.microsoft.com/powershell/module/psreadline/?view=powershell-5.1",
             "redirect_document_id": false
         },
         {
@@ -3237,7 +3237,7 @@
         },
         {
             "source_path": "reference/virtual-directory-module/5.1/psscheduledjob.md",
-            "redirect_url": "https://docs.microsoft.com/powershell/module/psscheduledjob?view=powershell-5.1",
+            "redirect_url": "https://docs.microsoft.com/powershell/module/psscheduledjob/?view=powershell-5.1",
             "redirect_document_id": false
         },
         {
@@ -3312,7 +3312,7 @@
         },
         {
             "source_path": "reference/virtual-directory-module/5.1/psscheduledjob/psscheduledjob.md",
-            "redirect_url": "https://docs.microsoft.com/powershell/module/psscheduledjob?view=powershell-5.1",
+            "redirect_url": "https://docs.microsoft.com/powershell/module/psscheduledjob/?view=powershell-5.1",
             "redirect_document_id": false
         },
         {
@@ -3347,7 +3347,7 @@
         },
         {
             "source_path": "reference/virtual-directory-module/5.1/psworkflow.md",
-            "redirect_url": "https://docs.microsoft.com/powershell/module/psworkflow?view=powershell-5.1",
+            "redirect_url": "https://docs.microsoft.com/powershell/module/psworkflow/?view=powershell-5.1",
             "redirect_document_id": false
         },
         {
@@ -3407,12 +3407,12 @@
         },
         {
             "source_path": "reference/virtual-directory-module/5.1/psworkflow/psworkflow.md",
-            "redirect_url": "https://docs.microsoft.com/powershell/module/psworkflow?view=powershell-5.1",
+            "redirect_url": "https://docs.microsoft.com/powershell/module/psworkflow/?view=powershell-5.1",
             "redirect_document_id": false
         },
         {
             "source_path": "reference/virtual-directory-module/5.1/psworkflowutility.md",
-            "redirect_url": "https://docs.microsoft.com/powershell/module/psworkflowutility?view=powershell-5.1",
+            "redirect_url": "https://docs.microsoft.com/powershell/module/psworkflowutility/?view=powershell-5.1",
             "redirect_document_id": false
         },
         {
@@ -3422,7 +3422,7 @@
         },
         {
             "source_path": "reference/virtual-directory-module/5.1/psworkflowutility/psworkflowutility.md",
-            "redirect_url": "https://docs.microsoft.com/powershell/module/psworkflowutility?view=powershell-5.1",
+            "redirect_url": "https://docs.microsoft.com/powershell/module/psworkflowutility/?view=powershell-5.1",
             "redirect_document_id": false
         },
         {
@@ -3962,12 +3962,12 @@
         },
         {
             "source_path": "reference/virtual-directory-module/6/cimcmdlets.md",
-            "redirect_url": "https://docs.microsoft.com/powershell/module/cimcmdlets?view=powershell-6",
+            "redirect_url": "https://docs.microsoft.com/powershell/module/cimcmdlets/?view=powershell-6",
             "redirect_document_id": false
         },
         {
             "source_path": "reference/virtual-directory-module/6/cimcmdlets/cimcmdlets.md",
-            "redirect_url": "https://docs.microsoft.com/powershell/module/cimcmdlets?view=powershell-6",
+            "redirect_url": "https://docs.microsoft.com/powershell/module/cimcmdlets/?view=powershell-6",
             "redirect_document_id": false
         },
         {
@@ -4042,12 +4042,12 @@
         },
         {
             "source_path": "reference/virtual-directory-module/6/index.md",
-            "redirect_url": "https://docs.microsoft.com/powershell/module/index?view=powershell-6",
+            "redirect_url": "https://docs.microsoft.com/powershell/module/?view=powershell-6",
             "redirect_document_id": false
         },
         {
             "source_path": "reference/virtual-directory-module/6/microsoft.powershell.archive.md",
-            "redirect_url": "https://docs.microsoft.com/powershell/module/microsoft.powershell.archive?view=powershell-6",
+            "redirect_url": "https://docs.microsoft.com/powershell/module/microsoft.powershell.archive/?view=powershell-6",
             "redirect_document_id": false
         },
         {
@@ -4062,12 +4062,12 @@
         },
         {
             "source_path": "reference/virtual-directory-module/6/microsoft.powershell.archive/microsoft.powershell.archive.md",
-            "redirect_url": "https://docs.microsoft.com/powershell/module/microsoft.powershell.archive?view=powershell-6",
+            "redirect_url": "https://docs.microsoft.com/powershell/module/microsoft.powershell.archive/?view=powershell-6",
             "redirect_document_id": false
         },
         {
             "source_path": "reference/virtual-directory-module/6/microsoft.powershell.core.md",
-            "redirect_url": "https://docs.microsoft.com/powershell/module/microsoft.powershell.core?view=powershell-6",
+            "redirect_url": "https://docs.microsoft.com/powershell/module/microsoft.powershell.core/?view=powershell-6",
             "redirect_document_id": false
         },
         {
@@ -4382,7 +4382,7 @@
         },
         {
             "source_path": "reference/virtual-directory-module/6/microsoft.powershell.diagnostics.md",
-            "redirect_url": "https://docs.microsoft.com/powershell/module/microsoft.powershell.diagnostics?view=powershell-6",
+            "redirect_url": "https://docs.microsoft.com/powershell/module/microsoft.powershell.diagnostics/?view=powershell-6",
             "redirect_document_id": false
         },
         {
@@ -4417,7 +4417,7 @@
         },
         {
             "source_path": "reference/virtual-directory-module/6/microsoft.powershell.host.md",
-            "redirect_url": "https://docs.microsoft.com/powershell/module/microsoft.powershell.host?view=powershell-6",
+            "redirect_url": "https://docs.microsoft.com/powershell/module/microsoft.powershell.host/?view=powershell-6",
             "redirect_document_id": false
         },
         {
@@ -4437,7 +4437,7 @@
         },
         {
             "source_path": "reference/virtual-directory-module/6/microsoft.powershell.localaccounts.md",
-            "redirect_url": "https://docs.microsoft.com/powershell/module/microsoft.powershell.localaccounts?view=powershell-6",
+            "redirect_url": "https://docs.microsoft.com/powershell/module/microsoft.powershell.localaccounts/?view=powershell-6",
             "redirect_document_id": false
         },
         {
@@ -4472,7 +4472,7 @@
         },
         {
             "source_path": "reference/virtual-directory-module/6/microsoft.powershell.localaccounts/microsoft.powershell.localaccounts.md",
-            "redirect_url": "https://docs.microsoft.com/powershell/module/microsoft.powershell.localaccounts?view=powershell-6",
+            "redirect_url": "https://docs.microsoft.com/powershell/module/microsoft.powershell.localaccounts/?view=powershell-6",
             "redirect_document_id": false
         },
         {
@@ -4522,7 +4522,7 @@
         },
         {
             "source_path": "reference/virtual-directory-module/6/microsoft.powershell.management.md",
-            "redirect_url": "https://docs.microsoft.com/powershell/module/microsoft.powershell.management?view=powershell-6",
+            "redirect_url": "https://docs.microsoft.com/powershell/module/microsoft.powershell.management/?view=powershell-6",
             "redirect_document_id": false
         },
         {
@@ -4637,7 +4637,7 @@
         },
         {
             "source_path": "reference/virtual-directory-module/6/microsoft.powershell.management/microsoft.powershell.management.md",
-            "redirect_url": "https://docs.microsoft.com/powershell/module/microsoft.powershell.management?view=powershell-6",
+            "redirect_url": "https://docs.microsoft.com/powershell/module/microsoft.powershell.management/?view=powershell-6",
             "redirect_document_id": false
         },
         {
@@ -4812,7 +4812,7 @@
         },
         {
             "source_path": "reference/virtual-directory-module/6/microsoft.powershell.security.md",
-            "redirect_url": "https://docs.microsoft.com/powershell/module/microsoft.powershell.security?view=powershell-6",
+            "redirect_url": "https://docs.microsoft.com/powershell/module/microsoft.powershell.security/?view=powershell-6",
             "redirect_document_id": false
         },
         {
@@ -4852,7 +4852,7 @@
         },
         {
             "source_path": "reference/virtual-directory-module/6/microsoft.powershell.security/microsoft.powershell.security.md",
-            "redirect_url": "https://docs.microsoft.com/powershell/module/microsoft.powershell.security?view=powershell-6",
+            "redirect_url": "https://docs.microsoft.com/powershell/module/microsoft.powershell.security/?view=powershell-6",
             "redirect_document_id": false
         },
         {
@@ -4882,7 +4882,7 @@
         },
         {
             "source_path": "reference/virtual-directory-module/6/microsoft.powershell.utility.md",
-            "redirect_url": "https://docs.microsoft.com/powershell/module/microsoft.powershell.utility?view=powershell-6",
+            "redirect_url": "https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/?view=powershell-6",
             "redirect_document_id": false
         },
         {
@@ -5182,7 +5182,7 @@
         },
         {
             "source_path": "reference/virtual-directory-module/6/microsoft.powershell.utility/microsoft.powershell.utility.md",
-            "redirect_url": "https://docs.microsoft.com/powershell/module/microsoft.powershell.utility?view=powershell-6",
+            "redirect_url": "https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/?view=powershell-6",
             "redirect_document_id": false
         },
         {
@@ -5397,7 +5397,7 @@
         },
         {
             "source_path": "reference/virtual-directory-module/6/microsoft.wsman.management.md",
-            "redirect_url": "https://docs.microsoft.com/powershell/module/microsoft.wsman.management?view=powershell-6",
+            "redirect_url": "https://docs.microsoft.com/powershell/module/microsoft.wsman.management/?view=powershell-6",
             "redirect_document_id": false
         },
         {
@@ -5437,7 +5437,7 @@
         },
         {
             "source_path": "reference/virtual-directory-module/6/microsoft.wsman.management/microsoft.wsman.management.md",
-            "redirect_url": "https://docs.microsoft.com/powershell/module/microsoft.wsman.management?view=powershell-6",
+            "redirect_url": "https://docs.microsoft.com/powershell/module/microsoft.wsman.management/?view=powershell-6",
             "redirect_document_id": false
         },
         {
@@ -5477,7 +5477,7 @@
         },
         {
             "source_path": "reference/virtual-directory-module/6/packagemanagement.md",
-            "redirect_url": "https://docs.microsoft.com/powershell/module/packagemanagement?view=powershell-6",
+            "redirect_url": "https://docs.microsoft.com/powershell/module/packagemanagement/?view=powershell-6",
             "redirect_document_id": false
         },
         {
@@ -5522,7 +5522,7 @@
         },
         {
             "source_path": "reference/virtual-directory-module/6/packagemanagement/packagemanagement.md",
-            "redirect_url": "https://docs.microsoft.com/powershell/module/packagemanagement?view=powershell-6",
+            "redirect_url": "https://docs.microsoft.com/powershell/module/packagemanagement/?view=powershell-6",
             "redirect_document_id": false
         },
         {
@@ -5552,7 +5552,7 @@
         },
         {
             "source_path": "reference/virtual-directory-module/6/powershellget.md",
-            "redirect_url": "https://docs.microsoft.com/powershell/module/powershellget?view=powershell-6",
+            "redirect_url": "https://docs.microsoft.com/powershell/module/powershellget/?view=powershell-6",
             "redirect_document_id": false
         },
         {
@@ -5612,7 +5612,7 @@
         },
         {
             "source_path": "reference/virtual-directory-module/6/powershellget/powershellget.md",
-            "redirect_url": "https://docs.microsoft.com/powershell/module/powershellget?view=powershell-6",
+            "redirect_url": "https://docs.microsoft.com/powershell/module/powershellget/?view=powershell-6",
             "redirect_document_id": false
         },
         {
@@ -5687,7 +5687,7 @@
         },
         {
             "source_path": "reference/virtual-directory-module/6/psdesiredstateconfiguration.md",
-            "redirect_url": "https://docs.microsoft.com/powershell/module/psdesiredstateconfiguration?view=powershell-6",
+            "redirect_url": "https://docs.microsoft.com/powershell/module/psdesiredstateconfiguration/?view=powershell-6",
             "redirect_document_id": false
         },
         {
@@ -5707,7 +5707,7 @@
         },
         {
             "source_path": "reference/virtual-directory-module/6/psdesiredstateconfiguration/psdesiredstateconfiguration.md",
-            "redirect_url": "https://docs.microsoft.com/powershell/module/psdesiredstateconfiguration?view=powershell-6",
+            "redirect_url": "https://docs.microsoft.com/powershell/module/psdesiredstateconfiguration/?view=powershell-6",
             "redirect_document_id": false
         },
         {
@@ -5747,7 +5747,7 @@
         },
         {
             "source_path": "reference/virtual-directory-module/6/psdiagnostics/psdiagnostics.md",
-            "redirect_url": "https://docs.microsoft.com/powershell/module/psdiagnostics?view=powershell-6",
+            "redirect_url": "https://docs.microsoft.com/powershell/module/psdiagnostics/?view=powershell-6",
             "redirect_document_id": false
         },
         {
@@ -5767,7 +5767,7 @@
         },
         {
             "source_path": "reference/virtual-directory-module/6/psreadline.md",
-            "redirect_url": "https://docs.microsoft.com/powershell/module/psreadline?view=powershell-6",
+            "redirect_url": "https://docs.microsoft.com/powershell/module/psreadline/?view=powershell-6",
             "redirect_document_id": false
         },
         {
@@ -5787,7 +5787,7 @@
         },
         {
             "source_path": "reference/virtual-directory-module/6/psreadline/psreadline.md",
-            "redirect_url": "https://docs.microsoft.com/powershell/module/psreadline?view=powershell-6",
+            "redirect_url": "https://docs.microsoft.com/powershell/module/psreadline/?view=powershell-6",
             "redirect_document_id": false
         },
         {
@@ -5807,7 +5807,7 @@
         },
         {
             "source_path": "reference/virtual-directory-module/6/readme.md",
-            "redirect_url": "https://docs.microsoft.com/powershell/scripting/?view=powershell-6",
+            "redirect_url": "https://docs.microsoft.com/powershell/scripting/overview?view=powershell-6",
             "redirect_document_id": false
         },
         {
@@ -5972,7 +5972,7 @@
         },
         {
             "source_path": "reference/virtual-directory-module/readme.md",
-            "redirect_url": "https://docs.microsoft.com/powershell/scripting",
+            "redirect_url": "https://docs.microsoft.com/powershell/scripting/overview",
             "redirect_document_id": false
         }
     ]
