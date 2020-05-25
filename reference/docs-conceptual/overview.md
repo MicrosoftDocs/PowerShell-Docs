@@ -6,10 +6,28 @@ title:  What is PowerShell?
 
 # What is PowerShell?
 
-PowerShell is a task automation and configuration management framework, consisting of a command-line
-shell and scripting language. Unlike most shells, which accept and return text, PowerShell is built
-on top of the .NET Common Language Runtime (CLR), and accepts and returns .NET objects. This
-fundamental change brings entirely new tools and methods for automation.
+PowerShell is a cross-platform task automation and configuration management framework, consisting of
+a command-line shell and scripting language. Unlike most shells, which accept and return text,
+PowerShell is built on top of the .NET Common Language Runtime (CLR), and accepts and returns .NET
+objects. This fundamental change brings entirely new tools and methods for automation.
+
+:::row:::
+   :::column span="":::
+      Windows
+
+      [![PowerShell on Windows](media/overview/windows-desktop-660.gif)](media/overview/windows-desktop.gif#lightbox)
+   :::column-end:::
+   :::column span="":::
+      Linux
+
+      [![PowerShell on Linux](media/overview/linux-desktop-660.gif)](media/overview/linux-desktop.gif#lightbox)
+   :::column-end:::
+   :::column span="":::
+      macOS
+
+      [![PowerShell on macOS](media/overview/macos-desktop-660.gif)](media/overview/macos-desktop.gif#lightbox)
+   :::column-end:::
+:::row-end:::
 
 ## Output is object-based
 
