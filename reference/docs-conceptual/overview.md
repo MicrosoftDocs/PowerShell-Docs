@@ -14,18 +14,18 @@ objects. This fundamental change brings entirely new tools and methods for autom
 :::row:::
    :::column span="":::
       Windows
-
       [![PowerShell on Windows](media/overview/windows-desktop-660.gif)](media/overview/windows-desktop.gif#lightbox)
+      [Install on Windows](install/installing-powershell-core-on-windows.md)
    :::column-end:::
    :::column span="":::
       Linux
-
       [![PowerShell on Linux](media/overview/linux-desktop-660.gif)](media/overview/linux-desktop.gif#lightbox)
+      [Install on Linux](install/installing-powershell-core-on-linux.md)
    :::column-end:::
    :::column span="":::
       macOS
-
       [![PowerShell on macOS](media/overview/macos-desktop-660.gif)](media/overview/macos-desktop.gif#lightbox)
+      [Install on macOS](install/installing-powershell-core-on-macos.md)
    :::column-end:::
 :::row-end:::
 

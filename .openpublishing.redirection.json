@@ -59,12 +59,12 @@
 
 
         {
-            "source_path": "reference/docs-conceptual/whats-new/reference/whats-new/experimental-features.md",
+            "source_path": "reference/docs-conceptual/whats-new/experimental-features.md",
             "redirect_url": "https://docs.microsoft.com/powershell/scripting/learn/experimental-features",
             "redirect_document_id": true
         },
         {
-            "source_path": "reference/docs-conceptual/whats-new/reference/whats-new/migrating-from-windows-powershell-51-to-powershell-7.md",
+            "source_path": "reference/docs-conceptual/whats-new/migrating-from-windows-powershell-51-to-powershell-7.md",
             "redirect_url": "https://docs.microsoft.com/powershell/scripting/install/migrating-from-windows-powershell-51-to-powershell-7",
             "redirect_document_id": true
         },
