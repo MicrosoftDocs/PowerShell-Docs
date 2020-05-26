@@ -358,7 +358,7 @@ If you're interested in contributing, Pull Requests are greatly appreciated. Fol
 [developer documentation][dev-docs] on GitHub to get started.
 
 <!-- related articles -->
-[ise]:                    ../ise/Introducing-the-Windows-PowerShell-ISE.md
+[ise]:                    ../../windows-powershell/ise/Introducing-the-Windows-PowerShell-ISE.md
 [install-pscore-linux]:   ../../install/Installing-PowerShell-Core-on-Linux.md
 [install-pscore-macos]:   ../../install/Installing-PowerShell-Core-on-macOS.md
 [install-pscore-windows]: ../../install/Installing-PowerShell-Core-on-Windows.md

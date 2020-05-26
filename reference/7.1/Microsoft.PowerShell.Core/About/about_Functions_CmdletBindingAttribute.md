@@ -97,7 +97,7 @@ The **SupportsPaging** argument adds the **First**, **Skip**, and
 **IncludeTotalCount** parameters to the function. These parameters allow users
 to select output from a very large result set. This argument is designed for
 cmdlets and functions that return data from large data stores that support data
-selection, such as a SQL database.
+selection, such as an SQL database.
 
 This argument was introduced in Windows PowerShell 3.0.
 

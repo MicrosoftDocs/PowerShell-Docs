@@ -30,7 +30,7 @@ PowerShell 2.0 installation in the Windows PowerShell installation directory. Ho
 PowerShell 2.0 Engine is retained.
 
 For information about starting the Windows PowerShell 2.0 Engine, see
-[Starting the Windows PowerShell 2.0 Engine](../getting-started/Starting-the-Windows-PowerShell-2.0-Engine.md).
+[Starting the Windows PowerShell 2.0 Engine](../Starting-the-Windows-PowerShell-2.0-Engine.md).
 
 ## On Windows 8.1 and Windows 8
 
@@ -92,7 +92,7 @@ minimum. This requirement is fulfilled by Microsoft .NET Framework 3.5.
   PowerShell 2.0 Engine**.
 
 For information about starting the Windows PowerShell 2.0 Engine, see
-[Starting the Windows PowerShell 2.0 Engine](../getting-started/Starting-the-Windows-PowerShell-2.0-Engine.md).
+[Starting the Windows PowerShell 2.0 Engine](../Starting-the-Windows-PowerShell-2.0-Engine.md).
 
 ## On Earlier Systems
 
@@ -111,4 +111,4 @@ installation, setup, or configuration.
 - [Windows PowerShell System Requirements](Windows-PowerShell-System-Requirements.md)
 - [Installing Windows PowerShell](Installing-Windows-PowerShell.md)
 - [Starting Windows PowerShell](/previous-versions/ms714415(v=vs.85))
-- [Starting the Windows PowerShell 2.0 Engine](../getting-started/Starting-the-Windows-PowerShell-2.0-Engine.md)
+- [Starting the Windows PowerShell 2.0 Engine](../Starting-the-Windows-PowerShell-2.0-Engine.md)
