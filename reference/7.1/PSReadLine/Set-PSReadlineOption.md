@@ -24,7 +24,7 @@ Set-PSReadLineOption [-EditMode <EditMode>] [-ContinuationPrompt <String>] [-His
  [-BellStyle <BellStyle>] [-CompletionQueryItems <Int32>] [-WordDelimiters <String>]
  [-HistorySearchCaseSensitive] [-HistorySaveStyle <HistorySaveStyle>] [-HistorySavePath <String>]
  [-AnsiEscapeTimeout <Int32>] [-PromptText <String[]>] [-ViModeIndicator <ViModeStyle>]
- [-ViModeChangeHandler <ScriptBlock>] [-Colors <Hashtable>]  [-PredictionSource <PredictionSource>]
+ [-ViModeChangeHandler <ScriptBlock>] [-Colors <Hashtable>] [-PredictionSource <PredictionSource>]
  [<CommonParameters>]
 ```
 
@@ -247,6 +247,7 @@ The valid keys include:
 - **Type**: The type token color.
 - **Number**: The number token color.
 - **Member**: The member name token color.
+- **Prediction**: The color for the suggestion text that comes from the prediction API.
 
 ```yaml
 Type: Hashtable
