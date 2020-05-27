@@ -11,6 +11,7 @@ a command-line shell and scripting language. Unlike most shells, which accept an
 PowerShell is built on top of the .NET Common Language Runtime (CLR), and accepts and returns .NET
 objects. This fundamental change brings entirely new tools and methods for automation.
 
+<!-- removing images until we can get replacements
 :::row:::
    :::column span="":::
       Windows
@@ -28,6 +29,7 @@ objects. This fundamental change brings entirely new tools and methods for autom
       [Install on macOS](install/installing-powershell-core-on-macos.md)
    :::column-end:::
 :::row-end:::
+-->
 
 ## Output is object-based
 
