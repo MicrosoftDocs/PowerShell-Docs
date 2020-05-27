@@ -84,7 +84,7 @@ pwsh
 ```
 
 As superuser, register the Microsoft repository once. After registration, you can update
-PowerShell with `sudo apt-get upgrade powershell`.
+PowerShell with `sudo apt-get install powershell`.
 
 ### Installation via Direct Download - Ubuntu 16.04
 
@@ -137,7 +137,7 @@ pwsh
 ```
 
 As superuser, register the Microsoft repository once. After registration, you can update
-PowerShell with `sudo apt-get upgrade powershell`.
+PowerShell with `sudo apt-get install powershell`.
 
 ### Installation via Direct Download - Ubuntu 18.04
 
@@ -211,7 +211,7 @@ pwsh
 ```
 
 As superuser, register the Microsoft repository once. After registration, you can update
-PowerShell with `sudo apt-get upgrade powershell`.
+PowerShell with `sudo apt-get install powershell`.
 
 ## Debian 9
 
@@ -243,7 +243,7 @@ pwsh
 ```
 
 As superuser, register the Microsoft repository once. After registration, you can update
-PowerShell with `sudo apt-get upgrade powershell`.
+PowerShell with `sudo apt-get install powershell`.
 
 ### Installation via Direct Download - Debian 9
 
