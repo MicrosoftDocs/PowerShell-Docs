@@ -42,7 +42,7 @@ This command gets the value of the **ProductID** property of the "\SOFTWARE\Micr
 NT\CurrentVersion" object in the Windows Registry provider.
 
 ```powershell
-Get-ItemPropertyValue HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion -Name ProductID
+Get-ItemPropertyValue 'HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion' -Name ProductID
 ```
 
 ```output

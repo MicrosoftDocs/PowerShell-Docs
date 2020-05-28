@@ -39,7 +39,7 @@ The `Get-ItemPropertyValue` gets the current value for a property that you speci
 This command gets the value of the **ProductID** property of the "\SOFTWARE\Microsoft\Windows NT\CurrentVersion" object in the Windows Registry provider.
 
 ```powershell
-Get-ItemPropertyValue HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion -Name ProductID
+Get-ItemPropertyValue 'HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion' -Name ProductID
 ```
 
 ```output
