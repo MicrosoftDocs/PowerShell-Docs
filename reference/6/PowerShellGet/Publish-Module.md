@@ -129,6 +129,8 @@ Accept wildcard characters: False
 
 ### -Exclude
 
+Defines files to exclude from the published module.
+
 ```yaml
 Type: String[]
 Parameter Sets: ModuleNameParameterSet

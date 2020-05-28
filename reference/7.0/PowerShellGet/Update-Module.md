@@ -227,6 +227,9 @@ Accept wildcard characters: True
 
 ### -PassThru
 
+Returns an object representing the item with which you are working. By default, this cmdlet does not
+generate any output.
+
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
@@ -308,9 +311,10 @@ accessible only to the current user of the computer:
 
 When no **Scope** is defined, the default is set based on the PowerShellGet version.
 
-- In PowerShellGet versions 2.0.0 and above, the default is **CurrentUser**, which does not require
+- In PowerShellGet versions 2.1.0 and above, the default is **CurrentUser**, which does not require
   elevation for install.
-- In PowerShellGet 1.x versions, the default is **AllUsers**, which requires elevation for install.
+- In PowerShellGet 1.x - 2.0.x versions, the **Scope** parameter is not available and the default is
+  **AllUsers**, which requires elevation for install.
 
 ```yaml
 Type: String
