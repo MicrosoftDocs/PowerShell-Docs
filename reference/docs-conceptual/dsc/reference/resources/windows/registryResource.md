@@ -52,7 +52,9 @@ Registry [string] #ResourceName
 
 ## Examples
 
-Example 1: This example ensures that the registry value "TestValue" under a key named "ExampleKey1" is present in the **HKEY\_LOCAL\_MACHINE** hive and has the value "TestData".
+### Example 1: Ensure specified Value and Data under specified registry key
+
+This example ensures that the registry value "TestValue" under a key named "ExampleKey1" is present in the **HKEY\_LOCAL\_MACHINE** hive and has the data "TestData".
 
 ```powershell
 Configuration RegistryTest
@@ -67,8 +69,9 @@ Configuration RegistryTest
 }
 ```
 
+### Example 2: Ensure specified registry key exists
 
-Example 2: This example ensures that a key named "ExampleKey2" is present in the **HKEY\_LOCAL\_MACHINE** hive.
+This example ensures that a key named "ExampleKey2" is present in the **HKEY\_LOCAL\_MACHINE** hive.
 
 ```powershell
 Configuration RegistryTest
