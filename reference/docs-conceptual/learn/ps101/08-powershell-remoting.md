@@ -397,18 +397,18 @@ multiple commands against the same remote computer.
 ## Review
 
 1. How do you enable PowerShell remoting?
-2. What is the PowerShell command for starting an interactive session with a remote computer?
-3. What is one of the benefits of using a PowerShell remoting session versus just specifying the
+1. What is the PowerShell command for starting an interactive session with a remote computer?
+1. What is one of the benefits of using a PowerShell remoting session versus just specifying the
    computer name with each command?
-4. Can a PowerShell remoting session be used with a one-to-one remoting session?
-5. What is the difference in the type of objects that are returned by cmdlets versus those returned
+1. Can a PowerShell remoting session be used with a one-to-one remoting session?
+1. What is the difference in the type of objects that are returned by cmdlets versus those returned
    when running those same cmdlets against remote computers with Invoke-Command?
 
 ## Recommended Reading
 
-* [about_Remote](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/about/about_remote)
-* [about_Remote_FAQ](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/about/about_remote_faq)
-* [about_Remote_Output](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/about/about_remote_output)
-* [about_Remote_Requirements](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/about/about_remote_requirements)
-* [about_Remote_Troubleshooting](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/about/about_remote_troubleshooting)
-* [about_Remote_Variables](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/about/about_remote_variables)
+- [about_Remote](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/about/about_remote)
+- [about_Remote_FAQ](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/about/about_remote_faq)
+- [about_Remote_Output](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/about/about_remote_output)
+- [about_Remote_Requirements](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/about/about_remote_requirements)
+- [about_Remote_Troubleshooting](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/about/about_remote_troubleshooting)
+- [about_Remote_Variables](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/about/about_remote_variables)

@@ -643,15 +643,15 @@ one-liner. You've also learned about filtering left, the pipeline, and PowerShel
 ## Review
 
 1. What is a PowerShell one-liner?
-2. What are some of the characters where natural line breaks can occur in PowerShell?
-3. Why should you filter left?
-4. What are the two ways that a PowerShell command can accept pipeline input?
-5. Why shouldn't you trust commands found in the PowerShell Gallery?
+1. What are some of the characters where natural line breaks can occur in PowerShell?
+1. Why should you filter left?
+1. What are the two ways that a PowerShell command can accept pipeline input?
+1. Why shouldn't you trust commands found in the PowerShell Gallery?
 
 
 ## Recommended Reading
 
-* [about_Pipelines](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/about/about_pipelines)
-* [about_Command_Syntax](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/about/about_command_syntax)
-* [about_Parameters](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/about/about_parameters)
-* [PowerShellGet: The BIG EASY way to discover, install, and update PowerShell modules](http://mikefrobbins.com/2015/04/23/powershellget-the-big-easy-way-to-discover-install-and-update-powershell-modules/)
+- [about_Pipelines](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/about/about_pipelines)
+- [about_Command_Syntax](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/about/about_command_syntax)
+- [about_Parameters](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/about/about_parameters)
+- [PowerShellGet: The BIG EASY way to discover, install, and update PowerShell modules](http://mikefrobbins.com/2015/04/23/powershellget-the-big-easy-way-to-discover-install-and-update-powershell-modules/)

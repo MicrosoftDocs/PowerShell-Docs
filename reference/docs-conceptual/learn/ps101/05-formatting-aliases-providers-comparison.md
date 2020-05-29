@@ -604,18 +604,18 @@ Providers, and Comparison Operators.
 ## Review
 
 1. Why is it necessary to perform Formatting as far to the right as possible?
-2. How do you determine what the actual cmdlet is for the "%" alias?
-3. Why shouldn't you use aliases in scripts you save or code you share with others?
-4. Perform a directory listing on the drives that are associated with one of the registry providers.
-5. What's one of the main benefits of using the replace operator instead of the replace method?
+1. How do you determine what the actual cmdlet is for the "%" alias?
+1. Why shouldn't you use aliases in scripts you save or code you share with others?
+1. Perform a directory listing on the drives that are associated with one of the registry providers.
+1. What's one of the main benefits of using the replace operator instead of the replace method?
 
 ## Recommended Reading
 
-* [Format-Table](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.utility/format-table)
-* [Format-List](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.utility/format-list)
-* [Format-Wide](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.utility/format-wide)
-* [about_Aliases](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/about/about_aliases)
-* [about_Providers](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/about/about_providers)
-* [about_Comparison_Operators](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/about/about_comparison_operators)
+- [Format-Table](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.utility/format-table)
+- [Format-List](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.utility/format-list)
+- [Format-Wide](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.utility/format-wide)
+- [about_Aliases](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/about/about_aliases)
+- [about_Providers](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/about/about_providers)
+- [about_Comparison_Operators](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/about/about_comparison_operators)
 
 [about_Arrays](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/about/about_arrays)

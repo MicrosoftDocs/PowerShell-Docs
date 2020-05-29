@@ -403,16 +403,16 @@ the WSMan or DCOM protocol.
 ## Review
 
 1. What is the difference in the WMI and CIM cmdlets?
-2. By default, what protocol does the Get-CimInstance cmdlet use?
-3. What are some of the benefits of using a CIM session instead of specifying a computer name with
+1. By default, what protocol does the Get-CimInstance cmdlet use?
+1. What are some of the benefits of using a CIM session instead of specifying a computer name with
    Get-CimInstance?
-4. How do you specify an alternate protocol other than the default one for use with Get-CimInstance?
-5. How do you close or remove CIM sessions?
+1. How do you specify an alternate protocol other than the default one for use with Get-CimInstance?
+1. How do you close or remove CIM sessions?
 
 ## Recommended Reading
 
-* [about_WMI](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/about/about_wmi)
-* [about_WMI_Cmdlets](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/about/about_wmi_cmdlets)
-* [about_WQL](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/about/about_wql)
-* [CimCmdlets Module](https://technet.microsoft.com/en-us/itpro/powershell/windows/cimcmdlets/cimcmdlets)
-* [Video: Using CIM Cmdlets and CIM Sessions](http://mikefrobbins.com/2013/09/12/phillyposh-user-group-meeting-presentation-follow-up-powershell-second-hop-problem-with-cimsessions/)
+- [about_WMI](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/about/about_wmi)
+- [about_WMI_Cmdlets](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/about/about_wmi_cmdlets)
+- [about_WQL](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/about/about_wql)
+- [CimCmdlets Module](https://technet.microsoft.com/en-us/itpro/powershell/windows/cimcmdlets/cimcmdlets)
+- [Video: Using CIM Cmdlets and CIM Sessions](http://mikefrobbins.com/2013/09/12/phillyposh-user-group-meeting-presentation-follow-up-powershell-second-hop-problem-with-cimsessions/)

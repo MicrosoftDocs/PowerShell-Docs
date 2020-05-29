@@ -862,18 +862,18 @@ input, error handling, and comment based help.
 ## Review
 
 1. How do you obtain a list of approved verbs in PowerShell?
-2. How do you turn a PowerShell function into an advanced function?
-3. When should WhatIf and Confirm parameters be added to your PowerShell functions?
-4. How do you turn a non-terminating error into a terminating one?
-5. Why should you add comment based help to your functions?
+1. How do you turn a PowerShell function into an advanced function?
+1. When should WhatIf and Confirm parameters be added to your PowerShell functions?
+1. How do you turn a non-terminating error into a terminating one?
+1. Why should you add comment based help to your functions?
 
 ## Recommended Reading
 
-* [about_Functions](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/about/about_functions)
-* [about_Functions_Advanced_Parameters](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/about/about_functions_advanced_parameters)
-* [about_CommonParameters](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/about/about_commonparameters)
-* [about_Functions_CmdletBindingAttribute](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/about/about_functions_cmdletbindingattribute)
-* [about_Functions_Advanced](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/about/about_functions_advanced)
-* [about_Try_Catch_Finally](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/about/about_try_catch_finally)
-* [about_Comment_Based_Help](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/about/about_comment_based_help)
-* [Video: PowerShell Toolmaking with Advanced Functions and Script Modules](http://mikefrobbins.com/2016/05/26/video-powershell-toolmaking-with-advanced-functions-and-script-modules/)
+- [about_Functions](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/about/about_functions)
+- [about_Functions_Advanced_Parameters](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/about/about_functions_advanced_parameters)
+- [about_CommonParameters](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/about/about_commonparameters)
+- [about_Functions_CmdletBindingAttribute](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/about/about_functions_cmdletbindingattribute)
+- [about_Functions_Advanced](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/about/about_functions_advanced)
+- [about_Try_Catch_Finally](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/about/about_try_catch_finally)
+- [about_Comment_Based_Help](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/about/about_comment_based_help)
+- [Video: PowerShell Toolmaking with Advanced Functions and Script Modules](http://mikefrobbins.com/2016/05/26/video-powershell-toolmaking-with-advanced-functions-and-script-modules/)
