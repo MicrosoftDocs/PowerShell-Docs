@@ -303,16 +303,16 @@ In this chapter, you've learned about the different types of loops that exist in
 ## Review
 
 1. What is the difference in the ForEach-Object cmdlet and the foreach scripting construct?
-2. What is the primary advantage of using a While loop instead of a Do While or Do Until loop.
-3. How do the break and continue statements differ?
+1. What is the primary advantage of using a While loop instead of a Do While or Do Until loop.
+1. How do the break and continue statements differ?
 
 ## Recommended Reading
 
-* [ForEach-Object](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/foreach-object)
-* [about_ForEach](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/about/about_foreach)
-* [about_For](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/about/about_for)
-* [about_Do](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/about/about_do)
-* [about_While](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/about/about_while)
-* [about_Break](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/about/about_break)
-* [about_Continue](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/about/about_continue)
-* [about_Return](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/about/about_return)
+- [ForEach-Object](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/foreach-object)
+- [about_ForEach](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/about/about_foreach)
+- [about_For](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/about/about_for)
+- [about_Do](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/about/about_do)
+- [about_While](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/about/about_while)
+- [about_Break](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/about/about_break)
+- [about_Continue](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/about/about_continue)
+- [about_Return](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/about/about_return)

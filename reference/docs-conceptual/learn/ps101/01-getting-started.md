@@ -299,19 +299,19 @@ each supported operating system, and how to change the execution policy.
 ## Review
 
 1. How do you determine what PowerShell version a computer is running?
-2. Why is it important to launch PowerShell elevated as an administrator?
-3. How do you determine the current PowerShell execution policy?
-4. What does the default PowerShell execution policy on Windows client computers prevent from
+1. Why is it important to launch PowerShell elevated as an administrator?
+1. How do you determine the current PowerShell execution policy?
+1. What does the default PowerShell execution policy on Windows client computers prevent from
    occurring?
-5. How do you change the PowerShell execution policy?
+1. How do you change the PowerShell execution policy?
 
 ## Recommended Reading
 
 For those who want to know more information about the topics covered in this chapter, I recommend
 reading the following PowerShell help topics.
 
-* [about_Automatic_Variables](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/about/about_automatic_variables)
-* [about_Execution_Policies](https://msdn.microsoft.com/en-us/powershell/reference/5.0/microsoft.powershell.core/about/about_execution_policies)
+- [about_Automatic_Variables](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/about/about_automatic_variables)
+- [about_Execution_Policies](https://msdn.microsoft.com/en-us/powershell/reference/5.0/microsoft.powershell.core/about/about_execution_policies)
 
 In the next chapter, you'll learn about the discoverability of commands in PowerShell. One of the
 things that will be covered is how to update PowerShell so those help topics can be viewed right

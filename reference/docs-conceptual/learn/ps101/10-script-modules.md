@@ -374,14 +374,14 @@ manifest for your script module.
 ## Review
 
 1. How do you create a script module in PowerShell?
-2. Why is it important for your functions to use an approved verb?
-3. How do you create a module manifest in PowerShell?
-4. What are the two options for exporting only certain functions from your module?
-5. What is required for your modules to load automatically when a command is called?
+1. Why is it important for your functions to use an approved verb?
+1. How do you create a module manifest in PowerShell?
+1. What are the two options for exporting only certain functions from your module?
+1. What is required for your modules to load automatically when a command is called?
 
 ## Recommended Reading
 
-* [How to Create PowerShell Script Modules and Module Manifests](http://mikefrobbins.com/2013/07/04/how-to-create-powershell-script-modules-and-module-manifests/)
-* [about_Modules](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/about/about_modules)
-* [New-ModuleManifest](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/new-modulemanifest)
-* [Export-ModuleMember](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/export-modulemember)
+- [How to Create PowerShell Script Modules and Module Manifests](http://mikefrobbins.com/2013/07/04/how-to-create-powershell-script-modules-and-module-manifests/)
+- [about_Modules](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/about/about_modules)
+- [New-ModuleManifest](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/new-modulemanifest)
+- [Export-ModuleMember](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/export-modulemember)

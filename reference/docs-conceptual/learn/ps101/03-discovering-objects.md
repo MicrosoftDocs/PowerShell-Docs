@@ -11,7 +11,8 @@ Don't get bogged down in the terminology. Read it and take it for what it's wort
 going to make sense initially, but after a little hands on experience with PowerShell you'll start
 to have those light bulb moments. Aha! So that's what the book was talking about.
 
-Be sure to follow along on your Windows 10 lab environment computer to gain some of that hands on experience with PowerShell.
+Be sure to follow along on your Windows 10 lab environment computer to gain some of that hands on
+experience with PowerShell.
 
 ## Requirements
 
@@ -392,7 +393,7 @@ ProductVersion             ScriptProperty System.Object ProductVersion {get=$thi
 
 Notice that in addition to there being more properties than are displayed by default, that a number
 of the default properties don't show up as being properties when viewing the results of piping the
-command to Get-Member. This is because many of the default results such as NPM(K), PM(K), WS(K), and
+command to Get-Member. This is because many of the default results such as npm(K), PM(K), WS(K), and
 CPU(s) are calculated properties. In order to determine the actual property names, the command must
 be piped to Get-Member.
 
@@ -894,18 +895,18 @@ that limit the properties that are returned by default.
 ## Review
 
 1. What type of object does the Get-Process cmdlet produce?
-2. How do you determine what the available properties are for a command?
-3. If a command exists for getting something but not for setting the same thing, what should you
+1. How do you determine what the available properties are for a command?
+1. If a command exists for getting something but not for setting the same thing, what should you
    check for?
-4. How can certain commands that don't produce output by default be made to produce output?
-5. If you're going to be working with the results of a command that produces an enormous amount of
+1. How can certain commands that don't produce output by default be made to produce output?
+1. If you're going to be working with the results of a command that produces an enormous amount of
    output, what should you consider doing?
 
 ## Recommended Reading
 
-* [Get-Member](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.utility/get-member)
-* [Viewing Object Structure (Get-Member)](https://msdn.microsoft.com/en-us/powershell/scripting/getting-started/cookbooks/viewing-object-structure--get-member-)
-* [about_Objects](https://msdn.microsoft.com/en-us/powershell/reference/3.0/microsoft.powershell.core/about/about_objects)
-* [about_Properties](https://msdn.microsoft.com/en-us/powershell/reference/3.0/microsoft.powershell.core/about/about_properties)
-* [about_Methods](https://msdn.microsoft.com/en-us/powershell/reference/3.0/microsoft.powershell.core/about/about_methods)
-* [No PowerShell Cmdlet to Start or Stop Something? Don’t Forget to Check for Methods on the Get Cmdlets](http://mikefrobbins.com/2016/12/15/no-powershell-cmdlet-to-start-or-stop-something-dont-forget-to-check-for-methods-on-the-get-cmdlets/)
+- [Get-Member](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.utility/get-member)
+- [Viewing Object Structure (Get-Member)](https://msdn.microsoft.com/en-us/powershell/scripting/getting-started/cookbooks/viewing-object-structure--get-member-)
+- [about_Objects](https://msdn.microsoft.com/en-us/powershell/reference/3.0/microsoft.powershell.core/about/about_objects)
+- [about_Properties](https://msdn.microsoft.com/en-us/powershell/reference/3.0/microsoft.powershell.core/about/about_properties)
+- [about_Methods](https://msdn.microsoft.com/en-us/powershell/reference/3.0/microsoft.powershell.core/about/about_methods)
+- [No PowerShell Cmdlet to Start or Stop Something? Don’t Forget to Check for Methods on the Get Cmdlets](http://mikefrobbins.com/2016/12/15/no-powershell-cmdlet-to-start-or-stop-something-dont-forget-to-check-for-methods-on-the-get-cmdlets/)

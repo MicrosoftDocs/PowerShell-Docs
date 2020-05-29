@@ -32,9 +32,9 @@ PowerShell, regardless of whether or not it's a cmdlet, function, or alias.
 
 ## The Three Core Cmdlets in PowerShell
 
-* Get-Command
-* Get-Help
-* Get-Member (Covered in chapter 3)
+- Get-Command
+- Get-Help
+- Get-Member (Covered in chapter 3)
 
 One question I'm often asked is how do you figure out what the commands are in PowerShell? Both
 Get-Command and Get-Help can be used to determine the commands.
@@ -226,12 +226,12 @@ reside in different parameter sets.
 
 The following parameters each reside in different parameter sets:
 
-* Full
-* Detailed
-* Examples
-* Online
-* Parameter
-* ShowWindow
+- Full
+- Detailed
+- Examples
+- Online
+- Parameter
+- ShowWindow
 
 All of the cryptic syntax such as square and angle brackets in the syntax section means something
 but will be covered in Appendix A of this book. While important, learning what the cryptic syntax
@@ -913,9 +913,9 @@ and understand your commands, it could be you. Your co-workers and future self w
 
 Try running the following commands in the PowerShell console on your Windows 10 lab environment computer.
 
-* Get-Help -Name Get-Help -Full
-* help -Name Get-Help -Full
-* help Get-Help -Full
+- Get-Help -Name Get-Help -Full
+- help -Name Get-Help -Full
+- help Get-Help -Full
 
 Did you notice any differences in the output from the previously listed commands when you ran them
 on your Windows 10 lab environment computer?
@@ -977,12 +977,12 @@ Sometimes you simply don't want to display the entire help topic for a command. 
 of other parameters besides Full that can be specified with Get-Help or Help. Try running the
 following commands on your Windows 10 lab environment computer:
 
-* Get-Help -Name Get-Command -Full
-* Get-Help -Name Get-Command -Detailed
-* Get-Help -Name Get-Command -Examples
-* Get-Help -Name Get-Command -Online
-* Get-Help -Name Get-Command -Parameter Noun
-* Get-Help -Name Get-Command -ShowWindow
+- Get-Help -Name Get-Command -Full
+- Get-Help -Name Get-Command -Detailed
+- Get-Help -Name Get-Command -Examples
+- Get-Help -Name Get-Command -Online
+- Get-Help -Name Get-Command -Parameter Noun
+- Get-Help -Name Get-Command -ShowWindow
 
 I typically use help <command name> with the Full or Online parameter. If I'm only interested in the
 examples, I'll use the Examples parameter and if I'm only interested in a specific parameter, I'll
@@ -1372,22 +1372,22 @@ Get-Command | Get-Random | Get-Help -Full
 ## Review
 
 1. Is the DisplayName parameter of Get-Service positional?
-2. How many parameter sets does the Get-Process cmdlet have?
-3. What PowerShell commands exists for working with event logs?
-4. What is the PowerShell command for returning a list of PowerShell processes running on your computer?
-5. How do you update the PowerShell help content that's stored on your computer?
+1. How many parameter sets does the Get-Process cmdlet have?
+1. What PowerShell commands exists for working with event logs?
+1. What is the PowerShell command for returning a list of PowerShell processes running on your computer?
+1. How do you update the PowerShell help content that's stored on your computer?
 
 ## Recommended Reading
 
 For those who want to know more information about the topics covered in this chapter, I recommend
 reading the following PowerShell help topics.
 
-* [Get-Help](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/get-help)
-* [Get-Command](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/get-command)
-* [Update-Help](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/update-help)
-* [Save-Help](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/save-help)
-* [about_Updatable_Help](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/about/about_updatable_help)
-* [about_Command_Syntax](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/about/about_command_syntax)
+- [Get-Help](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/get-help)
+- [Get-Command](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/get-command)
+- [Update-Help](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/update-help)
+- [Save-Help](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/save-help)
+- [about_Updatable_Help](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/about/about_updatable_help)
+- [about_Command_Syntax](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/about/about_command_syntax)
 
 In the next chapter, you'll learn about the Get-Member cmdlet as well as objects, properties, and
 methods.
