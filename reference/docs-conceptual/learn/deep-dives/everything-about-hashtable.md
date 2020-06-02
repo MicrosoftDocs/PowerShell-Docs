@@ -812,6 +812,8 @@ Name      Value
 a         b
 ```
 
+PowerShell 6.2 added the **Depth** parameter to `ConvertFrom-Json`. The default **Depth** is 1024.
+
 ### Reading directly from a file
 
 If you have a file that contains a hashtable using PowerShell syntax, there's a way to import it
@@ -831,8 +833,7 @@ On that note, did you know that a module manifest (the psd1 file) is just a hash
 
 ## Keys can be any object
 
-I didn't want to go off on this tangent earlier, but, most of the time, the keys are just strings.
-So we can put quotes around anything and make it a key.
+Most of the time, the keys are just strings. So we can put quotes around anything and make it a key.
 
 ```powershell
 $person = @{
@@ -882,8 +883,8 @@ works.
 
 ### $PSBoundParameters
 
-[$PSBoundParameters][] is an automatic variable that only exists inside the context of a function. It
-contains all the parameters that the function was called with. This isn't exactly a hashtable but
+[$PSBoundParameters][] is an automatic variable that only exists inside the context of a function.
+It contains all the parameters that the function was called with. This isn't exactly a hashtable but
 close enough that you can treat it like one.
 
 That includes removing keys and splatting it to other functions. If you find yourself writing proxy
