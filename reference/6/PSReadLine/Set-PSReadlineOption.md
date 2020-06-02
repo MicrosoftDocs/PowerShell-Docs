@@ -1,7 +1,7 @@
 ---
 external help file: Microsoft.PowerShell.PSReadLine2.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: PSReadLine
 ms.date: 04/09/2020
 online version: https://docs.microsoft.com/powershell/module/psreadline/set-psreadlineoption?view=powershell-6&WT.mc_id=ps-gethelp
@@ -648,7 +648,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: ;:,.[]{}()/\|^&*-=+'"–—-
+Default value: ;:,.[]{}()/\|^&*-=+'"ï¿½ï¿½-
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

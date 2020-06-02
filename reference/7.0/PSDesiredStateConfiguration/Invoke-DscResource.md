@@ -1,7 +1,7 @@
 ---
 external help file: Microsoft.Windows.DSC.CoreConfProviders.dll-help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: PSDesiredStateConfiguration
 ms.date: 04/01/2020
 online version: https://docs.microsoft.com/powershell/module/psdesiredstateconfiguration/invoke-dscresource?view=powershell-7&WT.mc_id=ps-gethelp

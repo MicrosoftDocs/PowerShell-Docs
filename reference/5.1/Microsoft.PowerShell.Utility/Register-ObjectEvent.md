@@ -1,7 +1,7 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
 ms.date: 06/27/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/register-objectevent?view=powershell-5.1&WT.mc_id=ps-gethelp

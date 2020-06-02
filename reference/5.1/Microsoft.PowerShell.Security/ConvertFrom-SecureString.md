@@ -1,7 +1,7 @@
 ---
 external help file: Microsoft.PowerShell.Security.dll-help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: Microsoft.PowerShell.Security
 ms.date: 04/27/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.security/convertfrom-securestring?view=powershell-5.1&WT.mc_id=ps-gethelp
