@@ -1,7 +1,8 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Diagnostics.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
+Module Name: Microsoft.PowerShell.Diagnostics
 ms.date: 11/20/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.diagnostics/get-winevent?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0

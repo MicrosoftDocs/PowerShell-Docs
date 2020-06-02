@@ -1,6 +1,6 @@
 ---
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 ms.date: 11/26/2019
 online version: 1.0.0
 schema: 2.0.0

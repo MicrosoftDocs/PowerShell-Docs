@@ -1,6 +1,6 @@
 ---
 keywords: powershell
-locale: en-us
+Locale: en-US
 ms.date: 02/10/2020
 online version: https://docs.microsoft.com/powershell/module/psreadline/about/about_psreadline?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0

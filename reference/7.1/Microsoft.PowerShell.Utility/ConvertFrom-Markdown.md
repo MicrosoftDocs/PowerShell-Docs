@@ -1,7 +1,8 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet,markdown
-locale: en-us
+Locale: en-US
+Module Name: Microsoft.PowerShell.Utility
 ms.date: 11/02/2018
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/convertfrom-markdown?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0

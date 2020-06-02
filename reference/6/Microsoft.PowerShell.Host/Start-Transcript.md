@@ -1,7 +1,7 @@
 ---
 external help file: Microsoft.PowerShell.ConsoleHost.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: Microsoft.PowerShell.Host
 ms.date: 04/22/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.host/start-transcript?view=powershell-6&WT.mc_id=ps-gethelp
