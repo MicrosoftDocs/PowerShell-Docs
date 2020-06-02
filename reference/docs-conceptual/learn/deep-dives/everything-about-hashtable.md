@@ -608,7 +608,7 @@ This creates the same hashtable that we saw above and can access the properties 
 ```powershell
 $person.location.city
 Austin
-```powershell
+```
 
 There are many ways to approach the structure of your objects. Here is a second way to look at a
 nested hashtable.
@@ -757,6 +757,37 @@ I need to use the `-Raw` option to read it back into a single string. The Second
 imported object is no longer a `[hashtable]`. It's now a `[pscustomobject]` and that can cause
 issues if you don't expect it.
 
+Watch for deeply-nested hashtables. When you convert it to JSON you might not get the results you
+expect.
+
+```powershell
+@{ a = @{ b = @{ c = @{ d = "e" }}}} | ConvertTo-Json
+
+{
+  "a": {
+    "b": {
+      "c": "System.Collections.Hashtable"
+    }
+  }
+}
+```
+
+Use **Depth** parameter to ensure that you have expanded all the nested hashtables.
+
+```powershell
+@{ a = @{ b = @{ c = @{ d = "e" }}}} | ConvertTo-Json -Depth 3
+
+{
+  "a": {
+    "b": {
+      "c": {
+        "d": "e"
+      }
+    }
+  }
+}
+```
+
 If you need it to be a `[hashtable]` on import, then you need to use the `Export-CliXml` and
 `Import-CliXml` commands.
 
@@ -770,6 +801,18 @@ If you need to convert JSON to a `[hashtable]`, there's one way that I know of t
 $JSSerializer = [System.Web.Script.Serialization.JavaScriptSerializer]::new()
 $JSSerializer.Deserialize($json,'Hashtable')
 ```
+
+Beginning in PowerShell v6, JSON support uses the NewtonSoft JSON.NET and adds hashtable support.
+
+```powershell
+'{ "a": "b" }' | ConvertFrom-Json -AsHashtable
+
+Name      Value
+----      -----
+a         b
+```
+
+PowerShell 6.2 added the **Depth** parameter to `ConvertFrom-Json`. The default **Depth** is 1024.
 
 ### Reading directly from a file
 
@@ -788,10 +831,9 @@ any other PowerShell commands in it before it executes it.
 
 On that note, did you know that a module manifest (the psd1 file) is just a hashtable?
 
-## Keys are just strings
+## Keys can be any object
 
-I didn't want to go off on this tangent earlier, but the keys are just strings. So we can put quotes
-around anything and make it a key.
+Most of the time, the keys are just strings. So we can put quotes around anything and make it a key.
 
 ```powershell
 $person = @{
@@ -814,14 +856,35 @@ Just because you can do something, it doesn't mean that you should. That last on
 bug waiting to happen and would be easily misunderstood by anyone reading your code.
 
 Technically your key doesn't have to be a string but they're easier to think about if you only use
-strings.
+strings. However, indexing doesn't work well with the complex keys.
+
+```powershell
+$ht = @{ @(1,2,3) = "a" }
+$ht
+
+Name                           Value
+----                           -----
+{1, 2, 3}                      a
+```
+
+Accessing a value in the hashtable by its key doesn't always work. For example:
+
+```powershell
+$key = $ht.keys[0]
+$ht.$key
+$ht[$key]
+a
+```
+
+Using the member access (`.`) notation returns nothing. But using the array index (`[]`) notation
+works.
 
 ## Use in automatic variables
 
 ### $PSBoundParameters
 
-[$PSBoundParameters][] is an automatic variable that only exists inside the context of a function. It
-contains all the parameters that the function was called with. This isn't exactly a hashtable but
+[$PSBoundParameters][] is an automatic variable that only exists inside the context of a function.
+It contains all the parameters that the function was called with. This isn't exactly a hashtable but
 close enough that you can treat it like one.
 
 That includes removing keys and splatting it to other functions. If you find yourself writing proxy
@@ -1010,10 +1073,6 @@ I covered a lot of ground quickly. My hope is that you walk away leaning somethi
 understanding it better every time you read this. Because I covered the full spectrum of this
 feature, there are aspects that just may not apply to you right now. That is perfectly OK and is
 kind of expected depending on how much you work with PowerShell.
-
-Here is a list of everything we covered in case you want to jump back up to something. Normally,
-this would go at the beginning but this was written from top to bottom with examples that build on
-everything that came before it.
 
 <!-- link references -->
 [original version]: https://powershellexplained.com/2016-11-06-powershell-hashtable-everything-you-wanted-to-know-about/
