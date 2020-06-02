@@ -608,7 +608,7 @@ This creates the same hashtable that we saw above and can access the properties 
 ```powershell
 $person.location.city
 Austin
-```powershell
+```
 
 There are many ways to approach the structure of your objects. Here is a second way to look at a
 nested hashtable.
