@@ -2,7 +2,7 @@
 Download Help Link: https://Please-enter-FwLink-manually
 Help Version: 6.0
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Guid: 00000000-0000-0000-0000-000000000000
 Module Name: About
 ms.date: 02/25/2019

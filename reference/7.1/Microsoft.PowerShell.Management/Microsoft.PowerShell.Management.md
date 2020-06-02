@@ -2,7 +2,7 @@
 Download Help Link: https://aka.ms/powershell71-help
 Help Version: 7.0.0.0
 keywords: powershell,cmdlet
-locale: en-US
+Locale: en-US
 Module Guid: eefcb906-b326-4e99-9f54-8b4bb6ef3c6d
 Module Name: Microsoft.PowerShell.Management
 ms.date: 03/01/2019

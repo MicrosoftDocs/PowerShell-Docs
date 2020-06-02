@@ -1,6 +1,6 @@
 ---
 keywords: PowerShell,cmdlet
-locale: en-us
+Locale: en-US
 ms.date: 12/04/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_redirection?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0

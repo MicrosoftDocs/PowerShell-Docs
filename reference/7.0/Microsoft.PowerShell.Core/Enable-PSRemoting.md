@@ -1,7 +1,8 @@
 ---
 external help file: System.Management.Automation.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
+Module Name: Microsoft.PowerShell.Core
 ms.date: 10/02/2018
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/enable-psremoting?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
@@ -181,7 +182,7 @@ Permission    : NT AUTHORITY\INTERACTIVE AccessAllowed, BUILTIN\Administrators A
 
 Name                           Value
 ----                           -----
-PSCompatibleVersions           {1.0, 2.0, 3.0, 4.0…}
+PSCompatibleVersions           {1.0, 2.0, 3.0, 4.0ï¿½}
 PSEdition                      Core
 PSRemotingProtocolVersion      2.3
 Platform                       Win32NT

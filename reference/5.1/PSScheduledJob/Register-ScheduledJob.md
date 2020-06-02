@@ -1,7 +1,7 @@
 ---
 external help file: Microsoft.PowerShell.ScheduledJob.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: PSScheduledJob
 ms.date: 10/25/2019
 online version: https://docs.microsoft.com/powershell/module/psscheduledjob/register-scheduledjob?view=powershell-5.1&WT.mc_id=ps-gethelp

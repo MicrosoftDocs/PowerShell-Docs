@@ -1,8 +1,8 @@
 ---
 Download Help Link: https://go.microsoft.com/fwlink/?linkid=390758
-Help Version: 5.1
+Help Version: 5.11
 keywords: powershell,cmdlet
-locale: en-US
+Locale: en-US
 Module Guid: fb6cc51d-c096-4b38-b78d-0fed6277096a
 Module Name: CimCmdlets
 ms.date: 02/20/2019
