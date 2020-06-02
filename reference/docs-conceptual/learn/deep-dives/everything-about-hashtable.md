@@ -1074,10 +1074,6 @@ understanding it better every time you read this. Because I covered the full spe
 feature, there are aspects that just may not apply to you right now. That is perfectly OK and is
 kind of expected depending on how much you work with PowerShell.
 
-Here is a list of everything we covered in case you want to jump back up to something. Normally,
-this would go at the beginning but this was written from top to bottom with examples that build on
-everything that came before it.
-
 <!-- link references -->
 [original version]: https://powershellexplained.com/2016-11-06-powershell-hashtable-everything-you-wanted-to-know-about/
 [powershellexplained.com]: https://powershellexplained.com/
