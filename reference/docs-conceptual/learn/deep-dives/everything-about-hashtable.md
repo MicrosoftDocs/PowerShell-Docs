@@ -757,6 +757,37 @@ I need to use the `-Raw` option to read it back into a single string. The Second
 imported object is no longer a `[hashtable]`. It's now a `[pscustomobject]` and that can cause
 issues if you don't expect it.
 
+Watch for deeply-nested hashtables. When you convert it to JSON you might not get the results you
+expect.
+
+```powershell
+@{ a = @{ b = @{ c = @{ d = "e" }}}} | ConvertTo-Json
+
+{
+  "a": {
+    "b": {
+      "c": "System.Collections.Hashtable"
+    }
+  }
+}
+```
+
+Use **Depth** parameter to ensure that you have expanded all the nested hashtables.
+
+```powershell
+@{ a = @{ b = @{ c = @{ d = "e" }}}} | ConvertTo-Json -Depth 3
+
+{
+  "a": {
+    "b": {
+      "c": {
+        "d": "e"
+      }
+    }
+  }
+}
+```
+
 If you need it to be a `[hashtable]` on import, then you need to use the `Export-CliXml` and
 `Import-CliXml` commands.
 
@@ -769,6 +800,16 @@ If you need to convert JSON to a `[hashtable]`, there's one way that I know of t
 [Reflection.Assembly]::LoadWithPartialName("System.Web.Script.Serialization")
 $JSSerializer = [System.Web.Script.Serialization.JavaScriptSerializer]::new()
 $JSSerializer.Deserialize($json,'Hashtable')
+```
+
+Beginning in PowerShell v6, JSON support uses the NewtonSoft JSON.NET and adds hashtable support.
+
+```powershell
+'{ "a": "b" }' | ConvertFrom-Json -AsHashtable
+
+Name      Value
+----      -----
+a         b
 ```
 
 ### Reading directly from a file
@@ -788,10 +829,10 @@ any other PowerShell commands in it before it executes it.
 
 On that note, did you know that a module manifest (the psd1 file) is just a hashtable?
 
-## Keys are just strings
+## Keys can be any object
 
-I didn't want to go off on this tangent earlier, but the keys are just strings. So we can put quotes
-around anything and make it a key.
+I didn't want to go off on this tangent earlier, but, most of the time, the keys are just strings.
+So we can put quotes around anything and make it a key.
 
 ```powershell
 $person = @{
@@ -814,7 +855,28 @@ Just because you can do something, it doesn't mean that you should. That last on
 bug waiting to happen and would be easily misunderstood by anyone reading your code.
 
 Technically your key doesn't have to be a string but they're easier to think about if you only use
-strings.
+strings. However, indexing doesn't work well with the complex keys.
+
+```powershell
+$ht = @{ @(1,2,3) = "a" }
+$ht
+
+Name                           Value
+----                           -----
+{1, 2, 3}                      a
+```
+
+Accessing a value in the hashtable by its key doesn't always work. For example:
+
+```powershell
+$key = $ht.keys[0]
+$ht.$key
+$ht[$key]
+a
+```
+
+Using the member access (`.`) notation returns nothing. But using the array index (`[]`) notation
+works.
 
 ## Use in automatic variables
 
