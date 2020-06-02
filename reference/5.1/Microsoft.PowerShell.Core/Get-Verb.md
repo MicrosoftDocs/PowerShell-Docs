@@ -1,8 +1,9 @@
 ---
 external help file: System.Management.Automation.dll-help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 ms.date: 09/07/2018
+Module Name: Microsoft.PowerShell.Core
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/functions/get-verb?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Verb

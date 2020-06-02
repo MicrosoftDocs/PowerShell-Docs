@@ -1,6 +1,7 @@
 ---
 external help file: ThreadJob.dll-Help.xml
-Module Name: threadjob
+Locale: en-US
+Module Name: ThreadJob
 ms.date: 01/28/2020
 online version: https://docs.microsoft.com/powershell/module/threadjob/start-threadjob?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0

@@ -1,7 +1,8 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
+Module Name: Microsoft.PowerShell.Management
 ms.date: 03/27/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/get-item?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
@@ -335,7 +336,7 @@ To get the contents of an item recursively, use `Get-ChildItem`.
 To navigate through the registry, use this cmdlet to get registry keys and the `Get-ItemProperty`
 to get registry values and data. The registry values are considered to be properties of the
 registry key.
-  
+
 This cmdlet is designed to work with the data exposed by any provider. To list the providers
 available in your session, type `Get-PsProvider`. For more information, see
 [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).

@@ -1,7 +1,7 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Diagnostics.dll-help.xml
 keywords: powershell,cmdlet
-locale: en-us
+Locale: en-US
 Module Name: Microsoft.PowerShell.Diagnostics
 ms.date: 04/29/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.diagnostics/export-counter?view=powershell-5.1&WT.mc_id=ps-gethelp
