@@ -27,20 +27,30 @@
   items:
   - name: PowerShell 101
     items:
-    - name: Learning PowerShell names
-      href: learn/ps101/learning-powershell-names.md
-    - name: Using familiar command names
-      href: learn/ps101/using-familiar-command-names.md
-    - name: Getting detailed help information
-      href: learn/ps101/getting-detailed-help-information.md
-    - name: Getting information about commands
-      href: learn/ps101/getting-information-about-commands.md
-    - name: Using variables to store objects
-      href: learn/ps101/using-variables-to-store-objects.md
-    - name: PowerShell command line options
-      href: learn/ps101/powershell.exe-command-line-help.md
-    - name: Using tab expansion
-      href: learn/ps101/using-tab-expansion.md
+    - name: Introduction
+      href: learn/ps101/00-introduction.md
+    - name: Getting Started with PowerShell
+      href: learn/ps101/01-getting-started.md
+    - name: The Help System
+      href: learn/ps101/02-help-system.md
+    - name: Discovering objects, properties, and methods
+      href: learn/ps101/03-discovering-objects.md
+    - name: One-liners and the pipeline
+      href: learn/ps101/04-pipelines.md
+    - name: Formatting, aliases, providers, comparison
+      href: learn/ps101/05-formatting-aliases-providers-comparison.md
+    - name: Flow control
+      href: learn/ps101/06-flow-control.md
+    - name: Working with WMI
+      href: learn/ps101/07-working-with-wmi.md
+    - name: PowerShell remoting
+      href: learn/ps101/08-powershell-remoting.md
+    - name: Functions
+      href: learn/ps101/09-functions.md
+    - name: Script modules
+      href: learn/ps101/10-script-modules.md
+    - name: Appendix A - Help Syntax
+      href: learn/ps101/appendix-a.md
   - name: Deep dives
     items:
     - name: Overview
@@ -95,6 +105,8 @@
       href: learn/remoting/ps-remoting-second-hop.md
   - name: Using Experimental Features
     href: learn/experimental-features.md
+  - name: Using tab expansion
+    href: learn/ps101/using-tab-expansion.md
   - name: Additional resources
     href: learn/more-powershell-learning.md
   - name: Glossary
