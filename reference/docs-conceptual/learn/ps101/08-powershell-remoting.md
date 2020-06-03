@@ -1,89 +1,80 @@
-# Chapter 8 - PowerShell Remoting
+---
+title: PowerShell remoting | PowerShell 101
+description: There are many different ways to run commands against remote computers in PowerShell.
+ms.date: 06/02/2020
+ms.topic: guide
+ms.custom: Contributor-mikefrobbins
+ms.reviewer: mirobb
+---
+# Chapter 8 - PowerShell remoting
 
-There are many different ways to run commands against remote computers and servers with PowerShell.
-In the last chapter you saw how to remotely query WMI using the CIM cmdlets. There are also a number
-of cmdlets that have a built-in ComputerName parameter.
+PowerShell has many different ways to run commands against remote computers. In the last chapter,
+you saw how to remotely query WMI using the CIM cmdlets. PowerShell also includes several cmdlets
+that have a built-in **ComputerName** parameter.
 
-As shown in the following example, Get-Command can be used with the ParameterName parameter to
-determine what commands have a ComputerName parameter.
+As shown in the following example, `Get-Command` can be used with the ParameterName parameter to
+determine what commands have a **ComputerName** parameter.
 
 ```powershell
 Get-Command -ParameterName ComputerName
 ```
 
-```powershell
-CommandType     Name                                               Version    Source
------------     ----                                               -------    ------
-Cmdlet          Add-Computer                                       3.1.0.0    Microsof...
-Cmdlet          Clear-EventLog                                     3.1.0.0    Microsof...
-Cmdlet          Connect-PSSession                                  3.0.0.0    Microsof...
-Cmdlet          Enter-PSSession                                    3.0.0.0    Microsof...
-Cmdlet          Get-EventLog                                       3.1.0.0    Microsof...
-Cmdlet          Get-HotFix                                         3.1.0.0    Microsof...
-Cmdlet          Get-Process                                        3.1.0.0    Microsof...
-Cmdlet          Get-PSSession                                      3.0.0.0    Microsof...
-Cmdlet          Get-Service                                        3.1.0.0    Microsof...
-Cmdlet          Get-WmiObject                                      3.1.0.0    Microsof...
-Cmdlet          Invoke-Command                                     3.0.0.0    Microsof...
-Cmdlet          Invoke-WmiMethod                                   3.1.0.0    Microsof...
-Cmdlet          Limit-EventLog                                     3.1.0.0    Microsof...
-Cmdlet          New-EventLog                                       3.1.0.0    Microsof...
-Cmdlet          New-PSSession                                      3.0.0.0    Microsof...
-Cmdlet          Receive-Job                                        3.0.0.0    Microsof...
-Cmdlet          Receive-PSSession                                  3.0.0.0    Microsof...
-Cmdlet          Register-WmiEvent                                  3.1.0.0    Microsof...
-Cmdlet          Remove-Computer                                    3.1.0.0    Microsof...
-Cmdlet          Remove-EventLog                                    3.1.0.0    Microsof...
-Cmdlet          Remove-PSSession                                   3.0.0.0    Microsof...
-Cmdlet          Remove-WmiObject                                   3.1.0.0    Microsof...
-Cmdlet          Rename-Computer                                    3.1.0.0    Microsof...
-Cmdlet          Restart-Computer                                   3.1.0.0    Microsof...
-Cmdlet          Send-MailMessage                                   3.1.0.0    Microsof...
-Cmdlet          Set-Service                                        3.1.0.0    Microsof...
-Cmdlet          Set-WmiInstance                                    3.1.0.0    Microsof...
-Cmdlet          Show-EventLog                                      3.1.0.0    Microsof...
-Cmdlet          Stop-Computer                                      3.1.0.0    Microsof...
-Cmdlet          Test-Connection                                    3.1.0.0    Microsof...
-Cmdlet          Write-EventLog                                     3.1.0.0    Microsof...
+```Output
+CommandType Name                        Version Source
+----------- ----                        ------- ------
+Cmdlet      Connect-PSSession           7.0.1.0 Microsoft.PowerShell.Core
+Cmdlet      Connect-WSMan               7.0.0.0 Microsoft.WSMan.Management
+Cmdlet      Disconnect-WSMan            7.0.0.0 Microsoft.WSMan.Management
+Cmdlet      Enter-PSSession             7.0.1.0 Microsoft.PowerShell.Core
+Cmdlet      Get-CimAssociatedInstance   7.0.0.0 CimCmdlets
+Cmdlet      Get-CimClass                7.0.0.0 CimCmdlets
+Cmdlet      Get-CimInstance             7.0.0.0 CimCmdlets
+Cmdlet      Get-CimSession              7.0.0.0 CimCmdlets
+Cmdlet      Get-Counter                 7.0.0.0 Microsoft.PowerShell.Diagnostics
+Cmdlet      Get-HotFix                  7.0.0.0 Microsoft.PowerShell.Management
+Cmdlet      Get-PSSession               7.0.1.0 Microsoft.PowerShell.Core
+Cmdlet      Get-WinEvent                7.0.0.0 Microsoft.PowerShell.Diagnostics
+Cmdlet      Get-WSManInstance           7.0.0.0 Microsoft.WSMan.Management
+Cmdlet      Invoke-CimMethod            7.0.0.0 CimCmdlets
+Cmdlet      Invoke-Command              7.0.1.0 Microsoft.PowerShell.Core
+Cmdlet      Invoke-WSManAction          7.0.0.0 Microsoft.WSMan.Management
+Cmdlet      New-CimInstance             7.0.0.0 CimCmdlets
+Cmdlet      New-CimSession              7.0.0.0 CimCmdlets
+Cmdlet      New-PSSession               7.0.1.0 Microsoft.PowerShell.Core
+Cmdlet      New-WSManInstance           7.0.0.0 Microsoft.WSMan.Management
+Cmdlet      Receive-Job                 7.0.1.0 Microsoft.PowerShell.Core
+Cmdlet      Receive-PSSession           7.0.1.0 Microsoft.PowerShell.Core
+Cmdlet      Register-CimIndicationEvent 7.0.0.0 CimCmdlets
+Cmdlet      Remove-CimInstance          7.0.0.0 CimCmdlets
+Cmdlet      Remove-CimSession           7.0.0.0 CimCmdlets
+Cmdlet      Remove-PSSession            7.0.1.0 Microsoft.PowerShell.Core
+Cmdlet      Remove-WSManInstance        7.0.0.0 Microsoft.WSMan.Management
+Cmdlet      Rename-Computer             7.0.0.0 Microsoft.PowerShell.Management
+Cmdlet      Restart-Computer            7.0.0.0 Microsoft.PowerShell.Management
+Cmdlet      Send-MailMessage            7.0.0.0 Microsoft.PowerShell.Utility
+Cmdlet      Set-CimInstance             7.0.0.0 CimCmdlets
+Cmdlet      Set-WSManInstance           7.0.0.0 Microsoft.WSMan.Management
+Cmdlet      Stop-Computer               7.0.0.0 Microsoft.PowerShell.Management
+Cmdlet      Test-Connection             7.0.0.0 Microsoft.PowerShell.Management
+Cmdlet      Test-WSMan                  7.0.0.0 Microsoft.WSMan.Management
 ```
 
-Commands such as Get-Process and Get-Service have a ComputerName parameter. This isn't the long term
-direction that Microsoft is heading with being able to run commands against remote computers. Even
-if you do find that a command you need to run against a remote computer does have a ComputerName
-parameter, chances are that you'll need to specify alternate credentials and it won't have a
-Credential parameter. Even if you decided to run PowerShell as an elevated account to work around
-that problem, a firewall between your computer and the remote computer or the firewall on the server
-itself will probably block the request.
+Commands such as `Get-Process` and `Get-Hotfix` have a **ComputerName** parameter. This isn't the
+long-term direction that Microsoft is heading for running commands against remote computers. Even if
+you find command that has a **ComputerName** parameter, chances are that you'll need to specify
+alternate credentials and it won't have a **Credential** parameter. And if you decided to run
+PowerShell from an elevated account, a firewall between you and the remote computer can block the
+request.
 
-In order to use the PowerShell remoting commands that are demonstrated from this point forward in
-this chapter, PowerShell version 2.0 or higher must exist on the remote computer and PowerShell
-remoting must be enabled on the remote computer. Table 8-1 shows the default setting of whether or
-not PowerShell remoting is enabled or disabled for the currently supported Microsoft operating
-systems.
-
-|----------------------------------+----------------------------|
-| Windows Operating System Version | PowerShell Remoting        |
-|----------------------------------|----------------------------|
-| Server 2008                      | Disabled                   |
-| Windows 7                        | Disabled                   |
-| Server 2008 R2                   | Disabled                   |
-| Windows 8                        | Disabled                   |
-| Server 2012                      | Enabled                    |
-| Windows 8.1                      | Disabled                   |
-| Server 2012 R2                   | Enabled                    |
-| Windows 10                       | Disabled                   |
-| Server 2016                      | Enabled                    |
-|==================================+:===========================|
-|                          Table 8-1                            |
-|----------------------------------+----------------------------|
-
-PowerShell remoting can be enabled or re-enabled using the Enable-PSRemoting cmdlet.
+To use the PowerShell remoting commands that are demonstrated in this chapter, PowerShell remoting
+must be enabled on the remote computer. Use the `Enable-PSRemoting` cmdlet to enable PowerShell
+remoting.
 
 ```powershell
- Enable-PSRemoting
+Enable-PSRemoting
 ```
 
-```powershell
+```Output
 WinRM has been updated to receive requests.
 WinRM service type changed successfully.
 WinRM service started.
@@ -94,37 +85,35 @@ WinRM firewall exception enabled.
 
 ## One-To-One Remoting
 
-If you need to run a PowerShell command against one remote computer and need it to be an interactive
-session, then one-to-one remoting is what you're after. This type of remoting is provided via the
-Enter-PSSession cmdlet.
+If you want your remote session to be an interactive, then one-to-one remoting is what you want.
+This type of remoting is provided via the `Enter-PSSession` cmdlet.
 
-In the last chapter, I stored my domain admin credentials in a variable named Cred. If you haven't
-already done so, go ahead and store your domain admin credentials in the Cred variable.
+In the last chapter, I stored my domain admin credentials in a variable named `$Cred`. If you
+haven't already done so, go ahead and store your domain admin credentials in the `$Cred` variable.
+
+This allows you to enter the credentials once and use them on a per command basis as long as your
+current PowerShell session is active.
 
 ```powershell
 $Cred = Get-Credential
 ```
 
-This allows you to enter the credentials one time and use them to elevate on a per command basis
-without having to enter them more than once, as long as your current PowerShell console or ISE
-session is active.
-
 Create a one-to-one PowerShell remoting session to the domain controller named dc01.
 
 ```powershell
- Enter-PSSession -ComputerName dc01 -Credential $Cred
+Enter-PSSession -ComputerName dc01 -Credential $Cred
 ```
 
-```powershell
+```Output
 [dc01]: PS C:\Users\Administrator\Documents>
 ```
 
-Notice that in the previous example that the PowerShell prompt is preceded by [dc01]. This means
-you're in an interactive PowerShell remoting session to a computer named dc01 and any command you
-execute is actually run on dc01 and not on your local computer. Also keep in mind that you only have
-access to the PowerShell commands that exist on the remote computer and not the ones on your local
-computer while in a remoting session. In other words, if you've installed additional modules on your
-computer, they won't exist or be accessible on the remote computer.
+Notice that in the previous example that the PowerShell prompt is preceded by `[dc01]`. This means
+you're in an interactive PowerShell session to the remote computer named dc01. Any commands you
+execute run on dc01, not on your local computer. Also, keep in mind that you only have access to the
+PowerShell commands that exist on the remote computer and not the ones on your local computer. In
+other words, if you've installed additional modules on your computer, they aren't accessible on the
+remote computer.
 
 When you're connected to a remote computer via a one-to-one interactive PowerShell remoting session,
 you're effectively sitting at the remote computer. The objects are normal objects just like the ones
@@ -134,8 +123,7 @@ you've been working with throughout this entire book.
 [dc01]:  Get-Process | Get-Member
 ```
 
-```
-
+```Output
    TypeName: System.Diagnostics.Process
 
 Name                       MemberType     Definition
@@ -232,52 +220,46 @@ FileVersion                ScriptProperty System.Object FileVersion {get=$this.M
 Path                       ScriptProperty System.Object Path {get=$this.Mainmodule.Fil...
 Product                    ScriptProperty System.Object Product {get=$this.Mainmodule....
 ProductVersion             ScriptProperty System.Object ProductVersion {get=$this.Main...
-
 [dc01]:
 ```
 
 When you're done working with the remote computer, exit the one-to-one remoting session by using the
-Exit-PSSession cmdlet.
+`Exit-PSSession` cmdlet.
 
 ```powershell
 [dc01]:  Exit-PSSession
 ```
 
-```powershell
-
-```
-
 ## One-To-Many Remoting
 
-Sometimes you may need to perform a task interactively on a remote computer, but remoting is much
-more powerful when performing a task on multiple remote computers at the same time. The
-Invoke-Command cmdlet is used to remotely run a command against one or more remote computers at the
-same time.
+Sometimes you may need to perform a task interactively on a remote computer. But remoting is much
+more powerful when performing a task on multiple remote computers at the same time. USe the
+`Invoke-Command` cmdlet to run a command against one or more remote computers at the same time.
 
 ```powershell
- Invoke-Command -ComputerName dc01, sql02, web01 {Get-Service -Name W32time} -Credential $Cred
+Invoke-Command -ComputerName dc01, sql02, web01 {Get-Service -Name W32time} -Credential $Cred
 ```
 
-```powershell
-Status   Name               DisplayName                            PSComputerName
-------   ----               -----------                            --------------
-Running  W32time            Windows Time                           dc01
-Running  W32time            Windows Time                           sql02
-Running  W32time            Windows Time                           web01
+```Output
+Status   Name        DisplayName       PSComputerName
+------   ----        -----------       --------------
+Running  W32time     Windows Time      web01
+Start... W32time     Windows Time      dc01
+Running  W32time     Windows Time      sql02
 ```
 
 In the previous example, three servers were queried for the status of the Windows Time service. The
-Get-Service cmdlet was placed inside the script block of Invoke-Command. Get-Service is actually run
-on the remote computer and the results are returned to your local computer as deserialized objects.
+`Get-Service` cmdlet was placed inside the script block of `Invoke-Command`. `Get-Service` actually
+runs on the remote computer and the results are returned to your local computer as deserialized
+objects.
 
-Piping the previous command to Get-Member shows that the results are indeed deserialized objects.
+Piping the previous command to `Get-Member` shows that the results are indeed deserialized objects.
 
 ```powershell
- Invoke-Command -ComputerName dc01, sql02, web01 {Get-Service -Name W32time} -Credential $Cred | Get-Member
+Invoke-Command -ComputerName dc01, sql02, web01 {Get-Service -Name W32time} -Credential $Cred | Get-Member
 ```
 
-```
-
+```Output
    TypeName: Deserialized.System.ServiceProcess.ServiceController
 
 Name                MemberType   Definition
@@ -305,92 +287,81 @@ StartType           Property     System.String {get;set;}
 Status              Property     System.String {get;set;}
 ```
 
-Also notice that the majority of the methods are missing on deserialized objects which means they're
-not live objects; They're inert. You can't start or stop a service using a deserialized object
-because it's a snapshot of the state of that object from the point in time when the command was run
-on the remote computer.
+Notice that the majority of the methods are missing on deserialized objects. This means they're not
+live objects; they're inert. You can't start or stop a service using a deserialized object because
+it's a snapshot of the state of that object the point when the command ran on the remote computer.
 
-That doesn't mean you can't start or stop a service using a method with Invoke-Command though. It
+That doesn't mean you can't start or stop a service using a method with `Invoke-Command` though. It
 just means that the method has to be called in the remote session.
 
-I'll stop the Windows Time service on all three of those remote servers using the stop method to
-prove this point.
+I'll stop the Windows Time service on all three of those remote servers using the **Stop()** method
+to prove this point.
 
 ```powershell
- Invoke-Command -ComputerName dc01, sql02, web01 {(Get-Service -Name W32time).stop(
-)} -Credential $Cred
- Invoke-Command -ComputerName dc01, sql02, web01 {Get-Service -Name W32time} -Crede
-ntial $Cred
+Invoke-Command -ComputerName dc01, sql02, web01 {(Get-Service -Name W32time).Stop()} -Credential $Cred
+Invoke-Command -ComputerName dc01, sql02, web01 {Get-Service -Name W32time} -Credential $Cred
 ```
 
-```powershell
-Status   Name               DisplayName                            PSComputerName
-------   ----               -----------                            --------------
-Stopped  W32time            Windows Time                           sql02
-Stopped  W32time            Windows Time                           web01
-Stopped  W32time            Windows Time                           dc01
+```Output
+Status   Name        DisplayName       PSComputerName
+------   ----        -----------       --------------
+Running  W32time     Windows Time      web01
+Start... W32time     Windows Time      dc01
+Running  W32time     Windows Time      sql02
 ```
 
 As mentioned in a previous chapter, if a cmdlet exists for accomplishing a task, I recommend using
-it instead of using a method. In the previous scenario, I recommend using the Stop-Service cmdlet
-instead of the stop method. I chose to use the stop method to prove a point since many people are
-under the misconception that methods can't be called when using PowerShell remoting. They can't be
-called on the object that's returned because it's deserialized, but they can be called in the remote
-session itself.
+it instead of using a method. In the previous scenario, I recommend using the `Stop-Service` cmdlet
+instead of the stop method. I chose to use the **Stop()** method to prove a point since many people
+are under the misconception that methods can't be called when using PowerShell remoting. They can't
+be called on the object that's returned because it's deserialized, but they can be called in the
+remote session itself.
 
-## Windows PowerShell Sessions
+## PowerShell Sessions
 
-In the last example in the previous section, I ran two commands using the Invoke-Command cmdlet.
-That means two totally separate sessions had to be setup and torn down to run those two commands.
+In the last example in the previous section, I ran two commands using the `Invoke-Command` cmdlet.
+That means two separate sessions had to be set up and torn down to run those two commands.
 
-Similarly to how CIM sessions work as discussed in Chapter 7, a PowerShell session can be created to
-a remote computer so that multiple commands can be run against the remote computer without the
-overhead of setting up and tearing down a session for each individual command.
+Similar to the CIM sessions discussed in Chapter 7, a PowerShell session to a remote computer can be
+used to run multiple commands against the remote computer without the overhead of a new session for
+each individual command.
 
 Create a PowerShell session to each of the three computers we've been working with in this chapter,
 DC01, SQL02, and WEB01.
 
 ```powershell
- $Session = New-PSSession -ComputerName dc01, sql02, web01 -Credential $Cred
+$Session = New-PSSession -ComputerName dc01, sql02, web01 -Credential $Cred
 ```
+
+Now use the variable named `$Session` to start the Windows Time service using a method and check the
+status of the service.
 
 ```powershell
-
+Invoke-Command -Session $Session {(Get-Service -Name W32time).Start()}
+Invoke-Command -Session $Session {Get-Service -Name W32time}
 ```
 
-Now use the variable named Session that the PowerShell sessions are stored in to start the Windows
-Time service using a method and then check the status of the service.
-
-```powershell
- Invoke-Command -Session $Session {(Get-Service -Name W32time).start()}
- Invoke-Command -Session $Session {Get-Service -Name W32time}
+```Output
+Status   Name        DisplayName       PSComputerName
+------   ----        -----------       --------------
+Running  W32time     Windows Time      web01
+Start... W32time     Windows Time      dc01
+Running  W32time     Windows Time      sql02
 ```
 
-```powershell
-Status   Name               DisplayName                            PSComputerName
-------   ----               -----------                            --------------
-Running  W32time            Windows Time                           web01
-Start... W32time            Windows Time                           dc01
-Running  W32time            Windows Time                           sql02
-```
-
-Notice that in the previous example, once the session is created using alternate credentials, it's
-no longer necessary to specify the credentials each time a command is run.
+Once the session is created using alternate credentials, it's no longer necessary to specify the
+credentials each time a command is run.
 
 When you're finished using the sessions, be sure to remove them.
 
 ```powershell
- Get-PSSession | Remove-PSSession
-```
-
-```powershell
-
+Get-PSSession | Remove-PSSession
 ```
 
 ## Summary
 
-In this chapter you've learned about PowerShell remoting and how to run commands in an interactive
-session against one remote computer and how to run commands against multiple computers using
+In this chapter you've learned about PowerShell remoting, how to run commands in an interactive
+session with one remote computer, and how to run commands against multiple computers using
 one-to-many remoting. You've also learned the benefits of using a PowerShell session when running
 multiple commands against the same remote computer.
 
@@ -398,17 +369,26 @@ multiple commands against the same remote computer.
 
 1. How do you enable PowerShell remoting?
 1. What is the PowerShell command for starting an interactive session with a remote computer?
-1. What is one of the benefits of using a PowerShell remoting session versus just specifying the
-   computer name with each command?
+1. What is a benefit of using a PowerShell remoting session versus just specifying the computer name
+   with each command?
 1. Can a PowerShell remoting session be used with a one-to-one remoting session?
 1. What is the difference in the type of objects that are returned by cmdlets versus those returned
-   when running those same cmdlets against remote computers with Invoke-Command?
+   when running those same cmdlets against remote computers with `Invoke-Command`?
 
 ## Recommended Reading
 
-- [about_Remote](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/about/about_remote)
-- [about_Remote_FAQ](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/about/about_remote_faq)
-- [about_Remote_Output](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/about/about_remote_output)
-- [about_Remote_Requirements](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/about/about_remote_requirements)
-- [about_Remote_Troubleshooting](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/about/about_remote_troubleshooting)
-- [about_Remote_Variables](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/about/about_remote_variables)
+- [about_Remote][]
+- [about_Remote_FAQ][]
+- [about_Remote_Output][]
+- [about_Remote_Requirements][]
+- [about_Remote_Troubleshooting][]
+- [about_Remote_Variables][]
+
+<!-- link references -->
+[about_Remote]: /powershell/module/microsoft.powershell.core/about/about_remote
+[about_Remote_FAQ]: /powershell/module/microsoft.powershell.core/about/about_remote_faq
+[about_Remote_Output]: /powershell/module/microsoft.powershell.core/about/about_remote_output
+[about_Remote_Requirements]: /powershell/module/microsoft.powershell.core/about/about_remote_requirements
+[about_Remote_Troubleshooting]: /powershell/module/microsoft.powershell.core/about/about_remote_troubleshooting
+[about_Remote_Variables]: /powershell/module/microsoft.powershell.core/about/about_remote_variables
+[Breaking changes in PowerShell 6.0]: /powershell/scripting/whats-new/breaking-changes-ps6#remove--protocol-from--computer-cmdlets-5277

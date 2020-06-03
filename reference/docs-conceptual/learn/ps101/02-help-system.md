@@ -125,8 +125,11 @@ Each of the following parameters are in different parameter sets:
 
 All of the cryptic syntax such as square and angle brackets in the syntax section means something
 but will be covered in Appendix A of this book. While important, learning what the cryptic syntax is
-often difficult to retain for someone who is new to PowerShell and may not use it everyday. For
-beginners, there's an easier way to figure out the same information except in plain language.
+often difficult to retain for someone who is new to PowerShell and may not use it everyday.
+
+For more information to better understand the cryptic syntax, see [Appendix A][].
+
+For beginners, there's an easier way to figure out the same information except in plain language.
 
 When the **Full** parameter of `Get-Help` is specified, the entire help topic is returned.
 
@@ -660,3 +663,4 @@ methods.
 [about_Updatable_Help]: /powershell/module/microsoft.powershell.core/about/about_updatable_help
 [about_Command_Syntax]: /powershell/module/microsoft.powershell.core/about/about_command_syntax
 [PowerShell-Docs]: https://github.com/powershell/powershell
+[Appendix A]: appendix-a.md

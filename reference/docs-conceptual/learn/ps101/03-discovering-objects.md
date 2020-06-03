@@ -8,7 +8,8 @@ ms.reviewer: mirobb
 ---
 # Chapter 3 - Discovering objects, properties, and methods
 
-My first introduction to computers was a Commodore 64, but my first modern computer was a 286 12-Mhz IBM clone with 1 megabyte of memory, a 40-megabyte hard drive, and one 5-1/4 inch floppy disk drive
+My first introduction to computers was a Commodore 64, but my first modern computer was a 286 12-Mhz
+IBM clone with 1 megabyte of memory, a 40-megabyte hard drive, and one 5-1/4 inch floppy disk drive
 with a CGA monitor running Microsoft DOS 3.3.
 
 Many IT Pros, like myself, are no stranger to the command line, but when the subject of objects,
@@ -31,12 +32,12 @@ higher) build of Windows, the RSAT tools are installed as a Windows feature.
 
 ## Get-Member
 
-`Get-Member` helps you discover what objects, properties, and methods are available for commands. Any
-command that produces object-based output can be piped to `Get-Member`. A property is a characteristic
-about an item. Your drivers license has a property called eye color and the most common values for
-that property are blue and brown. A method is an action that can be taken on an item. In staying
-with the drivers license example, one of the methods is "Revoke" because the department of motor
-vehicles can revoke your drivers license.
+`Get-Member` helps you discover what objects, properties, and methods are available for commands.
+Any command that produces object-based output can be piped to `Get-Member`. A property is a
+characteristic about an item. Your drivers license has a property called eye color and the most
+common values for that property are blue and brown. A method is an action that can be taken on an
+item. In staying with the drivers license example, one of the methods is "Revoke" because the
+department of motor vehicles can revoke your drivers license.
 
 ### Properties
 
@@ -53,9 +54,9 @@ Status   Name               DisplayName
 Running  w32time            Windows Time
 ```
 
-**Status**, **Name**, and **DisplayName** are examples of properties as shown in the previous set of results.
-The value for the Status property is Running, the value for the **Name** property is `w32time`, and the
-value for **DisplayName** is `Windows Time`.
+**Status**, **Name**, and **DisplayName** are examples of properties as shown in the previous set of
+results. The value for the Status property is Running, the value for the **Name** property is
+`w32time`, and the value for **DisplayName** is `Windows Time`.
 
 Now I'll pipe that same command to `Get-Member`:
 

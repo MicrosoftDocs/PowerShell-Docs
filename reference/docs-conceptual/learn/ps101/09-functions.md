@@ -1,35 +1,42 @@
+---
+title: Functions | PowerShell 101
+description: PowerShell functions allow you to create tools that can be reused in scripts.
+ms.date: 06/02/2020
+ms.topic: guide
+ms.custom: Contributor-mikefrobbins
+ms.reviewer: mirobb
+---
 # Chapter 9 - Functions
 
 If you're writing PowerShell one-liners or scripts and find yourself often having to modify them for
-different scenarios, or if you're sharing the code with others, there's a good chance that
-particular one-liner or script is a good candidate to be turned into a function so that it can be
-used as a reusable tool.
+different scenarios, there's a good chance that it's a good candidate to be turned into a function
+that can be reused.
 
-Whenever possible, I prefer to write a function because to me it's more tool oriented. I can place
-the function in a script module, place that module in the $env:PSModulePath and with PowerShell
-version 3.0 or higher, I can simply call the function without needing to physically locate where
-it's saved. With PowerShellGet which was introduced in PowerShell version 5.0, it's also easier to
+Whenever possible, I prefer to write function because they are more tool oriented. I can put the
+function in a script module, put that module in the `$env:PSModulePath`, and call the function
+without needing to physically locate where it's saved. Using the PowerShellGet module, it's easy to
 share those modules in a NuGet repository. PowerShellGet is available as a separate download for
 PowerShell version 3.0 and higher.
 
-Don't overcomplicate things. Keep it simple and use the most straight forward way to accomplish a
-task. Avoid aliases and positional parameters in scripts and functions and any code that you share.
-Format your code for readability. Don't hard code values (don't use static values), use parameters
-and variables. Don't write unnecessary code even if it doesn't hurt anything because it adds
-unnecessary complexity. Attention to detail goes a long way when writing any PowerShell code.
+Don't over complicate things. Keep it simple and use the most straight forward way to accomplish a
+task. Avoid aliases and positional parameters in any code that you reuse. Format your code for
+readability. Don't hardcode values; use parameters and variables. Don't write unnecessary code even
+if it doesn't hurt anything. It adds unnecessary complexity. Attention to detail goes a long
+way when writing any PowerShell code.
 
 ## Naming
 
-When naming your functions in PowerShell, use a pascal case name with an approved verb and a
-singular noun. I also recommend prefixing the noun. For example: ApprovedVerb-PrefixSingularNoun.
+When naming your functions in PowerShell, use a [Pascal case][] name with an approved verb and a
+singular noun. I also recommend prefixing the noun. For example:
+`<ApprovedVerb>-<Prefix><SingularNoun>`.
 
-In PowerShell, there's a specific list of approved verbs which can be obtained by running Get-Verb.
+In PowerShell, there's a specific list of approved verbs that can be obtained by running `Get-Verb`.
 
 ```powershell
- Get-Verb | Sort-Object -Property Verb
+Get-Verb | Sort-Object -Property Verb
 ```
 
-```powershell
+```Output
 Verb        Group
 ----        -----
 Add         Common
@@ -133,12 +140,12 @@ Write       Communications
 ```
 
 In the previous example, I've sorted the results by the Verb column. The Group column gives you an
-idea of how these verbs are used. The reason it's important to choose an approved verb in PowerShell
-is once the functions are added to a module, the module will generate a warning message if you
-choose an unapproved verb. That warning message will make your functions look unprofessional.
-Unapproved verbs also limit the discoverability of your functions.
+idea of how these verbs are used. It's important to choose an approved verb in PowerShell when
+functions are added to a module. The module generates a warning message at load time if you choose
+an unapproved verb. That warning message makes your functions look unprofessional. Unapproved verbs
+also limit the discoverability of your functions.
 
-## A Simple function
+## A simple function
 
 A function in PowerShell is declared with the function keyword followed by the function name and
 then an open and closing curly brace. The code that the function will execute is contained within
@@ -150,20 +157,19 @@ function Get-Version {
 }
 ```
 
-The PowerShell function shown in the previous example is a very simple example. It returns the
-version of PowerShell.
+The function shown is a simple example that returns the version of PowerShell.
 
 ```powershell
- Get-Version
+Get-Version
 ```
 
-```powershell
+```Output
 Major  Minor  Build  Revision
 -----  -----  -----  --------
 5      1      14393  693
 ```
 
-There's a good chance of name conflict with functions named something like Get-Version and default
+There's a good chance of name conflict with functions named something like `Get-Version` and default
 commands in PowerShell or commands that others may write. This is why I recommend prefixing the noun
 portion of your functions to help prevent naming conflicts. In the following example, I'll use the
 prefix "PS".
@@ -177,10 +183,10 @@ function Get-PSVersion {
 Other than the name, this function is identical to the previous one.
 
 ```powershell
- Get-PSVersion
+Get-PSVersion
 ```
 
-```powershell
+```Output
 Major  Minor  Build  Revision
 -----  -----  -----  --------
 5      1      14393  693
@@ -199,10 +205,10 @@ This function is no different than the previous two other than using a more sens
 prevent naming conflicts with other PowerShell commands.
 
 ```powershell
- Get-MrPSVersion
+Get-MrPSVersion
 ```
 
-```powershell
+```Output
 Major  Minor  Build  Revision
 -----  -----  -----  --------
 5      1      14393  693
@@ -211,10 +217,10 @@ Major  Minor  Build  Revision
 Once loaded into memory, you can see functions on the Function PSDrive.
 
 ```powershell
- Get-ChildItem -Path Function:\Get-*Version
+Get-ChildItem -Path Function:\Get-*Version
 ```
 
-```powershell
+```Output
 CommandType     Name                                               Version    Source
 -----------     ----                                               -------    ------
 Function        Get-Version
@@ -223,34 +229,26 @@ Function        Get-MrPSVersion
 ```
 
 If you want to remove these functions from your current session, you'll have to remove them from the
-Function PSDrive or close and re-open PowerShell.
+Function PSDrive or close and reopen PowerShell.
 
 ```powershell
- Get-ChildItem -Path Function:\Get-*Version | Remove-Item
-```
-
-```powershell
-
+Get-ChildItem -Path Function:\Get-*Version | Remove-Item
 ```
 
 Verify that the functions were indeed removed.
 
 ```powershell
- Get-ChildItem -Path Function:\Get-*Version
+Get-ChildItem -Path Function:\Get-*Version
 ```
+
+If the functions were loaded as part of a module, the module can be unloaded to remove them.
 
 ```powershell
-
+Remove-Module -Name <ModuleName>
 ```
 
-If the functions were loaded as part of a module, the module can simply be unloaded to remove them.
-
-```powershell
- Remove-Module -Name <ModuleName>
-```
-
-The Remove-Module cmdlet removes modules from memory in your current PowerShell session, it doesn't
-remove them from your system or from disk.
+The `Remove-Module` cmdlet removes modules from memory in your current PowerShell session, it
+doesn't remove them from your system or from disk.
 
 ## Parameters
 
@@ -292,15 +290,15 @@ function Get-MrParameterCount {
 }
 ```
 
-As you can see in the results shown below, there are 39 commands that have a ComputerName parameter
-and there aren't any that have parameters such as Computer, ServerName, Host, or Machine.
+As you can see in the results shown below, 39 commands that have a **ComputerName** parameter. There
+aren't any cmdlets that have parameters such as **Computer**, **ServerName**, **Host**, or
+**Machine**.
 
 ```powershell
- Get-MrParameterCount -ParameterName ComputerName, Computer,
-ServerName, Host, Machine
+Get-MrParameterCount -ParameterName ComputerName, Computer, ServerName, Host, Machine
 ```
 
-```powershell
+```Output
 ParameterName NumberOfCmdlets
 ------------- ---------------
 ComputerName               39
@@ -311,17 +309,17 @@ Machine                     0
 ```
 
 I also recommend using the same case for your parameter names as the default cmdlets. Use
-ComputerName, not computername. This will make your functions look and feel like the default cmdlets
-which means that people who are already familiar with PowerShell will feel right at home.
+`ComputerName`, not `computername`. This makes your functions look and feel like the default
+cmdlets. People who are already familiar with PowerShell will feel right at home.
 
 ## Advanced Functions
 
 Turning a function in PowerShell into an advanced function is really simple. One of the differences
-in a function and an advanced function is that advanced functions have a number of common parameters
-that are added to the function automatically. These common parameters include parameters such as
-Verbose and Debug.
+between a function and an advanced function is that advanced functions have a number of common
+parameters that are added to the function automatically. These common parameters include parameters
+such as **Verbose** and **Debug**.
 
-I'll start out with the Test-MrParameter function that was used in the previous section.
+I'll start out with the `Test-MrParameter` function that was used in the previous section.
 
 ```powershell
 function Test-MrParameter {
@@ -335,27 +333,26 @@ function Test-MrParameter {
 }
 ```
 
-What I want you to notice is that the Test-MrParameter function doesn't have any common parameters.
-There are a couple of different ways to see the common parameters. One is by viewing the syntax
-using Get-Command.
+What I want you to notice is that the `Test-MrParameter` function doesn't have any common
+parameters. There are a couple of different ways to see the common parameters. One is by viewing the
+syntax using `Get-Command`.
 
 ```powershell
- Get-Command -Name Test-MrParameter -Syntax
+Get-Command -Name Test-MrParameter -Syntax
 ```
 
 ```powershell
 Test-MrParameter [[-ComputerName] <Object>]
 ```
 
-Another is to drill down into the parameters with Get-Command.
+Another is to drill down into the parameters with `Get-Command`.
 
 ```powershell
- (Get-Command -Name Test-MrParameter).Parameters.Keys
+(Get-Command -Name Test-MrParameter).Parameters.Keys
 ```
 
-```powershell
+```Output
 ComputerName
-
 ```
 
 Add CmdletBinding to turn the function into an advanced function.
@@ -373,22 +370,22 @@ function Test-MrCmdletBinding {
 }
 ```
 
-Simply adding CmdletBinding adds the common parameters automatically. CmdletBinding does require a
-param block, but the param block can be empty.
+Simply adding CmdletBinding adds the common parameters automatically. `CmdletBinding` requires a
+`param` block, but the `param` block can be empty.
 
 ```powershell
- Get-Command -Name Test-MrCmdletBinding -Syntax
+Get-Command -Name Test-MrCmdletBinding -Syntax
 ```
 
 ```powershell
 Test-MrCmdletBinding [[-ComputerName] <Object>] [<CommonParameters>]
 ```
 
-Drilling down into the parameters with Get-Command shows the actual parameter names including the
+Drilling down into the parameters with `Get-Command` shows the actual parameter names including the
 common ones.
 
 ```powershell
- (Get-Command -Name Test-MrCmdletBinding).Parameters.Keys
+(Get-Command -Name Test-MrCmdletBinding).Parameters.Keys
 ```
 
 ```powershell
@@ -404,13 +401,12 @@ InformationVariable
 OutVariable
 OutBuffer
 PipelineVariable
-
 ```
 
 ## SupportsShouldProcess
 
-SupportsShouldProcess adds WhatIf and Confirm parameters. This is only needed for commands that make
-changes.
+`SupportsShouldProcess` adds **WhatIf** and **Confirm** parameters. These are only needed for
+commands that make changes.
 
 ```powershell
 function Test-MrSupportsShouldProcess {
@@ -428,18 +424,18 @@ function Test-MrSupportsShouldProcess {
 Notice that there are now WhatIf and Confirm parameters.
 
 ```powershell
- Get-Command -Name Test-MrSupportsShouldProcess -Syntax
+Get-Command -Name Test-MrSupportsShouldProcess -Syntax
 ```
 
 ```powershell
 Test-MrSupportsShouldProcess [[-ComputerName] <Object>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-Once again, you can also use Get-Command to return a list of the actual parameter names including
+Once again, you can also use `Get-Command` to return a list of the actual parameter names including
 the common ones along with WhatIf and Confirm.
 
 ```powershell
- (Get-Command -Name Test-MrSupportsShouldProcess).Parameters.Keys
+(Get-Command -Name Test-MrSupportsShouldProcess).Parameters.Keys
 ```
 
 ```powershell
@@ -457,13 +453,12 @@ OutBuffer
 PipelineVariable
 WhatIf
 Confirm
-
 ```
 
 ## Parameter Validation
 
 Validate input early on. Why allow your code to continue on a path when it's not possible to
-successfully complete without valid input?
+run without valid input?
 
 Always type the variables that are being used for your parameters (specify a datatype).
 
@@ -480,29 +475,28 @@ function Test-MrParameterValidation {
 }
 ```
 
-In the previous example, I've specified String as the datatype for the ComputerName parameter. This
-causes it to allow only a single computer name to be specified. If more than one computer name is
-specified via a comma separated list, an error will be generated.
+In the previous example, I've specified **String** as the datatype for the **ComputerName**
+parameter. This causes it to allow only a single computer name to be specified. If more than one
+computer name is specified via a comma-separated list, an error is generated.
 
 ```powershell
- Test-MrParameterValidation -ComputerName Server01, Server02
+Test-MrParameterValidation -ComputerName Server01, Server02
 ```
 
-```powershell
+```Output
 Test-MrParameterValidation : Cannot process argument transformation on parameter
 'ComputerName'. Cannot convert value to type System.String.
 At line:1 char:42
 + Test-MrParameterValidation -ComputerName Server01, Server02
 +
-    + CategoryInfo          : InvalidData: (:) [Test-MrParameterValidation], ParameterBi
-   ndingArgumentTransformationException
-    + FullyQualifiedErrorId : ParameterArgumentTransformationError,Test-MrParameterValid
-   ation
+    + CategoryInfo          : InvalidData: (:) [Test-MrParameterValidation], ParameterBindingArg
+     umentTransformationException
+    + FullyQualifiedErrorId : ParameterArgumentTransformationError,Test-MrParameterValidation
 ```
 
-The problem at this point is that it's perfectly valid to not specify a computer name at all and at
-least one computer name needs to be specified otherwise the function can't possibly complete
-successfully. This is where the Mandatory parameter attribute comes in handy.
+The problem with the current definition is that it's valid to omit the value of the **ComputerName**
+parameter, but need a value for the function complete successfully. This is where the `Mandatory`
+parameter attribute comes in handy.
 
 ```powershell
 function Test-MrParameterValidation {
@@ -519,23 +513,22 @@ function Test-MrParameterValidation {
 ```
 
 The syntax used in the previous example is PowerShell version 3.0 and higher compatible.
-[Parameter(Mandatory=$true)] could be specified instead to make the function compatible with
-PowerShell version 2.0 and higher. Now that the ComputerName is required, if one isn't specified,
-the function will prompt for one.
+`[Parameter(Mandatory=$true)]` could be specified instead to make the function compatible with
+PowerShell version 2.0 and higher. Now that the **ComputerName** is required, if one isn't
+specified, the function will prompt for one.
 
 ```powershell
- Test-MrParameterValidation
+Test-MrParameterValidation
 ```
 
-```powershell
+```Output
 cmdlet Test-MrParameterValidation at command pipeline position 1
 Supply values for the following parameters:
 ComputerName:
 ```
 
-If you want to allow for more than one value to be specified for the ComputerName parameter, use the
-String datatype but add open and closed square brackets to the datatype to allow for an array of
-strings.
+If you want to allow for more than one value for the **ComputerName** parameter, use the **String**
+datatype but add open and closed square brackets to the datatype to allow for an array of strings.
 
 ```powershell
 function Test-MrParameterValidation {
@@ -551,9 +544,9 @@ function Test-MrParameterValidation {
 }
 ```
 
-Maybe you want to specify a default value for the ComputerName parameter if one is not specified.
-The problem is that default values cannot be used with mandatory parameters. Instead, you'll need to
-use the ValidateNotNullOrEmpty parameter validation attribute with a default value.
+Maybe you want to specify a default value for the **ComputerName** parameter if one isn't specified.
+The problem is that default values can't be used with mandatory parameters. Instead, you'll need to
+use the `ValidateNotNullOrEmpty` parameter validation attribute with a default value.
 
 ```powershell
 function Test-MrParameterValidation {
@@ -570,16 +563,15 @@ function Test-MrParameterValidation {
 ```
 
 Even when setting a default value, try not to use static values. In the previous example,
-$env:COMPUTERNAME is used as the default value which will automatically be translated into the local
-computer name if a value is not provided.
+`$env:COMPUTERNAME` is used as the default value, which is automatically be translated into the
+local computer name if a value is not provided.
 
 ## Verbose Output
 
-While inline comments are useful, especially if you writing some unusual code that may not be
-straight forward, they'll never been seen by someone who is using your functions unless they dig
-into the code itself.
+While inline comments are useful, especially if you're writing some complex code, they never get
+seen by users unless they look into the code itself.
 
-The function shown in the following example has an inline comment in the foreach loop. While this
+The function shown in the following example has an inline comment in the `foreach` loop. While this
 particular comment may not be that difficult to locate, imagine if the function included hundreds of
 lines of code.
 
@@ -601,7 +593,7 @@ function Test-MrVerboseOutput {
 }
 ```
 
-A better option is to use Write-Verbose instead of inline comments.
+A better option is to use `Write-Verbose` instead of inline comments.
 
 ```powershell
 function Test-MrVerboseOutput {
@@ -620,13 +612,14 @@ function Test-MrVerboseOutput {
 }
 ```
 
-When the function is called without the Verbose parameter, the verbose output won't be displayed.
+When the function is called without the **Verbose** parameter, the verbose output won't be
+displayed.
 
 ```powershell
 Test-MrVerboseOutput -ComputerName Server01, Server02
 ```
 
-When it's called with the Verbose parameter, the verbose output will be displayed.
+When it's called with the **Verbose** parameter, the verbose output will be displayed.
 
 ```powershell
 Test-MrVerboseOutput -ComputerName Server01, Server02 -Verbose
@@ -635,21 +628,21 @@ Test-MrVerboseOutput -ComputerName Server01, Server02 -Verbose
 ## Pipeline Input
 
 When you want your function to accept pipeline input, some additional coding is necessary. As
-mentioned earlier in this book, commands can accept pipeline input by value (by type) or by property
-name. You can write your functions just like the native commands so they can accept either one or
-both of these types of input.
+mentioned earlier in this book, commands can accept pipeline input **by value** (by type) or **by
+property name**. You can write your functions just like the native commands so that they accept
+either one or both of these types of input.
 
-To accept pipeline input by value, specified the ValueFromPipeline parameter attribute for that
+To accept pipeline input by value, specified the `ValueFromPipeline` parameter attribute for that
 particular parameter. Keep in mind that you can only accept pipeline input by value from one of each
 datatype. For example, if you have two parameters that accept string input, only one of those can
 accept pipeline input by value because if you specified it for both of the string parameters, the
 pipeline input wouldn't know which one to bind to. This is another reason I call this type of
 pipeline input by type instead of by value.
 
-Pipeline input comes in one item at a time similar to the way a foreach loop works. At a minimum, a
-PROCESS block is required to process each of these items if you're accepting an array as input. If
-you're only accepting a single value as input, a process block isn't necessary, but I still
-recommend going ahead and specifying it for consistency.
+Pipeline input comes in one item at a time similar to the way items are handled in a `foreach` loop.
+At a minimum, a `process` block is required to process each of these items if you're accepting an
+array as input. If you're only accepting a single value as input, a `process` block isn't necessary,
+but I still recommend specifying it for consistency.
 
 ```powershell
 function Test-MrPipelineInput {
@@ -669,7 +662,7 @@ function Test-MrPipelineInput {
 ```
 
 Accepting pipeline input by property name is similar except it's specified with the
-ValueFromPipelineByPropertyName parameter attribute and it can be specified for any number of
+`ValueFromPipelineByPropertyName` parameter attribute and it can be specified for any number of
 parameters regardless of datatype. The key is that the output of the command that's being piped in
 has to have a property name that matches the name of the parameter or a parameter alias of your
 function.
@@ -691,16 +684,16 @@ function Test-MrPipelineInput {
 }
 ```
 
-BEGIN and END blocks are optional. BEGIN would be specified before the PROCESS block and is used to
-perform any initial work prior to the items being received from the pipeline. This is very important
-to understand. Values that are piped in are NOT accessible in the BEGIN block. The END block would
-be specified after the PROCESS block and is used for cleanup once all of the items that are piped in
-have been processed.
+`BEGIN` and `END` blocks are optional. `BEGIN` would be specified before the `PROCESS` block and is
+used to perform any initial work prior to the items being received from the pipeline. This is
+important to understand. Values that are piped in are not accessible in the `BEGIN` block. The `END`
+block would be specified after the `PROCESS` block and is used for cleanup once all of the items
+that are piped in have been processed.
 
 ## Error Handling
 
-The function shown in the following example will generate an unhandled exception if a computer
-cannot be contacted.
+The function shown in the following example generates an unhandled exception when a computer can't
+be contacted.
 
 ```powershell
 function Test-MrErrorHandling {
@@ -722,7 +715,7 @@ function Test-MrErrorHandling {
 }
 ```
 
-There are a couple of different ways to handle errors in PowerShell. Try / Catch is the more modern
+There are a couple of different ways to handle errors in PowerShell. `Try/Catch` is the more modern
 way to handle errors.
 
 ```powershell
@@ -751,9 +744,9 @@ function Test-MrErrorHandling {
 ```
 
 Although the function shown in the previous example uses error handling, it also generates an
-unhandled exception because the command doesn't generate a terminating error. This is also very
-important to understand. Only terminating errors are caught. Specify the ErrorAction parameter with
-Stop as the value to turn a non-terminating error into a terminating one.
+unhandled exception because the command doesn't generate a terminating error. This is also important
+to understand. Only terminating errors are caught. Specify the **ErrorAction** parameter with Stop
+as the value to turn a non-terminating error into a terminating one.
 
 ```powershell
 function Test-MrErrorHandling {
@@ -780,11 +773,11 @@ function Test-MrErrorHandling {
 }
 ```
 
-Don't modify the global $ErrorActionPreference variable unless absolutely necessary. If you're using
-something like the .NET Framework directly from within your PowerShell function, you won't be able
-to specify the ErrorAction on the command itself. In that scenario, you might need to change the
-global $ErrorActionPreference variable, but if you do change it, change it back immediately after
-trying the command.
+Don't modify the global `$ErrorActionPreference` variable unless absolutely necessary. If you're
+using something like the .NET directly from within your PowerShell function, you won't can't specify
+the **ErrorAction** on the command itself. In that scenario, you might need to change the global
+`$ErrorActionPreference` variable, but if you do change it, change it back immediately after trying
+the command.
 
 ## Comment-Based Help
 
@@ -849,8 +842,8 @@ default built-in commands.
 All of the syntax for writing a function in PowerShell can seem overwhelming especially for someone
 who is just getting started. Often times if I can't remember the syntax for something, I'll open a
 second copy of the ISE on a separate monitor and view the "Cmdlet (advanced function) - Complete"
-snippet while typing in the code for my function. Snippets can be access in the PowerShell ISE using
-the Cntl + J key combination.
+snippet while typing in the code for my function. Snippets can be accessed in the PowerShell ISE
+using the <kbd>Ctrl</kbd>+<kbd>J</kbd> key combination.
 
 ## Summary
 
@@ -869,11 +862,22 @@ input, error handling, and comment based help.
 
 ## Recommended Reading
 
-- [about_Functions](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/about/about_functions)
-- [about_Functions_Advanced_Parameters](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/about/about_functions_advanced_parameters)
-- [about_CommonParameters](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/about/about_commonparameters)
-- [about_Functions_CmdletBindingAttribute](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/about/about_functions_cmdletbindingattribute)
-- [about_Functions_Advanced](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/about/about_functions_advanced)
-- [about_Try_Catch_Finally](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/about/about_try_catch_finally)
-- [about_Comment_Based_Help](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/about/about_comment_based_help)
-- [Video: PowerShell Toolmaking with Advanced Functions and Script Modules](http://mikefrobbins.com/2016/05/26/video-powershell-toolmaking-with-advanced-functions-and-script-modules/)
+- [about_Functions][]
+- [about_Functions_Advanced_Parameters][]
+- [about_CommonParameters][]
+- [about_Functions_CmdletBindingAttribute][]
+- [about_Functions_Advanced][]
+- [about_Try_Catch_Finally][]
+- [about_Comment_Based_Help][]
+- [Video: PowerShell Toolmaking with Advanced Functions and Script Modules][]
+
+<!-- link references -->
+[about_Functions]: /powershell/module/microsoft.powershell.core/about/about_functions
+[about_Functions_Advanced_Parameters]: /powershell/module/microsoft.powershell.core/about/about_functions_advanced_parameters
+[about_CommonParameters]: /powershell/module/microsoft.powershell.core/about/about_commonparameters
+[about_Functions_CmdletBindingAttribute]: /powershell/module/microsoft.powershell.core/about/about_functions_cmdletbindingattribute
+[about_Functions_Advanced]: /powershell/module/microsoft.powershell.core/about/about_functions_advanced
+[about_Try_Catch_Finally]: /powershell/module/microsoft.powershell.core/about/about_try_catch_finally
+[about_Comment_Based_Help]: /powershell/module/microsoft.powershell.core/about/about_comment_based_help
+[Video: PowerShell Toolmaking with Advanced Functions and Script Modules]: https://mikefrobbins.com/2016/05/26/video-powershell-toolmaking-with-advanced-functions-and-script-modules/)
+[Pascal case]: /dotnet/standard/design-guidelines/capitalization-conventions

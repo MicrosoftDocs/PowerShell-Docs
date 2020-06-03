@@ -1,18 +1,24 @@
-# Chapter 10 - Script Modules
+---
+title: Script modules | PowerShell 101
+description: Script modules are an easy way to package scripts and functions into a reusable tool.
+ms.date: 06/02/2020
+ms.topic: guide
+ms.custom: Contributor-mikefrobbins
+ms.reviewer: mirobb
+---
+# Chapter 10 - Script modules
 
-Turning your one-liners and scripts in PowerShell into reusable tools in the form of creating
-functions as shown in the previous chapter, is what you want to strive for. It becomes even more
-important if it's something that you're going to use frequently. Once you have your functions
-created, you'll want to package them up as script modules to make them look and feel more
-professional, as well as make them easier to share.
+Turning your one-liners and scripts in PowerShell into reusable tools becomes even more important if
+it's something that you're going to use frequently. Packaging your functions in a script module
+makes them look and feel more professional and makes them easier to share.
 
 ## Dot-Sourcing Functions
 
 Something that we didn't talk about in the previous chapter is dot-sourcing functions. When a
-function isn't part of a module, the only way to load it into memory short of opening up the ISE and
-running it, is to dot-source the PS1 file that it's saved in.
+function in a script that isn't part of a module, the only way to load it into memory is to
+dot-source the PS1 file that it's saved in.
 
-The following function has been saved as Get-MrPSVersion.ps1.
+The following function has been saved as `Get-MrPSVersion.ps1`.
 
 ```powershell
 function Get-MrPSVersion {
@@ -20,7 +26,7 @@ function Get-MrPSVersion {
 }
 ```
 
-If you simply run the script, nothing happens.
+When you run the script, nothing happens.
 
 ```powershell
 .\Get-MrPSVersion.ps1
@@ -29,10 +35,10 @@ If you simply run the script, nothing happens.
 If you try to call the function, it generates an error message.
 
 ```powershell
- Get-MrPSVersion
+Get-MrPSVersion
 ```
 
-```powershell
+```Output
 Get-MrPSVersion : The term 'Get-MrPSVersion' is not recognized as the name of a cmdlet,
 function, script file, or operable program. Check the spelling of the name, or if a path
 was included, verify that the path is correct and try again.
@@ -45,29 +51,26 @@ At line:1 char:1
 ```
 
 You can determine if functions are loaded into memory by checking to see if they exist on the
-function PSDrive.
+**Function** PSDrive.
 
 ```powershell
- Get-ChildItem -Path Function:\Get-MrPSVersion
+Get-ChildItem -Path Function:\Get-MrPSVersion
 ```
 
-```powershell
+```Output
 Get-ChildItem : Cannot find path 'Get-MrPSVersion' because it does not exist.
 At line:1 char:1
 + Get-ChildItem -Path Function:\Get-MrPSVersion
     + CategoryInfo          : ObjectNotFound: (Get-MrPSVersion:String) [Get-ChildItem],
    ItemNotFoundException
-    + FullyQualifiedErrorId : PathNotFound,Microsoft.PowerShell.Commands.GetChildItemCom
-   mand
+    + FullyQualifiedErrorId : PathNotFound,Microsoft.PowerShell.Commands.GetChildItemCommand
 ```
 
-As shown in the previous set of results, it's not found on the function PSDrive.
+The problem with calling the script that contains the function is that the functions are loaded in
+the _Script_ scope. When the script completes, that scope is removed and the function is removed
+with it.
 
-The problem with simply calling the script that contains the function is that the functions are
-loaded in the Script scope and when the script completes, that scope is removed and the function is
-removed with it.
-
-The function needs to be loaded into the Global scope and that can be accomplished by dot-sourcing
+The function needs to be loaded into the _Global_ scope. That can be accomplished by dot-sourcing
 the script that contains the function. The relative path can be used.
 
 ```powershell
@@ -89,13 +92,13 @@ $Path = 'C:\'
 . $Path\Get-MrPSVersion.ps1
 ```
 
-Now when the function PSDrive in PowerShell is checked, the Get-MrPSVersion function does exist.
+Now when I check the function PSDrive, the `Get-MrPSVersion` function exists.
 
 ```powershell
- Get-ChildItem -Path Function:\Get-MrPSVersion
+Get-ChildItem -Path Function:\Get-MrPSVersion
 ```
 
-```powershell
+```Output
 CommandType     Name                                               Version    Source
 -----------     ----                                               -------    ------
 Function        Get-MrPSVersion
@@ -104,18 +107,18 @@ Function        Get-MrPSVersion
 ## Script Modules
 
 A script module in PowerShell is simply a file containing one or more functions that's saved as a
-PSM1 file instead of a PS1 file.
+`.PSM1` file instead of a `.PS1` file.
 
 How do you create a script module? You're probably guessing with a command named something like
-New-Module. Your assumption would be wrong. While there is a command in PowerShell named New-Module,
-that command creates a dynamic module, not a script module. Always be sure to read the help for a
-command even when you think you've found the command you need.
+`New-Module`. Your assumption would be wrong. While there is a command in PowerShell named
+`New-Module`, that command creates a dynamic module, not a script module. Always be sure to read the
+help for a command even when you think you've found the command you need.
 
 ```powershell
- help New-Module
+help New-Module
 ```
 
-```powershell
+```Output
 NAME
     New-Module
 
@@ -164,10 +167,9 @@ REMARKS
     For online help, type: "get-help New-Module -online"
 ```
 
-In the previous chapter I mentioned that functions should use approved verbs otherwise they'll
-generate a warning message when the module is imported. The following code, which uses the
-New-Module cmdlet to create a dynamic module in memory, is used to demonstrate the unapproved verb
-warning.
+In the previous chapter, I mentioned that functions should use approved verbs otherwise they'll
+generate a warning message when the module is imported. The following code uses the `New-Module`
+cmdlet to create a dynamic module in memory. This module demonstrates the unapproved verb warning.
 
 ```powershell
 New-Module -Name MyModule -ScriptBlock {
@@ -182,15 +184,14 @@ New-Module -Name MyModule -ScriptBlock {
 } | Import-Module
 ```
 
-```powershell
+```Output
 WARNING: The names of some imported commands from the module 'MyModule' include
 unapproved verbs that might make them less discoverable. To find the commands with
 unapproved verbs, run the Import-Module command again with the Verbose parameter. For a
 list of approved verbs, type Get-Verb.
-
 ```
 
-Just to reiterate, although the New-Module cmdlet was used in the previous example, that's not the
+Just to reiterate, although the `New-Module` cmdlet was used in the previous example, that's not the
 command for creating script modules in PowerShell.
 
 Save the following two functions in a file named MyScriptModule.psm1.
@@ -208,10 +209,10 @@ function Get-MrComputerName {
 Try to call one of the functions.
 
 ```powershell
- Get-MrComputerName
+Get-MrComputerName
 ```
 
-```powershell
+```Output
 Get-MrComputerName : The term 'Get-MrComputerName' is not recognized as the name of a
 cmdlet, function, script file, or operable program. Check the spelling of the name, or
 if a path was included, verify that the path is correct and try again.
@@ -225,81 +226,74 @@ At line:1 char:1
 An error message is generated saying the function can't be found. You could also check the function
 PSDrive just like before and you'll find that it doesn't exist there either.
 
-You could manually import the file with the Import-Module cmdlet.
+You could manually import the file with the `Import-Module` cmdlet.
 
 ```powershell
 Import-Module C:\MyScriptModule.psm1
 ```
 
-Module autoloading is a feature that was introduced in PowerShell version 3. In order to take
-advantage of module autoloading, a script module needs to be saved in a folder with the same base
-name as the PSM1 file and in a location specified in $env:PSModulePath.
+The module autoloading feature was introduced in PowerShell version 3. To take advantage of module
+autoloading, a script module needs to be saved in a folder with the same base name as the `.PSM1` file
+and in a location specified in `$env:PSModulePath`.
 
 ```powershell
- $env:PSModulePath
+$env:PSModulePath
 ```
 
-```powershell
+```Output
 C:\Users\mike-ladm\Documents\WindowsPowerShell\Modules;C:\Program Files\WindowsPowerShell\
 Modules;C:\Windows\system32\WindowsPowerShell\v1.0\Modules;C:\Program Files (x86)\Microsof
 t SQL Server\130\Tools\PowerShell\Modules\
-
 ```
 
-The results are kind of difficult to read. Since the paths are separated by a semicolon, you can
-split the results on those semicolons to return each path on a separate line. This will make them
-easier to read.
+The results are difficult to read. Since the paths are separated by a semicolon, you can split the
+results to return each path on a separate line. This makes them easier to read.
 
 ```powershell
- $env:PSModulePath -split ';'
+$env:PSModulePath -split ';'
 ```
 
-```powershell
+```Output
 C:\Users\mike-ladm\Documents\WindowsPowerShell\Modules
 C:\Program Files\WindowsPowerShell\Modules
 C:\Windows\system32\WindowsPowerShell\v1.0\Modules
 C:\Program Files (x86)\Microsoft SQL Server\130\Tools\PowerShell\Modules\
-
 ```
 
-The first three items in the previous list are the default ones and when SQL Server Management
-Studio was installed, it added the last one. In order for module autoloading to work, the
-MyScriptModule.psm1 file would need to be located in a folder named MyScriptModule directly inside
-one of those paths.
+The first three paths in the list are the default. When SQL Server Management Studio was installed,
+it added the last path. For module autoloading to work, the `MyScriptModule.psm1` file needs to be
+located in a folder named `MyScriptModule` directly inside one of those paths.
 
 Not so fast. For me, the current user path is the first one in the list. I almost never use that
-path since I log into Windows as a different user in which I run PowerShell. That means it's not
-located in the Documents folder of the user in which I'm logged into Windows.
+path since I log into Windows as a different user than which I run PowerShell. That means it's not
+located in my normal Documents folder.
 
-The second path was added in PowerShell version 4.0 and is the AllUsers path. This is the location
-where I store all of my modules.
+The second path is the **AllUsers** path. This is the location where I store all of my modules.
 
-The third path resides underneath Windows\\System32. Based on information that I received from the
-PowerShell team at Microsoft, only Microsoft should be storing modules in that location since it
-resides underneath the operating systems folder.
+The third path is underneath `C:\Windows\System32`. Only Microsoft should be storing modules in that
+location since it resides within the operating systems folder.
 
-Once the PSM1 file is located in the correct path, the module will load automatically when one of
-its commands is called, as long as you're running PowerShell version 3.0 or higher.
+Once the `.PSM1` file is located in the correct path, the module will load automatically when one of
+its commands is called.
 
 ## Module Manifests
 
 All modules should have a module manifest. A module manifest contains metadata about your module.
-The file extension for a module manifest file is PSD1. Not all files with a PSD1 extension are
+The file extension for a module manifest file is `.PSD1`. Not all files with a `.PSD1` extension are
 module manifests. They can also be used for things such as storing the environmental portion of a
-DSC (Desired State Configuration) configuration. New-ModuleManifest is used to create a module
-manifest. Path is the only value that's required. However, the module won't work if root module
-isn't specified. It's a good idea to specify Author and Description in case you decide to upload
-your module to a Nuget repository with PowerShellGet since those values are required in that
-scenario.
+DSC configuration. `New-ModuleManifest` is used to create a module manifest. **Path** is the only
+value that's required. However, the module won't work if root module isn't specified. It's a good
+idea to specify **Author** and **Description** in case you decide to upload your module to a NuGet
+repository with PowerShellGet since those values are required in that scenario.
 
-The version of a module without a manifest is 0.0 (This is a dead giveaway that the module doesn't
-have a manifest).
+The version of a module without a manifest is 0.0. This is a dead giveaway that the module doesn't
+have a manifest.
 
 ```powershell
- Get-Module -Name MyScriptModule
+Get-Module -Name MyScriptModule
 ```
 
-```powershell
+```Output
 ModuleType Version    Name                                ExportedCommands
 ---------- -------    ----                                ----------------
 Script     0.0        myscriptmodule                      {Get-MrComputerName, Get-MrP...
@@ -308,24 +302,21 @@ Script     0.0        myscriptmodule                      {Get-MrComputerName, G
 The module manifest can be created with all of the recommended information.
 
 ```powershell
- New-ModuleManifest -Path $env:ProgramFiles\WindowsPowerShell\Modules\MyScriptModul
-e\MyScriptModule.psd1 -RootModule MyScriptModule -Author 'Mike F Robbins' -Description 'My
-ScriptModule' -CompanyName 'mikefrobbins.com'
-
+New-ModuleManifest -Path $env:ProgramFiles\WindowsPowerShell\Modules\MyScriptModule\MyScriptModule.psd1 -RootModule MyScriptModule -Author 'Mike F Robbins' -Description 'MyScriptModule' -CompanyName 'mikefrobbins.com'
 ```
 
 If any of this information is missed during the initial creation of the module manifest, it can be
-added or updated later using Update-ModuleManifest. Don't recreate the manifest using
-New-ModuleManifest once it's already created because the GUID will change.
+added or updated later using `Update-ModuleManifest`. Don't recreate the manifest using
+`New-ModuleManifest` once it's already created because the GUID will change.
 
 ## Defining Public and Private Functions
 
-You may have helper functions that you may want to get private that are only accessible by other
-functions within the module and not accessible to be called directly by the users of your module.
-There are a couple of different ways to accomplish this.
+You may have helper functions that you may want to be private and only accessible by other functions
+within the module. They are not intended to be accessible to users of your module. There are a
+couple of different ways to accomplish this.
 
-If you're not following the best practices and only have a PSM1 file then your only option is to use
-the Export-ModuleMember cmdlet.
+If you're not following the best practices and only have a `.PSM1` file, then your only option is to
+use the `Export-ModuleMember` cmdlet.
 
 ```powershell
 function Get-MrPSVersion {
@@ -339,31 +330,27 @@ function Get-MrComputerName {
 Export-ModuleMember -Function Get-MrPSVersion
 ```
 
-In the previous example, only the Get-MrPSVersion function will be available to the users of your
-module, but the Get-MrComputerName function will be available to other functions within the module
+In the previous example, only the `Get-MrPSVersion` function is available to the users of your
+module, but the `Get-MrComputerName` function is available to other functions within the module
 itself.
 
 ```powershell
- Get-Command -Module MyScriptModule
+Get-Command -Module MyScriptModule
 
-CommandType     Name                                               Version    Source
------------     ----                                               -------    ------
-Function        Get-MrPSVersion                                    1.0        MyScript...
-```
-
-```powershell
-
+CommandType     Name                        Version    Source
+-----------     ----                        -------    ------
+Function        Get-MrPSVersion             1.0        MyScript...
 ```
 
 If you've added a module manifest to your module (and you should), then I recommend specifying the
-individual functions you want to export in the FunctionsToExport section of the module manifest.
+individual functions you want to export in the **FunctionsToExport** section of the module manifest.
 
 ```powershell
 FunctionsToExport = 'Get-MrPSVersion'
 ```
 
-It's not necessary to use both Export-ModuleMember in the PSM1 file and the FunctionsToExport
-section of the module manifest. One or the other is sufficient.
+It's not necessary to use both `Export-ModuleMember` in the `.PSM1` file and the
+**FunctionsToExport** section of the module manifest. One or the other is sufficient.
 
 ## Summary
 
@@ -381,7 +368,13 @@ manifest for your script module.
 
 ## Recommended Reading
 
-- [How to Create PowerShell Script Modules and Module Manifests](http://mikefrobbins.com/2013/07/04/how-to-create-powershell-script-modules-and-module-manifests/)
-- [about_Modules](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/about/about_modules)
-- [New-ModuleManifest](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/new-modulemanifest)
-- [Export-ModuleMember](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/export-modulemember)
+- [How to Create PowerShell Script Modules and Module Manifests][]
+- [about_Modules][]
+- [New-ModuleManifest][]
+- [Export-ModuleMember][]
+
+<!-- link references -->
+- [How to Create PowerShell Script Modules and Module Manifests]: https://mikefrobbins.com/2013/07/04/how-to-create-powershell-script-modules-and-module-manifests/
+- [about_Modules]: /powershell/module/microsoft.powershell.core/about/about_modules
+- [New-ModuleManifest]: /powershell/module/microsoft.powershell.core/new-modulemanifest
+- [Export-ModuleMember]: /powershell/module/microsoft.powershell.core/export-modulemember
