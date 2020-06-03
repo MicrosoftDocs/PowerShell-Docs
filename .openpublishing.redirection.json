@@ -111,17 +111,17 @@
         {
             "source_path": "reference/docs-conceptual/learn/getting-detailed-help-information.md",
             "redirect_url": "https://docs.microsoft.com/powershell/scripting/learn/ps101/02-help-system",
-            "redirect_document_id": true
+            "redirect_document_id": false
         },
         {
             "source_path": "reference/docs-conceptual/learn/getting-information-about-commands.md",
             "redirect_url": "https://docs.microsoft.com/powershell/scripting/learn/ps101/02-help-system",
-            "redirect_document_id": true
+            "redirect_document_id": false
         },
         {
             "source_path": "reference/docs-conceptual/learn/learning-powershell-names.md",
             "redirect_url": "https://docs.microsoft.com/powershell/scripting/learn/ps101/02-help-system",
-            "redirect_document_id": true
+            "redirect_document_id": false
         },
         {
             "source_path": "reference/docs-conceptual/learn/using-familiar-command-names.md",

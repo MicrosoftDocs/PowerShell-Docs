@@ -114,7 +114,7 @@ Click on "Advanced" as denoted by #1 in Figure 1-10, then check the "Run as admi
 as denoted by #2 in Figure 1-10, and then click OK twice to accept the changes and exit out of both
 dialog boxes.
 
-![Figure 1-10](images\figure1-10.png)
+![Figure 1-10](media/figure1-10.png)
 
 You'll never have to worry about finding PowerShell or whether or not it's running as an
 administrator again.
