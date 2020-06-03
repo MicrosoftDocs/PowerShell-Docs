@@ -65,7 +65,7 @@ Here is a quick overview of the basic exception handling syntax used in PowerShe
 To create our own exception event, we throw an exception with the `throw` keyword.
 
 ```powershell
-function Do-Something
+function Start-Something
 {
     throw "Bad thing happened"
 }
@@ -75,7 +75,7 @@ This creates a runtime exception that is a terminating error. It's handled by a 
 calling function or exits the script with a message like this.
 
 ```powershell
-PS> Do-Something
+PS> Start-Something
 
 Bad thing happened
 At line:1 char:1
@@ -103,7 +103,7 @@ If you specify `-ErrorAction Stop` on any advanced function or cmdlet, it turns 
 statements into terminating errors that stop execution or that can be handled by a `catch`.
 
 ```powershell
-Do-Something -ErrorAction Stop
+Start-Something -ErrorAction Stop
 ```
 
 ### Try/Catch
@@ -114,7 +114,7 @@ section of code and if it throws an error, you can `catch` it. Here is a quick s
 ```powershell
 try
 {
-    Do-Something
+    Start-Something
 }
 catch
 {
@@ -123,7 +123,7 @@ catch
 
 try
 {
-    Do-Something -ErrorAction Stop
+    Start-Something -ErrorAction Stop
 }
 catch
 {
@@ -240,7 +240,7 @@ generated.
 ```powershell
 PS> $PSItem.ScriptStackTrace
 at Get-Resource, C:\blog\throwerror.ps1: line 13
-at Do-Something, C:\blog\throwerror.ps1: line 5
+at Start-Something, C:\blog\throwerror.ps1: line 5
 at <ScriptBlock>, C:\blog\throwerror.ps1: line 18
 ```
 
@@ -313,7 +313,7 @@ the type of exception you want to catch.
 ```powershell
 try
 {
-    Do-Something -Path $path
+    Start-Something -Path $path
 }
 catch [System.IO.FileNotFoundException]
 {
@@ -340,7 +340,7 @@ It's possible to catch multiple exception types with the same `catch` statement.
 ```powershell
 try
 {
-    Do-Something -Path $path -ErrorAction Stop
+    Start-Something -Path $path -ErrorAction Stop
 }
 catch [System.IO.DirectoryNotFoundException],[System.IO.FileNotFoundException]
 {
@@ -506,7 +506,6 @@ At line:31 char:9
     + FullyQualifiedErrorId : Unable to find the specified file.
 ```
 
-
 Having the error message tell me that my script is broken because I called `throw` on line 31 is a
 bad message for users of your script to see. It doesn't tell them anything useful.
 
@@ -557,13 +556,13 @@ Kirk Munro points out that some exceptions are only terminating errors when exec
 `try/catch` block. Here is the example he gave me that generates a divide by zero runtime exception.
 
 ```powershell
-function Do-Something { 1/(1-1) }
+function Start-Something { 1/(1-1) }
 ```
 
 Then invoke it like this to see it generate the error and still output the message.
 
 ```powershell
-&{ Do-Something; Write-Output "We did it. Send Email" }
+&{ Start-Something; Write-Output "We did it. Send Email" }
 ```
 
 But by placing that same code inside a `try/catch`, we see something else happen.
@@ -571,14 +570,13 @@ But by placing that same code inside a `try/catch`, we see something else happen
 ```powershell
 try
 {
-    &{ Do-Something; Write-Output "We did it. Send Email" }
+    &{ Start-Something; Write-Output "We did it. Send Email" }
 }
 catch
 {
     Write-Output "Notify Admin to fix error and send email"
 }
 ```
-
 
 We see the error become a terminating error and not output the first message. What I don't like
 about this one is that you can have this code in a function and it acts differently if someone
@@ -597,13 +595,13 @@ terminating error by using `-ErrorAction Stop` or calling it from within a `try{
 
 One last take a way I had with my conversation with Kirk Munro was that he places a
 `try{...}catch{...}` around every `begin`, `process` and `end` block in all of his advanced
-functions. In those generic catch blocks, he as a single line using
-`$PSCmdlet.ThrowTerminatingError($PSitem)` to deal with all exceptions leaving his functions.
+functions. In those generic catch blocks, he has a single line using
+`$PSCmdlet.ThrowTerminatingError($PSItem)` to deal with all exceptions leaving his functions.
 
 ```powershell
-function Do-Something
+function Start-Something
 {
-    [cmdletbinding()]
+    [CmdletBinding()]
     param()
 
     process
@@ -614,7 +612,7 @@ function Do-Something
         }
         catch
         {
-            $PSCmdlet.ThrowTerminatingError($PSitem)
+            $PSCmdlet.ThrowTerminatingError($PSItem)
         }
     }
 }
