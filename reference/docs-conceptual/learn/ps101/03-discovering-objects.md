@@ -1,31 +1,38 @@
-# Chapter 3 - Discovering Objects, Properties, and Methods
+---
+title: Discovering objects, properties, and methods | PowerShell 101
+description: You don't have to be a developer to understand and use objects, properties, and methods.
+ms.date: 06/02/2020
+ms.topic: guide
+ms.custom: Contributor-mikefrobbins
+ms.reviewer: mirobb
+---
+# Chapter 3 - Discovering objects, properties, and methods
 
-My first introduction to computers was a Commodore 64, but my first modern computer was a 286 12Mhz
-IBM clone with 1 megabyte of memory, 40 megabyte hard drive, and one 5 1/4 inch floppy disk drive
+My first introduction to computers was a Commodore 64, but my first modern computer was a 286 12-Mhz IBM clone with 1 megabyte of memory, a 40-megabyte hard drive, and one 5-1/4 inch floppy disk drive
 with a CGA monitor running Microsoft DOS 3.3.
 
 Many IT Pros, like myself, are no stranger to the command line, but when the subject of objects,
 properties, and methods comes up, they get the deer in the headlights look and say, "I'm not a
-developer." Guess what? You don't have to be a developer to be extremely successful with PowerShell.
-Don't get bogged down in the terminology. Read it and take it for what it's worth. Not everything is
-going to make sense initially, but after a little hands on experience with PowerShell you'll start
-to have those light bulb moments. Aha! So that's what the book was talking about.
+developer." Guess what? You don't have to be a developer to be successful with PowerShell. Don't get
+bogged down in the terminology. Not everything may make sense initially, but after a little hands-on
+experience you'll start to have those "light bulb" moments. "Aha! So that's what the book was
+talking about."
 
-Be sure to follow along on your Windows 10 lab environment computer to gain some of that hands on
-experience with PowerShell.
+Be sure to try the examples on your computer to gain some of that hands-on experience.
 
 ## Requirements
 
-The Active Directory PowerShell module which installs as part of the RSAT
-[(Remote Server Administration Tools) for Windows 10](https://www.microsoft.com/en-us/download/details.aspx?id=45520)
-is required by some of the examples shown in this chapter. They will also be used in subsequent
-chapters. When downloading the RSAT, choose the appropriate architecture (x64 if you're running a
-64bit version of Windows 10 or x86 if you're running a 32bit version).
+The Active Directory PowerShell module is required by some of the examples shown in this chapter.
+The module is part of the Remote Server Administration Tools (RSAT) for Windows. For the 1809 (or
+higher) build of Windows, the RSAT tools are installed as a Windows feature.
+
+- For information about installing the RSAT tools, see [Windows Management modules][].
+- For older versions of Windows, see [RSAT for Windows][].
 
 ## Get-Member
 
-Get-Member helps you discover what objects, properties, and methods are available for commands. Any
-command that produces object based output can be piped to Get-Member. A property is a characteristic
+`Get-Member` helps you discover what objects, properties, and methods are available for commands. Any
+command that produces object-based output can be piped to `Get-Member`. A property is a characteristic
 about an item. Your drivers license has a property called eye color and the most common values for
 that property are blue and brown. A method is an action that can be taken on an item. In staying
 with the drivers license example, one of the methods is "Revoke" because the department of motor
@@ -34,7 +41,7 @@ vehicles can revoke your drivers license.
 ### Properties
 
 In the following example, I'll retrieve information about the Windows Time service running on my
-Windows 10 lab environment computer.
+computer.
 
 ```powershell
 Get-Service -Name w32time
@@ -46,11 +53,11 @@ Status   Name               DisplayName
 Running  w32time            Windows Time
 ```
 
-Status, Name, and DisplayName are examples of properties as shown in the previous set of results.
-The value for the Status property is Running, the value for the Name property is w32time, and the
-value for DisplayName is Windows Time.
+**Status**, **Name**, and **DisplayName** are examples of properties as shown in the previous set of results.
+The value for the Status property is Running, the value for the **Name** property is `w32time`, and the
+value for **DisplayName** is `Windows Time`.
 
-Now I'll pipe that same command to Get-Member:
+Now I'll pipe that same command to `Get-Member`:
 
 ```powershell
 Get-Service -Name w32time | Get-Member
@@ -97,12 +104,12 @@ ToString                  ScriptMethod  System.Object ToString();
 ```
 
 The first line of the results in the previous example contains one piece of very important
-information. TypeName tells you what type of object was returned. In this example, a
-System.ServiceProcess.ServiceController object was returned. This is often abbreviated as the
-portion of the TypeName just after the last period or ServiceController in this example.
+information. **TypeName** tells you what type of object was returned. In this example, a
+**System.ServiceProcess.ServiceController** object was returned. This is often abbreviated as the
+portion of the **TypeName** just after the last period; **ServiceController** in this example.
 
-Once you know what type of object a command produces, you'll be able to use this information to find
-commands which accept that type of object as input.
+Once you know what type of object a command produces, you can use this information to find commands
+that accept that type of object as input.
 
 ```powershell
 Get-Command -ParameterType ServiceController
@@ -120,14 +127,14 @@ Cmdlet          Stop-Service                                       3.1.0.0    Mi
 Cmdlet          Suspend-Service                                    3.1.0.0    Microsof...
 ```
 
-All of those commands have a parameter which accepts a ServiceController object type by either
-pipeline or parameter input, or by both pipeline and parameter input.
+All of those commands have a parameter that accepts a **ServiceController** object type by
+pipeline, parameter input, or both.
 
 Notice that there are more properties than are displayed by default. Although these additional
 properties aren't displayed by default, they can be selected from the pipeline by piping the command
-to the Select-Object cmdlet and using the Property parameter. The following example selects all of
-the properties by piping the results of Get-Service to Select-Object and specifying the * wildcard
-character as the value for the Property parameter.
+to the `Select-Object` cmdlet and using the Property parameter. The following example selects all of
+the properties by piping the results of `Get-Service` to `Select-Object` and specifying the `*`
+wildcard character as the value for the Property parameter.
 
 ```powershell
 Get-Service -Name w32time | Select-Object -Property *
@@ -152,8 +159,8 @@ Site                :
 Container           :
 ```
 
-Specific properties can also be selected by specifying them individually via a comma separated list
-for the value of the Property parameter.
+Specific properties can also be selected using a comma-separated list for the value of the
+**Property** parameter.
 
 ```powershell
 Get-Service -Name w32time | Select-Object -Property Status, Name,
@@ -168,10 +175,11 @@ Running w32time Windows Time Win32ShareProcess
 
 By default, four properties are returned in a table and five or more are returned in a list. Some
 commands use custom formatting to override how many properties are displayed by default in a table.
-There are several Format-* cmdlets which can be used to manually override these defaults. The most
-common ones are Format-Table and Format-List, both of which will be covered in an upcoming chapter.
+There are several `Format-*` cmdlets that can be used to manually override these defaults. The most
+common ones are `Format-Table` and `Format-List`, both of which will be covered in an upcoming
+chapter.
 
-Wildcard characters can be used when specifying the property names with Select-Object.
+Wildcard characters can be used when specifying the property names with `Select-Object`.
 
 ```powershell
 Get-Service -Name w32time | Select-Object -Property Status, DisplayName, Can*
@@ -185,14 +193,14 @@ CanShutdown         : True
 CanStop             : True
 ```
 
-In the previous example, Can* was used as one of the values for the property parameter which
-returned all of the properties that start with Can. These include CanPauseAndContinue, CanShutdown,
-and CanStop.
+In the previous example, `Can*` was used as one of the values for the **Property** parameter to
+return all the properties that start with `Can`. These include **CanPauseAndContinue**,
+**CanShutdown**, and **CanStop**.
 
 ### Methods
 
-Methods are an action that can be taken. Use the MemberType parameter to narrow down the results of
-Get-Member to only show the methods for Get-Service.
+Methods are an action that can be taken. Use the **MemberType** parameter to narrow down the results
+of `Get-Member` to only show the methods for `Get-Service`.
 
 ```powershell
 Get-Service -Name w32time | Get-Member -MemberType Method
@@ -220,13 +228,11 @@ Stop                      Method     void Stop()
 WaitForStatus             Method     void WaitForStatus(System.ServiceProcess.ServiceC...
 ```
 
-As you can see, there are numerous methods. The Stop method can be used to stop a Windows service.
+As you can see, there are many methods. The **Stop** method can be used to stop a Windows service.
 
 ```powershell
 (Get-Service -Name w32time).Stop()
 ```
-
-```Output```
 
 Now to verify the Windows time service has indeed been stopped.
 
@@ -241,19 +247,17 @@ Stopped  w32time            Windows Time
 ```
 
 I rarely find myself using methods, but they're something you need to be aware of. There are times
-that you'll come across a Get-* command without a corresponding command to modify that item, but
-often times a method can be used to perform an action which modifies it. The Get-SqlAgentJob cmdlet
-that's part of the SqlServer PowerShell module which installs as part of
-[SSMS (SQL Server Management Studio) 2016](https://docs.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms)
-is a good example of this. No corresponding Set cmdlet exists, but a method can be used to
-accomplish the same task.
+that you'll come across a `Get-*` command without a corresponding command to modify that item.
+Often, a method can be used to perform an action that modifies it. The `Get-SqlAgentJob` cmdlet in
+the SqlServer PowerShell module is a good example of this. The module installs as part of
+[SQL Server Management Studio (SMSS) 2016][SMSS]. No corresponding `Set-*` cmdlet exists, but a
+method can be used to complete the same task.
 
-Another reason to be aware of Methods is that a lot of beginners assume destructive changes can't be
-made with Get-* commands, but they indeed can cause a resume generating event if used
-inappropriately.
+Another reason to be aware of methods is that many beginners assume destructive changes can't be
+made with `Get-*` commands. But they indeed can cause serious problems if used inappropriately.
 
 A better option is to use a cmdlet to perform the action if one exists. Go ahead and start the
-Windows time service, except this time use the cmdlet for starting services.
+Windows Time service, except this time use the cmdlet for starting services.
 
 ```powershell
 Get-Service -Name w32time | Start-Service -PassThru
@@ -265,14 +269,14 @@ Status   Name               DisplayName
 Running  w32time            Windows Time
 ```
 
-By default, Start-Service doesn't return any results just like the start method of Get-Service, but
-one of the benefits of using a cmdlet instead of a method is that many times the cmdlet offers
-additional functionality which is not available with a method. In the previous example, the PassThru
-parameter was specified which causes a cmdlet that doesn't normally produce output, to produce
-output.
+By default, `Start-Service` doesn't return any results just like the start method of `Get-Service`.
+But one of the benefits of using a cmdlet is that many times the cmdlet offers additional
+functionality that isn't available with a method. In the previous example, the **PassThru**
+parameter was used. This causes a cmdlet that doesn't normally produce output, to produce output.
 
-Be careful with assumptions. We all know what happens when you assume things. I'll retrieve
-information about the PowerShell process running on my Windows 10 lab environment computer.
+Be careful with assumptions about the output of a cmdlet. We all know what happens when you assume
+things. I'll retrieve information about the PowerShell process running on my Windows 10 lab
+environment computer.
 
 ```powershell
 Get-Process -Name PowerShell
@@ -388,17 +392,17 @@ FileVersion                ScriptProperty System.Object FileVersion {get=$this.M
 Path                       ScriptProperty System.Object Path {get=$this.Mainmodule.Fil...
 Product                    ScriptProperty System.Object Product {get=$this.Mainmodule....
 ProductVersion             ScriptProperty System.Object ProductVersion {get=$this.Main...
-
 ```
 
-Notice that in addition to there being more properties than are displayed by default, that a number
-of the default properties don't show up as being properties when viewing the results of piping the
-command to Get-Member. This is because many of the default results such as npm(K), PM(K), WS(K), and
-CPU(s) are calculated properties. In order to determine the actual property names, the command must
-be piped to Get-Member.
+Notice that there are more properties listed than are displayed by default. A number of the default
+properties displayed don't show up as properties when viewing the results of `Get-Member`. This is
+because many of the displayed values, such as `NPM(K)`, `PM(K)`, `WS(K)`, and `CPU(s)`, are
+calculated properties. To determine the actual property names, the command must be piped to
+`Get-Member`.
 
-If a command does not produce output, it can't be piped to Get-Member. Since Start-Service doesn't
-produce any output by default, it generates an error when you try to pipe it to Get-Member.
+If a command does not produce output, it can't be piped to `Get-Member`. Since `Start-Service`
+doesn't produce any output by default, it generates an error when you try to pipe it to
+`Get-Member`.
 
 ```powershell
 Start-Service -Name w32time | Get-Member
@@ -414,57 +418,54 @@ At line:1 char:31
    rCommand
 ```
 
-The PassThru parameter which was previously mentioned can be specified with the Start-Service cmdlet
-in order to make it produce output and then it can be piped to Get-Member without error.
+The **PassThru** parameter can be specified with the `Start-Service` cmdlet make it produce output,
+which is then piped to `Get-Member` without error.
 
- ```
- Start-Service -Name w32time -PassThru | Get-Member
- ```
+```powershell
+Start-Service -Name w32time -PassThru | Get-Member
+```
 
- ```
-    TypeName: System.ServiceProcess.ServiceController
+```Output
+   TypeName: System.ServiceProcess.ServiceController
 
- Name                      MemberType    Definition
- ----                      ----------    ----------
- Name                      AliasProperty Name = ServiceName
- RequiredServices          AliasProperty RequiredServices = ServicesDependedOn
- Disposed                  Event         System.EventHandler Disposed(System.Object, Sy...
- Close                     Method        void Close()
- Continue                  Method        void Continue()
- CreateObjRef              Method        System.Runtime.Remoting.ObjRef CreateObjRef(ty...
- Dispose                   Method        void Dispose(), void IDisposable.Dispose()
- Equals                    Method        bool Equals(System.Object obj)
- ExecuteCommand            Method        void ExecuteCommand(int command)
- GetHashCode               Method        int GetHashCode()
- GetLifetimeService        Method        System.Object GetLifetimeService()
- GetType                   Method        type GetType()
- InitializeLifetimeService Method        System.Object InitializeLifetimeService()
- Pause                     Method        void Pause()
- Refresh                   Method        void Refresh()
- Start                     Method        void Start(), void Start(string[] args)
- Stop                      Method        void Stop()
- WaitForStatus             Method        void WaitForStatus(System.ServiceProcess.Servi...
- CanPauseAndContinue       Property      bool CanPauseAndContinue {get;}
- CanShutdown               Property      bool CanShutdown {get;}
- CanStop                   Property      bool CanStop {get;}
- Container                 Property      System.ComponentModel.IContainer Container {get;}
- DependentServices         Property      System.ServiceProcess.ServiceController[] Depe...
- DisplayName               Property      string DisplayName {get;set;}
- MachineName               Property      string MachineName {get;set;}
- ServiceHandle             Property      System.Runtime.InteropServices.SafeHandle Serv...
- ServiceName               Property      string ServiceName {get;set;}
- ServicesDependedOn        Property      System.ServiceProcess.ServiceController[] Serv...
- ServiceType               Property      System.ServiceProcess.ServiceType ServiceType ...
- Site                      Property      System.ComponentModel.ISite Site {get;set;}
- StartType                 Property      System.ServiceProcess.ServiceStartMode StartTy...
- Status                    Property      System.ServiceProcess.ServiceControllerStatus ...
- ToString                  ScriptMethod  System.Object ToString();
+Name                      MemberType    Definition
+----                      ----------    ----------
+Name                      AliasProperty Name = ServiceName
+RequiredServices          AliasProperty RequiredServices = ServicesDependedOn
+Disposed                  Event         System.EventHandler Disposed(System.Object, Sy...
+Close                     Method        void Close()
+Continue                  Method        void Continue()
+CreateObjRef              Method        System.Runtime.Remoting.ObjRef CreateObjRef(ty...
+Dispose                   Method        void Dispose(), void IDisposable.Dispose()
+Equals                    Method        bool Equals(System.Object obj)
+ExecuteCommand            Method        void ExecuteCommand(int command)
+GetHashCode               Method        int GetHashCode()
+GetLifetimeService        Method        System.Object GetLifetimeService()
+GetType                   Method        type GetType()
+InitializeLifetimeService Method        System.Object InitializeLifetimeService()
+Pause                     Method        void Pause()
+Refresh                   Method        void Refresh()
+Start                     Method        void Start(), void Start(string[] args)
+Stop                      Method        void Stop()
+WaitForStatus             Method        void WaitForStatus(System.ServiceProcess.Servi...
+CanPauseAndContinue       Property      bool CanPauseAndContinue {get;}
+CanShutdown               Property      bool CanShutdown {get;}
+CanStop                   Property      bool CanStop {get;}
+Container                 Property      System.ComponentModel.IContainer Container {get;}
+DependentServices         Property      System.ServiceProcess.ServiceController[] Depe...
+DisplayName               Property      string DisplayName {get;set;}
+MachineName               Property      string MachineName {get;set;}
+ServiceHandle             Property      System.Runtime.InteropServices.SafeHandle Serv...
+ServiceName               Property      string ServiceName {get;set;}
+ServicesDependedOn        Property      System.ServiceProcess.ServiceController[] Serv...
+ServiceType               Property      System.ServiceProcess.ServiceType ServiceType ...
+Site                      Property      System.ComponentModel.ISite Site {get;set;}
+StartType                 Property      System.ServiceProcess.ServiceStartMode StartTy...
+Status                    Property      System.ServiceProcess.ServiceControllerStatus ...
+ToString                  ScriptMethod  System.Object ToString();
+```
 
-  PS C:\>
- ```
-
-In order to be piped to Get-Member, a command must not only produce output, but it must also produce
-object based output.
+To be piped to `Get-Member`, a command must produce object-based output.
 
 ```powershell
 Get-Service -Name w32time | Out-Host | Get-Member
@@ -480,21 +481,20 @@ At line:1 char:40
 + Get-Service -Name w32time | Out-Host | Get-Member
 +
     + CategoryInfo          : CloseError: (:) [Get-Member], InvalidOperationException
-    + FullyQualifiedErrorId : NoObjectInGetMember,Microsoft.PowerShell.Commands.GetMembe
-   rCommand
+    + FullyQualifiedErrorId : NoObjectInGetMember,Microsoft.PowerShell.Commands.GetMemberCommand
 ```
 
-Although Out-Host produces output, it doesn't produce object based output so it can't be piped to
-Get-Member.
+`Out-Host` writes directly to the PowerShell host, but it doesn't produce object-based output for
+the pipeline. So it can't be piped to `Get-Member`.
 
 ## Active Directory
 
-The remote server administration tools which are listed in the requirements section of this chapter
-are required to complete this section. Also, as mentioned in the lab environment section of the
-introduction to this book, your Windows 10 lab environment computer must be a member of a lab
-environment (non-production) Active Directory domain.
+> [!NOTE]
+> The Remote Server Administration Tools listed in the requirements section of this chapter are
+> required to complete this section. Also, as mentioned in the introduction to this book, your
+> Windows 10 lab environment computer must be a member of the lab environment domain.
 
-Use Get-Command with the Module parameter to determine what commands were added as part of the
+Use `Get-Command` with the **Module** parameter to determine what commands were added as part of the
 ActiveDirectory PowerShell module when the remote server administration tools were installed.
 
 ```powershell
@@ -514,149 +514,15 @@ Cmdlet          Add-ADResourcePropertyListMember                   1.0.0.0    Ac
 Cmdlet          Clear-ADAccountExpiration                          1.0.0.0    ActiveDi...
 Cmdlet          Clear-ADClaimTransformLink                         1.0.0.0    ActiveDi...
 Cmdlet          Disable-ADAccount                                  1.0.0.0    ActiveDi...
-Cmdlet          Disable-ADOptionalFeature                          1.0.0.0    ActiveDi...
-Cmdlet          Enable-ADAccount                                   1.0.0.0    ActiveDi...
-Cmdlet          Enable-ADOptionalFeature                           1.0.0.0    ActiveDi...
-Cmdlet          Get-ADAccountAuthorizationGroup                    1.0.0.0    ActiveDi...
-Cmdlet          Get-ADAccountResultantPasswordReplicationPolicy    1.0.0.0    ActiveDi...
-Cmdlet          Get-ADAuthenticationPolicy                         1.0.0.0    ActiveDi...
-Cmdlet          Get-ADAuthenticationPolicySilo                     1.0.0.0    ActiveDi...
-Cmdlet          Get-ADCentralAccessPolicy                          1.0.0.0    ActiveDi...
-Cmdlet          Get-ADCentralAccessRule                            1.0.0.0    ActiveDi...
-Cmdlet          Get-ADClaimTransformPolicy                         1.0.0.0    ActiveDi...
-Cmdlet          Get-ADClaimType                                    1.0.0.0    ActiveDi...
-Cmdlet          Get-ADComputer                                     1.0.0.0    ActiveDi...
-Cmdlet          Get-ADComputerServiceAccount                       1.0.0.0    ActiveDi...
-Cmdlet          Get-ADDCCloningExcludedApplicationList             1.0.0.0    ActiveDi...
-Cmdlet          Get-ADDefaultDomainPasswordPolicy                  1.0.0.0    ActiveDi...
-Cmdlet          Get-ADDomain                                       1.0.0.0    ActiveDi...
-Cmdlet          Get-ADDomainController                             1.0.0.0    ActiveDi...
-Cmdlet          Get-ADDomainControllerPasswordReplicationPolicy    1.0.0.0    ActiveDi...
-Cmdlet          Get-ADDomainControllerPasswordReplicationPolicy... 1.0.0.0    ActiveDi...
-Cmdlet          Get-ADFineGrainedPasswordPolicy                    1.0.0.0    ActiveDi...
-Cmdlet          Get-ADFineGrainedPasswordPolicySubject             1.0.0.0    ActiveDi...
-Cmdlet          Get-ADForest                                       1.0.0.0    ActiveDi...
-Cmdlet          Get-ADGroup                                        1.0.0.0    ActiveDi...
-Cmdlet          Get-ADGroupMember                                  1.0.0.0    ActiveDi...
-Cmdlet          Get-ADObject                                       1.0.0.0    ActiveDi...
-Cmdlet          Get-ADOptionalFeature                              1.0.0.0    ActiveDi...
-Cmdlet          Get-ADOrganizationalUnit                           1.0.0.0    ActiveDi...
-Cmdlet          Get-ADPrincipalGroupMembership                     1.0.0.0    ActiveDi...
-Cmdlet          Get-ADReplicationAttributeMetadata                 1.0.0.0    ActiveDi...
-Cmdlet          Get-ADReplicationConnection                        1.0.0.0    ActiveDi...
-Cmdlet          Get-ADReplicationFailure                           1.0.0.0    ActiveDi...
-Cmdlet          Get-ADReplicationPartnerMetadata                   1.0.0.0    ActiveDi...
-Cmdlet          Get-ADReplicationQueueOperation                    1.0.0.0    ActiveDi...
-Cmdlet          Get-ADReplicationSite                              1.0.0.0    ActiveDi...
-Cmdlet          Get-ADReplicationSiteLink                          1.0.0.0    ActiveDi...
-Cmdlet          Get-ADReplicationSiteLinkBridge                    1.0.0.0    ActiveDi...
-Cmdlet          Get-ADReplicationSubnet                            1.0.0.0    ActiveDi...
-Cmdlet          Get-ADReplicationUpToDatenessVectorTable           1.0.0.0    ActiveDi...
-Cmdlet          Get-ADResourceProperty                             1.0.0.0    ActiveDi...
-Cmdlet          Get-ADResourcePropertyList                         1.0.0.0    ActiveDi...
-Cmdlet          Get-ADResourcePropertyValueType                    1.0.0.0    ActiveDi...
-Cmdlet          Get-ADRootDSE                                      1.0.0.0    ActiveDi...
-Cmdlet          Get-ADServiceAccount                               1.0.0.0    ActiveDi...
-Cmdlet          Get-ADTrust                                        1.0.0.0    ActiveDi...
-Cmdlet          Get-ADUser                                         1.0.0.0    ActiveDi...
-Cmdlet          Get-ADUserResultantPasswordPolicy                  1.0.0.0    ActiveDi...
-Cmdlet          Grant-ADAuthenticationPolicySiloAccess             1.0.0.0    ActiveDi...
-Cmdlet          Install-ADServiceAccount                           1.0.0.0    ActiveDi...
-Cmdlet          Move-ADDirectoryServer                             1.0.0.0    ActiveDi...
-Cmdlet          Move-ADDirectoryServerOperationMasterRole          1.0.0.0    ActiveDi...
-Cmdlet          Move-ADObject                                      1.0.0.0    ActiveDi...
-Cmdlet          New-ADAuthenticationPolicy                         1.0.0.0    ActiveDi...
-Cmdlet          New-ADAuthenticationPolicySilo                     1.0.0.0    ActiveDi...
-Cmdlet          New-ADCentralAccessPolicy                          1.0.0.0    ActiveDi...
-Cmdlet          New-ADCentralAccessRule                            1.0.0.0    ActiveDi...
-Cmdlet          New-ADClaimTransformPolicy                         1.0.0.0    ActiveDi...
-Cmdlet          New-ADClaimType                                    1.0.0.0    ActiveDi...
-Cmdlet          New-ADComputer                                     1.0.0.0    ActiveDi...
-Cmdlet          New-ADDCCloneConfigFile                            1.0.0.0    ActiveDi...
-Cmdlet          New-ADFineGrainedPasswordPolicy                    1.0.0.0    ActiveDi...
-Cmdlet          New-ADGroup                                        1.0.0.0    ActiveDi...
-Cmdlet          New-ADObject                                       1.0.0.0    ActiveDi...
-Cmdlet          New-ADOrganizationalUnit                           1.0.0.0    ActiveDi...
-Cmdlet          New-ADReplicationSite                              1.0.0.0    ActiveDi...
-Cmdlet          New-ADReplicationSiteLink                          1.0.0.0    ActiveDi...
-Cmdlet          New-ADReplicationSiteLinkBridge                    1.0.0.0    ActiveDi...
-Cmdlet          New-ADReplicationSubnet                            1.0.0.0    ActiveDi...
-Cmdlet          New-ADResourceProperty                             1.0.0.0    ActiveDi...
-Cmdlet          New-ADResourcePropertyList                         1.0.0.0    ActiveDi...
-Cmdlet          New-ADServiceAccount                               1.0.0.0    ActiveDi...
-Cmdlet          New-ADUser                                         1.0.0.0    ActiveDi...
-Cmdlet          Remove-ADAuthenticationPolicy                      1.0.0.0    ActiveDi...
-Cmdlet          Remove-ADAuthenticationPolicySilo                  1.0.0.0    ActiveDi...
-Cmdlet          Remove-ADCentralAccessPolicy                       1.0.0.0    ActiveDi...
-Cmdlet          Remove-ADCentralAccessPolicyMember                 1.0.0.0    ActiveDi...
-Cmdlet          Remove-ADCentralAccessRule                         1.0.0.0    ActiveDi...
-Cmdlet          Remove-ADClaimTransformPolicy                      1.0.0.0    ActiveDi...
-Cmdlet          Remove-ADClaimType                                 1.0.0.0    ActiveDi...
-Cmdlet          Remove-ADComputer                                  1.0.0.0    ActiveDi...
-Cmdlet          Remove-ADComputerServiceAccount                    1.0.0.0    ActiveDi...
-Cmdlet          Remove-ADDomainControllerPasswordReplicationPolicy 1.0.0.0    ActiveDi...
-Cmdlet          Remove-ADFineGrainedPasswordPolicy                 1.0.0.0    ActiveDi...
-Cmdlet          Remove-ADFineGrainedPasswordPolicySubject          1.0.0.0    ActiveDi...
-Cmdlet          Remove-ADGroup                                     1.0.0.0    ActiveDi...
-Cmdlet          Remove-ADGroupMember                               1.0.0.0    ActiveDi...
-Cmdlet          Remove-ADObject                                    1.0.0.0    ActiveDi...
-Cmdlet          Remove-ADOrganizationalUnit                        1.0.0.0    ActiveDi...
-Cmdlet          Remove-ADPrincipalGroupMembership                  1.0.0.0    ActiveDi...
-Cmdlet          Remove-ADReplicationSite                           1.0.0.0    ActiveDi...
-Cmdlet          Remove-ADReplicationSiteLink                       1.0.0.0    ActiveDi...
-Cmdlet          Remove-ADReplicationSiteLinkBridge                 1.0.0.0    ActiveDi...
-Cmdlet          Remove-ADReplicationSubnet                         1.0.0.0    ActiveDi...
-Cmdlet          Remove-ADResourceProperty                          1.0.0.0    ActiveDi...
-Cmdlet          Remove-ADResourcePropertyList                      1.0.0.0    ActiveDi...
-Cmdlet          Remove-ADResourcePropertyListMember                1.0.0.0    ActiveDi...
-Cmdlet          Remove-ADServiceAccount                            1.0.0.0    ActiveDi...
-Cmdlet          Remove-ADUser                                      1.0.0.0    ActiveDi...
-Cmdlet          Rename-ADObject                                    1.0.0.0    ActiveDi...
-Cmdlet          Reset-ADServiceAccountPassword                     1.0.0.0    ActiveDi...
-Cmdlet          Restore-ADObject                                   1.0.0.0    ActiveDi...
-Cmdlet          Revoke-ADAuthenticationPolicySiloAccess            1.0.0.0    ActiveDi...
-Cmdlet          Search-ADAccount                                   1.0.0.0    ActiveDi...
-Cmdlet          Set-ADAccountAuthenticationPolicySilo              1.0.0.0    ActiveDi...
-Cmdlet          Set-ADAccountControl                               1.0.0.0    ActiveDi...
-Cmdlet          Set-ADAccountExpiration                            1.0.0.0    ActiveDi...
-Cmdlet          Set-ADAccountPassword                              1.0.0.0    ActiveDi...
-Cmdlet          Set-ADAuthenticationPolicy                         1.0.0.0    ActiveDi...
-Cmdlet          Set-ADAuthenticationPolicySilo                     1.0.0.0    ActiveDi...
-Cmdlet          Set-ADCentralAccessPolicy                          1.0.0.0    ActiveDi...
-Cmdlet          Set-ADCentralAccessRule                            1.0.0.0    ActiveDi...
-Cmdlet          Set-ADClaimTransformLink                           1.0.0.0    ActiveDi...
-Cmdlet          Set-ADClaimTransformPolicy                         1.0.0.0    ActiveDi...
-Cmdlet          Set-ADClaimType                                    1.0.0.0    ActiveDi...
-Cmdlet          Set-ADComputer                                     1.0.0.0    ActiveDi...
-Cmdlet          Set-ADDefaultDomainPasswordPolicy                  1.0.0.0    ActiveDi...
-Cmdlet          Set-ADDomain                                       1.0.0.0    ActiveDi...
-Cmdlet          Set-ADDomainMode                                   1.0.0.0    ActiveDi...
-Cmdlet          Set-ADFineGrainedPasswordPolicy                    1.0.0.0    ActiveDi...
-Cmdlet          Set-ADForest                                       1.0.0.0    ActiveDi...
-Cmdlet          Set-ADForestMode                                   1.0.0.0    ActiveDi...
-Cmdlet          Set-ADGroup                                        1.0.0.0    ActiveDi...
-Cmdlet          Set-ADObject                                       1.0.0.0    ActiveDi...
-Cmdlet          Set-ADOrganizationalUnit                           1.0.0.0    ActiveDi...
-Cmdlet          Set-ADReplicationConnection                        1.0.0.0    ActiveDi...
-Cmdlet          Set-ADReplicationSite                              1.0.0.0    ActiveDi...
-Cmdlet          Set-ADReplicationSiteLink                          1.0.0.0    ActiveDi...
-Cmdlet          Set-ADReplicationSiteLinkBridge                    1.0.0.0    ActiveDi...
-Cmdlet          Set-ADReplicationSubnet                            1.0.0.0    ActiveDi...
-Cmdlet          Set-ADResourceProperty                             1.0.0.0    ActiveDi...
-Cmdlet          Set-ADResourcePropertyList                         1.0.0.0    ActiveDi...
-Cmdlet          Set-ADServiceAccount                               1.0.0.0    ActiveDi...
-Cmdlet          Set-ADUser                                         1.0.0.0    ActiveDi...
-Cmdlet          Show-ADAuthenticationPolicyExpression              1.0.0.0    ActiveDi...
-Cmdlet          Sync-ADObject                                      1.0.0.0    ActiveDi...
-Cmdlet          Test-ADServiceAccount                              1.0.0.0    ActiveDi...
-Cmdlet          Uninstall-ADServiceAccount                         1.0.0.0    ActiveDi...
-Cmdlet          Unlock-ADAccount                                   1.0.0.0    ActiveDi...
+...
 ```
 
-A total of 147 commands were added as part of the ActiveDirectory PowerShell module.
+A total of 147 commands were added as part of the ActiveDirectory PowerShell module. Some commands
+of these commands only return a portion of the available properties by default.
 
-Some commands, such as many of the ones that are part of the ActiveDirectory PowerShell module, only
-return a portion of the available properties by default.
+Did you notice anything different about the names of the commands in this module? The noun portion
+of the commands has an AD prefix. This is common to see on the commands of most modules. The prefix
+is designed to help prevent naming conflicts.
 
 ```powershell
 Get-ADUser -Identity mike | Get-Member
@@ -686,11 +552,11 @@ Surname           Property              System.String Surname {get;set;}
 UserPrincipalName Property              System.String UserPrincipalName {get;set;}
 ```
 
-Even if you're only vaguely familiar with Active Directory, you're probably aware that an Active
-Directory user account has more properties than are shown in the previous set of results.
+Even if you're only vaguely familiar with Active Directory, you're probably aware that a user
+account has more properties than are shown in this example.
 
-The Get-ADUser cmdlet has a properties parameter which is used to specify which additional
-(non-default) properties you want to return. Specifying the * wildcard character returns all of
+The `Get-ADUser` cmdlet has a **Properties** parameter that is used to specify the additional
+(non-default) properties you want to return. Specifying the `*` wildcard character returns all of
 them.
 
 ```powershell
@@ -823,43 +689,38 @@ Now that looks more like it.
 
 Can you think of a reason why the properties of an Active Directory user account would be so limited
 by default? Imagine if you returned every property for every user account in your production Active
-Directory environment. Think of the performance degradation that you could cause not only to the
-domain controllers themselves, but also to your network and it's highly doubtful that you'll
-actually need every property anyway. Returning all of the properties for a single user account as
-shown in the previous example is perfectly acceptable when you're trying to figure what properties
-exist.
+Directory environment. Think of the performance degradation that you could cause, not only to the
+domain controllers themselves, but also to your network. It's doubtful that you'll actually need
+every property anyway. Returning all of the properties for a single user account is perfectly
+acceptable when you're trying to figure what properties exist.
 
-It's not uncommon to run a command numerous times when prototyping it. If you're going to perform
-some huge query from something such as Active Directory, query it once and store the results in a
-variable and then work with the contents of the variable instead of constantly performing some
-expensive query over and over again.
+It's not uncommon to run a command many times when prototyping it. If you're going to perform
+some huge query, query it once and store the results in a variable. Then work with the contents of
+the variable instead of repeatedly using some expensive query.
 
 ```powershell
 $Users = Get-ADUser -Identity mike -Properties *
 ```
 
-Use the contents of the Users variable instead of running the previous command numerous times. Keep
-in mind that the contents of the variable won't be updated if you make some change to that
-particular user in Active Directory.
+Use the contents of the `$Users` variable instead of running the previous command numerous times.
+Keep in mind that the contents of the variable aren't updated when changes are made to that user in
+Active Directory.
 
-I've heard Ed Wilson, the Scripting Guy, use the analogy "if you're going to eat an elephant only
-eat it once" to describe this technique.
-
-You could pipe the Users variable to Get-Member to determine what the properties are.
+You could pipe the `$Users` variable to `Get-Member` to discover the available properties.
 
 ```powershell
 $Users | Get-Member
 ```
 
-Then select the individual properties by piping the Users variable to Select-Object, all without
-ever having to query Active Directory more than one time.
+Then select the individual properties by piping `$Users` to `Select-Object`, all without ever having
+to query Active Directory more than one time.
 
 ```powershell
 $Users | Select-Object -Property Name, LastLogonDate, LastBadPasswordAttempt
 ```
 
-If you are going to query Active Directory more than one time, specify any of the non-default
-properties individually via the Properties parameter once you've determined what they are.
+If you are going to query Active Directory more than once, use the **Properties** parameter to
+specify any non-default properties you want.
 
 ```powershell
 Get-ADUser -Identity mike -Properties LastLogonDate, LastBadPasswordAttempt
@@ -880,12 +741,6 @@ Surname                : Robbins
 UserPrincipalName      : miker@mikefrobbins.com
 ```
 
-Did you notice anything different about the names of the commands that are part of the
-ActiveDirectory PowerShell module? The noun portion of the commands has an AD prefix. This is
-something that's common to see on most commands with the exception of the ones for administering
-Microsoft Exchange Server and that's because Exchange was the first product in which Microsoft added
-PowerShell support. This prefix is designed to help prevent naming conflicts.
-
 ## Summary
 
 In this chapter, you've learned how to determine what type of object a command produces, how to
@@ -894,7 +749,7 @@ that limit the properties that are returned by default.
 
 ## Review
 
-1. What type of object does the Get-Process cmdlet produce?
+1. What type of object does the `Get-Process` cmdlet produce?
 1. How do you determine what the available properties are for a command?
 1. If a command exists for getting something but not for setting the same thing, what should you
    check for?
@@ -904,9 +759,20 @@ that limit the properties that are returned by default.
 
 ## Recommended Reading
 
-- [Get-Member](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.utility/get-member)
-- [Viewing Object Structure (Get-Member)](https://msdn.microsoft.com/en-us/powershell/scripting/getting-started/cookbooks/viewing-object-structure--get-member-)
-- [about_Objects](https://msdn.microsoft.com/en-us/powershell/reference/3.0/microsoft.powershell.core/about/about_objects)
-- [about_Properties](https://msdn.microsoft.com/en-us/powershell/reference/3.0/microsoft.powershell.core/about/about_properties)
-- [about_Methods](https://msdn.microsoft.com/en-us/powershell/reference/3.0/microsoft.powershell.core/about/about_methods)
-- [No PowerShell Cmdlet to Start or Stop Something? Don’t Forget to Check for Methods on the Get Cmdlets](http://mikefrobbins.com/2016/12/15/no-powershell-cmdlet-to-start-or-stop-something-dont-forget-to-check-for-methods-on-the-get-cmdlets/)
+- [Get-Member][]
+- [Viewing Object Structure (Get-Member)][]
+- [about_Objects][]
+- [about_Properties][]
+- [about_Methods][]
+- [No PowerShell Cmdlet to Start or Stop Something? Don’t Forget to Check for Methods on the Get Cmdlets][use-methods]
+
+<!-- link references -->
+[RSAT for Windows]: https://support.microsoft.com/help/2693643
+[Windows Management modules]: /powershell/scripting/whats-new/module-compatibility#windows-management-modules
+[Get-Member]: /powershell/module/microsoft.powershell.utility/get-member
+[Viewing Object Structure (Get-Member)]: /powershell/scripting/samples/viewing-object-structure--get-member-
+[about_Objects]: /powershell/module/microsoft.powershell.core/about/about_objects
+[about_Properties]: /powershell/module/microsoft.powershell.core/about/about_properties
+[about_Methods]: /powershell/module/microsoft.powershell.core/about/about_methods
+[use-methods]: https://mikefrobbins.com/2016/12/15/no-powershell-cmdlet-to-start-or-stop-something-dont-forget-to-check-for-methods-on-the-get-cmdlets/
+[SMSS]: /sql/ssms/download-sql-server-management-studio-ssms
