@@ -1,5 +1,5 @@
 ---
-title: Formatting, aliases, providers, comparison | PowerShell 101
+title: Formatting, aliases, providers, comparison
 ms.date: 06/02/2020
 ms.topic: guide
 ms.custom: Contributor-mikefrobbins

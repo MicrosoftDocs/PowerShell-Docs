@@ -1,5 +1,5 @@
 ---
-title: Introduction | PowerShell 101
+title: Introduction
 ms.date: 06/02/2020
 ms.topic: guide
 ms.custom: Contributor-mikefrobbins

@@ -1,5 +1,5 @@
 ---
-title: Discovering objects, properties, and methods | PowerShell 101
+title: Discovering objects, properties, and methods
 description: You don't have to be a developer to understand and use objects, properties, and methods.
 ms.date: 06/02/2020
 ms.topic: guide

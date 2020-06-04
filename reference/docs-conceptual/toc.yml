@@ -106,7 +106,7 @@
   - name: Using Experimental Features
     href: learn/experimental-features.md
   - name: Using tab expansion
-    href: learn/ps101/using-tab-expansion.md
+    href: learn/using-tab-expansion.md
   - name: Additional resources
     href: learn/more-powershell-learning.md
   - name: Glossary

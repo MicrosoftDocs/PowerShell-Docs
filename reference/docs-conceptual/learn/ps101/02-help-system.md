@@ -1,5 +1,5 @@
 ---
-title: The Help System | PowerShell 101
+title: The Help System
 description: Mastering the help system is the key to being successful with PowerShell.
 ms.date: 06/02/2020
 ms.topic: guide
@@ -72,9 +72,9 @@ cmdlet, see http://go.microsoft.com/fwlink/?LinkId=210614.
 [Y] Yes  [N] No  [S] Suspend  [?] Help (default is "Y"):
 ```
 
-Beginning with PowerShell version 3, PowerShell help doesn't ship with the operating system, so the
-first time `Get-Help` is run for a command, the previous message will be displayed. If the help
-function or man alias is used instead of the `Get-Help` cmdlet, you won't receive this prompt.
+Beginning with PowerShell version 3, PowerShell help doesn't ship with the operating system. The
+first time `Get-Help` is run for a command, the previous message is displayed. If the `help`
+function or `man` alias is used instead of the `Get-Help` cmdlet, you don't receive this prompt.
 
 Answering yes by pressing <kbd>Y</kbd> runs the `Update-Help` cmdlet, which requires internet access
 by default. `Y` can be specified in either upper or lower case.
@@ -152,7 +152,7 @@ information is grouped:
 - RELATED LINKS
 
 Notice that using the **Full** parameter returned several additional sections, one of which is the
-Parameters section that provides more information than the cryptic SYNTAX section.
+PARAMETERS section that provides more information than the cryptic SYNTAX section.
 
 The **Full** parameter is a switch parameter. A parameter that doesn't require a value is called a
 switch parameter. When a switch parameter is specified, it's value is true and when it's not, it's
@@ -242,22 +242,24 @@ value to be a single string, which is denoted by `<String>`. If it accepted mult
 datatype would be listed as `<String[]>`.
 
 Sometimes you simply don't want to display the entire help topic for a command. There are a number
-of other parameters besides Full that can be specified with `Get-Help` or Help. Try running the
-following commands on your Windows 10 lab environment computer:
+of other parameters besides **Full** that can be specified with `Get-Help` or `Help`. Try running
+the following commands on your Windows 10 lab environment computer:
 
-- Get-Help -Name Get-Command -Full
-- Get-Help -Name Get-Command -Detailed
-- Get-Help -Name Get-Command -Examples
-- Get-Help -Name Get-Command -Online
-- Get-Help -Name Get-Command -Parameter Noun
-- Get-Help -Name Get-Command -ShowWindow
+```powershell
+Get-Help -Name Get-Command -Full
+Get-Help -Name Get-Command -Detailed
+Get-Help -Name Get-Command -Examples
+Get-Help -Name Get-Command -Online
+Get-Help -Name Get-Command -Parameter Noun
+Get-Help -Name Get-Command -ShowWindow
+```
 
-I typically use help `<command name>` with the **Full** or **Online** parameter. If I'm only
+I typically use `help <command name>` with the **Full** or **Online** parameter. If I'm only
 interested in the examples, I'll use the **Examples** parameter and if I'm only interested in a
-specific parameter, I'll use the Parameter parameter. The **ShowWindow** parameter opens the help
-topic in a separate searchable window that can be placed on a different monitor if you have multiple
-monitors. I've avoided the **ShowWindow** parameter because there's a known bug where it doesn't
-display the entire help topic.
+specific parameter, I'll use the **Parameter** parameter. The **ShowWindow** parameter opens the
+help topic in a separate searchable window that can be placed on a different monitor if you have
+multiple monitors. I've avoided the **ShowWindow** parameter because there's a known bug where it
+doesn't display the entire help topic.
 
 If you want help in a separate window, my recommendation is to either use the **Online** parameter
 or use the **Full** parameter and pipe the results to `Out-GridView`, as shown in the following
@@ -272,7 +274,7 @@ operating system with a GUI (Graphical User Interface). They will generate an er
 attempt to use either of them on Windows Server that's been installed using the server core (no-GUI)
 installation option.
 
-To use `Get-Help` to find commands, use the asterisk (\*) wildcard character with the **Name**
+To use `Get-Help` to find commands, use the asterisk (`*`) wildcard character with the **Name**
 parameter. Specify a term that you're searching for commands on as the value for the **Name**
 parameter as shown in the following example.
 
@@ -295,15 +297,15 @@ Get-AppvVirtualProcess            Function  AppvClient                ...
 Start-AppvVirtualProcess          Function  AppvClient                ...
 ```
 
-In the previous example, the * wildcard characters are not required and omitting them produces the
+In the previous example, the `*` wildcard characters are not required and omitting them produces the
 same result. `Get-Help` automatically adds the wildcard characters behind the scenes.
 
 ```powershell
 help process
 ```
 
-The previous command produces the same results as specifying the * wildcard character on each end of
-process.
+The previous command produces the same results as specifying the `*` wildcard character on each end
+of process.
 
 I prefer to add them since that's the option that always works consistently. Otherwise, they are
 required in certain scenarios and not others. As soon as you add a wildcard character in the middle
@@ -333,10 +335,11 @@ help *-process
 When searching for PowerShell commands with `Get-Help`, you want to be a little more vague instead
 of being too specific with what you're searching for.
 
-Searching for process earlier found only commands that contained process in the name of the command
-and returned only those results. When `Get-Help` is used to search for processes, it doesn't find
-any matches for command names, so it performs a search of every help topic in PowerShell on your
-system and returns any matches it finds. This causes it to return an enormous number of results.
+Searching for `process` earlier found only commands that contained `process` in the name of the
+command and returned only those results. When `Get-Help` is used to search for `processes`, it
+doesn't find any matches for command names, so it performs a search of every help topic in
+PowerShell on your system and returns any matches it finds. This causes it to return an enormous
+number of results.
 
 ```powershell
 Get-Help processes
@@ -415,9 +418,9 @@ about_Parallel                    HelpFile                            Describes 
 about_Sequence                    HelpFile                            Describes the Se...
 ```
 
-Using Help to search for "process" returned 10 results and using it to search for processes returned
-68 results. If only one result is found, the help topic itself will be displayed instead of a list
-of commands.
+Using `Help` to search for `process` returned 10 results and using it to search for `processes`
+returned 68 results. If only one result is found, the help topic itself will be displayed instead of
+a list of commands.
 
 ```powershell
 get-help *hotfix*
@@ -459,7 +462,7 @@ REMARKS
     For online help, type: "get-help Get-HotFix -online"
 ```
 
-Now to debunk the myth that Help in PowerShell can only find commands that have help topics.
+Now to debunk the myth that `Help` in PowerShell can only find commands that have help topics.
 
 ```powershell
 help *more*
@@ -481,12 +484,12 @@ REMARKS
     None
 ```
 
-Notice in the previous example that more doesn't have a help topic, yet the Help system in
+Notice in the previous example that `more` doesn't have a help topic, yet the `Help` system in
 PowerShell was able to find it. It only found one match and returned the basic syntax information
 that you'll see when a command doesn't have a help topic.
 
 PowerShell contains numerous conceptual (About) help topics. The following command can be used to
-return a list of all About help topics on your system.
+return a list of all **About** help topics on your system.
 
 ```powershell
 help About_*
@@ -527,7 +530,8 @@ Notice in the previous example where `Get-Command` was run, the **Noun** paramet
 `Process` is specified as the value for the **Noun** parameter. What if you didn't know how to use
 the `Get-Command` cmdlet? You could use `Get-Help` to display the help topic for `Get-Command`.
 
-The **Name**, **Noun**, and **Verb** parameters accept wildcards, as shown in the following example:
+The **Name**, **Noun**, and **Verb** parameters accept wildcards. The following example shows
+wildcards being used with the **Name** parameter:
 
 ```Output
 Get-Command -Name *service*

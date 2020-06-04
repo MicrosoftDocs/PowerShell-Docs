@@ -1,5 +1,5 @@
 ---
-title: Functions | PowerShell 101
+title: Functions
 description: PowerShell functions allow you to create tools that can be reused in scripts.
 ms.date: 06/02/2020
 ms.topic: guide

@@ -1,5 +1,5 @@
 ---
-title: Getting Started with PowerShell | PowerShell 101
+title: Getting Started with PowerShell
 description: Where to find and how to launch PowerShell for new users.
 ms.date: 06/02/2020
 ms.topic: guide
@@ -54,7 +54,7 @@ Figure 1-1.
 ![Figure 1-4](media/figure1-4.png)
 
 Notice that the title bar of the PowerShell console says "Windows PowerShell" as shown in Figure
-1-4. Some commands run fine, but is PowerShell can't participate in User Access Control (UAC). That
+1-4. Some commands run fine, but PowerShell can't participate in User Access Control (UAC). That
 means it's unable to prompt for elevation for tasks that require the approval of an administrator.
 The following error message is generated:
 
@@ -147,9 +147,8 @@ SerializationVersion           1.1.0.1
 ```
 
 Newer versions of Windows PowerShell are distributed as part of the Windows Management Framework
-(WMF). A specific version of the .NET Framework is required depending on the WMF version. Also note
-that the full version of the .NET Framework is required and the client version is not sufficient. To
-upgrade to Windows PowerShell 5.1, see [Upgrading existing Windows PowerShell][]
+(WMF). A specific version of the .NET Framework is required depending on the WMF version. To upgrade
+to Windows PowerShell 5.1, see [Upgrading existing Windows PowerShell][].
 
 ## Execution Policy
 
@@ -165,9 +164,9 @@ Windows operating systems.
 | Windows 10                       | Restricted               |
 
 Regardless of the execution policy setting, any PowerShell command can be run interactively. The
-execution policy only when running commands in a script. The `Get-ExecutionPolicy` cmdlet is used to
-determine what the current execution policy setting is and the `Set-ExecutionPolicy` cmdlet is used
-to change the execution policy. My recommendation is to use the **RemoteSigned** policy, which
+execution policy only affects commands running in a script. The `Get-ExecutionPolicy` cmdlet is used
+to determine what the current execution policy setting is and the `Set-ExecutionPolicy` cmdlet is
+used to change the execution policy. My recommendation is to use the **RemoteSigned** policy, which
 requires downloaded scripts to be signed by a trusted publisher in order to be run.
 
 Check the current execution policy:

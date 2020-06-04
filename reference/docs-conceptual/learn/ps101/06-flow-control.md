@@ -1,5 +1,5 @@
 ---
-title: Flow control | PowerShell 101
+title: Flow control
 description: PowerShell provides methods to create loops, make decisions, and logically control the flow of code in scripts.
 ms.date: 06/02/2020
 ms.topic: guide
@@ -28,10 +28,10 @@ one of the many different types of loops in PowerShell.
 `ForEach-Object` is a cmdlet for iterating through items in a pipeline such as with PowerShell
 one-liners. `ForEach-Object` streams the objects through the pipeline.
 
-Although the Module parameter of `Get-Command` accepts multiple values that are strings, it only
+Although the **Module** parameter of `Get-Command` accepts multiple values that are strings, it only
 accepts them via pipeline input by property name or via parameter input. In the following scenario,
-if I want to pipe two strings by value to `Get-Command` for use with the Module parameter, I would
-need to use the `ForEach-Object` cmdlet.
+if I want to pipe two strings by value to `Get-Command` for use with the **Module** parameter, I
+would need to use the `ForEach-Object` cmdlet.
 
 ```powershell
 'ActiveDirectory', 'SQLServer' |
@@ -132,7 +132,7 @@ SID               : S-1-5-21-2989741381-570885089-3319121794-1107
 UserPrincipalName :
 ```
 
-As you can see in the previous examples, the Identity parameter for `Get-ADComputer` only accepts a
+As you can see in the previous examples, the **Identity** parameter for `Get-ADComputer` only accepts a
 single value when provided via parameter input, but it allows for multiple items when the input is
 provided via pipeline input.
 

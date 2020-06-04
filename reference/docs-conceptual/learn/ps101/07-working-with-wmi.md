@@ -1,5 +1,5 @@
 ---
-title: Working with WMI | PowerShell 101
+title: Working with WMI
 description: PowerShell has had cmdlets for working with WMI since the beginning.
 ms.date: 06/02/2020
 ms.topic: guide
