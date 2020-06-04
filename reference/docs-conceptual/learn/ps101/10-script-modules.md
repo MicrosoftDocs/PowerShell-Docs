@@ -15,8 +15,8 @@ makes them look and feel more professional and makes them easier to share.
 ## Dot-Sourcing Functions
 
 Something that we didn't talk about in the previous chapter is dot-sourcing functions. When a
-function in a script that isn't part of a module, the only way to load it into memory is to
-dot-source the PS1 file that it's saved in.
+function in a script isn't part of a module, the only way to load it into memory is to dot-source
+the `.PS1` file that it's saved in.
 
 The following function has been saved as `Get-MrPSVersion.ps1`.
 
@@ -92,7 +92,7 @@ $Path = 'C:\'
 . $Path\Get-MrPSVersion.ps1
 ```
 
-Now when I check the function PSDrive, the `Get-MrPSVersion` function exists.
+Now when I check the **Function** PSDrive, the `Get-MrPSVersion` function exists.
 
 ```powershell
 Get-ChildItem -Path Function:\Get-MrPSVersion
@@ -194,7 +194,7 @@ list of approved verbs, type Get-Verb.
 Just to reiterate, although the `New-Module` cmdlet was used in the previous example, that's not the
 command for creating script modules in PowerShell.
 
-Save the following two functions in a file named MyScriptModule.psm1.
+Save the following two functions in a file named `MyScriptModule.psm1`.
 
 ```powershell
 function Get-MrPSVersion {
@@ -223,8 +223,8 @@ At line:1 char:1
     + FullyQualifiedErrorId : CommandNotFoundException
 ```
 
-An error message is generated saying the function can't be found. You could also check the function
-PSDrive just like before and you'll find that it doesn't exist there either.
+An error message is generated saying the function can't be found. You could also check the
+**Function** PSDrive just like before and you'll find that it doesn't exist there either.
 
 You could manually import the file with the `Import-Module` cmdlet.
 
@@ -264,9 +264,9 @@ The first three paths in the list are the default. When SQL Server Management St
 it added the last path. For module autoloading to work, the `MyScriptModule.psm1` file needs to be
 located in a folder named `MyScriptModule` directly inside one of those paths.
 
-Not so fast. For me, the current user path is the first one in the list. I almost never use that
-path since I log into Windows as a different user than which I run PowerShell. That means it's not
-located in my normal Documents folder.
+Not so fast. For me, my current user path isn't the first one in the list. I almost never use that
+path since I log into Windows with a different user than the one I use to run PowerShell. That means
+it's not located in my normal Documents folder.
 
 The second path is the **AllUsers** path. This is the location where I store all of my modules.
 

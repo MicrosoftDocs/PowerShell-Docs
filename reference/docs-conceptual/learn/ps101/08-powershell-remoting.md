@@ -233,7 +233,7 @@ When you're done working with the remote computer, exit the one-to-one remoting 
 ## One-To-Many Remoting
 
 Sometimes you may need to perform a task interactively on a remote computer. But remoting is much
-more powerful when performing a task on multiple remote computers at the same time. USe the
+more powerful when performing a task on multiple remote computers at the same time. Use the
 `Invoke-Command` cmdlet to run a command against one or more remote computers at the same time.
 
 ```powershell

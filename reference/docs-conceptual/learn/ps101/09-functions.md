@@ -12,11 +12,11 @@ If you're writing PowerShell one-liners or scripts and find yourself often havin
 different scenarios, there's a good chance that it's a good candidate to be turned into a function
 that can be reused.
 
-Whenever possible, I prefer to write function because they are more tool oriented. I can put the
-function in a script module, put that module in the `$env:PSModulePath`, and call the function
-without needing to physically locate where it's saved. Using the PowerShellGet module, it's easy to
-share those modules in a NuGet repository. PowerShellGet is available as a separate download for
-PowerShell version 3.0 and higher.
+Whenever possible, I prefer to write functions because they are more tool oriented. I can put the
+functions in a script module, put that module in the `$env:PSModulePath`, and call the functions
+without needing to physically locate where they're saved. Using the PowerShellGet module, it's easy
+to share those modules in a NuGet repository. PowerShellGet ships with PowerShell version 5.0 and
+higher. It is available as a separate download for PowerShell version 3.0 and higher.
 
 Don't over complicate things. Keep it simple and use the most straight forward way to accomplish a
 task. Avoid aliases and positional parameters in any code that you reuse. Format your code for
@@ -139,11 +139,11 @@ Watch       Common
 Write       Communications
 ```
 
-In the previous example, I've sorted the results by the Verb column. The Group column gives you an
-idea of how these verbs are used. It's important to choose an approved verb in PowerShell when
-functions are added to a module. The module generates a warning message at load time if you choose
-an unapproved verb. That warning message makes your functions look unprofessional. Unapproved verbs
-also limit the discoverability of your functions.
+In the previous example, I've sorted the results by the **Verb** column. The **Group** column gives
+you an idea of how these verbs are used. It's important to choose an approved verb in PowerShell
+when functions are added to a module. The module generates a warning message at load time if you
+choose an unapproved verb. That warning message makes your functions look unprofessional. Unapproved
+verbs also limit the discoverability of your functions.
 
 ## A simple function
 
@@ -214,7 +214,7 @@ Major  Minor  Build  Revision
 5      1      14393  693
 ```
 
-Once loaded into memory, you can see functions on the Function PSDrive.
+Once loaded into memory, you can see functions on the **Function** PSDrive.
 
 ```powershell
 Get-ChildItem -Path Function:\Get-*Version
@@ -229,7 +229,7 @@ Function        Get-MrPSVersion
 ```
 
 If you want to remove these functions from your current session, you'll have to remove them from the
-Function PSDrive or close and reopen PowerShell.
+**Function** PSDrive or close and reopen PowerShell.
 
 ```powershell
 Get-ChildItem -Path Function:\Get-*Version | Remove-Item
@@ -267,8 +267,8 @@ function Test-MrParameter {
 }
 ```
 
-Why did I use ComputerName and not Computer, ServerName, or Host for my parameter name? It's because
-I wanted my function standardized like the default cmdlets.
+Why did I use **ComputerName** and not **Computer**, **ServerName**, or **Host** for my parameter
+name? It's because I wanted my function standardized like the default cmdlets.
 
 I'll create a function to query all of the commands on a system and return the number of them that
 have specific parameter names.
@@ -341,7 +341,7 @@ syntax using `Get-Command`.
 Get-Command -Name Test-MrParameter -Syntax
 ```
 
-```powershell
+```Output
 Test-MrParameter [[-ComputerName] <Object>]
 ```
 
@@ -355,7 +355,7 @@ Another is to drill down into the parameters with `Get-Command`.
 ComputerName
 ```
 
-Add CmdletBinding to turn the function into an advanced function.
+Add `CmdletBinding` to turn the function into an advanced function.
 
 ```powershell
 function Test-MrCmdletBinding {
@@ -370,14 +370,14 @@ function Test-MrCmdletBinding {
 }
 ```
 
-Simply adding CmdletBinding adds the common parameters automatically. `CmdletBinding` requires a
-`param` block, but the `param` block can be empty.
+Adding `CmdletBinding` adds the common parameters automatically. `CmdletBinding` requires a `param`
+block, but the `param` block can be empty.
 
 ```powershell
 Get-Command -Name Test-MrCmdletBinding -Syntax
 ```
 
-```powershell
+```Output
 Test-MrCmdletBinding [[-ComputerName] <Object>] [<CommonParameters>]
 ```
 
@@ -388,7 +388,7 @@ common ones.
 (Get-Command -Name Test-MrCmdletBinding).Parameters.Keys
 ```
 
-```powershell
+```Output
 ComputerName
 Verbose
 Debug
@@ -421,13 +421,13 @@ function Test-MrSupportsShouldProcess {
 }
 ```
 
-Notice that there are now WhatIf and Confirm parameters.
+Notice that there are now **WhatIf** and **Confirm** parameters.
 
 ```powershell
 Get-Command -Name Test-MrSupportsShouldProcess -Syntax
 ```
 
-```powershell
+```Output
 Test-MrSupportsShouldProcess [[-ComputerName] <Object>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
@@ -438,7 +438,7 @@ the common ones along with WhatIf and Confirm.
 (Get-Command -Name Test-MrSupportsShouldProcess).Parameters.Keys
 ```
 
-```powershell
+```Output
 ComputerName
 Verbose
 Debug
@@ -495,8 +495,8 @@ At line:1 char:42
 ```
 
 The problem with the current definition is that it's valid to omit the value of the **ComputerName**
-parameter, but need a value for the function complete successfully. This is where the `Mandatory`
-parameter attribute comes in handy.
+parameter, but a value is required for the function to complete successfully. This is where the
+`Mandatory` parameter attribute comes in handy.
 
 ```powershell
 function Test-MrParameterValidation {
@@ -563,8 +563,8 @@ function Test-MrParameterValidation {
 ```
 
 Even when setting a default value, try not to use static values. In the previous example,
-`$env:COMPUTERNAME` is used as the default value, which is automatically be translated into the
-local computer name if a value is not provided.
+`$env:COMPUTERNAME` is used as the default value, which is automatically translated into the local
+computer name if a value is not provided.
 
 ## Verbose Output
 
@@ -632,12 +632,12 @@ mentioned earlier in this book, commands can accept pipeline input **by value** 
 property name**. You can write your functions just like the native commands so that they accept
 either one or both of these types of input.
 
-To accept pipeline input by value, specified the `ValueFromPipeline` parameter attribute for that
-particular parameter. Keep in mind that you can only accept pipeline input by value from one of each
-datatype. For example, if you have two parameters that accept string input, only one of those can
-accept pipeline input by value because if you specified it for both of the string parameters, the
-pipeline input wouldn't know which one to bind to. This is another reason I call this type of
-pipeline input by type instead of by value.
+To accept pipeline input **by value**, specified the `ValueFromPipeline` parameter attribute for
+that particular parameter. Keep in mind that you can only accept pipeline input **by value** from
+one of each datatype. For example, if you have two parameters that accept string input, only one of
+those can accept pipeline input **by value** because if you specified it for both of the string
+parameters, the pipeline input wouldn't know which one to bind to. This is another reason I call
+this type of pipeline input _by type_ instead of **by value**.
 
 Pipeline input comes in one item at a time similar to the way items are handled in a `foreach` loop.
 At a minimum, a `process` block is required to process each of these items if you're accepting an
@@ -661,7 +661,7 @@ function Test-MrPipelineInput {
 }
 ```
 
-Accepting pipeline input by property name is similar except it's specified with the
+Accepting pipeline input **by property name** is similar except it's specified with the
 `ValueFromPipelineByPropertyName` parameter attribute and it can be specified for any number of
 parameters regardless of datatype. The key is that the output of the command that's being piped in
 has to have a property name that matches the name of the parameter or a parameter alias of your
@@ -745,8 +745,8 @@ function Test-MrErrorHandling {
 
 Although the function shown in the previous example uses error handling, it also generates an
 unhandled exception because the command doesn't generate a terminating error. This is also important
-to understand. Only terminating errors are caught. Specify the **ErrorAction** parameter with Stop
-as the value to turn a non-terminating error into a terminating one.
+to understand. Only terminating errors are caught. Specify the **ErrorAction** parameter with
+**Stop** as the value to turn a non-terminating error into a terminating one.
 
 ```powershell
 function Test-MrErrorHandling {
@@ -774,8 +774,8 @@ function Test-MrErrorHandling {
 ```
 
 Don't modify the global `$ErrorActionPreference` variable unless absolutely necessary. If you're
-using something like the .NET directly from within your PowerShell function, you won't can't specify
-the **ErrorAction** on the command itself. In that scenario, you might need to change the global
+using something like .NET directly from within your PowerShell function, you can't specify the
+**ErrorAction** on the command itself. In that scenario, you might need to change the global
 `$ErrorActionPreference` variable, but if you do change it, change it back immediately after trying
 the command.
 
@@ -856,7 +856,7 @@ input, error handling, and comment based help.
 
 1. How do you obtain a list of approved verbs in PowerShell?
 1. How do you turn a PowerShell function into an advanced function?
-1. When should WhatIf and Confirm parameters be added to your PowerShell functions?
+1. When should **WhatIf** and **Confirm** parameters be added to your PowerShell functions?
 1. How do you turn a non-terminating error into a terminating one?
 1. Why should you add comment based help to your functions?
 
