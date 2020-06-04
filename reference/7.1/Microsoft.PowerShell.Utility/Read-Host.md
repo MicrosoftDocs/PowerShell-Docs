@@ -47,8 +47,8 @@ $Age = Read-Host "Please enter your age"
 ### Example 2: Save console input as a secure string
 
 This example displays the string "Enter a Password:" as a prompt. As a value is being entered,
-asterisks (*) appear on the console in place of the input. When the Enter key is pressed, the value
-is stored as a **SecureString** object in the `$pwd_secure_string` variable.
+asterisks (`*`) appear on the console in place of the input. When the Enter key is pressed, the
+value is stored as a **SecureString** object in the `$pwd_secure_string` variable.
 
 ```powershell
 $pwd_secure_string = Read-Host "Enter a Password" -AsSecureString
@@ -57,8 +57,8 @@ $pwd_secure_string = Read-Host "Enter a Password" -AsSecureString
 ### Example 3: Mask input and as a plaintext string
 
 This example displays the string "Enter a Password:" as a prompt. As a value is being entered,
-asterisks (*) appear on the console in place of the input. When the Enter key is pressed, the value
-is stored as a plaintext **String** object in the `$pwd_string` variable.
+asterisks (`*`) appear on the console in place of the input. When the Enter key is pressed, the
+value is stored as a plaintext **String** object in the `$pwd_string` variable.
 
 ```powershell
 $pwd_string = Read-Host "Enter a Password" -MaskInput

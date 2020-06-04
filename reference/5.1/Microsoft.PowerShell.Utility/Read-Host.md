@@ -39,12 +39,13 @@ $Age = Read-Host "Please enter your age"
 ### Example 2: Save console input as a secure string
 
 This example displays the string "Enter a Password:" as a prompt. As a value is being entered,
-asterisks (*) appear on the console in place of the input. When the Enter key is pressed, the value
-is stored as a **SecureString** object in the `$pwd_secure_string` variable.
+asterisks (`*`) appear on the console in place of the input. When the Enter key is pressed, the
+value is stored as a **SecureString** object in the `$pwd_secure_string` variable.
 
 ```powershell
 $pwd_secure_string = Read-Host "Enter a Password" -AsSecureString
 ```
+
 ## PARAMETERS
 
 ### -AsSecureString
@@ -52,7 +53,6 @@ $pwd_secure_string = Read-Host "Enter a Password" -AsSecureString
 Indicates that the cmdlet displays asterisks (`*`) in place of the characters that the user types as
 input. When you use this parameter, the output of the `Read-Host` cmdlet is a **SecureString**
 object (**System.Security.SecureString**).
-
 
 ```yaml
 Type: SwitchParameter
