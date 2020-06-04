@@ -3,7 +3,7 @@ external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 03/12/2020
+ms.date: 06/04/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/invoke-webrequest?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Invoke-WebRequest
@@ -675,7 +675,8 @@ Accept wildcard characters: False
 ### -OutFile
 
 Specifies the output file for which this cmdlet saves the response body. Enter a path and file name.
-If you omit the path, the default is the current location.
+If you omit the path, the default is the current location. The name is treated as a literal path.
+Names that contain brackets (`[]`) must be enclosed in single quotes (`'`).
 
 By default, `Invoke-WebRequest` returns the results to the pipeline. To send the results to a file
 and to the pipeline, use the **Passthru** parameter.
