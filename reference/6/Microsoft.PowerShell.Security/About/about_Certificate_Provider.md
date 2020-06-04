@@ -1,7 +1,7 @@
 ---
 keywords: powershell,cmdlet
 Locale: en-US
-ms.date: 10/18/2018
+ms.date: 06/04/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.security/about/about_certificate_provider?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Certificate Provider
@@ -9,6 +9,7 @@ title: Certificate Provider
 # Certificate Provider
 
 ## Provider name
+
 Certificate
 
 ## Drives
@@ -25,11 +26,11 @@ Provides access to X.509 certificate stores and certificates in PowerShell.
 
 ## Detailed description
 
-The PowerShell **Certificate** provider lets you get, add, change, clear, and delete
-certificates and certificate stores in PowerShell.
+The PowerShell **Certificate** provider lets you get, add, change, clear, and
+delete certificates and certificate stores in PowerShell.
 
-The **Certificate** drive is a hierarchical namespace containing the cerificate
-stores and certificates on your computer.
+The **Certificate** drive is a hierarchical namespace containing the
+certificate stores and certificates on your computer.
 
 The **Certificate** provider supports the following cmdlets, which are covered
 in this article.
@@ -99,12 +100,6 @@ Set-Location C:
 > and `pwd` is an alias for [Get-Location](../../Microsoft.PowerShell.Management/Get-Location.md).
 
 ## Displaying the Contents of the Cert: drive
-
-New dynamic parameters, `DnsName`, `EKU`, `SSLServerAuthentication`, and
-`ExpiringInDays` have been added to the `Get-ChildItem` cmdlet in the `Cert:`
-drive. The new dynamic parameters are available in the Windows PowerShell 3.0
-and newer PowerShell releases. The provider parameters work with IIS 8.0
-on Windows Server 2012 and later.
 
 This command uses the `Get-ChildItem` cmdlet to display the certificate stores
 in the CurrentUser certificate store location.
@@ -429,7 +424,7 @@ In a `Certificate` drive, the following values are allowed:
 - Store
 - StoreLocation
 
-### Cmdlets Supported
+#### Cmdlets Supported
 
 - [New-Item](../../Microsoft.PowerShell.Management/New-Item.md)
 
@@ -443,55 +438,6 @@ In a `Certificate` drive, the following values are allowed:
 
 This parameter gets certificates that have "Code Signing" in their
 **EnhancedKeyUsageList** property value.
-
-### DnsName <Microsoft.PowerShell.Commands.DnsNameRepresentation>
-
-#### Cmdlets supported
-
-- [Get-ChildItem](../../Microsoft.PowerShell.Management/Get-ChildItem.md)
-
-This parameter gets certificates that have the specified domain name or name
-pattern in the **DNSNameList** property of the certificate. The value of this
-parameter can either be "Unicode" or "ASCII". Punycode values are converted to
-Unicode. Wildcard characters (*) are permitted.
-
-This parameter was introduced in Windows PowerShell 3.0.
-
-### EKU <System.String>
-
-#### Cmdlets supported
-
-- [Get-ChildItem](../../Microsoft.PowerShell.Management/Get-ChildItem.md)
-
-This parameter gets certificates that have the specified text or text pattern
-in the `EnhancedKeyUsageList` property of the certificate. Wildcard characters
-(*) are permitted. The `EnhancedKeyUsageList` property contains the friendly
-name and the OID fields of the EKU.
-
-This parameter was introduced in Windows PowerShell 3.0.
-
-### ExpiringInDays <System.Int32>
-
-#### Cmdlets supported
-
-- [Get-ChildItem](../../Microsoft.PowerShell.Management/Get-ChildItem.md)
-
-This parameter gets certificates that are expiring in or before the specified
-number of days. A value of 0 (zero) gets certificates that have expired.
-
-This parameter was introduced in Windows PowerShell 3.0.
-
-### SSLServerAuthentication <System.Management.Automation.SwitchParameter>
-
-#### Cmdlets supported
-
-- [Get-ChildItem](../../Microsoft.PowerShell.Management/Get-ChildItem.md)
-
-Gets only server certificates for SSL web hosting. This parameter gets
-certificates that have "Server Authentication" in their `EnhancedKeyUsageList`
-property value.
-
-This parameter was introduced in Windows PowerShell 3.0.
 
 ### DeleteKey <System.Management.Automation.SwitchParameter>
 

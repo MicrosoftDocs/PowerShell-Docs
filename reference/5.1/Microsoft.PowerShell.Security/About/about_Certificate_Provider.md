@@ -1,7 +1,7 @@
 ---
 keywords: powershell,cmdlet
 Locale: en-US
-ms.date: 10/18/2018
+ms.date: 06/04/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.security/about/about_certificate_provider?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Certificate Provider
@@ -26,10 +26,11 @@ Provides access to X.509 certificate stores and certificates in PowerShell.
 
 ## Detailed description
 
-The PowerShell **Certificate** provider lets you get, add, change, clear, and delete
-certificates and certificate stores in PowerShell.
+The PowerShell **Certificate** provider lets you get, add, change, clear, and
+delete certificates and certificate stores in PowerShell.
 
-The **Certificate** drive is a hierarchical namespace containing the cerificate stores and certificates on your computer.
+The **Certificate** drive is a hierarchical namespace containing the
+certificate stores and certificates on your computer.
 
 The **Certificate** provider supports the following cmdlets, which are covered
 in this article.
@@ -57,7 +58,9 @@ The Certificate drive exposes the following types.
   for all users. Each system has a CurrentUser and LocalMachine (all users)
   store location.
 
-- Certificates stores (System.Security.Cryptography.X509Certificates.X509Store), which are physical stores in which certificates are saved and managed.
+- Certificates stores
+  (System.Security.Cryptography.X509Certificates.X509Store), which are physical
+  stores in which certificates are saved and managed.
 
 - X.509 **System.Security.Cryptography.X509Certificates.X509Certificate2**
   certificates, each of which represent an X.509 certificate on the computer.
@@ -93,8 +96,8 @@ Set-Location C:
 > PowerShell uses aliases to allow you a familiar way to work with provider
 > paths. Commands such as `dir` and `ls` are now aliases for
 > [Get-ChildItem](../../Microsoft.PowerShell.Management/Get-ChildItem.md),
-> `cd` is an alias for [Set-Location](../../Microsoft.PowerShell.Management/Set-Location.md). and `pwd` is
-> an alias for [Get-Location](../../Microsoft.PowerShell.Management/Get-Location.md).
+> `cd` is an alias for [Set-Location](../../Microsoft.PowerShell.Management/Set-Location.md).
+> and `pwd` is an alias for [Get-Location](../../Microsoft.PowerShell.Management/Get-Location.md).
 
 ## Displaying the Contents of the Cert: drive
 
@@ -341,8 +344,8 @@ $expired | Remove-Item -DeleteKey
 ## Creating Certificates
 
 The `New-Item` cmdlet does not create new certificates in the **Certificate**
-provider. Use the [New-SelfSignedCertificate](/powershell/module/pkiclient/new-selfsignedcertificate) cmdlet to create a certificate
-for testing purposes.
+provider. Use the [New-SelfSignedCertificate](/powershell/module/pkiclient/new-selfsignedcertificate)
+cmdlet to create a certificate for testing purposes.
 
 ## Creating Certificate Stores
 
@@ -427,7 +430,7 @@ In a `Certificate` drive, the following values are allowed:
 - Store
 - StoreLocation
 
-### Cmdlets Supported
+#### Cmdlets Supported
 
 - [New-Item](../../Microsoft.PowerShell.Management/New-Item.md)
 
@@ -442,6 +445,17 @@ In a `Certificate` drive, the following values are allowed:
 This parameter gets certificates that have "Code Signing" in their
 **EnhancedKeyUsageList** property value.
 
+### DocumentEncryptionCert <System.Management.Automation.SwitchParameter>
+
+#### Cmdlets supported
+
+- [Get-Item](../../Microsoft.PowerShell.Management/Get-Item.md)
+
+- [Get-ChildItem](../../Microsoft.PowerShell.Management/Get-ChildItem.md)
+
+This parameter gets certificates that have "Document Encryption" in their
+**EnhancedKeyUsageList** property value.
+
 ### DnsName <Microsoft.PowerShell.Commands.DnsNameRepresentation>
 
 #### Cmdlets supported
@@ -451,7 +465,7 @@ This parameter gets certificates that have "Code Signing" in their
 This parameter gets certificates that have the specified domain name or name
 pattern in the **DNSNameList** property of the certificate. The value of this
 parameter can either be "Unicode" or "ASCII". Punycode values are converted to
-Unicode. Wildcard characters (*) are permitted.
+Unicode. Wildcard characters (`*`) are permitted.
 
 This parameter was introduced in Windows PowerShell 3.0.
 
@@ -463,7 +477,7 @@ This parameter was introduced in Windows PowerShell 3.0.
 
 This parameter gets certificates that have the specified text or text pattern
 in the `EnhancedKeyUsageList` property of the certificate. Wildcard characters
-(*) are permitted. The `EnhancedKeyUsageList` property contains the friendly
+(`*`) are permitted. The `EnhancedKeyUsageList` property contains the friendly
 name and the OID fields of the EKU.
 
 This parameter was introduced in Windows PowerShell 3.0.
