@@ -449,54 +449,6 @@ This parameter deletes the associated private key when it deletes the certificat
 
 This parameter was introduced in Windows PowerShell 3.0.
 
-### DnsName <Microsoft.PowerShell.Commands.DnsNameRepresentation>
-
-#### Cmdlets supported
-
-- [Get-ChildItem](../../Microsoft.PowerShell.Management/Get-ChildItem.md)
-
-This parameter gets certificates that have the specified domain name or name
-pattern in the **DNSNameList** property of the certificate. The value of this
-parameter can either be "Unicode" or "ASCII". Punycode values are converted to
-Unicode. Wildcard characters (`*`) are permitted.
-
-This parameter was introduced in Windows PowerShell 3.0.
-
-### DocumentEncryptionCert <System.Management.Automation.SwitchParameter>
-
-#### Cmdlets supported
-
-- [Get-Item](../../Microsoft.PowerShell.Management/Get-Item.md)
-
-- [Get-ChildItem](../../Microsoft.PowerShell.Management/Get-ChildItem.md)
-
-This parameter gets certificates that have "Document Encryption" in their
-**EnhancedKeyUsageList** property value.
-
-### EKU <System.String>
-
-#### Cmdlets supported
-
-- [Get-ChildItem](../../Microsoft.PowerShell.Management/Get-ChildItem.md)
-
-This parameter gets certificates that have the specified text or text pattern
-in the `EnhancedKeyUsageList` property of the certificate. Wildcard characters
-(`*`) are permitted. The `EnhancedKeyUsageList` property contains the friendly
-name and the OID fields of the EKU.
-
-This parameter was introduced in Windows PowerShell 3.0.
-
-### ExpiringInDays <System.Int32>
-
-#### Cmdlets supported
-
-- [Get-ChildItem](../../Microsoft.PowerShell.Management/Get-ChildItem.md)
-
-This parameter gets certificates that are expiring in or before the specified
-number of days. A value of 0 (zero) gets certificates that have expired.
-
-This parameter was introduced in Windows PowerShell 3.0.
-
 ### ItemType \<String\>
 
 This parameter allows you to specify the type of item created by `New-Item`.
@@ -511,18 +463,6 @@ In a `Certificate` drive, the following values are allowed:
 #### Cmdlets Supported
 
 - [New-Item](../../Microsoft.PowerShell.Management/New-Item.md)
-
-### SSLServerAuthentication <System.Management.Automation.SwitchParameter>
-
-#### Cmdlets supported
-
-- [Get-ChildItem](../../Microsoft.PowerShell.Management/Get-ChildItem.md)
-
-Gets only server certificates for SSL web hosting. This parameter gets
-certificates that have "Server Authentication" in their `EnhancedKeyUsageList`
-property value.
-
-This parameter was introduced in Windows PowerShell 3.0.
 
 ## Script properties
 
