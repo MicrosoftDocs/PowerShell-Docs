@@ -33,8 +33,8 @@ allowed in PowerShell.
 
 ```powershell
 Get-Service |
->> Where-Object CanPauseAndContinue -eq $true |
->> Select-Object -Property *
+  Where-Object CanPauseAndContinue -eq $true |
+    Select-Object -Property *
 ```
 
 ```Output
@@ -196,8 +196,8 @@ Natural line breaks can occur at commonly used characters including comma (`,`) 
 (`[`), braces (`{`), and parenthesis (`(`). Others that aren't so common include the semicolon
 (`;`), equals sign (`=`), and both opening single and double quotes (`'`,`"`).
 
-Using the backtick (`` ` '') or grave accent character as a line continuation character is a
-controversial topic. My recommendation is to try to avoid it if at all possible. I see often
+Using the backtick (`` ` ``) or grave accent character as a line continuation character is a
+controversial topic. My recommendation is to try to avoid it if at all possible. I often see
 PowerShell commands written using a backtick immediately after a natural line break character.
 There's no reason for it to be there.
 
@@ -251,7 +251,7 @@ be used that way in PowerShell, it's not recommended because they're not needed.
 ## Filtering Left
 
 The results of the commands shown in this chapter have been filtered down to a subset. For example,
-`Get-Service` was used with the Name parameter to filter the list of services that were returned to
+`Get-Service` was used with the **Name** parameter to filter the list of services that were returned to
 only the Windows Time service.
 
 In the pipeline, you always want to filter the results down to what you're looking for as early as
@@ -441,7 +441,7 @@ parameter of `Stop-Service`.
 Get-Service -Name w32time | Stop-Service
 ```
 
-Now to try string input. Pipe "w32time" to `Get-Member` just to confirm that it's a string.
+Now to try string input. Pipe `w32time` to `Get-Member` just to confirm that it's a string.
 
 ```powershell
 'w32time' | Get-Member
@@ -452,15 +452,15 @@ Now to try string input. Pipe "w32time" to `Get-Member` just to confirm that it'
 ```
 
 As previously shown in the help, piping a string to `Stop-Service` binds it **by value** to the
-**Name** parameter of `Stop-Service`. Test this by piping w32time to `Stop-Service`.
+**Name** parameter of `Stop-Service`. Test this by piping `w32time` to `Stop-Service`.
 
 ```powershell
 'w32time' | Stop-Service
 ```
 
-Notice that in the previous example, I used single quotes around the string "w32time". In
+Notice that in the previous example, I used single quotes around the string `w32time`. In
 PowerShell, you should always use single quotes instead of double quotes unless the contents of the
-quoted string contain a variable that needs to be expanded to its actual value. By using single
+quoted string contains a variable that needs to be expanded to its actual value. By using single
 quotes, PowerShell doesn't have to parse the contents contained within the quotes so your code runs
 a little faster.
 
@@ -500,12 +500,13 @@ Although piping the contents of `$CustomObject` to `Stop-Service` cmdlet binds t
 parameter, this time it binds **by property name** instead of **by value** because the contents of
 `$CustomObject` is an object that has a property named **Name**.
 
-In this example, I create another custom object using a different property name, such as "service".
+In this example, I create another custom object using a different property name, such as
+**Service**.
 
 ```powershell
 $CustomObject = [pscustomobject]@{
->> Service = 'w32time'
->> }
+  Service = 'w32time'
+}
 ```
 
 An error is generated when trying to pipe `$CustomObject` to `Stop-Service` because it doesn't
@@ -526,14 +527,13 @@ At line:1 char:17
    topServiceCommand
 ```
 
-As shown in the previous example, if the output of one command doesn't line up with the pipeline
-input options for another command, `Select-Object` can be used to rename the property so that the
-properties lineup correctly.
+If the output of one command doesn't line up with the pipeline input options for another command,
+`Select-Object` can be used to rename the property so that the properties lineup correctly.
 
 ```powershell
 $CustomObject |
->> Select-Object -Property @{name='Name';expression={$_.Service}} |
->> Stop-Service
+  Select-Object -Property @{name='Name';expression={$_.Service}} |
+    Stop-Service
 ```
 
 In this example, `Select-Object` was used to rename the **Service** property to a property named
@@ -553,7 +553,7 @@ name for a couple of Windows services into a text file.
 Out-File -FilePath $env:TEMP\services.txt
 ```
 
-You can run the command that provides the needed output within parenthesis as the value for the
+You can run the command that provides the needed output within parentheses as the value for the
 parameter of the command requiring the input.
 
 ```powershell
@@ -561,7 +561,7 @@ Stop-Service -DisplayName (Get-Content -Path $env:TEMP\services.txt)
 ```
 
 This is just like order of operations in Algebra for those of you who remember how it works. The
-command within parenthesis always runs prior to the outer portion of the command.
+command within parentheses always runs prior to the outer portion of the command.
 
 ## PowerShellGet
 

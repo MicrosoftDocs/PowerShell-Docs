@@ -55,7 +55,7 @@ Running  w32time            Windows Time
 ```
 
 **Status**, **Name**, and **DisplayName** are examples of properties as shown in the previous set of
-results. The value for the Status property is Running, the value for the **Name** property is
+results. The value for the **Status** property is `Running`, the value for the **Name** property is
 `w32time`, and the value for **DisplayName** is `Windows Time`.
 
 Now I'll pipe that same command to `Get-Member`:
@@ -133,9 +133,9 @@ pipeline, parameter input, or both.
 
 Notice that there are more properties than are displayed by default. Although these additional
 properties aren't displayed by default, they can be selected from the pipeline by piping the command
-to the `Select-Object` cmdlet and using the Property parameter. The following example selects all of
-the properties by piping the results of `Get-Service` to `Select-Object` and specifying the `*`
-wildcard character as the value for the Property parameter.
+to the `Select-Object` cmdlet and using the **Property** parameter. The following example selects
+all of the properties by piping the results of `Get-Service` to `Select-Object` and specifying the
+`*` wildcard character as the value for the **Property** parameter.
 
 ```powershell
 Get-Service -Name w32time | Select-Object -Property *
@@ -164,8 +164,7 @@ Specific properties can also be selected using a comma-separated list for the va
 **Property** parameter.
 
 ```powershell
-Get-Service -Name w32time | Select-Object -Property Status, Name,
-DisplayName, ServiceType
+Get-Service -Name w32time | Select-Object -Property Status, Name, DisplayName, ServiceType
 ```
 
 ```Output
@@ -251,7 +250,7 @@ I rarely find myself using methods, but they're something you need to be aware o
 that you'll come across a `Get-*` command without a corresponding command to modify that item.
 Often, a method can be used to perform an action that modifies it. The `Get-SqlAgentJob` cmdlet in
 the SqlServer PowerShell module is a good example of this. The module installs as part of
-[SQL Server Management Studio (SMSS) 2016][SMSS]. No corresponding `Set-*` cmdlet exists, but a
+[SQL Server Management Studio (SMSS)][SMSS]. No corresponding `Set-*` cmdlet exists, but a
 method can be used to complete the same task.
 
 Another reason to be aware of methods is that many beginners assume destructive changes can't be
@@ -693,7 +692,7 @@ by default? Imagine if you returned every property for every user account in you
 Directory environment. Think of the performance degradation that you could cause, not only to the
 domain controllers themselves, but also to your network. It's doubtful that you'll actually need
 every property anyway. Returning all of the properties for a single user account is perfectly
-acceptable when you're trying to figure what properties exist.
+acceptable when you're trying to determine what properties exist.
 
 It's not uncommon to run a command many times when prototyping it. If you're going to perform
 some huge query, query it once and store the results in a variable. Then work with the contents of
