@@ -35,9 +35,9 @@ would need to use the `ForEach-Object` cmdlet.
 
 ```powershell
 'ActiveDirectory', 'SQLServer' |
->> ForEach-Object {Get-Command -Module $_} |
->> Group-Object -Property ModuleName -NoElement |
->> Sort-Object -Property Count -Descending
+   ForEach-Object {Get-Command -Module $_} |
+     Group-Object -Property ModuleName -NoElement |
+         Sort-Object -Property Count -Descending
 ```
 
 ```Output
@@ -57,8 +57,8 @@ them, which could be difficult if you don't know how many items you're working w
 ```powershell
 $ComputerName = 'DC01', 'WEB01'
 foreach ($Computer in $ComputerName) {
->>     Get-ADComputer -Identity $Computer
->> }
+  Get-ADComputer -Identity $Computer
+}
 ```
 
 ```Output
@@ -143,9 +143,9 @@ use often, but it does have its uses.
 
 ```powershell
 for ($i = 1; $i -lt 5; $i++) {
->>     Write-Output "Sleeping for $i seconds"
->>     Start-Sleep -Seconds $i
->> }
+  Write-Output "Sleeping for $i seconds"
+  Start-Sleep -Seconds $i
+}
 ```
 
 ```Output
@@ -167,15 +167,15 @@ false.
 ```powershell
 $number = Get-Random -Minimum 1 -Maximum 10
 do {
->>     $guess = Read-Host -Prompt "What's your guess?"
->>     if ($guess -lt $number) {
->>         Write-Output 'Too low!'
->>     }
->>     elseif ($guess -gt $number) {
->>         Write-Output 'Too high!'
->>     }
->> }
->> until ($guess -eq $number)
+  $guess = Read-Host -Prompt "What's your guess?"
+  if ($guess -lt $number) {
+    Write-Output 'Too low!'
+  }
+  elseif ($guess -gt $number) {
+    Write-Output 'Too high!'
+  }
+}
+until ($guess -eq $number)
 ```
 
 ```Output
@@ -194,15 +194,14 @@ number that the `Get-Random` cmdlet generated.
 ```powershell
 $number = Get-Random -Minimum 1 -Maximum 10
 do {
->>     $guess = Read-Host -Prompt "What's your guess?"
->>     if ($guess -lt $number) {
->>         Write-Output 'Too low!'
->>     }
->>     elseif ($guess -gt $number) {
->>         Write-Output 'Too high!'
->>     }
->> }
->> while ($guess -ne $number)
+  $guess = Read-Host -Prompt "What's your guess?"
+  if ($guess -lt $number) {
+    Write-Output 'Too low!'
+  } elseif ($guess -gt $number) {
+    Write-Output 'Too high!'
+  }
+}
+while ($guess -ne $number)
 ```
 
 ```Output
@@ -228,8 +227,8 @@ code is run. So it doesn't run if the condition evaluates to false.
 ```powershell
 $date = Get-Date -Date 'November 22'
 while ($date.DayOfWeek -ne 'Thursday') {
->>     $date = $date.AddDays(1)
->> }
+  $date = $date.AddDays(1)
+}
 Write-Output $date
 ```
 
@@ -248,10 +247,10 @@ at all.
 
 ```powershell
 for ($i = 1; $i -lt 5; $i++) {
->>     Write-Output "Sleeping for $i seconds"
->>     Start-Sleep -Seconds $i
->>     break
->> }
+  Write-Output "Sleeping for $i seconds"
+  Start-Sleep -Seconds $i
+  break
+}
 ```
 
 ```Output
@@ -264,12 +263,12 @@ Continue is designed to skip to the next iteration of a loop.
 
 ```powershell
 while ($i -lt 5) {
->>     $i += 1
->>     if ($i -eq 3) {
->>         continue
->>     }
->>     Write-Output $i
->> }
+  $i += 1
+  if ($i -eq 3) {
+    continue
+  }
+  Write-Output $i
+}
 ```
 
 ```Output
@@ -289,10 +288,10 @@ Return is designed to exit out of the existing scope.
 ```powershell
 $number = 1..10
 foreach ($n in $number) {
->>     if ($n -ge 4) {
->>         Return $n
->>     }
->> }
+  if ($n -ge 4) {
+    Return $n
+  }
+}
 ```
 
 ```Output

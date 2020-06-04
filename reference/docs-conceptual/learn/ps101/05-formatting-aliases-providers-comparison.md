@@ -10,7 +10,7 @@ ms.reviewer: mirobb
 ## Requirements
 
 The SQL Server PowerShell module is required by some of the examples shown in this chapter. The
-module installs as part of [SQL Server Management Studio (SMSS) 2016][SMSS]. It's also used in
+module installs as part of [SQL Server Management Studio (SMSS)][SMSS]. It's also used in
 subsequent chapters. Download and install it on your Windows 10 lab environment computer.
 
 ## Format Right
@@ -165,7 +165,7 @@ An alias in PowerShell is a shorter name for a command. PowerShell includes a se
 aliases and you can also define your own aliases.
 
 The `Get-Alias` cmdlet is used to find aliases. If you already know the alias for a command, the
-Name parameter is used to determine what command the alias is associated with.
+**Name** parameter is used to determine what command the alias is associated with.
 
 ```powershell
 Get-Alias -Name gcm
@@ -177,7 +177,7 @@ CommandType     Name                                               Version    So
 Alias           gcm -> Get-Command
 ```
 
-Multiple aliases can be specified for the value of the Name parameter.
+Multiple aliases can be specified for the value of the **Name** parameter.
 
 ```powershell
 Get-Alias -Name gcm, gm
@@ -215,7 +215,7 @@ Alias           gcm -> Get-Command
 Alias           gm -> Get-Member
 ```
 
-The Definition parameter can't be used positionally so it must be specified.
+The **Definition** parameter can't be used positionally so it must be specified.
 
 Aliases can save you a few keystrokes and they're fine when you're typing commands into the console.
 They shouldn't be used in scripts or any code that you're saving or sharing with others. As
@@ -608,8 +608,8 @@ case as the original, the **Replace()** method does replace it as expected.
 SQL Sat - Baton Rouge
 ```
 
-Be careful when methods to transform data because you can run into unforeseen problems, such as
-failing the _Turkey Test_. For an example, see the blog article titled
+Be careful when using methods to transform data because you can run into unforeseen problems, such
+as failing the _Turkey Test_. For an example, see the blog article titled
 [Using Pester to Test PowerShell Code with Other Cultures][]. My recommendation is to use an
 operator instead of a method whenever possible to avoid these types of problems.
 
