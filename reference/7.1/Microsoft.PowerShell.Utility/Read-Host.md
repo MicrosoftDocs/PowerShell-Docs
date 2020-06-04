@@ -68,7 +68,7 @@ $pwd_string = Read-Host "Enter a Password" -MaskInput
 
 ### -AsSecureString
 
-Indicates that the cmdlet displays asterisks (*) in place of the characters that the user types as
+Indicates that the cmdlet displays asterisks (`*`) in place of the characters that the user types as
 input. When you use this parameter, the output of the `Read-Host` cmdlet is a **SecureString**
 object (**System.Security.SecureString**).
 
@@ -108,7 +108,7 @@ Accept wildcard characters: False
 Specifies the text of the prompt.
 Type a string.
 If the string includes spaces, enclose it in quotation marks.
-PowerShell appends a colon (:) to the text that you enter.
+PowerShell appends a colon (`:`) to the text that you enter.
 
 ```yaml
 Type: Object
