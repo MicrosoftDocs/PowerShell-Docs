@@ -64,6 +64,76 @@
             "redirect_document_id": true
         },
         {
+            "source_path": "reference/docs-conceptual/learn/ps101/Getting-Detailed-Help-Information.md",
+            "redirect_url": "https://docs.microsoft.com/powershell/scripting/learn/ps101/02-help-system",
+            "redirect_document_id": false
+        },
+        {
+            "source_path": "reference/docs-conceptual/learn/ps101/Getting-Information-About-Commands.md",
+            "redirect_url": "https://docs.microsoft.com/powershell/scripting/learn/ps101/02-help-system",
+            "redirect_document_id": false
+        },
+        {
+            "source_path": "reference/docs-conceptual/learn/ps101/Learning-PowerShell-Names.md",
+            "redirect_url": "https://docs.microsoft.com/powershell/scripting/learn/ps101/02-help-system",
+            "redirect_document_id": false
+        },
+        {
+            "source_path": "reference/docs-conceptual/learn/ps101/PowerShell.exe-Command-Line-Help.md",
+            "redirect_url": "https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_powershell_exe",
+            "redirect_document_id": false
+        },
+        {
+            "source_path": "reference/docs-conceptual/learn/ps101/Using-Familiar-Command-Names.md",
+            "redirect_url": "https://docs.microsoft.com/powershell/scripting/learn/ps101/05-formatting-aliases-providers-comparison",
+            "redirect_document_id": false
+        },
+        {
+            "source_path": "reference/docs-conceptual/learn/ps101/Using-Variables-to-Store-Objects.md",
+            "redirect_url": "https://docs.microsoft.com/powershell/scripting/learn/ps101/03-discovering-objects",
+            "redirect_document_id": false
+        },
+        {
+            "source_path": "reference/docs-conceptual/learn/ps101/Using-Tab-Expansion.md",
+            "redirect_url": "https://docs.microsoft.com/powershell/scripting/learn/Using-Tab-Expansion",
+            "redirect_document_id": false
+        },
+        {
+            "source_path": "reference/docs-conceptual/components/console/powershell.exe-command-line-help.md",
+            "redirect_url": "https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_powershell_exe?view=powershell-5.1",
+            "redirect_document_id": true
+        },
+        {
+            "source_path": "reference/docs-conceptual/components/console/using-tab-expansion.md",
+            "redirect_url": "https://docs.microsoft.com/powershell/scripting/learn/ps101/using-tab-expansion",
+            "redirect_document_id": true
+        },
+        {
+            "source_path": "reference/docs-conceptual/learn/getting-detailed-help-information.md",
+            "redirect_url": "https://docs.microsoft.com/powershell/scripting/learn/ps101/02-help-system",
+            "redirect_document_id": false
+        },
+        {
+            "source_path": "reference/docs-conceptual/learn/getting-information-about-commands.md",
+            "redirect_url": "https://docs.microsoft.com/powershell/scripting/learn/ps101/02-help-system",
+            "redirect_document_id": false
+        },
+        {
+            "source_path": "reference/docs-conceptual/learn/learning-powershell-names.md",
+            "redirect_url": "https://docs.microsoft.com/powershell/scripting/learn/ps101/02-help-system",
+            "redirect_document_id": false
+        },
+        {
+            "source_path": "reference/docs-conceptual/learn/using-familiar-command-names.md",
+            "redirect_url": "https://docs.microsoft.com/powershell/scripting/learn/ps101/05-formatting-aliases-providers-comparison",
+            "redirect_document_id": true
+        },
+        {
+            "source_path": "reference/docs-conceptual/learn/using-variables-to-store-objects.md",
+            "redirect_url": "https://docs.microsoft.com/powershell/scripting/learn/ps101/03-discovering-objects",
+            "redirect_document_id": true
+        },
+        {
             "source_path": "reference/docs-conceptual/whats-new/migrating-from-windows-powershell-51-to-powershell-7.md",
             "redirect_url": "https://docs.microsoft.com/powershell/scripting/install/migrating-from-windows-powershell-51-to-powershell-7",
             "redirect_document_id": true
@@ -126,16 +196,6 @@
         {
             "source_path": "reference/docs-conceptual/install/windows-powershell-system-requirements.md",
             "redirect_url": "https://docs.microsoft.com/powershell/scripting/windows-powershell/install/windows-powershell-system-requirements",
-            "redirect_document_id": true
-        },
-        {
-            "source_path": "reference/docs-conceptual/components/console/powershell.exe-command-line-help.md",
-            "redirect_url": "https://docs.microsoft.com/powershell/scripting/learn/ps101/powershell.exe-command-line-help",
-            "redirect_document_id": true
-        },
-        {
-            "source_path": "reference/docs-conceptual/components/console/using-tab-expansion.md",
-            "redirect_url": "https://docs.microsoft.com/powershell/scripting/learn/ps101/using-tab-expansion",
             "redirect_document_id": true
         },
         {
@@ -416,31 +476,6 @@
         {
             "source_path": "reference/docs-conceptual/install/installing-the-windows-powershell-2.0-engine.md",
             "redirect_url": "https://docs.microsoft.com/powershell/scripting/windows-powershell/install/installing-the-windows-powershell-2.0-engine",
-            "redirect_document_id": true
-        },
-        {
-            "source_path": "reference/docs-conceptual/learn/getting-detailed-help-information.md",
-            "redirect_url": "https://docs.microsoft.com/powershell/scripting/learn/ps101/getting-detailed-help-information",
-            "redirect_document_id": true
-        },
-        {
-            "source_path": "reference/docs-conceptual/learn/getting-information-about-commands.md",
-            "redirect_url": "https://docs.microsoft.com/powershell/scripting/learn/ps101/getting-information-about-commands",
-            "redirect_document_id": true
-        },
-        {
-            "source_path": "reference/docs-conceptual/learn/learning-powershell-names.md",
-            "redirect_url": "https://docs.microsoft.com/powershell/scripting/learn/ps101/learning-powershell-names",
-            "redirect_document_id": true
-        },
-        {
-            "source_path": "reference/docs-conceptual/learn/using-familiar-command-names.md",
-            "redirect_url": "https://docs.microsoft.com/powershell/scripting/learn/ps101/using-familiar-command-names",
-            "redirect_document_id": true
-        },
-        {
-            "source_path": "reference/docs-conceptual/learn/using-variables-to-store-objects.md",
-            "redirect_url": "https://docs.microsoft.com/powershell/scripting/learn/ps101/using-variables-to-store-objects",
             "redirect_document_id": true
         },
         {
