@@ -8,7 +8,7 @@ ms.reviewer: mirobb
 ---
 # Appendix A - Help Syntax
 
-The following example shows syntax section of the help for the `Get-EventLog` cmdlet.
+The following example shows the **SYNTAX** section of the help for the `Get-EventLog` cmdlet.
 
 ```powershell
 help Get-EventLog
@@ -44,8 +44,8 @@ one value of that type.
 The first parameter in the first parameter set of `Get-EventLog` is **LogName**. LogName is
 surrounded by square brackets which means that it's a positional parameter. In other words,
 specifying the name of the parameter itself is optional as long as it's specified in the correct
-position. The information in the angle brackets (`<>`) after the parameter name indicates that
-it needs a single string value. The entire parameter name and datatype are not surrounded by square
+position. The information in the angle brackets (`<>`) after the parameter name indicates that it
+needs a single **string** value. The entire parameter name and datatype are not surrounded by square
 brackets so the **LogName** parameter is required when using this parameter set.
 
 ```powershell
@@ -64,8 +64,8 @@ an array or a comma-separated list.
 ```
 
 The second parameter set has a **List** parameter. It's a switch parameter because there's no
-datatype following the parameter name. When the **List** parameter is specified, the value is True.
-When it's not specified, the value is False.
+datatype following the parameter name. When the **List** parameter is specified, the value is
+**True**. When it's not specified, the value is **False**.
 
 ```
 [-List]

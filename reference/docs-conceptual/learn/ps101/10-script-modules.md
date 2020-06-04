@@ -282,7 +282,7 @@ All modules should have a module manifest. A module manifest contains metadata a
 The file extension for a module manifest file is `.PSD1`. Not all files with a `.PSD1` extension are
 module manifests. They can also be used for things such as storing the environmental portion of a
 DSC configuration. `New-ModuleManifest` is used to create a module manifest. **Path** is the only
-value that's required. However, the module won't work if root module isn't specified. It's a good
+value that's required. However, the module won't work if **RootModule** isn't specified. It's a good
 idea to specify **Author** and **Description** in case you decide to upload your module to a NuGet
 repository with PowerShellGet since those values are required in that scenario.
 
@@ -374,7 +374,7 @@ manifest for your script module.
 - [Export-ModuleMember][]
 
 <!-- link references -->
-- [How to Create PowerShell Script Modules and Module Manifests]: https://mikefrobbins.com/2013/07/04/how-to-create-powershell-script-modules-and-module-manifests/
-- [about_Modules]: /powershell/module/microsoft.powershell.core/about/about_modules
-- [New-ModuleManifest]: /powershell/module/microsoft.powershell.core/new-modulemanifest
-- [Export-ModuleMember]: /powershell/module/microsoft.powershell.core/export-modulemember
+[How to Create PowerShell Script Modules and Module Manifests]: https://mikefrobbins.com/2013/07/04/how-to-create-powershell-script-modules-and-module-manifests/
+[about_Modules]: /powershell/module/microsoft.powershell.core/about/about_modules
+[New-ModuleManifest]: /powershell/module/microsoft.powershell.core/new-modulemanifest
+[Export-ModuleMember]: /powershell/module/microsoft.powershell.core/export-modulemember

@@ -240,7 +240,7 @@ PSComputerName    : dc01
 There are several additional benefits to using CIM sessions instead of just specifying a computer
 name. When running multiple queries to the same computer, using a CIM session is more efficient than
 using the computer name for each query. Creating a CIM session only sets up the connection once.
-Then, multiple queries use that same session to retrieve information. USing the computer name
+Then, multiple queries use that same session to retrieve information. Using the computer name
 requires the cmdlets to set up and tear down the connection with each individual query.
 
 The `Get-CimInstance` cmdlet uses the WSMan protocol by default, which means the remote computer
@@ -295,7 +295,7 @@ $CimSession = New-CimSession -ComputerName sql03 -SessionOption $DCOM -Credentia
 ```
 
 Notice in the previous command, this time I specified the variable named `$Cred` as the value for
-the **Credential** parameter instead of having to enter then manually again.
+the **Credential** parameter instead of having to enter them manually again.
 
 The output of the query is the same regardless of the underlying protocol being used.
 

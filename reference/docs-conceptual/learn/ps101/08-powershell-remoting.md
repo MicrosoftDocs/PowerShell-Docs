@@ -12,7 +12,7 @@ PowerShell has many different ways to run commands against remote computers. In 
 you saw how to remotely query WMI using the CIM cmdlets. PowerShell also includes several cmdlets
 that have a built-in **ComputerName** parameter.
 
-As shown in the following example, `Get-Command` can be used with the ParameterName parameter to
+As shown in the following example, `Get-Command` can be used with the **ParameterName** parameter to
 determine what commands have a **ComputerName** parameter.
 
 ```powershell
@@ -61,7 +61,7 @@ Cmdlet      Test-WSMan                  7.0.0.0 Microsoft.WSMan.Management
 
 Commands such as `Get-Process` and `Get-Hotfix` have a **ComputerName** parameter. This isn't the
 long-term direction that Microsoft is heading for running commands against remote computers. Even if
-you find command that has a **ComputerName** parameter, chances are that you'll need to specify
+you find a command that has a **ComputerName** parameter, chances are that you'll need to specify
 alternate credentials and it won't have a **Credential** parameter. And if you decided to run
 PowerShell from an elevated account, a firewall between you and the remote computer can block the
 request.
@@ -85,7 +85,7 @@ WinRM firewall exception enabled.
 
 ## One-To-One Remoting
 
-If you want your remote session to be an interactive, then one-to-one remoting is what you want.
+If you want your remote session to be interactive, then one-to-one remoting is what you want.
 This type of remoting is provided via the `Enter-PSSession` cmdlet.
 
 In the last chapter, I stored my domain admin credentials in a variable named `$Cred`. If you
