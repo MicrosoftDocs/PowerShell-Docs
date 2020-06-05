@@ -1,30 +1,35 @@
 ---
 keywords: powershell,cmdlet
 Locale: en-US
-ms.date: 06/09/2017
+ms.date: 06/04/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_break?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Break
 ---
 # About Break
 
-## SHORT DESCRIPTION
+## Short description
 
-Describes a statement you can use to immediately exit `Foreach`, `For`,
-`While`, `Do`, or `Switch` statements.
+Describes a statement you can use to immediately exit `foreach`, `for`,
+`while`, `do`, `switch`, or `trap` statements.
 
-## LONG DESCRIPTION
+## Long description
 
-When a Break statement appears in a loop, such as a `Foreach`, `For`, or
-`While` loop, the `Break` statement causes PowerShell to immediately exit the
-loop. In a `Switch` construct, `Break` causes PowerShell to exit the `Switch`
-code block.
-
-A `Break` statement can include a label that lets you exit embedded loops. A
-label can specify any loop keyword, such as `Foreach`, `For`, or `While`, in a
+The `break` statement provides a way to exit the current control block.
+Execution continues at the next statement after the control block. The
+statement supports labels. A label is a name you assign to a statement in a
 script.
 
-The following example shows how to use a `Break` statement to exit a `For`
+## Using break in loops
+
+When a `break` statement appears in a loop, such as a `foreach`, `for`, `do`,
+or `while` loop, PowerShell immediately exits the loop.
+
+A `break` statement can include a label that lets you exit embedded loops. A
+label can specify any loop keyword, such as `foreach`, `for`, or `while`, in a
+script.
+
+The following example shows how to use a `break` statement to exit a `for`
 statement:
 
 ```powershell
@@ -34,13 +39,13 @@ for($i=1; $i -le 10; $i++) {
 }
 ```
 
-In this example, the `Break` statement exits the `For` loop when the `$i`
-variable equals 1. Even though the `For` statement evaluates to True until `$i`
-is greater than 10, PowerShell reaches the break statement the first time the
-`For` loop is run.
+In this example, the `break` statement exits the `for` loop when the `$i`
+variable equals 1. Even though the `for` statement evaluates to **True** until
+`$i` is greater than 10, PowerShell reaches the break statement the first time
+the `for` loop is run.
 
-It is more common to use the Break statement in a loop where an inner condition
-must be met. Consider the following `Foreach` statement example:
+It is more common to use the `break` statement in a loop where an inner
+condition must be met. Consider the following `foreach` statement example:
 
 ```powershell
 $i=0
@@ -54,46 +59,23 @@ foreach ($val in $varB) {
 Write-Host "30 was found in array index $i"
 ```
 
-In this example, the `Foreach` statement iterates the `$varB` array. The `If`
+In this example, the `foreach` statement iterates the `$varB` array. The `if`
 statement evaluates to False the first two times the loop is run and the
 variable `$i` is incremented by 1. The third time the loop is run, `$i` equals
-2, and the `$val` variable equals 30. At this point, the `Break` statement
-runs, and the `Foreach` loop exits.
+2, and the `$val` variable equals 30. At this point, the `break` statement
+runs, and the `foreach` loop exits.
 
-You break out of the other looping statements in the same way you break out of
-the `Foreach` loop. In the following example, the `Break` statement exits a
-`While` statement when a **DivideByZeroException** exception is trapped using
-the `Trap` statement.
+### Using a labeled break in a loop
 
-```powershell
-$i = 3
-while ($true) {
-  trap [DivideByZeroException] {
-    Write-Host 'divide by zero trapped'
-    break
-  }
-   1 / $i--
-}
-
-```
-
-A `Break` statement can include a label. If you use the `Break` keyword with a
+A `break` statement can include a label. If you use the `break` keyword with a
 label, PowerShell exits the labeled loop instead of exiting the current loop.
-The syntax for a label is as follows (this example shows a label in a While
-loop):
-
-:myLabel while (`<condition>`) { `<statement list>`}
-
 The label is a colon followed by a name that you assign. The label must be the
 first token in a statement, and it must be followed by the looping keyword,
-such as While.
+such as `while`.
 
-In PowerShell, only loop keywords, such as `Foreach`, For, and While can have a
-label.
-
-`Break` moves execution out of the labeled loop. In embedded loops, this has a
-different result than the `Break` keyword has when it is used by itself. This
-schematic example has a `While` statement with a For statement:
+`break` moves execution out of the labeled loop. In embedded loops, this has a
+different result than the `break` keyword has when it is used by itself. This
+example has a `while` statement with a `for` statement:
 
 ```powershell
 :myLabel while (<condition 1>) {
@@ -107,11 +89,11 @@ schematic example has a `While` statement with a For statement:
 $a = $c  # A statement after the labeled While-loop
 ```
 
-If condition 2 evaluates to True, the execution of the script skips down to the
-statement after the labeled loop. In the example, execution starts again with
-the statement "$a = $c".
+If condition 2 evaluates to **True**, the execution of the script skips down to
+the statement after the labeled loop. In the example, execution starts again
+with the statement `$a = $c`.
 
-You can nest many labeled loops, as shown in the following schematic example.
+You can nest many labeled loops, as shown in the following example.
 
 ```powershell
 :red while (<condition1>) {
@@ -139,8 +121,12 @@ loop. No label is needed.
 PowerShell does not limit how far labels can resume execution. The label can
 even pass control across script and function call boundaries.
 
-The `Break` keyword is used to leave the `Switch` construct. For example, the
-following `Switch` statement uses `Break` statements to test for the most
+## Using break in a switch statement
+
+In a `switch`construct, `break` causes PowerShell to exit the `switch` code block.
+
+The `break` keyword is used to leave the `switch` construct. For example, the
+following `switch` statement uses `break` statements to test for the most
 specific condition:
 
 ```powershell
@@ -169,18 +155,73 @@ switch -regex ($var) {
 ```
 
 In this example, the `$var` variable is created and initialized to a string
-value of "word2". The Switch statement uses the **Regex** class to match the
-variable value first with the term "word2". (The **Regex** class is a regular
-expression Microsoft .NET Framework class.) Because the variable value and the
-first test in the `Switch` statement match, the first code block in the
-`Switch` statement runs.
+value of `word2`. The `switch` statement uses the **Regex** class to match the
+variable value first with the term `word2`. Because the variable value and the
+first test in the `switch` statement match, the first code block in the
+`switch` statement runs.
 
-When PowerShell reaches the first `Break` statement, the `Switch` statement
-exits. If the four `Break` statements are removed from the example, all four
-conditions are met. This example uses the `Break` statement to display results
+When PowerShell reaches the first `break` statement, the `switch` statement
+exits. If the four `break` statements are removed from the example, all four
+conditions are met. This example uses the `break` statement to display results
 when the most specific condition is met.
 
-## SEE ALSO
+## Using break in a trap statement
+
+If the final statement executed in the body of a `trap` statement is `break`,
+the error object is suppressed and the exception is re-thrown.
+
+The following example create a **DivideByZeroException** exception that is
+trapped using the `trap` statement.
+
+```powershell
+function test {
+  trap [DivideByZeroException] {
+    Write-Host 'divide by zero trapped'
+    break
+  }
+
+  $i = 3
+  'Before loop'
+  while ($true) {
+     "1 / $i = " + (1 / $i--)
+  }
+  'After loop'
+}
+test
+```
+
+Notice that execution stops at the exception. The `After loop` is never reached.
+The exception is re-thrown after the `trap` executes.
+
+```Output
+Before loop
+1 / 3 = 0.333333333333333
+1 / 2 = 0.5
+1 / 1 = 1
+divide by zero trapped
+ParentContainsErrorRecordException:
+Line |
+  10 |       "1 / $i = " + (1 / $i--)
+     |       ~~~~~~~~~~~~~~~~~~~~~~~~
+     | Attempted to divide by zero.
+```
+
+## Do not use break outside of a loop, switch, or trap
+
+When `break` is used outside of a construct that directly supports it
+(loops, `switch`, `trap`), PowerShell looks _up the call stack_ for an
+enclosing construct. If it can't find an enclosing construct, the current
+runspace is quietly terminated.
+
+This means that functions and scripts that inadvertently use a `break` outside
+of an enclosing construct that supports it can inadvertently terminate their
+_callers_.
+
+Using `break` inside a pipeline `break`, such as a `ForEach-Object` script
+block, not only exits the pipeline, it potentially terminates the entire
+runspace.
+
+## See also
 
 [about_Comparison_Operators](about_Comparison_Operators.md)
 
@@ -199,4 +240,3 @@ when the most specific condition is met.
 [about_Try_Catch_Finally](about_Try_Catch_Finally.md)
 
 [about_While](about_While.md)
-
