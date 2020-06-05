@@ -190,7 +190,7 @@ function test {
 test
 ```
 
-Notice that execution stop at the exception. The `After loop` is never reached.
+Notice that execution stops at the exception. The `After loop` is never reached.
 The exception is re-thrown after the `trap` executes.
 
 ```Output
@@ -207,7 +207,7 @@ At line:10 char:6
     + FullyQualifiedErrorId : RuntimeException
 ```
 
-## Do not use break outside of a loop, switch or trap
+## Do not use break outside of a loop, switch, or trap
 
 When `break` is used outside of a construct that directly supports it
 (loops, `switch`, `trap`), PowerShell looks _up the call stack_ for an
@@ -215,7 +215,7 @@ enclosing construct. If it can't find an enclosing construct, the current
 runspace is quietly terminated.
 
 This means that functions and scripts that inadvertently use a `break` outside
-of an enclosing construct that supports it, can inadvertently terminate their
+of an enclosing construct that supports it can inadvertently terminate their
 _callers_.
 
 Using `break` inside a pipeline `break`, such as a `ForEach-Object` script

@@ -21,11 +21,11 @@ A label is a name you assign to a statement in a script.
 ## Using continue in loops
 
 An unlabeled `continue` statement immediately returns the program flow to
-the top of the innermost loop that is controlled by a `For`, `Foreach`, `Do`,
-or `While` statement. The current iteration of the loop is terminated and the
+the top of the innermost loop that is controlled by a `for`, `foreach`, `do`,
+or `while` statement. The current iteration of the loop is terminated and the
 loop continues with the next iteration.
 
-In the following example, program flow returns to the top of the `While` loop
+In the following example, program flow returns to the top of the `while` loop
 if the `$ctr` variable is equal to 5. As a result, all the numbers between 1
 and 10 are displayed except for 5:
 
@@ -42,7 +42,7 @@ while ($ctr -lt 10)
 }
 ```
 
-When using a `For` loop, execution continues at the `<Repeat>` statement,
+When using a `for` loop, execution continues at the `<Repeat>` statement,
 followed by the `<Condition>` test. In the example below, an infinite loop
 will not occur because the decrement of `$i` occurs after the `continue`
 keyword.
