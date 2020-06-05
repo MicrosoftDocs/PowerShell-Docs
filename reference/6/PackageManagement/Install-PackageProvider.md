@@ -35,7 +35,7 @@ Install-PackageProvider [-Scope <String>] [-InputObject] <SoftwareIdentity[]> [-
 ## DESCRIPTION
 
 The **Install-PackageProvider** cmdlet installs matching Package Management providers that are available in package sources registered with **PowerShellGet**.
-By default, this includes modules available in the PowerShell Gallery with the **PackageManagement**.
+By default, this includes modules available in the PowerShell Gallery with the **PackageManagement** tag.
 The **PowerShellGet** Package Management provider is used for finding providers in these repositories.
 
 This cmdlet also installs matching Package Management providers that are available using the Package Management bootstrapping application.
