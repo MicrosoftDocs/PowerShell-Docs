@@ -308,9 +308,9 @@ trap { "whoops 2"; continue }
 > `trap` statement inside a function or dot sourced script, when the function
 > or dot sourced script exits, all `trap` statements inside are removed.
 
-### Using the `break` and `Continue` keywords
+### Using the break and continue keywords
 
-You can use the `break` and `Continue` keywords in a `trap` statement to
+You can use the `break` and `continue` keywords in a `trap` statement to
 determine whether a script or command continues to run after a terminating
 error.
 
@@ -343,12 +343,12 @@ Line |
 Because the `trap` statement included the `break` keyword, the function does
 not continue to run, and the "Function completed" line is not run.
 
-If you include a `Continue` keyword in a `trap` statement, PowerShell resumes
+If you include a `continue` keyword in a `trap` statement, PowerShell resumes
 after the statement that caused the error, just as it would without `break` or
-`Continue`. With the `Continue` keyword, however, PowerShell does not write an
+`continue`. With the `continue` keyword, however, PowerShell does not write an
 error to the error stream.
 
-The following sample function uses the `Continue` keyword in a `trap`
+The following sample function uses the `continue` keyword in a `trap`
 statement:
 
 ```powershell
