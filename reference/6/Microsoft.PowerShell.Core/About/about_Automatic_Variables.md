@@ -503,11 +503,13 @@ following items:
 | Property                  | Description                                   |
 | ------------------------- | --------------------------------------------- |
 | **PSVersion**             | The PowerShell version number                 |
-| **PSEdition**             | This property has the value of 'Desktop', for |
-|                           | Windows Server and Windows client versions.   |
+| **PSEdition**             | This property has the value of 'Desktop' for  |
+|                           | PowerShell 4 and below as well as PowerShell  |
+|                           | 5.1 on full-featured Windows editions.        |
 |                           | This property has the value of 'Core' for     |
-|                           | PowerShell running under Nano Server or       |
-|                           | Windows IOT.                                  |
+|                           | PowerShell 6 and above as well as PowerShell  |
+|                           | PowerShell 5.1 on reduced-footprint editions  |
+|                           | like Windows Nano Server or Windows IoT.      |
 | **GitCommitId**           | The commit Id of the source files, in GitHub, |
 | **OS**                    | Description of the operating system that      |
 |                           | PowerShell is running on.                     |
