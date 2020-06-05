@@ -40,11 +40,11 @@ for($i=1; $i -le 10; $i++) {
 ```
 
 In this example, the `break` statement exits the `for` loop when the `$i`
-variable equals 1. Even though the `for` statement evaluates to True until `$i`
-is greater than 10, PowerShell reaches the break statement the first time the
-`for` loop is run.
+variable equals 1. Even though the `for` statement evaluates to **True** until
+`$i` is greater than 10, PowerShell reaches the break statement the first time
+the `for` loop is run.
 
-It is more common to use the `Break` statement in a loop where an inner
+It is more common to use the `break` statement in a loop where an inner
 condition must be met. Consider the following `foreach` statement example:
 
 ```powershell
@@ -59,7 +59,7 @@ foreach ($val in $varB) {
 Write-Host "30 was found in array index $i"
 ```
 
-In this example, the `foreach` statement iterates the `$varB` array. The `If`
+In this example, the `foreach` statement iterates the `$varB` array. The `if`
 statement evaluates to False the first two times the loop is run and the
 variable `$i` is incremented by 1. The third time the loop is run, `$i` equals
 2, and the `$val` variable equals 30. At this point, the `break` statement
@@ -156,8 +156,7 @@ switch -regex ($var) {
 
 In this example, the `$var` variable is created and initialized to a string
 value of `word2`. The `switch` statement uses the **Regex** class to match the
-variable value first with the term "word2". (The **Regex** class is a regular
-expression Microsoft .NET Framework class.) Because the variable value and the
+variable value first with the term `word2`. Because the variable value and the
 first test in the `switch` statement match, the first code block in the
 `switch` statement runs.
 
@@ -168,7 +167,7 @@ when the most specific condition is met.
 
 ## Using break in a trap statement
 
-If the final statement executed in the body of a trap statement is `break`,
+If the final statement executed in the body of a `trap` statement is `break`,
 the error object is suppressed and the exception is re-thrown.
 
 The following example create a **DivideByZeroException** exception that is

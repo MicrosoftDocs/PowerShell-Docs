@@ -64,7 +64,7 @@ for ($i = 0; $i -lt 10; $i++)
 ### Using a labeled continue in a loop
 
 A labeled `continue` statement terminates execution of the iteration and
-transfers control to the targeted enclosing iteration or switch statement
+transfers control to the targeted enclosing iteration or `switch` statement
 label.
 
 In the following example, the innermost `for` is terminated when `$condition`
@@ -86,13 +86,13 @@ is **True** and iteration continues with the second `for` loop at `labelB`.
 
 ## Using continue in a switch statement
 
-An unlabeled `continue` statement within a switch terminates execution of the
-current switch iteration and transfers control to the top of the switch to get
+An unlabeled `continue` statement within a `switch` terminates execution of the
+current `switch` iteration and transfers control to the top of the `switch` to get
 the next input item.
 
-When there is a single input item `continue` exits the entire switch statement.
-When the switch input is a collection, the switch tests each element of the
-collection. The continue exits the current iteration and the switch continues
+When there is a single input item `continue` exits the entire `switch` statement.
+When the `switch` input is a collection, the `switch` tests each element of the
+collection. The `continue` exits the current iteration and the `switch` continues
 with the next element.
 
 ```powershell
@@ -113,7 +113,7 @@ If the final statement executed in the body a `trap` statement is `continue`,
 the trapped error is silently ignored and execution continues with the
 statement immediately following the one that caused `trap` to occur.
 
-## Do not use continue outside of a loop, switch or trap
+## Do not use continue outside of a loop, switch, or trap
 
 When `continue` is used outside of a construct that directly supports it
 (loops, `switch`, `trap`), PowerShell looks _up the call stack_ for an

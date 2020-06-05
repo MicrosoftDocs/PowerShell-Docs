@@ -376,8 +376,8 @@ statement runs. No error is written to the error stream.
 
 `trap` statements provide a simple way to broadly ensure all terminating errors
 within a scope are handled. For more finer-grained error handling, use
-`try`/`catch` blocks where traps are defined using `Catch` statements. The
-`Catch` statements only apply to the code inside the associated `Try`
+`try`/`catch` blocks where traps are defined using `catch` statements. The
+`catch` statements only apply to the code inside the associated `try`
 statement. For more information, see [about_Try_Catch_Finally](about_Try_Catch_Finally.md).
 
 ## See also
