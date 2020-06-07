@@ -469,8 +469,8 @@ Create a custom object to test pipeline input by property name for the **Name** 
 
 ```powershell
 $CustomObject = [pscustomobject]@{
->> Name = 'w32time'
->> }
+ Name = 'w32time'
+ }
 ```
 
 The contents of the **CustomObject** variable is a **PSCustomObject** object type and it contains a
