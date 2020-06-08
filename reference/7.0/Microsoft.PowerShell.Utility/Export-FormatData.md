@@ -46,7 +46,7 @@ For more information about formatting files in PowerShell, see [about_Format.ps1
 ### Example 1: Export session format data
 
 ```powershell
-Get-FormatData -TypeName "*" | Export-FormatData -Path "allformat.ps1xml" -IncludeScriptBlock
+Get-FormatData -TypeName "*" -PowerShellVersion 5.1 | Export-FormatData -Path "allformat.ps1xml" -IncludeScriptBlock
 ```
 
 This command exports all of the format data in the session to the AllFormat.ps1xml file.
@@ -63,7 +63,7 @@ in the format data in the file.
 ### Example 2: Export format data for a type
 
 ```powershell
-$F = Get-FormatData -TypeName "helpinfoshort"
+$F = Get-FormatData -TypeName "helpinfoshort" -PowerShellVersion 5.1
 Export-FormatData -InputObject $F -Path "c:\test\help.format.ps1xml" -IncludeScriptBlock
 ```
 
@@ -79,7 +79,7 @@ script blocks in the output.
 ### Example 3: Export format data without a script block
 
 ```powershell
-Get-FormatData -TypeName "System.Diagnostics.Process" | Export-FormatData -Path process.format.ps1xml
+Get-FormatData -TypeName "System.Diagnostics.Process" -PowerShellVersion 5.1 | Export-FormatData -Path process.format.ps1xml
 Update-FormatData -PrependPath ".\process.format.ps1xml"
 Get-Process p*
 ```
