@@ -437,4 +437,3 @@ Update-FormatData -AppendPath ./Mygciview.Format.ps1xml
 [Update-FormatData](../../Microsoft.PowerShell.Utility/Update-FormatData.md)
 
 [Writing a PowerShell Formatting File](/powershell/scripting/developer/format/writing-a-powershell-formatting-file)
-

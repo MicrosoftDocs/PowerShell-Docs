@@ -149,11 +149,6 @@ TypeNames                               FormatViewDefinition
 {Microsoft.Powershell.Utility.FileHash} {Microsoft.Powershell.Utility.FileHash}
 ```
 
-> [!IMPORTANT]
-> To ensure that the complete type formatting information is returned, you should always include the
-> **PowerShellVersion** parameter with the appropriate version. If the parameter and value are
-> omitted, you may not get all the correct type information.
-
 ## PARAMETERS
 
 ### -PowerShellVersion
@@ -218,4 +213,3 @@ You cannot pipe input to this cmdlet.
 [Export-FormatData](Export-FormatData.md)
 
 [Update-FormatData](Update-FormatData.md)
-
