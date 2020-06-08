@@ -251,7 +251,7 @@ It generates a file and saves it in the specified path.
 
 - To use any formatting file, including an exported formatting file, the execution policy for the
   session must allow scripts and configuration files to run. For more information, see
-  about_Execution_Policies.
+  [about_Execution_Policies](../Microsoft.PowerShell.Core/About/about_Execution_Policies.md).
 
 ## RELATED LINKS
 
