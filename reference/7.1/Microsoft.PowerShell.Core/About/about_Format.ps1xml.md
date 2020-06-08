@@ -214,6 +214,9 @@ LCID  Name   Calendar                                DisplayName
 
 ## The XML in Format.ps1xml files
 
+The full schema definition can be found in [Format.xsd](https://github.com/PowerShell/PowerShell/blob/master/src/Schemas/Format.xsd)
+in the PowerShell source code repository on GitHub.
+
 The **ViewDefinitions** section of each `Format.ps1xml` file contains the
 `<View>` tags that define each view. A typical `<View>` tag includes the
 following tags:
@@ -434,4 +437,3 @@ Update-FormatData -AppendPath ./Mygciview.Format.ps1xml
 [Update-FormatData](../../Microsoft.PowerShell.Utility/Update-FormatData.md)
 
 [Writing a PowerShell Formatting File](/powershell/scripting/developer/format/writing-a-powershell-formatting-file)
-
