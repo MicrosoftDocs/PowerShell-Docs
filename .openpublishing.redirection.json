@@ -5,6 +5,16 @@
             "redirect_document_id": true
         },
         {
+            "source_path": "digital-art.md",
+            "redirect_url": "https://docs.microsoft.com/powershell/scripting/community/digital-art",
+            "redirect_document_id": false
+        },
+        {
+            "source_path": "reference/digital-art.md",
+            "redirect_url": "https://docs.microsoft.com/powershell/scripting/community/digital-art",
+            "redirect_document_id": false
+        },
+        {
             "source_path": "reference/docs-conceptual/community/whats-new-in-docs.md",
             "redirect_url": "https://docs.microsoft.com/powershell/scripting/community/community-update",
             "redirect_document_id": false
