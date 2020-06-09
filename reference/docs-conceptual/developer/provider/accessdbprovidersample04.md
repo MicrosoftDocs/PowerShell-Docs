@@ -58,7 +58,7 @@ This sample demonstrates the following:
 This sample shows how to overwrite the methods needed to copy, create, and remove items, as well as
 methods for getting the child items of a parent item.
 
-:::code language="csharp" source="~/../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample06/AccessDBProviderSample06.cs" range="11-1635":::
+:::code language="csharp" source="~/../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample04/AccessDBProviderSample04.cs" range="11-1635":::
 
 ## See Also
 
