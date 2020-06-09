@@ -69,7 +69,7 @@ This sample demonstrates the following:
 This sample shows how to overwrite the methods needed to get and set items in a Microsoft Access
 data base.
 
-:::code language="csharp" source="~/../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample06/AccessDBProviderSample06.cs" range="11-976":::
+:::code language="csharp" source="~/../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample03/AccessDBProviderSample03.cs" range="11-976":::
 
 ## See Also
 
