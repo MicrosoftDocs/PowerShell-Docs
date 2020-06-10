@@ -1,5 +1,5 @@
 ---
-ms.date:  06/12/2017
+ms.date: 06/10/2020
 ms.topic: conceptual
 keywords:  wmf,powershell,setup
 contributor:  keithb
@@ -54,33 +54,33 @@ following:
   **PSModulePath** (`$env:PSModulePath`), which can cause other applications to fail. Before
   installing WMF 5.1, you must either un-install WMF 3.0, or save the **PSModulePath** and then
   restore it manually after WMF 5.1 installation is complete.
-- WMF 5.1 requires at least [.NET Framework 4.5.2](https://www.microsoft.com/download/details.aspx?id=42642).
-  You can install Microsoft .NET Framework 4.5.2 by following the instructions at the download
-  location.
+- WMF 5.1 requires at least
+  [.NET Framework 4.5.2](https://www.microsoft.com/download/details.aspx?id=42642). You can install
+  Microsoft .NET Framework 4.5.2 by following the instructions at the download location.
 
 ### Installing WMF 5.1 on Windows Server 2008 R2 and Windows 7
 
 1. Navigate to the folder into which you downloaded the ZIP file.
 
-2. Right-click on the ZIP file, and select **Extract All...**. The ZIP file contains two files: an
+1. Right-click on the ZIP file, and select **Extract All...**. The ZIP file contains two files: an
    MSU and the `Install-WMF5.1.ps1` script file. Once you have unpacked the ZIP file, you can copy
    the contents to any machine running Windows 7 or Windows Server 2008 R2.
 
-3. After extracting the ZIP file contents, open PowerShell as administrator, then navigate to the
+1. After extracting the ZIP file contents, open PowerShell as administrator, then navigate to the
    folder containing the contents of the ZIP file.
 
-4. Run the `Install-WMF5.1.ps1` script in that folder, and follow the instructions. This script will
+1. Run the `Install-WMF5.1.ps1` script in that folder, and follow the instructions. This script will
    check the prerequisites on the local machine, and install WMF 5.1 if the prerequisites have been
    met. The prerequisites are listed below.
 
-   `Install-WMF5.1.ps1` takes the following parameters to ease automating the installation on Windows
-   Server 2008 R2 and Windows 7:
+   `Install-WMF5.1.ps1` takes the following parameters to ease automating the installation on
+   Windows Server 2008 R2 and Windows 7:
 
-   - **AcceptEula**: When this parameter is included, the EULA is automatically accepted and will not be
-     displayed.
-   - **AllowRestart**: This parameter can only be used if AcceptEula is specified. If this parameter is
-     included, and a restart is required after installing WMF 5.1, the restart will happen without
-     prompting immediately after the installation is completed.
+   - **AcceptEula**: When this parameter is included, the EULA is automatically accepted and will
+     not be displayed.
+   - **AllowRestart**: This parameter can only be used if AcceptEula is specified. If this parameter
+     is included, and a restart is required after installing WMF 5.1, the restart will happen
+     without prompting immediately after the installation is completed.
 
 ## WinRM Dependency
 
@@ -93,7 +93,7 @@ elevated session, to enable WinRM.
 ### Install from Windows File Explorer
 
 1. Navigate to the folder into which you downloaded the MSU file.
-2. Double-click the MSU to run it.
+1. Double-click the MSU to run it.
 
 ### Installing from the Command Prompt
 
@@ -101,15 +101,17 @@ elevated session, to enable WinRM.
    window with elevated user rights (Run as Administrator). On the Server Core installation options
    of Windows Server 2012 R2, Windows Server 2012, or Windows Server 2008 R2 SP1, Command Prompt
    opens with elevated user rights by default.
-2. Change directories to the folder into which you have downloaded or copied the WMF 5.1
+1. Change directories to the folder into which you have downloaded or copied the WMF 5.1
    installation package.
-3. Run one of the following commands:
+1. Run one of the following commands:
    - On computers that are running Windows Server 2012 R2 or Windows 8.1 x64, run
-     `Win8.1AndW2K12R2-KB3191564-x64.msu /quiet`.
-   - On computers that are running Windows Server 2012, run `W2K12-KB3191565-x64.msu /quiet`.
-   - On computers that are running Windows 8.1 x86, run `Win8.1-KB3191564-x86.msu /quiet`.
+     `Win8.1AndW2K12R2-KB3191564-x64.msu /quiet /norestart`.
+   - On computers that are running Windows Server 2012, run
+     `W2K12-KB3191565-x64.msu /quiet /norestart`.
+   - On computers that are running Windows 8.1 x86, run
+     `Win8.1-KB3191564-x86.msu /quiet /norestart`.
 
-> [!NOTE]
-> Installing WMF 5.1 requires a reboot. Using the `/quiet` option will reboot the system without
-> warning. Use the `/norestart` option to avoid rebooting. However, WMF 5.1 will not be installed
-> until you have rebooted.
+   > [!NOTE]
+   > Installing WMF 5.1 requires a reboot. Using the `/quiet` option alone will reboot the system
+   > without warning. Use the `/norestart` option to avoid rebooting. However, WMF 5.1 will not be
+   > installed until you have rebooted.
