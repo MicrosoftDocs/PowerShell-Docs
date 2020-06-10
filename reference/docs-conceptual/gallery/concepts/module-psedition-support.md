@@ -25,8 +25,8 @@ the `CompatiblePSEditions` module manifest key. This key is only supported on Po
 later.
 
 > [!NOTE]
-> Once a module manifest is specified with the `CompatiblePSEditions` key, it can not be imported on
-> PowerShell versions 4 and below.
+> Once a module manifest is specified with the `CompatiblePSEditions` key or uses the `$PSEdition`
+> variable, it can not be imported on PowerShell v4 or lower.
 
 ```powershell
 New-ModuleManifest -Path .\TestModuleWithEdition.psd1 -CompatiblePSEditions Desktop,Core -PowerShellVersion 5.1
@@ -187,10 +187,6 @@ $PSModule.OnRemove = {
 In PS 5.1 or newer, `$PSEdition` global variable is allowed in the module manifest file. Using this
 variable, module author can specify the conditional values in the module manifest file. `$PSEdition`
 variable can be referenced in restricted language mode or a Data section.
-
-> [!NOTE]
-> Once a module manifest is specified with the `CompatiblePSEditions` key or uses `$PSEdition`
-> variable, it can not be imported on PowerShell v4 or lower.
 
 Sample module manifest file with `CompatiblePSEditions` key.
 
