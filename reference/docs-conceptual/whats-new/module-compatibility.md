@@ -202,6 +202,6 @@ administrator**.
 
 The module has some minor compatibility issues with formatted output in PowerShell 7. For example, the
 `Get-WindowsFeature` cmdlet returns the proper object with all properties, but the default display
-formatting make some properties appear to be empty. The actual values are available in the object
+formatting makes some properties appear to be empty. The actual values are available in the object
 properties using `Select-Object` or by direct member access.
 
