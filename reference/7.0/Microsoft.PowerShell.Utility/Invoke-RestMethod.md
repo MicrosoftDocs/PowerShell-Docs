@@ -414,7 +414,7 @@ be used together.
 
 Example:
 
-`Invoke-WebRequest -uri 'https://api.contoso.com/widget/' -CustomMethod 'TEST'`
+`Invoke-RestMethod -uri 'https://api.contoso.com/widget/' -CustomMethod 'TEST'`
 
 This makes a `TEST` HTTP request to the API.
 
@@ -874,7 +874,7 @@ Accept wildcard characters: False
 Specifies a variable for which this cmdlet creates a web request session and saves it in the value.
 Enter a variable name without the dollar sign (`$`) symbol.
 
-When you specify a session variable, `Invoke-WebRequest` creates a web request session object and
+When you specify a session variable, `Invoke-RestMethod` creates a web request session object and
 assigns it to a variable with the specified name in your PowerShell session. You can use the
 variable in your session as soon as the command completes.
 
@@ -1183,7 +1183,7 @@ maximum redirection value, and the user agent string. You can use it to share st
 web requests.
 
 To create a web request session, enter a variable name, without a dollar sign, in the value of the
-**SessionVariable** parameter of an `Invoke-WebRequest` command. `Invoke-WebRequest` creates the
+**SessionVariable** parameter of an `Invoke-RestMethod` command. `Invoke-RestMethod` creates the
 session and saves it in the variable. In subsequent commands, use the variable as the value of the
 **WebSession** parameter.
 
