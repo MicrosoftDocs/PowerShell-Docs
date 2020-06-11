@@ -16,7 +16,7 @@ Describes how to use splatting to pass parameters to commands in PowerShell.
 ## Long description
 
 Splatting is a method of passing a collection of parameter values to a command
-as unit. PowerShell associates each value in the collection with a command
+as a unit. PowerShell associates each value in the collection with a command
 parameter. Splatted parameter values are stored in named splatting variables,
 which look like standard variables, but begin with an At symbol (`@`) instead
 of a dollar sign (`$`). The At symbol tells PowerShell that you are passing a
@@ -80,9 +80,10 @@ $HashArguments = @{
 Copy-Item @HashArguments
 ```
 
-Note: In the first command, the At symbol (`@`) indicates a hash table, not a
-splatted value. The syntax for hash tables in PowerShell is:
-`@{<name>=<value>; <name>=<value>; ...}`
+> [!NOTE]
+> In the first command, the At symbol (`@`) indicates a hash table, not a
+> splatted value. The syntax for hash tables in PowerShell is:
+> `@{<name>=<value>; <name>=<value>; ...}`
 
 ## Splatting with arrays
 
