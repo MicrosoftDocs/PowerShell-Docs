@@ -73,13 +73,14 @@ administrator**.
 | Module name                        | Status                               | Supported OS                       |
 | ---------------------------------- | ------------------------------------ | ---------------------------------- |
 | ActiveDirectory                    | Natively Compatible                  | Windows Server 1809+ with RSAT-AD-PowerShell<br>Windows 10 1809+ with Rsat.ActiveDirectory.DS-LDS.Tools |
+| ADDSDeployment                     | Works with Compatibility Layer       |  Windows Server 2019 1809+         |
 | ADFS                               | Untested with Compatibility Layer    |                                    |
 | AppBackgroundTask                  | Natively Compatible                  | Windows 10 1903+                   |
 | AppLocker                          | Untested with Compatibility Layer    |                                    |
 | AppvClient                         | Untested with Compatibility Layer    |                                    |
 | Appx                               | Natively Compatible                  | Windows Server 1809+<br>Windows 10 1809+ |
 | AssignedAccess                     | Natively Compatible                  | Windows 10 1809+                   |
-| BestPractices                      | Untested with Compatibility Layer    |                                    |
+| BestPractices                      | Not Supported by Compatibility Layer |                                    |
 | BitLocker                          | Natively Compatible                  | Windows Server 1809+ with BitLocker<br>Windows 10 1809+ |
 | BitsTransfer                       | Natively Compatible                  | Windows Server 20H1<br>Windows 10 20H1 |
 | BootEventCollector                 | Untested with Compatibility Layer    |                                        |
@@ -152,7 +153,7 @@ administrator**.
 | Provisioning                       | Untested with Compatibility Layer    |                                               |
 | PSDesiredStateConfiguration        | Partially                            | Built into PowerShell 7                       |
 | PSDiagnostics                      | Natively Compatible                  | Built into PowerShell 7                       |
-| PSScheduledJob                     | Not working with Compatibility Layer | Built into PowerShell 5.1                     |
+| PSScheduledJob                     | Not Supported by Compatibility Layer | Built into PowerShell 5.1                     |
 | PSWorkflow                         | Untested with Compatibility Layer    |                                               |
 | PSWorkflowUtility                  | Untested with Compatibility Layer    |                                               |
 | RemoteAccess                       | Untested with Compatibility Layer    |                                               |
@@ -160,7 +161,7 @@ administrator**.
 | ScheduledTasks                     | Natively Compatible                  | Windows Server 1809+<br>Windows 10 1809+      |
 | SecureBoot                         | Natively Compatible                  | Windows Server 1809+<br>Windows 10 1809+      |
 | ServerCore                         | Untested with Compatibility Layer    |                                               |
-| ServerManager                      | Untested with Compatibility Layer    |                                               |
+| ServerManager                      | Natively Compatible                  | Windows Server 1809+<br>Windows 10 1809+ with Rsat.ServerManager.Tools<br>_See notes below_ |
 | ServerManagerTasks                 | Untested with Compatibility Layer    |                                               |
 | ShieldedVMDataFile                 | Natively Compatible                  | Windows Server 1903+ with RSAT-Shielded-VM-Tools<br>Windows 10 1903+ with Rsat.Shielded.VM.Tools |
 | ShieldedVMProvisioning             | Natively Compatible                  | Windows Server 1809+ with HostGuardian<br>Windows 10 1809+ with HostGuardian  |
@@ -182,7 +183,7 @@ administrator**.
 | TroubleshootingPack                | Natively Compatible                  | Windows 10 1903+                              |
 | TrustedPlatformModule              | Natively Compatible                  | Windows Server 1809+<br>Windows 10 1809+      |
 | UEV                                | Natively Compatible                  | Windows Server ??Future version of Server with Desktop Experience??<br>Windows 10 1903+ |
-| UpdateServices                     | Not working with Compatibility Layer |                                               |
+| UpdateServices                     | Not Supported by Compatibility Layer |                                               |
 | VpnClient                          | Natively Compatible                  | Windows Server 1809+<br>Windows 10 1809+      |
 | Wdac                               | Natively Compatible                  | Windows Server 1809+<br>Windows 10 1809+      |
 | WebAdministration                  | Untested with Compatibility Layer    |                                               |
@@ -193,3 +194,13 @@ administrator**.
 | WindowsServerBackup                | Natively Compatible                  | Windows Server 19H2 with Windows-Server-Backup |
 | WindowsUpdate                      | Natively Compatible                  | Windows Server 1809+<br>Windows 10 1809+       |
 | WindowsUpdateProvider              | Natively Compatible                  | Windows Server 1809+<br>Windows 10 1809+       |
+
+## Notes
+
+### ServerManager module
+
+The module has some minor compatibility issues with formatted output in PowerShell 7. For example, the
+`Get-WindowsFeature` cmdlet returns the proper object with all properties, but the default display
+formatting makes some properties appear to be empty. The actual values are available in the object
+properties using `Select-Object` or by direct member access.
+
