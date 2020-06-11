@@ -227,6 +227,9 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
+> [!NOTE]
+> The **ComputerName** parameter is renamed to **TargetName** in PowerShell 6.0 and above.
+
 ### -Count
 
 Specifies the number of echo requests to send. The default value is 4.
