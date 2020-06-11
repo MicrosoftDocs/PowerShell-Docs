@@ -1,7 +1,7 @@
 ---
 keywords: powershell,cmdlet
 Locale: en-US
-ms.date: 04/08/2020
+ms.date: 06/11/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_functions_cmdletbindingattribute?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Functions_CmdletBindingAttribute
@@ -13,27 +13,27 @@ Describes the attribute that makes a function work like a compiled cmdlet.
 
 ## Long description
 
-The **CmdletBinding** attribute is an attribute of functions that makes them
-operate like compiled cmdlets that are written in C#, and it provides access to
-features of cmdlets.
+The `CmdletBinding` attribute is an attribute of functions that makes them
+operate like compiled cmdlets written in C#. It provides access to the features
+of cmdlets.
 
-PowerShell binds the parameters of functions that have the **CmdletBinding**
+PowerShell binds the parameters of functions that have the `CmdletBinding`
 attribute in the same way that it binds the parameters of compiled cmdlets. The
-`$PSCmdlet` automatic variable is available to functions with the CmdletBinding
-attribute, but the `$Args` variable is not available.
+`$PSCmdlet` automatic variable is available to functions with the
+`CmdletBinding` attribute, but the `$Args` variable is not available.
 
-In functions that have the **CmdletBinding** attribute, unknown parameters and
+In functions that have the `CmdletBinding` attribute, unknown parameters and
 positional arguments that have no matching positional parameters cause
 parameter binding to fail.
 
 > [!NOTE]
-> Compiled cmdlets use the required **Cmdlet** attribute, which is similar
-> to the **CmdletBinding** attribute that is described in this topic.
+> Compiled cmdlets use the required `Cmdlet` attribute, which is similar
+> to the `CmdletBinding` attribute that is described in this topic.
 
 ## Syntax
 
 The following example shows the format of a function that specifies all the
-optional arguments of the **CmdletBinding** attribute. A brief description of
+optional arguments of the `CmdletBinding` attribute. A brief description of
 each argument follows this example.
 
 ```powershell
@@ -62,7 +62,8 @@ be confirmed by a call to the **ShouldProcess** method. The call to the
 **Medium**.) Specify this argument only when the **SupportsShouldProcess**
 argument is also specified.
 
-For more information about confirmation requests, see [Requesting Confirmation](/powershell/scripting/developer/cmdlet/requesting-confirmation).
+For more information about confirmation requests, see
+[Requesting Confirmation](/powershell/scripting/developer/cmdlet/requesting-confirmation).
 
 ## DefaultParameterSetName
 
@@ -73,10 +74,9 @@ of each parameter set a mandatory parameter.
 
 ## HelpURI
 
-The **HelpURI** argument specifies the Internet address (Uniform Resource
-Identifier (URI)) of the online version of the help topic that describes the
-function. The value of the **HelpURI** argument must begin with "http" or
-"https".
+The **HelpURI** argument specifies the internet address of the online version
+of the help topic that describes the function. The value of the **HelpURI**
+argument must begin with "http" or "https".
 
 The **HelpURI** argument value is used for the value of the **HelpURI**
 property of the **CommandInfo** object that `Get-Command` returns for the
@@ -191,4 +191,3 @@ about_Functions_CmdletBinding_Attribute
 [about_Functions_Advanced_Parameters](about_Functions_Advanced_Parameters.md)
 
 [about_Functions_OutputTypeAttribute](about_Functions_OutputTypeAttribute.md)
-

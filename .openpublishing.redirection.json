@@ -39,21 +39,6 @@
             "redirect_url": "https://docs.microsoft.com/powershell/scripting/windows-powershell/wmf/overview",
             "redirect_document_id": true
         },
-        {
-            "source_path": "reference/6/microsoft.powershell.core/about/about_powershell_exe.md",
-            "redirect_url": "https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_pwsh?view=powershell-6",
-            "redirect_document_id": false
-        },
-        {
-            "source_path": "reference/7.0/microsoft.powershell.core/about/about_powershell_exe.md",
-            "redirect_url": "https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_pwsh?view=powershell-7",
-            "redirect_document_id": false
-        },
-        {
-            "source_path": "reference/7.1/microsoft.powershell.core/about/about_powershell_exe.md",
-            "redirect_url": "https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_pwsh?view=powershell-7.x",
-            "redirect_document_id": false
-        },
 
 
         {
@@ -90,7 +75,7 @@
         },
         {
             "source_path": "reference/docs-conceptual/learn/ps101/PowerShell.exe-Command-Line-Help.md",
-            "redirect_url": "https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_powershell_exe",
+            "redirect_url": "https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_powershell_exe?view=powershell-5.1",
             "redirect_document_id": false
         },
         {
@@ -107,11 +92,6 @@
             "source_path": "reference/docs-conceptual/learn/ps101/Using-Tab-Expansion.md",
             "redirect_url": "https://docs.microsoft.com/powershell/scripting/learn/Using-Tab-Expansion",
             "redirect_document_id": false
-        },
-        {
-            "source_path": "reference/docs-conceptual/components/console/powershell.exe-command-line-help.md",
-            "redirect_url": "https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_powershell_exe?view=powershell-5.1",
-            "redirect_document_id": true
         },
         {
             "source_path": "reference/docs-conceptual/components/console/using-tab-expansion.md",
@@ -3741,13 +3721,18 @@
             "redirect_document_id": false
         },
         {
+            "source_path": "reference/virtual-directory-module/5.1/microsoft.powershell.core/about/about_pwsh.md",
+            "redirect_url": "https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_pwsh",
+            "redirect_document_id": false
+        },
+        {
             "source_path": "reference/virtual-directory-module/7.0/microsoft.powershell.core/about/about_powershell_exe.md",
             "redirect_url": "https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_pwsh?view=powershell-7.0",
             "redirect_document_id": false
         },
         {
             "source_path": "reference/virtual-directory-module/7.1/microsoft.powershell.core/about/about_powershell_exe.md",
-            "redirect_url": "https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_pwsh?view=powershell-7.x",
+            "redirect_url": "https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_pwsh?view=powershell-7.1",
             "redirect_document_id": false
         },
         {
