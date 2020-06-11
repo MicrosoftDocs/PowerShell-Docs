@@ -215,6 +215,9 @@ format. Wildcard characters are not permitted. This parameter is required.
 This parameter doesn't rely on PowerShell remoting. You can use the **ComputerName** parameter even
 if your computer isn't configured to run remote commands.
 
+> [!NOTE]
+> The **ComputerName** parameter is renamed to **TargetName** in PowerShell 6.0 and above.
+
 ```yaml
 Type: String[]
 Parameter Sets: (All)
@@ -226,9 +229,6 @@ Default value: None
 Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
-
-> [!NOTE]
-> The **ComputerName** parameter is renamed to **TargetName** in PowerShell 6.0 and above.
 
 ### -Count
 
