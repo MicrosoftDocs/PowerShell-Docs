@@ -1,5 +1,5 @@
 ---
-ms.date: 06/18/2019
+ms.date: 06/11/2020
 keywords: powershell,cmdlet
 title: PowerShell learning resources
 ---
@@ -23,7 +23,7 @@ information for users who want to run PowerShell.
 ## Channel 9 videos
 
 Channel 9 is our video publishing platform. There are hundreds of videos about PowerShell
-available. [Search for "PowerShell"](https://channel9.msdn.com/Search?term=PowerShell&sortBy=top-rated)
+available. [Search for "PowerShell"](https://channel9.msdn.com/Tags/powershell)
 to see what videos are available.
 
 ### Microsoft Virtual Academy
