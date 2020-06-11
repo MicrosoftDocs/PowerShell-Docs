@@ -18,31 +18,31 @@ landingContent:
 # Cards and links should be based on top customer tasks or top subjects
 # Start card title with a verb
 - title: Get involved!
-    linkLists:
-      - linkListType: get-started
-        links:
-          - text: PowerShell Contributor Guide
-            url: contributing/overview.md
-          - text: Get started writing
-            url: contributing/get-started-writing.md
-      - linkListType: how-to-guide
-        links:
-          - text: How to file an issue
-            url: contributing/file-an-issue.md
-          - text: Submitting a pull request
-            url: contributing/pull-requests.md
-          - text: PowerShell-Docs style guide
-            url: contributing/powershell-style-guide.md
-          - text: Editing cmdlet reference
-            url: contributing/editing-cmdlet-ref.md
-      - linkListType: reference
-        links:
-          - text: Editorial checklist
-            url: contributing/editorial-checklist.md
-          - text: How we manage issues
-            url: contributing/managing-issues.md
-          - text: How we manage pull requests
-            url: contributing/managing-pull-requests.md
+  linkLists:
+    - linkListType: get-started
+      links:
+        - text: PowerShell Contributor Guide
+          url: contributing/overview.md
+        - text: Get started writing
+          url: contributing/get-started-writing.md
+    - linkListType: how-to-guide
+      links:
+        - text: How to file an issue
+          url: contributing/file-an-issue.md
+        - text: Submitting a pull request
+          url: contributing/pull-requests.md
+        - text: PowerShell-Docs style guide
+          url: contributing/powershell-style-guide.md
+        - text: Editing cmdlet reference
+          url: contributing/editing-cmdlet-ref.md
+    - linkListType: reference
+      links:
+        - text: Editorial checklist
+          url: contributing/editorial-checklist.md
+        - text: How we manage issues
+          url: contributing/managing-issues.md
+        - text: How we manage pull requests
+          url: contributing/managing-pull-requests.md
 - title: What's new?
   linkLists:
     - linkListType: whats-new

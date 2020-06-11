@@ -27,7 +27,7 @@ positional arguments that have no matching positional parameters cause
 parameter binding to fail.
 
 > [!NOTE]
-> Compiled cmdlets use the required **Cmdlet** attribute, which is similar
+> Compiled cmdlets use the required `Cmdlet` attribute, which is similar
 > to the `CmdletBinding` attribute that is described in this topic.
 
 ## Syntax
