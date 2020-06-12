@@ -84,6 +84,20 @@ Starting in Windows PowerShell 3.0, there are two different ways to construct a 
   By default, the parallel scriptblocks use the current working directory of the caller that started
   the parallel tasks.
 
+  Non-terminating errors are written to the cmdlet error stream as they occur in parallel running
+  scriptblocks. Because parallel scriptblock execution order cannot be determined, the order in
+  which errors appear in the error stream is random. Likewise, messages written to other data
+  streams, such as warning, verbose, information, etc., are written to their cmdlet data streams and
+  the order in which data appears is also indeterminate.
+
+  Terminating errors, such as exceptions, will terminate individual parallel running scripblocks in
+  which they occur. However, a terminating error in some scriptblocks will not cause the termination
+  of the Foreach-Object cmdlet, and other parallel running scriptblocks will continue to run unless
+  they also encounter a terminating error. The error message of the terminating error will be
+  written to the error data stream, as an ErrorRecord with a FullyQualifiedErrorId of
+  `PSTaskException`. Terminating errors can be converted to non-terminating errors by using
+  PowerShell try/catch or trap blocks.
+
 ## EXAMPLES
 
 ### Example 1: Divide integers in an array
@@ -309,7 +323,7 @@ Output: 8
 The **ThrottleLimit** parameter value is set to 4 so that the input is processed in batches of four.
 The `$using:` keyword is used to pass the `$Message` variable into each parallel script block.
 
-### Example 9: Retrieve log entries in parallel
+### Example 12: Retrieve log entries in parallel
 
 This example retrieves 50,000 log entries from 5 system logs on a local Windows machine.
 
@@ -330,7 +344,7 @@ $logEntries.Count
 The **Parallel** parameter specifies the script block that is run in parallel for each input log
 name. The **ThrottleLimit** parameter ensures that all five script blocks run at the same time.
 
-### Example 10: Run in parallel as a job
+### Example 13: Run in parallel as a job
 
 This example runs a simple script block in parallel, creating two background jobs at a time.
 
@@ -360,7 +374,7 @@ A job object is returned that collects output data and monitors running state. T
 is piped to the `Receive-Job` cmdlet with the `-Wait` switch parameter. And this streams output data
 to the console, just as if `ForEach-Object -Parallel` was run without `-AsJob`.
 
-### Example 11: Using thread safe variable references
+### Example 14: Using thread safe variable references
 
 This example invokes script blocks in parallel to collect uniquely named Process objects.
 
@@ -391,6 +405,47 @@ safe to use here.
 > each script in a separate thread. Running `ForEach-Object` normally without the `-Parallel` switch
 > is much more efficient and faster. This example is only intended to demonstrate how to use thread
 > safe variables.
+
+### Example 15: Writing errors with parallel execution
+
+This example writes to the error stream in parallel, where the order of written errors is random.
+
+```powershell
+1..3 | ForEach-Object -Parallel {
+    Write-Error "Error: $_"
+}
+```
+
+```Output
+Write-Error: Error: 1
+Write-Error: Error: 3
+Write-Error: Error: 2
+```
+
+### Example 16: Terminating errors in parallel execution
+
+This example demonstrates a terminating error in one parallel running scriptblock.
+
+```powershell
+1..5 | ForEach-Object -Parallel {
+    if ($_ -eq 3)
+    {
+        throw "Terminating Error: $_"
+    }
+
+    Write-Output "Output: $_"
+}
+```
+
+```Output
+Exception: Terminating Error: 3
+Output: 1
+Output: 4
+Output: 2
+Output: 5
+```
+
+`Output: 3` is never written because the parallel scriptblock for that iteration was terminated.
 
 ## PARAMETERS
 
