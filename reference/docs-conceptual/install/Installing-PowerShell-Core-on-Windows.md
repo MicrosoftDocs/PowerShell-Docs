@@ -237,3 +237,37 @@ information, see:
 [ssh-remoting]: ../learn/remoting/SSH-Remoting-in-PowerShell-Core.md
 [wsman-remoting]: ../learn/remoting/WSMan-Remoting-in-PowerShell-Core.md
 [AppVeyor]: https://ci.appveyor.com/project/PowerShell/powershell
+
+## Install PowerShell via Winget
+
+### Requirements
+- Participate in Windows 10 Insider Fast. Future backport for Server / Client releases are planned.
+- Internet Connection
+
+### Installation of PowerShell Release via Winget
+winget install Microsoft.Powershell
+
+### Installation of PowerShell Preview via Winget
+winget install Microsoft.Powershell-preview
+
+- [WinGet reference:](https://docs.microsoft.com/windows/package-manager/winget)
+
+## Install Powershell via 3rd party modules
+
+### Requirements
+- Change of Execution policy, for the time of installation and use of the module
+- NuGet Module will install with the process
+- Internet connection
+
+### Installation of PowerShell 7 via PSReleaseTools
+Set-ExecutionPolicy -RemoteSigned
+
+Install-Module PSReleaseTools
+
+Import-Module PSReleaseTools
+
+### Install PowerShell 7 Release via PSReleaseTools
+Install-PowerShell
+
+[PSReleaseTools Reference by Jeff Hicks:](https://github.com/jdhitsolutions/PSReleaseTools)
+
