@@ -79,7 +79,7 @@ certificate has specific requirements for it to be used for DSC credential encry
 4. The **Provider** for the certificate must be "Microsoft RSA SChannel Cryptographic Provider".
 
 > [!IMPORTANT]
-> Although you can use a certificate with containing a Key Usage of 'Digital Signature' or one of
+> Although you can use a certificate containing a Key Usage of 'Digital Signature' or one of
 > the Authentication EKU's, this will enable the encryption key to be more easily misused and
 > vulnerable to attack. So it is best practice to use a certificate created specifically for the
 > purpose of securing DSC credentials that omits these Key Usage and EKUs.
