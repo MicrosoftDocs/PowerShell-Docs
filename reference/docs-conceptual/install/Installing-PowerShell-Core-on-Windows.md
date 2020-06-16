@@ -223,6 +223,25 @@ The dotnet tool installer adds `$env:USERPROFILE\dotnet\tools` to your `$env:PAT
 variable. However, the currently running shell doesn't have the updated `$env:PATH`. You can start
 PowerShell from a new shell by typing `pwsh`.
 
+## Install PowerShell via Winget
+
+The `winget` command line tool enables developers to discover, install, upgrade, remove and configure
+applications on Windows 10 computers. This tool is the client interface to the Windows Package Manager
+service.
+
+> [!NOTE]
+> The `winget` tool is currently a preview. Not all planned functionality is available at this time.
+> The tool's options and features are subject to change. You should not use this method in a production
+> deployment scenario. See the [winget] documentation for a list of system requirements and install
+> instructions.
+
+The following commands can be used to install PowerShell using the published `winget` packages:
+
+```powershell
+winget install Microsoft.Powershell
+winget install Microsoft.Powershell-preview
+```
+
 ## How to create a remoting endpoint
 
 PowerShell supports the PowerShell Remoting Protocol (PSRP) over both WSMan and SSH. For more
@@ -231,43 +250,11 @@ information, see:
 - [SSH Remoting in PowerShell Core][ssh-remoting]
 - [WSMan Remoting in PowerShell Core][wsman-remoting]
 
-<!-- [download-center]: TODO -->
+<!-- link references -->
 
 [releases]: https://github.com/PowerShell/PowerShell/releases
 [ssh-remoting]: ../learn/remoting/SSH-Remoting-in-PowerShell-Core.md
 [wsman-remoting]: ../learn/remoting/WSMan-Remoting-in-PowerShell-Core.md
 [AppVeyor]: https://ci.appveyor.com/project/PowerShell/powershell
-
-## Install PowerShell via Winget
-
-### Requirements
-- Participate in Windows 10 Insider Fast. Future backport for Server / Client releases are planned.
-- Internet Connection
-
-### Installation of PowerShell Release via Winget
-winget install Microsoft.Powershell
-
-### Installation of PowerShell Preview via Winget
-winget install Microsoft.Powershell-preview
-
-- [WinGet reference:](https://docs.microsoft.com/windows/package-manager/winget)
-
-## Install Powershell via 3rd party modules
-
-### Requirements
-- Change of Execution policy, for the time of installation and use of the module
-- NuGet Module will install with the process
-- Internet connection
-
-### Installation of PowerShell 7 via PSReleaseTools
-Set-ExecutionPolicy -RemoteSigned
-
-Install-Module PSReleaseTools
-
-Import-Module PSReleaseTools
-
-### Install PowerShell 7 Release via PSReleaseTools
-Install-PowerShell
-
-[PSReleaseTools Reference by Jeff Hicks:](https://github.com/jdhitsolutions/PSReleaseTools)
+[winget]: https://docs.microsoft.com/windows/package-manager/winget
 
