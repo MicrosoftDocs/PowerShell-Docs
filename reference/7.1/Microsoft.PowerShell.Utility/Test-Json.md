@@ -17,7 +17,7 @@ Tests whether a string is a valid JSON document
 ## SYNTAX
 
 ```
-Test-Json [-Json] <string> [[-Schema] <string>] [<CommonParameters>]
+Test-Json [-Json] <string> [[-Schema] <string>] [[-SchemaFile] <string>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -136,7 +136,27 @@ For more information, see [JSON Schema](https://json-schema.org/).
 
 ```yaml
 Type: String
-Parameter Sets: (All)
+Parameter Sets: SchemaString
+Aliases:
+
+Required: False
+Position: 2
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -SchemaFile
+
+Specifies a Schema file to validate the JSON input against. If passed `Test-Json` will validate that
+the Json input conforms to the spec specified by the **SchemaFile** parameter and return `$True`
+only if the input conforms to the provided Schema.
+
+For more information, see [JSON Schema](https://json-schema.org/).
+
+```yaml
+Type: String
+Parameter Sets: SchemaFile
 Aliases:
 
 Required: False
