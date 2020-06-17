@@ -49,8 +49,8 @@ is intended to keep customers up-to-date with the latest versions.
 
 The version 6.x branch of PowerShell Core was updated approximately once every six months (examples:
 6.0, 6.1, 6.2, etc.). However, with the release of PowerShell 7, there won't be anymore minor
-version releases releases of 6.x. PowerShell 6.2.x will continue to receive servicing updates while
-still supported.
+version releases of 6.x. PowerShell 6.2.x will continue to receive servicing updates while still
+supported.
 
 > [!IMPORTANT]
 > You must update within six months after each new minor version release to continue receiving
