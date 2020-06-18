@@ -388,18 +388,18 @@ Accept wildcard characters: False
 
 ### -Encoding
 
-Specifies the type of encoding for the target file. The default value is **ASCII**.
+Specifies the type of encoding for the target file. The default value is `ASCII`.
 
 The acceptable values for this parameter are as follows:
 
-- **ASCII** Uses ASCII (7-bit) character set.
-- **BigEndianUnicode** Uses UTF-16 with the big-endian byte order.
-- **Default** Uses the encoding that corresponds to the system's active code page (usually ANSI).
-- **OEM** Uses the encoding that corresponds to the system's current OEM code page.
-- **Unicode** Uses UTF-16 with the little-endian byte order.
-- **UTF7** Uses UTF-7.
-- **UTF8** Uses UTF-8.
-- **UTF32** Uses UTF-32 with the little-endian byte order.
+- `ASCII` Uses ASCII (7-bit) character set.
+- `BigEndianUnicode` Uses UTF-16 with the big-endian byte order.
+- `Default` Uses the encoding that corresponds to the system's active code page (usually ANSI).
+- `OEM` Uses the encoding that corresponds to the system's current OEM code page.
+- `Unicode` Uses UTF-16 with the little-endian byte order.
+- `UTF7` Uses UTF-7.
+- `UTF8` Uses UTF-8.
+- `UTF32` Uses UTF-32 with the little-endian byte order.
 
 ```yaml
 Type: String
