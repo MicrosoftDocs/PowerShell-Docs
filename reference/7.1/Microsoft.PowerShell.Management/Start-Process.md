@@ -389,8 +389,10 @@ Accept wildcard characters: False
 
 ### -WorkingDirectory
 
-Specifies the location of the executable file or document that runs in the process. The default is
-the folder for the new process.
+Specifies the location that the new process should start in. The default is the location of the
+executable file or document being started. The path provided is treated as a literal path. Wildcards
+are not supported. You must enclose the path in single quotes (`'`) if the path name contains
+characters that would be interpreted as wildcards.
 
 ```yaml
 Type: String
