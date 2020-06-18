@@ -229,6 +229,15 @@ you use both a syntax comment and a Parameter keyword, the description
 associated with the Parameter keyword is used, and the syntax comment is
 ignored.
 
+```
+function Verb-Noun {
+    [CmdletBinding()]
+    param (
+        #This is the same as .Parameter
+        [string]$Computername
+    )
+```
+
 ### .EXAMPLE
 
 A sample command that uses the function or script, optionally followed by
