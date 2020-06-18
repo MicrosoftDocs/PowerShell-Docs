@@ -45,7 +45,7 @@ Split-Path [-Path] <String[]> [-Extension] [-Resolve] [-Credential <PSCredential
 ### QualifierSet
 
 ```
-Split-Path [-Path] <String[]> [[-Qualifier]] [-Resolve] [-Credential <PSCredential>]
+Split-Path [-Path] <String[]> -Qualifier [-Resolve] [-Credential <PSCredential>]
  [<CommonParameters>]
 ```
 
