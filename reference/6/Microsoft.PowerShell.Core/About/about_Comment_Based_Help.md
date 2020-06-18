@@ -1,6 +1,6 @@
 ---
 keywords: powershell,cmdlet
-ms.date: 06/09/2020
+ms.date: 06/18/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_comment_based_help?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Comment_Based_Help
@@ -39,8 +39,8 @@ topics.
 The syntax for comment-based help is as follows:
 
 ```
-.<help keyword>
-<help content>
+# .<help keyword>
+# <help content>
 ```
 
 or
@@ -222,12 +222,6 @@ The Parameter keywords can appear in any order in the comment block, but the
 function or script syntax determines the order in which the parameters (and
 their descriptions) appear in help topic. To change the order, change the
 syntax.
-
-You can also specify a parameter description by placing a comment in the
-function or script syntax immediately before the parameter variable name. If
-you use both a syntax comment and a Parameter keyword, the description
-associated with the Parameter keyword is used, and the syntax comment is
-ignored.
 
 ### .EXAMPLE
 
