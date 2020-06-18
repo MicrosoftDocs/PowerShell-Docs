@@ -29,6 +29,10 @@ Compare-Object [-ReferenceObject] <PSObject[]> [-DifferenceObject] <PSObject[]>
 The `Compare-Object` cmdlet compares two sets of objects. One set of objects is the **reference**,
 and the other set of objects is the **difference**.
 
+Normally, the objects in both sets are *sorted first*, and then *converted to strings*, if they are not strings already.  The objects are then compared as strings.  This is true even for Process objects.  There are some rare exceptions, like DateTime objects (output by Get-Date), that could be compared in a different way.  The properties of the objects are not looked at for comparison, unless the -Property parameter is used.
+
+If the -Property parameter is used, the properties given will be used for comparison.
+
 The result of the comparison indicates whether a property value appeared only in the **reference**
 object (`<=`) or only in the **difference** object (`=>`). If the **IncludeEqual** parameter is
 used, (`==`) indicates the value is in both objects.
