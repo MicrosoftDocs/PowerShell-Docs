@@ -188,7 +188,7 @@ Accept wildcard characters: False
 
 ### -Encoding
 
-Specifies the type of encoding for the target file. The default value is `UTF8NoBOM`.
+Specifies the type of encoding for the target file. The default value is `utf8NoBOM`.
 
 Encoding is a dynamic parameter that the FileSystem provider adds to `Set-Content`. This parameter
 works only in file system drives.

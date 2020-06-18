@@ -387,7 +387,7 @@ Accept wildcard characters: False
 
 ### -Encoding
 
-Specifies the type of encoding for the target file. The default value is `UTF8NoBOM`.
+Specifies the type of encoding for the target file. The default value is `utf8NoBOM`.
 
 The acceptable values for this parameter are as follows:
 

@@ -389,7 +389,7 @@ Accept wildcard characters: False
 
 ### -Encoding
 
-Specifies the encoding for the exported CSV file. The default value is `UTF8NoBOM`.
+Specifies the encoding for the exported CSV file. The default value is `utf8NoBOM`.
 
 The acceptable values for this parameter are as follows:
 

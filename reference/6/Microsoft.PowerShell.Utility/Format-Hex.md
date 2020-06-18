@@ -98,7 +98,7 @@ that it is a PDF file.
 ### -Encoding
 
 Specifies the encoding of the output. This only applies to `[string]` input. The parameter has no
-effect on numeric types. The default value is `UTF8NoBOM`.
+effect on numeric types. The default value is `utf8NoBOM`.
 
 The acceptable values for this parameter are as follows:
 
