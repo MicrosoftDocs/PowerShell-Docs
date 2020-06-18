@@ -105,6 +105,57 @@ input we tested uses a string value instead.
 
 For more information, see [JSON Schema](https://json-schema.org/).
 
+### Example 3: Test an object against a schema from file
+
+JSON schema can reference definitions using `$ref` keyword. The `$ref` can resolve to a URI that references another file.
+The `SchemaFile` parameter accepts literal path to the JSON schema file and allows JSON files to be validated against such schemas.
+
+In this example we have `schema.json` file which references `definitions.json`.
+
+- `schema.json`
+
+```json
+{
+  "description":"A person",
+  "type":"object",
+  "properties":{
+    "name":{
+      "$ref":"definitions.json#/definitions/name"
+    },
+    "hobbies":{
+      "$ref":"definitions.json#/definitions/hobbies"
+    }
+  }
+}
+```
+
+- `definitions.json`
+
+```json
+{
+  "description":"A person",
+  "type":"object",
+  "properties":{
+    "name":{
+      "$ref":"definitions.json#/definitions/name"
+    },
+    "hobbies":{
+      "$ref":"definitions.json#/definitions/hobbies"
+    }
+  }
+}
+```
+
+```powershell
+'{"name": "James", "hobbies": [".NET", "Blogging"]}' | Test-Json -SchemaFile 'schema.json'
+```
+
+```Output
+True
+```
+
+For more information, see [Structuring a complex schema](https://json-schema.org/understanding-json-schema/structuring.html).
+
 ## PARAMETERS
 
 ### -Json
