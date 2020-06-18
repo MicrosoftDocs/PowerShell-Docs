@@ -29,7 +29,7 @@ Compare-Object [-ReferenceObject] <PSObject[]> [-DifferenceObject] <PSObject[]>
 The `Compare-Object` cmdlet compares two sets of objects. One set of objects is the **reference**,
 and the other set of objects is the **difference**.
 
-Normally, the objects in both sets are *sorted first*, and then *converted to strings*, if they are not strings already.  The objects are then compared as strings.  This is true even for Process objects.  There are some rare exceptions, like DateTime objects (output by Get-Date), that could be compared in a different way.  The properties of the objects are not looked at for comparison, unless the -Property parameter is used.
+Normally, the objects in both sets are *sorted first*, and then *converted to strings*, if they are not strings already.  The objects are then compared as strings.  This is true even for Process objects.  There are some rare exceptions, like DateTime objects (output by Get-Date), that could be compared in a different way.  The properties of the objects are not looked at for comparison, unless the -Property parameter is used.  Also, since both sets are sorted, text files with lines in different orders will be considered equal by Compare-Object.
 
 If the -Property parameter is used, the properties given will be used for comparison.
 
