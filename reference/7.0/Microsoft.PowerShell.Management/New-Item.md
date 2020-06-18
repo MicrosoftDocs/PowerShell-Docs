@@ -3,7 +3,7 @@ external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 5/14/2019
+ms.date: 06/18/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/new-item?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: New-Item
@@ -155,6 +155,11 @@ SymbolicLink {.\Notice.txt}
 
 In this example, **Target** is an alias for the **Value** parameter. The target of the symbolic link
 can be a relative path. Prior to PowerShell v6.2, the target must be a fully-qualified path.
+
+> [!CAUTION]
+> If you are creating a **SymbolicLink** to a folder on Windows, you must use a fully-qualified
+> path. If you use a relative path, the link is create as a file-type link instead of a
+> directory-type link.
 
 ### Example 8: Use the -Force parameter to attempt to recreate folders
 
