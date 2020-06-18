@@ -148,9 +148,9 @@ Accept wildcard characters: False
 
 ### -SchemaFile
 
-Specifies a Schema file to validate the JSON input against. If passed `Test-Json` will validate that
-the Json input conforms to the spec specified by the **SchemaFile** parameter and return `$True`
-only if the input conforms to the provided Schema.
+Specifies a schema file used to validate the JSON input. When used, the `Test-Json` returns `$True`
+only if the JSON input conforms to the Schema defined in the file specified by the **SchemaFile**
+parameter.
 
 For more information, see [JSON Schema](https://json-schema.org/).
 
@@ -197,4 +197,3 @@ The `Test-Json` cmdlet is implemented by using the [NJsonSchema Class](https://g
 [Invoke-WebRequest](Invoke-WebRequest.md)
 
 [Invoke-RestMethod](Invoke-RestMethod.md)
-
