@@ -158,7 +158,7 @@ can be a relative path. Prior to PowerShell v6.2, the target must be a fully-qua
 
 > [!CAUTION]
 > If you are creating a **SymbolicLink** to a folder on Windows, you must use a fully-qualified
-> path. If you use a relative path, the link is create as a file-type link instead of a
+> path. If you use a relative path, the link is created as a file-type link instead of a
 > directory-type link.
 
 ### Example 8: Use the -Force parameter to attempt to recreate folders
