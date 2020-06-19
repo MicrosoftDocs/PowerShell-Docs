@@ -105,6 +105,51 @@ In this case, the second command in the pipeline would be "`Set-Acl -AclObject $
 This command lists the files that would be affected by the command.
 After reviewing the result, you can run the command again without the **WhatIf** parameter.
 
+### Example 4: Disable inheritance and preserve inherited access rules
+
+```powershell
+$NewAcl = Get-Acl -Path "C:\Pets\Dog.txt"
+$isProtected = $true
+$preserveInheritance = $true
+$NewAcl.SetAccessRuleProtection($isProtected, $preserveInheritance)
+Set-Acl -Path "C:\Pets\Dog.txt" -AclObject $NewAcl
+```
+
+These commands is will disable access inheritance from parent folders, while still preserving the existing inherited access rules.
+
+The first command uses the `Get-Acl` cmdlet to get the security descriptor of the Dog.txt file.
+
+Next variables are created to convert the inherited access rules to explicit access rules. The `$isProtected` variable set to [true to protect the access rules associated with this from inheritance; false to allow inheritance](https://docs.microsoft.com/en-us/dotnet/api/system.security.accesscontrol.objectsecurity.setaccessruleprotection?view=dotnet-plat-ext-3.1#parameters). The `$preserveInheritance` variable set to true to preserve inherited access rules; false to remove inherited access rules. Then the access rule protection is updated using the `SetAccessRuleProtection()` method.
+
+The last command uses `Set-Acl` to apply the security descriptor of to Dog.txt.
+When the command completes, the ACLs of the Dog.txt that were inherited from the Pets folder will be applied directly to Dog.txt, and new access policies added to Pets will not change the access to Dog.txt.
+
+### Example 5: Grant Administrators Full Control of the file
+
+```powershell
+$NewAcl = Get-Acl -Path "C:\Pets\Dog.txt"
+# Set properties
+$identity = "BUILTIN\Administrators"
+$fileSystemRights = "FullControl"
+$type = "Allow"
+# Create new rule
+$fileSystemAccessRuleArgumentList = $identity, $fileSystemRights, $type
+$fileSystemAccessRule = New-Object -TypeName System.Security.AccessControl.FileSystemAccessRule -ArgumentList $fileSystemAccessRuleArgumentList
+# Apply new rule
+$NewAcl.SetAccessRule($fileSystemAccessRule)
+Set-Acl -Path "C:\Pets\Dog.txt" -AclObject $NewAcl
+```
+
+This command will grant the BUILTIN\Administrators group Full control of the Dog.txt file.
+
+The first command uses the **Get-Acl** cmdlet to get the security descriptor of the Dog.txt file.
+
+Next variables are created to grant the BUILTIN\Administrators group full control of the Dog.txt file. The `$identity` variable set to [the name of a user account](https://docs.microsoft.com/en-us/dotnet/api/system.security.accesscontrol.filesystemaccessrule.-ctor?view=dotnet-plat-ext-3.1#System_Security_AccessControl_FileSystemAccessRule__ctor_System_String_System_Security_AccessControl_FileSystemRights_System_Security_AccessControl_AccessControlType_). The `$fileSystemRights` variable set to FullControl, and can be any one of the [FileSystemRights](https://docs.microsoft.com/en-us/dotnet/api/system.security.accesscontrol.filesystemrights?view=dotnet-plat-ext-3.1) values that specifies the type of operation associated with the access rule. The `$type` variable set to "Allow" to specifies whether to allow or deny the operation.
+The `fileSystemAccessRuleArgumentList` variable is an argument list is to be passed when making the new FileSystemAccessRule object. Then a new `FileSystemAccessRule` object is created, and the FileSystemAccessRule object is passed to the `SetAccessRule()` method, adds the new access rule.
+
+The last command uses `Set-Acl` to apply the security descriptor of to Dog.txt.
+When the command completes, the BUILTIN\Administrators group will have full control of the Dog.txt.
+
 ## PARAMETERS
 
 ### -AclObject
@@ -383,3 +428,9 @@ The type of the security object depends on the type of the item.
 ## RELATED LINKS
 
 [Get-Acl](Get-Acl.md)
+
+[FileSystemAccessRule](https://docs.microsoft.com/en-us/dotnet/api/system.security.accesscontrol.filesystemaccessrule.-ctor?view=dotnet-plat-ext-3.1)
+
+[ObjectSecurity.SetAccessRuleProtection](https://docs.microsoft.com/en-us/dotnet/api/system.security.accesscontrol.objectsecurity.setaccessruleprotection?view=dotnet-plat-ext-3.1)
+
+[FileSystemRights](https://docs.microsoft.com/en-us/dotnet/api/system.security.accesscontrol.filesystemrights?view=dotnet-plat-ext-3.1)
