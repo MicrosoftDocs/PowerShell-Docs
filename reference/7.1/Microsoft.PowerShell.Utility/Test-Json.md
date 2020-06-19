@@ -129,17 +129,18 @@ PS> Get-Content schema.json
   }
 }
 
-PS> Get-Content definitions.json`
+PS> Get-Content definitions.json
 
 {
-  "description":"A person",
-  "type":"object",
-  "properties":{
+  "definitions":{
     "name":{
-      "$ref":"definitions.json#/definitions/name"
+      "type":"string"
     },
     "hobbies":{
-      "$ref":"definitions.json#/definitions/hobbies"
+      "type":"array",
+      "items":{
+        "type":"string"
+      }
     }
   }
 }
