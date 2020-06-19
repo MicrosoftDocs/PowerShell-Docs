@@ -425,8 +425,9 @@ argument has no effect on optional parameters.
 The following example declares a mandatory **ComputerName** parameter and a
 help message that explains the expected parameter value.
 
-If there is no other [comment_based_help](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_comment_based_help?view=powershell-5.1) syntax
-for the function (e.g. .SYNOPSIS) then this message will also show up under Get-Help.
+If there is no other [comment-based help](./about_comment_based_help.md) syntax
+for the function (for example, `.SYNOPSIS`) then this message also shows up in
+`Get-Help` output.
 
 ```powershell
 Param(
