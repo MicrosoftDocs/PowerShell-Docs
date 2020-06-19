@@ -278,7 +278,7 @@ from within PowerShell instead of having to view them on the internet.
 
 <!-- link references -->
 [about_Automatic_Variables]: /powershell/module/microsoft.powershell.core/about/about_automatic_variables
-[about_Execution_Policies]: /powershell//powershell/module/microsoft.powershell.core/about/about_execution_policies
+[about_Execution_Policies]: /powershell/module/microsoft.powershell.core/about/about_execution_policies
 [Upgrading existing Windows PowerShell]: /powershell/scripting/windows-powershell/install/installing-windows-powershell#upgrading-existing-windows-powershell
 [Installing PowerShell]: /powershell/scripting/install/installing-powershell
 [Starting Windows PowerShell]: /powershell/scripting/windows-powershell/starting-windows-powershell
