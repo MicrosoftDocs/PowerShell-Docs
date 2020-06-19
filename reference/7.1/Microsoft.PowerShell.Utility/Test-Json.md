@@ -17,7 +17,7 @@ Tests whether a string is a valid JSON document
 ## SYNTAX
 
 ```
-Test-Json [-Json] <string> [[-Schema] <string>] [<CommonParameters>]
+Test-Json [-Json] <string> [[-Schema] <string>] [[-SchemaFile] <string>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -105,6 +105,55 @@ input we tested uses a string value instead.
 
 For more information, see [JSON Schema](https://json-schema.org/).
 
+### Example 3: Test an object against a schema from file
+
+JSON schema can reference definitions using `$ref` keyword. The `$ref` can resolve to a URI that
+references another file. The `SchemaFile` parameter accepts literal path to the JSON schema file
+and allows JSON files to be validated against such schemas.
+
+In this example we have `schema.json` file which references `definitions.json`.
+
+```powershell
+PS> Get-Content schema.json
+
+{
+  "description":"A person",
+  "type":"object",
+  "properties":{
+    "name":{
+      "$ref":"definitions.json#/definitions/name"
+    },
+    "hobbies":{
+      "$ref":"definitions.json#/definitions/hobbies"
+    }
+  }
+}
+
+PS> Get-Content definitions.json
+
+{
+  "definitions":{
+    "name":{
+      "type":"string"
+    },
+    "hobbies":{
+      "type":"array",
+      "items":{
+        "type":"string"
+      }
+    }
+  }
+}
+
+'{"name": "James", "hobbies": [".NET", "Blogging"]}' | Test-Json -SchemaFile 'schema.json'
+```
+
+```Output
+True
+```
+
+For more information, see [Structuring a complex schema](https://json-schema.org/understanding-json-schema/structuring.html).
+
 ## PARAMETERS
 
 ### -Json
@@ -136,7 +185,27 @@ For more information, see [JSON Schema](https://json-schema.org/).
 
 ```yaml
 Type: String
-Parameter Sets: (All)
+Parameter Sets: SchemaString
+Aliases:
+
+Required: False
+Position: 2
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -SchemaFile
+
+Specifies a schema file used to validate the JSON input. When used, the `Test-Json` returns `$True`
+only if the JSON input conforms to the Schema defined in the file specified by the **SchemaFile**
+parameter.
+
+For more information, see [JSON Schema](https://json-schema.org/).
+
+```yaml
+Type: String
+Parameter Sets: SchemaFile
 Aliases:
 
 Required: False
@@ -177,4 +246,3 @@ The `Test-Json` cmdlet is implemented by using the [NJsonSchema Class](https://g
 [Invoke-WebRequest](Invoke-WebRequest.md)
 
 [Invoke-RestMethod](Invoke-RestMethod.md)
-
