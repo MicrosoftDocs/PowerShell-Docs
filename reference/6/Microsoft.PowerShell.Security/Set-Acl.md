@@ -385,7 +385,10 @@ The type of the security object depends on the type of the item.
 
 ## RELATED LINKS
 
-* [Get-Acl](Get-Acl.md)
-* [FileSystemAccessRule](https://docs.microsoft.com/en-us/dotnet/api/system.security.accesscontrol.filesystemaccessrule.-ctor?view=dotnet-plat-ext-3.1)
-* [ObjectSecurity.SetAccessRuleProtection](https://docs.microsoft.com/en-us/dotnet/api/system.security.accesscontrol.objectsecurity.setaccessruleprotection?view=dotnet-plat-ext-3.1)
-* [FileSystemRights](https://docs.microsoft.com/en-us/dotnet/api/system.security.accesscontrol.filesystemrights?view=dotnet-plat-ext-3.1)
+[Get-Acl](Get-Acl.md)
+
+[FileSystemAccessRule](https://docs.microsoft.com/en-us/dotnet/api/system.security.accesscontrol.filesystemaccessrule.-ctor?view=dotnet-plat-ext-3.1)
+
+[ObjectSecurity.SetAccessRuleProtection](https://docs.microsoft.com/en-us/dotnet/api/system.security.accesscontrol.objectsecurity.setaccessruleprotection?view=dotnet-plat-ext-3.1)
+
+[FileSystemRights](https://docs.microsoft.com/en-us/dotnet/api/system.security.accesscontrol.filesystemrights?view=dotnet-plat-ext-3.1)
