@@ -416,7 +416,10 @@ that appears when a mandatory parameter value is missing from a command. This
 argument has no effect on optional parameters.
 
 The following example declares a mandatory **ComputerName** parameter and a
-help message that explains the expected parameter value.
+help message that explains the expected parameter value. 
+
+If there is no other [comment_based_help](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_comment_based_help?view=powershell-7) syntax
+for the function (e.g. .SYNOPSIS) then this message will also show up under Get-Help.
 
 ```powershell
 Param(
