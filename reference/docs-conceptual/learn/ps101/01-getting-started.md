@@ -270,6 +270,7 @@ For those who want to know more information about the topics covered in this cha
 reading the following PowerShell help topics.
 
 - [about_Automatic_Variables][]
+- [about_Hash_Tables][]
 - [about_Execution_Policies][]
 
 In the next chapter, you'll learn about the discoverability of commands in PowerShell. One of the
@@ -278,6 +279,7 @@ from within PowerShell instead of having to view them on the internet.
 
 <!-- link references -->
 [about_Automatic_Variables]: /powershell/module/microsoft.powershell.core/about/about_automatic_variables
+[about_Hash_Tables]: /powershell/module/microsoft.powershell.core/about/about_hash_tables
 [about_Execution_Policies]: /powershell/module/microsoft.powershell.core/about/about_execution_policies
 [Upgrading existing Windows PowerShell]: /powershell/scripting/windows-powershell/install/installing-windows-powershell#upgrading-existing-windows-powershell
 [Installing PowerShell]: /powershell/scripting/install/installing-powershell
