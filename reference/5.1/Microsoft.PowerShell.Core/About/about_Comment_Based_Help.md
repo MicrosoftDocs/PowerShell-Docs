@@ -176,7 +176,7 @@ for all functions defined in a script module.
 
 For example, if you are using the `.ExternalHelp` keyword to identify the
 XML-based help files for the functions in a script module, you must add an
-`.ExternalHelp comment to each function.
+`.ExternalHelp` comment to each function.
 
 ```powershell
 # .ExternalHelp <XML-file-name>
@@ -231,7 +231,7 @@ If you use both a syntax comment and a `.PARAMETER` keyword, the description
 associated with the `.PARAMETER` keyword is used, and the syntax comment is
 ignored.
 
-```
+```powershell
 <#
 .SYNOPSIS
     Short description here
@@ -242,6 +242,8 @@ function Verb-Noun {
         # This is the same as .Parameter
         [string]$Computername
     )
+    # Verb the Noun on the computer
+}
 ```
 
 ### .EXAMPLE
@@ -308,10 +310,9 @@ provider.
 ### .FORWARDHELPCATEGORY
 
 Specifies the help category of the item in `.ForwardHelpTargetName`. Valid
-values are **Alias**, **Cmdlet**, **HelpFile**, **Function**, **Provider**,
-**General**, **FAQ**, **Glossary**, **ScriptCommand**, **ExternalScript**,
-**Filter**, or **All**. Use this keyword to avoid conflicts when there are
-commands with the same name.
+values are `Alias`, `Cmdlet`, `HelpFile`, `Function`, `Provider`, `General`,
+`FAQ`, `Glossary`, `ScriptCommand`, `ExternalScript`, `Filter`, or `All`. Use
+this keyword to avoid conflicts when there are commands with the same name.
 
 ```powershell
 # .FORWARDHELPCATEGORY <Category>
