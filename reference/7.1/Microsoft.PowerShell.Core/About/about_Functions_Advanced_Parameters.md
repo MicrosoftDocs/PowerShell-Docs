@@ -418,6 +418,11 @@ argument has no effect on optional parameters.
 The following example declares a mandatory **ComputerName** parameter and a
 help message that explains the expected parameter value.
 
+If there is no other [comment-based help](./about_comment_based_help.md) syntax
+for the function (for example, `.SYNOPSIS`) then this message also shows up in
+`Get-Help` output.
+
+
 ```powershell
 Param(
     [Parameter(Mandatory=$true,
@@ -1016,4 +1021,3 @@ function Test-ArgumentCompleter {
 [about_Functions_CmdletBindingAttribute](about_Functions_CmdletBindingAttribute.md)
 
 [about_Functions_OutputTypeAttribute](about_Functions_OutputTypeAttribute.md)
-
