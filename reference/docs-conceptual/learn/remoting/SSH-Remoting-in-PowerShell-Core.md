@@ -22,13 +22,13 @@ JEA.
 The `New-PSSession`, `Enter-PSSession`, and `Invoke-Command` cmdlets now have a new parameter set to
 support this new remoting connection.
 
-```
+```powershell
 [-HostName <string>]  [-UserName <string>]  [-KeyFilePath <string>]
 ```
 
-To create a remote session, you specify the target computer with the `HostName` parameter and
-provide the user name with `UserName`. When running the cmdlets interactively, you're prompted for a
-password. You can also, use SSH key authentication using a private key file with the `KeyFilePath`
+To create a remote session, you specify the target computer with the **HostName** parameter and
+provide the user name with **UserName**. When running the cmdlets interactively, you're prompted for a
+password. You can also, use SSH key authentication using a private key file with the **KeyFilePath**
 parameter.
 
 ## General setup information
