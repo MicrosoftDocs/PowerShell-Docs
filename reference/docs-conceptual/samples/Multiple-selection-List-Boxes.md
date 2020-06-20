@@ -176,6 +176,6 @@ if ($result -eq [System.Windows.Forms.DialogResult]::OK)
 
 ## See Also
 
-- [Hey Scripting Guy:  Why don’t these PowerShell GUI examples work?](https://go.microsoft.com/fwlink/?LinkId=506644)
+- [Weekend Scripter:  Fixing PowerShell GUI Examples](https://go.microsoft.com/fwlink/?LinkId=506644)
 - [GitHub: Dave Wyatt's WinFormsExampleUpdates](https://github.com/dlwyatt/WinFormsExampleUpdates)
 - [Windows PowerShell Tip of the Week:  Multi-Select List Boxes - And More!](https://technet.microsoft.com/library/ff730950.aspx)
