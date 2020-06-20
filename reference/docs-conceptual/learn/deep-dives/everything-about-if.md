@@ -792,11 +792,11 @@ find yourself using this multiple times in almost every script you write. I hope
 understanding than you had before.
 
 <!-- link references -->
-[original version]: https://powershellexplained.com/2019-08-11-PowerShell-if-then-else-equals-operator/
+[original version]: https://powershellexplained.com/2019-08-11-Powershell-if-then-else-equals-operator/
 [powershellexplained.com]: https://powershellexplained.com/
 [@KevinMarquette]: https://twitter.com/KevinMarquette
 [if]: /powershell/module/microsoft.powershell.core/about/about_if
-[bitwise operators]: https://powershellexplained.com/powershell/module/microsoft.powershell.core/about/about_arithmetic_operators#bitwise-operators
+[bitwise operators]: /powershell/module/microsoft.powershell.core/about/about_arithmetic_operators#bitwise-operators
 [the many ways to use regex]: https://powershellexplained.com/2017-07-31-Powershell-regex-regular-expression/
 [everything you ever wanted to know about exceptions]: everything-about-exceptions.md
 [everything you wanted to know about $null]: everything-about-null.md

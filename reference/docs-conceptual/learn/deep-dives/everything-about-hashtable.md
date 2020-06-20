@@ -1080,7 +1080,7 @@ kind of expected depending on how much you work with PowerShell.
 [@KevinMarquette]: https://twitter.com/KevinMarquette
 [hashtables]: /powershell/module/microsoft.powershell.core/about/about_hash_tables
 [arrays]: /powershell/module/microsoft.powershell.core/about/about_arrays
-[If performance matters, test it]: https://github.com/PoshCode/PowerShellPracticeAndStyle/blob/master/Best%20Practices/Performance.md
+[If performance matters, test it]: https://github.com/PoshCode/PowerShellPracticeAndStyle/blob/master/Best-Practices/Performance.md
 [splatting]: /powershell/module/microsoft.powershell.core/about/about_splatting
 [pscustomobject]: everything-about-pscustomobject.md
 [JavaScriptSerializer]: /dotnet/api/system.web.script.serialization.javascriptserializer?view=netframework-4.8
