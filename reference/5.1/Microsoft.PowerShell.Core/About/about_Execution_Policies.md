@@ -396,7 +396,7 @@ Zone check which avoids the problem.
 
 [Get-Item](../../Microsoft.PowerShell.Management/Get-Item.md)
 
-[PowerShell.exe Command-Line Help](/powershell/scripting/components/console/powershell.exe-command-line-help)
+[PowerShell.exe Command-Line Help](about_PowerShell_exe.md)
 
 [Set-ExecutionPolicy](../../Microsoft.PowerShell.Security/Set-ExecutionPolicy.md)
 

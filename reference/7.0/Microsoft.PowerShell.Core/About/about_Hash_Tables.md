@@ -64,7 +64,7 @@ To create a hash table, follow these guidelines:
 - Enter one or more key/value pairs for the content of the hash table.
 - Use an equal sign (=) to separate each key from its value.
 - Use a semicolon (;) or a line break to separate the key/value pairs.
-- Key that contains spaces must be enclosed in quotation marks. Values must be
+- Keys that contains spaces must be enclosed in quotation marks. Values must be
   valid PowerShell expressions. Strings must appear in quotation marks, even if
   they do not include spaces.
 - To manage the hash table, save it in a variable.
