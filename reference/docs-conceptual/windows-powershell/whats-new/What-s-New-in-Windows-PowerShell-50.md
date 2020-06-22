@@ -651,7 +651,7 @@ not require Windows PowerShell, remote management software, or browser plug-in i
 that is required is a properly-configured Windows PowerShell Web Access gateway and a client device
 browser that supports JavaScript and accepts cookies.
 
-For more information, see [Deploy Windows PowerShell Web Access](/powershell/scripting/components/web-access/install-and-use-windows-powershell-web-access).
+For more information, see [Deploy Windows PowerShell Web Access](/previous-versions/powershell/scripting/components/web-access/install-and-use-windows-powershell-web-access).
 
 ### New Windows PowerShell ISE Features
 
