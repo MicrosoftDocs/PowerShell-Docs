@@ -267,9 +267,6 @@ Server
 Description: Matches a string using regular expressions. When the input is
 scalar, it populates the `$Matches` automatic variable.
 
-The match operators search only in strings. They cannot search in arrays of
-integers or other objects.
-
 If the input is a collection, the `-match` and `-notmatch` operators return
 the matching members of that collection, but the operator does not populate
 the `$Matches` variable.
