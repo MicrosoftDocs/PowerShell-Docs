@@ -952,7 +952,7 @@ If the only data that you have in your array is strings, then also take a look a
 strings. The `StringBuilder` is specially designed for performance.
 
 It's common to see people move to `ArrayList` from arrays. But it comes from a time where C# didn't
-have generic support. The `ArrayList` is depreciated in support for the generic `List[]`
+have generic support. The `ArrayList` is deprecated in support for the generic `List[]`
 
 ### Generic List
 
