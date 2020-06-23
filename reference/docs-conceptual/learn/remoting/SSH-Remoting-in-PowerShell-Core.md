@@ -22,7 +22,7 @@ JEA.
 The `New-PSSession`, `Enter-PSSession`, and `Invoke-Command` cmdlets now have a new parameter set to
 support this new remoting connection.
 
-```powershell
+```
 [-HostName <string>]  [-UserName <string>]  [-KeyFilePath <string>]
 ```
 
@@ -71,7 +71,7 @@ an SSH subsystem to host a PowerShell process on the remote computer. And, you m
 
    Make sure password authentication is enabled:
 
-   ```Output
+   ```
    PasswordAuthentication yes
    ```
 
@@ -105,7 +105,7 @@ an SSH subsystem to host a PowerShell process on the remote computer. And, you m
 
    Optionally, enable key authentication:
 
-   ```Output
+   ```
    PubkeyAuthentication yes
    ```
 
@@ -285,7 +285,7 @@ Handles  NPM(K)    PM(K)      WS(K)     CPU(s)     Id  SI ProcessName           
 Enter-PSSession -HostName WinVM1 -UserName PTestName
 ```
 
-```Output
+```
 PTestName@WinVM1s password:
 ```
 
