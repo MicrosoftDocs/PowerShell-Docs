@@ -9,12 +9,12 @@ ms.service: azure-powershell
 ms.devlang: powershell
 ms.topic: landing-page
 ms.manager: carmonm
-ms.date: 05/09/2020
+ms.date: 06/23/2020
 archive_url: ''
 layout: ApiBrowserPage
 apiPlatform: powershell
 quickFilterColumn1: powershell-7,win10-ps
-quickFilterColumn2: azps-4.2.0,win-mdop2-ps
+quickFilterColumn2: azps-4.3.0,win-mdop2-ps
 quickFilterColumn3: sqlserver-ps,systemcenter-ps-2019
 ---
 
