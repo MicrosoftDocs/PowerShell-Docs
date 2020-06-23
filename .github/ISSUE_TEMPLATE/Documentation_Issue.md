@@ -6,8 +6,8 @@ labels: question
 assignees: ''
 ---
 <!--
-Use this template to report issues with documentation. This can include typos, technical and factual
-errors, grammar, spelling, formatting, presentation, etc.
+Use this template to report issues with documentation. This can include typos,
+technical and factual errors, grammar, spelling, formatting, presentation, etc.
 Be sure to change the issue title. Titles should be brief and meaningful.
 -->
 # Documentation Issue
@@ -18,21 +18,27 @@ Be sure to change the issue title. Titles should be brief and meaningful.
 - URL to the article (Docs or GitHub URL):
 - Issue affects the following content (check all that apply):
 
-  **Cmdlet reference & about_ topics**
-  - [ ] Version 7.x preview content
-  - [ ] Version 7.0 content
-  - [ ] Version 6 content
-  - [ ] Version 5.1 content
+**Conceptual content**
+- [ ] Overview and Install
+- [ ] Learning PowerShell
+  - [ ] PowerShell 101
+  - [ ] Deep dives
+  - [ ] Remoting
+- [ ] Release notes (What's New)
+- [ ] Windows PowerShell
+  - WMF, ISE, release notes, etc.
+- [ ] DSC articles
+- [ ] Community resources
+- [ ] Gallery articles
+- [ ] Scripting and development
+  - [ ] Legacy SDK
 
-  **Conceptual articles**
-  - [ ] Fundamental conceptual articles
-  - [ ] Script sample articles
-  - [ ] DSC articles
-  - [ ] Gallery articles
-  - [ ] JEA articles
-  - [ ] WMF articles
-  - [ ] SDK articles
-  - [ ] Community articles
+**Cmdlet reference & about_ topics**
+- [ ] Version 7.1 preview content
+- [ ] Version 7.0 content
+- [ ] Version 6 content
+- [ ] Version 5.1 content
+
 - Is the issue specific to a platform (Y/N - Win/macOS/Linux):
 
 ## Detailed description of the issue
