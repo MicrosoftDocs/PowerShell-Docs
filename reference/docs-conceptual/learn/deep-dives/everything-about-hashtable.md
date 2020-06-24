@@ -871,13 +871,14 @@ Accessing a value in the hashtable by its key doesn't always work. For example:
 
 ```powershell
 $key = $ht.keys[0]
-$ht.$key
+$ht.$($key)
+a
 $ht[$key]
 a
 ```
 
-Using the member access (`.`) notation returns nothing. But using the array index (`[]`) notation
-works.
+When the key is an array, you must wrap the `$key` variable in a subexpression so that it can be
+used with member access (`.`) notation. Or, you can use array index (`[]`) notation.
 
 ## Use in automatic variables
 
