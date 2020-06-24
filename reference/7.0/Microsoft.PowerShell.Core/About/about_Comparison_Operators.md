@@ -265,7 +265,7 @@ Server
 ### -match
 
 Description: Matches a string using regular expressions. When the input is
-scalar, it populates the `$Matches` automatic variable.s
+scalar, it populates the `$Matches` automatic variable.
 
 If the input is a collection, the `-match` and `-notmatch` operators return
 the matching members of that collection, but the operator does not populate
