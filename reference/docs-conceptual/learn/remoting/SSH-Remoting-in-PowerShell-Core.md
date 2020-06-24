@@ -77,7 +77,7 @@ an SSH subsystem to host a PowerShell process on the remote computer. And, you m
 
    Create the SSH subsystem that hosts a PowerShell process on the remote computer:
 
-   ```powershell
+   ```
    Subsystem powershell c:/progra~1/powershell/7/pwsh.exe -sshs -NoLogo
    ```
 
