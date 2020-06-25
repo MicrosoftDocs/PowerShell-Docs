@@ -234,6 +234,12 @@ Because macOS is a derivation of BSD, the prefix `/usr/local` is used instead of
 `$PSHOME` is `/usr/local/microsoft/powershell/7.0.1/`, and the symbolic link is placed at
 `/usr/local/bin/pwsh`.
 
+## Installation support
+
+Microsoft supports the installation methods in this document. There may be other methods of
+installation available from other sources. While those tools and methods may work, Microsoft cannot
+support those methods.
+
 ## Additional Resources
 
 - [Homebrew Web][brew]

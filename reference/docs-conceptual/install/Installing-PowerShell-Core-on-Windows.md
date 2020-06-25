@@ -250,6 +250,12 @@ information, see:
 - [SSH Remoting in PowerShell Core][ssh-remoting]
 - [WSMan Remoting in PowerShell Core][wsman-remoting]
 
+## Installation support
+
+Microsoft supports the installation methods in this document. There may be other methods of
+installation available from other sources. While those tools and methods may work, Microsoft cannot
+support those methods.
+
 <!-- link references -->
 
 [releases]: https://github.com/PowerShell/PowerShell/releases
@@ -257,4 +263,3 @@ information, see:
 [wsman-remoting]: ../learn/remoting/WSMan-Remoting-in-PowerShell-Core.md
 [AppVeyor]: https://ci.appveyor.com/project/PowerShell/powershell
 [winget]: https://docs.microsoft.com/windows/package-manager/winget
-
