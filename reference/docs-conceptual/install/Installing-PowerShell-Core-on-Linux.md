@@ -58,6 +58,12 @@ Not currently supported
 
 - Ubuntu 20.04
 
+> [!NOTE]
+> PowerShell can only support the distributions that are by .NET. See the
+> [.NET Core release notes][distros] for a list of supported distributions. If there is a
+> distrbution supported by .NET that is not listed here, you can request that support for the
+> distribution be added. Please file a request using the [Distribution Support Request][] template.
+
 ## Ubuntu 16.04
 
 ### Installation via Package Repository - Ubuntu 16.04
@@ -849,5 +855,14 @@ exists at `Microsoft.PowerShell_profile.ps1` in the same locations.
 
 PowerShell respects the [XDG Base Directory Specification][xdg-bds] on Linux.
 
+## Installation support
+
+Microsoft supports the installation methods in this document. There may be other methods of
+installation available from other sources. While those tools and methods may work, Microsoft cannot
+support those methods.
+
+<!-- link references -->
 [releases]: https://github.com/PowerShell/PowerShell/releases/latest
 [xdg-bds]: https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html
+[distros]: https://github.com/dotnet/core/blob/master/release-notes/3.0/3.0-supported-os.md#linux
+[Distribution Support Request]: https://github.com/PowerShell/PowerShell/issues/new?assignees=&labels=Distribution-Request&template=Distribution_Request.md&title=Distribution+Support+Request
