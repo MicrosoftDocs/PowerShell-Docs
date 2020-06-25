@@ -29,6 +29,7 @@ Be sure to change the issue title. Titles should be brief and meaningful.
   - WMF, ISE, release notes, etc.
 - [ ] DSC articles
 - [ ] Community resources
+- [ ] Sample scripts
 - [ ] Gallery articles
 - [ ] Scripting and development
   - [ ] Legacy SDK
