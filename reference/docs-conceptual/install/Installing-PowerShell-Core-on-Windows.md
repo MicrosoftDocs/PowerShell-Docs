@@ -73,6 +73,10 @@ For a full list of command-line options for `Msiexec.exe`, see [Command line opt
 
 ## <a id="msix" />Installing the MSIX package
 
+> [!NOTE]
+> The MSIX package is not officially supported at this time. We continue to build the package for
+> internal testing purposes only.
+
 To manually install the MSIX package on a Windows 10 client, download the MSIX package from our
 GitHub [releases][releases] page. Scroll down to the **Assets** section of the Release you want to
 install. The Assets section may be collapsed, so you may need to click to expand it.
@@ -84,10 +88,6 @@ To install the package, you must use the `Add-AppxPackage` cmdlet.
 ```powershell
 Add-AppxPackage PowerShell-<version>-win-<os-arch>.msix
 ```
-
-> [!NOTE]
-> The MSIX package has not been released yet. When released, the package will be available in the
-> Microsoft Store and from the GitHub [releases][releases] page.
 
 ## <a id="zip" />Installing the ZIP package
 
