@@ -21,6 +21,7 @@ Select the area of the Table of Contents containing the documents being changed.
   - WMF, ISE, release notes, etc.
 - [ ] DSC articles
 - [ ] Community resources
+- [ ] Sample scripts
 - [ ] Gallery articles
 - [ ] Scripting and development
   - [ ] Legacy SDK

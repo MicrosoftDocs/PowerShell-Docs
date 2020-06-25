@@ -1,7 +1,7 @@
 ---
 keywords: powershell,cmdlet
 Locale: en-US
-ms.date: 05/06/2020
+ms.date: 06/24/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_functions_advanced_parameters?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Functions_Advanced_Parameters
@@ -644,6 +644,11 @@ than or equal to the current date and time.
 ```powershell
 [DateTime][ValidateScript({$_ -ge (Get-Date)})]$date = (Get-Date)
 ```
+
+> [!NOTE]
+> If you use **ValidateScript**, you cannot pass a `$null` value to the
+> parameter. When you pass a null value **ValidateScript** can't validate the
+> argument.
 
 ### ValidateSet attribute
 
