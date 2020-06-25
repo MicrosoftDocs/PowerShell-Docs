@@ -59,7 +59,7 @@ Not currently supported
 - Ubuntu 20.04
 
 > [!NOTE]
-> PowerShell can only support the distributions that are by .NET. See the
+> PowerShell can only support the distributions that are supported by .NET. See the
 > [.NET Core release notes][distros] for a list of supported distributions. If there is a
 > distrbution supported by .NET that is not listed here, you can request that support for the
 > distribution be added. Please file a request using the [Distribution Support Request][] template.
