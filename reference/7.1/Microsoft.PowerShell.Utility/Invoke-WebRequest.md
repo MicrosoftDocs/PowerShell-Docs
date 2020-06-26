@@ -221,7 +221,7 @@ $Form = @{
     birthday   = '1980-10-15'
     hobbies    = 'Hiking','Fishing','Jogging'
 }
-$Result = Invoke-RestMethod -Uri $Uri -Method Post -Form $Form
+$Result = Invoke-WebRequest -Uri $Uri -Method Post -Form $Form
 ```
 
 The profile form requires these fields: `firstName`, `lastName`, `email`, `avatar`, `birthday`, and
@@ -1193,14 +1193,14 @@ Because of changes in .NET Core 3.1, PowerShell 7.0 and higher use the
 [HttpClient.DefaultProxy](/dotnet/api/system.net.http.httpclient.defaultproxy?view=netcore-3.1)
 Property to determine the proxy configuration.
 
-The value of this property is different rules depending on your platform:
+The value of this property is determined by your platform:
 
-- **For Windows**: Reads proxy configuration from environment variables or, if those are not
-  defined, from the user's proxy settings.
-- **For macOS**: Reads proxy configuration from environment variables or, if those are not defined,
-  from the system's proxy settings.
-- **For Linux**: Reads proxy configuration from environment variables or, in case those are not
-  defined, this property initializes a non-configured instance that bypasses all addresses.
+- **For Windows**: Reads proxy configuration from environment variables. If those variables are not
+  defined the property is derived from the user's proxy settings.
+- **For macOS**: Reads proxy configuration from environment variables. If those variables are not
+  defined the property is derived from the system's proxy settings.
+- **For Linux**: Reads proxy configuration from environment variables. If those variables are not
+  defined the property initializes a non-configured instance that bypasses all addresses.
 
 The environment variables used for `DefaultProxy` initialization on Windows and Unix-based platforms
 are:
