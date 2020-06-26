@@ -138,10 +138,10 @@ In particular, .NET Framework has the following features:
 
 .NET Core (and .NET 5+) has rejected this complexity for a simpler model:
 
-- No Global Assembly Cache; applications bring all their own dependencies. PowerShell, as the plugin
-  host, complicates this slightly for modules. Its dependencies in `$PSHOME` are shared with
-  all modules. This removes an external factor for dependency resolution in applications, making
-  dependency resolution more reproducible.
+- No Global Assembly Cache. Applications bring all their own dependencies. This removes an external
+  factor for dependency resolution in applications, making dependency resolution more reproducible.
+  PowerShell, as the plugin host, complicates this slightly for modules. Its dependencies in
+  `$PSHOME` are shared with all modules.
 - Only one Application Domain, and no ability to create new ones. The Application Domain concept
   lives on purely to be the global state of the .NET process.
 - A new, extensible Assembly Load Context model. Assembly resolution can be namespaced by putting it
@@ -233,8 +233,8 @@ For PowerShell, this means that the following factors can affect an assembly loa
 
 ## Quick fixes and their limitations
 
-In some cases, it's possible to make small adjustments to your module and fix things with a minimum
-of effort. But these solutions tend to come with caveats. While they may apply to your module, they
+In some cases, it's possible to make small adjustments to your module and fix things with minimal
+effort. But these solutions tend to come with caveats. While they may apply to your module, they
 won't work for every module.
 
 ### Change your dependency version
@@ -252,19 +252,18 @@ PowerShell 6 and above, and isn't used in Windows PowerShell. Meaning a simple w
 versioning conflicts is to target the lowest version of `Newtonsoft.Json` across the PowerShell
 versions you wish to target.
 
-For example, PowerShell 6.2.6 and PowerShell 7.0.2 both currently use Newtonsoft.Json version
-12.0.3. So, to create a module targeting Windows PowerShell, PowerShell 6 and PowerShell 7, you
-would target Newtonsoft.Json 12.0.3 as a dependency and include it in your built module. When the
-module is loaded in PowerShell 6 or 7, PowerShell's own Newtonsoft.Json assembly is already loaded.
-And it is, at least, the version required for your module, so resolution succeeds. In Windows
-PowerShell, the assembly isn't already present in PowerShell. So it's loaded from your module folder
-instead.
+For example, PowerShell 6.2.6 and PowerShell 7.0.2 both currently use `Newtonsoft.Json` version
+`12.0.3`. So, to create a module targeting Windows PowerShell, PowerShell 6 and PowerShell 7, you
+would target `Newtonsoft.Json 12.0.3` as a dependency and include it in your built module. When the
+module is loaded in PowerShell 6 or 7, PowerShell's own `Newtonsoft.Json` assembly is already
+loaded. And it is, at least, the version required for your module, so resolution succeeds. In
+Windows PowerShell, the assembly isn't already present in PowerShell. So it's loaded from your
+module folder instead.
 
 Generally, when targeting a concrete PowerShell package, like `Microsoft.PowerShell.Sdk` or
 `System.Management.Automation`, NuGet should be able to resolve the right dependency versions
-required. It's only in the case of targeting both Windows PowerShell and PowerShell 6+ that
-dependency versioning becomes more difficult. Either because you need to target multiple
-frameworks or due to targeting PowerShellStandard.Library.
+required. Targeting both Windows PowerShell and PowerShell 6+ becomes more difficult because you
+must choose between targeting multiple frameworks or `PowerShellStandard.Library`.
 
 Circumstances where pinning to a common dependency version won't work include:
 
@@ -400,8 +399,8 @@ In PowerShell, there are several ways to achieve this.
 - PowerShell remoting
 
   When it's available, PowerShell remoting can be a useful way to run commands out of process. With
-  remoting you can create a fresh **PSSession** in a new process, call its commands over PowerShell
-  remoting, and then use the results, locally, with the other module containing the conflicting
+  remoting, you can create a fresh **PSSession** in a new process, call its commands over PowerShell
+  remoting, then use the results locally with the other modules containing the conflicting
   dependencies.
 
   An example might look like this:
@@ -449,9 +448,9 @@ As a module user, there are cases where out-of-process invocation won't work:
 
 ## More robust solutions
 
-The previous solutions are all had are scenarios and modules that don't work. However, they also
-have the virtue of being relatively simple to implement correctly. The following solutions are more
-robust, but require more effort to implement correctly and can introduce subtle bugs if not written
+The previous solutions all had scenarios and modules that don't work. However, they also have the
+virtue of being relatively simple to implement correctly. The following solutions are more robust,
+but require more effort to implement correctly and can introduce subtle bugs if not written
 carefully.
 
 ### Loading through .NET Core Assembly Load Contexts
@@ -849,10 +848,10 @@ So finally, we have a general way to use an Assembly Load Context to isolate our
 dependencies that remains robust over time as more dependencies are added.
 
 For a more detailed example, go to this
-[GitHub repository](https://github.com/rjmholt/ModuleDependencyIsolationExample). This example in
-this repository gives a full demonstration of how to migrate a module to use an ALC, while keeping
-that module working in .NET Framework and also using .NET Standard and PowerShell Standard to
-simplify the core implementation.
+[GitHub repository](https://github.com/rjmholt/ModuleDependencyIsolationExample). This example
+demonstrates how to migrate a module to use an ALC, while keeping that module working in .NET
+Framework. It also show how to use .NET Standard and PowerShell Standard to simplify the core
+implementation.
 
 ### Assembly resolve handler for side-by-side loading with `Assembly.LoadFile()`
 

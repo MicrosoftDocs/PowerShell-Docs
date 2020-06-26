@@ -200,9 +200,9 @@ PowerShell's implementation assemblies, such as `System.Management.Automation`,
 `Microsoft.PowerShell.Management` and other module assemblies.
 
 Publishing an application targeting `Microsoft.Powershell.SDK` will include all these assemblies,
-along with any dependencies PowerShell requires, as well as other assets that PowerShell requires in
-its build such as the module manifests for `Microsoft.PowerShell.*` modules and the `ref` directory
-required by [Add-Type][].
+and any dependencies PowerShell requires. It will also include other assets that PowerShell required
+in its build, such as the module manifests for `Microsoft.PowerShell.*` modules and the `ref`
+directory required by [Add-Type][].
 
 Given the completeness of `Microsoft.Powershell.SDK`, it's best suited for:
 
@@ -224,9 +224,9 @@ their own version of `Microsoft.Powershell.SDK`.
 
 ## System.Management.Automation
 
-The `System.Management.Automation` package is the heart of the PowerShell SDK and exists on NuGet
-chiefly as an asset for `Microsoft.Powershell.SDK` to pull in. However, it can also be used directly
-as a package for smaller hosting scenarios and version-targeting modules.
+The `System.Management.Automation` package is the heart of the PowerShell SDK. It exists on NuGet,
+primarily, as an asset for `Microsoft.Powershell.SDK` to pull in. However, it can also be used
+directly as a package for smaller hosting scenarios and version-targeting modules.
 
 Specifically, the `System.Management.Automation` package may be a preferable provider of PowerShell
 functionality when:
