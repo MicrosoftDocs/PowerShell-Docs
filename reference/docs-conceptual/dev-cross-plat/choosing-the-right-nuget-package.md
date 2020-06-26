@@ -31,7 +31,7 @@ PowerShell in their own applications.
   compilation target, but must ensure that it does not publish any of these with its build.
 - **Hosting** is when a project needs its own implementation of PowerShell, usually because it is a
   standalone application that needs to run PowerShell. In this case, pure reference assemblies
-  cannot be used, and instead a concrete PowerShell implementation must be depended upon. Because a
+  cannot be used. Instead, a concrete PowerShell implementation must be depended upon. Because a
   concrete PowerShell implementation must be used, a specific version of PowerShell must be chosen
   for hosting; a single host application cannot multi-target PowerShell versions.
 
@@ -166,7 +166,7 @@ as the root module).
 ### Testing PowerShell Standard projects in .NET
 
 When it comes to testing your module in .NET test runners like xUnit, remember that compile-time
-checks can only go so far, so you must test your module against the relevant PowerShell platforms.
+checks can only go so far. You must test your module against the relevant PowerShell platforms.
 
 To test APIs built against PowerShell Standard in .NET, you should add `Microsoft.Powershell.SDK` as
 a testing dependency with .NET Core (with the version set to match the desired PowerShell version),
@@ -192,12 +192,12 @@ of the PowerShell application; version 7.0 contains the implementation of PowerS
 commands or scripts with it will largely behave like running them in PowerShell 7.0.
 
 Running PowerShell commands from the SDK is mostly, but not totally, the same as running them from
-`pwsh`; for example, [Start-Job][] currently depends on the `pwsh` executable being available, and
+`pwsh`. For example, [Start-Job][] currently depends on the `pwsh` executable being available, and
 so will not work with `Microsoft.Powershell.SDK` by default.
 
 Targeting `Microsoft.Powershell.SDK` from a .NET application allows you to integrate with all of
 PowerShell's implementation assemblies, such as `System.Management.Automation`,
-`Microsoft.PowerShell.Management` and other module assemblies.
+`Microsoft.PowerShell.Management`, and other module assemblies.
 
 Publishing an application targeting `Microsoft.Powershell.SDK` will include all these assemblies,
 and any dependencies PowerShell requires. It will also include other assets that PowerShell required
@@ -296,7 +296,7 @@ PowerShell 5.1, but contains most of its logic in a second assembly that targets
 and PowerShell Standard. This allows it to pull in dependencies required for .NET Core and .NET
 Framework platforms, while still simplifying most of the codebase behind a uniform abstraction.
 
-Because it is build against PowerShell Standard, PSES requires a runtime implementation of
+Because it is built against PowerShell Standard, PSES requires a runtime implementation of
 PowerShell in order to be tested correctly. To do this, [PSES's xUnit][] tests pull in
 `Microsoft.PowerShell.SDK` and `Microsoft.PowerShell.5.ReferenceAssemblies` in order to provide a
 PowerShell implementation in the test environment.
