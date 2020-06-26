@@ -9,7 +9,7 @@ ms.custom: rjmholt
 When writing a binary PowerShell module in C#, it's natural to take dependencies on other packages
 or libraries to provide functionality. Taking dependencies on other libraries is desirable for code
 reuse. PowerShell always loads assemblies into the same context. This presents issues when a
-module's dependencies conflict with already-loaded DLLs and prevents using two otherwise unrelated
+module's dependencies conflict with already-loaded DLLs and may prevent using two otherwise unrelated
 modules in the same PowerShell session.
 
 If you've had this problem, you've seen an error message like this:
@@ -24,7 +24,7 @@ might help you with dependency conflicts occurring in modules that you use.
 
 In .NET, dependency conflicts occur when two versions of the same assembly are loaded into the same
 _Assembly Load Context_. This term means slightly different things on different .NET platforms,
-which we'll cover [later](#powershell-and-net). This conflict is a common problem that occurs in any
+which is covered [later](#powershell-and-net). This conflict is a common problem that occurs in any
 software where versioned dependencies are used. Because there are no simple solutions, and because
 many dependency-resolution frameworks try to solve the problem in different ways, this situation is
 often called "dependency hell".
@@ -136,14 +136,14 @@ In particular, .NET Framework has the following features:
   - The mysterious void that assemblies loaded with `Assembly.LoadFile(string path)` and
     `Assembly.Load(byte[] asmBytes)` live in
 
-.NET Core (and .NET 5+) has rejected this complexity for a simpler model:
+.NET Core (and .NET 5+) has replaced this complexity with a simpler model:
 
 - No Global Assembly Cache; applications bring all their own dependencies. PowerShell, as the plugin
   host, complicates this slightly for modules. Its dependencies in `$PSHOME` are shared with
   all modules. This removes an external factor for dependency resolution in applications, making
   dependency resolution more reproducible.
 - Only one Application Domain, and no ability to create new ones. The Application Domain concept
-  lives on purely to be the global state of the .NET process.
+  is maintained in .NET Core purely to be the global state of the .NET process.
 - A new, extensible Assembly Load Context model. Assembly resolution can be namespaced by putting it
   in a new ALC. .NET Core processes begin with a single default ALC into which all assemblies are
   loaded. (except for those loaded with `Assembly.LoadFile(string)` and `Assembly.Load(byte[])`) But
