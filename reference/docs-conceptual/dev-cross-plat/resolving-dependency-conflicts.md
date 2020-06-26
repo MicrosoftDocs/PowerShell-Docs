@@ -46,15 +46,15 @@ Because `Contoso.ZipTools` and `Fabrikam.FileHelpers` both depend on different v
 In PowerShell, the dependency conflict issue is magnified because PowerShell modules and
 PowerShell's own dependencies are loaded into the same shared context. This means the PowerShell
 engine and all loaded PowerShell modules must not have conflicting dependencies. A classic example
-of this is Newtonsoft.Json:
+of this is `Newtonsoft.Json`:
 
 ![FictionalTools module depends on newer version of Newtonsoft.Json than PowerShell](./media/resolving-dependency-conflicts/engine-conflict.jpg)
 
 In this example, the module `FictionalTools` depends on `Newtonsoft.Json` version `12.0.3`, which is
-a newer version of Newtonsoft.Json than 11.0.2 that ships in the example PowerShell.
+a newer version of `Newtonsoft.Json` than `11.0.2` that ships in the example PowerShell.
 
 > [!NOTE]
-> This is an example and PowerShell 7 currently ships with Newtonsoft.Json 12.0.3.
+> This is an example and PowerShell 7 currently ships with `Newtonsoft.Json 12.0.3`.
 
 Because the module depends on a newer version of the assembly, it won't accept the version that
 PowerShell already has loaded. But because PowerShell has already loaded a version of the assembly,
@@ -75,9 +75,9 @@ than the `FilesystemManager` module.
 
 Imagine these modules load their dependencies by placing the dependency assemblies in the same
 directory as the root module assembly. This allows .NET to implicitly load them by name. If we're
-running PowerShell 7 (on top of .NET Core 3.1), we can load and run `FictionalTools` and then load
+running PowerShell 7 (on top of .NET Core 3.1), we can load and run `FictionalTools`, then load
 and run `FilesystemManager` without issue. However, in a new session, if we load and run
-`FilesystemManager` and then `FictionalTools` we get a `FileLoadException` from the `FictionalTools`
+`FilesystemManager`, then load `FictionalTools`, we get a `FileLoadException` from the `FictionalTools`
 command because it requires a newer version of `Microsoft.Extensions.Logging` than the one loaded.
 `FictionalTools` can't load the version needed because an assembly of the same name has already
 been loaded.
@@ -217,8 +217,8 @@ public static class Program
 }
 ```
 
-This is a good practice, since it minimizes the memory and filesystem I/O and uses the resources
-more efficiently. The unfortunate a side effect of this is that we won't that the assembly fails to
+This is a good practice since it minimizes the memory and filesystem I/O and uses the resources
+more efficiently. The unfortunate a side effect of this is that we won't know that the assembly fails to
 load until we reach the code path that tries to load the assembly.
 
 It can also create a timing condition for assembly load conflicts. If two parts of the same program
@@ -252,12 +252,12 @@ PowerShell 6 and above, and isn't used in Windows PowerShell. Meaning a simple w
 versioning conflicts is to target the lowest version of `Newtonsoft.Json` across the PowerShell
 versions you wish to target.
 
-For example, PowerShell 6.2.6 and PowerShell 7.0.2 both currently use Newtonsoft.Json version
-12.0.3. So, to create a module targeting Windows PowerShell, PowerShell 6 and PowerShell 7, you
-would target Newtonsoft.Json 12.0.3 as a dependency and include it in your built module. When the
-module is loaded in PowerShell 6 or 7, PowerShell's own Newtonsoft.Json assembly is already loaded.
-And it is, at least, the version required for your module, so resolution succeeds. In Windows
-PowerShell, the assembly isn't already present in PowerShell. So it's loaded from your module folder
+For example, PowerShell 6.2.6 and PowerShell 7.0.2 both currently use `Newtonsoft.Json` version
+12.0.3. So, to create a module targeting Windows PowerShell, PowerShell 6, and PowerShell 7, you
+would target `Newtonsoft.Json` 12.0.3 as a dependency and include it in your built module. When the
+module is loaded in PowerShell 6 or 7, PowerShell's own `Newtonsoft.Json` assembly is already loaded.
+Also, it is at least the version required for your module, so resolution succeeds. In Windows
+PowerShell, the assembly isn't already present in PowerShell. So, it's loaded from your module folder
 instead.
 
 Generally, when targeting a concrete PowerShell package, like `Microsoft.PowerShell.Sdk` or
@@ -367,10 +367,10 @@ This solution is more for module users than module authors. This is a solution t
 confronted with a module that won't work due to an existing dependency conflict.
 
 Dependency conflicts occur because two versions of the same assembly are loaded into the same .NET
-process. So a simple solution is to load them into different processes, as long as you can still
+process. A simple solution is to load them into different processes, as long as you can still
 use the functionality from both together.
 
-In PowerShell, there are several ways to achieve this.
+In PowerShell, there are several ways to achieve this:
 
 - Invoke PowerShell as a subprocess
 
@@ -428,7 +428,7 @@ In PowerShell, there are several ways to achieve this.
   Import-Module -Name ConflictingModule -UseWindowsPowerShell
   ```
 
-  Be aware of course that modules may not work with or work differently with Windows PowerShell.
+  Be aware that modules may not work with, or work differently with Windows PowerShell.
 
 #### When out-of-process invocation should not be used
 
@@ -443,7 +443,7 @@ As a module user, there are cases where out-of-process invocation won't work:
 - When PowerShell remoting is unavailable because you don't have privileges to use it or it
   is not enabled.
 - When a particular .NET type is needed from output as input to a method or another command.
-  Commands run over PowerShell remoting emit deserialized objects rather than strongly-typed .NET
+  Commands running over PowerShell remoting emit deserialized objects rather than strongly-typed .NET
   objects. This means that method calls and strongly typed APIs do not work with the output of
   commands imported over remoting.
 
@@ -552,7 +552,7 @@ We need to re-engineer the module so that:
 To mediate these two requirements, we must break up our module into two assemblies:
 
 - A cmdlets assembly, `AlcModule.Cmdlets.dll`, that contains definitions of all the types that
-  PowerShell's module system needs to load our module correctly. Namely any implementations of the
+  PowerShell's module system needs to load our module correctly. Namely, any implementations of the
   `Cmdlet` base class and the class that implements `IModuleAssemblyInitializer`, which sets up the
   event handler for `AssemblyLoadContext.Default.Resolving` to properly load `AlcModule.Engine.dll`
   through our custom ALC. Since PowerShell 7 deliberately hides types defined in assemblies loaded
@@ -659,7 +659,7 @@ namespace AlcModule.Cmdlets
 }
 ```
 
-Then, we need to hook up our custom ALC to the default ALC's `Resolving` event, which is the ALC
+Then we need to hook up our custom ALC to the default ALC's `Resolving` event, which is the ALC
 version of the `AssemblyResolve` event on Application Domains. This event is fired to find
 `AlcModule.Engine.dll` when `EndProcessing()` is called.
 
@@ -733,8 +733,8 @@ Some points of interest are:
   the `Resolving` event.
 - Our event handler hooks up the custom ALC to the default ALC and loads `AlcModule.Engine.dll`
   only.
-- Then, when `AlcEngine.Use()` is called within `AlcModule.Engine.dll`, the custom ALC again kicks
-  in to resolve `Shared.Dependency.dll`. Specifically it always loads _our_ `Shared.Dependency.dll`,
+- When `AlcEngine.Use()` is called within `AlcModule.Engine.dll`, the custom ALC again kicks
+  in to resolve `Shared.Dependency.dll`. Specifically, it always loads _our_ `Shared.Dependency.dll`
   since it never conflicts with anything in the default ALC and only looks in our `Dependencies`
   directory.
 
@@ -781,7 +781,7 @@ AlcModule.Engine.csproj looks like this:
 </Project>
 ```
 
-And so when we build the module, our strategy is:
+So, when we build the module, our strategy is:
 
 - Build `AlcModule.Engine`
 - Build `AlcModule.Cmdlets`
@@ -845,7 +845,7 @@ Get-ChildItem -Path "$cmdletsSrc/bin/$Configuration/$netcore/publish/" |
     ForEach-Object { Copy-Item -Path $_.FullName -Destination $outDir }
 ```
 
-So finally, we have a general way to use an Assembly Load Context to isolate our module's
+Finally, we have a general way to use an Assembly Load Context to isolate our module's
 dependencies that remains robust over time as more dependencies are added.
 
 For a more detailed example, go to this
@@ -861,7 +861,7 @@ Another, possibly simpler, way to achieve side-by-side assembly loading is to ho
 being the simplest solution to implement and works with both .NET Core and .NET Framework.
 
 To show this, let's take a look at a quick example of an implementation that combines ideas from our
-dynamic binding redirect example, and from the Assembly Load Context example above.
+dynamic binding redirect example, and the Assembly Load Context example above.
 
 We'll call this module **LoadFileModule**, which has a trivial command
 `Test-LoadFile [-Path] <path>`. This module takes a dependency on the `CsvHelper` assembly (version
@@ -891,9 +891,9 @@ namespace LoadFileModule.Engine
 }
 ```
 
-Second is the part that PowerShell loads directly, `LoadFileModule.Cmdlets`. We use a strategy
-similar to the ALC module, where we isolate dependencies in a separate directory. But this time we
-must load all assemblies in with a resolve event rather than just `LoadFileModule.Engine.dll`.
+The second part is what PowerShell loads directly, `LoadFileModule.Cmdlets`. We use a strategy
+similar to the ALC module, where we isolate dependencies in a separate directory. But this time, we
+load all assemblies in with a resolve event rather than just `LoadFileModule.Engine.dll`.
 
 ```csharp
 using LoadFileModule.Engine;
@@ -1021,7 +1021,7 @@ large architectural changes. The serialization boundary also has serious perform
 
 Because Application Domains have this serious limitation, are complicated to implement, and only
 work in .NET Framework, we won't give an example of how you might use them here. While they're worth
-mentioning as a possibility, they not recommend.
+mentioning as a possibility, they're not recommended.
 
 If you're interested in trying to use a custom Application Domain, the following links might help:
 
@@ -1031,13 +1031,13 @@ If you're interested in trying to use a custom Application Domain, the following
 ## Solutions for dependency conflicts that don't work for PowerShell
 
 Finally, we'll address some possibilities that come up when researching .NET dependency conflicts in
-.NET that can look promising but generally won't work for PowerShell.
+.NET that can look promising, but generally won't work for PowerShell.
 
 These solutions have the common theme that they are changes to deployment configurations for an
 environment where you control the application and possibly the entire machine. These solutions are
 oriented toward scenarios like web servers and other applications deployed to server environments,
 where the environment is intended to host the application and is free to be configured by the
-deploying user. They also tend to be very much .NET Framework focused, meaning they do not work
+deploying user. They also tend to be very much .NET Framework oriented, meaning they do not work
 with PowerShell 6 or above.
 
 If you know that your module is only used in Windows PowerShell 5.1 environments that you have total
@@ -1053,9 +1053,9 @@ assembly binding to redirect assembly loading to a particular version.
 
 Two issues with this for PowerShell are:
 
-- .NET Core does not support `app.config`, so this solution applies to `powershell.exe` only.
+- .NET Core does not support `app.config`, so this solution only applies to `powershell.exe`.
 - `powershell.exe` is a shared application that lives in the `System32` directory. It's likely that
-  your module won't be able to modify its contents on many systems. And even if it can, modifying
+  your module won't be able to modify its contents on many systems. Even if it can, modifying
   the `app.config` could break an existing configuration or affect the loading of other modules.
 
 ### Setting `codebase` with app.config
@@ -1063,12 +1063,12 @@ Two issues with this for PowerShell are:
 For the same reasons, trying to configure the `codebase` setting in `app.config` is not going to
 work in PowerShell modules.
 
-### Installing your dependencies to the Global Assembly Cache (GAC)
+### Installing dependencies to the Global Assembly Cache (GAC)
 
 Another way to resolve dependency version conflicts in .NET Framework is to install dependencies to
 the GAC, so that different versions can be loaded side-by-side from the GAC.
 
-Again for PowerShell modules, the chief issues here are:
+Again, for PowerShell modules, the chief issues here are:
 
 - The GAC only applies to .NET Framework, so this does not help in PowerShell 6 and above.
 - Installing assemblies to the GAC is a modification of global machine state and may cause
