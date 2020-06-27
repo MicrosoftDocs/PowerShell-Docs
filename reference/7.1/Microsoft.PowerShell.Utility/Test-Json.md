@@ -165,13 +165,31 @@ The **Json** parameter is required.
 
 ```yaml
 Type: String
-Parameter Sets: (All)
+Parameter Sets: (JsonStringParameterSet)
 Aliases:
 
 Required: True
 Position: 1
 Default value: None
 Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### -JsonFile
+
+Specifies the JSON file to test for validity.
+
+The **JsonFile** parameter is required.
+
+```yaml
+Type: String
+Parameter Sets: (JsonFileParameterSet)
+Aliases:
+
+Required: True
+Position: 1
+Default value: None
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
