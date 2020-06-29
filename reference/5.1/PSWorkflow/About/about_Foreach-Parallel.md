@@ -99,7 +99,7 @@ workflow Test-Workflow
 
 ## SEE ALSO
 
-[Writing a Script Workflow](/powershell/scripting/developer/workflow/creating-a-workflow-by-using-a-windows-powershell-script)
+[Writing a Script Workflow](/previous-versions/powershell/scripting/developer/workflow/creating-a-workflow-by-using-a-windows-powershell-script)
 
 [about_ForEach](../../Microsoft.PowerShell.Core/About/about_ForEach.md)
 
