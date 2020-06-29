@@ -41,11 +41,11 @@ gray background. In the escape sequence used in the example, **32** represents t
 and **47** represents the background color.
 
 ```powershell
-Set-PSReadLineOption -Colors @{ "Comment"="`e[32;47m" }
+Set-PSReadLineOption -Colors @{ "Comment"="$([char]0x1b)[32;47m" }
 ```
 
 You can choose to set only a foreground text color. For example, a bright green foreground text
-color for the **Comment** token: `{ "Comment"="`e[92m" }`.
+color for the **Comment** token: `{ "Comment"="$([char]0x1b)[92m" }`.
 
 ### Example 2: Set bell style
 
@@ -125,10 +125,10 @@ This example emits a cursor change VT escape in response to a **Vi** mode change
 function OnViModeChange {
     if ($args[0] -eq 'Command') {
         # Set the cursor to a blinking block.
-        Write-Host -NoNewLine "`e[1 q"
+        Write-Host -NoNewLine "$([char]0x1b)[1 q"
     } else {
         # Set the cursor to a blinking line.
-        Write-Host -NoNewLine "`e[5 q"
+        Write-Host -NoNewLine "$([char]0x1b)[5 q"
     }
 }
 Set-PSReadLineOption -ViModeIndicator Script -ViModeChangeHandler $Function:OnViModeChange
