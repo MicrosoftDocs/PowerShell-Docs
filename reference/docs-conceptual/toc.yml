@@ -784,6 +784,10 @@
     href: dev-cross-plat/writing-portable-modules.md
   - name: How to create a Standard Library binary module
     href: dev-cross-plat/create-standard-library-binary-module.md
+  - name: Choosing the right NuGet package for your .NET project
+    href: dev-cross-plat/choosing-the-right-nuget-package.md
+  - name: Resolving module assembly dependency conflicts
+    href: dev-cross-plat/resolving-dependency-conflicts.md
   - name: Legacy PowerShell SDK
     items:
     - name: Overview

@@ -3,7 +3,7 @@ external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 06/25/2020
+ms.date: 06/26/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/invoke-webrequest?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Invoke-WebRequest
@@ -221,7 +221,7 @@ $Form = @{
     birthday   = '1980-10-15'
     hobbies    = 'Hiking','Fishing','Jogging'
 }
-$Result = Invoke-RestMethod -Uri $Uri -Method Post -Form $Form
+$Result = Invoke-WebRequest -Uri $Uri -Method Post -Form $Form
 ```
 
 The profile form requires these fields: `firstName`, `lastName`, `email`, `avatar`, `birthday`, and

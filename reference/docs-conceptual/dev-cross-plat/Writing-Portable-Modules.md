@@ -140,15 +140,12 @@ Time Elapsed 00:00:05.40
 After building the module, you can import it and execute the sample cmdlet.
 
 ```powershell
-ipmo .\bin\Debug\netstandard2.0\myModule.dll
+Import-Module .\bin\Debug\netstandard2.0\myModule.dll
 Test-SampleCmdlet -?
 Test-SampleCmdlet -FavoriteNumber 7 -FavoritePet Cat
 ```
 
 ```output
-PS C:\Users\Steve\myModule> ipmo .\bin\Debug\netstandard2.0\myModule.dll
-PS C:\Users\Steve\myModule> Test-SampleCmdlet -?
-
 NAME
     Test-SampleCmdlet
 
@@ -163,8 +160,6 @@ ALIASES
 REMARKS
     None
 
-
-PS C:\Users\Steve\myModule> Test-SampleCmdlet -FavoriteNumber 7 -FavoritePet Cat
 
 FavoriteNumber FavoritePet
 -------------- -----------
