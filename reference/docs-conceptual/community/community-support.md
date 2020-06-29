@@ -18,8 +18,9 @@ find help from other members of the community in one of these public forums:
 - [PowerShell.org](https://powershell.org/)
 - [StackOverFlow](https://stackoverflow.com/questions/tagged/powershell)
 - [r/PowerShell subreddit](https://www.reddit.com/r/PowerShell/)
-- [PowerShell Slack](https://join.slack.com/t/powershell/shared_invite/enQtNjk2ODE4MTkxNTY4LWJlOTU3NzBiYWFiMjM3Mzg3M2E5OGJiNGE4YjVhODVlNWNlY2I2ZWRkNGY2NjE4MThiYTg4OWI5NjA4MDM3ZjQ)
-- [PowerShell Discord](https://discord.gg/Ju25cw6)
+- PowerShell Virtual User Group - join via:
+  - [Slack](https://aka.ms/psslack)
+  - [Discord](https://aka.ms/psdiscord)
 
 For information about our support policy, see the
 [PowerShell Support Lifecycle](/powershell/scripting/powershell-support-lifecycle).
