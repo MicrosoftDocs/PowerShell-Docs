@@ -174,7 +174,7 @@ In both cases, you need the Windows 10 x64 ZIP release package. Run the commands
 1. Use your favorite zip utility to unzip the package to a directory within the mounted Nano Server
    image.
 2. Unmount the image and boot it.
-3. Connect to the inbox instance of Windows PowerShell.
+3. Connect to the built-in instance of Windows PowerShell.
 4. Follow the instructions to create a remoting endpoint using the
    ["another instance technique"](../learn/remoting/wsman-remoting-in-powershell-core.md#executed-by-another-instance-of-powershell-on-behalf-of-the-instance-that-it-will-register).
 
@@ -182,7 +182,7 @@ In both cases, you need the Windows 10 x64 ZIP release package. Run the commands
 
 Deploy PowerShell to Nano Server using the following steps.
 
-- Connect to the inbox instance of Windows PowerShell
+- Connect to the built-in instance of Windows PowerShell
 
   ```powershell
   $session = New-PSSession -ComputerName <Nano Server IP address> -Credential <An Administrator account on the system>
