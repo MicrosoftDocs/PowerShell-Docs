@@ -120,4 +120,4 @@ workflow Test-Workflow
 
 [about_Workflows](about_Workflows.md)
 
-[Creating a Workflow by Using a Windows PowerShell Script](/powershell/scripting/developer/workflow/creating-a-workflow-by-using-a-windows-powershell-script)
+[Creating a Workflow by Using a Windows PowerShell Script](/previous-versions/powershell/scripting/developer/workflow/creating-a-workflow-by-using-a-windows-powershell-script)
