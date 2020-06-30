@@ -46,7 +46,7 @@ Set-PSReadLineOption -Colors @{ "Comment"="`e[32;47m" }
 ```
 
 You can choose to set only a foreground text color. For example, a bright green foreground text
-color for the **Comment** token: `{ "Comment"="`e[92m" }`.
+color for the **Comment** token: ``"Comment"="`e[92m"``.
 
 ### Example 2: Set bell style
 
@@ -408,7 +408,7 @@ commands are added to history to preserve ordering during recall. However, you t
 to see the command multiple times when recalling or searching the history.
 
 By default, the **HistoryNoDuplicates** property of the global **PSConsoleReadLineOptions** object
-is set to `True`. Using this **SwitchParameter** set the property value to `True`. To change the
+is set to `True`. Using this **SwitchParameter** sets the property value to `True`. To change the
 property value, you must specify the value of the **SwitchParameter** as follows:
 `-HistoryNoDuplicates:$False`.
 
@@ -487,8 +487,8 @@ Specifies that history searching is case-sensitive in functions like **ReverseSe
 **HistorySearchBackward**.
 
 By default, the **HistorySearchCaseSensitive** property of the global **PSConsoleReadLineOptions**
-object is set to `False`. Using this **SwitchParameter** set the property value to `True`. To change
-the property value back, you must specify the value of the **SwitchParameter** as follows:
+object is set to `False`. Using this **SwitchParameter** sets the property value to `True`. To
+change the property value back, you must specify the value of the **SwitchParameter** as follows:
 `-HistorySearchCaseSensitive:$False`.
 
 Using the following command, you can set the property value directly:
@@ -626,7 +626,7 @@ This option is enabled by default. This option wasn't enabled by default in prio
 **PSReadLine**. To disable, set this option to `$False`.
 
 By default, the **ShowToolTips** property of the global **PSConsoleReadLineOptions**
-object is set to `True`. Using this **SwitchParameter** set the property value to `True`. To change
+object is set to `True`. Using this **SwitchParameter** sets the property value to `True`. To change
 the property value, you must specify the value of the **SwitchParameter** as follows:
 `-ShowToolTips:$False`.
 
