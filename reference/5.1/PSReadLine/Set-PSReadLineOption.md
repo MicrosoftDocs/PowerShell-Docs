@@ -3,7 +3,7 @@ external help file: Microsoft.PowerShell.PSReadLine2.dll-Help.xml
 keywords: powershell,cmdlet
 Locale: en-US
 Module Name: PSReadLine
-ms.date: 04/09/2020
+ms.date: 06/30/2020
 online version: https://docs.microsoft.com/powershell/module/psreadline/set-psreadlineoption?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-PSReadLineOption
@@ -220,7 +220,7 @@ For more information, see [about_Hash_Tables](/powershell/module/microsoft.power
 Colors can be either a value from **ConsoleColor**, for example `[ConsoleColor]::Red`, or a valid
 ANSI escape sequence. Valid escape sequences depend on your terminal. In PowerShell 5.0, an example
 escape sequence for red text is `$([char]0x1b)[91m`. In PowerShell 6 and above, the same escape
-sequence is `e[91m`. You can specify other escape sequences including the following types:
+sequence is `` `e[91m``. You can specify other escape sequences including the following types:
 
 - 256 color
 - 24-bit color
@@ -401,10 +401,18 @@ Accept wildcard characters: False
 ### -HistoryNoDuplicates
 
 This option controls the recall behavior. Duplicate commands are still added to the history file.
-When this option is set, only the most recent invocation appears when recalling commands.
+When this option is set, only the most recent invocation appears when recalling commands. Repeated
+commands are added to history to preserve ordering during recall. However, you typically don't want
+to see the command multiple times when recalling or searching the history.
 
-Repeated commands are added to history to preserve ordering during recall. However, you typically
-don't want to see the command multiple times when recalling or searching the history.
+By default, the **HistoryNoDuplicates** property of the global **PSConsoleReadLineOptions** object
+is set to `True`. Using this **SwitchParameter** set the property value to `True`. To change the
+property value, you must specify the value of the **SwitchParameter** as follows:
+`-HistoryNoDuplicates:$False`.
+
+Using the following command, you can set the property value directly:
+
+`(Get-PSReadLineOption).HistoryNoDuplicates = $False`
 
 ```yaml
 Type: SwitchParameter
@@ -421,7 +429,7 @@ Accept wildcard characters: False
 ### -HistorySavePath
 
 Specifies the path to the file where history is saved. Computers running Windows or non-Windows
-platforms store the file in different locations. The file name is stored in a variable
+platforms store the file in different locations. The filename is stored in a variable
 `$($host.Name)_history.txt`, for example `ConsoleHost_history.txt`.
 
 If you don't use this parameter, the default path is as follows:
@@ -476,6 +484,15 @@ Accept wildcard characters: False
 Specifies that history searching is case-sensitive in functions like **ReverseSearchHistory** or
 **HistorySearchBackward**.
 
+By default, the **HistorySearchCaseSensitive** property of the global **PSConsoleReadLineOptions**
+object is set to `False`. Using this **SwitchParameter** set the property value to `True`. To change
+the property value back, you must specify the value of the **SwitchParameter** as follows:
+`-HistorySearchCaseSensitive:$False`.
+
+Using the following command, you can set the property value directly:
+
+`(Get-PSReadLineOption).HistorySearchCaseSensitive = $False`
+
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
@@ -494,9 +511,12 @@ Indicates that the cursor moves to the end of commands that you load from histor
 When this parameter is set to `$False`, the cursor remains at the position it was when you pressed
 the up or down arrows.
 
-To turn off this option, you can run either of the following commands:
+By default, the **HistorySearchCursorMovesToEnd** property of the global
+**PSConsoleReadLineOptions** object is set to `False`. Using this **SwitchParameter** set the
+property value to `True`. To change the property value back, you must specify the value of the
+**SwitchParameter** as follows: `-HistorySearchCursorMovesToEnd:$False`.
 
-`Set-PSReadLineOption -HistorySearchCursorMovesToEnd:$False`
+Using the following command, you can set the property value directly:
 
 `(Get-PSReadLineOption).HistorySearchCursorMovesToEnd = $False`
 
@@ -581,6 +601,15 @@ When displaying possible completions, tooltips are shown in the list of completi
 
 This option is enabled by default. This option wasn't enabled by default in prior versions of
 **PSReadLine**. To disable, set this option to `$False`.
+
+By default, the **ShowToolTips** property of the global **PSConsoleReadLineOptions**
+object is set to `True`. Using this **SwitchParameter** set the property value to `True`. To change
+the property value, you must specify the value of the **SwitchParameter** as follows:
+`-ShowToolTips:$False`.
+
+Using the following command, you can set the property value directly:
+
+`(Get-PSReadLineOption).ShowToolTips = $False`
 
 ```yaml
 Type: SwitchParameter
