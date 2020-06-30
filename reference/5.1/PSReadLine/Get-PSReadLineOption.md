@@ -3,7 +3,7 @@ external help file: Microsoft.PowerShell.PSReadLine2.dll-Help.xml
 keywords: powershell,cmdlet
 Locale: en-US
 Module Name: PSReadLine
-ms.date: 12/07/2018
+ms.date: 06/30/2020
 online version: https://docs.microsoft.com/powershell/module/psreadline/get-psreadlineoption?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-PSReadLineOption
@@ -36,17 +36,17 @@ Get-PSReadLineOption
 
 ```Output
 EditMode                               : Windows
-AddToHistoryHandler                    :
+AddToHistoryHandler                    : System.Func`2[System.String,System.Object]
 HistoryNoDuplicates                    : True
-HistorySavePath                        : C:\Users\testuser\AppData\Roaming\Microsoft\Win
-                                         dows\PowerShell\PSReadLine\ConsoleHost_history.txt
+HistorySavePath                        : C:\Users\username\AppData\Roaming\Microsoft\Windows\
+                                         PowerShell\PSReadLine\ConsoleHost_history.txt
 HistorySaveStyle                       : SaveIncrementally
 HistorySearchCaseSensitive             : False
 HistorySearchCursorMovesToEnd          : False
 MaximumHistoryCount                    : 4096
 ContinuationPrompt                     : >>
 ExtraPromptLineCount                   : 0
-PromptText                             :
+PromptText                             : {> }
 BellStyle                              : Audible
 DingDuration                           : 50
 DingTone                               : 1221
@@ -56,7 +56,8 @@ CompletionQueryItems                   : 100
 MaximumKillRingCount                   : 10
 ShowToolTips                           : True
 ViModeIndicator                        : None
-WordDelimiters                         : ;:,.[]{}()/\|^&*-=+'"��-
+WordDelimiters                         : ;:,.[]{}()/\|^&*-=+'"---
+AnsiEscapeTimeout                      : 100
 CommandColor                           : "$([char]0x1b)[93m"
 CommentColor                           : "$([char]0x1b)[32m"
 ContinuationPromptColor                : "$([char]0x1b)[37m"
