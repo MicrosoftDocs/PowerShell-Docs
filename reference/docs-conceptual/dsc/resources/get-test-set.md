@@ -232,6 +232,6 @@ VERBOSE: Time taken for configuration job to complete is 1.379 seconds
 
 ## See also
 
-- [Azure Automation DSC Overview](https://docs.microsoft.com/azure/automation/automation-dsc-overview)
+- [Azure Automation DSC Overview](/azure/automation/automation-dsc-overview)
 - [Setting up an SMB pull server](../pull-server/pullServerSMB.md)
 - [Configuring a pull client](../pull-server/pullClientConfigID.md)

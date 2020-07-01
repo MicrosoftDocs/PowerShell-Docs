@@ -3,7 +3,7 @@ external help file: Microsoft.PowerShell.PSReadLine2.dll-Help.xml
 keywords: powershell,cmdlet
 Locale: en-US
 Module Name: PSReadLine
-ms.date: 12/07/2018
+ms.date: 06/30/2020
 online version: https://docs.microsoft.com/powershell/module/psreadline/get-psreadlineoption?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-PSReadLineOption
@@ -38,15 +38,15 @@ Get-PSReadLineOption
 EditMode                               : Windows
 AddToHistoryHandler                    :
 HistoryNoDuplicates                    : True
-HistorySavePath                        : C:\Users\testuser\AppData\Roaming\Microsoft\Win
-                                         dows\PowerShell\PSReadLine\ConsoleHost_history.txt
+HistorySavePath                        : C:\Users\username\AppData\Roaming\Microsoft\Windows\
+                                         PowerShell\PSReadLine\ConsoleHost_history.txt
 HistorySaveStyle                       : SaveIncrementally
 HistorySearchCaseSensitive             : False
 HistorySearchCursorMovesToEnd          : False
 MaximumHistoryCount                    : 4096
 ContinuationPrompt                     : >>
 ExtraPromptLineCount                   : 0
-PromptText                             :
+PromptText                             : {> }
 BellStyle                              : Audible
 DingDuration                           : 50
 DingTone                               : 1221
@@ -57,10 +57,11 @@ MaximumKillRingCount                   : 10
 ShowToolTips                           : True
 ViModeIndicator                        : None
 WordDelimiters                         : ;:,.[]{}()/\|^&*-=+'"---
+AnsiEscapeTimeout                      : 100
 CommandColor                           : "`e[93m"
 CommentColor                           : "`e[32m"
-ContinuationPromptColor                : "`e[37m"
-DefaultTokenColor                      : "`e[37m"
+ContinuationPromptColor                : "`e[97m"
+DefaultTokenColor                      : "`e[97m"
 EmphasisColor                          : "`e[96m"
 ErrorColor                             : "`e[91m"
 KeywordColor                           : "`e[92m"
@@ -68,7 +69,7 @@ MemberColor                            : "`e[97m"
 NumberColor                            : "`e[97m"
 OperatorColor                          : "`e[90m"
 ParameterColor                         : "`e[90m"
-SelectionColor                         : "`e[30;47m"
+SelectionColor                         : "`e[30;107m"
 StringColor                            : "`e[36m"
 TypeColor                              : "`e[37m"
 VariableColor                          : "`e[92m"
