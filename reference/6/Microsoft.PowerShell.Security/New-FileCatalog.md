@@ -23,7 +23,7 @@ New-FileCatalog [-CatalogVersion <Int32>] [-CatalogFilePath] <String> [[-Path] <
 
 ## DESCRIPTION
 
-`New-FileCatalog` creates a [Windows catalog file](https://docs.microsoft.com/windows-hardware/drivers/install/catalog-files)
+`New-FileCatalog` creates a [Windows catalog file](/windows-hardware/drivers/install/catalog-files)
 for a set of folders and files.
 This catalog file contains hashes for all files in the provided paths.
 Users can then distribute the catalog with their files so that users can validate

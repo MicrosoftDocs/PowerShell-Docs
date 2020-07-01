@@ -132,7 +132,7 @@ To define a web-based configuration server, you create a **ConfigurationReposito
 > Supported in Windows versions 1809 and later.
 
 An example script to simplify configuring the ConfigurationRepositoryWeb value for on-premises nodes
-is available - see [Generating DSC metaconfigurations](https://docs.microsoft.com/azure/automation/automation-dsc-onboarding#generating-dsc-metaconfigurations)
+is available - see [Generating DSC metaconfigurations](/azure/automation/automation-dsc-onboarding#generating-dsc-metaconfigurations)
 
 To define an SMB-based configuration server, you create a **ConfigurationRepositoryShare** block. A
 **ConfigurationRepositoryShare** defines the following properties.
@@ -160,7 +160,7 @@ A **ResourceRepositoryWeb** defines the following properties.
 > Supported in Windows versions 1809 and later.
 
 An example script to simplify configuring the ResourceRepositoryWeb value for on-premises nodes
-is available - see [Generating DSC metaconfigurations](https://docs.microsoft.com/azure/automation/automation-dsc-onboarding#generating-dsc-metaconfigurations)
+is available - see [Generating DSC metaconfigurations](/azure/automation/automation-dsc-onboarding#generating-dsc-metaconfigurations)
 
 To define an SMB-based resource server, you create a **ResourceRepositoryShare** block.
 **ResourceRepositoryShare** defines the following properties.
@@ -188,7 +188,7 @@ compatible with SMB based pull service. **ReportServerWeb** defines the followin
 > Supported in Windows versions 1809 and later.
 
 An example script to simplify configuring the ReportServerWeb value for on-premises nodes is
-available - see [Generating DSC metaconfigurations](https://docs.microsoft.com/azure/automation/automation-dsc-onboarding#generating-dsc-metaconfigurations)
+available - see [Generating DSC metaconfigurations](/azure/automation/automation-dsc-onboarding#generating-dsc-metaconfigurations)
 
 ## Partial configurations
 
@@ -202,7 +202,7 @@ about partial configurations, see [DSC Partial configurations](../pull-server/pa
 |DependsOn|string{}|A list of names of other configurations that must be completed before this partial configuration is applied.|
 |Description|string|Text used to describe the partial configuration.|
 |ExclusiveResources|string[]|An array of resources exclusive to this partial configuration.|
-|RefreshMode|string|Specifies how the LCM gets this partial configuration. The possible values are __"Disabled"__, __"Push"__, and __"Pull"__. <ul><li>__Disabled__: This partial configuration is disabled.</li><li> __Push__: The partial configuration is pushed to the node by calling the [Publish-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/Publish-DscConfiguration) cmdlet. After all partial configurations for the node are either pushed or pulled from a service, the configuration can be started by calling `Start-DscConfiguration –UseExisting`. This is the default value.</li><li>__Pull:__ The node is configured to regularly check for partial configuration from a pull service. If this property is set to __Pull__, you must specify a pull service in a __ConfigurationSource__ property. For more information about Azure Automation pull service, see [Azure Automation DSC Overview](https://docs.microsoft.com/azure/automation/automation-dsc-overview).</li></ul>|
+|RefreshMode|string|Specifies how the LCM gets this partial configuration. The possible values are __"Disabled"__, __"Push"__, and __"Pull"__. <ul><li>__Disabled__: This partial configuration is disabled.</li><li> __Push__: The partial configuration is pushed to the node by calling the [Publish-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/Publish-DscConfiguration) cmdlet. After all partial configurations for the node are either pushed or pulled from a service, the configuration can be started by calling `Start-DscConfiguration –UseExisting`. This is the default value.</li><li>__Pull:__ The node is configured to regularly check for partial configuration from a pull service. If this property is set to __Pull__, you must specify a pull service in a __ConfigurationSource__ property. For more information about Azure Automation pull service, see [Azure Automation DSC Overview](/azure/automation/automation-dsc-overview).</li></ul>|
 |ResourceModuleSource|string[]|An array of the names of resource servers from which to download required resources for this partial configuration. These names must refer to service endpoints previously defined in **ResourceRepositoryWeb** and **ResourceRepositoryShare** blocks.|
 
 > [!NOTE]
@@ -215,7 +215,7 @@ about partial configurations, see [DSC Partial configurations](../pull-server/pa
 
 [Desired State Configuration Overview](../overview/overview.md)
 
-[Getting started with Azure Automation DSC](https://docs.microsoft.com/azure/automation/automation-dsc-getting-started)
+[Getting started with Azure Automation DSC](/azure/automation/automation-dsc-getting-started)
 
 ### Other Resources
 

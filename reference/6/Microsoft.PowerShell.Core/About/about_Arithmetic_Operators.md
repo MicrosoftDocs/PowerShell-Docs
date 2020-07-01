@@ -135,7 +135,7 @@ You can use the `[Math]` class to get different rounding behavior.
 | `[int][Math]::Floor([5 / 2)`                                 | `2`    |
 
 For more information, see the
-[Math.Round](https://docs.microsoft.com/dotnet/api/system.math.round) method.
+[Math.Round](/dotnet/api/system.math.round) method.
 
 ## ADDING AND MULTIPLYING NON-NUMERIC TYPES
 
