@@ -18,7 +18,7 @@ is required only when implementing a solution using the pull service protocol if
 not managed, to ensure configurations downloaded by the target node can be decrypted and read by the
 system before they are applied (for example, the pull service available in Windows Server). Nodes
 registered to
-[Azure Automation DSC](https://docs.microsoft.com/azure/automation/automation-dsc-overview) will
+[Azure Automation DSC](/azure/automation/automation-dsc-overview) will
 automatically have certificates installed and managed by the service with no administrative overhead
 required.
 

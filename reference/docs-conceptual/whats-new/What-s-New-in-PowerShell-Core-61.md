@@ -43,9 +43,9 @@ with Windows 10 October 2018 Update and Windows Server 2019**.
 ## Support for Application allow lists
 
 PowerShell Core 6.1 has parity with Windows PowerShell 5.1 supporting
-[AppLocker](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-application-control/applocker/applocker-overview)
+[AppLocker](/windows/security/threat-protection/windows-defender-application-control/applocker/applocker-overview)
 and
-[Device Guard](https://docs.microsoft.com/windows/security/threat-protection/device-guard/introduction-to-device-guard-virtualization-based-security-and-windows-defender-application-control)
+[Device Guard](/windows/security/threat-protection/device-guard/introduction-to-device-guard-virtualization-based-security-and-windows-defender-application-control)
 application allow lists. Application allow lists allow granular control of what binaries are
 allowed to be executed used with PowerShell
 [Constrained Language mode](https://blogs.msdn.microsoft.com/powershell/2017/11/02/powershell-constrained-language-mode/).

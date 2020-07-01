@@ -439,7 +439,7 @@ Accept wildcard characters: False
 
 Specifies a CIM session on the remote computer.
 Enter a variable that contains the CIM session or a command that gets the CIM session, such as a
-[Get-CimSession](https://docs.microsoft.com/powershell/module/cimcmdlets/get-cimsession) command.
+[Get-CimSession](/powershell/module/cimcmdlets/get-cimsession) command.
 
 `Get-Module` uses the CIM session connection to get modules from the remote computer.
 When you import the module by using the `Import-Module` cmdlet and use the commands from the
