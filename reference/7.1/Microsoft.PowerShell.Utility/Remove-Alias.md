@@ -64,7 +64,7 @@ Indicates that the cmdlet removes an alias, including aliases with the **Option*
 **Constant**.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -80,7 +80,7 @@ Accept wildcard characters: False
 Specifies the name of the alias to remove.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -105,7 +105,7 @@ The acceptable values for this parameter are:
   scope and 1 is its parent)
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 

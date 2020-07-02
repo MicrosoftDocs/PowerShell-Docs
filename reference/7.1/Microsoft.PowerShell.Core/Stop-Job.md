@@ -203,7 +203,7 @@ For information about support for this parameter, see the help topic for the job
 This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
-Type: Hashtable
+Type: System.Collections.Hashtable
 Parameter Sets: FilterParameterSet
 Aliases:
 
@@ -225,7 +225,7 @@ You can type one or more IDs, separated by commas.
 To find the ID of a job, type `Get-Job`.
 
 ```yaml
-Type: Int32[]
+Type: System.Int32[]
 Parameter Sets: SessionIdParameterSet
 Aliases:
 
@@ -245,7 +245,7 @@ An instance ID is a GUID that uniquely identifies the job on the computer.
 To find the instance ID of a job, use Get-Job.
 
 ```yaml
-Type: Guid[]
+Type: System.Guid[]
 Parameter Sets: InstanceIdParameterSet
 Aliases:
 
@@ -264,7 +264,7 @@ You can also use a pipeline operator to submit jobs to the **Stop-Job** cmdlet.
 By default, **Stop-Job** deletes all jobs that were started in the current session.
 
 ```yaml
-Type: Job[]
+Type: System.Management.Automation.Job[]
 Parameter Sets: JobParameterSet
 Aliases:
 
@@ -284,7 +284,7 @@ By default, **Stop-Job** stops all jobs created in the current session.
 Because the friendly name is not guaranteed to be unique, use the *WhatIf* and *Confirm* parameters when stopping jobs by name.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: NameParameterSet
 Aliases:
 
@@ -301,7 +301,7 @@ Returns an object representing the item with which you are working.
 By default, this cmdlet does not generate any output.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -332,7 +332,7 @@ The acceptable values for this parameter are:
 For more information about job states, see [JobState Enumeration](https://msdn.microsoft.com/library/system.management.automation.jobstate) in the MSDN library.
 
 ```yaml
-Type: JobState
+Type: System.Management.Automation.JobState
 Parameter Sets: StateParameterSet
 Aliases:
 Accepted values: NotStarted, Running, Completed, Failed, Stopped, Blocked, Suspended, Disconnected, Suspending, Stopping, AtBreakpoint
@@ -349,7 +349,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -366,7 +366,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 

@@ -68,7 +68,7 @@ By default, unencrypted traffic is not enabled.
 It must be enabled in the local configuration.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -83,7 +83,7 @@ Accept wildcard characters: False
 Specifies the time-out, in milliseconds, for the WS-Management operation.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: (All)
 Aliases: OperationTimeoutMSec
 
@@ -111,7 +111,7 @@ Resolve all host names locally.
 The default value is ProxyIEConfig.
 
 ```yaml
-Type: ProxyAccessType
+Type: Microsoft.WSMan.Management.ProxyAccessType
 Parameter Sets: (All)
 Aliases:
 Accepted values: ProxyIEConfig, ProxyWinHttpConfig, ProxyAutoDetect, ProxyNoProxyServer
@@ -138,7 +138,7 @@ Examples are the Kerberos protocol and NTLM.
 The default value is Negotiate.
 
 ```yaml
-Type: ProxyAuthentication
+Type: Microsoft.WSMan.Management.ProxyAuthentication
 Parameter Sets: (All)
 Aliases:
 Accepted values: Negotiate, Basic, Digest
@@ -154,7 +154,7 @@ Accept wildcard characters: False
 Specifies a user account that has permission to gain access through an intermediate Web proxy.
 
 ```yaml
-Type: PSCredential
+Type: System.Management.Automation.PSCredential
 Parameter Sets: (All)
 Aliases:
 
@@ -170,7 +170,7 @@ Specifies that, when it connects over HTTPS, the client does not validate that t
 Use this option only when the remote computer is trusted by another method, for example, if the remote computer is part of a network that is physically secure and isolated or the remote computer is listed as a trusted host in the WS-Management configuration.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -187,7 +187,7 @@ This is used only in remote operations using HTTPS.
 This option should only be used for trusted computers.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -202,7 +202,7 @@ Accept wildcard characters: False
 Indicates that the connection does not validate the revocation status on the server certificate.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -218,7 +218,7 @@ Specifies a port number to append to the connection Service Principal Name (SPN)
 An SPN is used when the authentication mechanism is Kerberos or Negotiate.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: (All)
 Aliases:
 
@@ -234,7 +234,7 @@ Indicates that the connection encodes the request in UTF16 format instead of UTF
 The default is UTF8 encoding.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 

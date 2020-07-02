@@ -102,7 +102,7 @@ If the path includes escape characters, enclose them in single quotation marks.
 Single quotation marks tell PowerShell not to interpret any characters as escape sequences.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: LiteralPathParameterSet
 Aliases: PSPath
 
@@ -120,7 +120,7 @@ Wildcards are permitted.
 The default location is the current directory (.).
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: PathParameterSet
 Aliases:
 

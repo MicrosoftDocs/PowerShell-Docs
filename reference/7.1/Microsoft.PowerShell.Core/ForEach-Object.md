@@ -459,7 +459,7 @@ Specifies an array of arguments to a method call. For more information about the
 This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
-Type: Object[]
+Type: System.Object[]
 Parameter Sets: PropertyAndMethodSet
 Aliases: Args
 
@@ -477,7 +477,7 @@ is only run once for the entire pipeline. For more information about the `begin`
 [about_Functions](about/about_functions.md#piping-objects-to-functions).
 
 ```yaml
-Type: ScriptBlock
+Type: System.Management.Automation.ScriptBlock
 Parameter Sets: ScriptBlockSet
 Aliases:
 
@@ -495,7 +495,7 @@ is only run once for the entire pipeline. For more information about the `end` b
 [about_Functions](about/about_functions.md#piping-objects-to-functions).
 
 ```yaml
-Type: ScriptBlock
+Type: System.Management.Automation.ScriptBlock
 Parameter Sets: ScriptBlockSet
 Aliases:
 
@@ -521,7 +521,7 @@ those objects that have specific values in defined properties, you use `ForEach-
 pipeline, as shown in the examples in this topic.
 
 ```yaml
-Type: PSObject
+Type: System.Management.Automation.PSObject
 Parameter Sets: (All)
 Aliases:
 
@@ -543,7 +543,7 @@ than one member causing the command to fail.
 This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: PropertyAndMethodSet
 Aliases:
 
@@ -567,7 +567,7 @@ mapped to the `begin` block, the last block is mapped to the `end` block, and th
 are all mapped to the `process` block.
 
 ```yaml
-Type: ScriptBlock[]
+Type: System.Management.Automation.ScriptBlock[]
 Parameter Sets: ScriptBlockSet
 Aliases:
 
@@ -585,7 +585,7 @@ Specifies all script blocks that are not taken by the **Process** parameter.
 This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
-Type: ScriptBlock[]
+Type: System.Management.Automation.ScriptBlock[]
 Parameter Sets: ScriptBlockSet
 Aliases:
 
@@ -604,7 +604,7 @@ that describes the operation.
 This parameter was introduced in PowerShell 7.0.
 
 ```yaml
-Type: ScriptBlock
+Type: System.Management.Automation.ScriptBlock
 Parameter Sets: ParallelParameterSet
 Aliases:
 
@@ -623,7 +623,7 @@ the running script block count falls below the **ThrottleLimit**. The default va
 This parameter was introduced in PowerShell 7.0.
 
 ```yaml
-Type: int
+Type: System.Int32
 Parameter Sets: ParallelParameterSet
 Aliases:
 
@@ -646,7 +646,7 @@ parameter.
 This parameter was introduced in PowerShell 7.0.
 
 ```yaml
-Type: int
+Type: System.Int32
 Parameter Sets: ParallelParameterSet
 Aliases:
 

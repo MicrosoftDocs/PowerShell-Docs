@@ -140,7 +140,7 @@ By default, **Stop-Process** prompts for confirmation before stopping any proces
 To find the owner of a process, use the Get-WmiObject cmdlet to get a **Win32_Process** object that represents the process, and then use the **GetOwner** method of the object.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -158,7 +158,7 @@ To specify multiple IDs, use commas to separate the IDs.
 To find the PID of a process, type `Get-Process`.
 
 ```yaml
-Type: Int32[]
+Type: System.Int32[]
 Parameter Sets: Id
 Aliases:
 
@@ -175,7 +175,7 @@ Specifies the process objects to stop.
 Enter a variable that contains the objects, or type a command or expression that gets the objects.
 
 ```yaml
-Type: Process[]
+Type: System.Diagnostics.Process[]
 Parameter Sets: InputObject
 Aliases:
 
@@ -192,7 +192,7 @@ Specifies the process names of the processes to stop.
 You can type multiple process names, separated by commas, or use wildcard characters.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: Name
 Aliases: ProcessName
 
@@ -209,7 +209,7 @@ Returns an object that represents the process.
 By default, this cmdlet does not generate any output.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -225,7 +225,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -242,7 +242,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -254,8 +254,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 

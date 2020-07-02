@@ -73,8 +73,8 @@ input. When you use this parameter, the output of the `Read-Host` cmdlet is a **
 object (**System.Security.SecureString**).
 
 ```yaml
-Type: SwitchParameter
-Parameter Sets: (All)
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: AsSecureString
 Aliases:
 
 Required: False
@@ -92,8 +92,8 @@ This allows you to safely prompt for a password that is returned as plaintext in
 **SecureString**.
 
 ```yaml
-Type: SwitchParameter
-Parameter Sets: (All)
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: AsString
 Aliases:
 
 Required: False
@@ -111,7 +111,7 @@ If the string includes spaces, enclose it in quotation marks.
 PowerShell appends a colon (`:`) to the text that you enter.
 
 ```yaml
-Type: Object
+Type: System.Object
 Parameter Sets: (All)
 Aliases:
 

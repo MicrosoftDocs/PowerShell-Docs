@@ -27,7 +27,7 @@ Write-Error [-Message] <String> [-Category <ErrorCategory>] [-ErrorId <String>] 
 ### WithException
 
 ```
-Write-Error -Exception <Exception> [-Message <String>] [-Category <ErrorCategory>] [-ErrorId <String>]
+Write-Error -Exception <Exception> [[-Message] <String>] [-Category <ErrorCategory>] [-ErrorId <String>]
  [-TargetObject <Object>] [-RecommendedAction <String>] [-CategoryActivity <String>] [-CategoryReason <String>]
  [-CategoryTargetName <String>] [-CategoryTargetType <String>] [<CommonParameters>]
 ```
@@ -151,7 +151,7 @@ for this parameter are:
 For information about the error categories, see [ErrorCategory Enumeration](https://go.microsoft.com/fwlink/?LinkId=143600).
 
 ```yaml
-Type: ErrorCategory
+Type: System.Management.Automation.ErrorCategory
 Parameter Sets: NoException, WithException
 Aliases:
 Accepted values: NotSpecified, OpenError, CloseError, DeviceError, DeadlockDetected, InvalidArgument, InvalidData, InvalidOperation, InvalidResult, InvalidType, MetadataError, NotImplemented, NotInstalled, ObjectNotFound, OperationStopped, OperationTimeout, SyntaxError, ParserError, PermissionDenied, ResourceBusy, ResourceExists, ResourceUnavailable, ReadError, WriteError, FromStdErr, SecurityError, ProtocolError, ConnectionError, AuthenticationError, LimitsExceeded, QuotaExceeded, NotEnabled
@@ -168,7 +168,7 @@ Accept wildcard characters: False
 Specifies the action that caused the error.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases: Activity
 
@@ -184,7 +184,7 @@ Accept wildcard characters: False
 Specifies how or why the activity caused the error.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases: Reason
 
@@ -200,7 +200,7 @@ Accept wildcard characters: False
 Specifies the name of the object that was being processed when the error occurred.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases: TargetName
 
@@ -216,7 +216,7 @@ Accept wildcard characters: False
 Specifies the type of the object that was being processed when the error occurred.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases: TargetType
 
@@ -232,7 +232,7 @@ Accept wildcard characters: False
 Specifies an ID string to identify the error. The string should be unique to the error.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: NoException, WithException
 Aliases:
 
@@ -252,7 +252,7 @@ To create an error record object, use the `New-Object` cmdlet or get an error re
 array in the `$Error` automatic variable.
 
 ```yaml
-Type: ErrorRecord
+Type: System.Management.Automation.ErrorRecord
 Parameter Sets: ErrorRecord
 Aliases:
 
@@ -271,7 +271,7 @@ describe the error.
 To create an exception object, use a hash table or use the `New-Object` cmdlet.
 
 ```yaml
-Type: Exception
+Type: System.Exception
 Parameter Sets: WithException
 Aliases:
 
@@ -288,7 +288,7 @@ Specifies the message text of the error. If the text includes spaces or special 
 it in quotation marks. You can also pipe a message string to `Write-Error`.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: NoException, WithException
 Aliases: Msg
 
@@ -304,7 +304,7 @@ Accept wildcard characters: False
 Specifies the action that the user should take to resolve or prevent the error.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -321,7 +321,7 @@ Specifies the object that was being processed when the error occurred. Enter the
 that contains the object, or a command that gets the object.
 
 ```yaml
-Type: Object
+Type: System.Object
 Parameter Sets: NoException, WithException
 Aliases:
 

@@ -109,7 +109,7 @@ default is the current folder. Wildcard characters are supported, but they must 
 file. You can also pipe a session configuration file path to `Test-PSSessionConfigurationFile`.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 

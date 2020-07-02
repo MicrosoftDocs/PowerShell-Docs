@@ -20,7 +20,7 @@ Creates or changes the value of a property of an item.
 ```
 Set-ItemProperty [-Path] <String[]> [-Name] <String> [-Value] <Object> [-PassThru] [-Force] [-Filter <String>]
  [-Include <String[]>] [-Exclude <String[]>] [-Credential <PSCredential>]
- [-WhatIf] [-Confirm] [<CommonParameters>]
+ [-WhatIf] [-Confirm] [-Type <RegistryValueKind>] [<CommonParameters>]
 ```
 
 ### propertyPSObjectPathSet
@@ -28,7 +28,7 @@ Set-ItemProperty [-Path] <String[]> [-Name] <String> [-Value] <Object> [-PassThr
 ```
 Set-ItemProperty [-Path] <String[]> -InputObject <PSObject> [-PassThru] [-Force] [-Filter <String>]
  [-Include <String[]>] [-Exclude <String[]>] [-Credential <PSCredential>]
- [-WhatIf] [-Confirm] [<CommonParameters>]
+ [-WhatIf] [-Confirm] [-Type <RegistryValueKind>] [<CommonParameters>]
 ```
 
 ### propertyValueLiteralPathSet
@@ -36,7 +36,7 @@ Set-ItemProperty [-Path] <String[]> -InputObject <PSObject> [-PassThru] [-Force]
 ```
 Set-ItemProperty -LiteralPath <String[]> [-Name] <String> [-Value] <Object> [-PassThru] [-Force]
  [-Filter <String>] [-Include <String[]>] [-Exclude <String[]>] [-Credential <PSCredential>]
- [-WhatIf] [-Confirm] [<CommonParameters>]
+ [-WhatIf] [-Confirm] [-Type <RegistryValueKind>] [<CommonParameters>]
 ```
 
 ### propertyPSObjectLiteralPathSet
@@ -44,7 +44,7 @@ Set-ItemProperty -LiteralPath <String[]> [-Name] <String> [-Value] <Object> [-Pa
 ```
 Set-ItemProperty -LiteralPath <String[]> -InputObject <PSObject> [-PassThru] [-Force] [-Filter <String>]
  [-Include <String[]>] [-Exclude <String[]>] [-Credential <PSCredential>]
- [-WhatIf] [-Confirm] [<CommonParameters>]
+ [-WhatIf] [-Confirm] [-Type <RegistryValueKind>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION

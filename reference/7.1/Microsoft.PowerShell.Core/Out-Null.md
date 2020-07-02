@@ -44,7 +44,7 @@ Specifies the object to be sent to NULL (removed from pipeline).
 Enter a variable that contains the objects, or type a command or expression that gets the objects.
 
 ```yaml
-Type: PSObject
+Type: System.Management.Automation.PSObject
 Parameter Sets: (All)
 Aliases:
 

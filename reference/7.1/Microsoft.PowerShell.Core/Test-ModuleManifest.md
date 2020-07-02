@@ -112,7 +112,7 @@ This parameter is required.
 You can also pipe a path to **Test-ModuleManifest**.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 

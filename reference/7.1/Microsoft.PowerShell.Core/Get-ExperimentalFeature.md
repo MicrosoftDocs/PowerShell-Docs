@@ -47,7 +47,7 @@ PSImplicitRemotingBatching   False PSEngine      Batch implicit remoting proxy c
 Name or names of specific experimental features to return.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 

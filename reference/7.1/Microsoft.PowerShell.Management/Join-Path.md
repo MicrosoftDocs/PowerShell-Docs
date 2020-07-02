@@ -140,7 +140,7 @@ This parameter is specified with the `ValueFromRemainingArguments` property whic
 joining an indefinite number of paths.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -158,7 +158,7 @@ Wildcards are permitted.
 The `ChildPath` parameter is required, although the parameter name ("ChildPath") is optional.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -177,7 +177,7 @@ Accept wildcard characters: True
 > use [Invoke-Command](../Microsoft.PowerShell.Core/Invoke-Command.md).
 
 ```yaml
-Type: PSCredential
+Type: System.Management.Automation.PSCredential
 Parameter Sets: (All)
 Aliases:
 
@@ -197,7 +197,7 @@ The value of `Path` determines which provider joins the paths and adds the path 
 The `Path` parameter is required, although the parameter name ("Path") is optional.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases: PSPath
 
@@ -216,7 +216,7 @@ Indicates that this cmdlet should attempt to resolve the joined path from the cu
 - If **no** wildcards are used, the cmdlet will error if the path does not exist.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
