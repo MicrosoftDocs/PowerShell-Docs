@@ -3,7 +3,7 @@ external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 06/04/2020
+ms.date: 06/25/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/invoke-webrequest?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Invoke-WebRequest
@@ -221,7 +221,7 @@ $Form = @{
     birthday   = '1980-10-15'
     hobbies    = 'Hiking','Fishing','Jogging'
 }
-$Result = Invoke-RestMethod -Uri $Uri -Method Post -Form $Form
+$Result = Invoke-WebRequest -Uri $Uri -Method Post -Form $Form
 ```
 
 The profile form requires these fields: `firstName`, `lastName`, `email`, `avatar`, `birthday`, and
@@ -1189,29 +1189,27 @@ Beginning with PowerShell 6.0.0 `Invoke-WebRequest` supports basic parsing only.
 For more information, see
 [BasicHtmlWebResponseObject](/dotnet/api/microsoft.powershell.commands.basichtmlwebresponseobject).
 
-Because of changes in .NET Core 3.1, PowerShell 7.0 and higher supports proxy configuration defined
-by the following environment variables:
+Because of changes in .NET Core 3.1, PowerShell 7.0 and higher use the
+[HttpClient.DefaultProxy](/dotnet/api/system.net.http.httpclient.defaultproxy?view=netcore-3.1)
+Property to determine the proxy configuration.
 
-- `$env:http_proxy` or `$env:HTTP_PROXY`
+The value of this property is determined by your platform:
 
-  Set this variable to the endpoint of an HTTP proxy. For example: `http://127.0.0.1:3001`
+- **For Windows**: Reads proxy configuration from environment variables. If those variables are not
+  defined the property is derived from the user's proxy settings.
+- **For macOS**: Reads proxy configuration from environment variables. If those variables are not
+  defined the property is derived from the system's proxy settings.
+- **For Linux**: Reads proxy configuration from environment variables. If those variables are not
+  defined the property initializes a non-configured instance that bypasses all addresses.
 
-- `$env:https_proxy` or `$env:HTTPS_PROXY`
+The environment variables used for `DefaultProxy` initialization on Windows and Unix-based platforms
+are:
 
-  Set this variable to the endpoint of an HTTPS proxy. For example: `https://127.0.0.1:8001`
-
-- `$env:all_proxy` or `$env:ALL_PROXY`
-
-  Set this variable to the endpoint to be used for any protocol. For example:
-  `socks://127.0.0.1:8081`.
-
-- `$env:no_proxy` or `$env:NO_PROXY`
-
-  Set this variable to a comma-separated list of host names that should not use a proxy when being
-  accessed. For example: `*.test.example.com,.example2.com`.
-
-On Windows machines, PowerShell falls back to the proxy configuration defined in your **Internet
-Settings** control panel when these variables are not defined.
+- ` HTTP_PROXY`: the hostname or IP address of the proxy server used on HTTP requests.
+- `HTTPS_PROXY`: the hostname or IP address of the proxy server used on HTTPS requests.
+- `ALL_PROXY`: the hostname or IP address of the proxy server used on HTTP and HTTPS requests in
+  case `HTTP_PROXY` or `HTTPS_PROXY` are not defined.
+- `NO_PROXY`: a comma-separated list of hostnames that should be excluded from proxying.
 
 ## RELATED LINKS
 
@@ -1220,4 +1218,3 @@ Settings** control panel when these variables are not defined.
 [ConvertFrom-Json](ConvertFrom-Json.md)
 
 [ConvertTo-Json](ConvertTo-Json.md)
-

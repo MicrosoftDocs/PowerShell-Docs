@@ -1,5 +1,5 @@
 ---
-ms.date:  06/12/2017
+ms.date:  06/16/2020
 keywords:  dsc,powershell,configuration,setup
 title:  Writing a custom DSC resource with MOF
 ---
@@ -198,6 +198,9 @@ $BindingData,
 $ApplicationPool
 )
 
+<# Get the current state #>
+$currentState = Get-TargetResource -Ensure $Ensure -Name $Name -PhysicalPath $PhysicalPath -State $State -ApplicationPool $ApplicationPool -BindingInfo $BindingInfo -Protocol $Protocol
+    
 #Write-Verbose "Use this cmdlet to deliver information about command processing."
 
 #Write-Debug "Use this cmdlet to write debug information while troubleshooting."

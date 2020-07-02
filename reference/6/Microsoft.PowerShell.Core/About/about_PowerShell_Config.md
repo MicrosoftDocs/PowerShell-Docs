@@ -97,7 +97,7 @@ the configuration is for all users, sets the AllUser module path.
 
 > [!WARNING]
 > Configuring an AllUsers or CurrentUser module path here
-> will not change the scoped installation location for PowerShellGet modules like [Install-Module](https://docs.microsoft.com/powershell/module/powershellget/install-module).
+> will not change the scoped installation location for PowerShellGet modules like [Install-Module](/powershell/module/powershellget/install-module).
 > These cmdlets always use the *default* module paths.
 
 If no value is set, the default value for the respective module path component

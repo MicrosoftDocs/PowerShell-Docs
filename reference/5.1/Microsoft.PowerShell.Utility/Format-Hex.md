@@ -125,16 +125,16 @@ to their **Int32** types.
 ### -Encoding
 
 Specifies the encoding of the output. This only applies to `[string]` input. The parameter has no
-effect on numeric types. The default value is **ASCII**.
+effect on numeric types. The default value is `ASCII`.
 
 The acceptable values for this parameter are as follows:
 
-- **ASCII** Uses ASCII (7-bit) character set.
-- **BigEndianUnicode** Uses UTF-16 with the big-endian byte order.
-- **Unicode** Uses UTF-16 with the little-endian byte order.
-- **UTF7** Uses UTF-7.
-- **UTF8** Uses UTF-8.
-- **UTF32** Uses UTF-32 with the little-endian byte order.
+- `Ascii` Uses ASCII (7-bit) character set.
+- `BigEndianUnicode` Uses UTF-16 with the big-endian byte order.
+- `Unicode` Uses UTF-16 with the little-endian byte order.
+- `UTF7` Uses UTF-7.
+- `UTF8` Uses UTF-8.
+- `UTF32` Uses UTF-32 with the little-endian byte order.
 
 Non-ASCII characters in the input are output as literal `?` characters resulting in a loss of
 information.

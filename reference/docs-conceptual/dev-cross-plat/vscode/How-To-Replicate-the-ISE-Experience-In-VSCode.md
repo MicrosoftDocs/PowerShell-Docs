@@ -130,7 +130,7 @@ ISE Mode makes the following changes to VS Code settings.
 
 - 4sysops has [a great article][4sysops] on configuring VS Code to be more like the ISE.
 - Mike F Robbins has [a great post][mikefrobbins] on setting up VS Code.
-- Learn PowerShell has [an excellent write up][learnpwsh] setup for PowerShell.
+<!-- - Learn PowerShell has [an excellent write up][learnpwsh] setup for PowerShell. -->
 
 ## VS Code Tips
 

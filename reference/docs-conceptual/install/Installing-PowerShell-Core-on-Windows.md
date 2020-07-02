@@ -73,6 +73,10 @@ For a full list of command-line options for `Msiexec.exe`, see [Command line opt
 
 ## <a id="msix" />Installing the MSIX package
 
+> [!NOTE]
+> The MSIX package is not officially supported at this time. We continue to build the package for
+> internal testing purposes only.
+
 To manually install the MSIX package on a Windows 10 client, download the MSIX package from our
 GitHub [releases][releases] page. Scroll down to the **Assets** section of the Release you want to
 install. The Assets section may be collapsed, so you may need to click to expand it.
@@ -84,10 +88,6 @@ To install the package, you must use the `Add-AppxPackage` cmdlet.
 ```powershell
 Add-AppxPackage PowerShell-<version>-win-<os-arch>.msix
 ```
-
-> [!NOTE]
-> The MSIX package has not been released yet. When released, the package will be available in the
-> Microsoft Store and from the GitHub [releases][releases] page.
 
 ## <a id="zip" />Installing the ZIP package
 
@@ -174,7 +174,7 @@ In both cases, you need the Windows 10 x64 ZIP release package. Run the commands
 1. Use your favorite zip utility to unzip the package to a directory within the mounted Nano Server
    image.
 2. Unmount the image and boot it.
-3. Connect to the inbox instance of Windows PowerShell.
+3. Connect to the built-in instance of Windows PowerShell.
 4. Follow the instructions to create a remoting endpoint using the
    ["another instance technique"](../learn/remoting/wsman-remoting-in-powershell-core.md#executed-by-another-instance-of-powershell-on-behalf-of-the-instance-that-it-will-register).
 
@@ -182,7 +182,7 @@ In both cases, you need the Windows 10 x64 ZIP release package. Run the commands
 
 Deploy PowerShell to Nano Server using the following steps.
 
-- Connect to the inbox instance of Windows PowerShell
+- Connect to the built-in instance of Windows PowerShell
 
   ```powershell
   $session = New-PSSession -ComputerName <Nano Server IP address> -Credential <An Administrator account on the system>
@@ -223,6 +223,25 @@ The dotnet tool installer adds `$env:USERPROFILE\dotnet\tools` to your `$env:PAT
 variable. However, the currently running shell doesn't have the updated `$env:PATH`. You can start
 PowerShell from a new shell by typing `pwsh`.
 
+## Install PowerShell via Winget
+
+The `winget` command line tool enables developers to discover, install, upgrade, remove and configure
+applications on Windows 10 computers. This tool is the client interface to the Windows Package Manager
+service.
+
+> [!NOTE]
+> The `winget` tool is currently a preview. Not all planned functionality is available at this time.
+> The tool's options and features are subject to change. You should not use this method in a production
+> deployment scenario. See the [winget] documentation for a list of system requirements and install
+> instructions.
+
+The following commands can be used to install PowerShell using the published `winget` packages:
+
+```powershell
+winget install Microsoft.Powershell
+winget install Microsoft.Powershell-preview
+```
+
 ## How to create a remoting endpoint
 
 PowerShell supports the PowerShell Remoting Protocol (PSRP) over both WSMan and SSH. For more
@@ -231,9 +250,16 @@ information, see:
 - [SSH Remoting in PowerShell Core][ssh-remoting]
 - [WSMan Remoting in PowerShell Core][wsman-remoting]
 
-<!-- [download-center]: TODO -->
+## Installation support
+
+Microsoft supports the installation methods in this document. There may be other methods of
+installation available from other sources. While those tools and methods may work, Microsoft cannot
+support those methods.
+
+<!-- link references -->
 
 [releases]: https://github.com/PowerShell/PowerShell/releases
 [ssh-remoting]: ../learn/remoting/SSH-Remoting-in-PowerShell-Core.md
 [wsman-remoting]: ../learn/remoting/WSMan-Remoting-in-PowerShell-Core.md
 [AppVeyor]: https://ci.appveyor.com/project/PowerShell/powershell
+[winget]: https://docs.microsoft.com/windows/package-manager/winget

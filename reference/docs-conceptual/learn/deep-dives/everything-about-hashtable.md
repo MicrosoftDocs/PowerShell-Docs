@@ -871,13 +871,14 @@ Accessing a value in the hashtable by its key doesn't always work. For example:
 
 ```powershell
 $key = $ht.keys[0]
-$ht.$key
+$ht.$($key)
+a
 $ht[$key]
 a
 ```
 
-Using the member access (`.`) notation returns nothing. But using the array index (`[]`) notation
-works.
+When the key is an array, you must wrap the `$key` variable in a subexpression so that it can be
+used with member access (`.`) notation. Or, you can use array index (`[]`) notation.
 
 ## Use in automatic variables
 
@@ -1080,7 +1081,7 @@ kind of expected depending on how much you work with PowerShell.
 [@KevinMarquette]: https://twitter.com/KevinMarquette
 [hashtables]: /powershell/module/microsoft.powershell.core/about/about_hash_tables
 [arrays]: /powershell/module/microsoft.powershell.core/about/about_arrays
-[If performance matters, test it]: https://github.com/PoshCode/PowerShellPracticeAndStyle/blob/master/Best%20Practices/Performance.md
+[If performance matters, test it]: https://github.com/PoshCode/PowerShellPracticeAndStyle/blob/master/Best-Practices/Performance.md
 [splatting]: /powershell/module/microsoft.powershell.core/about/about_splatting
 [pscustomobject]: everything-about-pscustomobject.md
 [JavaScriptSerializer]: /dotnet/api/system.web.script.serialization.javascriptserializer?view=netframework-4.8

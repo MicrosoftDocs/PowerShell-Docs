@@ -360,7 +360,7 @@ and [Unblock-File](../../Microsoft.PowerShell.Utility/Unblock-File.md).
 
 ## Execution policy on Windows Server Core and Window Nano Server
 
-When PowerShell 6 is run on Windows Server Core or Windows Nano Server under
+When PowerShell 5.1 is run on Windows Server Core or Windows Nano Server under
 certain conditions, execution policies can fail with the following error:
 
 ```Output
@@ -396,7 +396,7 @@ Zone check which avoids the problem.
 
 [Get-Item](../../Microsoft.PowerShell.Management/Get-Item.md)
 
-[PowerShell.exe Command-Line Help](/powershell/scripting/components/console/powershell.exe-command-line-help)
+[PowerShell.exe Command-Line Help](about_PowerShell_exe.md)
 
 [Set-ExecutionPolicy](../../Microsoft.PowerShell.Security/Set-ExecutionPolicy.md)
 

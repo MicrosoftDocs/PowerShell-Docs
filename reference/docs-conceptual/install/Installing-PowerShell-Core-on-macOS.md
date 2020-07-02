@@ -6,9 +6,8 @@ ms.date: 05/21/2020
 
 # Installing PowerShell on macOS
 
-PowerShell supports macOS 10.12 and higher.
-All packages are available on our GitHub [releases][] page.
-After the package is installed, run `pwsh` from a terminal.
+PowerShell supports macOS 10.12 and higher. All packages are available on our GitHub [releases][]
+page. After the package is installed, run `pwsh` from a terminal.
 
 > [!NOTE]
 > PowerShell 7 is an in-place upgrade that removes PowerShell Core 6.x.
@@ -41,8 +40,7 @@ Finally, verify that your install is working properly:
 pwsh
 ```
 
-When new versions of PowerShell are released,
-update Homebrew's formulae and upgrade PowerShell:
+When new versions of PowerShell are released, update Homebrew's formulae and upgrade PowerShell:
 
 ```sh
 brew update
@@ -60,8 +58,8 @@ brew cask upgrade powershell
 
 See [About Brew](#about-brew) for information about Brew.
 
-After you've installed Homebrew, you can install PowerShell.
-First, install the [Cask-Versions][cask-versions] package that lets you install alternative versions of cask packages:
+After you've installed Homebrew, you can install PowerShell. First, install the [Cask-Versions][cask-versions]
+package that lets you install alternative versions of cask packages:
 
 ```sh
 brew tap homebrew/cask-versions
@@ -79,8 +77,7 @@ Finally, verify that your install is working properly:
 pwsh-preview
 ```
 
-When new versions of PowerShell are released,
-update Homebrew's formulae and upgrade PowerShell:
+When new versions of PowerShell are released, update Homebrew's formulae and upgrade PowerShell:
 
 ```sh
 brew update
@@ -92,14 +89,38 @@ brew cask upgrade powershell-preview
 > but then the PowerShell shell must be exited and restarted to complete the upgrade.
 > and refresh the values shown in `$PSVersionTable`.
 
+Installing PowerShell using the Homebrew tap method is also supported for stable and LTS versions.
+
+```sh
+brew install powershell/tap/powershell
+```
+
+You can now verify your install
+
+```sh
+pwsh
+```
+
+When new versions of PowerShell are released, simply run the following command.
+
+```sh
+brew upgrade powershell
+```
+
+> [!NOTE]
+> Whether you use the cask or the tap method, when updating to a newer version of PowerShell, use
+> the same method you used to initially install PowerShell. If you use a different method, opening a
+> new pwsh session will continue to use the older version of PowerShell.
+>
+> If you do decide to use different methods, there are ways to correct the issue using the
+> [Homebrew link method](https://docs.brew.sh/Manpage#link-ln-options-formula).
+
 ## Installation via Direct Download
 
-Download the PKG package
-`powershell-lts-7.0.1-osx-x64.pkg`
-from the [releases][] page onto your macOS machine.
+Download the PKG package `powershell-lts-7.0.1-osx-x64.pkg` from the [releases][] page onto your
+macOS machine.
 
-You can double-click the file and follow the prompts,
-or install it from the terminal:
+You can double-click the file and follow the prompts, or install it from the terminal:
 
 ```sh
 sudo installer -pkg powershell-lts-7.0.1-osx-x64.pkg -target /
@@ -196,27 +217,34 @@ and remove the paths using `sudo rm`.
 
 ## Paths
 
-* `$PSHOME` is `/usr/local/microsoft/powershell/7.0.1/`
-* User profiles will be read from `~/.config/powershell/profile.ps1`
-* Default profiles will be read from `$PSHOME/profile.ps1`
-* User modules will be read from `~/.local/share/powershell/Modules`
-* Shared modules will be read from `/usr/local/share/powershell/Modules`
-* Default modules will be read from `$PSHOME/Modules`
-* PSReadline history will be recorded to `~/.local/share/powershell/PSReadLine/ConsoleHost_history.txt`
+- `$PSHOME` is `/usr/local/microsoft/powershell/7.0.1/`
+- User profiles will be read from `~/.config/powershell/profile.ps1`
+- Default profiles will be read from `$PSHOME/profile.ps1`
+- User modules will be read from `~/.local/share/powershell/Modules`
+- Shared modules will be read from `/usr/local/share/powershell/Modules`
+- Default modules will be read from `$PSHOME/Modules`
+- PSReadline history will be recorded to `~/.local/share/powershell/PSReadLine/ConsoleHost_history.txt`
 
-The profiles respect PowerShell's per-host configuration.
-So the default host-specific profile exists at `Microsoft.PowerShell_profile.ps1` in the same locations.
+The profiles respect PowerShell's per-host configuration. So the default host-specific profile
+exists at `Microsoft.PowerShell_profile.ps1` in the same locations.
 
 PowerShell respects the [XDG Base Directory Specification][xdg-bds] on macOS.
 
-Because macOS is a derivation of BSD, the prefix `/usr/local` is used instead of `/opt`.
-So, `$PSHOME` is `/usr/local/microsoft/powershell/7.0.1/`, and the symbolic link is placed at `/usr/local/bin/pwsh`.
+Because macOS is a derivation of BSD, the prefix `/usr/local` is used instead of `/opt`. So,
+`$PSHOME` is `/usr/local/microsoft/powershell/7.0.1/`, and the symbolic link is placed at
+`/usr/local/bin/pwsh`.
+
+## Installation support
+
+Microsoft supports the installation methods in this document. There may be other methods of
+installation available from other sources. While those tools and methods may work, Microsoft cannot
+support those methods.
 
 ## Additional Resources
 
-* [Homebrew Web][brew]
-* [Homebrew Github Repository][GitHub]
-* [Homebrew-Cask][cask]
+- [Homebrew Web][brew]
+- [Homebrew Github Repository][GitHub]
+- [Homebrew-Cask][cask]
 
 [brew]: http://brew.sh/
 [Cask]: https://github.com/Homebrew/homebrew-cask

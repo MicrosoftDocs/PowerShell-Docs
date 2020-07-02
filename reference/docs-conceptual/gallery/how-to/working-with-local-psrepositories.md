@@ -120,17 +120,17 @@ Examples:
 
 ```powershell
 # Publish to a NuGet Server repository using my NuGetAPI key
-Publish-Module -Path 'c:\projects\MyModule' -Repository LocalPsRepo -NuGetApiKey 'oy2bi4avlkjolp6bme6azdyssn6ps3iu7ib2qpiudrtbji'
+Publish-Module -Path 'c:\projects\MyModule' -Repository LocalPsRepo -NuGetApiKey $nuGetApiKey
 ```
+
+> [!IMPORTANT]
+> To ensure security, API keys should not be hard-coded in scripts. Use a secure key management
+> system. When executing a command manually, API keys should not be passed as plain-text to avoid it being logged, the `Read-Host` cmdlet can be used to safely pass the value of the API key.
 
 ```powershell
 # Publish to a file share repo - the NuGet API key must be a non-blank string
 Publish-Module -Path 'c:\projects\MyModule' -Repository LocalPsRepo -NuGetApiKey 'AnyStringWillDo'
 ```
-
-> [!IMPORTANT]
-> To ensure security, API keys should not be hard-coded in scripts. Use a secure key management
-> system.
 
 ### Publishing a module from the PSGallery
 
@@ -203,8 +203,14 @@ After running these commands, you are ready to publish PowerShellGet to your loc
 
 ```powershell
 # Publish to a NuGet Server repository using my NuGetAPI key
-Publish-Module -Path 'F:\OfflinePowershellGet' -Repository LocalPsRepo -NuGetApiKey 'oy2bi4avlkjolp6bme6azdyssn6ps3iu7ib2qpiudrtbji'
+Publish-Module -Path 'F:\OfflinePowershellGet' -Repository LocalPsRepo -NuGetApiKey $nuGetApiKey
+```
 
+> [!IMPORTANT]
+> To ensure security, API keys should not be hard-coded in scripts. Use a secure key management
+> system. When executing a command manually, API keys should not be passed as plain-text to avoid it being logged, the `Read-Host` cmdlet can be used to safely pass the value of the API key.
+
+```powershell
 # Publish to a file share repo - the NuGet API key must be a non-blank string
 Publish-Module -Path 'F:\OfflinePowerShellGet' -Repository LocalPsRepo -NuGetApiKey 'AnyStringWillDo'
 ```
@@ -212,11 +218,7 @@ Publish-Module -Path 'F:\OfflinePowerShellGet' -Repository LocalPsRepo -NuGetApi
 ## Use Packaging solutions to host PowerShellGet repositories
 
 You can also use packaging solutions like Azure Artifacts to host a private or public PowerShellGet
-repository. For more information and instructions, see the [Azure Artifacts documentation](https://docs.microsoft.com/azure/devops/artifacts/tutorials/private-powershell-library).
-
-> [!IMPORTANT]
-> To ensure security, API keys should not be hard-coded in scripts. Use a secure key management
-> system.
+repository. For more information and instructions, see the [Azure Artifacts documentation](/azure/devops/artifacts/tutorials/private-powershell-library).
 
 <!-- external links -->
 [OfflinePowerShellGetDeploy]: https://www.powershellgallery.com/packages/OfflinePowerShellGetDeploy/0.1.1

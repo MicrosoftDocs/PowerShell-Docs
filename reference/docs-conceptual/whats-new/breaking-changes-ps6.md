@@ -36,7 +36,7 @@ If there is a need to use checkpoints to resume a script after the OS restarts, 
 using Task Scheduler to run a script on OS startup, but the script would need to maintain
 its own state (like persisting it to a file).
 
-[workflow]: /powershell/scripting/components/workflows-guide
+[workflow]: /previous-versions/powershell/scripting/components/workflows-guide
 [workflow-foundation]: https://docs.microsoft.com/dotnet/framework/windows-workflow-foundation/
 
 ### Custom snap-ins

@@ -218,7 +218,7 @@ $Form = @{
     birthday   = '1980-10-15'
     hobbies    = 'Hiking','Fishing','Jogging'
 }
-$Result = Invoke-RestMethod -Uri $Uri -Method Post -Form $Form
+$Result = Invoke-WebRequest -Uri $Uri -Method Post -Form $Form
 ```
 
 The profile form requires these fields: `firstName`, `lastName`, `email`, `avatar`, `birthday`, and

@@ -1,7 +1,7 @@
 ---
 keywords: powershell,cmdlet
 Locale: en-US
-ms.date: 05/06/2020
+ms.date: 06/24/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_functions_advanced_parameters?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Functions_Advanced_Parameters
@@ -418,6 +418,11 @@ argument has no effect on optional parameters.
 The following example declares a mandatory **ComputerName** parameter and a
 help message that explains the expected parameter value.
 
+If there is no other [comment-based help](./about_comment_based_help.md) syntax
+for the function (for example, `.SYNOPSIS`) then this message also shows up in
+`Get-Help` output.
+
+
 ```powershell
 Param(
     [Parameter(Mandatory=$true,
@@ -634,6 +639,11 @@ than or equal to the current date and time.
 ```powershell
 [DateTime][ValidateScript({$_ -ge (Get-Date)})]$date = (Get-Date)
 ```
+
+> [!NOTE]
+> If you use **ValidateScript**, you cannot pass a `$null` value to the
+> parameter. When you pass a null value **ValidateScript** can't validate the
+> argument.
 
 ### ValidateSet attribute
 
@@ -1016,4 +1026,3 @@ function Test-ArgumentCompleter {
 [about_Functions_CmdletBindingAttribute](about_Functions_CmdletBindingAttribute.md)
 
 [about_Functions_OutputTypeAttribute](about_Functions_OutputTypeAttribute.md)
-

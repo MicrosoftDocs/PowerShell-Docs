@@ -40,13 +40,13 @@ scripts that use these APIs can rely on them being available.
 The Windows Compatibility Pack enables PowerShell Core to use **more than 1900 cmdlets that ship
 with Windows 10 October 2018 Update and Windows Server 2019**.
 
-## Support for Application Whitelisting
+## Support for Application allow lists
 
 PowerShell Core 6.1 has parity with Windows PowerShell 5.1 supporting
-[AppLocker](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-application-control/applocker/applocker-overview)
+[AppLocker](/windows/security/threat-protection/windows-defender-application-control/applocker/applocker-overview)
 and
-[Device Guard](https://docs.microsoft.com/windows/security/threat-protection/device-guard/introduction-to-device-guard-virtualization-based-security-and-windows-defender-application-control)
-application whitelisting. Application whitelisting allows granular control of what binaries are
+[Device Guard](/windows/security/threat-protection/device-guard/introduction-to-device-guard-virtualization-based-security-and-windows-defender-application-control)
+application allow lists. Application allow lists allow granular control of what binaries are
 allowed to be executed used with PowerShell
 [Constrained Language mode](https://blogs.msdn.microsoft.com/powershell/2017/11/02/powershell-constrained-language-mode/).
 
@@ -102,9 +102,9 @@ Measure-Command {Get-Content .\foo.json | ConvertFrom-Json}
 | Time (sec)   | 0.259                  | 0.577               | 0.125                  |
 | Speed-up (%) | N/A                    | -122.8%             | 78.3% (51.7% from WPS) |
 
-## Check `system32` for compatible in-box modules on Windows
+## Check `system32` for compatible built-in modules on Windows
 
-In the Windows 10 1809 update and Windows Server 2019, we updated a number of in-box PowerShell
+In the Windows 10 1809 update and Windows Server 2019, we updated a number of built-in PowerShell
 modules to mark them as compatible with PowerShell Core.
 
 When PowerShell Core 6.1 starts up, it will automatically include `$windir\System32` as part of the
@@ -230,7 +230,7 @@ and [`Invoke-RestMethod`](/powershell/module/microsoft.powershell.utility/invoke
 PowerShell and Hyper-V that allows you to connect to a Hyper-V VM or Container without network
 connectivity or other remote management services.
 
-In the past, PowerShell Direct connected using the inbox Windows PowerShell instance on the
+In the past, PowerShell Direct connected using the built-in Windows PowerShell instance on the
 Container. Now, PowerShell Direct first attempts to connect using any available `pwsh.exe` on the
 `PATH` environment variable. If `pwsh.exe` isn't available, PowerShell Direct falls back to use
 `powershell.exe`.

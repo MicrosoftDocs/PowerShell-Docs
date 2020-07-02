@@ -189,20 +189,20 @@ Accept wildcard characters: False
 
 ### -Encoding
 
-Specifies the type of encoding for the target file. The default value is **UTF8NoBOM**.
+Specifies the type of encoding for the target file. The default value is `utf8NoBOM`.
 
 The acceptable values for this parameter are as follows:
 
-- **ASCII**: Uses the encoding for the ASCII (7-bit) character set.
-- **BigEndianUnicode**: Encodes in UTF-16 format using the big-endian byte order.
-- **BigEndianUTF32**: Encodes in UTF-32 format using the big-endian byte order.
-- **OEM**: Uses the default encoding for MS-DOS and console programs.
-- **Unicode**: Encodes in UTF-16 format using the little-endian byte order.
-- **UTF7**: Encodes in UTF-7 format.
-- **UTF8**: Encodes in UTF-8 format.
-- **UTF8BOM**: Encodes in UTF-8 format with Byte Order Mark (BOM)
-- **UTF8NoBOM**: Encodes in UTF-8 format without Byte Order Mark (BOM)
-- **UTF32**: Encodes in UTF-32 format.
+- `ascii`: Uses the encoding for the ASCII (7-bit) character set.
+- `bigendianunicode`: Encodes in UTF-16 format using the big-endian byte order.
+- `bigendianutf32`: Encodes in UTF-32 format using the big-endian byte order.
+- `oem`: Uses the default encoding for MS-DOS and console programs.
+- `unicode`: Encodes in UTF-16 format using the little-endian byte order.
+- `utf7`: Encodes in UTF-7 format.
+- `utf8`: Encodes in UTF-8 format.
+- `utf8BOM`: Encodes in UTF-8 format with Byte Order Mark (BOM)
+- `utf8NoBOM`: Encodes in UTF-8 format without Byte Order Mark (BOM)
+- `utf32`: Encodes in UTF-32 format.
 
 Beginning with PowerShell 6.2, the **Encoding** parameter also allows numeric IDs of registered code
 pages (like `-Encoding 1251`) or string names of registered code pages (like

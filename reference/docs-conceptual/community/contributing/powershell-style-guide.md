@@ -282,7 +282,7 @@ For example:
 - `[about_Splatting](about_Splatting.md#splatting-with-arrays)`
 - `[custom key bindings](https://code.visualstudio.com/docs/getstarted/keybindings#_custom-keybindings-for-refactorings)`
 
-For more information, see [Use links in documentation](https://docs.microsoft.com/contribute/how-to-write-links).
+For more information, see [Use links in documentation](/contribute/how-to-write-links).
 
 ## Formatting command syntax elements
 

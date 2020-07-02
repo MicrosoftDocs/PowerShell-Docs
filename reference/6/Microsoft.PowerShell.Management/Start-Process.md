@@ -3,7 +3,7 @@ external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 04/24/2020
+ms.date: 06/18/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/start-process?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Start-Process
@@ -389,8 +389,9 @@ Accept wildcard characters: False
 
 ### -WorkingDirectory
 
-Specifies the location of the executable file or document that runs in the process. The default is
-the folder for the new process.
+Specifies the location that the new process should start in. The default is the location of the
+executable file or document being started. Wildcards are not supported. The path name must not
+contain characters that would be interpreted as wildcards.
 
 ```yaml
 Type: String

@@ -187,8 +187,8 @@ to match your text at a specific position while also discarding unwanted
 characters.
 
 ```powershell
-# The pattern expects the 'h' to be followed by the end of the word.
-# This will return FALSE.
+# The pattern expects the string 'fish' to be the only thing on the line.
+# This returns FALSE.
 'fishing' -match '^fish$'
 ```
 
