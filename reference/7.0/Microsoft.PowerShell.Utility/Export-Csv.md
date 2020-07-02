@@ -31,7 +31,7 @@ Export-Csv -InputObject <PSObject> [[-Path] <String>] [-LiteralPath <String>] [-
 ```
 Export-Csv -InputObject <PSObject> [[-Path] <String>] [-LiteralPath <String>] [-Force] [-NoClobber]
  [-Encoding <Encoding>] [-Append] [-UseCulture] [-IncludeTypeInformation] [-NoTypeInformation]
- [-QuoteFields <String[]>] [-UseQuotes <QuoteKind>] [-WhatIf] [-Confirm]  [<CommonParameters>]
+ [-QuoteFields <String[]>] [-UseQuotes <QuoteKind>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -389,7 +389,7 @@ this parameter, `Export-CSV` replaces the file contents without warning.
 This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -406,7 +406,7 @@ Specifies a delimiter to separate the property values. The default is a comma (`
 character, such as a colon (`:`). To specify a semicolon (`;`), enclose it in quotation marks.
 
 ```yaml
-Type: Char
+Type: System.Char
 Parameter Sets: Delimiter
 Aliases:
 
@@ -439,7 +439,7 @@ pages (like `-Encoding 1251`) or string names of registered code pages (like
 [Encoding.CodePage](/dotnet/api/system.text.encoding.codepage?view=netcore-2.2).
 
 ```yaml
-Type: Encoding
+Type: System.Text.Encoding
 Parameter Sets: (All)
 Aliases:
 Accepted values: ASCII, BigEndianUnicode, OEM, Unicode, UTF7, UTF8, UTF8BOM, UTF8NoBOM, UTF32
@@ -460,7 +460,7 @@ can be written to a CSV file. Only the properties that match are written to the 
 mismatched properties are discarded.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -479,7 +479,7 @@ fully qualified name of the object type. For example, **#TYPE System.Diagnostics
 This parameter was introduced in PowerShell 6.0.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: ITI
 
@@ -496,7 +496,7 @@ Specifies the objects to export as CSV strings. Enter a variable that contains t
 a command or expression that gets the objects. You can also pipe objects to `Export-CSV`.
 
 ```yaml
-Type: PSObject
+Type: System.Management.Automation.PSObject
 Parameter Sets: (All)
 Aliases:
 
@@ -515,7 +515,7 @@ includes escape characters, use single quotation marks. Single quotation marks t
 PowerShell not to interpret any characters as escape sequences.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases: PSPath, LP
 
@@ -532,7 +532,7 @@ Use this parameter so that `Export-CSV` does not overwrite an existing file. By 
 file exists in the specified path, `Export-CSV` overwrites the file without warning.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: NoOverwrite
 
@@ -549,7 +549,7 @@ Removes the **#TYPE** information header from the output. This parameter became 
 PowerShell 6.0 and is included for backwards compatibility.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: NTI
 
@@ -565,7 +565,7 @@ Accept wildcard characters: False
 A required parameter that specifies the location to save the CSV output file.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -582,7 +582,7 @@ Uses the list separator for the current culture as the item delimiter. To find t
 for a culture, use the following command: `(Get-Culture).TextInfo.ListSeparator`.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: UseCulture
 Aliases:
 
@@ -598,7 +598,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -615,7 +615,7 @@ Prevents the cmdlet from being processed or making changes. The output shows wha
 the cmdlet were run.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -632,7 +632,7 @@ Specifies the names of the columns that should be quoted. When this parameter is
 specified columns are quoted.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases: QF
 
@@ -652,7 +652,7 @@ Specifies when quotes are used in the CSV files. Possible values are:
 - AsNeeded - only quote fields that contain a delimiter character
 
 ```yaml
-Type: QuoteKind
+Type: Microsoft.PowerShell.Commands.BaseCsvWritingCommand+QuoteKind
 Parameter Sets: (All)
 Aliases: UQ
 

@@ -92,7 +92,7 @@ Specifies the ID number of a running job.
 To get the ID number of a job, run the Get-Job cmdlet.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: JobIdParameterSet
 Aliases:
 
@@ -110,7 +110,7 @@ To get the *InstanceId* of a job, run the **Get-Job** cmdlet, piping the results
 `Get-Job | Format-List -Property Id,Name,InstanceId,State`
 
 ```yaml
-Type: Guid
+Type: System.Guid
 Parameter Sets: JobInstanceIdParameterSet
 Aliases:
 
@@ -126,7 +126,7 @@ Specifies a running job object.
 The simplest way to use this parameter is to save the results of a **Get-Job** command that returns the running job that you want to debug in a variable, and then specify the variable as the value of this parameter.
 
 ```yaml
-Type: Job
+Type: System.Management.Automation.Job
 Parameter Sets: JobParameterSet
 Aliases:
 
@@ -142,7 +142,7 @@ Specifies a job by the friendly name of the job.
 When you start a job, you can specify a job name by adding the *JobName* parameter, in cmdlets such as Invoke-Command and Start-Job.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: JobNameParameterSet
 Aliases:
 
@@ -157,7 +157,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -173,7 +173,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 

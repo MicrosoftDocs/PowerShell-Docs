@@ -110,7 +110,7 @@ the **Id** parameter. Because there's a breakpoint in the script, the debugger o
 Specifies the ID number of a runspace. You can run `Get-Runspace` to show runspace IDs.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: IdParameterSet
 Aliases:
 
@@ -126,7 +126,7 @@ Accept wildcard characters: False
 Specifies a runspace by its instance ID, a GUID that you can show by running `Get-Runspace`.
 
 ```yaml
-Type: Guid
+Type: System.Guid
 Parameter Sets: InstanceIdParameterSet
 Aliases:
 
@@ -142,7 +142,7 @@ Accept wildcard characters: False
 Specifies a runspace by its name. You can run `Get-Runspace` to show the names of runspaces.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: NameParameterSet
 Aliases:
 
@@ -159,7 +159,7 @@ Specifies a runspace object. The simplest way to provide a value for this parame
 variable that contains the results of a filtered `Get-Runspace` command.
 
 ```yaml
-Type: Runspace
+Type: System.Management.Automation.Runspaces.Runspace
 Parameter Sets: RunspaceParameterSet
 Aliases:
 
@@ -175,7 +175,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -191,7 +191,7 @@ Accept wildcard characters: False
 Shows what would happen if the cmdlet runs. The cmdlet is not run.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 

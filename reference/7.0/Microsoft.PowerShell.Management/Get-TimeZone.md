@@ -84,7 +84,7 @@ This command gets all available time zones.
 Specifies, as a string array, the ID or IDs of the time zones that this cmdlet gets.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: Id
 Aliases:
 
@@ -100,7 +100,7 @@ Accept wildcard characters: False
 Indicates that this cmdlet gets all available time zones.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: ListAvailable
 Aliases:
 
@@ -116,7 +116,7 @@ Accept wildcard characters: False
 Specifies, as a string array, the name or names of the time zones that this cmdlet gets.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: Name
 Aliases:
 

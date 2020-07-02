@@ -332,7 +332,7 @@ the following keys:
 For example: `@{Name='hlp';Value='Get-Help';Description='Gets help';Options='ReadOnly'}`
 
 ```yaml
-Type: IDictionary[]
+Type: System.Collections.IDictionary[]
 Parameter Sets: (All)
 Aliases:
 
@@ -348,7 +348,7 @@ Accept wildcard characters: False
 Specifies the assemblies to load into the sessions that use the session configuration.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -366,7 +366,7 @@ current user. The value of this parameter is visible in the session configuratio
 not a property of the session configuration object.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -384,7 +384,7 @@ value is **Unknown**. The value of this parameter is visible in the session conf
 it is not a property of the session configuration object.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -404,7 +404,7 @@ If you omit this parameter, `New-PSSessionConfigurationFile` generates a copyrig
 using the value of the **Author** parameter.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -422,7 +422,7 @@ this parameter is visible in the session configuration file, but it is not a pro
 configuration object.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -441,7 +441,7 @@ variable names and the values are the environment variable values.
 For example: `EnvironmentVariables=@{TestShare='\\Server01\TestShare'}`
 
 ```yaml
-Type: IDictionary
+Type: System.Collections.IDictionary
 Parameter Sets: (All)
 Aliases:
 
@@ -460,7 +460,7 @@ parameter, the value of the **ExecutionPolicy** key in the session configuration
 [about_Execution_Policies](about/about_Execution_Policies.md).
 
 ```yaml
-Type: ExecutionPolicy
+Type: Microsoft.PowerShell.ExecutionPolicy
 Parameter Sets: (All)
 Aliases:
 Accepted values: Unrestricted, RemoteSigned, AllSigned, Restricted, Default, Bypass, Undefined
@@ -478,7 +478,7 @@ Specifies the formatting files (.ps1xml) that run in sessions that use the sessi
 The value of this parameter must be a full or absolute path of the formatting files.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -495,7 +495,7 @@ Indicates that this operation includes all possible configuration properties in 
 configuration file.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -520,7 +520,7 @@ For example:
 `@{Name='Get-PowerShellProcess';ScriptBlock={Get-Process PowerShell};Options='AllScope'}`
 
 ```yaml
-Type: IDictionary[]
+Type: System.Collections.IDictionary[]
 Parameter Sets: (All)
 Aliases:
 
@@ -539,7 +539,7 @@ permission to request the gMSA password in order for sessions to be created succ
 cannot be used with the **RunAsVirtualAccount** parameter.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -557,7 +557,7 @@ Specifies a unique identifier for the session configuration file. If you omit th
 type `New-Guid`.
 
 ```yaml
-Type: Guid
+Type: System.Guid
 Parameter Sets: (All)
 Aliases:
 
@@ -595,7 +595,7 @@ parameter.
 - Default - FullLanguage
 
 ```yaml
-Type: PSLanguageMode
+Type: System.Management.Automation.PSLanguageMode
 Parameter Sets: (All)
 Aliases:
 Accepted values: FullLanguage, RestrictedLanguage, NoLanguage, ConstrainedLanguage
@@ -630,7 +630,7 @@ The value of the **ModulesToImport** parameter of the `Register-PSSessionConfigu
 precedence over the value of the **ModulesToImport** key in the session configuration file.
 
 ```yaml
-Type: Object[]
+Type: System.Object[]
 Parameter Sets: (All)
 Aliases:
 
@@ -654,7 +654,7 @@ default, users can only store up to 50MB of data in the user drive. This can be 
 **UserDriveMaximumSize** parameter.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -671,7 +671,7 @@ Specifies the path and filename of the session configuration file. The file must
 name extension.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -692,7 +692,7 @@ The value of the **PSVersion** parameter of the `Register-PSSessionConfiguration
 precedence over the value of the **PowerShellVersion** key in the session configuration file.
 
 ```yaml
-Type: Version
+Type: System.Version
 Parameter Sets: (All)
 Aliases:
 
@@ -717,7 +717,7 @@ Example requiring users to belong to group A, or both groups B and C, to access 
 `@{ Or = 'GroupA', @{ And = 'GroupB', 'GroupC' } }`
 
 ```yaml
-Type: IDictionary
+Type: System.Collections.IDictionary
 Parameter Sets: (All)
 Aliases:
 
@@ -741,7 +741,7 @@ For example:
 `@{'Contoso\Level 2 Helpdesk Users' = @{ RoleCapabilities = 'Maintenance', 'ADHelpDesk' }}`
 
 ```yaml
-Type: IDictionary
+Type: System.Collections.IDictionary
 Parameter Sets: (All)
 Aliases:
 
@@ -758,7 +758,7 @@ Configures sessions using this session configuration to be run as the computer's
 administrator account. This field cannot be used with the **GroupManagedServiceAccount** parameter.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -776,7 +776,7 @@ session configuration is run as a virtual account. If omitted, the virtual accou
 Admins on domain controllers and Administrators on all other computers.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -792,7 +792,7 @@ Accept wildcard characters: False
 Specifies the version of the session configuration file schema. The default value is "1.0.0.0".
 
 ```yaml
-Type: Version
+Type: System.Version
 Parameter Sets: (All)
 Aliases:
 
@@ -810,7 +810,7 @@ names of the scripts. The value of this parameter must be a full or absolute pat
 names.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -839,7 +839,7 @@ is Default. The acceptable values for this parameter are:
   session.
 
 ```yaml
-Type: SessionType
+Type: System.Management.Automation.Remoting.SessionType
 Parameter Sets: (All)
 Aliases:
 Accepted values: Empty, RestrictedRemoteServer, Default
@@ -856,7 +856,7 @@ Accept wildcard characters: False
 Specifies the directory to place session transcripts for sessions using this session configuration.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -873,7 +873,7 @@ Adds the specified `.ps1xml` type files to sessions that use the session configu
 type filenames. The value of this parameter must be a full or absolute path to type filenames.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -892,7 +892,7 @@ When omitted, the default size of each `User:` drive root is 50MB.
 This parameter should be used with **MountUserDrive**.
 
 ```yaml
-Type: Int64
+Type: System.Int64
 Parameter Sets: (All)
 Aliases:
 
@@ -916,7 +916,7 @@ the following keys:
 For example: `@{Name='WarningPreference';Value='SilentlyContinue';Options='AllScope'}`
 
 ```yaml
-Type: Object
+Type: System.Object
 Parameter Sets: (All)
 Aliases:
 
@@ -940,7 +940,7 @@ When any **Visible** parameter is included in the session configuration file, Po
 removes the `Import-Module` cmdlet and its ipmo alias from the session.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -965,7 +965,7 @@ When any **Visible** parameter is included in the session configuration file, Po
 removes the `Import-Module` cmdlet and its ipmo alias from the session.
 
 ```yaml
-Type: Object[]
+Type: System.Object[]
 Parameter Sets: (All)
 Aliases:
 
@@ -987,7 +987,7 @@ When any **Visible** parameter is included in the session configuration file, Po
 removes the `Import-Module` cmdlet and its ipmo alias from the session.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -1012,7 +1012,7 @@ When any **Visible** parameter is included in the session configuration file, Po
 removes the `Import-Module` cmdlet and its ipmo alias from the session.
 
 ```yaml
-Type: Object[]
+Type: System.Object[]
 Parameter Sets: (All)
 Aliases:
 
@@ -1036,7 +1036,7 @@ When any **Visible** parameter is included in the session configuration file, Po
 removes the `Import-Module` cmdlet and its `ipmo` alias from the session.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 

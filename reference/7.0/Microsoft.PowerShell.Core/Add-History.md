@@ -128,7 +128,7 @@ You can use this parameter to submit a **HistoryInfo** object, such as the ones 
 the `Get-History`, `Import-Clixml`, or `Import-Csv` cmdlets, to `Add-History`.
 
 ```yaml
-Type: PSObject[]
+Type: System.Management.Automation.PSObject[]
 Parameter Sets: (All)
 Aliases:
 
@@ -145,7 +145,7 @@ Indicates that this cmdlet returns a **HistoryInfo** object for each history ent
 cmdlet does not generate any output.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 

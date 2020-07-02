@@ -169,7 +169,7 @@ command hides or replaces the original commands. For more information, see
 [about_Command_Precedence](../Microsoft.PowerShell.Core/About/about_Command_Precedence.md).
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -189,7 +189,7 @@ For example, to export the variant of the `Get-Item` command in the certificate 
 the PSSession in `$S`, type `Export-PSSession -Session $S -Command Get-Item -ArgumentList cert:`.
 
 ```yaml
-Type: Object[]
+Type: System.Object[]
 Parameter Sets: (All)
 Aliases: Args
 
@@ -211,7 +211,7 @@ Certificate (Cert:) drive. If the certificate is not valid or does not have suff
 the command fails.
 
 ```yaml
-Type: X509Certificate2
+Type: System.Security.Cryptography.X509Certificates.X509Certificate2
 Parameter Sets: (All)
 Aliases:
 
@@ -237,7 +237,7 @@ unless you use the **FormatTypeName** parameter. Similarly, if you use the **For
 parameter, no commands are exported unless you use the **CommandName** parameter.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases: Name
 
@@ -268,7 +268,7 @@ The acceptable values for this parameter are as follows:
 - Workflow. A PowerShell workflow. For more information, see [about_Workflows](/powershell/module/psworkflow/about/about_workflows?view=powershell-5.1).
 
 ```yaml
-Type: CommandTypes
+Type: System.Management.Automation.CommandTypes
 Parameter Sets: (All)
 Aliases: Type
 Accepted values: Alias, All, Application, Cmdlet, Configuration, ExternalScript, Filter, Function, Script, Workflow
@@ -303,7 +303,7 @@ pages (like `-Encoding 1251`) or string names of registered code pages (like
 [Encoding.CodePage](/dotnet/api/system.text.encoding.codepage?view=netcore-2.2).
 
 ```yaml
-Type: Encoding
+Type: System.Text.Encoding
 Parameter Sets: (All)
 Aliases:
 Accepted values: ASCII, BigEndianUnicode, OEM, Unicode, UTF7, UTF8, UTF8BOM, UTF8NoBOM, UTF32
@@ -320,7 +320,7 @@ Accept wildcard characters: False
 Overwrites one or more existing output files, even if the file has the read-only attribute.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -348,7 +348,7 @@ If you use the **CommandName** parameter, the formatting files for the commands 
 unless you use the **FormatTypeName** parameter.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -376,7 +376,7 @@ either of these formats:
 parameters are mutually exclusive.
 
 ```yaml
-Type: ModuleSpecification[]
+Type: Microsoft.PowerShell.Commands.ModuleSpecification[]
 Parameter Sets: (All)
 Aliases:
 
@@ -396,7 +396,7 @@ For more information, see `Import-Module` and
 [about_PSSnapins](/powershell/module/microsoft.powershell.core/about/about_pssnapins?view=powershell-5.1).
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases: PSSnapin
 
@@ -416,7 +416,7 @@ If the module subdirectory or any of the files that `Export-PSSession` creates a
 command fails. To overwrite existing files, use the **Force** parameter.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases: PSPath, ModuleName
 
@@ -434,7 +434,7 @@ session object or a command that gets a session object, such as a `Get-PSSession
 parameter is required.
 
 ```yaml
-Type: PSSession
+Type: System.Management.Automation.Runspaces.PSSession
 Parameter Sets: (All)
 Aliases:
 

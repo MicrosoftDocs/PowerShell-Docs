@@ -20,19 +20,19 @@ Displays a file or other input as hexadecimal.
 ### Path (Default)
 
 ```
-Format-Hex [-Path] <string[]> [-Count <long>] [-Offset <long>] [<CommonParameters>]
+Format-Hex [-Path] <String[]> [-Count <Int64>] [-Offset <Int64>] [<CommonParameters>]
 ```
 
 ### LiteralPath
 
 ```
-Format-Hex -LiteralPath <string[]> [-Count <long>] [-Offset <long>] [<CommonParameters>]
+Format-Hex -LiteralPath <String[]> [-Count <Int64>] [-Offset <Int64>] [<CommonParameters>]
 ```
 
-### InputObject
-
+### ByInputObject
 ```
-Format-Hex -InputObject <psobject> [-Encoding <Encoding>] [-Count <long>] [-Offset <long>] [-Raw] [<CommonParameters>]
+Format-Hex -InputObject <PSObject> [-Encoding <Encoding>] [-Count <Int64>] [-Offset <Int64>] [-Raw]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -179,7 +179,7 @@ pages (like `-Encoding 1251`) or string names of registered code pages (like
 [Encoding.CodePage](/dotnet/api/system.text.encoding.codepage?view=netcore-2.2).
 
 ```yaml
-Type: Encoding
+Type: System.Text.Encoding
 Parameter Sets: ByInputObject
 Aliases:
 Accepted values: ASCII, BigEndianUnicode, OEM, Unicode, UTF7, UTF8, UTF8BOM, UTF8NoBOM, UTF32
@@ -211,7 +211,7 @@ grouping all like objects together. Now, it handles each individual object as it
 Pipeline and won't group objects together unless like objects are adjacent.
 
 ```yaml
-Type: PSObject
+Type: System.Management.Automation.PSObject
 Parameter Sets: ByInputObject
 Aliases:
 
@@ -231,7 +231,7 @@ single quotation marks. PowerShell does not interpret any characters in a single
 escape sequences. For more information, see [about_Quoting_Rules](../Microsoft.Powershell.Core/About/about_Quoting_Rules.md).
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: LiteralPath
 Aliases: PSPath, LP
 
@@ -250,7 +250,7 @@ includes escape characters, enclose the path in single quotation marks. To speci
 files, separate the paths with a comma.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: Path
 Aliases:
 
@@ -266,7 +266,7 @@ Accept wildcard characters: True
 This parameter no longer does anything. It is retained for script compatibility.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: ByInputObject
 Aliases:
 
@@ -284,7 +284,7 @@ This represents the number of bytes to skip from being part of the hex output.
 This parameter was introduced in PowerShell 6.2.
 
 ```yaml
-Type: Int64
+Type: System.Int64
 Parameter Sets: (All)
 Aliases:
 
@@ -302,7 +302,7 @@ This represents the number of bytes to include in the hex output.
 This parameter was introduced in PowerShell 6.2.
 
 ```yaml
-Type: Int64
+Type: System.Int64
 Parameter Sets: (All)
 Aliases:
 

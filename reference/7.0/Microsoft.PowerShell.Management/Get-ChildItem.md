@@ -463,7 +463,7 @@ output.
 > directory structure with the **tree.com** command.
 
 ```yaml
-Type: UInt32
+Type: System.UInt32
 Parameter Sets: (All)
 Aliases:
 
@@ -480,7 +480,7 @@ To get a list of directories, use the **Directory** parameter or the **Attribute
 the **Directory** property. You can use the **Recurse** parameter with **Directory**.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: ad, d
 
@@ -503,7 +503,7 @@ or `-Path C:\Test\Logs\*`. If a trailing asterisk (`*`) is included, the command
 parameter are displayed. More details are included in Example 5 and the Notes section.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -520,7 +520,7 @@ To get a list of files, use the **File** parameter. You can use the **Recurse** 
 **File**.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: af
 
@@ -540,7 +540,7 @@ having PowerShell filter the objects after they're retrieved. The filter string 
 .NET API to enumerate files. The API only supports `*` and `?` wildcards.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -561,7 +561,7 @@ supported only in the **FileSystem** provider.
 This parameter was introduced in PowerShell 6.0.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -579,7 +579,7 @@ system files. The **Force** parameter doesn't override security restrictions. Im
 among providers. For more information, see [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -597,7 +597,7 @@ To get only hidden items, use the **Hidden** parameter or the **Attributes** par
 parameter to get hidden items.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: ah, h
 
@@ -617,7 +617,7 @@ command includes the contents of an item, such as `C:\Windows\*`, where the wild
 specifies the contents of the `C:\Windows` directory.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -638,7 +638,7 @@ as escape sequences.
 For more information, see [about_Quoting_Rules](../Microsoft.Powershell.Core/About/about_Quoting_Rules.md).
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: LiteralItems
 Aliases: PSPath, LP
 
@@ -655,7 +655,7 @@ Gets only the names of the items in the location. The output is a string object 
 down the pipeline to other commands. Wildcards are permitted.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -672,7 +672,7 @@ Specifies a path to one or more locations. Wildcards are accepted. The default l
 current directory (`.`).
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: Items
 Aliases:
 
@@ -689,7 +689,7 @@ To get only read-only items, use the **ReadOnly** parameter or the **Attributes*
 **ReadOnly** property.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: ar
 
@@ -705,7 +705,7 @@ Accept wildcard characters: False
 Gets the items in the specified locations and in all child items of the locations.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: s
 
@@ -722,7 +722,7 @@ Gets only system files and directories. To get only system files and folders, us
 parameter or **Attributes** parameter **System** property.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: as
 

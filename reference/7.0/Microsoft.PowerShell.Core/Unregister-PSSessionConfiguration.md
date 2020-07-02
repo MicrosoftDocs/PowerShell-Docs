@@ -118,7 +118,7 @@ without prompting. Restarting the service makes the configuration change effecti
 To prevent a restart and suppress the restart prompt, use the **NoServiceRestart** parameter.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -137,7 +137,7 @@ a configuration name pattern. Wildcard characters are permitted. This parameter 
 You can also pipe a session configurations to `Unregister-PSSessionConfiguration`.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -162,7 +162,7 @@ To restart the **WinRM** service without prompting, specify the **Force** parame
 **WinRM** service manually, use the `Restart-Service` cmdlet.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -178,7 +178,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -195,7 +195,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
