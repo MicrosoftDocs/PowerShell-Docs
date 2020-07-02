@@ -106,7 +106,7 @@ Mode              : d--hs-
 > use [Invoke-Command](../Microsoft.PowerShell.Core/Invoke-Command.md).
 
 ```yaml
-Type: PSCredential
+Type: System.Management.Automation.PSCredential
 Parameter Sets: (All)
 Aliases:
 
@@ -126,7 +126,7 @@ command includes the contents of an item, such as `C:\Windows\*`, where the wild
 specifies the contents of the `C:\Windows` directory.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -146,7 +146,7 @@ Filters are more efficient than other parameters, because the provider applies t
 gets the objects rather than having PowerShell filter the objects after they are retrieved.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -166,7 +166,7 @@ command includes the contents of an item, such as `C:\Windows\*`, where the wild
 specifies the contents of the `C:\Windows` directory.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -187,7 +187,7 @@ as escape sequences.
 For more information, see [about_Quoting_Rules](../Microsoft.Powershell.Core/About/about_Quoting_Rules.md).
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: LiteralPath
 Aliases: PSPath, LP
 
@@ -204,7 +204,7 @@ Specifies the name of the property or properties to retrieve.
 Wildcard characters are permitted.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases: PSProperty
 
@@ -221,7 +221,7 @@ Specifies the path to the item or items.
 Wildcard characters are permitted.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: Path
 Aliases:
 

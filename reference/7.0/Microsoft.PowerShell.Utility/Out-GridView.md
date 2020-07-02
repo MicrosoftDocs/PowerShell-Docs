@@ -168,7 +168,7 @@ represents the collection. To display the each object in the collection, use a p
 to send objects to `Out-GridView`.
 
 ```yaml
-Type: PSObject
+Type: System.Management.Automation.PSObject
 Parameter Sets: (All)
 Aliases:
 
@@ -194,7 +194,7 @@ The values of this parameter determine how many items you can send down the pipe
   objects. This value is equivalent to the **Passthru** parameter.
 
 ```yaml
-Type: OutputModeOption
+Type: Microsoft.PowerShell.Commands.OutputModeOption
 Parameter Sets: OutputMode
 Aliases:
 Accepted values: None, Single, Multiple
@@ -216,7 +216,7 @@ To send items from the interactive window down the pipeline, click to select the
 click OK. Shift-click and Ctrl-click are supported.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: PassThru
 Aliases:
 
@@ -233,7 +233,7 @@ Specifies the text that appears in the title bar of the `Out-GridView` window. B
 bar displays the command that invokes `Out-GridView`.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -255,7 +255,7 @@ used in a shortcut without the **Wait** parameter, the `Out-GridView` window app
 momentarily before PowerShell closes.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: Wait
 Aliases:
 

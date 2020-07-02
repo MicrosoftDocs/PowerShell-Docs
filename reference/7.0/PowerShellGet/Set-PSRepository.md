@@ -52,7 +52,7 @@ URIs.
 ### -Credential
 
 ```yaml
-Type: PSCredential
+Type: System.Management.Automation.PSCredential
 Parameter Sets: (All)
 Aliases:
 
@@ -68,7 +68,7 @@ Accept wildcard characters: False
 Specifies the installation policy. Valid values are: **Trusted**, **Untrusted**.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 Accepted values: Trusted, Untrusted
@@ -85,14 +85,14 @@ Accept wildcard characters: False
 Specifies the name of the repository.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
 Required: True
 Position: 0
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -101,7 +101,7 @@ Accept wildcard characters: False
 Specifies the package management provider.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -117,7 +117,7 @@ Accept wildcard characters: False
 Specifies a proxy server for the request, rather than connecting directly to the Internet resource.
 
 ```yaml
-Type: Uri
+Type: System.Uri
 Parameter Sets: (All)
 Aliases:
 
@@ -134,7 +134,7 @@ Specifies a user account that has permission to use the proxy server that is spe
 **Proxy** parameter.
 
 ```yaml
-Type: PSCredential
+Type: System.Management.Automation.PSCredential
 Parameter Sets: (All)
 Aliases:
 
@@ -151,7 +151,7 @@ Specifies the URI of the publish location. For example, for NuGet-based reposito
 location is similar to `https://someNuGetUrl.com/api/v2/Packages`.
 
 ```yaml
-Type: Uri
+Type: System.Uri
 Parameter Sets: (All)
 Aliases:
 
@@ -167,7 +167,7 @@ Accept wildcard characters: False
 Specifies the script publish location.
 
 ```yaml
-Type: Uri
+Type: System.Uri
 Parameter Sets: (All)
 Aliases:
 
@@ -183,7 +183,7 @@ Accept wildcard characters: False
 Specifies the script source location.
 
 ```yaml
-Type: Uri
+Type: System.Uri
 Parameter Sets: (All)
 Aliases:
 
@@ -200,7 +200,7 @@ Specifies the URI for discovering and installing modules from this repository. F
 NuGet-based repositories, the source location is similar to `https://someNuGetUrl.com/api/v2`.
 
 ```yaml
-Type: Uri
+Type: System.Uri
 Parameter Sets: (All)
 Aliases:
 

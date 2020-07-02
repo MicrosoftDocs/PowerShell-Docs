@@ -191,7 +191,7 @@ object and the password is stored as a [SecureString](/dotnet/api/system.securit
 > [How secure is SecureString?](/dotnet/api/system.security.securestring#how-secure-is-securestring).
 
 ```yaml
-Type: PSCredential
+Type: System.Management.Automation.PSCredential
 Parameter Sets: CredentialSet
 Aliases:
 
@@ -211,7 +211,7 @@ credentials and how they will be used.
 This parameter was introduced in PowerShell 3.0.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: MessageSet
 Aliases:
 
@@ -229,7 +229,7 @@ Sets the text of the title line for the authentication prompt in the console.
 This parameter was introduced in PowerShell 6.0.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: MessageSet
 Aliases:
 
@@ -248,7 +248,7 @@ the user name is blank and the authentication prompt requests both a user name a
 This parameter was introduced in PowerShell 3.0.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: MessageSet
 Aliases:
 

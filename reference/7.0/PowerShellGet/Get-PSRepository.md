@@ -70,7 +70,7 @@ This command gets the repository named Local01 and uses the pipeline operator to
 Specifies the names of the repositories to get.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 

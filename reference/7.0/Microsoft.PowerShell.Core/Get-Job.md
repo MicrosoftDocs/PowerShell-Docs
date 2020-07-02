@@ -457,7 +457,7 @@ for the job type.
 This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
-Type: DateTime
+Type: System.DateTime
 Parameter Sets: SessionIdParameterSet, InstanceIdParameterSet, NameParameterSet, StateParameterSet, CommandParameterSet
 Aliases:
 
@@ -481,7 +481,7 @@ for the job type.
 This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
-Type: DateTime
+Type: System.DateTime
 Parameter Sets: SessionIdParameterSet, InstanceIdParameterSet, NameParameterSet, StateParameterSet, CommandParameterSet
 Aliases:
 
@@ -515,7 +515,7 @@ If you use the *ChildJobState* parameter, the *IncludeChildJob* parameter has no
 This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
-Type: JobState
+Type: System.Management.Automation.JobState
 Parameter Sets: SessionIdParameterSet, InstanceIdParameterSet, NameParameterSet, StateParameterSet, CommandParameterSet
 Aliases:
 Accepted values: NotStarted, Running, Completed, Failed, Stopped, Blocked, Suspended, Disconnected, Suspending, Stopping, AtBreakpoint
@@ -535,7 +535,7 @@ The default is all jobs.
 You can use wildcard characters to specify a command pattern.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: CommandParameterSet
 Aliases:
 
@@ -559,7 +559,7 @@ For information about support for this parameter, see the help topic for the job
 This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
-Type: Hashtable
+Type: System.Collections.Hashtable
 Parameter Sets: FilterParameterSet
 Aliases:
 
@@ -595,7 +595,7 @@ type.
 This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
-Type: Boolean
+Type: System.Boolean
 Parameter Sets: SessionIdParameterSet, InstanceIdParameterSet, NameParameterSet, StateParameterSet, CommandParameterSet
 Aliases:
 
@@ -616,7 +616,7 @@ You can type one or more IDs separated by commas.
 To find the ID of a job, type `Get-Job` without parameters.
 
 ```yaml
-Type: Int32[]
+Type: System.Int32[]
 Parameter Sets: SessionIdParameterSet
 Aliases:
 
@@ -638,7 +638,7 @@ the child job.
 This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: SessionIdParameterSet, InstanceIdParameterSet, NameParameterSet, StateParameterSet, CommandParameterSet
 Aliases:
 
@@ -658,7 +658,7 @@ An instance ID is a GUID that uniquely identifies the job on the computer.
 To find the instance ID of a job, use **Get-Job**.
 
 ```yaml
-Type: Guid[]
+Type: System.Guid[]
 Parameter Sets: InstanceIdParameterSet
 Aliases:
 
@@ -676,7 +676,7 @@ Enter a job name, or use wildcard characters to enter a job name pattern.
 By default, **Get-Job** gets all jobs in the current session.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: NameParameterSet
 Aliases:
 
@@ -698,7 +698,7 @@ To sort the output, use the Sort-Object cmdlet.
 This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: SessionIdParameterSet, InstanceIdParameterSet, NameParameterSet, StateParameterSet, CommandParameterSet
 Aliases:
 
@@ -731,7 +731,7 @@ By default, **Get-Job** gets all the jobs in the current session.
 For more information about job states, see [JobState Enumeration](https://msdn.microsoft.com/library/system.management.automation.jobstate) in the MSDN library.
 
 ```yaml
-Type: JobState
+Type: System.Management.Automation.JobState
 Parameter Sets: StateParameterSet
 Aliases:
 Accepted values: NotStarted, Running, Completed, Failed, Stopped, Blocked, Suspended, Disconnected, Suspending, Stopping, AtBreakpoint

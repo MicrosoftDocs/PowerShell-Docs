@@ -245,7 +245,7 @@ the remote computer. For more information about the `$PSSessionConfiguration` va
 Suppresses the prompt to restart the WinRM service, if the service is not already running.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -262,7 +262,7 @@ Gets only the session configurations with the specified name or name pattern. En
 session configuration names. Wildcards are permitted.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
