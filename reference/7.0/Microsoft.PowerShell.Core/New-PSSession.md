@@ -324,7 +324,7 @@ of the `New-PSSessionOption` cmdlet or set the **MaximumConnectionRedirectionCou
 **$PSSessionOption** preference variable. The default value is 5.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: Uri
 Aliases:
 
@@ -350,7 +350,7 @@ The value of this parameter should match the value of the **URLPrefix** property
 the remote computer.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: ComputerName
 Aliases:
 
@@ -387,7 +387,7 @@ For more information about the values of this parameter, see
 > credentials that are passed to it can be used to control the network session.
 
 ```yaml
-Type: AuthenticationMechanism
+Type: System.Management.Automation.Runspaces.AuthenticationMechanism
 Parameter Sets: ComputerName, Uri
 Aliases:
 Accepted values: Default, Basic, Negotiate, NegotiateWithImplicitCredential, Credssp, Digest, Kerberos
@@ -411,7 +411,7 @@ To get a certificate, use the `Get-Item` or `Get-ChildItem` command in the Power
 drive.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: ComputerName, Uri
 Aliases:
 
@@ -444,7 +444,7 @@ To include the local computer in the value of the **ComputerName** parameter, st
 PowerShell by using the Run as administrator option.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: ComputerName
 Aliases: Cn
 
@@ -471,8 +471,8 @@ computer. If this preference variable is not set, the default is Microsoft.Power
 information, see [about_Preference_Variables](About/about_Preference_Variables.md).
 
 ```yaml
-Type: String
-Parameter Sets: ComputerName, VMId, Uri, VMName, ContainerId
+Type: System.String
+Parameter Sets: ComputerName, Uri, VMId, VMName, ContainerId
 Aliases:
 
 Required: False
@@ -505,7 +505,7 @@ If the destination computer redirects the connection to a different URI, PowerSh
 redirection unless you use the **AllowRedirection** parameter in the command.
 
 ```yaml
-Type: Uri[]
+Type: System.Uri[]
 Parameter Sets: Uri
 Aliases: URI, CU
 
@@ -524,7 +524,7 @@ information, see the help for the
 [docker ps](https://docs.docker.com/engine/reference/commandline/ps/) command.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: ContainerId
 Aliases:
 
@@ -551,7 +551,7 @@ object and the password is stored as a [SecureString](/dotnet/api/system.securit
 > [How secure is SecureString?](/dotnet/api/system.security.securestring#how-secure-is-securestring).
 
 ```yaml
-Type: PSCredential
+Type: System.Management.Automation.PSCredential
 Parameter Sets: ComputerName, Uri, VMId, VMName
 Aliases:
 
@@ -592,7 +592,7 @@ authentication can be reconnected from other computers. For more information, se
 This parameter was introduced in PowerShell 3.0.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: ComputerName, Uri, Session
 Aliases:
 
@@ -612,7 +612,7 @@ rather than Windows WinRM.
 This parameter was introduced in PowerShell 6.0.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: SSHHost
 Aliases:
 
@@ -634,7 +634,7 @@ parameter can be used to provide the key that identifies the user.
 This parameter was introduced in PowerShell 6.0.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: SSHHost
 Aliases: IdentityFilePath
 
@@ -654,7 +654,7 @@ You can use the name to refer to the **PSSession** when you use other cmdlets, s
 current session.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -683,7 +683,7 @@ computers or sessions on which the command runs. An alternate port setting might
 from running on all computers.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: ComputerName, SSHHost
 Aliases:
 
@@ -699,7 +699,7 @@ Accept wildcard characters: False
 Indicates that the **PSSession** runs as administrator.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: ContainerId
 Aliases:
 
@@ -724,7 +724,7 @@ port, configuration name, throttle limit, and Secure Sockets Layer (SSL) value a
 they have a different display name, ID, and instance ID (GUID).
 
 ```yaml
-Type: PSSession[]
+Type: System.Management.Automation.Runspaces.PSSession[]
 Parameter Sets: Session
 Aliases:
 
@@ -755,7 +755,7 @@ For a description of the session options that includes the default values, see
 session configurations, see [about_Session_Configurations](About/about_Session_Configurations.md).
 
 ```yaml
-Type: PSSessionOption
+Type: System.Management.Automation.Remoting.PSSessionOption
 Parameter Sets: ComputerName, Uri
 Aliases:
 
@@ -780,7 +780,7 @@ different connection information.
 This parameter was introduced in PowerShell 6.0.
 
 ```yaml
-Type: Hashtable[]
+Type: System.Collections.Hashtable[]
 Parameter Sets: SSHHostHashParam
 Aliases:
 
@@ -801,7 +801,7 @@ PowerShell to use the HostName parameter set for establishing an SSH based remot
 This parameter was introduced in PowerShell 6.0.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: SSHHost
 Aliases:
 Accepted values: true
@@ -821,8 +821,8 @@ If you omit this parameter or enter a value of 0 (zero), the default value, 32, 
 The throttle limit applies only to the current command, not to the session or to the computer.
 
 ```yaml
-Type: Int32
-Parameter Sets: ComputerName, VMId, Uri, VMName, Session, ContainerId
+Type: System.Int32
+Parameter Sets: ComputerName, Uri, VMId, VMName, Session, ContainerId
 Aliases:
 
 Required: False
@@ -852,7 +852,7 @@ name is used for the connection.
 This parameter was introduced in PowerShell 6.0.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: SSHHost
 Aliases:
 
@@ -876,7 +876,7 @@ If you use this parameter, but SSL is not available on the port that is used for
 command fails.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: ComputerName
 Aliases:
 
@@ -896,7 +896,7 @@ following command:
 `Get-VM | Select-Object -Property Name, ID`
 
 ```yaml
-Type: Guid[]
+Type: System.Guid[]
 Parameter Sets: VMId
 Aliases: VMGuid
 
@@ -914,7 +914,7 @@ of the specified virtual machines. To see the virtual machines that are availabl
 `Get-VM` cmdlet.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: VMName
 Aliases:
 
@@ -941,7 +941,7 @@ parameters.
 This parameter was introduced in PowerShell 6.0.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: HostName
 Aliases:
 
@@ -963,7 +963,7 @@ parameter can be used to provide the key that identifies the user.
 This parameter was introduced in PowerShell 6.0.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: HostName
 Aliases:
 
@@ -984,7 +984,7 @@ PowerShell to use the HostName parameter set for establishing an SSH based remot
 This parameter was introduced in PowerShell 6.0.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParamete
 Parameter Sets: HostName
 Aliases:
 
@@ -1015,7 +1015,7 @@ name is used for the connection.
 This parameter was introduced in PowerShell 6.0.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: HostName
 Aliases:
 
@@ -1066,7 +1066,7 @@ If the specified subsystem does not exist on the remote computer, the command fa
 If this parameter is not used, the default is the 'powershell' subsystem.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: HostName
 Aliases:
 

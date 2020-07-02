@@ -122,7 +122,7 @@ required, even for types in the System namespace. Wildcards are supported and th
 **TypeName** is optional. You can also pipe type names to `Get-TypeData`.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 

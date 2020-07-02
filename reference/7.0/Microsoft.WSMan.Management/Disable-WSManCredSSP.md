@@ -73,7 +73,7 @@ If you specify Server, this cmdlet performs the following action:
 - Disables CredSSP on the server. This cmdlet sets the WS-Management setting **\<localhost|computername\>\Service\Auth\CredSSP** to false.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 Accepted values: Client, Server

@@ -173,7 +173,7 @@ supported. To get all streams, use an asterisk (`*`). This parameter isn't valid
 This parameter works only in file system drives.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -192,7 +192,7 @@ Accept wildcard characters: True
 > use [Invoke-Command](../Microsoft.PowerShell.Core/Invoke-Command.md).
 
 ```yaml
-Type: PSCredential
+Type: System.Management.Automation.PSCredential
 Parameter Sets: (All)
 Aliases:
 
@@ -212,7 +212,7 @@ command includes the contents of an item, such as `C:\Windows\*`, where the wild
 specifies the contents of the `C:\Windows` directory.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -232,7 +232,7 @@ having PowerShell filter the objects after they're retrieved. The filter string 
 .NET API to enumerate files. The API only supports `*` and `?` wildcards.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -251,7 +251,7 @@ Implementation varies from provider to provider. For more information, see
 parameter, the cmdlet can't override security restrictions.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -271,7 +271,7 @@ command includes the contents of an item, such as `C:\Windows\*`, where the wild
 specifies the contents of the `C:\Windows` directory.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -292,7 +292,7 @@ as escape sequences.
 For more information, see [about_Quoting_Rules](../Microsoft.Powershell.Core/About/about_Quoting_Rules.md).
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: LiteralPath
 Aliases: PSPath, LP
 
@@ -312,7 +312,7 @@ Use a dot (`.`) to specify the current location. Use the wildcard character (`*`
 items in the current location.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: Path
 Aliases:
 

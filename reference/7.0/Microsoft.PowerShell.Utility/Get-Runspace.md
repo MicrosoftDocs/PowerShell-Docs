@@ -101,7 +101,7 @@ Id Name            ComputerName    Type          State         Availability
 Specifies the Id of a runspace
 
 ```yaml
-Type: Int32[]
+Type: System.Int32[]
 Parameter Sets: IdParameterSet
 Aliases:
 
@@ -117,7 +117,7 @@ Accept wildcard characters: False
 Specifies the instance ID GUID of a running job.
 
 ```yaml
-Type: Guid[]
+Type: System.Guid[]
 Parameter Sets: InstanceIdParameterSet
 Aliases:
 
@@ -133,7 +133,7 @@ Accept wildcard characters: False
 Specifies the Name of a runspace
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: NameParameterSet
 Aliases:
 

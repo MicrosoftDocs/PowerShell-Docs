@@ -328,7 +328,7 @@ If you omit this parameter, `New-ModuleManifest` creates an **AliasesToExport** 
 `*` (all), meaning that all aliases defined in the module are exported by the manifest.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -347,7 +347,7 @@ If you omit this parameter, `New-ModuleManifest` creates an **Author** key with 
 current user.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -364,7 +364,7 @@ Specifies the minimum version of the Common Language Runtime (CLR) of the Micros
 that the module requires.
 
 ```yaml
-Type: Version
+Type: System.Version
 Parameter Sets: (All)
 Aliases:
 
@@ -386,7 +386,7 @@ If you omit this parameter, `New-ModuleManifest` creates a **CmdletsToExport** k
 `*` (all), meaning that all cmdlets defined in the module are exported by the manifest.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -405,7 +405,7 @@ If you omit this parameter, `New-ModuleManifest` creates a **CompanyName** key w
 "Unknown".
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -422,7 +422,7 @@ Specifies the module's compatible PSEditions. For information about PSEdition, s
 [Modules with compatible PowerShell Editions](/powershell/scripting/gallery/concepts/module-psedition-support).
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 Accepted values: Desktop, Core
@@ -443,7 +443,7 @@ If you omit this parameter, `New-ModuleManifest` creates a **Copyright** key wit
 the value of the **Author** key.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -466,7 +466,7 @@ cmdlet.
 This parameter was introduced in PowerShell 3.0.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -482,7 +482,7 @@ Accept wildcard characters: False
 Describes the contents of the module.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -498,7 +498,7 @@ Accept wildcard characters: False
 Specifies the minimum version of the Microsoft .NET Framework that the module requires.
 
 ```yaml
-Type: Version
+Type: System.Version
 Parameter Sets: (All)
 Aliases:
 
@@ -515,7 +515,7 @@ Specifies the Desired State Configuration (DSC) resources that the module export
 permitted.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -531,7 +531,7 @@ Accept wildcard characters: True
 A list of external modules that this module is depends on.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -550,7 +550,7 @@ This key is designed to act as a module inventory. The files listed in the key a
 module is published, but any functions aren't automatically exported.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -569,7 +569,7 @@ When you import a module, PowerShell runs the `Update-FormatData` cmdlet with th
 Because formatting files aren't scoped, they affect all session states in the session.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -591,7 +591,7 @@ If you omit this parameter, `New-ModuleManifest` creates an **FunctionsToExport*
 of `*` (all), meaning that all functions defined in the module are exported by the manifest.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -613,7 +613,7 @@ generates a **GUID** for the value.
 To create a new **GUID** in PowerShell, type `[guid]::NewGuid()`.
 
 ```yaml
-Type: Guid
+Type: System.Guid
 Parameter Sets: (All)
 Aliases:
 
@@ -639,7 +639,7 @@ For information about the HelpInfo XML file, see [Supporting Updatable Help](/po
 This parameter was introduced in PowerShell 3.0.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -656,7 +656,7 @@ Specifies the URL of an icon for the module. The specified icon is displayed on 
 for the module.
 
 ```yaml
-Type: Uri
+Type: System.Uri
 Parameter Sets: (All)
 Aliases:
 
@@ -672,7 +672,7 @@ Accept wildcard characters: False
 Specifies the URL of licensing terms for the module.
 
 ```yaml
-Type: Uri
+Type: System.Uri
 Parameter Sets: (All)
 Aliases:
 
@@ -695,7 +695,7 @@ This key is designed to act as a module inventory. The modules that are listed i
 key aren't automatically processed.
 
 ```yaml
-Type: Object[]
+Type: System.Object[]
 Parameter Sets: (All)
 Aliases:
 
@@ -714,7 +714,7 @@ This parameter isn't required, but a **ModuleVersion** key is required in the ma
 this parameter, `New-ModuleManifest` creates a **ModuleVersion** key with a value of 1.0.
 
 ```yaml
-Type: Version
+Type: System.Version
 Parameter Sets: (All)
 Aliases:
 
@@ -748,7 +748,7 @@ not in the caller's session state. To run a script in the caller's session state
 file name in the value of the **ScriptsToProcess** key in the manifest.
 
 ```yaml
-Type: Object[]
+Type: System.Object[]
 Parameter Sets: (All)
 Aliases:
 
@@ -765,7 +765,7 @@ Writes the resulting module manifest to the console and creates a `.psd1` file. 
 cmdlet doesn't generate any output.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -793,7 +793,7 @@ same as the module directory name, but with a `.psd1` file name extension.
 > parameter value. To use a variable, include the **Path** parameter in the command.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -813,7 +813,7 @@ permitted.
 To find the name of a host program, in the program, type `$Host.Name`.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -830,7 +830,7 @@ Specifies the minimum version of the PowerShell host program that works with the
 version number, such as 1.1.
 
 ```yaml
-Type: Version
+Type: System.Version
 Parameter Sets: (All)
 Aliases:
 
@@ -847,7 +847,7 @@ Specifies the minimum version of PowerShell that works with this module. For exa
 1.0, 2.0, or 3.0 as the parameter's value.
 
 ```yaml
-Type: Version
+Type: System.Version
 Parameter Sets: (All)
 Aliases:
 
@@ -867,7 +867,7 @@ prerelease packages. To acquire prerelease packages from the Gallery, you must u
 `Update-Module`, and `Save-Module`.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -883,7 +883,7 @@ Accept wildcard characters: False
 Specifies data that is passed to the module when it's imported.
 
 ```yaml
-Type: Object
+Type: System.Object
 Parameter Sets: (All)
 Aliases:
 
@@ -900,7 +900,7 @@ Specifies the processor architecture that the module requires. Valid values are 
 MSIL, and None (unknown or unspecified).
 
 ```yaml
-Type: ProcessorArchitecture
+Type: System.Reflection.ProcessorArchitecture
 Parameter Sets: (All)
 Aliases:
 Accepted values: None, MSIL, X86, IA64, Amd64, Arm
@@ -917,7 +917,7 @@ Accept wildcard characters: False
 Specifies the URL of a web page about this project.
 
 ```yaml
-Type: Uri
+Type: System.Uri
 Parameter Sets: (All)
 Aliases:
 
@@ -933,7 +933,7 @@ Accept wildcard characters: False
 Specifies release notes.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -956,7 +956,7 @@ must be loaded to update any formatting or type files that are listed in the **F
 **NestedModules** key.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -981,7 +981,7 @@ In PowerShell 2.0, `Import-Module` doesn't import required modules automatically
 that the required modules are in the global session state.
 
 ```yaml
-Type: Object[]
+Type: System.Object[]
 Parameter Sets: (All)
 Aliases:
 
@@ -997,7 +997,7 @@ Accept wildcard characters: False
 Flag to indicate whether the module requires explicit user acceptance for install, update, orsave.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -1028,7 +1028,7 @@ manifest. Otherwise, their members aren't exported.
 > parameter name or its **ModuleToProcess** alias.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases: ModuleToProcess
 
@@ -1047,7 +1047,7 @@ You can use these scripts to prepare an environment, just as you might use a log
 To specify scripts that run in the module's session state, use the **NestedModules** key.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -1063,7 +1063,7 @@ Accept wildcard characters: False
 Specifies an array of tags.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -1082,7 +1082,7 @@ When you import the module, PowerShell runs the `Update-TypeData` cmdlet with th
 Because type files aren't scoped, they affect all session states in the session.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -1104,7 +1104,7 @@ If you omit this parameter, `New-ModuleManifest` creates a **VariablesToExport**
 `*` (all), meaning that all variables defined in the module are exported by the manifest.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -1120,7 +1120,7 @@ Accept wildcard characters: True
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -1136,7 +1136,7 @@ Accept wildcard characters: False
 Shows what would happen if `New-ModuleManifest` runs. The cmdlet isn't run.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 

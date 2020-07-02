@@ -55,7 +55,7 @@ input. When you use this parameter, the output of the `Read-Host` cmdlet is a **
 object (**System.Security.SecureString**).
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -74,7 +74,7 @@ If the string includes spaces, enclose it in quotation marks.
 PowerShell appends a colon (`:`) to the text that you enter.
 
 ```yaml
-Type: Object
+Type: System.Object
 Parameter Sets: (All)
 Aliases:
 

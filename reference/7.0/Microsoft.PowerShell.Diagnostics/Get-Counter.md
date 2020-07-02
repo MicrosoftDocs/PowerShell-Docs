@@ -462,7 +462,7 @@ local computer.
 if your computer isn't configured to run remote commands.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases: Cn
 
@@ -480,7 +480,7 @@ When the **Continuous** is specified, `Get-Counter` gets samples until you press
 counter. Use the **SampleInterval** parameter to increase the interval between continuous samples.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: GetCounterSet
 Aliases:
 
@@ -515,7 +515,7 @@ the computer name, `Get-Counter` uses the local computer.
 An asterisk (`*`) in the instance is a wildcard character to get all instances of the counter.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: GetCounterSet
 Aliases:
 
@@ -548,7 +548,7 @@ For example to send each **Processor** counter path to `Get-Counter`:
 > **Description** is set to `$null`.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: ListSetSet
 Aliases:
 
@@ -571,7 +571,7 @@ To collect a large data set, run `Get-Counter` as a PowerShell background job. F
 see [about_Jobs](../Microsoft.PowerShell.Core/About/about_Jobs.md).
 
 ```yaml
-Type: Int64
+Type: System.Int64
 Parameter Sets: GetCounterSet
 Aliases:
 
@@ -588,7 +588,7 @@ Specifies the number of seconds between samples for each specified performance c
 **SampleInterval** parameter isn't specified, `Get-Counter` uses a one-second interval.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: GetCounterSet
 Aliases:
 

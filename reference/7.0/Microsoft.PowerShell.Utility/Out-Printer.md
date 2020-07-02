@@ -72,7 +72,7 @@ Specifies the objects to be sent to the printer. Enter a variable that contains 
 a command or expression that gets the objects.
 
 ```yaml
-Type: PSObject
+Type: System.Management.Automation.PSObject
 Parameter Sets: (All)
 Aliases:
 
@@ -88,7 +88,7 @@ Accept wildcard characters: False
 Sends the output to the specified printer. The parameter name **Name** is optional.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases: PrinterName
 

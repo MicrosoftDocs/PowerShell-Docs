@@ -257,7 +257,7 @@ So, you cannot pipe the output of the command to a cmdlet that expects a process
 `Stop-Process`.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: Name, Id, InputObject
 Aliases: FV, FVI
 
@@ -275,7 +275,7 @@ To specify multiple IDs, use commas to separate the IDs.
 To find the PID of a process, type `Get-Process`.
 
 ```yaml
-Type: Int32[]
+Type: System.Int32[]
 Parameter Sets: Id, IdWithUserName
 Aliases: PID
 
@@ -291,7 +291,7 @@ Accept wildcard characters: False
 Indicates that the UserName value of the **Process** object is returned with results of the command.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: NameWithUserName, IdWithUserName, InputObjectWithUserName
 Aliases:
 
@@ -308,8 +308,8 @@ Specifies one or more process objects.
 Enter a variable that contains the objects, or type a command or expression that gets the objects.
 
 ```yaml
-Type: Process[]
-Parameter Sets: InputObjectWithUserName, InputObject
+Type: System.Diagnostics.Process[]
+Parameter Sets: InputObject, InputObjectWithUserName
 Aliases:
 
 Required: True
@@ -339,7 +339,7 @@ When you use both the *Module* and **FileVersionInfo** parameters in the same co
 returns a **FileVersionInfo** object with information about the file version of all modules.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: Name, Id, InputObject
 Aliases:
 
@@ -357,7 +357,7 @@ You can type multiple process names (separated by commas) and use wildcard chara
 The parameter name ("Name") is optional.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: Name, NameWithUserName
 Aliases: ProcessName
 

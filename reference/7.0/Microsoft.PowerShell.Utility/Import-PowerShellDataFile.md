@@ -75,7 +75,7 @@ The path to the file being imported. All characters in the path are treated as l
 Wildcard characters are not processed.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: ByLiteralPath
 Aliases: PSPath, LP
 
@@ -92,7 +92,7 @@ The path to the file being imported. Wildcards are allowed but only the first ma
 imported.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: ByPath
 Aliases:
 

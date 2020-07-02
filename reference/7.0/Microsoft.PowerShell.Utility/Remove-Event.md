@@ -67,7 +67,7 @@ Specifies the event identifier for which the cmdlet deletes.
 An *EventIdentifier* or *SourceIdentifier* parameter is required in every command.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: ByIdentifier
 Aliases:
 
@@ -84,7 +84,7 @@ Wildcards are not permitted.
 An *EventIdentifier* or *SourceIdentifier* parameter is required in every command.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: BySource
 Aliases:
 
@@ -99,7 +99,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -115,7 +115,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 

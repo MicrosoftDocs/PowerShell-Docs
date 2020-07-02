@@ -257,7 +257,7 @@ are interpreted literally as part of the string data. For more information, see
 [about_Quoting_Rules](../Microsoft.PowerShell.Core/About/about_Quoting_Rules.md).
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -274,7 +274,7 @@ The character used to separate the **key** from the **value** data in the string
 The default delimiter is the equals sign (`=`) character. This parameter was added in PowerShell 7.
 
 ```yaml
-Type: Char
+Type: System.Char
 Parameter Sets: (All)
 Aliases:
 
