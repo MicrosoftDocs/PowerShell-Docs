@@ -18,6 +18,7 @@ Gets and displays the most recent error messages from the current session.
 ## SYNTAX
 
 ### Newest (Default)
+
 ```
 Get-Error [[-Newest] <Int32>] [<CommonParameters>]
 ```

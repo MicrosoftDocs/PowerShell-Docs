@@ -64,7 +64,7 @@ That is, you cannot disconnect the default connection to the local computer.
 However, if you create a separate connection to the local computer, for example, by using the computer name.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 

@@ -19,14 +19,14 @@ Creates an XML-based representation of an object or objects and stores it in a f
 ### ByPath (Default)
 
 ```
-Export-Clixml [-Path] <String> -InputObject <PSObject> [-Depth <Int32>] [-Force] [-NoClobber]
+Export-Clixml [-Depth <Int32>] [-Path] <String> -InputObject <PSObject> [-Force] [-NoClobber]
  [-Encoding <Encoding>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### ByLiteralPath
 
 ```
-Export-Clixml -LiteralPath <String> -InputObject <PSObject> [-Depth <Int32>] [-Force] [-NoClobber]
+Export-Clixml [-Depth <Int32>] -LiteralPath <String> -InputObject <PSObject> [-Force] [-NoClobber]
  [-Encoding <Encoding>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
@@ -156,7 +156,7 @@ Unicode character array as proven by `Format-Hex`. So the value is encoded but n
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -176,7 +176,7 @@ The default value can be overridden for the object type in the `Types.ps1xml` fi
 information, see [about_Types.ps1xml](../Microsoft.PowerShell.Core/About/about_Types.ps1xml.md).
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: (All)
 Aliases:
 
@@ -210,7 +210,7 @@ pages (like `-Encoding 1251`) or string names of registered code pages (like
 [Encoding.CodePage](/dotnet/api/system.text.encoding.codepage?view=netcore-2.2).
 
 ```yaml
-Type: Encoding
+Type: System.Text.Encoding
 Parameter Sets: (All)
 Aliases:
 Accepted values: ASCII, BigEndianUnicode, BigEndianUTF32, OEM, Unicode, UTF7, UTF8, UTF8BOM, UTF8NoBOM, UTF32
@@ -230,7 +230,7 @@ Causes the cmdlet to clear the read-only attribute of the output file if necessa
 attempt to reset the read-only attribute when the command completes.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -247,7 +247,7 @@ Specifies the object to be converted. Enter a variable that contains the objects
 or expression that gets the objects. You can also pipe objects to `Export-Clixml`.
 
 ```yaml
-Type: PSObject
+Type: System.Management.Automation.PSObject
 Parameter Sets: (All)
 Aliases:
 
@@ -266,7 +266,7 @@ are interpreted as wildcards. If the path includes escape characters, enclose it
 marks. Single quotation marks tell PowerShell not to interpret any characters as escape sequences.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: ByLiteralPath
 Aliases: PSPath, LP
 
@@ -283,7 +283,7 @@ Indicates that the cmdlet doesn't overwrite the contents of an existing file. By
 exists in the specified path, `Export-Clixml` overwrites the file without warning.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: NoOverwrite
 
@@ -299,7 +299,7 @@ Accept wildcard characters: False
 Specifies the path to the file where the XML representation of the object will be stored.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: ByPath
 Aliases:
 
@@ -315,7 +315,7 @@ Accept wildcard characters: False
 Shows what would happen if the cmdlet runs. The cmdlet isn't run.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 

@@ -140,7 +140,7 @@ There are several scenarios where it can overcome some limitations of the `Conve
 - Hash tables can be processed faster for certain data structures.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -159,7 +159,7 @@ By default, it is 1024.
 This parameter was introduced in PowerShell 6.2.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: (All)
 Aliases:
 
@@ -181,7 +181,7 @@ object is an empty string, `ConvertFrom-Json` does not generate any output. The 
 value cannot be `$null`.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -200,7 +200,7 @@ Setting this parameter causes arrays to be sent as a single object instead of se
 element separately. This guarantees that JSON can be round-tripped via `ConvertTo-Json`.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 

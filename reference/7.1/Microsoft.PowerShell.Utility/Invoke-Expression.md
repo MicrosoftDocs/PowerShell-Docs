@@ -119,7 +119,7 @@ Specifies the command or expression to run. Type the command or expression or en
 contains the command or expression. The **Command** parameter is required.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 

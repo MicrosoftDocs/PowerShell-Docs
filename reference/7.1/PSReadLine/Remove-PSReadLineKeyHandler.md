@@ -49,7 +49,7 @@ This parameter accepts an array of strings. Each string is a separate binding, n
 keys for a single binding.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases: Key
 
@@ -65,7 +65,7 @@ Accept wildcard characters: False
 Specify which vi mode the binding applies to. Possible values are: Insert, Command.
 
 ```yaml
-Type: ViMode
+Type: Microsoft.PowerShell.ViMode
 Parameter Sets: (All)
 Aliases:
 Accepted values: Insert, Command

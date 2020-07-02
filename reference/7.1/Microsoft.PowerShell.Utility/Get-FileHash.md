@@ -149,7 +149,7 @@ simple change validation, and should not be used to generate hash values for fil
 protection from attack or tampering.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 Accepted values: SHA1, SHA256, SHA384, SHA512, MD5
@@ -166,7 +166,7 @@ Accept wildcard characters: False
 Specifies the input stream.
 
 ```yaml
-Type: Stream
+Type: System.IO.Stream
 Parameter Sets: StreamParameterSet
 Aliases:
 
@@ -185,7 +185,7 @@ the path includes escape characters, enclose the path in single quotation marks.
 marks instruct PowerShell not to interpret characters as escape sequences.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: LiteralPath
 Aliases: PSPath, LP
 
@@ -201,7 +201,7 @@ Accept wildcard characters: False
 Specifies the path to one or more files as an array. Wildcard characters are permitted.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: Path
 Aliases:
 

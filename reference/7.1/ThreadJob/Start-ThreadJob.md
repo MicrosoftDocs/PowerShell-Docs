@@ -120,7 +120,7 @@ Specifies an array of arguments, or parameter values, for the script that is spe
 parameter name are interpreted values in the argument list.
 
 ```yaml
-Type: Object[]
+Type: System.Object[]
 Parameter Sets: (All)
 Aliases:
 
@@ -140,7 +140,7 @@ When you use this parameter, PowerShell converts the contents of the specified s
 script block and runs the script block as a background job.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: FilePath
 Aliases:
 
@@ -160,7 +160,7 @@ Use this parameter to prepare the session in which the job runs. For example, yo
 functions and modules to the session.
 
 ```yaml
-Type: ScriptBlock
+Type: System.Management.Automation.ScriptBlock
 Parameter Sets: (All)
 Aliases:
 
@@ -177,7 +177,7 @@ Specifies the objects used as input to the script block. It also allows for pipe
 `$input` automatic variable in the script block to access the input objects.
 
 ```yaml
-Type: PSObject
+Type: System.Management.Automation.PSObject
 Parameter Sets: (All)
 Aliases:
 
@@ -197,7 +197,7 @@ The default friendly name is "Job#", where "#" is an ordinal number that is incr
 job.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -215,12 +215,27 @@ a script block. Use the `$Input` automatic variable to access the value of the *
 parameter. This parameter is required.
 
 ```yaml
-Type: ScriptBlock
+Type: System.Management.Automation.ScriptBlock
 Parameter Sets: ScriptBlock
 Aliases:
 
 Required: True
 Position: 0
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -StreamingHost
+{{ Fill StreamingHost Description }}
+
+```yaml
+Type: System.Management.Automation.Host.PSHost
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -236,7 +251,7 @@ The thread pool size is global to the PowerShell session. Specifying a **Throttl
 call sets the limit for subsequent calls in the same session.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: (All)
 Aliases:
 

@@ -62,7 +62,7 @@ This parameter is required.
 You can also pipe a message string to **Write-Verbose**.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases: Msg
 

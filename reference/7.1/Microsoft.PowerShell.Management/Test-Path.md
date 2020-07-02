@@ -206,7 +206,7 @@ False
 > user, or elevate your credentials when running this cmdlet, use [Invoke-Command](../Microsoft.PowerShell.Core/Invoke-Command.md).
 
 ```yaml
-Type: PSCredential
+Type: System.Management.Automation.PSCredential
 Parameter Sets: (All)
 Aliases:
 
@@ -223,7 +223,7 @@ Specifies items that this cmdlet omits. The value of this parameter qualifies th
 parameter. Enter a path element or pattern, such as "*.txt". Wildcard characters are permitted.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -243,7 +243,7 @@ when it retrieves the objects instead of having PowerShell filter the objects af
 retrieved.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -260,7 +260,7 @@ Specifies paths that this cmdlet tests. The value of this parameter qualifies th
 parameter. Enter a path element or pattern, such as "*.txt". Wildcard characters are permitted.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -277,7 +277,7 @@ Indicates that this cmdlet tests the syntax of the path, regardless of whether t
 path exist. This cmdlet returns `$True` if the path syntax is valid and `$False` if it is not.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -296,7 +296,7 @@ characters that could be interpreted by PowerShell as escape sequences, you must
 single quote so that they won't be interpreted.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: LiteralPath
 Aliases: PSPath, LP
 
@@ -312,7 +312,7 @@ Accept wildcard characters: False
 Specify a time as a **DateTime** object.
 
 ```yaml
-Type: DateTime
+Type: System.Nullable`1[System.DateTime]
 Parameter Sets: (All)
 Aliases:
 
@@ -328,7 +328,7 @@ Accept wildcard characters: False
 Specify a time as a **DateTime** object.
 
 ```yaml
-Type: DateTime
+Type: System.Nullable`1[System.DateTime]
 Parameter Sets: (All)
 Aliases:
 
@@ -345,7 +345,7 @@ Specifies a path to be tested. Wildcard characters are permitted. If the path in
 enclose it in quotation marks.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: Path
 Aliases:
 
@@ -382,7 +382,7 @@ Tells whether the final element in the path is of a particular type.
 > confusion.
 
 ```yaml
-Type: TestPathType
+Type: Microsoft.PowerShell.Commands.TestPathType
 Parameter Sets: (All)
 Aliases: Type
 Accepted values: Any, Container, Leaf

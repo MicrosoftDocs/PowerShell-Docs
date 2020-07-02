@@ -83,7 +83,7 @@ The second command gets registered repositories and displays the results.
 Specifies credentials of an account that has rights to register a repository.
 
 ```yaml
-Type: PSCredential
+Type: System.Management.Automation.PSCredential
 Parameter Sets: NameParameterSet
 Aliases:
 
@@ -97,7 +97,7 @@ Accept wildcard characters: False
 ### -Default
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: PSGalleryParameterSet
 Aliases:
 
@@ -120,7 +120,7 @@ confirmation.
 You can set the **InstallationPolicy** with the `Set-PSRepository` cmdlet.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 Accepted values: Trusted, Untrusted
@@ -138,7 +138,7 @@ Specifies the name of the repository to register. You can use this name to speci
 cmdlets such as `Find-Module` and `Install-Module`.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: NameParameterSet
 Aliases:
 
@@ -156,7 +156,7 @@ polls available package providers and associates this repository with the first 
 that indicates it can handle the repository.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: NameParameterSet
 Aliases:
 
@@ -172,7 +172,7 @@ Accept wildcard characters: False
 Specifies a proxy server for the request, rather than connecting directly to the Internet resource.
 
 ```yaml
-Type: Uri
+Type: System.Uri
 Parameter Sets: (All)
 Aliases:
 
@@ -189,7 +189,7 @@ Specifies a user account that has permission to use the proxy server that is spe
 **Proxy** parameter.
 
 ```yaml
-Type: PSCredential
+Type: System.Management.Automation.PSCredential
 Parameter Sets: (All)
 Aliases:
 
@@ -206,7 +206,7 @@ Specifies the URI of the publish location. For example, for NuGet-based reposito
 location is similar to `https://someNuGetUrl.com/api/v2/Packages`.
 
 ```yaml
-Type: Uri
+Type: System.Uri
 Parameter Sets: NameParameterSet
 Aliases:
 
@@ -222,7 +222,7 @@ Accept wildcard characters: False
 Specifies the script publish location.
 
 ```yaml
-Type: Uri
+Type: System.Uri
 Parameter Sets: NameParameterSet
 Aliases:
 
@@ -238,7 +238,7 @@ Accept wildcard characters: False
 Specifies the script source location.
 
 ```yaml
-Type: Uri
+Type: System.Uri
 Parameter Sets: NameParameterSet
 Aliases:
 
@@ -258,7 +258,7 @@ For example, for NuGet-based repositories, the source location is similar to
 `https://someNuGetUrl.com/api/v2`.
 
 ```yaml
-Type: Uri
+Type: System.Uri
 Parameter Sets: NameParameterSet
 Aliases:
 
