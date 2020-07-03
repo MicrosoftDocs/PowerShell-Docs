@@ -55,7 +55,7 @@ Wildcards are permitted.
 The parameter name *Name* is optional.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 

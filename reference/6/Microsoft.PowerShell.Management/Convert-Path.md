@@ -72,7 +72,7 @@ escape characters, enclose it in single quotation marks. Single quotation marks 
 to interpret any characters as escape sequences.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: LiteralPath
 Aliases: PSPath, LP
 
@@ -88,7 +88,7 @@ Accept wildcard characters: False
 Specifies the PowerShell path to be converted.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: Path
 Aliases:
 

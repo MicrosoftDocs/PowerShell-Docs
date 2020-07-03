@@ -147,7 +147,7 @@ For more information about modules, see [about_Modules](../Microsoft.PowerShell.
 Indicates that this cmdlet gets all event subscribers, including subscribers for events that are hidden by using the *SupportEvent* parameter of Register-ObjectEvent, Register-WmiEvent, and Register-EngineEvent.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -166,7 +166,7 @@ Wildcards are not permitted.
 This parameter is case-sensitive.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: BySource
 Aliases:
 
@@ -183,7 +183,7 @@ Specifies the subscription identifier that this cmdlet gets.
 By default, **Get-EventSubscriber** gets all event subscribers in the session.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: ById
 Aliases: Id
 

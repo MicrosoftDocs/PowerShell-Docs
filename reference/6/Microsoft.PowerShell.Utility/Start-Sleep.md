@@ -56,7 +56,7 @@ Start-Sleep -Seconds 1.5
 Specifies how long the resource sleeps in milliseconds. The parameter can be abbreviated as **m**.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: Milliseconds
 Aliases: ms
 
@@ -73,7 +73,7 @@ Specifies how long the resource sleeps in seconds. You can omit the parameter na
 abbreviate it as **s**. Beginning in PowerShell 6.2.0, this parameter now accepts fractional values.
 
 ```yaml
-Type: Double
+Type: System.Double
 Parameter Sets: Seconds
 Aliases:
 

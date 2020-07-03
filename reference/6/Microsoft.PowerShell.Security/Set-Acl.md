@@ -183,7 +183,7 @@ You can save the output of a `Get-Acl` command in a variable and then use the **
 to pass the variable, or type a `Get-Acl` command.
 
 ```yaml
-Type: Object
+Type: System.Object
 Parameter Sets: (All)
 Aliases:
 
@@ -204,7 +204,7 @@ central access policies for users and groups. For more information, see [Dynamic
 This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: ByPath, ByLiteralPath
 Aliases:
 
@@ -221,7 +221,7 @@ Omits the specified items. The value of this parameter qualifies the **Path** pa
 path element or pattern, such as `*.txt`. Wildcards are permitted.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -240,7 +240,7 @@ provider. Filters are more efficient than other parameters, because the provider
 retrieving the objects, rather than having PowerShell filter the objects after they are retrieved.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -257,7 +257,7 @@ Changes only the specified items. The value of this parameter qualifies the **Pa
 Enter a path element or pattern, such as `*.txt`. Wildcards are permitted.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -279,7 +279,7 @@ explicitly in the command.
 This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
-Type: PSObject
+Type: System.Management.Automation.PSObject
 Parameter Sets: ByInputObject
 Aliases:
 
@@ -300,7 +300,7 @@ Single quotation marks tell PowerShell not to interpret any characters as escape
 This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: ByLiteralPath
 Aliases: PSPath
 
@@ -317,7 +317,7 @@ Returns an object that represents the security descriptor that was changed. By d
 does not generate any output.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -339,7 +339,7 @@ you omit the **Path** parameter (name and value), `Set-Acl` uses the path that i
 security object.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: ByPath
 Aliases:
 
@@ -355,7 +355,7 @@ Accept wildcard characters: True
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -371,7 +371,7 @@ Accept wildcard characters: False
 Shows what would happen if the cmdlet runs. The cmdlet is not run.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 

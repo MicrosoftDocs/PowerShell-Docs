@@ -154,7 +154,7 @@ Specifies the objects to be written to a string. Enter a variable that contains 
 a command or expression that gets the objects.
 
 ```yaml
-Type: PSObject
+Type: System.Management.Automation.PSObject
 Parameter Sets: (All)
 Aliases:
 
@@ -173,7 +173,7 @@ the string objects are preserved.
 This parameter was introduced in PowerShell 6.0.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: NoNewLineFormatting
 Aliases:
 
@@ -190,7 +190,7 @@ Indicates that the cmdlet sends a separate string for each object. By default, t
 object are accumulated and sent as a single string.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: StreamFormatting
 Aliases:
 
@@ -209,7 +209,7 @@ this parameter, the width is determined by the characteristics of the host progr
 value for the PowerShell console is 80 characters.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: (All)
 Aliases:
 

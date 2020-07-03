@@ -131,7 +131,7 @@ Enter the paths and file names of one or more `Types.ps1xml` files. Wildcards ar
 you omit the path, the default location is the current directory.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: RemoveFileSet
 Aliases:
 
@@ -150,7 +150,7 @@ or a command that gets **TypeData** objects, such as a `Get-TypeData` command. Y
 **TypeData** objects to `Remove-TypeData`.
 
 ```yaml
-Type: TypeData
+Type: System.Management.Automation.Runspaces.TypeData
 Parameter Sets: RemoveTypeDataSet
 Aliases:
 
@@ -171,7 +171,7 @@ You can pipe type names to `Remove-TypeData`. When you pipe an object to `Remove
 `Remove-TypeData` gets the type name of the object and removes all type data for the object type.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: RemoveTypeSet
 Aliases:
 
@@ -187,7 +187,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -203,7 +203,7 @@ Accept wildcard characters: False
 Shows what would happen if the cmdlet runs. The cmdlet is not run.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 

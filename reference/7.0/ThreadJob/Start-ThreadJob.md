@@ -227,7 +227,10 @@ Accept wildcard characters: False
 ```
 
 ### -StreamingHost
-{{ Fill StreamingHost Description }}
+
+This parameter provides a thread safe way to allow `Write-Host` output to go directly to the passed
+in **PSHost** object. Without it, `Write-Host` output goes to the job information data stream
+collection and doesn't appear in a host console until after the jobs finish running.
 
 ```yaml
 Type: System.Management.Automation.Host.PSHost

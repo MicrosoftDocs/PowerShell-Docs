@@ -218,7 +218,7 @@ a command that creates or gets the CIM session, such as the `New-CimSession` or 
 cmdlets. For more information, see [about_CimSession](../Microsoft.PowerShell.Core/About/about_CimSession.md).
 
 ```yaml
-Type: CimSession[]
+Type: Microsoft.Management.Infrastructure.CimSession[]
 Parameter Sets: ResourceUriSessionSet, QuerySessionSet, ClassNameSessionSet, CimInstanceSessionSet
 Aliases:
 
