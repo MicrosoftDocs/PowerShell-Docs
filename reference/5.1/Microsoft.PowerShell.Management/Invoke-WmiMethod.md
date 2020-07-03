@@ -184,7 +184,7 @@ PS C:\\\>$binSD = $acl.GetSecurityDescriptorBinaryForm()
 PS C:\\\>invoke-wmimethod -class Win32_SecurityDescriptorHelper -Name BinarySDToSDDL -argumentlist $binSD, $null
 
 ```yaml
-Type: Object[]
+Type: System.Object[]
 Parameter Sets: class, object, path
 Aliases: Args
 
@@ -212,7 +212,7 @@ For more information, see about_Remote_Requirements.
 For more information about Windows PowerShell background jobs, see about_Jobs and about_Remote_Jobs.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -244,7 +244,7 @@ The acceptable values for this parameter are:
 6: PacketPrivacy (The properties of the other authentication levels are used, and all the data is encrypted.)
 
 ```yaml
-Type: AuthenticationLevel
+Type: System.Management.AuthenticationLevel
 Parameter Sets: class, path, WQLQuery, query, list
 Aliases:
 Accepted values: Default, None, Connect, Call, Packet, PacketIntegrity, PacketPrivacy, Unchanged
@@ -264,7 +264,7 @@ To use Kerberos, specify kerberos:\<DomainName\ServerName\>.
 You cannot include the authority setting when you connect to the local computer.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: class, path, WQLQuery, query, list
 Aliases:
 
@@ -279,7 +279,7 @@ Accept wildcard characters: False
 Specifies the WMI class that contains a static method to call.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: class
 Aliases:
 
@@ -301,7 +301,7 @@ This parameter does not rely on Windows PowerShell remoting.
 You can use the *ComputerName* parameter even if your computer is not configured to run remote commands.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: class, path, WQLQuery, query, list
 Aliases: Cn
 
@@ -320,7 +320,7 @@ Or, enter a **PSCredential** object, such as an object that is returned by the G
 When you type a user name, you will be prompted for a password.
 
 ```yaml
-Type: PSCredential
+Type: System.Management.Automation.PSCredential
 Parameter Sets: class, path, WQLQuery, query, list
 Aliases:
 
@@ -335,7 +335,7 @@ Accept wildcard characters: False
 Indicates that this cmdlet enables all the privileges of the current user before the command makes the WMI call.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: class, path, WQLQuery, query, list
 Aliases:
 
@@ -361,7 +361,7 @@ The acceptable values for this parameter are:
 4: Delegate (Allows objects to permit other objects to use the credentials of the caller.)
 
 ```yaml
-Type: ImpersonationLevel
+Type: System.Management.ImpersonationLevel
 Parameter Sets: class, path, WQLQuery, query, list
 Aliases:
 Accepted values: Default, Anonymous, Identify, Impersonate, Delegate
@@ -378,7 +378,7 @@ Specifies a **ManagementObject** object to use as input.
 When this parameter is used, all other parameters except the *Flag* and *Argument* parameters are ignored.
 
 ```yaml
-Type: ManagementObject
+Type: System.Management.ManagementObject
 Parameter Sets: object
 Aliases:
 
@@ -394,7 +394,7 @@ Specifies the preferred locale for WMI objects.
 Specify the value of the Locale parameter as an array in the MS_\<LCID\> format in the preferred order.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: class, path, WQLQuery, query, list
 Aliases:
 
@@ -410,7 +410,7 @@ Specifies the name of the method to be invoked.
 This parameter is mandatory and cannot be null or empty.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -425,7 +425,7 @@ Accept wildcard characters: False
 When used with the *Class* parameter, this parameter specifies the WMI repository namespace where the referenced WMI class or object is located.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: class, path, WQLQuery, query, list
 Aliases: NS
 
@@ -441,7 +441,7 @@ Specifies the WMI object path of a WMI class, or specifies the WMI object path o
 The class or the instance that you specify must contain the method that is specified in the *Name* parameter.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: path
 Aliases:
 
@@ -458,7 +458,7 @@ This parameter is used together with the *AsJob* parameter.
 The throttle limit applies only to the current command, not to the session or to the computer.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: (All)
 Aliases:
 
@@ -473,7 +473,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -489,7 +489,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 

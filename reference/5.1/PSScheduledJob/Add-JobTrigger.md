@@ -103,7 +103,7 @@ Specifies the identification numbers of the scheduled jobs.
 To get the identification number of scheduled jobs on the local computer or a remote computer, use the Get-ScheduledJob cmdlet.
 
 ```yaml
-Type: Int32[]
+Type: System.Int32[]
 Parameter Sets: JobDefinitionId
 Aliases:
 
@@ -120,7 +120,7 @@ Enter a variable that contains **ScheduledJob** objects or type a command or exp
 You can also pipe **ScheduledJob** objects to **Add-JobTrigger**.
 
 ```yaml
-Type: ScheduledJobDefinition[]
+Type: Microsoft.PowerShell.ScheduledJob.ScheduledJobDefinition[]
 Parameter Sets: JobDefinition
 Aliases:
 
@@ -139,7 +139,7 @@ Wildcards are supported.
 To get the names of scheduled jobs on the local computer or a remote computer, use the Get-ScheduledJob cmdlet.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: JobDefinitionName
 Aliases:
 
@@ -156,7 +156,7 @@ Enter a hash table that specifies job triggers or a variable that contains **Sch
 You can also pipe **ScheduledJobTrigger** objects to **Add-JobTrigger**.
 
 ```yaml
-Type: ScheduledJobTrigger[]
+Type: Microsoft.PowerShell.ScheduledJob.ScheduledJobTrigger[]
 Parameter Sets: (All)
 Aliases:
 

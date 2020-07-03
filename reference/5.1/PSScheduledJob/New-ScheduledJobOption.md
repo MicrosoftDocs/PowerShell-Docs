@@ -161,7 +161,7 @@ By default, scheduled jobs stop when the computer disconnects from AC power.
 The *ContinueIfGoingOnBattery* parameter sets the value of the StopIfGoingOnBatteries property of scheduled jobs to $True.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -182,7 +182,7 @@ It does not prevents users from using the Start-Job cmdlet to start the job.
 The *DoNotAllowDemandStart* parameter sets the value of the DoNotAllowDemandStart property of scheduled jobs to $True.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -203,7 +203,7 @@ Even if a task is hidden, users can display the task by selecting the Show hidde
 The *HideInTaskScheduler* parameter sets the value of the ShowInTaskScheduler property of scheduled jobs to $False.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -225,7 +225,7 @@ To enable this value, use the *StartIfIdle* parameter.
 By default, the StartIfNotIdle property of scheduled jobs is set to $True and Windows PowerShell ignores the *IdleDuration* and *IdleTimeout* values.
 
 ```yaml
-Type: TimeSpan
+Type: System.TimeSpan
 Parameter Sets: (All)
 Aliases:
 
@@ -247,7 +247,7 @@ To enable this value, use the *StartIfIdle* parameter.
 By default, the StartIfNotIdle property of scheduled jobs is set to $True and Windows PowerShell ignores the *IdleDuration* and *IdleTimeout* values.
 
 ```yaml
-Type: TimeSpan
+Type: System.TimeSpan
 Parameter Sets: (All)
 Aliases:
 
@@ -276,7 +276,7 @@ To run the job, all conditions for the job schedule must be met.
 For example, if the conditions that are set by the *RequireNetwork*, *IdleDuration*, and *IdleTimeout* parameters are not satisfied, the job instance is not started, regardless of the value of this parameter.
 
 ```yaml
-Type: TaskMultipleInstancePolicy
+Type: Microsoft.PowerShell.ScheduledJob.TaskMultipleInstancePolicy
 Parameter Sets: (All)
 Aliases:
 Accepted values: None, IgnoreNew, Parallel, Queue, StopExisting
@@ -296,7 +296,7 @@ If you specify this parameter and the network is not available at the scheduled 
 The *RequireNetwork* parameter sets the value of the RunWithoutNetwork property of scheduled jobs to $False.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -314,7 +314,7 @@ This parameter works with the *StopIfGoingOffIdle* parameter, which suspends a r
 The *RestartOnIdleResume* parameter sets the value of the RestartOnIdleResume property of scheduled jobs to $True.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -333,7 +333,7 @@ To enable a scheduled job to run with Administrator permissions, use the *Creden
 The *RunElevated* parameter sets the value of the RunElevated property of scheduled jobs to $True.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -354,7 +354,7 @@ If you specify this parameter and the computer is busy (not idle) at the schedul
 The *StartIfIdle* parameter sets the value of the StartIfNotIdle property of scheduled jobs to $False.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -372,7 +372,7 @@ The default value is $False.
 The *StartIfOnBattery* parameter sets the value of the StartIfOnBatteries property of scheduled jobs to $True.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -392,7 +392,7 @@ To change this default behavior, use the *RestartOnIdleResume* parameter.
 The *StopIfGoingOffIdle* parameter sets the value of the StopIfGoingOffIdle property of scheduled jobs to $True.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -410,7 +410,7 @@ By default, if the computer is in a Hibernate or Sleep state at the scheduled st
 The *WakeToRun* parameter sets the value of the WakeToRun property of scheduled jobs to $True.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 

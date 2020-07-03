@@ -27,10 +27,10 @@ Where-Object [-InputObject <PSObject>] [-Property] <String> [[-Value] <Object>] 
 Where-Object [-InputObject <PSObject>] [-FilterScript] <ScriptBlock> [<CommonParameters>]
 ```
 
-### CaseSensitiveNotMatchSet
+### MatchSet
 
 ```
-Where-Object [-InputObject <PSObject>] [-Property] <String> [[-Value] <Object>] [-CNotMatch]
+Where-Object [-InputObject <PSObject>] [-Property] <String> [[-Value] <Object>] [-Match]
  [<CommonParameters>]
 ```
 
@@ -125,12 +125,6 @@ Where-Object [-InputObject <PSObject>] [-Property] <String> [[-Value] <Object>] 
  [<CommonParameters>]
 ```
 
-### MatchSet
-
-```
-Where-Object [-InputObject <PSObject>] [-Property] <String> [[-Value] <Object>] [-Match] [<CommonParameters>]
-```
-
 ### CaseSensitiveMatchSet
 
 ```
@@ -141,6 +135,13 @@ Where-Object [-InputObject <PSObject>] [-Property] <String> [[-Value] <Object>] 
 
 ```
 Where-Object [-InputObject <PSObject>] [-Property] <String> [[-Value] <Object>] [-NotMatch]
+ [<CommonParameters>]
+```
+
+### CaseSensitiveNotMatchSet
+
+```
+Where-Object [-InputObject <PSObject>] [-Property] <String> [[-Value] <Object>] [-CNotMatch]
  [<CommonParameters>]
 ```
 
@@ -373,7 +374,7 @@ to a collection of one object.
 This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: CaseSensitiveContainsSet
 Aliases:
 
@@ -392,7 +393,7 @@ This operation is case-sensitive.
 This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: CaseSensitiveEqualSet
 Aliases:
 
@@ -411,7 +412,7 @@ specified value. This operation is case-sensitive.
 This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: CaseSensitiveGreaterOrEqualSet
 Aliases:
 
@@ -430,7 +431,7 @@ This operation is case-sensitive.
 This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: CaseSensitiveGreaterThanSet
 Aliases:
 
@@ -458,7 +459,7 @@ example, the following statements are both true.
 This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: CaseSensitiveInSet
 Aliases:
 
@@ -477,7 +478,7 @@ value. This operation is case-sensitive.
 This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: CaseSensitiveLessOrEqualSet
 Aliases:
 
@@ -498,7 +499,7 @@ For example: `Get-Process | where ProcessName -CLike "*host"`
 This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: CaseSensitiveLikeSet
 Aliases:
 
@@ -517,7 +518,7 @@ operation is case-sensitive.
 This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: CaseSensitiveLessThanSet
 Aliases:
 
@@ -539,7 +540,7 @@ For example: `Get-Process | where ProcessName -CMatch "Shell"`
 This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: CaseSensitiveMatchSet
 Aliases:
 
@@ -558,7 +559,7 @@ This operation is case-sensitive.
 This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: CaseSensitiveNotEqualSet
 Aliases:
 
@@ -583,7 +584,7 @@ is a single object, PowerShell converts it to a collection of one object.
 This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: CaseSensitiveNotContainsSet
 Aliases:
 
@@ -609,7 +610,7 @@ property and value positions are reversed. For example, the following statements
 `"abc" -CNotIn "Abc", "def"`
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: CaseSensitiveNotInSet
 Aliases:
 
@@ -630,7 +631,7 @@ For example: `Get-Process | where ProcessName -CNotLike "*host"`
 This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: CaseSensitiveNotLikeSet
 Aliases:
 
@@ -652,7 +653,7 @@ For example: `Get-Process | where ProcessName -CNotMatch "Shell"`
 This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: CaseSensitiveNotMatchSet
 Aliases:
 
@@ -676,7 +677,7 @@ object.
 This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: ContainsSet
 Aliases: IContains
 
@@ -694,7 +695,7 @@ Indicates that this cmdlet gets objects if the property value is the same as the
 This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: EqualSet
 Aliases: IEQ
 
@@ -713,7 +714,7 @@ Specifies the script block that is used to filter the objects. Enclose the scrip
 The parameter name, **FilterScript**, is optional.
 
 ```yaml
-Type: ScriptBlock
+Type: System.Management.Automation.ScriptBlock
 Parameter Sets: ScriptBlockSet
 Aliases:
 
@@ -732,7 +733,7 @@ specified value.
 This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: GreaterOrEqualSet
 Aliases: IGE
 
@@ -750,7 +751,7 @@ Indicates that this cmdlet gets objects if the property value is greater than th
 This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: GreaterThanSet
 Aliases: IGT
 
@@ -778,7 +779,7 @@ value of **Value** are the same instance of an object.
 This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: InSet
 Aliases: IIn
 
@@ -802,7 +803,7 @@ have specific values in defined properties, you use `Where-Object` in the pipeli
 examples in this topic.
 
 ```yaml
-Type: PSObject
+Type: System.Management.Automation.PSObject
 Parameter Sets: (All)
 Aliases:
 
@@ -823,7 +824,7 @@ For example, `Get-Process | where StartTime -Is [DateTime]`
 This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: IsSet
 Aliases:
 
@@ -844,7 +845,7 @@ For example, `Get-Process | where StartTime -IsNot [DateTime]`
 This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: IsNotSet
 Aliases:
 
@@ -863,7 +864,7 @@ value.
 This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: LessOrEqualSet
 Aliases: ILE
 
@@ -884,7 +885,7 @@ For example: `Get-Process | where ProcessName -Like "*host"`
 This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: LikeSet
 Aliases: ILike
 
@@ -902,7 +903,7 @@ Indicates that this cmdlet gets objects if the property value is less than the s
 This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: LessThanSet
 Aliases: ILT
 
@@ -923,7 +924,7 @@ For example: `Get-Process | where ProcessName -Match "shell"`
 This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: MatchSet
 Aliases: IMatch
 
@@ -941,30 +942,9 @@ Indicates that this cmdlet gets objects if the property value is different than 
 This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: NotEqualSet
 Aliases: INE
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Not
-
-Indicates that this cmdlet gets objects if the property does not exist or has a value of null or
-false.
-
-For example: `Get-Service | where -Not "DependentServices"`
-
-This parameter was introduced in Windows PowerShell 6.1.
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: Not
-Aliases:
 
 Required: True
 Position: Named
@@ -987,7 +967,7 @@ converts it to a collection of one object.
 This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: NotContainsSet
 Aliases: INotContains
 
@@ -1014,7 +994,7 @@ match. `Where-Object` returns the object only if the value of **Property** and a
 This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: NotInSet
 Aliases: INotIn
 
@@ -1035,7 +1015,7 @@ For example: `Get-Process | where ProcessName -NotLike "*host"`
 This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: NotLikeSet
 Aliases: INotLike
 
@@ -1056,7 +1036,7 @@ For example: `Get-Process | where ProcessName -NotMatch "PowerShell"`
 This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: NotMatchSet
 Aliases: INotMatch
 
@@ -1074,8 +1054,8 @@ Specifies the name of an object property. The parameter name, **Property**, is o
 This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
-Type: String
-Parameter Sets: EqualSet, CaseSensitiveGreaterOrEqualSet, CaseSensitiveEqualSet, NotEqualSet, CaseSensitiveNotEqualSet, GreaterThanSet, CaseSensitiveGreaterThanSet, LessThanSet, CaseSensitiveLessThanSet, GreaterOrEqualSet, LessOrEqualSet, CaseSensitiveLessOrEqualSet, LikeSet, CaseSensitiveLikeSet, NotLikeSet, CaseSensitiveNotLikeSet, MatchSet, CaseSensitiveMatchSet, NotMatchSet, CaseSensitiveNotMatchSet, ContainsSet, CaseSensitiveContainsSet, NotContainsSet, CaseSensitiveNotContainsSet, InSet, CaseSensitiveInSet, NotInSet, CaseSensitiveNotInSet, IsSet, IsNotSet, Not
+Type: System.String
+Parameter Sets: EqualSet, MatchSet, CaseSensitiveEqualSet, NotEqualSet, CaseSensitiveNotEqualSet, GreaterThanSet, CaseSensitiveGreaterThanSet, LessThanSet, CaseSensitiveLessThanSet, GreaterOrEqualSet, CaseSensitiveGreaterOrEqualSet, LessOrEqualSet, CaseSensitiveLessOrEqualSet, LikeSet, CaseSensitiveLikeSet, NotLikeSet, CaseSensitiveNotLikeSet, CaseSensitiveMatchSet, NotMatchSet, CaseSensitiveNotMatchSet, ContainsSet, CaseSensitiveContainsSet, NotContainsSet, CaseSensitiveNotContainsSet, InSet, CaseSensitiveInSet, NotInSet, CaseSensitiveNotInSet, IsSet, IsNotSet
 Aliases:
 
 Required: True
@@ -1098,8 +1078,8 @@ wildcard characters when used with the following comparison parameters:
 This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
-Type: Object
-Parameter Sets: EqualSet, CaseSensitiveGreaterOrEqualSet, CaseSensitiveEqualSet, NotEqualSet, CaseSensitiveNotEqualSet, GreaterThanSet, CaseSensitiveGreaterThanSet, LessThanSet, CaseSensitiveLessThanSet, GreaterOrEqualSet, LessOrEqualSet, CaseSensitiveLessOrEqualSet, LikeSet, CaseSensitiveLikeSet, NotLikeSet, CaseSensitiveNotLikeSet, MatchSet, CaseSensitiveMatchSet, NotMatchSet, CaseSensitiveNotMatchSet, ContainsSet, CaseSensitiveContainsSet, NotContainsSet, CaseSensitiveNotContainsSet, InSet, CaseSensitiveInSet, NotInSet, CaseSensitiveNotInSet, IsSet, IsNotSet
+Type: System.Object
+Parameter Sets: EqualSet, MatchSet, CaseSensitiveEqualSet, NotEqualSet, CaseSensitiveNotEqualSet, GreaterThanSet, CaseSensitiveGreaterThanSet, LessThanSet, CaseSensitiveLessThanSet, GreaterOrEqualSet, CaseSensitiveGreaterOrEqualSet, LessOrEqualSet, CaseSensitiveLessOrEqualSet, LikeSet, CaseSensitiveLikeSet, NotLikeSet, CaseSensitiveNotLikeSet, CaseSensitiveMatchSet, NotMatchSet, CaseSensitiveNotMatchSet, ContainsSet, CaseSensitiveContainsSet, NotContainsSet, CaseSensitiveNotContainsSet, InSet, CaseSensitiveInSet, NotInSet, CaseSensitiveNotInSet, IsSet, IsNotSet
 Aliases:
 
 Required: False

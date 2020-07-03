@@ -93,7 +93,7 @@ characters are permitted. If you enter multiple names, this cmdlet opens control
 match any of the names, as if the items in the name list were separated by an **OR** operator.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: CanonicalName
 Aliases:
 
@@ -111,7 +111,7 @@ that contains control panel item objects, or type a command or expression that g
 item objects, such as `Get-ControlPanelItem`.
 
 ```yaml
-Type: ControlPanelItem[]
+Type: Microsoft.PowerShell.Commands.ControlPanelItem[]
 Parameter Sets: ControlPanelItem
 Aliases:
 
@@ -129,7 +129,7 @@ names, this cmdlet opens control panel items that match any of the names, as if 
 name list were separated by an **OR** operator.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: RegularName
 Aliases:
 

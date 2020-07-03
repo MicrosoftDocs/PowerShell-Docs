@@ -70,7 +70,7 @@ Add-LocalGroupMember -Group "Administrators" -Member "Admin02", "MicrosoftAccoun
 Specifies the security group to which this cmdlet adds members.
 
 ```yaml
-Type: LocalGroup
+Type: Microsoft.PowerShell.Commands.LocalGroup
 Parameter Sets: Group
 Aliases:
 
@@ -87,7 +87,7 @@ Specifies an array of users or groups that this cmdlet adds to a security group.
 users or groups by name, security ID (SID), or **LocalPrincipal** objects.
 
 ```yaml
-Type: LocalPrincipal[]
+Type: Microsoft.PowerShell.Commands.LocalPrincipal[]
 Parameter Sets: (All)
 Aliases:
 
@@ -103,7 +103,7 @@ Accept wildcard characters: False
 Specifies the name of the security group to which this cmdlet adds members.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: Default
 Aliases:
 
@@ -119,7 +119,7 @@ Accept wildcard characters: False
 Specifies the security ID of the security group to which this cmdlet adds members.
 
 ```yaml
-Type: SecurityIdentifier
+Type: System.Security.Principal.SecurityIdentifier
 Parameter Sets: SecurityIdentifier
 Aliases:
 
@@ -135,7 +135,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -151,7 +151,7 @@ Accept wildcard characters: False
 Shows what would happen if the cmdlet runs. The cmdlet is not run.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 

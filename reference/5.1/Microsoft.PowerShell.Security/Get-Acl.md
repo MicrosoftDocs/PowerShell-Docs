@@ -117,7 +117,7 @@ Get-Acl -InputObject (Get-StorageSubSystem -Name S087)
 Gets the audit data for the security descriptor from the system access control list (SACL).
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -134,7 +134,7 @@ Omits the specified items. The value of this parameter qualifies the **Path** pa
 path element or pattern, such as `*.txt`. Wildcards are permitted.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -153,7 +153,7 @@ provider. Filters are more efficient than other parameters, because the provider
 getting the objects, rather than having PowerShell filter the objects after they are retrieved.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -170,7 +170,7 @@ Gets only the specified items. The value of this parameter qualifies the **Path*
 path element or pattern, such as `*.txt`. Wildcards are permitted.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -190,7 +190,7 @@ security descriptor of the current directory.
 The parameter name ("Path") is optional.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: ByPath
 Aliases:
 
@@ -212,7 +212,7 @@ central access policies for users and groups. For more information, see
 This parameter is introduced in Windows PowerShell 3.0.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -234,7 +234,7 @@ parameter explicitly in the command.
 This parameter is introduced in Windows PowerShell 3.0.
 
 ```yaml
-Type: PSObject
+Type: System.Management.Automation.PSObject
 Parameter Sets: ByInputObject
 Aliases:
 
@@ -255,7 +255,7 @@ interpret any characters as escape sequences.
 This parameter is introduced in Windows PowerShell 3.0.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: ByLiteralPath
 Aliases: PSPath
 
@@ -273,7 +273,7 @@ This parameter is valid only when a transaction is in progress.
 For more information, see about_Transactions.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: usetx
 

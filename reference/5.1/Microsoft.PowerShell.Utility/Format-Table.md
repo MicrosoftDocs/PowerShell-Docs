@@ -239,7 +239,7 @@ Indicates that the cmdlet adjusts the column size and number of columns based on
 data. By default, the column size and number are determined by the view.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -257,7 +257,7 @@ debugging aid when you're formatting expressions in a `Format-Table` command and
 troubleshoot the expressions.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -282,7 +282,7 @@ The acceptable values for this parameter are as follows:
   collection.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 Accepted values: CoreOnly, EnumOnly, Both
@@ -301,7 +301,7 @@ Indicates that the cmdlet directs the cmdlet to display all the error informatio
 error or display streams, only some of the error information is displayed.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -328,7 +328,7 @@ property, use a hash table. The valid keys are as follows:
 - FormatString = `<string>`
 
 ```yaml
-Type: Object
+Type: System.Object
 Parameter Sets: (All)
 Aliases:
 
@@ -344,7 +344,7 @@ Accept wildcard characters: False
 Omits the column headings from the table.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -361,7 +361,7 @@ Specifies the objects to format. Enter a variable that contains the objects, or 
 expression that gets the objects.
 
 ```yaml
-Type: PSObject
+Type: System.Management.Automation.PSObject
 Parameter Sets: (All)
 Aliases:
 
@@ -396,7 +396,7 @@ property, use a hash table. The valid keys are as follows:
 - Alignment = value can be Left, Center, or Right
 
 ```yaml
-Type: Object[]
+Type: System.Object[]
 Parameter Sets: (All)
 Aliases:
 
@@ -413,7 +413,7 @@ Repeats displaying the header of a table after every screen full. The repeated h
 the output is piped to a pager such as `less` or `more` or paging with a screen reader.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -430,7 +430,7 @@ This parameter sends errors through the pipeline. This parameter can be used as 
 you're formatting expressions in a `Format-Table` command and need to troubleshoot the expressions.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -457,7 +457,7 @@ alternate view isn't a list or a table, use the `Format-Custom` cmdlet.
 You can't use the **Property** and **View** parameters in the same command.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -474,7 +474,7 @@ Displays text that exceeds the column width on the next line. By default, text t
 column width is truncated.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 

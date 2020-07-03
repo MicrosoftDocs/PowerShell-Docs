@@ -109,7 +109,7 @@ Runs the specified cmdlet or advanced function as a workflow.
 Enter the cmdlet or function name, such as `Update-Help`, `Set-ExecutionPolicy`, or `Set-NetFirewallRule`.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: Command
 Aliases:
 
@@ -127,7 +127,7 @@ Enter the expression as a string, such as `"ipconfig /all"`.
 If the expression includes spaces or special characters, enclose the expression in quotation marks.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: Expression
 Aliases:
 
@@ -146,7 +146,7 @@ Enter a hash table in which each key is a parameter name and its value is the pa
 For information about hash tables, see [about_Hash_Tables](../Microsoft.PowerShell.Core/About/about_Hash_Tables.md).
 
 ```yaml
-Type: Hashtable
+Type: System.Collections.Hashtable
 Parameter Sets: Command
 Aliases:
 
@@ -162,7 +162,7 @@ Accept wildcard characters: False
 Used to allows pipeline input.
 
 ```yaml
-Type: Object
+Type: System.Object
 Parameter Sets: (All)
 Aliases:
 

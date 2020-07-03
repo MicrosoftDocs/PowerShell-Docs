@@ -93,7 +93,7 @@ cmdlets. For more information, see
 [about_CimSession](../Microsoft.PowerShell.Core/About/about_CimSession.md).
 
 ```yaml
-Type: CimSession[]
+Type: Microsoft.Management.Infrastructure.CimSession[]
 Parameter Sets: CimInstanceSessionSet, QuerySessionSet
 Aliases:
 
@@ -119,7 +119,7 @@ If multiple operations are being performed on the same computer, connecting usin
 gives better performance.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: CimInstanceComputerSet, QueryComputerSet
 Aliases: CN, ServerName
 
@@ -136,7 +136,7 @@ Specifies a CIM instance object to be removed from the CIM server. The object pa
 is not changed, only the instance in the CIM server is removed.
 
 ```yaml
-Type: CimInstance
+Type: Microsoft.Management.Infrastructure.CimInstance
 Parameter Sets: CimInstanceComputerSet, CimInstanceSessionSet
 Aliases: CimInstance
 
@@ -154,7 +154,7 @@ tab completion to browse the list of namespaces, because PowerShell gets a list 
 the local WMI server to provide the list of namespaces.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: QuerySessionSet, QueryComputerSet
 Aliases:
 
@@ -177,7 +177,7 @@ parameter are not recoverable, because the operation on the server times out bef
 reconnect.
 
 ```yaml
-Type: UInt32
+Type: System.UInt32
 Parameter Sets: (All)
 Aliases: OT
 
@@ -199,7 +199,7 @@ uses the WQL LIKE operator, then you must escape the following characters by enc
 square brackets (\[\]): percent (%), underscore (_), or opening square bracket (\[).
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: QuerySessionSet, QueryComputerSet
 Aliases:
 
@@ -216,7 +216,7 @@ Specifies the query language used for the Query parameter. The acceptable values
 are: **WQL** or **CQL**. The default value is **WQL**.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: QuerySessionSet, QueryComputerSet
 Aliases:
 
@@ -250,7 +250,7 @@ If both the **ResourceUri** parameter and the **Filter** parameter are specified
 parameter is ignored.
 
 ```yaml
-Type: Uri
+Type: System.Uri
 Parameter Sets: CimInstanceComputerSet, CimInstanceSessionSet
 Aliases:
 
@@ -266,7 +266,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -282,7 +282,7 @@ Accept wildcard characters: False
 Shows what would happen if the cmdlet runs. The cmdlet is not run.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 

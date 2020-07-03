@@ -82,7 +82,7 @@ or [Get-CimSession](/powershell/module/CimCmdlets/Get-CimSession) cmdlet.
 The default is the current session on the local computer.
 
 ```yaml
-Type: CimSession[]
+Type: Microsoft.Management.Infrastructure.CimSession[]
 Parameter Sets: CimSessionSet
 Aliases:
 
@@ -99,7 +99,7 @@ Specifies an array of computer names. This parameter restricts the computers tha
 meta-configuration documents in the **Path** parameter to those specified in the array.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: ComputerNameSet
 Aliases: CN, ServerName
 
@@ -117,7 +117,7 @@ a **PSCredential** object, use the Get-Credential cmdlet. For more information, 
 `Get-Help Get-Credential`.
 
 ```yaml
-Type: PSCredential
+Type: System.Management.Automation.PSCredential
 Parameter Sets: ComputerNameSet
 Aliases:
 
@@ -133,7 +133,7 @@ Accept wildcard characters: False
 Forces the command to run without asking for user confirmation.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -151,7 +151,7 @@ and applies these LCM settings to computers that have settings files in the spec
 target node must have a settings file of the following format: `NetBIOS Name.meta.mof`.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -171,7 +171,7 @@ computer. The throttle limit applies only to the current cmdlet, not to the sess
 computer.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: (All)
 Aliases:
 
@@ -187,7 +187,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -204,7 +204,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 

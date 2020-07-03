@@ -72,7 +72,7 @@ Get-RunspaceDebug
 The name of the application domain that hosts the PowerShell runspace.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: ProcessNameParameterSet
 Aliases:
 
@@ -88,7 +88,7 @@ Accept wildcard characters: False
 The name of the process that hosts the PowerShell runspace.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: ProcessNameParameterSet
 Aliases:
 
@@ -104,7 +104,7 @@ Accept wildcard characters: False
 One or more **Runspace** objects to be disabled.
 
 ```yaml
-Type: Runspace[]
+Type: System.Management.Automation.Runspaces.Runspace[]
 Parameter Sets: RunspaceParameterSet
 Aliases:
 
@@ -120,7 +120,7 @@ Accept wildcard characters: False
 One or more **Runspace** Id numbers to be disabled.
 
 ```yaml
-Type: Int32[]
+Type: System.Int32[]
 Parameter Sets: RunspaceIdParameterSet
 Aliases:
 
@@ -136,7 +136,7 @@ Accept wildcard characters: False
 One or more **Runspace** GUIDs to be disabled.
 
 ```yaml
-Type: Guid[]
+Type: System.Guid[]
 Parameter Sets: RunspaceInstanceIdParameterSet
 Aliases:
 
@@ -152,7 +152,7 @@ Accept wildcard characters: False
 One or more **Runspace** names to be disabled.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: RunspaceNameParameterSet
 Aliases:
 

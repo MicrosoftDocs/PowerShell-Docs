@@ -94,7 +94,7 @@ To specify multiple IDs, use commas to separate the IDs.
 To find the PID of a process, type `Get-Process`.
 
 ```yaml
-Type: Int32[]
+Type: System.Int32[]
 Parameter Sets: Id
 Aliases: PID, ProcessId
 
@@ -110,7 +110,7 @@ Specifies the processes by submitting process objects.
 Enter a variable that contains the process objects, or type a command or expression that gets the process objects, such as the Get-Process cmdlet.
 
 ```yaml
-Type: Process[]
+Type: System.Diagnostics.Process[]
 Parameter Sets: InputObject
 Aliases:
 
@@ -127,7 +127,7 @@ To specify multiple names, use commas to separate the names.
 Wildcard characters are not supported.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: Name
 Aliases: ProcessName
 
@@ -144,7 +144,7 @@ When this interval expires, the command displays a non-terminating error that li
 By default, there is no time-out.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: (All)
 Aliases: TimeoutSec
 

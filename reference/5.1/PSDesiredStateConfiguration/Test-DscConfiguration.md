@@ -135,7 +135,7 @@ For more information, see [about_Remote_Requirements](../Microsoft.PowerShell.Co
 For more information about Windows PowerShell background jobs, see [about_Jobs](../Microsoft.PowerShell.Core/About/about_Jobs.md) and [about_Remote_Jobs](../Microsoft.PowerShell.Core/About/about_Remote_Jobs.md).
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -152,7 +152,7 @@ Enter a computer name or a session object, such as the output of a [New-CimSessi
 The default is the current session on the local computer.
 
 ```yaml
-Type: CimSession[]
+Type: Microsoft.Management.Infrastructure.CimSession[]
 Parameter Sets: CimSessionAndPathSet, CimSessionAndReferenceConfigurationSet, CimSessionSet
 Aliases:
 
@@ -168,7 +168,7 @@ Specifies an array of computer names on which this cmdlet tests the configuratio
 The cmdlet tests the configuration document in the location specified by the *Path* parameter to these computers.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: ComputerNameSet, ComputerNameAndPathSet, ComputerNameAndReferenceConfigurationSet
 Aliases: CN, ServerName
 
@@ -185,7 +185,7 @@ To obtain a **PSCredential** object, use the Get-Credential cmdlet.
 For more information, type `Get-Help Get-Credential`.
 
 ```yaml
-Type: PSCredential
+Type: System.Management.Automation.PSCredential
 Parameter Sets: ComputerNameSet, ComputerNameAndPathSet, ComputerNameAndReferenceConfigurationSet
 Aliases:
 
@@ -201,7 +201,7 @@ Indicates that this cmdlet returns a detailed result of comparing the configurat
 The result includes information such as overall state, resources that are in the desired state, resources that are not in desired state, and computer name.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: ComputerNameSet, CimSessionSet
 Aliases:
 
@@ -217,7 +217,7 @@ Specifies the path of a folder that contains configuration document files.
 The cmdlet tests the configuration against the desired state of computers specified by the *ComputerName* or *CimSession* parameter.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: ComputerNameAndPathSet, CimSessionAndPathSet
 Aliases:
 
@@ -233,7 +233,7 @@ Specifies the path of the configuration document file.
 This cmdlet tests the configuration against the actual state of computers specified by the *ComputerName* or *CimSession* parameter.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: ComputerNameAndReferenceConfigurationSet, CimSessionAndReferenceConfigurationSet
 Aliases:
 
@@ -250,7 +250,7 @@ If this parameter is omitted or a value of `0` is entered, then Windows PowerShe
 The throttle limit applies only to the current cmdlet, not to the session or to the computer.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: (All)
 Aliases:
 

@@ -112,7 +112,7 @@ By default, **Remove-Module** removes only read-write modules.
 The **ReadOnly** and **ReadWrite** values are stored in **AccessMode** property of a module.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -128,7 +128,7 @@ Accept wildcard characters: False
 Specifies the fully qualified names of modules to remove.
 
 ```yaml
-Type: ModuleSpecification[]
+Type: Microsoft.PowerShell.Commands.ModuleSpecification[]
 Parameter Sets: FullyQualifiedName
 Aliases:
 
@@ -146,7 +146,7 @@ Enter a variable that contains a module object (**PSModuleInfo**) or a command t
 You can also pipe module objects to **Remove-Module**.
 
 ```yaml
-Type: PSModuleInfo[]
+Type: System.Management.Automation.PSModuleInfo[]
 Parameter Sets: ModuleInfo
 Aliases:
 
@@ -164,7 +164,7 @@ Wildcard characters are permitted.
 You can also pipe name strings to **Remove-Module**.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: name
 Aliases:
 
@@ -180,7 +180,7 @@ Accept wildcard characters: True
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -197,7 +197,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 

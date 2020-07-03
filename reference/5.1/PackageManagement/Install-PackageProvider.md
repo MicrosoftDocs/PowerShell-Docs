@@ -107,7 +107,7 @@ Indicates that this cmdlet installs all available versions of the package provid
 By default, **Install-PackageProvider** only returns the highest available version.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -122,7 +122,7 @@ Accept wildcard characters: False
 Specifies a user account that has permission to install package providers.
 
 ```yaml
-Type: PSCredential
+Type: System.Management.Automation.PSCredential
 Parameter Sets: PackageBySearch
 Aliases:
 
@@ -138,7 +138,7 @@ Indicates that this cmdlet forces all actions with this cmdlet that can be force
 Currently, this means the *Force* parameter acts the same as the *ForceBootstrap* parameter.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -153,7 +153,7 @@ Accept wildcard characters: False
 Indicates that this cmdlet automatically installs the package provider.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -169,7 +169,7 @@ Specifies a **SoftwareIdentity** object.
 Use the **Find-PackageProvider** cmdlet to obtain a **SoftwareIdentity** object to pipe into **Install-PackageProvider**.
 
 ```yaml
-Type: SoftwareIdentity[]
+Type: Microsoft.PackageManagement.Packaging.SoftwareIdentity[]
 Parameter Sets: PackageByInputObject
 Aliases:
 
@@ -185,7 +185,7 @@ Specifies the maximum allowed version of the package provider that you want to i
 If you do not add this parameter, **Install-PackageProvider** installs the highest available version of the provider.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: PackageBySearch
 Aliases:
 
@@ -201,7 +201,7 @@ Specifies the minimum allowed version of the package provider that you want to i
 If you do not add this parameter, **Install-PackageProvider** installs the highest available version of the package that also satisfies any requirement specified by the *MaximumVersion* parameter.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: PackageBySearch
 Aliases:
 
@@ -218,7 +218,7 @@ Separate multiple package names with commas.
 Wildcard characters are not supported.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: PackageBySearch
 Aliases:
 
@@ -233,7 +233,7 @@ Accept wildcard characters: False
 Specifies a proxy server for the request, rather than connecting directly to the Internet resource.
 
 ```yaml
-Type: Uri
+Type: System.Uri
 Parameter Sets: (All)
 Aliases:
 
@@ -248,7 +248,7 @@ Accept wildcard characters: False
 Specifies a user account that has permission to use the proxy server that is specified by the **Proxy** parameter.
 
 ```yaml
-Type: PSCredential
+Type: System.Management.Automation.PSCredential
 Parameter Sets: (All)
 Aliases:
 
@@ -264,7 +264,7 @@ Specifies the exact allowed version of the package provider that you want to ins
 If you do not add this parameter, **Install-PackageProvider** installs the highest available version of the provider that also satisfies any maximum version specified by the *MaximumVersion* parameter.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: PackageBySearch
 Aliases:
 
@@ -286,7 +286,7 @@ The **CurrentUser** scope installs providers in a location where they are only a
 By default, this is **$env:LOCALAPPDATA\PackageManagement\ProviderAssemblies.**
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 Accepted values: CurrentUser, AllUsers
@@ -303,7 +303,7 @@ Specifies one or more package sources.
 Use the Get-PackageSource cmdlet to get a list of available package sources.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: PackageBySearch
 Aliases:
 
@@ -318,7 +318,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -334,7 +334,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 

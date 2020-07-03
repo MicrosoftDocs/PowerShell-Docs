@@ -182,7 +182,7 @@ of the `New-PSSessionOption` cmdlet or set the **MaximumConnectionRedirectionCou
 $PSSessionOption preference variable. The default value is 5.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: Uri
 Aliases:
 
@@ -207,7 +207,7 @@ request. The value of this parameter should match the value of the **URLPrefix**
 listener on the remote computer.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: ComputerName
 Aliases:
 
@@ -247,7 +247,7 @@ mechanism increases the security risk of the remote operation. If the remote com
 compromised, the credentials that are passed to it can be used to control the network session.
 
 ```yaml
-Type: AuthenticationMechanism
+Type: System.Management.Automation.Runspaces.AuthenticationMechanism
 Parameter Sets: ComputerName, Uri
 Aliases:
 Accepted values: Default, Basic, Negotiate, NegotiateWithImplicitCredential, Credssp, Digest, Kerberos
@@ -271,7 +271,7 @@ To get a certificate, use the `Get-Item` or `Get-ChildItem` command in the Windo
 drive.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: ComputerName, Uri
 Aliases:
 
@@ -301,7 +301,7 @@ computer in the value of the **ComputerName** parameter, you must start Windows 
 Run as administrator option.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: ComputerName
 Aliases: Cn
 
@@ -328,7 +328,7 @@ computer. If this preference variable is not set, the default is Microsoft.Power
 information, see [about_Preference_Variables](About/about_Preference_Variables.md).
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: ComputerName, Uri, VMId, VMName, ContainerId
 Aliases:
 
@@ -362,7 +362,7 @@ If the destination computer redirects the connection to a different URI, Windows
 the redirection unless you use the **AllowRedirection** parameter in the command.
 
 ```yaml
-Type: Uri
+Type: System.Uri
 Parameter Sets: Uri
 Aliases: URI, CU
 
@@ -378,7 +378,7 @@ Accept wildcard characters: False
 Specifies the ID of a container.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: ContainerId
 Aliases:
 
@@ -406,14 +406,15 @@ object and the password is stored as a [SecureString](/dotnet/api/system.securit
 > [How secure is SecureString?](/dotnet/api/system.security.securestring#how-secure-is-securestring).
 
 ```yaml
-Accept pipeline input: True (ByPropertyName)
-Position: 1
-Accept wildcard characters: False
+Type: System.Management.Automation.PSCredential
 Parameter Sets: ComputerName, Uri, VMId, VMName
-Required: True (VMId, VMName), False (ComputerName, Uri)
-Default value: Current user
 Aliases:
-Type: PSCredential
+
+Required: True (VMId, VMName), False (ComputerName, Uri)
+Position: 1
+Default value: Current user
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
 ```
 
 ### -EnableNetworkAccess
@@ -440,7 +441,7 @@ You can also allow remote access in a loopback session by using the **CredSSP** 
 This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: ComputerName, Uri
 Aliases:
 
@@ -459,7 +460,7 @@ interactive session.
 To find the ID of a session, use the `Get-PSSession` cmdlet.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: Id
 Aliases:
 
@@ -480,7 +481,7 @@ can also use the **Session**, **Name**, or **ID** parameters to specify an exist
 can use the **ComputerName** parameter to start a temporary session.
 
 ```yaml
-Type: Guid
+Type: System.Guid
 Parameter Sets: InstanceId
 Aliases:
 
@@ -504,7 +505,7 @@ To establish a friendly name for a session, use the **Name** parameter of the `N
 cmdlet.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: Name
 Aliases:
 
@@ -533,7 +534,7 @@ computers or sessions on which the command runs. An alternate port setting might
 from running on all computers.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: ComputerName
 Aliases:
 
@@ -549,7 +550,7 @@ Accept wildcard characters: False
 Indicates that the **PSSession** runs as administrator.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: ContainerId
 Aliases:
 
@@ -575,7 +576,7 @@ When you use `Exit-PSSession` or the **EXIT** keyword, the interactive session e
 **PSSession** that you created remains open and available for use.
 
 ```yaml
-Type: PSSession
+Type: System.Management.Automation.Runspaces.PSSession
 Parameter Sets: Session
 Aliases:
 
@@ -606,7 +607,7 @@ For information about the $PSSessionOption preference variable, see
 session configurations, see [about_Session_Configurations](About/about_Session_Configurations.md).
 
 ```yaml
-Type: PSSessionOption
+Type: System.Management.Automation.Remoting.PSSessionOption
 Parameter Sets: ComputerName, Uri
 Aliases:
 
@@ -630,7 +631,7 @@ If you use this parameter, but SSL is not available on the port that is used for
 command fails.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: ComputerName
 Aliases:
 
@@ -646,7 +647,7 @@ Accept wildcard characters: False
 Specifies the ID of a virtual machine.
 
 ```yaml
-Type: Guid
+Type: System.Guid
 Parameter Sets: VMId
 Aliases: VMGuid
 
@@ -662,7 +663,7 @@ Accept wildcard characters: False
 Specifies the name of a virtual machine.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: VMName
 Aliases:
 

@@ -179,7 +179,7 @@ Specifies the identification number of a scheduled job.
 To get the identification numbers of scheduled jobs on the local computer or a remote computer, use the Get-ScheduledJob cmdlet.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: JobDefinitionId
 Aliases:
 
@@ -196,7 +196,7 @@ Enter a variable that contains a **ScheduledJob** object or type a command or ex
 You can also pipe a **ScheduledJob** object to **Get-ScheduledJobOption**.
 
 ```yaml
-Type: ScheduledJobDefinition
+Type: Microsoft.PowerShell.ScheduledJob.ScheduledJobDefinition
 Parameter Sets: JobDefinition
 Aliases:
 
@@ -215,7 +215,7 @@ Wildcards are supported.
 To get the names of scheduled jobs on the local computer or a remote computer, use the Get-ScheduledJob cmdlet.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: JobDefinitionName
 Aliases:
 

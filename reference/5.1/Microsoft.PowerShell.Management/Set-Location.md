@@ -103,7 +103,7 @@ interpret any characters as escape sequences.
 Single quotation marks tell Windows PowerShell not to interpret any characters as escape sequences.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: LiteralPath
 Aliases: PSPath
 
@@ -120,7 +120,7 @@ Returns a **PathInfo** object that represents the location. By default, this cmd
 generate any output.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -138,7 +138,7 @@ current user's home directory. When wildcards are used, the cmdlet chooses the f
 matches the wildcard pattern.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: Path
 Aliases:
 
@@ -159,7 +159,7 @@ The `*-Location` cmdlets act on the current stack unless you use the **StackName
 specify a different stack.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: Stack
 Aliases:
 
@@ -177,7 +177,7 @@ This parameter is valid only when a transaction is in progress.
 For more information, see about_Transactions.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: usetx
 

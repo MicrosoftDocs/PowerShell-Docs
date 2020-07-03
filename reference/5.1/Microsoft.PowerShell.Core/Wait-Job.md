@@ -240,7 +240,7 @@ Indicates that this cmdlet displays the command prompt, and returns the job obje
 By default, **Wait-Job** waits until all of the specified jobs are complete before it displays the prompt.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -263,7 +263,7 @@ For information about support for this parameter, see the help topic for the job
 This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
-Type: Hashtable
+Type: System.Collections.Hashtable
 Parameter Sets: FilterParameterSet
 Aliases:
 
@@ -287,7 +287,7 @@ By default, **Wait-Job** returns, or ends  the wait, when jobs are in one of the
 This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -307,7 +307,7 @@ You can type one or more IDs, separated by commas.
 To find the ID of a job, type `Get-Job`.
 
 ```yaml
-Type: Int32[]
+Type: System.Int32[]
 Parameter Sets: SessionIdParameterSet
 Aliases:
 
@@ -326,7 +326,7 @@ An instance ID is a GUID that uniquely identifies the job on the computer.
 To find the instance ID of a job, use **Get-Job**.
 
 ```yaml
-Type: Guid[]
+Type: System.Guid[]
 Parameter Sets: InstanceIdParameterSet
 Aliases:
 
@@ -344,7 +344,7 @@ You can also use a pipeline operator to send job objects to the **Wait-Job** cmd
 By default, **Wait-Job** waits for all jobs created in the current session.
 
 ```yaml
-Type: Job[]
+Type: System.Management.Automation.Job[]
 Parameter Sets: JobParameterSet
 Aliases:
 
@@ -359,7 +359,7 @@ Accept wildcard characters: False
 Specifies friendly names of jobs for which this cmdlet waits.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: NameParameterSet
 Aliases:
 
@@ -389,7 +389,7 @@ The acceptable values for this parameter are:
 For more information about job states, see [JobState Enumeration](https://msdn.microsoft.com/library/system.management.automation.jobstate) in the MSDN library.
 
 ```yaml
-Type: JobState
+Type: System.Management.Automation.JobState
 Parameter Sets: StateParameterSet
 Aliases:
 Accepted values: NotStarted, Running, Completed, Failed, Stopped, Blocked, Suspended, Disconnected, Suspending, Stopping, AtBreakpoint
@@ -410,7 +410,7 @@ If this time is exceeded, the wait ends and the command prompt returns, even if 
 The command does not display any error message.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: (All)
 Aliases: TimeoutSec
 

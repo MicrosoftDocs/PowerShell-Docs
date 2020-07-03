@@ -136,7 +136,7 @@ This parameter does not rely on Windows PowerShell remoting.
 You can use the *ComputerName* parameter of **Remove-EventLog** even if your computer is not configured to run remote commands.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases: CN
 
@@ -154,7 +154,7 @@ The log name is the value of the **Log** property, not the *LogDisplayName*, Wil
 This parameter is required.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: Default
 Aliases: LN
 
@@ -170,7 +170,7 @@ Specifies the event sources that this cmdlet unregisters.
 Enter the source names, not the executable name, separated by commas.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: Source
 Aliases: SRC
 
@@ -185,7 +185,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -201,7 +201,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 

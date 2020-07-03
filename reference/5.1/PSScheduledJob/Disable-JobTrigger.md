@@ -92,7 +92,7 @@ Enter a variable that contains  **ScheduledJobTrigger** objects or type a comman
 You can also pipe a **ScheduledJobTrigger** object to **Disable-JobTrigger**.
 
 ```yaml
-Type: ScheduledJobTrigger[]
+Type: Microsoft.PowerShell.ScheduledJob.ScheduledJobTrigger[]
 Parameter Sets: (All)
 Aliases:
 
@@ -108,7 +108,7 @@ Returns an object representing the item with which you are working.
 By default, this cmdlet does not generate any output.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -123,7 +123,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -139,7 +139,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 

@@ -146,7 +146,7 @@ Indicates that `Get-ComputerRestorePoint` gets the status of the most recent sys
 operation.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: LastStatus
 Aliases:
 
@@ -166,7 +166,7 @@ If the **RestorePoint** parameter isn't specified, `Get-ComputerRestorePoint` re
 computer's system restore points.
 
 ```yaml
-Type: Int32[]
+Type: System.Int32[]
 Parameter Sets: ID
 Aliases:
 

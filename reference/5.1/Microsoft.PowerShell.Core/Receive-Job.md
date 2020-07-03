@@ -308,7 +308,7 @@ This parameter cannot be used without the **Wait** parameter.
 This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -329,7 +329,7 @@ To get job results that are stored on remote computers, use the `Invoke-Command`
 `Receive-Job` command remotely.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: ComputerName
 Aliases: Cn
 
@@ -357,7 +357,7 @@ The **Force** parameter is valid only when the **Wait** parameter is also used i
 This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -379,7 +379,7 @@ session. You can type one or more IDs separated by commas.
 To find the ID of a job, use `Get-Job`.
 
 ```yaml
-Type: Int32[]
+Type: System.Int32[]
 Parameter Sets: SessionIdParameterSet
 Aliases:
 
@@ -399,7 +399,7 @@ An instance ID is a GUID that uniquely identifies the job on the computer.
 To find the instance ID of a job, use the `Get-Job` cmdlet.
 
 ```yaml
-Type: Guid[]
+Type: System.Guid[]
 Parameter Sets: InstanceIdParameterSet
 Aliases:
 
@@ -418,7 +418,7 @@ Enter a variable that contains the job or a command that gets the job.
 You can also pipe a job object to `Receive-Job`.
 
 ```yaml
-Type: Job[]
+Type: System.Management.Automation.Job[]
 Parameter Sets: Location, Session, ComputerName
 Aliases:
 
@@ -438,7 +438,7 @@ Closing the session, or removing the job with the `Remove-Job` cmdlet also delet
 stream data.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -455,7 +455,7 @@ Specifies an array of locations.
 This cmdlet gets only the results of jobs in the specified locations.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: Location
 Aliases:
 
@@ -473,7 +473,7 @@ This cmdlet gets the results of jobs that have the specified names.
 Wildcard characters are supported.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: NameParameterSet
 Aliases:
 
@@ -490,7 +490,7 @@ Indicates that this cmdlet gets results only from the specified job.
 By default, `Receive-Job` also gets the results of all child jobs of the specified job.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -510,7 +510,7 @@ Enter a variable that contains the **PSSession** or a command that gets the **PS
 `Get-PSSession` command.
 
 ```yaml
-Type: PSSession[]
+Type: System.Management.Automation.Runspaces.PSSession[]
 Parameter Sets: Session
 Aliases:
 
@@ -540,7 +540,7 @@ use the **Force** parameter together with the **Wait** parameter.
 This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -561,7 +561,7 @@ parameter is omitted.
 This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -582,7 +582,7 @@ parameter is omitted.
 This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 

@@ -83,7 +83,7 @@ Publish-Module -Name "MyDscModule" -NuGetApiKey "11e4b435-6cb4-4bf7-8611-5162ed7
 Allows modules marked as prerelease to be published.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: ModuleNameParameterSet
 Aliases:
 
@@ -99,7 +99,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the `Publish-Module`.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -116,7 +116,7 @@ Specifies a user account that has rights to publish a module for a specified pac
 source.
 
 ```yaml
-Type: PSCredential
+Type: System.Management.Automation.PSCredential
 Parameter Sets: (All)
 Aliases:
 
@@ -133,7 +133,7 @@ Defines files to exclude from the published module. **Exclude** parameter suppor
 **PowershellGet** version 2.0.0.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: ModuleNameParameterSet
 Aliases:
 
@@ -149,7 +149,7 @@ Accept wildcard characters: False
 Forces the command to run without asking for user confirmation.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -168,7 +168,7 @@ For more information, see [ValidateSet Attribute Declaration](/powershell/script
 and [ValidateSetAttribute](/dotnet/api/system.management.automation.validatesetattribute).
 
 ```yaml
-Type: Version
+Type: System.Version
 Parameter Sets: (All)
 Aliases:
 Accepted values: 2.0
@@ -186,7 +186,7 @@ Specifies the URL of an icon for the module. The specified icon is displayed on 
 for the module.
 
 ```yaml
-Type: Uri
+Type: System.Uri
 Parameter Sets: (All)
 Aliases:
 
@@ -202,7 +202,7 @@ Accept wildcard characters: False
 Specifies the URL of licensing terms for the module you want to publish.
 
 ```yaml
-Type: Uri
+Type: System.Uri
 Parameter Sets: (All)
 Aliases:
 
@@ -219,7 +219,7 @@ Specifies the name of the module that you want to publish. `Publish-Module` sear
 specified module name in `$Env:PSModulePath`.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: ModuleNameParameterSet
 Aliases:
 
@@ -237,7 +237,7 @@ part of your profile in the online gallery, and can be found on your user accoun
 gallery. The API key is NuGet-specific functionality.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -254,7 +254,7 @@ Specifies the path to the module that you want to publish. This parameter accept
 folder that contains the module.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: ModulePathParameterSet
 Aliases:
 
@@ -270,7 +270,7 @@ Accept wildcard characters: False
 Specifies the URL of a webpage about this project.
 
 ```yaml
-Type: Uri
+Type: System.Uri
 Parameter Sets: (All)
 Aliases:
 
@@ -287,7 +287,7 @@ Specifies a string containing release notes or comments that you want to be avai
 this version of the module.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -305,7 +305,7 @@ Specifies the friendly name of a repository that has been registered by running
 The **PublishLocation** can be set by running `Set-PSRepository`.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -321,7 +321,7 @@ Accept wildcard characters: False
 Specifies the exact version of a single module to publish.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: ModuleNameParameterSet
 Aliases:
 
@@ -338,7 +338,7 @@ Removes commands and resources from being included as tags. Skips automatically 
 module. **SkipAutomaticTags** parameter support is added in **PowerShellGet** version 2.0.0
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -355,7 +355,7 @@ Adds one or more tags to the module that you are publishing. Example tags includ
 DesiredStateConfiguration, DSC, DSCResourceKit, or PSModule. Separate multiple tags with commas.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -371,7 +371,7 @@ Accept wildcard characters: False
 Shows what would happen if the `Publish-Module` runs. The cmdlet is not run.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 

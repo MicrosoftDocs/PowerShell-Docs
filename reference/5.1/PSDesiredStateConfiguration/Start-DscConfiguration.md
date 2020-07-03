@@ -108,7 +108,7 @@ Enter a computer name or a session object, such as the output of a [New-CimSessi
 The default is the current session on the local computer.
 
 ```yaml
-Type: CimSession[]
+Type: Microsoft.Management.Infrastructure.CimSession[]
 Parameter Sets: CimSessionAndPathSet, CimSessionAndUseExistingSet
 Aliases:
 
@@ -124,7 +124,7 @@ Specifies an array of computer names.
 This parameter restricts the computers that have configuration documents in the *Path* parameter to those specified in the array.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: ComputerNameAndPathSet, ComputerNameAndUseExistingSet
 Aliases: CN, ServerName
 
@@ -141,7 +141,7 @@ To obtain a **PSCredential** object, use the Get-Credential cmdlet.
 For more information, type `Get-Help Get-Credential`.
 
 ```yaml
-Type: PSCredential
+Type: System.Management.Automation.PSCredential
 Parameter Sets: ComputerNameAndPathSet, ComputerNameAndUseExistingSet
 Aliases:
 
@@ -157,7 +157,7 @@ Stops the configuration operation currently running on the target computer and b
 If the **RefreshMode** property of the Local Configuration Manager is set to **Pull**, specifying this parameter changes it to **Push**.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -177,7 +177,7 @@ By default, Windows PowerShell assigns the name JobN where N is an integer.
 If you specify the *Wait* parameter, do not specify this parameter.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -194,7 +194,7 @@ This cmdlet publishes and applies these configuration settings to computers that
 Each target node must have a settings file of the following format: NetBIOS Name.mof.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: ComputerNameAndPathSet, CimSessionAndPathSet
 Aliases:
 
@@ -211,7 +211,7 @@ If this parameter is omitted or a value of `0` is entered, then Windows PowerShe
 The throttle limit applies only to the current cmdlet, not to the session or to the computer.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: (All)
 Aliases:
 
@@ -229,7 +229,7 @@ The configuration can exist on the target computer by enactment using **Start-Ds
 Before you specify this parameter for this cmdlet, review the information in [What's New in Windows PowerShell 5.0](/powershell/scripting/whats-new/what-s-new-in-windows-powershell-50)
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: ComputerNameAndUseExistingSet, CimSessionAndUseExistingSet
 Aliases:
 
@@ -246,7 +246,7 @@ Indicates that the cmdlet blocks the console until it finishes all configuration
 If you specify this parameter, do not specify the *JobName* parameter.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -261,7 +261,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -277,7 +277,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 

@@ -101,7 +101,7 @@ Enter a variable that contains breakpoint objects or a command that gets breakpo
 You can also pipe breakpoint objects to the **Disable-PSBreakpoint** cmdlet.
 
 ```yaml
-Type: Breakpoint[]
+Type: System.Management.Automation.Breakpoint[]
 Parameter Sets: Breakpoint
 Aliases:
 
@@ -118,7 +118,7 @@ Enter the IDs or a variable that contains the IDs.
 You cannot pipe IDs to **Disable-PSBreakpoint**.
 
 ```yaml
-Type: Int32[]
+Type: System.Int32[]
 Parameter Sets: Id
 Aliases:
 
@@ -134,7 +134,7 @@ Returns an object representing the enabled breakpoints.
 By default, this cmdlet does not generate any output.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -149,7 +149,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -165,7 +165,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 

@@ -260,7 +260,7 @@ enter more than one string, `Clear-History` deletes commands that match any of t
 For strings with a space, use single quotations. For more information, see [about_Quoting_Rules](About/about_Quoting_Rules.md).
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: CommandLineParameter
 Aliases:
 
@@ -286,7 +286,7 @@ commands to delete that match **CommandLine** parameter value. The commands are 
 sequential order.
 
 ```yaml
-Type: Int
+Type: System.Int32
 Parameter Sets: (All)
 Aliases:
 
@@ -304,7 +304,7 @@ the `Get-History` cmdlet. The **Id** numbers are sequential and commands keep th
 throughout a PowerShell session. The **Id** parameter can be used with **Count** and **Newest**.
 
 ```yaml
-Type: Int[]
+Type: System.Int32[]
 Parameter Sets: IDParameter
 Aliases:
 
@@ -326,7 +326,7 @@ the number of commands to delete, inclusive of the specified **Id**. Beginning a
 is 10, `Clear-History` deletes items 30 through 39.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -342,7 +342,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the `Clear-History` cmdlet.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -358,7 +358,7 @@ Accept wildcard characters: False
 Shows what would happen if the `Clear-History` cmdlet runs. The cmdlet is not run.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
