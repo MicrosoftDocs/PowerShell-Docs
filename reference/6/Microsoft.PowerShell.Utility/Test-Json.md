@@ -115,7 +115,7 @@ command or expression that gets the string. You can also pipe a string to `Test-
 The **Json** parameter is required.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -135,7 +135,7 @@ input conforms to the provided Schema.
 For more information, see [JSON Schema](https://json-schema.org/).
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 

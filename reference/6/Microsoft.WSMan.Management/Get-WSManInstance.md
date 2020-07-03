@@ -379,7 +379,7 @@ This parameter is designed to be used if many computers establish remote connect
 In this case, IIS hosts WS-Management for efficiency.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -395,7 +395,7 @@ Indicates that this cmdlet gets association instances, not associated instances.
 You can use this parameter only when the *Dialect* parameter has a value of Association.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: Enumerate
 Aliases:
 
@@ -431,7 +431,7 @@ This practice increases the security risk of the remote operation.
 If the remote computer is compromised, when credentials are passed to it, the credentials can be used to control the network session.
 
 ```yaml
-Type: AuthenticationMechanism
+Type: Microsoft.WSMan.Management.AuthenticationMechanism
 Parameter Sets: (All)
 Aliases: auth, am
 Accepted values: None, Default, Digest, Negotiate, Basic, Kerberos, ClientCertificate, Credssp
@@ -448,7 +448,7 @@ Indicates that this cmdlet enumerates only the properties that are part of the b
 This parameter has no effect if the *Shallow* parameter is specified.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: Enumerate
 Aliases: UBPO, Base
 
@@ -469,7 +469,7 @@ They can be mapped only to local user accounts; they do not work with domain acc
 To get a certificate thumbprint, use the Get-Item or Get-ChildItem command in the PowerShell Cert: drive.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -489,7 +489,7 @@ When the remote computer is in a different domain from the user, you must use a 
 You can pipe a value for this parameter to the cmdlet.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases: CN
 
@@ -513,7 +513,7 @@ The following string is a correctly formatted value for this parameter:
 The URI must be fully qualified.
 
 ```yaml
-Type: Uri
+Type: System.Uri
 Parameter Sets: (All)
 Aliases: CURI, CU
 
@@ -532,7 +532,7 @@ Or, enter a **PSCredential** object, such as one returned by the Get-Credential 
 When you type a user name, this cmdlet prompts you for a password.
 
 ```yaml
-Type: PSCredential
+Type: System.Management.Automation.PSCredential
 Parameter Sets: (All)
 Aliases: cred, c
 
@@ -553,7 +553,7 @@ The following aliases can be used for the dialect URI:
 - Association `http://schemas.dmtf.org/wbem/wsman/1/cimbinding/associationFilter`
 
 ```yaml
-Type: Uri
+Type: System.Uri
 Parameter Sets: (All)
 Aliases:
 
@@ -568,7 +568,7 @@ Accept wildcard characters: False
 Indicates that this cmdlet returns all of the instances of a management resource.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: Enumerate
 Aliases:
 
@@ -593,7 +593,7 @@ If *Dialect* is Association, *Filter* must contain a string, and the string must
 `-filter:Object=EPR\[;AssociationClassName=AssocClassName\]\[;ResultClassName=ClassName\]\[;Role=RefPropertyName\]\[;ResultRole=RefPropertyName\]}`
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: Enumerate
 Aliases:
 
@@ -611,7 +611,7 @@ For example, to get the status of a spooler service, specify the following:
 `-Fragment Status`
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: GetInstance
 Aliases:
 
@@ -632,7 +632,7 @@ The following example demonstrates the syntax that passes the values 1, 2, and 3
 `-OptionSet @{a=1;b=2;c=3}`
 
 ```yaml
-Type: Hashtable
+Type: System.Collections.Hashtable
 Parameter Sets: (All)
 Aliases: OS
 
@@ -653,7 +653,7 @@ However, if the *SkipCNCheck* parameter is specified as part of the *SessionOpti
 The *SkipCNCheck* parameter should be used only for trusted computers.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: (All)
 Aliases:
 
@@ -676,7 +676,7 @@ For example:
 `http://schemas.dmtf.org/wbem/wscim/1/cim-schema/2/CIM_NumericSensor`
 
 ```yaml
-Type: Uri
+Type: System.Uri
 Parameter Sets: (All)
 Aliases: RURI
 
@@ -703,7 +703,7 @@ Endpoint references contain information about the resource URI and the selectors
 If you specify ObjectAndEPR, this cmdlet returns both the object and its associated endpoint references.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: Enumerate
 Aliases: RT
 Accepted values: object, epr, objectandepr
@@ -725,7 +725,7 @@ The following example shows how to enter a value for this parameter:
 `-SelectorSet @{Name="WinRM";ID="yyy"}`
 
 ```yaml
-Type: Hashtable
+Type: System.Collections.Hashtable
 Parameter Sets: GetInstance
 Aliases:
 
@@ -742,7 +742,7 @@ Enter a **SessionOption** object that you create by using the New-WSManSessionOp
 For more information about the options that are available, type `Get-Help New-WSManSessionOption`.
 
 ```yaml
-Type: SessionOption
+Type: Microsoft.WSMan.Management.SessionOption
 Parameter Sets: (All)
 Aliases: SO
 
@@ -758,7 +758,7 @@ Indicates that this cmdlet returns only instances of the base class that is spec
 If you do not specify this parameter,, this cmdlet returns instances of the base class that is specified in the URI and in all its derived classes.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: Enumerate
 Aliases:
 
@@ -778,7 +778,7 @@ The *UseSSL* parameter lets you specify the additional protection of HTTPS inste
 If SSL is not available on the port that is used for the connection, and you specify this parameter, the command fails.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: SSL
 

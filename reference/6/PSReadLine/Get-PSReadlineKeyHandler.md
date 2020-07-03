@@ -109,7 +109,7 @@ Tab                   TabCompleteNext         Complete the input using the next 
 Indicates that this cmdlet returns functions that are bound.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -125,7 +125,7 @@ Accept wildcard characters: False
 Indicates that this cmdlet returns functions that are unbound.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 

@@ -130,7 +130,7 @@ If you use this parameter to provide plain text as input, the system cannot prot
 To use this parameter, you must also specify the *Force* parameter.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: PlainText
 Aliases:
 
@@ -146,7 +146,7 @@ Accept wildcard characters: False
 Confirms that you understand the implications of using the *AsPlainText* parameter and still want to use it.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: PlainText
 Aliases:
 
@@ -163,7 +163,7 @@ Specifies the encryption key to use when converting a secure string into an encr
 Valid key lengths are 16, 24, and 32 bytes.
 
 ```yaml
-Type: Byte[]
+Type: System.Byte[]
 Parameter Sets: Open
 Aliases:
 
@@ -182,7 +182,7 @@ The secure string is converted to a byte array before being used as the key.
 Valid key lengths are 16, 24, and 32 bytes.
 
 ```yaml
-Type: SecureString
+Type: System.Security.SecureString
 Parameter Sets: Secure
 Aliases:
 
@@ -198,7 +198,7 @@ Accept wildcard characters: False
 Specifies the string to convert to a secure string.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 

@@ -43,7 +43,7 @@ When this parameter is used, the cmdlet enables the Analytic event log of the
 Microsoft-Windows-PowerShell provider. The Operational event log is not changed.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -59,7 +59,7 @@ Accept wildcard characters: False
 Used to force the change without prompting.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 

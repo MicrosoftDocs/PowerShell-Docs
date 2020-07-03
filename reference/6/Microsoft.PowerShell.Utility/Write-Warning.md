@@ -96,7 +96,7 @@ For more information about the *WarningAction* common parameter, see about_Commo
 Specifies the warning message.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases: Msg
 

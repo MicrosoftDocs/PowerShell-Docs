@@ -182,7 +182,7 @@ Permission    : NT AUTHORITY\INTERACTIVE AccessAllowed, BUILTIN\Administrators A
 
 Name                           Value
 ----                           -----
-PSCompatibleVersions           {1.0, 2.0, 3.0, 4.0�}
+PSCompatibleVersions           {1.0, 2.0, 3.0, 4.0…}
 PSEdition                      Core
 PSRemotingProtocolVersion      2.3
 Platform                       Win32NT

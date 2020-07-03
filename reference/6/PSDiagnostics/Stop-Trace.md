@@ -44,7 +44,7 @@ Stop-Trace -SessionName 'wsmlog'
 Send commands to Event Trace Sessions directly without saving or scheduling.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -59,7 +59,7 @@ Accept wildcard characters: False
 The name of the Event Trace session to be stopped.
 
 ```yaml
-Type: Object
+Type: System.Object
 Parameter Sets: (All)
 Aliases:
 

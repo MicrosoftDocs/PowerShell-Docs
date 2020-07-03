@@ -120,7 +120,7 @@ collection of files, it returns just one (the first). You can use this parameter
 values of object properties, such as the file names.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: AsString
 Aliases:
 
@@ -141,7 +141,7 @@ enumerate individual items in the collection. Because the collection is a single
 submitted by using **InputObject** is always returned unchanged.
 
 ```yaml
-Type: PSObject
+Type: System.Management.Automation.PSObject
 Parameter Sets: (All)
 Aliases:
 
@@ -157,7 +157,7 @@ Accept wildcard characters: False
 Indicates that this cmdlet returns only one object of each type.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: UniqueByType
 Aliases:
 

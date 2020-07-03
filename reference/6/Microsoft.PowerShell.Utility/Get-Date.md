@@ -228,7 +228,7 @@ For example, in US English:
 `Get-Date -Date "6/25/2019 12:30:22"` returns Tuesday, June 25, 2019 12:30:22
 
 ```yaml
-Type: DateTime
+Type: System.DateTime
 Parameter Sets: (All)
 Aliases: LastWriteTime
 
@@ -247,7 +247,7 @@ If the specified value is greater than the number of days in a month, PowerShell
 days to the month. For example, `Get-Date -Month 2 -Day 31` displays **March 3**, not **February 31**.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: (All)
 Aliases:
 
@@ -269,7 +269,7 @@ The accepted values are as follows:
 - **DateTime**: displays the date and time
 
 ```yaml
-Type: DisplayHintType
+Type: Microsoft.PowerShell.Commands.DisplayHintType
 Parameter Sets: (All)
 Aliases:
 Accepted values: Date, Time, DateTime
@@ -316,7 +316,7 @@ Starting in PowerShell 5.0, you can use the following additional formats as valu
   indicator). For example: 20190627T1540500718Z.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: net
 Aliases:
 
@@ -332,7 +332,7 @@ Accept wildcard characters: False
 Specifies the hour that is displayed. Enter a value from 0 to 23.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: (All)
 Aliases:
 
@@ -350,7 +350,7 @@ Specifies the milliseconds in the date. Enter a value from 0 to 999.
 This parameter was introduced in PowerShell 3.0.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: (All)
 Aliases:
 
@@ -366,7 +366,7 @@ Accept wildcard characters: False
 Specifies the minute that is displayed. Enter a value from 0 to 59.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: (All)
 Aliases:
 
@@ -382,7 +382,7 @@ Accept wildcard characters: False
 Specifies the month that is displayed. Enter a value from 1 to 12.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: (All)
 Aliases:
 
@@ -398,7 +398,7 @@ Accept wildcard characters: False
 Specifies the second that is displayed. Enter a value from 0 to 59.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: (All)
 Aliases:
 
@@ -421,7 +421,7 @@ necessary to display the date. As a result, some of the properties and methods o
 objects might not be available.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: UFormat
 Aliases:
 
@@ -437,7 +437,7 @@ Accept wildcard characters: False
 Specifies the year that is displayed. Enter a value from 1 to 9999.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: (All)
 Aliases:
 

@@ -151,7 +151,7 @@ The **ScriptBlock** receives the command line as input. If the **ScriptBlock** r
 command line is added to the history.
 
 ```yaml
-Type: System.Func[System.String,System.Object]
+Type: System.Func`2[System.String,System.Object]
 Parameter Sets: (All)
 Aliases:
 
@@ -177,7 +177,7 @@ waits for this timeout before concluding that it has received a complete escape 
 If you see random or unexpected characters when you type, you can adjust this timeout.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: (All)
 Aliases:
 
@@ -199,7 +199,7 @@ The valid values are as follows:
 - **None**: No feedback.
 
 ```yaml
-Type: BellStyle
+Type: Microsoft.PowerShell.BellStyle
 Parameter Sets: (All)
 Aliases:
 
@@ -248,7 +248,7 @@ The valid keys include:
 - **Member**: The member name token color.
 
 ```yaml
-Type: Hashtable
+Type: System.Collections.Hashtable
 Parameter Sets: (All)
 Aliases:
 
@@ -271,7 +271,7 @@ common typographical errors.
 **ValidateAndAcceptLine** is used to avoid cluttering your history with commands that can't work.
 
 ```yaml
-Type: System.Action[System.Management.Automation.Language.CommandAst]
+Type: System.Action`1[System.Management.Automation.Language.CommandAst]
 Parameter Sets: (All)
 Aliases:
 
@@ -290,7 +290,7 @@ If the number of items to show is greater than this value, **PSReadLine** prompt
 displaying the completion items.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: (All)
 Aliases:
 
@@ -307,7 +307,7 @@ Specifies the string displayed at the beginning of the subsequent lines when mul
 entered. The default is double greater-than signs (`>>`). An empty string is valid.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -323,7 +323,7 @@ Accept wildcard characters: False
 Specifies the duration of the beep when **BellStyle** is set to **Audible**.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: (All)
 Aliases:
 
@@ -339,7 +339,7 @@ Accept wildcard characters: False
 Specifies the tone in Hertz (Hz) of the beep when **BellStyle** is set to **Audible**.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: (All)
 Aliases:
 
@@ -364,7 +364,7 @@ The valid values are as follows:
 Use `Get-PSReadLineKeyHandler` to see the key bindings for the currently configured **EditMode**.
 
 ```yaml
-Type: EditMode
+Type: Microsoft.PowerShell.EditMode
 Parameter Sets: (All)
 Aliases:
 
@@ -387,7 +387,7 @@ This option is needed less than in previous versions of **PSReadLine**, but is u
 `InvokePrompt` function is used.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: (All)
 Aliases:
 
@@ -415,7 +415,7 @@ Using the following command, you can set the property value directly:
 `(Get-PSReadLineOption).HistoryNoDuplicates = $False`
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -445,7 +445,7 @@ If you don't use this parameter, the default path is as follows:
 `$env:HOME/.local/share/powershell/PSReadLine\$($host.Name)_history.txt`
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -468,7 +468,7 @@ Valid values are as follows:
 - **SaveNothing**: Don't use a history file.
 
 ```yaml
-Type: HistorySaveStyle
+Type: Microsoft.PowerShell.HistorySaveStyle
 Parameter Sets: (All)
 Aliases:
 
@@ -494,7 +494,7 @@ Using the following command, you can set the property value directly:
 `(Get-PSReadLineOption).HistorySearchCaseSensitive = $False`
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -521,7 +521,7 @@ Using the following command, you can set the property value directly:
 `(Get-PSReadLineOption).HistorySearchCursorMovesToEnd = $False`
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -539,7 +539,7 @@ Specifies the maximum number of commands to save in **PSReadLine** history.
 **PSReadLine** history is separate from PowerShell history.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: (All)
 Aliases:
 
@@ -555,7 +555,7 @@ Accept wildcard characters: False
 Specifies the maximum number of items stored in the kill ring.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: (All)
 Aliases:
 
@@ -584,7 +584,7 @@ Then set:
 `Set-PSReadLineOption -PromptText "# "`
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -612,7 +612,7 @@ Using the following command, you can set the property value directly:
 `(Get-PSReadLineOption).ShowToolTips = $False`
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -631,7 +631,7 @@ time the mode changes. The script block is provided one argument of type `ViMode
 This parameter was introduced in PowerShell 7.
 
 ```yaml
-Type: ScriptBlock
+Type: System.Management.Automation.ScriptBlock
 Parameter Sets: (All)
 Aliases:
 
@@ -655,7 +655,7 @@ The valid values are as follows:
 - **Script**: User-specified text is printed.
 
 ```yaml
-Type: ViModeStyle
+Type: Microsoft.PowerShell.ViModeStyle
 Parameter Sets: (All)
 Aliases:
 
@@ -671,7 +671,7 @@ Accept wildcard characters: False
 Specifies the characters that delimit words for functions like **ForwardWord** or **KillWord**.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 

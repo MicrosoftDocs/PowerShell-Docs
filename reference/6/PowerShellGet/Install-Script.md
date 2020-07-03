@@ -214,7 +214,7 @@ The final command gets installed scripts and displays the results.
 Automatically accept the license agreement during installation if the module requires it.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -230,7 +230,7 @@ Accept wildcard characters: False
 Allows you to install a script marked as a prerelease.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: NameParameterSet
 Aliases:
 
@@ -246,7 +246,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -263,7 +263,7 @@ Specifies a user account that has rights to install a script for a specified pac
 source.
 
 ```yaml
-Type: PSCredential
+Type: System.Management.Automation.PSCredential
 Parameter Sets: (All)
 Aliases:
 
@@ -279,7 +279,7 @@ Accept wildcard characters: False
 Forces the command to run without asking for user confirmation.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -295,7 +295,7 @@ Accept wildcard characters: False
 Used for pipeline input.
 
 ```yaml
-Type: PSObject[]
+Type: System.Management.Automation.PSObject[]
 Parameter Sets: InputObject
 Aliases:
 
@@ -313,7 +313,7 @@ are attempting to install multiple scripts. The **MaximumVersion** and the **Req
 parameters are mutually exclusive; you cannot use both parameters in the same command.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: NameParameterSet
 Aliases:
 
@@ -331,7 +331,7 @@ are attempting to install multiple scripts. The **MinimumVersion** and the **Req
 parameters are mutually exclusive; you cannot use both parameters in the same command.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: NameParameterSet
 Aliases:
 
@@ -347,7 +347,7 @@ Accept wildcard characters: False
 Specifies an array of names of scripts to install.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: NameParameterSet
 Aliases:
 
@@ -361,7 +361,7 @@ Accept wildcard characters: False
 ### -NoPathUpdate
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -375,7 +375,7 @@ Accept wildcard characters: False
 ### -PassThru
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -391,7 +391,7 @@ Accept wildcard characters: False
 Specifies a proxy server for the request, rather than connecting directly to the Internet resource.
 
 ```yaml
-Type: Uri
+Type: System.Uri
 Parameter Sets: (All)
 Aliases:
 
@@ -408,7 +408,7 @@ Specifies a user account that has permission to use the proxy server that is spe
 **Proxy** parameter.
 
 ```yaml
-Type: PSCredential
+Type: System.Management.Automation.PSCredential
 Parameter Sets: (All)
 Aliases:
 
@@ -425,7 +425,7 @@ Specifies the friendly name of a repository that has been registered with the
 `Register-PSRepository` cmdlet. The default is all registered repositories.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: NameParameterSet
 Aliases:
 
@@ -441,7 +441,7 @@ Accept wildcard characters: False
 Specifies the exact version number of the script to install.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: NameParameterSet
 Aliases:
 
@@ -473,7 +473,7 @@ When no **Scope** is defined, the default will be set based on the current sessi
   undefined, and `Install-Module` fails.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 Accepted values: CurrentUser, AllUsers
@@ -490,7 +490,7 @@ Accept wildcard characters: False
 Shows what would happen if the cmdlet runs. The cmdlet is not run.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 

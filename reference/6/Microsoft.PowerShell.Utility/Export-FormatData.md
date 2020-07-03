@@ -118,7 +118,7 @@ calculated by using script blocks are missing from the display.
 Forces the command to run without asking for user confirmation.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -136,7 +136,7 @@ Indicates whether script blocks in the format data are exported.
 Because script blocks contain code and can be used maliciously, they are not exported by default.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -154,7 +154,7 @@ command that gets the objects, such as a `Get-FormatData` command. You can also 
 from `Get-FormatData` to `Export-FormatData`.
 
 ```yaml
-Type: ExtendedTypeDefinition[]
+Type: System.Management.Automation.ExtendedTypeDefinition[]
 Parameter Sets: (All)
 Aliases:
 
@@ -173,7 +173,7 @@ path includes escape characters, enclose it in single quotation marks. Single qu
 PowerShell not to interpret any characters as escape sequences.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: ByLiteralPath
 Aliases: PSPath, LP
 
@@ -192,7 +192,7 @@ overwrites files without warning unless the file has the read-only attribute.
 To direct `Export-FormatData` to overwrite read-only files, use the **Force** parameter.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: NoOverwrite
 
@@ -217,7 +217,7 @@ the file has the read-only attribute. To overwrite a read-only file, use the **F
 prevent files from being overwritten, use the **NoClobber** parameter.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: ByPath
 Aliases: FilePath
 

@@ -984,7 +984,7 @@ PowerShell to use the HostName parameter set for establishing an SSH based remot
 This parameter was introduced in PowerShell 6.0.
 
 ```yaml
-Type: System.Management.Automation.SwitchParamete
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: HostName
 Aliases:
 

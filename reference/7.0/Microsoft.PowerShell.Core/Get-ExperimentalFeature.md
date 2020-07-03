@@ -77,6 +77,8 @@ Name or names of experimental features to return.
 Returns instances that match the requested names or all experimental features if no name is
 specified.
 
+## NOTES
+
 ## RELATED LINKS
 
 [Disable-ExperimentalFeature](Disable-ExperimentalFeature.md)

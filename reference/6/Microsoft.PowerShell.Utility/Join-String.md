@@ -177,7 +177,7 @@ class {
 Wraps the string value of each pipeline object in double-quotes.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: DoubleQuote
 Aliases:
 
@@ -193,7 +193,7 @@ Accept wildcard characters: False
 A format string that specifies how each item should be formatted.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: Format
 Aliases:
 
@@ -210,7 +210,7 @@ Specifies the text to be joined. Enter a variable that contains the text, or typ
 expression that gets the objects to join into strings.
 
 ```yaml
-Type: PSObject[]
+Type: System.Management.Automation.PSObject[]
 Parameter Sets: (All)
 Aliases:
 
@@ -227,7 +227,7 @@ Text that's inserted before the output string. The string can contain special ch
 carriage return (`` `r ``), newline (`` `n ``), and tab (`` `t ``).
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases: op
 
@@ -244,7 +244,7 @@ Text that's appended to the output string. The string can contain special charac
 carriage return (`` `r ``), newline (`` `n ``), and tab (`` `t ``).
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases: os
 
@@ -260,7 +260,7 @@ Accept wildcard characters: False
 The name of a property, or a property expression, that will project the pipeline object to text.
 
 ```yaml
-Type: PSPropertyExpression
+Type: Microsoft.PowerShell.Commands.PSPropertyExpression
 Parameter Sets: (All)
 Aliases:
 
@@ -277,7 +277,7 @@ Text or characters such as a comma or semicolon that's inserted between the text
 object.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -293,7 +293,7 @@ Accept wildcard characters: False
 Wraps the string value of each pipeline object in single quotes.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: SingleQuote
 Aliases:
 
@@ -310,7 +310,7 @@ Uses the list separator for the current culture as the item delimiter. To find t
 for a culture, use the following command: `(Get-Culture).TextInfo.ListSeparator`.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
