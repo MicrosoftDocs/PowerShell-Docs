@@ -217,11 +217,11 @@ in the MSDN library.
 
 @Microsoft.PowerShell.Core.Get-Help
 
-[Get-IseSnippet](../../ISE/Get-IseSnippet.md)
+@ISE.Get-IseSnippet
 
-[Import-IseSnippet](../../ISE/Import-IseSnippet.md)
+@ISE.Import-IseSnippet
 
-[New-IseSnippet](../../ISE/New-IseSnippet.md)
+@ISE.New-IseSnippet
 
 @Microsoft.PowerShell.Core.Save-Help
 
