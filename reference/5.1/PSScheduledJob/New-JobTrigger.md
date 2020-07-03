@@ -192,7 +192,7 @@ Because the default date in a **DateTime** object is the current date, if you sp
 **DateTime** objects, and strings that are converted to **DateTime** objects, are automatically adjusted to be compatible with the date and time formats selected for the local computer in Region and Language in Control Panel.
 
 ```yaml
-Type: DateTime
+Type: System.DateTime
 Parameter Sets: Once, Daily, Weekly
 Aliases:
 
@@ -208,7 +208,7 @@ Starts the scheduled job when the specified users log on to the computer.
 To specify a user, use the *User* parameter.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: AtLogon
 Aliases:
 
@@ -223,7 +223,7 @@ Accept wildcard characters: False
 Starts the scheduled job when Windows starts.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: AtStartup
 Aliases:
 
@@ -239,7 +239,7 @@ Specifies a recurring daily job schedule.
 Use the other parameters in the *Daily* parameter set to specify the schedule details.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: Daily
 Aliases:
 
@@ -256,7 +256,7 @@ For example, a value of 3 starts the scheduled job on days 1, 4, 7 and so on.
 The default value is 1.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: Daily
 Aliases:
 
@@ -278,7 +278,7 @@ If you enclose multiple day names in a single quotation mark pair, the correspon
 For example, "Monday, Tuesday" (1, 2) results in a value of "Wednesday" (3).
 
 ```yaml
-Type: DayOfWeek[]
+Type: System.DayOfWeek[]
 Parameter Sets: Weekly
 Aliases:
 Accepted values: Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday
@@ -295,7 +295,7 @@ Specifies a non-recurring (one time) or custom repeating schedule.
 To create a repeating schedule, use the *Once* parameter with the *RepetitionDuration* and *RepetitionInterval* parameters.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: Once
 Aliases:
 
@@ -314,7 +314,7 @@ The default value, zero (00:00:00), disables the random delay.
 Enter a timespan object, such as one returned by the New-TimeSpan cmdlet, or enter a value in \<hours\>:\<minutes\>:\<seconds\> format, which is automatically converted to a **TimeSpan** object.
 
 ```yaml
-Type: TimeSpan
+Type: System.TimeSpan
 Parameter Sets: (All)
 Aliases:
 
@@ -329,7 +329,7 @@ Accept wildcard characters: False
 This parameter, available starting in Windows PowerShell 4.0, eliminates the necessity of specifying a **TimeSpan.MaxValue** value for the *RepetitionDuration* parameter to run a scheduled job repeatedly, for an indefinite period.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: Once
 Aliases:
 
@@ -354,7 +354,7 @@ To stop a job before the job trigger repetition duration expires, use the Set-Jo
 This parameter is valid only when the *Once*, *At* and *RepetitionInterval* parameters are used in the command.
 
 ```yaml
-Type: TimeSpan
+Type: System.TimeSpan
 Parameter Sets: Once
 Aliases:
 
@@ -375,7 +375,7 @@ Enter a timespan object, such as one that the New-TimeSpan cmdlet returns or a s
 This parameter is valid only when the *Once*, *At*, and *RepetitionDuration* parameters are used in the command.
 
 ```yaml
-Type: TimeSpan
+Type: System.TimeSpan
 Parameter Sets: Once
 Aliases:
 
@@ -392,7 +392,7 @@ Enter the name of a user in \<UserName\> or \<Domain\Username\> format or enter 
 The default value is all users.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: AtLogon
 Aliases:
 
@@ -408,7 +408,7 @@ Specifies a recurring weekly job schedule.
 Use the other parameters in the Weekly parameter set to specify the schedule details.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: Weekly
 Aliases:
 
@@ -425,7 +425,7 @@ For example, a value of 3 starts the scheduled job on weeks 1, 4, 7 and so on.
 The default value is 1.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: Weekly
 Aliases:
 

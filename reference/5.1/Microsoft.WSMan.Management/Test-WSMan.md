@@ -2,7 +2,7 @@
 external help file: Microsoft.WSMan.Management.dll-Help.xml
 keywords: powershell,cmdlet
 Locale: en-US
-Module Name: Microsoft.WsMan.Management
+Module Name: Microsoft.WSMan.Management
 ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.wsman.management/test-wsman?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
@@ -109,7 +109,7 @@ This parameter is designed to be used if many computers establish remote connect
 In this case, IIS hosts Web Services for Management (WS-Management) for efficiency.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -149,7 +149,7 @@ If the request is made anonymously, it returns no information that is specific t
 Instead, this cmdlet displays null values for the operating system version and service pack level (OS: 0.0.0 SP: 0.0).
 
 ```yaml
-Type: AuthenticationMechanism
+Type: Microsoft.WSMan.Management.AuthenticationMechanism
 Parameter Sets: (All)
 Aliases: auth, am
 Accepted values: None, Default, Digest, Negotiate, Basic, Kerberos, ClientCertificate, Credssp
@@ -171,7 +171,7 @@ They can be mapped only to local user accounts; they do not work with domain acc
 To get a certificate thumbprint, use the Get-Item or Get-ChildItem command in the Windows PowerShell Cert: drive.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -191,7 +191,7 @@ When the remote computer is in a different domain from the user, you must use a 
 You can pipe a value for this parameter to the cmdlet.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases: cn
 
@@ -210,7 +210,7 @@ Or, enter a **PSCredential** object, such as one returned by the Get-Credential 
 When you type a user name, this cmdlet prompts you for a password.
 
 ```yaml
-Type: PSCredential
+Type: System.Management.Automation.PSCredential
 Parameter Sets: (All)
 Aliases: cred, c
 
@@ -229,7 +229,7 @@ When the transport is HTTPS, the default port is 443.
 When you use HTTPS as the transport, the value of the *ComputerName* parameter must match the server's certificate common name (CN).
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: (All)
 Aliases:
 
@@ -249,7 +249,7 @@ The *UseSSL* parameter lets you specify the additional protection of HTTPS inste
 If SSL is not available on the port that is used for the connection, and you specify this parameter, the command fails.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 

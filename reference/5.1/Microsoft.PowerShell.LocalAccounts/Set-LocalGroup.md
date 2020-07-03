@@ -58,7 +58,7 @@ Specifies a comment for the group.
 The maximum length is 48 characters.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -74,7 +74,7 @@ Specifies the security group that this cmdlet changes.
 To obtain a security group, use the Get-LocalGroup cmdlet.
 
 ```yaml
-Type: LocalGroup
+Type: Microsoft.PowerShell.Commands.LocalGroup
 Parameter Sets: InputObject
 Aliases:
 
@@ -89,7 +89,7 @@ Accept wildcard characters: False
 Specifies the name of the security group that this cmdlet changes.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: Default
 Aliases:
 
@@ -104,7 +104,7 @@ Accept wildcard characters: False
 Specifies the security ID (SID) of the security group that this cmdlet changes.
 
 ```yaml
-Type: SecurityIdentifier
+Type: System.Security.Principal.SecurityIdentifier
 Parameter Sets: SecurityIdentifier
 Aliases:
 
@@ -119,7 +119,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -135,7 +135,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 

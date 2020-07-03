@@ -116,7 +116,7 @@ Indicates that the output file is a circular log with first in, first out (FIFO)
 When you include this parameter, the **MaxSize** parameter is required.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -140,7 +140,7 @@ The acceptable values for this parameter are:
 The default value is BLG.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -156,7 +156,7 @@ Accept wildcard characters: False
 Overwrites and replaces an existing file if one exists in the location specified by the **Path** parameter.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -173,7 +173,7 @@ Specifies, as an array, the counter data to export. Enter a variable that contai
 command that gets the data, such as the `Get-Counter` or `Import-Counter` cmdlet.
 
 ```yaml
-Type: PerformanceCounterSampleSet[]
+Type: Microsoft.PowerShell.Commands.GetCounter.PerformanceCounterSampleSet[]
 Parameter Sets: (All)
 Aliases:
 
@@ -194,7 +194,7 @@ specified, then when the log file reaches the specified maximum size, no new dat
 cmdlet generates a non-terminating error.
 
 ```yaml
-Type: UInt32
+Type: System.UInt32
 Parameter Sets: (All)
 Aliases:
 
@@ -215,7 +215,7 @@ The file format is determined by the value of the **FileFormat** parameter, not 
 extension in the path.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases: PSPath
 

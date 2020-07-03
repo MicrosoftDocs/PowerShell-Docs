@@ -71,7 +71,7 @@ Because the events that **New-Event** raises are automatically added to the Wind
 Specifies an object that contains options for the event.
 
 ```yaml
-Type: PSObject[]
+Type: System.Management.Automation.PSObject[]
 Parameter Sets: (All)
 Aliases:
 
@@ -87,7 +87,7 @@ Specifies additional data associated with the event.
 The value of this parameter appears in the **MessageData** property of the event object.
 
 ```yaml
-Type: PSObject
+Type: System.Management.Automation.PSObject
 Parameter Sets: (All)
 Aliases:
 
@@ -103,7 +103,7 @@ Specifies the object that raises the event.
 The default is the Windows PowerShell engine.
 
 ```yaml
-Type: PSObject
+Type: System.Management.Automation.PSObject
 Parameter Sets: (All)
 Aliases:
 
@@ -121,7 +121,7 @@ This parameter is required, and it must be unique in the session.
 The value of this parameter appears in the **SourceIdentifier** property of the events.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 

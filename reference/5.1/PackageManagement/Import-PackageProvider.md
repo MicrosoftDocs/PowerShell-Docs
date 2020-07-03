@@ -63,7 +63,7 @@ Forces the command to run without asking for user confirmation.
 Re-imports a package provider.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -79,7 +79,7 @@ Accept wildcard characters: False
 Indicates that this cmdlet forces Package Management to automatically install the package provider.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -96,7 +96,7 @@ Specifies the maximum allowed version of the package provider that you want to i
 add this parameter, `Import-PackageProvider` imports the highest available version of the provider.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -114,7 +114,7 @@ add this parameter, `Import-PackageProvider` imports the highest available versi
 that also satisfies any maximum version that is specified using the *MaximumVersion* parameter.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -130,7 +130,7 @@ Accept wildcard characters: False
 Specifies one or more package provider names. Wildcards are not permitted.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -148,7 +148,7 @@ parameter, `Import-PackageProvider` imports the highest available version of the
 satisfies any maximum version specified using the **MaximumVersion** parameter.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 

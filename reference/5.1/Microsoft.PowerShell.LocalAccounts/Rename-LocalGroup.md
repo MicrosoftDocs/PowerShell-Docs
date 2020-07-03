@@ -58,7 +58,7 @@ Specifies the security group that this cmdlet renames.
 To obtain a security group, use the Get-LocalGroup cmdlet.
 
 ```yaml
-Type: LocalGroup
+Type: Microsoft.PowerShell.Commands.LocalGroup
 Parameter Sets: InputObject
 Aliases:
 
@@ -73,7 +73,7 @@ Accept wildcard characters: False
 Specifies the name of the security group that this cmdlet renames.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: Default
 Aliases:
 
@@ -88,7 +88,7 @@ Accept wildcard characters: False
 Specifies a new name for the security group.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -103,7 +103,7 @@ Accept wildcard characters: False
 Specifies the security ID (SID) of a security group that this cmdlet renames.
 
 ```yaml
-Type: SecurityIdentifier
+Type: System.Security.Principal.SecurityIdentifier
 Parameter Sets: SecurityIdentifier
 Aliases:
 
@@ -118,7 +118,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -134,7 +134,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 

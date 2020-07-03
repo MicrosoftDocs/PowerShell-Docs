@@ -83,7 +83,7 @@ To obtain a **DateTime** object, use the Get-Date cmdlet.
 If you do not want the account to expire, specify the *AccountNeverExpires* parameter.
 
 ```yaml
-Type: DateTime
+Type: System.DateTime
 Parameter Sets: (All)
 Aliases:
 
@@ -98,7 +98,7 @@ Accept wildcard characters: False
 Indicates that the account does not expire.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -114,7 +114,7 @@ Specifies a comment for the user account.
 The maximum length is 48 characters.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -130,7 +130,7 @@ Specifies the full name for the user account.
 The full name differs from the user name of the user account.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -146,7 +146,7 @@ Specifies the user account that this cmdlet changes.
 To obtain a user account, use the Get-LocalUser cmdlet.
 
 ```yaml
-Type: LocalUser
+Type: Microsoft.PowerShell.Commands.LocalUser
 Parameter Sets: InputObject
 Aliases:
 
@@ -161,7 +161,7 @@ Accept wildcard characters: False
 Specifies the name of the user account that this cmdlet changes.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: Name
 Aliases:
 
@@ -181,7 +181,7 @@ You can use `Read-Host -GetCredential`, Get-Credential, or ConvertTo-SecureStrin
 If you omit the *Password* and *NoPassword* parameters, **Set-LocalUser** prompts you for the user's password.
 
 ```yaml
-Type: SecureString
+Type: System.Security.SecureString
 Parameter Sets: (All)
 Aliases:
 
@@ -196,7 +196,7 @@ Accept wildcard characters: False
 Indicates whether the password expires.
 
 ```yaml
-Type: Boolean
+Type: System.Boolean
 Parameter Sets: (All)
 Aliases:
 
@@ -211,7 +211,7 @@ Accept wildcard characters: False
 Specifies the security ID (SID) of the user account that this cmdlet changes.
 
 ```yaml
-Type: SecurityIdentifier
+Type: System.Security.Principal.SecurityIdentifier
 Parameter Sets: SecurityIdentifier
 Aliases:
 
@@ -226,7 +226,7 @@ Accept wildcard characters: False
 Indicates that the user can change the password on the user account.
 
 ```yaml
-Type: Boolean
+Type: System.Boolean
 Parameter Sets: (All)
 Aliases:
 
@@ -241,7 +241,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -257,7 +257,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 

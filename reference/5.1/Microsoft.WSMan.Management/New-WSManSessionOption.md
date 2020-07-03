@@ -2,7 +2,7 @@
 external help file: Microsoft.WSMan.Management.dll-Help.xml
 keywords: powershell,cmdlet
 Locale: en-US
-Module Name: Microsoft.WsMan.Management
+Module Name: Microsoft.WSMan.Management
 ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.wsman.management/new-wsmansessionoption?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
@@ -68,7 +68,7 @@ By default, unencrypted traffic is not enabled.
 It must be enabled in the local configuration.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -83,7 +83,7 @@ Accept wildcard characters: False
 Specifies the time-out, in milliseconds, for the WS-Management operation.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: (All)
 Aliases: OperationTimeoutMSec
 
@@ -111,7 +111,7 @@ Resolve all host names locally.
 The default value is ProxyIEConfig.
 
 ```yaml
-Type: ProxyAccessType
+Type: Microsoft.WSMan.Management.ProxyAccessType
 Parameter Sets: (All)
 Aliases:
 Accepted values: ProxyIEConfig, ProxyWinHttpConfig, ProxyAutoDetect, ProxyNoProxyServer
@@ -138,7 +138,7 @@ Examples are the Kerberos protocol and NTLM.
 The default value is Negotiate.
 
 ```yaml
-Type: ProxyAuthentication
+Type: Microsoft.WSMan.Management.ProxyAuthentication
 Parameter Sets: (All)
 Aliases:
 Accepted values: Negotiate, Basic, Digest
@@ -154,7 +154,23 @@ Accept wildcard characters: False
 Specifies a user account that has permission to gain access through an intermediate Web proxy.
 
 ```yaml
-Type: PSCredential
+Type: System.Management.Automation.PSCredential
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -SPNPort
+Specifies a port number to append to the connection Service Principal Name (SPN) of the remote server.
+An SPN is used when the authentication mechanism is Kerberos or Negotiate.
+
+```yaml
+Type: System.Int32
 Parameter Sets: (All)
 Aliases:
 
@@ -170,7 +186,7 @@ Specifies that, when it connects over HTTPS, the client does not validate that t
 Use this option only when the remote computer is trusted by another method, for example, if the remote computer is part of a network that is physically secure and isolated or the remote computer is listed as a trusted host in the WS-Management configuration.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -187,7 +203,7 @@ This is used only in remote operations using HTTPS.
 This option should only be used for trusted computers.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -202,23 +218,7 @@ Accept wildcard characters: False
 Indicates that the connection does not validate the revocation status on the server certificate.
 
 ```yaml
-Type: SwitchParameter
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -SPNPort
-Specifies a port number to append to the connection Service Principal Name (SPN) of the remote server.
-An SPN is used when the authentication mechanism is Kerberos or Negotiate.
-
-```yaml
-Type: Int32
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -234,7 +234,7 @@ Indicates that the connection encodes the request in UTF16 format instead of UTF
 The default is UTF8 encoding.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 

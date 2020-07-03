@@ -80,7 +80,7 @@ Specifies when the user account expires. To obtain a **DateTime** object, use th
 If you do not specify this parameter, the account does not expire.
 
 ```yaml
-Type: DateTime
+Type: System.DateTime
 Parameter Sets: (All)
 Aliases:
 
@@ -96,7 +96,7 @@ Accept wildcard characters: False
 Indicates that the account does not expire.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -113,7 +113,7 @@ Specifies a comment for the user account.
 The maximum length is 48 characters.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -129,7 +129,7 @@ Accept wildcard characters: False
 Indicates that this cmdlet creates the user account as disabled.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -146,7 +146,7 @@ Specifies the full name for the user account. The full name differs from the use
 account.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -169,7 +169,7 @@ uppercase characters or lowercase characters. A user name cannot contain the fol
 A user name cannot consist only of periods `.` or spaces.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -185,7 +185,7 @@ Accept wildcard characters: False
 Indicates that the user account does not have a password.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: NoPassword
 Aliases:
 
@@ -205,7 +205,7 @@ If you omit the **Password** and **NoPassword** parameters, `New-LocalUser` prom
 user's password.
 
 ```yaml
-Type: SecureString
+Type: System.Security.SecureString
 Parameter Sets: Password
 Aliases:
 
@@ -221,7 +221,7 @@ Accept wildcard characters: False
 Indicates whether the password expires.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: Password
 Aliases:
 
@@ -237,7 +237,7 @@ Accept wildcard characters: False
 Indicates that the user cannot change the password on the user account.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -253,7 +253,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -270,7 +270,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 

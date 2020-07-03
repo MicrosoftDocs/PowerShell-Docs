@@ -75,7 +75,7 @@ Passes an object that represents the location to the pipeline. By default, this 
 generate any output.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -99,7 +99,7 @@ creates. To make a location stack the current location stack, use the **StackNam
 location stack.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -117,7 +117,7 @@ in progress. For more information, see
 [about_Transactions](../Microsoft.PowerShell.Core/About/about_Transactions.md).
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: usetx
 

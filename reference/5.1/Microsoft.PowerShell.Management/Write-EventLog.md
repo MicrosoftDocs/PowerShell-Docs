@@ -54,7 +54,7 @@ Specifies a task category for the event.
 Enter an integer that is associated with the strings in the category message file for the event log.
 
 ```yaml
-Type: Int16
+Type: System.Int16
 Parameter Sets: (All)
 Aliases:
 
@@ -75,7 +75,7 @@ This parameter does not rely on Windows PowerShell remoting.
 You can use the *ComputerName* parameter of the Get-EventLog cmdlet even if your computer is not configured to run remote commands.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases: CN
 
@@ -94,7 +94,7 @@ The default value is Information.
 For a description of the values, see [EventLogEntryType Enumeration](https://go.microsoft.com/fwlink/?LinkId=143599) in the MSDN library.
 
 ```yaml
-Type: EventLogEntryType
+Type: System.Diagnostics.EventLogEntryType
 Parameter Sets: (All)
 Aliases: ET
 Accepted values: Error, Information, FailureAudit, SuccessAudit, Warning
@@ -112,7 +112,7 @@ This parameter is required.
 The maximum value for the *EventId* parameter is 65535.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: (All)
 Aliases: ID, EID
 
@@ -131,7 +131,7 @@ Wildcard characters are not permitted.
 This parameter is required.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases: LN
 
@@ -147,7 +147,7 @@ Specifies the event message.
 This parameter is required.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases: MSG
 
@@ -162,7 +162,7 @@ Accept wildcard characters: False
 Specifies the binary data that is associated with the event, in bytes.
 
 ```yaml
-Type: Byte[]
+Type: System.Byte[]
 Parameter Sets: (All)
 Aliases: RD
 
@@ -177,7 +177,7 @@ Accept wildcard characters: False
 Specifies the event source, which is typically the name of the application that is writing the event to the log.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases: SRC
 

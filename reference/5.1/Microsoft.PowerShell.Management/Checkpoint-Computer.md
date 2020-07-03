@@ -54,7 +54,7 @@ Specifies a descriptive name for the restore point.
 This parameter is required.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -79,7 +79,7 @@ The acceptable values for this parameter are:
 - CANCELLED_OPERATION
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases: RPT
 Accepted values: APPLICATION_INSTALL, APPLICATION_UNINSTALL, DEVICE_DRIVER_INSTALL, MODIFY_SETTINGS, CANCELLED_OPERATION

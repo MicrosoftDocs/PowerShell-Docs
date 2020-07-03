@@ -126,7 +126,7 @@ the script to the **LocalRepo1** repository. Finally. `Find-Script` is used to s
 ### -Credential
 
 ```yaml
-Type: PSCredential
+Type: System.Management.Automation.PSCredential
 Parameter Sets: (All)
 Aliases:
 
@@ -142,7 +142,7 @@ Accept wildcard characters: False
 Forces the command to run without asking for user confirmation.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -161,9 +161,9 @@ the path includes escape characters, enclose them in single quotation marks. Sin
 tell Windows PowerShell not to interpret any characters as escape sequences.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: LiteralPathParameterSet
-Aliases:
+Aliases: PSPath
 
 Required: True
 Position: Named
@@ -178,7 +178,7 @@ Specifies the API key that you want to use to publish a script to the online gal
 part of your profile in the online gallery. For more information see [Managing API keys](/powershell/scripting/gallery/how-to/managing-profile/creating-apikeys).
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -195,7 +195,7 @@ Specifies a path to one or more locations. Wildcards are permitted. The default 
 current directory.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: PathParameterSet
 Aliases:
 
@@ -212,7 +212,7 @@ Specifies the friendly name of a repository that has been registered by running
 `Register-PSRepository`.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -228,7 +228,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -244,7 +244,7 @@ Accept wildcard characters: False
 Shows what would happen if the cmdlet runs. The cmdlet is not run.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 

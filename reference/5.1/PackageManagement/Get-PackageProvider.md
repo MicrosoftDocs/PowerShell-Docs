@@ -58,7 +58,7 @@ Indicates that this cmdlet forces all other actions with this cmdlet that can be
 In **Get-PackageProvider**, this means the *Force* parameter acts the same as the *ForceBootstrap* parameter.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -73,7 +73,7 @@ Accept wildcard characters: False
 Indicates that this cmdlet forces Package Management to automatically install the package provider.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -93,7 +93,7 @@ Gets all installed providers.
 Without this parameter, **Get-PackageProvider** gets only the providers loaded in the current session.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -110,7 +110,7 @@ Separate multiple provider names with commas.
 Valid values for this parameter include names of providers that you have installed with packages; PackageManagement ships with a set of default providers, including the **PSModule** and **MSI** providers.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 

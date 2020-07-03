@@ -58,7 +58,7 @@ This example returns details about the runspace the user CONTOSO\User would inte
 Specifies the constrained session configuration (endpoint) that you are inspecting.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -73,7 +73,7 @@ Accept wildcard characters: False
 Indicates that this cmdlet returns the entire initial session state for the specified user at the specified constrained endpoint.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -88,7 +88,7 @@ Accept wildcard characters: False
 Specifies the user whose capabilities you are inspecting.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 

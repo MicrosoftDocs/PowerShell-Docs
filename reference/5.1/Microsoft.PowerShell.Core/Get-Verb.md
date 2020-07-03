@@ -1,5 +1,5 @@
 ---
-external help file: System.Management.Automation.dll-help.xml
+external help file: System.Management.Automation.dll-Help.xml
 keywords: powershell,cmdlet
 Locale: en-US
 ms.date: 09/07/2018
@@ -16,7 +16,7 @@ Gets approved PowerShell verbs.
 ## SYNTAX
 
 ```
-Get-Verb [[-verb] <String[]>]
+Get-Verb [[-verb] <String[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -102,7 +102,7 @@ Enter the name of a verb or a name pattern.
 Wildcards are allowed.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 

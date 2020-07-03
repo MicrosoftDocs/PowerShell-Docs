@@ -288,7 +288,7 @@ This parameter was introduced in Windows PowerShell 3.0.
 In Windows PowerShell 2.0, `Get-Command` gets all commands by default.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -314,7 +314,7 @@ cmdlets return only the dynamic parameters for the first path the value of **Arg
 information about the provider cmdlets, see [about_Providers](About/about_Providers.md).
 
 ```yaml
-Type: Object[]
+Type: System.Object[]
 Parameter Sets: (All)
 Aliases: Args
 
@@ -347,7 +347,7 @@ The acceptable values for this parameter are:
 - Workflow. Gets all workflows. For more information about workflows, see Introducing Windows PowerShell Workflow.
 
 ```yaml
-Type: CommandTypes
+Type: System.Management.Automation.CommandTypes
 Parameter Sets: AllCommandSet
 Aliases: Type
 Accepted values: Alias, Function, Filter, Cmdlet, ExternalScript, Application, Script, Workflow, Configuration, All
@@ -376,7 +376,7 @@ You cannot specify the **FullyQualifiedModule** parameter in the same command as
 parameter. The two parameters are mutually exclusive.
 
 ```yaml
-Type: ModuleSpecification[]
+Type: Microsoft.PowerShell.Commands.ModuleSpecification[]
 Parameter Sets: (All)
 Aliases:
 
@@ -398,7 +398,7 @@ gets only commands in the current session.
 This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -421,7 +421,7 @@ You can refer to this parameter by its name, **Module**, or by its alias, **PSSn
 The parameter name that you choose has no effect on the command output.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases: PSSnapin
 
@@ -441,7 +441,7 @@ To get commands that have the same name, use the **All** parameter. When two com
 name, by default, `Get-Command` gets the command that runs when you type the command name.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: AllCommandSet
 Aliases:
 
@@ -459,7 +459,7 @@ and aliases, that have names that include the specified noun. Enter one or more 
 patterns. Wildcard characters are permitted.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: CmdletSet
 Aliases:
 
@@ -480,7 +480,7 @@ The **ParameterName** and **ParameterType** parameters search only commands in t
 This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -502,7 +502,7 @@ The **ParameterName** and **ParameterType** parameters search only commands in t
 This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
-Type: PSTypeName[]
+Type: System.Management.Automation.PSTypeName[]
 Parameter Sets: (All)
 Aliases:
 
@@ -520,7 +520,7 @@ Indicates that this cmdlet displays command information.
 This parameter was introduced in Windows PowerShell 5.0.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -541,7 +541,7 @@ Indicates that this cmdlet gets only the following specified data about the comm
 - Scripts and applications or files. Gets the path and filename.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -558,7 +558,7 @@ Specifies the number of commands to get. You can use this parameter to limit the
 command.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: (All)
 Aliases:
 
@@ -576,7 +576,7 @@ and aliases, that have names that include the specified verb. Enter one or more 
 patterns. Wildcard characters are permitted.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: CmdletSet
 Aliases:
 

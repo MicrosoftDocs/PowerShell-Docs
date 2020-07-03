@@ -119,7 +119,7 @@ Enter the name of a cmdlet, function, script, file, or executable file.
 This parameter is called *Definition*, because it searches for the item name in the Definition property of the alias object.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: Definition
 Aliases:
 
@@ -138,7 +138,7 @@ Enter a name, a definition, or a pattern, such as "s*".
 Wildcards are permitted.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -158,7 +158,7 @@ The parameter name **Name** is optional.
 You can also pipe alias names to `Get-Alias`.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: Default
 Aliases:
 
@@ -183,7 +183,7 @@ Local is the default.
 For more information, see about_Scopes.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 

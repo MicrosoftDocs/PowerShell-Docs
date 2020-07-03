@@ -121,7 +121,7 @@ For best results, enclose the informational message in quotation marks.
 An example is "Test complete."
 
 ```yaml
-Type: Object
+Type: System.Object
 Parameter Sets: (All)
 Aliases: Msg
 
@@ -138,7 +138,7 @@ Specifies a simple string that you can use to sort and filter messages that you 
 This parameter works similarly to the *Tags* parameter in `New-ModuleManifest`.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 

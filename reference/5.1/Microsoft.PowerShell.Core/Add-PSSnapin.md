@@ -111,7 +111,7 @@ are permitted.
 To find the names of the registered snap-ins on your system, type `Get-PSSnapin -Registered`.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -128,7 +128,7 @@ Indicates that this cmdlet returns an object that represents each added snap-in.
 cmdlet does not generate any output.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 

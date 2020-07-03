@@ -2,7 +2,7 @@
 external help file: Microsoft.WSMan.Management.dll-Help.xml
 keywords: powershell,cmdlet
 Locale: en-US
-Module Name: Microsoft.WsMan.Management
+Module Name: Microsoft.WSMan.Management
 ms.date: 10/02/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.wsman.management/set-wsmanquickconfig?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
@@ -68,7 +68,7 @@ Set-WSManQuickConfig -UseSSL
 Forces the command to run without asking for user confirmation.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -95,7 +95,7 @@ networks, use the `Set-NetFirewallRule` cmdlet in the **NetSecurity** module.
 This parameter was introduced in PowerShell 3.0.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -120,7 +120,7 @@ fails.
 [How To: Configure WINRM for HTTPS](https://support.microsoft.com/en-us/help/2019527/how-to-configure-winrm-for-https).
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 

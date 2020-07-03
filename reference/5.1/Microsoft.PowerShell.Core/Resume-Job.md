@@ -187,7 +187,7 @@ This cmdlet resumes jobs that satisfy all of the conditions in the hash table.
 Enter a hash table where the keys are job properties and the values are job property values.
 
 ```yaml
-Type: Hashtable
+Type: System.Collections.Hashtable
 Parameter Sets: FilterParameterSet
 Aliases:
 
@@ -207,7 +207,7 @@ You can type one or more IDs, separated by commas.
 To find the ID of a job, run **Get-Job**.
 
 ```yaml
-Type: Int32[]
+Type: System.Int32[]
 Parameter Sets: SessionIdParameterSet
 Aliases:
 
@@ -226,7 +226,7 @@ An instance ID is a GUID that uniquely identifies the job on the computer.
 To find the instance ID of a job, run **Get-Job**.
 
 ```yaml
-Type: Guid[]
+Type: System.Guid[]
 Parameter Sets: InstanceIdParameterSet
 Aliases:
 
@@ -243,7 +243,7 @@ Enter a variable that contains the jobs or a command that gets the jobs.
 You can also pipe jobs to the **Resume-Job** cmdlet.
 
 ```yaml
-Type: Job[]
+Type: System.Management.Automation.Job[]
 Parameter Sets: JobParameterSet
 Aliases:
 
@@ -260,7 +260,7 @@ Enter one or more job names.
 Wildcard characters are permitted.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: NameParameterSet
 Aliases:
 
@@ -291,7 +291,7 @@ This cmdlet resumes only jobs in the **Suspended** state.
 For more information about job states, see [JobState Enumeration](https://msdn.microsoft.com/library/system.management.automation.jobstate) in the MSDN library.
 
 ```yaml
-Type: JobState
+Type: System.Management.Automation.JobState
 Parameter Sets: StateParameterSet
 Aliases:
 Accepted values: NotStarted, Running, Completed, Failed, Stopped, Blocked, Suspended, Disconnected, Suspending, Stopping, AtBreakpoint
@@ -308,7 +308,7 @@ Indicates that this cmdlet suppresses the command prompt until all job results a
 By default, this cmdlet immediately returns the available results.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -323,7 +323,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -339,7 +339,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 

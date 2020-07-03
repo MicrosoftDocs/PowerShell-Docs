@@ -122,7 +122,7 @@ To find a certificate, use `Get-PfxCertificate` or use the `Get-ChildItem` cmdle
 command fails.
 
 ```yaml
-Type: X509Certificate2
+Type: System.Security.Cryptography.X509Certificates.X509Certificate2
 Parameter Sets: (All)
 Aliases:
 
@@ -138,7 +138,7 @@ Accept wildcard characters: False
 Specifies the path to a file that is being signed.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: ByPath
 Aliases:
 
@@ -155,7 +155,7 @@ Allows the cmdlet to append a signature to a read-only file. Even using the **Fo
 cmdlet cannot override security restrictions.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -178,7 +178,7 @@ operating system.
 For a list of possible values, see [HashAlgorithmName Struct](/dotnet/api/system.security.cryptography.hashalgorithmname?view=netframework-4.7.2#properties).
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -201,7 +201,7 @@ Valid values are:
 - All: Includes all the certificates in the certificate chain.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -222,7 +222,7 @@ prevents the script from failing if the certificate expires because users and pr
 that the certificate was valid at the time of signing.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -241,7 +241,7 @@ wildcards. If the path includes escape characters, enclose it in single quotatio
 quotation marks tell PowerShell not to interpret any characters as escape sequences.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: ByLiteralPath
 Aliases: PSPath
 
@@ -258,7 +258,7 @@ Path to the file or file type of the content for which the digital signature is 
 parameter is used with **Content** where file content is passed as a byte array.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: ByContent
 Aliases:
 
@@ -276,7 +276,7 @@ used with **SourcePathOrExtension** parameter. The contents of the file must be 
 (UTF-16LE) format.
 
 ```yaml
-Type: Byte[]
+Type: System.Byte[]
 Parameter Sets: ByContent
 Aliases:
 
@@ -292,7 +292,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -308,7 +308,7 @@ Accept wildcard characters: False
 Shows what would happen if the cmdlet runs. The cmdlet is not run.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 

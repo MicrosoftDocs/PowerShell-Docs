@@ -97,7 +97,7 @@ It uses the `-Type` parameter to specify that SDDL string represents an Active D
 Specifies the string representing the security descriptor in SDDL syntax.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -127,7 +127,7 @@ By default cmdlet uses file system rights.
 CryptoKeyRights and ActiveDirectoryRights are not supported in PowerShell Core.
 
 ```yaml
-Type: Object
+Type: System.Object
 Parameter Sets: (All)
 Aliases:
 Accepted values: FileSystemRights, RegistryRights, ActiveDirectoryRights, MutexRights, SemaphoreRights, CryptoKeyRights, EventWaitHandleRights

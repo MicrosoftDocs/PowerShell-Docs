@@ -67,7 +67,7 @@ Windows Vista and later versions of the Windows operating system, you must open 
 [about_Remote_Requirements](../Microsoft.PowerShell.Core/About/about_Remote_Requirements.md).
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -84,7 +84,7 @@ Runs the cmdlet in a remote session or on a remote computer. Enter a computer na
 object, such as the output from `New-CimSession` or `Get-CimSession`.
 
 ```yaml
-Type: CimSession[]
+Type: Microsoft.Management.Infrastructure.CimSession[]
 Parameter Sets: (All)
 Aliases: Session
 
@@ -104,7 +104,7 @@ For PowerShell cmdlets that support **Confirm**, using the parameter prompts you
 before a command is run.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -120,7 +120,7 @@ Accept wildcard characters: False
 Forces the command to run without asking for user confirmation.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -140,7 +140,7 @@ limit based on the number of CIM cmdlets that are running on the computer. The t
 applies only to the current cmdlet, not to the session or to the computer.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: (All)
 Aliases:
 
@@ -156,7 +156,7 @@ Accept wildcard characters: False
 Shows what would happen if the cmdlet runs. The cmdlet isn't run.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 

@@ -202,7 +202,7 @@ With strict mode set to version 3 or higher, invalid or out of bounds indexes re
 Indicates that this cmdlet turns strict mode off for the current scope and all child scopes.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: Off
 Aliases:
 
@@ -245,7 +245,7 @@ The effective values for this parameter are:
 > of PowerShell.
 
 ```yaml
-Type: Version
+Type: System.Version
 Parameter Sets: Version
 Aliases: v
 

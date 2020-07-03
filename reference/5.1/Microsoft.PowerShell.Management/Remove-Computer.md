@@ -111,7 +111,7 @@ parameter of `Remove-Computer` even if your computer is not configured to run re
 This parameter was introduced in PowerShell 3.0.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: Remote
 Aliases:
 
@@ -128,7 +128,7 @@ Suppresses the user prompt. By default, `Remove-Computer` prompts you for confir
 removing each computer.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -152,7 +152,7 @@ domain, use the **UnjoinDomainCredential** parameter.
 This parameter was introduced in PowerShell 3.0.
 
 ```yaml
-Type: PSCredential
+Type: System.Management.Automation.PSCredential
 Parameter Sets: Remote
 Aliases:
 
@@ -168,7 +168,7 @@ Accept wildcard characters: False
 Returns the results of the command. Otherwise, this cmdlet does not generate any output.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -187,7 +187,7 @@ required to make the change effective.
 This parameter was introduced in PowerShell 3.0.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -213,7 +213,7 @@ To specify a user account that has permission to connect to the remote computers
 This parameter was introduced in PowerShell 3.0.
 
 ```yaml
-Type: PSCredential
+Type: System.Management.Automation.PSCredential
 Parameter Sets: Local, Remote
 Aliases: Credential
 
@@ -233,7 +233,7 @@ it to a workgroup.
 This parameter was introduced in PowerShell 3.0.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -249,7 +249,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -265,7 +265,7 @@ Accept wildcard characters: False
 Shows what would happen if the cmdlet runs. The cmdlet is not run.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 

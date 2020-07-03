@@ -2,7 +2,7 @@
 external help file: Microsoft.WSMan.Management.dll-Help.xml
 keywords: powershell,cmdlet
 Locale: en-US
-Module Name: Microsoft.WsMan.Management
+Module Name: Microsoft.WSMan.Management
 ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.wsman.management/disconnect-wsman?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
@@ -64,7 +64,7 @@ That is, you cannot disconnect the default connection to the local computer.
 However, if you create a separate connection to the local computer, for example, by using the computer name.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 

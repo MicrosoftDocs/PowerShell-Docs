@@ -99,7 +99,7 @@ By default, the cmdlet uses the credentials of the current user.
 The *Credential* parameter is designed for use in commands that use the *Repair* parameter to repair the channel between the computer and the domain.
 
 ```yaml
-Type: PSCredential
+Type: System.Management.Automation.PSCredential
 Parameter Sets: (All)
 Aliases:
 
@@ -117,7 +117,7 @@ Use this parameter to try to restore a connection that has failed the test.
 To use this parameter, the current user must be a member of the Administrators group on the local computer.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -133,7 +133,7 @@ Specifies the domain controller to run the command.
 If this parameter is not specified, this cmdlet selects a default domain controller for the operation.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -148,7 +148,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -164,7 +164,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
