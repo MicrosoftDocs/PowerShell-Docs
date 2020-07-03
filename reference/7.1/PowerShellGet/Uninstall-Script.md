@@ -64,7 +64,7 @@ pipeline to `Uninstall-Script` and the script is uninstalled.
 Allows you to uninstall a script marked as a prerelease.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: NameParameterSet
 Aliases:
 
@@ -80,7 +80,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running `Uninstall-Script`.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -96,7 +96,7 @@ Accept wildcard characters: False
 Forces `Uninstall-Script` to run without asking for user confirmation.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -113,7 +113,7 @@ Accepts a **PSRepositoryItemInfo** object. For example, output `Get-InstalledScr
 and use that variable as the **InputObject** argument.
 
 ```yaml
-Type: PSObject[]
+Type: System.Management.Automation.PSObject[]
 Parameter Sets: InputObject
 Aliases:
 
@@ -130,7 +130,7 @@ Specifies the maximum, or newest, version of the script to uninstall. The **Maxi
 **RequiredVersion** parameters can't be used in the same command.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: NameParameterSet
 Aliases:
 
@@ -147,7 +147,7 @@ Specifies the minimum version of the script to uninstall. The **MinimumVersion**
 **RequiredVersion** parameters can't be used in the same command.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: NameParameterSet
 Aliases:
 
@@ -163,7 +163,7 @@ Accept wildcard characters: False
 Specifies an array of script names to uninstall.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: NameParameterSet
 Aliases:
 
@@ -179,7 +179,7 @@ Accept wildcard characters: False
 Specifies the exact version number of the script to uninstall.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: NameParameterSet
 Aliases:
 
@@ -195,7 +195,7 @@ Accept wildcard characters: False
 Shows what would happen if `Uninstall-Script` runs. The cmdlet isn't run.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 

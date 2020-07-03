@@ -322,7 +322,7 @@ Beginning in PowerShell 6, it is no longer required to include the **Property** 
 **ExcludeProperty** to work.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: DefaultParameter, SkipLastParameter
 Aliases:
 
@@ -358,7 +358,7 @@ property as a **NoteProperty** to every outputted object.
 >   error will occur.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: DefaultParameter, SkipLastParameter
 Aliases:
 
@@ -374,7 +374,7 @@ Accept wildcard characters: False
 Specifies the number of objects to select from the beginning of an array of input objects.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: DefaultParameter
 Aliases:
 
@@ -392,7 +392,7 @@ list. Indexes in an array begin with 0, where 0 represents the first value and (
 last value.
 
 ```yaml
-Type: Int32[]
+Type: System.Int32[]
 Parameter Sets: IndexParameter
 Aliases:
 
@@ -413,7 +413,7 @@ When you pass objects to the **InputObject** parameter, instead of using the pip
 is recommended that you use the pipeline when passing collections to `Select-Object`.
 
 ```yaml
-Type: PSObject
+Type: System.Management.Automation.PSObject
 Parameter Sets: (All)
 Aliases:
 
@@ -429,7 +429,7 @@ Accept wildcard characters: False
 Specifies the number of objects to select from the end of an array of input objects.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: DefaultParameter
 Aliases:
 
@@ -454,7 +454,7 @@ Valid keys are:
 - Expression `<string>` or `<script block>`
 
 ```yaml
-Type: Object[]
+Type: System.Object[]
 Parameter Sets: DefaultParameter, SkipLastParameter
 Aliases:
 
@@ -474,7 +474,7 @@ it counts from the end of the list or array.
 Unlike the **Index** parameter, which starts counting at 0, the **Skip** parameter begins at 1.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: DefaultParameter
 Aliases:
 
@@ -493,7 +493,7 @@ the same way as using **Skip** together with **Last** parameter.
 Unlike the **Index** parameter, which starts counting at 0, the **SkipLast** parameter begins at 1.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: SkipLastParameter
 Aliases:
 
@@ -513,7 +513,7 @@ This parameter is case-sensitive. As a result, strings that differ only in chara
 considered to be unique.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -534,7 +534,7 @@ stops the command that generates the objects as soon as the selected number of o
 This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: DefaultParameter, IndexParameter
 Aliases:
 
@@ -548,7 +548,7 @@ Accept wildcard characters: False
 ### -SkipIndex
 
 ```yaml
-Type: Int32[]
+Type: System.Int32[]
 Parameter Sets: SkipIndexParameter
 Aliases:
 

@@ -259,7 +259,7 @@ object and the password is stored as a [SecureString](/dotnet/api/system.securit
 > [How secure is SecureString?](/dotnet/api/system.security.securestring#how-secure-is-securestring).
 
 ```yaml
-Type: PSCredential
+Type: System.Management.Automation.PSCredential
 Parameter Sets: (All)
 Aliases:
 
@@ -289,7 +289,7 @@ cultures in the same command, such as:
 `Update-Help -Module PSScheduledJobs -UICulture en-US, fr-FR, pt-BR`
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -321,7 +321,7 @@ You can't specify the **FullyQualifiedModule** parameter in the same command as 
 parameter.
 
 ```yaml
-Type: ModuleSpecification[]
+Type: Microsoft.PowerShell.Commands.ModuleSpecification[]
 Parameter Sets: (All)
 Aliases:
 
@@ -347,7 +347,7 @@ it in single quotation marks. Single quotation marks tell PowerShell not to inte
 as escape sequences.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: LiteralPath
 Aliases: PSPath, LP
 
@@ -378,7 +378,7 @@ or module manifest file. To update help for a module that isn't in a `$env:PSMod
 import the module into the current session before you run the `Update-Help` command.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases: Name
 
@@ -395,7 +395,7 @@ Performs a recursive search for help files in the specified directory. This para
 when the command uses the **SourcePath** parameter.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -422,7 +422,7 @@ The acceptable values are:
 - AllUsers
 
 ```yaml
-Type: UpdateHelpScope
+Type: Microsoft.PowerShell.Commands.UpdateHelpScope
 Parameter Sets: (All)
 Aliases:
 
@@ -449,7 +449,7 @@ using `Update-Help` to download help files from the internet.
 For more information, see [about_Group_Policy_Settings](./About/about_Group_Policy_Settings.md).
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: Path
 Aliases: Path
 
@@ -475,7 +475,7 @@ the specified UI culture. If the command fails because the specified UI culture 
 error message is displayed.
 
 ```yaml
-Type: CultureInfo[]
+Type: System.Globalization.CultureInfo[]
 Parameter Sets: (All)
 Aliases:
 
@@ -495,7 +495,7 @@ This parameter is effective only when the web download uses NT LAN Manager (NTLM
 Kerberos-based authentication.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -511,7 +511,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -527,7 +527,7 @@ Accept wildcard characters: False
 Shows what would happen if the cmdlet runs. The cmdlet isn't run.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 

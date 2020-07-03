@@ -200,7 +200,7 @@ wildcards. If the name includes escape characters, enclose it in single quotatio
 quotation marks tell Windows PowerShell not to interpret any characters as escape sequences.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: LiteralName
 Aliases:
 
@@ -217,7 +217,7 @@ Specifies, as a string array, the name or name of drives that this cmdlet gets i
 Type the drive name or letter without a colon (:).
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: Name
 Aliases:
 
@@ -235,7 +235,7 @@ supported by this provider. Type the name of a provider, such as FileSystem, Reg
 Certificate.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -261,7 +261,7 @@ The acceptable values for this parameter are:
 For more information, see [about_Scopes](../Microsoft.PowerShell.Core/About/about_Scopes.md).
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 

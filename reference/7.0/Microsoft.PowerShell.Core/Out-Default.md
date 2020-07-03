@@ -63,7 +63,7 @@ Get-Process | Select-Object -First 5 | Out-Default
 Accepts input to the cmdlet.
 
 ```yaml
-Type: PSObject
+Type: System.Management.Automation.PSObject
 Parameter Sets: (All)
 Aliases:
 
@@ -79,7 +79,7 @@ Accept wildcard characters: False
 Determines whether the output should be sent to PowerShell's transcription services.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 

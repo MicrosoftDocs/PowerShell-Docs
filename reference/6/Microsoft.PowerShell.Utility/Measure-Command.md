@@ -93,7 +93,7 @@ Objects that are piped to `Measure-Command` are available to the script block th
 ```powershell
 # Perform a simple operation to demonstrate the InputObject parameter
 # Note that no output is displayed.
-10, 20, 50 | Measure-Command -Expression { for ($i=0; $i -lt $_ i++) {$i} }
+10, 20, 50 | Measure-Command -Expression { for ($i=0; $i -lt $_; $i++) {$i} }
 ```
 
 ```Output
@@ -168,7 +168,7 @@ For more information about the invocation operator, see
 Specifies the expression that is being timed. Enclose the expression in braces (`{}`).
 
 ```yaml
-Type: ScriptBlock
+Type: System.Management.Automation.ScriptBlock
 Parameter Sets: (All)
 Aliases:
 
@@ -186,7 +186,7 @@ Objects bound to the **InputObject** parameter are optional input for the script
 in the pipeline.
 
 ```yaml
-Type: PSObject
+Type: System.Management.Automation.PSObject
 Parameter Sets: (All)
 Aliases:
 

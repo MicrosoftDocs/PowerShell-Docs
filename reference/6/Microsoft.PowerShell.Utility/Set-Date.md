@@ -101,7 +101,7 @@ can type an adjustment in standard date and time format for your locale or use t
 parameter to pass a **TimeSpan** object from `New-TimeSpan` to `Set-Date`.
 
 ```yaml
-Type: TimeSpan
+Type: System.TimeSpan
 Parameter Sets: Adjust
 Aliases:
 
@@ -122,7 +122,7 @@ If you specify a date, but not a time, `Set-Date` changes the time to midnight o
 date. If you specify only a time, it does not change the date.
 
 ```yaml
-Type: DateTime
+Type: System.DateTime
 Parameter Sets: Date
 Aliases:
 
@@ -149,7 +149,7 @@ This parameter affects only the display.
 It does not affect the **DateTime** object that `Get-Date` retrieves.
 
 ```yaml
-Type: DisplayHintType
+Type: Microsoft.PowerShell.Commands.DisplayHintType
 Parameter Sets: (All)
 Aliases:
 Accepted values: Date, Time, DateTime
@@ -166,7 +166,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -183,7 +183,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 

@@ -95,7 +95,7 @@ For more information about the **Debug** common parameter, see [about_CommonPara
 Specifies the debug message to send to the console.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases: Msg
 

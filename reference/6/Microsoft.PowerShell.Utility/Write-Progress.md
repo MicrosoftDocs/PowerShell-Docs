@@ -148,7 +148,7 @@ Specifies the first line of text in the heading above the status bar.
 This text describes the activity whose progress is being reported.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -165,7 +165,7 @@ Indicates whether the progress bar is visible.
 If this parameter is omitted, `Write-Progress` displays progress information.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -182,7 +182,7 @@ Specifies the line of text below the progress bar.
 This text describes the operation that is currently taking place.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -200,7 +200,7 @@ are creating more than one progress bar in a single command. If the progress bar
 different IDs, they are superimposed instead of being displayed in a series.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: (All)
 Aliases:
 
@@ -217,7 +217,7 @@ Specifies the parent activity of the current activity.
 Use the value -1 if the current activity has no parent activity.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: (All)
 Aliases:
 
@@ -234,7 +234,7 @@ Specifies the percentage of the activity that is completed.
 Use the value -1 if the percentage complete is unknown or not applicable.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: (All)
 Aliases:
 
@@ -251,7 +251,7 @@ Specifies the projected number of seconds remaining until the activity is comple
 Use the value -1 if the number of seconds remaining is unknown or not applicable.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: (All)
 Aliases:
 
@@ -268,7 +268,7 @@ Specifies the source of the record. You can use this in place of **Id** but cann
 other parameters like **ParentId**.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: (All)
 Aliases:
 
@@ -285,7 +285,7 @@ Specifies the second line of text in the heading above the status bar.
 This text describes current state of the activity.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 

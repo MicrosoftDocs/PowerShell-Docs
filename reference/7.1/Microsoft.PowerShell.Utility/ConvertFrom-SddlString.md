@@ -84,7 +84,7 @@ The third command uses the `ConvertFrom-SddlString` cmdlet with the `-Type` para
 Specifies the string representing the security descriptor in SDDL syntax.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -114,7 +114,7 @@ By default cmdlet uses file system rights.
 CryptoKeyRights and ActiveDirectoryRights are not supported in PowerShell Core.
 
 ```yaml
-Type: AccessRightTypeNames
+Type: Microsoft.PowerShell.Commands.ConvertFromSddlStringCommand+AccessRightTypeNames
 Parameter Sets: (All)
 Aliases:
 Accepted values: FileSystemRights, RegistryRights, ActiveDirectoryRights, MutexRights, SemaphoreRights, CryptoKeyRights, EventWaitHandleRights

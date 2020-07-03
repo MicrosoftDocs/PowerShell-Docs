@@ -239,7 +239,7 @@ Get-Member -InputObject $bytearray
 ```
 
 ```Output
-   TypeName: System.Byte[]
+TypeName: System.Byte[]
 
 Name           MemberType            Definition
 ----           ----------            ----------
@@ -261,7 +261,7 @@ permitted. The paths must be paths to items, not to containers. For example, you
 to one or more files, not a path to a directory.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: Path
 Aliases:
 
@@ -282,7 +282,7 @@ as escape sequences.
 For more information, see [about_Quoting_Rules](../Microsoft.Powershell.Core/About/about_Quoting_Rules.md).
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: LiteralPath
 Aliases: PSPath, LP
 
@@ -304,7 +304,7 @@ line increases, but the total time for the operation decreases. This can make a 
 difference in large items.
 
 ```yaml
-Type: Int64
+Type: System.Int64
 Parameter Sets: (All)
 Aliases:
 
@@ -323,7 +323,7 @@ lines).
 You can use the **TotalCount** parameter name or its aliases, **First** or **Head**.
 
 ```yaml
-Type: Int64
+Type: System.Int64
 Parameter Sets: (All)
 Aliases: First, Head
 
@@ -340,7 +340,7 @@ Specifies the number of lines from the end of a file or other item. You can use 
 parameter name or its alias, **Last**. This parameter was introduced in PowerShell 3.0.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: (All)
 Aliases: Last
 
@@ -360,7 +360,7 @@ Filters are more efficient than other parameters, because the provider applies t
 gets the objects rather than having PowerShell filter the objects after they are retrieved.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -380,7 +380,7 @@ command includes the contents of an item, such as `C:\Windows\*`, where the wild
 specifies the contents of the `C:\Windows` directory.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -404,7 +404,7 @@ such as `C:\Windows\*`, where the wildcard character specifies the contents of t
 directory.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -421,7 +421,7 @@ Accept wildcard characters: True
 **Force** parameter does not attempt to change file permissions or override security restrictions.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -440,7 +440,7 @@ Accept wildcard characters: False
 > use [Invoke-Command](../Microsoft.PowerShell.Core/Invoke-Command.md).
 
 ```yaml
-Type: PSCredential
+Type: System.Management.Automation.PSCredential
 Parameter Sets: (All)
 Aliases:
 
@@ -472,7 +472,7 @@ cmdlet. This parameter works only in file system drives.
 > a single, undelimited string. Enter a value that does not exist in the file.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -494,7 +494,7 @@ reported.
 parameter works only in file system drives. **Wait** cannot be combined with **Raw**.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -515,7 +515,7 @@ into an array of strings. This parameter was introduced in PowerShell 3.0.
 This parameter works only in file system drives.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -557,7 +557,7 @@ pages (like `-Encoding 1251`) or string names of registered code pages (like
 [Encoding.CodePage](/dotnet/api/system.text.encoding.codepage?view=netcore-2.2).
 
 ```yaml
-Type: Encoding
+Type: System.Text.Encoding
 Parameter Sets: (All)
 Aliases:
 Accepted values: ASCII, BigEndianUnicode, OEM, Unicode, UTF7, UTF8, UTF8BOM, UTF8NoBOM, UTF32
@@ -579,7 +579,7 @@ This parameter works only in file system drives on Windows systems. This paramet
 Windows PowerShell 3.0.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -599,7 +599,7 @@ A warning occurs when you use the **AsByteStream** parameter with the **Encoding
 **AsByteStream** parameter ignores any encoding and the output is returned as a stream of bytes.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 

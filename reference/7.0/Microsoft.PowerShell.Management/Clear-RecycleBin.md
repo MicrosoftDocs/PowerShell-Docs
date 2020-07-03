@@ -80,7 +80,7 @@ An alternative is to replace `-Force` with `-Confirm:$false`.
 Specifies the recycle bin to clear for a single drive letter or an array of drive letters.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -96,7 +96,7 @@ Accept wildcard characters: False
 Specifies that the user isn't prompted for confirmation to clear a recycle bin.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -113,7 +113,7 @@ Prompts for user confirmation before running the cmdlet. The user is prompted fo
 if the **Confirm** parameter isn't specified.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -129,7 +129,7 @@ Accept wildcard characters: False
 Shows what would happen if `Clear-RecycleBin` runs. The cmdlet isn't run.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 

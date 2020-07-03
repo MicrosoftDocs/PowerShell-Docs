@@ -49,7 +49,7 @@ This command gets all operating system properties from the computer.
 Specifies, as a string array, the computer properties in which this cmdlet displays.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 

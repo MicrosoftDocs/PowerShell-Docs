@@ -17,16 +17,16 @@ Gets and displays the most recent error messages from the current session.
 
 ## SYNTAX
 
-### ByNewest (Default)
+### Newest (Default)
 
 ```
-Get-Error [-Newest <Int>] [<CommonParameters>]
+Get-Error [[-Newest] <Int32>] [<CommonParameters>]
 ```
 
-### ByPipeline
+### Error
 
 ```
-Get-Error [[-InputObject] <psobject>] [<CommonParameters>]
+Get-Error [-InputObject <PSObject>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -125,14 +125,30 @@ $Error | Get-Error
 Specifies the number of errors to display that have occurred in the current session.
 
 ```yaml
-Type: PSExtendedError
-Parameter Sets: (All)
-Aliases: None
+Type: System.Int32
+Parameter Sets: Newest
+Aliases: Last
 
 Required: False
 Position: 0
 Default value: None
-Accept pipeline input: True (ByPropertyName, ByValue)
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -InputObject
+
+This parameter is used for pipeline input.
+
+```yaml
+Type: System.Management.Automation.PSObject
+Parameter Sets: Error
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -151,7 +167,7 @@ Supports input from any **PSObject**, but results vary unless either an **ErrorR
 
 ## OUTPUTS
 
-### PSExtendedError
+### System.Management.Automation.ErrorRecord#PSExtendedError
 
 Output in a **PSExtendedError** object.
 

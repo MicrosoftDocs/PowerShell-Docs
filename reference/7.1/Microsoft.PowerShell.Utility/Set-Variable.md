@@ -98,7 +98,7 @@ The sample output shows the difference in the behavior of public and private var
 Specifies the description of the variable.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -117,7 +117,7 @@ Enter a path element or pattern, such as `*.txt`.
 Wildcards are permitted.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -136,7 +136,7 @@ By default, you can overwrite a variable, unless the variable has an option valu
 For more information, see the *Option* parameter.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -155,7 +155,7 @@ Enter a name or name pattern, such as `c*`.
 Wildcards are permitted.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -171,7 +171,7 @@ Accept wildcard characters: True
 Specifies the variable name.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -197,7 +197,7 @@ Valid values are:
 To see the **Options** property of all variables in the session, type `Get-Variable | Format-Table -Property name, options -Autosize`.
 
 ```yaml
-Type: ScopedItemOptions
+Type: System.Management.Automation.ScopedItemOptions
 Parameter Sets: (All)
 Aliases:
 Accepted values: None, ReadOnly, Constant, Private, AllScope, Unspecified
@@ -214,7 +214,7 @@ Returns an object representing the new variable.
 By default, this cmdlet does not generate any output.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -240,7 +240,7 @@ Local is the default.
 For more information, see [about_Scopes](../Microsoft.PowerShell.Core/About/about_scopes.md).
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -256,7 +256,7 @@ Accept wildcard characters: False
 Specifies the value of the variable.
 
 ```yaml
-Type: Object
+Type: System.Object
 Parameter Sets: (All)
 Aliases:
 
@@ -282,7 +282,7 @@ Commands to read or change the value of a private variable return an error.
 However, the user can run commands that use a private variable if the commands were written in the session in which the variable was defined.
 
 ```yaml
-Type: SessionStateEntryVisibility
+Type: System.Management.Automation.SessionStateEntryVisibility
 Parameter Sets: (All)
 Aliases:
 Accepted values: Public, Private
@@ -298,7 +298,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -315,7 +315,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 

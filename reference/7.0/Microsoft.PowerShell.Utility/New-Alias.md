@@ -57,7 +57,7 @@ You can type any string.
 If the description includes spaces, enclose it in quotation marks.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -73,7 +73,7 @@ Accept wildcard characters: False
 Indicates that the cmdlet acts like Set-Alias if the alias named already exists.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -90,7 +90,7 @@ Specifies the new alias.
 You can use any alphanumeric characters in an alias, but the first character cannot be a number.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -116,7 +116,7 @@ Valid values are:
 To see the **Options** property of all aliases in the session, type `Get-Alias | Format-Table -Property Name, Options -AutoSize`.
 
 ```yaml
-Type: ScopedItemOptions
+Type: System.Management.Automation.ScopedItemOptions
 Parameter Sets: (All)
 Aliases:
 Accepted values: None, ReadOnly, Constant, Private, AllScope, Unspecified
@@ -134,7 +134,7 @@ Returns an object representing the item with which you are working.
 By default, this cmdlet does not generate any output.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -159,7 +159,7 @@ Local is the default.
 For more information, see about_Scopes.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -175,7 +175,7 @@ Accept wildcard characters: False
 Specifies the name of the cmdlet or command element that is being aliased.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -191,7 +191,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -208,7 +208,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 

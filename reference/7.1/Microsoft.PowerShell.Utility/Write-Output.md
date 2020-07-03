@@ -17,7 +17,7 @@ If the command is the last command in the pipeline, the objects are displayed in
 ## SYNTAX
 
 ```
-Write-Output [-InputObject] <PSObject[]> [-NoEnumerate] [<CommonParameters>]
+Write-Output [-InputObject] <PSObject> [-NoEnumerate] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -86,7 +86,7 @@ Specifies the objects to send down the pipeline. Enter a variable that contains 
 a command or expression that gets the objects.
 
 ```yaml
-Type: PSObject
+Type: System.Management.Automation.PSObject
 Parameter Sets: (All)
 Aliases:
 
@@ -109,7 +109,7 @@ parentheses, because the parentheses force enumeration.
 > PowerShell Core, the collection is still enumerated even with use of this switch.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 

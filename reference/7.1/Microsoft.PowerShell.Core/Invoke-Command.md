@@ -707,7 +707,7 @@ of the `New-PSSessionOption` cmdlet or set the **MaximumConnectionRedirectionCou
 `$PSSessionOption` preference variable. The default value is 5.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: Uri, FilePathUri
 Aliases:
 
@@ -732,7 +732,7 @@ The value of this parameter should match the value of the **URLPrefix** property
 the remote computer.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: ComputerName, FilePathComputerName
 Aliases:
 
@@ -763,7 +763,7 @@ supplies the values of the variables, in the order that they're listed. For more
 the behavior of **ArgumentList**, see [about_Splatting](about/about_Splatting.md#splatting-with-arrays).
 
 ```yaml
-Type: Object[]
+Type: System.Object[]
 Parameter Sets: (All)
 Aliases: Args
 
@@ -791,7 +791,7 @@ computer.
 For more information about PowerShell background jobs, see [about_Jobs](About/about_Jobs.md) and [about_Remote_Jobs](About/about_Remote_Jobs.md).
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: FilePathRunspace, Session, ComputerName, FilePathComputerName, Uri, FilePathUri, VMId, VMName, FilePathVMId, FilePathVMName, SSHHost, ContainerId, FilePathContainerId, SSHHostHashParam, FilePathSSHHost, FilePathSSHHostHash
 Aliases:
 
@@ -833,7 +833,7 @@ For more information about the values of this parameter, see
 > [Credential Security Support Provider](/windows/win32/secauthn/credential-security-support-provider).
 
 ```yaml
-Type: AuthenticationMechanism
+Type: System.Management.Automation.Runspaces.AuthenticationMechanism
 Parameter Sets: ComputerName, FilePathComputerName, Uri, FilePathUri
 Aliases:
 Accepted values: Basic, Default, Credssp, Digest, Kerberos, Negotiate, NegotiateWithImplicitCredential
@@ -857,7 +857,7 @@ To get a certificate thumbprint, use a `Get-Item` or `Get-ChildItem` command in 
 drive.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: ComputerName, Uri
 Aliases:
 
@@ -890,7 +890,7 @@ On Windows Vista and later versions of the Windows operating system, to include 
 in the value of **ComputerName**, you must run PowerShell using the **Run as administrator** option.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: ComputerName, FilePathComputerName
 Aliases: Cn
 
@@ -920,7 +920,7 @@ computer. If this preference variable isn't set, the default is **Microsoft.Powe
 information, see [about_Preference_Variables](about/about_Preference_Variables.md).
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: ComputerName, FilePathComputerName, Uri, FilePathUri, VMId, VMName, FilePathVMId, FilePathVMName, ContainerId, FilePathContainerId
 Aliases:
 
@@ -956,7 +956,7 @@ If the destination computer redirects the connection to a different URI, PowerSh
 redirection unless you use the **AllowRedirection** parameter in the command.
 
 ```yaml
-Type: Uri[]
+Type: System.Uri[]
 Parameter Sets: Uri, FilePathUri
 Aliases: URI, CU
 
@@ -972,7 +972,7 @@ Accept wildcard characters: False
 Specifies an array of container IDs.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: ContainerId, FilePathContainerId
 Aliases:
 
@@ -1000,7 +1000,7 @@ object and the password is stored as a [SecureString](/dotnet/api/system.securit
 > [How secure is SecureString?](/dotnet/api/system.security.securestring#how-secure-is-securestring).
 
 ```yaml
-Type: PSCredential
+Type: System.Management.Automation.PSCredential
 Parameter Sets: ComputerName, FilePathComputerName, Uri, FilePathUri, VMId, VMName, FilePathVMId, FilePathVMName
 Aliases:
 
@@ -1040,7 +1040,7 @@ be reconnected from other computers. For more information, see `Disconnect-PSSes
 This parameter was introduced in PowerShell 3.0.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: ComputerName, FilePathComputerName, Uri, FilePathUri
 Aliases:
 
@@ -1062,7 +1062,7 @@ When you use this parameter, PowerShell converts the contents of the specified s
 script block, transmits the script block to the remote computer, and runs it on the remote computer.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: FilePathRunspace, FilePathComputerName, FilePathUri, FilePathVMId, FilePathVMName, FilePathContainerId, FilePathSSHHost, FilePathSSHHostHash
 Aliases: PSPath
 
@@ -1081,7 +1081,7 @@ default, the name of the computer that generated the object appears in the displ
 This parameter affects only the output display. It doesn't change the object.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: FilePathRunspace, Session, ComputerName, FilePathComputerName, Uri, FilePathUri, VMId, VMName, FilePathVMId, FilePathVMName, SSHHost, ContainerId, FilePathContainerId, SSHHostHashParam, FilePathSSHHost, FilePathSSHHostHash
 Aliases: HCN
 
@@ -1101,7 +1101,7 @@ rather than Windows WinRM.
 This parameter was introduced in PowerShell 6.0.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: SSHHost, FilePathSSHHost
 Aliases:
 
@@ -1143,7 +1143,7 @@ For more information about the Disconnected Sessions feature, see [about_Remote_
 This parameter was introduced in PowerShell 3.0.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: ComputerName, FilePathComputerName, Uri, FilePathUri
 Aliases: Disconnected
 
@@ -1163,7 +1163,7 @@ When using the **InputObject** parameter, use the `$Input` automatic variable in
 **ScriptBlock** parameter to represent the input objects.
 
 ```yaml
-Type: PSObject
+Type: System.Management.Automation.PSObject
 Parameter Sets: (All)
 Aliases:
 
@@ -1185,8 +1185,8 @@ returns a job object, even if you don't include **AsJob** in the command.
 For more information about PowerShell background jobs, see [about_Jobs](./About/about_Jobs.md).
 
 ```yaml
-Type: String
-Parameter Sets: FilePathRunspace, Session, ComputerName, FilePathComputerName, Uri, FilePathUri, ContainerId, FilePathContainerId
+Type: System.String
+Parameter Sets: FilePathRunspace, Session, ComputerName, FilePathComputerName, Uri, FilePathUri, SSHHost, ContainerId, FilePathContainerId, SSHHostHashParam
 Aliases:
 
 Required: False
@@ -1207,7 +1207,7 @@ this parameter can be used to provide the key that identifies the user.
 This parameter was introduced in PowerShell 6.0.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: SSHHost, FilePathSSHHost
 Aliases: IdentityFilePath
 
@@ -1229,7 +1229,7 @@ omit both the **ComputerName** and **Session** parameters.
 This parameter was introduced in PowerShell 3.0.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: InProcess
 Aliases:
 
@@ -1258,7 +1258,7 @@ computers or sessions on which the command runs. An alternate port setting might
 from running on all computers.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: ComputerName, FilePathComputerName, SSHHost
 Aliases:
 
@@ -1274,7 +1274,7 @@ Accept wildcard characters: False
 Used to run the invoked command in debug mode in the remote PowerShell session.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: FilePathRunspace, Session, ComputerName, FilePathComputerName, Uri, FilePathUri, VMId, VMName, FilePathVMId, FilePathVMName, SSHHost, ContainerId, FilePathContainerId, SSHHostHashParam, FilePathSSHHost, FilePathSSHHostHash
 Aliases:
 
@@ -1290,7 +1290,7 @@ Accept wildcard characters: False
 Indicates that this cmdlet invokes a command as an Administrator.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: ContainerId, FilePathContainerId
 Aliases:
 
@@ -1310,7 +1310,7 @@ By default, any variables in the command are evaluated on the remote computer. T
 variables in the command, use **ArgumentList**.
 
 ```yaml
-Type: ScriptBlock
+Type: System.Management.Automation.ScriptBlock
 Parameter Sets: InProcess, Session, ComputerName, Uri, VMId, VMName, SSHHost, ContainerId, SSHHostHashParam
 Aliases: Command
 
@@ -1333,7 +1333,7 @@ command or a series of unrelated commands, use the **ComputerName** parameter. F
 see [about_PSSessions](./About/about_PSSessions.md).
 
 ```yaml
-Type: PSSession[]
+Type: System.Management.Automation.Runspaces.PSSession[]
 Parameter Sets: FilePathRunspace, Session
 Aliases:
 
@@ -1353,7 +1353,7 @@ in subsequent commands, such as a `Get-PSSession` command. This parameter is val
 This parameter was introduced in PowerShell 3.0.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: ComputerName, FilePathComputerName
 Aliases:
 
@@ -1383,7 +1383,7 @@ For a description of the session options that includes the default values, see
 For more information about session configurations, see [about_Session_Configurations](About/about_Session_Configurations.md).
 
 ```yaml
-Type: PSSessionOption
+Type: System.Management.Automation.Remoting.PSSessionOption
 Parameter Sets: ComputerName, FilePathComputerName, Uri, FilePathUri
 Aliases:
 
@@ -1412,7 +1412,7 @@ The hashtable has the following members:
 This parameter was introduced in PowerShell 6.0.
 
 ```yaml
-Type: Hashtable[]
+Type: System.Collections.Hashtable[]
 Parameter Sets: SSHHostHashParam, FilePathSSHHostHash
 Aliases:
 
@@ -1433,7 +1433,7 @@ PowerShell to use the **HostName** parameter for establishing an SSH based remot
 This parameter was introduced in PowerShell 6.0.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: SSHHost, FilePathSSHHost
 Aliases:
 Accepted values: true
@@ -1453,7 +1453,7 @@ If you omit this parameter or enter a value of 0, the default value, 32, is used
 The throttle limit applies only to the current command, not to the session or to the computer.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: FilePathRunspace, Session, ComputerName, FilePathComputerName, Uri, FilePathUri, VMId, VMName, FilePathVMId, FilePathVMName, ContainerId, FilePathContainerId
 Aliases:
 
@@ -1484,7 +1484,7 @@ logged on username is used for the connection.
 This parameter was introduced in PowerShell 6.0.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: SSHHost, FilePathSSHHost
 Aliases:
 
@@ -1507,7 +1507,7 @@ If you use this parameter, but SSL isn't available on the port that's used for t
 command fails.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: ComputerName, FilePathComputerName
 Aliases:
 
@@ -1523,7 +1523,7 @@ Accept wildcard characters: False
 Specifies an array of IDs of virtual machines.
 
 ```yaml
-Type: Guid[]
+Type: System.Guid[]
 Parameter Sets: VMId, FilePathVMId
 Aliases: VMGuid
 
@@ -1539,7 +1539,7 @@ Accept wildcard characters: False
 Specifies an array of names of virtual machines.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: VMName, FilePathVMName
 Aliases:
 
@@ -1561,7 +1561,7 @@ If the specified subsystem does not exist on the remote computer, the command fa
 If this parameter is not used, the default is the 'powershell' subsystem.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: SSHHost
 Aliases:
 

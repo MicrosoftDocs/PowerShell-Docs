@@ -287,7 +287,7 @@ with the **ConnectionUri** parameter.
 This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: ConnectionUriInstanceId, ConnectionUri
 Aliases:
 
@@ -311,8 +311,8 @@ The value of this parameter is used to select and filter sessions. It does not c
 application that the session uses.
 
 ```yaml
-Type: String
-Parameter Sets: ComputerName, ComputerInstanceId
+Type: System.String
+Parameter Sets: ComputerInstanceId, ComputerName
 Aliases:
 
 Required: False
@@ -355,8 +355,8 @@ compromised, the credentials that are passed to it can be used to control the ne
 This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
-Type: AuthenticationMechanism
-Parameter Sets: ComputerName, ComputerInstanceId, ConnectionUriInstanceId, ConnectionUri
+Type: System.Management.Automation.Runspaces.AuthenticationMechanism
+Parameter Sets: ComputerInstanceId, ComputerName, ConnectionUriInstanceId, ConnectionUri
 Aliases:
 Accepted values: Default, Basic, Negotiate, NegotiateWithImplicitCredential, Credssp, Digest, Kerberos
 
@@ -385,8 +385,8 @@ drive.
 This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
-Type: String
-Parameter Sets: ComputerName, ComputerInstanceId, ConnectionUriInstanceId, ConnectionUri
+Type: System.String
+Parameter Sets: ComputerInstanceId, ComputerName, ConnectionUriInstanceId, ConnectionUri
 Aliases:
 
 Required: False
@@ -412,8 +412,8 @@ Note: This parameter gets sessions only from computers that run Windows PowerShe
 versions of PowerShell. Earlier versions do not store sessions.
 
 ```yaml
-Type: String[]
-Parameter Sets: ComputerName, ComputerInstanceId
+Type: System.String[]
+Parameter Sets: ComputerInstanceId, ComputerName
 Aliases: Cn
 
 Required: True
@@ -439,8 +439,8 @@ configuration that the session uses.
 For more information about session configurations, see [about_Session_Configurations](About/about_Session_Configurations.md).
 
 ```yaml
-Type: String
-Parameter Sets: ComputerName, ComputerInstanceId, ConnectionUriInstanceId, ConnectionUri, ContainerId, ContainerIdInstanceId, VMId, VMIdInstanceId, VMName, VMNameInstanceId
+Type: System.String
+Parameter Sets: ComputerInstanceId, ComputerName, ConnectionUriInstanceId, ConnectionUri, ContainerId, ContainerIdInstanceId, VMId, VMIdInstanceId, VMName, VMNameInstanceId
 Aliases:
 
 Required: False
@@ -480,7 +480,7 @@ This parameter gets sessions only from computers that run Windows PowerShell 3.0
 of Windows PowerShell. Earlier versions do not store sessions.
 
 ```yaml
-Type: Uri[]
+Type: System.Uri[]
 Parameter Sets: ConnectionUriInstanceId, ConnectionUri
 Aliases: URI, CU
 
@@ -499,7 +499,7 @@ information, see the help for the
 [docker ps](https://docs.docker.com/engine/reference/commandline/ps/) command.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: ContainerId, ContainerIdInstanceId
 Aliases:
 
@@ -533,8 +533,8 @@ command with the **ComputerName** or **ConnectionUri** parameter.
 This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
-Type: PSCredential
-Parameter Sets: ComputerName, ComputerInstanceId, ConnectionUriInstanceId, ConnectionUri
+Type: System.Management.Automation.PSCredential
+Parameter Sets: ComputerInstanceId, ComputerName, ConnectionUriInstanceId, ConnectionUri
 Aliases:
 
 Required: False
@@ -555,7 +555,7 @@ easier to remember and type than the **InstanceId**, but it is unique only withi
 session. The ID of a session is stored in the ID property of the session.
 
 ```yaml
-Type: Int32[]
+Type: System.Int32[]
 Parameter Sets: Id
 Aliases:
 
@@ -577,14 +577,15 @@ The instance ID is a GUID that uniquely identifies a session on a local or remot
 The instance ID of a session is stored in the **InstanceID** property of the session.
 
 ```yaml
-Accept pipeline input: False
-Position: Named
-Accept wildcard characters: False
+Type: System.Guid[]
 Parameter Sets: ComputerInstanceId, ConnectionUriInstanceId, ContainerIdInstanceId, VMIdInstanceId, VMNameInstanceId, InstanceId
-Required: True (ComputerInstanceId, ConnectionUriInstanceId, ContainerIdInstanceId, VMIdInstanceId, VMNameInstanceId), False (InstanceId)
-Default value: All sessions
 Aliases:
-Type: Guid[]
+
+Required: True (ComputerInstanceId, ConnectionUriInstanceId, ContainerIdInstanceId, VMIdInstanceId, VMNameInstanceId), False (InstanceId)
+Position: Named
+Default value: All sessions
+Accept pipeline input: False
+Accept wildcard characters: False
 ```
 
 ### -Name
@@ -595,14 +596,15 @@ friendly names. Wildcard characters are permitted.
 The friendly name of a session is stored in the **Name** property of the session.
 
 ```yaml
-Accept pipeline input: True (ByPropertyName)
-Position: Named
-Accept wildcard characters: True
+Type: System.String[]
 Parameter Sets: Name, ComputerName, ConnectionUri, ContainerId, VMId, VMName
-Required: False
-Default value: All sessions
 Aliases:
-Type: String[]
+
+Required: False
+Position: Named
+Default value: All sessions
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: True
 ```
 
 ### -Port
@@ -630,8 +632,8 @@ from running on all computers.
 This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
-Type: Int32
-Parameter Sets: ComputerName, ComputerInstanceId
+Type: System.Int32
+Parameter Sets: ComputerInstanceId, ComputerName
 Aliases:
 
 Required: False
@@ -661,8 +663,8 @@ For information about the `$PSSessionOption` preference variable, see
 session configurations, see [about_Session_Configurations](About/about_Session_Configurations.md).
 
 ```yaml
-Type: PSSessionOption
-Parameter Sets: ComputerName, ComputerInstanceId, ConnectionUriInstanceId, ConnectionUri
+Type: System.Management.Automation.Remoting.PSSessionOption
+Parameter Sets: ComputerInstanceId, ComputerName, ConnectionUriInstanceId, ConnectionUri
 Aliases:
 
 Required: False
@@ -687,8 +689,8 @@ The state of a session is stored in the **State** property of the session.
 This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
-Type: SessionFilterState
-Parameter Sets: ComputerName, ComputerInstanceId, ConnectionUriInstanceId, ConnectionUri, ContainerId, ContainerIdInstanceId, VMId, VMIdInstanceId, VMName, VMNameInstanceId
+Type: Microsoft.PowerShell.Commands.SessionFilterState
+Parameter Sets: ComputerInstanceId, ComputerName, ConnectionUriInstanceId, ConnectionUri, ContainerId, ContainerIdInstanceId, VMId, VMIdInstanceId, VMName, VMNameInstanceId
 Aliases:
 Accepted values: All, Opened, Disconnected, Closed, Broken
 
@@ -709,8 +711,8 @@ computer.
 This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
-Type: Int32
-Parameter Sets: ComputerName, ComputerInstanceId, ConnectionUriInstanceId, ConnectionUri
+Type: System.Int32
+Parameter Sets: ComputerInstanceId, ComputerName, ConnectionUriInstanceId, ConnectionUri
 Aliases:
 
 Required: False
@@ -732,8 +734,8 @@ with the **ComputerName** parameter.
 This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
-Type: SwitchParameter
-Parameter Sets: ComputerName, ComputerInstanceId
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: ComputerInstanceId, ComputerName
 Aliases:
 
 Required: False
@@ -752,7 +754,7 @@ following command:
 `Get-VM | Select-Object -Property Name, ID`
 
 ```yaml
-Type: Guid[]
+Type: System.Guid[]
 Parameter Sets: VMId, VMIdInstanceId
 Aliases: VMGuid
 
@@ -770,7 +772,7 @@ of the specified virtual machines. To see the virtual machines that are availabl
 `Get-VM` cmdlet.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: VMName, VMNameInstanceId
 Aliases:
 

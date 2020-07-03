@@ -146,7 +146,7 @@ to retrieve the class declaration from a computer. Using this parameter results 
 side schema validations.
 
 ```yaml
-Type: CimClass
+Type: Microsoft.Management.Infrastructure.CimClass
 Parameter Sets: CimClassSessionSet, CimClassComputerSet
 Aliases:
 
@@ -165,7 +165,7 @@ cmdlets. For more information, see
 [about_CimSession](../Microsoft.PowerShell.Core/About/about_CimSession.md).
 
 ```yaml
-Type: CimSession[]
+Type: Microsoft.Management.Infrastructure.CimSession[]
 Parameter Sets: ClassNameSessionSet, ResourceUriSessionSet, CimClassSessionSet
 Aliases:
 
@@ -183,7 +183,7 @@ tab completion to browse the list of classes, because PowerShell gets a list of 
 local WMI server to provide a list of class names.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: ClassNameComputerSet, ClassNameSessionSet
 Aliases:
 
@@ -200,7 +200,7 @@ Indicates that the instance is only created in PowerShell without going to the C
 use this parameter to create an in-memory CIM instance for use in subsequent PowerShell operations.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: ClassNameComputerSet, ClassNameSessionSet, CimClassSessionSet, CimClassComputerSet
 Aliases: Local
 
@@ -226,7 +226,7 @@ If multiple operations are being performed on the same computer, connecting usin
 gives better performance.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: ClassNameComputerSet, ResourceUriComputerSet, CimClassComputerSet
 Aliases: CN, ServerName
 
@@ -243,7 +243,7 @@ Specifies the properties that are used as keys. **CimSession** and **ComputerNam
 when **Key** is specified.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: ClassNameComputerSet, ClassNameSessionSet, ResourceUriSessionSet, ResourceUriComputerSet
 Aliases:
 
@@ -261,7 +261,7 @@ You can use tab completion to browse the list of namespaces, because PowerShell 
 namespaces from the local WMI server to provide the list of namespaces.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: ClassNameComputerSet, ClassNameSessionSet, ResourceUriSessionSet, ResourceUriComputerSet
 Aliases:
 
@@ -282,7 +282,7 @@ parameter are not recoverable, because the operation on the server times out bef
 reconnect.
 
 ```yaml
-Type: UInt32
+Type: System.UInt32
 Parameter Sets: (All)
 Aliases: OT
 
@@ -303,7 +303,7 @@ declaration on the server. If the **CimClass** parameter is not specified, then 
 validation is done on the server.
 
 ```yaml
-Type: IDictionary
+Type: System.Collections.IDictionary
 Parameter Sets: (All)
 Aliases: Arguments
 
@@ -338,7 +338,7 @@ If both the **ResourceUri** parameter and the **Filter** parameter are specified
 parameter is ignored.
 
 ```yaml
-Type: Uri
+Type: System.Uri
 Parameter Sets: ResourceUriSessionSet, ResourceUriComputerSet
 Aliases:
 
@@ -354,7 +354,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -370,7 +370,7 @@ Accept wildcard characters: False
 Shows what would happen if the cmdlet runs. The cmdlet is not run.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 

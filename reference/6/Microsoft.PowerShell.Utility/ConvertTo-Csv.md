@@ -121,7 +121,7 @@ Specifies the delimiter to separate the property values in CSV strings. The defa
 quotation marks.
 
 ```yaml
-Type: Char
+Type: System.Char
 Parameter Sets: Delimiter
 Aliases:
 
@@ -140,7 +140,7 @@ qualified name of the object type. For example, **#TYPE System.Diagnostics.Proce
 This parameter was introduced in PowerShell 6.0.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: ITI
 
@@ -158,7 +158,7 @@ or type a command or expression that gets the objects. You can also pipe objects
 `ConvertTo-CSV`.
 
 ```yaml
-Type: PSObject
+Type: System.Management.Automation.PSObject
 Parameter Sets: (All)
 Aliases:
 
@@ -175,7 +175,7 @@ Removes the **#TYPE** information header from the output. This parameter became 
 PowerShell 6.0 and is included for backwards compatibility.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: NTI
 
@@ -192,7 +192,7 @@ Uses the list separator for the current culture as the item delimiter. To find t
 for a culture, use the following command: `(Get-Culture).TextInfo.ListSeparator`.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: UseCulture
 Aliases:
 

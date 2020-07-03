@@ -148,7 +148,7 @@ to create a new **CompletionResult** object for each value.
 Specifies the name of the commands as an array.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: NativeSet, PowerShellSet
 Aliases:
 
@@ -165,7 +165,7 @@ Indicates that the argument completer is for a native command where PowerShell c
 parameter names.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: NativeSet
 Aliases:
 
@@ -184,7 +184,7 @@ cannot be an enumerated value, such as the **ForegroundColor** parameter of the 
 For more information on enums, see [about_Enum](./About/about_Enum.md).
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: PowerShellSet
 Aliases:
 
@@ -236,7 +236,7 @@ You can also provide an **ArgumentCompleter** as a parameter attribute. For more
 [about_Functions_Advanced_Parameters](./About/about_Functions_Advanced_Parameters.md).
 
 ```yaml
-Type: ScriptBlock
+Type: System.Management.Automation.ScriptBlock
 Parameter Sets: (All)
 Aliases:
 

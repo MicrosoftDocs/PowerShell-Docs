@@ -99,7 +99,7 @@ Cmdlet          Tee-Object      3.1.0.0    Microsoft.PowerShell.Utility
 Gets only the specified verbs. Enter the name of a verb or a name pattern. Wildcards are allowed.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 Accepted values: Common, Communications, Data, Diagnostic, Lifecycle, Other, Security
@@ -118,7 +118,7 @@ Gets only the specified groups. Enter the name of a group. Wildcards are not all
 This parameter was introduced in PowerShell 6.0.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 

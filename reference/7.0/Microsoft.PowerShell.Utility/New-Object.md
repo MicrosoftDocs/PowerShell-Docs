@@ -216,7 +216,7 @@ For more information about the behavior of **ArgumentList**, see [about_Splattin
 The alias for **ArgumentList** is **Args**.
 
 ```yaml
-Type: Object[]
+Type: System.Object[]
 Parameter Sets: Net
 Aliases: Args
 
@@ -232,7 +232,7 @@ Accept wildcard characters: False
 Specifies the programmatic identifier (ProgID) of the COM object.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: Com
 Aliases:
 
@@ -256,7 +256,7 @@ exist on the object, `New-Object` adds the specified property to the object as a
 the object is not a **PSObject**, the command generates a non-terminating error.
 
 ```yaml
-Type: IDictionary
+Type: System.Collections.IDictionary
 Parameter Sets: (All)
 Aliases:
 
@@ -274,7 +274,7 @@ create uses an interop assembly. This feature distinguishes actual COM objects f
 objects with COM-callable wrappers.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: Com
 Aliases:
 
@@ -291,7 +291,7 @@ Specifies the fully qualified name of the .NET Framework class. You cannot speci
 **TypeName** parameter and the **ComObject** parameter.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: Net
 Aliases:
 

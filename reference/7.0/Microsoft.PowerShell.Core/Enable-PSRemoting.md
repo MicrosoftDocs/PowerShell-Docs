@@ -182,7 +182,7 @@ Permission    : NT AUTHORITY\INTERACTIVE AccessAllowed, BUILTIN\Administrators A
 
 Name                           Value
 ----                           -----
-PSCompatibleVersions           {1.0, 2.0, 3.0, 4.0�}
+PSCompatibleVersions           {1.0, 2.0, 3.0, 4.0…}
 PSEdition                      Core
 PSRemotingProtocolVersion      2.3
 Platform                       Win32NT
@@ -204,7 +204,7 @@ OS                             Microsoft Windows 10.0.18363
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -220,7 +220,7 @@ Accept wildcard characters: False
 Forces the command to run without asking for user confirmation.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -247,7 +247,7 @@ networks, use the `Set-NetFirewallRule` cmdlet in the **NetSecurity** module.
 This parameter was introduced in PowerShell 3.0.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -264,7 +264,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 

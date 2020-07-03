@@ -97,7 +97,7 @@ However, we do not recommend this as a way to eliminate security checks that blo
 If you verify that a downloaded file is safe, use the `Unblock-File` cmdlet.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -115,7 +115,7 @@ Accept wildcard characters: False
 > user, or elevate your credentials when running this cmdlet, use Invoke-Command.
 
 ```yaml
-Type: PSCredential
+Type: System.Management.Automation.PSCredential
 Parameter Sets: (All)
 Aliases:
 
@@ -134,7 +134,7 @@ Enter a path element or pattern, such as "*.txt".
 Wildcards are permitted.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -153,7 +153,7 @@ The syntax of the filter, including the use of wildcards, depends on the provide
 Filters are more efficient than other parameters, because the provider applies them when retrieving the objects, rather than having PowerShell filter the objects after they are retrieved.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -169,7 +169,7 @@ Accept wildcard characters: True
 Forces the command to run without asking for user confirmation.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -188,7 +188,7 @@ Enter a path element or pattern, such as "*.txt".
 Wildcards are permitted.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -208,7 +208,7 @@ If the path includes escape characters, enclose it in single quotation marks.
 Single quotation marks tell having PowerShell not to interpret any characters as escape sequences.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: LiteralPath
 Aliases: PSPath, LP
 
@@ -229,7 +229,7 @@ Wildcards are permitted.
 This parameter is required, but the parameter name ("Path") is optional.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: Path
 Aliases:
 
@@ -245,7 +245,7 @@ Accept wildcard characters: True
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -262,7 +262,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 

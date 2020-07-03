@@ -153,7 +153,7 @@ Specifies the name of the computer to get CIM sessions connected to. Wildcard ch
 permitted.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: ComputerNameSet
 Aliases: CN, ServerName
 
@@ -173,7 +173,7 @@ identifies the CIM session within the current PowerShell session.
 For more information about the range operator, see [about_Operators](../Microsoft.PowerShell.Core/About/about_Operators.md).
 
 ```yaml
-Type: UInt32[]
+Type: System.UInt32[]
 Parameter Sets: SessionIdSet
 Aliases:
 
@@ -195,7 +195,7 @@ The **InstanceId** is stored in the **InstanceId** property of the object that r
 session.
 
 ```yaml
-Type: Guid[]
+Type: System.Guid[]
 Parameter Sets: InstanceIdSet
 Aliases:
 
@@ -212,7 +212,7 @@ Gets one or more CIM sessions which contain the specified friendly names. Wildca
 permitted.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: NameSet
 Aliases:
 

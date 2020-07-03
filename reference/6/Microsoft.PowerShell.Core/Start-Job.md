@@ -284,8 +284,8 @@ comma-separated list. For more information about the behavior of **ArgumentList*
 [about_Splatting](about/about_Splatting.md#splatting-with-arrays).
 
 ```yaml
-Type: Object[]
-Parameter Sets: ComputerName, LiteralFilePathComputerName, FilePathComputerName
+Type: System.Object[]
+Parameter Sets: ComputerName, FilePathComputerName, LiteralFilePathComputerName
 Aliases: Args
 
 Required: False
@@ -325,8 +325,8 @@ For more information about the values of this parameter, see
 > credentials that are passed to it can be used to control the network session.
 
 ```yaml
-Type: AuthenticationMechanism
-Parameter Sets: ComputerName, LiteralFilePathComputerName, FilePathComputerName
+Type: System.Management.Automation.Runspaces.AuthenticationMechanism
+Parameter Sets: ComputerName, FilePathComputerName, LiteralFilePathComputerName
 Aliases:
 Accepted values: Default, Basic, Negotiate, NegotiateWithImplicitCredential, Credssp, Digest, Kerberos
 
@@ -354,8 +354,8 @@ object and the password is stored as a [SecureString](/dotnet/api/system.securit
 > [How secure is SecureString?](/dotnet/api/system.security.securestring#how-secure-is-securestring).
 
 ```yaml
-Type: PSCredential
-Parameter Sets: ComputerName, LiteralFilePathComputerName, FilePathComputerName
+Type: System.Management.Automation.PSCredential
+Parameter Sets: ComputerName, FilePathComputerName, LiteralFilePathComputerName
 Aliases:
 
 Required: False
@@ -378,7 +378,7 @@ isn't saved to disk like triggered scheduled jobs. You can't use the **ArgumentL
 This parameter was introduced in PowerShell 3.0.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: DefinitionName
 Aliases:
 
@@ -402,7 +402,7 @@ For scheduled jobs, the value of the **DefinitionPath** parameter is
 This parameter was introduced in PowerShell 3.0.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: DefinitionName
 Aliases:
 
@@ -423,7 +423,7 @@ When you use this parameter, PowerShell converts the contents of the specified s
 script block and runs the script block as a background job.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: FilePathComputerName
 Aliases:
 
@@ -443,8 +443,8 @@ Use this parameter to prepare the session in which the job runs. For example, yo
 functions, snap-ins, and modules to the session.
 
 ```yaml
-Type: ScriptBlock
-Parameter Sets: ComputerName, LiteralFilePathComputerName, FilePathComputerName
+Type: System.Management.Automation.ScriptBlock
+Parameter Sets: ComputerName, FilePathComputerName, LiteralFilePathComputerName
 Aliases:
 
 Required: False
@@ -463,8 +463,8 @@ In the value of the **ScriptBlock** parameter, use the `$input` automatic variab
 input objects.
 
 ```yaml
-Type: PSObject
-Parameter Sets: ComputerName, LiteralFilePathComputerName, FilePathComputerName
+Type: System.Management.Automation.PSObject
+Parameter Sets: ComputerName, FilePathComputerName, LiteralFilePathComputerName
 Aliases:
 
 Required: False
@@ -485,7 +485,7 @@ quotation marks. Single quotation marks tell PowerShell not to interpret any cha
 sequences.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: LiteralFilePathComputerName
 Aliases: PSPath, LP
 
@@ -505,8 +505,8 @@ The default friendly name is `Job#`, where `#` is an ordinal number that is incr
 job.
 
 ```yaml
-Type: String
-Parameter Sets: ComputerName, LiteralFilePathComputerName, FilePathComputerName
+Type: System.String
+Parameter Sets: ComputerName, FilePathComputerName, LiteralFilePathComputerName
 Aliases:
 
 Required: False
@@ -524,8 +524,8 @@ for this parameter are: `2.0` and `3.0`.
 This parameter was introduced in PowerShell 3.0.
 
 ```yaml
-Type: Version
-Parameter Sets: ComputerName, LiteralFilePathComputerName, FilePathComputerName
+Type: System.Version
+Parameter Sets: ComputerName, FilePathComputerName, LiteralFilePathComputerName
 Aliases:
 
 Required: False
@@ -545,8 +545,8 @@ the **RunAs32** parameter, you can't use the **Credential** parameter to specify
 another user.
 
 ```yaml
-Type: SwitchParameter
-Parameter Sets: ComputerName, LiteralFilePathComputerName, FilePathComputerName
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: ComputerName, FilePathComputerName, LiteralFilePathComputerName
 Aliases:
 
 Required: False
@@ -563,7 +563,7 @@ in curly braces (`{}`). Use the `$input` automatic variable to access the value 
 **InputObject** parameter. This parameter is required.
 
 ```yaml
-Type: ScriptBlock
+Type: System.Management.Automation.ScriptBlock
 Parameter Sets: ComputerName
 Aliases: Command
 
@@ -583,7 +583,7 @@ for standard background jobs.
 This parameter was introduced in PowerShell 3.0.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: DefinitionName
 Aliases:
 

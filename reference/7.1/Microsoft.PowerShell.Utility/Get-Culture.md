@@ -158,7 +158,7 @@ Retrieves all cultures supported by the current operating system.
 This parameter was introduced in PowerShell 6.2.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: ListAvailable
 Aliases:
 
@@ -176,7 +176,7 @@ Retrieve a specific culture based on the name.
 This parameter was introduced in PowerShell 6.2.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: Name
 Aliases:
 
@@ -194,7 +194,7 @@ Ignore user changes for current culture.
 This parameter was introduced in PowerShell 6.2.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: CurrentCulture, Name
 Aliases:
 

@@ -32,7 +32,7 @@ time in the session.
 ### Example 1: Get all resources on the local computer
 
 ```powershell
- Get-DscResource
+Get-DscResource
 ```
 
 This command gets all the resources on the local computer.
@@ -93,7 +93,7 @@ This command gets all the resources from xHyper-V module with version 3.0.0.0.
 Specifies the name or fully qualified name of the module for which to view the DSC resource.
 
 ```yaml
-Type: Object
+Type: System.Object
 Parameter Sets: (All)
 Aliases:
 
@@ -109,7 +109,7 @@ Accept wildcard characters: False
 Specifies an array of names of the DSC resource to view.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -117,7 +117,7 @@ Required: False
 Position: 0
 Default value: None
 Accept pipeline input: True (ByPropertyName, ByValue)
-Accept wildcard characters: True
+Accept wildcard characters: False
 ```
 
 ### -Syntax
@@ -126,7 +126,7 @@ Indicates that the cmdlet returns the syntax view of the specified DSC resources
 syntax shows how to use the resources in a PowerShell script.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 

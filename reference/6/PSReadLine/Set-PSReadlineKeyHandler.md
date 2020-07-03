@@ -67,7 +67,7 @@ A brief description of the key binding. This description is displayed by the
 `Get-PSReadLineKeyHandler` cmdlet.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: ScriptBlock
 Aliases:
 
@@ -90,7 +90,7 @@ This parameter accepts an array of strings. Each string is a separate binding, n
 keys for a single binding.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases: Key
 
@@ -107,7 +107,7 @@ Specifies a more detailed description of the key binding that is visible in the 
 `Get-PSReadLineKeyHandler` cmdlet.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: ScriptBlock
 Aliases: LongDescription
 
@@ -124,7 +124,7 @@ Specifies the name of an existing key handler provided by PSReadLine. This param
 rebind existing key bindings, or bind a handler that is currently unbound.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: Function
 Aliases:
 
@@ -142,7 +142,7 @@ parameters to this script block. The first parameter is a **ConsoleKeyInfo** obj
 the key pressed. The second argument can be any object depending on the context.
 
 ```yaml
-Type: ScriptBlock
+Type: System.Management.Automation.ScriptBlock
 Parameter Sets: ScriptBlock
 Aliases:
 
@@ -163,7 +163,7 @@ Valid values are:
 - Command
 
 ```yaml
-Type: ViMode
+Type: Microsoft.PowerShell.ViMode
 Parameter Sets: (All)
 Aliases:
 

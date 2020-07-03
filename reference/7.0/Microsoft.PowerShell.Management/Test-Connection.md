@@ -213,7 +213,7 @@ the **Success** output stream.
 Specifies the size, in bytes, of the buffer sent with this command. The default value is 32.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: DefaultPing, RepeatPing
 Aliases: Size, Bytes, BS
 
@@ -230,11 +230,11 @@ Causes the cmdlet to send ping requests continuously. This parameter can't be us
 **Count** parameter.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: RepeatPing
 Aliases: Continuous
 
-Required: False
+Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -246,7 +246,7 @@ Accept wildcard characters: False
 Specifies the number of echo requests to send. The default value is 4.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: DefaultPing
 Aliases:
 
@@ -280,7 +280,7 @@ the **BufferSize** parameter to test the Path MTU size. For more information abo
 [Path MTU Discovery](https://wikipedia.org/wiki/Path_MTU_Discovery) article in wikipedia.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: DefaultPing, RepeatPing
 Aliases:
 
@@ -296,7 +296,7 @@ Accept wildcard characters: False
 Forces the cmdlet to use the IPv4 protocol for the test.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -312,7 +312,7 @@ Accept wildcard characters: False
 Forces the cmdlet to use the IPv6 protocol for the test.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -329,31 +329,13 @@ Sets the maximum number of hops that an ICMP request message can be sent. The de
 controlled by the operating system. The default value for Windows 10 is 128 hops.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: DefaultPing, RepeatPing, TraceRoute
-Aliases: Ttl
+Aliases: Ttl, TimeToLive, Hops
 
 Required: False
 Position: Named
 Default value: 128 hops in Windows 10
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -MTUSize
-
-This parameter is used to discover the Path MTU size. The cmdlet returns a **PingReply#MTUSize**
-object that contains the Path MTU size to the target. For more information about Path MTU, see the
-[Path MTU Discovery](https://wikipedia.org/wiki/Path_MTU_Discovery) article in wikipedia.
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: MtuSizeDetect
-Aliases: MtuSizeDetect
-
-Required: True
-Position: Named
-Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -363,7 +345,7 @@ Accept wildcard characters: False
 Causes the cmdlet to do a ping test. This is the default mode for the `Test-Connection` cmdlet.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: DefaultPing, RepeatPing
 Aliases:
 
@@ -387,7 +369,7 @@ If **any** ping to a given target succeeds, `$True` is returned.
 If **all** pings to a given target fail, `$False` is returned.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -405,7 +387,7 @@ with the **Traceroute** parameter, the DNS names of all intermediate hosts will 
 retrieved, if possible.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -425,8 +407,8 @@ computer names. The default is the local computer.
 Supplying this parameter will have no effect on the command.
 
 ```yaml
-Type: String
-Parameter Sets: DefaultPing, RepeatPing, TraceRoute, ConnectionByTCPPort
+Type: System.String
+Parameter Sets: DefaultPing, RepeatPing, TraceRoute, TcpPort
 Aliases:
 
 Required: False
@@ -442,7 +424,7 @@ Specifies the computer(s) to test. Type the computer names or type IP addresses 
 format.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases: ComputerName
 
@@ -450,27 +432,6 @@ Required: True
 Position: 0
 Default value: None
 Accept pipeline input: True (ByPropertyName, ByValue)
-Accept wildcard characters: False
-```
-
-### -TCPPort
-
-Specifies the TCP port number on the target to be used in the TCP connection test. The cmdlet will
-attempt to make a TCP connection to the specified port on the target.
-
-If a connection can be made, `$True` will be returned.
-
-If a connection cannot be made, `$False` will be returned.
-
-```yaml
-Type: Int32
-Parameter Sets: ConnectionByTCPPort
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -482,7 +443,7 @@ expires. The default is five seconds.
 This parameter was introduced in PowerShell 6.0.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: (All)
 Aliases:
 
@@ -499,13 +460,52 @@ Causes the cmdlet to do a traceroute test. When this parameter is used, the cmdl
 `TestConnectionCommand+TraceStatus` object.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: TraceRoute
 Aliases:
 
 Required: True
 Position: Named
 Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -MtuSize
+
+This parameter is used to discover the Path MTU size. The cmdlet returns a **PingReply#MTUSize**
+object that contains the Path MTU size to the target. For more information about Path MTU, see the
+[Path MTU Discovery](https://wikipedia.org/wiki/Path_MTU_Discovery) article in wikipedia.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: MtuSizeDetect
+Aliases: MtuSizeDetect
+
+Required: True
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -TcpPort
+
+Specifies the TCP port number on the target to be used in the TCP connection test. The cmdlet will
+attempt to make a TCP connection to the specified port on the target.
+
+If a connection can be made, `$True` will be returned.
+
+If a connection cannot be made, `$False` will be returned.
+
+```yaml
+Type: System.Int32
+Parameter Sets: TcpPort
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

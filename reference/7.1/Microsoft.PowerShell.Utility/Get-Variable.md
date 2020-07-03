@@ -75,7 +75,7 @@ Specifies an array of items that this cmdlet excludes from the operation.
 Wildcards are permitted.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -92,7 +92,7 @@ Specifies an array of items upon which the cmdlet will act, excluding all others
 Wildcards are permitted.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -110,7 +110,7 @@ Wildcards are permitted.
 You can also pipe a variable name to `Get-Variable`.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -135,7 +135,7 @@ scope and 1 is its parent)
 For more information, see [about_Scopes](../Microsoft.PowerShell.Core/About/about_Scopes.md).
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -151,7 +151,7 @@ Accept wildcard characters: False
 Indicates that this cmdlet gets only the value of the variable.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 

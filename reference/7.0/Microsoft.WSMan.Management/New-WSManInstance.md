@@ -70,7 +70,7 @@ computer that is running Windows PowerShell. In this case, IIS hosts Web Service
 (WS-Management) for efficiency.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: ComputerName
 Aliases:
 
@@ -106,7 +106,7 @@ Specifies the authentication mechanism to be used at the server. Possible values
 > session.
 
 ```yaml
-Type: AuthenticationMechanism
+Type: Microsoft.WSMan.Management.AuthenticationMechanism
 Parameter Sets: (All)
 Aliases: auth, am
 Accepted values: None, Default, Digest, Negotiate, Basic, Kerberos, ClientCertificate, Credssp
@@ -130,7 +130,7 @@ To get a certificate thumbprint, use the `Get-Item` or `Get-ChildItem` command i
 drive.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -150,7 +150,7 @@ the remote computer is in a different domain from the user, you must use a fully
 name must be used. You can pipe a value for this parameter to the cmdlet.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: ComputerName
 Aliases: cn
 
@@ -175,7 +175,7 @@ The following string is a properly formatted value for this parameter:
 The URI must be fully qualified.
 
 ```yaml
-Type: Uri
+Type: System.Uri
 Parameter Sets: URI
 Aliases: CURI, CU
 
@@ -194,7 +194,7 @@ PSCredential object, such as one returned by the `Get-Credential` cmdlet. When y
 you will be prompted for a password.
 
 ```yaml
-Type: PSCredential
+Type: System.Management.Automation.PSCredential
 Parameter Sets: (All)
 Aliases: cred, c
 
@@ -219,7 +219,7 @@ file, `Input.xml`, contains the following content:
 `<p:StopService_INPUT xmlns:p="https://schemas.microsoft.com/wbem/wsman/1/wmi/root/cimv2/Win32_Service" />`
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases: Path
 
@@ -242,7 +242,7 @@ parameters:
 `-OptionSet @{a=1;b=2;c=3}`
 
 ```yaml
-Type: Hashtable
+Type: System.Collections.Hashtable
 Parameter Sets: (All)
 Aliases: os
 
@@ -265,7 +265,7 @@ match the host name of the server. The **SkipCNCheck** parameter should be used 
 computers.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: ComputerName
 Aliases:
 
@@ -288,7 +288,7 @@ A URI consists of a prefix and a path to a resource. For example:
 `http://schemas.dmtf.org/wbem/wscim/1/cim-schema/2/CIM_NumericSensor`
 
 ```yaml
-Type: Uri
+Type: System.Uri
 Parameter Sets: (All)
 Aliases: ruri
 
@@ -310,7 +310,7 @@ The following example shows how to enter a value for this parameter:
 `-SelectorSet @{Name="WinRM";ID="yyy"}`
 
 ```yaml
-Type: Hashtable
+Type: System.Collections.Hashtable
 Parameter Sets: (All)
 Aliases:
 
@@ -328,7 +328,7 @@ that you create using the `New-WSManSessionOption` cmdlet. For more information 
 that are available, see `New-WSManSessionOption`.
 
 ```yaml
-Type: SessionOption
+Type: Microsoft.WSMan.Management.SessionOption
 Parameter Sets: (All)
 Aliases: so
 
@@ -350,7 +350,7 @@ available on the port that is used for the connection and you specify this param
 fails.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: ComputerName
 Aliases:
 
@@ -368,7 +368,7 @@ using the **ResourceURI** parameter and the **SelectorSet** parameter. The value
 parameter must be a hash table.
 
 ```yaml
-Type: Hashtable
+Type: System.Collections.Hashtable
 Parameter Sets: (All)
 Aliases:
 

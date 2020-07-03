@@ -16,8 +16,19 @@ Tests whether a string is a valid JSON document
 
 ## SYNTAX
 
+### __AllParameterSets (Default)
 ```
-Test-Json [-Json] <string> [[-Schema] <string>] [[-SchemaFile] <string>] [<CommonParameters>]
+Test-Json [-Json] <String> [<CommonParameters>]
+```
+
+### SchemaString
+```
+Test-Json [-Json] <String> [[-Schema] <String>] [<CommonParameters>]
+```
+
+### SchemaFile
+```
+Test-Json [-Json] <String> [-SchemaFile <String>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -164,7 +175,7 @@ command or expression that gets the string. You can also pipe a string to `Test-
 The **Json** parameter is required.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -184,7 +195,7 @@ input conforms to the provided Schema.
 For more information, see [JSON Schema](https://json-schema.org/).
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: SchemaString
 Aliases:
 
@@ -204,12 +215,12 @@ parameter.
 For more information, see [JSON Schema](https://json-schema.org/).
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: SchemaFile
 Aliases:
 
 Required: False
-Position: 2
+Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False

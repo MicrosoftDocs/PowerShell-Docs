@@ -188,7 +188,7 @@ quotation marks, is sent down the pipeline to `Get-Service`.
 Indicates that this cmdlet gets only the services that depend upon the specified service.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: DS
 
@@ -205,7 +205,7 @@ Specifies, as a string array, the display names of services to be retrieved. Wil
 permitted.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: DisplayName
 Aliases:
 
@@ -223,7 +223,7 @@ The value of this parameter qualifies the **Name** parameter. Enter a name eleme
 as `s*`. Wildcards are permitted.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -241,7 +241,7 @@ value of this parameter qualifies the **Name** parameter. Enter a name element o
 `s*`. Wildcards are permitted.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -259,7 +259,7 @@ that contains the objects, or type a command or expression that gets the objects
 service object to this cmdlet.
 
 ```yaml
-Type: ServiceController[]
+Type: System.ServiceProcess.ServiceController[]
 Parameter Sets: InputObject
 Aliases:
 
@@ -275,7 +275,7 @@ Accept wildcard characters: False
 Specifies the service names of services to be retrieved. Wildcards are permitted.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: Default
 Aliases: ServiceName
 
@@ -292,7 +292,7 @@ Indicates that this cmdlet gets only the services that this service requires. Th
 the value of the **ServicesDependedOn** property of the service.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: SDO, ServicesDependedOn
 

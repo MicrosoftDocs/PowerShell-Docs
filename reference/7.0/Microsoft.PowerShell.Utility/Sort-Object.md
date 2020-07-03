@@ -384,7 +384,7 @@ stable sort.
 This parameter was introduced in PowerShell 6.0.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: Bottom
 Aliases:
 
@@ -400,7 +400,7 @@ Accept wildcard characters: False
 Indicates that the sort is case-sensitive. By default, sorts are not case-sensitive.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -417,7 +417,7 @@ Specifies the cultural configuration to use for sorts. Use `Get-Culture` to disp
 culture configuration.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -436,7 +436,7 @@ To sort multiple properties with different sort orders, use a hash table. For ex
 table you can sort one property in ascending order and another property in descending order.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -455,7 +455,7 @@ collection. Because one object cannot be sorted, `Sort-Object` returns the entir
 unchanged.
 
 ```yaml
-Type: PSObject
+Type: System.Management.Automation.PSObject
 Parameter Sets: (All)
 Aliases:
 
@@ -488,7 +488,7 @@ Valid keys for a hash table are as follows:
 - Descending \<Boolean\>
 
 ```yaml
-Type: Object[]
+Type: System.Object[]
 Parameter Sets: (All)
 Aliases:
 
@@ -507,7 +507,7 @@ stable sort.
 This parameter was introduced in PowerShell 6.0.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: Top
 Aliases:
 
@@ -527,7 +527,7 @@ collection. The first instance of a unique value is included in the sorted outpu
 For example, character and CHARACTER.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -545,7 +545,7 @@ The sorted objects are delivered in the order they were received when the sort c
 This parameter was added in PowerShell v6.2.0.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: Default
 Aliases:
 

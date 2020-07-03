@@ -184,7 +184,7 @@ The default is the directory where the script is located.
 **Import-LocalizedData** searches for the .psd1 file for the script in a language-specific subdirectory of the base directory.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -210,7 +210,7 @@ Then, when **Import-LocalizedData** saves the imported content in the *BindingVa
 If you are not specifying default text strings, you can select any variable name.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases: Variable
 
@@ -234,7 +234,7 @@ You can use this parameter to direct **Import-LocalizedData** to search for a di
 For example, if the *FileName* is omitted and the script name is FindFiles.ps1, **Import-LocalizedData** searches for the FindFiles.psd1 data file.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -253,7 +253,7 @@ Use this parameter to include cmdlets and functions that you have written or tes
 For more information, see about_Script_Internationalization.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -277,7 +277,7 @@ If it cannot find the directory, or the directory does not contain a .psd1 file 
 If it cannot find the subdirectory or .psd1 file, the command fails and the data is displayed in the default language specified in the script.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 

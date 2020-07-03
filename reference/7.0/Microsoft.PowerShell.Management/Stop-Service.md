@@ -88,7 +88,7 @@ Specifies the display names of the services to stop.
 Wildcard characters are permitted.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: DisplayName
 Aliases:
 
@@ -107,7 +107,7 @@ Enter a name element or pattern, such as s*.
 Wildcard characters are permitted.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -123,7 +123,7 @@ Accept wildcard characters: True
 Forces the cmdlet to stop a service even if that service has dependent services.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -142,7 +142,7 @@ Enter a name element or pattern, such as s*.
 Wildcard characters are permitted.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -159,7 +159,7 @@ Specifies **ServiceController** objects that represent the services to stop.
 Enter a variable that contains the objects, or type a command or expression that gets the objects.
 
 ```yaml
-Type: ServiceController[]
+Type: System.ServiceProcess.ServiceController[]
 Parameter Sets: InputObject
 Aliases:
 
@@ -176,7 +176,7 @@ Specifies the service names of the services to stop.
 Wildcard characters are permitted.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: Default
 Aliases: ServiceName
 
@@ -192,7 +192,7 @@ Accept wildcard characters: True
 Indicates that this cmdlet uses the no wait option.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -209,7 +209,7 @@ Returns an object that represents the service.
 By default, this cmdlet does not generate any output.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -225,7 +225,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -242,7 +242,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
