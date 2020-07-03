@@ -61,9 +61,9 @@ Specifies how long the resource sleeps in milliseconds.
 The parameter can be abbreviated as **m**.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: Milliseconds
-Aliases: m
+Aliases:
 
 Required: True
 Position: Named
@@ -78,7 +78,7 @@ Specifies how long the resource sleeps in seconds.
 You can omit the parameter name (**Seconds**), or you can abbreviate it as **s**.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: Seconds
 Aliases:
 

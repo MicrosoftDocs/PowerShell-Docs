@@ -70,7 +70,7 @@ Specifies the full path to the PFX file of the secured file. If you specify a va
 parameter, it is not necessary to type `-FilePath` at the command line.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: ByPath
 Aliases:
 
@@ -89,7 +89,7 @@ wildcards. If the path includes escape characters, enclose it in single quotatio
 quotation marks tell PowerShell not to interpret any characters as escape sequences.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: ByLiteralPath
 Aliases: PSPath
 

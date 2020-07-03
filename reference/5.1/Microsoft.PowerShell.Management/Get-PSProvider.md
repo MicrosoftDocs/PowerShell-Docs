@@ -101,7 +101,7 @@ The Home property value is optional, but for the FileSystem provider, it is defi
 Specifies the name or names of the Windows PowerShell providers about which this cmdlet gets information.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 

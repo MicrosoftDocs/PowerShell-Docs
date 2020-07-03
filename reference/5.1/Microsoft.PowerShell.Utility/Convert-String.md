@@ -231,7 +231,7 @@ Accept wildcard characters: False
 Specifies a string to format.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 

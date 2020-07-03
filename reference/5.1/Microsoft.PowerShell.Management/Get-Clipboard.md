@@ -71,7 +71,7 @@ Specifies the type, or format, of the clipboard. The acceptable values for this 
 - Audio
 
 ```yaml
-Type: ClipboardFormat
+Type: Microsoft.PowerShell.Commands.ClipboardFormat
 Parameter Sets: (All)
 Aliases:
 Accepted values: Text, FileDropList, Image, Audio
@@ -88,7 +88,7 @@ Accept wildcard characters: False
 Indicates that this cmdlet ignores newline characters and gets the entire contents of the clipboard.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -110,7 +110,7 @@ Specifies the text data format type of the clipboard. The acceptable values for 
 - CommaSeparatedValue
 
 ```yaml
-Type: TextDataFormat
+Type: System.Windows.Forms.TextDataFormat
 Parameter Sets: (All)
 Aliases:
 Accepted values: Text, UnicodeText, Rtf, Html, CommaSeparatedValue

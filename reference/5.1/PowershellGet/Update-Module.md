@@ -109,7 +109,7 @@ Update-Module -Name SpeculationControl -Force
 Automatically accept the license agreement during installation if the package requires it.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -125,7 +125,7 @@ Accept wildcard characters: False
 Allows you to update a module with the newer module marked as a prerelease.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -141,7 +141,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running `Update-Module`.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -157,7 +157,7 @@ Accept wildcard characters: False
 Specifies a user account that has permission to update a module.
 
 ```yaml
-Type: PSCredential
+Type: System.Management.Automation.PSCredential
 Parameter Sets: (All)
 Aliases:
 
@@ -174,7 +174,7 @@ Forces an update of each specified module without a prompt to request confirmati
 already installed, **Force** reinstalls the module.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -192,7 +192,7 @@ attempting to update multiple modules. The **MaximumVersion** and the **Required
 can't be used in the same command.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -213,7 +213,7 @@ Wildcards are accepted in module names. If you add wildcard characters to the sp
 matches are found, no error occurs.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -230,7 +230,7 @@ Returns an object representing the item with which you are working. By default, 
 generate any output. The **PassThru** parameter support was added in **PowerShellGet** 2.0.0
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -246,7 +246,7 @@ Accept wildcard characters: False
 Specifies a proxy server for the request, rather than connecting directly to an internet resource.
 
 ```yaml
-Type: Uri
+Type: System.Uri
 Parameter Sets: (All)
 Aliases:
 
@@ -263,7 +263,7 @@ Specifies a user account that has permission to use the proxy server specified b
 parameter.
 
 ```yaml
-Type: PSCredential
+Type: System.Management.Automation.PSCredential
 Parameter Sets: (All)
 Aliases:
 
@@ -281,7 +281,7 @@ specified by **RequiredVersion** must exist in the online gallery or an error is
 than one module is updated in a single command, you can't use **RequiredVersion**.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -315,7 +315,7 @@ When no **Scope** is defined, the default is set based on the PowerShellGet vers
 - In PowerShellGet 1.x versions, the default is **AllUsers**, which requires elevation for install.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 Accepted values: CurrentUser, AllUsers
@@ -332,7 +332,7 @@ Accept wildcard characters: False
 Shows what would happen if `Update-Module` runs. The cmdlet isn't run.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 

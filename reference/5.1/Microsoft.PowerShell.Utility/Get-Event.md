@@ -106,7 +106,7 @@ This command gets the event with an event identifier of 2.
 Specifies the event identifiers for which this cmdlet gets events.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: ById
 Aliases: Id
 
@@ -123,7 +123,7 @@ The default is all events in the event queue.
 Wildcards are not permitted.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: BySource
 Aliases:
 

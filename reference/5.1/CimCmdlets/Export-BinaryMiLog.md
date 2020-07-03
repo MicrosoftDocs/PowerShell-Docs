@@ -49,7 +49,7 @@ Specifies the input to this cmdlet. You can use this parameter, or you can pipe 
 cmdlet.
 
 ```yaml
-Type: CimInstance
+Type: Microsoft.Management.Infrastructure.CimInstance
 Parameter Sets: (All)
 Aliases:
 
@@ -67,7 +67,7 @@ Specifies the path of the file in which to store the binary representation of th
 path resolves to more than one file.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 

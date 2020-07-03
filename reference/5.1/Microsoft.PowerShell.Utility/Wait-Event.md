@@ -97,7 +97,7 @@ Specifies the source identifier that this cmdlet waits for events.
 By default, `Wait-Event` waits for any event.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -117,7 +117,7 @@ If the specified time is exceeded, the wait ends and the command prompt returns,
 has not been raised. No error message is displayed.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: (All)
 Aliases: TimeoutSec
 

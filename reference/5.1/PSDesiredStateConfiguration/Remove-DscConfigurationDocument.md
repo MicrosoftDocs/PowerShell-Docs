@@ -60,7 +60,7 @@ For more information, see [about_Remote_Requirements](../Microsoft.PowerShell.Co
 For more information about Windows PowerShell background jobs, see [about_Jobs](../Microsoft.PowerShell.Core/About/about_Jobs.md) and [about_Remote_Jobs](../Microsoft.PowerShell.Core/About/about_Remote_Jobs.md).
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -76,7 +76,7 @@ Runs the cmdlet in a remote session or on a remote computer.
 Enter a computer name or a session object, such as the output of a **New-CimSession** or **Get-CimSession** cmdlet.
 
 ```yaml
-Type: CimSession[]
+Type: Microsoft.Management.Infrastructure.CimSession[]
 Parameter Sets: (All)
 Aliases: Session
 
@@ -92,7 +92,7 @@ Indicates that this cmdlet stops the running configuration job before it removes
 Forces the command to run without asking for user confirmation.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -116,7 +116,7 @@ Remove the configuration document that describes the pending state of the system
 Remove the configuration document that describes the previous state of the system.
 
 ```yaml
-Type: Stage
+Type: Microsoft.PowerShell.Cmdletization.GeneratedTypes.RemoveDscConfigurationDocument.Stage
 Parameter Sets: (All)
 Aliases:
 Accepted values: Current, Pending, Previous
@@ -134,7 +134,7 @@ If this parameter is omitted or a value of `0` is entered, then Windows PowerShe
 The throttle limit applies only to the current cmdlet, not to the session or to the computer.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: (All)
 Aliases:
 
@@ -149,7 +149,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -165,7 +165,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 

@@ -274,7 +274,7 @@ For more information, see [about_Hash_Tables](about/about_Hash_Tables.md), [abou
 and [about_Automatic_Variables](about/about_Automatic_Variables.md).
 
 ```yaml
-Type: PSPrimitiveDictionary
+Type: System.Management.Automation.PSPrimitiveDictionary
 Parameter Sets: (All)
 Aliases:
 
@@ -294,7 +294,7 @@ The default value is 60000 (one minute). A value of 0 (zero) means no time-out; 
 continues indefinitely.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: (All)
 Aliases: CancelTimeoutMSec
 
@@ -315,7 +315,7 @@ The default value is `$Null`, and the culture that is set in the operating syste
 session.
 
 ```yaml
-Type: CultureInfo
+Type: System.Globalization.CultureInfo
 Parameter Sets: (All)
 Aliases:
 
@@ -357,7 +357,7 @@ reconnecting to a session. For more information, see `Disconnect-PSSession` and 
 In Windows PowerShell 2.0, the default value of the **IdleTimeout** parameter is 240000 (4 minutes).
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: (All)
 Aliases: IdleTimeoutMSec
 
@@ -387,7 +387,7 @@ For more information, see [Setspn Overview](/previous-versions/windows/it-pro/wi
 This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -406,7 +406,7 @@ the current attempt fails due to network issues. The default value is 5.
 This parameter was added for PowerShell version 5.0.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: (All)
 Aliases:
 
@@ -425,7 +425,7 @@ in a single command. Enter a value in bytes. By default, there is no data size l
 This option is designed to protect the resources on the client computer.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: (All)
 Aliases:
 
@@ -446,7 +446,7 @@ In Windows PowerShell 2.0, if you omit this parameter, there is no object size l
 Windows PowerShell 3.0, if you omit this parameter, the default value is 200 MB.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: (All)
 Aliases:
 
@@ -467,7 +467,7 @@ This option is used in the session only when the **AllowRedirection** parameter 
 command that creates the session.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: (All)
 Aliases:
 
@@ -484,7 +484,7 @@ Turns off packet compression in the session. Compression uses more processor cyc
 transmission faster.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -500,7 +500,7 @@ Accept wildcard characters: False
 Turns off data encryption.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -518,7 +518,7 @@ but user-specific registry settings, items such as environment variables, and ce
 available in the session.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -538,7 +538,7 @@ The default value is 180000 (3 minutes). A value of 0 (zero) means no time-out; 
 continues indefinitely.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: (All)
 Aliases: OpenTimeoutMSec
 
@@ -558,7 +558,7 @@ The default value is 180000 (3 minutes). A value of 0 (zero) means no time-out; 
 continues indefinitely.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: (All)
 Aliases: OperationTimeoutMSec
 
@@ -591,7 +591,7 @@ For more information about the output buffering mode transport option, see `New-
 This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
-Type: OutputBufferingMode
+Type: System.Management.Automation.Runspaces.OutputBufferingMode
 Parameter Sets: (All)
 Aliases:
 Accepted values: None, Drop, Block
@@ -620,7 +620,7 @@ For information about the values of this parameter, see
 [ProxyAccessType Enumeration](/dotnet/api/system.management.automation.remoting.proxyaccesstype?redirectedfrom=MSDN&view=powershellsdk-1.1.0).
 
 ```yaml
-Type: ProxyAccessType
+Type: System.Management.Automation.Remoting.ProxyAccessType
 Parameter Sets: (All)
 Aliases:
 Accepted values: None, IEConfig, WinHttpConfig, AutoDetect, NoProxyServer
@@ -640,7 +640,7 @@ this parameter are: **Basic**, **Digest**, and **Negotiate**. The default value 
 For more information about the values of this parameter, see [AuthenticationMechanism Enumeration](/dotnet/api/system.management.automation.runspaces.authenticationmechanism?redirectedfrom=MSDN&view=powershellsdk-1.1.0).
 
 ```yaml
-Type: AuthenticationMechanism
+Type: System.Management.Automation.Runspaces.AuthenticationMechanism
 Parameter Sets: (All)
 Aliases:
 Accepted values: Default, Basic, Negotiate, NegotiateWithImplicitCredential, Credssp, Digest, Kerberos
@@ -659,7 +659,7 @@ Specifies the credentials to use for proxy authentication. Enter a variable that
 command. If this option is not set, no credentials are specified.
 
 ```yaml
-Type: PSCredential
+Type: System.Management.Automation.PSCredential
 Parameter Sets: (All)
 Aliases:
 
@@ -680,7 +680,7 @@ the remote computer is part of a network that is physically secure and isolated 
 computer is listed as a trusted host in a WinRM configuration.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -699,7 +699,7 @@ of the server. This option is used only in remote operations that use the HTTPS 
 Use this option only for trusted computers.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -715,7 +715,7 @@ Accept wildcard characters: False
 Does not validate the revocation status of the server certificate.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -740,7 +740,7 @@ The default value is `$null`, and the UI culture that is set in the operating sy
 session is created is used in the session.
 
 ```yaml
-Type: CultureInfo
+Type: System.Globalization.CultureInfo
 Parameter Sets: (All)
 Aliases:
 
@@ -756,7 +756,7 @@ Accept wildcard characters: False
 Indicates that this cmdlet encodes the request in UTF16 format instead of UTF8 format.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 

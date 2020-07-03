@@ -320,7 +320,7 @@ matches.
 > more information about escaping regular expressions.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -336,7 +336,7 @@ Accept wildcard characters: False
 Indicates that the cmdlet matches are case-sensitive. By default, matches aren't case-sensitive.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -373,7 +373,7 @@ When the context includes a match, the **MatchInfo** object for each match inclu
 lines, but the overlapping lines appear only once in the display.
 
 ```yaml
-Type: Int32[]
+Type: System.Int32[]
 Parameter Sets: (All)
 Aliases:
 
@@ -400,7 +400,7 @@ The acceptable values for this parameter are as follows:
 - `utf32` Uses UTF-32 with the little-endian byte order.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 Accepted values: ASCII, BigEndianUnicode, Default, OEM, Unicode, UTF7, UTF8, UTF32
@@ -418,7 +418,7 @@ Exclude the specified items. The value of this parameter qualifies the **Path** 
 path element or pattern, such as `*.txt`. Wildcards are permitted.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -435,7 +435,7 @@ Includes the specified items. The value of this parameter qualifies the **Path**
 path element or pattern, such as `*.txt`. Wildcards are permitted.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -462,7 +462,7 @@ the collection as a single combined string. `Select-String` returns the strings 
 finds the search text in any string.
 
 ```yaml
-Type: PSObject
+Type: System.Management.Automation.PSObject
 Parameter Sets: Object
 Aliases:
 
@@ -481,7 +481,7 @@ efficient way to retrieve a list of files that have contents matching the regula
 By default, `Select-String` returns a **MatchInfo** object for each match it finds.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -500,7 +500,7 @@ characters, enclose it in single quotation marks. Single quotation marks tell Po
 interpret any characters as escape sequences. For more information, see [about_Quoting_Rules](../Microsoft.Powershell.Core/About/about_Quoting_Rules.md).
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: LiteralFile
 Aliases: PSPath
 
@@ -516,7 +516,7 @@ Accept wildcard characters: False
 The **NotMatch** parameter finds text that doesn't match the specified pattern.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -536,7 +536,7 @@ Specify files in the directory, such as `log1.txt`, `*.doc`, or `*.*`. If you sp
 directory, the command fails.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: File
 Aliases:
 
@@ -554,7 +554,7 @@ Specifies the text to find on each line. The pattern value is treated as a regul
 To learn about regular expressions, see [about_Regular_Expressions](../Microsoft.PowerShell.Core/About/about_Regular_Expressions.md).
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -571,7 +571,7 @@ Indicates that the cmdlet returns a Boolean value (True or False), instead of a 
 object. The value is True if the pattern is found; otherwise the value is False.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -595,7 +595,7 @@ empty.
 > When this parameter is used with the **AllMatches** parameter, the **AllMatches** is ignored.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 

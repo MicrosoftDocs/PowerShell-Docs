@@ -296,7 +296,7 @@ If you specify the *Independent* parameter, this cmdlet creates a new transactio
 However, because only one transaction can be active at a time, you must complete or roll back the new transaction before resuming work on the original transaction.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -321,7 +321,7 @@ The transaction is never rolled back automatically.
 The default value is Error.
 
 ```yaml
-Type: RollbackSeverity
+Type: System.Management.Automation.RollbackSeverity
 Parameter Sets: (All)
 Aliases:
 Accepted values: Error, TerminatingError, Never
@@ -341,7 +341,7 @@ By default, there is no time-out for transactions that are started at the comman
 When transactions are started by a script, the default time-out is 30 minutes.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: (All)
 Aliases: TimeoutMins
 
@@ -356,7 +356,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -372,7 +372,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 

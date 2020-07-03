@@ -61,7 +61,7 @@ This command gets all the members of the local Administrators group.
 Specifies the security group from which this cmdlet gets members.
 
 ```yaml
-Type: LocalGroup
+Type: Microsoft.PowerShell.Commands.LocalGroup
 Parameter Sets: Group
 Aliases:
 
@@ -82,7 +82,7 @@ You can use wildcard characters.
 If you do not specify this parameter, the cmdlet gets all members of the group.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -97,7 +97,7 @@ Accept wildcard characters: False
 Specifies the name of the security group from which this cmdlet gets members.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: Default
 Aliases:
 
@@ -112,7 +112,7 @@ Accept wildcard characters: False
 Specifies the security ID of the security group from which this cmdlet gets members.
 
 ```yaml
-Type: SecurityIdentifier
+Type: System.Security.Principal.SecurityIdentifier
 Parameter Sets: SecurityIdentifier
 Aliases:
 

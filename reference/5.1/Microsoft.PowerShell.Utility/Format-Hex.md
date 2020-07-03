@@ -140,7 +140,7 @@ Non-ASCII characters in the input are output as literal `?` characters resulting
 information.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: ByInputObject
 Aliases:
 Accepted values: ASCII, BigEndianUnicode, Unicode, UTF7, UTF8, UTF32
@@ -165,7 +165,7 @@ The supported scalar types are:
 - `[long]`, `[int64]`
 
 ```yaml
-Type: Object
+Type: System.Object
 Parameter Sets: ByInputObject
 Aliases:
 
@@ -185,7 +185,7 @@ single quotation marks. PowerShell does not interpret any characters in a single
 escape sequences. For more information, see [about_Quoting_Rules](../Microsoft.Powershell.Core/About/about_Quoting_Rules.md).
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: LiteralPath
 Aliases: PSPath
 
@@ -204,7 +204,7 @@ includes escape characters, enclose the path in single quotation marks. To speci
 files, separate the paths with a comma.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: Path
 Aliases:
 
@@ -221,7 +221,7 @@ By default `Format-Hex` opts for compact output of numeric data types: single-by
 sequences are used if the value is small enough. The **Raw** parameter deactivates this behavior.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: ByInputObject
 Aliases:
 

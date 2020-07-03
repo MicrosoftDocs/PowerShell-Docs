@@ -121,7 +121,7 @@ Enter any valid script block enclosed in braces ( { } ).
 This parameter is required.
 
 ```yaml
-Type: ScriptBlock
+Type: System.Management.Automation.ScriptBlock
 Parameter Sets: (All)
 Aliases:
 
@@ -138,7 +138,7 @@ This parameter is valid only when a transaction is in progress.
 For more information, see about_transactions.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: usetx
 

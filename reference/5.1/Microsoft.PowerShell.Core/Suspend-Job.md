@@ -174,7 +174,7 @@ This cmdlet suspends jobs that satisfy all of the conditions.
 Enter a hash table where the keys are job properties and the values are job property values.
 
 ```yaml
-Type: Hashtable
+Type: System.Collections.Hashtable
 Parameter Sets: FilterParameterSet
 Aliases:
 
@@ -193,7 +193,7 @@ By default, **Suspend-Job** lets the workflow job run until the next checkpoint 
 You can also use this parameter to suspend workflow jobs that do not have checkpoints.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: F
 
@@ -213,7 +213,7 @@ You can type one or more IDs, separated by commas.
 To find the ID of a job, use the Get-Job cmdlet.
 
 ```yaml
-Type: Int32[]
+Type: System.Int32[]
 Parameter Sets: SessionIdParameterSet
 Aliases:
 
@@ -232,7 +232,7 @@ An instance ID is a GUID that uniquely identifies the job on the computer.
 To find the instance ID of a job, use **Get-Job**.
 
 ```yaml
-Type: Guid[]
+Type: System.Guid[]
 Parameter Sets: InstanceIdParameterSet
 Aliases:
 
@@ -249,7 +249,7 @@ Enter a variable that contains the workflow jobs or a command that gets the work
 You can also pipe workflow jobs to the **Suspend-Job** cmdlet.
 
 ```yaml
-Type: Job[]
+Type: System.Management.Automation.Job[]
 Parameter Sets: JobParameterSet
 Aliases:
 
@@ -266,7 +266,7 @@ Enter one or more workflow job names.
 Wildcard characters are supported.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: NameParameterSet
 Aliases:
 
@@ -298,7 +298,7 @@ The acceptable values for this parameter are:
 For more information about job states, see [JobState Enumeration](https://msdn.microsoft.com/library/system.management.automation.jobstate) in the MSDN library.
 
 ```yaml
-Type: JobState
+Type: System.Management.Automation.JobState
 Parameter Sets: StateParameterSet
 Aliases:
 Accepted values: NotStarted, Running, Completed, Failed, Stopped, Blocked, Suspended, Disconnected, Suspending, Stopping, AtBreakpoint
@@ -317,7 +317,7 @@ By default, **Suspend-Job** returns immediately, even if the workflow job is not
 The *Wait* parameter is equivalent to piping a **Suspend-Job** command to the **Wait-Job** cmdlet.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -332,7 +332,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -348,7 +348,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 

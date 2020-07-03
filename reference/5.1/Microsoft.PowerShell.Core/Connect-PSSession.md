@@ -236,7 +236,7 @@ Use the *MaximumRedirection* parameter of the New-PSSessionOption cmdlet or set 
 The default value is 5.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: ConnectionUri, ConnectionUriGuid
 Aliases:
 
@@ -262,7 +262,7 @@ The value of this parameter is used to select and filter sessions.
 It does not change the application that the session uses.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: ComputerName, ComputerNameGuid
 Aliases:
 
@@ -299,7 +299,7 @@ If the remote computer is compromised, the credentials that are passed to it can
 the network session.
 
 ```yaml
-Type: AuthenticationMechanism
+Type: System.Management.Automation.Runspaces.AuthenticationMechanism
 Parameter Sets: ComputerName, ComputerNameGuid, ConnectionUri, ConnectionUriGuid
 Aliases:
 Accepted values: Default, Basic, Negotiate, NegotiateWithImplicitCredential, Credssp, Digest, Kerberos
@@ -324,7 +324,7 @@ To get a certificate thumbprint, use a Get-Item or Get-ChildItem command in the 
 Cert: drive.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: ComputerName, ComputerNameGuid, ConnectionUri, ConnectionUriGuid
 Aliases:
 
@@ -346,7 +346,7 @@ Wildcard characters are not permitted.
 To specify the local computer, type the computer name, localhost, or a dot (.)
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: ComputerName, ComputerNameGuid
 Aliases: Cn
 
@@ -372,7 +372,7 @@ It does not change the session configuration that the session uses.
 For more information about session configurations, see [about_Session_Configurations](About/about_Session_Configurations.md).
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: ComputerName, ComputerNameGuid, ConnectionUri, ConnectionUriGuid
 Aliases:
 
@@ -409,7 +409,7 @@ If the destination computer redirects the connection to a different URI, Windows
 the redirection unless you use the *AllowRedirection* parameter in the command.
 
 ```yaml
-Type: Uri[]
+Type: System.Uri[]
 Parameter Sets: ConnectionUri, ConnectionUriGuid
 Aliases: URI, CU
 
@@ -437,7 +437,7 @@ object and the password is stored as a [SecureString](/dotnet/api/system.securit
 > [How secure is SecureString?](/dotnet/api/system.security.securestring#how-secure-is-securestring).
 
 ```yaml
-Type: PSCredential
+Type: System.Management.Automation.PSCredential
 Parameter Sets: ComputerName, ComputerNameGuid, ConnectionUri, ConnectionUriGuid
 Aliases:
 
@@ -458,7 +458,7 @@ This parameter is valid, but not effective, when the session is stored on the lo
 was not connected to the current session.
 
 ```yaml
-Type: Int32[]
+Type: System.Int32[]
 Parameter Sets: Id
 Aliases:
 
@@ -478,7 +478,7 @@ The instance ID is a GUID that uniquely identifies a **PSSession** on a local or
 The instance ID is stored in the **InstanceID** property of the **PSSession**.
 
 ```yaml
-Type: Guid[]
+Type: System.Guid[]
 Parameter Sets: ComputerNameGuid, ConnectionUriGuid, InstanceId
 Aliases:
 
@@ -494,14 +494,15 @@ Accept wildcard characters: False
 Specifies the friendly names of the disconnected sessions.
 
 ```yaml
-Accept pipeline input: False
-Position: Named
-Accept wildcard characters: False
+Type: System.String[]
 Parameter Sets: Name, ComputerName, ConnectionUri
-Required: True (Name), False (ComputerName, ConnectionUri)
-Default value: None
 Aliases:
-Type: String[]
+
+Required: True (Name), False (ComputerName, ConnectionUri)
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
 ```
 
 ### -Port
@@ -525,7 +526,7 @@ The port that is set in the command applies to all computers or sessions on whic
 An alternate port setting might prevent the command from running on all computers.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: ComputerName, ComputerNameGuid
 Aliases:
 
@@ -543,7 +544,7 @@ Enter a variable that contains the **PSSession** objects or a command that creat
 **PSSession** objects, such as a Get-PSSession command.
 
 ```yaml
-Type: PSSession[]
+Type: System.Management.Automation.Runspaces.PSSession[]
 Parameter Sets: Session
 Aliases:
 
@@ -575,7 +576,7 @@ For information about the **$PSSessionOption** preference variable, see [about_P
 For more information about session configurations, see [about_Session_Configurations](About/about_Session_Configurations.md).
 
 ```yaml
-Type: PSSessionOption
+Type: System.Management.Automation.Remoting.PSSessionOption
 Parameter Sets: ComputerName, ComputerNameGuid, ConnectionUri, ConnectionUriGuid
 Aliases:
 
@@ -594,7 +595,7 @@ If you omit this parameter or enter a value of 0, the default value, 32, is used
 The throttle limit applies only to the current command, not to the session or to the computer.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: (All)
 Aliases:
 
@@ -618,7 +619,7 @@ If you use this parameter, but SSL is not available on the port that is used for
 command fails.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: ComputerName, ComputerNameGuid
 Aliases:
 
@@ -634,7 +635,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -651,7 +652,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 

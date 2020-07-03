@@ -236,7 +236,7 @@ When used with `InputObject`, if the value of **Count** exceeds the number of ob
 collection, `Get-Random` returns all of the objects in random order.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: RandomListItemParameterSet
 Aliases:
 
@@ -255,7 +255,7 @@ the objects, or a command or expression that gets the objects. You can also pipe
 objects to `Get-Random`.
 
 ```yaml
-Type: Object[]
+Type: System.Object[]
 Parameter Sets: RandomListItemParameterSet
 Aliases:
 
@@ -283,7 +283,7 @@ If the value of **Minimum** is a double (a floating-point number), the default v
 is **Double.MaxValue**. Otherwise, the default value is **Int32.MaxValue**.
 
 ```yaml
-Type: Object
+Type: System.Object
 Parameter Sets: RandomNumberParameterSet
 Aliases:
 
@@ -305,7 +305,7 @@ The value of **Minimum** must be less than (not equal to) the value of **Maximum
 floating-point number.
 
 ```yaml
-Type: Object
+Type: System.Object
 Parameter Sets: RandomNumberParameterSet
 Aliases:
 
@@ -329,7 +329,7 @@ used only when trying to reproduce behavior, such as when debugging or analyzing
 includes `Get-Random` commands.
 
 ```yaml
-Type: Int32
+Type: System.Nullable`1[System.Int32]
 Parameter Sets: (All)
 Aliases:
 

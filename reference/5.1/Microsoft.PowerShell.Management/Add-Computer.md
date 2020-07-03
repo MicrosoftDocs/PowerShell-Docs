@@ -158,7 +158,7 @@ You can use the **ComputerName** parameter of `Add-Computer` even if your comput
 This parameter is introduced in Windows PowerShell 3.0.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -181,11 +181,11 @@ To specify a user account that has permission to remove the computer from its cu
 To specify a user account that has permission to connect to a remote computer, use the **LocalCredential** parameter.
 
 ```yaml
-Type: PSCredential
-Parameter Sets: Domain
+Type: System.Management.Automation.PSCredential
+Parameter Sets: Domain, Workgroup
 Aliases: DomainCredential
 
-Required: True
+Required: True (Domain), False (Workgroup)
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -198,7 +198,7 @@ Specifies the domain to which the computers are added.
 This parameter is required when adding the computers to a domain.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: Domain
 Aliases: DN, Domain
 
@@ -217,7 +217,7 @@ Without this parameter, `Add-Computer` requires you to confirm the addition of e
 This parameter is introduced in Windows PowerShell 3.0.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -242,7 +242,7 @@ To specify a user account that has permission to remove the computers from their
 This parameter is introduced in Windows PowerShell 3.0.
 
 ```yaml
-Type: PSCredential
+Type: System.Management.Automation.PSCredential
 Parameter Sets: (All)
 Aliases:
 
@@ -261,7 +261,7 @@ This parameter is valid only when one computer is being added or moved.
 This parameter is introduced in Windows PowerShell 3.0.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -296,7 +296,7 @@ The acceptable values for this parameter are:
 This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
-Type: JoinOptions
+Type: Microsoft.PowerShell.Commands.JoinOptions
 Parameter Sets: Domain
 Aliases:
 Accepted values: AccountCreate, Win9XUpgrade, UnsecuredJoin, PasswordPass, DeferSPNSet, JoinWithNewName, JoinReadOnly, InstallInvoke
@@ -315,7 +315,7 @@ Enter the full distinguished name of the OU in quotation marks.
 The default value is the default OU for machine objects in the domain.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: Domain
 Aliases: OU
 
@@ -332,7 +332,7 @@ Returns an object representing the item with which you are working.
 By default, this cmdlet does not generate any output.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -351,7 +351,7 @@ A restart is often required to make the change effective.
 This parameter is introduced in Windows PowerShell 3.0.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -369,7 +369,7 @@ Enter the name in DomainName\ComputerName format.
 By default, no domain controller is specified.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: Domain
 Aliases: DC
 
@@ -395,7 +395,7 @@ To specify a user account that has permission to connect to a remote computer, u
 This parameter is introduced in Windows PowerShell 3.0.
 
 ```yaml
-Type: PSCredential
+Type: System.Management.Automation.PSCredential
 Parameter Sets: Domain
 Aliases:
 
@@ -411,7 +411,7 @@ Accept wildcard characters: False
 Performs an unsecure join to the specified domain.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: Domain
 Aliases:
 
@@ -428,7 +428,7 @@ Specifies the name of a workgroup to which the computers are added.
 The default value is "WORKGROUP".
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: Workgroup
 Aliases: WGN
 
@@ -444,7 +444,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -461,7 +461,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 

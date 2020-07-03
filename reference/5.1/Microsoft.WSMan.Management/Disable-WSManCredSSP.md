@@ -2,7 +2,7 @@
 external help file: Microsoft.WSMan.Management.dll-Help.xml
 keywords: powershell,cmdlet
 Locale: en-US
-Module Name: Microsoft.WsMan.Management
+Module Name: Microsoft.WSMan.Management
 ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.wsman.management/disable-wsmancredssp?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
@@ -73,7 +73,7 @@ If you specify Server, this cmdlet performs the following action:
 - Disables CredSSP on the server. This cmdlet sets the WS-Management setting **\<localhost|computername\>\Service\Auth\CredSSP** to false.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 Accepted values: Client, Server

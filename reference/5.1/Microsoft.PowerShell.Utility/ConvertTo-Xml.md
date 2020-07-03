@@ -72,7 +72,7 @@ Returns an **XmlDocument** object.
 The default value is Document.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 Accepted values: Stream, String, Document
@@ -96,7 +96,7 @@ The default value can be overridden for the object type in the Types.ps1xml file
 information, see about_Types.ps1xml.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: (All)
 Aliases:
 
@@ -113,7 +113,7 @@ Specifies the object to be converted. Enter a variable that contains the objects
 or expression that gets the objects. You can also pipe objects to **ConvertTo-XML**.
 
 ```yaml
-Type: PSObject
+Type: System.Management.Automation.PSObject
 Parameter Sets: (All)
 Aliases:
 
@@ -129,7 +129,7 @@ Accept wildcard characters: False
 Omits the Type attribute from the object nodes.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 

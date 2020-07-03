@@ -62,7 +62,7 @@ opposed to HTTPS, add the **AllowUnsecureConnection** parameter.
 Indicates that this cmdlet replaces an existing module.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -79,7 +79,7 @@ Indicates that this module can connect to URIs that are not SSL-secured. The mod
 sites in addition to HTTPS sites.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -96,7 +96,7 @@ Specifies the cmdlet adapter. The acceptable values for this parameter are: ODat
 NetworkControllerAdapter.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 Accepted values: ODataAdapter, NetworkControllerAdapter, ODataV4Adapter
@@ -113,7 +113,7 @@ Accept wildcard characters: False
 Specifies the request method. The acceptable values for this parameter are: PUT, POST, and PATCH.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 Accepted values: Put, Post, Patch
@@ -132,7 +132,7 @@ user. If a remote computer runs Windows Vista or a later release of the Windows 
 the cmdlet prompts you for credentials.
 
 ```yaml
-Type: PSCredential
+Type: System.Management.Automation.PSCredential
 Parameter Sets: (All)
 Aliases:
 
@@ -148,7 +148,7 @@ Accept wildcard characters: False
 Specifies a hash table of custom data.
 
 ```yaml
-Type: Hashtable
+Type: System.Collections.Hashtable
 Parameter Sets: (All)
 Aliases:
 
@@ -165,7 +165,7 @@ Indicates that this cmdlet overwrites an existing generated module of the same n
 `Modules` folder.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -181,7 +181,7 @@ Accept wildcard characters: False
 Specifies the headers of the web request. Enter a hash table or dictionary.
 
 ```yaml
-Type: Hashtable
+Type: System.Collections.Hashtable
 Parameter Sets: (All)
 Aliases:
 
@@ -197,7 +197,7 @@ Accept wildcard characters: False
 Specifies the URI of the metadata of the endpoint.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -219,7 +219,7 @@ module in the `$home\Documents\WindowsPowerShell\Modules` folder. If you specify
 creates the module folder in that path.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -243,7 +243,7 @@ information, see
 [Strongly Encouraged Development Guidelines](/powershell/scripting/developer/cmdlet/strongly-encouraged-development-guidelines).
 
 ```yaml
-Type: Hashtable
+Type: System.Collections.Hashtable
 Parameter Sets: (All)
 Aliases:
 
@@ -260,7 +260,7 @@ Specifies the update request method. The acceptable values for this parameter ar
 PATCH.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 Accepted values: Put, Post, Patch
@@ -277,7 +277,7 @@ Accept wildcard characters: False
 Specifies the URI of the endpoint.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -293,7 +293,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -310,7 +310,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 

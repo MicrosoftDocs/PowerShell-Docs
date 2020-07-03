@@ -91,7 +91,7 @@ For more information, see
 [about_CimSessions](../Microsoft.PowerShell.Core/About/about_CimSession.md).
 
 ```yaml
-Type: CimSession[]
+Type: Microsoft.Management.Infrastructure.CimSession[]
 Parameter Sets: CimSessionSet
 Aliases:
 
@@ -108,7 +108,7 @@ Specifies an array of names of computers. Removes the sessions that connect to t
 computers. You can specify a fully qualified domain name (FQDN) or a NetBIOS name.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: ComputerNameSet
 Aliases: CN, ServerName
 
@@ -128,7 +128,7 @@ identifies the CIM session in the current PowerShell session.
 For more information about the range operator, see [about_Operators](../Microsoft.PowerShell.Core/About/about_Operators.md).
 
 ```yaml
-Type: UInt32[]
+Type: System.UInt32[]
 Parameter Sets: SessionIdSet
 Aliases:
 
@@ -148,7 +148,7 @@ you have multiple sessions running in PowerShell.
 The **InstanceId** is stored in the **InstanceId** property of the object that represents a CIM session.
 
 ```yaml
-Type: Guid[]
+Type: System.Guid[]
 Parameter Sets: InstanceIdSet
 Aliases:
 
@@ -165,7 +165,7 @@ Specifies the friendly name of the CIM session to remove. You can use wildcard c
 parameter.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: NameSet
 Aliases:
 
@@ -181,7 +181,7 @@ Accept wildcard characters: True
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -197,7 +197,7 @@ Accept wildcard characters: False
 Shows what would happen if the cmdlet runs. The cmdlet is not run.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 

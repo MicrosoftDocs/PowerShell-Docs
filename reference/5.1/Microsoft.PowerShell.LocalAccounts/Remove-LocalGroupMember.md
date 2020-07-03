@@ -61,7 +61,7 @@ This example uses a placeholder value for the user name of an account at Outlook
 Specifies the security group from which this cmdlet removes members.
 
 ```yaml
-Type: LocalGroup
+Type: Microsoft.PowerShell.Commands.LocalGroup
 Parameter Sets: Group
 Aliases:
 
@@ -80,7 +80,7 @@ Specify SID strings in S-R-I-S-S .
 format.
 
 ```yaml
-Type: LocalPrincipal[]
+Type: Microsoft.PowerShell.Commands.LocalPrincipal[]
 Parameter Sets: (All)
 Aliases:
 
@@ -95,7 +95,7 @@ Accept wildcard characters: False
 Specifies the name of the security group from which this cmdlet removes members.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: Default
 Aliases:
 
@@ -110,7 +110,7 @@ Accept wildcard characters: False
 Specifies the security ID of the security group from which this cmdlet removes members.
 
 ```yaml
-Type: SecurityIdentifier
+Type: System.Security.Principal.SecurityIdentifier
 Parameter Sets: SecurityIdentifier
 Aliases:
 
@@ -125,7 +125,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -141,7 +141,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 

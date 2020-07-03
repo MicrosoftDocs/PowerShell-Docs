@@ -113,7 +113,7 @@ Enables the scheduled job with the specified identification number (ID).
 Enter the ID of a scheduled job.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: DefinitionId
 Aliases:
 
@@ -130,7 +130,7 @@ Enter a variable that contains **ScheduledJobDefinition** objects or type a comm
 You can also pipe a **ScheduledJobDefinition** object to **Enable-ScheduledJob**.
 
 ```yaml
-Type: ScheduledJobDefinition
+Type: Microsoft.PowerShell.ScheduledJob.ScheduledJobDefinition
 Parameter Sets: Definition
 Aliases:
 
@@ -147,7 +147,7 @@ Enter the name of a scheduled job.
 Wildcards are supported.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: DefinitionName
 Aliases:
 
@@ -163,7 +163,7 @@ Returns an object representing the item with which you are working.
 By default, this cmdlet does not generate any output.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -178,7 +178,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -194,7 +194,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 

@@ -86,7 +86,7 @@ Specifies the objects to send down the pipeline. Enter a variable that contains 
 a command or expression that gets the objects.
 
 ```yaml
-Type: PSObject
+Type: System.Management.Automation.PSObject[]
 Parameter Sets: (All)
 Aliases:
 
@@ -111,7 +111,7 @@ parentheses, because the parentheses force enumeration.
 > enumeration will be suppressed.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 

@@ -148,7 +148,7 @@ The path is enclosed in quotation marks to indicate that it is a single token.
 > use [Invoke-Command](../Microsoft.PowerShell.Core/Invoke-Command.md).
 
 ```yaml
-Type: PSCredential
+Type: System.Management.Automation.PSCredential
 Parameter Sets: (All)
 Aliases:
 
@@ -165,7 +165,7 @@ Indicates that this cmdlet returns $True if the path is absolute and $False if i
 An absolute path has a length greater than zero and does not use a dot (.) to indicate the current path.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: IsAbsoluteSet
 Aliases:
 
@@ -182,7 +182,7 @@ Indicates that this cmdlet returns only the last item or container in the path.
 For example, in the path `C:\Test\Logs\Pass1.log`, it returns only Pass1.log.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: LeafSet
 Aliases:
 
@@ -202,7 +202,7 @@ If the path includes escape characters, enclose it in single quotation marks.
 Single quotation marks tell PowerShell not to interpret any characters as escape sequences.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: LiteralPathSet
 Aliases: PSPath
 
@@ -220,7 +220,7 @@ For the FileSystem or registry providers, the qualifier is the drive of the prov
 For example, in the path `C:\Test\Logs\Pass1.log`, it returns only \Test\Logs\Pass1.log.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: NoQualifierSet
 Aliases:
 
@@ -238,7 +238,7 @@ For example, in the path `C:\Test\Logs\Pass1.log`, it returns C:\Test\Logs.
 The *Parent* parameter is the default split location parameter.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: ParentSet
 Aliases:
 
@@ -257,7 +257,7 @@ If the path includes spaces, enclose it in quotation marks.
 You can also pipe a path to this cmdlet.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: ParentSet, NoQualifierSet, LeafSet, QualifierSet, IsAbsoluteSet
 Aliases:
 
@@ -274,7 +274,7 @@ Indicates that this cmdlet returns only the qualifier of the specified path.
 For the FileSystem or registry providers, the qualifier is the drive of the provider path, such as C: or HKCU:.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: QualifierSet
 Aliases:
 
@@ -290,7 +290,7 @@ Accept wildcard characters: False
 Indicates that this cmdlet displays the items that are referenced by the resulting split path instead of displaying the path elements.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -308,7 +308,7 @@ This parameter is valid only when a transaction is in progress.
 For more information, see about_Transactions.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: usetx
 

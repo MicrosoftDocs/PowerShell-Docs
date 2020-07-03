@@ -87,7 +87,7 @@ For more information about the behavior of **ArgumentList**, see
 [about_Splatting](../Microsoft.PowerShell.Core/About/about_Splatting.md#splatting-with-arrays).
 
 ```yaml
-Type: Object[]
+Type: System.Object[]
 Parameter Sets: commandSet
 Aliases: Args
 
@@ -103,7 +103,7 @@ Accept wildcard characters: False
 Specifies a command that is being processed during the trace.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: commandSet
 Aliases:
 
@@ -121,7 +121,7 @@ user-mode or kernel mode debugger or in Visual Studio. This parameter also selec
 listener.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -138,7 +138,7 @@ Specifies the expression that is being processed during the trace. Enclose the e
 (`{}`).
 
 ```yaml
-Type: ScriptBlock
+Type: System.Management.Automation.ScriptBlock
 Parameter Sets: expressionSet
 Aliases:
 
@@ -155,9 +155,9 @@ Specifies a file that the cmdlet sends the trace output to. This parameter also 
 trace listener.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
-Aliases: PSPath, Path
+Aliases: PSPath
 
 Required: False
 Position: Named
@@ -172,7 +172,7 @@ Forces the command to run without asking for user confirmation. Used with the **
 parameter. Even using the **Force** parameter, the cmdlet cannot override security restrictions.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -189,7 +189,7 @@ Specifies input to the expression that is being processed during the trace. You 
 that represents the input that the expression accepts, or pass an object through the pipeline.
 
 ```yaml
-Type: PSObject
+Type: System.Management.Automation.PSObject
 Parameter Sets: (All)
 Aliases:
 
@@ -219,7 +219,7 @@ To specify multiple options, separate them with commas, but with no spaces, and 
 quotation marks, such as "ProcessID,ThreadID".
 
 ```yaml
-Type: TraceOptions
+Type: System.Diagnostics.TraceOptions
 Parameter Sets: (All)
 Aliases:
 Accepted values: None, LogicalOperationStack, DateTime, Timestamp, ProcessId, ThreadId, Callstack
@@ -238,7 +238,7 @@ each component. Wildcards are permitted. To find the trace sources on your compu
 `Get-TraceSource`.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -286,7 +286,7 @@ To specify multiple options, separate them with commas, but with no spaces, and 
 quotation marks, such as "Constructor,Dispose".
 
 ```yaml
-Type: PSTraceSourceOptions
+Type: System.Management.Automation.PSTraceSourceOptions
 Parameter Sets: (All)
 Aliases:
 Accepted values: None, Constructor, Dispose, Finalizer, Method, Property, Delegates, Events, Exception, Lock, Error, Errors, Warning, Verbose, WriteLine, Data, Scope, ExecutionFlow, Assert, All
@@ -304,7 +304,7 @@ Indicates that the cmdlet sends the trace output to the PowerShell host. This pa
 the PSHost trace listener.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 

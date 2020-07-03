@@ -1,5 +1,5 @@
 ---
-external help file: Microsoft.Windows.DSC.CoreConfProviders.dll-help.xml
+external help file: Microsoft.Windows.DSC.CoreConfProviders.dll-Help.xml
 keywords: powershell,cmdlet
 Locale: en-US
 Module Name: PSDesiredStateConfiguration
@@ -53,7 +53,7 @@ This command invokes the **Test** method of a resource named WindowsProcess, whi
 Specifies the method of the resource that this cmdlet invokes. The acceptable values for this parameter are: Get, Set, and Test.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 Accepted values: Get, Set, Test
@@ -69,7 +69,7 @@ Accept wildcard characters: False
 Specifies the name of the module from which this cmdlet invokes the specified resource.
 
 ```yaml
-Type: ModuleSpecification
+Type: Microsoft.PowerShell.Commands.ModuleSpecification
 Parameter Sets: (All)
 Aliases:
 
@@ -84,7 +84,7 @@ Accept wildcard characters: False
 Specifies the name of the DSC resource to start.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -99,7 +99,7 @@ Accept wildcard characters: False
 Specifies the resource property name and its value in a hash table as key and value, respectively. Use the **Get-DscResource** cmdlet to discover resource properties and their types.
 
 ```yaml
-Type: Hashtable
+Type: System.Collections.Hashtable
 Parameter Sets: (All)
 Aliases:
 

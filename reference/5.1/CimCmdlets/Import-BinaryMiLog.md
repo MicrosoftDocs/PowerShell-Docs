@@ -43,7 +43,7 @@ Specifies the path of the file in which to store the binary representation of th
 resolves to more than one file.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 

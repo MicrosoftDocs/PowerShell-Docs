@@ -112,7 +112,7 @@ When you specify an action, **Register-WmiEvent** returns an event job object th
 You can use the cmdlets that contain the **Job** noun (the **Job** cmdlets) to manage the event job.
 
 ```yaml
-Type: ScriptBlock
+Type: System.Management.Automation.ScriptBlock
 Parameter Sets: (All)
 Aliases:
 
@@ -129,7 +129,7 @@ Enter the WMI class that generates the events.
 A *Class* or *Query* parameter is required in every command.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: class
 Aliases:
 
@@ -151,7 +151,7 @@ This parameter does not rely on Windows PowerShell remoting.
 You can use the *ComputerName* parameter even if your computer is not configured to run remote commands.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases: Cn
 
@@ -170,7 +170,7 @@ Type a user name, such as User01 or Domain01\User01, or enter a **PSCredential**
 If you type a user name, this cmdlet prompts you for a password.
 
 ```yaml
-Type: PSCredential
+Type: System.Management.Automation.PSCredential
 Parameter Sets: (All)
 Aliases:
 
@@ -186,7 +186,7 @@ Indicates that this cmdlet sends events for this subscription to the session on 
 Use this parameter when you are registering for events on a remote computer or in a remote session.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -201,7 +201,7 @@ Accept wildcard characters: False
 Specifies the maximum trigger count.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: (All)
 Aliases:
 
@@ -217,7 +217,7 @@ Specifies any additional data to be associated with this event subscription.
 The value of this parameter appears in the **MessageData** property of all events associated with this subscription.
 
 ```yaml
-Type: PSObject
+Type: System.Management.Automation.PSObject
 Parameter Sets: (All)
 Aliases:
 
@@ -232,7 +232,7 @@ Accept wildcard characters: False
 Specifies the namespace of the WMI class.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases: NS
 
@@ -247,7 +247,7 @@ Accept wildcard characters: False
 Specifies a query in WMI Query Language (WQL) that identifies the WMI event class, such as: `select * from __InstanceDeletionEvent`.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: query
 Aliases:
 
@@ -266,7 +266,7 @@ The default value is the GUID that Windows PowerShell assigns.
 The value of this parameter appears in the value of the **SourceIdentifier** property of the subscriber object and of all event objects associated with this subscription.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -284,7 +284,7 @@ Use this parameter when the current subscription is part of a more complex event
 To view or cancel a subscription that was created by using the *SupportEvent* parameter, specify the *Force* parameter of the Get-EventSubscriber and Unregister-Event cmdlets.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -301,7 +301,7 @@ Specifies how long Windows PowerShell waits for this command to finish.
 The default value, 0 (zero), means that there is no time-out, and it causes Windows PowerShell to wait indefinitely.
 
 ```yaml
-Type: Int64
+Type: System.Int64
 Parameter Sets: (All)
 Aliases: TimeoutMSec
 
