@@ -190,5 +190,5 @@ Invoke-Command -ComputerName S1 -ScriptBlock {
 
 @ThreadJob.Start-ThreadJob
 
-[ForEach-Object](../ForEach-Object.md#notes)
+@Microsoft.PowerShell.Core.ForEach-Object
 
