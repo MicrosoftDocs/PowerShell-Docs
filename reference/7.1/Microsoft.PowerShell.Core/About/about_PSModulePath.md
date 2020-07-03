@@ -21,7 +21,7 @@ By default, the effective locations assigned to `$env:PSModulePath` are:
   `Install-Module` has a **Scope** parameter that allows you to specify
   whether the module is installed for the current user or for all users. For
   more information, see
-  [Install-Module](../../PowerShellGet/Install-Module.md).
+  @PowerShellGet.Install-Module.
 
   - On Windows, the location of the user-specific **CurrentUser** scope is
     the `$HOME\Documents\PowerShell\Modules` folder. The location of the

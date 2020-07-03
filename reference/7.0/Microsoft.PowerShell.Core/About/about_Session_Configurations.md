@@ -340,20 +340,20 @@ about_SessionConfigurations
 
 [about_Session_Configuration_Files](about_Session_Configuration_Files.md)
 
-[New-PSSession](../New-PSSession.md)
+@Microsoft.PowerShell.Core.New-PSSession
 
-[Disable-PSSessionConfiguration](../Disable-PSSessionConfiguration.md)
+@Microsoft.PowerShell.Core.Disable-PSSessionConfiguration
 
-[Enable-PSSessionConfiguration](../Enable-PSSessionConfiguration.md)
+@Microsoft.PowerShell.Core.Enable-PSSessionConfiguration
 
-[Get-PSSessionConfiguration](../Get-PSSessionConfiguration.md)
+@Microsoft.PowerShell.Core.Get-PSSessionConfiguration
 
-[New-PSSessionConfigurationFile](../New-PSSessionConfigurationFile.md)
+@Microsoft.PowerShell.Core.New-PSSessionConfigurationFile
 
-[Register-PSSessionConfiguration](../Register-PSSessionConfiguration.md)
+@Microsoft.PowerShell.Core.Register-PSSessionConfiguration
 
-[Set-PSSessionConfiguration](../Set-PSSessionConfiguration.md)
+@Microsoft.PowerShell.Core.Set-PSSessionConfiguration
 
-[Test-PSSessionConfigurationFile](../Test-PSSessionConfigurationFile.md)
+@Microsoft.PowerShell.Core.Test-PSSessionConfigurationFile
 
-[Unregister-PSSessionConfiguration](../Unregister-PSSessionConfiguration.md)
+@Microsoft.PowerShell.Core.Unregister-PSSessionConfiguration

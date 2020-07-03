@@ -150,4 +150,4 @@ rides         Property     int rides {get;set;}
 
 [about_Wildcards](about_Wildcards.md)
 
-[Get-Member](../../Microsoft.PowerShell.Utility/Get-Member.md)
+@Microsoft.PowerShell.Utility.Get-Member

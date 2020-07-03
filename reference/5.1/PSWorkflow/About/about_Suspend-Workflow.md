@@ -129,7 +129,7 @@ PSComputerName    : localhost
 
 [about_WorkflowCommonParameters](about_WorkflowCommonParameters.md)
 
-[PSWorkflow](../PSWorkflow.md) cmdlets
+@PSWorkflow.PSWorkflow cmdlets
 
 [Workflows Guide](/previous-versions/powershell/scripting/components/workflows-guide)
 

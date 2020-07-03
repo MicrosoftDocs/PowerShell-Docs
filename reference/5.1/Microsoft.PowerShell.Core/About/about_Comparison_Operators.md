@@ -700,6 +700,6 @@ True
 - [about_Operators](about_Operators.md)
 - [about_Regular_Expressions](about_Regular_Expressions.md)
 - [about_Wildcards](about_Wildcards.md)
-- [Compare-Object](../../Microsoft.PowerShell.Utility/Compare-Object.md)
-- [Foreach-Object](../ForEach-Object.md)
-- [Where-Object](../Where-Object.md)
+- @Microsoft.PowerShell.Utility.Compare-Object
+- @Microsoft.PowerShell.Core.ForEach-Object
+- @Microsoft.PowerShell.Core.Where-Object

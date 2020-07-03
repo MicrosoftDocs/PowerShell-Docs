@@ -71,7 +71,7 @@ the same way that you would use the If statement.
 
 [about_Operators](about_Operators.md)
 
-[Compare-Object](../../Microsoft.PowerShell.Utility/Compare-Object.md)
+@Microsoft.PowerShell.Utility.Compare-Object
 
 [about_Comparison_operators](about_Comparison_Operators.md)
 

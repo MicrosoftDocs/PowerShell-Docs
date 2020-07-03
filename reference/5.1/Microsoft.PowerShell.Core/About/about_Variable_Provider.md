@@ -39,23 +39,23 @@ objects. The variables have no child items.
 The **Variable** provider supports the following cmdlets, which are covered
 in this article.
 
-- [Get-Location](../../Microsoft.PowerShell.Management/Get-Location.md)
-- [Set-Location](../../Microsoft.PowerShell.Management/Set-Location.md)
-- [Get-Item](../../Microsoft.PowerShell.Management/Get-Item.md)
-- [New-Item](../../Microsoft.PowerShell.Management/New-Item.md)
-- [Remove-Item](../../Microsoft.PowerShell.Management/Remove-Item.md)
-- [Clear-Item](../../Microsoft.PowerShell.Management/Clear-Item.md)
+- @Microsoft.PowerShell.Management.Get-Location
+- @Microsoft.PowerShell.Management.Set-Location
+- @Microsoft.PowerShell.Management.Get-Item
+- @Microsoft.PowerShell.Management.New-Item
+- @Microsoft.PowerShell.Management.Remove-Item
+- @Microsoft.PowerShell.Management.Clear-Item
 
 PowerShell also includes a set of cmdlets designed especially to view and to
 change variables. When you use **Variable** cmdlets, you do not need to specify
 the `Variable:` drive in the name. This article does not cover working with
 **Variable** cmdlets.
 
-- [Get-Variable](../../Microsoft.PowerShell.Utility/Get-Variable.md)
-- [New-Variable](../../Microsoft.PowerShell.Utility/New-Variable.md)
-- [Set-Variable](../../Microsoft.PowerShell.Utility/Set-Variable.md)
-- [Remove-Variable](../../Microsoft.PowerShell.Utility/Remove-Variable.md)
-- [Clear-Variable](../../Microsoft.PowerShell.Utility/Clear-Variable.md)
+- @Microsoft.PowerShell.Utility.Get-Variable
+- @Microsoft.PowerShell.Utility.New-Variable
+- @Microsoft.PowerShell.Utility.Set-Variable
+- @Microsoft.PowerShell.Utility.Remove-Variable
+- @Microsoft.PowerShell.Utility.Clear-Variable
 
 > [!NOTE]
 > You can also use the PowerShell expression parser to create, view, and change
@@ -109,9 +109,9 @@ drive. To reference an variable from another location, use the drive name
 > [!NOTE]
 > PowerShell uses aliases to allow you a familiar way to work with provider
 > paths. Commands such as `dir` and `ls` are now aliases for
-> [Get-ChildItem](../../Microsoft.PowerShell.Management/Get-ChildItem.md),
-> `cd` is an alias for [Set-Location](../../Microsoft.PowerShell.Management/Set-Location.md). and `pwd` is
-> an alias for [Get-Location](../../Microsoft.PowerShell.Management/Get-Location.md).
+> @Microsoft.PowerShell.Management.Get-ChildItem,
+> `cd` is an alias for @Microsoft.PowerShell.Management.Set-Location. and `pwd` is
+> an alias for @Microsoft.PowerShell.Management.Get-Location.
 
 ## Displaying the value of variables
 
@@ -146,7 +146,7 @@ Get-ChildItem -Path Variable:max*
 ### Get the value of the ? variable
 
 This command uses the `-LiteralPath` parameter of
-[Get-ChildItem](../../Microsoft.PowerShell.Management/Get-ChildItem.md) to get
+@Microsoft.PowerShell.Management.Get-ChildItem to get
 the value of the `?` variable from within the `Variable:` drive. The `?` is
 a wildcard in paths, but `Get-ChildItem` does not attempt to resolve any
 wildcards in the values of the `-LiteralPath` parameter.
@@ -267,8 +267,8 @@ Beginning in Windows PowerShell 3.0, you can get customized help topics for
 provider cmdlets that explain how those cmdlets behave in a file system drive.
 
 To get the help topics that are customized for the file system drive, run a
-[Get-Help](../Get-Help.md) command in a file system drive or use the `-Path`
-parameter of [Get-Help](../Get-Help.md) to specify a file system drive.
+@Microsoft.PowerShell.Core.Get-Help command in a file system drive or use the `-Path`
+parameter of @Microsoft.PowerShell.Core.Get-Help to specify a file system drive.
 
 ```powershell
 Get-Help Get-ChildItem

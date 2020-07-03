@@ -142,8 +142,8 @@ Clear-Variable -Name MyVariable
 $MyVariable = $null
 ```
 
-To delete the variable, use [Remove-Variable](../../Microsoft.PowerShell.Utility/Remove-Variable.md)
-or [Remove-Item](../../Microsoft.PowerShell.Management/Remove-Item.md).
+To delete the variable, use @Microsoft.PowerShell.Utility.Remove-Variable
+or @Microsoft.PowerShell.Management.Remove-Item.
 
 ```powershell
 Remove-Variable -Name MyVariable
@@ -164,7 +164,7 @@ a particular type of object. A single variable can even contain a collection,
 or array, of different types of objects at the same time.
 
 The data type of a variable is determined by the .NET types of the values of
-the variable. To view a variable's object type, use [Get-Member](../../Microsoft.PowerShell.Utility/Get-Member.md).
+the variable. To view a variable's object type, use @Microsoft.PowerShell.Utility.Get-Member.
 
 For example:
 

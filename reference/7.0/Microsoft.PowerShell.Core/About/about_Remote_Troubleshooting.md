@@ -93,7 +93,7 @@ To suppress all user prompts, type:
 
 `Enable-PSRemoting -Force`
 
-For more information, see [Enable-PSRemoting](../Enable-PSRemoting.md).
+For more information, see @Microsoft.PowerShell.Core.Enable-PSRemoting.
 
 ### HOW TO ENABLE REMOTING IN AN ENTERPRISE
 
@@ -239,7 +239,7 @@ Set-Service WinRM -ComputerName $servers -startuptype Automatic
 
 To see the results use the `Get-WMIObject` cmdlet with the **Win32_Service**
 object. For more information, see
-[Set-Service](../../Microsoft.PowerShell.Management/Set-Service.md).
+@Microsoft.PowerShell.Management.Set-Service.
 
 ### HOW TO RECREATE THE DEFAULT SESSION CONFIGURATIONS
 
@@ -307,8 +307,8 @@ Administrator.
 Invoke-Command -ComputerName Server01 -Credential Domain01\Admin01
 ```
 
-For more information about the **Credential** parameter, see [New-PSSession](../New-PSSession.md),
-[Enter-PSSession](../Enter-PSSession.md) or [Invoke-Command](../Invoke-Command.md).
+For more information about the **Credential** parameter, see @Microsoft.PowerShell.Core.New-PSSession,
+@Microsoft.PowerShell.Core.Enter-PSSession or @Microsoft.PowerShell.Core.Invoke-Command.
 
 ### HOW TO ENABLE REMOTING FOR NON-ADMINISTRATIVE USERS
 
@@ -527,7 +527,7 @@ drive on the local computer. Then use a `Set-Item` command to add the
 computer.
 
 For more information about the `Connect-WSMan` cmdlet, see
-[Connect-WSMan](../../Microsoft.WSMan.Management/Connect-WSMan.md).
+@Microsoft.WSMan.Management.Connect-WSMan.
 
 ## TROUBLESHOOTING COMPUTER CONFIGURATION ISSUES
 
@@ -596,7 +596,7 @@ New-PSSession -ConnectionURI https://www.fabrikam.com
 ```
 
 For more information about the `New-PSSessionOption` cmdlet, see
-[New-PSSessionOption](../New-PSSessionOption.md).
+@Microsoft.PowerShell.Core.New-PSSessionOption.
 
 To set these options for all remote commands in the current session, use
 the option object that `New-PSSessionOption` creates in the value of the
@@ -785,7 +785,7 @@ For more information about the WS-Management timeouts, see the Help topic for
 the WSMan provider (type "Get-Help WSMan").
 
 For more information about the `New-PSSessionOption` cmdlet, see
-[New-PSSessionOption](../New-PSSessionOption.md).
+@Microsoft.PowerShell.Core.New-PSSessionOption.
 
 ## TROUBLESHOOTING UNRESPONSIVE BEHAVIOR
 

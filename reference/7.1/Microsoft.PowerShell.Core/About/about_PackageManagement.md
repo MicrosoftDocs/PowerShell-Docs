@@ -104,23 +104,23 @@ PackageManagement project on GitHub at https://oneget.org.
 
 ## SEE ALSO
 
-[Get-PackageProvider](../../PackageManagement/Get-PackageProvider.md)
+@PackageManagement.Get-PackageProvider
 
-[Get-PackageSource](../../PackageManagement/Get-PackageSource.md)
+@PackageManagement.Get-PackageSource
 
-[Register-PackageSource](../../PackageManagement/Register-PackageSource.md)
+@PackageManagement.Register-PackageSource
 
-[Set-PackageSource](../../PackageManagement/Set-PackageSource.md)
+@PackageManagement.Set-PackageSource
 
-[Unregister-PackageSource](../../PackageManagement/Unregister-PackageSource.md)
+@PackageManagement.Unregister-PackageSource
 
-[Get-Package](../../PackageManagement/Get-Package.md)
+@PackageManagement.Get-Package
 
-[Find-Package](../../PackageManagement/Find-Package.md)
+@PackageManagement.Find-Package
 
-[Install-Package](../../PackageManagement/Install-Package.md)
+@PackageManagement.Install-Package
 
-[Save-Package](../../PackageManagement/Save-Package.md)
+@PackageManagement.Save-Package
 
-[Uninstall-Package](../../PackageManagement/Uninstall-Package.md)
+@PackageManagement.Uninstall-Package
 

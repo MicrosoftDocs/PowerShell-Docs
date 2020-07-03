@@ -289,7 +289,7 @@ the current PowerShell session.
 
 This example uses the **PrependPath** parameter to place the new file in a
 higher precedence order than the original file. For more information, see
-[Update-FormatData](../../Microsoft.PowerShell.Utility/Update-FormatData.md).
+@Microsoft.PowerShell.Utility.Update-FormatData.
 
 ```powershell
 Update-FormatData -PrependPath $PSHOME\MyDotNetTypes.Format.ps1xml
@@ -413,8 +413,8 @@ value of the **Name** parameter:
 - FormatViewBinding
 
 For more information, see
-[Trace-Command](../../Microsoft.PowerShell.Utility/Trace-Command.md) and
-[Get-TraceSource](../../Microsoft.PowerShell.Utility/Get-TraceSource.md).
+@Microsoft.PowerShell.Utility.Trace-Command and
+@Microsoft.PowerShell.Utility.Get-TraceSource.
 
 ## Signing a Format.ps1xml file
 
@@ -438,7 +438,7 @@ the table format, otherwise, `Format-Table` fails.
 
 Use `Format-Table` with the **View** parameter to specify the custom view's
 name and format the table's output. For an example of how the command is run,
-see [Format-Table](../../Microsoft.PowerShell.Utility/Format-Table.md).
+see @Microsoft.PowerShell.Utility.Format-Table.
 
 ```powershell
 $Parms = @{
@@ -565,16 +565,16 @@ Update-FormatData -PrependPath $PSHOME\Format\MyFileSystem.Format.ps1xml
 
 ## See also
 
-[Export-FormatData](../../Microsoft.PowerShell.Utility/Export-FormatData.md)
+@Microsoft.PowerShell.Utility.Export-FormatData
 
-[Get-FormatData](../../Microsoft.PowerShell.Utility/Get-FormatData.md)
+@Microsoft.PowerShell.Utility.Get-FormatData
 
-[Get-TraceSource](../../Microsoft.PowerShell.Utility/Get-TraceSource.md)
+@Microsoft.PowerShell.Utility.Get-TraceSource
 
 [Format Schema XML Reference](/powershell/scripting/developer/format/format-schema-xml-reference)
 
-[Trace-Command](../../Microsoft.PowerShell.Utility/Trace-Command.md)
+@Microsoft.PowerShell.Utility.Trace-Command
 
-[Update-FormatData](../../Microsoft.PowerShell.Utility/Update-FormatData.md)
+@Microsoft.PowerShell.Utility.Update-FormatData
 
 [Writing a PowerShell Formatting File](/powershell/scripting/developer/format/writing-a-powershell-formatting-file)

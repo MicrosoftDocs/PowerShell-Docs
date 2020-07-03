@@ -165,9 +165,9 @@ if ([ExperimentalFeature]::IsEnabled("MyModule.MyExperimentalFeature"))
 
 ## See also
 
-[Enable-ExperimentalFeature](../Enable-ExperimentalFeature.md)
+@Microsoft.PowerShell.Core.Enable-ExperimentalFeature
 
-[Disable-ExperimentalFeature](../Disable-ExperimentalFeature.md)
+@Microsoft.PowerShell.Core.Disable-ExperimentalFeature
 
-[Get-ExperimentalFeature](../Get-ExperimentalFeature.md)
+@Microsoft.PowerShell.Core.Get-ExperimentalFeature
 

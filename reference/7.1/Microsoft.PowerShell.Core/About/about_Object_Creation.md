@@ -19,25 +19,25 @@ commands and scripts.
 
 There are many ways to create objects, this list is not definitive:
 
-- [New-Object](../../Microsoft.PowerShell.Utility/New-Object.md): Creates an
+- @Microsoft.PowerShell.Utility.New-Object: Creates an
   instance of a .NET Framework object or COM object.
-- [Import-Csv](../../Microsoft.PowerShell.Utility/Import-CSV.md)/
-  [ConvertFrom-CSV](../../Microsoft.PowerShell.Utility/ConvertFrom-CSV.md):
+- @Microsoft.PowerShell.Utility.Import-Csv/
+  @Microsoft.PowerShell.Utility.ConvertFrom-Csv:
   Creates custom objects (**PSCustomObject**) from the items defined as comma
   separated values.
-- [ConvertFrom-Json](../../Microsoft.PowerShell.Utility/ConvertFrom-Json.md):
+- @Microsoft.PowerShell.Utility.ConvertFrom-Json:
   Creates custom objects defined in JavaScript Object Notation (JSON).
-- [ConvertFrom-StringData](../../Microsoft.PowerShell.Utility/ConvertFrom-StringData.md):
+- @Microsoft.PowerShell.Utility.ConvertFrom-StringData:
   Creates custom objects defined as key value pairs.
-- [Add-Type](../../Microsoft.PowerShell.Utility/Add-Type.md): Allows you to
+- @Microsoft.PowerShell.Utility.Add-Type: Allows you to
   define a class in your PowerShell session that you can instantiate with
   `New-Object`.
-- [New-Module](../New-Module.md): The **AsCustomObject** parameter creates a
+- @Microsoft.PowerShell.Core.New-Module: The **AsCustomObject** parameter creates a
   custom object you define using script block.
-- [Add-Member](../../Microsoft.PowerShell.Utility/Add-Member.md): Adds
+- @Microsoft.PowerShell.Utility.Add-Member: Adds
   properties to existing objects. You can use `Add-Member` to create a custom
   object out of a simple type, like `[System.Int32]`.
-- [Select-Object](../../Microsoft.PowerShell.Utility/Select-Object.md): Selects
+- @Microsoft.PowerShell.Utility.Select-Object: Selects
   properties on an object. You can use `Select-Object` to create custom and
   calculated properties on an already instantiated object.
 

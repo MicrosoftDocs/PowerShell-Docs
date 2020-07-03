@@ -342,16 +342,16 @@ is denied.
 
 [about_PSSessions](about_PSSessions.md)
 
-[Start-Job](../Start-Job.md)
+@Microsoft.PowerShell.Core.Start-Job
 
-[Get-Job](../Get-Job.md)
+@Microsoft.PowerShell.Core.Get-Job
 
-[Receive-Job](../Receive-Job.md)
+@Microsoft.PowerShell.Core.Receive-Job
 
-[Stop-Job](../Stop-Job.md)
+@Microsoft.PowerShell.Core.Stop-Job
 
-[Wait-Job](../Wait-Job.md)
+@Microsoft.PowerShell.Core.Wait-Job
 
-[Remove-Job](../Remove-Job.md)
+@Microsoft.PowerShell.Core.Remove-Job
 
-[Invoke-Command](../../Microsoft.PowerShell.Core/Invoke-Command.md)
+@Microsoft.PowerShell.Core.Invoke-Command

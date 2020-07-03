@@ -166,7 +166,7 @@ The environment variables that store preferences include:
   - User-installed modules: These are modules installed by the user.
     `Install-Module` has a **Scope** parameter that allows you to specify
     whether the module is installed for the current user or for all users. For
-    more information, see [Install-Module](../../PowerShellGet/Install-Module.md).
+    more information, see @PowerShellGet.Install-Module.
 
     - On Windows, the location of the user-specific **CurrentUser** scope is
       the `$HOME\Documents\PowerShell\Modules` folder. The location of the

@@ -215,7 +215,7 @@ in the MSDN library.
 
 [about_Updatable_Help](about_Updatable_Help.md)
 
-[Get-Help](../Get-Help.md)
+@Microsoft.PowerShell.Core.Get-Help
 
 [Get-IseSnippet](../../ISE/Get-IseSnippet.md)
 
@@ -223,8 +223,8 @@ in the MSDN library.
 
 [New-IseSnippet](../../ISE/New-IseSnippet.md)
 
-[Save-Help](../Save-Help.md)
+@Microsoft.PowerShell.Core.Save-Help
 
-[Show-Command](../../Microsoft.PowerShell.Utility/Show-Command.md)
+@Microsoft.PowerShell.Utility.Show-Command
 
-[Update-Help](../Update-Help.md)
+@Microsoft.PowerShell.Core.Update-Help

@@ -275,15 +275,15 @@ profiles. For more information about profiles, see [about_Profiles](about_Profil
 
 ## See also
 
-[Get-Location](../../Microsoft.PowerShell.Management/Get-Location.md)
+@Microsoft.PowerShell.Management.Get-Location
 
-[Enter-PSSession](../Enter-PSSession.md)
+@Microsoft.PowerShell.Core.Enter-PSSession
 
-[Get-History](../Get-History.md)
+@Microsoft.PowerShell.Core.Get-History
 
-[Get-Random](../../Microsoft.PowerShell.Utility/Get-Random.md)
+@Microsoft.PowerShell.Utility.Get-Random
 
-[Write-Host](../../Microsoft.PowerShell.Utility/Write-Host.md)
+@Microsoft.PowerShell.Utility.Write-Host
 
 [about_Profiles](about_Profiles.md)
 

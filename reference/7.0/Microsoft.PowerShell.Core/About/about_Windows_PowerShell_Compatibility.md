@@ -153,4 +153,4 @@ about_Windows_PowerShell_Compatibility
 
 [about_Modules](about_Modules.md)
 
-[Import-Module](../Import-Module.md)
+@Microsoft.PowerShell.Core.Import-Module

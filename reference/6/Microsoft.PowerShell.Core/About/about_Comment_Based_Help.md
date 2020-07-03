@@ -15,7 +15,7 @@ Describes how to write comment-based help topics for functions and scripts.
 You can write comment-based help topics for functions and scripts by using
 special help comment keywords.
 
-The [Get-Help](../Get-Help.md) cmdlet displays comment-based help in the same
+The @Microsoft.PowerShell.Core.Get-Help cmdlet displays comment-based help in the same
 format in which it displays the cmdlet help topics that are generated from XML
 files. Users can use all of the parameters of `Get-Help`, such as
 **Detailed**, **Full**, **Examples**, and **Online**, to display the contents
@@ -28,9 +28,9 @@ cannot find XML-based help topics for functions or scripts.
 
 This topic explains how to write help topics for functions and scripts. For
 information about how to display help topics for functions and scripts, see
-[Get-Help](../Get-Help.md).
+@Microsoft.PowerShell.Core.Get-Help.
 
-The [Update-Help](../Update-Help.md) and [Save-Help](../Save-Help.md) cmdlets
+The @Microsoft.PowerShell.Core.Update-Help and @Microsoft.PowerShell.Core.Save-Help cmdlets
 work only on XML files. Updatable Help does not support comment-based help
 topics.
 
@@ -322,7 +322,7 @@ this keyword to avoid conflicts when there are commands with the same name.
 
 Specifies a session that contains the help topic. Enter a variable that
 contains a **PSSession** object. This keyword is used by the
-[Export-PSSession](../../Microsoft.PowerShell.Utility/Export-PSSession.md)
+@Microsoft.PowerShell.Utility.Export-PSSession
 cmdlet to find the help topics for the exported commands.
 
 ```powershell

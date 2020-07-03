@@ -124,8 +124,8 @@ file called `script.log`
 
 This example suppresses all information stream data. To read more about
 **Information** stream cmdlets, see
-[Write-Host](../../microsoft.powershell.utility/Write-Host.md) and
-[Write-Information](../../microsoft.powershell.utility/Write-Information.md)
+@Microsoft.PowerShell.Utility.Write-Host and
+@Microsoft.PowerShell.Utility.Write-Information
 
 ## Notes
 
@@ -189,9 +189,9 @@ used. See: [`-gt` Comparison Operator](about_Comparison_Operators.md#-gt)
 
 ## See also
 
-[Out-File](../../microsoft.powershell.utility/Out-File.md)
+@Microsoft.PowerShell.Utility.Out-File
 
-[Tee-Object](../../microsoft.powershell.utility/Tee-Object.md)
+@Microsoft.PowerShell.Utility.Tee-Object
 
 [about_Operators](about_Operators.md)
 

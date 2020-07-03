@@ -217,7 +217,7 @@ requires thread synchronization.
 
 For more information see:
 
-- [Start-ThreadJob](../../ThreadJob/Start-ThreadJob.md)
+- @ThreadJob.Start-ThreadJob
 - [ForEach-Object](../ForEach-Object.md#notes)
 
 #### Serialization of variable values

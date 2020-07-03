@@ -56,7 +56,7 @@ Cache (GAC) for the associated assembly.
 
 If you are not creating new PowerShell classes, use the `Add-Type` cmdlet
 instead. For more information, see
-[Add-Type](../../Microsoft.PowerShell.Utility/Add-Type.md).
+@Microsoft.PowerShell.Utility.Add-Type.
 
 ## Examples
 

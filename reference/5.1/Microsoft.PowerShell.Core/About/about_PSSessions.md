@@ -239,7 +239,7 @@ until it times out.
 
 You can also use the **IdleTimeout** parameter of the `New-PSSessionOption`
 cmdlet to set an expiration time for an idle PSSession. For more information,
-see [New-PSSessionOption](../New-PSSessionOption.md).
+see @Microsoft.PowerShell.Core.New-PSSessionOption.
 
 ## The PSSession Cmdlets
 
@@ -271,18 +271,18 @@ For more information about PSSessions, see [about_PSSession_Details](about_PSSes
 
 [about_Remote_Requirements](about_Remote_Requirements.md)
 
-[Connect-PSSession](../Connect-PSSession.md)
+@Microsoft.PowerShell.Core.Connect-PSSession
 
-[Disconnect-PSSession](../Disconnect-PSSession.md)
+@Microsoft.PowerShell.Core.Disconnect-PSSession
 
-[Enter-PSSession](../Enter-PSSession.md)
+@Microsoft.PowerShell.Core.Enter-PSSession
 
-[Exit-PSSession](../Exit-PSSession.md)
+@Microsoft.PowerShell.Core.Exit-PSSession
 
-[Get-PSSession](../Get-PSSession.md)
+@Microsoft.PowerShell.Core.Get-PSSession
 
-[Invoke-Command](../Invoke-Command.md)
+@Microsoft.PowerShell.Core.Invoke-Command
 
-[New-PSSession](../New-PSSession.md)
+@Microsoft.PowerShell.Core.New-PSSession
 
-[Remove-PSSession](../Remove-PSSession.md)
+@Microsoft.PowerShell.Core.Remove-PSSession

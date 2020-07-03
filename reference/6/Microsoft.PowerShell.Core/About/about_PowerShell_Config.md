@@ -60,7 +60,7 @@ For AllUsers configurations, this sets the **LocalMachine** execution policy.
 For CurrentUser configurations, this sets the **CurrentUser** execution policy.
 
 > [!NOTE]
-> The [`Set-ExecutionPolicy`](../../Microsoft.PowerShell.Security/Set-ExecutionPolicy.md)
+> The @Microsoft.PowerShell.Security.Set-ExecutionPolicy
 > cmdlet modifies this setting in the AllUsers configuration file
 > when invoked with `-Scope LocalMachine`,
 > and modifies this setting in the CurrentUser configuration file

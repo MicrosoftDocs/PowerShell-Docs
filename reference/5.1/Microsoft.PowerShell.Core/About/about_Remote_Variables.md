@@ -180,10 +180,10 @@ Invoke-Command -ComputerName S1 -ScriptBlock {
 
 [about_Variables](about_Variables.md)
 
-[Enter-PSSession](../Enter-PSSession.md)
+@Microsoft.PowerShell.Core.Enter-PSSession
 
-[Invoke-Command](../Invoke-Command.md)
+@Microsoft.PowerShell.Core.Invoke-Command
 
-[New-PSSession](../New-PSSession.md)
+@Microsoft.PowerShell.Core.New-PSSession
 
 [Start-ThreadJob](/powershell/module/ThreadJob/Start-ThreadJob)

@@ -239,4 +239,4 @@ Param
 
 [about_PSSnapins](about_PSSnapins.md)
 
-[Get-PSSnapin](../Get-PSSnapin.md)
+@Microsoft.PowerShell.Core.Get-PSSnapin

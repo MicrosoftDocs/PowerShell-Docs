@@ -228,9 +228,9 @@ information, see
 
 ## See Also
 
-[Get-EventLog](../../Microsoft.PowerShell.Management/Get-EventLog.md)
+@Microsoft.PowerShell.Management.Get-EventLog
 
-[Get-WmiObject](../../Microsoft.PowerShell.Management/Get-WmiObject.md)
+@Microsoft.PowerShell.Management.Get-WmiObject
 
 [about_Group_Policy_Settings](about_Group_Policy_Settings.md)
 

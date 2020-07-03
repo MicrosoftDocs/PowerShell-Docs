@@ -198,15 +198,15 @@ information, see [about_EventLogs](about_EventLogs.md).
 
 ## SEE ALSO
 
-[Add-PsSnapin](../Add-PsSnapin.md)
+@Microsoft.PowerShell.Core.Add-PSSnapin
 
-[Get-PsSnapin](../Get-PsSnapin.md)
+@Microsoft.PowerShell.Core.Get-PSSnapin
 
-[Remove-PsSnapin](../Remove-PsSnapin.md)
+@Microsoft.PowerShell.Core.Remove-PSSnapin
 
-[Export-Console](../Export-Console.md)
+@Microsoft.PowerShell.Core.Export-Console
 
-[Get-Command](../Get-Command.md)
+@Microsoft.PowerShell.Core.Get-Command
 
 [about_Profiles](about_Profiles.md)
 

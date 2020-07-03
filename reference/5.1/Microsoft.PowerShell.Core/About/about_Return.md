@@ -236,6 +236,6 @@ object to the pipeline, use one of the following two methods:
 
 [about_Classes](about_Classes.md)
 
-[Write-Information](../../Microsoft.PowerShell.Utility/Write-Information.md)
+@Microsoft.PowerShell.Utility.Write-Information
 
 [about_Script_Blocks](about_Script_Blocks.md)

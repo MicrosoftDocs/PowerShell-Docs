@@ -124,7 +124,7 @@ location).
 
 ## SEE ALSO
 
-[Set-Location](../../Microsoft.PowerShell.Management/Set-Location.md)
+@Microsoft.PowerShell.Management.Set-Location
 
 [about_Providers](about_Providers.md)
 

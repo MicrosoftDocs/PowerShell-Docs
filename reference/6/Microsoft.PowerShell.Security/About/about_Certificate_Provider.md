@@ -35,19 +35,19 @@ certificate stores and certificates on your computer.
 The **Certificate** provider supports the following cmdlets, which are covered
 in this article.
 
-- [Get-Location](../../Microsoft.PowerShell.Management/Get-Location.md)
-- [Set-Location](../../Microsoft.PowerShell.Management/Set-Location.md)
-- [Get-Item](../../Microsoft.PowerShell.Management/Get-Item.md)
-- [Get-ChildItem](../../Microsoft.PowerShell.Management/Get-ChildItem.md)
-- [Invoke-Item](../../Microsoft.PowerShell.Management/Invoke-Item.md)
-- [Move-Item](../../Microsoft.PowerShell.Management/Move-Item.md)
-- [New-Item](../../Microsoft.PowerShell.Management/New-Item.md)
-- [Remove-Item](../../Microsoft.PowerShell.Management/Remove-Item.md)
-- [Get-ItemProperty](../../Microsoft.PowerShell.Management/Get-ItemProperty.md)
-- [Set-ItemProperty](../../Microsoft.PowerShell.Management/Set-ItemProperty.md)
-- [Clear-ItemProperty](../../Microsoft.PowerShell.Management/Set-ItemProperty.md)
-- [Get-AuthenticodeSignature](../Get-AuthenticodeSignature.md)
-- [Set-AuthenticodeSignature](../Set-AuthenticodeSignature.md)
+- @Microsoft.PowerShell.Management.Get-Location
+- @Microsoft.PowerShell.Management.Set-Location
+- @Microsoft.PowerShell.Management.Get-Item
+- @Microsoft.PowerShell.Management.Get-ChildItem
+- @Microsoft.PowerShell.Management.Invoke-Item
+- @Microsoft.PowerShell.Management.Move-Item
+- @Microsoft.PowerShell.Management.New-Item
+- @Microsoft.PowerShell.Management.Remove-Item
+- @Microsoft.PowerShell.Management.Get-ItemProperty
+- @Microsoft.PowerShell.Management.Set-ItemProperty
+- @Microsoft.PowerShell.Management.Set-ItemProperty
+- @Microsoft.PowerShell.Security.Get-AuthenticodeSignature
+- @Microsoft.PowerShell.Security.Set-AuthenticodeSignature
 
 ## Types exposed by this provider
 
@@ -95,9 +95,9 @@ Set-Location C:
 > [!NOTE]
 > PowerShell uses aliases to allow you a familiar way to work with provider
 > paths. Commands such as `dir` and `ls` are now aliases for
-> [Get-ChildItem](../../Microsoft.PowerShell.Management/Get-ChildItem.md),
-> `cd` is an alias for [Set-Location](../../Microsoft.PowerShell.Management/Set-Location.md).
-> and `pwd` is an alias for [Get-Location](../../Microsoft.PowerShell.Management/Get-Location.md).
+> @Microsoft.PowerShell.Management.Get-ChildItem,
+> `cd` is an alias for @Microsoft.PowerShell.Management.Set-Location.
+> and `pwd` is an alias for @Microsoft.PowerShell.Management.Get-Location.
 
 ## Displaying the Contents of the Cert: drive
 
@@ -425,9 +425,9 @@ The following Certificate provider parameters were removed in PowerShell 6.0.
 
 #### Cmdlets supported
 
-- [Get-Item](../../Microsoft.PowerShell.Management/Get-Item.md)
+- @Microsoft.PowerShell.Management.Get-Item
 
-- [Get-ChildItem](../../Microsoft.PowerShell.Management/Get-ChildItem.md)
+- @Microsoft.PowerShell.Management.Get-ChildItem
 
 This parameter gets certificates that have "Code Signing" in their
 **EnhancedKeyUsageList** property value.
@@ -436,7 +436,7 @@ This parameter gets certificates that have "Code Signing" in their
 
 #### Cmdlets supported
 
-- [Remove-Item](../../Microsoft.PowerShell.Management/Remove-Item.md)
+- @Microsoft.PowerShell.Management.Remove-Item
 
 This parameter deletes the associated private key when it deletes the certificate.
 
@@ -462,7 +462,7 @@ In a `Certificate` drive, the following values are allowed:
 
 #### Cmdlets Supported
 
-- [New-Item](../../Microsoft.PowerShell.Management/New-Item.md)
+- @Microsoft.PowerShell.Management.New-Item
 
 ## Script properties
 
@@ -501,7 +501,7 @@ Beginning in Windows PowerShell 3.0, you can get customized help topics for
 provider cmdlets that explain how those cmdlets behave in a file system drive.
 
 To get the help topics that are customized for the file system drive, run a
-[Get-Help](../../Microsoft.PowerShell.Core/Get-Help.md) command in a file system drive or use the
+@Microsoft.PowerShell.Core.Get-Help command in a file system drive or use the
 `-Path` parameter of `Get-Help` to specify a file system drive.
 
 ```powershell
@@ -518,8 +518,8 @@ Get-Help Get-ChildItem -Path cert:
 
 [about_Signing](../../Microsoft.PowerShell.Core/About/about_Signing.md)
 
-[Get-AuthenticodeSignature](../Get-AuthenticodeSignature.md)
+@Microsoft.PowerShell.Security.Get-AuthenticodeSignature
 
-[Set-AuthenticodeSignature](../Set-AuthenticodeSignature.md)
+@Microsoft.PowerShell.Security.Set-AuthenticodeSignature
 
-[Get-PfxCertificate](../Get-PfxCertificate.md)
+@Microsoft.PowerShell.Security.Get-PfxCertificate

@@ -165,26 +165,26 @@ MSDN (Microsoft Developer Network) library.
 
 ## SEE ALSO
 
-[Connect-WSMan](../Connect-WSMan.md)
+@Microsoft.WsMan.Management.Connect-WSMan
 
-[Disable-WSManCredSSP](../Disable-WSManCredSSP.md)
+@Microsoft.WsMan.Management.Disable-WSManCredSSP
 
-[Disconnect-WSMan](../Disconnect-WSMan.md)
+@Microsoft.WsMan.Management.Disconnect-WSMan
 
-[Enable-WSManCredSSP](../Enable-WSManCredSSP.md)
+@Microsoft.WsMan.Management.Enable-WSManCredSSP
 
-[Get-WSManCredSSP](../Get-WSManCredSSP.md)
+@Microsoft.WsMan.Management.Get-WSManCredSSP
 
-[Get-WSManInstance](../Get-WSManInstance.md)
+@Microsoft.WsMan.Management.Get-WSManInstance
 
-[Invoke-WSManAction](../Invoke-WSManAction.md)
+@Microsoft.WsMan.Management.Invoke-WSManAction
 
-[New-WSManInstance](../New-WSManInstance.md)
+@Microsoft.WsMan.Management.New-WSManInstance
 
-[Remove-WSManInstance](../Remove-WSManInstance.md)
+@Microsoft.WsMan.Management.Remove-WSManInstance
 
-[Set-WSManInstance](../Set-WSManInstance.md)
+@Microsoft.WsMan.Management.Set-WSManInstance
 
-[Set-WSManQuickConfig](../Set-WSManQuickConfig.md)
+@Microsoft.WsMan.Management.Set-WSManQuickConfig
 
-[Test-WSMan](../Test-WSMan.md)
+@Microsoft.WsMan.Management.Test-WSMan
