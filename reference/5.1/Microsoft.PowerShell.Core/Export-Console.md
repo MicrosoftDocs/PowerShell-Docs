@@ -228,7 +228,6 @@ This cmdlet creates a file that contains the exported aliases.
   You can also save Windows PowerShell snap-ins for future sessions by adding an Add-PSSnapin command to your Windows PowerShell profile.
 For more information, see about_Profiles.
 
-*
 
 ## RELATED LINKS
 

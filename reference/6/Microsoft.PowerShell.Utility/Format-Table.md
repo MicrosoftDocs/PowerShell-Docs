@@ -172,13 +172,13 @@ from the result of a `Get-Date` command, which gets the current date and time.
 
 ### Example 7: Format Notepad processes
 
-This example uses `Get-WmiObject` to get the running time for all **notepad** processes on the local
-computer. You can use `Get-WmiObject` with the **ComputerName** parameter to get information from
+This example uses `Get-CimInstance` to get the running time for all **notepad** processes on the local
+computer. You can use `Get-CimInstance` with the **ComputerName** parameter to get information from
 remote computers.
 
 ```powershell
-$Processes = Get-WmiObject -Class win32_process -Filter "name='notepad.exe'"
-$Processes | Format-Table ProcessName, @{ Label = "Total Running Time"; Expression={(Get-Date) - $_.ConvertToDateTime($_.CreationDate)}}
+$Processes = Get-CimInstance -Class win32_process -Filter "name='notepad.exe'"
+$Processes | Format-Table ProcessName, @{ Label = "Total Running Time"; Expression={(Get-Date) - $_.CreationDate}}
 ```
 
 ```Output
@@ -188,7 +188,7 @@ notepad.exe 03:39:39.6260693
 notepad.exe 00:19:56.1376922
 ```
 
-`Get-WmiObject` gets instances of the WMI **Win32_Process** class that describes all the local
+`Get-CimInstance` gets instances of the WMI **Win32_Process** class that describes all the local
 computer's processes named **notepad.exe**. The process objects are stored in the `$Processes`
 variable.
 
@@ -198,10 +198,8 @@ displays the **ProcessName** property and a new calculated property, **Total Run
 The command assigns the name of the new calculated property, **Total Running Time**, to the
 **Label** key. The **Expression** key's script block calculates how long the process has been
 running by subtracting the processes creation date from the current date. The `Get-Date` cmdlet gets
-the current date. The **ConvertToDateTime** method converts the **CreationDate** property of the
-**Win32_Process** object from a **WMI CIM_DATETIME** object to a .NET **DateTime** object that can
-be compared with the output of `Get-Date`. The converted creation date is subtracted from the
-current date. The result is the value of **Total Running Time**.
+the current date. The creation date is subtracted from the current date. The result is the value of
+**Total Running Time**.
 
 ### Example 8: Troubleshooting format errors
 
@@ -527,6 +525,6 @@ You can send any object down the pipeline to `Format-Table`.
 
 [Get-Member](Get-Member.md)
 
-[Get-WmiObject](../Microsoft.PowerShell.Management/Get-WmiObject.md)
+[Get-CimInstance](../CimCmdlets/Get-CimInstance.md)
 
 [Update-FormatData](Update-FormatData.md)

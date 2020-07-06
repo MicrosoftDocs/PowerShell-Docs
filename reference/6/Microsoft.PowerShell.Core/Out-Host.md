@@ -159,8 +159,6 @@ variable and use the **InputObject** parameter to pass the data to the cmdlet.
 
 [Out-Null](Out-Null.md)
 
-[Out-Printer](../Microsoft.PowerShell.Utility/Out-Printer.md)
-
 [Out-String](../Microsoft.PowerShell.Utility/Out-String.md)
 
 [Write-Host](../Microsoft.PowerShell.Utility/Write-Host.md)

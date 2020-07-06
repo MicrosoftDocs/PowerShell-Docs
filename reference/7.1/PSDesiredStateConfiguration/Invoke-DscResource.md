@@ -161,17 +161,4 @@ will throw an exception.
 
 [Windows PowerShell Desired State Configuration Overview](/powershell/scripting/dsc/overview/dscforengineers)
 
-[Get-DscConfiguration](Get-DscConfiguration.md)
-
-[Get-DscConfigurationStatus](Get-DscConfigurationStatus.md)
-
 [Get-DscResource](Get-DscResource.md)
-
-[Restore-DscConfiguration](Restore-DscConfiguration.md)
-
-[Set-DscLocalConfigurationManager](Set-DscLocalConfigurationManager.md)
-
-[Start-DscConfiguration](Start-DscConfiguration.md)
-
-[Test-DscConfiguration](Test-DscConfiguration.md)
-

@@ -830,7 +830,6 @@ Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: True
-Accept wildcard characters: False
 ```
 
 ### -WhatIf
@@ -866,4 +865,3 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## NOTES
 
 ## RELATED LINKS
-

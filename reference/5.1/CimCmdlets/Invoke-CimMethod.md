@@ -450,11 +450,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### CIM class
+### Microsoft.Management.Infrastructure.CimClass
 
 This cmdlet accepts a CIM class as an input object.
 
-### CIM instance
+### Microsoft.Management.Infrastructure.CimInstance
 
 This cmdlet accepts a CIM instance as an input object.
 
