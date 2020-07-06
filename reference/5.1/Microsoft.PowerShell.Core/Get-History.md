@@ -138,7 +138,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Int64
+### System.Int64
 
 You can pipe a history ID to this cmdlet.
 

@@ -497,16 +497,15 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### CIM Instance
+### Microsoft.Management.Infrastructure.CimInstance
 
 This cmdlet accepts an input objects specified with the InputObject parameter.
 
 ## OUTPUTS
 
-### CIM Instance
+### Microsoft.Management.Infrastructure.CimInstance
 
-This cmdlet returns one or more CIM instance objects representing a snapshot of the CIM instances on
-the CIM server.
+This cmdlet returns one or more CIM instance objects representing a snapshot of the CIM instances on the CIM server.
 
 ## NOTES
 

@@ -446,13 +446,9 @@ If a job stops before completion and its process hasn't exited, the process is f
 
 [Receive-Job](Receive-Job.md)
 
-[Resume-Job](Resume-Job.md)
-
 [Start-Job](Start-Job.md)
 
 [Stop-Job](Stop-Job.md)
-
-[Suspend-Job](Suspend-Job.md)
 
 [Wait-Job](Wait-Job.md)
 
