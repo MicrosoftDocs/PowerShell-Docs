@@ -79,7 +79,7 @@ To complete the task, the *Force* parameter is also required on **Unregister-Eve
 Cancels all event subscriptions, including subscriptions that were hidden by using the *SupportEvent* parameter of **Register-ObjectEvent**, **Register-WmiEvent**, and **Register-EngineEvent**.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -96,7 +96,7 @@ Specifies a source identifier that this cmdlet cancels event subscriptions.
 A *SourceIdentifier* or *SubscriptionId* parameter must be included in every command.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: BySource
 Aliases:
 
@@ -113,7 +113,7 @@ Specifies a source identifier ID that this cmdlet cancels event subscriptions.
 A *SourceIdentifier* or *SubscriptionId* parameter must be included in every command.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: ById
 Aliases:
 
@@ -128,7 +128,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -144,7 +144,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 

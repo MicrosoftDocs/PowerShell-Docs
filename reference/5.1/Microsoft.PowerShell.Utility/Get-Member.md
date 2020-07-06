@@ -284,7 +284,7 @@ By default, `Get-Member` gets these properties in all views except **Base** and 
 does not display them.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -309,7 +309,7 @@ differences are as follows:
   the collection, such as the properties of the array in an array of strings.
 
 ```yaml
-Type: PSObject
+Type: System.Management.Automation.PSObject
 Parameter Sets: (All)
 Aliases:
 
@@ -354,7 +354,7 @@ use the **MemberType** parameter with the **Static** or **View** parameters, `Ge
 members that belong to both sets.
 
 ```yaml
-Type: PSMemberTypes
+Type: System.Management.Automation.PSMemberTypes
 Parameter Sets: (All)
 Aliases: Type
 Accepted values: AliasProperty, CodeProperty, Property, NoteProperty, ScriptProperty, Properties, PropertySet, Method, CodeMethod, ScriptMethod, Methods, ParameterizedProperty, MemberSet, Event, Dynamic, All
@@ -377,7 +377,7 @@ If you use the **Name** parameter with the **MemberType**, **View**, or **Static
 To get a static member by name, use the **Static** parameter with the **Name** parameter.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -399,7 +399,7 @@ If you use the **Static** parameter with the **MemberType** parameter, `Get-Memb
 members that belong to both sets.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -432,7 +432,7 @@ that belong to both sets. If you use the **Static** and **View** parameters in t
 **View** parameter is ignored.
 
 ```yaml
-Type: PSMemberViewTypes
+Type: System.Management.Automation.PSMemberViewTypes
 Parameter Sets: (All)
 Aliases:
 Accepted values: Extended, Adapted, Base, All

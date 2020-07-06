@@ -95,7 +95,6 @@ This cmdlet does not return any output.
 
 * This cmdlet takes only the common parameters.
 
-*
 
 ## RELATED LINKS
 

@@ -104,7 +104,7 @@ message, "Try the new Break All command," is the result.
 Specifies an encrypted string, or a variable containing an encrypted string.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: ByContent
 Aliases:
 
@@ -123,7 +123,7 @@ characters. If the path includes escape characters, enclose each one in single q
 Single quotation marks tell PowerShell not to interpret enclosed characters as escape characters.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: ByLiteralPath
 Aliases:
 
@@ -139,7 +139,7 @@ Accept wildcard characters: False
 Specifies the path to encrypted content that you want to decrypt.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: ByPath
 Aliases:
 

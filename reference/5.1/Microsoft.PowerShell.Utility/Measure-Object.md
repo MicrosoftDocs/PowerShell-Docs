@@ -200,7 +200,7 @@ Lines Words Characters Property
 Indicates that the cmdlet displays the average value of the specified properties.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: GenericMeasure
 Aliases:
 
@@ -220,7 +220,7 @@ Indicates that the cmdlet counts the number of characters in the input objects.
 > input objects. See Example 7.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: TextMeasure
 Aliases:
 
@@ -237,7 +237,7 @@ Indicates that the cmdlet ignores white space in character counts.
 By default, white space is not ignored.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: TextMeasure
 Aliases:
 
@@ -260,7 +260,7 @@ It is recommended that you use `Measure-Object` in the pipeline if you want to m
 collection of objects based on whether the objects have specific values in defined properties.
 
 ```yaml
-Type: PSObject
+Type: System.Management.Automation.PSObject
 Parameter Sets: (All)
 Aliases:
 
@@ -280,7 +280,7 @@ Indicates that the cmdlet counts the number of lines in the input objects.
 > input objects. See Example 7.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: TextMeasure
 Aliases:
 
@@ -296,7 +296,7 @@ Accept wildcard characters: False
 Indicates that the cmdlet displays the maximum value of the specified properties.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: GenericMeasure
 Aliases:
 
@@ -312,7 +312,7 @@ Accept wildcard characters: False
 Indicates that the cmdlet displays the minimum value of the specified properties.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: GenericMeasure
 Aliases:
 
@@ -329,7 +329,7 @@ Specifies one or more properties to measure. If you do not specify any other mea
 `Measure-Object` counts the objects that have the properties you specify.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -345,7 +345,7 @@ Accept wildcard characters: True
 Indicates that the cmdlet displays the sum of the values of the specified properties.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: GenericMeasure
 Aliases:
 
@@ -365,7 +365,7 @@ Indicates that the cmdlet counts the number of words in the input objects.
 > input objects. See Example 7.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: TextMeasure
 Aliases:
 

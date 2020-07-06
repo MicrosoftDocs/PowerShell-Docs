@@ -90,7 +90,7 @@ Enter one or more IDs of scheduled jobs on the computer.
 By default, **Get-ScheduledJob** gets all scheduled jobs on the computer.
 
 ```yaml
-Type: Int32[]
+Type: System.Int32[]
 Parameter Sets: DefinitionId
 Aliases:
 
@@ -108,7 +108,7 @@ Wildcards are supported.
 By default, **Get-ScheduledJob** gets all scheduled jobs on the computer.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: DefinitionName
 Aliases:
 

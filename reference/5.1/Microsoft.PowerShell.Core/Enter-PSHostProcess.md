@@ -139,7 +139,7 @@ Specifies an application domain name to connect to if omitted, uses **DefaultApp
 `Get-PSHostProcessInfo` to display the application domain names.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -156,7 +156,7 @@ Specifies a **PSHostProcessInfo** object that can be connected to with PowerShel
 `Get-PSHostProcessInfo` to get the object.
 
 ```yaml
-Type: PSHostProcessInfo
+Type: Microsoft.PowerShell.Commands.PSHostProcessInfo
 Parameter Sets: PSHostProcessInfoParameterSet
 Aliases:
 
@@ -172,7 +172,7 @@ Accept wildcard characters: False
 Specifies a process by the process ID. To get a process ID, run the `Get-Process` cmdlet.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: ProcessIdParameterSet
 Aliases:
 
@@ -189,7 +189,7 @@ Specifies a process by the process name. To get a process name, run the `Get-Pro
 can also get process names from the Properties dialog box of a process in Task Manager.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: ProcessNameParameterSet
 Aliases:
 
@@ -207,7 +207,7 @@ results of a `Get-Process` command that returns process that you want to enter i
 then specify the variable as the value of this parameter.
 
 ```yaml
-Type: Process
+Type: System.Diagnostics.Process
 Parameter Sets: ProcessParameterSet
 Aliases:
 

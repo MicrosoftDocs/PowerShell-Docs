@@ -345,7 +345,7 @@ The acceptable values for this parameter are as follows:
 - Configuration
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 Accepted values: Alias, Cmdlet, Provider, General, FAQ, Glossary, HelpFile, ScriptCommand, Function, Filter, ExternalScript, All, DefaultHelp, Workflow, DscResource, Class, Configuration
@@ -364,7 +364,7 @@ Wildcard characters are permitted. This parameter has no effect on displays of c
 (**About_**) help.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -382,7 +382,7 @@ when the help files are installed on the computer. It has no effect on displays 
 (**About_**) help.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: DetailedView
 Aliases:
 
@@ -402,7 +402,7 @@ This parameter is effective only when the help files are installed on the comput
 on displays of conceptual (**About_**) help.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: Examples
 Aliases:
 
@@ -422,7 +422,7 @@ This parameter is effective only when the help files are installed on the comput
 on displays of conceptual (**About_**) help.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: AllUsersView
 Aliases:
 
@@ -439,7 +439,7 @@ Displays help for items with the specified functionality. Enter the functionalit
 characters are permitted. This parameter has no effect on displays of conceptual (**About_**) help.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -472,7 +472,7 @@ The names of conceptual articles, such as `about_Objects`, must be entered in En
 non-English versions of PowerShell.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -494,7 +494,7 @@ and [Supporting Online Help](/powershell/scripting/developer/module/supporting-o
 [Writing Help for PowerShell Cmdlets](/powershell/scripting/developer/help/writing-help-for-windows-powershell-cmdlets).
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: Online
 Aliases:
 
@@ -511,7 +511,7 @@ Displays only the detailed descriptions of the specified parameters. Wildcards a
 parameter has no effect on displays of conceptual (**About_**) help.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: Parameters
 Aliases:
 
@@ -541,7 +541,7 @@ help articles.
 For more information about PowerShell providers, see [about_Providers](./About/about_Providers.md).
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -562,7 +562,7 @@ help files based on the value of this parameter. This parameter has no effect on
 cmdlets.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -585,7 +585,7 @@ workflows, scripts) and conceptual **About** articles. It does not support provi
 This parameter was introduced in PowerShell 3.0.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: ShowWindow
 Aliases:
 

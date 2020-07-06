@@ -109,7 +109,7 @@ object is an empty string, `ConvertFrom-Json` does not generate any output. The 
 value cannot be `$null`.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 

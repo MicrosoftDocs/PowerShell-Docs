@@ -120,7 +120,7 @@ Indicates that this cmdlet overwrites the data in a console file without warning
 The read-only attribute is changed and is not reset when the command finishes.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -136,7 +136,7 @@ Indicates that this cmdlet does not overwrite  an existing console file.
 By default, if a file occurs in the specified path, **Export-Console** overwrites the file without warning.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: NoOverwrite
 
@@ -162,7 +162,7 @@ The path of the most recently used console file is stored in the value of the $C
 For more information, see about_Automatic_Variables.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases: PSPath
 
@@ -177,7 +177,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -193,7 +193,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -228,7 +228,6 @@ This cmdlet creates a file that contains the exported aliases.
   You can also save Windows PowerShell snap-ins for future sessions by adding an Add-PSSnapin command to your Windows PowerShell profile.
 For more information, see about_Profiles.
 
-*
 
 ## RELATED LINKS
 

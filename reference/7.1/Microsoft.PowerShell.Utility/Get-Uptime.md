@@ -72,7 +72,7 @@ Cause the cmdlet to return a **DateTime** object representing the last time that
 system was booted.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: Since
 Aliases:
 

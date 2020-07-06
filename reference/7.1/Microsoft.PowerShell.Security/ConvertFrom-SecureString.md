@@ -107,7 +107,7 @@ When set, `ConvertFrom-SecureString` will convert secure strings to the decrypte
 as output.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: AsPlainText
 Aliases:
 
@@ -123,7 +123,7 @@ Accept wildcard characters: False
 Specifies the encryption key as a byte array.
 
 ```yaml
-Type: Byte[]
+Type: System.Byte[]
 Parameter Sets: Open
 Aliases:
 
@@ -140,7 +140,7 @@ Specifies the encryption key as a secure string. The secure string value is conv
 array before being used as the key.
 
 ```yaml
-Type: SecureString
+Type: System.Security.SecureString
 Parameter Sets: Secure
 Aliases:
 
@@ -156,7 +156,7 @@ Accept wildcard characters: False
 Specifies the secure string to convert to an encrypted standard string.
 
 ```yaml
-Type: SecureString
+Type: System.Security.SecureString
 Parameter Sets: (All)
 Aliases:
 

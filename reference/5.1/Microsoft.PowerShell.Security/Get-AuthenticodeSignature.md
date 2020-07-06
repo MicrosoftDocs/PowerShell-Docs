@@ -97,7 +97,7 @@ must be used with **SourcePathOrExtension** parameter. The contents of the file 
 (UTF-16LE) format.
 
 ```yaml
-Type: Byte[]
+Type: System.Byte[]
 Parameter Sets: ByContent
 Aliases:
 
@@ -115,7 +115,7 @@ file. It is not necessary to type **FilePath** at the command line when you spec
 parameter.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: ByPath
 Aliases:
 
@@ -134,7 +134,7 @@ includes an escape character, enclose it in single quotation marks. Single quota
 PowerShell not to interpret any characters as escape characters.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: ByLiteralPath
 Aliases: PSPath
 
@@ -151,7 +151,7 @@ Path to the file or file type of the content for which the Authenticode signatur
 parameter is used with **Content** where file content is passed as a byte array.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: ByContent
 Aliases:
 

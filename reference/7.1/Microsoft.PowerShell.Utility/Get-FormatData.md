@@ -160,7 +160,7 @@ This parameter was added in PowerShell 5.1 to improve compatibility when remotin
 older versions of PowerShell.
 
 ```yaml
-Type: Version
+Type: System.Version
 Parameter Sets: (All)
 Aliases:
 
@@ -178,7 +178,7 @@ Enter the type names.
 Wildcards are permitted.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 

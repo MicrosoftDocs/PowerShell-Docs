@@ -116,7 +116,7 @@ script. The **PassThru** parameter displays the script's contents in the PowerSh
 Specifies the script author.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -132,7 +132,7 @@ Accept wildcard characters: False
 Specifies the company or vendor who created the script.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -148,7 +148,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running `Update-ScriptFileInfo`.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -164,7 +164,7 @@ Accept wildcard characters: False
 Specifies a copyright statement for the script.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -180,7 +180,7 @@ Accept wildcard characters: False
 Specifies a description for the script.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -196,7 +196,7 @@ Accept wildcard characters: False
 Specifies an array of external module dependencies.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -212,7 +212,7 @@ Accept wildcard characters: False
 Specifies an array of external script dependencies.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -228,7 +228,7 @@ Accept wildcard characters: False
 Forces `Update-ScriptFileInfo` to run without asking for user confirmation.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -244,7 +244,7 @@ Accept wildcard characters: False
 Specifies a unique ID for a script.
 
 ```yaml
-Type: Guid
+Type: System.Guid
 Parameter Sets: (All)
 Aliases:
 
@@ -261,7 +261,7 @@ Specifies the URL of an icon for the script. The specified icon is displayed on 
 for the script.
 
 ```yaml
-Type: Uri
+Type: System.Uri
 Parameter Sets: (All)
 Aliases:
 
@@ -277,7 +277,7 @@ Accept wildcard characters: False
 Specifies the URL of licensing terms.
 
 ```yaml
-Type: Uri
+Type: System.Uri
 Parameter Sets: (All)
 Aliases:
 
@@ -296,7 +296,7 @@ enclose them in single quotation marks. Single quotation marks tell PowerShell n
 characters as escape sequences.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: LiteralPathParameterSet
 Aliases: PSPath
 
@@ -313,7 +313,7 @@ Returns an object that represents the item with which you're working. By default
 `Update-ScriptFileInfo` doesn't generate any output.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -329,7 +329,7 @@ Accept wildcard characters: False
 Specifies the script file's location. Wildcards are permitted.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: PathParameterSet
 Aliases:
 
@@ -345,7 +345,7 @@ Accept wildcard characters: True
 Specifies the private data for the script.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -361,7 +361,7 @@ Accept wildcard characters: False
 Specifies the URL of a web page about this project.
 
 ```yaml
-Type: Uri
+Type: System.Uri
 Parameter Sets: (All)
 Aliases:
 
@@ -378,7 +378,7 @@ Specifies a string array that contains release notes or comments that you want a
 version of the script.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -395,7 +395,7 @@ Specifies modules that must be in the global session state. If the required modu
 global session state, PowerShell imports them.
 
 ```yaml
-Type: Object[]
+Type: System.Object[]
 Parameter Sets: (All)
 Aliases:
 
@@ -411,7 +411,7 @@ Accept wildcard characters: False
 Specifies an array of required scripts.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -427,7 +427,7 @@ Accept wildcard characters: False
 Specifies an array of tags.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -443,7 +443,7 @@ Accept wildcard characters: False
 Specifies the script's version.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -459,7 +459,7 @@ Accept wildcard characters: False
 Shows what would happen if `Update-ScriptFileInfo` runs. The cmdlet isn't run.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 

@@ -100,7 +100,7 @@ parameter.
 In Windows PowerShell 2.0, by default, `Get-History` gets the 32 most recent entries.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: (All)
 Aliases:
 
@@ -118,7 +118,7 @@ entries. If you use both the **Id** and **Count** parameters in a command, `Get-
 most recent entries ending with the entry specified by the **Id** parameter.
 
 ```yaml
-Type: Int64[]
+Type: System.Int64[]
 Parameter Sets: (All)
 Aliases:
 
@@ -138,7 +138,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Int64
+### System.Int64
 
 You can pipe a history ID to this cmdlet.
 

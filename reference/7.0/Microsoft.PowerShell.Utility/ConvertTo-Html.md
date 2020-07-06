@@ -11,7 +11,7 @@ title: ConvertTo-Html
 # ConvertTo-Html
 
 ## SYNOPSIS
-Converts a .NET object into HTML that can be displayed in a Web browser.
+Converts .NET objects into HTML that can be displayed in a Web browser.
 
 ## SYNTAX
 

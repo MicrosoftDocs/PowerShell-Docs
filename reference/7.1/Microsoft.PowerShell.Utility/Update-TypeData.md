@@ -221,7 +221,7 @@ they are listed after the built-in files are loaded. You can also pipe an **Appe
 `Update-TypeData`.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: FileSet
 Aliases: PSPath, Path
 
@@ -246,7 +246,7 @@ file.
 This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: DynamicTypeSet
 Aliases:
 
@@ -271,7 +271,7 @@ file.
 This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: DynamicTypeSet
 Aliases:
 
@@ -293,7 +293,7 @@ the names of types that are added in the same command.
 This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: DynamicTypeSet
 Aliases:
 
@@ -312,7 +312,7 @@ for that type.
 This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: DynamicTypeSet, TypeDataSet
 Aliases:
 
@@ -339,7 +339,7 @@ parameter is required.
 This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
-Type: Boolean
+Type: System.Nullable`1[System.Boolean]
 Parameter Sets: DynamicTypeSet
 Aliases:
 
@@ -360,7 +360,7 @@ to add or change a property or method of a type.
 This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: DynamicTypeSet
 Aliases:
 
@@ -391,7 +391,7 @@ For information about these values, see
 This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
-Type: PSMemberTypes
+Type: System.Management.Automation.PSMemberTypes
 Parameter Sets: DynamicTypeSet
 Aliases:
 Accepted values: NoteProperty, AliasProperty, ScriptProperty, CodeProperty, ScriptMethod, CodeMethod
@@ -409,7 +409,7 @@ Specifies the path to the optional `.ps1xml` files. The specified files are load
 they are listed before the built-in files are loaded.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: FileSet
 Aliases:
 
@@ -426,7 +426,7 @@ Specifies the names of properties that are serialized. Use this parameter when t
 **SerializationMethod** parameter is **SpecificProperties**.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: DynamicTypeSet
 Aliases:
 
@@ -459,7 +459,7 @@ set the value of the variable.
 This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
-Type: Object
+Type: System.Object
 Parameter Sets: DynamicTypeSet
 Aliases:
 
@@ -480,7 +480,7 @@ values.
 This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: DynamicTypeSet
 Aliases:
 
@@ -513,7 +513,7 @@ In PowerShell, serialization methods are stored in **PSStandardMembers** interna
 This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: DynamicTypeSet
 Aliases:
 
@@ -531,7 +531,7 @@ serialization result. This parameter is valid only when the value of the **Seria
 parameter is String.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: DynamicTypeSet
 Aliases:
 
@@ -549,7 +549,7 @@ Specifies the type to which object of this type are converted when they are dese
 This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
-Type: Type
+Type: System.Type
 Parameter Sets: DynamicTypeSet
 Aliases:
 
@@ -568,7 +568,7 @@ type adapter enables PowerShell to get the members of a type.
 This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
-Type: Type
+Type: System.Type
 Parameter Sets: DynamicTypeSet
 Aliases:
 
@@ -590,7 +590,7 @@ Enter a **System.Type** value that is derived from the **System.ComponentModel.T
 This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
-Type: Type
+Type: System.Type
 Parameter Sets: DynamicTypeSet
 Aliases:
 
@@ -610,7 +610,7 @@ command. You can also pipe a **TypeData** object to `Update-TypeData`.
 This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
-Type: TypeData[]
+Type: System.Management.Automation.Runspaces.TypeData[]
 Parameter Sets: TypeDataSet
 Aliases:
 
@@ -637,7 +637,7 @@ to add or change a property or method of a type.
 This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: DynamicTypeSet
 Aliases:
 
@@ -661,7 +661,7 @@ to add or change a property or method of a type.
 This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
-Type: Object
+Type: System.Object
 Parameter Sets: DynamicTypeSet
 Aliases:
 
@@ -677,7 +677,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -693,7 +693,7 @@ Accept wildcard characters: False
 Shows what would happen if the cmdlet runs. The cmdlet is not run.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 

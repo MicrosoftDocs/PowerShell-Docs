@@ -57,7 +57,7 @@ Specifies an array of names of security groups that this cmdlet gets.
 You can use the wildcard character.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: Default
 Aliases:
 
@@ -72,7 +72,7 @@ Accept wildcard characters: False
 Specifies an array of security IDs (SIDs) of security groups that this cmdlet gets.
 
 ```yaml
-Type: SecurityIdentifier[]
+Type: System.Security.Principal.SecurityIdentifier[]
 Parameter Sets: SecurityIdentifier
 Aliases:
 

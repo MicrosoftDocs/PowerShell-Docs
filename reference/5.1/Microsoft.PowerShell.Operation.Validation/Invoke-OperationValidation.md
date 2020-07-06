@@ -91,7 +91,7 @@ Includes Pester test output.
 The default is $False.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -107,7 +107,7 @@ Accept wildcard characters: False
 Specifies an array of names of modules.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: UseGetOperationTest
 Aliases:
 
@@ -123,7 +123,7 @@ Accept wildcard characters: False
 Specifies the path of an Operation Validation Framework test file.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: Path
 Aliases:
 
@@ -139,7 +139,7 @@ Accept wildcard characters: False
 Specifies a custom object that specifies the path to the file and the name of the test to run.
 
 ```yaml
-Type: PSObject[]
+Type: System.Management.Automation.PSObject[]
 Parameter Sets: FileAndTest
 Aliases:
 
@@ -157,7 +157,7 @@ Valid values are Simple, Comprehensive, or both.
 The default is "Simple,Comprehensive".
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: UseGetOperationTest
 Aliases:
 Accepted values: Simple, Comprehensive
@@ -174,7 +174,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -191,7 +191,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 

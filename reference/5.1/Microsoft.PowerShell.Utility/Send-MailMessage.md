@@ -102,7 +102,7 @@ Specifies the path and file names of files to be attached to the email message. 
 parameter or pipe the paths and file names to `Send-MailMessage`.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases: PsPath
 
@@ -119,7 +119,7 @@ Specifies the email addresses that receive a copy of the mail but are not listed
 the message. Enter names (optional) and the email address, such as `Name <someone@fabrikam.com>`.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -135,7 +135,7 @@ Accept wildcard characters: False
 Specifies the content of the email message.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -151,7 +151,7 @@ Accept wildcard characters: False
 Specifies that the value of the **Body** parameter contains HTML.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: BAH
 
@@ -168,7 +168,7 @@ Specifies the email addresses to which a carbon copy (CC) of the email message i
 (optional) and the email address, such as `Name <someone@fabrikam.com>`.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -195,7 +195,7 @@ object and the password is stored as a [SecureString](/dotnet/api/system.securit
 > [How secure is SecureString?](/dotnet/api/system.security.securestring#how-secure-is-securestring).
 
 ```yaml
-Type: PSCredential
+Type: System.Management.Automation.PSCredential
 Parameter Sets: (All)
 Aliases:
 
@@ -222,7 +222,7 @@ The acceptable values for this parameter are as follows:
 - `Never`: Never notify.
 
 ```yaml
-Type: DeliveryNotificationOptions
+Type: System.Net.Mail.DeliveryNotificationOptions
 Parameter Sets: (All)
 Aliases: DNO
 Accepted values: None, OnSuccess, OnFailure, Delay, Never
@@ -250,7 +250,7 @@ The acceptable values for this parameter are as follows:
 - `UTF32` Uses UTF-32 with the little-endian byte order.
 
 ```yaml
-Type: Encoding
+Type: System.Text.Encoding
 Parameter Sets: (All)
 Aliases: BE
 Accepted values: ASCII, BigEndianUnicode, Default, OEM, Unicode, UTF7, UTF8, UTF32
@@ -268,7 +268,7 @@ The **From** parameter is required. This parameter specifies the sender's email 
 name (optional) and email address, such as `Name <someone@fabrikam.com>`.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -285,7 +285,7 @@ Specifies an alternate port on the SMTP server. The default value is 25, which i
 port.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: (All)
 Aliases:
 
@@ -302,7 +302,7 @@ Specifies the priority of the email message. Normal is the default. The acceptab
 parameter are Normal, High, and Low.
 
 ```yaml
-Type: MailPriority
+Type: System.Net.Mail.MailPriority
 Parameter Sets: (All)
 Aliases:
 Accepted values: Normal, High, Low
@@ -322,7 +322,7 @@ The default value is the value of the `$PSEmailServer` preference variable. If t
 variable is not set and this parameter is not used, the `Send-MailMessage` command fails.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases: ComputerName
 
@@ -338,7 +338,7 @@ Accept wildcard characters: False
 The **Subject** parameter is required. This parameter specifies the subject of the email message.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases: sub
 
@@ -356,7 +356,7 @@ are multiple recipients, separate their addresses with a comma (`,`). Enter name
 email address, such as `Name <someone@fabrikam.com>`.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -373,7 +373,7 @@ The Secure Sockets Layer (SSL) protocol is used to establish a secure connection
 computer to send mail. By default, SSL is not used.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 

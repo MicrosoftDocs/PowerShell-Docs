@@ -55,7 +55,7 @@ This command gets validation tests from the module named AddNumbers in the C:\te
 Specifies an array of names of modules.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -72,7 +72,7 @@ Valid values are Simple, Comprehensive, or both.
 The default is "Simple,Comprehensive".
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 Accepted values: Simple, Comprehensive

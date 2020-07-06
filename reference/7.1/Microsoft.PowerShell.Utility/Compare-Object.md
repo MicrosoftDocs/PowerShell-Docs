@@ -262,7 +262,7 @@ In the second case, the **TimeSpan** is converted to a string so the object are 
 Indicates that comparisons should be case-sensitive.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -278,7 +278,7 @@ Accept wildcard characters: False
 Specifies the culture to use for comparisons.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -294,7 +294,7 @@ Accept wildcard characters: False
 Specifies the objects that are compared to the **reference** objects.
 
 ```yaml
-Type: PSObject[]
+Type: System.Management.Automation.PSObject[]
 Parameter Sets: (All)
 Aliases:
 
@@ -314,7 +314,7 @@ As of PowerShell 7.1, when using the **ExcludeDifferent** parameter, **IncludeEq
 and the output only contains objects that are equal.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -333,7 +333,7 @@ By default, the output also includes the differences between the **reference** a
 objects.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -350,7 +350,7 @@ When you use the **PassThru** parameter, `Compare-Object` omits the **PSCustomOb
 around the compared objects and returns the differing objects, unchanged.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -366,7 +366,7 @@ Accept wildcard characters: False
 Specifies an array of properties of the **reference** and **difference** objects to compare.
 
 ```yaml
-Type: Object[]
+Type: System.Object[]
 Parameter Sets: (All)
 Aliases:
 
@@ -382,7 +382,7 @@ Accept wildcard characters: False
 Specifies an array of objects used as a reference for comparison.
 
 ```yaml
-Type: PSObject[]
+Type: System.Management.Automation.PSObject[]
 Parameter Sets: (All)
 Aliases:
 
@@ -401,7 +401,7 @@ in the same position in a collection. The default value is `[Int32]::MaxValue`, 
 `Compare-Object` examines the entire object collection.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: (All)
 Aliases:
 

@@ -110,7 +110,7 @@ The **ComputerName** parameter doesn't rely on Windows PowerShell remoting. If y
 configured to run remote commands, use the **ComputerName** parameter.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases: CN, __Server, IPAddress
 
@@ -138,7 +138,7 @@ object and the password is stored as a [SecureString](/dotnet/api/system.securit
 > [How secure is SecureString?](/dotnet/api/system.security.securestring#how-secure-is-securestring).
 
 ```yaml
-Type: PSCredential
+Type: System.Management.Automation.PSCredential
 Parameter Sets: (All)
 Aliases:
 
@@ -154,7 +154,7 @@ Accept wildcard characters: False
 `Get-HotFix` uses the **Description** parameter to specify hotfix types. Wildcards are permitted.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: Description
 Aliases:
 
@@ -170,7 +170,7 @@ Accept wildcard characters: True
 Filters the `Get-HotFix` results for specific hotfix Ids. Wildcards aren't accepted.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: Default
 Aliases: HFID
 
@@ -216,9 +216,6 @@ The `Get-HotFix` output might vary on different operating systems.
 
 [Add-Content](Add-Content.md)
 
-[Get-ComputerRestorePoint](Get-ComputerRestorePoint.md)
-
 [Get-Credential](../Microsoft.PowerShell.Security/Get-Credential.md)
 
 [Win32_QuickFixEngineering class](/windows/desktop/CIMWin32Prov/win32-quickfixengineering)
-

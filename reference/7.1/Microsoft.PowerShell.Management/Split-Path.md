@@ -45,7 +45,7 @@ Split-Path [-Path] <String[]> [-Extension] [-Resolve] [-Credential <PSCredential
 ### QualifierSet
 
 ```
-Split-Path [-Path] <String[]> -Qualifier [-Resolve] [-Credential <PSCredential>]
+Split-Path [-Path] <String[]> [-Qualifier] [-Resolve] [-Credential <PSCredential>]
  [<CommonParameters>]
 ```
 
@@ -174,7 +174,7 @@ quotation marks to indicate that it is a single token.
 > user, or elevate your credentials when running this cmdlet, use [Invoke-Command](../Microsoft.PowerShell.Core/Invoke-Command.md).
 
 ```yaml
-Type: PSCredential
+Type: System.Management.Automation.PSCredential
 Parameter Sets: (All)
 Aliases:
 
@@ -193,7 +193,7 @@ Indicates that this cmdlet returns only the extension of the leaf. For example, 
 This parameter was introduced in PowerShell 6.0.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: ExtensionSet
 Aliases:
 
@@ -211,7 +211,7 @@ absolute path has a length greater than zero and does not use a dot (`.`) to ind
 path.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: IsAbsoluteSet
 Aliases:
 
@@ -228,7 +228,7 @@ Indicates that this cmdlet returns only the last item or container in the path. 
 path `C:\Test\Logs\Pass1.log`, it returns only Pass1.log.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: LeafSet
 Aliases:
 
@@ -247,7 +247,7 @@ Indicates that this cmdlet returns only base name of the leaf. For example, in t
 This parameter was introduced in PowerShell 6.0.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: LeafBaseSet
 Aliases:
 
@@ -266,7 +266,7 @@ enclose it in single quotation marks. Single quotation marks tell PowerShell not
 characters as escape sequences.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: LiteralPathSet
 Aliases: PSPath, LP
 
@@ -284,7 +284,7 @@ providers, the qualifier is the drive of the provider path, such as `C:` or `HKC
 path `C:\Test\Logs\Pass1.log`, it returns only `\Test\Logs\Pass1.log`.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: NoQualifierSet
 Aliases:
 
@@ -302,7 +302,7 @@ specified by the path. For example, in the path `C:\Test\Logs\Pass1.log`, it ret
 The **Parent** parameter is the default split location parameter.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: ParentSet
 Aliases:
 
@@ -319,8 +319,8 @@ Specifies the paths to be split. Wildcard characters are permitted. If the path 
 enclose it in quotation marks. You can also pipe a path to this cmdlet.
 
 ```yaml
-Type: String[]
-Parameter Sets: ParentSet, QualifierSet, LeafSet, LeafBaseSet, ExtensionSet, NoQualifierSet, IsAbsoluteSet
+Type: System.String[]
+Parameter Sets: ParentSet, LeafSet, LeafBaseSet, ExtensionSet, QualifierSet, NoQualifierSet, IsAbsoluteSet
 Aliases:
 
 Required: True
@@ -336,12 +336,12 @@ Indicates that this cmdlet returns only the qualifier of the specified path. For
 registry providers, the qualifier is the drive of the provider path, such as `C:` or `HKCU:`.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: QualifierSet
 Aliases:
 
 Required: False
-Position: Named
+Position: 1
 Default value: None
 Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
@@ -353,7 +353,7 @@ Indicates that this cmdlet displays the items that are referenced by the resulti
 instead of displaying the path elements.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 

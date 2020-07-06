@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.PSReadLine2.dll-Help.xml
 keywords: powershell,cmdlet
 Locale: en-US
-Module Name: PSReadLine
+Module Name: PSReadline
 ms.date: 12/07/2018
 online version: https://docs.microsoft.com/powershell/module/psreadline/remove-psreadlinekeyhandler?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
@@ -49,7 +49,7 @@ This parameter accepts an array of strings. Each string is a separate binding, n
 keys for a single binding.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases: Key
 
@@ -65,7 +65,7 @@ Accept wildcard characters: False
 Specify which vi mode the binding applies to. Possible values are: Insert, Command.
 
 ```yaml
-Type: ViMode
+Type: Microsoft.PowerShell.ViMode
 Parameter Sets: (All)
 Aliases:
 Accepted values: Insert, Command

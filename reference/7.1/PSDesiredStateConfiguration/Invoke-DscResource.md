@@ -1,5 +1,5 @@
 ---
-external help file: Microsoft.Windows.DSC.CoreConfProviders.dll-help.xml
+external help file: PSDesiredStateConfiguration-help.xml
 keywords: powershell,cmdlet
 Locale: en-US
 Module Name: PSDesiredStateConfiguration
@@ -17,8 +17,8 @@ Runs a method of a specified PowerShell Desired State Configuration (DSC) resour
 ## SYNTAX
 
 ```
-Invoke-DscResource [[-Method] <Object>] [[-Name] <Object>] [[-Property] <Object>]
- [[-ModuleName] <Object>] [-AsJob] [<CommonParameters>]
+Invoke-DscResource [-Name] <String> [[-ModuleName] <ModuleSpecification>] [-Method] <String>
+ [-Property] <Hashtable> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -73,15 +73,15 @@ Specifies the method of the resource that this cmdlet invokes. The acceptable va
 parameter are: **Get**, **Set**, and **Test**.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 Accepted values: Get, Set, Test
 
 Required: True
-Position: 1
+Position: 2
 Default value: None
-Accept pipeline input: True (ByPropertyName)
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -90,14 +90,14 @@ Accept wildcard characters: False
 Specifies the name of the module from which this cmdlet invokes the specified resource.
 
 ```yaml
-Type: ModuleSpecification
+Type: Microsoft.PowerShell.Commands.ModuleSpecification
 Parameter Sets: (All)
 Aliases:
 
-Required: True
-Position: Named
+Required: False
+Position: 1
 Default value: None
-Accept pipeline input: True (ByPropertyName)
+Accept pipeline input: True (ByPropertyName, ByValue)
 Accept wildcard characters: False
 ```
 
@@ -106,14 +106,14 @@ Accept wildcard characters: False
 Specifies the name of the DSC resource to start.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
 Required: True
 Position: 0
 Default value: None
-Accept pipeline input: True (ByPropertyName)
+Accept pipeline input: True (ByPropertyName, ByValue)
 Accept wildcard characters: False
 ```
 
@@ -122,14 +122,14 @@ Accept wildcard characters: False
 Specifies the resource property name and its value in a hash table as key and value, respectively.
 
 ```yaml
-Type: Hashtable
+Type: System.Collections.Hashtable
 Parameter Sets: (All)
 Aliases:
 
 Required: True
-Position: Named
+Position: 3
 Default value: None
-Accept pipeline input: True (ByPropertyName)
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -142,9 +142,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
+### System.String
+
+### Microsoft.PowerShell.Commands.ModuleSpecification
+
 ## OUTPUTS
 
-### Microsoft.Management.Infrastructure.CimInstance, System.Boolean
+### System.Object
 
 ## NOTES
 
@@ -157,17 +161,4 @@ will throw an exception.
 
 [Windows PowerShell Desired State Configuration Overview](/powershell/scripting/dsc/overview/dscforengineers)
 
-[Get-DscConfiguration](Get-DscConfiguration.md)
-
-[Get-DscConfigurationStatus](Get-DscConfigurationStatus.md)
-
 [Get-DscResource](Get-DscResource.md)
-
-[Restore-DscConfiguration](Restore-DscConfiguration.md)
-
-[Set-DscLocalConfigurationManager](Set-DscLocalConfigurationManager.md)
-
-[Start-DscConfiguration](Start-DscConfiguration.md)
-
-[Test-DscConfiguration](Test-DscConfiguration.md)
-

@@ -100,7 +100,7 @@ wildcards. If the path includes escape characters, enclose it in single quotatio
 quotation marks tell PowerShell not to interpret any characters as escape sequences.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: LiteralPath
 Aliases: PSPath, LP
 
@@ -117,7 +117,7 @@ Passes an object representing the location to the pipeline. By default, this cmd
 generate any output.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -135,7 +135,7 @@ location onto the top of the stack. Enter a path to any location whose provider 
 cmdlet. Wildcards are permitted. The parameter name is optional.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: Path
 Aliases:
 
@@ -161,7 +161,7 @@ To make a location stack the current location stack, use the StackName parameter
 > location stack.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 

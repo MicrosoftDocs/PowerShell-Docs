@@ -19,13 +19,13 @@ Gets the bound key functions for the PSReadLine module.
 ### FullListing (default)
 
 ```
-Get-PSReadLineKeyHandler [-Bound] [-Unbound]
+Get-PSReadLineKeyHandler [-Bound] [-Unbound] [<CommonParameters>]
 ```
 
 ### SpecificBindings
 
 ```
-Get-PSReadLineKeyHandler [-Chord] <String[]>
+Get-PSReadLineKeyHandler [-Chord] <String[]> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -135,7 +135,7 @@ Shift+Enter AddLine    Move the cursor to the next line without attempting to ex
 Indicates that this cmdlet returns functions that are bound.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: FullListing
 Aliases:
 
@@ -151,7 +151,7 @@ Accept wildcard characters: False
 Indicates that this cmdlet returns functions that are unbound.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: FullListing
 Aliases:
 
@@ -167,7 +167,7 @@ Accept wildcard characters: False
 Return only functions bound to specific keys or sequences.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: SpecificBindings
 Aliases: Key
 

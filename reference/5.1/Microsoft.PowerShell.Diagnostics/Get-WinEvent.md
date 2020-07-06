@@ -572,7 +572,7 @@ This cmdlet does not rely on PowerShell remoting. You can use the **ComputerName
 your computer is not configured to run remote commands.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: GetLogSet, ListLogSet, ListProviderSet, GetProviderSet, HashQuerySet, XmlQuerySet
 Aliases: Cn
 
@@ -594,7 +594,7 @@ a password. If you type only the parameter name, you are prompted for both a use
 password.
 
 ```yaml
-Type: PSCredential
+Type: System.Management.Automation.PSCredential
 Parameter Sets: (All)
 Aliases:
 
@@ -640,12 +640,31 @@ The valid `Get-WinEvent` **key/value** pairs are as follows:
 - **Data**=`<String[]>`
 
 ```yaml
-Type: Hashtable[]
+Type: System.Collections.Hashtable[]
 Parameter Sets: HashQuerySet
 Aliases:
 
 Required: True
-Position: 0
+Position: 1
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -FilterXPath
+
+Specifies an XPath query that this cmdlet select events from one or more logs.
+
+For more information about the XPath language, see [XPath Reference](/previous-versions/dotnet/netframework-4.0/ms256115(v=vs.100))
+and the Selection Filters section of [Event Selection](/previous-versions/aa385231(v=vs.85)).
+
+```yaml
+Type: System.String
+Parameter Sets: GetLogSet, GetProviderSet, FileSet
+Aliases:
+
+Required: False
+Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -667,31 +686,12 @@ information about the XML schema for event log queries, see [Query Schema](/wind
 and the XML Event Queries section of [Event Selection](/previous-versions/aa385231(v=vs.85)).
 
 ```yaml
-Type: XmlDocument
+Type: System.Xml.XmlDocument
 Parameter Sets: XmlQuerySet
 Aliases:
 
 Required: True
-Position: 0
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -FilterXPath
-
-Specifies an XPath query that this cmdlet select events from one or more logs.
-
-For more information about the XPath language, see [XPath Reference](/previous-versions/dotnet/netframework-4.0/ms256115(v=vs.100))
-and the Selection Filters section of [Event Selection](/previous-versions/aa385231(v=vs.85)).
-
-```yaml
-Type: String
-Parameter Sets: GetLogSet, GetProviderSet, FileSet
-Aliases:
-
-Required: False
-Position: Named
+Position: 1
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -706,7 +706,7 @@ By default, the `Get-WinEvent` cmdlet excludes these logs unless you specify the
 debug or analytic log.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: GetLogSet, ListLogSet, GetProviderSet, HashQuerySet
 Aliases:
 
@@ -723,12 +723,12 @@ Specifies the event logs. Enter the event log names in a comma-separated list. W
 permitted. To get all the logs, use the asterisk (`*`) wildcard.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: ListLogSet
 Aliases:
 
 Required: True
-Position: 0
+Position: 1
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: True
@@ -743,12 +743,12 @@ Enter the provider names in a comma-separated list. Wildcards are permitted. To 
 all the event logs on the computer, use the asterisk (`*`) wildcard.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: ListProviderSet
 Aliases:
 
 Required: True
-Position: 0
+Position: 1
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: True
@@ -767,12 +767,12 @@ cmdlet.
 > log like this: `Get-WinEvent -ListLog * | ForEach-Object{ Get-WinEvent -LogName $_.Logname }`
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: GetLogSet
 Aliases:
 
 Required: False
-Position: 0
+Position: 1
 Default value: None
 Accept pipeline input: True (ByPropertyName, ByValue)
 Accept wildcard characters: True
@@ -784,7 +784,7 @@ Specifies the maximum number of events that are returned. Enter an integer such 
 is to return all the events in the logs or files.
 
 ```yaml
-Type: Int64
+Type: System.Int64
 Parameter Sets: GetLogSet, GetProviderSet, FileSet, HashQuerySet, XmlQuerySet
 Aliases:
 
@@ -805,7 +805,7 @@ logs. In these files, events are recorded in oldest-first order, and the events 
 in oldest-first order.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: GetLogSet, GetProviderSet, FileSet, HashQuerySet, XmlQuerySet
 Aliases:
 
@@ -825,12 +825,12 @@ log files in a comma-separated list, or use wildcard characters to create file p
 include events from different files and file types in the same command.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: FileSet
 Aliases: PSPath
 
 Required: True
-Position: 0
+Position: 1
 Default value: None
 Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: True
@@ -846,12 +846,12 @@ An event log provider is a program or service that writes events to the event lo
 PowerShell provider.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: GetProviderSet
 Aliases:
 
 Required: True
-Position: 0
+Position: 1
 Default value: None
 Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: True

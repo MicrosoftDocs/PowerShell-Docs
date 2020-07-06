@@ -175,7 +175,7 @@ For example:
 `Invoke-RestMethod https://website.com/service.aspx -Body $r.Forms\[0\]`
 
 ```yaml
-Type: Object
+Type: System.Object
 Parameter Sets: (All)
 Aliases:
 
@@ -196,7 +196,7 @@ To find a certificate, use `Get-PfxCertificate` or use the `Get-ChildItem` cmdle
 If the certificate is not valid or does not have sufficient authority, the command fails.
 
 ```yaml
-Type: X509Certificate
+Type: System.Security.Cryptography.X509Certificates.X509Certificate
 Parameter Sets: (All)
 Aliases:
 
@@ -218,7 +218,7 @@ To get a certificate thumbprint, use the `Get-Item` or `Get-ChildItem` command i
 `Cert:` drive.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -237,7 +237,7 @@ If this parameter is omitted and the request method is POST, `Invoke-WebRequest`
 type to application/x-www-form-urlencoded. Otherwise, the content type is not specified in the call.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -263,7 +263,7 @@ object and the password is stored as a [SecureString](/dotnet/api/system.securit
 > [How secure is SecureString?](/dotnet/api/system.security.securestring#how-secure-is-securestring).
 
 ```yaml
-Type: PSCredential
+Type: System.Management.Automation.PSCredential
 Parameter Sets: (All)
 Aliases:
 
@@ -281,7 +281,7 @@ By default, **KeepAlive** is **True**.
 **KeepAlive** establishes a persistent connection to the server to facilitate subsequent requests.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -301,7 +301,7 @@ To set **UserAgent** headers, use the **UserAgent** parameter.
 You cannot use this parameter to specify **UserAgent** or cookie headers.
 
 ```yaml
-Type: IDictionary
+Type: System.Collections.IDictionary
 Parameter Sets: (All)
 Aliases:
 
@@ -320,7 +320,7 @@ Enter a path and file name.
 If you omit the path, the default is the current location.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -339,7 +339,7 @@ The default value is 5.
 A value of 0 (zero) prevents all redirection.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: (All)
 Aliases:
 
@@ -367,7 +367,7 @@ The acceptable values for this parameter are:
 - Trace
 
 ```yaml
-Type: WebRequestMethod
+Type: Microsoft.PowerShell.Commands.WebRequestMethod
 Parameter Sets: (All)
 Aliases:
 Accepted values: Default, Get, Head, Post, Put, Delete, Trace, Options, Merge, Patch
@@ -389,7 +389,7 @@ By default, `Invoke-WebRequest` returns the results to the pipeline.
 To send the results to a file and to the pipeline, use the **Passthru** parameter.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -406,7 +406,7 @@ Indicates that the cmdlet returns the results, in addition to writing them to a 
 This parameter is valid only when the **OutFile** parameter is also used in the command.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -423,7 +423,7 @@ Specifies a proxy server for the request, rather than connecting directly to the
 Enter the URI of a network proxy server.
 
 ```yaml
-Type: Uri
+Type: System.Uri
 Parameter Sets: (All)
 Aliases:
 
@@ -446,7 +446,7 @@ This parameter is valid only when the **Proxy** parameter is also used in the co
 use the **ProxyCredential** and **ProxyUseDefaultCredentials** parameters in the same command.
 
 ```yaml
-Type: PSCredential
+Type: System.Management.Automation.PSCredential
 Parameter Sets: (All)
 Aliases:
 
@@ -466,7 +466,7 @@ This parameter is valid only when the **Proxy** parameter is also used in the co
 use the **ProxyCredential** and **ProxyUseDefaultCredentials** parameters in the same command.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -500,7 +500,7 @@ the web request session.
 You cannot use the **SessionVariable** and **WebSession** parameters in the same command.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases: SV
 
@@ -523,7 +523,7 @@ zero, but less than 15 seconds, it can take 15 seconds or more before a **WebExc
 and your request times out.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: (All)
 Aliases:
 
@@ -546,7 +546,7 @@ The acceptable values for this parameter are:
 - Identity
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 Accepted values: chunked, compress, deflate, gzip, identity
@@ -566,7 +566,7 @@ sent. Enter a URI. This parameter supports HTTP, HTTPS, FTP, and FILE values.
 This parameter is required.
 
 ```yaml
-Type: Uri
+Type: System.Uri
 Parameter Sets: (All)
 Aliases:
 
@@ -584,7 +584,7 @@ Indicates that the cmdlet uses the response object for HTML content without Docu
 such as on a Server Core installation of a Windows Server operating system.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -600,7 +600,7 @@ Accept wildcard characters: False
 Indicates that the cmdet uses the credentials of the current user to send the web request.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -623,7 +623,7 @@ class, such as Chrome, FireFox, InternetExplorer, Opera, and Safari. For example
 command uses the user agent string for Internet Explorer
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -655,7 +655,7 @@ session and saves it in the variable. In subsequent commands, use the variable a
 You cannot use the **SessionVariable** and **WebSession** parameters in the same command.
 
 ```yaml
-Type: WebRequestSession
+Type: Microsoft.PowerShell.Commands.WebRequestSession
 Parameter Sets: (All)
 Aliases:
 

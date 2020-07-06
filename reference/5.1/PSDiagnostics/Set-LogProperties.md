@@ -96,7 +96,7 @@ configuration.
 
 ## OUTPUTS
 
-### None
+### System.Object
 
 ## NOTES
 

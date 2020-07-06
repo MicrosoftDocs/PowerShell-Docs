@@ -47,7 +47,7 @@ hello
 Indicates that this cmdlet ignores newline characters and gets the entire contents of the clipboard.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 

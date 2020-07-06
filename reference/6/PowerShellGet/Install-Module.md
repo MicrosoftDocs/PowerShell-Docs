@@ -122,7 +122,7 @@ For modules that require a license, **AcceptLicense** automatically accepts the 
 during installation. For more information, see [Modules Requiring License Acceptance](/powershell/scripting/gallery/concepts/module-license-acceptance).
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -140,7 +140,7 @@ Overwrites existing commands that have the same name as commands being installed
 **AllowClobber** and **Force** can be used together in an `Install-Module` command.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -156,7 +156,7 @@ Accept wildcard characters: False
 Allows you to install a module marked as a pre-release.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: NameParameterSet
 Aliases:
 
@@ -172,7 +172,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the `Install-Module` cmdlet.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -189,7 +189,7 @@ Specifies a user account that has rights to install a module for a specified pac
 source.
 
 ```yaml
-Type: PSCredential
+Type: System.Management.Automation.PSCredential
 Parameter Sets: (All)
 Aliases:
 
@@ -208,7 +208,7 @@ installed. If there is an existing module with the same name and version, **Forc
 version. **Force** and **AllowClobber** can be used together in an `Install-Module` command.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -224,7 +224,7 @@ Accept wildcard characters: False
 Used for pipeline input.
 
 ```yaml
-Type: PSObject[]
+Type: System.Management.Automation.PSObject[]
 Parameter Sets: InputObject
 Aliases:
 
@@ -243,7 +243,7 @@ or equal to **MaximumVersion**. If you want to install multiple modules, you can
 `Install-Module` command.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: NameParameterSet
 Aliases:
 
@@ -262,7 +262,7 @@ version is installed. If you want to install multiple modules, you cannot use **
 **MinimumVersion** and **RequiredVersion** cannot be used in the same `Install-Module` command.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: NameParameterSet
 Aliases:
 
@@ -280,7 +280,7 @@ module names is accepted. The module name must match the module name in the repo
 `Find-Module` to get a list of module names.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: NameParameterSet
 Aliases:
 
@@ -294,7 +294,7 @@ Accept wildcard characters: False
 ### -PassThru
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -310,7 +310,7 @@ Accept wildcard characters: False
 Specifies a proxy server for the request, rather than connecting directly to the Internet resource.
 
 ```yaml
-Type: Uri
+Type: System.Uri
 Parameter Sets: (All)
 Aliases:
 
@@ -327,7 +327,7 @@ Specifies a user account that has permission to use the proxy server that is spe
 **Proxy** parameter.
 
 ```yaml
-Type: PSCredential
+Type: System.Management.Automation.PSCredential
 Parameter Sets: (All)
 Aliases:
 
@@ -346,7 +346,7 @@ repository in the `Install-Module` command. To register a repository, use `Regis
 To display registered repositories, use `Get-PSRepository`.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: NameParameterSet
 Aliases:
 
@@ -365,7 +365,7 @@ cannot use **RequiredVersion**. **RequiredVersion** cannot be used in the same `
 command as **MinimumVersion** or **MaximumVersion**.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: NameParameterSet
 Aliases:
 
@@ -398,7 +398,7 @@ When no **Scope** is defined, the default is set based on the PowerShellGet vers
 - In PowerShellGet 1.x versions, the default is **AllUsers**, which requires elevation for install.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 Accepted values: CurrentUser, AllUsers
@@ -417,7 +417,7 @@ when an existing module is digitally signed by a trusted publisher but the new v
 digitally signed by a trusted publisher.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -433,7 +433,7 @@ Accept wildcard characters: False
 Shows what would happen if an `Install-Module` command was run. The cmdlet is not run.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -528,4 +528,4 @@ The publisher will specify the required modules and their versions in the module
 
 [Update-Module](Update-Module.md)
 
-[about_Module](../Microsoft.PowerShell.Core/About/about_Modules)
+[about_Module](../Microsoft.PowerShell.Core/About/about_Modules.md)

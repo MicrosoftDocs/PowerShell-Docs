@@ -135,7 +135,7 @@ The acceptable values for this parameter are:
 - White
 
 ```yaml
-Type: ConsoleColor
+Type: System.ConsoleColor
 Parameter Sets: (All)
 Aliases:
 Accepted values: Black, DarkBlue, DarkGreen, DarkCyan, DarkRed, DarkMagenta, DarkYellow, Gray, DarkGray, Blue, Green, Cyan, Red, Magenta, Yellow, White
@@ -171,7 +171,7 @@ The acceptable values for this parameter are:
 - White
 
 ```yaml
-Type: ConsoleColor
+Type: System.ConsoleColor
 Parameter Sets: (All)
 Aliases:
 Accepted values: Black, DarkBlue, DarkGreen, DarkCyan, DarkRed, DarkMagenta, DarkYellow, Gray, DarkGray, Blue, Green, Cyan, Red, Magenta, Yellow, White
@@ -190,7 +190,7 @@ No spaces or newlines are inserted between the output strings.
 No newline is added after the last output string.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -206,7 +206,7 @@ Accept wildcard characters: False
 Objects to display in the host.
 
 ```yaml
-Type: Object
+Type: System.Object
 Parameter Sets: (All)
 Aliases: Msg, Message
 
@@ -222,7 +222,7 @@ Accept wildcard characters: False
 Specifies a separator string to insert between objects displayed by the host.
 
 ```yaml
-Type: Object
+Type: System.Object
 Parameter Sets: (All)
 Aliases:
 

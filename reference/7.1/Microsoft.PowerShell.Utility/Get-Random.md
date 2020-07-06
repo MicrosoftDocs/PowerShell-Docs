@@ -19,7 +19,7 @@ Gets a random number, or selects objects randomly from a collection.
 ### RandomNumberParameterSet (Default)
 
 ```
-Get-Random [-SetSeed <Int32>] [[-Maximum] <Object>] [-Minimum <Object>] [<CommonParameters>]
+Get-Random [-SetSeed <Int32>] [[-Maximum] <Object>] [-Minimum <Object>] [-Count <Int32>] [<CommonParameters>]
 ```
 
 ### RandomListItemParameterSet
@@ -266,8 +266,8 @@ When used with `InputObject`, if the value of **Count** exceeds the number of ob
 collection, `Get-Random` returns all of the objects in random order.
 
 ```yaml
-Type: Int32
-Parameter Sets: RandomListItemParameterSet
+Type: System.Int32
+Parameter Sets: RandomNumberParameterSet, RandomListItemParameterSet
 Aliases:
 
 Required: False
@@ -288,8 +288,8 @@ Beginning in PowerShell 7, the **InputObject** parameter accepts arrays that can
 string or `$null`. The array can be sent down the pipeline or as an **InputObject** parameter value.
 
 ```yaml
-Type: Object[]
-Parameter Sets: RandomListItemParameterSet
+Type: System.Object[]
+Parameter Sets: RandomListItemParameterSet, ShuffleParameterSet
 Aliases:
 
 Required: True
@@ -316,7 +316,7 @@ If the value of **Minimum** is a double (a floating-point number), the default v
 is **Double.MaxValue**. Otherwise, the default value is **Int32.MaxValue**.
 
 ```yaml
-Type: Object
+Type: System.Object
 Parameter Sets: RandomNumberParameterSet
 Aliases:
 
@@ -338,7 +338,7 @@ The value of **Minimum** must be less than (not equal to) the value of **Maximum
 floating-point number.
 
 ```yaml
-Type: Object
+Type: System.Object
 Parameter Sets: RandomNumberParameterSet
 Aliases:
 
@@ -362,7 +362,7 @@ used only when trying to reproduce behavior, such as when debugging or analyzing
 includes `Get-Random` commands.
 
 ```yaml
-Type: Int32
+Type: System.Nullable`1[System.Int32]
 Parameter Sets: (All)
 Aliases:
 
@@ -378,11 +378,11 @@ Accept wildcard characters: False
 Returns the entire collection in a randomized order.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: ShuffleParameterSet
 Aliases:
 
-Required: False
+Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False

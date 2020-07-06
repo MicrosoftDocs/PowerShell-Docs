@@ -166,7 +166,7 @@ Mode                LastWriteTime         Length Name
 > user or elevate your credentials when running this cmdlet, use `Invoke-Command`.
 
 ```yaml
-Type: PSCredential
+Type: System.Management.Automation.PSCredential
 Parameter Sets: (All)
 Aliases:
 
@@ -184,7 +184,7 @@ varies from provider to provider. Even using the **Force** parameter, the cmdlet
 security restrictions.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -221,7 +221,7 @@ In a `Certificate` drive, these are the values you can specify:
 For more information see [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases: Type
 
@@ -240,7 +240,7 @@ value. Items names passed using the **Name** parameter are created relative to t
 **Path** parameter.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: nameSet
 Aliases:
 
@@ -264,7 +264,7 @@ provider may not support all characters. For example, you cannot create a filena
 asterisk (`*`) character.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: pathSet, nameSet
 Aliases:
 
@@ -281,7 +281,7 @@ Includes the command in the active transaction. This parameter is valid only whe
 in progress. For more information, see [about_Transactions](../Microsoft.PowerShell.Core/About/about_Transactions.md).
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: usetx
 
@@ -297,7 +297,7 @@ Accept wildcard characters: False
 Specifies the value of the new item. You can also pipe a value to `New-Item`.
 
 ```yaml
-Type: Object
+Type: System.Object
 Parameter Sets: (All)
 Aliases: Target
 
@@ -313,7 +313,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -330,7 +330,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 

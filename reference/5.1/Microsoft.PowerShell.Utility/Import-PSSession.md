@@ -269,7 +269,7 @@ For more information, see about_Command_Precedence.
 By default, **Import-PSSession** does not import commands that have the same name as commands in the current session.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -286,7 +286,7 @@ Specifies an array of commands that results from using the specified arguments (
 For instance, to import the variant of the Get-Item command in the certificate (Cert:) drive in the PSSession in $S, type `Import-PSSession -Session $S -Command Get-Item -ArgumentList cert:`.
 
 ```yaml
-Type: Object[]
+Type: System.Object[]
 Parameter Sets: (All)
 Aliases: Args
 
@@ -306,7 +306,7 @@ To find a certificate, use the Get-PfxCertificate cmdlet or use the Get-ChildIte
 If the certificate is not valid or does not have sufficient authority, the command fails.
 
 ```yaml
-Type: X509Certificate2
+Type: System.Security.Cryptography.X509Certificates.X509Certificate2
 Parameter Sets: (All)
 Aliases:
 
@@ -330,7 +330,7 @@ If you use the *CommandName* parameter, the formatting files for the commands ar
 Similarly, if you use the *FormatTypeName* parameter, no commands are imported unless you use the *CommandName* parameter.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases: Name
 
@@ -364,7 +364,7 @@ The Windows PowerShell functions in the remote session.
 The script blocks in the remote session.
 
 ```yaml
-Type: CommandTypes
+Type: System.Management.Automation.CommandTypes
 Parameter Sets: (All)
 Aliases: Type
 Accepted values: Alias, Function, Filter, Cmdlet, ExternalScript, Application, Script, Workflow, Configuration, All
@@ -389,7 +389,7 @@ The complete module is still imported, including the non-conforming commands.
 Although the message is displayed to module users, the naming problem should be fixed by the module author.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -415,7 +415,7 @@ If you use the *FormatTypeName* parameter, no commands are imported unless you u
 Similarly, if you use the *CommandName* parameter, the formatting files for the commands are not imported unless you use the *FormatTypeName* parameter.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -434,7 +434,7 @@ For example, the *FullyQualifiedModule* parameter accepts a module name that is 
 You cannot specify the *FullyQualifiedModule* parameter in the same command as a *Module* parameter; the two parameters are mutually exclusive.
 
 ```yaml
-Type: ModuleSpecification[]
+Type: Microsoft.PowerShell.Commands.ModuleSpecification[]
 Parameter Sets: (All)
 Aliases:
 
@@ -455,7 +455,7 @@ Wildcards are not permitted.
 For more information, see about_PSSnapins and [about_Modules](../Microsoft.PowerShell.Core/About/about_Modules.md).
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases: PSSnapin
 
@@ -474,7 +474,7 @@ Use this parameter to avoid name conflicts that might occur when different comma
 For instance, if you specify the prefix Remote and then import a Get-Date cmdlet, the cmdlet is known in the session as Get-RemoteDate, and it is not confused with the original **Get-Date** cmdlet.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -492,7 +492,7 @@ You can specify only one session.
 This parameter is required.
 
 ```yaml
-Type: PSSession
+Type: System.Management.Automation.Runspaces.PSSession
 Parameter Sets: (All)
 Aliases:
 

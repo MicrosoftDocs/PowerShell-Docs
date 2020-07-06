@@ -69,7 +69,7 @@ This cmdlet gets only the specified Windows PowerShell snap-ins.
 Wildcard characters are permitted.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -88,7 +88,7 @@ The snap-ins that are installed with Windows PowerShell do not appear in this li
 Without this parameter, **Get-PSSnapin** gets the Windows PowerShell snap-ins that have been added to the session.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 

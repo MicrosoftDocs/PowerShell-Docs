@@ -151,7 +151,7 @@ object to a JSON string and a JSON object.
 Omits white space and indented formatting in the output string.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -168,7 +168,7 @@ Specifies how many levels of contained objects are included in the JSON represen
 value is 2.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: (All)
 Aliases:
 
@@ -189,7 +189,7 @@ When the input object is `$null`, `ConvertTo-Json` does not generate any output.
 object is an empty string, `ConvertTo-Json` returns an empty string.
 
 ```yaml
-Type: Object
+Type: System.Object
 Parameter Sets: (All)
 Aliases:
 

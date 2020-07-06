@@ -310,7 +310,7 @@ If you specify a character other than the actual string delimiter in the file, `
 create the objects from the CSV strings and will return the CSV strings.
 
 ```yaml
-Type: Char
+Type: System.Char
 Parameter Sets: Delimiter
 Aliases:
 
@@ -337,7 +337,7 @@ The acceptable values for this parameter are as follows:
 - `UTF32` Uses UTF-32 with the little-endian byte order.
 
 ```yaml
-Type: Encoding
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 Accepted values: ASCII, BigEndianUnicode, Default, OEM, Unicode, UTF7, UTF8, UTF32
@@ -365,7 +365,7 @@ When using the **Header** parameter, delete the original header row from the CSV
 `Import-Csv` creates an extra object from the items in the header row.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -384,7 +384,7 @@ includes escape characters, enclose it in single quotation marks. Single quotati
 PowerShell not to interpret any characters as escape sequences.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases: PSPath
 
@@ -401,7 +401,7 @@ Specifies the path to the CSV file to import.
 You can also pipe a path to `Import-Csv`.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -418,7 +418,7 @@ Uses the list separator for the current culture as the item delimiter. To find t
 for a culture, use the following command: `(Get-Culture).TextInfo.ListSeparator`.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: UseCulture
 Aliases:
 

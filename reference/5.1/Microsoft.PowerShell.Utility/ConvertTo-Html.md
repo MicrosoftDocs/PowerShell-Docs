@@ -220,7 +220,7 @@ list format. The first column displays the property name. The second column disp
 value.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 Accepted values: Table, List
@@ -238,7 +238,7 @@ Specifies the text to add after the opening `<BODY>` tag. By default, there is n
 position.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: Page
 Aliases:
 
@@ -255,7 +255,7 @@ Specifies the Uniform Resource Identifier (URI) of the cascading style sheet (CS
 to the HTML file. The URI is included in a style sheet link in the output.
 
 ```yaml
-Type: Uri
+Type: System.Uri
 Parameter Sets: Page
 Aliases: cu, uri
 
@@ -271,7 +271,7 @@ Accept wildcard characters: False
 Generates only an HTML table. The HTML, HEAD, TITLE, and BODY tags are omitted.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: Fragment
 Aliases:
 
@@ -288,7 +288,7 @@ Specifies the content of the `<HEAD>` tag. The default is `<title\>HTML TABLE</t
 the **Head** parameter, the **Title** parameter is ignored.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: Page
 Aliases:
 
@@ -310,7 +310,7 @@ objects. To create a table of the individual objects, use the pipeline operator 
 to `ConvertTo-Html`.
 
 ```yaml
-Type: PSObject
+Type: System.Management.Automation.PSObject
 Parameter Sets: (All)
 Aliases:
 
@@ -327,7 +327,7 @@ Specifies text to add after the closing `</TABLE>` tag. By default, there is no 
 position.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -344,7 +344,7 @@ Specifies text to add before the opening `<TABLE>` tag. By default, there is no 
 position.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -361,7 +361,7 @@ Includes the specified properties of the objects in the HTML. The value of the *
 parameter can be a new calculated property.
 
 ```yaml
-Type: Object[]
+Type: System.Object[]
 Parameter Sets: (All)
 Aliases:
 
@@ -377,7 +377,7 @@ Accept wildcard characters: False
 Specifies a title for the HTML file, that is, the text that appears between the `<TITLE>` tags.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: Page
 Aliases:
 

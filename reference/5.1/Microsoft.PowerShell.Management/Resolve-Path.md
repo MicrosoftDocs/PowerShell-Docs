@@ -121,7 +121,7 @@ cmdlet prompts you for a password.
 This parameter is not supported by any providers installed with PowerShell.
 
 ```yaml
-Type: PSCredential
+Type: System.Management.Automation.PSCredential
 Parameter Sets: (All)
 Aliases:
 
@@ -140,7 +140,7 @@ enclose it in single quotation marks. Single quotation marks tell PowerShell not
 characters as escape sequences.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: LiteralPath
 Aliases: PSPath
 
@@ -157,7 +157,7 @@ Specifies the PowerShell path to resolve. This parameter is required. You can al
 string to `Resolve-Path`. Wildcard characters are permitted.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: Path
 Aliases:
 
@@ -173,7 +173,7 @@ Accept wildcard characters: True
 Indicates that this cmdlet returns a relative path.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -190,7 +190,7 @@ This parameter is valid only when a transaction is in progress.
 For more information, see about_transactions.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: usetx
 

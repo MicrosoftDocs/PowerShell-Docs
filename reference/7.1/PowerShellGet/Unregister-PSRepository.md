@@ -48,7 +48,7 @@ Get-PSRepository | Unregister-PSRepository
 Specifies an array of names of the repositories to remove.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -82,4 +82,3 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 [Register-PSRepository](Register-PSRepository.md)
 
 [Set-PSRepository](Set-PSRepository.md)
-

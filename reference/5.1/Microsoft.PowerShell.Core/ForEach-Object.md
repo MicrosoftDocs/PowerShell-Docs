@@ -269,7 +269,7 @@ Specifies an array of arguments to a method call. For more information about the
 This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
-Type: Object[]
+Type: System.Object[]
 Parameter Sets: PropertyAndMethodSet
 Aliases: Args
 
@@ -287,7 +287,7 @@ is only run once for the entire pipeline. For more information about the `begin`
 [about_Functions](about/about_functions.md#piping-objects-to-functions).
 
 ```yaml
-Type: ScriptBlock
+Type: System.Management.Automation.ScriptBlock
 Parameter Sets: ScriptBlockSet
 Aliases:
 
@@ -305,7 +305,7 @@ is only run once for the entire pipeline. For more information about the `end` b
 [about_Functions](about/about_functions.md#piping-objects-to-functions).
 
 ```yaml
-Type: ScriptBlock
+Type: System.Management.Automation.ScriptBlock
 Parameter Sets: ScriptBlockSet
 Aliases:
 
@@ -331,7 +331,7 @@ those objects that have specific values in defined properties, you use `ForEach-
 pipeline, as shown in the examples in this topic.
 
 ```yaml
-Type: PSObject
+Type: System.Management.Automation.PSObject
 Parameter Sets: (All)
 Aliases:
 
@@ -354,7 +354,7 @@ command fails.
 This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: PropertyAndMethodSet
 Aliases:
 
@@ -378,7 +378,7 @@ mapped to the `begin` block, the last block is mapped to the `end` block, and th
 are all mapped to the `process` block.
 
 ```yaml
-Type: ScriptBlock[]
+Type: System.Management.Automation.ScriptBlock[]
 Parameter Sets: ScriptBlockSet
 Aliases:
 
@@ -396,7 +396,7 @@ Specifies all script blocks that are not taken by the **Process** parameter.
 This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
-Type: ScriptBlock[]
+Type: System.Management.Automation.ScriptBlock[]
 Parameter Sets: ScriptBlockSet
 Aliases:
 
@@ -412,7 +412,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -428,7 +428,7 @@ Accept wildcard characters: False
 Shows what would happen if the cmdlet runs. The cmdlet is not run.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 

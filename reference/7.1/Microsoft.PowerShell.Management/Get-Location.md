@@ -151,7 +151,7 @@ For instance, if you are in the `Certificate:` drive, you can use this parameter
 current location in the `C:` drive.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: Location
 Aliases:
 
@@ -172,7 +172,7 @@ For example, if you are in the `C:` drive, you can use this parameter to find yo
 in the drives of the PowerShell **Registry** provider.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: Location
 Aliases:
 
@@ -191,7 +191,7 @@ To display the locations in a different location stack, use the **StackName** pa
 information about location stacks, see the Notes.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: Stack
 Aliases:
 
@@ -213,7 +213,7 @@ This cmdlet cannot display the locations in the unnamed default stack unless it 
 stack.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: Stack
 Aliases:
 

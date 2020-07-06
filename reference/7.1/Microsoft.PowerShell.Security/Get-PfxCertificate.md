@@ -72,7 +72,7 @@ Specifies the full path to the PFX file of the secured file. If you specify a va
 parameter, it is not necessary to type `-FilePath` at the command line.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: ByPath
 Aliases:
 
@@ -91,7 +91,7 @@ wildcards. If the path includes escape characters, enclose it in single quotatio
 quotation marks tell PowerShell not to interpret any characters as escape sequences.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: ByLiteralPath
 Aliases: PSPath
 
@@ -107,7 +107,7 @@ Accept wildcard characters: False
 Suppresses prompting for a password.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -129,7 +129,7 @@ This parameter was introduced in PowerShell 6.1.
 > [How secure is SecureString?](/dotnet/api/system.security.securestring#how-secure-is-securestring).
 
 ```yaml
-Type: SecureString
+Type: System.Security.SecureString
 Parameter Sets: (All)
 Aliases:
 

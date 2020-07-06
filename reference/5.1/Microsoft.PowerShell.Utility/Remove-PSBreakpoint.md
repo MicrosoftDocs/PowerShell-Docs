@@ -96,7 +96,7 @@ Enter a variable that contains breakpoint objects or a command that gets breakpo
 You can also pipe breakpoint objects to **Remove-PSBreakpoint**.
 
 ```yaml
-Type: Breakpoint[]
+Type: System.Management.Automation.Breakpoint[]
 Parameter Sets: Breakpoint
 Aliases:
 
@@ -111,7 +111,7 @@ Accept wildcard characters: False
 Specifies breakpoint IDs for which this cmdlet deletes breakpoints.
 
 ```yaml
-Type: Int32[]
+Type: System.Int32[]
 Parameter Sets: Id
 Aliases:
 
@@ -126,7 +126,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -142,7 +142,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 

@@ -270,7 +270,7 @@ The acceptable execution policy values are as follows:
   script that was downloaded from the Internet, you are prompted for permission before it runs.
 
 ```yaml
-Type: ExecutionPolicy
+Type: Microsoft.PowerShell.ExecutionPolicy
 Parameter Sets: (All)
 Aliases:
 Accepted values: AllSigned, Bypass, Default, RemoteSigned, Restricted, Undefined, Unrestricted
@@ -288,7 +288,7 @@ Suppresses all the confirmation prompts. Use caution with this parameter to avoi
 results.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -322,7 +322,7 @@ Execution policies for the **LocalMachine** scope are written to the registry hi
 **HKEY_LOCAL_MACHINE**.
 
 ```yaml
-Type: ExecutionPolicyScope
+Type: Microsoft.PowerShell.ExecutionPolicyScope
 Parameter Sets: (All)
 Aliases:
 Accepted values: CurrentUser, LocalMachine, MachinePolicy, Process, UserPolicy
@@ -339,7 +339,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -355,7 +355,7 @@ Accept wildcard characters: False
 Shows what would happen if the cmdlet runs. The cmdlet is not run.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 

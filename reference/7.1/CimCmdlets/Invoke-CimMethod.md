@@ -165,7 +165,7 @@ Specifies the parameters to pass to the called method. Specify the values for th
 name-value pairs, stored in a hash table. The order of the values entered isn't important.
 
 ```yaml
-Type: IDictionary
+Type: System.Collections.IDictionary
 Parameter Sets: (All)
 Aliases:
 
@@ -186,7 +186,7 @@ You can use the `Get-CimClass` cmdlet to retrieve a class definition from the se
 Using this parameter results in better client side schema validations.
 
 ```yaml
-Type: CimClass
+Type: Microsoft.Management.Infrastructure.CimClass
 Parameter Sets: CimClassComputerSet, CimClassSessionSet
 Aliases:
 
@@ -205,7 +205,7 @@ cmdlets. For more information, see
 [about_CimSession](../Microsoft.PowerShell.Core/About/about_CimSession.md).
 
 ```yaml
-Type: CimSession[]
+Type: Microsoft.Management.Infrastructure.CimSession[]
 Parameter Sets: ClassNameSessionSet, CimInstanceSessionSet, CimClassSessionSet, QuerySessionSet, ResourceUriSessionSet
 Aliases:
 
@@ -223,7 +223,7 @@ for static methods. You can use tab completion to browse the list of classes, be
 gets a list of classes from the local WMI server to provide a list of class names.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: ClassNameComputerSet, ClassNameSessionSet
 Aliases: Class
 
@@ -247,7 +247,7 @@ Connect using a CIM session for better performance when multiple operations are 
 the same computer.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: ClassNameComputerSet, ResourceUriComputerSet, CimClassComputerSet, CimInstanceComputerSet, QueryComputerSet
 Aliases: CN, ServerName
 
@@ -265,8 +265,8 @@ to invoke instance methods. To invoke class static methods, use the **Class** pa
 **CimClass** parameter.
 
 ```yaml
-Type: CimInstance
-Parameter Sets: CimInstanceSessionSet, CimInstanceComputerSet
+Type: Microsoft.Management.Infrastructure.CimInstance
+Parameter Sets: CimInstanceComputerSet, CimInstanceSessionSet
 Aliases: CimInstance
 
 Required: True
@@ -282,7 +282,7 @@ Specifies the name of the CIM method to invoke. This parameter is mandatory and 
 empty. To invoke static method of a CIM class use the **ClassName** or the **CimClass** parameter.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases: Name
 
@@ -300,8 +300,8 @@ tab completion to browse the list of namespaces, because PowerShell gets a list 
 the local WMI server to provide the list of namespaces.
 
 ```yaml
-Type: String
-Parameter Sets: ClassNameComputerSet, ClassNameSessionSet, ResourceUriComputerSet, ResourceUriSessionSet, QueryComputerSet, QuerySessionSet
+Type: System.String
+Parameter Sets: ClassNameComputerSet, ClassNameSessionSet, ResourceUriComputerSet, ResourceUriSessionSet, QuerySessionSet, QueryComputerSet
 Aliases:
 
 Required: False
@@ -321,7 +321,7 @@ timeout of 3 minutes, network failures that last more than the value of the **Op
 parameter are not recoverable.
 
 ```yaml
-Type: UInt32
+Type: System.UInt32
 Parameter Sets: (All)
 Aliases: OT
 
@@ -343,8 +343,8 @@ specified uses the WQL LIKE operator, then you must escape the following charact
 them in square brackets (`[]`): percent (`%`), underscore (`_`), or opening square bracket (`[`).
 
 ```yaml
-Type: String
-Parameter Sets: QueryComputerSet, QuerySessionSet
+Type: System.String
+Parameter Sets: QuerySessionSet, QueryComputerSet
 Aliases:
 
 Required: True
@@ -362,8 +362,8 @@ are: **WQL** or **CQL**.
 The default value is **WQL**.
 
 ```yaml
-Type: String
-Parameter Sets: QueryComputerSet, QuerySessionSet
+Type: System.String
+Parameter Sets: QuerySessionSet, QueryComputerSet
 Aliases:
 
 Required: False
@@ -398,8 +398,8 @@ If both the **ResourceUri** parameter and the **Filter** parameter are specified
 parameter is ignored.
 
 ```yaml
-Type: Uri
-Parameter Sets: ResourceUriSessionSet, ResourceUriComputerSet
+Type: System.Uri
+Parameter Sets: CimInstanceComputerSet, CimInstanceSessionSet
 Aliases:
 
 Required: True (ResourceUriSessionSet, ResourceUriComputerSet), False (CimInstanceSessionSet, CimInstanceComputerSet)
@@ -414,7 +414,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -430,7 +430,7 @@ Accept wildcard characters: False
 Shows what would happen if the cmdlet runs. The cmdlet is not run.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 

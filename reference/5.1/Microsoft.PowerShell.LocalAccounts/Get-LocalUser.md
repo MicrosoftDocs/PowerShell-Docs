@@ -91,7 +91,7 @@ Specifies an array of names of user accounts that this cmdlet gets. You can use 
 character.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: Default
 Aliases:
 
@@ -107,7 +107,7 @@ Accept wildcard characters: True
 Specifies an array of security IDs (SIDs) of user accounts that this cmdlet gets.
 
 ```yaml
-Type: SecurityIdentifier[]
+Type: System.Security.Principal.SecurityIdentifier[]
 Parameter Sets: SecurityIdentifier
 Aliases:
 
