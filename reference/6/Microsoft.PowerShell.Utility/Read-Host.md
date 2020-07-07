@@ -114,3 +114,5 @@ returns a string.
 [Get-Host](Get-Host.md)
 
 [Write-Host](Write-Host.md)
+
+[ConvertFrom-SecureString](../Microsoft.PowerShell.Security/ConvertFrom-SecureString.md)
