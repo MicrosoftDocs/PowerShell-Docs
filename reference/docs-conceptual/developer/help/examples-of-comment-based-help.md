@@ -9,6 +9,7 @@ ms.topic: "article"
 ms.assetid: 868194a2-17e9-4184-bc36-c04a33f26494
 caps.latest.revision: 4
 ---
+
 # Examples of Comment-Based Help
 
 This topic includes example that demonstrate how to use comment-based help for scripts and functions.
@@ -179,7 +180,7 @@ param ([string]$InputPath, [string]$OutPutPath)
 function Get-Data { }
 ```
 
-The following command gets the script Help. Because the script is not n a directory that is listed in the Path environment variable, the Get-Help command that gets the script Help must specify the script path.
+The following command gets the script Help. Because the script is not in a directory that is listed in the Path environment variable, the Get-Help command that gets the script Help must specify the script path.
 
 ```powershell
 C:\PS> get-help c:\ps-test\update-month.ps1 -full
@@ -251,7 +252,7 @@ C:\PS> get-help c:\ps-test\update-month.ps1 -full
 
 ## Example 3: Parameter Descriptions in a Param Statement
 
-This example show how to insert parameterdescriptions in the `Param` statement of a function or script. This format is most useful when the parameter descriptions are brief.
+This example shows how to insert parameter descriptions in the `Param` statement of a function or script. This format is most useful when the parameter descriptions are brief.
 
 ```powershell
 function Add-Extension

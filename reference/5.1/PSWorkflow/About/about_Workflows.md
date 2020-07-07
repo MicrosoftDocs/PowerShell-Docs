@@ -22,7 +22,7 @@ PowerShell and enables you to write and run workflows.
 PowerShell Workflow was introduced in PowerShell 3.0 and the module is
 available up to PowerShell 5.1. For more information about PowerShell Workflow,
 see the [Workflows Guide](/previous-versions/powershell/scripting/components/workflows-guide)
-and [Writing a Windows PowerShell Workflow](//previous-versionspowershell/scripting/developer/workflow/writing-a-windows-powershell-workflow).
+and [Writing a Windows PowerShell Workflow](/previous-versions/powershell/scripting/developer/workflow/writing-a-windows-powershell-workflow).
 
 ## About workflows
 

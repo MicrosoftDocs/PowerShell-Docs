@@ -216,8 +216,6 @@ The `Get-HotFix` output might vary on different operating systems.
 
 [Add-Content](Add-Content.md)
 
-[Get-ComputerRestorePoint](Get-ComputerRestorePoint.md)
-
 [Get-Credential](../Microsoft.PowerShell.Security/Get-Credential.md)
 
 [Win32_QuickFixEngineering class](/windows/desktop/CIMWin32Prov/win32-quickfixengineering)

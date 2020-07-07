@@ -639,10 +639,6 @@ the `Invoke-Command` cmdlet to run a `Start-Job` command in a session on a remot
 
 [Remove-Job](Remove-Job.md)
 
-[Resume-Job](Resume-Job.md)
-
 [Stop-Job](Stop-Job.md)
-
-[Suspend-Job](Suspend-Job.md)
 
 [Wait-Job](Wait-Job.md)

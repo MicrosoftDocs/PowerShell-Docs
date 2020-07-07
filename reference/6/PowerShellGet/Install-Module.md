@@ -528,4 +528,4 @@ The publisher will specify the required modules and their versions in the module
 
 [Update-Module](Update-Module.md)
 
-[about_Module](../Microsoft.PowerShell.Core/About/about_Modules)
+[about_Module](../Microsoft.PowerShell.Core/About/about_Modules.md)

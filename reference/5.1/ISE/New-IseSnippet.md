@@ -94,64 +94,13 @@ This command uses the `Copy-Item` cmdlet to copy the **Mandatory** snippet from 
 
 ## PARAMETERS
 
-### -Title
-
-Specifies a title or name for the snippet. The title also names the snippet file. This parameter is
-required.
-
-```yaml
-Type: String
-Parameter Sets: (All)
-Aliases:
-
-Required: True
-Position: 1
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Description
-
-Specifies a description of the snippet. The description value appears when you click the snippet
-name in Windows PowerShell ISE. This parameter is required.
-
-```yaml
-Type: String
-Parameter Sets: (All)
-Aliases:
-
-Required: True
-Position: 2
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Text
-
-Specifies the text value that is added when you select the snippet. The snippet text appears when
-you click the snippet name in Windows PowerShell ISE. This parameter is required.
-
-```yaml
-Type: String
-Parameter Sets: (All)
-Aliases:
-
-Required: True
-Position: 3
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Author
 
 Specifies the author of the snippet. The author field appears in the snippet file, but it does not
 appear when you click the snippet name in Windows PowerShell ISE.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -170,7 +119,7 @@ value, 0 (zero), places the cursor immediately before the first character of tex
 does not indent the snippet text.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: (All)
 Aliases:
 
@@ -181,19 +130,70 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -Description
+
+Specifies a description of the snippet. The description value appears when you click the snippet
+name in Windows PowerShell ISE. This parameter is required.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: 2
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Force
 
 Indicates that this cmdlet overwrites snippet files with the same name in the same location. By
 default, `New-ISESnippet` does not overwrite files.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: Named
 Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Text
+
+Specifies the text value that is added when you select the snippet. The snippet text appears when
+you click the snippet name in Windows PowerShell ISE. This parameter is required.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: 3
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Title
+
+Specifies a title or name for the snippet. The title also names the snippet file. This parameter is
+required.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: 1
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
