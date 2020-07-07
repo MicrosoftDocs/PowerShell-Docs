@@ -227,12 +227,13 @@ ConvertTo-SecureString returns a **SecureString** object.
 
 ## NOTES
 
-Some characters, such as emoticons, correspond to several code points in the string that contains them.  Such characters may cause problems and misunderstandings when used in a password&mdash;so it would be better to avoid them.
+Some characters, such as emoticons, correspond to several code points in the string that contains
+them. Avoid using these characters because they may cause problems and misunderstandings when used
+in a password.
 
 ## RELATED LINKS
 
 [ConvertFrom-SecureString](ConvertFrom-SecureString.md)
 
 [Read-Host](../Microsoft.PowerShell.Utility/Read-Host.md)
-
 
