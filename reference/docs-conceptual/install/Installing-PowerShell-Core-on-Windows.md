@@ -262,4 +262,4 @@ support those methods.
 [ssh-remoting]: ../learn/remoting/SSH-Remoting-in-PowerShell-Core.md
 [wsman-remoting]: ../learn/remoting/WSMan-Remoting-in-PowerShell-Core.md
 [AppVeyor]: https://ci.appveyor.com/project/PowerShell/powershell
-[winget]: https://docs.microsoft.com/windows/package-manager/winget
+[winget]: /windows/package-manager/winget

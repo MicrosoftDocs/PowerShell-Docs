@@ -663,5 +663,5 @@ Kirk's advice and make `ThrowTerminatingError` my goto exception handler for eve
 [@KevinMarquette]: https://twitter.com/KevinMarquette
 [Reddit/r/PowerShell community]: https://www.reddit.com/r/PowerShell/comments/64866o/kevmar_all_net_46_exceptions_list_for_use_with/
 [The big list of .NET exceptions]: https://powershellexplained.com/2017-04-07-all-dotnet-exception-list
-[FileNotFoundException]: https://docs.microsoft.com/dotnet/api/System.IO.FileNotFoundException
-[.NET documentation]: https://docs.microsoft.com/dotnet/api
+[FileNotFoundException]: /dotnet/api/System.IO.FileNotFoundException
+[.NET documentation]: /dotnet/api

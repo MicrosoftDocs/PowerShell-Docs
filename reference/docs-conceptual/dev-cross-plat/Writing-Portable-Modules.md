@@ -337,4 +337,4 @@ managed.dll folder
 [PowerShell Gallery]: https://www.powershellgallery.com
 [.NET Portability Analyzer]: https://github.com/Microsoft/dotnet-apiport
 [CompatiblePSEditions]: /powershell/scripting/gallery/concepts/module-psedition-support
-[.NET RID Catalog]: https://docs.microsoft.com/dotnet/core/rid-catalog
+[.NET RID Catalog]: /dotnet/core/rid-catalog
