@@ -39,12 +39,12 @@ each session configuration.
 The **WSMan** provider supports the following cmdlets, which are covered
 in this article.
 
-- [Get-Location](../../Microsoft.PowerShell.Management/Get-Location.md)
-- [Set-Location](../../Microsoft.PowerShell.Management/Set-Location.md)
-- [Get-Item](../../Microsoft.PowerShell.Management/Get-Item.md)
-- [Get-ChildItem](../../Microsoft.PowerShell.Management/Get-ChildItem.md)
-- [New-Item](../../Microsoft.PowerShell.Management/New-Item.md)
-- [Remove-Item](../../Microsoft.PowerShell.Management/Remove-Item.md)
+- [Get-Location](xref:Microsoft.PowerShell.Management.Get-Location)
+- [Set-Location](xref:Microsoft.PowerShell.Management.Set-Location)
+- [Get-Item](xref:Microsoft.PowerShell.Management.Get-Item)
+- [Get-ChildItem](xref:Microsoft.PowerShell.Management.Get-ChildItem)
+- [New-Item](xref:Microsoft.PowerShell.Management.New-Item)
+- [Remove-Item](xref:Microsoft.PowerShell.Management.Remove-Item)
 
 > [!NOTE]
 > You can use commands in the `WSMan:` drive to change the values of the new
@@ -113,7 +113,7 @@ WSMan:\localhost
 The directory hierarchy of the WSMan provider for a remote computer is the same
 as a local computer. However, in order to access the configuration settings of
 a remote computer, you need to make a connection to the remote computer using
-[Connect-WSMan](../Connect-WSMan.md). Once a connection is made to a remote
+[Connect-WSMan](xref:Microsoft.WSMan.Management.Connect-WSMan). Once a connection is made to a remote
 computer, the name of the remote computer shows up in the provider.
 
 ```
@@ -294,7 +294,7 @@ of the following:
 
 #### Cmdlets supported
 
-- [New-Item](../../Microsoft.PowerShell.Management/New-Item.md)
+- [New-Item](xref:Microsoft.PowerShell.Management.New-Item)
 
 ### Capability \<Enumeration\>
 
@@ -377,7 +377,7 @@ These attributes include **SupportsFiltering** and **SupportsFragment**.
 
 #### Cmdlets supported
 
-- [New-Item](../../Microsoft.PowerShell.Management/New-Item.md)
+- [New-Item](xref:Microsoft.PowerShell.Management.New-Item)
 
 ### CertificateThumbprint \<String\>
 
@@ -393,7 +393,7 @@ cmdlets in the PowerShell `Cert:` drive.
 
 #### Cmdlets supported
 
-- [New-Item](../../Microsoft.PowerShell.Management/New-Item.md)
+- [New-Item](xref:Microsoft.PowerShell.Management.New-Item)
 
 ### Enabled \<Boolean\>
 
@@ -401,7 +401,7 @@ Specifies whether the listener is enabled or disabled. The default is True.
 
 #### Cmdlets Supported
 
-- [New-Item](../../Microsoft.PowerShell.Management/New-Item.md)
+- [New-Item](xref:Microsoft.PowerShell.Management.New-Item)
 
 ### FileName (Plugin) \<String\>
 
@@ -413,7 +413,7 @@ cannot be blank and must point to a valid plug-in.
 
 #### Cmdlets Supported
 
-- [New-Item](../../Microsoft.PowerShell.Management/New-Item.md)
+- [New-Item](xref:Microsoft.PowerShell.Management.New-Item)
 
 ### HostName \<String\>
 
@@ -425,7 +425,7 @@ string, or a wildcard character.
 
 #### Cmdlets Supported
 
-- [New-Item](../../Microsoft.PowerShell.Management/New-Item.md)
+- [New-Item](xref:Microsoft.PowerShell.Management.New-Item)
 
 ### Issuer \<String\>
 
@@ -433,7 +433,7 @@ Specifies the name of the certification authority that issued the certificate.
 
 #### Cmdlets Supported
 
-- [New-Item](../../Microsoft.PowerShell.Management/New-Item.md)
+- [New-Item](xref:Microsoft.PowerShell.Management.New-Item)
 
 ### Plugin \<\> WS-Management plug-ins are native dynamic link libraries (DLLs)
 
@@ -447,7 +447,7 @@ requests are routed to these plug-in entry points to perform operations.
 
 #### Cmdlets Supported
 
-- [New-Item](../../Microsoft.PowerShell.Management/New-Item.md)
+- [New-Item](xref:Microsoft.PowerShell.Management.New-Item)
 
 ### Port \<Unsigned Short Integer\>
 
@@ -456,7 +456,7 @@ value from 1 through 65535.
 
 #### Cmdlets Supported
 
-- [New-Item](../../Microsoft.PowerShell.Management/New-Item.md)
+- [New-Item](xref:Microsoft.PowerShell.Management.New-Item)
 
 ### Resource \<String\>
 
@@ -476,7 +476,7 @@ For example:
 
 #### Cmdlets Supported
 
-- [New-Item](../../Microsoft.PowerShell.Management/New-Item.md)
+- [New-Item](xref:Microsoft.PowerShell.Management.New-Item)
 
 ### Resource \<String\>
 
@@ -491,7 +491,7 @@ A URI consists of a prefix and a path to a resource. For example:
 
 #### Cmdlets Supported
 
-- [New-Item](../../Microsoft.PowerShell.Management/New-Item.md)
+- [New-Item](xref:Microsoft.PowerShell.Management.New-Item)
 
 ### SDKVersion \<String\>
 
@@ -500,7 +500,7 @@ Specifies the version of the WS-Management plug-in SDK. The only valid value is
 
 #### Cmdlets Supported
 
-- [New-Item](../../Microsoft.PowerShell.Management/New-Item.md)
+- [New-Item](xref:Microsoft.PowerShell.Management.New-Item)
 
 ### Subject \<String\>
 
@@ -508,7 +508,7 @@ Specifies the entity that is identified by the certificate.
 
 #### Cmdlets Supported
 
-- [New-Item](../../Microsoft.PowerShell.Management/New-Item.md)
+- [New-Item](xref:Microsoft.PowerShell.Management.New-Item)
 
 ### Transport \<String\>
 
@@ -519,7 +519,7 @@ Note: The Transport value is set when creating a Listener.
 
 #### Cmdlets Supported
 
-- [New-Item](../../Microsoft.PowerShell.Management/New-Item.md)
+- [New-Item](xref:Microsoft.PowerShell.Management.New-Item)
 
 ### URI \<String\>
 
@@ -528,7 +528,7 @@ Sddl parameter.
 
 #### Cmdlets Supported
 
-- [New-Item](../../Microsoft.PowerShell.Management/New-Item.md)
+- [New-Item](xref:Microsoft.PowerShell.Management.New-Item)
 
 ### URLPrefix \<String\>
 
@@ -541,7 +541,7 @@ in the destination address.
 
 #### Cmdlets Supported
 
-- [New-Item](../../Microsoft.PowerShell.Management/New-Item.md)
+- [New-Item](xref:Microsoft.PowerShell.Management.New-Item)
 
 ### Value \<String\>
 
@@ -550,7 +550,7 @@ value that is used to specify configuration options.
 
 #### Cmdlets Supported
 
-- [New-Item](../../Microsoft.PowerShell.Management/New-Item.md)
+- [New-Item](xref:Microsoft.PowerShell.Management.New-Item)
 
 ### XMLRenderingType \<String\>
 
@@ -565,7 +565,7 @@ Specifies the format in which XML is passed to plug-ins through the
 
 #### Cmdlets Supported
 
-- [New-Item](../../Microsoft.PowerShell.Management/New-Item.md)
+- [New-Item](xref:Microsoft.PowerShell.Management.New-Item)
 
 ## Using the pipeline
 
@@ -580,9 +580,9 @@ Beginning in Windows PowerShell 3.0, you can get customized help topics for
 provider cmdlets that explain how those cmdlets behave in a file system drive.
 
 To get the help topics that are customized for the file system drive, run a
-[Get-Help](../../Microsoft.PowerShell.Core/Get-Help.md) command in a file
+[Get-Help](xref:Microsoft.PowerShell.Core.Get-Help) command in a file
 system drive or use the `-Path` parameter of
-[Get-Help](../../Microsoft.PowerShell.Core/Get-Help.md) to specify a file
+[Get-Help](xref:Microsoft.PowerShell.Core.Get-Help) to specify a file
 system drive.
 
 ```powershell

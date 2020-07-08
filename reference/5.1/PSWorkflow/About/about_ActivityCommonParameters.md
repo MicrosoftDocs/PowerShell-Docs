@@ -230,8 +230,8 @@ parameter.
 Certificates are used in client certificate-based authentication. They can only
 be mapped to local user accounts; they do not work with domain accounts.
 
-To get a certificate, use the [Get-Item](../../Microsoft.PowerShell.Management/Get-Item.md)
-or [Get-ChildItem](../../Microsoft.PowerShell.Management/Get-ChildItem.md)
+To get a certificate, use the [Get-Item](xref:Microsoft.PowerShell.Management.Get-Item)
+or [Get-ChildItem](xref:Microsoft.PowerShell.Management.Get-ChildItem)
 cmdlets in the Windows PowerShell Cert: drive.
 
 #### PSComputerName \<String[]\>
@@ -487,7 +487,7 @@ uses the values specified in the session configuration.
 
 For a description of the session options, including the default values, see the
 help topic for the New-PSSessionOption cmdlet
-[New-PSSessionOption](../../Microsoft.PowerShell.Core/New-PSSessionOption.md).
+[New-PSSessionOption](xref:Microsoft.PowerShell.Core.New-PSSessionOption).
 
 For more information about the $PSSessionOption preference variable, see
 [about_Preference_Variables](../../Microsoft.PowerShell.Core/About/about_Preference_Variables.md).

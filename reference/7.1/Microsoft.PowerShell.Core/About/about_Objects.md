@@ -74,5 +74,5 @@ The second command passes only the file objects to the third command
 
 [about_Pipelines](about_Pipelines.md)
 
-[Get-Member](../../Microsoft.PowerShell.Utility/Get-Member.md)
+[Get-Member](xref:Microsoft.PowerShell.Utility.Get-Member)
 

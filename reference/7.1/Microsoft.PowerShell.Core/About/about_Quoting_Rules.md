@@ -321,5 +321,5 @@ more information, see ConvertFrom-StringData.
 
 [about_Special_Characters](about_Special_Characters.md)
 
-[ConvertFrom-StringData](../../Microsoft.PowerShell.Utility/ConvertFrom-StringData.md)
+[ConvertFrom-StringData](xref:Microsoft.PowerShell.Utility.ConvertFrom-StringData)
 

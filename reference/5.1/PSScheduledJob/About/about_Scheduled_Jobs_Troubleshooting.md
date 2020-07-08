@@ -23,7 +23,7 @@ Before using PowerShell scheduled jobs, see [about_Scheduled_Jobs](about_Schedul
 and the related scheduled jobs about topics.
 
 For more information about the cmdlets contained in the **PSScheduledJob**
-module, see [PSScheduledJob](../PSScheduledJob.md).
+module, see [PSScheduledJob](xref:PSScheduledJob.PSScheduledJob).
 
 ## Can't find job results
 
@@ -415,7 +415,7 @@ MultipleInstancePolicy : IgnoreNew
 JobDefinition          : Microsoft.PowerShell.ScheduledJob.ScheduledJobDefinition
 ```
 
-For descriptions of the scheduled job options, see [New-ScheduledJobOption](../New-ScheduledJobOption.md).
+For descriptions of the scheduled job options, see [New-ScheduledJobOption](xref:PSScheduledJob.New-ScheduledJobOption).
 
 ### The scheduled job instance might have failed
 
@@ -543,6 +543,6 @@ imports the **PSScheduledJob** module, and then runs the command.
 
 [about_Scheduled_Jobs](about_Scheduled_Jobs.md)
 
-[PSScheduledJob](../PSScheduledJob.md) module cmdlets
+[PSScheduledJob](xref:PSScheduledJob.PSScheduledJob) module cmdlets
 
 [Task Scheduler](/windows/desktop/TaskSchd/task-scheduler-reference)
