@@ -20,15 +20,15 @@ highlightedContent:
     # Card
     - title: Overview
       itemType: get-started
-      url: https://docs.microsoft.com/powershell/scripting/overview
+      url: /powershell/scripting/overview
     # Card
     - title: Setup and installation
       itemType: download
-      url: https://docs.microsoft.com/powershell/scripting/install/installing-powershell
+      url: /powershell/scripting/install/installing-powershell
     # Card
     - title: Sample scripts
       itemType: how-to-guide
-      url: https://docs.microsoft.com/powershell/scripting/samples/sample-scripts-for-administration
+      url: /powershell/scripting/samples/sample-scripts-for-administration
     # Card
     - title: PowerShell Gallery
       itemType: deploy
@@ -36,7 +36,7 @@ highlightedContent:
     # Card
     - title: PowerShell Module Browser
       itemType: reference
-      url: https://docs.microsoft.com/powershell/module/
+      url: /powershell/module/
     # Card
     - title: PowerShell on GitHub
       itemType: architecture
@@ -48,75 +48,75 @@ productDirectory:
   summary: Available editions, tools, and technology that supports PowerShell # < 160 chars (optional)
   items:
     # Card 1
+    - title: PowerShell
+      imageSrc: ./media/index/ps_black_128.svg
+      links:
+        - url: /powershell/scripting/install/installing-powershell-core-on-windows
+          text: Install PowerShell Core on Windows
+        - url: /powershell/scripting/install/installing-powershell-core-on-linux
+          text: Install PowerShell Core on Linux
+        - url: /powershell/scripting/install/installing-powershell-core-on-macos
+          text: Install PowerShell Core on macOS
+        - url: /powershell/scripting/whats-new/what-s-new-in-powershell-70
+          text: What's new in PowerShell 7.0
+    # Card 2
     - title: PowerShell 5.1
       # imageSrc should be square in ratio with no whitespace
       imageSrc: ./media/index/powershell_128.svg
       links:
-        - url: https://docs.microsoft.com/powershell/scripting/install/installing-windows-powershell
+        - url: /powershell/scripting/install/installing-windows-powershell
           text: Install Windows PowerShell
-        - url: https://docs.microsoft.com/powershell/scripting/whats-new/what-s-new-in-windows-powershell-50
+        - url: /powershell/scripting/whats-new/what-s-new-in-windows-powershell-50
           text: What's new in PowerShell 5.x
-    # Card 2
-    - title: PowerShell Core
-      imageSrc: ./media/index/ps_black_128.svg
-      links:
-        - url: https://docs.microsoft.com/powershell/scripting/install/installing-powershell-core-on-windows
-          text: Install PowerShell Core on Windows
-        - url: https://docs.microsoft.com/powershell/scripting/install/installing-powershell-core-on-linux
-          text: Install PowerShell Core on Linux
-        - url: https://docs.microsoft.com/powershell/scripting/install/installing-powershell-core-on-macos
-          text: Install PowerShell Core on macOS
-        - url: https://docs.microsoft.com/powershell/scripting/whats-new/what-s-new-in-powershell-core-62
-          text: What's new in PowerShell 6.2
     # Card 3
     - title: PowerShell Gallery
       imageSrc: ./media/index/avatar_128.svg
       links:
         - url: https://www.powershellgallery.com/
           text: PowerShell Gallery
-        - url: https://docs.microsoft.com/powershell/scripting/gallery/overview
+        - url: /powershell/scripting/gallery/overview
           text: What is the PowerShell Gallery
-        - url: https://docs.microsoft.com/powershell/scripting/gallery/concepts/publishing-guidelines
+        - url: /powershell/scripting/gallery/concepts/publishing-guidelines
           text: Best practices
-        - url: https://docs.microsoft.com/powershell/scripting/gallery/faqs
+        - url: /powershell/scripting/gallery/faqs
           text: FAQs
     # Card 4
     - title: PowerShell DSC
-      imageSrc: https://docs.microsoft.com/media/common/i_config-tools.svg
+      imageSrc: /media/common/i_config-tools.svg
       links:
-        - url: https://docs.microsoft.com/powershell/scripting/dsc/overview/overview
+        - url: /powershell/scripting/dsc/overview/overview
           text: DSC Overview
-        - url: https://docs.microsoft.com/powershell/scripting/dsc/getting-started/lnxgettingstarted
+        - url: /powershell/scripting/dsc/getting-started/lnxgettingstarted
           text: Get started with DSC for Linux
         - url: https://dsccommunity.org/
           text: DSC Community
     # Card 5
     - title: Developer resources
-      imageSrc: https://docs.microsoft.com/media/common/i_code-edit.svg
+      imageSrc: /media/common/i_code-edit.svg
       links:
-        - url: https://docs.microsoft.com/powershell/scripting/developer/windows-powershell
-          text: PowerShell SDK documentation
-        - url: https://docs.microsoft.com/dotnet/api/?view=pscore-6.2.0
-          text: PowerShell Core SDK 6.2.0 API reference
         - url: https://code.visualstudio.com/docs/languages/powershell
           text: Visual Studio Code PowerShell Extension
-        - url: https://docs.microsoft.com/powershell/scripting/components/vscode/using-vscode-for-remote-editing-and-debugging
+        - url: /powershell/scripting/components/vscode/using-vscode-for-remote-editing-and-debugging
           text: Using VSCode for remote editing and debugging
+        - url: /powershell/scripting/developer/windows-powershell
+          text: Windows PowerShell SDK documentation
+        - url: /dotnet/api/?view=powershellsdk-7.0.0
+          text: PowerShell 7.0.0 API reference
     # Card 6
     - title: Related technologies
-      imageSrc: https://docs.microsoft.com/media/common/i_tools.svg
+      imageSrc: /media/common/i_tools.svg
       links:
-        - url: https://docs.microsoft.com/powershell/scripting/wmf/overview
+        - url: /powershell/scripting/wmf/overview
           text: Windows Management Framework
-        - url: https://docs.microsoft.com/powershell/windows/get-started?view=win10-ps
+        - url: /powershell/windows/get-started?view=win10-ps
           text: PowerShell modules to manage Windows
         - url: https://aka.ms/cloudshell/powershell-docs
           text: PowerShell in Azure Cloud Shell
-        - url: https://docs.microsoft.com/powershell/azure/overview
+        - url: /powershell/azure/overview
           text: Azure PowerShell
-        - url: https://docs.microsoft.com/azure/automation/automation-runbook-types
+        - url: /azure/automation/automation-runbook-types
           text: Azure Automation runbooks
-        - url: https://docs.microsoft.com/azure/azure-functions/functions-create-first-function-powershell
+        - url: /azure/azure-functions/functions-create-first-function-powershell
           text: Azure Functions using PowerShell
 
 tools:
@@ -125,40 +125,40 @@ tools:
   items:
     # Card 1
     - title: User Groups
-      imageSrc: https://docs.microsoft.com/media/hubs/powershell/i_group.svg
+      imageSrc: /media/hubs/powershell/i_group.svg
       url: https://aka.ms/psusergroup
     # Card 2
     - title: PowerShell Tech Community
-      imageSrc: https://docs.microsoft.com/media/hubs/powershell/i_group-feedback.svg
-      url: https://techcommunity.microsoft.com/t5/PowerShell/ct-p/WindowsPowerShell
+      imageSrc: /media/hubs/powershell/i_group-feedback.svg
+      url: https://techcommunity.microsoft.com/t5/powershell/ct-p/WindowsPowerShell
     # Card 3
     - title: DSC Community
-      imageSrc: https://docs.microsoft.com/media/hubs/powershell/i_group-feedback.svg
+      imageSrc: /media/hubs/powershell/i_group-feedback.svg
       url: https://dsccommunity.org/
     # Card 4
     - title: PowerShell.org
-      imageSrc: https://docs.microsoft.com/media/hubs/powershell/i_group-feedback.svg
+      imageSrc: /media/hubs/powershell/i_group-feedback.svg
       url: https://powershell.org/
     # Card 5
     - title: StackOverFlow
-      imageSrc: https://docs.microsoft.com/media/hubs/powershell/logo_stackoverflow.svg
+      imageSrc: /media/hubs/powershell/logo_stackoverflow.svg
       url: https://stackoverflow.com/questions/tagged/powershell
     # Card 6
     - title: r/PowerShell
-      imageSrc: https://docs.microsoft.com/media/hubs/powershell/logo_reddit.svg
+      imageSrc: /media/hubs/powershell/logo_reddit.svg
       url: https://www.reddit.com/r/PowerShell/
     # Card 7
     - title: PowerShell Slack
-      imageSrc: https://docs.microsoft.com/media/logos/logo-slack.svg
-      url: http://poshcode.org/slack
+      imageSrc: /media/logos/logo-slack.svg
+      url: https://aka.ms/psslack
     # Card 8
     - title: PowerShell Discord
       imageSrc: ./media/index/discord.svg
-      url: http://poshcode.org/discord
+      url: https://aka.ms/psdiscord
     # Card 9
     - title: Digital Art
-      imageSrc: https://docs.microsoft.com/media/hubs/powershell/i_digital-art.svg
-      url: https://docs.microsoft.com/powershell/scripting/community/digital-art
+      imageSrc: /media/hubs/powershell/i_digital-art.svg
+      url: /powershell/scripting/community/digital-art
 
 additionalContent:
   # Supports up to 3 sections

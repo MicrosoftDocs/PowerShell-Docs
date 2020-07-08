@@ -150,8 +150,8 @@ Accept wildcard characters: False
 ```
 
 ### -Key
-Specifies the encryption key to use when converting a secure string into an encrypted standard string.
-Valid key lengths are 16, 24, and 32 bytes.
+Specifies the encryption key used to convert the original secure string into the encrypted standard string.
+Valid key lengths are 16, 24 and 32 bytes.
 
 ```yaml
 Type: System.Byte[]
@@ -166,10 +166,10 @@ Accept wildcard characters: False
 ```
 
 ### -SecureKey
-Specifies the encryption key to use when converting a secure string into an encrypted standard string.
+Specifies the encryption key used to convert the original secure string into the encrypted standard string.
 The key must be provided in the format of a secure string.
-The secure string is converted to a byte array before being used as the key.
-Valid key lengths are 16, 24, and 32 bytes.
+The secure string will be converted to a byte array to be used as the key.
+Valid secure key lengths are 8, 12 and 16 code points.
 
 ```yaml
 Type: System.Security.SecureString
@@ -212,6 +212,10 @@ You can pipe a standard encrypted string to **ConvertTo-SecureString**.
 ConvertTo-SecureString returns a **SecureString** object.
 
 ## NOTES
+
+Some characters, such as emoticons, correspond to several code points in the string that contains
+them. Avoid using these characters because they may cause problems and misunderstandings when used
+in a password.
 
 ## RELATED LINKS
 

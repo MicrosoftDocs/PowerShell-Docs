@@ -74,7 +74,7 @@ You can use the following keyboard shortcuts when you debug scripts.
 | **Run/Continue**           | <kbd>F5</kbd>                                  | Script Pane, when debugging a script |
 | **Step Into**              | <kbd>F11</kbd>                                 | Script Pane, when debugging a script |
 | **Step Over**              | <kbd>F10</kbd>                                 | Script Pane, when debugging a script |
-| **Step Out**               | <kbd>SHIFT</kbd>+<kbd><kbd>F11</kbd></kbd>     | Script Pane, when debugging a script |
+| **Step Out**               | <kbd>SHIFT</kbd>+<kbd>F11</kbd>                | Script Pane, when debugging a script |
 | **Display Call Stack**     | <kbd>CTRL</kbd>+<kbd>SHIFT</kbd>+<kbd>D</kbd>  | Script Pane, when debugging a script |
 | **List Breakpoints**       | <kbd>CTRL</kbd>+<kbd>SHIFT</kbd>+<kbd>L</kbd>  | Script Pane, when debugging a script |
 | **Toggle Breakpoint**      | <kbd>F9</kbd>                                  | Script Pane, when debugging a script |

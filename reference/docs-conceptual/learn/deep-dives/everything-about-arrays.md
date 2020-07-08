@@ -1,7 +1,7 @@
 ---
 title: Everything you wanted to know about arrays
 description: Arrays are a fundamental language feature of most programming languages.
-ms.date: 05/23/2020
+ms.date: 07/07/2020
 ms.custom: contributor-KevinMarquette
 ---
 # Everything you wanted to know about arrays
@@ -271,6 +271,8 @@ number.
 
 ```powershell
 PS> $data.GetUpperBound(0)
+3
+PS> $data[ $data.GetUpperBound(0) ]
 Three
 ```
 
@@ -362,7 +364,7 @@ PowerShell 4.0.
 
 #### For loop
 
-The `for` loop is used heavily in most other languages but you don’t see it much in PowerShell. When
+The `for` loop is used heavily in most other languages but you don't see it much in PowerShell. When
 you do see it, it's often in the context of walking an array.
 
 ```powershell
@@ -1005,7 +1007,7 @@ PS> $myList[-1]
 
 #### List[PSObject]
 
-You can have a list of any type, but when you don’t know the type of objects, you can use
+You can have a list of any type, but when you don't know the type of objects, you can use
 `[List[PSObject]]` to contain them.
 
 ```powershell
