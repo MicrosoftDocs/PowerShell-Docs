@@ -6,8 +6,8 @@ ms.topic: conceptual
 ---
 # Managing pull requests
 
-This article documents how we manage pull requests in the PowerShell-Docs repo. This article is
-designed to be a job aid for members of the PowerShell-Docs team. It is published here to provide
+This article documents how we manage pull requests in the PowerShell-Docs repository. This article
+is designed to be a job aid for members of the PowerShell-Docs team. It is published here to provide
 process transparency for our public contributors.
 
 ## Best practices
