@@ -23,7 +23,7 @@ Before using PowerShell scheduled jobs, see [about_Scheduled_Jobs](about_Schedul
 and the related scheduled jobs about topics.
 
 For more information about the cmdlets contained in the **PSScheduledJob**
-module, see [PSScheduledJob](xref:PSScheduledJob.PSScheduledJob).
+module, see [PSScheduledJob](xref:PSScheduledJob).
 
 ## Can't find job results
 
@@ -543,6 +543,6 @@ imports the **PSScheduledJob** module, and then runs the command.
 
 [about_Scheduled_Jobs](about_Scheduled_Jobs.md)
 
-[PSScheduledJob](xref:PSScheduledJob.PSScheduledJob) module cmdlets
+[PSScheduledJob](xref:PSScheduledJob) module cmdlets
 
 [Task Scheduler](/windows/desktop/TaskSchd/task-scheduler-reference)

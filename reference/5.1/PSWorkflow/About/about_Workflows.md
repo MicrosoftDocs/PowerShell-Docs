@@ -278,7 +278,7 @@ of the workflow common parameters, see
 
 [New-PSSession](xref:Microsoft.PowerShell.Core.New-PSSession)
 
-[PSWorkflow](xref:PSWorkflow.PSWorkflow) cmdlets
+[PSWorkflow](xref:PSWorkflow) cmdlets
 
 [Workflows Guide](/previous-versions/powershell/scripting/components/workflows-guide)
 
