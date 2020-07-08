@@ -1,5 +1,5 @@
 ---
-ms.date:  12/12/2018
+ms.date: 07/08/2020
 keywords:  dsc,powershell,configuration,setup
 title:  Get-Test-Set
 ---

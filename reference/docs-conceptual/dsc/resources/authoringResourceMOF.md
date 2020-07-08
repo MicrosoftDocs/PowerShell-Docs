@@ -1,5 +1,5 @@
 ---
-ms.date:  06/16/2020
+ms.date: 07/08/2020
 keywords:  dsc,powershell,configuration,setup
 title:  Writing a custom DSC resource with MOF
 ---

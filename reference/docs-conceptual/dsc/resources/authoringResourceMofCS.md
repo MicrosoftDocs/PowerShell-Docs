@@ -1,5 +1,5 @@
 ---
-ms.date:  06/12/2017
+ms.date: 07/08/2020
 keywords:  dsc,powershell,configuration,setup
 title:  Authoring a DSC resource in C#
 ---
