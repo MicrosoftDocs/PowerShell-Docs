@@ -12,8 +12,8 @@ Describes the syntax diagrams that are used in PowerShell.
 
 ## LONG DESCRIPTION
 
-The @Microsoft.PowerShell.Core.Get-Help and
-@Microsoft.PowerShell.Core.Get-Command cmdlets display
+The [Get-Help](../../Microsoft.PowerShell.Core/Get-Help.md) and
+[Get-Command](../../Microsoft.PowerShell.Core/Get-Command.md) cmdlets display
 syntax diagrams to help you construct commands correctly. This topic
 explains how to interpret the syntax diagrams.
 
@@ -34,7 +34,7 @@ PowerShell uses the following notation for syntax diagrams.
 [-<Optional Parameter Name>] <Required Parameter Value>
 ```
 
-The following is the syntax for the @Microsoft.PowerShell.Utility.New-Alias
+The following is the syntax for the [New-Alias](../../Microsoft.PowerShell.Utility/New-Alias.md)
 cmdlet.
 
 ```powershell
@@ -134,7 +134,7 @@ the format of a valid command. A parameter set includes only parameters that
 can be used together in a command. If parameters cannot be used in the same
 command, they appear in separate parameter sets.
 
-For example, the @Microsoft.PowerShell.Utility.Get-Random
+For example, the [Get-Random](../../Microsoft.PowerShell.Utility/Get-Random.md)
 cmdlet has the following parameter sets:
 
 ```powershell
@@ -220,7 +220,7 @@ The syntax diagrams use the following symbols:
 
   For example, the **Name** parameter of the `New-Alias` cmdlet takes only
   one string, but the **Name** parameter of
-  @Microsoft.PowerShell.Management.Get-Process can take
+  [Get-Process](../../Microsoft.PowerShell.Management/Get-Process.md) can take
   one or many strings.
 
   ```powershell
@@ -312,6 +312,6 @@ optional.
 ## SEE ALSO
 
 - [about_Parameters](about_Parameters.md)
-- @Microsoft.PowerShell.Core.Get-Command
-- @Microsoft.PowerShell.Core.Get-Help
+- [Get-Command](../../Microsoft.PowerShell.Core/Get-Command.md)
+- [Get-Help](../../Microsoft.PowerShell.Core/Get-Help.md)
 

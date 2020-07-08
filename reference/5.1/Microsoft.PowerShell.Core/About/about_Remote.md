@@ -245,8 +245,8 @@ about_Remoting
 
 [about_Remote_Variables](about_Remote_Variables.md)
 
-@Microsoft.PowerShell.Core.Enter-PSSession
+[Enter-PSSession](../Enter-PSSession.md)
 
-@Microsoft.PowerShell.Core.Invoke-Command
+[Invoke-Command](../Invoke-Command.md)
 
-@Microsoft.PowerShell.Core.New-PSSession
+[New-PSSession](../New-PSSession.md)

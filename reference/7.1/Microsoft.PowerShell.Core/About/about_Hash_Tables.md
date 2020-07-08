@@ -494,9 +494,9 @@ For more information about here-strings, see [about_Quoting_Rules](about_Quoting
 
 [about_Script_Internationalization](about_Script_Internationalization.md)
 
-@Microsoft.PowerShell.Utility.ConvertFrom-StringData
+[ConvertFrom-StringData](../../Microsoft.PowerShell.Utility/ConvertFrom-StringData.md)
 
-@Microsoft.PowerShell.Utility.Import-LocalizedData
+[Import-LocalizedData](../../Microsoft.PowerShell.Utility/Import-LocalizedData.md)
 
 [System.Collections.Hashtable](/dotnet/api/system.collections.hashtable)
 

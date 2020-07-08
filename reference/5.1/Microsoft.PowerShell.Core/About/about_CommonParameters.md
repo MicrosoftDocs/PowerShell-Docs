@@ -690,10 +690,10 @@ about_Common_Parameters
 
 [about_Preference_Variables](about_Preference_Variables.md)
 
-@Microsoft.PowerShell.Utility.Write-Debug
+[Write-Debug](../../Microsoft.PowerShell.Utility/Write-Debug.md)
 
-@Microsoft.PowerShell.Utility.Write-Warning
+[Write-Warning](../../Microsoft.PowerShell.Utility/Write-Warning.md)
 
-@Microsoft.PowerShell.Utility.Write-Error
+[Write-Error](../../Microsoft.PowerShell.Utility/Write-Error.md)
 
-@Microsoft.PowerShell.Utility.Write-Verbose
+[Write-Verbose](../../Microsoft.PowerShell.Utility/Write-Verbose.md)

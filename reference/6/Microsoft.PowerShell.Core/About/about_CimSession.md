@@ -64,6 +64,6 @@ understand the **ThrottleLimit**.
 
 ## SEE ALSO
 
-@CimCmdlets.New-CimSession
+[New-CimSession](../../CimCmdlets/New-CimSession.md)
 
 [about_PSSessions](about_PSSessions.md)

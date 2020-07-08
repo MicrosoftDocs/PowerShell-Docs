@@ -160,13 +160,13 @@ accessible.
 
 ### Finding hidden commands
 
-The **All** parameter of the @Microsoft.PowerShell.Core.Get-Command
+The **All** parameter of the [Get-Command](../../Microsoft.PowerShell.Core/Get-Command.md)
 cmdlet gets all commands with the specified name, even if they are hidden
 or replaced. Beginning in PowerShell 3.0, by default, `Get-Command`
 gets only the commands that run when you type the command name.
 
 In the following examples, the session includes a `Get-Date` function and a
-@Microsoft.PowerShell.Utility.Get-Date cmdlet.
+[Get-Date](../../Microsoft.PowerShell.Utility/Get-Date.md) cmdlet.
 
 The following command gets the `Get-Date` command that runs when you type
 `Get-Date`.
@@ -251,9 +251,9 @@ Microsoft.PowerShell.Utility
 #### Call operator
 
 You can also use the `Call` operator `&` to run hidden commands by combining
-it with a call to @Microsoft.PowerShell.Management.Get-ChildItem
+it with a call to [Get-ChildItem](../../Microsoft.PowerShell.Management/Get-ChildItem.md)
 (the alias is "dir"), `Get-Command` or
-@Microsoft.PowerShell.Core.Get-Module.
+[Get-Module](../../Microsoft.PowerShell.Core/Get-Module.md).
 
 The call operator executes strings and script blocks in a child scope. For more information, see [about_Operators](about_Operators.md).
 
@@ -301,9 +301,9 @@ name acronym to the nouns in your commands.
 
 Also, when you import commands into your session from a PowerShell
 module or from another session, use the `Prefix` parameter of the
-@Microsoft.PowerShell.Core.Import-Module or
+[Import-Module](../../Microsoft.PowerShell.Core/Import-Module.md) or
 
-@Microsoft.PowerShell.Utility.Import-PSSession
+[Import-PSSession](../../Microsoft.PowerShell.Utility/Import-PSSession.md)
 cmdlet to add a prefix to the nouns in the names of commands.
 
 For example, the following command avoids any conflict with the `Get-Date`
@@ -323,7 +323,7 @@ For more information, see `Import-Module` and `Import-PSSession` below.
 - [about_Functions](about_Functions.md)
 - [Alias-Provider](../../Microsoft.PowerShell.Core/About/about_Alias_Provider.md)
 - [Function-Provider](../../Microsoft.PowerShell.Core/About/about_Function_Provider.md)
-- @Microsoft.PowerShell.Core.Get-Command
-- @Microsoft.PowerShell.Core.Import-Module
-- @Microsoft.PowerShell.Utility.Import-PSSession
+- [Get-Command](../../Microsoft.PowerShell.Core/Get-Command.md)
+- [Import-Module](../../Microsoft.PowerShell.Core/Import-Module.md)
+- [Import-PSSession](../../Microsoft.PowerShell.Utility/Import-PSSession.md)
 

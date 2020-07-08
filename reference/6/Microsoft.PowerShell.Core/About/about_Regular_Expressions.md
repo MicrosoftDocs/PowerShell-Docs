@@ -26,7 +26,7 @@ This article demonstrates regular expression syntax in PowerShell. PowerShell
 has several operators and cmdlets that use regular expressions. You can read
 more about their syntax and usage at the links below.
 
-- @Microsoft.PowerShell.Utility.Select-String
+- [Select-String](../../Microsoft.PowerShell.Utility/Select-String.md)
 - [-match and -replace operators](about_Comparison_Operators.md)
 - [-split](about_Split.md)
 - [switch statement with -regex option](about_Switch.md)

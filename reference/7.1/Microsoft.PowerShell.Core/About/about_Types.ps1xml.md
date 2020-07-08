@@ -25,7 +25,7 @@ data to a PowerShell session.
 This topic describes `Types.ps1xml` files. For more information about using the
 `Update-TypeData` cmdlet to add dynamic extended type data to the current
 session see
-@Microsoft.PowerShell.Utility.Update-TypeData.
+[Update-TypeData](../../Microsoft.PowerShell.Utility/Update-TypeData.md).
 
 ## About extended type data
 
@@ -178,7 +178,7 @@ objects of the specified .NET type in the affected PowerShell session. However,
 if you need to add properties or methods only to one instance of an object, use
 the `Add-Member` cmdlet.
 
-For more information, see @Microsoft.PowerShell.Utility.Add-Member.
+For more information, see [Add-Member](../../Microsoft.PowerShell.Utility/Add-Member.md).
 
 ## Example: Adding an Age member to FileInfo objects
 
@@ -213,7 +213,7 @@ session. The command uses the **PrependData** parameter to place the new file
 in a precedence order higher than the original definitions.
 
 For more information about `Update-TypeData`, see
-@Microsoft.PowerShell.Utility.Update-TypeData.
+[Update-TypeData](../../Microsoft.PowerShell.Utility/Update-TypeData.md).
 
 ```powershell
 Update-Typedata -PrependPath $PSHOME\MyTypes.ps1xml
@@ -535,15 +535,15 @@ digital signature. For more information, see
 
 [about_Signing](about_Signing.md)
 
-@Microsoft.PowerShell.Management.Copy-Item
+[Copy-Item](../../Microsoft.PowerShell.Management/Copy-Item.md)
 
-@Microsoft.PowerShell.Management.Copy-ItemProperty
+[Copy-ItemProperty](../../Microsoft.PowerShell.Management/Copy-ItemProperty.md)
 
-@Microsoft.PowerShell.Utility.Get-Member
+[Get-Member](../../Microsoft.PowerShell.Utility/Get-Member.md)
 
-@Microsoft.PowerShell.Utility.Get-TypeData
+[Get-TypeData](../../Microsoft.PowerShell.Utility/Get-TypeData.md)
 
-@Microsoft.PowerShell.Utility.Remove-TypeData
+[Remove-TypeData](../../Microsoft.PowerShell.Utility/Remove-TypeData.md)
 
-@Microsoft.PowerShell.Utility.Update-TypeData
+[Update-TypeData](../../Microsoft.PowerShell.Utility/Update-TypeData.md)
 

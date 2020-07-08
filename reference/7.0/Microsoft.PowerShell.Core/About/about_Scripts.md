@@ -419,4 +419,4 @@ PowerShell has many useful features that you can use in scripts.
 
 [about_Signing](about_Signing.md)
 
-@Microsoft.PowerShell.Core.Invoke-Command
+[Invoke-Command](../Invoke-Command.md)

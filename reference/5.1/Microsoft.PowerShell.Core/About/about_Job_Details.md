@@ -359,28 +359,28 @@ Id         Name            JobTriggers     Command       Enabled
 
 [about_Scheduled_Jobs](../../psscheduledjob/about/about_scheduled_jobs.md)
 
-@Microsoft.PowerShell.Core.Invoke-Command
+[Invoke-Command](../Invoke-Command.md)
 
-@Microsoft.PowerShell.Core.Start-Job
+[Start-Job](../Start-Job.md)
 
-@Microsoft.PowerShell.Core.Get-Job
+[Get-Job](../Get-Job.md)
 
-@Microsoft.PowerShell.Core.Wait-Job
+[Wait-Job](../Wait-Job.md)
 
-@Microsoft.PowerShell.Core.Stop-Job
+[Stop-Job](../Stop-Job.md)
 
-@Microsoft.PowerShell.Core.Remove-Job
+[Remove-Job](../Remove-Job.md)
 
-@Microsoft.PowerShell.Core.Suspend-Job
+[Suspend-Job](../Suspend-Job.md)
 
-@Microsoft.PowerShell.Core.Resume-Job
+[Resume-Job](../Resume-Job.md)
 
-@Microsoft.PowerShell.Core.New-PSSession
+[New-PSSession](../New-PSSession.md)
 
-@Microsoft.PowerShell.Core.Enter-PSSession
+[Enter-PSSession](../Enter-PSSession.md)
 
-@Microsoft.PowerShell.Core.Exit-PSSession
+[Exit-PSSession](../Exit-PSSession.md)
 
-@PSScheduledJob.Register-ScheduledJob
+[Register-ScheduledJob](../../PSScheduledJob/Register-ScheduledJob.md)
 
-@PSScheduledJob.Get-ScheduledJob
+[Get-ScheduledJob](../../PSScheduledJob/Get-ScheduledJob.md)

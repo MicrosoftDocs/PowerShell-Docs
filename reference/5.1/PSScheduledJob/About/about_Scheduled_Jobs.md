@@ -40,7 +40,7 @@ component of many professional PowerShell IT solutions.
 The scheduled job cmdlets are included in the **PSScheduledJob** module that is
 installed with PowerShell. This module was introduced in PowerShell 3.0 and
 works in PowerShell 3.0 and later versions of PowerShell. For more information
-about the cmdlets contained in the **PSScheduledJob** module, see @PSScheduledJob.PSScheduledJob.
+about the cmdlets contained in the **PSScheduledJob** module, see [PSScheduledJob](../PSScheduledJob.md).
 
 For more information about PowerShell background jobs, see [about_Jobs](../../Microsoft.PowerShell.Core/About/about_Jobs.md).
 
@@ -241,6 +241,6 @@ job to which any job trigger or job option is associated.
 
 [about_Scheduled_Jobs_Troubleshooting](about_Scheduled_Jobs_Troubleshooting.md)
 
-@PSScheduledJob.PSScheduledJob module cmdlets
+[PSScheduledJob](../PSScheduledJob.md) module cmdlets
 
 [Task Scheduler](/windows/desktop/TaskSchd/task-scheduler-reference)

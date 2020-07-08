@@ -141,7 +141,7 @@ In Windows PowerShell 2.0, you can get only the PSSessions
 that you have created in the current session. You cannot get
 PSSessions that you created in other sessions.
 
-For more information, see @Microsoft.PowerShell.Core.Get-PSSession.
+For more information, see [Get-PSSession](../Get-PSSession.md).
 
 ## Can I See the PSSessions That Others Have Created on My Computer?
 
@@ -234,7 +234,7 @@ interactive session for use in later commands.
 When you end the interactive session, the PSSession remains open and
 available for use.
 
-For more information, see @Microsoft.PowerShell.Core.Enter-PSSession and @Microsoft.PowerShell.Core.Exit-PSSession.
+For more information, see [Enter-PSSession](../Enter-PSSession.md) and [Exit-PSSession](../Exit-PSSession.md).
 
 ## Must I Delete the PSSessions?
 
@@ -249,7 +249,7 @@ PSSessions and releases all of the resources that they were using.
 
 You can also use the **IdleTimeOut** parameter of `New-PSSessionOption` to close
 an idle PSSession after an interval that you specify. For more information,
-see @Microsoft.PowerShell.Core.New-PSSessionOption.
+see [New-PSSessionOption](../New-PSSessionOption.md).
 
 If you save a PSSession object in a variable and then delete the PSSession
 or let it time out, the variable still contains the PSSession object, but
@@ -273,14 +273,14 @@ another, it might be because the session is restricted.
 
 [about_Remote_Requirements](about_Remote_Requirements.md)
 
-@Microsoft.PowerShell.Core.Invoke-Command
+[Invoke-Command](../Invoke-Command.md)
 
-@Microsoft.PowerShell.Core.Enter-PSSession
+[Enter-PSSession](../Enter-PSSession.md)
 
-@Microsoft.PowerShell.Core.Exit-PSSession
+[Exit-PSSession](../Exit-PSSession.md)
 
-@Microsoft.PowerShell.Core.Get-PSSession
+[Get-PSSession](../Get-PSSession.md)
 
-@Microsoft.PowerShell.Core.New-PSSession
+[New-PSSession](../New-PSSession.md)
 
-@Microsoft.PowerShell.Core.Remove-PSSession
+[Remove-PSSession](../Remove-PSSession.md)

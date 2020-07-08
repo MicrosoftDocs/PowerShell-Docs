@@ -50,7 +50,7 @@ Runs the workflow as a workflow job. The workflow command immediately returns
 an object that represents a parent job. The parent job contains the child jobs
 that are running on each of the target computers. To manage the job, use the
 Job cmdlets. To get the job results, use
-@Microsoft.PowerShell.Core.Receive-Job.
+[Receive-Job](../../Microsoft.PowerShell.Core/Receive-Job.md).
 
 #### -JobName \<String\>
 
@@ -79,7 +79,7 @@ setting the `MaximumConnectionRedirectionCount` property of the
 `MaximumConnectionRedirectionCount` property of the value of the
 `PSSessionOption parameter`. The default value is 5. For more information, see
 the description of the `PSSessionOption` parameter and
-@Microsoft.PowerShell.Core.New-PSSessionOption.
+[New-PSSessionOption](../../Microsoft.PowerShell.Core/New-PSSessionOption.md).
 
 #### -PSApplicationName \<String\>
 
@@ -155,7 +155,7 @@ Certificates are used in client certificate-based authentication. They can only
 be mapped to local user accounts; they do not work with domain accounts.
 
 To get a certificate, use the
-@Microsoft.PowerShell.Management.Get-Item or [Get-ChildItem]
+[Get-Item](../../Microsoft.PowerShell.Management/Get-Item.md) or [Get-ChildItem]
 (../../Microsoft.PowerShell.Management/Get-Childitem.md) cmdlets in the Windows
 PowerShell Cert: drive.
 
@@ -349,6 +349,6 @@ the port used for the command, the command fails.
 
 - [about_ActivityCommonParameters](about_ActivityCommonParameters.md)
 - [about_Workflows](about_Workflows.md)
-- @PSWorkflowUtility.Invoke-AsWorkflow
-- @PSWorkflow.New-PSWorkflowExecutionOption
-- @PSWorkflow.New-PSWorkflowSession
+- [Invoke-AsWorkflow](../../PSWorkflowUtility/Invoke-AsWorkflow.md)
+- [New-PSWorkflowExecutionOption](../New-PSWorkflowExecutionOption.md)
+- [New-PSWorkflowSession](../New-PSWorkflowSession.md)

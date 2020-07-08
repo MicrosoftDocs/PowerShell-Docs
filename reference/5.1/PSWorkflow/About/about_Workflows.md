@@ -274,11 +274,11 @@ of the workflow common parameters, see
 
 ## See also
 
-@PSWorkflowUtility.Invoke-AsWorkflow
+[Invoke-AsWorkflow](../../PSWorkflowUtility/Invoke-AsWorkflow.md)
 
-@Microsoft.PowerShell.Core.New-PSSession
+[New-PSSession](../../Microsoft.PowerShell.Core/New-PSSession.md)
 
-@PSWorkflow.PSWorkflow cmdlets
+[PSWorkflow](../PSWorkflow.md) cmdlets
 
 [Workflows Guide](/previous-versions/powershell/scripting/components/workflows-guide)
 

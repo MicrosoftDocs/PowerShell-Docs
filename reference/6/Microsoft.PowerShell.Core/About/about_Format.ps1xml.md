@@ -65,8 +65,8 @@ new objects, create your own `Format.ps1xml` files, and then add them to your
 PowerShell session.
 
 To create a `Format.ps1xml` file to define a custom view, use the
-@Microsoft.PowerShell.Utility.Get-FormatData and
-@Microsoft.PowerShell.Utility.Export-FormatData
+[Get-FormatData](../../Microsoft.PowerShell.Utility/Get-FormatData.md) and
+[Export-FormatData](../../Microsoft.PowerShell.Utility/Export-FormatData.md)
 cmdlets. Use a text editor to edit the file. The file can be saved to any
 directory that PowerShell can access, such as a subdirectory of `$HOME`.
 
@@ -77,7 +77,7 @@ are described in the next section. You can then delete all the other views in
 the file so that the changes are obvious to anyone examining the file.
 
 After you save the changes, use the
-@Microsoft.PowerShell.Utility.Update-FormatData to
+[Update-FormatData](../../Microsoft.PowerShell.Utility/Update-FormatData.md) to
 add the new file to your PowerShell session. If you want your view to take
 precedence over a view defined in the built-in files, use the **PrependPath**
 parameter. `Update-FormatData` affects only the current session. To make the
@@ -193,7 +193,7 @@ the current PowerShell session.
 
 This example uses the **PrependPath** parameter to place the new file in a
 higher precedence order than the original file. For more information, see
-@Microsoft.PowerShell.Utility.Update-FormatData.
+[Update-FormatData](../../Microsoft.PowerShell.Utility/Update-FormatData.md).
 
 ```powershell
 Update-FormatData -PrependPath $HOME\Format\CultureInfo.Format.ps1xml
@@ -305,8 +305,8 @@ value of the **Name** parameter:
 - FormatViewBinding
 
 For more information, see
-@Microsoft.PowerShell.Utility.Trace-Command and
-@Microsoft.PowerShell.Utility.Get-TraceSource.
+[Trace-Command](../../Microsoft.PowerShell.Utility/Trace-Command.md) and
+[Get-TraceSource](../../Microsoft.PowerShell.Utility/Get-TraceSource.md).
 
 ## Signing a Format.ps1xml file
 
@@ -337,7 +337,7 @@ For this example, the custom view must use the table format, otherwise,
 Use `Format-Table` with the **View** parameter to specify the custom view's
 name, **mygciview**, and format the table's output with the **CreationTime**
 column. For an example of how the command is run, see
-@Microsoft.PowerShell.Utility.Format-Table.
+[Format-Table](../../Microsoft.PowerShell.Utility/Format-Table.md).
 
 > [!NOTE]
 > Although you can get the formatting XML from the source code to create a
@@ -424,16 +424,16 @@ Update-FormatData -AppendPath ./Mygciview.Format.ps1xml
 
 ## See also
 
-@Microsoft.PowerShell.Utility.Export-FormatData
+[Export-FormatData](../../Microsoft.PowerShell.Utility/Export-FormatData.md)
 
-@Microsoft.PowerShell.Utility.Get-FormatData
+[Get-FormatData](../../Microsoft.PowerShell.Utility/Get-FormatData.md)
 
-@Microsoft.PowerShell.Utility.Get-TraceSource
+[Get-TraceSource](../../Microsoft.PowerShell.Utility/Get-TraceSource.md)
 
 [Format Schema XML Reference](/powershell/scripting/developer/format/format-schema-xml-reference)
 
-@Microsoft.PowerShell.Utility.Trace-Command
+[Trace-Command](../../Microsoft.PowerShell.Utility/Trace-Command.md)
 
-@Microsoft.PowerShell.Utility.Update-FormatData
+[Update-FormatData](../../Microsoft.PowerShell.Utility/Update-FormatData.md)
 
 [Writing a PowerShell Formatting File](/powershell/scripting/developer/format/writing-a-powershell-formatting-file)

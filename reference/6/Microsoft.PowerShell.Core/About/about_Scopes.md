@@ -216,7 +216,7 @@ requires thread synchronization.
 
 For more information see:
 
-- @ThreadJob.Start-ThreadJob
+- [Start-ThreadJob](../../ThreadJob/Start-ThreadJob.md)
 
 #### Serialization of variable values
 

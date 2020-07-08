@@ -308,8 +308,8 @@ information, see [about_Methods](about_methods.md).
 
 [about_Objects](about_Objects.md)
 
-@Microsoft.PowerShell.Utility.Get-Member
+[Get-Member](../../Microsoft.PowerShell.Utility/Get-Member.md)
 
-@Microsoft.PowerShell.Utility.Select-Object
+[Select-Object](../../Microsoft.PowerShell.Utility/Select-Object.md)
 
-@Microsoft.PowerShell.Utility.Format-List
+[Format-List](../../Microsoft.PowerShell.Utility/Format-List.md)

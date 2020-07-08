@@ -596,7 +596,7 @@ the enumerator has passed the end of the collection.
 > [!NOTE]
 > The **Boolean** value returned my **MoveNext** is sent to the output stream.
 > You can suppress the output by typecasting it to `[void]` or piping it to
-> @Microsoft.PowerShell.Core.Out-Null.
+> [Out-Null](../Out-Null.md).
 >
 > ```powershell
 > $input.MoveNext() | Out-Null

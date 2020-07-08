@@ -133,7 +133,7 @@ non-terminating error occurs, the function should call the `WriteError` method,
 which is described in the `Write` methods section. When a terminating error
 occurs and the function can't continue, it should call the
 `ThrowTerminatingError` method. You can also use the `Throw` statement for
-terminating errors and the @Microsoft.PowerShell.Utility.Write-Error
+terminating errors and the [Write-Error](../../Microsoft.PowerShell.Utility/Write-Error.md)
 cmdlet for non-terminating errors.
 
 For more information, see

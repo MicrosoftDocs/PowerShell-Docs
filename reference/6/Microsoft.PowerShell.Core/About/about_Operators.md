@@ -194,7 +194,7 @@ At line:1 char:2
     + FullyQualifiedErrorId : CommandNotFoundException
 ```
 
-The @Microsoft.PowerShell.Utility.Invoke-Expression
+The [Invoke-Expression](../../Microsoft.PowerShell.Utility/Invoke-Expression.md)
 cmdlet can execute code that causes parsing errors when using the call
 operator.
 

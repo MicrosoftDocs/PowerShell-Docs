@@ -737,12 +737,12 @@ features that you can use to debug scripts and functions.
 
 ## SEE ALSO
 
-- @Microsoft.PowerShell.Utility.Disable-PSBreakpoint
-- @Microsoft.PowerShell.Utility.Enable-PSBreakpoint
-- @Microsoft.PowerShell.Utility.Get-PSBreakpoint
-- @Microsoft.PowerShell.Utility.Get-PSCallStack
-- @Microsoft.PowerShell.Utility.Remove-PSBreakpoint
-- @Microsoft.PowerShell.Utility.Set-PSBreakpoint
-- @Microsoft.PowerShell.Utility.Write-Debug
-- @Microsoft.PowerShell.Utility.Write-Verbose
+- [Disable-PsBreakpoint](../../Microsoft.PowerShell.Utility/Disable-PsBreakpoint.md)
+- [Enable-PsBreakpoint](../../Microsoft.PowerShell.Utility/Enable-PsBreakpoint.md)
+- [Get-PsBreakpoint](../../Microsoft.PowerShell.Utility/Get-PsBreakpoint.md)
+- [Get-PsCallStack](../../Microsoft.PowerShell.Utility/Get-PsCallStack.md)
+- [Remove-PsBreakpoint](../../Microsoft.PowerShell.Utility/Remove-PsBreakpoint.md)
+- [Set-PSBreakpoint](../../Microsoft.PowerShell.Utility/Set-PSBreakpoint.md)
+- [Write-Debug](../../Microsoft.PowerShell.Utility/Write-Debug.md)
+- [Write-Verbose](../../Microsoft.PowerShell.Utility/Write-Verbose.md)
 

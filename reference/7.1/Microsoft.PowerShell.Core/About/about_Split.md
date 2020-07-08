@@ -494,7 +494,7 @@ LastName, FirstName
 
 ## SEE ALSO
 
-@Microsoft.PowerShell.Management.Split-Path
+[Split-Path](../../Microsoft.PowerShell.Management/Split-Path.md)
 
 [about_Operators](about_Operators.md)
 

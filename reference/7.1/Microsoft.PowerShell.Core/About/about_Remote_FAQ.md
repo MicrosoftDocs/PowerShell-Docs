@@ -519,7 +519,7 @@ Set-Item WSMan:\localhost\Client\TrustedHosts -Value Server01
 
 [about_Remote_Variables](about_Remote_Variables.md)
 
-@Microsoft.PowerShell.Core.Invoke-Command
+[Invoke-Command](../Invoke-Command.md)
 
-@Microsoft.PowerShell.Core.New-PSSession
+[New-PSSession](../New-PSSession.md)
 

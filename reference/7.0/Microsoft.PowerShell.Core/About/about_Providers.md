@@ -100,62 +100,62 @@ Get-Help <cmdlet-name> -Detailed
 
 ### ChildItem cmdlets
 
-- @Microsoft.PowerShell.Management.Get-ChildItem
+- [Get-ChildItem](../../Microsoft.PowerShell.Management/Get-ChildItem.md)
 
 ### Content Cmdlets
 
-- @Microsoft.PowerShell.Management.Add-Content
-- @Microsoft.PowerShell.Management.Clear-Content
-- @Microsoft.PowerShell.Management.Get-Content
-- @Microsoft.PowerShell.Management.Set-Content
+- [Add-Content](../../Microsoft.PowerShell.Management/Add-Content.md)
+- [Clear-Content](../../Microsoft.PowerShell.Management/Clear-Content.md)
+- [Get-Content](../../Microsoft.PowerShell.Management/Get-Content.md)
+- [Set-Content](../../Microsoft.PowerShell.Management/Set-Content.md)
 
 ### Item Cmdlets
 
-- @Microsoft.PowerShell.Management.Clear-Item
-- @Microsoft.PowerShell.Management.Copy-Item
-- @Microsoft.PowerShell.Management.Get-Item
-- @Microsoft.PowerShell.Management.Invoke-Item
-- @Microsoft.PowerShell.Management.Move-Item
-- @Microsoft.PowerShell.Management.New-Item
-- @Microsoft.PowerShell.Management.Remove-Item
-- @Microsoft.PowerShell.Management.Rename-Item
-- @Microsoft.PowerShell.Management.Set-Item
+- [Clear-Item](../../Microsoft.PowerShell.Management/Clear-Item.md)
+- [Copy-Item](../../Microsoft.PowerShell.Management/Copy-Item.md)
+- [Get-Item](../../Microsoft.PowerShell.Management/Get-Item.md)
+- [Invoke-Item](../../Microsoft.PowerShell.Management/Invoke-Item.md)
+- [Move-Item](../../Microsoft.PowerShell.Management/Move-Item.md)
+- [New-Item](../../Microsoft.PowerShell.Management/New-Item.md)
+- [Remove-Item](../../Microsoft.PowerShell.Management/Remove-Item.md)
+- [Rename-Item](../../Microsoft.PowerShell.Management/Rename-Item.md)
+- [Set-Item](../../Microsoft.PowerShell.Management/Set-Item.md)
 
 ### ItemProperty cmdlets
 
-- @Microsoft.PowerShell.Management.Clear-ItemProperty
-- @Microsoft.PowerShell.Management.Copy-ItemProperty
-- @Microsoft.PowerShell.Management.Get-ItemProperty
-- @Microsoft.PowerShell.Management.Move-ItemProperty
-- @Microsoft.PowerShell.Management.New-ItemProperty
-- @Microsoft.PowerShell.Management.Remove-ItemProperty
-- @Microsoft.PowerShell.Management.Rename-ItemProperty
-- @Microsoft.PowerShell.Management.Set-ItemProperty
+- [Clear-ItemProperty](../../Microsoft.PowerShell.Management/Clear-ItemProperty.md)
+- [Copy-ItemProperty](../../Microsoft.PowerShell.Management/Copy-ItemProperty.md)
+- [Get-ItemProperty](../../Microsoft.PowerShell.Management/Get-ItemProperty.md)
+- [Move-ItemProperty](../../Microsoft.PowerShell.Management/Move-ItemProperty.md)
+- [New-ItemProperty](../../Microsoft.PowerShell.Management/New-ItemProperty.md)
+- [Remove-ItemProperty](../../Microsoft.PowerShell.Management/Remove-ItemProperty.md)
+- [Rename-ItemProperty](../../Microsoft.PowerShell.Management/Rename-ItemProperty.md)
+- [Set-ItemProperty](../../Microsoft.PowerShell.Management/Set-ItemProperty.md)
 
 ### Location cmdlets
 
-- @Microsoft.PowerShell.Management.Get-Location
-- @Microsoft.PowerShell.Management.Pop-Location
-- @Microsoft.PowerShell.Management.Push-Location
-- @Microsoft.PowerShell.Management.Set-Location
+- [Get-Location](../../Microsoft.PowerShell.Management/Get-Location.md)
+- [Pop-Location](../../Microsoft.PowerShell.Management/Pop-Location.md)
+- [Push-Location](../../Microsoft.PowerShell.Management/Push-Location.md)
+- [Set-Location](../../Microsoft.PowerShell.Management/Set-Location.md)
 
 ### Path cmdlets
 
-- @Microsoft.PowerShell.Management.Join-Path
-- @Microsoft.PowerShell.Management.Convert-Path
-- @Microsoft.PowerShell.Management.Split-Path
-- @Microsoft.PowerShell.Management.Resolve-Path
-- @Microsoft.PowerShell.Management.Test-Path
+- [Join-Path](../../Microsoft.PowerShell.Management/Join-Path.md)
+- [Convert-Path](../../Microsoft.PowerShell.Management/Convert-Path.md)
+- [Split-Path](../../Microsoft.PowerShell.Management/Split-Path.md)
+- [Resolve-Path](../../Microsoft.PowerShell.Management/Resolve-Path.md)
+- [Test-Path](../../Microsoft.PowerShell.Management/Test-Path.md)
 
 ### PSDrive cmdlets
 
-- @Microsoft.PowerShell.Management.Get-PSDrive
-- @Microsoft.PowerShell.Management.New-PSDrive
-- @Microsoft.PowerShell.Management.Remove-PSDrive
+- [Get-PSDrive](../../Microsoft.PowerShell.Management/Get-PSDrive.md)
+- [New-PSDrive](../../Microsoft.PowerShell.Management/New-PSDrive.md)
+- [Remove-PSDrive](../../Microsoft.PowerShell.Management/Remove-PSDrive.md)
 
 ### PSProvider Cmdlets
 
-- @Microsoft.PowerShell.Management.Get-PSProvider
+- [Get-PSProvider](../../Microsoft.PowerShell.Management/Get-PSProvider.md)
 
 ## Viewing provider data
 

@@ -334,8 +334,8 @@ $a
 
 You cannot use the `-=` operator to delete the values of a variable. To delete
 all the values that are assigned to a variable, use the
-@Microsoft.PowerShell.Management.Clear-Item or
-@Microsoft.PowerShell.Utility.Clear-Variable cmdlets
+[Clear-Item](../../Microsoft.PowerShell.Management/Clear-Item.md) or
+[Clear-Variable](../../Microsoft.PowerShell.Utility/Clear-Variable.md) cmdlets
 to assign a value of `$null` or `""` to the variable.
 
 ```powershell
@@ -368,7 +368,7 @@ $a
 ```
 
 To delete a variable, use the
-@Microsoft.PowerShell.Utility.Remove-Variable
+[Remove-Variable](../../Microsoft.PowerShell.Utility/Remove-Variable.md)
 cmdlet. This method is useful when the variable is explicitly cast to a
 particular data type, and you want an untyped variable. The following command
 deletes the `$a` variable:
@@ -847,7 +847,7 @@ $a = $b = $c = $d = "three"
 
 In addition to using an assignment operation to set a variable value, you
 can also use the
-@Microsoft.PowerShell.Utility.Set-Variable cmdlet. For
+[Set-Variable](../../Microsoft.PowerShell.Utility/Set-Variable.md) cmdlet. For
 example, the following command uses `Set-Variable` to assign an array of 1,
 2, 3 to the `$a` variable.
 
@@ -863,8 +863,8 @@ Set-Variable -Name a -Value 1, 2, 3
 
 [about_Variables](about_Variables.md)
 
-@Microsoft.PowerShell.Utility.Clear-Variable
+[Clear-Variable](../../Microsoft.PowerShell.Utility/Clear-Variable.md)
 
-@Microsoft.PowerShell.Utility.Remove-Variable
+[Remove-Variable](../../Microsoft.PowerShell.Utility/Remove-Variable.md)
 
-@Microsoft.PowerShell.Utility.Set-Variable
+[Set-Variable](../../Microsoft.PowerShell.Utility/Set-Variable.md)

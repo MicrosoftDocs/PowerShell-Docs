@@ -251,15 +251,15 @@ about_GroupPolicy
 
 [about_Updatable_Help](about_Updatable_Help.md)
 
-@Microsoft.PowerShell.Security.Get-ExecutionPolicy
+[Get-ExecutionPolicy](../../Microsoft.PowerShell.Security/Get-ExecutionPolicy.md)
 
-@Microsoft.PowerShell.Security.Set-ExecutionPolicy
+[Set-ExecutionPolicy](../../Microsoft.PowerShell.Security/Set-ExecutionPolicy.md)
 
-@Microsoft.PowerShell.Core.Get-Module
+[Get-Module](../Get-Module.md)
 
-@Microsoft.PowerShell.Core.Update-Help
+[Update-Help](../Update-Help.md)
 
-@Microsoft.PowerShell.Core.Save-Help
+[Save-Help](../Save-Help.md)
 
 <!-- link references -->
 [gpstore]: https://support.microsoft.com/help/3087759

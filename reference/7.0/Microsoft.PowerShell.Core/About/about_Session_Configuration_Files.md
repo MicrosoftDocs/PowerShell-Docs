@@ -379,24 +379,24 @@ working with an empty session.
 
 [about_Session_Configurations](about_Session_Configurations.md)
 
-@Microsoft.PowerShell.Core.New-PSSession
+[New-PSSession](../New-PSSession.md)
 
-@Microsoft.PowerShell.Core.Disable-PSSessionConfiguration
+[Disable-PSSessionConfiguration](../Disable-PSSessionConfiguration.md)
 
-@Microsoft.PowerShell.Core.Enable-PSSessionConfiguration
+[Enable-PSSessionConfiguration](../Enable-PSSessionConfiguration.md)
 
-@Microsoft.PowerShell.Core.Get-PSSessionConfiguration
+[Get-PSSessionConfiguration](../Get-PSSessionConfiguration.md)
 
-@Microsoft.PowerShell.Core.New-PSSessionConfigurationFile
+[New-PSSessionConfigurationFile](../New-PSSessionConfigurationFile.md)
 
-@Microsoft.PowerShell.Core.Register-PSSessionConfiguration
+[Register-PSSessionConfiguration](../Register-PSSessionConfiguration.md)
 
-@Microsoft.PowerShell.Core.Set-PSSessionConfiguration
+[Set-PSSessionConfiguration](../Set-PSSessionConfiguration.md)
 
-@Microsoft.PowerShell.Core.Test-PSSessionConfigurationFile
+[Test-PSSessionConfigurationFile](../Test-PSSessionConfigurationFile.md)
 
-@Microsoft.PowerShell.Core.Unregister-PSSessionConfiguration
+[Unregister-PSSessionConfiguration](../Unregister-PSSessionConfiguration.md)
 
-@Microsoft.PowerShell.Core.Get-PSSessionCapability
+[Get-PSSessionCapability](../Get-PSSessionCapability.md)
 
-@Microsoft.PowerShell.Core.New-PSRoleCapabilityFile
+[New-PSRoleCapabilityFile](../New-PSRoleCapabilityFile.md)

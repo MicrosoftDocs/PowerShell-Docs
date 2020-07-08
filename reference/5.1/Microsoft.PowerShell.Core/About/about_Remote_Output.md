@@ -208,18 +208,18 @@ computers are interspersed.
 
 [about_Remote_Variables](about_Remote_Variables.md)
 
-@Microsoft.PowerShell.Utility.Format-Table
+[Format-Table](../../Microsoft.PowerShell.Utility/Format-Table.md)
 
-@Microsoft.PowerShell.Management.Get-EventLog
+[Get-EventLog](../../Microsoft.PowerShell.Management/Get-EventLog.md)
 
-@Microsoft.PowerShell.Management.Get-Process
+[Get-Process](../../Microsoft.PowerShell.Management/Get-Process.md)
 
-@Microsoft.PowerShell.Management.Get-Service
+[Get-Service](../../Microsoft.PowerShell.Management/Get-Service.md)
 
-@Microsoft.PowerShell.Management.Get-WmiObject
+[Get-WmiObject](../../Microsoft.PowerShell.Management/Get-WmiObject.md)
 
-@Microsoft.PowerShell.Core.Invoke-Command
+[Invoke-Command](../Invoke-Command.md)
 
-@Microsoft.PowerShell.Utility.Out-GridView
+[Out-GridView](../../Microsoft.PowerShell.Utility/Out-GridView.md)
 
-@Microsoft.PowerShell.Utility.Select-Object
+[Select-Object](../../Microsoft.PowerShell.Utility/Select-Object.md)

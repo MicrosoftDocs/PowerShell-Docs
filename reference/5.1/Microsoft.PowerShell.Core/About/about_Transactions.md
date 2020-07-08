@@ -835,18 +835,18 @@ SKC  VC Name                           Property
 
 ## SEE ALSO
 
-@Microsoft.PowerShell.Management.Start-Transaction
+[Start-Transaction](../../Microsoft.PowerShell.Management/Start-Transaction.md)
 
-@Microsoft.PowerShell.Management.Get-Transaction
+[Get-Transaction](../../Microsoft.PowerShell.Management/Get-Transaction.md)
 
-@Microsoft.PowerShell.Management.Complete-Transaction
+[Complete-Transaction](../../Microsoft.PowerShell.Management/Complete-Transaction.md)
 
-@Microsoft.PowerShell.Management.Undo-Transaction
+[Undo-Transaction](../../Microsoft.PowerShell.Management/Undo-Transaction.md)
 
-@Microsoft.PowerShell.Management.Use-Transaction
+[Use-Transaction](../../Microsoft.PowerShell.Management/Use-Transaction.md)
 
-@Microsoft.PowerShell.Management.Get-PSProvider
+[Get-PSProvider](../../Microsoft.PowerShell.Management/Get-PSProvider.md)
 
-@Microsoft.PowerShell.Management.Get-ChildItem
+[Get-ChildItem](../../Microsoft.PowerShell.Management/Get-ChildItem.md)
 
 [about_Providers](about_Providers.md)

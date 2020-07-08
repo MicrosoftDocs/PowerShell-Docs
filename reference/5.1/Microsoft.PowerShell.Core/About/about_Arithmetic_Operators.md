@@ -529,5 +529,5 @@ right operand determine how many bits of the left operand are shifted.
 * [about_hash_tables](about_Hash_Tables.md)
 * [about_operators](about_Operators.md)
 * [about_variables](about_Variables.md)
-* @Microsoft.PowerShell.Utility.Get-Date
-* @Microsoft.PowerShell.Utility.New-TimeSpan
+* [Get-Date](../../Microsoft.PowerShell.Utility/Get-Date.md)
+* [New-TimeSpan](../../Microsoft.PowerShell.Utility/New-TimeSpan.md)
