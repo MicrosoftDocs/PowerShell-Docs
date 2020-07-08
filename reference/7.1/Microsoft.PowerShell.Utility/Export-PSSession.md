@@ -532,4 +532,3 @@ files that are created will not contain formatting data.
 [New-PSSessionOption](../Microsoft.PowerShell.Core/New-PSSessionOption.md)
 
 [Remove-PSSession](../Microsoft.PowerShell.Core/Remove-PSSession.md)
-

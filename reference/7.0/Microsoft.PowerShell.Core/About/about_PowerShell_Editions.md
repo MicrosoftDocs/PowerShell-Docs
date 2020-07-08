@@ -243,5 +243,5 @@ to catch possible behavioral differences between editions. For this you must sti
 [PSScriptAnalyzer]: https://github.com/PowerShell/PSScriptAnalyzer
 [`PSUseCompatibleCommands`]: https://github.com/PowerShell/PSScriptAnalyzer/blob/master/RuleDocumentation/UseCompatibleCommands.md
 [`PSUseCompatibleTypes`]: https://github.com/PowerShell/PSScriptAnalyzer/blob/master/RuleDocumentation/UseCompatibleTypes.md
-[.NET Standard]: https://docs.microsoft.com/dotnet/standard/net-standard
+[.NET Standard]: /dotnet/standard/net-standard
 [PowerShell Standard]: https://devblogs.microsoft.com/powershell/powershell-standard-library-build-single-module-that-works-across-windows-powershell-and-powershell-core/

@@ -474,22 +474,21 @@ telemetry even before the first run of PowerShell. We also plan on exposing this
 the insights we glean from the telemetry in the [community dashboard][community-dashboard]. You can
 find out more about how we use this data in this [blog post][telemetry-blog].
 
-[github]: https://github.com/PowerShell/PowerShell
-[.NET Core 2.0]: https://docs.microsoft.com/dotnet/core/
-[.NET Standard]: https://docs.microsoft.com/dotnet/standard/net-standard
-[os_log]: https://developer.apple.com/documentation/os/logging
-[Syslog]: https://en.wikipedia.org/wiki/Syslog
-[ssh-remoting]: ../learn/remoting/SSH-Remoting-in-PowerShell-Core.md
+[.NET Blog]: https://blogs.msdn.microsoft.com/dotnet/2016/09/26/introducing-net-standard
+[.NET Core 2.0]: /dotnet/core/
+[.NET Standard]: /dotnet/standard/net-standard
 [breaking-changes]: breaking-changes-ps6.md
+[CDXML]: /previous-versions/windows/desktop/wmi_v2/getting-started-with-cdxml
 [changelog]: https://github.com/PowerShell/PowerShell/tree/master/CHANGELOG.md
 [community-dashboard]: https://aka.ms/PSGitHubBI
-[telemetry-blog]: https://devblogs.microsoft.com/powershell/powershell-open-source-community-dashboard/
-[.NET Standard]: https://docs.microsoft.com/dotnet/standard/net-standard
-[.NET Blog]: https://blogs.msdn.microsoft.com/dotnet/2016/09/26/introducing-net-standard
-[YouTube]: https://www.youtube.com/watch?v=YI4MurjfMn8&list=PLRAdsfhKI4OWx321A_pr-7HhRNk7wOLLY
-[FAQ]: https://github.com/dotnet/standard/blob/master/docs/faq.md
-[CDXML]: /previous-versions/windows/desktop/wmi_v2/getting-started-with-cdxml
 [docker-hub]: https://hub.docker.com/r/microsoft/powershell/
 [docker]: https://github.com/PowerShell/PowerShell/tree/master/docker
+[FAQ]: https://github.com/dotnet/standard/blob/master/docs/faq.md
+[github]: https://github.com/PowerShell/PowerShell
+[os_log]: https://developer.apple.com/documentation/os/logging
+[semi-annual]: /windows-server/get-started/semi-annual-channel-overview
+[ssh-remoting]: ../learn/remoting/SSH-Remoting-in-PowerShell-Core.md
+[Syslog]: https://en.wikipedia.org/wiki/Syslog
+[telemetry-blog]: https://devblogs.microsoft.com/powershell/powershell-open-source-community-dashboard/
 [windowspsmodulepath]: https://www.powershellgallery.com/packages/WindowsPSModulePath/
-[semi-annual]: https://docs.microsoft.com/windows-server/get-started/semi-annual-channel-overview
+[YouTube]: https://www.youtube.com/watch?v=YI4MurjfMn8&list=PLRAdsfhKI4OWx321A_pr-7HhRNk7wOLLY
