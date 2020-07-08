@@ -194,6 +194,10 @@ ConvertFrom-SecureString returns a standard string object.
   correct. For example, a key of 128 bits can be specified as a byte array of 16 decimal numerals.
   Similarly, 192-bit and 256-bit keys correspond to byte arrays of 24 and 32 decimal numerals,
   respectively.
+- Some characters, such as emoticons, correspond to several code points in the string that contains
+  them. Avoid using these characters because they may cause problems and misunderstandings when used
+  in a password.
+
 
 ## RELATED LINKS
 
