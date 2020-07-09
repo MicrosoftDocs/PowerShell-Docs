@@ -9,25 +9,7 @@ This topic explains how to get started using PowerShell Desired State Configurat
 
 ## Supported Linux operation system versions
 
-The following Linux operating system versions are supported for DSC for Linux.
-
-- CentOS 5, 6, and 7 (x86/x64)
-- Debian GNU/Linux 6, 7 and 8 (x86/x64)
-- Oracle Linux 5, 6 and 7 (x86/x64)
-- Red Hat Enterprise Linux Server 5, 6 and 7 (x86/x64)
-- SUSE Linux Enterprise Server 10, 11 and 12 (x86/x64)
-- Ubuntu Server 12.04 LTS, 14.04 LTS and 16.04 LTS (x86/x64)
-
-The following table describes the required package dependencies for DSC for Linux.
-
-|  Required package |  Description |  Minimum version |
-|---|---|---|
-| glibc| GNU Library| 2…4 – 31.30|
-| python| Python| 2.4 – 3.4|
-| omiserver| Open Management Infrastructure| 1.0.8.1|
-| openssl| OpenSSL Libraries| 0.9.8 or 1.0|
-| ctypes| Python CTypes library| Must match Python version|
-| libcurl| cURL http client library| 7.15.1|
+For nodes running Linux, the DSC Linux extension supports all the Linux distributions listed in the GitHub repo under [Supported Linux operating systems](https://github.com/microsoft/PowerShell-DSC-for-Linux#supported-linux-operating-systems).
 
 ## Installing DSC for Linux
 
