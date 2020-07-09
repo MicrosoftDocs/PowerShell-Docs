@@ -1732,19 +1732,19 @@
     - name: Extended Type System (ETS)
       items:
       - name: ETS Overview
-        href: overview.md
+        href: developer/ets/overview.md
       - name: ETS members
-        href: members.md
+        href: developer/ets/members.md
       - name:ETS member sets
-        href: membersets.md
+        href: developer/ets/membersets.md
       - name: ETS properties
-        href: properties.md
+        href: developer/ets/properties.md
       - name: ETS methods
-        href: methods.md
+        href: developer/ets/methods.md
       - name: ETS type converters
         href: typeconverters.md
       - name: Errors and exceptions in ETS
-        href: errors-exceptions.md
+        href: developer/ets/errors-exceptions.md
     - name: Windows PowerShell Programmer's Guide
       href: developer/prog-guide/windows-powershell-programmer-s-guide.md
       items:
