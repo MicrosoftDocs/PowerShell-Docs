@@ -25,14 +25,14 @@ following table lists the type conversions performed by PowerShell when the
 | Null                  | Char              | '\0'                                                                                                                                                                |
 | Null                  | Numeric           | `0` of the type specified in the **resultType** parameter.                                                                                                          |
 | Null                  | Boolean           | Results of call to the `IsTrue(System.Object)(Null)` method.                                                                                                        |
-| Null                  | **PSObject**      | New object of type **PSObject**.                                                                                                                                    |
+| Null                  | PSObject          | New object of type **PSObject**.                                                                                                                                    |
 | Null                  | Non-value-type    | Null.                                                                                                                                                               |
 | Null                  | Nullable&lt;T&gt; | Null.                                                                                                                                                               |
 | Derived Class         | Base class        | **valueToConvert**                                                                                                                                                  |
 | Anything              | Void              | **AutomationNull.Value**                                                                                                                                            |
 | Anything              | String            | Calls `ToString` mechanism.                                                                                                                                         |
 | Anything              | Boolean           | `IsTrue(System.Object) (valueToConvert)`                                                                                                                            |
-| Anything              | **PSObject**      | Results of call to the `AsPSObject(System.Object) (valueToConvert)` method.                                                                                         |
+| Anything              | PSObject          | Results of call to the `AsPSObject(System.Object) (valueToConvert)` method.                                                                                         |
 | Anything              | Xml Document      | Converts **valueToConvert** to string, then calls **XMLDocument** constructor.                                                                                      |
 | Array                 | Array             | Attempts to convert each element of the array.                                                                                                                      |
 | Singleton             | Array             | `Array[0]` equals **valueToConvert** that is converted to the element type of the array.                                                                            |
@@ -73,7 +73,7 @@ parameter. If the **resultType** parameter references a type that has a PowerShe
 associated with it, PowerShell calls the
 `PSTypeConverter.ConvertFrom(System.Object,System.Type,System.IFormatProvider,System.Boolean)`
 method of the associated converter to convert the object from the type specified by the
-res****ultType parameter.
+**resultType** parameter.
 
 ## System type converter
 

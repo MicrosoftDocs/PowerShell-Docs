@@ -42,14 +42,14 @@ constructor with the name of the member set and the names of the referenced memb
 [PSMemberSet](/dotnet/api/system.management.automation.psmemberset) class has the following
 properties and methods.
 
-- **IsInstance** property: Gets a Boolean value that indicates the source of the member.
+- **IsInstance** property: Gets a **Boolean** value that indicates the source of the member.
 - **Members** property: Gets all the members of the member set.
-- **MemberType** property: Gets a MemberSet enumeration constant that defines this set as a member
-  set.
+- **MemberType** property: Gets a **MemberSet** enumeration constant that defines this set as a
+  member set.
 - **Methods** property: Gets the methods included in the member set.
 - **Properties** property: Gets the properties included in the member set.
-- **TypeNameOfValue** property: Gets a MemberSet enumeration constant that defines this set as a
+- **TypeNameOfValue** property: Gets a **MemberSet** enumeration constant that defines this set as a
   member set.
-- **Value** property: Gets the PSMemberSet object.
-- `PSMemberSet.Copy` method: Makes an exact copy of the PSMemberSet object.
-- `PSMemberSet.ToString` method: Converts the PSMemberSet object to a string.
+- **Value** property: Gets the **PSMemberSet** object.
+- `PSMemberSet.Copy` method: Makes an exact copy of the **PSMemberSet** object.
+- `PSMemberSet.ToString` method: Converts the **PSMemberSet** object to a string.
