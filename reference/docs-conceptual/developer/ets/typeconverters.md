@@ -6,7 +6,7 @@ ms.topic: conceptual
 # ETS type converters
 
 ETS uses two basic types of type converters when a call is made to the
-`LanguagePrimitives.ConvertTo(System.Object,System.Type)` method. When this method is called,
+`LanguagePrimitives.ConvertTo(System.Object, System.Type)` method. When this method is called,
 PowerShell attempts to perform the type conversion using its standard PowerShell language converters
 or a custom converter. If PowerShell cannot perform the conversion, it throws an
 **PSInvalidCastException** exception.
@@ -15,7 +15,7 @@ or a custom converter. If PowerShell cannot perform the conversion, it throws an
 
 These standard conversions are checked before any custom conversions and cannot be overridden. The
 following table lists the type conversions performed by PowerShell when the
-`ConvertTo(System.Object,System.Type)` method is called. Be aware that references to the
+`ConvertTo(System.Object, System.Type)` method is called. Be aware that references to the
 **valueToConvert** and **resultType** parameters refer to parameters of the
 `ConvertTo(System.Object,System.Type)` method.
 
@@ -48,7 +48,7 @@ following table lists the type conversions performed by PowerShell when the
 If PowerShell cannot convert the type using a standard PowerShell language converter, it then checks
 for custom converters. PowerShell looks for several types of custom converters in the order
 described in this section. Be aware that references to the **valueToConvert** and **resultType**
-parameters refer to parameters of the `ConvertTo(System.Object,System.Type)` method. If a custom
+parameters refer to parameters of the `ConvertTo(System.Object, System.Type)` method. If a custom
 converter throws an exception, then no further attempt is made to convert the object and that
 exception is wrapped in a **PSInvalidCastException** exception which is then thrown.
 
@@ -67,11 +67,11 @@ PowerShell type converters, derived from the
 methods for converting an object to a specific type or from a specific type. If the
 **valueToConvert** parameter contains an object that has a PowerShell Type converter associated with
 it, PowerShell calls the
-`PSTypeConverter.ConvertTo(System.Object,System.Type,System.IFormatProvider,System.Boolean)` method
-of the associated converter to convert the object to the type specified by the **resultType**
+`PSTypeConverter.ConvertTo(System.Object, System.Type,System.IFormatProvider, System.Boolean)`
+method of the associated converter to convert the object to the type specified by the **resultType**
 parameter. If the **resultType** parameter references a type that has a PowerShell type converter
 associated with it, PowerShell calls the
-`PSTypeConverter.ConvertFrom(System.Object,System.Type,System.IFormatProvider,System.Boolean)`
+`PSTypeConverter.ConvertFrom(System.Object,System.Type, System.IFormatProvider, System.Boolean)`
 method of the associated converter to convert the object from the type specified by the
 **resultType** parameter.
 

@@ -70,7 +70,7 @@ For the script developers, ETS provides the following support:
 - The ability to add, remove, and modify extended members.
 - The ability to manipulate the **PSObject** object itself if required.
 
-## The**PSObject** Object
+## The PSObject class
 
 The **PSObject** object is the basis of all object access from the scripting language and provides a
 standard abstraction for the cmdlet developer. It contains a base-object (a .NET object) and any
@@ -88,7 +88,7 @@ The **PSObject** object provides the following mechanisms:
   and cmdlets can reference similar **PSObject** objects by the same type-name, regardless of the
   type of their base-object.
 
-### How to Construct a **PSObject** Object
+### How to Construct a PSObject
 
 The following list describes ways to create a **PSObject** object:
 
@@ -119,26 +119,26 @@ extended-members with other **PSObject** objects of the same type-name.
   for the new **PSObject** object. If the supplied object is already an **PSObject** object, the
   supplied object is returned as is.
 
-### Base, Adapted, and Extended Members
+### Base, adapted, and extended members
 
 Conceptually, ETS uses the following terms to show the relationship between the original members of
 the base-object and those members added by PowerShell. For more information about the specific types
 of members that are used by the **PSObject** object, see
 [PSObject class](/dotnet/api/system.management.automation.psobject).
 
-#### Base-Object Members
+#### Base-object members
 
 If the base-object is specified when constructing the **PSObject** objects, then the members of the
 base-object are made available through the Members property.
 
-#### Adapted Members
+#### Adapted members
 
 When a base-object is a meta-object, one that contains data in a generic fashion whose properties
 "describe" their contained data, ETS adapts those objects to a view that allows for direct access to
 the data through adapted members of the **PSObject** object. Adapted members and base-object members
 are accessed through the Members property.
 
-#### Extended Members
+#### Extended members
 
 In addition to the members made available from the base-object or those adapted members created by
 PowerShell, an **PSObject** may also define extended members that extend the original base-object
@@ -152,7 +152,3 @@ those types even though there base class might not have a Path member.
 
 Extended members, adapted members, and base-object members are all accessed through the
 Members property.
-
-## Related Topics
-
-[PSObject class](/dotnet/api/system.management.automation.psobject)
