@@ -20,8 +20,8 @@ script.
 ### Folder structure for a MOF resource
 
 To implement a DSC custom resource with a MOF schema, create the following folder structure. The MOF
-schema is defined in the file Demo_IISWebsite.schema.mof, and the resource script is defined in
-Demo_IISWebsite.psm1. Optionally, you can create a module manifest (psd1) file.
+schema is defined in the file `Demo_IISWebsite.schema.mof`, and the resource script is defined in
+`Demo_IISWebsite.psm1`. Optionally, you can create a module manifest (psd1) file.
 
 ```
 $env:ProgramFiles\WindowsPowerShell\Modules (folder)
@@ -33,13 +33,14 @@ $env:ProgramFiles\WindowsPowerShell\Modules (folder)
                 |- Demo_IISWebsite.schema.mof (file, required)
 ```
 
-Note that it is necessary to create a folder named DSCResources under the top-level folder, and that
-the folder for each resource must have the same name as the resource.
+> [!NOTE]
+> It is necessary to create a folder named DSCResources under the top-level folder, and that the
+> folder for each resource must have the same name as the resource.
 
 ### The contents of the MOF file
 
 Following is an example MOF file that can be used for a custom website resource. To follow this
-example, save this schema to a file, and call the file *Demo_IISWebsite.schema.mof*.
+example, save this schema to a file, and call the file `Demo_IISWebsite.schema.mof`.
 
 ```
 [ClassVersion("1.0.0"), FriendlyName("Website")]
@@ -83,7 +84,7 @@ functions called `Get-TargetResource`, `Set-TargetResource`, and `Test-TargetRes
 three functions must take a parameter set that is identical to the set of properties defined in the
 MOF schema that you created for your resource. In this document, this set of properties is referred
 to as the "resource properties." Store these three functions in a file called `<ResourceName>.psm1`.
-In the following example, the functions are stored in a file called Demo_IISWebsite.psm1.
+In the following example, the functions are stored in a file called `Demo_IISWebsite.psm1`.
 
 > [!NOTE]
 > When you run the same configuration script on your resource more than once, you should receive no

@@ -106,7 +106,7 @@ Configuration TestConfig
 }
 ```
 
-When you compile the Configuration above, the values you specify for a key are stored in the ".mof"
+When you compile the Configuration above, the values you specify for a key are stored in the `.mof`
 file that is generated. For more information, see [MOF](/windows/desktop/wmisdk/managed-object-format--mof-).
 
 ```
@@ -125,8 +125,8 @@ ModuleVersion = "1.0";
 ```
 
 When applied, the [Local Configuration Manager](../managing-nodes/metaConfig.md) (LCM) will read the
-value "Spooler" from the ".mof" file, and pass it to the `-Name` parameter of the **Get**, **Test**,
-and **Set** methods for the "MyService" instance of the **Service** resource.
+value "Spooler" from the `.mof` file, and pass it to the **Name** parameter of the **Get**,
+**Test**, and **Set** methods for the "MyService" instance of the **Service** resource.
 
 ## Get
 
@@ -136,7 +136,7 @@ The keys of the **hashtable** will be the configurable values, or parameters, th
 
 The **Get** method maps directly to the [Get-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/get-dscconfiguration)
 cmdlet. When you call `Get-DSCConfiguration`, the LCM runs the **Get** method of each resource in
-the currently applied configuration. The LCM uses the key values stored in the ".mof" file as
+the currently applied configuration. The LCM uses the key values stored in the `.mof` file as
 parameters to each corresponding resource instance.
 
 This is sample output from a **Service** resource that configures the "Spooler" service.
@@ -188,14 +188,14 @@ Service [String] #ResourceName
 ## Test
 
 The **Test** method of a resource determines if the target node is currently compliant with the
-resource's _desired state_. The **Test** method returns `$True` or `$False` only to indicate whether
+resource's _desired state_. The **Test** method returns `$true` or `$false` only to indicate whether
 the Node is compliant. When you call [Test-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/Test-DSCConfiguration),
 the LCM calls the **Test** method of each resource in the currently applied configuration. The LCM
 uses the key values stored in the ".mof" file as parameters to each corresponding resource instance.
 
-If the result of any individual resource's **Test** is `$False`, `Test-DSCConfiguration` returns
-`$False` indicating that the Node is not compliant. If all resource's **Test** methods return
-`$True`, `Test-DSCConfiguration` returns `$True` to indicate that the Node is compliant.
+If the result of any individual resource's **Test** is `$false`, `Test-DSCConfiguration` returns
+`$false` indicating that the Node is not compliant. If all resource's **Test** methods return
+`$true`, `Test-DSCConfiguration` returns `$true` to indicate that the Node is compliant.
 
 ```powershell
 Test-DSCConfiguration
@@ -205,7 +205,7 @@ Test-DSCConfiguration
 True
 ```
 
-Beginning in PowerShell 5.0, the `-Detailed` parameter was added. Specifying `-Detailed` causes
+Beginning in PowerShell 5.0, the **Detailed** parameter was added. Specifying **Detailed** causes
 `Test-DSCConfiguration` to return an object containing collections of results for compliant, and
 non-compliant resources.
 
@@ -228,12 +228,12 @@ The **Set** method of a resource attempts to force the Node to become compliant 
 run multiple times and always get the same result without errors. When you run [Start-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/Start-DSCConfiguration),
 the LCM cycles through each resource in the currently applied configuration. The LCM retrieves key
 values for the current resource instance from the ".mof" file and uses them as parameters for the
-**Test** method. If the **Test** method returns `$True`, the Node is compliant with the current
-resource, and the **Set** method is skipped. If the **Test** returns `$False`, the Node is
+**Test** method. If the **Test** method returns `$true`, the Node is compliant with the current
+resource, and the **Set** method is skipped. If the **Test** returns `$false`, the Node is
 non-compliant. The LCM passes the resource instance's key values as parameters to the resource's
 **Set** method, restoring the Node to compliance.
 
-By specifying the `-Verbose` and `-Wait` parameters, you can watch the progress of the
+By specifying the **Verbose** and **Wait** parameters, you can watch the progress of the
 `Start-DSCConfiguration` cmdlet. In this example, the Node is already compliant. The `Verbose`
 output indicates that the **Set** method was skipped.
 

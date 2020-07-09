@@ -34,7 +34,7 @@ xPSDesiredStateConfiguration
 
 ## Resource and schema are correct
 
-Verify the resource schema (*.schema.mof) file. You can use the
+Verify the resource schema (`*.schema.mof`) file. You can use the
 [DSC Resource Designer](https://www.powershellgallery.com/packages/xDSCResourceDesigner/1.12.0.0) to
 help develop and test your schema. Make sure that:
 
