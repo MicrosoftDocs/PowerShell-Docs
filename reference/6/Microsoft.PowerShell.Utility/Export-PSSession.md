@@ -361,7 +361,7 @@ Accept wildcard characters: False
 ### -FullyQualifiedModule
 
 Specifies modules with names that are specified in the form of **ModuleSpecification** objects.
-See the Remarks section of [ModuleSpecification Constructor (Hashtable)](https://msdn.microsoft.com/library/jj136290).
+See the Remarks section of [ModuleSpecification Constructor (Hashtable)](/dotnet/api/microsoft.powershell.commands.modulespecification.-ctor#Microsoft_PowerShell_Commands_ModuleSpecification__ctor_System_Collections_Hashtable_).
 
 For example, the **FullyQualifiedModule** parameter accepts a module name that is specified in
 either of these formats:
