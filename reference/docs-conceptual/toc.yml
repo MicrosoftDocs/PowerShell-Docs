@@ -1729,6 +1729,22 @@
             href: developer/help/how-to-add-dynamic-parameters-to-a-provider-help-topic.md
           - name: How to Add a See Also Section to a Provider Help Topic
             href: developer/help/how-to-add-a-see-also-section-to-a-provider-help-topic.md
+    - name: Extended Type System (ETS)
+      items:
+      - name: ETS Overview
+        href: developer/ets/overview.md
+      - name: ETS members
+        href: developer/ets/members.md
+      - name: ETS member sets
+        href: developer/ets/membersets.md
+      - name: ETS properties
+        href: developer/ets/properties.md
+      - name: ETS methods
+        href: developer/ets/methods.md
+      - name: ETS type converters
+        href: developer/ets/typeconverters.md
+      - name: Errors and exceptions in ETS
+        href: developer/ets/errors-exceptions.md
     - name: Windows PowerShell Programmer's Guide
       href: developer/prog-guide/windows-powershell-programmer-s-guide.md
       items:
