@@ -17,10 +17,8 @@ applied to the node using the `Start-DSCConfiguration` cmdlet. The process descr
 is required only when implementing a solution using the pull service protocol if certificates are
 not managed, to ensure configurations downloaded by the target node can be decrypted and read by the
 system before they are applied (for example, the pull service available in Windows Server). Nodes
-registered to
-[Azure Automation DSC](/azure/automation/automation-dsc-overview) will
-automatically have certificates installed and managed by the service with no administrative overhead
-required.
+registered to [Azure Automation DSC](/azure/automation/automation-dsc-overview) will automatically
+have certificates installed and managed by the service with no administrative overhead required.
 
 > [!NOTE]
 > This topic discusses certificates used for encryption. For encryption, a self-signed certificate
@@ -48,6 +46,9 @@ following:
 - If you will be running this configuration on a computer other than the target node, **export the
   public key of the certificate**, and then import it to the computer you will run the configuration
   from. Make sure that you export only the **public** key; keep the private key secure.
+
+> [!NOTE]
+> Script Resources have limitations when it comes to encryption. For more information, see [Script Resource](../reference/resources/windows/scriptResource.md#known-limitations)
 
 ## Overall process
 
