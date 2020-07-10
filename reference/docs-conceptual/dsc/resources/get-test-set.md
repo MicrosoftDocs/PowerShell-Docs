@@ -1,5 +1,5 @@
 ---
-ms.date:  12/12/2018
+ms.date: 07/08/2020
 keywords:  dsc,powershell,configuration,setup
 title:  Get-Test-Set
 ---
@@ -10,9 +10,13 @@ title:  Get-Test-Set
 
 ![Get, Test, and Set](media/get-test-set/get-test-set.png)
 
-PowerShell Desired State Configuration is constructed around a **Get**, **Test**, and **Set** process. DSC [resources](resources.md) each contains methods to complete each of these operations. In a [Configuration](../configurations/configurations.md), you define resource blocks to fill in keys that become parameters for a resource's **Get**, **Test**, and **Set** methods.
+PowerShell Desired State Configuration is constructed around a **Get**, **Test**, and **Set**
+process. DSC [resources](resources.md) each contains methods to complete each of these operations.
+In a [Configuration](../configurations/configurations.md), you define resource blocks to fill in
+keys that become parameters for a resource's **Get**, **Test**, and **Set** methods.
 
-This is the syntax for a **Service** resource block. The **Service** resource configures Windows services.
+This is the syntax for a **Service** resource block. The **Service** resource configures Windows
+services.
 
 ```syntax
 Service [String] #ResourceName
@@ -32,58 +36,61 @@ Service [String] #ResourceName
 }
 ```
 
-The **Get**, **Test**, and **Set** methods of the **Service** resource will have parameter blocks that accept these values.
+The **Get**, **Test**, and **Set** methods of the **Service** resource will have parameter blocks
+that accept these values.
 
 ```powershell
-    param
-    (
-        [parameter(Mandatory = $true)]
-        [ValidateNotNullOrEmpty()]
-        [System.String]
-        $Name,
+param
+(
+    [parameter(Mandatory = $true)]
+    [ValidateNotNullOrEmpty()]
+    [System.String]
+    $Name,
 
-        [System.String]
-        [ValidateSet("Automatic", "Manual", "Disabled")]
-        $StartupType,
+    [System.String]
+    [ValidateSet("Automatic", "Manual", "Disabled")]
+    $StartupType,
 
-        [System.String]
-        [ValidateSet("LocalSystem", "LocalService", "NetworkService")]
-        $BuiltInAccount,
+    [System.String]
+    [ValidateSet("LocalSystem", "LocalService", "NetworkService")]
+    $BuiltInAccount,
 
-        [System.Management.Automation.PSCredential]
-        [ValidateNotNull()]
-        $Credential,
+    [System.Management.Automation.PSCredential]
+    [ValidateNotNull()]
+    $Credential,
 
-        [System.String]
-        [ValidateSet("Running", "Stopped")]
-        $State="Running",
+    [System.String]
+    [ValidateSet("Running", "Stopped")]
+    $State="Running",
 
-        [System.String]
-        [ValidateNotNullOrEmpty()]
-        $DisplayName,
+    [System.String]
+    [ValidateNotNullOrEmpty()]
+    $DisplayName,
 
-        [System.String]
-        [ValidateNotNullOrEmpty()]
-        $Description,
+    [System.String]
+    [ValidateNotNullOrEmpty()]
+    $Description,
 
-        [System.String]
-        [ValidateNotNullOrEmpty()]
-        $Path,
+    [System.String]
+    [ValidateNotNullOrEmpty()]
+    $Path,
 
-        [System.String[]]
-        [ValidateNotNullOrEmpty()]
-        $Dependencies,
+    [System.String[]]
+    [ValidateNotNullOrEmpty()]
+    $Dependencies,
 
-        [System.String]
-        [ValidateSet("Present", "Absent")]
-        $Ensure="Present"
-    )
+    [System.String]
+    [ValidateSet("Present", "Absent")]
+    $Ensure="Present"
+)
 ```
 
 > [!NOTE]
-> The language and method used to define the resource determines how the **Get**, **Test**, and **Set** methods will be defined.
+> The language and method used to define the resource determines how the **Get**, **Test**, and
+> **Set** methods will be defined.
 
-Because the **Service** resource only has one required key (`Name`), a **Service** block resource could be as simple as this:
+Because the **Service** resource only has one required key (`Name`), a **Service** block resource
+could be as simple as this:
 
 ```powershell
 Configuration TestConfig
@@ -99,7 +106,8 @@ Configuration TestConfig
 }
 ```
 
-When you compile the Configuration above, the values you specify for a key are stored in the ".mof" file that is generated. For more information, see [MOF](/windows/desktop/wmisdk/managed-object-format--mof-).
+When you compile the Configuration above, the values you specify for a key are stored in the `.mof`
+file that is generated. For more information, see [MOF](/windows/desktop/wmisdk/managed-object-format--mof-).
 
 ```
 instance of MSFT_ServiceResource as $MSFT_ServiceResource1ref
@@ -116,13 +124,20 @@ ModuleVersion = "1.0";
 };
 ```
 
-When applied, the [Local Configuration Manager](../managing-nodes/metaConfig.md) (LCM) will read the value "Spooler" from the ".mof" file, and pass it to the `-Name` parameter of the **Get**, **Test**, and **Set** methods for the "MyService" instance of the **Service** resource.
+When applied, the [Local Configuration Manager](../managing-nodes/metaConfig.md) (LCM) will read the
+value "Spooler" from the `.mof` file, and pass it to the **Name** parameter of the **Get**,
+**Test**, and **Set** methods for the "MyService" instance of the **Service** resource.
 
 ## Get
 
-The **Get** method of a resource, retrieves the state of the resource as it is configured on the target Node. This state is returned as a [hashtable](/powershell/module/microsoft.powershell.core/about/about_hash_tables). The keys of the **hashtable** will be the configurable values, or parameters, the resource accepts.
+The **Get** method of a resource, retrieves the state of the resource as it is configured on the
+target Node. This state is returned as a [hashtable](/powershell/module/microsoft.powershell.core/about/about_hash_tables).
+The keys of the **hashtable** will be the configurable values, or parameters, the resource accepts.
 
-The **Get** method maps directly to the [Get-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/get-dscconfiguration) cmdlet. When you call `Get-DSCConfiguration`, the LCM runs the **Get** method of each resource in the currently applied configuration. The LCM uses the key values stored in the ".mof" file as parameters to each corresponding resource instance.
+The **Get** method maps directly to the [Get-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/get-dscconfiguration)
+cmdlet. When you call `Get-DSCConfiguration`, the LCM runs the **Get** method of each resource in
+the currently applied configuration. The LCM uses the key values stored in the `.mof` file as
+parameters to each corresponding resource instance.
 
 This is sample output from a **Service** resource that configures the "Spooler" service.
 
@@ -172,10 +187,15 @@ Service [String] #ResourceName
 
 ## Test
 
-The **Test** method of a resource determines if the target node is currently compliant with the resource's *desired state*. The **Test** method returns `$True` or `$False` only to indicate whether the Node is compliant.
-When you call [Test-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/Test-DSCConfiguration), the LCM calls the **Test** method of each resource in the currently applied configuration. The LCM uses the key values stored in the ".mof" file as parameters to each corresponding resource instance.
+The **Test** method of a resource determines if the target node is currently compliant with the
+resource's _desired state_. The **Test** method returns `$true` or `$false` only to indicate whether
+the Node is compliant. When you call [Test-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/Test-DSCConfiguration),
+the LCM calls the **Test** method of each resource in the currently applied configuration. The LCM
+uses the key values stored in the ".mof" file as parameters to each corresponding resource instance.
 
-If the result of any individual resource's **Test** is `$False`, `Test-DSCConfiguration` returns `$False` indicating that the Node is not compliant. If all resource's **Test** methods return `$True`, `Test-DSCConfiguration` returns `$True` to indicate that the Node is compliant.
+If the result of any individual resource's **Test** is `$false`, `Test-DSCConfiguration` returns
+`$false` indicating that the Node is not compliant. If all resource's **Test** methods return
+`$true`, `Test-DSCConfiguration` returns `$true` to indicate that the Node is compliant.
 
 ```powershell
 Test-DSCConfiguration
@@ -185,7 +205,9 @@ Test-DSCConfiguration
 True
 ```
 
-Beginning in PowerShell 5.0, the `-Detailed` parameter was added. Specifying `-Detailed` causes `Test-DSCConfiguration` to return an object containing collections of results for compliant, and non-compliant resources.
+Beginning in PowerShell 5.0, the **Detailed** parameter was added. Specifying **Detailed** causes
+`Test-DSCConfiguration` to return an object containing collections of results for compliant, and
+non-compliant resources.
 
 ```powershell
 Test-DSCConfiguration -Detailed
@@ -201,9 +223,19 @@ For more information, see [Test-DSCConfiguration](/powershell/module/psdesiredst
 
 ## Set
 
-The **Set** method of a resource attempts to force the Node to become compliant with the resource's *desired state*. The **Set** method is meant to be **idempotent**, which means that **Set** could be run multiple times and always get the same result without errors.  When you run [Start-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/Start-DSCConfiguration), the LCM cycles through each resource in the currently applied configuration. The LCM retrieves key values for the current resource instance from the ".mof" file and uses them as parameters for the **Test** method. If the **Test** method returns `$True`, the Node is compliant with the current resource, and the **Set** method is skipped. If the **Test** returns `$False`, the Node is non-compliant.  The LCM passes the resource instance's key values as parameters to the resource's **Set** method, restoring the Node to compliance.
+The **Set** method of a resource attempts to force the Node to become compliant with the resource's
+*desired state*. The **Set** method is meant to be **idempotent**, which means that **Set** could be
+run multiple times and always get the same result without errors. When you run [Start-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/Start-DSCConfiguration),
+the LCM cycles through each resource in the currently applied configuration. The LCM retrieves key
+values for the current resource instance from the ".mof" file and uses them as parameters for the
+**Test** method. If the **Test** method returns `$true`, the Node is compliant with the current
+resource, and the **Set** method is skipped. If the **Test** returns `$false`, the Node is
+non-compliant. The LCM passes the resource instance's key values as parameters to the resource's
+**Set** method, restoring the Node to compliance.
 
-By specifying the `-Verbose` and `-Wait` parameters, you can watch the progress of the `Start-DSCConfiguration` cmdlet. In this example, the Node is already compliant. The `Verbose` output indicates that the **Set** method was skipped.
+By specifying the **Verbose** and **Wait** parameters, you can watch the progress of the
+`Start-DSCConfiguration` cmdlet. In this example, the Node is already compliant. The `Verbose`
+output indicates that the **Set** method was skipped.
 
 ```
 PS> Start-DSCConfiguration -Verbose -Wait -UseExisting

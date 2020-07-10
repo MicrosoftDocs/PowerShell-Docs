@@ -1,5 +1,5 @@
 ---
-ms.date:  06/12/2017
+ms.date: 07/08/2020
 keywords:  dsc,powershell,configuration,setup
 title:  Authoring a DSC resource in C#
 ---
@@ -8,11 +8,16 @@ title:  Authoring a DSC resource in C#
 
 > Applies To: Windows PowerShell 4.0, Windows PowerShell 5.0
 
-Typically, a Windows PowerShell Desired State Configuration (DSC) custom resource is implemented in a PowerShell script. However, you can also implement the functionality of a DSC custom resource by writing cmdlets in C#. For an introduction on writing cmdlets in C#, see [Writing a Windows PowerShell Cmdlet](/powershell/scripting/developer/windows-powershell).
+Typically, a Windows PowerShell Desired State Configuration (DSC) custom resource is implemented in
+a PowerShell script. However, you can also implement the functionality of a DSC custom resource by
+writing cmdlets in C#. For an introduction on writing cmdlets in C#, see [Writing a Windows PowerShell Cmdlet](/powershell/scripting/developer/windows-powershell).
 
-Aside from implementing the resource in C# as cmdlets, the process of creating the MOF schema, creating the folder structure, importing and using your custom DSC resource are the same as described in [Writing a custom DSC resource with MOF](authoringResourceMOF.md).
+Aside from implementing the resource in C# as cmdlets, the process of creating the MOF schema,
+creating the folder structure, importing and using your custom DSC resource are the same as
+described in [Writing a custom DSC resource with MOF](authoringResourceMOF.md).
 
 ## Writing a cmdlet-based resource
+
 For this example, we will implement a simple resource that manages a text file and its contents.
 
 ### Writing the MOF schema
@@ -30,6 +35,7 @@ class MSFT_XDemoFile : OMI_BaseResource
 ```
 
 ### Setting up the Visual Studio project
+
 #### Setting up a cmdlet project
 
 1. Open Visual Studio.
@@ -37,15 +43,15 @@ class MSFT_XDemoFile : OMI_BaseResource
 1. Select **Class Library** from the available project templates.
 1. Click **Ok**.
 1. Add an assembly reference to System.Automation.Management.dll to your project.
-1. Change the assembly name to match the resource name. In this case, the assembly should be named **MSFT_XDemoFile**.
+1. Change the assembly name to match the resource name. In this case, the assembly should be named
+   **MSFT_XDemoFile**.
 
 ### Writing the cmdlet code
 
-The following C# code implements the **Get-TargetResource**, **Set-TargetResource**, and **Test-TargetResource** cmdlets.
+The following C# code implements the `Get-TargetResource`, `Set-TargetResource`, and
+`Test-TargetResource` cmdlets.
 
 ```C#
-
-
 namespace cSharpDSCResourceExample
 {
     using System;
@@ -259,7 +265,8 @@ namespace cSharpDSCResourceExample
 
 ### Deploying the resource
 
-The compiled dll file should be saved in a file structure similar to a script-based resource. The following is the folder structure for this resource.
+The compiled dll file should be saved in a file structure similar to a script-based resource. The
+following is the folder structure for this resource.
 
 ```
 $env: psmodulepath (folder)
@@ -273,7 +280,11 @@ $env: psmodulepath (folder)
 ```
 
 ### See Also
+
 #### Concepts
+
 [Writing a custom DSC resource with MOF](authoringResourceMOF.md)
+
 #### Other Resources
+
 [Writing a Windows PowerShell Cmdlet](/powershell/scripting/developer/windows-powershell)
