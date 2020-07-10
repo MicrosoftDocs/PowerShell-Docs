@@ -273,4 +273,4 @@ int: 1
 
 [about_Properties](about_Properties.md)
 
-[Get-Member](../../Microsoft.PowerShell.Utility/Get-Member.md)
+[Get-Member](xref:Microsoft.PowerShell.Utility.Get-Member)

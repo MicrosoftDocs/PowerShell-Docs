@@ -104,7 +104,7 @@ For best practices about code signing, see
 [Code-Signing Best Practices](/previous-versions/windows/hardware/design/dn653556(v=vs.85)).
 
 For more information about how to sign a script file, see
-[Set-AuthenticodeSignature](../../microsoft.powershell.security/set-authenticodesignature.md).
+[Set-AuthenticodeSignature](xref:Microsoft.PowerShell.Security.Set-AuthenticodeSignature).
 
 The `New-SelfSignedCertificate` cmdlet, introduced in the PKI module in
 PowerShell 3.0, creates a self-signed certificate that is Appropriate for
@@ -293,11 +293,11 @@ stamp server ensures that users can use your script for many years to come.
 
 [about_Profiles](about_Profiles.md)
 
-[Get-ExecutionPolicy](../../Microsoft.PowerShell.Security/Get-ExecutionPolicy.md)
+[Get-ExecutionPolicy](xref:Microsoft.PowerShell.Security.Get-ExecutionPolicy)
 
-[Set-ExecutionPolicy](../../Microsoft.PowerShell.Security/Set-ExecutionPolicy.md)
+[Set-ExecutionPolicy](xref:Microsoft.PowerShell.Security.Set-ExecutionPolicy)
 
-[Set-AuthenticodeSignature](../../Microsoft.PowerShell.Security/Set-AuthenticodeSignature.md)
+[Set-AuthenticodeSignature](xref:Microsoft.PowerShell.Security.Set-AuthenticodeSignature)
 
 [Introduction to Code Signing](/previous-versions/windows/internet-explorer/ie-developer/platform-apis/ms537361(v=vs.85))
 

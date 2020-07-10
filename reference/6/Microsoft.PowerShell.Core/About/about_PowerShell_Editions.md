@@ -250,8 +250,8 @@ For this you must still write tests.
 ## See also
 
 - [about_Automatic_Variables](about_Automatic_Variables.md)
-- [Import-Module](../Import-Module.md)
-- [Get-Module](../Get-Module.md)
+- [Import-Module](xref:Microsoft.PowerShell.Core.Import-Module)
+- [Get-Module](xref:Microsoft.PowerShell.Core.Get-Module)
 - [Modules with compatible PowerShell Editions](/powershell/scripting/gallery/concepts/module-psedition-support)
 
 [Pester]: https://github.com/pester/Pester/wiki/Pester

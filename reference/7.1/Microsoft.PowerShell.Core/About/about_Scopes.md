@@ -217,8 +217,8 @@ requires thread synchronization.
 
 For more information see:
 
-- [Start-ThreadJob](../../ThreadJob/Start-ThreadJob.md)
-- [ForEach-Object](../ForEach-Object.md#notes)
+- [Start-ThreadJob](xref:ThreadJob.Start-ThreadJob)
+- [ForEach-Object](xref:Microsoft.PowerShell.Core.ForEach-Object)
 
 #### Serialization of variable values
 
