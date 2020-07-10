@@ -206,13 +206,13 @@ computers are interspersed.
 
 [about_Remote_Variables](about_Remote_Variables.md)
 
-[Format-Table](../../Microsoft.PowerShell.Utility/Format-Table.md)
+[Format-Table](xref:Microsoft.PowerShell.Utility.Format-Table)
 
-[Get-Process](../../Microsoft.PowerShell.Management/Get-Process.md)
+[Get-Process](xref:Microsoft.PowerShell.Management.Get-Process)
 
-[Get-Service](../../Microsoft.PowerShell.Management/Get-Service.md)
+[Get-Service](xref:Microsoft.PowerShell.Management.Get-Service)
 
-[Invoke-Command](../Invoke-Command.md)
+[Invoke-Command](xref:Microsoft.PowerShell.Core.Invoke-Command)
 
-[Select-Object](../../Microsoft.PowerShell.Utility/Select-Object.md)
+[Select-Object](xref:Microsoft.PowerShell.Utility.Select-Object)
 

@@ -25,7 +25,7 @@ data to a PowerShell session.
 This topic describes `Types.ps1xml` files. For more information about using the
 `Update-TypeData` cmdlet to add dynamic extended type data to the current
 session see
-[Update-TypeData](../../Microsoft.PowerShell.Utility/Update-TypeData.md).
+[Update-TypeData](xref:Microsoft.PowerShell.Utility.Update-TypeData).
 
 ## About extended type data
 
@@ -178,7 +178,7 @@ objects of the specified .NET type in the affected PowerShell session. However,
 if you need to add properties or methods only to one instance of an object, use
 the `Add-Member` cmdlet.
 
-For more information, see [Add-Member](../../Microsoft.PowerShell.Utility/Add-Member.md).
+For more information, see [Add-Member](xref:Microsoft.PowerShell.Utility.Add-Member).
 
 ## Example: Adding an Age member to FileInfo objects
 
@@ -213,7 +213,7 @@ session. The command uses the **PrependData** parameter to place the new file
 in a precedence order higher than the original definitions.
 
 For more information about `Update-TypeData`, see
-[Update-TypeData](../../Microsoft.PowerShell.Utility/Update-TypeData.md).
+[Update-TypeData](xref:Microsoft.PowerShell.Utility.Update-TypeData).
 
 ```powershell
 Update-Typedata -PrependPath $PSHOME\MyTypes.ps1xml
@@ -535,15 +535,15 @@ digital signature. For more information, see
 
 [about_Signing](about_Signing.md)
 
-[Copy-Item](../../Microsoft.PowerShell.Management/Copy-Item.md)
+[Copy-Item](xref:Microsoft.PowerShell.Management.Copy-Item)
 
-[Copy-ItemProperty](../../Microsoft.PowerShell.Management/Copy-ItemProperty.md)
+[Copy-ItemProperty](xref:Microsoft.PowerShell.Management.Copy-ItemProperty)
 
-[Get-Member](../../Microsoft.PowerShell.Utility/Get-Member.md)
+[Get-Member](xref:Microsoft.PowerShell.Utility.Get-Member)
 
-[Get-TypeData](../../Microsoft.PowerShell.Utility/Get-TypeData.md)
+[Get-TypeData](xref:Microsoft.PowerShell.Utility.Get-TypeData)
 
-[Remove-TypeData](../../Microsoft.PowerShell.Utility/Remove-TypeData.md)
+[Remove-TypeData](xref:Microsoft.PowerShell.Utility.Remove-TypeData)
 
-[Update-TypeData](../../Microsoft.PowerShell.Utility/Update-TypeData.md)
+[Update-TypeData](xref:Microsoft.PowerShell.Utility.Update-TypeData)
 

@@ -153,5 +153,5 @@ about_Windows_PowerShell_Compatibility
 
 [about_Modules](about_Modules.md)
 
-[Import-Module](../Import-Module.md)
+[Import-Module](xref:Microsoft.PowerShell.Core.Import-Module)
 

@@ -145,7 +145,7 @@ Get-Module
 ```
 
 For more information about the `Get-Module` cmdlet, see
-[Get-Module](../Get-Module.md).
+[Get-Module](xref:Microsoft.PowerShell.Core.Get-Module).
 
 ## How to Find the Commands in a Module
 
@@ -166,7 +166,7 @@ Get-Command -Module BitsTransfer
 ```
 
 For more information about the `Get-Command` cmdlet, see
-[Get-Command](../Get-Command.md).
+[Get-Command](xref:Microsoft.PowerShell.Core.Get-Command).
 
 ## How to Get Help for the Commands in a Module
 
@@ -195,8 +195,8 @@ To download and install the help files for the commands in a module, type:
 Update-Help -Module <module-name>
 ```
 
-For more information, see [Get-Help](../Get-Help.md) and
-[Update-Help](../Update-Help.md).
+For more information, see [Get-Help](xref:Microsoft.PowerShell.Core.Get-Help) and
+[Update-Help](xref:Microsoft.PowerShell.Core.Update-Help).
 
 ## How to Import a Module
 
@@ -249,7 +249,7 @@ Import-Module C:\ps-test\TestCmdlets.dll
 ```
 
 For more information about adding modules to your session, see
-[Import-Module](../Import-Module.md).
+[Import-Module](xref:Microsoft.PowerShell.Core.Import-Module).
 
 ## How to Import a Module into Every Session
 
@@ -280,7 +280,7 @@ Remove-Module BitsTransfer
 
 Removing a module reverses the operation of importing a module. Removing
 a module does not uninstall the module. For more information, see
-[Remove-Module](../Remove-Module.md).
+[Remove-Module](xref:Microsoft.PowerShell.Core.Remove-Module).
 
 ## Module and DSC Resource Locations, and PSModulePath
 
@@ -300,7 +300,7 @@ By default, the effective locations assigned to `$env:PSModulePath` are:
   user's scope. `Install-Module` has a **Scope** parameter that allows you to
   specify whether the module is installed for the current user or for all
   users. For more information, see
-  [Install-Module](../../PowerShellGet/Install-Module.md).
+  [Install-Module](xref:PowerShellGet.Install-Module).
 
   The user-specific **CurrentUser** location on Windows is the
   `PowerShell\Modules` folder located in the **Documents** location in your
@@ -525,12 +525,12 @@ about_DesiredStateConfiguration
 
 [about_Group_Policy_Settings](about_Group_Policy_Settings.md)
 
-[Get-Command](../Get-Command.md)
+[Get-Command](xref:Microsoft.PowerShell.Core.Get-Command)
 
-[Get-Help](../Get-Help.md)
+[Get-Help](xref:Microsoft.PowerShell.Core.Get-Help)
 
-[Get-Module](../Get-Module.md)
+[Get-Module](xref:Microsoft.PowerShell.Core.Get-Module)
 
-[Import-Module](../Import-Module.md)
+[Import-Module](xref:Microsoft.PowerShell.Core.Import-Module)
 
-[Remove-Module](../Remove-Module.md)
+[Remove-Module](xref:Microsoft.PowerShell.Core.Remove-Module)

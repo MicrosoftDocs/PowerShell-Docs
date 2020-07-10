@@ -231,4 +231,4 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 [Windows PowerShell Desired State Configuration Overview](/powershell/scripting/dsc/overview/overview)
 
-[Get-DscLocalConfigurationManager](Get-DscLocalConfigurationManager)
+[Get-DscLocalConfigurationManager](Get-DscLocalConfigurationManager.md)

@@ -215,16 +215,16 @@ in the MSDN library.
 
 [about_Updatable_Help](about_Updatable_Help.md)
 
-[Get-Help](../Get-Help.md)
+[Get-Help](xref:Microsoft.PowerShell.Core.Get-Help)
 
-[Get-IseSnippet](../../ISE/Get-IseSnippet.md)
+[Get-IseSnippet](xref:ISE.Get-IseSnippet)
 
-[Import-IseSnippet](../../ISE/Import-IseSnippet.md)
+[Import-IseSnippet](xref:ISE.Import-IseSnippet)
 
-[New-IseSnippet](../../ISE/New-IseSnippet.md)
+[New-IseSnippet](xref:ISE.New-IseSnippet)
 
-[Save-Help](../Save-Help.md)
+[Save-Help](xref:Microsoft.PowerShell.Core.Save-Help)
 
-[Show-Command](../../Microsoft.PowerShell.Utility/Show-Command.md)
+[Show-Command](xref:Microsoft.PowerShell.Utility.Show-Command)
 
-[Update-Help](../Update-Help.md)
+[Update-Help](xref:Microsoft.PowerShell.Core.Update-Help)

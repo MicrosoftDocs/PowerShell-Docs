@@ -111,7 +111,7 @@ The **Scope** values are listed in precedence order. The policy that takes
 precedence is effective in the current session, even if a more restrictive
 policy was set at a lower level of precedence.
 
-For more information, see [Set-ExecutionPolicy](../../Microsoft.PowerShell.Security/Set-ExecutionPolicy.md).
+For more information, see [Set-ExecutionPolicy](xref:Microsoft.PowerShell.Security.Set-ExecutionPolicy).
 
 ### MachinePolicy
 
@@ -347,8 +347,8 @@ Beginning in PowerShell 3.0, you can use the **Stream** parameter of the
 from the internet. Use the `Unblock-File` cmdlet to unblock the scripts so that
 you can run them in PowerShell.
 
-For more information, see [about_Signing](about_Signing.md), [Get-Item](../../Microsoft.PowerShell.Management/Get-Item.md),
-and [Unblock-File](../../Microsoft.PowerShell.Utility/Unblock-File.md).
+For more information, see [about_Signing](about_Signing.md), [Get-Item](xref:Microsoft.PowerShell.Management.Get-Item),
+and [Unblock-File](xref:Microsoft.PowerShell.Utility.Unblock-File).
 
 > [!NOTE]
 > Other methods of downloading files may not mark the files as coming from the
@@ -392,12 +392,12 @@ Zone check which avoids the problem.
 
 [about_Signing](about_Signing.md)
 
-[Get-ExecutionPolicy](../../Microsoft.PowerShell.Security/Get-ExecutionPolicy.md)
+[Get-ExecutionPolicy](xref:Microsoft.PowerShell.Security.Get-ExecutionPolicy)
 
-[Get-Item](../../Microsoft.PowerShell.Management/Get-Item.md)
+[Get-Item](xref:Microsoft.PowerShell.Management.Get-Item)
 
 [PowerShell.exe Command-Line Help](about_PowerShell_exe.md)
 
-[Set-ExecutionPolicy](../../Microsoft.PowerShell.Security/Set-ExecutionPolicy.md)
+[Set-ExecutionPolicy](xref:Microsoft.PowerShell.Security.Set-ExecutionPolicy)
 
-[Unblock-File](../../Microsoft.PowerShell.Utility/Unblock-File.md)
+[Unblock-File](xref:Microsoft.PowerShell.Utility.Unblock-File)
