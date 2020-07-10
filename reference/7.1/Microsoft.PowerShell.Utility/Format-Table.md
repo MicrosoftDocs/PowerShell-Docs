@@ -524,7 +524,6 @@ You can send any object down the pipeline to `Format-Table`.
 
 [Get-Member](Get-Member.md)
 
-[Get-WmiObject](../Microsoft.PowerShell.Management/Get-WmiObject.md)
+[Get-CimInstance](../CimCmdlets/Get-CimInstance.md)
 
 [Update-FormatData](Update-FormatData.md)
-
