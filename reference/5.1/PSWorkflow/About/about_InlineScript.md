@@ -158,7 +158,7 @@ Test-Workflow
 
 [about_WorkflowCommonParameters](about_WorkflowCommonParameters.md)
 
-[PSWorkflow](../PSWorkflow.md) cmdlets
+[PSWorkflow](xref:PSWorkflow) cmdlets
 
 [Workflows Guide](/previous-versions/powershell/scripting/components/workflows-guide)
 

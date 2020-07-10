@@ -104,22 +104,22 @@ PackageManagement project on GitHub at https://oneget.org.
 
 ## SEE ALSO
 
-[Get-PackageProvider](../../PackageManagement/Get-PackageProvider.md)
+[Get-PackageProvider](xref:PackageManagement.Get-PackageProvider)
 
-[Get-PackageSource](../../PackageManagement/Get-PackageSource.md)
+[Get-PackageSource](xref:PackageManagement.Get-PackageSource)
 
-[Register-PackageSource](../../PackageManagement/Register-PackageSource.md)
+[Register-PackageSource](xref:PackageManagement.Register-PackageSource)
 
-[Set-PackageSource](../../PackageManagement/Set-PackageSource.md)
+[Set-PackageSource](xref:PackageManagement.Set-PackageSource)
 
-[Unregister-PackageSource](../../PackageManagement/Unregister-PackageSource.md)
+[Unregister-PackageSource](xref:PackageManagement.Unregister-PackageSource)
 
-[Get-Package](../../PackageManagement/Get-Package.md)
+[Get-Package](xref:PackageManagement.Get-Package)
 
-[Find-Package](../../PackageManagement/Find-Package.md)
+[Find-Package](xref:PackageManagement.Find-Package)
 
-[Install-Package](../../PackageManagement/Install-Package.md)
+[Install-Package](xref:PackageManagement.Install-Package)
 
-[Save-Package](../../PackageManagement/Save-Package.md)
+[Save-Package](xref:PackageManagement.Save-Package)
 
-[Uninstall-Package](../../PackageManagement/Uninstall-Package.md)
+[Uninstall-Package](xref:PackageManagement.Uninstall-Package)

@@ -122,7 +122,7 @@ location).
 
 ## SEE ALSO
 
-[Set-Location](../../Microsoft.PowerShell.Management/Set-Location.md)
+[Set-Location](xref:Microsoft.PowerShell.Management.Set-Location)
 
 [about_Providers](about_Providers.md)
 

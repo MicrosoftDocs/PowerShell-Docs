@@ -205,12 +205,12 @@ Remote server machine does not exist or is unavailable
 
 [WMI Troubleshooting](/windows/win32/wmisdk/wmi-troubleshooting)
 
-[Get-WmiObject](../../Microsoft.PowerShell.Management/Get-WmiObject.md)
+[Get-WmiObject](xref:Microsoft.PowerShell.Management.Get-WmiObject)
 
-[Invoke-WmiMethod](../../Microsoft.PowerShell.Management/Invoke-WmiMethod.md)
+[Invoke-WmiMethod](xref:Microsoft.PowerShell.Management.Invoke-WmiMethod)
 
-[Register-WmiEvent](../../Microsoft.PowerShell.Management/Register-WmiEvent.md)
+[Register-WmiEvent](xref:Microsoft.PowerShell.Management.Register-WmiEvent)
 
-[Remove-WmiObject](../../Microsoft.PowerShell.Management/Remove-WmiObject.md)
+[Remove-WmiObject](xref:Microsoft.PowerShell.Management.Remove-WmiObject)
 
-[Set-WmiInstance](../../Microsoft.PowerShell.Management/Set-WmiInstance.md)
+[Set-WmiInstance](xref:Microsoft.PowerShell.Management.Set-WmiInstance)

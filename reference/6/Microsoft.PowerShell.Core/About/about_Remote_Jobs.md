@@ -349,20 +349,20 @@ invoke-command -session $s -command {
 
 [about_Remote_Variables](about_Remote_Variables.md)
 
-[Invoke-Command](../Invoke-Command.md)
+[Invoke-Command](xref:Microsoft.PowerShell.Core.Invoke-Command)
 
-[Start-Job](../Start-Job.md)
+[Start-Job](xref:Microsoft.PowerShell.Core.Start-Job)
 
-[Get-Job](../Get-Job.md)
+[Get-Job](xref:Microsoft.PowerShell.Core.Get-Job)
 
-[Wait-Job](../Wait-Job.md)
+[Wait-Job](xref:Microsoft.PowerShell.Core.Wait-Job)
 
-[Stop-Job](../Stop-Job.md)
+[Stop-Job](xref:Microsoft.PowerShell.Core.Stop-Job)
 
-[Remove-Job](../Remove-Job.md)
+[Remove-Job](xref:Microsoft.PowerShell.Core.Remove-Job)
 
-[New-PSSession](../New-PSSession.md)
+[New-PSSession](xref:Microsoft.PowerShell.Core.New-PSSession)
 
-[Enter-PSSession](../Enter-PSSession.md)
+[Enter-PSSession](xref:Microsoft.PowerShell.Core.Enter-PSSession)
 
-[Exit-PSSession](../Exit-PSSession.md)
+[Exit-PSSession](xref:Microsoft.PowerShell.Core.Exit-PSSession)
