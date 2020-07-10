@@ -1,5 +1,5 @@
 ---
-ms.date:  06/12/2017
+ms.date: 07/08/2020
 keywords:  dsc,powershell,configuration,setup
 title:  Resource authoring checklist
 ---
@@ -34,7 +34,7 @@ xPSDesiredStateConfiguration
 
 ## Resource and schema are correct
 
-Verify the resource schema (*.schema.mof) file. You can use the
+Verify the resource schema (`*.schema.mof`) file. You can use the
 [DSC Resource Designer](https://www.powershellgallery.com/packages/xDSCResourceDesigner/1.12.0.0) to
 help develop and test your schema. Make sure that:
 
@@ -60,7 +60,7 @@ help develop and test your schema. Make sure that:
 - Every field has meaningful description. The PowerShell GitHub repository has good examples, such
   as the [.schema.mof for xRemoteFile](https://github.com/dsccommunity/xPSDesiredStateConfiguration/blob/master/source/DSCResources/DSC_xRemoteFile/DSC_xRemoteFile.schema.mof)
 
-Additionally, you should use **Test-xDscResource** and **Test-xDscSchema** cmdlets from
+Additionally, you should use `Test-xDscResource` and `Test-xDscSchema` cmdlets from
 [DSC Resource Designer](https://www.powershellgallery.com/packages/xDSCResourceDesigner/1.12.0.0) to
 automatically verify the resource and schema:
 
@@ -115,20 +115,20 @@ By changing the state of the machine and then rerunning DSC, you can verify that
 `Set-TargetResource` and `Test-TargetResource` function properly. Here are steps you should take:
 
 1. Start with the resource not in the desired state.
-2. Run configuration with your resource
-3. Verify `Test-DscConfiguration` returns True
-4. Modify the configured item to be out of the desired state
-5. Verify `Test-DscConfiguration` returns false
+1. Run configuration with your resource
+1. Verify `Test-DscConfiguration` returns True
+1. Modify the configured item to be out of the desired state
+1. Verify `Test-DscConfiguration` returns false
 
 Here's a more concrete example using Registry resource:
 
 1. Start with registry key not in the desired state
-2. Run `Start-DscConfiguration` with a configuration to put it in the desired state and verify it
+1. Run `Start-DscConfiguration` with a configuration to put it in the desired state and verify it
    passes.
-3. Run `Test-DscConfiguration` and verify it returns true
-4. Modify the value of the key so that it is not in the desired state
-5. Run `Test-DscConfiguration` and verify it returns false
-6. `Get-TargetResource` functionality was verified using `Get-DscConfiguration`
+1. Run `Test-DscConfiguration` and verify it returns true
+1. Modify the value of the key so that it is not in the desired state
+1. Run `Test-DscConfiguration` and verify it returns false
+1. `Get-TargetResource` functionality was verified using `Get-DscConfiguration`
 
 `Get-TargetResource` should return details of the current state of the resource. Make sure to test
 it by calling `Get-DscConfiguration` after you apply the configuration and verifying that output
@@ -137,12 +137,12 @@ issues in this area won't appear when calling `Start-DscConfiguration`.
 
 ## Call **Get/Set/Test-TargetResource** functions directly
 
-Make sure you test the **Get/Set/Test-TargetResource** functions implemented in your resource by
+Make sure you test the `Get/Set/Test-TargetResource` functions implemented in your resource by
 calling them directly and verifying that they work as expected.
 
-## Verify End to End using **Start-DscConfiguration**
+## Verify End to End using Start-DscConfiguration
 
-Testing **Get/Set/Test-TargetResource** functions by calling them directly is important, but not all
+Testing `Get/Set/Test-TargetResource` functions by calling them directly is important, but not all
 issues will be discovered this way. You should focus significant part of your testing on using
 `Start-DscConfiguration` or the pull server. In fact, this is how users will use the resource, so
 don't underestimate the significance of this type of tests. Possible types of issues:
@@ -189,9 +189,9 @@ especially since many users treat sample code as documentation.
 - Example configurations should be parameterized (all values should be passed to the configuration
   as parameters and there should be no hardcoded values):
 
-  ```powershell
-  configuration Sample_xRemoteFile_DownloadFile
-  {
+```powershell
+configuration Sample_xRemoteFile_DownloadFile
+{
     param
     (
         [string[]] $nodeName = 'localhost',
@@ -221,8 +221,8 @@ especially since many users treat sample code as documentation.
             Headers = $headers
         }
     }
-  }
-  ```
+}
+```
 
 - It's a good practice to include (commented out) example of how to call the configuration with the
   actual values at the end of the example script. For example, in the configuration above it isn't
@@ -231,16 +231,16 @@ especially since many users treat sample code as documentation.
   `UserAgent = [Microsoft.PowerShell.Commands.PSUserAgent]::InternetExplorer`
   In which case a comment can clarify the intended execution of the configuration:
 
-  ```powershell
-  <#
-  Sample use (parameter values need to be changed according to your scenario):
+```powershell
+<#
+Sample use (parameter values need to be changed according to your scenario):
 
-  Sample_xRemoteFile_DownloadFile -destinationPath "$env:SystemDrive\fileName.jpg" -uri "http://www.contoso.com/image.jpg"
+Sample_xRemoteFile_DownloadFile -destinationPath "$env:SystemDrive\fileName.jpg" -uri "http://www.contoso.com/image.jpg"
 
-  Sample_xRemoteFile_DownloadFile -destinationPath "$env:SystemDrive\fileName.jpg" -uri "http://www.contoso.com/image.jpg" `
-  -userAgent [Microsoft.PowerShell.Commands.PSUserAgent]::InternetExplorer -headers @{"Accept-Language" = "en-US"}
-  #>
-  ```
+Sample_xRemoteFile_DownloadFile -destinationPath "$env:SystemDrive\fileName.jpg" -uri "http://www.contoso.com/image.jpg" `
+-userAgent [Microsoft.PowerShell.Commands.PSUserAgent]::InternetExplorer -headers @{"Accept-Language" = "en-US"}
+#>
+```
 
 - For each example, write a short description which explains what it does, and the meaning of the
   parameters.
@@ -331,7 +331,7 @@ If your resource takes a credential as parameter:
 
 ## Resource does not require interactive input
 
-**Get/Set/Test-TargetResource** functions should be executed automatically and must not wait for
+`Get/Set/Test-TargetResource` functions should be executed automatically and must not wait for
 user's input at any stage of execution (e.g. you should not use `Get-Credential` inside these
 functions). If you need to provide user's input, you should pass it to the configuration as
 parameter during the compilation phase.
@@ -345,7 +345,7 @@ are not mentioned here. Don't forget about negative test cases.
 ## Best practice: Resource module contains Tests folder with ResourceDesignerTests.ps1 script
 
 It's a good practice to create folder "Tests" inside resource module, create
-`ResourceDesignerTests.ps1` file and add tests using **Test-xDscResource** and **Test-xDscSchema**
+`ResourceDesignerTests.ps1` file and add tests using `Test-xDscResource` and `Test-xDscSchema`
 for all resources in given module. This way you can quickly validate schemas of all resources from
 the given modules and do a sanity check before publishing. For xRemoteFile, `ResourceTests.ps1`
 could look as simple as:
@@ -353,25 +353,6 @@ could look as simple as:
 ```powershell
 Test-xDscResource ..\DSCResources\MSFT_xRemoteFile
 Test-xDscSchema ..\DSCResources\MSFT_xRemoteFile\MSFT_xRemoteFile.schema.mof
-```
-
-## Best practice: Resource folder contains resource designer script for generating schema
-
-Each resource should contain a resource designer script which generates a mof schema of the
-resource. This file should be placed in `<ResourceName>\ResourceDesignerScripts` and be named
-Generate `<ResourceName>Schema.ps1` For xRemoteFile resource this file would be called
-`GenerateXRemoteFileSchema.ps1` and contain:
-
-```powershell
-$DestinationPath = New-xDscResourceProperty -Name DestinationPath -Type String -Attribute Key -Description 'Path under which downloaded or copied file should be accessible after operation.'
-$Uri = New-xDscResourceProperty -Name Uri -Type String -Attribute Required -Description 'Uri of a file which should be copied or downloaded. This parameter supports HTTP and HTTPS values.'
-$Headers = New-xDscResourceProperty -Name Headers -Type Hashtable[] -Attribute Write -Description 'Headers of the web request.'
-$UserAgent = New-xDscResourceProperty -Name UserAgent -Type String -Attribute Write -Description 'User agent for the web request.'
-$Ensure = New-xDscResourceProperty -Name Ensure -Type String -Attribute Read -ValidateSet "Present", "Absent" -Description 'Says whether DestinationPath exists on the machine'
-$Credential = New-xDscResourceProperty -Name Credential -Type PSCredential -Attribute Write -Description 'Specifies a user account that has permission to send the request.'
-$CertificateThumbprint = New-xDscResourceProperty -Name CertificateThumbprint -Type String -Attribute Write -Description 'Digital public key certificate that is used to send the request.'
-
-New-xDscResource -Name MSFT_xRemoteFile -Property @($DestinationPath, $Uri, $Headers, $UserAgent, $Ensure, $Credential, $CertificateThumbprint) -ModuleName xPSDesiredStateConfiguration2 -FriendlyName xRemoteFile
 ```
 
 ## Best practice: Resource supports -WhatIf
