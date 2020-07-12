@@ -317,7 +317,8 @@ converted, PowerShell generates an error.
 [Int] '1' + 0
 ```
 
-Note: 
+Note: A cast will also be performed when a variable is assigned to using [cast notation](about_Variables.md).
+
 #### Comma operator `,`
 
 As a binary operator, the comma creates an array. As a unary operator, the
