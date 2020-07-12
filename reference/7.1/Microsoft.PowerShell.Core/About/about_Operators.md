@@ -311,10 +311,13 @@ Converts or limits objects to the specified type. If the objects cannot be
 converted, PowerShell generates an error.
 
 ```powershell
-[datetime]$birthday = "1/20/88"
-[int64]$a = 34
+[DateTime]"2/20/88" - [DateTime]"1/20/88"
+[Int] (7/2)
+[String] 1 + 0
+[Int] '1' + 0
 ```
 
+Note: 
 #### Comma operator `,`
 
 As a binary operator, the comma creates an array. As a unary operator, the
