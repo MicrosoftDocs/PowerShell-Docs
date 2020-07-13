@@ -9,7 +9,14 @@ This topic explains how to get started using PowerShell Desired State Configurat
 
 ## Supported Linux operation system versions
 
-For nodes running Linux, the DSC Linux extension supports all the Linux distributions listed in the GitHub repo under [Supported Linux operating systems](https://github.com/microsoft/PowerShell-DSC-for-Linux#supported-linux-operating-systems).
+The following Linux operating system versions are supported by DSC for Linux.
+
+CentOS 5, 6, and 7 (x86/x64)
+Debian GNU/Linux 6, 7 and 8 (x86/x64)
+Oracle Linux 5, 6 and 7 (x86/x64)
+Red Hat Enterprise Linux Server 5, 6 and 7 (x86/x64)
+SUSE Linux Enterprise Server 10, 11 and 12 (x86/x64)
+Ubuntu Server 12.04 LTS, 14.04 LTS, 16.04 LTS (x86/x64)
 
 ## Installing DSC for Linux
 
