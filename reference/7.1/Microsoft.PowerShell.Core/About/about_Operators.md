@@ -317,7 +317,7 @@ converted, PowerShell generates an error.
 [Int] '1' + 0
 ```
 
-Note: A cast will also be performed when a variable is assigned to using [cast notation](about_Variables.md).
+A cast can also be performed when a variable is assigned to using [cast notation](about_Variables.md).
 
 #### Comma operator `,`
 
@@ -621,4 +621,3 @@ ${a}?[0]
 [about_Join](about_Join.md)
 
 [about_Redirection](about_Redirection.md)
-
