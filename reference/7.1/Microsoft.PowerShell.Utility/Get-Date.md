@@ -280,7 +280,7 @@ Wednesday, January 1, 2020 8:00:00 AM
 
 Converts the date value to the equivalent time in UTC.
 
-This parameter was added in PowerShell 7.1.
+This parameter was introduced in PowerShell 7.1.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
