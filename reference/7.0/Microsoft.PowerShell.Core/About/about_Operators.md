@@ -311,9 +311,13 @@ Converts or limits objects to the specified type. If the objects cannot be
 converted, PowerShell generates an error.
 
 ```powershell
-[datetime]$birthday = "1/20/88"
-[int64]$a = 34
+[DateTime]"2/20/88" - [DateTime]"1/20/88"
+[Int] (7/2)
+[String] 1 + 0
+[Int] '1' + 0
 ```
+
+A cast can also be performed when a variable is assigned to using [cast notation](about_Variables.md).
 
 #### Comma operator `,`
 
