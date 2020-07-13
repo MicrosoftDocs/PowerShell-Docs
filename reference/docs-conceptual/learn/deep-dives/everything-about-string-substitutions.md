@@ -17,7 +17,7 @@ something that I often find myself explaining to new scripters.
 
 ## Concatenation
 
-The the first class of methods can be referred to as concatenation. It's basically taking several
+The first class of methods can be referred to as concatenation. It's basically taking several
 strings and joining them together. There's a long history of using concatenation to build formatted
 strings.
 
