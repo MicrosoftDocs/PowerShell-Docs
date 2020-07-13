@@ -236,7 +236,7 @@ directory is created.
 This example is a Unix time (it is represented by the number of seconds since 1970-01-01 0:00:00) to DateTime.
 
 ```powershell
-Get-Date -UnixTime 1577836800
+Get-Date -UnixTimeSeconds 1577836800
 ```
 
 ```Output
