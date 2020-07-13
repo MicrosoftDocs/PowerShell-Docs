@@ -72,7 +72,7 @@ get a service and check that the status was running before you called `Restart-S
 It's common in other languages like C# to use `==` for equality (ex: `5 == $value`) but that doesn't
 work with PowerShell. Another common mistake that people make is to use the equals sign (ex:
 `5 = $value`) that is reserved for assigning values to variables. By placing your known value on the
-left, it makes that mistaken more awkward to make.
+left, it makes that mistake more awkward to make.
 
 This operator (and others) has a few variations.
 
