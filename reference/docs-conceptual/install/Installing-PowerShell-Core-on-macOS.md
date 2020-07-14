@@ -174,17 +174,18 @@ OpenSSL is required for PowerShell remoting and CIM operations. You can install 
 if needed.
 
 > [!NOTE]
-> MacPorts and Homebrew to not work well together. However, Homebrew does not have a package for
-> OpenSSL 1.0. MacPorts should only be used to install the OpenSSL package.
+> MacPorts and Homebrew can have problems when used to together on the same system. However,
+> Homebrew does not have a package for OpenSSL 1.0. For more information, see the
+> [MacPorts FAQ](https://trac.macports.org/wiki/FAQ).
 
-1. Install the XCode command line tools.
+1. Install the Xcode command-line tools. The Xcode tools are required by MacPorts.
 
    ```sh
    xcode-select --install
    ```
 
 1. Install MacPorts. If you need instructions, refer to the
-   [installation guide](https://guide.macports.org/chunked/installing.macports.html).
+   [installation guide](https://www.macports.org/install.php).
 1. Update MacPorts by running `sudo port selfupdate`.
 1. Upgrade MacPorts packages by running `sudo port upgrade outdated`.
 1. Install OpenSSL by running `sudo port install openssl10`.
