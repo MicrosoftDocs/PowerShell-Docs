@@ -109,7 +109,7 @@ Windows 10 IoT Enterprise comes with Windows PowerShell, which we can use to dep
    $S = New-PSSession -ComputerName <deviceIp> -Credential Administrator
    ```
 
-2. Copy the ZIP package to the device
+1. Copy the ZIP package to the device
 
    ```powershell
    # change the destination to however you had partitioned it with sufficient
@@ -118,7 +118,7 @@ Windows 10 IoT Enterprise comes with Windows PowerShell, which we can use to dep
    Copy-Item .\PowerShell-<version>-win-<os-arch>.zip -Destination u:\users\administrator\Downloads -ToSession $s
    ```
 
-3. Connect to the device and expand the archive
+1. Connect to the device and expand the archive
 
    ```powershell
    Enter-PSSession $s
@@ -126,7 +126,7 @@ Windows 10 IoT Enterprise comes with Windows PowerShell, which we can use to dep
    Expand-Archive .\PowerShell-<version>-win-<os-arch>.zip
    ```
 
-4. Set up remoting to PowerShell 7
+1. Set up remoting to PowerShell 7
 
    ```powershell
    Set-Location .\PowerShell-<version>-win-<os-arch>
@@ -136,7 +136,7 @@ Windows 10 IoT Enterprise comes with Windows PowerShell, which we can use to dep
    # You'll get an error message and will be disconnected from the device because it has to restart WinRM
    ```
 
-5. Connect to PowerShell 7 endpoint on device
+1. Connect to PowerShell 7 endpoint on device
 
    ```powershell
    # Be sure to use the -Configuration parameter.  If you omit it, you will connect to Windows PowerShell 5.1
@@ -164,7 +164,7 @@ PowerShell binaries can be deployed using two different methods.
 
 1. Offline - Mount the Nano Server VHD and unzip the contents of the zip file to your chosen
    location within the mounted image.
-2. Online - Transfer the zip file over a PowerShell Session and unzip it in your chosen location.
+1. Online - Transfer the zip file over a PowerShell Session and unzip it in your chosen location.
 
 In both cases, you need the Windows 10 x64 ZIP release package. Run the commands within an
 "Administrator" instance of PowerShell.
@@ -173,9 +173,9 @@ In both cases, you need the Windows 10 x64 ZIP release package. Run the commands
 
 1. Use your favorite zip utility to unzip the package to a directory within the mounted Nano Server
    image.
-2. Unmount the image and boot it.
-3. Connect to the built-in instance of Windows PowerShell.
-4. Follow the instructions to create a remoting endpoint using the
+1. Unmount the image and boot it.
+1. Connect to the built-in instance of Windows PowerShell.
+1. Follow the instructions to create a remoting endpoint using the
    ["another instance technique"](../learn/remoting/wsman-remoting-in-powershell-core.md#executed-by-another-instance-of-powershell-on-behalf-of-the-instance-that-it-will-register).
 
 ### Online Deployment of PowerShell
@@ -231,16 +231,31 @@ service.
 
 > [!NOTE]
 > The `winget` tool is currently a preview. Not all planned functionality is available at this time.
-> The tool's options and features are subject to change. You should not use this method in a production
-> deployment scenario. See the [winget] documentation for a list of system requirements and install
-> instructions.
+> The tool's options and features are subject to change. You should not use this method in a
+> production deployment scenario. See the [winget] documentation for a list of system requirements
+> and install instructions.
 
 The following commands can be used to install PowerShell using the published `winget` packages:
 
-```powershell
-winget install Microsoft.Powershell
-winget install Microsoft.Powershell-preview
-```
+1. Search for the latest version of PowerShell
+
+   ```powershell
+   winget search Microsoft.PowerShell
+   ```
+
+   ```Output
+   Name               Id                           Version
+   ---------------------------------------------------------------
+   PowerShell         Microsoft.PowerShell         7.0.2
+   PowerShell-Preview Microsoft.PowerShell-Preview 7.1.0-preview.5
+   ```
+
+1. Install a version of PowerShell using the **Version** parameter
+
+   ```powershell
+   winget install Microsoft.Powershell --v 7.0.2
+   winget install Microsoft.Powershell-preview 7.1.0-preview.5
+   ```
 
 ## How to create a remoting endpoint
 
