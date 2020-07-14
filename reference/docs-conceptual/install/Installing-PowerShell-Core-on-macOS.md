@@ -126,7 +126,7 @@ You can double-click the file and follow the prompts, or install it from the ter
 sudo installer -pkg powershell-lts-7.0.1-osx-x64.pkg -target /
 ```
 
-Install [OpenSSL](#install-openssl). OpenSSL is needed for PowerShell remoting and CIM operations.
+Install [OpenSSL](#installing-dependencies). OpenSSL is needed for PowerShell remoting and CIM operations.
 
 ## Install as a .NET Global tool
 
