@@ -144,7 +144,8 @@ from a new shell by typing `pwsh`.
 ## Binary Archives
 
 PowerShell binary `tar.gz` archives are provided for the macOS platform to enable advanced
-deployment scenarios.
+deployment scenarios. When you install using this method you must install also manually install any
+dependencies.
 
 ### Installing binary archives on macOS
 
@@ -169,31 +170,30 @@ Install [OpenSSL](#install-openssl). OpenSSL is needed for PowerShell remoting a
 
 ## Installing dependencies
 
-### Install XCode command-line tools
+OpenSSL is required for PowerShell remoting and CIM operations. You can install OpenSSL via MacPorts
+if needed.
 
-```sh
-xcode-select --install
-```
+> [!NOTE]
+> MacPorts and Homebrew to not work well together. However, Homebrew does not have a package for
+> OpenSSL 1.0. MacPorts should only be used to install the OpenSSL package.
 
-### Install OpenSSL
+1. Install the XCode command line tools.
 
-OpenSSL is needed for PowerShell remoting and CIM operations. You can install via MacPorts.
+   ```sh
+   xcode-select --install
+   ```
 
-#### Install OpenSSL via MacPorts
-
-1. Install the [XCode command line tools](#install-xcode-command-line-tools).
-1. Install MacPorts.
-   If you need instructions, refer to the
+1. Install MacPorts. If you need instructions, refer to the
    [installation guide](https://guide.macports.org/chunked/installing.macports.html).
 1. Update MacPorts by running `sudo port selfupdate`.
 1. Upgrade MacPorts packages by running `sudo port upgrade outdated`.
 1. Install OpenSSL by running `sudo port install openssl10`.
 1. Link the libraries to make them available to PowerShell:
 
-```sh
-sudo mkdir -p /usr/local/opt/openssl
-sudo ln -s /opt/local/lib/openssl-1.0 /usr/local/opt/openssl/lib
-```
+   ```sh
+   sudo mkdir -p /usr/local/opt/openssl
+   sudo ln -s /opt/local/lib/openssl-1.0 /usr/local/opt/openssl/lib
+   ```
 
 ## Uninstalling PowerShell
 
