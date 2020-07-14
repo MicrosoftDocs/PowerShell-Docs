@@ -153,7 +153,7 @@ item, the array has only one member.
 #### Call operator `&`
 
 Runs a command, script, or script block. The call operator, also known as the
-"invocation operator," lets you run commands that are stored in variables and
+"invocation operator", lets you run commands that are stored in variables and
 represented by strings or script blocks. The call operator executes in a child
 scope. For more about scopes, see [about_scopes](about_scopes.md).
 

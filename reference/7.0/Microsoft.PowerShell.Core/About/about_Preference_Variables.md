@@ -496,7 +496,7 @@ The valid values are as follows:
   **ConciseView** was added in PowerShell 7.
 
 - **NormalView**: A detailed view designed for most users. Consists of a
-  description of the error, and the name of the object involved in the error.
+  description of the error and the name of the object involved in the error.
 
 - **CategoryView**: A succinct, structured view designed for production
   environments. The format is as follows:
