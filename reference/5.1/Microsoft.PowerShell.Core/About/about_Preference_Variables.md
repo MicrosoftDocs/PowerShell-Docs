@@ -493,7 +493,7 @@ Determines the display format of error messages in PowerShell.
 The valid values are as follows:
 
 - **NormalView**: (Default) A detailed view designed for most users. Consists
-  of a description of the error, and the name of the object involved in the
+  of a description of the error and the name of the object involved in the
   error.
 - **CategoryView**: A succinct, structured view designed for production
   environments. The format is as follows:
