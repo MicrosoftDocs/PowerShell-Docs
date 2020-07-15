@@ -144,7 +144,7 @@ from a new shell by typing `pwsh`.
 ## Binary Archives
 
 PowerShell binary `tar.gz` archives are provided for the macOS platform to enable advanced
-deployment scenarios. When you install using this method you must install also manually install any
+deployment scenarios. When you install using this method you must also manually install any
 dependencies.
 
 ### Installing binary archives on macOS
