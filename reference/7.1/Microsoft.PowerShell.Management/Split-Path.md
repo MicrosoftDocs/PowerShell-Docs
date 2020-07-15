@@ -25,41 +25,41 @@ Split-Path [-Path] <String[]> [-Parent] [-Resolve] [-Credential <PSCredential>]
 ### LeafSet
 
 ```
-Split-Path [-Path] <String[]> [-Leaf] [-Resolve] [-Credential <PSCredential>] [<CommonParameters>]
+Split-Path [-Path] <String[]> -Leaf [-Resolve] [-Credential <PSCredential>] [<CommonParameters>]
 ```
 
 ### LeafBaseSet
 
 ```
-Split-Path [-Path] <String[]> [-LeafBase] [-Resolve] [-Credential <PSCredential>]
+Split-Path [-Path] <String[]> -LeafBase [-Resolve] [-Credential <PSCredential>]
  [<CommonParameters>]
 ```
 
 ### ExtensionSet
 
 ```
-Split-Path [-Path] <String[]> [-Extension] [-Resolve] [-Credential <PSCredential>]
+Split-Path [-Path] <String[]> -Extension [-Resolve] [-Credential <PSCredential>]
  [<CommonParameters>]
 ```
 
 ### QualifierSet
 
 ```
-Split-Path [-Path] <String[]> [-Qualifier] [-Resolve] [-Credential <PSCredential>]
+Split-Path [-Path] <String[]> -Qualifier [-Resolve] [-Credential <PSCredential>]
  [<CommonParameters>]
 ```
 
 ### NoQualifierSet
 
 ```
-Split-Path [-Path] <String[]> [-NoQualifier] [-Resolve] [-Credential <PSCredential>]
+Split-Path [-Path] <String[]> -NoQualifier [-Resolve] [-Credential <PSCredential>]
  [<CommonParameters>]
 ```
 
 ### IsAbsoluteSet
 
 ```
-Split-Path [-Path] <String[]> [-Resolve] [-IsAbsolute] [-Credential <PSCredential>]
+Split-Path [-Path] <String[]> [-Resolve] -IsAbsolute [-Credential <PSCredential>]
  [<CommonParameters>]
 ```
 
@@ -197,7 +197,7 @@ Type: System.Management.Automation.SwitchParameter
 Parameter Sets: ExtensionSet
 Aliases:
 
-Required: False
+Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByPropertyName)
@@ -215,7 +215,7 @@ Type: System.Management.Automation.SwitchParameter
 Parameter Sets: IsAbsoluteSet
 Aliases:
 
-Required: False
+Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -232,7 +232,7 @@ Type: System.Management.Automation.SwitchParameter
 Parameter Sets: LeafSet
 Aliases:
 
-Required: False
+Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByPropertyName)
@@ -251,7 +251,7 @@ Type: System.Management.Automation.SwitchParameter
 Parameter Sets: LeafBaseSet
 Aliases:
 
-Required: False
+Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByPropertyName)
@@ -288,7 +288,7 @@ Type: System.Management.Automation.SwitchParameter
 Parameter Sets: NoQualifierSet
 Aliases:
 
-Required: False
+Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByPropertyName)
@@ -340,7 +340,7 @@ Type: System.Management.Automation.SwitchParameter
 Parameter Sets: QualifierSet
 Aliases:
 
-Required: False
+Required: True
 Position: 1
 Default value: None
 Accept pipeline input: True (ByPropertyName)
@@ -366,7 +366,10 @@ Accept wildcard characters: False
 
 ### CommonParameters
 
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+-InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
