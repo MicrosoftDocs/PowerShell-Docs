@@ -470,6 +470,11 @@ permitted and you can't submit a partial language code, such as **de**.
 By default, `Update-Help` gets help files in the UI culture set for the operating system. If you
 specify the **UICulture** parameter, `Update-Help` looks for help only for the specified UI culture.
 
+> [!NOTE]
+> Ubuntu 18.04 changed the default locale setting to `C.UTF.8`, which is not a recognized UI
+> culture. `Update-Help` silently fails to download help unless you use this parameter with a
+> supported locale like `en-US`. This could occur on any platform that uses an unsupported value.
+
 Commands that use the **UICulture** parameter succeed only when the module provides help files for
 the specified UI culture. If the command fails because the specified UI culture isn't supported, an
 error message is displayed.
