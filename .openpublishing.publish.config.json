@@ -1,17 +1,13 @@
 {
-    "branch_target_mapping": {},
-    "branches_to_filter": [],
     "build_entry_point": "docs",
     "contribution_branch_mappings": {},
-    "dependent_packages": [
-        {
-            "id": "Microsoft.DocAsCode.MAML2Yaml",
-            "nuget_feed": "https://www.myget.org/F/op/api/v2",
-            "path_to_root": "_dependentPackages/MAML2Yaml",
-            "target_framework": "net45",
-            "version": "latest"
-        }
-    ],
+    "dependent_packages": [{
+        "id": "Microsoft.DocAsCode.MAML2Yaml",
+        "nuget_feed": "https://www.myget.org/F/op/api/v2",
+        "path_to_root": "_dependentPackages/MAML2Yaml",
+        "target_framework": "net45",
+        "version": "latest"
+    }],
     "dependent_repositories": [{
             "branch": "master",
             "branch_mapping": {},
@@ -23,6 +19,11 @@
             "branch_mapping": {},
             "path_to_root": "powershell-sdk-samples",
             "url": "https://github.com/MicrosoftDocs/powershell-sdk-samples"
+        },
+        {
+            "path_to_root": "_themes.pdf",
+            "url": "https://github.com/Microsoft/templates.docs.msft.pdf",
+            "branch": "master"
         }
     ],
     "docsets_to_publish": [{
@@ -53,10 +54,17 @@
     }],
     "git_repository_branch_open_to_public_contributors": "staging",
     "git_repository_url_open_to_public_contributors": "https://github.com/MicrosoftDocs/PowerShell-Docs",
-    "need_generate_pdf_url_template": false,
     "need_preview_pull_request": true,
     "notification_subscribers": [],
     "skip_source_output_uploading": false,
     "sync_notification_subscribers": [],
-    "targets": {}
+    "need_generate_pdf_url_template": true,
+    "branch_target_mapping": {
+        "staging": ["Publish", "Pdf"]
+    },
+    "targets": {
+        "Pdf": {
+            "template_folder": "_themes.pdf"
+        }
+    }
 }
