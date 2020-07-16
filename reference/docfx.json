@@ -82,7 +82,10 @@
             "feedback_product_url": "https://github.com/PowerShell/PowerShell/issues/new/choose"
         },
         "fileMetadata": {
-            "ms.prod": { "**/**.yml": "powershell" },
+            "ms.prod": {
+                "**/**.md": "powershell",
+                "**/**.yml": "powershell"
+            },
             "ms.technology": {
                 "5.1/**.yml": "powershell-cmdlets",
                 "6/**.yml": "powershell-cmdlets",
@@ -95,8 +98,20 @@
                 "7/**.yml": "reference",
                 "docs-conceptual/**.md": "conceptual"
             },
-            "manager": { "**/**.yml": "daberry" },
-            "ms.tgt_pltfr": { "**/**.yml": "windows, macos, linux" },
+            "manager": { "**/**": "daberry" },
+            "moniker": {
+                "docs-conceptual/community/**": "powershell-all",
+                "docs-conceptual/dev-cross-plat/**": "powershell-all",
+                "docs-conceptual/developer/**": "powershell-all",
+                "docs-conceptual/dsc/**": "powershell-5.1",
+                "docs-conceptual/gallery/**": "powershell-all",
+                "docs-conceptual/install/**": ["powershell-6", "powershell-7", "powershell-7.1", "powershell-all"],
+                "docs-conceptual/learn/**": "powershell-all",
+                "docs-conceptual/samples/**": "powershell-all",
+                "docs-conceptual/whats-new/**": ["powershell-6", "powershell-7", "powershell-7.1", "powershell-all"],
+                "docs-conceptual/windows-powershell/**": "powershell-5.1"
+            },
+            "ms.tgt_pltfr": { "**/**": "windows, macos, linux" },
             "author": {
                 "**/CimCmdlets/**.yml": "SteveL-MSFT",
                 "**/ISE/**.yml": "SteveL-MSFT",
@@ -128,7 +143,7 @@
                 "**/PSWorkflow/**.md": "SteveL-MSFT",
                 "**/PSWorkflowUtility/**.yml": "SteveL-MSFT",
                 "**/ThreadJob/**.yml": "PaulHigin",
-                "docs-conceptual/learn/deep-dive/**.md": "sdwheeler",
+                "docs-conceptual/learn/**/**.md": "sdwheeler",
                 "docs-conceptual/learn/ps101/**.md": "mikefrobbins",
                 "docs-conceptual/learn/remoting/jea/**.md": "rpsqrd",
                 "docs-conceptual/gallery/**/**.md": "SydneyhSmith",
