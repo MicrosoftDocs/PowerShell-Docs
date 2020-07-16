@@ -99,16 +99,16 @@
                 "docs-conceptual/**.md": "conceptual"
             },
             "manager": { "**/**": "daberry" },
-            "moniker": {
-                "docs-conceptual/community/**": "powershell-all",
-                "docs-conceptual/dev-cross-plat/**": "powershell-all",
-                "docs-conceptual/developer/**": "powershell-all",
+            "monikers": {
+                "docs-conceptual/community/**": ["powershell-5.1", "powershell-6", "powershell-7", "powershell-7.1"],
+                "docs-conceptual/dev-cross-plat/**": ["powershell-5.1", "powershell-6", "powershell-7", "powershell-7.1"],
+                "docs-conceptual/developer/**": ["powershell-5.1", "powershell-6", "powershell-7", "powershell-7.1"],
                 "docs-conceptual/dsc/**": "powershell-5.1",
-                "docs-conceptual/gallery/**": "powershell-all",
-                "docs-conceptual/install/**": ["powershell-6", "powershell-7", "powershell-7.1", "powershell-all"],
-                "docs-conceptual/learn/**": "powershell-all",
-                "docs-conceptual/samples/**": "powershell-all",
-                "docs-conceptual/whats-new/**": ["powershell-6", "powershell-7", "powershell-7.1", "powershell-all"],
+                "docs-conceptual/gallery/**": ["powershell-5.1", "powershell-6", "powershell-7", "powershell-7.1"],
+                "docs-conceptual/install/**": ["powershell-6", "powershell-7", "powershell-7.1"],
+                "docs-conceptual/learn/**": ["powershell-5.1", "powershell-6", "powershell-7", "powershell-7.1"],
+                "docs-conceptual/samples/**": ["powershell-5.1", "powershell-6", "powershell-7", "powershell-7.1"],
+                "docs-conceptual/whats-new/**": ["powershell-6", "powershell-7", "powershell-7.1"],
                 "docs-conceptual/windows-powershell/**": "powershell-5.1"
             },
             "ms.tgt_pltfr": { "**/**": "windows, macos, linux" },

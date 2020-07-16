@@ -45,8 +45,7 @@
             "powershell-5.1",
             "powershell-6",
             "powershell-7",
-            "powershell-7.1",
-            "powershell-all"
+            "powershell-7.1"
         ],
         "open_to_public_contributors": true,
         "template_folder": "_themes",
