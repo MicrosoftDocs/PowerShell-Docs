@@ -1,5 +1,5 @@
 ---
-ms.date: 09/20/2019
+ms.date: 07/16/2020
 keywords: dsc,powershell,configuration,setup
 title: DSC WindowsPackageCab Resource
 ---

@@ -1,5 +1,5 @@
 ---
-ms.date: 09/20/2019
+ms.date: 07/16/2020
 keywords: dsc,powershell,configuration,setup
 title: DSC Environment Resource
 ---
@@ -17,6 +17,7 @@ Environment [string] #ResourceName
 {
     Name = [string]
     [ Path = [bool] ]
+    [ Target = [string] { Process | Machine } ]
     [ Value = [string] ]
     [ DependsOn = [string[]] ]
     [ Ensure = [string] { Absent | Present }  ]
@@ -30,6 +31,7 @@ Environment [string] #ResourceName
 |---|---|
 |Name |Indicates the name of the environment variable for which you want to ensure a specific state. |
 |Path |Defines the environment variable that is being configured. Set this property to `$true` if the variable is the **Path** variable; otherwise, set it to `$false`. The default is `$false`. If the variable being configured is the **Path** variable, the value provided through the **Value** property will be appended to the existing value. |
+|Target| Indicates where to retrieve the variable: The machine or the process. If both are indicated then only the value from the machine is returned. The default is both since that is the default for the rest of the resource. |
 |Value |The value to assign to the environment variable. |
 
 ## Common properties
