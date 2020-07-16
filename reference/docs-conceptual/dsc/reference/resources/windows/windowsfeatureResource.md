@@ -1,5 +1,5 @@
 ---
-ms.date: 09/20/2019
+ms.date: 07/16/2020
 keywords: dsc,powershell,configuration,setup
 title: DSC WindowsFeature Resource
 ---
@@ -19,7 +19,6 @@ WindowsFeature [string] #ResourceName
     [ Credential = [PSCredential] ]
     [ IncludeAllSubFeature = [bool] ]
     [ LogPath = [string] ]
-    [ Source = [string] ]
     [ DependsOn = [string[]] ]
     [ Ensure = [string] { Absent | Present }  ]
     [ PsDscRunAsCredential = [PSCredential] ]
@@ -34,7 +33,6 @@ WindowsFeature [string] #ResourceName
 |Credential |Indicates the credentials to use to add or remove the role or feature. |
 |IncludeAllSubFeature |Set this property to `$true` to ensure the state of all required subfeatures with the state of the feature you specify with the **Name** property. |
 |LogPath |Indicates the path to a log file where you want the resource provider to log the operation. |
-|Source |Indicates the location of the source file to use for installation, if necessary. |
 
 ## Common properties
 
