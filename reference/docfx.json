@@ -99,16 +99,16 @@
                 "docs-conceptual/**.md": "conceptual"
             },
             "manager": { "**/**": "daberry" },
-            "monikerRange": {
+            "moniker": {
                 "docs-conceptual/community/**": "powershell-all",
                 "docs-conceptual/dev-cross-plat/**": "powershell-all",
                 "docs-conceptual/developer/**": "powershell-all",
                 "docs-conceptual/dsc/**": "powershell-5.1",
                 "docs-conceptual/gallery/**": "powershell-all",
-                "docs-conceptual/install/**": ">= powershell-6",
+                "docs-conceptual/install/**": ["powershell-6", "powershell-7", "powershell-7.1", "powershell-all"],
                 "docs-conceptual/learn/**": "powershell-all",
                 "docs-conceptual/samples/**": "powershell-all",
-                "docs-conceptual/whats-new/**": ">= powershell-6",
+                "docs-conceptual/whats-new/**": ["powershell-6", "powershell-7", "powershell-7.1", "powershell-all"],
                 "docs-conceptual/windows-powershell/**": "powershell-5.1"
             },
             "ms.tgt_pltfr": { "**/**": "windows, macos, linux" },
