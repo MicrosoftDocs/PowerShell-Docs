@@ -45,7 +45,9 @@
             "powershell-6",
             "powershell-7",
             "powershell-7.1",
-            "powershell-all || powershell-5.1 || >= powershell-6"
+            "powershell-all",
+            ">= powershell-6",
+            ">= powershell-7"
         ],
         "monikers": [],
         "open_to_public_contributors": true,
