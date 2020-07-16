@@ -3,7 +3,7 @@ external help file: System.Management.Automation.dll-Help.xml
 keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 10/02/2018
+ms.date: 07/16/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/enable-psremoting?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Enable-PSRemoting
@@ -113,27 +113,39 @@ all PowerShell remoting configurations.
 ### Example 3: Allow remote access on clients
 
 This example shows how to allow remote access from public networks on client versions of the Windows
-operating system.
+operating system. The name of the firewall rule can be different for different versions of Windows.
+Use `Get-NetFirewallRule` to see a list of rules. Before enabling the firewall rule, view the
+security settings in the rule to verify that the configuration is appropriate for your environment.
+
+```powershell
+Get-NetFirewallRule -Name 'WINRM*' | Select-Object Name
+```
+
+```Output
+Name
+----
+WINRM-HTTP-In-TCP-NoScope
+WINRM-HTTP-In-TCP
+WINRM-HTTP-Compat-In-TCP-NoScope
+WINRM-HTTP-Compat-In-TCP
+```
 
 ```powershell
 Enable-PSRemoting -SkipNetworkProfileCheck -Force
-Set-NetFirewallRule -Name 'WINRM-HTTP-In-TCP-PUBLIC' -RemoteAddress Any
+Set-NetFirewallRule -Name 'WINRM-HTTP-In-TCP' -RemoteAddress Any
 ```
 
-Before using these commands, analyze the security setting and verify that the computer network will
-be safe from harm.
-
-The first command enables remoting in PowerShell. By default, this creates network rules that allow
-remote access from private and domain networks. The command uses the **SkipNetworkProfileCheck**
-parameter to allow remote access from public networks in the same local subnet. The command
-specifies the **Force** parameter to suppress confirmation messages.
+By default, `Enable-PSRemoting` creates network rules that allow remote access from private and
+domain networks. The command uses the **SkipNetworkProfileCheck** parameter to allow remote access
+from public networks in the same local subnet. The command specifies the **Force** parameter to
+suppress confirmation messages.
 
 The **SkipNetworkProfileCheck** parameter does not affect server versions of the Windows operating
 system, which allow remote access from public networks in the same local subnet by default.
 
-The second command eliminates the subnet restriction. The command uses the `Set-NetFirewallRule`
-cmdlet in the **NetSecurity** module to add a firewall rule that allows remote access from public
-networks from any remote location. This includes locations in different subnets.
+The `Set-NetFirewallRule` cmdlet in the **NetSecurity** module adds a firewall rule that allows
+remote access from public networks from any remote location. This includes locations in different
+subnets.
 
 ### Example 4: Create a remote session to the newly enabled endpoint configuration
 
@@ -182,7 +194,7 @@ Permission    : NT AUTHORITY\INTERACTIVE AccessAllowed, BUILTIN\Administrators A
 
 Name                           Value
 ----                           -----
-PSCompatibleVersions           {1.0, 2.0, 3.0, 4.0�}
+PSCompatibleVersions           {1.0, 2.0, 3.0, 4.0…}
 PSEdition                      Core
 PSRemotingProtocolVersion      2.3
 Platform                       Win32NT
@@ -334,4 +346,3 @@ access to session configurations that were reserved for local use.
 [about_Remote](About/about_Remote.md)
 
 [about_Session_Configurations](About/about_Session_Configurations.md)
-
