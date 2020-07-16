@@ -143,7 +143,7 @@ suppress confirmation messages.
 The **SkipNetworkProfileCheck** parameter does not affect server versions of the Windows operating
 system, which allow remote access from public networks in the same local subnet by default.
 
-The `Set-NetFirewallRule` cmdlet in the **NetSecurity** module add a firewall rule that allows
+The `Set-NetFirewallRule` cmdlet in the **NetSecurity** module adds a firewall rule that allows
 remote access from public networks from any remote location. This includes locations in different
 subnets.
 
