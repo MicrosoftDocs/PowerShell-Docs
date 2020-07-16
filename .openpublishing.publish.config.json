@@ -40,7 +40,9 @@
         "monikerPath": [
             "mapping/monikerMapping.json"
         ],
-        "moniker_ranges": [],
+        "moniker_ranges": [
+            "powershell-all || powershell-5.1 || >= powershell-6"
+        ],
         "monikers": [
             "powershell-5.1",
             "powershell-6",
