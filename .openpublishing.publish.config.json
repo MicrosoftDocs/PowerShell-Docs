@@ -1,6 +1,5 @@
 {
     "build_entry_point": "docs",
-    "contribution_branch_mappings": {},
     "dependent_packages": [{
         "id": "Microsoft.DocAsCode.MAML2Yaml",
         "nuget_feed": "https://www.myget.org/F/op/api/v2",
@@ -41,13 +40,7 @@
             "mapping/monikerMapping.json"
         ],
         "moniker_ranges": [],
-        "monikers": [
-            "powershell-5.1",
-            "powershell-6",
-            "powershell-7",
-            "powershell-7.1",
-            "powershell-all"
-        ],
+        "monikers": [],
         "open_to_public_contributors": true,
         "template_folder": "_themes",
         "type_mapping": {
@@ -58,19 +51,18 @@
         "xref_query_tags": ["/dotnet", "/uwp/api"],
         "version": 0
     }],
+
     "git_repository_branch_open_to_public_contributors": "staging",
     "git_repository_url_open_to_public_contributors": "https://github.com/MicrosoftDocs/PowerShell-Docs",
     "need_preview_pull_request": true,
+
     "notification_subscribers": [],
-    "skip_source_output_uploading": false,
     "sync_notification_subscribers": [],
-    "need_generate_pdf_url_template": true,
-    "branch_target_mapping": {
-        "staging": ["Publish", "Pdf"]
-    },
-    "targets": {
-        "Pdf": {
-            "template_folder": "_themes.pdf"
-        }
-    }
+
+    "contribution_branch_mappings": {},
+    "skip_source_output_uploading": false,
+
+    "need_generate_pdf_url_template": false,
+    "branch_target_mapping": {},
+    "targets": {}
 }
