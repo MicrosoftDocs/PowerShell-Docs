@@ -253,8 +253,8 @@ The following commands can be used to install PowerShell using the published `wi
 1. Install a version of PowerShell using the **Version** parameter
 
    ```powershell
-   winget install Microsoft.Powershell -v 7.0.2
-   winget install Microsoft.Powershell-preview -v 7.1.0-preview.5
+   winget install -e 'Microsoft.Powershell'
+   winget install -e 'Microsoft.Powershell-Preview'
    ```
 
 ## How to create a remoting endpoint
