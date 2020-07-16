@@ -1,5 +1,5 @@
 ---
-ms.date: 09/20/2019
+ms.date: 07/15/2020
 keywords: dsc,powershell,configuration,setup
 title: DSC PackageManagement Resource
 ---
@@ -22,15 +22,15 @@ PackageManagement [string] #ResourceName
 {
     Name = [string]
     [ AdditionalParameters = [HashTable] ]
+    [ DependsOn = [string[]] ]
+    [ Ensure = [string]{ Absent | Present } ]
     [ MaximumVersion = [string] ]
     [ MinimumVersion = [string] ]
     [ ProviderName = [string] ]
+    [ PsDscRunAsCredential = [PSCredential] ]
     [ RequiredVersion = [string] ]
     [ Source = [string] ]
     [ SourceCredential = [PSCredential] ]
-    [ DependsOn = [string[]] ]
-    [ Ensure = [string]{ Absent | Present } ]
-    [ PsDscRunAsCredential = [PSCredential] ]
 }
 ```
 

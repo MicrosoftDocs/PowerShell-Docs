@@ -1,5 +1,5 @@
 ---
-ms.date: 09/20/2019
+ms.date: 07/16/2020
 keywords: dsc,powershell,configuration,setup
 title: DSC Archive Resource
 ---
@@ -18,6 +18,7 @@ Archive [string] #ResourceName
     Destination = [string]
     Path = [string]
     [ Checksum = [string] { CreatedDate | ModifiedDate | SHA-1 | SHA-256 | SHA-512 } ]
+    [ Credential = [PSCredential] ]
     [ Force = [bool] ]
     [ Validate = [bool] ]
     [ Ensure = [string] { Absent | Present } ]
@@ -30,11 +31,12 @@ Archive [string] #ResourceName
 
 |Property |Description |
 |---|---|
-|Destination |Specifies the location where you want to ensure the archive contents are extracted. |
-|Path |Specifies the source path of the archive file. |
-|Checksum |Defines the type to use when determining whether two files are the same. If **Checksum** is not specified, only the file or directory name is used for comparison. Valid values include: **SHA-1**, **SHA-256**, **SHA-512**, **createdDate**, **modifiedDate**. If you specify **Checksum** without **Validate**, the configuration will fail. |
-|Force |Certain file operations (such as overwriting a file or deleting a directory that is not empty) will result in an error. Using the **Force** property overrides such errors. The default value is **False**. |
-|Validate| Uses the **Checksum** property to determine if the archive matches the signature. If you specify **Checksum** without **Validate**, the configuration will fail. If you specify **Validate** without **Checksum**, a _SHA-256_ **Checksum** is used by default. |
+| Destination | Specifies the location where you want to ensure the archive contents are extracted. |
+| Path | Specifies the source path of the archive file. |
+| Checksum | Defines the type to use when determining whether two files are the same. If **Checksum** is not specified, only the file or directory name is used for comparison. Valid values include: **SHA-1**, **SHA-256**, **SHA-512**, **createdDate**, **modifiedDate**. If you specify **Checksum** without **Validate**, the configuration will fail. |
+| Credential | The credential of a user account with permissions to access the specified archive path and destination if needed. |
+| Force | Certain file operations (such as overwriting a file or deleting a directory that is not empty) will result in an error. Using the **Force** property overrides such errors. The default value is **False**. |
+| Validate| Uses the **Checksum** property to determine if the archive matches the signature. If you specify **Checksum** without **Validate**, the configuration will fail. If you specify **Validate** without **Checksum**, a _SHA-256_ **Checksum** is used by default. |
 
 ## Common properties
 
@@ -51,7 +53,7 @@ Archive [string] #ResourceName
 ## Example
 
 The following example shows how to use the Archive resource to ensure that the contents of an
-archive file called `Test.zip` exist and are extracted at a given destination.
+archive file called `Test.zip` exist and are extracted at a given destination using and authorized.
 
 ```powershell
 Archive ArchiveExample {
