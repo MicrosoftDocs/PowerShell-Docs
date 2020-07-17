@@ -1,5 +1,5 @@
 ---
-ms.date:  06/12/2017
+ms.date: 07/17/2020
 keywords:  dsc,powershell,configuration,setup
 title:  ResourceSet method
 ---
@@ -20,17 +20,17 @@ uint32 ResourceSet(
 
 ## Parameters
 
-*ResourceType* \[in\]
+**ResourceType** \[in\]
 The name of the resource to call.
 
-*ModuleName* \[in\]
+**ModuleName** \[in\]
 The name of the module that contains the resource to call.
 
-*resourceProperty* \[in\]
-Specifies the resource property name and its value in a hash table as key and value, respectively. Use the
-[Get-DscResource](/powershell/module/PSDesiredStateConfiguration/Get-DscResource) cmdlet to discover resource properties and their types.
+**resourceProperty** \[in\] Specifies the resource property name and its value in a hash table as
+key and value, respectively. Use the [Get-DscResource](/powershell/module/PSDesiredStateConfiguration/Get-DscResource)
+cmdlet to discover resource properties and their types.
 
-*RebootRequired* \[out\]
+**RebootRequired** \[out\]
 On return, this property is set to **true** if the target node needs to be rebooted.
 
 ## Return value

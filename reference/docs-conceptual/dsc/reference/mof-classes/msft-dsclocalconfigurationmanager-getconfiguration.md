@@ -1,11 +1,12 @@
 ---
-ms.date:  06/12/2017
+ms.date: 07/17/2020
 keywords:  dsc,powershell,configuration,setup
 title:  GetConfiguration method
 ---
 # GetConfiguration method
 
-Sends the configuration document to the managed node and uses the **Get** method of the Configuration Agent to apply the configuration.
+Sends the configuration document to the managed node and uses the **Get** method of the
+Configuration Agent to apply the configuration.
 
 ## Syntax
 
@@ -18,10 +19,10 @@ uint32 GetConfiguration(
 
 ## Parameters
 
-*configurationData* \[in\]
+**configurationData** \[in\]
 Specifies the configuration data to send.
 
-*configurations* \[out\]
+**configurations** \[out\]
 On return, contains an embedded instance of the configurations.
 
 ## Return value
