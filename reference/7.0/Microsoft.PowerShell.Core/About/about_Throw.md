@@ -8,10 +8,10 @@ title: about_Throw
 ---
 # About Throw
 
-## SHORT DESCRIPTION
+## Short description
 Describes the Throw keyword, which generates a terminating error.
 
-## LONG DESCRIPTION
+## Long description
 
 The Throw keyword causes a terminating error. You can use the Throw keyword to
 stop the processing of a command, function, or script.
@@ -24,7 +24,7 @@ declaration to make a function parameter mandatory.
 The Throw keyword can throw any object, such as a user message string or the
 object that caused the error.
 
-## SYNTAX
+## Syntax
 
 The syntax of the Throw keyword is as follows:
 
@@ -46,7 +46,7 @@ If the Throw keyword is used in a Catch block without an expression, it throws
 the current RuntimeException again. For more information, see
 about_Try_Catch_Finally.
 
-## THROWING A STRING
+## Throwing a string
 
 The optional expression in a Throw statement can be a string, as shown in the
 following example:
@@ -57,7 +57,7 @@ C:\PS> throw "This is an error."
 Exception: This is an error.
 ```
 
-## THROWING OTHER OBJECTS
+## Throwing other objects
 
 The expression can also be an object that throws the object that represents
 the PowerShell process, as shown in the following example:
@@ -81,7 +81,7 @@ C:\PS> $error[0].targetobject
      63    43.32      77.65       1.48    9092   2 pwsh
 ```
 
-You can also throw an ErrorRecord object or a Microsoft .NET Framework
+You can also throw an ErrorRecord object or a .NET
 exception. The following example uses the Throw keyword to throw a
 System.FormatException object.
 
@@ -93,7 +93,7 @@ C:\PS> throw $formatError
 OperationStopped: One of the identified items was in an invalid format.
 ```
 
-## RESULTING ERROR
+## The resulting error
 
 The Throw keyword can generate an ErrorRecord object. The Exception property
 of the ErrorRecord object contains a RuntimeException object. The remainder of
@@ -103,18 +103,14 @@ that the Throw keyword throws.
 The RunTimeException object is wrapped in an ErrorRecord object, and the
 ErrorRecord object is automatically saved in the $Error automatic variable.
 
-## USING THROW TO CREATE A MANDATORY PARAMETER
+## Using Throw to create a mandatory parameter
 
 Unlike past versions of PowerShell, do not use the Throw keyword for parameter validation. See [about_Functions_Advanced_Parameters](about_Functions_Advanced_Parameters.md) for the correct way.
 
-## SEE ALSO
+## See also
 
-[about_Break](about_Break.md)
-
-[about_Continue](about_Continue.md)
-
-[about_Scopes](about_Scopes.md)
-
-[about_Trap](about_Trap.md)
-
-[about_Try_Catch_Finally](about_Try_Catch_Finally.md)
+- [about_Break](about_Break.md)
+- [about_Continue](about_Continue.md)
+- [about_Scopes](about_Scopes.md)
+- [about_Trap](about_Trap.md)
+- [about_Try_Catch_Finally](about_Try_Catch_Finally.md)
