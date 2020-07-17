@@ -39,11 +39,7 @@ generates a ScriptHalted error.
 ```powershell
 C:\PS> throw
 
-ScriptHalted
-At line:1 char:6
-+ throw <<<<
-+ CategoryInfo          : OperationStopped: (:) [], RuntimeException
-+ FullyQualifiedErrorId : ScriptHalted
+Exception: ScriptHalted
 ```
 
 If the Throw keyword is used in a Catch block without an expression, it throws
@@ -58,12 +54,7 @@ following example:
 ```powershell
 C:\PS> throw "This is an error."
 
-This is an error.
-At line:1 char:6
-+ throw <<<<  "This is an error."
-+ CategoryInfo          : OperationStopped: (This is an error.:String) [], R
-untimeException
-+ FullyQualifiedErrorId : This is an error.
+Exception: This is an error.
 ```
 
 ## THROWING OTHER OBJECTS
@@ -72,15 +63,9 @@ The expression can also be an object that throws the object that represents
 the PowerShell process, as shown in the following example:
 
 ```powershell
-C:\PS> throw (get-process PowerShell)
+C:\PS> throw (get-process Pwsh)
 
-System.Diagnostics.Process (PowerShell)
-At line:1 char:6
-+ throw <<<<  (get-process PowerShell)
-+ CategoryInfo          : OperationStopped: (System.Diagnostics.Process (Pow
-erShell):Process) [],
-RuntimeException
-+ FullyQualifiedErrorId : System.Diagnostics.Process (PowerShell)
+Exception: System.Diagnostics.Process (pwsh) System.Diagnostics.Process (pwsh) System.Diagnostics.Process (pwsh)
 ```
 
 You can use the TargetObject property of the ErrorRecord object in the
@@ -89,9 +74,11 @@ $error automatic variable to examine the error.
 ```powershell
 C:\PS> $error[0].targetobject
 
-Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
--------  ------    -----      ----- -----   ------     -- -----------
-319      26    61016      70864   568     3.28   5548 PowerShell
+ NPM(K)    PM(M)      WS(M)     CPU(s)      Id  SI ProcessName
+ ------    -----      -----     ------      --  -- -----------
+    125   174.44     229.57      23.61    1548   2 pwsh
+     63    44.07      81.95       1.75    1732   2 pwsh
+     63    43.32      77.65       1.48    9092   2 pwsh
 ```
 
 You can also throw an ErrorRecord object or a Microsoft .NET Framework
@@ -103,12 +90,7 @@ C:\PS> $formatError = new-object system.formatexception
 
 C:\PS> throw $formatError
 
-One of the identified items was in an invalid format.
-At line:1 char:6
-+ throw <<<<  $formatError
-+ CategoryInfo          : OperationStopped: (:) [], FormatException
-+ FullyQualifiedErrorId : One of the identified items was in an invalid
-format.
+OperationStopped: One of the identified items was in an invalid format.
 ```
 
 ## RESULTING ERROR
@@ -123,30 +105,7 @@ ErrorRecord object is automatically saved in the $Error automatic variable.
 
 ## USING THROW TO CREATE A MANDATORY PARAMETER
 
-You can use the Throw keyword to make a function parameter mandatory.
-
-This is an alternative to using the Mandatory parameter of the Parameter
-keyword. When you use the Mandatory parameter, the system prompts the user
-for the required parameter value. When you use the Throw keyword, the
-command stops and displays the error record.
-
-For example, the Throw keyword in the parameter subexpression makes the
-Path parameter a required parameter in the function.
-
-In this case, the Throw keyword throws a message string, but it is the
-presence of the Throw keyword that generates the terminating error if the
-Path parameter is not specified. The expression that follows Throw is
-optional.
-
-```powershell
-function Get-XMLFiles
-{
-  param ($path = $(throw "The Path parameter is required."))
-  dir -path $path\*.xml -recurse |
-    sort lastwritetime |
-      ft lastwritetime, attributes, name  -auto
-}
-```
+Unlike past versions of PowerShell, do not use the Throw keyword for parameter validation. See [about_Functions_Advanced_Parameters](about_Functions_Advanced_Parameters.md) for the correct way.
 
 ## SEE ALSO
 
