@@ -1,5 +1,5 @@
 ---
-ms.date:  06/12/2017
+ms.date: 07/17/2020
 keywords:  dsc,powershell,configuration,setup
 title:  RemoveConfiguration method
 ---
@@ -18,7 +18,7 @@ uint32 RemoveConfiguration(
 
 ## Parameters
 
-*Stage* \[in\]
+**Stage** \[in\]
 Specifies which configuration document to remove. The following values are valid:
 
 |Value |Description |

@@ -1,11 +1,12 @@
 ---
-ms.date:  06/12/2017
+ms.date: 07/17/2020
 keywords:  dsc,powershell,configuration,setup
 title:  SendConfigurationApplyAsync method
 ---
 # SendConfigurationApplyAsync method
 
-Sends the configuration document asynchronously to the managed node and uses the Configuration Agent to apply the configuration.
+Sends the configuration document asynchronously to the managed node and uses the Configuration Agent
+to apply the configuration.
 
 ## Syntax
 
@@ -19,13 +20,13 @@ uint32 SendConfigurationApplyAsync(
 
 ## Parameters
 
-*ConfigurationData* \[in\]
+**ConfigurationData** \[in\]
 The environment data for the configuration.
 
-*force* \[in\]
+**force** \[in\]
 **true** to force the configuration to stop.
 
-*jobId* \[in\]
+**jobId** \[in\]
 The ID of the job for which to send the configuration.
 
 ## Return value

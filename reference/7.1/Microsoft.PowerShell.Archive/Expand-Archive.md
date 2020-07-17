@@ -3,7 +3,7 @@ external help file: Microsoft.PowerShell.Archive-help.xml
 keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Archive
-ms.date: 02/20/2020
+ms.date: 07/17/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.archive/expand-archive?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Expand-Archive
@@ -63,8 +63,9 @@ Expand-Archive -Path Draftv2.Zip -DestinationPath C:\Reference
 
 ### -DestinationPath
 
-Specifies the path to the folder in which you want the command to save extracted files. Enter the
-path to a folder, but do not specify a filename or filename extension.
+By default, `Expand-Archive` creates a folder in the current location that is the same name as the
+ZIP file. The parameter allows you to specify the path to a different folder. The target folder is
+created if it does not exist.
 
 ```yaml
 Type: System.String
@@ -73,7 +74,7 @@ Aliases:
 
 Required: False
 Position: 1
-Default value: Current location
+Default value: A folder in the current location
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -208,4 +209,3 @@ filename stored in the archive.
 ## RELATED LINKS
 
 [Compress-Archive](compress-archive.md)
-

@@ -18,14 +18,18 @@ Service [string] #ResourceName
     Name = [string]
     [ BuiltInAccount = [string] { LocalService | LocalSystem | NetworkService }  ]
     [ Credential = [PSCredential] ]
+    [ StartupTimeout = [uint32]]
     [ StartupType = [string] { Automatic | Disabled | Manual }  ]
-    [ State = [string] { Running | Stopped }  ]
+    [ State = [string] { Ignore | Running | Stopped }  ]
+    [ Dependencies = [string[]] ]
     [ Description = [string] ]
+    [ DesktopInteract = [boolean]]
     [ DisplayName = [string] ]
     [ Path = [string] ]
     [ DependsOn = [string[]] ]
     [ Ensure = [string] { Absent | Present } ]
     [ PsDscRunAsCredential = [PSCredential] ]
+    [ TerminateTimeout = [uint32] ]
 }
 ```
 
@@ -36,9 +40,13 @@ Service [string] #ResourceName
 |Name |Indicates the service name. Note that sometimes this is different from the display name. You can get a list of the services and their current state with the `Get-Service` cmdlet. |
 |BuiltInAccount |Indicates the sign-in account to use for the service. The values that are allowed for this property are: **LocalService**, **LocalSystem**, and **NetworkService**. |
 |Credential |Indicates credentials for the account that the service will run under. This property and the **BuiltinAccount** property cannot be used together. |
+|StartupTimeout | The time to wait for the service to be running in milliseconds.|
 |StartupType |Indicates the startup type for the service. The values that are allowed for this property are: **Automatic**, **Disabled**, and **Manual**. |
 |State |Indicates the state you want to ensure for the service. The values are: **Running** or **Stopped**. |
+|TerminateTimeout |The time to wait for the service to be stopped in milliseconds.|
+|Dependencies | An array of the names of the dependencies the service should have. |
 |Description |Indicates the description of the target service. |
+|DesktopInteract | Indicates whether or not the service should be able to communicate with a window on the desktop. Must be false for services not running as LocalSystem.|
 |DisplayName |Indicates the display name of the target service. |
 |Path |Indicates the path to the binary file for a new service. |
 

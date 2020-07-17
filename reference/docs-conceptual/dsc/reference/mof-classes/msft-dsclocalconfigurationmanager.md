@@ -1,13 +1,15 @@
 ---
-ms.date:  06/12/2017
+ms.date: 07/14/2020
 keywords:  dsc,powershell,configuration,setup
 title:  MSFT_DSCLocalConfigurationManager class
 ---
 # MSFT_DSCLocalConfigurationManager class
 
-The Local Configuration Manager (LCM) that controls the states of configuration files and uses Configuration Agent to apply the configurations.
+The Local Configuration Manager (LCM) that controls the states of configuration files and uses
+Configuration Agent to apply the configurations.
 
-The following syntax is simplified from Managed Object Format (MOF) code and includes all of the inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all of the
+inherited properties.
 
 ## Syntax
 
@@ -28,12 +30,12 @@ The **MSFT_DSCLocalConfigurationManager** class has the following members:
 
 The **MSFT_DSCLocalConfigurationManager** class has these methods.
 
-|Method |Description |
+|Methods |Description |
 |:--- |:---|
-| [ApplyConfiguration](msft-dsclocalconfigurationmanager-applyconfiguration.md)| Uses the Configuration Agent to apply the configuration that is pending.|
-| [DisableDebugConfiguration](msft-dsclocalconfigurationmanager-disabledebugconfiguration.md)| Disables DSC resource debugging.|
-| [EnableDebugConfiguration](msft-dsclocalconfigurationmanager-enabledebugconfiguration.md)| Enables DSC resource debugging.|
-| [GetConfiguration](msft-dsclocalconfigurationmanager-getconfiguration.md)| Sends the configuration document to the managed node and uses the **Get** method of the Configuration Agent to apply the configuration.|
+| [ApplyConfiguration(boolean)](msft-dsclocalconfigurationmanager-applyconfiguration.md)| Uses the Configuration Agent to apply the configuration that is pending.|
+| [DisableDebugConfiguration()](msft-dsclocalconfigurationmanager-disabledebugconfiguration.md)| Disables DSC resource debugging.|
+| [EnableDebugConfiguration(boolean)](msft-dsclocalconfigurationmanager-enabledebugconfiguration.md)| Enables DSC resource debugging.|
+| [GetConfiguration()](msft-dsclocalconfigurationmanager-getconfiguration.md)| Sends the configuration document to the managed node and uses the **Get** method of the Configuration Agent to apply the configuration.|
 | [GetConfigurationResultOutput](msft-dsclocalconfigurationmanager-getconfigurationresultoutput.md)| Gets the Configuration Agent output relating to a specific job.|
 | [GetConfigurationStatus](msft-dsclocalconfigurationmanager-getconfigurationstatus.md)| Get the configuration status history.|
 | [GetMetaConfiguration](msft-dsclocalconfigurationmanager-getmetaconfiguration.md)| Gets the LCM settings that are used to control Configuration Agent.|

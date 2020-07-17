@@ -22,8 +22,6 @@ group, remove more than one group, or add more than one group with the same list
 Group [string] #ResourceName
 {
     GroupName = [string[]]
-    [ Members = [string[]] ]
-    [ Description = [string[]] ]
     [ MembersToInclude = [string[]] ]
     [ MembersToExclude = [string[]] ]
     [ Credential = [PSCredential] ]
@@ -39,7 +37,6 @@ Group [string] #ResourceName
 |---|---|
 |GroupName |The names of the groups for which you want to ensure a specific state. |
 |Members |Use this property to replace the current group membership with the specified members. The value of this property is an array of strings of the form `Domain\UserName`. If you set this property in a configuration, do not use either the **MembersToExclude** or **MembersToInclude** property. Doing so will generate an error. |
-|Description |The description of the group. |
 |MembersToInclude |Use this property to add members to the existing membership of the group. The value of this property is an array of strings of the form `Domain\UserName`. If you set this property in a configuration, do not use the **Members** property. Doing so will generate an error. |
 |MembersToExclude |Use this property to remove members from the existing membership of the groups. The value of this property is an array of strings of the form `Domain\UserName`. If you set this property in a configuration, do not use the **Members** property. Doing so will generate an error. |
 |Credential |The credentials required to access remote resources. This account must have the appropriate Active Directory permissions to add all non-local accounts to the group; otherwise, an error will occur. |
