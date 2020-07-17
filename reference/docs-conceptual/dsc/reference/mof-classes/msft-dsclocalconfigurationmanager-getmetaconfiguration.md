@@ -1,5 +1,5 @@
 ---
-ms.date:  06/12/2017
+ms.date: 07/17/2020
 keywords:  dsc,powershell,configuration,setup
 title:  GetMetaConfiguration method
 ---
@@ -17,8 +17,8 @@ uint32 GetMetaConfiguration(
 
 ## Parameters
 
-*MetaConfiguration* \[out\]
-On return, contains an embedded instance of the **MSFT_DSCMetaConfiguration** class that defines the settings.
+**MetaConfiguration** \[out\] On return, contains an embedded instance of the
+**MSFT_DSCMetaConfiguration** class that defines the settings.
 
 ## Return value
 

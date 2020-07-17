@@ -1,5 +1,5 @@
 ---
-ms.date:  06/12/2017
+ms.date: 07/17/2020
 keywords:  dsc,powershell,configuration,setup
 title:  GetConfigurationResultOutput method
 ---
@@ -19,13 +19,13 @@ uint32 GetConfigurationResultOutput(
 
 ## Parameters
 
-*jobId* \[in\]
+**jobId** \[in\]
 The ID of the job for which to get output data.
 
-*resumeOutputBookmark* \[in\]
+**resumeOutputBookmark** \[in\]
 Specifies that the output should be a continuation from a previous bookmark.
 
-*output* \[out\]
+**output** \[out\]
 The output for the specified job.
 
 ## Return value
