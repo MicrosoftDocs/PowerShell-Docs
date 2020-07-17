@@ -1,7 +1,7 @@
 ---
 title: Installing PowerShell on Windows
 description: Information about installing PowerShell on Windows
-ms.date: 07/13/2020
+ms.date: 07/17/2020
 ---
 # Installing PowerShell on Windows
 
@@ -246,15 +246,15 @@ The following commands can be used to install PowerShell using the published `wi
    ```Output
    Name               Id                           Version
    ---------------------------------------------------------------
-   PowerShell         Microsoft.PowerShell         7.0.2
+   PowerShell         Microsoft.PowerShell         7.0.3
    PowerShell-Preview Microsoft.PowerShell-Preview 7.1.0-preview.5
    ```
 
-1. Install a version of PowerShell using the **Version** parameter
+1. Install a version of PowerShell using the `--exact` parameter
 
    ```powershell
-   winget install -e 'Microsoft.Powershell'
-   winget install -e 'Microsoft.Powershell-Preview'
+   winget install --name PowerShell --exact
+   winget install --name PowerShell-Preview --exact
    ```
 
 ## How to create a remoting endpoint
