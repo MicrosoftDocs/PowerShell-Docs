@@ -1,5 +1,5 @@
 ---
-ms.date:  06/12/2017
+ms.date: 07/17/2020
 keywords:  dsc,powershell,configuration,setup
 title:  SendMetaConfigurationApply method
 ---
@@ -18,10 +18,10 @@ uint32 SendMetaConfigurationApply(
 
 ## Parameters
 
-*ConfigurationData* \[in\]
+**ConfigurationData** \[in\]
 The environment data for the configuration.
 
-*force* \[in\]
+**force** \[in\]
 **true** to force the configuration to stop.
 
 ## Return value
