@@ -3,98 +3,24 @@
         "conceptualToc": "docs-conceptual/TOC.yml",
         "packageRoot": "5.1",
         "conceptualTocUrl": "/powershell/scripting/powershell-5.1/toc.json",
-        "referenceTocUrl": "/powershell/module/psdocs/toc.json",
-        "modules": {
-            "CimCmdlets": {},
-            "ISE": {},
-            "Microsoft.PowerShell.Archive": {},
-            "Microsoft.PowerShell.Core": {},
-            "Microsoft.PowerShell.Diagnostics": {},
-            "Microsoft.PowerShell.Host": {},
-            "Microsoft.PowerShell.LocalAccounts": {},
-            "Microsoft.PowerShell.Management": {},
-            "Microsoft.PowerShell.ODataUtils": {},
-            "Microsoft.PowerShell.Operation.Validation": {},
-            "Microsoft.PowerShell.Security": {},
-            "Microsoft.PowerShell.Utility": {},
-            "Microsoft.WsMan.Management": {},
-            "PackageManagement": {},
-            "PowershellGet": {},
-            "PSDesiredStateConfiguration": {},
-            "PSDiagnostics": {},
-            "PSReadline": {},
-            "PSScheduledJob": {},
-            "PSWorkflow": {},
-            "PSWorkflowUtility": {}
-        }
+        "referenceTocUrl": "/powershell/module/psdocs/toc.json"
     },
     "powershell-6": {
         "conceptualToc": "docs-conceptual/TOC.yml",
         "packageRoot": "6",
         "conceptualTocUrl": "/powershell/scripting/powershell-6/toc.json",
-        "referenceTocUrl": "/powershell/module/psdocs/toc.json",
-        "modules": {
-            "CimCmdlets": {},
-            "Microsoft.PowerShell.Archive": {},
-            "Microsoft.PowerShell.Core": {},
-            "Microsoft.PowerShell.Diagnostics": {},
-            "Microsoft.PowerShell.Host": {},
-            "Microsoft.PowerShell.Management": {},
-            "Microsoft.PowerShell.Security": {},
-            "Microsoft.PowerShell.Utility": {},
-            "Microsoft.WSMan.Management": {},
-            "PackageManagement": {},
-            "PowerShellGet": {},
-            "PSDesiredStateConfiguration": {},
-            "PSDiagnostics": {},
-            "PSReadLine": {},
-            "ThreadJob": {}
-        }
+        "referenceTocUrl": "/powershell/module/psdocs/toc.json"
     },
     "powershell-7": {
         "conceptualToc": "docs-conceptual/TOC.yml",
         "packageRoot": "7.0",
         "conceptualTocUrl": "/powershell/scripting/powershell-7/toc.json",
-        "referenceTocUrl": "/powershell/module/psdocs/toc.json",
-        "modules": {
-            "CimCmdlets": {},
-            "Microsoft.PowerShell.Archive": {},
-            "Microsoft.PowerShell.Core": {},
-            "Microsoft.PowerShell.Diagnostics": {},
-            "Microsoft.PowerShell.Host": {},
-            "Microsoft.PowerShell.Management": {},
-            "Microsoft.PowerShell.Security": {},
-            "Microsoft.PowerShell.Utility": {},
-            "Microsoft.WSMan.Management": {},
-            "PackageManagement": {},
-            "PowerShellGet": {},
-            "PSDesiredStateConfiguration": {},
-            "PSDiagnostics": {},
-            "PSReadLine": {},
-            "ThreadJob": {}
-        }
+        "referenceTocUrl": "/powershell/module/psdocs/toc.json"
     },
     "powershell-7.1": {
         "conceptualToc": "docs-conceptual/TOC.yml",
         "packageRoot": "7.1",
         "conceptualTocUrl": "/powershell/scripting/powershell-7.1/toc.json",
-        "referenceTocUrl": "/powershell/module/psdocs/toc.json",
-        "modules": {
-            "CimCmdlets": {},
-            "Microsoft.PowerShell.Archive": {},
-            "Microsoft.PowerShell.Core": {},
-            "Microsoft.PowerShell.Diagnostics": {},
-            "Microsoft.PowerShell.Host": {},
-            "Microsoft.PowerShell.Management": {},
-            "Microsoft.PowerShell.Security": {},
-            "Microsoft.PowerShell.Utility": {},
-            "Microsoft.WSMan.Management": {},
-            "PackageManagement": {},
-            "PowerShellGet": {},
-            "PSDesiredStateConfiguration": {},
-            "PSDiagnostics": {},
-            "PSReadLine": {},
-            "ThreadJob": {}
-        }
+        "referenceTocUrl": "/powershell/module/psdocs/toc.json"
     }
 }
