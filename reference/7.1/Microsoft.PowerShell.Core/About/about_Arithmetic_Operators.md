@@ -1,7 +1,7 @@
 ---
 keywords: powershell,cmdlet
 Locale: en-US
-ms.date: 05/24/2020
+ms.date: 07/17/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_arithmetic_operators?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Arithmetic_Operators
@@ -132,7 +132,7 @@ You can use the `[Math]` class to get different rounding behavior.
 | ------------------------------------------------------------ | ------ |
 | `[int][Math]::Round(5 / 2,[MidpointRounding]::AwayFromZero)` | `3`    |
 | `[int][Math]::Ceiling(5 / 2)`                                | `3`    |
-| `[int][Math]::Floor([5 / 2)`                                 | `2`    |
+| `[int][Math]::Floor(5 / 2)`                                  | `2`    |
 
 For more information, see the
 [Math.Round](/dotnet/api/system.math.round) method.
