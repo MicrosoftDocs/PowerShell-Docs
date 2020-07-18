@@ -22,8 +22,8 @@ that the cmdlet performs. The noun part of the name identifies the entity on whi
 performed.
 
 > [!NOTE]
-> PowerShell uses the term *verb* to describe a word that implies an action even if that word is not
-> a standard verb in the English language. For example, the term *New* is a valid PowerShell verb
+> PowerShell uses the term _verb_ to describe a word that implies an action even if that word is not
+> a standard verb in the English language. For example, the term _New_ is a valid PowerShell verb
 > name because it implies an action even though it is not a verb in the English language.
 
 ## Verb Naming Rules
@@ -116,6 +116,7 @@ lists most of the defined verbs.
 |[Remove](/dotnet/api/System.Management.Automation.VerbsCommon.Remove) (r)|Deletes a resource from a container. For example, the `Remove-Variable` cmdlet deletes a variable and its value. This verb is paired with `Add`.|For this action, do not use verbs such as Clear, Cut, Dispose, Discard, or Erase.|
 |[Rename](/dotnet/api/System.Management.Automation.VerbsCommon.Rename) (rn)|Changes the name of a resource. For example, the `Rename-Item` cmdlet, which is used to access stored data, changes the name of an item in the data store.|For this action, do not use a verb such as Change.|
 |[Reset](/dotnet/api/System.Management.Automation.VerbsCommon.Reset) (rs)|Sets a resource back to its original state.||
+|[Resize](/dotnet/api/System.Management.Automation.VerbsCommon.Resize)(rz)|Changes the size of a resource.||
 |[Search](/dotnet/api/System.Management.Automation.VerbsCommon.Search) (sr)|Creates a reference to a resource in a container.|For this action, do not use verbs such as Find or Locate.|
 |[Select](/dotnet/api/System.Management.Automation.VerbsCommon.Select) (sc)|Locates a resource in a container. For example, the `Select-String` cmdlet finds text in strings and files.|For this action, do not use verbs such as Find or Locate.|
 |[Set](/dotnet/api/System.Management.Automation.VerbsCommon.Set) (s)|Replaces data on an existing resource or creates a resource that contains some data. For example, the `Set-Date` cmdlet changes the system time on the local computer. (The `New` verb can also be used to create a resource.) This verb is paired with `Get`.|For this action, do not use verbs such as Write, Reset, Assign, or Configure.|
