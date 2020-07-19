@@ -16,7 +16,7 @@ that aren't found in other languages. Today, we take a deep dive into working wi
 > PowerShell team thanks Kevin for sharing this content with us. Please check out his blog at
 > [PowerShellExplained.com][].
 
-## If statement
+## The `if` statement
 
 One of the first statements that you learn is the `if` statement. It lets you execute a script block
 if a statement is `$true`.

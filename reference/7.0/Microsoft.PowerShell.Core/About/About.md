@@ -321,7 +321,7 @@ Describes how to use splatting to pass parameters to commands in PowerShell.
 Explains how to use the Split operator to split one or more strings into substrings.
 
 ### [about_Switch](about_Switch.md)
-Explains how to use a switch to handle multiple If statements.
+Explains how to use a switch to handle multiple `If` statements.
 
 ### [about_Telemetry](about_Telemetry.md)
 Describes the telemetry collected in PowerShell.
