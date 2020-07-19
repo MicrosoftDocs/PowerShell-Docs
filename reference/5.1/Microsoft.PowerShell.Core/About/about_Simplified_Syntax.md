@@ -101,9 +101,9 @@ foreach ($file in Get-ChildItem)
 }
 ```
 
-You can refine the example by using an If statement to limit the results that
+You can refine the example by using an `If` statement to limit the results that
 are returned. In the following example, the Foreach statement performs the
-same looping operation as the previous example, but it adds an If statement to
+same looping operation as the previous example, but it adds an `If` statement to
 limit the results to files that are greater than 100 kilobytes (KB):
 
 ```powershell
@@ -161,7 +161,7 @@ else {
 
 In the preceding example, the \$i variable is set to 0 outside the loop, and
 the variable is incremented inside the loop for each file that is found that
-is larger than 100 KB. When the loop exits, an If statement evaluates the
+is larger than 100 KB. When the loop exits, an `If` statement evaluates the
 value of $i to display a count of all the files over 100 KB. Or, it displays a
 message stating that no files over 100 KB were found.
 
@@ -195,7 +195,7 @@ whose working set (memory usage) is greater than 20 megabytes (MB).
 The Get-Process command gets all of the processes on the computer. The Foreach
 alias performs the commands in the script block on each process in sequence.
 
-The IF statement selects processes with a working set (WS) greater than 20
+The `If` statement selects processes with a working set (WS) greater than 20
 megabytes. The Write-Host cmdlet writes the name of the process followed by a
 colon. It divides the working set value, which is stored in bytes by 1
 megabyte to get the working set value in megabytes. Then it converts the
