@@ -3,7 +3,7 @@ external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 06/18/2020
+ms.date: 07/20/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/start-process?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Start-Process
@@ -198,7 +198,7 @@ Accept wildcard characters: False
 ### -LoadUserProfile
 
 Indicates that this cmdlet loads the Windows user profile stored in the `HKEY_USERS` registry key
-for the current user.
+for the current user. The parameter does not apply for non-Windows systems.
 
 This parameter does not affect the PowerShell profiles. For more information, see
 [about_Profiles](../Microsoft.PowerShell.Core/About/about_Profiles.md).
@@ -217,9 +217,12 @@ Accept wildcard characters: False
 
 ### -NoNewWindow
 
-Start the new process in the current console window. By default PowerShell opens a new window.
+Start the new process in the current console window. By default on Windows, PowerShell opens a new
+window. On non-Windows systems, you never get a new terminal window.
 
 You cannot use the **NoNewWindow** and **WindowStyle** parameters in the same command.
+
+The parameter does not apply for non-Windows systems.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -304,7 +307,7 @@ Accept wildcard characters: False
 ### -UseNewEnvironment
 
 Indicates that this cmdlet uses new environment variables specified for the process. By default, the
-started process runs with the environment variables specified for the computer and user.
+started process runs with the environment variables inherited from the parent process.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -335,6 +338,8 @@ The following table shows the verbs for some common process file types.
 To find the verbs that can be used with the file that runs in a process, use the `New-Object` cmdlet
 to create a **System.Diagnostics.ProcessStartInfo** object for the file. The available verbs are in
 the **Verbs** property of the **ProcessStartInfo** object. For details, see the examples.
+
+The parameter does not apply for non-Windows systems.
 
 ```yaml
 Type: System.String
@@ -373,6 +378,8 @@ parameter are: **Normal**, **Hidden**, **Minimized**, and **Maximized**. The def
 **Normal**.
 
 You cannot use the **WindowStyle** and **NoNewWindow** parameters in the same command.
+
+The parameter does not apply for non-Windows systems.
 
 ```yaml
 Type: System.Diagnostics.ProcessWindowStyle
@@ -463,16 +470,17 @@ parameter. Otherwise, this cmdlet does not return any output.
 
 - This cmdlet is implemented by using the **Start** method of the **System.Diagnostics.Process**
   class. For more information about this method, see
-  [Process.Start Method](/dotnet/api/system.diagnostics.process.start?view=netframework-4.7.2#overloads).
-
-- When using PowerShell Core on Linux, to open a new process within a new window (similar to the
-  default behavior when using `Start-Process` in Windows), run the cmdlet with the
-  **UseNewEnvironment** and **Wait** parameters. This prevents the new process from blocking
-  PowerShell's control of keyboard input.
+  [Process.Start Method](/dotnet/api/system.diagnostics.process.start#overloads).
 
 - On Windows, when you use **UseNewEnvironment**, the new process starts only containing the default
   environment variables defined for the **Machine** scope. This has the side affect that the
   `$env:USERNAME` is set to **SYSTEM**. None of the variables from the **User** scope are included.
+
+- On Windows, the most common use case for `Start-Process` is to use the **Wait** parameter to block
+  progress until the new process exits. On non-Windows system, this is rarely needed since the
+  default behavior for command-line applications is equivalent to `Start-Process -Wait`.
+
+- When using `Start-Process` on non-Windows systems, you never get a new terminal window.
 
 ## RELATED LINKS
 
