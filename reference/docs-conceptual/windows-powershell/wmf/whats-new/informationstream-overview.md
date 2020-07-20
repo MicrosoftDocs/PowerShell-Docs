@@ -40,7 +40,7 @@ function OutputGusher {
 The following examples show the results of running this function.
 
 ```powershell
-$r = c:\temp\OutputGusher
+$r = OutputGusher
 ```
 
 ```Output
