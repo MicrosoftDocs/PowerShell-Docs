@@ -130,7 +130,7 @@ if (!(Test-Path -Path $PROFILE)) {
 }
 ```
 
-In this command, the If statement prevents you from overwriting an existing
+In this command, the `If` statement prevents you from overwriting an existing
 profile. Replace the value of the \<profile-path\> placeholder with the path
 to the profile file that you want to create.
 

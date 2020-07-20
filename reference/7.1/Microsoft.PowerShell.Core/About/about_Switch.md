@@ -9,7 +9,7 @@ title: about_Switch
 # About Switch
 
 ## Short description
-Explains how to use a switch to handle multiple If statements.
+Explains how to use a switch to handle multiple `If` statements.
 
 ## Long description
 
@@ -18,7 +18,7 @@ statement can check many types of conditions, including the value of variables
 and the properties of objects.
 
 To check multiple conditions, use a `Switch` statement. The `Switch` statement
-is equivalent to a series of If statements, but it is simpler. The `Switch`
+is equivalent to a series of `If` statements, but it is simpler. The `Switch`
 statement lists each condition and an optional action. If a condition obtains,
 the action is performed.
 

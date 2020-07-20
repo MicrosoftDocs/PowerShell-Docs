@@ -1,13 +1,13 @@
 ---
-title: Everything you wanted to know about the IF statement
+title: Everything you wanted to know about the if statement
 description: Like many other languages, PowerShell has statements for conditionally executing code in your scripts.
 ms.date: 05/23/2020
 ms.custom: contributor-KevinMarquette
 ---
-# Everything you wanted to know about the IF statement
+# Everything you wanted to know about the `if` statement
 
 Like many other languages, PowerShell has statements for conditionally executing code in your
-scripts. One of those statements is the [if][] statement. Today we will take a deep dive into one of
+scripts. One of those statements is the [If][] statement. Today we will take a deep dive into one of
 the most fundamental commands in PowerShell.
 
 > [!NOTE]
@@ -22,7 +22,7 @@ This is what I mean by conditional execution. You have one statement or value to
 execute a different section of code based on that evaluation. This is exactly what the `if`
 statement does.
 
-## The if statement
+## The `if` statement
 
 Here is a basic example of the `if` statement:
 
@@ -607,7 +607,7 @@ else
 ```
 
 Each script block is placing the results the commands or the value into the pipeline. Then we assign
-the result of the if statement to the `$discount` variable. That example could have just as easily
+the result of the `if` statement to the `$discount` variable. That example could have just as easily
 assigned those values to the `$discount` variable directly in each scriptblock. I can't say that I
 use this with the `if` statement often, but I do have an example where I used this recently.
 
@@ -646,7 +646,7 @@ fall into the `$snowSqlParam` in the correct place. Same holds true for the `$Pa
 ## Simplify complex operations
 
 It's inevitable that you run into a situation that has way too many comparisons to check and your
-if statement scrolls way off the right side of the screen.
+`If` statement scrolls way off the right side of the screen.
 
 ```powershell
 $user = Get-ADUser -Identity $UserName
@@ -682,7 +682,7 @@ read any of the logic.
 
 ### Pre-calculating results
 
-We can take that statement out of the if statement and only check the result.
+We can take that statement out of the `if` statement and only check the result.
 
 ```powershell
 $needsSecureHomeDrive = $null -ne $user -and

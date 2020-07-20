@@ -552,7 +552,7 @@ if ($PSCmdlet.ShouldProcess('TARGET')){
 If someone specifies both `-Force` and `-WhatIf`, then `-WhatIf` needs to take priority. This
 approach preserves `-WhatIf` processing because `ShouldProcess` always gets executed.
 
-Do not add a check for the `$Force` value inside the if statement with the `ShouldProcess`. That is
+Do not add a check for the `$Force` value inside the `if` statement with the `ShouldProcess`. That is
 an anti-pattern for this specific scenario even though that's what I show you in the next section
 for `ShouldContinue`.
 

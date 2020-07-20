@@ -481,7 +481,7 @@ See `Class` for usage examples.
 ### Switch
 
 To check multiple conditions, use a `Switch` statement. The `Switch` statement is
-equivalent to a series of If statements, but it is simpler.
+equivalent to a series of `If` statements, but it is simpler.
 
 The `Switch` statement lists each condition and an optional action. If a
 condition obtains, the action is performed.
