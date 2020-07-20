@@ -3,7 +3,7 @@ external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 06/18/2020
+ms.date: 07/20/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/start-process?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Start-Process
@@ -303,7 +303,7 @@ Accept wildcard characters: False
 ### -UseNewEnvironment
 
 Indicates that this cmdlet uses new environment variables specified for the process. By default, the
-started process runs with the environment variables specified for the computer and user.
+started process runs with the environment variables inherited from the parent process.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -428,7 +428,7 @@ parameter. Otherwise, this cmdlet does not return any output.
 
 - This cmdlet is implemented by using the **Start** method of the **System.Diagnostics.Process**
   class. For more information about this method, see
-  [Process.Start Method](/dotnet/api/system.diagnostics.process.start?view=netframework-4.7.2#overloads).
+  [Process.Start Method](/dotnet/api/system.diagnostics.process.start#overloads).
 
 - On Windows, when you use **UseNewEnvironment**, the new process starts only containing the default
   environment variables defined for the **Machine** scope. This has the side affect that the
