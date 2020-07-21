@@ -1,17 +1,12 @@
 ---
-title: "HelpInfo XML Sample File | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/12/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 6544070f-5549-407f-8603-5df60fe9e013
-caps.latest.revision: 7
+title: HelpInfo XML Sample File
+ms.date: 09/12/2016
 ---
 # HelpInfo XML Sample File
 
-This topic displays a sample of a well-formed Updatable Help Information file, commonly known as "HelpInfo XML file." In this sample file, the UI culture elements are arranged in alphabetical order by UI culture name. Alphabetical ordering is a best practice, but it is not required.
+This topic displays a sample of a well-formed Updatable Help Information file, commonly known as
+"HelpInfo XML file." In this sample file, the UI culture elements are arranged in alphabetical order
+by UI culture name. Alphabetical ordering is a best practice, but it is not required.
 
 ## HelpInfo XML Sample File
 

@@ -1,27 +1,23 @@
 ---
-title: "How to Add Examples to a Cmdlet Help Topic | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/12/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 8f723b21-8f95-4981-8b6e-4f07c22d601a
-caps.latest.revision: 5
+title: How to Add Examples to a Cmdlet Help Topic
+ms.date: 09/12/2016
 ---
 # How to Add Examples to a Cmdlet Help Topic
 
 ## Things to Know about Examples in Cmdlet Help
 
-- List all of the parameter names in the command, even when the parameter names are optional. This helps the user to interpret the command easily.
+- List all of the parameter names in the command, even when the parameter names are optional. This
+  helps the user to interpret the command easily.
 
-- Avoid aliases and partial parameter names, even though they work in Windows PowerShell®.
+- Avoid aliases and partial parameter names, even though they work in PowerShell.
 
-- In the example description, explain the rational for the construction of the command. Explain why you chose particular parameters and values, and how you use variables.
+- In the example description, explain the rational for the construction of the command. Explain why
+  you chose particular parameters and values, and how you use variables.
 
 - If the command uses expressions, explain them in detail.
 
-- If the command uses properties and methods of objects, especially properties that do not appear in the default display, use the example as an opportunity tell the user about the object.
+- If the command uses properties and methods of objects, especially properties that do not appear in
+  the default display, use the example as an opportunity tell the user about the object.
 
 ## Help Views that Display Examples
 
@@ -29,7 +25,8 @@ Examples appear only in the Detailed and Full views of cmdlet Help.
 
 ## Adding an Examples Node
 
-The following XML shows how to add an Examples node that contains a single Example node. Add additional example nodes for each examples you want to include in the topic.
+The following XML shows how to add an **Examples** node that contains a single **Example** node. Add
+additional example nodes for each examples you want to include in the topic.
 
 ```xml
 <command:examples>
@@ -40,7 +37,9 @@ The following XML shows how to add an Examples node that contains a single Examp
 
 ## Adding an Example Title
 
-The following XML shows how to add a title for the example. The title is used to set the example apart from other examples. Windows PowerShell® uses a standard header that includes a sequential example number.
+The following XML shows how to add a **title** for the example. The **title** is used to set the
+example apart from other examples. PowerShell uses a standard header that includes a sequential
+example number.
 
 ```xml
 <command:examples>
@@ -52,7 +51,9 @@ The following XML shows how to add a title for the example. The title is used to
 
 ## Adding Preceding Characters
 
-The following XML shows how to add characters, such as the Windows PowerShell prompt, that are displayed immediately before the example command (without any intervening spaces). Windows PowerShell® uses the Windows PowerShell prompt: C:\PS>.
+The following XML shows how to add characters, such as the Windows PowerShell prompt, that are
+displayed immediately before the example command (without any intervening spaces). PowerShell uses
+the Windows PowerShell prompt: `C:\PS>`.
 
 ```xml
 <command:examples>
@@ -67,7 +68,9 @@ The following XML shows how to add characters, such as the Windows PowerShell pr
 
 ## Adding the Command
 
-The following XML shows how to add the actual command of the example. When adding the command, type the entire name (do not use alias) of cmdlets and parameters. Also, use lowercase characters whenever possible.
+The following XML shows how to add the actual command of the example. When adding the command, type
+the entire name (do not use alias) of cmdlets and parameters. Also, use lowercase characters
+whenever possible.
 
 ```xml
 <command:examples>
@@ -83,7 +86,9 @@ The following XML shows how to add the actual command of the example. When addin
 
 ## Adding a Description
 
-The following XML shows how to add a description for the example. Windows PowerShell® uses a single set of \<maml:para> tags for the description, even though multiple \<maml:para> tags can be used.
+The following XML shows how to add a description for the example. PowerShell uses a
+single set of `<maml:para>` tags for the description, even though multiple `<maml:para>` tags can be
+used.
 
 ```xml
 <command:examples>
@@ -102,7 +107,10 @@ The following XML shows how to add a description for the example. Windows PowerS
 
 ## Adding Example Output
 
-The following XML shows how to add the output of the command. The command results information is optional, but in some cases it is helpful to demonstrate the effect of using specific parameters. Windows PowerShell® uses two sets of blank \<maml:para> tags to separate the command output from the command.
+The following XML shows how to add the output of the command. The command results information is
+optional, but in some cases it is helpful to demonstrate the effect of using specific parameters.
+PowerShell uses two sets of blank `<maml:para>` tags to separate the command output from
+the command.
 
 ```xml
 <command:examples>
