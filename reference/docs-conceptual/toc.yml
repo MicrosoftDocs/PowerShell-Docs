@@ -626,7 +626,7 @@
       href: samples/managing-processes-with-process-cmdlets.md
     - name: Managing services
       href: samples/managing-services.md
-    - name: Managing Windows PowerShell drives
+    - name: Managing PowerShell drives
       href: samples/managing-windows-powershell-drives.md
     - name: Working with printers
       href: samples/working-with-printers.md
@@ -798,11 +798,11 @@
       href: developer/windows-powershell-reference.md
     - name: What's New
       href: developer/windows-powershell-reference-whats-new.md
-    - name: Writing a Windows PowerShell Cmdlet
+    - name: Writing a PowerShell Cmdlet
       items:
       - name: Cmdlet Overview
         href: developer/cmdlet/cmdlet-overview.md
-      - name: Windows PowerShell Cmdlet Concepts
+      - name: PowerShell Cmdlet Concepts
         href: developer/cmdlet/windows-powershell-cmdlet-concepts.md
         items:
         - name: Cmdlet Development Guidelines
@@ -816,7 +816,7 @@
             href: developer/cmdlet/advisory-development-guidelines.md
         - name: Cmdlet Class Declaration
           href: developer/cmdlet/cmdlet-class-declaration.md
-        - name: Approved Verbs for Windows PowerShell Commands
+        - name: Approved Verbs for PowerShell Commands
           href: developer/cmdlet/approved-verbs-for-windows-powershell-commands.md
         - name: Cmdlet Input Processing Methods
           href: developer/cmdlet/cmdlet-input-processing-methods.md
@@ -914,7 +914,7 @@
             href: developer/cmdlet/users-requesting-confirmation.md
           - name: Confirmation Messages
             href: developer/cmdlet/confirmation-messages.md
-        - name: Windows PowerShell Error Reporting
+        - name: PowerShell Error Reporting
           href: developer/cmdlet/windows-powershell-error-reporting.md
           items:
           - name: Error Reporting Concepts
@@ -925,7 +925,7 @@
             href: developer/cmdlet/non-terminating-errors.md
           - name: Displaying Error Information
             href: developer/cmdlet/displaying-error-information.md
-          - name: Windows PowerShell Error Records
+          - name: PowerShell Error Records
             href: developer/cmdlet/windows-powershell-error-records.md
           - name: Interpreting ErrorRecord Objects
             href: developer/cmdlet/interpreting-errorrecord-objects.md
@@ -935,7 +935,7 @@
           href: developer/cmdlet/invoking-cmdlets-and-scripts-within-a-cmdlet.md
         - name: Cmdlet Sets
           href: developer/cmdlet/cmdlet-sets.md
-        - name: Windows PowerShell Session State
+        - name: PowerShell Session State
           href: developer/cmdlet/windows-powershell-session-state.md
       - name: Examples of Cmdlet Code
         href: developer/cmdlet/examples-of-cmdlet-code.md
@@ -1026,11 +1026,11 @@
           href: developer/cmdlet/stopprocesssample04-sample.md
         - name: Events01 Sample
           href: developer/cmdlet/events01-sample.md
-    - name: Writing a Windows PowerShell Module
+    - name: Writing a PowerShell Module
       items:
       - name: Overview
         href: developer/module/writing-a-windows-powershell-module.md
-      - name: Understanding a Windows PowerShell Module
+      - name: Understanding a PowerShell Module
         href: developer/module/understanding-a-windows-powershell-module.md
       - name: How to Write a PowerShell Script Module
         href: developer/module/how-to-write-a-powershell-script-module.md
@@ -1054,17 +1054,17 @@
           items:
           - name: Overview
             href: developer/module/how-to-create-a-windows-powershell-snap-in.md
-          - name: Writing a Windows PowerShell Snap-in
+          - name: Writing a PowerShell Snap-in
             href: developer/module/writing-a-windows-powershell-snap-in.md
-          - name: Writing a Custom Windows PowerShell Snap-in
+          - name: Writing a Custom PowerShell Snap-in
             href: developer/module/writing-a-custom-windows-powershell-snap-in.md
       - name: Importing a PowerShell Module
         href: developer/module/importing-a-powershell-module.md
-    - name: Writing a Windows PowerShell Provider
+    - name: Writing a PowerShell Provider
       items:
-      - name: Windows PowerShell Provider Quickstart
+      - name: PowerShell Provider Quickstart
         href: developer/provider/windows-powershell-provider-quickstart.md
-      - name: Windows PowerShell Provider Overview
+      - name: PowerShell Provider Overview
         href: developer/provider/windows-powershell-provider-overview.md
         items:
         - name: Provider types
@@ -1098,7 +1098,7 @@
           href: developer/provider/accessdbprovidersample06.md
     - name: Writing a Windows PowerShell Host Application
       items:
-      - name: Windows PowerShell Host Quickstart
+      - name: PowerShell Host Quickstart
         href: developer/hosting/windows-powershell-host-quickstart.md
       - name: Creating Runspaces
         href: developer/hosting/creating-runspaces.md
@@ -1118,12 +1118,12 @@
       - name: Host Application Samples
         href: developer/hosting/host-application-samples.md
         items:
-        - name: Windows PowerShell API Samples
+        - name: PowerShell API Samples
           href: developer/hosting/windows-powershell-api-samples.md
           items:
-          - name: Windows PowerShell01 Sample
+          - name: PowerShell01 Sample
             href: developer/hosting/windows-powershell01-sample.md
-          - name: Windows PowerShell02 Sample
+          - name: PowerShell02 Sample
             href: developer/hosting/windows-powershell02-sample.md
         - name: Custom Host Samples
           href: developer/hosting/custom-host-samples.md
@@ -1637,7 +1637,7 @@
           href: developer/format/wrap-element-for-tablerowentry-for-tablecontrol-format.md
         - name: WrapTables Element (Format)
           href: developer/format/wraptables-element-format.md
-    - name: Writing Help for Windows PowerShell
+    - name: Writing Help for PowerShell
       items:
       - name: Overview
         href: developer/help/writing-help-for-windows-powershell-scripts-and-functions.md
@@ -1659,7 +1659,7 @@
           href: developer/help/examples-of-comment-based-help.md
       - name: Writing XML-Based Help Topics for Commands
         items:
-        - name: Writing Help for Windows PowerShell Cmdlets
+        - name: Writing Help for PowerShell Cmdlets
           items:
             - name: Overview
               href: developer/help/writing-help-for-windows-powershell-cmdlets.md
@@ -1683,9 +1683,10 @@
               href: developer/help/how-to-add-examples-to-a-cmdlet-help-topic.md
             - name: How to Add Related Links to a Cmdlet Help Topic
               href: developer/help/how-to-add-related-links-to-a-cmdlet-help-topic.md
-        - name: Writing Help for Windows PowerShell Modules
-          href: developer/module/writing-help-for-windows-powershell-modules.md
+        - name: Writing Help for PowerShell Modules
           items:
+          - name: Overview
+            href: developer/module/writing-help-for-windows-powershell-modules.md
           - name: Naming Help Files
             href: developer/help/naming-help-files.md
           - name: Supporting Updatable Help
@@ -1723,7 +1724,7 @@
                 href: developer/help/how-to-test-updatable-help.md
             - name: Supporting Online Help
               href: developer/help/supporting-online-help.md
-        - name: Writing Help for Windows PowerShell Providers
+        - name: Writing Help for PowerShell Providers
           items:
           - name: How to Add Dynamic Parameters to a Provider Help Topic
             href: developer/help/how-to-add-dynamic-parameters-to-a-provider-help-topic.md
@@ -1748,30 +1749,30 @@
     - name: Windows PowerShell Programmer's Guide
       href: developer/prog-guide/windows-powershell-programmer-s-guide.md
       items:
-      - name: How to Create a Windows PowerShell Provider
+      - name: How to Create a PowerShell Provider
         href: developer/prog-guide/how-to-create-a-windows-powershell-provider.md
         items:
-        - name: Designing Your Windows PowerShell Provider
+        - name: Designing Your PowerShell Provider
           href: developer/prog-guide/designing-your-windows-powershell-provider.md
-        - name: Creating a Basic Windows PowerShell Provider
+        - name: Creating a Basic PowerShell Provider
           href: developer/prog-guide/creating-a-basic-windows-powershell-provider.md
-        - name: Creating a Windows PowerShell Drive Provider
+        - name: Creating a PowerShell Drive Provider
           href: developer/prog-guide/creating-a-windows-powershell-drive-provider.md
-        - name: Creating a Windows PowerShell Item Provider
+        - name: Creating a PowerShell Item Provider
           href: developer/prog-guide/creating-a-windows-powershell-item-provider.md
-        - name: Creating a Windows PowerShell Container Provider
+        - name: Creating a PowerShell Container Provider
           href: developer/prog-guide/creating-a-windows-powershell-container-provider.md
-        - name: Creating a Windows PowerShell Navigation Provider
+        - name: Creating a PowerShell Navigation Provider
           href: developer/prog-guide/creating-a-windows-powershell-navigation-provider.md
-        - name: Creating a Windows PowerShell Content Provider
+        - name: Creating a PowerShell Content Provider
           href: developer/prog-guide/creating-a-windows-powershell-content-provider.md
-        - name: Creating a Windows PowerShell Property Provider
+        - name: Creating a PowerShell Property Provider
           href: developer/prog-guide/creating-a-windows-powershell-property-provider.md
       - name: How to Create a Console Shell
         href: developer/prog-guide/how-to-create-a-console-shell.md
-      - name: Windows PowerShell Concepts
+      - name: PowerShell Concepts
         href: developer/prog-guide/windows-powershell-concepts.md
-      - name: Windows PowerShell Sample Code
+      - name: PowerShell Sample Code
         href: developer/prog-guide/windows-powershell-sample-code.md
         items:
         - name: AccessDbProviderSample01 Code Sample
