@@ -1,8 +1,6 @@
 ---
 title: Comment-Based Help Keywords
-ms.custom:
 ms.date: 06/09/2020
-ms.topic: article
 ---
 # Comment-Based Help Keywords
 

@@ -31,11 +31,11 @@ A module can include the following types of Help.
 
 - **Conceptual ("About") Help**. You can use a conceptual ("about") Help topic to describe the
   module and its members and to explain how the members can be used together to perform tasks.
-  Conceptual Help topics are text files with Unicode (UTF-8) encoding. The file name must use the
+  Conceptual Help topics are text files with Unicode (UTF-8) encoding. The filename must use the
   `about_<name>.help.txt` format, such as `about_MyModule.help.txt`. By default, PowerShell includes
   over 100 of these conceptual About Help topics, and they are formatted like the following example.
 
-  ```
+  ```Output
   TOPIC
       about_<subject or module name>
 
@@ -82,8 +82,8 @@ SampleModule module.
 
 > [!NOTE]
 > In the example, the `<ModulePath>` placeholder represents one of the paths in the `PSModulePath`
-> environment variable, such as `$HOME\Documents\Modules`, `$PSHOME\Modules`, or a custom path that the
-> user specifies.
+> environment variable, such as `$HOME\Documents\Modules`, `$PSHOME\Modules`, or a custom path that
+> the user specifies.
 
 ## Getting Module Help
 
@@ -105,20 +105,20 @@ If the module does not contain help topics and there are no help topics for the 
 module on the user's computer, `Get-Help` displays auto-generated help. The auto-generated help
 includes the command syntax, parameters, and input and output types, but does not include any
 descriptions. The auto-generated help includes text that directs the user to try to use the
-`Update-Help` cmdlet to download help for the command from the Internet or a file share. It also
+`Update-Help` cmdlet to download help for the command from the internet or a file share. It also
 recommends using the **Online** parameter of the `Get-Help` cmdlet to get the online version of the
 help topic.
 
 ## Supporting Updatable Help
 
 Users of PowerShell 3.0 and later versions of PowerShell can download and install updated help files
-for a module from the Internet or from a local file share. The `Update-Help` and `Save-Help` cmdlets
+for a module from the internet or from a local file share. The `Update-Help` and `Save-Help` cmdlets
 hide the management details from the user. Users run the `Update-Help` cmdlet and then use the
 `Get-Help` cmdlet to read the newest help files for the module at the PowerShell command prompt.
 Users do not need to restart Windows or PowerShell.
 
-Users behind firewalls and those without Internet access can use Updatable Help, as well.
-Administrators with Internet access use the `Save-Help` cmdlet to download and install the newest
+Users behind firewalls and those without internet access can use Updatable Help, as well.
+Administrators with internet access use the `Save-Help` cmdlet to download and install the newest
 help files to a file share. Then, users use the **Path** parameter of the `Update-Help` cmdlet to
 get the newest help files from the file share.
 
@@ -131,7 +131,7 @@ For more information about Updatable Help, see [Supporting Updatable Help](./sup
 
 Users who cannot or do not install updated help files on their computers often rely on the online
 version of module help topics. The **Online** parameter of the `Get-Help` cmdlet opens the online
-version of a cmdlet or advanced function help topic for the user in their default Internet browser.
+version of a cmdlet or advanced function help topic for the user in their default internet browser.
 
 The `Get-Help` cmdlet uses the value of the **HelpUri** property of the cmdlet or function to find
 the online version of the help topic.
