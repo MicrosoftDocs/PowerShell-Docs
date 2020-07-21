@@ -1,7 +1,7 @@
 ---
 keywords: powershell,cmdlet
 Locale: en-US
-ms.date: 08/28/2018
+ms.date: 07/21/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_operators?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Operators
@@ -489,6 +489,8 @@ of the `Get-Member` cmdlet.
 [about_Comparison_Operators](about_Comparison_Operators.md)
 
 [about_Logical_Operators](about_logical_operators.md)
+
+[about_Operator_Precedence](about_operator_precedence.md)
 
 [about_Type_Operators](about_Type_Operators.md)
 
