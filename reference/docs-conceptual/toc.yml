@@ -1096,7 +1096,7 @@
           href: developer/provider/accessdbprovidersample05.md
         - name: AccessDBProviderSample06
           href: developer/provider/accessdbprovidersample06.md
-    - name: Writing a Windows PowerShell Host Application
+    - name: Writing a PowerShell Host Application
       items:
       - name: PowerShell Host Quickstart
         href: developer/hosting/windows-powershell-host-quickstart.md
