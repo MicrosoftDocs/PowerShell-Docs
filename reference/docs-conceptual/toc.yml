@@ -1686,7 +1686,7 @@
         - name: Writing Help for PowerShell Modules
           items:
           - name: Overview
-            href: developer/module/writing-help-for-windows-powershell-modules.md
+            href: developer/help/writing-help-for-windows-powershell-modules.md
           - name: Naming Help Files
             href: developer/help/naming-help-files.md
           - name: Supporting Updatable Help
