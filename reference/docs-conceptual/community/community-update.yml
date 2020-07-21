@@ -53,18 +53,6 @@ landingContent:
           url: ./2020-Q1.md
         - text: Contributor Hall of Fame
           url: hall-of-fame.md
-- title: Video resources
-  linkLists:
-    - linkListType: video
-      links:
-      - text: Jason Helmick's - The Show
-        url: https://www.youtube.com/user/JasonHelmick/videos
-      - text: The PSConfEU Channel
-        url: https://www.youtube.com/channel/UCxgrI58XiKnDDByjhRJs5fg
-      - text: The PowerShell.org Channel
-        url: https://www.youtube.com/user/powershellorg
-      - text: Channel 9 - PowerShell videos
-        url: https://channel9.msdn.com/Tags/powershell
 - title: Community resources
   linkLists:
     - linkListType: overview
@@ -81,3 +69,13 @@ landingContent:
       links:
         - text: Digital art
           url: digital-art.md
+    - linkListType: video
+      links:
+      - text: Jason Helmick's - The Show
+        url: https://www.youtube.com/user/JasonHelmick/videos
+      - text: The PSConfEU Channel
+        url: https://www.youtube.com/channel/UCxgrI58XiKnDDByjhRJs5fg
+      - text: The PowerShell.org Channel
+        url: https://www.youtube.com/user/powershellorg
+      - text: Channel 9 - PowerShell videos
+        url: https://channel9.msdn.com/Tags/powershell
