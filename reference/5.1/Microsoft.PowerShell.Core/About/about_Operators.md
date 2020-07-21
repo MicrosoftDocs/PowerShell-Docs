@@ -122,7 +122,7 @@ However, in PowerShell, there are additional behaviors.
 
 - When used as the first segment of a pipeline, wrapping a command or
   expression in parentheses invariably causes _enumeration_ of the expression
-  result. if the parentheses wrap a _command_, it is run to completion with all
+  result. If the parentheses wrap a _command_, it is run to completion with all
   output _collected in memory_ before the results are sent through the
   pipeline.
 
@@ -162,7 +162,7 @@ item, the array has only one member.
 Runs a command, script, or script block. The call operator, also known as the
 "invocation operator", lets you run commands that are stored in variables and
 represented by strings or script blocks. The call operator executes in a child
-scope. For more about scopes, see [about_scopes](about_scopes.md).
+scope. For more about scopes, see [about_Scopes](about_Scopes.md).
 
 This example stores a command in a string and executes it using the call
 operator.
@@ -370,12 +370,12 @@ $myProcess.peakWorkingSet
 
 #### Static member operator `::`
 
-Calls the static properties operator and methods of a .NET Framework class. To
+Calls the static properties and methods of a .NET Framework class. To
 find the static properties and methods of an object, use the Static parameter
 of the `Get-Member` cmdlet.
 
 ```powershell
-[datetime]::now
+[datetime]::Now
 ```
 
 ## See also
