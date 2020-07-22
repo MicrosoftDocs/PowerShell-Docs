@@ -782,6 +782,8 @@
       href: dev-cross-plat/vscode/understanding-file-encoding.md
   - name: Writing portable modules
     href: dev-cross-plat/writing-portable-modules.md
+  - name: Creating module help using PlatyPS
+    href: dev-cross-plat/create-help-using-platyps.md
   - name: How to create a Standard Library binary module
     href: dev-cross-plat/create-standard-library-binary-module.md
   - name: Choosing the right NuGet package for your .NET project
