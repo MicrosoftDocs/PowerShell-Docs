@@ -89,7 +89,8 @@ version of a help file, use the **Online** parameter, such as: `Get-Help Get-Pro
 read all the PowerShell documentation, see the Microsoft Docs [PowerShell Documentation](/powershell).
 
 If you type `Get-Help` followed by the exact name of a help article, or by a word unique to a help
-article, `Get-Help` displays the article's content. If you enter a word or word pattern that appears
+article, `Get-Help` displays the article's content. If you specify the exact name of a command alias,
+`Get-Help` displays the help for the original command. If you enter a word or word pattern that appears
 in several help article titles, `Get-Help` displays a list of the matching titles. If you enter a
 word that doesn't appear in any help article titles, `Get-Help` displays a list of articles that
 include that word in their contents.
