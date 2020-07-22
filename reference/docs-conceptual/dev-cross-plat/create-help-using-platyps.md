@@ -1,12 +1,12 @@
 ---
 title: Create XML-based help using PlatyPS
-description: Create XML-based help the easy way using PlatyPS.
-ms.date: 06/25/2020
+description: Using PlatyPS is the fast and efficient way to create XML-based help.
+ms.date: 07/21/2020
 ---
 # Create XML-based help using PlatyPS
 
 When creating a PowerShell module, it is always recommended that you include detailed help for the
-cmdlets you created. If your cmdlets are implemented in compiled code, you must use the XML-based
+cmdlets you create. If your cmdlets are implemented in compiled code, you must use the XML-based
 help. This XML format is known as the Microsoft Assistance Markup Language (MAML).
 
 The legacy PowerShell SDK documentation covers the details of creating help for PowerShell
@@ -19,18 +19,18 @@ This is where the [PlatyPS][] module can help.
 ## What is PlatyPS?
 
 PlatyPS is an [open-source][platyps-repo] tool that started as a _hackathon_ project to make the
-creation and maintenance of MAML easier. PlatyPS documents the syntax of the parameter sets and the
-individual parameters for each cmdlet in your module. The PlatyPS creates structured [Markdown][]
+creation and maintenance of MAML easier. PlatyPS documents the syntax of parameter sets and the
+individual parameters for each cmdlet in your module. PlatyPS creates structured [Markdown][]
 files that contain the syntax information. It can't create descriptions or provide examples.
 
 PlatyPS creates placeholders for you to fill in descriptions and examples. After adding the required
-information, use PlatyPS compiles the Markdown files into MAML files. PowerShell's help system also
+information, PlatyPS compiles the Markdown files into MAML files. PowerShell's help system also
 allows for plain-text conceptual help files (about topics). PlatyPS has a cmdlet to create a
 structured Markdown template for a new _about_ file, but these `about_*.help.txt` files must be
 maintained manually.
 
-You can include the MAML and TXT help files with your module. Or you can use PlatyPS to compile the
-help files into a CAB package that can be hosted for updateable help.
+You can include the MAML and Text help files with your module. You can also use PlatyPS to compile
+the help files into a CAB package that can be hosted for updateable help.
 
 ## Get started using PlatyPS
 
@@ -43,7 +43,7 @@ Import-Module platyps
 
 The following flowchart outlines the process for creating or updating PowerShell reference content.
 
-:::image type="content" source="./media/create-help-using-platyps/cmdlet-ref-flow-v2.png" alt-text="Cmdlet reference workflow":::
+:::image type="content" source="./media/create-help-using-platyps/cmdlet-ref-flow-v2.png" alt-text="The workflow for creating XML-based help using PlatyPS":::
 
 ##  Create Markdown content for a PowerShell module
 
@@ -75,8 +75,8 @@ The following flowchart outlines the process for creating or updating PowerShell
 
    If the output folder does not exist, `New-MarkdownHelp` creates it. In this example,
    `New-MarkdownHelp` creates a Markdown file for each cmdlet in the module. It also creates a file
-   named `ModuleName.md`. This file contains a list of the cmdlets contained in the module and
-   placeholders for the **Synopis** description. `New-MarkdownAboutHelp` creates a new _about_ file
+   named `<ModuleName>.md`. This file contains a list of the cmdlets contained in the module and
+   placeholders for the **Synopsis** description. `New-MarkdownAboutHelp` creates a new _about_ file
    named `about_topic_name.md`.
 
    For more information, see [New-MarkdownHelp][] and [New-MarkdownAboutHelp][].
@@ -113,7 +113,7 @@ modules that have new cmdlets, new parameters, or parameters that have changed.
    `Update-MarkdownHelpModule` updates the cmdlet and module Markdown files in the specified folder.
    It does not update the `about_*.md` files. The module file (`ModuleName.md`) receives any new
    **Synopsis** text that has been added to the cmdlet files. Updates to cmdlet files include the
-   following:
+   following change:
 
    - New parameter sets
    - New parameters
@@ -137,14 +137,15 @@ For detailed information about writing PowerShell content, see the following art
 - [Editing reference articles](/powershell/scripting/community/contributing/editing-cmdlet-ref)
 
 PlatyPS has a specific schema that is uses for cmdlet reference. That schema only allows certain
-Markdown blocks in specific sections of the document. If you put the unsupported content in wrong
-location, the PlatyPS build step fails. See the [schema][] documentation in the PlatyPS repository.
+Markdown blocks in specific sections of the document. If you put the unsupported content in the
+wrong location, the PlatyPS build step fails. See the [schema][] documentation in the PlatyPS
+repository.
 
 For a complete example of well-formed cmdlet reference, see [Get-Item][].
 
 After providing the required content for each of your cmdlets, you need to make sure that you update
-the module landing page. Verify your module has the correct GUID and Help Link in the YAML
-front-matter of the `<module-name>.md` file. Add any missing metadata.
+the module landing page. Verify your module has the correct `Module Guid` and `Download Help Link`
+values in the YAML metadata of the `<module-name>.md` file. Add any missing metadata.
 
 Also, you may notice that some cmdlets may be missing a **Synopsis** (_short description_). The
 following command updates the module landing page with your **Synopsis** description text. Open the
@@ -193,7 +194,7 @@ Get-HelpPreview -Path "<ModuleName>-Help.xml"
 
 The cmdlet reads the compiled MAML file and outputs the content in the same format you would receive
 from `Get-Help`. This allows you to inspect the results to verify that the Markdown files compiled
-correctly and produce the desired results. If you find error, re-edit the Markdown files and
+correctly and produce the desired results. If you find an error, re-edit the Markdown files and
 recompile the MAML.
 
 Now you are ready to publish your help files.
@@ -224,26 +225,26 @@ At a high level, the steps to create updateable help include:
 
 For more information, see [Supporting Updateable Help: Step-by-step][step-by-step].
 
-PlatyPS makes some of these steps easier.
+PlatyPS assists you with  some of these steps.
 
-The **HelpInfoURI** is a URL that points to location where your help are hosted on the internet.
-This value is configured in the module manifest. `Update-Help` reads the module manifest to get this
-URL and download the updateable help content. This URL should only point to the folder location and
-not to individual files. `Update-Help` constructs the filenames to download based on other
-information from the module manifest and the HelpInfo XML file.
+The **HelpInfoURI** is a URL that points to location where your help files are hosted on the
+internet. This value is configured in the module manifest. `Update-Help` reads the module manifest
+to get this URL and download the updateable help content. This URL should only point to the folder
+location and not to individual files. `Update-Help` constructs the filenames to download based on
+other information from the module manifest and the HelpInfo XML file.
 
 > [!IMPORTANT]
 > The **HelpInfoURI** must end with a forward-slash character (`/`). Without that character,
 > `Update-Help` cannot construct the correct file paths to download the content. Also, most
-> HTTP-based files services are case-sensitive. It is important that the module metadata in the
+> HTTP-based file services are case-sensitive. It is important that the module metadata in the
 > HelpInfo XML file contains the proper letter case.
 
 The `New-ExternalHelp` cmdlet creates the HelpInfo XML file in the output folder. The HelpInfo XML
 file is built using YAML metadata contained in the module Markdown files (`ModuleName.md`).
 
 The `New-ExternalHelpCab` cmdlet creates ZIP and CAB files containing the MAML and
-`about_*.help.txt` files you compiled. CAB files are compatible with PowerShell 5.1 and older. Newer
-versions of PowerShell can use CAB or ZIP files.
+`about_*.help.txt` files you compiled. CAB files are compatible with all versions of PowerShell.
+PowerShell 6 and higher can use ZIP files.
 
 ```powershell
 $helpCabParameters = @{
