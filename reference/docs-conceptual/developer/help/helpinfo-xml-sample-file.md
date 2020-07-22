@@ -13,7 +13,7 @@ by UI culture name. Alphabetical ordering is a best practice, but it is not requ
 ```xml
 
 <?xml version="1.0" encoding="utf-8"?>
-<HelpInfo xmlns="https://schemas.microsoft.com/powershell/help/2010/05">
+<HelpInfo xmlns="http://schemas.microsoft.com/powershell/help/2010/05">
    <HelpContentURI>https://go.microsoft.com/fwlink/?LinkID=141553</HelpContentURI>
    <SupportedUICultures>
     <UICulture>

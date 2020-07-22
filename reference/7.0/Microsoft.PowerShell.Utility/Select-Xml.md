@@ -104,7 +104,7 @@ The command uses the *Xml* parameter to specify the XML content in the $Types va
 ### Example 3: Search PowerShell Help files
 
 ```
-PS C:\> $Namespace = @{command = "https://schemas.microsoft.com/maml/dev/command/2004/10"; maml = "https://schemas.microsoft.com/maml/2004/10"; dev = "https://schemas.microsoft.com/maml/dev/2004/10"}
+PS C:\> $Namespace = @{command = "http://schemas.microsoft.com/maml/dev/command/2004/10"; maml = "http://schemas.microsoft.com/maml/2004/10"; dev = "http://schemas.microsoft.com/maml/dev/2004/10"}
 
 The second command saves the path to the help files in the $Path variable.If there are no help files in this path on your computer, use the Update-Help cmdlet to download the help files. For more information about Updatable Help, see about_Updatable_Help (https://go.microsoft.com/fwlink/?LinkId=235801).
 PS C:\> $Path = "$Pshome\en-us\*dll-Help.xml"
@@ -176,7 +176,7 @@ The first command saves a here-string that contains XML in the $Xml variable.
 ### Example 5: Use the default xmlns namespace
 
 ```
-PS C:\> $SnippetNamespace = @{snip = "https://schemas.microsoft.com/PowerShell/Snippets"}
+PS C:\> $SnippetNamespace = @{snip = "http://schemas.microsoft.com/PowerShell/Snippets"}
 
 The second command uses the **Select-Xml** cmdlet to get the content of the Title element of each snippet. It uses the *Path* parameter to specify the Snippets directory and the *Namespace* parameter to specify the namespace in the $SnippetNamespace variable. The value of the *XPath* parameter is the "snip" namespace key, a colon (:), and the name of the Title element.The command uses a pipeline operator (|) to send each **Node** property that **Select-Xml** returns to the ForEach-Object cmdlet, which gets the title in the value of the **InnerXml** property of the node.
 PS C:\> Select-Xml -Path $Home\Documents\WindowsPowerShell\Snippets -Namespace $SnippetNamespace -XPath "//snip:Title" | foreach {$_.Node.Innerxml}

@@ -81,11 +81,11 @@ Get-PSSessionConfiguration -Name ITTasks | Format-List -Property *
 ```Output
 Architecture                  : 64
 Filename                      : %windir%\system32\pwrshplugin.dll
-ResourceUri                   : https://schemas.microsoft.com/powershell/ITTasks
+ResourceUri                   : http://schemas.microsoft.com/powershell/ITTasks
 MaxConcurrentCommandsPerShell : 1000
 UseSharedProcess              : false
 ProcessIdleTimeoutSec         : 0
-xmlns                         : https://schemas.microsoft.com/wbem/wsman/1/config/PluginConfiguration
+xmlns                         : http://schemas.microsoft.com/wbem/wsman/1/config/PluginConfiguration
 MaxConcurrentUsers            : 5
 lang                          : en-US
 SupportsOptions               : true

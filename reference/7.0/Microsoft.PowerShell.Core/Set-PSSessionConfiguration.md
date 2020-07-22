@@ -152,7 +152,7 @@ Get-PSSessionConfiguration MaintenanceShell | Format-List -Property *
 ```
 
 ```Output
-xmlns            : https://schemas.microsoft.com/wbem/wsman/1/config/PluginConfiguration
+xmlns            : http://schemas.microsoft.com/wbem/wsman/1/config/PluginConfiguration
 Name             : MaintenanceShell
 Filename         : %windir%\system32\pwrshplugin.dll
 SDKVersion       : 1
@@ -160,7 +160,7 @@ XmlRenderingType : text
 lang             : en-US
 PSVersion        : 2.0
 startupscript    : c:\ps-test\Maintenance.ps1
-ResourceUri      : https://schemas.microsoft.com/powershell/MaintenanceShell
+ResourceUri      : http://schemas.microsoft.com/powershell/MaintenanceShell
 SupportsOptions  : true
 ExactMatch       : true
 Capability       : {Shell}
