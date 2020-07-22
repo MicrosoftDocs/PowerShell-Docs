@@ -374,7 +374,8 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
   a system, including the local system.
 - `Restart-Computer` uses the [Win32Shutdown method](/windows/desktop/CIMWin32Prov/win32shutdown-method-in-class-win32-operatingsystem)
   of the Windows Management Instrumentation (WMI) [Win32_OperatingSystem](/windows/desktop/CIMWin32Prov/win32-operatingsystem)
-  class.
+  class. This method requires the **SeShutdownPrivilege** privilege be enabled for the user account
+  used to restart the machine.
 
 ## RELATED LINKS
 
