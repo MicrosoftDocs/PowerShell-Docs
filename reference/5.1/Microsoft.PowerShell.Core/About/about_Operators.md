@@ -188,7 +188,7 @@ cmdlet, function, script file, or operable program. Check the spelling of
 the name, or if a path was included, verify that the path is correct and
 try again.
 At line:1 char:2
-+ &$c
++ & $c
 +  ~~
     + CategoryInfo          : ObjectNotFound: (Get-Service -Name Spooler:String) [], CommandNotFoundException
     + FullyQualifiedErrorId : CommandNotFoundException
@@ -199,12 +199,12 @@ cmdlet can execute code that causes parsing errors when using the call
 operator.
 
 ```
-PS> &"1+1"
+PS> & "1+1"
 & : The term '1+1' is not recognized as the name of a cmdlet, function, script
 file, or operable program. Check the spelling of the name, or if a path was
 included, verify that the path is correct and try again.
 At line:1 char:2
-+ &"1+1"
++ & "1+1"
 +  ~~~~~
     + CategoryInfo          : ObjectNotFound: (1+1:String) [], CommandNotFoundException
     + FullyQualifiedErrorId : CommandNotFoundException
@@ -230,7 +230,7 @@ Mode                LastWriteTime         Length Name
 
 PS C:\Scripts> ".\script name with spaces.ps1"
 .\script name with spaces.ps1
-PS C:\Scripts> &".\script name with spaces.ps1"
+PS C:\Scripts> & ".\script name with spaces.ps1"
 Hello World!
 ```
 
