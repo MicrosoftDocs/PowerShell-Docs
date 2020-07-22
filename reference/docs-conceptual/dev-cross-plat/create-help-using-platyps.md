@@ -11,14 +11,14 @@ help. This XML format is known as the Microsoft Assistance Markup Language (MAML
 
 The legacy PowerShell SDK documentation covers the details of creating help for PowerShell
 cmdlets packaged into modules. However, PowerShell does not provide any tools for creating the
-XML-based help. The SDK documentation explains the structure of MAML help. but leaves you the
+XML-based help. The SDK documentation explains the structure of MAML help, but leaves you the
 task of creating the complex, and deeply nested, MAML content by hand.
 
 This is where the [PlatyPS][] module can help.
 
 ## What is PlatyPS?
 
-PlatyPS is an [open-source][platyps-repo] tool that was created a _hackathon_ project to make the
+PlatyPS is an [open-source][platyps-repo] tool that started as a _hackathon_ project to make the
 creation and maintenance of MAML easier. PlatyPS documents the syntax of the parameter sets and the
 individual parameters for each cmdlet in your module. The PlatyPS creates structured [Markdown][]
 files that contain the syntax information. It can't create descriptions or provide examples.
@@ -110,15 +110,15 @@ modules that have new cmdlets, new parameters, or parameters that have changed.
    Update-MarkdownHelpModule @parameters
    ```
 
-   `Update-MarkdownHelpModule` updates any cmdlet and module Markdown files in the specified folder.
-   It does not update any `about_*.md` files. The module file (`ModuleName.md`) will receive any new
-   **Synopsis** text that has been added to the cmdlet files. The updates to cmdlet files include
-   the following:
+   `Update-MarkdownHelpModule` updates the cmdlet and module Markdown files in the specified folder.
+   It does not update the `about_*.md` files. The module file (`ModuleName.md`) receives any new
+   **Synopsis** text that has been added to the cmdlet files. Updates to cmdlet files include the
+   following:
 
    - New parameter sets
    - New parameters
    - Updated parameter metadata
-   - Update input and output type information
+   - Updated input and output type information
 
    For more information, see [Update-MarkdownHelpModule][].
 
@@ -154,13 +154,12 @@ module landing page to verify the descriptions.
 Update-MarkdownHelpModule –Path <full path output folder> -RefreshModulePage
 ```
 
-Now that you have entered all your content, you can create MAML help files that are displayed by
+Now that you have entered all the content, you can create the MAML help files that are displayed by
 `Get-Help` in the PowerShell console.
 
 ## Create the external help files
 
 This step creates the MAML help files that are displayed by `Get-Help` in the PowerShell console.
-This step is used to verify the structure of the Markdown files you edited.
 
 To build the MAML files, run the following command:
 
@@ -170,6 +169,9 @@ New-ExternalHelp –Path <folder with MDs> -OutputPath <output help folder>
 
 `New-ExternalHelp` converts all of the cmdlet Markdown files into one (or more) MAML files. About
 files are converted to plain-text files with the following name format: `about_topic_name.help.txt`.
+The Markdown content must meet the requirement of the PlatyPS schema. `New-ExternalHelp` will exits
+with errors when the content does not follow the schema. You must edit the files to fix the schema
+violations.
 
 > [!CAUTION]
 > PlatyPS does a poor job converting the `about_*.md` files to plain text. You must use very simple
