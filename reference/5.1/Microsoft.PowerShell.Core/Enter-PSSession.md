@@ -318,7 +318,7 @@ Specifies the session configuration that is used for the interactive session.
 
 Enter a configuration name or the fully qualified resource URI for a session configuration. If you
 specify only the configuration name, the following schema URI is prepended:
-`https://schemas.microsoft.com/powershell`.
+`http://schemas.microsoft.com/powershell`.
 
 The session configuration for a session is located on the remote computer. If the specified session
 configuration does not exist on the remote computer, the command fails.

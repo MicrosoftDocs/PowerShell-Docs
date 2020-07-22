@@ -907,7 +907,7 @@ Specifies the session configuration that is used for the new **PSSession**.
 
 Enter a configuration name or the fully qualified resource URI for a session configuration. If you
 specify only the configuration name, the following schema URI is prepended:
-`https://schemas.microsoft.com/PowerShell`.
+`http://schemas.microsoft.com/PowerShell`.
 
 When used with SSH, this parameter specifies the subsystem to use on the target as defined in
 `sshd_config`. The default value for SSH is the `powershell` subsystem.

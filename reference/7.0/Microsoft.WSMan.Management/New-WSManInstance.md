@@ -216,7 +216,7 @@ example, the following command uses the **File** parameter:
 This command calls the **StopService** method on the Spooler service using input from a file. The
 file, `Input.xml`, contains the following content:
 
-`<p:StopService_INPUT xmlns:p="https://schemas.microsoft.com/wbem/wsman/1/wmi/root/cimv2/Win32_Service" />`
+`<p:StopService_INPUT xmlns:p="http://schemas.microsoft.com/wbem/wsman/1/wmi/root/cimv2/Win32_Service" />`
 
 ```yaml
 Type: System.String
@@ -283,7 +283,7 @@ identify a specific type of resource, such as disks or processes, on a computer.
 
 A URI consists of a prefix and a path to a resource. For example:
 
-`https://schemas.microsoft.com/wbem/wsman/1/wmi/root/cimv2/Win32_LogicalDisk`
+`http://schemas.microsoft.com/wbem/wsman/1/wmi/root/cimv2/Win32_LogicalDisk`
 
 `http://schemas.dmtf.org/wbem/wscim/1/cim-schema/2/CIM_NumericSensor`
 

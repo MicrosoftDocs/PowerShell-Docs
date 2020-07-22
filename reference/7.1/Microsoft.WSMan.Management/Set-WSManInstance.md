@@ -49,7 +49,7 @@ Set-WSManInstance -ResourceURI winrm/config/listener -SelectorSet @{address="*";
 ```
 
 ```Output
-cfg                   : https://schemas.microsoft.com/wbem/wsman/1/config/listener
+cfg                   : http://schemas.microsoft.com/wbem/wsman/1/config/listener
 xsi                   : http://www.w3.org/2001/XMLSchema-instance
 lang                  : en-US
 Address               : *
@@ -79,7 +79,7 @@ Set-WSManInstance -ResourceURI winrm/config -ValueSet @{MaxEnvelopeSizekb = "200
 ```
 
 ```Output
-cfg                 : https://schemas.microsoft.com/wbem/wsman/1/config
+cfg                 : http://schemas.microsoft.com/wbem/wsman/1/config
 lang                : en-US
 MaxEnvelopeSizekb   : 200
 MaxTimeoutms        : 60000
@@ -107,7 +107,7 @@ Set-WSManInstance -ResourceURI winrm/config/listener -ComputerName SERVER02 -Sel
 ```
 
 ```Output
-cfg                   : https://schemas.microsoft.com/wbem/wsman/1/config/listener
+cfg                   : http://schemas.microsoft.com/wbem/wsman/1/config/listener
 xsi                   : http://www.w3.org/2001/XMLSchema-instance
 lang                  : en-US
 Address               : *
@@ -283,8 +283,8 @@ Specifies the dialect to use in the filter predicate.
 This can be any dialect that is supported by the remote service.
 The following aliases can be used for the dialect URI:
 
-- WQL: `https://schemas.microsoft.com/wbem/wsman/1/WQL`
-- Selector: `https://schemas.microsoft.com/wbem/wsman/1/wsman/SelectorFilter`
+- WQL: `http://schemas.microsoft.com/wbem/wsman/1/WQL`
+- Selector: `http://schemas.microsoft.com/wbem/wsman/1/wsman/SelectorFilter`
 - Association: `http://schemas.dmtf.org/wbem/wsman/1/cimbinding/associationFilter`
 
 ```yaml
@@ -294,7 +294,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: https://schemas.microsoft.com/wbem/wsman/1/WQL
+Default value: http://schemas.microsoft.com/wbem/wsman/1/WQL
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -310,7 +310,7 @@ For example, the following command uses the FilePath parameter:
 This command calls the StopService method on the Spooler service by using input from a file.
 The file, Input.xml, contains the following content:
 
-`<p:StopService_INPUT xmlns:p="https://schemas.microsoft.com/wbem/wsman/1/wmi/root/cimv2/Win32_Service" />`
+`<p:StopService_INPUT xmlns:p="http://schemas.microsoft.com/wbem/wsman/1/wmi/root/cimv2/Win32_Service" />`
 
 ```yaml
 Type: System.String
@@ -392,7 +392,7 @@ The URI is used to identify a specific type of resource, such as disks or proces
 A URI consists of a prefix and a path to a resource.
 For example:
 
-`https://schemas.microsoft.com/wbem/wsman/1/wmi/root/cimv2/Win32_LogicalDisk`
+`http://schemas.microsoft.com/wbem/wsman/1/wmi/root/cimv2/Win32_LogicalDisk`
 
 `http://schemas.dmtf.org/wbem/wscim/1/cim-schema/2/CIM_NumericSensor`
 

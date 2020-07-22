@@ -65,7 +65,7 @@ snippet on the local computer.
 #Parse-Snippet Function
 function Parse-Snippet {
   $SnippetFiles = Get-IseSnippet
-  $SnippetNamespace = @{x="https://schemas.microsoft.com/PowerShell/Snippets"}
+  $SnippetNamespace = @{x="http://schemas.microsoft.com/PowerShell/Snippets"}
   foreach ($SnippetFile in $SnippetFiles) {
      Write-Host ""
      $Title = Select-Xml -Path $SnippetFile.FullName -Namespace $SnippetNamespace -XPath "//x:Title" |
