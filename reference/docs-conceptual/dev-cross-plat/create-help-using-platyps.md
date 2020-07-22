@@ -55,8 +55,8 @@ The following flowchart outlines the process for creating or updating PowerShell
    Import-Module <your module name>
    ```
 
-1. Use PlatyPS to generate Markdown files for your module landing page and all associated cmdlets
-   within the module. Repeat this step for each module you need to document.
+1. Use PlatyPS to generate Markdown files for your module page and all associated cmdlets within the
+   module. Repeat this step for each module you need to document.
 
    ```powershell
    $OutputFolder = <output path>
@@ -74,10 +74,13 @@ The following flowchart outlines the process for creating or updating PowerShell
    ```
 
    If the output folder does not exist, `New-MarkdownHelp` creates it. In this example,
-   `New-MarkdownHelp` creates a Markdown file for each cmdlet in the module. It also creates a file
-   named `<ModuleName>.md`. This file contains a list of the cmdlets contained in the module and
-   placeholders for the **Synopsis** description. `New-MarkdownAboutHelp` creates a new _about_ file
-   named `about_topic_name.md`.
+   `New-MarkdownHelp` creates a Markdown file for each cmdlet in the module. It also creates the
+   _module page_ in a file named `<ModuleName>.md`. This module page contains a list of the cmdlets
+   contained in the module and placeholders for the **Synopsis** description. The metadata in the
+   module page comes from the module manifest and is used by PlatyPS to create the HelpInfo XML file
+   (as explained [below](#creating-an-updateable-help-package)).
+
+   `New-MarkdownAboutHelp` creates a new _about_ file named `about_topic_name.md`.
 
    For more information, see [New-MarkdownHelp][] and [New-MarkdownAboutHelp][].
 
@@ -126,7 +129,9 @@ modules that have new cmdlets, new parameters, or parameters that have changed.
 
 PlatyPS documents the syntax of the parameter sets and the individual parameters. It can't create
 descriptions or provide examples. The specific areas where content is needed are contained in curly
-braces. For example: `{{*Fill in the Synopsis*}}`
+braces. For example: `{{ Fill in the Description }}`
+
+:::image type="content" source="./media/create-help-using-platyps/placeholders-example.png" alt-text="Markdown template showing the placeholders in VS Code":::
 
 You need to add a synopsis, a description of the cmdlet, descriptions for each parameter, and
 at least one example.
@@ -136,12 +141,11 @@ For detailed information about writing PowerShell content, see the following art
 - [PowerShell style guide](/powershell/scripting/community/contributing/powershell-style-guide)
 - [Editing reference articles](/powershell/scripting/community/contributing/editing-cmdlet-ref)
 
-PlatyPS has a specific schema that is uses for cmdlet reference. That schema only allows certain
-Markdown blocks in specific sections of the document. If you put the unsupported content in the
-wrong location, the PlatyPS build step fails. See the [schema][] documentation in the PlatyPS
-repository.
-
-For a complete example of well-formed cmdlet reference, see [Get-Item][].
+> [!NOTE]
+> PlatyPS has a specific schema that is uses for cmdlet reference. That schema only allows certain
+> Markdown blocks in specific sections of the document. If you put content in the wrong location,
+> the PlatyPS build step fails. For more information, see the [schema][] documentation in the
+> PlatyPS repository. For a complete example of well-formed cmdlet reference, see [Get-Item][].
 
 After providing the required content for each of your cmdlets, you need to make sure that you update
 the module landing page. Verify your module has the correct `Module Guid` and `Download Help Link`
