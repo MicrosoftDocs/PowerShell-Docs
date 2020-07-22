@@ -104,12 +104,12 @@ Get-PSSessionConfiguration ITWorkflows | Format-List -Property *
 ```Output
 Architecture                  : 64
 Filename                      : %windir%\system32\pwrshplugin.dll
-ResourceUri                   : https://schemas.microsoft.com/powershell/ITWorkflows
+ResourceUri                   : http://schemas.microsoft.com/powershell/ITWorkflows
 MaxConcurrentCommandsPerShell : 1000
 allowedactivity               : PSDefaultActivities
 UseSharedProcess              : false
 ProcessIdleTimeoutSec         : 0
-xmlns                         : https://schemas.microsoft.com/wbem/wsman/1/config/PluginConfiguration
+xmlns                         : http://schemas.microsoft.com/wbem/wsman/1/config/PluginConfiguration
 MaxConcurrentUsers            : 5
 maxsessionsperworkflow        : 10
 lang                          : en-US

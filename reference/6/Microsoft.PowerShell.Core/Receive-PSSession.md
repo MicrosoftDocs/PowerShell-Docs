@@ -524,7 +524,7 @@ specified session configuration.
 Enter a configuration name or the fully qualified resource URI for a session configuration. If you
 specify only the configuration name, the following schema URI is prepended:
 
-`https://schemas.microsoft.com/powershell`.
+`http://schemas.microsoft.com/powershell`.
 
 The configuration name of a session is stored in the **ConfigurationName** property of the session.
 

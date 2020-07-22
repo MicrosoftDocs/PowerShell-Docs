@@ -199,7 +199,7 @@ Param(
     [String[]]
     $Module
 )
-$HelpInfoNamespace = @{helpInfo='https://schemas.microsoft.com/powershell/help/2010/05'}
+$HelpInfoNamespace = @{helpInfo='http://schemas.microsoft.com/powershell/help/2010/05'}
 
 if ($Module) { $Modules = Get-Module $Module -ListAvailable | where {$_.HelpInfoUri} }
 else { $Modules = Get-Module -ListAvailable | where {$_.HelpInfoUri} }

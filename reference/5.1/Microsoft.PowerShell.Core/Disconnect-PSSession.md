@@ -203,11 +203,11 @@ PS> Invoke-Command -ComputerName Server01 {Get-PSSessionConfiguration Microsoft.
 
 Architecture                  : 64
 Filename                      : %windir%\system32\pwrshplugin.dll
-ResourceUri                   : https://schemas.microsoft.com/powershell/microsoft.powershell
+ResourceUri                   : http://schemas.microsoft.com/powershell/microsoft.powershell
 MaxConcurrentCommandsPerShell : 1000
 UseSharedProcess              : false
 ProcessIdleTimeoutSec         : 0
-xmlns                         : https://schemas.microsoft.com/wbem/wsman/1/config/PluginConfiguration
+xmlns                         : http://schemas.microsoft.com/wbem/wsman/1/config/PluginConfiguration
 MaxConcurrentUsers            : 5
 lang                          : en-US
 SupportsOptions               : true
@@ -220,14 +220,14 @@ AutoRestart                   : false
 SecurityDescriptorSddl        : O:NSG:BAD:P(A;;GA;;;BA)S:P(AU;FA;GA;;;WD)(AU;SA;GXGW;;;WD)
 MaxMemoryPerShellMB           : 1024
 MaxIdleTimeoutms              : 2147483647
-Uri                           : https://schemas.microsoft.com/powershell/microsoft.powershell
+Uri                           : http://schemas.microsoft.com/powershell/microsoft.powershell
 SDKVersion                    : 2
 Name                          : microsoft.powershell
 XmlRenderingType              : text
 Capability                    : {Shell}
 RunAsPassword                 :
 MaxProcessesPerShell          : 15
-ParentResourceUri             : https://schemas.microsoft.com/powershell/microsoft.powershell
+ParentResourceUri             : http://schemas.microsoft.com/powershell/microsoft.powershell
 Enabled                       : true
 MaxShells                     : 25
 MaxShellsPerUser              : 25
@@ -244,7 +244,7 @@ Scheme                            : http
 Port                              : 80
 AppName                           : /wsman
 Credential                        :
-ShellUri                          : https://schemas.microsoft.com/powershell/Microsoft.PowerShell
+ShellUri                          : http://schemas.microsoft.com/powershell/Microsoft.PowerShell
 AuthenticationMechanism           : Default
 CertificateThumbprint             :
 MaximumConnectionRedirectionCount : 5

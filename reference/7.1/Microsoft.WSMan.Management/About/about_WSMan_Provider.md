@@ -470,7 +470,7 @@ resource. `Win32_LogicalDisk="C:\\"` is a specific instance of the resource.
 A Uniform Resource Identifier (URI) contains a prefix and a path to a resource.
 For example:
 
-`https://schemas.microsoft.com/wbem/wsman/1/wmi/root/cimv2/Win32_LogicalDisk`
+`http://schemas.microsoft.com/wbem/wsman/1/wmi/root/cimv2/Win32_LogicalDisk`
 
 `http://schemas.dmtf.org/wbem/wscim/1/cim-schema/2/CIM_NumericSensor`
 
@@ -485,7 +485,7 @@ of resource, such as a disk or a process, on a computer.
 
 A URI consists of a prefix and a path to a resource. For example:
 
-`https://schemas.microsoft.com/wbem/wsman/1/wmi/root/cimv2/Win32_LogicalDisk`
+`http://schemas.microsoft.com/wbem/wsman/1/wmi/root/cimv2/Win32_LogicalDisk`
 
 `http://schemas.dmtf.org/wbem/wscim/1/cim-schema/2/CIM_NumericSensor`
 

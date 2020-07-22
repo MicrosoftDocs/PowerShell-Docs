@@ -156,7 +156,7 @@ WSManConnectionInfo connectionInfo = new WSManConnectionInfo(
     5985,                  // WSMan Port
     "/wsman",              // WSMan Path
                            // Connection URI with config name
-    string.Format(CultureInfo.InvariantCulture, "https://schemas.microsoft.com/powershell/{0}", configName),
+    string.Format(CultureInfo.InvariantCulture, "http://schemas.microsoft.com/powershell/{0}", configName),
     creds);                // Credentials
 
 // Now, use the connection info to create a runspace where you can run the commands

@@ -395,7 +395,9 @@ The cmdlet returns a **System.Management.Automation.RemotingJob** object, if you
 
 ## NOTES
 
-This cmdlet uses the **Win32Shutdown** method of the **Win32_OperatingSystem** WMI class.
+This cmdlet uses the **Win32Shutdown** method of the **Win32_OperatingSystem** WMI class. This
+method requires the **SeShutdownPrivilege** privilege be enabled for the user account used to
+restart the machine.
 
 ## RELATED LINKS
 
