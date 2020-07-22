@@ -264,7 +264,9 @@ You can't pipe input to this cmdlet.
 
 ## NOTES
 
-This cmdlet uses the **Win32Shutdown** method of the **Win32_OperatingSystem** WMI class.
+This cmdlet uses the **Win32Shutdown** method of the **Win32_OperatingSystem** WMI class. This
+method requires the **SeShutdownPrivilege** privilege be enabled for the user account used to
+restart the machine.
 
 In PowerShell 7.1, `Stop-Computer` was added for Linux and macOS. For these platorms, the cmdlet
 calls the native command `/sbin/shutdown`.
