@@ -1,7 +1,7 @@
 ---
 keywords: powershell,cmdlet
 Locale: en-US
-ms.date: 01/04/2018
+ms.date: 07/23/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_desiredstateconfiguration?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_DesiredStateConfiguration
@@ -152,12 +152,15 @@ You can use the following built-in resources in your configuration scripts:
 |WindowsProcess        |{Arguments, Path, Credential, DependsOn...}        |
 
 To get a list of available DSC resources on your system, run the
-Get-DscResource cmdlet.
+`Get-DscResource` cmdlet.
+
+> [!NOTE]
+> In PowerShell versions below 7.0, `Get-DscResource` does not find Class based DSC resources.
 
 The example in this topic demonstrates how to use the File and WindowsFeature
 resources. To see all properties that you can use with a resource, insert the
 cursor in the resource keyword (for example, File) within your configuration
-script in PowerShell ISE, hold down CTRL, and then press SPACEBAR.
+script in PowerShell ISE, hold down <kbd>CTRL</kbd>+<kbd>SPACEBAR</kbd>
 
 ## FIND MORE RESOURCES
 
