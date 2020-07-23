@@ -1,7 +1,7 @@
 ---
 title: PowerShell Remoting Over SSH
 description: Remoting in PowerShell Core using SSH
-ms.date: 09/30/2019
+ms.date: 07/23/2020
 ---
 
 # PowerShell remoting over SSH

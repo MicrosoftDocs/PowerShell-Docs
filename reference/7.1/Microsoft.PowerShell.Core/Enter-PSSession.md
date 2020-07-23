@@ -3,7 +3,7 @@ external help file: System.Management.Automation.dll-Help.xml
 keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 5/15/2019
+ms.date: 07/23/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/enter-pssession?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Enter-PSSession
@@ -888,15 +888,15 @@ computer, `Enter-PSSession` sends the commands directly to the remote computer w
 interpretation.
 
 If the session you want to enter is busy processing a command, there might be a delay before
-PowerShell responds to **the Enter-PSSession** command. You will be connected as soon as the session
-is available. To cancel the `Enter-PSSession` command, press `CTRL+C`.
+PowerShell responds to the `Enter-PSSession` command. You are connected as soon as the session
+is available. To cancel the `Enter-PSSession` command, press <kbd>CTRL</kbd>+<kbd>C</kbd>.
 
 The **HostName** parameter set was included starting with PowerShell 6.0. It was added to provide
 PowerShell remoting based on Secure Shell (SSH). Both SSH and PowerShell are supported on multiple
 platforms (Windows, Linux, macOS) and PowerShell remoting will work over these platforms where
 PowerShell and SSH are installed and configured. This is separate from the previous Windows only
 remoting that is based on WinRM and much of the WinRM specific features and limitations do not
-apply. For example WinRM based quotas, session options, custom endpoint configuration, and
+apply. For example, WinRM based quotas, session options, custom endpoint configuration, and
 disconnect/reconnect features are currently not supported. For more information about how to set up
 PowerShell SSH remoting, see
 [PowerShell Remoting Over SSH](/powershell/scripting/learn/remoting/ssh-remoting-in-powershell-core).
@@ -923,3 +923,6 @@ capability was limited to sessions using WinRM. PowerShell 7.1 allows `Enter-PSS
 
 [Receive-PSSession](Receive-PSSession.md)
 
+[about_PSSessions](About/about_PSSessions.md)
+
+[about_Remote](About/about_Remote.md)

@@ -695,25 +695,28 @@ The cmdlet does not return any output.
 
 ## NOTES
 
-* To connect to a remote computer, you must be a member of the Administrators group on the remote
-  computer.
-* In Windows Vista and later versions of the Windows operating system, to start an interactive
-  session on the local computer, you must start Windows PowerShell with the Run as administrator
-  option.
-* When you use `Enter-PSSession`, your user profile on the remote computer is used for the
-  interactive session. The commands in the remote user profile, including commands to add Windows
-  PowerShell snap-ins and to change the command prompt, run before the remote prompt is displayed.
-* `Enter-PSSession` uses the UI culture setting on the local computer for the interactive session.
-  To find the local UI culture, use the $UICulture automatic variable.
-* `Enter-PSSession` requires the `Get-Command`, `Out-Default`, and `Exit-PSSession` cmdlets. If
-  these cmdlets are not included in the session configuration on the remote computer, the
-  `Enter-PSSession` commands fails.
-* Unlike `Invoke-Command`, which parses and interprets the commands before it sends them to the
-  remote computer, `Enter-PSSession` sends the commands directly to the remote computer without
-  interpretation.
-* If the session that you want to enter is busy processing a command, there might be a delay before
-  Windows PowerShell responds to **the Enter-PSSession** command. You will be connected as soon as
-  the session is available. To cancel the `Enter-PSSession` command, press `CTRL+C`.
+To connect to a remote computer, you must be a member of the Administrators group on the remote
+computer. To start an interactive session on the local computer, you must start PowerShell with the
+**Run as administrator** option.
+
+When you use `Enter-PSSession`, your user profile on the remote computer is used for the interactive
+session. The commands in the remote user profile, including commands to add PowerShell modules and
+to change the command prompt, run before the remote prompt is displayed.
+
+`Enter-PSSession` uses the UI culture setting on the local computer for the interactive session. To
+find the local UI culture, use the $UICulture automatic variable.
+
+`Enter-PSSession` requires the `Get-Command`, `Out-Default`, and `Exit-PSSession` cmdlets. If these
+cmdlets are not included in the session configuration on the remote computer, the `Enter-PSSession`
+commands fails.
+
+Unlike `Invoke-Command`, which parses and interprets the commands before it sends them to the remote
+computer, `Enter-PSSession` sends the commands directly to the remote computer without
+interpretation.
+
+If the session you want to enter is busy processing a command, there might be a delay before
+PowerShell responds to the `Enter-PSSession` command. You are connected as soon as the session
+is available. To cancel the `Enter-PSSession` command, press <kbd>CTRL</kbd>+<kbd>C</kbd>.
 
 ## RELATED LINKS
 
