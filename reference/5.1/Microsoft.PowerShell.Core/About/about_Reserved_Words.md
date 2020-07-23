@@ -46,10 +46,9 @@ enum             private
 (*) These keywords are reserved for future use.
 ```
 
-For more information about language statements, including Foreach, If, For,
-and While, type "Get-help", type the prefix "about_", and then type the name
-of the statement. For example, to get information about the Foreach statement,
-type:
+Several language keywords, including `Foreach`, `If`, `For`, and `While`, have
+their own help articles. To view them, type `Get-Help about_` and add the
+keyword. For example, to get information about the `Foreach` statement, type:
 
 ```powershell
 Get-Help about_ForEach
