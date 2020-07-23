@@ -2,7 +2,7 @@
 Download Help Link: https://aka.ms/powershell71-help
 Help Version: 7.1.0.0
 Locale: en-US
-Module Guid: 29955884-f6a6-49ba-a071-a4dc8842697f
+Module Guid: 0e7b895d-2fec-43f7-8cae-11e8d16f6e40
 Module Name: ThreadJob
 ms.date: 07/09/2019
 title: ThreadJob Module
@@ -19,4 +19,3 @@ works within the existing PowerShell job infrastructure.
 
 ### [Start-ThreadJob](Start-ThreadJob.md)
 Creates background jobs similar to the `Start-Job` cmdlet.
-
