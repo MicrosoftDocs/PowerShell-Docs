@@ -3,7 +3,7 @@ external help file: System.Management.Automation.dll-Help.xml
 keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 5/15/2019
+ms.date: 07/23/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/enter-pssession?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Enter-PSSession
@@ -216,7 +216,7 @@ this parameter to allow it to redirect the connection.
 You can also limit the number of times the connection is redirected by changing the
 **MaximumConnectionRedirectionCount** session option value. Use the **MaximumRedirection** parameter
 of the `New-PSSessionOption` cmdlet or set the **MaximumConnectionRedirectionCount** property of the
-$PSSessionOption preference variable. The default value is 5.
+`$PSSessionOption` preference variable. The default value is 5.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -235,7 +235,7 @@ Accept wildcard characters: False
 Specifies the application name segment of the connection URI. Use this parameter to specify the
 application name when you are not using the **ConnectionURI** parameter in the command.
 
-The default value is the value of the $PSSessionApplicationName preference variable on the local
+The default value is the value of the `$PSSessionApplicationName` preference variable on the local
 computer. If this preference variable is not defined, the default value is WSMAN. This value is
 appropriate for most uses. For more information, see
 [about_Preference_Variables](About/about_Preference_Variables.md).
@@ -363,7 +363,7 @@ default value for SSH is the `powershell` subsystem.
 The session configuration for a session is located on the remote computer. If the specified session
 configuration does not exist on the remote computer, the command fails.
 
-The default value is the value of the $PSSessionConfigurationName preference variable on the local
+The default value is the value of the `$PSSessionConfigurationName` preference variable on the local
 computer. If this preference variable is not set, the default is Microsoft.PowerShell. For more
 information, see [about_Preference_Variables](About/about_Preference_Variables.md).
 
@@ -691,16 +691,16 @@ Sets advanced options for the session. Enter a **SessionOption** object, such as
 by using the `New-PSSessionOption` cmdlet, or a hash table in which the keys are session option
 names and the values are session option values.
 
-The default values for the options are determined by the value of the $PSSessionOption preference
+The default values for the options are determined by the value of the `$PSSessionOption` preference
 variable, if it is set. Otherwise, the default values are established by options set in the session
 configuration.
 
 The session option values take precedence over default values for sessions set in the
-$PSSessionOption preference variable and in the session configuration. However, they do not take
+`$PSSessionOption` preference variable and in the session configuration. However, they do not take
 precedence over maximum values, quotas or limits set in the session configuration.
 
 For a description of the session options, including the default values, see `New-PSSessionOption`.
-For information about the $PSSessionOption preference variable, see
+For information about the `$PSSessionOption` preference variable, see
 [about_Preference_Variables](About/about_Preference_Variables.md). For more information about
 session configurations, see [about_Session_Configurations](About/about_Session_Configurations.md).
 
@@ -852,7 +852,7 @@ Accept wildcard characters: False
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see
-[about_CommonParameters](About/about_CommonParameters.md).
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -868,33 +868,42 @@ The cmdlet does not return any output.
 
 ## NOTES
 
-* To connect to a remote computer, you must be a member of the Administrators group on the remote
-  computer.
-* In Windows Vista and later versions of the Windows operating system, to start an interactive
-  session on the local computer, you must start PowerShell with the Run as administrator option.
-* When you use `Enter-PSSession`, your user profile on the remote computer is used for the
-  interactive session. The commands in the remote user profile, including commands to add PowerShell
-  snap-ins and to change the command prompt, run before the remote prompt is displayed.
-* `Enter-PSSession` uses the UI culture setting on the local computer for the interactive session.
-  To find the local UI culture, use the $UICulture automatic variable.
-* `Enter-PSSession` requires the `Get-Command`, `Out-Default`, and `Exit-PSSession` cmdlets. If
-  these cmdlets are not included in the session configuration on the remote computer, the
-  `Enter-PSSession` commands fails.
-* Unlike `Invoke-Command`, which parses and interprets the commands before it sends them to the
-  remote computer, `Enter-PSSession` sends the commands directly to the remote computer without
-  interpretation.
-* If the session that you want to enter is busy processing a command, there might be a delay before
-  PowerShell responds to **the Enter-PSSession** command. You will be connected as soon as the
-  session is available. To cancel the `Enter-PSSession` command, press `CTRL+C`.
-* The **HostName** parameter set was included starting with PowerShell 6.0. It was added to provide
-  PowerShell remoting based on Secure Shell (SSH). Both SSH and PowerShell are supported on multiple
-  platforms (Windows, Linux, macOS) and PowerShell remoting will work over these platforms where
-  PowerShell and SSH are installed and configured. This is separate from the previous Windows only
-  remoting that is based on WinRM and much of the WinRM specific features and limitations do not
-  apply. For example WinRM based quotas, session options, custom endpoint configuration, and
-  disconnect/reconnect features are currently not supported. For more information about how to set
-  up PowerShell SSH remoting, see
-  [PowerShell Remoting Over SSH](/powershell/scripting/learn/remoting/ssh-remoting-in-powershell-core).
+To connect to a remote computer, you must be a member of the Administrators group on the remote
+computer. To start an interactive session on the local computer, you must start PowerShell with the
+**Run as administrator** option.
+
+When you use `Enter-PSSession`, your user profile on the remote computer is used for the interactive
+session. The commands in the remote user profile, including commands to add PowerShell modules and
+to change the command prompt, run before the remote prompt is displayed.
+
+`Enter-PSSession` uses the UI culture setting on the local computer for the interactive session. To
+find the local UI culture, use the `$UICulture` automatic variable.
+
+`Enter-PSSession` requires the `Get-Command`, `Out-Default`, and `Exit-PSSession` cmdlets. If these
+cmdlets are not included in the session configuration on the remote computer, the `Enter-PSSession`
+commands fails.
+
+Unlike `Invoke-Command`, which parses and interprets the commands before it sends them to the remote
+computer, `Enter-PSSession` sends the commands directly to the remote computer without
+interpretation.
+
+If the session you want to enter is busy processing a command, there might be a delay before
+PowerShell responds to the `Enter-PSSession` command. You are connected as soon as the session
+is available. To cancel the `Enter-PSSession` command, press <kbd>CTRL</kbd>+<kbd>C</kbd>.
+
+The **HostName** parameter set was included starting with PowerShell 6.0. It was added to provide
+PowerShell remoting based on Secure Shell (SSH). Both SSH and PowerShell are supported on multiple
+platforms (Windows, Linux, macOS) and PowerShell remoting will work over these platforms where
+PowerShell and SSH are installed and configured. This is separate from the previous Windows only
+remoting that is based on WinRM and much of the WinRM specific features and limitations do not
+apply. For example, WinRM based quotas, session options, custom endpoint configuration, and
+disconnect/reconnect features are currently not supported. For more information about how to set up
+PowerShell SSH remoting, see
+[PowerShell Remoting Over SSH](/powershell/scripting/learn/remoting/ssh-remoting-in-powershell-core).
+
+Prior to PowerShell 7.1, remoting over SSH did not support second-hop remote sessions. This
+capability was limited to sessions using WinRM. PowerShell 7.1 allows `Enter-PSSession` and
+`Enter-PSHostProcess` to work from within any interactive remote session.
 
 ## RELATED LINKS
 
@@ -913,3 +922,7 @@ The cmdlet does not return any output.
 [Disconnect-PSSession](Disconnect-PSSession.md)
 
 [Receive-PSSession](Receive-PSSession.md)
+
+[about_PSSessions](About/about_PSSessions.md)
+
+[about_Remote](About/about_Remote.md)
