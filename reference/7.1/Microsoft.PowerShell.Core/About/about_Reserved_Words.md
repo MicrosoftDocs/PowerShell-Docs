@@ -44,8 +44,9 @@ enum             private
 (*) These keywords are reserved for future use.
 ```
 
-For more information about language statements, including Foreach, If, For,
-and While, type "Get-help", type the prefix "about_", and then type the name
+Several language statements, including Foreach, If, For,
+and While, have their own help articles.  To retrieve them, 
+type "Get-help", type the prefix "about_", and then type the name
 of the statement. For example, to get information about the Foreach statement,
 type:
 
