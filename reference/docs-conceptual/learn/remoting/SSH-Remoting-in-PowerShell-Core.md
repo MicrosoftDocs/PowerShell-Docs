@@ -1,7 +1,7 @@
 ---
 title: PowerShell Remoting Over SSH
 description: Remoting in PowerShell Core using SSH
-ms.date: 09/30/2019
+ms.date: 07/23/2020
 ---
 
 # PowerShell remoting over SSH
@@ -362,6 +362,10 @@ GitCommitId                    v6.0.0-alpha.17
   session, you can load a profile by dot sourcing the profile with the full filepath. This is not
   related to SSH profiles. You can configure the SSH server to use PowerShell as the default shell
   and to load a profile through SSH. See the SSH documentation for more information.
+
+- Prior to PowerShell 7.1, remoting over SSH did not support second-hop remote sessions. This
+  capability was limited to sessions using WinRM. PowerShell 7.1 allows `Enter-PSSession` and
+  `Enter-PSHostProcess` to work from within any interactive remote session.
 
 ## See also
 

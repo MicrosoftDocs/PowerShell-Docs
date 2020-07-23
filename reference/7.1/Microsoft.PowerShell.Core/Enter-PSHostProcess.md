@@ -3,7 +3,7 @@ external help file: System.Management.Automation.dll-Help.xml
 keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 11/04/2019
+ms.date: 07/23/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/enter-pshostprocess?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Enter-PSHostProcess
@@ -267,6 +267,10 @@ session that is running at the same time as the session in which you are running
 loaded the PowerShell engine.
 
 To exit a process from within the process, type **exit**, and then press <kbd>Enter</kbd>.
+
+Prior to PowerShell 7.1, remoting over SSH did not support second-hop remote sessions. This
+capability was limited to sessions using WinRM. PowerShell 7.1 allows `Enter-PSSession` and
+`Enter-PSHostProcess` to work from within any interactive remote session.
 
 ## RELATED LINKS
 
