@@ -130,7 +130,7 @@ This example suppresses all information stream data. To read more about
 ### Example 6: Show the affect of Action Preferences
 
 Action Preference variables and parameters can change what gets written to a
-particular stream. The script in this example shows the how the value of
+particular stream. The script in this example shows how the value of
 `$ErrorActionPreference` affects what gets written to the **Error** stream.
 
 ```powershell
