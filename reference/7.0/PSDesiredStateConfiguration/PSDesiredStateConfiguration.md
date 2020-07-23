@@ -3,7 +3,7 @@ Download Help Link: https://go.microsoft.com/fwlink/?linkid=2113535
 Help Version: 7.0.1.0
 keywords: powershell,cmdlet
 Locale: en-US
-Module Guid: 94b905ff-74b5-437e-89ed-7df44386533c
+Module Guid: 779e0998-8c72-4567-89b5-49313fc15351
 Module Name: PSDesiredStateConfiguration
 ms.date: 06/09/2017
 schema: 2.0.0
