@@ -270,7 +270,7 @@ C:\scripts\test>type test.ps1
 
 exit 4
 
-C:\scripts\test>powershell -file ./test.ps1
+C:\scripts\test>pwsh -file ./test.ps1
 1
 
 2
@@ -281,7 +281,7 @@ C:\scripts\test>echo %ERRORLEVEL%
 4
 ```
 
-When you run `powershell.exe -File <path to a script>`, the exit statement
+When you run `pwsh.exe -File <path to a script>`, the exit statement
 sets the `%ERRORLEVEL%` variable to a value other than zero. If you have an
 unhandled exception in your script, `%ERRORLEVEL%` is set to the value of 1.
 
