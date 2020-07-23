@@ -268,6 +268,10 @@ loaded the PowerShell engine.
 
 To exit a process from within the process, type **exit**, and then press <kbd>Enter</kbd>.
 
+Prior to PowerShell 7.1, remoting over SSH did not support second-hop remote sessions. This
+capability was limited to sessions using WinRM. PowerShell 7.1 allows `Enter-PSSession` and
+`Enter-PSHostProcess` to work from within any interactive remote session.
+
 ## RELATED LINKS
 
 [Exit-PSHostProcess](Exit-PSHostProcess.md)
