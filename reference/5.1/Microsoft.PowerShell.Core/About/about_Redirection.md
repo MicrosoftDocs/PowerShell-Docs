@@ -1,7 +1,7 @@
 ---
 keywords: PowerShell,cmdlet
 Locale: en-US
-ms.date: 12/04/2019
+ms.date: 07/22/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_redirection?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Redirection
@@ -58,7 +58,7 @@ is specified.
 | -------- | ----------------------------------------------------------- | ------ |
 | `>`      | Send specified stream to a file.                            | `n>`   |
 | `>>`     | **Append** specified stream to a file.                      | `n>>`  |
-| `>&1`    | *Redirects* the specified stream to the **Success** stream. | `n>&1` |
+| `>&1`    | _Redirects_ the specified stream to the **Success** stream. | `n>&1` |
 
 > [!NOTE]
 > Unlike some Unix shells, you can only redirect other streams to the
@@ -68,24 +68,27 @@ is specified.
 
 ### Example 1: Redirect errors and output to a file
 
+This example runs `dir` on one item that will succeed, and one that will error.
+
 ```powershell
 dir 'C:\', 'fakepath' 2>&1 > .\dir.log
 ```
-
-This example runs `dir` on one item that will succeed, and one that will error.
 
 It uses `2>&1` to redirect the **Error** stream to the **Success** stream, and
 `>` to send the resultant **Success** stream to a file called `dir.log`
 
 ### Example 2: Send all Success stream data to a file
 
+This example sends all **Success** stream data to a file called `script.log`.
+
 ```powershell
 .\script.ps1 > script.log
 ```
 
-This command sends all **Success** stream data to a file called `script.log`
-
 ### Example 3: Send Success, Warning, and Error streams to a file
+
+This example shows how you can combine redirection operators to achieve a
+desired result.
 
 ```powershell
 &{
@@ -95,9 +98,6 @@ This command sends all **Success** stream data to a file called `script.log`
 } 3>&1 2>&1 > P:\Temp\redirection.log
 ```
 
-This example shows how you can combine redirection operators to achieve a
-desired result.
-
 - `3>&1` redirects the **Warning** stream to the **Success** stream.
 - `2>&1` redirects the **Error** stream to the **Success** stream (which also
   now includes all **Warning** stream data)
@@ -106,14 +106,19 @@ desired result.
 
 ### Example 4: Redirect all streams to a file
 
+This example sends all streams output from a script called `script.ps1` to a
+file called `script.log`
+
 ```powershell
 .\script.ps1 *> script.log
 ```
 
-This example sends all streams output from a script called `script.ps1` to a
-file called `script.log`
-
 ### Example 5: Suppress all Write-Host and Information stream data
+
+This example suppresses all information stream data. To read more about
+**Information** stream cmdlets, see
+[Write-Host](xref:Microsoft.PowerShell.Utility.Write-Host) and
+[Write-Information](xref:Microsoft.PowerShell.Utility.Write-Information)
 
 ```powershell
 &{
@@ -122,10 +127,74 @@ file called `script.log`
 } 6> $null
 ```
 
-This example suppresses all information stream data. To read more about
-**Information** stream cmdlets, see
-[Write-Host](xref:Microsoft.PowerShell.Utility.Write-Host) and
-[Write-Information](xref:Microsoft.PowerShell.Utility.Write-Information)
+### Example 6: Show the affect of Action Preferences
+
+Action Preference variables and parameters can change what gets written to a
+particular stream. The script in this example shows how the value of
+`$ErrorActionPreference` affects what gets written to the **Error** stream.
+
+```powershell
+$ErrorActionPreference = 'Continue'
+$ErrorActionPreference > log.txt
+get-item /not-here 2>&1 >> log.txt
+
+$ErrorActionPreference = 'SilentlyContinue'
+$ErrorActionPreference >> log.txt
+get-item /not-here 2>&1 >> log.txt
+
+$ErrorActionPreference = 'Stop'
+$ErrorActionPreference >> log.txt
+Try {
+    get-item /not-here 2>&1 >> log.txt
+}
+catch {
+    "`tError caught!" >> log.txt
+}
+$ErrorActionPreference = 'Ignore'
+$ErrorActionPreference >> log.txt
+get-item /not-here 2>&1 >> log.txt
+
+$ErrorActionPreference = 'Inquire'
+$ErrorActionPreference >> log.txt
+get-item /not-here 2>&1 >> log.txt
+
+$ErrorActionPreference = 'Continue'
+```
+
+When we run this script we get prompted when `$ErrorActionPreference` is set to
+`Inquire`.
+
+```powershell
+PS C:\temp> .\test.ps1
+
+Confirm
+Cannot find path 'C:\not-here' because it does not exist.
+[Y] Yes  [A] Yes to All  [H] Halt Command  [S] Suspend  [?] Help (default is "Y"): H
+Get-Item: C:\temp\test.ps1:23
+Line |
+  23 |  get-item /not-here 2>&1 >> log.txt
+     |  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | The running command stopped because the user selected the Stop option.
+```
+
+When we examine the log file we see the following:
+
+```
+PS C:\temp> Get-Content .\log.txt
+Continue
+
+Get-Item: C:\temp\test.ps1:3
+Line |
+   3 |  get-item /not-here 2>&1 >> log.txt
+     |  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot find path 'C:\not-here' because it does not exist.
+
+SilentlyContinue
+Stop
+    Error caught!
+Ignore
+Inquire
+```
 
 ## Notes
 
