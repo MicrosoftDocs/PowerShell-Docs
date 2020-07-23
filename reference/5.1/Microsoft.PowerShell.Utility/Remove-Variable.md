@@ -118,7 +118,7 @@ Gets only the variables in the specified scope. The acceptable values for this p
 - A number relative to the current scope (0 through the number of scopes, where 0 is the current
   scope and 1 is its parent)
 
-Local is the default. For more information, see about_Scopes.
+Local is the default. For more information, see [about_Scopes](../Microsoft.PowerShell.Core/About/about_Scopes.md).
 
 ```yaml
 Type: System.String
@@ -185,10 +185,10 @@ This cmdlet does not return any output.
 ## NOTES
 
 - Changes affect only the current scope, such as a session. To delete a variable from all sessions,
-  add a `Remove-Variable` command to your Windows PowerShell profile.
+  add a `Remove-Variable` command to your PowerShell profile.
 
 - You can also refer to `Remove-Variable` by its built-in alias, `rv`. For more information, see
-  [about_Aliases](../Microsoft.PowerShell.Core/About/about_Aliases).
+  [about_Aliases](../Microsoft.PowerShell.Core/About/about_Aliases.md).
 
 ## RELATED LINKS
 
