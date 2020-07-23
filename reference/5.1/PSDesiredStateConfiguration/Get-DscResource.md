@@ -158,6 +158,8 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## NOTES
 
+- `Get-DscResource` does not find Class based DSC resources in PowerShell versions below 7.0.
+
 ## RELATED LINKS
 
 [PowerShell Desired State Configuration Overview](/powershell/scripting/dsc/overview/overview)
