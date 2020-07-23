@@ -1,7 +1,7 @@
 ---
 keywords: powershell,cmdlet
 Locale: en-US
-ms.date: 06/09/2017
+ms.date: 07/23/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_reserved_words?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Reserved_Words
@@ -52,7 +52,7 @@ keyword. For example, to get information about the `Foreach` statement, type:
 Get-Help about_ForEach
 ```
 
-For information about the Filter statement or the Return statement syntax,
+For information about the `Filter` statement or the `Return` statement syntax,
 type:
 
 ```powershell
@@ -64,6 +64,15 @@ For information about other reserved words, type:
 ```powershell
 Get-Help <Reserved_Word>
 ```
+
+> [!NOTE]
+> Not every reserved word has its own help article. If `Get-Help` does not
+> return an article, you can search for articles that talk about the reserved
+> word using the following command:
+>
+> ```powershell
+> Get-Help <Reserved_Word> -Category:HelpFile
+> ```
 
 ## SEE ALSO
 
