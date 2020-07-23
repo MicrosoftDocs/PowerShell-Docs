@@ -1,5 +1,5 @@
 ---
-ms.date: 07/08/2020
+ms.date: 07/23/2020
 keywords:  dsc,powershell,configuration,setup
 title:  DSC Resources
 ---
@@ -61,6 +61,9 @@ Service [String] #ResourceName
     [State = [string]{ Running | Stopped }]
 }
 ```
+
+> [!NOTE]
+> In PowerShell versions below 7.0, `Get-DscResource` does not find Class based DSC resources.
 
 Inside a Configuration, a **Service** resource block might look like this to **Ensure** that the
 Spooler service is running.
