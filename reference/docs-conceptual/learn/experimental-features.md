@@ -40,11 +40,12 @@ This article describes the experimental features that are available and how to u
 
 ## Microsoft.PowerShell.Utility.PSManageBreakpointsInRunspace
 
-In PowerShell 7.0, the experiment enables the **BreakAll** parameter on the `Debug-Runspace` and `Debug-Job` cmdlets to allow users to
-decide if they want PowerShell to break immediately in the current location when they attach a
-debugger.
+In PowerShell 7.0, the experiment enables the **BreakAll** parameter on the `Debug-Runspace` and
+`Debug-Job` cmdlets to allow users to decide if they want PowerShell to break immediately in the
+current location when they attach a debugger.
 
-In PowerShell 7.1, this experiment adds the **Runspace** parameter to the ` *-PSBreakpoint` cmdlets.
+In PowerShell 7.1, this experiment also adds the **Runspace** parameter to the `*-PSBreakpoint`
+cmdlets.
 
 - `Disable-PSBreakpoint`
 - `Enable-PSBreakpoint`
