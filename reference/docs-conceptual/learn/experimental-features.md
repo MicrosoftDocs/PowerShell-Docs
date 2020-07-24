@@ -1,5 +1,5 @@
 ---
-ms.date: 04/28/2020
+ms.date: 07/23/2020
 title: Using Experimental Features in PowerShell
 description: Lists the currently available experimental features and how to use them.
 ---
@@ -37,6 +37,7 @@ This article describes the experimental features that are available and how to u
 | PSUnixFileStat (non-Windows only)                          |         | &check; |    &check;    |
 | PSNativePSPathResolution                                   |         |         |    &check;    |
 | PSCultureInvariantReplaceOperator                          |         |         |    &check;    |
+| **Runspace** parameter in `*-Breakpoint` cmdlets           |         |         |    &check;    |
 
 ## Microsoft.PowerShell.Utility.PSManageBreakpointsInRunspace
 
@@ -190,7 +191,7 @@ the underlying Unix type system.
 The output from `Get-ChildItem` should look something like this:
 
 ```powershell
-PS> dir | select -first 4 -skip 5
+dir | select -first 4 -skip 5
 
 
     Directory: /Users/jimtru/src/github/forks/JamesWTruher/PowerShell-1
@@ -218,3 +219,23 @@ script.
 > [!NOTE]
 > This feature has moved out of the experimental phase and is a mainstream feature in PowerShell 7
 > and higher.
+
+## Runspace parameter in *-Breakpoint cmdlets
+
+Specifies a **Runspace** object to interact with Breakpoints in the specified runspace. This feature
+requires the `Microsoft.PowerShell.Utility.PSManageBreakpointsInRunspace` feature to be enabled.
+
+```powershell
+Start-Job -ScriptBlock {
+    Set-PSBreakpoint -Command Start-Sleep
+    Start-Sleep -Seconds 10
+}
+
+$runspace = Get-Runspace -Id 1
+
+$breakpoint = Get-PSBreakPoint -Runspace $runspace
+```
+
+In this example, a job is started and a breakpoint is set to break when the `Set-PSBreakPoint` is
+run. The runspace is stored in a variable and passed to the `Get-PSBreakPoint` command with the
+**Runspace** parameter. You can then inspect the breakpoint in the `$breakpoint` variable.
