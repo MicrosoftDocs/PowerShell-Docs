@@ -422,7 +422,7 @@ pipeline operator sends the objects one at a time.
 
 ```powershell
 Get-Process | Get-Member
-Get-PSSnapin | Where-Object {$_.vendor -ne "Microsoft"}
+Get-Service | Where-Object {$_.StartType -eq 'Automatic'}
 ```
 
 #### Range operator `..`
@@ -432,8 +432,14 @@ lower boundary.
 
 ```powershell
 1..10
-10..1
 foreach ($a in 1..$max) {Write-Host $a}
+```
+
+You can also create ranges in reverse order.
+
+```powershell
+10..1
+5..-5 | ForEach-Object {Write-Output $_}
 ```
 
 Beginning in PowerShell 6, the range operator works with **Characters** as
@@ -450,9 +456,6 @@ d
 e
 f
 ```
-
-You can also create ranges in reverse order. PowerShell matches the case of
-the boundary characters automatically.
 
 ```powershell
 PS> 'F'..'A'
