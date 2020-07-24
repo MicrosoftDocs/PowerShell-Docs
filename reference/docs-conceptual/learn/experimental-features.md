@@ -1,5 +1,5 @@
 ---
-ms.date: 04/28/2020
+ms.date: 07/23/2020
 title: Using Experimental Features in PowerShell
 description: Lists the currently available experimental features and how to use them.
 ---
@@ -40,9 +40,36 @@ This article describes the experimental features that are available and how to u
 
 ## Microsoft.PowerShell.Utility.PSManageBreakpointsInRunspace
 
-Enables the **BreakAll** parameter on the `Debug-Runspace` and `Debug-Job` cmdlets to allow users to
-decide if they want PowerShell to break immediately in the current location when they attach a
-debugger.
+In PowerShell 7.0, the experiment enables the **BreakAll** parameter on the `Debug-Runspace` and
+`Debug-Job` cmdlets to allow users to decide if they want PowerShell to break immediately in the
+current location when they attach a debugger.
+
+In PowerShell 7.1, this experiment also adds the **Runspace** parameter to the `*-PSBreakpoint`
+cmdlets.
+
+- `Disable-PSBreakpoint`
+- `Enable-PSBreakpoint`
+- `Get-PSBreakpoint`
+- `Remove-PSBreakpoint`
+- `Set-PSBreakpoint`
+
+The **Runspace** parameter specifies a **Runspace** object to interact with breakpoints in the
+specified runspace.
+
+```powershell
+Start-Job -ScriptBlock {
+    Set-PSBreakpoint -Command Start-Sleep
+    Start-Sleep -Seconds 10
+}
+
+$runspace = Get-Runspace -Id 1
+
+$breakpoint = Get-PSBreakPoint -Runspace $runspace
+```
+
+In this example, a job is started and a breakpoint is set to break when the `Set-PSBreakPoint` is
+run. The runspace is stored in a variable and passed to the `Get-PSBreakPoint` command with the
+**Runspace** parameter. You can then inspect the breakpoint in the `$breakpoint` variable.
 
 ## PSCommandNotFoundSuggestion
 
@@ -190,7 +217,7 @@ the underlying Unix type system.
 The output from `Get-ChildItem` should look something like this:
 
 ```powershell
-PS> dir | select -first 4 -skip 5
+dir | select -first 4 -skip 5
 
 
     Directory: /Users/jimtru/src/github/forks/JamesWTruher/PowerShell-1
