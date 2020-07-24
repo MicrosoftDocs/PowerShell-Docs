@@ -37,13 +37,38 @@ This article describes the experimental features that are available and how to u
 | PSUnixFileStat (non-Windows only)                          |         | &check; |    &check;    |
 | PSNativePSPathResolution                                   |         |         |    &check;    |
 | PSCultureInvariantReplaceOperator                          |         |         |    &check;    |
-| **Runspace** parameter in `*-Breakpoint` cmdlets           |         |         |    &check;    |
 
 ## Microsoft.PowerShell.Utility.PSManageBreakpointsInRunspace
 
-Enables the **BreakAll** parameter on the `Debug-Runspace` and `Debug-Job` cmdlets to allow users to
+In PowerShell 7.0, the experiment enables the **BreakAll** parameter on the `Debug-Runspace` and `Debug-Job` cmdlets to allow users to
 decide if they want PowerShell to break immediately in the current location when they attach a
 debugger.
+
+In PowerShell 7.1, this experiment adds the **Runspace** parameter to the ` *-PSBreakpoint` cmdlets.
+
+- `Disable-PSBreakpoint`
+- `Enable-PSBreakpoint`
+- `Get-PSBreakpoint`
+- `Remove-PSBreakpoint`
+- `Set-PSBreakpoint`
+
+The **Runspace** parameter specifies a **Runspace** object to interact with breakpoints in the
+specified runspace.
+
+```powershell
+Start-Job -ScriptBlock {
+    Set-PSBreakpoint -Command Start-Sleep
+    Start-Sleep -Seconds 10
+}
+
+$runspace = Get-Runspace -Id 1
+
+$breakpoint = Get-PSBreakPoint -Runspace $runspace
+```
+
+In this example, a job is started and a breakpoint is set to break when the `Set-PSBreakPoint` is
+run. The runspace is stored in a variable and passed to the `Get-PSBreakPoint` command with the
+**Runspace** parameter. You can then inspect the breakpoint in the `$breakpoint` variable.
 
 ## PSCommandNotFoundSuggestion
 
@@ -219,23 +244,3 @@ script.
 > [!NOTE]
 > This feature has moved out of the experimental phase and is a mainstream feature in PowerShell 7
 > and higher.
-
-## Runspace parameter in *-Breakpoint cmdlets
-
-Specifies a **Runspace** object to interact with Breakpoints in the specified runspace. This feature
-requires the `Microsoft.PowerShell.Utility.PSManageBreakpointsInRunspace` feature to be enabled.
-
-```powershell
-Start-Job -ScriptBlock {
-    Set-PSBreakpoint -Command Start-Sleep
-    Start-Sleep -Seconds 10
-}
-
-$runspace = Get-Runspace -Id 1
-
-$breakpoint = Get-PSBreakPoint -Runspace $runspace
-```
-
-In this example, a job is started and a breakpoint is set to break when the `Set-PSBreakPoint` is
-run. The runspace is stored in a variable and passed to the `Get-PSBreakPoint` command with the
-**Runspace** parameter. You can then inspect the breakpoint in the `$breakpoint` variable.
