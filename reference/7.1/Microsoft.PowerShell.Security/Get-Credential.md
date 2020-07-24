@@ -56,6 +56,19 @@ the **Credential** parameter.
 ### Example 2
 
 ```powershell
+$c Get-Credential -Confirm Password
+```
+
+This command gets a credential object and saves it in the `$c` variable.
+
+When you enter the command, you are prompted for a user name and password. After entering the
+password for the first time, you are asked to confirm the password. If the passwords match, the
+cmdlet creates a **PSCredential** object representing the credentials of the user and saves it in
+the `$c` variable.
+
+### Example 3
+
+```powershell
 $c = Get-Credential
 Get-CimInstance Win32_DiskDrive -ComputerName Server01 -Credential $c
 ```
@@ -68,7 +81,7 @@ The first command gets a credential object and saves it in the `$c` variable. Th
 uses the credential object in a `Get-CimInstance` command. This command gets information about the
 disk drives on the Server01 computer.
 
-### Example 3
+### Example 4
 
 ```powershell
 Get-CimInstance Win32_BIOS -ComputerName Server01 -Credential (Get-Credential -Credential Domain01\User01)
@@ -80,7 +93,7 @@ This command uses the `Get-CimInstance` cmdlet to get information about the BIOS
 computer. It uses the **Credential** parameter to authenticate the user, Domain01\User01, and a
 `Get-Credential` command as the value of the **Credential** parameter.
 
-### Example 4
+### Example 5
 
 ```powershell
 $c = Get-Credential -credential User01
@@ -94,7 +107,7 @@ The first command gets a credential with the user name User01 and stores it in t
 The second command displays the value of the **Username** property of the resulting credential
 object.
 
-### Example 5
+### Example 6
 
 ```powershell
 $Credential = $host.ui.PromptForCredential("Need credentials", "Please enter your user name and password.", "", "NetBiosUserName")
@@ -171,6 +184,25 @@ This command gets a credential from the Server01 remote computer. The command us
 the remote security message that `Get-Credential` includes in the authentication prompt.
 
 ## PARAMETERS
+
+### -ConfirmCredential
+
+Prompts user to re-enter the password for confirmation. If the passwords do not match, a message is
+displayed to confirm a mismatch and no password is stored in the credential object.
+
+This parameter was introduced in PowerShell 7.1
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
 
 ### -Credential
 
