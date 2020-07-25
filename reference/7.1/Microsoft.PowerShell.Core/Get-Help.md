@@ -91,9 +91,9 @@ read all the PowerShell documentation, see the Microsoft Docs [PowerShell Docume
 If you type `Get-Help` followed by the exact name of a help article, or by a word unique to a help
 article, `Get-Help` displays the article's content. If you specify the exact name of a command alias,
 `Get-Help` displays the help for the original command. If you enter a word or word pattern that appears
-in several help article titles, `Get-Help` displays a list of the matching titles. If you enter a
-word that doesn't appear in any help article titles, `Get-Help` displays a list of articles that
-include that word in their contents.
+in several help article titles, `Get-Help` displays a list of the matching titles. If you enter any text
+that doesn't appear in any help article titles, `Get-Help` displays a list of articles that
+include that text in their contents.
 
 `Get-Help` can get help articles for all supported languages and locales. `Get-Help` first looks for
 help files in the locale set for Windows, then in the parent locale, such as **pt** for **pt-BR**,
@@ -466,8 +466,8 @@ If you enter the exact name of a help article, `Get-Help` displays the article c
 If you enter a word or word pattern that appears in several help article titles, `Get-Help` displays
 a list of the matching titles.
 
-If you enter a word that doesn't match any help article titles, `Get-Help` displays a list of
-articles that include that word in their contents.
+If you enter any text that doesn't match any help article titles, `Get-Help` displays a list of
+articles that include that text in their contents.
 
 The names of conceptual articles, such as `about_Objects`, must be entered in English, even in
 non-English versions of PowerShell.
