@@ -163,6 +163,12 @@ process.
 
 - Emacs: `<Ctrl+d>`
 
+### DeleteEndOfBuffer
+
+Deletes to the end of the multiline buffer.
+
+- Vi command mode: `<d,G>`
+
 ### DeleteEndOfWord
 
 Delete to the end of the word.
