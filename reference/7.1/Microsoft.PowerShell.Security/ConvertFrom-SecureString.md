@@ -3,7 +3,7 @@ external help file: Microsoft.PowerShell.Security.dll-Help.xml
 keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Security
-ms.date: 04/27/2019
+ms.date: 07/27/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.security/convertfrom-securestring?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: ConvertFrom-SecureString
@@ -106,6 +106,8 @@ ConvertFrom-SecureString -SecureString $secureString -AsPlainText # 'Example'
 When set, `ConvertFrom-SecureString` will convert secure strings to the decrypted plaintext string
 as output.
 
+This paramater was added in PowerShell 7.0.
+
 ```yaml
 Type: System.Management.Automation.SwitchParameter
 Parameter Sets: AsPlainText
@@ -198,10 +200,8 @@ ConvertFrom-SecureString returns a standard string object.
   them. Avoid using these characters because they may cause problems and misunderstandings when used
   in a password.
 
-
 ## RELATED LINKS
 
 [ConvertTo-SecureString](ConvertTo-SecureString.md)
 
 [Read-Host](../Microsoft.PowerShell.Utility/Read-Host.md)
-
