@@ -163,6 +163,12 @@ process.
 
 - Emacs: `<Ctrl+d>`
 
+### DeleteEndOfBuffer
+
+Deletes to the end of the multiline buffer.
+
+- Vi command mode: `<d,G>`
+
 ### DeleteEndOfWord
 
 Delete to the end of the word.
@@ -171,9 +177,9 @@ Delete to the end of the word.
 
 ### DeleteLine
 
-Deletes the current line, enabling undo.
+Deletes the current logical line of a multiline buffer, enabling undo.
 
-- Vi command mode: `<d,d>`
+- Vi command mode: `<d,d>`, `<d,_>`
 
 ### DeleteLineToFirstChar
 

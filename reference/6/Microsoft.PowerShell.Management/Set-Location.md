@@ -243,12 +243,16 @@ location stack.
 To manage location stacks, use the `*-Location` cmdlets, as follows:
 
 - To add a location to a location stack, use the `Push-Location` cmdlet.
+
 - To get a location from a location stack, use the `Pop-Location` cmdlet.
+
 - To display the locations in the current location stack, use the **Stack** parameter of the
   `Get-Location` cmdlet. To display the locations in a named location stack, use the **StackName**
   parameter of `Get-Location`.
+
 - To create a new location stack, use the **StackName** parameter of `Push-Location`. If you specify
   a stack that does not exist, `Push-Location` creates the stack.
+
 - To make a location stack the current location stack, use the **StackName** parameter of
   `Set-Location`.
 
