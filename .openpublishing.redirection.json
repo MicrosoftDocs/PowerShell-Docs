@@ -4,6 +4,7 @@
             "redirect_url": "https://docs.microsoft.com/en-us/azure/devops/pipelines/get-started/dsc-cicd",
             "redirect_document_id": true
         },
+        {
             "source_path": "reference/docs-conceptual/index.md",
             "redirect_url": "https://docs.microsoft.com/powershell/scripting/overview",
             "redirect_document_id": true
