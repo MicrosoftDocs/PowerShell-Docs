@@ -154,25 +154,33 @@ the current location stack.
 To manage location stacks, use the PowerShell**Location** cmdlets, as follows:
 
 - To add a location to a location stack, use the `Push-Location` cmdlet.
+
 - To get a location from a location stack, use the `Pop-Location` cmdlet.
+
 - To display the locations in the current location stack, use the **Stack** parameter of the
   `Get-Location` cmdlet.
+
 - To display the locations in a named location stack, use the **StackName** parameter of the
   `Get-Location` cmdlet.
+
 - To create a new location stack, use the **StackName** parameter of the `Push-Location` cmdlet. If
   you specify a stack that does not exist, `Push-Location` creates the stack.
+
 - To make a location stack the current location stack, use the **StackName** parameter of the
   `Set-Location` cmdlet.
-- The unnamed default location stack is fully available only when it is the current location stack.
-  If you make a named location stack the current location stack, you can no longer use
-  `Push-Location` or `Pop-Location` cmdlets add or get items from the default stack or use a
-  `Get-Location` command to display the locations in the unnamed stack. To make the unnamed stack
-  the current stack, use the **StackName** parameter of `Set-Location` with a value of `$Null` or an
-  empty string ("").
-- You can also refer to `Pop-Location` by its built-in alias, `popd`. For more information, see
-  about_Aliases.
-- `Pop-Location` is designed to work with the data exposed by any provider. To list the providers
-  available in your session, type `Get-PSProvider`. For more information, see about_Providers.
+
+The unnamed default location stack is fully available only when it is the current location stack.
+If you make a named location stack the current location stack, you can no longer use
+`Push-Location` or `Pop-Location` cmdlets to add or get items from the default stack or use a
+`Get-Location` command to display the locations in the unnamed stack. To make the unnamed stack
+the current stack, use the **StackName** parameter of `Set-Location` with a value of `$Null` or an
+empty string ("").
+
+You can also refer to `Pop-Location` by its built-in alias, `popd`. For more information, see
+about_Aliases.
+
+`Pop-Location` is designed to work with the data exposed by any provider. To list the providers
+available in your session, type `Get-PSProvider`. For more information, see about_Providers.
 
 ## RELATED LINKS
 
