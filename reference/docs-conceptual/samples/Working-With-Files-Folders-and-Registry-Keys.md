@@ -134,6 +134,8 @@ To find all files whose names begin with "x" or "z", type:
 Get-ChildItem -Path C:\Windows\[xz]*
 ```
 
+For more information about wildcards, see [about_Wildcards](powershell/reference/7.1/Microsoft.PowerShell.Core/About/about_Wildcards).
+
 ### Excluding Items (-Exclude)
 
 You can exclude specific items by using the **Exclude** parameter of `Get-ChildItem`. This lets you
