@@ -40,7 +40,9 @@ Sort-Object [-Descending] [-Unique] -Bottom <Int32> [-InputObject <PSObject>] [[
 ## DESCRIPTION
 
 The `Sort-Object` cmdlet sorts objects in ascending or descending order based on object property
-values. If sort properties are not included in a command, PowerShell uses default sort properties.
+values. If sort properties are not included in a command, PowerShell uses default sort properties,
+defined as the `DefaultKeyPropertySet` of the type data of the first input object,
+or compares the objects themselves.
 
 You can sort objects by a single property or multiple properties. Multiple properties use hash
 tables to sort in ascending order, descending order, or a combination of sort orders. Properties are
@@ -470,7 +472,7 @@ Accept wildcard characters: False
 
 Specifies the property names that `Sort-Object` uses to sort the objects. Wildcards are permitted.
 Objects are sorted based on the property values. If you do not specify a property, `Sort-Object`
-sorts based on default properties for the object type.
+sorts based on default properties for the object type or the objects themselves.
 
 Multiple properties can be sorted in ascending order, descending order, or a combination of sort
 orders. When you specify multiple properties, the objects are sorted by the first property. If
@@ -594,6 +596,8 @@ The performance of the sorting algorithm is slower when doing a stable sort.
 ## RELATED LINKS
 
 [about_Hash_Tables](../Microsoft.PowerShell.Core/About/about_Hash_Tables.md)
+
+[about_Types.ps1xml](../Microsoft.PowerShell.Core/About/about_Types.ps1xml.md)
 
 [Compare-Object](Compare-Object.md)
 
