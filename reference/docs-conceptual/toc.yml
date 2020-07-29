@@ -790,8 +790,6 @@
     href: dev-cross-plat/choosing-the-right-nuget-package.md
   - name: Resolving module assembly dependency conflicts
     href: dev-cross-plat/resolving-dependency-conflicts.md
-  - name: Using PowerShell Classes to Create Custom Types
-    href: dev-cross-plat/powershell-class-overview.md
   - name: Legacy PowerShell SDK
     items:
     - name: Overview
