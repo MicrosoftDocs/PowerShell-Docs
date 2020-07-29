@@ -40,9 +40,10 @@ Sort-Object [-Descending] [-Unique] -Bottom <Int32> [-InputObject <PSObject>] [[
 ## DESCRIPTION
 
 The `Sort-Object` cmdlet sorts objects in ascending or descending order based on object property
-values. If sort properties are not included in a command, PowerShell uses default sort properties,
-defined as the `DefaultKeyPropertySet` of the type data of the first input object,
-or compares the objects themselves.
+values. If sort properties are not included in a command, PowerShell uses default sort properties 
+of the first input object. If the type of the input object has no default sort properties,
+PowerShell attempts to compare the objects themselves. For more information, see the [Notes](#notes)
+section.
 
 You can sort objects by a single property or multiple properties. Multiple properties use hash
 tables to sort in ascending order, descending order, or a combination of sort orders. Properties are
@@ -82,7 +83,8 @@ The `Get-ChildItem` cmdlet gets the files and subdirectories from the directory 
 This command displays the files in the current directory by length in ascending order.
 
 ```
-PS> Get-ChildItem -Path C:\Test -File | Sort-Object -Property Length
+PS> Get-ChildItem -Path C:\Test -File | Sort-Object 
+ty Length
 
     Directory: C:\Test
 
@@ -579,17 +581,23 @@ You can pipe the objects to be sorted to `Sort-Object`.
 ## NOTES
 
 The `Sort-Object` cmdlet sorts objects based on properties specified in the command or the default
-sort properties for the object type. If an object does not have one of the specified properties, the
-property value for that object is interpreted by `Sort-Object` as **Null** and placed at the end of
-the sort order.
+sort properties for the object type. Default sort properties are defined using the
+`DefaultKeyPropertySet` element in a `types.ps1xml` file. For more information, see
+[about_Types.ps1xml](/powershell/module/Microsoft.PowerShell.Core/About/about_Types.ps1xml).
 
+If an object does not have one of the specified properties, the property value for that object is
+interpreted by `Sort-Object` as **Null** and placed at the end of the sort order.
+
+When no sort properties are available, PowerShell attempts to compare the objects themselves.
 `Sort-Object` uses the **Compare** method for each property. If a property does not implement
 **IComparable**, the cmdlet converts the property value to a string and uses the **Compare** method
-for **System.String**. For more information, see [PSObject.CompareTo(Object) Method](/dotnet/api/system.management.automation.psobject.compareto).
+for **System.String**. For more information, see
+[PSObject.CompareTo(Object) Method](/dotnet/api/system.management.automation.psobject.compareto).
 
 If you sort on an enumerated property such as **Status**, `Sort-Object` sorts by the enumeration
-values. **Stopped** has a value of **1** and **Running** has a value of **4**. **Stopped** is sorted
-before **Running** because of the enumerated values. For more information, see [ServiceControllerStatus](/dotnet/api/system.serviceprocess.servicecontrollerstatus).
+values. For Windows services, **Stopped** has a value of **1** and **Running** has a value of **4**.
+**Stopped** is sorted before **Running** because of the enumerated values. For more information,
+see [ServiceControllerStatus](/dotnet/api/system.serviceprocess.servicecontrollerstatus).
 
 The performance of the sorting algorithm is slower when doing a stable sort.
 
@@ -612,4 +620,3 @@ The performance of the sorting algorithm is slower when doing a stable sort.
 [Select-Object](Select-Object.md)
 
 [Tee-Object](Tee-Object.md)
-
