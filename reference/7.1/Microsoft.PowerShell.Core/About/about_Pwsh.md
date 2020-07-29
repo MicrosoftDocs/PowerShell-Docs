@@ -81,10 +81,10 @@ because it has no special meaning to the current **cmd.exe** shell. The
 `$env:windir` style of environment variable reference _can_ be used inside a
 **Command** parameter, since there it is interpreted as PowerShell code.
 
-Similarly, if you want to execute the same command from a **Batch script**, you 
-would use `%~dp0` instead of `.\` or `$PSScriptRoot` to represent the current 
-execution directory: `pwsh -File %~dp0test.ps1 -TestParam %windir%`. If you instead 
-used `.\test.ps1`, PowerShell would throw an error because it cannot find the literal 
+Similarly, if you want to execute the same command from a **Batch script**, you
+would use `%~dp0` instead of `.\` or `$PSScriptRoot` to represent the current
+execution directory: `pwsh -File %~dp0test.ps1 -TestParam %windir%`. If you instead
+used `.\test.ps1`, PowerShell would throw an error because it cannot find the literal
 path `.\test.ps1`
 
 ### -Command | -c
@@ -199,7 +199,7 @@ Sets the default execution policy for the current session and saves it in the
 `$env:PSExecutionPolicyPreference` environment variable. This parameter does not
 change the PowerShell execution policy that is set in the registry.
 
-### -InputFormat | -in | -if
+### -InputFormat | -inp | -if
 
 Describes the format of data sent to PowerShell. Valid values are "Text" (text
 strings) or "XML" (serialized CLIXML format).
@@ -306,4 +306,3 @@ To start PowerShell in your home directory, use: `pwsh -WorkingDirectory ~`
 Displays help for **pwsh**. If you are typing a pwsh command in PowerShell,
 prepend the command parameters with a hyphen (`-`), not a forward slash (`/`).
 You can use either a hyphen or forward slash in Cmd.exe.
-
