@@ -1,5 +1,5 @@
 ---
-ms.date: 05/22/2020
+ms.date: 07/29/2020
 keywords:  powershell,cmdlet
 title:  How to use the PowerShell documentation
 ---
@@ -39,6 +39,8 @@ Major  Minor  Build  Revision
 -----  -----  -----  --------
 5      1      18362  145
 ```
+
+If you are new to PowerShell need help understanding the command syntax, see [about_Command_Syntax](/powershell/module/microsoft.powershell.core/about/about_command_syntax).
 
 ## Finding articles for previous versions
 
