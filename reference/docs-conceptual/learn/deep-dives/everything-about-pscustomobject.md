@@ -1,7 +1,7 @@
 ---
 title: Everything you wanted to know about PSCustomObject
 description: PSCustomObject is a simple way to create structured data.
-ms.date: 05/23/2020
+ms.date: 07/29/2020
 ms.custom: contributor-KevinMarquette
 ---
 # Everything you wanted to know about PSCustomObject
@@ -279,7 +279,7 @@ name, we can do some more things.
 
 > [!NOTE]
 > You can also create custom PowerShell types using PowerShell classes. For more information, see
-> [PowerShell Class Overview](../../dev-cross-plat/powershell-class-overview.md)
+> [PowerShell Class Overview](/powershell/reference/7.1/Microsoft.PowerShell.Core/About/about_Classes)
 
 ## Using DefaultPropertySet (the long way)
 
