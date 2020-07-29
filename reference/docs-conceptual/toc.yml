@@ -225,7 +225,7 @@
         href: windows-powershell/wmf/whats-new/bugfixes.md
       - name: New and updated cmdlets
         href: windows-powershell/wmf/whats-new/new-updated-cmdlets.md
-      - name: Creating Custom Types using PowerShell Classes
+      - name: New language features in PowerShell 5.0
         href: windows-powershell/wmf/whats-new/class-overview.md
       - name: Console Improvements in WMF 5.1
         href: windows-powershell/wmf/whats-new/console-improvements.md

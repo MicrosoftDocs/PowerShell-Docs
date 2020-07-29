@@ -92,8 +92,8 @@ Specifies the location stack from which the location is popped. Enter a location
 
 Without this parameter, `Pop-Location` pops a location from the current location stack. By
 default, the current location stack is the unnamed default location stack that PowerShell
-creates. To make a location stack the current location stack, use the **StackName** parameter of
-`Set-Location`.
+creates. To make a location stack the current location stack, use the **StackName** parameter
+of the `Set-Location` cmdlet. For more information about location stacks, see the [Notes](#notes).
 
 `Pop-Location` cannot pop a location from the unnamed default stack unless it is the current
 location stack.
@@ -152,7 +152,7 @@ output.
 ## NOTES
 
 PowerShell supports multiple runspaces per process. Each runspace has its own _current directory_.
-This is not that same as `[System.Environment]::CurrentDirectory`. This behavior can be an issue
+This is not the same as `[System.Environment]::CurrentDirectory`. This behavior can be an issue
 when calling .NET APIs or running native applications without providing explicit directory paths.
 
 Even if the location cmdlets did set the process-wide current directory, you can't depend on it
