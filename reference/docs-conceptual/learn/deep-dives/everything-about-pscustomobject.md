@@ -1,7 +1,7 @@
 ---
 title: Everything you wanted to know about PSCustomObject
 description: PSCustomObject is a simple way to create structured data.
-ms.date: 05/23/2020
+ms.date: 07/29/2020
 ms.custom: contributor-KevinMarquette
 ---
 # Everything you wanted to know about PSCustomObject
@@ -78,7 +78,7 @@ This way is quite a bit slower but it may be your best option on early versions 
 ### Saving to a file
 
 I find the best way to save a hashtable to a file is to save it as JSON. You can import it back into
-a `[PSCusomObject]`
+a `[PSCustomObject]`
 
 ```powershell
 $myObject | ConvertTo-Json -depth 1- | Set-Content -Path $Path
@@ -147,7 +147,7 @@ $myObject.$property
 
 I know that looks strange, but it works.
 
-### Convert pscustomboject into a hashtable
+### Convert PSCustombObject into a hashtable
 
 To continue on from the last section, you can dynamically walk the properties and create a hashtable
 from them.
@@ -276,6 +276,10 @@ $myObject = [PSCustomObject]@{
 
 I love how nicely this just fits into the language. Now that we have an object with a proper type
 name, we can do some more things.
+
+> [!NOTE]
+> You can also create custom PowerShell types using PowerShell classes. For more information, see
+> [PowerShell Class Overview](/powershell/module/Microsoft.PowerShell.Core/About/about_Classes).
 
 ## Using DefaultPropertySet (the long way)
 
