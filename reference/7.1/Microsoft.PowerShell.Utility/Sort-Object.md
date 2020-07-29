@@ -83,8 +83,7 @@ The `Get-ChildItem` cmdlet gets the files and subdirectories from the directory 
 This command displays the files in the current directory by length in ascending order.
 
 ```
-PS> Get-ChildItem -Path C:\Test -File | Sort-Object 
-ty Length
+PS> Get-ChildItem -Path C:\Test -File | Sort-Object -Property Length
 
     Directory: C:\Test
 
@@ -581,8 +580,8 @@ You can pipe the objects to be sorted to `Sort-Object`.
 ## NOTES
 
 The `Sort-Object` cmdlet sorts objects based on properties specified in the command or the default
-sort properties for the object type. Default sort properties are defined using the
-`DefaultKeyPropertySet` element in a `types.ps1xml` file. For more information, see
+sort properties for the object type. Default sort properties are defined using the `PropertySet`
+named `DefaultKeyPropertySet` in a `types.ps1xml` file. For more information, see
 [about_Types.ps1xml](/powershell/module/Microsoft.PowerShell.Core/About/about_Types.ps1xml).
 
 If an object does not have one of the specified properties, the property value for that object is
