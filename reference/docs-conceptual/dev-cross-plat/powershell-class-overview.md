@@ -1,10 +1,10 @@
 ---
-ms.date:  06/12/2017
+ms.date: 07/28/2020
 keywords:  wmf,powershell,setup
-title: Creating Custom Types using PowerShell Classes
+title: Using PowerShell Classes to Create Custom Types
 ---
 
-# Creating Custom Types using PowerShell Classes
+# Using PowerShell Classes to Create Custom Types
 
 PowerShell 5.0 added the ability to define classes and other user-defined types using formal syntax
 and semantics like other object-oriented programming languages. The goal is to enable developers and
