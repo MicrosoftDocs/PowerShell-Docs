@@ -52,22 +52,22 @@ productDirectory:
       imageSrc: ./media/index/ps_black_128.svg
       links:
         - url: /powershell/scripting/install/installing-powershell-core-on-windows
-          text: Install PowerShell Core on Windows
+          text: Install PowerShell on Windows
         - url: /powershell/scripting/install/installing-powershell-core-on-linux
-          text: Install PowerShell Core on Linux
+          text: Install PowerShell on Linux
         - url: /powershell/scripting/install/installing-powershell-core-on-macos
-          text: Install PowerShell Core on macOS
+          text: Install PowerShell on macOS
         - url: /powershell/scripting/whats-new/what-s-new-in-powershell-70
           text: What's new in PowerShell 7.0
     # Card 2
-    - title: PowerShell 5.1
+    - title: Windows PowerShell 5.1
       # imageSrc should be square in ratio with no whitespace
       imageSrc: ./media/index/powershell_128.svg
       links:
-        - url: /powershell/scripting/install/installing-windows-powershell
+        - url: /powershell/scripting/windows-powershell/install/installing-windows-powershell
           text: Install Windows PowerShell
-        - url: /powershell/scripting/whats-new/what-s-new-in-windows-powershell-50
-          text: What's new in PowerShell 5.x
+        - url: /powershell/scripting/windows-powershell/whats-new/what-s-new-in-windows-powershell-50
+          text: What's new in Windows PowerShell 5.x
     # Card 3
     - title: PowerShell Gallery
       imageSrc: ./media/index/avatar_128.svg
@@ -106,7 +106,7 @@ productDirectory:
     - title: Related technologies
       imageSrc: /media/common/i_tools.svg
       links:
-        - url: /powershell/scripting/wmf/overview
+        - url: /powershell/scripting/windows-powershell/wmf/overview
           text: Windows Management Framework
         - url: /powershell/windows/get-started?view=win10-ps
           text: PowerShell modules to manage Windows
@@ -116,7 +116,7 @@ productDirectory:
           text: Azure PowerShell
         - url: /azure/automation/automation-runbook-types
           text: Azure Automation runbooks
-        - url: /azure/azure-functions/functions-create-first-function-powershell
+        - url: /azure/azure-functions/functions-create-first-function-vs-code?pivots=programming-language-powershell
           text: Azure Functions using PowerShell
 
 tools:
