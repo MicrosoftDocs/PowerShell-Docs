@@ -196,7 +196,7 @@ cmdlet does not generate any output.
 ## NOTES
 
 PowerShell supports multiple runspaces per process. Each runspace has its own _current directory_.
-This is not that same as `[System.Environment]::CurrentDirectory`. This behavior can be an issue
+This is not the same as `[System.Environment]::CurrentDirectory`. This behavior can be an issue
 when calling .NET APIs or running native applications without providing explicit directory paths.
 
 Even if the location cmdlets did set the process-wide current directory, you can't depend on it
@@ -208,7 +208,7 @@ You add items to a stack in the order that you use them, and then retrieve them 
 reverse order. PowerShell lets you store provider locations in location stacks.
 
 PowerShell creates an unnamed default location stack and you can create multiple named location
-stacks. If you do not specify a stack name, Windows PowerShell uses the current location stack. By
+stacks. If you do not specify a stack name, PowerShell uses the current location stack. By
 default, the unnamed default location is the current location stack, but you can use the
 `Set-Location` cmdlet to change the current location stack.
 
