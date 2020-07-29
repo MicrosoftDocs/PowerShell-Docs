@@ -279,7 +279,7 @@ name, we can do some more things.
 
 > [!NOTE]
 > You can also create custom PowerShell types using PowerShell classes. For more information, see
-> [PowerShell Class Overview](/powershell/reference/7.1/Microsoft.PowerShell.Core/About/about_Classes)
+> [PowerShell Class Overview](/powershell/module/Microsoft.PowerShell.Core/About/about_Classes).
 
 ## Using DefaultPropertySet (the long way)
 
