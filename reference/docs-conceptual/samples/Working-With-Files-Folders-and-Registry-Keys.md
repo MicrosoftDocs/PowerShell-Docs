@@ -199,3 +199,8 @@ Mode                LastWriteTime     Length Name
 ----                -------------     ------ ----
 -a---        2004-08-04   8:00 AM     337920 zipfldr.dll
 ```
+
+## Relative Links Testing
+
+- [No version, MD ext](../../module/microsoft.powershell.core/about/about_wildcards.md)
+- [No version, YAML ext](../../module/microsoft.powershell.core/about/about_wildcards.yml)
