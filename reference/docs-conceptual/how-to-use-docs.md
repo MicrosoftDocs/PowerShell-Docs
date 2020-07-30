@@ -40,7 +40,7 @@ Major  Minor  Build  Revision
 5      1      18362  145
 ```
 
-If you are new to PowerShell need help understanding the command syntax, see [about_Command_Syntax](/powershell/module/microsoft.powershell.core/about/about_command_syntax).
+If you are new to PowerShell and need help understanding the command syntax, see [about_Command_Syntax](/powershell/module/microsoft.powershell.core/about/about_command_syntax).
 
 ## Finding articles for previous versions
 
