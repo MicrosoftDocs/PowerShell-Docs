@@ -1,7 +1,7 @@
 ---
 keywords: powershell,cmdlet
 Locale: en-US
-ms.date: 09/09/2019
+ms.date: 07/30/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_modules?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Modules
@@ -21,8 +21,8 @@ them with others. People who receive modules can add the commands in the
 modules to their PowerShell sessions and use them just like the built-in
 commands.
 
-This topic explains how to use PowerShell modules. For information about how
-to write PowerShell modules, see
+This topic explains how to use PowerShell modules. For information about how to
+write PowerShell modules, see
 [Writing a PowerShell Module](/powershell/scripting/developer/module/writing-a-windows-powershell-module).
 
 ## What Is a Module?
@@ -41,29 +41,29 @@ The commands in a module are also easier to find. The `Get-Command` cmdlet now
 gets all commands in all installed modules, even if they are not yet in the
 session, so you can find a command and use it without importing.
 
-Each of the following examples cause the module containing `Get-Mailbox` to be
-imported into your session.
+Each of the following examples cause the CimCmdlets module, which contains
+`Get-CimInstance`, to be imported into your session.
 
 - Run the Command
 
   ```powershell
-  Get-Mailbox -Identity Chris
+  Get-CimInstance Win32_OperatingSystem
   ```
 
 - Get the Command
 
   ```powershell
-  Get-Command Get-Mailbox
+  Get-Command Get-CimInstance
   ```
 
 - Get Help for the Command
 
   ```powershell
-  Get-Help Get-Mailbox
+  Get-Help Get-CimInstance
   ```
 
-`Get-Command` commands that include a wildcard character (*) are considered
-to be for discovery, not use, and do not import any modules.
+`Get-Command` commands that include a wildcard character (`*`) are considered to
+be for discovery, not use, and do not import any modules.
 
 Only modules that are stored in the location specified by the PSModulePath
 environment variable are automatically imported. Modules in other locations
@@ -85,19 +85,19 @@ automatic importing of modules. For more information, see
 To use a module, perform the following tasks:
 
 1. Install the module. (This is often done for you.)
-2. Find the commands that the module added.
-3. Use the commands that the module added.
+1. Find the commands that the module added.
+1. Use the commands that the module added.
 
-This topic explains how to perform these tasks. It also includes
-other useful information about managing modules.
+This topic explains how to perform these tasks. It also includes other useful
+information about managing modules.
 
 ## How to Install a Module
 
-If you receive a module as a folder with files in it, you need to install it
-on your computer before you can use it in PowerShell.
+If you receive a module as a folder with files in it, you need to install it on
+your computer before you can use it in PowerShell.
 
 Most modules are installed for you. PowerShell comes with several preinstalled
-modules, sometimes called the "core" modules. On Windows-based computers, if
+modules, sometimes called the _core_ modules. On Windows-based computers, if
 features that are included with the operating system have cmdlets to manage
 them, those modules are preinstalled. When you install a Windows feature, by
 using, for example, the Add Roles and Features Wizard in Server Manager, or the
@@ -195,8 +195,8 @@ To download and install the help files for the commands in a module, type:
 Update-Help -Module <module-name>
 ```
 
-For more information, see [Get-Help](xref:Microsoft.PowerShell.Core.Get-Help) and
-[Update-Help](xref:Microsoft.PowerShell.Core.Update-Help).
+For more information, see [Get-Help](xref:Microsoft.PowerShell.Core.Get-Help)
+and [Update-Help](xref:Microsoft.PowerShell.Core.Update-Help).
 
 ## How to Import a Module
 
@@ -221,8 +221,8 @@ following command format.
 Import-Module <module-name>
 ```
 
-For example, the following command imports the BitsTransfer module
-into the current session.
+For example, the following command imports the BitsTransfer module into the
+current session.
 
 ```powershell
 Import-Module BitsTransfer
@@ -231,8 +231,8 @@ Import-Module BitsTransfer
 To import a module that is not in a default module location, use the fully
 qualified path to the module folder in the command.
 
-For example, to add the TestCmdlets module in the `C:\ps-test` directory to your
-session, type:
+For example, to add the TestCmdlets module in the `C:\ps-test` directory to
+your session, type:
 
 ```powershell
 Import-Module C:\ps-test\TestCmdlets
@@ -261,25 +261,24 @@ For more information about profiles, see [about_Profiles](about_Profiles.md).
 
 ## How to Remove a Module
 
-When you remove a module, the commands that the module added are deleted
-from the session.
+When you remove a module, the commands that the module added are deleted from
+the session.
 
-To remove a module from your session, use the following command
-format.
+To remove a module from your session, use the following command format.
 
 ```powershell
 Remove-Module <module-name>
 ```
 
-For example, the following command removes the BitsTransfer module
-from the current session.
+For example, the following command removes the BitsTransfer module from the
+current session.
 
 ```powershell
 Remove-Module BitsTransfer
 ```
 
-Removing a module reverses the operation of importing a module. Removing
-a module does not uninstall the module. For more information, see
+Removing a module reverses the operation of importing a module. Removing a
+module does not uninstall the module. For more information, see
 [Remove-Module](xref:Microsoft.PowerShell.Core.Remove-Module).
 
 ## Module and DSC Resource Locations, and PSModulePath
@@ -296,17 +295,16 @@ By default, the effective locations assigned to `$env:PSModulePath` are:
   DSC resources that are included with PowerShell are stored in the
   `$PSHOME\Modules\PSDesiredStateConfiguration\DSCResources` folder.
 
-- User-specific modules: These are modules installed by the user in the
-  user's scope. `Install-Module` has a **Scope** parameter that allows you to
-  specify whether the module is installed for the current user or for all
-  users. For more information, see
-  [Install-Module](xref:PowerShellGet.Install-Module).
+- User-specific modules: These are modules installed by the user in the user's
+  scope. `Install-Module` has a **Scope** parameter that allows you to specify
+  whether the module is installed for the current user or for all users. For
+  more information, see [Install-Module](xref:PowerShellGet.Install-Module).
 
   The user-specific **CurrentUser** location on Windows is the
   `PowerShell\Modules` folder located in the **Documents** location in your
-  user profile. The specific path of that location varies by version of
-  Windows and whether or not you are using folder redirection. Microsoft
-  OneDrive can also change the location of your **Documents** folder.
+  user profile. The specific path of that location varies by version of Windows
+  and whether or not you are using folder redirection. Microsoft OneDrive can
+  also change the location of your **Documents** folder.
 
   By default, on Windows 10, that location is
   `$HOME\Documents\PowerShell\Modules`. On Linux or Mac, the **CurrentUser**
@@ -341,8 +339,8 @@ To add a default module location, use the following command format.
 $Env:PSModulePath = $Env:PSModulePath + ";<path>"
 ```
 
-The semi-colon (;) in the command separates the new path from the
-path that precedes it in the list.
+The semi-colon (`;`) in the command separates the new path from the path that
+precedes it in the list.
 
 For example, to add the `C:\ps-test\Modules` directory, type:
 
@@ -350,7 +348,8 @@ For example, to add the `C:\ps-test\Modules` directory, type:
 $Env:PSModulePath + ";C:\ps-test\Modules"
 ```
 
-To add a default module location on Linux or MacOS, use the following command format:
+To add a default module location on Linux or MacOS, use the following command
+format:
 
 ```powershell
 $Env:PSModulePath += ":<path>"
@@ -363,7 +362,7 @@ the **PSModulePath** environment variable, type:
 $Env:PSModulePath += ":/usr/local/Fabrikam/Modules"
 ```
 
-On Linux or MacOS, the colon (:) in the command separates the new path from the
+On Linux or MacOS, the colon (`:`) in the command separates the new path from the
 path that precedes it in the list.
 
 When you add a path to **PSModulePath**, `Get-Module` and `Import-Module`
@@ -392,52 +391,49 @@ Name conflicts can result in commands being hidden or replaced.
 ### Hidden
 
 A command is hidden when it is not the command that runs when you type the
-command name, but you can run it by using another method, such as by
-qualifying the command name with the name of the module or snap-in in which it
-originated.
+command name, but you can run it by using another method, such as by qualifying
+the command name with the name of the module or snap-in in which it originated.
 
 ### Replaced
 
-A command is replaced when you cannot run it because it has been overwritten
-by a command with the same name. Even when you remove the module that caused
-the conflict, you cannot run a replaced command unless you restart the
-session.
+A command is replaced when you cannot run it because it has been overwritten by
+a command with the same name. Even when you remove the module that caused the
+conflict, you cannot run a replaced command unless you restart the session.
 
 `Import-Module` might add commands that hide and replace commands in the
-current session. Also, commands in your session can hide commands that
-the module added.
+current session. Also, commands in your session can hide commands that the
+module added.
 
 To detect name conflicts, use the **All** parameter of the `Get-Command`
-cmdlet. Beginning in PowerShell 3.0, `Get-Command` gets only that commands
-that run when you type the command name. The **All** parameter gets all
-commands with the specific name in the session.
+cmdlet. Beginning in PowerShell 3.0, `Get-Command` gets only that commands that
+run when you type the command name. The **All** parameter gets all commands
+with the specific name in the session.
 
 To prevent name conflicts, use the **NoClobber** or **Prefix** parameters of
-the `Import-Module` cmdlet. The **Prefix** parameter adds a prefix to the
-names of imported commands so that they are unique in the session. The
-**NoClobber** parameter does not import any commands that would hide or
-replace existing commands in the session.
+the `Import-Module` cmdlet. The **Prefix** parameter adds a prefix to the names
+of imported commands so that they are unique in the session. The **NoClobber**
+parameter does not import any commands that would hide or replace existing
+commands in the session.
 
 You can also use the **Alias**, **Cmdlet**, **Function**, and **Variable**
 parameters of `Import-Module` to select only the commands that you want to
-import, and you can exclude commands that cause name conflicts in your
-session.
+import, and you can exclude commands that cause name conflicts in your session.
 
 Module authors can prevent name conflicts by using the **DefaultCommandPrefix**
 property of the module manifest to add a default prefix to all command names.
 The value of the **Prefix** parameter takes precedence over the value of
 **DefaultCommandPrefix**.
 
-Even if a command is hidden, you can run it by qualifying the command name
-with the name of the module or snap-in in which it originated.
+Even if a command is hidden, you can run it by qualifying the command name with
+the name of the module or snap-in in which it originated.
 
 The PowerShell command precedence rules determine which command runs when the
 session includes commands with the same name.
 
 For example, when a session includes a function and a cmdlet with the same
 name, PowerShell runs the function by default. When the session includes
-commands of the same type with the same name, such as two cmdlets with the
-same name, by default, it runs the most recently added command.
+commands of the same type with the same name, such as two cmdlets with the same
+name, by default, it runs the most recently added command.
 
 For more information, including an explanation of the precedence rules and
 instructions for running hidden commands, see
@@ -445,10 +441,10 @@ instructions for running hidden commands, see
 
 ## Modules and Snap-ins
 
-You can add commands to your session from modules and snap-ins. Modules can
-add all types of commands, including cmdlets, providers, and functions, and
-items, such as variables, aliases, and PowerShell drives. Snap-ins can add
-only cmdlets and providers.
+You can add commands to your session from modules and snap-ins. Modules can add
+all types of commands, including cmdlets, providers, and functions, and items,
+such as variables, aliases, and PowerShell drives. Snap-ins can add only
+cmdlets and providers.
 
 Before removing a module or snap-in from your session, use the following
 commands to determine which commands will be removed.
@@ -502,26 +498,34 @@ are loaded automatically on first-use.
 
 The following modules (or snap-ins) are installed with PowerShell.
 
-* CimCmdlets
-* Microsoft.PowerShell.Archive
-* Microsoft.PowerShell.Core
-* Microsoft.PowerShell.Diagnostics
-* Microsoft.PowerShell.Host
-* Microsoft.PowerShell.Management
-* Microsoft.PowerShell.Security
-* Microsoft.PowerShell.Utility
-* Microsoft.WSMan.Management
-* PackageManagement
-* PowerShellGet
-* PSDesiredStateConfiguration
-* PSDiagnostics
-* PSReadline
+- CimCmdlets
+- Microsoft.PowerShell.Archive
+- Microsoft.PowerShell.Core
+- Microsoft.PowerShell.Diagnostics
+- Microsoft.PowerShell.Host
+- Microsoft.PowerShell.Management
+- Microsoft.PowerShell.Security
+- Microsoft.PowerShell.Utility
+- Microsoft.WSMan.Management
+- PackageManagement
+- PowerShellGet
+- PSDesiredStateConfiguration
+- PSDiagnostics
+- PSReadline
+
+## Logging Module Events
+
+Beginning in PowerShell 3.0, you can record execution events for the cmdlets
+and functions in PowerShell modules and snap-ins by setting the
+**LogPipelineExecutionDetails** property of modules and snap-ins to `$True`.
+You can also use a Group Policy setting, Turn on Module Logging, to enable
+module logging in all PowerShell sessions. For more information, see
+[about_EventLogs](about_EventLogs.md) and
+[about_Group_Policy_Settings](about_Group_Policy_Settings.md).
 
 ## See Also
 
 [about_Command_Precedence](about_Command_Precedence.md)
-
-about_DesiredStateConfiguration
 
 [about_Group_Policy_Settings](about_Group_Policy_Settings.md)
 
