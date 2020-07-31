@@ -81,8 +81,8 @@ PS C:\>
 ```
 
 The first command pushes the current location onto a new stack named Stack2, and then changes the
-current location to the home directory, which is represented in the command by the tilde symbol (~)
-(same as `$env:USERPROFILE` or `$HOME`).
+current location to the home directory, represented in the command by the tilde symbol (`~`),
+which when used on a FileSystem provider drives is equivalent to `$HOME` and `$env:USERPROFILE`.
 
 If Stack2 does not already exist in the session, `Push-Location` creates it. The second command uses
 the `Pop-Location` cmdlet to pop the original location (`C:\`) from the Stack2 stack. Without the
