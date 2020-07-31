@@ -157,8 +157,8 @@ To make a location stack the current location stack, use the StackName parameter
 `Set-Location` cmdlet. For more information about location stacks, see the [Notes](#notes).
 
 > [!NOTE]
-`Push-Location` cannot add a location to the unnamed default stack unless it is the current
-location stack.
+> `Push-Location` cannot add a location to the unnamed default stack unless it is the current
+> location stack.
 
 ```yaml
 Type: System.String
