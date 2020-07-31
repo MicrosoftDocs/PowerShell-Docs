@@ -120,6 +120,14 @@ $message = (Test-Path $path) ? "Path exists" : "Path not found"
 In this example, the value of `$message` is "Path exists" when `Test-Path` returns `$true`. When
 `Test-Path` returns `$false`, the value of `$message` is "Path not found".
 
+```powershell
+$service = Get-Service BITS
+$service.Status -eq 'Running' ? (Stop-Service $service) : (Start-Service $service)
+```
+
+In this example, if the service is running, it is stopped, and if its status is not **Running**,
+it is started.
+
 ## SEE ALSO
 
 [about_Comparison_Operators](about_Comparison_Operators.md)
