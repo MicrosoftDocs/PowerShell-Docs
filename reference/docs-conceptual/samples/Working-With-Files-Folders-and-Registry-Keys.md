@@ -202,4 +202,5 @@ Mode                LastWriteTime     Length Name
 
 ## Relative Links Testing
 
-- [No version, MD ext](../../module/microsoft.powershell.core/about/about_wildcards.md)
+- [Virtual relative](../../module/microsoft.powershell.core/about/about_wildcards.md)
+- [Physical relative](../../7.1/microsoft.powershell.core/about/about_wildcards.md)
