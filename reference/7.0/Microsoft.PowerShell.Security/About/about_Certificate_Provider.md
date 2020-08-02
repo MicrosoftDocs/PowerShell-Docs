@@ -186,7 +186,6 @@ The **NotAfter** property stores the certificate expiration date.
 Get-ChildItem -Path cert:\* -Recurse -DNSName "*fabrikam*" `
   -EKU "*Client Authentication*" | Where-Object {
                                      $_.SendAsTrustedIssuer -and `
-                                     $_.NotAfter -gt (get-date).AddDays.(30)
                                      $_.NotAfter -gt $ValidThrough
                                    }
 ```
