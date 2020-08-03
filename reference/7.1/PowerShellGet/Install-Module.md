@@ -467,10 +467,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### System.Uri
 
-## OUTPUTS
-
-### System.Object
-
 ## NOTES
 
 `Install-Module` runs on PowerShell 5.0 or later releases, on Windows 7 or Windows 2008 R2 and later
