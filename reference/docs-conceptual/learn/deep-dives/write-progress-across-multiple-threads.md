@@ -62,7 +62,7 @@ $sync = [System.Collections.Hashtable]::Synchronized($origin)
 This section creates three different data structures, for three different purposes.
 
 The `$dataSet` variable stores an array of hashtables that is used to coordinate the next steps
-without the risk of being modified. If a object collection is modified while iterating through the
+without the risk of being modified. If an object collection is modified while iterating through the
 collection, PowerShell throws an error. You must keep the object collection in the loop separate
 from the objects being modified. The `Id` key in each hashtable is the identifier for a mock
 process. The `Wait` key simulates the workload of each mock process being tracked.
