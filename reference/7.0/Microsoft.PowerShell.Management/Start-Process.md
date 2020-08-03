@@ -3,7 +3,7 @@ external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 07/20/2020
+ms.date: 08/03/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/start-process?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Start-Process
@@ -120,7 +120,7 @@ The example uses `New-Object` to create a **System.Diagnostics.ProcessStartInfo*
 
 Both commands start the Windows command interpreter, issuing a `dir` command on the `Program Files`
 folder. Because this foldername contains a space, the value needs surrounded with escaped quotes.
-Note that the first command specifies a string as **ArgumentList**. The second command a string
+Note that the first command specifies a string as **ArgumentList**. The second command is a string
 array.
 
 ```powershell
@@ -132,8 +132,12 @@ Start-Process -FilePath "$env:comspec" -ArgumentList "/c","dir","`"%systemdrive%
 
 ### -ArgumentList
 
-Specifies parameters or parameter values to use when this cmdlet starts the process. If parameters
-or parameter values contain a space, they need surrounded with escaped double quotes.
+Specifies parameters or parameter values to use when this cmdlet starts the process. Arguments can
+be accepted as a single string with the arguments separated by spaces, or as an array of strings
+separated by commas.
+
+If parameters or parameter values contain a space, they need to be surrounded with escaped double
+quotes. For more information, see [about_Quoting_Rules](../Microsoft.PowerShell.Core/About/about_Quoting_Rules.md).
 
 ```yaml
 Type: System.String[]
@@ -484,6 +488,8 @@ parameter. Otherwise, this cmdlet does not return any output.
 - When using `Start-Process` on non-Windows systems, you never get a new terminal window.
 
 ## RELATED LINKS
+
+[about_Quoting_Rules](../Microsoft.PowerShell.Core/About/about_Quoting_Rules.md)
 
 [Debug-Process](Debug-Process.md)
 

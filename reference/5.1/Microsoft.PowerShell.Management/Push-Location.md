@@ -35,10 +35,10 @@ the current location to the location specified by the path. You can use the `Pop
 to get locations from the location stack.
 
 By default, the `Push-Location` cmdlet pushes the current location onto the current location stack,
-but you can use the StackName parameter to specify an alternate location stack. If the stack does
+but you can use the **StackName** parameter to specify an alternate location stack. If the stack does
 not exist, `Push-Location` creates it.
 
-For more information about location stacks, see the Notes.
+For more information about location stacks, see the [Notes](#notes).
 
 ## EXAMPLES
 
@@ -86,7 +86,7 @@ which when used on a FileSystem provider drives is equivalent to `$HOME` and `$e
 
 If Stack2 does not already exist in the session, `Push-Location` creates it. The second command uses
 the `Pop-Location` cmdlet to pop the original location (`C:\`) from the Stack2 stack. Without the
-StackName parameter, `Pop-Location` would pop the location from the unnamed default stack.
+**StackName** parameter, `Pop-Location` would pop the location from the unnamed default stack.
 
 For more information about location stacks, see the [Notes](#notes).
 
@@ -153,7 +153,7 @@ If the stack does not exist, `Push-Location` creates it.
 
 Without this parameter, `Push-Location` adds the location to the current location stack. By
 default, the current location stack is the unnamed default location stack that PowerShell creates.
-To make a location stack the current location stack, use the StackName parameter of the
+To make a location stack the current location stack, use the **StackName** parameter of the
 `Set-Location` cmdlet. For more information about location stacks, see the [Notes](#notes).
 
 > [!NOTE]
@@ -207,7 +207,7 @@ You can pipe a string that contains a path (but not a literal path) to `Push-Loc
 
 ### None or System.Management.Automation.PathInfo
 
-When you use the PassThru parameter, `Push-Location` generates a
+When you use the **PassThru** parameter, `Push-Location` generates a
 **System.Management.Automation.PathInfo** object that represents the location. Otherwise, this
 cmdlet does not generate any output.
 
@@ -221,7 +221,7 @@ Even if the location cmdlets did set the process-wide current directory, you can
 because another runspace might change it at any time. You should use the location cmdlets to perform
 path-based operations using the current working directory specific to the current runspace.
 
-A "stack" is a last-in, first-out list in which only the most recently added item is accessible.
+A stack is a last-in, first-out list in which only the most recently added item is accessible.
 You add items to a stack in the order that you use them, and then retrieve them for use in the
 reverse order. PowerShell lets you store provider locations in location stacks.
 
@@ -252,7 +252,7 @@ The unnamed default location stack is fully accessible only when it is the curre
 If you make a named location stack the current location stack, you can no longer use
 `Push-Location` or `Pop-Location` cmdlets to add or get items from the default stack or use
 `Get-Location` command to display the locations in the unnamed stack. To make the unnamed stack the
-current stack, use the StackName parameter of the `Set-Location` cmdlet with a value of $null or an
+current stack, use the **StackName** parameter of the `Set-Location` cmdlet with a value of `$null` or an
 empty string ("").
 
 You can also refer to `Push-Location` by its built-in alias, `pushd`. For more information, see
