@@ -69,8 +69,8 @@ process. The `Wait` key simulates the workload of each mock process being tracke
 
 The `$origin` variable stores a nested hashtable with each key being one of the mock process id's.
 Then, it is used to hydrate the synchronized hashtable stored in the `$sync` variable. The `$sync`
-variable is responsible for reporting the progress back to the parent process, PowerShell, which
-displays the progress.
+variable is responsible for reporting the progress back to the parent runspace, which displays the
+progress.
 
 ### Running the processes
 
