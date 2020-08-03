@@ -211,7 +211,7 @@ $job = $dataset | Foreach-Object -ThrottleLimit 3 -AsJob -Parallel {
     start-sleep -Milliseconds ($PSItem.wait*5)
 
     # Process. update activity
-    $process.Activity = "$($PSItem.id) processing"
+    $process.Activity = "Id $($PSItem.id) processing"
     foreach ($percent in 1..100)
     {
         # Update process on status
