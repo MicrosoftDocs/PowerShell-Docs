@@ -152,7 +152,7 @@ while($job.State -eq 'Running')
 
 The `$job` variable contains the parent **job** and has a child **job** for each of the mock
 processes. While any of the child jobs are still running, the parent job **State** will remain
-"Running". This allows us to reliable use the `while` loop to continually update the progress of
+"Running". This allows us to use the `while` loop to continually update the progress of
 every process until all processes are finished.
 
 Within the while loop, we loop through each of the keys in the `$sync` variable. Since this is
