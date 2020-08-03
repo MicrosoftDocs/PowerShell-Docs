@@ -43,7 +43,7 @@ PS C:\> Pop-Location -StackName "Stack2"
 
 This command changes your location to the location most recently added to the Stack2 location stack.
 
-For more information about location stacks, see the Notes.
+For more information about location stacks, see the [Notes](#notes).
 
 ### Example 3: Move between locations for different providers
 
@@ -195,10 +195,11 @@ the current stack, use the **StackName** parameter of `Set-Location` with a valu
 empty string ("").
 
 You can also refer to `Pop-Location` by its built-in alias, `popd`. For more information, see
-about_Aliases.
+[about_Aliases](../Microsoft.PowerShell.Core/About/about_Aliases.md).
 
-`Pop-Location` is designed to work with the data exposed by any provider. To list the providers
-available in your session, type `Get-PSProvider`. For more information, see about_Providers.
+`Pop-Location` is designed to work with the data exposed by any provider. To list the
+providers available in your session, type `Get-PSProvider`. For more information, see
+[about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).
 
 ## RELATED LINKS
 

@@ -38,7 +38,7 @@ By default, the `Push-Location` cmdlet pushes the current location onto the curr
 but you can use the **StackName** parameter to specify an alternate location stack. If the stack does
 not exist, `Push-Location` creates it.
 
-For more information about location stacks, see the Notes.
+For more information about location stacks, see the [Notes](#notes).
 
 ## EXAMPLES
 
