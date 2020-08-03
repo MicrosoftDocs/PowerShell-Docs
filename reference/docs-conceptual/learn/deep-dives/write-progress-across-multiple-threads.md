@@ -18,7 +18,7 @@ reporting the progress back to the host isn't as straight forward as normal use 
 When writing the progress from multiple threads, tracking becomes difficult because when running
 parallel processes in PowerShell, each process has it's own runspace. To get around this, you can
 use a [synchronized hashtable](/dotnet/api/system.collections.hashtable.synchronized). A synced
-hashtable is a thread safe data structure that can be edited by multiple threads simultaneously
+hashtable is a thread safe data structure that can be modified by multiple threads simultaneously
 without throwing an error.
 
 ### Set up
