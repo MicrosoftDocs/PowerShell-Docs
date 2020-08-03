@@ -469,21 +469,23 @@ A
 
 #### Member access operator `.`
 
-Accesses the properties and methods of an object.
+Accesses the properties and methods of an object.  The member name may be an expression.
 
 ```powershell
 $myProcess.peakWorkingSet
 (Get-Process PowerShell).kill()
+'OS', 'Platform' | Foreach-Object { $PSVersionTable. $_ }
 ```
 
 #### Static member operator `::`
 
 Calls the static properties and methods of a .NET Framework class. To
 find the static properties and methods of an object, use the Static parameter
-of the `Get-Member` cmdlet.
+of the `Get-Member` cmdlet.  The member name may be an expression.
 
 ```powershell
 [datetime]::Now
+'MinValue', 'MaxValue' | Foreach-Object { [int]:: $_ }
 ```
 
 ## See also
