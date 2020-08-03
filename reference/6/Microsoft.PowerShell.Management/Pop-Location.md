@@ -43,7 +43,7 @@ PS C:\> Pop-Location -StackName "Stack2"
 
 This command changes your location to the location most recently added to the Stack2 location stack.
 
-For more information about location stacks, see the Notes.
+For more information about location stacks, see the [Notes](#notes).
 
 ### Example 3: Move between locations for different providers
 
@@ -59,7 +59,8 @@ These commands use the `Push-Location` and `Pop-Location` cmdlets to move betwee
 supported by different PowerShell providers. The commands use the `pushd` alias for `Push-Location`
 and the `popd` alias for `Pop-Location`.
 
-The first command pushes the current file system location onto the stack and moves to the HKLM drive supported by the PowerShell Registry provider.
+The first command pushes the current file system location onto the stack and moves to the HKLM drive
+supported by the PowerShell Registry provider.
 
 The second command pushes the registry location onto the stack and moves to a location supported by
 the PowerShell certificate provider.
@@ -145,13 +146,12 @@ A stack is a last-in, first-out list in which only the most recently added item 
 add items to a stack in the order that you use them, and then retrieve them for use in the reverse
 order. PowerShell lets you store provider locations in location stacks.
 
-PowerShell lets you store provider locations in location stacks. PowerShell creates an
-unnamed default location stack and you can create multiple named location stacks. If you do not
-specify a stack name, PowerShell uses the current location stack. By default, the unnamed
-default location is the current location stack, but you can use the `Set-Location` cmdlet to change
-the current location stack.
+PowerShell creates an unnamed default location stack and you can create multiple named location
+stacks. If you do not specify a stack name, PowerShell uses the current location stack. By
+default, the unnamed default location is the current location stack, but you can use the
+`Set-Location` cmdlet to change the current location stack.
 
-To manage location stacks, use the PowerShell**Location** cmdlets, as follows:
+To manage location stacks, use the PowerShell `*-Location` cmdlets, as follows:
 
 - To add a location to a location stack, use the `Push-Location` cmdlet.
 
@@ -177,10 +177,11 @@ the current stack, use the **StackName** parameter of `Set-Location` with a valu
 empty string ("").
 
 You can also refer to `Pop-Location` by its built-in alias, `popd`. For more information, see
-about_Aliases.
+[about_Aliases](../Microsoft.PowerShell.Core/About/about_Aliases.md).
 
-`Pop-Location` is designed to work with the data exposed by any provider. To list the providers
-available in your session, type `Get-PSProvider`. For more information, see about_Providers.
+`Pop-Location` is designed to work with the data exposed by any provider. To list the
+providers available in your session, type `Get-PSProvider`. For more information, see
+[about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).
 
 ## RELATED LINKS
 
