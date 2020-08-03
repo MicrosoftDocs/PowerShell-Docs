@@ -27,7 +27,6 @@ One of the downsides to this approach is it takes a, somewhat, complex set up to
 runs without error.
 
 ```powershell
-#example workload
 $dataset = @(
     @{
         Id   = 1
@@ -51,13 +50,12 @@ $dataset = @(
     }
 )
 
-#Create a hashtable for progress.
-#keys should be ID's of the progresses
-#in this example i'l just use int 1-10
+# Create a hashtable for process.
+# Keys should be ID's of the processes
 $origin = @{}
 $dataset | Foreach-Object {$origin.($_.id) = @{}}
 
-#create synced hashtable
+# Create synced hashtable
 $sync = [System.Collections.Hashtable]::Synchronized($origin)
 ```
 
@@ -89,22 +87,22 @@ $job = $dataset | Foreach-Object -ThrottleLimit 3 -AsJob -Parallel {
     $process.Activity = "$($PSItem.Id) starting"
     $process.Status = "Processing"
 
-    #fake workload that takes x amount of time to complete
+    # Fake workload start up that takes x amount of time to complete
     start-sleep -Milliseconds ($PSItem.wait*5)
 
-    #process. update activity
+    # Process. update activity
     $process.Activity = "$($PSItem.id) processing"
     foreach ($percent in 1..100)
     {
-        #update process on status
+        # Update process on status
         $process.Status = "Handling $percent/100"
         $process.PercentComplete = (($percent / 100) * 100)
 
-        #fake workload that takes x amount of time to complete
+        # Fake workload that takes x amount of time to complete
         Start-Sleep -Milliseconds $PSItem.Wait
     }
 
-    #end
+    # Mark process as completed
     $process.Completed = $true
 }
 ```
@@ -136,20 +134,19 @@ PowerShell window.
 ```powershell
 while($job.State -eq 'Running')
 {
-    #foreach key that is available
     $sync.Keys | Foreach-Object {
-        #if key is not defined, ignore
+        # If key is not defined, ignore
         if(![string]::IsNullOrEmpty($sync.$_.keys))
         {
-            #create param
+            # Create parameter hashtable to splat
             $param = $sync.$_
 
-            #execute write-progress
+            # Execute Write-Progress
             Write-Progress @param
         }
     }
 
-    #wait to refresh to not overload gui
+    # Wait to refresh to not overload gui
     Start-Sleep -Seconds 0.1
 }
 ```
