@@ -221,7 +221,7 @@ Even if the location cmdlets did set the process-wide current directory, you can
 because another runspace might change it at any time. You should use the location cmdlets to perform
 path-based operations using the current working directory specific to the current runspace.
 
-A "stack" is a last-in, first-out list in which only the most recently added item is accessible.
+A stack is a last-in, first-out list in which only the most recently added item is accessible.
 You add items to a stack in the order that you use them, and then retrieve them for use in the
 reverse order. PowerShell lets you store provider locations in location stacks.
 
