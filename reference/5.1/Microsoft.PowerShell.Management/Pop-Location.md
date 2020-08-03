@@ -169,7 +169,7 @@ stacks. If you do not specify a stack name, PowerShell uses the current location
 default, the unnamed default location is the current location stack, but you can use the
 `Set-Location` cmdlet to change the current location stack.
 
-To manage location stacks, use the PowerShell Location cmdlets, as follows:
+To manage location stacks, use the PowerShell `*-Location` cmdlets, as follows:
 
 - To add a location to a location stack, use the `Push-Location` cmdlet.
 
