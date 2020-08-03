@@ -83,7 +83,7 @@ $job = $dataset | Foreach-Object -ThrottleLimit 3 -AsJob -Parallel {
     $process = $syncCopy.$($PSItem.Id)
 
     $process.Id = $PSItem.Id
-    $process.Activity = "$($PSItem.Id) starting"
+    $process.Activity = "Id $($PSItem.Id) starting"
     $process.Status = "Processing"
 
     # Fake workload start up that takes x amount of time to complete
