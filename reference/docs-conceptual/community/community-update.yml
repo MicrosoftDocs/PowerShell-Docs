@@ -47,6 +47,8 @@ landingContent:
   linkLists:
     - linkListType: whats-new
       links:
+        - text: 2020-Q3
+          url: ./2020-Q3.md
         - text: 2020-Q2
           url: ./2020-Q2.md
         - text: 2020-Q1
