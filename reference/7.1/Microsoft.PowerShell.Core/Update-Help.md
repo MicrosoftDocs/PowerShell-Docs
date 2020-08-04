@@ -50,7 +50,7 @@ current session are included. PowerShell modules are stored in a location listed
 `$env:PSModulePath` environment variable.
 For more information, see [about_Updatable_Help](./About/about_Updatable_Help.md).
 
-You can use the `Module` parameter to update help files for a particular module. Use the
+You can use the **Module** parameter to update help files for a particular module. Use the
 **UICulture** parameter to download help files in multiple languages and locales.
 
 You can also use `Update-Help` on computers that are not connected to the Internet. 
