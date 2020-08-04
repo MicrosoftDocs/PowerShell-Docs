@@ -137,8 +137,7 @@ To update help for the modules in the directory `$pshome/Modules`, you must be
 member of the Administrators group on the computer.
 
 If you are not a member of the Administrators group, you cannot update help for
-these modules; but if you have internet access, you can view help online in the
-TechNet Library.
+these modules; but if you have internet access, you can view help online.
 
 Updating help for modules in the directory `$home/Documents/PowerShell/Modules`
 or modules in other subdirectories of the `$home` directory does not require
