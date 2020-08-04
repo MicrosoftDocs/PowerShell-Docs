@@ -11,6 +11,7 @@ title: Push-Location
 # Push-Location
 
 ## SYNOPSIS
+
 Adds the current location to the top of a location stack.
 
 ## SYNTAX
@@ -35,8 +36,8 @@ the current location to the location specified by the path. You can use the `Pop
 to get locations from the location stack.
 
 By default, the `Push-Location` cmdlet pushes the current location onto the current location stack,
-but you can use the **StackName** parameter to specify an alternate location stack. If the stack does
-not exist, `Push-Location` creates it.
+but you can use the **StackName** parameter to specify an alternate location stack. If the stack
+does not exist, `Push-Location` creates it.
 
 For more information about location stacks, see the [Notes](#notes).
 
@@ -252,8 +253,8 @@ The unnamed default location stack is fully accessible only when it is the curre
 If you make a named location stack the current location stack, you can no longer use
 `Push-Location` or `Pop-Location` cmdlets to add or get items from the default stack or use
 `Get-Location` command to display the locations in the unnamed stack. To make the unnamed stack the
-current stack, use the **StackName** parameter of the `Set-Location` cmdlet with a value of `$null` or an
-empty string ("").
+current stack, use the **StackName** parameter of the `Set-Location` cmdlet with a value of `$null`
+or an empty string (`""`).
 
 You can also refer to `Push-Location` by its built-in alias, `pushd`. For more information, see
 [about_Aliases](../Microsoft.PowerShell.Core/About/about_Aliases.md).
@@ -269,5 +270,7 @@ providers available in your session, type `Get-PSProvider`. For more information
 [Pop-Location](Pop-Location.md)
 
 [Set-Location](Set-Location.md)
+
+[about_Aliases](../Microsoft.PowerShell.Core/About/about_Aliases.md)
 
 [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md)

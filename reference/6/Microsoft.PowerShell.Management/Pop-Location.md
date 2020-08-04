@@ -11,6 +11,7 @@ title: Pop-Location
 # Pop-Location
 
 ## SYNOPSIS
+
 Changes the current location to the location most recently pushed onto the stack.
 
 ## SYNTAX
@@ -174,7 +175,7 @@ If you make a named location stack the current location stack, you can no longer
 `Push-Location` or `Pop-Location` cmdlets to add or get items from the default stack or use a
 `Get-Location` command to display the locations in the unnamed stack. To make the unnamed stack
 the current stack, use the **StackName** parameter of `Set-Location` with a value of `$Null` or an
-empty string ("").
+empty string (`""`).
 
 You can also refer to `Pop-Location` by its built-in alias, `popd`. For more information, see
 [about_Aliases](../Microsoft.PowerShell.Core/About/about_Aliases.md).
@@ -190,3 +191,7 @@ providers available in your session, type `Get-PSProvider`. For more information
 [Push-Location](Push-Location.md)
 
 [Set-Location](Set-Location.md)
+
+[about_Aliases](../Microsoft.PowerShell.Core/About/about_Aliases.md)
+
+[about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md)
