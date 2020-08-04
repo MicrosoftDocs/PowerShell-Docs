@@ -37,7 +37,7 @@ Update-Help [[-Module] <String[]>] [-FullyQualifiedModule <ModuleSpecification[]
 ## DESCRIPTION
 
 The `Update-Help` cmdlet downloads the newest help files for PowerShell modules and installs them on
-your computer. You don't need to restart PowerShell to make the change effective. You can use the
+your computer. You need not restart PowerShell to make the change effective. You can use the
 `Get-Help` cmdlet to view the new help files immediately.
 
 `Update-Help` checks the version of the help files on your computer. If you don't have help files
@@ -50,23 +50,24 @@ current session are included. PowerShell modules are stored in a location listed
 `$env:PSModulePath` environment variable.
 For more information, see [about_Updatable_Help](./About/about_Updatable_Help.md).
 
-You can use the **Module** parameter to update help files for a particular module. Use the
-**UICulture** parameter to download help files in multiple languages and locales.
+You can use the `Module` parameter to update help files for a particular module. Use the
+`UICulture` parameter to download help files in multiple languages and locales.
 
-You can't use `Update-Help` on computers that aren't connected to the internet. Use the `Save-Help`
-cmdlet to download help files from the internet and save them in a file system location, such as a
-shared folder or file system directory. Then use the **SourcePath** parameter of `Update-Help` to
-download the updated help files from a file system location and install them on the computer.
+You can also use `Update-Help` on computers that are not connected to the Internet. 
+In order to do so, use the `Save-Help`cmdlet to download help files from the Internet 
+and save them in a file system location, such as a shared folder or file system directory. 
+Then use the `SourcePath` parameter of `Update-Help` to download the updated help files 
+from a file system location and install them on the computer.
 
 You can automate help updates by adding the `Update-Help` cmdlet to your PowerShell profile. By
 default, `Update-Help` runs only one time per day on each computer. To override the once-per-day
-limit, use the **Force** parameter.
+limit, use the `Force` parameter.
 
 The `Update-Help` cmdlet was introduced in Windows PowerShell 3.0.
 
 > [!IMPORTANT]
 > `Update-Help` requires administrative privileges in PowerShell 6.0 and below.
-> PowerShell 6.1 and above set the default `-Scope` to **CurrentUser**.
+> PowerShell 6.1 and above set the default `-Scope` to `CurrentUser`.
 > Prior to PowerShell 6.1, the `-Scope` parameter was not available.
 >
 > You must be a member of the Administrators group on the computer
