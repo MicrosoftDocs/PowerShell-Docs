@@ -11,7 +11,6 @@ title: Push-Location
 # Push-Location
 
 ## SYNOPSIS
-
 Adds the current location to the top of a location stack.
 
 ## SYNTAX

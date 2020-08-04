@@ -11,7 +11,6 @@ title: Pop-Location
 # Pop-Location
 
 ## SYNOPSIS
-
 Changes the current location to the location most recently pushed onto the stack.
 
 ## SYNTAX
