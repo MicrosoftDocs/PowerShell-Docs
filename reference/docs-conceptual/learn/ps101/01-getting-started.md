@@ -28,7 +28,7 @@ All modern versions of Windows operating systems ship with PowerShell installed.
 The easiest way to find PowerShell on Windows 10 is to type **PowerShell** into the search bar as
 shown in Figure 1-1.
 
-![Figure 1-1](media/figure1-1.png)
+![Figure 1-1 - Search for PowerShell in the Start Menu](media/figure1-1.png)
 
 Notice that four different shortcuts for PowerShell are shown in Figure 1-1. The computer used for
 demonstration purposes in this book is running the 64-bit version of Windows 10 so there's a 64-bit
@@ -51,7 +51,7 @@ Windows 10 computer as a domain user who is not a domain or local administrator.
 I've launched the PowerShell console by clicking on the "Windows PowerShell" shortcut as shown in
 Figure 1-1.
 
-![Figure 1-4](media/figure1-4.png)
+![Figure 1-4 - Title bar of the PowerShell window](media/figure1-4.png)
 
 Notice that the title bar of the PowerShell console says "Windows PowerShell" as shown in Figure
 1-4. Some commands run fine, but PowerShell can't participate in User Access Control (UAC). That
@@ -80,7 +80,7 @@ this account should NOT be a domain administrator, or have any elevated privileg
 Close PowerShell. Relaunch the PowerShell console, except this time right-click on the **Windows
 PowerShell** shortcut and select **Run as administrator** as shown in Figure 1-5.
 
-![Figure 1-5](media/figure1-5.png)
+![Figure 1-5 - Context menu - Run as administrator](media/figure1-5.png)
 
 If you're logged into Windows as a normal user, you'll be prompted for credentials. I'll enter the
 credentials for my user account who is a domain user and local admin as shown in Figure 1-6.
@@ -108,13 +108,13 @@ in Figure 1-8.
 Right-click on the PowerShell shortcut that's now pinned to the taskbar and select properties as
 shown in Figure 1-9.
 
-![Figure 1-9](media/figure1-9.png)
+![Figure 1-9 - User account control - enter credentials](media/figure1-9.png)
 
 Click on "Advanced" as denoted by #1 in Figure 1-10, then check the "Run as administrator" checkbox
 as denoted by #2 in Figure 1-10, and then click OK twice to accept the changes and exit out of both
 dialog boxes.
 
-![Figure 1-10](media/figure1-10.png)
+![Figure 1-10 - Title bar showing "Administrator"](media/figure1-10.png)
 
 You'll never have to worry about finding PowerShell or whether or not it's running as an
 administrator again.

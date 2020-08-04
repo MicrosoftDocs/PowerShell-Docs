@@ -13,7 +13,7 @@ and pull mode.
 
 ## Push mode
 
-![Push mode](media/enactingConfigurations/pushModel.png "How push mode works")
+![Overview of Push mode](media/enactingConfigurations/pushModel.png "How push mode works")
 
 Push mode refers to a user actively applying a configuration to a target node by calling the
 [Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration)
@@ -33,7 +33,7 @@ you would apply it to the local machine with the following command:
 
 ## Pull mode
 
-![Pull Mode](media/enactingConfigurations/pullModel.png "How pull mode works")
+![Overview of Pull Mode](media/enactingConfigurations/pullModel.png "How pull mode works")
 
 In pull mode, pull clients are configured to get their desired state configurations from a remote
 pull service. Likewise, the pull service has been set up to host the DSC service, and has been

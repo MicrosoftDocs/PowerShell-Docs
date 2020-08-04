@@ -117,10 +117,10 @@ Configuration TestConfig
 ```
 
 > [!NOTE]
-> Beginning in PowerShell 5.0, intellisense was added for DSC. This new feature allows you to use
+> Beginning in PowerShell 5.0, IntelliSense was added for DSC. This new feature allows you to use
 > <kbd>TAB</kbd> and <kbd>Ctr</kbd>+<kbd>Space</kbd> to auto-complete key names.
 
-![Resource Tab Completion](media/resources/resource-tabcompletion.png)
+![Resource IntelliSense using Tab Completion](media/resources/resource-tabcompletion.png)
 
 ## Types of resources
 

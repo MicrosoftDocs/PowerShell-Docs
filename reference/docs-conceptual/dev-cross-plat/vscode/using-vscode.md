@@ -61,7 +61,7 @@ For traditional Windows PowerShell workloads, see [Installing Windows PowerShell
    1. The **Extensions** view opens on the Side Bar. Select the PowerShell extension from Microsoft.
       You should see a Visual Studio Code screen similar to the following image:
 
-      ![Visual Studio Code](media/using-vscode/vscode.png)
+      ![Visual Studio Code - view of the PowerShell extension](media/using-vscode/vscode.png)
 
    1. Click the **Install** button on the PowerShell extension from Microsoft.
    1. After the install, if you see the **Install** button turn into **Reload**, Click on **Reload**.
@@ -225,7 +225,7 @@ use the last version of the extension that supports PowerShell v3 and v4.
 First, open the Extension pane and search for `PowerShell`. Then click the gear and select
 **Install another version...**.
 
-![Install another version...](media/using-vscode/install-another-version.png)
+![Menu item - Install another version...](media/using-vscode/install-another-version.png)
 
 Then select the **2020.1.0** version. This version of the extension was the last version to
 support v3 and v4. Be sure to add the following setting so that your extension version doesn't

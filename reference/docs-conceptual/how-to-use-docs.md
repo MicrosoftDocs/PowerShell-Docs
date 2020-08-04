@@ -25,7 +25,7 @@ documentation for the version of PowerShell you are using.
 
 Use the version picker at the top of the page to select the version of PowerShell you want.
 
-![version picker](media/how-to-use-docs/version-search.gif)
+![Using the version picker](media/how-to-use-docs/version-search.gif)
 
 You can verify the version of PowerShell you are using by inspecting the `$PSversionTable.PSVersion`
 value. The following example shows the output for Windows PowerShell v5.1.
