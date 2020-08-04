@@ -303,9 +303,9 @@ Update-Help -Module DhcpServer -SourcePath E:\UsbFlashDrive\SavedHelp
 Without parameters, `Save-Help` downloads help for all modules in the session
 and for all installed modules that support Updatable Help. To be included,
 modules must be installed in directories that are listed in the value of the
-PSModulePath environment variable, on either the local computer or on a remote
+`$env:PSModulePath` environment variable, on either the local computer or on a remote
 computer for which you want to save help. These are also modules that are
-returned by running a "Get-Help -ListAvailable" command.
+returned by running a `Get-Help -ListAvailable` command.
 
 ## How to update help files in different languages
 
