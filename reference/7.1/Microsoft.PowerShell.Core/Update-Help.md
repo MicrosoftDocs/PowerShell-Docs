@@ -47,17 +47,16 @@ help files can be downloaded and installed from the internet or a file share.
 Without parameters, `Update-Help` updates the help files for modules in the session and for all
 installed modules that support Updatable Help. Modules that are installed but not loaded in the
 current session are included. PowerShell modules are stored in a location listed in the
-`$env:PSModulePath` environment variable.
-For more information, see [about_Updatable_Help](./About/about_Updatable_Help.md).
+`$env:PSModulePath` environment variable. For more information, see
+[about_Updatable_Help](./About/about_Updatable_Help.md).
 
 You can use the **Module** parameter to update help files for a particular module. Use the
 **UICulture** parameter to download help files in multiple languages and locales.
 
-You can also use `Update-Help` on computers that are not connected to the Internet. 
-In order to do so, use the `Save-Help`cmdlet to download help files from the Internet 
-and save them in a file system location, such as a shared folder or file system directory. 
-Then use the **SourcePath** parameter of `Update-Help` to download the updated help files 
-from a file system location and install them on the computer.
+You can also use `Update-Help` on computers that are not connected to the internet. First, use the
+`Save-Help`cmdlet to download help files from the internet and save them in a shared folder that is
+accessible to the system not connected to the internet. Then use the **SourcePath** parameter of
+`Update-Help` to download the updated help files from the shared and install them on the computer.
 
 You can automate help updates by adding the `Update-Help` cmdlet to your PowerShell profile. By
 default, `Update-Help` runs only one time per day on each computer. To override the once-per-day
