@@ -61,14 +61,6 @@ default in PowerShell and for all Windows modules.
   functions that do not have help files. Opens online help topics for
   cmdlets, functions, scripts, and workflows in your default Internet browser.
 
-## UPDATE HELP IN PowerShell ISE
-
-You can also update help by using the "Update PowerShell Help" item in the
-Help menu in PowerShell Integrated Scripting Environment (ISE).
-
-The "Update PowerShell Help" item runs an Update-Help command without
-parameters.
-
 ## AUTO-GENERATED HELP: HELP WITHOUT HELP FILES
 
 If you do not have the help file for a cmdlet, function, or workflow on the
@@ -140,15 +132,15 @@ Update-Help -Module Microsoft.PowerShell.Security
 
 ## PERMISSIONS FOR UPDATABLE HELP
 
-To update help for the modules in the \$pshome\\Modules directory, you must be
+To update help for the modules in the directory `$pshome/Modules`, you must be
 member of the Administrators group on the computer.
 
 If you are not a member of the Administrators group, you cannot update help
 for these modules; but if you have Internet access, you can view help online
 in the TechNet Library.
 
-Updating help for modules in the \$home\\Documents\\WindowsPowerShell\\Modules
-directory or modules in other subdirectories of the \$home directory do not
+Updating help for modules in the directory `$home/Documents/PowerShell/Modules`
+or modules in other subdirectories of the `$home` directory does not
 require special permissions.
 
 The Update-Help and Save-Help cmdlets have a UseDefaultCredentials parameter
