@@ -61,14 +61,6 @@ default in PowerShell and for all Windows modules.
   functions that do not have help files. Opens online help topics for
   cmdlets, functions, scripts, and workflows in your default Internet browser.
 
-## UPDATE HELP IN PowerShell ISE
-
-You can also update help by using the "Update PowerShell Help" item in the
-Help menu in PowerShell Integrated Scripting Environment (ISE).
-
-The "Update PowerShell Help" item runs an Update-Help command without
-parameters.
-
 ## AUTO-GENERATED HELP: HELP WITHOUT HELP FILES
 
 If you do not have the help file for a cmdlet, function, or workflow on the
