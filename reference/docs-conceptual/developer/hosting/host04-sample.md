@@ -1,13 +1,6 @@
 ---
 title: "Host04 Sample | Microsoft Docs"
-ms.custom: ""
 ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 3cbf64e5-f9e8-4002-b40c-4d3f39025c83
-caps.latest.revision: 11
 ---
 # Host04 Sample
 

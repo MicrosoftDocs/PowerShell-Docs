@@ -1,13 +1,6 @@
 ---
 title: "PropertyName Element for TableColumnItem for TableControl (Format) | Microsoft Docs"
-ms.custom: ""
 ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: fb26d72c-2f77-4801-badf-0537ccc55e31
-caps.latest.revision: 10
 ---
 # PropertyName Element for TableColumnItem for TableControl (Format)
 

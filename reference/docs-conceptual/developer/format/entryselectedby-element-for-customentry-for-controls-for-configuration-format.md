@@ -1,13 +1,6 @@
 ---
 title: "EntrySelectedBy Element for CustomEntry for Controls for Configuration (Format) | Microsoft Docs"
-ms.custom: ""
 ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 30abae8f-c7f7-479d-ad85-19e07ddef204
-caps.latest.revision: 10
 ---
 # EntrySelectedBy Element for CustomEntry for Controls for Configuration (Format)
 

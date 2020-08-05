@@ -1,16 +1,9 @@
 ---
 title: "Creating a Basic Windows PowerShell Provider | Microsoft Docs"
-ms.custom: ""
 ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
 helpviewer_keywords:
   - "base provider [PowerShell Programmer's Guide]"
   - "providers [PowerShell Programmer's Guide], base provider"
-ms.assetid: 11eeea41-15c8-47ad-9016-0f4b72573305
-caps.latest.revision: 7
 ---
 # Creating a Basic Windows PowerShell Provider
 

@@ -1,13 +1,6 @@
 ---
 title: "Formatting File Overview | Microsoft Docs"
-ms.custom: ""
 ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: fe888fee-1fe9-459f-9d62-35732c19a7f8
-caps.latest.revision: 13
 ---
 # Formatting File Overview
 

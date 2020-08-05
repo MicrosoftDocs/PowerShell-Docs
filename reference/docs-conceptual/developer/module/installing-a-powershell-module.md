@@ -1,13 +1,6 @@
 ---
 title: "Installing a PowerShell Module | Microsoft Docs"
-ms.custom: ""
 ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: fb82827e-fdb7-4cbf-b3d4-093e72b3ff0e
-caps.latest.revision: 28
 ---
 # Installing a PowerShell Module
 

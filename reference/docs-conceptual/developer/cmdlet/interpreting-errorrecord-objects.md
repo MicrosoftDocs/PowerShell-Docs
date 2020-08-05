@@ -1,13 +1,6 @@
 ---
 title: "Interpreting ErrorRecord Objects | Microsoft Docs"
-ms.custom: ""
 ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 2a65b964-5bc6-4ade-a66b-b6afa7351ce7
-caps.latest.revision: 9
 ---
 # Interpreting ErrorRecord Objects
 

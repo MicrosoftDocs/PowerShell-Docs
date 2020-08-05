@@ -1,13 +1,6 @@
 ---
 title: "PropertyName Element for GroupBy (Format) | Microsoft Docs"
-ms.custom: ""
 ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: ddcecc46-ac75-43fa-b03a-802a68524ec3
-caps.latest.revision: 10
 ---
 # PropertyName Element for GroupBy (Format)
 

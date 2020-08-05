@@ -1,13 +1,6 @@
 ---
 title: "PropertyName Element for SelectionCondition for EntrySelectedBy for WideEntry (Format) | Microsoft Docs"
-ms.custom: ""
 ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 340abb12-6df1-42f4-bdae-b0509c90952c
-caps.latest.revision: 11
 ---
 # PropertyName Element for SelectionCondition for EntrySelectedBy for WideEntry (Format)
 

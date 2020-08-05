@@ -1,13 +1,6 @@
 ---
 title: "Writing a navigation provider | Microsoft Docs"
-ms.custom: ""
 ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 98bcfda0-6ee2-46f5-bbc7-5fab8b780d6a
-caps.latest.revision: 5
 ---
 # Writing a navigation provider
 

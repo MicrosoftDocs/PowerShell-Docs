@@ -1,13 +1,6 @@
 ---
 title: "TypeName Element for SelectionCondition for EntrySelectedBy for TableControl (Format) | Microsoft Docs"
-ms.custom: ""
 ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: e97d56fb-4e35-447a-9282-26f10d0a4609
-caps.latest.revision: 11
 ---
 # TypeName Element for SelectionCondition for EntrySelectedBy for TableControl (Format)
 

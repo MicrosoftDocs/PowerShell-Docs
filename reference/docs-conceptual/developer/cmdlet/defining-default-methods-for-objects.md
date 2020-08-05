@@ -1,13 +1,6 @@
 ---
 title: "Defining Default Methods for Objects | Microsoft Docs"
-ms.custom: ""
 ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 53fe744a-485f-4c21-9623-1cb546372211
-caps.latest.revision: 9
 ---
 
 # Defining Default Methods for Objects

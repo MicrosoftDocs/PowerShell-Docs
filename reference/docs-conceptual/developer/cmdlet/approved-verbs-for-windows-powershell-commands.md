@@ -1,17 +1,10 @@
 ---
 title: "Approved Verbs for PowerShell Commands | Microsoft Docs"
-ms.custom: ""
 ms.date: "09/07/2018"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
 helpviewer_keywords:
   - "action names [PowerShell SDK]"
   - "verb names [PowerShell SDK]"
   - "cmdlets [PowerShell SDK], verb names"
-ms.assetid: 2d4e58a9-05bc-437c-86b9-d8d55cba7d48
-caps.latest.revision: 36
 ---
 # Approved Verbs for PowerShell Commands
 

@@ -1,13 +1,6 @@
 ---
 title: "Windows PowerShell Cmdlet Concepts | Microsoft Docs"
-ms.custom: ""
 ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 7b3ef3f4-c626-4679-884f-406a37412b3e
-caps.latest.revision: 16
 ---
 # Windows PowerShell Cmdlet Concepts
 

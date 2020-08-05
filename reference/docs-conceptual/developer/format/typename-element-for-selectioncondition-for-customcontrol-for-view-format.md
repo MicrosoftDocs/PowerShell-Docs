@@ -1,13 +1,6 @@
 ---
 title: "TypeName Element for SelectionCondition for CustomControl for View  (Format) | Microsoft Docs"
-ms.custom: ""
 ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: d2c65171-4d4c-46a9-a545-591df058acd1
-caps.latest.revision: 7
 ---
 # TypeName Element for SelectionCondition for CustomControl for View  (Format)
 

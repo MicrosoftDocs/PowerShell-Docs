@@ -1,13 +1,6 @@
 ---
 title: "StopProc01 (C#) Sample Code | Microsoft Docs"
-ms.custom: ""
 ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 89796687-ae20-447a-a6b1-2f51b559d4e9
-caps.latest.revision: 5
 ---
 # StopProc01 (C#) Sample Code
 

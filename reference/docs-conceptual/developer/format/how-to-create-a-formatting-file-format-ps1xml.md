@@ -1,13 +1,6 @@
 ---
 title: "How to Create a Formatting File (.format.ps1xml) | Microsoft Docs"
-ms.custom: ""
 ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: eb568878-f63e-4561-98e2-16ee2ac7559d
-caps.latest.revision: 8
 ---
 # How to Create a Formatting File (.format.ps1xml)
 

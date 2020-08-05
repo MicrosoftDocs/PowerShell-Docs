@@ -1,13 +1,6 @@
 ---
 title: "Windows PowerShell Concepts | Microsoft Docs"
-ms.custom: ""
 ms.date: "6/12/2019"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 3dd5608e-50b6-4c6a-aee3-dde0e86032bc
-caps.latest.revision: 7
 ---
 # Windows PowerShell Concepts
 

@@ -1,13 +1,6 @@
 ---
 title: "Defining Default Member Sets for Objects | Microsoft Docs"
-ms.custom: ""
 ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 77f94326-8ffe-4d40-bd2a-b79fb0b4a4e5
-caps.latest.revision: 8
 ---
 # Defining Default Member Sets for Objects
 

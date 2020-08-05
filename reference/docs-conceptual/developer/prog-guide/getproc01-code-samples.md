@@ -1,13 +1,6 @@
 ---
 title: "GetProc01 Code Samples | Microsoft Docs"
-ms.custom: ""
 ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: f85487d6-ef50-40b9-b60d-8bb65506627e
-caps.latest.revision: 6
 ---
 # GetProc01 Code Samples
 

@@ -1,13 +1,6 @@
 ---
 title: "StopProcessSample04 (C#) Sample Code | Microsoft Docs"
-ms.custom: ""
 ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 778ce1a2-e16d-4af5-b15b-77ca4326bdc4
-caps.latest.revision: 5
 ---
 # StopProcessSample04 (C#) Sample Code
 

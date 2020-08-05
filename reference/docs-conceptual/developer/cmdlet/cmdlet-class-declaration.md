@@ -1,16 +1,9 @@
 ---
 title: "Cmdlet Class Declaration | Microsoft Docs"
-ms.custom: ""
 ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
 helpviewer_keywords:
   - "cmdlets [PowerShell SDK], declaring"
   - "declaring cmdlets [PowerShell SDK]"
-ms.assetid: 1fcc4c5e-0c75-496c-a712-5f844e310576
-caps.latest.revision: 14
 ---
 # Cmdlet Class Declaration
 

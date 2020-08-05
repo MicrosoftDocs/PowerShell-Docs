@@ -1,13 +1,6 @@
 ---
 title: "How to Override Input Processing Methods | Microsoft Docs"
-ms.custom: ""
 ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 1a1ad921-5816-4937-acf1-ed4760fae740
-caps.latest.revision: 8
 ---
 # How to Override Input Processing Methods
 

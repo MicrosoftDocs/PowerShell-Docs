@@ -1,13 +1,6 @@
 ---
 title: "Host Application Samples | Microsoft Docs"
-ms.custom: ""
 ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 2b4a41cc-2e22-49a0-b375-2e2447967751
-caps.latest.revision: 11
 ---
 # Host Application Samples
 

@@ -1,13 +1,6 @@
 ---
 title: "TypeName Element for SelectionCondition for Controls for View (Format) | Microsoft Docs"
-ms.custom: ""
 ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 7141aefc-6656-4c52-8a9c-c2bfc9c87be9
-caps.latest.revision: 6
 ---
 # TypeName Element for SelectionCondition for Controls for View (Format)
 

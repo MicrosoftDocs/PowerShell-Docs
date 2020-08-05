@@ -1,13 +1,6 @@
 ---
 title: "GroupBy Element for View (Format) | Microsoft Docs"
-ms.custom: ""
 ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 67a2b061-2a4a-4ad1-84f9-cdbefb64aaab
-caps.latest.revision: 8
 ---
 # GroupBy Element for View (Format)
 

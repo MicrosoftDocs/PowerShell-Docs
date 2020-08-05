@@ -1,11 +1,6 @@
 ---
 title: "Adding User Messages to Your Cmdlet | Microsoft Docs"
-ms.custom: ""
 ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
 helpviewer_keywords:
   - "WriteWarning"
   - "notifications, writing"
@@ -29,8 +24,6 @@ helpviewer_keywords:
   - "warning"
   - "code sample, user notifications"
   - "user notifications"
-ms.assetid: 14c13acb-f0b7-4613-bc7d-c361d14da1a2
-caps.latest.revision: 8
 ---
 # Adding User Messages to Your Cmdlet
 

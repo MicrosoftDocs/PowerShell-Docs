@@ -1,13 +1,6 @@
 ---
 title: "List View (GroupBy) | Microsoft Docs"
-ms.custom: ""
 ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: a2e66c86-83a7-4148-8575-c28d6d429d4f
-caps.latest.revision: 6
 ---
 # List View (GroupBy)
 

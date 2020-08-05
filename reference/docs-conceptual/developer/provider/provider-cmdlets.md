@@ -1,13 +1,6 @@
 ---
 title: "Provider cmdlets | Microsoft Docs"
-ms.custom: ""
 ms.date: "09/12/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: d2465420-0970-4408-9ee5-260cf444cb67
-caps.latest.revision: 8
 ---
 # Provider cmdlets
 

@@ -1,15 +1,8 @@
 ---
 title: "Windows PowerShell Reference | Microsoft Docs"
-ms.custom: ""
 ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
 helpviewer_keywords:
   - "Windows PowerShell SDK"
-ms.assetid: cbba4879-bcac-484a-9906-4bbe2cd1eb33
-caps.latest.revision: 11
 ---
 # Windows PowerShell Reference
 

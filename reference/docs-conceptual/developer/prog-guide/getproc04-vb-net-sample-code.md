@@ -1,13 +1,6 @@
 ---
 title: "GetProc04 (VB.NET) Sample Code | Microsoft Docs"
-ms.custom: ""
 ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 5d22f47b-3679-4587-a559-94454415d2dd
-caps.latest.revision: 5
 ---
 # GetProc04 (VB.NET) Sample Code
 

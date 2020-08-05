@@ -1,13 +1,6 @@
 ---
 title: "Custom Host Samples | Microsoft Docs"
-ms.custom: ""
 ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 55aee25b-bbcb-4d41-a4c0-fb8e30c4cdc1
-caps.latest.revision: 11
 ---
 # Custom Host Samples
 

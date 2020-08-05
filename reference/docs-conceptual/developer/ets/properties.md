@@ -1,7 +1,6 @@
 ---
 title: Extended Type System properties
 ms.date: 07/09/2020
-ms.topic: conceptual
 ---
 # ETS properties
 

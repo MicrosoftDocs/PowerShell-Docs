@@ -1,13 +1,6 @@
 ---
 title: "LeftIndent Element for Frame for CustomControl for View (Format) | Microsoft Docs"
-ms.custom: ""
 ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: b0ef4483-74b2-409c-9d00-014d1ed64cb8
-caps.latest.revision: 6
 ---
 # LeftIndent Element for Frame for CustomControl for View (Format)
 

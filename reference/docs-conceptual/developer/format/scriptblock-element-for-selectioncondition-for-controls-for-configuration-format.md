@@ -1,13 +1,6 @@
 ---
 title: "ScriptBlock Element for SelectionCondition for Controls for Configuration (Format) | Microsoft Docs"
-ms.custom: ""
 ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: bb032dfc-9ef6-403c-b557-5858617e3483
-caps.latest.revision: 6
 ---
 # ScriptBlock Element for SelectionCondition for Controls for Configuration (Format)
 

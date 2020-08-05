@@ -1,13 +1,6 @@
 ---
 title: "Runspace02 (C#) Code Sample | Microsoft Docs"
-ms.custom: ""
 ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 59a7b8b9-f72e-43fd-9a10-77404441a3f2
-caps.latest.revision: 6
 ---
 # Runspace02 (C#) Code Sample
 

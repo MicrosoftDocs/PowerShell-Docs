@@ -1,13 +1,6 @@
 ---
 title: "Adding Aliases, Wildcard Expansion, and Help to Cmdlet Parameters | Microsoft Docs"
-ms.custom: ""
 ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 931ccace-c565-4a98-8dcc-df00f86394b1
-caps.latest.revision: 8
 ---
 # Adding Aliases, Wildcard Expansion, and Help to Cmdlet Parameters
 

@@ -1,13 +1,6 @@
 ---
 title: "Modifying the PSModulePath Installation Path | Microsoft Docs"
-ms.custom: ""
 ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: dc5ce5a2-50e9-4c88-abf1-ac148a8a6b7b
-caps.latest.revision: 15
 ---
 # Modifying the PSModulePath Installation Path
 

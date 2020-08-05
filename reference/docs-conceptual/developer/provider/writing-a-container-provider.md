@@ -1,13 +1,6 @@
 ---
 title: "Writing a container provider | Microsoft Docs"
-ms.custom: ""
 ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 524fd900-c0fe-4d13-87f2-14903a8fd5a4
-caps.latest.revision: 5
 ---
 # Writing a container provider
 

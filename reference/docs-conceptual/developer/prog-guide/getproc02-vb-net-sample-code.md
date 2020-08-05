@@ -1,13 +1,6 @@
 ---
 title: "GetProc02 (VB.NET) Sample Code | Microsoft Docs"
-ms.custom: ""
 ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: f3497546-5b3a-4e29-84ba-cd9747be64b3
-caps.latest.revision: 6
 ---
 # GetProc02 (VB.NET) Sample Code
 

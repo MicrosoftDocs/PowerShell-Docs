@@ -1,13 +1,6 @@
 ---
 title: "ScriptBlock Element for TableColumnItem for TableControl (Format) | Microsoft Docs"
-ms.custom: ""
 ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 5f1f0f95-1e0a-4607-ab68-bdf85ef29448
-caps.latest.revision: 9
 ---
 # ScriptBlock Element for TableColumnItem for TableControl (Format)
 

@@ -1,13 +1,6 @@
 ---
 title: "Name Element for SelectionSet (Format) | Microsoft Docs"
-ms.custom: ""
 ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 914917f7-0efc-4d1f-88bd-de714bedd98f
-caps.latest.revision: 15
 ---
 # Name Element for SelectionSet (Format)
 

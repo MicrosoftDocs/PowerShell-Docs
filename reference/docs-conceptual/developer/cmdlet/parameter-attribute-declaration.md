@@ -1,17 +1,10 @@
 ---
 title: "Parameter Attribute Declaration | Microsoft Docs"
-ms.custom: ""
 ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
 helpviewer_keywords:
   - "attributes, Parameter"
   - "Parameter attribute, described"
   - "Parameter attribute"
-ms.assetid: 08433d0b-169b-42c8-9335-2881d9034698
-caps.latest.revision: 13
 ---
 # Parameter Attribute Declaration
 

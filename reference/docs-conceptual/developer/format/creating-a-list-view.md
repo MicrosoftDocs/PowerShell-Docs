@@ -1,13 +1,6 @@
 ---
 title: "Creating a List View | Microsoft Docs"
-ms.custom: ""
 ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 8c7a40ca-1786-46f0-bab5-6ce229daa7ee
-caps.latest.revision: 14
 ---
 # Creating a List View
 

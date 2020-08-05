@@ -1,7 +1,6 @@
 ---
 title: Creating a Windows PowerShell Container Provider
 ms.date: 09/13/2016
-ms.topic: article
 
 ---
 # Creating a Windows PowerShell Container Provider

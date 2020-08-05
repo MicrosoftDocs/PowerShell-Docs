@@ -1,13 +1,6 @@
 ---
 title: "Label Element for ListItem for ListControl (Format) | Microsoft Docs"
-ms.custom: ""
 ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: c693ff46-d1ad-4dc7-93ac-41ff2fc6c103
-caps.latest.revision: 9
 ---
 # Label Element for ListItem for ListControl (Format)
 

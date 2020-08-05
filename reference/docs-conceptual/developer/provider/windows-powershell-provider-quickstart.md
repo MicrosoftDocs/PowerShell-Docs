@@ -1,13 +1,6 @@
 ---
 title: "Windows PowerShell Provider Quickstart | Microsoft Docs"
-ms.custom: ""
 ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 3e879ba7-c334-460b-94a1-3e9b63d3d8de
-caps.latest.revision: 5
 ---
 # Windows PowerShell Provider Quickstart
 

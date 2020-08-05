@@ -1,8 +1,6 @@
 ---
 title: Remote Runspace Samples
 ms.date: 09/13/2016
-ms.topic: article
-ms.assetid: 8c44df35-b22b-41b0-b34c-ba7ce17b889b
 ---
 # Remote Runspace Samples
 

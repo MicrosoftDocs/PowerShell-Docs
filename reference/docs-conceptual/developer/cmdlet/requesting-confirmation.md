@@ -1,13 +1,6 @@
 ---
 title: "Requesting Confirmation | Microsoft Docs"
-ms.custom: ""
 ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 4468066f-6759-402f-84db-0d8303cfd5cb
-caps.latest.revision: 7
 ---
 # Requesting Confirmation
 

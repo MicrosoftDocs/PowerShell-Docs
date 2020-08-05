@@ -1,13 +1,6 @@
 ---
 title: "NewLine Element for CustomItem for Controls for Configuration (Format) | Microsoft Docs"
-ms.custom: ""
 ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 57fcd7ba-44bb-403f-9747-5b429ccb70d0
-caps.latest.revision: 6
 ---
 # NewLine Element for CustomItem for Controls for Configuration (Format)
 

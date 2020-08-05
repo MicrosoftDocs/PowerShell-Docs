@@ -1,13 +1,6 @@
 ---
 title: "ScriptBlock Element for ItemSelectionCondition for ListControl (Format) | Microsoft Docs"
-ms.custom: ""
 ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: c929a6df-d050-416a-9de0-e913dd5a035c
-caps.latest.revision: 8
 ---
 # ScriptBlock Element for ItemSelectionCondition for ListControl (Format)
 
