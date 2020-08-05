@@ -17,7 +17,8 @@ Included below are guidelines for what makes a good PowerShell Gallery package, 
 Manifest settings are most important, improving your code with feedback from initial reviewers and
 [Powershell Script Analyzer](https://aka.ms/psscriptanalyzer), versioning your module,
 documentation, tests and examples for how to use what you have shared. Much of this documentation
-follows the guidelines for publishing [High Quality DSC Resource Modules](https://github.com/PowerShell/DscResources/blob/master/HighQualityModuleGuidelines.md).
+follows the guidelines for publishing
+[High Quality DSC Resource Modules](https://github.com/PowerShell/DscResources/blob/master/HighQualityModuleGuidelines.md).
 
 For the mechanics of publishing a package to the PowerShell Gallery, see
 [Creating and Publishing a Package](../how-to/publishing-packages/publishing-a-package.md).
@@ -198,7 +199,7 @@ By tagging your package with the compatible platform(s) it will be included in t
 filters on the left pane of the search results. If you host your package on GitHub, when you tag
 your package, you can also take advantage of our
 [PowerShell Gallery compatibility shields](https://img.shields.io/powershellgallery/p/:packageName.svg)
-![compatibility shield](media/publishing-guidelines/CosmosDB.svg).
+![compatibility shield example](media/publishing-guidelines/CosmosDB.svg).
 
 ## Include tests
 

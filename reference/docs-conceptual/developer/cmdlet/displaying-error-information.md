@@ -1,13 +1,6 @@
 ---
 title: "Displaying Error Information | Microsoft Docs"
-ms.custom: ""
 ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 76fcc0c1-9795-45d3-a564-40f822b657b5
-caps.latest.revision: 8
 ---
 # Displaying Error Information
 

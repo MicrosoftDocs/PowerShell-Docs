@@ -1,13 +1,6 @@
 ---
 title: "EnumerateCollection Element for ExpressionBinding for Controls for Configuration (Format) | Microsoft Docs"
-ms.custom: ""
 ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: d5027c99-9f88-4c59-87ce-8793ef1d2fe3
-caps.latest.revision: 6
 ---
 # EnumerateCollection Element for ExpressionBinding for Controls for Configuration (Format)
 

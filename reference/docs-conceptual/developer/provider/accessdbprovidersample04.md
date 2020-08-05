@@ -1,13 +1,6 @@
 ---
 title: "AccessDBProviderSample04 | Microsoft Docs"
-ms.custom: ""
 ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: ee3a7e56-7331-4f71-9ecb-7a59b8021c68
-caps.latest.revision: 10
 ---
 # AccessDBProviderSample04
 

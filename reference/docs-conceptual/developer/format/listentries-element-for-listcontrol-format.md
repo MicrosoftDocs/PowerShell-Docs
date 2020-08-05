@@ -1,13 +1,6 @@
 ---
 title: "ListEntries Element for ListControl (Format) | Microsoft Docs"
-ms.custom: ""
 ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: b62e81cc-4175-40fa-829f-634245b09f86
-caps.latest.revision: 12
 ---
 # ListEntries Element for ListControl (Format)
 

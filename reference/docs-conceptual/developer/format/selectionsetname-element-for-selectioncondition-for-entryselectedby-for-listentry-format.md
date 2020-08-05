@@ -1,13 +1,6 @@
 ---
 title: "SelectionSetName Element for SelectionCondition for EntrySelectedBy for ListEntry (Format) | Microsoft Docs"
-ms.custom: ""
 ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: eae67e47-6c60-4741-8430-78d2cb6067b1
-caps.latest.revision: 10
 ---
 # SelectionSetName Element for SelectionCondition for EntrySelectedBy for ListEntry (Format)
 

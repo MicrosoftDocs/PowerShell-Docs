@@ -1,15 +1,8 @@
 ---
 title: "Writing a Windows PowerShell Snap-in | Microsoft Docs"
-ms.custom: ""
 ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
 helpviewer_keywords:
   - "snap-ins [PowerShell SDK], PSSnapin example"
-ms.assetid: 875024f4-e02b-4416-80b9-af5e5b50aad6
-caps.latest.revision: 7
 ---
 # Writing a Windows PowerShell Snap-in
 

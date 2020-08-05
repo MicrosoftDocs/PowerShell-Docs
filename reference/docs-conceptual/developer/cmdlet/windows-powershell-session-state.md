@@ -1,16 +1,9 @@
 ---
 title: "Windows PowerShell Session State | Microsoft Docs"
-ms.custom: ""
 ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
 helpviewer_keywords:
   - "Cmdlets [PowerShell], session state"
   - "session state [PowerShell]"
-ms.assetid: 74912940-2b10-4a76-b174-6d035d71c02b
-caps.latest.revision: 8
 ---
 # Windows PowerShell Session State
 

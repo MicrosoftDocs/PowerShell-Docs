@@ -1,17 +1,10 @@
 ---
 title: "ValidateSet Attribute Declaration | Microsoft Docs"
-ms.custom: ""
 ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
 helpviewer_keywords:
   - "attributes, ValidateSet"
   - "ValidateSet attribute, described"
   - "ValidateSet attribute"
-ms.assetid: 4a6f97ab-45b2-4f3d-84d4-30acf8e074d0
-caps.latest.revision: 12
 ---
 # ValidateSet Attribute Declaration
 

@@ -1,13 +1,6 @@
 ---
 title: "Frame Element for CustomItem for Controls for Configuration (Format) | Microsoft Docs"
-ms.custom: ""
 ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: d879c8ce-679d-4622-bc43-c207f6413871
-caps.latest.revision: 9
 ---
 # Frame Element for CustomItem for Controls for Configuration (Format)
 

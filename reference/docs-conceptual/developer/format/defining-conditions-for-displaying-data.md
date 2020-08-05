@@ -1,13 +1,6 @@
 ---
 title: "Defining Conditions for Displaying Data | Microsoft Docs"
-ms.custom: ""
 ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: c1e05821-6aec-437b-84a5-218a5727f88b
-caps.latest.revision: 10
 ---
 # Defining Conditions for Displaying Data
 

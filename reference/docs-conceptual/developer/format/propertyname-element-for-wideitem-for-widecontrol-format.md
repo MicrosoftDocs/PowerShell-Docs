@@ -1,13 +1,6 @@
 ---
 title: "PropertyName Element for WideItem for WideControl (Format) | Microsoft Docs"
-ms.custom: ""
 ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 3d91d0e6-bf18-4587-b651-db66849e5df5
-caps.latest.revision: 6
 ---
 # PropertyName Element for WideItem for WideControl (Format)
 

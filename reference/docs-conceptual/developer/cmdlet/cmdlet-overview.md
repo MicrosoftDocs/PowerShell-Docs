@@ -1,7 +1,6 @@
 ---
 title: Cmdlet Overview
 ms.date: 06/11/2020
-ms.topic: article
 ---
 # Cmdlet Overview
 

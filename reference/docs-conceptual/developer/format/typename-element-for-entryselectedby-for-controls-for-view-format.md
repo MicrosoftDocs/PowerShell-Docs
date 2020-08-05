@@ -1,13 +1,6 @@
 ---
 title: "TypeName Element for EntrySelectedBy for Controls for View (Format) | Microsoft Docs"
-ms.custom: ""
 ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 52003450-07ca-41e5-b075-8b6b03fc6e88
-caps.latest.revision: 6
 ---
 # TypeName Element for EntrySelectedBy for Controls for View (Format)
 

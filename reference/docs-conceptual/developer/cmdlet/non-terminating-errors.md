@@ -1,13 +1,6 @@
 ---
 title: "Non-Terminating Errors | Microsoft Docs"
-ms.custom: ""
 ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 468dabd6-bfeb-448d-8e09-0996db516edd
-caps.latest.revision: 8
 ---
 # Non-Terminating Errors
 

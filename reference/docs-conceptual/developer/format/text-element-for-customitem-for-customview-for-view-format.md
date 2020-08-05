@@ -1,13 +1,6 @@
 ---
 title: "Text Element for CustomItem for CustomView for View (Format) | Microsoft Docs"
-ms.custom: ""
 ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: fab6c0f4-ba55-48ae-9c16-f9a998169239
-caps.latest.revision: 9
 ---
 # Text Element for CustomItem for CustomView for View (Format)
 

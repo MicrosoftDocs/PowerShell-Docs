@@ -1,13 +1,6 @@
 ---
 title: "Creating remote runspaces | Microsoft Docs"
-ms.custom: ""
 ms.date: "09/12/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 057a666f-731b-423d-9d80-7be6b1836244
-caps.latest.revision: 5
 ---
 
 # Creating remote runspaces

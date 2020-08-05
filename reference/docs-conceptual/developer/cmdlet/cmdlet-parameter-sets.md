@@ -1,13 +1,6 @@
 ---
-title: "Cmdlet Parameter Sets | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: f902fd4d-8f6e-4ef1-b07f-59983039a0d1
-caps.latest.revision: 10
+title: Cmdlet Parameter Sets
+ms.date: 09/13/2016
 ---
 
 # Cmdlet parameter sets
@@ -40,7 +33,7 @@ unique to the first parameter set, **parameter B** is unique to the second param
 **parameter C** is unique to the third parameter set. In the right column, the parameter sets don't
 have a unique parameter.
 
-![ps_parametersets](media/cmdlet-parameter-sets/ps-parametersets.gif)
+![Illustration of parameter sets](media/cmdlet-parameter-sets/ps-parametersets.gif)
 
 ## Parameter set requirements
 

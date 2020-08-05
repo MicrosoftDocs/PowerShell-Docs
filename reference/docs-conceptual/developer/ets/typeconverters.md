@@ -1,7 +1,6 @@
 ---
 title: Extended Type System type converters
 ms.date: 07/09/2020
-ms.topic: conceptual
 ---
 # ETS type converters
 

@@ -1,13 +1,6 @@
 ---
 title: "Control Element for Controls for Configuration (Format) | Microsoft Docs"
-ms.custom: ""
 ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: bddf7ffa-04d3-4354-90b9-5e714e096260
-caps.latest.revision: 13
 ---
 # Control Element for Controls for Configuration (Format)
 

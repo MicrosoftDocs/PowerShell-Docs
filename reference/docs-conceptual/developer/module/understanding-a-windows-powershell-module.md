@@ -1,13 +1,6 @@
 ---
 title: "Understanding a Windows PowerShell Module | Microsoft Docs"
-ms.custom: ""
 ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: d4e38235-9987-4347-afd2-0f7d1dc8f64a
-caps.latest.revision: 19
 ---
 # Understanding a Windows PowerShell Module
 

@@ -1,13 +1,6 @@
 ---
 title: "CustomEntry Element for CustomControl for GroupBy (Format) | Microsoft Docs"
-ms.custom: ""
 ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 2987cb45-f646-45d4-b81b-7871e77af36f
-caps.latest.revision: 5
 ---
 # CustomEntry Element for CustomControl for GroupBy (Format)
 

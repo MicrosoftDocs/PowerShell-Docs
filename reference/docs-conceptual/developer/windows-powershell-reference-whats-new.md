@@ -1,7 +1,6 @@
 ---
 title: Windows PowerShell Reference - What's New
 ms.date: 09/13/2016
-ms.topic: article
 ---
 # What's New
 

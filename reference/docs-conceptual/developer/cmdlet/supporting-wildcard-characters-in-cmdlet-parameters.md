@@ -1,11 +1,6 @@
 ---
 title: Supporting Wildcard Characters in Cmdlet Parameters
-ms.custom:
 ms.date: 08/26/2019
-ms.reviewer:
-ms.suite:
-ms.tgt_pltfrm:
-ms.topic: article
 ---
 # Supporting Wildcard Characters in Cmdlet Parameters
 

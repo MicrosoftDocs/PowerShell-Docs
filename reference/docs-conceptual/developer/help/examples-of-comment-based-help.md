@@ -1,4 +1,4 @@
-﻿---
+---
 title: Examples of Comment-Based Help
 ms.date: 09/12/2016
 ---

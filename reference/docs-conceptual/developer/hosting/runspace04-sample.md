@@ -1,13 +1,6 @@
 ---
 title: "Runspace04 Sample | Microsoft Docs"
-ms.custom: ""
 ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: a6a04f15-b5d8-475b-ac9c-e75c58ec8933
-caps.latest.revision: 8
 ---
 # Runspace04 Sample
 

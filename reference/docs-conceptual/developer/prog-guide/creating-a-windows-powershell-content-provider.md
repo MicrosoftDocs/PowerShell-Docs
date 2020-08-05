@@ -1,8 +1,6 @@
 ---
 title: Creating a Windows PowerShell Content Provider
 ms.date: 09/13/2016
-ms.topic: article
-ms.assetid: 3da88ff9-c4c7-4ace-aa24-0a29c8cfa060
 ---
 # Creating a Windows PowerShell Content Provider
 

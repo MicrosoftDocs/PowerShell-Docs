@@ -1,13 +1,6 @@
 ---
 title: "Creating a constrained runspace | Microsoft Docs"
-ms.custom: ""
 ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 59125e65-7030-40bb-9926-756120b2d952
-caps.latest.revision: 5
 ---
 # Creating a constrained runspace
 

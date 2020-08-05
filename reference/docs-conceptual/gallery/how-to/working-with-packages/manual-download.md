@@ -20,7 +20,7 @@ then copy to an internal repository.
 
 Each page has a link for Manual Download, as shown here:
 
-![Manual Download](media/manual-download/packagedisplaypagewithpseditions.png)
+![Package display page with install options](media/manual-download/packagedisplaypagewithpseditions.png)
 
 To download manually, click on **Download the raw nupkg file**. A copy of the package is copied to
 the download folder for your browser with the name `<name>.<version>.nupkg`.

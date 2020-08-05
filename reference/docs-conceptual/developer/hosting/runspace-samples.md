@@ -1,13 +1,6 @@
 ---
 title: "Runspace Samples | Microsoft Docs"
-ms.custom: ""
 ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: c92a6d3d-8d34-4a76-bdc3-dea923d9858e
-caps.latest.revision: 17
 ---
 # Runspace Samples
 

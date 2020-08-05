@@ -1,13 +1,6 @@
 ---
 title: "GetProc03 (VB.NET) Sample Code | Microsoft Docs"
-ms.custom: ""
 ms.date: "09/12/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: ff94c452-d4ec-4492-ac20-61ad52f8ae8c
-caps.latest.revision: 7
 ---
 # GetProc03 (VB.NET) Sample Code
 

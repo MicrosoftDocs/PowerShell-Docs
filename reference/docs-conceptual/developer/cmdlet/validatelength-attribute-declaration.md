@@ -1,17 +1,10 @@
 ---
 title: "ValidateLength Attribute Declaration | Microsoft Docs"
-ms.custom: ""
 ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
 helpviewer_keywords:
   - "ValidateLength attribute, described"
   - "attributes, ValidateLength"
   - "ValidateLength attribute"
-ms.assetid: 82fe3a35-a94b-4bc1-ad9e-dfc5f1e788b3
-caps.latest.revision: 13
 ---
 # ValidateLength Attribute Declaration
 

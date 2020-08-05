@@ -1,13 +1,6 @@
 ---
 title: "AccessDbProviderSample03 Code Sample | Microsoft Docs"
-ms.custom: ""
 ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: af25b560-017a-4d53-a8c3-97c5ab66b9d4
-caps.latest.revision: 5
 ---
 # AccessDbProviderSample03 Code Sample
 

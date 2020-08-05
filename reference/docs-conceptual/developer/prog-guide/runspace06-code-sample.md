@@ -1,13 +1,6 @@
 ---
 title: "RunSpace06 Code Sample | Microsoft Docs"
-ms.custom: ""
 ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: d71f86d5-eb62-4b16-aa95-5fd3f314ffd3
-caps.latest.revision: 6
 ---
 # RunSpace06 Code Sample
 

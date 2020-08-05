@@ -1,13 +1,6 @@
 ---
 title: "FormatString Element for WideItem for WideControl (Format) | Microsoft Docs"
-ms.custom: ""
 ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 5bc6ea26-3ca6-4bab-8a13-29189821ba15
-caps.latest.revision: 7
 ---
 # FormatString Element for WideItem for WideControl (Format)
 

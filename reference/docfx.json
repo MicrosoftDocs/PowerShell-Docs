@@ -102,14 +102,28 @@
             },
             "ms.technology": {
                 "5.1/**.yml": "powershell-cmdlets",
+                "5.1/**.md": "powershell-conceptual",
                 "6/**.yml": "powershell-cmdlets",
-                "7/**.yml": "powershell-cmdlets",
+                "6/**.md": "powershell-conceptual",
+                "7.0/**.yml": "powershell-cmdlets",
+                "7.0/**.md": "powershell-conceptual",
+                "7.1/**.yml": "powershell-cmdlets",
+                "7.1/**.md": "powershell-conceptual",
                 "docs-conceptual/**.md": "powershell-conceptual"
             },
             "ms.topic": {
                 "5.1/**.yml": "reference",
+                "5.1/**.md": "reference",
                 "6/**.yml": "reference",
-                "7/**.yml": "reference",
+                "6/**.md": "reference",
+                "7.0/**.yml": "reference",
+                "7.0/**.md": "reference",
+                "7.1/**.yml": "reference",
+                "7.1/**.md": "reference",
+                "docs-conceptual/dev-cross-plat/**/**.md": "reference",
+                "docs-conceptual/developer/**/**.md": "reference",
+                "docs-conceptual/learn/**/**.md": "tutorial",
+                "docs-conceptual/samples/**/**.md": "sample",
                 "docs-conceptual/**.md": "conceptual"
             },
             "manager": { "**/**": "daberry" },
@@ -150,6 +164,7 @@
                 "docs-conceptual/learn/remoting/jea/**.md": "rpsqrd",
                 "docs-conceptual/gallery/**/**.md": "SydneyhSmith",
                 "docs-conceptual/dsc/**/**.md": "mgreenegit",
+                "docs-conceptual/dev-cross-plat/**/**.md": "sdwheeler",
                 "docs-conceptual/developer/**/**.md": "joeyaiello",
                 "docs-conceptual/**.md": "joeyaiello"
             },
@@ -188,6 +203,7 @@
                 "docs-conceptual/learn/ps101/**.md": "mirobb",
                 "docs-conceptual/gallery/**/**.md": "sysmith",
                 "docs-conceptual/dsc/**/**.md": "migreene",
+                "docs-conceptual/dev-cross-plat/**/**.md": "sewhee",
                 "docs-conceptual/developer/**/**.md": "jaiello",
                 "docs-conceptual/**.md": "jaiello"
             }

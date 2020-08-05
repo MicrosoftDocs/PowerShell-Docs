@@ -116,7 +116,7 @@ Continue to build the hash table with the **ProviderName** key. The **ProviderNa
 that appears in the **Source** field in the **Windows Event Viewer**. For example, **.NET Runtime**
 in the following screenshot:
 
-![Image of Windows Event Viewer sources.](./media/creating-get-winEvent-queries-with-filterhashtable/providername.png)
+![Image of Windows Event Viewer sources](./media/creating-get-winEvent-queries-with-filterhashtable/providername.png)
 
 Update the hash table and include the **key-value** pair with the key, **ProviderName**, and the
 value, **.NET Runtime**.
@@ -153,7 +153,7 @@ Open the **Windows Event Viewer** and from the **Actions** pane, click on **Filt
 The **Keywords** drop-down menu displays the available keywords, as shown in the following
 screenshot:
 
-![Image of Windows Event Viewer keywords.](./media/creating-get-winEvent-queries-with-filterhashtable/keywords.png)
+![Image of Windows Event Viewer keywords](./media/creating-get-winEvent-queries-with-filterhashtable/keywords.png)
 
 Use the following command to display the `StandardEventKeywords` property names.
 
