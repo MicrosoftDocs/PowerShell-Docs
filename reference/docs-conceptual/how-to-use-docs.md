@@ -28,7 +28,7 @@ Use the version picker at the top of the page to select the version of PowerShel
 ![Using the version picker](media/how-to-use-docs/version-search.gif)
 
 You can verify the version of PowerShell you are using by inspecting the `$PSversionTable.PSVersion`
-value. The following example shows the output for Windows PowerShell v5.1.
+value. The following example shows the output for Windows PowerShell 5.1.
 
 ```powershell
 $PSVersionTable.PSVersion
@@ -37,10 +37,11 @@ $PSVersionTable.PSVersion
 ```Output
 Major  Minor  Build  Revision
 -----  -----  -----  --------
-5      1      18362  145
+5      1      19041  1
 ```
 
-If you are new to PowerShell and need help understanding the command syntax, see [about_Command_Syntax](/powershell/module/microsoft.powershell.core/about/about_command_syntax).
+If you are new to PowerShell and need help understanding the command syntax, see
+[about_Command_Syntax](/powershell/module/microsoft.powershell.core/about/about_command_syntax).
 
 ## Finding articles for previous versions
 
