@@ -14,7 +14,7 @@ archive_url: ''
 layout: ApiBrowserPage
 apiPlatform: powershell
 quickFilterColumn1: powershell-7,win10-ps
-quickFilterColumn2: azps-4.4.0,win-mdop2-ps
+quickFilterColumn2: azps-4.5.0,win-mdop2-ps
 quickFilterColumn3: sqlserver-ps,systemcenter-ps-2019
 ---
 
