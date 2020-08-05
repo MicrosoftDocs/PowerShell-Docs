@@ -1,13 +1,6 @@
 ---
 title: "Events01 Sample | Microsoft Docs"
-ms.custom: ""
 ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 27d0ee5e-2589-4530-92ef-c09996b80994
-caps.latest.revision: 10
 ---
 # Events01 Sample
 

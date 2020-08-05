@@ -1,13 +1,6 @@
 ---
 title: "Advisory Development Guidelines | Microsoft Docs"
-ms.custom: ""
 ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 79c9bcbc-a2eb-4253-a4b8-65ba54ce8d01
-caps.latest.revision: 9
 ---
 # Advisory Development Guidelines
 

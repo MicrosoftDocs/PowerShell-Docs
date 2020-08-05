@@ -1,17 +1,10 @@
 ---
 title: "ValidateCount Attribute Declaration | Microsoft Docs"
-ms.custom: ""
 ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
 helpviewer_keywords:
   - "attributes, ValidateCount"
   - "ValidateCount attribute, described"
   - "ValidateCount attribute"
-ms.assetid: 516af1ef-2c2e-408d-84bc-865f5bccf761
-caps.latest.revision: 11
 ---
 # ValidateCount Attribute Declaration
 

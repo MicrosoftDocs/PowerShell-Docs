@@ -1,13 +1,6 @@
 ---
 title: "Parameter Aliases | Microsoft Docs"
-ms.custom: ""
 ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 7c9096a1-46fa-48ea-9b8a-a583484b9d68
-caps.latest.revision: 13
 ---
 # Parameter Aliases
 

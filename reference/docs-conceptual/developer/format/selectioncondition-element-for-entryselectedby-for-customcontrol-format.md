@@ -1,13 +1,6 @@
 ---
 title: "SelectionCondition Element for EntrySelectedBy for CustomControl (Format) | Microsoft Docs"
-ms.custom: ""
 ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 231e9c6d-09ec-4e68-80ee-0c8f7fe1b9f5
-caps.latest.revision: 7
 ---
 # SelectionCondition Element for EntrySelectedBy for CustomControl (Format)
 

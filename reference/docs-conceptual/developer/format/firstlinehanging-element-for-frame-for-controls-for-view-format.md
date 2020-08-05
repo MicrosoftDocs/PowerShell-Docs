@@ -1,13 +1,6 @@
 ---
 title: "FirstLineHanging Element for Frame for Controls for View (Format) | Microsoft Docs"
-ms.custom: ""
 ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 53694f08-57f7-4185-b443-1636a0918afc
-caps.latest.revision: 8
 ---
 # FirstLineHanging Element for Frame for Controls for View (Format)
 

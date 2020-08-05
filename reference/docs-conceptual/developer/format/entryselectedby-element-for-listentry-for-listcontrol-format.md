@@ -1,13 +1,6 @@
 ---
 title: "EntrySelectedBy Element for ListEntry for ListControl (Format) | Microsoft Docs"
-ms.custom: ""
 ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 0f7a74e9-764d-46ce-ab8e-8b9314ce1659
-caps.latest.revision: 12
 ---
 # EntrySelectedBy Element for ListEntry for ListControl (Format)
 

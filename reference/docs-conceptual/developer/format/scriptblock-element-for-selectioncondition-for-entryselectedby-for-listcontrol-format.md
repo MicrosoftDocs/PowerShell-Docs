@@ -1,13 +1,6 @@
 ---
 title: "ScriptBlock Element for SelectionCondition for EntrySelectedBy for ListControl (Format) | Microsoft Docs"
-ms.custom: ""
 ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 4a1adad7-e864-4892-9d26-a6476a9698d2
-caps.latest.revision: 7
 ---
 # ScriptBlock Element for SelectionCondition for EntrySelectedBy for ListControl (Format)
 

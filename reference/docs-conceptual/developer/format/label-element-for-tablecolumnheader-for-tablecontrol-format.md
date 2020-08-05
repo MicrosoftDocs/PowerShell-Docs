@@ -1,13 +1,6 @@
 ---
 title: "Label Element for TableColumnHeader for TableControl (Format) | Microsoft Docs"
-ms.custom: ""
 ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 7196f039-2f6a-41fd-b252-5b1623ebb9f9
-caps.latest.revision: 11
 ---
 # Label Element for TableColumnHeader for TableControl (Format)
 

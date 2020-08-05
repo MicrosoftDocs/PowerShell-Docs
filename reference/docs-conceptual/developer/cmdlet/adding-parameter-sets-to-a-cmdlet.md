@@ -1,15 +1,8 @@
 ---
 title: "Adding Parameter Sets to a Cmdlet | Microsoft Docs"
-ms.custom: ""
 ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
 helpviewer_keywords:
   - "parameter sets [PowerShell Programmer's Guide]"
-ms.assetid: a6131db4-fd6e-45f1-bd47-17e7174afd56
-caps.latest.revision: 8
 ---
 # Adding Parameter Sets to a Cmdlet
 

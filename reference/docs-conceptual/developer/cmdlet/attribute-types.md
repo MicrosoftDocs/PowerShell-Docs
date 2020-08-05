@@ -1,13 +1,6 @@
 ---
 title: "Attribute Types | Microsoft Docs"
-ms.custom: ""
 ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 9b1026ad-f072-4fca-8052-a2d8eb491c2a
-caps.latest.revision: 6
 ---
 # Attribute Types
 

@@ -1,13 +1,6 @@
 ---
 title: "ViewSelectedBy Element (Format) | Microsoft Docs"
-ms.custom: ""
 ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: acdeef4d-3554-4f39-a7e6-a684e3848fd7
-caps.latest.revision: 19
 ---
 # ViewSelectedBy Element (Format)
 

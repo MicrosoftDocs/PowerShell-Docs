@@ -1,13 +1,6 @@
 ---
 title: "Provider cmdlet dynamic parameters | Microsoft Docs"
-ms.custom: ""
 ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 8f1069f7-8fa8-4622-9e2c-af29b0b961c2
-caps.latest.revision: 6
 ---
 # Provider cmdlet dynamic parameters
 

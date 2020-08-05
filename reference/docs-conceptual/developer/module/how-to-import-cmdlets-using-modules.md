@@ -1,13 +1,6 @@
 ---
 title: "How to Import Cmdlets Using Modules | Microsoft Docs"
-ms.custom: ""
 ms.date: "08/28/2019"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: a41d9e5f-de6f-47b7-9601-c108609320d0
-caps.latest.revision: 8
 ---
 
 # How to Import Cmdlets Using Modules

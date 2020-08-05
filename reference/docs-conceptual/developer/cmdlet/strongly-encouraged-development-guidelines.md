@@ -1,13 +1,6 @@
 ---
 title: "Strongly Encouraged Development Guidelines | Microsoft Docs"
-ms.custom: ""
 ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 4d68a8f3-fba0-44c5-97b9-9fc191d269a5
-caps.latest.revision: 13
 ---
 # Strongly Encouraged Development Guidelines
 

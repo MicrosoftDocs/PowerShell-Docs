@@ -1,13 +1,6 @@
 ---
 title: "PropertyName Element for ListItem for ListControl (Format) | Microsoft Docs"
-ms.custom: ""
 ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 01ae8cbe-acdc-4043-bd6e-1118a5691a55
-caps.latest.revision: 12
 ---
 # PropertyName Element for ListItem for ListControl (Format)
 

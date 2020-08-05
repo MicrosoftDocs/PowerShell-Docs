@@ -1,13 +1,6 @@
 ---
 title: "Users Requesting Confirmation | Microsoft Docs"
-ms.custom: ""
 ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 6f337498-c534-40ed-968a-09d4d9ca3849
-caps.latest.revision: 8
 ---
 # Users Requesting Confirmation
 

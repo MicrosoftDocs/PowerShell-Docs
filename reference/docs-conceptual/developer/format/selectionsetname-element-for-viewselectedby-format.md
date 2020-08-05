@@ -1,13 +1,6 @@
 ---
 title: "SelectionSetName Element for ViewSelectedBy (Format) | Microsoft Docs"
-ms.custom: ""
 ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 8ab0f033-df09-4435-a8bd-76ec2d01f13b
-caps.latest.revision: 13
 ---
 # SelectionSetName Element for ViewSelectedBy (Format)
 

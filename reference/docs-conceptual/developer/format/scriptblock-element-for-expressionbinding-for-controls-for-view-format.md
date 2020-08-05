@@ -1,13 +1,6 @@
 ---
 title: "ScriptBlock Element for ExpressionBinding for Controls for View (Format) | Microsoft Docs"
-ms.custom: ""
 ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 2b51c937-909e-42af-9085-e224f3919bdf
-caps.latest.revision: 6
 ---
 # ScriptBlock Element for ExpressionBinding for Controls for View (Format)
 

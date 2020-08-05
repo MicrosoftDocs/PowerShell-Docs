@@ -1,13 +1,6 @@
 ---
 title: "Runspace01 (C#) Code Sample | Microsoft Docs"
-ms.custom: ""
 ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: d59f8b7c-e800-4633-aa5b-74d4c57e2706
-caps.latest.revision: 6
 ---
 # Runspace01 (C#) Code Sample
 

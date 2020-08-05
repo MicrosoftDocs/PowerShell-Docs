@@ -1,13 +1,6 @@
 ---
 title: "PropertyName Element for ExpressionBinding for Controls for View (Format) | Microsoft Docs"
-ms.custom: ""
 ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: c53a28eb-8cc7-42d6-b47b-31dfa6a69e50
-caps.latest.revision: 6
 ---
 # PropertyName Element for ExpressionBinding for Controls for View (Format)
 

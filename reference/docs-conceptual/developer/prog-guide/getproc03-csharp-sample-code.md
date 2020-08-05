@@ -1,13 +1,6 @@
 ---
 title: "GetProc03 (C#) Sample Code | Microsoft Docs"
-ms.custom: ""
 ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: ebc0d538-69ac-43d5-837d-b6f47344fc6a
-caps.latest.revision: 5
 ---
 # GetProc03 (C#) Sample Code
 

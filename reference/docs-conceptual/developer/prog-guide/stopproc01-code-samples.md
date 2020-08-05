@@ -1,13 +1,6 @@
 ---
 title: "StopProc01 Code Samples | Microsoft Docs"
-ms.custom: ""
 ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 60873d0f-c5f1-4d5b-ade1-49ad0df43245
-caps.latest.revision: 5
 ---
 # StopProc01 Code Samples
 

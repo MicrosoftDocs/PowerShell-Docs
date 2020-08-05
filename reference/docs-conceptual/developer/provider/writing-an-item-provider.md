@@ -1,13 +1,6 @@
 ---
 title: "Writing an item provider | Microsoft Docs"
-ms.custom: ""
 ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 606c880c-6cf1-4ea6-8730-dbf137bfabff
-caps.latest.revision: 5
 ---
 # Writing an item provider
 

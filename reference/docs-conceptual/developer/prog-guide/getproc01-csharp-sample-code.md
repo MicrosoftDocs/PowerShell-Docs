@@ -1,13 +1,6 @@
 ---
 title: "GetProc01 (C#) Sample Code | Microsoft Docs"
-ms.custom: ""
 ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 65094bb7-1972-44b3-b8b0-5f639860b58c
-caps.latest.revision: 5
 ---
 # GetProc01 (C#) Sample Code
 

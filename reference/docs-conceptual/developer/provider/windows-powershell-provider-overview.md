@@ -1,13 +1,6 @@
 ---
 title: "Windows PowerShell Provider Overview | Microsoft Docs"
-ms.custom: ""
 ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 82244fbd-07b9-47f3-805c-3fb90ebbf58a
-caps.latest.revision: 13
 ---
 # Windows PowerShell Provider Overview
 

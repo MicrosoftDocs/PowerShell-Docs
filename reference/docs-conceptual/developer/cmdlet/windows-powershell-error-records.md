@@ -1,18 +1,11 @@
 ---
 title: "Windows PowerShell Error Records | Microsoft Docs"
-ms.custom: ""
 ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
 helpviewer_keywords:
   - "error category [PowerShell SDK]"
   - "error identifier [PowerShell SDK]"
   - "error records [PowerShell SDK]"
   - "error category string [PowerShell SDK]"
-ms.assetid: bdd66fea-eb63-4bb6-9cbe-9a799e5e0db5
-caps.latest.revision: 9
 ---
 # Windows PowerShell Error Records
 

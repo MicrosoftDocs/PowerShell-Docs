@@ -1,13 +1,6 @@
 ---
 title: "ColumnNumber Element for WideControl (Format) | Microsoft Docs"
-ms.custom: ""
 ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: fe9eb5f9-a193-41a4-ad47-a96ba3f8d7e3
-caps.latest.revision: 8
 ---
 # ColumnNumber Element for WideControl (Format)
 

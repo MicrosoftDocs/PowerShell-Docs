@@ -1,13 +1,6 @@
 ---
 title: "Types Element for SelectionSet (Format) | Microsoft Docs"
-ms.custom: ""
 ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 4606fec0-ff31-4d36-af68-227405335ec3
-caps.latest.revision: 15
 ---
 # Types Element for SelectionSet (Format)
 

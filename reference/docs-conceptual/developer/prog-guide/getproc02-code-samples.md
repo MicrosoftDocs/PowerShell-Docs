@@ -1,13 +1,6 @@
 ---
 title: "GetProc02 Code Samples | Microsoft Docs"
-ms.custom: ""
 ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: a2fd91af-758b-49b9-b57f-106ee01fc8c1
-caps.latest.revision: 5
 ---
 # GetProc02 Code Samples
 

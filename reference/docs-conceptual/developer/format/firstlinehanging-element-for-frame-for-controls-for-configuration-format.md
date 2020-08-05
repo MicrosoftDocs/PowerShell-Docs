@@ -1,13 +1,6 @@
 ---
 title: "FirstLineHanging Element for Frame for Controls for Configuration (Format) | Microsoft Docs"
-ms.custom: ""
 ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 679c8bcb-b49d-4bb4-91f5-ea1af6c217e3
-caps.latest.revision: 8
 ---
 # FirstLineHanging Element for Frame for Controls for Configuration (Format)
 

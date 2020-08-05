@@ -1,13 +1,6 @@
 ---
 title: "Creating a Table View | Microsoft Docs"
-ms.custom: ""
 ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 1f405afb-70b5-4fe0-9986-bc07401d93fd
-caps.latest.revision: 23
 ---
 # Creating a Table View
 

@@ -1,13 +1,6 @@
 ---
 title: "Background Jobs | Microsoft Docs"
-ms.custom: ""
 ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: a0ef5ac9-8254-4832-ace8-84b356c10f08
-caps.latest.revision: 13
 ---
 # Background Jobs
 

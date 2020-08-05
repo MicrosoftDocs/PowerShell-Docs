@@ -1,13 +1,6 @@
 ---
 title: "NewLine Element for CustomItem for CustomControl for View (Format) | Microsoft Docs"
-ms.custom: ""
 ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 1ca84152-c2b7-492c-8a2e-d0587ab9d7b9
-caps.latest.revision: 9
 ---
 # NewLine Element for CustomItem for CustomControl for View (Format)
 

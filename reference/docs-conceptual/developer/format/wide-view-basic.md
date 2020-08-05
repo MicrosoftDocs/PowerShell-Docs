@@ -1,13 +1,6 @@
 ---
 title: "Wide View (Basic) | Microsoft Docs"
-ms.custom: ""
 ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 9abb63b8-6d02-4e24-9c0e-2d15a04e9051
-caps.latest.revision: 8
 ---
 # Wide View (Basic)
 

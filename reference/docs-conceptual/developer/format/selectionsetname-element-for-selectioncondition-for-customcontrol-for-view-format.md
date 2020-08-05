@@ -1,13 +1,6 @@
 ---
 title: "SelectionSetName Element for SelectionCondition for CustomControl for View (Format) | Microsoft Docs"
-ms.custom: ""
 ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: a52b05a9-762e-4f1c-ad57-9d1710149722
-caps.latest.revision: 10
 ---
 # SelectionSetName Element for SelectionCondition for CustomControl for View (Format)
 

@@ -1,13 +1,6 @@
 ---
 title: "RemoteRunspace01 Sample | Microsoft Docs"
-ms.custom: ""
 ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 302f00ef-e145-4668-a26a-03bc96ef4b8f
-caps.latest.revision: 10
 ---
 # RemoteRunspace01 Sample
 

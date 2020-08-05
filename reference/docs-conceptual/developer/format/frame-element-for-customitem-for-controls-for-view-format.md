@@ -1,13 +1,6 @@
 ---
 title: "Frame Element for CustomItem for Controls for View (Format) | Microsoft Docs"
-ms.custom: ""
 ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: a5729091-78a9-4bc1-abac-210bc20c6dbe
-caps.latest.revision: 7
 ---
 # Frame Element for CustomItem for Controls for View (Format)
 

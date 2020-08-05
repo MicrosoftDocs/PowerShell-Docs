@@ -1,13 +1,6 @@
 ---
 title: "Confirmation Messages | Microsoft Docs"
-ms.custom: ""
 ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: a886a26d-7730-4586-aeac-fd3f0bc60b88
-caps.latest.revision: 8
 ---
 # Confirmation Messages
 

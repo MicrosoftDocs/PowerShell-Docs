@@ -1,15 +1,8 @@
 ---
 title: "Windows PowerShell Programmer&#39;s Guide | Microsoft Docs"
-ms.custom: ""
 ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
 helpviewer_keywords:
   - "Windows PowerShell Programmer's Guide"
-ms.assetid: f3aaf667-af84-4ea8-a5ad-d454d0d700b8
-caps.latest.revision: 9
 ---
 # Windows PowerShell Programmer&#39;s Guide
 

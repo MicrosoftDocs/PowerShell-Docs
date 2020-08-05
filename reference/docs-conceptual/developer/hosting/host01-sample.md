@@ -1,13 +1,6 @@
 ---
 title: "Host01 Sample | Microsoft Docs"
-ms.custom: ""
 ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 1fca30b1-13fe-48a2-b0dd-979c161177a6
-caps.latest.revision: 14
 ---
 # Host01 Sample
 

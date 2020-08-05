@@ -1,13 +1,6 @@
 ---
 title: "Cmdlet Samples | Microsoft Docs"
-ms.custom: ""
 ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: b99d53fc-0af9-426b-82ce-09955e031d4b
-caps.latest.revision: 13
 ---
 # Cmdlet Samples
 

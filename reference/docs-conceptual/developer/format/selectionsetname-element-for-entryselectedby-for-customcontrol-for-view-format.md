@@ -1,13 +1,6 @@
 ---
 title: "SelectionSetName Element for EntrySelectedBy for CustomControl for View (Format) | Microsoft Docs"
-ms.custom: ""
 ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 859d2335-7fcd-4efd-b1cc-3d171e334c6b
-caps.latest.revision: 7
 ---
 # SelectionSetName Element for EntrySelectedBy for CustomControl for View (Format)
 
