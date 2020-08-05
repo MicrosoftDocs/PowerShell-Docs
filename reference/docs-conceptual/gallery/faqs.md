@@ -212,7 +212,7 @@ other PackageManagement package providers. For example, when you are working wit
 galleries (such as the PowerShell Gallery), the PSModule package provider uses the NuGet Package
 Provider to work with the repository.
 
-![PowerShellGet Architecture](media/faqs/powershellgetArchitecture.png)
+![Diagram of the PowerShellGet Architecture](media/faqs/powershellgetArchitecture.png)
 
 Figure 1: PowerShellGet Architecture
 

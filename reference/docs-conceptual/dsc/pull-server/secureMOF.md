@@ -61,7 +61,7 @@ following:
  1. Run the configuration, which will set the Local Configuration Manager settings and start the DSC
     configuration.
 
-![Diagram1](media/secureMOF/CredentialEncryptionDiagram1.png)
+![Process flow for credential encryption](media/secureMOF/CredentialEncryptionDiagram1.png)
 
 ## Certificate Requirements
 

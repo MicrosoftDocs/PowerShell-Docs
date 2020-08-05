@@ -25,7 +25,7 @@ OR <kbd>Cmd</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd> on macOS) and type in "ISE Mode"
 
 This command automatically applies the settings described below The result looks like this:
 
-![ISE Mode](media/How-To-Replicate-the-ISE-Experience-In-VSCode/3-ise-mode.png)
+![Visual Studio Code in ISE Mode](media/How-To-Replicate-the-ISE-Experience-In-VSCode/3-ise-mode.png)
 
 ## ISE Mode configuration settings
 
@@ -56,7 +56,7 @@ ISE Mode makes the following changes to VS Code settings.
   These settings hide the "Activity Bar" and the "Debug Side Bar" sections shown inside the red box
   below:
 
-  ![highlighted section includes Activity Bar and Debug Side Bar](media/How-To-Replicate-the-ISE-Experience-In-VSCode/1-highlighted-sidebar.png)
+  ![Highlighted section includes Activity Bar and Debug Side Bar](media/How-To-Replicate-the-ISE-Experience-In-VSCode/1-highlighted-sidebar.png)
 
   The end result looks like this:
 

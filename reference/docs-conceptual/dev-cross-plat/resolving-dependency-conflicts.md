@@ -14,7 +14,7 @@ modules in the same PowerShell session.
 
 If you've had this problem, you've seen an error message like this:
 
-![Assembly load conflict error message.](./media/resolving-dependency-conflicts/moduleconflict.png)
+![Assembly load conflict error message](./media/resolving-dependency-conflicts/moduleconflict.png)
 
 This article looks at some of the ways dependency conflicts occur in PowerShell and ways to mitigate
 dependency conflict issues. Even if you're not a module author, there are some tricks in here that

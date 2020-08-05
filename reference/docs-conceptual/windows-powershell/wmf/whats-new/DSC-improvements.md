@@ -95,7 +95,7 @@ See the snapshots below:
 
 - 'ConfigurationName' embedded in the generated MOF file.
 
-  ![Sample generated mof file](media/DSC-improvements/PartialGeneratedMof.png)
+  ![Sample generated MOF file](media/DSC-improvements/PartialGeneratedMof.png)
 
 - FileName in the pull configuration repository
 
@@ -408,12 +408,12 @@ published configuration(s). Below is a complete example of signature validation 
   Start-DscConfiguration -Path .\Test -Wait -Verbose -Force
   ```
 
-  ![ErrorUnsignedMofPushed](media/DSC-improvements/PushUnsignedMof.png)
+  ![Error - Unsigned MOF file pushed](media/DSC-improvements/PushUnsignedMof.png)
 
 - Sign the configuration file using code-signing certificate.
 
-  ![SignMofFile](media/DSC-improvements/SignMofFile.png)
+  ![Sign the MOF file](media/DSC-improvements/SignMofFile.png)
 
 - Try pushing the signed MOF file.
 
-  ![PushSignedMofFile](media/DSC-improvements/PushSignedMof.png)
+  ![Push the signed MOF file](media/DSC-improvements/PushSignedMof.png)
