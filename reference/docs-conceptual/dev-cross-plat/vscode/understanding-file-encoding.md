@@ -17,7 +17,7 @@ encoding to decide what bytes each character becomes.
 Similarly, when PowerShell runs a script it must convert the bytes in a file to characters to
 reconstruct the file into a PowerShell program. Since VS Code writes the file and PowerShell reads
 the file, they need to use the same encoding system. This process of parsing a PowerShell script
-goes: *bytes* -> *characters* -> *tokens* -> *abstract syntax tree* -> *execution*.
+goes: _bytes_ -> _characters_ -> _tokens_ -> _abstract syntax tree_ -> _execution_.
 
 Both VS Code and PowerShell are installed with a sensible default encoding configuration. However,
 the default encoding used by PowerShell has changed with the release of PowerShell Core (v6.x). To
@@ -53,12 +53,12 @@ Common reasons for encoding issues are:
 
 Often encoding errors present themselves as parse errors in scripts. If you find strange character
 sequences in your script, this can be the problem. In the example below, an en-dash (`–`) appears as
-the characters `â&euro;"`:
+the characters `â€"`:
 
 ```Output
 Send-MailMessage : A positional parameter cannot be found that accepts argument 'Testing FuseMail SMTP...'.
 At C:\Users\<User>\<OneDrive>\Development\PowerShell\Scripts\Send-EmailUsingSmtpRelay.ps1:6 char:1
-+ Send-MailMessage â&euro;"From $from â&euro;"To $recipient1 â&euro;"Subject $subject  ...
++ Send-MailMessage â€"From $from â€"To $recipient1 â€"Subject $subject  ...
 + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     + CategoryInfo          : InvalidArgument: (:) [Send-MailMessage], ParameterBindingException
     + FullyQualifiedErrorId : PositionalParameterNotFound,Microsoft.PowerShell.Commands.SendMailMessage
@@ -66,16 +66,16 @@ At C:\Users\<User>\<OneDrive>\Development\PowerShell\Scripts\Send-EmailUsingSmtp
 
 This problem occurs because VS Code encodes the character `–` in UTF-8 as the bytes
 `0xE2 0x80 0x93`. When these bytes are decoded as Windows-1252, they are interpreted as the
-characters `â&euro;"`.
+characters `â€"`.
 
 Some strange character sequences that you might see include:
 
 <!-- markdownlint-disable MD038 -->
-- `â&euro;"` instead of `–`
-- `â&euro;"` instead of `—`
+- `â€"` instead of `–`
+- `â€"` instead of `—`
 - `Ã„2` instead of `Ä`
 - `Â` instead of ` `  (a non-breaking space)
-- `Ã&copy;` instead of `é`
+- `Ã©` instead of `é`
 <!-- markdownlint-enable MD038 -->
 
 This handy [reference](https://www.i18nqa.com/debug/utf8-debug.html) lists the common patterns that
@@ -88,10 +88,10 @@ The PowerShell extension interacts with scripts in a number of ways:
 1. When scripts are edited in VS Code, the contents are sent by VS Code to the extension. The
    [Language Server Protocol][] mandates that this content is transferred in UTF-8. Therefore, it is
    not possible for the extension to get the wrong encoding.
-2. When scripts are executed directly in the Integrated Console, they're read from the file by
+1. When scripts are executed directly in the Integrated Console, they're read from the file by
    PowerShell directly. If PowerShell's encoding differs from VS Code's, something can go wrong
    here.
-3. When a script that is open in VS Code references another script that is not open in VS Code, the
+1. When a script that is open in VS Code references another script that is not open in VS Code, the
    extension falls back to loading that script's content from the file system. The PowerShell
    extension defaults to UTF-8 encoding, but uses [byte-order mark][], or BOM, detection to select
    the correct encoding.
@@ -228,13 +228,14 @@ See the following articles:
 - [@mklement0]'s [answer about PowerShell encoding on StackOverflow](https://stackoverflow.com/a/40098904).
 - [@rkeithhill]'s [blog post about dealing with BOM-less UTF-8 input in PowerShell](https://rkeithhill.wordpress.com/2010/05/26/handling-native-exe-output-encoding-in-utf8-with-no-bom/).
 
-It's not possible to force PowerShell to use a specific input encoding. PowerShell 5.1 and below
-default to Windows-1252 encoding when there's no BOM. For interoperability reasons, it's best to
+It's not possible to force PowerShell to use a specific input encoding. PowerShell 5.1 and below,
+running on Windows with the locale set to en-US, defaults to Windows-1252 encoding when there's no
+BOM. Other locale settings may use a different encoding. To ensure interoperability, it's best to
 save scripts in a Unicode format with a BOM.
 
 > [!IMPORTANT]
-> Any other tools you have that touch PowerShell scripts may be affected by your
-> encoding choices or re-encode your scripts to another encoding.
+> Any other tools you have that touch PowerShell scripts may be affected by your encoding choices or
+> re-encode your scripts to another encoding.
 
 ### Existing scripts
 
@@ -317,7 +318,7 @@ read:
   - [#1680](https://github.com/PowerShell/VSCode-powershell/issues/1680)
   - [#1744](https://github.com/PowerShell/VSCode-powershell/issues/1744)
   - [#1751](https://github.com/PowerShell/VSCode-powershell/issues/1751)
-- [The classic *Joel on Software* write up about Unicode](https://www.joelonsoftware.com/2003/10/08/the-absolute-minimum-every-software-developer-absolutely-positively-must-know-about-unicode-and-character-sets-no-excuses/)
+- [The classic _Joel on Software_ write up about Unicode](https://www.joelonsoftware.com/2003/10/08/the-absolute-minimum-every-software-developer-absolutely-positively-must-know-about-unicode-and-character-sets-no-excuses/)
 - [Encoding in .NET Standard](https://github.com/dotnet/standard/issues/260#issuecomment-289549508)
 
 [@mklement0]: https://github.com/mklement0

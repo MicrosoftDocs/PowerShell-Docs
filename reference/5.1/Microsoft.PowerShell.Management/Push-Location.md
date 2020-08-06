@@ -249,11 +249,11 @@ To manage location stacks, use the PowerShell Location cmdlets, as follows.
   `Set-Location` cmdlet.
 
 The unnamed default location stack is fully accessible only when it is the current location stack.
-If you make a named location stack the current location stack, you can no longer use
-`Push-Location` or `Pop-Location` cmdlets to add or get items from the default stack or use
-`Get-Location` command to display the locations in the unnamed stack. To make the unnamed stack the
-current stack, use the **StackName** parameter of the `Set-Location` cmdlet with a value of `$null`
-or an empty string (`""`).
+If you make a named location stack the current location stack, you can no longer use the
+`Push-Location` or `Pop-Location` cmdlets to add or get items from the default stack or use the
+`Get-Location` cmdlet to display the locations in the unnamed stack. To make the unnamed stack
+the current stack, use the **StackName** parameter of the `Set-Location` cmdlet with a value of
+`$null` or an empty string (`""`).
 
 You can also refer to `Push-Location` by its built-in alias, `pushd`. For more information, see
 [about_Aliases](../Microsoft.PowerShell.Core/About/about_Aliases.md).
