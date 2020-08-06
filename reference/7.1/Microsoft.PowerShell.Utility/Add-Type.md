@@ -3,7 +3,7 @@ external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 08/26/2019
+ms.date: 08/06/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/add-type?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Add-Type
@@ -588,11 +588,22 @@ the new type. Otherwise, this cmdlet doesn't generate any output.
 ## NOTES
 
 The types that you add exist only in the current session. To use the types in all sessions, add them
-to your PowerShell profile. For more information about the profile, see [about_Profiles](../Microsoft.PowerShell.Core/About/about_Profiles.md).
+to your PowerShell profile. For more information about the profile, see
+[about_Profiles](../Microsoft.PowerShell.Core/About/about_Profiles.md).
 
 Type names and namespaces must be unique within a session. You can't unload a type or change it. If
 you need to change the code for a type, you must change the name or start a new PowerShell session.
 Otherwise, the command fails.
+
+In Windows PowerShell (version 5.1 and below), you need to use `Add-Type` for anything that isn't
+already loaded. Most commonly, this applies to assemblies found in the Global Assembly Cache (GAC).
+In PowerShell 6 and higher, there is no GAC, so PowerShell installs its own assemblies in `$PSHome`.
+These assemblies are automatically loaded on request, so there's no need to use `Add-Type` to load
+them. However, using `Add-Type` is still permitted to allow scripts to be implicitly compatible with
+any version of PowerShell.
+
+Assemblies in the GAC can be loaded by type name, rather than by path. Loading assemblies from an
+arbitrary path requires `Add-Type`, since those assemblies cannot not be loaded automatically.
 
 ## RELATED LINKS
 
@@ -609,4 +620,3 @@ Otherwise, the command fails.
 [Platform Invoke (P/Invoke)](/dotnet/standard/native-interop/pinvoke)
 
 [Where-Object](../Microsoft.PowerShell.Core/Where-Object.md)
-
