@@ -221,7 +221,7 @@ representing the new stack context.
 ## NOTES
 
 PowerShell supports multiple runspaces per process. Each runspace has its own _current directory_.
-This is not that same as `[System.Environment]::CurrentDirectory`. This behavior can be an issue
+This is not the same as `[System.Environment]::CurrentDirectory`. This behavior can be an issue
 when calling .NET APIs or running native applications without providing explicit directory paths.
 
 Even if the location cmdlets did set the process-wide current directory, you can't depend on it
@@ -256,12 +256,12 @@ To manage location stacks, use the `*-Location` cmdlets, as follows:
 - To make a location stack the current location stack, use the **StackName** parameter of
   `Set-Location`.
 
-  The unnamed default location stack is fully accessible only when it is the current location
-  stack. If you make a named location stack the current location stack, you cannot no longer use
-  `Push-Location` or `Pop-Location` cmdlets add or get items from the default stack or use
-  `Get-Location` to display the locations in the unnamed stack. To make the unnamed stack the
-  current stack, use the **StackName** parameter of `Set-Location` with a value of `$null` or an
-  empty string ("").
+The unnamed default location stack is fully accessible only when it is the current location stack.
+If you make a named location stack the current location stack, you can no longer use the
+`Push-Location` or `Pop-Location` cmdlets to add or get items from the default stack or use the
+`Get-Location` cmdlet to display the locations in the unnamed stack. To make the unnamed stack
+the current stack, use the **StackName** parameter of the `Set-Location` cmdlet with a value of
+`$null` or an empty string (`""`).
 
 ## RELATED LINKS
 

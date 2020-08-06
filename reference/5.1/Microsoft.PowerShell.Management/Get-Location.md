@@ -264,7 +264,7 @@ Otherwise, it returns a **PathInfo** object.
 ## NOTES
 
 PowerShell supports multiple runspaces per process. Each runspace has its own _current directory_.
-This is not that same as `[System.Environment]::CurrentDirectory`. This behavior can be an issue
+This is not the same as `[System.Environment]::CurrentDirectory`. This behavior can be an issue
 when calling .NET APIs or running native applications without providing explicit directory paths.
 The `Get-Location` cmdlet returns the current directory of the current PowerShell runspace.
 
@@ -285,7 +285,7 @@ specify a stack name, PowerShell uses the current location stack. By default, th
 location is the current location stack, but you can use the `Set-Location` cmdlet to change the
 current location stack.
 
-To manage location stacks, use the PowerShellLocation cmdlets, as follows.
+To manage location stacks, use the PowerShell `*-Location` cmdlets, as follows.
 
 - To add a location to a location stack, use the `Push-Location` cmdlet.
 
@@ -302,10 +302,11 @@ To manage location stacks, use the PowerShellLocation cmdlets, as follows.
   `Set-Location` cmdlet.
 
 The unnamed default location stack is fully accessible only when it is the current location stack.
-If you make a named location stack the current location stack, you cannot no longer use the
-`Push-Location` or `Pop-Location` add or get items from the default stack or use this cmdlet command
-to display the locations in the unnamed stack. To make the unnamed stack the current stack, use the
-**StackName** parameter of the `Set-Location` cmdlet with a value of $null or an empty string ("").
+If you make a named location stack the current location stack, you can no longer use the
+`Push-Location` or `Pop-Location` cmdlets to add or get items from the default stack or use this
+cmdlet to display the locations in the unnamed stack. To make the unnamed stack the current stack,
+use the **StackName** parameter of the `Set-Location` cmdlet with a value of `$null` or an empty
+string (`""`).
 
 ## RELATED LINKS
 
