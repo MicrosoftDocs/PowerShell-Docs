@@ -153,7 +153,7 @@ Accept wildcard characters: True
 
 Specifies the location stack name that this cmdlet makes the current location stack. Enter a
 location stack name. To indicate the unnamed default location stack, type `$null` or an empty string
-("").
+(`""`).
 
 The `*-Location` cmdlets act on the current stack unless you use the **StackName** parameter to
 specify a different stack.
