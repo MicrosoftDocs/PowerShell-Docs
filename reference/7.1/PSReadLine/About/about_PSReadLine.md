@@ -181,6 +181,12 @@ Deletes the current logical line of a multiline buffer, enabling undo.
 
 - Vi command mode: `<d,d>`, `<d,_>`
 
+### DeletePreviousLines
+
+Deletes the previous requested logical lines and the current logical line in a multiline buffer.
+
+- Vi command mode: `<d,k>`
+
 ### DeleteNextLines
 
 Deletes the current logical line and the next requested logical lines in a multiline buffer.
