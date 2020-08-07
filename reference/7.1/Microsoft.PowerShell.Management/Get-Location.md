@@ -147,7 +147,7 @@ To see the current prompt function, type the following command: `Get-Content Fun
 Specifies the current location in the specified PowerShell drive that this cmdlet gets in the
 operation.
 
-For instance, if you are in the `Certificate:` drive, you can use this parameter to find your
+For instance, if you are in the `Cert:` drive, you can use this parameter to find your
 current location in the `C:` drive.
 
 ```yaml
@@ -185,10 +185,11 @@ Accept wildcard characters: False
 
 ### -Stack
 
-Indicates that this cmdlet displays the locations in the current location stack.
+Indicates that this cmdlet displays the locations added to the current location stack. You can add
+locations to stacks by using the `Push-Location` cmdlet.
 
 To display the locations in a different location stack, use the **StackName** parameter. For
-information about location stacks, see the Notes.
+information about location stacks, see the [Notes](#notes).
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -207,7 +208,7 @@ Accept wildcard characters: False
 Specifies, as a string array, the named location stacks. Enter one or more location stack names.
 
 To display the locations in the current location stack, use the **Stack** parameter. To make a
-location stack the current location stack, use the `Set-Location` parameter.
+location stack the current location stack, use the `Set-Location` cmdlet.
 
 This cmdlet cannot display the locations in the unnamed default stack unless it is the current
 stack.
@@ -241,8 +242,8 @@ You cannot pipe input to this cmdlet.
 
 ### System.Management.Automation.PathInfo or System.Management.Automation.PathInfoStack
 
-If you use the **Stack** or **StackName** parameters, this cmdlet returns a **StackInfo** object.
-Otherwise, it returns a **PathInfo** object.
+If you use the **Stack** or **StackName** parameters, this cmdlet returns a **PathInfoStack**
+object. Otherwise, it returns a **PathInfo** object.
 
 ## NOTES
 

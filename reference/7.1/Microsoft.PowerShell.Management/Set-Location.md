@@ -38,9 +38,9 @@ Set-Location [-PassThru] [-StackName <String>] [<CommonParameters>]
 The `Set-Location` cmdlet sets the working location to a specified location. That location could be
 a directory, a subdirectory, a registry location, or any provider path.
 
-PowerShell 6.2 added support for `-` and `+` with the **Path** parameter. PowerShell maintains a
-history of the last 20 locations that can be access with `-` and `+`. This list is independent from
-the location stack that is accessed using the **StackName** parameter.
+PowerShell 6.2 added support for `-` and `+` as a values for the **Path** parameter. PowerShell
+maintains a history of the last 20 locations that can be accessed with `-` and `+`. This list is
+independent from the location stack that is accessed using the **StackName** parameter.
 
 ## EXAMPLES
 
@@ -157,12 +157,12 @@ Specify the path of a new working location. If no path is provided, `Set-Locatio
 current user's home directory. When wildcards are used, the cmdlet chooses the first path that
 matches the wildcard pattern.
 
-PowerShell keeps a history of the last 20 locations you have set. If the path is the `-` character,
-then the new working location will be the previous working location in history (if it exists).
-Similarly, if the path is the `+` character, then the new working location will be the next working
-location in history (if it exists). This is similar to using `Pop-Location` and `Push-Location`
-except that the history is a list, not a stack, and is implicitly tracked, not manually controlled.
-Currently, there is no way to view the history list.
+PowerShell keeps a history of the last 20 locations you have set. If the **Path** parameter value
+is the `-` character, then the new working location will be the previous working location in history
+(if it exists). Similarly, if the value is the `+` character, then the new working location will be
+the next working location in history (if it exists). This is similar to using `Pop-Location` and
+`Push-Location` except that the history is a list, not a stack, and is implicitly tracked,
+not manually controlled. Currently, there is no way to view the history list.
 
 ```yaml
 Type: System.String
@@ -180,7 +180,7 @@ Accept wildcard characters: True
 
 Specifies the location stack name that this cmdlet makes the current location stack. Enter a
 location stack name. To indicate the unnamed default location stack, type `$null` or an empty string
-("").
+(`""`).
 
 The `*-Location` cmdlets act on the current stack unless you use the **StackName** parameter to
 specify a different stack. For more information about location stacks, see the [Notes](#notes).
