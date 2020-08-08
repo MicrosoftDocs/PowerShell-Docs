@@ -21,7 +21,7 @@ For example, if you type:
 
 `Write-Host book`
 
-PowerShell breaks the following command into two tokens, `Write-Host` and
+PowerShell breaks the command into two tokens, `Write-Host` and
 `book`, and interprets each token independently.
 
 When processing a command, the PowerShell parser operates in expression mode
@@ -30,27 +30,37 @@ or in argument mode:
 - In expression mode, character string values must be contained in
   quotation marks. Numbers not enclosed in quotation marks are treated as
   numerical values (rather than as a series of characters).
+  Initial unary operators, like `.`, `+` or `[int]`,
+  introduce the corresponding operation.
+  Variable references are evaluated. Splatting is forbidden.
+  Anything else will be treated as a command to be invoked.
 
 - In argument mode, each value is treated as an expandable string unless it
   begins with one of the following special characters: dollar sign (`$`), at
-  sign (`@`), single quotation mark (`'`), double quotation mark (`"`), or an
-  opening parenthesis (`(`).
+  sign (`@`), single quotation mark (`'`), double quotation mark (`"`), or a
+  parenthesis (`(`, `)`).  If preceded by one of these characters,
+  the value is treated as a value expression,
+  except for `$`, which is treated like an ordinary character
+  if not part of a valid variable reference.
 
-If preceded by one of these characters, the value is treated as a value
-expression.
-
-The following table provides several examples of commands processed in
-expression mode and argument mode and the results produced by those
-commands.
+The following table provides several examples of values processed in
+expression mode and argument mode and the evaluation of those
+values.
 
 |       Example        |    Mode    |      Result       |
 | -------------------- | ---------- | ----------------- |
 | `2+2`                | Expression | 4 (integer)       |
-| `Write-Output 2+2`   | Argument   | "2+2" (string)    |
-| `Write-Output (2+2)` | Expression | 4 (integer)       |
-| `$a = 2+2`           | Expression | \$a = 4 (integer) |
-| `Write-Output $a`    | Expression | 4 (integer)       |
-| `Write-Output $a/H`  | Argument   | "4/H" (string)    |
+| `echo 2+2`           | Argument   | "2+2" (string)    |
+| `echo(2+2)`          | Expression | 4 (integer)       |
+| `echo $a`            | Expression | 4 (integer)       |
+| `echo $-`            | Argument   | "$-" (string)     |
+| `echo $a/H`          | Argument   | "4/H" (string)    |
+| `` `2+2``            | Expression | "2+2" (command)   |
+| `$a`                 | Expression | 4 (integer)       |
+| `$a/H`               | Expression | error             |
+| `H/$a`               | Expression | "H/$a" (command)  |
+| `a$(2)`              | Expression | "a$(2)" (command) |
+
 
 Every token can be interpreted as some kind of object type, such as Boolean
 or string. PowerShell attempts to determine the object type from the
