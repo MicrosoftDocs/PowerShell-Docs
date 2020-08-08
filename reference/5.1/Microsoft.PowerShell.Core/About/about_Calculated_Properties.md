@@ -40,7 +40,7 @@ attributes names as keys in the hashtable.
   - `expression`
 
 - `ConvertTo-Html`
-  - `name`/`label` - optional
+  - `name`/`label` - optional (added in PowerShell 6.x)
   - `expression`
   - `width` - optional
   - `alignment` - optional
@@ -72,7 +72,8 @@ attributes names as keys in the hashtable.
   - `expression`
 
 - `Measure-Object`
-  - Only supports a script block for the expression, not a hashtable.
+  - Not supported in PowerShell 5.1 and lower. Only supports a script block for
+    the expression, not a hashtable.
 
 - `Select-Object`
   - `name`/`label` - optional
@@ -136,7 +137,10 @@ Calculated properties allow you to control how the table is presented.
 Get-Alias |
   ConvertTo-Html Name,
                  Definition,
-                 @{n='ParamCount';e={$_.Parameters.Keys.Count};align='center'} |
+                 @{
+                    expr={$_.Parameters.Keys.Count}
+                    align='center'
+                 } |
     Out-File .\aliases.htm -Force
 ```
 
@@ -205,7 +209,7 @@ In this example, we use calculated properties to change the name and format of
 the output from `Get-ChildItem`.
 
 ```powershell
-Get-ChildItem ..\*.json -File |
+Get-ChildItem *.json -File |
   Format-List Fullname,
               @{
                  name='Modified'
@@ -234,6 +238,9 @@ Size     : 324.60
 ```
 
 ### Format-Table
+
+In this example, the calculated property adds a **Type** property used to
+classify the files by the content type.
 
 ```powershell
 Get-ChildItem -File |
@@ -328,7 +335,6 @@ of files of each content type.
 Get-ChildItem -File |
   Sort-Object extension |
     Group-Object -NoElement -Property @{
-      name='Type'
       expression={
         switch ($_.extension) {
           '.md'   {'Content'}
@@ -385,7 +391,12 @@ the **ParameterCount** property.
 
 ```powershell
 $aliases = Get-Alias c* |
-  Select Name,Definition,@{n='ParameterCount';e={$_.Parameters.Keys.Count}}
+  Select-Object Name,
+                Definition,
+                @{
+                    name='ParameterCount'
+                    expr={$_.Parameters.Keys.Count}
+                }
 $aliases | Get-Member
 $aliases
 ```
