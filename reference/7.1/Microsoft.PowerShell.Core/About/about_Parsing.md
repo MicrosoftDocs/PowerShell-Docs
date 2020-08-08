@@ -45,7 +45,7 @@ or in argument mode:
 
 The following table provides several examples of values processed in
 expression mode and argument mode and the evaluation of those
-values.
+values.  We assume that the value of the variable `a` is `4`.
 
 |       Example        |    Mode    |      Result       |
 | -------------------- | ---------- | ----------------- |
@@ -55,6 +55,9 @@ values.
 | `echo $a`            | Expression | 4 (integer)       |
 | `echo $-`            | Argument   | "$-" (string)     |
 | `echo $a/H`          | Argument   | "4/H" (string)    |
+| `echo a$a`           | Argument   | "a4" (string)     |
+| `echo a'$a'`         | Argument   | "a$a" (string)    |
+| `echo a"$a"`         | Argument   | "a4" (string)     |
 | `` `2+2``            | Expression | "2+2" (command)   |
 | `$a`                 | Expression | 4 (integer)       |
 | `$a/H`               | Expression | error             |
