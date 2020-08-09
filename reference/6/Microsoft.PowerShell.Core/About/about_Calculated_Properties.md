@@ -28,8 +28,9 @@ pairs.
 
 ## Supported cmdlets
 
-The following cmdlets support calculated properties using the listed property
-attributes names as keys in the hashtable.
+The following cmdlets support calculated property values for the **Property**
+parameter. The calculated properties use the following attribute names as keys
+in the hashtable.
 
 > [!NOTE]
 > The `expression` attribute can be a script block instead of a hashtable. For
@@ -54,8 +55,8 @@ attributes names as keys in the hashtable.
   - `expression`
   - `formatstring` - optional
 
-  This same set of attributes also applies to the `-GroupBy` properties for all
-  `Format-*` cmdlets.
+  This same set of attributes also applies to the property values passed to the
+  **GroupBy** parameter for all `Format-*` cmdlets.
 
 - `Format-Table`
   - `name`/`label` - optional
@@ -72,8 +73,8 @@ attributes names as keys in the hashtable.
   - `expression`
 
 - `Measure-Object`
-  - Not supported in PowerShell 5.1 and lower. Only supports a script block for
-    the expression, not a hashtable.
+  - Only supports a script block for the expression, not a hashtable.
+  - Not supported in PowerShell 5.1 and older.
 
 - `Select-Object`
   - `name`/`label` - optional
@@ -114,7 +115,7 @@ used in lieu of `Expression`.
 
 With calculated properties, you can control how the properties of the input
 objects are compared. In this example, rather than comparing the values
-directly, the values are compared to result of the arithmetic operation
+directly, the values are compared to the result of the arithmetic operation
 (modulus of 2).
 
 ```powershell
@@ -146,8 +147,8 @@ Get-Alias |
 ```
 
 This example creates an HTML table containing a list of PowerShell aliases and
-the number parameters for each aliased command. The values of **ParamCount**
-column are centered.
+the number parameters for each aliased command. The values of
+**ParameterCount** column are centered.
 
 ### Format-Custom
 
@@ -379,7 +380,7 @@ Property          : ($_ % 3) -eq 0
 
 > [!NOTE]
 > Unlike the other cmdlets, `Measure-Object` does not accept a hashtable for
-> calculated properties. You must only use a script block.
+> calculated properties. You must use a script block.
 
 ### Select-Object
 
@@ -496,6 +497,8 @@ Date       Salesperson UnitsSold
   _output_ but they do not terminate the statement.
 
 ## See Also
+
+[about_Hash_Tables](about_hash_tables.md)
 
 [Compare-Object](xref:Microsoft.PowerShell.Utility.Compare-Object)
 
