@@ -10,7 +10,7 @@ title: about_Calculated_Properties
 ## Short Description
 
 PowerShell provides the ability to dynamically add new properties and alter
-the formatting of objects in the pipeline.
+the formatting of objects output to the pipeline.
 
 ## Long Description
 
@@ -29,9 +29,9 @@ The following cmdlets support calculated property values for the **Property**
 parameter. The `Format-*` cmdlets also support calculated values for the
 **GroupBy** parameter.
 
-Each cmdlet supports a different set of attributes.
-The calculated properties use the following attribute names as keys
-in the hashtable.
+Each cmdlet supports a different set of attributes. The following list itemizes
+the cmdlets that support calculated properties and the attributes that are
+supported by each cmdlet.
 
 - `Compare-Object`
   - `expression`
