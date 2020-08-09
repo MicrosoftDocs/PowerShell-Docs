@@ -18,10 +18,9 @@ A number of PowerShell cmdlets transform, aggregate, or process input objects
 into output objects using parameters that allow the addition of new properties
 to those output objects. These parameters can be used to generate new,
 calculated properties on output objects based on the values of input objects.
-The calculated property is defined by attributes that specify the name of the
-new property, an expression to calculate the value, and optional formatting
-information. These attributes are supplied to the cmdlet parameters as a
-[hashtable](about_hash_tables.md) containing the attributes as key-value pairs.
+The calculated property is defined by a [hashtable](about_hash_tables.md)
+containing key-value pairs that specify the name of the new property, an
+expression to calculate the value, and optional formatting information.
 
 ## Supported cmdlets
 
@@ -29,9 +28,8 @@ The following cmdlets support calculated property values for the **Property**
 parameter. The `Format-*` cmdlets also support calculated values for the
 **GroupBy** parameter.
 
-Each cmdlet supports a different set of attributes. The following list itemizes
-the cmdlets that support calculated properties and the attributes that are
-supported by each cmdlet.
+The following list itemizes the cmdlets that support calculated properties and
+the key-value pairs that are supported by each cmdlet.
 
 - `Compare-Object`
   - `expression`
@@ -51,8 +49,8 @@ supported by each cmdlet.
   - `expression`
   - `formatstring` - optional
 
-  This same set of attributes also applies to the property values passed to the
-  **GroupBy** parameter for all `Format-*` cmdlets.
+  This same set of key-value pairs also apply to calculated property values
+  passed to the **GroupBy** parameter for all `Format-*` cmdlets.
 
 - `Format-Table`
   - `name`/`label` - optional
@@ -81,10 +79,10 @@ supported by each cmdlet.
   - `ascending`/`descending` - optional
 
 > [!NOTE]
-> The `expression` attribute can be a script block instead of a hashtable. For
-> more information, see the [Notes](#notes) section.
+> The value of the `expression` can be a script block instead of a
+> hashtable. For more information, see the [Notes](#notes) section.
 
-## Attribute definitions
+## Hashtable key definitions
 
 - `name`/`label` - Specifies the name of the property being created. You can
   use `name` or its alias, `label`, interchangeably.
@@ -98,7 +96,7 @@ supported by each cmdlet.
 - `width` - Specifies the maximum width column in a table when the value is
   displayed. The value must be greater than `0`.
 - `depth` - The **Depth** parameter of `Format-Custom` specifies the depth of
-  expansion for all properties. The `depth` attribute allows you to specify the
+  expansion for all properties. The `depth` key allows you to specify the
   depth of expansion per property.
 - `ascending` / `descending` - Allows you to specify the order of sorting for
   one or more properties. These are boolean values.
@@ -152,15 +150,15 @@ the number parameters for each aliased command. The values of
 `Format-Custom` provides a custom view of an object in a format similar to a
 class definition. More complex objects can contain members that are deeply
 nested with complex types. The **Depth** parameter of `Format-Custom` specifies
-the depth of expansion for all properties. The `depth` attribute allows you to
+the depth of expansion for all properties. The `depth` key allows you to
 specify the depth of expansion per property.
 
-In this example, the `depth` attribute simplifies the custom output for the
+In this example, the `depth` key simplifies the custom output for the
 `Get-Date` cmdlet. `Get-Date` returns a **DateTime** object. The **Date**
 property of this object is also a **DateTime** object, so the object is nested.
 
 ```powershell
-Get-Date | Format-Custom @{e={$_.Date};depth=1},TimeOfDay
+Get-Date | Format-Custom @{expr={$_.Date};depth=1},TimeOfDay
 ```
 
 ```Output
