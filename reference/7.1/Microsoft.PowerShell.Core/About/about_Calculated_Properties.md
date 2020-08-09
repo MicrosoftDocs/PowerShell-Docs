@@ -9,33 +9,29 @@ title: about_Calculated_Properties
 
 ## Short Description
 
-Calculated properties allow you to dynamically add properties and formatting to
-objects in the pipeline.
+PowerShell provides the ability to dynamically add new properties and alter
+the formatting of objects in the pipeline.
 
 ## Long Description
 
-There are several cmdlets that operate on properties of objects. PowerShell
-provides a method to create calculated properties. Calculated properties
-dynamically create new properties that are added to the output object and can
-provide custom formatting for an existing property.
-
-Each cmdlet that supports calculated properties has a specific set of
-attributes that describe the property. The attributes define the name of the
-property, an expression to calculate the value, and optional formatting
-information. A calculated property is defined using a
-[hashtable](about_hash_tables.md) containing these attributes as key-value
-pairs.
+A number of PowerShell cmdlets transform, aggregate, or process input objects
+into output objects using parameters that allow the addition of new properties
+to those output objects. These parameters can be used to generate new,
+calculated properties on output objects based on the values of input objects.
+The calculated property is defined by attributes that specify the name of the
+new property, an expression to calculate the value, and optional formatting
+information. These attributes are supplied to the cmdlet parameters as a
+[hashtable](about_hash_tables.md) containing the attributes as key-value pairs.
 
 ## Supported cmdlets
 
 The following cmdlets support calculated property values for the **Property**
-parameter. The calculated properties use the following attribute names as keys
-in the hashtable.
+parameter. The `Format-*` cmdlets also support calculated values for the
+**GroupBy** parameter.
 
-> [!NOTE]
-> The `expression` attribute can be a script block instead of a hashtable. For
-> more information, see the [Notes](#notes) section. For descriptions of these
-> attibutes, see [Attribute definitions](#attribute-definitions).
+Each cmdlet supports a different set of attributes.
+The calculated properties use the following attribute names as keys
+in the hashtable.
 
 - `Compare-Object`
   - `expression`
@@ -84,7 +80,9 @@ in the hashtable.
   - `expression`
   - `ascending`/`descending` - optional
 
-For more information, see the [Examples](#examples) section of this article.
+> [!NOTE]
+> The `expression` attribute can be a script block instead of a hashtable. For
+> more information, see the [Notes](#notes) section.
 
 ## Attribute definitions
 
