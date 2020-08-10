@@ -3,7 +3,7 @@ external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 5/10/2019
+ms.date: 08/10/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/measure-object?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Measure-Object
@@ -440,6 +440,10 @@ Accept wildcard characters: False
 Specifies one or more properties to measure. If you do not specify any other measures,
 `Measure-Object` counts the objects that have the properties you specify.
 
+The value of the **Property** parameter can be a new calculated property. The calculated property
+must be a script block. For more information, see
+[about_Calculated_Properties](../Microsoft.PowerShell.Core/About/about_Calculated_Properties.md).
+
 ```yaml
 Type: Microsoft.PowerShell.Commands.PSPropertyExpression[]
 Parameter Sets: (All)
@@ -534,7 +538,9 @@ You can pipe objects to `Measure-Object`.
 
 ## OUTPUTS
 
-### Microsoft.PowerShell.Commands.GenericMeasureInfo, Microsoft.PowerShell.Commands.TextMeasureInfo, Microsoft.PowerShell.Commands.GenericObjectMeasureInfo
+### Microsoft.PowerShell.Commands.GenericMeasureInfo
+
+### Microsoft.PowerShell.Commands.TextMeasureInfo
 
 If you use the **Word** parameter, `Measure-Object` returns a **TextMeasureInfo** object.
 Otherwise, it returns a **GenericMeasureInfo** object.
@@ -542,6 +548,8 @@ Otherwise, it returns a **GenericMeasureInfo** object.
 ## NOTES
 
 ## RELATED LINKS
+
+[about_Calculated_Properties](../Microsoft.PowerShell.Core/About/about_Calculated_Properties.md)
 
 [Compare-Object](Compare-Object.md)
 

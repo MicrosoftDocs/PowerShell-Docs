@@ -174,12 +174,15 @@ Accept wildcard characters: False
 Specifies the output in groups based on a shared property or value. Enter an expression or a
 property of the output.
 
-The value of the **GroupBy** parameter can be a new calculated property. To create a calculated,
-property, use a hash table. Valid keys are:
+The value of the **GroupBy** parameter can be a new calculated property. The calculated property can
+be a script block or a hash table. Valid key-value pairs are:
 
-- Name (or Label) \<string\>
-- Expression \<string\> or \<script block\>
-- FormatString \<string\>
+- Name (or Label) - `<string>`
+- Expression - `<string>` or `<script block>`
+- FormatString - `<string>`
+
+For more information, see
+[about_Calculated_Properties](../Microsoft.PowerShell.Core/About/about_Calculated_Properties.md).
 
 ```yaml
 Type: System.Object
@@ -219,12 +222,15 @@ If you omit this parameter, the properties that appear in the display depend on 
 displayed. The parameter name "Property" is optional. You cannot use the **Property** and **View**
 parameters in the same command.
 
-The value of the **Property** parameter can be a new calculated property. To create a calculated
-property, use a hash table. Valid keys are:
+The value of the **Property** parameter can be a new calculated property. The calculated property
+can be a script block or a hash table. Valid key-value pairs are:
 
-- Name (or Label) \<string\>
-- Expression \<string\> or \<script block\>
-- FormatString \<string\>
+- Name (or Label) - `<string>`
+- Expression - `<string>` or `<script block>`
+- FormatString - `<string>`
+
+For more information, see
+[about_Calculated_Properties](../Microsoft.PowerShell.Core/About/about_Calculated_Properties.md).
 
 ```yaml
 Type: System.Object[]
@@ -317,6 +323,8 @@ a table, use `Format-Custom`.
 
 ## RELATED LINKS
 
+[about_Calculated_Properties](../Microsoft.PowerShell.Core/About/about_Calculated_Properties.md)
+
 [Format-Custom](Format-Custom.md)
 
 [Format-Hex](Format-Hex.md)
@@ -324,4 +332,3 @@ a table, use `Format-Custom`.
 [Format-Table](Format-Table.md)
 
 [Format-Wide](Format-Wide.md)
-

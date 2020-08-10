@@ -3,7 +3,7 @@ external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 06/18/2020
+ms.date: 08/10/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/compare-object?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Compare-Object
@@ -310,8 +310,10 @@ Accept wildcard characters: False
 Indicates that this cmdlet displays only the characteristics of compared objects that are equal. The
 differences between the objects are discarded.
 
-As of PowerShell 7.1, when using the **ExcludeDifferent** parameter, **IncludeEqual** is inferred
-and the output only contains objects that are equal.
+Use **ExcludeDifferent** with **IncludeEqual** to display only the lines that match between the
+**reference** and **difference** objects.
+
+If **ExcludeDifferent** is specified without **IncludeEqual**, there's no output.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -364,6 +366,14 @@ Accept wildcard characters: False
 ### -Property
 
 Specifies an array of properties of the **reference** and **difference** objects to compare.
+
+The value of the **Property** parameter can be a new calculated property. The calculated property
+can be a script block or a hash table. Valid key-value pairs are:
+
+- Expression - `<string>` or `<script block>`
+
+For more information, see
+[about_Calculated_Properties](../Microsoft.PowerShell.Core/About/about_Calculated_Properties.md).
 
 ```yaml
 Type: System.Object[]
@@ -449,6 +459,8 @@ When using the **PassThru** parameter, the output displayed in the console may n
 [Example 3](#ex3) in this article.
 
 ## Related links
+
+[about_Calculated_Properties](../Microsoft.PowerShell.Core/About/about_Calculated_Properties.md)
 
 [ForEach-Object](../Microsoft.PowerShell.Core/ForEach-Object.md)
 

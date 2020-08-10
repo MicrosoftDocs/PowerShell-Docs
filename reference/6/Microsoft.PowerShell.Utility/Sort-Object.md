@@ -40,7 +40,7 @@ Sort-Object [-Descending] [-Unique] -Bottom <Int32> [-InputObject <PSObject>] [[
 ## DESCRIPTION
 
 The `Sort-Object` cmdlet sorts objects in ascending or descending order based on object property
-values. If sort properties are not included in a command, PowerShell uses default sort properties 
+values. If sort properties are not included in a command, PowerShell uses default sort properties
 of the first input object. If the type of the input object has no default sort properties,
 PowerShell attempts to compare the objects themselves. For more information, see the [Notes](#notes)
 section.
@@ -486,9 +486,11 @@ use a hash table.
 
 Valid keys for a hash table are as follows:
 
-- Expression \<string\> or \<script block\>
-- Ascending \<Boolean\>
-- Descending \<Boolean\>
+- `expression` - `<string>` or `<script block>`
+- `ascending` or `descending` - `<boolean>`
+
+For more information, see
+[about_Calculated_Properties](../Microsoft.PowerShell.Core/About/about_Calculated_Properties.md).
 
 ```yaml
 Type: System.Object[]
@@ -601,6 +603,8 @@ see [ServiceControllerStatus](/dotnet/api/system.serviceprocess.servicecontrolle
 The performance of the sorting algorithm is slower when doing a stable sort.
 
 ## RELATED LINKS
+
+[about_Calculated_Properties](../Microsoft.PowerShell.Core/About/about_Calculated_Properties.md)
 
 [about_Hash_Tables](../Microsoft.PowerShell.Core/About/about_Hash_Tables.md)
 
