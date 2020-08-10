@@ -3,7 +3,7 @@ external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 06/09/2017
+ms.date: 08/10/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/convertto-html?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: ConvertTo-Html
@@ -358,7 +358,16 @@ Accept wildcard characters: False
 ### -Property
 
 Includes the specified properties of the objects in the HTML. The value of the **Property**
-parameter can be a new calculated property.
+parameter can be a new calculated property. The calculated property can be a script block or a hash
+table. Valid key-value pairs are:
+
+- Expression - `<string>` or `<script block>`
+- FormatString - `<string>`
+- Width - `<int32>` - must be greater than `0`
+- Alignment - value can be `Left`, `Center`, or `Right`
+
+For more information, see
+[about_Calculated_Properties](../Microsoft.PowerShell.Core/About/about_Calculated_Properties.md).
 
 ```yaml
 Type: System.Object[]
@@ -429,6 +438,8 @@ quite different.
    `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"   "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"\>`
 
 ## RELATED LINKS
+
+[about_Calculated_Properties](../Microsoft.PowerShell.Core/About/about_Calculated_Properties.md)
 
 [ConvertTo-Csv](ConvertTo-Csv.md)
 

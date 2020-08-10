@@ -3,7 +3,7 @@ external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 12/04/2019
+ms.date: 08/10/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/group-object?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Group-Object
@@ -76,8 +76,8 @@ displays the integers from 1 to 20, grouped by odds and even.
 ```Output
 Count Name                      Group
 ----- ----                      -----
-   10 1                         {1, 3, 5, 7...}
    10 0                         {2, 4, 6, 8...}
+   10 1                         {1, 3, 5, 7...}
 ```
 
 ### Example 3: Group event log events by EntryType
@@ -323,9 +323,13 @@ Accept wildcard characters: False
 Specifies the properties for grouping. The objects are arranged into groups based on the value of
 the specified property.
 
-The value of the **Property** parameter can be a new calculated property. To create a calculated,
-property, create a hash table with an **Expression** key that specifies a string or script block
-value.
+The value of the **Property** parameter can be a new calculated property. The calculated property
+can be a script block or a hash table. Valid key-value pairs are:
+
+- Expression - `<string>` or `<script block>`
+
+For more information, see
+[about_Calculated_Properties](../Microsoft.PowerShell.Core/About/about_Calculated_Properties.md).
 
 ```yaml
 Type: System.Object[]
@@ -390,6 +394,8 @@ following rules:
   in the final **GroupInfo** object output in a group named `AutomationNull.Value`.
 
 ## RELATED LINKS
+
+[about_Calculated_Properties](../Microsoft.PowerShell.Core/About/about_Calculated_Properties.md)
 
 [about_Hash_Tables](../Microsoft.PowerShell.Core/About/about_Hash_Tables.md)
 

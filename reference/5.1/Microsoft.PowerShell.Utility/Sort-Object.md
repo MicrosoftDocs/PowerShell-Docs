@@ -3,7 +3,7 @@ external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 03/20/2020
+ms.date: 08/10/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/sort-object?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Sort-Object
@@ -400,9 +400,11 @@ use a hash table.
 
 Valid keys for a hash table are as follows:
 
-- Expression \<string\> or \<script block\>
-- Ascending \<Boolean\>
-- Descending \<Boolean\>
+- `expression` - `<string>` or `<script block>`
+- `ascending` or `descending` - `<boolean>`
+
+For more information, see
+[about_Calculated_Properties](../Microsoft.PowerShell.Core/About/about_Calculated_Properties.md).
 
 ```yaml
 Type: System.Object[]
@@ -476,6 +478,8 @@ values. For Windows services, **Stopped** has a value of **1** and **Running** h
 see [ServiceControllerStatus](/dotnet/api/system.serviceprocess.servicecontrollerstatus).
 
 ## RELATED LINKS
+
+[about_Calculated_Properties](../Microsoft.PowerShell.Core/About/about_Calculated_Properties.md)
 
 [about_Hash_Tables](../Microsoft.PowerShell.Core/About/about_Hash_Tables.md)
 
