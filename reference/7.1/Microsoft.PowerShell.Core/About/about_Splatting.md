@@ -47,6 +47,9 @@ parameters. You may pass some parameters by using splatting and pass others by
 position or by parameter name. Also, you can splat multiple objects in a single
 command so you don't pass more than one value for each parameter.
 
+As of PowerShell 7.1, you can also override a splatted parameter by explicitly
+defining a parameter in a command.
+
 ## Splatting with hash tables
 
 Use a hash table to splat parameter name and value pairs. You can use this
@@ -151,6 +154,8 @@ Hello World!
 
 ## Examples
 
+### Example 1
+
 This example shows how to reuse splatted values in different commands. The
 commands in this example use the `Write-Host` cmdlet to write messages to the
 host program console. It uses splatting to specify the foreground and
@@ -178,6 +183,8 @@ Write-Host "This is a test." @Colors
 #hash table does not matter.
 Write-Host @Colors "This is another test."
 ```
+
+### Example 2
 
 This example shows how to forward their parameters to other commands by using
 splatting and the `$PSBoundParameters` automatic variable.
@@ -222,6 +229,18 @@ Test2 -a 1 -b 2 -c 3
 3
 2
 3
+```
+
+### Example 3
+
+This example shows how to override a splatted parameter using explicitly
+defined parameters. This is useful when you don't want to build a new hashtable
+or change a value in the hashtable you are using to splat.
+
+```powershell
+$param = @{
+
+}
 ```
 
 ## Splatting command parameters
@@ -336,4 +355,3 @@ information, see Gael Colas' article [Pseudo-Splatting DSC Resources](https://ga
 [about_Hash_Tables](about_Hash_Tables.md)
 
 [about_Parameters](about_Parameters.md)
-
