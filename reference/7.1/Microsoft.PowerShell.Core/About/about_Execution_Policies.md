@@ -1,7 +1,7 @@
 ---
 keywords: powershell,cmdlet
 Locale: en-US
-ms.date: 02/19/2020
+ms.date: 08/10/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_execution_policies?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Execution_Policies
@@ -93,7 +93,7 @@ execution policies are as follows:
 
 - There is no execution policy set in the current scope.
 - If the execution policy in all scopes is **Undefined**, the effective
-  execution policy is **Restricted**, which is the default execution policy.
+  execution policy is the default execution policy.
 
 ### Unrestricted
 
