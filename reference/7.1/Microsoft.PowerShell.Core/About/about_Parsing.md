@@ -93,20 +93,26 @@ values.  We assume that the value of the variable `a` is `4`.
 
 |       Example        |    Mode    |      Result       |
 | -------------------- | ---------- | ----------------- |
+| `2`                  | Expression | 2 (integer)       |
+| `` `2``              | Expression | "2" (command)     |
+| `echo 2`             | Expression | 2 (integer)       |
 | `2+2`                | Expression | 4 (integer)       |
 | `echo 2+2`           | Argument   | "2+2" (string)    |
 | `echo(2+2)`          | Expression | 4 (integer)       |
-| `echo $a`            | Expression | 4 (integer)       |
-| `echo $-`            | Argument   | "$-" (string)     |
-| `echo $a/H`          | Argument   | "4/H" (string)    |
-| `echo a$a`           | Argument   | "a4" (string)     |
-| `echo a'$a'`         | Argument   | "a$a" (string)    |
-| `echo a"$a"`         | Argument   | "a4" (string)     |
-| `` `2+2``            | Expression | "2+2" (command)   |
 | `$a`                 | Expression | 4 (integer)       |
-| `$a/H`               | Expression | error             |
-| `H/$a`               | Expression | "H/$a" (command)  |
+| `echo $a`            | Expression | 4 (integer)       |
+| `$a+2`               | Expression | 6 (integer)       |
+| `echo $a+2`          | Argument   | 4+2 (string)      |
+| `$-`                 | Argument   | "$-" (command)    |
+| `echo $-`            | Argument   | "$-" (string)     |
+| `a$a`                | Expression | "a$a" (command)   |
+| `echo a$a`           | Argument   | "a4" (string)     |
+| `a'$a'`              | Expression | "a$a" (command)   |
+| `echo a'$a'`         | Argument   | "a$a" (string)    |
+| `a"$a"`              | Expression | "a$a" (command)   |
+| `echo a"$a"`         | Argument   | "a4" (string)     |
 | `a$(2)`              | Expression | "a$(2)" (command) |
+| `echo a$(2)`         | Argument   | "a2" (string)     |
 
 
 Every token can be interpreted as some kind of object type, such as Boolean
