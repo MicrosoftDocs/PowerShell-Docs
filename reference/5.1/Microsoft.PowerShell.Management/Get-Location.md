@@ -64,7 +64,7 @@ directory.
 
 This example demonstrates the use of `Get-Location` to display your current location in different
 PowerShell drives. `Set-Location` is used to change the location to several different paths on
-different **PSDrives**.
+different PSDrives.
 
 ```powershell
 PS C:\> Set-Location C:\Windows
@@ -76,22 +76,18 @@ Path
 ----
 C:\Windows
 
-PS C:\Windows> Get-Location -PSDrive HKLM
+PS HKCU:\Control Panel\Input Method> Get-Location -PSDrive HKLM
 
 Path
 ----
 HKLM:\Software\Microsoft
 
 PS HKCU:\Control Panel\Input Method> Set-Location C:
-PS C:\Windows> Get-Location -PSProvider registry
+PS C:\Windows> Get-Location -PSProvider Registry
 
 Path
 ----
 HKCU:\Control Panel\Input Method
-
-Path
-----
-HKLM:\Software\Microsoft
 ```
 
 ### Example 3: Get locations using stacks
@@ -128,8 +124,8 @@ This example shows how to customize the PowerShell prompt.
 
 ```powershell
 PS C:\>
-function prompt { 'PowerShell: ' + (get-location) + '> '}
-PowerShell: C:\WINDOWS>
+function prompt { 'PowerShell: ' + (Get-Location) + '> '}
+PowerShell: C:\>
 ```
 
 The function that defines the prompt includes a `Get-Location` command, which is run whenever the
@@ -138,7 +134,7 @@ prompt appears in the console.
 The format of the default PowerShell prompt is defined by a special function named `prompt`. You can
 change the prompt in your console by creating a new function named `prompt`.
 
-To see the current prompt function, type the following command: `Get-Content Function:prompt`
+To see the current prompt function, type the following command: `Get-Content Function:\prompt`
 
 ## PARAMETERS
 

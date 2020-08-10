@@ -390,7 +390,9 @@ You can pipe objects to `Measure-Object`.
 
 ## OUTPUTS
 
-### Microsoft.PowerShell.Commands.GenericMeasureInfo, Microsoft.PowerShell.Commands.TextMeasureInfo, Microsoft.PowerShell.Commands.GenericObjectMeasureInfo
+### Microsoft.PowerShell.Commands.GenericMeasureInfo
+
+### Microsoft.PowerShell.Commands.TextMeasureInfo
 
 If you use the **Word** parameter, `Measure-Object` returns a **TextMeasureInfo** object.
 Otherwise, it returns a **GenericMeasureInfo** object.

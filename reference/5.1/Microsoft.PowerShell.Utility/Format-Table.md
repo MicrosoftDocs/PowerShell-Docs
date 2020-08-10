@@ -3,7 +3,7 @@ external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 11/27/2019
+ms.date: 08/10/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/format-table?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Format-Table
@@ -94,13 +94,13 @@ own `format.ps1xml` files with customized views.
 
 ### Example 4: Use a custom view for table output
 
-In this example, a custom view displays a directory's contents. The custom view adds a column to the
-table output for **System.IO.DirectoryInfo** and **System.IO.FileInfo** objects created by
-`Get-ChildItem`.
+In this example, a custom view displays a directory's contents. The custom view adds the
+**CreationTime** column to the table output for **System.IO.DirectoryInfo** and
+**System.IO.FileInfo** objects created by `Get-ChildItem`.
 
-The custom view in this example was created from the `FileSystem.format.ps1xml` file that's stored
-in `$PSHOME` on PowerShell 5.1. For more information about views and the code used to create this
-example's view, see [about_Format.ps1xml](../Microsoft.PowerShell.Core/About/about_Format.ps1xml.md#sample-xml-for-a-format-table-custom-view).
+The custom view in this example was created from the view defined in PowerShell source code. For
+more information about views and the code used to create this example's view, see
+[about_Format.ps1xml](../Microsoft.PowerShell.Core/About/about_Format.ps1xml.md#sample-xml-for-a-format-table-custom-view).
 
 ```powershell
 Get-ChildItem  -Path C:\Test | Format-Table -View mygciview
@@ -318,12 +318,15 @@ Specifies sorted output in separate tables based on a property value. For exampl
 Enter an expression or a property. The **GroupBy** parameter expects that the objects are sorted.
 Use the `Sort-Object` cmdlet before using `Format-Table` to group the objects.
 
-The value of the **GroupBy** parameter can be a new calculated property. To create a calculated,
-property, use a hash table. The valid keys are as follows:
+The value of the **GroupBy** parameter can be a new calculated property. The calculated property can
+be a script block or a hash table. Valid key-value pairs are:
 
-- Name (or Label) = `<string>`
-- Expression = `<string>` or `<script block>`
-- FormatString = `<string>`
+- Name (or Label) - `<string>`
+- Expression - `<string>` or `<script block>`
+- FormatString - `<string>`
+
+For more information, see
+[about_Calculated_Properties](../Microsoft.PowerShell.Core/About/about_Calculated_Properties.md).
 
 ```yaml
 Type: System.Object
@@ -384,14 +387,17 @@ objects have **PropertyA**, **PropertyB**, and **PropertyC**, then only the **Pr
 The **Property** parameter is optional. You can't use the **Property** and **View** parameters in
 the same command.
 
-The value of the **Property** parameter can be a new calculated property. To create a calculated
-property, use a hash table. The valid keys are as follows:
+The value of the **Property** parameter can be a new calculated property. The calculated property can
+be a script block or a hash table. Valid key-value pairs are:
 
-- Name (or Label) = `<string>`
-- Expression = `<string>` or `<script block>`
-- FormatString = `<string>`
-- Width = `<int32>`
-- Alignment = value can be Left, Center, or Right
+- Name (or Label) `<string>`
+- Expression - `<string>` or `<script block>`
+- FormatString - `<string>`
+- Width - `<int32>` - must be greater than `0`
+- Alignment - value can be `Left`, `Center`, or `Right`
+
+For more information, see
+[about_Calculated_Properties](../Microsoft.PowerShell.Core/About/about_Calculated_Properties.md).
 
 ```yaml
 Type: System.Object[]
@@ -505,6 +511,8 @@ You can send any object down the pipeline to `Format-Table`.
 ## NOTES
 
 ## RELATED LINKS
+
+[about_Calculated_Properties](../Microsoft.PowerShell.Core/About/about_Calculated_Properties.md)
 
 [about_Format.ps1xml](../Microsoft.PowerShell.Core/About/about_Format.ps1xml.md)
 

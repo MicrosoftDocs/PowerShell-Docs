@@ -3,7 +3,7 @@ external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 4/26/2019
+ms.date: 08/10/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/select-object?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Select-Object
@@ -442,8 +442,11 @@ property, use a hash table.
 
 Valid keys are:
 
-- Name (or Label): `<string>`
-- Expression `<string>` or `<script block>`
+- Name (or Label) - `<string>`
+- Expression - `<string>` or `<script block>`
+
+For more information, see
+[about_Calculated_Properties](../Microsoft.PowerShell.Core/About/about_Calculated_Properties.md).
 
 ```yaml
 Type: System.Object[]
@@ -541,7 +544,8 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
 
 ## INPUTS
 
@@ -557,13 +561,16 @@ You can pipe any object to `Select-Object`.
 
 - You can also refer to the `Select-Object` cmdlet by its built-in alias, `select`. For more
   information, see [about_Aliases](../Microsoft.PowerShell.Core/About/about_Aliases.md).
+
 - The optimization feature of `Select-Object` is available only for commands that write objects to
   the pipeline as they are processed. It has no effect on commands that buffer processed objects and
   write them as a collection. Writing objects immediately is a cmdlet design best practice. For more
-  information, see *Write Single Records to the Pipeline* in
+  information, see _Write Single Records to the Pipeline_ in
   [Strongly Encouraged Development Guidelines](/powershell/scripting/developer/windows-powershell).
 
 ## RELATED LINKS
+
+[about_Calculated_Properties](../Microsoft.PowerShell.Core/About/about_Calculated_Properties.md)
 
 [Group-Object](Group-Object.md)
 

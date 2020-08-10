@@ -3,7 +3,7 @@ external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 12/19/2018
+ms.date: 08/10/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/format-wide?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Format-Wide
@@ -179,12 +179,15 @@ Accept wildcard characters: False
 Formats the output in groups based on a shared property or value. Enter an expression or a property
 of the output.
 
-The value of the **GroupBy** parameter can be a new calculated property. To create a calculated,
-property, use a hash table. The acceptable values for this parameter are:
+The value of the **GroupBy** parameter can be a new calculated property. The calculated property can
+be a script block or a hash table. Valid key-value pairs are:
 
-- Name (or Label) \<string\>
-- Expression \<string\> or \<script block\>
-- FormatString \<string\>
+- Name (or Label) - `<string>`
+- Expression - `<string>` or `<script block>`
+- FormatString - `<string>`
+
+For more information, see
+[about_Calculated_Properties](../Microsoft.PowerShell.Core/About/about_Calculated_Properties.md).
 
 ```yaml
 Type: System.Object
@@ -224,11 +227,14 @@ If you omit this parameter, the properties that appear in the display depend on 
 displayed. The parameter name "Property" is optional. You cannot use the **Property** and **View**
 parameters in the same command.
 
-The value of the **Property** parameter can be a new calculated property. To create a calculated
-property, use a hash table. Valid keys are:
+The value of the **Property** parameter can be a new calculated property. The calculated property can
+be a script block or a hash table. Valid key-value pairs are:
 
-- Expression \<string\> or \<script block\>
-- FormatString \<string\>
+- Expression - `<string>` or `<script block>`
+- FormatString - `<string>`
+
+For more information, see
+[about_Calculated_Properties](../Microsoft.PowerShell.Core/About/about_Calculated_Properties.md).
 
 ```yaml
 Type: System.Object
@@ -312,6 +318,8 @@ fails. If the alternate view is a list, use `Format-List`. If the alternate view
 nor a table, use Format-Custom.
 
 ## RELATED LINKS
+
+[about_Calculated_Properties](../Microsoft.PowerShell.Core/About/about_Calculated_Properties.md)
 
 [Format-Custom](Format-Custom.md)
 

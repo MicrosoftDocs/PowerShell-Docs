@@ -56,19 +56,6 @@ the **Credential** parameter.
 ### Example 2
 
 ```powershell
-$c Get-Credential -Confirm Password
-```
-
-This command gets a credential object and saves it in the `$c` variable.
-
-When you enter the command, you are prompted for a user name and password. After entering the
-password for the first time, you are asked to confirm the password. If the passwords match, the
-cmdlet creates a **PSCredential** object representing the credentials of the user and saves it in
-the `$c` variable.
-
-### Example 3
-
-```powershell
 $c = Get-Credential
 Get-CimInstance Win32_DiskDrive -ComputerName Server01 -Credential $c
 ```
@@ -81,7 +68,7 @@ The first command gets a credential object and saves it in the `$c` variable. Th
 uses the credential object in a `Get-CimInstance` command. This command gets information about the
 disk drives on the Server01 computer.
 
-### Example 4
+### Example 3
 
 ```powershell
 Get-CimInstance Win32_BIOS -ComputerName Server01 -Credential (Get-Credential -Credential Domain01\User01)
@@ -93,7 +80,7 @@ This command uses the `Get-CimInstance` cmdlet to get information about the BIOS
 computer. It uses the **Credential** parameter to authenticate the user, Domain01\User01, and a
 `Get-Credential` command as the value of the **Credential** parameter.
 
-### Example 5
+### Example 4
 
 ```powershell
 $c = Get-Credential -credential User01
@@ -107,7 +94,7 @@ The first command gets a credential with the user name User01 and stores it in t
 The second command displays the value of the **Username** property of the resulting credential
 object.
 
-### Example 6
+### Example 5
 
 ```powershell
 $Credential = $host.ui.PromptForCredential("Need credentials", "Please enter your user name and password.", "", "NetBiosUserName")
@@ -120,7 +107,7 @@ The **PromptForCredential** method is an alternative to using the `Get-Credentia
 use **PromptForCredential**, you can specify the caption, messages, and user name that appear in the
 prompt.
 
-### Example 7
+### Example 6
 
 This example shows how to create a credential object that is identical to the object that
 `Get-Credential` returns without prompting the user. This method requires a plain text password,
@@ -142,7 +129,7 @@ text and the **Force** parameter to confirm that you understand the risks of usi
 The third command uses the `New-Object` cmdlet to create a **PSCredential** object from the values
 in the `$User` and `$PWord` variables.
 
-### Example 8
+### Example 7
 
 ```powershell
 Get-Credential -Message "Credential are required for access to the \\Server1\Scripts file share." -User Server01\PowerUser
@@ -158,7 +145,7 @@ This command uses the **Message** and **UserName** parameters of the `Get-Creden
 command format is designed for shared scripts and functions. In this case, the message tells the
 user why credentials are needed and gives them confidence that the request is legitimate.
 
-### Example 9
+### Example 8
 
 ```powershell
 Invoke-Command -ComputerName Server01 {Get-Credential Domain01\User02}
@@ -184,25 +171,6 @@ This command gets a credential from the Server01 remote computer. The command us
 the remote security message that `Get-Credential` includes in the authentication prompt.
 
 ## PARAMETERS
-
-### -ConfirmCredential
-
-Prompts user to re-enter the password for confirmation. If the passwords do not match, a message is
-displayed to confirm a mismatch and no password is stored in the credential object.
-
-This parameter was introduced in PowerShell 7.1
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: False
-Accept pipeline input: False
-Accept wildcard characters: False
-```
 
 ### -Credential
 
