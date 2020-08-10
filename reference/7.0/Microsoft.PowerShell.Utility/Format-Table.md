@@ -386,7 +386,7 @@ objects have **PropertyA**, **PropertyB**, and **PropertyC**, then only the **Pr
 The **Property** parameter is optional. You can't use the **Property** and **View** parameters in
 the same command.
 
-The value of the **Property** parameter can be a new calculated property.The calculated property can
+The value of the **Property** parameter can be a new calculated property. The calculated property can
 be a script block or a hash table. Valid key-value pairs are:
 
 - Name (or Label) `<string>`
