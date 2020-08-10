@@ -19,29 +19,73 @@ interpret each token.
 
 For example, if you type:
 
-`Write-Host book`
+```powershell
+Write-Host book
+```
 
 PowerShell breaks the command into two tokens, `Write-Host` and
-`book`, and interprets each token independently.
+`book`, and interprets each token independently using one of two 
+major parsing modes: expression mode and argument mode.
 
-When processing a command, the PowerShell parser operates in expression mode
-or in argument mode:
+<!--
+01234567890123456789012345678901234567890123456789012345678901234567890123456789
+-->
 
-- In expression mode, character string values must be contained in
-  quotation marks. Numbers not enclosed in quotation marks are treated as
-  numerical values (rather than as a series of characters).
-  Initial unary operators, like `.`, `+` or `[int]`,
-  introduce the corresponding operation.
-  Variable references are evaluated. Splatting is forbidden.
-  Anything else will be treated as a command to be invoked.
+### Expression mode
 
-- In argument mode, each value is treated as an expandable string unless it
-  begins with one of the following special characters: dollar sign (`$`), at
-  sign (`@`), single quotation mark (`'`), double quotation mark (`"`), or a
-  parenthesis (`(`, `)`).  If preceded by one of these characters,
-  the value is treated as a value expression,
-  except for `$`, which is treated like an ordinary character
-  if not part of a valid variable reference.
+Expression mode is intended for combining expressions, 
+required for value manipulation in a scripting language.
+Expressions are representations of values in PowerShell syntax, 
+and can be simple or composite, for example:
+
+Literal expressions are direct representations of their values: 
+
+```powershell
+'hello', 32, $true
+```
+
+Variable expressions carry the value of the variable they reference: 
+
+```powershell
+$x, $script:path
+```
+Operators combine other expressions for evaluation: 
+
+```powershell
+- 12, -not $Quiet, 3 + 7, $input.Length -gt 1
+```
+
+* *Character string literals* must be contained in quotation marks. 
+* *Numbers* are treated as numerical values rather than as a series of characters 
+(unless escaped).
+* *Operators*, including unary operators like `-` and `-not` 
+and binary operators like `+` and `-gt`, are interpreted as operators 
+and apply their respective operations on their arguments (operands).
+* *Attribute and conversion expressions* are parsed as expressions 
+and applied to subordinate expressions, e.g. `[int] '7'`.
+* *Variable references* are evaluated to their values 
+but *splatting* (i.e. pasting prefilled parameter sets) is forbidden 
+and causes a parser error.
+* Anything else will be treated as a command to be invoked.
+
+### Argument mode
+
+When parsing, PowerShell first looks to interpret input as an expression.
+But when a command invocation is encountered, parsing continues in argument mode.
+
+Argument mode is designed for parsing arguments and parameters for commands 
+in a shell environment.  All input is treated as an expandable string 
+unless it uses one of the following syntaxes:
+
+* Dollar sign (`$`) begins a variable reference 
+(only if it is followed by a valid variable name, 
+otherwise it is interpreted as part of the expandable string).
+* Quotation marks (`'` and `"`) begin string values
+* Parentheses (`(` and `)`) demarcate new expressions.
+* Subexpression operator (`$(`…`)`) demarcates embedded expressions.
+* Braces (`{` and `}`) demarcate new script blocks.
+* Initial at sign (`@`) begins expression syntaxes such as splatting (`@args`), 
+arrays (`@(1,2,3)`) and hash tables (`@{a=1;b=2}`).
 
 The following table provides several examples of values processed in
 expression mode and argument mode and the evaluation of those
