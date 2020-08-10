@@ -3,7 +3,7 @@ external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 06/09/2017
+ms.date: 08/10/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/invoke-webrequest?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Invoke-WebRequest
@@ -64,7 +64,8 @@ to select the **name** and **value** properties.
 
 ### Example 2: Use a stateful web service
 
-This example shows how to use the `Invoke-WebRequest` cmdlet with a stateful web service, such as Facebook.
+This example shows how to use the `Invoke-WebRequest` cmdlet with a stateful web service, such as
+Facebook.
 
 ```powershell
 $R = Invoke-WebRequest https://www.facebook.com/login.php -SessionVariable fb
@@ -99,9 +100,9 @@ $R.StatusDescription
 ```
 
 The first command uses the `Invoke-WebRequest` cmdlet to send a sign-in request. The command
-specifies a value of "FB" for the value of the **SessionVariable** parameter, and saves the result in
-the `$R` variable. When the command completes, the `$R` variable contains an **HtmlWebResponseObject**
-and the `$FB` variable contains a **WebRequestSession** object.
+specifies a value of "FB" for the value of the **SessionVariable** parameter, and saves the result
+in the `$R` variable. When the command completes, the `$R` variable contains an
+**HtmlWebResponseObject** and the `$FB` variable contains a **WebRequestSession** object.
 
 After the `Invoke-WebRequest` cmdlet signs in to facebook, the **StatusDescription** property of the
 web response object in the `$R` variable indicates that the user is signed in successfully.
@@ -114,9 +115,8 @@ This command gets the links in a web page.
 (Invoke-WebRequest -Uri "https://devblogs.microsoft.com/powershell/").Links.Href
 ```
 
-The `Invoke-WebRequest` cmdlet gets the web page content.
-Then the **Links** property of the returned **HtmlWebResponseObject** is used to display the
-**Href** property of each link.
+The `Invoke-WebRequest` cmdlet gets the web page content. Then the **Links** property of the
+returned **HtmlWebResponseObject** is used to display the **Href** property of each link.
 
 ### Example 4: Catch non success messages from Invoke-WebRequest
 
@@ -188,12 +188,12 @@ Accept wildcard characters: False
 
 ### -Certificate
 
-Specifies the client certificate that is used for a secure web request.
-Enter a variable that contains a certificate or a command or expression that gets the certificate.
+Specifies the client certificate that is used for a secure web request. Enter a variable that
+contains a certificate or a command or expression that gets the certificate.
 
 To find a certificate, use `Get-PfxCertificate` or use the `Get-ChildItem` cmdlet in the
-**Certificate** (`Cert:`) drive.
-If the certificate is not valid or does not have sufficient authority, the command fails.
+**Certificate** (`Cert:`) drive. If the certificate is not valid or does not have sufficient
+authority, the command fails.
 
 ```yaml
 Type: System.Security.Cryptography.X509Certificates.X509Certificate
@@ -276,9 +276,9 @@ Accept wildcard characters: False
 
 ### -DisableKeepAlive
 
-Indicates that the cmdlet sets the **KeepAlive** value in the HTTP header to **False**.
-By default, **KeepAlive** is **True**.
-**KeepAlive** establishes a persistent connection to the server to facilitate subsequent requests.
+Indicates that the cmdlet sets the **KeepAlive** value in the HTTP header to **False**. By default,
+**KeepAlive** is **True**. **KeepAlive** establishes a persistent connection to the server to
+facilitate subsequent requests.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -294,11 +294,10 @@ Accept wildcard characters: False
 
 ### -Headers
 
-Specifies the headers of the web request.
-Enter a hash table or dictionary.
+Specifies the headers of the web request. Enter a hash table or dictionary.
 
-To set **UserAgent** headers, use the **UserAgent** parameter.
-You cannot use this parameter to specify **UserAgent** or cookie headers.
+To set **UserAgent** headers, use the **UserAgent** parameter. You cannot use this parameter to
+specify **UserAgent** or cookie headers.
 
 ```yaml
 Type: System.Collections.IDictionary
@@ -316,8 +315,7 @@ Accept wildcard characters: False
 
 Gets the content of the web request from a file.
 
-Enter a path and file name.
-If you omit the path, the default is the current location.
+Enter a path and file name. If you omit the path, the default is the current location.
 
 ```yaml
 Type: System.String
@@ -333,10 +331,9 @@ Accept wildcard characters: False
 
 ### -MaximumRedirection
 
-Specifies how many times PowerShell redirects a connection to an alternate
-Uniform Resource Identifier (URI) before the connection fails.
-The default value is 5.
-A value of 0 (zero) prevents all redirection.
+Specifies how many times PowerShell redirects a connection to an alternate Uniform Resource
+Identifier (URI) before the connection fails. The default value is 5. A value of 0 (zero) prevents
+all redirection.
 
 ```yaml
 Type: System.Int32
@@ -352,8 +349,7 @@ Accept wildcard characters: False
 
 ### -Method
 
-Specifies the method used for the web request.
-The acceptable values for this parameter are:
+Specifies the method used for the web request. The acceptable values for this parameter are:
 
 - Default
 - Delete
@@ -381,12 +377,11 @@ Accept wildcard characters: False
 
 ### -OutFile
 
-Specifies the output file for which this cmdlet saves the response body.
-Enter a path and file name.
+Specifies the output file for which this cmdlet saves the response body. Enter a path and file name.
 If you omit the path, the default is the current location.
 
-By default, `Invoke-WebRequest` returns the results to the pipeline.
-To send the results to a file and to the pipeline, use the **Passthru** parameter.
+By default, `Invoke-WebRequest` returns the results to the pipeline. To send the results to a file
+and to the pipeline, use the **Passthru** parameter.
 
 ```yaml
 Type: System.String
@@ -402,8 +397,8 @@ Accept wildcard characters: False
 
 ### -PassThru
 
-Indicates that the cmdlet returns the results, in addition to writing them to a file.
-This parameter is valid only when the **OutFile** parameter is also used in the command.
+Indicates that the cmdlet returns the results, in addition to writing them to a file. This parameter
+is valid only when the **OutFile** parameter is also used in the command.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -439,8 +434,8 @@ Accept wildcard characters: False
 Specifies a user account that has permission to use the proxy server that is specified by the
 **Proxy** parameter. The default is the current user.
 
-Type a user name, such as `User01` or `Domain01\User01`, or enter a **PSCredential** object,
-such as one generated by the `Get-Credential` cmdlet.
+Type a user name, such as `User01` or `Domain01\User01`, or enter a **PSCredential** object, such as
+one generated by the `Get-Credential` cmdlet.
 
 This parameter is valid only when the **Proxy** parameter is also used in the command. You cannot
 use the **ProxyCredential** and **ProxyUseDefaultCredentials** parameters in the same command.
@@ -513,9 +508,8 @@ Accept wildcard characters: False
 
 ### -TimeoutSec
 
-Specifies how long the request can be pending before it times out.
-Enter a value in seconds.
-The default value, 0, specifies an indefinite time-out.
+Specifies how long the request can be pending before it times out. Enter a value in seconds. The
+default value, 0, specifies an indefinite time-out.
 
 A Domain Name System (DNS) query can take up to 15 seconds to return or time out. If your request
 contains a host name that requires resolution, and you set **TimeoutSec** to a value greater than
@@ -536,8 +530,8 @@ Accept wildcard characters: False
 
 ### -TransferEncoding
 
-Specifies a value for the transfer-encoding HTTP response header.
-The acceptable values for this parameter are:
+Specifies a value for the transfer-encoding HTTP response header. The acceptable values for this
+parameter are:
 
 - Chunked
 - Compress
@@ -618,9 +612,9 @@ Specifies a user agent string for the web request. The default user agent is sim
 each operating system and platform.
 
 To test a website with the standard user agent string that is used by most Internet browsers, use
-the properties of the [PSUserAgent](/dotnet/api/microsoft.powershell.commands.psuseragent)
-class, such as Chrome, FireFox, InternetExplorer, Opera, and Safari. For example, the following
-command uses the user agent string for Internet Explorer
+the properties of the [PSUserAgent](/dotnet/api/microsoft.powershell.commands.psuseragent) class,
+such as Chrome, FireFox, InternetExplorer, Opera, and Safari. For example, the following command
+uses the user agent string for Internet Explorer
 
 ```yaml
 Type: System.String
@@ -636,8 +630,7 @@ Accept wildcard characters: False
 
 ### -WebSession
 
-Specifies a web request session.
-Enter the variable name, including the dollar sign (`$`).
+Specifies a web request session. Enter the variable name, including the dollar sign (`$`).
 
 To override a value in the web request session, use a cmdlet parameter, such as **UserAgent** or
 **Credential**. Parameter values take precedence over values in the web request session.
