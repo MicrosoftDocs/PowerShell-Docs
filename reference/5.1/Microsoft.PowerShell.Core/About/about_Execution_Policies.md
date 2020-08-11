@@ -86,7 +86,8 @@ The PowerShell execution policies are as follows:
 
 - There is no execution policy set in the current scope.
 - If the execution policy in all scopes is **Undefined**, the effective
-  execution policy is the default execution policy.
+  execution policy is the **Restricted** for Windows Clients, and
+  **RemoteSigned** for Windows Server.
 
 ### Unrestricted
 
