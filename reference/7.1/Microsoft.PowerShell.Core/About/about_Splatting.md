@@ -240,10 +240,10 @@ or change a value in the hashtable you are using to splat.
 The `$commonParams` variable stores the parameters to create VMs in the
 `East US` location. The `$allVms` variable is a list of VMs to create. We loop
 through the list and use `$commonParams` to splat the parameters to create each
-VM. However, we want `myVM2` to be created in a different region. Instead of
-adjusting the `$commonParams` hashtable, we can now explicitly define the
-**Location** parameter in `New-AzVm` to supersede the value of the `Location`
-key in `commonParams`.
+VM. However, we want `myVM2` to be created in a different region than the other
+VMs. Instead of adjusting the `$commonParams` hashtable, we can now explicitly
+define the **Location** parameter in `New-AzVm` to supersede the value of the
+`Location` key in `$commonParams`.
 
 ```powershell
 $commonParams = @{
