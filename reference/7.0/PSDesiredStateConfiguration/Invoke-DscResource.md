@@ -154,7 +154,7 @@ context using the key **PsDscRunAsCredential**. In PowerShell 7.0, Resources run
 context, and **PsDscRunAsCredential** is no longer supported. Previous configurations using this key
 will throw an exception.
 
-- As of PowerShell 7, `Invoke-DscResource` no longer supports invoking WMI DSC Resources. This
+- As of PowerShell 7, `Invoke-DscResource` no longer supports invoking WMI DSC resources. This
   includes the **File** and **Log** resources in **PSDesiredStateConfiguration**.
 
 ## RELATED LINKS
