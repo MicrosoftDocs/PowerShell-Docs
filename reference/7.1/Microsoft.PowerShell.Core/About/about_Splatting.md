@@ -237,9 +237,36 @@ This example shows how to override a splatted parameter using explicitly
 defined parameters. This is useful when you don't want to build a new hashtable
 or change a value in the hashtable you are using to splat.
 
-```powershell
-$param = @{
+The `$commonParams` variable stores the parameters to create VMs in the
+`East US` location. The `$allVms` variable is a list of VMs to create. We loop
+through the list and use `$commonParams` to splat the parameters to create each
+VM. However, we want `myVM2` to be created in a different region. Instead of
+adjusting the `$commonParams` hashtable, we can now explicitly define the
+**Location** parameter in `New-AzVm` to supersede the value of the `Location`
+key in `commonParams`.
 
+```powershell
+$commonParams = @{
+    ResourceGroupName = "myResourceGroup"
+    Location = "East US"
+    VirtualNetworkName = "myVnet"
+    SubnetName = "mySubnet"
+    SecurityGroupName = "myNetworkSecurityGroup"
+    PublicIpAddressName = "myPublicIpAddress"
+}
+
+$allVms = @('myVM1','myVM2','myVM3',)
+
+foreach ($vm in $allVms)
+{
+    if ($vm -eq 'myVM2')
+    {
+        New-AzVm @commonParams -Name $vm -Location "West Us"
+    }
+    else
+    {
+        New-AzVm @commonParams -Name $vm
+    }
 }
 ```
 
