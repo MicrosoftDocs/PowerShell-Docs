@@ -20,7 +20,6 @@ elevated PowerShell session, run the following command.
 
 ```powershell
 Install-PackageProvider -Name NuGet -Force
-Exit
 ```
 
 ### For systems with PowerShell 5.0 (or newer) you can install the latest PowerShellGet
@@ -31,7 +30,6 @@ session.
 
 ```powershell
 Install-Module -Name PowerShellGet -Force
-Exit
 ```
 
 Use `Update-Module` to get newer versions.
@@ -56,13 +54,34 @@ For more information, see
 
 > [!NOTE]
 > PowerShell 3.0 and PowerShell 4.0 only supported one version of a module. Starting in PowerShell
-> 5.0, modules are installed in `<modulename>\<version>`. This allowed you to install
+> 5.0, modules are installed in `<modulename>\<version>`. This allows you to install
 > multiple versions side-by-side. After downloading the module using `Save-Module` you must copy the
-> files from the `<modulename>\<version>` to the `<modulename>` folder on the destination machine.
+> files from the `<modulename>\<version>` to the `<modulename>` folder on the destination machine,
+> as shown in the instructions below.
+
+#### Preparatory Step on computers running PowerShell 3.0
+
+The instructions in the sections below install the modules in directory `$env:ProgramFiles\WindowsPowerShell\Modules`.
+In PowerShell 3.0, this directory isn't listed in `$env:PSModulePath` by default, so you'll need
+to add it in order for the modules to be auto-loaded. 
+
+Open an elevated PowerShell session and run the following command (which will take effect in future sessions):
+
+```powershell
+[Environment]::SetEnvironmentVariable(
+  'PSModulePath',
+  ((([Environment]::GetEnvironmentVariable('PSModulePath', 'Machine') -split ';') + "$env:ProgramFiles\WindowsPowerShell\Modules") -join ';'),
+  'Machine'
+)
+```
 
 #### Computers with the PackageManagement Preview installed
 
-1. From a PowerShell session, use `Save-Module` to save the modules to a local directory.
+> [!NOTE] 
+> PackageManagement Preview was a downloadable component that made PowerShellGet available to PowerShell versions 3 and 4, but it is no longer available.
+> To test if it was installed on a given computer, run `Get-Module -ListAvailable PowerShellGet`.
+
+1. From a PowerShell session, use `Save-Module` to download the current version of **PowerShellGet**. Two folders are downloaded: **PowerShellGet** and **PackageManagement**. Each folder contains a subfolder with a version number.
 
    ```powershell
    Save-Module -Name PowerShellGet -Path C:\LocalFolder -Repository PSGallery
@@ -70,18 +89,20 @@ For more information, see
 
 1. Ensure that the **PowerShellGet** and **PackageManagement** modules aren't loaded in any other
    processes.
-1. Delete the contents of the folders: `$env:ProgramFiles\WindowsPowerShell\Modules\PowerShellGet\`
-   and `$env:ProgramFiles\WindowsPowerShell\Modules\PackageManagement\`.
-1. Reopen the PowerShell console with elevated permissions and run the following commands.
+
+1. Reopen the PowerShell console with elevated permissions and run the following command.
 
    ```powershell
-   Copy-Item "C:\LocalFolder\PowerShellGet\<version>\*" "$env:ProgramFiles\WindowsPowerShell\Modules\PowerShellGet\" -Recurse -Force
-   Copy-Item "C:\LocalFolder\PackageManagement\<version>\*" "$env:ProgramFiles\WindowsPowerShell\Modules\PackageManagement\" -Recurse -Force
+   'PowerShellGet', 'PackageManagement' | % { 
+     $targetDir = "$env:ProgramFiles\WindowsPowerShell\Modules\$_"
+     Remove-Item $targetDir\* -Recurse -Force
+     Copy-Item C:\LocalFolder\$_\*\* $targetDir\ -Recurse -Force
+   }
    ```
 
 #### Computers without PowerShellGet
 
-For computer's without any version of **PowerShellGet** installed, a computer with **PowerShellGet**
+For computers without any version of **PowerShellGet** installed (test with `Get-Module -ListAvailable PowerShellGet`), a computer with **PowerShellGet**
 installed is needed to download the modules.
 
 1. From the computer that has **PowerShellGet** installed, use `Save-Module` to download the current
@@ -92,7 +113,17 @@ installed is needed to download the modules.
    Save-Module -Name PowerShellGet -Path C:\LocalFolder -Repository PSGallery
    ```
 
-1. Copy the **PowerShellGet** and **PackageManagement** folders to the computer that doesn't have
-   **PowerShellGet** installed.
+1. Copy the respective `<version>` subfolder in the **PowerShellGet** and **PackageManagement** folders to the computer that doesn't have
+   **PowerShellGet** installed, into folders `$env:ProgramFiles\WindowsPowerShell\Modules\PowerShellGet\` and `$env:ProgramFiles\WindowsPowerShell\Modules\PackageManagement\` respectively, which requires an elevated session.
+   
+1. For instance, if you can access the download folder on the other computer, say `ws1`, from the target computer via a UNC path, say `\\ws1\C$\LocalFolder`, open a PowerShell console with elevated permissions and run the following command:
 
-   The destination directory is: `$env:ProgramFiles\WindowsPowerShell\Modules`
+   ```powershell
+   'PowerShellGet', 'PackageManagement' | % {
+     $targetDir = "$env:ProgramFiles\WindowsPowerShell\Modules\$_"
+     $null = New-Item -Type Directory -Force $targetDir
+     $fromComputer = 'ws1'  # Specify the name of the other computer here.
+     Copy-Item \\$fromComputer\C$\LocalFolder\$_\*\* $targetDir -Recurse -Force
+     if (-not (Get-ChildItem $targetDir)) { Throw "Copying failed." }
+   }
+   ```
