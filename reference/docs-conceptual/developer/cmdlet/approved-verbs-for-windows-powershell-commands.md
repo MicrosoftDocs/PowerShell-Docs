@@ -19,6 +19,17 @@ performed.
 > a standard verb in the English language. For example, the term _New_ is a valid PowerShell verb
 > name because it implies an action even though it is not a verb in the English language.
 
+<!--
+01234567890123456789012345678901234567890123456789012345678901234567890123456789
+-->
+
+Each approved verb has a corresponding _alias prefix_ defined.
+This alias prefix is commonly used to name aliases for commands using that verb.
+For example, the alias prefix for `Import` is `ip` and, accordingly, 
+the alias for `Import-Module` is `ipmo`.  This is a recommendation but not a rule; 
+in particular, it need not be respected for command aliases 
+mimicking well known commands from other environments.
+
 ## Verb Naming Rules
 
 The following list provides guidelines to consider when you choose the verb for a cmdlet name:

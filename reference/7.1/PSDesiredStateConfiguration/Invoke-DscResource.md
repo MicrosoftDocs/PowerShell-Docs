@@ -3,7 +3,7 @@ external help file: PSDesiredStateConfiguration-help.xml
 keywords: powershell,cmdlet
 Locale: en-US
 Module Name: PSDesiredStateConfiguration
-ms.date: 04/01/2020
+ms.date: 08/11/2020
 online version: https://docs.microsoft.com/powershell/module/psdesiredstateconfiguration/invoke-dscresource?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Invoke-DscResource
@@ -40,12 +40,13 @@ cmdlet also enables debugging of resources when the DSC engine is running with d
 
 ### Example 1: Invoke the Set method of a resource by specifying its mandatory properties
 
-This example invokes the **Set** method of a resource named Log and specifies a **Message** property
-for it.
+This example invokes the **Set** method of a resource named **WindowsProcess** and provides the
+mandatory **Path** and **Arguments** properties to start the specified Windows process.
 
 ```powershell
-Invoke-DscResource -Name Log -Method Set -ModuleName PSDesiredStateConfiguration -Property @{
-  Message = 'Hello World'
+Invoke-DscResource -Name WindowsProcess -Method Set -ModuleName PSDesiredStateConfiguration -Property @{
+  Path = 'C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe'
+  Arguments = ''
 }
 ```
 
@@ -152,10 +153,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## NOTES
 
-Previously, Windows PowerShell 5.1 resources ran under System context unless specified with user
+- Previously, Windows PowerShell 5.1 resources ran under System context unless specified with user
 context using the key **PsDscRunAsCredential**. In PowerShell 7.0, Resources run in the user's
 context, and **PsDscRunAsCredential** is no longer supported. Previous configurations using this key
 will throw an exception.
+
+- As of PowerShell 7, `Invoke-DscResource` no longer supports invoking WMI DSC resources. This
+  includes the **File** and **Log** resources in **PSDesiredStateConfiguration**.
 
 ## RELATED LINKS
 
