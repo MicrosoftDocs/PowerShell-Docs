@@ -79,7 +79,7 @@ For more information, see
 > PackageManagement Preview was a downloadable component that made PowerShellGet available to PowerShell versions 3 and 4, but it is no longer available.
 > To test if it was installed on a given computer, run `Get-Module -ListAvailable PowerShellGet`.
 
-1. From a PowerShell session, use `Save-Module` to save the use `Save-Module` to download the current version of **PowerShellGet**. Two folders are downloaded: **PowerShellGet** and **PackageManagement**. Each folder contains a subfolder with a version number.
+1. From a PowerShell session, use `Save-Module` to download the current version of **PowerShellGet**. Two folders are downloaded: **PowerShellGet** and **PackageManagement**. Each folder contains a subfolder with a version number.
 
    ```powershell
    Save-Module -Name PowerShellGet -Path C:\LocalFolder -Repository PSGallery
