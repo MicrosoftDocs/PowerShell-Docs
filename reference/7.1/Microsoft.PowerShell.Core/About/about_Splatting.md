@@ -1,7 +1,7 @@
 ---
 keywords: powershell,cmdlet
 Locale: en-US
-ms.date: 04/08/2020
+ms.date: 08/11/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_splatting?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Splatting
@@ -154,7 +154,7 @@ Hello World!
 
 ## Examples
 
-### Example 1
+### Example 1 Reuse splatted parameters in different commands
 
 This example shows how to reuse splatted values in different commands. The
 commands in this example use the `Write-Host` cmdlet to write messages to the
@@ -184,7 +184,7 @@ Write-Host "This is a test." @Colors
 Write-Host @Colors "This is another test."
 ```
 
-### Example 2
+### Example 2 Forward parameters using $PSBoundParameters
 
 This example shows how to forward their parameters to other commands by using
 splatting and the `$PSBoundParameters` automatic variable.
@@ -231,7 +231,7 @@ Test2 -a 1 -b 2 -c 3
 3
 ```
 
-### Example 3
+### Example 3: Override splatted parameters with explicitly defined parameters
 
 This example shows how to override a splatted parameter using explicitly
 defined parameters. This is useful when you don't want to build a new hashtable
@@ -241,7 +241,7 @@ The `$commonParams` variable stores the parameters to create VMs in the
 `East US` location. The `$allVms` variable is a list of VMs to create. We loop
 through the list and use `$commonParams` to splat the parameters to create each
 VM. However, we want `myVM2` to be created in a different region than the other
-VMs. Instead of adjusting the `$commonParams` hashtable, we can now explicitly
+VMs. Instead of adjusting the `$commonParams` hashtable, you can explicitly
 define the **Location** parameter in `New-AzVm` to supersede the value of the
 `Location` key in `$commonParams`.
 
