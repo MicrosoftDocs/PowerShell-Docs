@@ -74,6 +74,10 @@ progress.
 
 ### Running the processes
 
+## SYNTAX
+
+### Test (Default)
+
 ```
 New-OAW -LocalAdministratorPassword <Security.SecureString> [-AzureStackCertificatePath <String>] [-ERCSVMIP <String[]>] [-DNS <String[]>] [-DeploymentDataFilePath <String>] [-SkipNetworkConfiguration] [-UseDVMConfiguration] [-ImageFilePath <String>] [-VirtualMachineName <String>] [-VirtualMachineMemory <int64>] [-VirtualProcessorCount <int>] [-VirtualMachineDiffDiskPath <String>] [-PhysicalAdapterMACAddress <String>] [-VirtualSwitchName <String>] [-ReCreate] [-AsJob] [-Passthru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
