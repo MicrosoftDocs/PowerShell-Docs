@@ -329,7 +329,7 @@ that line. If the terminal doesn't support ANSI color escape sequences (VT100), 
 ![Error display from a script](./media/What-s-New-in-PowerShell-70/myscript-error.png)
 
 The default view in PowerShell 7 is **ConciseView**. The previous default view was **NormalView** and you can select thisby setting the preference variable `$ErrorView`.
- 
+
 ```powershell
 $ErrorView = 'NormalView' # Sets the error view to NormalView
 $ErrorView = 'ConciseView' # Sets the error view to ConciseView
@@ -407,8 +407,7 @@ For more information [About Update Notifications](/powershell/module/microsoft.p
 
 > [!NOTE]
 > This is an experimental feature named **PSDesiredStateConfiguration.InvokeDscResource**. Learn
-> more
-> [About Experimental Features](/powershell/module/microsoft.powershell.core/about/about_experimental_features?view=powershell-7).
+> more [About Experimental Features](/powershell/module/microsoft.powershell.core/about/about_experimental_features?view=powershell-7).
 
 The `Invoke-DscResource` cmdlet runs a method of a specified PowerShell Desired State Configuration
 (DSC) resource.
@@ -417,11 +416,13 @@ This cmdlet invokes a DSC resource directly, without creating a configuration do
 cmdlet, configuration management products can manage Windows or Linux by using DSC resources. This
 cmdlet also enables debugging of resources when the DSC engine is running with debugging enabled.
 
-This command invokes the **Set** method of a resource named Log and specifies a **Message** property.
+This command invokes the **Set** method of a resource named **WindowsProcess** and provides the
+mandatory **Path** and **Arguments** properties to start the specified Windows process.
 
 ```powershell
-Invoke-DscResource -Name Log -Method Set -ModuleName PSDesiredStateConfiguration -Property @{
-  Message = 'Hello World'
+Invoke-DscResource -Name WindowsProcess -Method Set -ModuleName PSDesiredStateConfiguration -Property @{
+  Path = 'C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe'
+  Arguments = ''
 }
 ```
 
