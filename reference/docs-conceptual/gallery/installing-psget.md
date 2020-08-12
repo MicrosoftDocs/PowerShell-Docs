@@ -59,11 +59,13 @@ For more information, see
 > files from the `<modulename>\<version>` to the `<modulename>` folder on the destination machine,
 > as shown in the instructions below.
 
-> [!NOTE]
-> The instructions below install the modules in directory `$env:ProgramFiles\WindowsPowerShell\Modules`.
-> In PowerShell 3.0, this directory isn't listed in `$env:PSModulePath` by default, so you'll need
-> to add it in order for the modules to be auto-loaded. Open an elevated PowerShell session and run
-> the following command (which will take effect in future sessions):
+#### Preparatory Step on computers running PowerShell 3.0
+
+The instructions in the sections below install the modules in directory `$env:ProgramFiles\WindowsPowerShell\Modules`.
+In PowerShell 3.0, this directory isn't listed in `$env:PSModulePath` by default, so you'll need
+to add it in order for the modules to be auto-loaded. 
+
+Open an elevated PowerShell session and run the following command (which will take effect in future sessions):
 
 ```powershell
 [Environment]::SetEnvironmentVariable(
