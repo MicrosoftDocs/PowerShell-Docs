@@ -14,7 +14,7 @@ cmdlet to directly call the functions or methods of a DSC resource (The `Get-Tar
 **Get**, **Set**, and **Test** methods of a class-based resource). This can be used by third-parties
 that want to use DSC resources, or as a helpful tool while developing resources.
 
-> [!NOTE]8
+> [!NOTE]
 > In PowerShell 7.0+, `Invoke-DscResource` no longer supports invoking WMI DSC resources. This
 > includes the **File** and **Log** resources in **PSDesiredStateConfiguration**.
 
