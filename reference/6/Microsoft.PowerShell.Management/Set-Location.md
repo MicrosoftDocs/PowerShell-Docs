@@ -81,7 +81,7 @@ PS C:\Windows\>
 The first command sets the current location to the root of the `HKLM:` drive in the Registry
 provider.
 The second command sets the current location to the `C:` drive in the FileSystem provider.
-When the drive name is specified in the form `DriveName:` (without backslash), then the cmdlet sets
+When the drive name is specified in the form `<DriveName>:` (without backslash), the cmdlet sets
 the current location to the current location in the PSDrive.
 To get current location in the PSDrive use the `Get-Location` cmdlet with the **PSdrive** parameter.
 
