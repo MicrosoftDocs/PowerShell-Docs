@@ -140,8 +140,7 @@ To see the current prompt function, type the following command: `Get-Content Fun
 
 ### -PSDrive
 
-Specifies the current location in the specified PowerShell drive that this cmdlet gets in the
-operation.
+Gets the current location in the specified PowerShell drive.
 
 For instance, if you are in the `Cert:` drive, you can use this parameter to find your
 current location in the `C:` drive.
@@ -160,9 +159,9 @@ Accept wildcard characters: False
 
 ### -PSProvider
 
-Specifies the current location in the drive supported by the PowerShell provider that this cmdlet
-gets in the operation. If the specified provider supports more than one drive, this cmdlet returns
-the location on the most recently accessed drive.
+Gets the current location in the drive supported by the specified PowerShell provider.
+If the specified provider supports more than one drive, this cmdlet returns the location on the most
+recently accessed drive.
 
 For example, if you are in the `C:` drive, you can use this parameter to find your current location
 in the drives of the PowerShell **Registry** provider.
