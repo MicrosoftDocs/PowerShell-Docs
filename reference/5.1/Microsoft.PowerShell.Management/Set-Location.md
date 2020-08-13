@@ -46,19 +46,19 @@ stack. For more information about location stacks, see the Notes.
 ### Example 1: Set the current location
 
 ```powershell
-PS C:\> Set-Location -Path "HKLM:"
+PS C:\> Set-Location -Path "HKLM:\"
 ```
 
 ```output
 PS HKLM:\>
 ```
 
-This command sets the current location to the root of the HKLM: drive.
+This command sets the current location to the root of the `HKLM:` drive.
 
 ### Example 2: Set the current location and display that location
 
 ```powershell
-PS C:\> Set-Location -Path "Env:" -PassThru
+PS C:\> Set-Location -Path "Env:\" -PassThru
 ```
 
 ```output
@@ -69,27 +69,44 @@ Env:\
 PS Env:\>
 ```
 
-This command sets the current location to the root of the Env: drive. It uses the **PassThru**
-parameter to direct PowerShell to return a **PathInfo** object that represents the Env: location.
+This command sets the current location to the root of the `Env:` drive. It uses the **PassThru**
+parameter to direct PowerShell to return a **PathInfo** object that represents the `Env:\` location.
 
-### Example 3: Set location to the C: drive
+### Example 3: Set location to the current location in the C: drive
 
 ```powershell
-PS C:\> Set-Location C:
+PS C:\Windows\> Set-Location HKLM:\
+PS HKLM:\> Set-Location C:
+PS C:\Windows\>
 ```
 
-This command sets the current location C: drive in the FileSystem provider.
+The first command sets the location to the root of the `HKLM:` drive in the Registry provider.
+The second command sets the location to the current location of the `C:` drive in the FileSystem
+provider.
+When the drive name is specified in the form `<DriveName>:` (without backslash), the cmdlet sets
+the location to the current location in the PSDrive.
+To get the current location in the PSDrive use `Get-Location -PSDrive <DriveName>` command.
 
 ### Example 4: Set the current location to a named stack
 
 ```powershell
-PS C:\> Set-Location -StackName "WSManPaths"
+PS C:\> Push-Location -Path 'C:\Program Files\PowerShell\' -StackName "Paths"
+PS C:\Program Files\PowerShell\> Set-Location -StackName "Paths"
+PS C:\Program Files\PowerShell\> Get-Location -Stack
 ```
 
-This command makes the WSManPaths location stack the current location stack.
+```Output
+Path
+----
+C:\
+```
+
+The first command adds the current location to the Paths stack.
+The second command makes the Paths location stack the current location stack.
+The third command displays the locations in the current location stack.
 
 The `*-Location` cmdlets use the current location stack unless a different location stack is
-specified in the command. For information about location stacks, see the Notes.
+specified in the command. For information about location stacks, see the [Notes](#notes).
 
 ## PARAMETERS
 
@@ -151,9 +168,9 @@ Accept wildcard characters: True
 
 ### -StackName
 
-Specifies the location stack name that this cmdlet makes the current location stack. Enter a
-location stack name. To indicate the unnamed default location stack, type `$null` or an empty string
-(`""`).
+Specifies the existing location stack name that this cmdlet makes the current location stack. Enter
+a location stack name. To indicate the unnamed default location stack, type `$null` or an empty
+string (`""`).
 
 The `*-Location` cmdlets act on the current stack unless you use the **StackName** parameter to
 specify a different stack.
