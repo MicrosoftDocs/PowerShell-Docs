@@ -72,13 +72,20 @@ PS Env:\>
 This command sets the current location to the root of the `Env:` drive. It uses the **PassThru**
 parameter to direct PowerShell to return a **PathInfo** object that represents the `Env:\` location.
 
-### Example 3: Set location to the C: drive
+### Example 3: Set location to the current location in the C: drive
 
 ```powershell
-PS Env:\> Set-Location C:\
+PS C:\Windows\> Set-Location HKLM:\
+PS HKLM:\> Set-Location C:
+PS C:\Windows\>
 ```
 
-This command sets the current location to the root of the `C:` drive in the FileSystem provider.
+The first command sets the current location to the root of the `HKLM:` drive in the Registry
+provider.
+The second command sets the current location to the `C:` drive in the FileSystem provider.
+When the drive name is specified in the form `DriveName:` (without backslash), then the cmdlet sets
+the current location to the current location in the PSDrive.
+To get current location in the PSDrive use the `Get-Location` cmdlet with the **PSdrive** parameter.
 
 ### Example 4: Set the current location to a named stack
 
