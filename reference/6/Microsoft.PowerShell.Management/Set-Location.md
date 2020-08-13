@@ -83,7 +83,7 @@ provider.
 The second command sets the location to the current location of the `C:` drive in the FileSystem provider.
 When the drive name is specified in the form `<DriveName>:` (without backslash), the cmdlet sets
 the location to the current location in the PSDrive.
-To get current location in the PSDrive use the `Get-Location` cmdlet with the **PSdrive** parameter.
+To get the current location in the PSDrive use `Get-Location -PSDrive <DriveName>`.
 
 ### Example 4: Set the current location to a named stack
 
