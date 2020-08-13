@@ -78,7 +78,7 @@ PS HKLM:\> Set-Location C:
 PS C:\Windows\>
 ```
 
-The first command sets the current location to the root of the `HKLM:` drive in the Registry
+The first command sets the location to the root of the `HKLM:` drive in the Registry
 provider.
 The second command sets the current location to the `C:` drive in the FileSystem provider.
 When the drive name is specified in the form `<DriveName>:` (without backslash), the cmdlet sets
