@@ -54,7 +54,7 @@ reference set (`-in`, `-notin`, `-contains`, `-notcontains`).
 Type comparison operators (`-is`, `-isnot`) determine whether an object is of a
 given type.
 
-Bitwise comparison operators (`-bAND`, `-bOR`, `-bXOR`, `-bNOT`) manipulate the
+Bitwise comparison operators (`-band`, `-bor`, `-bxor`, `-bnot`) manipulate the
 bit patterns in values.
 
 For more information, see [about_Comparison_Operators](about_Comparison_Operators.md).
