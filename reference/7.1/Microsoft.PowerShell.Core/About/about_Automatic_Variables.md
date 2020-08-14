@@ -188,6 +188,9 @@ blocks (which are unnamed functions).
   > You cannot use the `$input` variable inside both the Process block and the
   > End block in the same function or script block.
 
+Since `$input` is an enumerator, you can only access a value in `input` once.
+After that, it is no longer available.
+
 Enumerators contain properties and methods you can use to retrieve loop values
 and change the current loop iteration. For more information, see
 [Using Enumerators](#using-enumerators).
