@@ -1,7 +1,7 @@
 ---
 keywords: powershell,cmdlet
 Locale: en-US
-ms.date: 04/10/2020
+ms.date: 08/14/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_automatic_variables?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Automatic_Variables
@@ -188,8 +188,8 @@ blocks (which are unnamed functions).
   > You cannot use the `$input` variable inside both the Process block and the
   > End block in the same function or script block.
 
-Since `$input` is an enumerator, you can only access a value in `input` once.
-After that, it is no longer available.
+Since `$input` is an enumerator, once you enumerate a value, it is no longer
+accessible in `$input`.
 
 Enumerators contain properties and methods you can use to retrieve loop values
 and change the current loop iteration. For more information, see
