@@ -37,7 +37,6 @@ This article describes the experimental features that are available and how to u
 | PSUnixFileStat (non-Windows only)                          |         | &check; |    &check;    |
 | PSNativePSPathResolution                                   |         |         |    &check;    |
 | PSCultureInvariantReplaceOperator                          |         |         |    &check;    |
-| PSNotApplyErrorActionToStderr                              |         |         |    &check;    |
 
 ## Microsoft.PowerShell.Utility.PSManageBreakpointsInRunspace
 
@@ -166,22 +165,12 @@ If a PSDrive path that uses the FileSystem provider is passed to a native comman
 path is passed to the native command. This means a command like `code temp:/test.txt` now works as
 expected.
 
-Also, on Windows, if the path starts with `~`, that is resolved to the full path and passed to the
-native command. In both cases, the path is normalized to the directory separators for the relevant
+Also, on Windows, if the path starts with `~`, that is resolved to the full path and passed to the native
+command. In both cases, the path is normalized to the directory separators for the relevant
 operating system.
 
 - If the path is not a PSDrive or `~` (on Windows), then path normalization doesn't occur
 - If the path is in single quotes, then it's not resolved and treated as literal
-
-## PSNotApplyErrorActionToStderr
-
-When this experimental feature is enabled, the preference variable `$ErrorActionPreference` does not
-affect the `stderr` output for native commands and does not write the error records from native
-commands are not written to the `$Error` variable.
-
-Many native commands write to `stderr` as an alternative stream for additional information. This
-could cause confusion when looking through errors. Or, the additional information could be lost to
-the user if `$ErrorActionPreference` is set to a state that mutes that output.
 
 ## PSNullConditionalOperators
 
