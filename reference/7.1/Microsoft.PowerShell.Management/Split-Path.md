@@ -140,7 +140,7 @@ relative to the current folder, which is represented by a dot (`.`), it returns 
 
 ### Example 5: Change location to a specified path
 
-```powerhell
+```powershell
 PS C:\> Set-Location (Split-Path -Path $profile)
 PS C:\Documents and Settings\User01\My Documents\WindowsPowerShell>
 ```
