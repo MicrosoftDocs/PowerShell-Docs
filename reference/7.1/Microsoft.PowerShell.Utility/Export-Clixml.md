@@ -54,7 +54,7 @@ string **This is a test**.
 "This is a test" | Export-Clixml -Path .\sample.xml
 ```
 
-The string **This is a test** is sent down the pipeline. `Export-Clixml` uses the **Path** parameter
+The string `This is a test` is sent down the pipeline. `Export-Clixml` uses the **Path** parameter
 to create an XML file named `sample.xml` in the current directory.
 
 ### Example 2: Export an object to an XML file
