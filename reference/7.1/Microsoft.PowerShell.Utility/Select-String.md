@@ -3,7 +3,7 @@ external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 12/20/2019
+ms.date: 08/18/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/select-string?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Select-String
@@ -468,6 +468,10 @@ Beginning with PowerShell 6.2, the **Encoding** parameter also allows numeric ID
 pages (like `-Encoding 1251`) or string names of registered code pages (like
 `-Encoding "windows-1251"`). For more information, see the .NET documentation for
 [Encoding.CodePage](/dotnet/api/system.text.encoding.codepage?view=netcore-2.2).
+
+> [!NOTE]
+> **UTF-7*** is no longer recommended to use and in PowerShell 7.1, a warning will be written if you
+> specify `utf7` for the **Encoding** parameter.
 
 ```yaml
 Type: System.Text.Encoding
