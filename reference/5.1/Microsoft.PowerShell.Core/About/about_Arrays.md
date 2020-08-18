@@ -75,8 +75,9 @@ strongly typed array of process objects, enter the following command:
 
 ## The array sub-expression operator
 
-The array sub-expression operator creates an array, even if it contains zero
-or one object.
+The array sub-expression operator creates an array from the statements inside
+it. Whatever the statement inside the operator produces, the operator will
+place it in an array. Even if there is zero or one object.
 
 The syntax of the array operator is as follows:
 
