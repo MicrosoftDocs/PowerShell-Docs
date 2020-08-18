@@ -81,11 +81,11 @@ It uses the `Select-Object` cmdlet to output an array of `[System.Diagnostics.Pr
 instances as contained in the **Modules** property of each `System.Diagnostics.Process` instance
 output by `Get-Process`.
 
-The **Property** parameter of the `Select-Object` cmdlet selects the process names. This add a
+The **Property** parameter of the `Select-Object` cmdlet selects the process names. This adds a
 `ProcessName` **NoteProperty** to every `[System.Diagnostics.ProcessModule]` instance and populates
-it with the value of current processes **ProcessName** property.
+it with the value of current process's **ProcessName** property.
 
-Finally, `Format-List` cmdlet is used to display the name and modules in of each process in a list.
+Finally, `Format-List` cmdlet is used to display the name and modules of each process in a list.
 
 ```powershell
 Get-Process Explorer | Select-Object -Property ProcessName -ExpandProperty Modules | Format-List
