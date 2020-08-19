@@ -33,8 +33,8 @@ of the command (`Write-Output -- -I`).
 The parameter name and value can be separated by a space or a colon character.
 Some parameters do not require or accept a parameter value. Other parameters
 require a value, but do not require the parameter name in the command.
-Named parameters passed to a command that does not expect them become positional
-parameters (strings) followed by their given values, if any.
+Named parameters passed to a command that does not declare them as parameters
+become positional parameters (strings) followed by their given values, if any.
 If a parameter name is abbreviated, like `-I`, PowerShell picks the parameter
 that begins with this prefix, like `-InputObject`. This only works if there is
 a single parameter starting with the specified prefix. Using this feature
