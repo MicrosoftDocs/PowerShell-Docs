@@ -26,7 +26,7 @@ parameters follow the command name and have the following form:
 -->
 The name of the parameter is preceded by a hyphen (`-`), which signals to
 PowerShell that the word following the hyphen is a parameter name.
-This effect can be switched off by escaping the hyphen (``Write-Output `-I``)
+This effect can be prevented by escaping the hyphen (``Write-Output `-I``)
 or specifying the string as a parameter value (`Write-Output -InputObject:-I`).
 The special parameter `--` switches off recognising parameters for the rest
 of the command (`Write-Output -- -I`).
