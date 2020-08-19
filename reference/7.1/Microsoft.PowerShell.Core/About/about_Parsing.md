@@ -86,6 +86,15 @@ otherwise it is interpreted as part of the expandable string).
 * Braces (`{` and `}`) demarcate new script blocks.
 * Initial at sign (`@`) begins expression syntaxes such as splatting (`@args`), 
 arrays (`@(1,2,3)`) and hash tables (`@{a=1;b=2}`).
+* Commas `,` introduce lists passed as arrays, except when the command to be
+called is a native application, in which case they are interpreted as part of
+the expandable string.  Initial, consecutive or trailing commas are not
+supported.
+
+<!--
+01234567890123456789012345678901234567890123456789012345678901234567890123456789
+-->
+Values of embedded expressions are converted to strings.
 
 The following table provides several examples of values processed in
 expression mode and argument mode and the evaluation of those
@@ -122,11 +131,14 @@ expects and on whether PowerShell knows how to convert the argument to the
 correct type. The following table shows several examples of the types
 assigned to values returned by the expressions.
 
-|       Example       |    Mode    |     Result      |
-| ------------------- | ---------- | --------------- |
-| `Write-Output !1`   | argument   | "!1" (string)   |
-| `Write-Output (!1)` | expression | False (Boolean) |
-| `Write-Output (2)`  | expression | 2 (integer)     |
+|       Example          |    Mode    |     Result      |
+| ---------------------- | ---------- | --------------- |
+| `Write-Output !1`      | argument   | "!1" (string)   |
+| `Write-Output (!1)`    | expression | False (Boolean) |
+| `Write-Output (2)`     | expression | 2 (integer)     |
+| `Set-Variable AB A,B`  | argument   | 'A','B' (array) |
+| `CMD /CECHO A,B`       | argument   | 'A,B' (string)  |
+| `CMD /CECHO $AB`       | argument   | 'A','B' (array) |
 
 The stop-parsing symbol (`--%`), introduced in PowerShell 3.0, directs
 PowerShell to refrain from interpreting input as PowerShell commands or
