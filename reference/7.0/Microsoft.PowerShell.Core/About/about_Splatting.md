@@ -120,18 +120,19 @@ parameter values to a script block that is executed by the cmdlet. The
 script block. PowerShell is effectively using array splatting to bind the
 values to the parameters of the script block. When using **ArgumentList**, if
 you need to pass an array as a single object bound to a single parameter, you
-must wrap the array in an array subexpression.
+must wrap the array as the only element of another array.
 
 The following example has a script block that takes a single parameter that is
 an array of strings.
 
 ```powershell
 $array = 'Hello', 'World!'
-Invoke-Command -ScriptBlock { param([string[]]$words) $words -join ' '} -ArgumentList $array
+Invoke-Command -ScriptBlock {
+  param([string[]]$words) $words -join ' '
+  } -ArgumentList $array
 ```
 
-In this example, only the first item in `$array` is passed to the script script
-block.
+In this example, only the first item in `$array` is passed to the script block.
 
 ```Output
 Hello
@@ -139,10 +140,12 @@ Hello
 
 ```powershell
 $array = 'Hello', 'World!'
-Invoke-Command -ScriptBlock { param([string[]]$words) $words -join ' '} -ArgumentList (,$array)
-```
+Invoke-Command -ScriptBlock {
+  param([string[]]$words) $words -join ' '
+} -ArgumentList (,$array)
+````
 
-In this example, `$array` is wrapped in an array subexpress so that the entire
+In this example, `$array` is wrapped in an array so that the entire
 array is passed to the script block as a single object.
 
 ```Output
