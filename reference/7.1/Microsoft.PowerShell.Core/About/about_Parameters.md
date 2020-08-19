@@ -24,7 +24,7 @@ parameters follow the command name and have the following form:
 <!--
 01234567890123456789012345678901234567890123456789012345678901234567890123456789
 -->
-The name of the parameter is preceded by a hyphen (-), which signals to
+The name of the parameter is preceded by a hyphen (`-`), which signals to
 PowerShell that the word following the hyphen is a parameter name.
 This effect can be switched off by escaping the hyphen (``Write-Output `-I``)
 or specifying the string as a parameter value (`Write-Output -InputObject:-I`).
@@ -256,4 +256,3 @@ information about common parameters, see [about_CommonParameters](about_CommonPa
 [about_Pipelines](about_Pipelines.md)
 
 [about_Wildcards](about_Wildcards.md)
-
