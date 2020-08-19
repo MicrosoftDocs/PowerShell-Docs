@@ -339,7 +339,7 @@ Runs a script in the current scope so that any functions, aliases, and
 variables that the script creates are added to the current scope, overriding
 existing ones. Parameters declared by the sourced script become variables too.
 Parameters for which no value has been given become variables with no value.
-However, the automatic variable `$Args` is preserved.
+However, the automatic variable `$args` is preserved.
 
 ```powershell
 . c:\scripts\sample.ps1 1 2 -Also:3
