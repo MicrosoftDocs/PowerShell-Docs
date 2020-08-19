@@ -27,7 +27,7 @@ parameters follow the command name and have the following form:
 The name of the parameter is preceded by a hyphen (-), which signals to
 PowerShell that the word following the hyphen is a parameter name.
 This effect can be switched off by escaping the hyphen (``Write-Output `-I``)
-or specifying the string as a parameter value (`Write-Output -I:-I`).
+or specifying the string as a parameter value (`Write-Output -InputObject:-I`).
 The special parameter `--` switches off recognising parameters for the rest
 of the command (`Write-Output -- -I`).
 The parameter name and value can be separated by a space or a colon character.
@@ -35,6 +35,10 @@ Some parameters do not require or accept a parameter value. Other parameters
 require a value, but do not require the parameter name in the command.
 Named parameters passed to a command that does not expect them become positional
 parameters (strings) followed by their given values, if any.
+If a parameter name is abbreviated, like `-I`, PowerShell will pick the parameter
+that begins with this prefix, like `-InputObject`, provided that there is only
+one such parameter.  Because a future version may add more parameters starting
+with the same prefix, using this feature in scripts is not recommended.
 
 The type of parameters and the requirements for those parameters vary. To find
 information about the parameters of a command, use the `Get-Help` cmdlet. For
