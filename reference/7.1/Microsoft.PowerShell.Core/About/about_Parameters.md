@@ -21,11 +21,20 @@ parameters follow the command name and have the following form:
 -<parameter_name> <parameter_value>
 -<parameter_name>:<parameter_value>
 ```
-
-The name of the parameter is preceded by a hyphen (-), which signals to PowerShell that the word
-following the hyphen is a parameter name. The parameter name and value can be separated by a space
-or a colon character. Some parameters do not require or accept a parameter value. Other parameters
+<!--
+01234567890123456789012345678901234567890123456789012345678901234567890123456789
+-->
+The name of the parameter is preceded by a hyphen (-), which signals to
+PowerShell that the word following the hyphen is a parameter name.
+This effect can be switched off by escaping the hyphen (``Write-Output `-I``)
+or specifying the string as a parameter value (`Write-Output -I:-I`).
+The special parameter `--` switches off recognising parameters for the rest
+of the command (`Write-Output -- -I`).
+The parameter name and value can be separated by a space or a colon character.
+Some parameters do not require or accept a parameter value. Other parameters
 require a value, but do not require the parameter name in the command.
+Named parameters passed to a command that does not expect them become positional
+parameters (strings) followed by their given values, if any.
 
 The type of parameters and the requirements for those parameters vary. To find
 information about the parameters of a command, use the `Get-Help` cmdlet. For
