@@ -138,7 +138,8 @@ assigned to values returned by the expressions.
 | `Write-Output (2)`     | expression | 2 (integer)     |
 | `Set-Variable AB A,B`  | argument   | 'A','B' (array) |
 | `CMD /CECHO A,B`       | argument   | 'A,B' (string)  |
-| `CMD /CECHO $AB`       | argument   | 'A','B' (array) |
+| `CMD /CECHO $AB`       | expression | 'A','B' (array) |
+| `CMD /CECHO :$AB`      | argument   | ':A B' (string) |
 
 The stop-parsing symbol (`--%`), introduced in PowerShell 3.0, directs
 PowerShell to refrain from interpreting input as PowerShell commands or
