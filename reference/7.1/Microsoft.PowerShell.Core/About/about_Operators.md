@@ -320,21 +320,29 @@ A cast can also be performed when a variable is assigned to using [cast notation
 
 #### Comma operator `,`
 
-As a binary operator, the comma creates an array. As a unary operator, the
-comma creates an array with one member. Place the comma before the member.
+As a binary operator, the comma creates an array or appends to the array being
+created. In expression mode, as a unary operator, the comma creates an array
+with just one member. Place the comma before the member.
 
 ```powershell
 $myArray = 1,2,3
 $SingleArray = ,1
+Write-Output (,1)
 ```
 
 #### Dot sourcing operator `.`
 
+<!--
+01234567890123456789012345678901234567890123456789012345678901234567890123456789
+-->
 Runs a script in the current scope so that any functions, aliases, and
-variables that the script creates are added to the current scope.
+variables that the script creates are added to the current scope, overriding
+existing ones. Parameters declared by the sourced script become variables too.
+Parameters for which no value has been given become variables with no value.
+However, the automatic variable `$Args` is preserved.
 
 ```powershell
-. c:\scripts\sample.ps1
+. c:\scripts\sample.ps1 1 2 -Also:3
 ```
 
 > [!NOTE]
