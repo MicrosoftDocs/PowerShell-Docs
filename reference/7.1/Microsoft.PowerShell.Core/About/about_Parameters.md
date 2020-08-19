@@ -35,10 +35,11 @@ Some parameters do not require or accept a parameter value. Other parameters
 require a value, but do not require the parameter name in the command.
 Named parameters passed to a command that does not expect them become positional
 parameters (strings) followed by their given values, if any.
-If a parameter name is abbreviated, like `-I`, PowerShell will pick the parameter
-that begins with this prefix, like `-InputObject`, provided that there is only
-one such parameter.  Because a future version may add more parameters starting
-with the same prefix, using this feature in scripts is not recommended.
+If a parameter name is abbreviated, like `-I`, PowerShell picks the parameter
+that begins with this prefix, like `-InputObject`. This only works if there is
+a single parameter starting with the specified prefix. Using this feature
+in scripts is not recommended as future versions of commands could include new
+parameters that start with the same prefix.
 
 The type of parameters and the requirements for those parameters vary. To find
 information about the parameters of a command, use the `Get-Help` cmdlet. For
