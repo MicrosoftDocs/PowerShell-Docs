@@ -180,8 +180,8 @@ When this experimental feature is enabled, error records from native commands ar
 out put for native commands.
 
 Many native commands write to `stderr` as an alternative stream for additional information. This
-could cause confusion when looking through errors; or the additional information could be lost to
-the user if `$ErrorActionPreference` is set to a state that mutes the output.
+behavior can cause confusion when looking through errors; or the additional output information can
+be lost to the user if `$ErrorActionPreference` is set to a state that mutes the output.
 
 ## PSNullConditionalOperators
 
