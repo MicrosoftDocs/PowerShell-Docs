@@ -263,7 +263,7 @@ autoloads our command whenever we need it.
 
 I learned that the `dotnet` tool has a `PSModule` template.
 
-All the steps that I outlined above are still valid, but this template cuts many pf them out. It's
+All the steps that I outlined above are still valid, but this template cuts many of them out. It's
 still a fairly new template that is still getting some polish placed on it. Expect it to keep
 getting better from here.
 
