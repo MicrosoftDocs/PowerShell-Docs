@@ -45,8 +45,8 @@ process, or PowerShell session. This list of variables is inherited from the
 parent process and is constructed from the variables in the _Machine_ and
 _User_ scopes.
 
-You can display and change the values of environment variables without
-using a cmdlet by using the expression parser in PowerShell. To display the
+You can display and change the values of environment variables without using a
+cmdlet by using a variable syntax with the environment provider. To display the
 value of an environment variable, use the following syntax:
 
 ```
