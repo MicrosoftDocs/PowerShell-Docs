@@ -177,7 +177,7 @@ operating system.
 
 When this experimental feature is enabled, error records from native commands are not written to the
 `$Error` variable and the preference variable `$ErrorActionPreference` does not affect the `stderr`
-out put for native commands.
+output for native commands.
 
 Many native commands write to `stderr` as an alternative stream for additional information. This
 behavior can cause confusion when looking through errors; or the additional output information can
