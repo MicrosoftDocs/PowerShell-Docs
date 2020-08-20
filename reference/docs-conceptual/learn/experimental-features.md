@@ -1,5 +1,5 @@
 ---
-ms.date: 07/23/2020
+ms.date: 08/17/2020
 title: Using Experimental Features in PowerShell
 description: Lists the currently available experimental features and how to use them.
 ---
@@ -37,6 +37,7 @@ This article describes the experimental features that are available and how to u
 | PSUnixFileStat (non-Windows only)                          |         | &check; |    &check;    |
 | PSNativePSPathResolution                                   |         |         |    &check;    |
 | PSCultureInvariantReplaceOperator                          |         |         |    &check;    |
+| PSNotApplyErrorActionToStderr                              |         |         |    &check;    |
 
 ## Microsoft.PowerShell.Utility.PSManageBreakpointsInRunspace
 
@@ -165,12 +166,22 @@ If a PSDrive path that uses the FileSystem provider is passed to a native comman
 path is passed to the native command. This means a command like `code temp:/test.txt` now works as
 expected.
 
-Also, on Windows, if the path starts with `~`, that is resolved to the full path and passed to the native
-command. In both cases, the path is normalized to the directory separators for the relevant
+Also, on Windows, if the path starts with `~`, that is resolved to the full path and passed to the
+native command. In both cases, the path is normalized to the directory separators for the relevant
 operating system.
 
 - If the path is not a PSDrive or `~` (on Windows), then path normalization doesn't occur
 - If the path is in single quotes, then it's not resolved and treated as literal
+
+## PSNotApplyErrorActionToStderr
+
+When this experimental feature is enabled, error records from native commands are not written to the
+`$Error` variable and the preference variable `$ErrorActionPreference` does not affect the `stderr`
+output for native commands.
+
+Many native commands write to `stderr` as an alternative stream for additional information. This
+behavior can cause confusion when looking through errors; or the additional output information can
+be lost to the user if `$ErrorActionPreference` is set to a state that mutes the output.
 
 ## PSNullConditionalOperators
 
