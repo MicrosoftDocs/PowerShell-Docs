@@ -35,7 +35,7 @@ This cmdlet was introduced in PowerShell 3.0.
 > [!NOTE]
 > Beginning with PowerShell 6, this cmdlet supports JSON with comments. Accepted comments are
 > started with two forward slashes (`//`). The comment will not be represented in the data and can
-> be written in the file without corrupting the data, or throwing an error as it did in PowerShell
+> be written in the file without corrupting the data or throwing an error as it did in PowerShell
 > 5.1.
 
 ## EXAMPLES
