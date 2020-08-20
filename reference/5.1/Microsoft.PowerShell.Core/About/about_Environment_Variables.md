@@ -1,7 +1,7 @@
 ---
 keywords: powershell,cmdlet
 Locale: en-US
-ms.date: 04/13/2020
+ms.date: 08/20/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_environment_variables?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Environment_Variables
@@ -32,7 +32,7 @@ inherited by child processes, such as local background jobs and the sessions in
 which module members run. This makes environment variables well suited to
 storing values that are needed in both parent and child processes.
 
-## Changing environment variables
+## Using and changing environment variables
 
 On Windows, environment variables can be defined in three scopes:
 
@@ -44,6 +44,24 @@ The _Process_ scope contains the environment variables available in the current
 process, or PowerShell session. This list of variables is inherited from the
 parent process and is constructed from the variables in the _Machine_ and
 _User_ scopes.
+
+You can display and change the values of environment variables without
+using a cmdlet by using the expression parser in PowerShell. To display the
+value of an environment variable, use the following syntax:
+
+```
+$Env:<variable-name>
+```
+
+For example, to display the value of the `WINDIR` environment variable, type
+the following command at the PowerShell command prompt:
+
+```powershell
+$Env:windir
+```
+
+In this syntax, the dollar sign (`$`) indicates a variable, and the drive name
+indicates an environment variable.
 
 When you change environment variables in PowerShell, the change affects only
 the current session. This behavior resembles the behavior of the `Set` command
@@ -271,26 +289,6 @@ drive, type:
 ```powershell
 PS Env:\> Get-ChildItem ComputerName
 ```
-
-### Using variable syntax
-
-You can also display and change the values of environment variables without
-using a cmdlet by using the expression parser in PowerShell. To display the
-value of an environment variable, use the following syntax:
-
-```
-$Env:<variable-name>
-```
-
-For example, to display the value of the `WINDIR` environment variable, type
-the following command at the PowerShell command prompt:
-
-```powershell
-$Env:windir
-```
-
-In this syntax, the dollar sign (`$`) indicates a variable, and the drive name
-indicates an environment variable.
 
 ### Saving changes to environment variables
 
