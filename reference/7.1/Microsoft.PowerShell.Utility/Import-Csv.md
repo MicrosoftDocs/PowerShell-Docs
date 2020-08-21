@@ -3,7 +3,7 @@ external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 1/8/2019
+ms.date: 08/19/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/import-csv?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Import-Csv
@@ -353,6 +353,10 @@ Beginning with PowerShell 6.2, the **Encoding** parameter also allows numeric ID
 pages (like `-Encoding 1251`) or string names of registered code pages (like
 `-Encoding "windows-1251"`). For more information, see the .NET documentation for
 [Encoding.CodePage](/dotnet/api/system.text.encoding.codepage?view=netcore-2.2).
+
+> [!NOTE]
+> **UTF-7*** is no longer recommended to use. In PowerShell 7.1, a warning is written if you
+> specify `utf7` for the **Encoding** parameter.
 
 ```yaml
 Type: System.Text.Encoding
