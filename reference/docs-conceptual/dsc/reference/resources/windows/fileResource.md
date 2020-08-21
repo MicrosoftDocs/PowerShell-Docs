@@ -74,7 +74,7 @@ File [string] #ResourceName
   **Directory**, the resource copies source directory to the destination path. The properties
   **Recurse**, **Force**, and **MatchSource** change the type of copy operation performed, while
   **Credential** determines which account to use to access the source directory.
-- If you do no set the **Recurse** property to `$true` when copying a directory, none of the
+- If you do not set the **Recurse** property to `$true` when copying a directory, none of the
   contents of the existing directory will be copied. Only the directory specified will be copied.
 - If you specified a value of **ReadOnly** for the **Attributes** property alongside a
   **DestinationPath**, **Ensure** **Present** would create the path specified, while **Contents**
