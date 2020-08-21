@@ -1,5 +1,5 @@
 ---
-ms.date:  08/14/2018
+ms.date: 08/21/2020
 keywords:  powershell,cmdlet
 title:  Running Remote Commands
 ---
@@ -9,7 +9,8 @@ You can run commands on one or hundreds of computers with a single PowerShell co
 PowerShell supports remote computing by using various technologies, including WMI, RPC, and
 WS-Management.
 
-PowerShell Core supports WMI, WS-Management, and SSH remoting. RPC is no longer supported.
+PowerShell Core supports WMI, WS-Management, and SSH remoting. In PowerShell 6, RPC is no longer
+supported. In PowerShell 7 and above, RPC is supported only in Windows.
 
 For more information about remoting in PowerShell Core, see the following articles:
 
