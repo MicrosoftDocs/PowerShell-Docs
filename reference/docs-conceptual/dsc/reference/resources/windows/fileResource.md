@@ -42,7 +42,7 @@ File [string] #ResourceName
 |Contents |Only valid when used with **Type** **File**. Indicates the contents to **Ensure** are **Present** or **Absent** from the targeted file. |
 |Credential |The credentials that are required to access resources, such as source files. |
 |Force |Overrides access operations that would result in an error (such as overwriting a file or deleting a directory that is not empty). Default value is `$false`. |
-|Recurse |Only valid when used with **Type** **Directory**. Performs the state operation recursively to all subdirectories. Default value is `$false`. |
+|Recurse |Only valid when used with **Type** **Directory**. Performs the state operation recursively to all directory content, subdirectories, and subdirectory content. Default value is `$false`. |
 |SourcePath |The path from which to copy the file or folder resource. |
 |Type |The type of resource being configured. Valid values are **Directory** and **File**. Default value is **File**. |
 |MatchSource |Determines if the resource should monitor for new files added to the source directory after the initial copy. A value of `$true` indicates that, after the initial copy, any new source files should be copied to the destination. If set to `$false`, the resource caches the contents of the source directory and ignores any files added after the initial copy. Default value is `$false`. |
@@ -74,6 +74,8 @@ File [string] #ResourceName
   **Directory**, the resource copies source directory to the destination path. The properties
   **Recurse**, **Force**, and **MatchSource** change the type of copy operation performed, while
   **Credential** determines which account to use to access the source directory.
+- If you do not set the **Recurse** property to `$true` when copying a directory, none of the
+  contents of the existing directory will be copied. Only the directory specified will be copied.
 - If you specified a value of **ReadOnly** for the **Attributes** property alongside a
   **DestinationPath**, **Ensure** **Present** would create the path specified, while **Contents**
   would set the contents of the file. An **Ensure** **Absent** setting would ignore the **Attributes**
