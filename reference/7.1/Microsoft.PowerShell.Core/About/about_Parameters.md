@@ -30,7 +30,7 @@ This effect can be prevented by escaping the hyphen (``Write-Output `-I``)
 or specifying the string as a parameter value (`Write-Output -InputObject:-I`).
 The special parameter `--` switches off recognising parameters for the rest
 of the command (`Write-Output -- -I`).
-The parameter name and value can be separated by a space or a colon character.
+The parameter name and value can be separated by a space or a colon character (`:`).
 Some parameters do not require or accept a parameter value. Other parameters
 require a value, but do not require the parameter name in the command.
 Named parameters passed to a command that does not declare them as parameters
