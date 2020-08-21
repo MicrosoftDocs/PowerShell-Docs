@@ -86,7 +86,7 @@ otherwise it is interpreted as part of the expandable string).
 * Braces (`{` and `}`) demarcate new script blocks.
 * Initial at sign (`@`) begins expression syntaxes such as splatting (`@args`), 
 arrays (`@(1,2,3)`) and hash tables (`@{a=1;b=2}`).
-* Commas `,` introduce lists passed as arrays, except when the command to be
+* Commas (`,`) introduce lists passed as arrays, except when the command to be
 called is a native application, in which case they are interpreted as part of
 the expandable string.  Initial, consecutive or trailing commas are not
 supported.
@@ -187,4 +187,3 @@ PowerShell sends the following command string to the Icacls program:
 ## SEE ALSO
 
 [about_Command_Syntax](about_Command_Syntax.md)
-
