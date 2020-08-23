@@ -367,7 +367,7 @@ and [Unblock-File](xref:Microsoft.PowerShell.Utility.Unblock-File).
 > - `Invoke-RestMethod`
 > - `Invoke-WebRequest`
 
-## Execution policy on Windows Server Core and Window Nano Server
+## Execution policy on Windows Server Core and Windows Nano Server
 
 When PowerShell 6 is run on Windows Server Core or Windows Nano Server under
 certain conditions, execution policies can fail with the following error:
