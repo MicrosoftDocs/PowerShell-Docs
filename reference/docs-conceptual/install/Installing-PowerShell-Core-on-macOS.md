@@ -1,12 +1,13 @@
 ---
 title: Installing PowerShell on macOS
 description: Information about installing PowerShell on macOS
-ms.date: 07/30/2020
+ms.date: 08/24/2020
 ---
 
 # Installing PowerShell on macOS
 
-PowerShell supports macOS 10.12 and higher. All packages are available on our GitHub [releases][]
+PowerShell supports macOS 10.12 and higher. PowerShell 7.0.3 or higher and PowerShell Preview
+7.1.0 or higher require macOS 10.13 and higher. All packages are available on our GitHub [releases][]
 page. After the package is installed, run `pwsh` from a terminal.
 
 > [!NOTE]
@@ -26,7 +27,7 @@ There are several ways to install PowerShell on macOS. Choose one of the followi
 After installing PowerShell, you should install [OpenSSL](#installing-dependencies). OpenSSL is
 needed for PowerShell remoting and CIM operations.
 
-## Installation of latest stable release via Homebrew on macOS 10.12 or higher
+## Installation of latest stable release via Homebrew on macOS 10.13 or higher
 
 If the `brew` command is not found, you need to install Homebrew following
 [their instructions][brew].
@@ -57,7 +58,7 @@ brew cask upgrade powershell
 
 [brew]: https://brew.sh/
 
-## Installation of latest preview release via Homebrew on macOS 10.12 or higher
+## Installation of latest preview release via Homebrew on macOS 10.13 or higher
 
 After you've installed Homebrew, you can install PowerShell. First, install the [Cask-Versions][cask-versions]
 package that lets you install alternative versions of cask packages:
