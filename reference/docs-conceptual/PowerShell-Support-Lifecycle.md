@@ -123,6 +123,10 @@ the dates when various releases will no longer be supported.
 |   6.1   | September 28, 2019 |
 |   6.0   | February 13, 2019  |
 
+> [!NOTE]
+> Windows PowerShell 5.1 supportability is completely independent from PowerShell 6+
+> As an integral part of Windows, it is supported as long as the [Operating System itself remains supported](https://support.microsoft.com/en-us/help/13853/windows-lifecycle-fact-sheet).
+
 ## Unsupported platforms
 
 When a platform version reaches end-of-life as defined by the platform owner, PowerShell Core will
