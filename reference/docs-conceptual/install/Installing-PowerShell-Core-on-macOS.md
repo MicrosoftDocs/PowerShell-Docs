@@ -7,7 +7,7 @@ ms.date: 08/24/2020
 # Installing PowerShell on macOS
 
 PowerShell supports macOS 10.12 and higher. PowerShell 7.0.3 or higher and PowerShell Preview
-7.1.0-preview.6 or higher require macOS 1.13 and higher. All packages are available on our GitHub [releases][]
+7.1.0 or higher require macOS 10.13 and higher. All packages are available on our GitHub [releases][]
 page. After the package is installed, run `pwsh` from a terminal.
 
 > [!NOTE]
