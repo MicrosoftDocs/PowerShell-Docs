@@ -64,5 +64,8 @@
 
     "need_generate_pdf_url_template": false,
     "branch_target_mapping": {},
-    "targets": {}
+    "targets": {},
+    "docs_build_engine": {
+        "name": "docfx_v3"
+    }
 }
