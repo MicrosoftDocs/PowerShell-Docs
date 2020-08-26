@@ -37,7 +37,7 @@ The comma can also be used to initialize a single item array by placing the
 comma before the single item.
 
 For example, to create a single item array named `$B` containing the single
-value of 7.
+value of 7, type:
 
 ```powershell
 $B = ,7
