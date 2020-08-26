@@ -3,7 +3,7 @@ external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 03/24/2020
+ms.date: 08/25/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/copy-item?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Copy-Item
@@ -75,7 +75,7 @@ Copy-Item -Path "C:\Logfiles\*" -Destination "C:\Drawings" -Recurse
 >
 > `Copy-Item -Path "C:\Logfiles" -Destination "C:\Drawings" -Recurse`
 
-### Example 3: Copy directory contents to a new directory
+### Example 3: Copy directory and contents to a new directory
 
 This example copies the contents of the `C:\Logfiles` source directory and creates a new destination
 directory. The new destination directory, `\Logs` is created in `C:\Drawings`.
@@ -88,8 +88,8 @@ Copy-Item -Path "C:\Logfiles" -Destination "C:\Drawings\Logs" -Recurse
 ```
 
 > [!NOTE]
-> If the **Path** includes `\*`, all the directory's file contents, without the subdirectory trees,
-> are copied to the new destination directory. For example:
+> If the **Path** includes `\*`, all the directory's file contents, including the subdirectory
+> trees, are copied to the new destination directory. For example:
 >
 > `Copy-Item -Path "C:\Logfiles\*" -Destination "C:\Drawings\Logs" -Recurse`
 
