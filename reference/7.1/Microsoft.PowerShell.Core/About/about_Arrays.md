@@ -1,7 +1,7 @@
 ---
 keywords: powershell,cmdlet
 Locale: en-US
-ms.date: 05/11/2020
+ms.date: 08/26/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_arrays?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Arrays
@@ -33,14 +33,24 @@ values of 22, 5, 10, 8, 12, 9, and 80, type:
 $A = 22,5,10,8,12,9,80
 ```
 
+The comma can also be used to initialize a single item array by placing the
+comma before the single item.
+
+For example, to create a single item array named `$B` containing the single
+value of 7, type:
+
+```powershell
+$B = ,7
+```
+
 You can also create and initialize an array by using the range operator (`..`).
 The following example creates an array containing the values 5 through 8.
 
 ```powershell
-$B = 5..8
+$C = 5..8
 ```
 
-As a result, `$B` contains four values: 5, 6, 7, and 8.
+As a result, `$C` contains four values: 5, 6, 7, and 8.
 
 When no data type is specified, PowerShell creates each array as an object
 array (**System.Object[]**). To determine the data type of an array, use the
@@ -48,7 +58,7 @@ array (**System.Object[]**). To determine the data type of an array, use the
 array, type:
 
 ```powershell
-$a.GetType()
+$A.GetType()
 ```
 
 To create a strongly typed array, that is, an array that can contain only
@@ -75,8 +85,9 @@ strongly typed array of process objects, enter the following command:
 
 ## The array sub-expression operator
 
-The array sub-expression operator creates an array, even if it contains zero
-or one object.
+The array sub-expression operator creates an array from the statements inside
+it. Whatever the statement inside the operator produces, the operator will
+place it in an array. Even if there is zero or one object.
 
 The syntax of the array operator is as follows:
 
