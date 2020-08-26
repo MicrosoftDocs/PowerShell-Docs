@@ -2,7 +2,7 @@
     "redirections": [{
             "source_path": "reference/docs-conceptual/dsc/tutorials/dscCiCd.md",
             "redirect_url": "/azure/devops/pipelines/get-started/dsc-cicd",
-            "redirect_document_id": true
+            "redirect_document_id": false
         },
         {
             "source_path": "reference/docs-conceptual/index.md",
@@ -49,12 +49,12 @@
         {
             "source_path": "reference/docs-conceptual/dsc/getting-started/azuredscexthistory.md",
             "redirect_url": "/azure/automation/automation-dsc-extension-history",
-            "redirect_document_id": true
+            "redirect_document_id": false
         },
         {
             "source_path": "reference/docs-conceptual/dsc/getting-started/azuredsc.md",
             "redirect_url": "/azure/automation/automation-dsc-getting-started",
-            "redirect_document_id": true
+            "redirect_document_id": false
         },
 
 
