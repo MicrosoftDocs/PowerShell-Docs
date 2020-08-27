@@ -39,7 +39,7 @@
         "monikerPath": [
             "mapping/monikerMapping.json"
         ],
-        "moniker_ranges": ["powershell-5.1 || powershell-6 || powershell-7 || powershell-7.1"],
+        "moniker_ranges": [],
         "monikers": [],
         "open_to_public_contributors": true,
         "template_folder": "_themes",
