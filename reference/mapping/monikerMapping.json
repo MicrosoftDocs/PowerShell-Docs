@@ -2,25 +2,25 @@
     "powershell-5.1": {
         "conceptualToc": "docs-conceptual/TOC.yml",
         "packageRoot": "5.1",
-        "conceptualTocUrl": "/powershell/scripting/powershell-5.1/toc.json",
+        "conceptualTocUrl": "/powershell/scripting/toc.json",
         "referenceTocUrl": "/powershell/module/psdocs/toc.json"
     },
     "powershell-6": {
         "conceptualToc": "docs-conceptual/TOC.yml",
         "packageRoot": "6",
-        "conceptualTocUrl": "/powershell/scripting/powershell-6/toc.json",
+        "conceptualTocUrl": "/powershell/scripting/toc.json",
         "referenceTocUrl": "/powershell/module/psdocs/toc.json"
     },
     "powershell-7": {
         "conceptualToc": "docs-conceptual/TOC.yml",
         "packageRoot": "7.0",
-        "conceptualTocUrl": "/powershell/scripting/powershell-7/toc.json",
+        "conceptualTocUrl": "/powershell/scripting/toc.json",
         "referenceTocUrl": "/powershell/module/psdocs/toc.json"
     },
     "powershell-7.1": {
         "conceptualToc": "docs-conceptual/TOC.yml",
         "packageRoot": "7.1",
-        "conceptualTocUrl": "/powershell/scripting/powershell-7.1/toc.json",
+        "conceptualTocUrl": "/powershell/scripting/toc.json",
         "referenceTocUrl": "/powershell/module/psdocs/toc.json"
     }
 }
