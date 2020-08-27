@@ -17,8 +17,8 @@
                 "dest": ""
             },
 
-            { "files": ["bread/toc.yml"] },
-            { "files": ["**/*.md", "**/**.yml"], "group": "conceptual", "src": "docs-conceptual"},
+            { "files": ["bread/toc.yml"], "dest": "scripting" },
+            { "files": ["**/*.md", "**/**.yml"], "group": "conceptual", "src": "docs-conceptual", "dest": "scripting"},
 
             { "files": ["toc.yml"], "src": "5.1", "group": "powershell-5.1", "dest": "module/psdocs" },
             { "files": ["**/*.yml", "**/About/*.md"], "src": "5.1", "group": "powershell-5.1", "exclude": ["docs-conceptual/**"], "dest": "module" },
