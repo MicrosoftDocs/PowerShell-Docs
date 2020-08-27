@@ -9,7 +9,6 @@
             "powershell-6": { "moniker_range": "powershell-6" },
             "powershell-7": { "moniker_range": "powershell-7" },
             "powershell-7.1": { "moniker_range": "powershell-7.1" },
-            "conceptual": { "moniker_range": ">=powershell-5.1" }
         },
         "content": [{
                 "files": ["index.yml", "module/index.md"],
@@ -18,7 +17,7 @@
             },
 
             { "files": ["bread/toc.yml"], "dest": "scripting" },
-            { "files": ["**/*.md", "**/**.yml"], "group": "conceptual", "src": "docs-conceptual", "dest": "scripting"},
+            { "files": ["**/*.md", "**/**.yml"], "src": "docs-conceptual", "dest": "scripting"},
 
             { "files": ["toc.yml"], "src": "5.1", "group": "powershell-5.1", "dest": "module/psdocs" },
             { "files": ["**/*.yml", "**/About/*.md"], "src": "5.1", "group": "powershell-5.1", "exclude": ["docs-conceptual/**"], "dest": "module" },
