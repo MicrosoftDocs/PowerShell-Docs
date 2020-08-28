@@ -39,6 +39,7 @@ The following functions are available in the class
 > work well with the screen readers. The default rendering and formatting of
 > PowerShell 7.0 on Windows works properly. You can manually load the module if
 > necessary.
+> ^_^
 
 ## Basic editing functions
 

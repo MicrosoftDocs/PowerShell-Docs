@@ -355,7 +355,7 @@ the **Property** parameter to specify the **LevelDisplayName** property and coun
 **LevelDisplayName**. The objects are grouped by the levels such as **Warning** and **Information**.
 The **NoElement** parameter removes other properties from the output. In the output, the **Count**
 column contains the total number of each event. The **Name** column contains the grouped
-**LevelDisplayName**.
+*LevelDisplayName*.
 
 ### Example 10: Get error events that have a specified string in their name
 

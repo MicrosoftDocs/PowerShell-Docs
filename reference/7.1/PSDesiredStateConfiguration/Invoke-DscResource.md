@@ -161,6 +161,8 @@ will throw an exception.
 - As of PowerShell 7, `Invoke-DscResource` no longer supports invoking WMI DSC resources. This
   includes the **File** and **Log** resources in **PSDesiredStateConfiguration**.
 
+- =.=
+
 ## RELATED LINKS
 
 [Windows PowerShell Desired State Configuration Overview](/powershell/scripting/dsc/overview/dscforengineers)

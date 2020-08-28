@@ -5,7 +5,7 @@ keywords: powershell,cmdlet
 Locale: en-US
 Module Guid: eefcb906-b326-4e99-9f54-8b4bb6ef3c6d
 Module Name: Microsoft.PowerShell.Management
-ms.date: 03/01/2019
+ms.date: 09/01/2020
 schema: 2.0.0
 title: Microsoft.PowerShell.Management
 ---

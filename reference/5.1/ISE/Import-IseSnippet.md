@@ -34,7 +34,7 @@ the current session. The snippets are immediately available for use in Windows P
 cmdlet works only in Windows PowerShell Integrated Scripting Environment (ISE).
 
 To view and use the imported snippets, from the Windows PowerShell ISE **Edit** menu, click **Start
-Snippets** or press <kbd>Ctrl</kbd>+<kbd>J</kbd>.
+Snippets** or press <kbd>Ctrl</kbd>++<kbd>J</kbd>.
 
 Imported snippets are available only in the current session. To import the snippets into all Windows
 PowerShell ISE sessions, add an `Import-IseSnippet` command to your Windows PowerShell profile or
