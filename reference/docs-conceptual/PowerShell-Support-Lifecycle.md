@@ -123,6 +123,11 @@ the dates when various releases will no longer be supported.
 |   6.1   | September 28, 2019 |
 |   6.0   | February 13, 2019  |
 
+> [!NOTE]
+> This document is about support for PowerShell Core 6 and PowerShell 7. Windows PowerShell (1.0 -
+> 5.1) is a component of the Windows OS. Components receive the same support as their parent product
+> or platform. For more information, see [Product and Services Lifecycle Information](https://docs.microsoft.com/en-us/lifecycle/products/)
+
 ## Unsupported platforms
 
 When a platform version reaches end-of-life as defined by the platform owner, PowerShell Core will
