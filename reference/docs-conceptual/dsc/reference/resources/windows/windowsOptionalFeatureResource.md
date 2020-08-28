@@ -1,5 +1,5 @@
 ---
-ms.date: 07/16/2020
+ms.date: 08/28/2020
 keywords: dsc,powershell,configuration,setup
 title: DSC WindowsOptionalFeature Resource
 ---
@@ -9,6 +9,9 @@ title: DSC WindowsOptionalFeature Resource
 
 The **WindowsOptionalFeature** resource in Windows PowerShell Desired State Configuration (DSC)
 provides a mechanism to ensure that optional features are enabled on a target node.
+
+> [!NOTE]
+> **WindowsOptionalFeature** only works on Windows client machines like Windows 10.
 
 ## Syntax
 
