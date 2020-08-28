@@ -9,7 +9,7 @@ ms.topic: conceptual
 There are two ways to create an issue:
 
 1. Use the feedback controls at the bottom of the page.
-1. File an issue in GitHub directly
+2. File an issue in GitHub directly
 
 ## Using the feedback controls
 

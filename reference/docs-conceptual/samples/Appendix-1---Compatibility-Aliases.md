@@ -21,7 +21,7 @@ table:
 | **move**                              | **mv**       | `Move-Item`       | `mi`             |
 | **popd**                              | **popd**     | `Pop-Location`    | `popd`           |
 | **pushd**                             | **pushd**    | `Push-Location`   | `pushd`          |
-| **ren**                               | **mv**       | `Rename-Item`     | `rni`            |
+| **ren**                               | **mvp**       | `Rename-Item`     | `rni`            |
 | **type**                              | **cat**      | `Get-Content`     | `gc`             |
 
 To find the PowerShell aliases, use the [Get-Alias](xref:Microsoft.PowerShell.Utility.Get-Alias)
