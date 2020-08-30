@@ -4,7 +4,7 @@ ms.date: "09/13/2016"
 ---
 # Cmdlet Samples
 
-This section describes sample code that is provided in the Windows PowerShell 2.0 SDK. You can copy code from the topics in this section, or open the source files installed with the SDK. The [Windows PowerShell 2.0 Software Development Kit (SDK)](https://www.microsoft.com/en-us/download/details.aspx?id=2560) provides ReadMe files, source files, and Visual Studio project files for each sample. With the SDK installed, you can find the samples under the `<Drive>:\Program Files (x86)\Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\` folder.
+This section describes sample code that is provided in the Windows PowerShell 2.0 SDK. You can copy code from the topics in this section, or open the source files installed with the SDK. The [Windows PowerShell 2.0 Software Development Kit (SDK)](https://www.microsoft.com/download/details.aspx?id=2560) provides ReadMe files, source files, and Visual Studio project files for each sample. With the SDK installed, you can find the samples under the `<Drive>:\Program Files (x86)\Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\` folder.
 
 ## In This Section
 

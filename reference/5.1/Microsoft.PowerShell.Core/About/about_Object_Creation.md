@@ -28,7 +28,7 @@ There are many ways to create objects, this list is not definitive:
 - [ConvertFrom-Json](xref:Microsoft.PowerShell.Utility.ConvertFrom-Json):
   Creates custom objects defined in JavaScript Object Notation (JSON).
 - [ConvertFrom-String](xref:Microsoft.PowerShell.Utility.ConvertFrom-String):
-  Built on top of [FlashExtract](https://www.microsoft.com/en-us/research/publication/flashextract-framework-data-extraction-examples),
+  Built on top of [FlashExtract](https://www.microsoft.com/research/publication/flashextract-framework-data-extraction-examples),
   `ConvertFrom-String` creates custom objects from structured string data.
   This topic will demonstrate and discuss each of these methods.
 - [ConvertFrom-StringData](xref:Microsoft.PowerShell.Utility.ConvertFrom-StringData):

@@ -54,7 +54,7 @@ You can customize the delimiter by piping the `ConvertFrom-String` results into 
 `Format-*` cmdlets, or you can use the **Delimiter** parameter.
 
 The cmdlet also supports automatically-generated, example-driven parsing based on the
-[FlashExtract, research work by Microsoft Research](https://www.microsoft.com/en-us/research/publication/flashextract-framework-data-extraction-examples/?from=http%3A%2F%2Fresearch.microsoft.com%2Fen-us%2Fum%2Fpeople%2Fsumitg%2Fflashextract.html).
+[FlashExtract, research work by Microsoft Research](https://www.microsoft.com/research/publication/flashextract-framework-data-extraction-examples/).
 
 ## EXAMPLES
 

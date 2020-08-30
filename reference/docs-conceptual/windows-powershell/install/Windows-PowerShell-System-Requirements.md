@@ -62,8 +62,8 @@ install the specified version of the Windows Management Framework for your opera
 | ------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
 | Windows 8.1                                 | Installed by default                                                                                       |
 | Windows Server 2012 R2                      | Installed by default                                                                                       |
-| Windows® 7 with Service Pack 1              | Install [Windows Management Framework 4.0](https://www.microsoft.com/en-us/download/details.aspx?id=40855) |
-| Windows Server® 2008 R2 with Service Pack 1 | Install [Windows Management Framework 4.0](https://www.microsoft.com/en-us/download/details.aspx?id=40855) |
+| Windows® 7 with Service Pack 1              | Install [Windows Management Framework 4.0](https://www.microsoft.com/download/details.aspx?id=40855) |
+| Windows Server® 2008 R2 with Service Pack 1 | Install [Windows Management Framework 4.0](https://www.microsoft.com/download/details.aspx?id=40855) |
 
 ### Windows PowerShell 3.0
 
@@ -74,9 +74,9 @@ install the specified version of the Windows Management Framework for your opera
 | ------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
 | Windows 8                                   | Installed by default                                                                                       |
 | Windows Server 2012                         | Installed by default                                                                                       |
-| Windows® 7 with Service Pack 1              | Install [Windows Management Framework 3.0](https://www.microsoft.com/en-us/download/details.aspx?id=34595) |
-| Windows Server® 2008 R2 with Service Pack 1 | Install [Windows Management Framework 3.0](https://www.microsoft.com/en-us/download/details.aspx?id=34595) |
-| Windows Server 2008 with Service Pack 2     | Install [Windows Management Framework 3.0](https://www.microsoft.com/en-us/download/details.aspx?id=34595) |
+| Windows® 7 with Service Pack 1              | Install [Windows Management Framework 3.0](https://www.microsoft.com/download/details.aspx?id=34595) |
+| Windows Server® 2008 R2 with Service Pack 1 | Install [Windows Management Framework 3.0](https://www.microsoft.com/download/details.aspx?id=34595) |
+| Windows Server 2008 with Service Pack 2     | Install [Windows Management Framework 3.0](https://www.microsoft.com/download/details.aspx?id=34595) |
 
 ## Microsoft .NET Framework requirements
 
@@ -94,7 +94,7 @@ Use the following links to download Microsoft .NET Framework from the Microsoft 
 |                     Version                      |                                                     Link                                                     |
 | ------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
 | .NET Framework 4.5 (`dotNetFx45_Full_setup.exe`) | [Microsoft .NET Framework 4.5](https://go.microsoft.com/fwlink/?LinkID=242919)                               |
-| .NET Framework 4 (`dotNetFx40_Full_setup.exe`)   | [Microsoft .NET Framework 4 (Web Installer)](https://www.microsoft.com/en-us/download/details.aspx?id=17851) |
+| .NET Framework 4 (`dotNetFx40_Full_setup.exe`)   | [Microsoft .NET Framework 4 (Web Installer)](https://www.microsoft.com/download/details.aspx?id=17851) |
 
 ## Windows Management Framework 4.0
 
