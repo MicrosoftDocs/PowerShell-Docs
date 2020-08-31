@@ -35,7 +35,7 @@ This article describes the experimental features that are available and how to u
 | PSDesiredStateConfiguration.InvokeDscResource              |         | &check; |    &check;    |
 | PSNullConditionalOperators                                 |         | &check; |    &check;    |
 | PSUnixFileStat (non-Windows only)                          |         | &check; |    &check;    |
-| PSNativePSPathResolution                                   |         |         |    &check;    |
+| PSNativePSPathResolution (mainstream in PS 7.1+)           |         |         |    &check;    |
 | PSCultureInvariantReplaceOperator                          |         |         |    &check;    |
 | PSNotApplyErrorActionToStderr                              |         |         |    &check;    |
 
