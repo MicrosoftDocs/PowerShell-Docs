@@ -1,5 +1,5 @@
 ---
-ms.date: 08/17/2020
+ms.date: 08/31/2020
 title: Using Experimental Features in PowerShell
 description: Lists the currently available experimental features and how to use them.
 ---
@@ -35,7 +35,7 @@ This article describes the experimental features that are available and how to u
 | PSDesiredStateConfiguration.InvokeDscResource              |         | &check; |    &check;    |
 | PSNullConditionalOperators                                 |         | &check; |    &check;    |
 | PSUnixFileStat (non-Windows only)                          |         | &check; |    &check;    |
-| PSNativePSPathResolution                                   |         |         |    &check;    |
+| PSNativePSPathResolution (mainstream in PS 7.1+)           |         |         |    &check;    |
 | PSCultureInvariantReplaceOperator                          |         |         |    &check;    |
 | PSNotApplyErrorActionToStderr                              |         |         |    &check;    |
 
@@ -172,6 +172,10 @@ operating system.
 
 - If the path is not a PSDrive or `~` (on Windows), then path normalization doesn't occur
 - If the path is in single quotes, then it's not resolved and treated as literal
+
+> [!NOTE]
+> This feature has moved out of the experimental phase and is a mainstream feature in PowerShell 7.1
+> and higher.
 
 ## PSNotApplyErrorActionToStderr
 
