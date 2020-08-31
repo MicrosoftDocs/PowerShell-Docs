@@ -126,7 +126,7 @@ the dates when various releases will no longer be supported.
 > [!NOTE]
 > This document is about support for PowerShell Core 6 and PowerShell 7. Windows PowerShell (1.0 -
 > 5.1) is a component of the Windows OS. Components receive the same support as their parent product
-> or platform. For more information, see [Product and Services Lifecycle Information](https://docs.microsoft.com/en-us/lifecycle/products/)
+> or platform. For more information, see [Product and Services Lifecycle Information](/lifecycle/products/)
 
 ## Unsupported platforms
 
@@ -221,4 +221,4 @@ for historical reference. It is not intended for use to determine the support li
 [module compatibility list]: /powershell/scripting/whats-new/module-compatibility
 [WindowsPSModulePath]: https://www.powershellgallery.com/packages/WindowsPSModulePath/
 [Experimental features]: /powershell/module/microsoft.powershell.core/about/about_powershell_config#experimentalfeatures
-[Microsoft Security Servicing Criteria for Windows]: https://www.microsoft.com/en-us/msrc/windows-security-servicing-criteria
+[Microsoft Security Servicing Criteria for Windows]: https://www.microsoft.com/msrc/windows-security-servicing-criteria

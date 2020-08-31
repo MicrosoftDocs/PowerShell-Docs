@@ -18,7 +18,7 @@ title:  Configure a virtual machines at initial boot-up by using DSC
 To run these examples, you will need:
 
 - A bootable VHD to work with. You can download an ISO with an evaluation copy of Windows Server 2016 at
-  [TechNet Evaluation Center](https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2016).
+  [TechNet Evaluation Center](https://www.microsoft.com/evalcenter/evaluate-windows-server-2016).
   You can find instructions on how to create a VHD from an ISO image at [Creating Bootable Virtual Hard Disks](/previous-versions/windows/it-pro/windows-7/gg318049(v=ws.10)).
 - A host computer that has Hyper-V enabled. For information, see [Hyper-V overview](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831531(v=ws.11)).
 

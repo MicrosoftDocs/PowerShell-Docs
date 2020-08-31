@@ -102,15 +102,14 @@ DSC module to automate pull server provisioning.
 Windows Server 2012 R2 includes a feature named the DSC Service. The DSC Service feature provides
 the pull server functionality, including the binaries that support the OData endpoint. WMF is
 included in Windows Server and is updated on an agile cadence between Windows Server releases.
-[New versions of WMF 5.0](https://www.microsoft.com/en-us/download/details.aspx?id=54616) can
-include updates to the DSC Service feature. For this reason, it is a best practice to download the
-latest release of WMF and to review the release notes to determine if the release includes an update
-to the DSC service feature. You should also review the section of the release notes that indicates
-whether the design status for an update or scenario is listed as stable or experimental. To allow
-for an agile release cycle, individual features can be declared stable, which indicates the feature
-is ready to be used in a production environment even while WMF is released in preview. Other
-features that have historically been updated by WMF releases (see the WMF Release Notes for further
-detail):
+[New versions of WMF 5.0](https://www.microsoft.com/download/details.aspx?id=54616) can include
+updates to the DSC Service feature. For this reason, it is a best practice to download the latest
+release of WMF and to review the release notes to determine if the release includes an update to the
+DSC service feature. You should also review the section of the release notes that indicates whether
+the design status for an update or scenario is listed as stable or experimental. To allow for an
+agile release cycle, individual features can be declared stable, which indicates the feature is
+ready to be used in a production environment even while WMF is released in preview. Other features
+that have historically been updated by WMF releases (see the WMF Release Notes for further detail):
 
 - Windows PowerShell Windows PowerShell Integrated Scripting
 - Environment (ISE) Windows PowerShell Web Services (Management OData

@@ -24,7 +24,7 @@ Configuration script (`.ps1`), that you can edit and recompile. The cmdlets dete
 errors for missing resources, or duplicate resource blocks. Resource blocks that would cause
 compilation errors are commented out.
 
-The following example converts a [Microsoft Security Baseline](https://www.microsoft.com/en-us/download/details.aspx?id=55319)
+The following example converts a [Microsoft Security Baseline](https://www.microsoft.com/download/details.aspx?id=55319)
 into a DSC configuration script (`.ps1`) and `.mof` file.
 
 ```powershell

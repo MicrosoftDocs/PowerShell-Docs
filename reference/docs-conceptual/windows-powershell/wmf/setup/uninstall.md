@@ -9,7 +9,7 @@ title: Uninstall WMF 5.0
 ## Using Command Prompt
 
 1. Open **Command Prompt.**
-2. Run the [Windows Update Standalone Launcher](https://support.microsoft.com/en-us/kb/934307) as
+2. Run the [Windows Update Standalone Launcher](https://support.microsoft.com/kb/934307) as
    shown below:
 
 On Windows Server 2012 R2 and Windows 8.1:
