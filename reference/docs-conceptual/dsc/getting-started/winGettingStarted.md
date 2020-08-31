@@ -29,7 +29,7 @@ so it cannot be managed by PowerShell DSC or Azure Automation State Configuratio
 ## Installing DSC
 
 PowerShell Desired State Configuration is included in Windows and updated through Windows Management
-Framework. The latest version is [Windows Management Framework 5.1](https://www.microsoft.com/en-us/download/details.aspx?id=54616).
+Framework. The latest version is [Windows Management Framework 5.1](https://www.microsoft.com/download/details.aspx?id=54616).
 
 > [!NOTE]
 > You do not need to enable the Windows Server feature 'DSC-Service' to manage a machine using DSC.

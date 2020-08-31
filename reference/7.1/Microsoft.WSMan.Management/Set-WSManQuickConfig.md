@@ -117,7 +117,7 @@ this parameter and SSL isn't available on the port that's used for the connectio
 fails.
 
 **HTTPS** requires manual configuration of WinRM and firewall rules. For more information, see
-[How To: Configure WINRM for HTTPS](https://support.microsoft.com/en-us/help/2019527/how-to-configure-winrm-for-https).
+[How To: Configure WINRM for HTTPS](https://support.microsoft.com/help/2019527/how-to-configure-winrm-for-https).
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -167,7 +167,7 @@ This cmdlet doesn't generate any output.
 
 [Get-WSManInstance](Get-WSManInstance.md)
 
-[How To: Configure WINRM for HTTPS](https://support.microsoft.com/en-us/help/2019527/how-to-configure-winrm-for-https)
+[How To: Configure WINRM for HTTPS](https://support.microsoft.com/help/2019527/how-to-configure-winrm-for-https)
 
 [Invoke-WSManAction](Invoke-WSManAction.md)
 
