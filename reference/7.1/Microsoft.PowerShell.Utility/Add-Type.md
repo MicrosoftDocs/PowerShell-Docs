@@ -445,6 +445,11 @@ The acceptable values for this parameter are as follows:
 - Library
 - WindowsApplication
 
+> [!IMPORTANT]
+> As of PowerShell 7.1, `ConsoleApplication` and `WindowsApplication` are not supported and
+> PowerShell will throw a terminating error if they are specified as values for the **OutputType**
+> parameter.
+
 ```yaml
 Type: Microsoft.PowerShell.Commands.OutputAssemblyType
 Parameter Sets: FromSource, FromMember, FromPath, FromLiteralPath
