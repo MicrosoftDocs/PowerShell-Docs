@@ -1,7 +1,7 @@
 ---
 keywords: powershell,cmdlet
 Locale: en-US
-ms.date: 06/24/2020
+ms.date: 09/02/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_functions_advanced_parameters?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Functions_Advanced_Parameters
@@ -466,17 +466,21 @@ for variables.
 ### AllowNull validation attribute
 
 The **AllowNull** attribute allows the value of a mandatory parameter to be
-`$null`. The following example declares a **ComputerName** parameter that can
-have a **null** value.
+`$null`. The following example declares a hashtable **ComputerInfo** parameter
+that can have a **null** value.
 
 ```powershell
 Param(
     [Parameter(Mandatory=$true)]
     [AllowNull()]
-    [String]
-    $ComputerName
+    [hashtable]
+    $ComputerInfo
 )
 ```
+
+> [!NOTE]
+> The **AllowNull** attribute doesn't work if the type converter is set to
+> string. You can use the **AllowEmptyString** attribute for this scenario.
 
 ### AllowEmptyString validation attribute
 
@@ -549,8 +553,13 @@ In the following example, the value of the variable `$number` must be a minimum
 of one character in length, and a maximum of ten characters.
 
 ```powershell
-[Int32][ValidateLength(1,10)]$number = 01
+[Int32][ValidateLength(1,10)]$number = '01'
 ```
+
+> [!NOTE]
+> In this example, value of `01` is wrapped in single quotes. The
+> **ValidateLength** attribute won't accept a number without being wrapped in
+> quotes.
 
 ### ValidatePattern validation attribute
 
