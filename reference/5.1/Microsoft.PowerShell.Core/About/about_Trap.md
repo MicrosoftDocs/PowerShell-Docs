@@ -84,13 +84,13 @@ Running this function returns the following:
 
 ```Output
 Error found.
-nonsenseString:
-Line |
-   3 |      nonsenseString
-     |      ~~~~~~~~~~~~~~
-     | The term 'nonsenseString' is not recognized as the name of a cmdlet,
-function, script file, or operable program. Check the spelling of the name, or
-if a path was included, verify that the path is correct and try again.
+nonsenseString : The term 'nonsenseString' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was
+included, verify that the path is correct and try again.
+At line:3 char:5
++     nonsenseString
++     ~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (nonsenseString:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
 ```
 
 The following example includes a `trap` statement that displays the error by
@@ -108,16 +108,14 @@ TrapTest
 Running this version of the function returns the following:
 
 ```Output
-Error found: The term 'nonsenseString' is not recognized as the name of a
-cmdlet, function, script file, or operable program. Check the spelling of the
-name, or if a path was included, verify that the path is correct and try again.
-nonsenseString:
-Line |
-   3 |      nonsenseString
-     |      ~~~~~~~~~~~~~~
-     | The term 'nonsenseString' is not recognized as the name of a cmdlet,
-function, script file, or operable program. Check the spelling of the name, or
-if a path was included, verify that the path is correct and try again.
+Error found: The term 'nonsenseString' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+nonsenseString : The term 'nonsenseString' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was
+included, verify that the path is correct and try again.
+At line:3 char:5
++     nonsenseString
++     ~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (nonsenseString:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
 ```
 
 > [!IMPORTANT]
@@ -181,13 +179,13 @@ Running this script produces the following result:
 
 ```Output
 Command error trapped
-nonsenseString:
-Line |
-   5 |  nonsenseString
-     |  ~~~~~~~~~~~~~~
-     | The term 'nonsenseString' is not recognized as the name of a cmdlet,
-function, script file, or operable program. Check the spelling of the name, or
-if a path was included, verify that the path is correct and try again.
+nonsenseString : The term 'nonsenseString' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was
+included, verify that the path is correct and try again.
+At C:\Temp\traptest.ps1:5 char:1
++ nonsenseString
++ ~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (nonsenseString:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
 ```
 
 Because PowerShell does not recognize "nonsenseString" as a cmdlet or other
@@ -207,12 +205,12 @@ trap [System.Management.Automation.CommandNotFoundException]
 Running this script produces the following result:
 
 ```Output
-Other terminating error trapped
-RuntimeException:
-Line |
-   4 |  1/$null
-     |  ~~~~~~~
-     | Attempted to divide by zero.
+Attempted to divide by zero.
+At C:\temp\traptest.ps1:4 char:1
++ 1/$null
++ ~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [], RuntimeException
+    + FullyQualifiedErrorId : RuntimeException
 ```
 
 The attempt to divide by zero does not create a **CommandNotFoundException**
@@ -245,13 +243,14 @@ Running this script produces the following result:
 
 ```Output
 An error:
-NonsenseString:
-Line |
-   3 |      NonsenseString
-     |      ~~~~~~~~~~~~~~
-     | The term 'NonsenseString' is not recognized as the name of a cmdlet,
-function, script file, or operable program. Check the spelling of the name, or
-if a path was included, verify that the path is correct and try again.
+NonsenseString : The term 'NonsenseString' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was
+included, verify that the path is correct and try again.
+At line:3 char:5
++     NonsenseString
++     ~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (NonsenseString:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
 function1 was completed
 ```
 
@@ -277,13 +276,13 @@ Running the `Function2` function produces the following result:
 
 ```Output
 An error:
-NonsenseString:
-Line |
-   2 |      NonsenseString
-     |      ~~~~~~~~~~~~~~
-     | The term 'NonsenseString' is not recognized as the name of a cmdlet,
-function, script file, or operable program. Check the spelling of the name, or
-if a path was included, verify that the path is correct and try again.
+NonsenseString : The term 'NonsenseString' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was
+included, verify that the path is correct and try again.
+At C:\temp\traptest.ps1:2 char:5
++     NonsenseString
++     ~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (NonsenseString:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
 ```
 
 In this example, the "function2 was completed" command was not run. In both
@@ -333,11 +332,12 @@ break_example
 
 ```Output
 Error trapped
-ParentContainsErrorRecordException:
-Line |
-   6 |      1/$null
-     |      ~~~~~~~
-     | Attempted to divide by zero.
+Attempted to divide by zero.
+At line:6 char:5
++     1/$null
++     ~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : RuntimeException
 ```
 
 Because the `trap` statement included the `break` keyword, the function does
