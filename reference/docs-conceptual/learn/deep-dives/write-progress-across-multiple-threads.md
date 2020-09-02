@@ -7,9 +7,10 @@ ms.date: 08/02/2020
 # Writing Progress across multiple threads with Foreach Parallel
 
 Starting in PowerShell 7.0, the ability to work in multiple threads simultaneously is possible using
-the **Parallel** parameter in the [Foreach-Object](/powershell/reference/7.0/Microsoft.PowerShell.Core/Foreach-Object)
-cmdlet. Monitoring the progress of these threads can be a challenge though. Normally, you can
-monitor the progress of a process using [Write-Progress](/powershell/reference/7.0/Microsoft.PowerShell.Utility/Write-Progress).
+the **Parallel** parameter in the
+[Foreach-Object](/powershell/module/Microsoft.PowerShell.Core/Foreach-Object) cmdlet. Monitoring the
+progress of these threads can be a challenge though. Normally, you can monitor the progress of a
+process using [Write-Progress](/powershell/module/Microsoft.PowerShell.Utility/Write-Progress).
 However, since PowerShell uses a separate runspace for each thread when using **Parallel**,
 reporting the progress back to the host isn't as straight forward as normal use of `Write-Progress`.
 
@@ -247,6 +248,6 @@ while($job.State -eq 'Running')
 
 ## Related Links
 
-- [about_Jobs](/powershell/reference/7.0/Microsoft.PowerShell.Core/About/about_Jobs)
-- [about_Scopes](/powershell/reference/7.0/Microsoft.PowerShell.Core/About/about_Scopes)
-- [about_Splatting](/powershell/reference/7.0/Microsoft.PowerShell.Core/About/about_Splatting)
+- [about_Jobs](/powershell/module/Microsoft.PowerShell.Core/About/about_Jobs)
+- [about_Scopes](/powershell/module/Microsoft.PowerShell.Core/About/about_Scopes)
+- [about_Splatting](/powershell/module/Microsoft.PowerShell.Core/About/about_Splatting)
