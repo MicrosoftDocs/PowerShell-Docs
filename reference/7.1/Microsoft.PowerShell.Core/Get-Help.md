@@ -3,7 +3,7 @@ external help file: System.Management.Automation.dll-Help.xml
 keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 08/24/2020
+ms.date: 09/03/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/get-help?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Help
@@ -20,42 +20,42 @@ Displays information about PowerShell commands and concepts.
 
 ```
 Get-Help [[-Name] <String>] [-Path <String>] [-Category <String[]>] [-Full] [-Component <String[]>]
- [-Functionality <String[]>] [-Paged] [-Role <String[]>] [<CommonParameters>]
+ [-Functionality <String[]>] [-Role <String[]>] [<CommonParameters>]
 ```
 
 ### DetailedView
 
 ```
 Get-Help [[-Name] <String>] [-Path <String>] [-Category <String[]>] -Detailed
- [-Component <String[]>] [-Functionality <String[]>] [-Paged] [-Role <String[]>] [<CommonParameters>]
+ [-Component <String[]>] [-Functionality <String[]>] [-Role <String[]>] [<CommonParameters>]
 ```
 
 ### Examples
 
 ```
 Get-Help [[-Name] <String>] [-Path <String>] [-Category <String[]>] -Examples
- [-Component <String[]>] [-Functionality <String[]>] [-Paged] [-Role <String[]>] [<CommonParameters>]
+ [-Component <String[]>] [-Functionality <String[]>] [-Role <String[]>] [<CommonParameters>]
 ```
 
 ### Parameters
 
 ```
 Get-Help [[-Name] <String>] [-Path <String>] [-Category <String[]>] -Parameter <String[]>
- [-Component <String[]>] [-Functionality <String[]>] [-Paged] [-Role <String[]>] [<CommonParameters>]
+ [-Component <String[]>] [-Functionality <String[]>] [-Role <String[]>] [<CommonParameters>]
 ```
 
 ### Online
 
 ```
 Get-Help [[-Name] <String>] [-Path <String>] [-Category <String[]>] [-Component <String[]>]
- [-Functionality <String[]>] [-Paged] [-Role <String[]>] -Online [<CommonParameters>]
+ [-Functionality <String[]>] [-Role <String[]>] -Online [<CommonParameters>]
 ```
 
 ### ShowWindow
 
 ```
 Get-Help [[-Name] <String>] [-Path <String>] [-Category <String[]>] [-Component <String[]>]
- [-Functionality <String[]>] [-Paged] [-Role <String[]>] -ShowWindow [<CommonParameters>]
+ [-Functionality <String[]>] [-Role <String[]>] -ShowWindow [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -185,19 +185,7 @@ is shown.
 
 These parameters aren't effective for the conceptual (**about_**) help articles.
 
-### Example 5: Display help and use paging to navigate
-
-This example displays help and allows you to navigate using the up and down arrows.
-
-```powershell
-Get-Help -Name Get-Command -Paged
-```
-
-The **Paged** parameter allows you to navigate the help with the up and down arrows. You can press
-<kbd>Q</kbd> to exit the paging navigation. All other keyboard input will be ignored until
-<kbd>Q</kbd> is pressed.
-
-### Example 6: Display online version of help
+### Example 5: Display online version of help
 
 This example displays the online version of the help article for the `Format-Table` cmdlet in your
 default web browser.
@@ -206,7 +194,7 @@ default web browser.
 Get-Help Format-Table -Online
 ```
 
-### Example 7: Display help about the help system
+### Example 6: Display help about the help system
 
 The `Get-Help` cmdlet without parameters displays information about the PowerShell help system.
 
@@ -214,7 +202,7 @@ The `Get-Help` cmdlet without parameters displays information about the PowerShe
 Get-Help
 ```
 
-### Example 8: Display available help articles
+### Example 7: Display available help articles
 
 This example displays a list of all help articles available on your computer.
 
@@ -222,7 +210,7 @@ This example displays a list of all help articles available on your computer.
 Get-Help *
 ```
 
-### Example 9: Display a list of conceptual articles
+### Example 8: Display a list of conceptual articles
 
 This example displays a list of the conceptual articles included in PowerShell help. All these
 articles begin with the characters **about_**. To display a particular help file, type
@@ -235,7 +223,7 @@ information about downloading and installing help files in PowerShell 3.0, see [
 Get-Help about_*
 ```
 
-### Example 10: Search for a word in cmdlet help
+### Example 9: Search for a word in cmdlet help
 
 This example shows how to search for a word in a cmdlet help article.
 
@@ -255,7 +243,7 @@ Import-Clixml
 to convert the object into a string. `Select-String` uses the **Pattern** parameter to search the
 string for **Clixml**.
 
-### Example 11: Display a list of articles that include a word
+### Example 10: Display a list of articles that include a word
 
 This example displays a list of articles that include the word **remoting**.
 
@@ -274,7 +262,7 @@ Disable-PSRemoting                Cmdlet    Microsoft.PowerShell.Core Prevents r
 Enable-PSRemoting                 Cmdlet    Microsoft.PowerShell.Core Configures the computer...
 ```
 
-### Example 12: Display provider-specific help
+### Example 11: Display provider-specific help
 
 This example shows two ways of getting the provider-specific help for `Get-Item`. These commands get
 help that explains how to use the `Get-Item` cmdlet in the PowerShell SQL Server provider's
@@ -321,7 +309,7 @@ SYNOPSIS
     ...
 ```
 
-### Example 13: Display help for a script
+### Example 12: Display help for a script
 
 This example gets help for the `MyScript.ps1 script`. For information about how to write help for
 your functions and scripts, see [about_Comment_Based_Help](./About/about_Comment_Based_Help.md).
@@ -512,23 +500,6 @@ Parameter Sets: Online
 Aliases:
 
 Required: True
-Position: Named
-Default value: False
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Paged
-
-Allows you to navigate help with the up and down arrows. You can press <kbd>Q</kbd> to exit the
-paging navigation. All other keyboard input will be ignored until <kbd>Q</kbd> is pressed.
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
-Aliases:
-
-Required: False
 Position: Named
 Default value: False
 Accept pipeline input: False
