@@ -64,7 +64,7 @@ cmdlet. The following command is used to display the help topic for `Get-Help`.
 Get-Help -Name Get-Help
 ```
 
-```Outpout
+```Output
 Do you want to run Update-Help?
 The Update-Help cmdlet downloads the most current Help files for Windows PowerShell
 modules, and installs them on your computer. For more information about the Update-Help
