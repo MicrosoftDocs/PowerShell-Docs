@@ -459,9 +459,15 @@ Param(
 
 Validation attributes direct PowerShell to test the parameter values that users
 submit when they call the advanced function. If the parameter values fail the
-test, an error is generated and the function isn't called. You can also use
-some of the validation attributes to restrict the values that users can specify
-for variables.
+test, an error is generated and the function isn't called.
+
+You can also use the validation attributes to restrict the values that
+users can specify for variables. When you use a type converter along with a
+validation attribute, the type converter has to be defined before the attribute.
+
+```powershell
+[int32][AllowNull()] $number = 7
+```
 
 ### AllowNull validation attribute
 
@@ -480,7 +486,8 @@ Param(
 
 > [!NOTE]
 > The **AllowNull** attribute doesn't work if the type converter is set to
-> string. You can use the **AllowEmptyString** attribute for this scenario.
+> string as the string type will not accept a null value. You can use the
+> **AllowEmptyString** attribute for this scenario.
 
 ### AllowEmptyString validation attribute
 
@@ -557,7 +564,7 @@ of one character in length, and a maximum of ten characters.
 ```
 
 > [!NOTE]
-> In this example, value of `01` is wrapped in single quotes. The
+> In this example, the value of `01` is wrapped in single quotes. The
 > **ValidateLength** attribute won't accept a number without being wrapped in
 > quotes.
 
@@ -686,9 +693,9 @@ $Message = "bye"
 The **ValidateNotNull** attribute specifies that the parameter value can't be
 `$null`. PowerShell generates an error if the parameter value is `$null`.
 
-The **ValidateNotNull** attribute is designed to be used when the type of the
-parameter value isn't specified or when the specified type accepts a value of
-`$null`. If you specify a type that doesn't accept a `$null` value, such as a
+The **ValidateNotNull** attribute is designed to be used when the specified
+type accepts a value of `$null` or if the parameter is optional and the type is
+undefined. If you specify a type that doesn't accept a `$null` value, such as a
 string, the `$null` value is rejected without the **ValidateNotNull**
 attribute, because it doesn't match the specified type.
 
@@ -698,6 +705,7 @@ In the following example, the value of the **ID** parameter can't be `$null`.
 Param(
     [Parameter(Mandatory=$true)]
     [ValidateNotNull()]
+    [int]
     $ID
 )
 ```
