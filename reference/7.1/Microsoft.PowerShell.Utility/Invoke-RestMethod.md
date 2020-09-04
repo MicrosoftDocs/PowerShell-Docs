@@ -3,7 +3,7 @@ external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 06/25/2020
+ms.date: 09/03/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/invoke-restmethod?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Invoke-RestMethod
@@ -982,15 +982,17 @@ using flag notation or combining multiple `WebSslProtocol` options with `-bor`, 
 multiple protocols is not supported on all platforms.
 
 > [!NOTE]
-> On non-Windows platforms it may not be possible to supply `'Tls, Tls12'` as an option.
+> On non-Windows platforms it may not be possible to supply `Tls` or `Tls12` as an option. Support
+> for `Tls13` is not available on all operating systems and will need to be verified on a per
+> operating system basis.
 
-This feature was added in PowerShell 6.0.0.
+This feature was added in PowerShell 6.0.0 and support for `Tls13` was added in PowerShell 7.1.
 
 ```yaml
 Type: Microsoft.PowerShell.Commands.WebSslProtocol
 Parameter Sets: (All)
 Aliases:
-Accepted values: Default, Tls, Tls11, Tls12
+Accepted values: Default, Tls, Tls11, Tls12, Tls13
 
 Required: False
 Position: Named
