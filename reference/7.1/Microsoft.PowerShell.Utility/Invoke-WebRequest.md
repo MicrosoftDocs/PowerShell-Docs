@@ -961,11 +961,11 @@ protocol using flag notation or combining multiple **WebSslProtocol** options wi
 supplying multiple protocols is not supported on all platforms.
 
 > [!NOTE]
-> On non-Windows platforms it may not be possible to supply `'Tls, Tls12'` as an option. Support for
-> `'Tls13'` is not available on all Operating Systems and will need to be verified on a per
-> Operating System basis.
+> On non-Windows platforms it may not be possible to supply `Tls` or `Tls12` as an option. Support
+> for `Tls13` is not available on all operating systems and will need to be verified on a per
+> operating system basis.
 
-This feature was added in PowerShell 6.0.0 and support for `'Tls13'` added in PowerShell 7.1.
+This feature was added in PowerShell 6.0.0 and support for `Tls13` was added in PowerShell 7.1.
 
 ```yaml
 Type: Microsoft.PowerShell.Commands.WebSslProtocol
