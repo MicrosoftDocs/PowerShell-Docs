@@ -3,7 +3,7 @@ external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 06/09/2017
+ms.date: 09/08/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/write-output?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Write-Output
@@ -28,10 +28,11 @@ If the command is the last command in the pipeline, the object is displayed in t
 `Write-Output` sends objects down the primary pipeline, also known as the "output stream" or the
 "success pipeline." To send error objects down the error pipeline, use Write-Error.
 
-This cmdlet is typically used in scripts to display strings and other objects on the console.
-However, because the default behavior is to display the objects at the end of a pipeline, it is
-generally not necessary to use the cmdlet. For instance, `Get-Process | Write-Output` is equivalent
-to `Get-Process`.
+> [!NOTE]
+> This cmdlet is typically used in scripts to display strings and other objects on the console.
+> However, because the default behavior is to display the objects at the end of a pipeline, it is
+> generally not necessary to use the cmdlet. For instance, `Get-Process | Write-Output` is
+> equivalent to `Get-Process`.
 
 ## EXAMPLES
 
@@ -42,9 +43,9 @@ $P = Get-Process
 Write-Output $P
 ```
 
-The first command gets processes running on the computer and stores them in the $P variable.
+The first command gets processes running on the computer and stores them in the `$P` variable.
 
-The second and third commands display the process objects in $P on the console.
+The second and third commands display the process objects in `$P` on the console.
 
 ### Example 2: Pass output to another cmdlet
 
@@ -52,8 +53,8 @@ The second and third commands display the process objects in $P on the console.
 Write-Output "test output" | Get-Member
 ```
 
-This command pipes the "test output" string to the `Get-Member` cmdlet, which displays the members of
-the **System.String** class, demonstrating that the string was passed along the pipeline.
+This command pipes the "test output" string to the `Get-Member` cmdlet, which displays the members
+of the **System.String** class, demonstrating that the string was passed along the pipeline.
 
 ### Example 3: Suppress enumeration in output
 
