@@ -28,11 +28,12 @@ If the command is the last command in the pipeline, the object is displayed in t
 `Write-Output` sends objects down the primary pipeline, also known as the "output stream" or the
 "success pipeline." To send error objects down the error pipeline, use Write-Error.
 
-> [!NOTE]
-> This cmdlet is typically used in scripts to display strings and other objects on the console.
-> However, because the default behavior is to display the objects at the end of a pipeline, it is
-> generally not necessary to use the cmdlet. For instance, `Get-Process | Write-Output` is
-> equivalent to `Get-Process`.
+> [!NOTE] This cmdlet is typically used in scripts to display strings and other objects on the
+> console. One of the built-in aliases for `Write-Output` is `echo` and similar to other shells that
+> use `echo`, the default behavior is to display the objects at the end of a pipeline. In
+> PowerShell, it is generally not necessary to use the cmdlet in instances where the output is
+> displayed by default. For example, `Get-Process | Write-Output` is equivalent to `Get-Process`.
+> Or, `echo "Home directory: $HOME"` can be written, `"Home directory: $HOME"`.
 
 ## EXAMPLES
 
