@@ -280,7 +280,6 @@ If a command does not work correctly, you might not have the required permission
   To find the service names and display names of the services on your system, type `Get-Service`.
 The service names appear in the **Name** column and the display names appear in the **DisplayName** column.
 
-*
 
 ## RELATED LINKS
 
