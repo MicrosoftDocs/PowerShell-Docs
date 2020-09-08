@@ -3,7 +3,7 @@ external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 08/06/2020
+ms.date: 09/04/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/add-type?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Add-Type
@@ -444,6 +444,11 @@ The acceptable values for this parameter are as follows:
 - ConsoleApplication
 - Library
 - WindowsApplication
+
+> [!IMPORTANT]
+> As of PowerShell 7.1, `ConsoleApplication` and `WindowsApplication` are not supported and
+> PowerShell throws a terminating error if either are specified as values for the **OutputType**
+> parameter.
 
 ```yaml
 Type: Microsoft.PowerShell.Commands.OutputAssemblyType
