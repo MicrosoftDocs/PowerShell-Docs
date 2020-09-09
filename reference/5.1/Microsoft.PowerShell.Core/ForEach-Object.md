@@ -3,17 +3,17 @@ external help file: System.Management.Automation.dll-Help.xml
 keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 04/09/2020
+ms.date: 09/08/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/foreach-object?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: ForEach-Object
 ---
 # ForEach-Object
 
-## SYNOPSIS
+## Synopsis
 Performs an operation against each item in a collection of input objects.
 
-## SYNTAX
+## Syntax
 
 ### ScriptBlockSet (Default)
 
@@ -29,7 +29,7 @@ ForEach-Object [-InputObject <PSObject>] [-MemberName] <String> [-ArgumentList <
  [-Confirm] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 The `ForEach-Object` cmdlet performs an operation on each item in a collection of input objects. The
 input objects can be piped to the cmdlet or specified by using the **InputObject** parameter.
@@ -61,7 +61,7 @@ Starting in Windows PowerShell 3.0, there are two different ways to construct a 
 
   `Get-Process | ForEach-Object ProcessName`
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Divide integers in an array
 
@@ -201,7 +201,7 @@ The second command uses the **MemberName** parameter to specify the **Split** me
 The third command uses the **Foreach** alias of the `ForEach-Object` cmdlet and omits the names of
 the **MemberName** and **ArgumentList** parameters, which are optional.
 
-### Example 8: Using ForeEach-Object with two script blocks
+### Example 8: Using ForEach-Object with two script blocks
 
 In this example we pass two script blocks positionally. All the script blocks bind to the
 **Process** parameter. However, they are treated as if they had been passed to the **Begin** and
@@ -217,7 +217,7 @@ process
 process
 ```
 
-### Example 9: Using ForeEach-Object with more than two script blocks
+### Example 9: Using ForEach-Object with more than two script blocks
 
 In this example we pass two script blocks positionally. All the script blocks bind to the
 **Process** parameter. However, they are treated as if they had been passed to the **Begin**,
@@ -259,7 +259,7 @@ two
 three
 ```
 
-## PARAMETERS
+## Parameters
 
 ### -ArgumentList
 
@@ -446,19 +446,19 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INPUTS
+## Inputs
 
 ### System.Management.Automation.PSObject
 
 You can pipe any object to this cmdlet.
 
-## OUTPUTS
+## Outputs
 
 ### System.Management.Automation.PSObject
 
 This cmdlet returns objects that are determined by the input.
 
-## NOTES
+## Notes
 
 - The `ForEach-Object` cmdlet works much like the **Foreach** statement, except that you cannot pipe
   input to a **Foreach** statement. For more information about the **Foreach** statement, see
@@ -467,7 +467,7 @@ This cmdlet returns objects that are determined by the input.
 - Starting in PowerShell 4.0, `Where` and `ForEach` methods were added for use with collections. You
   can read more about these new methods here [about_arrays](./About/about_Arrays.md)
 
-## RELATED LINKS
+## Related links
 
 [Compare-Object](../Microsoft.PowerShell.Utility/Compare-Object.md)
 
