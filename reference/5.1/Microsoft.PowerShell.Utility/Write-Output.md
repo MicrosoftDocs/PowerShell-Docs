@@ -11,8 +11,8 @@ title: Write-Output
 # Write-Output
 
 ## SYNOPSIS
-Sends the specified objects to the next command in the pipeline.
-If the command is the last command in the pipeline, the objects are displayed in the console.
+Sends the specified objects to the next command in the pipeline. If the command is the last command
+in the pipeline, the objects are displayed in the console.
 
 ## SYNTAX
 
@@ -28,12 +28,16 @@ If the command is the last command in the pipeline, the object is displayed in t
 `Write-Output` sends objects down the primary pipeline, also known as the "output stream" or the
 "success pipeline." To send error objects down the error pipeline, use Write-Error.
 
-> [!NOTE] This cmdlet is typically used in scripts to display strings and other objects on the
-> console. One of the built-in aliases for `Write-Output` is `echo` and similar to other shells that
-> use `echo`, the default behavior is to display the objects at the end of a pipeline. In
-> PowerShell, it is generally not necessary to use the cmdlet in instances where the output is
-> displayed by default. For example, `Get-Process | Write-Output` is equivalent to `Get-Process`.
-> Or, `echo "Home directory: $HOME"` can be written, `"Home directory: $HOME"`.
+This cmdlet is typically used in scripts to display strings and other objects on the console. One of
+the built-in aliases for `Write-Output` is `echo` and similar to other shells that use `echo`, the
+default behavior is to display the output at the end of a pipeline. In PowerShell, it is generally
+not necessary to use the cmdlet in instances where the output is displayed by default. For example,
+`Get-Process | Write-Output` is equivalent to `Get-Process`. Or, `echo "Home directory: $HOME"` can
+be written, `"Home directory: $HOME"`.
+
+By default, `Write-Output` enumerates through collections provided to the cmdlet. However,
+`Write-Host` can also be used to pass collections down the pipeline as a single object with the
+**NoEnumerate** parameter.
 
 ## EXAMPLES
 
@@ -60,7 +64,7 @@ of the **System.String** class, demonstrating that the string was passed along t
 ### Example 3: Suppress enumeration in output
 
 ```powershell
-Write-Output @(1,2,3) | Measure-Object
+Write-Output 1,2,3 | Measure-Object
 ```
 
 ```Output
@@ -69,7 +73,7 @@ Count    : 3
 ```
 
 ```powershell
-Write-Output @(1,2,3) -NoEnumerate | Measure-Object
+Write-Output 1,2,3 -NoEnumerate | Measure-Object
 ```
 
 ```Output
@@ -103,14 +107,14 @@ Accept wildcard characters: False
 
 By default, the `Write-Output` cmdlet always enumerates its output. The **NoEnumerate** parameter
 suppresses the default behavior, and prevents `Write-Output` from enumerating output. The
-**NoEnumerate** parameter has no effect on collections that were created by wrapping commands in
-parentheses, because the parentheses force enumeration.
+**NoEnumerate** parameter has no effect if the command is wrapped in parentheses, because the
+parentheses force enumeration. For example, `(Write-Output 1,2,3)` will still enumerate the array.
 
 > [!IMPORTANT]
-> There is an issue with this switch in Windows PowerShell that is fixed in PowerShell 6.2 and above.
-> When using **NoEnumerate** and explicitly using the **InputObject** parameter, the command will
-> still enumerate. The workaround is to positionally define the **InputObject** parameter and the
-> enumeration will be suppressed.
+> There is an issue with this switch in Windows PowerShell that is fixed in PowerShell 6.2 and
+> above. When using **NoEnumerate** and explicitly using the **InputObject** parameter, the command
+> will still enumerate. The workaround is to positionally define the **InputObject** parameter and
+> the enumeration will be suppressed.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
