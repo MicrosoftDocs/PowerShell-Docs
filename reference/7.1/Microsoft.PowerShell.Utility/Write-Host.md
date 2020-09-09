@@ -25,11 +25,13 @@ Write-Host [[-Object] <Object>] [-NoNewline] [-Separator <Object>] [-ForegroundC
 ## DESCRIPTION
 
 The `Write-Host` cmdlet's primary purpose is to produce for-(host)-display-only output, such as
-printing colored text, e.g., in the context of prompting the user for input. By contrast, to output
-data, to the pipeline, use [Write-Output](Write-Output.md) or implicit output. You can specify the
-color of text by using the `ForegroundColor` parameter, and you can specify the background color by
-using the `BackgroundColor` parameter. The Separator parameter lets you specify a string to use to
-separate displayed objects. The particular result depends on the program that is hosting PowerShell.
+printing colored text like when prompting the user for input in conjunction with [Read-Host](Read-Host.md).
+`Write-Host`  By contrast, to output data to the pipeline, use [Write-Output](Write-Output.md) or implicit output.
+
+You can specify the color of text by using the `ForegroundColor` parameter, and you can specify the
+background color by using the `BackgroundColor` parameter. The Separator parameter lets you specify
+a string to use to separate displayed objects. The particular result depends on the program that is
+hosting PowerShell.
 
 > [!NOTE]
 > Starting in Windows PowerShell 5.0, `Write-Host` is a wrapper for `Write-Information` This allows
