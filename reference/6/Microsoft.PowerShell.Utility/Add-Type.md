@@ -3,7 +3,7 @@ external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 08/06/2020
+ms.date: 09/04/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/add-type?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Add-Type
@@ -440,6 +440,10 @@ The acceptable values for this parameter are as follows:
 - ConsoleApplication
 - Library
 - WindowsApplication
+
+> [!IMPORTANT]
+> The `ConsoleApplication` and `WindowsApplication` values don't produce working output and should
+> not be used.
 
 ```yaml
 Type: Microsoft.PowerShell.Commands.OutputAssemblyType

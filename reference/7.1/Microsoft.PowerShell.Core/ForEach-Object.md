@@ -3,7 +3,7 @@ external help file: System.Management.Automation.dll-Help.xml
 keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 06/12/2020
+ms.date: 09/08/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/foreach-object?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: ForEach-Object
@@ -240,7 +240,7 @@ The second command uses the **MemberName** parameter to specify the **Split** me
 The third command uses the **Foreach** alias of the `ForEach-Object` cmdlet and omits the names of
 the **MemberName** and **ArgumentList** parameters, which are optional.
 
-### Example 8: Using ForeEach-Object with two script blocks
+### Example 8: Using ForEach-Object with two script blocks
 
 In this example, we pass two script blocks positionally. All the script blocks bind to the
 **Process** parameter. However, they are treated as if they had been passed to the **Begin** and
@@ -256,7 +256,7 @@ process
 process
 ```
 
-### Example 9: Using ForeEach-Object with more than two script blocks
+### Example 9: Using ForEach-Object with more than two script blocks
 
 In this example, we pass two script blocks positionally. All the script blocks bind to the
 **Process** parameter. However, they are treated as if they had been passed to the **Begin**,
