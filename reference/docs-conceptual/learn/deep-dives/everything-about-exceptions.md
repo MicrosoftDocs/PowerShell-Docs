@@ -95,7 +95,7 @@ I mentioned that `Write-Error` doesn't throw a terminating error by default. If 
 Write-Error -Message "Houston, we have a problem." -ErrorAction Stop
 ```
 
-Thank you to Lee Daily for reminding about using `-ErrorAction Stop` this way.
+Thank you to Lee Dailey for reminding about using `-ErrorAction Stop` this way.
 
 #### Cmdlet -ErrorAction Stop
 
