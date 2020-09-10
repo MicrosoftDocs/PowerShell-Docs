@@ -36,7 +36,7 @@ not necessary to use the cmdlet in instances where the output is displayed by de
 be written, `"Home directory: $HOME"`.
 
 By default, `Write-Output` enumerates through collections provided to the cmdlet. However,
-`Write-Host` can also be used to pass collections down the pipeline as a single object with the
+`Write-Output` can also be used to pass collections down the pipeline as a single object with the
 **NoEnumerate** parameter.
 
 ## EXAMPLES
@@ -108,7 +108,7 @@ Accept wildcard characters: False
 By default, the `Write-Output` cmdlet always enumerates its output. The **NoEnumerate** parameter
 suppresses the default behavior, and prevents `Write-Output` from enumerating output. The
 **NoEnumerate** parameter has no effect if the command is wrapped in parentheses, because the
-parentheses force enumeration. For example, `(Write-Output 1,2,3)` will still enumerate the array.
+parentheses force enumeration. For example, `(Write-Output 1,2,3)` still enumerates the array.
 
 > [!NOTE]
 > This switch only works correctly with PowerShell Core 6.2 and newer. On older versions of
