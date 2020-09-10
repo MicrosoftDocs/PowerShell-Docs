@@ -26,8 +26,9 @@ Write-Host [[-Object] <Object>] [-NoNewline] [-Separator <Object>] [-ForegroundC
 
 The `Write-Host` cmdlet's primary purpose is to produce for-(host)-display-only output, such as
 printing colored text like when prompting the user for input in conjunction with [Read-Host](Read-Host.md).
-By contrast, to output data to the pipeline, use [Write-Output](Write-Output.md) or
-implicit output.
+`Write-Host` uses the .NET method, [ToString()](/dotnet/api/system.object.tostring) to write the
+output. By contrast, to output data to the pipeline, use [Write-Output](Write-Output.md) or implicit
+output.
 
 You can specify the color of text by using the `ForegroundColor` parameter, and you can specify the
 background color by using the `BackgroundColor` parameter. The Separator parameter lets you specify
@@ -255,6 +256,13 @@ You can pipe objects to be written to the host.
 display the objects that  `Write-Host` sends to it.
 
 ## NOTES
+
+- When writing a collection to the host, elements of the collection are printed on the same line
+  separated by a single space. This can be overridden with the **Separator** command.
+
+- Non-primitive data types such as objects with properties can cause unexpected results and not
+  provide meaningful output. For example, `Write-Host @{a = 1; b = 2}` will print
+  `System.Collections.DictionaryEntry System.Collections.DictionaryEntry` to the host.
 
 ## RELATED LINKS
 
