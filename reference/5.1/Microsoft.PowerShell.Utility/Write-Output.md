@@ -113,8 +113,7 @@ parentheses force enumeration. For example, `(Write-Output 1,2,3)` still enumera
 > [!IMPORTANT]
 > There is an issue with this switch in Windows PowerShell that is fixed in PowerShell 6.2 and
 > above. When using **NoEnumerate** and explicitly using the **InputObject** parameter, the command
-> still enumerates. To workaround this, positionally defining the **InputObject** parameter
-> suppresses the enumeration.
+> still enumerates. To work around this, pass the **InputObject** argument(s) positionally.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
