@@ -26,7 +26,8 @@ Write-Host [[-Object] <Object>] [-NoNewline] [-Separator <Object>] [-ForegroundC
 
 The `Write-Host` cmdlet's primary purpose is to produce for-(host)-display-only output, such as
 printing colored text like when prompting the user for input in conjunction with [Read-Host](Read-Host.md).
-`Write-Host`  By contrast, to output data to the pipeline, use [Write-Output](Write-Output.md) or implicit output.
+By contrast, to output data to the pipeline, use [Write-Output](Write-Output.md) or
+implicit output.
 
 You can specify the color of text by using the `ForegroundColor` parameter, and you can specify the
 background color by using the `BackgroundColor` parameter. The Separator parameter lets you specify
