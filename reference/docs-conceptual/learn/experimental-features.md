@@ -1,5 +1,5 @@
 ---
-ms.date: 08/31/2020
+ms.date: 09/14/2020
 title: Using Experimental Features in PowerShell
 description: Lists the currently available experimental features and how to use them.
 ---
@@ -25,19 +25,19 @@ For more information about enabling or disabling these features, see
 
 This article describes the experimental features that are available and how to use the feature.
 
-|                            Name                            |   6.2   |   7.0   | 7.1 (preview) |
-| ---------------------------------------------------------- | :-----: | :-----: | :-----------: |
-| PSTempDrive (mainstream in PS 7.0+)                        | &check; |         |               |
-| PSUseAbbreviationExpansion (mainstream in PS 7.0+)         | &check; |         |               |
-| PSCommandNotFoundSuggestion                                | &check; | &check; |    &check;    |
-| PSImplicitRemotingBatching                                 | &check; | &check; |    &check;    |
-| Microsoft.PowerShell.Utility.PSManageBreakpointsInRunspace |         | &check; |    &check;    |
-| PSDesiredStateConfiguration.InvokeDscResource              |         | &check; |    &check;    |
-| PSNullConditionalOperators                                 |         | &check; |    &check;    |
-| PSUnixFileStat (non-Windows only)                          |         | &check; |    &check;    |
-| PSNativePSPathResolution (mainstream in PS 7.1+)           |         |         |    &check;    |
-| PSCultureInvariantReplaceOperator                          |         |         |    &check;    |
-| PSNotApplyErrorActionToStderr                              |         |         |    &check;    |
+|                            Name                            |   6.2   |   7.0   |   7.1   |
+| ---------------------------------------------------------- | :-----: | :-----: | :-----: |
+| PSTempDrive (mainstream in PS 7.0+)                        | &check; |         |         |
+| PSUseAbbreviationExpansion (mainstream in PS 7.0+)         | &check; |         |         |
+| PSCommandNotFoundSuggestion                                | &check; | &check; | &check; |
+| PSImplicitRemotingBatching                                 | &check; | &check; | &check; |
+| Microsoft.PowerShell.Utility.PSManageBreakpointsInRunspace |         | &check; | &check; |
+| PSDesiredStateConfiguration.InvokeDscResource              |         | &check; | &check; |
+| PSNullConditionalOperators (mainstream in PS 7.1+)         |         | &check; |         |
+| PSUnixFileStat (non-Windows only)                          |         | &check; | &check; |
+| PSNativePSPathResolution (mainstream in PS 7.1+)           |         |         |         |
+| PSCultureInvariantReplaceOperator                          |         |         | &check; |
+| PSNotApplyErrorActionToStderr                              |         |         | &check; |
 
 ## Microsoft.PowerShell.Utility.PSManageBreakpointsInRunspace
 
@@ -184,8 +184,11 @@ using redirection operators (`2>&1`), are not written to the `$Error` variable a
 variable `$ErrorActionPreference` does not affect the redirected output.
 
 Many native commands write to `stderr` as an alternative stream for additional information. This
-behavior can cause confusion when looking through errors; or the additional output information can
+behavior can cause confusion when looking through errors or the additional output information can
 be lost to the user if `$ErrorActionPreference` is set to a state that mutes the output.
+
+When a native command has a non-zero exit code, `$?` is set to `$false`. If the exit code is zero,
+`$?` is set to `$true`.
 
 ## PSNullConditionalOperators
 
@@ -213,6 +216,10 @@ variable name and the operator.
 Since PowerShell allows `?` as part of the variable name, disambiguation is required when the
 operators are used without a space between the variable name and the operator. To disambiguate, the
 variables must use `{}` around the variable name like: `${x?}?.propertyName` or `${y}?[0]`.
+
+> [!NOTE]
+> This feature has moved out of the experimental phase and is a mainstream feature in PowerShell 7.1
+> and higher.
 
 ## PSTempDrive
 
