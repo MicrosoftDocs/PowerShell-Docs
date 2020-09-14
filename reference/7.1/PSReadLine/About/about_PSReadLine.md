@@ -187,6 +187,19 @@ Deletes the previous requested logical lines and the current logical line in a m
 
 - Vi command mode: `<d,k>`
 
+### DeleteRelativeLines
+
+Deletes from the beginning of the buffer to the current logical line in a multiline buffer.
+
+As most Vi commands, the `<d,g,g>` command can be prepended with a numeric argument that specifies an absolute line number,
+which, together with the current line number, make up a range of lines to be deleted.
+If not specified, the numeric argument defaults to 1, which refers to the first logical line in a multiline buffer.
+
+The actual number of lines to be deleted from the multiline is computed as the difference between the current logical line number
+and the specified numeric argument, which can thus be negative. Hence the _relative_ part of method name.
+
+- Vi command mode: `<d,g,g>`
+
 ### DeleteNextLines
 
 Deletes the current logical line and the next requested logical lines in a multiline buffer.
