@@ -1,7 +1,7 @@
 ---
 keywords: powershell,cmdlet
 Locale: en-US
-ms.date: 05/06/2020
+ms.date: 09/14/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_operator_precedence?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Operator_Precedence
@@ -38,9 +38,9 @@ type `get-help <topic-name>`.
 |         OPERATOR         |           REFERENCE            |
 | ------------------------ | ------------------------------ |
 | `$() @() ()`             | [about_Operators][]            |
-| `.` (member access)      | [about_Operators][]            |
+| `. ?.` (member access)   | [about_Operators][]            |
 | `::` (static)            | [about_Operators][]            |
-| `[0]` (index operator)   | [about_Operators][]            |
+| `[0] ?[0]` (index operator) | [about_Operators][]         |
 | `[int]` (cast operators) | [about_Operators][]            |
 | `-split` (unary)         | [about_Split][]                |
 | `-join` (unary)          | [about_Join][]                 |
@@ -85,6 +85,7 @@ that happens.
 | `.` (dot-source)                        | [about_Operators][]            |
 | `&` (call)                              | [about_Operators][]            |
 | `? <if-true> : <if-false>` (Ternary operator) | [about_Operators][]      |
+| `??` (null-coalese operator)            | [about_Operators][]            |
 | <code>&#124;</code> (pipeline operator) | [about_Operators][]            |
 | `> >> 2> 2>> 2>&1`                      | [about_Redirection][]          |
 | <code>&& &#124;&#124;</code> (pipeline chain operators) | [about_Operators][] |
