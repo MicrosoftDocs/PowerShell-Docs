@@ -3,7 +3,7 @@ external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 11/09/2017
+ms.date: 09/14/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/write-host?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Write-Host
@@ -26,7 +26,7 @@ Write-Host [[-Object] <Object>] [-NoNewline] [-Separator <Object>] [-ForegroundC
 
 The `Write-Host` cmdlet's primary purpose is to produce for-(host)-display-only output, such as
 printing colored text like when prompting the user for input in conjunction with [Read-Host](Read-Host.md).
-`Write-Host` uses the .NET method, [ToString()](/dotnet/api/system.object.tostring) to write the
+`Write-Host` uses the [ToString()](/dotnet/api/system.object.tostring) method to write the
 output. By contrast, to output data to the pipeline, use [Write-Output](Write-Output.md) or implicit
 output.
 
@@ -72,8 +72,8 @@ Write-Host (2,4,6,8,10,12) -Separator ", +2= "
 2, +2= 4, +2= 6, +2= 8, +2= 10, +2= 12
 ```
 
-This command displays the even numbers from two through twelve. The Separator parameter is used to
-add the string `, +2= (comma, space, +, 2, =, space)`.
+This command displays the even numbers from two through twelve. The **Separator** parameter is used
+to add the string `, +2= ` (comma, space, `+`, `2`, `=`, space).
 
 ### Example 3: Write with different text and background colors
 
@@ -86,7 +86,7 @@ Write-Host (2,4,6,8,10,12) -Separator ", -> " -ForegroundColor DarkGreen -Backgr
 ```
 
 This command displays the even numbers from two through twelve. It uses the `ForegroundColor`
-parameter to output 'dark green' text and the `BackgroundColor` parameter to display a 'white'
+parameter to output dark green text and the `BackgroundColor` parameter to display a white
 background.
 
 ### Example 4: Write with different text and background colors
@@ -99,8 +99,8 @@ Write-Host "Red on white text." -ForegroundColor red -BackgroundColor white
 Red on white text.
 ```
 
-This command displays the string "Red on white text." The text is 'red', as defined by the
-`ForegroundColor` parameter. The background is 'white', as defined by the `BackgroundColor`
+This command displays the string "Red on white text." The text is red, as defined by the
+`ForegroundColor` parameter. The background is white, as defined by the `BackgroundColor`
 parameter.
 
 ### Example 5: Suppress output from Write-Host
@@ -252,13 +252,13 @@ You can pipe objects to be written to the host.
 
 ### None
 
-`Write-Host` sends the objects to the host. It does not return any objects. However, the host might
-display the objects that  `Write-Host` sends to it.
+`Write-Host` sends the objects to the host. It does not return any objects. However, the host
+displays the objects that `Write-Host` sends to it.
 
 ## NOTES
 
 - When writing a collection to the host, elements of the collection are printed on the same line
-  separated by a single space. This can be overridden with the **Separator** command.
+  separated by a single space. This can be overridden with the **Separator** parameter.
 
 - Non-primitive data types such as objects with properties can cause unexpected results and not
   provide meaningful output. For example, `Write-Host @{a = 1; b = 2}` will print
@@ -281,4 +281,3 @@ display the objects that  `Write-Host` sends to it.
 [Write-Verbose](Write-Verbose.md)
 
 [Write-Warning](Write-Warning.md)
-
