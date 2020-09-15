@@ -48,7 +48,7 @@ in PowerShell syntax, and can be simple or composite, for example:
 Literal expressions are direct representations of their values: 
 
 ```powershell
-'hello', 32, $true
+'hello', 32
 ```
 
 Variable expressions carry the value of the variable they reference: 
