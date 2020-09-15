@@ -1,7 +1,7 @@
 ---
 keywords: powershell,cmdlet
 Locale: en-US
-ms.date: 07/30/2020
+ms.date: 09/15/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_modules?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Modules
@@ -109,7 +109,7 @@ Use the following command to create a **Modules** directory for the current
 user:
 
 ```powershell
-New-Item -Type Directory -Path $HOME\Documents\WindowsPowerShell\Modules
+New-Item -Type Directory -Path $HOME\Documents\PowerShell\Modules
 ```
 
 Copy the entire module folder into the Modules directory. You can use any
@@ -119,7 +119,7 @@ MyModule folder from `C:\ps-test\MyModule` to the Modules directory, type:
 
 ```powershell
 Copy-Item -Path C:\ps-test\MyModule -Destination `
-    $HOME\Documents\WindowsPowerShell\Modules
+    $HOME\Documents\PowerShell\Modules
 ```
 
 You can install a module in any location, but installing your modules in a
@@ -314,7 +314,7 @@ By default, the effective locations assigned to `$env:PSModulePath` are:
   > You can verify the location of your **Documents** folder using the
   > following command: `[Environment]::GetFolderPath('MyDocuments')`.
 
-- The **AllUsers** location is `$env:PROGRAMFILES\WindowsPowerShell\Modules` on
+- The **AllUsers** location is `$env:PROGRAMFILES\PowerShell\Modules` on
   Windows. On Linux or Mac the modules are stored at
   `/usr/local/share/powershell/Modules`.
 
