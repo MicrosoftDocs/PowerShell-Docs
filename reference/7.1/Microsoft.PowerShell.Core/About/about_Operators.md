@@ -477,7 +477,8 @@ A
 
 #### Member access operator `.`
 
-Accesses the properties and methods of an object.  The member name may be an expression.
+Accesses the properties and methods of an object. The member name may be an
+expression.
 
 ```powershell
 $myProcess.peakWorkingSet
@@ -505,9 +506,10 @@ For more information, see [about_If](about_If.md).
 
 #### Null-coalescing operator `??`
 
-The null-coalescing operator `??` returns the value of its left-hand operand if it isn't null.
-Otherwise, it evaluates the right-hand operand and returns its result. The `??` operator doesn't
-evaluate its right-hand operand if the left-hand operand evaluates to non-null.
+The null-coalescing operator `??` returns the value of its left-hand operand if
+it isn't null. Otherwise, it evaluates the right-hand operand and returns its
+result. The `??` operator doesn't evaluate its right-hand operand if the
+left-hand operand evaluates to non-null.
 
 ```powershell
 $x = $null
@@ -531,9 +533,10 @@ $todaysDate ?? (Get-Date).ToShortDateString()
 
 #### Null-coalescing assignment operator `??=`
 
-The null-coalescing assignment operator `??=` assigns the value of its right-hand operand to its
-left-hand operand only if the left-hand operand evaluates to null. The `??=` operator doesn't
-evaluate its right-hand operand if the left-hand operand evaluates to non-null.
+The null-coalescing assignment operator `??=` assigns the value of its
+right-hand operand to its left-hand operand only if the left-hand operand
+evaluates to null. The `??=` operator doesn't evaluate its right-hand operand
+if the left-hand operand evaluates to non-null.
 
 ```powershell
 $x = $null
@@ -559,15 +562,16 @@ $todaysDate ??= (Get-Date).ToShortDateString()
 #### Null-conditional operators `?.` and `?[]`
 
 > [!NOTE]
-> This is an experimental feature. For more information see
-> [about_Experimental_Features](about_Experimental_Features.md).
+> This feature was moved from experimental to mainstream in PowerShell 7.1.
 
-A null-conditional operator applies a member access, `?.`, or element access, `?[]`, operation to
-its operand only if that operand evaluates to non-null; otherwise, it returns null.
+A null-conditional operator applies a member access, `?.`, or element access,
+`?[]`, operation to its operand only if that operand evaluates to non-null;
+otherwise, it returns null.
 
-Since PowerShell allows `?` to be part of the variable name, formal specification of the variable
-name is required for using these operators. So it is required to use `{}` around the variable names
-like `${a}` or when `?` is part of the variable name `${a?}`.
+Since PowerShell allows `?` to be part of the variable name, formal
+specification of the variable name is required for using these operators. So it
+is required to use `{}` around the variable names like `${a}` or when `?` is
+part of the variable name `${a?}`.
 
 In the following example, the value of **PropName** is returned.
 
@@ -580,7 +584,8 @@ ${a}?.PropName
 100
 ```
 
-The following example will return null, without trying to access the member name **PropName**.
+The following example will return null, without trying to access the member
+name **PropName**.
 
 ```powershell
 $a = $null

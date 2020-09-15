@@ -1,7 +1,7 @@
 ---
 title: Installing PowerShell on Windows
 description: Information about installing PowerShell on Windows
-ms.date: 07/30/2020
+ms.date: 09/14/2020
 ---
 # Installing PowerShell on Windows
 
@@ -70,6 +70,24 @@ msiexec.exe /package PowerShell-7.0.3-win-x64.msi /quiet ADD_EXPLORER_CONTEXT_ME
 ```
 
 For a full list of command-line options for `Msiexec.exe`, see [Command line options](/windows/desktop/Msi/command-line-options).
+
+### Registry keys created during installation
+
+Beginning in PowerShell 7.1, the MSI package creates registry keys that store the installation
+location and version of PowerShell. These values are located in
+`HKLM\Software\Microsoft\PowerShellCore\InstalledVersions\<GUID>`. The value of
+`<GUID>` is unique for each build type (release or preview), major version, and architecture.
+
+|    Release    | Architecture |                                          Registry Key                                           |
+| ------------- | :----------: | ----------------------------------------------------------------------------------------------- |
+| 7.1.x Release |     x86      | `HKLM\Software\Microsoft\PowerShellCore\InstalledVersions\1d00683b-0f84-4db8-a64f-2f98ad42fe06` |
+| 7.1.x Release |     x64      | `HKLM\Software\Microsoft\PowerShellCore\InstalledVersions\31ab5147-9a97-4452-8443-d9709f0516e1` |
+| 7.1.x Preview |     x86      | `HKLM\Software\Microsoft\PowerShellCore\InstalledVersions\86abcfbd-1ccc-4a88-b8b2-0facfde29094` |
+| 7.1.x Preview |     x64      | `HKLM\Software\Microsoft\PowerShellCore\InstalledVersions\39243d76-adaf-42b1-94fb-16ecf83237c8` |
+
+This can be used by administrators and developers to find the path to PowerShell. The `<GUID>`
+values will be the same for all preview and minor version releases. The `<GUID>`
+values are changed for each major release.
 
 ## <a id="msix" />Installing the MSIX package
 
