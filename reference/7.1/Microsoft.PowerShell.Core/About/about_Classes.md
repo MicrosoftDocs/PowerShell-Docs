@@ -2,7 +2,7 @@
 description: Describes how you can use classes to create your own custom types.
 keywords: powershell,cmdlet
 Locale: en-US
-ms.date: 04/12/2020
+ms.date: 09/16/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_classes?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Classes
@@ -60,7 +60,7 @@ Classes are instantiated using either of the following syntaxes:
 ```
 
 > [!NOTE]
-> When using the `[<class-name>]::new(` syntax, brackets around the class name
+> When using the `[<class-name>]::new()` syntax, brackets around the class name
 > are mandatory. The brackets signal a type definition for PowerShell.
 
 ### Example syntax and usage
@@ -845,7 +845,8 @@ Using the `[ref]` type-cast with a class member silently fails. APIs that use
 designed to support COM objects. COM objects have cases where you need to pass
 a value in by reference.
 
-For more information, see [PSReference Class](/dotnet/api/system.management.automation.psreference).
+For more information about the `[ref]` type, see
+[PSReference Class](/dotnet/api/system.management.automation.psreference).
 
 ## See also
 
@@ -854,4 +855,3 @@ For more information, see [PSReference Class](/dotnet/api/system.management.auto
 - [about_Language_Keywords](about_language_keywords.md)
 - [about_Methods](about_methods.md)
 - [about_Using](about_using.md)
-
