@@ -39,7 +39,7 @@
         "monikerPath": [
             "mapping/monikerMapping.json"
         ],
-        "moniker_ranges": [],
+        "moniker_ranges": [">=powershell-5.1"],
         "monikers": [],
         "open_to_public_contributors": true,
         "template_folder": "_themes",
@@ -64,5 +64,8 @@
 
     "need_generate_pdf_url_template": false,
     "branch_target_mapping": {},
-    "targets": {}
+    "targets": {},
+    "docs_build_engine": {
+        "name": "docfx_v3"
+    }
 }
