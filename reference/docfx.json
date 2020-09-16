@@ -4,11 +4,12 @@
         "markdownEngineName": "markdig",
         "overwrite": [],
         "externalReference": [],
-        "versions": {
-            "powershell-5.1": { "dest": "powershell-5.1" },
-            "powershell-6": { "dest": "powershell-6" },
-            "powershell-7": { "dest": "powershell-7" },
-            "powershell-7.1": { "dest": "powershell-7.1" }
+        "groups": {
+            "powershell-5.1": { "moniker_range": "powershell-5.1" },
+            "powershell-6": { "moniker_range": "powershell-6" },
+            "powershell-7": { "moniker_range": "powershell-7" },
+            "powershell-7.1": { "moniker_range": "powershell-7.1" },
+            "conceptual": { "moniker_range": ">=powershell-5.1" }
         },
         "content": [{
                 "files": ["index.yml", "module/index.md"],
@@ -17,26 +18,19 @@
             },
 
             { "files": ["bread/toc.yml"], "dest": "scripting" },
+            { "files": ["**/*.md", "**/**.yml"], "group": "conceptual", "src": "docs-conceptual", "dest": "scripting"},
 
-            { "files": ["toc.yml"], "src": "docs-conceptual", "version": "powershell-5.1", "dest": "scripting/powershell-5.1" },
-            { "files": ["**/*.md", "**/**.yml"], "src": "docs-conceptual", "version": "powershell-5.1", "dest": "scripting" },
-            { "files": ["toc.yml"], "src": "5.1", "version": "powershell-5.1", "dest": "module/psdocs" },
-            { "files": ["**/*.yml", "**/About/*.md"], "src": "5.1", "version": "powershell-5.1", "exclude": ["docs-conceptual/**"], "dest": "module" },
+            { "files": ["toc.yml"], "src": "5.1", "group": "powershell-5.1", "dest": "module/psdocs" },
+            { "files": ["**/*.yml", "**/About/*.md"], "src": "5.1", "group": "powershell-5.1", "exclude": ["docs-conceptual/**"], "dest": "module" },
 
-            { "files": ["toc.yml"], "src": "docs-conceptual", "version": "powershell-6", "dest": "scripting/powershell-6" },
-            { "files": ["**/*.md", "**/**.yml"], "src": "docs-conceptual", "version": "powershell-6", "dest": "scripting" },
-            { "files": ["toc.yml"], "src": "6", "version": "powershell-6", "dest": "module/psdocs" },
-            { "files": ["**/*.yml", "**/About/*.md"], "src": "6", "version": "powershell-6", "exclude": ["docs-conceptual/**"], "dest": "module" },
+            { "files": ["toc.yml"], "src": "6", "group": "powershell-6", "dest": "module/psdocs" },
+            { "files": ["**/*.yml", "**/About/*.md"], "src": "6", "group": "powershell-6", "exclude": ["docs-conceptual/**"], "dest": "module" },
 
-            { "files": ["toc.yml"], "src": "docs-conceptual", "version": "powershell-7", "dest": "scripting/powershell-7" },
-            { "files": ["**/*.md", "**/**.yml"], "src": "docs-conceptual", "version": "powershell-7", "dest": "scripting" },
-            { "files": ["toc.yml"], "src": "7.0", "version": "powershell-7", "dest": "module/psdocs" },
-            { "files": ["**/*.yml", "**/About/*.md"], "src": "7.0", "version": "powershell-7", "exclude": ["docs-conceptual/**"], "dest": "module" },
+            { "files": ["toc.yml"], "src": "7.0", "group": "powershell-7", "dest": "module/psdocs" },
+            { "files": ["**/*.yml", "**/About/*.md"], "src": "7.0", "group": "powershell-7", "exclude": ["docs-conceptual/**"], "dest": "module" },
 
-            { "files": ["toc.yml"], "src": "docs-conceptual", "version": "powershell-7.1", "dest": "scripting/powershell-7.1" },
-            { "files": ["**/*.md", "**/**.yml"], "src": "docs-conceptual", "version": "powershell-7.1", "dest": "scripting" },
-            { "files": ["toc.yml"], "src": "7.1", "version": "powershell-7.1", "dest": "module/psdocs" },
-            { "files": ["**/*.yml", "**/About/*.md"], "src": "7.1", "version": "powershell-7.1", "exclude": ["docs-conceptual/**"], "dest": "module" },
+            { "files": ["toc.yml"], "src": "7.1", "group": "powershell-7.1", "dest": "module/psdocs" },
+            { "files": ["**/*.yml", "**/About/*.md"], "src": "7.1", "group": "powershell-7.1", "exclude": ["docs-conceptual/**"], "dest": "module" },
 
             { "files": ["**/*.md"], "src": "virtual-directory", "dest": "scripting" },
             { "files": ["**/*.md"], "src": "virtual-directory-module", "dest": "module" }
@@ -44,26 +38,6 @@
         "resource": [{
                 "files": ["**/media/**/*.png", "**/media/**/*.gif", "**/media/**/*.jpeg", "**/media/**/*.jpg", "**/media/**/*.svg"],
                 "exclude": ["**/obj/**", "**/includes/**"]
-            },
-            {
-                "files": ["**/media/**", "**/*.png", "**/*.gif", "**/*.jpeg", "**/*.jpg", "**/*.svg"],
-                "exclude": ["**/obj/**", "**/includes/**"],
-                "version": "powershell-5.1"
-            },
-            {
-                "files": ["**/media/**", "**/*.png", "**/*.gif", "**/*.jpeg", "**/*.jpg", "**/*.svg"],
-                "exclude": ["**/obj/**", "**/includes/**"],
-                "version": "powershell-6"
-            },
-            {
-                "files": ["**/media/**", "**/*.png", "**/*.gif", "**/*.jpeg", "**/*.jpg", "**/*.svg"],
-                "exclude": ["**/obj/**", "**/includes/**"],
-                "version": "powershell-7"
-            },
-            {
-                "files": ["**/media/**", "**/*.png", "**/*.gif", "**/*.jpeg", "**/*.jpg", "**/*.svg"],
-                "exclude": ["**/obj/**", "**/includes/**"],
-                "version": "powershell-7.1"
             }
         ],
         "globalMetadata": {
