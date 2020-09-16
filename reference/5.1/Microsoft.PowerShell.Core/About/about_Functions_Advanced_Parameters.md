@@ -459,7 +459,9 @@ Param(
 
 Validation attributes direct PowerShell to test the parameter values that users
 submit when they call the advanced function. If the parameter values fail the
-test, an error is generated and the function isn't called.
+test, an error is generated and the function isn't called. Parameter validation
+is only applied to the input provided and any other values like default values
+are not validated.
 
 You can also use the validation attributes to restrict the values that
 users can specify for variables. When you use a type converter along with a
@@ -693,19 +695,19 @@ $Message = "bye"
 The **ValidateNotNull** attribute specifies that the parameter value can't be
 `$null`. PowerShell generates an error if the parameter value is `$null`.
 
-The **ValidateNotNull** attribute is designed to be used when the specified
-type accepts a value of `$null` or if the parameter is optional and the type is
-undefined. If you specify a type that doesn't accept a `$null` value, such as a
-string, the `$null` value is rejected without the **ValidateNotNull**
-attribute, because it doesn't match the specified type.
+The **ValidateNotNull** attribute is designed to be used when the parameter is
+optional and the type is undefined or has a type converter that can't
+implicitly convert a null value like **object**. If you specify a type that
+that will implicitly convert a null value such as a **string**, the null value
+is converted to an empty string even when using the **ValidateNotNull**
+attribute. For this scenario use the **ValidateNotNullOrEmpty**
 
 In the following example, the value of the **ID** parameter can't be `$null`.
 
 ```powershell
 Param(
-    [Parameter(Mandatory=$true)]
+    [Parameter(Mandatory=$false)]
     [ValidateNotNull()]
-    [int]
     $ID
 )
 ```
