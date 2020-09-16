@@ -2,7 +2,7 @@
 description: Describes how you can use classes to create your own custom types.
 keywords: powershell,cmdlet
 Locale: en-US
-ms.date: 04/12/2020
+ms.date: 09/16/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_classes?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Classes
@@ -60,7 +60,7 @@ Classes are instantiated using either of the following syntaxes:
 ```
 
 > [!NOTE]
-> When using the `[<class-name>]::new(` syntax, brackets around the class name
+> When using the `[<class-name>]::new()` syntax, brackets around the class name
 > are mandatory. The brackets signal a type definition for PowerShell.
 
 ### Example syntax and usage
