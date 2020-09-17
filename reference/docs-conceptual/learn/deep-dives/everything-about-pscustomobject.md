@@ -147,7 +147,7 @@ $myObject.$property
 
 I know that looks strange, but it works.
 
-### Convert PSCustombObject into a hashtable
+### Convert PSCustomObject into a hashtable
 
 To continue on from the last section, you can dynamically walk the properties and create a hashtable
 from them.
