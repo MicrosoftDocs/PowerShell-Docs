@@ -137,7 +137,7 @@ As a result, the process is stopped without confirmation.
 Stops the specified processes without prompting for confirmation.
 By default, **Stop-Process** prompts for confirmation before stopping any process that is not owned by the current user.
 
-To find the owner of a process, use the Get-WmiObject cmdlet to get a **Win32_Process** object that represents the process, and then use the **GetOwner** method of the object.
+To find the owner of a process, use the `Get-CimInstance` cmdlet to get a **Win32_Process** object that represents the process, and then use the **GetOwner** method of the object.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -274,7 +274,7 @@ Otherwise, this cmdlet does not generate any output.
 * You can also refer to **Stop-Process** by its built-in aliases, **kill** and **spps**. For more information, see about_Aliases.
 
   You can also use the properties and methods of the Windows Management Instrumentation (WMI) **Win32_Process** object in Windows PowerShell.
-For more information, see **Get-WmiObject** and the WMI SDK.
+For more information, see `Get-CimInstance` and the WMI SDK.
 
 * When stopping processes, realize that stopping a process can stop process and services that depend on the process.
 In an extreme case, stopping a process can stop Windows.
