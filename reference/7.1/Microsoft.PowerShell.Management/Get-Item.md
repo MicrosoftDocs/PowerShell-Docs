@@ -169,7 +169,6 @@ The new properties that are now part of the output are:
 Gets the specified alternate NTFS file stream from the file. Enter the stream name. Wildcards are
 supported. To get all streams, use an asterisk (`*`). 
 This parameter is valid on directories, but note that directories do not have data streams by default.
-If a directory has not had a data stream created on it, there will be no output for that directory.
 
 **Stream** is a dynamic parameter that the **FileSystem** provider adds to the `Get-Item` cmdlet.
 This parameter works only in file system drives.
