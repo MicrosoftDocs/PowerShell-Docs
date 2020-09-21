@@ -3,7 +3,7 @@ external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 05/15/2019
+ms.date: 09/21/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/get-clipboard?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Clipboard
@@ -21,7 +21,8 @@ Get-Clipboard [-Format <ClipboardFormat>] [-TextFormatType <TextDataFormat>] [-R
 
 ## DESCRIPTION
 
-The `Get-Clipboard` cmdlet gets the current Windows clipboard entry.
+The `Get-Clipboard` cmdlet gets the current Windows clipboard entry. Multiple lines of text are
+returned as an array of strings similar `Get-Content`.
 
 ## EXAMPLES
 
@@ -85,7 +86,8 @@ Accept wildcard characters: False
 
 ### -Raw
 
-Indicates that this cmdlet ignores newline characters and gets the entire contents of the clipboard.
+Gets the entire contents of the clipboard. Multiline text is returned as a single multiline string
+rather than an array of strings.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
