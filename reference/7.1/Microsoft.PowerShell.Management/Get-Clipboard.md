@@ -25,7 +25,7 @@ Get-Clipboard [-Raw] [<CommonParameters>]
 ## DESCRIPTION
 
 The `Get-Clipboard` cmdlet gets the contents of the clipboard as text. Multiple lines of text are
-returned as an array of strings similar `Get-Content`.
+returned as an array of strings similar to `Get-Content`.
 
 ## EXAMPLES
 
