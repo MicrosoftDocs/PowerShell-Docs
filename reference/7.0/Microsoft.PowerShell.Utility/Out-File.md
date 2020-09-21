@@ -3,7 +3,7 @@ external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 2/6/2019
+ms.date: 09/21/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/out-file?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Out-File
@@ -32,8 +32,11 @@ Out-File [[-Encoding] <Encoding>] -LiteralPath <string> [-Append] [-Force] [-NoC
 
 ## DESCRIPTION
 
-The `Out-File` cmdlet sends output to a file. When you need to specify parameters for the output use
-`Out-File` rather than the redirection operator (`>`).
+The `Out-File` cmdlet sends output to a file. It implicitly uses PowerShell's formatting system to
+write to the file. The file receives the same display representation as the terminal. This means
+that the output may not be ideal for programmatic processing unless all input objects are strings.
+When you need to specify parameters for the output, use `Out-File` rather than the redirection
+operator (`>`). For more information about redirection, see [about_Redirection](../Microsoft.PowerShell.Core/About/about_Redirection.md).
 
 ## EXAMPLES
 
@@ -359,15 +362,15 @@ You can pipe any object to `Out-File`.
 
 ## NOTES
 
-The `Out` cmdlets do not format objects; they just render them and send them to the specified
-display destination. If you send an unformatted object to an `Out` cmdlet, the cmdlet sends it to a
-formatting cmdlet before rendering it.
+Input objects are automatically formatted as they would be in the terminal, but you can use a
+`Format-*` cmdlet to explicitly control the formatting of the output to the file. For example,
+`Get-Date | Format-List | Out-File out.txt`
 
-To send a PowerShell command's output to the `Out-File` cmdlet, use the pipeline. You can store data
-in a variable and use the **InputObject** parameter to pass data to the `Out-File` cmdlet.
+To send a PowerShell command's output to the `Out-File` cmdlet, use the pipeline. Alternatively, you
+can store data in a variable and use the **InputObject** parameter to pass data to the `Out-File`
+cmdlet.
 
-`Out-File` sends data but it does not produce any output objects. If you pipe the output of
-`Out-File` to `Get-Member`, the `Get-Member` cmdlet reports that no objects were specified.
+`Out-File` saves data to a file but it does not produce any output objects to the pipeline.
 
 ## RELATED LINKS
 
