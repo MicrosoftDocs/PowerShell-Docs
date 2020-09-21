@@ -61,8 +61,8 @@ For example, `Group-Object` has been sped up by 66%:
 Measure-Command { 1..100000 | % {Get-Random -Minimum 1 -Maximum 10000} | Group-Object }
 ```
 
-|              | Windows PowerShell 5.1 | PowerShell Core 6.0 | PowerShell Core 6.1 |
-|--------------|------------------------|---------------------|---------------------|
+|    Metric    | Windows PowerShell 5.1 | PowerShell Core 6.0 | PowerShell Core 6.1 |
+| ------------ | ---------------------- | ------------------- | ------------------- |
 | Time (sec)   | 25.178                 | 19.653              | 6.641               |
 | Speed-up (%) | N/A                    | 21.9%               | 66.2%               |
 
@@ -72,8 +72,8 @@ Similarly, sorting scenarios like this one have improved by more than 15%:
 Measure-Command { 1..100000 | % {Get-Random -Minimum 1 -Maximum 10000} | Sort-Object }
 ```
 
-|              | Windows PowerShell 5.1 | PowerShell Core 6.0 | PowerShell Core 6.1 |
-|--------------|------------------------|---------------------|---------------------|
+|    Metric    | Windows PowerShell 5.1 | PowerShell Core 6.0 | PowerShell Core 6.1 |
+| ------------ | ---------------------- | ------------------- | ------------------- |
 | Time (sec)   | 12.170                 | 8.493               | 7.08                |
 | Speed-up (%) | N/A                    | 30.2%               | 16.6%               |
 
@@ -84,8 +84,8 @@ The following example uses a test CSV with 26,616 rows and six columns:
 Measure-Command {$a = Import-Csv foo.csv}
 ```
 
-|              | Windows PowerShell 5.1 | PowerShell Core 6.0 | PowerShell Core 6.1    |
-|--------------|------------------------|---------------------|------------------------|
+|    Metric    | Windows PowerShell 5.1 | PowerShell Core 6.0 |  PowerShell Core 6.1   |
+| ------------ | ---------------------- | ------------------- | ---------------------- |
 | Time (sec)   | 0.441                  | 1.069               | 0.268                  |
 | Speed-up (%) | N/A                    | -142.4%             | 74.9% (39.2% from WPS) |
 
@@ -97,8 +97,8 @@ The following example uses a ~2MB test JSON file:
 Measure-Command {Get-Content .\foo.json | ConvertFrom-Json}
 ```
 
-|              | Windows PowerShell 5.1 | PowerShell Core 6.0 | PowerShell Core 6.1    |
-|--------------|------------------------|---------------------|------------------------|
+|    Metric    | Windows PowerShell 5.1 | PowerShell Core 6.0 |  PowerShell Core 6.1   |
+| ------------ | ---------------------- | ------------------- | ---------------------- |
 | Time (sec)   | 0.259                  | 0.577               | 0.125                  |
 | Speed-up (%) | N/A                    | -122.8%             | 78.3% (51.7% from WPS) |
 

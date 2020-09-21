@@ -1,5 +1,6 @@
 ---
 ms.date:  06/12/2017
+description: This document provide best practices to assist engineers that are deploying the DSC Pull Server.
 keywords:  dsc,powershell,configuration,setup
 title:  Pull server best practices
 ---
@@ -19,11 +20,9 @@ preparing for the solution. Details should provide best practices as identified 
 then validated by the product team to ensure recommendations are future facing and considered
 stable.
 
-|           |                      Doc Info                      |
-| :-------- | :------------------------------------------------- |
-| Author    | Michael Greene                                     |
-| Reviewers | Ben Gelens, Ravikanth Chaganti, Aleksandar Nikolic |
-| Published | April, 2015                                        |
+- Author: Michael Greene
+- Reviewers: Ben Gelens, Ravikanth Chaganti, Aleksandar Nikolic
+- Published: April, 2015
 
 ## Abstract
 

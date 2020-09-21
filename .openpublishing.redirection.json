@@ -44,7 +44,11 @@
             "redirect_url": "/powershell/scripting/windows-powershell/wmf/overview",
             "redirect_document_id": true
         },
-
+        {
+            "source_path": "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/About/about_WS-Management_Cmdlets.md",
+            "redirect_url": "/powershell/module/microsoft.wsman.management/about/about_ws-management_cmdlets",
+            "redirect_document_id": false
+        },
 
         {
             "source_path": "reference/docs-conceptual/dsc/getting-started/azuredscexthistory.md",
