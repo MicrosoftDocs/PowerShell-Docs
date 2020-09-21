@@ -31,8 +31,11 @@ Out-File [[-Encoding] <string>] -LiteralPath <string> [-Append] [-Force] [-NoClo
 
 ## DESCRIPTION
 
-The `Out-File` cmdlet sends output to a file. When you need to specify parameters for the output use
-`Out-File` rather than the redirection operator (`>`).
+The `Out-File` cmdlet sends output to a file. It implicitly uses PowerShell's formatting system to
+write to the file. The file receives the same display representation as the terminal. This means
+that the output may not be ideal for programmatic processing unless all input objects are strings.
+When you need to specify parameters for the output use `Out-File` rather than the redirection
+operator (`>`). For more information about redirection, see [about_Redirection](../Microsoft.PowerShell.Core/About/about_Redirection.md).
 
 ## EXAMPLES
 
@@ -356,15 +359,14 @@ You can pipe any object to `Out-File`.
 
 ## NOTES
 
-The `Out` cmdlets do not format objects; they just render them and send them to the specified
-display destination. If you send an unformatted object to an `Out` cmdlet, the cmdlet sends it to a
-formatting cmdlet before rendering it.
+If you send an unformatted object to an `Out` cmdlet, the cmdlet sends it to a formatting cmdlet
+before rendering it.
 
 To send a PowerShell command's output to the `Out-File` cmdlet, use the pipeline. You can store data
 in a variable and use the **InputObject** parameter to pass data to the `Out-File` cmdlet.
 
-`Out-File` sends data but it does not produce any output objects. If you pipe the output of
-`Out-File` to `Get-Member`, the `Get-Member` cmdlet reports that no objects were specified.
+`Out-File` sends data but it does not produce any output objects to the pipeline. It only writes
+data to a file.
 
 ## RELATED LINKS
 
