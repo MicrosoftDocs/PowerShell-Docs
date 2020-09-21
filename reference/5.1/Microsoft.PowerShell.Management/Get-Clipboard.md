@@ -22,7 +22,7 @@ Get-Clipboard [-Format <ClipboardFormat>] [-TextFormatType <TextDataFormat>] [-R
 ## DESCRIPTION
 
 The `Get-Clipboard` cmdlet gets the current Windows clipboard entry. Multiple lines of text are
-returned as an array of strings similar `Get-Content`.
+returned as an array of strings similar to `Get-Content`.
 
 ## EXAMPLES
 

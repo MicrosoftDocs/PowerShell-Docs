@@ -850,36 +850,70 @@ ordered dictionaries, PSCustomObject casting, and improved comment-based help.
 New cmdlets were added to the Windows PowerShell Core installation, including cmdlets to manage
 scheduled jobs, disconnected sessions, CIM integration and the Updatable Help System.
 
-|                           |                                 |
-| ------------------------- | ------------------------------- |
-| Add-JobTrigger            | New-JobTrigger                  |
-| Connect-PSSession         | New-PSSessionConfigurationFile  |
-| ConvertFrom-Json          | New-PSTransportOption           |
-| ConvertTo-Json            | New-PSWorkflowExecutionOption   |
-| Disable-JobTrigger        | New-PSWorkflowSession           |
-| Disable-ScheduledJob      | New-ScheduledJobOption          |
-| Disconnect-PSSession      | New-WinEvent                    |
-| Enable-JobTrigger         | Receive-PSSession               |
-| Enable-ScheduledJob       | Register-CimIndicationEvent     |
-| Get-CimAssociatedInstance | Register-ScheduledJob           |
-| Get-CimClass              | Remove-CimInstance              |
-| Get-CimInstance           | Remove-CimSession               |
-| Get-CimSession            | Remove-TypeData                 |
-| Get-ControlPanelItem      | Rename-Computer                 |
-| Get-IseSnippet            | Resume-Job                      |
-| Get-JobTrigger            | Save-Help                       |
-| Get-ScheduledJob          | Set-CimInstance                 |
-| Get-ScheduledJobOption    | Set-JobTrigger                  |
-| Get-TypeData              | Set-ScheduledJob                |
-| Import-IseSnippet         | Set-ScheduledJobOption          |
-| Invoke-AsWorkflow         | Show-Command                    |
-| Invoke-CimMethod          | Show-ControlPanelItem           |
-| Invoke-RestMethod         | Suspend-Job                     |
-| Invoke-WebRequest         | Test-PSSessionConfigurationFile |
-| New-CimInstance           | Unblock-File                    |
-| New-CimSession            | Unregister-ScheduledJob         |
-| New-CimSessionOption      | Update-Help                     |
-| New-IseSnippet            |                                 |
+- CimCmdlets
+  - Get-CimAssociatedInstance
+  - Get-CimClass
+  - Get-CimInstance
+  - Get-CimSession
+  - Invoke-CimMethod
+  - New-CimInstance
+  - New-CimSession
+  - New-CimSessionOption
+  - Register-CimIndicationEvent
+  - Remove-CimInstance
+  - Remove-CimSession
+  - Set-CimInstance
+- Microsoft.PowerShell.Core
+  - Connect-PSSession
+  - Disconnect-PSSession
+  - New-PSSessionConfigurationFile
+  - New-PSTransportOption
+  - Receive-PSSession
+  - Resume-Job
+  - Save-Help
+  - Suspend-Job
+  - Test-PSSessionConfigurationFile
+  - Update-Help
+- Microsoft.PowerShell.Diagnostics
+  - New-WinEvent
+- Microsoft.PowerShell.Management
+  - Get-ControlPanelItem
+  - Rename-Computer
+  - Show-ControlPanelItem
+- Microsoft.PowerShell.Utility
+  - ConvertFrom-Json
+  - ConvertTo-Json
+  - Get-TypeData
+  - Invoke-RestMethod
+  - Invoke-WebRequest
+  - Remove-TypeData
+  - Show-Command
+  - Unblock-File
+- PSScheduledJob
+  - Add-JobTrigger
+  - Disable-JobTrigger
+  - Disable-ScheduledJob
+  - Enable-JobTrigger
+  - Enable-ScheduledJob
+  - Get-JobTrigger
+  - Get-ScheduledJob
+  - Get-ScheduledJobOption
+  - New-JobTrigger
+  - New-ScheduledJobOption
+  - Register-ScheduledJob
+  - Set-JobTrigger
+  - Set-ScheduledJob
+  - Set-ScheduledJobOption
+  - Unregister-ScheduledJob
+- PSWorkflow
+  - New-PSWorkflowExecutionOption
+  - New-PSWorkflowSession
+- PSWorkflowUtility
+  - Invoke-AsWorkflow
+- ISE
+  - Get-IseSnippet
+  - Import-IseSnippet
+  - New-IseSnippet
 
 ### Improvements to Existing Core Cmdlets and Providers
 
