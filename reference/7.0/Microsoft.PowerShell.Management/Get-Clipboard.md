@@ -3,7 +3,7 @@ external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 08/09/2019
+ms.date: 09/21/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/get-clipboard?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Clipboard
@@ -24,7 +24,8 @@ Get-Clipboard [-Raw] [<CommonParameters>]
 
 ## DESCRIPTION
 
-The `Get-Clipboard` cmdlet gets the contents of the clipboard as text.
+The `Get-Clipboard` cmdlet gets the contents of the clipboard as text. Multiple lines of text are
+returned as an array of strings similar `Get-Content`.
 
 ## EXAMPLES
 
@@ -44,7 +45,8 @@ hello
 
 ### -Raw
 
-Indicates that this cmdlet ignores newline characters and gets the entire contents of the clipboard.
+Gets the entire contents of the clipboard. Multiline text is returned as a single multiline string
+rather than an array of strings.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -62,7 +64,8 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
