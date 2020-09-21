@@ -70,6 +70,10 @@
             }
         },
         "fileMetadata": {
+            "social_image_url": {
+                "**/**.md": "https://docs.microsoft.com/media/logos/logo-powershell-social.png",
+                "**/**.yml": "https://docs.microsoft.com/media/logos/logo-powershell-social.png"
+            },
             "ms.prod": {
                 "**/**.md": "powershell",
                 "**/**.yml": "powershell"
