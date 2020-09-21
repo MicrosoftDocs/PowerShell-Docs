@@ -359,7 +359,7 @@ You can pipe any object to `Out-File`.
 
 ## NOTES
 
-Input objects are automatically formatted as there would be in the terminal, but you can use a
+Input objects are automatically formatted as they would be in the terminal, but you can use a
 `Format-*` cmdlet to explicitly control the formatting of the output to the file. For example,
 `Get-Date | Format-List | Out-File out.txt`
 
@@ -367,8 +367,7 @@ To send a PowerShell command's output to the `Out-File` cmdlet, use the pipeline
 can store data in a variable and use the **InputObject** parameter to pass data to the `Out-File`
 cmdlet.
 
-`Out-File` saves data to a file but it does not produce any output objects to the pipeline. It only
-writes data to a file.
+`Out-File` saves data to a file but it does not produce any output objects to the pipeline.
 
 ## RELATED LINKS
 
