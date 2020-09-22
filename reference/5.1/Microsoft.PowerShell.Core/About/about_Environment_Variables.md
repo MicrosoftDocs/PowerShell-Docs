@@ -1,7 +1,7 @@
 ---
 keywords: powershell,cmdlet
 Locale: en-US
-ms.date: 08/20/2020
+ms.date: 09/22/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_environment_variables?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Environment_Variables
@@ -61,7 +61,8 @@ $Env:windir
 ```
 
 In this syntax, the dollar sign (`$`) indicates a variable, and the drive name
-indicates an environment variable.
+(`Env:`) indicates an environment variable followed by the variable name
+(`windir`).
 
 When you change environment variables in PowerShell, the change affects only
 the current session. This behavior resembles the behavior of the `Set` command
