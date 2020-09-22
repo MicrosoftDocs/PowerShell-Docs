@@ -43,12 +43,12 @@ There are many ways to create objects, this list is not definitive:
 
 The following additional methods are covered in this article:
 
-- Static **new()** method: Beginning in PowerShell 5.0, you can create objects by
-  calling a type's constructor using a static **new()** method.
-- [System.Activator](/dotnet/api/system.activator) class: Creates objects
-  given the assembly name and type name.
-- Hash tables: Beginning in PowerShell 3.0, you can create objects
-  from hash tables of property names and property values.
+- Static **new()** method: Beginning in PowerShell 5.0, you can create objects
+  by calling a type's constructor using a static **new()** method.
+- [System.Activator](/dotnet/api/system.activator) class: Creates objects given
+  the assembly name and type name.
+- Hash tables: Beginning in PowerShell 3.0, you can create objects from hash
+  tables of property names and property values.
 
 ## Determining constructors for a type
 
@@ -91,12 +91,12 @@ String (System.ReadOnlySpan`1[[System.Char, System.Private.CoreLib, Version=4.0.
 
 ## Static new() method
 
-Beginning in PowerShell 5.0, all .NET types have an added **new()** operator which
-allows you to construct instances more easily. You can also see all the
+Beginning in PowerShell 5.0, all .NET types have an added **new()** operator
+which allows you to construct instances more easily. You can also see all the
 available constructors for a given type.
 
-To see the constructors for a type, specify the **new()** static method after the
-type name and press `<ENTER>`.
+To see the constructors for a type, specify the **new()** static method after
+the type name and press `<ENTER>`.
 
 ```powershell
 [System.Uri]::new
@@ -193,9 +193,9 @@ You can view the static methods of the **System.Activator** class using
 ```
 
 The following example creates a **System.Diagnostics.Stopwatch** using the
-**CreateInstance** static method which takes a type and array of arguments.
-The **System.Diagnostics.Stopwatch** constructor takes no arguments, so we
-pass an empty array.
+**CreateInstance** static method which takes a type and array of arguments. The
+**System.Diagnostics.Stopwatch** constructor takes no arguments, so we pass an
+empty array.
 
 ```powershell
 [System.Activator]::CreateInstance([System.Diagnostics.Stopwatch], @())
@@ -284,10 +284,10 @@ standard objects.
 
 ## Create non-custom objects from hash tables
 
-You can also use hash tables to create objects for non-custom classes. When
-you create an object for a non-custom class, the full namespace name is
-required unless class is in the **System** namespace. Use only the properties of
-the class.
+You can also use hash tables to create objects for non-custom classes. When you
+create an object for a non-custom class, the full namespace name is required
+unless class is in the **System** namespace. Use only the properties of the
+class.
 
 For example, the following command creates a session option object.
 
@@ -375,4 +375,3 @@ For more information on Generics, see [Generics in .NET](/dotnet/standard/generi
 [about_Pipelines](about_Pipelines.md)
 
 [about_Types.ps1xml](about_Types.ps1xml.md)
-
