@@ -44,7 +44,7 @@ There are many ways to create objects, this list is not definitive:
 The following additional methods are covered in this article:
 
 - By calling a type's constructor using a static `new()` method
-- By typecasting hash  tables of property names and property values
+- By typecasting hash tables of property names and property values
 
 ## Determining constructors for a type
 
