@@ -1,7 +1,7 @@
 ---
 title: Installing PowerShell on macOS
 description: Information about installing PowerShell on macOS
-ms.date: 08/24/2020
+ms.date: 09/23/2020
 ---
 
 # Installing PowerShell on macOS
@@ -48,7 +48,7 @@ When new versions of PowerShell are released, update Homebrew's formulae and upg
 
 ```sh
 brew update
-brew cask upgrade powershell
+brew upgrade --cask powershell
 ```
 
 > [!NOTE]
@@ -83,7 +83,7 @@ When new versions of PowerShell are released, update Homebrew's formulae and upg
 
 ```sh
 brew update
-brew cask upgrade powershell-preview
+brew upgrade --cask powershell-preview
 ```
 
 > [!NOTE]
