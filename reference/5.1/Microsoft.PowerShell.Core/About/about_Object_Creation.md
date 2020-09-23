@@ -47,17 +47,15 @@ There are many ways to create objects, this list is not definitive:
 
 The following additional methods are covered in this article:
 
-- Static `new()` method: Beginning in PowerShell 5.0, you can create objects
-  by calling a type's constructor using a static `new()` method.
-- Hash tables: Beginning in PowerShell 3.0, you can create objects from hash
-  tables of property names and property values.
+- By calling a type's constructor using a static `new()` method
+- By typecasting hash  tables of property names and property values
 
 ## Static new() method
 
 All .NET types have a `new()` method which allows you to construct instances
 more easily. You can also see all the available constructors for a given type.
 
-To see the constructors for a type, specify the `new()` static method after
+To see the constructors for a type, specify the `new` static method after
 the type name and press `<ENTER>`.
 
 ```powershell
@@ -157,9 +155,8 @@ The syntax is as follows:
 }
 ```
 
-This method works only for classes that have a parameterless constructor, that
-is, a constructor that has no parameters. The object properties must be public
-and settable.
+This method works only for classes that have a parameterless constructor. The
+object properties must be public and settable.
 
 This feature was added in PowerShell version 3.0
 

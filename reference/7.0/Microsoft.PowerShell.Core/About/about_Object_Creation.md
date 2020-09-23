@@ -43,7 +43,9 @@ There are many ways to create objects, this list is not definitive:
 
 The following additional methods are covered in this article:
 
-- Static **new()** method: Beginning in PowerShell 5.0, you can create objects
+All .NET types have an added `new()` method that allows you to construct
+instances more easily. You can also see all the available constructors for a
+given type.
   by calling a type's constructor using a static **new()** method.
 - [System.Activator](/dotnet/api/system.activator) class: Creates objects given
   the assembly name and type name.
