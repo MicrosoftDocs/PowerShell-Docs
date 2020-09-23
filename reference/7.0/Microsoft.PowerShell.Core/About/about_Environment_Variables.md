@@ -144,7 +144,7 @@ The environment variables that store preferences include:
   - Non-Windows default: `~/.cache/powershell`
 
   The default filename for the cache is `ModuleAnalysisCache`. When you have
-  multiple instances of PowerShell installed, the filename will include a
+  multiple instances of PowerShell installed, the filename includes a
   hexadecimal suffix so that there is a a unique filename per installation.
 
   > [!NOTE]
