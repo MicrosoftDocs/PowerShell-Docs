@@ -52,11 +52,11 @@ The following additional methods are covered in this article:
 
 ## Static new() method
 
-All .NET types have a `new()` method which allows you to construct instances
+All .NET types have a `new()` method that allows you to construct instances
 more easily. You can also see all the available constructors for a given type.
 
-To see the constructors for a type, specify the `new` static method after
-the type name and press `<ENTER>`.
+To see the constructors for a type, specify the `new` method name after the
+type name and press `<ENTER>`.
 
 ```powershell
 [System.Uri]::new
@@ -163,7 +163,7 @@ This feature was added in PowerShell version 3.0
 ## Create custom objects from hash tables
 
 Custom objects are very useful and are easy to create using the hash table
-method. The PSCustomObject class is designed specifically for this purpose.
+method. The **PSCustomObject** class is designed specifically for this purpose.
 
 Custom objects are an excellent way to return customized output from a function
 or script. This is more useful than returning formatted output that cannot be
@@ -234,7 +234,7 @@ For example, the following command creates a session option object.
 
 The requirements of the hash table feature, especially the parameterless
 constructor requirement, eliminate many existing classes. However, most
-PowerShell option classes are designed to work with this feature, as well as
+PowerShell _option_ classes are designed to work with this feature, as well as
 other very useful classes, such as the **ProcessStartInfo** class.
 
 ```powershell
@@ -250,11 +250,11 @@ ArgumentList            : {}
 CreateNoWindow          : True
 EnvironmentVariables    : {OneDriveConsumer, PROCESSOR_ARCHITECTURE,
                            CommonProgramFiles(x86), APPDATA...}
-Environment             : {[OneDriveConsumer, C:\Users\robreed\OneDrive],
+Environment             : {[OneDriveConsumer, C:\Users\user1\OneDrive],
                            [PROCESSOR_ARCHITECTURE, AMD64],
                            [CommonProgramFiles(x86),
                            C:\Program Files (x86)\Common Files],
-                           [APPDATA, C:\Users\robreed\AppData\Roaming]...}
+                           [APPDATA, C:\Users\user1\AppData\Roaming]...}
 RedirectStandardInput   : False
 RedirectStandardOutput  : False
 RedirectStandardError   : False
