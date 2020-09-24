@@ -48,7 +48,7 @@ When new versions of PowerShell are released, update Homebrew's formulae and upg
 
 ```sh
 brew update
-brew upgrade --cask powershell
+brew upgrade powershell --cask
 ```
 
 > [!NOTE]
@@ -83,7 +83,7 @@ When new versions of PowerShell are released, update Homebrew's formulae and upg
 
 ```sh
 brew update
-brew upgrade --cask powershell-preview
+brew upgrade powershell-preview --cask
 ```
 
 > [!NOTE]
