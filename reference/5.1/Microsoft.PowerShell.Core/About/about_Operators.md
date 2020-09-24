@@ -1,7 +1,7 @@
 ---
 keywords: powershell,cmdlet
 Locale: en-US
-ms.date: 07/21/2020
+ms.date: 09/23/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_operators?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Operators
@@ -293,6 +293,17 @@ right side of the operator.
 
 ```output
 1 hello      3.14
+```
+
+If you need to keep the curly braces (`{}`) in the formatted string, you can
+escape them by doubling the curly braces.
+
+```powershell
+"{0} vs. {{0}}" -f 'foo'
+```
+
+```Output
+foo vs. {0}
 ```
 
 For more information, see the [String.Format](/dotnet/api/system.string.format)
