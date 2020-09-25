@@ -3,7 +3,7 @@ external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 08/10/2020
+ms.date: 09/25/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/select-object?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Select-Object
@@ -150,7 +150,7 @@ c
 
 ### Example 5: Select newest and oldest events in the event log
 
-These example gets the first (newest) and last (oldest) events in the Windows PowerShell event log.
+This example gets the first (newest) and last (oldest) events in the Windows PowerShell event log.
 
 `Get-EventLog` gets all events in the Windows PowerShell log and saves them in the `$a` variable.
 Then, `$a` is piped to the `Select-Object` cmdlet. The `Select-Object` command uses the **Index**
@@ -189,7 +189,9 @@ cmdlet after it gets the first five read-only text files. Without this parameter
 five read-only files would be renamed.
 
 ```powershell
-Get-ChildItem *.txt -ReadOnly | Rename-Item -NewName {$_.BaseName + "-ro.txt"} -PassThru | Select-Object -First 5 -Wait
+Get-ChildItem *.txt -ReadOnly |
+    Rename-Item -NewName {$_.BaseName + "-ro.txt"} -PassThru |
+    Select-Object -First 5 -Wait
 ```
 
 ### Example 8: Demonstrate the intricacies of the -ExpandProperty parameter
