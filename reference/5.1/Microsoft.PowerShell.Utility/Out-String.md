@@ -3,7 +3,7 @@ external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 12/13/2019
+ms.date: 09/25/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/out-string?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Out-String
@@ -67,8 +67,7 @@ result of `Get-Culture` sending output down the pipeline to `Select-Object`. The
 parameter uses an asterisk (`*`) wildcard to specify all properties are contained in the object.
 
 `Out-String` uses the **InputObject** parameter to specify the **CultureInfo** object stored in the
-`$C` variable. The objects in `$C` are converted to a string. The **Width** parameter is set to 100
-characters per line to prevent truncation.
+`$C` variable. The objects in `$C` are converted to a string.
 
 > [!NOTE]
 > To view the `Out-String` array, store the output to a variable and use an array index to view the
@@ -138,8 +137,8 @@ Accept wildcard characters: False
 
 ### -Width
 
-Specifies the number of characters in each line of output. Any additional characters are truncated,
-not wrapped. The **Width** parameter applies only to objects that are being formatted. If you omit
+Specifies the number of characters in each line of output. Any additional characters are wrapped to
+the next line. The **Width** parameter applies only to objects that are being formatted. If you omit
 this parameter, the width is determined by the characteristics of the host program. The default
 value for the PowerShell console is 80 characters.
 
@@ -178,10 +177,6 @@ You can send objects down the pipeline to `Out-String`.
 
 The cmdlets that contain the `Out` verb don't format objects. The `Out` cmdlets send objects to the
 formatter for the specified display destination.
-
-The `Out` cmdlets don't have parameters that accept names or file paths. To send the output of a
-PowerShell command to an `Out` cmdlet, use the pipeline. Or, you can store data in a variable and
-use the **InputObject** parameter to pass the data to the cmdlet.
 
 ## RELATED LINKS
 
