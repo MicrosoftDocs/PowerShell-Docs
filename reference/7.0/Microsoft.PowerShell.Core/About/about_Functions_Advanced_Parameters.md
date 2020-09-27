@@ -799,10 +799,39 @@ You can define `User` drive in Just Enough Administration (JEA) session
 configurations.
 
 ```powershell
-Param(
-    [ValidateUserDrive()]
-    [String]$Path
-)
+function Test-UserDrivePath{
+    [OutputType([bool])]
+    Param(
+      [Parameter(Mandatory=, Position=0)][ValidateUserDrive()][String]$Path
+      )
+    $True
+}
+
+Test-UserDrivePath -Path C:\
+<# THE OUTPUT:
+    Test-UserDrivePath: Cannot validate argument on parameter 'Path'. The path
+    argument drive C does not belong to the set of approved drives: User.
+  	Supply a path argument with an approved drive.
+#>
+
+Test-UserDrivePath -Path 'User:\A_folder_that_does_not_exist'
+<# THE OUTPUT:
+    Test-UserDrivePath: Cannot validate argument on parameter 'Path'. Cannot
+    find drive. A drive with the name 'User' does not exist.
+#>
+
+# This time, we create the User: drive. Alternatively, you can define User: drive in Just Enough Administration (JEA) session configurations.
+New-PSDrive -Name 'User' -PSProvider FileSystem -Root $env:HOMEPATH
+<# THE OUTPUT:
+    Name           Used (GB)     Free (GB) Provider      Root
+    ----           ---------     --------- --------      ----
+    User               75.76         24.24 FileSystem    C:\Users\ExampleUser
+#>
+
+Test-UserDrivePath -Path 'User:\A_folder_that_does_not_exist'
+<# THE OUTPUT:
+    True
+#>
 ```
 
 ### ValidateTrustedData validation attribute
