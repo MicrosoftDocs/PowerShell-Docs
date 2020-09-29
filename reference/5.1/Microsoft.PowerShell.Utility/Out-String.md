@@ -12,7 +12,7 @@ title: Out-String
 # Out-String
 
 ## SYNOPSIS
-Sends objects to the host as a series of strings.
+Sends objects to the host as a string.
 
 ## SYNTAX
 
@@ -24,35 +24,15 @@ Out-String [-Stream] [-Width <Int32>] [-InputObject <PSObject>] [<CommonParamete
 
 ## DESCRIPTION
 
-The `Out-String` cmdlet converts the objects that PowerShell manages into an array of strings. By
-default, `Out-String` accumulates the strings and returns them as a single string, but you can use
-the **Stream** parameter to direct `Out-String` to return one string at a time. This cmdlet lets you
-search and manipulate string output as you would in traditional shells when object manipulation is
-less convenient.
+The `Out-String` cmdlet converts input objects into strings. By default, `Out-String`
+accumulates the strings and returns them as a single string, but you can use the **Stream**
+parameter to direct `Out-String` to return one line at a time or create and array of strings. This
+cmdlet lets you search and manipulate string output as you would in traditional shells when object
+manipulation is less convenient.
 
 ## EXAMPLES
 
-### Example 1: Output text to the console as a string
-
-This example sends a file's contents to the `Out-String` cmdlet and displays it in the PowerShell
-console.
-
-```powershell
-Get-Content -Path C:\Test\Testfile.txt | Out-String
-```
-
-`Get-Content` sends the contents of the `Testfile.txt` file down the pipeline. Each line of the file
-has its own properties. `Out-String` converts the objects into an array of strings and then displays
-the contents as one string in the PowerShell console.
-
-> [!NOTE]
-> To compare the differences about how `Get-Content` and `Out-String` display the properties:
->
-> `Get-Content -Path C:\Test\Testfile.txt | Select-Object -Property *`
->
-> `Get-Content -Path C:\Test\Testfile.txt | Out-String | Select-Object -Property *`
-
-### Example 2: Get the current culture and convert the data to strings
+### Example 1: Get the current culture and convert the data to strings
 
 This example gets the regional settings for the current user and converts the object data to
 strings.
@@ -76,7 +56,7 @@ parameter uses an asterisk (`*`) wildcard to specify all properties are containe
 >
 > `$str = Out-String -InputObject $C -Width 100`
 
-### Example 3: Working with objects
+### Example 2: Working with objects
 
 This example demonstrates the difference between working with objects and working with strings. The
 command displays an alias that includes the text **gcm**, the alias for `Get-Command`.
@@ -99,6 +79,27 @@ matches for the text **gcm**.
 > If you omit the **Stream** parameter, the command displays all the aliases because `Select-String`
 > finds the text **gcm** in the single string that `Out-String` returns.
 
+### Example 3: Use the Width parameter to prevent truncation.
+
+While most output from `Out-String` is wrapped to the next line if it's longer than the specified
+width, there are some scenarios where the output will be truncated due to the formatter cmdlet
+`Out-String` uses for formatting. You can prevent truncation by using the **Width** parameter.
+
+```powershell
+PS> @{TestKey = ('x' * 200)} | Out-String
+Name                           Value
+----                           -----
+TestKey                        xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx...
+
+PS> @{TestKey = ('x' * 200)} | Out-String -Width 250
+
+Name                           Value
+----                           -----
+TestKey                        xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+```
+
 ## PARAMETERS
 
 ### -InputObject
@@ -120,8 +121,8 @@ Accept wildcard characters: False
 
 ### -Stream
 
-Indicates that the cmdlet sends a separate string for each object. By default, the strings for each
-object are accumulated and sent as a single string.
+Indicates that the cmdlet sends a separate string for each line of an input object. By default, the
+strings for each object are accumulated and sent as a single string.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -138,9 +139,11 @@ Accept wildcard characters: False
 ### -Width
 
 Specifies the number of characters in each line of output. Any additional characters are wrapped to
-the next line. The **Width** parameter applies only to objects that are being formatted. If you omit
-this parameter, the width is determined by the characteristics of the host program. The default
-value for the PowerShell console is 80 characters.
+the next line or truncated depending on the formatter cmdlet used. The **Width** parameter applies
+only to objects that are being formatted. If you omit this parameter, the width is determined by the
+characteristics of the host program. In terminal (console) windows, the current window width is used
+as the default value. PowerShell console windows default to a width of 80 characters on
+installation.
 
 ```yaml
 Type: System.Int32
