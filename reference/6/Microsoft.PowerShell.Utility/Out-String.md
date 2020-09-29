@@ -63,12 +63,14 @@ ThreeLetterWindowsLanguageName : ENU
 CompareInfo                    : CompareInfo - en-US
 TextInfo                       : TextInfo - en-US
 IsNeutralCulture               : False
-CultureTypes                   : SpecificCultures, InstalledWin32Cultures
+CultureTypes                   : SpecificCultures, InstalledWin32Cultures, FrameworkCultures
 NumberFormat                   : System.Globalization.NumberFormatInfo
-DateTimeFormat                 : System.Globalization.DateTimeFormatInfo                                                Calendar                       : System.Globalization.GregorianCalendar                                                 OptionalCalendars              : {System.Globalization.GregorianCalendar, System.Globalization.
-GregorianCalendar}
+DateTimeFormat                 : System.Globalization.DateTimeFormatInfo
+Calendar                       : System.Globalization.GregorianCalendar
+OptionalCalendars              : {System.Globalization.GregorianCalendar,
+                                 System.Globalization.GregorianCalendar}
 UseUserOverride                : True
-IsReadOnly                     : True
+IsReadOnly                     : False
 ```
 
 The `$C` variable stores a **Selected.System.Globalization.CultureInfo** object. The object is the
