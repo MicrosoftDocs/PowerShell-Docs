@@ -1,7 +1,7 @@
 ---
 keywords: powershell,cmdlet
 Locale: en-US
-ms.date: 09/02/2020
+ms.date: 09/28/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_functions_advanced_parameters?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Functions_Advanced_Parameters
@@ -790,27 +790,64 @@ Param(
 
 The **ValidateUserDrive** attribute specifies that the parameter value must
 represent the path, that is referring to `User` drive. PowerShell generates an
-error if the path refers to other drives. Existence of the path, except for the
-drive itself, isn't verified.
+error if the path refers to a different drive. The validation attribute only
+tests for the existence of the drive portion of the path.
 
 If you use relative path, the current drive must be `User`.
 
-You can define `User` drive in Just Enough Administration (JEA) session
-configurations.
+```powershell
+function Test-UserDrivePath{
+    [OutputType([bool])]
+    Param(
+      [Parameter(Mandatory=, Position=0)][ValidateUserDrive()][String]$Path
+      )
+    $True
+}
+
+Test-UserDrivePath -Path C:\
+```
+
+```Output
+Test-UserDrivePath: Cannot validate argument on parameter 'Path'. The path
+argument drive C does not belong to the set of approved drives: User.
+Supply a path argument with an approved drive.
+```
 
 ```powershell
-Param(
-    [ValidateUserDrive()]
-    [String]$Path
-)
+Test-UserDrivePath -Path 'User:\A_folder_that_does_not_exist'
+```
+
+```Output
+Test-UserDrivePath: Cannot validate argument on parameter 'Path'. Cannot
+find drive. A drive with the name 'User' does not exist.
+```
+
+You can define `User` drive in Just Enough Administration (JEA) session
+configurations. For this example, we create the User: drive.
+
+```powershell
+New-PSDrive -Name 'User' -PSProvider FileSystem -Root $env:HOMEPATH
+```
+
+```Output
+Name           Used (GB)     Free (GB) Provider      Root
+----           ---------     --------- --------      ----
+User               75.76         24.24 FileSystem    C:\Users\ExampleUser
+
+```powershell
+Test-UserDrivePath -Path 'User:\A_folder_that_does_not_exist'
+```
+
+```Output
+True
 ```
 
 ### ValidateTrustedData validation attribute
 
 This attribute was added in PowerShell 6.1.1.
 
-At this time, the attribute is used internally by PowerShell itself and is not intended for external
-usage.
+At this time, the attribute is used internally by PowerShell itself and is not
+intended for external usage.
 
 ## Dynamic parameters
 
