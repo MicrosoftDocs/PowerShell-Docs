@@ -81,9 +81,9 @@ matches for the text **gcm**.
 
 ### Example 3: Use the Width parameter to prevent truncation.
 
-While most output from `Out-String` is wrapped to the next line if it's longer than the specified
-width, there are some scenarios where the output will be truncated due to the formatter cmdlet
-`Out-String` uses for formatting. You can prevent truncation by using the **Width** parameter.
+While most output from `Out-String` is wrapped to the next line, there are scenarios where the
+output is truncated by the formatting system before being passed to `Out-String`. You can avoid
+truncation using the **Width** parameter.
 
 ```powershell
 PS> @{TestKey = ('x' * 200)} | Out-String
