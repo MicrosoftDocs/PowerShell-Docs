@@ -3,7 +3,7 @@ external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 09/25/2020
+ms.date: 09/29/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/out-string?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Out-String
@@ -40,6 +40,29 @@ strings.
 ```powershell
 $C = Get-Culture | Select-Object -Property *
 Out-String -InputObject $C -Width 100
+```
+
+```Output
+Parent                         : en
+LCID                           : 1033
+KeyboardLayoutId               : 1033
+Name                           : en-US
+IetfLanguageTag                : en-US
+DisplayName                    : English (United States)
+NativeName                     : English (United States)
+EnglishName                    : English (United States)
+TwoLetterISOLanguageName       : en
+ThreeLetterISOLanguageName     : eng
+ThreeLetterWindowsLanguageName : ENU
+CompareInfo                    : CompareInfo - en-US
+TextInfo                       : TextInfo - en-US
+IsNeutralCulture               : False
+CultureTypes                   : SpecificCultures, InstalledWin32Cultures
+NumberFormat                   : System.Globalization.NumberFormatInfo
+DateTimeFormat                 : System.Globalization.DateTimeFormatInfo                                                Calendar                       : System.Globalization.GregorianCalendar                                                 OptionalCalendars              : {System.Globalization.GregorianCalendar, System.Globalization.
+GregorianCalendar}
+UseUserOverride                : True
+IsReadOnly                     : True
 ```
 
 The `$C` variable stores a **Selected.System.Globalization.CultureInfo** object. The object is the
@@ -183,7 +206,7 @@ formatter for the specified display destination.
 
 ## RELATED LINKS
 
-[about_Formatting] (../Microsoft.PowerShell.Core/About/about_Format.ps1xml.md)
+[about_Formatting](../Microsoft.PowerShell.Core/About/about_Format.ps1xml.md)
 
 [Out-Default](../Microsoft.PowerShell.Core/Out-Default.md)
 
