@@ -837,9 +837,13 @@ if ( -not ( $results -ne 'Passed') )
 
 At this point, you're starting to wonder how to add items to an array. The quick answer is that you
 can't. An array is a fixed size in memory. If you need to grow it or add a single item to it, then
-you need to create a new array and copy all the values over from the old array. This sounds
-expensive and like a lot of work, however, PowerShell hides the complexity of creating the new
-array.
+you need to create a new array and copy all the values over from the old array. This sounds like a
+lot of work, however, PowerShell hides the complexity of creating the new array. PowerShell
+implements the addition operator (`+`) for arrays.
+
+> [!NOTE]
+> PowerShell does not implement a subtraction operation. If you want a flexible alternative to an
+> array, you need to use a [generic `List`](#generic-list) object.
 
 ### Array addition
 
@@ -905,9 +909,6 @@ $array = foreach ( $node in (1..5))
     "ATX-SQL-$node"
 }
 ```
-
-By assigning the results of the `foreach` to a variable, we capture all the objects and create a
-single array.
 
 ## Array Types
 
