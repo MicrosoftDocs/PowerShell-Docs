@@ -183,6 +183,8 @@ formatter for the specified display destination.
 
 ## RELATED LINKS
 
+[about_Formatting] (../Microsoft.PowerShell.Core/About/about_Format.ps1xml.md)
+
 [Out-Default](../Microsoft.PowerShell.Core/Out-Default.md)
 
 [Out-File](Out-File.md)
