@@ -12,7 +12,7 @@ title: Out-String
 # Out-String
 
 ## SYNOPSIS
-Sends objects to the host as a string.
+Outputs input objects as a strings.
 
 ## SYNTAX
 
