@@ -83,8 +83,7 @@ Copy-Item @HashArguments
 > [!NOTE]
 > In the first command, the At symbol (`@`) indicates a hash table, not a
 > splatted value. The syntax for hash tables in PowerShell is:
-> `@{<name>=<value>; <name>=<value>; ...}` in PowerShell is:
-`@{<name>=<value>; <name>=<value>; ...}`
+> `@{<name>=<value>; <name>=<value>; ...}`
 
 ## Splatting with arrays
 
