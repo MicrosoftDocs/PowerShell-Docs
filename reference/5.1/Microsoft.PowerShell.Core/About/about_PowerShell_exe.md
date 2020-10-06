@@ -133,10 +133,10 @@ because it has no special meaning to the current **cmd.exe** shell. The
 `$env:windir` style of environment variable reference _can_ be used inside a
 **Command** parameter, since there it will be interpreted as PowerShell code.
 
-Similarly, if you want to execute the same command from a **Batch script**, you 
-would use `%~dp0` instead of `.\` or `$PSScriptRoot` to represent the current 
-execution directory: `powershell.exe -File %~dp0test.ps1 -TestParam %windir%`. 
-If you instead used `.\test.ps1`, PowerShell would throw an error because it 
+Similarly, if you want to execute the same command from a **Batch script**, you
+would use `%~dp0` instead of `.\` or `$PSScriptRoot` to represent the current
+execution directory: `powershell.exe -File %~dp0test.ps1 -TestParam %windir%`.
+If you instead used `.\test.ps1`, PowerShell would throw an error because it
 cannot find the literal path `.\test.ps1`
 
 When the value of **File** is a file path, **File** _must_ be the last
@@ -175,7 +175,7 @@ of **Command** is `-`, the command text is read from standard input.
 
 The **Command** parameter only accepts a script block for execution when it can
 recognize the value passed to **Command** as a **ScriptBlock** type. This is
-_only_ possible when running `pwsh` from another PowerShell host. The
+_only_ possible when running `powershell.exe` from another PowerShell host. The
 **ScriptBlock** type may be contained in an existing variable, returned from an
 expression, or parsed by the PowerShell host as a literal script block enclosed
 in curly braces (`{}`), before being passed to `powershell.exe`.
@@ -196,7 +196,7 @@ running from `cmd.exe`. To execute an inline script block defined inside a
 string, the [call operator](about_operators.md#special-operators) `&` can be
 used:
 
-```
+```cmd
 pwsh -Command "& {Get-WinEvent -LogName security}"
 ```
 
