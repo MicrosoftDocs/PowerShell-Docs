@@ -282,9 +282,11 @@ C:\scripts\test>echo %ERRORLEVEL%
 4
 ```
 
-When you run `powershell.exe -File <path to a script>`, the exit statement
-sets the exit code to a value other than zero. If you have an unhandled
-exception in your script, exit code is set to the value of 1.
+When you run `pwsh.exe -File <path to a script>` and the script file terminates
+with an `exit` command, the exit code is set to the numeric argument used with
+the `exit` command. If the script has not `exit` statement, the exit code is
+always `0`, when the script completes without error, or `1` when the script
+terminates from an unhandled exception.
 
 ### Filter
 
