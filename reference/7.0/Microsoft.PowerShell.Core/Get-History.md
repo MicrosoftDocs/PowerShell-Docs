@@ -3,7 +3,7 @@ external help file: System.Management.Automation.dll-Help.xml
 keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 05/13/2020
+ms.date: 10/06/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/get-history?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-History
@@ -55,7 +55,7 @@ gets all entries in the session history. The pipeline operator (`|`) passes the 
 Get-History | Where-Object {$_.CommandLine -like "*Service*"}
 ```
 
-### Example 3: Export at most seven entries
+### Example 3: Export history entries up to a specific ID
 
 This example gets the five most recent history entries ending with entry 7. The pipeline operator
 passes the result to the `Export-Csv` cmdlet, which formats the history as comma-separated text and
@@ -138,7 +138,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Int64
+### System.Int64
 
 You can pipe a history ID to this cmdlet.
 
