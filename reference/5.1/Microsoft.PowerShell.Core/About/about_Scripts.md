@@ -407,7 +407,7 @@ PowerShell has many useful features that you can use in scripts.
 - Data sections - You can use the `Data` keyword to separate data from logic in
   scripts. Data sections can also make localization easier. For more
   information, see [about_Data_Sections](about_Data_Sections.md) and
-  [about_Script_Localization](about_Script_Localization.md).
+  [about_Script_Internationalization](about_Script_Internationalization.md).
 
 - Script Signing - You can add a digital signature to a script. Depending on
   the execution policy, you can use digital signatures to restrict the running
