@@ -250,7 +250,7 @@ exit <exitcode>
 
 When you use `pwsh` with the **File** parameter, the `.ps1` (script) file
 itself should include instructions for handling any errors or exceptions that
-occur while the script is running. You should only use the exit statement to
+occur while the script is running. You should only use the `exit` statement to
 indicate the post-execution status of the script.
 
 On Windows, any number between `[int]::MinValue` and `[int]::MaxValue` is allowed.
