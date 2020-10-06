@@ -33,8 +33,8 @@ the publisher. Each item indicates if it may be controlled by the module or scri
 | **Copyright** | This is the Copyright field in the module manifest, and .COPYRIGHT in a script manifest. | Yes | Yes |
 | **FileList** | The file list is drawn from the package when it is published to the PowerShell Gallery. It is not controllable by the manifest information. Note: there is an additional .nuspec file listed with each package in the PowerShell Gallery that is not present after installing the package on a system. This is the Nuget package manifest for the package, and may be ignored. | No | No |
 | **Tags** | For modules, Tags are included under PSData\PrivateData. For scripts, the section is labelled .TAGS. Note that tags cannot contain spaces, even when they are in quotes. Tags have additional requirements and meanings, which are described later in this topic in the Tag Details section. | Yes | Yes |
-| **Cmdlets** | This is provided in the module manifest using CmdletsToExport. Note that the best practice is to explicitly list the items, rather than using the wildcard “*”, as that will improve the load-module performance for users. | Yes | No |
-| **Functions** | This is provided in the module manifest using FunctionsToExport. Note that the best practice is to explicitly list the items, rather than using the wildcard “*”, as that will improve the load-module performance for users. | Yes | No |
+| **Cmdlets** | This is provided in the module manifest using CmdletsToExport. Note that the best practice is to explicitly list the items, rather than using the wildcard "*", as that will improve the load-module performance for users. | Yes | No |
+| **Functions** | This is provided in the module manifest using FunctionsToExport. Note that the best practice is to explicitly list the items, rather than using the wildcard "*", as that will improve the load-module performance for users. | Yes | No |
 | **DSC Resources** | For modules that will be used on PowerShell version 5.0 and above, this is provided in the manifest using DscResourcesToExport. If the module is to be used in PowerShell 4, the DSCResourcesToExport should not be used as it is not a supported manifest key. (DSC was not available prior to PowerShell 4.) | Yes | No |
 | **Workflows** | Workflows are published to the PowerShell Gallery as scripts, and identified as workflows (see [Connect-AzureVM](https://www.powershellgallery.com/packages/Connect-AzureVM/1.0/Content/Connect-AzureVM.ps1) for an example) in the code. This is not controlled by the manifest. | No | No |
 | **Role capabilities** | This will be listed when the module published to the PowerShell Gallery contains one or more role capability (.psrc) files, which are used by JEA. See the JEA documentation for more details on [role capabilities](/powershell/scripting/learn/remoting/jea/role-capabilities). | Yes | No |
@@ -44,7 +44,7 @@ the publisher. Each item indicates if it may be controlled by the module or scri
 | **Version History** | The version history reflects the updates made to a module in the PowerShell Gallery. If a version of a package is hidden using the Delete feature, it will not be displayed in the version history, except to the package owners. | No | No |
 | **Project Site** | The project site is provided for modules in the Privatedata\PSData section of the module manifest by specifying a ProjectURI. In the script manifest, it is controlled by specifying .PROJECTURI. | Yes | Yes |
 | **License** | A license link is provided for modules in the Privatedata\PSData section of the module manifest by specifying a LicenseURI. In the script manifest, it is controlled by specifying .LICENSEURI. It is important to note that if a license is not provided via the LicenseURI, or within a module, then the terms of use for the PowerShell Gallery specify the terms of use for the package. See the terms of use for details. | Yes | Yes |
-| **Icon** | An icon can be specified for any package in the PowerShell Gallery by supplying the IconURI flag in the script manifest, or in the Privatedata-PSData section of the module manifest. The IconURI should point to a 32x32 image with transparency background. The URI **must** be a direct image URL and **must not** go to a web page containing the image, or a file in the PowerShell Gallery package. | Yes | Yes |
+| **Icon** | An icon can be specified for any package in the PowerShell Gallery by supplying the IconURI flag in the script manifest, or in the Privatedata-PSData section of the module manifest. The IconURI should point to a 85x85 image with transparency background. The URI **must** be a direct image URL and **must not** go to a web page containing the image, or a file in the PowerShell Gallery package. | Yes | Yes |
 
 ## Editing package details
 
@@ -95,7 +95,7 @@ Preferred Tag, as that will result in less noise, and better search results for 
 | Preferred tag | Alternatives and notes |
 | --- | --- |
 | Azure |  |
-| DSC | DesiredStateConfiguration is less desirable, it’s too long |
+| DSC | DesiredStateConfiguration is less desirable, it's too long |
 | ResourceManager | ARM is used to describe group of processors, and should not be used for Azure Resource Manager |
 | DSCResourceKit |  |
 | SQL |  |

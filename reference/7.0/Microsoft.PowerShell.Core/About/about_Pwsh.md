@@ -225,7 +225,7 @@ This parameter only applies to Windows computers. The
 `$env:PSExecutionPolicyPreference` environment variable does not exist on
 non-Windows platforms.
 
-### -InputFormat | -in | -if
+### -InputFormat | -inp | -if
 
 Describes the format of data sent to PowerShell. Valid values are "Text" (text
 strings) or "XML" (serialized CLIXML format).
@@ -314,8 +314,8 @@ Example: `pwsh -SettingsFile c:\myproject\powershell.config.json`
 
 ### -SSHServerMode | -sshs
 
-Used for running PowerShell as an SSH subsystem. It is not intended or
-supported for any other use.
+Used in sshd_config for running PowerShell as an SSH subsystem. It is not
+intended or supported for any other use.
 
 ### -STA
 

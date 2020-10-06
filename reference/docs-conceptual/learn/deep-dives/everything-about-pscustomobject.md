@@ -1,7 +1,7 @@
 ---
 title: Everything you wanted to know about PSCustomObject
 description: PSCustomObject is a simple way to create structured data.
-ms.date: 07/29/2020
+ms.date: 10/05/2020
 ms.custom: contributor-KevinMarquette
 ---
 # Everything you wanted to know about PSCustomObject
@@ -168,11 +168,11 @@ If you need to know if a property exists, you could just check for that property
 if( $null -ne $myObject.ID )
 ```
 
-But if the value could be `$null` and you still need to check for it, you can check the
+But if the value could be `$null` you can check to see if it exists by checking the
 `psobject.properties` for it.
 
 ```powershell
-if( $myobject.psobject.properties.match('ID') )
+if( $myobject.psobject.properties.match('ID').Count )
 ```
 
 ## Adding object methods
@@ -290,7 +290,7 @@ there's another way for us to do this on our custom object using just PowerShell
 
 ```powershell
 $defaultDisplaySet = 'Name','Language'
-$defaultDisplayPropertySet = New-Object System.Management.Automation.PSPropertySet(‘DefaultDisplayPropertySet’,[string[]]$defaultDisplaySet)
+$defaultDisplayPropertySet = New-Object System.Management.Automation.PSPropertySet('DefaultDisplayPropertySet',[string[]]$defaultDisplaySet)
 $PSStandardMembers = [System.Management.Automation.PSMemberInfo[]]@($defaultDisplayPropertySet)
 $MyObject | Add-Member MemberSet PSStandardMembers $PSStandardMembers
 ```
