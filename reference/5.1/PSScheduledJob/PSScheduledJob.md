@@ -36,11 +36,11 @@ Enables a scheduled job.
 ### [Get-JobTrigger](Get-JobTrigger.md)
 Gets the job triggers of scheduled jobs.
 
-### [Get-ScheduledJobOption](Get-ScheduledJobOption.md)
-Gets the job options of scheduled jobs.
-
 ### [Get-ScheduledJob](Get-ScheduledJob.md)
 Gets scheduled jobs on the local computer.
+
+### [Get-ScheduledJobOption](Get-ScheduledJobOption.md)
+Gets the job options of scheduled jobs.
 
 ### [New-JobTrigger](New-JobTrigger.md)
 Creates a job trigger for a scheduled job.
@@ -57,11 +57,11 @@ Delete job triggers from scheduled jobs.
 ### [Set-JobTrigger](Set-JobTrigger.md)
 Changes the job trigger of a scheduled job.
 
-### [Set-ScheduledJobOption](Set-ScheduledJobOption.md)
-Changes the job options of a scheduled job.
-
 ### [Set-ScheduledJob](Set-ScheduledJob.md)
 Changes scheduled jobs.
+
+### [Set-ScheduledJobOption](Set-ScheduledJobOption.md)
+Changes the job options of a scheduled job.
 
 ### [Unregister-ScheduledJob](Unregister-ScheduledJob.md)
 Deletes scheduled jobs on the local computer.

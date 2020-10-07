@@ -34,7 +34,7 @@ Finds role capabilities in modules.
 Finds a script.
 
 ### [Get-InstalledModule](Get-InstalledModule.md)
-Gets installed modules on a computer.
+Gets a list of modules on the computer that were installed by PowerShellGet.
 
 ### [Get-InstalledScript](Get-InstalledScript.md)
 Gets an installed script.
@@ -61,7 +61,7 @@ Publishes a script.
 Registers a PowerShell repository.
 
 ### [Save-Module](Save-Module.md)
-Saves a module locally without installing it.
+Saves a module and its dependencies on the local computer but doesn't install the module.
 
 ### [Save-Script](Save-Script.md)
 Saves a script.
@@ -76,7 +76,7 @@ Validates a comment block for a script.
 Uninstalls a module.
 
 ### [Uninstall-Script](Uninstall-Script.md)
-Uninstalls a script file.
+Uninstalls a script.
 
 ### [Unregister-PSRepository](Unregister-PSRepository.md)
 Unregisters a repository.

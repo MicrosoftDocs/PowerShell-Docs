@@ -57,7 +57,7 @@ Applies LCM settings to nodes.
 Applies configuration to nodes.
 
 ### [Stop-DscConfiguration](Stop-DscConfiguration.md)
-Stops a running configuration.
+Stops a configuration job that is running.
 
 ### [Test-DscConfiguration](Test-DscConfiguration.md)
 Tests whether the actual configuration on the nodes matches the desired configuration.

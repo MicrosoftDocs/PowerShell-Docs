@@ -41,7 +41,7 @@ Gets a credential object based on a user name and password.
 Gets the execution policies for the current session.
 
 ### [Get-PfxCertificate](Get-PfxCertificate.md)
-Gets information about .pfx certificate files on the computer.
+Gets information about PFX certificate files on the computer.
 
 ### [New-FileCatalog](New-FileCatalog.md)
 Creates a Windows catalog file containing cryptographic hashes for files and folders in specified
@@ -57,11 +57,10 @@ Changes the security descriptor of a specified item, such as a file or a registr
 Adds an Authenticode signature to a PowerShell script or other file.
 
 ### [Set-ExecutionPolicy](Set-ExecutionPolicy.md)
-Changes the user preference for the PowerShell execution policy.
+Sets the PowerShell execution policies for Windows computers.
 
 ### [Test-FileCatalog](Test-FileCatalog.md)
-Validates files and folders by comparing their path-sensitive hashes against those recorded in a
-catalog.
+Validates whether the hashes contained in a catalog file (.cat) matches the hashes of the actual files in order to validate their authenticity.
 
 ### [Unprotect-CmsMessage](Unprotect-CmsMessage.md)
 Decrypts content that has been encrypted by using the Cryptographic Message Syntax format.
