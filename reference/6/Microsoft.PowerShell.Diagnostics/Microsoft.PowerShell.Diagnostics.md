@@ -22,4 +22,5 @@ Microsoft.PowerShell.Diagnostics module, which contains cmdlets that manage data
 Gets events from event logs and event tracing log files on local and remote computers.
 
 ### [New-WinEvent](New-WinEvent.md)
-Creates an ETW event for the specified event provider.
+Creates a new Windows event for the specified event provider.
+

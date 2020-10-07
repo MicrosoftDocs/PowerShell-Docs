@@ -33,4 +33,5 @@ Imports performance counter log files and creates the objects that represent eac
 the log.
 
 ### [New-WinEvent](New-WinEvent.md)
-Creates an ETW event for the specified event provider.
+Creates a new Windows event for the specified event provider.
+

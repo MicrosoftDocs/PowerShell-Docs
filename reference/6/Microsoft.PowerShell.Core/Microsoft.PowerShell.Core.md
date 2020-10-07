@@ -23,7 +23,7 @@ basic features of PowerShell.
 Appends entries to the session history.
 
 ### [Clear-History](Clear-History.md)
-Deletes entries from the PowerShell command history.
+Deletes entries from the PowerShell session command history.
 
 ### [Clear-Host](Clear-Host.md)
 Clears the display in the host program.
@@ -34,14 +34,20 @@ Reconnects to disconnected sessions.
 ### [Debug-Job](Debug-Job.md)
 Debugs a running background, remote, or PowerShell Workflow job.
 
+### [Disable-ExperimentalFeature](Disable-ExperimentalFeature.md)
+Disable an experimental feature on startup of new instance of PowerShell.
+
 ### [Disable-PSRemoting](Disable-PSRemoting.md)
-Prevents remote users from running commands on the local computer.
+Prevents PowerShell endpoints from receiving remote connections.
 
 ### [Disable-PSSessionConfiguration](Disable-PSSessionConfiguration.md)
 Disables session configurations on the local computer.
 
 ### [Disconnect-PSSession](Disconnect-PSSession.md)
 Disconnects from a session.
+
+### [Enable-ExperimentalFeature](Enable-ExperimentalFeature.md)
+Enable an experimental feature on startup of new instance of PowerShell.
 
 ### [Enable-PSRemoting](Enable-PSRemoting.md)
 Configures the computer to receive remote commands.
@@ -69,6 +75,9 @@ Performs an operation against each item in a collection of input objects.
 
 ### [Get-Command](Get-Command.md)
 Gets all commands.
+
+### [Get-ExperimentalFeature](Get-ExperimentalFeature.md)
+Gets experimental features.
 
 ### [Get-Help](Get-Help.md)
 Displays information about PowerShell commands and concepts.
@@ -137,7 +146,7 @@ Hides the output instead of sending it down the pipeline or displaying it.
 Gets the results of the PowerShell background jobs in the current session.
 
 ### [Receive-PSSession](Receive-PSSession.md)
-Gets results of commands in disconnected sessions.
+Gets results of commands in disconnected sessions
 
 ### [Register-ArgumentCompleter](Register-ArgumentCompleter.md)
 Registers a custom argument completer.

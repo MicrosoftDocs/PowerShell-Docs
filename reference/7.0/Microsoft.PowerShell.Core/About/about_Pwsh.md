@@ -88,9 +88,9 @@ execution directory: `pwsh -File %~dp0test.ps1 -TestParam %windir%`. If you
 instead used `.\test.ps1`, PowerShell would throw an error because it cannot
 find the literal path `.\test.ps1`
 
-When the script file invoked terminates with an `exit` command, the process
-exit code is set to the numeric argument used with the `exit` command. With
-normal termination, the exit code is always `0`.
+When the script file terminates with an `exit` command, the process exit code
+is set to the numeric argument used with the `exit` command. With normal
+termination, the exit code is always `0`.
 
 Similar to `-Command`, when a script-terminating error occurs, the exit code is
 set to `1`. However, unlike with `-Command`, when the execution is interrupted
@@ -110,7 +110,7 @@ recognize the value passed to **Command** as a **ScriptBlock** type. This is
 _only_ possible when running `pwsh` from another PowerShell host. The
 **ScriptBlock** type may be contained in an existing variable, returned from an
 expression, or parsed by the PowerShell host as a literal script block enclosed
-in curly braces `{}`, before being passed to `pwsh`.
+in curly braces (`{}`), before being passed to `pwsh`.
 
 ```powershell
 pwsh -Command {Get-WinEvent -LogName security}
