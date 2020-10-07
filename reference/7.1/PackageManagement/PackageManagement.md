@@ -24,7 +24,7 @@ Finds software packages in available package sources.
 Returns a list of Package Management package providers available for installation.
 
 ### [Get-Package](Get-Package.md)
-Returns a list of all software packages that have been installed by using Package Management.
+Returns a list of all software packages that were installed with **PackageManagement**.
 
 ### [Get-PackageProvider](Get-PackageProvider.md)
 Returns a list of package providers that are connected to Package Management.

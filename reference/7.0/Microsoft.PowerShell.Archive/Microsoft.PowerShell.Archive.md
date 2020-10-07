@@ -19,7 +19,7 @@ This section contains the help topics for the cmdlets that are installed with th
 ## Microsoft.PowerShell.Archive Cmdlets
 
 ### [Compress-Archive](Compress-Archive.md)
-Creates an archive, or zipped file, from specified files and folders.
+Creates a compressed archive, or zipped file, from specified files and directories.
 
 ### [Expand-Archive](Expand-Archive.md)
 Extracts files from a specified archive (zipped) file.

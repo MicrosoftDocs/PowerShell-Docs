@@ -47,10 +47,10 @@ Converts a SDDL string to a custom object.
 Converts a string containing one or more key and value pairs to a hash table.
 
 ### [ConvertTo-Csv](ConvertTo-Csv.md)
-Converts objects into a series of character-separated value (CSV) strings.
+Converts .NET objects into a series of character-separated value (CSV) strings.
 
 ### [ConvertTo-Html](ConvertTo-Html.md)
-Converts Microsoft .NET Framework objects into HTML that can be displayed in a Web browser.
+Converts .NET objects into HTML that can be displayed in a Web browser.
 
 ### [ConvertTo-Json](ConvertTo-Json.md)
 Converts an object to a JSON-formatted string.
@@ -143,7 +143,7 @@ Displays the current call stack.
 Gets a random number, or selects objects randomly from a collection.
 
 ### [Get-Runspace](Get-Runspace.md)
-Gets active runspaces within a PowerShellhost process.
+Gets active runspaces within a PowerShell host process.
 
 ### [Get-RunspaceDebug](Get-RunspaceDebug.md)
 Shows runspace debugging options.
@@ -233,7 +233,7 @@ Creates a new variable.
 Sends output to a file.
 
 ### [Out-String](Out-String.md)
-Sends objects to the host as a series of strings.
+Outputs input objects as a strings.
 
 ### [Read-Host](Read-Host.md)
 Reads a line of input from the console.
