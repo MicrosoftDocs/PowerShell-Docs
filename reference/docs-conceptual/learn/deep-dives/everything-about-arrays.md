@@ -786,7 +786,7 @@ count of objects in it. If the array is `$null`, the count is `0`.
 ```powershell
 if ( $array.count -gt 0 )
 {
-    'Array isn't empty'
+    "Array isn't empty"
 }
 ```
 

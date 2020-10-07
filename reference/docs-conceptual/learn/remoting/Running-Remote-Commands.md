@@ -151,7 +151,7 @@ navigate through a hierarchy of configuration settings on the local computer and
 
 For more information about the WSMan provider, see
 [WSMan Provider](https://technet.microsoft.com/library/dd819476.aspx) and
-[About WS-Management Cmdlets](/powershell/module/microsoft.powershell.core/about/about_ws-management_cmdlets),
+[About WS-Management Cmdlets](/powershell/module/microsoft.wsman.management/about/about_ws-management_cmdlets),
 or in the Windows PowerShell console, type `Get-Help wsman`.
 
 For more information, see:
