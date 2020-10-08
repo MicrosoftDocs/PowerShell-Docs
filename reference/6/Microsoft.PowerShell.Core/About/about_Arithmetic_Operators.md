@@ -68,8 +68,8 @@ PowerShell processes arithmetic operators in the following order:
 |3         | `*`, `/`, `%`    |For multiplication and division        |
 |4         | `+`, `-`         |For addition and subtraction           |
 |5         | `-band`, `-bnot` |For bitwise operations                 |
-|          | `-bor`, `-bxor`  |                                       |
-|          | `-shr`, `-shl`   |                                       |
+|5         | `-bor`, `-bxor`  |For bitwise operations                 |
+|5         | `-shr`, `-shl`   |For bitwise operations                 |
 
 PowerShell processes the expressions from left to right according to the
 precedence rules. The following examples show the effect of the precedence
