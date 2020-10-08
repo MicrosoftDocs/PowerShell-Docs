@@ -1,7 +1,7 @@
 ---
 keywords: powershell,cmdlet
 Locale: en-US
-ms.date: 07/17/2020
+ms.date: 10/08/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_arithmetic_operators?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Arithmetic_Operators
@@ -52,8 +52,7 @@ PowerShell supports the following arithmetic operators:
 |-bnot   |Bitwise NOT                       |`-bnot 5`                    |
 |-bor    |Bitwise OR                        |`5 -bor 0x03`                |
 |-bxor   |Bitwise XOR                       |`5 -bxor 3`                  |
-|-shl    |Shifts bits to the left the       |`102 -shl 2`                 |
-|        |specified number of times         |                             |
+|-shl    |Shifts bits to the left           |`102 -shl 2`                 |
 |-shr    |Shifts bits to the right          |`102 -shr 2`                 |
 
 The bitwise operators only work on integer types.
@@ -62,12 +61,15 @@ The bitwise operators only work on integer types.
 
 PowerShell processes arithmetic operators in the following order:
 
-|Precedence|Operator       |Description                            |
-|----------|---------------|---------------------------------------|
-|1         | `()`          |Parentheses                            |
-|2         | `-`           |For a negative number or unary operator|
-|3         | `*`, `/`, `%` |For multiplication and division         |
-|4         | `+`, `-`      |For addition and subtraction           |
+|Precedence|Operator          |Description                            |
+|----------|------------------|---------------------------------------|
+|1         | `()`             |Parentheses                            |
+|2         | `-`              |For a negative number or unary operator|
+|3         | `*`, `/`, `%`    |For multiplication and division        |
+|4         | `+`, `-`         |For addition and subtraction           |
+|5         | `-band`, `-bnot` |For bitwise operations                 |
+|          | `-bor`, `-bxor`  |                                       |
+|          | `-shr`, `-shl`   |                                       |
 
 PowerShell processes the expressions from left to right according to the
 precedence rules. The following examples show the effect of the precedence
@@ -522,11 +524,11 @@ right operand determine how many bits of the left operand are shifted.
 
 ## SEE ALSO
 
-* [about_arrays](about_Arrays.md)
-* [about_assignment_operators](about_Assignment_Operators.md)
-* [about_comparison_operators](about_Comparison_Operators.md)
-* [about_hash_tables](about_Hash_Tables.md)
-* [about_operators](about_Operators.md)
-* [about_variables](about_Variables.md)
-* [Get-Date](xref:Microsoft.PowerShell.Utility.Get-Date)
-* [New-TimeSpan](xref:Microsoft.PowerShell.Utility.New-TimeSpan)
+- [about_arrays](about_Arrays.md)
+- [about_assignment_operators](about_Assignment_Operators.md)
+- [about_comparison_operators](about_Comparison_Operators.md)
+- [about_hash_tables](about_Hash_Tables.md)
+- [about_operators](about_Operators.md)
+- [about_variables](about_Variables.md)
+- [Get-Date](xref:Microsoft.PowerShell.Utility.Get-Date)
+- [New-TimeSpan](xref:Microsoft.PowerShell.Utility.New-TimeSpan)

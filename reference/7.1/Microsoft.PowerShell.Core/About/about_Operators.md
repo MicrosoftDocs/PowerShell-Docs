@@ -1,7 +1,7 @@
 ---
 keywords: powershell,cmdlet
 Locale: en-US
-ms.date: 09/23/2020
+ms.date: 10/08/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_operators?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Operators
@@ -28,6 +28,9 @@ returns the specified number of copies of each element. You can use arithmetic
 operators on any .NET type that implements them, such as: `Int`, `String`,
 `DateTime`, `Hashtable`, and Arrays.
 
+Bitwise operators (`-band`, `-bor`, `-bxor`, `-bnot`, `-shl`, `-shr`)
+manipulate the bit patterns in values.
+
 For more information, see [about_Arithmetic_Operators](about_Arithmetic_Operators.md).
 
 ### Assignment Operators
@@ -53,9 +56,6 @@ reference set (`-in`, `-notin`, `-contains`, `-notcontains`).
 
 Type comparison operators (`-is`, `-isnot`) determine whether an object is of a
 given type.
-
-Bitwise comparison operators (`-band`, `-bor`, `-bxor`, `-bnot`) manipulate the
-bit patterns in values.
 
 For more information, see [about_Comparison_Operators](about_Comparison_Operators.md).
 
