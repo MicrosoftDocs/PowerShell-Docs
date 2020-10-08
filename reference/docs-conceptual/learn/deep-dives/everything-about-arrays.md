@@ -1,7 +1,7 @@
 ---
 title: Everything you wanted to know about arrays
 description: Arrays are a fundamental language feature of most programming languages.
-ms.date: 07/07/2020
+ms.date: 10/08/2020
 ms.custom: contributor-KevinMarquette
 ---
 # Everything you wanted to know about arrays
@@ -806,7 +806,7 @@ get an accurate count.
 ```powershell
 if ( @($array).count -gt 0 )
 {
-    'Array isn't empty'
+    "Array isn't empty"
 }
 ```
 
@@ -815,7 +815,7 @@ To fully play it safe, check for `$null`, then check the count.
 ```powershell
 if ( $null -ne $array -and @($array).count -gt 0 )
 {
-    'Array isn't empty'
+    "Array isn't empty"
 }
 ```
 
