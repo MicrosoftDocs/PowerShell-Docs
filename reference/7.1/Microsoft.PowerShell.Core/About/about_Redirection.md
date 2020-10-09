@@ -1,4 +1,5 @@
 ---
+description: Explains how to redirect output from PowerShell to text files. 
 keywords: PowerShell,cmdlet
 Locale: en-US
 ms.date: 07/22/2020

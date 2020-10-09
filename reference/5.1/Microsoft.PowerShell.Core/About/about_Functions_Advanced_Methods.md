@@ -1,4 +1,5 @@
 ---
+description:  Describes how functions that specify the `CmdletBinding` attribute can use the methods and properties that are available to compiled cmdlets. 
 keywords: powershell,cmdlet
 Locale: en-US
 ms.date: 01/03/2018

@@ -1,4 +1,5 @@
 ---
+description: Describes the syntax diagrams that are used in PowerShell. 
 keywords: powershell,cmdlet
 ms.date: 06/27/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_command_syntax?view=powershell-7&WT.mc_id=ps-gethelp

@@ -1,4 +1,5 @@
 ---
+description:  Describes the Windows PowerShell Compatibility functionality for PowerShell 7. 
 keywords: powershell,cmdlet
 Locale: en-US
 ms.date: 04/22/2020

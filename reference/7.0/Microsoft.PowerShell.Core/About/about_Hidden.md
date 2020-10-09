@@ -1,4 +1,5 @@
 ---
+description: Describes the Hidden keyword, which hides class members from default Get-Member results. 
 keywords: powershell,cmdlet
 Locale: en-US
 ms.date: 01/04/2018

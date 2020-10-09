@@ -1,4 +1,5 @@
 ---
+description: Explains how to install, import, and use PowerShell modules. 
 keywords: powershell,cmdlet
 Locale: en-US
 ms.date: 07/30/2020

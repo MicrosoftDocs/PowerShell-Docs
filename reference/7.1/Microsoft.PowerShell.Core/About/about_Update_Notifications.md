@@ -1,4 +1,5 @@
 ---
+description:  Notifies users on startup of PowerShell that a new version of PowerShell has been released. 
 keywords: powershell,cmdlet
 Locale: en-US
 ms.date: 01/10/2020

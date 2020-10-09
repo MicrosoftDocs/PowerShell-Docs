@@ -1,4 +1,5 @@
 ---
+description: Describes the operators that compare values in PowerShell. 
 keywords: powershell,cmdlet
 Locale: en-US
 ms.date: 01/16/2020

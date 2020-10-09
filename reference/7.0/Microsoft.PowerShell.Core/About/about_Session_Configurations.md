@@ -1,4 +1,5 @@
 ---
+description: Describes session configurations, which determine the users who can connect to the computer remotely and the commands they can run. 
 keywords: powershell,cmdlet
 Locale: en-US
 ms.date: 12/09/2017

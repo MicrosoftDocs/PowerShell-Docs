@@ -1,4 +1,5 @@
 ---
+description: Describes the updatable help system in PowerShell. 
 keywords: powershell,cmdlet
 Locale: en-US
 ms.date: 08/04/2020

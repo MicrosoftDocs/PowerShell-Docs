@@ -1,4 +1,5 @@
 ---
+description: The Experimental Features support in PowerShell provides a mechanism for experimental features to coexist with existing stable features in PowerShell or PowerShell modules.
 keywords: powershell,cmdlet
 Locale: en-US
 ms.date: 03/13/2020

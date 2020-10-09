@@ -1,4 +1,5 @@
 ---
+description:  Describes how variables store values that can be used in PowerShell. 
 keywords: powershell,cmdlet
 Locale: en-US
 ms.date: 03/19/2020

@@ -1,4 +1,5 @@
 ---
+description: Explains how to use a switch to handle multiple `If` statements. 
 keywords: powershell,cmdlet
 Locale: en-US
 ms.date: 2/27/2019

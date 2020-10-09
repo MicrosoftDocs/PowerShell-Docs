@@ -1,4 +1,5 @@
 ---
+description:  Exits the current scope, which can be a function, script, or script block. 
 keywords: powershell,cmdlet
 Locale: en-US
 ms.date: 01/03/2018

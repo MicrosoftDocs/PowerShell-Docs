@@ -1,4 +1,5 @@
 ---
+description: Describes how to work with command parameters in PowerShell. 
 keywords: powershell,cmdlet
 Locale: en-US
 ms.date: 02/12/2019

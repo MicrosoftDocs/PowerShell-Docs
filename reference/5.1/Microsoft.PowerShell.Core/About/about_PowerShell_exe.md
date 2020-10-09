@@ -1,4 +1,5 @@
 ---
+description: Explains how to use the `powershell.exe` command-line interface. Displays the command-line parameters and describes the syntax. 
 keywords: powershell,cmdlet
 Locale: en-US
 ms.date: 10/05/2020

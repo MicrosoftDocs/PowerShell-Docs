@@ -1,4 +1,5 @@
 ---
+description: Describes how to use the `Try`, `Catch`, and `Finally` blocks to handle terminating errors. 
 keywords: powershell,cmdlet
 Locale: en-US
 ms.date: 04/01/2019

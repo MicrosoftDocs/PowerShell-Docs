@@ -1,4 +1,5 @@
 ---
+description:  Defines what a script block is and explains how to use script blocks in the PowerShell programming language. 
 keywords: powershell,cmdlet
 Locale: en-US
 ms.date: 04/08/2020

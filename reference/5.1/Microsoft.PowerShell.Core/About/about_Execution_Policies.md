@@ -1,4 +1,5 @@
 ---
+description:  Describes the PowerShell execution policies and explains how to manage them. 
 keywords: powershell,cmdlet
 Locale: en-US
 ms.date: 08/10/2020

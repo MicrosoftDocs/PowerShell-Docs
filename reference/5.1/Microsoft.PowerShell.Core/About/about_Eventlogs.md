@@ -1,4 +1,5 @@
 ---
+description:  Windows PowerShell creates a Windows event log that is named "Windows PowerShell" to record Windows PowerShell events. You can view this log in Event Viewer or by using cmdlets that get events, such as the `Get-EventLog` cmdlet. By default, Windows PowerShell engine and provider events are recorded in the event log, but you can use the event log preference variables to customize the event log. For example, you can add events about Windows PowerShell commands. 
 keywords: powershell,cmdlet
 Locale: en-US
 ms.date: 11/27/2017

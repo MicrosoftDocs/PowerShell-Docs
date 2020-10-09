@@ -1,4 +1,5 @@
 ---
+description: Contains questions and answers about running remote commands in PowerShell. 
 keywords: powershell,cmdlet
 Locale: en-US
 ms.date: 07/23/2020

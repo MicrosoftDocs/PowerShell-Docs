@@ -1,4 +1,5 @@
 ---
+description: Describes session configuration files, which are used in a session configuration (also known as an "endpoint") to define the environment of sessions that use the session configuration. 
 keywords: powershell,cmdlet
 Locale: en-US
 ms.date: 01/03/2018

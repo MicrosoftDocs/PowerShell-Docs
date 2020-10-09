@@ -1,4 +1,5 @@
 ---
+description:  Provides a brief introduction to the PowerShell Desired State Configuration (DSC) feature. 
 keywords: powershell,cmdlet
 Locale: en-US
 ms.date: 07/23/2020

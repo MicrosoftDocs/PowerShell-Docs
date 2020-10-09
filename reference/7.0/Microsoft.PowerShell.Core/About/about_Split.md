@@ -1,4 +1,5 @@
 ---
+description: Explains how to use the Split operator to split one or more strings into substrings. 
 keywords: powershell,cmdlet
 Locale: en-US
 ms.date: 03/24/2020

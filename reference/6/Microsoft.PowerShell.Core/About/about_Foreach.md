@@ -1,4 +1,5 @@
 ---
+description: Describes a language command you can use to traverse all the items in a collection of items. 
 keywords: powershell,cmdlet
 Locale: en-US
 ms.date: 2/27/2019

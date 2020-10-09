@@ -1,4 +1,5 @@
 ---
+description: Provides information about how PowerShell background jobs run a command or expression in the background without interacting with the current session. 
 keywords: powershell,cmdlet
 Locale: en-US
 ms.date: 11/29/2017

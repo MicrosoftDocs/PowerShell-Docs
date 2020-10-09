@@ -1,4 +1,5 @@
 ---
+description:  Describes how the join operator (-join) combines multiple strings into a single string. 
 keywords: powershell,cmdlet
 Locale: en-US
 ms.date: 06/09/2017
