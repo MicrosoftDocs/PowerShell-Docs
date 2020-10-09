@@ -38,6 +38,7 @@ The following recommendations help you choose an appropriate verb for your cmdle
     - ForEach (foreach)
     - [Format](/dotnet/api/System.Management.Automation.VerbsCommon.Format) (f): Arranges objects in a specified form or layout
     - [Group](/dotnet/api/System.Management.Automation.VerbsData.Group) (gp): Arranges or associates one or more resources
+    - [Ping](/dotnet/api/System.Management.Automation.VerbsDiagnostic.Ping) (pi)
     - Sort (sr)
     - Tee (te)
     - Where (wh)
@@ -170,7 +171,6 @@ verbs.
 |--------------------|------------|--------------|
 |[Debug](/dotnet/api/System.Management.Automation.VerbsDiagnostic.Debug) (db)|Examines a resource to diagnose operational problems.|Diagnose|
 |[Measure](/dotnet/api/System.Management.Automation.VerbsDiagnostic.Measure) (ms)|Identifies resources that are consumed by a specified operation, or retrieves statistics about a resource.|Calculate, Determine, Analyze|
-|[Ping](/dotnet/api/System.Management.Automation.VerbsDiagnostic.Ping) (pi)|Use the `Test` verb.||
 |[Repair](/dotnet/api/System.Management.Automation.VerbsDiagnostic.Repair) (rp)|Restores a resource to a usable condition|Fix, Restore|
 |[Resolve](/dotnet/api/System.Management.Automation.VerbsDiagnostic.Resolve) (rv)|Maps a shorthand representation of a resource to a more complete representation.|Expand, Determine|
 |[Test](/dotnet/api/System.Management.Automation.VerbsDiagnostic.Test) (t)|Verifies the operation or consistency of a resource.|Diagnose, Analyze, Salvage, Verify|
