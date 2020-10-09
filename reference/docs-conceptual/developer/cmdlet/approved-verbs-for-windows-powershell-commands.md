@@ -64,9 +64,9 @@ Use the `Get` verb to obtain information about a resource (such as a file) or to
 
 ### Invoke vs. Start
 
-Use the `Invoke` verb to perform a synchronous operation, such as
-running a command and waiting for it to end. Use the `Start` verb is used to begin an asynchronous
-operation, such as starting an autonomous process.
+Use the `Invoke` verb to perform synchronous operations, such as
+running a command and waiting for it to end. Use the `Start` verb is used to begin asynchronous
+operations, such as starting an autonomous process.
 
 ### Ping vs. Test
 
