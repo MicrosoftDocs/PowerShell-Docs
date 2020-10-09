@@ -39,15 +39,15 @@ The following list describes the main folders in this repository.
     general, the folder structure mirrors the Table of Contents (TOC).
   - `mapping` - contains the version mapping configuration used by the build system
   - `media` - contains image files used in documentation. There are media folders throughout the
-    `conceptual` content. See the Contributor Guide for information on using images in documentation.
+    `docs-conceptual` content. See the Contributor Guide for information on using images in documentation.
   - `module` - contains the markdown source for the Module Browser page
 - `tests` - contains the Pester tests used by the build system
 - `tools` - contains other tools used by the build system
 
-> [!NOTE]
-> The reference content (in the numbered folders) is used to create the webpages on the Docs site as
-> well as the updateable help used by PowerShell. The articles in the `docs-conceptual` folder are
-> only published to the Docs website.
+> NOTE: The reference content (in the numbered folders) is used to create the
+> webpages on the Docs site as well as the updateable help used by PowerShell.
+> The articles in the `docs-conceptual` folder are only published to the Docs
+> website.
 
 ## Contributing
 
