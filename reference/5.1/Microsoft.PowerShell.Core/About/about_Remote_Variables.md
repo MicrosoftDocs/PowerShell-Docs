@@ -1,4 +1,5 @@
 ---
+description:  Explains how to use local and remote variables in remote commands. 
 keywords: powershell,cmdlet
 Locale: en-US
 ms.date: 03/13/2020

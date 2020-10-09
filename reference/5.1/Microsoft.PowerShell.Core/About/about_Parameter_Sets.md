@@ -1,4 +1,5 @@
 ---
+description: Describes how to define and use parameter sets in advanced functions. 
 title: about_Parameter_Sets
 ms.date: 02/11/2020
 ---

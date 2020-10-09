@@ -1,4 +1,5 @@
 ---
+description:  Describes how to create and use functions in PowerShell. 
 keywords: powershell,cmdlet
 Locale: en-US
 ms.date: 2/27/2019

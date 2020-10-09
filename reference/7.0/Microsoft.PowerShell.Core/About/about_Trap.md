@@ -1,4 +1,5 @@
 ---
+description:  Describes a keyword that handles a terminating error. 
 keywords: powershell,cmdlet
 Locale: en-US
 ms.date: 06/04/2020

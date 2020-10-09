@@ -1,4 +1,5 @@
 ---
+description:  Explains limitations of  Windows PowerShell 4.0 on Windows RT 8.1. 
 keywords: powershell,cmdlet
 Locale: en-US
 ms.date: 01/03/2018

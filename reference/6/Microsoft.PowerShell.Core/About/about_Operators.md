@@ -1,4 +1,5 @@
 ---
+description: Describes the operators that are supported by PowerShell. 
 keywords: powershell,cmdlet
 Locale: en-US
 ms.date: 10/08/2020

@@ -1,4 +1,5 @@
 ---
+description:  Provides essential information about objects in Windows PowerShell. 
 keywords: powershell,cmdlet
 Locale: en-US
 ms.date: 11/30/2017

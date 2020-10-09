@@ -1,4 +1,5 @@
 ---
+description:  Describes how to interpret and format the output of remote commands. 
 keywords: powershell,cmdlet
 Locale: en-US
 ms.date: 12/01/2017

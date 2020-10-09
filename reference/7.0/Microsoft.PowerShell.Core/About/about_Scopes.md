@@ -1,4 +1,5 @@
 ---
+description: Explains the concept of scope in PowerShell and shows how to set and change the scope of elements. 
 keywords: powershell,cmdlet
 Locale: en-US
 ms.date: 03/13/2020

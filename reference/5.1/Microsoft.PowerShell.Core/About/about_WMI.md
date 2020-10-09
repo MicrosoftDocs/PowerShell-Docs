@@ -1,4 +1,5 @@
 ---
+description:  Windows Management Instrumentation (WMI) uses the Common Information Model (CIM) to represent systems, applications, networks, devices, and other manageable components of the modern enterprise. 
 keywords: powershell,cmdlet
 Locale: en-US
 ms.date: 01/03/2018

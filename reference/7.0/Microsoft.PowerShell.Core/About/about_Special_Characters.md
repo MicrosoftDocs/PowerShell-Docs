@@ -1,4 +1,5 @@
 ---
+description:  Describes the special character sequences that control how PowerShell interprets the next characters in the sequence. 
 keywords: powershell,cmdlet
 Locale: en-US
 ms.date: 04/04/2020

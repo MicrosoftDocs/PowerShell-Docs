@@ -1,4 +1,5 @@
 ---
+description: Describes the Group Policy settings for PowerShell 
 keywords: powershell,cmdlet
 Locale: en-US
 ms.date: 03/25/2020

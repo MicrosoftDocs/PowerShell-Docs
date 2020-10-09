@@ -1,4 +1,5 @@
 ---
+description: Describes how to access Windows environment variables in PowerShell. 
 keywords: powershell,cmdlet
 Locale: en-US
 ms.date: 08/20/2020

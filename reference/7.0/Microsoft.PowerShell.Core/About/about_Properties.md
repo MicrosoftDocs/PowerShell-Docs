@@ -1,4 +1,5 @@
 ---
+description: Describes how to use object properties in PowerShell. 
 keywords: powershell,cmdlet
 Locale: en-US
 ms.date: 12/01/2017

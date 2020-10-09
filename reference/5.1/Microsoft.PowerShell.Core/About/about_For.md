@@ -1,4 +1,5 @@
 ---
+description: Describes a language command you can use to run statements based on a conditional test. 
 keywords: powershell,cmdlet
 Locale: en-US
 ms.date: 3/4/2019

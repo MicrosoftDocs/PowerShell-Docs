@@ -1,4 +1,5 @@
 ---
+description:  Explains how to disconnect and reconnect to a PowerShell Session (PSSession). 
 keywords: powershell,cmdlet
 Locale: en-US
 ms.date: 12/01/2017

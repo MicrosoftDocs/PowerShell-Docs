@@ -1,4 +1,5 @@
 ---
+description: Describes the Checkpoint-Workflow activity, which takes a checkpoint in a workflow. 
 keywords: powershell,cmdlet
 Locale: en-US
 ms.date: 06/09/2017

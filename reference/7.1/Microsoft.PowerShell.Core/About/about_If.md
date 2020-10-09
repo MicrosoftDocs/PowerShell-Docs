@@ -1,4 +1,5 @@
 ---
+description: Describes a language command you can use to run statement lists based on the results of one or more conditional tests. 
 keywords: powershell,cmdlet
 Locale: en-US
 ms.date: 06/09/2017

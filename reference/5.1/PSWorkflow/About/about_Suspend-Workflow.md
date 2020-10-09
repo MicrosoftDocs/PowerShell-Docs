@@ -1,4 +1,5 @@
 ---
+description:  Describes the `Suspend-Workflow` activity, which suspends the workflow in which the activity appears. 
 keywords: powershell,cmdlet
 Locale: en-US
 ms.date: 06/09/2017

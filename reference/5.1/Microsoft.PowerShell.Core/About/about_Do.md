@@ -1,4 +1,5 @@
 ---
+description:  Runs a statement list one or more times, subject to a While or Until condition. 
 keywords: powershell,cmdlet
 Locale: en-US
 ms.date: 06/09/2017

@@ -1,4 +1,5 @@
 ---
+description: Describes regular expressions in PowerShell. 
 keywords: powershell,cmdlet
 Locale: en-US
 ms.date: 03/10/2020

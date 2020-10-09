@@ -1,4 +1,5 @@
 ---
+description:  Explains how to create objects in PowerShell. 
 keywords: powershell,cmdlet
 Locale: en-US
 ms.date: 09/22/2020

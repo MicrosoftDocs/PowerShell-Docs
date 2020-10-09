@@ -1,4 +1,5 @@
 ---
+description: Describes how you can use classes to create your own custom types. 
 description: Describes how you can use classes to create your own custom types.
 keywords: powershell,cmdlet
 Locale: en-US

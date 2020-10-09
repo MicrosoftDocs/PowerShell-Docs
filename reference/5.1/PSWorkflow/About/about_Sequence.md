@@ -1,4 +1,5 @@
 ---
+description:  Describes the `Sequence` keyword that runs selected activities sequentially. 
 keywords: powershell,cmdlet
 Locale: en-US
 ms.date: 06/09/2017

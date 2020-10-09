@@ -1,4 +1,5 @@
 ---
+description: Describes an attribute that reports the type of object that the function returns. 
 keywords: powershell,cmdlet
 Locale: en-US
 ms.date: 01/03/2018

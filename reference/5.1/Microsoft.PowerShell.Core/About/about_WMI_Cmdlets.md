@@ -1,4 +1,5 @@
 ---
+description:  Provides background information about Windows Management Instrumentation (WMI) and Windows PowerShell. 
 keywords: powershell,cmdlet
 Locale: en-US
 ms.date: 12/01/2017

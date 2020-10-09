@@ -1,4 +1,5 @@
 ---
+description: Describes how to run remote commands in PowerShell. 
 keywords: powershell,cmdlet
 Locale: en-US
 ms.date: 01/03/2018

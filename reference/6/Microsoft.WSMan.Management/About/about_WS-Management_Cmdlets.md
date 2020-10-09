@@ -1,4 +1,5 @@
 ---
+description:  Provides an overview of Web Services for Management (WS-Management) as background for using the WS-Management cmdlets in Windows PowerShell. 
 keywords: powershell,cmdlet
 Locale: en-US
 ms.date: 01/04/2018

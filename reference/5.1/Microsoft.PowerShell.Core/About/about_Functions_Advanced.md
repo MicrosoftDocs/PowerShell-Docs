@@ -1,4 +1,5 @@
 ---
+description: Introduces advanced functions that are a way to create cmdlets using scripts. 
 keywords: powershell,cmdlet
 Locale: en-US
 ms.date: 06/11/2020

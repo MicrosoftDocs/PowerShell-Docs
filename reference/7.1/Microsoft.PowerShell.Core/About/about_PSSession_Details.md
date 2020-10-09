@@ -1,4 +1,5 @@
 ---
+description: Provides detailed information about PowerShell sessions and the role they play in remote commands. 
 keywords: powershell,cmdlet
 Locale: en-US
 ms.date: 06/09/2017

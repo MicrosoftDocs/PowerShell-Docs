@@ -1,4 +1,5 @@
 ---
+description:  Explains advanced scheduled job topics, including the file structure that underlies scheduled jobs. 
 keywords: powershell,cmdlet
 Locale: en-US
 ms.date: 06/09/2017

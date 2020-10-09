@@ -1,4 +1,5 @@
 ---
+description:  Describes variables that store state information for PowerShell. These variables are created and maintained by PowerShell. 
 keywords: powershell,cmdlet
 Locale: en-US
 ms.date: 08/14/2020
