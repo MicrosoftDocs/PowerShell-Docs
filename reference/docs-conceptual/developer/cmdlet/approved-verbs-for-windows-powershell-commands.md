@@ -8,7 +8,10 @@ helpviewer_keywords:
 ---
 # Approved Verbs for PowerShell Commands
 
-PowerShell uses a verb-noun pair for the names of cmdlets and for their derived .NET classes. The verb part of the name identifies the action that the cmdlet performs. The noun part of the name identifies the entity on which the action is performed. For example, the `Get-Command` cmdlet retrieves all the commands that are registered in PowerShell.
+PowerShell uses a verb-noun pair for the names of cmdlets and for their derived .NET classes.
+The verb part of the name identifies the action that the cmdlet performs. The noun part of
+the name identifies the entity on which the action is performed. For example, the `Get-Command`
+cmdlet retrieves all the commands that are registered in PowerShell.
 
 > [!NOTE]
 > PowerShell uses the term _verb_ to describe a word that implies an action even if that word is not
@@ -28,7 +31,9 @@ mimicking well known commands from other environments.
 
 ## Verb Naming Recommendations
 
-The following recommendations help you choose an appropriate verb for your cmdlet, to ensure consistency between the cmdlets that you create, the cmdlets that are provided by PowerShell, and the cmdlets that are designed by others.
+The following recommendations help you choose an appropriate verb for your cmdlet, to ensure
+consistency between the cmdlets that you create, the cmdlets that are provided by PowerShell,
+and the cmdlets that are designed by others.
 
 - Use one of the predefined verb names provided by PowerShell
 - Use the verb to describe the general scope of the action, and use parameters to further refine the action of the cmdlet.
