@@ -1,4 +1,5 @@
 ---
+description:  Combining commands into pipelines in the PowerShell 
 keywords: powershell,cmdlet
 Locale: en-US
 ms.date: 09/27/2019

@@ -1,4 +1,5 @@
 ---
+description:  Describes scheduled jobs and explains how to use and manage scheduled jobs in PowerShell and in Task Scheduler. 
 keywords: powershell,cmdlet
 Locale: en-US
 ms.date: 06/09/2017

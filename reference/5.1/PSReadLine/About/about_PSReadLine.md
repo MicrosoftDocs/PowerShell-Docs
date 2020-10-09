@@ -1,4 +1,5 @@
 ---
+description: PSReadLine provides an improved command-line editing experience in the PowerShell console.
 keywords: powershell
 Locale: en-US
 ms.date: 02/10/2020

@@ -1,4 +1,5 @@
 ---
+description:  Describes a statement you can use to immediately exit `foreach`, `for`, `while`, `do`, `switch`, or `trap` statements. 
 keywords: powershell,cmdlet
 Locale: en-US
 ms.date: 06/04/2020

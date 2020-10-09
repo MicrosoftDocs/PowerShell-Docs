@@ -1,4 +1,5 @@
 ---
+description: Describes arrays, which are data structures designed to store collections of items. 
 keywords: powershell,cmdlet
 Locale: en-US
 ms.date: 08/26/2020

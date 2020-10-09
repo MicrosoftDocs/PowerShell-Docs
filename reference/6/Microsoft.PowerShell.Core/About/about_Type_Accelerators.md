@@ -1,4 +1,5 @@
 ---
+description: Describes the Type accelerators available for .NET framework classes 
 keywords: powershell,cmdlet
 Locale: en-US
 ms.date: 05/01/2020

@@ -1,4 +1,5 @@
 ---
+description: Describes the `Prompt` function and demonstrates how to create a custom `Prompt` function. 
 keywords: powershell,cmdlet
 Locale: en-US
 ms.date: 04/15/2020

@@ -1,4 +1,5 @@
 ---
+description: Explains how to use `Types.ps1xml` files to extend the types of objects that are used in PowerShell. 
 keywords: powershell,cmdlet
 Locale: en-US
 ms.date: 04/27/2020

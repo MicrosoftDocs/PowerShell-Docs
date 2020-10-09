@@ -1,4 +1,5 @@
 ---
+description:  Describes WMI Query Language (WQL), which can be used to get WMI objects in Windows PowerShell. 
 keywords: powershell,cmdlet
 Locale: en-US
 ms.date: 01/03/2018

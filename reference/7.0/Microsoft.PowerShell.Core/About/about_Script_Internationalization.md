@@ -1,4 +1,5 @@
 ---
+description: Describes the script internationalization features that make it easy for scripts to display messages and instructions to users in their user interface (UI) language. 
 keywords: powershell,cmdlet
 Locale: en-US
 ms.date: 03/20/2020

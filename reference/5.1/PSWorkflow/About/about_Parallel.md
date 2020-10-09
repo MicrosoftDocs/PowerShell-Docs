@@ -1,4 +1,5 @@
 ---
+description: Describes the Parallel keyword, which runs the activities in a workflow in parallel. 
 keywords: powershell,cmdlet
 Locale: en-US
 ms.date: 06/09/2017

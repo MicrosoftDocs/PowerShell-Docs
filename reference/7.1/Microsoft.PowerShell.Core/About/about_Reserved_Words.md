@@ -1,4 +1,5 @@
 ---
+description: Lists the reserved words that cannot be used as identifiers because they have a special meaning in PowerShell. 
 keywords: powershell,cmdlet
 Locale: en-US
 ms.date: 07/23/2020

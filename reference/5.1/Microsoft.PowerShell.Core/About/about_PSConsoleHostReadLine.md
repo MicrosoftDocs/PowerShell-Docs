@@ -1,4 +1,5 @@
 ---
+description:  Explains how to create a customize how PowerShell reads input at the console prompt. 
 keywords: powershell,cmdlet
 Locale: en-US
 ms.date: 01/04/2018

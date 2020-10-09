@@ -1,4 +1,5 @@
 ---
+description:  Explains how to create and manage scheduled jobs. 
 keywords: powershell,cmdlet
 Locale: en-US
 ms.date: 06/09/2017

@@ -1,4 +1,5 @@
 ---
+description:  Variables that customize the behavior of PowerShell. 
 keywords: powershell,cmdlet
 Locale: en-US
 ms.date: 04/22/2020

@@ -1,4 +1,5 @@
 ---
+description:  Provides a brief introduction to the PowerShell Workflow feature. 
 keywords: powershell,cmdlet
 Locale: en-US
 ms.date: 06/09/2017

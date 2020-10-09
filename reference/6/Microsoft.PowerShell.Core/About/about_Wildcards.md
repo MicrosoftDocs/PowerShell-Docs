@@ -1,4 +1,5 @@
 ---
+description:  Describes how to use wildcard characters in PowerShell. 
 keywords: powershell,cmdlet
 Locale: en-US
 ms.date: 3/28/2019

@@ -1,4 +1,5 @@
 ---
+description: Configuration files for PowerShell Core, replacing Registry configuration. 
 keywords: powershell
 Locale: en-US
 ms.date: 11/02/2018

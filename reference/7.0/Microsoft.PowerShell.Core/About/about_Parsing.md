@@ -1,4 +1,5 @@
 ---
+description:  Describes how PowerShell parses commands. 
 keywords: powershell,cmdlet
 Locale: en-US
 ms.date: 09/14/2020

@@ -1,4 +1,5 @@
 ---
+description:  Describes the telemetry collected in PowerShell and how to opt-out. 
 keywords: powershell
 Locale: en-US
 ms.date: 08/09/2019

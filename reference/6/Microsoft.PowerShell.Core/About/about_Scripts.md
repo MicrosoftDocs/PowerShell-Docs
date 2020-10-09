@@ -1,4 +1,5 @@
 ---
+description: Describes how to run and write scripts in PowerShell. 
 keywords: powershell,cmdlet
 Locale: en-US
 ms.date: 10/06/2020
