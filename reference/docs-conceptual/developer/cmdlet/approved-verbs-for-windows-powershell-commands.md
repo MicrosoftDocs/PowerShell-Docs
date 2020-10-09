@@ -78,7 +78,7 @@ PowerShell uses the [System.Management.Automation.VerbsCommon](/dotnet/api/Syste
 enumeration class to define generic actions that can apply to almost any cmdlet. The following table
 lists most of the defined verbs.
 
-|Verb (alias)|Action|Synonmys to avoid|
+|Verb (alias)|Action|Synonyms to avoid|
 |--------------------|------------|--------------|
 |[Add](/dotnet/api/System.Management.Automation.VerbsCommon.Add) (a)|Adds a resource to a container, or attaches an item to another item. For example, the `Add-Content` cmdlet adds content to a file. This verb is paired with `Remove`.|Append, Attach, Concatenate, Insert|
 |[Clear](/dotnet/api/System.Management.Automation.VerbsCommon.Clear) (cl)|Removes all the resources from a container but does not delete the container. For example, the `Clear-Content` cmdlet removes the contents of a file but does not delete the file.|Flush, Erase, Release, Unmark, Unset, Nullify|
@@ -120,7 +120,7 @@ PowerShell uses the [System.Management.Automation.VerbsCommunications](/dotnet/a
 class to define actions that apply to communications. The following table lists most of the defined
 verbs.
 
-|Verb (alias)|Action|Synonmys to avoid|
+|Verb (alias)|Action|Synonyms to avoid|
 |--------------------|------------|--------------|
 |[Connect](/dotnet/api/System.Management.Automation.VerbsCommunications.Connect) (cc)|Creates a link between a source and a destination. This verb is paired with `Disconnect`.|Join, Telnet|
 |[Disconnect](/dotnet/api/System.Management.Automation.VerbsCommunications.Disconnect) (dc)|Breaks the link between a source and a destination. This verb is paired with `Connect`.|Break, Logoff|
@@ -134,7 +134,7 @@ verbs.
 PowerShell uses the [System.Management.Automation.VerbsData](/dotnet/api/System.Management.Automation.VerbsData) class
 to define actions that apply to data handling. The following table lists most of the defined verbs.
 
-|Verb Name (alias)|Action|Synonmys to avoid|
+|Verb Name (alias)|Action|Synonyms to avoid|
 |-------------------------|------------|--------------|
 |[Backup](/dotnet/api/System.Management.Automation.VerbsData.Backup) (ba)|Stores data by replicating it.|Save, Burn, Replicate, Sync|
 |[Checkpoint](/dotnet/api/System.Management.Automation.VerbsData.Checkpoint) (ch)|Creates a snapshot of the current state of the data or of its configuration.|Diff|
@@ -166,7 +166,7 @@ PowerShell uses the [System.Management.Automation.VerbsDiagnostic](/dotnet/api/S
 class to define actions that apply to diagnostics. The following table lists most of the defined
 verbs.
 
-|Verb (alias)|Action|Synonmys to avoid|
+|Verb (alias)|Action|Synonyms to avoid|
 |--------------------|------------|--------------|
 |[Debug](/dotnet/api/System.Management.Automation.VerbsDiagnostic.Debug) (db)|Examines a resource to diagnose operational problems.|Diagnose|
 |[Measure](/dotnet/api/System.Management.Automation.VerbsDiagnostic.Measure) (ms)|Identifies resources that are consumed by a specified operation, or retrieves statistics about a resource.|Calculate, Determine, Analyze|
@@ -182,7 +182,7 @@ PowerShell uses the [System.Management.Automation.VerbsLifeCycle](/dotnet/api/Sy
 class to define actions that apply to the lifecycle of a resource. The following table lists most of
 the defined verbs.
 
-|Verb (alias)|Action|Synonmys to avoid|
+|Verb (alias)|Action|Synonyms to avoid|
 |--------------------|------------|--------------|
 |[Approve](/dotnet/api/System.Management.Automation.VerbsLifecycle.Approve) (ap)|Confirms or agrees to the status of a resource or process.||
 |[Assert](/dotnet/api/System.Management.Automation.VerbsLifecycle.Assert) (as)|Affirms the state of a resource.|Certify|
@@ -212,7 +212,7 @@ the defined verbs.
 PowerShell uses the [System.Management.Automation.VerbsSecurity](/dotnet/api/System.Management.Automation.VerbsSecurity)
 class to define actions that apply to security. The following table lists most of the defined verbs.
 
-|Verb (alias)|Action|Synonmys to avoid|
+|Verb (alias)|Action|Synonyms to avoid|
 |--------------------|------------|--------------|
 |[Block](/dotnet/api/System.Management.Automation.VerbsSecurity.Block) (bl)|Restricts access to a resource. This verb is paired with `Unblock`.|Prevent, Limit, Deny|
 |[Grant](/dotnet/api/System.Management.Automation.VerbsSecurity.Grant) (gr)|Allows access to a resource. This verb is paired with `Revoke`.|Allow, Enable|
@@ -227,7 +227,7 @@ PowerShell uses the [System.Management.Automation.VerbsOther](/dotnet/api/System
 class to define canonical verb names that do not fit into a specific verb name category such as the
 common, communications, data, lifecycle, or security verb names verbs.
 
-|Verb (alias)|Action|Synonmys to avoid|
+|Verb (alias)|Action|Synonyms to avoid|
 |--------------------|------------|--------------|
 |[Use](/dotnet/api/System.Management.Automation.VerbsOther.Use) (u)|Uses or includes a resource to do something.||
 
