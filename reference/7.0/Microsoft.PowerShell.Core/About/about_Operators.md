@@ -1,7 +1,7 @@
 ---
 keywords: powershell,cmdlet
 Locale: en-US
-ms.date: 09/23/2020
+ms.date: 10/08/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_operators?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Operators
@@ -28,6 +28,9 @@ returns the specified number of copies of each element. You can use arithmetic
 operators on any .NET type that implements them, such as: `Int`, `String`,
 `DateTime`, `Hashtable`, and Arrays.
 
+Bitwise operators (`-band`, `-bor`, `-bxor`, `-bnot`, `-shl`, `-shr`)
+manipulate the bit patterns in values.
+
 For more information, see [about_Arithmetic_Operators](about_Arithmetic_Operators.md).
 
 ### Assignment Operators
@@ -53,9 +56,6 @@ reference set (`-in`, `-notin`, `-contains`, `-notcontains`).
 
 Type comparison operators (`-is`, `-isnot`) determine whether an object is of a
 given type.
-
-Bitwise comparison operators (`-band`, `-bor`, `-bxor`, `-bnot`) manipulate the
-bit patterns in values.
 
 For more information, see [about_Comparison_Operators](about_Comparison_Operators.md).
 
@@ -488,7 +488,8 @@ A
 
 #### Member access operator `.`
 
-Accesses the properties and methods of an object.  The member name may be an expression.
+Accesses the properties and methods of an object. The member name may be an
+expression.
 
 ```powershell
 $myProcess.peakWorkingSet
@@ -516,9 +517,10 @@ For more information, see [about_If](about_If.md).
 
 #### Null-coalescing operator `??`
 
-The null-coalescing operator `??` returns the value of its left-hand operand if it isn't null.
-Otherwise, it evaluates the right-hand operand and returns its result. The `??` operator doesn't
-evaluate its right-hand operand if the left-hand operand evaluates to non-null.
+The null-coalescing operator `??` returns the value of its left-hand operand if
+it isn't null. Otherwise, it evaluates the right-hand operand and returns its
+result. The `??` operator doesn't evaluate its right-hand operand if the
+left-hand operand evaluates to non-null.
 
 ```powershell
 $x = $null
@@ -542,9 +544,10 @@ $todaysDate ?? (Get-Date).ToShortDateString()
 
 #### Null-coalescing assignment operator `??=`
 
-The null-coalescing assignment operator `??=` assigns the value of its right-hand operand to its
-left-hand operand only if the left-hand operand evaluates to null. The `??=` operator doesn't
-evaluate its right-hand operand if the left-hand operand evaluates to non-null.
+The null-coalescing assignment operator `??=` assigns the value of its
+right-hand operand to its left-hand operand only if the left-hand operand
+evaluates to null. The `??=` operator doesn't evaluate its right-hand operand
+if the left-hand operand evaluates to non-null.
 
 ```powershell
 $x = $null
@@ -573,12 +576,14 @@ $todaysDate ??= (Get-Date).ToShortDateString()
 > This is an experimental feature. For more information see
 > [about_Experimental_Features](about_Experimental_Features.md).
 
-A null-conditional operator applies a member access, `?.`, or element access, `?[]`, operation to
-its operand only if that operand evaluates to non-null; otherwise, it returns null.
+A null-conditional operator applies a member access, `?.`, or element access,
+`?[]`, operation to its operand only if that operand evaluates to non-null;
+otherwise, it returns null.
 
-Since PowerShell allows `?` to be part of the variable name, formal specification of the variable
-name is required for using these operators. So it is required to use `{}` around the variable names
-like `${a}` or when `?` is part of the variable name `${a?}`.
+Since PowerShell allows `?` to be part of the variable name, formal
+specification of the variable name is required for using these operators. So it
+is required to use `{}` around the variable names like `${a}` or when `?` is
+part of the variable name `${a?}`.
 
 In the following example, the value of **PropName** is returned.
 
@@ -591,7 +596,8 @@ ${a}?.PropName
 100
 ```
 
-The following example will return null, without trying to access the member name **PropName**.
+The following example will return null, without trying to access the member
+name **PropName**.
 
 ```powershell
 $a = $null
