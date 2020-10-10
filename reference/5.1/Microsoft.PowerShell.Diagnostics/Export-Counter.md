@@ -95,7 +95,7 @@ DiskSpace.blg log. It saves the data in the `$All` variable. This file contains 
 "LogicalDisk\% Free Space" counter on more than 200 remote computers in the enterprise.
 
 The second command uses the **CounterSamples** property of the sample set object in `$All` and the
-`Where-Object` cmdlet to select objects with **CookedValues** of less than 15 (percent). The command
+`Where-Object` cmdlet to select objects with **CookedValue** of less than 15 (percent). The command
 saves the results in the `$LowSpace` variable.
 
 The third command uses a pipeline operator (`|`) to send the data in the `$LowSpace` variable to the
@@ -104,7 +104,7 @@ should be logged in the LowDiskSpace.blg file.
 
 ```powershell
 $All = Import-Counter DiskSpace.blg
-$LowSpace = $All.CounterSamples | where {$_.CookedValues -lt 15}
+$LowSpace = $All.CounterSamples | where {$_.CookedValue -lt 15}
 $LowSpace | Export-Counter -Path LowDiskSpace.blg
 ```
 
