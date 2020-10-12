@@ -1,4 +1,5 @@
 ---
+description: The PSModulePath environment variable contains a list of folder locations that are searched to find modules and resources.
 keywords: powershell,cmdlet
 Locale: en-US
 ms.date: 04/13/2020

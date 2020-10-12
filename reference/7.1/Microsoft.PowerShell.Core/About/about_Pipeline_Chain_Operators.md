@@ -1,4 +1,5 @@
 ---
+description:  Describes chaining pipelines with the `&&` and `||` operators in PowerShell. 
 ms.date:  09/30/2019
 schema:  2.0.0
 Locale: en-US

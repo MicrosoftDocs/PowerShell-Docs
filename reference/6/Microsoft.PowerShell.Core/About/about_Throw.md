@@ -1,4 +1,5 @@
 ---
+description: Describes the Throw keyword, which generates a terminating error. 
 keywords: powershell,cmdlet
 Locale: en-US
 ms.date: 12/01/2017

@@ -1,4 +1,5 @@
 ---
+description:  Describes  Windows PowerShell snap-ins and shows how to use and manage them. 
 keywords: powershell,cmdlet
 Locale: en-US
 ms.date: 01/03/2018

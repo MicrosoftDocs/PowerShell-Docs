@@ -1,4 +1,5 @@
 ---
+description: Describes the full and relative path name formats in  PowerShell. 
 keywords: powershell,cmdlet
 Locale: en-US
 ms.date: 06/09/2017

@@ -1,4 +1,5 @@
 ---
+description: Describes the keywords in the PowerShell scripting language. 
 keywords: powershell,cmdlet
 Locale: en-US
 ms.date: 10/06/2020

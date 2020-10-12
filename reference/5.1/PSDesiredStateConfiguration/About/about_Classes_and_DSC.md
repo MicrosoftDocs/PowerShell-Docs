@@ -1,4 +1,5 @@
 ---
+description:  Describes how you can use classes to develop in PowerShell with Desired State Configuration (DSC). 
 keywords: powershell,cmdlet
 Locale: en-US
 ms.date: 1/11/2019

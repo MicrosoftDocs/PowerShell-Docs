@@ -1,4 +1,5 @@
 ---
+description: Allows you to indicate which namespaces are used in the session. 
 keywords: powershell,cmdlet
 Locale: en-US
 ms.date: 01/29/2020

@@ -1,4 +1,5 @@
 ---
+description:  PowerShell logs internal operations from the engine, providers, and cmdlets. 
 keywords: powershell
 Locale: en-US
 ms.date: 12/14/2018

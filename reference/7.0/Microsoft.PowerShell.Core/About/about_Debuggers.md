@@ -1,4 +1,5 @@
 ---
+description: Describes the PowerShell debugger. 
 keywords: powershell,cmdlet
 Locale: en-US
 ms.date: 08/06/2019

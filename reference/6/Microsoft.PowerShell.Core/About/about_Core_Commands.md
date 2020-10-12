@@ -1,4 +1,5 @@
 ---
+description: Lists the cmdlets that are designed for use with PowerShell providers. 
 keywords: powershell,cmdlet
 Locale: en-US
 ms.date: 06/09/2017

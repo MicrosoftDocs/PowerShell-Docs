@@ -1,6 +1,7 @@
 ---
+description:  PowerShell provides the ability to dynamically add new properties and alter the formatting of objects output to the pipeline.
 Locale: en-US
-ms.date: 08/07/2020
+ms.date: 10/09/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_calculated_properties?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Calculated_Properties
@@ -352,30 +353,6 @@ Count Name
     2 Content
     3 Metacontent
 ```
-
-### Measure-Object
-
-The `Measure-Object` cmdlet calculates the numeric properties of objects. In
-this example, we use a calculated property to get the count (**Sum**) of the
-numbers, between 1 and 10, that are evenly divisible by 3.
-
-```powershell
-1..10 | Measure-Object -Property {($_ % 3) -eq 0} -Sum
-```
-
-```Output
-Count             : 10
-Average           :
-Sum               : 3
-Maximum           :
-Minimum           :
-StandardDeviation :
-Property          : ($_ % 3) -eq 0
-```
-
-> [!NOTE]
-> Unlike the other cmdlets, `Measure-Object` does not accept a hashtable for
-> calculated properties. You must use a script block.
 
 ### Select-Object
 

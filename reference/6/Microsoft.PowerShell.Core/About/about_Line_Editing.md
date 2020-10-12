@@ -1,4 +1,5 @@
 ---
+description:  Describes how to edit commands at the PowerShell command prompt. 
 keywords: powershell,cmdlet
 Locale: en-US
 ms.date: 07/10/2019

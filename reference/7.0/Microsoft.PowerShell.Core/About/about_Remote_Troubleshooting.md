@@ -1,4 +1,5 @@
 ---
+description: Describes how to troubleshoot remote operations in PowerShell. 
 keywords: powershell,cmdlet
 Locale: en-US
 ms.date: 01/18/2019

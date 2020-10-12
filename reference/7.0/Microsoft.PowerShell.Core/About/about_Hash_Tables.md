@@ -1,4 +1,5 @@
 ---
+description: Describes how to create, use, and sort hash tables in PowerShell. 
 keywords: powershell,cmdlet
 Locale: en-US
 ms.date: 11/28/2017

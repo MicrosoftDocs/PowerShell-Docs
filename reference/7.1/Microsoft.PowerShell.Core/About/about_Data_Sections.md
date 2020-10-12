@@ -1,4 +1,5 @@
 ---
+description: Explains Data sections, which isolate text strings and other read-only data from script logic. 
 keywords: powershell,cmdlet
 Locale: en-US
 ms.date: 04/23/2019

@@ -1,4 +1,5 @@
 ---
+description: Explains how to sign scripts so that they comply with the PowerShell execution policies. 
 keywords: powershell,cmdlet
 Locale: en-US
 ms.date: 07/31/2020

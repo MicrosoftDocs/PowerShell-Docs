@@ -1,4 +1,5 @@
 ---
+description:  Describes how to run background jobs on remote computers. 
 keywords: powershell,cmdlet
 Locale: en-US
 ms.date: 12/01/2017

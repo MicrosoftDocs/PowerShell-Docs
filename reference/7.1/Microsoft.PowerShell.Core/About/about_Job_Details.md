@@ -1,4 +1,5 @@
 ---
+description: Provides details about background jobs on local and remote computers. 
 keywords: powershell,cmdlet
 Locale: en-US
 ms.date: 11/28/2017

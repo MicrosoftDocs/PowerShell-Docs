@@ -1,4 +1,5 @@
 ---
+description: Describes the attribute that makes a function work like a compiled cmdlet. 
 keywords: powershell,cmdlet
 Locale: en-US
 ms.date: 06/11/2020

@@ -3,7 +3,7 @@ external help file: Microsoft.PowerShell.Commands.Diagnostics.dll-help.xml
 keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Diagnostics
-ms.date: 04/29/2020
+ms.date: 10/12/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.diagnostics/export-counter?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Export-Counter
@@ -94,9 +94,8 @@ The first command uses the `Import-Counter` cmdlet to import performance counter
 DiskSpace.blg log. It saves the data in the `$All` variable. This file contains samples of the
 "LogicalDisk\% Free Space" counter on more than 200 remote computers in the enterprise.
 
-The second command uses the **CounterSamples** property of the sample set object in `$All` and the
-`Where-Object` cmdlet to select objects with **CookedValues** of less than 15 (percent). The command
-saves the results in the `$LowSpace` variable.
+The second command uses the `Where-Object` cmdlet to select objects with **CookedValue** of less
+than 15 (percent). The command saves the results in the `$LowSpace` variable.
 
 The third command uses a pipeline operator (`|`) to send the data in the `$LowSpace` variable to the
 `Export-Counter` cmdlet. The command uses the **Path** parameter to indicate that the selected data
@@ -104,7 +103,7 @@ should be logged in the LowDiskSpace.blg file.
 
 ```powershell
 $All = Import-Counter DiskSpace.blg
-$LowSpace = $All.CounterSamples | where {$_.CookedValues -lt 15}
+$LowSpace = $All | Where-Object {$_.CounterSamples.CookedValue -lt 15}
 $LowSpace | Export-Counter -Path LowDiskSpace.blg
 ```
 

@@ -1,4 +1,5 @@
 ---
+description: Describes the operators that work with Microsoft .NET types. 
 keywords: powershell,cmdlet
 Locale: en-US
 ms.date: 03/30/2020

@@ -1,4 +1,5 @@
 ---
+description: Describes rules for using single and double quotation marks in PowerShell. 
 keywords: powershell,cmdlet
 Locale: en-US
 ms.date: 10/05/2020

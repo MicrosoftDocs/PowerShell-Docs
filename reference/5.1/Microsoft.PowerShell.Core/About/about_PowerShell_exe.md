@@ -1,4 +1,5 @@
 ---
+description: Explains how to use the `powershell.exe` command-line interface. Displays the command-line parameters and describes the syntax.
 keywords: powershell,cmdlet
 Locale: en-US
 ms.date: 10/05/2020
@@ -151,10 +152,10 @@ Typically, the switch parameters of a script are either included or omitted.
 For example, the following command uses the **All** parameter of the
 `Get-Script.ps1` script file: `-File .\Get-Script.ps1 -All`
 
-In rare cases, you might need to provide a **Boolean** value for a switch
-parameter. It is not possible to pass an explicit boolean value for a switch
-parameter when running a script in the way. This limitation was removed in
-PowerShell 6 (`pwsh.exe`).
+In rare cases, you might need to provide a **Boolean** value for a parameter.
+It is not possible to pass an explicit boolean value for a switch parameter
+when running a script in this way. This limitation was removed in PowerShell 6
+(`pwsh.exe`).
 
 #### -ExecutionPolicy \<ExecutionPolicy\>
 

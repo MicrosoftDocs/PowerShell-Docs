@@ -1,4 +1,5 @@
 ---
+description: Explains language modes and their effect on PowerShell sessions. 
 keywords: powershell,cmdlet
 Locale: en-US
 ms.date: 09/09/2019

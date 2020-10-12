@@ -1,4 +1,5 @@
 ---
+description: The `enum` statement is used to declare an enumeration. An enumeration is a distinct type that consists of a set of named labels called the enumerator list. 
 keywords: powershell,cmdlet
 Locale: en-US
 ms.date: 11/27/2017

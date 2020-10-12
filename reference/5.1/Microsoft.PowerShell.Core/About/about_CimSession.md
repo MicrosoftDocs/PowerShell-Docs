@@ -1,4 +1,5 @@
 ---
+description: Describes a **CimSession** object and the difference between CIM sessions and PowerShell sessions. 
 keywords: powershell,cmdlet
 Locale: en-US
 ms.date: 05/13/2020

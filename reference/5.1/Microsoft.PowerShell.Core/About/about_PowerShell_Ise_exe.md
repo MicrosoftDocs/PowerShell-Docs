@@ -1,4 +1,5 @@
 ---
+description:  Explains how to use the PowerShell_Ise.exe command-line tool. 
 keywords: powershell,cmdlet
 Locale: en-US
 ms.date: 06/09/2017

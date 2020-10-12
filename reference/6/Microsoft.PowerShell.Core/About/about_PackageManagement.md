@@ -1,4 +1,5 @@
 ---
+description: PackageManagement is an aggregator for software package managers. 
 keywords: powershell,cmdlet
 Locale: en-US
 ms.date: 03/30/2020

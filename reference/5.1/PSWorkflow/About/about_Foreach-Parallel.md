@@ -1,4 +1,5 @@
 ---
+description: Describes the `ForEach -Parallel` language construct in Windows PowerShell Workflow. 
 keywords: powershell,cmdlet
 Locale: en-US
 ms.date: 07/10/2019

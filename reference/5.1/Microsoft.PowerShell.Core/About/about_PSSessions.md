@@ -1,4 +1,5 @@
 ---
+description:  Describes Windows PowerShell sessions (PSSessions) and explains how to establish a persistent connection to a remote computer. 
 keywords: powershell,cmdlet
 Locale: en-US
 ms.date: 01/03/2018

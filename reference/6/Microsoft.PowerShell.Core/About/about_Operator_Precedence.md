@@ -1,4 +1,5 @@
 ---
+description: Lists the PowerShell operators in precedence order. 
 keywords: powershell,cmdlet
 Locale: en-US
 ms.date: 10/08/2020

@@ -1,4 +1,5 @@
 ---
+description:  Describes how to use splatting to pass parameters to commands in PowerShell. 
 keywords: powershell,cmdlet
 Locale: en-US
 ms.date: 08/11/2020

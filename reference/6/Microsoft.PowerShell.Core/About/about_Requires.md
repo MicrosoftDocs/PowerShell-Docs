@@ -1,4 +1,5 @@
 ---
+description: Prevents a script from running without the required elements. 
 keywords: powershell,cmdlet
 Locale: en-US
 ms.date: 07/01/2019

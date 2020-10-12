@@ -1,4 +1,5 @@
 ---
+description:  Explains how to add parameters to advanced functions. 
 keywords: powershell,cmdlet
 Locale: en-US
 ms.date: 09/28/2020
