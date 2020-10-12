@@ -1,6 +1,6 @@
 ---
-title: What's New in PowerShell Docs
-description: List of changes to the PowerShell documentation
+title: Community contributor Hall of Fame
+description: List of the GitHub users that have the most contributions to the PowerShell-Doc project.
 ms.date: 09/14/2020
 ---
 # Community Contributor Hall of Fame
