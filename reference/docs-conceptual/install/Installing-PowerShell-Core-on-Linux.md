@@ -6,7 +6,8 @@ ms.date: 07/30/2020
 # Installing PowerShell on Linux
 
 All packages are available on our GitHub [releases][] page. After the package is installed, run
-`pwsh` from a terminal. Run `pwsh-preview` if you installed a [Preview release](#installing-preview-releases).
+`pwsh` from a terminal. Run `pwsh-preview` if you installed a
+[Preview release](#installing-preview-releases).
 
 > [!NOTE]
 > PowerShell 7 is an in-place upgrade that removes PowerShell Core 6.x.
@@ -61,7 +62,7 @@ Not currently supported
 > [!NOTE]
 > PowerShell can only support the distributions that are supported by .NET. See the
 > [.NET Core release notes][distros] for a list of supported distributions. If there is a
-> distrbution supported by .NET that is not listed here, you can request that support for the
+> distribution supported by .NET that is not listed here, you can request that support for the
 > distribution be added. Please file a request using the [Distribution Support Request][] template.
 
 ## Ubuntu 16.04
@@ -73,18 +74,18 @@ PowerShell for Linux is published to package repositories for easy installation 
 The preferred method is as follows:
 
 ```sh
+# Update the list of packages
+sudo apt-get update
+# Install pre-requisite packages.
+sudo apt-get install -y wget apt-transport-https
 # Download the Microsoft repository GPG keys
 wget -q https://packages.microsoft.com/config/ubuntu/16.04/packages-microsoft-prod.deb
-
 # Register the Microsoft repository GPG keys
 sudo dpkg -i packages-microsoft-prod.deb
-
-# Update the list of products
+# Update the list of packages after we added packages.microsoft.com
 sudo apt-get update
-
 # Install PowerShell
 sudo apt-get install -y powershell
-
 # Start PowerShell
 pwsh
 ```
@@ -123,21 +124,20 @@ PowerShell for Linux is published to package repositories for easy installation 
 The preferred method is as follows:
 
 ```sh
+# Update the list of packages
+sudo apt-get update
+# Install pre-requisite packages.
+sudo apt-get install -y wget apt-transport-https
 # Download the Microsoft repository GPG keys
 wget -q https://packages.microsoft.com/config/ubuntu/18.04/packages-microsoft-prod.deb
-
 # Register the Microsoft repository GPG keys
 sudo dpkg -i packages-microsoft-prod.deb
-
 # Update the list of products
 sudo apt-get update
-
 # Enable the "universe" repositories
 sudo add-apt-repository universe
-
 # Install PowerShell
 sudo apt-get install -y powershell
-
 # Start PowerShell
 pwsh
 ```
@@ -172,20 +172,23 @@ sudo apt-get remove powershell
 Installation is supported via `snapd`. For instructions, see [Snap Package][snap].
 
 > [!NOTE]
-> Ubuntu 18.10 is an [interim release](https://www.ubuntu.com/about/release-cycle) that's [community supported](../powershell-support-lifecycle.md).
+> Ubuntu 18.10 is an [interim release](https://www.ubuntu.com/about/release-cycle) that's
+> [community supported](../powershell-support-lifecycle.md).
 
 ## Ubuntu 19.04
 
 Installation is supported via `snapd`. For instructions, see [Snap Package][snap].
 
 > [!NOTE]
-> Ubuntu 19.04 is an [interim release](https://www.ubuntu.com/about/release-cycle) that's [community supported](../powershell-support-lifecycle.md).
+> Ubuntu 19.04 is an [interim release](https://www.ubuntu.com/about/release-cycle) that's
+> [community supported](../powershell-support-lifecycle.md).
 
 ## Ubuntu 20.04
 
 Ubuntu 20.04 is an LTS release. PowerShell does not currently support this version. Support for this
-version is being considered for the PowerShell 7.1 release. Please upvote this [request](https://github.com/PowerShell/PowerShell/issues/12626)
-if you would like support for Ubuntu 20.04.
+version is being considered for the PowerShell 7.1 release. Please upvote this
+[request](https://github.com/PowerShell/PowerShell/issues/12626) if you would like support for
+Ubuntu 20.04.
 
 ## Debian 8
 
@@ -216,8 +219,8 @@ sudo apt-get install -y powershell
 pwsh
 ```
 
-As superuser, register the Microsoft repository once. After registration, you can update
-PowerShell with `sudo apt-get install powershell`.
+As superuser, register the Microsoft repository once. After registration, you can update PowerShell
+with `sudo apt-get install powershell`.
 
 ## Debian 9
 
@@ -248,13 +251,13 @@ sudo apt-get install -y powershell
 pwsh
 ```
 
-As superuser, register the Microsoft repository once. After registration, you can update
-PowerShell with `sudo apt-get install powershell`.
+As superuser, register the Microsoft repository once. After registration, you can update PowerShell
+with `sudo apt-get install powershell`.
 
 ### Installation via Direct Download - Debian 9
 
-Download the Debian package `powershell-lts_7.0.3-1.debian.9_amd64.deb` from the [releases][] page onto
-the Debian machine.
+Download the Debian package `powershell-lts_7.0.3-1.debian.9_amd64.deb` from the [releases][] page
+onto the Debian machine.
 
 Then, in the terminal, execute the following commands:
 
@@ -463,8 +466,8 @@ with `sudo yum update powershell`.
 
 ### Installation via Direct Download - Red Hat Enterprise Linux (RHEL) 7
 
-Download the RPM package `powershell-lts-7.0.3-1.rhel.7.x86_64.rpm` from the [releases][] page onto the
-Red Hat Enterprise Linux machine.
+Download the RPM package `powershell-lts-7.0.3-1.rhel.7.x86_64.rpm` from the [releases][] page onto
+the Red Hat Enterprise Linux machine.
 
 Then, in the terminal, execute the following commands:
 
@@ -613,8 +616,9 @@ PowerShell is available from the [Arch Linux][] User Repository (AUR).
 
 Packages in the AUR are community maintained; there's no official support.
 
-For more information on installing packages from the AUR, see the [Arch Linux wiki](https://wiki.archlinux.org/index.php/Arch_User_Repository#Installing_packages)
-or [Using PowerShell in Docker](powershell-in-docker.md).
+For more information on installing packages from the AUR, see the
+[Arch Linux wiki](https://wiki.archlinux.org/index.php/Arch_User_Repository#Installing_packages) or
+[Using PowerShell in Docker](powershell-in-docker.md).
 
 [Arch Linux]: https://www.archlinux.org/download/
 [arch-release]: https://aur.archlinux.org/packages/powershell/
@@ -697,8 +701,8 @@ apt -y remove powershell
 
 Currently, PowerShell is only supported on Raspbian Stretch.
 
-CoreCLR and PowerShell will only work on Pi 2 and Pi 3 devices as other devices, like [Pi Zero](https://github.com/dotnet/coreclr/issues/10605),
-have an unsupported processor.
+CoreCLR and PowerShell will only work on Pi 2 and Pi 3 devices as other devices, like
+[Pi Zero](https://github.com/dotnet/coreclr/issues/10605), have an unsupported processor.
 
 Download [Raspbian Stretch](https://www.raspberrypi.org/downloads/raspbian/) and follow the
 [installation instructions](https://www.raspberrypi.org/documentation/installation/installing-images/README.md)
