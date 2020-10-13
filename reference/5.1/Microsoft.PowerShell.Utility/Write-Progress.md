@@ -3,7 +3,7 @@ external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 02/19/2019
+ms.date: 10/14/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/write-progress?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Write-Progress
@@ -23,10 +23,9 @@ Write-Progress [-Activity] <String> [[-Status] <String>] [[-Id] <Int32>] [-Perce
 
 ## DESCRIPTION
 
-The `Write-Progress` cmdlet displays a progress bar in a Windows PowerShell command window that
-depicts the status of a running command or script.
-You can select the indicators that the bar reflects and the text that appears above and below the
-progress bar.
+The `Write-Progress` cmdlet displays a progress bar in a PowerShell command window that depicts the
+status of a running command or script. You can select the indicators that the bar reflects and the
+text that appears above and below the progress bar.
 
 ## EXAMPLES
 
@@ -300,7 +299,8 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
 
 ## INPUTS
 
@@ -318,12 +318,12 @@ You cannot pipe input to this cmdlet.
 
 If the progress bar does not appear, check the value of the `$ProgressPreference` variable. If the
 value is set to SilentlyContinue, the progress bar is not displayed. For more information about
-Windows PowerShell preferences, see [about_Preference_Variables](../Microsoft.PowerShell.Core/About/about_Preference_Variables.md).
+PowerShell preferences, see
+[about_Preference_Variables](../Microsoft.PowerShell.Core/About/about_Preference_Variables.md).
 
 The parameters of the cmdlet correspond to the properties of the
 **System.Management.Automation.ProgressRecord** class. For more information, see
-[ProgressRecord Class](/dotnet/api/system.management.automation.progressrecord)
-in the MSDN library.
+[ProgressRecord Class](/dotnet/api/system.management.automation.progressrecord).
 
 ## RELATED LINKS
 

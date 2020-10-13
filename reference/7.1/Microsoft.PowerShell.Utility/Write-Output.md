@@ -3,7 +3,7 @@ external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 09/08/2020
+ms.date: 10/14/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/write-output?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Write-Output
@@ -149,6 +149,10 @@ You can pipe objects to `Write-Output`.
 
 ## RELATED LINKS
 
+[about_Output_Streams](/powershell/module/Microsoft.PowerShell.Core/About/about_Output_Streams.md)
+
+[about_Redirection](/powershell/module/Microsoft.PowerShell.Core/About/about_Redirection.md)
+
 [Tee-Object](Tee-Object.md)
 
 [Write-Debug](Write-Debug.md)
@@ -164,4 +168,3 @@ You can pipe objects to `Write-Output`.
 [Write-Verbose](Write-Verbose.md)
 
 [Write-Warning](Write-Warning.md)
-
