@@ -83,7 +83,7 @@ For more information about the `$WarningPreference` variable, see
 This example shows the effect of the **WarningAction** common parameter on a `Write-Warning`
 command. You can use the **WarningAction** common parameter with any cmdlet to determine how
 PowerShell responds to warnings resulting from that command. The **WarningAction** common parameter
-overrides the value of the $WarningPreference only for that particular command.
+overrides the value of the `$WarningPreference` only for that particular command.
 
 ```powershell
 PS> Write-Warning "This is only a test warning." -WarningAction Inquire
