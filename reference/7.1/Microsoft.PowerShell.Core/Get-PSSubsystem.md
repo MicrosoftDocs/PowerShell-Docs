@@ -139,10 +139,10 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 [about_experimental_features](about/about_experimental_features.md)
 
-[Disable-ExperimentalFeature](Disable-ExperimentalFeature)
+[Disable-ExperimentalFeature](Disable-ExperimentalFeature.md)
 
-[Enable-ExperimentalFeature](Get-ExperimentalFeature)
+[Enable-ExperimentalFeature](Get-ExperimentalFeature.md)
 
-[Get-ExperimentalFeature](Get-ExperimentalFeature)
+[Get-ExperimentalFeature](Get-ExperimentalFeature.md)
 
 [Using Experimental Features](/powershell/scripting/learn/experimental-features)
