@@ -133,16 +133,15 @@ You can pipe a string that contains a debug message to `Write-Debug`.
 
 ### None
 
-`Write-Debug` only writes to the debug stream. It does not any objects to the
-pipeline.
+`Write-Debug` only writes to the debug stream. It does not write any objects to the pipeline.
 
 ## NOTES
 
 ## RELATED LINKS
 
-[about_Output_Streams](/powershell/module/Microsoft.PowerShell.Core/About/about_Output_Streams.md)
+[about_Output_Streams](../Microsoft.PowerShell.Core/About/about_Output_Streams.md)
 
-[about_Redirection](/powershell/module/Microsoft.PowerShell.Core/About/about_Redirection.md)
+[about_Redirection](../Microsoft.PowerShell.Core/About/about_Redirection.md)
 
 [Write-Error](Write-Error.md)
 

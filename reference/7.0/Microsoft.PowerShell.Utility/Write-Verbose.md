@@ -106,9 +106,9 @@ You can pipe a string that contains the message to `Write-Verbose`.
 
 ## RELATED LINKS
 
-[about_Output_Streams](/powershell/module/Microsoft.PowerShell.Core/About/about_Output_Streams.md)
+[about_Output_Streams](../Microsoft.PowerShell.Core/About/about_Output_Streams.md)
 
-[about_Redirection](/powershell/module/Microsoft.PowerShell.Core/About/about_Redirection.md)
+[about_Redirection](../Microsoft.PowerShell.Core/About/about_Redirection.md)
 
 [Write-Debug](Write-Debug.md)
 

@@ -361,9 +361,9 @@ a terminating error condition. To signal a terminating error, use the
 
 [about_Automatic_Variables](../microsoft.powershell.core/about/about_automatic_variables.md)
 
-[about_Output_Streams](/powershell/module/Microsoft.PowerShell.Core/About/about_Output_Streams.md)
+[about_Output_Streams](../Microsoft.PowerShell.Core/About/about_Output_Streams.md)
 
-[about_Redirection](/powershell/module/Microsoft.PowerShell.Core/About/about_Redirection.md)
+[about_Redirection](../Microsoft.PowerShell.Core/About/about_Redirection.md)
 
 [Write-Debug](Write-Debug.md)
 
@@ -376,4 +376,3 @@ a terminating error condition. To signal a terminating error, use the
 [Write-Verbose](Write-Verbose.md)
 
 [Write-Warning](Write-Warning.md)
-

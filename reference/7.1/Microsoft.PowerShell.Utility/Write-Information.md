@@ -210,9 +210,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## RELATED LINKS
 
-[about_Output_Streams](/powershell/module/Microsoft.PowerShell.Core/About/about_Output_Streams.md)
+[about_Output_Streams](../Microsoft.PowerShell.Core/About/about_Output_Streams.md)
 
-[about_Redirection](/powershell/module/Microsoft.PowerShell.Core/About/about_Redirection.md)
+[about_Redirection](../Microsoft.PowerShell.Core/About/about_Redirection.md)
 
 [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md)
 
@@ -233,4 +233,3 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 [Write-Warning](Write-Warning.md)
 
 [Write-Output](Write-Output.md)
-
