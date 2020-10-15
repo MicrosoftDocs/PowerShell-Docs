@@ -35,7 +35,7 @@ This article describes the experimental features that are available and how to u
 | PSDesiredStateConfiguration.InvokeDscResource              |         | &check; | &check; |
 | PSNullConditionalOperators (mainstream in PS 7.1+)         |         | &check; |         |
 | PSUnixFileStat (non-Windows only)                          |         | &check; | &check; |
-| PSNativePSPathResolution (mainstream in PS 7.1+)           |         |         |         |
+| PSNativePSPathResolution                                   |         |         |         |
 | PSCultureInvariantReplaceOperator                          |         |         | &check; |
 | PSNotApplyErrorActionToStderr                              |         |         | &check; |
 
@@ -172,10 +172,6 @@ operating system.
 
 - If the path is not a PSDrive or `~` (on Windows), then path normalization doesn't occur
 - If the path is in single quotes, then it's not resolved and treated as literal
-
-> [!NOTE]
-> This feature has moved out of the experimental phase and is a mainstream feature in PowerShell 7.1
-> and higher.
 
 ## PSNotApplyErrorActionToStderr
 
