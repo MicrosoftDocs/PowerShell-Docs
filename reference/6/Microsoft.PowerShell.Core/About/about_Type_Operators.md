@@ -1,8 +1,8 @@
 ---
-description: Describes the operators that work with Microsoft .NET types. 
+description: Describes the operators that work with Microsoft .NET types.
 keywords: powershell,cmdlet
 Locale: en-US
-ms.date: 03/30/2020
+ms.date: 10/15/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_type_operators?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Type_Operators
@@ -21,7 +21,7 @@ operator returns a value of **FALSE** if the type matches and a value of
 **TRUE** otherwise.
 
 The `-as` operator tries to convert the input object to the specified .NET
-type. If it succeeds, it returns the converted object. It if fails, it returns
+type. If it succeeds, it returns the converted object. If it fails, it returns
 `$null`. It does not return an error.
 
 The following table lists the type operators in PowerShell.
@@ -216,10 +216,10 @@ LCID      Name      DisplayName
 ```
 
 The following example shows that when the `-as` operator cannot convert the
-input object to the .NET type, it returns nothing.
+input object to the .NET type, it returns `$null`.
 
 ```powershell
-PS> 1031 -as [System.Diagnostic.Process]
+PS> 1031 -as [System.Diagnostics.Process]
 PS>
 ```
 

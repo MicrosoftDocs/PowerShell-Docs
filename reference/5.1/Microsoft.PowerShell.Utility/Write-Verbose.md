@@ -3,7 +3,7 @@ external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 09/21/2020
+ms.date: 10/14/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/write-verbose?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Write-Verbose
@@ -21,9 +21,8 @@ Write-Verbose [-Message] <String> [<CommonParameters>]
 
 ## DESCRIPTION
 
-The `Write-Verbose` cmdlet writes text to the verbose message stream in Windows PowerShell.
-Typically, the verbose message stream is used to deliver more in depth information about command
-processing.
+The `Write-Verbose` cmdlet writes text to the verbose message stream in PowerShell. Typically, the
+verbose message stream is used to deliver more in depth information about command processing.
 
 By default, the verbose message stream is not displayed, but you can display it by changing the
 value of the `$VerbosePreference` variable or using the **Verbose** common parameter in any
@@ -78,7 +77,11 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+-InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
 
 ## INPUTS
 
@@ -98,9 +101,14 @@ You can pipe a string that contains the message to `Write-Verbose`.
   more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 - In Windows PowerShell background jobs and remote commands, the `$VerbosePreference` variable in
   the job session and remote session determine whether the verbose message is displayed by default.
-  For more information about the `$VerbosePreference` variable, see [about_Preference_Variables](../Microsoft.PowerShell.Core/About/about_Preference_Variables.md).
+  For more information about the `$VerbosePreference` variable, see
+  [about_Preference_Variables](../Microsoft.PowerShell.Core/About/about_Preference_Variables.md).
 
 ## RELATED LINKS
+
+[about_Output_Streams](../Microsoft.PowerShell.Core/About/about_Output_Streams.md)
+
+[about_Redirection](../Microsoft.PowerShell.Core/About/about_Redirection.md)
 
 [Write-Debug](Write-Debug.md)
 

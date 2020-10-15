@@ -3,7 +3,7 @@ external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 04/10/2020
+ms.date: 10/14/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/write-error?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Write-Error
@@ -360,6 +360,10 @@ a terminating error condition. To signal a terminating error, use the
 ## RELATED LINKS
 
 [about_Automatic_Variables](../microsoft.powershell.core/about/about_automatic_variables.md)
+
+[about_Output_Streams](../Microsoft.PowerShell.Core/About/about_Output_Streams.md)
+
+[about_Redirection](../Microsoft.PowerShell.Core/About/about_Redirection.md)
 
 [Write-Debug](Write-Debug.md)
 

@@ -3,7 +3,7 @@ external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 06/09/2017
+ms.date: 10/14/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/write-information?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Write-Information
@@ -13,7 +13,7 @@ title: Write-Information
 
 ## SYNOPSIS
 
-Specifies how Windows PowerShell handles information stream data for a command.
+Specifies how PowerShell handles information stream data for a command.
 
 ## SYNTAX
 
@@ -23,36 +23,52 @@ Write-Information [-MessageData] <Object> [[-Tags] <String[]>] [<CommonParameter
 
 ## DESCRIPTION
 
-The `Write-Information` cmdlet specifies how Windows PowerShell handles information stream data for a command.
+The `Write-Information` cmdlet specifies how PowerShell handles information stream data for a
+command.
 
-Windows PowerShell 5.0 introduces a new, structured information stream (number 6 in Windows PowerShell streams) that you can use to transmit structured data between a script and its callers (or hosting environment).
-`Write-Information` lets you add an informational message to the stream, and specify how Windows PowerShell handles information stream data for a command. Information streams also work for `PowerShell.Streams`, jobs, scheduled jobs, and workflows.
-
-> [!NOTE]
-> The information stream does not follow the standard convention of prefixing its messages with "[Stream Name]:".  This was intended for brevity and visual cleanliness.
-
-The `$InformationPreference` preference variable value determines whether the message you provide to `Write-Information` is displayed at the expected point in a script's operation.
-Because the default value of this variable is `SilentlyContinue`, by default, informational messages are not shown.
-If you don't want to change the value of `$InformationPreference`, you can override its value by adding the `InformationAction` common parameter to your command.
-For more information, see [about_Preference_Variables](../Microsoft.PowerShell.Core/About/about_Preference_Variables.md) and [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
+Windows PowerShell 5.0 introduces a new, structured information stream. You can use this stream to
+transmit structured data between a script and its callers or the host application.
+`Write-Information` lets you add an informational message to the stream, and specify how PowerShell
+handles information stream data for a command. Information streams also work for
+`PowerShell.Streams`, jobs, and scheduled tasks.
 
 > [!NOTE]
-> Starting in Windows PowerShell 5.0, `Write-Host` is a wrapper for `Write-Information`
-> This allows you to use `Write-Host` to emit output to the information stream.
-> This enables the **capture** or **suppression** of data written using `Write-Host` while preserving backwards compatibility.
-> for more information see [Write-Host](Write-Host.md)
+> The information stream does not follow the standard convention of prefixing its messages with
+> "[Stream Name]:". This was intended for brevity and visual cleanliness.
 
-`Write-Information` is also a supported workflow activity.
+The `$InformationPreference` preference variable value determines whether the message you provide to
+`Write-Information` is displayed at the expected point in a script's operation. Because the default
+value of this variable is `SilentlyContinue`, by default, informational messages are not shown. If
+you don't want to change the value of `$InformationPreference`, you can override its value by adding
+the `InformationAction` common parameter to your command. For more information, see
+[about_Preference_Variables](../Microsoft.PowerShell.Core/About/about_Preference_Variables.md) and
+[about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
+
+> [!NOTE]
+> Starting in Windows PowerShell 5.0, `Write-Host` is a wrapper for `Write-Information` This allows
+> you to use `Write-Host` to emit output to the information stream. This enables the **capture** or
+> **suppression** of data written using `Write-Host` while preserving backwards compatibility. For
+> more information see [Write-Host](Write-Host.md)
+
+`Write-Information` is also a supported workflow activity in PowerShell 5.x.
 
 ## EXAMPLES
 
 ### Example 1: Write information for Get- results
 
+In this example, you show an informational message, "Got your features!", after running the
+`Get-WindowsFeature` command to find all features that have a Name value that starts with 'p'.
+Because the `$InformationPreference` variable is still set to its default, `SilentlyContinue`, you
+add the `InformationAction` parameter to override the `$InformationPreference` value, and show the
+message. The `InformationAction` value is Continue, which means that your message is shown, but the
+script or command continues, if it is not yet finished.
+
 ```powershell
-Get-WindowsFeature -Name p*; Write-Information -MessageData "Got your features!" -InformationAction Continue
+Get-WindowsFeature -Name p*
+Write-Information -MessageData "Got your features!" -InformationAction Continue
 ```
 
-```output
+```Output
 Display Name                                            Name                       Install State
 ------------                                            ----                       -------------
 [ ] Print and Document Services                         Print-Services                 Available
@@ -68,17 +84,20 @@ Display Name                                            Name                    
 Got your features!
 ```
 
-In this example, you show an informational message, "Got your features!", after running the `Get-WindowsFeature` command to find all features that have a Name value that starts with 'p'.
-Because the `$InformationPreference` variable is still set to its default, `SilentlyContinue`, you add the `InformationAction` parameter to override the `$InformationPreference` value, and show the message.
-The `InformationAction` value is Continue, which means that your message is shown, but the script or command continues, if it is not yet finished.
-
 ### Example 2: Write information and tag it
 
+In this example, you use `Write-Information` to let users know they'll need to run another command
+after they're done running the current command. The example adds the tag Instructions to the
+informational message. After running this command, if you search the information stream for messages
+tagged Instructions, the message specified here would be among the results.
+
 ```powershell
-Get-WindowsFeature -Name p*; Write-Information -MessageData "To filter your results for PowerShell, pipe your results to the Where-Object cmdlet." -Tags "Instructions" -InformationAction Continue
+$message = "To filter your results for PowerShell, pipe your results to the Where-Object cmdlet."
+Get-WindowsFeature -Name p*
+Write-Information -MessageData $message -Tags "Instructions" -InformationAction Continue
 ```
 
-```output
+```Output
 Display Name                                            Name                       Install State
 ------------                                            ----                       -------------
 [ ] Print and Document Services                         Print-Services                 Available
@@ -94,10 +113,6 @@ Display Name                                            Name                    
 To filter your results for PowerShell, pipe your results to the Where-Object cmdlet.
 ```
 
-In this example, you use `Write-Information` to let users know they'll need to run another command after they're done running the current command.
-The example adds the tag Instructions to the informational message.
-After running this command, if you search the information stream for messages tagged Instructions, the message specified here would be among the results.
-
 ### Example 3: Write information to a file
 
 ```powershell
@@ -109,16 +124,12 @@ function Test-Info
 Test-Info 6> Info.txt
 ```
 
-In this example, you redirect the information stream in the function to a file, Info.txt, by using the code 6\>.
-When you open the Info.txt file, you see the text, "Here you go."
-
 ## PARAMETERS
 
 ### -MessageData
 
-Specifies an informational message that you want to display to users as they run a script or command.
-For best results, enclose the informational message in quotation marks.
-An example is "Test complete."
+Specifies an informational message that you want to display to users as they run a script or
+command. For best results, enclose the informational message in quotation marks.
 
 ```yaml
 Type: System.Object
@@ -134,8 +145,9 @@ Accept wildcard characters: False
 
 ### -Tags
 
-Specifies a simple string that you can use to sort and filter messages that you have added to the information stream with `Write-Information`.
-This parameter works similarly to the *Tags* parameter in `New-ModuleManifest`.
+Specifies a simple string that you can use to sort and filter messages that you have added to the
+information stream with `Write-Information`. This parameter works similarly to the **Tags**
+parameter in `New-ModuleManifest`.
 
 ```yaml
 Type: System.String[]
@@ -150,7 +162,11 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+-InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -165,6 +181,10 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## NOTES
 
 ## RELATED LINKS
+
+[about_Output_Streams](../Microsoft.PowerShell.Core/About/about_Output_Streams.md)
+
+[about_Redirection](../Microsoft.PowerShell.Core/About/about_Redirection.md)
 
 [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md)
 
