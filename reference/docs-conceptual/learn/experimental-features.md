@@ -1,5 +1,5 @@
 ---
-ms.date: 09/14/2020
+ms.date: 10/15/2020
 title: Using Experimental Features in PowerShell
 description: Lists the currently available experimental features and how to use them.
 ---
@@ -35,9 +35,10 @@ This article describes the experimental features that are available and how to u
 | PSDesiredStateConfiguration.InvokeDscResource              |         | &check; | &check; |
 | PSNullConditionalOperators (mainstream in PS 7.1+)         |         | &check; |         |
 | PSUnixFileStat (non-Windows only)                          |         | &check; | &check; |
-| PSNativePSPathResolution                                   |         |         |         |
+| PSNativePSPathResolution                                   |         |         | &check; |
 | PSCultureInvariantReplaceOperator                          |         |         | &check; |
 | PSNotApplyErrorActionToStderr                              |         |         | &check; |
+| PSSubsystemPluginModel                                     |         |         | &check; |
 
 ## Microsoft.PowerShell.Utility.PSManageBreakpointsInRunspace
 
@@ -263,3 +264,19 @@ script.
 > [!NOTE]
 > This feature has moved out of the experimental phase and is a mainstream feature in PowerShell 7
 > and higher.
+
+## PSSubsystemPluginModel
+
+This feature enables the subsystem plugin model in PowerShell. The feature makes it possible to
+separate components of `System.Management.Automation.dll` into individual subsystems that reside in
+their own assembly. This separation reduces the disk footprint of the core PowerShell engine and
+allows these components to become optional features for a minimal PowerShell installation.
+
+Currently, only the **CommandPredictor** subsystem is supported. This subsystem is used along with
+the PSReadLine module to provide custom prediction plugins. In future, **Job**,
+**CommandCompleter**, **Remoting** and other components could be separated into subsystem
+assemblies outside of `System.Management.Automation.dll`.
+
+The experimental feature includes a new cmdlet, `Get-PSSubsystem`. This cmdlet is only available
+when the feature is enabled. This cmdlet returns information about the subsystems that are available
+on the system.
