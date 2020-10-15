@@ -3,7 +3,7 @@ external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 04/04/2019
+ms.date: 10/14/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/write-debug?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Write-Debug
@@ -21,7 +21,7 @@ Write-Debug [-Message] <String> [<CommonParameters>]
 
 ## DESCRIPTION
 
-The `Write-Debug` cmdlet writes debug messages to the console from a script or command.
+The `Write-Debug` cmdlet writes debug messages to the host from a script or command.
 
 By default, debug messages are not displayed in the console, but you can display them by using the
 **Debug** parameter or the `$DebugPreference` variable.
@@ -55,7 +55,8 @@ PS> Write-Debug "Cannot open file."
 DEBUG: Cannot open file.
 ```
 
-For more information about `$DebugPreference`, see [about_Preference_Variables](../Microsoft.PowerShell.Core/About/about_Preference_Variables.md).
+For more information about `$DebugPreference`, see
+[about_Preference_Variables](/powershell/module/Microsoft.PowerShell.Core/About/about_Preference_Variables).
 
 ### Example 3: Use the Debug parameter to override $DebugPreference
 
@@ -75,6 +76,7 @@ function Test-Debug {
 ```
 PS> Test-Debug
 $DebugPreference is SilentlyContinue
+
 PS> Test-Debug -Debug
 DEBUG: $DebugPreference is Inquire
 
@@ -93,7 +95,8 @@ change only affects the scope of the function. The value is not affected outside
 > When the value of `$DebugPreference` is **Inquire**, PowerShell halts execution to ask if
 > execution should continue.
 
-For more information about the **Debug** common parameter, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+For more information about the **Debug** common parameter, see
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## PARAMETERS
 
@@ -117,7 +120,8 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -129,11 +133,15 @@ You can pipe a string that contains a debug message to `Write-Debug`.
 
 ### None
 
-`Write-Debug` only writes to the debug stream. It does not return any output.
+`Write-Debug` only writes to the debug stream. It does not write any objects to the pipeline.
 
 ## NOTES
 
 ## RELATED LINKS
+
+[about_Output_Streams](../Microsoft.PowerShell.Core/About/about_Output_Streams.md)
+
+[about_Redirection](../Microsoft.PowerShell.Core/About/about_Redirection.md)
 
 [Write-Error](Write-Error.md)
 
