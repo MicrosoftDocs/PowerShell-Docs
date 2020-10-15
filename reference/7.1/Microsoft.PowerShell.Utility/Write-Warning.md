@@ -76,7 +76,7 @@ command changes again. A value of `SilentlyContinue` suppresses the warning. A v
 displays the warning and then stops execution of the command.
 
 For more information about the `$WarningPreference` variable, see
-[about_Preference_Variables](../Microsoft.Powershell.Core/About/about_Preference_Variables).
+[about_Preference_Variables](../Microsoft.Powershell.Core/About/about_Preference_Variables.md).
 
 ### Example 4: Set the WarningAction parameter and write a warning
 
@@ -98,7 +98,7 @@ parameter with a value of Inquire directs the system to prompt the user when the
 warning.
 
 For more information about the **WarningAction** common parameter, see
-[about_CommonParameters](../Microsoft.Powershell.Core/About/about_CommonParameters).
+[about_CommonParameters](../Microsoft.Powershell.Core/About/about_CommonParameters.md).
 
 ## PARAMETERS
 
