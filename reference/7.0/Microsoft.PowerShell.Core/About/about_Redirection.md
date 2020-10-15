@@ -1,8 +1,8 @@
 ---
-description: Explains how to redirect output from PowerShell to text files. 
+description: Explains how to redirect output from PowerShell to text files.
 keywords: PowerShell,cmdlet
 Locale: en-US
-ms.date: 07/22/2020
+ms.date: 10/14/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_redirection?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Redirection
@@ -14,9 +14,9 @@ Explains how to redirect output from PowerShell to text files.
 
 ## Long description
 
-By default, PowerShell sends its command output to the PowerShell console.
-However, you can direct the output to a text file, and you can redirect error
-output to the regular output stream.
+By default, PowerShell sends output to the PowerShell host. Usually this is the
+console application. However, you can direct the output to a text file, and you
+can redirect error output to the regular output stream.
 
 You can use the following methods to redirect output:
 
@@ -27,29 +27,32 @@ You can use the following methods to redirect output:
 - Use the `Tee-Object` cmdlet, which sends command output to a text file and
   then sends it to the pipeline.
 
-- Use the PowerShell redirection operators.
+- Use the PowerShell redirection operators. Using the redirection operator with
+  a file target is functionally equivalent to piping to `Out-File` with no
+  extra parameters.
 
-### PowerShell redirection operators
+For more information about streams, see
+[about_Output_Streams](about_Output_Streams.md).
 
-The redirection operators enable you to send streams of data to a file or the
-**Success** output stream.
+### Redirectable output streams
 
-The PowerShell redirection operators use the following numbers to represent
-the available output streams:
+PowerShell supports redirection of the following output streams.
 
-| Stream # |      Description       | Introduced in  |
-| -------- | ---------------------- | -------------- |
-| 1        | **Success** Stream     | PowerShell 2.0 |
-| 2        | **Error** Stream       | PowerShell 2.0 |
-| 3        | **Warning** Stream     | PowerShell 3.0 |
-| 4        | **Verbose** Stream     | PowerShell 3.0 |
-| 5        | **Debug** Stream       | PowerShell 3.0 |
-| 6        | **Information** Stream | PowerShell 5.0 |
-| *        | All Streams            | PowerShell 3.0 |
+| Stream # |      Description       | Introduced in  |    Write Cmdlet     |
+| -------- | ---------------------- | -------------- | ------------------- |
+| 1        | **Success** Stream     | PowerShell 2.0 | `Write-Output`      |
+| 2        | **Error** Stream       | PowerShell 2.0 | `Write-Error`       |
+| 3        | **Warning** Stream     | PowerShell 3.0 | `Write-Warning`     |
+| 4        | **Verbose** Stream     | PowerShell 3.0 | `Write-Verbose`     |
+| 5        | **Debug** Stream       | PowerShell 3.0 | `Write-Debug`       |
+| 6        | **Information** Stream | PowerShell 5.0 | `Write-Information` |
+| *        | All Streams            | PowerShell 3.0 |                     |
 
 > [!NOTE]
-> There is also a **Progress** stream in PowerShell, but it is not used for
+> There is also a **Progress** stream in PowerShell, but it does not support
 > redirection.
+
+### PowerShell redirection operators
 
 The PowerShell redirection operators are as follows, where `n` represents
 the stream number. The **Success** stream ( `1` ) is the default if no stream
@@ -128,7 +131,7 @@ This example suppresses all information stream data. To read more about
 } 6> $null
 ```
 
-### Example 6: Show the affect of Action Preferences
+### Example 6: Show the effect of Action Preferences
 
 Action Preference variables and parameters can change what gets written to a
 particular stream. The script in this example shows how the value of
@@ -202,17 +205,17 @@ Inquire
 The redirection operators that do not append data (`>` and `n>`) overwrite the
 current contents of the specified file without warning.
 
-However, if the file is a read-only, hidden, or system file, the
-redirection **fails**. The append redirection operators (`>>` and `n>>`) do not write
-to a read-only file, but they append content to a system or hidden file.
+However, if the file is a read-only, hidden, or system file, the redirection
+**fails**. The append redirection operators (`>>` and `n>>`) do not write to a
+read-only file, but they append content to a system or hidden file.
 
 To force the redirection of content to a read-only, hidden, or system file,
 use the `Out-File` cmdlet with its `Force` parameter.
 
-When you are writing to files, the redirection operators use Unicode encoding.
-If the file has a different encoding, the output might not be formatted
-correctly. To redirect content to non-Unicode files, use the `Out-File` cmdlet
-with its `Encoding` parameter.
+When you are writing to files, the redirection operators use `UTF8NoBOM`
+encoding. If the file has a different encoding, the output might not be
+formatted correctly. To write to files with a different encoding, use the
+`Out-File` cmdlet with its `Encoding` parameter.
 
 ### Potential confusion with comparison operators
 
@@ -259,12 +262,17 @@ used. See: [`-gt` Comparison Operator](about_Comparison_Operators.md#-gt)
 
 ## See also
 
-[Out-File](xref:Microsoft.PowerShell.Utility.Out-File)
-
-[Tee-Object](xref:Microsoft.PowerShell.Utility.Tee-Object)
-
-[about_Operators](about_Operators.md)
-
-[about_Command_Syntax](about_Command_Syntax.md)
-
-[about_Path_Syntax](about_Path_Syntax.md)
+- [Out-File](xref:Microsoft.PowerShell.Utility.Out-File)
+- [Tee-Object](xref:Microsoft.PowerShell.Utility.Tee-Object)
+- [Write-Debug](xref:Microsoft.PowerShell.Utility.Write-Debug)
+- [Write-Error](xref:Microsoft.PowerShell.Utility.Write-Error)
+- [Write-Host](xref:Microsoft.PowerShell.Utility.Write-Host)
+- [Write-Information](xref:Microsoft.PowerShell.Utility.Write-Information)
+- [Write-Output](xref:Microsoft.PowerShell.Utility.Write-Output)
+- [Write-Progress](xref:Microsoft.PowerShell.Utility.Write-Progress)
+- [Write-Verbose](xref:Microsoft.PowerShell.Utility.Write-Verbose)
+- [Write-Warning](xref:Microsoft.PowerShell.Utility.Write-Warning)
+- [about_Output_Streams](about_Output_Streams.md)
+- [about_Operators](about_Operators.md)
+- [about_Command_Syntax](about_Command_Syntax.md)
+- [about_Path_Syntax](about_Path_Syntax.md)
