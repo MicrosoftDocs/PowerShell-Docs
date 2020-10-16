@@ -1,5 +1,5 @@
 ---
-description: Describes the operators that compare values in PowerShell. 
+description: Describes the operators that compare values in PowerShell.
 keywords: powershell,cmdlet
 Locale: en-US
 ms.date: 01/16/2020
@@ -523,7 +523,7 @@ The `-notin` operator was introduced in PowerShell 3.0.
 
 Syntax:
 
-`<Test-value> -notin \<Reference-values>`
+`<Test-value> -notin <Reference-values>`
 
 Examples:
 
