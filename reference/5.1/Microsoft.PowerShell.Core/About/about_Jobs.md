@@ -38,7 +38,7 @@ This topic explains how to run background jobs in PowerShell on a local
 computer. For information about running background jobs on remote computers,
 see [about_Remote_Jobs](about_Remote_Jobs.md). For more information about
 thread jobs, see
-[about_Thread_Jobs](/powershell/module/microsoft.powershell.core/about/about_Thread_Jobs.md).
+[about_Thread_Jobs](/powershell/module/microsoft.powershell.core/about/about_Thread_Jobs).
 
 When you start a background job, the command prompt returns immediately, even
 if the job takes an extended time to complete. You can continue to work in the
@@ -226,7 +226,7 @@ Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
    1121      25    28408      32940   174   430.14   3048 explorer
 ```
 
-## WAiting for the results
+## Waiting for the results
 
 If you run a command that takes a long time to complete, you can use the
 properties of the job object to determine when the job is complete. The
@@ -341,7 +341,7 @@ denied".
 ## See also
 
 - [about_Remote_Jobs](about_Remote_Jobs.md)
-- [about_Thread_Jobs](/powershell/module/microsoft.powershell.core/about/about_Thread_Jobs.md)
+- [about_Thread_Jobs](/powershell/module/microsoft.powershell.core/about/about_Thread_Jobs)
 - [about_Job_Details](about_Job_Details.md)
 - [about_Remote](about_Remote.md)
 - [about_PSSessions](about_PSSessions.md)

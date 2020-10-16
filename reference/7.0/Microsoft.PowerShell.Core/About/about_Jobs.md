@@ -236,7 +236,7 @@ Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
    1121      25    28408      32940   174   430.14   3048 explorer
 ```
 
-## WAiting for the results
+## Waiting for the results
 
 If you run a command that takes a long time to complete, you can use the
 properties of the job object to determine when the job is complete. The

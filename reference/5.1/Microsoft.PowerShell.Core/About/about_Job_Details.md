@@ -18,7 +18,7 @@ This topic explains the concept of a background job and provides technical
 information about how background jobs work in PowerShell.
 
 This topic is a supplement to the [about_Jobs](about_Jobs.md),
-[about_Thread_Jobs](/powershell/module/microsoft.powershell.core/about/about_Thread_Jobs.md),
+[about_Thread_Jobs](/powershell/module/microsoft.powershell.core/about/about_Thread_Jobs),
 and [about_Remote_Jobs](about_Remote_Jobs.md) topics.
 
 ### About background jobs
@@ -90,7 +90,7 @@ from the parent job so that you can manage the parent and child jobs
 individually or as a unit.
 
 To get the parent and child jobs of a job, use the **IncludeChildJobs**
-parameter of the `Get-Job` cmdlet. The **IncludeChildJob** parameter is
+parameter of the `Get-Job` cmdlet. The **IncludeChildJob** parameter was
 introduced in Windows PowerShell 3.0.
 
 ```powershell
@@ -105,7 +105,7 @@ Id Name   PSJobTypeName State      HasMoreData   Location    Command
 
 To get the parent job and only the child jobs with a particular **State**
 value, use the **ChildJobState** parameter of the `Get-Job` cmdlet. The
-**ChildJobState** parameter is introduced in Windows PowerShell 3.0.
+**ChildJobState** parameter was introduced in Windows PowerShell 3.0.
 
 ```powershell
 PS> Get-Job -ChildJobState Failed
@@ -117,7 +117,7 @@ Id Name   PSJobTypeName State      HasMoreData   Location    Command
 ```
 
 To get the child jobs of a job on all versions of PowerShell,
-use the ChildJob property of the parent job.
+use the **ChildJob** property of the parent job.
 
 ```powershell
 PS> (Get-Job Job1).ChildJobs
@@ -173,7 +173,7 @@ PS> $j = Invoke-Command -ComputerName localhost, Server01, Server02 `
 -Command {Get-Date} -AsJob
 ```
 
-When you display the Name and ChildJob properties of the job in `$j`, it
+When you display the Name and **ChildJob** properties of the job in `$j`, it
 shows that the command returned a job object with three child jobs, one for
 each computer.
 
@@ -246,8 +246,8 @@ type.
 
 To find the job type of a job, use the `Get-Job` cmdlet. `Get-Job` returns
 different job objects for different types of jobs. The value of the
-PSJobTypeName property of the job objects that `Get-Job` returns indicates the
-job type.
+**PSJobTypeName** property of the job objects that `Get-Job` returns indicates
+the job type.
 
 The following table lists the job types that come with PowerShell.
 
@@ -353,7 +353,7 @@ Id         Name            JobTriggers     Command       Enabled
 
 - [about_Jobs](about_Jobs.md)
 - [about_Remote_Jobs](about_Remote_Jobs.md)
-- [about_Thread_Jobs](/powershell/module/microsoft.powershell.core/about/about_Thread_Jobs.md)
+- [about_Thread_Jobs](/powershell/module/microsoft.powershell.core/about/about_Thread_Jobs)
 - [about_Remote](about_Remote.md)
 - [Invoke-Command](xref:Microsoft.PowerShell.Core.Invoke-Command)
 - [Start-Job](xref:Microsoft.PowerShell.Core.Start-Job)
