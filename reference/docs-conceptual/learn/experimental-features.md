@@ -278,6 +278,6 @@ the PSReadLine module to provide custom prediction plugins. In future, **Job**,
 assemblies outside of `System.Management.Automation.dll`.
 
 The experimental feature includes a new cmdlet,
-[Get-PSSubsystem](xref:Microsoft.PowerShell.Core/Get-PSSubsystem). This cmdlet is only available
+[Get-PSSubsystem](xref:Microsoft.PowerShell.Core.Get-PSSubsystem). This cmdlet is only available
 when the feature is enabled. This cmdlet returns information about the subsystems that are available
 on the system.
