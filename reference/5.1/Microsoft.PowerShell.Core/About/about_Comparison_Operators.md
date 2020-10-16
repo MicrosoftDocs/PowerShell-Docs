@@ -523,7 +523,7 @@ The `-notin` operator was introduced in PowerShell 3.0.
 
 Syntax:
 
-`<Test-value> -notin \<Reference-values>`
+`<Test-value> -notin <Reference-values>`
 
 Examples:
 
