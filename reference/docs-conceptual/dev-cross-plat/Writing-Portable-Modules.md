@@ -337,7 +337,7 @@ managed.dll folder
 [New-ModuleManifest]: /powershell/module/microsoft.powershell.core/new-modulemanifest
 [runtime checks]: /dotnet/api/system.runtime.interopservices.runtimeinformation.frameworkdescription#System_Runtime_InteropServices_RuntimeInformation_FrameworkDescription
 [.NET CLI]: /dotnet/core/tools/?tabs=netcore2x
-[Using Visual Studio Code for debugging compiled cmdlets]: vscode/Using-VSCode-for-Debugging-Compiled-Cmdlets
+[Using Visual Studio Code for debugging compiled cmdlets]: vscode/using-vscode-for-debugging-compiled-cmdlets
 [.NET Standard]: /dotnet/standard/net-standard
 [PowerShell Standard]: https://github.com/PowerShell/PowerShellStandard
 [PowerShell Standard 5.1]: https://www.nuget.org/packages/PowerShellStandard.Library/5.1.0

@@ -29,7 +29,7 @@ This can be achieved with a build task:
 
 1. In the Command Palette, run the `Configure Default Build Task` command
 
-   ![Run Configure Default Build Task](media/Using-VSCode-for-Debugging-Compiled-Cmdlets/configure-default-build-task.png)
+   ![Run Configure Default Build Task](media/using-vscode-for-debugging-compiled-cmdlets/configure-default-build-task.png)
 
 2. In the `Select a task to configure` dialog, choose `Create tasks.json file from template`
 
@@ -97,7 +97,7 @@ The steps are:
 
 5. Choose `Launch .NET Core Console App`:
 
-   ![Launch .NET Core Console App](media/Using-VSCode-for-Debugging-Compiled-Cmdlets/add-configuration-dialog.png)
+   ![Launch .NET Core Console App](media/using-vscode-for-debugging-compiled-cmdlets/add-configuration-dialog.png)
 
    This will create a default debug configuration.
 
@@ -145,22 +145,22 @@ Now everything is ready to begin debugging.
 
 - Place a breakpoint in the source code for the cmdlet you want to debug:
 
-  ![A breakpoint shows as a red dot in the gutter](media/Using-VSCode-for-Debugging-Compiled-Cmdlets/set-breakpoint.png)
+  ![A breakpoint shows as a red dot in the gutter](media/using-vscode-for-debugging-compiled-cmdlets/set-breakpoint.png)
 
 - Ensure that the `PowerShell cmdlets` configuration is selected in the configuration drop-down menu
 in the Debug view:
 
-  ![Select the PowerShell cmdlets configuration](media/Using-VSCode-for-Debugging-Compiled-Cmdlets/select-launch-configuration.png)
+  ![Select the PowerShell cmdlets configuration](media/using-vscode-for-debugging-compiled-cmdlets/select-launch-configuration.png)
 
 - press `F5` or click on the `Start Debugging` button
 
 - Switch to the terminal pane and invoke your cmdlet:
 
-  ![Invoke the cmdlet](media/Using-VSCode-for-Debugging-Compiled-Cmdlets/invoke-the-cmdlet.png)
+  ![Invoke the cmdlet](media/using-vscode-for-debugging-compiled-cmdlets/invoke-the-cmdlet.png)
 
 - Execution stops at the breakpoint:
 
-  ![Invoke the cmdlet](media/Using-VSCode-for-Debugging-Compiled-Cmdlets/stopped-at-breakpoint.png)
+  ![Invoke the cmdlet](media/using-vscode-for-debugging-compiled-cmdlets/stopped-at-breakpoint.png)
 
 You can step through the source code, inspect variables and inspect the call stack.
 
@@ -168,6 +168,6 @@ To end debugging, click `Stop` in the debug toolbar or press `Shift-F5`.
 
 <!-- reference links -->
 [Debugging in Visual Studio Code]: https://code.visualstudio.com/docs/editor/debugging
-[Using Visual Studio Code for remote editing and debugging]: Using-VSCode-for-Remote-Editing-and-Debugging
+[Using Visual Studio Code for remote editing and debugging]: using-vscode-for-remote-editing-and-debugging
 [Writing Portable Modules]: /powershell/scripting/dev-cross-plat/writing-portable-modules
 [C# for Visual Studio Code]: https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csharp
