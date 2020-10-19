@@ -70,6 +70,10 @@ This needs to go after the `build` entry in the `args` list, as follows:
     }
 ```
 
+If the build task fails with an error similar to `Could not copy "obj\Debug\netstandard2.0\myModule.dll" to "bin\Debug\netstandard2.0\myModule.dll"`,
+a possible cause is that a process is holding a lock on the previously-built version. This happens
+when you import a DLL file. Close any terminals that you might have used for testing.
+
 ## Setting up the debugger
 
 To debug the PowerShell cmdlet, you will need to set up a custom launch configuration. This
@@ -163,7 +167,8 @@ in the Debug view:
 
 You can step through the source code, inspect variables and inspect the call stack.
 
-To end debugging, click `Stop` in the debug toolbar or press `Shift-F5`.
+To end debugging, click `Stop` in the debug toolbar or press `Shift-F5`. The shell used for
+debugging will exit, which releases the lock on the compiled DLL file.
 
 <!-- reference links -->
 [Debugging in Visual Studio Code]: https://code.visualstudio.com/docs/editor/debugging
