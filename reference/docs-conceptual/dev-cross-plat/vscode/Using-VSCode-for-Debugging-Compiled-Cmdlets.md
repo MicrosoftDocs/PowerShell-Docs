@@ -42,6 +42,34 @@ To test your build task:
 
 2. In the `Select the build task to run` dialog, choose `build`
 
+A successful build will not, by default, show output in the terminal pane. If you see output, review
+it. If the output contains the text `Project file does not exist`, then you should edit the
+`tasks.json` file to include the explicit path to the C# project, which can be expressed as
+`"${workspaceFolder}/myModule"` (where `myModule` is the name of the project folder, if applicable).
+
+This needs to go after the `build` entry in the `args` list, as follows:
+
+```json
+    {
+        "label": "build",
+        "command": "dotnet",
+        "type": "shell",
+        "args": [
+            "build",
+            "${workspaceFolder}/myModule",
+            // Ask dotnet build to generate full paths for file names.
+            "/property:GenerateFullPaths=true",
+            // Do not generate summary otherwise it leads to duplicate errors in Problems panel
+            "/consoleloggerparameters:NoSummary",
+        ],
+        "group": "build",
+        "presentation": {
+            "reveal": "silent"
+        },
+        "problemMatcher": "$msCompile"
+    }
+```
+
 ## Setting up the debugger
 
 To debug the PowerShell cmdlet, you will need to set up a custom launch configuration. This
