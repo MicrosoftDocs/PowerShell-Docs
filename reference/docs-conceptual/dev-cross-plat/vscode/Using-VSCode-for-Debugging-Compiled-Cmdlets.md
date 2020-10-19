@@ -93,6 +93,23 @@ The steps are:
     }
    ```
 
+### Explanation of the edits
+
+- It is necessary to launch `pwsh` so that the cmdlet being debugged can be run
+
+- `powershell.exe` will not work with these steps
+
+- The `-NoExit` argument prevents the PowerShell session from exiting as soon as the module is
+imported
+
+- The path in the `Import-Module` argument is the default build output path if you have followed the
+[Writing Portable Modules][] guide
+
+  > The `/` path separator works on Windows, Linux and macOS.
+
+- It is necessary to use the integrated terminal because the debug terminal will not allow you to
+run PowerShell commands
+
 ## Launching a debugging session
 
 Now everything is ready to begin debugging.
