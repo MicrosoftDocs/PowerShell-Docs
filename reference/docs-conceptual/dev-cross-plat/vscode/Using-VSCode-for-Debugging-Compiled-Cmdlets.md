@@ -1,7 +1,8 @@
 ---
-ms.date:  19/10/2020
+ms.date:  10/19/2020
 keywords:  powershell,cmdlet,debug
 title:  Using Visual Studio Code for debugging compiled cmdlets
+description: How to set a build task and launch configuration for a PSModule project in .NET Core
 ---
 # Using Visual Studio Code for debugging compiled cmdlets
 
