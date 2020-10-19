@@ -11,6 +11,12 @@ using Visual Studio Code and the C# extension.
 > These steps will show you how to debug your module in PowerShell Core. They will not work for
 Windows PowerShell.
 
+Some familiarity with the Visual Studio Code debugger is assumed.
+
+- For a general introduction to the Visual Studio Code debugger, see [Debugging in Visual Studio Code][].
+
+- For examples of debugging PowerShell script files and modules, see [Using Visual Studio Code for remote editing and debugging][].
+
 This guide follows on from the [Writing Portable Modules][] guide.
 
 ## Creating a build task
