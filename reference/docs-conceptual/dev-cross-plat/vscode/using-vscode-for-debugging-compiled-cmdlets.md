@@ -150,7 +150,7 @@ Now everything is ready to begin debugging.
 - Ensure that the `PowerShell cmdlets` configuration is selected in the configuration drop-down menu
 in the Debug view:
 
-  ![Select the PowerShell cmdlets configuration](media/using-vscode-for-debugging-compiled-cmdlets/select-launch-configuration.png)
+  ![Select the launch configuration](media/using-vscode-for-debugging-compiled-cmdlets/select-launch-configuration.png)
 
 - press `F5` or click on the `Start Debugging` button
 
@@ -160,7 +160,7 @@ in the Debug view:
 
 - Execution stops at the breakpoint:
 
-  ![Invoke the cmdlet](media/using-vscode-for-debugging-compiled-cmdlets/stopped-at-breakpoint.png)
+  ![Executions halts at breakpoint](media/using-vscode-for-debugging-compiled-cmdlets/stopped-at-breakpoint.png)
 
 You can step through the source code, inspect variables and inspect the call stack.
 
