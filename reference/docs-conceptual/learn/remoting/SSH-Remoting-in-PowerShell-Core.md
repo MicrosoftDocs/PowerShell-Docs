@@ -44,7 +44,7 @@ an SSH subsystem to host a PowerShell process on the remote computer. And, you m
 
 ## Set up on a Windows computer
 
-1. Install the latest version of PowerShell, see
+1. Install the latest version of PowerShell. For more information, see
    [Installing PowerShell Core on Windows](../../install/installing-powershell-core-on-windows.md#msi).
 
    You can confirm that PowerShell has SSH remoting support by listing the `New-PSSession` parameter
@@ -174,7 +174,7 @@ an SSH subsystem to host a PowerShell process on the remote computer. And, you m
 
 ## Set up on a macOS computer
 
-1. Install the latest version of PowerShell, see
+1. Install the latest version of PowerShell. For more information,
    [Installing PowerShell Core on macOS](../../install/installing-powershell-core-on-macos.md).
 
    Make sure SSH Remoting is enabled by following these steps:
