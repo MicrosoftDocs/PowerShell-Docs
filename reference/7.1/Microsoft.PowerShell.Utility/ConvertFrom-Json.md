@@ -3,7 +3,7 @@ external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 08/17/2020
+ms.date: 10/19/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/convertfrom-json?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: ConvertFrom-Json
@@ -67,16 +67,16 @@ TimeOfDay   : @{Ticks=723914009002; Days=0; Hours=20; Milliseconds=400; Minutes=
 Year        : 2012
 ```
 
-The example uses the `Select-Object` cmdlet to get all of the properties of the **DateTime** object.
-It uses the `ConvertTo-Json` cmdlet to convert the **DateTime** object to a string formatted as a
-JSON object and the `ConvertFrom-Json` cmdlet to convert the JSON-formatted string to a
-**PSCustomObject** object.
+The example uses the `Select-Object` cmdlet to get all of the properties of the **DateTime**
+object. It uses the `ConvertTo-Json` cmdlet to convert the **DateTime** object to a string
+formatted as a JSON object and the `ConvertFrom-Json` cmdlet to convert the JSON-formatted string
+to a **PSCustomObject** object.
 
 ### Example 2: Get JSON strings from a web service and convert them to PowerShell objects
 
-This command uses the `Invoke-WebRequest` cmdlet to get JSON strings from a web service and then it
-uses the `ConvertFrom-Json` cmdlet to convert JSON content to objects that can be managed in
-PowerShell.
+This command uses the `Invoke-WebRequest` cmdlet to get JSON strings from a web service
+and then it uses the `ConvertFrom-Json` cmdlet to convert JSON content to objects
+that can be managed in PowerShell.
 
 ```powershell
 # Ensures that Invoke-WebRequest uses TLS 1.2
@@ -236,7 +236,17 @@ You can pipe a JSON string to `ConvertFrom-Json`.
 
 ## NOTES
 
-The `ConvertFrom-Json` cmdlet is implemented using [Newtonsoft Json.NET](https://www.newtonsoft.com/json).
+This cmdlet is implemented using [Newtonsoft Json.NET](https://www.newtonsoft.com/json).
+
+Beginning in PowerShell 6, `ConvertTo-Json` attempts to convert strings formatted as timestamps to
+**DateTime** values. The converted value is a `[datetime]` instance with a `Kind` property set as
+follows:
+
+- `Unspecified`, if there is no time zone information in the input string.
+- `Utc`, if the time zone information is a trailing `Z`
+- `Local`, if the time zone information is given as a trailing UTC _offset_ like `+02:00`. The
+  offset is properly converted to the caller's local equivalent. The default output formatting does
+  not indicate the original time zone offset.
 
 ## RELATED LINKS
 

@@ -3,7 +3,7 @@ external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 08/17/2020
+ms.date: 10/19/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/convertfrom-json?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: ConvertFrom-Json
@@ -198,7 +198,17 @@ You can pipe a JSON string to `ConvertFrom-Json`.
 
 ## NOTES
 
-The `ConvertFrom-Json` cmdlet is implemented using [Newtonsoft Json.NET](https://www.newtonsoft.com/json).
+This cmdlet is implemented using [Newtonsoft Json.NET](https://www.newtonsoft.com/json).
+
+Beginning in PowerShell 6, `ConvertTo-Json` attempts to convert strings formatted as timestamps to
+**DateTime** values. The converted value is a `[datetime]` instance with a `Kind` property set as
+follows:
+
+- `Unspecified`, if there is no time zone information in the input string.
+- `Utc`, if the time zone information is a trailing `Z`
+- `Local`, if the time zone information is given as a trailing UTC _offset_ like `+02:00`. The
+  offset is properly converted to the caller's local equivalent. The default output formatting does
+  not indicate the original time zone offset.
 
 ## RELATED LINKS
 
