@@ -1,7 +1,7 @@
 ---
 title: PowerShell Remoting Over SSH
 description: Remoting in PowerShell Core using SSH
-ms.date: 07/23/2020
+ms.date: 10/19/2020
 ---
 
 # PowerShell remoting over SSH
@@ -27,9 +27,9 @@ support this new remoting connection.
 ```
 
 To create a remote session, you specify the target computer with the **HostName** parameter and
-provide the user name with **UserName**. When running the cmdlets interactively, you're prompted for a
-password. You can also, use SSH key authentication using a private key file with the **KeyFilePath**
-parameter.
+provide the user name with **UserName**. When running the cmdlets interactively, you're prompted for
+a password. You can also, use SSH key authentication using a private key file with the
+**KeyFilePath** parameter. Creating keys for SSH authentication varies by platform.
 
 ## General setup information
 
@@ -44,7 +44,8 @@ an SSH subsystem to host a PowerShell process on the remote computer. And, you m
 
 ## Set up on a Windows computer
 
-1. Install the latest version of PowerShell, see [Installing PowerShell Core on Windows](../../install/installing-powershell-core-on-windows.md#msi).
+1. Install the latest version of PowerShell. For more information, see
+   [Installing PowerShell Core on Windows](../../install/installing-powershell-core-on-windows.md#msi).
 
    You can confirm that PowerShell has SSH remoting support by listing the `New-PSSession` parameter
    sets. You'll notice there are parameter set names that begin with **SSH**. Those parameter sets
@@ -61,7 +62,8 @@ an SSH subsystem to host a PowerShell process on the remote computer. And, you m
    SSHHostHashParam
    ```
 
-1. Install the latest Win32 OpenSSH. For installation instructions, see [Getting started with OpenSSH](/windows-server/administration/openssh/openssh_install_firstuse).
+1. Install the latest Win32 OpenSSH. For installation instructions, see
+   [Getting started with OpenSSH](/windows-server/administration/openssh/openssh_install_firstuse).
 
    > [!NOTE]
    > If you want to set PowerShell as the default shell for OpenSSH, see
@@ -139,6 +141,15 @@ an SSH subsystem to host a PowerShell process on the remote computer. And, you m
    PasswordAuthentication yes
    ```
 
+   Optionally, enable key authentication:
+
+   ```
+   PubkeyAuthentication yes
+   ```
+
+   For more information about creating SSH keys on Ubuntu, see the manpage for
+   [ssh-keygen](http://manpages.ubuntu.com/manpages/xenial/man1/ssh-keygen.1.html).
+
    Add a PowerShell subsystem entry:
 
    ```
@@ -155,15 +166,16 @@ an SSH subsystem to host a PowerShell process on the remote computer. And, you m
    PubkeyAuthentication yes
    ```
 
-1. Restart the **sshd** service.
+1. Restart the **ssh** service.
 
    ```bash
-   sudo service sshd restart
+   sudo service ssh restart
    ```
 
 ## Set up on a macOS computer
 
-1. Install the latest version of PowerShell, see [Installing PowerShell Core on macOS](../../install/installing-powershell-core-on-macos.md).
+1. Install the latest version of PowerShell. For more information,
+   [Installing PowerShell Core on macOS](../../install/installing-powershell-core-on-macos.md).
 
    Make sure SSH Remoting is enabled by following these steps:
 
