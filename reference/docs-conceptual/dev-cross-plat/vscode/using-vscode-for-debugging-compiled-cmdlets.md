@@ -9,9 +9,6 @@ description: How to set a build task and launch configuration for a PSModule pro
 This guide will show you how to interactively debug C# source code for a compiled PowerShell module,
 using Visual Studio Code and the C# extension.
 
-> These steps will show you how to debug your module in PowerShell Core. They will not work for
-Windows PowerShell.
-
 Some familiarity with the Visual Studio Code debugger is assumed.
 
 - For a general introduction to the Visual Studio Code debugger, see [Debugging in Visual Studio Code][].
@@ -92,8 +89,8 @@ The steps are:
 
 3. In the `Select environment` dialog, choose `.NET Core`
 
-4. This will open `launch.json`. With your cursor inside the `configurations` array, you will see the
-`configuration` picker. If you do not see this, click on `Add Configuration`.
+4. This will open `launch.json`. With your cursor inside the `configurations` array, you will see
+the `configuration` picker. If you do not see this, click on `Add Configuration`.
 
 5. Choose `Launch .NET Core Console App`:
 
@@ -105,7 +102,7 @@ The steps are:
 
    ```json
     {
-        "name": "PowerShell cmdlets",
+        "name": "PowerShell cmdlets: pwsh",
         "type": "coreclr",
         "request": "launch",
         "preLaunchTask": "build",
@@ -122,22 +119,58 @@ The steps are:
     }
    ```
 
+This launch configuration will work for testing your cmdlets in PowerShell Core (`pwsh`).
+
 ### Explanation of the edits
 
 - It is necessary to launch `pwsh` so that the cmdlet being debugged can be run
-
-- `powershell.exe` will not work with these steps
 
 - The `-NoExit` argument prevents the PowerShell session from exiting as soon as the module is
 imported
 
 - The path in the `Import-Module` argument is the default build output path if you have followed the
-[Writing Portable Modules][] guide
+[Writing Portable Modules][] guide. If you have written a module manifest (`.psd1` file), you should
+use the path to that instead.
 
   > The `/` path separator works on Windows, Linux and macOS.
 
 - It is necessary to use the integrated terminal because the debug terminal will not allow you to
 run PowerShell commands
+
+### Debugging in Windows PowerShell
+
+To debug your code in Windows PowerShell (`powershell.exe`), create a second launch configuration,
+with these changes from the first one:
+
+1. `name` should be `PowerShell cmdlets: powershell`
+
+2. `type` should be `clr`
+
+3. `program` should be `powershell`
+
+   It should look like this:
+
+   ```json
+    {
+        "name": "PowerShell cmdlets: powershell",
+        "type": "clr",
+        "request": "launch",
+        "preLaunchTask": "build",
+        "program": "powershell",
+        "args": [
+            "-NoExit",
+            "-NoProfile",
+            "-Command",
+            "Import-Module ${workspaceFolder}/myModule/bin/Debug/netstandard2.0/myModule.dll",
+        ],
+        "cwd": "${workspaceFolder}",
+        "stopAtEntry": false,
+        "console": "integratedTerminal"
+    }
+   ```
+
+This launch configuration will work for testing your cmdlets in Windows PowerShell
+(`powershell.exe`).
 
 ## Launching a debugging session
 
@@ -147,8 +180,8 @@ Now everything is ready to begin debugging.
 
   ![A breakpoint shows as a red dot in the gutter](media/using-vscode-for-debugging-compiled-cmdlets/set-breakpoint.png)
 
-- Ensure that the `PowerShell cmdlets` configuration is selected in the configuration drop-down menu
-in the Debug view:
+- Ensure that the relevant `PowerShell cmdlets` configuration is selected in the configuration
+drop-down menu in the Debug view:
 
   ![Select the launch configuration](media/using-vscode-for-debugging-compiled-cmdlets/select-launch-configuration.png)
 
