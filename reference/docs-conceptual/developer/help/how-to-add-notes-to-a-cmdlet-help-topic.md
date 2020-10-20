@@ -1,6 +1,6 @@
 ---
 title: How to Add Notes to a Cmdlet Help Topic
-ms.date: 09/12/2016
+ms.date: 10/20/2020
 ---
 # How to Add Notes to a Cmdlet Help Topic
 
@@ -22,13 +22,14 @@ each note has a blank line following the content for spacing.
 <maml:alertSet>
   <maml:title>title for Note 1</maml:title>
   <maml:alert>
-    <maml:para> Note 1</maml:para>
-    <maml:para></maml:para>
+    <maml:para>Note 1</maml:para>
+    <maml:para>Note a</maml:para>
   </maml:alert>
+</maml:alertSet>
+<maml:alertSet>
   <maml:title>title for Note 2</maml:title>
   <maml:alert>
-    <maml:para> Note 1</maml:para>
-    <maml:para></maml:para>
+    <maml:para>Note 2</maml:para>
   </maml:alert>
 </maml:alertSet>
 ```
