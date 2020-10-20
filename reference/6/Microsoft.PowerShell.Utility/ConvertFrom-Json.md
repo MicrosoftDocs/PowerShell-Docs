@@ -205,10 +205,10 @@ Beginning in PowerShell 6, `ConvertTo-Json` attempts to convert strings formatte
 follows:
 
 - `Unspecified`, if there is no time zone information in the input string.
-- `Utc`, if the time zone information is a trailing `Z`
+- `Utc`, if the time zone information is a trailing `Z`.
 - `Local`, if the time zone information is given as a trailing UTC _offset_ like `+02:00`. The
-  offset is properly converted to the caller's local equivalent. The default output formatting does
-  not indicate the original time zone offset.
+  offset is properly converted to the caller's configured time zone. The default output formatting
+  does not indicate the original time zone offset.
 
 ## RELATED LINKS
 
