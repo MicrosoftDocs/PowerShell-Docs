@@ -212,6 +212,6 @@ debugging will exit, which releases the lock on the compiled DLL file.
 
 <!-- reference links -->
 [Debugging in Visual Studio Code]: https://code.visualstudio.com/docs/editor/debugging
-[Using Visual Studio Code for remote editing and debugging]: using-vscode-for-remote-editing-and-debugging
-[Writing Portable Modules]: /powershell/scripting/dev-cross-plat/writing-portable-modules
+[Using Visual Studio Code for remote editing and debugging]: using-vscode-for-remote-editing-and-debugging.md
+[Writing Portable Modules]: ../writing-portable-modules.md
 [C# for Visual Studio Code]: https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csharp
