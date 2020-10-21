@@ -1,5 +1,5 @@
 ---
-ms.date:  01/10/2020
+ms.date: 10/21/2020
 keywords:  powershell,cmdlet
 title:  Writing Portable Modules
 ---
@@ -10,17 +10,17 @@ Windows PowerShell is written for [.NET Framework][] while PowerShell Core is wr
 [.NET Core][]. Portable modules are modules that work in both Windows PowerShell and PowerShell
 Core. While .NET Framework and .NET Core are highly compatible, there are differences in the
 available APIs between the two. There are also differences in the APIs available in Windows
-PowerShell and PowerShell Core. Modules intended to be used in both environments need to be aware
-of these differences.
+PowerShell and PowerShell Core. Modules intended to be used in both environments need to be aware of
+these differences.
 
-## Porting an Existing Module
+## Porting an existing module
 
 ### Porting a PSSnapIn
 
-PowerShell [SnapIns](/powershell/scripting/developer/cmdlet/modules-and-snap-ins) aren't supported in
-PowerShell Core. However, it's trivial to convert a PSSnapIn to a PowerShell module. Typically, the
-PSSnapIn registration code is in a single source file of a class that derives from [PSSnapIn][].
-Remove this source file from the build; it's no longer needed.
+PowerShell [SnapIns](/powershell/scripting/developer/cmdlet/modules-and-snap-ins) aren't supported
+in PowerShell Core. However, it's trivial to convert a PSSnapIn to a PowerShell module. Typically,
+the PSSnapIn registration code is in a single source file of a class that derives from
+[PSSnapIn][]. Remove this source file from the build; it's no longer needed.
 
 Use [New-ModuleManifest][] to create a new module manifest that replaces the need for the PSSnapIn
 registration code. Some of the values from the **PSSnapIn** (such as **Description**) can be reused
@@ -32,16 +32,16 @@ implementing the cmdlets.
 ### The .NET Portability Analyzer (aka APIPort)
 
 To port modules written for Windows PowerShell to work with PowerShell Core, start with the
-[.NET Portability Analyzer][]. Run this tool against your compiled assembly to determine if the
-.NET APIs used in the module are compatible with .NET Framework, .NET Core, and other .NET
-runtimes. The tool suggests alternate APIs if they exist. Otherwise, you may need to add [runtime
-checks][] and restrict capabilities not available in specific runtimes.
+[.NET Portability Analyzer][]. Run this tool against your compiled assembly to determine if the .NET
+APIs used in the module are compatible with .NET Framework, .NET Core, and other .NET runtimes. The
+tool suggests alternate APIs if they exist. Otherwise, you may need to add [runtime checks][] and
+restrict capabilities not available in specific runtimes.
 
-## Creating a New Module
+## Creating a new module
 
 If creating a new module, the recommendation is to use the [.NET CLI][].
 
-### Installing the PowerShell Standard Module Template
+### Installing the PowerShell Standard module template
 
 Once the .NET CLI is installed, install a template library to generate a simple PowerShell module.
 The module will be compatible with Windows PowerShell, PowerShell Core, Windows, Linux, and macOS.
@@ -74,15 +74,15 @@ Options:
   -lang, --language   Filters templates based on language and specifies the language of the template to create.
 
 
-Templates                                         Short Name         Language          Tags
-----------------------------------------------------------------------------------------------------------------------------
-Console Application                               console            [C#], F#, VB      Common/Console
-Class library                                     classlib           [C#], F#, VB      Common/Library
-PowerShell Standard Module                        psmodule           [C#]              Library/PowerShell/Module
+Templates                        Short Name         Language          Tags
+-----------------------------------------------------------------------------------------------
+Console Application              console            [C#], F#, VB      Common/Console
+Class library                    classlib           [C#], F#, VB      Common/Library
+PowerShell Standard Module       psmodule           [C#]              Library/PowerShell/Module
 ...
 ```
 
-### Creating a New Module Project
+### Creating a new module project
 
 After the template is installed, you can create a new PowerShell module project using that
 template. In this example, the sample module is called 'myModule'.
@@ -112,7 +112,7 @@ Running 'dotnet restore' on C:\Users\Steve\myModule\myModule.csproj...
 Restore succeeded.
 ```
 
-### Building the Module
+### Building the module
 
 Use standard .NET CLI commands to build the project.
 
@@ -135,7 +135,7 @@ Build succeeded.
 Time Elapsed 00:00:05.40
 ```
 
-### Testing the Module
+### Testing the module
 
 After building the module, you can import it and execute the sample cmdlet.
 
@@ -166,9 +166,16 @@ FavoriteNumber FavoritePet
              7 Cat
 ```
 
+### Debugging the module
+
+For a guide on setting up Visual Studio Code to debug the module, see
+[Using Visual Studio Code for debugging compiled cmdlets][].
+
+## Supporting technologies
+
 The following sections describe in detail some of the technologies used by this template.
 
-## .NET Standard Library
+### .NET Standard Library
 
 [.NET Standard][] is a formal specification of .NET APIs that are available in all .NET
 implementations. Managed code targeting .NET Standard works with the .NET Framework and .NET Core
@@ -190,7 +197,7 @@ is compatible between the two runtimes. You can target .NET Framework 4.6.1, whi
 with .NET Standard 2.0. If you don't use APIs outside of .NET Standard 2.0, then your module
 works with PowerShell Core 6 without recompilation.
 
-## PowerShell Standard Library
+### PowerShell Standard Library
 
 The [PowerShell Standard][] library is a formal specification of PowerShell APIs available in all
 PowerShell versions greater than or equal to the version of that standard.
@@ -203,9 +210,9 @@ the APIs are available and implemented in both Windows PowerShell and PowerShell
 PowerShell Standard is intended to always be forwards-compatible. A module built using PowerShell
 Standard Library 5.1 will always be compatible with future versions of PowerShell.
 
-## Module Manifest
+### Module Manifest
 
-### Indicating Compatibility With Windows PowerShell and PowerShell Core
+#### Indicating Compatibility With Windows PowerShell and PowerShell Core
 
 After validating that your module works with both Windows PowerShell and PowerShell Core, the
 module manifest should explicitly indicate compatibility by using the [CompatiblePSEditions][]
@@ -282,7 +289,7 @@ Example:
 }
 ```
 
-## Dependency on Native Libraries
+### Dependency on Native Libraries
 
 Modules intended for use across different operating systems or processor architectures may
 depend on a managed library that itself depends on some native libraries.
@@ -295,33 +302,33 @@ library's location following a subset of the [.NET RID Catalog][] notation.
 
 ```
 managed.dll folder
-                |
-                |--- 'win-x64' folder
-                |       |--- native.dll
-                |
-                |--- 'win-x86' folder
-                |       |--- native.dll
-                |
-                |--- 'win-arm' folder
-                |       |--- native.dll
-                |
-                |--- 'win-arm64' folder
-                |       |--- native.dll
-                |
-                |--- 'linux-x64' folder
-                |       |--- native.so
-                |
-                |--- 'linux-x86' folder
-                |       |--- native.so
-                |
-                |--- 'linux-arm' folder
-                |       |--- native.so
-                |
-                |--- 'linux-arm64' folder
-                |       |--- native.so
-                |
-                |--- 'osx-x64' folder
-                |       |--- native.dylib
+    |
+    |--- 'win-x64' folder
+    |       |--- native.dll
+    |
+    |--- 'win-x86' folder
+    |       |--- native.dll
+    |
+    |--- 'win-arm' folder
+    |       |--- native.dll
+    |
+    |--- 'win-arm64' folder
+    |       |--- native.dll
+    |
+    |--- 'linux-x64' folder
+    |       |--- native.so
+    |
+    |--- 'linux-x86' folder
+    |       |--- native.so
+    |
+    |--- 'linux-arm' folder
+    |       |--- native.so
+    |
+    |--- 'linux-arm64' folder
+    |       |--- native.so
+    |
+    |--- 'osx-x64' folder
+    |       |--- native.dylib
 ```
 
 <!-- reference links -->
@@ -331,6 +338,7 @@ managed.dll folder
 [New-ModuleManifest]: /powershell/module/microsoft.powershell.core/new-modulemanifest
 [runtime checks]: /dotnet/api/system.runtime.interopservices.runtimeinformation.frameworkdescription#System_Runtime_InteropServices_RuntimeInformation_FrameworkDescription
 [.NET CLI]: /dotnet/core/tools/?tabs=netcore2x
+[Using Visual Studio Code for debugging compiled cmdlets]: vscode/using-vscode-for-debugging-compiled-cmdlets.md
 [.NET Standard]: /dotnet/standard/net-standard
 [PowerShell Standard]: https://github.com/PowerShell/PowerShellStandard
 [PowerShell Standard 5.1]: https://www.nuget.org/packages/PowerShellStandard.Library/5.1.0
