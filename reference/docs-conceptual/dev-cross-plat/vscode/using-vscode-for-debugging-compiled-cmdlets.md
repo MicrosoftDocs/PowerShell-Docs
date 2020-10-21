@@ -7,17 +7,18 @@ description: How to set a build task and launch configuration for a PSModule pro
 # Using Visual Studio Code for debugging compiled cmdlets
 
 This guide shows you how to interactively debug C# source code for a compiled PowerShell module
-using Visual Studio Code and the C# extension.
+using Visual Studio Code (VS Code) and the C# extension.
 
 Some familiarity with the Visual Studio Code debugger is assumed.
 
-- For a general introduction to the Visual Studio Code debugger, see
+- For a general introduction to the VS Code debugger, see
   [Debugging in Visual Studio Code][].
 
 - For examples of debugging PowerShell script files and modules, see
   [Using Visual Studio Code for remote editing and debugging][].
 
-This guide follows on from the [Writing Portable Modules][] guide.
+This guide assumes you have read and followed the instructions in the [Writing Portable Modules][]
+guide.
 
 ## Creating a build task
 
