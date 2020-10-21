@@ -1,10 +1,10 @@
 ---
 ms.date:  10/19/2020
 keywords:  powershell,cmdlet,debug
-title:  Using Visual Studio Code for debugging compiled cmdlets
+title:  Using Visual Studio Code to debug compiled cmdlets
 description: How to set a build task and launch configuration for a PSModule project in .NET Core
 ---
-# Using Visual Studio Code for debugging compiled cmdlets
+# Using Visual Studio Code to debug compiled cmdlets
 
 This guide shows you how to interactively debug C# source code for a compiled PowerShell module
 using Visual Studio Code (VS Code) and the C# extension.
