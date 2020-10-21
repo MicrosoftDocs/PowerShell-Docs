@@ -6,46 +6,49 @@ description: How to set a build task and launch configuration for a PSModule pro
 ---
 # Using Visual Studio Code for debugging compiled cmdlets
 
-This guide will show you how to interactively debug C# source code for a compiled PowerShell module,
+This guide shows you how to interactively debug C# source code for a compiled PowerShell module
 using Visual Studio Code and the C# extension.
 
 Some familiarity with the Visual Studio Code debugger is assumed.
 
-- For a general introduction to the Visual Studio Code debugger, see [Debugging in Visual Studio Code][].
+- For a general introduction to the Visual Studio Code debugger, see
+  [Debugging in Visual Studio Code][].
 
-- For examples of debugging PowerShell script files and modules, see [Using Visual Studio Code for remote editing and debugging][].
+- For examples of debugging PowerShell script files and modules, see
+  [Using Visual Studio Code for remote editing and debugging][].
 
 This guide follows on from the [Writing Portable Modules][] guide.
 
 ## Creating a build task
 
-It is a good idea to build your project automatically before launching a debugging session. This
-ensures that you are debugging the latest version of your code.
+Build your project automatically before launching a debugging session. Rebuilding ensures that you
+debug the latest version of your code.
 
-This can be achieved with a build task:
+Configure a build task:
 
-1. In the Command Palette, run the `Configure Default Build Task` command
+1. In the **Command Palette**, run the **Configure Default Build Task** command.
 
    ![Run Configure Default Build Task](media/using-vscode-for-debugging-compiled-cmdlets/configure-default-build-task.png)
 
-2. In the `Select a task to configure` dialog, choose `Create tasks.json file from template`
+1. In the **Select a task to configure** dialog, choose **Create tasks.json file from template**.
 
-3. In the `Select a Task Template` dialog, choose `.NET Core`
+1. In the **Select a Task Template** dialog, choose **.NET Core**.
 
-This will create a new `tasks.json` file, if one does not exist yet.
+A new `tasks.json` file is created if one doesn't exist yet.
 
 To test your build task:
 
-1. In the Command Palette, run the `Run Build Task` command
+1. In the **Command Palette**, run the **Run Build Task** command.
 
-2. In the `Select the build task to run` dialog, choose `build`
+1. In the **Select the build task to run** dialog, choose **build**.
 
-A successful build will not, by default, show output in the terminal pane. If you see output, review
-it. If the output contains the text `Project file does not exist`, then you should edit the
-`tasks.json` file to include the explicit path to the C# project, which can be expressed as
-`"${workspaceFolder}/myModule"` (where `myModule` is the name of the project folder, if applicable).
+### Information about DLL files being locked
 
-This needs to go after the `build` entry in the `args` list, as follows:
+By default, a successful build doesn't show output in the terminal pane. If you see output that
+contains the text **Project file doesn't exist**, you should edit the `tasks.json` file. Include the
+explicit path to the C# project expressed as `"${workspaceFolder}/myModule"`. In this example,
+`myModule` is the name of the project folder. This entry must go after the `build` entry in the
+`args` list as follows:
 
 ```json
     {
@@ -68,47 +71,45 @@ This needs to go after the `build` entry in the `args` list, as follows:
     }
 ```
 
-### Information about DLL files being locked
+When debugging, your module DLL is imported into the PowerShell session in the VS Code terminal. The
+DLL becomes locked. The following message is displayed when you run the build task without closing
+the terminal session:
 
-When you import a DLL file into a .NET application such as PowerShell, that DLL file becomes locked.
+```Output
+Could not copy "obj\Debug\netstandard2.0\myModule.dll" to "bin\Debug\netstandard2.0\myModule.dll"`.
+```
 
-To rebuild your DLL file, you need to close the application that holds the lock. If you run the
-build task without closing any locking applications, you might see a message such as
-`Could not copy "obj\Debug\netstandard2.0\myModule.dll" to "bin\Debug\netstandard2.0\myModule.dll"`.
-
-One solution is to treat terminals as disposable, and to close them before you rebuild.
+Terminal sessions must be closed before you rebuild.
 
 ## Setting up the debugger
 
-To debug the PowerShell cmdlet, you will need to set up a custom launch configuration. This
-configuration will:
+To debug the PowerShell cmdlet, you need to set up a custom launch configuration. This
+configuration is used to:
 
 - Build your source code
-
 - Start PowerShell with your module loaded
+- Leave PowerShell open in the terminal pane
 
-- Leave PowerShell open in the terminal pane, so that you can invoke your cmdlet
+When you invoke your cmdlet in the terminal session, the debugger stops at any breakpoints set in
+your source code.
 
-- When you invoke your cmdlet, the debugger will stop at any breakpoints in your source code
-
-The steps are:
+### Configuring launch.json for PowerShell Core
 
 1. Install the [C# for Visual Studio Code][] extension
 
-2. In the Debug pane, add a debug configuration
+1. In the Debug pane, add a debug configuration
 
-3. In the `Select environment` dialog, choose `.NET Core`
+1. In the `Select environment` dialog, choose `.NET Core`
 
-4. This will open `launch.json`. With your cursor inside the `configurations` array, you will see
-the `configuration` picker. If you do not see this, click on `Add Configuration`.
+1. The `launch.json` file is opened in the editor. With your cursor inside the `configurations`
+   array, you see the `configuration` picker. If you don't see this list, select
+   **Add Configuration**.
 
-5. Choose `Launch .NET Core Console App`:
+1. To create a default debug configuration, select **Launch .NET Core Console App**:
 
    ![Launch .NET Core Console App](media/using-vscode-for-debugging-compiled-cmdlets/add-configuration-dialog.png)
 
-   This will create a default debug configuration.
-
-6. Edit the `name`, `program`, `args` and `console` fields as follows:
+1. Edit the `name`, `program`, `args`, and `console` fields as follows:
 
    ```json
     {
@@ -129,34 +130,23 @@ the `configuration` picker. If you do not see this, click on `Add Configuration`
     }
    ```
 
-This launch configuration will work for testing your cmdlets in PowerShell Core (`pwsh`).
+The `program` field is used to launch `pwsh` so that the cmdlet being debugged can be run. The
+`-NoExit` argument prevents the PowerShell session from exiting as soon as the module is imported.
+The path in the `Import-Module` argument is the default build output path when you've followed the
+[Writing Portable Modules][] guide. If you've created a module manifest (`.psd1` file), you should
+use the path to that instead. The `/` path separator works on Windows, Linux, and macOS. You must
+use the integrated terminal to run the PowerShell commands you want to debug.
 
-### Explanation of the edits
+### Configuring launch.json for Windows PowerShell
 
-- It is necessary to launch `pwsh` so that the cmdlet being debugged can be run
-
-- The `-NoExit` argument prevents the PowerShell session from exiting as soon as the module is
-imported
-
-- The path in the `Import-Module` argument is the default build output path if you have followed the
-[Writing Portable Modules][] guide. If you have written a module manifest (`.psd1` file), you should
-use the path to that instead.
-
-  > The `/` path separator works on Windows, Linux and macOS.
-
-- It is necessary to use the integrated terminal because the debug terminal will not allow you to
-run PowerShell commands
-
-### Debugging in Windows PowerShell
-
-To debug your code in Windows PowerShell (`powershell.exe`), create a second launch configuration,
-with these changes from the first one:
+This launch configuration works for testing your cmdlets in Windows PowerShell (`powershell.exe`).
+Create a second launch configuration with the following changes:
 
 1. `name` should be `PowerShell cmdlets: powershell`
 
-2. `type` should be `clr`
+1. `type` should be `clr`
 
-3. `program` should be `powershell`
+1. `program` should be `powershell`
 
    It should look like this:
 
@@ -179,9 +169,6 @@ with these changes from the first one:
     }
    ```
 
-This launch configuration will work for testing your cmdlets in Windows PowerShell
-(`powershell.exe`).
-
 ## Launching a debugging session
 
 Now everything is ready to begin debugging.
@@ -190,12 +177,12 @@ Now everything is ready to begin debugging.
 
   ![A breakpoint shows as a red dot in the gutter](media/using-vscode-for-debugging-compiled-cmdlets/set-breakpoint.png)
 
-- Ensure that the relevant `PowerShell cmdlets` configuration is selected in the configuration
-drop-down menu in the Debug view:
+- Ensure that the relevant **PowerShell cmdlets** configuration is selected in the configuration
+  drop-down menu in the **Debug** view:
 
   ![Select the launch configuration](media/using-vscode-for-debugging-compiled-cmdlets/select-launch-configuration.png)
 
-- press `F5` or click on the `Start Debugging` button
+- Press <kbd>F5</kbd> or click on the **Start Debugging** button
 
 - Switch to the terminal pane and invoke your cmdlet:
 
@@ -205,10 +192,10 @@ drop-down menu in the Debug view:
 
   ![Executions halts at breakpoint](media/using-vscode-for-debugging-compiled-cmdlets/stopped-at-breakpoint.png)
 
-You can step through the source code, inspect variables and inspect the call stack.
+You can step through the source code, inspect variables, and inspect the call stack.
 
-To end debugging, click `Stop` in the debug toolbar or press `Shift-F5`. The shell used for
-debugging will exit, which releases the lock on the compiled DLL file.
+To end debugging, click **Stop** in the debug toolbar or press <kbd>Shift</kbd>-<kbd>F5</kbd>. The
+shell used for debugging exits and releases the lock on the compiled DLL file.
 
 <!-- reference links -->
 [Debugging in Visual Studio Code]: https://code.visualstudio.com/docs/editor/debugging
