@@ -27,7 +27,7 @@ The `Compare-Object` cmdlet compares two sets of objects. One set of objects is 
 and the other set of objects is the **difference**.
 
 `Compare-Object` checks for available methods of comparing a whole object. If it can't find a
-suitable method, it call the **ToString()** methods of the input objects and compares the string
+suitable method, it calls the **ToString()** methods of the input objects and compares the string
 results. You can provide one or more properties to be used for comparison. When properties are
 provided, the cmdlet compares the values of those properties only.
 
