@@ -38,9 +38,9 @@ ConvertTo-SecureString [-String] <String> [-Key <Byte[]>] [<CommonParameters>]
 The `ConvertTo-SecureString` cmdlet converts encrypted standard strings into secure strings. It can
 also convert plain text to secure strings. It is used with `ConvertFrom-SecureString` and
 `Read-Host`. The secure string created by the cmdlet can be used with cmdlets or functions that
-require a parameter of type SecureString. The secure string can be converted back to an encrypted,
-standard string using the `ConvertFrom-SecureString` cmdlet. This enables it to be stored in a file
-for later use.
+require a parameter of type **SecureString**. The secure string can be converted back to an
+encrypted, standard string using the `ConvertFrom-SecureString` cmdlet. This enables it to be stored
+in a file for later use.
 
 If the standard string being converted was encrypted with `ConvertFrom-SecureString` using a
 specified key, that same key must be provided as the value of the **Key** or **SecureKey** parameter
@@ -73,10 +73,11 @@ string. After you enter the command, any characters that you type are converted 
 and then saved in the `$Secure` variable.
 
 The second command displays the contents of the `$Secure` variable. Because the `$Secure` variable
-contains a secure string, PowerShell displays only the System.Security.SecureString type.
+contains a secure string, PowerShell displays only the **System.Security.SecureString** type.
 
 The third command uses the `ConvertFrom-SecureString` cmdlet to convert the secure string in the
-`$Secure` variable into an encrypted standard string. It saves the result in the `$Encrypted` variable.
+`$Secure` variable into an encrypted standard string. It saves the result in the `$Encrypted`
+variable.
 
 The fourth command displays the encrypted string in the value of the `$Encrypted` variable.
 
