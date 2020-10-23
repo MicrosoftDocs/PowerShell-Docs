@@ -2,6 +2,7 @@
 ms.date:  07/10/2019
 keywords:  jea,powershell,security
 title:  JEA Prerequisites
+description: This article describes the prerequisites that must be satisfied to start using JEA.
 ---
 # Prerequisites
 

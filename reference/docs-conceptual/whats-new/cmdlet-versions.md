@@ -2,12 +2,13 @@
 ms.date: 02/03/2020
 keywords:  powershell,core
 title:  Release history of modules and cmdlets
+description: This article lists the modules and cmdlets that are included in various versions of PowerShell.
 ---
 # Release history of modules and cmdlets
 
-This article lists the modules and cmdlets that ship with various versions of PowerShell. This is a
-summary of information found in the release notes. More detailed information can be found in the
-release notes:
+This article lists the modules and cmdlets that are included in various versions of PowerShell. This
+is a summary of information found in the release notes. More detailed information can be found in
+the release notes:
 
 - [What's new in PowerShell Core 6.2](what-s-new-in-powershell-core-62.md)
 - [What's new in PowerShell Core 6.1](what-s-new-in-powershell-core-61.md)

@@ -1,10 +1,11 @@
 ---
 ms.date: 06/11/2020
-keywords:  powershell,cmdlet
-title:  WinRMSecurity
+keywords: powershell,cmdlet
+title: Security considerations for PowerShell Remoting using WinRM
+description: This document covers security concerns, recommendations, and best practices when using PowerShell Remoting.
 ---
 
-# PowerShell Remoting Security Considerations
+# Security Considerations for PowerShell Remoting using WinRM
 
 PowerShell Remoting is the recommended way to manage Windows systems. PowerShell Remoting is enabled
 by default in Windows Server 2012 R2. This document covers security concerns, recommendations, and

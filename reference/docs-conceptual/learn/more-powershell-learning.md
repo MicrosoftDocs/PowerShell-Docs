@@ -2,6 +2,7 @@
 ms.date: 06/11/2020
 keywords: powershell,cmdlet
 title: PowerShell learning resources
+description: A list of resources for learning PowerShell and connecting with other PowerShell users.
 ---
 # PowerShell learning resources
 

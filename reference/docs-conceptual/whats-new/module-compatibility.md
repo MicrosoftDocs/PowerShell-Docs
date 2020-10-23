@@ -1,6 +1,7 @@
 ---
 title: PowerShell 7 module compatibility
 ms.date: 02/03/2020
+description: This article lists the status of PowerShell 7 with Powershell modules published for other Microsoft products.
 ---
 
 # PowerShell 7 module compatibility

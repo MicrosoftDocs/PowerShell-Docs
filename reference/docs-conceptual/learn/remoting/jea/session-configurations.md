@@ -2,6 +2,7 @@
 ms.date:  07/10/2019
 keywords:  jea,powershell,security
 title:  JEA Session Configurations
+description: Session configurations define who can use the JEA endpoint and which roles they have access to.
 ---
 
 # JEA Session Configurations
