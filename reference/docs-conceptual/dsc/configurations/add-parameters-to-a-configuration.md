@@ -2,6 +2,7 @@
 ms.date:  12/12/2018
 keywords:  dsc,powershell,resource,gallery,setup
 title:  Add Parameters to a Configuration
+description: DSC Configurations can be parameterized to allow more dynamic configurations based on user input.
 ---
 
 # Add Parameters to a Configuration

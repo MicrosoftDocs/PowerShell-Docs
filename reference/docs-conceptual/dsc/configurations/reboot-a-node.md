@@ -2,20 +2,22 @@
 ms.date:  01/17/2019
 keywords:  dsc,powershell,configuration,setup
 title:  Reboot a Node
+description: Many configuration settings can require the computer to be rebooted for the configuration change to be complete. This article explains how to manage reboots in a configuration.
 ---
 # Reboot a Node
 
 > [!NOTE]
 > This topic talks about how to reboot a Node. In order for the reboot to be successful the
-> **ActionAfterReboot** and **RebootNodeIfNeeded** LCM settings need to be configured properly.
-> To read about Local Configuration Manager settings, see [Configure the Local Configuration Manager](../managing-nodes/metaConfig.md),
-> or [Configure the Local Configuration Manager (v4)](../managing-nodes/metaConfig4.md).
+> **ActionAfterReboot** and **RebootNodeIfNeeded** LCM settings need to be configured properly. To
+> read about Local Configuration Manager settings, see
+> [Configure the Local Configuration Manager](../managing-nodes/metaConfig.md), or
+> [Configure the Local Configuration Manager (v4)](../managing-nodes/metaConfig4.md).
 
 Nodes can be rebooted from within a resource, by using the `$global:DSCMachineStatus` flag. Setting
 this flag to `1` in the `Set-TargetResource` function forces the LCM to reboot the Node directly
-after the **Set** method of the current resource. Using this flag, the **PendingReboot** resource
-in the [ComputerManagementDsc](https://github.com/PowerShell/ComputerManagementDsc) DSC Resource
-module detects if a reboot is pending outside of DSC.
+after the **Set** method of the current resource. Using this flag, the **PendingReboot** resource in
+the [ComputerManagementDsc](https://github.com/PowerShell/ComputerManagementDsc) DSC Resource module
+detects if a reboot is pending outside of DSC.
 
 Your [configurations](configurations.md) may perform steps that require the Node to reboot. This
 could include things such as:
@@ -30,8 +32,9 @@ pending. If the Node requires a reboot outside of DSC, the **PendingReboot** res
 `$global:DSCMachineStatus` flag to `1` forcing a reboot and resolving the pending condition.
 
 > [!NOTE]
-> Any DSC resource can instruct the LCM to reboot the node by setting this flag in the `Set-TargetResource`
-> function. For more information, see [Writing a custom DSC resource with MOF](../resources/authoringResourceMOF.md).
+> Any DSC resource can instruct the LCM to reboot the node by setting this flag in the
+> `Set-TargetResource` function. For more information, see
+> [Writing a custom DSC resource with MOF](../resources/authoringResourceMOF.md).
 
 ## Syntax
 
@@ -64,13 +67,14 @@ PendingReboot [String] #ResourceName
 
 ## Example
 
-The following example installs Microsoft Exchange using the [xExchange](https://github.com/PowerShell/xExchange)
-resource.
-Throughout the install, the **PendingReboot** resource is used to reboot the Node.
+The following example installs Microsoft Exchange using the
+[xExchange](https://github.com/PowerShell/xExchange) resource. Throughout the install, the
+**PendingReboot** resource is used to reboot the Node.
 
 > [!NOTE]
 > This example requires the credential of an account that has rights to add an Exchange server to
-> the forest. For more information on using credentials in DSC, see [Handling Credentials in DSC](../configurations/configDataCredentials.md)
+> the forest. For more information on using credentials in DSC, see
+> [Handling Credentials in DSC](../configurations/configDataCredentials.md)
 
 ```powershell
 $ConfigurationData = @{

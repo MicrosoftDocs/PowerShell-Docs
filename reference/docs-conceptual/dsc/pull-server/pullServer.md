@@ -2,23 +2,24 @@
 ms.date:  01/08/2020
 keywords:  dsc,powershell,configuration,setup
 title:  DSC Pull Service
+description: Local Configuration Manager (LCM) can be centrally managed by a Pull Service solution. When using this approach, the node that is being managed is registered with a service and assigned a configuration in LCM settings.
 ---
 
 # Desired State Configuration Pull Service
 
 > [!IMPORTANT]
-> The Pull Server (Windows Feature *DSC-Service*) is a supported component of Windows Server
-> however there are no plans to offer new features or capabilities. It is recommended to
-> begin transitioning managed clients to [Azure Automation DSC](/azure/automation/automation-dsc-getting-started)
-> (includes features beyond Pull Server on Windows Server) or one of the community solutions
-> listed [here](pullserver.md#community-solutions-for-pull-service).
+> The Pull Server (Windows Feature *DSC-Service*) is a supported component of Windows Server however
+> there are no plans to offer new features or capabilities. It is recommended to begin transitioning
+> managed clients to [Azure Automation DSC](/azure/automation/automation-dsc-getting-started)
+> (includes features beyond Pull Server on Windows Server) or one of the community solutions listed
+> [here](pullserver.md#community-solutions-for-pull-service).
 
-Local Configuration Manager (LCM) can be centrally managed by a Pull Service solution. When using this
-approach, the node that is being managed is registered with a service and assigned a configuration
-in LCM settings. The configuration and all DSC resources needed as dependencies for the
-configuration are downloaded to the machine and used by LCM to manage the configuration. Information
-about the state of the machine being managed is uploaded to the service for reporting. This concept
-is referred to as "pull service".
+Local Configuration Manager (LCM) can be centrally managed by a Pull Service solution. When using
+this approach, the node that is being managed is registered with a service and assigned a
+configuration in LCM settings. The configuration and all DSC resources needed as dependencies for
+the configuration are downloaded to the machine and used by LCM to manage the configuration.
+Information about the state of the machine being managed is uploaded to the service for reporting.
+This concept is referred to as "pull service".
 
 The current options for pull service include:
 
@@ -35,20 +36,23 @@ The recommended scale for each solution is as follows:
 | Windows Pull Server using SQL database       | Up to 3500 nodes                       |
 | Azure Automation DSC                         | Both small and large environments      |
 
-**The recommended solution**, and the option with the most features available, is [Azure Automation DSC](/azure/automation/automation-dsc-getting-started). An upper limit for number of nodes per Automation Account
-has not been identified.
+**The recommended solution**, and the option with the most features available, is
+[Azure Automation DSC](/azure/automation/automation-dsc-getting-started). An upper limit for number
+of nodes per Automation Account has not been identified.
 
 The Azure service can manage nodes on-premises in private datacenters, or in public clouds such as
 Azure and AWS. For private environments where servers cannot directly connect to the Internet,
-consider limiting outbound traffic to only the published Azure IP range (see [Azure Datacenter IP Ranges](https://www.microsoft.com/download/details.aspx?id=41653)).
+consider limiting outbound traffic to only the published Azure IP range (see
+[Azure Datacenter IP Ranges](https://www.microsoft.com/download/details.aspx?id=41653)).
 
 Features of the online service that are not currently available in the pull service on Windows
 Server include:
 
 - All data is encrypted in transit and at rest
 - Client certificates are created and managed automatically
-- Secrets store for centrally managing [passwords/credentials](/azure/automation/automation-credentials),
-  or [variables](/azure/automation/automation-variables) such as server names or connection strings
+- Secrets store for centrally managing
+  [passwords/credentials](/azure/automation/automation-credentials), or
+  [variables](/azure/automation/automation-variables) such as server names or connection strings
 - Centrally manage node [LCM configuration](../managing-nodes/metaConfig.md#basic-settings)
 - Centrally assign configurations to client nodes
 - Release configuration changes to "canary groups" for testing before reaching production
@@ -61,10 +65,10 @@ Server include:
 ## DSC pull service in Windows Server
 
 It is possible to configure a pull service to run on Windows Server. Be advised that the pull
-service solution included in Windows Server includes only capabilities of storing
-configurations/modules for download and capturing report data into a database. It does not include
-many of the capabilities offered by the service in Azure and so, is not a good tool for evaluating
-how the service would be used.
+service solution included in Windows Server includes only capabilities of storing configurations and
+modules for download and capturing report data into a database. It does not include many of the
+capabilities offered by the service in Azure and so, is not a good tool for evaluating how the
+service would be used.
 
 The pull service offered in Windows Server is a web service in IIS that uses an OData interface to
 make DSC configuration files available to target nodes when those nodes ask for them.
@@ -188,8 +192,10 @@ a `Configuration` that sets up the web service.
    parameter:
 
     ```powershell
-    # To find the Thumbprint for an installed SSL certificate for use with the pull server list all certificates in your local store
-    # and then copy the thumbprint for the appropriate certificate by reviewing the certificate subjects
+    # To find the Thumbprint for an installed SSL certificate for use with the pull server list all
+    # certificates in your local store and then copy the thumbprint for the appropriate certificate
+    # by     reviewing the certificate subjects
+
     dir Cert:\LocalMachine\my
 
     # Then include this thumbprint when running the configuration
@@ -303,9 +309,10 @@ Use `New-DscChecksum {module zip file}` to create a checksum file for the newly 
 ### Configuration MOF format
 
 A configuration MOF file needs to be paired with a checksum file so that an LCM on a target node can
-validate the configuration. To create a checksum, call the [New-DscChecksum](/powershell/module/PSDesiredStateConfiguration/New-DSCCheckSum)
-cmdlet. The cmdlet takes a **Path** parameter that specifies the folder where the configuration MOF
-is located. The cmdlet creates a checksum file named `ConfigurationMOFName.mof.checksum`, where
+validate the configuration. To create a checksum, call the
+[New-DscChecksum](/powershell/module/PSDesiredStateConfiguration/New-DSCCheckSum) cmdlet. The cmdlet
+takes a **Path** parameter that specifies the folder where the configuration MOF is located. The
+cmdlet creates a checksum file named `ConfigurationMOFName.mof.checksum`, where
 `ConfigurationMOFName` is the name of the configuration mof file. If there are more than one
 configuration MOF files in the specified folder, a checksum is created for each configuration in the
 folder. Place the MOF files and their associated checksum files in the **ConfigurationPath** folder.
@@ -324,15 +331,16 @@ included as examples in the latest version of the xPSDesiredStateConfiguration m
    Examples below:
 
     ```powershell
-        # Example 1 - Package all versions of given modules installed locally and MOF files are in c:\LocalDepot
-         $moduleList = @('xWebAdministration', 'xPhp')
-         Publish-DSCModuleAndMof -Source C:\LocalDepot -ModuleNameList $moduleList
+    # Example 1 - Package all versions of given modules installed locally and MOF files are in c:\LocalDepot
+    $moduleList = @('xWebAdministration', 'xPhp')
+    Publish-DSCModuleAndMof -Source C:\LocalDepot -ModuleNameList $moduleList
 
-         # Example 2 - Package modules and mof documents from c:\LocalDepot
-         Publish-DSCModuleAndMof -Source C:\LocalDepot -Force
+    # Example 2 - Package modules and mof documents from c:\LocalDepot
+    Publish-DSCModuleAndMof -Source C:\LocalDepot -Force
     ```
 
-1. A script that validates the pull server is configured correctly. [PullServerSetupTests.ps1](https://github.com/dsccommunity/xPSDesiredStateConfiguration/blob/master/source/Modules/DscPullServerSetup/DscPullServerSetupTest/DscPullServerSetupTest.ps1).
+1. A script that validates the pull server is configured correctly.
+   [PullServerSetupTests.ps1](https://github.com/dsccommunity/xPSDesiredStateConfiguration/blob/master/source/Modules/DscPullServerSetup/DscPullServerSetupTest/DscPullServerSetupTest.ps1).
 
 ## Community Solutions for Pull Service
 

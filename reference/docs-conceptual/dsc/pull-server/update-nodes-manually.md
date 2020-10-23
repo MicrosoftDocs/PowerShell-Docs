@@ -2,6 +2,7 @@
 ms.date:  06/12/2017
 keywords:  dsc,powershell,configuration,setup
 title:  Update Nodes from a Pull Server
+description: This article explains how to update DSC managed nodes from a Pull Server
 ---
 
 # Update Nodes from a Pull Server

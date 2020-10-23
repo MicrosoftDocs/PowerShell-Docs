@@ -2,6 +2,7 @@
 ms.date: 07/08/2020
 keywords:  dsc,powershell,configuration,setup
 title:  Writing a custom DSC resource with PowerShell classes
+description: This article shows how to create a simple resource that manages a file in a specified path.
 ---
 
 # Writing a custom DSC resource with PowerShell classes
@@ -18,7 +19,7 @@ modified with attributes to specify the property type.. The resource is implemen
 `Set()`, and `Test()` methods (equivalent to the `Get-TargetResource`, `Set-TargetResource`,
 and `Test-TargetResource` functions in a script resource.
 
-In this topic, we will create a simple resource named **FileResource** that manages a file in a
+In this article, we will create a simple resource named **FileResource** that manages a file in a
 specified path.
 
 For more information about DSC resources, see [Build Custom Windows PowerShell Desired State Configuration Resources](authoringResource.md)

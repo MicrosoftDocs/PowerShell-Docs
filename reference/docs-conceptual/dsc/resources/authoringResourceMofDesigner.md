@@ -2,6 +2,7 @@
 ms.date: 07/08/2020
 keywords:  dsc,powershell,configuration,setup
 title:  Using the Resource Designer tool
+description: The Resource Designer tool is a set of cmdlets exposed by the xDscResourceDesigner module that make creating PowerShell DSC resources easier.
 ---
 
 # Using the Resource Designer tool
@@ -11,9 +12,11 @@ title:  Using the Resource Designer tool
 The Resource Designer tool is a set of cmdlets exposed by the **xDscResourceDesigner** module that
 make creating Windows PowerShell Desired State Configuration (DSC) resources easier. The cmdlets in
 this resource help create the MOF schema, the script module, and the directory structure for your
-new resource. For more information about DSC resources, see [Build Custom Windows PowerShell Desired State Configuration Resources](authoringResource.md).
-In this topic, we will create a DSC resource that manages Active Directory users. Use the [Install-Module](/powershell/module/PowershellGet/Install-Module)
-cmdlet to install the **xDscResourceDesigner** module.
+new resource. For more information about DSC resources, see
+[Build Custom Windows PowerShell Desired State Configuration Resources](authoringResource.md). In
+this article, we will create a DSC resource that manages Active Directory users. Use the
+[Install-Module](/powershell/module/PowershellGet/Install-Module) cmdlet to install the
+**xDscResourceDesigner** module.
 
 ## Creating resource properties
 
@@ -54,7 +57,8 @@ The `New-xDscResource` cmdlet creates the MOF schema, a skeleton resource script
 directory structure for your new resource, and a manifest for the module that exposes the new
 resource.
 
-The MOF schema file is at `C:\Program Files\WindowsPowerShell\Modules\Demo_DSCModule\DSCResources\Demo_ADUser\Demo_ADUser.schema.mof`,
+The MOF schema file is at
+`C:\Program Files\WindowsPowerShell\Modules\Demo_DSCModule\DSCResources\Demo_ADUser\Demo_ADUser.schema.mof`,
 and its contents are as follows.
 
 ```

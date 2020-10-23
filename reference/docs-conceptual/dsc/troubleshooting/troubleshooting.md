@@ -2,12 +2,13 @@
 ms.date:  10/30/2018
 keywords:  dsc,powershell,configuration,setup
 title:  Troubleshooting DSC
+description: This article provides troubleshooting instruction for common errors.
 ---
 # Troubleshooting DSC
 
-_Applies To: Windows PowerShell 4.0, Windows PowerShell 5.0_
+> Applies To: Windows PowerShell 4.0, Windows PowerShell 5.0
 
-This topic describes ways to troubleshoot DSC when problems arise.
+This article provides troubleshooting instruction for common errors.
 
 ## WinRM Dependency
 
@@ -17,10 +18,10 @@ PowerShell elevated session, to enable WinRM.
 
 ## Using Get-DscConfigurationStatus
 
-The [Get-DscConfigurationStatus](/powershell/module/PSDesiredStateConfiguration/Get-DscConfigurationStatus) cmdlet gets
-information about configuration status from a target node. A rich object is returned that includes
-high-level information about whether or not the configuration run was successful or not. You can
-dig into the object to discover details about the configuration run such as:
+The [Get-DscConfigurationStatus](/powershell/module/PSDesiredStateConfiguration/Get-DscConfigurationStatus)
+cmdlet gets information about configuration status from a target node. A rich object is returned
+that includes high-level information about whether or not the configuration run was successful or
+not. You can dig into the object to discover details about the configuration run such as:
 
 - All of the resources that failed
 - Any resource that requested a reboot
@@ -82,12 +83,11 @@ PSComputerName        :
 ## My script won't run: Using DSC logs to diagnose script errors
 
 Like all Windows software, DSC records errors and events in
-[logs](/windows/desktop/EventLog/about-event-logging) that can be viewed from
-the [Event Viewer](https://support.microsoft.com/hub/4338813/windows-help).
-Examining these logs can help you understand why a particular operation failed, and how to prevent
-failure in the future. Writing configuration scripts can be tricky, so to make tracking errors
-easier as you author, use the DSC Log resource to track the progress of your configuration in the
-DSC Analytic event log.
+[logs](/windows/desktop/EventLog/about-event-logging) that can be viewed from the
+[Event Viewer](https://support.microsoft.com/hub/4338813/windows-help). Examining these logs can
+help you understand why a particular operation failed, and how to prevent failure in the future.
+Writing configuration scripts can be tricky, so to make tracking errors easier as you author, use
+the DSC Log resource to track the progress of your configuration in the DSC Analytic event log.
 
 ## Where are DSC event logs?
 
@@ -107,18 +107,18 @@ TimeCreated                     Id LevelDisplayName Message
 11/17/2014 10:27:23 PM        4102 Information      Job {02C38626-D95A-47F1-9DA2-C1D44A7128E7} :
 ```
 
-As shown above, DSC's primary log name is **Microsoft->Windows->DSC** (other log names under
-Windows are not shown here for brevity). The primary name is appended to the channel name to create
-the complete log name. The DSC engine writes mainly into three types of logs:
-[Operational, Analytic, and Debug logs](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc722404(v=ws.11)). Since
-the analytic and debug logs are turned off by default, you should enable them in Event Viewer. To
-do this, open Event Viewer by typing Show-EventLog in Windows PowerShell; or, click the **Start**
-button, click **Control Panel**, click **Administrative Tools**, and then click **Event Viewer**.
-On the **View** menu in Event viewer, click **Show Analytic and Debug Logs**. The log name for the
+As shown above, DSC's primary log name is **Microsoft->Windows->DSC** (other log names under Windows
+are not shown here for brevity). The primary name is appended to the channel name to create the
+complete log name. The DSC engine writes mainly into three types of logs:
+[Operational, Analytic, and Debug logs](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc722404(v=ws.11)).
+Since the analytic and debug logs are turned off by default, you should enable them in Event Viewer.
+To do this, open Event Viewer by typing Show-EventLog in Windows PowerShell; or, click the **Start**
+button, click **Control Panel**, click **Administrative Tools**, and then click **Event Viewer**. On
+the **View** menu in Event viewer, click **Show Analytic and Debug Logs**. The log name for the
 analytic channel is **Microsoft-Windows-Dsc/Analytic**, and the debug channel is
 **Microsoft-Windows-Dsc/Debug**. You could also use the
-[wevtutil](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/cc732848(v=ws.11)) utility to enable the logs, as
-shown in the following example.
+[wevtutil](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/cc732848(v=ws.11))
+utility to enable the logs, as shown in the following example.
 
 ```powershell
 wevtutil.exe set-log "Microsoft-Windows-Dsc/Analytic" /q:true /e:true
@@ -187,9 +187,9 @@ $DscEvents=[System.Array](Get-WinEvent "Microsoft-Windows-Dsc/Operational") `
 $SeparateDscOperations = $DscEvents | Group {$_.Properties[0].value}
 ```
 
-Here, the variable `$SeparateDscOperations` contains logs grouped by the job IDs. Each array
-element of this variable represents a group of events logged by a different DSC operation, allowing
-access to more information about the logs.
+Here, the variable `$SeparateDscOperations` contains logs grouped by the job IDs. Each array element
+of this variable represents a group of events logged by a different DSC operation, allowing access
+to more information about the logs.
 
 ```
 PS C:\> $SeparateDscOperations
@@ -223,13 +223,13 @@ TimeCreated                     Id LevelDisplayName Message
 ```
 
 You can extract the data in the variable `$SeparateDscOperations` using
-[Where-Object](/powershell/module/microsoft.powershell.core/where-object). Following are five scenarios
-in which you might want to extract data for troubleshooting DSC:
+[Where-Object](/powershell/module/microsoft.powershell.core/where-object). Following are five
+scenarios in which you might want to extract data for troubleshooting DSC:
 
 ### 1: Operations failures
 
-All events have [severity levels](/windows/desktop/WES/defining-severity-levels). This
-information can be used to identify the error events:
+All events have [severity levels](/windows/desktop/WES/defining-severity-levels). This information
+can be used to identify the error events:
 
 ```
 PS C:\> $SeparateDscOperations | Where-Object {$_.Group.LevelDisplayName -contains "Error"}
@@ -289,16 +289,16 @@ PS C:\> $myFailedEvent.Message
 
 Job {5BCA8BE7-5BB6-11E3-BF41-00155D553612} :
 DSC Engine Error :
- Error Message Current configuration does not exist. Execute Start-DscConfiguration command with -Path pa
-rameter to specify a configuration file and create a current configuration first.
+ Error Message Current configuration does not exist. Execute Start-DscConfiguration command with
+ -Path parameter to specify a configuration file and create a current configuration first.
 Error Code : 1
 ```
 
 ### 5: All events generated for a particular job ID.
 
 `$SeparateDscOperations` is an array of groups, each of which has the name as the unique job ID. By
-running the `Where-Object` cmdlet, you can extract those groups of events that have a particular
-job ID:
+running the `Where-Object` cmdlet, you can extract those groups of events that have a particular job
+ID:
 
 ```powershell
 PS C:\> ($SeparateDscOperations | Where-Object {$_.Name -eq $jobX} ).Group
@@ -640,7 +640,8 @@ Configuration ConfigTestDebugMode
 ConfigTestDebugMode
 ```
 
-You will see that the contents of file: `$env:SystemDrive\OutputFromTestProviderDebugMode.txt` is **1**.
+You will see that the contents of file: `$env:SystemDrive\OutputFromTestProviderDebugMode.txt` is
+**1**.
 
 Now, update the provider code using the following script:
 
@@ -678,7 +679,7 @@ function Test-TargetResource
 ```
 
 This script generates a random number and updates the provider code accordingly. With `DebugMode`
-set to false, the contents of the file "**$env:SystemDrive\OutputFromTestProviderDebugMode.txt**"
+set to false, the contents of the file `$env:SystemDrive\OutputFromTestProviderDebugMode.txt`
 are never changed.
 
 Now, set `DebugMode` to **"ForceModuleImport"** in your configuration script:
@@ -713,8 +714,8 @@ onlyProperty                            PSComputerName
 When applying a metaconfiguration to a server to register it with an instance of Windows Pull Server,
 you might encounter the following error.
 
-```PowerShell
-Registration of the Dsc Agent with the server https://<serverfqdn>:8080/PSDSCPullServer.svc failed. The underlying error is: The attempt to register Dsc Agent with AgentId <ID> with the server 
+```
+Registration of the Dsc Agent with the server https://<serverfqdn>:8080/PSDSCPullServer.svc failed. The underlying error is: The attempt to register Dsc Agent with AgentId <ID> with the server
 https://<serverfqdn>:8080/PSDSCPullServer.svc/Nodes(AgentId='<ID>') returned unexpected response code InternalServerError. .
     + CategoryInfo          : InvalidResult: (root/Microsoft/...gurationManager:String) [], CimException
     + FullyQualifiedErrorId : RegisterDscAgentUnsuccessful,Microsoft.PowerShell.DesiredStateConfiguration.Commands.RegisterDscAgentCommand
@@ -722,8 +723,8 @@ https://<serverfqdn>:8080/PSDSCPullServer.svc/Nodes(AgentId='<ID>') returned une
 ```
 
 This can occur when the certificate used on the server to encrypt traffic has a common name (CN)
-that is different than the DNS name used by the node to resolve the URL.
-Update the Windows Pull Server instance to use a certificate with a corrected name.
+that is different than the DNS name used by the node to resolve the URL. Update the Windows Pull
+Server instance to use a certificate with a corrected name.
 
 ## Error when running Sysprep after applying a DSC Configuration
 
@@ -734,9 +735,9 @@ you might encounter the following error.
 SYSPRP LaunchDll:Failure occurred while executing 'DscCore.dll,SysPrep_Cleanup', returned error code 0x2
 ```
 
-Generalizing a server after it has been configured using Windows PowerShell Desired State Configuration is not
-a supported scenario.  Instead, apply configurations to Windows after the Specialize phase of Windows Setup has
-completed.
+Generalizing a server after it has been configured using Windows PowerShell Desired State
+Configuration is not a supported scenario. Instead, apply configurations to Windows after the
+Specialize phase of Windows Setup has completed.
 
 ## See Also
 
