@@ -1,6 +1,6 @@
 ---
 title: PowerShell Core Support Lifecycle
-description: Policies governing support for PowerShell Core
+description: Details the policies governing support for PowerShell
 ms.date: 03/09/2020
 ---
 # PowerShell Support Lifecycle
@@ -10,28 +10,29 @@ separately from Windows PowerShell. PowerShell isn't included in the Windows
 licensing agreements.
 
 PowerShell is supported under traditional Microsoft support agreements, including [paid support][],
-[Microsoft Enterprise Agreements][enterprise-agreement], and [Microsoft Software Assurance][assurance].
-You can also pay for [assisted support][] for PowerShell by filing a support request for your
-problem.
+[Microsoft Enterprise Agreements][enterprise-agreement], and
+[Microsoft Software Assurance][assurance]. You can also pay for [assisted support][] for PowerShell
+by filing a support request for your problem.
 
 ## Community Support
 
 We also offer [community support][] on GitHub where you can file an issue, bug, or feature request.
-Also, you may find help from other members of the community in the Microsoft [PowerShell Tech Community][]
-or any of the forums listed in the community section of [PowerShell][pshub] hub page. We offer no
-guarantee there that the community will address or resolve your issue in a timely manner. If you
-have a problem that requires immediate attention, you should use the traditional, paid support
-options.
+Also, you may find help from other members of the community in the Microsoft
+[PowerShell Tech Community][] or any of the forums listed in the community section of
+[PowerShell][pshub] hub page. We offer no guarantee there that the community will address or resolve
+your issue in a timely manner. If you have a problem that requires immediate attention, you should
+use the traditional, paid support options.
 
 ## Lifecycle of PowerShell 7
 
-With the release of PowerShell 7, PowerShell continues to be supported under the [Microsoft Modern Lifecycle Policy][modern],
-but support dates are linked to [.NET Core's support lifecycle][Long-Term]. In this servicing
-approach, customers can choose Long Term Support (LTS) releases or Current releases. PowerShell 7.0
-is an LTS release. Support ends with the support of .NET Core 3.1. The next LTS release follows the
-next .NET Core LTS release. See the [PowerShell releases end of life table](#powershell-releases-end-of-life)
-for current ending support dates. LTS release updates only contain critical security and servicing
-updates and fixes that are designed to avoid or minimize impact to existing workloads.
+With the release of PowerShell 7, PowerShell continues to be supported under the
+[Microsoft Modern Lifecycle Policy][modern], but support dates are linked to
+[.NET Core's support lifecycle][Long-Term]. In this servicing approach, customers can choose Long
+Term Support (LTS) releases or Current releases. PowerShell 7.0 is an LTS release. Support ends with
+the support of .NET Core 3.1. The next LTS release follows the next .NET Core LTS release. See the
+[PowerShell releases end of life table](#powershell-releases-end-of-life) for current ending support
+dates. LTS release updates only contain critical security and servicing updates and fixes that are
+designed to avoid or minimize impact to existing workloads.
 
 A Current release is a release that occurs between LTS releases. Current releases can contain
 critical fixes, innovations, and new features. A Current release is supported for three months after
@@ -126,7 +127,8 @@ the dates when various releases will no longer be supported.
 > [!NOTE]
 > This document is about support for PowerShell Core 6 and PowerShell 7. Windows PowerShell (1.0 -
 > 5.1) is a component of the Windows OS. Components receive the same support as their parent product
-> or platform. For more information, see [Product and Services Lifecycle Information](/lifecycle/products/)
+> or platform. For more information, see
+> [Product and Services Lifecycle Information](/lifecycle/products/).
 
 ## Unsupported platforms
 
@@ -162,15 +164,17 @@ makes no guarantees of responsiveness or fixes.
 
 ## Windows PowerShell Compatibility
 
-The support lifecycle for PowerShell doesn't cover modules that ship outside of the PowerShell 7 release package. For
-example, using the `ActiveDirectory` module that ships as part of Windows Server is supported under
-the [Windows Support Lifecycle][].
+The support lifecycle for PowerShell doesn't cover modules that ship outside of the PowerShell 7
+release package. For example, using the `ActiveDirectory` module that ships as part of Windows
+Server is supported under the [Windows Support Lifecycle][].
 
 PowerShell 7 improves compatibility with existing PowerShell modules written for Windows PowerShell.
-For more information, see the [about_Windows_Compatibility][] article and the [module compatibility list][].
+For more information, see the [about_Windows_Compatibility][] article and the
+[module compatibility list][].
 
 > [!NOTE]
-> The [**WindowsPSModulePath**](https://www.powershellgallery.com/packages/WindowsPSModulePath) module is no longer necessary in PowerShell 7 and is not supported.
+> The [**WindowsPSModulePath**](https://www.powershellgallery.com/packages/WindowsPSModulePath)
+> module is no longer necessary in PowerShell 7 and is not supported.
 
 ## Experimental features
 

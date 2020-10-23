@@ -4,6 +4,7 @@ ms.date: 06/02/2020
 ms.topic: guide
 ms.custom: Contributor-mikefrobbins
 ms.reviewer: mirobb
+description: This chapter introduces the concepts of output formatting, command aliases, providers, and comparison operations.
 ---
 # Chapter 5 - Formatting, aliases, providers, comparison
 

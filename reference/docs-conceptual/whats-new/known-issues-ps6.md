@@ -2,6 +2,7 @@
 ms.date: 02/03/2020
 keywords:  powershell,core
 title:  Known Issues for PowerShell 6.0
+description: This is a summary of known issues or limitations in PowerShell 6
 ---
 # Known Issues for PowerShell 6.0
 

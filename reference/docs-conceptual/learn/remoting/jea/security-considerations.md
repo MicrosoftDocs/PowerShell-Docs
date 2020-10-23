@@ -2,6 +2,7 @@
 ms.date:  07/10/2019
 keywords:  jea,powershell,security
 title:  JEA Security Considerations
+description: Since JEA allows these users to run admin commands without having full admin access, you can then remove those users from highly privileged security groups.
 ---
 
 # JEA Security Considerations

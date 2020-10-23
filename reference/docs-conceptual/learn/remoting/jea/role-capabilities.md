@@ -2,6 +2,7 @@
 ms.date:  07/10/2019
 keywords:  jea,powershell,security
 title:  JEA Role Capabilities
+description: A role capability is a PowerShell data file with the .psrc extension that lists all the cmdlets, functions, providers, and external programs that are made available to connecting users.
 ---
 
 # JEA Role Capabilities

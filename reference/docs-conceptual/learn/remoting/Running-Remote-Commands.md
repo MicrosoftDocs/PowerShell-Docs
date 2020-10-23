@@ -2,6 +2,7 @@
 ms.date: 08/21/2020
 keywords:  powershell,cmdlet
 title:  Running Remote Commands
+description: Explains the methods for running commands on remote systems using PowerShell.
 ---
 # Running Remote Commands
 
