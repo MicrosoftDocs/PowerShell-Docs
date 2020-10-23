@@ -2,6 +2,7 @@
 ms.date: 07/08/2020
 keywords:  dsc,powershell,configuration,setup
 title:  Authoring a DSC resource in C#
+description: This article demonstrates how to create a DSC resource as a cmdlet written in C#.
 ---
 
 # Authoring a DSC resource in C\#
@@ -10,7 +11,8 @@ title:  Authoring a DSC resource in C#
 
 Typically, a Windows PowerShell Desired State Configuration (DSC) custom resource is implemented in
 a PowerShell script. However, you can also implement the functionality of a DSC custom resource by
-writing cmdlets in C#. For an introduction on writing cmdlets in C#, see [Writing a Windows PowerShell Cmdlet](/powershell/scripting/developer/windows-powershell).
+writing cmdlets in C#. For an introduction on writing cmdlets in C#, see
+[Writing a Windows PowerShell Cmdlet](/powershell/scripting/developer/windows-powershell).
 
 Aside from implementing the resource in C# as cmdlets, the process of creating the MOF schema,
 creating the folder structure, importing and using your custom DSC resource are the same as
@@ -28,9 +30,9 @@ The following is the MOF resource definition.
 [ClassVersion("1.0.0"), FriendlyName("xDemoFile")]
 class MSFT_XDemoFile : OMI_BaseResource
 {
-                [Key, Description("path")] String Path;
-                [Write, Description("Should the file be present"), ValueMap{"Present","Absent"}, Values{"Present","Absent"}] String Ensure;
-                [Write, Description("Contentof file.")] String Content;
+     [Key, Description("path")] String Path;
+     [Write, Description("Should the file be present"), ValueMap{"Present","Absent"}, Values{"Present","Absent"}] String Ensure;
+     [Write, Description("Contentof file.")] String Content;
 };
 ```
 
@@ -69,8 +71,9 @@ namespace cSharpDSCResourceExample
         public string Path { get; set; }
 
         /// <summary>
-        /// Implement the logic to return the current state of the resource as a hashtable with keys being the resource properties
-        /// and the values are the corresponding current value on the machine.
+        /// Implement the logic to return the current state of the resource as a hashtable with
+        /// keys being the resource properties and the values are the corresponding current
+        /// value on the machine.
         /// </summary>
         protected override void ProcessRecord()
         {

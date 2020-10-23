@@ -2,6 +2,7 @@
 ms.date:  06/12/2017
 keywords:  dsc,powershell,configuration,setup
 title:  Understanding DSC's role in a CI/CD pipeline
+description: This article describes the types of approaches available for combining configurations and resources in a CI/CD pipeline.
 ---
 
 # Understanding DSC's role in a CI/CD pipeline

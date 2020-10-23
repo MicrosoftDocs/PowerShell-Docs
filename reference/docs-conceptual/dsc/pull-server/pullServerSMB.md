@@ -2,6 +2,7 @@
 ms.date:  04/11/2018
 keywords:  dsc,powershell,configuration,setup
 title:  Setting up a DSC SMB pull server
+description: A DSC SMB pull server is a computer hosting SMB file shares that make DSC configuration files and DSC resources available to target nodes when those nodes ask for them.
 ---
 # Setting up a DSC SMB pull server
 
