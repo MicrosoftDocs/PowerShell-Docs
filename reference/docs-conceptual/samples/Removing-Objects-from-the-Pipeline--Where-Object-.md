@@ -2,6 +2,7 @@
 ms.date:  12/23/2019
 keywords:  powershell,cmdlet
 title:  Removing Objects from the Pipeline Where Object
+description: The Where-Object cmdlet allows you to filter objects that are passed on the pipeline.
 ---
 # Removing Objects from the Pipeline (Where-Object)
 

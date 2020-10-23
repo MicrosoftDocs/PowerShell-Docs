@@ -2,6 +2,7 @@
 ms.date:  12/23/2019
 keywords:  powershell,cmdlet
 title:  Performing Networking Tasks
+description: This article shows how to use WMI classes in PowerShell to manage network configuration setting in Windows.
 ---
 # Performing Networking Tasks
 

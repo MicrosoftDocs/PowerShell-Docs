@@ -2,6 +2,7 @@
 ms.date:  06/05/2017
 keywords:  powershell,cmdlet
 title:  Working with Registry Entries
+description: This article discusses how to deal with registry entries using PowerShell.
 ---
 # Working with Registry Entries
 

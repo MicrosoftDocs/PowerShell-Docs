@@ -2,6 +2,7 @@
 ms.date:  06/05/2017
 keywords:  powershell,cmdlet
 title:  Other Useful Scripting Objects
+description: This article describes objects that provide additional scripting functionality in the Windows PowerShell ISE.
 ---
 # Other Useful Scripting Objects
 
@@ -42,7 +43,7 @@ shows some example key-value pairs that are contained in `$psLocalHelp`.
 $psLocalHelp | Format-List
 ```
 
-```output
+```Output
 Key   : Add-Computer
 Value : WindowsPowerShellHelp.chm::/html/093f660c-b8d5-43cf-aa0c-54e5e54e76f9.htm
 
@@ -66,7 +67,7 @@ the web. You can add or delete topics from this list.
 $psOnlineHelp | Format-List
 ```
 
-```output
+```Output
 Key   : Add-Computer
 Value : https://go.microsoft.com/fwlink/p/?LinkID=135194
 

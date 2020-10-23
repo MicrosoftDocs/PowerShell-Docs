@@ -2,6 +2,7 @@
 ms.date:  12/23/2019
 keywords:  powershell,cmdlet
 title:  Repeating a Task for Multiple Objects ForEach Object
+description: The ForEach-Object allows you to repeat a set of commands for each object passed through the pipeline.
 ---
 # Repeating a Task for Multiple Objects (ForEach-Object)
 

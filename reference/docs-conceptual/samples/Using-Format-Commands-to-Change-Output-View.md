@@ -2,6 +2,7 @@
 ms.date:  11/22/2019
 keywords:  powershell,cmdlet
 title:  Using Format Commands to Change Output View
+description: PowerShell has a extensible formatting system that allows you to present output in lists, tables, or custom layouts.
 ---
 # Using Format Commands to Change Output View
 

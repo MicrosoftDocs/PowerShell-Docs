@@ -2,6 +2,7 @@
 ms.date:  12/23/2019
 keywords:  powershell,cmdlet
 title:  Getting WMI Objects Get CimInstance
+description: This article shows several examples of how to get instances of WMI objects from a computer system.
 ---
 # Getting WMI Objects (Get-CimInstance)
 

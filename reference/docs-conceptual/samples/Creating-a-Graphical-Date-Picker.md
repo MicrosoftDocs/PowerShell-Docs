@@ -2,6 +2,7 @@
 ms.date:  06/05/2017
 keywords:  powershell,cmdlet
 title:  Creating a Graphical Date Picker
+description: This article shows how to create a custom calendar-style control by using the .NET Framework form-building features in Windows PowerShell.
 ---
 # Creating a Graphical Date Picker
 
@@ -71,13 +72,13 @@ $form = New-Object Windows.Forms.Form -Property @{
 
 This example assigns values to four properties of this class by using the **Property** property and hashtable.
 
-1. **StartPosition**: If you don’t add this property, Windows selects a location when the form is
-   opened. By setting this property to **CenterScreen**, you’re automatically displaying the form in
+1. **StartPosition**: If you don't add this property, Windows selects a location when the form is
+   opened. By setting this property to **CenterScreen**, you're automatically displaying the form in
    the middle of the screen each time it loads.
 
 2. **Size**:
    This is the size of the form, in pixels.
-   The preceding script creates a form that’s 243 pixels wide by 230 pixels tall.
+   The preceding script creates a form that's 243 pixels wide by 230 pixels tall.
 
 3. **Text**:
    This becomes the title of the window.
@@ -98,7 +99,7 @@ $form.Controls.Add($calendar)
 ```
 
 Next, create an **OK** button for your form. Specify the size and behavior of the **OK** button. In
-this example, the button position is 165 pixels from the form’s top edge, and 38 pixels from the
+this example, the button position is 165 pixels from the form's top edge, and 38 pixels from the
 left edge. The button height is 23 pixels, while the button length is 75 pixels. The script uses
 predefined Windows Forms types to determine the button behaviors.
 
