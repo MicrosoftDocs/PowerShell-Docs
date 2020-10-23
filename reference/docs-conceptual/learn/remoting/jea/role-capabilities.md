@@ -57,7 +57,7 @@ point.
 ## Create a role capability file
 
 You can create a new PowerShell role capability file with the
-[New-PSRoleCapabilityFile](/powershell/module/microsoft.powershell.core/new-psrolecapabilityfile?view=powershell-6)
+[New-PSRoleCapabilityFile](/powershell/module/microsoft.powershell.core/new-psrolecapabilityfile)
 cmdlet.
 
 ```powershell

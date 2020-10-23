@@ -2,7 +2,7 @@
 ms.date: 02/03/2020
 keywords:  powershell,core
 title:  Breaking Changes for PowerShell 6.0
-descriptions: This article summarizes the differences between Windows PowerShell 5.1 and PowerShell 6.0.
+description: This article summarizes the differences between Windows PowerShell 5.1 and PowerShell 6.0.
 ---
 
 # Breaking Changes for PowerShell 6.x
