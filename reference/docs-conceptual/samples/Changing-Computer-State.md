@@ -2,10 +2,11 @@
 ms.date:  12/23/2019
 keywords:  powershell,cmdlet
 title:  Changing Computer State
+description: This example shows how you can use external commands from PowerShell to manage the configuration of a computer.
 ---
 # Changing Computer State
 
-To reset a computer in PowerShell, use either a standard command-line tool, WMI or CIM class.
+To reset a computer in PowerShell, use either a standard command-line tool, WMI, or a CIM class.
 Although you are using PowerShell only to run the tool, learning how to change a computer's power
 state in PowerShell illustrates some of the important details about working with external tools in
 PowerShell.

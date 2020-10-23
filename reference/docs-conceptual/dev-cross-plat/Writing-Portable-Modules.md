@@ -2,6 +2,7 @@
 ms.date: 10/21/2020
 keywords:  powershell,cmdlet
 title:  Writing Portable Modules
+description: This article explains how to create modules new modules or update existing modules so that they work across the platforms supported by PowerShell.
 ---
 
 # Portable Modules

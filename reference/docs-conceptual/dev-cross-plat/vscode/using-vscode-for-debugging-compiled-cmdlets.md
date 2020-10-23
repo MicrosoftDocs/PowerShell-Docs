@@ -138,6 +138,15 @@ The path in the `Import-Module` argument is the default build output path when y
 use the path to that instead. The `/` path separator works on Windows, Linux, and macOS. You must
 use the integrated terminal to run the PowerShell commands you want to debug.
 
+> [!NOTE]
+> If the debugger doesn't stop at any breakpoints, look in the Visual Studio Code Debug Console for a line that says:
+>
+> ```
+> Loaded '/path/to/myModule.dll'. Skipped loading symbols. Module is optimized and the debugger option 'Just My Code' is enabled.
+> ```
+>
+> If you see this, add `"justMyCode": false` to your launch config (at the same level as `"console": "integratedTerminal"`.
+
 ### Configuring launch.json for Windows PowerShell
 
 This launch configuration works for testing your cmdlets in Windows PowerShell (`powershell.exe`).

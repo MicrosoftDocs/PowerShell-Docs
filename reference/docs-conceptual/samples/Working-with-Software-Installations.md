@@ -2,6 +2,7 @@
 ms.date:  12/23/2019
 keywords:  powershell,cmdlet
 title:  Working with Software Installations
+description: This article shows how to use WMI to manage software installed in Windows.
 ---
 # Working with Software Installations
 

@@ -2,6 +2,7 @@
 ms.date:  06/05/2017
 keywords:  powershell,cmdlet
 title:  Using Tab Expansion
+description: Explains how to use the Tab Expansion feature in PowerShell.
 ---
 # Using Tab Expansion
 

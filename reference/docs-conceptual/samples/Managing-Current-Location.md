@@ -2,6 +2,7 @@
 ms.date:  06/05/2017
 keywords:  powershell,cmdlet
 title:  Managing Current Location
+description: PowerShell uses the noun Location to refer to the working directory, and implements a family of cmdlets to examine and manipulate your location.
 ---
 # Managing Current Location
 

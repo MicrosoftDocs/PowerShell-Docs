@@ -2,6 +2,7 @@
 ms.date: 07/28/2020
 keywords:  powershell,cmdlet
 title:  Working With Files Folders and Registry Keys
+description: This article discusses how to deal with registry key manipulation tasks using PowerShell.
 ---
 # Working With Files, Folders and Registry Keys
 

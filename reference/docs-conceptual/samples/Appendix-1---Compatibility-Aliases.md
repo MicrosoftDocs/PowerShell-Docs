@@ -2,6 +2,7 @@
 ms.date: 08/03/2020
 keywords:  powershell,cmdlet
 title:  Appendix 1 Compatibility Aliases
+description: PowerShell has several aliases that allow UNIX and cmd.exe users to use familiar commands.
 ---
 # Appendix 1 - Compatibility Aliases
 

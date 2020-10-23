@@ -2,6 +2,7 @@
 ms.date:  06/05/2017
 keywords:  powershell,cmdlet
 title:  Redirecting Data with Out Cmdlets
+description: This article shows how to use the cmdlets that manage output in PowerShell.
 ---
 # Redirecting Data with Out-* Cmdlets
 
