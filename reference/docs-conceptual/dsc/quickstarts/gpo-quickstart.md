@@ -15,7 +15,7 @@ the following commands for accomplishing this task.
 - `ConvertFrom-GPO` - Converts Group Policies, stored as files. You can also specify a directory
   containing multiple policies that will be combined into one Configuration.
   - To export Group Policies in your environment, use the
-    [Backup-GPO](/powershell/module/grouppolicy/backup-gpo?view=win10-ps) cmdlet, or follow the
+    [Backup-GPO](/powershell/module/grouppolicy/backup-gpo) cmdlet, or follow the
     instructions in
     [Export a GPO to a File](/microsoft-desktop-optimization-pack/agpm/export-a-gpo-to-a-file).
 - `ConvertFrom-SCM` - Converts Security Compliance Manager baselines, stored as `.xml` files.

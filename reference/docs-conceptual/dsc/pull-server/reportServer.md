@@ -2,8 +2,7 @@
 ms.date:  06/12/2017
 keywords:  dsc,powershell,configuration,setup
 title:  Using a DSC report server
-description: The Local Configuration Manager (LCM) of a node can be configured to send reports about its
-configuration status to a pull server that can then be queried to retrieve that data.
+description: The Local Configuration Manager (LCM) of a node can be configured to send reports about its configuration status to a pull server that can then be queried to retrieve that data.
 ---
 # Using a DSC report server
 

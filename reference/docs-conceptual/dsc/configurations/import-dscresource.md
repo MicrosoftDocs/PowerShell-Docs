@@ -2,8 +2,7 @@
 ms.date:  12/12/2018
 keywords:  dsc,powershell,configuration,setup
 title:  Using Import-DSCResource
-description: Import-DSCResource is a dynamic keyword that can only be used inside a Configuration script
-block. It is used to import the resource modules needed in your Configuration.
+description: Import-DSCResource is a dynamic keyword that can only be used inside a Configuration script block. It is used to import the resource modules needed in your Configuration.
 ---
 
 # Using Import-DSCResource
