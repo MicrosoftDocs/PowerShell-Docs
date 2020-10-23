@@ -3,7 +3,7 @@ external help file: Microsoft.PowerShell.Security.dll-Help.xml
 keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Security
-ms.date: 02/25/2019
+ms.date: 10/23/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.security/get-credential?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Credential
@@ -106,6 +106,10 @@ password. The command saves the resulting credentials in the `$Credential` varia
 The **PromptForCredential** method is an alternative to using the `Get-Credential` cmdlet. When you
 use **PromptForCredential**, you can specify the caption, messages, and user name that appear in the
 prompt.
+
+For more information, see the
+[PromptForCredential](/dotnet/api/system.management.automation.host.pshostuserinterface.promptforcredential)
+documentation in the SDK.
 
 ### Example 6
 
@@ -289,3 +293,4 @@ and `New-PSDrive` cmdlets.
 
 ## RELATED LINKS
 
+[PromptForCredential](/dotnet/api/system.management.automation.host.pshostuserinterface.promptforcredential)

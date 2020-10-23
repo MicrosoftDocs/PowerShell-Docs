@@ -3,7 +3,7 @@ external help file: Microsoft.PowerShell.Security.dll-Help.xml
 keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Security
-ms.date: 05/18/2020
+ms.date: 10/23/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.security/get-credential?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Credential
@@ -107,7 +107,11 @@ The **PromptForCredential** method is an alternative to using the `Get-Credentia
 use **PromptForCredential**, you can specify the caption, messages, and user name that appear in the
 prompt.
 
-### Example 7
+For more information, see the
+[PromptForCredential](/dotnet/api/system.management.automation.host.pshostuserinterface.promptforcredential)
+documentation in the SDK.
+
+### Example 6
 
 This example shows how to create a credential object that is identical to the object that
 `Get-Credential` returns without prompting the user. This method requires a plain text password,
@@ -129,7 +133,7 @@ text and the **Force** parameter to confirm that you understand the risks of usi
 The third command uses the `New-Object` cmdlet to create a **PSCredential** object from the values
 in the `$User` and `$PWord` variables.
 
-### Example 8
+### Example 7
 
 ```powershell
 Get-Credential -Message "Credential are required for access to the \\Server1\Scripts file share." -User Server01\PowerUser
@@ -145,7 +149,7 @@ This command uses the **Message** and **UserName** parameters of the `Get-Creden
 command format is designed for shared scripts and functions. In this case, the message tells the
 user why credentials are needed and gives them confidence that the request is legitimate.
 
-### Example 9
+### Example 8
 
 ```powershell
 Invoke-Command -ComputerName Server01 {Get-Credential Domain01\User02}
@@ -288,3 +292,5 @@ Beginning in PowerShell 3.0, it is supported on select cmdlets, such as the `Get
 and `New-PSDrive` cmdlets.
 
 ## RELATED LINKS
+
+[PromptForCredential](/dotnet/api/system.management.automation.host.pshostuserinterface.promptforcredential)
