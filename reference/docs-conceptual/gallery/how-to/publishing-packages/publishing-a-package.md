@@ -1,8 +1,7 @@
 ---
 ms.date:  06/12/2017
-contributor:  JKeithB
-keywords:  gallery,powershell,cmdlet,psgallery
 title:  Creating and publishing an item
+description: This article covers the mechanics and important steps for preparing a script or module, and publishing it to the PowerShell Gallery
 ---
 # Creating and publishing an item
 
@@ -10,9 +9,9 @@ The PowerShell Gallery is the place to publish and share stable PowerShell modul
 Desired State Configuration (DSC) resources with the broader PowerShell user community.
 
 This article covers the mechanics and important steps for preparing a script or module, and
-publishing it to the PowerShell Gallery. We strongly encourage that you review the [Publishing Guidelines](../../concepts/publishing-guidelines.md)
-to understand how to ensure that the items you publish will be more widely accepted by PowerShell
-Gallery users.
+publishing it to the PowerShell Gallery. We strongly encourage that you review the
+[Publishing Guidelines](../../concepts/publishing-guidelines.md) to understand how to ensure that
+the items you publish will be more widely accepted by PowerShell Gallery users.
 
 The minimum requirements to publish an item to the PowerShell Gallery are:
 
@@ -45,11 +44,13 @@ find the API Key.
 The PowerShell Gallery provides information to gallery users drawn from metadata fields that are
 included in the script or module manifest. Creating or modifying items for publication to the
 PowerShell Gallery has a small set of requirements for information supplied in the item manifest. We
-strongly encourage that you review the Item Metadata section of the [Publishing Guidelines](../../concepts/publishing-guidelines.md)
-to learn how to provide the best information to users with your items.
+strongly encourage that you review the Item Metadata section of the
+[Publishing Guidelines](../../concepts/publishing-guidelines.md) to learn how to provide the best
+information to users with your items.
 
-The [New-ModuleManifest](/powershell/module/microsoft.powershell.core/new-modulemanifest) and [New-ScriptFileInfo](/powershell/module/PowerShellGet/New-ScriptFileInfo)
-cmdlets will create the manifest template for you, with placeholders for all the manifest elements.
+The [New-ModuleManifest](/powershell/module/microsoft.powershell.core/new-modulemanifest) and
+[New-ScriptFileInfo](/powershell/module/PowerShellGet/New-ScriptFileInfo) cmdlets will create the
+manifest template for you, with placeholders for all the manifest elements.
 
 Both manifests have two sections that are important for publishing, the Primary Key Data and PSData
 area of PrivateData. The primary key data in a PowerShell module manifest is everything outside of
@@ -105,9 +106,10 @@ the PowerShell Gallery. The Gallery Operations team will contact item owners to 
 are found.
 
 If the manifest information in your item cannot be read by the PowerShell Gallery infrastructure,
-you will not be able to publish. [Test-ModuleManifest](/powershell/module/microsoft.powershell.core/test-modulemanifest)
-will catch common problems that would cause the module to not be usable when it is installed. It
-must be run for every module prior to publishing it to the PowerShell Gallery.
+you will not be able to publish.
+[Test-ModuleManifest](/powershell/module/microsoft.powershell.core/test-modulemanifest) will catch
+common problems that would cause the module to not be usable when it is installed. It must be run
+for every module prior to publishing it to the PowerShell Gallery.
 
 Likewise, [Test-ScriptFileInfo](/powershell/module/PowerShellGet/test-scriptfileinfo) validates the
 metadata in a script, and must be run on every script (published separate from a module) prior to
@@ -115,8 +117,9 @@ publishing it to the PowerShell Gallery.
 
 ## Publishing Items
 
-You must use the [Publish-Script](/powershell/module/PowerShellGet/publish-script) or [Publish-Module](/powershell/module/PowerShellGet/publish-module)
-to publish items to the PowerShell Gallery. These commands both require:
+You must use the [Publish-Script](/powershell/module/PowerShellGet/publish-script) or
+[Publish-Module](/powershell/module/PowerShellGet/publish-module) to publish items to the PowerShell
+Gallery. These commands both require:
 
 - The path to the item you will publish. For a module, use the folder named for your module. If you
   specify a folder that contains multiple versions of the same module, you must specify
@@ -135,7 +138,8 @@ Examples would be:
 * `Publish-Module -Path ".\MyModule" -NugetAPIKey "GUID" -WhatIf -Verbose`
 * `Publish-Script -Path ".\MyScriptFile.PS1" -NugetAPIKey "GUID" -WhatIf -Verbose`
 
-Review the output carefully, and if you see no errors or warnings, repeat the command without -WhatIf.
+Review the output carefully, and if you see no errors or warnings, repeat the command without
+-WhatIf.
 
 All items that are published to the PowerShell Gallery will be scanned for viruses, and will be
 analyzed using the PowerShell Script Analyzer. Any issues that arise at that time will be sent back
@@ -148,8 +152,5 @@ your item.
   PowerShell Gallery Operations team will provide feedback via that account, including issues from
   the PSSA or antivirus scans. If the email account is invalid, or if serious issues are reported to
   the account and left unresolved for a long time, items can be considered abandoned and will be
-  removed from the PowerShell Gallery as described in our [Terms of
-  Use](https://www.powershellgallery.com/policies/Terms).
-- We recommend you subscribe to Comments for each PowerShell Gallery item you publish. This allows
-  you to be notified if anyone comments on your items in the PowerShell Gallery. This is optional,
-  as it requires creating an account with LiveFyre.
+  removed from the PowerShell Gallery as described in our
+  [Terms of Use](https://www.powershellgallery.com/policies/Terms).

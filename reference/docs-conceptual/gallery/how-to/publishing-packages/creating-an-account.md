@@ -1,8 +1,7 @@
 ---
 ms.date:  09/11/2018
-contributor:  JKeithB
-keywords:  gallery,powershell,cmdlet,psgallery
 title:  Creating a PowerShell Gallery account
+description: This article describe the user account requirements for the PowerShell Gallery
 ---
 
 # Creating a PowerShell Gallery account

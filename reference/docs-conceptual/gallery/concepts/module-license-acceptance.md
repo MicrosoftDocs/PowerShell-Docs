@@ -1,8 +1,7 @@
 ---
 ms.date:  06/09/2017
-schema:  2.0.0
-keywords:  powershell
 title:  Modules Requiring License Acceptance
+description: The article explains how to work with modules published in the PowerShell Gallery that require acceptance of an end user license.
 ---
 # Modules Requiring License Acceptance
 

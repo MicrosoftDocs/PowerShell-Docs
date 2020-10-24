@@ -1,8 +1,7 @@
 ---
 ms.date:  09/05/2018
-contributor:  JKeithB
-keywords:  gallery,powershell,cmdlet,psgallery
 title:  PowerShell Gallery Account Settings
+description:  This article describes the settings of your account profile in the PowerShell Gallery
 ---
 # PowerShell Gallery Account Settings
 
