@@ -1,8 +1,7 @@
 ---
 ms.date:  06/12/2017
-contributor:  JKeithB
-keywords:  gallery,powershell,cmdlet,psgallery,psget
 title:  The PowerShell Gallery
+description: The PowerShell Gallery is the central repository for PowerShell modules, scripts, and DSC resources.
 ---
 # The PowerShell Gallery
 

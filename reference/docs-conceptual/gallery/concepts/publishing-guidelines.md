@@ -1,8 +1,6 @@
 ---
 ms.date:  06/12/2017
-contributor:  JKeithB, SydneyhSmith
-keywords:  gallery,powershell,cmdlet,psgallery
-description:  Guidelines for Publishers
+description:  This article describes recommended steps to ensure the packages published to the PowerShell Gallery are widely adopted and provide high value to users.
 title:  PowerShell Gallery Publishing Guidelines and Best Practices
 ---
 # PowerShellGallery Publishing Guidelines and Best Practices
@@ -124,18 +122,12 @@ Package owners who respond properly to feedback are highly valued by the communi
 provide constructive feedback are important to respond to, as they're interested enough in the
 package to try to help improve it.
 
-There are two feedback methods available in the PowerShell Gallery:
+There is one feedback method available in the PowerShell Gallery:
 
 - Contact Owner: This allows a user to send an email to the package owner. As a package owner, is
   important to monitor the email address used with the PowerShell Gallery packages, and respond to
   issues that are raised. The one disadvantage to this method is that only the user and owner will
   ever see the communication, so the owner may have to answer the same question many times.
-- Comments: At the bottom of the package page is a **Comment** field. The advantage to this system
-  is that other users can see the comments and responses, which reduces the number of times any
-  single question must be answered. As a package owner, it's strongly recommended that you follow
-  the comments made for each package. See
-  [Providing Feedback via Social Media or Comments](../how-to/working-with-packages/social-media-feedback.md)
-  for details on how to do that.
 
 Owners who respond to feedback constructively are appreciated by the community. Use the opportunity
 in the report to request more information. If needed, provide a workaround, or identify if an update

@@ -1,8 +1,8 @@
 ---
 ms.date:  10/17/2017
-contributor:  keithb
-keywords:  gallery,powershell,cmdlet,psget
 title:  Prerelease versions of scripts
+description: The PowerShellGet module provides support for tagging scripts with versions greater than 1.0.0 as a prerelease using semantic versioning.
+---
 ---
 # Prerelease versions of scripts
 

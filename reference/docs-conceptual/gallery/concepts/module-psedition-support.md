@@ -1,8 +1,7 @@
 ---
 ms.date: 06/10/2020
-contributor:  manikb
-keywords:  gallery,powershell,cmdlet,psget
 title:  Modules with compatible PowerShell Editions
+description: This article explains how the PowerShellGet cmdlets support the Desktop and Core editions of PowerShell modules.
 ---
 # Modules with compatible PowerShell Editions
 

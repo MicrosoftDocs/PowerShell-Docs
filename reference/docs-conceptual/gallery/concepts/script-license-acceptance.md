@@ -1,20 +1,23 @@
 ---
 ms.date:  06/09/2017
-schema:  2.0.0
-keywords:  powershell
 title:  Requiring license acceptance for scripts
+description: The article explains how to work with scripts published in the PowerShell Gallery that require acceptance of an end user license.
 ---
 # Requiring license acceptance for scripts
 
-License Acceptance is not supported for scripts. However, the scenario where a script depends on a module that requires license acceptance is supported.
+License Acceptance is not supported for scripts. However, the scenario where a script depends on a
+module that requires license acceptance is supported.
 
-Script commands(Install-Script/Save-Script/Update-Script) support a new parameter -AcceptLicense that behaves as though user saw the license. If -AcceptLicense is not specified; the user will be shown license.txt for dependent module and prompted to accept the license.
+The PowerShellGet script commands support the parameter **AcceptLicense** that behaves as though
+user saw the license. If **AcceptLicense** is not specified the user is shown the `license.txt` file
+for dependent module and prompted to accept the license.
 
 ## EXAMPLES
 
 ### Example 1: Install Script with dependencies requiring license acceptance
 
-Script 'ScriptRequireLicenseAcceptance' depends on module 'ModuleRequireLicenseAcceptance'. User is prompted to Accept License.
+Script 'ScriptRequireLicenseAcceptance' depends on module 'ModuleRequireLicenseAcceptance'. User is
+prompted to Accept License.
 
 ```PowerShell
 PS> Install-Script -Name ScriptRequireLicenseAcceptance
@@ -34,7 +37,8 @@ Do you accept the license terms for module 'ModuleRequireLicenseAcceptance'.
 
 ### Example 2: Install Script with dependencies requiring license acceptance and -AcceptLicense
 
-Script 'ScriptRequireLicenseAcceptance' depends on module 'ModuleRequireLicenseAcceptance'. User is not prompted to accept license as -AcceptLicense is specified.
+Script 'ScriptRequireLicenseAcceptance' depends on module 'ModuleRequireLicenseAcceptance'. User is
+not prompted to accept license as -AcceptLicense is specified.
 
 ```PowerShell
 PS> Install-Script -Name ScriptRequireLicenseAcceptance -AcceptLicense
