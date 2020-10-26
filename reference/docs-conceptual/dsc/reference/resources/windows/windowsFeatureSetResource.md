@@ -35,7 +35,7 @@ WindowsFeatureSet [string] #ResourceName
 
 |  Property  |  Description   |
 |---|---|
-|Name |The names of the roles or features that you want to ensure are added or removed. This is the same as the **Name** property of the [Get-WindowsFeature](/powershell/module/servermanager/get-windowsfeature?view=winserver2012r2-ps) cmdlet, and not the display name of the roles or features. |
+|Name |The names of the roles or features that you want to ensure are added or removed. This is the same as the **Name** property of the [Get-WindowsFeature](/powershell/module/servermanager/get-windowsfeature) cmdlet, and not the display name of the roles or features. |
 |Source |Indicates the location of the source file to use for installation, if necessary. |
 |IncludeAllSubFeature |Set this property to `$true` to include all required subfeatures with of the features you specify with the **Name** property. |
 |Credential |The credentials to use to add or remove the roles or features. |

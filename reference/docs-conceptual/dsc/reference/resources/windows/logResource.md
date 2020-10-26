@@ -49,7 +49,7 @@ The following example shows how to include a message in the Microsoft-Windows-De
 Configuration/Analytic event log.
 
 > [!NOTE]
-> If you run [Test-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/test-dscconfiguration?view=powershell-5.1)
+> If you run [Test-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/test-dscconfiguration)
 > with this resource configured, it will always return **$false**.
 
 ```powershell
