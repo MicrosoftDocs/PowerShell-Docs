@@ -1,6 +1,8 @@
 ---
-title: "Common Parameter Names | Microsoft Docs"
-ms.date: "09/13/2016"
+ms.date: 09/13/2016
+ms.topic: reference
+title: Common Parameter Names
+description: Common Parameter Names
 ---
 # Common Parameter Names
 

@@ -1,6 +1,8 @@
 ---
-title: "Label Element for ListItem for ListControl (Format) | Microsoft Docs"
-ms.date: "09/13/2016"
+ms.date: 09/13/2016
+ms.topic: reference
+title: Label Element for ListItem for ListControl (Format)
+description: Label Element for ListItem for ListControl (Format)
 ---
 # Label Element for ListItem for ListControl (Format)
 

@@ -1,6 +1,8 @@
 ---
-title: "Name Element for SelectionSet (Format) | Microsoft Docs"
-ms.date: "09/13/2016"
+ms.date: 09/13/2016
+ms.topic: reference
+title: Name Element for SelectionSet (Format)
+description: Name Element for SelectionSet (Format)
 ---
 # Name Element for SelectionSet (Format)
 

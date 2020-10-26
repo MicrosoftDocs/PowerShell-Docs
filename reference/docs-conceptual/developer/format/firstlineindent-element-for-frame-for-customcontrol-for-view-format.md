@@ -1,6 +1,8 @@
 ---
-title: "FirstLineIndent Element for Frame for CustomControl for View (Format) | Microsoft Docs"
-ms.date: "09/13/2016"
+ms.date: 09/13/2016
+ms.topic: reference
+title: FirstLineIndent Element for Frame for CustomControl for View (Format)
+description: FirstLineIndent Element for Frame for CustomControl for View (Format)
 ---
 # FirstLineIndent Element for Frame for CustomControl for View (Format)
 

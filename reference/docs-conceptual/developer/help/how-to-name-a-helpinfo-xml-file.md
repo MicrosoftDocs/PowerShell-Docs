@@ -1,6 +1,8 @@
 ---
-title: How to Name a HelpInfo XML File
 ms.date: 09/12/2016
+ms.topic: reference
+title: How to Name a HelpInfo XML File
+description: How to Name a HelpInfo XML File
 ---
 # How to Name a HelpInfo XML File
 

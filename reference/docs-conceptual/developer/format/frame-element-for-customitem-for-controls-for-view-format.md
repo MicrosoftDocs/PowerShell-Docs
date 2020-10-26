@@ -1,6 +1,8 @@
 ---
-title: "Frame Element for CustomItem for Controls for View (Format) | Microsoft Docs"
-ms.date: "09/13/2016"
+ms.date: 09/13/2016
+ms.topic: reference
+title: Frame Element for CustomItem for Controls for View (Format)
+description: Frame Element for CustomItem for Controls for View (Format)
 ---
 # Frame Element for CustomItem for Controls for View (Format)
 

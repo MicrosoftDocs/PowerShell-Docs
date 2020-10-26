@@ -1,6 +1,8 @@
 ---
-title: Naming Help Files
 ms.date: 09/12/2016
+ms.topic: reference
+title: Naming Help Files
+description: Naming Help Files
 ---
 # Naming Help Files
 

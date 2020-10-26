@@ -1,6 +1,8 @@
 ---
-title: How to Add Dynamic Parameters to a Provider Help Topic
 ms.date: 09/13/2016
+ms.topic: reference
+title: How to Add Dynamic Parameters to a Provider Help Topic
+description: How to Add Dynamic Parameters to a Provider Help Topic
 ---
 # How to Add Dynamic Parameters to a Provider Help Topic
 

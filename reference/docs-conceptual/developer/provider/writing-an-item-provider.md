@@ -1,6 +1,8 @@
 ---
-title: "Writing an item provider | Microsoft Docs"
-ms.date: "09/13/2016"
+ms.date: 09/13/2016
+ms.topic: reference
+title: Writing an item provider
+description: Writing an item provider
 ---
 # Writing an item provider
 

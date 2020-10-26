@@ -1,8 +1,8 @@
 ---
-title: "How to Validate an Argument Range | Microsoft Docs"
-ms.date: "09/13/2016"
-helpviewer_keywords:
-  - "ValidateRange attribute, example"
+ms.date: 09/13/2016
+ms.topic: reference
+title: How to Validate an Argument Range
+description: How to Validate an Argument Range
 ---
 # How to Validate an Argument Range
 

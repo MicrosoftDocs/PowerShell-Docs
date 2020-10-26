@@ -1,10 +1,8 @@
 ---
-title: "Parameter Attribute Declaration | Microsoft Docs"
-ms.date: "09/13/2016"
-helpviewer_keywords:
-  - "attributes, Parameter"
-  - "Parameter attribute, described"
-  - "Parameter attribute"
+ms.date: 09/13/2016
+ms.topic: reference
+title: Parameter Attribute Declaration
+description: Parameter Attribute Declaration
 ---
 # Parameter Attribute Declaration
 

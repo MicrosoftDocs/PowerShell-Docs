@@ -1,6 +1,8 @@
 ---
-title: "Width Element for TableColumnHeader for TableControl (Format) | Microsoft Docs"
-ms.date: "09/13/2016"
+ms.date: 09/13/2016
+ms.topic: reference
+title: Width Element for TableColumnHeader for TableControl (Format)
+description: Width Element for TableColumnHeader for TableControl (Format)
 ---
 # Width Element for TableColumnHeader for TableControl (Format)
 

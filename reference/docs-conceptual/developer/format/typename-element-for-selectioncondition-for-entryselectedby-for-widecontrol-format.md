@@ -1,6 +1,8 @@
 ---
-title: "TypeName Element for SelectionCondition for EntrySelectedBy for WideControl (Format) | Microsoft Docs"
-ms.date: "09/13/2016"
+ms.date: 09/13/2016
+ms.topic: reference
+title: TypeName Element for SelectionCondition for EntrySelectedBy for WideControl (Format)
+description: TypeName Element for SelectionCondition for EntrySelectedBy for WideControl (Format)
 ---
 # TypeName Element for SelectionCondition for EntrySelectedBy for WideControl (Format)
 

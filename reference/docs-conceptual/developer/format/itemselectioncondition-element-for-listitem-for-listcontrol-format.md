@@ -1,6 +1,8 @@
 ---
-title: "ItemSelectionCondition Element for ListItem for ListControl (Format) | Microsoft Docs"
-ms.date: "09/13/2016"
+ms.date: 09/13/2016
+ms.topic: reference
+title: ItemSelectionCondition Element for ListItem for ListControl (Format)
+description: ItemSelectionCondition Element for ListItem for ListControl (Format)
 ---
 # ItemSelectionCondition Element for ListItem for ListControl (Format)
 

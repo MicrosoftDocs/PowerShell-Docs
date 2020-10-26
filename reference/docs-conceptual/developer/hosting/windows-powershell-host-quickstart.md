@@ -1,6 +1,8 @@
 ---
-title: "Windows PowerShell Host Quickstart | Microsoft Docs"
-ms.date: "09/12/2016"
+ms.date: 09/12/2016
+ms.topic: reference
+title: Windows PowerShell Host Quickstart
+description: Windows PowerShell Host Quickstart
 ---
 # Windows PowerShell Host Quickstart
 

@@ -1,6 +1,8 @@
 ---
-title: "Standard Cmdlet Parameter Names and Types | Microsoft Docs"
-ms.date: "09/13/2016"
+ms.date: 09/13/2016
+ms.topic: reference
+title: Standard Cmdlet Parameter Names and Types
+description: Standard Cmdlet Parameter Names and Types
 ---
 # Standard Cmdlet Parameter Names and Types
 

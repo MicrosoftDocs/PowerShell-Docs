@@ -1,6 +1,8 @@
 ---
-title: "CustomEntries Element for CustomControl for Controls for Configuration (Format) | Microsoft Docs"
-ms.date: "09/13/2016"
+ms.date: 09/13/2016
+ms.topic: reference
+title: CustomEntries Element for CustomControl for Controls for Configuration (Format)
+description: CustomEntries Element for CustomControl for Controls for Configuration (Format)
 ---
 # CustomEntries Element for CustomControl for Controls for Configuration (Format)
 

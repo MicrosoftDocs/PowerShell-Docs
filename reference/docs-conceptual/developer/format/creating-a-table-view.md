@@ -1,6 +1,8 @@
 ---
-title: "Creating a Table View | Microsoft Docs"
-ms.date: "09/13/2016"
+ms.date: 09/13/2016
+ms.topic: reference
+title: Creating a Table View
+description: Creating a Table View
 ---
 # Creating a Table View
 

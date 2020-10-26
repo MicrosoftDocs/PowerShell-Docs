@@ -1,6 +1,8 @@
 ---
-title: "EntrySelectedBy Element for EnumerableExpansion (Format) | Microsoft Docs"
-ms.date: "09/13/2016"
+ms.date: 09/13/2016
+ms.topic: reference
+title: EntrySelectedBy Element for EnumerableExpansion (Format)
+description: EntrySelectedBy Element for EnumerableExpansion (Format)
 ---
 # EntrySelectedBy Element for EnumerableExpansion (Format)
 

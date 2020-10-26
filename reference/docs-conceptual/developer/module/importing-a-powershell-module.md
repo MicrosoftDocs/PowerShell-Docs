@@ -1,6 +1,8 @@
 ---
-title: "Importing a PowerShell Module | Microsoft Docs"
-ms.date: "02/03/2020"
+ms.date: 02/03/2020
+ms.topic: reference
+title: Importing a PowerShell Module
+description: Importing a PowerShell Module
 ---
 # Importing a PowerShell Module
 

@@ -1,6 +1,8 @@
 ---
-title: "GetProc05 Code Samples | Microsoft Docs"
-ms.date: "09/13/2016"
+ms.date: 09/13/2016
+ms.topic: reference
+title: GetProc05 Code Samples
+description: GetProc05 Code Samples
 ---
 # GetProc05 Code Samples
 

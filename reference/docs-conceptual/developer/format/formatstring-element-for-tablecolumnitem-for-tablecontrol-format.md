@@ -1,6 +1,8 @@
 ---
-title: "FormatString Element for TableColumnItem for TableControl (Format) | Microsoft Docs"
-ms.date: "09/13/2016"
+ms.date: 09/13/2016
+ms.topic: reference
+title: FormatString Element for TableColumnItem for TableControl (Format)
+description: FormatString Element for TableColumnItem for TableControl (Format)
 ---
 # FormatString Element for TableColumnItem for TableControl (Format)
 

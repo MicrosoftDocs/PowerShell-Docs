@@ -1,6 +1,8 @@
 ---
-title: "AccessDBProviderSample06 | Microsoft Docs"
-ms.date: "09/13/2016"
+ms.date: 09/13/2016
+ms.topic: reference
+title: AccessDBProviderSample06
+description: AccessDBProviderSample06
 ---
 # AccessDBProviderSample06
 

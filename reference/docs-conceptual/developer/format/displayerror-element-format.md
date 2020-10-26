@@ -1,6 +1,8 @@
 ---
-title: "DisplayError Element (Format) | Microsoft Docs"
-ms.date: "09/13/2016"
+ms.date: 09/13/2016
+ms.topic: reference
+title: DisplayError Element (Format)
+description: DisplayError Element (Format)
 ---
 # DisplayError Element (Format)
 

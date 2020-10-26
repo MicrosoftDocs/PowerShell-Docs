@@ -1,6 +1,8 @@
 ---
-title: "Windows PowerShell Formatting Files | Microsoft Docs"
-ms.date: "09/13/2016"
+ms.date: 09/13/2016
+ms.topic: reference
+title: Windows PowerShell Formatting Files
+description: Windows PowerShell Formatting Files
 ---
 # Windows PowerShell Formatting Files
 

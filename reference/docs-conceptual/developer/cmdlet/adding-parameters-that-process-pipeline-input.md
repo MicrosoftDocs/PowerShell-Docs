@@ -1,9 +1,8 @@
 ---
-title: "Adding Parameters that Process Pipeline Input | Microsoft Docs"
-ms.date: "09/13/2016"
-helpviewer_keywords:
-  - "cmdlets [PowerShell Programmer's Guide], pipeline input"
-  - "parameters [PowerShell Programmer's Guide], pipeline input"
+ms.date: 09/13/2016
+ms.topic: reference
+title: Adding Parameters that Process Pipeline Input
+description: Adding Parameters that Process Pipeline Input
 ---
 # Adding Parameters that Process Pipeline Input
 

@@ -1,6 +1,8 @@
 ---
-title: "Creating multiple runspaces | Microsoft Docs"
-ms.date: "09/13/2016"
+ms.date: 09/13/2016
+ms.topic: reference
+title: Creating multiple runspaces
+description: Creating multiple runspaces
 ---
 # Creating multiple runspaces
 

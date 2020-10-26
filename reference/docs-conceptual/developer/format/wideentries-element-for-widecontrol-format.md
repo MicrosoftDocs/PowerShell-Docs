@@ -1,6 +1,8 @@
 ---
-title: "WideEntries Element for WideControl (Format) | Microsoft Docs"
-ms.date: "09/13/2016"
+ms.date: 09/13/2016
+ms.topic: reference
+title: WideEntries Element for WideControl (Format)
+description: WideEntries Element for WideControl (Format)
 ---
 # WideEntries Element for WideControl (Format)
 

@@ -1,6 +1,8 @@
 ---
-title: "Runspace01 (VB.NET) Code Sample | Microsoft Docs"
-ms.date: "09/13/2016"
+ms.date: 09/13/2016
+ms.topic: reference
+title: Runspace01 (VB.NET) Code Sample
+description: Runspace01 (VB.NET) Code Sample
 ---
 # Runspace01 (VB.NET) Code Sample
 

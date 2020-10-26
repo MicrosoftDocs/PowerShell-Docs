@@ -1,8 +1,8 @@
 ---
-title: "Cmdlet Input Processing Methods | Microsoft Docs"
-ms.date: "09/13/2016"
-helpviewer_keywords:
-  - "virtual methods (PowerShell SDK]"
+ms.date: 09/13/2016
+ms.topic: reference
+title: Cmdlet Input Processing Methods
+description: Cmdlet Input Processing Methods
 ---
 # Cmdlet Input Processing Methods
 

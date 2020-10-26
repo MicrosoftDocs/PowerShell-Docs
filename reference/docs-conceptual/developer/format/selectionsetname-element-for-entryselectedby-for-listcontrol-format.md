@@ -1,6 +1,8 @@
 ---
-title: "SelectionSetName Element for EntrySelectedBy for ListControl (Format) | Microsoft Docs"
-ms.date: "09/13/2016"
+ms.date: 09/13/2016
+ms.topic: reference
+title: SelectionSetName Element for EntrySelectedBy for ListControl (Format)
+description: SelectionSetName Element for EntrySelectedBy for ListControl (Format)
 ---
 # SelectionSetName Element for EntrySelectedBy for ListControl (Format)
 

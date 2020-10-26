@@ -1,9 +1,8 @@
 ---
-title: "Windows PowerShell Session State | Microsoft Docs"
-ms.date: "09/13/2016"
-helpviewer_keywords:
-  - "Cmdlets [PowerShell], session state"
-  - "session state [PowerShell]"
+ms.date: 09/13/2016
+ms.topic: reference
+title: Windows PowerShell Session State
+description: Windows PowerShell Session State
 ---
 # Windows PowerShell Session State
 

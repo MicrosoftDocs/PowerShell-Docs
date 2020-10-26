@@ -1,6 +1,8 @@
 ---
-title: How to Add a Cmdlet Description
 ms.date: 09/13/2016
+ms.topic: reference
+title: How to Add a Cmdlet Description
+description: How to Add a Cmdlet Description
 ---
 # How to Add a Cmdlet Description
 

@@ -1,9 +1,8 @@
 ---
-title: "Creating a Cmdlet without Parameters | Microsoft Docs"
-ms.date: "09/13/2016"
-helpviewer_keywords:
-  - "cmdlets [PowerShell Programmers Guide], creating"
-  - "cmdlets [PowerShell Programmers Guide], basic cmdlet"
+ms.date: 09/13/2016
+ms.topic: reference
+title: Creating a Cmdlet without Parameters
+description: Creating a Cmdlet without Parameters
 ---
 # Creating a Cmdlet without Parameters
 

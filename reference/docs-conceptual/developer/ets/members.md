@@ -1,6 +1,8 @@
 ---
-title: Extended Type System class members
 ms.date: 07/09/2020
+ms.topic: reference
+title: Extended Type System class members
+description: Extended Type System class members
 ---
 # Extended Type System class members
 

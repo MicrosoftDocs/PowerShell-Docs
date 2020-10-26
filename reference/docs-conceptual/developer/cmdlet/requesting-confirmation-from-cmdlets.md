@@ -1,12 +1,8 @@
 ---
-title: "Requesting Confirmation from Cmdlets | Microsoft Docs"
-ms.date: "09/13/2016"
-helpviewer_keywords:
-  - "ConfirmImpact [PowerShell Programmer's Guide], described"
-  - "ShouldContinue [PowerShell Programmer's Guide], described"
-  - "user feedback [PowerShell Programmer's Guide], requesting"
-  - "ShouldProcess [PowerShell Programmer's Guide], described"
-  - "ConfirmPreference [PowerShell Programmer's Guide], described"
+ms.date: 09/13/2016
+ms.topic: reference
+title: Requesting Confirmation from Cmdlets
+description: Requesting Confirmation from Cmdlets
 ---
 # Requesting Confirmation from Cmdlets
 

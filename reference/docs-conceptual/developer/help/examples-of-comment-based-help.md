@@ -1,6 +1,8 @@
 ---
-title: Examples of Comment-Based Help
 ms.date: 09/12/2016
+ms.topic: reference
+title: Examples of Comment-Based Help
+description: Examples of Comment-Based Help
 ---
 
 # Examples of Comment-Based Help

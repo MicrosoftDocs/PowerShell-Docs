@@ -1,6 +1,8 @@
 ---
-title: How Updatable Help Works
 ms.date: 09/13/2016
+ms.topic: reference
+title: How Updatable Help Works
+description: How Updatable Help Works
 ---
 # How Updatable Help Works
 

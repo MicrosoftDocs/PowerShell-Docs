@@ -1,6 +1,8 @@
 ---
-title: "Provider cmdlet parameters | Microsoft Docs"
-ms.date: "09/13/2016"
+ms.date: 09/13/2016
+ms.topic: reference
+title: Provider cmdlet parameters
+description: Provider cmdlet parameters
 ---
 # Provider cmdlet parameters
 

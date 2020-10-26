@@ -1,6 +1,8 @@
 ---
-title: "StopProcessSample01 Sample | Microsoft Docs"
-ms.date: "09/13/2016"
+ms.date: 09/13/2016
+ms.topic: reference
+title: StopProcessSample01 Sample
+description: StopProcessSample01 Sample
 ---
 # StopProcessSample01 Sample
 

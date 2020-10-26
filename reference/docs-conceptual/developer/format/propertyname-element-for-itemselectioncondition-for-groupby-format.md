@@ -1,6 +1,8 @@
 ---
-title: "PropertyName Element for ItemSelectionCondition for GroupBy (Format) | Microsoft Docs"
-ms.date: "09/13/2016"
+ms.date: 09/13/2016
+ms.topic: reference
+title: PropertyName Element for ItemSelectionCondition for GroupBy (Format)
+description: PropertyName Element for ItemSelectionCondition for GroupBy (Format)
 ---
 # PropertyName Element for ItemSelectionCondition for GroupBy (Format)
 

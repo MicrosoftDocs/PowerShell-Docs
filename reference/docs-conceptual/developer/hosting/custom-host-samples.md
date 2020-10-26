@@ -1,6 +1,8 @@
 ---
-title: "Custom Host Samples | Microsoft Docs"
-ms.date: "09/13/2016"
+ms.date: 09/13/2016
+ms.topic: reference
+title: Custom Host Samples
+description: Custom Host Samples
 ---
 # Custom Host Samples
 

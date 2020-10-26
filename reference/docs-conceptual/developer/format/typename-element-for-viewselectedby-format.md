@@ -1,6 +1,8 @@
 ---
-title: "TypeName Element for ViewSelectedBy (Format) | Microsoft Docs"
-ms.date: "09/13/2016"
+ms.date: 09/13/2016
+ms.topic: reference
+title: TypeName Element for ViewSelectedBy (Format)
+description: TypeName Element for ViewSelectedBy (Format)
 ---
 # TypeName Element for ViewSelectedBy (Format)
 

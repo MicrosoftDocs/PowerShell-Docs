@@ -1,6 +1,8 @@
 ---
-title: "Configuration Element (Format) | Microsoft Docs"
-ms.date: "09/13/2016"
+ms.date: 09/13/2016
+ms.topic: reference
+title: Configuration Element (Format)
+description: Configuration Element (Format)
 ---
 # Configuration Element (Format)
 

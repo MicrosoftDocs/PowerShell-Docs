@@ -1,13 +1,8 @@
 ---
-title: "Adding Parameters That Process Command-Line Input | Microsoft Docs"
-ms.date: "09/13/2016"
-helpviewer_keywords:
-- "cmdlets [PowerShell Programmer's Guide], parameters"
-- "Get-Proc cmdlet [PowerShell Programmer's Guide]"
-- "cmdlets [PowerShell Programmer's Guide], command line input"
-- "command line input [PowerShell Programmer's Guide]"
-- "parameters [PowerShell Programmer's Guide]"
-- "cmdlets [PowerShell Programmer's Guide], creating"
+ms.date: 09/13/2016
+ms.topic: reference
+title: Adding Parameters That Process Command-Line Input
+description: Adding Parameters That Process Command-Line Input
 ---
 # Adding Parameters That Process Command-Line Input
 

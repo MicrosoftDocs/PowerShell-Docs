@@ -1,8 +1,8 @@
 ---
-title: "How to Create a Windows PowerShell Snap-in | Microsoft Docs"
-ms.date: "09/13/2016"
-helpviewer_keywords:
-  - "snap-ins [PowerShell SDK], examples"
+ms.date: 09/13/2016
+ms.topic: reference
+title: How to Create a Windows PowerShell Snap-in
+description: How to Create a Windows PowerShell Snap-in
 ---
 # How to Create a Windows PowerShell Snap-in
 

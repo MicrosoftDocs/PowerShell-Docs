@@ -1,6 +1,8 @@
 ---
-title: "FormatString Element for WideItem for WideControl (Format) | Microsoft Docs"
-ms.date: "09/13/2016"
+ms.date: 09/13/2016
+ms.topic: reference
+title: FormatString Element for WideItem for WideControl (Format)
+description: FormatString Element for WideItem for WideControl (Format)
 ---
 # FormatString Element for WideItem for WideControl (Format)
 

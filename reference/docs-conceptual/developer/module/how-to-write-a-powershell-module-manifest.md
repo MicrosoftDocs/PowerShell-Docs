@@ -1,6 +1,8 @@
 ---
-title: "How to Write a PowerShell Module Manifest | Microsoft Docs"
-ms.date: "10/16/2019"
+ms.date: 10/16/2019
+ms.topic: reference
+title: How to Write a PowerShell Module Manifest
+description: How to Write a PowerShell Module Manifest
 ---
 
 # How to write a PowerShell module manifest

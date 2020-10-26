@@ -1,6 +1,8 @@
 ---
-title: Updatable Help Overview
 ms.date: 03/22/2012
+ms.topic: reference
+title: Updatable Help Overview
+description: Updatable Help Overview
 ---
 # Updatable Help Overview
 

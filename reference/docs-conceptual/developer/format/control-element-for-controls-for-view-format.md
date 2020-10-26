@@ -1,6 +1,8 @@
 ---
-title: "Control Element for Controls for View  (Format) | Microsoft Docs"
-ms.date: "09/13/2016"
+ms.date: 09/13/2016
+ms.topic: reference
+title: Control Element for Controls for View  (Format)
+description: Control Element for Controls for View  (Format)
 ---
 # Control Element for Controls for View  (Format)
 

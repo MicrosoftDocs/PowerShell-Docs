@@ -1,6 +1,8 @@
 ---
-title: Creating a Windows PowerShell Content Provider
 ms.date: 09/13/2016
+ms.topic: reference
+title: Creating a Windows PowerShell Content Provider
+description: Creating a Windows PowerShell Content Provider
 ---
 # Creating a Windows PowerShell Content Provider
 

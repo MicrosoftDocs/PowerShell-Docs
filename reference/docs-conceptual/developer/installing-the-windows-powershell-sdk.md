@@ -1,6 +1,8 @@
 ---
-title: Installing the Windows PowerShell SDK
 ms.date: 03/30/2020
+ms.topic: reference
+title: Installing the Windows PowerShell SDK
+description: Installing the Windows PowerShell SDK
 ---
 # Installing the Windows PowerShell SDK
 

@@ -1,6 +1,8 @@
 ---
-title: "GetProc02 (C#) Sample Code | Microsoft Docs"
-ms.date: "09/13/2016"
+ms.date: 09/13/2016
+ms.topic: reference
+title: GetProc02 (C#) Sample Code
+description: GetProc02 (C#) Sample Code
 ---
 # GetProc02 (C#) Sample Code
 

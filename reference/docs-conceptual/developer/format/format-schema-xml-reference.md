@@ -1,6 +1,8 @@
 ---
-title: "Format Schema XML Reference | Microsoft Docs"
-ms.date: "09/13/2016"
+ms.date: 09/13/2016
+ms.topic: reference
+title: Format Schema XML Reference
+description: Format Schema XML Reference
 ---
 # Format Schema XML Reference
 

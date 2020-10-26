@@ -1,6 +1,8 @@
 ---
-title: "Custom Formatting Files | Microsoft Docs"
-ms.date: "09/13/2016"
+ms.date: 09/13/2016
+ms.topic: reference
+title: Custom Formatting Files
+description: Custom Formatting Files
 ---
 # Custom Formatting Files
 

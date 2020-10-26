@@ -1,6 +1,8 @@
 ---
-title: "How to Support Transactions | Microsoft Docs"
-ms.date: "09/13/2016"
+ms.date: 09/13/2016
+ms.topic: reference
+title: How to Support Transactions
+description: How to Support Transactions
 ---
 # How to Support Transactions
 

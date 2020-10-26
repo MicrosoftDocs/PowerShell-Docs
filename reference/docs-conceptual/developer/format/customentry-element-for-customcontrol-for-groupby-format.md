@@ -1,6 +1,8 @@
 ---
-title: "CustomEntry Element for CustomControl for GroupBy (Format) | Microsoft Docs"
-ms.date: "09/13/2016"
+ms.date: 09/13/2016
+ms.topic: reference
+title: CustomEntry Element for CustomControl for GroupBy (Format)
+description: CustomEntry Element for CustomControl for GroupBy (Format)
 ---
 # CustomEntry Element for CustomControl for GroupBy (Format)
 

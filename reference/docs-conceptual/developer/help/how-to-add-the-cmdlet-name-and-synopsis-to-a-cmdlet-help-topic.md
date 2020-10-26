@@ -1,6 +1,8 @@
 ---
-title: How to Add the Cmdlet Name and Synopsis to a Cmdlet Help Topic
 ms.date: 09/13/2016
+ms.topic: reference
+title: How to Add the Cmdlet Name and Synopsis to a Cmdlet Help Topic
+description: How to Add the Cmdlet Name and Synopsis to a Cmdlet Help Topic
 ---
 # How to Add the Cmdlet Name and Synopsis to a Cmdlet Help Topic
 

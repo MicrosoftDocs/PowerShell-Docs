@@ -1,6 +1,8 @@
 ---
-title: "Alignment Element for TableColumnItem for TableControl (Format) | Microsoft Docs"
-ms.date: "09/13/2016"
+ms.date: 09/13/2016
+ms.topic: reference
+title: Alignment Element for TableColumnItem for TableControl (Format)
+description: Alignment Element for TableColumnItem for TableControl (Format)
 ---
 # Alignment Element for TableColumnItem for TableControl (Format)
 

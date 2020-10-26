@@ -1,8 +1,8 @@
 ---
-title: "Designing Your Windows PowerShell Provider | Microsoft Docs"
-ms.date: "09/13/2016"
-helpviewer_keywords:
-  - "providers [PowerShell Programmer's Guide], designing"
+ms.date: 09/13/2016
+ms.topic: reference
+title: Designing Your Windows PowerShell Provider
+description: Designing Your Windows PowerShell Provider
 ---
 # Designing Your Windows PowerShell Provider
 
