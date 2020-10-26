@@ -1,7 +1,8 @@
 ---
 ms.date: 07/14/2020
-keywords:  dsc,powershell,configuration,setup
-title:  DisableDebugConfiguration method
+ms.topic: reference
+title: DisableDebugConfiguration method
+description: DisableDebugConfiguration method
 ---
 # DisableDebugConfiguration method
 

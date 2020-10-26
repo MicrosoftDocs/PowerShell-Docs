@@ -1,7 +1,8 @@
 ---
 ms.date: 07/17/2020
-keywords:  dsc,powershell,configuration,setup
-title:  GetMetaConfiguration method
+ms.topic: reference
+title: GetMetaConfiguration method
+description: GetMetaConfiguration method
 ---
 # GetMetaConfiguration method
 

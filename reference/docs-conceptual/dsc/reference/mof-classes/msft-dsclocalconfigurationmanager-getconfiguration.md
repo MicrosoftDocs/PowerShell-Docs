@@ -1,7 +1,8 @@
 ---
 ms.date: 07/17/2020
-keywords:  dsc,powershell,configuration,setup
-title:  GetConfiguration method
+ms.topic: reference
+title: GetConfiguration method
+description: GetConfiguration method
 ---
 # GetConfiguration method
 

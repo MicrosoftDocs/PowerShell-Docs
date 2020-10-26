@@ -1,7 +1,8 @@
 ---
 ms.date: 07/17/2020
-keywords:  dsc,powershell,configuration,setup
-title:  TestConfiguration method
+ms.topic: reference
+title: TestConfiguration method
+description: TestConfiguration method
 ---
 # TestConfiguration method
 

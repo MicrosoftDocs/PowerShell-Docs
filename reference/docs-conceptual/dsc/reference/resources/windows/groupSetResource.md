@@ -1,8 +1,8 @@
 ---
 ms.date: 09/20/2019
-keywords: dsc,powershell,configuration,setup
-description: Provides a mechanism to manage local groups on the target node.
+ms.topic: reference
 title: DSC GroupSet Resource
+description: DSC GroupSet Resource
 ---
 # DSC GroupSet Resource
 

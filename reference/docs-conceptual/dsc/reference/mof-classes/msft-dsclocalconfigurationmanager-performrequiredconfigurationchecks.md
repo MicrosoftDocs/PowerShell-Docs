@@ -1,7 +1,8 @@
 ---
 ms.date: 07/17/2020
-keywords:  dsc,powershell,configuration,setup
-title:  PerformRequiredConfigurationChecks method
+ms.topic: reference
+title: PerformRequiredConfigurationChecks method
+description: PerformRequiredConfigurationChecks method
 ---
 # PerformRequiredConfigurationChecks method
 

@@ -1,7 +1,8 @@
 ---
 ms.date: 07/16/2020
-keywords:  dsc,powershell,configuration,setup
-title:  DSC WindowsProcess Resource
+ms.topic: reference
+title: DSC WindowsProcess Resource
+description: DSC WindowsProcess Resource
 ---
 # DSC WindowsProcess Resource
 

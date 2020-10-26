@@ -1,7 +1,8 @@
 ---
 ms.date: 08/28/2020
-keywords: dsc,powershell,configuration,setup
+ms.topic: reference
 title: DSC WindowsOptionalFeature Resource
+description: DSC WindowsOptionalFeature Resource
 ---
 # DSC WindowsOptionalFeature Resource
 
