@@ -171,7 +171,7 @@ Windows PowerShell 2.0, Windows PowerShell 3.0, and Windows PowerShell 4.0 run i
 Preinstallation Environment (Windows PE). However, the following cmdlets aren't supported.
 
 - Background Intelligent Transfer Service (BITS) cmdlets. For more information, see
-  [BitsTransfer](/powershell/module/bitstransfer/?view=win10-ps).
+  [BitsTransfer](/powershell/module/bitstransfer/).
 - [Get-EventLog](/powershell/module/Microsoft.PowerShell.Management/Get-EventLog)
 - [Get-WinEvent](/powershell/module/Microsoft.PowerShell.Diagnostics/Get-WinEvent)
 - [Save-Help](/powershell/module/Microsoft.PowerShell.Core/Save-Help)

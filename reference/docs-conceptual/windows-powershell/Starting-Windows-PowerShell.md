@@ -24,16 +24,16 @@ Beginning in PowerShell 6, the PowerShell binary was renamed `pwsh.exe` for Wind
 macOS and Linux. You can start PowerShell preview versions using `pwsh-preview`. For more
 information, see
 [What's New in PowerShell Core 6.0](/powershell/scripting/whats-new/what-s-new-in-powershell-core-60#renamed-powershellexe-to-pwshexe)
-and [About pwsh](/powershell/module/microsoft.powershell.core/about/about_pwsh?view=powershell-7).
+and [About pwsh](/powershell/module/microsoft.powershell.core/about/about_pwsh).
 
 To find cmdlet reference and installation documentation for PowerShell 7, use the following links:
 
 | Document | Link |
 | ----- | ----- |
-| Cmdlet reference | [PowerShell Module Browser](/powershell/module/?view=powershell-7) |
-| Windows installation | [Installing PowerShell Core on Windows](/powershell/scripting/install/installing-powershell-core-on-windows?view=powershell-7) |
-| macOS installation | [Installing PowerShell Core on macOS](/powershell/scripting/install/installing-powershell-core-on-macos?view=powershell-7) |
-| Linux installation | [Installing PowerShell Core on Linux](/powershell/scripting/install/installing-powershell-core-on-linux?view=powershell-7) |
+| Cmdlet reference | [PowerShell Module Browser](/powershell/module/) |
+| Windows installation | [Installing PowerShell Core on Windows](/powershell/scripting/install/installing-powershell-core-on-windows) |
+| macOS installation | [Installing PowerShell Core on macOS](/powershell/scripting/install/installing-powershell-core-on-macos) |
+| Linux installation | [Installing PowerShell Core on Linux](/powershell/scripting/install/installing-powershell-core-on-linux) |
 
 To view content for other PowerShell versions, see [How to use the PowerShell documentation](../how-to-use-docs.md).
 
