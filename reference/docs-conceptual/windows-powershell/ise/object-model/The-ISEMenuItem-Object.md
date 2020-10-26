@@ -1,7 +1,7 @@
 ---
 ms.date:  12/31/2019
-keywords:  powershell,cmdlet
 title:  The ISEMenuItem Object
+description: An ISEMenuItem object is an instance of the Microsoft.PowerShell.Host.ISE.ISEMenuItem class. All menu objects on the **Add-ons** menu are instances of the ISEMenuItem class.
 ---
 
 # The ISEMenuItem Object
@@ -80,7 +80,7 @@ following scripting example.
 $psISE.CurrentPowerShellTab.AddOnsMenu.Submenus.Clear()
 
 # Add an Add-ons menu item with an shortcut and fast access key.
-# Note the use of “_”  as opposed to the “&” for mapping to the fast access key letter for the menu item.
+# Note the use of "_"  as opposed to the "&" for mapping to the fast access key letter for the menu item.
 $menuAdded = $psISE.CurrentPowerShellTab.AddOnsMenu.SubMenus.Add('_Process', {Get-Process}, 'Alt+P')
 # Add a nested menu - a parent and a child submenu item.
 $parentAdded = $psISE.CurrentPowerShellTab.AddOnsMenu.Submenus.Add('Parent', $null, $null)

@@ -2,6 +2,7 @@
 ms.date:  06/05/2017
 keywords:  powershell,cmdlet
 title:  Installing the Windows PowerShell 2.0 Engine
+description: The Windows PowerShell 2.0 Engine is an optional feature of Windows. This article explains how to install the feature and the necessary requirements.
 ---
 
 # Installing the Windows PowerShell 2.0 Engine
@@ -24,7 +25,7 @@ cannot run because it is incompatible with Windows PowerShell 3.0, Windows Power
 Microsoft .NET Framework 4. Such cases are expected to be rare.
 
 The Windows PowerShell 2.0 Engine is an optional feature of Windows Server 2012 R2, Windows 8.1,
-Windows® 8 and Windows Server® 2012. On earlier versions of Windows, when you install Windows
+Windows&reg; 8 and Windows Server&reg; 2012. On earlier versions of Windows, when you install Windows
 Management Framework 3.0, the Windows PowerShell 3.0 installation completely replaces the Windows
 PowerShell 2.0 installation in the Windows PowerShell installation directory. However, the Windows
 PowerShell 2.0 Engine is retained.

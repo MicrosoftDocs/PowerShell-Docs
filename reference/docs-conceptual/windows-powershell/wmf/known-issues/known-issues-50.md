@@ -1,7 +1,7 @@
 ---
 ms.date:  06/12/2017
-keywords:  wmf,powershell,setup
 title: Known Issues in WMF 5.0
+description: Known Issues in WMF 5.0
 ---
 # Known Issues in WMF 5.0
 

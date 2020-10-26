@@ -1,7 +1,7 @@
 ---
 ms.date:  06/05/2017
-keywords:  powershell,cmdlet
 title:  The PowerShellTabCollection Object
+description: The PowerShellTab collection object is a collection of PowerShellTab objects. Each PowerShellTab object functions as a separate runtime environment.
 ---
 # The PowerShellTabCollection Object
 

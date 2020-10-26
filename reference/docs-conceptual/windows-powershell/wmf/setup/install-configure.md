@@ -1,9 +1,7 @@
 ---
 ms.date: 06/10/2020
-ms.topic: conceptual
-keywords:  wmf,powershell,setup
-contributor:  keithb
 title:  Install and configure WMF 5.1
+description: This article describes how to install WMF 5.1 and its prerequisites.
 ---
 
 # Install and Configure WMF 5.1

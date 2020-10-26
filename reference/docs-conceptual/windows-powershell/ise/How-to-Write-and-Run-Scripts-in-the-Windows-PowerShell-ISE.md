@@ -1,7 +1,7 @@
 ---
 ms.date:  01/02/2020
-keywords:  powershell,cmdlet
 title:  How to Write and Run Scripts in the Windows PowerShell ISE
+description: This article describes how to create, edit, run, and save scripts in the Script Pane.
 ---
 
 # How to Write and Run Scripts in the Windows PowerShell ISE
@@ -11,9 +11,10 @@ This article describes how to create, edit, run, and save scripts in the Script 
 ## How to create and run scripts
 
 You can open and edit Windows PowerShell files in the Script Pane. Specific file types of interest
-in Windows PowerShell are script files (`.ps1`), script data files (`.psd1`), and script module files
-(`.psm1`). These file types are syntax colored in the Script Pane editor. Other common file types you
-may open in the Script Pane are configuration files (`.ps1xml`), XML files, and text files.
+in Windows PowerShell are script files (`.ps1`), script data files (`.psd1`), and script module
+files (`.psm1`). These file types are syntax colored in the Script Pane editor. Other common file
+types you may open in the Script Pane are configuration files (`.ps1xml`), XML files, and text
+files.
 
 > [!NOTE]
 > The Windows PowerShell execution policy determines whether you can run scripts and load Windows
@@ -65,8 +66,8 @@ There are several ways to stop a running script.
 - Press <kbd>CTRL</kbd>+<kbd>BREAK</kbd>
 - Select the **File** menu and click **Stop Operation**.
 
-Pressing <kbd>CTRL</kbd>+<kbd>C</kbd> also works unless some text is currently selected, in which case <kbd>CTRL</kbd>+<kbd>C</kbd>
-maps to the copy function for the selected text.
+Pressing <kbd>CTRL</kbd>+<kbd>C</kbd> also works unless some text is currently selected, in which
+case <kbd>CTRL</kbd>+<kbd>C</kbd> maps to the copy function for the selected text.
 
 ## How to write and edit text in the Script Pane
 
@@ -85,20 +86,22 @@ used for all Windows applications.
 
 ### To find text in the Script Pane
 
-1. To find text anywhere, press <kbd>CTRL</kbd>+<kbd>F</kbd> or, on the **Edit** menu, click **Find in Script**.
+1. To find text anywhere, press <kbd>CTRL</kbd>+<kbd>F</kbd> or, on the **Edit** menu, click **Find
+   in Script**.
 2. To find text after the cursor, press <kbd>F3</kbd> or, on the **Edit** menu, click **Find Next in
    Script**.
-3. To find text before the cursor, press <kbd>SHIFT</kbd>+<kbd>F3</kbd> or, on the **Edit** menu, click **Find
-   Previous in Script**.
+3. To find text before the cursor, press <kbd>SHIFT</kbd>+<kbd>F3</kbd> or, on the **Edit** menu,
+   click **Find Previous in Script**.
 
 ### To find and replace text in the Script Pane
 
-Press <kbd>CTRL</kbd>+<kbd>H</kbd> or, on the **Edit** menu, click **Replace in Script**. Enter the text you
-want to find and the replacement text, then press <kbd>ENTER</kbd>.
+Press <kbd>CTRL</kbd>+<kbd>H</kbd> or, on the **Edit** menu, click **Replace in Script**. Enter the
+text you want to find and the replacement text, then press <kbd>ENTER</kbd>.
 
 ### To go to a particular line of text in the Script Pane
 
-1. In the Script Pane, press <kbd>CTRL</kbd>+<kbd>G</kbd> or, on the **Edit** menu, click **Go to Line**.
+1. In the Script Pane, press <kbd>CTRL</kbd>+<kbd>G</kbd> or, on the **Edit** menu, click **Go to
+   Line**.
 
 2. Enter a line number.
 
@@ -106,29 +109,29 @@ want to find and the replacement text, then press <kbd>ENTER</kbd>.
 
 1. In the Script Pane, select the text that you want to copy.
 
-2. Press <kbd>CTRL</kbd>+<kbd>C</kbd> or, on the toolbar, click the **Copy** icon, or on the **Edit** menu, click
-**Copy**.
+2. Press <kbd>CTRL</kbd>+<kbd>C</kbd> or, on the toolbar, click the **Copy** icon, or on the
+   **Edit** menu, click **Copy**.
 
 ### To cut text in the Script Pane
 
 1. In the Script Pane, select the text that you want to cut.
-2. Press <kbd>CTRL</kbd>+<kbd>X</kbd> or, on the toolbar, click the **Cut** icon, or on the **Edit** menu, click
-   **Cut**.
+2. Press <kbd>CTRL</kbd>+<kbd>X</kbd> or, on the toolbar, click the **Cut** icon, or on the **Edit**
+   menu, click **Cut**.
 
 ### To paste text into the Script Pane
 
-Press <kbd>CTRL</kbd>+<kbd>V</kbd> or, on the toolbar, click the **Paste** icon, or on the **Edit** menu, click
-**Paste**.
+Press <kbd>CTRL</kbd>+<kbd>V</kbd> or, on the toolbar, click the **Paste** icon, or on the **Edit**
+menu, click **Paste**.
 
 ### To undo an action in the Script Pane
 
-Press <kbd>CTRL</kbd>+<kbd>Z</kbd> or, on the toolbar, click the **Undo** icon, or on the **Edit** menu, click
-**Undo**.
+Press <kbd>CTRL</kbd>+<kbd>Z</kbd> or, on the toolbar, click the **Undo** icon, or on the **Edit**
+menu, click **Undo**.
 
 ### To redo an action in the Script Pane
 
-Press <kbd>CTRL</kbd>+<kbd>Y</kbd> or, on the toolbar, click the **Redo** icon, or on the **Edit** menu, click
-**Redo**.
+Press <kbd>CTRL</kbd>+<kbd>Y</kbd> or, on the toolbar, click the **Redo** icon, or on the **Edit**
+menu, click **Redo**.
 
 ## How to save a script
 
@@ -137,8 +140,8 @@ changed. The asterisk disappears when the file is saved.
 
 ### To save a script
 
-Press <kbd>CTRL</kbd>+<kbd>S</kbd> or, on the toolbar, click the **Save** icon, or on the **File** menu, click
-**Save**.
+Press <kbd>CTRL</kbd>+<kbd>S</kbd> or, on the toolbar, click the **Save** icon, or on the **File**
+menu, click **Save**.
 
 ### To save and name a script
 

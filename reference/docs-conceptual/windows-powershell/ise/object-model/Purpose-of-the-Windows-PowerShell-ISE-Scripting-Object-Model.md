@@ -1,7 +1,7 @@
 ---
 ms.date:  12/31/2019
-keywords:  powershell,cmdlet
 title:  Purpose of the Windows PowerShell ISE Scripting Object Model
+description: Purpose of the Windows PowerShell ISE Scripting Object Model
 ---
 
 # Purpose of the Windows PowerShell ISE Scripting Object Model
