@@ -1,6 +1,8 @@
 ---
-title: "Creating remote runspaces | Microsoft Docs"
-ms.date: "09/12/2016"
+ms.date: 09/12/2016
+ms.topic: reference
+title: Creating remote runspaces
+description: Creating remote runspaces
 ---
 
 # Creating remote runspaces

@@ -1,12 +1,8 @@
 ---
-title: "Cmdlet Error Reporting | Microsoft Docs"
-ms.date: "09/13/2016"
-helpviewer_keywords:
-  - "error records [PowerShell], terminating"
-  - "non-terminating errors [PowerShell]"
-  - "error records [PowerShell]"
-  - "terminating errors [PowerShell]"
-  - "error records [PowerShell], non-terminating"
+ms.date: 09/13/2016
+ms.topic: reference
+title: Cmdlet Error Reporting
+description: Cmdlet Error Reporting
 ---
 
 # Cmdlet error reporting

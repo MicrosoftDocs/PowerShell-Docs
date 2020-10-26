@@ -1,6 +1,8 @@
 ---
-title: "PropertyName Element for SelectionCondition for Controls for View (Format) | Microsoft Docs"
-ms.date: "09/13/2016"
+ms.date: 09/13/2016
+ms.topic: reference
+title: PropertyName Element for SelectionCondition for Controls for View (Format)
+description: PropertyName Element for SelectionCondition for Controls for View (Format)
 ---
 # PropertyName Element for SelectionCondition for Controls for View (Format)
 

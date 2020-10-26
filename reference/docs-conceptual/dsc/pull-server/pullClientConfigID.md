@@ -2,6 +2,7 @@
 ms.date:  12/12/2018
 keywords:  dsc,powershell,configuration,setup
 title:  Set up a Pull Client using Configuration IDs in PowerShell 5.0 and later
+description:  This article explains how to set up a Pull Client using Configuration IDs in PowerShell 5.0 and later
 ---
 
 # Set up a Pull Client using Configuration IDs in PowerShell 5.0 and later
@@ -9,11 +10,11 @@ title:  Set up a Pull Client using Configuration IDs in PowerShell 5.0 and later
 > Applies To: Windows PowerShell 5.0
 
 > [!IMPORTANT]
-> The Pull Server (Windows Feature *DSC-Service*) is a supported component of Windows Server
-> however there are no plans to offer new features or capabilities. It is recommended to
-> begin transitioning managed clients to [Azure Automation DSC](/azure/automation/automation-dsc-getting-started)
-> (includes features beyond Pull Server on Windows Server) or one of the community solutions
-> listed [here](pullserver.md#community-solutions-for-pull-service).
+> The Pull Server (Windows Feature *DSC-Service*) is a supported component of Windows Server however
+> there are no plans to offer new features or capabilities. It is recommended to begin transitioning
+> managed clients to [Azure Automation DSC](/azure/automation/automation-dsc-getting-started)
+> (includes features beyond Pull Server on Windows Server) or one of the community solutions listed
+> [here](pullserver.md#community-solutions-for-pull-service).
 
 Before setting up a pull client, you should set up a pull server. Though this order is not required,
 it helps with troubleshooting, and helps you ensure that the registration was successful. To set up
@@ -77,7 +78,8 @@ configuring the LCM, see
 
 ### HTTP DSC Pull Server
 
-The following script configures the LCM to pull configurations from a server named "CONTOSO-PullSrv".
+The following script configures the LCM to pull configurations from a server named
+"CONTOSO-PullSrv".
 
 ```powershell
 [DSCLocalConfigurationManager()]
@@ -108,7 +110,8 @@ specifies the url of the DSC Pull
 
 ### SMB Share
 
-The following script configures the LCM to pull configurations from the SMB Share `\\SMBPullServer\Pull`.
+The following script configures the LCM to pull configurations from the SMB Share
+`\\SMBPullServer\Pull`.
 
 ```powershell
 [DSCLocalConfigurationManager()]
@@ -331,11 +334,12 @@ A report server cannot be an SMB share.
 
 ## Next Steps
 
-Once the pull client has been configured, you can use the following guides to perform the next steps:
+Once the pull client has been configured, you can use the following guides to perform the next
+steps:
 
 - [Publish Configurations to a Pull Server (v4/v5)](publishConfigs.md)
 - [Package and Upload Resources to a Pull Server (v4)](package-upload-resources.md)
 
 ## See Also
 
-* [Setting up a pull client with configuration names](pullClientConfigNames.md)
+- [Setting up a pull client with configuration names](pullClientConfigNames.md)

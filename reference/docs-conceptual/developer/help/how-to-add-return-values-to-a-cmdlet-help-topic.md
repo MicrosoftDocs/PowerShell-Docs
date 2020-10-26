@@ -1,6 +1,8 @@
 ---
-title: How to Add Return Values to a Cmdlet Help Topic
 ms.date: 09/12/2016
+ms.topic: reference
+title: How to Add Return Values to a Cmdlet Help Topic
+description: How to Add Return Values to a Cmdlet Help Topic
 ---
 # How to Add Return Values to a Cmdlet Help Topic
 

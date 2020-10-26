@@ -1,8 +1,7 @@
 ---
 ms.date:  06/12/2017
-contributor:  manikb
-keywords:  gallery,powershell,cmdlet,psget
 title:  Troubleshooting cmdlets
+description: This article provide information and steps for troubleshooting errors using the PowerShell Gallery
 ---
 # Troubleshooting cmdlets
 

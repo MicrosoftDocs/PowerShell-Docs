@@ -1,8 +1,8 @@
 ---
-title: "Windows PowerShell Reference | Microsoft Docs"
-ms.date: "09/13/2016"
-helpviewer_keywords:
-  - "Windows PowerShell SDK"
+ms.date: 09/13/2016
+ms.topic: reference
+title: Windows PowerShell Reference
+description: Windows PowerShell Reference
 ---
 # Windows PowerShell Reference
 

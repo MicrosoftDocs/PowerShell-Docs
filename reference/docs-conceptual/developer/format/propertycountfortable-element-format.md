@@ -1,6 +1,8 @@
 ---
-title: "PropertyCountForTable Element (Format) | Microsoft Docs"
-ms.date: "09/12/2016"
+ms.date: 09/12/2016
+ms.topic: reference
+title: PropertyCountForTable Element (Format)
+description: PropertyCountForTable Element (Format)
 ---
 # PropertyCountForTable Element (Format)
 

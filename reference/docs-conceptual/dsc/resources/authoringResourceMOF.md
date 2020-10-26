@@ -2,15 +2,16 @@
 ms.date: 07/08/2020
 keywords:  dsc,powershell,configuration,setup
 title:  Writing a custom DSC resource with MOF
+description: This article defines the schema for a DSC custom resource in a MOF file and implements the resource in a PowerShell script file.
 ---
 
 # Writing a custom DSC resource with MOF
 
 > Applies To: Windows PowerShell 4.0, Windows PowerShell 5.0
 
-In this topic, we will define the schema for a Windows PowerShell Desired State Configuration (DSC)
-custom resource in a MOF file, and implement the resource in a Windows PowerShell script file. This
-custom resource is for creating and maintaining a web site.
+In this article, we will define the schema for a Windows PowerShell Desired State Configuration
+(DSC) custom resource in a MOF file, and implement the resource in a Windows PowerShell script file.
+This custom resource is for creating and maintaining a web site.
 
 ## Creating the MOF schema
 
@@ -71,7 +72,8 @@ Note the following about the previous code:
   a configuration script. The `[read]` qualifier indicates that a property cannot be set by a
   configuration, and is for reporting purposes only.
 - `Values` restricts the values that can be assigned to the property to the list of values defined
-  in `ValueMap`. For more information, see [ValueMap and Value Qualifiers](/windows/desktop/WmiSdk/value-map).
+  in `ValueMap`. For more information, see
+  [ValueMap and Value Qualifiers](/windows/desktop/WmiSdk/value-map).
 - Including a property called `Ensure` with values `Present` and `Absent` in your resource is
   recommended as a way to maintain a consistent style with built-in DSC resources.
 - Name the schema file for your custom resource as follows: `classname.schema.mof`, where
@@ -80,11 +82,11 @@ Note the following about the previous code:
 ### Writing the resource script
 
 The resource script implements the logic of the resource. In this module, you must include three
-functions called `Get-TargetResource`, `Set-TargetResource`, and `Test-TargetResource`. All
-three functions must take a parameter set that is identical to the set of properties defined in the
-MOF schema that you created for your resource. In this document, this set of properties is referred
-to as the "resource properties." Store these three functions in a file called `<ResourceName>.psm1`.
-In the following example, the functions are stored in a file called `Demo_IISWebsite.psm1`.
+functions called `Get-TargetResource`, `Set-TargetResource`, and `Test-TargetResource`. All three
+functions must take a parameter set that is identical to the set of properties defined in the MOF
+schema that you created for your resource. In this document, this set of properties is referred to
+as the "resource properties." Store these three functions in a file called `<ResourceName>.psm1`. In
+the following example, the functions are stored in a file called `Demo_IISWebsite.psm1`.
 
 > [!NOTE]
 > When you run the same configuration script on your resource more than once, you should receive no
@@ -99,7 +101,8 @@ return a hash table that lists all the resource properties as keys and the actua
 properties as the corresponding values. The following code provides an example.
 
 ```powershell
-# DSC uses the Get-TargetResource function to fetch the status of the resource instance specified in the parameters for the target machine
+# DSC uses the Get-TargetResource function to fetch the status of the resource instance
+# specified in the parameters for the target machine
 function Get-TargetResource
 {
     param
@@ -127,8 +130,11 @@ function Get-TargetResource
 
         $getTargetResourceResult = $null;
 
-        <# Insert logic that uses the mandatory parameter values to get the website and assign it to a variable called $Website #>
-        <# Set $ensureResult to "Present" if the requested website exists and to "Absent" otherwise #>
+        <#
+          Insert logic that uses the mandatory parameter values to get the website and
+          assign it to a variable called $Website
+          Set $ensureResult to "Present" if the requested website exists and to "Absent" otherwise
+        #>
 
         # Add all Website properties to the hash table
         # This simple example assumes that $Website is not null
@@ -184,10 +190,14 @@ function Set-TargetResource
         [string[]]$Protocol
     )
 
-    <# If Ensure is set to "Present" and the website specified in the mandatory input parameters does not exist, then create it using the specified parameter values #>
-    <# Else, if Ensure is set to "Present" and the website does exist, then update its properties to match the values provided in the non-mandatory parameter values #>
-    <# Else, if Ensure is set to "Absent" and the website does not exist, then do nothing #>
-    <# Else, if Ensure is set to "Absent" and the website does exist, then delete the website #>
+    <#
+        If Ensure is set to "Present" and the website specified in the mandatory input parameters
+          does not exist, then create it using the specified parameter values
+        Else, if Ensure is set to "Present" and the website does exist, then update its properties
+          to match the values provided in the non-mandatory parameter values
+        Else, if Ensure is set to "Absent" and the website does not exist, then do nothing
+        Else, if Ensure is set to "Absent" and the website does exist, then delete the website
+    #>
 }
 ```
 
@@ -235,18 +245,19 @@ function Test-TargetResource
     # Get the current state
     $currentState = Get-TargetResource -Ensure $Ensure -Name $Name -PhysicalPath $PhysicalPath -State $State -ApplicationPool $ApplicationPool -BindingInfo $BindingInfo -Protocol $Protocol
 
-    #Write-Verbose "Use this cmdlet to deliver information about command processing."
+    # Write-Verbose "Use this cmdlet to deliver information about command processing."
 
-    #Write-Debug "Use this cmdlet to write debug information while troubleshooting."
+    # Write-Debug "Use this cmdlet to write debug information while troubleshooting."
 
-    #Include logic to
+    # Include logic to
     $result = [System.Boolean]
-    #Add logic to test whether the website is present and its status matches the supplied parameter values. If it does, return true. If it does not, return false.
+    # Add logic to test whether the website is present and its status matches the supplied
+    # parameter values. If it does, return true. If it does not, return false.
     $result
 }
 ```
 
-> [!Note]
+> [!NOTE]
 > For easier debugging, use the `Write-Verbose` cmdlet in your implementation of the previous
 > three functions. This cmdlet writes text to the verbose message stream. By default, the verbose
 > message stream is not displayed, but you can display it by changing the value of the
@@ -316,9 +327,10 @@ FunctionsToExport = @("Get-TargetResource", "Set-TargetResource", "Test-TargetRe
 > [!Note]
 > **PsDscRunAsCredential** is supported in PowerShell 5.0 and later.
 
-The **PsDscRunAsCredential** property can be used in [DSC configurations](../configurations/configurations.md)
-resource block to specify that the resource should be run under a specified set of credentials. For
-more information, see [Running DSC with user credentials](../configurations/runAsUser.md).
+The **PsDscRunAsCredential** property can be used in
+[DSC configurations](../configurations/configurations.md) resource block to specify that the
+resource should be run under a specified set of credentials. For more information, see
+[Running DSC with user credentials](../configurations/runAsUser.md).
 
 To access the user context from within a custom resource, you can use the automatic variable
 `$PsDscContext`.
@@ -347,5 +359,6 @@ $global:DSCMachineStatus = 1
 
 In order for the LCM to reboot the Node, the **RebootNodeIfNeeded** flag needs to be set to `$true`.
 The **ActionAfterReboot** setting should also be set to **ContinueConfiguration**, which is the
-default. For more information on configuring the LCM, see [Configuring the Local Configuration Manager](../managing-nodes/metaConfig.md),
-or [Configuring the Local Configuration Manager (v4)](../managing-nodes/metaConfig4.md).
+default. For more information on configuring the LCM, see
+[Configuring the Local Configuration Manager](../managing-nodes/metaConfig.md), or
+[Configuring the Local Configuration Manager (v4)](../managing-nodes/metaConfig4.md).

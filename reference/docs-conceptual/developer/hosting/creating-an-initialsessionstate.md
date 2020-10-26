@@ -1,6 +1,8 @@
 ---
-title: "Creating an InitialSessionState | Microsoft Docs"
-ms.date: "09/13/2016"
+ms.date: 09/13/2016
+ms.topic: reference
+title: Creating an InitialSessionState
+description: Creating an InitialSessionState
 ---
 # Creating an InitialSessionState
 

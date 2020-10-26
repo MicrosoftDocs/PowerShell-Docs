@@ -1,6 +1,8 @@
 ---
-title: "Date and Time Parameters | Microsoft Docs"
-ms.date: "09/13/2016"
+ms.date: 09/13/2016
+ms.topic: reference
+title: Date and Time Parameters
+description: Date and Time Parameters
 ---
 # Date and Time Parameters
 

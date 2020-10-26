@@ -1,6 +1,8 @@
 ---
-title: "Understanding a Windows PowerShell Module | Microsoft Docs"
-ms.date: "09/13/2016"
+ms.date: 09/13/2016
+ms.topic: reference
+title: Understanding a Windows PowerShell Module
+description: Understanding a Windows PowerShell Module
 ---
 # Understanding a Windows PowerShell Module
 

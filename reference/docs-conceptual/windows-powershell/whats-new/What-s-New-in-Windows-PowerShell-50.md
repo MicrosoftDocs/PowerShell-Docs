@@ -2,6 +2,7 @@
 ms.date:  06/05/2017
 keywords:  powershell,cmdlet
 title:  What's New in Windows PowerShell 5.0
+description: These release notes describe the new features and changes in Windows PowerShell 5.x.
 ---
 
 # What's New in Windows PowerShell 5.0
@@ -834,7 +835,7 @@ In addition, scheduled jobs come with a customized set of cmdlets for managing t
 you create, edit, manage, disable, and re-enable scheduled jobs, create scheduled job triggers and
 set scheduled job options.
 
-For more information about scheduled jobs, see [about_Scheduled_Jobs](/powershell/module/psscheduledjob/about/about_scheduled_jobs?view=powershell-5.1).
+For more information about scheduled jobs, see [about_Scheduled_Jobs](/powershell/module/psscheduledjob/about/about_scheduled_jobs).
 
 ### Windows PowerShell Language Enhancements
 
@@ -1057,5 +1058,5 @@ and square brackets in file names and paths.
 
 ## See Also
 
-- [about_Windows_PowerShell_5.0](/previous-versions/powershell/module/microsoft.powershell.core/about/about_windows_powershell_5.0?view=powershell-5.0)
-- [Windows PowerShell](https://go.microsoft.com/fwlink/?LinkID=107116)
+- [about_Windows_PowerShell_5.0](/previous-versions/powershell/module/microsoft.powershell.core/about/about_windows_powershell_5.0)
+- [Windows PowerShell](/powershell/)

@@ -2,13 +2,22 @@
 ms.date:  12/12/2018
 keywords:  dsc,powershell,configuration,setup
 title:  Resource dependencies using DependsOn
+description: As your Configuration grows larger and more complex, you can use the `DependsOn` key to change the applied order of your resources by specifying that a resource depends on another resource.
 ---
 
 # Resource dependencies using DependsOn
 
-When you write [Configurations](configurations.md), you add [Resource blocks](../resources/resources.md) to configure aspects of a target Node. As you continue to add Resource blocks, your Configurations can grow quite large and cumbersome to manage. One such challenge is the applied order of your resource blocks. Typically resources are applied in the order they are defined within the Configuration. As your Configuration grows larger and more complex, you can use the `DependsOn` key to change the applied order of your resources by specifying that a resource depends on another resource.
+When you write [Configurations](configurations.md), you add
+[Resource blocks](../resources/resources.md) to configure aspects of a target Node. As you continue
+to add Resource blocks, your Configurations can grow quite large and cumbersome to manage. One such
+challenge is the applied order of your resource blocks. Typically resources are applied in the order
+they are defined within the Configuration. As your Configuration grows larger and more complex, you
+can use the `DependsOn` key to change the applied order of your resources by specifying that a
+resource depends on another resource.
 
-The `DependsOn` key can be used in any Resource block. It is defined with the same key/value mechanism as other Resource keys. The `DependsOn` key expects an array of strings with the following syntax.
+The `DependsOn` key can be used in any Resource block. It is defined with the same key/value
+mechanism as other Resource keys. The `DependsOn` key expects an array of strings with the following
+syntax.
 
 ```
 DependsOn = '[<Resource Type>]<Resource Name>', '[<Resource Type>]<Resource Name'
@@ -55,7 +64,9 @@ Configuration ConfigureFirewall
 ConfigureFirewall -OutputPath C:\Temp\
 ```
 
-When you apply the Configuration, the firewall profile will always be configured first regardless of which order the Resource blocks are defined. If you apply the Configuration, be sure to note your target Nodes existing Configuration so you can revert if desired.
+When you apply the Configuration, the firewall profile will always be configured first regardless of
+which order the Resource blocks are defined. If you apply the Configuration, be sure to note your
+target Nodes existing Configuration so you can revert if desired.
 
 ```
 PS> Start-DSCConfiguration -Verbose -Wait -Path C:\Temp\ -ComputerName localhost
@@ -113,13 +124,19 @@ VERBOSE: Operation 'Invoke CimMethod' complete.
 VERBOSE: Time taken for configuration job to complete is 15.385 seconds
 ```
 
-This also ensures that if the **FirewallProfile** resource fails for any reason, the **Firewall** block will not execute even though it was defined first. The `DependsOn` key allows more flexibility in grouping resource blocks and ensuring that dependencies are resolved before a Resource executes.
+This also ensures that if the **FirewallProfile** resource fails for any reason, the **Firewall**
+block will not execute even though it was defined first. The `DependsOn` key allows more flexibility
+in grouping resource blocks and ensuring that dependencies are resolved before a Resource executes.
 
-In more advanced Configurations, you can also use [Cross Node Dependency](crossNodeDependencies.md) to allow even more granular control (For example, ensuring a domain controller is configured before joining a client to the domain).
+In more advanced Configurations, you can also use [Cross Node Dependency](crossNodeDependencies.md)
+to allow even more granular control (For example, ensuring a domain controller is configured before
+joining a client to the domain).
 
 ## Cleaning Up
 
-If you applied the Configuration above, you can reverse keys to undo any changes. In the above example, setting the **Enabled** key to false will disable the firewall rule and profile. You should modify the example as needed to match your target Node's previous configured state.
+If you applied the Configuration above, you can reverse keys to undo any changes. In the above
+example, setting the **Enabled** key to false will disable the firewall rule and profile. You should
+modify the example as needed to match your target Node's previous configured state.
 
 ```powershell
         Firewall Firewall

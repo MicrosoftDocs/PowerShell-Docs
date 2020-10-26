@@ -1,10 +1,8 @@
 ---
-title: "Alias Attribute Declaration | Microsoft Docs"
-ms.date: "09/13/2016"
-helpviewer_keywords:
-  - "Alias attribute"
-  - "attributes, Alias"
-  - "Alias attribute, described"
+ms.date: 09/13/2016
+ms.topic: reference
+title: Alias Attribute Declaration
+description: Alias Attribute Declaration
 ---
 # Alias Attribute Declaration
 

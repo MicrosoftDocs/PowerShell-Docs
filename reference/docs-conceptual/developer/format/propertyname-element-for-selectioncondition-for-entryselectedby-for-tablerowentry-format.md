@@ -1,6 +1,8 @@
 ---
-title: "PropertyName Element for SelectionCondition for EntrySelectedBy for TableRowEntry (Format) | Microsoft Docs"
-ms.date: "09/13/2016"
+ms.date: 09/13/2016
+ms.topic: reference
+title: PropertyName Element for SelectionCondition for EntrySelectedBy for TableRowEntry (Format)
+description: PropertyName Element for SelectionCondition for EntrySelectedBy for TableRowEntry (Format)
 ---
 # PropertyName Element for SelectionCondition for EntrySelectedBy for TableRowEntry (Format)
 

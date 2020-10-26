@@ -1,6 +1,8 @@
 ---
-title: "Writing a navigation provider | Microsoft Docs"
-ms.date: "09/13/2016"
+ms.date: 09/13/2016
+ms.topic: reference
+title: Writing a navigation provider
+description: Writing a navigation provider
 ---
 # Writing a navigation provider
 

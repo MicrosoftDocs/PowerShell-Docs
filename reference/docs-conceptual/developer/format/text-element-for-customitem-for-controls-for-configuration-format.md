@@ -1,6 +1,8 @@
 ---
-title: "Text Element for CustomItem for Controls for Configuration (Format) | Microsoft Docs"
-ms.date: "09/13/2016"
+ms.date: 09/13/2016
+ms.topic: reference
+title: Text Element for CustomItem for Controls for Configuration (Format)
+description: Text Element for CustomItem for Controls for Configuration (Format)
 ---
 # Text Element for CustomItem for Controls for Configuration (Format)
 

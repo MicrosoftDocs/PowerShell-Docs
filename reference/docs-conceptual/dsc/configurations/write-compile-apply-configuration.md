@@ -2,6 +2,7 @@
 ms.date: 06/22/2020
 keywords:  dsc,powershell,configuration,service,setup
 title:  Write, Compile, and Apply a Configuration
+description: This exercise walks through creating and applying a DSC configuration from start to finish. In the following example, you will learn how to write and apply a very simple Configuration
 ---
 # Write, Compile, and Apply a Configuration
 
@@ -76,7 +77,7 @@ For a DSC configuration to be applied to a node, it must first be compiled into 
 the configuration, like a function, will compile one `.mof` file for every Node defined by the
 `Node` block. In order to run the configuration, you need to _dot source_ your `HelloWorld.ps1`
 script into the current scope. For more information, see
-[about_Scripts](/powershell/module/microsoft.powershell.core/about/about_scripts?view=powershell-6#script-scope-and-dot-sourcing).
+[about_Scripts](/powershell/module/microsoft.powershell.core/about/about_scripts#script-scope-and-dot-sourcing).
 
 <!-- markdownlint-disable MD038 -->
 _Dot source_ your `HelloWorld.ps1` script by typing in the path where you stored it, after the `. `

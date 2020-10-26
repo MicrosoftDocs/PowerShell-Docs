@@ -1,7 +1,7 @@
 ---
 ms.date:  06/12/2017
-keywords:  wmf,powershell,setup
 title: Information Stream
+description: PowerShell 5.0 adds a new structured **Information** stream to transmit structured data between a script and its host.
 ---
 
 # Information Stream

@@ -1,6 +1,8 @@
 ---
-title: "StopProc01 Code Samples | Microsoft Docs"
-ms.date: "09/13/2016"
+ms.date: 09/13/2016
+ms.topic: reference
+title: StopProc01 Code Samples
+description: StopProc01 Code Samples
 ---
 # StopProc01 Code Samples
 

@@ -1,10 +1,9 @@
 ---
 ms.date:  06/12/2017
-contributor:  JKeithB
-keywords:  gallery,powershell,cmdlet,psgallery
 title:  PowerShell Gallery FAQs
+description: Frequently asked questions about the PowerShell Gallery
 ---
-# Frequently Asked Questions
+# Frequently asked questions about the PowerShell Gallery
 
 ## What is a PowerShell module?
 

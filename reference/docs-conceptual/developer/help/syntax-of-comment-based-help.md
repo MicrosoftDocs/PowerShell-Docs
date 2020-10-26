@@ -1,6 +1,8 @@
 ---
-title: Syntax of Comment-Based Help
 ms.date: 09/12/2016
+ms.topic: reference
+title: Syntax of Comment-Based Help
+description: Syntax of Comment-Based Help
 ---
 # Syntax of Comment-Based Help
 

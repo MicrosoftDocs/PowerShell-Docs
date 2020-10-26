@@ -1,6 +1,8 @@
 ---
-title: "Control Element for Controls for Configuration (Format) | Microsoft Docs"
-ms.date: "09/13/2016"
+ms.date: 09/13/2016
+ms.topic: reference
+title: Control Element for Controls for Configuration (Format)
+description: Control Element for Controls for Configuration (Format)
 ---
 # Control Element for Controls for Configuration (Format)
 

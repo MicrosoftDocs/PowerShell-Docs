@@ -1,6 +1,8 @@
 ---
-title: Extended Type System Overview
 ms.date: 07/09/2020
+ms.topic: reference
+title: Extended Type System Overview
+description: Extended Type System Overview
 ---
 # Extended Type System Overview
 

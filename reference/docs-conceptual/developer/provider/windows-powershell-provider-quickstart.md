@@ -1,6 +1,8 @@
 ---
-title: "Windows PowerShell Provider Quickstart | Microsoft Docs"
-ms.date: "09/13/2016"
+ms.date: 09/13/2016
+ms.topic: reference
+title: Windows PowerShell Provider Quickstart
+description: Windows PowerShell Provider Quickstart
 ---
 # Windows PowerShell Provider Quickstart
 

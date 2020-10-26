@@ -2,6 +2,7 @@
 ms.date:  12/12/2018
 keywords:  dsc,powershell,configuration,setup
 title:  Configuring the Local Configuration Manager
+description: The Local Configuration Manager (LCM) is the engine of DSC that is responsible for parsing and applying configurations that are sent to the node.
 ---
 # Configuring the Local Configuration Manager
 
@@ -20,7 +21,8 @@ You use a special type of configuration to configure the LCM to specify each of 
 following sections describe how to configure the LCM.
 
 Windows PowerShell 5.0 introduced new settings for managing Local Configuration Manager. For
-information about configuring the LCM in Windows PowerShell 4.0, see [Configuring the Local Configuration Manager in Previous Versions of Windows PowerShell](metaconfig4.md).
+information about configuring the LCM in Windows PowerShell 4.0, see
+[Configuring the Local Configuration Manager in Previous Versions of Windows PowerShell](metaconfig4.md).
 
 ## Writing and enacting an LCM configuration
 
@@ -44,10 +46,13 @@ configuration LCMConfig
 
 The process of applying settings to LCM is similar to applying a DSC configuration. You will create
 an LCM configuration, compile it to a MOF file, and apply it to the node. Unlike DSC configurations,
-you do not enact an LCM configuration by calling the [Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration)
-cmdlet. Instead, you call [Set-DscLocalConfigurationManager](/powershell/module/PSDesiredStateConfiguration/Set-DscLocalConfigurationManager),
+you do not enact an LCM configuration by calling the
+[Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration)
+cmdlet. Instead, you call
+[Set-DscLocalConfigurationManager](/powershell/module/PSDesiredStateConfiguration/Set-DscLocalConfigurationManager),
 supplying the path to the LCM configuration MOF as a parameter. After you enact the LCM
-configuration, you can see the properties of the LCM by calling the [Get-DscLocalConfigurationManager](/powershell/module/PSDesiredStateConfiguration/Get-DscLocalConfigurationManager)
+configuration, you can see the properties of the LCM by calling the
+[Get-DscLocalConfigurationManager](/powershell/module/PSDesiredStateConfiguration/Get-DscLocalConfigurationManager)
 cmdlet.
 
 An LCM configuration can contain blocks only for a limited set of resources. In the previous
@@ -111,7 +116,8 @@ LCM configuration supports defining the following types of pull service endpoint
 - **Report server**: A service that DSC sends report data to. Define report servers by using
   **ReportServerWeb** blocks. A report server must be a web service.
 
-For more details on pull service see, [Desired State Configuration Pull Service](../pull-server/pullServer.md).
+For more details on pull service see,
+[Desired State Configuration Pull Service](../pull-server/pullServer.md).
 
 ## Configuration server blocks
 
@@ -132,7 +138,8 @@ To define a web-based configuration server, you create a **ConfigurationReposito
 > Supported in Windows versions 1809 and later.
 
 An example script to simplify configuring the ConfigurationRepositoryWeb value for on-premises nodes
-is available - see [Generating DSC metaconfigurations](/azure/automation/automation-dsc-onboarding#generating-dsc-metaconfigurations)
+is available - see
+[Generating DSC metaconfigurations](/azure/automation/automation-dsc-onboarding#generating-dsc-metaconfigurations)
 
 To define an SMB-based configuration server, you create a **ConfigurationRepositoryShare** block. A
 **ConfigurationRepositoryShare** defines the following properties.
@@ -159,8 +166,9 @@ A **ResourceRepositoryWeb** defines the following properties.
 > [!NOTE]
 > Supported in Windows versions 1809 and later.
 
-An example script to simplify configuring the ResourceRepositoryWeb value for on-premises nodes
-is available - see [Generating DSC metaconfigurations](/azure/automation/automation-dsc-onboarding#generating-dsc-metaconfigurations)
+An example script to simplify configuring the ResourceRepositoryWeb value for on-premises nodes is
+available - see
+[Generating DSC metaconfigurations](/azure/automation/automation-dsc-onboarding#generating-dsc-metaconfigurations)
 
 To define an SMB-based resource server, you create a **ResourceRepositoryShare** block.
 **ResourceRepositoryShare** defines the following properties.
@@ -188,7 +196,8 @@ compatible with SMB based pull service. **ReportServerWeb** defines the followin
 > Supported in Windows versions 1809 and later.
 
 An example script to simplify configuring the ReportServerWeb value for on-premises nodes is
-available - see [Generating DSC metaconfigurations](/azure/automation/automation-dsc-onboarding#generating-dsc-metaconfigurations)
+available - see
+[Generating DSC metaconfigurations](/azure/automation/automation-dsc-onboarding#generating-dsc-metaconfigurations)
 
 ## Partial configurations
 

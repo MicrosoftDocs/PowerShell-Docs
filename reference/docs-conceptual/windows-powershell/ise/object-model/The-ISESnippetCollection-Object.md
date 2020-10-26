@@ -1,7 +1,7 @@
 ---
 ms.date:  12/31/2019
-keywords:  powershell,cmdlet
 title:  The ISESnippetCollection Object
+description: The ISESnippetCollection object is a collection of ISESnippet objects. The files collection that is associated with a PowerShellTab object is a member of this class.
 ---
 
 # The ISESnippetCollection Object

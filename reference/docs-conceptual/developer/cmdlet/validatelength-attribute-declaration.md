@@ -1,10 +1,8 @@
 ---
-title: "ValidateLength Attribute Declaration | Microsoft Docs"
-ms.date: "09/13/2016"
-helpviewer_keywords:
-  - "ValidateLength attribute, described"
-  - "attributes, ValidateLength"
-  - "ValidateLength attribute"
+ms.date: 09/13/2016
+ms.topic: reference
+title: ValidateLength Attribute Declaration
+description: ValidateLength Attribute Declaration
 ---
 # ValidateLength Attribute Declaration
 

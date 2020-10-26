@@ -1,6 +1,8 @@
 ---
-title: "Formatting Displayed Data | Microsoft Docs"
-ms.date: "09/12/2016"
+ms.date: 09/12/2016
+ms.topic: reference
+title: Formatting Displayed Data
+description: Formatting Displayed Data
 ---
 # Formatting Displayed Data
 

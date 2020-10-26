@@ -1,6 +1,8 @@
 ---
-title: Creating a Windows PowerShell Navigation Provider
 ms.date: 09/13/2016
+ms.topic: reference
+title: Creating a Windows PowerShell Navigation Provider
+description: Creating a Windows PowerShell Navigation Provider
 ---
 # Creating a Windows PowerShell Navigation Provider
 

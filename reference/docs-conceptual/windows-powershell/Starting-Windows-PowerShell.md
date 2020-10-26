@@ -2,16 +2,17 @@
 ms.date:  12/05/2019
 keywords:  powershell,cmdlet
 title:  Starting Windows PowerShell
+description: This article explains the ways of starting various versions of PowerShell.
 ---
 
 # Starting Windows PowerShell
 
 Windows PowerShell is a scripting engine `.DLL` that's embedded into multiple hosts. The most common
-hosts you'll start are the interactive command-line **powershell.exe** and the Interactive Scripting
-Environment **powershell_ise.exe**.
+hosts you'll start are the interactive command-line `powershell.exe` and the Interactive Scripting
+Environment `powershell_ise.exe`.
 
-To start Windows PowerShell® on Windows Server® 2012 R2, Windows® 8.1, Windows Server 2012, and
-Windows 8, see
+To start Windows PowerShell&reg; on Windows Server&reg; 2012 R2, Windows&reg; 8.1, Windows Server
+2012, and Windows 8, see
 [Common Management Tasks and Navigation in Windows](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831491(v=ws.11)).
 
 ## PowerShell Core has renamed binary
@@ -19,29 +20,29 @@ Windows 8, see
 PowerShell Core, referred to as PowerShell, is version 6 and higher that's open source and uses .NET
 Core. Supported versions are available on Windows, macOS, and Linux.
 
-Beginning in PowerShell 6, the PowerShell binary was renamed **pwsh.exe** for Windows and **pwsh**
-for macOS and Linux. You can start PowerShell preview versions using **pwsh-preview**. For more
+Beginning in PowerShell 6, the PowerShell binary was renamed `pwsh.exe` for Windows and `pwsh` for
+macOS and Linux. You can start PowerShell preview versions using `pwsh-preview`. For more
 information, see
 [What's New in PowerShell Core 6.0](/powershell/scripting/whats-new/what-s-new-in-powershell-core-60#renamed-powershellexe-to-pwshexe)
-and [About pwsh](/powershell/module/microsoft.powershell.core/about/about_pwsh?view=powershell-7).
+and [About pwsh](/powershell/module/microsoft.powershell.core/about/about_pwsh).
 
 To find cmdlet reference and installation documentation for PowerShell 7, use the following links:
 
 | Document | Link |
 | ----- | ----- |
-| Cmdlet reference | [PowerShell Module Browser](/powershell/module/?view=powershell-7) |
-| Windows installation | [Installing PowerShell Core on Windows](/powershell/scripting/install/installing-powershell-core-on-windows?view=powershell-7) |
-| macOS installation | [Installing PowerShell Core on macOS](/powershell/scripting/install/installing-powershell-core-on-macos?view=powershell-7) |
-| Linux installation | [Installing PowerShell Core on Linux](/powershell/scripting/install/installing-powershell-core-on-linux?view=powershell-7) |
+| Cmdlet reference | [PowerShell Module Browser](/powershell/module/) |
+| Windows installation | [Installing PowerShell Core on Windows](/powershell/scripting/install/installing-powershell-core-on-windows) |
+| macOS installation | [Installing PowerShell Core on macOS](/powershell/scripting/install/installing-powershell-core-on-macos) |
+| Linux installation | [Installing PowerShell Core on Linux](/powershell/scripting/install/installing-powershell-core-on-linux) |
 
 To view content for other PowerShell versions, see [How to use the PowerShell documentation](../how-to-use-docs.md).
 
 ## How to Start Windows PowerShell on Earlier Versions of Windows
 
 This section explains how to start Windows PowerShell and Windows PowerShell Integrated Scripting
-Environment (ISE) on Windows® 7, Windows Server® 2008 R2, and Windows Server® 2008. It also explains
-how to enable the optional feature for Windows PowerShell ISE in Windows PowerShell 2.0 on Windows
-Server® 2008 R2 and Windows Server® 2008.
+Environment (ISE) on Windows&reg; 7, Windows Server&reg; 2008 R2, and Windows Server&reg; 2008. It
+also explains how to enable the optional feature for Windows PowerShell ISE in Windows PowerShell
+2.0 on Windows Server&reg; 2008 R2 and Windows Server&reg; 2008.
 
 Use any of the following methods to start the installed version of Windows PowerShell 3.0, or
 Windows PowerShell 4.0, where applicable.
@@ -60,7 +61,7 @@ In **cmd.exe**, Windows PowerShell, or Windows PowerShell ISE, to start Windows 
 PowerShell
 ```
 
-You can also use the parameters of the **powershell.exe** program to customize the session. For more
+You can also use the parameters of the `powershell.exe` program to customize the session. For more
 information, see
 [PowerShell.exe Command-Line Help](/powershell/module/Microsoft.PowerShell.Core/About/about_PowerShell_exe).
 
@@ -81,7 +82,7 @@ Use any of the following methods to start Windows PowerShell ISE.
 
 #### At the Command Prompt
 
-In **cmd.exe**, Windows PowerShell, or Windows PowerShell ISE, to start Windows PowerShell, type:
+In `cmd.exe`, Windows PowerShell, or Windows PowerShell ISE, to start Windows PowerShell, type:
 
 ```
 PowerShell_ISE
@@ -127,7 +128,7 @@ a module that requires the 32-bit version or when you're connecting remotely to 
 
 To start a 32-bit version of Windows PowerShell, use any of the following procedures.
 
-#### In Windows Server® 2012 R2
+#### In Windows Server&reg; 2012 R2
 
 - On the **Start** screen, type **Windows PowerShell (x86)**. Click the **Windows PowerShell x86**
   tile.
@@ -136,7 +137,7 @@ To start a 32-bit version of Windows PowerShell, use any of the following proced
   x86** and then click **Windows PowerShell (x86)**.
 - Via command line, enter: `%SystemRoot%\SysWOW64\WindowsPowerShell\v1.0\powershell.exe`
 
-#### In Windows Server® 2012
+#### In Windows Server&reg; 2012
 
 - On the **Start** screen, type **PowerShell** and then click **Windows PowerShell (x86)**.
 - In **Server Manager**, from the **Tools** menu, select **Windows PowerShell (x86)**.
@@ -144,7 +145,7 @@ To start a 32-bit version of Windows PowerShell, use any of the following proced
   and then click **Windows PowerShell (x86)**.
 - Via command line, enter: `%SystemRoot%\SysWOW64\WindowsPowerShell\v1.0\powershell.exe`
 
-#### In Windows® 8.1
+#### In Windows&reg; 8.1
 
 - On the **Start** screen, type **Windows PowerShell (x86)**. Click the **Windows PowerShell x86**
   tile.
@@ -156,7 +157,7 @@ To start a 32-bit version of Windows PowerShell, use any of the following proced
   x86** and then click **Windows PowerShell (x86)**.
 - Via command line, enter: `%SystemRoot%\SysWOW64\WindowsPowerShell\v1.0\powershell.exe`
 
-#### In Windows® 8
+#### In Windows&reg; 8
 
 - On the **Start** screen, move the cursor to the upper right corner, click **Settings**, click
   **Tiles**, and then move the **Show Administrative Tools** slider to **Yes**. Then, type

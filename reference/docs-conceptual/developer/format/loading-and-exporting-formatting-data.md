@@ -1,6 +1,8 @@
 ---
-title: "Loading and Exporting Formatting Data | Microsoft Docs"
-ms.date: "09/13/2016"
+ms.date: 09/13/2016
+ms.topic: reference
+title: Loading and Exporting Formatting Data
+description: Loading and Exporting Formatting Data
 ---
 # Loading and Exporting Formatting Data
 

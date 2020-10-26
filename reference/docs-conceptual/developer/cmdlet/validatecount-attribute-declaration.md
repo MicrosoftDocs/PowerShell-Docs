@@ -1,10 +1,8 @@
 ---
-title: "ValidateCount Attribute Declaration | Microsoft Docs"
-ms.date: "09/13/2016"
-helpviewer_keywords:
-  - "attributes, ValidateCount"
-  - "ValidateCount attribute, described"
-  - "ValidateCount attribute"
+ms.date: 09/13/2016
+ms.topic: reference
+title: ValidateCount Attribute Declaration
+description: ValidateCount Attribute Declaration
 ---
 # ValidateCount Attribute Declaration
 

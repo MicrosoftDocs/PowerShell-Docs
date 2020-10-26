@@ -2,6 +2,7 @@
 ms.date: 07/08/2020
 keywords:  dsc,powershell,configuration,setup
 title:  Get-Test-Set
+description: This article illustrates how to implement the Get, Test, and Set methods in a DSC Configuration.
 ---
 
 # Get-Test-Set
@@ -129,13 +130,15 @@ value "Spooler" from the `.mof` file, and pass it to the **Name** parameter of t
 ## Get
 
 The **Get** method of a resource, retrieves the state of the resource as it is configured on the
-target Node. This state is returned as a [hashtable](/powershell/module/microsoft.powershell.core/about/about_hash_tables).
-The keys of the **hashtable** will be the configurable values, or parameters, the resource accepts.
+target Node. This state is returned as a
+[hashtable](/powershell/module/microsoft.powershell.core/about/about_hash_tables). The keys of the
+**hashtable** will be the configurable values, or parameters, the resource accepts.
 
-The **Get** method maps directly to the [Get-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/get-dscconfiguration)
-cmdlet. When you call `Get-DSCConfiguration`, the LCM runs the **Get** method of each resource in
-the currently applied configuration. The LCM uses the key values stored in the `.mof` file as
-parameters to each corresponding resource instance.
+The **Get** method maps directly to the
+[Get-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/get-dscconfiguration) cmdlet.
+When you call `Get-DSCConfiguration`, the LCM runs the **Get** method of each resource in the
+currently applied configuration. The LCM uses the key values stored in the `.mof` file as parameters
+to each corresponding resource instance.
 
 This is sample output from a **Service** resource that configures the "Spooler" service.
 
@@ -187,9 +190,10 @@ Service [String] #ResourceName
 
 The **Test** method of a resource determines if the target node is currently compliant with the
 resource's _desired state_. The **Test** method returns `$true` or `$false` only to indicate whether
-the Node is compliant. When you call [Test-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/Test-DSCConfiguration),
-the LCM calls the **Test** method of each resource in the currently applied configuration. The LCM
-uses the key values stored in the ".mof" file as parameters to each corresponding resource instance.
+the Node is compliant. When you call
+[Test-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/Test-DSCConfiguration), the
+LCM calls the **Test** method of each resource in the currently applied configuration. The LCM uses
+the key values stored in the ".mof" file as parameters to each corresponding resource instance.
 
 If the result of any individual resource's **Test** is `$false`, `Test-DSCConfiguration` returns
 `$false` indicating that the Node is not compliant. If all resource's **Test** methods return
@@ -217,14 +221,16 @@ PSComputerName  ResourcesInDesiredState        ResourcesNotInDesiredState     In
 localhost       {[Service]Spooler}                                            True
 ```
 
-For more information, see [Test-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/Test-DSCConfiguration)
+For more information, see
+[Test-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/Test-DSCConfiguration).
 
 ## Set
 
 The **Set** method of a resource attempts to force the Node to become compliant with the resource's
 *desired state*. The **Set** method is meant to be **idempotent**, which means that **Set** could be
-run multiple times and always get the same result without errors. When you run [Start-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/Start-DSCConfiguration),
-the LCM cycles through each resource in the currently applied configuration. The LCM retrieves key
+run multiple times and always get the same result without errors. When you run
+[Start-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/Start-DSCConfiguration), the
+LCM cycles through each resource in the currently applied configuration. The LCM retrieves key
 values for the current resource instance from the ".mof" file and uses them as parameters for the
 **Test** method. If the **Test** method returns `$true`, the Node is compliant with the current
 resource, and the **Set** method is skipped. If the **Test** returns `$false`, the Node is

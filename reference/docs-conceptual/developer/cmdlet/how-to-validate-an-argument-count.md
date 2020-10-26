@@ -1,8 +1,8 @@
 ---
-title: "How to Validate an Argument Count | Microsoft Docs"
-ms.date: "09/13/2016"
-helpviewer_keywords:
-  - "ValidateCount attribute, example"
+ms.date: 09/13/2016
+ms.topic: reference
+title: How to Validate an Argument Count
+description: How to Validate an Argument Count
 ---
 # How to Validate an Argument Count
 

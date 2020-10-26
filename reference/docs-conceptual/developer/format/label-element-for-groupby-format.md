@@ -1,6 +1,8 @@
 ---
-title: "Label Element for GroupBy (Format) | Microsoft Docs"
-ms.date: "09/13/2016"
+ms.date: 09/13/2016
+ms.topic: reference
+title: Label Element for GroupBy (Format)
+description: Label Element for GroupBy (Format)
 ---
 # Label Element for GroupBy (Format)
 

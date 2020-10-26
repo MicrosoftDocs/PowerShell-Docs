@@ -1,6 +1,8 @@
 ---
-title: "AutoSize Element for WideControl (Format) | Microsoft Docs"
-ms.date: "09/13/2016"
+ms.date: 09/13/2016
+ms.topic: reference
+title: AutoSize Element for WideControl (Format)
+description: AutoSize Element for WideControl (Format)
 ---
 # AutoSize Element for WideControl (Format)
 

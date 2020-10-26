@@ -2,6 +2,7 @@
 ms.date: 07/08/2020
 keywords:  dsc,powershell,configuration,setup
 title:  Resource authoring checklist
+description: This article contains a checklist of best practices that should be used when authoring a new DSC Resource.
 ---
 # Resource authoring checklist
 
@@ -12,7 +13,7 @@ This checklist is a list of best practices when authoring a new DSC Resource.
 Check that your resource has correct structure and contains all required files. Every resource
 module should contain a .psd1 file and every non-composite resource should have schema.mof file.
 Resources that do not contain schema will not be listed by `Get-DscResource` and users will not be
-able to use the intellisense when writing code against those modules in ISE. The directory structure
+able to use the IntelliSense when writing code against those modules in ISE. The directory structure
 for xRemoteFile resource, which is part of the
 [xPSDesiredStateConfiguration resource module](https://github.com/PowerShell/xPSDesiredStateConfiguration),
 looks as follows:

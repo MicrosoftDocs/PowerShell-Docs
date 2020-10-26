@@ -1,6 +1,8 @@
 ---
-title: "FirstLineIndent Element for Frame for Controls for Configuration (Format) | Microsoft Docs"
-ms.date: "09/13/2016"
+ms.date: 09/13/2016
+ms.topic: reference
+title: FirstLineIndent Element for Frame for Controls for Configuration (Format)
+description: FirstLineIndent Element for Frame for Controls for Configuration (Format)
 ---
 # FirstLineIndent Element for Frame for Controls for Configuration (Format)
 

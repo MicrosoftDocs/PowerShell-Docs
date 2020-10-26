@@ -1,6 +1,8 @@
 ---
-title: "CustomControl Element for Control for Controls for Configuration (Format) | Microsoft Docs"
-ms.date: "09/13/2016"
+ms.date: 09/13/2016
+ms.topic: reference
+title: CustomControl Element for Control for Controls for Configuration (Format)
+description: CustomControl Element for Control for Controls for Configuration (Format)
 ---
 # CustomControl Element for Control for Controls for Configuration (Format)
 

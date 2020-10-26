@@ -1,6 +1,8 @@
 ---
-title: "Events01 Sample | Microsoft Docs"
-ms.date: "09/13/2016"
+ms.date: 09/13/2016
+ms.topic: reference
+title: Events01 Sample
+description: Events01 Sample
 ---
 # Events01 Sample
 

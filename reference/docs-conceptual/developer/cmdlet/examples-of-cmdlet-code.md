@@ -1,6 +1,8 @@
 ---
-title: "Examples of Cmdlet Code | Microsoft Docs"
-ms.date: "09/13/2016"
+ms.date: 09/13/2016
+ms.topic: reference
+title: Examples of Cmdlet Code
+description: Examples of Cmdlet Code
 ---
 # Examples of Cmdlet Code
 

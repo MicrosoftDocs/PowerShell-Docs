@@ -1,6 +1,8 @@
 ---
-title: "Interpreting ErrorRecord Objects | Microsoft Docs"
-ms.date: "09/13/2016"
+ms.date: 09/13/2016
+ms.topic: reference
+title: Interpreting ErrorRecord Objects
+description: Interpreting ErrorRecord Objects
 ---
 # Interpreting ErrorRecord Objects
 

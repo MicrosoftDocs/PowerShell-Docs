@@ -1,9 +1,8 @@
 ---
-title: "Cmdlet Attributes | Microsoft Docs"
-ms.date: "09/13/2016"
-helpviewer_keywords:
-  - "attributes [PowerShell SDK]"
-  - "attributes [PowerShell SDK], described"
+ms.date: 09/13/2016
+ms.topic: reference
+title: Cmdlet Attributes
+description: Cmdlet Attributes
 ---
 # Cmdlet Attributes
 

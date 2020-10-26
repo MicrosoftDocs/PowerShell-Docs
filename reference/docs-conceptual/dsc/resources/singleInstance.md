@@ -2,19 +2,20 @@
 ms.date: 07/08/2020
 keywords:  dsc,powershell,configuration,setup
 title:  Writing a single-instance DSC resource (best practice)
+description: This article describes a best practice for defining a DSC resource that allows only a single instance in a configuration.
 ---
 
 # Writing a single-instance DSC resource (best practice)
 
 > [!NOTE]
-> This topic describes a best practice for defining a DSC resource that allows only a single
+> This article describes a best practice for defining a DSC resource that allows only a single
 > instance in a configuration. Currently, there is no built-in DSC feature to do this. That might
 > change in the future.
 
 There are situations where you don't want to allow a resource to be used multiple times in a
-configuration. For example, in a previous implementation of the [xTimeZone](https://github.com/PowerShell/xTimeZone)
-resource, a configuration could call the resource multiple times, setting the time zone to a
-different setting in each resource block:
+configuration. For example, in a previous implementation of the
+[xTimeZone](https://github.com/PowerShell/xTimeZone) resource, a configuration could call the
+resource multiple times, setting the time zone to a different setting in each resource block:
 
 ```powershell
 Configuration SetTimeZone

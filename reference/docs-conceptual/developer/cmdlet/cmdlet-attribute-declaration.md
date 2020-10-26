@@ -1,10 +1,8 @@
 ---
-title: "Cmdlet Attribute Declaration | Microsoft Docs"
-ms.date: "09/13/2016"
-helpviewer_keywords:
-  - "Cmdlet attribute, described"
-  - "attributes, Cmdlet"
-  - "Cmdlet attribute"
+ms.date: 09/13/2016
+ms.topic: reference
+title: Cmdlet Attribute Declaration
+description: Cmdlet Attribute Declaration
 ---
 # Cmdlet Attribute Declaration
 

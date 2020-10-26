@@ -1,6 +1,8 @@
 ---
-title: "Installing a PowerShell Module | Microsoft Docs"
-ms.date: "09/13/2016"
+ms.date: 09/13/2016
+ms.topic: reference
+title: Installing a PowerShell Module
+description: Installing a PowerShell Module
 ---
 # Installing a PowerShell Module
 

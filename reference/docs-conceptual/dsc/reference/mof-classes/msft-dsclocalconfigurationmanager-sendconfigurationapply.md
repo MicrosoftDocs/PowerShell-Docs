@@ -1,7 +1,8 @@
 ---
 ms.date: 07/17/2020
-keywords:  dsc,powershell,configuration,setup
-title:  SendConfigurationApply method
+ms.topic: reference
+title: SendConfigurationApply method
+description: SendConfigurationApply method
 ---
 # SendConfigurationApply method
 

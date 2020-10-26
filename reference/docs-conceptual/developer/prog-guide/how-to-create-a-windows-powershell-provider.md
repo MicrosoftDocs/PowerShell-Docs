@@ -1,10 +1,8 @@
 ---
-title: "How to Create a Windows PowerShell Provider | Microsoft Docs"
-ms.date: "09/13/2016"
-helpviewer_keywords:
-  - "providers [PowerShell Programmer's Guide]"
-  - "providers [PowerShellProgrammer's Guide], creating"
-  - "Windows PowerShell Programmer's Guide, providers"
+ms.date: 09/13/2016
+ms.topic: reference
+title: How to Create a Windows PowerShell Provider
+description: How to Create a Windows PowerShell Provider
 ---
 # How to Create a Windows PowerShell Provider
 

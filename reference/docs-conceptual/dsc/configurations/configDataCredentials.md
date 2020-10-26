@@ -2,6 +2,7 @@
 ms.date:  06/12/2017
 keywords:  dsc,powershell,configuration,setup
 title:  Credentials Options in Configuration Data
+description: DSC allows you to provide credentials so that configuration settings can be applied the in the context of a specific user account rather than the Local System account.
 ---
 # Credentials Options in Configuration Data
 

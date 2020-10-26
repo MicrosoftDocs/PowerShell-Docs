@@ -1,8 +1,7 @@
 ---
 ms.date:  09/10/2018
-contributor:  JKeithB
-keywords:  gallery,powershell,cmdlet,psgallery
 title:  Managing API keys
+description: The PowerShell Gallery uses API keys to authenticate access to the Gallery for content publishers.
 ---
 # Managing API keys
 

@@ -1,9 +1,8 @@
 ---
-title: "Creating a Windows PowerShell Property Provider | Microsoft Docs"
-ms.date: "09/13/2016"
-helpviewer_keywords:
-  - "property providers [PowerShell Programmer's Guide]"
-  - "providers [PowerShell Programmer's Guide], property provider"
+ms.date: 09/13/2016
+ms.topic: reference
+title: Creating a Windows PowerShell Property Provider
+description: Creating a Windows PowerShell Property Provider
 ---
 # Creating a Windows PowerShell Property Provider
 

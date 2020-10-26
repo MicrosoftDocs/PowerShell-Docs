@@ -1,6 +1,8 @@
 ---
-title: Writing Windows PowerShell Help
 ms.date: 09/13/2016
+ms.topic: reference
+title: Writing Windows PowerShell Help
+description: Writing Windows PowerShell Help
 ---
 # Writing Windows PowerShell Help
 

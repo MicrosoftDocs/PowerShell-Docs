@@ -1,8 +1,7 @@
 ---
 ms.date:  06/12/2017
-contributor:  JKeithB
-keywords:  gallery,powershell,cmdlet,psgallery
 title:  Get Started with the PowerShell Gallery
+description: This article explains how to get started using the PowerShell Gallery and the PowerShellGet cmdlets
 ---
 # Getting Started with the PowerShell Gallery
 

@@ -1,6 +1,8 @@
 ---
-title: Comment-Based Help Keywords
 ms.date: 06/09/2020
+ms.topic: reference
+title: Comment-Based Help Keywords
+description: Comment-Based Help Keywords
 ---
 # Comment-Based Help Keywords
 

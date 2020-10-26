@@ -1,6 +1,8 @@
 ---
-title: "TableColumnHeader Element (Format) | Microsoft Docs"
-ms.date: "09/13/2016"
+ms.date: 09/13/2016
+ms.topic: reference
+title: TableColumnHeader Element (Format)
+description: TableColumnHeader Element (Format)
 ---
 # TableColumnHeader Element (Format)
 

@@ -1,7 +1,7 @@
 ---
 ms.date:  08/09/2017
-keywords:  powershell,cmdlet,download,install,setup,windows 10, windows 8.1, windows 8.0,windows 7
 title:  Installing Windows PowerShell
+description: This article explains how to install Windows PowerShell on various versions of Windows.
 ---
 # Installing Windows PowerShell
 
@@ -14,8 +14,8 @@ Windows PowerShell. For that, see
 
 ## Finding PowerShell in Windows 10, 8.1, 8.0, and 7
 
-Sometimes locating PowerShell console or ISE (Integrated Scripting Environment) in Windows can be
-difficult, as its location moves from one version of Windows to the next.
+Sometimes locating PowerShell console or the Integrated Scripting Environment (ISE) in Windows can
+be difficult, as its location moves from one version of Windows to the next.
 
 The following tables should help you find PowerShell in your Windows version. All versions listed
 here are the original version, as released, with no updates.

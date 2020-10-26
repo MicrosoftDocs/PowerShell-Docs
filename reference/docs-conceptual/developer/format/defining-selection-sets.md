@@ -1,6 +1,8 @@
 ---
-title: "Defining Selection Sets | Microsoft Docs"
-ms.date: "09/13/2016"
+ms.date: 09/13/2016
+ms.topic: reference
+title: Defining Selection Sets
+description: Defining Selection Sets
 ---
 # Defining Selection Sets
 

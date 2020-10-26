@@ -1,11 +1,8 @@
 ---
-title: "Creating a Cmdlet that Modifies the System | Microsoft Docs"
-ms.date: "09/13/2016"
-helpviewer_keywords:
-  - "should process [PowerShell Programmer's Guide]"
-  - "should continue [PowerShell Programmer's Guide]"
-  - "user feedback [PowerShell Programmer's Guide]"
-  - "confirm impact [PowerShell Programmer's Guide]"
+ms.date: 09/13/2016
+ms.topic: reference
+title: Creating a Cmdlet that Modifies the System
+description: Creating a Cmdlet that Modifies the System
 ---
 # Creating a Cmdlet that Modifies the System
 

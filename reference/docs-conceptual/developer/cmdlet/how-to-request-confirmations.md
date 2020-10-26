@@ -1,6 +1,8 @@
 ---
-title: "How to Request Confirmations | Microsoft Docs"
-ms.date: "09/13/2016"
+ms.date: 09/13/2016
+ms.topic: reference
+title: How to Request Confirmations
+description: How to Request Confirmations
 ---
 # How to Request Confirmations
 

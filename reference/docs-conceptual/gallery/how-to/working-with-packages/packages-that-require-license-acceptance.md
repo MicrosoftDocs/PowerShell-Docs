@@ -1,13 +1,12 @@
 ---
 ms.date:  06/12/2017
-contributor:  Farehar
-keywords:  gallery,powershell,psgallery
 title:  Require license acceptance
+description: How to view the package license on the item details page
 ---
 # Require license acceptance
 
 Require License Acceptance text shows up on item details page for modules that require license
-acceptance. License for module can be viewed by clicking on 'View License.txt' link.
+acceptance. License for module can be viewed by clicking on **View License.txt** link.
 
 ![Require License Acceptance](media/packages-that-require-license-acceptance/RequireLicenseAcceptance.png)
 

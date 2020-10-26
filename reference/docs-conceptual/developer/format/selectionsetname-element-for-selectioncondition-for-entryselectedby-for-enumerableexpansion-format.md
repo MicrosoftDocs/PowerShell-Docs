@@ -1,6 +1,8 @@
 ---
-title: "SelectionSetName Element for SelectionCondition for EntrySelectedBy for EnumerableExpansion (Format) | Microsoft Docs"
-ms.date: "09/13/2016"
+ms.date: 09/13/2016
+ms.topic: reference
+title: SelectionSetName Element for SelectionCondition for EntrySelectedBy for EnumerableExpansion (Format)
+description: SelectionSetName Element for SelectionCondition for EntrySelectedBy for EnumerableExpansion (Format)
 ---
 # SelectionSetName Element for SelectionCondition for EntrySelectedBy for EnumerableExpansion (Format)
 

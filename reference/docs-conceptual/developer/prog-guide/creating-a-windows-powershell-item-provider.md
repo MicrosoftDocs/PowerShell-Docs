@@ -1,9 +1,8 @@
 ---
-title: "Creating a Windows PowerShell Item Provider | Microsoft Docs"
-ms.date: "09/13/2016"
-helpviewer_keywords:
-  - "item providers [PowerShell Programmer's Guide]"
-  - "providers [PowerShell Programmer's Guide], item provider"
+ms.date: 09/13/2016
+ms.topic: reference
+title: Creating a Windows PowerShell Item Provider
+description: Creating a Windows PowerShell Item Provider
 ---
 # Creating a Windows PowerShell Item Provider
 

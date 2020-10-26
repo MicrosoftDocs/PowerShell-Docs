@@ -1,6 +1,8 @@
 ---
-title: Supporting Online Help
 ms.date: 09/13/2016
+ms.topic: reference
+title: Supporting Online Help
+description: Supporting Online Help
 ---
 # Supporting Online Help
 

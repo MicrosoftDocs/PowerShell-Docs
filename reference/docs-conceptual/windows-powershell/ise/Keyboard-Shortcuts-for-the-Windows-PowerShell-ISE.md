@@ -1,15 +1,16 @@
 ---
 ms.date:  01/02/2020
-keywords:  powershell,cmdlet
 title:  Keyboard Shortcuts for the Windows PowerShell ISE
+description: This article is a list of the keyboard shortcuts used in the PowerShell ISE.
 ---
 
 # Keyboard Shortcuts for the Windows PowerShell ISE
 
-Use the following keyboard shortcuts to perform actions in Windows PowerShell® Integrated Scripting
+Use the following keyboard shortcuts to perform actions in Windows PowerShell&reg; Integrated Scripting
 Environment (ISE). Windows PowerShell ISE is available as part of the Windows Server and Windows
 client operating systems, but can also be installed on some older Windows operating systems as part
-of the [Windows Management Framework 4.0 download package](https://go.microsoft.com/fwlink/?LinkID=293881).
+of the
+[Windows Management Framework 4.0 download package](https://go.microsoft.com/fwlink/?LinkID=293881).
 
 ## Keyboard shortcuts for editing text
 
@@ -111,7 +112,8 @@ You can use the following keyboard shortcuts when you use Windows PowerShell tab
 
 ## Keyboard shortcuts for starting and exiting
 
-You can use the following keyboard shortcuts to start the Windows PowerShell console (PowerShell.exe) or to exit Windows PowerShell ISE.
+You can use the following keyboard shortcuts to start the Windows PowerShell console
+(PowerShell.exe) or to exit Windows PowerShell ISE.
 
 |                        Action                        |               Keyboard Shortcut               |
 | ---------------------------------------------------- | --------------------------------------------- |

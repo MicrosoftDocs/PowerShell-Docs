@@ -1,29 +1,8 @@
 ---
-title: "Adding User Messages to Your Cmdlet | Microsoft Docs"
-ms.date: "09/13/2016"
-helpviewer_keywords:
-  - "WriteWarning"
-  - "notifications, writing"
-  - "progress notification"
-  - "WriteVerbose"
-  - "Stop-Proc"
-  - "WriteProgress"
-  - "WriteDebug"
-  - "notifications, debug"
-  - "ProgressRecord"
-  - "samples, Stop-Proc cmdlet"
-  - "notifications, progress"
-  - "notifications, warning"
-  - "WriteObject"
-  - "WriteError"
-  - "verbose notification"
-  - "ProcessRecord"
-  - "notifications, verbose"
-  - "debug notification"
-  - "cmdlet, writing notifications"
-  - "warning"
-  - "code sample, user notifications"
-  - "user notifications"
+ms.date: 09/13/2016
+ms.topic: reference
+title: Adding User Messages to Your Cmdlet
+description: Adding User Messages to Your Cmdlet
 ---
 # Adding User Messages to Your Cmdlet
 

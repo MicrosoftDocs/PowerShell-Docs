@@ -1,12 +1,12 @@
 ---
 ms.date:  01/02/2020
-keywords:  powershell,cmdlet
 title:  Exploring the Windows PowerShell ISE
+description: This article is an overview of the features of the Windows PowerShell ISE
 ---
 
 # Exploring the Windows PowerShell ISE
 
-You can use the Windows PowerShell® Integrated Scripting Environment (ISE) to create, run, and debug
+You can use the Windows PowerShell&reg; Integrated Scripting Environment (ISE) to create, run, and debug
 commands and scripts. The Windows PowerShell ISE consists of the menu bar, Windows PowerShell tabs,
 the toolbar, script tabs, a Script Pane, a Console Pane, a status bar, a text-size slider and
 context-sensitive Help.

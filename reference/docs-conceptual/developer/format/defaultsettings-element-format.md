@@ -1,6 +1,8 @@
 ---
-title: "DefaultSettings Element (Format) | Microsoft Docs"
-ms.date: "09/13/2016"
+ms.date: 09/13/2016
+ms.topic: reference
+title: DefaultSettings Element (Format)
+description: DefaultSettings Element (Format)
 ---
 # DefaultSettings Element (Format)
 

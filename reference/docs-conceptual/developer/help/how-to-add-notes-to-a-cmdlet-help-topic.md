@@ -1,6 +1,8 @@
 ---
-title: How to Add Notes to a Cmdlet Help Topic
 ms.date: 10/20/2020
+ms.topic: reference
+title: How to Add Notes to a Cmdlet Help Topic
+description: How to Add Notes to a Cmdlet Help Topic
 ---
 # How to Add Notes to a Cmdlet Help Topic
 
