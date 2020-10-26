@@ -1,7 +1,8 @@
 ---
 ms.date: 07/16/2020
-keywords: dsc,powershell,configuration,setup
+ms.topic: reference
 title: DSC Environment Resource
+description: DSC Environment Resource
 ---
 # DSC Environment Resource
 

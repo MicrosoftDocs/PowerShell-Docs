@@ -1,7 +1,8 @@
 ---
 ms.date: 07/17/2020
-keywords:  dsc,powershell,configuration,setup
-title:  StopConfiguration method
+ms.topic: reference
+title: StopConfiguration method
+description: StopConfiguration method
 ---
 # StopConfiguration method
 

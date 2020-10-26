@@ -1,7 +1,8 @@
 ---
 ms.date: 07/16/2020
-keywords: dsc,powershell,configuration,setup
+ms.topic: reference
 title: DSC WaitForAny Resource
+description: DSC WaitForAny Resource
 ---
 # DSC WaitForAny Resource
 

@@ -1,7 +1,8 @@
 ---
 ms.date: 07/15/2020
-keywords: dsc,powershell,configuration,setup
+ms.topic: reference
 title: DSC PackageManagement Resource
+description: DSC PackageManagement Resource
 ---
 # DSC PackageManagement Resource
 

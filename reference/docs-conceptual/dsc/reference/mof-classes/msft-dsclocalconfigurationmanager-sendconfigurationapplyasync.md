@@ -1,7 +1,8 @@
 ---
 ms.date: 07/17/2020
-keywords:  dsc,powershell,configuration,setup
-title:  SendConfigurationApplyAsync method
+ms.topic: reference
+title: SendConfigurationApplyAsync method
+description: SendConfigurationApplyAsync method
 ---
 # SendConfigurationApplyAsync method
 

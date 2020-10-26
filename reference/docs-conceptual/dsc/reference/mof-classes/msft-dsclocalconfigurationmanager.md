@@ -1,7 +1,8 @@
 ---
 ms.date: 07/14/2020
-keywords:  dsc,powershell,configuration,setup
-title:  MSFT_DSCLocalConfigurationManager class
+ms.topic: reference
+title: MSFT_DSCLocalConfigurationManager class
+description: MSFT_DSCLocalConfigurationManager class
 ---
 # MSFT_DSCLocalConfigurationManager class
 

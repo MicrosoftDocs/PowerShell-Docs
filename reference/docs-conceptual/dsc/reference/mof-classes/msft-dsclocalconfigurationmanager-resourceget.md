@@ -1,7 +1,8 @@
 ---
 ms.date: 07/17/2020
-keywords:  dsc,powershell,configuration,setup
-title:  ResourceGet method
+ms.topic: reference
+title: ResourceGet method
+description: ResourceGet method
 ---
 # ResourceGet method
 

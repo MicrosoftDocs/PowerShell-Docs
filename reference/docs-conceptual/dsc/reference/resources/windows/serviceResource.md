@@ -1,7 +1,8 @@
 ---
 ms.date: 09/20/2019
-keywords: dsc,powershell,configuration,setup
+ms.topic: reference
 title: DSC Service Resource
+description: DSC Service Resource
 ---
 # DSC Service Resource
 

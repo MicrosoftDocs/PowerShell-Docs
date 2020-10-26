@@ -1,7 +1,8 @@
 ---
 ms.date: 07/17/2020
-keywords:  dsc,powershell,configuration,setup
-title:  GetConfigurationResultOutput method
+ms.topic: reference
+title: GetConfigurationResultOutput method
+description: GetConfigurationResultOutput method
 ---
 # GetConfigurationResultOutput method
 

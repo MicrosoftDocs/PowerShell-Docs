@@ -1,7 +1,8 @@
 ---
 ms.date: 07/17/2020
-keywords: dsc,powershell,configuration,setup
+ms.topic: reference
 title: DSC for Linux nxScript Resource
+description: DSC for Linux nxScript Resource
 ---
 # DSC for Linux nxScript Resource
 
