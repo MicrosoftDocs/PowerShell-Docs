@@ -1,7 +1,7 @@
 ---
 ms.date:  06/12/2017
-keywords:  wmf,powershell,setup
 title: Uninstall WMF 5.0
+description: This article explains how to uninstall WMF from older versions of Windows.
 ---
 
 # Uninstallation Instructions

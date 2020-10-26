@@ -1,7 +1,7 @@
 ---
 ms.date:  12/31/2019
-keywords:  powershell,cmdlet
 title:  The ISEAddOnToolCollection Object
+description: The ISEAddOnToolCollection object is a collection of **ISEAddOnTool** objects.
 ---
 
 # The ISEAddOnToolCollection Object

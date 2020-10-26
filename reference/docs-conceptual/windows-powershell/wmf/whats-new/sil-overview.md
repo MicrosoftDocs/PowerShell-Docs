@@ -1,7 +1,7 @@
 ---
 ms.date:  06/12/2017
-keywords:  wmf,powershell,setup
 title: Software Inventory Logging (SIL)
+description: WMF 5.x add Software Inventory Logging features that allow you to collect information about installed software in a central location for easier management and auditing.
 ---
 
 # Software Inventory Logging (SIL)
@@ -25,7 +25,8 @@ over HTTPS to an aggregation server. Storing the data in one place makes the dat
 manipulate, and share when necessary.
 
 None of this data is sent to Microsoft as part of the feature functionality. Software Inventory
-Logging data and functionality is meant for the sole use of the server software’s licensed owner and
+Logging data and functionality is meant for the sole use of the server software's licensed owner and
 administrators.
 
-For more information and documentation about Software Inventory Logging cmdlets, see [Manage Software Inventory Logging in Windows Server 2012 R2](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn383584(v=ws.11)).
+For more information and documentation about Software Inventory Logging cmdlets, see
+[Manage Software Inventory Logging in Windows Server 2012 R2](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn383584(v=ws.11)).

@@ -1,7 +1,7 @@
 ---
 ms.date:  06/12/2017
-keywords:  wmf,powershell,setup
 title:  Console Improvements in WMF 5.1
+description: WMF 5.1 adds new features to the console experience for Windows PowerShell 5.1.
 ---
 # Console Improvements in WMF 5.1
 

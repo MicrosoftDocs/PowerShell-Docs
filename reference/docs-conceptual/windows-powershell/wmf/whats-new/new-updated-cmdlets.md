@@ -1,7 +1,7 @@
 ---
 ms.date:  06/12/2017
-keywords:  wmf,powershell,setup
 title: New and updated cmdlets
+description: Windows PowerShell 5.1 includes many new or updated cmdlets.
 ---
 # New and updated cmdlets
 
@@ -11,7 +11,9 @@ We have added new and updated existing cmdlets based on feedback from the commun
 
 Two new cmdlets, `Compress-Archive` and `Expand-Archive`, let you compress and expand ZIP files.
 
-For more information, see the [Microsoft.Powershell.Archive](/powershell/module/microsoft.powershell.archive/) module documentation.
+For more information, see the
+[Microsoft.Powershell.Archive](/powershell/module/microsoft.powershell.archive/) module
+documentation.
 
 ## Catalog Cmdlets
 
@@ -35,13 +37,15 @@ For more information, see:
 ## Cryptographic Message Syntax (CMS) cmdlets
 
 The Cryptographic Message Syntax cmdlets support encryption and decryption of content using the IETF
-standard format for cryptographically protecting messages as documented by [RFC5652](https://tools.ietf.org/html/rfc5652.html).
+standard format for cryptographically protecting messages as documented by
+[RFC5652](https://tools.ietf.org/html/rfc5652.html).
 
 The CMS encryption standard implements public key cryptography, where the key used to encrypt
 content (the *public key*) and the key used to decrypt content (the *private key*) are separate.
 
 Your public key can be shared widely and is not sensitive data. Any content encrypted with the
-public key can only be decrypted using the private key. For more information, see [Public-key cryptography](https://en.wikipedia.org/wiki/Public-key_cryptography).
+public key can only be decrypted using the private key. For more information, see
+[Public-key cryptography](https://en.wikipedia.org/wiki/Public-key_cryptography).
 
 For more information see:
 

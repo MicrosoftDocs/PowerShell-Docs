@@ -1,7 +1,7 @@
 ---
 ms.date:  06/12/2017
-keywords:  wmf,powershell,setup
 title: Script Tracing and Logging
+description: Windows PowerShell 5.x adds new event logging that allows you to audit script block execution.
 ---
 # Script Tracing and Logging
 

@@ -1,7 +1,7 @@
 ---
 ms.date:  01/02/2020
-keywords:  powershell,cmdlet
 title:  How to Use Tab Completion in the Script Pane and Console Pane
+description:  How to Use Tab Completion in the Script Pane and Console Pane
 ---
 
 # How to Use Tab Completion in the Script Pane and Console Pane

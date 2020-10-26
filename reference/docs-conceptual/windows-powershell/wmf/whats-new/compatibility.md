@@ -1,8 +1,7 @@
 ---
 ms.date:  06/12/2017
-ms.topic: conceptual
-keywords:  wmf,powershell,setup
 title: Product Compatibility Status
+description: This article lists software that is compatible with WMF 5.1.
 ---
 
 # Product Compatibility Status

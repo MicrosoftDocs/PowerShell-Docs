@@ -1,8 +1,8 @@
 ---
 ms.date:  06/12/2017
 ms.topic: conceptual
-keywords:  wmf,powershell,setup
 title:  Known Issues in WMF 5.1
+description:  Known Issues in WMF 5.1
 ---
 # Known Issues in WMF 5.1
 

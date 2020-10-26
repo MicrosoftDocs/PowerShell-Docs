@@ -1,8 +1,7 @@
 ---
 ms.date:  06/12/2017
-ms.topic: conceptual
-keywords:  wmf,powershell,setup
 title:  WMF 5.x Release Notes
+description:  WMF 5.x Release Notes
 ---
 
 # Windows Management Framework (WMF) 5.x Release Notes

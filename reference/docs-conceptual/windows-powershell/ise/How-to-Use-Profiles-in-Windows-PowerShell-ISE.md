@@ -1,14 +1,15 @@
 ---
 ms.date:  01/02/2020
-keywords:  powershell,cmdlet
 title:  How to Use Profiles in Windows PowerShell ISE
+description: This article explains how to use Profiles in Windows PowerShell ISE.
 ---
 
 # How to Use Profiles in Windows PowerShell ISE
 
-This topic explains how to use Profiles in Windows PowerShell® Integrated Scripting Environment
-(ISE). We recommend that before performing the tasks in this section, you review [about_Profiles](/powershell/module/microsoft.powershell.core/about/about_profiles),
-or in the Console Pane, type, `Get-Help about_Profiles` and press <kbd>ENTER</kbd>.
+This article explains how to use Profiles in Windows PowerShell&reg; Integrated Scripting Environment
+(ISE). We recommend that before performing the tasks in this section, you review
+[about_Profiles](/powershell/module/microsoft.powershell.core/about/about_profiles), or in the
+Console Pane, type, `Get-Help about_Profiles` and press <kbd>ENTER</kbd>.
 
 A profile is a Windows PowerShell ISE script that runs automatically when you start a new session.
 You can create one or more Windows PowerShell profiles for Windows PowerShell ISE and use them to
@@ -18,8 +19,8 @@ available. A profile affects every Windows PowerShell ISE session that you start
 
 > [!NOTE]
 > The Windows PowerShell execution policy determines whether you can run scripts and load a profile.
-> The default execution policy, “Restricted,” prevents all scripts from running, including profiles.
-> If you use the “Restricted” policy, the profile cannot load. For more information about execution
+> The default execution policy, "Restricted," prevents all scripts from running, including profiles.
+> If you use the "Restricted" policy, the profile cannot load. For more information about execution
 > policy, see [about_Execution_Policies](/powershell/module/microsoft.powershell.core/about/about_execution_policies).
 
 ## Selecting a profile to use in the Windows PowerShell ISE
@@ -51,28 +52,28 @@ saved to its own specific path.
 
 ## To create a new profile
 
-To create a new “Current user, Windows PowerShell ISE” profile, run this command:
+To create a new "Current user, Windows PowerShell ISE" profile, run this command:
 
 ```powershell
 if (!(Test-Path -Path $PROFILE ))
 { New-Item -Type File -Path $PROFILE -Force }
 ```
 
-To create a new “All users, Windows PowerShell ISE” profile, run this command:
+To create a new "All users, Windows PowerShell ISE" profile, run this command:
 
 ```powershell
 if (!(Test-Path -Path $PROFILE.AllUsersCurrentHost))
 { New-Item -Type File -Path $PROFILE.AllUsersCurrentHost -Force }
 ```
 
-To create a new “Current user, All Hosts” profile, run this command:
+To create a new "Current user, All Hosts" profile, run this command:
 
 ```powershell
 if (!(Test-Path -Path $PROFILE.CurrentUserAllHosts))
 { New-Item -Type File -Path $PROFILE.CurrentUserAllHosts -Force }
 ```
 
-To create a new “All users, All Hosts” profile, type:
+To create a new "All users, All Hosts" profile, type:
 
 ```powershell
 if (!(Test-Path -Path $PROFILE.AllUsersAllHosts))
@@ -82,7 +83,7 @@ if (!(Test-Path -Path $PROFILE.AllUsersAllHosts))
 ## To edit a profile
 
 1. To open the profile, run the command `psEdit` with the variable that specifies the profile you want
-   to edit. For example, to open the “Current user, Windows PowerShell ISE” profile, type:
+   to edit. For example, to open the "Current user, Windows PowerShell ISE" profile, type:
    `psEdit $PROFILE`
 
 2. Add some items to your profile. The following are a few examples to get you started:

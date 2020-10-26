@@ -1,7 +1,7 @@
 ---
 ms.date:  06/12/2017
-keywords:  wmf,powershell,setup
 title: Desired State Configuration (DSC) Known Issues and Limitations
+description: Known Issues and Limitations of DSC in Windows PowerShell 5.x
 ---
 
 # Desired State Configuration (DSC) Known Issues and Limitations
@@ -46,9 +46,9 @@ mofcomp $env:windir\system32\wbem\DscCoreConfProv.mof
 ## LCM can go into an unstable state while using Get-DscConfiguration in DebugMode
 
 If LCM is in DebugMode, pressing CTRL+C to stop the processing of `Get-DscConfiguration` can cause
-LCM to go into an unstable state such that majority of DSC cmdlets won’t work.
+LCM to go into an unstable state such that majority of DSC cmdlets won't work.
 
-**Resolution:** Don’t press CTRL+C while debugging `Get-DscConfiguration` cmdlet.
+**Resolution:** Don't press CTRL+C while debugging `Get-DscConfiguration` cmdlet.
 
 ## Stop-DscConfiguration may not respond in DebugMode
 
@@ -66,7 +66,7 @@ If LCM is in **DebugMode**, no verbose error messages are displayed from DSC Res
 
 ## Invoke-DscResource operations cannot be retrieved by Get-DscConfigurationStatus cmdlet
 
-After using `Invoke-DscResource` cmdlet to directly invoke any resource’s methods, the records of
+After using `Invoke-DscResource` cmdlet to directly invoke any resource's methods, the records of
 such operation cannot be retrieved through `Get-DscConfigurationStatus`.
 
 **Resolution:** None.

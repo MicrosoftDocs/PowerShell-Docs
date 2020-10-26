@@ -1,7 +1,7 @@
 ---
 ms.date:  12/31/2019
-keywords:  powershell,cmdlet
 title:  The ISEFileCollection Object
+description: The ISEFileCollection object is a collection of ISEFile objects.
 ---
 
 # The ISEFileCollection Object

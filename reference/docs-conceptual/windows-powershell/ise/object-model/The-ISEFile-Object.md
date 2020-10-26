@@ -1,12 +1,12 @@
 ---
 ms.date:  12/31/2019
-keywords:  powershell,cmdlet
 title:  The ISEFile Object
+description: An ISEFile object represents a file in Windows PowerShell ISE.
 ---
 
 # The ISEFile Object
 
-An **ISEFile** object represents a file in Windows PowerShell® Integrated Scripting Environment
+An **ISEFile** object represents a file in Windows PowerShell&reg; Integrated Scripting Environment
 (ISE). It is an instance of the **Microsoft.PowerShell.Host.ISE.ISEFile** class. This topic lists its
 member methods and member properties. The `$psISE.CurrentFile` and the files in the Files
 collection in a PowerShell tab are all instances of the ****Microsoft.PowerShell.Host.ISE.ISEFile** class.
