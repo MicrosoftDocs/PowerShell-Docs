@@ -1,11 +1,8 @@
 ---
-title: "Windows PowerShell Error Records | Microsoft Docs"
-ms.date: "09/13/2016"
-helpviewer_keywords:
-  - "error category [PowerShell SDK]"
-  - "error identifier [PowerShell SDK]"
-  - "error records [PowerShell SDK]"
-  - "error category string [PowerShell SDK]"
+ms.date: 09/13/2016
+ms.topic: reference
+title: Windows PowerShell Error Records
+description: Windows PowerShell Error Records
 ---
 # Windows PowerShell Error Records
 

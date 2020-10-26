@@ -1,6 +1,8 @@
 ---
-title: "Adding and invoking commands | Microsoft Docs"
-ms.date: "09/13/2016"
+ms.date: 09/13/2016
+ms.topic: reference
+title: Adding and invoking commands
+description: Adding and invoking commands
 ---
 # Adding and invoking commands
 

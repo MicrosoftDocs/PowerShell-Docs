@@ -1,6 +1,8 @@
 ---
-title: Updatable Help Authoring - Step-by-Step
 ms.date: 09/13/2016
+ms.topic: reference
+title: Updatable Help Authoring - Step-by-Step
+description: Updatable Help Authoring - Step-by-Step
 ---
 # Updatable Help Authoring: Step-by-Step
 

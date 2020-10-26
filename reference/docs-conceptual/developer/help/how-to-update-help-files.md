@@ -1,6 +1,8 @@
 ---
-title: How to Update Help Files
 ms.date: 09/12/2016
+ms.topic: reference
+title: How to Update Help Files
+description: How to Update Help Files
 ---
 # How to Update Help Files
 

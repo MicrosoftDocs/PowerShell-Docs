@@ -1,6 +1,8 @@
 ---
-title: "EntrySelectedBy Element for ListEntry for ListControl (Format) | Microsoft Docs"
-ms.date: "09/13/2016"
+ms.date: 09/13/2016
+ms.topic: reference
+title: EntrySelectedBy Element for ListEntry for ListControl (Format)
+description: EntrySelectedBy Element for ListEntry for ListControl (Format)
 ---
 # EntrySelectedBy Element for ListEntry for ListControl (Format)
 

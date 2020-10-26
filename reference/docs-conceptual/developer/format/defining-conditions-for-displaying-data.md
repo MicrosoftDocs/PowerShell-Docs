@@ -1,6 +1,8 @@
 ---
-title: "Defining Conditions for Displaying Data | Microsoft Docs"
-ms.date: "09/13/2016"
+ms.date: 09/13/2016
+ms.topic: reference
+title: Defining Conditions for Displaying Data
+description: Defining Conditions for Displaying Data
 ---
 # Defining Conditions for Displaying Data
 

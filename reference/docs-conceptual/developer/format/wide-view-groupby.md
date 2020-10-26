@@ -1,6 +1,8 @@
 ---
-title: "Wide View (GroupBy) | Microsoft Docs"
-ms.date: "09/13/2016"
+ms.date: 09/13/2016
+ms.topic: reference
+title: Wide View (GroupBy)
+description: Wide View (GroupBy)
 ---
 # Wide View (GroupBy)
 

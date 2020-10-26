@@ -1,6 +1,8 @@
 ---
-title: "RightIndent Element for Frame for CustomControl for View (Format) | Microsoft Docs"
-ms.date: "09/13/2016"
+ms.date: 09/13/2016
+ms.topic: reference
+title: RightIndent Element for Frame for CustomControl for View (Format)
+description: RightIndent Element for Frame for CustomControl for View (Format)
 ---
 # RightIndent Element for Frame for CustomControl for View (Format)
 

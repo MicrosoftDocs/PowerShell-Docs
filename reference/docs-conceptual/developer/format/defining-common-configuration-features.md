@@ -1,6 +1,8 @@
 ---
-title: "Defining Common Configuration Features | Microsoft Docs"
-ms.date: "09/12/2016"
+ms.date: 09/12/2016
+ms.topic: reference
+title: Defining Common Configuration Features
+description: Defining Common Configuration Features
 ---
 # Defining Common Configuration Features
 

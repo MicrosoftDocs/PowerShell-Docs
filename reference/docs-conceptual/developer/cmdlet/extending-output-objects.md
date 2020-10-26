@@ -1,6 +1,8 @@
 ---
-title: "Extending Output Objects | Microsoft Docs"
-ms.date: "09/13/2016"
+ms.date: 09/13/2016
+ms.topic: reference
+title: Extending Output Objects
+description: Extending Output Objects
 ---
 # Extending Output Objects
 

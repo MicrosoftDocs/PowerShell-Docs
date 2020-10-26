@@ -1,6 +1,8 @@
 ---
-title: "List View (GroupBy) | Microsoft Docs"
-ms.date: "09/13/2016"
+ms.date: 09/13/2016
+ms.topic: reference
+title: List View (GroupBy)
+description: List View (GroupBy)
 ---
 # List View (GroupBy)
 

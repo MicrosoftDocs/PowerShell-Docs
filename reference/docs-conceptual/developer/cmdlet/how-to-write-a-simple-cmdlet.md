@@ -1,6 +1,8 @@
 ---
-title: "How to Write a Simple Cmdlet | Microsoft Docs"
-ms.date: "01/15/2019"
+ms.date: 01/15/2019
+ms.topic: reference
+title: How to Write a Simple Cmdlet
+description: How to Write a Simple Cmdlet
 ---
 
 # How to write a cmdlet

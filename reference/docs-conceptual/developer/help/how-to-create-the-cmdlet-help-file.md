@@ -1,6 +1,8 @@
 ---
-title: "How to Create the Cmdlet Help File | Microsoft Docs"
-ms.date: "09/13/2016"
+ms.date: 09/13/2016
+ms.topic: reference
+title: How to Create the Cmdlet Help File
+description: How to Create the Cmdlet Help File
 ---
 # How to Create the Cmdlet Help File
 

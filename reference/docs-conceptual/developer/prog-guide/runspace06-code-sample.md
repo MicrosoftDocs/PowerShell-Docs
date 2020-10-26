@@ -1,6 +1,8 @@
 ---
-title: "RunSpace06 Code Sample | Microsoft Docs"
-ms.date: "09/13/2016"
+ms.date: 09/13/2016
+ms.topic: reference
+title: RunSpace06 Code Sample
+description: RunSpace06 Code Sample
 ---
 # RunSpace06 Code Sample
 

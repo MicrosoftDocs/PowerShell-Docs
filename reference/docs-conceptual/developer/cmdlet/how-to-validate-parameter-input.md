@@ -1,6 +1,8 @@
 ---
-title: "How to Validate Parameter Input | Microsoft Docs"
-ms.date: "09/13/2016"
+ms.date: 09/13/2016
+ms.topic: reference
+title: How to Validate Parameter Input
+description: How to Validate Parameter Input
 ---
 # How to Validate Parameter Input
 

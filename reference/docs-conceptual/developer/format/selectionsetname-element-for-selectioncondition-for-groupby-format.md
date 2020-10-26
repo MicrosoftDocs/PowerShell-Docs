@@ -1,6 +1,8 @@
 ---
-title: "SelectionSetName Element for SelectionCondition for GroupBy (Format) | Microsoft Docs"
-ms.date: "09/13/2016"
+ms.date: 09/13/2016
+ms.topic: reference
+title: SelectionSetName Element for SelectionCondition for GroupBy (Format)
+description: SelectionSetName Element for SelectionCondition for GroupBy (Format)
 ---
 # SelectionSetName Element for SelectionCondition for GroupBy (Format)
 

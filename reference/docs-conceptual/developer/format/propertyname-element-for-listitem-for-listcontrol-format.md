@@ -1,6 +1,8 @@
 ---
-title: "PropertyName Element for ListItem for ListControl (Format) | Microsoft Docs"
-ms.date: "09/13/2016"
+ms.date: 09/13/2016
+ms.topic: reference
+title: PropertyName Element for ListItem for ListControl (Format)
+description: PropertyName Element for ListItem for ListControl (Format)
 ---
 # PropertyName Element for ListItem for ListControl (Format)
 

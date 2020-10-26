@@ -1,6 +1,8 @@
 ---
-title: "ItemSelectionCondition Element for ExpressionBinding for Controls for Configuration (Format) | Microsoft Docs"
-ms.date: "09/13/2016"
+ms.date: 09/13/2016
+ms.topic: reference
+title: ItemSelectionCondition Element for ExpressionBinding for Controls for Configuration (Format)
+description: ItemSelectionCondition Element for ExpressionBinding for Controls for Configuration (Format)
 ---
 # ItemSelectionCondition Element for ExpressionBinding for Controls for Configuration (Format)
 

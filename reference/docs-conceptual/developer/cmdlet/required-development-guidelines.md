@@ -1,6 +1,8 @@
 ---
-title: "Required Development Guidelines | Microsoft Docs"
-ms.date: "09/13/2016"
+ms.date: 09/13/2016
+ms.topic: reference
+title: Required Development Guidelines
+description: Required Development Guidelines
 ---
 # Required Development Guidelines
 

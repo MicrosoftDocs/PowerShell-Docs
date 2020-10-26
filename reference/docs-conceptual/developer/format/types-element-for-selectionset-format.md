@@ -1,6 +1,8 @@
 ---
-title: "Types Element for SelectionSet (Format) | Microsoft Docs"
-ms.date: "09/13/2016"
+ms.date: 09/13/2016
+ms.topic: reference
+title: Types Element for SelectionSet (Format)
+description: Types Element for SelectionSet (Format)
 ---
 # Types Element for SelectionSet (Format)
 

@@ -1,6 +1,8 @@
 ---
-title: "TableRowEntry Element for TableRowEntries for TableControl (Format) | Microsoft Docs"
-ms.date: "09/13/2016"
+ms.date: 09/13/2016
+ms.topic: reference
+title: TableRowEntry Element for TableRowEntries for TableControl (Format)
+description: TableRowEntry Element for TableRowEntries for TableControl (Format)
 ---
 # TableRowEntry Element for TableRowEntries for TableControl (Format)
 

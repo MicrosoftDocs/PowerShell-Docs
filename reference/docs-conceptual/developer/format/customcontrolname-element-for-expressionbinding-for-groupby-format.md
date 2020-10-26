@@ -1,6 +1,8 @@
 ---
-title: "CustomControlName Element for ExpressionBinding for GroupBy (Format) | Microsoft Docs"
-ms.date: "09/13/2016"
+ms.date: 09/13/2016
+ms.topic: reference
+title: CustomControlName Element for ExpressionBinding for GroupBy (Format)
+description: CustomControlName Element for ExpressionBinding for GroupBy (Format)
 ---
 # CustomControlName Element for ExpressionBinding for GroupBy (Format)
 

@@ -1,6 +1,8 @@
 ---
-title: "ListEntries Element for ListControl (Format) | Microsoft Docs"
-ms.date: "09/13/2016"
+ms.date: 09/13/2016
+ms.topic: reference
+title: ListEntries Element for ListControl (Format)
+description: ListEntries Element for ListControl (Format)
 ---
 # ListEntries Element for ListControl (Format)
 

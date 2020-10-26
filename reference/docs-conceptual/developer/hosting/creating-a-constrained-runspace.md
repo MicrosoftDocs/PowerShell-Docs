@@ -1,6 +1,8 @@
 ---
-title: "Creating a constrained runspace | Microsoft Docs"
-ms.date: "09/13/2016"
+ms.date: 09/13/2016
+ms.topic: reference
+title: Creating a constrained runspace
+description: Creating a constrained runspace
 ---
 # Creating a constrained runspace
 

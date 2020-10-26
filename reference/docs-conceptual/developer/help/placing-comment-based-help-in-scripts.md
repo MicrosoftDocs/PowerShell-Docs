@@ -1,6 +1,8 @@
 ---
-title: Placing Comment-Based Help in Scripts
 ms.date: 09/12/2016
+ms.topic: reference
+title: Placing Comment-Based Help in Scripts
+description: Placing Comment-Based Help in Scripts
 ---
 # Placing Comment-Based Help in Scripts
 

@@ -1,9 +1,8 @@
 ---
-title: "Cmdlet Development Guidelines | Microsoft Docs"
-ms.date: "09/13/2016"
-helpviewer_keywords:
-  - "development guidelines [PowerShell Programmer's Guide]"
-  - "cmdlets [PowerShell Programmer's Guide], development guidelines"
+ms.date: 09/13/2016
+ms.topic: reference
+title: Cmdlet Development Guidelines
+description: Cmdlet Development Guidelines
 ---
 # Cmdlet Development Guidelines
 

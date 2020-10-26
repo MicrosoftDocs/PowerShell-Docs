@@ -1,10 +1,8 @@
 ---
-title: "Validating Parameter Input | Microsoft Docs"
-ms.date: "09/13/2016"
-helpviewer_keywords:
-  - "parameters, validation rules"
-  - "validation, examples"
-  - "validation"
+ms.date: 09/13/2016
+ms.topic: reference
+title: Validating Parameter Input
+description: Validating Parameter Input
 ---
 # Validating Parameter Input
 

@@ -1,6 +1,8 @@
 ---
-title: "GetProc04 (VB.NET) Sample Code | Microsoft Docs"
-ms.date: "09/13/2016"
+ms.date: 09/13/2016
+ms.topic: reference
+title: GetProc04 (VB.NET) Sample Code
+description: GetProc04 (VB.NET) Sample Code
 ---
 # GetProc04 (VB.NET) Sample Code
 

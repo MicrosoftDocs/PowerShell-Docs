@@ -1,6 +1,8 @@
 ---
-title: Writing Help for PowerShell Modules
 ms.date: 04/10/2020
+ms.topic: reference
+title: Writing Help for PowerShell Modules
+description: Writing Help for PowerShell Modules
 ---
 # Writing Help for PowerShell Modules
 

@@ -1,6 +1,8 @@
 ---
-title: "How to Write a PowerShell Binary Module | Microsoft Docs"
-ms.date: "09/13/2016"
+ms.date: 09/13/2016
+ms.topic: reference
+title: How to Write a PowerShell Binary Module
+description: How to Write a PowerShell Binary Module
 ---
 # How to Write a PowerShell Binary Module
 

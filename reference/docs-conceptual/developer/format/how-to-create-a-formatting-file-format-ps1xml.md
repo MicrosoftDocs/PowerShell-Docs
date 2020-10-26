@@ -1,6 +1,8 @@
 ---
-title: "How to Create a Formatting File (.format.ps1xml) | Microsoft Docs"
-ms.date: "09/13/2016"
+ms.date: 09/13/2016
+ms.topic: reference
+title: How to Create a Formatting File (.format.ps1xml)
+description: How to Create a Formatting File (.format.ps1xml)
 ---
 # How to Create a Formatting File (.format.ps1xml)
 

@@ -1,8 +1,8 @@
 ---
-title: "How to Validate the Argument Length | Microsoft Docs"
-ms.date: "09/13/2016"
-helpviewer_keywords:
-  - "ValidateLength attribute, example"
+ms.date: 09/13/2016
+ms.topic: reference
+title: How to Validate the Argument Length
+description: How to Validate the Argument Length
 ---
 # How to Validate the Argument Length
 

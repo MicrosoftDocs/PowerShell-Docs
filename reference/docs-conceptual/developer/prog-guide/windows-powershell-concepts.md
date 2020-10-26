@@ -1,6 +1,8 @@
 ---
-title: "Windows PowerShell Concepts | Microsoft Docs"
-ms.date: "6/12/2019"
+ms.date: 06/12/2019
+ms.topic: reference
+title: Windows PowerShell Concepts
+description: Windows PowerShell Concepts
 ---
 # Windows PowerShell Concepts
 

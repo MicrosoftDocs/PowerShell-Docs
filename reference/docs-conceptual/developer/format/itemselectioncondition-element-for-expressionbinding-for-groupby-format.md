@@ -1,6 +1,8 @@
 ---
-title: "ItemSelectionCondition Element for ExpressionBinding for GroupBy (Format) | Microsoft Docs"
-ms.date: "09/13/2016"
+ms.date: 09/13/2016
+ms.topic: reference
+title: ItemSelectionCondition Element for ExpressionBinding for GroupBy (Format)
+description: ItemSelectionCondition Element for ExpressionBinding for GroupBy (Format)
 ---
 # ItemSelectionCondition Element for ExpressionBinding for GroupBy (Format)
 

@@ -1,6 +1,8 @@
 ---
-title: "GetProcessSample02 Sample | Microsoft Docs"
-ms.date: "09/13/2016"
+ms.date: 09/13/2016
+ms.topic: reference
+title: GetProcessSample02 Sample
+description: GetProcessSample02 Sample
 ---
 # GetProcessSample02 Sample
 

@@ -1,10 +1,8 @@
 ---
-title: "Creating a Windows PowerShell Drive Provider | Microsoft Docs"
-ms.date: "09/13/2016"
-helpviewer_keywords:
-  - "drive providers [PowerShell Programmer's Guide]"
-  - "providers [PowerShell Programmer's Guide], drive provider"
-  - "drives [PowerShell Programmer's Guide]"
+ms.date: 09/13/2016
+ms.topic: reference
+title: Creating a Windows PowerShell Drive Provider
+description: Creating a Windows PowerShell Drive Provider
 ---
 # Creating a Windows PowerShell Drive Provider
 

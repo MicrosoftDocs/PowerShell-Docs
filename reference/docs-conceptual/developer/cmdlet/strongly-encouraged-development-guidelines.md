@@ -1,6 +1,8 @@
 ---
-title: "Strongly Encouraged Development Guidelines | Microsoft Docs"
-ms.date: "09/13/2016"
+ms.date: 09/13/2016
+ms.topic: reference
+title: Strongly Encouraged Development Guidelines
+description: Strongly Encouraged Development Guidelines
 ---
 # Strongly Encouraged Development Guidelines
 

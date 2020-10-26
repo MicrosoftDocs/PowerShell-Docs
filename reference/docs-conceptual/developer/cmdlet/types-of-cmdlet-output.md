@@ -1,8 +1,8 @@
 ---
-title: "Types of Cmdlet Output | Microsoft Docs"
-ms.date: "01/18/2019"
-helpviewer_keywords:
-  - "cmdlets [PowerShell SDK], output"
+ms.date: 01/18/2019
+ms.topic: reference
+title: Types of Cmdlet Output
+description: Types of Cmdlet Output
 ---
 
 # Types of cmdlet output

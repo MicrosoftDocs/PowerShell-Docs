@@ -1,10 +1,8 @@
 ---
-title: "ValidateRange Attribute Declaration | Microsoft Docs"
-ms.date: "09/13/2016"
-helpviewer_keywords:
-  - "ValidateRange, described"
-  - "ValidateRange attribute"
-  - "attributes, ValidateRange"
+ms.date: 09/13/2016
+ms.topic: reference
+title: ValidateRange Attribute Declaration
+description: ValidateRange Attribute Declaration
 ---
 # ValidateRange Attribute Declaration
 

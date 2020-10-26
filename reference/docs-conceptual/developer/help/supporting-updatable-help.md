@@ -1,6 +1,8 @@
 ---
-title: Supporting Updatable Help
 ms.date: 10/28/2012
+ms.topic: reference
+title: Supporting Updatable Help
+description: Supporting Updatable Help
 ---
 # Supporting Updatable Help
 

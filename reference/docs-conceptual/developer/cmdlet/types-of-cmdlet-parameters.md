@@ -1,6 +1,8 @@
 ---
-title: "Types of Cmdlet Parameters | Microsoft Docs"
-ms.date: "09/13/2016"
+ms.date: 09/13/2016
+ms.topic: reference
+title: Types of Cmdlet Parameters
+description: Types of Cmdlet Parameters
 ---
 # Types of Cmdlet Parameters
 

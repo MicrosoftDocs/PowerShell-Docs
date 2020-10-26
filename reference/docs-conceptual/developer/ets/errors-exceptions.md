@@ -1,6 +1,8 @@
 ---
-title: Errors and exceptions in the Extended Type System
 ms.date: 07/09/2020
+ms.topic: reference
+title: Errors and exceptions in the Extended Type System
+description: Errors and exceptions in the Extended Type System
 ---
 # Errors and exceptions in the Extended Type System
 

@@ -1,6 +1,8 @@
 ---
-title: "AccessDbProviderSample06 Code Sample | Microsoft Docs"
-ms.date: "09/13/2016"
+ms.date: 09/13/2016
+ms.topic: reference
+title: AccessDbProviderSample06 Code Sample
+description: AccessDbProviderSample06 Code Sample
 ---
 # AccessDbProviderSample06 Code Sample
 

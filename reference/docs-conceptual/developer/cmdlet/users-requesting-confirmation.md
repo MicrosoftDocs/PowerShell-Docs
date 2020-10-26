@@ -1,6 +1,8 @@
 ---
-title: "Users Requesting Confirmation | Microsoft Docs"
-ms.date: "09/13/2016"
+ms.date: 09/13/2016
+ms.topic: reference
+title: Users Requesting Confirmation
+description: Users Requesting Confirmation
 ---
 # Users Requesting Confirmation
 

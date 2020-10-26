@@ -1,6 +1,8 @@
 ---
-title: "How to Declare Parameter Sets | Microsoft Docs"
-ms.date: "09/13/2016"
+ms.date: 09/13/2016
+ms.topic: reference
+title: How to Declare Parameter Sets
+description: How to Declare Parameter Sets
 ---
 # How to Declare Parameter Sets
 

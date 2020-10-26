@@ -1,6 +1,8 @@
 ---
-title: "How to Invoke a Cmdlet from Within a Cmdlet | Microsoft Docs"
-ms.date: "09/13/2016"
+ms.date: 09/13/2016
+ms.topic: reference
+title: How to Invoke a Cmdlet from Within a Cmdlet
+description: How to Invoke a Cmdlet from Within a Cmdlet
 ---
 # How to Invoke a Cmdlet from Within a Cmdlet
 

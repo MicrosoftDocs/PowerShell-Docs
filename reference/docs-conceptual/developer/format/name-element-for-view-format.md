@@ -1,6 +1,8 @@
 ---
-title: "Name Element for View (Format) | Microsoft Docs"
-ms.date: "09/13/2016"
+ms.date: 09/13/2016
+ms.topic: reference
+title: Name Element for View (Format)
+description: Name Element for View (Format)
 ---
 # Name Element for View (Format)
 
