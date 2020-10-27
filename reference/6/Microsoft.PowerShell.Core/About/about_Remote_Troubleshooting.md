@@ -853,11 +853,11 @@ instructions.
 
 ## SEE ALSO
 
-[Import-PSSession](xref:Microsoft.PowerShell.Core.Import-PSSession)
+[Import-PSSession](xref:Microsoft.PowerShell.Utility.Import-PSSession)
 
-[Export-PSSession](xref:Microsoft.PowerShell.Core.Export-PSSession)
+[Export-PSSession](xref:Microsoft.PowerShell.Utility.Export-PSSession)
 
-[Import-Module](xref:Microsoft.PowerShell.Utility.Import-Module)
+[Import-Module](xref:Microsoft.PowerShell.Core.Import-Module)
 
 [about_Remote](about_Remote.md)
 
