@@ -143,7 +143,7 @@ path:
 
 ```
 Computer Configuration\Administrative Templates\Windows Components
-\Windows Remote Management (WinRM)\WinRM service
+    \Windows Remote Management (WinRM)\WinRM service
 ```
 
 Enable the policy and specify the IPv4 and IPv6 filters. Wildcards (`*`) are
@@ -202,7 +202,7 @@ Policy path:
 
 ```
 Computer Configuration\Administrative Templates\Network
-\Network Connections\Windows Firewall\Domain Profile
+    \Network Connections\Windows Firewall\Domain Profile
 ```
 
 This policy allows members of the Administrators group on the computer to use
@@ -691,7 +691,7 @@ and does not change the PowerShell **ExecutionPolicy** registry setting.
 Set-ExecutionPolicy -Scope process -ExecutionPolicy RemoteSigned
 ```
 
-You can also use the **ExecutionPolicy** parameter of **PowerShell.exe** to start a
+You can also use the **ExecutionPolicy** parameter of `PowerShell.exe` to start a
 single session with a less restrictive execution policy.
 
 ```powershell
@@ -699,8 +699,8 @@ PowerShell.exe -ExecutionPolicy RemoteSigned
 ```
 
 For more information about execution policies, see
-[about_Execution_Policies](about_Execution_Policies.md). For more information
-about the PowerShell.exe console help options, type `PowerShell.exe -?`.
+[about_Execution_Policies](about_Execution_Policies.md). For more information,
+type `PowerShell.exe -?`.
 
 ### How to set and change quotas
 
