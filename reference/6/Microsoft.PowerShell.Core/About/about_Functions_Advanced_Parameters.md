@@ -458,7 +458,7 @@ Param(
 
 The **SupportsWildcards** attribute is used to indicate that the parameter
 accepts wildcard values. The following example shows a parameter declaration
-the mandatory **Path** parameter that supports wildcard values.
+for a mandatory **Path** parameter that supports wildcard values.
 
 ```powershell
 Param(
