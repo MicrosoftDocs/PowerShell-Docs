@@ -1,8 +1,8 @@
 ---
-description:  Explains how to add parameters to advanced functions. 
+description:  Explains how to add parameters to advanced functions.
 keywords: powershell,cmdlet
 Locale: en-US
-ms.date: 09/28/2020
+ms.date: 10/27/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_functions_advanced_parameters?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Functions_Advanced_Parameters
@@ -423,7 +423,6 @@ If there is no other [comment-based help](./about_comment_based_help.md) syntax
 for the function (for example, `.SYNOPSIS`) then this message also shows up in
 `Get-Help` output.
 
-
 ```powershell
 Param(
     [Parameter(Mandatory=$true,
@@ -449,6 +448,26 @@ Param(
     $ComputerName
 )
 ```
+
+### SupportsWildcards attribute
+
+The **SupportsWildcards** attribute is used to indicate that the parameter
+accepts wildcard values. The following example shows a parameter declaration
+for a mandatory **Path** parameter that supports wildcard values.
+
+```powershell
+Param(
+    [Parameter(Mandatory=$true)]
+    [SupportsWildcards()]
+    [String[]]
+    $Path
+)
+```
+
+Using this attribute does not automatically enable wildcard support. The cmdlet
+developer must implement the code to handle the wildcard input. The wildcards
+supported can vary according to the underlying API or PowerShell provider. For
+more information, see [about_Wildcards](about_Wildcards.md).
 
 ### Parameter and variable validation attributes
 
