@@ -69,7 +69,8 @@ The following example shows how to silently install PowerShell with all the inst
 msiexec.exe /package PowerShell-7.0.3-win-x64.msi /quiet ADD_EXPLORER_CONTEXT_MENU_OPENPOWERSHELL=1 ENABLE_PSREMOTING=1 REGISTER_MANIFEST=1
 ```
 
-For a full list of command-line options for `Msiexec.exe`, see [Command line options](/windows/desktop/Msi/command-line-options).
+For a full list of command-line options for `Msiexec.exe`, see
+[Command line options](/windows/desktop/Msi/command-line-options).
 
 ### Registry keys created during installation
 
@@ -151,26 +152,30 @@ Windows 10 IoT Enterprise comes with Windows PowerShell, which we can use to dep
    # Be sure to use the -PowerShellHome parameter otherwise it'll try to create a new
    # endpoint with Windows PowerShell 5.1
    .\Install-PowerShellRemoting.ps1 -PowerShellHome .
-   # You'll get an error message and will be disconnected from the device because it has to restart WinRM
+   # You'll get an error message and will be disconnected from the device because
+   # it has to restart WinRM
    ```
 
 1. Connect to PowerShell 7 endpoint on device
 
    ```powershell
-   # Be sure to use the -Configuration parameter.  If you omit it, you will connect to Windows PowerShell 5.1
+   # Be sure to use the -Configuration parameter. If you omit it, you will connect to Windows PowerShell 5.1
    Enter-PSSession -ComputerName <deviceIp> -Credential Administrator -Configuration powershell.<version>
    ```
 
 ## Deploying on Windows 10 IoT Core
 
-Windows 10 IoT Core adds Windows PowerShell when you include *IOT_POWERSHELL* feature, which we can use to deploy PowerShell 7.
-The steps defined above for Windows 10 IoT Enterprise can be followed for IoT Core as well.
+Windows 10 IoT Core adds Windows PowerShell when you include _IOT_POWERSHELL_ feature, which we can
+use to deploy PowerShell 7. The steps defined above for Windows 10 IoT Enterprise can be followed
+for IoT Core as well.
 
-For adding the latest powershell in the shipping image, use [Import-PSCoreRelease](https://github.com/ms-iot/iot-adk-addonkit/blob/master/Tools/IoTCoreImaging/Docs/Import-PSCoreRelease.md#Import-PSCoreRelease) command to include the package in the workarea and add *OPENSRC_POWERSHELL* feature to your image.
+For adding the latest PowerShell in the shipping image, use [Import-PSCoreRelease][] command to
+include the package in the workarea and add _OPENSRC_POWERSHELL_ feature to your image.
 
 > [!NOTE]
-> For ARM64 architecture, Windows Powershell is not added when you include *IOT_POWERSHELL*. So the zip based install will not work.
-> You will need to use Import-PSCoreRelease command to add it in the image.
+> For ARM64 architecture, Windows PowerShell is not added when you include _IOT_POWERSHELL_. So the
+> zip based install will not work. You will need to use Import-PSCoreRelease command to add it in
+> the image.
 
 ## Deploying on Nano Server
 
@@ -193,8 +198,7 @@ In both cases, you need the Windows 10 x64 ZIP release package. Run the commands
    image.
 1. Unmount the image and boot it.
 1. Connect to the built-in instance of Windows PowerShell.
-1. Follow the instructions to create a remoting endpoint using the
-   ["another instance technique"](../learn/remoting/wsman-remoting-in-powershell-core.md#executed-by-another-instance-of-powershell-on-behalf-of-the-instance-that-it-will-register).
+1. Follow the instructions to create a remoting endpoint using the ["another instance technique"][].
 
 ### Online Deployment of PowerShell
 
@@ -226,7 +230,7 @@ Deploy PowerShell to Nano Server using the following steps.
   ```
 
 - If you want WSMan-based remoting, follow the instructions to create a remoting endpoint using the
-  ["another instance technique"](../learn/remoting/WSMan-Remoting-in-PowerShell-Core.md#executed-by-another-instance-of-powershell-on-behalf-of-the-instance-that-it-will-register).
+  ["another instance technique"][].
 
 ## Install as a .NET Global tool
 
@@ -243,9 +247,9 @@ PowerShell from a new shell by typing `pwsh`.
 
 ## Install PowerShell via Winget
 
-The `winget` command-line tool enables developers to discover, install, upgrade, remove and configure
-applications on Windows 10 computers. This tool is the client interface to the Windows Package Manager
-service.
+The `winget` command-line tool enables developers to discover, install, upgrade, remove and
+configure applications on Windows 10 computers. This tool is the client interface to the Windows
+Package Manager service.
 
 > [!NOTE]
 > The `winget` tool is currently a preview. Not all planned functionality is available at this time.
@@ -283,6 +287,16 @@ information, see:
 - [SSH Remoting in PowerShell Core][ssh-remoting]
 - [WSMan Remoting in PowerShell Core][wsman-remoting]
 
+## Upgrading an existing installation
+
+For best results when upgrading, you should use the same install method you used when you installed
+the current version of PowerShell. Each installation method installs PowerShell in a different
+location. So the same method should be used for upgrades.
+
+If you are not sure how PowerShell was installed, you can compare the installed location with the
+package information in this article. If you installed via the MSI package, that information appears
+in the **Programs and Features** Control Panel.
+
 ## Installation support
 
 Microsoft supports the installation methods in this document. There may be other methods of
@@ -296,3 +310,5 @@ support those methods.
 [wsman-remoting]: ../learn/remoting/WSMan-Remoting-in-PowerShell-Core.md
 [AppVeyor]: https://ci.appveyor.com/project/PowerShell/powershell
 [winget]: /windows/package-manager/winget
+["another instance technique"]: ../learn/remoting/WSMan-Remoting-in-PowerShell-Core.md#executed-by-another-instance-of-powershell-on-behalf-of-the-instance-that-it-will-register
+[Import-PSCoreRelease]: https://github.com/ms-iot/iot-adk-addonkit/blob/master/Tools/IoTCoreImaging/Docs/Import-PSCoreRelease.md#Import-PSCoreRelease
