@@ -174,7 +174,7 @@ include the package in the workarea and add _OPENSRC_POWERSHELL_ feature to your
 
 > [!NOTE]
 > For ARM64 architecture, Windows PowerShell is not added when you include _IOT_POWERSHELL_. So the
-> zip based install will not work. You will need to use Import-PSCoreRelease command to add it in
+> zip based install will not work. You will need to use `Import-PSCoreRelease` command to add it in
 > the image.
 
 ## Deploying on Nano Server
@@ -247,15 +247,14 @@ PowerShell from a new shell by typing `pwsh`.
 
 ## Install PowerShell via Winget
 
-The `winget` command-line tool enables developers to discover, install, upgrade, remove and
+The `winget` command-line tool enables developers to discover, install, upgrade, remove, and
 configure applications on Windows 10 computers. This tool is the client interface to the Windows
 Package Manager service.
 
 > [!NOTE]
 > The `winget` tool is currently a preview. Not all planned functionality is available at this time.
-> The tool's options and features are subject to change. You should not use this method in a
-> production deployment scenario. See the [winget] documentation for a list of system requirements
-> and install instructions.
+> You should not use this method in a production deployment scenario. See the [winget] documentation
+> for a list of system requirements and install instructions.
 
 The following commands can be used to install PowerShell using the published `winget` packages:
 
@@ -289,13 +288,11 @@ information, see:
 
 ## Upgrading an existing installation
 
-For best results when upgrading, you should use the same install method you used when you installed
-the current version of PowerShell. Each installation method installs PowerShell in a different
-location. So the same method should be used for upgrades.
-
-If you are not sure how PowerShell was installed, you can compare the installed location with the
-package information in this article. If you installed via the MSI package, that information appears
-in the **Programs and Features** Control Panel.
+For best results when upgrading, you should use the same install method you used when you first
+installed PowerShell. Each installation method installs PowerShell in a different location. If you
+are not sure how PowerShell was installed, you can compare the installed location with the package
+information in this article. If you installed via the MSI package, that information appears in the
+**Programs and Features** Control Panel.
 
 ## Installation support
 
