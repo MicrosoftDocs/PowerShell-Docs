@@ -49,6 +49,35 @@ If you create "word" as the alias for Microsoft Office Word, you can type
 "C:\Program Files\Microsoft Office\Office11\Winword.exe"
 ```
 
+## IGNORING AN ALIAS
+
+In extraordinary circumstances, you want to create aliases for entire cmdlets.   If you do so
+but need to temporarily ignore the alias, enter the fully-qualified name of the cmdlet instead.
+
+For instance, one might for some reason override "write-progress" with another cmdlet, but then
+need to use the aliased value or the original cmdlet depending on the circumstances.
+
+```powershell
+set-alias write-progress write-progress-special
+write-progress                                # invokes write-progress-special
+Microsoft.PowerShell.Utility\write-progress   # invokes original write-progress
+```
+
+In order to determine the module in which the particular cmdlet resides, type:
+
+```powershell
+get-command write-progress* | select Name,Source      # note the wildcard
+
+Name               Source
+----               ------
+write-progress
+write-progress-special
+Write-Progress     Microsoft.PowerShell.Utility
+```
+
+In this case, the source is Microsoft.PowerShell.Utility, so the fully-qualified name is
+Microsoft.PowerShell.Utility\Write-Progress.
+
 ## BUILT-IN ALIASES
 
 PowerShell includes a set of built-in aliases, including "cd" and "chdir" for
