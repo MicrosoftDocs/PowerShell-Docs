@@ -151,7 +151,7 @@ $remoteKeyParams = @{
 Set-RemoteRegistryValue @remoteKeyParams -Credential (Get-Credential)
 ```
 
-![GetCredAtRunTime](./media/add-credentials-to-powershell-functions/GetCredAtRunTime.gif "GetCredAtRunTime")
+![Get a credential at runtime](./media/add-credentials-to-powershell-functions/GetCredAtRunTime.gif)
 
 Using `(Get-Credential)` seems cumbersome. Normally, when you use the **Credential** parameter with
 only a username, the cmdlet automatically prompts for the password. The
@@ -168,7 +168,7 @@ $remoteKeyParams = @{
 Set-RemoteRegistryValue @remoteKeyParams -Credential duffney
 ```
 
-![GetCredsPrompt](./media/add-credentials-to-powershell-functions/GetCredsPrompt.gif "GetCredsPrompt")
+![Prompt for credentials](./media/add-credentials-to-powershell-functions/GetCredsPrompt.gif)
 
 > [!NOTE]
 > To set the registry value shown, these examples assume you have the **Web Server** features of
@@ -205,7 +205,7 @@ previously mentioned CI/CD have a secure method of providing that password at ru
 those tools, replace the plain text password with the variable defined within the CI/CD tool you
 use.
 
-## Run without credentials
+### Run without credentials
 
 Since `$Credential` defaults to an empty credential object, you can run the command without
 credentials, as shown in this example:
