@@ -12,7 +12,8 @@ using the correct character encoding format.
 
 VS Code manages the interface between a human entering strings of characters into a buffer and
 reading/writing blocks of bytes to the filesystem. When VS Code saves a file, it uses a text
-encoding to decide what bytes each character becomes.
+encoding to decide what bytes each character becomes. For more information, see
+[about_Character_Encoding](/powershell/module/microsoft.powershell.core/about/about_character_encoding).
 
 Similarly, when PowerShell runs a script it must convert the bytes in a file to characters to
 reconstruct the file into a PowerShell program. Since VS Code writes the file and PowerShell reads
@@ -53,12 +54,12 @@ Common reasons for encoding issues are:
 
 Often encoding errors present themselves as parse errors in scripts. If you find strange character
 sequences in your script, this can be the problem. In the example below, an en-dash (`–`) appears as
-the characters `â€"`:
+the characters `â&euro;"`:
 
 ```Output
 Send-MailMessage : A positional parameter cannot be found that accepts argument 'Testing FuseMail SMTP...'.
 At C:\Users\<User>\<OneDrive>\Development\PowerShell\Scripts\Send-EmailUsingSmtpRelay.ps1:6 char:1
-+ Send-MailMessage â€"From $from â€"To $recipient1 â€"Subject $subject  ...
++ Send-MailMessage â&euro;"From $from â&euro;"To $recipient1 â&euro;"Subject $subject  ...
 + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     + CategoryInfo          : InvalidArgument: (:) [Send-MailMessage], ParameterBindingException
     + FullyQualifiedErrorId : PositionalParameterNotFound,Microsoft.PowerShell.Commands.SendMailMessage
@@ -66,16 +67,16 @@ At C:\Users\<User>\<OneDrive>\Development\PowerShell\Scripts\Send-EmailUsingSmtp
 
 This problem occurs because VS Code encodes the character `–` in UTF-8 as the bytes
 `0xE2 0x80 0x93`. When these bytes are decoded as Windows-1252, they are interpreted as the
-characters `â€"`.
+characters `â&euro;"`.
 
 Some strange character sequences that you might see include:
 
 <!-- markdownlint-disable MD038 -->
-- `â€"` instead of `–`
-- `â€"` instead of `—`
+- `â&euro;"` instead of `–`
+- `â&euro;"` instead of `—`
 - `Ã„2` instead of `Ä`
 - `Â` instead of ` `  (a non-breaking space)
-- `Ã©` instead of `é`
+- `Ã&copy;` instead of `é`
 <!-- markdownlint-enable MD038 -->
 
 This handy [reference](https://www.i18nqa.com/debug/utf8-debug.html) lists the common patterns that
@@ -130,8 +131,9 @@ leading to artifacts in text manipulated with those applications.
 - If you work mainly in Linux-associated contexts, you should prefer UTF-8 without BOM.
 - Windows-1252 and latin-1 are essentially legacy encodings that you should avoid if possible.
   However, some older Windows applications may depend on them.
-- It's also worth noting that script signing is [encoding-dependent](https://github.com/PowerShell/PowerShell/issues/3466),
-  meaning a change of encoding on a signed script will require resigning.
+- It's also worth noting that script signing is
+  [encoding-dependent](https://github.com/PowerShell/PowerShell/issues/3466), meaning a change of
+  encoding on a signed script will require resigning.
 
 ## Configuring VS Code
 
@@ -170,6 +172,10 @@ field. For example:
     "files.autoGuessEncoding": true
 }
 ```
+
+You may also want to consider installing the [Gremlins tracker][] for Visual Studio Code. This
+extension reveals certain Unicode characters that easily corrupted because they are invisible or
+look like other normal characters.
 
 ## Configuring PowerShell
 
@@ -311,6 +317,7 @@ encoding to prevent problems.
 There are a few other nice posts on encoding and configuring encoding in PowerShell that are worth a
 read:
 
+- [about_Character_Encoding](/powershell/module/microsoft.powershell.core/about/about_character_encoding)
 - [@mklement0]'s [summary of PowerShell encoding on StackOverflow](https://stackoverflow.com/questions/40098771/changing-powershells-default-output-encoding-to-utf-8)
 - Previous issues opened on VS Code-PowerShell for encoding problems:
   - [#1308](https://github.com/PowerShell/VSCode-powershell/issues/1308)
@@ -330,3 +337,4 @@ read:
 [UTF-16]: https://wikipedia.org/wiki/UTF-16
 [Language Server Protocol]: https://microsoft.github.io/language-server-protocol/
 [VS Code's encoding]: https://code.visualstudio.com/docs/editor/codebasics#_file-encoding-support
+[Gremlins tracker]: https://marketplace.visualstudio.com/items?itemName=nhoizey.gremlins
