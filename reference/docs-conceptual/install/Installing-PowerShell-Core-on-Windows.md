@@ -110,9 +110,8 @@ Add-AppxPackage PowerShell-<version>-win-<os-arch>.msix
 
 ## <a id="zip" />Installing the ZIP package
 
-PowerShell binary ZIP archives are provided to enable advanced deployment scenarios. Installing the
-ZIP archive doesn't check the prerequisites like the MSI packages do. Download one of the following
-ZIP archives from the [releases][releases] page.
+PowerShell binary ZIP archives are provided to enable advanced deployment scenarios. Download one of
+the following ZIP archives from the [releases][releases] page.
 
 - PowerShell-7.0.3-win-x64.zip
 - PowerShell-7.0.3-win-x86.zip
@@ -120,7 +119,8 @@ ZIP archives from the [releases][releases] page.
 - PowerShell-7.0.3-win-arm32.zip
 
 Depending on how you download the file you may need to unblock the file using the `Unblock-File`
-cmdlet. Unzip the contents to the location of your choice and run `pwsh.exe` from there. For
+cmdlet. Unzip the contents to the location of your choice and run `pwsh.exe` from there. Unlike
+installing the MSI packages, installing the ZIP archive doesn't check for prerequisites. For
 remoting over WSMan to work properly, ensure that you've met the [prerequisites](#prerequisites).
 
 Use this method to install the ARM-based version of PowerShell on computers like the Microsoft
