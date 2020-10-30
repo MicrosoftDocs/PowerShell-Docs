@@ -11,9 +11,9 @@ description: DSC Service Resource
 The **Service** resource in Windows PowerShell Desired State Configuration (DSC) provides a
 mechanism to manage services on the target node.
 
-#[!INCLUDE [Updated DSC Resources](../../../../../includes/dsc-resources.md)]
+[!INCLUDE [Updated DSC Resources](../../../../../includes/dsc-resources.md)]
 
-# Syntax
+## Syntax
 
 ```Syntax
 Service [string] #ResourceName
