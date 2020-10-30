@@ -15,6 +15,8 @@ for each feature specified in the **Name** property.
 
 Use this resource when you want to configure a number of Windows Features to the same state.
 
+[!INCLUDE [Updated DSC Resources](../../../../../includes/dsc-resources.md)]
+
 ## Syntax
 
 ```Syntax

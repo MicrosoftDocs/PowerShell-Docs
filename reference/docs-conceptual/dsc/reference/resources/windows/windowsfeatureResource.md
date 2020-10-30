@@ -11,6 +11,8 @@ description: DSC WindowsFeature Resource
 The **WindowsFeature** resource in Windows PowerShell Desired State Configuration (DSC) provides a
 mechanism to ensure that roles and features are added or removed on a target node.
 
+[!INCLUDE [Updated DSC Resources](../../../../../includes/dsc-resources.md)]
+
 ## Syntax
 
 ```Syntax

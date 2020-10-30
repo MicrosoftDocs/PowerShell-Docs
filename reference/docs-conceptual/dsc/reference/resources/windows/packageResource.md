@@ -12,6 +12,8 @@ The **Package** resource in Windows PowerShell Desired State Configuration (DSC)
 mechanism to install or uninstall packages, such as Windows Installer and setup.exe packages, on a
 target node.
 
+[!INCLUDE [Updated DSC Resources](../../../../../includes/dsc-resources.md)]
+
 ## Syntax
 
 ```Syntax

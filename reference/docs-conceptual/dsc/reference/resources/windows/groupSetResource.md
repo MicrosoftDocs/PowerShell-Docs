@@ -16,10 +16,12 @@ parameter.
 Use this resource when you want to add and/or remove the same list of members to more than one
 group, remove more than one group, or add more than one group with the same list of members.
 
+[!INCLUDE [Updated DSC Resources](../../../../../includes/dsc-resources.md)]
+
 ## Syntax
 
 ```Syntax
-Group [string] #ResourceName
+GroupSet [string] #ResourceName
 {
     GroupName = [string[]]
     [ MembersToInclude = [string[]] ]
