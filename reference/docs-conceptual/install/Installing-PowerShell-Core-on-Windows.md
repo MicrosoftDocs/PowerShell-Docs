@@ -1,7 +1,7 @@
 ---
 title: Installing PowerShell on Windows
 description: Information about installing PowerShell on Windows
-ms.date: 09/14/2020
+ms.date: 10/30/2020
 ---
 # Installing PowerShell on Windows
 
@@ -111,11 +111,21 @@ Add-AppxPackage PowerShell-<version>-win-<os-arch>.msix
 ## <a id="zip" />Installing the ZIP package
 
 PowerShell binary ZIP archives are provided to enable advanced deployment scenarios. Installing the
-ZIP archive doesn't check the prerequisites like the MSI packages do. Download the ZIP archive from
-the [releases][releases] page. Depending on how you download the file you may need to unblock the
-file using the `Unblock-File` cmdlet. Unzip the contents to the location of your choice and run
-`pwsh.exe` from there. For remoting over WSMan to work properly, ensure that you've met the
-[prerequisites](#prerequisites).
+ZIP archive doesn't check the prerequisites like the MSI packages do. Download one of the following
+ZIP archives from the [releases][releases] page.
+
+- PowerShell-7.0.3-win-x64.zip
+- PowerShell-7.0.3-win-x86.zip
+- PowerShell-7.0.3-win-arm64.zip
+- PowerShell-7.0.3-win-arm32.zip
+
+Depending on how you download the file you may need to unblock the file using the `Unblock-File`
+cmdlet. Unzip the contents to the location of your choice and run `pwsh.exe` from there. For
+remoting over WSMan to work properly, ensure that you've met the [prerequisites](#prerequisites).
+
+Use this method to install the ARM-based version of PowerShell on computers like the Microsoft
+Surface Pro X. For best results, install PowerShell to the to `$env:ProgramFiles\PowerShell\7`
+folder.
 
 ## Deploying on Windows 10 IoT Enterprise
 
