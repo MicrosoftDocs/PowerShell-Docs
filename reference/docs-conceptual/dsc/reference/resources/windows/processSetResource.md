@@ -11,6 +11,8 @@ description: DSC ProcessSet Resource
 The **ProcessSet** resource in Windows PowerShell Desired State Configuration (DSC) provides a
 mechanism to configure processes on a target node.
 
+[!INCLUDE [Updated DSC Resources](../../../../../includes/dsc-resources.md)]
+
 ## Syntax
 
 ```Syntax

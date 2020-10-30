@@ -75,6 +75,8 @@
       href: learn/deep-dives/everything-about-shouldprocess.md
     - name: Write-Progress while multithreading
       href: learn/deep-dives/write-progress-across-multiple-threads.md
+    - name: Add Credential support to PowerShell functions
+      href: learn/deep-dives/add-credentials-to-powershell-functions.md
   - name: PowerShell remoting
     items:
     - name: Just Enough Administration (JEA)

@@ -11,6 +11,8 @@ description: DSC User Resource
 The **User** resource in Windows PowerShell Desired State Configuration (DSC) provides a mechanism
 to manage local user accounts on the target node.
 
+[!INCLUDE [Updated DSC Resources](../../../../../includes/dsc-resources.md)]
+
 ## Syntax
 
 ```Syntax

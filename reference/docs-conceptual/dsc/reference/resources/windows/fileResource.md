@@ -12,6 +12,8 @@ The **File** resource in Windows PowerShell Desired State Configuration (DSC) pr
 to manage files and folders on the target node. **DestinationPath** and **SourcePath** must both be
 accessible by the target Node.
 
+[!INCLUDE [Updated DSC Resources](../../../../../includes/dsc-resources.md)]
+
 ## Syntax
 
 ```Syntax

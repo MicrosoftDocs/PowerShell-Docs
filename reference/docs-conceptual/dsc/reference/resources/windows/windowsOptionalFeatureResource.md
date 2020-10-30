@@ -14,6 +14,8 @@ provides a mechanism to ensure that optional features are enabled on a target no
 > [!NOTE]
 > **WindowsOptionalFeature** only works on Windows client machines like Windows 10.
 
+[!INCLUDE [Updated DSC Resources](../../../../../includes/dsc-resources.md)]
+
 ## Syntax
 
 ```Syntax

@@ -11,6 +11,8 @@ description: DSC Archive Resource
 The Archive resource in Windows PowerShell Desired State Configuration (DSC) provides a mechanism to
 unpack archive (.zip) files at a specific path.
 
+[!INCLUDE [Updated DSC Resources](../../../../../includes/dsc-resources.md)]
+
 ## Syntax
 
 ```Syntax
