@@ -13,6 +13,8 @@ to run Windows PowerShell script blocks on target nodes. The `Script` resource u
 `SetScript`, and `TestScript` properties that contain script blocks you define to perform the
 corresponding DSC state operations.
 
+[!INCLUDE [Updated DSC Resources](../../../../../includes/dsc-resources.md)]
+
 ## Syntax
 
 ```Syntax

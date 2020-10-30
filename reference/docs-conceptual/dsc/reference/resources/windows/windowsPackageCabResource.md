@@ -14,6 +14,8 @@ a mechanism to install or uninstall Windows cabinet (.cab) packages on a target 
 The target node must have the DISM PowerShell module installed. For information, see
 [Use DISM in Windows PowerShell](/windows-hardware/manufacture/desktop/use-dism-in-windows-powershell-s14).
 
+[!INCLUDE [Updated DSC Resources](../../../../../includes/dsc-resources.md)]
+
 ## Syntax
 
 ```Syntax

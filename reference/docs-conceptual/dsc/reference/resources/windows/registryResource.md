@@ -11,6 +11,8 @@ description: DSC Registry Resource
 The **Registry** resource in Windows PowerShell Desired State Configuration (DSC) provides a
 mechanism to manage registry keys and values on a target node.
 
+[!INCLUDE [Updated DSC Resources](../../../../../includes/dsc-resources.md)]
+
 ## Syntax
 
 ```Syntax

@@ -16,6 +16,8 @@ requires the **PackageManagement** module, available from [https://PowerShellGal
 > The **PackageManagement** module should be at least version 1.1.7.0 for the following property
 > information to be correct.
 
+[!INCLUDE [Updated DSC Resources](../../../../../includes/dsc-resources.md)]
+
 ## Syntax
 
 ```Syntax
