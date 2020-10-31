@@ -9,7 +9,7 @@ metadata:
   ms.topic: landing-page # Required
   author: sdwheeler #Required; your GitHub user alias, with correct capitalization.
   ms.author: sewhee #Required; microsoft alias of author; optional team alias.
-  ms.date: 06/11/2020
+  ms.date: 10/31/2020
 
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | learn |
 #               overview | quickstart | reference | tutorial | video | whats-new
@@ -47,6 +47,8 @@ landingContent:
   linkLists:
     - linkListType: whats-new
       links:
+        - text: 2020-Q4
+          url: ./2020-Q4.md
         - text: 2020-Q3
           url: ./2020-Q3.md
         - text: 2020-Q2
