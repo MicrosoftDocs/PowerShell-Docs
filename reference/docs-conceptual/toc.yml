@@ -566,6 +566,8 @@
     href: community/hall-of-fame.md
   - name: What's new in Docs
     items:
+    - name: 2020-Q4
+      href: community/2020-Q4.md
     - name: 2020-Q3
       href: community/2020-Q3.md
     - name: 2020-Q2
