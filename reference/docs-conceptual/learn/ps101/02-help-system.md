@@ -124,7 +124,7 @@ Each of the following parameters are in different parameter sets:
 - ShowWindow
 
 All of the cryptic syntax such as square and angle brackets in the syntax section means something
-but will be covered in Appendix A of this book. While important, learning what the cryptic syntax is
+but will be covered in Appendix A of this book. While important, learning the cryptic syntax is
 often difficult to retain for someone who is new to PowerShell and may not use it everyday.
 
 For more information to better understand the cryptic syntax, see [Appendix A][].
@@ -155,7 +155,7 @@ Notice that using the **Full** parameter returned several additional sections, o
 PARAMETERS section that provides more information than the cryptic SYNTAX section.
 
 The **Full** parameter is a switch parameter. A parameter that doesn't require a value is called a
-switch parameter. When a switch parameter is specified, it's value is true and when it's not, it's
+switch parameter. When a switch parameter is specified, its value is true and when it's not, its
 value is false.
 
 If you've been working through this chapter in the PowerShell console, you noticed that the previous
