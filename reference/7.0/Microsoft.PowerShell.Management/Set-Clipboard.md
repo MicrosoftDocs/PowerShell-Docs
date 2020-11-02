@@ -23,7 +23,7 @@ Set-Clipboard [-Value] <string[]> [-Append] [-WhatIf] [-Confirm] [<CommonParamet
 
 The `Set-Clipboard` cmdlet sets the contents of the clipboard.
 
-[!NOTE]
+> [!NOTE]
 > On Linux, this cmdlet requires the `xclip` utility to be in the path.
 
 ## EXAMPLES
