@@ -6,13 +6,13 @@ param(
 $errorActionPreference = 'Stop'
 
 # Step-1 Download buildcore script to local
-echo "download build core script to local with source url: $buildCorePowershellUrl"
+Write-Output "download build core script to local with source url: $buildCorePowershellUrl"
 $repositoryRoot = Split-Path -Parent $MyInvocation.MyCommand.Definition
 $buildCorePowershellDestination = "$repositoryRoot\.openpublishing.buildcore.ps1"
 Invoke-WebRequest $buildCorePowershellUrl -OutFile $buildCorePowershellDestination
 
 # Step-2: Run build core
-echo "run build core script with parameters: $parameters"
+Write-Output "run build core script with parameters: $parameters"
 $arguments = "-parameters:'$parameters'"
 Invoke-Expression "$buildCorePowershellDestination $arguments"
 exit $LASTEXITCODE
