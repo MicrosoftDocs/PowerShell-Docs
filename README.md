@@ -1,5 +1,7 @@
 # Microsoft Open Source Code of Conduct
 
+> Updated: 11/02/2020
+
 This project has adopted the
 [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/). For more
 information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or
