@@ -13,9 +13,6 @@ commands and scripts. The Windows PowerShell ISE consists of the menu bar, Windo
 the toolbar, script tabs, a Script Pane, a Console Pane, a status bar, a text-size slider and
 context-sensitive Help.
 
-For more information, see
-[How to Create a PowerShell Tab in Windows PowerShell ISE](How-to-Create-a-PowerShell-Tab-in-Windows-PowerShell-ISE.md).
-
 ## Menu Bar
 
 The menu bar contains the **File**, **Edit**, **View**, **Tools**, **Debug**, **Add-ons**, and
@@ -31,6 +28,9 @@ A Windows PowerShell tab is the environment in which a Windows PowerShell script
 new Windows PowerShell tabs in the Windows PowerShell ISE to create separate environments on your
 local computer or on remote computers. You may have a maximum of eight PowerShell tabs
 simultaneously open.
+
+For more information, see
+[How to Create a PowerShell Tab in Windows PowerShell ISE](How-to-Create-a-PowerShell-Tab-in-Windows-PowerShell-ISE.md).
 
 ## Toolbar
 
