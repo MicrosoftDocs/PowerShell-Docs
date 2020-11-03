@@ -22,7 +22,7 @@ To enable PowerShell remoting over WSMan, the following prerequisites need to be
 ## Download the installer package
 
 To install PowerShell on Windows, download the install package from our GitHub [releases][releases]
-page. Scroll down to the **Assets** section of the Release page. The **Assets** section may be
+page. The latest stable release can be found [here](https://github.com/PowerShell/PowerShell/releases/latest). Scroll down to the **Assets** section of the Release page. The **Assets** section may be
 collapsed, so you may need to click to expand it.
 
 ## <a id="msi" />Installing the MSI package
