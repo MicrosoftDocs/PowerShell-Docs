@@ -66,9 +66,8 @@ When you point to the script tab, the fully qualified path to the script file ap
 ## Script Pane
 
 Allows you to create and run scripts. You can open, edit and run existing scripts in the Script
-Pane.
-
-- [How to Write and Run Scripts in the Windows PowerShell ISE](How-to-Write-and-Run-Scripts-in-the-Windows-PowerShell-ISE.md)
+Pane. For more information, see
+[How to Write and Run Scripts in the Windows PowerShell ISE](How-to-Write-and-Run-Scripts-in-the-Windows-PowerShell-ISE.md).
 
 ## Console Pane
 
