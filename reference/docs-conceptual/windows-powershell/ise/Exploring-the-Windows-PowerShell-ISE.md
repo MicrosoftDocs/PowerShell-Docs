@@ -2,28 +2,28 @@
 ms.date:  01/02/2020
 title:  Exploring the Windows PowerShell ISE
 description: This article is an overview of the features of the Windows PowerShell ISE
+ms.topic: landing-page
+ms.custom: ISE-F1-page
 ---
 
 # Exploring the Windows PowerShell ISE
 
-You can use the Windows PowerShell&reg; Integrated Scripting Environment (ISE) to create, run, and debug
+You can use the Windows PowerShell Integrated Scripting Environment (ISE) to create, run, and debug
 commands and scripts. The Windows PowerShell ISE consists of the menu bar, Windows PowerShell tabs,
 the toolbar, script tabs, a Script Pane, a Console Pane, a status bar, a text-size slider and
 context-sensitive Help.
 
-> [!NOTE]
-> Beginning with Windows PowerShell ISE 3.0 the Command and Output Panes were combined into a single
-> Console Pane.
+For more information, see
+[How to Create a PowerShell Tab in Windows PowerShell ISE](How-to-Create-a-PowerShell-Tab-in-Windows-PowerShell-ISE.md).
 
 ## Menu Bar
 
 The menu bar contains the **File**, **Edit**, **View**, **Tools**, **Debug**, **Add-ons**, and
 **Help** menus. The buttons on the menus allow you to perform tasks related to writing and running
-scripts and running commands in the Windows PowerShell ISE. Additionally, an [add-on tool](object-model/The-ISEAddOnTool-Object.md)
-may be placed on the menu bar by running scripts that use the [The ISE Object Model Hierarchy](object-model/The-ISE-Object-Model-Hierarchy.md).
-
-> [!NOTE]
-> In Windows PowerShell ISE 2.0, The **Tools** and **Add-ons** menus were not present.
+scripts and running commands in the Windows PowerShell ISE. Additionally, an
+[add-on tool](object-model/The-ISEAddOnTool-Object.md) may be placed on the menu bar by running
+scripts that use the
+[The ISE Object Model Hierarchy](object-model/The-ISE-Object-Model-Hierarchy.md).
 
 ## Windows PowerShell Tabs
 
@@ -65,19 +65,21 @@ When you point to the script tab, the fully qualified path to the script file ap
 
 ## Script Pane
 
-Allows you to create and run scripts. You can open, edit and run existing scripts in the Script Pane.
+Allows you to create and run scripts. You can open, edit and run existing scripts in the Script
+Pane.
 
-## Output Pane
+- [How to Write and Run Scripts in the Windows PowerShell ISE](How-to-Write-and-Run-Scripts-in-the-Windows-PowerShell-ISE.md)
 
-Displays the results of the commands and scripts you have run. You can also copy and clear the
-contents in the Output Pane.
+## Console Pane
 
-## Command Pane
+Displays the results of the commands and scripts you have run. You can run commands in the Console
+pane. You can also copy and clear the contents in the Console Pane.
 
-Allows you to write commands. You can run a one line command or a multiline command in the Command
-Pane. Press <kbd>SHIFT</kbd>+<kbd>ENTER</kbd> to enter each line of a multiline command, and press <kbd>ENTER</kbd> after the last
-line to execute the multiline command. The prompt displayed on top of the Command Pane shows the
-path to the current working directory.
+For more information, see the following articles:
+
+- [How to Use the Console Pane in the Windows PowerShell ISE](How-to-Use-the-Console-Pane-in-the-Windows-PowerShell-ISE.md)
+- [How to Debug Scripts in Windows PowerShell ISE](How-to-Debug-Scripts-in-Windows-PowerShell-ISE.md)
+- [How to Use Tab Completion in the Script Pane and Console Pane](How-to-Use-Tab-Completion-in-the-Script-Pane-and-Console-Pane.md)
 
 ## Status Bar
 
@@ -91,12 +93,15 @@ Increases or decreases the size of the text on the screen.
 ## Help
 
 Help for Windows PowerShell ISE is available on the Web in the TechNet Library. You can open the
-Help by clicking **Windows PowerShell ISE Help** on the **Help** menu or by pressing the <kbd>F1</kbd> key
-anywhere except when the cursor is on a cmdlet name in either the Script Pane or the Console Pane.
-From the **Help** menu you can also run the `Update-Help` cmdlet, and display the Command Window which
-assists you in constructing commands by showing you all of the parameters for a cmdlet and enabling
-you to fill in the parameters in an easy-to-use form.
+Help by clicking **Windows PowerShell ISE Help** on the **Help** menu or by pressing the
+<kbd>F1</kbd> key anywhere except when the cursor is on a cmdlet name in either the Script Pane or
+the Console Pane. From the **Help** menu you can also run the `Update-Help` cmdlet, and display the
+Command Window which assists you in constructing commands by showing you all of the parameters for a
+cmdlet and enabling you to fill in the parameters in an easy-to-use form.
 
 ## See Also
 
 - [Introducing the Windows PowerShell ISE](Introducing-the-Windows-PowerShell-ISE.md)
+- [How to Use Profiles in Windows PowerShell ISE](How-to-Use-Profiles-in-Windows-PowerShell-ISE.md)
+- [Accessibility in Windows PowerShell ISE](Accessibility-in-Windows-PowerShell-ISE.md)
+- [Keyboard Shortcuts for the Windows PowerShell ISE](Keyboard-Shortcuts-for-the-Windows-PowerShell-ISE.md)
