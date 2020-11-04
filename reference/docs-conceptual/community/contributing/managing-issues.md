@@ -1,6 +1,6 @@
 ---
 title: How we manage issues
-description: This article explains how the PowerShell-Docs team manages pull requests.
+description: This article explains how the PowerShell-Docs team manages issues.
 ms.date: 03/05/2020
 ms.topic: conceptual
 ---

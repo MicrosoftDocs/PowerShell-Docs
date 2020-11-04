@@ -703,9 +703,14 @@ counter-intuitive but is a clever use of the mechanics.
 When the `switch` is processing its values, it creates an enumerator and calls it `$switch`. This is
 an automatic variable created by PowerShell and you can manipulate it directly.
 
-This was pointed out to me by [/u/frmadsen](https://www.reddit.com/user/frmadsen)
+```powershell
+$a = 1, 2, 3, 4
 
-<div class="reddit-embed" data-embed-media="www.redditmedia.com" data-embed-parent="false" data-embed-live="false" data-embed-uuid="8f6edbf1-abc6-4513-971e-ccd1d202889d" data-embed-created="2018-12-25T22:05:33.986Z"><a href="https://www.reddit.com/r/PowerShell/comments/a90rx2/what_should_i_it_student_learn_to_master/ecj2kji/">Comment</a> from discussion <a href="https://www.reddit.com/r/PowerShell/comments/a90rx2/what_should_i_it_student_learn_to_master/">What should I (IT student) learn to master PowerShell?</a>.</div><script async src="https://www.redditstatic.com/comment-embed.js"></script>
+switch($a) {
+    1 { [void]$switch.MoveNext(); $switch.Current }
+    3 { [void]$switch.MoveNext(); $switch.Current }
+}
+```
 
 This gives you the results of:
 

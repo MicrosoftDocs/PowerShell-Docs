@@ -166,7 +166,7 @@ processes for each requested process name, or all for processes if no name is pr
 in
 [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord),
 the call to
-[System.Management.Automation.Cmdlet.WriteObject%28System.Object%2CSystem.Boolean%29](/dotnet/api/system.management.automation.cmdlet.writeobject?view=powershellsdk-1.1.0#System_Management_Automation_Cmdlet_WriteObject_System_Object_System_Boolean_)
+[System.Management.Automation.Cmdlet.WriteObject%28System.Object%2CSystem.Boolean%29](/dotnet/api/system.management.automation.cmdlet.writeobject#System_Management_Automation_Cmdlet_WriteObject_System_Object_System_Boolean_)
 is the output mechanism for sending output objects to the pipeline. The second parameter of this
 call, `enumerateCollection`, is set to `true` to inform the Windows PowerShell runtime to enumerate
 the output array of process objects and write one process at a time to the command line.
