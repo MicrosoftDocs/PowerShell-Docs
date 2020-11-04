@@ -63,7 +63,7 @@ PowerShell supports the following scopes:
 You can create a new child scope by calling a script or function. The calling
 scope is the parent scope. The called script or function is the child scope.
 The functions or scripts you call may call other functions, creating a
-hierarchy of child scopes whose root scope is the one and only global scope.
+hierarchy of child scopes whose root scope is the global scope.
 
 Unless you explicitly make the items private, the items in the parent scope
 are available to the child scope. However, items that you create and change in
