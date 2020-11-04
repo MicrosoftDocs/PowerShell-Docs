@@ -1,8 +1,8 @@
 ---
-description: Explains the concept of scope in PowerShell and shows how to set and change the scope of elements. 
+description: Explains the concept of scope in PowerShell and shows how to set and change the scope of elements.
 keywords: powershell,cmdlet
 Locale: en-US
-ms.date: 03/13/2020
+ms.date: 11/04/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_scopes?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_scopes
@@ -40,11 +40,12 @@ it is not overridden or changed.
 
 PowerShell supports the following scopes:
 
-- Global: The scope that is in effect when PowerShell starts. Variables and
-  functions that are present when PowerShell starts have been created in the
-  global scope, such as automatic variables and preference variables. The
-  variables, aliases, and functions in your PowerShell profiles are also
-  created in the global scope.
+- Global: The scope that is in effect when PowerShell starts or when you create
+  a new session or runspace. Variables and functions that are present when
+  PowerShell starts have been created in the global scope, such as automatic
+  variables and preference variables. The variables, aliases, and functions in
+  your PowerShell profiles are also created in the global scope. The global
+  scope is the root parent scope in a session.
 
 - Local: The current scope. The local scope can be the global scope or any
   other scope.
@@ -59,18 +60,21 @@ PowerShell supports the following scopes:
 
 ## Parent and Child Scopes
 
-You can create a new scope by running a script or function, by creating a
-session, or by starting a new instance of PowerShell. When you create a new
-scope, the result is a parent scope (the original scope) and a child scope
-(the scope that you created).
-
-In PowerShell, all scopes are child scopes of the global scope, but you can
-create many scopes and many recursive scopes.
+You can create a new child scope by calling a script or function. The calling
+scope is the parent scope. The called script or function is the child scope.
+The functions or scripts you call may call other functions, creating a
+hierarchy of child scopes whose root scope is the global scope.
 
 Unless you explicitly make the items private, the items in the parent scope
 are available to the child scope. However, items that you create and change in
 the child scope do not affect the parent scope, unless you explicitly specify
 the scope when you create the items.
+
+> [!NOTE]
+> Functions from a module do not run in a child scope of the calling scope.
+> Modules have their own session state that is linked to the global scope.
+> All module code runs in a module-specific hierarchy of scopes that has its
+> own root scope.
 
 ## Inheritance
 
