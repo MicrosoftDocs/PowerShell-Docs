@@ -20,18 +20,18 @@ that made this release possible.
 ## .NET Core 2.1
 
 PowerShell Core 6.1 moved to .NET Core 2.1 after it was
-[released in May](https://blogs.msdn.microsoft.com/dotnet/2018/05/30/announcing-net-core-2-1/),
-resulting in a number of improvements to PowerShell, including:
+[released in May](https://devblogs.microsoft.com/dotnet/announcing-net-core-2-1/), resulting in a
+number of improvements to PowerShell, including:
 
 - performance improvements (see [below](#performance-improvements))
 - Alpine Linux support (preview)
 - [.NET global tool support](/dotnet/core/tools/global-tools) - coming soon to PowerShell
-- [`Span<T>`](/dotnet/api/system.span-1?view=netcore-2.1)
+- [`Span<T>`](/dotnet/api/system.span-1)
 
 ## Windows Compatibility Pack for .NET Core
 
 On Windows, the .NET team shipped the
-[Windows Compatibility Pack for .NET Core](https://blogs.msdn.microsoft.com/dotnet/2017/11/16/announcing-the-windows-compatibility-pack-for-net-core/),
+[Windows Compatibility Pack for .NET Core](https://devblogs.microsoft.com/dotnet/announcing-the-windows-compatibility-pack-for-net-core/),
 a set of assemblies that add a number of removed APIs back to .NET Core on Windows.
 
 We've added the Windows Compatibility Pack to PowerShell Core 6.1 release so that any modules or
@@ -48,7 +48,7 @@ and
 [Device Guard](/windows/security/threat-protection/device-guard/introduction-to-device-guard-virtualization-based-security-and-windows-defender-application-control)
 application allow lists. Application allow lists allow granular control of what binaries are
 allowed to be executed used with PowerShell
-[Constrained Language mode](https://blogs.msdn.microsoft.com/powershell/2017/11/02/powershell-constrained-language-mode/).
+[Constrained Language mode](https://devblogs.microsoft.com/powershell/powershell-constrained-language-mode/).
 
 ## Performance improvements
 

@@ -1,5 +1,5 @@
 ---
-description:  PowerShell logs internal operations from the engine, providers, and cmdlets. 
+description:  PowerShell logs internal operations from the engine, providers, and cmdlets to the Windows event log.
 keywords: powershell
 Locale: en-US
 ms.date: 03/30/2020
@@ -11,8 +11,8 @@ title: about_Logging-Windows
 # About Logging Windows
 
 ## Short description
-
-PowerShell logs internal operations from the engine, providers, and cmdlets.
+PowerShell logs internal operations from the engine, providers, and cmdlets to
+the Windows event log.
 
 ## Long description
 
@@ -36,14 +36,14 @@ located in the Application and Services Logs group and is named
 When Script Block Logging is enabled, PowerShell logs the following events to
 the `PowerShellCore/Operational` log:
 
-|Field| Value|
-|-|-|
-|EventId|`4104` / `0x1008`|
-|Channel|`Operational`|
-|Level|`Verbose`|
-|Opcode|`Create`|
-|Task|`CommandStart`|
-|Keyword|`Runspace`|
+|  Field  |       Value       |
+| ------- | ----------------- |
+| EventId | `4104` / `0x1008` |
+| Channel | `Operational`     |
+| Level   | `Verbose`         |
+| Opcode  | `Create`          |
+| Task    | `CommandStart`    |
+| Keyword | `Runspace`        |
 
 ### Registering the PowerShell event provider on Windows
 
@@ -181,4 +181,3 @@ Get-WinEvent Microsoft-Windows-PowerShell/Operational |
 
 <!-- link references -->
 [SIEM]: https://wikipedia.org/wiki/Security_information_and_event_management
-

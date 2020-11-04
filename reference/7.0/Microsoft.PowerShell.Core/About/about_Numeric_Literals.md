@@ -350,4 +350,4 @@ denoted using the decimal-suffix `D` to maintain accuracy. Without the suffix,
 these values are parsed as `[Double]` using the real-parsing mode.
 
 <!-- reference links -->
-[bigint]: /dotnet/api/system.numerics.biginteger?view=netcore-2.2
+[bigint]: /dotnet/api/system.numerics.biginteger

@@ -241,4 +241,4 @@ because the PowerShell parser can determine where the numeric literal ends and
 the **GetType** method starts.
 
 <!-- reference links -->
-[bigint]: /dotnet/api/system.numerics.biginteger?view=netcore-2.2
+[bigint]: /dotnet/api/system.numerics.biginteger
