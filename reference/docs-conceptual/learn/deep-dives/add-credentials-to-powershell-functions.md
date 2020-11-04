@@ -358,7 +358,7 @@ you maintain PowerShell credentials.
 [BetterCredentials]: https://www.powershellgallery.com/packages/BetterCredentials/
 [Azure Key Vault]: https://azure.microsoft.com/services/key-vault/
 [Vault Project]: https://www.vaultproject.io/
-[Splatting Parameters Inside Advanced Functions]: http://duffney.io/Splatting-Parameters-Within-AdvancedFunctions
+[Splatting Parameters Inside Advanced Functions]: https://duffney.io/Splatting-Parameters-Within-AdvancedFunctions
 [Automating with Jenkins and PowerShell on Windows - Part 2]: https://hodgkins.io/automating-with-jenkins-and-powershell-on-windows-part-2
 [PSCredential]: /dotnet/api/system.management.automation.pscredential
 [The Pester Book]: https://leanpub.com/the-pester-book

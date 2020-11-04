@@ -6,15 +6,26 @@ description: Writing a navigation provider
 ---
 # Writing a navigation provider
 
-This topic describes how to implement the methods of a Windows PowerShell provider that support nested containers (multi-level data stores), moving items, and relative paths. A navigation provider must derive from the [System.Management.Automation.Provider.Navigationcmdletprovider](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider) class.
+This topic describes how to implement the methods of a Windows PowerShell provider that support
+nested containers (multi-level data stores), moving items, and relative paths. A navigation provider
+must derive from the
+[System.Management.Automation.Provider.Navigationcmdletprovider](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider)
+class.
 
-The provider in the examples in this topic uses an Access database as its data store. There are several helper methods and classes that are used to interact with the database. For the complete sample that includes the helper methods, see [AccessDBProviderSample05](./accessdbprovidersample05.md).
+The provider in the examples in this topic uses an Access database as its data store. There are
+several helper methods and classes that are used to interact with the database. For the complete
+sample that includes the helper methods, see
+[AccessDBProviderSample05](./accessdbprovidersample05.md).
 
 For more information about Windows PowerShell providers, see [Windows PowerShell Provider Overview](./windows-powershell-provider-overview.md).
 
 ## Implementing navigation methods
 
-The [System.Management.Automation.Provider.Navigationcmdletprovider](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider) class implements methods that support nested containers, relative paths, and moving items. For a complete list of these methods, see [NavigationCmdletProvider Methods](/dotnet/api/system.management.automation.provider.navigationcmdletprovider?view=pscore-6.2.0#methods).
+The
+[System.Management.Automation.Provider.Navigationcmdletprovider](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider)
+class implements methods that support nested containers, relative paths, and moving items. For a
+complete list of these methods, see
+[NavigationCmdletProvider Methods](/dotnet/api/system.management.automation.provider.navigationcmdletprovider#methods).
 
 > [!NOTE]
 > This topic builds on the information in [Windows PowerShell Provider QuickStart](./windows-powershell-provider-quickstart.md). This topic does not cover the basics of how to set up a provider project, or how to implement the methods inherited from the [System.Management.Automation.Provider.Drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider) class that create and remove drives. This topic also does not cover how to implement methods exposed by the [System.Management.Automation.Provider.Itemcmdletprovider](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider) or [System.Management.Automation.Provider.Containercmdletprovider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider) classes. For an example that shows how to implement item cmdlets, see [Writing an item provider](./writing-an-item-provider.md). For an example that shows how to implement container cmdlets, see [Writing a container provider](./writing-a-container-provider.md).

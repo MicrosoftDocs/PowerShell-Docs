@@ -6,7 +6,8 @@ description: Windows PowerShell Concepts
 ---
 # Windows PowerShell Concepts
 
-This section contains conceptual information that will help you understand PowerShell from a developer's viewpoint.
+This section contains conceptual information that will help you understand PowerShell from a
+developer's viewpoint.
 
 |Topic Name|Description|
 |----------------|-----------------|
@@ -24,7 +25,7 @@ This section contains conceptual information that will help you understand Power
 
 [PowerShell Class](/dotnet/api/system.management.automation.powershell)
 
-[PowerShell Core API Reference](/dotnet/api/?view=pscore-6.2.0)
+[PowerShell Core API Reference](/dotnet/api/?view=pscore-6.2.0&preserve-view=true)
 
 [Windows PowerShell Programmer's Guide](windows-powershell-programmer-s-guide.md)
 
@@ -32,6 +33,6 @@ This section contains conceptual information that will help you understand Power
 
 [Writing a Windows Powershell Provider](../provider/writing-a-windows-powershell-provider.md)
 
-[Windows PowerShell API Reference](/dotnet/api/?view=powershellsdk-1.1.0)
+[Windows PowerShell API Reference](/dotnet/api/?view=powershellsdk-1.1.0&preserve-view=true)
 
 [Windows PowerShell Reference](../windows-powershell-reference.md)
