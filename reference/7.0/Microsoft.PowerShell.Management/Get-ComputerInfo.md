@@ -76,4 +76,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## NOTES
 
+This works on Windows only.
+
 ## RELATED LINKS
