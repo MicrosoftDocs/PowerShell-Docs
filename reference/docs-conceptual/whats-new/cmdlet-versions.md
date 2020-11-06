@@ -10,7 +10,7 @@ This article lists the modules and cmdlets that are included in various versions
 is a summary of information found in the release notes. More detailed information can be found in
 the release notes:
 
-- [What's new in PowerShell 7.0](what-s-new-in-powershell-core-70.md)
+- [What's new in PowerShell 7.0](what-s-new-in-powershell-70.md)
 - [What's new in PowerShell 6.2](what-s-new-in-powershell-core-62.md)
 - [What's new in PowerShell 6.1](what-s-new-in-powershell-core-61.md)
 - [What's new in PowerShell 6.0](what-s-new-in-powershell-core-60.md)
