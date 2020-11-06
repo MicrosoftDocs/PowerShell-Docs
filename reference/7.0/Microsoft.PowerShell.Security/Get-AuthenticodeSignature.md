@@ -183,6 +183,8 @@ You can pipe a string that contains a file path to `Get-AuthenticodeSignature`.
 
 ## NOTES
 
+This cmdlet is only available on Windows platforms.
+
 For information about Authenticode signatures in PowerShell, see
 [about_Signing](../Microsoft.PowerShell.Core/About/about_Signing.md).
 

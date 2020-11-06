@@ -1068,6 +1068,8 @@ This cmdlet does not generate any output.
 
 ## NOTES
 
+This cmdlet is only available on Windows platforms.
+
 - Parameters, such as **VisibleCmdlets** and **VisibleProviders**, do not import items into the
   session. Instead, they select from among the items imported into the session. For example, if the
   value of the **VisibleProviders** parameter is the Certificate provider, but the

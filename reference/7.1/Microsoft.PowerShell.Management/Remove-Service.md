@@ -141,6 +141,8 @@ This cmdlet does not return any output.
 
 ## NOTES
 
+This cmdlet is only available on Windows platforms.
+
 To run this cmdlet, start PowerShell by using the **Run as administrator** option.
 
 ## RELATED LINKS
@@ -158,4 +160,3 @@ To run this cmdlet, start PowerShell by using the **Run as administrator** optio
 [Stop-Service](Stop-Service.md)
 
 [Suspend-Service](Suspend-Service.md)
-

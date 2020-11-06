@@ -460,6 +460,8 @@ By default, `Set-Service` doesn't return any objects. Use the **PassThru** param
 
 ## NOTES
 
+This cmdlet is only available on Windows platforms.
+
 `Set-Service` requires elevated permissions. Use the **Run as administrator** option.
 
 `Set-Service` can only control services when the current user has permissions to manage services. If
@@ -485,4 +487,3 @@ To find a service's service name or display name, use `Get-Service`. The service
 [Suspend-Service](Suspend-Service.md)
 
 [Remove-Service](Remove-Service.md)
-

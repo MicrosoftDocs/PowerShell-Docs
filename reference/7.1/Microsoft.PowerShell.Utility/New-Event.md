@@ -22,16 +22,21 @@ New-Event [-SourceIdentifier] <String> [[-Sender] <PSObject>] [[-EventArguments]
 
 ## DESCRIPTION
 
-The **New-Event** cmdlet creates a new custom event.
+The `New-Event` cmdlet creates a new custom event.
 
-You can use custom events to notify users about state changes in your program and any change that your program can detect, including hardware or system conditions, application status, disk status, network status, or the completion of a background job.
+You can use custom events to notify users about state changes in your program and any change that
+your program can detect, including hardware or system conditions, application status, disk status,
+network status, or the completion of a background job.
 
-Custom events are automatically added to the event queue in your session whenever they are raised; you do not need to subscribe to them.
-However, if you want to forward an event to the local session or specify an action to respond to the event, use the Register-EngineEvent cmdlet to subscribe to the custom event.
+Custom events are automatically added to the event queue in your session whenever they are raised;
+you do not need to subscribe to them. However, if you want to forward an event to the local session
+or specify an action to respond to the event, use the `Register-EngineEvent` cmdlet to subscribe to
+the custom event.
 
-When you subscribe to a custom event, the event subscriber is added to your session.
-If you cancel the event subscription by using the Unregister-Event cmdlet, the event subscriber and custom event are deleted from the session.
-If you do not subscribe to the custom event, to delete the event, you must change the program conditions or close the PowerShell session.
+When you subscribe to a custom event, the event subscriber is added to your session. If you cancel
+the event subscription by using the `Unregister-Event` cmdlet, the event subscriber and custom event
+are deleted from the session. If you do not subscribe to the custom event, to delete the event, you
+must change the program conditions or close the PowerShell session.
 
 ## EXAMPLES
 
@@ -41,8 +46,8 @@ If you do not subscribe to the custom event, to delete the event, you must chang
 PS C:\> New-Event -SourceIdentifier Timer -Sender windows.timer -MessageData "Test"
 ```
 
-This command creates a new event in the PowerShell event queue.
-It uses a **Windows.Timer** object to send the event.
+This command creates a new event in the PowerShell event queue. It uses a **Windows.Timer** object
+to send the event.
 
 ### Example 2: Raise an event in response to another event
 
@@ -59,11 +64,13 @@ PS C:\> function Enable-ProcessCreationEvent
 }
 ```
 
-This sample function uses the **New-Event** cmdlet to raise an event in response to another event.
-The command uses the Register-ObjectEvent cmdlet to subscribe to the Windows Management Instrumentation (WMI) event that is raised when a new process is created.
-The command uses the *Action* parameter of the cmdlet to call the **New-Event** cmdlet, which creates the new event.
+This sample function uses the `New-Event` cmdlet to raise an event in response to another event. The
+command uses the `Register-ObjectEvent` cmdlet to subscribe to the Windows Management
+Instrumentation (WMI) event that is raised when a new process is created. The command uses the
+**Action** parameter of the cmdlet to call the `New-Event` cmdlet, which creates the new event.
 
-Because the events that **New-Event** raises are automatically added to the PowerShell event queue, you do not need to register for that event.
+Because the events that `New-Event` raises are automatically added to the PowerShell event queue,
+you do not need to register for that event.
 
 ## PARAMETERS
 
@@ -85,8 +92,8 @@ Accept wildcard characters: False
 
 ### -MessageData
 
-Specifies additional data associated with the event.
-The value of this parameter appears in the **MessageData** property of the event object.
+Specifies additional data associated with the event. The value of this parameter appears in the
+**MessageData** property of the event object.
 
 ```yaml
 Type: System.Management.Automation.PSObject
@@ -102,8 +109,7 @@ Accept wildcard characters: False
 
 ### -Sender
 
-Specifies the object that raises the event.
-The default is the PowerShell engine.
+Specifies the object that raises the event. The default is the PowerShell engine.
 
 ```yaml
 Type: System.Management.Automation.PSObject
@@ -119,8 +125,8 @@ Accept wildcard characters: False
 
 ### -SourceIdentifier
 
-Specifies a name for the new event.
-This parameter is required, and it must be unique in the session.
+Specifies a name for the new event. This parameter is required, and it must be unique in the
+session.
 
 The value of this parameter appears in the **SourceIdentifier** property of the events.
 
@@ -138,7 +144,10 @@ Accept wildcard characters: False
 
 ### CommonParameters
 
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+-InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -152,7 +161,11 @@ You cannot pipe input to this cmdlet.
 
 ## NOTES
 
-The new custom event, the event subscription, and the event queue exist only in the current session. If you close the current session, the event queue is discarded and the event subscription is canceled.
+No event sources available on the Linux or macOS platforms.
+
+The new custom event, the event subscription, and the event queue exist only in the current session.
+If you close the current session, the event queue is discarded and the event subscription is
+canceled.
 
 ## RELATED LINKS
 
@@ -167,4 +180,3 @@ The new custom event, the event subscription, and the event queue exist only in 
 [Unregister-Event](Unregister-Event.md)
 
 [Wait-Event](Wait-Event.md)
-

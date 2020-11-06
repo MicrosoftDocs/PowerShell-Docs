@@ -29,13 +29,16 @@ Unregister-Event [-SubscriptionId] <Int32> [-Force] [-WhatIf] [-Confirm] [<Commo
 ```
 
 ## DESCRIPTION
-The **Unregister-Event** cmdlet cancels an event subscription that was created by using the Register-EngineEvent, Register-ObjectEvent, or Register-WmiEvent cmdlet.
 
-When an event subscription is canceled, the event subscriber is deleted from the session and the subscribed events are no longer added to the event queue.
-When you cancel a subscription to an event created by using the New-Event cmdlet, the new event is also deleted from the session.
+The `Unregister-Event` cmdlet cancels an event subscription that was created by using the
+`Register-EngineEvent`, `Register-ObjectEvent`, or `Register-WmiEvent` cmdlet.
 
-**Unregister-Event** does not delete events from the event queue.
-To delete events, use the Remove-Event cmdlet.
+When an event subscription is canceled, the event subscriber is deleted from the session and the
+subscribed events are no longer added to the event queue. When you cancel a subscription to an event
+created by using the `New-Event` cmdlet, the new event is also deleted from the session.
+
+`Unregister-Event` does not delete events from the event queue. To delete events, use the
+`Remove-Event` cmdlet.
 
 ## EXAMPLES
 
@@ -47,8 +50,8 @@ PS C:\> Unregister-Event -SourceIdentifier "ProcessStarted"
 
 This command cancels the event subscription that has a source identifier of ProcessStarted.
 
-To find the source identifier of an event, use the Get-Event cmdlet.
-To find the source identifier of an event subscription, use the **Get-EventSubscriber** cmdlet.
+To find the source identifier of an event, use the `Get-Event` cmdlet. To find the source identifier
+of an event subscription, use the `Get-EventSubscriber` cmdlet.
 
 ### Example 2: Cancel an event subscription by subscription identifier
 
@@ -58,7 +61,7 @@ PS C:\> Unregister-Event -SubscriptionId 2
 
 This command cancels the event subscription that has a subscription identifier of 2.
 
-To find the subscription identifier of an event subscription, use the **Get-EventSubscriber** cmdlet.
+To find the subscription identifier of an event subscription, use the `Get-EventSubscriber` cmdlet.
 
 ### Example 3: Cancel all event subscriptions
 
@@ -68,15 +71,21 @@ PS C:\> Get-EventSubscriber -Force | Unregister-Event -Force
 
 This command cancels all event subscriptions in the session.
 
-The command uses the **Get-EventSubscriber** cmdlet to get all event subscriber objects in the session, including the subscribers that are hidden by using the *SupportEvent* parameter of the event registration cmdlets.
+The command uses the `Get-EventSubscriber` cmdlet to get all event subscriber objects in the
+session, including the subscribers that are hidden by using the **SupportEvent** parameter of the
+event registration cmdlets.
 
-It uses a pipeline operator (|) to send the subscriber objects to **Unregister-Event**, which deletes them from the session.
-To complete the task, the *Force* parameter is also required on **Unregister-Event**.
+It uses a pipeline operator (`|`) to send the subscriber objects to `Unregister-Event`, which
+deletes them from the session. To complete the task, the **Force** parameter is also required on
+`Unregister-Event`.
 
 ## PARAMETERS
 
 ### -Force
-Cancels all event subscriptions, including subscriptions that were hidden by using the *SupportEvent* parameter of **Register-ObjectEvent**, **Register-WmiEvent**, and **Register-EngineEvent**.
+
+Cancels all event subscriptions, including subscriptions that were hidden by using the
+**SupportEvent** parameter of `Register-ObjectEvent`, `Register-WmiEvent`, and
+`Register-EngineEvent`.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -91,9 +100,10 @@ Accept wildcard characters: False
 ```
 
 ### -SourceIdentifier
+
 Specifies a source identifier that this cmdlet cancels event subscriptions.
 
-A *SourceIdentifier* or *SubscriptionId* parameter must be included in every command.
+A **SourceIdentifier** or **SubscriptionId** parameter must be included in every command.
 
 ```yaml
 Type: System.String
@@ -108,9 +118,10 @@ Accept wildcard characters: False
 ```
 
 ### -SubscriptionId
+
 Specifies a source identifier ID that this cmdlet cancels event subscriptions.
 
-A *SourceIdentifier* or *SubscriptionId* parameter must be included in every command.
+A **SourceIdentifier** or **SubscriptionId** parameter must be included in every command.
 
 ```yaml
 Type: System.Int32
@@ -125,6 +136,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
+
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
@@ -140,8 +152,8 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Shows what would happen if the cmdlet runs.
-The cmdlet is not run.
+
+Shows what would happen if the cmdlet runs. The cmdlet is not run.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -156,26 +168,33 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+-InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### System.Management.Automation.PSEventSubscriber
-You can pipe the output from Get-EventSubscriber to **Unregister-Event**.
+
+You can pipe the output from `Get-EventSubscriber` to `Unregister-Event`.
 
 ## OUTPUTS
 
 ### None
+
 This cmdlet does not return any output.
 
 ## NOTES
 
-* Events, event subscriptions, and the event queue exist only in the current session. If you close the current session, the event queue is discarded and the event subscription is canceled.
 
-  **Unregister-Event** cannot delete events created by using the New-Event cmdlet unless you have subscribed to the event by using the **Register-EngineEvent** cmdlet.
-To delete a custom event from the session, you must remove it programmatically or close the session.
+Events, event subscriptions, and the event queue exist only in the current session. If you close the
+current session, the event queue is discarded and the event subscription is canceled.
 
-*
+`Unregister-Event` cannot delete events created by using the `New-Event` cmdlet unless you have
+subscribed to the event by using the `Register-EngineEvent` cmdlet. To delete a custom event from
+the session, you must remove it programmatically or close the session.
 
 ## RELATED LINKS
 

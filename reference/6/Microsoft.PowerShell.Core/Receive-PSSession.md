@@ -891,6 +891,8 @@ object. Otherwise, it returns objects that represent that command results.
 
 ## NOTES
 
+This cmdlet is only available on Windows platforms.
+
 `Receive-PSSession` gets results only from sessions that were disconnected. Only sessions that are
 connected to, or terminate at, computers that run PowerShell 3.0 or later versions can be
 disconnected and reconnected.

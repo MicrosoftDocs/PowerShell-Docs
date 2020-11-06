@@ -33,7 +33,8 @@ specified.
 
 ### Example 1 - Send a file to be printed on the default printer
 
-This example shows how to print a file, even though `Out-Printer` does not have a **Path** parameter.
+This example shows how to print a file, even though `Out-Printer` does not have a **Path**
+parameter.
 
 ```powershell
 Get-Content -Path ./readme.txt | Out-Printer
@@ -103,7 +104,8 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -119,6 +121,8 @@ You can pipe any object to `Out-Printer`.
 
 ## NOTES
 
+This cmdlet is only available on Windows platforms.
+
 The cmdlets that contain the `Out` verb do not format objects. They just render them and send them
 to the specified display destination. If you send an unformatted object to an `Out` cmdlet, the
 cmdlet sends it to a formatting cmdlet before rendering it.
@@ -132,4 +136,3 @@ specified.
 [Out-File](Out-File.md)
 
 [Out-String](Out-String.md)
-

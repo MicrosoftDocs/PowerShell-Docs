@@ -529,6 +529,8 @@ This cmdlet does not generate any output.
 
 ## NOTES
 
+This cmdlet is only available on Windows platforms.
+
 - Disabling the session configurations does not undo all the changes that were made by the
   `Enable-PSRemoting` or `Enable-PSSessionConfiguration` cmdlets. You might have to undo the
   following changes manually.
@@ -562,4 +564,3 @@ This cmdlet does not generate any output.
 [Unregister-PSSessionConfiguration](Unregister-PSSessionConfiguration.md)
 
 [WSMan Provider](../Microsoft.WsMan.Management/About/about_WSMan_Provider.md)
-

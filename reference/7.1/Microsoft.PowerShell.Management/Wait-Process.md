@@ -177,9 +177,9 @@ This cmdlet does not generate any output.
 
 ## NOTES
 
-* This cmdlet uses the **WaitForExit** method of the System.Diagnostics.Process class. For more information about this method, see the Microsoft .NET Framework SDK.
+The cmdlet is only supported on Windows platforms.
 
-*
+This cmdlet uses the **WaitForExit** method of the **System.Diagnostics.Process** class.
 
 ## RELATED LINKS
 
@@ -192,4 +192,3 @@ This cmdlet does not generate any output.
 [Stop-Process](Stop-Process.md)
 
 [Wait-Process](Wait-Process.md)
-
