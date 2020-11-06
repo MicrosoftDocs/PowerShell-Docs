@@ -290,6 +290,8 @@ If you use the **Action** parameter, `Register-EngineEvent` returns a
 
 ## NOTES
 
+No event sources available on the Linux or macOS platforms.
+
 Events, event subscriptions, and the event queue exist only in the current session. If you close the
 current session, the event queue is discarded and the event subscription is canceled.
 

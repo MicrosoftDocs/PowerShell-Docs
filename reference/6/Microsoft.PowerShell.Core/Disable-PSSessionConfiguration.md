@@ -221,6 +221,8 @@ This cmdlet does not return any objects.
 
 ## NOTES
 
+This cmdlet is only available on Windows platforms.
+
 To run this cmdlet you must start PowerShell by using the **Run as administrator** option.
 
 ## RELATED LINKS

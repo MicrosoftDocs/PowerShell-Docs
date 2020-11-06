@@ -138,6 +138,8 @@ You can pipe a session configuration file path to `Test-PSSessionConfigurationFi
 
 ## NOTES
 
+This cmdlet is only available on Windows platforms.
+
 ## RELATED LINKS
 
 [Disable-PSSessionConfiguration](Disable-PSSessionConfiguration.md)

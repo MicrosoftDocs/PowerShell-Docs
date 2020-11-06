@@ -46,7 +46,9 @@ This example registers for a PowerShell engine event on two remote computers.
 
 ```powershell
 $S = New-PSSession -ComputerName "Server01, Server02"
-Invoke-Command -Session $S { Register-EngineEvent -SourceIdentifier ([System.Management.Automation.PsEngineEvent]::Exiting) -Forward }
+Invoke-Command -Session $S {
+Register-EngineEvent -SourceIdentifier ([System.Management.Automation.PsEngineEvent]::Exiting) -Forward
+}
 ```
 
 `New-PSSession` creates a user-managed session (PSSession) on each of the remote computers.The
@@ -289,6 +291,8 @@ If you use the **Action** parameter, `Register-EngineEvent` returns a
 **System.Management.Automation.PSEventJob** object. Otherwise, it does not generate any output.
 
 ## NOTES
+
+No event sources available on the Linux or macOS platforms.
 
 Events, event subscriptions, and the event queue exist only in the current session. If you close the
 current session, the event queue is discarded and the event subscription is canceled.

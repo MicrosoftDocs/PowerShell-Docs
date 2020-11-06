@@ -266,6 +266,8 @@ ACL type.
 
 ## NOTES
 
+This cmdlet is only available on Windows platforms.
+
 By default, `Get-Acl` displays the PowerShell path to the resource (`<provider>::<resource-path>`),
 the owner of the resource, and "Access", a list (array) of the access control entries in the
 discretionary access control list (DACL) for the resource. The DACL list is controlled by the

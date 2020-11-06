@@ -307,6 +307,8 @@ This cmdlet returns strings that describe its results.
 
 ## NOTES
 
+This cmdlet is only available on Windows platforms.
+
 On server versions of the Windows operating system, `Enable-PSRemoting` creates firewall rules for
 private and domain networks that allow remote access, and creates a firewall rule for public
 networks that allows remote access only from computers in the same local subnet.

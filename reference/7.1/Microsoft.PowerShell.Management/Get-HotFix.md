@@ -201,6 +201,8 @@ You can pipe one or more computer names to Get-HotFix.
 
 ## NOTES
 
+This cmdlet is only available on Windows platforms.
+
 The **Win32_QuickFixEngineering** [WMI class](/windows/desktop/WmiSdk/retrieving-a-class) represents
 a small system-wide update, commonly referred to as a quick-fix engineering (QFE) update, applied to
 the current operating system. This class returns only the updates supplied by Component Based

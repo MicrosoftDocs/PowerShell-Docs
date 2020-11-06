@@ -338,6 +338,8 @@ You can pipe a string that contains the file path to `Set-AuthenticodeSignature`
 
 ## NOTES
 
+This cmdlet is only available on Windows platforms.
+
 ## RELATED LINKS
 
 [Get-AuthenticodeSignature](Get-AuthenticodeSignature.md)
