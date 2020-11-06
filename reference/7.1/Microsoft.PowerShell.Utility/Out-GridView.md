@@ -77,7 +77,8 @@ $P = Get-Process
 $P | Out-GridView
 ```
 
-The output of the `Get-Process` cmdlet is saved in the `$P` variable. Then, `$P` is piped to `Out-GridView`.
+The output of the `Get-Process` cmdlet is saved in the `$P` variable. Then, `$P` is piped to
+`Out-GridView`.
 
 ### Example 3: Display a selected properties in a grid view
 
@@ -146,7 +147,8 @@ parameter.
 
 ### Example 8: Create a Windows shortcut to `Out-GridView`
 
-This example shows how to use the **Wait** parameter of `Out-GridView` to create a Windows shortcut to the `Out-GridView` window.
+This example shows how to use the **Wait** parameter of `Out-GridView` to create a Windows shortcut
+to the `Out-GridView` window.
 
 ```powershell
 pwsh -Command "Get-Service | Out-GridView -Wait"
@@ -164,8 +166,8 @@ Specifies object that the cmdlet accepts as input for `Out-GridView`.
 
 When you use the **InputObject** parameter to send a collection of objects to `Out-GridView`,
 `Out-GridView` treats the collection as one collection object, and it displays one row that
-represents the collection. To display the each object in the collection, use a pipeline operator (|)
-to send objects to `Out-GridView`.
+represents the collection. To display the each object in the collection, use a pipeline operator
+(`|`) to send objects to `Out-GridView`.
 
 ```yaml
 Type: System.Management.Automation.PSObject
@@ -270,7 +272,8 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -286,6 +289,8 @@ Normally, `Out-GridView` does not return any objects. When using the **PassThru*
 objects representing the selected rows are returned to the pipeline.
 
 ## NOTES
+
+This cmdlet is only available on Windows platforms.
 
 You cannot use a remote command to open a grid view window on another computer.
 

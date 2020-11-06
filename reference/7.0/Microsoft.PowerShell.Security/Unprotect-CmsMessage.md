@@ -212,6 +212,8 @@ The unencrypted message.
 
 ## NOTES
 
+This cmdlet is only available on Windows platforms.
+
 ## RELATED LINKS
 
 [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md)

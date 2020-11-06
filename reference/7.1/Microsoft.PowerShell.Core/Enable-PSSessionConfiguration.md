@@ -245,6 +245,8 @@ This cmdlet does not return any objects.
 
 ## NOTES
 
+This cmdlet is only available on Windows platforms.
+
 To use this cmdlet, you must start PowerShell by using the **Run as administrator** option.
 
 ## RELATED LINKS
@@ -270,4 +272,3 @@ To use this cmdlet, you must start PowerShell by using the **Run as administrato
 [about_Session_Configurations](About/about_Session_Configurations.md)
 
 [about_Session_Configuration_Files](About/about_Session_Configuration_Files.md)
-

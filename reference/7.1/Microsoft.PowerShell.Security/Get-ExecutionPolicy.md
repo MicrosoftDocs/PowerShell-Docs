@@ -221,6 +221,8 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.PowerShell.ExecutionPolicy
 
+The cmdlet always returns **Unrestricted** on Linux and macOS platforms.
+
 ## NOTES
 
 An execution policy is part of the PowerShell security strategy. Execution policies determine
@@ -238,4 +240,3 @@ whether scripts must be digitally signed before they are run.
 [Set-AuthenticodeSignature](Set-AuthenticodeSignature.md)
 
 [Set-ExecutionPolicy](Set-ExecutionPolicy.md)
-

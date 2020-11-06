@@ -261,6 +261,8 @@ You can't pipe input to this cmdlet.
 
 ## NOTES
 
+This cmdlet is only available on Windows platforms.
+
 This cmdlet only works on Windows and uses the **Win32Shutdown** method of the
 **Win32_OperatingSystem** WMI class. This method requires the **SeShutdownPrivilege** privilege be
 enabled for the user account used to restart the machine.

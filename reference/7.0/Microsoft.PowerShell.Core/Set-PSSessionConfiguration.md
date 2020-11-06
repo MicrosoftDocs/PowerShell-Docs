@@ -710,6 +710,8 @@ You cannot pipe input to this cmdlet.
 
 ## NOTES
 
+This cmdlet is only available on Windows platforms.
+
 To run this cmdlet, start PowerShell by using the Run as administrator option.
 
 The `Set-PSSessionConfiguration` cmdlet does not change the configuration name and the **WSMan**

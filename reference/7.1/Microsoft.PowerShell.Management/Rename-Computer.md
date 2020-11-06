@@ -275,15 +275,15 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
 
 ## INPUTS
 
 ### None
 
-This cmdlet does not have parameters that take input by value.
-However, you can pipe the values of the **ComputerName** and **NewName** properties of objects to
-this cmdlet.
+This cmdlet does not have parameters that take input by value. However, you can pipe the values of
+the **ComputerName** and **NewName** properties of objects to this cmdlet.
 
 ## OUTPUTS
 
@@ -294,9 +294,10 @@ Otherwise, it does not return any output.
 
 ## NOTES
 
+This cmdlet is only available on Windows platforms.
+
 ## RELATED LINKS
 
 [Restart-Computer](Restart-Computer.md)
 
 [Stop-Computer](Stop-Computer.md)
-

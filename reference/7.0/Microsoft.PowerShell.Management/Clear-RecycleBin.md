@@ -154,4 +154,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## NOTES
 
+This cmdlet is only available on Windows platforms.
+
 ## RELATED LINKS

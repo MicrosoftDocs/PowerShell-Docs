@@ -48,7 +48,7 @@ In the PowerShell Integrated Scripting Environment (ISE), a variation of the `Sh
 is displayed by default. For information about using this command window, see the PowerShell ISE
 Help topics.
 
-This cmdlet was reintroduced in PowerShell 7. 
+This cmdlet was reintroduced in PowerShell 7.
 
 Because this cmdlet requires a user interface, it does not work on Windows Server Core or Windows
 Nano Server. This cmdlet is only available on Windows systems that support the Windows Desktop.
@@ -320,7 +320,8 @@ When you use the **PassThru** parameter, `Show-Command` returns a command string
 
 ## NOTES
 
+This cmdlet is only available on Windows platforms.
+
 `Show-Command` does not work in remote sessions.
 
 ## RELATED LINKS
-

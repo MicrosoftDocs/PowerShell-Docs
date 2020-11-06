@@ -535,6 +535,8 @@ You can pipe a session to `Disconnect-PSSession`.
 
 ## NOTES
 
+This cmdlet is only available on Windows platforms.
+
 - The `Disconnect-PSSession` cmdlet works only when the local and remote computers are running
   PowerShell 3.0 or later.
 - If you use the `Disconnect-PSSession` cmdlet on a disconnected session, the command has no effect

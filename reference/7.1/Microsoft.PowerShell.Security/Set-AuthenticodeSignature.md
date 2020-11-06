@@ -338,6 +338,8 @@ You can pipe a string that contains the file path to `Set-AuthenticodeSignature`
 
 ## NOTES
 
+This cmdlet is only available on Windows platforms.
+
 ## RELATED LINKS
 
 [Get-AuthenticodeSignature](Get-AuthenticodeSignature.md)
@@ -351,4 +353,3 @@ You can pipe a string that contains the file path to `Set-AuthenticodeSignature`
 [about_Execution_Policies](../Microsoft.PowerShell.Core/About/about_Execution_Policies.md)
 
 [about_Signing](../Microsoft.PowerShell.Core/About/about_Signing.md)
-

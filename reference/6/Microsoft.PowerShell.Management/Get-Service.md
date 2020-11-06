@@ -324,6 +324,8 @@ This cmdlet returns objects that represent the services on the computer.
 
 ## NOTES
 
+This cmdlet is only available on Windows platforms.
+
 Beginning in PowerShell 6.0, the following properties are added to the **ServiceController**
 objects: **UserName**, **Description**, **DelayedAutoStart**, **BinaryPathName**, and
 **StartupType** .

@@ -131,7 +131,8 @@ The first command uses the `Get-Acl` cmdlet to get the security descriptor of th
 
 Next, variables are created to convert the inherited access rules to explicit access rules. To
 protect the access rules associated with this from inheritance, set the `$isProtected` variable to
-`$true`.to allow inheritance, set `$isProtected` to `$false`. For more information, see [set access rule protection](/dotnet/api/system.security.accesscontrol.objectsecurity.setaccessruleprotection).
+`$true`.to allow inheritance, set `$isProtected` to `$false`. For more information, see
+[set access rule protection](/dotnet/api/system.security.accesscontrol.objectsecurity.setaccessruleprotection).
 The `$preserveInheritance` variable set to `$true` to preserve inherited access rules; false to
 remove inherited access rules. Then the access rule protection is updated using the
 **SetAccessRuleProtection()** method.
@@ -161,16 +162,18 @@ This command will grant the **BUILTIN\Administrators** group Full control of the
 The first command uses the `Get-Acl` cmdlet to get the security descriptor of the Dog.txt file.
 
 Next variables are created to grant the **BUILTIN\Administrators** group full control of the Dog.txt
-file. The `$identity` variable set to the name of a [user account](/dotnet/api/system.security.accesscontrol.filesystemaccessrule.-ctor).
-The `$fileSystemRights` variable set to FullControl, and can be any one of the [FileSystemRights](/dotnet/api/system.security.accesscontrol.filesystemrights)
-values that specifies the type of operation associated with the access rule. The `$type` variable
-set to "Allow" to specifies whether to allow or deny the operation. The
-`$fileSystemAccessRuleArgumentList` variable is an argument list is to be passed when making the new
-**FileSystemAccessRule** object. Then a new **FileSystemAccessRule** object is created, and the
-**FileSystemAccessRule** object is passed to the **SetAccessRule()** method, adds the new access rule.
+file. The `$identity` variable set to the name of a
+[user account](/dotnet/api/system.security.accesscontrol.filesystemaccessrule.-ctor). The
+`$fileSystemRights` variable set to FullControl, and can be any one of the
+[FileSystemRights](/dotnet/api/system.security.accesscontrol.filesystemrights) values that specifies
+the type of operation associated with the access rule. The `$type` variable set to "Allow" to
+specifies whether to allow or deny the operation. The `$fileSystemAccessRuleArgumentList` variable
+is an argument list is to be passed when making the new **FileSystemAccessRule** object. Then a new
+**FileSystemAccessRule** object is created, and the **FileSystemAccessRule** object is passed to the
+**SetAccessRule()** method, adds the new access rule.
 
-The last command uses `Set-Acl` to apply the security descriptor of to Dog.txt.
-When the command completes, the **BUILTIN\Administrators** group will have full control of the Dog.txt.
+The last command uses `Set-Acl` to apply the security descriptor of to Dog.txt. When the command
+completes, the **BUILTIN\Administrators** group will have full control of the Dog.txt.
 
 ## PARAMETERS
 
@@ -179,8 +182,8 @@ When the command completes, the **BUILTIN\Administrators** group will have full 
 Specifies an ACL with the desired property values. `Set-Acl` changes the ACL of item specified by
 the **Path** or **InputObject** parameter to match the values in the specified security object.
 
-You can save the output of a `Get-Acl` command in a variable and then use the **AclObject** parameter
-to pass the variable, or type a `Get-Acl` command.
+You can save the output of a `Get-Acl` command in a variable and then use the **AclObject**
+parameter to pass the variable, or type a `Get-Acl` command.
 
 ```yaml
 Type: System.Object
@@ -199,7 +202,8 @@ Accept wildcard characters: False
 Removes the central access policy from the specified item.
 
 Beginning in Windows Server 2012, administrators can use Active Directory and Group Policy to set
-central access policies for users and groups. For more information, see [Dynamic Access Control: Scenario Overview](/windows-server/identity/solution-guides/dynamic-access-control--scenario-overview).
+central access policies for users and groups. For more information, see
+[Dynamic Access Control: Scenario Overview](/windows-server/identity/solution-guides/dynamic-access-control--scenario-overview).
 
 This parameter was introduced in Windows PowerShell 3.0.
 
@@ -384,7 +388,10 @@ Accept wildcard characters: False
 
 ### CommonParameters
 
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+-InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -396,14 +403,15 @@ You can pipe an ACL object or a security descriptor to `Set-Acl`.
 
 ### System.Security.AccessControl.FileSecurity
 
-By default, `Set-Acl` does not generate any output.
-However, if you use the **Passthru** parameter, it generates a security object.
-The type of the security object depends on the type of the item.
+By default, `Set-Acl` does not generate any output. However, if you use the **Passthru** parameter,
+it generates a security object. The type of the security object depends on the type of the item.
 
 ## NOTES
 
- The `Set-Acl` cmdlet is supported by the PowerShell file system and registry providers. As such,
- you can use it to change the security descriptors of files, directories, and registry keys.
+This cmdlet is only available on Windows platforms.
+
+The `Set-Acl` cmdlet is supported by the PowerShell file system and registry providers. As such, you
+can use it to change the security descriptors of files, directories, and registry keys.
 
 ## RELATED LINKS
 
