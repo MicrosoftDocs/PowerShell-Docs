@@ -348,6 +348,18 @@ credentials to run the command. The value of the **Reason** property is:
 Connecting to remote server failed with the following error message: "Access is
 denied".
 
+## Notes
+
+- The jobs are tied to invoking powershell process. Stopping (job) invoking powershell
+  process will result in stopping all jobs.
+- If you are familiar with linux backgroud processes using `nohup`, where commands continue
+  executing even after parent shell is killed, take a look at
+  [Start-Process](xref:Microsoft.PowerShell.Core.Start-Process). [Start-Process](xref:Microsoft.PowerShell.Core.Start-Process)
+  by itself will not provide `nohup` like behaviour on non-Windows platforms.
+- On non-Windows platforms you need to explicitely execute `nohup`. Here is an
+  [example](https://stackoverflow.com/a/64708000/1686377).
+
+
 ## See also
 
 - [about_Remote_Jobs](about_Remote_Jobs.md)
