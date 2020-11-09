@@ -1,5 +1,5 @@
 ---
-description: Describes how to use alternate names for cmdlets and commands in PowerShell. 
+description: Describes how to use alternate names for cmdlets and commands in PowerShell.
 keywords: powershell,cmdlet
 Locale: en-US
 ms.date: 11/27/2017
@@ -196,8 +196,7 @@ Get-Help about_Functions
 
 PowerShell aliases are represented by objects that are instances of the
 System.Management.Automation.AliasInfo class. For more information about this
-type of object, see [AliasInfo Class][aliasinfo] in the Microsoft Developer
-Network (MSDN) library.
+type of object, see [AliasInfo Class][aliasinfo] in the PowerShell SDK.
 
 To view the properties and methods of the alias objects, get the aliases.
 Then, pipe them to the Get-Member cmdlet. For example:
@@ -271,4 +270,3 @@ Get-Help Alias
 
 <!-- External links -->
 [aliasinfo]: /dotnet/api/system.management.automation.aliasinfo
-

@@ -6,10 +6,11 @@ description: An ISEFile object represents a file in Windows PowerShell ISE.
 
 # The ISEFile Object
 
-An **ISEFile** object represents a file in Windows PowerShell&reg; Integrated Scripting Environment
-(ISE). It is an instance of the **Microsoft.PowerShell.Host.ISE.ISEFile** class. This topic lists its
-member methods and member properties. The `$psISE.CurrentFile` and the files in the Files
-collection in a PowerShell tab are all instances of the ****Microsoft.PowerShell.Host.ISE.ISEFile** class.
+An **ISEFile** object represents a file in Windows PowerShell Integrated Scripting Environment
+(ISE). It is an instance of the **Microsoft.PowerShell.Host.ISE.ISEFile** class. This topic lists
+its member methods and member properties. The `$psISE.CurrentFile` and the files in the Files
+collection in a PowerShell tab are all instances of the ****Microsoft.PowerShell.Host.ISE.ISEFile**
+class.
 
 ## Methods
 
@@ -19,8 +20,8 @@ Supported in Windows PowerShell ISE 2.0 and later.
 
 Saves the file to disk.
 
-**\[saveEncoding\]** - optional [System.Text.Encoding](https://msdn.microsoft.com/library/system.text.encoding.aspx)
-An optional character encoding parameter to be used for the saved file. The default value is **UTF8**.
+`[saveEncoding]` - optional [System.Text.Encoding](/dotnet/api/system.text.encoding) An optional
+character encoding parameter to be used for the saved file. The default value is **UTF8**.
 
 ### Exceptions
 
@@ -47,8 +48,8 @@ Saves the file with the specified file name and encoding.
 **filename** - String
 The name to be used to save the file.
 
-**\[saveEncoding\]** - optional [System.Text.Encoding](https://msdn.microsoft.com/library/system.text.encoding.aspx)
-An optional character encoding parameter to be used for the saved file. The default value is **UTF8**.
+`[saveEncoding]` - optional [System.Text.Encoding](/dotnet/api/system.text.encoding) An optional
+character encoding parameter to be used for the saved file. The default value is **UTF8**.
 
 ### Exceptions
 
@@ -95,7 +96,8 @@ $psISE.CurrentFile.Editor.Text
 
 Supported in Windows PowerShell ISE 2.0 and later.
 
-The read-only property that gets the original file encoding. This is a **System.Text.Encoding** object.
+The read-only property that gets the original file encoding. This is a **System.Text.Encoding**
+object.
 
 ```powershell
 # Shows the encoding for the file.
@@ -117,7 +119,8 @@ $psISE.CurrentFile.FullPath
 
 Supported in Windows PowerShell ISE 2.0 and later.
 
-The read-only Boolean property that returns `$true` if the file has been saved after it was last modified.
+The read-only Boolean property that returns `$true` if the file has been saved after it was last
+modified.
 
 ```powershell
 # Determines whether the file has been saved since it was last modified.

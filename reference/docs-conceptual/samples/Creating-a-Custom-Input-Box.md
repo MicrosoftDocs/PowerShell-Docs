@@ -129,8 +129,7 @@ $form.Controls.Add($label)
 
 Add the control (in this case, a text box) that lets users provide the information you've described
 in your label text. There are many other controls you can apply besides text boxes; for more
-controls, see [System.Windows.Forms Namespace](/dotnet/api/system.windows.forms)
-on MSDN.
+controls, see [System.Windows.Forms Namespace](/dotnet/api/system.windows.forms).
 
 ```powershell
 $textBox = New-Object System.Windows.Forms.TextBox

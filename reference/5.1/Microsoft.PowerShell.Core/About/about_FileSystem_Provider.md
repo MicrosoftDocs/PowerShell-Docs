@@ -1,5 +1,5 @@
 ---
-description:  FileSystem 
+description: FileSystem 
 keywords: powershell,cmdlet
 Locale: en-US
 ms.date: 10/18/2018
@@ -246,8 +246,7 @@ Get-Acl -Path test.txt | Format-List -Property *
 
 For more information about this object, pipe the command to the
 [Get-Member](xref:Microsoft.PowerShell.Utility.Get-Member) cmdlet. Or, see
-"[FileSecurity](/dotnet/api/system.security.accesscontrol.filesecurity) Class" in the
-MSDN (Microsoft Developer Network) library.
+[FileSecurity](/dotnet/api/system.security.accesscontrol.filesecurity) Class.
 
 ### Modify the ACL for a file
 
@@ -619,10 +618,6 @@ in a file system drive.
 ### Raw \<SwitchParameter\>
 
 Ignores newline characters. Returns contents as a single item.
-
-#### Cmdlets supported
-
-- [Get-Content](xref:Microsoft.PowerShell.Management.Get-Content)
 
 #### Cmdlets supported
 

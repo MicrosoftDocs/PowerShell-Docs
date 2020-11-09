@@ -251,7 +251,6 @@ You can also limit the number of times the connection is redirected by changing 
 **MaximumConnectionRedirectionCount** session option value. Use the **MaximumRedirection** parameter
 of the `New-PSSessionOption` cmdlet or set the **MaximumConnectionRedirectionCount** property of the
 **$PSSessionOption** preference variable. The default value is 5.
-The default value is 5.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -305,8 +304,7 @@ the disconnected session. The acceptable values for this parameter are:
 The default value is Default.
 
 For more information about the values of this parameter, see
-[AuthenticationMechanism Enumeration](https://msdn.microsoft.com/library/system.management.automation.runspaces.authenticationmechanism)
-in the MSDN library.
+[AuthenticationMechanism Enumeration](/dotnet/api/system.management.automation.runspaces.authenticationmechanism).
 
 > [!CAUTION]
 > Credential Security Support Provider (CredSSP) authentication, in which the user's credentials are
@@ -719,12 +717,10 @@ This cmdlet returns an object that represents the session to which it reconnecte
   indicates that you cannot connect to the **PSSession** because it is connected to another session.
 
   For more information about the values of the **State** property of sessions, see
-  [RunspaceState Enumeration](https://msdn.microsoft.com/library/system.management.automation.runspaces.runspacestate)
-  in the MSDN library.
+  [RunspaceState Enumeration](/dotnet/api/system.management.automation.runspaces.runspacestate).
 
   For more information about the values of the **Availability** property of sessions, see
-  [RunspaceAvailability Enumeration](https://msdn.microsoft.com/library/system.management.automation.runspaces.runspaceavailability)
-  in the MSDN library.
+  [RunspaceAvailability Enumeration](/dotnet/api/system.management.automation.runspaces.runspaceavailability).
 
 - You cannot change the idle time-out value of a **PSSession** when you connect to the
   **PSSession**. The **SessionOption** parameter of `Connect-PSSession` takes a **SessionOption**

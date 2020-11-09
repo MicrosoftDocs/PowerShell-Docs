@@ -307,7 +307,10 @@ Accept wildcard characters: False
 
 ### CommonParameters
 
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+-InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -321,7 +324,10 @@ You can pipe a path or XML node to this cmdlet.
 
 ## NOTES
 
-* XPath is a standard language that is designed to identify parts of an XML document. For more information about the XPath language, see [XPath Reference](https://msdn.microsoft.com/library/ms256115) and the Selection Filters section of the [Event Selection](https://msdn.microsoft.com/library/aa385231) in the MSDN library.
+XPath is a standard language that is designed to identify parts of an XML document. For more
+information about the XPath language, see
+[XPath Reference](/dotnet/standard/data/xml/select-nodes-using-xpath-navigation) and the Selection
+Filters section of [Event Selection](/previous-versions//aa385231(v=vs.85)).
 
 ## RELATED LINKS
 

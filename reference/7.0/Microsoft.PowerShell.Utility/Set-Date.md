@@ -138,12 +138,9 @@ Accept wildcard characters: False
 Specifies which elements of the date and time are displayed.The acceptable values for this parameter
 are:
 
-- Date.
-  displays only the date.
-- Time.
-  displays only the time.
-- DateTime.
-  displays the date and time.
+- **Date** - displays only the date.
+- **Time** - displays only the time.
+- **DateTime** - displays the date and time.
 
 This parameter affects only the display.
 It does not affect the **DateTime** object that `Get-Date` retrieves.
@@ -221,7 +218,7 @@ You can pipe a date to `Set-Date`.
   `Set-Date`, such as **AddDays**, **AddMonths**, and **FromFileTime**. For more information, see
   [DateTime Methods](/dotnet/api/system.datetime) and
 
-  [TimeSpan Methods](/dotnet/api/system.timespan) in the MSDN library.
+  [TimeSpan Methods](/dotnet/api/system.timespan) in the .NET SDK.
 
 ## RELATED LINKS
 
