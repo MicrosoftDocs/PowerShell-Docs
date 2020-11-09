@@ -343,7 +343,7 @@ The acceptable values for this parameter are:
 The default value is Default.
 
 For more information about the values of this parameter, see
-[AuthenticationMechanism Enumeration](dotnet/api/system.management.automation.runspaces.authenticationmechanism).
+[AuthenticationMechanism Enumeration](/dotnet/api/system.management.automation.runspaces.authenticationmechanism).
 
 CAUTION: Credential Security Support Provider (CredSSP) authentication, in which the user's
 credentials are passed to a remote computer to be authenticated, is designed for commands that
@@ -826,10 +826,10 @@ An **Availability** value of **None** indicates that you can connect to the sess
 session.
 
 For more information about the values of the **State** property of sessions, see
-[RunspaceState Enumeration](dotnet/api/system.management.automation.runspaces.runspacestate).
+[RunspaceState Enumeration](/dotnet/api/system.management.automation.runspaces.runspacestate).
 
 For more information about the values of the **Availability** property of sessions, see
-[RunspaceAvailability Enumeration](dotnet/api/system.management.automation.runspaces.runspaceavailability).
+[RunspaceAvailability Enumeration](/dotnet/api/system.management.automation.runspaces.runspaceavailability).
 
 ## RELATED LINKS
 

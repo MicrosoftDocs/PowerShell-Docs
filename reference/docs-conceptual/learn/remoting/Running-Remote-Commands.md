@@ -158,7 +158,7 @@ or in the Windows PowerShell console, type `Get-Help wsman`.
 For more information, see:
 
 - [About Remote FAQ](/powershell/module/microsoft.powershell.core/about/about_remote_faq)
-- [Register-PSSessionConfiguration](xref:Microsoft.PowerShell.Core.)
+- [Register-PSSessionConfiguration](xref:Microsoft.PowerShell.Core.Register-PSSessionConfiguration)
 - [Import-PSSession](xref:Microsoft.PowerShell.Utility.Import-PSSession)
 
 For help with remoting errors, see [about_Remote_Troubleshooting](/powershell/module/microsoft.powershell.core/about/about_Remote_Troubleshooting).
@@ -171,7 +171,7 @@ For help with remoting errors, see [about_Remote_Troubleshooting](/powershell/mo
 - [about_Remote_Troubleshooting](/powershell/module/microsoft.powershell.core/about/about_Remote_Troubleshooting)
 - [about_PSSessions](/powershell/module/microsoft.powershell.core/about/about_PSSessions)
 - [about_WS-Management_Cmdlets](/powershell/module/microsoft.wsman.management/about/about_ws-management_cmdlets)
-- [Invoke-Command](xref:Microsoft.PowerShell.Core.Invoke-command)
+- [Invoke-Command](xref:Microsoft.PowerShell.Core.Invoke-Command)
 - [Import-PSSession](xref:Microsoft.PowerShell.Utility.Import-PSSession)
 - [New-PSSession](xref:Microsoft.PowerShell.Core.New-PSSession)
 - [Register-PSSessionConfiguration](xref:Microsoft.PowerShell.Core.Register-PSSessionConfiguration)
