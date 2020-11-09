@@ -151,31 +151,31 @@ Windows PowerShell includes a WSMan provider. The provider creates a `WSMAN:` dr
 navigate through a hierarchy of configuration settings on the local computer and remote computers.
 
 For more information about the WSMan provider, see
-[WSMan Provider](https://technet.microsoft.com/library/dd819476.aspx) and
+[WSMan Provider](/powershell/module/microsoft.wsman.management/about/about_wsman_provider) and
 [About WS-Management Cmdlets](/powershell/module/microsoft.wsman.management/about/about_ws-management_cmdlets),
 or in the Windows PowerShell console, type `Get-Help wsman`.
 
 For more information, see:
 
-- [About Remote FAQ](https://technet.microsoft.com/library/dd315359.aspx)
-- [Register-PSSessionConfiguration](https://go.microsoft.com/fwlink/?LinkId=821508)
-- [Import-PSSession](https://go.microsoft.com/fwlink/?LinkId=821821)
+- [About Remote FAQ](/powershell/module/microsoft.powershell.core/about/about_remote_faq)
+- [Register-PSSessionConfiguration](xref:Microsoft.PowerShell.Core.Register-PSSessionConfiguration)
+- [Import-PSSession](xref:Microsoft.PowerShell.Utility.Import-PSSession)
 
-For help with remoting errors, see [about_Remote_Troubleshooting](https://technet.microsoft.com/library/dd347642.aspx).
+For help with remoting errors, see [about_Remote_Troubleshooting](/powershell/module/microsoft.powershell.core/about/about_Remote_Troubleshooting).
 
 ## See Also
 
-- [about_Remote](https://technet.microsoft.com/library/9b4a5c87-9162-4adf-bdfe-fbc80b9b8970)
-- [about_Remote_FAQ](https://technet.microsoft.com/library/e23702fd-9415-4a98-9975-390a4d3adc42)
-- [about_Remote_Requirements](https://technet.microsoft.com/library/da213949-134c-4741-b307-81f4492ba1bd)
-- [about_Remote_Troubleshooting](https://technet.microsoft.com/library/2f890148-8578-49ed-85ea-79a489dd6317)
-- [about_PSSessions](https://technet.microsoft.com/library/7a9b4e0e-fa1b-47b0-92f6-6e2995d70acb)
-- [about_WS-Management_Cmdlets](https://technet.microsoft.com/library/6ed3370a-ea10-45a5-9493-696aeace27ed)
-- [Invoke-Command](/powershell/module/microsoft.powershell.core/invoke-command)
-- [Import-PSSession](https://go.microsoft.com/fwlink/?LinkId=821821)
-- [New-PSSession](https://go.microsoft.com/fwlink/?LinkId=821498)
-- [Register-PSSessionConfiguration](https://go.microsoft.com/fwlink/?LinkId=821508)
-- [WSMan Provider](https://technet.microsoft.com/library/66fe1241-e08f-49ca-832f-a84c33ca8735)
+- [about_Remote](/powershell/module/microsoft.powershell.core/about/about_remote_faq)
+- [about_Remote_FAQ](/powershell/module/microsoft.powershell.core/about/about_remote_faq)
+- [about_Remote_Requirements](/powershell/module/microsoft.powershell.core/about/about_remote_requirements)
+- [about_Remote_Troubleshooting](/powershell/module/microsoft.powershell.core/about/about_Remote_Troubleshooting)
+- [about_PSSessions](/powershell/module/microsoft.powershell.core/about/about_PSSessions)
+- [about_WS-Management_Cmdlets](/powershell/module/microsoft.wsman.management/about/about_ws-management_cmdlets)
+- [Invoke-Command](xref:Microsoft.PowerShell.Core.Invoke-Command)
+- [Import-PSSession](xref:Microsoft.PowerShell.Utility.Import-PSSession)
+- [New-PSSession](xref:Microsoft.PowerShell.Core.New-PSSession)
+- [Register-PSSessionConfiguration](xref:Microsoft.PowerShell.Core.Register-PSSessionConfiguration)
+- [WSMan Provider](/powershell/module/microsoft.wsman.management/about/about_wsman_provider)
 
 [wsman-remoting]: WSMan-Remoting-in-PowerShell-Core.md
 [ssh-remoting]: SSH-Remoting-in-PowerShell-Core.md

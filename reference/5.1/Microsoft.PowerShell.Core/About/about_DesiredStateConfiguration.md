@@ -1,5 +1,5 @@
 ---
-description:  Provides a brief introduction to the PowerShell Desired State Configuration (DSC) feature. 
+description:  Provides a brief introduction to the PowerShell Desired State Configuration (DSC) feature.
 keywords: powershell,cmdlet
 Locale: en-US
 ms.date: 07/23/2020
@@ -29,15 +29,13 @@ maintain and manage existing configurations.
 DSC is introduced in PowerShell 4.0.
 
 For detailed information about DSC, see
-[PowerShell Desired State Configuration Overview](/powershell/scripting/dsc/overview/overview)
-in the TechNet Library.
+[PowerShell Desired State Configuration Overview](/powershell/scripting/dsc/overview/overview).
 
 ## DEVELOPING DSC RESOURCES WITH CLASSES
 
 Starting in PowerShell 5.0, you can develop DSC resources by using classes.
 For more information, see [about_Classes](about_Classes.md), and
-[Writing a custom DSC resource with PowerShell classes](/previous-versions//dn948461(v=technet.10))
-on Microsoft TechNet.
+[Writing a custom DSC resource with PowerShell classes](/powershell/scripting/dsc/resources/authoringresourceclass).
 
 ## USING DSC
 
@@ -156,7 +154,8 @@ To get a list of available DSC resources on your system, run the
 `Get-DscResource` cmdlet.
 
 > [!NOTE]
-> In PowerShell versions below 7.0, `Get-DscResource` does not find Class based DSC resources.
+> In PowerShell versions below 7.0, `Get-DscResource` does not find Class based
+> DSC resources.
 
 The example in this topic demonstrates how to use the File and WindowsFeature
 resources. To see all properties that you can use with a resource, insert the

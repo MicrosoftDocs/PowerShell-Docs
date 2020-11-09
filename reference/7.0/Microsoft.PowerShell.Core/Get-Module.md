@@ -46,31 +46,28 @@ Get-Module [[-Name] <String[]>] [-FullyQualifiedName <ModuleSpecification[]>] [-
 ## DESCRIPTION
 
 The `Get-Module` cmdlet gets the PowerShell modules that have been imported, or that can be
-imported, into a PowerShell session.
-The module object that `Get-Module` returns contains valuable information about the module.
-You can also pipe the module objects to other cmdlets, such as the `Import-Module` and
-`Remove-Module` cmdlets.
+imported, into a PowerShell session. The module object that `Get-Module` returns contains valuable
+information about the module. You can also pipe the module objects to other cmdlets, such as the
+`Import-Module` and `Remove-Module` cmdlets.
 
-Without parameters, `Get-Module` gets modules that have been imported into the current session.
-To get all installed modules, specify the **ListAvailable** parameter.
+Without parameters, `Get-Module` gets modules that have been imported into the current session. To
+get all installed modules, specify the **ListAvailable** parameter.
 
-`Get-Module` gets modules, but it does not import them.
-Starting in Windows PowerShell 3.0, modules are automatically imported when you use a command in the
-module, but a `Get-Module` command does not trigger an automatic import.
-You can also import the modules into your session by using the `Import-Module` cmdlet.
+`Get-Module` gets modules, but it does not import them. Starting in Windows PowerShell 3.0, modules
+are automatically imported when you use a command in the module, but a `Get-Module` command does not
+trigger an automatic import. You can also import the modules into your session by using the
+`Import-Module` cmdlet.
 
 Starting in Windows PowerShell 3.0, you can get and then, import modules from remote sessions into
-the local session.
-This strategy uses the Implicit Remoting feature of PowerShell and is equivalent to using the
-`Import-PSSession` cmdlet.
-When you use commands in modules imported from another session, the commands run implicitly in the
-remote session. This feature lets you manage the remote computer from the local session.
+the local session. This strategy uses the Implicit Remoting feature of PowerShell and is equivalent
+to using the `Import-PSSession` cmdlet. When you use commands in modules imported from another
+session, the commands run implicitly in the remote session. This feature lets you manage the remote
+computer from the local session.
 
 Also, starting in Windows PowerShell 3.0, you can use `Get-Module` and `Import-Module` to get and
 import Common Information Model (CIM) modules, in which the cmdlets are defined in Cmdlet Definition
-XML (CDXML) files.
-This feature lets you use cmdlets that are implemented in non-managed code assemblies, such as those
-written in C++.
+XML (CDXML) files. This feature lets you use cmdlets that are implemented in non-managed code
+assemblies, such as those written in C++.
 
 With these new features, the `Get-Module` and `Import-Module` cmdlets become primary tools for
 managing heterogeneous enterprises that include computers that run the Windows operating system and
@@ -78,21 +75,19 @@ computers that run other operating systems.
 
 To manage remote computers that run the Windows operating system that have PowerShell and PowerShell
 remoting enabled, create a **PSSession** on the remote computer and then use the **PSSession**
-parameter of `Get-Module` to get the PowerShell modules in the **PSSession**.
-When you import the modules, and then use the imported commands in the current session, the commands
-run implicitly in the **PSSession** on the remote computer.
-You can use this strategy to manage the remote computer.
+parameter of `Get-Module` to get the PowerShell modules in the **PSSession**. When you import the
+modules, and then use the imported commands in the current session, the commands run implicitly in
+the **PSSession** on the remote computer. You can use this strategy to manage the remote computer.
 
 You can use a similar strategy to manage computers that do not have PowerShell remoting enabled.
 These include computers that are not running the Windows operating system, and computers that have
 PowerShell but do not have PowerShell remoting enabled.
 
-Start by creating a CIM session on the remote computer.
-A CIM session is a connection to Windows Management Instrumentation (WMI) on the remote computer.
-Then use the **CIMSession** parameter of `Get-Module` to get CIM modules from the CIM session.
-When you import a CIM module by using the `Import-Module` cmdlet and then run the imported commands,
-the commands run implicitly on the remote computer.
-You can use this WMI and CIM strategy to manage the remote computer.
+Start by creating a CIM session on the remote computer. A CIM session is a connection to Windows
+Management Instrumentation (WMI) on the remote computer. Then use the **CIMSession** parameter of
+`Get-Module` to get CIM modules from the CIM session. When you import a CIM module by using the
+`Import-Module` cmdlet and then run the imported commands, the commands run implicitly on the remote
+computer. You can use this WMI and CIM strategy to manage the remote computer.
 
 ## EXAMPLES
 
@@ -114,8 +109,8 @@ This command gets the modules that are installed on the computer and can be impo
 current session.
 
 `Get-Module` looks for available modules in the path specified by the **$env:PSModulePath**
-environment variable.
-For more information about **PSModulePath**, see [about_Modules](About/about_Modules.md) and
+environment variable. For more information about **PSModulePath**, see
+[about_Modules](About/about_Modules.md) and
 [about_Environment_Variables](About/about_Environment_Variables.md).
 
 ### Example 3: Get all exported files
@@ -130,7 +125,7 @@ This command gets all of the exported files for all available modules.
 
 ```powershell
 $FullyQualifedName = @{ModuleName="Microsoft.PowerShell.Management";ModuleVersion="3.1.0.0"}
-  Get-Module -FullyQualifiedName $FullyQualifedName | Format-Table -Property Name,Version
+Get-Module -FullyQualifiedName $FullyQualifedName | Format-Table -Property Name,Version
 ```
 
 ```Output
@@ -140,9 +135,9 @@ Microsoft.PowerShell.Management  3.1.0.0
 ```
 
 This command gets the **Microsoft.PowerShell.Management** module by specifying the fully qualified
-name of the module by using the **FullyQualifiedName** parameter.
-The command then pipes the results into the `Format-Table` cmdlet to format the results as a table
-with **Name** and **Version** as the column headings.
+name of the module by using the **FullyQualifiedName** parameter. The command then pipes the results
+into the `Format-Table` cmdlet to format the results as a table with **Name** and **Version** as the
+column headings.
 
 ### Example 5: Get properties of a module
 
@@ -193,11 +188,11 @@ SessionState
 Version
 ```
 
-This command gets the properties of the **PSModuleInfo** object that `Get-Module` returns.
-There is one object for each module file.
+This command gets the properties of the **PSModuleInfo** object that `Get-Module` returns. There is
+one object for each module file.
 
-You can use the properties to format and filter the module objects.
-For more information about the properties, see [PSModuleInfo Properties](/dotnet/api/system.management.automation.psmoduleinfo).
+You can use the properties to format and filter the module objects. For more information about the
+properties, see [PSModuleInfo Properties](/dotnet/api/system.management.automation.psmoduleinfo).
 
 The output includes the new properties, such as **Author** and **CompanyName**, that were introduced
 in Windows PowerShell 3.0.
@@ -244,13 +239,12 @@ name. This lets you see the module files that each script is exporting.
 
 ### Example 7: Display the contents of a module manifest
 
-These commands display the contents of the module manifest for the PowerShell **BitsTransfer**
-module.
+These commands display the contents of the module manifest for the Windows PowerShell
+**BitsTransfer** module.
 
-Modules are not required to have manifest files.
-When they do have a manifest file, the manifest file is required only to include a version number.
-However, manifest files often provide useful information about a module, its requirements, and its
-contents.
+Modules are not required to have manifest files. When they do have a manifest file, the manifest
+file is required only to include a version number. However, manifest files often provide useful
+information about a module, its requirements, and its contents.
 
 ```powershell
 # First command
@@ -299,9 +293,9 @@ d----        12/16/2008  12:36 PM            en-US
 -a---        12/16/2008  12:20 AM     108544 Microsoft.BackgroundIntelligentTransfer.Management.Interop.dll
 ```
 
-This command lists the files in the directory of the module.
-This is another way to determine what is in a module before you import it.
-Some modules might have help files or ReadMe files that describe the module.
+This command lists the files in the directory of the module. This is another way to determine what
+is in a module before you import it. Some modules might have help files or ReadMe files that
+describe the module.
 
 ### Example 9: Get modules installed on a computer
 
@@ -317,14 +311,14 @@ The first command uses the `New-PSSession` cmdlet to create a **PSSession** on t
 computer. The command saves the **PSSession** in the $s variable.
 
 The second command uses the **PSSession** and **ListAvailable** parameters of `Get-Module` to get
-the modules in the **PSSession** in the $s variable.
+the modules in the **PSSession** in the `$s` variable.
 
 If you pipe modules from other sessions to the `Import-Module` cmdlet, `Import-Module` imports the
-module into the current session by using the implicit remoting feature.
-This is equivalent to using the `Import-PSSession` cmdlet.
-You can use the cmdlets from the module in the current session, but commands that use these cmdlets
-actually run the remote session.
-For more information, see [`Import-Module`](Import-Module.md) and [`Import-PSSession`](../Microsoft.PowerShell.Utility/Import-PSSession.md).
+module into the current session by using the implicit remoting feature. This is equivalent to using
+the `Import-PSSession` cmdlet. You can use the cmdlets from the module in the current session, but
+commands that use these cmdlets actually run the remote session. For more information, see
+[`Import-Module`](Import-Module.md) and
+[`Import-PSSession`](../Microsoft.PowerShell.Utility/Import-PSSession.md).
 
 ### Example 10: Manage a computer that does not run the Windows operating system
 
@@ -377,8 +371,8 @@ the remote computer and returns them to the local session.
 ### -All
 
 Indicates that this cmdlet gets all modules in each module folder, including nested modules,
-manifest (.psd1) files, script module (.psm1) files, and binary module (.dll) files.
-Without this parameter, `Get-Module` gets only the default module in each module folder.
+manifest (.psd1) files, script module (.psm1) files, and binary module (.dll) files. Without this
+parameter, `Get-Module` gets only the default module in each module folder.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -394,8 +388,8 @@ Accept wildcard characters: False
 
 ### -CimNamespace
 
-Specifies the namespace of an alternate CIM provider that exposes CIM modules.
-The default value is the namespace of the Module Discovery WMI provider.
+Specifies the namespace of an alternate CIM provider that exposes CIM modules. The default value is
+the namespace of the Module Discovery WMI provider.
 
 Use this parameter to get CIM modules from computers and devices that are not running the Windows
 operating system.
@@ -416,8 +410,8 @@ Accept wildcard characters: False
 
 ### -CimResourceUri
 
-Specifies an alternate location for CIM modules.
-The default value is the resource URI of the Module Discovery WMI provider on the remote computer.
+Specifies an alternate location for CIM modules. The default value is the resource URI of the Module
+Discovery WMI provider on the remote computer.
 
 Use this parameter to get CIM modules from computers and devices that are not running the Windows
 operating system.
@@ -438,20 +432,20 @@ Accept wildcard characters: False
 
 ### -CimSession
 
-Specifies a CIM session on the remote computer.
-Enter a variable that contains the CIM session or a command that gets the CIM session, such as a
+Specifies a CIM session on the remote computer. Enter a variable that contains the CIM session or a
+command that gets the CIM session, such as a
 [Get-CimSession](/powershell/module/cimcmdlets/get-cimsession) command.
 
-`Get-Module` uses the CIM session connection to get modules from the remote computer.
-When you import the module by using the `Import-Module` cmdlet and use the commands from the
-imported module in the current session, the commands actually run on the remote computer.
+`Get-Module` uses the CIM session connection to get modules from the remote computer. When you
+import the module by using the `Import-Module` cmdlet and use the commands from the imported module
+in the current session, the commands actually run on the remote computer.
 
 You can use this parameter to get modules from computers and devices that are not running the
 Windows operating system, and computers that have PowerShell, but do not have PowerShell remoting
 enabled.
 
-The **CimSession** parameter gets all modules in the **CIMSession**.
-However, you can import only CIM-based and Cmdlet Definition XML (CDXML)-based modules.
+The **CimSession** parameter gets all modules in the **CIMSession**. However, you can import only
+CIM-based and Cmdlet Definition XML (CDXML)-based modules.
 
 ```yaml
 Type: Microsoft.Management.Infrastructure.CimSession
@@ -467,18 +461,19 @@ Accept wildcard characters: False
 
 ### -FullyQualifiedName
 
-Specifies names of modules in the form of **ModuleSpecification** objects.
-These objects are described in the Remarks section of [ModuleSpecification Constructor (Hashtable)](https://msdn.microsoft.com/library/jj136290)
-in the MSDN library.
-For example, the **FullyQualifiedName** parameter accepts a module name that is specified in the
-following formats:
+Specifies modules with names that are specified in the form of **ModuleSpecification** objects. See
+the Remarks section of
+[ModuleSpecification Constructor (Hashtable)](/dotnet/api/microsoft.powershell.commands.modulespecification.-ctor#Microsoft_PowerShell_Commands_ModuleSpecification__ctor_System_Collections_Hashtable_).
 
-- @{ModuleName = "modulename"; ModuleVersion = "version_number"}
-- @{ModuleName = "modulename"; ModuleVersion = "version_number"; Guid = "GUID"}
+For example, the **FullyQualifiedModule** parameter accepts a module name that is specified in
+either of these formats:
 
-**ModuleName** and **ModuleVersion** are required, but **Guid** is optional.
+- `@{ModuleName = "modulename"; ModuleVersion = "version_number"}`
+- `@{ModuleName = "modulename"; ModuleVersion = "version_number"; Guid = "GUID"}`
 
-You cannot specify the **FullyQualifiedName** parameter in the same command as a **Name** parameter.
+**ModuleName** and **ModuleVersion** are required, but **Guid** is optional. You cannot specify the
+**FullyQualifiedModule** parameter in the same command as a **Module** parameter. the two
+parameters are mutually exclusive.
 
 ```yaml
 Type: Microsoft.PowerShell.Commands.ModuleSpecification[]
@@ -534,6 +529,39 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: True
 ```
 
+### -PSEdition
+
+Gets the modules that support specified edition of PowerShell.
+
+The acceptable values for this parameter are:
+
+- Desktop
+- Core
+
+The Get-Module cmdlet checks **CompatiblePSEditions** property of **PSModuleInfo** object for the
+specified value and returns only those modules that have it set.
+
+> [!NOTE]
+>
+> - **Desktop Edition:** Built on .NET Framework and provides compatibility with scripts and modules
+> targeting versions of PowerShell running on full footprint editions of Windows such as Server Core
+> and Windows Desktop.
+> - **Core Edition:** Built on .NET Core and provides compatibility with scripts and modules
+> targeting versions of PowerShell running on reduced footprint editions of Windows such as Nano
+> Server and Windows IoT.
+
+```yaml
+Type: System.String
+Parameter Sets: PsSession, Available
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -PSSession
 
 Gets the modules in the specified user-managed PowerShell session (**PSSession**). Enter a variable
@@ -585,38 +613,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -PSEdition
-
-Gets the modules that support specified edition of PowerShell.
-
-The acceptable values for this parameter are:
-
-- Desktop
-- Core
-
-The Get-Module cmdlet checks **CompatiblePSEditions** property of **PSModuleInfo** object for the
-specified value and returns only those modules that have it set.
-
-> [!NOTE]
->
-> - **Desktop Edition:** Built on .NET Framework, applies to Windows PowerShell 5.1 and below on
-> most Windows editions.
-> - **Core Edition:** Built on .NET Core, applies to PowerShell Core 6.0 and above, as well as some
-> editions of Windows PowerShell 5.1 built for Windows IoT and Windows Nanoserver. >
-> The edition of the current PowerShell session can be found with the `$PSEdition` variable.
-
-```yaml
-Type: System.String
-Parameter Sets: Available, PsSession
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -SkipEditionCheck
 
 Skips the check of the `CompatiblePSEditions` field.
@@ -659,56 +655,56 @@ You can pipe module names to this cmdlet.
 
 ### System.Management.Automation.PSModuleInfo
 
-This cmdlet returns objects that represent modules. When you specify the **ListAvailable**
-parameter, `Get-Module` returns a **ModuleInfoGrouping** object, which is a type of **PSModuleInfo**
-object that has the same properties and methods.
+This cmdlet returns objects that represent modules.
+When you specify the **ListAvailable** parameter, `Get-Module` returns a **ModuleInfoGrouping**
+object, which is a type of **PSModuleInfo** object that has the same properties and methods.
 
 ## NOTES
 
 - Beginning in Windows PowerShell 3.0, the core commands that are included in PowerShell are
-  packaged in modules. The exception is **Microsoft.PowerShell.Core**, which is a snap-in
-  (**PSSnapin**). By default, only the **Microsoft.PowerShell.Core** snap-in is added to the
-  session. Modules are imported automatically on first use and you can use the `Import-Module`
-  cmdlet to import them.
+packaged in modules. The exception is **Microsoft.PowerShell.Core**, which is a snap-in
+(**PSSnapin**). By default, only the **Microsoft.PowerShell.Core** snap-in is added to the session.
+Modules are imported automatically on first use and you can use the `Import-Module` cmdlet to import
+them.
 - Starting in Windows PowerShell 3.0, the core commands that are installed with PowerShell are
-  packaged in modules. In Windows PowerShell 2.0, and in host programs that create older-style
-  sessions in later versions of PowerShell, the core commands are packaged in snap-ins
-  (**PSSnapins**). The exception is **Microsoft.PowerShell.Core**, which is always a snap-in. Also,
-  remote sessions, such as those started by the `New-PSSession` cmdlet, are older-style sessions
-  that include core snap-ins.
+packaged in modules. In Windows PowerShell 2.0, and in host programs that create older-style
+sessions in later versions of PowerShell, the core commands are packaged in snap-ins
+(**PSSnapins**). The exception is **Microsoft.PowerShell.Core**, which is always a snap-in. Also,
+remote sessions, such as those started by the `New-PSSession` cmdlet, are older-style sessions that
+include core snap-ins.
 
   For information about the **CreateDefault2** method that creates newer-style sessions with core
   modules, see
-  [CreateDefault2 Method](/dotnet/api/system.management.automation.runspaces.initialsessionstate.createdefault2)
-  in the MSDN library.
+  [CreateDefault2 Method](/dotnet/api/system.management.automation.runspaces.initialsessionstate.createdefault2).
 
 - `Get-Module` only gets modules in locations that are stored in the value of the **PSModulePath**
-  environment variable ($env:PSModulePath). You can use the **Path** parameter of the
-  `Import-Module` cmdlet to import modules in other locations, but you cannot use the `Get-Module`
-  cmdlet to get them.
-- Also, starting in PowerShell 3.0, new properties have been added to the object that `Get-Module`
-  returns that make it easier to learn about modules even before they are imported. All properties
-  are populated before importing. These include the **ExportedCommands**, **ExportedCmdlets** and
-  **ExportedFunctions** properties that list the commands that the module exports.
+environment variable ($env:PSModulePath). You can use the **Path** parameter of the `Import-Module`
+cmdlet to import modules in other locations, but you cannot use the `Get-Module` cmdlet to get them.
+- Also, starting in PowerShell 3.0, new properties have been added to the object that
+`Get-Module` returns that make it easier to learn about modules even before they are imported. All
+properties are populated before importing. These include the **ExportedCommands**,
+**ExportedCmdlets** and **ExportedFunctions** properties that list the commands that the module
+exports.
 - The **ListAvailable** parameter gets only well-formed modules, that is, folders that contain at
-  least one file whose base name is the same as the name of the module folder. The base name is the
-  name without the file name extension. Folders that contain files that have different names are
-  considered to be containers, but not modules.
+least one file whose base name is the same as the name of the module folder. The base name is the
+name without the file name extension. Folders that contain files that have different names are
+considered to be containers, but not modules.
 
   To get modules that are implemented as .dll files, but are not enclosed in a module folder,
-  specify both the **ListAvailable** and **All** parameters.
+specify both the **ListAvailable** and **All** parameters.
 
 - To use the CIM session feature, the remote computer must have WS-Management remoting and Windows
-  Management Instrumentation (WMI), which is the Microsoft implementation of the Common Information
-  Model (CIM) standard. The computer must also have the Module Discovery WMI provider or an
-  alternate WMI provider that has the same basic features.
+Management Instrumentation (WMI), which is the Microsoft implementation of the Common Information
+Model (CIM) standard. The computer must also have the Module Discovery WMI provider or an alternate
+WMI provider that has the same basic features.
 
   You can use the CIM session feature on computers that are not running the Windows operating system
-  and on Windows computers that have PowerShell, but do not have PowerShell remoting enabled.
+and on Windows computers that have PowerShell, but do not have PowerShell remoting enabled.
 
   You can also use the CIM parameters to get CIM modules from computers that have PowerShell
-  remoting enabled. This includes the local computer. When you create a CIM session on the local
-  computer, PowerShell uses DCOM, instead of WMI, to create the session.
+remoting enabled. This includes the local computer.
+When you create a CIM session on the local computer, PowerShell uses DCOM, instead of WMI, to create
+the session.
 
 ## RELATED LINKS
 

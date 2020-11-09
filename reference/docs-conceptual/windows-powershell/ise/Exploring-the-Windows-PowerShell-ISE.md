@@ -91,12 +91,12 @@ Increases or decreases the size of the text on the screen.
 
 ## Help
 
-Help for Windows PowerShell ISE is available on the Web in the TechNet Library. You can open the
-Help by clicking **Windows PowerShell ISE Help** on the **Help** menu or by pressing the
-<kbd>F1</kbd> key anywhere except when the cursor is on a cmdlet name in either the Script Pane or
-the Console Pane. From the **Help** menu you can also run the `Update-Help` cmdlet, and display the
-Command Window which assists you in constructing commands by showing you all of the parameters for a
-cmdlet and enabling you to fill in the parameters in an easy-to-use form.
+Help for Windows PowerShell ISE is available on docs.microsoft.com. You can open the Help by
+clicking **Windows PowerShell ISE Help** on the **Help** menu or by pressing the <kbd>F1</kbd> key
+anywhere except when the cursor is on a cmdlet name in either the Script Pane or the Console Pane.
+From the **Help** menu you can also run the `Update-Help` cmdlet, and display the Command Window
+which assists you in constructing commands by showing you all of the parameters for a cmdlet and
+enabling you to fill in the parameters in an easy-to-use form.
 
 ## See Also
 

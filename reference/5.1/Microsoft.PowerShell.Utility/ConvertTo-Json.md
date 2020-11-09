@@ -39,7 +39,7 @@ This cmdlet was introduced in Windows PowerShell 3.0.
 ### Example 1
 
 ```powershell
-PS C:\> (Get-UICulture).Calendar | ConvertTo-Json
+(Get-UICulture).Calendar | ConvertTo-Json
 ```
 
 ```Output
@@ -219,7 +219,8 @@ You can pipe any object to `ConvertTo-Json`.
 
 ## NOTES
 
-The `ConvertTo-Json` cmdlet is implemented using the [JavaScriptSerializer class](/dotnet/api/system.web.script.serialization.javascriptserializer).
+The `ConvertTo-Json` cmdlet is implemented using the
+[JavaScriptSerializer class](/dotnet/api/system.web.script.serialization.javascriptserializer).
 
 ## RELATED LINKS
 

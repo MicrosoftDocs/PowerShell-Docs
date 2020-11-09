@@ -8,8 +8,8 @@ description: Windows PowerShell SDK
 
 Updated: July 8, 2013
 
-Windows PowerShell® is a task-based command-line shell and scripting language designed especially
-for system administration. Built on the .NET Framework, Windows PowerShell® helps IT professionals
+Windows PowerShell&reg; is a task-based command-line shell and scripting language designed especially
+for system administration. Built on the .NET Framework, Windows PowerShell&reg; helps IT professionals
 and power users control and automate the administration of the Windows operating system and
 applications that run on Windows.
 
@@ -20,7 +20,7 @@ However, system administrators might also find the information provided by these
 For the basic information needed to start using Windows PowerShell, see Getting Started with
 Windows PowerShell .
 
-## Windows PowerShell Documents on MSDN
+## Windows PowerShell Documents
 
 - [Installing the Windows PowerShell SDK](./installing-the-windows-powershell-sdk.md)
 Provides information about how to install the Windows PowerShell SDK.

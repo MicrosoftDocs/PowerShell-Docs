@@ -272,7 +272,7 @@ The acceptable values for this parameter are:
 - CodeMethod
 
 For information about these values, see [PSMemberTypes Enumeration](/dotnet/api/system.management.automation.psmembertypes)
-in the MSDN library.
+in the PowerShell SDK.
 
 Not all objects have every type of member.
 If you specify a member type that the object does not have, PowerShell returns an error.

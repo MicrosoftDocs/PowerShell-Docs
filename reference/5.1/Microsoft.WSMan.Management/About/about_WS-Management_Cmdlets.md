@@ -1,5 +1,5 @@
 ---
-description:  Provides an overview of Web Services for Management (WS-Management) as background for using the WS-Management cmdlets in Windows PowerShell. 
+description:  Provides an overview of Web Services for Management (WS-Management) as background for using the WS-Management cmdlets in Windows PowerShell.
 keywords: powershell,cmdlet
 Locale: en-US
 ms.date: 01/04/2018
@@ -134,7 +134,7 @@ The following WS-Management cmdlets are available.
 ## Additional WS-Management Information
 
 For more information about WS-Management, see the following topics in the
-MSDN (Microsoft Developer Network) library.
+Windows documentation.
 
 [Windows Remote Management](/windows/win32/winrm/portal)
 
