@@ -31,8 +31,8 @@ install local help for these commands.
 
 The **PowerShellGet** module requires **PowerShell 3.0 or newer**.
 
-**PowerShellGet** requires .NET Framework 4.5 or above. You can install .NET Framework 4.5 or
-above from [here](https://msdn.microsoft.com/library/5a4x27ek.aspx).
+**PowerShellGet** requires .NET Framework 4.5 or above. For more information, see
+[Install the .NET Framework for developers](/dotnet/framework/install/guide-for-developers).
 
 Since **PowerShell Core** is cross-platform and that means it works on Windows, Linux and MacOS,
 that also makes **PowerShellGet** available on those systems. For a full list of systems supported

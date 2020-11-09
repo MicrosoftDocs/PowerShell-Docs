@@ -960,8 +960,7 @@ When you disconnect a **PSSession**, the session state is Disconnected and the a
 - An **Availability** value of None indicates that you can connect to the session. A value of Busy
   indicates that you can't connect to the **PSSession** because it's connected to another session.
 - For more information about the values of the **State** property of sessions, see
-  [RunspaceState](/dotnet/api/system.management.automation.runspaces.runspacestate) in the MSDN
-  library.
+  [RunspaceState](/dotnet/api/system.management.automation.runspaces.runspacestate).
 - For more information about the values of the **Availability** property of sessions, see
   [RunspaceAvailability](/dotnet/api/system.management.automation.runspaces.runspaceavailability).
 

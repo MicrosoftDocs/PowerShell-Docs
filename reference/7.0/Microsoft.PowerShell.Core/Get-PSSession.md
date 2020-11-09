@@ -343,8 +343,7 @@ The acceptable values for this parameter are:
 The default value is Default.
 
 For more information about the values of this parameter, see
-[AuthenticationMechanism Enumeration](https://msdn.microsoft.com/library/system.management.automation.runspaces.authenticationmechanism)
-in the MSDN library.
+[AuthenticationMechanism Enumeration](/dotnet/api/system.management.automation.runspaces.authenticationmechanism).
 
 CAUTION: Credential Security Support Provider (CredSSP) authentication, in which the user's
 credentials are passed to a remote computer to be authenticated, is designed for commands that
@@ -436,7 +435,8 @@ specify only the configuration name, the following schema URI is prepended:
 The value of this parameter is used to select and filter sessions. It does not change the session
 configuration that the session uses.
 
-For more information about session configurations, see [about_Session_Configurations](About/about_Session_Configurations.md).
+For more information about session configurations, see
+[about_Session_Configurations](About/about_Session_Configurations.md).
 
 ```yaml
 Type: System.String
@@ -826,10 +826,10 @@ An **Availability** value of **None** indicates that you can connect to the sess
 session.
 
 For more information about the values of the **State** property of sessions, see
-[RunspaceState Enumeration](https://msdn.microsoft.com/library/system.management.automation.runspaces.runspacestate).
+[RunspaceState Enumeration](/dotnet/api/system.management.automation.runspaces.runspacestate).
 
 For more information about the values of the **Availability** property of sessions, see
-[RunspaceAvailability Enumeration](https://msdn.microsoft.com/library/system.management.automation.runspaces.runspaceavailability).
+[RunspaceAvailability Enumeration](/dotnet/api/system.management.automation.runspaces.runspaceavailability).
 
 ## RELATED LINKS
 

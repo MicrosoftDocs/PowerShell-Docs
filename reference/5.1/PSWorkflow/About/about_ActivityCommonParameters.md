@@ -1,5 +1,5 @@
 ---
-description:  Describes the parameters that Windows PowerShell Workflow adds to activities. 
+description:  Describes the parameters that Windows PowerShell Workflow adds to activities.
 keywords: powershell,cmdlet
 Locale: en-US
 ms.date: 06/09/2017
@@ -210,7 +210,7 @@ common parameter.
 
 For information about the values of this parameter, see the description of the
 **System.Management.Automation.Runspaces.AuthenticationMechanism** enumeration in
-MSDN.
+the PowerShell SDK.
 
 > [!WARNING]
 > Credential Security Service Provider (CredSSP) authentication, in

@@ -120,7 +120,7 @@ At line:1 char:4
 ```powershell
 Set-StrictMode -Off
 $string = "This is a string."
-$string.Month -eq $null
+$null -eq $string.Month
 ```
 
 ```Output
@@ -130,7 +130,7 @@ True
 ```powershell
 Set-StrictMode -Version 2.0
 $string = "This is a string."
-$string.Month -eq $null
+$null -eq $string.Month
 ```
 
 ```Output
@@ -161,8 +161,8 @@ With strict mode set to **Off**, invalid or out of bounds indexes result return 
 ```powershell
 # Strict mode is off by default.
 $a = @(1)
-$a[2] -eq $null
-$a['abc'] -eq $null
+$null -eq $a[2]
+$null -eq $a['abc']
 ```
 
 ```Output
@@ -173,21 +173,21 @@ True
 ```powershell
 Set-StrictMode -Version 3
 $a = @(1)
-$a[2] -eq $null
-$a['abc'] -eq $null
+$null -eq $a[2]
+$null -eq $a['abc']
 ```
 
 ```Output
 Index was outside the bounds of the array.
 At line:1 char:1
-+ $a[2] -eq $null
++ $null -eq $a[2]
 + ~~~~~~~~~~~~~~~
     + CategoryInfo          : OperationStopped: (:) [], IndexOutOfRangeException
     + FullyQualifiedErrorId : System.IndexOutOfRangeException
 
 Cannot convert value "abc" to type "System.Int32". Error: "Input string was not in a correct format."
 At line:1 char:1
-+ $a['abc'] -eq $null
++ $null -eq $a['abc']
 + ~~~~~~~~~~~~~~~~~~~
     + CategoryInfo          : InvalidArgument: (:) [], RuntimeException
     + FullyQualifiedErrorId : InvalidCastFromStringToInteger

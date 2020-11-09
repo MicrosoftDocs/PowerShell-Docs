@@ -10,6 +10,7 @@ title: FileSystem Provider
 # FileSystem provider
 
 ## Provider name
+
 FileSystem
 
 ## Drives
@@ -251,8 +252,7 @@ Get-Acl -Path test.txt | Format-List -Property *
 
 For more information about this object, pipe the command to the
 [Get-Member](xref:Microsoft.PowerShell.Utility.Get-Member) cmdlet. Or, see
-"[FileSecurity](/dotnet/api/system.security.accesscontrol.filesecurity) Class" in the
-MSDN (Microsoft Developer Network) library.
+[FileSecurity](/dotnet/api/system.security.accesscontrol.filesecurity) Class.
 
 ### Modify the ACL for a file
 

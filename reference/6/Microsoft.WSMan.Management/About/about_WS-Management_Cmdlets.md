@@ -134,7 +134,7 @@ The following WS-Management cmdlets are available.
 ## Additional WS-Management Information
 
 For more information about WS-Management, see the following topics in the
-MSDN (Microsoft Developer Network) library.
+Windows documentation.
 
 [Windows Remote Management](/windows/win32/winrm/portal)
 

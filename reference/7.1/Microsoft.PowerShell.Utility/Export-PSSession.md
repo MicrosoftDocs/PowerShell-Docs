@@ -265,7 +265,7 @@ The acceptable values for this parameter are as follows:
   (`$env:path`).
 - Filter and Function. All PowerShell functions.
 - Script. Script blocks in the current session.
-- Workflow. A PowerShell workflow. For more information, see [about_Workflows](/powershell/module/psworkflow/about/about_workflows?view=powershell-5.1).
+- Workflow. A PowerShell workflow. For more information, see [about_Workflows](/powershell/module/PSWorkflow/About/about_Workflows).
 
 ```yaml
 Type: System.Management.Automation.CommandTypes
@@ -361,18 +361,18 @@ Accept wildcard characters: False
 
 ### -FullyQualifiedModule
 
-Specifies modules with names that are specified in the form of **ModuleSpecification** objects.
-See the Remarks section of [ModuleSpecification Constructor (Hashtable)](https://msdn.microsoft.com/library/jj136290).
+Specifies modules with names that are specified in the form of **ModuleSpecification** objects. See
+the Remarks section of
+[ModuleSpecification Constructor (Hashtable)](/dotnet/api/microsoft.powershell.commands.modulespecification.-ctor#Microsoft_PowerShell_Commands_ModuleSpecification__ctor_System_Collections_Hashtable_).
 
 For example, the **FullyQualifiedModule** parameter accepts a module name that is specified in
 either of these formats:
 
-`@{ModuleName = "modulename"; ModuleVersion = "version_number"}`
-
-`@{ModuleName = "modulename"; ModuleVersion = "version_number"; Guid = "GUID"}`
+- `@{ModuleName = "modulename"; ModuleVersion = "version_number"}`
+- `@{ModuleName = "modulename"; ModuleVersion = "version_number"; Guid = "GUID"}`
 
 **ModuleName** and **ModuleVersion** are required, but **Guid** is optional. You cannot specify the
-**FullyQualifiedModule** parameter in the same command as a **Module** parameter; the two
+**FullyQualifiedModule** parameter in the same command as a **Module** parameter. the two
 parameters are mutually exclusive.
 
 ```yaml

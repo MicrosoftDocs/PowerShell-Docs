@@ -1,8 +1,8 @@
 ---
-ms.date:  06/12/2017
+ms.date: 11/09/2020
 keywords:  dsc,powershell,configuration,setup
 title:  Configure a virtual machines at initial boot-up by using DSC
-description: This article explans how to configure a virtual machine at initial boot-up using DSC
+description: This article explains how to configure a virtual machine at initial boot-up using DSC
 ---
 # Configure a virtual machines at initial boot-up by using DSC
 
@@ -15,13 +15,13 @@ description: This article explans how to configure a virtual machine at initial 
 > The **DSCAutomationHostEnabled** registry key described in this topic is not available in
 > PowerShell 4.0. For information on how to configure new virtual machines at initial boot-up in
 > PowerShell 4.0, see
-> [Want to Automatically Configure Your Machines Using DSC at Initial Boot-up?](https://blogs.msdn.microsoft.com/powershell/2014/02/28/want-to-automatically-configure-your-machines-using-dsc-at-initial-boot-up/)
+> [Want to Automatically Configure Your Machines Using DSC at Initial Boot-up?](https://devblogs.microsoft.com/powershell/want-to-automatically-configure-your-machines-using-dsc-at-initial-boot-up/)
 
 To run these examples, you will need:
 
 - A bootable VHD to work with. You can download an ISO with an evaluation copy of Windows Server
   2016 at
-  [TechNet Evaluation Center](https://www.microsoft.com/evalcenter/evaluate-windows-server-2016).
+  [Evaluation Center](https://www.microsoft.com/evalcenter/evaluate-windows-server-2016).
   You can find instructions on how to create a VHD from an ISO image at
   [Creating Bootable Virtual Hard Disks](/previous-versions/windows/it-pro/windows-7/gg318049(v=ws.10)).
 - A host computer that has Hyper-V enabled. For information, see
@@ -204,7 +204,8 @@ key is set to 2, which allows a DSC configuration to run if the computer is in p
 state. If you do not want a configuration to run at initial boot-up, you need so set the value of
 this key to 0:
 
-1. Mount the VHD by calling the [Mount-VHD](/powershell/module/hyper-v/mount-vhd) cmdlet. For example:
+1. Mount the VHD by calling the [Mount-VHD](/powershell/module/hyper-v/mount-vhd) cmdlet. For
+   example:
 
    ```powershell
    Mount-VHD -Path C:\users\public\documents\vhd\Srv16.vhd
@@ -213,26 +214,18 @@ this key to 0:
 1. Load the registry `HKLM\Software` subkey from the VHD by calling `reg load`.
 
    ```powershell
-   reg load HKLM\Vhd E:\Windows\System32\Config\Software`
+   reg load HKLM\Vhd E:\Windows\System32\Config\Software
    ```
 
-1. Navigate to the `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System` by
-   using the PowerShell Registry provider.
+1. Change the value of `DSCAutomationHostEnabled` to 0 in the loaded hive.
 
    ```powershell
-   Set-Location HKLM:\Software\Microsoft\Windows\CurrentVersion\Policies\System`
+   reg add "HKLM\Vhd\Software\Microsoft\Windows\CurrentVersion\Policies\System" /v DSCAutomationHostEnabled /t REG_DWORD /d 0 /f
    ```
 
-1. Change the value of `DSCAutomationHostEnabled` to 0.
+1. Unload the registry by running the following commands:
 
    ```powershell
-   Set-ItemProperty -Path . -Name DSCAutomationHostEnabled -Value 0
-   ```
-
-5. Unload the registry by running the following commands:
-
-   ```powershell
-   [gc]::Collect()
    reg unload HKLM\Vhd
    ```
 

@@ -36,7 +36,7 @@ package and distribute their Windows PowerShell solutions using Windows PowerShe
 information and code examples for program managers who are designing cmdlets and for developers who
 are implementing cmdlet code.
 
-[Windows PowerShell Team Blog](https://blogs.msdn.microsoft.com/PowerShell/) The best resource for
+[Windows PowerShell Team Blog](https://devblogs.microsoft.com/powershell/) The best resource for
 learning from and collaborating with other Windows PowerShell users. Read the Windows PowerShell
 Team blog, and then join the Windows PowerShell User Forum (microsoft.public.windows.powershell).
 Use Windows Live Search to find other Windows PowerShell blogs and resources. Then, as you develop

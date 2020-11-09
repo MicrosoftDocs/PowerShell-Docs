@@ -1,5 +1,5 @@
 ---
-description:  Describes the features and system requirements of Windows PowerShell Integrated Scripting Environment (ISE). 
+description:  Describes the features and system requirements of Windows PowerShell Integrated Scripting Environment (ISE).
 keywords: powershell,cmdlet
 Locale: en-US
 ms.date: 01/03/2018
@@ -204,9 +204,9 @@ a GUI.
 Windows PowerShell ISE is built on the Windows Presentation Foundation (WPF).
 If the graphical elements of Windows PowerShell ISE do not render correctly on
 your system, you might resolve the problem by adding or adjusting the "Disable
-WPF Hardware acceleration" graphics rendering settings on your system. For
-more information, see [Graphics Rendering Registry Settings](/dotnet/framework/wpf/graphics-multimedia/graphics-rendering-registry-settings)
-in the MSDN library.
+WPF Hardware acceleration" graphics rendering settings on your system. For more
+information, see
+[Graphics Rendering Registry Settings](/dotnet/framework/wpf/graphics-multimedia/graphics-rendering-registry-settings).
 
 ## SEE ALSO
 

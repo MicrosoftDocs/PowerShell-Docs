@@ -19,7 +19,7 @@ The drop-down under "Filter By" allows users to filter the results by:
 - Stable Only
 
 For information about "Prerelease" and "Stable", see
-[Prerelease Versioning Added to PowerShellGet and PowerShell Gallery](https://blogs.msdn.microsoft.com/powershell/2017/12/05/prerelease-versioning-added-to-powershellget-and-powershell-gallery/)
+[Prerelease Versioning Added to PowerShellGet and PowerShell Gallery](https://devblogs.microsoft.com/powershell/prerelease-versioning-added-to-powershellget-and-powershell-gallery/)
 in the PowerShell Team Blog.
 
 The checkboxes under the drop-down allow users to filter the results by:

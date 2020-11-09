@@ -375,7 +375,7 @@ If you're interested in contributing, Pull Requests are greatly appreciated. Fol
 [getting-started]:        https://devblogs.microsoft.com/scripting/get-started-with-powershell-development-in-visual-studio-code/
 [psdbgblog]:              https://johnpapa.net/debugging-with-visual-studio-code/
 [psdbg-gh]:               https://github.com/PowerShell/vscode-powershell/tree/master/examples
-[pscdn]:                  https://blogs.msdn.microsoft.com/cdndevs/2015/12/11/visual-studio-code-powershell-extension/
+[pscdn]:                  https://docs.microsoft.com/archive/blogs/cdndevs/visual-studio-code-powershell-extension
 
 <!-- issues -->
 [GitHub issues]:          https://github.com/PowerShell/vscode-powershell/issues

@@ -177,8 +177,9 @@ Accept wildcard characters: False
 
 ### -InputObject
 
-Specifies the JSON strings to convert to JSON objects. Enter a variable that contains the string, or
-type a command or expression that gets the string. You can also pipe a string to `ConvertFrom-Json`.
+Specifies the JSON strings to convert to JSON objects. Enter a variable that contains the string,
+or type a command or expression that gets the string. You can also pipe a string to
+`ConvertFrom-Json`.
 
 The **InputObject** parameter is required, but its value can be an empty string. When the input
 object is an empty string, `ConvertFrom-Json` does not generate any output. The **InputObject**
@@ -257,4 +258,3 @@ follows:
 [Invoke-WebRequest](Invoke-WebRequest.md)
 
 [Invoke-RestMethod](Invoke-RestMethod.md)
-

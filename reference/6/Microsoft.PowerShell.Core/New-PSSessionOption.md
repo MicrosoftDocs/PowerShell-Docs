@@ -244,7 +244,8 @@ Just testing.
 ```
 
 The first command creates a hash table with two keys, **Team** and **Use**. The command saves the
-hash table in the `$team` variable. For more information about hash tables, see [about_Hash_Tables](about/about_Hash_Tables.md).
+hash table in the `$team` variable. For more information about hash tables, see
+[about_Hash_Tables](about/about_Hash_Tables.md).
 
 Next, the `New-PSSessionOption` cmdlet, using the **ApplicationArguments** parameter, creates a
 session option object saved in the `$team` variable. When `New-PSSessionOption` creates the session
@@ -269,8 +270,9 @@ remote session, including startup scripts in the session configuration, can find
 the **ApplicationArguments** property of the `$PSSenderInfo` automatic variable. You can use this
 parameter to send data to the remote session.
 
-For more information, see [about_Hash_Tables](about/about_Hash_Tables.md), [about_Session_Configurations](About/about_Session_Configurations.md),
-and [about_Automatic_Variables](about/about_Automatic_Variables.md).
+For more information, see [about_Hash_Tables](about/about_Hash_Tables.md),
+[about_Session_Configurations](About/about_Session_Configurations.md), and
+[about_Automatic_Variables](about/about_Automatic_Variables.md).
 
 ```yaml
 Type: System.Management.Automation.PSPrimitiveDictionary
@@ -616,7 +618,7 @@ parameter are:
 The default value is None.
 
 For information about the values of this parameter, see
-[ProxyAccessType Enumeration](/dotnet/api/system.management.automation.remoting.proxyaccesstype?redirectedfrom=MSDN&view=powershellsdk-1.1.0).
+[ProxyAccessType Enumeration](/dotnet/api/system.management.automation.remoting.proxyaccesstype).
 
 ```yaml
 Type: System.Management.Automation.Remoting.ProxyAccessType
@@ -636,7 +638,8 @@ Accept wildcard characters: False
 Specifies the authentication method that is used for proxy resolution. The acceptable values for
 this parameter are: **Basic**, **Digest**, and **Negotiate**. The default value is **Negotiate**.
 
-For more information about the values of this parameter, see [AuthenticationMechanism Enumeration](/dotnet/api/system.management.automation.runspaces.authenticationmechanism?redirectedfrom=MSDN&view=powershellsdk-1.1.0).
+For more information about the values of this parameter, see
+[AuthenticationMechanism Enumeration](/dotnet/api/system.management.automation.runspaces.authenticationmechanism).
 
 ```yaml
 Type: System.Management.Automation.Runspaces.AuthenticationMechanism
@@ -770,7 +773,8 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -786,7 +790,8 @@ You cannot pipe input to this cmdlet.
 
 If the **SessionOption** parameter is not used in a command to create a **PSSession**, the session
 options are determined by the property values of the `$PSSessionOption` preference variable, if it
-is set. For more information about the `$PSSessionOption` variable, see [about_Preference_Variables](About/about_Preference_Variables.md).
+is set. For more information about the `$PSSessionOption` variable, see
+[about_Preference_Variables](About/about_Preference_Variables.md).
 
 The properties of a session configuration object vary with the options set for the session
 configuration and the values of those options. Also, session configurations that use a session

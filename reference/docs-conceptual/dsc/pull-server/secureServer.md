@@ -123,7 +123,7 @@ script. This document includes configuration scripts that can be used to deploy 
 server node. To use the configuration scripts, a DSC module is required that is not included in
 Windows Server. The required module name is **xPSDesiredStateConfiguration**, which includes the DSC
 resource **xDscWebService**. The xPSDesiredStateConfiguration module can be downloaded
-[here](https://gallery.technet.microsoft.com/xPSDesiredStateConfiguratio-417dc71d).
+[here](https://github.com/dsccommunity/xPSDesiredStateConfiguration).
 
 Use the `Install-Module` cmdlet from the **PowerShellGet** module.
 

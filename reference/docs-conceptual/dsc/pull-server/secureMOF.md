@@ -36,14 +36,12 @@ following:
 - **Some means of issuing and distributing certificates**. This topic and its examples assume you
   are using Active Directory Certification Authority. For more background information on Active
   Directory Certificate Services, see
-  [Active Directory Certificate Services Overview](https://technet.microsoft.com/library/hh831740.aspx)
-  and
-  [Active Directory Certificate Services in Windows Server 2008](https://technet.microsoft.com/windowsserver/dd448615.aspx).
+  [Active Directory Certificate Services Overview](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831740(v=ws.11)).
 - **Administrative access to the target node or nodes**.
 - **Each target node has an encryption-capable certificate saved its Personal Store**. In Windows
   PowerShell, the path to the store is Cert:\LocalMachine\My. The examples in this topic use the
   "workstation authentication" template, which you can find (along with other certificate templates)
-  at [Default Certificate Templates](https://technet.microsoft.com/library/cc740061(v=WS.10).aspx).
+  at [Default Certificate Templates](/previous-versions/windows/it-pro/windows-server-2003/cc740061(v=ws.10)).
 - If you will be running this configuration on a computer other than the target node, **export the
   public key of the certificate**, and then import it to the computer you will run the configuration
   from. Make sure that you export only the **public** key; keep the private key secure.

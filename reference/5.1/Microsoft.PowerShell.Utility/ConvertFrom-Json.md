@@ -81,7 +81,8 @@ that can be managed in PowerShell.
 $j = Invoke-WebRequest 'https://api.github.com/repos/PowerShell/PowerShell/issues' | ConvertFrom-Json
 ```
 
-You can also use the `Invoke-RestMethod` cmdlet, which automatically converts JSON content to objects.
+You can also use the `Invoke-RestMethod` cmdlet, which automatically converts JSON content to
+objects.
 
 ### Example 3: Convert a JSON string to a custom object
 
