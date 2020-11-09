@@ -162,6 +162,11 @@ item, the array has only one member.
 @(Get-CimInstance win32_logicalDisk)
 ```
 
+#### Hash table literal syntax `@{}`
+
+Similar to the array subexpression, this syntax is used to declare a hash table.
+For more information, see [about_Hash_Tables](about_Hash_Tables.md).
+
 #### Call operator `&`
 
 Runs a command, script, or script block. The call operator, also known as the

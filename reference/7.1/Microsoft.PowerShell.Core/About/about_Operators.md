@@ -155,6 +155,11 @@ item, the array has only one member.
 @(Get-CimInstance win32_logicalDisk)
 ```
 
+#### Hash table literal syntax `@{}`
+
+Similar to the array subexpression, this syntax is used to declare a hash table.
+For more information, see [about_Hash_Tables](about_Hash_Tables.md).
+
 #### Call operator `&`
 
 Runs a command, script, or script block. The call operator, also known as the
@@ -634,6 +639,16 @@ And when the operand is null, the element isn't accessed and null is returned.
 $a = $null
 ${a}?[0]
 ```
+
+> [!NOTE]
+> Since PowerShell allows `?` to be part of the variable name, formal
+> specification of the variable name is required for using these operators. So
+> it is required to use `{}` around the variable names like `${a}` or when `?`
+> is part of the variable name `${a?}`.
+>
+> The variable name syntax of `${<name>}` should not be confused with the `$()`
+> subexpression operator. For more information, see Variable name section of
+> [about_Variables](about_Variables.md#Variable-names-that-include-special-characters).
 
 ## See also
 
