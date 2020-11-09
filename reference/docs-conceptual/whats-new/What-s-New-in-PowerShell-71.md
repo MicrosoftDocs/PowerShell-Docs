@@ -6,7 +6,7 @@ ms.date: 11/10/2020
 
 # What's New in PowerShell 7.1
 
-TODO: Refresh
+TODO
 
 PowerShell 7.1 is an open-source, cross-platform (Windows, macOS, and Linux) edition of PowerShell,
 built to manage heterogeneous environments and hybrid cloud.
@@ -15,38 +15,36 @@ In this release, we're introducing a number of new features, including:
 
 ## Where can I install PowerShell?
 
-TODO: Refresh
-
-PowerShell 7 currently supports the following operating systems on x64, including:
+PowerShell 7.1 currently supports the following operating systems on x64, including:
 
 - Windows 8.1, and 10
-- Windows Server 2012, 2012 R2, 2016, and 2019
+- Windows Server 2012 R2, 2016, and 2019
 - macOS 10.13+
-- Red Hat Enterprise Linux (RHEL) / CentOS 7
-- Fedora 30+
-- Debian 9
-- Ubuntu LTS 16.04+
-- Alpine Linux 3.8+
+- Red Hat Enterprise Linux (RHEL) / CentOS 7 and 8
+- Debian 9, and 10
+- Ubuntu 18.04, and 20.04
+- Alpine Linux 3.10, and 3.11+
+
+For more up-to-date information about supported operating systems and support lifecycle, see the
+[PowerShell Support Lifecycle](/powershell/scripting/powershell-support-lifecycle?view=powershell-7.1)
+
+Check the installation instructions for your preferred operating system
+[Windows](/powershell/scripting/install/installing-powershell-core-on-windows?view=powershell-7.1),
+[macOS](/powershell/scripting/install/installing-powershell-core-on-macos?view=powershell-7.1),
+or
+[Linux](/powershell/scripting/install/installing-powershell-core-on-linux?view=powershell-7.1).
 
 Additionally, PowerShell 7.1 supports ARM32 and ARM64 flavors of Debian, Ubuntu, and ARM64 Alpine
 Linux.
-
-Check the installation instructions for your preferred operating system
-[Windows](/powershell/scripting/install/installing-powershell-core-on-windows?view=powershell-7),
-[macOS](/powershell/scripting/install/installing-powershell-core-on-macos?view=powershell-7),
-or
-[Linux](/powershell/scripting/install/installing-powershell-core-on-linux?view=powershell-7).
 
 While not officially supported, the community has also provided packages for
 [Arch](https://aur.archlinux.org/packages/powershell/) and Kali Linux.
 
 > [!NOTE]
-> Debian 10 and CentOS 8 currently do not support WinRM remoting. For details on setting up
+> Debian 10+, CentOS 8+, Ubuntu 20.04, Alpine and Arm currently do not support WinRM remoting. For details on setting up
 > SSH-based remoting, see
 > [PowerShell Remoting over SSH](/powershell/scripting/learn/remoting/ssh-remoting-in-powershell-core?view=powershell-7).
 
-For more up-to-date information about supported operating systems and support lifecycle, see the
-[PowerShell Support Lifecycle](/powershell/scripting/powershell-support-lifecycle?view=powershell-7).
 
 ## Running PowerShell 7.1
 
