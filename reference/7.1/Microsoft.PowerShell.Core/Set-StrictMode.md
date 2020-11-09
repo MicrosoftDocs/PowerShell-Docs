@@ -65,12 +65,7 @@ $a -gt 5
 ```
 
 ```Output
-The variable $a cannot be retrieved because it has not been set yet.
-
-At line:1 char:3
-+ $a <<<<  -gt 5
-+ CategoryInfo          : InvalidOperation: (a:Token) [], RuntimeException
-+ FullyQualifiedErrorId : VariableIsUndefined
+InvalidOperation: The variable '$a' cannot be retrieved because it has not been set.
 ```
 
 With strict mode set to version 1.0, attempts to reference variables that are not initialized fail.
@@ -109,18 +104,13 @@ add(3,4)
 ```
 
 ```Output
-The function or command was called like a method. Parameters should be separated by spaces,
-as described in 'Get-Help about_Parameter.'
-At line:1 char:4
-+ add <<<< (3,4)
-+ CategoryInfo          : InvalidOperation: (:) [], RuntimeException
-+ FullyQualifiedErrorId : StrictModeFunctionCallWithParens
+InvalidOperation: The function or command was called as if it were a method. Parameters should be separated by spaces. For information about parameters, see the about_Parameters Help topic.
 ```
 
 ```powershell
 Set-StrictMode -Off
 $string = "This is a string."
-$string.Month -eq $null
+$null -eq $string.Month
 ```
 
 ```Output
@@ -130,15 +120,11 @@ True
 ```powershell
 Set-StrictMode -Version 2.0
 $string = "This is a string."
-$string.Month -eq $null
+$null -eq $string.Month
 ```
 
 ```Output
-Property 'Month' cannot be found on this object; make sure it exists.
-At line:1 char:9
-+ $string. <<<< month
-+ CategoryInfo          : InvalidOperation: (.:OperatorToken) [], RuntimeException
-+ FullyQualifiedErrorId : PropertyNotFoundStrict
+PropertyNotFoundException: The property 'Month' cannot be found on this object. Verify that the property exists.
 ```
 
 This command turns strict mode on and sets it to version 2.0. As a result, PowerShell returns an
@@ -161,8 +147,8 @@ With strict mode set to **Off**, invalid or out of bounds indexes result return 
 ```powershell
 # Strict mode is off by default.
 $a = @(1)
-$a[2] -eq $null
-$a['abc'] -eq $null
+$null -eq $a[2]
+$null -eq $a['abc']
 ```
 
 ```Output
@@ -173,24 +159,14 @@ True
 ```powershell
 Set-StrictMode -Version 3
 $a = @(1)
-$a[2] -eq $null
-$a['abc'] -eq $null
+$null -eq $a[2]
+$null -eq $a['abc']
 ```
 
 ```Output
-Index was outside the bounds of the array.
-At line:1 char:1
-+ $a[2] -eq $null
-+ ~~~~~~~~~~~~~~~
-    + CategoryInfo          : OperationStopped: (:) [], IndexOutOfRangeException
-    + FullyQualifiedErrorId : System.IndexOutOfRangeException
+OperationStopped: Index was outside the bounds of the array.
 
-Cannot convert value "abc" to type "System.Int32". Error: "Input string was not in a correct format."
-At line:1 char:1
-+ $a['abc'] -eq $null
-+ ~~~~~~~~~~~~~~~~~~~
-    + CategoryInfo          : InvalidArgument: (:) [], RuntimeException
-    + FullyQualifiedErrorId : InvalidCastFromStringToInteger
+InvalidArgument: Cannot convert value "abc" to type "System.Int32". Error: "Input string was not in a correct format."
 ```
 
 With strict mode set to version 3 or higher, invalid or out of bounds indexes result in errors.
@@ -283,4 +259,3 @@ more information about scopes in PowerShell, see [about_Scopes](about/about_Scop
 ## RELATED LINKS
 
 [Set-PSDebug](Set-PSDebug.md)
-
