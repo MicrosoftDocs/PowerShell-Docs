@@ -2,7 +2,7 @@
 description: Describes the operators that are supported by PowerShell.
 keywords: powershell,cmdlet
 Locale: en-US
-ms.date: 10/28/2020
+ms.date: 11/09/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_operators?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Operators
@@ -154,6 +154,11 @@ item, the array has only one member.
 ```powershell
 @(Get-CimInstance win32_logicalDisk)
 ```
+
+#### Hash table literal syntax `@{}`
+
+Similar to the array subexpression, this syntax is used to declare a hash table.
+For more information, see [about_Hash_Tables](about_Hash_Tables.md).
 
 #### Call operator `&`
 
@@ -594,11 +599,6 @@ A null-conditional operator applies a member access, `?.`, or element access,
 `?[]`, operation to its operand only if that operand evaluates to non-null;
 otherwise, it returns null.
 
-Since PowerShell allows `?` to be part of the variable name, formal
-specification of the variable name is required for using these operators. So it
-is required to use `{}` around the variable names like `${a}` or when `?` is
-part of the variable name `${a?}`.
-
 In the following example, the value of **PropName** is returned.
 
 ```powershell
@@ -635,6 +635,16 @@ And when the operand is null, the element isn't accessed and null is returned.
 $a = $null
 ${a}?[0]
 ```
+
+> [!NOTE]
+> Since PowerShell allows `?` to be part of the variable name, formal
+> specification of the variable name is required for using these operators. So
+> it is required to use `{}` around the variable names like `${a}` or when `?`
+> is part of the variable name `${a?}`.
+>
+> The variable name syntax of `${<name>}` should not be confused with the `$()`
+> subexpression operator. For more information, see Variable name section of
+> [about_Variables](about_Variables.md#Variable-names-that-include-special-characters).
 
 ## See also
 

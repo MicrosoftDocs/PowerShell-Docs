@@ -2,7 +2,7 @@
 description: Describes the operators that are supported by PowerShell.
 keywords: powershell,cmdlet
 Locale: en-US
-ms.date: 10/28/2020
+ms.date: 11/09/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_operators?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Operators
@@ -161,6 +161,11 @@ item, the array has only one member.
 ```powershell
 @(Get-CimInstance win32_logicalDisk)
 ```
+
+#### Hash table literal syntax `@{}`
+
+Similar to the array subexpression, this syntax is used to declare a hash table.
+For more information, see [about_Hash_Tables](about_Hash_Tables.md).
 
 #### Call operator `&`
 
