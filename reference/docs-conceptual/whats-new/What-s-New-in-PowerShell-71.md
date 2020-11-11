@@ -9,9 +9,9 @@ ms.date: 11/11/2020
 PowerShell 7.1 is an open-source, cross-platform (Windows, macOS, and Linux) edition of PowerShell,
 built to manage heterogeneous environments and hybrid cloud.
 
-Building on the foundation established in PowerShell 7.0, we focused our efforts on community issues
+Building on the foundation established in PowerShell 7.0, our efforts focused on community issues
 and include a number of improvements and fixes. We are committed to ensuring that PowerShell remains
-a stable and performant platform. We are proud to announce the release of PowerShell 7.1.
+a stable and performant platform.
 
 ## Where can I install PowerShell?
 
