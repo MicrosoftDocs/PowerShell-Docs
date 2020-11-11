@@ -56,9 +56,9 @@ There are two ways work around this limitation:
 
 There are two ways to start thread-based jobs:
 
-- `Start-ThreadJob` - from the ThreadJob module
-- `ForEach-Object -Parallel -AsJob` - the parallel features added in PowerShell
-  7.0
+- `Start-ThreadJob` - from the **ThreadJob** module
+- `ForEach-Object -Parallel -AsJob` - the parallel feature was added in
+  PowerShell 7.0
 
 Use the same **Job** cmdlets described in [about_Jobs](about_Jobs.md) to manage
 thread-based jobs.
