@@ -28,6 +28,9 @@ PowerShell 7.1 currently supports the following operating systems on x64, includ
 For more up-to-date information about supported operating systems and support lifecycle, see the
 [PowerShell Support Lifecycle](/powershell/scripting/powershell-support-lifecycle?view=powershell-7.1)
 
+> [!IMPORTANT]
+> PowerShell 7.1 is now available on the Microsoft Store
+
 Check the installation instructions for your preferred operating system
 [Windows](/powershell/scripting/install/installing-powershell-core-on-windows?view=powershell-7.1),
 [macOS](/powershell/scripting/install/installing-powershell-core-on-macos?view=powershell-7.1),
