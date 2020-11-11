@@ -6,12 +6,12 @@ ms.date: 11/11/2020
 
 # What's New in PowerShell 7.1
 
-TODO
-
 PowerShell 7.1 is an open-source, cross-platform (Windows, macOS, and Linux) edition of PowerShell,
 built to manage heterogeneous environments and hybrid cloud.
 
-In this release, we're introducing a number of new features, including:
+Building on the foundation established in PowerShell 7.0, we focused our efforts on community issues
+and include a number of improvements and fixes. We are committed to ensuring that PowerShell remains
+a stable and performant platform. We are proud to announce the release of PowerShell 7.1.
 
 ## Where can I install PowerShell?
 
@@ -48,15 +48,15 @@ While not officially supported, the community has also provided packages for
 
 ## Running PowerShell 7.1
 
-TODO: Refresh + STORE
+TODO: Add Store
 
-PowerShell 7 installs to a new directory and runs side-by-side with Windows PowerShell 5.1. For
-PowerShell Core 6.x, PowerShell 7 is an in-place upgrade that removes PowerShell Core 6.x.
+PowerShell 7.1 installs to a new directory and runs side-by-side with Windows PowerShell 5.1. For
+PowerShell Core 6.x, PowerShell 7.1 is an in-place upgrade that removes PowerShell Core 6.x.
 
-- PowerShell 7 is installed to `%programfiles%\PowerShell\7`
+- PowerShell 7.1 is installed to `%programfiles%\PowerShell\7`
 - The `%programfiles%\PowerShell\7` folder is added to `$env:PATH`
 
-The PowerShell 7 installer packages upgrade previous versions of PowerShell Core 6.x:
+The PowerShell 7.1 installer packages upgrade previous versions of PowerShell Core 6.x:
 
 - PowerShell Core 6.x on Windows: `%programfiles%\PowerShell\6` is replaced by
   `%programfiles%\PowerShell\7`
@@ -66,7 +66,7 @@ The PowerShell 7 installer packages upgrade previous versions of PowerShell Core
 > [!NOTE]
 > In Windows PowerShell, the executable to launch PowerShell is named `powershell.exe`. In version 6
 > and above, the executable is changed to support side-by-side execution. The new executable to
-> launch PowerShell 7 is `pwsh.exe`. Preview builds will remain in-place as `pwsh-preview` instead
+> launch PowerShell 7.1 is `pwsh.exe`. Preview builds will remain in-place as `pwsh-preview` instead
 > of `pwsh` under the 7-preview directory.
 
 ## Breaking Changes and Improvements
