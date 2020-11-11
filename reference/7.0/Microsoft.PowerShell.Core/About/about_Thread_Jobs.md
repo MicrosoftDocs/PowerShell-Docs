@@ -25,10 +25,10 @@ jobs types provided by PowerShell to support concurrency.
   see [about_Remote_Jobs](about_Remote_Jobs.md).
 - `BackgroundJob` - Commands and scripts run in a separate process on the local
   machine. For more information, see [about_Jobs](about_Jobs.md).
-- `PSTaskJob` or `ThreadJob` - Commands and script runs in a separate thread
+- `PSTaskJob` or `ThreadJob` - Commands and scripts run in a separate thread
   within the same process on the local machine.
 
-Thread based jobs are not as robust as Remote and Background jobs, because they
+Thread-based jobs are not as robust as remote and background jobs, because they
 run in the same process on different threads. If one job has a critical error
 that crashes the process, then all other jobs in the process are terminated.
 
@@ -38,10 +38,11 @@ objects in the current session. Without this overhead, thread-based jobs run
 faster and use fewer resources than the other job types.
 
 > [!IMPORTANT]
-> The parent session that created the job monitors the job status and collects
-> pipeline data. The job child process is terminated by the parent process once
-> the job reaches a finished state. If the parent session is terminated, all
-> running child jobs are terminated along with their child processes.
+> The parent session that created the job also monitors the job status and
+> collects pipeline data. The job child process is terminated by the parent
+> process once the job reaches a finished state. If the parent session is
+> terminated, all running child jobs are terminated along with their child
+> processes.
 
 There are two ways work around this limitation:
 
@@ -64,8 +65,8 @@ thread-based jobs.
 
 ### Using `Start-ThreadJob`
 
-The ThreadJob module first shipped with PowerShell 6. It can also be installed
-from the PowerShell Gallery for Windows PowerShell 5.1.
+The **ThreadJob** module first shipped with PowerShell 6. It can also be
+installed from the PowerShell Gallery for Windows PowerShell 5.1.
 
 To start a thread job on the local computer, use the `Start-ThreadJob` cmdlet
 with a command or script enclosed in curly braces (`{ }`).
@@ -85,7 +86,7 @@ are being generated.
 ### Using `ForEach-Object -Parallel -AsJob`
 
 PowerShell 7.0 added a new parameter set to the `ForEach-Object` cmdlet. The
-new parameters allow you to run script blocks in parallel thread as PowerShell
+new parameters allow you to run script blocks in parallel threads as PowerShell
 jobs.
 
 You can pipe data to `ForEach-Object -Parallel`. The data is passed to the
@@ -249,7 +250,7 @@ into the job has to be treated carefully. If it is not a thread safe object,
 then it should never be assigned to, and method and properties should never be
 invoked on it.
 
-The following example passes a thread safe dotNet `ConcurrentDictionary` object
+The following example passes a thread-safe .NET `ConcurrentDictionary` object
 to all child jobs to collect uniquely named process objects. Since it is a
 thread safe object, it can be safely used while the jobs run concurrently in
 the process.

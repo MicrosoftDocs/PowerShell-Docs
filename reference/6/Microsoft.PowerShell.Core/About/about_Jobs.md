@@ -22,19 +22,20 @@ jobs types provided by PowerShell to support concurrency.
   see [about_Remote_Jobs](about_Remote_Jobs.md).
 - `BackgroundJob` - Commands and scripts run in a separate process on the local
   machine.
-- `PSTaskJob` or `ThreadJob` - Commands and script runs in a separate thread
+- `PSTaskJob` or `ThreadJob` - Commands and scripts run in a separate thread
   within the same process on the local machine. For more information, see
-  [about_Thread_Jobs](about_Thread_Jobs.md).
+  [about_Thread_Jobs](/powershell/module/ThreadJob/about_Thread_Jobs).
 
 Running scripts remotely, on a separate machine or in a separate process,
-provide great isolation. Any errors that occur in the remote job do not affect
-other running jobs or the parent session that started the job. But the remoting
-layer adds overhead, including object serialization. All objects are serialized
-and deserialized as they are passed between the parent session and the remote
-(job) session. Serialization of large complex data objects can consume large
-amounts of compute and memory resources.
+provides great isolation. Any errors that occur in the remote job do not affect
+other running jobs or the parent session that started the job. However, the
+remoting layer adds overhead, including object serialization. All objects are
+serialized and deserialized as they are passed between the parent session and
+the remote (job) session. Serialization of large complex data objects can
+consume large amounts of compute and memory resources and transfer large
+amounts of data across the network.
 
-Thread based jobs are not as robust as Remote and Background jobs, because they
+Thread-based jobs are not as robust as remote and background jobs, because they
 run in the same process on different threads. If one job has a critical error
 that crashes the process, then all other jobs in the process are terminated.
 
@@ -44,10 +45,11 @@ objects in the current session. Without this overhead, thread-based jobs run
 faster and use fewer resources than the other job types.
 
 > [!IMPORTANT]
-> The parent session that created the job monitors the job status and collects
-> pipeline data. The job child process is terminated by the parent process once
-> the job reaches a finished state. If the parent session is terminated, all
-> running child jobs are terminated along with their child processes.
+> The parent session that created the job also monitors the job status and
+> collects pipeline data. The job child process is terminated by the parent
+> process once the job reaches a finished state. If the parent session is
+> terminated, all running child jobs are terminated along with their child
+> processes.
 
 There are two ways work around this limitation:
 
@@ -95,9 +97,9 @@ The `Start-Job` command returns an object that represents the job. The job
 object contains useful information about the job, but it does not contain the
 job results.
 
-Save the job object in a variable, and then use it with the other **Job**
-cmdlets to manage the background job. The following command starts a job object
-and saves the resulting job object in the `$job` variable.
+You can save the job object in a variable and then use it with the other
+**Job** cmdlets to manage the background job. The following command starts a
+job object and saves the resulting job object in the `$job` variable.
 
 ```powershell
 $job = Start-Job -ScriptBlock {Get-Process}
@@ -256,7 +258,7 @@ complete.
 
 You can also use the **Wait** parameter of the `Receive-Job` cmdlet. When use
 use this parameter, the cmdlet does not return the command prompt until the job
-is complete and all results are available.
+is completed and all results are available.
 
 You can also use the `Wait-Job` cmdlet to wait for any or all of the results of
 the job. `Wait-Job` lets you wait for one or more specific job or for all jobs.

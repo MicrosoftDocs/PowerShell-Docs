@@ -20,23 +20,25 @@ jobs types provided by PowerShell to support concurrency.
 - `RemoteJob` - Commands and scripts run in a remote session.
 - `BackgroundJob` - Commands and scripts run in a separate process on the local
   machine. For more information, see [about_Jobs](about_Jobs.md).
-- `PSTaskJob` or `ThreadJob` - Commands and script runs in a separate thread
+- `PSTaskJob` or `ThreadJob` - Commands and scripts run in a separate thread
   within the same process on the local machine. For more information, see
   [about_Thread_Jobs](/powershell/module/ThreadJob/about_Thread_Jobs).
 
 Running scripts remotely, on a separate machine or in a separate process,
 provide great isolation. Any errors that occur in the remote job do not affect
-other running jobs or the parent session that started the job. But the remoting
-layer adds overhead, including object serialization. All objects are serialized
-and deserialized as they are passed between the parent session and the remote
-(job) session. Serialization of large complex data objects can consume large
-amounts of compute and memory resources.
+other running jobs or the parent session that started the job. However, the
+remoting layer adds overhead, including object serialization. All objects are
+serialized and deserialized as they are passed between the parent session and
+the remote (job) session. Serialization of large complex data objects can
+consume large amounts of compute and memory resources and transfer large
+amounts of data across the network.
 
 > [!IMPORTANT]
-> The parent session that created the job monitors the job status and collects
-> pipeline data. The job child process is terminated by the parent process once
-> the job reaches a finished state. If the parent session is terminated, all
-> running child jobs are terminated along with their child processes.
+> The parent session that created the job also monitors the job status and
+> collects pipeline data. The job child process is terminated by the parent
+> process once the job reaches a finished state. If the parent session is
+> terminated, all running child jobs are terminated along with their child
+> processes.
 
 There are two ways work around this limitation:
 
@@ -149,14 +151,15 @@ computer.
    C:\PS>
    ```
 
-1. To view the contents of the PsLog.txt file on the Server01 computer at any
+1. To view the contents of the `PsLog.txt` file on the Server01 computer at any
    time, start another interactive session, or run a remote command. This type
    of command is best run in a PSSession (a persistent connection) in case you
    want to use several commands to investigate and manage the data in the
-   PsLog.txt file. For more information about PSSessions, see about_PSSessions.
+   `PsLog.txt` file. For more information about PSSessions, see
+   [about_PSSessions](about_PSSessions.md).
 
-   The following commands use the `New-PSSession` cmdlet to create a PSSession
-   that is connected to the Server01 computer, and they use the
+   The following commands use the `New-PSSession` cmdlet to create a
+   **PSSession** that is connected to the Server01 computer, and they use the
    `Invoke-Command` cmdlet to run a `Get-Content` command in the PSSession to
    view the contents of the file.
 
@@ -293,8 +296,8 @@ commands remotely to manage a local job on the remote computer.
    same type of job object that `Start-Job` returns. You can save the job
    object in a variable, or you can use a `Get-Job` command to get the job.
 
-   Note that the value of the Location property shows that the job ran on the
-   local computer, known as "LocalHost", even though the job ran on the
+   Note that the value of the **Location** property shows that the job ran on
+   the local computer, known as "LocalHost", even though the job ran on the
    Server01 computer. Because the job object is created on the Server01
    computer and the job runs on the same computer, it is considered to be a
    local background job.
@@ -311,8 +314,8 @@ commands remotely to manage a local job on the remote computer.
    Invoke-Command -session $s -scriptblock {Get-Job}
    ```
 
-   The command returns a job object. The State property of the job object shows
-   that the command was completed successfully.
+   The command returns a job object. The **State** property of the job object
+   shows that the command was completed successfully.
 
    ```Output
    SessionId   Name  State      HasMoreData   Location   Command
