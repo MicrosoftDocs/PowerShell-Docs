@@ -1,5 +1,5 @@
 ---
-description: Describes how to run background jobs on remote computers.
+description: Describes how to run jobs on remote computers.
 keywords: powershell,cmdlet
 Locale: en-US
 ms.date: 11/11/2020
@@ -40,7 +40,7 @@ amounts of data across the network.
 > terminated, all running child jobs are terminated along with their child
 > processes.
 
-There are two ways work around this limitation:
+There are two ways work around this situation:
 
 1. Use `Invoke-Command` to create jobs that run in disconnected sessions. See
    the [detached processes](#how-to-run-as-a-detached-process) section of this
@@ -49,35 +49,33 @@ There are two ways work around this limitation:
    information, see
    [Start-Process](xref:Microsoft.PowerShell.Management.Start-Process).
 
-## Remote Background Jobs
+## Remote Jobs
 
-You can run background jobs on remote computers by using three different
+You can run jobs on remote computers by using three different
 methods.
 
 - Start an interactive session on a remote computer. Then start a job in the
   interactive session. The procedures are the same as running a local job,
   although all actions are performed on the remote computer.
 
-- Run a background job on a remote computer that returns its results to the
+- Run a job on a remote computer that returns its results to the
   local computer. Use this method when you want to collect the results of
-  background jobs and maintain them in a central location on the local
+  jobs and maintain them in a central location on the local
   computer.
 
-- Run a background job on a remote computer that maintains its results on the
+- Run a job on a remote computer that maintains its results on the
   remote computer. Use this method when the job data is more securely
   maintained on the originating computer.
 
-### Start a background job in an interactive session
+### Start a job in an interactive session
 
 You can start an interactive session with a remote computer and then start a
-background job during the interactive session. For more information about
-interactive sessions, see about_Remote, and see `Enter-PSSession`.
+job during the interactive session. For more information about interactive
+sessions, see about_Remote, and see `Enter-PSSession`.
 
-The procedure for starting a background job in an interactive session is almost
-identical to the procedure for starting a background job on the local computer.
-However, all of the operations occur on the remote computer, not the local
-computer.
-
+The procedure for starting a job in an interactive session is almost identical
+to the procedure for starting a background job on the local computer. However,
+all of the operations occur on the remote computer, not the local computer.
 
 1. Use the `Enter-PSSession` cmdlet to start an interactive session with a
    remote computer. You can use the ComputerName parameter of `Enter-PSSession`
@@ -98,8 +96,8 @@ computer.
    Server01\C:>
    ```
 
-1. To start a background job in the session, use the `Start-Job` cmdlet. The
-   following command runs a background job that gets the events in the Windows
+1. To start a remote job in the session, use the `Start-Job` cmdlet. The
+   following command runs a remote job that gets the events in the Windows
    PowerShell event log on the Server01 computer. The `Start-Job` cmdlet
    returns an object that represents the job.
 
@@ -112,9 +110,9 @@ computer.
    ```
 
    While the job runs, you can use the interactive session to run other
-   commands, including other background jobs. However, you must keep the
-   interactive session open until the job is completed. If you end the session,
-   the job is interrupted, and the results are lost.
+   commands, including other jobs. However, you must keep the interactive
+   session open until the job is completed. If you end the session, the job is
+   interrupted, and the results are lost.
 
 1. To find out if the job is complete, display the value of the `$job`
    variable, or use the `Get-Job` cmdlet to get the job. The following command
@@ -171,8 +169,8 @@ computer.
 
 ### Start a remote job that returns the results to the local computer (AsJob)
 
-To start a background job on a remote computer that returns the command results
-to the local computer, use the **AsJob** parameter of a cmdlet such as the
+To start a job on a remote computer that returns the command results to the
+local computer, use the **AsJob** parameter of a cmdlet such as the
 `Invoke-Command` cmdlet.
 
 When you use the **AsJob** parameter, the job object is actually created on the
@@ -186,9 +184,9 @@ computers that are not configured for remoting and that do not meet the
 requirements for remoting.
 
 1. The following command uses the **AsJob** parameter of `Invoke-Command` to
-   start a background job on the Server01 computer. The job runs a
-   `Get-Eventlog` command that gets the events in the System log. You can use
-   the JobName parameter to assign a display name to the job.
+   start a job on the Server01 computer. The job runs a `Get-Eventlog` command
+   that gets the events in the System log. You can use the JobName parameter to
+   assign a display name to the job.
 
    ```powershell
    Invoke-Command -computername Server01 -scriptblock {
@@ -248,10 +246,10 @@ requirements for remoting.
 
 ### Start a remote job that keeps the results on the remote computer
 
-To start a background job on a remote computer that keeps the command results
-on the remote computer, use the `Invoke-Command` cmdlet to run a `Start-Job`
-command on a remote computer. You can use this method to run background jobs on
-multiple computers.
+To start a job on a remote computer that keeps the command results on the
+remote computer, use the `Invoke-Command` cmdlet to run a `Start-Job` command
+on a remote computer. You can use this method to run jobs on multiple
+computers.
 
 When you run a `Start-Job` command remotely, the job object is created on the
 remote computer, and the job results are maintained on the remote computer.
@@ -302,9 +300,9 @@ commands remotely to manage a local job on the remote computer.
    computer and the job runs on the same computer, it is considered to be a
    local background job.
 
-1. To manage a remote background job, use the Job cmdlets. Because the job
-   object is on the remote computer, you need to run remote commands to get,
-   stop, wait for, or retrieve the job results.
+1. To manage a remote job, use the **Job** cmdlets. Because the job object is
+   on the remote computer, you need to run remote commands to get, stop, wait
+   for, or retrieve the job results.
 
    To see if the job is complete, use an `Invoke-Command` command to run a
    `Get-Job` command in the PSSession that is connected to the Server01
@@ -358,8 +356,8 @@ PowerShell session.
 Create a new PowerShell session on the local machine. The use `Invoke-Command`
 to start a job in this session. `Invoke-Command` allows you to disconnect a
 remote session and terminate the parent session. Later, you can start a new
-PowerShell session and connect to the previously disconnected session to
-resume monitoring the job. However, any data that was returned to the original
+PowerShell session and connect to the previously disconnected session to resume
+monitoring the job. However, any data that was returned to the original
 PowerShell session is lost when that session is terminated. Only new data
 objects generated after the disconnect are returned when re-connected.
 

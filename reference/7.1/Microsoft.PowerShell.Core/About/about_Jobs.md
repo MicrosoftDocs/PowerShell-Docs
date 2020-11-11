@@ -51,7 +51,7 @@ faster and use fewer resources than the other job types.
 > terminated, all running child jobs are terminated along with their child
 > processes.
 
-There are two ways work around this limitation:
+There are two ways work around this situation:
 
 1. Use `Invoke-Command` to create jobs that run in disconnected sessions. For
    more information, see [about_Remote_Jobs](about_Remote_Jobs.md).
