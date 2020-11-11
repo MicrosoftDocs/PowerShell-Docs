@@ -2,7 +2,7 @@
 description: The PSModulePath environment variable contains a list of folder locations that are searched to find modules and resources.
 keywords: powershell,cmdlet
 Locale: en-US
-ms.date: 04/13/2020
+ms.date: 11/11/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_PSModulePath?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_PSModulePath
@@ -10,7 +10,8 @@ title: about_PSModulePath
 # About PSModulePath
 
 The `$env:PSModulePath` environment variable contains a list of folder
-locations that are searched to find modules and resources.
+locations that are searched to find modules and resources. PowerShell
+recursively searches each folder for module (`.psd1` or `.psm1`) files.
 
 By default, the effective locations assigned to `$env:PSModulePath` are:
 
@@ -178,6 +179,26 @@ PowerShell Core 6 overwrites `$env:PSModulePath`. No changes are made.
 The PowerShell 7 startup continues as-is with the addition of inheriting paths
 that PowerShell Core 6 added. Since the PS7-specific paths are prefixed, there
 is no functional issue.
+
+## Module search behavior
+
+PowerShell recursively searches each folder in the **PSModulePath** for module
+(`.psd1` or `.psm1`) files. This search pattern allows multiple versions of the
+same module to be installed in different folders. For example:
+
+```Output
+    Directory: C:\Program Files\WindowsPowerShell\Modules\PowerShellGet
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d----           8/14/2020  5:56 PM                1.0.0.1
+d----           9/13/2019  3:53 PM                2.1.2
+```
+
+By default, PowerShell loads the highest version number of a module when
+multiple versions are found. To load a specific version, use `Import-Module`
+with the **FullyQualifiedName** parameter. For more information, see
+[Import-Module](xref:Microsoft.PowerShell.Core.Import-Module).
 
 ## See also
 
