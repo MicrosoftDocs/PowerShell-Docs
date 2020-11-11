@@ -94,10 +94,18 @@ values are changed for each major release.
 ## <a id="msix" />Installing from the Microsoft Store
 
 PowerShell 7.1 has been published to the Microsoft Store. You can find the PowerShell release on the
-[Microsoft Store](https://www.microsoft.com/p/powershell-preview/9p95zzktnrn4) website or in the
+[Microsoft Store](https://www.microsoft.com/store/apps/9MZ1SNWT0N5D) website or in the
 Store application in Windows.
 
-<!-- TODO: Limitations/caveats of using the Store App -->
+Benefits of the Microsoft Store package:
+
+- Automatic updates built right into Windows 10
+- Integrates with other software distribution mechanisms like Intune and SCCM
+
+> [!NOTE]
+> Any system-level configuration settings stored in `$PSHOME` cannot be modified. This includes the
+> WSMAN configuration. This prevents remote sessions from connecting to Store-based installs of
+> PowerShell. User-level configurations and SSH remoting are supported.
 
 ### Using the MSIX package
 

@@ -25,10 +25,12 @@ the OS in separate steps.
 [snap]: #snap-package
 [tar]: #binary-archives
 
+<!-- TODO: Update for supported releases v7.0 & v7.1 -->
+
 Officially supported releases
 
 - Ubuntu 16.04
-- Ubuntu 18.04
+- Ubuntu 18.04 and 20.04
 - Debian 8
 - Debian 9
 - Debian 10
@@ -44,7 +46,7 @@ Officially supported releases
 Community supported releases
 
 - Ubuntu 18.10
-- Ubuntu 19.04
+- Ubuntu 19.10 and 20.10
 - Arch Linux
 - Kali
 - Raspbian (experimental)
@@ -54,16 +56,6 @@ Alternate install methods
 - Snap Package
 - Binary Archives
 - .NET Global tool
-
-Not currently supported
-
-- Ubuntu 20.04
-
-> [!NOTE]
-> PowerShell can only support the distributions that are supported by .NET. See the
-> [.NET Core release notes][distros] for a list of supported distributions. If there is a
-> distribution supported by .NET that is not listed here, you can request that support for the
-> distribution be added. Please file a request using the [Distribution Support Request][] template.
 
 ## Ubuntu 16.04
 
@@ -167,6 +159,58 @@ sudo apt-get install -f
 sudo apt-get remove powershell
 ```
 
+## Ubuntu 20.04
+
+### Installation via Package Repository - Ubuntu 20.04
+
+PowerShell for Linux is published to package repositories for easy installation and updates.
+
+The preferred method is as follows:
+
+```sh
+# Update the list of packages
+sudo apt-get update
+# Install pre-requisite packages.
+sudo apt-get install -y wget apt-transport-https
+# Download the Microsoft repository GPG keys
+wget -q https://packages.microsoft.com/config/ubuntu/20.04/packages-microsoft-prod.deb
+# Register the Microsoft repository GPG keys
+sudo dpkg -i packages-microsoft-prod.deb
+# Update the list of products
+sudo apt-get update
+# Enable the "universe" repositories
+sudo add-apt-repository universe
+# Install PowerShell
+sudo apt-get install -y powershell
+# Start PowerShell
+pwsh
+```
+
+As superuser, register the Microsoft repository once. After registration, you can update
+PowerShell with `sudo apt-get install powershell`.
+
+### Installation via Direct Download - Ubuntu 20.04
+
+Download the Debian package `powershell-lts_7.1.0-1.ubuntu.20.04_amd64.deb` from the [releases][] page
+onto the Ubuntu machine.
+
+Then, in the terminal, execute the following commands:
+
+```sh
+sudo dpkg -i powershell-lts_7.1.0-1.ubuntu.18.04_amd64.deb
+sudo apt-get install -f
+```
+
+> [!NOTE]
+> The `dpkg -i` command fails with unmet dependencies. The next command, `apt-get install -f`
+> resolves these issues then finishes configuring the PowerShell package.
+
+### Uninstallation - Ubuntu 20.04
+
+```sh
+sudo apt-get remove powershell
+```
+
 ## Ubuntu 18.10
 
 Installation is supported via `snapd`. For instructions, see [Snap Package][snap].
@@ -175,20 +219,13 @@ Installation is supported via `snapd`. For instructions, see [Snap Package][snap
 > Ubuntu 18.10 is an [interim release](https://www.ubuntu.com/about/release-cycle) that's
 > [community supported](../powershell-support-lifecycle.md).
 
-## Ubuntu 19.04
+## Ubuntu 19.10 and 20.10
 
 Installation is supported via `snapd`. For instructions, see [Snap Package][snap].
 
 > [!NOTE]
-> Ubuntu 19.04 is an [interim release](https://www.ubuntu.com/about/release-cycle) that's
+> Ubuntu 19.10 is an [interim release](https://www.ubuntu.com/about/release-cycle) that's
 > [community supported](../powershell-support-lifecycle.md).
-
-## Ubuntu 20.04
-
-Ubuntu 20.04 is an LTS release. PowerShell does not currently support this version. Support for this
-version is being considered for the PowerShell 7.1 release. Please upvote this
-[request](https://github.com/PowerShell/PowerShell/issues/12626) if you would like support for
-Ubuntu 20.04.
 
 ## Debian 8
 

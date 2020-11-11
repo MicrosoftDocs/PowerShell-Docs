@@ -28,13 +28,25 @@ PowerShell 7.1 currently supports the following operating systems on x64, includ
 For more up-to-date information about supported operating systems and support lifecycle, see the
 [PowerShell Support Lifecycle](/powershell/scripting/powershell-support-lifecycle)
 
-> [!IMPORTANT]
-> PowerShell 7.1 is now available on the Microsoft Store.
+PowerShell 7.1 has been published to the Microsoft Store. You can find the PowerShell release on the
+[Microsoft Store](https://www.microsoft.com/store/apps/9MZ1SNWT0N5D) website or in the
+Store application in Windows.
 
-Check the installation instructions for your preferred operating system
-[Windows](/powershell/scripting/install/installing-powershell-core-on-windows),
-[macOS](/powershell/scripting/install/installing-powershell-core-on-macos), or
-[Linux](/powershell/scripting/install/installing-powershell-core-on-linux).
+Benefits of the Microsoft Store package:
+
+- Automatic updates built right into Windows 10
+- Integrates with other software distribution mechanisms like Intune and SCCM
+
+> [!NOTE]
+> Any system-level configuration settings stored in `$PSHOME` cannot be modified. This includes the
+> WSMAN configuration. This prevents remote sessions from connecting to Store-based installs of
+> PowerShell. User-level configurations and SSH remoting are supported.
+
+Check the installation instructions for your preferred operating system:
+
+- [Windows](/powershell/scripting/install/installing-powershell-core-on-windows)
+- [macOS](/powershell/scripting/install/installing-powershell-core-on-macos)
+- [Linux](/powershell/scripting/install/installing-powershell-core-on-linux)
 
 Additionally, PowerShell 7.1 supports ARM32 and ARM64 flavors of Debian, Ubuntu, and ARM64 Alpine
 Linux.
@@ -93,6 +105,8 @@ repository.
 - Use invariant culture string conversion for `-replace` operator (#10954) (Thanks @iSazonov!)
 
 ### Experimental Features
+
+<!-- TODO: note which features are now mainstream  -->
 
 - Add `-Runspace` parameter to all `*-PSBreakpoint` cmdlets (#10492) (Thanks @KirkMunro!)
 - Support passing `PSPath` to native commands (#12386)
