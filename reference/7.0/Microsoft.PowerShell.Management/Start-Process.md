@@ -3,7 +3,7 @@ external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 08/03/2020
+ms.date: 11/11/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/start-process?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Start-Process
@@ -127,6 +127,26 @@ array.
 Start-Process -FilePath "$env:comspec" -ArgumentList "/c dir `"%systemdrive%\program files`""
 Start-Process -FilePath "$env:comspec" -ArgumentList "/c","dir","`"%systemdrive%\program files`""
 ```
+
+### Example 8: Create a detached process on Linux
+
+On Windows, `Start-Process` creates an independent process that remains running independently of the
+launching shell. On non-Windows platforms, the newly started process is attached to the shell that
+launched. If the launching shell is closed, the child process is terminated.
+
+To avoid terminating the child process on Unix-like platforms, you can combine `Start-Process` with
+`nohup`. The following example launches a background instance of PowerShell on Linux that stays
+alive even after you close the launching session. The `nohup` command collects output in file
+`nohup.out` in the current directory.
+
+```powershell
+# Runs for 2 minutes and appends output to ./nohup.out
+Start-Process nohup 'pwsh -noprofile -c "1..120 | % { Write-Host . -NoNewline; sleep 1 }"'
+```
+
+In this example, `Start-Process` is running the Linux `nohup` command, which launches `pwsh` as a
+detached process. For more information, see the man page for
+[nohup](https://linux.die.net/man/1/nohup).
 
 ## PARAMETERS
 
@@ -401,9 +421,8 @@ Accept wildcard characters: False
 ### -WorkingDirectory
 
 Specifies the location that the new process should start in. The default is the location of the
-executable file or document being started. The path provided is treated as a literal path. Wildcards
-are not supported. You must enclose the path in single quotes (`'`) if the path name contains
-characters that would be interpreted as wildcards.
+executable file or document being started. Wildcards are not supported. The path name must not
+contain characters that would be interpreted as wildcards.
 
 ```yaml
 Type: System.String
