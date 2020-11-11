@@ -82,29 +82,31 @@ supported. These packages are marked as `Community` in the table.
 Platforms listed as `Experimental` aren't officially supported, but are available for
 experimentation and feedback.
 
-| Platform                                          |      6.2      |    7.0    |
-| ------------------------------------------------- | :-----------: | :-------: |
-| Windows 8.1, and 10                               |   Supported   | Supported |
-| Windows Server 2012 R2, 2016                      |   Supported   | Supported |
-| [Windows Server Semi-Annual Channel][semi-annual] |   Supported   | Supported |
-| Ubuntu 16.04 and 18.04                            |   Supported   | Supported |
-| Ubuntu 19.10 (via Snap Package)                   |   Community   | Community |
-| Ubuntu 20.04 (via Snap Package)                   |   Community   | Community |
-| Debian 9                                          |   Supported   | Supported |
-| Debian 10                                         | Not Supported | Supported |
-| CentOS 7                                          |   Supported   | Supported |
-| CentOS 8                                          | Not Supported | Supported |
-| Red Hat Enterprise Linux 7                        |   Supported   | Supported |
-| Red Hat Enterprise Linux 8                        | Not Supported | Supported |
-| Fedora 30                                         | Not Supported | Supported |
-| Alpine 3.8                                        |   See Note    | See Note  |
-| Alpine 3.9 and 3.10                               | Not Supported | See Note  |
-| macOS 10.12+                                      |   Supported   | Supported |
-| Arch                                              |   Community   | Community |
-| Raspbian                                          |   Community   | Community |
-| Kali                                              |   Community   | Community |
-| AppImage (works on multiple Linux platforms)      |   Community   | Community |
-| [Snap Package](https://snapcraft.io/powershell)   |   See note    | See note  |
+<!-- TODO: update OS list -->
+
+|                     Platform                      |      7.0      |      7.1      |
+| ------------------------------------------------- | :-----------: | :-----------: |
+| Windows 8.1, and 10                               |   Supported   |   Supported   |
+| Windows Server 2012 R2, 2016, 2019                |   Supported   |   Supported   |
+| [Windows Server Semi-Annual Channel][semi-annual] |   Supported   |   Supported   |
+| Ubuntu 16.04, 18.04                               |   Supported   |   Supported   |
+| Ubuntu 20.04                                      | Not Supported |   Supported   |
+| Ubuntu 19.10, 20.10 (via Snap Package)            |   Community   |   Supported   |
+| Debian 9                                          |   Supported   |   Supported   |
+| Debian 10                                         |   Supported   |   Supported   |
+| CentOS 7                                          |   Supported   |   Supported   |
+| CentOS 8                                          |   Supported   |   Supported   |
+| Red Hat Enterprise Linux 7                        |   Supported   |   Supported   |
+| Red Hat Enterprise Linux 8                        |   Supported   |   Supported   |
+| Fedora 31+                                        |   Supported   | Not Supported |
+| Alpine 3.10                                       |   See Note    | Not Supported |
+| Alpine 3.11+                                      |   See Note    |   See Note    |
+| macOS 10.13+                                      |   Supported   |   Supported   |
+| Arch                                              |   Community   |   Community   |
+| Raspbian                                          |   Community   |   Community   |
+| Kali                                              |   Community   |   Community   |
+| AppImage (works on multiple Linux platforms)      |   Community   |   Community   |
+| [Snap Package](https://snapcraft.io/powershell)   |   See note    |   See note    |
 
 > [!NOTE]
 > Snap packages are supported the same as the distribution you're running the package on.
@@ -117,18 +119,18 @@ experimentation and feedback.
 Based on the [Lifecycle of PowerShell](#lifecycle-of-powershell-7), the following table lists
 the dates when various releases will no longer be supported.
 
-| Version |    End-of-life     |
-| :-----: | ------------------ |
-|   7.0   | December 3, 2022   |
-|   6.2   | September 4, 2020  |
-|   6.1   | September 28, 2019 |
-|   6.0   | February 13, 2019  |
+| Version |          End-of-life           |
+| :-----: | ------------------------------ |
+|   7.1   | mid-February 2022  (projected) |
+|   7.0   | December 3, 2022               |
+|   6.2   | September 4, 2020              |
+|   6.1   | September 28, 2019             |
+|   6.0   | February 13, 2019              |
 
 > [!NOTE]
-> This document is about support for PowerShell Core 6 and PowerShell 7. Windows PowerShell (1.0 -
-> 5.1) is a component of the Windows OS. Components receive the same support as their parent product
-> or platform. For more information, see
-> [Product and Services Lifecycle Information](/lifecycle/products/).
+> This document is about support for PowerShell Core. Windows PowerShell (1.0 - 5.1) is a component
+> of the Windows OS. Components receive the same support as their parent product or platform. For
+> more information, see [Product and Services Lifecycle Information](/lifecycle/products/).
 
 ## Unsupported platforms
 
@@ -137,6 +139,8 @@ also cease to support that platform version. Previously released packages will r
 customers needing access but formal support and updates of any kind will no longer be provided.
 
 So, the distribution owners ended support for the following versions and aren't supported.
+
+<!-- TODO: Update this table Jason-->
 
 |    Platform    | Version |                                                         End of Life                                                          |
 | -------------- | :-----: | ---------------------------------------------------------------------------------------------------------------------------- |
@@ -196,16 +200,17 @@ The table below outlines the features that meet the servicing criteria and those
 The following table contains a timeline of the major releases of PowerShell. This table is provided
 for historical reference. It is not intended for use to determine the support lifecycle.
 
-|       Version        | Release Date |                                                                     Note                                                                      |
-| -------------------- | :----------: | --------------------------------------------------------------------------------------------------------------------------------------------- |
-| PowerShell 7.0 (LTS) |   Mar-2020   | Built on .NET Core 3.1 (LTS)                                                                                                                  |
-| PowerShell 6.0       |   Jan-2018   | First release, built on .NET Core 2.1. Installable on Windows, Linux, and macOS.                                                              |
-| PowerShell 5.1       |   Aug-2016   | Released in Windows 10 Anniversary Update and Windows Server 2016                                                                             |
-| PowerShell 5.0       |   Feb-2016   | Released in Windows Management Framework (WMF) 5.0                                                                                            |
-| PowerShell 4.0       |   Oct-2013   | Integrated in Windows 8.1 and with Windows Server 2012 R2. Installable on Windows 7 SP1, Windows Server 2008 R2 SP1, and Windows Server 2012. |
-| PowerShell 3.0       |   Oct-2012   | Integrated in Windows 8 and with Windows Server 2012. Installable on Windows 7 SP1, Windows Server 2008 SP1, and Windows Server 2008 R2 SP1.  |
-| PowerShell 2.0       |   Jul-2009   | Integrated in Windows 7 and Windows Server 2008 R2. Installable on Windows XP SP3, Windows Server 2003 SP2, and Windows Vista SP1.            |
-| PowerShell 1.0       |   Nov-2006   | Installable on Windows XP SP2, Windows Server 2003 SP1 and Windows Vista. Optional component of Windows Server 2008.                          |
+|         Version          | Release Date |                                                                     Note                                                                      |
+| ------------------------ | :----------: | --------------------------------------------------------------------------------------------------------------------------------------------- |
+| PowerShell 7.1 (current) |   Nov-2020   | Built on .NET Core 5.0 (current)                                                                                                              |
+| PowerShell 7.0 (LTS)     |   Mar-2020   | Built on .NET Core 3.1 (LTS)                                                                                                                  |
+| PowerShell 6.0           |   Jan-2018   | First release, built on .NET Core 2.1. Installable on Windows, Linux, and macOS.                                                              |
+| PowerShell 5.1           |   Aug-2016   | Released in Windows 10 Anniversary Update and Windows Server 2016                                                                             |
+| PowerShell 5.0           |   Feb-2016   | Released in Windows Management Framework (WMF) 5.0                                                                                            |
+| PowerShell 4.0           |   Oct-2013   | Integrated in Windows 8.1 and with Windows Server 2012 R2. Installable on Windows 7 SP1, Windows Server 2008 R2 SP1, and Windows Server 2012. |
+| PowerShell 3.0           |   Oct-2012   | Integrated in Windows 8 and with Windows Server 2012. Installable on Windows 7 SP1, Windows Server 2008 SP1, and Windows Server 2008 R2 SP1.  |
+| PowerShell 2.0           |   Jul-2009   | Integrated in Windows 7 and Windows Server 2008 R2. Installable on Windows XP SP3, Windows Server 2003 SP2, and Windows Vista SP1.            |
+| PowerShell 1.0           |   Nov-2006   | Installable on Windows XP SP2, Windows Server 2003 SP1 and Windows Vista. Optional component of Windows Server 2008.                          |
 
 <!-- hyperlink references -->
 [paid support]: https://support.microsoft.com/hub/4343728/support-for-business
