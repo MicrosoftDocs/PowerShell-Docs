@@ -24,7 +24,7 @@ jobs types provided by PowerShell to support concurrency.
   machine.
 - `PSTaskJob` or `ThreadJob` - Commands and script runs in a separate thread
   within the same process on the local machine. For more information, see
-  [about_Thread_Jobs](about_Thread_Jobs.md).
+  [about_Thread_Jobs](/powershell/module/ThreadJob/about_Thread_Jobs).
 
 Running scripts remotely, on a separate machine or in a separate process,
 provide great isolation. Any errors that occur in the remote job do not affect
@@ -101,17 +101,6 @@ and saves the resulting job object in the `$job` variable.
 
 ```powershell
 $job = Start-Job -ScriptBlock {Get-Process}
-```
-
-Beginning in PowerShell 6.0, you can use the background operator (`&`) at the
-end of a pipeline to start a background job. For more information, see
-[background operator](about_Operators.md#background-operator-).
-
-Using the background operator is functionally equivalent to using the
-`Start-Job` cmdlet in the previous example.
-
-```powershell
-$job = Get-Process &
 ```
 
 ## Getting job objects
