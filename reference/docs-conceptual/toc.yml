@@ -55,24 +55,26 @@
     items:
     - name: Overview
       href: learn/deep-dives/overview.md
-    - name: Everything you want to know about arrays
-      href: learn/deep-dives/everything-about-arrays.md
-    - name: Everything you want to know about hashtables
-      href: learn/deep-dives/everything-about-hashtable.md
-    - name: Everything you want to know about PSCustomObject
-      href: learn/deep-dives/everything-about-pscustomobject.md
-    - name: Everything you want to know about string substitution
-      href: learn/deep-dives/everything-about-string-substitutions.md
-    - name: Everything you want to know about if/then/else
-      href: learn/deep-dives/everything-about-if.md
-    - name: Everything you want to know about switch
-      href: learn/deep-dives/everything-about-switch.md
-    - name: Everything you want to know about exceptions
-      href: learn/deep-dives/everything-about-exceptions.md
-    - name: Everything you want to know about $null
-      href: learn/deep-dives/everything-about-null.md
-    - name: Everything you want to know about ShouldProcess
-      href: learn/deep-dives/everything-about-shouldprocess.md
+    - name: Everything you want to know about ...
+      items:
+      - name: Everything you want to know about arrays
+        href: learn/deep-dives/everything-about-arrays.md
+      - name: Everything you want to know about hashtables
+        href: learn/deep-dives/everything-about-hashtable.md
+      - name: Everything you want to know about PSCustomObject
+        href: learn/deep-dives/everything-about-pscustomobject.md
+      - name: Everything you want to know about string substitution
+        href: learn/deep-dives/everything-about-string-substitutions.md
+      - name: Everything you want to know about if/then/else
+        href: learn/deep-dives/everything-about-if.md
+      - name: Everything you want to know about switch
+        href: learn/deep-dives/everything-about-switch.md
+      - name: Everything you want to know about exceptions
+        href: learn/deep-dives/everything-about-exceptions.md
+      - name: Everything you want to know about $null
+        href: learn/deep-dives/everything-about-null.md
+      - name: Everything you want to know about ShouldProcess
+        href: learn/deep-dives/everything-about-shouldprocess.md
     - name: Write-Progress while multithreading
       href: learn/deep-dives/write-progress-across-multiple-threads.md
     - name: Add Credential support to PowerShell functions
@@ -120,6 +122,8 @@
   items:
   - name: What's new in PowerShell 7.x
     items:
+    - name: What's new in PowerShell 7.1
+      href: whats-new/what-s-new-in-powershell-71.md
     - name: What's new in PowerShell 7.0
       href: whats-new/what-s-new-in-powershell-70.md
   - name: What's new in PowerShell Core 6.x

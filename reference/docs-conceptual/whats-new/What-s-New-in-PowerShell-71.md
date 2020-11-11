@@ -26,16 +26,15 @@ PowerShell 7.1 currently supports the following operating systems on x64, includ
 - Alpine Linux 3.10, and 3.11+
 
 For more up-to-date information about supported operating systems and support lifecycle, see the
-[PowerShell Support Lifecycle](/powershell/scripting/powershell-support-lifecycle?view=powershell-7.1)
+[PowerShell Support Lifecycle](/powershell/scripting/powershell-support-lifecycle)
 
 > [!IMPORTANT]
 > PowerShell 7.1 is now available on the Microsoft Store.
 
 Check the installation instructions for your preferred operating system
-[Windows](/powershell/scripting/install/installing-powershell-core-on-windows?view=powershell-7.1),
-[macOS](/powershell/scripting/install/installing-powershell-core-on-macos?view=powershell-7.1),
-or
-[Linux](/powershell/scripting/install/installing-powershell-core-on-linux?view=powershell-7.1).
+[Windows](/powershell/scripting/install/installing-powershell-core-on-windows),
+[macOS](/powershell/scripting/install/installing-powershell-core-on-macos), or
+[Linux](/powershell/scripting/install/installing-powershell-core-on-linux).
 
 Additionally, PowerShell 7.1 supports ARM32 and ARM64 flavors of Debian, Ubuntu, and ARM64 Alpine
 Linux.
@@ -44,15 +43,14 @@ While not officially supported, the community has also provided packages for
 [Arch](https://aur.archlinux.org/packages/powershell/) and Kali Linux.
 
 > [!NOTE]
-> Debian 10+, CentOS 8+, Ubuntu 20.04, Alpine and Arm currently do not support WinRM remoting. For details on setting up
-> SSH-based remoting, see
-> [PowerShell Remoting over SSH](/powershell/scripting/learn/remoting/ssh-remoting-in-powershell-core?view=powershell-7).
-
+> Debian 10+, CentOS 8+, Ubuntu 20.04, Alpine and Arm currently do not support WinRM remoting. For
+> details on setting up SSH-based remoting, see
+> [PowerShell Remoting over SSH](/powershell/scripting/learn/remoting/ssh-remoting-in-powershell-core).
 
 ## Running PowerShell 7.1
 
-PowerShell 7.1 installs to a new directory and runs side-by-side with Windows PowerShell 5.1. For
-PowerShell Core 6.x, PowerShell 7.1 is an in-place upgrade that removes PowerShell Core 6.x.
+PowerShell 7.1 installs to a new directory and runs side-by-side with Windows PowerShell 5.1.
+PowerShell 7.1 is an in-place upgrade that replaces PowerShell 6.x. or PowerShell 7.0.
 
 - PowerShell 7.1 is installed to `%programfiles%\PowerShell\7`
 - The `%programfiles%\PowerShell\7` folder is added to `$env:PATH`
@@ -72,9 +70,13 @@ The PowerShell 7.1 installer packages upgrade previous versions of PowerShell Co
 
 ## Breaking Changes and Improvements
 
-For the latest information on changes and improvements, see the [PowerShell CHANGELOG](https://github.com/PowerShell/PowerShell/tree/master/CHANGELOG)
+For the latest information on changes and improvements, see the
+[CHANGELOG](https://github.com/PowerShell/PowerShell/tree/master/CHANGELOG) in the GitHub
+repository.
 
 ### Breaking Changes
+
+<!-- TODO: Add descriptions for each breaking change  -->
 
 - Fix `$?` to not be `$false` when native command writes to `stderr` (#13395)
 - Rename `-FromUnixTime` to `-UnixTimeSeconds` on `Get-Date` to allow Unix time input (#13084) (Thanks @aetos382!)
@@ -91,6 +93,8 @@ For the latest information on changes and improvements, see the [PowerShell CHAN
 - Use invariant culture string conversion for `-replace` operator (#10954) (Thanks @iSazonov!)
 
 ### Engine Updates and Fixes
+
+<!-- TODO: Cut this section - not needed for release notes  -->
 
 - Rename `Get-Subsystem` to `Get-PSSubsystem` and fix two related minor issues (#13765)
 - Add missing `PSToken` token table entries to fix the `PSParser` API (#13779)
@@ -121,6 +125,8 @@ For the latest information on changes and improvements, see the [PowerShell CHAN
 - Use invariant culture string conversion for `-replace` operator (#10954) (Thanks @iSazonov!)
 
 ### General Cmdlet Updates and Fixes
+
+<!-- TODO: Trim this section - limit to significant user-facing changes  -->
 
 - Emit warning if `ConvertTo-Json` exceeds `-Depth` value (#13692)
 - Fix case where exception message contains just ``"`n"`` on Windows (#13684)
@@ -230,6 +236,9 @@ For the latest information on changes and improvements, see the [PowerShell CHAN
 - Revert "Update formatter to not write newlines if content is empty (#11193)" (#11342) (Thanks @iSazonov!)
 - Allow `CompleteInput` to return results from `ArgumentCompleter` when `AST` or Script has matching function definition (#10574) (Thanks @M1kep!)
 - Update formatter to not write new lines if content is empty (#11193)
+
+<!-- TODO: cut remainder of sections -->
+<!-- TODO: add more general contributor thank you listing -->
 
 ### Code Cleanup
 
