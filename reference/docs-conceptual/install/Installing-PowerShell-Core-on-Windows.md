@@ -1,7 +1,7 @@
 ---
 title: Installing PowerShell on Windows
 description: Information about installing PowerShell on Windows
-ms.date: 10/30/2020
+ms.date: 11/11/2020
 ---
 # Installing PowerShell on Windows
 
@@ -30,8 +30,8 @@ to expand it.
 
 The MSI file looks like `PowerShell-<version>-win-<os-arch>.msi`. For example:
 
-- `PowerShell-7.0.3-win-x64.msi`
-- `PowerShell-7.0.3-win-x86.msi`
+- `PowerShell-7.1.0-win-x64.msi`
+- `PowerShell-7.1.0-win-x86.msi`
 
 Once downloaded, double-click the installer and follow the prompts.
 
@@ -41,15 +41,15 @@ The installer creates a shortcut in the Windows Start Menu.
 - You can launch PowerShell via the Start Menu or `$env:ProgramFiles\PowerShell\<version>\pwsh.exe`
 
 > [!NOTE]
-> PowerShell 7 installs to a new directory and runs side-by-side with Windows PowerShell 5.1. For
-> PowerShell Core 6.x, PowerShell 7 is an in-place upgrade that removes PowerShell Core 6.x.
+> PowerShell 7.1 installs to a new directory and runs side-by-side with Windows PowerShell 5.1.
+> PowerShell 7.1 is an in-place upgrade that replaces PowerShell 6.x. or PowerShell 7.0.
 >
-> - PowerShell 7 is installed to `$env:ProgramFiles\PowerShell\7`
+> - PowerShell 7.1 is installed to `$env:ProgramFiles\PowerShell\7`
 > - The `$env:ProgramFiles\PowerShell\7` folder is added to `$env:PATH`
 > - The `$env:ProgramFiles\PowerShell\6` folder is deleted
 >
-> If you need to run PowerShell 6 side-by-side with PowerShell 7, reinstall PowerShell 6 using the
-> [ZIP install](#zip) method.
+> If you need to run PowerShell 7.1 side-by-side with other versions, use the [ZIP install](#zip)
+> method to install the other version to a different folder.
 
 ### Administrative install from the command line
 
@@ -67,7 +67,7 @@ installation options:
 The following example shows how to silently install PowerShell with all the install options enabled.
 
 ```powershell
-msiexec.exe /package PowerShell-7.0.3-win-x64.msi /quiet ADD_EXPLORER_CONTEXT_MENU_OPENPOWERSHELL=1 ENABLE_PSREMOTING=1 REGISTER_MANIFEST=1
+msiexec.exe /package PowerShell-7.1.0-win-x64.msi /quiet ADD_EXPLORER_CONTEXT_MENU_OPENPOWERSHELL=1 ENABLE_PSREMOTING=1 REGISTER_MANIFEST=1
 ```
 
 For a full list of command-line options for `Msiexec.exe`, see
@@ -91,11 +91,27 @@ This can be used by administrators and developers to find the path to PowerShell
 values will be the same for all preview and minor version releases. The `<GUID>`
 values are changed for each major release.
 
-## <a id="msix" />Installing the MSIX package
+## <a id="msix" />Installing from the Microsoft Store
+
+PowerShell 7.1 has been published to the Microsoft Store. You can find the PowerShell release on the
+[Microsoft Store](https://www.microsoft.com/store/apps/9MZ1SNWT0N5D) website or in the
+Store application in Windows.
+
+Benefits of the Microsoft Store package:
+
+- Automatic updates built right into Windows 10
+- Integrates with other software distribution mechanisms like Intune and SCCM
 
 > [!NOTE]
-> The MSIX package is not officially supported at this time. We continue to build the package for
-> internal testing purposes only.
+> Any system-level configuration settings stored in `$PSHOME` cannot be modified. This includes the
+> WSMAN configuration. This prevents remote sessions from connecting to Store-based installs of
+> PowerShell. User-level configurations and SSH remoting are supported.
+
+### Using the MSIX package
+
+> [!NOTE]
+> The preview builds of PowerShell include an MSIX package. The MSIX package is not officially
+> supported. We continue to build the package for internal testing purposes only.
 
 To manually install the MSIX package on a Windows 10 client, download the MSIX package from our
 GitHub [releases][releases] page. Scroll down to the **Assets** section of the Release you want to
@@ -114,10 +130,10 @@ Add-AppxPackage PowerShell-<version>-win-<os-arch>.msix
 PowerShell binary ZIP archives are provided to enable advanced deployment scenarios. Download one of
 the following ZIP archives from the [releases][releases] page.
 
-- PowerShell-7.0.3-win-x64.zip
-- PowerShell-7.0.3-win-x86.zip
-- PowerShell-7.0.3-win-arm64.zip
-- PowerShell-7.0.3-win-arm32.zip
+- PowerShell-7.1.0-win-x64.zip
+- PowerShell-7.1.0-win-x86.zip
+- PowerShell-7.1.0-win-arm64.zip
+- PowerShell-7.1.0-win-arm32.zip
 
 Depending on how you download the file you may need to unblock the file using the `Unblock-File`
 cmdlet. Unzip the contents to the location of your choice and run `pwsh.exe` from there. Unlike
@@ -278,7 +294,7 @@ The following commands can be used to install PowerShell using the published `wi
    ```Output
    Name               Id                           Version
    ---------------------------------------------------------------
-   PowerShell         Microsoft.PowerShell         7.0.3
+   PowerShell         Microsoft.PowerShell         7.1.0
    PowerShell-Preview Microsoft.PowerShell-Preview 7.1.0-preview.5
    ```
 

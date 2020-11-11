@@ -6,6 +6,8 @@ ms.date: 10/30/2020
 
 # PowerShell Core on ARM
 
+<!-- TODO: add link to .NET 5 lifecylce - distingquish 7.0 vs 7.1-->
+
 Support of PowerShell on ARM is based on the
 [.NET Core Supported OS Lifecycle Policy](https://github.com/dotnet/core/blob/master/release-notes/3.1/3.1-supported-os.md).
 PowerShell is supported on the platform supported under this policy.
