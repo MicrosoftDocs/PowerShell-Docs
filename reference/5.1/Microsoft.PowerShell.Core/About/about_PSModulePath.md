@@ -11,7 +11,7 @@ title: about_PSModulePath
 
 The `$env:PSModulePath` environment variable contains a list of folder
 locations that are searched to find modules and resources. PowerShell
-recursively search each folder for module (`.psd1` or `.psm1`) files.
+recursively searches each folder for module (`.psd1` or `.psm1`) files.
 
 By default, the effective locations assigned to `$env:PSModulePath` are:
 
@@ -182,9 +182,9 @@ is no functional issue.
 
 ## Module search behavior
 
-PowerShell recursively searches each folder in the PSModulePath for module
-(`.psd1` or `.psm1`) files. This allows multiple versions of the same module to
-be installed in different folders. For example:
+PowerShell recursively searches each folder in the **PSModulePath** for module
+(`.psd1` or `.psm1`) files. This search pattern allows multiple versions of the
+same module to be installed in different folders. For example:
 
 ```Output
     Directory: C:\Program Files\WindowsPowerShell\Modules\PowerShellGet
